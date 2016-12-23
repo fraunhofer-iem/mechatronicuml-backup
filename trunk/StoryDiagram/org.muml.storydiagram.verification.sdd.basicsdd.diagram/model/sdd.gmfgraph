@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="sdd">
+  <figures name="Default">
+    <descriptors name="EdgeFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="EdgeFigure" targetDecoration="//@figures.0/@descriptors.0/@actualFigure/@children.0">
+        <foregroundColor xsi:type="gmfgraph:ConstantColor" value="black"/>
+        <children xsi:type="gmfgraph:PolylineDecoration" name="Arrowhead">
+          <foregroundColor xsi:type="gmfgraph:ConstantColor" value="black"/>
+        </children>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="LeafNodeFigure">
+      <actualFigure xsi:type="gmfgraph:Ellipse">
+        <layout xsi:type="gmfgraph:GridLayout"/>
+        <foregroundColor xsi:type="gmfgraph:ConstantColor" value="green"/>
+        <children xsi:type="gmfgraph:Label" name="LeafNodeValueFigure" text="1">
+          <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true"/>
+        </children>
+      </actualFigure>
+      <accessors accessor="getFigureLeafNodeValueFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="PatternNodeFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="PatternNodeFigure" fill="false">
+        <layout xsi:type="gmfgraph:GridLayout">
+          <margins/>
+          <spacing/>
+        </layout>
+        <foregroundColor xsi:type="gmfgraph:ConstantColor" value="black"/>
+        <preferredSize dx="150" dy="100"/>
+        <insets/>
+        <children xsi:type="gmfgraph:ScalablePolygon" name="PatternNodeLabelPolygon">
+          <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" verticalAlignment="BEGINNING" horizontalAlignment="FILL"/>
+          <layout xsi:type="gmfgraph:GridLayout" numColumns="4" equalWidth="false">
+            <margins/>
+            <spacing/>
+          </layout>
+          <children xsi:type="gmfgraph:ScalablePolygon" name="InsetBottomPolygon" fill="false">
+            <layoutData xsi:type="gmfgraph:GridLayoutData" verticalAlignment="BEGINNING" horizontalAlignment="BEGINNING"/>
+            <layout xsi:type="gmfgraph:FlowLayout" matchMinorSize="true" forceSingleLine="true" majorSpacing="0" minorSpacing="0"/>
+            <children xsi:type="gmfgraph:Label" name="PatternNodeNameFigure" text="">
+              <font xsi:type="gmfgraph:BasicFont"/>
+              <insets left="5"/>
+            </children>
+            <children xsi:type="gmfgraph:Label" name="PatternNodeTypeFigure">
+              <font xsi:type="gmfgraph:BasicFont"/>
+            </children>
+            <template y="100"/>
+            <template x="100" y="100"/>
+          </children>
+          <children xsi:type="gmfgraph:ScalablePolygon" name="InsetRightPolygon">
+            <layoutData xsi:type="gmfgraph:GridLayoutData" verticalAlignment="BEGINNING" horizontalAlignment="BEGINNING"/>
+            <layout xsi:type="gmfgraph:FlowLayout" forceSingleLine="true" majorSpacing="0" minorSpacing="0"/>
+            <children xsi:type="gmfgraph:Label" name="WhitespaceLabel" text="  "/>
+            <template y="100"/>
+            <template x="100" y="50"/>
+            <template x="100"/>
+            <template x="100" y="50"/>
+          </children>
+          <template/>
+          <template x="75"/>
+          <template x="75" y="100"/>
+          <template x="75"/>
+          <template/>
+          <template y="100"/>
+        </children>
+        <children xsi:type="gmfgraph:ScalablePolygon" name="PatternNodeElementsPolygon">
+          <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" verticalAlignment="FILL" horizontalAlignment="FILL"/>
+          <template/>
+          <template y="99"/>
+          <template x="100" y="99"/>
+          <template x="100"/>
+          <template x="100" y="99"/>
+          <template y="99"/>
+        </children>
+      </actualFigure>
+      <accessors figure="//@figures.0/@descriptors.2/@actualFigure/@children.0/@children.0/@children.0"/>
+      <accessors figure="//@figures.0/@descriptors.2/@actualFigure/@children.0/@children.0/@children.1"/>
+      <accessors accessor="getFigurePatternNodeElementsPolygon" figure="//@figures.0/@descriptors.2/@actualFigure/@children.1"/>
+    </descriptors>
+  </figures>
+  <nodes name="LeafNode" figure="LeafNodeFigure" resizeConstraint="NONE"/>
+  <nodes name="PatternNode" figure="PatternNodeFigure"/>
+  <connections name="Edge" figure="EdgeFigure"/>
+  <compartments name="PatternNodeContentCompartment" figure="PatternNodeFigure" accessor="//@figures.0/@descriptors.2/@accessors.2"/>
+  <labels name="EdgeType" figure="EdgeFigure" elementIcon="false"/>
+  <labels name="LeafNodeValue" figure="LeafNodeFigure" elementIcon="false" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <labels name="PatternNodeType" figure="PatternNodeFigure" elementIcon="false" accessor="//@figures.0/@descriptors.2/@accessors.1">
+    <facets xsi:type="gmfgraph:AlignmentFacet" alignment="CENTER"/>
+  </labels>
+  <labels name="PatternNodeName" figure="PatternNodeFigure" elementIcon="false" accessor="//@figures.0/@descriptors.2/@accessors.0">
+    <facets xsi:type="gmfgraph:AlignmentFacet"/>
+  </labels>
+</gmfgraph:Canvas>

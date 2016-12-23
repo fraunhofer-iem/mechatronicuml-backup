@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmi:id="_ux1qoKr6EeO4TtKifqniAw" type="Real-Time Statechart" name="MainController_MotorPort_motors.realtimestatechart_diagram" measurementUnit="Pixel">
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_ux1qoar6EeO4TtKifqniAw"/>
+  <element xmi:type="realtimestatechart:RealtimeStatechart" href="../../VehicleExample.fujaba#_3bkH0JMEEeOZsPJe5L5rxw"/>
+</notation:Diagram>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.5"?>
+<plugin>
+   <extension
+         point="org.eclipse.m2m.qvt.oml.javaBlackboxUnits">
+      <unit
+            name="TimeHelper"
+            namespace="org.muml.pim.runnable._transformation._blackbox">
+         <library
+               class="org.muml.pim.runnable.transformation.blackbox.TimeHelper"
+               name="TimeUnitHelper">
+            <metamodel
+                  nsURI="http://www.muml.org/pim/valuetype/1.0.0">
+            </metamodel>
+            <metamodel
+                  nsURI="http://www.muml.org/core/expressions/1.0.0">
+            </metamodel>
+         </library>
+      </unit>
+   </extension>
+
+</plugin>

@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ComponentStoryDecisionDiagram Tabbed Properties
+Bundle-SymbolicName: org.muml.reconfiguration.verification.sdd.componentsdd.edit.properties; singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.emf.ecore,
+ org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.edit,
+ org.muml.reconfiguration.verification.sdd.componentsdd,
+ org.muml.ape.runtime,
+ org.muml.reconfiguration.verification.sdd.componentsdd.edit,
+ org.muml.core.edit,
+ org.muml.core.edit.properties,
+ org.muml.reconfiguration.componentstorypattern.edit,
+ org.muml.reconfiguration.componentstorypattern.edit.properties,
+ org.muml.pim.edit,
+ org.muml.pim.edit.properties,
+ org.muml.reconfiguration.edit,
+ org.muml.reconfiguration.edit.properties,
+ org.muml.storydiagram.verification.sdd.basicsdd.edit,
+ org.muml.storydiagram.verification.sdd.basicsdd.edit.properties,
+ org.muml.storydiagram.verification.sdd.edit,
+ org.muml.storydiagram.verification.sdd.edit.properties
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.muml.reconfiguration.verification.sdd.componentsdd.properties.metamodel, org.muml.reconfiguration.verification.sdd.componentsdd.properties.constraint,
+ org.muml.reconfiguration.verification.sdd.componentsdd.properties.componentsdd.editor,
+ org.muml.reconfiguration.verification.sdd.componentsdd.properties.tabs
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

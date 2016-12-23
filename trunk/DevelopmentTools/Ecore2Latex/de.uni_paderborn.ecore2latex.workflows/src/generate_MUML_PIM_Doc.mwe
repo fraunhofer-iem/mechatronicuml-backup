@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<workflow>
+	
+	<!-- Paths to metamodels -->
+	<property name="muml" value="de.uni_paderborn.fujaba.muml/model/muml.ecore" />
+	<property name="modelinstance" value="org.muml.core.modelinstance/model/modelinstance.ecore" />
+	<property name="sdmcore" value="org.muml.core/model/core.ecore" />
+	<property name="actionlanguage" value="de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore" />
+
+	<!-- set up EMF for standalone execution -->
+	<bean class="org.eclipse.emf.mwe.utils.StandaloneSetup" >
+		<platformUri value=".."/>
+		
+		<uriMap 
+			from="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore"  
+			to="platform:/resource/de.uni_paderborn.ecore2latex/model/Ecore.ecore"
+		/>
+		<uriMap 
+			from="http://www.eclipse.org/emf/2002/Ecore"  
+			to="platform:/resource/de.uni_paderborn.ecore2latex/model/Ecore.ecore"
+		/>
+
+	</bean>
+
+	<!-- instantiate metamodel -->
+	<bean id="mm_emf" class="org.eclipse.xtend.typesystem.emf.EmfRegistryMetaModel"/>
+
+	<!-- load Ecore-model and store it in slot 'ecore' -->
+	<component class="org.eclipse.emf.mwe.utils.Reader">
+		<uri value="http://www.eclipse.org/emf/2002/Ecore" />
+		<modelSlot value="ecore" />
+	</component>
+
+	<!-- load muml-model and store it in slot 'muml' -->
+	<component class="org.eclipse.emf.mwe.utils.Reader">
+		<uri value="platform:/resource/${muml}" />
+		<modelSlot value="muml" />
+	</component>
+	
+	<!-- load modelinstance-model and store it in slot 'modelinstance' -->
+	<component class="org.eclipse.emf.mwe.utils.Reader">
+		<uri value="platform:/resource/${modelinstance}" />
+		<modelSlot value="modelinstance" />
+	</component>
+
+	<!-- load sdmcore-model and store it in slot 'sdmcore' -->
+	<component class="org.eclipse.emf.mwe.utils.Reader">
+		<uri value="platform:/resource/${sdmcore}" />
+		<modelSlot value="sdmcore" />
+	</component>
+	
+	<!-- load actionlanguage-model and store it in slot 'actionlanguage' -->
+	<component class="org.eclipse.emf.mwe.utils.Reader">
+		<uri value="platform:/resource/${actionlanguage}" />
+		<modelSlot value="actionlanguage" />
+	</component>
+
+	<!--  generate code -->
+	<component class="org.eclipse.xpand2.Generator">
+		<metaModel idRef="mm_emf"/>
+		<globalVarDef name="filename" value="'A_TechDoc_Contents.tex'"/>
+		<globalVarDef name="figurepath" value="'figures/A_technical-reference/packages'"/>
+		<expand value="template::Generate::Generate FOR {modelinstance,muml,actionlanguage,sdmcore}"/> 	
+		<outlet path="../03_PIM-Design/" overwrite="true" />
+		<outlet name='PACKAGEFIGURES' path='../03_PIM-Design/figures/A_technical-reference/packages/' overwrite='false'/>
+	</component>		
+</workflow>
+
+
+
+
+

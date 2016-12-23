@@ -1,0 +1,10 @@
+<project name="empty diagram project" default="delete" basedir=".">
+        <target name="delete" description="Deleting files...">
+                <delete verbose="true">
+                        <fileset dir="src">
+                                <include name="**/*.java" />
+                                <exclude name="**/custom/*.java" />
+                        </fileset>
+                </delete>
+        </target>
+</project>

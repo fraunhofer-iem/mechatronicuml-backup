@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="ASCII"?>
+<model:SimulinkContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://www.muml.org/simulink/1.0.0" id="_k_gfsFZbEeGPE6WkcD7U7g">
+  <models id="_k_nNYFZbEeGPE6WkcD7U7g" name="BusWoObject">
+    <parameters name="ExtModeEnableFloating" value="on"/>
+    <parameters name="ScopeRefreshTime" value="0.035000"/>
+    <parameters name="RTWModifiedTimeStamp" value="251047116"/>
+    <parameters name="LastModifiedDate" value="Mon Feb 13 15:18:38 2012"/>
+    <parameters name="ShowPortDataTypes" value="off"/>
+    <parameters name="LastModifiedBy" value="dread"/>
+    <parameters name="AccelSystemTargetFile" value="accel.tlc"/>
+    <parameters name="CovNameIncrementing" value="off"/>
+    <parameters name="MinMaxOverflowArchiveMode" value="Overwrite"/>
+    <parameters name="ModifiedByFormat" value="%&lt;Auto>"/>
+    <parameters name="WideLines" value="off"/>
+    <parameters name="BrowserLookUnderMasks" value="off"/>
+    <parameters name="ShowSignalResolutionIcons" value="on"/>
+    <parameters name="SaveDefaultBlockParams" value="on"/>
+    <parameters name="SampleTimeAnnotations" value="off"/>
+    <parameters name="CovExternalEMLEnable" value="off"/>
+    <parameters name="ShowModelReferenceBlockVersion" value="off"/>
+    <parameters name="BlockNameDataTip" value="off"/>
+    <parameters name="MdlSubVersion" value="0"/>
+    <parameters name="CovHtmlReporting" value="on"/>
+    <parameters name="ShowModelReferenceBlockIO" value="off"/>
+    <parameters name="Version" value="7.4"/>
+    <parameters name="SampleTimeColors" value="off"/>
+    <parameters name="ExtModeTrigDirection" value="rising"/>
+    <parameters name="BlockDescriptionStringDataTip" value="off"/>
+    <parameters name="ExtModeTrigLevel" value="0"/>
+    <parameters name="CovCumulativeReport" value="off"/>
+    <parameters name="ExtModeArchiveMode" value="off"/>
+    <parameters name="SavedCharacterEncoding" value="windows-1252"/>
+    <parameters name="DisableAllScopes" value="off"/>
+    <parameters name="CovSaveName" value="covdata"/>
+    <parameters name="ToolBar" value="on"/>
+    <parameters name="Profile" value="off"/>
+    <parameters name="ExtModeTrigPort" value="1"/>
+    <parameters name="ExtModeIncDirWhenArm" value="off"/>
+    <parameters name="CovSaveSingleToWorkspaceVar" value="on"/>
+    <parameters name="CovModelRefEnable" value="Off"/>
+    <parameters name="ExtModeArmWhenConnect" value="on"/>
+    <parameters name="ShowStorageClass" value="off"/>
+    <parameters name="ParamWorkspaceSource" value="MATLABWorkspace"/>
+    <parameters name="SortedOrder" value="off"/>
+    <parameters name="IgnoreBidirectionalLines" value="off"/>
+    <parameters name="RecordCoverage" value="off"/>
+    <parameters name="ModifiedDateFormat" value="%&lt;Auto>"/>
+    <parameters name="SimulationMode" value="normal"/>
+    <parameters name="ExtModeTrigDuration" value="1000"/>
+    <parameters name="ExtModeAutoUpdateStatusClock" value="on"/>
+    <parameters name="ExtModeLogAll" value="on"/>
+    <parameters name="LinearizationMsg" value="none"/>
+    <parameters name="StatusBar" value="on"/>
+    <parameters name="ExtModeTrigType" value="manual"/>
+    <parameters name="BrowserShowLibraryLinks" value="off"/>
+    <parameters name="ExecutionContextIcon" value="off"/>
+    <parameters name="DataTypeOverride" value="UseLocalSettings"/>
+    <parameters name="CovPath" value="/"/>
+    <parameters name="CovForceBlockReductionOff" value="on"/>
+    <parameters name="ShowViewerIcons" value="on"/>
+    <parameters name="ExtModeTrigElement" value="any"/>
+    <parameters name="Created" value="Sat Feb 11 12:18:14 2012"/>
+    <parameters name="TryForcingSFcnDF" value="off"/>
+    <parameters name="ExtModeTrigDurationFloating" value="auto"/>
+    <parameters name="AccelTemplateMakefile" value="accel_default_tmf"/>
+    <parameters name="ExtModeWriteAllDataToWs" value="off"/>
+    <parameters name="UpdateHistory" value="UpdateHistoryNever"/>
+    <parameters name="CovMetricSettings" value="dw"/>
+    <parameters name="OverrideScopeRefreshTime" value="on"/>
+    <parameters name="ExtModeAddSuffixToVar" value="off"/>
+    <parameters name="ShowLineDimensions" value="off"/>
+    <parameters name="Creator" value="dread"/>
+    <parameters name="ExtModeTrigHoldOff" value="0"/>
+    <parameters name="ExtModeTrigMode" value="normal"/>
+    <parameters name="ShowLoopsOnError" value="on"/>
+    <parameters name="CovCumulativeVarName" value="covCumulativeData"/>
+    <parameters name="BlockParametersDataTip" value="off"/>
+    <parameters name="MinMaxOverflowLogging" value="UseLocalSettings"/>
+    <parameters name="covSaveCumulativeToWorkspaceVar" value="on"/>
+    <parameters name="BufferReuse" value="on"/>
+    <parameters name="ShowLinearizationAnnotations" value="on"/>
+    <parameters name="ConfigurationManager" value="None"/>
+    <parameters name="MaxMDLFileLineLength" value="120"/>
+    <parameters name="ModelVersionFormat" value="1.%&lt;AutoIncrement:9>"/>
+    <parameters name="ShowTestPointIcons" value="on"/>
+    <parameters name="LibraryLinkDisplay" value="none"/>
+    <parameters name="ExtModeTrigDelay" value="0"/>
+    <parameters name="ExtModeAutoIncOneShot" value="off"/>
+    <parameters name="AccelMakeCommand" value="make_rtw"/>
+    <parameters name="CovReportOnPause" value="on"/>
+    <parameters name="ExtModeBatchMode" value="off"/>
+    <parameters name="ExtModeSkipDownloadWhenConnect" value="off"/>
+    <lines id="_lAIx0VZbEeGPE6WkcD7U7g" sourcePort="_k__A0FZbEeGPE6WkcD7U7g" targetPort="_lAG8oFZbEeGPE6WkcD7U7g" sourceBlock="_k_-ZwFZbEeGPE6WkcD7U7g" targetBlock="_lAEgYFZbEeGPE6WkcD7U7g">
+      <parameters name="Name" value="b"/>
+      <parameters name="Labels" value="[0, 0]"/>
+      <parameters name="Points" value="[50, 0, 0, -15]"/>
+    </lines>
+    <lines id="_lAJY4FZbEeGPE6WkcD7U7g" sourcePort="_lAAO8FZbEeGPE6WkcD7U7g" targetPort="_lAG8oVZbEeGPE6WkcD7U7g" sourceBlock="_k__n41ZbEeGPE6WkcD7U7g" targetBlock="_lAEgYFZbEeGPE6WkcD7U7g">
+      <parameters name="Name" value="a"/>
+      <parameters name="Labels" value="[0, 0]"/>
+      <parameters name="Points" value="[105, 0]"/>
+    </lines>
+    <lines id="_lAJY4VZbEeGPE6WkcD7U7g" sourcePort="_lAA2AVZbEeGPE6WkcD7U7g" targetPort="_lAD5UFZbEeGPE6WkcD7U7g" sourceBlock="_lAAO8VZbEeGPE6WkcD7U7g" targetBlock="_lACrMVZbEeGPE6WkcD7U7g">
+      <parameters name="Name" value="&lt;b>"/>
+      <parameters name="Labels" value="[0, 0]"/>
+      <parameters name="Points" value="[35, 0, 0, 25]"/>
+    </lines>
+    <lines id="_lAJ_8FZbEeGPE6WkcD7U7g" sourcePort="_lAA2AlZbEeGPE6WkcD7U7g" targetPort="_lACrMFZbEeGPE6WkcD7U7g" sourceBlock="_lAAO8VZbEeGPE6WkcD7U7g" targetBlock="_lABdEFZbEeGPE6WkcD7U7g">
+      <parameters name="Name" value="&lt;a>"/>
+      <parameters name="Labels" value="[0, 0]"/>
+      <parameters name="Points" value="[35, 0, 0, -25]"/>
+    </lines>
+    <lines id="_lAJ_8VZbEeGPE6WkcD7U7g" sourcePort="_lAHjsFZbEeGPE6WkcD7U7g" targetPort="_k__n4VZbEeGPE6WkcD7U7g" sourceBlock="_lAEgYFZbEeGPE6WkcD7U7g" targetBlock="_k__A0VZbEeGPE6WkcD7U7g">
+      <parameters name="Name" value="ab"/>
+      <parameters name="Labels" value="[2, 0]"/>
+      <parameters name="Points" value="[50, 0, 0, 85]"/>
+    </lines>
+    <lines id="_lAKnAFZbEeGPE6WkcD7U7g" sourcePort="_k_9ysVZbEeGPE6WkcD7U7g" targetPort="_lAIx0FZbEeGPE6WkcD7U7g" sourceBlock="_k_9LoFZbEeGPE6WkcD7U7g" targetBlock="_lAHjsVZbEeGPE6WkcD7U7g">
+      <parameters name="Name" value="&lt;b>"/>
+      <parameters name="Labels" value="[0, 0]"/>
+      <parameters name="Points" value="[80, 0, 0, 30]"/>
+    </lines>
+    <lines id="_lAKnAVZbEeGPE6WkcD7U7g" sourcePort="_k_9yslZbEeGPE6WkcD7U7g" targetPort="_lAA2AFZbEeGPE6WkcD7U7g" sourceBlock="_k_9LoFZbEeGPE6WkcD7U7g" targetBlock="_lAAO8VZbEeGPE6WkcD7U7g">
+      <parameters name="Name" value="&lt;ab>"/>
+      <parameters name="Labels" value="[0, 0]"/>
+      <parameters name="Points" value="[35, 0, 0, -75]"/>
+    </lines>
+    <lines id="_lALOEFZbEeGPE6WkcD7U7g" sourcePort="_k__n4lZbEeGPE6WkcD7U7g" targetPort="_k_9ysFZbEeGPE6WkcD7U7g" sourceBlock="_k__A0VZbEeGPE6WkcD7U7g" targetBlock="_k_9LoFZbEeGPE6WkcD7U7g"/>
+    <blocks xsi:type="model:BusSelector" id="_k_9LoFZbEeGPE6WkcD7U7g" name="Bus\nSelector" incomingLines="_lALOEFZbEeGPE6WkcD7U7g" outgoingLines="_lAKnAFZbEeGPE6WkcD7U7g _lAKnAVZbEeGPE6WkcD7U7g">
+      <parameters name="SID" value="5"/>
+      <parameters name="BlockType" value="BusSelector"/>
+      <parameters name="Position" value="[500, 211, 505, 249]"/>
+      <parameters name="OutputSignals" value="ab,ab.b"/>
+      <parameters name="ShowName" value="off"/>
+      <parameters name="Ports" value="[1, 2]"/>
+      <outPorts id="_k_9yslZbEeGPE6WkcD7U7g" name="ab">
+        <parameters name="Port" value="1"/>
+      </outPorts>
+      <outPorts id="_k_9ysVZbEeGPE6WkcD7U7g" name="ab.b">
+        <parameters name="Port" value="2"/>
+      </outPorts>
+      <inPorts id="_k_9ysFZbEeGPE6WkcD7U7g"/>
+    </blocks>
+    <blocks xsi:type="model:Constant" id="_k_-ZwFZbEeGPE6WkcD7U7g" name="b" outgoingLines="_lAIx0VZbEeGPE6WkcD7U7g" value="2">
+      <parameters name="SID" value="2"/>
+      <parameters name="OutDataType" value="fixdt(1, 16)"/>
+      <parameters name="OutScaling" value="2^0"/>
+      <parameters name="BlockType" value="Constant"/>
+      <parameters name="Position" value="[50, 145, 80, 175]"/>
+      <outPorts id="_k__A0FZbEeGPE6WkcD7U7g"/>
+    </blocks>
+    <blocks xsi:type="model:BusCreator" id="_k__A0VZbEeGPE6WkcD7U7g" name="Bus\nCreator1" incomingLines="_lAJ_8VZbEeGPE6WkcD7U7g" outgoingLines="_lALOEFZbEeGPE6WkcD7U7g">
+      <parameters name="SID" value="10"/>
+      <parameters name="BlockType" value="BusCreator"/>
+      <parameters name="Position" value="[315, 211, 320, 249]"/>
+      <parameters name="Inputs" value="2"/>
+      <parameters name="DisplayOption" value="bar"/>
+      <parameters name="ShowName" value="off"/>
+      <parameters name="Ports" value="[2, 1]"/>
+      <outPorts id="_k__n4lZbEeGPE6WkcD7U7g"/>
+      <inPorts id="_k__n4VZbEeGPE6WkcD7U7g" name="ab">
+        <parameters name="Port" value="1"/>
+      </inPorts>
+      <inPorts id="_k__n4FZbEeGPE6WkcD7U7g">
+        <parameters name="Port" value="2"/>
+      </inPorts>
+    </blocks>
+    <blocks xsi:type="model:Constant" id="_k__n41ZbEeGPE6WkcD7U7g" name="a" outgoingLines="_lAJY4FZbEeGPE6WkcD7U7g">
+      <parameters name="SID" value="1"/>
+      <parameters name="OutDataType" value="fixdt(1, 16)"/>
+      <parameters name="OutScaling" value="2^0"/>
+      <parameters name="BlockType" value="Constant"/>
+      <parameters name="Position" value="[50, 80, 80, 110]"/>
+      <outPorts id="_lAAO8FZbEeGPE6WkcD7U7g"/>
+    </blocks>
+    <blocks xsi:type="model:BusSelector" id="_lAAO8VZbEeGPE6WkcD7U7g" name="Bus\nSelector1" incomingLines="_lAKnAVZbEeGPE6WkcD7U7g" outgoingLines="_lAJY4VZbEeGPE6WkcD7U7g _lAJ_8FZbEeGPE6WkcD7U7g">
+      <parameters name="SID" value="8"/>
+      <parameters name="BlockType" value="BusSelector"/>
+      <parameters name="Position" value="[595, 126, 600, 164]"/>
+      <parameters name="OutputSignals" value="a,b"/>
+      <parameters name="ShowName" value="off"/>
+      <parameters name="Ports" value="[1, 2]"/>
+      <outPorts id="_lAA2AlZbEeGPE6WkcD7U7g" name="a">
+        <parameters name="Port" value="1"/>
+      </outPorts>
+      <outPorts id="_lAA2AVZbEeGPE6WkcD7U7g" name="b">
+        <parameters name="Port" value="2"/>
+      </outPorts>
+      <inPorts id="_lAA2AFZbEeGPE6WkcD7U7g"/>
+    </blocks>
+    <blocks xsi:type="model:MiscBlock" id="_lABdEFZbEeGPE6WkcD7U7g" name="Scope a" incomingLines="_lAJ_8FZbEeGPE6WkcD7U7g" type="Scope">
+      <parameters name="SID" value="6"/>
+      <parameters name="Open" value="off"/>
+      <parameters name="DataFormat" value="StructureWithTime"/>
+      <parameters name="NumInputPorts" value="1"/>
+      <parameters name="Position" value="[690, 94, 720, 126]"/>
+      <parameters name="Location" value="[188, 390, 512, 629]"/>
+      <parameters name="Floating" value="off"/>
+      <parameters name="SampleTime" value="0"/>
+      <parameters name="Ports" value="[1]"/>
+      <inPorts id="_lACrMFZbEeGPE6WkcD7U7g" name="1">
+        <parameters name="Port" value="1"/>
+      </inPorts>
+    </blocks>
+    <blocks xsi:type="model:MiscBlock" id="_lACrMVZbEeGPE6WkcD7U7g" name="Scope b" incomingLines="_lAJY4VZbEeGPE6WkcD7U7g" type="Scope">
+      <parameters name="SID" value="7"/>
+      <parameters name="Open" value="off"/>
+      <parameters name="DataFormat" value="StructureWithTime"/>
+      <parameters name="SaveName" value="ScopeData1"/>
+      <parameters name="NumInputPorts" value="1"/>
+      <parameters name="Position" value="[690, 164, 720, 196]"/>
+      <parameters name="Location" value="[188, 390, 512, 629]"/>
+      <parameters name="Floating" value="off"/>
+      <parameters name="SampleTime" value="0"/>
+      <parameters name="Ports" value="[1]"/>
+      <inPorts id="_lAD5UFZbEeGPE6WkcD7U7g" name="1">
+        <parameters name="Port" value="1"/>
+      </inPorts>
+    </blocks>
+    <blocks xsi:type="model:BusCreator" id="_lAEgYFZbEeGPE6WkcD7U7g" name="Bus\nCreator" incomingLines="_lAIx0VZbEeGPE6WkcD7U7g _lAJY4FZbEeGPE6WkcD7U7g" outgoingLines="_lAJ_8VZbEeGPE6WkcD7U7g">
+      <parameters name="SID" value="3"/>
+      <parameters name="BlockType" value="BusCreator"/>
+      <parameters name="Position" value="[205, 116, 210, 154]"/>
+      <parameters name="Inputs" value="2"/>
+      <parameters name="DisplayOption" value="bar"/>
+      <parameters name="ShowName" value="off"/>
+      <parameters name="Ports" value="[2, 1]"/>
+      <outPorts id="_lAHjsFZbEeGPE6WkcD7U7g" name="ab"/>
+      <inPorts id="_lAG8oVZbEeGPE6WkcD7U7g" name="a">
+        <parameters name="Port" value="1"/>
+      </inPorts>
+      <inPorts id="_lAG8oFZbEeGPE6WkcD7U7g" name="b">
+        <parameters name="Port" value="2"/>
+      </inPorts>
+    </blocks>
+    <blocks xsi:type="model:MiscBlock" id="_lAHjsVZbEeGPE6WkcD7U7g" name="Scope b1" incomingLines="_lAKnAFZbEeGPE6WkcD7U7g" type="Scope">
+      <parameters name="SID" value="9"/>
+      <parameters name="Open" value="off"/>
+      <parameters name="DataFormat" value="StructureWithTime"/>
+      <parameters name="SaveName" value="ScopeData2"/>
+      <parameters name="NumInputPorts" value="1"/>
+      <parameters name="Position" value="[690, 254, 720, 286]"/>
+      <parameters name="Location" value="[188, 390, 512, 629]"/>
+      <parameters name="Floating" value="off"/>
+      <parameters name="SampleTime" value="0"/>
+      <parameters name="Ports" value="[1]"/>
+      <inPorts id="_lAIx0FZbEeGPE6WkcD7U7g" name="1">
+        <parameters name="Port" value="1"/>
+      </inPorts>
+    </blocks>
+  </models>
+</model:SimulinkContainer>

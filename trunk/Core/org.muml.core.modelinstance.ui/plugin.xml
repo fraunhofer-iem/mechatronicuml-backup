@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="diagraminformation" name="DiagramInformation" schema="schema/diagraminformation.exsd"/>
+   <extension-point id="modelinitializer" name="Modelinitializer" schema="schema/modelinitializer.exsd"/>
+  <extension point="org.eclipse.ui.newWizards" >
+    <category name="MechatronicUML" id="org.muml" />
+    <category name="Diagrams" id="org.muml.diagrams" parentcategory="org.muml"/>
+
+    <wizard
+           category="org.muml"
+           class="org.muml.core.modelinstance.ui.model.FujabaModelNewWizard"
+           icon="icons/muml.png"
+           id="org.muml.core.modelinstance.ui.modelwizard.FujabaNewModelWizardID"
+           name="MechatronicUML Model">
+         <description>
+            Creates a new MechatronicUML model file
+         </description>
+    </wizard>
+    
+  </extension>
+  
+  <extension
+        point="org.eclipse.ui.menus">
+     <menuContribution
+           locationURI="popup:org.muml?after=types">
+        <menu
+              icon="icons/muml.png"
+              id="org.muml.tools"
+              label="Tools">
+           <command
+                 commandId="org.muml.core.tools.splitcategories"
+                 icon="icons/muml.png"
+                 id="org.muml.core.tools.splitcategories"
+                 label="Split categories into separate files"
+                 style="push">
+              <visibleWhen checkEnabled="false">
+						<or>
+							<reference definitionId="org.muml.expression.mumlfile"></reference>
+							<reference definitionId="org.muml.expression.typesfile"></reference>
+						</or>
+			  </visibleWhen>
+           </command>
+              
+        </menu>
+      </menuContribution>
+  </extension>
+  
+  <extension
+        point="org.eclipse.ui.menus">
+     <menuContribution
+           locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+        <menu
+              icon="icons/muml.png"
+              id="org.muml"
+              label="MechatronicUML">
+           <command
+                 commandId="org.muml.core.ui.command.newmodel"
+                 icon="icons/muml.png"
+                 id="org.muml.core.ui.command.newmodel"
+                 label="Create new MechatronicUML Model"
+                 style="push">
+              <visibleWhen
+                    checkEnabled="false">
+                    <iterate ifEmpty="false" operator="and">
+                    	<adapt type="org.eclipse.core.resources.IContainer" />
+                    </iterate>	
+              </visibleWhen>
+           </command>
+
+           <separator
+                 name="structural-diagrams"
+                 visible="true">
+           </separator>
+           <separator
+                 name="behavioral-diagrams"
+                 visible="true">
+           </separator>
+           <separator
+                 name="diagrams"
+                 visible="true">
+           </separator>
+           <separator
+                 name="types"
+                 visible="true">
+           </separator>
+           <separator
+                 name="additions"
+                 visible="false">
+           </separator>
+           <separator
+                 name="utilities"
+                 visible="true">
+           </separator>
+        </menu>
+     </menuContribution>
+  </extension>
+
+  <extension
+        point="org.eclipse.ui.commands">
+     <category
+           id="org.muml"
+           name="MechatronicUML">
+     </category>
+     <category
+           id="org.muml.tools"
+           name="Tools">
+     </category>
+     <command
+           categoryId="org.muml"
+           defaultHandler="org.muml.core.modelinstance.ui.handlers.CreateModelFileCommand"
+           description="Create new MechatronicUML Model"
+           id="org.muml.core.ui.command.newmodel"
+           name="Create new MechatronicUML Model">
+     </command>
+     <command
+           categoryId="org.muml.tools"
+           defaultHandler="org.muml.core.modelinstance.ui.handlers.SplitCategoriesIntoSeparateFilesCommand"
+           description="Split categories into separate files"
+           id="org.muml.core.tools.splitcategories"
+           name="Split categories into separate files">
+     </command>
+  </extension>
+
+
+  <extension
+      point="org.eclipse.ui.menus">
+   <menuContribution
+         allPopups="false"
+         locationURI="popup:org.muml?after=utilities">
+      <separator
+            name="beforeMumlUtilities"
+            visible="true">
+      </separator>
+           <command
+                 commandId="org.muml.core.ui.command.batchdiagramcreation"
+                 icon="icons/batchdiagram.gif"
+                 id="org.muml.core.ui.command.batchdiagramcreation"
+                 label="Batch Diagram Creation..."
+                 style="push">
+             <visibleWhen checkEnabled="false">
+				<or>
+					<reference definitionId="org.muml.expression.mumlfile"></reference>
+				</or>
+			 </visibleWhen>
+           </command>
+   </menuContribution>
+  </extension>
+
+
+  <extension point="org.eclipse.ui.commands">
+     <command
+           categoryId="org.muml"
+           defaultHandler="org.muml.core.modelinstance.ui.batch.BatchDiagramCreationCommand"
+           description="Batch Diagram Creation Wizard"
+           id="org.muml.core.ui.command.batchdiagramcreation"
+           name="Batch Diagram Creation">
+     </command>
+  </extension>
+
+</plugin>

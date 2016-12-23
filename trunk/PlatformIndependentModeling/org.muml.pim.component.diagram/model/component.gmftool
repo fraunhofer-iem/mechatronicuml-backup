@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmftool:ToolRegistry
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
+  <palette
+      title="componenteditorPalette">
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="Components"
+        collapsible="true"
+        active="//@palette/@tools.0/@tools.1">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Atomic Component"
+          description="Create new Atomic Component">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/AtomicComponent.gif"
+            bundle="org.muml.pim.common"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Structured Component"
+          description="Create new Structured Component">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/StructuredComponent.gif"
+            bundle="/org.muml.pim.common"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Component Part"
+          description="Create new Component Part">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/ComponentPart.gif"
+            bundle="/org.muml.pim.common"/>
+      </tools>
+    </tools>
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="Ports"
+        collapsible="true"
+        active="//@palette/@tools.1/@tools.0">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="DiscretePort"
+          description="Create new DiscretePort">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/DiscretePort.gif"
+            bundle="org.muml.pim.common"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="ContinuousPort"
+          description="Create new ContinuousPort">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/ContinuousPort.gif"
+            bundle="org.muml.pim.common"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="HybridPort"
+          description="Create new HybridPort">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/HybridPort.gif"
+            bundle="org.muml.pim.common"/>
+      </tools>
+    </tools>
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="Connectors"
+        description=""
+        collapsible="true"
+        active="//@palette/@tools.2/@tools.0">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Assembly"
+          description="Create new Assembly">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/Assembly.gif"
+            bundle="/org.muml.pim.common"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Delegation"
+          description="Create new Delegation">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/Delegation.gif"
+            bundle="/org.muml.pim.common"/>
+      </tools>
+    </tools>
+  </palette>
+</gmftool:ToolRegistry>

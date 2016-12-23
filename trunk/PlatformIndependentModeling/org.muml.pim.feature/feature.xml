@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.muml.pim.feature" label="%featureName" provider-name="%providerName" version="1.0.0.qualifier">
+
+   <description>
+      %description
+   </description>
+
+   <copyright url="%copyrightURL">
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <requires>
+      <import feature="org.muml.modelcopy.feature" version="0.5.0"/>
+      <import feature="org.muml.emm.feature" version="0.1.0"/>
+      <import feature="org.muml.core.feature" version="0.5.0"/>
+      <import feature="org.muml.ape.feature" version="0.5.0"/>
+   </requires>
+
+   <plugin download-size="0" id="org.muml.pim.actionlanguage.xtext" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.pim.actionlanguage.xtext.ui" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.pim.common" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.pim.componentinstanceconfiguration.diagram" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.pim.componentinstanceconfiguration.diagram.custom" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.pim.messagetype.diagram" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.pim.messagetype.diagram.custom" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.pim" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.pim.actionlanguage" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.pim.actionlanguage.edit" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.pim.edit" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.pim.coordinationprotocol.diagram" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.pim.coordinationprotocol.diagram.custom" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.pim.realtimestatechart.diagram" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.pim.realtimestatechart.diagram.custom" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.pim.component.diagram" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.pim.component.diagram.custom" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.pim.doc" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.pim.edit.properties" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.pim.pattern.diagram" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.pim.pattern.diagram.custom" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.pim.operationrepository.diagram" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.pim.operationrepository.diagram.custom" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.pim.onetomanycommunicationschemata" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.pim.ui" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.pim.actionlanguage.edit.properties" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.pim.coordinationspecification.common" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.pim.types" install-size="0" unpack="false" version="0.0.0"/>
+
+</feature>

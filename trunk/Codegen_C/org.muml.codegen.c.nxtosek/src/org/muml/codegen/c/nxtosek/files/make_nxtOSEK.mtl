@@ -1,0 +1,45 @@
+[comment encoding = UTF-8 /]
+[module make_nxtOSEK('http://www.muml.org/pim/connector/1.0.0', 
+				'http://www.muml.org/pim/behavior/1.0.0',
+				'http://www.muml.org/core/1.0.0',
+				'http://www.muml.org/pim/actionlanguage/1.0.0',
+				'http://www.muml.org/pim/msgtype/1.0.0',
+				'http://www.muml.org/pim/types/1.0.0',
+				'http://www.muml.org/modelinstance/1.0.0',
+				'http://www.muml.org/pim/component/1.0.0',
+				'http://www.muml.org/pim/instance/1.0.0',
+				'http://www.muml.org/pim/realtimestatechart/1.0.0')]
+
+[import org::muml::codegen::c::queries::stringQueries]
+[import org::muml::codegen::c::queries::modelQueries]
+
+[template public generateMakeFileForNXTOSEK(CIs : OrderedSet(ComponentInstance), path : String)]
+[file (path+'makefile', false, 'UTF-8')]
+# Targets
+TARGET = nxtOSEKImpl
+TARGET_SOURCES := \
+		Middleware/MiddlewareCore.c\
+		Middleware/MiddlewareInternalLogic.c\
+		Middleware/NetworkInterfaceImplementation.c\
+		continuousComponents/ContImplementations.c\
+		lib/port.c\
+		lib/MessageBuffer.c\
+		lib/NetworkMessageBuffer.c\
+		lib/NetworkInterface.c\
+		messages/Messages.c\
+		operations/operations.c\
+		[for (comp : Component | CIs.componentType)][if ((comp.oclIsKindOf(AtomicComponent)) and (comp.componentKind = ComponentKind::SOFTWARE_COMPONENT))]		RTSCs/[comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart).getClassName().toLowerFirst()/].c\
+[/if][/for]
+		[for (comp : Component | CIs.componentType) ? (not(componentKind=ComponentKind::CONTINUOUS_COMPONENT) and comp.oclIsKindOf(AtomicComponent))]		components/[comp.getClassName().toLowerFirst()/].c\
+[/for]
+		main.c
+
+		
+TOPPERS_OSEK_OIL_SOURCE := ./nxtOSEK.oil
+BUILD_MODE = ROM_ONLY
+
+O_PATH ?= build
+
+include ../../ecrobot/ecrobot.mak
+[/file]
+[/template]

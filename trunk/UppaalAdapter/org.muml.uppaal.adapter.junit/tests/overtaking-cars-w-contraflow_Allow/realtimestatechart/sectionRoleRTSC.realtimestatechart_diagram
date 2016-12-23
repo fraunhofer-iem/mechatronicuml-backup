@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:realtimestatechart="http://www.muml.org/pim/realtimestatechart/1.0.0" xmi:id="_oiy0EMDAEeS7le8XRznCjg" type="Real-Time Statechart" name="sectionRoleRTSC.realtimestatechart_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_I8cvcMEjEeSjEoI_E610hw" type="2007" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_I8cvcsEjEeSjEoI_E610hw" type="5061"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_I8cvc8EjEeSjEoI_E610hw" type="5062"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_I8cvdMEjEeSjEoI_E610hw" type="7030"/>
+    <element xmi:type="realtimestatechart:RealtimeStatechart" href="../overtaking-cars-w-contraflow_Correct.muml#_tTuUMJKkEeSSMde45fnrcg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I8cvccEjEeSjEoI_E610hw" width="337" height="241"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_oiy0EcDAEeS7le8XRznCjg"/>
+  <element xmi:type="realtimestatechart:RealtimeStatechart" href="../overtaking-cars-w-contraflow_Correct.muml#_tTuUMJKkEeSSMde45fnrcg"/>
+</notation:Diagram>

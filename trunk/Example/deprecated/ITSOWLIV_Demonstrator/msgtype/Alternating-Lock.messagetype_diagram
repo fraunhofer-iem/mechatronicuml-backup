@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_wfKEwGNAEeOY3OClxpdOXw" type="Message Type" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_wzKl4GNAEeOY3OClxpdOXw" type="2008" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_wzLM8GNAEeOY3OClxpdOXw" type="5017"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_wzLM8WNAEeOY3OClxpdOXw" type="7010">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_wzLM8mNAEeOY3OClxpdOXw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_wzLM82NAEeOY3OClxpdOXw"/>
+    </children>
+    <element xmi:type="msgtype:MessageTypeRepository" href="../ITSOWLIV_Demonstrator.fujaba#_wzG7gGNAEeOY3OClxpdOXw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wzKl4WNAEeOY3OClxpdOXw" x="480" y="132" width="217" height="133"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_wfKEwWNAEeOY3OClxpdOXw"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../ITSOWLIV_Demonstrator.fujaba#_bJzO0CprEeOJnb1xCalP4w"/>
+</notation:Diagram>

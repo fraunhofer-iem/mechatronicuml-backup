@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.muml:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.muml="http://www.muml.org/ape/1.0.0" contributorId=" ">
+  <reconciler/>
+  <genModel href="verificationExtension.genmodel#/"/>
+  <referencedGenerators href="../../org.muml.core/model/core.propsheet#_i_I4kOHNEeS5Putgio2lkg"/>
+  <plugin id="org.muml.uppaal.adapter.extension.edit.properties" name="Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="1.0.0.qualifier">
+    <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
+    <requiredBundles>org.eclipse.ui</requiredBundles>
+    <requiredBundles>org.eclipse.core.runtime</requiredBundles>
+    <requiredBundles>org.eclipse.emf.edit</requiredBundles>
+    <requiredBundles>org.muml.uppaal.adapter.extension.edit</requiredBundles>
+    <requiredBundles>org.muml.ape.runtime</requiredBundles>
+    <requiredBundles>org.muml.uppaal.adapter.extension</requiredBundles>
+    <requiredBundles>org.muml.core.edit</requiredBundles>
+    <requiredBundles>org.muml.core.edit.properties</requiredBundles>
+  </plugin>
+  <packages>
+    <genPackage href="verificationExtension.genmodel#//verificationextension"/>
+    <classes>
+      <genClass href="verificationExtension.genmodel#//verificationextension/CommittedExtension"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="../../org.muml.core/model/core.genmodel#//core/Extension/extendableBase"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+        <creationOppositeConstraint>
+          <filters xsi:type="org.muml:OCLFilter" expression="false"/>
+        </creationOppositeConstraint>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNUeHNEeS5Putgio2lkg"/>
+    </classes>
+    <classes>
+      <genClass href="verificationExtension.genmodel#//verificationextension/ClockBinding"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="verificationExtension.genmodel#//verificationextension/ClockBinding/clock"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="verificationExtension.genmodel#//verificationextension/ClockBinding/value"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:SpinnerPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes>
+      <genClass href="verificationExtension.genmodel#//verificationextension/ElementToVerifyExtension"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="../../org.muml.core/model/core.genmodel#//core/Extension/extendableBase"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+        <creationOppositeConstraint>
+          <filters xsi:type="org.muml:OCLFilter" expression="false"/>
+        </creationOppositeConstraint>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNUeHNEeS5Putgio2lkg"/>
+    </classes>
+    <classes>
+      <genClass href="verificationExtension.genmodel#//verificationextension/ClockBindingsExtension"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="verificationExtension.genmodel#//verificationextension/ClockBindingsExtension/clockBindings"/>
+        <readOnlyFilters xsi:type="org.muml:OCLFilter" expression="true"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="../../org.muml.core/model/core.genmodel#//core/Extension/extendableBase"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+        <creationOppositeConstraint>
+          <filters xsi:type="org.muml:OCLFilter" expression="false"/>
+        </creationOppositeConstraint>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNUeHNEeS5Putgio2lkg"/>
+    </classes>
+  </packages>
+</org.muml:PropertyGenerator>

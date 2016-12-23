@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+	<extension point="org.eclipse.ui.menus">
+	   <menuContribution
+	         allPopups="false"
+	         locationURI="popup:org.muml?after=diagrams">
+	      <command
+	            commandId="org.muml.dependencylanguage.commands.CreateSynthesizableBehavior"
+	            icon="icons/SynthesizableBehavior.gif"
+	            id="org.muml.pim.common.commands.OpenTypeDialogCommand"
+	            label="Create Synthesizable Behavior"
+	            style="push">
+	            	<visibleWhen checkEnabled="true">
+						<or>
+							<with variable="selection">
+								<iterate ifEmpty="false">
+								<instanceof value="org.muml.pim.component.AtomicComponent">
+								</instanceof>
+								</iterate>
+							</with>
+							<and>
+								<with variable="activePartId">
+									<equals value="org.muml.pim.component.diagram.part.ComponentDiagramEditorID"/>
+								</with>
+								<with variable="selection">
+									<iterate ifEmpty="false">
+									<instanceof
+									value="org.muml.pim.component.diagram.edit.parts.StaticAtomicComponentEditPart">
+									</instanceof>
+									</iterate>
+								</with>
+							</and>
+						</or>
+					</visibleWhen>
+	      </command>
+	   </menuContribution>
+	</extension>
+	
+	<extension
+        point="org.eclipse.ui.commands">
+     <category
+           id="org.muml"
+           name="Fujaba">
+     </category>
+     <command
+           categoryId="org.muml"
+           defaultHandler="org.muml.cbs.dependencylanguage.ui.commands.CreateSynthesizableBehaviorCommand"
+           description="Create Synthesizable Behavior"
+           id="org.muml.cbs.dependencylanguage.commands.CreateSynthesizableBehavior"
+           name="Create Synthesizable Behavior">
+     </command>
+  </extension>
+</plugin>

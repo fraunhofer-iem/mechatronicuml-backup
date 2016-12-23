@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Storydiagrams Tabbed Properties
+Bundle-SymbolicName: org.muml.storydiagram.edit.properties; singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.emf.ecore,
+ org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.edit,
+ org.muml.storydiagram,
+ org.muml.storydiagram.edit,
+ org.muml.ape.runtime,
+ org.muml.core.edit,
+ org.muml.core.edit.properties
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.muml.storydiagram.properties.metamodel, org.muml.storydiagram.properties.constraint,
+ org.muml.storydiagram.properties.storydiagram.editor,
+ org.muml.storydiagram.properties.activities.editor,
+ org.muml.storydiagram.properties.calls.editor,
+ org.muml.storydiagram.properties.patterns.editor,
+ org.muml.storydiagram.properties.templates.editor,
+ org.muml.storydiagram.properties.expressions.editor,
+ org.muml.storydiagram.properties.expressions.editor,
+ org.muml.storydiagram.properties.expressions.editor
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" type="Storydiagrams" name="DeleteIterator.storydiagrams_diagram" measurementUnit="Pixel">
+  <children xsi:type="notation:Shape" type="2005" fontName="Segoe UI">
+    <children xsi:type="notation:DecorationNode" type="5013"/>
+    <element href="../ConvoyCoordinationProtocol.fujaba#_82C4sPRBEeK0h5bDo3RUAg"/>
+    <layoutConstraint xsi:type="notation:Bounds" x="290" y="95"/>
+  </children>
+  <children xsi:type="notation:Shape" type="2003" fontName="Segoe UI">
+    <children xsi:type="notation:DecorationNode" type="5011"/>
+    <children xsi:type="notation:DecorationNode" type="7001">
+      <children xsi:type="notation:Shape" type="3001" fontName="Segoe UI">
+        <children xsi:type="notation:DecorationNode" type="7002">
+          <children xsi:type="notation:Shape" type="3005" fontName="Segoe UI">
+            <children xsi:type="notation:DecorationNode" type="5008"/>
+            <children xsi:type="notation:DecorationNode" type="5009"/>
+            <children xsi:type="notation:DecorationNode" type="5010"/>
+            <children xsi:type="notation:DecorationNode" type="7006">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <children xsi:type="notation:DecorationNode" type="7007">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <element href="../ConvoyCoordinationProtocol.fujaba#_DjtqkPRCEeK0h5bDo3RUAg"/>
+            <layoutConstraint xsi:type="notation:Bounds" x="75" y="19"/>
+          </children>
+        </children>
+        <children xsi:type="notation:DecorationNode" type="7003">
+          <styles xsi:type="notation:SortingStyle"/>
+          <styles xsi:type="notation:FilteringStyle"/>
+        </children>
+        <element href="../ConvoyCoordinationProtocol.fujaba#_9TXG0fRBEeK0h5bDo3RUAg"/>
+        <layoutConstraint xsi:type="notation:Bounds"/>
+      </children>
+    </children>
+    <element href="../ConvoyCoordinationProtocol.fujaba#_9TXG0PRBEeK0h5bDo3RUAg"/>
+    <layoutConstraint xsi:type="notation:Bounds" x="285" y="190" width="261" height="191"/>
+  </children>
+  <children xsi:type="notation:Shape" type="2008" fontName="Segoe UI">
+    <children xsi:type="notation:DecorationNode" type="5014"/>
+    <element href="../ConvoyCoordinationProtocol.fujaba#_-nj5oPRBEeK0h5bDo3RUAg"/>
+    <layoutConstraint xsi:type="notation:Bounds" x="400" y="430"/>
+  </children>
+  <styles xsi:type="notation:DiagramStyle"/>
+  <element href="../ConvoyCoordinationProtocol.fujaba#_8OxdUPRBEeK0h5bDo3RUAg"/>
+  <edges type="4001" source="//@children.0" target="//@children.1">
+    <children xsi:type="notation:DecorationNode" type="6001">
+      <layoutConstraint xsi:type="notation:Location" y="40"/>
+    </children>
+    <styles xsi:type="notation:RoutingStyle"/>
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="../ConvoyCoordinationProtocol.fujaba#__GWucPRBEeK0h5bDo3RUAg"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[7, 34, 0, -85]$[3, 101, -4, -18]"/>
+    <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.5147058823529411,0.24444444444444444)"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.4482758620689655,0.09424083769633508)"/>
+  </edges>
+  <edges type="4001" source="//@children.1" target="//@children.2">
+    <children xsi:type="notation:DecorationNode" type="6001">
+      <layoutConstraint xsi:type="notation:Location" y="40"/>
+    </children>
+    <styles xsi:type="notation:RoutingStyle"/>
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="../ConvoyCoordinationProtocol.fujaba#__gY_EPRBEeK0h5bDo3RUAg"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[18, 180, -6, -60]$[19, 231, -5, -9]"/>
+    <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.4329501915708812,0.05759162303664921)"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.375,0.225)"/>
+  </edges>
+</notation:Diagram>

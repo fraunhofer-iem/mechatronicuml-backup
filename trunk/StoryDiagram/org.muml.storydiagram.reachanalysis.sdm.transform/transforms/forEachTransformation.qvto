@@ -1,0 +1,878 @@
+//ns.storydriven.org
+modeltype activitiesModelType uses storydiagrams::activities('http://www.muml.org/storydiagram/1.0.0');
+modeltype patterns uses storydiagrams::patterns('http://www.muml.org/storydiagram/1.0.0');
+modeltype patternExpression uses storydiagrams::patterns::expressions('http://www.muml.org/storydiagram/1.0.0');
+modeltype expressions uses core::expressions('http://www.muml.org/core/1.0.0');
+modeltype expressions_common uses core::expressions::common('http://www.muml.org/core/1.0.0');
+modeltype calls uses storydiagrams::calls('http://www.muml.org/storydiagram/1.0.0');
+modeltype callsExpressions uses storydiagrams::calls::expressions('http://www.muml.org/storydiagram/1.0.0');
+
+//reachanalysis
+modeltype reach_sdm uses sdm ('http://www.muml.org/storydiagram.reachanalysis.reachabilitygraph/sdm/1.0.0');
+modeltype reach_core uses reachabilityGraph ('http://www.muml.org/core/reachabilitygraph/1.0.0');
+//others
+modeltype ecore uses ecore;
+
+transformation forEachTransformation(in GTS :reach_sdm, out forEachGTS : reach_sdm){
+
+ 	configuration property generateMatchingEntries : Boolean; 
+ 	
+	main() {
+		GTS.objects()[GraphTransformationSystem] -> map mapGTS();
+	}
+	
+	mapping GraphTransformationSystem::mapGTS() : GraphTransformationSystem{
+		activities := self.activities -> map startTransformation();
+	}
+	
+		///////////////////////////////////////////////
+/////////main mapping starting with a given activity///////////////////////////////////////////////////
+	   ////////////////////////////////////////////////
+	mapping  Activity::startTransformation(): Activity{
+		
+		name := self.name + '_forEach';
+		
+		//create the parameters step and result
+		inParameter += object EParameter{
+			eType := reach_sdm::StepGraph.oclAsType(EClass);
+			name := 'step';
+		};
+		inParameter += object EParameter{
+			eType := reach_sdm::SuccessorStepGraphs.oclAsType(EClass);
+			name := 'result';
+		};
+		
+		containedParameters += inParameter;
+	
+		//****************************
+		//******	Part One	******
+		//****************************
+	
+		//create start and stop node
+		ownedActivityNode += self.ownedActivityNode[InitialNode] -> map createStartNode();
+		ownedActivityNode += self.ownedActivityNode[ActivityFinalNode] -> map createStopNode();
+		
+		var firstNode: ModifyingStoryNode := self.ownedActivityEdge -> 
+				select(r |r.source.oclIsTypeOf(InitialNode))->
+					first().oclAsType(ActivityEdge).target.oclAsType(ModifyingStoryNode);
+	
+		//create the for each node
+		var forEachNode: ModifyingStoryNode := firstNode.map createForEachNode();
+		ownedActivityNode += forEachNode;
+	
+		//create copy node
+		var copyNode :=  firstNode.map createCopyNode();
+		ownedActivityNode += copyNode;
+		
+		//create bound result node
+		var boundResultNode := firstNode.map createBoundResultNode();
+		ownedActivityNode += boundResultNode;
+		
+		//****************************
+		//******	Part Two	******
+		//****************************
+		
+		//create restore matching node
+		var restoreMatchingNode: ModifyingStoryNode := firstNode.map createRestoreMatchingNode();
+		ownedActivityNode += restoreMatchingNode;
+		
+		//deep clone of all existing elements of the input activity
+		
+		ownedActivityNode += self.ownedActivityNode -> map createNodes(firstNode);
+		
+		//****************************
+		//******   Part Three	******
+		//****************************
+		
+		//create activity edges which connect nodes created in part one and two. 
+		//simple vizualization of activity edges needed to be created:
+		//
+		//						|<----------------------------------------------------------------------|
+		//						|																		|
+		//  StartNode --> ForEachNode --> CopyNode -- BoundResultNode --> RestoreMatchingNode --> DeepClonedNodes
+		//					|	 |													|
+		//  EndNode <-------|    |<-------------------------------------------------|   
+		
+		
+			//startNode to forEachNode
+		ownedActivityEdge += object ActivityEdge{
+			source := self.ownedActivityNode[InitialNode].resolveoneIn(InitialNode:: createStartNode, InitialNode);
+			target := forEachNode;
+		};
+		
+			//forEachNode to copyNode
+		ownedActivityEdge += object ActivityEdge{
+			source := forEachNode;
+			target := copyNode;
+			
+			guard := EdgeGuard::EACH_TIME;
+		};
+	
+			//forEachNode to stopNode
+		ownedActivityEdge += object ActivityEdge{
+			source := forEachNode;
+			target := self.ownedActivityNode[ActivityFinalNode].resolveoneIn(ActivityFinalNode:: createStopNode, ActivityFinalNode);
+			
+			guard := EdgeGuard::END;
+		};
+		
+			//copyNode to boundResultNode
+		ownedActivityEdge += object ActivityEdge{
+			source := copyNode;
+			target := boundResultNode;
+			
+		};
+		
+			//boundResultNode to restoreMatchingNode
+		ownedActivityEdge += object ActivityEdge{
+			source := boundResultNode;
+			target := restoreMatchingNode;
+		};
+	
+			//create outgoing edges of first node, they should now start from node restoreMatchingNode
+		ownedActivityEdge += firstNode.outgoing -> map createOutgoingEdges(restoreMatchingNode);
+		
+			//create incoming edges of first node, they should now end at the forEachNode
+		ownedActivityEdge += firstNode.incoming -> map createIncomingEdges(forEachNode);
+		
+	
+			//create all edges inbetween the deepClonedNodes + the last one have to point to the forEachNode
+		ownedActivityEdge += self.ownedActivityEdge -> createEdges(firstNode, forEachNode);
+	}
+	
+	///////////////////////////////////////////////
+/////////     create start and stop node   ///////////////////////////////////////////////////
+	///////////////////////////////////////////////
+	mapping InitialNode:: createStartNode() :InitialNode{
+		name := 'startNode';
+	}
+	mapping ActivityFinalNode::  createStopNode() :ActivityFinalNode{
+		name := 'stopNode';
+	}
+	
+	////////////////////////////////////////////////
+///////////    create the for each node     ////////////////////////////////////////////////////
+	///////////////////////////////////////////////
+	
+	mapping ModifyingStoryNode:: createForEachNode() :ModifyingStoryNode{
+		
+		name := 'forEachNode';
+		_forEach := true;
+		
+		//create story pattern for the forEach modifying story node
+		//important is that nothing is created or deleted in there!
+		ownedRule := self.ownedRule.map createPattern4ForEachNode();
+	}
+	
+	mapping StoryPattern:: createPattern4ForEachNode(): StoryPattern{
+		//create object variables considering that the create labeled one can be omitted
+		//and the delete labeled one changed to check only.
+		variable += self.variable[ObjectVariable] -> map createObjectVariable4ForEachPattern();
+		
+		//TODO: okey, object variables are copied, but what about copying primitive and object set variables???
+	
+		//create link variables considering the same condition as described above
+		linkVariable += self.linkVariable[LinkVariable] -> map createLinkVariables4ForEachPattern();
+		
+		//TODO: okey, link variables are copied, but what about copying containment relation and path???
+	
+		//create object variable step of the type StepGraph
+		var step: ObjectVariable := object ObjectVariable{
+			classifier:= reach_sdm::StepGraph.oclAsType(EClass);
+			bindingState:=BindingState::BOUND;
+			name:= 'step';		
+		};
+		variable += step;
+		
+		//create link variables 'contains' inbetween step and existing object variables (with BindingOperator::CREATE and BindingState::BOUND)
+		linkVariable += self.variable[ObjectVariable] -> map createLinkVariablesContains(step);
+	
+		//create new object variable 'trans' of type SDMTransition, trans is later needed
+		//when calling the copy method
+		var trans := object  ObjectVariable{
+			classifier:= reach_sdm::SDMTransition.oclAsType(EClass);
+			name:= 'trans';	
+			bindingOperator := BindingOperator::CREATE;
+		};
+		variable += trans;
+		
+		self.variable[ObjectVariable] -> forEach(objectVariable){
+			//every not created object has to be added to the hashMap MachtingEntry
+			if(objectVariable.bindingOperator != BindingOperator::CREATE
+				and generateMatchingEntries) then{
+				// create matching entry variable
+				var entry : ObjectVariable = object ObjectVariable {
+					classifier := MatchingEntry.oclAsType(EClass);
+					name := objectVariable.resolveone(ObjectVariable).name + '_entry';
+					bindingOperator := BindingOperator::CREATE;
+					
+				};
+				variable += entry;
+			
+				// create link between matching entry and trans
+				linkVariable += object LinkVariable {
+					source := trans;
+					target := entry;
+					name := 'matching';
+					targetEnd := SDMTransition.oclAsType(EClass).eAllReferences->select(name = 'matching')->first();
+					bindingOperator := BindingOperator::CREATE;
+				};
+				
+				// link MatchEntry to objectVariable (value)
+				linkVariable += object LinkVariable {
+					name := 'value';
+					source := entry;
+					target := objectVariable.resolveone(ObjectVariable);
+					targetEnd := MatchingEntry.oclAsType(EClass).eAllReferences->select(name = 'value')->first();
+					bindingOperator := BindingOperator::CREATE;
+				};
+			
+				//attributeAssignment to set the name of the object variable as key in MatchEntry
+				entry.attributeAssignment += map createAttributeAssignment(objectVariable.resolveone(ObjectVariable).name,objectVariable);
+				
+			}endif;
+		};
+
+		//copying further values
+		constraint += self.constraint -> map copyConstraint();
+		bindingSemantics := self.bindingSemantics;
+	}
+	
+	//forEachNodes does only contains objectVariables that needed to be machted within the firstNode,
+	//hence we do not consider objectVariables of BindingOperator::CREATE,
+	//also nothing should be deleted now, this has to be done after copying the StepGraph 'step' respectively object it contains
+	mapping ObjectVariable:: createObjectVariable4ForEachPattern(): ObjectVariable
+		when{self.bindingOperator != BindingOperator::CREATE}{
+			
+		bindingSemantics:=self.bindingSemantics;
+		
+		if(self.bindingState != BindingState::BOUND)
+		 then
+			bindingState:= self.bindingState
+		 else
+		 	bindingState:= BindingState::UNBOUND
+		endif;
+		
+		name:= self.name;
+		bindingOperator := BindingOperator::CHECK_ONLY;
+		classifier:= self.classifier;
+		
+		attributeAssignment += self.attributeAssignment -> map copyAttributeAssignment();
+		constraint += self.constraint -> map copyConstraint();	
+	}
+	
+	//same conditions as described 4 creating object variables
+	mapping LinkVariable::createLinkVariables4ForEachPattern(): LinkVariable
+		when{self.bindingOperator != BindingOperator::CREATE}{
+		source := self.source.resolveone(ObjectVariable);
+		target := self.target.resolveone(ObjectVariable);
+		name := self.name;
+		targetEnd:= self.targetEnd;
+		bindingOperator := BindingOperator::CHECK_ONLY;
+		bindingSemantics := self.bindingSemantics;
+	}
+	
+	//step is the only object variable that can be bound,
+	//all previous objects which were bound, are now unbound but are getting a connection to step,
+	//this ensures that the given objects by step are taken for matching and transformation when forEach activity is executed
+	mapping ObjectVariable::createLinkVariablesContains(in step: ObjectVariable): LinkVariable
+		when{self.bindingOperator != BindingOperator::CREATE and self.bindingState=BindingState::BOUND}{
+			
+	    target := self.resolveoneIn(ObjectVariable::createObjectVariable4ForEachPattern,ObjectVariable);
+	    source := step;	
+	    if(self.classifier.isChangeableNode())then{
+	   	 	name:= 'changeable';
+	    	targetEnd:= reach_sdm::StepGraph.oclAsType(EClass).eAllStructuralFeatures->select(r |r.name = 'changeableNodes')->first().oclAsType(EReference); 
+	    }else{
+	    	name:= 'unchangeable';
+	    	targetEnd:= reach_sdm::StepGraph.oclAsType(EClass).eAllStructuralFeatures->select(r |r.name = 'unchangeableNodes')->first().oclAsType(EReference); 
+	    }endif;
+	}
+	
+	// The second parameter o ensures that a new AttributeAssignment is created for each ObjectVariable,
+	// even if they have the same name. Otherwise, the same String is always mapped to the same AttributeAssignment. 
+	
+	mapping createAttributeAssignment(in n: String, in o: ObjectVariable): AttributeAssignment{
+		attribute := MatchingEntry.oclAsType(EClass).eAttributes->select(name = 'key')->first();
+		valueExpression := object TextualExpression{
+			expressionText := '\''+ n + '\'';
+			language := 'OCL';
+			languageVersion := '1.0';	
+		};
+	}
+	
+	/////////////////////////////////////////////////////////////////////////////////
+///// mapping for creating a CopyStatementNode to call the 'copyStepGraph' Method //////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+
+	mapping ModifyingStoryNode:: createCopyNode(): StatementNode{
+		name := 'copyNode';
+		statementExpression := self.map createCopyMethodCallExpression();
+		map createParameterBindings(statementExpression.oclAsType(MethodCallExpression));
+	}
+	
+	mapping ModifyingStoryNode:: createCopyMethodCallExpression(): MethodCallExpression{
+	
+		opaqueCallable := self.map createOpaqueCallable();
+		callee := opaqueCallable;
+	}
+	
+	mapping createParameterBindings(inout mce: MethodCallExpression){
+			
+		mce.ownedParameterBindings += 'step'.map createBinding(mce);
+		mce.ownedParameterBindings += 'trans'.map createBinding(mce);
+		mce.ownedParameterBindings += 'succ'.map createBinding(mce);
+	}
+	
+	mapping ModifyingStoryNode:: createOpaqueCallable(): OpaqueCallable{
+		name:= 'org.muml.storydiagram.reachanalysis.sdm.SDMReachabilityComputation.copyStepGraph';
+ 		inParameter +=  'step'.map createEParameter(reach_sdm::StepGraph.oclAsType(EClass));
+		inParameter +=  'trans'.map createEParameter(reach_sdm::SDMTransition.oclAsType(EClass));
+		outParameter += 'succ'.map createEParameter(reach_sdm::StepGraph.oclAsType(EClass));
+		containedParameters += inParameter;
+		containedParameters += outParameter;
+	}
+	
+	mapping String:: createBinding(in inInvocation: Invocation):ParameterBinding{
+		parameter := self.resolveoneIn(String::createEParameter, EParameter);
+			
+		valueExpression := object  TextualExpression{
+			expressionText:= self;	
+			language:= 'OCL';
+			languageVersion:= '1.0';
+		
+		};
+		
+		invocation := inInvocation;
+	}
+	
+		///////////////////////////////////////////////////
+/////////  mappings for  creation of the after copy node ///////////////////////////////////////////////////
+	   ///////////////////////////////////////////////////
+	
+	mapping ModifyingStoryNode:: createBoundResultNode(): ModifyingStoryNode{
+		name := 'boundResultNode';
+		
+		ownedRule := self.map createPattern4BoundResultNode();
+	}
+	
+	//this one creates a node, for (1) binding the right succ object and (2) create a connection to the resultParameter
+	//when executing the activity the succ(StepGraph) is referenzed by result(SuccessorStepGraphs)
+	mapping ModifyingStoryNode:: createPattern4BoundResultNode(): StoryPattern{
+		var step: ObjectVariable := object ObjectVariable{
+			classifier:= reach_sdm::StepGraph.oclAsType(EClass);
+			bindingState:=BindingState::BOUND;
+			name:= 'step';		
+		};
+		variable += step;
+		
+		var succ: ObjectVariable := object ObjectVariable{
+			classifier:= reach_sdm::StepGraph.oclAsType(EClass);
+			name:= 'succ';		
+		};
+		variable += succ;
+		
+		var trans: ObjectVariable := object ObjectVariable{
+			classifier:= reach_sdm::SDMTransition.oclAsType(EClass);
+			bindingState:=BindingState::BOUND;
+			name:= 'trans';		
+		};
+		variable += trans;
+		
+		var resultV: ObjectVariable := object ObjectVariable{
+			classifier:= reach_sdm::SuccessorStepGraphs.oclAsType(EClass);
+			bindingState:=BindingState::BOUND;
+			name:= 'result';		
+		};
+		variable += resultV;
+		
+		var reachG: ObjectVariable := object ObjectVariable{
+			classifier:= reach_core::ReachabilityGraph.oclAsType(EClass);
+			name:= 'reachGraph';
+		};
+		variable += reachG;
+		
+		linkVariable += object LinkVariable{
+			name := 'reachabilityGraph';
+			target := reachG;
+			source := step;
+			targetEnd := reach_core::ReachabilityGraphState.oclAsType(EClass).eAllStructuralFeatures->select(r |r.name = 'reachabilityGraph')->first().oclAsType(EReference);
+			sourceEnd := reach_core::ReachabilityGraph.oclAsType(EClass).eAllStructuralFeatures->select(r |r.name = 'states')->first().oclAsType(EReference);
+		};
+		
+		linkVariable += object LinkVariable{
+			name := 'reachabilityGraph';
+			target := reachG;
+			source := succ;
+			targetEnd := reach_core::ReachabilityGraphState.oclAsType(EClass).eAllStructuralFeatures->select(r |r.name = 'reachabilityGraph')->first().oclAsType(EReference);
+			sourceEnd := reach_core::ReachabilityGraph.oclAsType(EClass).eAllStructuralFeatures->select(r |r.name = 'states')->first().oclAsType(EReference);		
+		
+			bindingOperator := BindingOperator::CREATE;
+		};
+		
+		linkVariable += object LinkVariable{
+			name := 'successors';
+			target := succ;
+			source := resultV;
+			targetEnd := reach_sdm::SuccessorStepGraphs.oclAsType(EClass).eAllStructuralFeatures->select(r |r.name = 'successors')->first().oclAsType(EReference);
+		
+			bindingOperator := BindingOperator::CREATE;
+		};
+		
+		linkVariable += object LinkVariable{
+			name := 'targetSucc';
+			target := succ;
+			source := trans;
+			targetEnd := reach_core::ReachabilityGraphTransition.oclAsType(EClass).eAllStructuralFeatures->select(r |r.name = 'target')->first().oclAsType(EReference);
+			sourceEnd := reach_core::ReachabilityGraphState.oclAsType(EClass).eAllStructuralFeatures->select(r |r.name = 'incomingTransitions')->first().oclAsType(EReference);
+		};
+	}
+	
+		////////////////////////////////////////////////
+///////////    create restore matching Node     ////////////////////////////////////////////////////
+	///////////////////////////////////////////////
+	
+	mapping ModifyingStoryNode:: createRestoreMatchingNode() :ModifyingStoryNode{
+		
+		name := self.name + '_restoreMatchingNode';
+		
+		ownedRule := self.ownedRule.map createPattern4RestoreMatchingNode();
+	}
+	
+	mapping StoryPattern:: createPattern4RestoreMatchingNode(): StoryPattern{
+
+		var trans := object  ObjectVariable{
+			classifier:= reach_sdm::SDMTransition.oclAsType(EClass);
+			name:= 'trans';	
+			bindingState := BindingState::BOUND;
+		};
+		variable += trans;
+		
+		var succ: ObjectVariable := object ObjectVariable{
+			classifier:= reach_sdm::StepGraph.oclAsType(EClass);
+			bindingState:=BindingState::BOUND;
+			name:= 'succ';		
+		};
+		variable += succ;
+		
+		//create object variables 
+		self.variable[ObjectVariable] -> forEach(objectVariable){
+			
+			//should be only done in case it is a changeable node
+			if(objectVariable.classifier.isChangeableNode()) then{
+			
+				//create '_succ' object variable
+				var succOV: ObjectVariable := objectVariable.map createSuccObject();
+				variable += succOV;
+				
+				//create a link variable 'changeable' from StepGraph; succ to the '_succ' created/destroied object variable
+				switch{			
+
+					case(objectVariable.bindingOperator = BindingOperator::CREATE) {
+					
+						linkVariable += object LinkVariable{
+							name:= 'changeable';	
+				    		target := succOV;
+				    		source := succ;
+				   			targetEnd:= reach_sdm::StepGraph.oclAsType(EClass).eAllStructuralFeatures->select(r |r.name = 'changeableNodes')->first().oclAsType(EReference); 
+				    		bindingOperator := BindingOperator::CREATE;
+						};
+					}
+					
+					case(objectVariable.bindingOperator = BindingOperator::DESTROY) {
+					
+						linkVariable += object LinkVariable{
+							name:= 'changeable';	
+				    		target := succOV;
+				    		source := succ;
+				   			targetEnd:= reach_sdm::StepGraph.oclAsType(EClass).eAllStructuralFeatures->select(r |r.name = 'changeableNodes')->first().oclAsType(EReference); 
+				    		bindingOperator := BindingOperator::DESTROY;
+						};
+					}
+				};
+						
+				//in case the binding operator is not created, the original and _succ object variables needed to be connected
+				//via an index entry object variable (more information in copyStepGraph-Method)
+				switch{
+					case(objectVariable.bindingOperator != BindingOperator::CREATE){	
+				
+						// create index entry variable
+						var entry : ObjectVariable = object ObjectVariable {
+							classifier := IndexEntry.oclAsType(EClass);
+							name := objectVariable.name + '_entry';
+						};
+						variable += entry;
+						
+						// create link between index entry and trans
+						linkVariable += object LinkVariable {
+							source := trans;
+							target := entry;
+							name := 'index';
+							targetEnd := SDMTransition.oclAsType(EClass).eAllReferences->select(name = 'index')->first();
+						};
+						
+						//create original object variable
+						 var originalOV :ObjectVariable := objectVariable.map createOriginalObject();
+						 variable += originalOV;
+						
+						// link IndexEntry to original
+						linkVariable += object LinkVariable {
+							name := 'key';
+							source := entry;
+							target := originalOV;
+							targetEnd := IndexEntry.oclAsType(EClass).eAllReferences->select(name = 'key')->first();
+						};
+						
+						// link IndexEntry to succ
+						linkVariable += object LinkVariable {
+							name := 'value';
+							source := entry;
+							target := succOV;
+							targetEnd := IndexEntry.oclAsType(EClass).eAllReferences->select(name = 'value')->first();
+						};
+					}
+				};
+			}else{	//should be only done in case it is not a changeable node
+				
+					//create original object variable
+					var originalOV :ObjectVariable := objectVariable.map createOriginalObject();
+					variable += originalOV;
+				}
+			endif;
+		};
+
+		//create link variables if there are BindingOperator::CREATE//::DESTROY
+		self.linkVariable[LinkVariable] -> forEach(linkV){
+
+			switch{
+				case(linkV.bindingOperator = BindingOperator::CREATE or linkV.bindingOperator = BindingOperator::DESTROY){
+					
+					//try to find first the succ object, still in case the object is unchangeable, there is no succ object
+					//in the other case connect to original object
+			
+					var clonedLinkV2: LinkVariable := linkV.deepclone().oclAsType(LinkVariable);	
+					linkVariable += clonedLinkV2;
+					
+					clonedLinkV2.source := linkV.source.resolveoneIn(ObjectVariable:: createSuccObject, ObjectVariable);
+					if(clonedLinkV2.source.oclIsUndefined())then{
+						clonedLinkV2.source := linkV.source.resolveoneIn(ObjectVariable:: createOriginalObject, ObjectVariable);
+					}endif;
+					
+					clonedLinkV2.target := linkV.target.resolveoneIn(ObjectVariable:: createSuccObject, ObjectVariable);
+					if(clonedLinkV2.target.oclIsUndefined())then{
+						clonedLinkV2.target := linkV.target.resolveoneIn(ObjectVariable:: createOriginalObject, ObjectVariable);
+					}endif;
+				}			
+			};
+		}
+		
+		
+		//TODO: okey, link variables are copied, but what about copying containment relation and path???
+	}
+	
+	mapping ObjectVariable:: createOriginalObject(): ObjectVariable{
+		init{
+			result := self.deepclone().oclAsType(ObjectVariable);
+		}
+		
+		bindingOperator := BindingOperator::CHECK_ONLY;
+		bindingState := BindingState::BOUND;
+	}
+	
+	mapping ObjectVariable:: createSuccObject(): ObjectVariable{
+		init{
+			result := self.deepclone().oclAsType(ObjectVariable);
+		}
+		
+		name := self.name + '_succ';
+		bindingState := BindingState::UNBOUND;
+	}
+	
+		//////////////////////////////////////////////////////////
+///////// mappings for copying and modifying an activity node ///////////////////////////////////////////////////
+	   //////////////////////////////////////////////////////////
+	   
+	   // TODO: what about other activity nodes?
+	abstract mapping ActivityNode:: createNodes(in firstNode: ModifyingStoryNode): ActivityNode
+		disjuncts ModifyingStoryNode::createNode2,
+		JunctionNode:: createNode2{}
+	
+	mapping JunctionNode:: createNode2(in firstNode: ModifyingStoryNode): JunctionNode{
+		name := self.name;
+		
+		
+	}
+	
+	mapping ModifyingStoryNode:: createNode2(in firstNode: ModifyingStoryNode): ModifyingStoryNode
+		when{self != firstNode
+	}{
+		name := self.name;
+		ownedRule := self.oclAsType(ModifyingStoryNode).ownedRule.deepclone().oclAsType(StoryPattern);
+		
+		map adjustPattern(ownedRule);
+	}
+	
+	mapping adjustPattern(inout storyPattern: StoryPattern){
+		
+		var succ: ObjectVariable := object ObjectVariable{
+			classifier:= reach_sdm::StepGraph.oclAsType(EClass);
+			bindingState:=BindingState::BOUND;
+			name:= 'succ';		
+		};		
+		
+		storyPattern.variable[ObjectVariable]-> forEach(objectVariable){
+			if(objectVariable.classifier.isChangeableNode())then{
+				//add to all changeable object variable names '_succ'
+				objectVariable.name := objectVariable.name + '_succ';
+				
+				//in case it is an created object variable, a link variable 'changeableNodes' from 
+				//StepGraph; succ to the '_succ' object variable has to be created
+				switch{
+					case(objectVariable.bindingOperator = BindingOperator::CREATE){
+						
+						storyPattern.linkVariable += object LinkVariable{
+							name:= 'changeable';
+							target := objectVariable;
+			   				source := succ;
+	    					targetEnd:= reach_sdm::StepGraph.oclAsType(EClass).eAllStructuralFeatures->select(r |r.name = 'changeableNodes')->first().oclAsType(EReference);
+	    					bindingOperator := BindingOperator::CREATE;
+						};
+					};
+					case(objectVariable.bindingOperator = BindingOperator::DESTROY){
+						
+						storyPattern.linkVariable += object LinkVariable{
+							name:= 'changeable';
+							target := objectVariable;
+			   				source := succ;
+	    					targetEnd:= reach_sdm::StepGraph.oclAsType(EClass).eAllStructuralFeatures->select(r |r.name = 'changeableNodes')->first().oclAsType(EReference);
+	    					bindingOperator := BindingOperator::DESTROY;
+						};
+					};
+				};
+			}endif;
+		};
+		
+		storyPattern.variable += succ;
+	}
+	
+//////////////////////////////////////////////////////////
+///////// mappings for copying and modifying an activity edge ///////////////////////////////////////////////////
+	   //////////////////////////////////////////////////////////
+	mapping ActivityEdge:: createEdges(in firstNode: ModifyingStoryNode, in forEachNode: ModifyingStoryNode): ActivityEdge
+		when{not self.source.oclIsKindOf(InitialNode) and self.source != firstNode
+	}{
+		guard := self.guard;
+		guardExpression := self.guardExpression;
+		guardException := self.guardException;
+
+		switch{
+			
+				//last edge of the deepClonedNodes is detected, target has to be now the forEachNode
+			case( self.target.oclIsKindOf(ActivityFinalNode)){
+				switch{
+					case(self.source.oclIsTypeOf(ModifyingStoryNode)){
+						source := self.source.resolveoneIn(ModifyingStoryNode:: createNode2, ModifyingStoryNode);
+					}
+					case(self.source.oclIsTypeOf(JunctionNode)){
+						source := self.source.resolveoneIn(JunctionNode:: createNode2, JunctionNode);
+					}
+				};
+				
+				target := forEachNode;
+			}
+			case(self.target != firstNode){
+				
+				//all edges inbetween the deepClonedNodes
+				switch{
+					case(self.source.oclIsTypeOf(ModifyingStoryNode)){
+						source := self.source.resolveoneIn(ModifyingStoryNode:: createNode2, ModifyingStoryNode);
+					}
+					case(self.source.oclIsTypeOf(JunctionNode)){
+						source := self.source.resolveoneIn(JunctionNode:: createNode2, JunctionNode);
+					}
+				};
+				
+				switch{
+					case(self.target.oclIsTypeOf(ModifyingStoryNode)){
+						target := self.target.resolveoneIn(ModifyingStoryNode:: createNode2, ModifyingStoryNode);
+					}
+					case(self.target.oclIsTypeOf(JunctionNode)){
+						target := self.target.resolveoneIn(JunctionNode:: createNode2, JunctionNode);
+					}
+				};
+			}
+		};
+	}
+	
+	
+	//create the outgoing edges of the "restoreMatchingNode"
+	mapping ActivityEdge:: createOutgoingEdges(in restoreMatchingNode: ModifyingStoryNode): ActivityEdge{
+				
+		guard := self.guard;
+		guardExpression := self.guardExpression;
+		guardException := self.guardException;
+		
+		source := restoreMatchingNode;
+		
+		switch{
+			case(self.target.oclIsTypeOf(ModifyingStoryNode)){
+				target := self.target.resolveoneIn(ModifyingStoryNode:: createNode2, ModifyingStoryNode);
+			}
+			case(self.target.oclIsTypeOf(JunctionNode)){
+				target := self.target.resolveoneIn(JunctionNode:: createNode2, JunctionNode);
+			}
+		};		
+			
+			//in case there is just one node in the given activity or the previous activity edge pointed to stop node,
+			//we have to point back to the forEachNode
+		switch{
+			case(target.oclIsUndefined()){
+				target := self.source.resolveoneIn(ModifyingStoryNode:: createForEachNode, ModifyingStoryNode);
+			}
+		};
+	}
+	
+		//create the incoming edges of the "forEachNode"
+	mapping ActivityEdge:: createIncomingEdges(in forEachNode: ModifyingStoryNode): ActivityEdge
+		 when {not self.source.oclIsTypeOf(InitialNode)} {
+				
+		guard := self.guard;
+		guardExpression := self.guardExpression;
+		guardException := self.guardException;
+		
+		target := forEachNode;
+		
+		switch{
+			case(self.source.oclIsTypeOf(ModifyingStoryNode)){
+				source := self.source.resolveoneIn(ModifyingStoryNode:: createNode2, ModifyingStoryNode);
+			}
+			case(self.source.oclIsTypeOf(JunctionNode)){
+				source := self.source.resolveoneIn(JunctionNode:: createNode2, JunctionNode);
+			}
+		};		
+			
+	}
+	
+		//////////////////////////////////////////////////
+///////// mappings for copying an attribute assignment ///////////////////////////////////////////////////
+	   ///////////////////////////////////////////////////
+
+	mapping AttributeAssignment:: copyAttributeAssignment(): AttributeAssignment{
+		attribute := self.attribute;
+		valueExpression := self.valueExpression.map createExpression();
+		objectVariable := self.objectVariable.resolveone(ObjectVariable);
+	}
+	
+		///////////////////////////////////////////////
+/////////     mappings for copying a constraint    ///////////////////////////////////////////////////
+	   ///////////////////////////////////////////////
+
+	   
+	mapping Constraint::copyConstraint():Constraint
+	{
+		pattern := self.pattern;
+		objectVariable := self.objectVariable; 
+		constraintExpression := self.constraintExpression.deepclone().oclAsType(Expression);
+	}
+	
+	abstract mapping Expression::createExpression():Expression
+	disjuncts TextualExpression::copyExpression, LiteralExpression::copyExpression,
+	AttributeValueExpression::copyExpression,
+	ObjectVariableExpression::copyExpression,CollectionSizeExpression::copyExpression,PrimitiveVariableExpression::copyExpression,
+	ArithmeticExpression::copyExpression, ComparisonExpression::copyExpression,LogicalExpression::copyExpression,
+	BinaryExpression::copyExpression{}
+		
+	abstract mapping BinaryExpression::copyExpression():BinaryExpression 
+	{
+		comment := self.comment;
+		leftExpression := self.leftExpression.map createExpression();
+		rightExpression := self.rightExpression.map createExpression();
+	}
+	
+	mapping TextualExpression::copyExpression():TextualExpression
+	{
+		comment := self.comment;
+		expressionText := self.expressionText;
+		language:= self.language;
+		languageVersion:= self.languageVersion;
+	}
+	
+	mapping LiteralExpression::copyExpression():LiteralExpression
+	{
+		comment := self.comment;
+		value:= self.value;
+	}
+
+	mapping AttributeValueExpression::copyExpression():AttributeValueExpression
+	{
+		comment := self.comment;
+		_object:= self._object.resolveone(ObjectVariable);
+		attribute := self.attribute;
+	}
+	
+	mapping ObjectVariableExpression::copyExpression():ObjectVariableExpression	
+	{
+		comment := self.comment;
+		_object:= self._object.resolveone(ObjectVariable);
+	}
+	
+	mapping CollectionSizeExpression::copyExpression():CollectionSizeExpression
+	{	
+		comment := self.comment;	
+		set:= self.set;		
+	}
+	
+	mapping PrimitiveVariableExpression::copyExpression():PrimitiveVariableExpression
+	{
+		comment := self.comment;
+		primitiveVariable:= self.primitiveVariable;
+	}
+	
+	mapping ComparisonExpression::copyExpression():BinaryExpression inherits BinaryExpression::copyExpression
+	{
+		init{result := object ComparisonExpression{operator:= self.operator;}}
+		
+	}
+	
+	mapping ArithmeticExpression::copyExpression():BinaryExpression inherits BinaryExpression::copyExpression
+	{
+		init{result := object ArithmeticExpression{operator:= self.operator;}}
+	}
+	
+	mapping LogicalExpression::copyExpression():BinaryExpression inherits BinaryExpression::copyExpression
+	{
+		init{result := object LogicalExpression{operator:= self.operator;}}
+	}
+
+
+	///////////////////////////////////////////////
+/////////       simple create mappings   ///////////////////////////////////////////////////
+	///////////////////////////////////////////////
+	
+	mapping String::createEParameter(c: EClass):EParameter{
+		eType := c;
+		name := self;
+	}
+	
+		///////////////////////////////////////////////
+/////////        simple helper              ///////////////////////////////////////////////////
+	///////////////////////////////////////////////
+	helper EClass:: isChangeableNode(): Boolean{
+		
+		log(self.name);
+		GTS.objects()[GraphTransformationSystem].unchangeableNodes-> forEach(eclass){			
+			log(eclass.name);
+		
+			if(self.name = eclass.name) then{
+				return false;
+			}endif;
+		};
+		
+		//for testing purposes when starting with QVT Interpreter in Run-Time Workspace
+		//if(self.name = 'Component' or self.name='Port')then{
+		//	return false;
+		//}endif;
+		
+		return true;
+	}
+}

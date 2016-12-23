@@ -1,0 +1,7 @@
+# Tracing options for the org.muml.storydiagram.diagram plug-in
+
+# Common issues
+org.muml.storydiagram.diagram/debug=false
+
+# Visual IDs
+org.muml.storydiagram.diagram/debug/visualID=false

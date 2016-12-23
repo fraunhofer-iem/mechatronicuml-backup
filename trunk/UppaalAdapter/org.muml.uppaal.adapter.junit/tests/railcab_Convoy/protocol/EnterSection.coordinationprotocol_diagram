@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:connector="http://www.muml.org/pim/connector/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:protocol="http://www.muml.org/pim/protocol/1.0.0" xmi:id="_C5hegCyhEeWilfSCCIuA_A" type="Coordination Protocol" name="EnterSection.coordinationprotocol_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_C5hegiyhEeWilfSCCIuA_A" type="2005" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_C5hehCyhEeWilfSCCIuA_A" type="7005">
+      <children xmi:type="notation:Node" xmi:id="_F251oCyhEeWilfSCCIuA_A" type="3015">
+        <children xmi:type="notation:DecorationNode" xmi:id="_F251pSyhEeWilfSCCIuA_A" type="5023"/>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_F251oSyhEeWilfSCCIuA_A"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_F251oiyhEeWilfSCCIuA_A" fontName="Segoe UI"/>
+        <styles xmi:type="notation:LineStyle" xmi:id="_F251oyyhEeWilfSCCIuA_A" lineColor="0"/>
+        <element xmi:type="protocol:CoordinationProtocol" href="../railcab-correct.muml#_Jft0gMOmEeKt4K__LJLJ8w"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_F251pCyhEeWilfSCCIuA_A" x="280" y="39"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_F251piyhEeWilfSCCIuA_A" type="3006" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_F251qCyhEeWilfSCCIuA_A" type="5006">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_F251qSyhEeWilfSCCIuA_A" y="5"/>
+        </children>
+        <element xmi:type="protocol:Role" href="../railcab-correct.muml#_JgQnEMOmEeKt4K__LJLJ8w"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_F251pyyhEeWilfSCCIuA_A" x="265" y="114"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_F251qiyhEeWilfSCCIuA_A" type="3006" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_F251rCyhEeWilfSCCIuA_A" type="5006">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_F251rSyhEeWilfSCCIuA_A" y="5"/>
+        </children>
+        <element xmi:type="protocol:Role" href="../railcab-correct.muml#_JgTDUcOmEeKt4K__LJLJ8w"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_F251qyyhEeWilfSCCIuA_A" x="430" y="114"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_F251riyhEeWilfSCCIuA_A" type="3013">
+        <children xmi:type="notation:DecorationNode" xmi:id="_F251syyhEeWilfSCCIuA_A" type="5018"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_F251tCyhEeWilfSCCIuA_A" type="5019"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_F251tSyhEeWilfSCCIuA_A" type="5025"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_F251tiyhEeWilfSCCIuA_A" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_F251tyyhEeWilfSCCIuA_A"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_F251uCyhEeWilfSCCIuA_A"/>
+        </children>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_F251ryyhEeWilfSCCIuA_A"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_F251sCyhEeWilfSCCIuA_A" fontName="Segoe UI"/>
+        <styles xmi:type="notation:LineStyle" xmi:id="_F251sSyhEeWilfSCCIuA_A" lineColor="0"/>
+        <element xmi:type="connector:MessageBuffer" href="../railcab-correct.muml#_aVfFgMOrEeKt4K__LJLJ8w"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_F251siyhEeWilfSCCIuA_A" x="51" y="185"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_F26csCyhEeWilfSCCIuA_A" type="3013">
+        <children xmi:type="notation:DecorationNode" xmi:id="_F26ctSyhEeWilfSCCIuA_A" type="5018"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_F26ctiyhEeWilfSCCIuA_A" type="5019"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_F26ctyyhEeWilfSCCIuA_A" type="5025"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_F26cuCyhEeWilfSCCIuA_A" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_F26cuSyhEeWilfSCCIuA_A"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_F26cuiyhEeWilfSCCIuA_A"/>
+        </children>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_F26csSyhEeWilfSCCIuA_A"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_F26csiyhEeWilfSCCIuA_A" fontName="Segoe UI"/>
+        <styles xmi:type="notation:LineStyle" xmi:id="_F26csyyhEeWilfSCCIuA_A" lineColor="0"/>
+        <element xmi:type="connector:MessageBuffer" href="../railcab-correct.muml#_rED7oMOrEeKt4K__LJLJ8w"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_F26ctCyhEeWilfSCCIuA_A" x="475" y="189"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_F26cuyyhEeWilfSCCIuA_A" type="3014">
+        <children xmi:type="notation:DecorationNode" xmi:id="_F26cwCyhEeWilfSCCIuA_A" type="5020"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_F26cwSyhEeWilfSCCIuA_A" type="5021"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_F26cwiyhEeWilfSCCIuA_A" type="5022"/>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_F26cvCyhEeWilfSCCIuA_A"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_F26cvSyhEeWilfSCCIuA_A" fontName="Segoe UI"/>
+        <styles xmi:type="notation:LineStyle" xmi:id="_F26cviyhEeWilfSCCIuA_A" lineColor="0"/>
+        <element xmi:type="protocol:ConnectorQualityOfServiceAssumptions" href="../railcab-correct.muml#_JgWGoMOmEeKt4K__LJLJ8w"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_F26cvyyhEeWilfSCCIuA_A" x="265" y="189"/>
+      </children>
+    </children>
+    <element xmi:type="protocol:CoordinationProtocol" href="../railcab-correct.muml#_Jft0gMOmEeKt4K__LJLJ8w"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_C5hegyyhEeWilfSCCIuA_A" height="421"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_C5hegSyhEeWilfSCCIuA_A"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../railcab-correct.muml#_HgnqkMOmEeKt4K__LJLJ8w"/>
+</notation:Diagram>

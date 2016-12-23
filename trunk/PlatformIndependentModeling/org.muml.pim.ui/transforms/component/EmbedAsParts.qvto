@@ -1,0 +1,64 @@
+transformation InstantiationTransformation(in input : ComponentPackage, out output : ComponentPackage);
+
+modeltype PimPackage uses pim('http://www.muml.org/pim/1.0.0');
+modeltype ConnectorPackage uses pim::connector('http://www.muml.org/pim/1.0.0');
+modeltype ComponentPackage uses pim::component('http://www.muml.org/pim/1.0.0');
+modeltype ProtocolPackage uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype ValueTypePackage uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype TypePackage uses pim::types('http://www.muml.org/pim/1.0.0');
+
+
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+main() {
+
+	var components : Set(Component) := input.rootObjects()[Component];
+
+	if (not components->isEmpty()) then {
+		var structuredComponent : StaticStructuredComponent := new StaticStructuredComponent("");
+		
+		components->forEach(component) {
+			structuredComponent.embeddedComponentParts += new ComponentPart(component);
+		};
+		if(not components->select(c|c.componentKind=ComponentKind::CONTINUOUS_COMPONENT)->isEmpty()) then{
+			structuredComponent.componentKind:=ComponentKind::HYBRID_COMPONENT;
+		}endif;
+	} endif;
+	
+}
+
+
+constructor StaticStructuredComponent::StaticStructuredComponent(_name : String) {
+	name := _name;
+}
+
+/**
+	Create a ComponentPart and its Ports
+**/
+constructor ComponentPart::ComponentPart(_type : Component) {
+	componentType := _type;
+	name:=_type.name;
+	componentType.ports -> forEach(port){
+		-- if no port part exists that references this port as its port type, create new port part (see #591)
+		if((portParts -> select(p : PortPart | p.portType = port)) -> isEmpty()) then {
+			portParts +=  object PortPart {
+				portType:=port;
+			};
+		} endif;
+	};
+	cardinality:=object Cardinality{
+		lowerBound:=new NaturalNumber(1);
+		upperBound:=new NaturalNumber(1);
+	};
+	
+}
+
+constructor NaturalNumber::NaturalNumber(_number : Integer) {
+	if(_number<0) then{
+		infinity:=true;
+	}
+	else{
+		value:=_number;
+	}
+	endif;
+}

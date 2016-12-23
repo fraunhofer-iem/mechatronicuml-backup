@@ -1,0 +1,1217 @@
+<?xml version="1.0" encoding="ASCII"?>
+<model:SimulinkContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:buffer="de.uni_paderborn.fujaba.simulink.model.msglib.buffer" xmlns:model="de.uni_paderborn.fujaba.simulink" xmlns:msglib="de.uni_paderborn.fujaba.simulink.model.msglib" xmlns:stateflow="de.uni_paderborn.fujaba.simulink.model.stateflow" id="_SDNyIKYDEeKR7Lwk7UC7tQ">
+  <models id="_SZXoUKYDEeKR7Lwk7UC7tQ" name="LibraryReference">
+    <lines id="_Tl_McKYDEeKR7Lwk7UC7tQ" sourcePort="_TmBBoaYDEeKR7Lwk7UC7tQ" targetPort="_Tl9-UKYDEeKR7Lwk7UC7tQ" sourceBlock="_Tl_McaYDEeKR7Lwk7UC7tQ" targetBlock="_Sa_Y8KYDEeKR7Lwk7UC7tQ"/>
+    <lines id="_TmLZsaYDEeKR7Lwk7UC7tQ" sourcePort="_TmNO4aYDEeKR7Lwk7UC7tQ" targetPort="_TmKyoKYDEeKR7Lwk7UC7tQ" sourceBlock="_TmMAwKYDEeKR7Lwk7UC7tQ" targetBlock="_SbXMYKYDEeKR7Lwk7UC7tQ"/>
+    <lines id="_TrXbsKYDEeKR7Lwk7UC7tQ" sourcePort="_SjtQEKYDEeKR7Lwk7UC7tQ" targetPort="_TkewkKYDEeKR7Lwk7UC7tQ" sourceBlock="_Sd0qgKYDEeKR7Lwk7UC7tQ" targetBlock="_SbXMYKYDEeKR7Lwk7UC7tQ"/>
+    <lines id="_Tr0HoKYDEeKR7Lwk7UC7tQ" sourcePort="_SgUk4KYDEeKR7Lwk7UC7tQ" targetPort="_TjJT0KYDEeKR7Lwk7UC7tQ" sourceBlock="_Sd0qgKYDEeKR7Lwk7UC7tQ" targetBlock="_SbXMYKYDEeKR7Lwk7UC7tQ"/>
+    <lines id="_Tr3K8KYDEeKR7Lwk7UC7tQ" sourcePort="_Sg3-gKYDEeKR7Lwk7UC7tQ" targetPort="_TjU6AKYDEeKR7Lwk7UC7tQ" sourceBlock="_Sd0qgKYDEeKR7Lwk7UC7tQ" targetBlock="_Sa_Y8KYDEeKR7Lwk7UC7tQ"/>
+    <lines id="_Tr61UKYDEeKR7Lwk7UC7tQ" sourcePort="_SjBTkKYDEeKR7Lwk7UC7tQ" targetPort="_TiZs8KYDEeKR7Lwk7UC7tQ" sourceBlock="_Sd0qgKYDEeKR7Lwk7UC7tQ" targetBlock="_Sa_Y8KYDEeKR7Lwk7UC7tQ"/>
+    <lines id="_Tr-fsKYDEeKR7Lwk7UC7tQ" sourcePort="_SjP9EKYDEeKR7Lwk7UC7tQ" targetPort="_Tii24KYDEeKR7Lwk7UC7tQ" sourceBlock="_Sd0qgKYDEeKR7Lwk7UC7tQ" targetBlock="_SbXMYKYDEeKR7Lwk7UC7tQ"/>
+    <lines id="_TsCKEKYDEeKR7Lwk7UC7tQ" sourcePort="_Sh-xwKYDEeKR7Lwk7UC7tQ" targetPort="_TjvJsKYDEeKR7Lwk7UC7tQ" sourceBlock="_Sd0qgKYDEeKR7Lwk7UC7tQ" targetBlock="_Sa_Y8KYDEeKR7Lwk7UC7tQ"/>
+    <lines id="_TsGbgKYDEeKR7Lwk7UC7tQ" sourcePort="_SiMNIKYDEeKR7Lwk7UC7tQ" targetPort="_TkD50KYDEeKR7Lwk7UC7tQ" sourceBlock="_Sd0qgKYDEeKR7Lwk7UC7tQ" targetBlock="_SbXMYKYDEeKR7Lwk7UC7tQ"/>
+    <lines id="_TsJe0KYDEeKR7Lwk7UC7tQ" sourcePort="_SjgbwKYDEeKR7Lwk7UC7tQ" targetPort="_TkSjUKYDEeKR7Lwk7UC7tQ" sourceBlock="_Sd0qgKYDEeKR7Lwk7UC7tQ" targetBlock="_Sa_Y8KYDEeKR7Lwk7UC7tQ"/>
+    <lines id="_TsNwQKYDEeKR7Lwk7UC7tQ" sourcePort="_SkRQwKYDEeKR7Lwk7UC7tQ" targetPort="_Tk0u0KYDEeKR7Lwk7UC7tQ" sourceBlock="_Sd0qgKYDEeKR7Lwk7UC7tQ" targetBlock="_SbXMYKYDEeKR7Lwk7UC7tQ"/>
+    <lines id="_TsSBsKYDEeKR7Lwk7UC7tQ" sourcePort="_SitKgKYDEeKR7Lwk7UC7tQ" targetPort="_Tiz8oKYDEeKR7Lwk7UC7tQ" sourceBlock="_Sd0qgKYDEeKR7Lwk7UC7tQ" targetBlock="_SbXMYKYDEeKR7Lwk7UC7tQ"/>
+    <lines id="_TsWTIKYDEeKR7Lwk7UC7tQ" sourcePort="_Sj-84KYDEeKR7Lwk7UC7tQ" targetPort="_TkqWwKYDEeKR7Lwk7UC7tQ" sourceBlock="_Sd0qgKYDEeKR7Lwk7UC7tQ" targetBlock="_Sa_Y8KYDEeKR7Lwk7UC7tQ"/>
+    <lines id="_TsakkKYDEeKR7Lwk7UC7tQ" sourcePort="_SfmMIKYDEeKR7Lwk7UC7tQ" targetPort="_Ti-UsKYDEeKR7Lwk7UC7tQ" sourceBlock="_Sd0qgKYDEeKR7Lwk7UC7tQ" targetBlock="_Sa_Y8KYDEeKR7Lwk7UC7tQ"/>
+    <lines id="_Tsdn4KYDEeKR7Lwk7UC7tQ" sourcePort="_Sia2oKYDEeKR7Lwk7UC7tQ" targetPort="_TirZwKYDEeKR7Lwk7UC7tQ" sourceBlock="_Sd0qgKYDEeKR7Lwk7UC7tQ" targetBlock="_Sa_Y8KYDEeKR7Lwk7UC7tQ"/>
+    <lines id="_TsjHcKYDEeKR7Lwk7UC7tQ" sourcePort="_Shr20KYDEeKR7Lwk7UC7tQ" targetPort="_TjggMKYDEeKR7Lwk7UC7tQ" sourceBlock="_Sd0qgKYDEeKR7Lwk7UC7tQ" targetBlock="_SbXMYKYDEeKR7Lwk7UC7tQ"/>
+    <lines id="_Tss4cKYDEeKR7Lwk7UC7tQ" sourcePort="_SlXc8KYDEeKR7Lwk7UC7tQ" targetPort="_TlLUIKYDEeKR7Lwk7UC7tQ" sourceBlock="_Sd0qgKYDEeKR7Lwk7UC7tQ" targetBlock="_SbXMYKYDEeKR7Lwk7UC7tQ"/>
+    <lines id="_TsyYAKYDEeKR7Lwk7UC7tQ" sourcePort="_Sky1MKYDEeKR7Lwk7UC7tQ" targetPort="_TlBjIKYDEeKR7Lwk7UC7tQ" sourceBlock="_Sd0qgKYDEeKR7Lwk7UC7tQ" targetBlock="_Sa_Y8KYDEeKR7Lwk7UC7tQ"/>
+    <lines id="_VSOr0KYDEeKR7Lwk7UC7tQ" sourcePort="_TmKLkaYDEeKR7Lwk7UC7tQ" targetPort="_VSOr06YDEeKR7Lwk7UC7tQ" sourceBlock="_SbXMYKYDEeKR7Lwk7UC7tQ" targetBlock="_SZrKUKYDEeKR7Lwk7UC7tQ" bus="_SEmSMKYDEeKR7Lwk7UC7tQ"/>
+    <lines id="_VSOEwKYDEeKR7Lwk7UC7tQ" sourcePort="_Tl9XQKYDEeKR7Lwk7UC7tQ" targetPort="_VSOr1aYDEeKR7Lwk7UC7tQ" sourceBlock="_Sa_Y8KYDEeKR7Lwk7UC7tQ" targetBlock="_SZrKUKYDEeKR7Lwk7UC7tQ" bus="_SEmSMKYDEeKR7Lwk7UC7tQ"/>
+    <lines id="_VSOr0qYDEeKR7Lwk7UC7tQ" sourcePort="_VSOr1qYDEeKR7Lwk7UC7tQ" targetPort="_Tl8JIKYDEeKR7Lwk7UC7tQ" sourceBlock="_SZrKUKYDEeKR7Lwk7UC7tQ" targetBlock="_Sa_Y8KYDEeKR7Lwk7UC7tQ" bus="_SEmSMKYDEeKR7Lwk7UC7tQ"/>
+    <lines id="_VSOr0aYDEeKR7Lwk7UC7tQ" sourcePort="_VSOr1KYDEeKR7Lwk7UC7tQ" targetPort="_TmKLkKYDEeKR7Lwk7UC7tQ" sourceBlock="_SZrKUKYDEeKR7Lwk7UC7tQ" targetBlock="_SbXMYKYDEeKR7Lwk7UC7tQ" bus="_SEmSMKYDEeKR7Lwk7UC7tQ"/>
+    <lines id="_VSOr16YDEeKR7Lwk7UC7tQ" sourcePort="_VSWnoKYDEeKR7Lwk7UC7tQ" targetPort="_TmLZsKYDEeKR7Lwk7UC7tQ" sourceBlock="_VSPS4aYDEeKR7Lwk7UC7tQ" targetBlock="_SbXMYKYDEeKR7Lwk7UC7tQ"/>
+    <lines id="_VSPS4KYDEeKR7Lwk7UC7tQ" sourcePort="_VSXOsKYDEeKR7Lwk7UC7tQ" targetPort="_Tl-lYKYDEeKR7Lwk7UC7tQ" sourceBlock="_VSQhAKYDEeKR7Lwk7UC7tQ" targetBlock="_Sa_Y8KYDEeKR7Lwk7UC7tQ"/>
+    <blocks xsi:type="msglib:CommunicationSwitch" id="_SZrKUKYDEeKR7Lwk7UC7tQ" name="communicationSwitch" incomingLines="_VSOr0KYDEeKR7Lwk7UC7tQ _VSOEwKYDEeKR7Lwk7UC7tQ" outgoingLines="_VSOr0qYDEeKR7Lwk7UC7tQ _VSOr0aYDEeKR7Lwk7UC7tQ">
+      <parameters name="Position" value="[980, 500, 1080, 620]"/>
+      <outPorts id="_VSOr1KYDEeKR7Lwk7UC7tQ"/>
+      <outPorts id="_VSOr1qYDEeKR7Lwk7UC7tQ"/>
+      <inPorts id="_VSOr06YDEeKR7Lwk7UC7tQ"/>
+      <inPorts id="_VSOr1aYDEeKR7Lwk7UC7tQ"/>
+    </blocks>
+    <blocks xsi:type="model:LibraryReference" id="_Sa_Y8KYDEeKR7Lwk7UC7tQ" name="robot" incomingLines="_Tl_McKYDEeKR7Lwk7UC7tQ _Tr3K8KYDEeKR7Lwk7UC7tQ _Tr61UKYDEeKR7Lwk7UC7tQ _TsCKEKYDEeKR7Lwk7UC7tQ _TsJe0KYDEeKR7Lwk7UC7tQ _TsWTIKYDEeKR7Lwk7UC7tQ _TsakkKYDEeKR7Lwk7UC7tQ _Tsdn4KYDEeKR7Lwk7UC7tQ _TsyYAKYDEeKR7Lwk7UC7tQ _VSOr0qYDEeKR7Lwk7UC7tQ _VSPS4KYDEeKR7Lwk7UC7tQ" outgoingLines="_VSOEwKYDEeKR7Lwk7UC7tQ" sourceBlock="_SbJJ8KYDEeKR7Lwk7UC7tQ">
+      <parameters name="Position" value="[200, 100, 450, 900]"/>
+    </blocks>
+    <blocks xsi:type="model:LibraryReference" id="_SbXMYKYDEeKR7Lwk7UC7tQ" name="robot2" incomingLines="_TmLZsaYDEeKR7Lwk7UC7tQ _TrXbsKYDEeKR7Lwk7UC7tQ _Tr0HoKYDEeKR7Lwk7UC7tQ _Tr-fsKYDEeKR7Lwk7UC7tQ _TsGbgKYDEeKR7Lwk7UC7tQ _TsNwQKYDEeKR7Lwk7UC7tQ _TsSBsKYDEeKR7Lwk7UC7tQ _TsjHcKYDEeKR7Lwk7UC7tQ _Tss4cKYDEeKR7Lwk7UC7tQ _VSOr0aYDEeKR7Lwk7UC7tQ _VSOr16YDEeKR7Lwk7UC7tQ" outgoingLines="_VSOr0KYDEeKR7Lwk7UC7tQ" sourceBlock="_Sbbd0KYDEeKR7Lwk7UC7tQ">
+      <parameters name="Position" value="[1500, 100, 1750, 900]"/>
+    </blocks>
+    <blocks xsi:type="model:LibraryReference" id="_Sd0qgKYDEeKR7Lwk7UC7tQ" name="env" outgoingLines="_TrXbsKYDEeKR7Lwk7UC7tQ _Tr0HoKYDEeKR7Lwk7UC7tQ _Tr3K8KYDEeKR7Lwk7UC7tQ _Tr61UKYDEeKR7Lwk7UC7tQ _Tr-fsKYDEeKR7Lwk7UC7tQ _TsCKEKYDEeKR7Lwk7UC7tQ _TsGbgKYDEeKR7Lwk7UC7tQ _TsJe0KYDEeKR7Lwk7UC7tQ _TsNwQKYDEeKR7Lwk7UC7tQ _TsSBsKYDEeKR7Lwk7UC7tQ _TsWTIKYDEeKR7Lwk7UC7tQ _TsakkKYDEeKR7Lwk7UC7tQ _Tsdn4KYDEeKR7Lwk7UC7tQ _TsjHcKYDEeKR7Lwk7UC7tQ _Tss4cKYDEeKR7Lwk7UC7tQ _TsyYAKYDEeKR7Lwk7UC7tQ" sourceBlock="_SY2q8KYDEeKR7Lwk7UC7tQ">
+      <parameters name="Position" value="[200, 960, 450, 1760]"/>
+    </blocks>
+    <blocks xsi:type="model:Constant" id="_Tl_McaYDEeKR7Lwk7UC7tQ" name="robot_BAT_Information_To_OtherRobot_net_address" outgoingLines="_Tl_McKYDEeKR7Lwk7UC7tQ" type="uint8">
+      <parameters name="Position" value="[100, 190, 130, 220]"/>
+      <outPorts id="_TmBBoaYDEeKR7Lwk7UC7tQ" type="uint8"/>
+    </blocks>
+    <blocks xsi:type="model:Constant" id="_TmMAwKYDEeKR7Lwk7UC7tQ" name="robot2_BAT_Information_To_OtherRobot_net_address" outgoingLines="_TmLZsaYDEeKR7Lwk7UC7tQ" value="2" type="uint8">
+      <parameters name="Position" value="[1400, 190, 1430, 220]"/>
+      <outPorts id="_TmNO4aYDEeKR7Lwk7UC7tQ" type="uint8"/>
+    </blocks>
+    <blocks xsi:type="model:Constant" id="_VSPS4aYDEeKR7Lwk7UC7tQ" name="robot2_BAT_Information_To_OtherRobot_send_receiver_net_address" outgoingLines="_VSOr16YDEeKR7Lwk7UC7tQ" type="uint8">
+      <parameters name="Position" value="[1400, 240, 1430, 270]"/>
+      <outPorts id="_VSWnoKYDEeKR7Lwk7UC7tQ" type="uint8"/>
+    </blocks>
+    <blocks xsi:type="model:Constant" id="_VSQhAKYDEeKR7Lwk7UC7tQ" name="robot_BAT_Information_To_OtherRobot_send_receiver_net_address" outgoingLines="_VSPS4KYDEeKR7Lwk7UC7tQ" value="2" type="uint8">
+      <parameters name="Position" value="[100, 240, 130, 270]"/>
+      <outPorts id="_VSXOsKYDEeKR7Lwk7UC7tQ" type="uint8"/>
+    </blocks>
+  </models>
+  <libraries id="_SE8QcKYDEeKR7Lwk7UC7tQ" name="AtomicLibrary">
+    <blocks xsi:type="model:SubSystem" id="_SXgnIKYDEeKR7Lwk7UC7tQ" name="MainProcessing">
+      <parameters name="Position" value="[20, 20, 270, 820]"/>
+      <outPorts id="_StGcoKYDEeKR7Lwk7UC7tQ" name="BAT_Info_To_OtherRobot_send" incomingLines="_StHqwKYDEeKR7Lwk7UC7tQ">
+        <parameters name="Position" value="[860, 720, 890, 750]"/>
+        <inPorts id="_StO_hKYDEeKR7Lwk7UC7tQ"/>
+      </outPorts>
+      <outPorts id="_St0OUKYDEeKR7Lwk7UC7tQ" name="BAT_Info_ToStrikeProcessing_send" incomingLines="_St2DgKYDEeKR7Lwk7UC7tQ">
+        <parameters name="Position" value="[860, 1180, 890, 1210]"/>
+        <inPorts id="_SuBCoqYDEeKR7Lwk7UC7tQ"/>
+      </outPorts>
+      <outPorts id="_SuinEKYDEeKR7Lwk7UC7tQ" name="BAT_Info_From_SensorProcessing_send" incomingLines="_Suj1MKYDEeKR7Lwk7UC7tQ">
+        <parameters name="Position" value="[860, 1640, 890, 1670]"/>
+        <inPorts id="_SuwpgaYDEeKR7Lwk7UC7tQ"/>
+      </outPorts>
+      <inPorts id="_SXupkKYDEeKR7Lwk7UC7tQ" name="clockSignal" outgoingLines="_SX1-UKYDEeKR7Lwk7UC7tQ">
+        <parameters name="Position" value="[190, 30, 220, 60]"/>
+        <outPorts id="_SX8E8KYDEeKR7Lwk7UC7tQ"/>
+      </inPorts>
+      <inPorts id="_SmZ-wKYDEeKR7Lwk7UC7tQ" name="isMaster" outgoingLines="_SmpPUKYDEeKR7Lwk7UC7tQ" type="boolean">
+        <parameters name="Position" value="[60, 90, 90, 120]"/>
+        <outPorts id="_SmyZQKYDEeKR7Lwk7UC7tQ"/>
+      </inPorts>
+      <inPorts id="_SnFUMKYDEeKR7Lwk7UC7tQ" name="stopPlaying" outgoingLines="_SnNQAKYDEeKR7Lwk7UC7tQ" type="boolean">
+        <parameters name="Position" value="[60, 150, 90, 180]"/>
+        <outPorts id="_SnTWoKYDEeKR7Lwk7UC7tQ"/>
+      </inPorts>
+      <inPorts id="_StHDsKYDEeKR7Lwk7UC7tQ" name="BAT_Info_To_OtherRobot_recv" outgoingLines="_StHqwaYDEeKR7Lwk7UC7tQ">
+        <parameters name="Position" value="[190, 720, 220, 750]"/>
+        <outPorts id="_StPmkKYDEeKR7Lwk7UC7tQ"/>
+      </inPorts>
+      <inPorts id="_StIR0aYDEeKR7Lwk7UC7tQ" name="BAT_Info_To_OtherRobot_net_address" outgoingLines="_StJf8KYDEeKR7Lwk7UC7tQ" type="uint8">
+        <parameters name="Position" value="[190, 780, 220, 810]"/>
+        <outPorts id="_StRbwKYDEeKR7Lwk7UC7tQ" type="uint8"/>
+      </inPorts>
+      <inPorts id="_StI44KYDEeKR7Lwk7UC7tQ" name="BAT_Info_To_OtherRobot_receiver_net_address" outgoingLines="_StJf8aYDEeKR7Lwk7UC7tQ" type="uint8">
+        <parameters name="Position" value="[190, 840, 220, 870]"/>
+        <outPorts id="_StSC0KYDEeKR7Lwk7UC7tQ" type="uint8"/>
+      </inPorts>
+      <inPorts id="_St01YKYDEeKR7Lwk7UC7tQ" name="BAT_Info_ToStrikeProcessing_recv" outgoingLines="_St2DgaYDEeKR7Lwk7UC7tQ">
+        <parameters name="Position" value="[190, 1180, 220, 1210]"/>
+        <outPorts id="_SuBCo6YDEeKR7Lwk7UC7tQ"/>
+      </inPorts>
+      <inPorts id="_St3RoKYDEeKR7Lwk7UC7tQ" name="BAT_Info_ToStrikeProcessing_net_address" outgoingLines="_St4fwKYDEeKR7Lwk7UC7tQ" type="uint8">
+        <parameters name="Position" value="[190, 1240, 220, 1270]"/>
+        <outPorts id="_SuC30KYDEeKR7Lwk7UC7tQ" type="uint8"/>
+      </inPorts>
+      <inPorts id="_St34sKYDEeKR7Lwk7UC7tQ" name="BAT_Info_ToStrikeProcessing_receiver_net_address" outgoingLines="_St4fwaYDEeKR7Lwk7UC7tQ" type="uint8">
+        <parameters name="Position" value="[190, 1300, 220, 1330]"/>
+        <outPorts id="_SuDe4KYDEeKR7Lwk7UC7tQ" type="uint8"/>
+      </inPorts>
+      <inPorts id="_SujOIKYDEeKR7Lwk7UC7tQ" name="BAT_Info_From_SensorProcessing_recv" outgoingLines="_SukcQKYDEeKR7Lwk7UC7tQ">
+        <parameters name="Position" value="[190, 1640, 220, 1670]"/>
+        <outPorts id="_SuwpgqYDEeKR7Lwk7UC7tQ"/>
+      </inPorts>
+      <inPorts id="_SulqYKYDEeKR7Lwk7UC7tQ" name="BAT_Info_From_SensorProcessing_net_address" outgoingLines="_SuoGoKYDEeKR7Lwk7UC7tQ" type="uint8">
+        <parameters name="Position" value="[190, 1700, 220, 1730]"/>
+        <outPorts id="_SuzFwKYDEeKR7Lwk7UC7tQ" type="uint8"/>
+      </inPorts>
+      <inPorts id="_SunfkKYDEeKR7Lwk7UC7tQ" name="BAT_Info_From_SensorProcessing_receiver_net_address" outgoingLines="_SuotsKYDEeKR7Lwk7UC7tQ" type="uint8">
+        <parameters name="Position" value="[190, 1760, 220, 1790]"/>
+        <outPorts id="_Su0T4KYDEeKR7Lwk7UC7tQ" type="uint8"/>
+      </inPorts>
+      <lines id="_SX1-UKYDEeKR7Lwk7UC7tQ" sourcePort="_SX8E8KYDEeKR7Lwk7UC7tQ" targetPort="_SXvQoKYDEeKR7Lwk7UC7tQ" sourceBlock="_SXupkKYDEeKR7Lwk7UC7tQ" targetBlock="_SXeK4KYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SmpPUKYDEeKR7Lwk7UC7tQ" sourcePort="_SmyZQKYDEeKR7Lwk7UC7tQ" targetPort="_SmyZQaYDEeKR7Lwk7UC7tQ" sourceBlock="_SmZ-wKYDEeKR7Lwk7UC7tQ" targetBlock="_Smk94KYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SmpPUaYDEeKR7Lwk7UC7tQ" sourcePort="_SmyZQqYDEeKR7Lwk7UC7tQ" targetPort="_Smp2YKYDEeKR7Lwk7UC7tQ" sourceBlock="_Smk94KYDEeKR7Lwk7UC7tQ" targetBlock="_SXeK4KYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SnNQAKYDEeKR7Lwk7UC7tQ" sourcePort="_SnTWoKYDEeKR7Lwk7UC7tQ" targetPort="_SnTWoaYDEeKR7Lwk7UC7tQ" sourceBlock="_SnFUMKYDEeKR7Lwk7UC7tQ" targetBlock="_SnJloKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SnNQAaYDEeKR7Lwk7UC7tQ" sourcePort="_SnTWoqYDEeKR7Lwk7UC7tQ" targetPort="_SnNQAqYDEeKR7Lwk7UC7tQ" sourceBlock="_SnJloKYDEeKR7Lwk7UC7tQ" targetBlock="_SXeK4KYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_StHqwKYDEeKR7Lwk7UC7tQ" sourcePort="_StPmkaYDEeKR7Lwk7UC7tQ" targetPort="_StO_hKYDEeKR7Lwk7UC7tQ" sourceBlock="_StIR0KYDEeKR7Lwk7UC7tQ" targetBlock="_StGcoKYDEeKR7Lwk7UC7tQ" bus="_SEmSMKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_StHqwaYDEeKR7Lwk7UC7tQ" sourcePort="_StPmkKYDEeKR7Lwk7UC7tQ" targetPort="_StPmkqYDEeKR7Lwk7UC7tQ" sourceBlock="_StHDsKYDEeKR7Lwk7UC7tQ" targetBlock="_StIR0KYDEeKR7Lwk7UC7tQ" bus="_SEmSMKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SsweYKYDEeKR7Lwk7UC7tQ" sourcePort="_Ss1W4KYDEeKR7Lwk7UC7tQ" targetPort="_StKHAKYDEeKR7Lwk7UC7tQ" sourceBlock="_SXeK4KYDEeKR7Lwk7UC7tQ" targetBlock="_StIR0KYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SsxFcKYDEeKR7Lwk7UC7tQ" sourcePort="_StKuEKYDEeKR7Lwk7UC7tQ" targetPort="_SsxFd6YDEeKR7Lwk7UC7tQ" sourceBlock="_StIR0KYDEeKR7Lwk7UC7tQ" targetBlock="_SXeK4KYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SsxFcaYDEeKR7Lwk7UC7tQ" sourcePort="_StLVIKYDEeKR7Lwk7UC7tQ" targetPort="_SsyTkKYDEeKR7Lwk7UC7tQ" sourceBlock="_StIR0KYDEeKR7Lwk7UC7tQ" targetBlock="_SXeK4KYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SsxFcqYDEeKR7Lwk7UC7tQ" sourcePort="_Ss2lAKYDEeKR7Lwk7UC7tQ" targetPort="_StLVIaYDEeKR7Lwk7UC7tQ" sourceBlock="_SXeK4KYDEeKR7Lwk7UC7tQ" targetBlock="_StIR0KYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SsxFc6YDEeKR7Lwk7UC7tQ" sourcePort="_Ss3zIKYDEeKR7Lwk7UC7tQ" targetPort="_StL8MKYDEeKR7Lwk7UC7tQ" sourceBlock="_SXeK4KYDEeKR7Lwk7UC7tQ" targetBlock="_StIR0KYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SsxFdKYDEeKR7Lwk7UC7tQ" sourcePort="_Ss4aMKYDEeKR7Lwk7UC7tQ" targetPort="_StMjQKYDEeKR7Lwk7UC7tQ" sourceBlock="_SXeK4KYDEeKR7Lwk7UC7tQ" targetBlock="_StIR0KYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SsxFdaYDEeKR7Lwk7UC7tQ" sourcePort="_StNKUKYDEeKR7Lwk7UC7tQ" targetPort="_SszhsKYDEeKR7Lwk7UC7tQ" sourceBlock="_StIR0KYDEeKR7Lwk7UC7tQ" targetBlock="_SXeK4KYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SsxFdqYDEeKR7Lwk7UC7tQ" sourcePort="_StNxYKYDEeKR7Lwk7UC7tQ" targetPort="_Ss0IwKYDEeKR7Lwk7UC7tQ" sourceBlock="_StIR0KYDEeKR7Lwk7UC7tQ" targetBlock="_SXeK4KYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_StJf8KYDEeKR7Lwk7UC7tQ" sourcePort="_StRbwKYDEeKR7Lwk7UC7tQ" targetPort="_StQNoKYDEeKR7Lwk7UC7tQ" sourceBlock="_StIR0aYDEeKR7Lwk7UC7tQ" targetBlock="_StIR0KYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_StJf8aYDEeKR7Lwk7UC7tQ" sourcePort="_StSC0KYDEeKR7Lwk7UC7tQ" targetPort="_StQNoaYDEeKR7Lwk7UC7tQ" sourceBlock="_StI44KYDEeKR7Lwk7UC7tQ" targetBlock="_StIR0KYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_St2DgKYDEeKR7Lwk7UC7tQ" sourcePort="_SuBpsKYDEeKR7Lwk7UC7tQ" targetPort="_SuBCoqYDEeKR7Lwk7UC7tQ" sourceBlock="_St2qkKYDEeKR7Lwk7UC7tQ" targetBlock="_St0OUKYDEeKR7Lwk7UC7tQ" bus="_SEmSMKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_St2DgaYDEeKR7Lwk7UC7tQ" sourcePort="_SuBCo6YDEeKR7Lwk7UC7tQ" targetPort="_SuBpsaYDEeKR7Lwk7UC7tQ" sourceBlock="_St01YKYDEeKR7Lwk7UC7tQ" targetBlock="_St2qkKYDEeKR7Lwk7UC7tQ" bus="_SEmSMKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_Stca4KYDEeKR7Lwk7UC7tQ" sourcePort="_StkWsKYDEeKR7Lwk7UC7tQ" targetPort="_St5G0KYDEeKR7Lwk7UC7tQ" sourceBlock="_SXeK4KYDEeKR7Lwk7UC7tQ" targetBlock="_St2qkKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_Stca4aYDEeKR7Lwk7UC7tQ" sourcePort="_St5t4KYDEeKR7Lwk7UC7tQ" targetPort="_StfeMKYDEeKR7Lwk7UC7tQ" sourceBlock="_St2qkKYDEeKR7Lwk7UC7tQ" targetBlock="_SXeK4KYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_Stca4qYDEeKR7Lwk7UC7tQ" sourcePort="_St6U8KYDEeKR7Lwk7UC7tQ" targetPort="_StgFQKYDEeKR7Lwk7UC7tQ" sourceBlock="_St2qkKYDEeKR7Lwk7UC7tQ" targetBlock="_SXeK4KYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_Stca46YDEeKR7Lwk7UC7tQ" sourcePort="_Stlk0KYDEeKR7Lwk7UC7tQ" targetPort="_St68AKYDEeKR7Lwk7UC7tQ" sourceBlock="_SXeK4KYDEeKR7Lwk7UC7tQ" targetBlock="_St2qkKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_Stca5KYDEeKR7Lwk7UC7tQ" sourcePort="_StmL4KYDEeKR7Lwk7UC7tQ" targetPort="_St7jEKYDEeKR7Lwk7UC7tQ" sourceBlock="_SXeK4KYDEeKR7Lwk7UC7tQ" targetBlock="_St2qkKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_Ste3IKYDEeKR7Lwk7UC7tQ" sourcePort="_Stmy8KYDEeKR7Lwk7UC7tQ" targetPort="_St-mYKYDEeKR7Lwk7UC7tQ" sourceBlock="_SXeK4KYDEeKR7Lwk7UC7tQ" targetBlock="_St2qkKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_Ste3IaYDEeKR7Lwk7UC7tQ" sourcePort="_St_NcKYDEeKR7Lwk7UC7tQ" targetPort="_Sth6cKYDEeKR7Lwk7UC7tQ" sourceBlock="_St2qkKYDEeKR7Lwk7UC7tQ" targetBlock="_SXeK4KYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_Ste3IqYDEeKR7Lwk7UC7tQ" sourcePort="_St_0gKYDEeKR7Lwk7UC7tQ" targetPort="_StihgKYDEeKR7Lwk7UC7tQ" sourceBlock="_St2qkKYDEeKR7Lwk7UC7tQ" targetBlock="_SXeK4KYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_St4fwKYDEeKR7Lwk7UC7tQ" sourcePort="_SuC30KYDEeKR7Lwk7UC7tQ" targetPort="_SuCQwKYDEeKR7Lwk7UC7tQ" sourceBlock="_St3RoKYDEeKR7Lwk7UC7tQ" targetBlock="_St2qkKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_St4fwaYDEeKR7Lwk7UC7tQ" sourcePort="_SuDe4KYDEeKR7Lwk7UC7tQ" targetPort="_SuCQwaYDEeKR7Lwk7UC7tQ" sourceBlock="_St34sKYDEeKR7Lwk7UC7tQ" targetBlock="_St2qkKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_Suj1MKYDEeKR7Lwk7UC7tQ" sourcePort="_SuxQkKYDEeKR7Lwk7UC7tQ" targetPort="_SuwpgaYDEeKR7Lwk7UC7tQ" sourceBlock="_SukcQaYDEeKR7Lwk7UC7tQ" targetBlock="_SuinEKYDEeKR7Lwk7UC7tQ" bus="_SEmSMKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SukcQKYDEeKR7Lwk7UC7tQ" sourcePort="_SuwpgqYDEeKR7Lwk7UC7tQ" targetPort="_SuxQkaYDEeKR7Lwk7UC7tQ" sourceBlock="_SujOIKYDEeKR7Lwk7UC7tQ" targetBlock="_SukcQaYDEeKR7Lwk7UC7tQ" bus="_SEmSMKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SuNP4KYDEeKR7Lwk7UC7tQ" sourcePort="_SuSvcKYDEeKR7Lwk7UC7tQ" targetPort="_SupUwKYDEeKR7Lwk7UC7tQ" sourceBlock="_SXeK4KYDEeKR7Lwk7UC7tQ" targetBlock="_SukcQaYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SuNP4aYDEeKR7Lwk7UC7tQ" sourcePort="_Suqi4KYDEeKR7Lwk7UC7tQ" targetPort="_SuOeA6YDEeKR7Lwk7UC7tQ" sourceBlock="_SukcQaYDEeKR7Lwk7UC7tQ" targetBlock="_SXeK4KYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SuN28KYDEeKR7Lwk7UC7tQ" sourcePort="_SurJ8KYDEeKR7Lwk7UC7tQ" targetPort="_SuPsIKYDEeKR7Lwk7UC7tQ" sourceBlock="_SukcQaYDEeKR7Lwk7UC7tQ" targetBlock="_SXeK4KYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SuN28aYDEeKR7Lwk7UC7tQ" sourcePort="_SuT9kKYDEeKR7Lwk7UC7tQ" targetPort="_SurxAKYDEeKR7Lwk7UC7tQ" sourceBlock="_SXeK4KYDEeKR7Lwk7UC7tQ" targetBlock="_SukcQaYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SuN28qYDEeKR7Lwk7UC7tQ" sourcePort="_SuUkoKYDEeKR7Lwk7UC7tQ" targetPort="_SusYEKYDEeKR7Lwk7UC7tQ" sourceBlock="_SXeK4KYDEeKR7Lwk7UC7tQ" targetBlock="_SukcQaYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SuOeAKYDEeKR7Lwk7UC7tQ" sourcePort="_SuVywKYDEeKR7Lwk7UC7tQ" targetPort="_SutmMKYDEeKR7Lwk7UC7tQ" sourceBlock="_SXeK4KYDEeKR7Lwk7UC7tQ" targetBlock="_SukcQaYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SuOeAaYDEeKR7Lwk7UC7tQ" sourcePort="_SuuNQKYDEeKR7Lwk7UC7tQ" targetPort="_SuQ6QKYDEeKR7Lwk7UC7tQ" sourceBlock="_SukcQaYDEeKR7Lwk7UC7tQ" targetBlock="_SXeK4KYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SuOeAqYDEeKR7Lwk7UC7tQ" sourcePort="_Suu0UKYDEeKR7Lwk7UC7tQ" targetPort="_SuSIYKYDEeKR7Lwk7UC7tQ" sourceBlock="_SukcQaYDEeKR7Lwk7UC7tQ" targetBlock="_SXeK4KYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SuoGoKYDEeKR7Lwk7UC7tQ" sourcePort="_SuzFwKYDEeKR7Lwk7UC7tQ" targetPort="_Sux3oKYDEeKR7Lwk7UC7tQ" sourceBlock="_SulqYKYDEeKR7Lwk7UC7tQ" targetBlock="_SukcQaYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SuotsKYDEeKR7Lwk7UC7tQ" sourcePort="_Su0T4KYDEeKR7Lwk7UC7tQ" targetPort="_Sux3oaYDEeKR7Lwk7UC7tQ" sourceBlock="_SunfkKYDEeKR7Lwk7UC7tQ" targetBlock="_SukcQaYDEeKR7Lwk7UC7tQ"/>
+      <blocks xsi:type="model:ChartBlock" id="_SXeK4KYDEeKR7Lwk7UC7tQ" name="MainProcessing_Statechart" incomingLines="_SX1-UKYDEeKR7Lwk7UC7tQ _SmpPUaYDEeKR7Lwk7UC7tQ _SnNQAaYDEeKR7Lwk7UC7tQ _SsxFcKYDEeKR7Lwk7UC7tQ _SsxFcaYDEeKR7Lwk7UC7tQ _SsxFdaYDEeKR7Lwk7UC7tQ _SsxFdqYDEeKR7Lwk7UC7tQ _Stca4aYDEeKR7Lwk7UC7tQ _Stca4qYDEeKR7Lwk7UC7tQ _Ste3IaYDEeKR7Lwk7UC7tQ _Ste3IqYDEeKR7Lwk7UC7tQ _SuNP4aYDEeKR7Lwk7UC7tQ _SuN28KYDEeKR7Lwk7UC7tQ _SuOeAaYDEeKR7Lwk7UC7tQ _SuOeAqYDEeKR7Lwk7UC7tQ" outgoingLines="_SsweYKYDEeKR7Lwk7UC7tQ _SsxFcqYDEeKR7Lwk7UC7tQ _SsxFc6YDEeKR7Lwk7UC7tQ _SsxFdKYDEeKR7Lwk7UC7tQ _Stca4KYDEeKR7Lwk7UC7tQ _Stca46YDEeKR7Lwk7UC7tQ _Stca5KYDEeKR7Lwk7UC7tQ _Ste3IKYDEeKR7Lwk7UC7tQ _SuNP4KYDEeKR7Lwk7UC7tQ _SuN28aYDEeKR7Lwk7UC7tQ _SuN28qYDEeKR7Lwk7UC7tQ _SuOeAKYDEeKR7Lwk7UC7tQ" chart="_SHYgcKYDEeKR7Lwk7UC7tQ">
+        <parameters name="Position" value="[250, 30, 800, 660]"/>
+        <outPorts id="_Ss1W4KYDEeKR7Lwk7UC7tQ" name="BAT_Info_To_OtherRobotReadOut" type="uint8">
+          <inPorts id="_StO_gKYDEeKR7Lwk7UC7tQ"/>
+        </outPorts>
+        <outPorts id="_Ss2lAKYDEeKR7Lwk7UC7tQ" name="BAT_Info_To_OtherRobotParamReadOut" type="double">
+          <inPorts id="_StO_gaYDEeKR7Lwk7UC7tQ"/>
+        </outPorts>
+        <outPorts id="_Ss3zIKYDEeKR7Lwk7UC7tQ" name="BAT_Info_To_OtherRobotWriteOut" type="uint8">
+          <inPorts id="_StO_gqYDEeKR7Lwk7UC7tQ"/>
+        </outPorts>
+        <outPorts id="_Ss4aMKYDEeKR7Lwk7UC7tQ" name="BAT_Info_To_OtherRobotParamWriteOut" type="double">
+          <inPorts id="_StO_g6YDEeKR7Lwk7UC7tQ"/>
+        </outPorts>
+        <outPorts id="_StkWsKYDEeKR7Lwk7UC7tQ" name="BAT_Info_ToStrikeProcessingReadOut" type="uint8">
+          <inPorts id="_SuAbk6YDEeKR7Lwk7UC7tQ"/>
+        </outPorts>
+        <outPorts id="_Stlk0KYDEeKR7Lwk7UC7tQ" name="BAT_Info_ToStrikeProcessingParamReadOut" type="double">
+          <inPorts id="_SuAblKYDEeKR7Lwk7UC7tQ"/>
+        </outPorts>
+        <outPorts id="_StmL4KYDEeKR7Lwk7UC7tQ" name="BAT_Info_ToStrikeProcessingWriteOut" type="uint8">
+          <inPorts id="_SuBCoKYDEeKR7Lwk7UC7tQ"/>
+        </outPorts>
+        <outPorts id="_Stmy8KYDEeKR7Lwk7UC7tQ" name="BAT_Info_ToStrikeProcessingParamWriteOut" type="double">
+          <inPorts id="_SuBCoaYDEeKR7Lwk7UC7tQ"/>
+        </outPorts>
+        <outPorts id="_SuSvcKYDEeKR7Lwk7UC7tQ" name="BAT_Info_From_SensorProcessingReadOut" type="uint8">
+          <inPorts id="_SuwCcaYDEeKR7Lwk7UC7tQ"/>
+        </outPorts>
+        <outPorts id="_SuT9kKYDEeKR7Lwk7UC7tQ" name="BAT_Info_From_SensorProcessingParamReadOut" type="double">
+          <inPorts id="_SuwCcqYDEeKR7Lwk7UC7tQ"/>
+        </outPorts>
+        <outPorts id="_SuUkoKYDEeKR7Lwk7UC7tQ" name="BAT_Info_From_SensorProcessingWriteOut" type="uint8">
+          <inPorts id="_SuwCc6YDEeKR7Lwk7UC7tQ"/>
+        </outPorts>
+        <outPorts id="_SuVywKYDEeKR7Lwk7UC7tQ" name="BAT_Info_From_SensorProcessingParamWriteOut" type="double">
+          <inPorts id="_SuwpgKYDEeKR7Lwk7UC7tQ"/>
+        </outPorts>
+        <inPorts id="_SXvQoKYDEeKR7Lwk7UC7tQ" name="clockSignal">
+          <outPorts id="_SX8E8aYDEeKR7Lwk7UC7tQ"/>
+        </inPorts>
+        <inPorts id="_Smp2YKYDEeKR7Lwk7UC7tQ" name="isMaster" type="boolean">
+          <outPorts id="_SmzAUKYDEeKR7Lwk7UC7tQ"/>
+        </inPorts>
+        <inPorts id="_SnNQAqYDEeKR7Lwk7UC7tQ" name="stopPlaying" type="boolean">
+          <outPorts id="_SnT9sKYDEeKR7Lwk7UC7tQ"/>
+        </inPorts>
+        <inPorts id="_SsxFd6YDEeKR7Lwk7UC7tQ" name="BAT_Info_To_OtherRobotReadIn" type="uint8">
+          <outPorts id="_StOYcKYDEeKR7Lwk7UC7tQ"/>
+        </inPorts>
+        <inPorts id="_SsyTkKYDEeKR7Lwk7UC7tQ" name="BAT_Info_To_OtherRobotParamReadIn" type="double">
+          <outPorts id="_StOYcaYDEeKR7Lwk7UC7tQ"/>
+        </inPorts>
+        <inPorts id="_SszhsKYDEeKR7Lwk7UC7tQ" name="BAT_Info_To_OtherRobotWriteIn" type="uint8">
+          <outPorts id="_StOYcqYDEeKR7Lwk7UC7tQ"/>
+        </inPorts>
+        <inPorts id="_Ss0IwKYDEeKR7Lwk7UC7tQ" name="BAT_Info_To_OtherRobotParamWriteIn" type="double">
+          <outPorts id="_StOYc6YDEeKR7Lwk7UC7tQ"/>
+        </inPorts>
+        <inPorts id="_StfeMKYDEeKR7Lwk7UC7tQ" name="BAT_Info_ToStrikeProcessingReadIn" type="uint8">
+          <outPorts id="_St_0gaYDEeKR7Lwk7UC7tQ"/>
+        </inPorts>
+        <inPorts id="_StgFQKYDEeKR7Lwk7UC7tQ" name="BAT_Info_ToStrikeProcessingParamReadIn" type="double">
+          <outPorts id="_SuAbkKYDEeKR7Lwk7UC7tQ"/>
+        </inPorts>
+        <inPorts id="_Sth6cKYDEeKR7Lwk7UC7tQ" name="BAT_Info_ToStrikeProcessingWriteIn" type="uint8">
+          <outPorts id="_SuAbkaYDEeKR7Lwk7UC7tQ"/>
+        </inPorts>
+        <inPorts id="_StihgKYDEeKR7Lwk7UC7tQ" name="BAT_Info_ToStrikeProcessingParamWriteIn" type="double">
+          <outPorts id="_SuAbkqYDEeKR7Lwk7UC7tQ"/>
+        </inPorts>
+        <inPorts id="_SuOeA6YDEeKR7Lwk7UC7tQ" name="BAT_Info_From_SensorProcessingReadIn" type="uint8">
+          <outPorts id="_SuvbYKYDEeKR7Lwk7UC7tQ"/>
+        </inPorts>
+        <inPorts id="_SuPsIKYDEeKR7Lwk7UC7tQ" name="BAT_Info_From_SensorProcessingParamReadIn" type="double">
+          <outPorts id="_SuvbYaYDEeKR7Lwk7UC7tQ"/>
+        </inPorts>
+        <inPorts id="_SuQ6QKYDEeKR7Lwk7UC7tQ" name="BAT_Info_From_SensorProcessingWriteIn" type="uint8">
+          <outPorts id="_SuvbYqYDEeKR7Lwk7UC7tQ"/>
+        </inPorts>
+        <inPorts id="_SuSIYKYDEeKR7Lwk7UC7tQ" name="BAT_Info_From_SensorProcessingParamWriteIn" type="double">
+          <outPorts id="_SuwCcKYDEeKR7Lwk7UC7tQ"/>
+        </inPorts>
+      </blocks>
+      <blocks xsi:type="model:ZeroOrderHold" id="_Smk94KYDEeKR7Lwk7UC7tQ" name="isMaster_ZeroOrderHold" incomingLines="_SmpPUKYDEeKR7Lwk7UC7tQ" outgoingLines="_SmpPUaYDEeKR7Lwk7UC7tQ" sampleTime="10.0">
+        <parameters name="Position" value="[160, 90, 190, 120]"/>
+        <outPorts id="_SmyZQqYDEeKR7Lwk7UC7tQ">
+          <inPorts id="_SmznYaYDEeKR7Lwk7UC7tQ"/>
+        </outPorts>
+        <inPorts id="_SmyZQaYDEeKR7Lwk7UC7tQ">
+          <outPorts id="_SmznYKYDEeKR7Lwk7UC7tQ"/>
+        </inPorts>
+      </blocks>
+      <blocks xsi:type="model:ZeroOrderHold" id="_SnJloKYDEeKR7Lwk7UC7tQ" name="stopPlaying_ZeroOrderHold" incomingLines="_SnNQAKYDEeKR7Lwk7UC7tQ" outgoingLines="_SnNQAaYDEeKR7Lwk7UC7tQ" sampleTime="10.0">
+        <parameters name="Position" value="[160, 150, 190, 180]"/>
+        <outPorts id="_SnTWoqYDEeKR7Lwk7UC7tQ">
+          <inPorts id="_SnT9sqYDEeKR7Lwk7UC7tQ"/>
+        </outPorts>
+        <inPorts id="_SnTWoaYDEeKR7Lwk7UC7tQ">
+          <outPorts id="_SnT9saYDEeKR7Lwk7UC7tQ"/>
+        </inPorts>
+      </blocks>
+      <blocks xsi:type="msglib:LinkLayer" id="_StIR0KYDEeKR7Lwk7UC7tQ" name="Link Layer BAT_Info_To_OtherRobot" incomingLines="_SsweYKYDEeKR7Lwk7UC7tQ _SsxFcqYDEeKR7Lwk7UC7tQ _SsxFc6YDEeKR7Lwk7UC7tQ _SsxFdKYDEeKR7Lwk7UC7tQ _StHqwaYDEeKR7Lwk7UC7tQ _StJf8KYDEeKR7Lwk7UC7tQ _StJf8aYDEeKR7Lwk7UC7tQ" outgoingLines="_SsxFcKYDEeKR7Lwk7UC7tQ _SsxFcaYDEeKR7Lwk7UC7tQ _SsxFdaYDEeKR7Lwk7UC7tQ _SsxFdqYDEeKR7Lwk7UC7tQ _StHqwKYDEeKR7Lwk7UC7tQ">
+        <parameters name="Position" value="[250, 720, 800, 1120]"/>
+        <outPorts id="_StPmkaYDEeKR7Lwk7UC7tQ"/>
+        <outPorts id="_StKuEKYDEeKR7Lwk7UC7tQ" dimensions="[10,2]"/>
+        <outPorts id="_StLVIKYDEeKR7Lwk7UC7tQ" dimensions="10"/>
+        <outPorts id="_StNKUKYDEeKR7Lwk7UC7tQ" dimensions="[10,2]"/>
+        <outPorts id="_StNxYKYDEeKR7Lwk7UC7tQ" dimensions="10"/>
+        <inPorts id="_StPmkqYDEeKR7Lwk7UC7tQ"/>
+        <inPorts id="_StQNoKYDEeKR7Lwk7UC7tQ"/>
+        <inPorts id="_StQNoaYDEeKR7Lwk7UC7tQ"/>
+        <inPorts id="_StKHAKYDEeKR7Lwk7UC7tQ" dimensions="[10,2]"/>
+        <inPorts id="_StLVIaYDEeKR7Lwk7UC7tQ" dimensions="10"/>
+        <inPorts id="_StL8MKYDEeKR7Lwk7UC7tQ" dimensions="[10,2]"/>
+        <inPorts id="_StMjQKYDEeKR7Lwk7UC7tQ" dimensions="10"/>
+      </blocks>
+      <blocks xsi:type="msglib:LinkLayer" id="_St2qkKYDEeKR7Lwk7UC7tQ" name="Link Layer BAT_Info_ToStrikeProcessing" incomingLines="_Stca4KYDEeKR7Lwk7UC7tQ _Stca46YDEeKR7Lwk7UC7tQ _Stca5KYDEeKR7Lwk7UC7tQ _Ste3IKYDEeKR7Lwk7UC7tQ _St2DgaYDEeKR7Lwk7UC7tQ _St4fwKYDEeKR7Lwk7UC7tQ _St4fwaYDEeKR7Lwk7UC7tQ" outgoingLines="_Stca4aYDEeKR7Lwk7UC7tQ _Stca4qYDEeKR7Lwk7UC7tQ _Ste3IaYDEeKR7Lwk7UC7tQ _Ste3IqYDEeKR7Lwk7UC7tQ _St2DgKYDEeKR7Lwk7UC7tQ">
+        <parameters name="Position" value="[250, 1180, 800, 1580]"/>
+        <outPorts id="_SuBpsKYDEeKR7Lwk7UC7tQ"/>
+        <outPorts id="_St5t4KYDEeKR7Lwk7UC7tQ" dimensions="[10,2]"/>
+        <outPorts id="_St6U8KYDEeKR7Lwk7UC7tQ" dimensions="10"/>
+        <outPorts id="_St_NcKYDEeKR7Lwk7UC7tQ" dimensions="[10,2]"/>
+        <outPorts id="_St_0gKYDEeKR7Lwk7UC7tQ" dimensions="10"/>
+        <inPorts id="_SuBpsaYDEeKR7Lwk7UC7tQ"/>
+        <inPorts id="_SuCQwKYDEeKR7Lwk7UC7tQ"/>
+        <inPorts id="_SuCQwaYDEeKR7Lwk7UC7tQ"/>
+        <inPorts id="_St5G0KYDEeKR7Lwk7UC7tQ" dimensions="[10,2]"/>
+        <inPorts id="_St68AKYDEeKR7Lwk7UC7tQ" dimensions="10"/>
+        <inPorts id="_St7jEKYDEeKR7Lwk7UC7tQ" dimensions="[10,2]"/>
+        <inPorts id="_St-mYKYDEeKR7Lwk7UC7tQ" dimensions="10"/>
+      </blocks>
+      <blocks xsi:type="msglib:LinkLayer" id="_SukcQaYDEeKR7Lwk7UC7tQ" name="Link Layer BAT_Info_From_SensorProcessing" incomingLines="_SuNP4KYDEeKR7Lwk7UC7tQ _SuN28aYDEeKR7Lwk7UC7tQ _SuN28qYDEeKR7Lwk7UC7tQ _SuOeAKYDEeKR7Lwk7UC7tQ _SukcQKYDEeKR7Lwk7UC7tQ _SuoGoKYDEeKR7Lwk7UC7tQ _SuotsKYDEeKR7Lwk7UC7tQ" outgoingLines="_SuNP4aYDEeKR7Lwk7UC7tQ _SuN28KYDEeKR7Lwk7UC7tQ _SuOeAaYDEeKR7Lwk7UC7tQ _SuOeAqYDEeKR7Lwk7UC7tQ _Suj1MKYDEeKR7Lwk7UC7tQ">
+        <parameters name="Position" value="[250, 1640, 800, 2040]"/>
+        <outPorts id="_SuxQkKYDEeKR7Lwk7UC7tQ"/>
+        <outPorts id="_Suqi4KYDEeKR7Lwk7UC7tQ" dimensions="[10,2]"/>
+        <outPorts id="_SurJ8KYDEeKR7Lwk7UC7tQ" dimensions="10"/>
+        <outPorts id="_SuuNQKYDEeKR7Lwk7UC7tQ" dimensions="[10,2]"/>
+        <outPorts id="_Suu0UKYDEeKR7Lwk7UC7tQ" dimensions="10"/>
+        <inPorts id="_SuxQkaYDEeKR7Lwk7UC7tQ"/>
+        <inPorts id="_Sux3oKYDEeKR7Lwk7UC7tQ"/>
+        <inPorts id="_Sux3oaYDEeKR7Lwk7UC7tQ"/>
+        <inPorts id="_SupUwKYDEeKR7Lwk7UC7tQ" dimensions="[10,2]"/>
+        <inPorts id="_SurxAKYDEeKR7Lwk7UC7tQ" dimensions="10"/>
+        <inPorts id="_SusYEKYDEeKR7Lwk7UC7tQ" dimensions="[10,2]"/>
+        <inPorts id="_SutmMKYDEeKR7Lwk7UC7tQ" dimensions="10"/>
+      </blocks>
+    </blocks>
+    <blocks xsi:type="model:SubSystem" id="_SYKHYKYDEeKR7Lwk7UC7tQ" name="SensorProcessing">
+      <parameters name="Position" value="[330, 20, 580, 820]"/>
+      <outPorts id="_SvMuYKYDEeKR7Lwk7UC7tQ" name="BAT_Info_send" incomingLines="_SvN8gKYDEeKR7Lwk7UC7tQ">
+        <parameters name="Position" value="[860, 300, 890, 330]"/>
+        <inPorts id="_SvWfY6YDEeKR7Lwk7UC7tQ"/>
+      </outPorts>
+      <inPorts id="_SYLVgKYDEeKR7Lwk7UC7tQ" name="clockSignal" outgoingLines="_SYLVgqYDEeKR7Lwk7UC7tQ">
+        <parameters name="Position" value="[190, 30, 220, 60]"/>
+        <outPorts id="_SYL8kKYDEeKR7Lwk7UC7tQ"/>
+      </inPorts>
+      <inPorts id="_SnjOQKYDEeKR7Lwk7UC7tQ" name="posX" outgoingLines="_SnqjAKYDEeKR7Lwk7UC7tQ" type="double">
+        <parameters name="Position" value="[60, 90, 90, 120]"/>
+        <outPorts id="_Sn2wQKYDEeKR7Lwk7UC7tQ"/>
+      </inPorts>
+      <inPorts id="_SoH2AKYDEeKR7Lwk7UC7tQ" name="posY" outgoingLines="_SoPKwKYDEeKR7Lwk7UC7tQ" type="double">
+        <parameters name="Position" value="[60, 150, 90, 180]"/>
+        <outPorts id="_SoVRYKYDEeKR7Lwk7UC7tQ"/>
+      </inPorts>
+      <inPorts id="_SoozYKYDEeKR7Lwk7UC7tQ" name="posZ" outgoingLines="_SozygKYDEeKR7Lwk7UC7tQ" type="double">
+        <parameters name="Position" value="[60, 210, 90, 240]"/>
+        <outPorts id="_So_YsKYDEeKR7Lwk7UC7tQ"/>
+      </inPorts>
+      <inPorts id="_SpS6sKYDEeKR7Lwk7UC7tQ" name="timeOfArrival" outgoingLines="_SpdSwKYDEeKR7Lwk7UC7tQ" type="double">
+        <parameters name="Position" value="[60, 270, 90, 300]"/>
+        <outPorts id="_SpkngKYDEeKR7Lwk7UC7tQ"/>
+      </inPorts>
+      <inPorts id="_Sp5XoKYDEeKR7Lwk7UC7tQ" name="velocity" outgoingLines="_SqE90KYDEeKR7Lwk7UC7tQ" type="double">
+        <parameters name="Position" value="[60, 330, 90, 360]"/>
+        <outPorts id="_SqNgsKYDEeKR7Lwk7UC7tQ"/>
+      </inPorts>
+      <inPorts id="_SqplkKYDEeKR7Lwk7UC7tQ" name="ballRecognized" outgoingLines="_Sq0ksKYDEeKR7Lwk7UC7tQ" type="boolean">
+        <parameters name="Position" value="[60, 390, 90, 420]"/>
+        <outPorts id="_Sq75cKYDEeKR7Lwk7UC7tQ"/>
+      </inPorts>
+      <inPorts id="_SvNVcKYDEeKR7Lwk7UC7tQ" name="BAT_Info_recv" outgoingLines="_SvN8gaYDEeKR7Lwk7UC7tQ">
+        <parameters name="Position" value="[190, 300, 220, 330]"/>
+        <outPorts id="_SvXGcKYDEeKR7Lwk7UC7tQ"/>
+      </inPorts>
+      <inPorts id="_SvPKoKYDEeKR7Lwk7UC7tQ" name="BAT_Info_net_address" outgoingLines="_SvQYwKYDEeKR7Lwk7UC7tQ" type="uint8">
+        <parameters name="Position" value="[190, 360, 220, 390]"/>
+        <outPorts id="_SvY7oKYDEeKR7Lwk7UC7tQ" type="uint8"/>
+      </inPorts>
+      <inPorts id="_SvPxsKYDEeKR7Lwk7UC7tQ" name="BAT_Info_receiver_net_address" outgoingLines="_SvQYwaYDEeKR7Lwk7UC7tQ" type="uint8">
+        <parameters name="Position" value="[190, 420, 220, 450]"/>
+        <outPorts id="_SvaJwKYDEeKR7Lwk7UC7tQ" type="uint8"/>
+      </inPorts>
+      <lines id="_SYLVgqYDEeKR7Lwk7UC7tQ" sourcePort="_SYL8kKYDEeKR7Lwk7UC7tQ" targetPort="_SYLVgaYDEeKR7Lwk7UC7tQ" sourceBlock="_SYLVgKYDEeKR7Lwk7UC7tQ" targetBlock="_SYI5QKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SnqjAKYDEeKR7Lwk7UC7tQ" sourcePort="_Sn2wQKYDEeKR7Lwk7UC7tQ" targetPort="_Sn2wQaYDEeKR7Lwk7UC7tQ" sourceBlock="_SnjOQKYDEeKR7Lwk7UC7tQ" targetBlock="_Snm4oKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SnqjAaYDEeKR7Lwk7UC7tQ" sourcePort="_Sn2wQqYDEeKR7Lwk7UC7tQ" targetPort="_SnqjAqYDEeKR7Lwk7UC7tQ" sourceBlock="_Snm4oKYDEeKR7Lwk7UC7tQ" targetBlock="_SYI5QKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SoPKwKYDEeKR7Lwk7UC7tQ" sourcePort="_SoVRYKYDEeKR7Lwk7UC7tQ" targetPort="_SoVRYaYDEeKR7Lwk7UC7tQ" sourceBlock="_SoH2AKYDEeKR7Lwk7UC7tQ" targetBlock="_SoK5UKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SoPKwaYDEeKR7Lwk7UC7tQ" sourcePort="_SoVRYqYDEeKR7Lwk7UC7tQ" targetPort="_SoPKwqYDEeKR7Lwk7UC7tQ" sourceBlock="_SoK5UKYDEeKR7Lwk7UC7tQ" targetBlock="_SYI5QKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SozygKYDEeKR7Lwk7UC7tQ" sourcePort="_So_YsKYDEeKR7Lwk7UC7tQ" targetPort="_So__wKYDEeKR7Lwk7UC7tQ" sourceBlock="_SoozYKYDEeKR7Lwk7UC7tQ" targetBlock="_Sotr4KYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SozygaYDEeKR7Lwk7UC7tQ" sourcePort="_So__waYDEeKR7Lwk7UC7tQ" targetPort="_SozygqYDEeKR7Lwk7UC7tQ" sourceBlock="_Sotr4KYDEeKR7Lwk7UC7tQ" targetBlock="_SYI5QKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SpdSwKYDEeKR7Lwk7UC7tQ" sourcePort="_SpkngKYDEeKR7Lwk7UC7tQ" targetPort="_SplOkKYDEeKR7Lwk7UC7tQ" sourceBlock="_SpS6sKYDEeKR7Lwk7UC7tQ" targetBlock="_SpXMIKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SpdSwaYDEeKR7Lwk7UC7tQ" sourcePort="_SplOkaYDEeKR7Lwk7UC7tQ" targetPort="_SpdSwqYDEeKR7Lwk7UC7tQ" sourceBlock="_SpXMIKYDEeKR7Lwk7UC7tQ" targetBlock="_SYI5QKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SqE90KYDEeKR7Lwk7UC7tQ" sourcePort="_SqNgsKYDEeKR7Lwk7UC7tQ" targetPort="_SqOHwKYDEeKR7Lwk7UC7tQ" sourceBlock="_Sp5XoKYDEeKR7Lwk7UC7tQ" targetBlock="_Sp_eQKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SqE90aYDEeKR7Lwk7UC7tQ" sourcePort="_SqOHwaYDEeKR7Lwk7UC7tQ" targetPort="_SqFk4KYDEeKR7Lwk7UC7tQ" sourceBlock="_Sp_eQKYDEeKR7Lwk7UC7tQ" targetBlock="_SYI5QKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_Sq0ksKYDEeKR7Lwk7UC7tQ" sourcePort="_Sq75cKYDEeKR7Lwk7UC7tQ" targetPort="_Sq8ggKYDEeKR7Lwk7UC7tQ" sourceBlock="_SqplkKYDEeKR7Lwk7UC7tQ" targetBlock="_SqtP8KYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_Sq0ksaYDEeKR7Lwk7UC7tQ" sourcePort="_Sq8ggaYDEeKR7Lwk7UC7tQ" targetPort="_Sq0ksqYDEeKR7Lwk7UC7tQ" sourceBlock="_SqtP8KYDEeKR7Lwk7UC7tQ" targetBlock="_SYI5QKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SvN8gKYDEeKR7Lwk7UC7tQ" sourcePort="_SvXtgKYDEeKR7Lwk7UC7tQ" targetPort="_SvWfY6YDEeKR7Lwk7UC7tQ" sourceBlock="_SvOjkKYDEeKR7Lwk7UC7tQ" targetBlock="_SvMuYKYDEeKR7Lwk7UC7tQ" bus="_SEmSMKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SvN8gaYDEeKR7Lwk7UC7tQ" sourcePort="_SvXGcKYDEeKR7Lwk7UC7tQ" targetPort="_SvXtgaYDEeKR7Lwk7UC7tQ" sourceBlock="_SvNVcKYDEeKR7Lwk7UC7tQ" targetBlock="_SvOjkKYDEeKR7Lwk7UC7tQ" bus="_SEmSMKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SvBIMKYDEeKR7Lwk7UC7tQ" sourcePort="_SvDkcKYDEeKR7Lwk7UC7tQ" targetPort="_SvQ_0KYDEeKR7Lwk7UC7tQ" sourceBlock="_SYI5QKYDEeKR7Lwk7UC7tQ" targetBlock="_SvOjkKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SvBIMaYDEeKR7Lwk7UC7tQ" sourcePort="_SvRm4KYDEeKR7Lwk7UC7tQ" targetPort="_SvBvQaYDEeKR7Lwk7UC7tQ" sourceBlock="_SvOjkKYDEeKR7Lwk7UC7tQ" targetBlock="_SYI5QKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SvBIMqYDEeKR7Lwk7UC7tQ" sourcePort="_SvSN8KYDEeKR7Lwk7UC7tQ" targetPort="_SvCWUKYDEeKR7Lwk7UC7tQ" sourceBlock="_SvOjkKYDEeKR7Lwk7UC7tQ" targetBlock="_SYI5QKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SvBIM6YDEeKR7Lwk7UC7tQ" sourcePort="_SvELgKYDEeKR7Lwk7UC7tQ" targetPort="_SvS1AKYDEeKR7Lwk7UC7tQ" sourceBlock="_SYI5QKYDEeKR7Lwk7UC7tQ" targetBlock="_SvOjkKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SvBINKYDEeKR7Lwk7UC7tQ" sourcePort="_SvEykKYDEeKR7Lwk7UC7tQ" targetPort="_SvTcEKYDEeKR7Lwk7UC7tQ" sourceBlock="_SYI5QKYDEeKR7Lwk7UC7tQ" targetBlock="_SvOjkKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SvBINaYDEeKR7Lwk7UC7tQ" sourcePort="_SvFZoKYDEeKR7Lwk7UC7tQ" targetPort="_SvUDIKYDEeKR7Lwk7UC7tQ" sourceBlock="_SYI5QKYDEeKR7Lwk7UC7tQ" targetBlock="_SvOjkKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SvBINqYDEeKR7Lwk7UC7tQ" sourcePort="_SvUqMKYDEeKR7Lwk7UC7tQ" targetPort="_SvC9YKYDEeKR7Lwk7UC7tQ" sourceBlock="_SvOjkKYDEeKR7Lwk7UC7tQ" targetBlock="_SYI5QKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SvBvQKYDEeKR7Lwk7UC7tQ" sourcePort="_SvVRQKYDEeKR7Lwk7UC7tQ" targetPort="_SvC9YaYDEeKR7Lwk7UC7tQ" sourceBlock="_SvOjkKYDEeKR7Lwk7UC7tQ" targetBlock="_SYI5QKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SvQYwKYDEeKR7Lwk7UC7tQ" sourcePort="_SvY7oKYDEeKR7Lwk7UC7tQ" targetPort="_SvXtgqYDEeKR7Lwk7UC7tQ" sourceBlock="_SvPKoKYDEeKR7Lwk7UC7tQ" targetBlock="_SvOjkKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SvQYwaYDEeKR7Lwk7UC7tQ" sourcePort="_SvaJwKYDEeKR7Lwk7UC7tQ" targetPort="_SvYUkKYDEeKR7Lwk7UC7tQ" sourceBlock="_SvPxsKYDEeKR7Lwk7UC7tQ" targetBlock="_SvOjkKYDEeKR7Lwk7UC7tQ"/>
+      <blocks xsi:type="model:ChartBlock" id="_SYI5QKYDEeKR7Lwk7UC7tQ" name="SensorProcessing_Statechart" incomingLines="_SYLVgqYDEeKR7Lwk7UC7tQ _SnqjAaYDEeKR7Lwk7UC7tQ _SoPKwaYDEeKR7Lwk7UC7tQ _SozygaYDEeKR7Lwk7UC7tQ _SpdSwaYDEeKR7Lwk7UC7tQ _SqE90aYDEeKR7Lwk7UC7tQ _Sq0ksaYDEeKR7Lwk7UC7tQ _SvBIMaYDEeKR7Lwk7UC7tQ _SvBIMqYDEeKR7Lwk7UC7tQ _SvBINqYDEeKR7Lwk7UC7tQ _SvBvQKYDEeKR7Lwk7UC7tQ" outgoingLines="_SvBIMKYDEeKR7Lwk7UC7tQ _SvBIM6YDEeKR7Lwk7UC7tQ _SvBINKYDEeKR7Lwk7UC7tQ _SvBINaYDEeKR7Lwk7UC7tQ" chart="_SILxsKYDEeKR7Lwk7UC7tQ">
+        <parameters name="Position" value="[250, 30, 800, 240]"/>
+        <outPorts id="_SvDkcKYDEeKR7Lwk7UC7tQ" name="BAT_InfoReadOut" type="uint8">
+          <inPorts id="_SvV4VKYDEeKR7Lwk7UC7tQ"/>
+        </outPorts>
+        <outPorts id="_SvELgKYDEeKR7Lwk7UC7tQ" name="BAT_InfoParamReadOut" type="double">
+          <inPorts id="_SvWfYKYDEeKR7Lwk7UC7tQ"/>
+        </outPorts>
+        <outPorts id="_SvEykKYDEeKR7Lwk7UC7tQ" name="BAT_InfoWriteOut" type="uint8">
+          <inPorts id="_SvWfYaYDEeKR7Lwk7UC7tQ"/>
+        </outPorts>
+        <outPorts id="_SvFZoKYDEeKR7Lwk7UC7tQ" name="BAT_InfoParamWriteOut" type="double">
+          <inPorts id="_SvWfYqYDEeKR7Lwk7UC7tQ"/>
+        </outPorts>
+        <inPorts id="_SYLVgaYDEeKR7Lwk7UC7tQ" name="clockSignal">
+          <outPorts id="_SYL8kaYDEeKR7Lwk7UC7tQ"/>
+        </inPorts>
+        <inPorts id="_SnqjAqYDEeKR7Lwk7UC7tQ" name="posX" type="double">
+          <outPorts id="_Sn3XUKYDEeKR7Lwk7UC7tQ"/>
+        </inPorts>
+        <inPorts id="_SoPKwqYDEeKR7Lwk7UC7tQ" name="posY" type="double">
+          <outPorts id="_SoV4cKYDEeKR7Lwk7UC7tQ"/>
+        </inPorts>
+        <inPorts id="_SozygqYDEeKR7Lwk7UC7tQ" name="posZ" type="double">
+          <outPorts id="_SpAm0KYDEeKR7Lwk7UC7tQ"/>
+        </inPorts>
+        <inPorts id="_SpdSwqYDEeKR7Lwk7UC7tQ" name="timeOfArrival" type="double">
+          <outPorts id="_Spl1oKYDEeKR7Lwk7UC7tQ"/>
+        </inPorts>
+        <inPorts id="_SqFk4KYDEeKR7Lwk7UC7tQ" name="velocity" type="double">
+          <outPorts id="_SqOHwqYDEeKR7Lwk7UC7tQ"/>
+        </inPorts>
+        <inPorts id="_Sq0ksqYDEeKR7Lwk7UC7tQ" name="ballRecognized" type="boolean">
+          <outPorts id="_Sq9uoKYDEeKR7Lwk7UC7tQ"/>
+        </inPorts>
+        <inPorts id="_SvBvQaYDEeKR7Lwk7UC7tQ" name="BAT_InfoReadIn" type="uint8">
+          <outPorts id="_SvV4UKYDEeKR7Lwk7UC7tQ"/>
+        </inPorts>
+        <inPorts id="_SvCWUKYDEeKR7Lwk7UC7tQ" name="BAT_InfoParamReadIn" type="double">
+          <outPorts id="_SvV4UaYDEeKR7Lwk7UC7tQ"/>
+        </inPorts>
+        <inPorts id="_SvC9YKYDEeKR7Lwk7UC7tQ" name="BAT_InfoWriteIn" type="uint8">
+          <outPorts id="_SvV4UqYDEeKR7Lwk7UC7tQ"/>
+        </inPorts>
+        <inPorts id="_SvC9YaYDEeKR7Lwk7UC7tQ" name="BAT_InfoParamWriteIn" type="double">
+          <outPorts id="_SvV4U6YDEeKR7Lwk7UC7tQ"/>
+        </inPorts>
+      </blocks>
+      <blocks xsi:type="model:ZeroOrderHold" id="_Snm4oKYDEeKR7Lwk7UC7tQ" name="posX_ZeroOrderHold" incomingLines="_SnqjAKYDEeKR7Lwk7UC7tQ" outgoingLines="_SnqjAaYDEeKR7Lwk7UC7tQ" sampleTime="10.0">
+        <parameters name="Position" value="[160, 90, 190, 120]"/>
+        <outPorts id="_Sn2wQqYDEeKR7Lwk7UC7tQ">
+          <inPorts id="_Sn5MgaYDEeKR7Lwk7UC7tQ"/>
+        </outPorts>
+        <inPorts id="_Sn2wQaYDEeKR7Lwk7UC7tQ">
+          <outPorts id="_Sn5MgKYDEeKR7Lwk7UC7tQ"/>
+        </inPorts>
+      </blocks>
+      <blocks xsi:type="model:ZeroOrderHold" id="_SoK5UKYDEeKR7Lwk7UC7tQ" name="posY_ZeroOrderHold" incomingLines="_SoPKwKYDEeKR7Lwk7UC7tQ" outgoingLines="_SoPKwaYDEeKR7Lwk7UC7tQ" sampleTime="10.0">
+        <parameters name="Position" value="[160, 150, 190, 180]"/>
+        <outPorts id="_SoVRYqYDEeKR7Lwk7UC7tQ">
+          <inPorts id="_SoV4cqYDEeKR7Lwk7UC7tQ"/>
+        </outPorts>
+        <inPorts id="_SoVRYaYDEeKR7Lwk7UC7tQ">
+          <outPorts id="_SoV4caYDEeKR7Lwk7UC7tQ"/>
+        </inPorts>
+      </blocks>
+      <blocks xsi:type="model:ZeroOrderHold" id="_Sotr4KYDEeKR7Lwk7UC7tQ" name="posZ_ZeroOrderHold" incomingLines="_SozygKYDEeKR7Lwk7UC7tQ" outgoingLines="_SozygaYDEeKR7Lwk7UC7tQ" sampleTime="10.0">
+        <parameters name="Position" value="[160, 210, 190, 240]"/>
+        <outPorts id="_So__waYDEeKR7Lwk7UC7tQ">
+          <inPorts id="_SpAm0qYDEeKR7Lwk7UC7tQ"/>
+        </outPorts>
+        <inPorts id="_So__wKYDEeKR7Lwk7UC7tQ">
+          <outPorts id="_SpAm0aYDEeKR7Lwk7UC7tQ"/>
+        </inPorts>
+      </blocks>
+      <blocks xsi:type="model:ZeroOrderHold" id="_SpXMIKYDEeKR7Lwk7UC7tQ" name="timeOfArrival_ZeroOrderHold" incomingLines="_SpdSwKYDEeKR7Lwk7UC7tQ" outgoingLines="_SpdSwaYDEeKR7Lwk7UC7tQ" sampleTime="10.0">
+        <parameters name="Position" value="[160, 270, 190, 300]"/>
+        <outPorts id="_SplOkaYDEeKR7Lwk7UC7tQ">
+          <inPorts id="_Spl1oqYDEeKR7Lwk7UC7tQ"/>
+        </outPorts>
+        <inPorts id="_SplOkKYDEeKR7Lwk7UC7tQ">
+          <outPorts id="_Spl1oaYDEeKR7Lwk7UC7tQ"/>
+        </inPorts>
+      </blocks>
+      <blocks xsi:type="model:ZeroOrderHold" id="_Sp_eQKYDEeKR7Lwk7UC7tQ" name="velocity_ZeroOrderHold" incomingLines="_SqE90KYDEeKR7Lwk7UC7tQ" outgoingLines="_SqE90aYDEeKR7Lwk7UC7tQ" sampleTime="10.0">
+        <parameters name="Position" value="[160, 330, 190, 360]"/>
+        <outPorts id="_SqOHwaYDEeKR7Lwk7UC7tQ">
+          <inPorts id="_SqOu0aYDEeKR7Lwk7UC7tQ"/>
+        </outPorts>
+        <inPorts id="_SqOHwKYDEeKR7Lwk7UC7tQ">
+          <outPorts id="_SqOu0KYDEeKR7Lwk7UC7tQ"/>
+        </inPorts>
+      </blocks>
+      <blocks xsi:type="model:ZeroOrderHold" id="_SqtP8KYDEeKR7Lwk7UC7tQ" name="ballRecognized_ZeroOrderHold" incomingLines="_Sq0ksKYDEeKR7Lwk7UC7tQ" outgoingLines="_Sq0ksaYDEeKR7Lwk7UC7tQ" sampleTime="10.0">
+        <parameters name="Position" value="[160, 390, 190, 420]"/>
+        <outPorts id="_Sq8ggaYDEeKR7Lwk7UC7tQ">
+          <inPorts id="_Sq9uoqYDEeKR7Lwk7UC7tQ"/>
+        </outPorts>
+        <inPorts id="_Sq8ggKYDEeKR7Lwk7UC7tQ">
+          <outPorts id="_Sq9uoaYDEeKR7Lwk7UC7tQ"/>
+        </inPorts>
+      </blocks>
+      <blocks xsi:type="msglib:LinkLayer" id="_SvOjkKYDEeKR7Lwk7UC7tQ" name="Link Layer BAT_Info" incomingLines="_SvBIMKYDEeKR7Lwk7UC7tQ _SvBIM6YDEeKR7Lwk7UC7tQ _SvBINKYDEeKR7Lwk7UC7tQ _SvBINaYDEeKR7Lwk7UC7tQ _SvN8gaYDEeKR7Lwk7UC7tQ _SvQYwKYDEeKR7Lwk7UC7tQ _SvQYwaYDEeKR7Lwk7UC7tQ" outgoingLines="_SvBIMaYDEeKR7Lwk7UC7tQ _SvBIMqYDEeKR7Lwk7UC7tQ _SvBINqYDEeKR7Lwk7UC7tQ _SvBvQKYDEeKR7Lwk7UC7tQ _SvN8gKYDEeKR7Lwk7UC7tQ">
+        <parameters name="Position" value="[250, 300, 800, 700]"/>
+        <outPorts id="_SvXtgKYDEeKR7Lwk7UC7tQ"/>
+        <outPorts id="_SvRm4KYDEeKR7Lwk7UC7tQ" dimensions="[10,2]"/>
+        <outPorts id="_SvSN8KYDEeKR7Lwk7UC7tQ" dimensions="10"/>
+        <outPorts id="_SvUqMKYDEeKR7Lwk7UC7tQ" dimensions="[10,2]"/>
+        <outPorts id="_SvVRQKYDEeKR7Lwk7UC7tQ" dimensions="10"/>
+        <inPorts id="_SvXtgaYDEeKR7Lwk7UC7tQ"/>
+        <inPorts id="_SvXtgqYDEeKR7Lwk7UC7tQ"/>
+        <inPorts id="_SvYUkKYDEeKR7Lwk7UC7tQ"/>
+        <inPorts id="_SvQ_0KYDEeKR7Lwk7UC7tQ" dimensions="[10,2]"/>
+        <inPorts id="_SvS1AKYDEeKR7Lwk7UC7tQ" dimensions="10"/>
+        <inPorts id="_SvTcEKYDEeKR7Lwk7UC7tQ" dimensions="[10,2]"/>
+        <inPorts id="_SvUDIKYDEeKR7Lwk7UC7tQ" dimensions="10"/>
+      </blocks>
+    </blocks>
+    <blocks xsi:type="model:SubSystem" id="_SYeQcKYDEeKR7Lwk7UC7tQ" name="StrikeProcessing">
+      <parameters name="Position" value="[640, 20, 890, 820]"/>
+      <outPorts id="_SsG-IKYDEeKR7Lwk7UC7tQ" name="BAT_Info_send" incomingLines="_SsIzUKYDEeKR7Lwk7UC7tQ">
+        <parameters name="Position" value="[860, 300, 890, 330]"/>
+        <inPorts id="_Ssib8qYDEeKR7Lwk7UC7tQ"/>
+      </outPorts>
+      <inPorts id="_SYgFoKYDEeKR7Lwk7UC7tQ" name="clockSignal" outgoingLines="_SYgFoqYDEeKR7Lwk7UC7tQ">
+        <parameters name="Position" value="[190, 30, 220, 60]"/>
+        <outPorts id="_SYgssKYDEeKR7Lwk7UC7tQ"/>
+      </inPorts>
+      <inPorts id="_SsIMQKYDEeKR7Lwk7UC7tQ" name="BAT_Info_recv" outgoingLines="_SsIzUaYDEeKR7Lwk7UC7tQ">
+        <parameters name="Position" value="[190, 300, 220, 330]"/>
+        <outPorts id="_SsjDAKYDEeKR7Lwk7UC7tQ"/>
+      </inPorts>
+      <inPorts id="_SsYD4KYDEeKR7Lwk7UC7tQ" name="BAT_Info_net_address" outgoingLines="_SsZ5EKYDEeKR7Lwk7UC7tQ" type="uint8">
+        <parameters name="Position" value="[190, 360, 220, 390]"/>
+        <outPorts id="_Ssk4MKYDEeKR7Lwk7UC7tQ" type="uint8"/>
+      </inPorts>
+      <inPorts id="_SsZSAKYDEeKR7Lwk7UC7tQ" name="BAT_Info_receiver_net_address" outgoingLines="_SsagIKYDEeKR7Lwk7UC7tQ" type="uint8">
+        <parameters name="Position" value="[190, 420, 220, 450]"/>
+        <outPorts id="_SslfQKYDEeKR7Lwk7UC7tQ" type="uint8"/>
+      </inPorts>
+      <lines id="_SYgFoqYDEeKR7Lwk7UC7tQ" sourcePort="_SYgssKYDEeKR7Lwk7UC7tQ" targetPort="_SYgFoaYDEeKR7Lwk7UC7tQ" sourceBlock="_SYgFoKYDEeKR7Lwk7UC7tQ" targetBlock="_SYbNIKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SsIzUKYDEeKR7Lwk7UC7tQ" sourcePort="_SsjDAaYDEeKR7Lwk7UC7tQ" targetPort="_Ssib8qYDEeKR7Lwk7UC7tQ" sourceBlock="_SsW1wKYDEeKR7Lwk7UC7tQ" targetBlock="_SsG-IKYDEeKR7Lwk7UC7tQ" bus="_SEmSMKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SsIzUaYDEeKR7Lwk7UC7tQ" sourcePort="_SsjDAKYDEeKR7Lwk7UC7tQ" targetPort="_SsjqEKYDEeKR7Lwk7UC7tQ" sourceBlock="_SsIMQKYDEeKR7Lwk7UC7tQ" targetBlock="_SsW1wKYDEeKR7Lwk7UC7tQ" bus="_SEmSMKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SrkLkKYDEeKR7Lwk7UC7tQ" sourcePort="_SrqSMKYDEeKR7Lwk7UC7tQ" targetPort="_SsbHMKYDEeKR7Lwk7UC7tQ" sourceBlock="_SYbNIKYDEeKR7Lwk7UC7tQ" targetBlock="_SsW1wKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SrkLkaYDEeKR7Lwk7UC7tQ" sourcePort="_SsbuQKYDEeKR7Lwk7UC7tQ" targetPort="_SrlZsKYDEeKR7Lwk7UC7tQ" sourceBlock="_SsW1wKYDEeKR7Lwk7UC7tQ" targetBlock="_SYbNIKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SrkyoKYDEeKR7Lwk7UC7tQ" sourcePort="_SscVUKYDEeKR7Lwk7UC7tQ" targetPort="_Srmn0KYDEeKR7Lwk7UC7tQ" sourceBlock="_SsW1wKYDEeKR7Lwk7UC7tQ" targetBlock="_SYbNIKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SrkyoaYDEeKR7Lwk7UC7tQ" sourcePort="_SrrgUKYDEeKR7Lwk7UC7tQ" targetPort="_Ssc8YKYDEeKR7Lwk7UC7tQ" sourceBlock="_SYbNIKYDEeKR7Lwk7UC7tQ" targetBlock="_SsW1wKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SrkyoqYDEeKR7Lwk7UC7tQ" sourcePort="_SrsucKYDEeKR7Lwk7UC7tQ" targetPort="_SseKgKYDEeKR7Lwk7UC7tQ" sourceBlock="_SYbNIKYDEeKR7Lwk7UC7tQ" targetBlock="_SsW1wKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_Srkyo6YDEeKR7Lwk7UC7tQ" sourcePort="_SrujoKYDEeKR7Lwk7UC7tQ" targetPort="_SsexkKYDEeKR7Lwk7UC7tQ" sourceBlock="_SYbNIKYDEeKR7Lwk7UC7tQ" targetBlock="_SsW1wKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SrkypKYDEeKR7Lwk7UC7tQ" sourcePort="_SsfYoKYDEeKR7Lwk7UC7tQ" targetPort="_SrodAKYDEeKR7Lwk7UC7tQ" sourceBlock="_SsW1wKYDEeKR7Lwk7UC7tQ" targetBlock="_SYbNIKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SrkypaYDEeKR7Lwk7UC7tQ" sourcePort="_SsgmwKYDEeKR7Lwk7UC7tQ" targetPort="_SrprIKYDEeKR7Lwk7UC7tQ" sourceBlock="_SsW1wKYDEeKR7Lwk7UC7tQ" targetBlock="_SYbNIKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SsZ5EKYDEeKR7Lwk7UC7tQ" sourcePort="_Ssk4MKYDEeKR7Lwk7UC7tQ" targetPort="_SsjqEaYDEeKR7Lwk7UC7tQ" sourceBlock="_SsYD4KYDEeKR7Lwk7UC7tQ" targetBlock="_SsW1wKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SsagIKYDEeKR7Lwk7UC7tQ" sourcePort="_SslfQKYDEeKR7Lwk7UC7tQ" targetPort="_SsjqEqYDEeKR7Lwk7UC7tQ" sourceBlock="_SsZSAKYDEeKR7Lwk7UC7tQ" targetBlock="_SsW1wKYDEeKR7Lwk7UC7tQ"/>
+      <blocks xsi:type="model:ChartBlock" id="_SYbNIKYDEeKR7Lwk7UC7tQ" name="StrikeProcessing_Statechart" incomingLines="_SYgFoqYDEeKR7Lwk7UC7tQ _SrkLkaYDEeKR7Lwk7UC7tQ _SrkyoKYDEeKR7Lwk7UC7tQ _SrkypKYDEeKR7Lwk7UC7tQ _SrkypaYDEeKR7Lwk7UC7tQ" outgoingLines="_SrkLkKYDEeKR7Lwk7UC7tQ _SrkyoaYDEeKR7Lwk7UC7tQ _SrkyoqYDEeKR7Lwk7UC7tQ _Srkyo6YDEeKR7Lwk7UC7tQ" chart="_SIlaUKYDEeKR7Lwk7UC7tQ">
+        <parameters name="Position" value="[250, 30, 800, 240]"/>
+        <outPorts id="_SrqSMKYDEeKR7Lwk7UC7tQ" name="BAT_InfoReadOut" type="uint8">
+          <inPorts id="_Ssh04qYDEeKR7Lwk7UC7tQ"/>
+        </outPorts>
+        <outPorts id="_SrrgUKYDEeKR7Lwk7UC7tQ" name="BAT_InfoParamReadOut" type="double">
+          <inPorts id="_Ssh046YDEeKR7Lwk7UC7tQ"/>
+        </outPorts>
+        <outPorts id="_SrsucKYDEeKR7Lwk7UC7tQ" name="BAT_InfoWriteOut" type="uint8">
+          <inPorts id="_Ssib8KYDEeKR7Lwk7UC7tQ"/>
+        </outPorts>
+        <outPorts id="_SrujoKYDEeKR7Lwk7UC7tQ" name="BAT_InfoParamWriteOut" type="double">
+          <inPorts id="_Ssib8aYDEeKR7Lwk7UC7tQ"/>
+        </outPorts>
+        <inPorts id="_SYgFoaYDEeKR7Lwk7UC7tQ" name="clockSignal">
+          <outPorts id="_SYgssaYDEeKR7Lwk7UC7tQ"/>
+        </inPorts>
+        <inPorts id="_SrlZsKYDEeKR7Lwk7UC7tQ" name="BAT_InfoReadIn" type="uint8">
+          <outPorts id="_SshN0KYDEeKR7Lwk7UC7tQ"/>
+        </inPorts>
+        <inPorts id="_Srmn0KYDEeKR7Lwk7UC7tQ" name="BAT_InfoParamReadIn" type="double">
+          <outPorts id="_SshN0aYDEeKR7Lwk7UC7tQ"/>
+        </inPorts>
+        <inPorts id="_SrodAKYDEeKR7Lwk7UC7tQ" name="BAT_InfoWriteIn" type="uint8">
+          <outPorts id="_Ssh04KYDEeKR7Lwk7UC7tQ"/>
+        </inPorts>
+        <inPorts id="_SrprIKYDEeKR7Lwk7UC7tQ" name="BAT_InfoParamWriteIn" type="double">
+          <outPorts id="_Ssh04aYDEeKR7Lwk7UC7tQ"/>
+        </inPorts>
+      </blocks>
+      <blocks xsi:type="msglib:LinkLayer" id="_SsW1wKYDEeKR7Lwk7UC7tQ" name="Link Layer BAT_Info" incomingLines="_SrkLkKYDEeKR7Lwk7UC7tQ _SrkyoaYDEeKR7Lwk7UC7tQ _SrkyoqYDEeKR7Lwk7UC7tQ _Srkyo6YDEeKR7Lwk7UC7tQ _SsIzUaYDEeKR7Lwk7UC7tQ _SsZ5EKYDEeKR7Lwk7UC7tQ _SsagIKYDEeKR7Lwk7UC7tQ" outgoingLines="_SrkLkaYDEeKR7Lwk7UC7tQ _SrkyoKYDEeKR7Lwk7UC7tQ _SrkypKYDEeKR7Lwk7UC7tQ _SrkypaYDEeKR7Lwk7UC7tQ _SsIzUKYDEeKR7Lwk7UC7tQ">
+        <parameters name="Position" value="[250, 300, 800, 700]"/>
+        <outPorts id="_SsjDAaYDEeKR7Lwk7UC7tQ"/>
+        <outPorts id="_SsbuQKYDEeKR7Lwk7UC7tQ" dimensions="[10,2]"/>
+        <outPorts id="_SscVUKYDEeKR7Lwk7UC7tQ" dimensions="10"/>
+        <outPorts id="_SsfYoKYDEeKR7Lwk7UC7tQ" dimensions="[10,2]"/>
+        <outPorts id="_SsgmwKYDEeKR7Lwk7UC7tQ" dimensions="10"/>
+        <inPorts id="_SsjqEKYDEeKR7Lwk7UC7tQ"/>
+        <inPorts id="_SsjqEaYDEeKR7Lwk7UC7tQ"/>
+        <inPorts id="_SsjqEqYDEeKR7Lwk7UC7tQ"/>
+        <inPorts id="_SsbHMKYDEeKR7Lwk7UC7tQ" dimensions="[10,2]"/>
+        <inPorts id="_Ssc8YKYDEeKR7Lwk7UC7tQ" dimensions="10"/>
+        <inPorts id="_SseKgKYDEeKR7Lwk7UC7tQ" dimensions="[10,2]"/>
+        <inPorts id="_SsexkKYDEeKR7Lwk7UC7tQ" dimensions="10"/>
+      </blocks>
+    </blocks>
+    <blocks xsi:type="model:SubSystem" id="_SY2q8KYDEeKR7Lwk7UC7tQ" name="Environment">
+      <parameters name="Position" value="[950, 20, 1200, 820]"/>
+      <outPorts id="_SfmMIKYDEeKR7Lwk7UC7tQ" name="posXR1" type="double">
+        <parameters name="Position" value="[700, 40, 730, 70]"/>
+        <inPorts id="_Sf2q0KYDEeKR7Lwk7UC7tQ"/>
+      </outPorts>
+      <outPorts id="_SgUk4KYDEeKR7Lwk7UC7tQ" name="posXR2" type="double">
+        <parameters name="Position" value="[700, 150, 730, 180]"/>
+        <inPorts id="_Sgb5oKYDEeKR7Lwk7UC7tQ"/>
+      </outPorts>
+      <outPorts id="_Sg3-gKYDEeKR7Lwk7UC7tQ" name="posYR1" type="double">
+        <parameters name="Position" value="[700, 260, 730, 290]"/>
+        <inPorts id="_ShFZ4KYDEeKR7Lwk7UC7tQ"/>
+      </outPorts>
+      <outPorts id="_Shr20KYDEeKR7Lwk7UC7tQ" name="posYR2" type="double">
+        <parameters name="Position" value="[700, 370, 730, 400]"/>
+        <inPorts id="_Shx9cKYDEeKR7Lwk7UC7tQ"/>
+      </outPorts>
+      <outPorts id="_Sh-xwKYDEeKR7Lwk7UC7tQ" name="posZR1" type="double">
+        <parameters name="Position" value="[700, 480, 730, 510]"/>
+        <inPorts id="_SiDDMKYDEeKR7Lwk7UC7tQ"/>
+      </outPorts>
+      <outPorts id="_SiMNIKYDEeKR7Lwk7UC7tQ" name="posZR2" type="double">
+        <parameters name="Position" value="[700, 590, 730, 620]"/>
+        <inPorts id="_SiPQcKYDEeKR7Lwk7UC7tQ"/>
+      </outPorts>
+      <outPorts id="_Sia2oKYDEeKR7Lwk7UC7tQ" name="timeOfArrivalR1" type="double">
+        <parameters name="Position" value="[700, 700, 730, 730]"/>
+        <inPorts id="_Sid58KYDEeKR7Lwk7UC7tQ"/>
+      </outPorts>
+      <outPorts id="_SitKgKYDEeKR7Lwk7UC7tQ" name="timeOfArrivalR2" type="double">
+        <parameters name="Position" value="[700, 810, 730, 840]"/>
+        <inPorts id="_SiyqEKYDEeKR7Lwk7UC7tQ"/>
+      </outPorts>
+      <outPorts id="_SjBTkKYDEeKR7Lwk7UC7tQ" name="velocityR1" type="double">
+        <parameters name="Position" value="[700, 920, 730, 950]"/>
+        <inPorts id="_SjEW4KYDEeKR7Lwk7UC7tQ"/>
+      </outPorts>
+      <outPorts id="_SjP9EKYDEeKR7Lwk7UC7tQ" name="velocityR2" type="double">
+        <parameters name="Position" value="[700, 1030, 730, 1060]"/>
+        <inPorts id="_SjU1kKYDEeKR7Lwk7UC7tQ"/>
+      </outPorts>
+      <outPorts id="_SjgbwKYDEeKR7Lwk7UC7tQ" name="isMasterR1" type="boolean">
+        <parameters name="Position" value="[700, 1140, 730, 1170]"/>
+        <inPorts id="_SjjfEKYDEeKR7Lwk7UC7tQ"/>
+      </outPorts>
+      <outPorts id="_SjtQEKYDEeKR7Lwk7UC7tQ" name="isMasterR2" type="boolean">
+        <parameters name="Position" value="[700, 1250, 730, 1280]"/>
+        <inPorts id="_Sjw6cKYDEeKR7Lwk7UC7tQ"/>
+      </outPorts>
+      <outPorts id="_Sj-84KYDEeKR7Lwk7UC7tQ" name="ballRecognizedR1" type="boolean">
+        <parameters name="Position" value="[700, 1360, 730, 1390]"/>
+        <inPorts id="_SkD1YKYDEeKR7Lwk7UC7tQ"/>
+      </outPorts>
+      <outPorts id="_SkRQwKYDEeKR7Lwk7UC7tQ" name="ballRecognizedR2" type="boolean">
+        <parameters name="Position" value="[700, 1470, 730, 1500]"/>
+        <inPorts id="_SkX-cKYDEeKR7Lwk7UC7tQ"/>
+      </outPorts>
+      <outPorts id="_Sky1MKYDEeKR7Lwk7UC7tQ" name="stopPlayingR1" type="boolean">
+        <parameters name="Position" value="[700, 1580, 730, 1610]"/>
+        <inPorts id="_Sk8mMKYDEeKR7Lwk7UC7tQ"/>
+      </outPorts>
+      <outPorts id="_SlXc8KYDEeKR7Lwk7UC7tQ" name="stopPlayingR2" type="boolean">
+        <parameters name="Position" value="[700, 1690, 730, 1720]"/>
+        <inPorts id="_SldjkKYDEeKR7Lwk7UC7tQ"/>
+      </outPorts>
+    </blocks>
+    <stateflowMachine id="_SFx98KYDEeKR7Lwk7UC7tQ">
+      <charts id="_SHYgcKYDEeKR7Lwk7UC7tQ" name="MainProcessing" block="_SXeK4KYDEeKR7Lwk7UC7tQ">
+        <nodes xsi:type="stateflow:State" id="_SHaVoKYDEeKR7Lwk7UC7tQ" subStateType="PARALLEL" name="chart" initial="true">
+          <nodes xsi:type="stateflow:State" id="_SHa8sKYDEeKR7Lwk7UC7tQ" name="chartRegion" priority="2">
+            <nodes xsi:type="stateflow:State" id="_VgqwcKYDEeKR7Lwk7UC7tQ" subStateType="PARALLEL" name="init" initial="true">
+              <nodes xsi:type="stateflow:State" id="_ViFswKYDEeKR7Lwk7UC7tQ" name="MainProcessingPort_BAT_Info_To_Other_Robot" priority="3">
+                <nodes xsi:type="stateflow:State" id="_VixCMKYDEeKR7Lwk7UC7tQ" incoming="_Vj_xQKYDEeKR7Lwk7UC7tQ _VkSFIKYDEeKR7Lwk7UC7tQ _VkfggKYDEeKR7Lwk7UC7tQ" outgoing="_VjsPQKYDEeKR7Lwk7UC7tQ _Vkti8KYDEeKR7Lwk7UC7tQ" name="Init" initial="true"/>
+                <nodes xsi:type="stateflow:State" id="_Vi6zMKYDEeKR7Lwk7UC7tQ" incoming="_VjsPQKYDEeKR7Lwk7UC7tQ _Vk_20KYDEeKR7Lwk7UC7tQ" outgoing="_Vj_xQKYDEeKR7Lwk7UC7tQ _VlV1EKYDEeKR7Lwk7UC7tQ _VlrzUKYDEeKR7Lwk7UC7tQ _WTpFgaYDEeKR7Lwk7UC7tQ" name="YourTurn">
+                  <entryAction id="_Wkfk8KYDEeKR7Lwk7UC7tQ" expression="c0=reset()"/>
+                </nodes>
+                <nodes xsi:type="stateflow:State" id="_VjDWEKYDEeKR7Lwk7UC7tQ" incoming="_Vkti8KYDEeKR7Lwk7UC7tQ _VlV1EKYDEeKR7Lwk7UC7tQ" outgoing="_VkSFIKYDEeKR7Lwk7UC7tQ _Vk_20KYDEeKR7Lwk7UC7tQ _VmP0AKYDEeKR7Lwk7UC7tQ _WTwaQKYDEeKR7Lwk7UC7tQ" name="MyTurn">
+                  <entryAction id="_WkgzEKYDEeKR7Lwk7UC7tQ" expression="c0=reset()"/>
+                </nodes>
+                <nodes xsi:type="stateflow:State" id="_VjJcsKYDEeKR7Lwk7UC7tQ" incoming="_VlrzUKYDEeKR7Lwk7UC7tQ _VmP0AKYDEeKR7Lwk7UC7tQ" outgoing="_VkfggKYDEeKR7Lwk7UC7tQ" name="Timeout"/>
+                <nodes xsi:type="stateflow:State" id="_WTpFgKYDEeKR7Lwk7UC7tQ" incoming="_WTpFgaYDEeKR7Lwk7UC7tQ _WTwaQKYDEeKR7Lwk7UC7tQ" name="Inv_Error"/>
+                <transitions id="_VjsPQKYDEeKR7Lwk7UC7tQ" source="_VixCMKYDEeKR7Lwk7UC7tQ" target="_Vi6zMKYDEeKR7Lwk7UC7tQ" priority="2">
+                  <guard id="_WUuqoKYDEeKR7Lwk7UC7tQ" expression="isMaster == true &amp;&amp; BAT_Info_ReceivedBySP == true"/>
+                  <action id="_V2q1oKYDEeKR7Lwk7UC7tQ" expression="[BAT_Info_To_OtherRobotWriteOut, BAT_Info_To_OtherRobotParamWriteOut] = BAT_Info_To_OtherRobot_enqueue(EVT_TURN_POSX, BAT_Info_To_OtherRobotWriteOut, double(posXReceivedBySP), BAT_Info_To_OtherRobotParamWriteOut)&#xA;[BAT_Info_To_OtherRobotWriteOut, BAT_Info_To_OtherRobotParamWriteOut] = BAT_Info_To_OtherRobot_enqueue(EVT_TURN_POSY, BAT_Info_To_OtherRobotWriteOut, double(posYReceivedBySP), BAT_Info_To_OtherRobotParamWriteOut)&#xA;[BAT_Info_To_OtherRobotWriteOut, BAT_Info_To_OtherRobotParamWriteOut] = BAT_Info_To_OtherRobot_enqueue(EVT_TURN_POSZ, BAT_Info_To_OtherRobotWriteOut, double(posZReceivedBySP), BAT_Info_To_OtherRobotParamWriteOut)&#xA;[BAT_Info_To_OtherRobotWriteOut, BAT_Info_To_OtherRobotParamWriteOut] = BAT_Info_To_OtherRobot_enqueue(EVT_TURN_TIMEOFARRIVAL, BAT_Info_To_OtherRobotWriteOut, double(timeOfArrivalReceivedBySP), BAT_Info_To_OtherRobotParamWriteOut)&#xA;[BAT_Info_To_OtherRobotWriteOut, BAT_Info_To_OtherRobotParamWriteOut] = BAT_Info_To_OtherRobot_enqueue(EVT_TURN_VELOCITY, BAT_Info_To_OtherRobotWriteOut, double(velocityReceivedBySP), BAT_Info_To_OtherRobotParamWriteOut)&#xA;"/>
+                  <action id="_WdAc4KYDEeKR7Lwk7UC7tQ" expression="BAT_Info_ReceivedBySP = false "/>
+                </transitions>
+                <transitions id="_Vj_xQKYDEeKR7Lwk7UC7tQ" source="_Vi6zMKYDEeKR7Lwk7UC7tQ" target="_VixCMKYDEeKR7Lwk7UC7tQ" priority="1">
+                  <guard id="_WEWFQKYDEeKR7Lwk7UC7tQ" expression="BAT_Info_To_OtherRobot_checkQueue(EVT_STOPPLAYING, BAT_Info_To_OtherRobotReadOut)"/>
+                  <action id="_WEWsUKYDEeKR7Lwk7UC7tQ" expression="[BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut] = BAT_Info_To_OtherRobot_dequeue(EVT_STOPPLAYING, BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut)"/>
+                </transitions>
+                <transitions id="_VkSFIKYDEeKR7Lwk7UC7tQ" source="_VjDWEKYDEeKR7Lwk7UC7tQ" target="_VixCMKYDEeKR7Lwk7UC7tQ" priority="1">
+                  <guard id="_WWuOsKYDEeKR7Lwk7UC7tQ" expression="stopPlaying == true"/>
+                  <action id="_V4yVgKYDEeKR7Lwk7UC7tQ" expression="[BAT_Info_To_OtherRobotWriteOut, BAT_Info_To_OtherRobotParamWriteOut] = BAT_Info_To_OtherRobot_enqueue(EVT_STOPPLAYING, BAT_Info_To_OtherRobotWriteOut, 0, BAT_Info_To_OtherRobotParamWriteOut)"/>
+                </transitions>
+                <transitions id="_VkfggKYDEeKR7Lwk7UC7tQ" source="_VjJcsKYDEeKR7Lwk7UC7tQ" target="_VixCMKYDEeKR7Lwk7UC7tQ" priority="1"/>
+                <transitions id="_Vkti8KYDEeKR7Lwk7UC7tQ" source="_VixCMKYDEeKR7Lwk7UC7tQ" target="_VjDWEKYDEeKR7Lwk7UC7tQ" priority="1">
+                  <guard id="_WCGpkKYDEeKR7Lwk7UC7tQ" expression="BAT_Info_To_OtherRobot_checkQueue(EVT_TURN_POSX, BAT_Info_To_OtherRobotReadOut) &amp;&amp; BAT_Info_To_OtherRobot_checkQueue(EVT_TURN_POSY, BAT_Info_To_OtherRobotReadOut) &amp;&amp; BAT_Info_To_OtherRobot_checkQueue(EVT_TURN_POSZ, BAT_Info_To_OtherRobotReadOut) &amp;&amp; BAT_Info_To_OtherRobot_checkQueue(EVT_TURN_TIMEOFARRIVAL, BAT_Info_To_OtherRobotReadOut) &amp;&amp; BAT_Info_To_OtherRobot_checkQueue(EVT_TURN_VELOCITY, BAT_Info_To_OtherRobotReadOut)"/>
+                  <action id="_WCHQoKYDEeKR7Lwk7UC7tQ" expression="[BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut, tmp_var_1] = BAT_Info_To_OtherRobot_dequeue(EVT_TURN_POSX, BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut); &#xA;[BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut, tmp_var_2] = BAT_Info_To_OtherRobot_dequeue(EVT_TURN_POSY, BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut); &#xA;[BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut, tmp_var_3] = BAT_Info_To_OtherRobot_dequeue(EVT_TURN_POSZ, BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut); &#xA;[BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut, tmp_var_4] = BAT_Info_To_OtherRobot_dequeue(EVT_TURN_TIMEOFARRIVAL, BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut); &#xA;[BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut, tmp_var_5] = BAT_Info_To_OtherRobot_dequeue(EVT_TURN_VELOCITY, BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut)"/>
+                  <action id="_WdioYKYDEeKR7Lwk7UC7tQ" expression="posXReceivedByRobot = tmp_var_1 ;  posYReceivedByRobot = tmp_var_2 ;  posZReceivedByRobot = tmp_var_3 ;  timeOfArrivalReceivedByRobot = tmp_var_4 ;  velocityReceivedByRobot = tmp_var_5 ;  BAT_Info_ReceivedByRobot = true "/>
+                </transitions>
+                <transitions id="_Vk_20KYDEeKR7Lwk7UC7tQ" source="_VjDWEKYDEeKR7Lwk7UC7tQ" target="_Vi6zMKYDEeKR7Lwk7UC7tQ" priority="3">
+                  <guard id="_WVxzgKYDEeKR7Lwk7UC7tQ" expression="BAT_Info_ReceivedBySP == true"/>
+                  <action id="_V3sJUKYDEeKR7Lwk7UC7tQ" expression="[BAT_Info_To_OtherRobotWriteOut, BAT_Info_To_OtherRobotParamWriteOut] = BAT_Info_To_OtherRobot_enqueue(EVT_TURN_POSX, BAT_Info_To_OtherRobotWriteOut, double(posXReceivedByRobot), BAT_Info_To_OtherRobotParamWriteOut)&#xA;[BAT_Info_To_OtherRobotWriteOut, BAT_Info_To_OtherRobotParamWriteOut] = BAT_Info_To_OtherRobot_enqueue(EVT_TURN_POSY, BAT_Info_To_OtherRobotWriteOut, double(posYReceivedBySP), BAT_Info_To_OtherRobotParamWriteOut)&#xA;[BAT_Info_To_OtherRobotWriteOut, BAT_Info_To_OtherRobotParamWriteOut] = BAT_Info_To_OtherRobot_enqueue(EVT_TURN_POSZ, BAT_Info_To_OtherRobotWriteOut, double(posZReceivedBySP), BAT_Info_To_OtherRobotParamWriteOut)&#xA;[BAT_Info_To_OtherRobotWriteOut, BAT_Info_To_OtherRobotParamWriteOut] = BAT_Info_To_OtherRobot_enqueue(EVT_TURN_TIMEOFARRIVAL, BAT_Info_To_OtherRobotWriteOut, double(timeOfArrivalReceivedBySP), BAT_Info_To_OtherRobotParamWriteOut)&#xA;[BAT_Info_To_OtherRobotWriteOut, BAT_Info_To_OtherRobotParamWriteOut] = BAT_Info_To_OtherRobot_enqueue(EVT_TURN_VELOCITY, BAT_Info_To_OtherRobotWriteOut, double(velocityReceivedBySP), BAT_Info_To_OtherRobotParamWriteOut)&#xA;"/>
+                  <action id="_Wd_UUKYDEeKR7Lwk7UC7tQ" expression="BAT_Info_ReceivedBySP = false "/>
+                </transitions>
+                <transitions id="_VlV1EKYDEeKR7Lwk7UC7tQ" source="_Vi6zMKYDEeKR7Lwk7UC7tQ" target="_VjDWEKYDEeKR7Lwk7UC7tQ" priority="3">
+                  <guard id="_WDTjcKYDEeKR7Lwk7UC7tQ" expression="BAT_Info_To_OtherRobot_checkQueue(EVT_TURN_POSX, BAT_Info_To_OtherRobotReadOut) &amp;&amp; BAT_Info_To_OtherRobot_checkQueue(EVT_TURN_POSY, BAT_Info_To_OtherRobotReadOut) &amp;&amp; BAT_Info_To_OtherRobot_checkQueue(EVT_TURN_POSZ, BAT_Info_To_OtherRobotReadOut) &amp;&amp; BAT_Info_To_OtherRobot_checkQueue(EVT_TURN_TIMEOFARRIVAL, BAT_Info_To_OtherRobotReadOut) &amp;&amp; BAT_Info_To_OtherRobot_checkQueue(EVT_TURN_VELOCITY, BAT_Info_To_OtherRobotReadOut)"/>
+                  <action id="_WDTjcaYDEeKR7Lwk7UC7tQ" expression="[BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut, tmp_var_1] = BAT_Info_To_OtherRobot_dequeue(EVT_TURN_POSX, BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut); &#xA;[BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut, tmp_var_2] = BAT_Info_To_OtherRobot_dequeue(EVT_TURN_POSY, BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut); &#xA;[BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut, tmp_var_3] = BAT_Info_To_OtherRobot_dequeue(EVT_TURN_POSZ, BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut); &#xA;[BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut, tmp_var_4] = BAT_Info_To_OtherRobot_dequeue(EVT_TURN_TIMEOFARRIVAL, BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut); &#xA;[BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut, tmp_var_5] = BAT_Info_To_OtherRobot_dequeue(EVT_TURN_VELOCITY, BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut)"/>
+                  <action id="_WexXcKYDEeKR7Lwk7UC7tQ" expression="posXReceivedByRobot = tmp_var_1 ;  posYReceivedByRobot = tmp_var_2 ;  posZReceivedByRobot = tmp_var_3 ;  timeOfArrivalReceivedByRobot = tmp_var_4 ;  velocityReceivedByRobot = tmp_var_5 ;  BAT_Info_ReceivedByRobot = true "/>
+                </transitions>
+                <transitions id="_VlrzUKYDEeKR7Lwk7UC7tQ" source="_Vi6zMKYDEeKR7Lwk7UC7tQ" target="_VjJcsKYDEeKR7Lwk7UC7tQ" priority="2">
+                  <guard id="_WL3pkKYDEeKR7Lwk7UC7tQ" expression="time(c0) >= 1.0"/>
+                </transitions>
+                <transitions id="_VmP0AKYDEeKR7Lwk7UC7tQ" source="_VjDWEKYDEeKR7Lwk7UC7tQ" target="_VjJcsKYDEeKR7Lwk7UC7tQ" priority="2">
+                  <guard id="_WM5kUKYDEeKR7Lwk7UC7tQ" expression="time(c0) >= 1.0"/>
+                </transitions>
+                <transitions id="_WTpFgaYDEeKR7Lwk7UC7tQ" source="_Vi6zMKYDEeKR7Lwk7UC7tQ" target="_WTpFgKYDEeKR7Lwk7UC7tQ" priority="4">
+                  <guard id="_WTpskKYDEeKR7Lwk7UC7tQ" expression="time(c0) > 1000"/>
+                </transitions>
+                <transitions id="_WTwaQKYDEeKR7Lwk7UC7tQ" source="_VjDWEKYDEeKR7Lwk7UC7tQ" target="_WTpFgKYDEeKR7Lwk7UC7tQ" priority="4">
+                  <guard id="_WTxoYKYDEeKR7Lwk7UC7tQ" expression="time(c0) >= 1000"/>
+                </transitions>
+                <local id="_WLmj0KYDEeKR7Lwk7UC7tQ" name="c0" type="double" value="0.0"/>
+              </nodes>
+              <nodes xsi:type="stateflow:State" id="_ViLMUKYDEeKR7Lwk7UC7tQ" name="MainProcessingPort_BAT_Info_To_StrikeP" priority="2">
+                <nodes xsi:type="stateflow:State" id="_VjOVMKYDEeKR7Lwk7UC7tQ" incoming="_Wlg4oKYDEeKR7Lwk7UC7tQ" outgoing="_Wlg4oKYDEeKR7Lwk7UC7tQ" name="Sending" initial="true"/>
+                <transitions id="_Wlg4oKYDEeKR7Lwk7UC7tQ" source="_VjOVMKYDEeKR7Lwk7UC7tQ" target="_VjOVMKYDEeKR7Lwk7UC7tQ" priority="1">
+                  <guard id="_YCM5EKYDEeKR7Lwk7UC7tQ" expression="BAT_Info_ReceivedByRobot == true"/>
+                  <action id="_XxXnwKYDEeKR7Lwk7UC7tQ" expression="[BAT_Info_ToStrikeProcessingWriteOut, BAT_Info_ToStrikeProcessingParamWriteOut] = BAT_Info_ToStrikeProcessing_enqueue(EVT_TRANSFERBATINFO_POSX, BAT_Info_ToStrikeProcessingWriteOut, double(posXReceivedByRobot), BAT_Info_ToStrikeProcessingParamWriteOut)&#xA;[BAT_Info_ToStrikeProcessingWriteOut, BAT_Info_ToStrikeProcessingParamWriteOut] = BAT_Info_ToStrikeProcessing_enqueue(EVT_TRANSFERBATINFO_POSY, BAT_Info_ToStrikeProcessingWriteOut, double(posYReceivedByRobot), BAT_Info_ToStrikeProcessingParamWriteOut)&#xA;[BAT_Info_ToStrikeProcessingWriteOut, BAT_Info_ToStrikeProcessingParamWriteOut] = BAT_Info_ToStrikeProcessing_enqueue(EVT_TRANSFERBATINFO_POSZ, BAT_Info_ToStrikeProcessingWriteOut, double(posZReceivedByRobot), BAT_Info_ToStrikeProcessingParamWriteOut)&#xA;[BAT_Info_ToStrikeProcessingWriteOut, BAT_Info_ToStrikeProcessingParamWriteOut] = BAT_Info_ToStrikeProcessing_enqueue(EVT_TRANSFERBATINFO_TIMEOFARRIVAL, BAT_Info_ToStrikeProcessingWriteOut, double(timeOfArrivalReceivedByRobot), BAT_Info_ToStrikeProcessingParamWriteOut)&#xA;[BAT_Info_ToStrikeProcessingWriteOut, BAT_Info_ToStrikeProcessingParamWriteOut] = BAT_Info_ToStrikeProcessing_enqueue(EVT_TRANSFERBATINFO_VELOCITY, BAT_Info_ToStrikeProcessingWriteOut, double(velocityReceivedByRobot), BAT_Info_ToStrikeProcessingParamWriteOut)&#xA;"/>
+                  <action id="_YHqA0KYDEeKR7Lwk7UC7tQ" expression="BAT_Info_ReceivedByRobot = false "/>
+                </transitions>
+              </nodes>
+              <nodes xsi:type="stateflow:State" id="_ViQE0KYDEeKR7Lwk7UC7tQ" name="MainProcessingPort_BAT_Info_To_SensorP" priority="1">
+                <nodes xsi:type="stateflow:State" id="_VjUb0KYDEeKR7Lwk7UC7tQ" incoming="_Wlr3wKYDEeKR7Lwk7UC7tQ" outgoing="_Wlr3wKYDEeKR7Lwk7UC7tQ" name="Receiving" initial="true"/>
+                <transitions id="_Wlr3wKYDEeKR7Lwk7UC7tQ" source="_VjUb0KYDEeKR7Lwk7UC7tQ" target="_VjUb0KYDEeKR7Lwk7UC7tQ" priority="1">
+                  <guard id="_X1_CAKYDEeKR7Lwk7UC7tQ" expression="BAT_Info_From_SensorProcessing_checkQueue(EVT_TRANSFERBATINFO_POSX, BAT_Info_From_SensorProcessingReadOut) &amp;&amp; BAT_Info_From_SensorProcessing_checkQueue(EVT_TRANSFERBATINFO_POSY, BAT_Info_From_SensorProcessingReadOut) &amp;&amp; BAT_Info_From_SensorProcessing_checkQueue(EVT_TRANSFERBATINFO_POSZ, BAT_Info_From_SensorProcessingReadOut) &amp;&amp; BAT_Info_From_SensorProcessing_checkQueue(EVT_TRANSFERBATINFO_TIMEOFARRIVAL, BAT_Info_From_SensorProcessingReadOut) &amp;&amp; BAT_Info_From_SensorProcessing_checkQueue(EVT_TRANSFERBATINFO_VELOCITY, BAT_Info_From_SensorProcessingReadOut)"/>
+                  <action id="_X1_CAaYDEeKR7Lwk7UC7tQ" expression="[BAT_Info_From_SensorProcessingReadOut, BAT_Info_From_SensorProcessingParamReadOut, tmp_var_1] = BAT_Info_From_SensorProcessing_dequeue(EVT_TRANSFERBATINFO_POSX, BAT_Info_From_SensorProcessingReadOut, BAT_Info_From_SensorProcessingParamReadOut); &#xA;[BAT_Info_From_SensorProcessingReadOut, BAT_Info_From_SensorProcessingParamReadOut, tmp_var_2] = BAT_Info_From_SensorProcessing_dequeue(EVT_TRANSFERBATINFO_POSY, BAT_Info_From_SensorProcessingReadOut, BAT_Info_From_SensorProcessingParamReadOut); &#xA;[BAT_Info_From_SensorProcessingReadOut, BAT_Info_From_SensorProcessingParamReadOut, tmp_var_3] = BAT_Info_From_SensorProcessing_dequeue(EVT_TRANSFERBATINFO_POSZ, BAT_Info_From_SensorProcessingReadOut, BAT_Info_From_SensorProcessingParamReadOut); &#xA;[BAT_Info_From_SensorProcessingReadOut, BAT_Info_From_SensorProcessingParamReadOut, tmp_var_4] = BAT_Info_From_SensorProcessing_dequeue(EVT_TRANSFERBATINFO_TIMEOFARRIVAL, BAT_Info_From_SensorProcessingReadOut, BAT_Info_From_SensorProcessingParamReadOut); &#xA;[BAT_Info_From_SensorProcessingReadOut, BAT_Info_From_SensorProcessingParamReadOut, tmp_var_5] = BAT_Info_From_SensorProcessing_dequeue(EVT_TRANSFERBATINFO_VELOCITY, BAT_Info_From_SensorProcessingReadOut, BAT_Info_From_SensorProcessingParamReadOut)"/>
+                  <action id="_YIZnsKYDEeKR7Lwk7UC7tQ" expression="posXReceivedBySP = tmp_var_1 ;  posYReceivedBySP = tmp_var_2 ;  posZReceivedBySP = tmp_var_3 ;  timeOfArrivalReceivedBySP = tmp_var_4 ;  velocityReceivedBySP = tmp_var_5 ;  BAT_Info_ReceivedBySP = true "/>
+                </transitions>
+              </nodes>
+            </nodes>
+            <local id="_V16AoKYDEeKR7Lwk7UC7tQ" name="BAT_Info_ReceivedBySP" type="boolean"/>
+            <local id="_V18c4KYDEeKR7Lwk7UC7tQ" name="BAT_Info_ReceivedByRobot" type="boolean"/>
+            <local id="_V1-5IKYDEeKR7Lwk7UC7tQ" name="posXReceivedBySP" type="double"/>
+            <local id="_V2BVYKYDEeKR7Lwk7UC7tQ" name="posXReceivedByRobot" type="double"/>
+            <local id="_V2EYsKYDEeKR7Lwk7UC7tQ" name="posYReceivedBySP" type="double"/>
+            <local id="_V2HcAKYDEeKR7Lwk7UC7tQ" name="posYReceivedByRobot" type="double"/>
+            <local id="_V2J4QKYDEeKR7Lwk7UC7tQ" name="posZReceivedBySP" type="double"/>
+            <local id="_V2LtcKYDEeKR7Lwk7UC7tQ" name="posZReceivedByRobot" type="double"/>
+            <local id="_V2OJsKYDEeKR7Lwk7UC7tQ" name="timeOfArrivalReceivedBySP" type="double"/>
+            <local id="_V2P-4KYDEeKR7Lwk7UC7tQ" name="timeOfArrivalReceivedByRobot" type="double"/>
+            <local id="_V2TCMKYDEeKR7Lwk7UC7tQ" name="velocityReceivedBySP" type="double"/>
+            <local id="_V2WskKYDEeKR7Lwk7UC7tQ" name="velocityReceivedByRobot" type="double"/>
+          </nodes>
+          <nodes xsi:type="stateflow:State" id="_SHbjwKYDEeKR7Lwk7UC7tQ" incoming="_SHjfkKYDEeKR7Lwk7UC7tQ" outgoing="_SHjfkKYDEeKR7Lwk7UC7tQ" name="DataInit" priority="1"/>
+          <transitions id="_SHjfkKYDEeKR7Lwk7UC7tQ" source="_SHbjwKYDEeKR7Lwk7UC7tQ" target="_SHbjwKYDEeKR7Lwk7UC7tQ">
+            <action id="_SHxiAKYDEeKR7Lwk7UC7tQ" expression="BAT_Info_To_OtherRobotWriteOut = BAT_Info_To_OtherRobotWriteIn;&#xA;BAT_Info_To_OtherRobotParamWriteOut = BAT_Info_To_OtherRobotParamWriteIn;&#xA;BAT_Info_To_OtherRobotReadOut = BAT_Info_To_OtherRobotReadIn;&#xA;BAT_Info_To_OtherRobotParamReadOut = BAT_Info_To_OtherRobotParamReadIn;&#xA;BAT_Info_ToStrikeProcessingWriteOut = BAT_Info_ToStrikeProcessingWriteIn;&#xA;BAT_Info_ToStrikeProcessingParamWriteOut = BAT_Info_ToStrikeProcessingParamWriteIn;&#xA;BAT_Info_ToStrikeProcessingReadOut = BAT_Info_ToStrikeProcessingReadIn;&#xA;BAT_Info_ToStrikeProcessingParamReadOut = BAT_Info_ToStrikeProcessingParamReadIn;&#xA;BAT_Info_From_SensorProcessingWriteOut = BAT_Info_From_SensorProcessingWriteIn;&#xA;BAT_Info_From_SensorProcessingParamWriteOut = BAT_Info_From_SensorProcessingParamWriteIn;&#xA;BAT_Info_From_SensorProcessingReadOut = BAT_Info_From_SensorProcessingReadIn;&#xA;BAT_Info_From_SensorProcessingParamReadOut = BAT_Info_From_SensorProcessingParamReadIn;&#xA;"/>
+          </transitions>
+        </nodes>
+        <embeddedFunctions id="_SHrbYKYDEeKR7Lwk7UC7tQ" name="time" code="function logicalTime = time(clock) \n&#xD;&#xA; sample = 0.001;  % the sample time of the system clock \n&#xD;&#xA; %convert to pass units of time after last reset \n&#xD;&#xA; logicalTime = uint32((clockSignal - clock)/sample);">
+          <input id="_SH5d0KYDEeKR7Lwk7UC7tQ" name="clock" type="double"/>
+          <output id="_SH4PsKYDEeKR7Lwk7UC7tQ" name="logicalTime" type="uint32"/>
+        </embeddedFunctions>
+        <embeddedFunctions id="_SHrbYaYDEeKR7Lwk7UC7tQ" name="reset" code="function clock = reset() \n&#xD;&#xA; %set clock variable to current time \n&#xD;&#xA; clock = clockSignal;">
+          <output id="_SH6r8KYDEeKR7Lwk7UC7tQ" name="clock" type="double"/>
+        </embeddedFunctions>
+        <embeddedFunctions xsi:type="buffer:Enqueue" id="_SSGisKYDEeKR7Lwk7UC7tQ" name="BAT_Info_To_OtherRobot_enqueue"/>
+        <embeddedFunctions xsi:type="buffer:Dequeue" id="_SSSI4KYDEeKR7Lwk7UC7tQ" name="BAT_Info_To_OtherRobot_dequeue"/>
+        <embeddedFunctions xsi:type="buffer:CheckQueue" id="_SScg8KYDEeKR7Lwk7UC7tQ" name="BAT_Info_To_OtherRobot_checkQueue"/>
+        <embeddedFunctions xsi:type="buffer:Enqueue" id="_SSj1sKYDEeKR7Lwk7UC7tQ" name="BAT_Info_ToStrikeProcessing_enqueue"/>
+        <embeddedFunctions xsi:type="buffer:Dequeue" id="_SSlq4KYDEeKR7Lwk7UC7tQ" name="BAT_Info_ToStrikeProcessing_dequeue"/>
+        <embeddedFunctions xsi:type="buffer:CheckQueue" id="_SSouMKYDEeKR7Lwk7UC7tQ" name="BAT_Info_ToStrikeProcessing_checkQueue"/>
+        <embeddedFunctions xsi:type="buffer:Enqueue" id="_SSvb4KYDEeKR7Lwk7UC7tQ" name="BAT_Info_From_SensorProcessing_enqueue"/>
+        <embeddedFunctions xsi:type="buffer:Dequeue" id="_SSyfMKYDEeKR7Lwk7UC7tQ" name="BAT_Info_From_SensorProcessing_dequeue"/>
+        <embeddedFunctions xsi:type="buffer:CheckQueue" id="_SS1igKYDEeKR7Lwk7UC7tQ" name="BAT_Info_From_SensorProcessing_checkQueue"/>
+        <local id="_SV1zMKYDEeKR7Lwk7UC7tQ" name="tmp_var_1" type="double"/>
+        <local id="_SV4PcKYDEeKR7Lwk7UC7tQ" name="tmp_var_2" type="double"/>
+        <local id="_SV7SwKYDEeKR7Lwk7UC7tQ" name="tmp_var_3" type="double"/>
+        <local id="_SV9H8KYDEeKR7Lwk7UC7tQ" name="tmp_var_4" type="double"/>
+        <local id="_SWAyUKYDEeKR7Lwk7UC7tQ" name="tmp_var_5" type="double"/>
+        <constant id="_Wtg-EKYDEeKR7Lwk7UC7tQ" name="EVT_TURN_POSX" type="uint32" value="1"/>
+        <constant id="_Wt2VQKYDEeKR7Lwk7UC7tQ" name="EVT_TURN_POSY" type="uint32" value="2"/>
+        <constant id="_WuHbAKYDEeKR7Lwk7UC7tQ" name="EVT_TURN_POSZ" type="uint32" value="3"/>
+        <constant id="_WuZH0KYDEeKR7Lwk7UC7tQ" name="EVT_TURN_TIMEOFARRIVAL" type="uint32" value="4"/>
+        <constant id="_WuqNkKYDEeKR7Lwk7UC7tQ" name="EVT_TURN_VELOCITY" type="uint32" value="5"/>
+        <constant id="_WvDPIKYDEeKR7Lwk7UC7tQ" name="EVT_TRANSFERBATINFO_POSX" type="uint32" value="6"/>
+        <constant id="_Wvn24KYDEeKR7Lwk7UC7tQ" name="EVT_TRANSFERBATINFO_POSY" type="uint32" value="7"/>
+        <constant id="_WwhOwKYDEeKR7Lwk7UC7tQ" name="EVT_TRANSFERBATINFO_POSZ" type="uint32" value="8"/>
+        <constant id="_WxCzMKYDEeKR7Lwk7UC7tQ" name="EVT_TRANSFERBATINFO_TIMEOFARRIVAL" type="uint32" value="9"/>
+        <constant id="_Wx2EcKYDEeKR7Lwk7UC7tQ" name="EVT_TRANSFERBATINFO_VELOCITY" type="uint32" value="10"/>
+        <constant id="_XZBZMKYDEeKR7Lwk7UC7tQ" name="EVT_STOPPLAYING" type="uint32" value="12"/>
+        <output id="_Ss_u8KYDEeKR7Lwk7UC7tQ" name="BAT_Info_To_OtherRobotReadOut" type="uint8" size="[10,2]"/>
+        <output id="_StCLMKYDEeKR7Lwk7UC7tQ" name="BAT_Info_To_OtherRobotParamReadOut" type="double" size="10"/>
+        <output id="_StDZUKYDEeKR7Lwk7UC7tQ" name="BAT_Info_To_OtherRobotWriteOut" type="uint8" size="[10,2]"/>
+        <output id="_StFOgKYDEeKR7Lwk7UC7tQ" name="BAT_Info_To_OtherRobotParamWriteOut" type="double" size="10"/>
+        <output id="_StuHsKYDEeKR7Lwk7UC7tQ" name="BAT_Info_ToStrikeProcessingReadOut" type="uint8" size="[10,2]"/>
+        <output id="_Stv84KYDEeKR7Lwk7UC7tQ" name="BAT_Info_ToStrikeProcessingParamReadOut" type="double" size="10"/>
+        <output id="_StyZIKYDEeKR7Lwk7UC7tQ" name="BAT_Info_ToStrikeProcessingWriteOut" type="uint8" size="[10,2]"/>
+        <output id="_StzAMKYDEeKR7Lwk7UC7tQ" name="BAT_Info_ToStrikeProcessingParamWriteOut" type="double" size="10"/>
+        <output id="_SudHgKYDEeKR7Lwk7UC7tQ" name="BAT_Info_From_SensorProcessingReadOut" type="uint8" size="[10,2]"/>
+        <output id="_SueVoKYDEeKR7Lwk7UC7tQ" name="BAT_Info_From_SensorProcessingParamReadOut" type="double" size="10"/>
+        <output id="_SufjwKYDEeKR7Lwk7UC7tQ" name="BAT_Info_From_SensorProcessingWriteOut" type="uint8" size="[10,2]"/>
+        <output id="_Sugx4KYDEeKR7Lwk7UC7tQ" name="BAT_Info_From_SensorProcessingParamWriteOut" type="double" size="10"/>
+        <input id="_SXfZAKYDEeKR7Lwk7UC7tQ" name="clockSignal" type="double"/>
+        <input id="_SmuH0KYDEeKR7Lwk7UC7tQ" name="isMaster" type="boolean"/>
+        <input id="_SnQTUKYDEeKR7Lwk7UC7tQ" name="stopPlaying" type="boolean"/>
+        <input id="_Ss5oUKYDEeKR7Lwk7UC7tQ" name="BAT_Info_To_OtherRobotReadIn" type="uint8" size="[10,2]"/>
+        <input id="_Ss7dgKYDEeKR7Lwk7UC7tQ" name="BAT_Info_To_OtherRobotParamReadIn" type="double" size="10"/>
+        <input id="_Ss8roKYDEeKR7Lwk7UC7tQ" name="BAT_Info_To_OtherRobotWriteIn" type="uint8" size="[10,2]"/>
+        <input id="_Ss-g0KYDEeKR7Lwk7UC7tQ" name="BAT_Info_To_OtherRobotParamWriteIn" type="double" size="10"/>
+        <input id="_StoBEKYDEeKR7Lwk7UC7tQ" name="BAT_Info_ToStrikeProcessingReadIn" type="uint8" size="[10,2]"/>
+        <input id="_Stp2QKYDEeKR7Lwk7UC7tQ" name="BAT_Info_ToStrikeProcessingParamReadIn" type="double" size="10"/>
+        <input id="_StrrcKYDEeKR7Lwk7UC7tQ" name="BAT_Info_ToStrikeProcessingWriteIn" type="uint8" size="[10,2]"/>
+        <input id="_Sts5kKYDEeKR7Lwk7UC7tQ" name="BAT_Info_ToStrikeProcessingParamWriteIn" type="double" size="10"/>
+        <input id="_SuXn8KYDEeKR7Lwk7UC7tQ" name="BAT_Info_From_SensorProcessingReadIn" type="uint8" size="[10,2]"/>
+        <input id="_SuZdIKYDEeKR7Lwk7UC7tQ" name="BAT_Info_From_SensorProcessingParamReadIn" type="double" size="10"/>
+        <input id="_SuarQKYDEeKR7Lwk7UC7tQ" name="BAT_Info_From_SensorProcessingWriteIn" type="uint8" size="[10,2]"/>
+        <input id="_SubSUKYDEeKR7Lwk7UC7tQ" name="BAT_Info_From_SensorProcessingParamWriteIn" type="double" size="10"/>
+      </charts>
+      <charts id="_SILxsKYDEeKR7Lwk7UC7tQ" name="SensorProcessing" block="_SYI5QKYDEeKR7Lwk7UC7tQ">
+        <nodes xsi:type="stateflow:State" id="_SIM_0KYDEeKR7Lwk7UC7tQ" subStateType="PARALLEL" name="chart" initial="true">
+          <nodes xsi:type="stateflow:State" id="_SION8KYDEeKR7Lwk7UC7tQ" name="chartRegion" priority="2">
+            <nodes xsi:type="stateflow:State" id="_VhR0cKYDEeKR7Lwk7UC7tQ" name="Initial" initial="true">
+              <nodes xsi:type="stateflow:State" id="_VoB8sKYDEeKR7Lwk7UC7tQ" incoming="_VrGe0KYDEeKR7Lwk7UC7tQ" outgoing="_VqjsQKYDEeKR7Lwk7UC7tQ" name="Reading" initial="true">
+                <entryAction id="_WkhaIKYDEeKR7Lwk7UC7tQ" expression="c0=reset()"/>
+              </nodes>
+              <nodes xsi:type="stateflow:State" id="_VoHcQKYDEeKR7Lwk7UC7tQ" incoming="_VqjsQKYDEeKR7Lwk7UC7tQ" outgoing="_VrGe0KYDEeKR7Lwk7UC7tQ" name="Sending">
+                <entryAction id="_WkioQKYDEeKR7Lwk7UC7tQ" expression="c0=reset()"/>
+              </nodes>
+              <transitions id="_VqjsQKYDEeKR7Lwk7UC7tQ" source="_VoB8sKYDEeKR7Lwk7UC7tQ" target="_VoHcQKYDEeKR7Lwk7UC7tQ" priority="1">
+                <guard id="_WX23IKYDEeKR7Lwk7UC7tQ" expression="ballRecognized == true"/>
+                <action id="_V6IZUKYDEeKR7Lwk7UC7tQ" expression="[BAT_InfoWriteOut, BAT_InfoParamWriteOut] = BAT_Info_enqueue(EVT_TRANSFERBATINFO_POSX, BAT_InfoWriteOut, double(posX), BAT_InfoParamWriteOut)&#xA;[BAT_InfoWriteOut, BAT_InfoParamWriteOut] = BAT_Info_enqueue(EVT_TRANSFERBATINFO_POSY, BAT_InfoWriteOut, double(posY), BAT_InfoParamWriteOut)&#xA;[BAT_InfoWriteOut, BAT_InfoParamWriteOut] = BAT_Info_enqueue(EVT_TRANSFERBATINFO_POSZ, BAT_InfoWriteOut, double(posZ), BAT_InfoParamWriteOut)&#xA;[BAT_InfoWriteOut, BAT_InfoParamWriteOut] = BAT_Info_enqueue(EVT_TRANSFERBATINFO_TIMEOFARRIVAL, BAT_InfoWriteOut, double(timeOfArrival), BAT_InfoParamWriteOut)&#xA;[BAT_InfoWriteOut, BAT_InfoParamWriteOut] = BAT_Info_enqueue(EVT_TRANSFERBATINFO_VELOCITY, BAT_InfoWriteOut, double(velocity), BAT_InfoParamWriteOut)&#xA;"/>
+              </transitions>
+              <transitions id="_VrGe0KYDEeKR7Lwk7UC7tQ" source="_VoHcQKYDEeKR7Lwk7UC7tQ" target="_VoB8sKYDEeKR7Lwk7UC7tQ" priority="1">
+                <guard id="_WOvXYKYDEeKR7Lwk7UC7tQ" expression="time(c0) >= 0.1"/>
+              </transitions>
+            </nodes>
+          </nodes>
+          <nodes xsi:type="stateflow:State" id="_SIO1AKYDEeKR7Lwk7UC7tQ" incoming="_SIPcEKYDEeKR7Lwk7UC7tQ" outgoing="_SIPcEKYDEeKR7Lwk7UC7tQ" name="DataInit" priority="1"/>
+          <transitions id="_SIPcEKYDEeKR7Lwk7UC7tQ" source="_SIO1AKYDEeKR7Lwk7UC7tQ" target="_SIO1AKYDEeKR7Lwk7UC7tQ">
+            <action id="_SIRRQKYDEeKR7Lwk7UC7tQ" expression="BAT_InfoWriteOut = BAT_InfoWriteIn;&#xA;BAT_InfoParamWriteOut = BAT_InfoParamWriteIn;&#xA;BAT_InfoReadOut = BAT_InfoReadIn;&#xA;BAT_InfoParamReadOut = BAT_InfoParamReadIn;&#xA;"/>
+          </transitions>
+        </nodes>
+        <embeddedFunctions id="_SIQDIKYDEeKR7Lwk7UC7tQ" name="time" code="function logicalTime = time(clock) \n&#xD;&#xA; sample = 0.001;  % the sample time of the system clock \n&#xD;&#xA; %convert to pass units of time after last reset \n&#xD;&#xA; logicalTime = uint32((clockSignal - clock)/sample);">
+          <input id="_SISfYKYDEeKR7Lwk7UC7tQ" name="clock" type="double"/>
+          <output id="_SIR4UKYDEeKR7Lwk7UC7tQ" name="logicalTime" type="uint32"/>
+        </embeddedFunctions>
+        <embeddedFunctions id="_SIQqMKYDEeKR7Lwk7UC7tQ" name="reset" code="function clock = reset() \n&#xD;&#xA; %set clock variable to current time \n&#xD;&#xA; clock = clockSignal;">
+          <output id="_SITGcKYDEeKR7Lwk7UC7tQ" name="clock" type="double"/>
+        </embeddedFunctions>
+        <embeddedFunctions xsi:type="buffer:Enqueue" id="_STV40KYDEeKR7Lwk7UC7tQ" name="BAT_Info_enqueue"/>
+        <embeddedFunctions xsi:type="buffer:Dequeue" id="_STXuAKYDEeKR7Lwk7UC7tQ" name="BAT_Info_dequeue"/>
+        <embeddedFunctions xsi:type="buffer:CheckQueue" id="_STY8IKYDEeKR7Lwk7UC7tQ" name="BAT_Info_checkQueue"/>
+        <local id="_WLkHkKYDEeKR7Lwk7UC7tQ" name="c0" type="double" value="0.0"/>
+        <constant id="_XDrbUKYDEeKR7Lwk7UC7tQ" name="EVT_TRANSFERBATINFO_POSX" type="uint32" value="6"/>
+        <constant id="_XD7S8KYDEeKR7Lwk7UC7tQ" name="EVT_TRANSFERBATINFO_POSY" type="uint32" value="7"/>
+        <constant id="_XEHgMKYDEeKR7Lwk7UC7tQ" name="EVT_TRANSFERBATINFO_POSZ" type="uint32" value="8"/>
+        <constant id="_XEVioKYDEeKR7Lwk7UC7tQ" name="EVT_TRANSFERBATINFO_TIMEOFARRIVAL" type="uint32" value="9"/>
+        <constant id="_XEnPcKYDEeKR7Lwk7UC7tQ" name="EVT_TRANSFERBATINFO_VELOCITY" type="uint32" value="10"/>
+        <output id="_SvJrEKYDEeKR7Lwk7UC7tQ" name="BAT_InfoReadOut" type="uint8" size="[10,2]"/>
+        <output id="_SvKSIKYDEeKR7Lwk7UC7tQ" name="BAT_InfoParamReadOut" type="double" size="10"/>
+        <output id="_SvLgQKYDEeKR7Lwk7UC7tQ" name="BAT_InfoWriteOut" type="uint8" size="[10,2]"/>
+        <output id="_SvMHUKYDEeKR7Lwk7UC7tQ" name="BAT_InfoParamWriteOut" type="double" size="10"/>
+        <input id="_SYJgUKYDEeKR7Lwk7UC7tQ" name="clockSignal" type="double"/>
+        <input id="_SnwCkKYDEeKR7Lwk7UC7tQ" name="posX" type="double"/>
+        <input id="_SoSOEKYDEeKR7Lwk7UC7tQ" name="posY" type="double"/>
+        <input id="_So55IKYDEeKR7Lwk7UC7tQ" name="posZ" type="double"/>
+        <input id="_Spg9IKYDEeKR7Lwk7UC7tQ" name="timeOfArrival" type="double"/>
+        <input id="_SqJ2UKYDEeKR7Lwk7UC7tQ" name="velocity" type="double"/>
+        <input id="_Sq42IKYDEeKR7Lwk7UC7tQ" name="ballRecognized" type="boolean"/>
+        <input id="_SvGAsKYDEeKR7Lwk7UC7tQ" name="BAT_InfoReadIn" type="uint8" size="[10,2]"/>
+        <input id="_SvHO0KYDEeKR7Lwk7UC7tQ" name="BAT_InfoParamReadIn" type="double" size="10"/>
+        <input id="_SvH14KYDEeKR7Lwk7UC7tQ" name="BAT_InfoWriteIn" type="uint8" size="[10,2]"/>
+        <input id="_SvJEAKYDEeKR7Lwk7UC7tQ" name="BAT_InfoParamWriteIn" type="double" size="10"/>
+      </charts>
+      <charts id="_SIlaUKYDEeKR7Lwk7UC7tQ" name="StrikeProcessing" block="_SYbNIKYDEeKR7Lwk7UC7tQ">
+        <nodes xsi:type="stateflow:State" id="_SImocKYDEeKR7Lwk7UC7tQ" subStateType="PARALLEL" name="chart" initial="true">
+          <nodes xsi:type="stateflow:State" id="_SIn2kKYDEeKR7Lwk7UC7tQ" name="chartRegion" priority="2">
+            <nodes xsi:type="stateflow:State" id="_Vha-YKYDEeKR7Lwk7UC7tQ" name="Init" initial="true">
+              <nodes xsi:type="stateflow:State" id="_VoTCcKYDEeKR7Lwk7UC7tQ" incoming="_WnfOkKYDEeKR7Lwk7UC7tQ" outgoing="_WnfOkKYDEeKR7Lwk7UC7tQ" name="Receiving" initial="true"/>
+              <transitions id="_WnfOkKYDEeKR7Lwk7UC7tQ" source="_VoTCcKYDEeKR7Lwk7UC7tQ" target="_VoTCcKYDEeKR7Lwk7UC7tQ" priority="1">
+                <guard id="_X3PmQKYDEeKR7Lwk7UC7tQ" expression="BAT_Info_checkQueue(EVT_TRANSFERBATINFO_POSX, BAT_InfoReadOut) &amp;&amp; BAT_Info_checkQueue(EVT_TRANSFERBATINFO_POSY, BAT_InfoReadOut) &amp;&amp; BAT_Info_checkQueue(EVT_TRANSFERBATINFO_POSZ, BAT_InfoReadOut) &amp;&amp; BAT_Info_checkQueue(EVT_TRANSFERBATINFO_TIMEOFARRIVAL, BAT_InfoReadOut) &amp;&amp; BAT_Info_checkQueue(EVT_TRANSFERBATINFO_VELOCITY, BAT_InfoReadOut)"/>
+                <action id="_X3PmQaYDEeKR7Lwk7UC7tQ" expression="[BAT_InfoReadOut, BAT_InfoParamReadOut, tmp_var_1] = BAT_Info_dequeue(EVT_TRANSFERBATINFO_POSX, BAT_InfoReadOut, BAT_InfoParamReadOut); &#xA;[BAT_InfoReadOut, BAT_InfoParamReadOut, tmp_var_2] = BAT_Info_dequeue(EVT_TRANSFERBATINFO_POSY, BAT_InfoReadOut, BAT_InfoParamReadOut); &#xA;[BAT_InfoReadOut, BAT_InfoParamReadOut, tmp_var_3] = BAT_Info_dequeue(EVT_TRANSFERBATINFO_POSZ, BAT_InfoReadOut, BAT_InfoParamReadOut); &#xA;[BAT_InfoReadOut, BAT_InfoParamReadOut, tmp_var_4] = BAT_Info_dequeue(EVT_TRANSFERBATINFO_TIMEOFARRIVAL, BAT_InfoReadOut, BAT_InfoParamReadOut); &#xA;[BAT_InfoReadOut, BAT_InfoParamReadOut, tmp_var_5] = BAT_Info_dequeue(EVT_TRANSFERBATINFO_VELOCITY, BAT_InfoReadOut, BAT_InfoParamReadOut)"/>
+                <action id="_YJt2UKYDEeKR7Lwk7UC7tQ" expression="posX = tmp_var_1 ;  posY = tmp_var_2 ;  posZ = tmp_var_3 ;  timeOfArrival = tmp_var_4 ;  velocity = tmp_var_5 "/>
+              </transitions>
+            </nodes>
+            <local id="_V1o64KYDEeKR7Lwk7UC7tQ" name="posX" type="double"/>
+            <local id="_V1vokKYDEeKR7Lwk7UC7tQ" name="posY" type="double"/>
+            <local id="_V1yE0KYDEeKR7Lwk7UC7tQ" name="posZ" type="double"/>
+            <local id="_V1z6AKYDEeKR7Lwk7UC7tQ" name="timeOfArrival" type="double"/>
+            <local id="_V12WQKYDEeKR7Lwk7UC7tQ" name="velocity" type="double"/>
+          </nodes>
+          <nodes xsi:type="stateflow:State" id="_SIodoKYDEeKR7Lwk7UC7tQ" incoming="_SIpEsKYDEeKR7Lwk7UC7tQ" outgoing="_SIpEsKYDEeKR7Lwk7UC7tQ" name="DataInit" priority="1"/>
+          <transitions id="_SIpEsKYDEeKR7Lwk7UC7tQ" source="_SIodoKYDEeKR7Lwk7UC7tQ" target="_SIodoKYDEeKR7Lwk7UC7tQ">
+            <action id="_SIsIAKYDEeKR7Lwk7UC7tQ" expression="BAT_InfoWriteOut = BAT_InfoWriteIn;&#xA;BAT_InfoParamWriteOut = BAT_InfoParamWriteIn;&#xA;BAT_InfoReadOut = BAT_InfoReadIn;&#xA;BAT_InfoParamReadOut = BAT_InfoParamReadIn;&#xA;"/>
+          </transitions>
+        </nodes>
+        <embeddedFunctions id="_SIprwKYDEeKR7Lwk7UC7tQ" name="time" code="function logicalTime = time(clock) \n&#xD;&#xA; sample = 0.001;  % the sample time of the system clock \n&#xD;&#xA; %convert to pass units of time after last reset \n&#xD;&#xA; logicalTime = uint32((clockSignal - clock)/sample);">
+          <input id="_SIukQKYDEeKR7Lwk7UC7tQ" name="clock" type="double"/>
+          <output id="_SItWIKYDEeKR7Lwk7UC7tQ" name="logicalTime" type="uint32"/>
+        </embeddedFunctions>
+        <embeddedFunctions id="_SIq54KYDEeKR7Lwk7UC7tQ" name="reset" code="function clock = reset() \n&#xD;&#xA; %set clock variable to current time \n&#xD;&#xA; clock = clockSignal;">
+          <output id="_SIvyYKYDEeKR7Lwk7UC7tQ" name="clock" type="double"/>
+        </embeddedFunctions>
+        <embeddedFunctions xsi:type="buffer:Enqueue" id="_STitIKYDEeKR7Lwk7UC7tQ" name="BAT_Info_enqueue"/>
+        <embeddedFunctions xsi:type="buffer:Dequeue" id="_STlJYKYDEeKR7Lwk7UC7tQ" name="BAT_Info_dequeue"/>
+        <embeddedFunctions xsi:type="buffer:CheckQueue" id="_STmXgKYDEeKR7Lwk7UC7tQ" name="BAT_Info_checkQueue"/>
+        <local id="_SVKdwKYDEeKR7Lwk7UC7tQ" name="tmp_var_1" type="double"/>
+        <local id="_SVM6AKYDEeKR7Lwk7UC7tQ" name="tmp_var_2" type="double"/>
+        <local id="_SVOvMKYDEeKR7Lwk7UC7tQ" name="tmp_var_3" type="double"/>
+        <local id="_SVQkYKYDEeKR7Lwk7UC7tQ" name="tmp_var_4" type="double"/>
+        <local id="_SVSZkKYDEeKR7Lwk7UC7tQ" name="tmp_var_5" type="double"/>
+        <constant id="_Wz4EwKYDEeKR7Lwk7UC7tQ" name="EVT_TRANSFERBATINFO_POSX" type="uint32" value="6"/>
+        <constant id="_W0Cc0KYDEeKR7Lwk7UC7tQ" name="EVT_TRANSFERBATINFO_POSY" type="uint32" value="7"/>
+        <constant id="_W0PRIKYDEeKR7Lwk7UC7tQ" name="EVT_TRANSFERBATINFO_POSZ" type="uint32" value="8"/>
+        <constant id="_W0fv0KYDEeKR7Lwk7UC7tQ" name="EVT_TRANSFERBATINFO_TIMEOFARRIVAL" type="uint32" value="9"/>
+        <constant id="_W01uEKYDEeKR7Lwk7UC7tQ" name="EVT_TRANSFERBATINFO_VELOCITY" type="uint32" value="10"/>
+        <output id="_Sr7X8KYDEeKR7Lwk7UC7tQ" name="BAT_InfoReadOut" type="uint8" size="[10,2]"/>
+        <output id="_Sr90MKYDEeKR7Lwk7UC7tQ" name="BAT_InfoParamReadOut" type="double" size="10"/>
+        <output id="_SsCssKYDEeKR7Lwk7UC7tQ" name="BAT_InfoWriteOut" type="uint8" size="[10,2]"/>
+        <output id="_SsFI8KYDEeKR7Lwk7UC7tQ" name="BAT_InfoParamWriteOut" type="double" size="10"/>
+        <input id="_SYcbQKYDEeKR7Lwk7UC7tQ" name="clockSignal" type="double"/>
+        <input id="_Srw_4KYDEeKR7Lwk7UC7tQ" name="BAT_InfoReadIn" type="uint8" size="[10,2]"/>
+        <input id="_SrzcIKYDEeKR7Lwk7UC7tQ" name="BAT_InfoParamReadIn" type="double" size="10"/>
+        <input id="_Sr3GgKYDEeKR7Lwk7UC7tQ" name="BAT_InfoWriteIn" type="uint8" size="[10,2]"/>
+        <input id="_Sr47sKYDEeKR7Lwk7UC7tQ" name="BAT_InfoParamWriteIn" type="double" size="10"/>
+      </charts>
+    </stateflowMachine>
+    <buses id="_SEmSMKYDEeKR7Lwk7UC7tQ" name="PacketBus">
+      <elements name="from" dimensions="1" type="uint8"/>
+      <elements name="to" dimensions="1" type="uint8"/>
+      <elements name="msg" dimensions="1" type="uint16"/>
+      <elements name="param" dimensions="1" type="double"/>
+      <elements name="pkgid" dimensions="1" type="uint32"/>
+      <elements name="time" dimensions="1" type="double"/>
+    </buses>
+  </libraries>
+  <libraries id="_SbAnEKYDEeKR7Lwk7UC7tQ" name="robot">
+    <blocks xsi:type="model:SubSystem" id="_SbJJ8KYDEeKR7Lwk7UC7tQ" name="robot">
+      <parameters name="Position" value="[20, 20, 270, 820]"/>
+      <outPorts id="_Tl9XQKYDEeKR7Lwk7UC7tQ" name="BAT_Information_To_OtherRobot_send" incomingLines="_Ve_8gaYDEeKR7Lwk7UC7tQ">
+        <parameters name="Position" value="[1850, 110, 1880, 140]"/>
+        <inPorts id="_TmAakaYDEeKR7Lwk7UC7tQ"/>
+      </outPorts>
+      <inPorts id="_TiZs8KYDEeKR7Lwk7UC7tQ" name="velocity:velocity" outgoingLines="_VakIcKYDEeKR7Lwk7UC7tQ" type="double">
+        <parameters name="Position" value="[100, 1220, 130, 1250]"/>
+        <outPorts id="_TicwQKYDEeKR7Lwk7UC7tQ"/>
+      </inPorts>
+      <inPorts id="_TirZwKYDEeKR7Lwk7UC7tQ" name="timeOfArrival:timeOfArrival" outgoingLines="_Vany0KYDEeKR7Lwk7UC7tQ" type="double">
+        <parameters name="Position" value="[100, 1170, 130, 1200]"/>
+        <outPorts id="_TitO8KYDEeKR7Lwk7UC7tQ"/>
+      </inPorts>
+      <inPorts id="_Ti-UsKYDEeKR7Lwk7UC7tQ" name="posX:posX" outgoingLines="_Va3DYKYDEeKR7Lwk7UC7tQ" type="double">
+        <parameters name="Position" value="[100, 1020, 130, 1050]"/>
+        <outPorts id="_TjAJ4KYDEeKR7Lwk7UC7tQ"/>
+      </inPorts>
+      <inPorts id="_TjU6AKYDEeKR7Lwk7UC7tQ" name="posY:posY" outgoingLines="_VahFIKYDEeKR7Lwk7UC7tQ" type="double">
+        <parameters name="Position" value="[100, 1070, 130, 1100]"/>
+        <outPorts id="_TjWvMKYDEeKR7Lwk7UC7tQ"/>
+      </inPorts>
+      <inPorts id="_TjvJsKYDEeKR7Lwk7UC7tQ" name="posZ:posZ" outgoingLines="_VasEQKYDEeKR7Lwk7UC7tQ" type="double">
+        <parameters name="Position" value="[100, 1120, 130, 1150]"/>
+        <outPorts id="_Tjxl8KYDEeKR7Lwk7UC7tQ"/>
+      </inPorts>
+      <inPorts id="_TkSjUKYDEeKR7Lwk7UC7tQ" name="isMaster:isMaster" outgoingLines="_VaczsKYDEeKR7Lwk7UC7tQ" type="boolean">
+        <parameters name="Position" value="[1400, 160, 1430, 190]"/>
+        <outPorts id="_TkU_kKYDEeKR7Lwk7UC7tQ"/>
+      </inPorts>
+      <inPorts id="_TkqWwKYDEeKR7Lwk7UC7tQ" name="ballRecognized:ballRecognized" outgoingLines="_Vayx8KYDEeKR7Lwk7UC7tQ" type="boolean">
+        <parameters name="Position" value="[100, 1270, 130, 1300]"/>
+        <outPorts id="_TksL8KYDEeKR7Lwk7UC7tQ"/>
+      </inPorts>
+      <inPorts id="_TlBjIKYDEeKR7Lwk7UC7tQ" name="stopPlaying:stopPlaying" outgoingLines="_Vaeo4KYDEeKR7Lwk7UC7tQ" type="boolean">
+        <parameters name="Position" value="[1400, 210, 1430, 240]"/>
+        <outPorts id="_TlDYUKYDEeKR7Lwk7UC7tQ"/>
+      </inPorts>
+      <inPorts id="_Tl8JIKYDEeKR7Lwk7UC7tQ" name="BAT_Information_To_OtherRobot_recv" outgoingLines="_Ve_8gKYDEeKR7Lwk7UC7tQ">
+        <parameters name="Position" value="[1400, 260, 1430, 290]"/>
+        <outPorts id="_TmAakKYDEeKR7Lwk7UC7tQ"/>
+      </inPorts>
+      <inPorts id="_Tl9-UKYDEeKR7Lwk7UC7tQ" name="BAT_Information_To_OtherRobot_net_address" outgoingLines="_Ve_8g6YDEeKR7Lwk7UC7tQ" type="uint8">
+        <parameters name="Position" value="[1400, 310, 1430, 340]"/>
+        <outPorts id="_TmAakqYDEeKR7Lwk7UC7tQ" type="uint8"/>
+      </inPorts>
+      <inPorts id="_Tl-lYKYDEeKR7Lwk7UC7tQ" name="BAT_Information_To_OtherRobot_receiver_net_address" outgoingLines="_Ve_8gqYDEeKR7Lwk7UC7tQ" type="uint8">
+        <parameters name="Position" value="[1400, 360, 1430, 390]"/>
+        <outPorts id="_TmBBoKYDEeKR7Lwk7UC7tQ" type="uint8"/>
+      </inPorts>
+      <lines id="_ScWq4KYDEeKR7Lwk7UC7tQ" sourcePort="_ScfNwKYDEeKR7Lwk7UC7tQ" targetPort="_SYgFoKYDEeKR7Lwk7UC7tQ" sourceBlock="_SccxgKYDEeKR7Lwk7UC7tQ" targetBlock="_ScXR8KYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SckGQKYDEeKR7Lwk7UC7tQ" sourcePort="_ScmigKYDEeKR7Lwk7UC7tQ" targetPort="_SXupkKYDEeKR7Lwk7UC7tQ" sourceBlock="_Scl7cKYDEeKR7Lwk7UC7tQ" targetBlock="_ScktUKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_ScsCEKYDEeKR7Lwk7UC7tQ" sourcePort="_Sct3QKYDEeKR7Lwk7UC7tQ" targetPort="_SYLVgKYDEeKR7Lwk7UC7tQ" sourceBlock="_SctQMKYDEeKR7Lwk7UC7tQ" targetBlock="_ScspIKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_Tcvw4KYDEeKR7Lwk7UC7tQ" sourcePort="_Tc3ssKYDEeKR7Lwk7UC7tQ" targetPort="_SsYD4KYDEeKR7Lwk7UC7tQ" sourceBlock="_Tc13gKYDEeKR7Lwk7UC7tQ" targetBlock="_ScXR8KYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_TdG9QKYDEeKR7Lwk7UC7tQ" sourcePort="_TdILYKYDEeKR7Lwk7UC7tQ" targetPort="_St3RoKYDEeKR7Lwk7UC7tQ" sourceBlock="_TdG9QaYDEeKR7Lwk7UC7tQ" targetBlock="_ScktUKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_TdYDAKYDEeKR7Lwk7UC7tQ" sourcePort="_TdZRIKYDEeKR7Lwk7UC7tQ" targetPort="_SulqYKYDEeKR7Lwk7UC7tQ" sourceBlock="_TdYqEKYDEeKR7Lwk7UC7tQ" targetBlock="_ScktUKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_TdvPYKYDEeKR7Lwk7UC7tQ" sourcePort="_TdwdgKYDEeKR7Lwk7UC7tQ" targetPort="_SvPKoKYDEeKR7Lwk7UC7tQ" sourceBlock="_TdvPYaYDEeKR7Lwk7UC7tQ" targetBlock="_ScspIKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_VSa5EaYDEeKR7Lwk7UC7tQ" sourcePort="_St0OUKYDEeKR7Lwk7UC7tQ" targetPort="_VSbgIaYDEeKR7Lwk7UC7tQ" sourceBlock="_ScktUKYDEeKR7Lwk7UC7tQ" targetBlock="_SbK_IKYDEeKR7Lwk7UC7tQ" bus="_SEmSMKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_VSa5EKYDEeKR7Lwk7UC7tQ" sourcePort="_SsG-IKYDEeKR7Lwk7UC7tQ" targetPort="_VSbgI6YDEeKR7Lwk7UC7tQ" sourceBlock="_ScXR8KYDEeKR7Lwk7UC7tQ" targetBlock="_SbK_IKYDEeKR7Lwk7UC7tQ" bus="_SEmSMKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_VSbgIKYDEeKR7Lwk7UC7tQ" sourcePort="_VSbgJKYDEeKR7Lwk7UC7tQ" targetPort="_SsIMQKYDEeKR7Lwk7UC7tQ" sourceBlock="_SbK_IKYDEeKR7Lwk7UC7tQ" targetBlock="_ScXR8KYDEeKR7Lwk7UC7tQ" bus="_SEmSMKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_VSa5EqYDEeKR7Lwk7UC7tQ" sourcePort="_VSbgIqYDEeKR7Lwk7UC7tQ" targetPort="_St01YKYDEeKR7Lwk7UC7tQ" sourceBlock="_SbK_IKYDEeKR7Lwk7UC7tQ" targetBlock="_ScktUKYDEeKR7Lwk7UC7tQ" bus="_SEmSMKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_VScHMKYDEeKR7Lwk7UC7tQ" sourcePort="_VShmwKYDEeKR7Lwk7UC7tQ" targetPort="_St34sKYDEeKR7Lwk7UC7tQ" sourceBlock="_VScHMqYDEeKR7Lwk7UC7tQ" targetBlock="_ScktUKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_VScHMaYDEeKR7Lwk7UC7tQ" sourcePort="_VSiN0KYDEeKR7Lwk7UC7tQ" targetPort="_SsZSAKYDEeKR7Lwk7UC7tQ" sourceBlock="_VSdVUKYDEeKR7Lwk7UC7tQ" targetBlock="_ScXR8KYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_VSntYKYDEeKR7Lwk7UC7tQ" sourcePort="_SvMuYKYDEeKR7Lwk7UC7tQ" targetPort="_VSntY6YDEeKR7Lwk7UC7tQ" sourceBlock="_ScspIKYDEeKR7Lwk7UC7tQ" targetBlock="_SbK_IKYDEeKR7Lwk7UC7tQ" bus="_SEmSMKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_VSnGUKYDEeKR7Lwk7UC7tQ" sourcePort="_SuinEKYDEeKR7Lwk7UC7tQ" targetPort="_VSntZaYDEeKR7Lwk7UC7tQ" sourceBlock="_ScktUKYDEeKR7Lwk7UC7tQ" targetBlock="_SbK_IKYDEeKR7Lwk7UC7tQ" bus="_SEmSMKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_VSntYqYDEeKR7Lwk7UC7tQ" sourcePort="_VSntZqYDEeKR7Lwk7UC7tQ" targetPort="_SujOIKYDEeKR7Lwk7UC7tQ" sourceBlock="_SbK_IKYDEeKR7Lwk7UC7tQ" targetBlock="_ScktUKYDEeKR7Lwk7UC7tQ" bus="_SEmSMKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_VSntYaYDEeKR7Lwk7UC7tQ" sourcePort="_VSntZKYDEeKR7Lwk7UC7tQ" targetPort="_SvNVcKYDEeKR7Lwk7UC7tQ" sourceBlock="_SbK_IKYDEeKR7Lwk7UC7tQ" targetBlock="_ScspIKYDEeKR7Lwk7UC7tQ" bus="_SEmSMKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_VSntZ6YDEeKR7Lwk7UC7tQ" sourcePort="_VSubEKYDEeKR7Lwk7UC7tQ" targetPort="_SvPxsKYDEeKR7Lwk7UC7tQ" sourceBlock="_VSo7gKYDEeKR7Lwk7UC7tQ" targetBlock="_ScspIKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_VSoUcKYDEeKR7Lwk7UC7tQ" sourcePort="_VSvCIKYDEeKR7Lwk7UC7tQ" targetPort="_SunfkKYDEeKR7Lwk7UC7tQ" sourceBlock="_VSqJoKYDEeKR7Lwk7UC7tQ" targetBlock="_ScktUKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_VaczsKYDEeKR7Lwk7UC7tQ" sourcePort="_TkU_kKYDEeKR7Lwk7UC7tQ" targetPort="_SmZ-wKYDEeKR7Lwk7UC7tQ" sourceBlock="_TkSjUKYDEeKR7Lwk7UC7tQ" targetBlock="_ScktUKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_Vaeo4KYDEeKR7Lwk7UC7tQ" sourcePort="_TlDYUKYDEeKR7Lwk7UC7tQ" targetPort="_SnFUMKYDEeKR7Lwk7UC7tQ" sourceBlock="_TlBjIKYDEeKR7Lwk7UC7tQ" targetBlock="_ScktUKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_VahFIKYDEeKR7Lwk7UC7tQ" sourcePort="_TjWvMKYDEeKR7Lwk7UC7tQ" targetPort="_SoH2AKYDEeKR7Lwk7UC7tQ" sourceBlock="_TjU6AKYDEeKR7Lwk7UC7tQ" targetBlock="_ScspIKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_VakIcKYDEeKR7Lwk7UC7tQ" sourcePort="_TicwQKYDEeKR7Lwk7UC7tQ" targetPort="_Sp5XoKYDEeKR7Lwk7UC7tQ" sourceBlock="_TiZs8KYDEeKR7Lwk7UC7tQ" targetBlock="_ScspIKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_Vany0KYDEeKR7Lwk7UC7tQ" sourcePort="_TitO8KYDEeKR7Lwk7UC7tQ" targetPort="_SpS6sKYDEeKR7Lwk7UC7tQ" sourceBlock="_TirZwKYDEeKR7Lwk7UC7tQ" targetBlock="_ScspIKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_VasEQKYDEeKR7Lwk7UC7tQ" sourcePort="_Tjxl8KYDEeKR7Lwk7UC7tQ" targetPort="_SoozYKYDEeKR7Lwk7UC7tQ" sourceBlock="_TjvJsKYDEeKR7Lwk7UC7tQ" targetBlock="_ScspIKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_Vayx8KYDEeKR7Lwk7UC7tQ" sourcePort="_TksL8KYDEeKR7Lwk7UC7tQ" targetPort="_SqplkKYDEeKR7Lwk7UC7tQ" sourceBlock="_TkqWwKYDEeKR7Lwk7UC7tQ" targetBlock="_ScspIKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_Va3DYKYDEeKR7Lwk7UC7tQ" sourcePort="_TjAJ4KYDEeKR7Lwk7UC7tQ" targetPort="_SnjOQKYDEeKR7Lwk7UC7tQ" sourceBlock="_Ti-UsKYDEeKR7Lwk7UC7tQ" targetBlock="_ScspIKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_Ve_8gKYDEeKR7Lwk7UC7tQ" sourcePort="_TmAakKYDEeKR7Lwk7UC7tQ" targetPort="_StHDsKYDEeKR7Lwk7UC7tQ" sourceBlock="_Tl8JIKYDEeKR7Lwk7UC7tQ" targetBlock="_ScktUKYDEeKR7Lwk7UC7tQ" bus="_SEmSMKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_Ve_8gaYDEeKR7Lwk7UC7tQ" sourcePort="_StGcoKYDEeKR7Lwk7UC7tQ" targetPort="_TmAakaYDEeKR7Lwk7UC7tQ" sourceBlock="_ScktUKYDEeKR7Lwk7UC7tQ" targetBlock="_Tl9XQKYDEeKR7Lwk7UC7tQ" bus="_SEmSMKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_Ve_8gqYDEeKR7Lwk7UC7tQ" sourcePort="_TmBBoKYDEeKR7Lwk7UC7tQ" targetPort="_StI44KYDEeKR7Lwk7UC7tQ" sourceBlock="_Tl-lYKYDEeKR7Lwk7UC7tQ" targetBlock="_ScktUKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_Ve_8g6YDEeKR7Lwk7UC7tQ" sourcePort="_TmAakqYDEeKR7Lwk7UC7tQ" targetPort="_StIR0aYDEeKR7Lwk7UC7tQ" sourceBlock="_Tl9-UKYDEeKR7Lwk7UC7tQ" targetBlock="_ScktUKYDEeKR7Lwk7UC7tQ"/>
+      <blocks xsi:type="msglib:CommunicationSwitch" id="_SbK_IKYDEeKR7Lwk7UC7tQ" incomingLines="_VSa5EaYDEeKR7Lwk7UC7tQ _VSa5EKYDEeKR7Lwk7UC7tQ _VSntYKYDEeKR7Lwk7UC7tQ _VSnGUKYDEeKR7Lwk7UC7tQ" outgoingLines="_VSbgIKYDEeKR7Lwk7UC7tQ _VSa5EqYDEeKR7Lwk7UC7tQ _VSntYqYDEeKR7Lwk7UC7tQ _VSntYaYDEeKR7Lwk7UC7tQ">
+        <parameters name="Position" value="[980, 500, 1080, 620]"/>
+        <outPorts id="_VSbgIqYDEeKR7Lwk7UC7tQ"/>
+        <outPorts id="_VSbgJKYDEeKR7Lwk7UC7tQ"/>
+        <outPorts id="_VSntZKYDEeKR7Lwk7UC7tQ"/>
+        <outPorts id="_VSntZqYDEeKR7Lwk7UC7tQ"/>
+        <inPorts id="_VSbgIaYDEeKR7Lwk7UC7tQ"/>
+        <inPorts id="_VSbgI6YDEeKR7Lwk7UC7tQ"/>
+        <inPorts id="_VSntY6YDEeKR7Lwk7UC7tQ"/>
+        <inPorts id="_VSntZaYDEeKR7Lwk7UC7tQ"/>
+      </blocks>
+      <blocks xsi:type="model:LibraryReference" id="_ScXR8KYDEeKR7Lwk7UC7tQ" name="StrikeProcessing" incomingLines="_ScWq4KYDEeKR7Lwk7UC7tQ _Tcvw4KYDEeKR7Lwk7UC7tQ _VSbgIKYDEeKR7Lwk7UC7tQ _VScHMaYDEeKR7Lwk7UC7tQ" outgoingLines="_VSa5EKYDEeKR7Lwk7UC7tQ" sourceBlock="_SYeQcKYDEeKR7Lwk7UC7tQ">
+        <parameters name="Position" value="[200, 100, 450, 900]"/>
+      </blocks>
+      <blocks xsi:type="model:DigitalClock" id="_SccxgKYDEeKR7Lwk7UC7tQ" outgoingLines="_ScWq4KYDEeKR7Lwk7UC7tQ" sampleTime="0.0010">
+        <parameters name="Position" value="[100, 110, 130, 140]"/>
+        <outPorts id="_ScfNwKYDEeKR7Lwk7UC7tQ"/>
+      </blocks>
+      <blocks xsi:type="model:LibraryReference" id="_ScktUKYDEeKR7Lwk7UC7tQ" name="MainProcessing" incomingLines="_SckGQKYDEeKR7Lwk7UC7tQ _TdG9QKYDEeKR7Lwk7UC7tQ _TdYDAKYDEeKR7Lwk7UC7tQ _VSa5EqYDEeKR7Lwk7UC7tQ _VScHMKYDEeKR7Lwk7UC7tQ _VSntYqYDEeKR7Lwk7UC7tQ _VSoUcKYDEeKR7Lwk7UC7tQ _VaczsKYDEeKR7Lwk7UC7tQ _Vaeo4KYDEeKR7Lwk7UC7tQ _Ve_8gKYDEeKR7Lwk7UC7tQ _Ve_8gqYDEeKR7Lwk7UC7tQ _Ve_8g6YDEeKR7Lwk7UC7tQ" outgoingLines="_VSa5EaYDEeKR7Lwk7UC7tQ _VSnGUKYDEeKR7Lwk7UC7tQ _Ve_8gaYDEeKR7Lwk7UC7tQ" sourceBlock="_SXgnIKYDEeKR7Lwk7UC7tQ">
+        <parameters name="Position" value="[1500, 100, 1750, 900]"/>
+      </blocks>
+      <blocks xsi:type="model:DigitalClock" id="_Scl7cKYDEeKR7Lwk7UC7tQ" outgoingLines="_SckGQKYDEeKR7Lwk7UC7tQ" sampleTime="0.0010">
+        <parameters name="Position" value="[1400, 110, 1430, 140]"/>
+        <outPorts id="_ScmigKYDEeKR7Lwk7UC7tQ"/>
+      </blocks>
+      <blocks xsi:type="model:LibraryReference" id="_ScspIKYDEeKR7Lwk7UC7tQ" name="SensorProcessing" incomingLines="_ScsCEKYDEeKR7Lwk7UC7tQ _TdvPYKYDEeKR7Lwk7UC7tQ _VSntYaYDEeKR7Lwk7UC7tQ _VSntZ6YDEeKR7Lwk7UC7tQ _VahFIKYDEeKR7Lwk7UC7tQ _VakIcKYDEeKR7Lwk7UC7tQ _Vany0KYDEeKR7Lwk7UC7tQ _VasEQKYDEeKR7Lwk7UC7tQ _Vayx8KYDEeKR7Lwk7UC7tQ _Va3DYKYDEeKR7Lwk7UC7tQ" outgoingLines="_VSntYKYDEeKR7Lwk7UC7tQ" sourceBlock="_SYKHYKYDEeKR7Lwk7UC7tQ">
+        <parameters name="Position" value="[200, 960, 450, 1760]"/>
+      </blocks>
+      <blocks xsi:type="model:DigitalClock" id="_SctQMKYDEeKR7Lwk7UC7tQ" outgoingLines="_ScsCEKYDEeKR7Lwk7UC7tQ" sampleTime="0.0010">
+        <parameters name="Position" value="[100, 970, 130, 1000]"/>
+        <outPorts id="_Sct3QKYDEeKR7Lwk7UC7tQ"/>
+      </blocks>
+      <blocks xsi:type="model:Constant" id="_Tc13gKYDEeKR7Lwk7UC7tQ" name="StrikeProcessing_BAT_Info1_net_address" outgoingLines="_Tcvw4KYDEeKR7Lwk7UC7tQ" type="uint8">
+        <parameters name="Position" value="[100, 160, 130, 190]"/>
+        <outPorts id="_Tc3ssKYDEeKR7Lwk7UC7tQ" type="uint8"/>
+      </blocks>
+      <blocks xsi:type="model:Constant" id="_TdG9QaYDEeKR7Lwk7UC7tQ" name="MainProcessing_BAT_Info_ToStrikeProcessing1_net_address" outgoingLines="_TdG9QKYDEeKR7Lwk7UC7tQ" value="3" type="uint8">
+        <parameters name="Position" value="[1400, 410, 1430, 440]"/>
+        <outPorts id="_TdILYKYDEeKR7Lwk7UC7tQ" type="uint8"/>
+      </blocks>
+      <blocks xsi:type="model:Constant" id="_TdYqEKYDEeKR7Lwk7UC7tQ" name="MainProcessing_BAT_Info_From_SensorProcessing1_net_address" outgoingLines="_TdYDAKYDEeKR7Lwk7UC7tQ" value="2" type="uint8">
+        <parameters name="Position" value="[1400, 510, 1430, 540]"/>
+        <outPorts id="_TdZRIKYDEeKR7Lwk7UC7tQ" type="uint8"/>
+      </blocks>
+      <blocks xsi:type="model:Constant" id="_TdvPYaYDEeKR7Lwk7UC7tQ" name="SensorProcessing_BAT_Info1_net_address" outgoingLines="_TdvPYKYDEeKR7Lwk7UC7tQ" value="4" type="uint8">
+        <parameters name="Position" value="[100, 1320, 130, 1350]"/>
+        <outPorts id="_TdwdgKYDEeKR7Lwk7UC7tQ" type="uint8"/>
+      </blocks>
+      <blocks xsi:type="model:Constant" id="_VScHMqYDEeKR7Lwk7UC7tQ" name="MainProcessing_BAT_Info_ToStrikeProcessing1_receiver_net_address" outgoingLines="_VScHMKYDEeKR7Lwk7UC7tQ" type="uint8">
+        <parameters name="Position" value="[1400, 460, 1430, 490]"/>
+        <outPorts id="_VShmwKYDEeKR7Lwk7UC7tQ" type="uint8"/>
+      </blocks>
+      <blocks xsi:type="model:Constant" id="_VSdVUKYDEeKR7Lwk7UC7tQ" name="StrikeProcessing_BAT_Info1_receiver_net_address" outgoingLines="_VScHMaYDEeKR7Lwk7UC7tQ" value="3" type="uint8">
+        <parameters name="Position" value="[100, 210, 130, 240]"/>
+        <outPorts id="_VSiN0KYDEeKR7Lwk7UC7tQ" type="uint8"/>
+      </blocks>
+      <blocks xsi:type="model:Constant" id="_VSo7gKYDEeKR7Lwk7UC7tQ" name="SensorProcessing_BAT_Info1_receiver_net_address" outgoingLines="_VSntZ6YDEeKR7Lwk7UC7tQ" value="2" type="uint8">
+        <parameters name="Position" value="[100, 1370, 130, 1400]"/>
+        <outPorts id="_VSubEKYDEeKR7Lwk7UC7tQ" type="uint8"/>
+      </blocks>
+      <blocks xsi:type="model:Constant" id="_VSqJoKYDEeKR7Lwk7UC7tQ" name="MainProcessing_BAT_Info_From_SensorProcessing1_receiver_net_address" outgoingLines="_VSoUcKYDEeKR7Lwk7UC7tQ" value="4" type="uint8">
+        <parameters name="Position" value="[1400, 560, 1430, 590]"/>
+        <outPorts id="_VSvCIKYDEeKR7Lwk7UC7tQ" type="uint8"/>
+      </blocks>
+    </blocks>
+  </libraries>
+  <libraries id="_SbZooKYDEeKR7Lwk7UC7tQ" name="robot2">
+    <blocks xsi:type="model:SubSystem" id="_Sbbd0KYDEeKR7Lwk7UC7tQ" name="robot2">
+      <parameters name="Position" value="[20, 20, 270, 820]"/>
+      <outPorts id="_TmKLkaYDEeKR7Lwk7UC7tQ" name="BAT_Information_To_OtherRobot_send" incomingLines="_VgXOcaYDEeKR7Lwk7UC7tQ">
+        <parameters name="Position" value="[1850, 110, 1880, 140]"/>
+        <inPorts id="_TmMn0aYDEeKR7Lwk7UC7tQ"/>
+      </outPorts>
+      <inPorts id="_Tii24KYDEeKR7Lwk7UC7tQ" name="velocity:velocity" outgoingLines="_VVbw0KYDEeKR7Lwk7UC7tQ" type="double">
+        <parameters name="Position" value="[100, 1220, 130, 1250]"/>
+        <outPorts id="_TiksEKYDEeKR7Lwk7UC7tQ"/>
+      </inPorts>
+      <inPorts id="_Tiz8oKYDEeKR7Lwk7UC7tQ" name="timeOfArrival:timeOfArrival" outgoingLines="_VW4iUKYDEeKR7Lwk7UC7tQ" type="double">
+        <parameters name="Position" value="[100, 1170, 130, 1200]"/>
+        <outPorts id="_Ti2Y4KYDEeKR7Lwk7UC7tQ"/>
+      </inPorts>
+      <inPorts id="_TjJT0KYDEeKR7Lwk7UC7tQ" name="posX:posX" outgoingLines="_VX8SQKYDEeKR7Lwk7UC7tQ" type="double">
+        <parameters name="Position" value="[100, 1020, 130, 1050]"/>
+        <outPorts id="_TjLJAKYDEeKR7Lwk7UC7tQ"/>
+      </inPorts>
+      <inPorts id="_TjggMKYDEeKR7Lwk7UC7tQ" name="posY:posY" outgoingLines="_VWLXsKYDEeKR7Lwk7UC7tQ" type="double">
+        <parameters name="Position" value="[100, 1070, 130, 1100]"/>
+        <outPorts id="_Tji8cKYDEeKR7Lwk7UC7tQ"/>
+      </inPorts>
+      <inPorts id="_TkD50KYDEeKR7Lwk7UC7tQ" name="posZ:posZ" outgoingLines="_VZLBUKYDEeKR7Lwk7UC7tQ" type="double">
+        <parameters name="Position" value="[100, 1120, 130, 1150]"/>
+        <outPorts id="_TkGWEKYDEeKR7Lwk7UC7tQ"/>
+      </inPorts>
+      <inPorts id="_TkewkKYDEeKR7Lwk7UC7tQ" name="isMaster:isMaster" outgoingLines="_VTi6cKYDEeKR7Lwk7UC7tQ" type="boolean">
+        <parameters name="Position" value="[1400, 160, 1430, 190]"/>
+        <outPorts id="_TkglwKYDEeKR7Lwk7UC7tQ"/>
+      </inPorts>
+      <inPorts id="_Tk0u0KYDEeKR7Lwk7UC7tQ" name="ballRecognized:ballRecognized" outgoingLines="_VVDWUKYDEeKR7Lwk7UC7tQ" type="boolean">
+        <parameters name="Position" value="[100, 1270, 130, 1300]"/>
+        <outPorts id="_Tk3LEKYDEeKR7Lwk7UC7tQ"/>
+      </inPorts>
+      <inPorts id="_TlLUIKYDEeKR7Lwk7UC7tQ" name="stopPlaying:stopPlaying" outgoingLines="_VUeHgKYDEeKR7Lwk7UC7tQ" type="boolean">
+        <parameters name="Position" value="[1400, 210, 1430, 240]"/>
+        <outPorts id="_TlNJUKYDEeKR7Lwk7UC7tQ"/>
+      </inPorts>
+      <inPorts id="_TmKLkKYDEeKR7Lwk7UC7tQ" name="BAT_Information_To_OtherRobot_recv" outgoingLines="_VgXOcKYDEeKR7Lwk7UC7tQ">
+        <parameters name="Position" value="[1400, 260, 1430, 290]"/>
+        <outPorts id="_TmMn0KYDEeKR7Lwk7UC7tQ"/>
+      </inPorts>
+      <inPorts id="_TmKyoKYDEeKR7Lwk7UC7tQ" name="BAT_Information_To_OtherRobot_net_address" outgoingLines="_VgXOc6YDEeKR7Lwk7UC7tQ" type="uint8">
+        <parameters name="Position" value="[1400, 310, 1430, 340]"/>
+        <outPorts id="_TmMn0qYDEeKR7Lwk7UC7tQ" type="uint8"/>
+      </inPorts>
+      <inPorts id="_TmLZsKYDEeKR7Lwk7UC7tQ" name="BAT_Information_To_OtherRobot_receiver_net_address" outgoingLines="_VgXOcqYDEeKR7Lwk7UC7tQ" type="uint8">
+        <parameters name="Position" value="[1400, 360, 1430, 390]"/>
+        <outPorts id="_TmNO4KYDEeKR7Lwk7UC7tQ" type="uint8"/>
+      </inPorts>
+      <lines id="_Sc1MAKYDEeKR7Lwk7UC7tQ" sourcePort="_Sc5dcKYDEeKR7Lwk7UC7tQ" targetPort="_SYgFoKYDEeKR7Lwk7UC7tQ" sourceBlock="_Sc4PUKYDEeKR7Lwk7UC7tQ" targetBlock="_Sc3BMKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SdG40KYDEeKR7Lwk7UC7tQ" sourcePort="_SdKjMKYDEeKR7Lwk7UC7tQ" targetPort="_SXupkKYDEeKR7Lwk7UC7tQ" sourceBlock="_SdJ8IKYDEeKR7Lwk7UC7tQ" targetBlock="_SdIG8KYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_SdRQ4KYDEeKR7Lwk7UC7tQ" sourcePort="_SdUUMKYDEeKR7Lwk7UC7tQ" targetPort="_SYLVgKYDEeKR7Lwk7UC7tQ" sourceBlock="_SdTGEKYDEeKR7Lwk7UC7tQ" targetBlock="_SdSfAKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_Tc8lMKYDEeKR7Lwk7UC7tQ" sourcePort="_Tc9zUKYDEeKR7Lwk7UC7tQ" targetPort="_SsYD4KYDEeKR7Lwk7UC7tQ" sourceBlock="_Tc9MQKYDEeKR7Lwk7UC7tQ" targetBlock="_Sc3BMKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_TdO5EKYDEeKR7Lwk7UC7tQ" sourcePort="_TdQHMKYDEeKR7Lwk7UC7tQ" targetPort="_St3RoKYDEeKR7Lwk7UC7tQ" sourceBlock="_TdO5EaYDEeKR7Lwk7UC7tQ" targetBlock="_SdIG8KYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_TdhM8KYDEeKR7Lwk7UC7tQ" sourcePort="_TdjCIKYDEeKR7Lwk7UC7tQ" targetPort="_SulqYKYDEeKR7Lwk7UC7tQ" sourceBlock="_TdhM8aYDEeKR7Lwk7UC7tQ" targetBlock="_SdIG8KYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_Td4ZUKYDEeKR7Lwk7UC7tQ" sourcePort="_Td6OgKYDEeKR7Lwk7UC7tQ" targetPort="_SvPKoKYDEeKR7Lwk7UC7tQ" sourceBlock="_Td4ZUaYDEeKR7Lwk7UC7tQ" targetBlock="_SdSfAKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_VS1IwaYDEeKR7Lwk7UC7tQ" sourcePort="_SvMuYKYDEeKR7Lwk7UC7tQ" targetPort="_VS1IxKYDEeKR7Lwk7UC7tQ" sourceBlock="_SdSfAKYDEeKR7Lwk7UC7tQ" targetBlock="_Sbcr8KYDEeKR7Lwk7UC7tQ" bus="_SEmSMKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_VS1IwKYDEeKR7Lwk7UC7tQ" sourcePort="_SuinEKYDEeKR7Lwk7UC7tQ" targetPort="_VS1IxqYDEeKR7Lwk7UC7tQ" sourceBlock="_SdIG8KYDEeKR7Lwk7UC7tQ" targetBlock="_Sbcr8KYDEeKR7Lwk7UC7tQ" bus="_SEmSMKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_VS1Iw6YDEeKR7Lwk7UC7tQ" sourcePort="_VS1Ix6YDEeKR7Lwk7UC7tQ" targetPort="_SujOIKYDEeKR7Lwk7UC7tQ" sourceBlock="_Sbcr8KYDEeKR7Lwk7UC7tQ" targetBlock="_SdIG8KYDEeKR7Lwk7UC7tQ" bus="_SEmSMKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_VS1IwqYDEeKR7Lwk7UC7tQ" sourcePort="_VS1IxaYDEeKR7Lwk7UC7tQ" targetPort="_SvNVcKYDEeKR7Lwk7UC7tQ" sourceBlock="_Sbcr8KYDEeKR7Lwk7UC7tQ" targetBlock="_SdSfAKYDEeKR7Lwk7UC7tQ" bus="_SEmSMKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_VS1v0KYDEeKR7Lwk7UC7tQ" sourcePort="_VS6oUKYDEeKR7Lwk7UC7tQ" targetPort="_SvPxsKYDEeKR7Lwk7UC7tQ" sourceBlock="_VS1v0qYDEeKR7Lwk7UC7tQ" targetBlock="_SdSfAKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_VS1v0aYDEeKR7Lwk7UC7tQ" sourcePort="_VS7PYKYDEeKR7Lwk7UC7tQ" targetPort="_SunfkKYDEeKR7Lwk7UC7tQ" sourceBlock="_VS298KYDEeKR7Lwk7UC7tQ" targetBlock="_SdIG8KYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_VS-SsaYDEeKR7Lwk7UC7tQ" sourcePort="_SsG-IKYDEeKR7Lwk7UC7tQ" targetPort="_VS-5wqYDEeKR7Lwk7UC7tQ" sourceBlock="_Sc3BMKYDEeKR7Lwk7UC7tQ" targetBlock="_Sbcr8KYDEeKR7Lwk7UC7tQ" bus="_SEmSMKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_VS-SsKYDEeKR7Lwk7UC7tQ" sourcePort="_St0OUKYDEeKR7Lwk7UC7tQ" targetPort="_VS-5xKYDEeKR7Lwk7UC7tQ" sourceBlock="_SdIG8KYDEeKR7Lwk7UC7tQ" targetBlock="_Sbcr8KYDEeKR7Lwk7UC7tQ" bus="_SEmSMKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_VS-5waYDEeKR7Lwk7UC7tQ" sourcePort="_VS-5xaYDEeKR7Lwk7UC7tQ" targetPort="_St01YKYDEeKR7Lwk7UC7tQ" sourceBlock="_Sbcr8KYDEeKR7Lwk7UC7tQ" targetBlock="_SdIG8KYDEeKR7Lwk7UC7tQ" bus="_SEmSMKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_VS-5wKYDEeKR7Lwk7UC7tQ" sourcePort="_VS-5w6YDEeKR7Lwk7UC7tQ" targetPort="_SsIMQKYDEeKR7Lwk7UC7tQ" sourceBlock="_Sbcr8KYDEeKR7Lwk7UC7tQ" targetBlock="_Sc3BMKYDEeKR7Lwk7UC7tQ" bus="_SEmSMKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_VS-5xqYDEeKR7Lwk7UC7tQ" sourcePort="_VTEZUKYDEeKR7Lwk7UC7tQ" targetPort="_SsZSAKYDEeKR7Lwk7UC7tQ" sourceBlock="_VS_g0aYDEeKR7Lwk7UC7tQ" targetBlock="_Sc3BMKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_VS_g0KYDEeKR7Lwk7UC7tQ" sourcePort="_VTEZUaYDEeKR7Lwk7UC7tQ" targetPort="_St34sKYDEeKR7Lwk7UC7tQ" sourceBlock="_VTAu8KYDEeKR7Lwk7UC7tQ" targetBlock="_SdIG8KYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_VTi6cKYDEeKR7Lwk7UC7tQ" sourcePort="_TkglwKYDEeKR7Lwk7UC7tQ" targetPort="_SmZ-wKYDEeKR7Lwk7UC7tQ" sourceBlock="_TkewkKYDEeKR7Lwk7UC7tQ" targetBlock="_SdIG8KYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_VUeHgKYDEeKR7Lwk7UC7tQ" sourcePort="_TlNJUKYDEeKR7Lwk7UC7tQ" targetPort="_SnFUMKYDEeKR7Lwk7UC7tQ" sourceBlock="_TlLUIKYDEeKR7Lwk7UC7tQ" targetBlock="_SdIG8KYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_VVDWUKYDEeKR7Lwk7UC7tQ" sourcePort="_Tk3LEKYDEeKR7Lwk7UC7tQ" targetPort="_SqplkKYDEeKR7Lwk7UC7tQ" sourceBlock="_Tk0u0KYDEeKR7Lwk7UC7tQ" targetBlock="_SdSfAKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_VVbw0KYDEeKR7Lwk7UC7tQ" sourcePort="_TiksEKYDEeKR7Lwk7UC7tQ" targetPort="_Sp5XoKYDEeKR7Lwk7UC7tQ" sourceBlock="_Tii24KYDEeKR7Lwk7UC7tQ" targetBlock="_SdSfAKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_VWLXsKYDEeKR7Lwk7UC7tQ" sourcePort="_Tji8cKYDEeKR7Lwk7UC7tQ" targetPort="_SoH2AKYDEeKR7Lwk7UC7tQ" sourceBlock="_TjggMKYDEeKR7Lwk7UC7tQ" targetBlock="_SdSfAKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_VW4iUKYDEeKR7Lwk7UC7tQ" sourcePort="_Ti2Y4KYDEeKR7Lwk7UC7tQ" targetPort="_SpS6sKYDEeKR7Lwk7UC7tQ" sourceBlock="_Tiz8oKYDEeKR7Lwk7UC7tQ" targetBlock="_SdSfAKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_VX8SQKYDEeKR7Lwk7UC7tQ" sourcePort="_TjLJAKYDEeKR7Lwk7UC7tQ" targetPort="_SnjOQKYDEeKR7Lwk7UC7tQ" sourceBlock="_TjJT0KYDEeKR7Lwk7UC7tQ" targetBlock="_SdSfAKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_VZLBUKYDEeKR7Lwk7UC7tQ" sourcePort="_TkGWEKYDEeKR7Lwk7UC7tQ" targetPort="_SoozYKYDEeKR7Lwk7UC7tQ" sourceBlock="_TkD50KYDEeKR7Lwk7UC7tQ" targetBlock="_SdSfAKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_VgXOcKYDEeKR7Lwk7UC7tQ" sourcePort="_TmMn0KYDEeKR7Lwk7UC7tQ" targetPort="_StHDsKYDEeKR7Lwk7UC7tQ" sourceBlock="_TmKLkKYDEeKR7Lwk7UC7tQ" targetBlock="_SdIG8KYDEeKR7Lwk7UC7tQ" bus="_SEmSMKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_VgXOcaYDEeKR7Lwk7UC7tQ" sourcePort="_StGcoKYDEeKR7Lwk7UC7tQ" targetPort="_TmMn0aYDEeKR7Lwk7UC7tQ" sourceBlock="_SdIG8KYDEeKR7Lwk7UC7tQ" targetBlock="_TmKLkaYDEeKR7Lwk7UC7tQ" bus="_SEmSMKYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_VgXOcqYDEeKR7Lwk7UC7tQ" sourcePort="_TmNO4KYDEeKR7Lwk7UC7tQ" targetPort="_StI44KYDEeKR7Lwk7UC7tQ" sourceBlock="_TmLZsKYDEeKR7Lwk7UC7tQ" targetBlock="_SdIG8KYDEeKR7Lwk7UC7tQ"/>
+      <lines id="_VgXOc6YDEeKR7Lwk7UC7tQ" sourcePort="_TmMn0qYDEeKR7Lwk7UC7tQ" targetPort="_StIR0aYDEeKR7Lwk7UC7tQ" sourceBlock="_TmKyoKYDEeKR7Lwk7UC7tQ" targetBlock="_SdIG8KYDEeKR7Lwk7UC7tQ"/>
+      <blocks xsi:type="msglib:CommunicationSwitch" id="_Sbcr8KYDEeKR7Lwk7UC7tQ" incomingLines="_VS1IwaYDEeKR7Lwk7UC7tQ _VS1IwKYDEeKR7Lwk7UC7tQ _VS-SsaYDEeKR7Lwk7UC7tQ _VS-SsKYDEeKR7Lwk7UC7tQ" outgoingLines="_VS1Iw6YDEeKR7Lwk7UC7tQ _VS1IwqYDEeKR7Lwk7UC7tQ _VS-5waYDEeKR7Lwk7UC7tQ _VS-5wKYDEeKR7Lwk7UC7tQ">
+        <parameters name="Position" value="[980, 500, 1080, 620]"/>
+        <outPorts id="_VS1IxaYDEeKR7Lwk7UC7tQ"/>
+        <outPorts id="_VS1Ix6YDEeKR7Lwk7UC7tQ"/>
+        <outPorts id="_VS-5w6YDEeKR7Lwk7UC7tQ"/>
+        <outPorts id="_VS-5xaYDEeKR7Lwk7UC7tQ"/>
+        <inPorts id="_VS1IxKYDEeKR7Lwk7UC7tQ"/>
+        <inPorts id="_VS1IxqYDEeKR7Lwk7UC7tQ"/>
+        <inPorts id="_VS-5wqYDEeKR7Lwk7UC7tQ"/>
+        <inPorts id="_VS-5xKYDEeKR7Lwk7UC7tQ"/>
+      </blocks>
+      <blocks xsi:type="model:LibraryReference" id="_Sc3BMKYDEeKR7Lwk7UC7tQ" name="StrikeProcessing" incomingLines="_Sc1MAKYDEeKR7Lwk7UC7tQ _Tc8lMKYDEeKR7Lwk7UC7tQ _VS-5wKYDEeKR7Lwk7UC7tQ _VS-5xqYDEeKR7Lwk7UC7tQ" outgoingLines="_VS-SsaYDEeKR7Lwk7UC7tQ" sourceBlock="_SYeQcKYDEeKR7Lwk7UC7tQ">
+        <parameters name="Position" value="[200, 100, 450, 900]"/>
+      </blocks>
+      <blocks xsi:type="model:DigitalClock" id="_Sc4PUKYDEeKR7Lwk7UC7tQ" outgoingLines="_Sc1MAKYDEeKR7Lwk7UC7tQ" sampleTime="0.0010">
+        <parameters name="Position" value="[100, 110, 130, 140]"/>
+        <outPorts id="_Sc5dcKYDEeKR7Lwk7UC7tQ"/>
+      </blocks>
+      <blocks xsi:type="model:LibraryReference" id="_SdIG8KYDEeKR7Lwk7UC7tQ" name="MainProcessing" incomingLines="_SdG40KYDEeKR7Lwk7UC7tQ _TdO5EKYDEeKR7Lwk7UC7tQ _TdhM8KYDEeKR7Lwk7UC7tQ _VS1Iw6YDEeKR7Lwk7UC7tQ _VS1v0aYDEeKR7Lwk7UC7tQ _VS-5waYDEeKR7Lwk7UC7tQ _VS_g0KYDEeKR7Lwk7UC7tQ _VTi6cKYDEeKR7Lwk7UC7tQ _VUeHgKYDEeKR7Lwk7UC7tQ _VgXOcKYDEeKR7Lwk7UC7tQ _VgXOcqYDEeKR7Lwk7UC7tQ _VgXOc6YDEeKR7Lwk7UC7tQ" outgoingLines="_VS1IwKYDEeKR7Lwk7UC7tQ _VS-SsKYDEeKR7Lwk7UC7tQ _VgXOcaYDEeKR7Lwk7UC7tQ" sourceBlock="_SXgnIKYDEeKR7Lwk7UC7tQ">
+        <parameters name="Position" value="[1500, 100, 1750, 900]"/>
+      </blocks>
+      <blocks xsi:type="model:DigitalClock" id="_SdJ8IKYDEeKR7Lwk7UC7tQ" outgoingLines="_SdG40KYDEeKR7Lwk7UC7tQ" sampleTime="0.0010">
+        <parameters name="Position" value="[1400, 110, 1430, 140]"/>
+        <outPorts id="_SdKjMKYDEeKR7Lwk7UC7tQ"/>
+      </blocks>
+      <blocks xsi:type="model:LibraryReference" id="_SdSfAKYDEeKR7Lwk7UC7tQ" name="SensorProcessing" incomingLines="_SdRQ4KYDEeKR7Lwk7UC7tQ _Td4ZUKYDEeKR7Lwk7UC7tQ _VS1IwqYDEeKR7Lwk7UC7tQ _VS1v0KYDEeKR7Lwk7UC7tQ _VVDWUKYDEeKR7Lwk7UC7tQ _VVbw0KYDEeKR7Lwk7UC7tQ _VWLXsKYDEeKR7Lwk7UC7tQ _VW4iUKYDEeKR7Lwk7UC7tQ _VX8SQKYDEeKR7Lwk7UC7tQ _VZLBUKYDEeKR7Lwk7UC7tQ" outgoingLines="_VS1IwaYDEeKR7Lwk7UC7tQ" sourceBlock="_SYKHYKYDEeKR7Lwk7UC7tQ">
+        <parameters name="Position" value="[200, 960, 450, 1760]"/>
+      </blocks>
+      <blocks xsi:type="model:DigitalClock" id="_SdTGEKYDEeKR7Lwk7UC7tQ" outgoingLines="_SdRQ4KYDEeKR7Lwk7UC7tQ" sampleTime="0.0010">
+        <parameters name="Position" value="[100, 970, 130, 1000]"/>
+        <outPorts id="_SdUUMKYDEeKR7Lwk7UC7tQ"/>
+      </blocks>
+      <blocks xsi:type="model:Constant" id="_Tc9MQKYDEeKR7Lwk7UC7tQ" name="StrikeProcessing_BAT_Info1_net_address" outgoingLines="_Tc8lMKYDEeKR7Lwk7UC7tQ" type="uint8">
+        <parameters name="Position" value="[100, 160, 130, 190]"/>
+        <outPorts id="_Tc9zUKYDEeKR7Lwk7UC7tQ" type="uint8"/>
+      </blocks>
+      <blocks xsi:type="model:Constant" id="_TdO5EaYDEeKR7Lwk7UC7tQ" name="MainProcessing_BAT_Info_ToStrikeProcessing1_net_address" outgoingLines="_TdO5EKYDEeKR7Lwk7UC7tQ" value="2" type="uint8">
+        <parameters name="Position" value="[1400, 410, 1430, 440]"/>
+        <outPorts id="_TdQHMKYDEeKR7Lwk7UC7tQ" type="uint8"/>
+      </blocks>
+      <blocks xsi:type="model:Constant" id="_TdhM8aYDEeKR7Lwk7UC7tQ" name="MainProcessing_BAT_Info_From_SensorProcessing1_net_address" outgoingLines="_TdhM8KYDEeKR7Lwk7UC7tQ" value="3" type="uint8">
+        <parameters name="Position" value="[1400, 510, 1430, 540]"/>
+        <outPorts id="_TdjCIKYDEeKR7Lwk7UC7tQ" type="uint8"/>
+      </blocks>
+      <blocks xsi:type="model:Constant" id="_Td4ZUaYDEeKR7Lwk7UC7tQ" name="SensorProcessing_BAT_Info1_net_address" outgoingLines="_Td4ZUKYDEeKR7Lwk7UC7tQ" value="4" type="uint8">
+        <parameters name="Position" value="[100, 1320, 130, 1350]"/>
+        <outPorts id="_Td6OgKYDEeKR7Lwk7UC7tQ" type="uint8"/>
+      </blocks>
+      <blocks xsi:type="model:Constant" id="_VS1v0qYDEeKR7Lwk7UC7tQ" name="SensorProcessing_BAT_Info1_receiver_net_address" outgoingLines="_VS1v0KYDEeKR7Lwk7UC7tQ" value="3" type="uint8">
+        <parameters name="Position" value="[100, 1370, 130, 1400]"/>
+        <outPorts id="_VS6oUKYDEeKR7Lwk7UC7tQ" type="uint8"/>
+      </blocks>
+      <blocks xsi:type="model:Constant" id="_VS298KYDEeKR7Lwk7UC7tQ" name="MainProcessing_BAT_Info_From_SensorProcessing1_receiver_net_address" outgoingLines="_VS1v0aYDEeKR7Lwk7UC7tQ" value="4" type="uint8">
+        <parameters name="Position" value="[1400, 560, 1430, 590]"/>
+        <outPorts id="_VS7PYKYDEeKR7Lwk7UC7tQ" type="uint8"/>
+      </blocks>
+      <blocks xsi:type="model:Constant" id="_VS_g0aYDEeKR7Lwk7UC7tQ" name="StrikeProcessing_BAT_Info1_receiver_net_address" outgoingLines="_VS-5xqYDEeKR7Lwk7UC7tQ" value="2" type="uint8">
+        <parameters name="Position" value="[100, 210, 130, 240]"/>
+        <outPorts id="_VTEZUKYDEeKR7Lwk7UC7tQ" type="uint8"/>
+      </blocks>
+      <blocks xsi:type="model:Constant" id="_VTAu8KYDEeKR7Lwk7UC7tQ" name="MainProcessing_BAT_Info_ToStrikeProcessing1_receiver_net_address" outgoingLines="_VS_g0KYDEeKR7Lwk7UC7tQ" type="uint8">
+        <parameters name="Position" value="[1400, 460, 1430, 490]"/>
+        <outPorts id="_VTEZUaYDEeKR7Lwk7UC7tQ" type="uint8"/>
+      </blocks>
+    </blocks>
+  </libraries>
+</model:SimulinkContainer>

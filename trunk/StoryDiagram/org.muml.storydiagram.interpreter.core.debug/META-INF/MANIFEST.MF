@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MDELab SDM Debugger Core
+Bundle-SymbolicName: org.muml.storydiagram.interpreter.core.debug
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.muml.storydiagram.interpreter.core.debug,
+ org.muml.storydiagram.interpreter.core.debug.breakpoints,
+ org.muml.storydiagram.interpreter.core.debug.protocol,
+ org.muml.storydiagram.interpreter.core.debug.protocol.indications,
+ org.muml.storydiagram.interpreter.core.debug.protocol.requests
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
+Require-Bundle: org.eclipse.emf.ecore;bundle-version="2.6.1";visibility:=reexport,
+ org.eclipse.emf.ecore.change;bundle-version="2.5.1";visibility:=reexport,
+ org.muml.storydiagram.interpreter.core.mdelab;visibility:=reexport,
+ org.eclipse.net4j;bundle-version="3.0.1";visibility:=reexport,
+ org.eclipse.net4j.tcp;bundle-version="3.0.1";visibility:=reexport,
+ org.muml.storydiagram.resourcesetsynchronizer;visibility:=reexport

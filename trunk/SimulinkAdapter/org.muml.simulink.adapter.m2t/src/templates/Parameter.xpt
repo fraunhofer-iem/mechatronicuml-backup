@@ -1,0 +1,5 @@
+«IMPORT simulink»
+
+«DEFINE parameter FOR Parameter-»
+  «this.name» "«this.value»"
+«ENDDEFINE»

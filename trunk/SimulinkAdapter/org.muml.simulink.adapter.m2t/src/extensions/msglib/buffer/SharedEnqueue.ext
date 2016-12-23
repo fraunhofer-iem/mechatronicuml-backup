@@ -1,0 +1,34 @@
+import simulink;
+import simulink::stateflow;
+import simulink::msglib;
+import simulink::msglib::buffer;
+
+String getCode(SharedEnqueue function):
+'function [evtQueue, paramQueue] = ' + function.name + '(event, evtQueueIn, param, paramQueueIn) %eml 
+evtQueue = evtQueueIn; 
+paramQueue = paramQueueIn; 
+for i = 1:length(evtQueue)
+    if evtQueue(i) == uint8(0) 
+        evtQueue(i) = event; 
+        paramQueue(i) = param; 
+        return 
+    end 
+end'
+;
+
+EmbeddedFunction generateContent(SharedEnqueue function):
+function.setCode(function.getCode()).setInput(function.generateInputData(function.bufferSize)).setOutput(function.generateOutputData(function.bufferSize));
+
+List[Data] generateInputData(SharedEnqueue function, Integer bufferSize):
+{let d=new Data:d.setName('event').setType(DataType::UINT8)->d,
+let d=new Data:d.setName('evtQueueIn').setType(DataType::UINT8).setSize('[' + bufferSize + ']')->d,
+let d=new Data:d.setName('param').setType(DataType::DOUBLE)->d,
+let d=new Data:d.setName('paramQueueIn').setType(DataType::DOUBLE).setSize('[' + bufferSize + ']')->d
+}
+;
+
+List[Data] generateOutputData(SharedEnqueue function, Integer bufferSize):
+{let d=new Data:d.setName('evtQueue').setType(DataType::UINT8).setSize('[' + bufferSize + ']')->d,
+let d=new Data:d.setName('paramQueue').setType(DataType::DOUBLE).setSize('[' + bufferSize + ']')->d
+}
+;

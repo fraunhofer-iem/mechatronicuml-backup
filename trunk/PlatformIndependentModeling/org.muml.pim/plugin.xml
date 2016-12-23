@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.0"?><!--
+ <copyright>
+ Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+ 
+ Contributors:
+     Software Engineering Group - initial API and implementation
+ </copyright>
+--><plugin>
+
+<!-- manual extensions -->
+<extension point="org.muml.core.version">
+      <artefact id="org.muml.metamodel" name="muml metamodel" resource="plugin.xml" version="0.3.2">
+         <!-- these following values are automatically modified by svn after committing a change in this file; see svn:keywords -->
+         <lastchange committer="$LastChangedBy$" date="$LastChangedDate$" revision="$LastChangedRevision$">
+         </lastchange>
+      </artefact>
+   </extension>
+   <extension
+         point="org.muml.emm.migrator">
+      <Migrator
+            file="model/pim.migrator">
+      </Migrator>
+   </extension>
+  
+  
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package class="org.muml.pim.PimPackage" genModel="model/pim.genmodel" uri="http://www.muml.org/pim/1.0.0"/>
+   </extension>
+   
+   
+   
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated pim -->
+      <package
+            uri="http://www.muml.org/pim/1.0.0"
+            class="org.muml.pim.PimPackage"
+            genModel="model/pim.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated pim -->
+      <package
+            uri="http://www.muml.org/pim/constraint/1.0.0"
+            class="org.muml.pim.constraint.ConstraintPackage"
+            genModel="model/pim.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated pim -->
+      <package
+            uri="http://www.muml.org/pim/instance/1.0.0"
+            class="org.muml.pim.instance.InstancePackage"
+            genModel="model/pim.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated pim -->
+      <package
+            uri="http://www.muml.org/pim/protocol/1.0.0"
+            class="org.muml.pim.protocol.ProtocolPackage"
+            genModel="model/pim.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated pim -->
+      <package
+            uri="http://www.muml.org/pim/realtimestatechart/1.0.0"
+            class="org.muml.pim.realtimestatechart.RealtimestatechartPackage"
+            genModel="model/pim.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated pim -->
+      <package
+            uri="http://www.muml.org/pim/one_to_n_schemata/1.0.0"
+            class="org.muml.pim.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage"
+            genModel="model/pim.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated pim -->
+      <package
+            uri="http://www.muml.org/pim/msgtype/1.0.0"
+            class="org.muml.pim.msgtype.MsgtypePackage"
+            genModel="model/pim.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated pim -->
+      <package
+            uri="http://www.muml.org/pim/types/1.0.0"
+            class="org.muml.pim.types.TypesPackage"
+            genModel="model/pim.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated pim -->
+      <package
+            uri="http://www.muml.org/pim/connector/1.0.0"
+            class="org.muml.pim.connector.ConnectorPackage"
+            genModel="model/pim.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated pim -->
+      <package
+            uri="http://www.muml.org/pim/valuetype/1.0.0"
+            class="org.muml.pim.valuetype.ValuetypePackage"
+            genModel="model/pim.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated pim -->
+      <package
+            uri="http://www.muml.org/pim/behavior/1.0.0"
+            class="org.muml.pim.behavior.BehaviorPackage"
+            genModel="model/pim.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated pim -->
+      <package
+            uri="http://www.muml.org/pim/component/1.0.0"
+            class="org.muml.pim.component.ComponentPackage"
+            genModel="model/pim.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated pim -->
+      <package
+            uri="http://www.muml.org/pim/pattern/1.0.0"
+            class="org.muml.pim.pattern.PatternPackage"
+            genModel="model/pim.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated pim -->
+      <package
+            uri="http://www.muml.org/pim/runnable/1.0.0"
+            class="org.muml.pim.runnable.RunnablePackage"
+            genModel="model/pim.genmodel"/>
+   </extension>
+</plugin>

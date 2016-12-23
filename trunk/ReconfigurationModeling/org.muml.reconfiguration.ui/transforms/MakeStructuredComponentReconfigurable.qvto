@@ -1,0 +1,71 @@
+import GenerateReconfigurationController;
+import UpdateReferencesToComponent;
+
+--core models
+modeltype core uses core('http://www.muml.org/core/1.0.0');
+modeltype expressions uses core::expressions('http://www.muml.org/core/1.0.0');
+modeltype expressions_common uses core::expressions::common('http://www.muml.org/core/1.0.0');
+modeltype modelinst uses modelinstance("http://www.muml.org/modelinstance/1.0.0");
+
+-- muml models 
+modeltype behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype component uses pim::component("http://www.muml.org/pim/1.0.0");
+modeltype connector uses pim::connector("http://www.muml.org/pim/1.0.0");
+modeltype constraints uses pim::constraint("http://www.muml.org/pim/1.0.0");
+modeltype instance uses pim::instance("http://www.muml.org/pim/1.0.0");
+modeltype msgi uses pim::msgtype('http://www.muml.org/pim/1.0.0');
+modeltype protocol uses pim::protocol("http://www.muml.org/pim/1.0.0");
+modeltype realtimestatechart uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype types uses pim::types('http://www.muml.org/pim/1.0.0');
+modeltype valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+
+modeltype actionlanguage uses actionlanguage('http://www.muml.org/pim/actionlanguage/1.0.0');
+modeltype reconf uses reconfiguration("http://www.muml.org/reconfiguration/1.0.0");
+modeltype reconf_expressions uses reconfiguration::expression("http://www.muml.org/reconfiguration/1.0.0");
+modeltype reconf_datatype uses reconfiguration::structdatatype("http://www.muml.org/reconfiguration/1.0.0");
+
+--modeltype componentpattern uses componentstorydiagram::componentstorypattern("http://www.fujaba.de/muml/componentstorydiagram/0.3.1");
+--modeltype componentstory uses componentstorydiagram::controlflow("http://www.fujaba.de/muml/componentstorydiagram/0.3.1");
+
+
+-- this transformation creates a copy of the inputComponent, adds it to the category, generates the reconfiguration
+-- controller, and redirects all references from the inputComponent to the copy
+transformation MakeStructuredComponentReconfigurable(inout inputComponent : component, inout category : modelinst);
+
+main() {
+
+	-- parse input parameters
+	var oldComponent : StaticStructuredComponent := inputComponent.rootObjects()[StaticStructuredComponent] -> any(true);
+	var rootNode : RootNode := category.rootObjects()[RootNode] -> any(true);
+
+	var newComponent : ReconfigurableStructuredComponent := map createReconfigurableComponent(oldComponent);
+	
+	-- update reference such that they point to the newComponent instead of the oldComponent
+	map updateReferencesToComponent(rootNode, oldComponent, newComponent);
+	
+	-- delete old component
+	inputComponent.removeElement(oldComponent);
+}
+
+-- creates a reconfigurable structure component including the reconfiguration controller
+-- and moves all structural features of the oldComp to the new component.
+mapping createReconfigurableComponent(in oldComp : StaticStructuredComponent) : ReconfigurableStructuredComponent {
+	
+	-- copy attributes
+	name := oldComp.name;						-- from NamedElement
+	comment := oldComp.comment;					-- from CommentableElement
+	componentKind := oldComp.componentKind;		-- from Component
+	
+	-- move features contained in references
+	ports := oldComp.ports; 					-- from Component
+	connectors := oldComp.connectors;			-- from StructuredComponent
+	coordinationProtocolParts := oldComp.coordinationProtocolParts; -- from StructuredComponent
+	embeddedComponentParts := oldComp.embeddedComponentParts;	-- from StructuredComponent	
+	
+	
+	-- instantiate reconfiguration controllers and connections incl. reconfiguration ports for the structured component
+	-- => call transformation
+	map addRuleBasedReconfigurationController(result);
+}
+
+

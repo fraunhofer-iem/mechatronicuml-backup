@@ -1,0 +1,143 @@
+import transforms.lib.common.PatternProtocolCommon;
+import transforms.lib.patternToprotocol.PatternToProtocolCommon;
+import org.muml.pim.types._library.TypesBlackbox;
+
+modeltype modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
+modeltype common uses core::expressions::common('http://www.muml.org/core/1.0.0');
+modeltype pim uses pim('http://www.muml.org/pim/1.0.0');
+modeltype ComponentPackage uses pim::component('http://www.muml.org/pim/1.0.0');
+modeltype ProtocolPackage uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype RTSCPackage uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype ConnectorPackage uses pim::connector('http://www.muml.org/pim/1.0.0');
+modeltype TypesPackage uses pim::types('http://www.muml.org/pim/1.0.0');
+modeltype ValuetypePackage uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype MessageTypePackage uses pim::msgtype('http://www.muml.org/pim/1.0.0');
+modeltype BehaviorPackage uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype PatternPackage uses pim::pattern('http://www.muml.org/pim/1.0.0');
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+modeltype actionLanguage uses actionlanguage('http://www.muml.org/pim/actionlanguage/1.0.0');
+modeltype core uses core('http://www.muml.org/core/1.0.0');
+modeltype ModelInstancePackage uses core::modelinstance('http://www.muml.org/core/1.0.0');
+
+// @author sthiele2
+transformation TransformPatternToProtocolNewModel(in input : ModelInstancePackage, out output : ModelInstancePackage);
+
+property rootOfNewModel: RootNode;
+
+main() 
+{ 
+	var debug : Boolean := false;
+	// get the input parameters. There is exactly one root and exactly one coordination pattern	
+	var theRootNode := input.rootObjects()[RootNode] -> any(true);	
+	var thePattern : AbstractCoordinationPattern;
+	
+	if( not debug){
+		// not debug:	
+		thePattern := input.rootObjects()[AbstractCoordinationPattern] -> any(true);
+		bindings := input.rootObjects()[ParameterBinding];			
+	}
+	else {
+		// Debug:
+		var patternCategory : ModelElementCategory := getPatternCategory(theRootNode); 
+		thePattern := patternCategory.modelElements->at(1).oclAsType(AbstractCoordinationPattern);
+		bindings := thePattern.verifiedConfigurations->at(1).parameterBindings;
+		
+	};
+
+	
+	// check whether the input is correct: 
+	assert fatal (thePattern != null) with log ("AbstractCoordinationPattern is null!" + thePattern.name);
+	assert fatal (theRootNode != null) with log ("RootNode is null!");  
+    assert fatal (if(thePattern.patternParameters->size() > 0) then (bindings != null and bindings->size() = thePattern.patternParameters->size()) else true endif) with log ("Parameter Bindings are null!");
+    assert fatal (if( bindings->size() >0) then bindings->size() = thePattern.patternParameters->size()  else true endif);
+
+	
+	rootOfNewModel := new RootNode();
+	
+	theRootNode.categories->forEach(cat) {
+	 if(cat.key.oclAsType(String).matches('org.muml.types.category') or cat.key.oclAsType(String).matches('org.muml.pim.messagetype.category') ) {
+	 	rootOfNewModel.categories += cat.map transform().oclAsType(ModelElementCategory);
+	 	}
+	 	else {
+	 		var category : ModelElementCategory := cat.map create().oclAsType(ModelElementCategory);
+	 		category.name := cat.name;
+	 		category.key := cat.key;
+	 		rootOfNewModel.categories += category;
+	 	};
+	 	
+	 };	
+	 
+    // start transformation
+	var protocol : CoordinationProtocol := thePattern.map AbstractCoordinationPattern2CoordinationProtocol();
+	var protocolCategory : ModelElementCategory := getProtocolCategory(rootOfNewModel);
+	protocolCategory.modelElements += protocol;
+	protocol.verificationConstraintRepositories += thePattern.verificationConstraintRepositories.map transform().oclAsType( pim::constraint::VerificationConstraintRepository);  
+}
+
+
+mapping pim::pattern::AbstractCoordinationPattern :: AbstractCoordinationPattern2CoordinationProtocol() : pim::protocol::CoordinationProtocol @output
+{	
+	result.name := self.name + timeStamp;
+	result.comment := self.comment;
+	result.extensions := self.extensions.map transform().oclAsType(Extension);		
+	
+
+	self.roles->forEach(role)
+	{
+		// the role was already mapped in RoleConnector2RoleConnector
+		var newRole : Role := role.map transform().oclAsType(Role);
+		//newRole.behavior := role.behavior.oclAsType(RealtimeStatechart).map RealtimeStatechart2RealtimeStatechart();
+		//set behavorial element?? --> should be already considered when setting behavior of the role!
+		
+		newRole.coordinationProtocol := result;
+		
+		var rtscCategory : ModelElementCategory := getRealtimeStatechartCategory(rootOfNewModel);
+		rtscCategory.modelElements += newRole.behavior.oclAsType(RealtimeStatechart);
+		
+		result.roles+= newRole;
+	};
+	result._roleConnector := self.roleConnector.map transform().oclAsType(RoleConnector);
+	
+
+	
+} 
+
+mapping pim::behavior::Parameter:: Parameter2Variable(rtsc : RealtimeStatechart) : pim::behavior::Variable
+{
+	_constant := true;
+	_name := self.name;
+	_dataType:= self.dataType.oclAsType(pim::types::DataType).map transform().oclAsType(pim::types::DataType);
+	_comment := self.comment;
+}
+
+mapping RealtimeStatechart::create():EObject{
+	init{
+		result:=new RealtimeStatechart().oclAsType(EObject);
+		}
+	}
+	
+
+
+
+mapping PrimitiveDataType::transform(): EObject {
+	init{
+		if(self.oclAsType(EObject).eContainer().oclIsTypeOf(ModelElementCategory)){
+			result := self.map create().oclAsType(EObject);
+			var element := self.oclAsType(EObject);	
+			element.oclAsType(EObject).eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+				setValues(result, f, getValues(element, f));
+			};
+		}	
+		else {
+			result := self.oclAsType(EObject);
+		}
+	}		
+}
+
+mapping AbstractCoordinationSpecification:: transform() : EObject {
+	init {
+		result := null;
+	}
+}
+
+

@@ -1,0 +1,5 @@
+import "fraunhoferDemo.muml"
+
+OperatingSystem:nxtOSEK{
+
+}

@@ -1,0 +1,20 @@
+import simulink::stateflow;
+
+extension extensions::stateflow::Node;
+
+StateflowMachine getMachine(Data data):
+if EmbeddedFunction.isInstance(data.eContainer) then
+	((State)data.getEmbeddedFunction().eContainer).getChart().machine
+else if Chart.isInstance(data.eContainer) then
+	((Chart)data.eContainer).machine
+else if State.isInstance(data.eContainer) then
+	((State)data.eContainer).getChart().machine;
+
+EmbeddedFunction getEmbeddedFunction(Data data):
+	((EmbeddedFunction)data.eContainer);
+	
+Chart getChart(Data data):
+	((Chart)data.eContainer);
+	
+State getState(Data data):
+	((State)data.eContainer);	

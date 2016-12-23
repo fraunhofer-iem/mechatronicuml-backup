@@ -1,0 +1,28 @@
+«IMPORT simulink»
+
+«EXTENSION extensions::Element»
+«EXTENSION extensions::Block»
+«EXTENSION extensions::InPortBlock»
+
+«DEFINE inPortBlock FOR InPortBlock»
+  Block {
+    BlockType Inport
+    Name "«this.getName()»"
+    SID				«this.getSimulinkId()»
+    Tag		"id=«this.id»"
+«IF this.getParameter('Port') != null»
+	Port "«this.getParameter('Port')»"
+«ELSEIF this.block.inPorts.indexOf(this) > -1-»
+    Port "«this.block.inPorts.select(p|!EnablePort.isInstance(p) && !TriggerPort.isInstance(p)).indexOf(this)+1»"«REM»Simulink starts counting at 1«ENDREM»
+«ENDIF-»
+«IF this.dimensions != null-»
+	PortDimensions "«this.dimensions»"
+«ENDIF-»
+«IF this.type != null-»«EXPAND DataType::simulink FOR this.type»«ENDIF-»
+«IF Bus.isInstance(this.getBus())-»
+    UseBusObject 	"on"
+    BusObject		"«this.getBus().name»"	
+«ENDIF-»
+	«EXPAND Parameter::parameter FOREACH this.parameters.select(p| !{'BlockType','Name', 'SID', 'Tag','Port','UseBusObject', 'BusObject', 'PortDimensions', 'DataType', 'OutDataType', 'OutScaling', 'OutDataTypeStr'}.contains(p.name) )-»
+  }
+«ENDDEFINE»

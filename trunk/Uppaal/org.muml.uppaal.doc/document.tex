@@ -1,0 +1,26 @@
+%%This is a very basic article template.
+%%There is just one section and two subsections.
+\documentclass{article}
+
+\usepackage{todonotes}
+\usepackage[pdftex,bookmarks=true]{hyperref}
+\usepackage{enumitem}
+\usepackage{listings}
+
+\newcommand{\todoo}[1]{\todo[inline, color=red!40]{ecore2latex: #1}}
+
+\newcommand{\todosd}[1]{\todo[inline,color=green]{SD says: #1}}
+\newcommand{\todocg}[1]{\todo[inline,color=yellow]{CG says: #1}}
+
+% use this environment if the item of a description is longer than a line
+\newenvironment{longdescription}
+  {\begin{description}[style=unboxed]}
+  {\end{description}}
+
+\begin{document}
+
+
+\input{contents.tex}
+
+
+\end{document}

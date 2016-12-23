@@ -1,0 +1,91 @@
+transformation InstantiationTransformation(inout input : ComponentPackage);
+
+modeltype PimPackage uses pim('http://www.muml.org/pim/1.0.0');
+modeltype ConnectorPackage uses pim::connector('http://www.muml.org/pim/1.0.0');
+modeltype ComponentPackage uses pim::component('http://www.muml.org/pim/1.0.0');
+modeltype ProtocolPackage uses pim::protocol('http://www.muml.org/pim/1.0.0');
+
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+main() {
+ 
+ 	var components := input.rootObjects()[StructuredComponent];	
+
+	// Editor supplies StructuredComponent in rootInput.
+	// In case we want to run this transformation differently (for debugging), we search for StructuredComponents.
+	if (components->isEmpty()) then {
+		components := input.objects()[StructuredComponent]
+	} endif;
+	
+	components->forEach(component) {
+	
+		-- find assemblies
+		var assemblies := component.embeddedComponentParts.portParts.connectors[AssemblyConnector]->asSet();
+		
+		-- good assemblies only have PortParts with the same CS
+		var goodAssemblies := assemblies->select(a | a.connectorEndpoints[PortPart].portType->excluding(null)[DiscretePort].refinedRole->excluding(null).coordinationProtocol->excluding(null)->asSet()->size() = 1)
+										->select(a | a.connectorEndpoints[PortPart].portType->excluding(null)[DiscretePort].refinedRole->excluding(null)->asSet()->size() <> 1)->asSet();
+
+
+		-- Phase 1a: Check every Coordination Protocol Part: Make sure that every port part is connected by a good Assembly. Else disconnect all Port Parts from this coordination protocol part. 
+		component.coordinationProtocolParts->forEach(p) {
+			
+			if (p.portParts.connectors[AssemblyConnector]->select(a | goodAssemblies->includes(a) and a.connectorEndpoints[PortPart]->asSet() = p.portParts->asSet())->isEmpty()) {
+				p.portParts->forEach(pp) {
+					pp.coordinationProtocolPart := null;
+					-- This might cause phase 1b to delete the coordination protocol part, if no port part connects to it anymore.
+				};
+			}
+	
+		};
+		
+		-- Phase 1b: Delete non-connected coordination protocol parts
+		var unusedCP := component.coordinationProtocolParts->select(cp | cp.portParts->isEmpty());
+		if (unusedCP->notEmpty()) then {
+			component.coordinationProtocolParts := component.coordinationProtocolParts - unusedCP;
+		} endif;
+		
+		-- These are very good because there are enough Port Parts that can be connected.
+		var bestAssemblies := goodAssemblies->select(a | a.connectorEndpoints[PortPart]->forAll(pp | not pp.isMulti() implies pp.coordinationProtocolPart.oclIsUndefined()));
+		
+		-- Phase 2: Create Coordination Protocol Parts for good Assemblies, if there are enough Port Parts that can be connected.
+		bestAssemblies->forEach(a) {
+		
+			if (a.connectorEndpoints[PortPart]->forAll(pp | pp.coordinationProtocolPart.oclIsUndefined())) then {
+				-- any(true) is okay because this is a "good assembly".
+				var coordinationProtocolType := a.connectorEndpoints[PortPart].portType->excluding(null)[DiscretePort].refinedRole->excluding(null).coordinationProtocol[CoordinationProtocol]->excluding(null)->any(true);
+				var part := new CoordinationProtocolPart(coordinationProtocolType);
+				part.portParts := a.connectorEndpoints[PortPart];
+				component.coordinationProtocolParts += part;
+			} elif (not a.connectorEndpoints[PortPart]->forAll(pp | not pp.coordinationProtocolPart.oclIsUndefined())) then {
+				a.connectorEndpoints[PortPart]->forEach(pp) {
+					pp.coordinationProtocolPart := a.connectorEndpoints[PortPart].coordinationProtocolPart->excluding(null)->any(true);
+				};
+				
+			} endif;
+			
+		};
+		
+		--var badAssemblies := (assemblies - goodAssemblies)->asSet();
+		--badAssemblies->forEach(a) {
+		--	a.connectorEndpoints[PortPart]->forEach(pp) {
+		--		pp.coordinationProtocolPart := null;
+		--	};
+		--	
+		--	
+		--	if (a.connectorEndpoints[PortPart].coordinationProtocolPart->excluding(null)->select(cp | cp.portParts = a.connectorEndpoints[PortPart])->any(true) <> null) then
+		--		
+		--	} endif;
+		--};
+		
+
+	};
+}
+
+constructor CoordinationProtocolPart::CoordinationProtocolPart(CS : CoordinationProtocol) {
+	coordinationProtocol := CS;
+} 
+
+query PortPart::isMulti() : Boolean {
+	return self.portType[DiscretePort]->any(true).multi;
+}

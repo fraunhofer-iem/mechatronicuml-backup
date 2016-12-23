@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Action Language Interpreter Plugin
+Bundle-SymbolicName: org.muml.verification.core.actionlanguage.interpreter;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.muml.verification.core.actionlanguage.interpreter.Activator
+Require-Bundle: org.muml.verification.core.runtime,
+ org.eclipse.core.runtime;bundle-version="3.11.1",
+ org.muml.pim.actionlanguage
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.muml.verification.core.actionlanguage.interpreter,
+ org.muml.verification.core.actionlanguage.interpreter.exceptions
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

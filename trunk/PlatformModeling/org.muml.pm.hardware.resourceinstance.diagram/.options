@@ -1,0 +1,7 @@
+# Tracing options for the org.muml.pm.hardware.resourceinstance.diagram plug-in
+
+# Common issues
+org.muml.pm.hardware.resourceinstance.diagram/debug=false
+
+# Visual IDs
+org.muml.pm.hardware.resourceinstance.diagram/debug/visualID=false

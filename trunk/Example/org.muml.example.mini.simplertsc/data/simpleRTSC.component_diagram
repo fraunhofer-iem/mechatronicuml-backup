@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component="http://www.muml.org/pim/component/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_J93w4Bx3EeSKP_lLzmbIVg" type="Component" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_LUUmcBx3EeSKP_lLzmbIVg" type="2006" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_LUY34Bx3EeSKP_lLzmbIVg" type="5028"/>
+    <element xmi:type="component:StaticAtomicComponent" href="simpleRTSC.muml#_LTjxcBx3EeSKP_lLzmbIVg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LUUmcRx3EeSKP_lLzmbIVg" x="378" y="144" width="343" height="280"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_J94X8Bx3EeSKP_lLzmbIVg"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="simpleRTSC.muml#_Dwx8iBx3EeSKP_lLzmbIVg"/>
+</notation:Diagram>

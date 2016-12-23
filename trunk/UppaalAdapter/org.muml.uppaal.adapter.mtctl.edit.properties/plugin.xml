@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+
+  <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+    <propertyContributor
+          contributorId="org.muml.ape.contributor">
+       <propertyCategory
+             category="domain">
+       </propertyCategory>
+       <propertyCategory
+             category="default">
+       </propertyCategory>
+       <propertyCategory
+             category="extended">
+       </propertyCategory>
+       <propertyCategory
+             category="advanced">
+       </propertyCategory>
+    </propertyContributor>
+  </extension>
+
+
+
+<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs contributorId="org.muml.ape.contributor">
+          <propertyTab
+             category="domain"
+             id="property.tab.mtctl"
+             label="Mtctl"/>
+          
+      </propertyTabs>
+  </extension>
+
+
+
+
+  <extension point="org.eclipse.ui.views.properties.tabbed.propertySections"> 
+      <propertySections contributorId="org.muml.ape.contributor">
+          <propertySection
+            class="org.muml.ape.runtime.sections.ObjectPropertySection"
+            filter="org.muml.uppaal.adapter.mtctl.properties.tabs.Property_tab_mtctlTabElementFilter"
+            id="property.tab.mtctl"
+            tab="property.tab.mtctl">
+             <input
+               type="org.eclipse.emf.ecore.EObject">
+             </input>
+          </propertySection>
+         
+      </propertySections>
+  </extension>
+
+
+
+ <extension point="org.muml.ape.runtime.propertyEditors">
+    <propertyEditors>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.mtctl.properties.booleanlogic.editor.AndExprEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/mtctl/booleanlogic/1.0.0#AndExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.mtctl.properties.booleanlogic.editor.ImplyExprEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/mtctl/booleanlogic/1.0.0#ImplyExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.mtctl.properties.booleanlogic.editor.NotExprEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/mtctl/booleanlogic/1.0.0#NotExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.mtctl.properties.booleanlogic.editor.OrExprEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/mtctl/booleanlogic/1.0.0#OrExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.mtctl.properties.predicates.editor.DeadlockExprEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/mtctl/predicates/1.0.0#DeadlockExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.mtctl.properties.predicates.editor.ComparisonExprEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/mtctl/predicates/1.0.0#ComparisonExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.mtctl.properties.predicates.editor.MessageInBufferExprEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/mtctl/predicates/1.0.0#MessageInBufferExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.mtctl.properties.predicates.editor.MessageInTransitExprEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/mtctl/predicates/1.0.0#MessageInTransitExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.mtctl.properties.predicates.editor.StateActiveExprEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/mtctl/predicates/1.0.0#StateActiveExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.mtctl.properties.predicates.editor.SubstateOfExprEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/mtctl/predicates/1.0.0#SubstateOfExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.mtctl.properties.predicates.editor.TransitionFiringExprEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/mtctl/predicates/1.0.0#TransitionFiringExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.mtctl.properties.predicates.editor.PredicateExprEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/mtctl/predicates/1.0.0#PredicateExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.mtctl.properties.predicates.editor.TrueExprEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/mtctl/predicates/1.0.0#TrueExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.mtctl.properties.predicates.editor.FalseExprEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/mtctl/predicates/1.0.0#FalseExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.mtctl.properties.predicates.editor.StateInStatechartExprEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/mtctl/predicates/1.0.0#StateInStatechartExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.mtctl.properties.predicates.editor.ConnectorOverflowExprEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/mtctl/predicates/1.0.0#ConnectorOverflowExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.mtctl.properties.predicates.editor.MessageDiscardedExprEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/mtctl/predicates/1.0.0#MessageDiscardedExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.mtctl.properties.quantifiers.editor.AFExprEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/mtctl/quantifiers/1.0.0#AFExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.mtctl.properties.quantifiers.editor.AGExprEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/mtctl/quantifiers/1.0.0#AGExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.mtctl.properties.quantifiers.editor.EFExprEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/mtctl/quantifiers/1.0.0#EFExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.mtctl.properties.quantifiers.editor.EGExprEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/mtctl/quantifiers/1.0.0#EGExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.mtctl.properties.quantifiers.editor.ExistenceQuantExprEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/mtctl/quantifiers/1.0.0#ExistenceQuantExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.mtctl.properties.quantifiers.editor.BoundVariableEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/mtctl/quantifiers/1.0.0#BoundVariable">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.mtctl.properties.quantifiers.editor.UniversalQuantExprEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/mtctl/quantifiers/1.0.0#UniversalQuantExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.mtctl.properties.quantifiers.editor.LeadsToExprEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/mtctl/quantifiers/1.0.0#LeadsToExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.mtctl.properties.mtctl.editor.PropertyRepositoryEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/mtctl/1.0.0#PropertyRepository">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.mtctl.properties.mtctl.editor.PropertyEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/mtctl/1.0.0#Property">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.mtctl.properties.comparables.editor.BufferMsgCountExprEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/mtctl/comparables/1.0.0#BufferMsgCountExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.mtctl.properties.comparables.editor.ConstExprEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/mtctl/comparables/1.0.0#ConstExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.mtctl.properties.comparables.editor.MumlElemExprEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/mtctl/comparables/1.0.0#MumlElemExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.mtctl.properties.comparables.editor.SourceStateExprEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/mtctl/comparables/1.0.0#SourceStateExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.mtctl.properties.comparables.editor.TargetStateExprEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/mtctl/comparables/1.0.0#TargetStateExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.mtctl.properties.sets.editor.ClockSetExprEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/mtctl/sets/1.0.0#ClockSetExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.mtctl.properties.sets.editor.IntervalSetExprEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/mtctl/sets/1.0.0#IntervalSetExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.mtctl.properties.sets.editor.MessageSetExprEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/mtctl/sets/1.0.0#MessageSetExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.mtctl.properties.sets.editor.StateSetExprEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/mtctl/sets/1.0.0#StateSetExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.mtctl.properties.sets.editor.TransitionSetExprEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/mtctl/sets/1.0.0#TransitionSetExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.mtctl.properties.sets.editor.BufferSetExprEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/mtctl/sets/1.0.0#BufferSetExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.mtctl.properties.sets.editor.InstanceSetExprEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/mtctl/sets/1.0.0#InstanceSetExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.mtctl.properties.sets.editor.SubinstanceSetExprEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/mtctl/sets/1.0.0#SubinstanceSetExpr">
+       </propertyEditor>
+    
+    </propertyEditors>
+ </extension>
+
+
+ <extension
+       point="org.muml.ape.runtime.metamodelContributor">
+    <metamodel
+          contributor="org.muml.uppaal.adapter.mtctl.properties.metamodel.MetamodelContributor">
+    </metamodel>
+ </extension>
+
+
+ <extension
+       point="org.muml.ape.runtime.creationConstraintContributor">
+    <constraint
+          contributor="org.muml.uppaal.adapter.mtctl.properties.constraint.CreationConstraintContributor">
+    </constraint>
+ </extension>
+
+</plugin>

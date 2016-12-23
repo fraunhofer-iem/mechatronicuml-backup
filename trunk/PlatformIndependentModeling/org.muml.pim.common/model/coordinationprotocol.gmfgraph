@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="protocol">
+  <figures name="Protocol Gallery">
+    <descriptors name="CoordinationProtocolFigure">
+      <actualFigure xsi:type="gmfgraph:Ellipse" name="CoordinationProtocolFigure" lineKind="LINE_DASH">
+        <layout xsi:type="gmfgraph:GridLayout"/>
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="173" green="216" blue="230"/>
+        <children xsi:type="gmfgraph:Label" name="CoordinationProtocolNameFigure">
+          <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true"/>
+          <font xsi:type="gmfgraph:BasicFont" style="BOLD"/>
+        </children>
+      </actualFigure>
+      <accessors figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="RolePatternFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="RolePatternFigure" lineKind="LINE_DASH">
+        <children xsi:type="gmfgraph:Label" name="RolePatternLabel"/>
+        <children xsi:type="gmfgraph:PolylineConnection" name="RolePatternFigure" lineKind="LINE_DASH">
+          <children xsi:type="gmfgraph:Label" name="RolePatternLabel"/>
+        </children>
+      </actualFigure>
+      <accessors figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+    </descriptors>
+  </figures>
+</gmfgraph:Canvas>

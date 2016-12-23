@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Properties
+Bundle-SymbolicName: de.upb.swt.core.ui.properties;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.edit;bundle-version="2.7.2",
+ org.eclipse.ui.views.properties.tabbed;bundle-version="3.5.200";visibility:=reexport,
+ de.upb.swt.core.ui,
+ de.upb.swt.core
+Export-Package: de.upb.swt.core.ui.properties.filters,
+ de.upb.swt.core.ui.properties.sections,
+ de.upb.swt.core.ui.properties.util
+Bundle-Activator: de.upb.swt.core.ui.properties.Activator

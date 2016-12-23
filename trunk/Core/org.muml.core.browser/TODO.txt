@@ -1,0 +1,20 @@
+APE -> ComboBox -> [...] Button -> erlaubt Load Resource, so wie im Export Wizard Source Page
+
+
+Model Browser lädt NICHT alles in eine EditingDomain, sondern pro Datei eine EditingDomain.
+
+Modell-Datei pro Element.
+Editoren besitzen modell-Datei
+Editoren sharen EditingDomain mit dem ModelBrowser für das bearbeitete Element.
+
+"ComponentConfigurationEditor", neues Element ComponentConfiguration REFERENZIERT (non-containment) auf Componenten
+-> Componenten an sich sind readonly, drag and drop ermöglicht neue Referenzen auf existierende Componenten
+-> APE erlaubt nicht bearbeiten von referenzierten Elementen (Doppelklick auf APE-Liste  öffnet Editor)
+
+Doppelklicken auf Component öffnet Component Editor -> dort editieren möglich.
+
+Mehrere Diagramme für ein Element sharen editing domain.
+
+Behavior nicht contained sondern RTSC in eigener datei, sub-statecharts sind an der Region contained.
+
+Port/Component referenzieren RTSC-Dateien

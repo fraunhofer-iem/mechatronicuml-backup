@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sda:Activity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:expr="http://www.muml.org/core/expressions/1.0.0" xmlns:sda="http://www.muml.org/storydiagram/activities/1.0.0" name="JunctionNode">
+  <ownedActivityEdge target="//@ownedActivityNode.1" source="//@ownedActivityNode.0"/>
+  <ownedActivityEdge target="//@ownedActivityNode.2" source="//@ownedActivityNode.1"/>
+  <ownedActivityEdge target="//@ownedActivityNode.3" source="//@ownedActivityNode.2" guard="BOOL">
+    <guardExpression xsi:type="expr:TextualExpression" expressionText="cond1" language="OCL" languageVersion="1.0"/>
+  </ownedActivityEdge>
+  <ownedActivityEdge target="//@ownedActivityNode.4" source="//@ownedActivityNode.2" guard="BOOL">
+    <guardExpression xsi:type="expr:TextualExpression" expressionText="cond2" language="OCL" languageVersion="1.0"/>
+  </ownedActivityEdge>
+  <ownedActivityEdge target="//@ownedActivityNode.5" source="//@ownedActivityNode.3"/>
+  <ownedActivityEdge target="//@ownedActivityNode.5" source="//@ownedActivityNode.4"/>
+  <ownedActivityNode xsi:type="sda:InitialNode" name="init" outgoing="//@ownedActivityEdge.0"/>
+  <ownedActivityNode xsi:type="sda:ModifyingStoryNode" name="node1" outgoing="//@ownedActivityEdge.1" incoming="//@ownedActivityEdge.0">
+    <ownedRule comment=""/>
+  </ownedActivityNode>
+  <ownedActivityNode xsi:type="sda:JunctionNode" name="junction" outgoing="//@ownedActivityEdge.2 //@ownedActivityEdge.3" incoming="//@ownedActivityEdge.1"/>
+  <ownedActivityNode xsi:type="sda:ModifyingStoryNode" name="node2" outgoing="//@ownedActivityEdge.4" incoming="//@ownedActivityEdge.2">
+    <ownedRule comment=""/>
+  </ownedActivityNode>
+  <ownedActivityNode xsi:type="sda:ModifyingStoryNode" name="node3" outgoing="//@ownedActivityEdge.5" incoming="//@ownedActivityEdge.3">
+    <ownedRule comment=""/>
+  </ownedActivityNode>
+  <ownedActivityNode xsi:type="sda:ActivityFinalNode" name="final" incoming="//@ownedActivityEdge.4 //@ownedActivityEdge.5">
+    <returnValues xsi:type="expr:TextualExpression" expressionText="" language="OCL" languageVersion="1.0"/>
+  </ownedActivityNode>
+</sda:Activity>

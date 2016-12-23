@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.muml.example.railcab.profiletypes;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
+Bundle-Localization: plugin
+Bundle-Activator: org.muml.example.railcab.profiletypes.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.muml.core;visibility:=reexport,
+ org.muml.pim;visibility:=reexport,
+ org.muml.verification.core.runtime;visibility:=reexport
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.muml.example.railcab.profiles,
+ org.muml.example.railcab.profiles.impl,
+ org.muml.example.railcab.profiles.util
+Bundle-ActivationPolicy: lazy

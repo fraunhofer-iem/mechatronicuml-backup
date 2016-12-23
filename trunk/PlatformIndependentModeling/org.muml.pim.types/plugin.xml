@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+	<extension point="org.eclipse.m2m.qvt.oml.javaBlackboxUnits">
+   		<unit name="TypesBlackbox" namespace="org.muml.pim.types._library">
+    		<library name="TypesBlackboxLib" class="org.muml.pim.types.blackbox.TypesBlackbox">
+    			<metamodel nsURI="http://www.muml.org/pim/types/1.0.0"/>
+       <metamodel
+             nsURI="http://www.eclipse.org/emf/2002/Ecore">
+       </metamodel>
+       <metamodel
+             nsURI="http://www.muml.org/core/1.0.0">
+       </metamodel>
+    		</library>
+		</unit>
+	</extension>	
+<extension
+       point="org.eclipse.m2m.qvt.oml.runtime.qvtTransformationContainer">
+    <sourceContainer
+          path="transforms/">
+ </sourceContainer>
+ </extension>
+ <extension
+       point="org.eclipse.m2m.qvt.oml.runtime.qvtTransformation">
+    <library
+          file="transforms/PredefinedTypesLibrary.qvto"
+          id="PredefinedTypesLibrary">
+    </library>
+ </extension>
+</plugin>

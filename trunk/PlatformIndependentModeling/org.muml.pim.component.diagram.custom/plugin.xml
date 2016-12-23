@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <!-- copied from atomiccomponenteditor -->
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="org.muml"
+            defaultHandler="org.muml.pim.component.diagram.custom.edit.handlers.EmbedAsPartsGraphicalHandler"
+            description="Embeds Atomic Components as Component Parts in a new Structured Component."
+            id="org.muml.pim.component.diagram.custom.embedAsParts.editorcmd"
+            name="Embed As Parts">
+      </command>
+   </extension>
+   
+
+   
+   <!-- editpart provider -->
+   <extension
+         point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
+      <editpartProvider
+            class="org.muml.pim.component.diagram.custom.providers.CustomStructuredcomponentEditPartProvider">
+         <Priority
+               name="Low">
+         </Priority>
+      </editpartProvider>
+   </extension>
+
+   <!-- parser provider -->
+   
+   
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
+      <?gmfgen generated="true"?>
+      <ParserProvider class="org.muml.pim.component.diagram.custom.providers.CustomMumlParserProvider">
+         <Priority name="Low"/>
+      </ParserProvider>
+   </extension>
+	
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.layoutProviders">
+       <layoutProvider class="org.muml.pim.component.diagram.custom.layout.ComponentLayoutProvider">
+            <Priority name="High"/>
+       </layoutProvider>
+   </extension>
+</plugin>

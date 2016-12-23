@@ -1,0 +1,24 @@
+«IMPORT ape»
+«EXTENSION Metamodel»
+
+«DEFINE Manifest FOR PropertyGenerator-»
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: «plugin.name»
+Bundle-SymbolicName: «plugin.id»; singleton:=true
+Bundle-Version: «plugin.version»
+Require-Bundle: «EXPAND requiredBundles FOR plugin»
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: «plugin.requiredExecutionEnvironment»
+Export-Package: «genPluginId()».metamodel, «genPluginId()».constraint«IF !packages.isEmpty-»,
+«FOREACH packages AS this SEPARATOR ',\n'» «genPackageName().toString()».editor«ENDFOREACH-»
+«IF !tabs.isEmpty»,
+ «genPluginId()».tabs«ENDIF-»
+«ENDIF»
+Bundle-Vendor: «plugin.vendor»
+«ENDDEFINE»
+
+«DEFINE requiredBundles FOR Plugin-»
+«FOREACH requiredBundles AS name SEPARATOR ',\n '»«name-»
+«ENDFOREACH-»
+«ENDDEFINE»

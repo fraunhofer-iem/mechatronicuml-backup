@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:hwplatform="http://www.muml.org/pm/hardware/hwplatform/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xsi:schemaLocation="http://www.muml.org/pm/hardware/hwplatform/1.0.0 http://www.muml.org/pm/hardware/1.0.0#//hwplatform" xmi:id="_Q1fT4Jn3EeaXwNlr2mTDLg" type="Platform" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_Q7iRgJn3EeaXwNlr2mTDLg" type="2009" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Q7lU0Jn3EeaXwNlr2mTDLg" type="5069"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_Q7lU0Zn3EeaXwNlr2mTDLg" type="7003">
+      <children xmi:type="notation:Shape" xmi:id="_pZywIJn3EeaXwNlr2mTDLg" type="3026" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_pZzXMJn3EeaXwNlr2mTDLg" type="5059"/>
+        <element xmi:type="hwplatform:NetworkBridge" href="../model.muml#_pZlUwJn3EeaXwNlr2mTDLg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pZywIZn3EeaXwNlr2mTDLg" x="201" y="50" width="133" height="49"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_qV2vwJn3EeaXwNlr2mTDLg" type="3030" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_qV3W0Jn3EeaXwNlr2mTDLg" type="5064"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_qV3W0Zn3EeaXwNlr2mTDLg" type="5065"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_qV3W0pn3EeaXwNlr2mTDLg" type="5066"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_qV3W05n3EeaXwNlr2mTDLg" type="5067"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_qV3W1Jn3EeaXwNlr2mTDLg" type="5068"/>
+        <children xmi:type="notation:Shape" xmi:id="_q8mmsJn3EeaXwNlr2mTDLg" type="3028" fontName="Segoe UI" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_q8mmspn3EeaXwNlr2mTDLg" type="5060">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_q8mms5n3EeaXwNlr2mTDLg" y="5"/>
+          </children>
+          <element xmi:type="hwplatform:HWPortPart" href="../model.muml#_q5eaMJn3EeaXwNlr2mTDLg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_q8mmsZn3EeaXwNlr2mTDLg"/>
+        </children>
+        <element xmi:type="hwplatform:ResourcePart" href="../model.muml#_qTjpsJn3EeaXwNlr2mTDLg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qV2vwZn3EeaXwNlr2mTDLg" x="45" y="122" width="169" height="133"/>
+      </children>
+    </children>
+    <element xmi:type="hwplatform:HWPlatform" href="../model.muml#_Q09IYJn3EeaXwNlr2mTDLg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Q7iRgZn3EeaXwNlr2mTDLg"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_Q1fT4Zn3EeaXwNlr2mTDLg"/>
+  <element xmi:type="hwplatform:HWPlatform" href="../model.muml#_Q09IYJn3EeaXwNlr2mTDLg"/>
+  <edges xmi:type="notation:Connector" xmi:id="_rkJH0Jn3EeaXwNlr2mTDLg" type="4032" source="_q8mmsJn3EeaXwNlr2mTDLg" target="_pZywIJn3EeaXwNlr2mTDLg" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_rkJH0Zn3EeaXwNlr2mTDLg" fontName="Segoe UI"/>
+    <element xmi:type="hwplatform:NetworkConnector" href="../model.muml#_rj9hoJn3EeaXwNlr2mTDLg"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_rkJH0pn3EeaXwNlr2mTDLg" points="[7, -12, -46, 114]$[111, -129, 58, -3]"/>
+  </edges>
+</notation:Diagram>

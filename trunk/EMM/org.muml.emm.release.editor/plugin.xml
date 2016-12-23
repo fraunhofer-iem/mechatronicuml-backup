@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated release -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.muml.emm.release.presentation.ReleaseModelWizardID"
+            name="%_UI_ReleaseModelWizard_label"
+            class="org.muml.emm.release.presentation.ReleaseModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ReleaseModelFile.gif">
+         <description>%_UI_ReleaseModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated release -->
+      <editor
+            id="org.muml.emm.release.presentation.ReleaseEditorID"
+            name="%_UI_ReleaseEditor_label"
+            icon="icons/full/obj16/ReleaseModelFile.gif"
+            extensions="release"
+            class="org.muml.emm.release.presentation.ReleaseEditor"
+            contributorClass="org.muml.emm.release.presentation.ReleaseActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

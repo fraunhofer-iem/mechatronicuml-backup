@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: RailCab Example
+Bundle-SymbolicName: org.muml.example.railcab;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
+Require-Bundle: org.muml.core.example.ui,
+ org.muml.uppaal.adapter.mtctl,
+ org.muml.reconfiguration,
+ org.muml.example.railcab.profiletypes,
+ org.muml.pim.actionlanguage,
+ org.muml.reconfiguration.componentstorydiagram,
+ org.muml.reconfiguration.verification.sdd.componentsdd,
+ org.muml.storydiagram.expressions
+Bundle-Localization: plugin
+Bundle-ActivationPolicy: lazy

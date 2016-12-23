@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:deployment="http://www.fujaba.de/muml/model/deployment/0.3.1" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_fAVWYEQ7EeKudIOlb_Rpqw" type="Deployment" name="deployment.deployment_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_yUocIEQ8EeKudIOlb_Rpqw" type="2001" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_yUpqQEQ8EeKudIOlb_Rpqw" type="5001"/>
+    <children xmi:type="notation:Shape" xmi:id="_yV9R0EQ8EeKudIOlb_Rpqw" type="3001" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_yV9R0kQ8EeKudIOlb_Rpqw" type="5002">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_yV9R00Q8EeKudIOlb_Rpqw" x="40" y="-20"/>
+      </children>
+      <element xmi:type="deployment:HardwarePort" href="../Migration_Test_Models_3.2.fujaba#_5oc6cDk4EeK2rpuyT7FGjw"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yV9R0UQ8EeKudIOlb_Rpqw" x="120" y="55"/>
+    </children>
+    <element xmi:type="deployment:HardwareNode" href="../Migration_Test_Models_3.2.fujaba#_uWTQwDk4EeK2rpuyT7FGjw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yUocIUQ8EeKudIOlb_Rpqw" x="65" y="110" width="121" height="136"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_yUpqQUQ8EeKudIOlb_Rpqw" type="2001" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_yUpqQ0Q8EeKudIOlb_Rpqw" type="5001"/>
+    <children xmi:type="notation:Shape" xmi:id="_yW2CoEQ8EeKudIOlb_Rpqw" type="3001" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_yW2CokQ8EeKudIOlb_Rpqw" type="5002">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_yW2Co0Q8EeKudIOlb_Rpqw" x="-126" y="25"/>
+      </children>
+      <element xmi:type="deployment:HardwarePort" href="../Migration_Test_Models_3.2.fujaba#_nW4yIDk5EeK2rpuyT7FGjw"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yW2CoUQ8EeKudIOlb_Rpqw"/>
+    </children>
+    <element xmi:type="deployment:HardwareNode" href="../Migration_Test_Models_3.2.fujaba#_v_vTwDk4EeK2rpuyT7FGjw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yUpqQkQ8EeKudIOlb_Rpqw" x="710" y="105" width="116" height="131"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_fAVWYUQ7EeKudIOlb_Rpqw"/>
+  <element xmi:type="deployment:Deployment" href="../Migration_Test_Models_3.2.fujaba#_tlfUUDk3EeK2rpuyT7FGjw"/>
+  <edges xmi:type="notation:Connector" xmi:id="_yXIWgEQ8EeKudIOlb_Rpqw" type="4001" source="_yV9R0EQ8EeKudIOlb_Rpqw" target="_yW2CoEQ8EeKudIOlb_Rpqw" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_yXIWgUQ8EeKudIOlb_Rpqw" fontName="Segoe UI"/>
+    <element xmi:type="deployment:CommunicationLink" href="../Migration_Test_Models_3.2.fujaba#_s1GHQDk5EeK2rpuyT7FGjw"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_yXIWgkQ8EeKudIOlb_Rpqw" points="[10, 0, -246, -10]$[246, 0, -10, -10]"/>
+  </edges>
+</notation:Diagram>

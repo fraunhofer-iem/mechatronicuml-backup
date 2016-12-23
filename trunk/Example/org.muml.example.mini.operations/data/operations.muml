@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--muml metamodel version 0.3.2 (r15221)-->
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionlanguage="http://www.muml.org/pim/actionlanguage/1.0.0" xmlns:component="http://www.muml.org/pim/component/1.0.0" xmlns:instance="http://www.muml.org/pim/instance/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:realtimestatechart="http://www.muml.org/pim/realtimestatechart/1.0.0" xmlns:sdcec="http://www.muml.org/core/expressions/common/1.0.0" xmlns:types="http://www.muml.org/pim/types/1.0.0" xmi:id="_MrkwcBx7EeSKP_lLzmbIVg">
+  <categories xmi:id="_MrkwcRx7EeSKP_lLzmbIVg" key="org.muml.types.category" name="types"/>
+  <categories xmi:id="_MrkweRx7EeSKP_lLzmbIVg" key="org.muml.pim.instance.category" name="instance">
+    <modelElements xsi:type="instance:ComponentInstanceConfiguration" xmi:id="_krTqkBx8EeSKP_lLzmbIVg" name="root-cic">
+      <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_wMt4QBx8EeSKP_lLzmbIVg" name="A1" componentType="_tj3msBx8EeSKP_lLzmbIVg"/>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_Mrkwehx7EeSKP_lLzmbIVg" key="org.muml.pim.components.category" name="component">
+    <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_tj3msBx8EeSKP_lLzmbIVg" name="aComponent" behavior="_XfHLgBx7EeSKP_lLzmbIVg"/>
+  </categories>
+  <categories xmi:id="_Mrkwexx7EeSKP_lLzmbIVg" key="org.muml.pim.protocol.category" name="protocol"/>
+  <categories xmi:id="_MrkwfBx7EeSKP_lLzmbIVg" key="org.muml.pim.messagetype.category" name="msgtype"/>
+  <categories xmi:id="_MrkwfRx7EeSKP_lLzmbIVg" key="org.muml.pim.realtimestatechart.category" name="realtimestatechart">
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_XfHLgBx7EeSKP_lLzmbIVg" name="rootStatechart" behavioralElement="_tj3msBx8EeSKP_lLzmbIVg">
+      <operations xmi:id="_zbWM4Bx7EeSKP_lLzmbIVg" name="increaseInt">
+        <implementations xsi:type="actionlanguage:Block" xmi:id="_TXZMQNfhEeWRoflOKi_Auw">
+          <expressions xsi:type="actionlanguage:ReturnStatement" xmi:id="_TXZMQdfhEeWRoflOKi_Auw">
+            <expression xsi:type="sdcec:ArithmeticExpression" xmi:id="_TXZMQtfhEeWRoflOKi_Auw">
+              <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_TXZMQ9fhEeWRoflOKi_Auw" typedNamedElement="_4BM9sBx7EeSKP_lLzmbIVg"/>
+              <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_TXZMRNfhEeWRoflOKi_Auw" value="1"/>
+            </expression>
+          </expressions>
+        </implementations>
+        <parameters xmi:id="_4BM9sBx7EeSKP_lLzmbIVg" name="myInt">
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+        </parameters>
+        <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+      </operations>
+      <operations xmi:id="_9MrkEBx7EeSKP_lLzmbIVg" name="decreaseInt">
+        <implementations xsi:type="actionlanguage:Block" xmi:id="_r7__8NfgEeWRoflOKi_Auw">
+          <expressions xsi:type="actionlanguage:ReturnStatement" xmi:id="_r7__8dfgEeWRoflOKi_Auw">
+            <expression xsi:type="sdcec:ArithmeticExpression" xmi:id="_r7__8tfgEeWRoflOKi_Auw" operator="MINUS">
+              <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_r7__89fgEeWRoflOKi_Auw" typedNamedElement="__ViuABx7EeSKP_lLzmbIVg"/>
+              <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_r7__9NfgEeWRoflOKi_Auw" value="1"/>
+            </expression>
+          </expressions>
+        </implementations>
+        <parameters xmi:id="__ViuABx7EeSKP_lLzmbIVg" name="myInt">
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+        </parameters>
+        <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+      </operations>
+      <variables xmi:id="_u8TOsBx7EeSKP_lLzmbIVg" name="myVariable">
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+        <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_xFHVUBx7EeSKP_lLzmbIVg" value="21"/>
+      </variables>
+      <states xmi:id="_XfHLgRx7EeSKP_lLzmbIVg" name="init" initial="true">
+        <embeddedRegions xmi:id="_eo8U8Bx7EeSKP_lLzmbIVg" priority="1">
+          <embeddedStatechart xmi:id="_eo_YQBx7EeSKP_lLzmbIVg" name="Region1">
+            <transitions xmi:id="_iuDJIBx7EeSKP_lLzmbIVg" priority="2" target="_gfSLgBx7EeSKP_lLzmbIVg" source="_eo_YQRx7EeSKP_lLzmbIVg">
+              <guard xsi:type="sdcec:ComparisonExpression" xmi:id="_KEVL8Bx8EeSKP_lLzmbIVg" operator="EQUAL">
+                <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_KEVL8Rx8EeSKP_lLzmbIVg" typedNamedElement="_u8TOsBx7EeSKP_lLzmbIVg"/>
+                <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_KEVL8hx8EeSKP_lLzmbIVg" value="42"/>
+              </guard>
+            </transitions>
+            <transitions xmi:id="_jNfeMBx7EeSKP_lLzmbIVg" priority="2" target="_eo_YQRx7EeSKP_lLzmbIVg" source="_gfSLgBx7EeSKP_lLzmbIVg">
+              <guard xsi:type="sdcec:ComparisonExpression" xmi:id="_MPHogBx8EeSKP_lLzmbIVg" operator="EQUAL">
+                <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_MPHogRx8EeSKP_lLzmbIVg" typedNamedElement="_u8TOsBx7EeSKP_lLzmbIVg"/>
+                <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_MPHoghx8EeSKP_lLzmbIVg" value="0"/>
+              </guard>
+            </transitions>
+            <transitions xmi:id="_jfIn0Bx7EeSKP_lLzmbIVg" priority="1" target="_gfSLgBx7EeSKP_lLzmbIVg" source="_gfSLgBx7EeSKP_lLzmbIVg">
+              <action xmi:id="_S88LYBx8EeSKP_lLzmbIVg" name="decreaseVariable">
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_dlOkUOaqEeWl9_WY8tREAA">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_dlOkUeaqEeWl9_WY8tREAA" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="actionlanguage:OperationCall" xmi:id="_dlOkUuaqEeWl9_WY8tREAA" operation="_9MrkEBx7EeSKP_lLzmbIVg">
+                      <parameterBinding xmi:id="_dlOkU-aqEeWl9_WY8tREAA" parameter="__ViuABx7EeSKP_lLzmbIVg">
+                        <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_dlOkVOaqEeWl9_WY8tREAA" typedNamedElement="_u8TOsBx7EeSKP_lLzmbIVg"/>
+                      </parameterBinding>
+                    </rhs_assignExpression>
+                    <lhs_typedNamedElementExpression xmi:id="_dlOkVeaqEeWl9_WY8tREAA" typedNamedElement="_u8TOsBx7EeSKP_lLzmbIVg"/>
+                  </expressions>
+                </expressions>
+              </action>
+            </transitions>
+            <transitions xmi:id="_k2UdMBx7EeSKP_lLzmbIVg" priority="1" target="_eo_YQRx7EeSKP_lLzmbIVg" source="_eo_YQRx7EeSKP_lLzmbIVg"/>
+            <states xmi:id="_eo_YQRx7EeSKP_lLzmbIVg" name="State A" outgoingTransitions="_k2UdMBx7EeSKP_lLzmbIVg _iuDJIBx7EeSKP_lLzmbIVg" incomingTransitions="_jNfeMBx7EeSKP_lLzmbIVg _k2UdMBx7EeSKP_lLzmbIVg" initial="true">
+              <entryEvent xmi:id="_ZnNrABx8EeSKP_lLzmbIVg">
+                <action xmi:id="_aN0YABx8EeSKP_lLzmbIVg" name="increaseVariable">
+                  <expressions xsi:type="actionlanguage:Block" xmi:id="_ZzszcOaqEeWl9_WY8tREAA">
+                    <expressions xsi:type="actionlanguage:Assignment" xmi:id="_ZzszceaqEeWl9_WY8tREAA" assignOperator=":=">
+                      <rhs_assignExpression xsi:type="actionlanguage:OperationCall" xmi:id="_ZzszcuaqEeWl9_WY8tREAA" operation="_zbWM4Bx7EeSKP_lLzmbIVg">
+                        <parameterBinding xmi:id="_Zzszc-aqEeWl9_WY8tREAA" parameter="_4BM9sBx7EeSKP_lLzmbIVg">
+                          <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_ZzszdOaqEeWl9_WY8tREAA" typedNamedElement="_u8TOsBx7EeSKP_lLzmbIVg"/>
+                        </parameterBinding>
+                      </rhs_assignExpression>
+                      <lhs_typedNamedElementExpression xmi:id="_ZzszdeaqEeWl9_WY8tREAA" typedNamedElement="_u8TOsBx7EeSKP_lLzmbIVg"/>
+                    </expressions>
+                  </expressions>
+                </action>
+              </entryEvent>
+            </states>
+            <states xmi:id="_gfSLgBx7EeSKP_lLzmbIVg" name="State B" outgoingTransitions="_jfIn0Bx7EeSKP_lLzmbIVg _jNfeMBx7EeSKP_lLzmbIVg" incomingTransitions="_iuDJIBx7EeSKP_lLzmbIVg _jfIn0Bx7EeSKP_lLzmbIVg"/>
+          </embeddedStatechart>
+        </embeddedRegions>
+      </states>
+    </modelElements>
+  </categories>
+</modelinstance:RootNode>

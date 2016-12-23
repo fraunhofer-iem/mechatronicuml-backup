@@ -1,0 +1,137 @@
+import ComponentLibrary;
+import CommonLibrary;
+import APIBindingLibrary;
+library ComponentInstanceLibrary;
+
+import ModelcopyLibrary;
+
+
+modeltype Core uses core('http://www.muml.org/core/1.0.0');
+
+modeltype PimPackage uses pim('http://www.muml.org/pim/1.0.0');
+modeltype ConnectorPackage uses pim::connector('http://www.muml.org/pim/1.0.0');
+modeltype ValuetypePackage uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype ComponentPackage uses pim::component('http://www.muml.org/pim/1.0.0');
+modeltype MessagePackage uses pim::msgtype('http://www.muml.org/pim/1.0.0');
+modeltype InstancePackage uses pim::instance('http://www.muml.org/pim/1.0.0');
+modeltype ModelInstance uses modelinstance('http://www.muml.org/modelinstance/1.0.0');
+modeltype Actionlanguage uses actionlanguage('http://www.muml.org/pim/actionlanguage/1.0.0');
+
+modeltype PSM uses psm('http://www.muml.org/psm/1.0.0');
+modeltype Allocation uses psm::allocation('http://www.muml.org/psm/1.0.0');
+modeltype Codegen uses psm::codegen('http://www.muml.org/psm/1.0.0');
+modeltype PortMappingModel uses psm::portapimapping('http://www.muml.org/psm/1.0.0');
+modeltype ApiExpessions uses psm::apiexpressions('http://www.muml.org/psm/1.0.0');
+modeltype PSMInstance uses psm::psm_instance('http://www.muml.org/psm/1.0.0');
+modeltype PSMRTSC uses psm::psm_realtimestatechart('http://www.muml.org/psm/1.0.0');
+modeltype PSMRTSCParameter uses psm::psm_realtimestatechart::realtimestatechartparameter('http://www.muml.org/psm/1.0.0');
+
+modeltype SoftPlattform uses software('http://www.muml.org/pm/software/1.0.0');
+modeltype Hardware uses hardware('http://www.muml.org/pm/hardware/1.0.0');
+modeltype Platform uses hardware::hwplatform('http://www.muml.org/pm/hardware/1.0.0');
+modeltype PlatformInstance uses hardware::hwplatforminstance('http://www.muml.org/pm/hardware/1.0.0');
+modeltype ResourceInstance uses hardware::hwresourceinstance('http://www.muml.org/pm/hardware/1.0.0');
+modeltype Resource uses hardware::hwresource('http://www.muml.org/pm/hardware/1.0.0');
+
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+/***************************************************************************
+* 
+*  Here starts the logic for the transformation of Component-Instances (Instance Level)
+*
+*****************************************************************************/
+
+/**
+* Replace a hybridPortInstance with a  DiscretePortinstance
+*/
+mapping HybridPortInstance::transform():EObject {
+	init{
+	result := self.map transform();
+	}
+/*	var portInstance: DiscreteSinglePortInstance := result.oclAsType(DiscreteSinglePortInstance);
+	portInstance.name:=self.name;
+	portInstance.type:=self.type.late resolveone(DiscretePort);
+	portInstance.annotation:=self.annotation;
+	portInstance.extension:=self.extension;
+	portInstance.comment:=self.comment;
+	portInstance.componentInstance:=self.componentInstance;
+	portInstance.connectorInstances:=self.connectorInstances.late resolve(ConnectorInstance); */
+	if(result.oclIsKindOf(ParameterisableDiscreteSinglePortInstance)) then{
+		var paraPort : ParameterisableDiscreteSinglePortInstance := result.oclAsType(ParameterisableDiscreteSinglePortInstance);
+ 		// create Binding for the SamplingTime parameter
+ 		paraPort.bindings+=self.createPortBindingSamplingTimeParameter(result.oclAsType(ParameterisableDiscreteSinglePortInstance));
+	} endif; 
+	
+}
+
+mapping HybridPortInstance::create():EObject{
+	init{
+	if(self.componentInstance.oclIsKindOf(AtomicComponentInstance)) then {
+	result:=new ParameterisableDiscreteSinglePortInstance();
+	}
+	else{
+		if(self.componentInstance.oclIsKindOf(StructuredComponentInstance)) then {
+		result:=new DiscreteSinglePortInstance();
+	}endif;
+	}
+	endif;
+
+	}
+}
+
+
+
+
+/**
+* Replace a ContiniuosPortIsntance with a  ParametiredDiscreteSinglePortinstance
+*/
+mapping ContinuousPortInstance::transform():EObject  {
+init{
+	 result := self.map transform();
+	
+	}
+/*	var portInstance: DiscreteSinglePortInstance := result.oclAsType(DiscreteSinglePortInstance);
+	portInstance.name:=self.name;
+	portInstance.type:=self.type.late resolveone(DiscretePort);
+	portInstance.annotation:=self.annotation;
+	portInstance.extension:=self.extension;
+	portInstance.comment:=self.comment;
+	portInstance.componentInstance:=self.componentInstance;
+	portInstance.connectorInstances:=self.connectorInstances.late resolve(ConnectorInstance);	 */
+	if(result.oclIsKindOf(ParameterisableDiscreteSinglePortInstance)) then{
+		var paraPort : ParameterisableDiscreteSinglePortInstance := result.oclAsType(ParameterisableDiscreteSinglePortInstance);
+		//Create the Binding for the ExecCommand
+ 		paraPort.bindings+=self.createPortBindingExecParameter(result.oclAsType(ParameterisableDiscreteSinglePortInstance));
+ 		// create Binding for the SamplingTime parameter
+ 		paraPort.bindings+=self.createPortBindingSamplingTimeParameter(result.oclAsType(ParameterisableDiscreteSinglePortInstance));
+		//TODO: create Binding for the TimeBetween API Execution parameter
+	} endif; 
+	
+}
+
+
+mapping ContinuousPortInstance::create():EObject{
+	init{
+	if(self.componentInstance.oclIsKindOf(AtomicComponentInstance)) then {
+	result:=new ParameterisableDiscreteSinglePortInstance();
+	}
+	else{
+		if(self.componentInstance.oclIsKindOf(StructuredComponentInstance)) then {
+		result:=new DiscreteSinglePortInstance();
+	}endif;
+	}
+	endif;
+	}
+}
+
+
+
+
+
+//don't know yet
+//mapping ContinuousPortInstance::mapParameterisableDiscreteSinglePortInstance():ParameterisableDiscreteSinglePortInstance merges PortInstance::abstractmapPortInstance{
+//	bindings:=self.bindings.deepclone().oclAsType(RealtimeStatechartParameterBinding);
+//}
+
+
+

@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MATLAB/Simulink Correspondence Model
+Bundle-SymbolicName: org.muml.simulink.adapter.corrmodel;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
+ Heinz Nixdorf Institute,
+ University of Paderborn
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.muml.simulink.adapter.corrmodel,
+ org.muml.simulink.adapter.corrmodel.behavior,
+ org.muml.simulink.adapter.corrmodel.behavior.impl,
+ org.muml.simulink.adapter.corrmodel.behavior.util,
+ org.muml.simulink.adapter.corrmodel.impl,
+ org.muml.simulink.adapter.corrmodel.util
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.emf.ecore.xmi;visibility:=reexport,
+ org.muml.core;visibility:=reexport,
+ org.muml.simulink;visibility:=reexport,
+ org.eclipse.ui;bundle-version="3.7.0",
+ org.muml.core,
+ org.muml.pim;visibility:=reexport
+Bundle-ActivationPolicy: lazy

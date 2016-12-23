@@ -1,0 +1,10 @@
+module org.muml.psm.allocation.language.build.GenerateModels
+
+import org.muml.psm.allocation.language.build.GenerateLanguageSpecificationCS
+import org.muml.psm.allocation.language.build.BuildAS
+
+
+Workflow {
+	component = @GenerateLanguageSpecificationCS {}
+	component = @BuildAS {}
+}

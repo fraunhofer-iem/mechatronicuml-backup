@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.wrapper/src"
+    modelPluginID="org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.wrapper"
+    modelName="SDMWrapper" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>SDMWrapper.ecore</foreignModel>
+  <genPackages prefix="Wrapper" basePackage="org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm"
+      disposableProviderFactory="true" ecorePackage="SDMWrapper.ecore#/">
+    <genClasses ecoreClass="SDMWrapper.ecore#//BoolWrapper">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SDMWrapper.ecore#//BoolWrapper/boolValue"/>
+    </genClasses>
+    <genClasses ecoreClass="SDMWrapper.ecore#//IntWrapper">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SDMWrapper.ecore#//IntWrapper/intValue"/>
+    </genClasses>
+    <genClasses ecoreClass="SDMWrapper.ecore#//LongWrapper">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SDMWrapper.ecore#//LongWrapper/longValue"/>
+    </genClasses>
+    <genClasses ecoreClass="SDMWrapper.ecore#//StringWrapper">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SDMWrapper.ecore#//StringWrapper/stringValue"/>
+    </genClasses>
+    <genClasses ecoreClass="SDMWrapper.ecore#//DoubleWrapper">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SDMWrapper.ecore#//DoubleWrapper/doubleValue"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

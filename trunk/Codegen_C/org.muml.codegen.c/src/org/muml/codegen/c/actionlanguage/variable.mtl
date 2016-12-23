@@ -1,0 +1,46 @@
+[module variable('http://www.muml.org/pim/connector/1.0.0', 'http://www.muml.org/pim/behavior/1.0.0',
+				'http://www.muml.org/core/1.0.0',
+				'http://www.muml.org/pim/actionlanguage/1.0.0',
+				'http://www.muml.org/pim/msgtype/1.0.0',
+				'http://www.muml.org/pim/types/1.0.0',
+				'http://www.muml.org/modelinstance/1.0.0',
+				'http://www.muml.org/pim/component/1.0.0',
+				'http://www.muml.org/pim/instance/1.0.0',
+				'http://www.muml.org/pim/realtimestatechart/1.0.0')/]
+
+[import org::muml::codegen::c::actionlanguage::expression]
+
+[import org::muml::codegen::c::actionlanguage::variable_queries]
+[import org::muml::codegen::c::queries::stringQueries]
+[import org::muml::codegen::c::queries::modelQueries]
+
+[**
+ * Create variable declarations
+ * @param attributeSet the set of attributes
+*/]
+[template public createVariableDeclarations(rtsc : RealtimeStatechart)]
+	// attribute declarations
+[for (variable : Variable | rtsc.allAvailableVariables)]
+	[if rtsc.variables->includes(variable)]
+	inner [variable.dataType.getTypeName() /] [variable.name/][if not variable.initializeExpression.oclIsUndefined()](start=[generateExpression(variable.initializeExpression, '') /])[/if];
+	[else]
+	outer [variable.dataType.getTypeName() /] [variable.name/];
+	[/if]
+[/for]
+	// end attribute declarations
+[/template]
+
+[**
+ * Create local variable declarations
+ * @param rtsc the rtsc
+*/]
+[template public createLocalVariableDeclarations(rtsc : RealtimeStatechart) {
+	lVarDecls : Set(LocalVariableDeclarationStatement) = rtsc.getAllLocalVariableDeclarationStatements()->getLocalVariableDeclarationStatementRepr(); 
+}]
+	// local variable declarations
+[for (lVarDecl : LocalVariableDeclarationStatement | lVarDecls)]
+	[comment ignore initialize expression (the variable is "initialized" in the action where it is used)/]
+	[lVarDecl.variable.dataType.getTypeName()/] [lVarDecl.variable.getTypedNamedElementName()/];
+[/for]
+	// end local variable declarations
+[/template]

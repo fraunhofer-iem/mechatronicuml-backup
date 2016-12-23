@@ -1,0 +1,671 @@
+import org.muml.psm.api._transformation._blackbox.TimeUnitLibrary;
+import CommonLibrary;
+library StateChartLibrary;
+
+import ModelcopyLibrary;
+
+
+modeltype Core uses core('http://www.muml.org/core/1.0.0');
+
+modeltype PimPackage uses pim('http://www.muml.org/pim/1.0.0');
+modeltype ConnectorPackage uses pim::connector('http://www.muml.org/pim/1.0.0');
+modeltype ValuetypePackage uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype ComponentPackage uses pim::component('http://www.muml.org/pim/1.0.0');
+modeltype MessagePackage uses pim::msgtype('http://www.muml.org/pim/1.0.0');
+modeltype InstancePackage uses pim::instance('http://www.muml.org/pim/1.0.0');
+modeltype ModelInstance uses modelinstance('http://www.muml.org/modelinstance/1.0.0');
+modeltype BehaviorPackage uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype RTSCPackage uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype TypesPackage uses pim::types('http://www.muml.org/pim/1.0.0');
+
+modeltype Actionlanguage uses actionlanguage('http://www.muml.org/pim/actionlanguage/1.0.0');
+
+modeltype PSM uses psm('http://www.muml.org/psm/1.0.0');
+modeltype Allocation uses psm::allocation('http://www.muml.org/psm/1.0.0');
+modeltype Codegen uses psm::codegen('http://www.muml.org/psm/1.0.0');
+modeltype PortMappingModel uses psm::portapimapping('http://www.muml.org/psm/1.0.0');
+modeltype ApiExpessions uses psm::apiexpressions('http://www.muml.org/psm/1.0.0');
+modeltype PSMInstance uses psm::psm_instance('http://www.muml.org/psm/1.0.0');
+modeltype PSMRTSC uses psm::psm_realtimestatechart('http://www.muml.org/psm/1.0.0');
+modeltype PSMRTSCParameter uses psm::psm_realtimestatechart::realtimestatechartparameter('http://www.muml.org/psm/1.0.0');
+
+
+modeltype SoftPlattform uses software('http://www.muml.org/pm/software/1.0.0');
+modeltype Hardware uses hardware('http://www.muml.org/pm/hardware/1.0.0');
+modeltype Platform uses hardware::hwplatform('http://www.muml.org/pm/hardware/1.0.0');
+modeltype PlatformInstance uses hardware::hwplatforminstance('http://www.muml.org/pm/hardware/1.0.0');
+modeltype ResourceInstance uses hardware::hwresourceinstance('http://www.muml.org/pm/hardware/1.0.0');
+modeltype Resource uses hardware::hwresource('http://www.muml.org/pm/hardware/1.0.0');
+
+
+
+
+
+/***************************************************************************
+* 
+*  Here starts the logic for the transformation of StateCharts
+*
+*****************************************************************************/
+/**
+	For each hybrid-port / continius port a new Variable in the RealtimeStateCharts is created,
+	which represents the (old and now deleted) hybrid/continous Port
+**/
+//StateChart stuff
+mapping DirectedTypedPort::mapCreateStateChartVariable():Variable{
+
+	
+		name:=self.name+"_apiValue";
+		dataType:=self.dataType;
+		//we need the initalize Expression from the ContinousPort, also for the new Variable of the HybridPort
+	//	if(self.oclIsKindOf(HybridPort)) then{
+	//			initializeExpression:=self.oclAsType(HybridPort).connectedContiniousPort.initializeExpression.deepclone().oclAsType(core::expressions::Expression);
+	//	}
+	//	else{
+		initializeExpression:=self.initializeExpression.deepclone().oclAsType(core::expressions::Expression);
+	//	}endif
+	
+}
+
+
+mapping ContinuousPort::mapContinuousPort2APICallParameter():APICallParameter{
+	name := prop_execApiName;
+				if(self.inPort)then{
+					returnType:=  VOID;
+					parameters:=object Parameter{
+						name:=self.name;
+						dataType:=self.dataType;
+					};
+				}
+				else{
+					returnType:=self.dataType;
+				}endif;
+	
+}
+
+
+mapping DirectedTypedPort::mapDirectedTypedPort2SamplingTimeParameter():TimeParameter{
+	name := prop_samplingTimeParameterName;
+				initializeExpression:= object core::expressions::common::LiteralExpression{
+					value:="20";
+				};
+				dataType:=INT32;
+	
+}
+
+/**
+ 	In the RealtimeStateChart of a discret component with hybridPorts, all references to the hybridPort are replaced
+ 	with references to the new RealtimeStateChart Variable, that (now) represents the old hybirdPort
+*/
+helper HybridPort::ReplacePortExpressionWithVariableExpression(inout componentStateChart:RealtimeStatechart, in variable:Variable){
+	actionlanguage::TypedNamedElementExpression.allInstances()->select(e|e.typedNamedElement=self)->forEach(typedNamedElementexpression){
+		typedNamedElementexpression.typedNamedElement:=variable;
+	}
+}
+
+/**
+ A Variable is added to a RealtimeStateChart
+**/
+helper AddVariableToStateChart(inout stateChart:RealtimeStatechart, in variable:Variable){
+	stateChart.variables+=variable;
+	return null;
+}
+
+
+
+
+
+
+-- this mapping stores the rtsc in the component rtsc (creates the component rtsc if not yet existing)
+helper storeRealtimeStatechart(inout rtsc : RealtimeStatechart, inout rootStateChart : RealtimeStatechart){
+	-- create component RTSC if it does not exists yet
+
+	-- hook into component RTSC
+	rootStateChart.states -> forEach(state){
+		-- search initial state and add new region containing the statechart to it
+		if(state.initial = true) then{
+			var newRegion : Region := new Region();
+			state.embeddedRegions += newRegion;
+			newRegion.embeddedStatechart := rtsc;
+			if(not rootStateChart.parentRegion.oclIsUndefined()) then {
+					newRegion.priority:=rootStateChart.parentRegion.priority;
+				}
+				else{
+					newRegion.priority:=state.embeddedRegions.priority->max()+1;
+				}endif;
+		} endif;
+	}
+
+}
+
+
+
+
+
+mapping  StaticAtomicComponent::mapcreateEmptyRealtimeStateChart(): ParameterizedRealtimeStatechart when {self.behavior.oclIsUndefined()}{
+	-- create component RTSC if it does not exists yet
+	name:=self.name;
+	states += new State(_name,true, false);
+}
+
+
+
+-- constructor for creating new regions
+constructor Region::Region() {
+	
+}
+
+constructor ParameterizedRealtimeStatechart::ParameterizedRealtimeStatechart(_name : String) {
+	name := _name;
+	states += new State(_name,true, false);
+}
+
+constructor State::State(_name:String,_initial : Boolean, _final : Boolean) {
+	name:=_name+"_state";
+	initial := _initial;
+	final := _final;
+}
+
+
+///here starts marios stuff
+
+property prop_execApiName : String = "ExecApi";
+property timeBetweenApiExecsName : String = "TimeBetweenApiExececutions";
+property prop_samplingTimeParameterName : String = "SamplingInterval";
+
+mapping  ContinuousPort::createStatechartContinuousPort(
+			in messageTyp : MessageType, in variable:Variable,
+			in createApiRegion : Boolean): ParameterizedRealtimeStatechart {
+	-- creates a statechart for the behavior of a continuous port
+	name := self.component.name + "_" + self.name + "_behavior";
+		
+	-- create a new state, that contains more regions
+	var multiState : State;
+
+	multiState := object State {
+			name := self.name + "_initState";
+			parentStatechart := result;
+			final := false;
+			initial := true;
+			urgent := false;
+		};
+	
+	-- create a region for sending/receiving the value from the sensor/actuator
+	var regionTransmission : Region;
+	
+	if (self.inPort) then {
+		regionTransmission := result.createRegionForPeriodicReceiving(variable, messageTyp, self);
+	} else {
+		regionTransmission := result.createRegionForPeriodicSending(variable, messageTyp, self);
+	} endif;
+	regionTransmission.priority := 1;
+	multiState.embeddedRegions += regionTransmission;
+	
+	--create a region for getting/setting the new value of the sensor/actuator
+	if (createApiRegion) then {
+		-- add parameter to the statechart
+		var execApiParam : APICallParameter := self.map mapContinuousPort2APICallParameter();
+		var timeBetweenApiExecutes : TimeParameter;
+		
+	
+		timeBetweenApiExecutes := object TimeParameter {
+				name := timeBetweenApiExecsName;
+				initializeExpression:= object core::expressions::common::LiteralExpression{
+					value:="20";
+				};
+				dataType:=INT32;
+			};
+	//	result.parameters += initApiParam;
+	//	result.parameters += execApiParam;
+	//	result.parameters += timeBetweenApiExecutes;
+		
+		-- create the region
+		var regionApi : Region;
+		
+		regionApi := result.createRegionForApiCommand(variable, execApiParam, timeBetweenApiExecutes,self);
+		regionApi.priority := 2;
+		multiState.embeddedRegions += regionApi;
+	} endif;
+	
+	-- add the state for the statechart
+	result.states += multiState;
+	
+}
+
+query RealtimeStatechart::createRegionForPeriodicSending(
+			in portVariable : Variable,
+			in messageTyp : MessageType, port:DirectedTypedPort) : Region {
+	var newRegion : Region;
+	var newStatechart : ParameterizedRealtimeStatechart;
+	
+	newRegion := object Region {};
+	newStatechart := object ParameterizedRealtimeStatechart {
+			name := "PeriodicTransmission";
+		};
+	newRegion.embeddedStatechart := newStatechart;
+	
+	
+	
+	var samplingParameter := port.map mapDirectedTypedPort2SamplingTimeParameter();
+			
+	newStatechart.parameters+=samplingParameter;
+	
+	var samplingTime := object TimeValue {
+					value := object Actionlanguage::TypedNamedElementExpression {
+					typedNamedElement:=samplingParameter;	
+					};
+					unit:= getTimeUnitMilliSeconds();
+				};
+	
+	
+	
+	
+	-- create a clock for the sending intervall
+	var newClock : Clock;
+	
+	newClock := object Clock {
+			name := "clockSending";
+		};
+	newStatechart.clocks += newClock;
+	
+	-- create the state for sending
+	var newState : State;
+	
+	newState := object State {
+			name := "PeriodicSending";
+			parentStatechart := newStatechart;
+			final := false;
+			initial := true;
+			urgent := false;
+		};
+	newStatechart.states += newState;
+	-- add invariant to the state
+	newState.invariants += object ClockConstraint {
+			clock := newClock;
+			bound:=samplingTime;
+			
+			//TODO look if +5ms makes sesne
+			//bound := samplingTime.createAddToTimeValue(
+		//			createTimeValueWithMilleseconds( object Core::expressions::common::LiteralExpression {value := "5";} )
+	//			);
+			operator := Core::expressions::common::ComparingOperator::LESS_OR_EQUAL;
+		};
+	-- entry action to the state
+	newState.entryEvent := object EntryEvent {
+			clockResets += newClock;
+		};
+	
+	-- add transition with sending action
+	var newTransition : Transition;
+	
+	newTransition := object Transition {
+			priority := 1;
+			source := newState;
+			target := newState;
+			clockConstraints += object ClockConstraint {
+					clock := newClock;
+					bound := samplingTime.deepclone().oclAsType(TimeValue);
+					operator := Core::expressions::common::ComparingOperator::GREATER_OR_EQUAL;
+				};
+			events += object AsynchronousMessageEvent {
+					kind := EventKind::RAISE;
+					message := object Message {
+							instanceOf := messageTyp;
+							parameterBinding += object ParameterBinding {
+									parameter := messageTyp.parameters->any(true);
+									value := object Actionlanguage::TypedNamedElementExpression {
+											typedNamedElement := portVariable;
+										};
+								};
+						};
+				};
+		};
+	newStatechart.transitions += newTransition;
+	
+	-- return new Region
+	return newRegion;
+}
+
+query RealtimeStatechart::createRegionForPeriodicReceiving(
+			in portVariable : Variable,
+			in messageTyp : MessageType, port:DirectedTypedPort) : Region {
+	var newRegion : Region;
+	var newStatechart : ParameterizedRealtimeStatechart;
+	
+	newRegion := object Region {};
+	newStatechart := object ParameterizedRealtimeStatechart {
+			name := "PeriodicTransmission";
+		};
+	newRegion.embeddedStatechart := newStatechart;
+	
+	 
+	
+	var samplingParameter := port.map mapDirectedTypedPort2SamplingTimeParameter();
+			
+	newStatechart.parameters+=samplingParameter;
+	
+	var newSamplingTime := object TimeValue {
+					value := object Actionlanguage::TypedNamedElementExpression {
+					typedNamedElement:=samplingParameter;	
+					};
+					unit:= getTimeUnitMilliSeconds();
+				};
+	
+	
+	
+	-- create new samplinintervall with a little buffer from the original one
+	//TODO look what to do with this
+	//	newSamplingTime := samplingTime.createAddToTimeValue(
+	//		createTimeValueWithMilleseconds( object Core::expressions::common::LiteralExpression {value := "5";} )
+		//);
+	
+	
+	
+
+	-- create a clock for the sending intervall
+	var newClock : Clock;
+	
+	newClock := object Clock {
+			name := "ReceiverTimeout";
+		};
+	newStatechart.clocks += newClock;
+	
+	-- create the state for receiving
+	var stateReceiving : State;
+	
+	stateReceiving := object State {
+			name := "PeriodicReceiving";
+			parentStatechart := newStatechart;
+			final := false;
+			initial := true;
+			urgent := false;
+		};
+	newStatechart.states += stateReceiving;
+	-- add invariant to the state
+	stateReceiving.invariants += object ClockConstraint {
+			clock := newClock;
+			
+			bound:=newSamplingTime;
+			//TODO look if +5ms makes sense
+		//	bound := newSamplingTime.createAddToTimeValue(
+		//			createTimeValueWithMilleseconds( object Core::expressions::common::LiteralExpression {value := "5";} )
+		//		);
+			--bound := object TimeValue {
+			--		value := samplingTime.value.deepclone()[Core::expressions::Expression]->any(true);
+			--		unit := samplingTime.unit;
+			--		-- add a "Buffer" to the value: ca. 20 ms??
+			--	};
+			operator := Core::expressions::common::ComparingOperator::LESS_OR_EQUAL;
+		};
+	-- entry action to the state
+	stateReceiving.entryEvent := object EntryEvent {
+			clockResets += newClock;
+		};
+	
+	-- add state for Timeout
+	var stateTimeout : State;
+	
+	stateTimeout := object State {
+			name := "Timeout";
+			parentStatechart := newStatechart;
+			final := false;
+			initial := false;
+			urgent := false;
+		};
+	newStatechart.states += stateTimeout;
+	
+	-- add transition with receiving action
+	var newTransition : Transition;
+	
+	newTransition := object Transition {
+			priority := 2;
+			source := stateReceiving;
+			target := stateReceiving;
+			events += object AsynchronousMessageEvent {
+					kind := EventKind::TRIGGER;
+					message := object Message {
+							instanceOf := messageTyp;
+						};
+				};
+			action := object Action {
+					name := "MessageGetter";
+					expressions += object Block { 
+							expressions += object Actionlanguage::Assignment {
+									assignOperator := AssignOperator::ASSIGN;
+									incrementDecrementOperator := IncrementDecrementOperator::UNSET;
+									lhs_typedNamedElementExpression := object TypedNamedElementExpression {
+											typedNamedElement := portVariable;
+										};
+									rhs_assignExpression := object TriggerMessageExpression {
+											messageType := messageTyp;
+											parameter := messageTyp.parameters->first();
+										};
+								};
+						};
+				};
+		};
+	newStatechart.transitions += newTransition;
+	
+	-- add transition for timeoutrealtimestatechart
+	newStatechart.transitions += object Transition {
+			priority := 1;
+			source := stateReceiving;
+			target := stateTimeout;
+			clockConstraints += object ClockConstraint {
+					clock := newClock;
+					bound := newSamplingTime;
+					operator := Core::expressions::common::ComparingOperator::GREATER_OR_EQUAL;
+				};
+		};
+	-- add transition out of the timeout-state
+	newStatechart.transitions += object Transition {
+			priority := 1;
+			source := stateTimeout;
+			target := stateReceiving;
+			events += object AsynchronousMessageEvent {
+					kind := EventKind::TRIGGER;
+					message := object Message {
+							instanceOf := messageTyp;
+						};
+				};
+			action := object Action {
+					name := "MessageGetter";
+					expressions += object Block { 
+							expressions += object Actionlanguage::Assignment {
+									assignOperator := AssignOperator::ASSIGN;
+									incrementDecrementOperator := IncrementDecrementOperator::UNSET;
+									lhs_typedNamedElementExpression := object TypedNamedElementExpression {
+											typedNamedElement := portVariable;
+										};
+									rhs_assignExpression := object TriggerMessageExpression {
+											messageType := messageTyp;
+											parameter := messageTyp.parameters->first();
+										};
+								};
+						};
+				};
+		};
+	
+	-- return new Region
+	return newRegion;
+}
+query RealtimeStatechart::createRegionForApiCommand(
+			in portVariable : Variable,
+			in execApiParam: APICallParameter,
+			in timeBetweenApiExecutes: TimeParameter, port: ContinuousPort) : Region {
+	var newRegion : Region;
+	var newStatechart : ParameterizedRealtimeStatechart;
+	
+	newRegion := object Region {};
+	newStatechart := object ParameterizedRealtimeStatechart {
+			name := "ApiExecution";
+		};
+	newRegion.embeddedStatechart := newStatechart;
+	newStatechart.parameters += execApiParam;
+	newStatechart.parameters += timeBetweenApiExecutes;
+	-- create init-state
+	var stateInit : State;
+	
+	stateInit := object State {
+			name := "ExecInitCommand";
+			parentStatechart := newStatechart;
+			final := false;
+			initial := true;
+			urgent := false;
+		};
+	newStatechart.states += stateInit;
+	-- entry action to the state
+	var stateExec : State;
+
+	stateExec := object State {
+			name := "ExecExecCommand";
+			parentStatechart := newStatechart;
+			final := false;
+			initial := false;
+			urgent := false;
+		};
+	newStatechart.states += stateExec;
+	-- entry action to the state
+	stateExec.entryEvent := object EntryEvent {
+			action := object Action {
+					name := "executeApiCommand";
+					if(port.outPort) then{
+						
+						expressions+= object Actionlanguage::Assignment{
+							lhs_typedNamedElementExpression:=object Actionlanguage::TypedNamedElementExpression{
+								typedNamedElement:=portVariable;
+							};
+							assignOperator:=Actionlanguage::AssignOperator::ASSIGN;
+							rhs_assignExpression:=object APICall {
+							operation := execApiParam;
+							apiCallSignature:=execApiParam;
+						};
+						};
+					}
+					
+					else{				
+					expressions += object APICall {
+							operation := execApiParam;
+							apiCallSignature:=execApiParam;
+							if(port.inPort) then{
+									parameterBinding:=	object ParameterBinding{
+										parameter:=execApiParam.parameters->first();
+										value:=object actionlanguage::TypedNamedElementExpression{
+											typedNamedElement:=portVariable;
+										} 
+									}					
+							}endif;
+						};
+						}endif;
+						
+					
+				};
+		};
+		
+	-- create transition for init-state
+	newStatechart.transitions += object Transition {
+			priority := 1;
+			source := stateInit;
+			target := stateExec;
+		};
+	
+	-- create transition for execution-state
+	var execTransition : Transition;
+	
+	execTransition := object Transition {
+			priority := 1;
+			source := stateExec;
+			target := stateExec;
+		};
+	newStatechart.transitions += execTransition;
+	
+	-- add a clock for the time constraint
+	var apiClock : Clock;
+
+	apiClock := object Clock {
+			name := "_apiClock";
+			statechart := newStatechart;
+		};
+	
+	-- add enty-event with the time constraint to the ecexution-state
+	stateExec.entryEvent.clockResets += apiClock;
+	
+	-- add guard with the time constraint to the transition
+	execTransition.clockConstraints += object ClockConstraint {
+			clock := apiClock;
+			//the API-Call is executed within the time Intervall of the parameter timeBetweenAPIExceutes
+			bound := object TimeValue {
+					value := object Actionlanguage::TypedNamedElementExpression {
+					typedNamedElement:=timeBetweenApiExecutes;	
+					};
+					unit:= getTimeUnitMilliSeconds();
+				};
+			operator := Core::expressions::common::ComparingOperator::GREATER_OR_EQUAL;
+		};
+			
+	-- return new Region
+	return newRegion;
+}
+
+
+
+
+mapping in HybridPort::createStatechartHybridPort(
+			in messageTyp : MessageType,
+			in portVariable : Variable):ParameterizedRealtimeStatechart {
+	-- creates a statechart for the behavior of a hybrid port
+	name := self.component.name + "_" + self.name + "_behavior";
+		
+	-- create a new state, that contains more regions
+	var multiState : State;
+
+	multiState := object State {
+			name := self.name + "_initState";
+		//	parentStatechart := self;
+			final := false;
+			initial := true;
+			urgent := false;
+		};
+	
+	-- create a region for sending/receiving the value from the sensor/actuator
+	var regionTransmission : Region;
+	
+	if (self.inPort) then {
+		regionTransmission := result.createRegionForPeriodicReceiving(portVariable, messageTyp, self);
+	} else {
+		regionTransmission := result.createRegionForPeriodicSending(portVariable, messageTyp, self);
+	} endif;
+	regionTransmission.priority := 1;
+	multiState.embeddedRegions += regionTransmission;
+	
+	-- add the state for the statechart
+	result.states += multiState;
+
+}
+
+query TimeValue::createAddToTimeValue(in adder : TimeValue) : TimeValue {
+	//the orgingal line
+	//return addTimeValueTo(self.deepclone().oclAsType(TimeValue), adder);
+	return addTimeValueTo(self, adder);	
+}
+
+query Set(TimeValue)::getMinTimeValue() : TimeValue {
+	if (self->isEmpty()) then {
+		return null;
+	} endif;
+	
+	-- search for the minimum value in the given set
+	var minValue : TimeValue = self->any(true);
+	
+	self->forEach(timeValue) {
+		if (not timeValue.isGreaterThan(minValue)) then {
+			minValue := timeValue;
+		} endif;
+	};
+	
+	-- return the maximal value
+	return minValue;
+}
+
+query TimeValue::isGreaterThan(in compValue : TimeValue) : Boolean {
+	return isTimeValueGreaterThan(self, compValue);
+}

@@ -1,0 +1,79 @@
+«IMPORT simulink»
+«IMPORT simulink::stateflow»
+
+«EXTENSION extensions::stateflow::StateflowElement»
+«EXTENSION extensions::stateflow::Node»
+«EXTENSION extensions::stateflow::State»
+«EXTENSION extensions::stateflow::Transition»
+
+«DEFINE state FOR State-»
+	state {
+		id			«this.getStateflowId()»
+		chart		«this.getChart().getStateflowId()»
+		tag			"id=«this.id»"
+		treeNode	[«this.parent.getStateflowId()» 0 0 0]
+		labelString	"«this.getLabelString()»"
+«IF this.subStateType == SubStateType::EXCLUSIVE-»
+	decomposition	    CLUSTER_STATE
+«ELSE»
+	decomposition	    SET_STATE
+«ENDIF»		
+«IF this.parent.subStateType == SubStateType::EXCLUSIVE-»	
+	type		    OR_STATE    	
+«ELSE-»	
+	type		AND_STATE	
+«IF this.priority != null»
+	executionOrder	    «this.priority»
+«ENDIF»
+«ENDIF-»
+«IF !this.getAllData().isEmpty-»
+		firstData		«this.getAllData().first().getStateflowId()»
+«ENDIF-»
+«IF !this.getAllEvents().isEmpty-»
+		firstEvent		«this.getAllEvents().first().getStateflowId()»
+«ENDIF-»
+«IF !this.getAllJunctions().isEmpty-»
+		firstJunction	«this.getAllJunctions().first().getStateflowId()»
+«ENDIF-»
+«IF !this.getAllTransitions().isEmpty-»
+		firstTransition		«this.getAllTransitions().first().getStateflowId()»
+«ENDIF-»
+«EXPAND Parameter::stateflowParameter FOREACH this.parameters.select(p| !{'chart', 'id', 'tag', 'treeNode', 'labelString', 'type', 'subviewer', 'init_src_pos', 'init_dst_pos','init_midpoint', 'firstData', 'firstEvent', 'firstTransition', 'init_datalimits'}.contains(p.name) )-»	
+	}
+«EXPAND Node::node FOREACH this.nodes-»	
+«EXPAND Transition::transition FOREACH this.transitions-»
+«EXPAND EmbeddedFunction::embeddedFunction FOREACH this.embeddedFunctions-»
+«EXPAND Event::event FOREACH this.events-»
+«EXPAND Data::stateConstant FOREACH this.constant-»
+«EXPAND Data::stateLocal FOREACH this.local-»
+«IF this.initial-»
+	transition {
+		id			«this.getNewStateflowId()»
+		chart		«this.getChart().getStateflowId()»
+«IF this.initial_guard != null && this.initial_guard.size > 0»
+		labelString "[«this.initial_guard.listCondition()»]"
+«ENDIF»
+«IF this.getParameter('init_midpoint') != null-»		
+		midPoint	«this.getParameter('init_midpoint')»
+«ENDIF-»
+		src {
+«IF this.getParameter('init_src_pos') != null-»
+			intersection	[«this.getParameter('init_src_pos')»]
+«ELSE-»
+			intersection	[0 0 0 0 0 0 0 0]
+«ENDIF-»
+		}
+		dst {
+			id	«this.getStateflowId()»
+«IF this.getParameter('init_dst_pos') != null-»
+			intersection	[«this.getParameter('init_dst_pos')»]
+«ELSE-»
+			intersection	[0 0 0 0 0 0 0 0]
+«ENDIF-»
+		}
+«IF this.getParameter('init_datalimits') != null-»
+		dataLimits			«this.getParameter('init_datalimits')»
+«ENDIF»		
+	}
+«ENDIF-»	
+«ENDDEFINE»

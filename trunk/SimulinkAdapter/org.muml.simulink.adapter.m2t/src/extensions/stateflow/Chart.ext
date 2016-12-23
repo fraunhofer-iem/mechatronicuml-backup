@@ -1,0 +1,6 @@
+import simulink::stateflow;
+
+extension extensions::stateflow::StateflowElement;
+
+List[Data] getAllData(Chart chart):
+	chart.input.union(chart.output).union(chart.constant).union(chart.local).toList();

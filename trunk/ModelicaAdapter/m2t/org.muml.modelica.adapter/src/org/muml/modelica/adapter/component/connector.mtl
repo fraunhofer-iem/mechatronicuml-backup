@@ -1,0 +1,168 @@
+[module connector('http://www.muml.org/pim/behavior/1.0.0',
+				'http://www.muml.org/core/1.0.0',
+				'http://www.muml.org/pim/actionlanguage/1.0.0',
+				'http://www.muml.org/pim/msgtype/1.0.0',
+				'http://www.muml.org/pim/types/1.0.0',
+				'http://www.muml.org/modelinstance/1.0.0',
+				'http://www.muml.org/pim/component/1.0.0',
+				'http://www.muml.org/pim/instance/1.0.0',
+				'http://www.muml.de/modelica/transform/1.0.0',
+				'http://www.muml.org/pim/realtimestatechart/1.0.0')/]
+
+[import org::muml::modelica::adapter::component::naming]
+[import org::muml::modelica::adapter::component::connector_queries]
+[import org::muml::modelica::adapter::rtsc::hybrid::queries]
+
+[**
+ * Connect the parts of a structured component instance.
+ * @param cic the embedded ComponentInstanceConfiguration
+*/]
+[template public createAssemblies(componentInstanceConfiguration : ComponentInstanceConfiguration) {
+	portConnectorInstances : Set(PortConnectorInstance) = componentInstanceConfiguration.portConnectorInstances
+		->select(oclIsKindOf(AssemblyConnectorInstance))->asSet();
+}]
+	// connect assemblies
+[for (portConnectorInstance : PortConnectorInstance | portConnectorInstances)]
+[comment assume that the connector instance connects exactly two port instances /]
+[createAssembly(portConnectorInstance)/]
+[/for]
+	//generated not: beginn user defined area for  manually needed connect statements[protected ('CONTINUOUS_Connect')]
+//end user defined area[/protected]
+	// end connect assemblies
+[/template]
+
+[**
+ * Connect discrete parts.
+ * @param portConnectorInstance the assembly connector instance
+*/]
+[template private createAssembly(portConnectorInstance : PortConnectorInstance) ?
+	(portConnectorInstance.portInstances->at(1).portType.oclIsKindOf(DiscretePort))
+]
+	[let firstPort : DiscretePort = portConnectorInstance.portInstances->at(1).portType.oclAsType(DiscretePort)]
+	[if firstPort.isDiscreteOutPort]
+	[createDiscreteAssembly(portConnectorInstance.portInstances->at(1).oclAsType(DiscretePortInstance),
+		portConnectorInstance.portInstances->at(2).oclAsType(DiscretePortInstance))/]
+	[elseif firstPort.isDiscreteInPort]
+	[createDiscreteAssembly(portConnectorInstance.portInstances->at(2).oclAsType(DiscretePortInstance),
+		portConnectorInstance.portInstances->at(1).oclAsType(DiscretePortInstance))/]
+	[elseif firstPort.isDiscreteInOutPort]
+	[createDiscreteAssembly(portConnectorInstance.portInstances->at(1).oclAsType(DiscretePortInstance),
+		portConnectorInstance.portInstances->at(2).oclAsType(DiscretePortInstance))/]
+	[createDiscreteAssembly(portConnectorInstance.portInstances->at(2).oclAsType(DiscretePortInstance),
+		portConnectorInstance.portInstances->at(1).oclAsType(DiscretePortInstance))/]
+	[/if][/let]
+[/template]
+
+[**
+ * Connect the outputPort with the inputPort.
+ * @param portConnectorInstance the port connector instance
+ * @param outputPort the discrete output port
+ * @param inputPort the discrete input port
+*/]
+[template private createDiscreteAssembly(portConnectorInstance : PortConnectorInstance, outputPort : DiscretePortInstance, inputPort : DiscretePortInstance)]
+[for (messageType : MessageType | outputPort.senderMessageTypes)]
+connect([outputPort.getFullyQualifiedOutputPortName(messageType, null)/],
+	[inputPort.getFullyQualifiedInputPortName(messageType, null)/])
+	[createAssemblyConnectAnnotation(portConnectorInstance, outputPort, inputPort, messageType)/];
+[/for]
+[/template]
+
+[**
+ * Connect a continuous/hybrid port with another continuous/hybrid port.
+ * @param portConnectorInstance the assembly connector instance
+*/]
+[template private createAssembly(portConnectorInstance : PortConnectorInstance) ?
+	(not portConnectorInstance.portInstances->at(1).portType.oclIsKindOf(DiscretePort))
+]
+	[connectDirectedTypedPorts(null, portConnectorInstance)/]
+[/template]
+
+[**
+ * Connect the parts of a structured component instance.
+ * @param cic the embedded ComponentInstanceConfiguration
+*/]
+[template public createDelegations(componentInstance : StructuredComponentInstance) {
+	portConnectorInstances : Set(PortConnectorInstance) = componentInstance.embeddedCIC.portConnectorInstances
+		->select(oclIsKindOf(DelegationConnectorInstance))->asSet();
+}]
+	// connect delegations
+[for (portConnectorInstance : PortConnectorInstance | portConnectorInstances)]
+[comment assume that the connector instance connects exactly two port instances /]
+[createDelegation(componentInstance, portConnectorInstance)/]
+[/for]
+	// end connect delegations
+[/template]
+
+[**
+ * Connect a discrete delegation port with another discrete port.
+ * @param componentInstance the structured component instance
+ * @param portConnectorInstance the delegation connector instance
+*/]
+[template private createDelegation(componentInstance : StructuredComponentInstance, portConnectorInstance : PortConnectorInstance) ?
+	(portConnectorInstance.portInstances->at(1).portType.oclIsKindOf(DiscretePort))
+]
+	[let firstPort : DiscretePort = portConnectorInstance.portInstances->at(1).portType.oclAsType(DiscretePort)]
+	[if firstPort.isDiscreteOutPort]
+	[createDiscreteOutPortDelegation(portConnectorInstance.portInstances->at(1).oclAsType(DiscretePortInstance),
+		portConnectorInstance.portInstances->at(2).oclAsType(DiscretePortInstance), componentInstance)/]
+	[elseif firstPort.isDiscreteInPort]
+	[createDiscreteInPortDelegation(portConnectorInstance.portInstances->at(1).oclAsType(DiscretePortInstance),
+		portConnectorInstance.portInstances->at(2).oclAsType(DiscretePortInstance), componentInstance)/]
+	[elseif firstPort.isDiscreteInOutPort]
+	[createDiscreteInPortDelegation(portConnectorInstance.portInstances->at(1).oclAsType(DiscretePortInstance),
+		portConnectorInstance.portInstances->at(2).oclAsType(DiscretePortInstance), componentInstance)/]
+	[createDiscreteOutPortDelegation(portConnectorInstance.portInstances->at(1).oclAsType(DiscretePortInstance),
+		portConnectorInstance.portInstances->at(2).oclAsType(DiscretePortInstance), componentInstance)/]
+	[/if][/let]
+[/template]
+
+[**
+ * Connect a continuous delegation port with another continuous or hybrid port.
+ * @param componentInstance the structured component instance
+ * @param portConnectorInstance the delegation connector instance
+*/]
+[template private createDelegation(componentInstance : StructuredComponentInstance, portConnectorInstance : PortConnectorInstance) ?
+	(not portConnectorInstance.portInstances->at(1).portType.oclIsKindOf(DiscretePort))
+]
+	[connectDirectedTypedPorts(componentInstance, portConnectorInstance)/]
+[/template]
+
+[**
+ * Connect a two directed typed ports.
+ * @param componentInstance a structured component instance (delegation connectors) or null (assembly connector)
+ * @param portConnectorInstance the port connector instance
+*/]
+[template private connectDirectedTypedPorts(componentInstance : StructuredComponentInstance, portConnectorInstance : PortConnectorInstance) {
+	port1 : PortInstance = portConnectorInstance.portInstances->at(1);
+	port2 : PortInstance = portConnectorInstance.portInstances->at(2);
+}]
+connect([port1.getFullyQualifiedPortName(componentInstance)/],
+	[port2.getFullyQualifiedPortName(componentInstance)/])
+	[createAssemblyConnectAnnotation(null, null, port1, null)/];
+[/template]
+
+[**
+ * Connect the ports via a delegation.
+ * @param port1 the first discrete port
+ * @param port2 the second discrete port
+*/]
+[template private createDiscreteOutPortDelegation(port1 : DiscretePortInstance, port2 : DiscretePortInstance, ref : StructuredComponentInstance)]
+[for (messageType : MessageType | port1.senderMessageTypes)]
+connect([port1.getFullyQualifiedOutputPortName(messageType, ref)/],
+	[port2.getFullyQualifiedOutputPortName(messageType, ref)/])
+	[createAssemblyConnectAnnotation(null, null, port1, null)/];
+[/for]
+[/template]
+
+[**
+ * Connect the ports via a delegation.
+ * @param port1 the first discrete port
+ * @param port2 the second discrete port
+*/]
+[template private createDiscreteInPortDelegation(port1 : DiscretePortInstance, port2 : DiscretePortInstance, ref : StructuredComponentInstance)]
+[for (messageType : MessageType | port1.receiverMessageTypes)]
+connect([port1.getFullyQualifiedInputPortName(messageType, ref)/],
+	[port2.getFullyQualifiedInputPortName(messageType, ref)/])
+	[createAssemblyConnectAnnotation(null, null, port1, null)/];
+[/for]
+[/template]

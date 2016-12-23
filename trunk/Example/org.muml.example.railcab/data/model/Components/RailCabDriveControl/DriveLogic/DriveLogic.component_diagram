@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component="http://www.muml.org/pim/component/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="__rVw4Ph2EeOdcfcso3gQlg" type="Component" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_J0lRwPh3EeOdcfcso3gQlg" type="2006" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_J0lRwvh3EeOdcfcso3gQlg" type="5028"/>
+    <children xmi:type="notation:Shape" xmi:id="_L2na8Ph3EeOdcfcso3gQlg" type="3010" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_L2na8vh3EeOdcfcso3gQlg" type="5012">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_L2na8_h3EeOdcfcso3gQlg" x="-120" y="36"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_L2na9Ph3EeOdcfcso3gQlg" type="5025">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_L2na9fh3EeOdcfcso3gQlg" x="-60" y="36"/>
+      </children>
+      <element xmi:type="component:DiscretePort" href="../../../RailCab.muml#_L2T48Ph3EeOdcfcso3gQlg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_L2na8fh3EeOdcfcso3gQlg" x="-12" y="12"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_PEg6Ufh3EeOdcfcso3gQlg" type="3013" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_PEg6U_h3EeOdcfcso3gQlg" type="5024">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_PEg6VPh3EeOdcfcso3gQlg" x="-48" y="24"/>
+      </children>
+      <element xmi:type="component:HybridPort" href="../../../RailCab.muml#_PEg6UPh3EeOdcfcso3gQlg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PEg6Uvh3EeOdcfcso3gQlg" x="-12" y="72"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_Wb-3IPh3EeOdcfcso3gQlg" type="3010" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_Wb-3Ivh3EeOdcfcso3gQlg" type="5012">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Wb-3I_h3EeOdcfcso3gQlg" x="35" y="24"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_Wb-3JPh3EeOdcfcso3gQlg" type="5025">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Wb-3Jfh3EeOdcfcso3gQlg" y="5"/>
+      </children>
+      <element xmi:type="component:DiscretePort" href="../../../RailCab.muml#_Wb1GIPh3EeOdcfcso3gQlg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Wb-3Ifh3EeOdcfcso3gQlg" x="277" y="36"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_fdhJEPh3EeOdcfcso3gQlg" type="3010" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_fdhJEvh3EeOdcfcso3gQlg" type="5012">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_fdhJE_h3EeOdcfcso3gQlg" x="35" y="24"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_fdhJFPh3EeOdcfcso3gQlg" type="5025">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_fdhJFfh3EeOdcfcso3gQlg" y="5"/>
+      </children>
+      <element xmi:type="component:DiscretePort" href="../../../RailCab.muml#_fdXYEPh3EeOdcfcso3gQlg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fdhJEfh3EeOdcfcso3gQlg" x="277" y="84"/>
+    </children>
+    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_DXxksGUHEeS2Zodb8JPC8A">
+      <diagramLink xmi:type="notation:Diagram" href="DriveLogic.realtimestatechart_diagram#_vgTcsPuXEeO2po0ALlWq5g"/>
+    </styles>
+    <element xmi:type="component:StaticAtomicComponent" href="../../../RailCab.muml#_J0cH0Ph3EeOdcfcso3gQlg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_J0lRwfh3EeOdcfcso3gQlg" x="156" y="120" width="289" height="121"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="__rVw4fh2EeOdcfcso3gQlg"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../../../RailCab.muml#_zEShsO5uEeOKI4bZ_bxwuQ"/>
+</notation:Diagram>

@@ -1,0 +1,45 @@
+modeltype RTSC uses pim::realtimestatechart("http://www.muml.org/pim/1.0.0");
+modeltype CORE uses core('http://www.muml.org/core/1.0.0');
+modeltype INSTANCE uses pim::instance("http://www.muml.org/pim/1.0.0");
+
+library Naming;
+
+
+query AsynchronousMessageEvent::getPortName(inPort : Boolean) : String {
+	return self.getName() + '_' + if inPort then 'inputDelegationPort' else 'outputDelegationPort' endif;
+}
+
+query AsynchronousMessageEvent::getMailboxName() : String {
+	return 'mailbox_' + self.getName();
+}
+
+query AsynchronousMessageEvent::getMessageName() : String {
+	return 'message_' + self.getName();
+}
+
+query AsynchronousMessageEvent::getName() : String {
+	return self.message.instanceOf.getName();
+}
+
+query StateConnectionPoint::getVariableName() : String {
+	return self.state.getName() + self.getName();
+}
+
+query NamedElement::getName() : String {
+	return self.name.replaceAll(' ', '_');
+}
+
+query Transition::getName() : String {
+	return 'transitionNode_' + self.priority.toString() + '_' + self.source.name + '_' + self.target.name;
+}
+
+// cic queries
+
+query PortInstance::getName() : String {
+	return self.componentInstance.name + '_' + self.name; 
+}
+
+query PortConnectorInstance::getName() : String {
+	assert fatal (self.connectorEndpointInstances->size() = 2) with log("invalid/unexpected connector endpoint instance");
+	return self.portInstances->at(1).getName() + '_' + self.portInstances->at(2).getName();
+}

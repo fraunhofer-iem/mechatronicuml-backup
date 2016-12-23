@@ -1,0 +1,114 @@
+import TypeAndBehaviorLibrary;
+import ProjectSpecificConstants;
+
+--core models
+modeltype core uses core('http://www.muml.org/core/1.0.0');
+modeltype modelinst uses modelinstance("http://www.muml.org/modelinstance/1.0.0");
+
+-- muml models 
+modeltype behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype msgi uses pim::msgtype('http://www.muml.org/pim/1.0.0');
+modeltype types uses pim::types('http://www.muml.org/pim/1.0.0');
+modeltype valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype connector uses pim::connector("http://www.muml.org/pim/1.0.0");
+
+library MessageTypeLibrary;
+
+------------ helper functions --------------
+
+-- returns the generated message type repositoy which contains all message types that are needed for the
+-- communication of manager and executor and that are NOT user defined 
+helper getOrCreateReconfigurationMessageTypeRepositoy(inout rootNode : RootNode) : MessageTypeRepository{
+	
+	var category : ModelElementCategory := getOrCreateMessageTypeCategory(rootNode);
+	
+	-- try to obtain message type repository
+	var repo : MessageTypeRepository := (category.modelElements -> select(t : ExtendableElement | t.oclIsKindOf(MessageTypeRepository) 
+						and t.oclAsType(MessageTypeRepository).name = reconfigurationMessageTypeRepositoryName) 
+						-> any(true)).oclAsType(MessageTypeRepository);
+	
+	-- if no repository was found, then create it!
+	if(repo = null) then{
+		repo := createReconfigurationMessageTypeRepository(rootNode);
+		category.modelElements += repo;
+	}endif;
+	
+	return repo;
+}
+
+-- returns the model element category for message types.
+helper getOrCreateMessageTypeCategory(inout rootNode : RootNode) : ModelElementCategory {
+	var messageTypeCategory := rootNode.categories -> select(c : ModelElementCategory | c.key = 'org.muml.pim.messagetype.category') -> any(true);
+	if(messageTypeCategory.oclIsUndefined()){
+		messageTypeCategory := new ModelElementCategory('org.muml.pim.messagetype.category', 'msgtype');
+		rootNode.categories += messageTypeCategory;
+	};
+	return messageTypeCategory;
+}
+
+-- creates the message type repositoy which contains all message types that are needed for the
+-- communication of manager and executor and that are NOT user defined 
+helper createReconfigurationMessageTypeRepository(inout rootNode : RootNode) : MessageTypeRepository{
+	-- create the repository
+	var repo : MessageTypeRepository := new MessageTypeRepository(reconfigurationMessageTypeRepositoryName);
+	repo.comment := 'Generated Message Types for Reconfigurable Structured Components - DO NOT EDIT!';
+	
+	-- create all necessary message types
+	var msgType : MessageType;
+	
+	repo.messageTypes += new MessageType(genMsgTypeSuccess);
+	repo.messageTypes += new MessageType(genMsgTypeFailed);
+	repo.messageTypes += new MessageType(genMsgTypeOccupied);
+	repo.messageTypes += new MessageType(genMsgTypeDeclineRequest);
+	repo.messageTypes += new MessageType(genMsgTypeExecute);
+	repo.messageTypes += new MessageType(genMsgTypeAbort);
+	repo.messageTypes += new MessageType(genMsgTypeFinished);
+	repo.messageTypes += new MessageType(genMsgTypeSetup);
+	repo.messageTypes += new MessageType(genMsgTypeFading);
+	repo.messageTypes += new MessageType(genMsgTypeTeardown);
+	
+	msgType := new MessageType(genMsgTypeExecuteReconf);
+	msgType.parameters += new Parameter(genParamExecute_Reconf, INT32);
+	repo.messageTypes += msgType;
+	
+	msgType := new MessageType(genMsgTypeConfirmRequest);
+	msgType.parameters += new Parameter(genParamConfirmRequest_Reconf, INT32);
+	repo.messageTypes += msgType;
+	
+	msgType := new MessageType(genMsgTypeConfirm);
+	msgType.parameters += new Parameter(genParamConfirm_T, INT32);
+	repo.messageTypes += msgType;
+	
+	return repo;
+}
+
+------------ helper queries ---------------
+
+-- return the parameter with the given name of the message type
+query MessageType::getParameterByName(in theName : String) : Parameter{
+	return (self.parameters -> any(name = theName));
+}
+
+-- returns the message type with the given name from the generated message type repository
+-- that contains all message types that are needed for the
+-- communication of manager and executor and that are NOT user defined 
+query RootNode::getGeneratedReconfigurationMessageType(in theName : String) : MessageType{
+	return getOrCreateReconfigurationMessageTypeRepositoy(self).messageTypes -> select(name = theName) -> any(true);
+}
+
+------------- constructors -----------------
+constructor MessageType::MessageType(in newName : String){
+	name := newName;
+}
+
+constructor MessageTypeRepository::MessageTypeRepository(in newName : String){
+	name := newName;
+}
+
+constructor MessageBuffer::MessageBuffer(in size : Integer){
+	name:='buffer';
+	bufferSize := object NaturalNumber{
+		value := size;
+		infinity := false;
+	};
+}

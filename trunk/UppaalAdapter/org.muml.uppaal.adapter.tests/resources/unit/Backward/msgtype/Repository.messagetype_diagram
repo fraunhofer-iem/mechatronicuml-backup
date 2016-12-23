@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:msgtype="http://www.muml.org/pim/msgtype/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_I5cTAAd8EeSmHN9_2EHnXA" type="Message Type" name="Repository.messagetype_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_I5vN8Ad8EeSmHN9_2EHnXA" type="2008" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_I54X4Ad8EeSmHN9_2EHnXA" type="5017"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_I54X4Qd8EeSmHN9_2EHnXA" type="7010">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_I54X4gd8EeSmHN9_2EHnXA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_I54X4wd8EeSmHN9_2EHnXA"/>
+    </children>
+    <element xmi:type="msgtype:MessageTypeRepository" href="../VariableValue.fujaba#_YwIUIJvqEeOgzpyCht1RLA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I5vN8Qd8EeSmHN9_2EHnXA"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_I5cTAQd8EeSmHN9_2EHnXA"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../VariableValue.fujaba#_XXKWEJvqEeOgzpyCht1RLA"/>
+</notation:Diagram>

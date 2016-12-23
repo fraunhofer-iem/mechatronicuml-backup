@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_2PBnEGM_EeOY3OClxpdOXw" type="Message Type" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_2vAusGM_EeOY3OClxpdOXw" type="2008" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_2vBVwGM_EeOY3OClxpdOXw" type="5017"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_2vBVwWM_EeOY3OClxpdOXw" type="7010">
+      <children xmi:type="notation:Shape" xmi:id="_601UkGM_EeOY3OClxpdOXw" type="3007" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_6017oGM_EeOY3OClxpdOXw" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_6017oWM_EeOY3OClxpdOXw" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_6017omM_EeOY3OClxpdOXw"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_6017o2M_EeOY3OClxpdOXw"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="../ITSOWLIV_Demonstrator.fujaba#_600GcGM_EeOY3OClxpdOXw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_601UkWM_EeOY3OClxpdOXw"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_7mieUGM_EeOY3OClxpdOXw" type="3007" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_7mjFYGM_EeOY3OClxpdOXw" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_7mjFYWM_EeOY3OClxpdOXw" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_7mjFYmM_EeOY3OClxpdOXw"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_7mjFY2M_EeOY3OClxpdOXw"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="../ITSOWLIV_Demonstrator.fujaba#_7mh3QGM_EeOY3OClxpdOXw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7mieUWM_EeOY3OClxpdOXw"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_2vBVwmM_EeOY3OClxpdOXw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_2vBVw2M_EeOY3OClxpdOXw"/>
+    </children>
+    <element xmi:type="msgtype:MessageTypeRepository" href="../ITSOWLIV_Demonstrator.fujaba#_2u7PIGM_EeOY3OClxpdOXw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2vAusWM_EeOY3OClxpdOXw" x="144" y="108" width="361" height="181"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_9iplsGM_EeOY3OClxpdOXw" type="2008" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_9iqMwGM_EeOY3OClxpdOXw" type="5017"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_9iqMwWM_EeOY3OClxpdOXw" type="7010">
+      <children xmi:type="notation:Shape" xmi:id="__F9ykGM_EeOY3OClxpdOXw" type="3007" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="__F9ykmM_EeOY3OClxpdOXw" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="__F9yk2M_EeOY3OClxpdOXw" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="__F9ylGM_EeOY3OClxpdOXw"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="__F9ylWM_EeOY3OClxpdOXw"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="../ITSOWLIV_Demonstrator.fujaba#__FNkoGM_EeOY3OClxpdOXw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="__F9ykWM_EeOY3OClxpdOXw"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_AXqrAGNAEeOY3OClxpdOXw" type="3007" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_AXrSEGNAEeOY3OClxpdOXw" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_AXrSEWNAEeOY3OClxpdOXw" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_AXrSEmNAEeOY3OClxpdOXw"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_AXrSE2NAEeOY3OClxpdOXw"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="../ITSOWLIV_Demonstrator.fujaba#_AXkkYGNAEeOY3OClxpdOXw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AXqrAWNAEeOY3OClxpdOXw"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_9iqMwmM_EeOY3OClxpdOXw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_9iqMw2M_EeOY3OClxpdOXw"/>
+    </children>
+    <element xmi:type="msgtype:MessageTypeRepository" href="../ITSOWLIV_Demonstrator.fujaba#_9il7UGM_EeOY3OClxpdOXw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9iplsWM_EeOY3OClxpdOXw" x="674" y="106"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_2PBnEWM_EeOY3OClxpdOXw"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../ITSOWLIV_Demonstrator.fujaba#_bJzO0CprEeOJnb1xCalP4w"/>
+</notation:Diagram>

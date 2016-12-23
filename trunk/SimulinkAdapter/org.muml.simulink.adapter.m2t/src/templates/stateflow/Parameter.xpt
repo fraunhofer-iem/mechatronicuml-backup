@@ -1,0 +1,9 @@
+«IMPORT simulink»
+
+«DEFINE stateflowParameter FOR Parameter-»
+«IF {'created','description', 'name', 'labelString'}.contains(this.name)-»
+  «this.name» "«this.value»"
+«ELSE-»
+  «this.name» «this.value»
+«ENDIF-»
+«ENDDEFINE»

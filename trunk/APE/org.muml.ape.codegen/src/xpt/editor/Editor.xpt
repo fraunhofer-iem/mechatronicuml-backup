@@ -1,0 +1,304 @@
+«IMPORT ape»
+«EXTENSION Metamodel»
+
+«DEFINE ClassEditor FOR Class»
+«FILE package.generator.sourceFolder + "/" + genQualifiedEditorName().replaceAll('\\.', '/').toString() + '.java'»
+package «package.genPackageName()».editor;
+
+/**
+ * @generated
+ */
+public «IF genClass.ecoreClass.abstract»abstract«ENDIF» class «genEditorName()» extends org.muml.ape.runtime.editors.ClassPropertyEditor {
+	«EXPAND classBody»
+}
+«ENDFILE»
+«ENDDEFINE» 
+
+«DEFINE classBody FOR Class»
+
+	/**
+	 * @generated
+	 */
+	public «genEditorName()»(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory, org.eclipse.emf.ecore.EClass eClass) {
+		super(tab, adapterFactory, eClass);
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	protected void createProperties() {
+		if (tab == null) {
+			«EXPAND createClassElements(this, null)»
+		} else
+		«FOREACH package.generator.allGenerators().tabs AS tab-»
+		if ("«tab.id»".equals(tab)) { // Tab «tab.name»
+			«EXPAND createClassElements(this, tab)»
+		} else
+		«ENDFOREACH-»
+		{ }
+	}
+	
+	«FOREACH { this }.union(allSuperClasses).properties.select(p | getHighestContainer(p) == p.clazz) AS this»
+		private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor «genField()»;
+		private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor «genCreator()»() {
+			if (this.«genField()» == null) {
+				final org.eclipse.emf.ecore.EStructuralFeature feature = «genFeature.genFeatureLiteral()»;
+				final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = «IF editor == null»null;«ELSE»«EXPAND createEditor(this, "feature") FOR editor»«ENDIF»
+				«EXPAND addVisibilityFilter("editor", "feature") FOREACH visibilityFilters»
+				«EXPAND addReadOnlyFilter("editor", "feature") FOREACH readOnlyFilters»
+				«IF initializeOCLExpression != null && initializeOCLExpression.toString().length > 0»
+					«EXPAND setInitializeOCLExpression("editor", "feature")»
+				«ENDIF»
+
+				«IF genDocumentation() != null»
+				editor.setTooltipMessage("«genDocumentation().escapeString()»");
+				«ENDIF»
+				«EXPAND addCreationConstraintFilter("editor", "feature") FOREACH creationConstraint.filters»
+				this.«genField()» = editor;
+			}
+			return this.«genField()»;
+		}
+	«ENDFOREACH»
+
+
+«IF !genClass.ecoreClass.abstract»
+
+
+	//
+	// instantiation
+	//
+	
+	
+	/**
+	 * @generated
+	 */
+	public «genEditorName()»(String tab) {
+		this(tab, «package.generator.genPluginId()».util.PropertiesUtil.INSTANCE.getAdapterFactory(), «this.genClass.genClassLiteral()»);
+	}
+	
+	/**
+	 * @generated
+	 */
+	public static class Factory implements org.muml.ape.runtime.factory.IPropertyEditorFactory {
+		@Override
+		public org.muml.ape.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
+			return new «genEditorName()»(tab);
+		}
+		
+		@Override
+		public boolean hasTab(java.lang.String tab) {
+			return java.util.Arrays.asList(
+				new java.lang.String[] { «FOREACH genAllTabs() AS tab SEPARATOR ',\n'»"«tab.id»"«ENDFOREACH» }
+			).contains(tab);
+		}
+	}
+«ENDIF»
+«ENDDEFINE»
+
+«DEFINE createClassElements(Class originalClass, PropertyTab tab) FOR Class»
+	«REM»Create Super Classes that are not positioend using base insert points. We put them at the top.«ENDREM»
+	«FOREACH superClasses.reject(s | baseInsertPoints.baseClass.contains(s)) AS this»
+		«EXPAND createClassElements(originalClass, tab)»
+	«ENDFOREACH»
+	«REM»my own order of elements«ENDREM»
+	«FOREACH orderedElements AS this»
+		«EXPAND createElement(originalClass, tab)»
+	«ENDFOREACH»
+«ENDDEFINE»
+
+«DEFINE createElement(Class originalClass, PropertyTab _tab) FOR OrderedElement»ERROR: No codegen for «this.toString()»«ENDDEFINE»
+«DEFINE createElement(Class originalClass, PropertyTab _tab) FOR Property»
+	«IF originalClass.getHighestContainer(this) == clazz && { originalClass }.union(originalClass.allSuperClasses).propertyCategories.select(c | c.properties.contains(this) && originalClass.getHighestContainer(c) == c.clazz).isEmpty»
+		«IF _tab == null || this.tab == _tab»
+		addPropertyEditor(«genCreator()»(), false);
+		«ENDIF»
+	«ENDIF»
+«ENDDEFINE»
+
+«DEFINE createElement(Class originalClass, PropertyTab tab) FOR PropertyCategory»
+	«IF originalClass.getHighestContainer(this) == clazz»
+		«IF !properties.select(p | p != null && p.tab == tab || tab == null).isEmpty»
+		addSubCategory("«genCategoryKey()»", "«title»", «IF vertical»org.eclipse.swt.SWT.VERTICAL«ELSE»org.eclipse.swt.SWT.HORIZONTAL«ENDIF», «open»);
+		«ENDIF»
+		«FOREACH properties.select(p | p != null && p.tab == tab || tab == null) AS property»
+			«LET findHighestProperty(originalClass, property) AS highestProperty»
+			addEditorToCategory("«genCategoryKey()»", «highestProperty.genCreator()»(), false);
+			«ENDLET»
+		«ENDFOREACH»
+	«ENDIF»
+«ENDDEFINE»
+
+«DEFINE createElement(Class originalClass, PropertyTab tab) FOR BaseInsertPoint»
+	«EXPAND createClassElements(originalClass, tab) FOR baseClass»
+«ENDDEFINE»
+
+
+«DEFINE createEditor(Property property, String featureVar) FOR PropertyEditor-»
+ERROR: No codegen for «this.toString()»
+«ENDDEFINE»
+
+«DEFINE createEditor(Property property, String featureVar) FOR CheckboxPropertyEditor-»
+new org.muml.ape.runtime.editors.CheckboxPropertyEditor(adapterFactory, «featureVar»);
+«ENDDEFINE»
+
+
+«DEFINE createEditor(Property property, String featureVar) FOR SpinnerPropertyEditor-»
+new org.muml.ape.runtime.editors.SpinnerPropertyEditor(adapterFactory, «featureVar», «digits»);
+«ENDDEFINE»
+
+«DEFINE createEditor(Property property, String featureVar) FOR RadioPropertyEditor-»
+new org.muml.ape.runtime.editors.OptionPropertyEditor(adapterFactory, «featureVar»);
+«ENDDEFINE»
+
+«DEFINE createEditor(Property property, String featureVar) FOR ComboBoxPropertyEditor-»
+new org.muml.ape.runtime.editors.ComboPropertyEditor(adapterFactory, «featureVar»);
+«ENDDEFINE»
+
+«DEFINE createEditor(Property property, String featureVar) FOR TextPropertyEditor-»
+new org.muml.ape.runtime.editors.TextPropertyEditor(adapterFactory, «featureVar», «multiLine»);
+«ENDDEFINE»
+
+«DEFINE createEditor(Property property, String featureVar) FOR ListPropertyEditor-»
+new org.muml.ape.runtime.editors.ListPropertyEditor(adapterFactory, «featureVar»);
+«ENDDEFINE»
+
+«DEFINE createEditor(Property property, String featureVar) FOR FlattenedListPropertyEditor-»
+new org.muml.ape.runtime.editors.FlattenedListPropertyEditor(adapterFactory, «featureVar»);
+«ENDDEFINE»
+
+«DEFINE createEditor(Property property, String featureVar) FOR ObjectPropertyEditor-»
+new org.muml.ape.runtime.editors.NavigationFeaturePropertyEditor(adapterFactory, «featureVar»);
+«ENDDEFINE»
+
+«DEFINE createEditor(Property property, String featureVar) FOR OCLPropertyEditor-»
+new org.muml.ape.runtime.editors.OCLPropertyEditor(adapterFactory, «featureVar»);
+«ENDDEFINE»
+
+«DEFINE createEditor(Property property, String featureVar) FOR CustomPropertyEditor-»
+new «fullyQualifiedClassName»(adapterFactory, «featureVar»);
+«ENDDEFINE»
+
+
+«DEFINE addVisibilityFilter(String editorVar, String featureVar) FOR Filter»«ENDDEFINE»
+«DEFINE addVisibilityFilter(String editorVar, String featureVar) FOR OCLFilter»
+	{
+		editor.setInput(input);
+		editor.registerOCLAdapter(new org.eclipse.emf.common.notify.impl.AdapterImpl() {
+			@Override
+			public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
+				boolean visibleBefore = editor.isVisible();
+				editor.updateVisibility(true);
+
+				// Set default value, if we are hiding the editor and it was not hidden before.
+				if (!editor.isVisible() && visibleBefore) {
+					editor.setDefaultValue();
+				}
+			}
+		});
+
+
+		try {
+			final org.eclipse.ocl.pivot.utilities.OCL ocl = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
+			org.eclipse.ocl.pivot.utilities.OCLHelper helper = ocl.createOCLHelper(«featureVar»);
+			final org.eclipse.ocl.pivot.ExpressionInOCL oclExpression = helper.createQuery("«expression.escapeString()»");
+
+			org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
+				@Override
+				public boolean select(Object object) {
+					try {
+						return object != null && Boolean.TRUE.equals(ocl.evaluate(object, oclExpression));
+					} catch (org.eclipse.ocl.pivot.values.InvalidValueException e) {
+						return false;
+					}
+				}
+			};
+			if (filter != null) {
+				editor.addVisibilityFilter(filter);
+			}
+
+		} catch (org.eclipse.ocl.pivot.utilities.ParserException e) {
+			e.printStackTrace();
+		}
+	}
+«ENDDEFINE»
+
+
+«DEFINE addReadOnlyFilter(String editorVar, String featureVar) FOR Filter»«ENDDEFINE»
+«DEFINE addReadOnlyFilter(String editorVar, String featureVar) FOR OCLFilter»
+	{
+		editor.setInput(input);
+		editor.registerOCLAdapter(new org.eclipse.emf.common.notify.impl.AdapterImpl() {
+			@Override
+			public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
+				editor.updateEnablement(true);
+			}
+		});
+
+		
+		try {
+			final org.eclipse.ocl.pivot.utilities.OCL ocl = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
+			org.eclipse.ocl.pivot.utilities.OCLHelper helper = ocl.createOCLHelper(«featureVar»);
+			final org.eclipse.ocl.pivot.ExpressionInOCL oclExpression = helper.createQuery("«expression.escapeString()»");
+
+			org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
+				@Override
+				public boolean select(Object object) {
+					try {
+						return object != null && Boolean.TRUE.equals(ocl.evaluate(object, oclExpression));
+					} catch (org.eclipse.ocl.pivot.values.InvalidValueException e) {
+						return false;
+					}
+				}
+			};
+			if (filter != null) {
+				editor.addReadOnlyFilter(filter);
+			}
+
+		} catch (org.eclipse.ocl.pivot.utilities.ParserException e) {
+			e.printStackTrace();
+		}
+	}
+«ENDDEFINE»
+
+«DEFINE setInitializeOCLExpression(String editorVar, String featureVar) FOR Property»
+	{
+	
+
+		try {
+			final org.eclipse.ocl.pivot.utilities.OCL ocl = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
+			org.eclipse.ocl.pivot.utilities.OCLHelper helper = ocl.createOCLHelper(«featureVar»);
+			final org.eclipse.ocl.pivot.ExpressionInOCL oclExpression = helper.createQuery("«initializeOCLExpression.toString().escapeString()»");
+			«editorVar».setInitializeExpression(oclExpression);
+		} catch (org.eclipse.ocl.pivot.utilities.ParserException e) {
+			e.printStackTrace();
+		}
+	}
+«ENDDEFINE»
+
+«DEFINE addCreationConstraintFilter(String editorVar, String featureVar) FOR Filter»«ENDDEFINE»
+
+«DEFINE addCreationConstraintFilter(String editorVar, String featureVar) FOR OCLFilter»
+	{
+		final org.eclipse.ocl.ecore.OCLExpression expression = org.muml.ape.runtime.RuntimePlugin.createOCLExpression("«expression.escapeString()»", «featureVar», getEClass());
+		final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = org.muml.ape.runtime.RuntimePlugin.OCL_ECORE.createQuery(expression);
+		query.getEvaluationEnvironment().add("eclass", null);
+		org.muml.ape.runtime.filter.ICreationFilter filter = new org.muml.ape.runtime.filter.ICreationFilter() {
+
+			@Override
+			public boolean select(Object object, org.eclipse.emf.ecore.EClass eClass) {
+				query.getEvaluationEnvironment().replace("eclass", eClass);
+				try {
+					return Boolean.TRUE.equals(query.evaluate(object));
+				} catch (org.eclipse.ocl.pivot.values.InvalidValueException e) {
+					return false;
+				}
+			}
+
+				
+		};
+		if (filter != null) {
+			«editorVar».addCreationFilter(filter);
+		}
+	}
+«ENDDEFINE»

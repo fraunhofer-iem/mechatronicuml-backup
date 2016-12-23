@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="helper" nsURI="http://www.muml.org/reconfigurationverification/timedstorychart/transform/helper/1.0.0"
+    nsPrefix="helper">
+  <eClassifiers xsi:type="ecore:EClass" name="TSCTransformationInput">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connector" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//connector/Connector"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="syncTransitionTuples" upperBound="-1"
+        eType="#//TransitionTuple"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="noSyncTransitions" upperBound="-1"
+        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Transition"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TSCTransformationOutput">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tgts" eType="ecore:EClass ../../org.muml.reconfigurationverification.timedstorydiagram/model/TimedStoryDiagrams.ecore#//TimedGraphTransformationSystem"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TransitionTuple">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sending" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Transition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="receiving" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Transition"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PreTransformationHelper">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rtscs" upperBound="-1"
+        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/RealtimeStatechart"/>
+  </eClassifiers>
+</ecore:EPackage>

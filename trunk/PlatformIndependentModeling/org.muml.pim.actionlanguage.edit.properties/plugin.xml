@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+
+  <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+    <propertyContributor
+          contributorId="org.muml.ape.contributor">
+       <propertyCategory
+             category="domain">
+       </propertyCategory>
+       <propertyCategory
+             category="default">
+       </propertyCategory>
+       <propertyCategory
+             category="extended">
+       </propertyCategory>
+       <propertyCategory
+             category="advanced">
+       </propertyCategory>
+    </propertyContributor>
+  </extension>
+
+
+
+
+
+
+
+
+ <extension point="org.muml.ape.runtime.propertyEditors">
+    <propertyEditors>
+    
+       <propertyEditor
+             factory="org.muml.pim.actionlanguage.properties.actionlanguage.editor.BlockEditor$Factory"
+             type="http://www.muml.org/pim/actionlanguage/1.0.0#Block">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.actionlanguage.properties.actionlanguage.editor.WhileLoopEditor$Factory"
+             type="http://www.muml.org/pim/actionlanguage/1.0.0#WhileLoop">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.actionlanguage.properties.actionlanguage.editor.DoWhileLoopEditor$Factory"
+             type="http://www.muml.org/pim/actionlanguage/1.0.0#DoWhileLoop">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.actionlanguage.properties.actionlanguage.editor.AssignmentEditor$Factory"
+             type="http://www.muml.org/pim/actionlanguage/1.0.0#Assignment">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.actionlanguage.properties.actionlanguage.editor.ForLoopEditor$Factory"
+             type="http://www.muml.org/pim/actionlanguage/1.0.0#ForLoop">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.actionlanguage.properties.actionlanguage.editor.IfStatementEditor$Factory"
+             type="http://www.muml.org/pim/actionlanguage/1.0.0#IfStatement">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.actionlanguage.properties.actionlanguage.editor.OperationCallEditor$Factory"
+             type="http://www.muml.org/pim/actionlanguage/1.0.0#OperationCall">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.actionlanguage.properties.actionlanguage.editor.ReturnStatementEditor$Factory"
+             type="http://www.muml.org/pim/actionlanguage/1.0.0#ReturnStatement">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.actionlanguage.properties.actionlanguage.editor.TriggerMessageExpressionEditor$Factory"
+             type="http://www.muml.org/pim/actionlanguage/1.0.0#TriggerMessageExpression">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.actionlanguage.properties.actionlanguage.editor.DiscreteInteractionEndpointReferenceEditor$Factory"
+             type="http://www.muml.org/pim/actionlanguage/1.0.0#DiscreteInteractionEndpointReference">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.actionlanguage.properties.actionlanguage.editor.PositionSelectorEditor$Factory"
+             type="http://www.muml.org/pim/actionlanguage/1.0.0#PositionSelector">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.actionlanguage.properties.actionlanguage.editor.LocalVariableDeclarationStatementEditor$Factory"
+             type="http://www.muml.org/pim/actionlanguage/1.0.0#LocalVariableDeclarationStatement">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.actionlanguage.properties.actionlanguage.editor.TypedNamedElementExpressionEditor$Factory"
+             type="http://www.muml.org/pim/actionlanguage/1.0.0#TypedNamedElementExpression">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.actionlanguage.properties.actionlanguage.editor.ArrayInitializeExpressionEditor$Factory"
+             type="http://www.muml.org/pim/actionlanguage/1.0.0#ArrayInitializeExpression">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.actionlanguage.properties.actionlanguage.editor.NondeterministicChoiceExpressionEditor$Factory"
+             type="http://www.muml.org/pim/actionlanguage/1.0.0#NondeterministicChoiceExpression">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.actionlanguage.properties.actionlanguage.editor.TimeValueExpressionEditor$Factory"
+             type="http://www.muml.org/pim/actionlanguage/1.0.0#TimeValueExpression">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.actionlanguage.properties.actionlanguage.editor.TypeCastExpressionEditor$Factory"
+             type="http://www.muml.org/pim/actionlanguage/1.0.0#TypeCastExpression">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.actionlanguage.properties.actionlanguage.editor.ArrayIndexExpressionEditor$Factory"
+             type="http://www.muml.org/pim/actionlanguage/1.0.0#ArrayIndexExpression">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.actionlanguage.properties.actionlanguage.editor.AttributeAccessorExpressionEditor$Factory"
+             type="http://www.muml.org/pim/actionlanguage/1.0.0#AttributeAccessorExpression">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.actionlanguage.properties.actionlanguage.editor.ElseIfStatementEditor$Factory"
+             type="http://www.muml.org/pim/actionlanguage/1.0.0#ElseIfStatement">
+       </propertyEditor>
+    
+    </propertyEditors>
+ </extension>
+
+
+ <extension
+       point="org.muml.ape.runtime.metamodelContributor">
+    <metamodel
+          contributor="org.muml.pim.actionlanguage.properties.metamodel.MetamodelContributor">
+    </metamodel>
+ </extension>
+
+
+ <extension
+       point="org.muml.ape.runtime.creationConstraintContributor">
+    <constraint
+          contributor="org.muml.pim.actionlanguage.properties.constraint.CreationConstraintContributor">
+    </constraint>
+ </extension>
+
+</plugin>

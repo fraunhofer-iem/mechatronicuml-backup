@@ -1,0 +1,10 @@
+ import "fraunhoferDemo.muml"
+
+import "platform:/resource/de.uni_paderborn.fujaba.muml.example.overtaking_with_approacher/nxtOSEK.osdsl"
+
+
+MappingRepository:nxtOSEKMapping{
+	
+}
+
+

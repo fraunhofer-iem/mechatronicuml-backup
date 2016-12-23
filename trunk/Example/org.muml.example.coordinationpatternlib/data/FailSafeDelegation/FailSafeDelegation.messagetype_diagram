@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:msgtype="http://www.muml.org/pim/msgtype/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_tQtNsOqOEeSdp6KdWPaGDw" type="Message Type" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_elsVUOqPEeSdp6KdWPaGDw" type="2008" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_elsVUuqPEeSdp6KdWPaGDw" type="5017"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_elsVU-qPEeSdp6KdWPaGDw" type="7010">
+      <children xmi:type="notation:Shape" xmi:id="_gDuZkOqPEeSdp6KdWPaGDw" type="3007" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_gDuZkuqPEeSdp6KdWPaGDw" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_gDuZk-qPEeSdp6KdWPaGDw" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_gDuZlOqPEeSdp6KdWPaGDw"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_gDuZleqPEeSdp6KdWPaGDw"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="../patterns.muml#_gDphEOqPEeSdp6KdWPaGDw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gDuZkeqPEeSdp6KdWPaGDw"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_g1yIoOqPEeSdp6KdWPaGDw" type="3007" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_g1yIouqPEeSdp6KdWPaGDw" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_g1yIo-qPEeSdp6KdWPaGDw" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_g1yIpOqPEeSdp6KdWPaGDw"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_g1yIpeqPEeSdp6KdWPaGDw"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="../patterns.muml#_g1xhkOqPEeSdp6KdWPaGDw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_g1yIoeqPEeSdp6KdWPaGDw"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_hZerkeqPEeSdp6KdWPaGDw" type="3007" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_hZfSoOqPEeSdp6KdWPaGDw" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_hZfSoeqPEeSdp6KdWPaGDw" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_hZfSouqPEeSdp6KdWPaGDw"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_hZfSo-qPEeSdp6KdWPaGDw"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="../patterns.muml#_hZerkOqPEeSdp6KdWPaGDw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hZerkuqPEeSdp6KdWPaGDw"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_h4ZcMOqPEeSdp6KdWPaGDw" type="3007" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_h4ZcMuqPEeSdp6KdWPaGDw" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_h4ZcM-qPEeSdp6KdWPaGDw" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_h4ZcNOqPEeSdp6KdWPaGDw"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_h4ZcNeqPEeSdp6KdWPaGDw"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="../patterns.muml#_h4YOEOqPEeSdp6KdWPaGDw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_h4ZcMeqPEeSdp6KdWPaGDw"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_elsVVOqPEeSdp6KdWPaGDw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_elsVVeqPEeSdp6KdWPaGDw"/>
+    </children>
+    <element xmi:type="msgtype:MessageTypeRepository" href="../patterns.muml#_elp5EOqPEeSdp6KdWPaGDw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_elsVUeqPEeSdp6KdWPaGDw" x="36" y="12" width="205" height="121"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_tQtNseqOEeSdp6KdWPaGDw"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../patterns.muml#_t0IlzedrEeSmgcfWtmVOuw"/>
+</notation:Diagram>

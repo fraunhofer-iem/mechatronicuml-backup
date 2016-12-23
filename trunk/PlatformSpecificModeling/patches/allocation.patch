@@ -1,0 +1,58 @@
+### Eclipse Workspace Patch 1.0
+#P de.uni_paderborn.fujaba.muml.allocation.language
+Index: META-INF/MANIFEST.MF
+===================================================================
+--- de.uni_paderborn.fujaba.muml.allocation.language/META-INF/MANIFEST.MF	(revision 2179)
++++ de.uni_paderborn.fujaba.muml.allocation.language/META-INF/MANIFEST.MF	(working copy)
+@@ -20,8 +20,8 @@
+  org.eclipse.emf.ecore,
+  org.storydriven.core;visibility:=reexport,
+  org.eclipse.ocl.examples.xtext.base;visibility:=reexport,
+- org.eclipse.ocl.examples.xtext.essentialocl;bundle-version="3.4.1",
+- org.eclipse.ocl.examples.xtext.completeocl;bundle-version="3.4.1",
++ org.eclipse.ocl.examples.xtext.essentialocl;bundle-version="3.4.0",
++ org.eclipse.ocl.examples.xtext.completeocl;bundle-version="3.4.0",
+  org.eclipse.ocl.examples.pivot;visibility:=reexport,
+  de.uni_paderborn.fujaba.muml;bundle-version="0.4.0",
+  de.uni_paderborn.fujaba.muml.hardware;bundle-version="1.0.0",
+#P de.uni_paderborn.fujaba.muml.allocation.language.xtext
+Index: META-INF/MANIFEST.MF
+===================================================================
+--- de.uni_paderborn.fujaba.muml.allocation.language.xtext/META-INF/MANIFEST.MF	(revision 2179)
++++ de.uni_paderborn.fujaba.muml.allocation.language.xtext/META-INF/MANIFEST.MF	(working copy)
+@@ -14,7 +14,7 @@
+  org.eclipse.emf.mwe2.launch;resolution:=optional,
+  de.uni_paderborn.fujaba.muml.allocation.language,
+  org.eclipse.ocl.examples.xtext.essentialocl;bundle-version="3.4.0",
+- org.eclipse.ocl.examples.xtext.completeocl;bundle-version="3.4.1",
++ org.eclipse.ocl.examples.xtext.completeocl;bundle-version="3.4.0",
+  org.eclipse.xtext.util,
+  org.antlr.runtime,
+  org.eclipse.xtext.common.types,
+#P de.uni_paderborn.fujaba.muml.allocation.algorithm.ui
+Index: META-INF/MANIFEST.MF
+===================================================================
+--- de.uni_paderborn.fujaba.muml.allocation.algorithm.ui/META-INF/MANIFEST.MF	(revision 2179)
++++ de.uni_paderborn.fujaba.muml.allocation.algorithm.ui/META-INF/MANIFEST.MF	(working copy)
+@@ -13,7 +13,7 @@
+  org.eclipse.ui;bundle-version="3.106.0",
+  org.eclipse.ui.ide;bundle-version="3.10.0",
+  org.eclipse.ui.forms,
+- org.eclipse.ocl.examples.xtext.completeocl;bundle-version="3.5.0",
++ org.eclipse.ocl.examples.xtext.completeocl;bundle-version="3.4.0",
+  org.eclipse.core.resources;bundle-version="3.9.0",
+  de.uni_paderborn.fujaba.modelinstance;bundle-version="0.4.0",
+  de.uni_paderborn.fujaba.muml.psm,
+#P de.uni_paderborn.fujaba.muml.allocation.ilp.lpsolve.xtext
+Index: META-INF/MANIFEST.MF
+===================================================================
+--- de.uni_paderborn.fujaba.muml.allocation.ilp.lpsolve.xtext/META-INF/MANIFEST.MF	(revision 2179)
++++ de.uni_paderborn.fujaba.muml.allocation.ilp.lpsolve.xtext/META-INF/MANIFEST.MF	(working copy)
+@@ -17,7 +17,6 @@
+  org.eclipse.xtext.util,
+  org.antlr.runtime,
+  org.eclipse.xtext.common.types,
+- org.eclipse.ocl.examples.build;bundle-version="3.4.1",
+  org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional,
+  de.uni_paderborn.fujaba.common;bundle-version="0.4.0"
+ Import-Package: org.apache.log4j,

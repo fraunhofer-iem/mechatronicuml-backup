@@ -1,0 +1,6 @@
+digraph Chart {
+	node [label="\N"];
+	graph [bb="0,36,126,0"];
+	__init [label="", shape=box, pos="27,18", width="0.75", height="0.5"];
+	0 [label=State, shape=box, pos="99,18", width="0.75", height="0.5"];
+}

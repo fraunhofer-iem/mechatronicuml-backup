@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:instance="http://www.muml.org/pim/instance/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_HSzAYFL3EeWl58eUwm1Yvw" type="Component Instance Configuration" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_IlFusFL3EeWl58eUwm1Yvw" type="2015" fontName=".Helvetica Neue DeskInterface" fontHeight="11" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_IlFuslL3EeWl58eUwm1Yvw" type="5026"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_IlGVwFL3EeWl58eUwm1Yvw" type="7012">
+      <children xmi:type="notation:Shape" xmi:id="_JcFoIFL3EeWl58eUwm1Yvw" type="3023" fontName=".Helvetica Neue DeskInterface" fontHeight="11" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_JcGPMFL3EeWl58eUwm1Yvw" type="7013">
+          <children xmi:type="notation:Shape" xmi:id="_JcG2QFL3EeWl58eUwm1Yvw" type="3024" fontName=".Helvetica Neue DeskInterface" fontHeight="11" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_JcG2QlL3EeWl58eUwm1Yvw" type="5028"/>
+            <children xmi:type="notation:Shape" xmi:id="_JcJSgFL3EeWl58eUwm1Yvw" type="3031" fontName=".Helvetica Neue DeskInterface" fontHeight="11" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_JcJSglL3EeWl58eUwm1Yvw" type="5043">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_JcJSg1L3EeWl58eUwm1Yvw" y="5"/>
+              </children>
+              <element xmi:type="instance:HybridPortInstance" href="model.muml#_JbMQQlL3EeWl58eUwm1Yvw"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JcJSgVL3EeWl58eUwm1Yvw"/>
+            </children>
+            <element xmi:type="instance:AtomicComponentInstance" href="model.muml#_JbMQQVL3EeWl58eUwm1Yvw"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JcG2QVL3EeWl58eUwm1Yvw" x="21" y="57"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_JcG2Q1L3EeWl58eUwm1Yvw" type="3024" fontName=".Helvetica Neue DeskInterface" fontHeight="11" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_JcG2RVL3EeWl58eUwm1Yvw" type="5028"/>
+            <children xmi:type="notation:Shape" xmi:id="_JcM84FL3EeWl58eUwm1Yvw" type="3034" fontName=".Helvetica Neue DeskInterface" fontHeight="11" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_JcM84lL3EeWl58eUwm1Yvw" type="5046">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_JcM841L3EeWl58eUwm1Yvw" y="5"/>
+              </children>
+              <element xmi:type="instance:ContinuousPortInstance" href="model.muml#_JbMQRFL3EeWl58eUwm1Yvw"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JcM84VL3EeWl58eUwm1Yvw"/>
+            </children>
+            <element xmi:type="instance:AtomicComponentInstance" href="model.muml#_JbMQQ1L3EeWl58eUwm1Yvw"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JcG2RFL3EeWl58eUwm1Yvw" x="300" y="51"/>
+          </children>
+        </children>
+        <element xmi:type="instance:ComponentInstanceConfiguration" href="model.muml#_JbMQQFL3EeWl58eUwm1Yvw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JcFoIVL3EeWl58eUwm1Yvw"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_IlGVwVL3EeWl58eUwm1Yvw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_IlGVwlL3EeWl58eUwm1Yvw"/>
+    </children>
+    <element xmi:type="instance:StructuredComponentInstance" href="model.muml#_Ik_BAFL3EeWl58eUwm1Yvw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IlFusVL3EeWl58eUwm1Yvw" x="333" y="198" width="541" height="325"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_HSzAYVL3EeWl58eUwm1Yvw"/>
+  <element xmi:type="instance:ComponentInstanceConfiguration" href="model.muml#_HSyZUFL3EeWl58eUwm1Yvw"/>
+  <edges xmi:type="notation:Connector" xmi:id="_Jcge4FL3EeWl58eUwm1Yvw" type="4001" source="_JcM84FL3EeWl58eUwm1Yvw" target="_JcJSgFL3EeWl58eUwm1Yvw" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_Jcge4VL3EeWl58eUwm1Yvw" fontName=".Helvetica Neue DeskInterface" fontHeight="11"/>
+    <element xmi:type="instance:AssemblyConnectorInstance" href="model.muml#_JbMQRVL3EeWl58eUwm1Yvw"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Jcge4lL3EeWl58eUwm1Yvw" points="[0, -12, 279, -18]$[0, -36, 279, -42]$[-279, -36, 0, -42]$[-279, -6, 0, -12]"/>
+  </edges>
+</notation:Diagram>

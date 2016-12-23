@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Resource Instance Diagram Custom
+Bundle-SymbolicName: org.muml.pm.hardware.resourceinstance.diagram.custom;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
+ oftware Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT
+Require-Bundle: org.eclipse.m2m.qvt.oml;bundle-version="3.1.0",
+ org.muml.pm.hardware.resourceinstance.diagram,
+ org.eclipse.gmf.runtime.diagram.ui,
+ org.muml.pm.hardware.common
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Bundle-Activator: org.muml.pm.hardware.resourceinstance.diagram.custom.part.Activator

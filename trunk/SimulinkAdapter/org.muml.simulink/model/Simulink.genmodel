@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.muml.simulink/src-gen"
+    modelPluginID="org.muml.simulink" modelName="Simulink" rootExtendsInterface="org.eclipse.emf.cdo.CDOObject"
+    rootExtendsClass="org.eclipse.emf.internal.cdo.CDOObjectImpl" booleanFlagsField=""
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
+    interfaceNamePattern="" classNamePattern="" operationReflection="true">
+  <foreignModel>Simulink.ecore</foreignModel>
+  <modelPluginVariables>CDO=org.eclipse.emf.cdo</modelPluginVariables>
+  <genPackages prefix="Simulink" basePackage="org.muml" disposableProviderFactory="true"
+      ecorePackage="Simulink.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Simulink.ecore#//DataType">
+      <genEnumLiterals ecoreEnumLiteral="Simulink.ecore#//DataType/INHERIT"/>
+      <genEnumLiterals ecoreEnumLiteral="Simulink.ecore#//DataType/DOUBLE"/>
+      <genEnumLiterals ecoreEnumLiteral="Simulink.ecore#//DataType/SINGLE"/>
+      <genEnumLiterals ecoreEnumLiteral="Simulink.ecore#//DataType/INT32"/>
+      <genEnumLiterals ecoreEnumLiteral="Simulink.ecore#//DataType/INT16"/>
+      <genEnumLiterals ecoreEnumLiteral="Simulink.ecore#//DataType/INT8"/>
+      <genEnumLiterals ecoreEnumLiteral="Simulink.ecore#//DataType/UINT32"/>
+      <genEnumLiterals ecoreEnumLiteral="Simulink.ecore#//DataType/UINT16"/>
+      <genEnumLiterals ecoreEnumLiteral="Simulink.ecore#//DataType/UINT8"/>
+      <genEnumLiterals ecoreEnumLiteral="Simulink.ecore#//DataType/BOOLEAN"/>
+      <genEnumLiterals ecoreEnumLiteral="Simulink.ecore#//DataType/BUS"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Simulink.ecore#//TriggerEvent">
+      <genEnumLiterals ecoreEnumLiteral="Simulink.ecore#//TriggerEvent/Rising"/>
+      <genEnumLiterals ecoreEnumLiteral="Simulink.ecore#//TriggerEvent/Falling"/>
+      <genEnumLiterals ecoreEnumLiteral="Simulink.ecore#//TriggerEvent/Either"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="Simulink.ecore#//ParameterType"/>
+    <genClasses image="false" ecoreClass="Simulink.ecore#//Block" labelFeature="#//simulink/Block/name">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Simulink.ecore#//Block/parent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//Block/name"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference Simulink.ecore#//Block/outPorts"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference Simulink.ecore#//Block/inPorts"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Simulink.ecore#//Block/incomingLines"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Simulink.ecore#//Block/outgoingLines"/>
+      <genOperations ecoreOperation="Simulink.ecore#//Block/getFullyQualifiedName"/>
+    </genClasses>
+    <genClasses ecoreClass="Simulink.ecore#//SimulinkModel">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Simulink.ecore#//SimulinkModel/root"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Simulink.ecore#//Element">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Simulink.ecore#//Element/parameters"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//Element/id"/>
+      <genOperations ecoreOperation="Simulink.ecore#//Element/getParameter">
+        <genParameters ecoreParameter="Simulink.ecore#//Element/getParameter/name"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="Simulink.ecore#//Line">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Simulink.ecore#//Line/sourcePort"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Simulink.ecore#//Line/targetPort"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Simulink.ecore#//Line/sourceBlock"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Simulink.ecore#//Line/targetBlock"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Simulink.ecore#//Line/bus"/>
+    </genClasses>
+    <genClasses ecoreClass="Simulink.ecore#//Parameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//Parameter/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//Parameter/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//Parameter/type"/>
+    </genClasses>
+    <genClasses ecoreClass="Simulink.ecore#//SubSystem">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Simulink.ecore#//SubSystem/lines"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Simulink.ecore#//SubSystem/blocks"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference Simulink.ecore#//SubSystem/subSystems"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Simulink.ecore#//SubSystem/allBlocks"/>
+      <genOperations ecoreOperation="Simulink.ecore#//SubSystem/getBlockByName">
+        <genParameters ecoreParameter="Simulink.ecore#//SubSystem/getBlockByName/name"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="Simulink.ecore#//InPortBlock">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Simulink.ecore#//InPortBlock/block"/>
+    </genClasses>
+    <genClasses ecoreClass="Simulink.ecore#//EmbeddedMatlabFunction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//EmbeddedMatlabFunction/code"/>
+    </genClasses>
+    <genClasses ecoreClass="Simulink.ecore#//MiscBlock">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//MiscBlock/type"/>
+    </genClasses>
+    <genClasses ecoreClass="Simulink.ecore#//SimulinkContainer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Simulink.ecore#//SimulinkContainer/models"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Simulink.ecore#//SimulinkContainer/libraries"/>
+    </genClasses>
+    <genClasses ecoreClass="Simulink.ecore#//SimulinkLibrary"/>
+    <genClasses ecoreClass="Simulink.ecore#//LibraryReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Simulink.ecore#//LibraryReference/sourceBlock"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Simulink.ecore#//SimulinkFile">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Simulink.ecore#//SimulinkFile/stateflowMachine"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Simulink.ecore#//SimulinkFile/buses"/>
+    </genClasses>
+    <genClasses ecoreClass="Simulink.ecore#//OutPortBlock">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Simulink.ecore#//OutPortBlock/block"/>
+    </genClasses>
+    <genClasses ecoreClass="Simulink.ecore#//ChartBlock">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Simulink.ecore#//ChartBlock/chart"/>
+    </genClasses>
+    <genClasses ecoreClass="Simulink.ecore#//Bus">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//Bus/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Simulink.ecore#//Bus/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="Simulink.ecore#//BusCreator">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Simulink.ecore#//BusCreator/bus"/>
+    </genClasses>
+    <genClasses ecoreClass="Simulink.ecore#//BusSelector">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Simulink.ecore#//BusSelector/bus"/>
+    </genClasses>
+    <genClasses ecoreClass="Simulink.ecore#//PortBlock">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//PortBlock/dimensions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//PortBlock/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//PortBlock/initialCondition"/>
+    </genClasses>
+    <genClasses ecoreClass="Simulink.ecore#//UnitDelay"/>
+    <genClasses ecoreClass="Simulink.ecore#//DigitalClock">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//DigitalClock/sampleTime"/>
+    </genClasses>
+    <genClasses ecoreClass="Simulink.ecore#//Constant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//Constant/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//Constant/type"/>
+    </genClasses>
+    <genClasses ecoreClass="Simulink.ecore#//TriggerPort">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//TriggerPort/triggerInput"/>
+    </genClasses>
+    <genClasses ecoreClass="Simulink.ecore#//EnablePort"/>
+    <genClasses ecoreClass="Simulink.ecore#//BusElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//BusElement/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//BusElement/dimensions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//BusElement/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Simulink.ecore#//BusElement/bus"/>
+    </genClasses>
+    <genClasses ecoreClass="Simulink.ecore#//ZeroOrderHold">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//ZeroOrderHold/sampleTime"/>
+    </genClasses>
+    <nestedGenPackages prefix="Stateflow" basePackage="org.muml.simulink"
+        disposableProviderFactory="true" ecorePackage="Simulink.ecore#//stateflow">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="Simulink.ecore#//stateflow/SubStateType">
+        <genEnumLiterals ecoreEnumLiteral="Simulink.ecore#//stateflow/SubStateType/EXCLUSIVE"/>
+        <genEnumLiterals ecoreEnumLiteral="Simulink.ecore#//stateflow/SubStateType/PARALLEL"/>
+      </genEnums>
+      <genClasses ecoreClass="Simulink.ecore#//stateflow/StateflowMachine">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Simulink.ecore#//stateflow/StateflowMachine/charts"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Simulink.ecore#//stateflow/StateflowMachine/model"/>
+      </genClasses>
+      <genClasses ecoreClass="Simulink.ecore#//stateflow/Chart">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Simulink.ecore#//stateflow/Chart/machine"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Simulink.ecore#//stateflow/Chart/output"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Simulink.ecore#//stateflow/Chart/input"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference Simulink.ecore#//stateflow/Chart/block"/>
+      </genClasses>
+      <genClasses ecoreClass="Simulink.ecore#//stateflow/StateflowElement"/>
+      <genClasses ecoreClass="Simulink.ecore#//stateflow/State">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//stateflow/State/subStateType"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Simulink.ecore#//stateflow/State/nodes"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Simulink.ecore#//stateflow/State/transitions"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//stateflow/State/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//stateflow/State/priority"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Simulink.ecore#//stateflow/State/events"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//stateflow/State/initial"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Simulink.ecore#//stateflow/State/embeddedFunctions"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EReference Simulink.ecore#//stateflow/State/entryAction"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EReference Simulink.ecore#//stateflow/State/exitAction"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EReference Simulink.ecore#//stateflow/State/duringAction"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Simulink.ecore#//stateflow/State/local"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Simulink.ecore#//stateflow/State/constant"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Simulink.ecore#//stateflow/State/initial_guard"/>
+        <genOperations ecoreOperation="Simulink.ecore#//stateflow/State/getSubState">
+          <genParameters ecoreParameter="Simulink.ecore#//stateflow/State/getSubState/name"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="Simulink.ecore#//stateflow/Transition">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference Simulink.ecore#//stateflow/Transition/source"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference Simulink.ecore#//stateflow/Transition/target"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//stateflow/Transition/priority"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EReference Simulink.ecore#//stateflow/Transition/event"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EReference Simulink.ecore#//stateflow/Transition/guard"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EReference Simulink.ecore#//stateflow/Transition/action"/>
+      </genClasses>
+      <genClasses ecoreClass="Simulink.ecore#//stateflow/Junction"/>
+      <genClasses ecoreClass="Simulink.ecore#//stateflow/Node">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Simulink.ecore#//stateflow/Node/parent"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference Simulink.ecore#//stateflow/Node/incoming"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference Simulink.ecore#//stateflow/Node/outgoing"/>
+      </genClasses>
+      <genClasses ecoreClass="Simulink.ecore#//stateflow/Event">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//stateflow/Event/name"/>
+      </genClasses>
+      <genClasses ecoreClass="Simulink.ecore#//stateflow/History"/>
+      <genClasses ecoreClass="Simulink.ecore#//stateflow/EmbeddedFunction">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//stateflow/EmbeddedFunction/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//stateflow/EmbeddedFunction/code"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Simulink.ecore#//stateflow/EmbeddedFunction/input"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Simulink.ecore#//stateflow/EmbeddedFunction/output"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Simulink.ecore#//stateflow/EmbeddedFunction/local"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Simulink.ecore#//stateflow/EmbeddedFunction/constant"/>
+      </genClasses>
+      <genClasses ecoreClass="Simulink.ecore#//stateflow/Action">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//stateflow/Action/expression"/>
+      </genClasses>
+      <genClasses ecoreClass="Simulink.ecore#//stateflow/Data">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//stateflow/Data/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//stateflow/Data/type"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//stateflow/Data/value"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//stateflow/Data/size"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Msglib" basePackage="org.muml.simulink"
+        disposableProviderFactory="true" ecorePackage="Simulink.ecore#//msglib">
+      <genClasses ecoreClass="Simulink.ecore#//msglib/CommunicationSwitch">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//msglib/CommunicationSwitch/debug"/>
+      </genClasses>
+      <genClasses ecoreClass="Simulink.ecore#//msglib/LinkLayer">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//msglib/LinkLayer/delayMin"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//msglib/LinkLayer/delayMax"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//msglib/LinkLayer/messageLossProbability"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//msglib/LinkLayer/messageRetransmission"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//msglib/LinkLayer/bufferOverflowPossible"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//msglib/LinkLayer/bufferSize"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//msglib/LinkLayer/sourceBufferSize"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//msglib/LinkLayer/messageMapping"/>
+      </genClasses>
+      <nestedGenPackages prefix="Buffer" basePackage="org.muml.simulink.msglib"
+          disposableProviderFactory="true" ecorePackage="Simulink.ecore#//msglib/buffer">
+        <genClasses ecoreClass="Simulink.ecore#//msglib/buffer/Enqueue"/>
+        <genClasses ecoreClass="Simulink.ecore#//msglib/buffer/Dequeue"/>
+        <genClasses ecoreClass="Simulink.ecore#//msglib/buffer/CheckQueue"/>
+        <genClasses ecoreClass="Simulink.ecore#//msglib/buffer/SharedEnqueue"/>
+        <genClasses ecoreClass="Simulink.ecore#//msglib/buffer/SharedDequeue"/>
+        <genClasses ecoreClass="Simulink.ecore#//msglib/buffer/SharedCheckQueue"/>
+        <genClasses ecoreClass="Simulink.ecore#//msglib/buffer/BufferFunction">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//msglib/buffer/BufferFunction/bufferSize"/>
+        </genClasses>
+      </nestedGenPackages>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Reconfiguration" basePackage="org.muml.simulink"
+        resource="XML" disposableProviderFactory="true" ecorePackage="Simulink.ecore#//reconfiguration">
+      <genClasses ecoreClass="Simulink.ecore#//reconfiguration/MultiTargetControl"/>
+      <genClasses ecoreClass="Simulink.ecore#//reconfiguration/MultiSourceControl"/>
+      <genClasses ecoreClass="Simulink.ecore#//reconfiguration/FadingComponent">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//reconfiguration/FadingComponent/time"/>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

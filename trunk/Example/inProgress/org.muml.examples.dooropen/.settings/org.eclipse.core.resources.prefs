@@ -1,0 +1,13 @@
+eclipse.preferences.version=1
+encoding//component/IdentificationInput.component_diagram=UTF-8
+encoding//component/LaunchDelegator.component_diagram=UTF-8
+encoding//component/LaunchVerifier.component_diagram=UTF-8
+encoding//component/Launcher.component_diagram=UTF-8
+encoding//component/System.component_diagram=UTF-8
+encoding//instance/rocketRoot.componentinstanceconfiguration_diagram=UTF-8
+encoding//msgtype/M1.messagetype_diagram=UTF-8
+encoding//realtimestatechart/LaunchDelegator2.realtimestatechart_diagram=UTF-8
+encoding//realtimestatechart/LaunchVerifier2.realtimestatechart_diagram=UTF-8
+encoding//realtimestatechart/master.realtimestatechart_diagram=UTF-8
+encoding//realtimestatechart/peer.realtimestatechart_diagram=UTF-8
+encoding/org.muml.examples.muml=UTF-8

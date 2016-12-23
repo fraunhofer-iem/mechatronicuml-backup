@@ -1,0 +1,24 @@
+«IMPORT simulink»
+
+«DEFINE busFile FOR Bus-»
+«FILE this.name + "Generator.m"-»
+
+«FOREACH this.elements AS busElement ITERATOR it-»
+%BusElement('«busElement.name»','«busElement.type»',«IF busElement.dimensions != null»«busElement.dimensions»«ENDIF»,«IF busElement.bus != null»'«busElement.bus.name»'«ENDIF»)
+BusElements(«it.counter1») = Simulink.BusElement;
+BusElements(«it.counter1»).Name = '«busElement.name»';
+«IF busElement.type == DataType::BUS && busElement.bus != null-»
+BusElements(«it.counter1»).DataType = '«busElement.bus.name»';
+«ELSE-»
+BusElements(«it.counter1»).DataType = '«busElement.type»';
+«ENDIF-»
+«IF busElement.dimensions != null && busElement.dimensions.length > 1»BusElements(«it.counter1»).Dimensions = «busElement.dimensions»;«ENDIF»
+«ENDFOREACH-»
+
+%Bus('«this.name»')
+«this.name» = Simulink.Bus;
+«this.name».Elements = BusElements;
+clear BusElements;
+
+«ENDFILE-»
+«ENDDEFINE»

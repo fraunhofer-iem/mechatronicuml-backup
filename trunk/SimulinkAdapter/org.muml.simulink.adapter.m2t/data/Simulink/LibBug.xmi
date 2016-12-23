@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ASCII"?>
+<model:SimulinkContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://www.muml.org/simulink/1.0.0" id="_QOoykG01EeGB6sXGPiiDSg">
+  <models id="_PMst8II9EeGZA4xnCfdmYg" name="Model">
+    <blocks xsi:type="model:LibraryReference" id="_dJCQh4I-EeGZA4xnCfdmYg" name="chart1" sourceBlock="_ltePYoJBEeGZA4xnCfdmYg"/>
+    <blocks xsi:type="model:LibraryReference" id="_oRytp4I-EeGZA4xnCfdmYg" name="chart2" sourceBlock="_oiLLooJBEeGZA4xnCfdmYg"/>
+  </models>
+  <libraries id="_M6s2IYI9EeGZA4xnCfdmYg" name="Lib">
+    <blocks xsi:type="model:SubSystem" id="_ltePYoJBEeGZA4xnCfdmYg" name="container1">
+      <blocks xsi:type="model:ChartBlock" id="_Io0UyII-EeGZA4xnCfdmYg" name="chart1" chart="_FEIGAII-EeGZA4xnCfdmYg"/>
+    </blocks>
+    <blocks xsi:type="model:SubSystem" id="_oiLLooJBEeGZA4xnCfdmYg" name="container2">
+      <blocks xsi:type="model:ChartBlock" id="_LTKbKYI-EeGZA4xnCfdmYg" name="chart2" chart="_G117QII-EeGZA4xnCfdmYg"/>
+    </blocks>
+    <stateflowMachine id="_EoAKwoI-EeGZA4xnCfdmYg">
+      <charts id="_FEIGAII-EeGZA4xnCfdmYg" name="chart1" block="_Io0UyII-EeGZA4xnCfdmYg"/>
+      <charts id="_G117QII-EeGZA4xnCfdmYg" name="chart2" block="_LTKbKYI-EeGZA4xnCfdmYg"/>
+    </stateflowMachine>
+  </libraries>
+</model:SimulinkContainer>

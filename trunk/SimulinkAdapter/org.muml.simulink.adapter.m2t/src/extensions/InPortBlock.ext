@@ -1,0 +1,8 @@
+import simulink;
+
+/* Selects the bus for a given bus based on its incoming/outgoing lines.
+   The first part of the union is for InPorts of a SubSystem, seen from the "outside"
+   The second part is for dedicated InPorts of a SubSystem, seen from the "inside"
+ */
+Bus getBus(InPortBlock port) :
+	port.block.incomingLines.select(l|l.targetPort == port).union(port.outgoingLines).selectFirst(e|true).bus;

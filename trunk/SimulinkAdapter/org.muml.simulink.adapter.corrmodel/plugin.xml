@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated fujaba2simulink -->
+      <package
+            uri="http://www.muml.org/simulink/adapter/corrmodel/1.0.0"
+            class="org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage"
+            genModel="model/fujaba2simulink.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated fujaba2simulink -->
+      <parser
+            type="fujaba2simulink"
+            class="org.muml.simulink.adapter.corrmodel.util.Fujaba2simulinkResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated fujaba2simulink -->
+      <package
+            uri="http://www.muml.org/simulink/adapter/corrmodel/behavior/1.0.0"
+            class="org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage"
+            genModel="model/fujaba2simulink.genmodel"/>
+   </extension>
+</plugin>

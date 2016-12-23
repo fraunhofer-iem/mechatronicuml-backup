@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+gmf_dashboard/domainGenerationModel=platform\:/resource/org.muml.pim/model/pim.genmodel
+gmf_dashboard/domainModel=platform\:/resource/org.muml.pim/model/pim.ecore
+gmf_dashboard/generationModel=platform\:/resource/org.muml.pim.pattern.diagram/model/pattern.gmfgen
+gmf_dashboard/graphicalDefinitionModel=platform\:/resource/org.muml.pim.pattern.diagram/model/pattern.gmfgraph
+gmf_dashboard/mappingModel=platform\:/resource/org.muml.pim.pattern.diagram/model/pattern.gmfmap
+gmf_dashboard/toolingDefinitionModel=platform\:/resource/org.muml.pim.pattern.diagram/model/pattern.gmftool

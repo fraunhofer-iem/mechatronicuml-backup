@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmi:id="_lrOqwMwpEeSqLp1EdST_nQ" type="Coordination Protocol" name="Driving.coordinationprotocol_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_lrPR0MwpEeSqLp1EdST_nQ" type="2005" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_lrPR0swpEeSqLp1EdST_nQ" type="7005"/>
+    <element xmi:type="protocol:CoordinationProtocol" href="../de.fraunhofer.ipt.demonstrator.models2015.fujaba#_jZxF0MwmEeSqLp1EdST_nQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lrPR0cwpEeSqLp1EdST_nQ"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_lrOqwcwpEeSqLp1EdST_nQ"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../de.fraunhofer.ipt.demonstrator.models2015.fujaba#_P_fLKsvpEeSqLp1EdST_nQ"/>
+</notation:Diagram>

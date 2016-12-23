@@ -1,0 +1,70 @@
+import Util;
+import VariableHelper;
+import Sort;
+import TupleAccessor;
+
+modeltype allocationSpecification uses cs('http://www.muml.org/psm/allocation/language/cs/1.0.0');
+modeltype core uses core('http://www.muml.org/core/1.0.0');
+modeltype expressions uses core::expressions('http://www.muml.org/core/expressions/1.0.0');
+modeltype common uses core::expressions::common('http://www.muml.org/core/expressions/common/1.0.0');
+modeltype ilptype uses ilp('http://www.muml.org/psm/allocation/ilp/1.0.0');
+modeltype values uses values('http://www.eclipse.org/ocl/2015/Values');
+
+library Expressions;
+
+constructor LiteralExpression::LiteralExpression(value : String) {
+	result.value := value;
+}
+
+constructor VariableExpression::VariableExpression(variable : Variable) {
+	result.variable := variable;
+}
+
+constructor ArithmeticExpression::ArithmeticExpression(lhs : Expression, rhs : Expression,
+	operator : ArithmeticOperator) {
+	leftExpression := lhs;
+	rightExpression := rhs;
+	result.operator := operator;
+}
+
+constructor ConstraintExpression::ConstraintExpression(lhs : Expression, rhs : Expression,
+	operator : ComparingOperator, comment : String) {
+	leftExpression := lhs;
+	rightExpression := rhs;
+	result.operator := operator;
+	if (not comment.oclIsUndefined()) then {
+		result.comment := comment;
+	} endif;
+}
+
+helper Sequence(Sequence(NamedElement))::createAdditionConstraintExpression(lit : String, comment : String)
+	: ConstraintExpression {
+	var lhs : Expression := null;
+	self->reverse()->forEach(seq) {
+		var variableExpression : VariableExpression := new VariableExpression(seq->getVariable()); 
+		if (lhs.oclIsUndefined()) then
+			lhs := variableExpression
+		else
+			lhs := new ArithmeticExpression(variableExpression, lhs, ArithmeticOperator::PLUS)
+		endif;
+	};
+	return new ConstraintExpression(lhs, new LiteralExpression(lit),
+		ComparingOperator::EQUAL, comment);
+}
+
+helper Sequence(TupleValue)::createWeightingComponentResourceTuplesAdditionExpression(elementCS : WeightingComponentResourceTupleElementCS, expression : Expression) : Expression {
+	var expr : Expression := expression;
+	self->asOrderedSet()->reverse()->collect(oclAsType(TupleValue))->forEach(tv) {
+		var tmp : Expression := new ArithmeticExpression(
+			new LiteralExpression(tv.getWeighting(elementCS)), // getWeighting is imported via the Sort lib
+			new VariableExpression(tv.toSequence()->sortComponentResourceSequence()->getVariable()),
+			ArithmeticOperator::TIMES
+		);
+		if (expr.oclIsUndefined()) then
+			expr := tmp
+		else
+			expr := new ArithmeticExpression(tmp, expr, ArithmeticOperator::PLUS)
+		endif;
+	};
+	return expr;
+}

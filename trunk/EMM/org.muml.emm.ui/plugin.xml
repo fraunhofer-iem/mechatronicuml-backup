@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+ 
+   <extension point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="org.muml.emm.ui.MigrateHandler"
+            id="emf.migrator.ui.migrate"
+            name="Migrate">
+      </command>
+        <command
+            defaultHandler="org.muml.emm.ui.CreateMigrationHandler"
+            id="emf.migrator.ui.create"
+            name="Create Migration">
+      </command>
+   </extension>
+ 
+  <extension point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+         <command
+               commandId="emf.migrator.ui.migrate"
+               label="Migrate"
+               style="push">
+            <visibleWhen>
+               <and>
+                  <with variable="selection">
+                     <iterate ifEmpty="false" operator="and">
+                        <adapt type="org.eclipse.core.resources.IFile"/>
+                     </iterate>
+                  </with>
+               </and>
+            </visibleWhen>
+         </command>
+         <command
+               commandId="emf.migrator.ui.create"
+               label="Create Migration"
+               style="push">
+             <visibleWhen>
+               <and>
+                  <with variable="selection">
+                     <iterate ifEmpty="false" operator="and">
+                        <adapt type="org.eclipse.core.resources.IFile">
+                           <test
+                              property="org.eclipse.core.resources.name"
+                              value="*.ecore" />
+                        </adapt>
+                     </iterate>
+                  </with>
+               </and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>  
+
+</plugin>

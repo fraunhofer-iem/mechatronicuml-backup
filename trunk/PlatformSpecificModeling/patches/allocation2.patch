@@ -1,0 +1,26 @@
+### Eclipse Workspace Patch 1.0
+#P de.uni_paderborn.fujaba.muml.allocation.language
+Index: META-INF/MANIFEST.MF
+===================================================================
+--- de.uni_paderborn.fujaba.muml.allocation.language/META-INF/MANIFEST.MF	(revision 15189)
++++ de.uni_paderborn.fujaba.muml.allocation.language/META-INF/MANIFEST.MF	(working copy)
+@@ -22,5 +22,5 @@
+  de.uni_paderborn.fujaba.muml;bundle-version="0.4.0",
+  de.uni_paderborn.fujaba.muml.hardware;bundle-version="1.0.0",
+  org.eclipse.jdt.annotation;bundle-version="[1.1.0,2.0.0)",
+- org.eclipse.ocl.xtext.completeocl;bundle-version="1.0.100"
++ org.eclipse.ocl.xtext.completeocl;bundle-version="1.0.0"
+ Bundle-ActivationPolicy: lazy
+#P de.uni_paderborn.fujaba.muml.allocation.ilp.lpsolve.xtext
+Index: META-INF/MANIFEST.MF
+===================================================================
+--- de.uni_paderborn.fujaba.muml.allocation.ilp.lpsolve.xtext/META-INF/MANIFEST.MF	(revision 15193)
++++ de.uni_paderborn.fujaba.muml.allocation.ilp.lpsolve.xtext/META-INF/MANIFEST.MF	(working copy)
+@@ -17,7 +17,6 @@
+  org.eclipse.xtext.util,
+  org.antlr.runtime,
+  org.eclipse.xtext.common.types,
+- org.eclipse.ocl.examples.build;bundle-version="3.4.1",
+  org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional,
+  de.uni_paderborn.fujaba.common;bundle-version="0.4.0"
+ Import-Package: org.apache.log4j,

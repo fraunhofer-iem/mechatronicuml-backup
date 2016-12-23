@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.muml:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.muml="http://www.muml.org/ape/1.0.0" xmi:id="_RlJJ8M1gEeSIgPDefa6ZBw" defaultTab="_RlJxAs1gEeSIgPDefa6ZBw" contributorId="org.muml.pim.component.diagram">
+  <reconciler xmi:id="_RlJxAM1gEeSIgPDefa6ZBw" enabled="false"/>
+  <genModel href="dependencylanguage.genmodel#/"/>
+  <plugin xmi:id="_RlJxAc1gEeSIgPDefa6ZBw" id="org.muml.cbs.dependencylanguage.edit.properties" name="Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.5.0.qualifier">
+    <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
+    <requiredBundles>org.eclipse.core.runtime</requiredBundles>
+    <requiredBundles>org.muml.ape.runtime</requiredBundles>
+    <requiredBundles>org.muml.ape</requiredBundles>
+    <requiredBundles>org.muml.cbs.dependencylanguage</requiredBundles>
+    <requiredBundles>org.muml.cbs.dependencylanguage.edit</requiredBundles>
+    <requiredBundles>org.muml.cbs.dependencylanguage.xtext.ui</requiredBundles>
+    <requiredBundles>org.eclipse.emf.edit</requiredBundles>
+    <requiredBundles>org.eclipse.ui</requiredBundles>
+  </plugin>
+  <tabs xmi:id="_RlJxAs1gEeSIgPDefa6ZBw" id="org.muml.dependencylanguage" name="Dependencies"/>
+  <packages xmi:id="_RlJxA81gEeSIgPDefa6ZBw">
+    <genPackage href="dependencylanguage.genmodel#//dependencylanguage"/>
+    <classes xmi:id="_RlJxBM1gEeSIgPDefa6ZBw">
+      <genClass href="dependencylanguage.genmodel#//dependencylanguage/SynthesizableBehavior"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RlJxBc1gEeSIgPDefa6ZBw" tab="_RlJxAs1gEeSIgPDefa6ZBw">
+        <genFeature href="dependencylanguage.genmodel#//dependencylanguage/SynthesizableBehavior/dependencyModel"/>
+        <editor xsi:type="org.muml:CustomPropertyEditor" xmi:id="_RlKYEM1gEeSIgPDefa6ZBw" fullyQualifiedClassName="org.muml.cbs.dependencylanguage.xtext.ui.properties.DependencyModelLanguageXtextPropertyEditor"/>
+      </orderedElements>
+    </classes>
+  </packages>
+</org.muml:PropertyGenerator>

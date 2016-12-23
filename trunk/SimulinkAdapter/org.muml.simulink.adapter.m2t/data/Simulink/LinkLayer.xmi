@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="ASCII"?>
+<model:SimulinkContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://www.muml.org/simulink/1.0.0" id="_gV2ugZwsEeGj2OBn6uxsbg">
+  <libraries id="_gYyGsJwsEeGj2OBn6uxsbg" name="LinkLayer">
+    <blocks xsi:type="model:SubSystem" id="_gfi2AJwsEeGj2OBn6uxsbg" name="Link Layer">
+      <parameters name="System.Location" value="[1284, 164, 2556, 887]"/>
+      <parameters name="Position" value="[35, 36, 310, 444]"/>
+      <outPorts id="_gfrY4ZwsEeGj2OBn6uxsbg" name="port_out" incomingLines="_gjI8kZwsEeGj2OBn6uxsbg" dimensions="-1">
+        <parameters name="Position" value="[960, 143, 990, 157]"/>
+        <inPorts id="_gfw4cJwsEeGj2OBn6uxsbg" name="In1"/>
+      </outPorts>
+      <outPorts id="_gfqx0JwsEeGj2OBn6uxsbg" name="write_event_queue_in" incomingLines="_gjJjoJwsEeGj2OBn6uxsbg" dimensions="-1">
+        <parameters name="Position" value="[1245, 543, 1275, 557]"/>
+        <inPorts id="_gfrY4JwsEeGj2OBn6uxsbg" name="In1"/>
+      </outPorts>
+      <outPorts id="_gfnugJwsEeGj2OBn6uxsbg" name="write_event_param_queue_in" incomingLines="_gi9WYZwsEeGj2OBn6uxsbg" dimensions="-1">
+        <parameters name="Position" value="[1245, 623, 1275, 637]"/>
+        <inPorts id="_gfqKwJwsEeGj2OBn6uxsbg" name="In1"/>
+      </outPorts>
+      <outPorts id="_gfyGkZwsEeGj2OBn6uxsbg" name="write_event_queue_out" incomingLines="_gjHucJwsEeGj2OBn6uxsbg" dimensions="-1">
+        <parameters name="Position" value="[495, 693, 525, 707]"/>
+        <inPorts id="_gfzUsJwsEeGj2OBn6uxsbg" name="In1"/>
+      </outPorts>
+      <outPorts id="_gfw4cZwsEeGj2OBn6uxsbg" name="write_event_param_queue_out" incomingLines="_gjKKsZwsEeGj2OBn6uxsbg" dimensions="-1">
+        <parameters name="Position" value="[495, 748, 525, 762]"/>
+        <inPorts id="_gfyGkJwsEeGj2OBn6uxsbg" name="In1"/>
+      </outPorts>
+      <inPorts id="_gf40QZwsEeGj2OBn6uxsbg" name="port_in" outgoingLines="_giy-UJwsEeGj2OBn6uxsbg" dimensions="-1">
+        <parameters name="Position" value="[55, 148, 85, 162]"/>
+        <outPorts id="_gf6pcJwsEeGj2OBn6uxsbg" name="Out1"/>
+      </inPorts>
+      <inPorts id="_gf3mIZwsEeGj2OBn6uxsbg" name="net_address" outgoingLines="_gjIVgZwsEeGj2OBn6uxsbg" dimensions="-1" type="uint8">
+        <parameters name="Position" value="[235, 263, 265, 277]"/>
+        <outPorts id="_gf40QJwsEeGj2OBn6uxsbg" name="Out1"/>
+      </inPorts>
+      <inPorts id="_gf1J4JwsEeGj2OBn6uxsbg" name="receiver_net_address" outgoingLines="_giwiEJwsEeGj2OBn6uxsbg" dimensions="-1" type="uint8">
+        <parameters name="Position" value="[235, 298, 265, 312]"/>
+        <outPorts id="_gf3mIJwsEeGj2OBn6uxsbg" name="Out1"/>
+      </inPorts>
+      <inPorts id="_ggAJAZwsEeGj2OBn6uxsbg" name="read_event_queue_in" outgoingLines="_gi99cJwsEeGj2OBn6uxsbg" dimensions="-1">
+        <parameters name="Position" value="[780, 673, 810, 687]"/>
+        <outPorts id="_ggClQJwsEeGj2OBn6uxsbg" name="Out1"/>
+      </inPorts>
+      <inPorts id="_gf8eoZwsEeGj2OBn6uxsbg" name="read_event_param_queue_in" outgoingLines="_giv7AJwsEeGj2OBn6uxsbg" dimensions="-1">
+        <parameters name="Position" value="[780, 723, 810, 737]"/>
+        <outPorts id="_ggAJAJwsEeGj2OBn6uxsbg" name="Out1"/>
+      </inPorts>
+      <inPorts id="_gf73kZwsEeGj2OBn6uxsbg" name="read_event_queue_out" outgoingLines="_gixJIZwsEeGj2OBn6uxsbg" dimensions="-1">
+        <parameters name="Position" value="[55, 638, 85, 652]"/>
+        <outPorts id="_gf8eoJwsEeGj2OBn6uxsbg" name="Out1"/>
+      </inPorts>
+      <inPorts id="_gf6pcZwsEeGj2OBn6uxsbg" name="read_event_param_queue_out" outgoingLines="_gi8vUJwsEeGj2OBn6uxsbg" dimensions="-1">
+        <parameters name="Position" value="[55, 728, 85, 742]"/>
+        <outPorts id="_gf73kJwsEeGj2OBn6uxsbg" name="Out1"/>
+      </inPorts>
+      <lines id="_gisQoJwsEeGj2OBn6uxsbg" sourcePort="_ggM9UJwsEeGj2OBn6uxsbg" targetPort="_giKsMJwsEeGj2OBn6uxsbg" sourceBlock="_ggLIIpwsEeGj2OBn6uxsbg" targetBlock="_giJeE5wsEeGj2OBn6uxsbg"/>
+      <lines id="_gis3sJwsEeGj2OBn6uxsbg" sourcePort="_ggiUgZwsEeGj2OBn6uxsbg" targetPort="_giTPEZwsEeGj2OBn6uxsbg" sourceBlock="_ggLIIpwsEeGj2OBn6uxsbg" targetBlock="_giPksZwsEeGj2OBn6uxsbg"/>
+      <lines id="_gis3sZwsEeGj2OBn6uxsbg" sourcePort="_gijtwJwsEeGj2OBn6uxsbg" targetPort="_ggKhEJwsEeGj2OBn6uxsbg" sourceBlock="_giZVsJwsEeGj2OBn6uxsbg" targetBlock="_ggJ6AJwsEeGj2OBn6uxsbg"/>
+      <lines id="_gitewJwsEeGj2OBn6uxsbg" sourcePort="_ggWuUZwsEeGj2OBn6uxsbg" targetPort="_giT2IZwsEeGj2OBn6uxsbg" sourceBlock="_ggLIIpwsEeGj2OBn6uxsbg" targetBlock="_giPksZwsEeGj2OBn6uxsbg"/>
+      <lines id="_givT8JwsEeGj2OBn6uxsbg" sourcePort="_ggHdwZwsEeGj2OBn6uxsbg" targetPort="_gguhwJwsEeGj2OBn6uxsbg" sourceBlock="_ggG2sJwsEeGj2OBn6uxsbg" targetBlock="_ggLIIpwsEeGj2OBn6uxsbg"/>
+      <lines id="_giv7AJwsEeGj2OBn6uxsbg" sourcePort="_ggAJAJwsEeGj2OBn6uxsbg" targetPort="_giUdMZwsEeGj2OBn6uxsbg" sourceBlock="_gf8eoZwsEeGj2OBn6uxsbg" targetBlock="_giPksZwsEeGj2OBn6uxsbg"/>
+      <lines id="_giv7AZwsEeGj2OBn6uxsbg" sourcePort="_giW5cJwsEeGj2OBn6uxsbg" targetPort="_giPksJwsEeGj2OBn6uxsbg" sourceBlock="_giPksZwsEeGj2OBn6uxsbg" targetBlock="_giOWkJwsEeGj2OBn6uxsbg"/>
+      <lines id="_giwiEJwsEeGj2OBn6uxsbg" sourcePort="_gf3mIJwsEeGj2OBn6uxsbg" targetPort="_gg8kMZwsEeGj2OBn6uxsbg" sourceBlock="_gf1J4JwsEeGj2OBn6uxsbg" targetBlock="_ggLIIpwsEeGj2OBn6uxsbg"/>
+      <lines id="_gixJIJwsEeGj2OBn6uxsbg" sourcePort="_giXggZwsEeGj2OBn6uxsbg" targetPort="_giMhYJwsEeGj2OBn6uxsbg" sourceBlock="_giPksZwsEeGj2OBn6uxsbg" targetBlock="_giL6UZwsEeGj2OBn6uxsbg"/>
+      <lines id="_gixJIZwsEeGj2OBn6uxsbg" sourcePort="_gf8eoJwsEeGj2OBn6uxsbg" targetPort="_gih4kZwsEeGj2OBn6uxsbg" sourceBlock="_gf73kZwsEeGj2OBn6uxsbg" targetBlock="_giZVsJwsEeGj2OBn6uxsbg"/>
+      <lines id="_gixwMJwsEeGj2OBn6uxsbg" sourcePort="_gghGYJwsEeGj2OBn6uxsbg" targetPort="_giSoAJwsEeGj2OBn6uxsbg" sourceBlock="_ggLIIpwsEeGj2OBn6uxsbg" targetBlock="_giPksZwsEeGj2OBn6uxsbg"/>
+      <lines id="_gixwMZwsEeGj2OBn6uxsbg" sourcePort="_gikU0ZwsEeGj2OBn6uxsbg" targetPort="_ggyzMZwsEeGj2OBn6uxsbg" sourceBlock="_giZVsJwsEeGj2OBn6uxsbg" targetBlock="_ggLIIpwsEeGj2OBn6uxsbg"/>
+      <lines id="_giyXQJwsEeGj2OBn6uxsbg" sourcePort="_ggHdwpwsEeGj2OBn6uxsbg" targetPort="_ggxlEZwsEeGj2OBn6uxsbg" sourceBlock="_ggG2sJwsEeGj2OBn6uxsbg" targetBlock="_ggLIIpwsEeGj2OBn6uxsbg"/>
+      <lines id="_giy-UJwsEeGj2OBn6uxsbg" sourcePort="_gf6pcJwsEeGj2OBn6uxsbg" targetPort="_ggHdwJwsEeGj2OBn6uxsbg" sourceBlock="_gf40QZwsEeGj2OBn6uxsbg" targetBlock="_ggG2sJwsEeGj2OBn6uxsbg" bus="_gi8IQJwsEeGj2OBn6uxsbg"/>
+      <lines id="_gi8vUJwsEeGj2OBn6uxsbg" sourcePort="_gf73kJwsEeGj2OBn6uxsbg" targetPort="_gihRgJwsEeGj2OBn6uxsbg" sourceBlock="_gf6pcZwsEeGj2OBn6uxsbg" targetBlock="_giZVsJwsEeGj2OBn6uxsbg"/>
+      <lines id="_gi8vUZwsEeGj2OBn6uxsbg" sourcePort="_giqbcZwsEeGj2OBn6uxsbg" targetPort="_ggLIIJwsEeGj2OBn6uxsbg" sourceBlock="_giZVsJwsEeGj2OBn6uxsbg" targetBlock="_ggKhEpwsEeGj2OBn6uxsbg"/>
+      <lines id="_gi9WYJwsEeGj2OBn6uxsbg" sourcePort="_ggHdxZwsEeGj2OBn6uxsbg" targetPort="_gg3rsZwsEeGj2OBn6uxsbg" sourceBlock="_ggG2sJwsEeGj2OBn6uxsbg" targetBlock="_ggLIIpwsEeGj2OBn6uxsbg"/>
+      <lines id="_gi9WYZwsEeGj2OBn6uxsbg" sourcePort="_giMhYZwsEeGj2OBn6uxsbg" targetPort="_gfqKwJwsEeGj2OBn6uxsbg" sourceBlock="_giL6UZwsEeGj2OBn6uxsbg" targetBlock="_gfnugJwsEeGj2OBn6uxsbg"/>
+      <lines id="_gi99cJwsEeGj2OBn6uxsbg" sourcePort="_ggClQJwsEeGj2OBn6uxsbg" targetPort="_giVEQZwsEeGj2OBn6uxsbg" sourceBlock="_ggAJAZwsEeGj2OBn6uxsbg" targetBlock="_giPksZwsEeGj2OBn6uxsbg"/>
+      <lines id="_gi99cZwsEeGj2OBn6uxsbg" sourcePort="_ggHdxpwsEeGj2OBn6uxsbg" targetPort="_gg450ZwsEeGj2OBn6uxsbg" sourceBlock="_ggG2sJwsEeGj2OBn6uxsbg" targetBlock="_ggLIIpwsEeGj2OBn6uxsbg"/>
+      <lines id="_gi-kgJwsEeGj2OBn6uxsbg" sourcePort="_ggOLcZwsEeGj2OBn6uxsbg" targetPort="_giKsMZwsEeGj2OBn6uxsbg" sourceBlock="_ggLIIpwsEeGj2OBn6uxsbg" targetBlock="_giJeE5wsEeGj2OBn6uxsbg"/>
+      <lines id="_gi-kgZwsEeGj2OBn6uxsbg" sourcePort="_ggHdxJwsEeGj2OBn6uxsbg" targetPort="_gg2dkZwsEeGj2OBn6uxsbg" sourceBlock="_ggG2sJwsEeGj2OBn6uxsbg" targetBlock="_ggLIIpwsEeGj2OBn6uxsbg"/>
+      <lines id="_gi_LkJwsEeGj2OBn6uxsbg" sourcePort="_giYHkZwsEeGj2OBn6uxsbg" targetPort="_giJeEZwsEeGj2OBn6uxsbg" sourceBlock="_giPksZwsEeGj2OBn6uxsbg" targetBlock="_giJeEJwsEeGj2OBn6uxsbg"/>
+      <lines id="_gjC18JwsEeGj2OBn6uxsbg" sourcePort="_ggHdxJwsEeGj2OBn6uxsbg" targetPort="_giifoZwsEeGj2OBn6uxsbg" sourceBlock="_ggG2sJwsEeGj2OBn6uxsbg" targetBlock="_giZVsJwsEeGj2OBn6uxsbg"/>
+      <lines id="_gjDdAJwsEeGj2OBn6uxsbg" sourcePort="_ggX8cZwsEeGj2OBn6uxsbg" targetPort="_giKsM5wsEeGj2OBn6uxsbg" sourceBlock="_ggLIIpwsEeGj2OBn6uxsbg" targetBlock="_giJeE5wsEeGj2OBn6uxsbg"/>
+      <lines id="_gjHucJwsEeGj2OBn6uxsbg" sourcePort="_ggKhEZwsEeGj2OBn6uxsbg" targetPort="_gfzUsJwsEeGj2OBn6uxsbg" sourceBlock="_ggJ6AJwsEeGj2OBn6uxsbg" targetBlock="_gfyGkZwsEeGj2OBn6uxsbg"/>
+      <lines id="_gjHucZwsEeGj2OBn6uxsbg" sourcePort="_ggWHQZwsEeGj2OBn6uxsbg" targetPort="_giKsMpwsEeGj2OBn6uxsbg" sourceBlock="_ggLIIpwsEeGj2OBn6uxsbg" targetBlock="_giJeE5wsEeGj2OBn6uxsbg"/>
+      <lines id="_gjIVgJwsEeGj2OBn6uxsbg" sourcePort="_ggZKkZwsEeGj2OBn6uxsbg" targetPort="_giKsNJwsEeGj2OBn6uxsbg" sourceBlock="_ggLIIpwsEeGj2OBn6uxsbg" targetBlock="_giJeE5wsEeGj2OBn6uxsbg"/>
+      <lines id="_gjIVgZwsEeGj2OBn6uxsbg" sourcePort="_gf40QJwsEeGj2OBn6uxsbg" targetPort="_gg0oYZwsEeGj2OBn6uxsbg" sourceBlock="_gf3mIZwsEeGj2OBn6uxsbg" targetBlock="_ggLIIpwsEeGj2OBn6uxsbg"/>
+      <lines id="_gjI8kJwsEeGj2OBn6uxsbg" sourcePort="_gik74ZwsEeGj2OBn6uxsbg" targetPort="_gg6H8ZwsEeGj2OBn6uxsbg" sourceBlock="_giZVsJwsEeGj2OBn6uxsbg" targetBlock="_ggLIIpwsEeGj2OBn6uxsbg"/>
+      <lines id="_gjI8kZwsEeGj2OBn6uxsbg" sourcePort="_giL6UJwsEeGj2OBn6uxsbg" targetPort="_gfw4cJwsEeGj2OBn6uxsbg" sourceBlock="_giJeE5wsEeGj2OBn6uxsbg" targetBlock="_gfrY4ZwsEeGj2OBn6uxsbg" bus="_gi8IQJwsEeGj2OBn6uxsbg"/>
+      <lines id="_gjJjoJwsEeGj2OBn6uxsbg" sourcePort="_giJeEpwsEeGj2OBn6uxsbg" targetPort="_gfrY4JwsEeGj2OBn6uxsbg" sourceBlock="_giJeEJwsEeGj2OBn6uxsbg" targetBlock="_gfqx0JwsEeGj2OBn6uxsbg"/>
+      <lines id="_gjKKsJwsEeGj2OBn6uxsbg" sourcePort="_ggHdw5wsEeGj2OBn6uxsbg" targetPort="_ggzaQZwsEeGj2OBn6uxsbg" sourceBlock="_ggG2sJwsEeGj2OBn6uxsbg" targetBlock="_ggLIIpwsEeGj2OBn6uxsbg"/>
+      <lines id="_gjKKsZwsEeGj2OBn6uxsbg" sourcePort="_ggLIIZwsEeGj2OBn6uxsbg" targetPort="_gfyGkJwsEeGj2OBn6uxsbg" sourceBlock="_ggKhEpwsEeGj2OBn6uxsbg" targetBlock="_gfw4cZwsEeGj2OBn6uxsbg"/>
+      <lines id="_gjKxwJwsEeGj2OBn6uxsbg" sourcePort="_ggfRMZwsEeGj2OBn6uxsbg" targetPort="_giKsNZwsEeGj2OBn6uxsbg" sourceBlock="_ggLIIpwsEeGj2OBn6uxsbg" targetBlock="_giJeE5wsEeGj2OBn6uxsbg"/>
+      <blocks xsi:type="model:BusSelector" id="_ggG2sJwsEeGj2OBn6uxsbg" name="Bus\nSelector" incomingLines="_giy-UJwsEeGj2OBn6uxsbg" outgoingLines="_givT8JwsEeGj2OBn6uxsbg _giyXQJwsEeGj2OBn6uxsbg _gi9WYJwsEeGj2OBn6uxsbg _gi99cZwsEeGj2OBn6uxsbg _gi-kgZwsEeGj2OBn6uxsbg _gjC18JwsEeGj2OBn6uxsbg _gjKKsJwsEeGj2OBn6uxsbg">
+        <parameters name="Position" value="[160, 35, 165, 260]"/>
+        <outPorts id="_ggHdw5wsEeGj2OBn6uxsbg" name="from"/>
+        <outPorts id="_ggHdwpwsEeGj2OBn6uxsbg" name="to"/>
+        <outPorts id="_ggHdwZwsEeGj2OBn6uxsbg" name="msg"/>
+        <outPorts id="_ggHdxpwsEeGj2OBn6uxsbg" name="param"/>
+        <outPorts id="_ggHdxZwsEeGj2OBn6uxsbg" name="pkgid"/>
+        <outPorts id="_ggHdxJwsEeGj2OBn6uxsbg" name="time"/>
+        <inPorts id="_ggHdwJwsEeGj2OBn6uxsbg"/>
+      </blocks>
+      <blocks xsi:type="model:UnitDelay" id="_ggJ6AJwsEeGj2OBn6uxsbg" name="Unit Delay1" incomingLines="_gis3sZwsEeGj2OBn6uxsbg" outgoingLines="_gjHucJwsEeGj2OBn6uxsbg">
+        <parameters name="Position" value="[405, 683, 440, 717]"/>
+        <outPorts id="_ggKhEZwsEeGj2OBn6uxsbg"/>
+        <inPorts id="_ggKhEJwsEeGj2OBn6uxsbg"/>
+      </blocks>
+      <blocks xsi:type="model:UnitDelay" id="_ggKhEpwsEeGj2OBn6uxsbg" name="Unit Delay2" incomingLines="_gi8vUZwsEeGj2OBn6uxsbg" outgoingLines="_gjKKsZwsEeGj2OBn6uxsbg">
+        <parameters name="Position" value="[410, 738, 445, 772]"/>
+        <outPorts id="_ggLIIZwsEeGj2OBn6uxsbg"/>
+        <inPorts id="_ggLIIJwsEeGj2OBn6uxsbg"/>
+      </blocks>
+      <blocks xsi:type="model:SubSystem" id="_ggLIIpwsEeGj2OBn6uxsbg" name="DataLinkLayer" incomingLines="_givT8JwsEeGj2OBn6uxsbg _giwiEJwsEeGj2OBn6uxsbg _gixwMZwsEeGj2OBn6uxsbg _giyXQJwsEeGj2OBn6uxsbg _gi9WYJwsEeGj2OBn6uxsbg _gi99cZwsEeGj2OBn6uxsbg _gi-kgZwsEeGj2OBn6uxsbg _gjIVgZwsEeGj2OBn6uxsbg _gjI8kJwsEeGj2OBn6uxsbg _gjKKsJwsEeGj2OBn6uxsbg" outgoingLines="_gisQoJwsEeGj2OBn6uxsbg _gis3sJwsEeGj2OBn6uxsbg _gitewJwsEeGj2OBn6uxsbg _gixwMJwsEeGj2OBn6uxsbg _gi-kgJwsEeGj2OBn6uxsbg _gjDdAJwsEeGj2OBn6uxsbg _gjHucZwsEeGj2OBn6uxsbg _gjIVgJwsEeGj2OBn6uxsbg _gjKxwJwsEeGj2OBn6uxsbg">
+        <parameters name="System.Location" value="[1284, 50, 2556, 995]"/>
+        <parameters name="Position" value="[470, 33, 615, 402]"/>
+        <outPorts id="_ggWHQZwsEeGj2OBn6uxsbg" name="snd_from_out" incomingLines="_giIP8JwsEeGj2OBn6uxsbg" dimensions="-1" type="uint8">
+          <parameters name="Position" value="[655, 48, 685, 62]"/>
+          <inPorts id="_ggWuUJwsEeGj2OBn6uxsbg" name="In1"/>
+        </outPorts>
+        <outPorts id="_ggOLcZwsEeGj2OBn6uxsbg" name="snd_to_out" incomingLines="_giHB0JwsEeGj2OBn6uxsbg" dimensions="-1" type="uint8">
+          <parameters name="Position" value="[655, 83, 685, 97]"/>
+          <inPorts id="_ggU5IJwsEeGj2OBn6uxsbg" name="In1"/>
+        </outPorts>
+        <outPorts id="_ggM9UJwsEeGj2OBn6uxsbg" name="snd_msg_out" incomingLines="_giCJUZwsEeGj2OBn6uxsbg" dimensions="-1" type="uint16">
+          <parameters name="Position" value="[655, 118, 685, 132]"/>
+          <inPorts id="_ggOLcJwsEeGj2OBn6uxsbg" name="In1"/>
+        </outPorts>
+        <outPorts id="_ggfRMZwsEeGj2OBn6uxsbg" name="snd_param_out" incomingLines="_giHo4ZwsEeGj2OBn6uxsbg" dimensions="-1" type="double">
+          <parameters name="Position" value="[655, 153, 685, 167]"/>
+          <inPorts id="_gggfUJwsEeGj2OBn6uxsbg" name="In1"/>
+        </outPorts>
+        <outPorts id="_ggZKkZwsEeGj2OBn6uxsbg" name="snd_pkgid_out" incomingLines="_gh_tEJwsEeGj2OBn6uxsbg" dimensions="-1" type="uint32">
+          <parameters name="Position" value="[655, 188, 685, 202]"/>
+          <inPorts id="_ggfRMJwsEeGj2OBn6uxsbg" name="In1"/>
+        </outPorts>
+        <outPorts id="_ggX8cZwsEeGj2OBn6uxsbg" name="snd_time_out" incomingLines="_giCwYJwsEeGj2OBn6uxsbg" dimensions="-1" type="double">
+          <parameters name="Position" value="[655, 328, 685, 342]"/>
+          <inPorts id="_ggZKkJwsEeGj2OBn6uxsbg" name="In1"/>
+        </outPorts>
+        <outPorts id="_ggWuUZwsEeGj2OBn6uxsbg" name="recv_from_out" incomingLines="_giFMoJwsEeGj2OBn6uxsbg" dimensions="-1" type="uint8">
+          <parameters name="Position" value="[655, 223, 685, 237]"/>
+          <inPorts id="_ggX8cJwsEeGj2OBn6uxsbg" name="In1"/>
+        </outPorts>
+        <outPorts id="_ggiUgZwsEeGj2OBn6uxsbg" name="recv_msg_out" incomingLines="_giA7MJwsEeGj2OBn6uxsbg" dimensions="-1" type="uint16">
+          <parameters name="Position" value="[655, 258, 685, 272]"/>
+          <inPorts id="_ggjioJwsEeGj2OBn6uxsbg" name="In1"/>
+        </outPorts>
+        <outPorts id="_gghGYJwsEeGj2OBn6uxsbg" name="recv_param_out" incomingLines="_gh_GAJwsEeGj2OBn6uxsbg" dimensions="-1" type="double">
+          <parameters name="Position" value="[655, 293, 685, 307]"/>
+          <inPorts id="_ggiUgJwsEeGj2OBn6uxsbg" name="In1"/>
+        </outPorts>
+        <outPorts id="_ggU5IZwsEeGj2OBn6uxsbg" name="debug" incomingLines="_giI3AJwsEeGj2OBn6uxsbg" dimensions="-1">
+          <parameters name="Position" value="[770, 398, 800, 412]"/>
+          <inPorts id="_ggWHQJwsEeGj2OBn6uxsbg" name="In1"/>
+        </outPorts>
+        <inPorts id="_ggzaQZwsEeGj2OBn6uxsbg" name="recv_from_in" outgoingLines="_giDXcJwsEeGj2OBn6uxsbg" dimensions="-1" type="uint8">
+          <parameters name="Position" value="[300, 208, 330, 222]"/>
+          <outPorts id="_gg0oYJwsEeGj2OBn6uxsbg" name="Out1"/>
+        </inPorts>
+        <inPorts id="_ggxlEZwsEeGj2OBn6uxsbg" name="recv_to_in" outgoingLines="_gh_GAZwsEeGj2OBn6uxsbg" dimensions="-1" type="uint8">
+          <parameters name="Position" value="[300, 243, 330, 257]"/>
+          <outPorts id="_ggyzMJwsEeGj2OBn6uxsbg" name="Out1"/>
+        </inPorts>
+        <inPorts id="_gguhwJwsEeGj2OBn6uxsbg" name="recv_msg_in" outgoingLines="_giHo4JwsEeGj2OBn6uxsbg" dimensions="-1" type="uint16">
+          <parameters name="Position" value="[300, 278, 330, 292]"/>
+          <outPorts id="_ggxlEJwsEeGj2OBn6uxsbg" name="Out1"/>
+        </inPorts>
+        <inPorts id="_gg450ZwsEeGj2OBn6uxsbg" name="recv_param_in" outgoingLines="_giFMoZwsEeGj2OBn6uxsbg" dimensions="-1" type="double">
+          <parameters name="Position" value="[300, 313, 330, 327]"/>
+          <outPorts id="_gg6H8JwsEeGj2OBn6uxsbg" name="Out1"/>
+        </inPorts>
+        <inPorts id="_gg3rsZwsEeGj2OBn6uxsbg" name="recv_pkgid_in" outgoingLines="_giA7MZwsEeGj2OBn6uxsbg" dimensions="-1" type="uint32">
+          <parameters name="Position" value="[300, 348, 330, 362]"/>
+          <outPorts id="_gg450JwsEeGj2OBn6uxsbg" name="Out1"/>
+        </inPorts>
+        <inPorts id="_gg2dkZwsEeGj2OBn6uxsbg" name="recv_time_in" outgoingLines="_giDXcZwsEeGj2OBn6uxsbg" dimensions="-1" type="double">
+          <parameters name="Position" value="[300, 383, 330, 397]"/>
+          <outPorts id="_gg3rsJwsEeGj2OBn6uxsbg" name="Out1"/>
+        </inPorts>
+        <inPorts id="_gg0oYZwsEeGj2OBn6uxsbg" name="snd_from_in" outgoingLines="_giAUIJwsEeGj2OBn6uxsbg" dimensions="-1" type="uint8">
+          <parameters name="Position" value="[300, 68, 330, 82]"/>
+          <outPorts id="_gg2dkJwsEeGj2OBn6uxsbg" name="Out1"/>
+        </inPorts>
+        <inPorts id="_gg8kMZwsEeGj2OBn6uxsbg" name="snd_to_in" outgoingLines="_giD-gJwsEeGj2OBn6uxsbg" dimensions="-1" type="uint8">
+          <parameters name="Position" value="[300, 103, 330, 117]"/>
+          <outPorts id="_gg9yUJwsEeGj2OBn6uxsbg" name="Out1"/>
+        </inPorts>
+        <inPorts id="_gg6H8ZwsEeGj2OBn6uxsbg" name="snd_msg_in" outgoingLines="_giBiQJwsEeGj2OBn6uxsbg" dimensions="-1" type="uint16">
+          <parameters name="Position" value="[300, 138, 330, 152]"/>
+          <outPorts id="_gg8kMJwsEeGj2OBn6uxsbg" name="Out1"/>
+        </inPorts>
+        <inPorts id="_ggyzMZwsEeGj2OBn6uxsbg" name="snd_param_in" outgoingLines="_giElkJwsEeGj2OBn6uxsbg" dimensions="-1" type="double">
+          <parameters name="Position" value="[300, 173, 330, 187]"/>
+          <outPorts id="_ggzaQJwsEeGj2OBn6uxsbg" name="Out1"/>
+        </inPorts>
+        <lines id="_ghldYJwsEeGj2OBn6uxsbg" sourcePort="_ghaeQZwsEeGj2OBn6uxsbg" targetPort="_ghDR4JwsEeGj2OBn6uxsbg" sourceBlock="_ghGVMJwsEeGj2OBn6uxsbg" targetBlock="_ghCq0JwsEeGj2OBn6uxsbg"/>
+        <lines id="_ghmrgJwsEeGj2OBn6uxsbg" sourcePort="_ghU-spwsEeGj2OBn6uxsbg" targetPort="_ghDR4pwsEeGj2OBn6uxsbg" sourceBlock="_ghGVMJwsEeGj2OBn6uxsbg" targetBlock="_ghCq0JwsEeGj2OBn6uxsbg"/>
+        <lines id="_gh_GAJwsEeGj2OBn6uxsbg" sourcePort="_ghZQIZwsEeGj2OBn6uxsbg" targetPort="_ggiUgJwsEeGj2OBn6uxsbg" sourceBlock="_ghGVMJwsEeGj2OBn6uxsbg" targetBlock="_gghGYJwsEeGj2OBn6uxsbg"/>
+        <lines id="_gh_GAZwsEeGj2OBn6uxsbg" sourcePort="_ggyzMJwsEeGj2OBn6uxsbg" targetPort="_ghNC4ZwsEeGj2OBn6uxsbg" sourceBlock="_ggxlEZwsEeGj2OBn6uxsbg" targetBlock="_ghGVMJwsEeGj2OBn6uxsbg"/>
+        <lines id="_gh_tEJwsEeGj2OBn6uxsbg" sourcePort="_ghXa8ZwsEeGj2OBn6uxsbg" targetPort="_ggfRMJwsEeGj2OBn6uxsbg" sourceBlock="_ghGVMJwsEeGj2OBn6uxsbg" targetBlock="_ggZKkZwsEeGj2OBn6uxsbg"/>
+        <lines id="_giAUIJwsEeGj2OBn6uxsbg" sourcePort="_gg2dkJwsEeGj2OBn6uxsbg" targetPort="_ghL0wZwsEeGj2OBn6uxsbg" sourceBlock="_gg0oYZwsEeGj2OBn6uxsbg" targetBlock="_ghGVMJwsEeGj2OBn6uxsbg"/>
+        <lines id="_giA7MJwsEeGj2OBn6uxsbg" sourcePort="_ghWM0ZwsEeGj2OBn6uxsbg" targetPort="_ggjioJwsEeGj2OBn6uxsbg" sourceBlock="_ghGVMJwsEeGj2OBn6uxsbg" targetBlock="_ggiUgZwsEeGj2OBn6uxsbg"/>
+        <lines id="_giA7MZwsEeGj2OBn6uxsbg" sourcePort="_gg450JwsEeGj2OBn6uxsbg" targetPort="_ghO4EZwsEeGj2OBn6uxsbg" sourceBlock="_gg3rsZwsEeGj2OBn6uxsbg" targetBlock="_ghGVMJwsEeGj2OBn6uxsbg"/>
+        <lines id="_giBiQJwsEeGj2OBn6uxsbg" sourcePort="_gg8kMJwsEeGj2OBn6uxsbg" targetPort="_ghJ_kJwsEeGj2OBn6uxsbg" sourceBlock="_gg6H8ZwsEeGj2OBn6uxsbg" targetBlock="_ghGVMJwsEeGj2OBn6uxsbg"/>
+        <lines id="_giCJUJwsEeGj2OBn6uxsbg" sourcePort="_ghiaEJwsEeGj2OBn6uxsbg" targetPort="_ghQGMZwsEeGj2OBn6uxsbg" sourceBlock="_ghhzAJwsEeGj2OBn6uxsbg" targetBlock="_ghGVMJwsEeGj2OBn6uxsbg"/>
+        <lines id="_giCJUZwsEeGj2OBn6uxsbg" sourcePort="_ghTwkJwsEeGj2OBn6uxsbg" targetPort="_ggOLcJwsEeGj2OBn6uxsbg" sourceBlock="_ghGVMJwsEeGj2OBn6uxsbg" targetBlock="_ggM9UJwsEeGj2OBn6uxsbg"/>
+        <lines id="_giCwYJwsEeGj2OBn6uxsbg" sourcePort="_ghYpEZwsEeGj2OBn6uxsbg" targetPort="_ggZKkJwsEeGj2OBn6uxsbg" sourceBlock="_ghGVMJwsEeGj2OBn6uxsbg" targetBlock="_ggX8cZwsEeGj2OBn6uxsbg"/>
+        <lines id="_giDXcJwsEeGj2OBn6uxsbg" sourcePort="_gg0oYJwsEeGj2OBn6uxsbg" targetPort="_ghNp8ZwsEeGj2OBn6uxsbg" sourceBlock="_ggzaQZwsEeGj2OBn6uxsbg" targetBlock="_ghGVMJwsEeGj2OBn6uxsbg"/>
+        <lines id="_giDXcZwsEeGj2OBn6uxsbg" sourcePort="_gg3rsJwsEeGj2OBn6uxsbg" targetPort="_ghLNsZwsEeGj2OBn6uxsbg" sourceBlock="_gg2dkZwsEeGj2OBn6uxsbg" targetBlock="_ghGVMJwsEeGj2OBn6uxsbg"/>
+        <lines id="_giD-gJwsEeGj2OBn6uxsbg" sourcePort="_gg9yUJwsEeGj2OBn6uxsbg" targetPort="_ghKmoZwsEeGj2OBn6uxsbg" sourceBlock="_gg8kMZwsEeGj2OBn6uxsbg" targetBlock="_ghGVMJwsEeGj2OBn6uxsbg"/>
+        <lines id="_giElkJwsEeGj2OBn6uxsbg" sourcePort="_ggzaQJwsEeGj2OBn6uxsbg" targetPort="_ghORAZwsEeGj2OBn6uxsbg" sourceBlock="_ggyzMZwsEeGj2OBn6uxsbg" targetBlock="_ghGVMJwsEeGj2OBn6uxsbg"/>
+        <lines id="_giFMoJwsEeGj2OBn6uxsbg" sourcePort="_ghWz4ZwsEeGj2OBn6uxsbg" targetPort="_ggX8cJwsEeGj2OBn6uxsbg" sourceBlock="_ghGVMJwsEeGj2OBn6uxsbg" targetBlock="_ggWuUZwsEeGj2OBn6uxsbg"/>
+        <lines id="_giFMoZwsEeGj2OBn6uxsbg" sourcePort="_gg6H8JwsEeGj2OBn6uxsbg" targetPort="_ghPfIZwsEeGj2OBn6uxsbg" sourceBlock="_gg450ZwsEeGj2OBn6uxsbg" targetBlock="_ghGVMJwsEeGj2OBn6uxsbg"/>
+        <lines id="_giHB0JwsEeGj2OBn6uxsbg" sourcePort="_ghU-sJwsEeGj2OBn6uxsbg" targetPort="_ggU5IJwsEeGj2OBn6uxsbg" sourceBlock="_ghGVMJwsEeGj2OBn6uxsbg" targetBlock="_ggOLcZwsEeGj2OBn6uxsbg"/>
+        <lines id="_giHo4JwsEeGj2OBn6uxsbg" sourcePort="_ggxlEJwsEeGj2OBn6uxsbg" targetPort="_ghMb0ZwsEeGj2OBn6uxsbg" sourceBlock="_gguhwJwsEeGj2OBn6uxsbg" targetBlock="_ghGVMJwsEeGj2OBn6uxsbg"/>
+        <lines id="_giHo4ZwsEeGj2OBn6uxsbg" sourcePort="_ghYCAZwsEeGj2OBn6uxsbg" targetPort="_gggfUJwsEeGj2OBn6uxsbg" sourceBlock="_ghGVMJwsEeGj2OBn6uxsbg" targetBlock="_ggfRMZwsEeGj2OBn6uxsbg"/>
+        <lines id="_giIP8JwsEeGj2OBn6uxsbg" sourcePort="_ghVlwZwsEeGj2OBn6uxsbg" targetPort="_ggWuUJwsEeGj2OBn6uxsbg" sourceBlock="_ghGVMJwsEeGj2OBn6uxsbg" targetBlock="_ggWHQZwsEeGj2OBn6uxsbg"/>
+        <lines id="_giI3AJwsEeGj2OBn6uxsbg" sourcePort="_ghD48JwsEeGj2OBn6uxsbg" targetPort="_ggWHQJwsEeGj2OBn6uxsbg" sourceBlock="_ghCq0JwsEeGj2OBn6uxsbg" targetBlock="_ggU5IZwsEeGj2OBn6uxsbg"/>
+        <lines id="_giI3AZwsEeGj2OBn6uxsbg" sourcePort="_ghZ3MZwsEeGj2OBn6uxsbg" targetPort="_ghDR4ZwsEeGj2OBn6uxsbg" sourceBlock="_ghGVMJwsEeGj2OBn6uxsbg" targetBlock="_ghCq0JwsEeGj2OBn6uxsbg"/>
+        <blocks xsi:type="model:BusCreator" id="_ghCq0JwsEeGj2OBn6uxsbg" name="Bus\nCreator" incomingLines="_ghldYJwsEeGj2OBn6uxsbg _ghmrgJwsEeGj2OBn6uxsbg _giI3AZwsEeGj2OBn6uxsbg" outgoingLines="_giI3AJwsEeGj2OBn6uxsbg">
+          <parameters name="Position" value="[690, 349, 695, 461]"/>
+          <outPorts id="_ghD48JwsEeGj2OBn6uxsbg"/>
+          <inPorts id="_ghDR4pwsEeGj2OBn6uxsbg" name="queue_sending_ratio"/>
+          <inPorts id="_ghDR4ZwsEeGj2OBn6uxsbg" name="queue_received_ratio"/>
+          <inPorts id="_ghDR4JwsEeGj2OBn6uxsbg" name="queue_ack_ratio"/>
+        </blocks>
+        <blocks xsi:type="model:EmbeddedMatlabFunction" id="_ghGVMJwsEeGj2OBn6uxsbg" name="Embedded\nMATLAB Function" incomingLines="_gh_GAZwsEeGj2OBn6uxsbg _giAUIJwsEeGj2OBn6uxsbg _giA7MZwsEeGj2OBn6uxsbg _giBiQJwsEeGj2OBn6uxsbg _giCJUJwsEeGj2OBn6uxsbg _giDXcJwsEeGj2OBn6uxsbg _giDXcZwsEeGj2OBn6uxsbg _giD-gJwsEeGj2OBn6uxsbg _giElkJwsEeGj2OBn6uxsbg _giFMoZwsEeGj2OBn6uxsbg _giHo4JwsEeGj2OBn6uxsbg" outgoingLines="_ghldYJwsEeGj2OBn6uxsbg _ghmrgJwsEeGj2OBn6uxsbg _gh_GAJwsEeGj2OBn6uxsbg _gh_tEJwsEeGj2OBn6uxsbg _giA7MJwsEeGj2OBn6uxsbg _giCJUZwsEeGj2OBn6uxsbg _giCwYJwsEeGj2OBn6uxsbg _giFMoJwsEeGj2OBn6uxsbg _giHB0JwsEeGj2OBn6uxsbg _giHo4ZwsEeGj2OBn6uxsbg _giIP8JwsEeGj2OBn6uxsbg _giI3AZwsEeGj2OBn6uxsbg" code="function [from, to, msg, param, pkgid, recv_from_out, recv_msg_out, recv_param_out, time, queue_sending_ratio, queue_received_ratio, queue_ack_ratio] = ackHandler(snd_from_in, snd_to_in, snd_msg_in, snd_param_in, recv_from_in, recv_to_in, recv_msg_in, recv_param_in, recv_pkgid_in, recv_time_in, currentTime)\n%#eml\neml.extrinsic('warning', 'disp', 'fprintf');\n\n%Constants\nBUS_SIZE =  numel(snd_msg_in);\nTIMEOUT_ACK     = 2.0;\nMSG_ACK         = 255;\nQUEUE_SIZE_SENDING = 10 * BUS_SIZE;\nQUEUE_SIZE_ACK  = 10* BUS_SIZE;\nQUEUE_SIZE_RECEIVED = 10 *BUS_SIZE;\n\n\n%Init\nfrom    = zeros(1,BUS_SIZE,'uint8');\nto      = zeros(1,BUS_SIZE,'uint8');\nmsg     = zeros(1,BUS_SIZE,'uint16');\nparam   = zeros(1,BUS_SIZE,'double');\npkgid   = zeros(1,BUS_SIZE,'uint32');\ntime    = zeros(1,BUS_SIZE,'double');\n \nrecv_from_out    = zeros(1,BUS_SIZE,'uint8');\nrecv_msg_out     = zeros(1,BUS_SIZE,'uint16');\nrecv_param_out   = zeros(1,BUS_SIZE,'double');\n\n\nrecv_in = bus(recv_from_in, recv_to_in, recv_msg_in, recv_param_in, recv_pkgid_in, recv_time_in, BUS_SIZE);\n\n\n\n%Persistent variables\npersistent sendingQueue ackQueue receivedQueue lastPkgid\n\nif isempty(lastPkgid)\n    lastPkgid = uint32(0);\nend\n\nif isempty(sendingQueue)\n    sendingQueue = repmat(packet(0,0,0,0,0,0), 1, QUEUE_SIZE_SENDING);\nend\n\nif isempty(ackQueue)\n    ackQueue = repmat(packet(0,0,0,0,0,0), 1, QUEUE_SIZE_ACK);\nend\n\nif isempty(receivedQueue)\n    receivedQueue = repmat(packet(0, 0, 0, 0, 0, 0), 1, QUEUE_SIZE_RECEIVED);\nend\n\n%compute stats\nqueue_sending_ratio = queueNumElements(sendingQueue)/QUEUE_SIZE_SENDING;\nqueue_ack_ratio = queueNumElements(ackQueue)/QUEUE_SIZE_ACK;\nqueue_received_ratio = queueNumElements(receivedQueue)/QUEUE_SIZE_RECEIVED;\n\n%Step 1: Check for a new outgoing packet\nfor i = 1:BUS_SIZE    \n    if snd_msg_in(i) ~= 0\n        lastPkgid = lastPkgid +1;\n        outgoing = packet(snd_from_in, snd_to_in, snd_msg_in(i), snd_param_in(i), lastPkgid, currentTime);\n\n        %Add packet so the outgoing queue\n        sendingQueue = enqueue(sendingQueue, outgoing); \n    end\nend\n    \n%Step 2: Check for a new incoming packet\nfor i = 1:length(recv_in)\n    incoming = packet(recv_in(i).from, recv_in(i).to, recv_in(i).msg, recv_in(i).param, recv_in(i).pkgid, recv_in(i).time);\n    if incoming.from ~= 0 &amp;&amp; incoming.to == snd_from_in\n        if incoming.msg == MSG_ACK\n            %Remove packet from ackQueue\n            for j=1:length(ackQueue)\n                if ackQueue(j).pkgid == uint32(incoming.param)\n                    ackQueue = dequeue(ackQueue,j);\n                    break;\n                end\n            end\n        else\n            %Send ACK\n            ackPacket = packet(incoming.to, incoming.from, MSG_ACK, double(incoming.pkgid),incoming.pkgid, currentTime);\n            sendingQueue = enqueue(sendingQueue,ackPacket);\n\n            %Check for duplicated packets\n            duplicatedPacket = false;\n            for j=1:length(receivedQueue)\n                if receivedQueue(j).pkgid == incoming.pkgid &amp;&amp; receivedQueue(j).from == incoming.from\n                    duplicatedPacket = true;\n                    break;\n                end\n            end\n\n            if duplicatedPacket == false\n                %save packet\n                receivedQueue = enqueue(receivedQueue, incoming);            \n            end\n        end\n    end\nend\n\n%Step 3: Forward incoming packet\nfor i = 1:BUS_SIZE\n    if receivedQueue(1).from ~= 0\n        recv_from_out(i)    = receivedQueue(1).from;\n        recv_msg_out(i)     = receivedQueue(1).msg;\n        recv_param_out(i)   = receivedQueue(1).param;\n        receivedQueue = dequeue(receivedQueue,1);\n    else\n        break;\n    end\nend\n\n%Step 4: Timeout reached? Send packet again\nfor i = 1:length(ackQueue)\n    if ackQueue(i).to ~= 0\n        if ackQueue(i).time + TIMEOUT_ACK &lt;= currentTime\n            %Reset counter\n            ackQueue(i).time = currentTime;\n            %Send again\n            sendingQueue = enqueue(sendingQueue, ackQueue(i));\n            %Remove packet from ackQueue\n            ackQueue = dequeue(ackQueue, i);\n        end\n    end\nend\n\n\n%Step 5: Send outgoing packet\nfor i = 1:BUS_SIZE\n    if sendingQueue(1).to ~= 0    \n        from(i)    = sendingQueue(1).from;\n        to(i)      = sendingQueue(1).to;\n        msg(i)     = sendingQueue(1).msg;\n        param(i)   = sendingQueue(1).param;\n        pkgid(i)   = sendingQueue(1).pkgid;\n        time(i)    = sendingQueue(1).time;\n\n        %Add it to the ack queue\n        if sendingQueue(1).msg ~= MSG_ACK\n            ackQueue = enqueue(ackQueue, sendingQueue(1));\n        end\n\n        %remove packet from sending queue\n        sendingQueue = dequeue(sendingQueue, 1);    \n    else\n        break;\n    end\nend\n\n\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%                          H E L P E R\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n\nfunction p = packet(from, to, msg, param, pkgid, time)\n%#eml\n%Defines a packet\np = struct('from', uint8(from),'to', uint8(to),'msg', uint16(msg),'param', double(param),'pkgid', uint32(pkgid), 'time', double(time));\n\nfunction bus = bus(from, to, msg, param, pkgid, time, size) %emp\n%Create an empty bus\nbus = repmat(packet(0,0,0,0,0,0), 1, size);\nfor i=1:size\n    bus(i) = packet(from(i), to(i), msg(i), param(i), pkgid(i), time(i));\nend\n\n\nfunction queue = enqueue(queue, packet)\n%#eml\neml.extrinsic('warning', 'sprintf');\nfor i = 1:length(queue)\n    if queue(i).to == 0\n        queue(i) = packet;\n        return;\n    end\nend\nwarning('RailCab:DataLinkLayer', 'DataLinkLayer Buffer overflow. Dropping packet  %3u: %u->%u :%3u (%.1f) @%.2f', packet.pkgid, packet.from, packet.to, packet.msg, packet.param, packet.time);\n\nfunction queue = dequeue(queue, index)\n%#eml\nassert(index &lt;= length(queue))\nfor i=index:length(queue)-1;\n    queue(i) = queue(i+1);\nend\nqueue(length(queue)) = packet(0,0,0,0,0,0);\n\nfunction num = queueNumElements(queue)\n%#eml\nnum = 0;\nfor i = 1:length(queue)\n    if queue(i).to ~= uint8(0)\n        num = num+1;\n    end\nend    \n\nfunction packetString = toString(packet) %#eml\neml.extrinsic('sprintf');\npacketString = sprintf('%3u: %u->%u :%3u (%.1f) @%.2f', packet.pkgid, packet.from, packet.to, packet.msg, packet.param, packet.time);">
+          <parameters name="System.Location" value="[257, 457, 812, 717]"/>
+          <parameters name="Position" value="[410, 41, 595, 454]"/>
+          <outPorts id="_ghVlwZwsEeGj2OBn6uxsbg" name="from" dimensions="-1">
+            <parameters name="Position" value="[460, 101, 480, 119]"/>
+            <inPorts id="_ghWM0JwsEeGj2OBn6uxsbg" name="In1"/>
+          </outPorts>
+          <outPorts id="_ghU-sJwsEeGj2OBn6uxsbg" name="to" dimensions="-1">
+            <parameters name="Position" value="[460, 136, 480, 154]"/>
+            <inPorts id="_ghU-sZwsEeGj2OBn6uxsbg" name="In1"/>
+          </outPorts>
+          <outPorts id="_ghTwkJwsEeGj2OBn6uxsbg" name="msg" dimensions="-1">
+            <parameters name="Position" value="[460, 171, 480, 189]"/>
+            <inPorts id="_ghUXoJwsEeGj2OBn6uxsbg" name="In1"/>
+          </outPorts>
+          <outPorts id="_ghYCAZwsEeGj2OBn6uxsbg" name="param" dimensions="-1">
+            <parameters name="Position" value="[460, 206, 480, 224]"/>
+            <inPorts id="_ghYpEJwsEeGj2OBn6uxsbg" name="In1"/>
+          </outPorts>
+          <outPorts id="_ghXa8ZwsEeGj2OBn6uxsbg" name="pkgid" dimensions="-1">
+            <parameters name="Position" value="[460, 246, 480, 264]"/>
+            <inPorts id="_ghYCAJwsEeGj2OBn6uxsbg" name="In1"/>
+          </outPorts>
+          <outPorts id="_ghWz4ZwsEeGj2OBn6uxsbg" name="recv_from_out" dimensions="-1">
+            <parameters name="Position" value="[460, 281, 480, 299]"/>
+            <inPorts id="_ghXa8JwsEeGj2OBn6uxsbg" name="In1"/>
+          </outPorts>
+          <outPorts id="_ghWM0ZwsEeGj2OBn6uxsbg" name="recv_msg_out" dimensions="-1">
+            <parameters name="Position" value="[460, 316, 480, 334]"/>
+            <inPorts id="_ghWz4JwsEeGj2OBn6uxsbg" name="In1"/>
+          </outPorts>
+          <outPorts id="_ghZQIZwsEeGj2OBn6uxsbg" name="recv_param_out" dimensions="-1">
+            <parameters name="Position" value="[460, 351, 480, 369]"/>
+            <inPorts id="_ghZ3MJwsEeGj2OBn6uxsbg" name="In1"/>
+          </outPorts>
+          <outPorts id="_ghYpEZwsEeGj2OBn6uxsbg" name="time" dimensions="-1">
+            <parameters name="Position" value="[460, 386, 480, 404]"/>
+            <inPorts id="_ghZQIJwsEeGj2OBn6uxsbg" name="In1"/>
+          </outPorts>
+          <outPorts id="_ghU-spwsEeGj2OBn6uxsbg" name="queue_sending_ratio" dimensions="-1">
+            <parameters name="Position" value="[460, 426, 480, 444]"/>
+            <inPorts id="_ghVlwJwsEeGj2OBn6uxsbg" name="In1"/>
+          </outPorts>
+          <outPorts id="_ghZ3MZwsEeGj2OBn6uxsbg" name="queue_received_ratio" dimensions="-1">
+            <parameters name="Position" value="[460, 461, 480, 479]"/>
+            <inPorts id="_ghaeQJwsEeGj2OBn6uxsbg" name="In1"/>
+          </outPorts>
+          <outPorts id="_ghaeQZwsEeGj2OBn6uxsbg" name="queue_ack_ratio" dimensions="-1">
+            <parameters name="Position" value="[460, 496, 480, 514]"/>
+            <inPorts id="_ghbFUJwsEeGj2OBn6uxsbg" name="In1"/>
+          </outPorts>
+          <inPorts id="_ghL0wZwsEeGj2OBn6uxsbg" name="snd_from_in" dimensions="-1">
+            <parameters name="Position" value="[20, 101, 40, 119]"/>
+            <outPorts id="_ghMb0JwsEeGj2OBn6uxsbg" name="Out1"/>
+          </inPorts>
+          <inPorts id="_ghKmoZwsEeGj2OBn6uxsbg" name="snd_to_in" dimensions="-1">
+            <parameters name="Position" value="[20, 136, 40, 154]"/>
+            <outPorts id="_ghLNsJwsEeGj2OBn6uxsbg" name="Out1"/>
+          </inPorts>
+          <inPorts id="_ghJ_kJwsEeGj2OBn6uxsbg" name="snd_msg_in" dimensions="-1">
+            <parameters name="Position" value="[20, 171, 40, 189]"/>
+            <outPorts id="_ghKmoJwsEeGj2OBn6uxsbg" name="Out1"/>
+          </inPorts>
+          <inPorts id="_ghORAZwsEeGj2OBn6uxsbg" name="snd_param_in" dimensions="-1">
+            <parameters name="Position" value="[20, 206, 40, 224]"/>
+            <outPorts id="_ghO4EJwsEeGj2OBn6uxsbg" name="Out1"/>
+          </inPorts>
+          <inPorts id="_ghNp8ZwsEeGj2OBn6uxsbg" name="recv_from_in" dimensions="-1">
+            <parameters name="Position" value="[20, 246, 40, 264]"/>
+            <outPorts id="_ghORAJwsEeGj2OBn6uxsbg" name="Out1"/>
+          </inPorts>
+          <inPorts id="_ghNC4ZwsEeGj2OBn6uxsbg" name="recv_to_in" dimensions="-1">
+            <parameters name="Position" value="[20, 281, 40, 299]"/>
+            <outPorts id="_ghNp8JwsEeGj2OBn6uxsbg" name="Out1"/>
+          </inPorts>
+          <inPorts id="_ghMb0ZwsEeGj2OBn6uxsbg" name="recv_msg_in" dimensions="-1">
+            <parameters name="Position" value="[20, 316, 40, 334]"/>
+            <outPorts id="_ghNC4JwsEeGj2OBn6uxsbg" name="Out1"/>
+          </inPorts>
+          <inPorts id="_ghPfIZwsEeGj2OBn6uxsbg" name="recv_param_in" dimensions="-1">
+            <parameters name="Position" value="[20, 351, 40, 369]"/>
+            <outPorts id="_ghQGMJwsEeGj2OBn6uxsbg" name="Out1"/>
+          </inPorts>
+          <inPorts id="_ghO4EZwsEeGj2OBn6uxsbg" name="recv_pkgid_in" dimensions="-1" type="uint32">
+            <parameters name="Position" value="[20, 386, 40, 404]"/>
+            <outPorts id="_ghPfIJwsEeGj2OBn6uxsbg" name="Out1"/>
+          </inPorts>
+          <inPorts id="_ghLNsZwsEeGj2OBn6uxsbg" name="recv_time_in" dimensions="-1">
+            <parameters name="Position" value="[20, 426, 40, 444]"/>
+            <outPorts id="_ghL0wJwsEeGj2OBn6uxsbg" name="Out1"/>
+          </inPorts>
+          <inPorts id="_ghQGMZwsEeGj2OBn6uxsbg" name="currentTime" dimensions="-1">
+            <parameters name="Position" value="[20, 461, 40, 479]"/>
+            <outPorts id="_ghQtQJwsEeGj2OBn6uxsbg" name="Out1"/>
+          </inPorts>
+        </blocks>
+        <blocks xsi:type="model:DigitalClock" id="_ghhzAJwsEeGj2OBn6uxsbg" name="Digital Clock" outgoingLines="_giCJUJwsEeGj2OBn6uxsbg" sampleTime="0.1">
+          <parameters name="Position" value="[280, 413, 345, 437]"/>
+          <outPorts id="_ghiaEJwsEeGj2OBn6uxsbg"/>
+        </blocks>
+      </blocks>
+      <blocks xsi:type="model:UnitDelay" id="_giJeEJwsEeGj2OBn6uxsbg" name="Unit Delay3" incomingLines="_gi_LkJwsEeGj2OBn6uxsbg" outgoingLines="_gjJjoJwsEeGj2OBn6uxsbg">
+        <parameters name="Position" value="[1165, 533, 1200, 567]"/>
+        <outPorts id="_giJeEpwsEeGj2OBn6uxsbg"/>
+        <inPorts id="_giJeEZwsEeGj2OBn6uxsbg"/>
+      </blocks>
+      <blocks xsi:type="model:BusCreator" id="_giJeE5wsEeGj2OBn6uxsbg" name="Bus\nCreator" incomingLines="_gisQoJwsEeGj2OBn6uxsbg _gi-kgJwsEeGj2OBn6uxsbg _gjDdAJwsEeGj2OBn6uxsbg _gjHucZwsEeGj2OBn6uxsbg _gjIVgJwsEeGj2OBn6uxsbg _gjKxwJwsEeGj2OBn6uxsbg" outgoingLines="_gjI8kZwsEeGj2OBn6uxsbg">
+        <parameters name="Position" value="[830, 37, 835, 258]"/>
+        <outPorts id="_giL6UJwsEeGj2OBn6uxsbg"/>
+        <inPorts id="_giKsMpwsEeGj2OBn6uxsbg"/>
+        <inPorts id="_giKsMZwsEeGj2OBn6uxsbg"/>
+        <inPorts id="_giKsMJwsEeGj2OBn6uxsbg"/>
+        <inPorts id="_giKsNZwsEeGj2OBn6uxsbg"/>
+        <inPorts id="_giKsNJwsEeGj2OBn6uxsbg"/>
+        <inPorts id="_giKsM5wsEeGj2OBn6uxsbg"/>
+      </blocks>
+      <blocks xsi:type="model:UnitDelay" id="_giL6UZwsEeGj2OBn6uxsbg" name="Unit Delay4" incomingLines="_gixJIJwsEeGj2OBn6uxsbg" outgoingLines="_gi9WYZwsEeGj2OBn6uxsbg">
+        <parameters name="Position" value="[1170, 613, 1205, 647]"/>
+        <outPorts id="_giMhYZwsEeGj2OBn6uxsbg"/>
+        <inPorts id="_giMhYJwsEeGj2OBn6uxsbg"/>
+      </blocks>
+      <blocks xsi:type="model:MiscBlock" id="_giOWkJwsEeGj2OBn6uxsbg" name="Terminator" incomingLines="_giv7AZwsEeGj2OBn6uxsbg" type="Terminator">
+        <parameters name="Position" value="[1155, 700, 1175, 720]"/>
+        <inPorts id="_giPksJwsEeGj2OBn6uxsbg" name="1"/>
+      </blocks>
+      <blocks xsi:type="model:EmbeddedMatlabFunction" id="_giPksZwsEeGj2OBn6uxsbg" name="Receive Packet" incomingLines="_gis3sJwsEeGj2OBn6uxsbg _gitewJwsEeGj2OBn6uxsbg _giv7AJwsEeGj2OBn6uxsbg _gixwMJwsEeGj2OBn6uxsbg _gi99cJwsEeGj2OBn6uxsbg" outgoingLines="_giv7AZwsEeGj2OBn6uxsbg _gixJIJwsEeGj2OBn6uxsbg _gi_LkJwsEeGj2OBn6uxsbg" code="function [eventQueue, eventParamQueue, bufferOverflow] = receivePacket(packetFrom, packetMsg, packetParam, eventQueueIn, eventParamQueueIn)\n%#eml\n% This function receives packets and adds them to the event queue.\n% A packet consists of a source, a message and an optional parameter for \n% the message. Source and message are contained at position 1 and 2 in the \n% eventQueue. Because of the different data type the parameter has his own \n% queue eventParamQueue.\n\n%Constants\nSOURCE = 2;\nMESSAGE = 1;\nBUS_SIZE = numel(packetFrom);\nQUEUE_SIZE = 10;\n\n%Init\neventQueue = eventQueueIn;\neventParamQueue = eventParamQueueIn;\nbufferOverflow = false;\n\n%New incoming packet\nfor i = 1:BUS_SIZE\n    if packetFrom(i) ~= 0 \n        bufferOverflow = true;\n        %Add it to the incoming event Queue\n        for j = 1:QUEUE_SIZE\n            %Search for an empty place\n            if eventQueue(j,SOURCE) == 0\n                eventQueue(j,SOURCE)    = packetFrom(i);\n                eventQueue(j,MESSAGE)   = packetMsg(i);\n                eventParamQueue(j)      = packetParam(i);\n                bufferOverflow = false;\n                break;\n            end\n        end        \n    else\n        break;\n    end\nend">
+        <parameters name="System.Location" value="[257, 457, 812, 717]"/>
+        <parameters name="Position" value="[900, 506, 1085, 754]"/>
+        <outPorts id="_giYHkZwsEeGj2OBn6uxsbg" name="eventQueue" dimensions="-1" type="uint8">
+          <parameters name="Position" value="[460, 101, 480, 119]"/>
+          <inPorts id="_giYuoJwsEeGj2OBn6uxsbg" name="In1"/>
+        </outPorts>
+        <outPorts id="_giXggZwsEeGj2OBn6uxsbg" name="eventParamQueue" dimensions="-1" type="double">
+          <parameters name="Position" value="[460, 136, 480, 154]"/>
+          <inPorts id="_giYHkJwsEeGj2OBn6uxsbg" name="In1"/>
+        </outPorts>
+        <outPorts id="_giW5cJwsEeGj2OBn6uxsbg" name="bufferOverflow" dimensions="-1" type="boolean">
+          <parameters name="Position" value="[460, 171, 480, 189]"/>
+          <inPorts id="_giXggJwsEeGj2OBn6uxsbg" name="In1"/>
+        </outPorts>
+        <inPorts id="_giT2IZwsEeGj2OBn6uxsbg" name="packetFrom" dimensions="-1">
+          <parameters name="Position" value="[20, 101, 40, 119]"/>
+          <outPorts id="_giUdMJwsEeGj2OBn6uxsbg" name="Out1"/>
+        </inPorts>
+        <inPorts id="_giTPEZwsEeGj2OBn6uxsbg" name="packetMsg" dimensions="-1">
+          <parameters name="Position" value="[20, 136, 40, 154]"/>
+          <outPorts id="_giT2IJwsEeGj2OBn6uxsbg" name="Out1"/>
+        </inPorts>
+        <inPorts id="_giSoAJwsEeGj2OBn6uxsbg" name="packetParam" dimensions="-1">
+          <parameters name="Position" value="[20, 171, 40, 189]"/>
+          <outPorts id="_giTPEJwsEeGj2OBn6uxsbg" name="Out1"/>
+        </inPorts>
+        <inPorts id="_giVEQZwsEeGj2OBn6uxsbg" name="eventQueueIn" dimensions="-1" type="uint8">
+          <parameters name="Position" value="[20, 206, 40, 224]"/>
+          <outPorts id="_giVrUJwsEeGj2OBn6uxsbg" name="Out1"/>
+        </inPorts>
+        <inPorts id="_giUdMZwsEeGj2OBn6uxsbg" name="eventParamQueueIn" dimensions="-1" type="double">
+          <parameters name="Position" value="[20, 246, 40, 264]"/>
+          <outPorts id="_giVEQJwsEeGj2OBn6uxsbg" name="Out1"/>
+        </inPorts>
+      </blocks>
+      <blocks xsi:type="model:EmbeddedMatlabFunction" id="_giZVsJwsEeGj2OBn6uxsbg" name="Send Packet" incomingLines="_gixJIZwsEeGj2OBn6uxsbg _gi8vUJwsEeGj2OBn6uxsbg _gjC18JwsEeGj2OBn6uxsbg" outgoingLines="_gis3sZwsEeGj2OBn6uxsbg _gixwMZwsEeGj2OBn6uxsbg _gi8vUZwsEeGj2OBn6uxsbg _gjI8kJwsEeGj2OBn6uxsbg" code="function [packetMsg, packetParam, eventQueue, eventParamQueue] = sendPacket(busSizeSignal, eventQueueIn, eventParamQueueIn)\n%#eml\n\n% This function creates packets from the event queue. A packet consists\n% of a destination, a message and an optional parameter for the message.\n% Destination and message are contained at position 1 and 2 in the \n% eventQueue. Because of the different data type the parameter has his own \n% queue eventParamQueue.\n\n%Constants\nDESTINATION = 2;\nMESSAGE = 1;\nQUEUE_SIZE = 10;\n\nbusSize = numel(busSizeSignal);\n\n%Init\neventQueue = eventQueueIn;\neventParamQueue = eventParamQueueIn;\npacketMsg = zeros(1,busSize,'uint16');\npacketParam = zeros(1,busSize,'double');\n\n%There is an event in the queue\nfor i = 1:busSize   \n    if eventQueue(1,DESTINATION) ~= 0 || eventQueue(1,MESSAGE) ~= 0\n        %Create packet from the firs entry in the queue\n        packetMsg(i)   = uint16(eventQueue(1,MESSAGE));\n        packetParam(i) = eventParamQueue(1);\n        %Remove the event from the queue\n        for j=1:QUEUE_SIZE - 1\n            eventQueue(j,DESTINATION)   = eventQueue(j+1,DESTINATION);\n            eventQueue(j,MESSAGE)       = eventQueue(j+1,MESSAGE);\n            eventParamQueue(j)          = eventParamQueue(j+1);\n        end\n        %Set last element to zero\n        eventQueue(QUEUE_SIZE,DESTINATION)  = 0;\n        eventQueue(QUEUE_SIZE,MESSAGE)      = 0;\n        eventParamQueue(QUEUE_SIZE)    = 0;\n    else\n        break;\n    end\nend">
+        <parameters name="System.Location" value="[257, 457, 812, 717]"/>
+        <parameters name="Position" value="[150, 514, 310, 781]"/>
+        <outPorts id="_gik74ZwsEeGj2OBn6uxsbg" name="packetMsg" dimensions="-1">
+          <parameters name="Position" value="[460, 101, 480, 119]"/>
+          <inPorts id="_giqbcJwsEeGj2OBn6uxsbg" name="In1"/>
+        </outPorts>
+        <outPorts id="_gikU0ZwsEeGj2OBn6uxsbg" name="packetParam" dimensions="-1">
+          <parameters name="Position" value="[460, 136, 480, 154]"/>
+          <inPorts id="_gik74JwsEeGj2OBn6uxsbg" name="In1"/>
+        </outPorts>
+        <outPorts id="_gijtwJwsEeGj2OBn6uxsbg" name="eventQueue" dimensions="-1" type="uint8">
+          <parameters name="Position" value="[460, 171, 480, 189]"/>
+          <inPorts id="_gikU0JwsEeGj2OBn6uxsbg" name="In1"/>
+        </outPorts>
+        <outPorts id="_giqbcZwsEeGj2OBn6uxsbg" name="eventParamQueue" dimensions="-1" type="double">
+          <parameters name="Position" value="[460, 206, 480, 224]"/>
+          <inPorts id="_girCgJwsEeGj2OBn6uxsbg" name="In1"/>
+        </outPorts>
+        <inPorts id="_giifoZwsEeGj2OBn6uxsbg" name="busSizeSignal" dimensions="-1">
+          <parameters name="Position" value="[20, 101, 40, 119]"/>
+          <outPorts id="_gijGsJwsEeGj2OBn6uxsbg" name="Out1"/>
+        </inPorts>
+        <inPorts id="_gih4kZwsEeGj2OBn6uxsbg" name="eventQueueIn" dimensions="-1" type="uint8">
+          <parameters name="Position" value="[20, 136, 40, 154]"/>
+          <outPorts id="_giifoJwsEeGj2OBn6uxsbg" name="Out1"/>
+        </inPorts>
+        <inPorts id="_gihRgJwsEeGj2OBn6uxsbg" name="eventParamQueueIn" dimensions="-1" type="double">
+          <parameters name="Position" value="[20, 171, 40, 189]"/>
+          <outPorts id="_gih4kJwsEeGj2OBn6uxsbg" name="Out1"/>
+        </inPorts>
+      </blocks>
+    </blocks>
+    <buses id="_gi8IQJwsEeGj2OBn6uxsbg" name="PacketBus"/>
+  </libraries>
+</model:SimulinkContainer>

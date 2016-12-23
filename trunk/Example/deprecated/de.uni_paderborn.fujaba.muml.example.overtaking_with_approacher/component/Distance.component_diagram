@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_PvP3YKrGEeScJ-0YDJS4Tg" type="Component" name="Distance.component_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_PvP3YqrGEeScJ-0YDJS4Tg" type="2006" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_PvP3ZKrGEeScJ-0YDJS4Tg" type="5028"/>
+    <element xmi:type="component:StaticAtomicComponent" href="../fraunhoferDemo.fujaba#_Vibi8JRJEeSZM-zEIRk3lw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PvP3Y6rGEeScJ-0YDJS4Tg" x="180" y="90"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_PvP3YarGEeScJ-0YDJS4Tg"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../fraunhoferDemo.fujaba#_FB0TTZJ7EeSSMde45fnrcg"/>
+</notation:Diagram>

@@ -1,0 +1,112 @@
+library PatternProtocolCommon;
+import ModelcopyLibrary;
+modeltype common uses core::expressions::common('http://www.muml.org/core/1.0.0');
+modeltype PimPackage uses pim('http://www.muml.org/pim/1.0.0');
+modeltype ComponentPackage uses pim::component('http://www.muml.org/pim/1.0.0');
+modeltype ProtocolPackage uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype RTSCPackage uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype ConnectorPackage uses pim::connector('http://www.muml.org/pim/1.0.0');
+modeltype TypesPackage uses pim::types('http://www.muml.org/pim/1.0.0');
+modeltype ValuetypePackage uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype MessageTypePackage uses pim::msgtype('http://www.muml.org/pim/1.0.0');
+modeltype BehaviorPackage uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype core uses core('http://www.muml.org/core/1.0.0');
+modeltype ModelInstancePackage uses core::modelinstance('http://www.muml.org/core/1.0.0');
+modeltype PatternPackage uses pim::pattern('http://www.muml.org/pim/1.0.0');
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+modeltype actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
+
+configuration property timeStamp : String;
+
+query getRealtimeStatechartCategory(theRootNode : RootNode) : ModelElementCategory {
+	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'org.muml.pim.realtimestatechart.category') -> any(true);
+}
+query getProtocolCategory(theRootNode : RootNode) : ModelElementCategory {
+	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'org.muml.pim.protocol.category') -> any(true);
+}
+query getPatternCategory(theRootNode : RootNode) : ModelElementCategory {
+	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'org.muml.pim.pattern.category') -> any(true);
+}
+
+query getMsgTypeCategory(theRootNode : RootNode) : ModelElementCategory {
+	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'org.muml.pim.messagetype.category') -> any(true);
+}
+
+query getTypesCategory(theRootNode : RootNode) : ModelElementCategory {
+	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'org.muml.types.category') -> any(true);
+}
+
+
+mapping Role :: transform() : EObject {
+	init {
+		result := self.map create();
+	}
+	
+	var resultingRole : Role := result.oclAsType(Role);
+	resultingRole.behavior := self.behavior.map transform().oclAsType(Behavior);
+	resultingRole.senderMessageTypes := self.senderMessageTypes.map transform().oclAsType(MessageType);
+	resultingRole.receiverMessageTypes := self.receiverMessageTypes.map transform().oclAsType(MessageType);
+	resultingRole.coordinatorBehavior := self.coordinatorBehavior.map transform().oclAsType(Behavior);
+	resultingRole.subroleBehavior := self.subroleBehavior.map transform().oclAsType(Behavior);
+	resultingRole.receiverMessageBuffer := self.receiverMessageBuffer.map transform().oclAsType(MessageBuffer);
+	resultingRole.cardinality := self.cardinality.map transform().oclAsType(Cardinality);
+
+	var element := self.oclAsType(EObject);
+	element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+		setValues(result, f, getValues(element, f));
+	};
+}
+
+mapping RoleConnector :: transform() : EObject {
+	init {
+		result := self.map create();
+	}
+	
+	var resultingConnector : RoleConnector := result.oclAsType(RoleConnector);
+	resultingConnector.connectorEndpoints := self.connectorEndpoints.map transform().oclAsType(ConnectorEndpoint);
+	resultingConnector.connectorQualityOfServiceAssumptions := self.connectorQualityOfServiceAssumptions.map transform().oclAsType(ConnectorQualityOfServiceAssumptions);
+	
+	var element := self.oclAsType(EObject);
+	element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+		setValues(result, f, getValues(element, f));
+	};
+}
+
+mapping MessageTypeRepository::create():EObject{
+init{
+	result:=new MessageTypeRepository().oclAsType(EObject);
+	}
+}
+
+
+// override lib because of timestamp naming
+mapping MessageTypeRepository::transform(): EObject  {
+	init {
+		result := self.map create();
+	}
+	
+	var element := self.oclAsType(EObject);
+	element.eClass().eAllReferences->select(f | f.isValidFeature())->forEach(f) {
+		setValues(result, f, getValues(element, f).map transform());
+	};
+	element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+		setValues(result, f, getValues(element, f));
+	};
+	result.oclAsType(core::NamedElement).name := result.oclAsType(core::NamedElement).name + timeStamp;
+}
+// override lib because of timestamp naming
+mapping MessageType::transform(): EObject  {
+	init {
+		result := self.map create();
+	}
+	
+	var element := self.oclAsType(EObject);
+	element.eClass().eAllReferences->select(f | f.isValidFeature())->forEach(f) {
+		setValues(result, f, getValues(element, f).map transform());
+	};
+	element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+		setValues(result, f, getValues(element, f));
+	};
+	result.oclAsType(core::NamedElement).name := result.oclAsType(core::NamedElement).name + timeStamp;
+}
+

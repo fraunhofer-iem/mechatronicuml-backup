@@ -1,0 +1,47 @@
+«IMPORT simulink»
+«IMPORT simulink::stateflow»
+
+«EXTENSION extensions::stateflow::StateflowElement»
+«EXTENSION extensions::stateflow::Node»
+«EXTENSION extensions::stateflow::Transition»
+
+«DEFINE transition FOR Transition-»
+  transition {
+  	id			«this.getStateflowId()»
+    chart		«this.target.getChart().getStateflowId()»
+    tag			"id=«this.id»"
+    labelString "«this.getLabelString()»"
+    linkNode 	[«((State)this.eContainer).getStateflowId()» 0 0]
+«IF this.priority != null-»
+    executionOrder «this.priority»
+«ENDIF-»
+«EXPAND Parameter::stateflowParameter FOREACH this.parameters.select(p| !{'chart','id', 'tag', 'labelString', 'executionOrder', 'linkNode', 'subviewer'}.contains(p.name) && !p.name.startsWith('src') && !p.name.startsWith('dst') && !p.name.startsWith('slide.') )-»
+  	src {
+  	  «IF Node.isInstance(this.source)-»
+  	  id		«this.source.getStateflowId()»
+  	  «ENDIF-»
+  	  «IF this.getParameter("src.intersection") == null-»
+  	  intersection	[0 0 0 0 0 0 0 0]
+  	  «ENDIF»  	  
+  	  «FOREACH this.parameters.select(p|p.name.startsWith('src.') && !p.name.contains('id')) AS parameter-»
+      «parameter.name.replaceFirst('src.','')»	«parameter.value»
+  	  «ENDFOREACH-»
+  	}
+  	dst {
+  	  «IF Node.isInstance(this.target)-»
+  	  id		«this.target.getStateflowId()»
+  	  «ENDIF-»
+  	  «IF this.getParameter("dst.intersection") == null-»
+  	  intersection	[0 0 0 0 0 0 0 0]
+  	  «ENDIF»  	  
+  	  «FOREACH this.parameters.select(p|p.name.startsWith('dst.') && !p.name.contains('id')) AS parameter-»
+      «parameter.name.replaceFirst('dst.','')»	«parameter.value»
+  	  «ENDFOREACH-»  	  
+  	}
+  	slide {
+  	  «FOREACH this.parameters.select(p|p.name.startsWith('slide.')) AS parameter-»
+      «parameter.name.replaceFirst('slide.','')»	«parameter.value»
+  	  «ENDFOREACH-»
+  	}
+  }
+«ENDDEFINE»

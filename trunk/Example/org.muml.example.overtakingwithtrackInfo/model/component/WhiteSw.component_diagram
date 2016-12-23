@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component="http://www.muml.org/pim/component/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_zp96gUfOEeO56fW-RvmTLw" type="Component" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_1vHpIEfOEeO56fW-RvmTLw" type="2006" fontName="Sans" fontHeight="10" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_1vIQMEfOEeO56fW-RvmTLw" type="5028"/>
+    <children xmi:type="notation:Shape" xmi:id="___bl4EfPEeOKy6HrV27eJQ" type="3010" fontName="Sans" fontHeight="10" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="___cM8EfPEeOKy6HrV27eJQ" type="5012">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="___cM8UfPEeOKy6HrV27eJQ" x="-60" y="-24"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="___cM8kfPEeOKy6HrV27eJQ" type="5025">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="___cM80fPEeOKy6HrV27eJQ" x="-72" y="24"/>
+      </children>
+      <element xmi:type="component:DiscretePort" href="../overtaking.muml#___LHMEfPEeOKy6HrV27eJQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="___bl4UfPEeOKy6HrV27eJQ" x="-12" y="24"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_WE5mwE03EeOI293nB1lGXQ" type="3013" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_WE5mwk03EeOI293nB1lGXQ" type="5024">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_WE5mw003EeOI293nB1lGXQ" x="-12" y="35"/>
+      </children>
+      <element xmi:type="component:HybridPort" href="../overtaking.muml#_WEy5EE03EeOI293nB1lGXQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WE5mwU03EeOI293nB1lGXQ" x="96" y="61"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_GEqycE05EeOI293nB1lGXQ" type="3013" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_GEqyck05EeOI293nB1lGXQ" type="5024">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_GEqyc005EeOI293nB1lGXQ" x="-12" y="35"/>
+      </children>
+      <element xmi:type="component:HybridPort" href="../overtaking.muml#_GEnvIE05EeOI293nB1lGXQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GEqycU05EeOI293nB1lGXQ" x="36" y="61"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_Fsv_cAd6EeScEaYFsu5sEQ" type="3010" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_Fsv_cgd6EeScEaYFsu5sEQ" type="5012">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Fsv_cwd6EeScEaYFsu5sEQ" x="35" y="-12"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_FswmgAd6EeScEaYFsu5sEQ" type="5025">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_FswmgQd6EeScEaYFsu5sEQ" x="35" y="24"/>
+      </children>
+      <element xmi:type="component:DiscretePort" href="../overtaking.muml#_Fsqf4Ad6EeScEaYFsu5sEQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Fsv_cQd6EeScEaYFsu5sEQ" x="145" y="24"/>
+    </children>
+    <element xmi:type="component:StaticAtomicComponent" href="../overtaking.muml#_1vFz8EfOEeO56fW-RvmTLw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1vHpIUfOEeO56fW-RvmTLw" x="192" y="60" width="157" height="73"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_zp96gkfOEeO56fW-RvmTLw"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../overtaking.muml#_zp96gEfOEeO56fW-RvmTLw"/>
+</notation:Diagram>

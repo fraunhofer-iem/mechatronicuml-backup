@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedGraphTransformationSystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba.muml.timedstorydiagram="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0" xmlns:sda="http://www.muml.org/storydiagram/activities/1.0.0" name="SuccessFailureEdgesTGTS">
+  <rules name="SuccessFailureEdges">
+    <ownedActivityEdge target="//@rules.0/@ownedActivityNode.1" source="//@rules.0/@ownedActivityNode.0"/>
+    <ownedActivityEdge target="//@rules.0/@ownedActivityNode.2" source="//@rules.0/@ownedActivityNode.1"/>
+    <ownedActivityEdge target="//@rules.0/@ownedActivityNode.3" source="//@rules.0/@ownedActivityNode.2" guard="FAILURE"/>
+    <ownedActivityEdge target="//@rules.0/@ownedActivityNode.1" source="//@rules.0/@ownedActivityNode.2" guard="SUCCESS"/>
+    <ownedActivityEdge target="//@rules.0/@ownedActivityNode.4" source="//@rules.0/@ownedActivityNode.3"/>
+    <ownedActivityNode xsi:type="sda:InitialNode" name="init" outgoing="//@rules.0/@ownedActivityEdge.0"/>
+    <ownedActivityNode xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedActivityNode" name="node1" outgoing="//@rules.0/@ownedActivityEdge.1" incoming="//@rules.0/@ownedActivityEdge.0 //@rules.0/@ownedActivityEdge.3"/>
+    <ownedActivityNode xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedActivityNode" name="node2" outgoing="//@rules.0/@ownedActivityEdge.2 //@rules.0/@ownedActivityEdge.3" incoming="//@rules.0/@ownedActivityEdge.1"/>
+    <ownedActivityNode xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedActivityNode" name="node3" outgoing="//@rules.0/@ownedActivityEdge.4" incoming="//@rules.0/@ownedActivityEdge.2"/>
+    <ownedActivityNode xsi:type="sda:ActivityFinalNode" name="final" incoming="//@rules.0/@ownedActivityEdge.4"/>
+  </rules>
+</de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedGraphTransformationSystem>

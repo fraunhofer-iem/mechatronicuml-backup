@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.m2m.qvt.oml.javaBlackboxUnits">
+      <unit
+            name="GraphvizPlainLayouterUnit"
+            namespace="org.muml.graphviz._blackbox">
+         <library
+               class="org.muml.graphviz.blackbox.GraphvizPlainLayouter"
+               name="GraphvizPlainLayouterBlackbox">
+            <metamodel
+                  nsURI="http://www.muml.org/graphviz/dot/1.0.0">
+            </metamodel>
+            <metamodel
+                  nsURI="http://www.muml.org/graphviz/plain/1.0.0">
+            </metamodel>
+         </library>
+      </unit>
+      <unit
+            name="GraphvizDotLayouterUnit"
+            namespace="org.muml.graphviz._blackbox">
+         <library
+               class="org.muml.graphviz.blackbox.GraphvizDotLayouter"
+               name="GraphvizDotLayouterBlackbox">
+            <metamodel
+                  nsURI="http://www.muml.org/graphviz/dot/1.0.0">
+            </metamodel>
+         </library>
+      </unit>
+   </extension>
+
+</plugin>

@@ -1,0 +1,32 @@
+«IMPORT simulink»
+
+«EXTENSION extensions::Element»
+«EXTENSION extensions::Block»
+
+«DEFINE busSelector FOR BusSelector»
+  Block {
+    BlockType BusSelector
+    Name 			"«this.getName()»"
+    SID				«this.getSimulinkId()»
+    Ports			[«this.inPorts.size», «this.outPorts.size»]
+«IF this.bus != null -»	    
+    OutputSignals	"«FOREACH this.outPorts AS port SEPARATOR ','»«this.bus.elements.get(this.outPorts.indexOf(port)).name»«ENDFOREACH»"
+«ELSE-»
+	OutputSignals	"«FOREACH this.outPorts AS port SEPARATOR ','»«port.name»«ENDFOREACH»"
+«ENDIF-»
+    Tag				"id=«this.id»"
+	«EXPAND Parameter::parameter FOREACH this.parameters.select(p| !{'BlockType','Name', 'SID', 'Ports', 'UseBusObject', 'BusObject', 'OutputSignals', 'Tag'}.contains(p.name) )-»
+	«FOREACH this.outPorts AS port-»
+	Port {
+		PortNumber			«this.outPorts.indexOf(port)+1»
+«IF this.bus != null -»		
+		Name				"<«this.bus.elements.get(this.outPorts.indexOf(port)).name»>"
+«ELSE-»
+		Name				"«port.name»"
+«ENDIF-»
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	}
+	«ENDFOREACH-»
+  }
+«ENDDEFINE»

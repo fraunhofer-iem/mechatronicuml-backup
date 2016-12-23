@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="graphviz" nsURI="http://www.muml.org/graphviz/1.0.0" nsPrefix="graphviz">
+  <eClassifiers xsi:type="ecore:EClass" name="DummyClassForAcceleoWillBeDeleted"/>
+  <eSubpackages name="dot" nsURI="http://www.muml.org/graphviz/dot/1.0.0" nsPrefix="dot">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This package provides classes for the graphviz &quot;dot&quot; format. The classes&#xA;can be used as a &quot;dot&quot; input as well as a &quot;dot&quot; output."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </eAnnotations>
+    <eClassifiers xsi:type="ecore:EClass" name="DotGraph">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="validId"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="validId" value="not self.id.oclIsUndefined() and (&#xA;&#x9;self.id.size() >= 7 implies self.id.substring(1, 7).toLowerCase() &lt;> 'cluster'&#xA;)"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="directedGraph" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="false"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="subgraphs" upperBound="-1"
+          eType="#//dot/DotGraph" containment="true" eOpposite="#//dot/DotGraph/parentGraph"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parentGraph" eType="#//dot/DotGraph"
+          eOpposite="#//dot/DotGraph/subgraphs"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="graphSettings" upperBound="-1"
+          eType="#//dot/Setting" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="nodeSettings" upperBound="-1"
+          eType="#//dot/Setting" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="edgeSettings" upperBound="-1"
+          eType="#//dot/Setting" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral=""/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="cluster" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="false"/>
+      <eGenericSuperTypes eClassifier="#//common/Graph">
+        <eTypeArguments eClassifier="#//dot/DotNode"/>
+        <eTypeArguments eClassifier="#//dot/DotEdge"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DotNode" eSuperTypes="#//common/Node">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="settings" upperBound="-1"
+          eType="#//dot/Setting" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DotEdge" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="settings" upperBound="-1"
+          eType="#//dot/Setting" containment="true"/>
+      <eGenericSuperTypes eClassifier="#//common/Edge">
+        <eTypeArguments eClassifier="#//dot/DotNode"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Setting">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="attribute" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DirectedDotEdge" eSuperTypes="#//dot/DotEdge"/>
+    <eClassifiers xsi:type="ecore:EClass" name="UndirectedDotEdge" eSuperTypes="#//dot/DotEdge"/>
+  </eSubpackages>
+  <eSubpackages name="plain" nsURI="http://www.muml.org/graphviz/plain/1.0.0" nsPrefix="plain">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This package provides classes for the &quot;plain&quot; output format."/>
+    </eAnnotations>
+    <eClassifiers xsi:type="ecore:EClass" name="PlainGraph">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="scale" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <eGenericSuperTypes eClassifier="#//common/Graph">
+        <eTypeArguments eClassifier="#//plain/PlainNode"/>
+        <eTypeArguments eClassifier="#//plain/PlainEdge"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PlainNode" eSuperTypes="#//common/Node">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="position" lowerBound="1"
+          eType="#//util/Point" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PlainEdge">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="splinePoints" upperBound="-1"
+          eType="#//util/Point" containment="true"/>
+      <eGenericSuperTypes eClassifier="#//common/Edge">
+        <eTypeArguments eClassifier="#//plain/PlainNode"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="common" nsURI="http://www.muml.org/graphviz/common/1.0.0" nsPrefix="common">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This package provides base classes for the more specific graphviz&#xA;input/output formats."/>
+    </eAnnotations>
+    <eClassifiers xsi:type="ecore:EClass" name="Graph">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class serves as a base class for all more specific graph&#xA;classes. It provides one containment for a graph's nodes and another&#xA;containment for a graph's edges."/>
+      </eAnnotations>
+      <eTypeParameters name="V">
+        <eBounds eClassifier="#//common/Node"/>
+      </eTypeParameters>
+      <eTypeParameters name="E">
+        <eBounds eClassifier="#//common/Edge">
+          <eTypeArguments eTypeParameter="#//common/Graph/V"/>
+        </eBounds>
+      </eTypeParameters>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" upperBound="-1"
+          containment="true">
+        <eGenericType eTypeParameter="#//common/Graph/V"/>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="edges" upperBound="-1"
+          containment="true">
+        <eGenericType eTypeParameter="#//common/Graph/E"/>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Node" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class serves as a base class for all more specific node&#xA;classes. Such a base node solely consists of a single name attribute."/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Edge">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class serves as a base class for all more specific edge&#xA;classes. An edge provides references to its source and target node.&#xA;If the graph is undirected source and target have no special meaning&#xA;and just provide the references to the endpoints (XXX: this could also&#xA;be modeled differently (2-element set and if the graph is directed source&#xA;and target can be derived from this set)."/>
+      </eAnnotations>
+      <eTypeParameters name="V">
+        <eBounds eClassifier="#//common/Node"/>
+      </eTypeParameters>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+        <eGenericType eTypeParameter="#//common/Edge/V"/>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+        <eGenericType eTypeParameter="#//common/Edge/V"/>
+      </eStructuralFeatures>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="util" nsURI="http://www.muml.org/graphviz/util/1.0.0" nsPrefix="util">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This package provides some general purpose classes that might be reused&#xA;by other packages/classes."/>
+    </eAnnotations>
+    <eClassifiers xsi:type="ecore:EClass" name="Point">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>

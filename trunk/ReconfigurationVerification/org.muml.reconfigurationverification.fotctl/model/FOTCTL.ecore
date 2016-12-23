@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="fotctl" nsURI="http://www.muml.org/reconfigurationverification/fotctl/1.0.0"
+    nsPrefix="fotctl">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="FoTCTLSpec" eSuperTypes="../../org.muml.core/model/core.ecore#//ExtendableElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="formulas" upperBound="-1"
+        eType="#//FoTCTLFormula" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nodeLabelPredicates" upperBound="-1"
+        eType="#//NodeLabelPredicateDecl" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="edgeLabelPredicates" upperBound="-1"
+        eType="#//EdgeLabelPredicateDecl" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constants" upperBound="-1"
+        eType="#//ConstantSymbolDecl" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FoTCTLFormula" eSuperTypes="../../org.muml.reconfigurationverification.tctl/model/TCTL.ecore#//TCTLFormula"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NodeLabelPredicateDecl" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EdgeLabelPredicateDecl" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ConstantSymbolDecl" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="QuantifiedFormula" eSuperTypes="../../org.muml.reconfigurationverification.tctl/model/TCTL.ecore#//UnaryFormula ../../org.muml.core/model/core.ecore#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variables" lowerBound="1"
+        upperBound="-1" eType="#//Variable" eOpposite="#//Variable/declaration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="quantifier" eType="#//Quantifier"
+        defaultValueLiteral="Quantifier.FORALL"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NodeLabelPredicate" eSuperTypes="../../org.muml.reconfigurationverification.tctl/model/TCTL.ecore#//AtomicFormula">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="declaration" lowerBound="1"
+        eType="#//NodeLabelPredicateDecl"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EdgeLabelPredicate" eSuperTypes="../../org.muml.reconfigurationverification.tctl/model/TCTL.ecore#//AtomicFormula">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="declaration" lowerBound="1"
+        eType="#//EdgeLabelPredicateDecl"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="secondTerm" lowerBound="1"
+        eType="ecore:EClass ../../org.muml.reconfigurationverification.tctl/model/TCTL.ecore#//Term"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Variable" eSuperTypes="../../org.muml.reconfigurationverification.tctl/model/TCTL.ecore#//Term">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="declaration" lowerBound="1"
+        eType="#//QuantifiedFormula" resolveProxies="false" eOpposite="#//QuantifiedFormula/variables"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="if declaration.oclIsUndefined() then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9;declaration.name&#xD;&#xA;endif"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Constant" eSuperTypes="../../org.muml.reconfigurationverification.tctl/model/TCTL.ecore#//Term">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="declaration" lowerBound="1"
+        eType="#//ConstantSymbolDecl" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="if declaration.oclIsUndefined() then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9;declaration.name&#xD;&#xA;endif"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Quantifier">
+    <eLiterals name="FORALL" literal="forall"/>
+    <eLiterals name="EXISTS" value="1" literal="exists"/>
+  </eClassifiers>
+</ecore:EPackage>

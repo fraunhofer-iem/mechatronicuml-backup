@@ -1,0 +1,36 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: PSM Properties
+Bundle-SymbolicName: org.muml.psm.edit.properties; singleton:=true
+Bundle-Version: 0.5.0.qualifier
+Require-Bundle: org.eclipse.emf.ecore,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.edit,
+ org.eclipse.ui,
+ org.eclipse.core.resources,
+ org.eclipse.jface,
+ org.muml.psm.edit,
+ org.muml.psm,
+ org.muml.ape.runtime,
+ org.muml.core.edit,
+ org.muml.core.edit.properties,
+ org.muml.pim.edit,
+ org.muml.pim.edit.properties,
+ org.muml.pm.hardware.edit,
+ org.muml.pm.hardware.edit.properties,
+ org.muml.pim.actionlanguage.xtext.ui,
+ org.muml.pim.common
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.muml.psm.properties.metamodel, org.muml.psm.properties.constraint,
+ org.muml.psm.properties.realtimestatechartparameterbinding.editor,
+ org.muml.psm.properties.properties.editor,
+ org.muml.psm.properties.psm.editor,
+ org.muml.psm.properties.psm_realtimestatechart.editor,
+ org.muml.psm.properties.allocation.editor,
+ org.muml.psm.properties.portapimapping.editor,
+ org.muml.psm.properties.realtimestatechartparameter.editor,
+ org.muml.psm.properties.apiexpressions.editor,
+ org.muml.psm.properties.psm_instance.editor,
+ org.muml.psm.properties.tabs
+Bundle-Vendor: Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT 

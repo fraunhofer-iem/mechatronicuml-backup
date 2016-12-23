@@ -1,0 +1,29 @@
+«IMPORT simulink»
+
+«EXTENSION extensions::Element»
+«EXTENSION extensions::Block»
+
+«DEFINE subSystem FOR SubSystem»
+  Block {
+    BlockType SubSystem
+    Name "«this.getName()»"
+    SID				«this.getSimulinkId()»
+    Ports [«this.inPorts.select(p|!EnablePort.isInstance(p) && !TriggerPort.isInstance(p)).size», «this.outPorts.size», «this.inPorts.select(p|EnablePort.isInstance(p)).size», «this.inPorts.select(p|TriggerPort.isInstance(p)).size»]
+    Tag		"id=«this.id»"
+	«EXPAND Parameter::parameter FOREACH this.parameters.reject(p| {'BlockType','Name', 'SID', 'Tag', 'Ports'}.contains(p.name)  || p.name.startsWith('System.'))-»
+	  System {
+	  	Name  "«this.getName()»"
+	  	Open			off 	  	
+	  	«FOREACH this.parameters.select(p|p.name.startsWith('System.') && p.name != 'System.Name') AS parameter-»
+	  	«parameter.name.replaceFirst('System.','')» "«parameter.value»"
+	  	«ENDFOREACH-»
+	  	«EXPAND InPortBlock::inPortBlock FOREACH this.inPorts.select(p| !EnablePort.isInstance(p)&& !TriggerPort.isInstance(p))-»
+	  	«EXPAND EnablePort::enablePort FOREACH (List[EnablePort])this.inPorts.select(p|EnablePort.isInstance(p))-»
+	  	«EXPAND TriggerPort::triggerPort FOREACH (List[TriggerPort])this.inPorts.select(p|TriggerPort.isInstance(p))-»
+	  	«EXPAND OutPortBlock::outPortBlock FOREACH this.outPorts-»
+	  	«EXPAND SubSystem::subSystem FOREACH this.subSystems-»
+	  	«EXPAND Block::common FOREACH this.blocks.select(b | !SubSystem.isInstance(b))-»
+	  	«EXPAND Line::line FOREACH this.lines-»
+	  }
+  }
+«ENDDEFINE»

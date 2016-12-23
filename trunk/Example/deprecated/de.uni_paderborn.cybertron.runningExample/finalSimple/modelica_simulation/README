@@ -1,0 +1,6 @@
+Changes with regard to the fujaba model:
+- distance values have the type real instead of integer
+- adapted invariants/clock constraints to get meaningful simulation
+  results
+- other minor changes (e.g. use constants instead of variables, where
+  appropriate)

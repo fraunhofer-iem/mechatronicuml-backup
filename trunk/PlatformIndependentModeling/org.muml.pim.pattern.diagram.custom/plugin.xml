@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+    <!--Set a providers for the parserfactory and for the editpartfactory in order to induce your own editparts/parsers. The priority needs to be hicher than "Lowest" -->
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
+      <ParserProvider class="org.muml.pim.pattern.diagram.custom.providers.CustomMumlParserProvider">
+         <Priority name="Low"/>
+      </ParserProvider>
+   </extension>  
+
+   <!-- optionally, specify keybindings -->
+   
+   <!-- Define the export wizards for pattern to protocol transformation and vice versa -->
+   
+     <extension
+         point="org.eclipse.ui.exportWizards">
+      <wizard
+            category="org.muml.core.export"
+            class="org.muml.pim.pattern.diagram.custom.export.wizard.PatternToProtocolExportWizard"
+            id="org.muml.pim.pattern.diagram.custom.ExportWizardPatternToProtocol"
+            name="Pattern To Protocol Transformation Wizard">
+      </wizard>
+      <wizard
+            category="org.muml.core.export"
+            class="org.muml.pim.pattern.diagram.custom.export.wizard.ProtocolToPatternExportWizard"
+            id="org.muml.pim.pattern.diagram.custom.ExportWizardProtocolToPattern"
+            name="Protocol To Pattern Transformation Wizard">
+      </wizard>
+   </extension>
+   
+   
+   
+   
+   
+   <!-- prevent deleting inner coordination pattern -->
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <binding context="org.muml.pim.pattern.diagram.TypeContext">
+         <elementType ref="org.muml.pim.pattern.diagram.CoordinationPattern_3003"/>
+         <advice ref="org.muml.pim.pattern.diagram.Pattern2Advice"/>
+      </binding>
+   </extension>
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <metamodel nsURI="http://www.muml.org/pim/pattern/1.0.0">
+        <adviceBinding  id="org.muml.pim.pattern.diagram.Pattern2Advice"
+		  typeId="org.muml.pim.pattern.diagram.CoordinationPattern_3003"
+		  class="org.muml.pim.coordinationspecification.common.edit.helpers.PreventDeleteEditHelperAdvice"
+		  inheritance="all">
+        </adviceBinding>
+      </metamodel>
+   </extension>
+   
+   
+   <!-- prevent deleting inner coordination pattern variant -->
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <binding context="org.muml.pim.pattern.diagram.TypeContext">
+         <elementType ref="org.muml.pim.pattern.diagram.CoordinationPatternVariant_3008"/>
+         <advice ref="org.muml.pim.pattern.diagram.PatternVariant2Advice"/>
+      </binding>
+   </extension>
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <metamodel nsURI="http://www.muml.org/pim/pattern/1.0.0">
+        <adviceBinding  id="org.muml.pim.pattern.diagram.PatternVariant2Advice"
+		  typeId="org.muml.pim.pattern.diagram.CoordinationPatternVariant_3008"
+		  class="org.muml.pim.coordinationspecification.common.edit.helpers.PreventDeleteEditHelperAdvice"
+		  inheritance="all">
+        </adviceBinding>
+      </metamodel>
+   </extension>
+   
+   
+   <!-- fix for #1230. See referenced class "DeleteWithChildrenEditHelperAdvice" for detailed explanations. -->
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <binding context="org.muml.pim.pattern.diagram.TypeContext">
+         <elementType ref="org.muml.pim.pattern.diagram.CoordinationPattern_2001"/>
+         <advice ref="org.muml.pim.pattern.diagram.CoordinationPatternAdvice"/>
+      </binding>
+   </extension>
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <metamodel nsURI="http://www.muml.org/pim/pattern/1.0.0">
+        <adviceBinding id="org.muml.pim.pattern.diagram.CoordinationPatternAdvice"
+		  typeId="org.muml.pim.pattern.diagram.CoordinationPattern_2001"
+		  class="org.muml.pim.coordinationspecification.common.edit.helpers.DeleteWithChildrenEditHelperAdvice"
+		  inheritance="all">
+        </adviceBinding>
+      </metamodel>
+   </extension>
+   
+   <!-- fix for #1230. See referenced class "DeleteWithChildrenEditHelperAdvice" for detailed explanations. -->
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <binding context="org.muml.pim.pattern.diagram.TypeContext">
+         <elementType ref="org.muml.pim.pattern.diagram.CoordinationPatternVariant_2002"/>
+         <advice ref="org.muml.pim.pattern.diagram.CoordinationPatternVariantAdvice"/>
+      </binding>
+   </extension>
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <metamodel nsURI="http://www.muml.org/pim/pattern/1.0.0">
+        <adviceBinding id="org.muml.pim.pattern.diagram.CoordinationPatternVariantAdvice"
+		  typeId="org.muml.pim.pattern.diagram.CoordinationPatternVariant_2002"
+		  class="org.muml.pim.coordinationspecification.common.edit.helpers.DeleteWithChildrenEditHelperAdvice"
+		  inheritance="all">
+        </adviceBinding>
+      </metamodel>
+   </extension>
+   
+     
+     
+</plugin>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.muml.external.unitontology.feature" label="unit ontology external dependency" provider-name="%providerName" version="1.0.0.qualifier">
+
+   <description>
+      This feature provides a plugin that ships the unitontology.owl,
+which is provided
+by
+https://code.google.com/p/unit-ontology/
+   </description>
+
+   <copyright url="%copyrightURL">
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <plugin download-size="0" id="org.muml.external.unitontology" install-size="0" version="0.0.0"/>
+
+</feature>

@@ -1,0 +1,695 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--muml metamodel version 0.3.2 (r2996)-->
+<org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc:ZoneGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:component="http://www.muml.org/pim/component/1.0.0" xmlns:de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic="http://www.muml.org/verification/core/reachanalysis/reachabilitygraph/cic/1.0.0" xmlns:org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc="http://www.muml.org/verification/core/reachanalysis/reachabilitygraph/rtsc/1.0.0" xmlns:runtime="http://www.muml.org/verification/core/runtime/1.0.0" xmlns:verificationExtension="http://www.muml.org/uppaal/adapter/extension/verificationextension/1.0.0" xmi:id="_T0u5YAtBEeSBcbGbWXZevA">
+  <states xsi:type="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic:CICZoneGraphState" xmi:id="_T0u5YQtBEeSBcbGbWXZevA" outgoingTransitions="_T0u6QwtBEeSBcbGbWXZevA" locations="_T0u5YwtBEeSBcbGbWXZevA _T0u5YgtBEeSBcbGbWXZevA _T0u5aAtBEeSBcbGbWXZevA _T0u5ZwtBEeSBcbGbWXZevA _T0u5ZAtBEeSBcbGbWXZevA">
+    <containedToplevelStatechartInstances xmi:id="_T0u5YgtBEeSBcbGbWXZevA">
+      <instanceOf href="extent:/2#//@categories.3/@modelElements.2"/>
+      <activeState href="extent:/2#//@categories.3/@modelElements.2/@states.0"/>
+      <subRealtimeStatechartInstances xmi:id="_T0u5YwtBEeSBcbGbWXZevA" runtimeBehavioralElement="_T0u5bAtBEeSBcbGbWXZevA">
+        <instanceOf href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart"/>
+        <activeState href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0"/>
+        <subRealtimeStatechartInstances xmi:id="_T0u5ZAtBEeSBcbGbWXZevA">
+          <extension xsi:type="verificationExtension:ClockBindingsExtension" xmi:id="_T0u5ZQtBEeSBcbGbWXZevA">
+            <clockBindings xmi:id="_T0u5ZgtBEeSBcbGbWXZevA">
+              <clock href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0/@embeddedRegions.0/@embeddedStatechart/@clocks.0"/>
+            </clockBindings>
+          </extension>
+          <instanceOf href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0/@embeddedRegions.0/@embeddedStatechart"/>
+          <activeState href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0"/>
+        </subRealtimeStatechartInstances>
+      </subRealtimeStatechartInstances>
+    </containedToplevelStatechartInstances>
+    <containedToplevelStatechartInstances xmi:id="_T0u5ZwtBEeSBcbGbWXZevA">
+      <instanceOf href="extent:/2#//@categories.3/@modelElements.3"/>
+      <activeState href="extent:/2#//@categories.3/@modelElements.3/@states.0"/>
+      <subRealtimeStatechartInstances xmi:id="_T0u5aAtBEeSBcbGbWXZevA" runtimeBehavioralElement="_T0u5bgtBEeSBcbGbWXZevA">
+        <instanceOf href="extent:/2#//@categories.3/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart"/>
+        <activeState href="extent:/2#//@categories.3/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0"/>
+        <variableBindings xmi:id="_T0u5aQtBEeSBcbGbWXZevA">
+          <variable href="extent:/2#//@categories.3/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@variables.0"/>
+        </variableBindings>
+      </subRealtimeStatechartInstances>
+    </containedToplevelStatechartInstances>
+    <cic xmi:id="_T0u5agtBEeSBcbGbWXZevA" name="protoCIC">
+      <componentInstances xsi:type="runtime:RuntimeComponentInstance" xmi:id="_T0u5awtBEeSBcbGbWXZevA" name="role1ComponentInstance0">
+        <componentType xsi:type="component:StaticAtomicComponent" href="extent:/2#//@categories.1/@modelElements.0"/>
+        <portInstances xsi:type="runtime:RuntimeDiscreteSinglePortInstance" xmi:id="_T0u5bAtBEeSBcbGbWXZevA" name="role1PortInstance0" connectorInstances="_T0u5bwtBEeSBcbGbWXZevA" statechartInstance="_T0u5YwtBEeSBcbGbWXZevA">
+          <type xsi:type="component:DiscretePort" href="extent:/2#//@categories.1/@modelElements.0/@ports.0"/>
+        </portInstances>
+      </componentInstances>
+      <componentInstances xsi:type="runtime:RuntimeComponentInstance" xmi:id="_T0u5bQtBEeSBcbGbWXZevA" name="role2ComponentInstance0">
+        <componentType xsi:type="component:StaticAtomicComponent" href="extent:/2#//@categories.1/@modelElements.1"/>
+        <portInstances xsi:type="runtime:RuntimeDiscreteSinglePortInstance" xmi:id="_T0u5bgtBEeSBcbGbWXZevA" name="role2PortInstance0" connectorInstances="_T0u5bwtBEeSBcbGbWXZevA" statechartInstance="_T0u5aAtBEeSBcbGbWXZevA">
+          <type xsi:type="component:DiscretePort" href="extent:/2#//@categories.1/@modelElements.1/@ports.0"/>
+        </portInstances>
+      </componentInstances>
+      <portConnectorInstances xsi:type="runtime:RuntimeAssemblyConnectorInstance" xmi:id="_T0u5bwtBEeSBcbGbWXZevA" connectorEndpointInstances="_T0u5bAtBEeSBcbGbWXZevA _T0u5bgtBEeSBcbGbWXZevA"/>
+    </cic>
+  </states>
+  <states xsi:type="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic:CICZoneGraphState" xmi:id="_T0u5cAtBEeSBcbGbWXZevA" incomingTransitions="_T0u6QwtBEeSBcbGbWXZevA" outgoingTransitions="_T0u6RAtBEeSBcbGbWXZevA" locations="_T0u5cgtBEeSBcbGbWXZevA _T0u5cQtBEeSBcbGbWXZevA _T0u5dwtBEeSBcbGbWXZevA _T0u5dgtBEeSBcbGbWXZevA _T0u5cwtBEeSBcbGbWXZevA">
+    <containedToplevelStatechartInstances xmi:id="_T0u5cQtBEeSBcbGbWXZevA">
+      <instanceOf href="extent:/2#//@categories.3/@modelElements.2"/>
+      <activeState href="extent:/2#//@categories.3/@modelElements.2/@states.0"/>
+      <subRealtimeStatechartInstances xmi:id="_T0u5cgtBEeSBcbGbWXZevA" runtimeBehavioralElement="_T0u5ewtBEeSBcbGbWXZevA">
+        <instanceOf href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart"/>
+        <activeState href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0"/>
+        <subRealtimeStatechartInstances xmi:id="_T0u5cwtBEeSBcbGbWXZevA">
+          <extension xsi:type="verificationExtension:ClockBindingsExtension" xmi:id="_T0u5dAtBEeSBcbGbWXZevA">
+            <clockBindings xmi:id="_T0u5dQtBEeSBcbGbWXZevA" value="1">
+              <clock href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0/@embeddedRegions.0/@embeddedStatechart/@clocks.0"/>
+            </clockBindings>
+          </extension>
+          <instanceOf href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0/@embeddedRegions.0/@embeddedStatechart"/>
+          <activeState href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0"/>
+        </subRealtimeStatechartInstances>
+      </subRealtimeStatechartInstances>
+    </containedToplevelStatechartInstances>
+    <containedToplevelStatechartInstances xmi:id="_T0u5dgtBEeSBcbGbWXZevA">
+      <instanceOf href="extent:/2#//@categories.3/@modelElements.3"/>
+      <activeState href="extent:/2#//@categories.3/@modelElements.3/@states.0"/>
+      <subRealtimeStatechartInstances xmi:id="_T0u5dwtBEeSBcbGbWXZevA" runtimeBehavioralElement="_T0u5fQtBEeSBcbGbWXZevA">
+        <instanceOf href="extent:/2#//@categories.3/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart"/>
+        <activeState href="extent:/2#//@categories.3/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0"/>
+        <variableBindings xmi:id="_T0u5eAtBEeSBcbGbWXZevA">
+          <variable href="extent:/2#//@categories.3/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@variables.0"/>
+        </variableBindings>
+      </subRealtimeStatechartInstances>
+    </containedToplevelStatechartInstances>
+    <cic xmi:id="_T0u5eQtBEeSBcbGbWXZevA" name="protoCIC">
+      <componentInstances xsi:type="runtime:RuntimeComponentInstance" xmi:id="_T0u5egtBEeSBcbGbWXZevA" name="role1ComponentInstance0">
+        <componentType xsi:type="component:StaticAtomicComponent" href="extent:/2#//@categories.1/@modelElements.0"/>
+        <portInstances xsi:type="runtime:RuntimeDiscreteSinglePortInstance" xmi:id="_T0u5ewtBEeSBcbGbWXZevA" name="role1PortInstance0" connectorInstances="_T0u5fgtBEeSBcbGbWXZevA" statechartInstance="_T0u5cgtBEeSBcbGbWXZevA">
+          <type xsi:type="component:DiscretePort" href="extent:/2#//@categories.1/@modelElements.0/@ports.0"/>
+        </portInstances>
+      </componentInstances>
+      <componentInstances xsi:type="runtime:RuntimeComponentInstance" xmi:id="_T0u5fAtBEeSBcbGbWXZevA" name="role2ComponentInstance0">
+        <componentType xsi:type="component:StaticAtomicComponent" href="extent:/2#//@categories.1/@modelElements.1"/>
+        <portInstances xsi:type="runtime:RuntimeDiscreteSinglePortInstance" xmi:id="_T0u5fQtBEeSBcbGbWXZevA" name="role2PortInstance0" connectorInstances="_T0u5fgtBEeSBcbGbWXZevA" statechartInstance="_T0u5dwtBEeSBcbGbWXZevA">
+          <type xsi:type="component:DiscretePort" href="extent:/2#//@categories.1/@modelElements.1/@ports.0"/>
+        </portInstances>
+      </componentInstances>
+      <portConnectorInstances xsi:type="runtime:RuntimeAssemblyConnectorInstance" xmi:id="_T0u5fgtBEeSBcbGbWXZevA" connectorEndpointInstances="_T0u5ewtBEeSBcbGbWXZevA _T0u5fQtBEeSBcbGbWXZevA"/>
+    </cic>
+  </states>
+  <states xsi:type="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic:CICZoneGraphState" xmi:id="_T0u5fwtBEeSBcbGbWXZevA" incomingTransitions="_T0u6RAtBEeSBcbGbWXZevA" outgoingTransitions="_T0u6RQtBEeSBcbGbWXZevA" locations="_T0u5gQtBEeSBcbGbWXZevA _T0u5gAtBEeSBcbGbWXZevA _T0u5gwtBEeSBcbGbWXZevA _T0u5ggtBEeSBcbGbWXZevA _T0u5hQtBEeSBcbGbWXZevA">
+    <containedToplevelStatechartInstances xmi:id="_T0u5gAtBEeSBcbGbWXZevA">
+      <instanceOf href="extent:/2#//@categories.3/@modelElements.2"/>
+      <activeState href="extent:/2#//@categories.3/@modelElements.2/@states.0"/>
+      <subRealtimeStatechartInstances xmi:id="_T0u5gQtBEeSBcbGbWXZevA" runtimeBehavioralElement="_T0u5igtBEeSBcbGbWXZevA">
+        <instanceOf href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart"/>
+        <activeState href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0"/>
+      </subRealtimeStatechartInstances>
+    </containedToplevelStatechartInstances>
+    <containedToplevelStatechartInstances xmi:id="_T0u5ggtBEeSBcbGbWXZevA">
+      <instanceOf href="extent:/2#//@categories.3/@modelElements.3"/>
+      <activeState href="extent:/2#//@categories.3/@modelElements.3/@states.0"/>
+      <subRealtimeStatechartInstances xmi:id="_T0u5gwtBEeSBcbGbWXZevA" runtimeBehavioralElement="_T0u5jAtBEeSBcbGbWXZevA">
+        <instanceOf href="extent:/2#//@categories.3/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart"/>
+        <activeState href="extent:/2#//@categories.3/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0"/>
+        <variableBindings xmi:id="_T0u5hAtBEeSBcbGbWXZevA">
+          <variable href="extent:/2#//@categories.3/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@variables.0"/>
+        </variableBindings>
+      </subRealtimeStatechartInstances>
+    </containedToplevelStatechartInstances>
+    <containedToplevelStatechartInstances xmi:id="_T0u5hQtBEeSBcbGbWXZevA">
+      <extension xsi:type="verificationExtension:ClockBindingsExtension" xmi:id="_T0u5hgtBEeSBcbGbWXZevA">
+        <clockBindings xmi:id="_T0u5hwtBEeSBcbGbWXZevA" value="1">
+          <clock href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0/@embeddedRegions.0/@embeddedStatechart/@clocks.0"/>
+        </clockBindings>
+      </extension>
+      <instanceOf href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0/@embeddedRegions.0/@embeddedStatechart"/>
+      <activeTransition href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.0"/>
+    </containedToplevelStatechartInstances>
+    <cic xmi:id="_T0u5iAtBEeSBcbGbWXZevA" name="protoCIC">
+      <componentInstances xsi:type="runtime:RuntimeComponentInstance" xmi:id="_T0u5iQtBEeSBcbGbWXZevA" name="role1ComponentInstance0">
+        <componentType xsi:type="component:StaticAtomicComponent" href="extent:/2#//@categories.1/@modelElements.0"/>
+        <portInstances xsi:type="runtime:RuntimeDiscreteSinglePortInstance" xmi:id="_T0u5igtBEeSBcbGbWXZevA" name="role1PortInstance0" connectorInstances="_T0u5jQtBEeSBcbGbWXZevA" statechartInstance="_T0u5gQtBEeSBcbGbWXZevA">
+          <type xsi:type="component:DiscretePort" href="extent:/2#//@categories.1/@modelElements.0/@ports.0"/>
+        </portInstances>
+      </componentInstances>
+      <componentInstances xsi:type="runtime:RuntimeComponentInstance" xmi:id="_T0u5iwtBEeSBcbGbWXZevA" name="role2ComponentInstance0">
+        <componentType xsi:type="component:StaticAtomicComponent" href="extent:/2#//@categories.1/@modelElements.1"/>
+        <portInstances xsi:type="runtime:RuntimeDiscreteSinglePortInstance" xmi:id="_T0u5jAtBEeSBcbGbWXZevA" name="role2PortInstance0" connectorInstances="_T0u5jQtBEeSBcbGbWXZevA" statechartInstance="_T0u5gwtBEeSBcbGbWXZevA">
+          <type xsi:type="component:DiscretePort" href="extent:/2#//@categories.1/@modelElements.1/@ports.0"/>
+        </portInstances>
+      </componentInstances>
+      <portConnectorInstances xsi:type="runtime:RuntimeAssemblyConnectorInstance" xmi:id="_T0u5jQtBEeSBcbGbWXZevA" connectorEndpointInstances="_T0u5igtBEeSBcbGbWXZevA _T0u5jAtBEeSBcbGbWXZevA">
+        <transientMessages xmi:id="_T0u5jgtBEeSBcbGbWXZevA" receiver="_T0u5jAtBEeSBcbGbWXZevA">
+          <message xmi:id="_T0u5jwtBEeSBcbGbWXZevA" name="exampleMessage">
+            <parameters xmi:id="_T0u5kAtBEeSBcbGbWXZevA" name="a">
+              <parameter href="extent:/2#//@categories.4/@modelElements.0/@messageTypes.0/@parameters.0"/>
+            </parameters>
+            <parameters xmi:id="_T0u5kQtBEeSBcbGbWXZevA" name="b">
+              <parameter href="extent:/2#//@categories.4/@modelElements.0/@messageTypes.0/@parameters.1"/>
+            </parameters>
+            <type href="extent:/2#//@categories.4/@modelElements.0/@messageTypes.0"/>
+          </message>
+        </transientMessages>
+      </portConnectorInstances>
+    </cic>
+  </states>
+  <states xsi:type="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic:CICZoneGraphState" xmi:id="_T0u5kgtBEeSBcbGbWXZevA" incomingTransitions="_T0u6RQtBEeSBcbGbWXZevA" outgoingTransitions="_T0u6RgtBEeSBcbGbWXZevA" locations="_T0u5lAtBEeSBcbGbWXZevA _T0u5kwtBEeSBcbGbWXZevA _T0u5mQtBEeSBcbGbWXZevA _T0u5mAtBEeSBcbGbWXZevA _T0u5lQtBEeSBcbGbWXZevA">
+    <containedToplevelStatechartInstances xmi:id="_T0u5kwtBEeSBcbGbWXZevA">
+      <instanceOf href="extent:/2#//@categories.3/@modelElements.2"/>
+      <activeState href="extent:/2#//@categories.3/@modelElements.2/@states.0"/>
+      <subRealtimeStatechartInstances xmi:id="_T0u5lAtBEeSBcbGbWXZevA" runtimeBehavioralElement="_T0u5nQtBEeSBcbGbWXZevA">
+        <instanceOf href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart"/>
+        <activeState href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0"/>
+        <subRealtimeStatechartInstances xmi:id="_T0u5lQtBEeSBcbGbWXZevA">
+          <extension xsi:type="verificationExtension:ClockBindingsExtension" xmi:id="_T0u5lgtBEeSBcbGbWXZevA">
+            <clockBindings xmi:id="_T0u5lwtBEeSBcbGbWXZevA" value="1">
+              <clock href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0/@embeddedRegions.0/@embeddedStatechart/@clocks.0"/>
+            </clockBindings>
+          </extension>
+          <instanceOf href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0/@embeddedRegions.0/@embeddedStatechart"/>
+          <activeState href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.1"/>
+        </subRealtimeStatechartInstances>
+      </subRealtimeStatechartInstances>
+    </containedToplevelStatechartInstances>
+    <containedToplevelStatechartInstances xmi:id="_T0u5mAtBEeSBcbGbWXZevA">
+      <instanceOf href="extent:/2#//@categories.3/@modelElements.3"/>
+      <activeState href="extent:/2#//@categories.3/@modelElements.3/@states.0"/>
+      <subRealtimeStatechartInstances xmi:id="_T0u5mQtBEeSBcbGbWXZevA" runtimeBehavioralElement="_T0u5nwtBEeSBcbGbWXZevA">
+        <instanceOf href="extent:/2#//@categories.3/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart"/>
+        <activeState href="extent:/2#//@categories.3/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0"/>
+        <variableBindings xmi:id="_T0u5mgtBEeSBcbGbWXZevA">
+          <variable href="extent:/2#//@categories.3/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@variables.0"/>
+        </variableBindings>
+      </subRealtimeStatechartInstances>
+    </containedToplevelStatechartInstances>
+    <cic xmi:id="_T0u5mwtBEeSBcbGbWXZevA" name="protoCIC">
+      <componentInstances xsi:type="runtime:RuntimeComponentInstance" xmi:id="_T0u5nAtBEeSBcbGbWXZevA" name="role1ComponentInstance0">
+        <componentType xsi:type="component:StaticAtomicComponent" href="extent:/2#//@categories.1/@modelElements.0"/>
+        <portInstances xsi:type="runtime:RuntimeDiscreteSinglePortInstance" xmi:id="_T0u5nQtBEeSBcbGbWXZevA" name="role1PortInstance0" connectorInstances="_T0u5oAtBEeSBcbGbWXZevA" statechartInstance="_T0u5lAtBEeSBcbGbWXZevA">
+          <type xsi:type="component:DiscretePort" href="extent:/2#//@categories.1/@modelElements.0/@ports.0"/>
+        </portInstances>
+      </componentInstances>
+      <componentInstances xsi:type="runtime:RuntimeComponentInstance" xmi:id="_T0u5ngtBEeSBcbGbWXZevA" name="role2ComponentInstance0">
+        <componentType xsi:type="component:StaticAtomicComponent" href="extent:/2#//@categories.1/@modelElements.1"/>
+        <portInstances xsi:type="runtime:RuntimeDiscreteSinglePortInstance" xmi:id="_T0u5nwtBEeSBcbGbWXZevA" name="role2PortInstance0" connectorInstances="_T0u5oAtBEeSBcbGbWXZevA" statechartInstance="_T0u5mQtBEeSBcbGbWXZevA">
+          <type xsi:type="component:DiscretePort" href="extent:/2#//@categories.1/@modelElements.1/@ports.0"/>
+        </portInstances>
+      </componentInstances>
+      <portConnectorInstances xsi:type="runtime:RuntimeAssemblyConnectorInstance" xmi:id="_T0u5oAtBEeSBcbGbWXZevA" connectorEndpointInstances="_T0u5nQtBEeSBcbGbWXZevA _T0u5nwtBEeSBcbGbWXZevA">
+        <transientMessages xmi:id="_T0u5oQtBEeSBcbGbWXZevA" receiver="_T0u5nwtBEeSBcbGbWXZevA">
+          <message xmi:id="_T0u5ogtBEeSBcbGbWXZevA" name="exampleMessage">
+            <parameters xmi:id="_T0u5owtBEeSBcbGbWXZevA" name="a">
+              <parameter href="extent:/2#//@categories.4/@modelElements.0/@messageTypes.0/@parameters.0"/>
+            </parameters>
+            <parameters xmi:id="_T0u5pAtBEeSBcbGbWXZevA" name="b">
+              <parameter href="extent:/2#//@categories.4/@modelElements.0/@messageTypes.0/@parameters.1"/>
+            </parameters>
+            <type href="extent:/2#//@categories.4/@modelElements.0/@messageTypes.0"/>
+          </message>
+        </transientMessages>
+      </portConnectorInstances>
+    </cic>
+  </states>
+  <states xsi:type="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic:CICZoneGraphState" xmi:id="_T0u5pQtBEeSBcbGbWXZevA" incomingTransitions="_T0u6RgtBEeSBcbGbWXZevA" outgoingTransitions="_T0u6RwtBEeSBcbGbWXZevA" locations="_T0u5pwtBEeSBcbGbWXZevA _T0u5pgtBEeSBcbGbWXZevA _T0u5rAtBEeSBcbGbWXZevA _T0u5qwtBEeSBcbGbWXZevA _T0u5qAtBEeSBcbGbWXZevA">
+    <containedToplevelStatechartInstances xmi:id="_T0u5pgtBEeSBcbGbWXZevA">
+      <instanceOf href="extent:/2#//@categories.3/@modelElements.2"/>
+      <activeState href="extent:/2#//@categories.3/@modelElements.2/@states.0"/>
+      <subRealtimeStatechartInstances xmi:id="_T0u5pwtBEeSBcbGbWXZevA" runtimeBehavioralElement="_T0u5sAtBEeSBcbGbWXZevA">
+        <instanceOf href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart"/>
+        <activeState href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0"/>
+        <subRealtimeStatechartInstances xmi:id="_T0u5qAtBEeSBcbGbWXZevA">
+          <extension xsi:type="verificationExtension:ClockBindingsExtension" xmi:id="_T0u5qQtBEeSBcbGbWXZevA">
+            <clockBindings xmi:id="_T0u5qgtBEeSBcbGbWXZevA" value="1">
+              <clock href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0/@embeddedRegions.0/@embeddedStatechart/@clocks.0"/>
+            </clockBindings>
+          </extension>
+          <instanceOf href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0/@embeddedRegions.0/@embeddedStatechart"/>
+          <activeState href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.1"/>
+        </subRealtimeStatechartInstances>
+      </subRealtimeStatechartInstances>
+    </containedToplevelStatechartInstances>
+    <containedToplevelStatechartInstances xmi:id="_T0u5qwtBEeSBcbGbWXZevA">
+      <instanceOf href="extent:/2#//@categories.3/@modelElements.3"/>
+      <activeState href="extent:/2#//@categories.3/@modelElements.3/@states.0"/>
+      <subRealtimeStatechartInstances xmi:id="_T0u5rAtBEeSBcbGbWXZevA" runtimeBehavioralElement="_T0u5sgtBEeSBcbGbWXZevA">
+        <instanceOf href="extent:/2#//@categories.3/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart"/>
+        <activeState href="extent:/2#//@categories.3/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0"/>
+        <variableBindings xmi:id="_T0u5rQtBEeSBcbGbWXZevA">
+          <variable href="extent:/2#//@categories.3/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@variables.0"/>
+        </variableBindings>
+      </subRealtimeStatechartInstances>
+    </containedToplevelStatechartInstances>
+    <cic xmi:id="_T0u5rgtBEeSBcbGbWXZevA" name="protoCIC">
+      <componentInstances xsi:type="runtime:RuntimeComponentInstance" xmi:id="_T0u5rwtBEeSBcbGbWXZevA" name="role1ComponentInstance0">
+        <componentType xsi:type="component:StaticAtomicComponent" href="extent:/2#//@categories.1/@modelElements.0"/>
+        <portInstances xsi:type="runtime:RuntimeDiscreteSinglePortInstance" xmi:id="_T0u5sAtBEeSBcbGbWXZevA" name="role1PortInstance0" connectorInstances="_T0u5swtBEeSBcbGbWXZevA" statechartInstance="_T0u5pwtBEeSBcbGbWXZevA">
+          <type xsi:type="component:DiscretePort" href="extent:/2#//@categories.1/@modelElements.0/@ports.0"/>
+        </portInstances>
+      </componentInstances>
+      <componentInstances xsi:type="runtime:RuntimeComponentInstance" xmi:id="_T0u5sQtBEeSBcbGbWXZevA" name="role2ComponentInstance0">
+        <componentType xsi:type="component:StaticAtomicComponent" href="extent:/2#//@categories.1/@modelElements.1"/>
+        <portInstances xsi:type="runtime:RuntimeDiscreteSinglePortInstance" xmi:id="_T0u5sgtBEeSBcbGbWXZevA" name="role2PortInstance0" connectorInstances="_T0u5swtBEeSBcbGbWXZevA" statechartInstance="_T0u5rAtBEeSBcbGbWXZevA">
+          <type xsi:type="component:DiscretePort" href="extent:/2#//@categories.1/@modelElements.1/@ports.0"/>
+        </portInstances>
+      </componentInstances>
+      <portConnectorInstances xsi:type="runtime:RuntimeAssemblyConnectorInstance" xmi:id="_T0u5swtBEeSBcbGbWXZevA" connectorEndpointInstances="_T0u5sAtBEeSBcbGbWXZevA _T0u5sgtBEeSBcbGbWXZevA"/>
+    </cic>
+  </states>
+  <states xsi:type="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic:CICZoneGraphState" xmi:id="_T0u5tAtBEeSBcbGbWXZevA" incomingTransitions="_T0u6RwtBEeSBcbGbWXZevA" outgoingTransitions="_T0u6SAtBEeSBcbGbWXZevA" locations="_T0u5tgtBEeSBcbGbWXZevA _T0u5tQtBEeSBcbGbWXZevA _T0u5uwtBEeSBcbGbWXZevA _T0u5ugtBEeSBcbGbWXZevA _T0u5twtBEeSBcbGbWXZevA">
+    <containedToplevelStatechartInstances xmi:id="_T0u5tQtBEeSBcbGbWXZevA">
+      <instanceOf href="extent:/2#//@categories.3/@modelElements.2"/>
+      <activeState href="extent:/2#//@categories.3/@modelElements.2/@states.0"/>
+      <subRealtimeStatechartInstances xmi:id="_T0u5tgtBEeSBcbGbWXZevA" runtimeBehavioralElement="_T0u5vwtBEeSBcbGbWXZevA">
+        <instanceOf href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart"/>
+        <activeState href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0"/>
+        <subRealtimeStatechartInstances xmi:id="_T0u5twtBEeSBcbGbWXZevA">
+          <extension xsi:type="verificationExtension:ClockBindingsExtension" xmi:id="_T0u5uAtBEeSBcbGbWXZevA">
+            <clockBindings xmi:id="_T0u5uQtBEeSBcbGbWXZevA" value="1">
+              <clock href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0/@embeddedRegions.0/@embeddedStatechart/@clocks.0"/>
+            </clockBindings>
+          </extension>
+          <instanceOf href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0/@embeddedRegions.0/@embeddedStatechart"/>
+          <activeState href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.1"/>
+        </subRealtimeStatechartInstances>
+      </subRealtimeStatechartInstances>
+    </containedToplevelStatechartInstances>
+    <containedToplevelStatechartInstances xmi:id="_T0u5ugtBEeSBcbGbWXZevA">
+      <instanceOf href="extent:/2#//@categories.3/@modelElements.3"/>
+      <activeState href="extent:/2#//@categories.3/@modelElements.3/@states.0"/>
+      <subRealtimeStatechartInstances xmi:id="_T0u5uwtBEeSBcbGbWXZevA" runtimeBehavioralElement="_T0u5wQtBEeSBcbGbWXZevA">
+        <instanceOf href="extent:/2#//@categories.3/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart"/>
+        <activeState href="extent:/2#//@categories.3/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0"/>
+        <variableBindings xmi:id="_T0u5vAtBEeSBcbGbWXZevA">
+          <variable href="extent:/2#//@categories.3/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@variables.0"/>
+        </variableBindings>
+      </subRealtimeStatechartInstances>
+    </containedToplevelStatechartInstances>
+    <cic xmi:id="_T0u5vQtBEeSBcbGbWXZevA" name="protoCIC">
+      <componentInstances xsi:type="runtime:RuntimeComponentInstance" xmi:id="_T0u5vgtBEeSBcbGbWXZevA" name="role1ComponentInstance0">
+        <componentType xsi:type="component:StaticAtomicComponent" href="extent:/2#//@categories.1/@modelElements.0"/>
+        <portInstances xsi:type="runtime:RuntimeDiscreteSinglePortInstance" xmi:id="_T0u5vwtBEeSBcbGbWXZevA" name="role1PortInstance0" connectorInstances="_T0u5wgtBEeSBcbGbWXZevA" statechartInstance="_T0u5tgtBEeSBcbGbWXZevA">
+          <type xsi:type="component:DiscretePort" href="extent:/2#//@categories.1/@modelElements.0/@ports.0"/>
+        </portInstances>
+      </componentInstances>
+      <componentInstances xsi:type="runtime:RuntimeComponentInstance" xmi:id="_T0u5wAtBEeSBcbGbWXZevA" name="role2ComponentInstance0">
+        <componentType xsi:type="component:StaticAtomicComponent" href="extent:/2#//@categories.1/@modelElements.1"/>
+        <portInstances xsi:type="runtime:RuntimeDiscreteSinglePortInstance" xmi:id="_T0u5wQtBEeSBcbGbWXZevA" name="role2PortInstance0" connectorInstances="_T0u5wgtBEeSBcbGbWXZevA" statechartInstance="_T0u5uwtBEeSBcbGbWXZevA">
+          <type xsi:type="component:DiscretePort" href="extent:/2#//@categories.1/@modelElements.1/@ports.0"/>
+        </portInstances>
+      </componentInstances>
+      <portConnectorInstances xsi:type="runtime:RuntimeAssemblyConnectorInstance" xmi:id="_T0u5wgtBEeSBcbGbWXZevA" connectorEndpointInstances="_T0u5vwtBEeSBcbGbWXZevA _T0u5wQtBEeSBcbGbWXZevA"/>
+    </cic>
+  </states>
+  <states xsi:type="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic:CICZoneGraphState" xmi:id="_T0u5wwtBEeSBcbGbWXZevA" incomingTransitions="_T0u6SAtBEeSBcbGbWXZevA" outgoingTransitions="_T0u6SQtBEeSBcbGbWXZevA" locations="_T0u5xQtBEeSBcbGbWXZevA _T0u5xAtBEeSBcbGbWXZevA _T0u5yQtBEeSBcbGbWXZevA _T0u5ywtBEeSBcbGbWXZevA _T0u5xgtBEeSBcbGbWXZevA">
+    <containedToplevelStatechartInstances xmi:id="_T0u5xAtBEeSBcbGbWXZevA">
+      <instanceOf href="extent:/2#//@categories.3/@modelElements.2"/>
+      <activeState href="extent:/2#//@categories.3/@modelElements.2/@states.0"/>
+      <subRealtimeStatechartInstances xmi:id="_T0u5xQtBEeSBcbGbWXZevA" runtimeBehavioralElement="_T0u5zgtBEeSBcbGbWXZevA">
+        <instanceOf href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart"/>
+        <activeState href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0"/>
+        <subRealtimeStatechartInstances xmi:id="_T0u5xgtBEeSBcbGbWXZevA">
+          <extension xsi:type="verificationExtension:ClockBindingsExtension" xmi:id="_T0u5xwtBEeSBcbGbWXZevA">
+            <clockBindings xmi:id="_T0u5yAtBEeSBcbGbWXZevA" value="1">
+              <clock href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0/@embeddedRegions.0/@embeddedStatechart/@clocks.0"/>
+            </clockBindings>
+          </extension>
+          <instanceOf href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0/@embeddedRegions.0/@embeddedStatechart"/>
+          <activeState href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.1"/>
+        </subRealtimeStatechartInstances>
+      </subRealtimeStatechartInstances>
+    </containedToplevelStatechartInstances>
+    <containedToplevelStatechartInstances xmi:id="_T0u5yQtBEeSBcbGbWXZevA" runtimeBehavioralElement="_T0u50AtBEeSBcbGbWXZevA">
+      <instanceOf href="extent:/2#//@categories.3/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart"/>
+      <variableBindings xmi:id="_T0u5ygtBEeSBcbGbWXZevA">
+        <variable href="extent:/2#//@categories.3/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@variables.0"/>
+      </variableBindings>
+      <activeTransition href="extent:/2#//@categories.3/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.0"/>
+    </containedToplevelStatechartInstances>
+    <containedToplevelStatechartInstances xmi:id="_T0u5ywtBEeSBcbGbWXZevA">
+      <instanceOf href="extent:/2#//@categories.3/@modelElements.3"/>
+      <activeState href="extent:/2#//@categories.3/@modelElements.3/@states.0"/>
+    </containedToplevelStatechartInstances>
+    <cic xmi:id="_T0u5zAtBEeSBcbGbWXZevA" name="protoCIC">
+      <componentInstances xsi:type="runtime:RuntimeComponentInstance" xmi:id="_T0u5zQtBEeSBcbGbWXZevA" name="role1ComponentInstance0">
+        <componentType xsi:type="component:StaticAtomicComponent" href="extent:/2#//@categories.1/@modelElements.0"/>
+        <portInstances xsi:type="runtime:RuntimeDiscreteSinglePortInstance" xmi:id="_T0u5zgtBEeSBcbGbWXZevA" name="role1PortInstance0" connectorInstances="_T0u50QtBEeSBcbGbWXZevA" statechartInstance="_T0u5xQtBEeSBcbGbWXZevA">
+          <type xsi:type="component:DiscretePort" href="extent:/2#//@categories.1/@modelElements.0/@ports.0"/>
+        </portInstances>
+      </componentInstances>
+      <componentInstances xsi:type="runtime:RuntimeComponentInstance" xmi:id="_T0u5zwtBEeSBcbGbWXZevA" name="role2ComponentInstance0">
+        <componentType xsi:type="component:StaticAtomicComponent" href="extent:/2#//@categories.1/@modelElements.1"/>
+        <portInstances xsi:type="runtime:RuntimeDiscreteSinglePortInstance" xmi:id="_T0u50AtBEeSBcbGbWXZevA" name="role2PortInstance0" connectorInstances="_T0u50QtBEeSBcbGbWXZevA" statechartInstance="_T0u5yQtBEeSBcbGbWXZevA">
+          <type xsi:type="component:DiscretePort" href="extent:/2#//@categories.1/@modelElements.1/@ports.0"/>
+        </portInstances>
+      </componentInstances>
+      <portConnectorInstances xsi:type="runtime:RuntimeAssemblyConnectorInstance" xmi:id="_T0u50QtBEeSBcbGbWXZevA" connectorEndpointInstances="_T0u5zgtBEeSBcbGbWXZevA _T0u50AtBEeSBcbGbWXZevA"/>
+    </cic>
+  </states>
+  <states xsi:type="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic:CICZoneGraphState" xmi:id="_T0u50gtBEeSBcbGbWXZevA" incomingTransitions="_T0u6SQtBEeSBcbGbWXZevA" outgoingTransitions="_T0u6SgtBEeSBcbGbWXZevA" locations="_T0u51AtBEeSBcbGbWXZevA _T0u50wtBEeSBcbGbWXZevA _T0u52QtBEeSBcbGbWXZevA _T0u52AtBEeSBcbGbWXZevA _T0u51QtBEeSBcbGbWXZevA">
+    <containedToplevelStatechartInstances xmi:id="_T0u50wtBEeSBcbGbWXZevA">
+      <instanceOf href="extent:/2#//@categories.3/@modelElements.2"/>
+      <activeState href="extent:/2#//@categories.3/@modelElements.2/@states.0"/>
+      <subRealtimeStatechartInstances xmi:id="_T0u51AtBEeSBcbGbWXZevA" runtimeBehavioralElement="_T0u53QtBEeSBcbGbWXZevA">
+        <instanceOf href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart"/>
+        <activeState href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0"/>
+        <subRealtimeStatechartInstances xmi:id="_T0u51QtBEeSBcbGbWXZevA">
+          <extension xsi:type="verificationExtension:ClockBindingsExtension" xmi:id="_T0u51gtBEeSBcbGbWXZevA">
+            <clockBindings xmi:id="_T0u51wtBEeSBcbGbWXZevA" value="1">
+              <clock href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0/@embeddedRegions.0/@embeddedStatechart/@clocks.0"/>
+            </clockBindings>
+          </extension>
+          <instanceOf href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0/@embeddedRegions.0/@embeddedStatechart"/>
+          <activeState href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.1"/>
+        </subRealtimeStatechartInstances>
+      </subRealtimeStatechartInstances>
+    </containedToplevelStatechartInstances>
+    <containedToplevelStatechartInstances xmi:id="_T0u52AtBEeSBcbGbWXZevA">
+      <instanceOf href="extent:/2#//@categories.3/@modelElements.3"/>
+      <activeState href="extent:/2#//@categories.3/@modelElements.3/@states.0"/>
+      <subRealtimeStatechartInstances xmi:id="_T0u52QtBEeSBcbGbWXZevA" runtimeBehavioralElement="_T0u53wtBEeSBcbGbWXZevA">
+        <instanceOf href="extent:/2#//@categories.3/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart"/>
+        <activeState href="extent:/2#//@categories.3/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.1"/>
+        <variableBindings xmi:id="_T0u52gtBEeSBcbGbWXZevA">
+          <variable href="extent:/2#//@categories.3/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@variables.0"/>
+        </variableBindings>
+      </subRealtimeStatechartInstances>
+    </containedToplevelStatechartInstances>
+    <cic xmi:id="_T0u52wtBEeSBcbGbWXZevA" name="protoCIC">
+      <componentInstances xsi:type="runtime:RuntimeComponentInstance" xmi:id="_T0u53AtBEeSBcbGbWXZevA" name="role1ComponentInstance0">
+        <componentType xsi:type="component:StaticAtomicComponent" href="extent:/2#//@categories.1/@modelElements.0"/>
+        <portInstances xsi:type="runtime:RuntimeDiscreteSinglePortInstance" xmi:id="_T0u53QtBEeSBcbGbWXZevA" name="role1PortInstance0" connectorInstances="_T0u54AtBEeSBcbGbWXZevA" statechartInstance="_T0u51AtBEeSBcbGbWXZevA">
+          <type xsi:type="component:DiscretePort" href="extent:/2#//@categories.1/@modelElements.0/@ports.0"/>
+        </portInstances>
+      </componentInstances>
+      <componentInstances xsi:type="runtime:RuntimeComponentInstance" xmi:id="_T0u53gtBEeSBcbGbWXZevA" name="role2ComponentInstance0">
+        <componentType xsi:type="component:StaticAtomicComponent" href="extent:/2#//@categories.1/@modelElements.1"/>
+        <portInstances xsi:type="runtime:RuntimeDiscreteSinglePortInstance" xmi:id="_T0u53wtBEeSBcbGbWXZevA" name="role2PortInstance0" connectorInstances="_T0u54AtBEeSBcbGbWXZevA" statechartInstance="_T0u52QtBEeSBcbGbWXZevA">
+          <type xsi:type="component:DiscretePort" href="extent:/2#//@categories.1/@modelElements.1/@ports.0"/>
+        </portInstances>
+      </componentInstances>
+      <portConnectorInstances xsi:type="runtime:RuntimeAssemblyConnectorInstance" xmi:id="_T0u54AtBEeSBcbGbWXZevA" connectorEndpointInstances="_T0u53QtBEeSBcbGbWXZevA _T0u53wtBEeSBcbGbWXZevA"/>
+    </cic>
+  </states>
+  <states xsi:type="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic:CICZoneGraphState" xmi:id="_T0u54QtBEeSBcbGbWXZevA" incomingTransitions="_T0u6SgtBEeSBcbGbWXZevA" outgoingTransitions="_T0u6SwtBEeSBcbGbWXZevA" locations="_T0u54wtBEeSBcbGbWXZevA _T0u54gtBEeSBcbGbWXZevA _T0u55wtBEeSBcbGbWXZevA _T0u56QtBEeSBcbGbWXZevA _T0u55AtBEeSBcbGbWXZevA">
+    <containedToplevelStatechartInstances xmi:id="_T0u54gtBEeSBcbGbWXZevA">
+      <instanceOf href="extent:/2#//@categories.3/@modelElements.2"/>
+      <activeState href="extent:/2#//@categories.3/@modelElements.2/@states.0"/>
+      <subRealtimeStatechartInstances xmi:id="_T0u54wtBEeSBcbGbWXZevA" runtimeBehavioralElement="_T0u57AtBEeSBcbGbWXZevA">
+        <instanceOf href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart"/>
+        <activeState href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0"/>
+        <subRealtimeStatechartInstances xmi:id="_T0u55AtBEeSBcbGbWXZevA">
+          <extension xsi:type="verificationExtension:ClockBindingsExtension" xmi:id="_T0u55QtBEeSBcbGbWXZevA">
+            <clockBindings xmi:id="_T0u55gtBEeSBcbGbWXZevA" value="1">
+              <clock href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0/@embeddedRegions.0/@embeddedStatechart/@clocks.0"/>
+            </clockBindings>
+          </extension>
+          <instanceOf href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0/@embeddedRegions.0/@embeddedStatechart"/>
+          <activeState href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.1"/>
+        </subRealtimeStatechartInstances>
+      </subRealtimeStatechartInstances>
+    </containedToplevelStatechartInstances>
+    <containedToplevelStatechartInstances xmi:id="_T0u55wtBEeSBcbGbWXZevA" runtimeBehavioralElement="_T0u57gtBEeSBcbGbWXZevA">
+      <instanceOf href="extent:/2#//@categories.3/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart"/>
+      <variableBindings xmi:id="_T0u56AtBEeSBcbGbWXZevA">
+        <variable href="extent:/2#//@categories.3/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@variables.0"/>
+      </variableBindings>
+      <activeTransition href="extent:/2#//@categories.3/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.1"/>
+    </containedToplevelStatechartInstances>
+    <containedToplevelStatechartInstances xmi:id="_T0u56QtBEeSBcbGbWXZevA">
+      <instanceOf href="extent:/2#//@categories.3/@modelElements.3"/>
+      <activeState href="extent:/2#//@categories.3/@modelElements.3/@states.0"/>
+    </containedToplevelStatechartInstances>
+    <cic xmi:id="_T0u56gtBEeSBcbGbWXZevA" name="protoCIC">
+      <componentInstances xsi:type="runtime:RuntimeComponentInstance" xmi:id="_T0u56wtBEeSBcbGbWXZevA" name="role1ComponentInstance0">
+        <componentType xsi:type="component:StaticAtomicComponent" href="extent:/2#//@categories.1/@modelElements.0"/>
+        <portInstances xsi:type="runtime:RuntimeDiscreteSinglePortInstance" xmi:id="_T0u57AtBEeSBcbGbWXZevA" name="role1PortInstance0" connectorInstances="_T0u57wtBEeSBcbGbWXZevA" statechartInstance="_T0u54wtBEeSBcbGbWXZevA">
+          <type xsi:type="component:DiscretePort" href="extent:/2#//@categories.1/@modelElements.0/@ports.0"/>
+        </portInstances>
+      </componentInstances>
+      <componentInstances xsi:type="runtime:RuntimeComponentInstance" xmi:id="_T0u57QtBEeSBcbGbWXZevA" name="role2ComponentInstance0">
+        <componentType xsi:type="component:StaticAtomicComponent" href="extent:/2#//@categories.1/@modelElements.1"/>
+        <portInstances xsi:type="runtime:RuntimeDiscreteSinglePortInstance" xmi:id="_T0u57gtBEeSBcbGbWXZevA" name="role2PortInstance0" connectorInstances="_T0u57wtBEeSBcbGbWXZevA" statechartInstance="_T0u55wtBEeSBcbGbWXZevA">
+          <type xsi:type="component:DiscretePort" href="extent:/2#//@categories.1/@modelElements.1/@ports.0"/>
+        </portInstances>
+      </componentInstances>
+      <portConnectorInstances xsi:type="runtime:RuntimeAssemblyConnectorInstance" xmi:id="_T0u57wtBEeSBcbGbWXZevA" connectorEndpointInstances="_T0u57AtBEeSBcbGbWXZevA _T0u57gtBEeSBcbGbWXZevA">
+        <transientMessages xmi:id="_T0u58AtBEeSBcbGbWXZevA" receiver="_T0u57AtBEeSBcbGbWXZevA">
+          <message xmi:id="_T0u58QtBEeSBcbGbWXZevA" name="exampleMessage">
+            <parameters xmi:id="_T0u58gtBEeSBcbGbWXZevA" name="a">
+              <parameter href="extent:/2#//@categories.4/@modelElements.0/@messageTypes.0/@parameters.0"/>
+            </parameters>
+            <parameters xmi:id="_T0u58wtBEeSBcbGbWXZevA" name="b">
+              <parameter href="extent:/2#//@categories.4/@modelElements.0/@messageTypes.0/@parameters.1"/>
+            </parameters>
+            <type href="extent:/2#//@categories.4/@modelElements.0/@messageTypes.0"/>
+          </message>
+        </transientMessages>
+      </portConnectorInstances>
+    </cic>
+  </states>
+  <states xsi:type="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic:CICZoneGraphState" xmi:id="_T0u59AtBEeSBcbGbWXZevA" incomingTransitions="_T0u6SwtBEeSBcbGbWXZevA" outgoingTransitions="_T0u6TAtBEeSBcbGbWXZevA" locations="_T0u59gtBEeSBcbGbWXZevA _T0u59QtBEeSBcbGbWXZevA _T0u5-wtBEeSBcbGbWXZevA _T0u5-gtBEeSBcbGbWXZevA _T0u59wtBEeSBcbGbWXZevA">
+    <containedToplevelStatechartInstances xmi:id="_T0u59QtBEeSBcbGbWXZevA">
+      <instanceOf href="extent:/2#//@categories.3/@modelElements.2"/>
+      <activeState href="extent:/2#//@categories.3/@modelElements.2/@states.0"/>
+      <subRealtimeStatechartInstances xmi:id="_T0u59gtBEeSBcbGbWXZevA" runtimeBehavioralElement="_T0u5_wtBEeSBcbGbWXZevA">
+        <instanceOf href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart"/>
+        <activeState href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0"/>
+        <subRealtimeStatechartInstances xmi:id="_T0u59wtBEeSBcbGbWXZevA">
+          <extension xsi:type="verificationExtension:ClockBindingsExtension" xmi:id="_T0u5-AtBEeSBcbGbWXZevA">
+            <clockBindings xmi:id="_T0u5-QtBEeSBcbGbWXZevA" value="1">
+              <clock href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0/@embeddedRegions.0/@embeddedStatechart/@clocks.0"/>
+            </clockBindings>
+          </extension>
+          <instanceOf href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0/@embeddedRegions.0/@embeddedStatechart"/>
+          <activeState href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.1"/>
+        </subRealtimeStatechartInstances>
+      </subRealtimeStatechartInstances>
+    </containedToplevelStatechartInstances>
+    <containedToplevelStatechartInstances xmi:id="_T0u5-gtBEeSBcbGbWXZevA">
+      <instanceOf href="extent:/2#//@categories.3/@modelElements.3"/>
+      <activeState href="extent:/2#//@categories.3/@modelElements.3/@states.0"/>
+      <subRealtimeStatechartInstances xmi:id="_T0u5-wtBEeSBcbGbWXZevA" runtimeBehavioralElement="_T0u6AQtBEeSBcbGbWXZevA">
+        <instanceOf href="extent:/2#//@categories.3/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart"/>
+        <activeState href="extent:/2#//@categories.3/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.2"/>
+        <variableBindings xmi:id="_T0u5_AtBEeSBcbGbWXZevA">
+          <variable href="extent:/2#//@categories.3/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@variables.0"/>
+        </variableBindings>
+      </subRealtimeStatechartInstances>
+    </containedToplevelStatechartInstances>
+    <cic xmi:id="_T0u5_QtBEeSBcbGbWXZevA" name="protoCIC">
+      <componentInstances xsi:type="runtime:RuntimeComponentInstance" xmi:id="_T0u5_gtBEeSBcbGbWXZevA" name="role1ComponentInstance0">
+        <componentType xsi:type="component:StaticAtomicComponent" href="extent:/2#//@categories.1/@modelElements.0"/>
+        <portInstances xsi:type="runtime:RuntimeDiscreteSinglePortInstance" xmi:id="_T0u5_wtBEeSBcbGbWXZevA" name="role1PortInstance0" connectorInstances="_T0u6AgtBEeSBcbGbWXZevA" statechartInstance="_T0u59gtBEeSBcbGbWXZevA">
+          <type xsi:type="component:DiscretePort" href="extent:/2#//@categories.1/@modelElements.0/@ports.0"/>
+        </portInstances>
+      </componentInstances>
+      <componentInstances xsi:type="runtime:RuntimeComponentInstance" xmi:id="_T0u6AAtBEeSBcbGbWXZevA" name="role2ComponentInstance0">
+        <componentType xsi:type="component:StaticAtomicComponent" href="extent:/2#//@categories.1/@modelElements.1"/>
+        <portInstances xsi:type="runtime:RuntimeDiscreteSinglePortInstance" xmi:id="_T0u6AQtBEeSBcbGbWXZevA" name="role2PortInstance0" connectorInstances="_T0u6AgtBEeSBcbGbWXZevA" statechartInstance="_T0u5-wtBEeSBcbGbWXZevA">
+          <type xsi:type="component:DiscretePort" href="extent:/2#//@categories.1/@modelElements.1/@ports.0"/>
+        </portInstances>
+      </componentInstances>
+      <portConnectorInstances xsi:type="runtime:RuntimeAssemblyConnectorInstance" xmi:id="_T0u6AgtBEeSBcbGbWXZevA" connectorEndpointInstances="_T0u5_wtBEeSBcbGbWXZevA _T0u6AQtBEeSBcbGbWXZevA">
+        <transientMessages xmi:id="_T0u6AwtBEeSBcbGbWXZevA" receiver="_T0u5_wtBEeSBcbGbWXZevA">
+          <message xmi:id="_T0u6BAtBEeSBcbGbWXZevA" name="exampleMessage">
+            <parameters xmi:id="_T0u6BQtBEeSBcbGbWXZevA" name="a">
+              <parameter href="extent:/2#//@categories.4/@modelElements.0/@messageTypes.0/@parameters.0"/>
+            </parameters>
+            <parameters xmi:id="_T0u6BgtBEeSBcbGbWXZevA" name="b">
+              <parameter href="extent:/2#//@categories.4/@modelElements.0/@messageTypes.0/@parameters.1"/>
+            </parameters>
+            <type href="extent:/2#//@categories.4/@modelElements.0/@messageTypes.0"/>
+          </message>
+        </transientMessages>
+      </portConnectorInstances>
+    </cic>
+  </states>
+  <states xsi:type="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic:CICZoneGraphState" xmi:id="_T0u6BwtBEeSBcbGbWXZevA" incomingTransitions="_T0u6TAtBEeSBcbGbWXZevA" outgoingTransitions="_T0u6TQtBEeSBcbGbWXZevA" locations="_T0u6CQtBEeSBcbGbWXZevA _T0u6CAtBEeSBcbGbWXZevA _T0u6DgtBEeSBcbGbWXZevA _T0u6DQtBEeSBcbGbWXZevA _T0u6CgtBEeSBcbGbWXZevA">
+    <containedToplevelStatechartInstances xmi:id="_T0u6CAtBEeSBcbGbWXZevA">
+      <instanceOf href="extent:/2#//@categories.3/@modelElements.2"/>
+      <activeState href="extent:/2#//@categories.3/@modelElements.2/@states.0"/>
+      <subRealtimeStatechartInstances xmi:id="_T0u6CQtBEeSBcbGbWXZevA" runtimeBehavioralElement="_T0u6EgtBEeSBcbGbWXZevA">
+        <instanceOf href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart"/>
+        <activeState href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0"/>
+        <subRealtimeStatechartInstances xmi:id="_T0u6CgtBEeSBcbGbWXZevA">
+          <extension xsi:type="verificationExtension:ClockBindingsExtension" xmi:id="_T0u6CwtBEeSBcbGbWXZevA">
+            <clockBindings xmi:id="_T0u6DAtBEeSBcbGbWXZevA" value="1">
+              <clock href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0/@embeddedRegions.0/@embeddedStatechart/@clocks.0"/>
+            </clockBindings>
+          </extension>
+          <instanceOf href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0/@embeddedRegions.0/@embeddedStatechart"/>
+          <activeState href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.1"/>
+        </subRealtimeStatechartInstances>
+      </subRealtimeStatechartInstances>
+    </containedToplevelStatechartInstances>
+    <containedToplevelStatechartInstances xmi:id="_T0u6DQtBEeSBcbGbWXZevA">
+      <instanceOf href="extent:/2#//@categories.3/@modelElements.3"/>
+      <activeState href="extent:/2#//@categories.3/@modelElements.3/@states.0"/>
+      <subRealtimeStatechartInstances xmi:id="_T0u6DgtBEeSBcbGbWXZevA" runtimeBehavioralElement="_T0u6FAtBEeSBcbGbWXZevA">
+        <instanceOf href="extent:/2#//@categories.3/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart"/>
+        <activeState href="extent:/2#//@categories.3/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.2"/>
+        <variableBindings xmi:id="_T0u6DwtBEeSBcbGbWXZevA">
+          <variable href="extent:/2#//@categories.3/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@variables.0"/>
+        </variableBindings>
+      </subRealtimeStatechartInstances>
+    </containedToplevelStatechartInstances>
+    <cic xmi:id="_T0u6EAtBEeSBcbGbWXZevA" name="protoCIC">
+      <componentInstances xsi:type="runtime:RuntimeComponentInstance" xmi:id="_T0u6EQtBEeSBcbGbWXZevA" name="role1ComponentInstance0">
+        <componentType xsi:type="component:StaticAtomicComponent" href="extent:/2#//@categories.1/@modelElements.0"/>
+        <portInstances xsi:type="runtime:RuntimeDiscreteSinglePortInstance" xmi:id="_T0u6EgtBEeSBcbGbWXZevA" name="role1PortInstance0" connectorInstances="_T0u6FQtBEeSBcbGbWXZevA" statechartInstance="_T0u6CQtBEeSBcbGbWXZevA">
+          <type xsi:type="component:DiscretePort" href="extent:/2#//@categories.1/@modelElements.0/@ports.0"/>
+        </portInstances>
+      </componentInstances>
+      <componentInstances xsi:type="runtime:RuntimeComponentInstance" xmi:id="_T0u6EwtBEeSBcbGbWXZevA" name="role2ComponentInstance0">
+        <componentType xsi:type="component:StaticAtomicComponent" href="extent:/2#//@categories.1/@modelElements.1"/>
+        <portInstances xsi:type="runtime:RuntimeDiscreteSinglePortInstance" xmi:id="_T0u6FAtBEeSBcbGbWXZevA" name="role2PortInstance0" connectorInstances="_T0u6FQtBEeSBcbGbWXZevA" statechartInstance="_T0u6DgtBEeSBcbGbWXZevA">
+          <type xsi:type="component:DiscretePort" href="extent:/2#//@categories.1/@modelElements.1/@ports.0"/>
+        </portInstances>
+      </componentInstances>
+      <portConnectorInstances xsi:type="runtime:RuntimeAssemblyConnectorInstance" xmi:id="_T0u6FQtBEeSBcbGbWXZevA" connectorEndpointInstances="_T0u6EgtBEeSBcbGbWXZevA _T0u6FAtBEeSBcbGbWXZevA"/>
+    </cic>
+  </states>
+  <states xsi:type="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic:CICZoneGraphState" xmi:id="_T0u6FgtBEeSBcbGbWXZevA" incomingTransitions="_T0u6TQtBEeSBcbGbWXZevA" outgoingTransitions="_T0u6TgtBEeSBcbGbWXZevA" locations="_T0u6GAtBEeSBcbGbWXZevA _T0u6FwtBEeSBcbGbWXZevA _T0u6HQtBEeSBcbGbWXZevA _T0u6HAtBEeSBcbGbWXZevA _T0u6GQtBEeSBcbGbWXZevA">
+    <containedToplevelStatechartInstances xmi:id="_T0u6FwtBEeSBcbGbWXZevA">
+      <instanceOf href="extent:/2#//@categories.3/@modelElements.2"/>
+      <activeState href="extent:/2#//@categories.3/@modelElements.2/@states.0"/>
+      <subRealtimeStatechartInstances xmi:id="_T0u6GAtBEeSBcbGbWXZevA" runtimeBehavioralElement="_T0u6IQtBEeSBcbGbWXZevA">
+        <instanceOf href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart"/>
+        <activeState href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0"/>
+        <subRealtimeStatechartInstances xmi:id="_T0u6GQtBEeSBcbGbWXZevA">
+          <extension xsi:type="verificationExtension:ClockBindingsExtension" xmi:id="_T0u6GgtBEeSBcbGbWXZevA">
+            <clockBindings xmi:id="_T0u6GwtBEeSBcbGbWXZevA" value="1">
+              <clock href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0/@embeddedRegions.0/@embeddedStatechart/@clocks.0"/>
+            </clockBindings>
+          </extension>
+          <instanceOf href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0/@embeddedRegions.0/@embeddedStatechart"/>
+          <activeState href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.1"/>
+        </subRealtimeStatechartInstances>
+      </subRealtimeStatechartInstances>
+    </containedToplevelStatechartInstances>
+    <containedToplevelStatechartInstances xmi:id="_T0u6HAtBEeSBcbGbWXZevA">
+      <instanceOf href="extent:/2#//@categories.3/@modelElements.3"/>
+      <activeState href="extent:/2#//@categories.3/@modelElements.3/@states.0"/>
+      <subRealtimeStatechartInstances xmi:id="_T0u6HQtBEeSBcbGbWXZevA" runtimeBehavioralElement="_T0u6IwtBEeSBcbGbWXZevA">
+        <instanceOf href="extent:/2#//@categories.3/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart"/>
+        <activeState href="extent:/2#//@categories.3/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.2"/>
+        <variableBindings xmi:id="_T0u6HgtBEeSBcbGbWXZevA">
+          <variable href="extent:/2#//@categories.3/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@variables.0"/>
+        </variableBindings>
+      </subRealtimeStatechartInstances>
+    </containedToplevelStatechartInstances>
+    <cic xmi:id="_T0u6HwtBEeSBcbGbWXZevA" name="protoCIC">
+      <componentInstances xsi:type="runtime:RuntimeComponentInstance" xmi:id="_T0u6IAtBEeSBcbGbWXZevA" name="role1ComponentInstance0">
+        <componentType xsi:type="component:StaticAtomicComponent" href="extent:/2#//@categories.1/@modelElements.0"/>
+        <portInstances xsi:type="runtime:RuntimeDiscreteSinglePortInstance" xmi:id="_T0u6IQtBEeSBcbGbWXZevA" name="role1PortInstance0" connectorInstances="_T0u6JAtBEeSBcbGbWXZevA" statechartInstance="_T0u6GAtBEeSBcbGbWXZevA">
+          <type xsi:type="component:DiscretePort" href="extent:/2#//@categories.1/@modelElements.0/@ports.0"/>
+        </portInstances>
+      </componentInstances>
+      <componentInstances xsi:type="runtime:RuntimeComponentInstance" xmi:id="_T0u6IgtBEeSBcbGbWXZevA" name="role2ComponentInstance0">
+        <componentType xsi:type="component:StaticAtomicComponent" href="extent:/2#//@categories.1/@modelElements.1"/>
+        <portInstances xsi:type="runtime:RuntimeDiscreteSinglePortInstance" xmi:id="_T0u6IwtBEeSBcbGbWXZevA" name="role2PortInstance0" connectorInstances="_T0u6JAtBEeSBcbGbWXZevA" statechartInstance="_T0u6HQtBEeSBcbGbWXZevA">
+          <type xsi:type="component:DiscretePort" href="extent:/2#//@categories.1/@modelElements.1/@ports.0"/>
+        </portInstances>
+      </componentInstances>
+      <portConnectorInstances xsi:type="runtime:RuntimeAssemblyConnectorInstance" xmi:id="_T0u6JAtBEeSBcbGbWXZevA" connectorEndpointInstances="_T0u6IQtBEeSBcbGbWXZevA _T0u6IwtBEeSBcbGbWXZevA"/>
+    </cic>
+  </states>
+  <states xsi:type="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic:CICZoneGraphState" xmi:id="_T0u6JQtBEeSBcbGbWXZevA" incomingTransitions="_T0u6TgtBEeSBcbGbWXZevA" outgoingTransitions="_T0u6TwtBEeSBcbGbWXZevA" locations="_T0u6JwtBEeSBcbGbWXZevA _T0u6JgtBEeSBcbGbWXZevA _T0u6KQtBEeSBcbGbWXZevA _T0u6KAtBEeSBcbGbWXZevA _T0u6KwtBEeSBcbGbWXZevA">
+    <containedToplevelStatechartInstances xmi:id="_T0u6JgtBEeSBcbGbWXZevA">
+      <instanceOf href="extent:/2#//@categories.3/@modelElements.2"/>
+      <activeState href="extent:/2#//@categories.3/@modelElements.2/@states.0"/>
+      <subRealtimeStatechartInstances xmi:id="_T0u6JwtBEeSBcbGbWXZevA" runtimeBehavioralElement="_T0u6MAtBEeSBcbGbWXZevA">
+        <instanceOf href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart"/>
+        <activeState href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0"/>
+      </subRealtimeStatechartInstances>
+    </containedToplevelStatechartInstances>
+    <containedToplevelStatechartInstances xmi:id="_T0u6KAtBEeSBcbGbWXZevA">
+      <instanceOf href="extent:/2#//@categories.3/@modelElements.3"/>
+      <activeState href="extent:/2#//@categories.3/@modelElements.3/@states.0"/>
+      <subRealtimeStatechartInstances xmi:id="_T0u6KQtBEeSBcbGbWXZevA" runtimeBehavioralElement="_T0u6MgtBEeSBcbGbWXZevA">
+        <instanceOf href="extent:/2#//@categories.3/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart"/>
+        <activeState href="extent:/2#//@categories.3/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.2"/>
+        <variableBindings xmi:id="_T0u6KgtBEeSBcbGbWXZevA">
+          <variable href="extent:/2#//@categories.3/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@variables.0"/>
+        </variableBindings>
+      </subRealtimeStatechartInstances>
+    </containedToplevelStatechartInstances>
+    <containedToplevelStatechartInstances xmi:id="_T0u6KwtBEeSBcbGbWXZevA">
+      <extension xsi:type="verificationExtension:ClockBindingsExtension" xmi:id="_T0u6LAtBEeSBcbGbWXZevA">
+        <clockBindings xmi:id="_T0u6LQtBEeSBcbGbWXZevA" value="1">
+          <clock href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0/@embeddedRegions.0/@embeddedStatechart/@clocks.0"/>
+        </clockBindings>
+      </extension>
+      <instanceOf href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0/@embeddedRegions.0/@embeddedStatechart"/>
+      <activeTransition href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.1"/>
+    </containedToplevelStatechartInstances>
+    <cic xmi:id="_T0u6LgtBEeSBcbGbWXZevA" name="protoCIC">
+      <componentInstances xsi:type="runtime:RuntimeComponentInstance" xmi:id="_T0u6LwtBEeSBcbGbWXZevA" name="role1ComponentInstance0">
+        <componentType xsi:type="component:StaticAtomicComponent" href="extent:/2#//@categories.1/@modelElements.0"/>
+        <portInstances xsi:type="runtime:RuntimeDiscreteSinglePortInstance" xmi:id="_T0u6MAtBEeSBcbGbWXZevA" name="role1PortInstance0" connectorInstances="_T0u6MwtBEeSBcbGbWXZevA" statechartInstance="_T0u6JwtBEeSBcbGbWXZevA">
+          <type xsi:type="component:DiscretePort" href="extent:/2#//@categories.1/@modelElements.0/@ports.0"/>
+        </portInstances>
+      </componentInstances>
+      <componentInstances xsi:type="runtime:RuntimeComponentInstance" xmi:id="_T0u6MQtBEeSBcbGbWXZevA" name="role2ComponentInstance0">
+        <componentType xsi:type="component:StaticAtomicComponent" href="extent:/2#//@categories.1/@modelElements.1"/>
+        <portInstances xsi:type="runtime:RuntimeDiscreteSinglePortInstance" xmi:id="_T0u6MgtBEeSBcbGbWXZevA" name="role2PortInstance0" connectorInstances="_T0u6MwtBEeSBcbGbWXZevA" statechartInstance="_T0u6KQtBEeSBcbGbWXZevA">
+          <type xsi:type="component:DiscretePort" href="extent:/2#//@categories.1/@modelElements.1/@ports.0"/>
+        </portInstances>
+      </componentInstances>
+      <portConnectorInstances xsi:type="runtime:RuntimeAssemblyConnectorInstance" xmi:id="_T0u6MwtBEeSBcbGbWXZevA" connectorEndpointInstances="_T0u6MAtBEeSBcbGbWXZevA _T0u6MgtBEeSBcbGbWXZevA"/>
+    </cic>
+  </states>
+  <states xsi:type="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic:CICZoneGraphState" xmi:id="_T0u6NAtBEeSBcbGbWXZevA" incomingTransitions="_T0u6TwtBEeSBcbGbWXZevA" locations="_T0u6NgtBEeSBcbGbWXZevA _T0u6NQtBEeSBcbGbWXZevA _T0u6OwtBEeSBcbGbWXZevA _T0u6OgtBEeSBcbGbWXZevA _T0u6NwtBEeSBcbGbWXZevA">
+    <containedToplevelStatechartInstances xmi:id="_T0u6NQtBEeSBcbGbWXZevA">
+      <instanceOf href="extent:/2#//@categories.3/@modelElements.2"/>
+      <activeState href="extent:/2#//@categories.3/@modelElements.2/@states.0"/>
+      <subRealtimeStatechartInstances xmi:id="_T0u6NgtBEeSBcbGbWXZevA" runtimeBehavioralElement="_T0u6PwtBEeSBcbGbWXZevA">
+        <instanceOf href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart"/>
+        <activeState href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0"/>
+        <subRealtimeStatechartInstances xmi:id="_T0u6NwtBEeSBcbGbWXZevA">
+          <extension xsi:type="verificationExtension:ClockBindingsExtension" xmi:id="_T0u6OAtBEeSBcbGbWXZevA">
+            <clockBindings xmi:id="_T0u6OQtBEeSBcbGbWXZevA" value="1">
+              <clock href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0/@embeddedRegions.0/@embeddedStatechart/@clocks.0"/>
+            </clockBindings>
+          </extension>
+          <instanceOf href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0/@embeddedRegions.0/@embeddedStatechart"/>
+          <activeState href="extent:/2#//@categories.3/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.2"/>
+        </subRealtimeStatechartInstances>
+      </subRealtimeStatechartInstances>
+    </containedToplevelStatechartInstances>
+    <containedToplevelStatechartInstances xmi:id="_T0u6OgtBEeSBcbGbWXZevA">
+      <instanceOf href="extent:/2#//@categories.3/@modelElements.3"/>
+      <activeState href="extent:/2#//@categories.3/@modelElements.3/@states.0"/>
+      <subRealtimeStatechartInstances xmi:id="_T0u6OwtBEeSBcbGbWXZevA" runtimeBehavioralElement="_T0u6QQtBEeSBcbGbWXZevA">
+        <instanceOf href="extent:/2#//@categories.3/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart"/>
+        <activeState href="extent:/2#//@categories.3/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.2"/>
+        <variableBindings xmi:id="_T0u6PAtBEeSBcbGbWXZevA">
+          <variable href="extent:/2#//@categories.3/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@variables.0"/>
+        </variableBindings>
+      </subRealtimeStatechartInstances>
+    </containedToplevelStatechartInstances>
+    <cic xmi:id="_T0u6PQtBEeSBcbGbWXZevA" name="protoCIC">
+      <componentInstances xsi:type="runtime:RuntimeComponentInstance" xmi:id="_T0u6PgtBEeSBcbGbWXZevA" name="role1ComponentInstance0">
+        <componentType xsi:type="component:StaticAtomicComponent" href="extent:/2#//@categories.1/@modelElements.0"/>
+        <portInstances xsi:type="runtime:RuntimeDiscreteSinglePortInstance" xmi:id="_T0u6PwtBEeSBcbGbWXZevA" name="role1PortInstance0" connectorInstances="_T0u6QgtBEeSBcbGbWXZevA" statechartInstance="_T0u6NgtBEeSBcbGbWXZevA">
+          <type xsi:type="component:DiscretePort" href="extent:/2#//@categories.1/@modelElements.0/@ports.0"/>
+        </portInstances>
+      </componentInstances>
+      <componentInstances xsi:type="runtime:RuntimeComponentInstance" xmi:id="_T0u6QAtBEeSBcbGbWXZevA" name="role2ComponentInstance0">
+        <componentType xsi:type="component:StaticAtomicComponent" href="extent:/2#//@categories.1/@modelElements.1"/>
+        <portInstances xsi:type="runtime:RuntimeDiscreteSinglePortInstance" xmi:id="_T0u6QQtBEeSBcbGbWXZevA" name="role2PortInstance0" connectorInstances="_T0u6QgtBEeSBcbGbWXZevA" statechartInstance="_T0u6OwtBEeSBcbGbWXZevA">
+          <type xsi:type="component:DiscretePort" href="extent:/2#//@categories.1/@modelElements.1/@ports.0"/>
+        </portInstances>
+      </componentInstances>
+      <portConnectorInstances xsi:type="runtime:RuntimeAssemblyConnectorInstance" xmi:id="_T0u6QgtBEeSBcbGbWXZevA" connectorEndpointInstances="_T0u6PwtBEeSBcbGbWXZevA _T0u6QQtBEeSBcbGbWXZevA"/>
+    </cic>
+  </states>
+  <transitions xsi:type="org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc:DelayTransition" xmi:id="_T0u6QwtBEeSBcbGbWXZevA" source="_T0u5YQtBEeSBcbGbWXZevA" target="_T0u5cAtBEeSBcbGbWXZevA"/>
+  <transitions xsi:type="org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc:ZoneGraphTransition" xmi:id="_T0u6RAtBEeSBcbGbWXZevA" source="_T0u5cAtBEeSBcbGbWXZevA" target="_T0u5fwtBEeSBcbGbWXZevA"/>
+  <transitions xsi:type="org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc:ZoneGraphTransition" xmi:id="_T0u6RQtBEeSBcbGbWXZevA" source="_T0u5fwtBEeSBcbGbWXZevA" target="_T0u5kgtBEeSBcbGbWXZevA"/>
+  <transitions xsi:type="org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc:ZoneGraphTransition" xmi:id="_T0u6RgtBEeSBcbGbWXZevA" source="_T0u5kgtBEeSBcbGbWXZevA" target="_T0u5pQtBEeSBcbGbWXZevA"/>
+  <transitions xsi:type="org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc:ZoneGraphTransition" xmi:id="_T0u6RwtBEeSBcbGbWXZevA" source="_T0u5pQtBEeSBcbGbWXZevA" target="_T0u5tAtBEeSBcbGbWXZevA"/>
+  <transitions xsi:type="org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc:ZoneGraphTransition" xmi:id="_T0u6SAtBEeSBcbGbWXZevA" source="_T0u5tAtBEeSBcbGbWXZevA" target="_T0u5wwtBEeSBcbGbWXZevA"/>
+  <transitions xsi:type="org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc:ZoneGraphTransition" xmi:id="_T0u6SQtBEeSBcbGbWXZevA" source="_T0u5wwtBEeSBcbGbWXZevA" target="_T0u50gtBEeSBcbGbWXZevA"/>
+  <transitions xsi:type="org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc:ZoneGraphTransition" xmi:id="_T0u6SgtBEeSBcbGbWXZevA" source="_T0u50gtBEeSBcbGbWXZevA" target="_T0u54QtBEeSBcbGbWXZevA"/>
+  <transitions xsi:type="org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc:ZoneGraphTransition" xmi:id="_T0u6SwtBEeSBcbGbWXZevA" source="_T0u54QtBEeSBcbGbWXZevA" target="_T0u59AtBEeSBcbGbWXZevA"/>
+  <transitions xsi:type="org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc:ZoneGraphTransition" xmi:id="_T0u6TAtBEeSBcbGbWXZevA" source="_T0u59AtBEeSBcbGbWXZevA" target="_T0u6BwtBEeSBcbGbWXZevA"/>
+  <transitions xsi:type="org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc:ZoneGraphTransition" xmi:id="_T0u6TQtBEeSBcbGbWXZevA" source="_T0u6BwtBEeSBcbGbWXZevA" target="_T0u6FgtBEeSBcbGbWXZevA"/>
+  <transitions xsi:type="org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc:ZoneGraphTransition" xmi:id="_T0u6TgtBEeSBcbGbWXZevA" source="_T0u6FgtBEeSBcbGbWXZevA" target="_T0u6JQtBEeSBcbGbWXZevA"/>
+  <transitions xsi:type="org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc:ZoneGraphTransition" xmi:id="_T0u6TwtBEeSBcbGbWXZevA" source="_T0u6JQtBEeSBcbGbWXZevA" target="_T0u6NAtBEeSBcbGbWXZevA"/>
+</org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc:ZoneGraph>

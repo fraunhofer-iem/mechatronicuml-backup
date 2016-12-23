@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Kronos
+Bundle-SymbolicName: org.muml.reconfigurationverification.kronos.cmd
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.muml.reconfigurationverification.kronos.cmd.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ org.muml.reconfigurationverification.modelchecker.ui,
+ org.muml.uppaal.cmd,
+ org.eclipse.ui,
+ org.muml.core.common
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: org.muml.reconfigurationverification.kronos.cmd

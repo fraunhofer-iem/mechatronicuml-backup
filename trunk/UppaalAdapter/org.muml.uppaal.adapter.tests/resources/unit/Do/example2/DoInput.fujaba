@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--muml metamodel version 0.3.2 (r2996)-->
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionlanguage="http://www.muml.org/pim/actionlanguage/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:msgtype="http://www.muml.org/pim/msgtype/1.0.0" xmlns:protocol="http://www.muml.org/pim/protocol/1.0.0" xmlns:realtimestatechart="http://www.muml.org/pim/realtimestatechart/1.0.0" xmlns:sdcec="http://www.muml.org/core/expressions/common/1.0.0" xmlns:types="http://www.muml.org/pim/types/1.0.0" xmi:id="_85kD8JM4EeOYZ8555fyhuw">
+  <categories xmi:id="_85kD8ZM4EeOYZ8555fyhuw" key="org.muml.types.category" name="types">
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_85t08JM4EeOYZ8555fyhuw" name="VOID"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_85t08ZM4EeOYZ8555fyhuw" name="BOOLEAN" primitiveType="BOOLEAN"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_85t08pM4EeOYZ8555fyhuw" name="BYTE" primitiveType="BYTE"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_85t085M4EeOYZ8555fyhuw" name="SHORT" primitiveType="SHORT"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_85t09JM4EeOYZ8555fyhuw" name="INT" primitiveType="INT"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_85t09ZM4EeOYZ8555fyhuw" name="LONG" primitiveType="LONG"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_85t09pM4EeOYZ8555fyhuw" name="DOUBLE" primitiveType="DOUBLE"/>
+  </categories>
+  <categories xmi:id="_9vbU8JM4EeOYZ8555fyhuw" key="org.muml.pim.components.category" name="component"/>
+  <categories xmi:id="_Ed-QkJM5EeOYZ8555fyhuw" key="org.muml.pim.protocol.category" name="protocol">
+    <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_mZLx0JM5EeOYZ8555fyhuw" name="proto">
+      <roles xmi:id="_mZU7wJM5EeOYZ8555fyhuw" connectors="_mZU7yJM5EeOYZ8555fyhuw" behavior="_FOyCcZM5EeOYZ8555fyhuw" name="role1" senderMessageTypes="_ZEqZsJvqEeOgzpyCht1RLA" receiverMessageTypes="_ZEqZsJvqEeOgzpyCht1RLA">
+        <cardinality xmi:id="_mZU7wZM5EeOYZ8555fyhuw">
+          <lowerBound xmi:id="_rEp0YJvqEeOgzpyCht1RLA"/>
+          <upperBound xmi:id="_rEzlYJvqEeOgzpyCht1RLA"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_e0AiIJvqEeOgzpyCht1RLA" name="role1buffer" messageType="_ZEqZsJvqEeOgzpyCht1RLA">
+          <bufferSize xmi:id="_gaOSAJvqEeOgzpyCht1RLA" infinity="true"/>
+        </receiverMessageBuffer>
+      </roles>
+      <roles xmi:id="_mZU7xJM5EeOYZ8555fyhuw" connectors="_mZU7yJM5EeOYZ8555fyhuw" behavior="_DnkwkJvrEeOgzpyCht1RLA" name="role2" senderMessageTypes="_ZEqZsJvqEeOgzpyCht1RLA" receiverMessageTypes="_ZEqZsJvqEeOgzpyCht1RLA">
+        <cardinality xmi:id="_mZU7xZM5EeOYZ8555fyhuw">
+          <lowerBound xmi:id="_Pr2ikOSsEeOUm_IRHgazMg"/>
+          <upperBound xmi:id="_Pr3JoOSsEeOUm_IRHgazMg"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_xcTS8JvqEeOgzpyCht1RLA" name="role2buffer" messageType="_ZEqZsJvqEeOgzpyCht1RLA">
+          <bufferSize xmi:id="_xvDP0JvqEeOgzpyCht1RLA" infinity="true"/>
+        </receiverMessageBuffer>
+      </roles>
+      <roleConnector xmi:id="_mZU7yJM5EeOYZ8555fyhuw" connectorEndpoints="_mZU7wJM5EeOYZ8555fyhuw _mZU7xJM5EeOYZ8555fyhuw">
+        <connectorQualityOfServiceAssumptions xmi:id="_mZU7yZM5EeOYZ8555fyhuw" comment="">
+          <minMessageDelay xmi:id="_6qoqwJvqEeOgzpyCht1RLA" unit="SECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_71nQIJvqEeOgzpyCht1RLA" value="0"/>
+          </minMessageDelay>
+          <maxMessageDelay xmi:id="_8KALwJvqEeOgzpyCht1RLA" unit="SECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_9f_HQJvqEeOgzpyCht1RLA" value="0"/>
+          </maxMessageDelay>
+        </connectorQualityOfServiceAssumptions>
+      </roleConnector>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_FOyCcJM5EeOYZ8555fyhuw" key="org.muml.pim.realtimestatechart.category" name="realtimestatechart">
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_FOyCcZM5EeOYZ8555fyhuw" name="role1" behavioralElement="_mZU7wJM5EeOYZ8555fyhuw">
+      <states xmi:id="_FOyCcpM5EeOYZ8555fyhuw" name="init" initial="true">
+        <embeddedRegions xmi:id="_G7YuMJM5EeOYZ8555fyhuw" priority="1">
+          <embeddedStatechart xmi:id="_G7rpIJM5EeOYZ8555fyhuw" name="statechart">
+            <variables xmi:id="_d1OF0J4zEeOxcJlxv_jijA" name="nonDet" dataType="_85t08ZM4EeOYZ8555fyhuw">
+              <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_g2ihwJ4zEeOxcJlxv_jijA" value="0"/>
+            </variables>
+            <transitions xmi:id="_M4Y4IJM5EeOYZ8555fyhuw" priority="1" target="_JU6xYJM5EeOYZ8555fyhuw" source="_G7rpIZM5EeOYZ8555fyhuw">
+              <action xmi:id="_J98j8J40EeOxcJlxv_jijA" name="entryFromState1">
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_MeQkkJ40EeOxcJlxv_jijA">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_MeQkkZ40EeOxcJlxv_jijA" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="actionlanguage:NondeterministicChoiceExpression" xmi:id="_MeQkkp40EeOxcJlxv_jijA" dataType="_85t09JM4EeOYZ8555fyhuw">
+                      <range xmi:id="_MeQkk540EeOxcJlxv_jijA"/>
+                    </rhs_assignExpression>
+                    <lhs_typedNamedElementExpression xmi:id="_MeQklJ40EeOxcJlxv_jijA" typedNamedElement="_d1OF0J4zEeOxcJlxv_jijA"/>
+                  </expressions>
+                </expressions>
+              </action>
+            </transitions>
+            <transitions xmi:id="_Nl6sgJM5EeOYZ8555fyhuw" priority="1" target="_G7rpIZM5EeOYZ8555fyhuw" source="_JU6xYJM5EeOYZ8555fyhuw">
+              <guard xsi:type="sdcec:UnaryExpression" xmi:id="_Dt4UEJ40EeOxcJlxv_jijA">
+                <enclosedExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_Dt4UEZ40EeOxcJlxv_jijA" typedNamedElement="_d1OF0J4zEeOxcJlxv_jijA"/>
+              </guard>
+            </transitions>
+            <transitions xmi:id="_W6-3kJ4zEeOxcJlxv_jijA" priority="2" target="_T-J6EJ4zEeOxcJlxv_jijA" source="_JU6xYJM5EeOYZ8555fyhuw">
+              <guard xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_CQtLcJ40EeOxcJlxv_jijA" typedNamedElement="_d1OF0J4zEeOxcJlxv_jijA"/>
+            </transitions>
+            <transitions xmi:id="_X1vPoJ4zEeOxcJlxv_jijA" priority="1" target="_JU6xYJM5EeOYZ8555fyhuw" source="_T-J6EJ4zEeOxcJlxv_jijA">
+              <action xmi:id="_EXjjMJ40EeOxcJlxv_jijA" name="entryFromState3">
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_ID4D8J40EeOxcJlxv_jijA">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_ID4D8Z40EeOxcJlxv_jijA" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="actionlanguage:NondeterministicChoiceExpression" xmi:id="_ID4D8p40EeOxcJlxv_jijA" dataType="_85t09JM4EeOYZ8555fyhuw">
+                      <range xmi:id="_ID4D8540EeOxcJlxv_jijA"/>
+                    </rhs_assignExpression>
+                    <lhs_typedNamedElementExpression xmi:id="_ID4D9J40EeOxcJlxv_jijA" typedNamedElement="_d1OF0J4zEeOxcJlxv_jijA"/>
+                  </expressions>
+                </expressions>
+              </action>
+            </transitions>
+            <states xmi:id="_G7rpIZM5EeOYZ8555fyhuw" name="State1" outgoingTransitions="_M4Y4IJM5EeOYZ8555fyhuw" incomingTransitions="_Nl6sgJM5EeOYZ8555fyhuw" initial="true"/>
+            <states xmi:id="_JU6xYJM5EeOYZ8555fyhuw" name="State2" outgoingTransitions="_Nl6sgJM5EeOYZ8555fyhuw _W6-3kJ4zEeOxcJlxv_jijA" incomingTransitions="_M4Y4IJM5EeOYZ8555fyhuw _X1vPoJ4zEeOxcJlxv_jijA">
+              <doEvent xmi:id="_F0PvgJzHEeOSPY_MNk-8EA">
+                <action xmi:id="_GhLG8JzHEeOSPY_MNk-8EA" name="do">
+                  <expressions xsi:type="actionlanguage:Block" xmi:id="_yBrYEJ4zEeOxcJlxv_jijA">
+                    <expressions xsi:type="actionlanguage:Assignment" xmi:id="_yBrYEZ4zEeOxcJlxv_jijA" assignOperator=":=">
+                      <rhs_assignExpression xsi:type="actionlanguage:NondeterministicChoiceExpression" xmi:id="_yBrYEp4zEeOxcJlxv_jijA" dataType="_85t09JM4EeOYZ8555fyhuw">
+                        <range xmi:id="_yBrYE54zEeOxcJlxv_jijA"/>
+                      </rhs_assignExpression>
+                      <lhs_typedNamedElementExpression xmi:id="_yBrYFJ4zEeOxcJlxv_jijA" typedNamedElement="_d1OF0J4zEeOxcJlxv_jijA"/>
+                    </expressions>
+                  </expressions>
+                </action>
+                <period xmi:id="_IcJl4JzHEeOSPY_MNk-8EA" unit="SECONDS">
+                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_Jwj0EJzHEeOSPY_MNk-8EA" value="1"/>
+                </period>
+              </doEvent>
+            </states>
+            <states xmi:id="_T-J6EJ4zEeOxcJlxv_jijA" name="State3" outgoingTransitions="_X1vPoJ4zEeOxcJlxv_jijA" incomingTransitions="_W6-3kJ4zEeOxcJlxv_jijA"/>
+          </embeddedStatechart>
+        </embeddedRegions>
+      </states>
+    </modelElements>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_DnkwkJvrEeOgzpyCht1RLA" name="role2" behavioralElement="_mZU7xJM5EeOYZ8555fyhuw">
+      <states xmi:id="_DnkwkZvrEeOgzpyCht1RLA" name="init" initial="true"/>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_XXKWEJvqEeOgzpyCht1RLA" key="org.muml.pim.messagetype.category" name="msgtype">
+    <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_YwIUIJvqEeOgzpyCht1RLA" name="Repository">
+      <messageTypes xmi:id="_ZEqZsJvqEeOgzpyCht1RLA" name="exampleMessage"/>
+    </modelElements>
+  </categories>
+</modelinstance:RootNode>

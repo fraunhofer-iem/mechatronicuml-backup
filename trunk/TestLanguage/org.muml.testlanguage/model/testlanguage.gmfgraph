@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="testlanguage">
+  <figures name="Default">
+    <descriptors name="NodeFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="NodeFigure" lineWidth="2">
+        <layout xsi:type="gmfgraph:GridLayout" equalWidth="false">
+          <margins/>
+          <spacing/>
+        </layout>
+        <foregroundColor xsi:type="gmfgraph:ConstantColor" value="black"/>
+        <minimumSize dx="100"/>
+        <children xsi:type="gmfgraph:InvisibleRectangle">
+          <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" verticalAlignment="FILL" horizontalAlignment="FILL"/>
+          <layout xsi:type="gmfgraph:FlowLayout"/>
+          <insets top="3" left="5" bottom="2" right="2"/>
+          <children xsi:type="gmfgraph:Label" name="NodeLabelFigure"/>
+        </children>
+        <children xsi:type="gmfgraph:Rectangle" name="NodeCompartmentFigure" outline="false" fill="false" lineWidth="0">
+          <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" verticalAlignment="FILL" horizontalAlignment="FILL"/>
+          <insets/>
+        </children>
+      </actualFigure>
+      <accessors accessor="getFigureNodeCompartmentFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
+      <accessors accessor="getFigureNodeLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@children.0"/>
+    </descriptors>
+    <descriptors name="InputFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="InputFigure" outline="false" lineWidth="0">
+        <layout xsi:type="gmfgraph:GridLayout">
+          <margins dx="5"/>
+          <spacing/>
+        </layout>
+        <children xsi:type="gmfgraph:Label" name="InputLabelFigure">
+          <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" horizontalAlignment="BEGINNING"/>
+        </children>
+      </actualFigure>
+      <accessors accessor="getFigureInputLabelFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="OutputFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="OutputFigure" outline="false" lineWidth="0">
+        <layout xsi:type="gmfgraph:GridLayout">
+          <margins dx="5"/>
+          <spacing/>
+        </layout>
+        <children xsi:type="gmfgraph:Label" name="OutputLabelFigure">
+          <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" horizontalAlignment="END"/>
+        </children>
+      </actualFigure>
+      <accessors accessor="getFigureOutputLabelFigure" figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="OutputTargetsFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="OutputTargetsFigure" lineWidth="2"/>
+    </descriptors>
+  </figures>
+  <nodes name="Node" figure="NodeFigure" resizeConstraint="EAST_WEST"/>
+  <nodes name="Input" figure="InputFigure" resizeConstraint="NONE"/>
+  <nodes name="Output" figure="OutputFigure" resizeConstraint="NONE"/>
+  <connections name="OutputTargets" figure="OutputTargetsFigure"/>
+  <compartments name="NodeFigureCompartment" figure="NodeFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels name="NodeLabel" figure="NodeFigure" resizeConstraint="NONE" elementIcon="false" accessor="//@figures.0/@descriptors.0/@accessors.1"/>
+  <labels name="InputLabel" figure="InputFigure" resizeConstraint="NONE" elementIcon="false" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <labels name="OutputLabel" figure="OutputFigure" resizeConstraint="NONE" elementIcon="false" accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+</gmfgraph:Canvas>

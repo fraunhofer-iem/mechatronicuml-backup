@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:hwplatforminstance="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/" xmlns:hwresourceinstance="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_H9qhMPo1EeSsIq-QKcT_-Q" type="PlatformInstance" name="HWPlatformInstanceConfiguration.platforminstance_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_SXliYPo1EeSsIq-QKcT_-Q" type="2004" fontName="Sans" fontHeight="10" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_SXliYvo1EeSsIq-QKcT_-Q" type="5096"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_SXliY_o1EeSsIq-QKcT_-Q" type="7011">
+      <children xmi:type="notation:Shape" xmi:id="_SXolsPo1EeSsIq-QKcT_-Q" type="3032" fontName="Sans" fontHeight="10" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_SXolsvo1EeSsIq-QKcT_-Q" type="7008">
+          <children xmi:type="notation:Shape" xmi:id="_SXpMwPo1EeSsIq-QKcT_-Q" type="3031" fontName="Sans" fontHeight="10" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_SXpMwvo1EeSsIq-QKcT_-Q" type="5095"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_SXpMw_o1EeSsIq-QKcT_-Q" type="7010">
+              <children xmi:type="notation:Shape" xmi:id="_IX4ikPo2EeSsIq-QKcT_-Q" type="3032" fontName="Sans" fontHeight="10" lineColor="0">
+                <children xmi:type="notation:DecorationNode" xmi:id="_IX5JoPo2EeSsIq-QKcT_-Q" type="7008">
+                  <children xmi:type="notation:Shape" xmi:id="_IX5wsPo2EeSsIq-QKcT_-Q" type="3033" fontName="Sans" fontHeight="10" lineColor="0">
+                    <children xmi:type="notation:DecorationNode" xmi:id="_IX5wsvo2EeSsIq-QKcT_-Q" type="5083"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_IX5ws_o2EeSsIq-QKcT_-Q" type="5084"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_IX5wtPo2EeSsIq-QKcT_-Q" type="5085"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_IX5wtfo2EeSsIq-QKcT_-Q" type="5098"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_IX5wtvo2EeSsIq-QKcT_-Q" type="5099"/>
+                    <children xmi:type="notation:Shape" xmi:id="_IYEv0Po2EeSsIq-QKcT_-Q" type="3030" fontName="Sans" fontHeight="10" lineColor="0">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_IYEv0vo2EeSsIq-QKcT_-Q" type="5082">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_IYEv0_o2EeSsIq-QKcT_-Q" x="84" y="-36"/>
+                      </children>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../hardware_model.muml#_j8UJdvjtEeSrLMFBH0QA8A"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IYEv0fo2EeSsIq-QKcT_-Q" x="156" y="-12"/>
+                    </children>
+                    <children xmi:type="notation:Shape" xmi:id="_IYFW4Po2EeSsIq-QKcT_-Q" type="3030" fontName="Sans" fontHeight="10" lineColor="0">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_IYFW4vo2EeSsIq-QKcT_-Q" type="5082">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_IYFW4_o2EeSsIq-QKcT_-Q" y="5"/>
+                      </children>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../hardware_model.muml#_j8UJd_jtEeSrLMFBH0QA8A"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IYFW4fo2EeSsIq-QKcT_-Q" x="302" y="48"/>
+                    </children>
+                    <element xmi:type="hwresourceinstance:StructuredResourceInstance" href="../hardware_model.muml#_j8UJdfjtEeSrLMFBH0QA8A"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IX5wsfo2EeSsIq-QKcT_-Q" x="208" y="384"/>
+                  </children>
+                  <children xmi:type="notation:Shape" xmi:id="_IX5wt_o2EeSsIq-QKcT_-Q" type="3033" fontName="Sans" fontHeight="10" lineColor="0">
+                    <children xmi:type="notation:DecorationNode" xmi:id="_IX5wufo2EeSsIq-QKcT_-Q" type="5083"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_IX5wuvo2EeSsIq-QKcT_-Q" type="5084"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_IX5wu_o2EeSsIq-QKcT_-Q" type="5085"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_IX5wvPo2EeSsIq-QKcT_-Q" type="5098"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_IX5wvfo2EeSsIq-QKcT_-Q" type="5099"/>
+                    <children xmi:type="notation:Shape" xmi:id="_IYXqwPo2EeSsIq-QKcT_-Q" type="3030" fontName="Sans" fontHeight="10" lineColor="0">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_IYXqwvo2EeSsIq-QKcT_-Q" type="5082">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_IYXqw_o2EeSsIq-QKcT_-Q" y="5"/>
+                      </children>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../hardware_model.muml#_j8UJf_jtEeSrLMFBH0QA8A"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IYXqwfo2EeSsIq-QKcT_-Q" x="-12" y="48"/>
+                    </children>
+                    <children xmi:type="notation:Shape" xmi:id="_IYXqxPo2EeSsIq-QKcT_-Q" type="3030" fontName="Sans" fontHeight="10" lineColor="0">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_IYXqxvo2EeSsIq-QKcT_-Q" type="5082">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_IYXqx_o2EeSsIq-QKcT_-Q" y="5"/>
+                      </children>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../hardware_model.muml#_j8UJgPjtEeSrLMFBH0QA8A"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IYXqxfo2EeSsIq-QKcT_-Q" x="318" y="72"/>
+                    </children>
+                    <element xmi:type="hwresourceinstance:StructuredResourceInstance" href="../hardware_model.muml#_j8UJfvjtEeSrLMFBH0QA8A"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IX5wuPo2EeSsIq-QKcT_-Q" x="496" y="144"/>
+                  </children>
+                  <children xmi:type="notation:Shape" xmi:id="_IX5wvvo2EeSsIq-QKcT_-Q" type="3033" fontName="Sans" fontHeight="10" lineColor="0">
+                    <children xmi:type="notation:DecorationNode" xmi:id="_IX5wwPo2EeSsIq-QKcT_-Q" type="5083"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_IX6XwPo2EeSsIq-QKcT_-Q" type="5084"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_IX6Xwfo2EeSsIq-QKcT_-Q" type="5085"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_IX6Xwvo2EeSsIq-QKcT_-Q" type="5098"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_IX6Xw_o2EeSsIq-QKcT_-Q" type="5099"/>
+                    <children xmi:type="notation:Shape" xmi:id="_05eMoPo2EeSsIq-QKcT_-Q" type="3030" fontName="Sans" fontHeight="10" lineColor="0">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_05eMovo2EeSsIq-QKcT_-Q" type="5082">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_05eMo_o2EeSsIq-QKcT_-Q" x="-72" y="38"/>
+                      </children>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../hardware_model.muml#_j8UJiPjtEeSrLMFBH0QA8A"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_05eMofo2EeSsIq-QKcT_-Q" x="168" y="118"/>
+                    </children>
+                    <element xmi:type="hwresourceinstance:StructuredResourceInstance" href="../hardware_model.muml#_j8UJh_jtEeSrLMFBH0QA8A"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IX5wv_o2EeSsIq-QKcT_-Q" x="40" y="48"/>
+                  </children>
+                  <children xmi:type="notation:Shape" xmi:id="_IX6XxPo2EeSsIq-QKcT_-Q" type="3036" fontName="Sans" fontHeight="10" lineColor="0">
+                    <children xmi:type="notation:DecorationNode" xmi:id="_IX6Xxvo2EeSsIq-QKcT_-Q" type="5092"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_IX6Xx_o2EeSsIq-QKcT_-Q" type="5093"/>
+                    <element xmi:type="hwplatforminstance:BusInstance" href="../hardware_model.muml#_j8UJdPjtEeSrLMFBH0QA8A"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IX6Xxfo2EeSsIq-QKcT_-Q" x="304" y="240"/>
+                  </children>
+                </children>
+                <element xmi:type="hwplatforminstance:HWPlatformInstanceConfiguration" href="../hardware_model.muml#_j8UJc_jtEeSrLMFBH0QA8A"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IX4ikfo2EeSsIq-QKcT_-Q"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_SXpMxPo1EeSsIq-QKcT_-Q"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_SXpMxfo1EeSsIq-QKcT_-Q"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_SYtjwPo1EeSsIq-QKcT_-Q" type="3028" fontName="Sans" fontHeight="10" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_SYtjwvo1EeSsIq-QKcT_-Q" type="5078">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_SYtjw_o1EeSsIq-QKcT_-Q" y="5"/>
+              </children>
+              <element xmi:type="hwplatforminstance:DelegationHWPortInstance" href="../hardware_model.muml#_j8UJcfjtEeSrLMFBH0QA8A"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SYtjwfo1EeSsIq-QKcT_-Q" x="940" y="252"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_SYtjxPo1EeSsIq-QKcT_-Q" type="3028" fontName="Sans" fontHeight="10" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_SYtjxvo1EeSsIq-QKcT_-Q" type="5078">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_SYtjx_o1EeSsIq-QKcT_-Q" x="-16" y="24"/>
+              </children>
+              <element xmi:type="hwplatforminstance:DelegationHWPortInstance" href="../hardware_model.muml#_j8UJcvjtEeSrLMFBH0QA8A"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SYtjxfo1EeSsIq-QKcT_-Q" x="1072" y="528"/>
+            </children>
+            <element xmi:type="hwplatforminstance:HWPlatformInstance" href="../hardware_model.muml#_j8UJcPjtEeSrLMFBH0QA8A"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SXpMwfo1EeSsIq-QKcT_-Q" x="-244" y="72"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_SXpMxvo1EeSsIq-QKcT_-Q" type="3031" fontName="Sans" fontHeight="10" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_SXpMyPo1EeSsIq-QKcT_-Q" type="5095"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_SXpMyfo1EeSsIq-QKcT_-Q" type="7010">
+              <children xmi:type="notation:Shape" xmi:id="_SY04gPo1EeSsIq-QKcT_-Q" type="3032" fontName="Sans" fontHeight="10" lineColor="0">
+                <children xmi:type="notation:DecorationNode" xmi:id="_SY04gvo1EeSsIq-QKcT_-Q" type="7008">
+                  <children xmi:type="notation:Shape" xmi:id="_SY1fkPo1EeSsIq-QKcT_-Q" type="3034" fontName="Sans" fontHeight="10" lineColor="0">
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SY2GoPo1EeSsIq-QKcT_-Q" type="5086"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SY2Gofo1EeSsIq-QKcT_-Q" type="5087"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SY2Govo1EeSsIq-QKcT_-Q" type="5088"/>
+                    <children xmi:type="notation:Shape" xmi:id="_05go4Po2EeSsIq-QKcT_-Q" type="3030" fontName="Sans" fontHeight="10" lineColor="0">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_05hP8Po2EeSsIq-QKcT_-Q" type="5082">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_05hP8fo2EeSsIq-QKcT_-Q" y="5"/>
+                      </children>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../hardware_model.muml#_kt5XZfjtEeSrLMFBH0QA8A"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_05go4fo2EeSsIq-QKcT_-Q"/>
+                    </children>
+                    <element xmi:type="hwresourceinstance:ActuatorInstance" href="../hardware_model.muml#_kt5XZPjtEeSrLMFBH0QA8A"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SY1fkfo1EeSsIq-QKcT_-Q"/>
+                  </children>
+                  <children xmi:type="notation:Shape" xmi:id="_SY2Go_o1EeSsIq-QKcT_-Q" type="3033" fontName="Sans" fontHeight="10" lineColor="0">
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SY2Gpfo1EeSsIq-QKcT_-Q" type="5083"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SY2Gpvo1EeSsIq-QKcT_-Q" type="5084"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SY2Gp_o1EeSsIq-QKcT_-Q" type="5085"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SY2GqPo1EeSsIq-QKcT_-Q" type="5098"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SY2Gqfo1EeSsIq-QKcT_-Q" type="5099"/>
+                    <children xmi:type="notation:Shape" xmi:id="_SZKPsPo1EeSsIq-QKcT_-Q" type="3030" fontName="Sans" fontHeight="10" lineColor="0">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_SZKPsvo1EeSsIq-QKcT_-Q" type="5082">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_SZKPs_o1EeSsIq-QKcT_-Q" x="-80" y="-30"/>
+                      </children>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../hardware_model.muml#_kt5XZ_jtEeSrLMFBH0QA8A"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SZKPsfo1EeSsIq-QKcT_-Q" x="-12" y="48"/>
+                    </children>
+                    <children xmi:type="notation:Shape" xmi:id="_SZKPtPo1EeSsIq-QKcT_-Q" type="3030" fontName="Sans" fontHeight="10" lineColor="0">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_SZKPtvo1EeSsIq-QKcT_-Q" type="5082">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_SZKPt_o1EeSsIq-QKcT_-Q" y="5"/>
+                      </children>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../hardware_model.muml#_kt5XaPjtEeSrLMFBH0QA8A"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SZKPtfo1EeSsIq-QKcT_-Q" x="318" y="24"/>
+                    </children>
+                    <element xmi:type="hwresourceinstance:StructuredResourceInstance" href="../hardware_model.muml#_kt5XZvjtEeSrLMFBH0QA8A"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SY2GpPo1EeSsIq-QKcT_-Q" x="672" y="210"/>
+                  </children>
+                  <children xmi:type="notation:Shape" xmi:id="_SY2Gqvo1EeSsIq-QKcT_-Q" type="3034" fontName="Sans" fontHeight="10" lineColor="0">
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SY2GrPo1EeSsIq-QKcT_-Q" type="5086"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SY2Grfo1EeSsIq-QKcT_-Q" type="5087"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SY2Grvo1EeSsIq-QKcT_-Q" type="5088"/>
+                    <children xmi:type="notation:Shape" xmi:id="_SZV14Po1EeSsIq-QKcT_-Q" type="3030" fontName="Sans" fontHeight="10" lineColor="0">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_SZV14vo1EeSsIq-QKcT_-Q" type="5082">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_SZV14_o1EeSsIq-QKcT_-Q" y="5"/>
+                      </children>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../hardware_model.muml#_kt5XcPjtEeSrLMFBH0QA8A"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SZV14fo1EeSsIq-QKcT_-Q" x="84" y="68"/>
+                    </children>
+                    <element xmi:type="hwresourceinstance:ActuatorInstance" href="../hardware_model.muml#_kt5Xb_jtEeSrLMFBH0QA8A"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SY2Gq_o1EeSsIq-QKcT_-Q" x="336" y="18" width="277"/>
+                  </children>
+                  <children xmi:type="notation:Shape" xmi:id="_SY2tsPo1EeSsIq-QKcT_-Q" type="3033" fontName="Sans" fontHeight="10" lineColor="0">
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SY2tsvo1EeSsIq-QKcT_-Q" type="5083"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SY2ts_o1EeSsIq-QKcT_-Q" type="5084"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SY2ttPo1EeSsIq-QKcT_-Q" type="5085"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SY2ttfo1EeSsIq-QKcT_-Q" type="5098"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SY2ttvo1EeSsIq-QKcT_-Q" type="5099"/>
+                    <children xmi:type="notation:Shape" xmi:id="_SZkfYPo1EeSsIq-QKcT_-Q" type="3030" fontName="Sans" fontHeight="10" lineColor="0">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_SZkfYvo1EeSsIq-QKcT_-Q" type="5082">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_SZkfY_o1EeSsIq-QKcT_-Q" y="5"/>
+                      </children>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../hardware_model.muml#_kt5XcvjtEeSrLMFBH0QA8A"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SZkfYfo1EeSsIq-QKcT_-Q" x="168" y="-12"/>
+                    </children>
+                    <element xmi:type="hwresourceinstance:StructuredResourceInstance" href="../hardware_model.muml#_kt5XcfjtEeSrLMFBH0QA8A"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SY2tsfo1EeSsIq-QKcT_-Q" x="16" y="402"/>
+                  </children>
+                  <children xmi:type="notation:Shape" xmi:id="_SY3UwPo1EeSsIq-QKcT_-Q" type="3035" fontName="Sans" fontHeight="10" lineColor="0">
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SY3Uwvo1EeSsIq-QKcT_-Q" type="5089"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SY3Uw_o1EeSsIq-QKcT_-Q" type="5090"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SY3UxPo1EeSsIq-QKcT_-Q" type="5091"/>
+                    <children xmi:type="notation:Shape" xmi:id="_SZow0Po1EeSsIq-QKcT_-Q" type="3030" fontName="Sans" fontHeight="10" lineColor="0">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_SZpX4Po1EeSsIq-QKcT_-Q" type="5082">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_SZpX4fo1EeSsIq-QKcT_-Q" y="5"/>
+                      </children>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../hardware_model.muml#_kt5XevjtEeSrLMFBH0QA8A"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SZow0fo1EeSsIq-QKcT_-Q" x="12" y="68"/>
+                    </children>
+                    <element xmi:type="hwresourceinstance:SensorInstance" href="../hardware_model.muml#_kt5XefjtEeSrLMFBH0QA8A"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SY3Uwfo1EeSsIq-QKcT_-Q" x="660" y="18"/>
+                  </children>
+                  <children xmi:type="notation:Shape" xmi:id="_SY3Uxfo1EeSsIq-QKcT_-Q" type="3033" fontName="Sans" fontHeight="10" lineColor="0">
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SY3Ux_o1EeSsIq-QKcT_-Q" type="5083"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SY3UyPo1EeSsIq-QKcT_-Q" type="5084"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SY3Uyfo1EeSsIq-QKcT_-Q" type="5085"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SY3Uyvo1EeSsIq-QKcT_-Q" type="5098"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SY3Uy_o1EeSsIq-QKcT_-Q" type="5099"/>
+                    <children xmi:type="notation:Shape" xmi:id="_SZ1lIPo1EeSsIq-QKcT_-Q" type="3030" fontName="Sans" fontHeight="10" lineColor="0">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_SZ1lIvo1EeSsIq-QKcT_-Q" type="5082">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_SZ1lI_o1EeSsIq-QKcT_-Q" y="5"/>
+                      </children>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../hardware_model.muml#_kt5XfPjtEeSrLMFBH0QA8A"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SZ1lIfo1EeSsIq-QKcT_-Q" x="84" y="-12"/>
+                    </children>
+                    <element xmi:type="hwresourceinstance:StructuredResourceInstance" href="../hardware_model.muml#_kt5Xe_jtEeSrLMFBH0QA8A"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SY3Uxvo1EeSsIq-QKcT_-Q" x="360" y="402"/>
+                  </children>
+                  <children xmi:type="notation:Shape" xmi:id="_SY3UzPo1EeSsIq-QKcT_-Q" type="3033" fontName="Sans" fontHeight="10" lineColor="0">
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SY370Po1EeSsIq-QKcT_-Q" type="5083"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SY370fo1EeSsIq-QKcT_-Q" type="5084"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SY370vo1EeSsIq-QKcT_-Q" type="5085"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SY370_o1EeSsIq-QKcT_-Q" type="5098"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SY371Po1EeSsIq-QKcT_-Q" type="5099"/>
+                    <children xmi:type="notation:Shape" xmi:id="_SaCZcPo1EeSsIq-QKcT_-Q" type="3030" fontName="Sans" fontHeight="10" lineColor="0">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_SaCZcvo1EeSsIq-QKcT_-Q" type="5082">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_SaCZc_o1EeSsIq-QKcT_-Q" x="52" y="-30"/>
+                      </children>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../hardware_model.muml#_kt5XhPjtEeSrLMFBH0QA8A"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SaCZcfo1EeSsIq-QKcT_-Q" x="48" y="-12"/>
+                    </children>
+                    <element xmi:type="hwresourceinstance:StructuredResourceInstance" href="../hardware_model.muml#_kt5Xg_jtEeSrLMFBH0QA8A"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SY3Uzfo1EeSsIq-QKcT_-Q" x="720" y="402"/>
+                  </children>
+                  <children xmi:type="notation:Shape" xmi:id="_SY371fo1EeSsIq-QKcT_-Q" type="3035" fontName="Sans" fontHeight="10" lineColor="0">
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SY371_o1EeSsIq-QKcT_-Q" type="5089"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SY372Po1EeSsIq-QKcT_-Q" type="5090"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SY372fo1EeSsIq-QKcT_-Q" type="5091"/>
+                    <children xmi:type="notation:Shape" xmi:id="_SaGq4Po1EeSsIq-QKcT_-Q" type="3030" fontName="Sans" fontHeight="10" lineColor="0">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_SaGq4vo1EeSsIq-QKcT_-Q" type="5082">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_SaGq4_o1EeSsIq-QKcT_-Q" y="5"/>
+                      </children>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../hardware_model.muml#_kt5XjPjtEeSrLMFBH0QA8A"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SaGq4fo1EeSsIq-QKcT_-Q" x="12" y="68"/>
+                    </children>
+                    <element xmi:type="hwresourceinstance:SensorInstance" href="../hardware_model.muml#_kt5Xi_jtEeSrLMFBH0QA8A"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SY371vo1EeSsIq-QKcT_-Q" x="888" y="18"/>
+                  </children>
+                  <children xmi:type="notation:Shape" xmi:id="_SY372vo1EeSsIq-QKcT_-Q" type="3035" fontName="Sans" fontHeight="10" lineColor="0">
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SY6YEPo1EeSsIq-QKcT_-Q" type="5089"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SY6YEfo1EeSsIq-QKcT_-Q" type="5090"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SY6YEvo1EeSsIq-QKcT_-Q" type="5091"/>
+                    <children xmi:type="notation:Shape" xmi:id="_SaKVQPo1EeSsIq-QKcT_-Q" type="3030" fontName="Sans" fontHeight="10" lineColor="0">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_SaKVQvo1EeSsIq-QKcT_-Q" type="5082">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_SaKVQ_o1EeSsIq-QKcT_-Q" y="5"/>
+                      </children>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../hardware_model.muml#_kt5XjvjtEeSrLMFBH0QA8A"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SaKVQfo1EeSsIq-QKcT_-Q" x="261" y="12"/>
+                    </children>
+                    <element xmi:type="hwresourceinstance:SensorInstance" href="../hardware_model.muml#_kt5XjfjtEeSrLMFBH0QA8A"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SY372_o1EeSsIq-QKcT_-Q" x="-8" y="198"/>
+                  </children>
+                  <children xmi:type="notation:Shape" xmi:id="_SY6YE_o1EeSsIq-QKcT_-Q" type="3036" fontName="Sans" fontHeight="10" lineColor="0">
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SY6YFfo1EeSsIq-QKcT_-Q" type="5092"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SY6YFvo1EeSsIq-QKcT_-Q" type="5093"/>
+                    <element xmi:type="hwplatforminstance:BusInstance" href="../hardware_model.muml#_kt5XY_jtEeSrLMFBH0QA8A"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SY6YFPo1EeSsIq-QKcT_-Q" x="388" y="228"/>
+                  </children>
+                </children>
+                <element xmi:type="hwplatforminstance:HWPlatformInstanceConfiguration" href="../hardware_model.muml#_kt5XYvjtEeSrLMFBH0QA8A"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SY04gfo1EeSsIq-QKcT_-Q"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_SXpMyvo1EeSsIq-QKcT_-Q"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_SXpMy_o1EeSsIq-QKcT_-Q"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_SaaM4Po1EeSsIq-QKcT_-Q" type="3028" fontName="Sans" fontHeight="10" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_SaaM4vo1EeSsIq-QKcT_-Q" type="5078">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_SaaM4_o1EeSsIq-QKcT_-Q" x="-70" y="-48"/>
+              </children>
+              <element xmi:type="hwplatforminstance:DelegationHWPortInstance" href="../hardware_model.muml#_kt5XYfjtEeSrLMFBH0QA8A"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SaaM4fo1EeSsIq-QKcT_-Q" x="1178" y="276"/>
+            </children>
+            <element xmi:type="hwplatforminstance:HWPlatformInstance" href="../hardware_model.muml#_kt5XYPjtEeSrLMFBH0QA8A"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SXpMx_o1EeSsIq-QKcT_-Q" x="-380" y="756"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_SXpMzPo1EeSsIq-QKcT_-Q" type="3031" fontName="Sans" fontHeight="10" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_SXpMzvo1EeSsIq-QKcT_-Q" type="5095"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_SXpMz_o1EeSsIq-QKcT_-Q" type="7010">
+              <children xmi:type="notation:Shape" xmi:id="_Sad3QPo1EeSsIq-QKcT_-Q" type="3032" fontName="Sans" fontHeight="10" lineColor="0">
+                <children xmi:type="notation:DecorationNode" xmi:id="_Sad3Qvo1EeSsIq-QKcT_-Q" type="7008">
+                  <children xmi:type="notation:Shape" xmi:id="_SaeeVfo1EeSsIq-QKcT_-Q" type="3033" fontName="Sans" fontHeight="10" lineColor="0">
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SaeeV_o1EeSsIq-QKcT_-Q" type="5083"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SaeeWPo1EeSsIq-QKcT_-Q" type="5084"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SaeeWfo1EeSsIq-QKcT_-Q" type="5085"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SaeeWvo1EeSsIq-QKcT_-Q" type="5098"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SafFYPo1EeSsIq-QKcT_-Q" type="5099"/>
+                    <children xmi:type="notation:Shape" xmi:id="_IY8SgPo2EeSsIq-QKcT_-Q" type="3030" fontName="Sans" fontHeight="10" lineColor="0">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_IY8Sgvo2EeSsIq-QKcT_-Q" type="5082">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_IY8Sg_o2EeSsIq-QKcT_-Q" x="-96" y="-12"/>
+                      </children>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../hardware_model.muml#_lOoF5_jtEeSrLMFBH0QA8A"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IY8Sgfo2EeSsIq-QKcT_-Q" x="12" y="-12"/>
+                    </children>
+                    <children xmi:type="notation:Shape" xmi:id="_IY8ShPo2EeSsIq-QKcT_-Q" type="3030" fontName="Sans" fontHeight="10" lineColor="0">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_IY8Shvo2EeSsIq-QKcT_-Q" type="5082">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_IY8Sh_o2EeSsIq-QKcT_-Q" y="5"/>
+                      </children>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../hardware_model.muml#_lOoF6PjtEeSrLMFBH0QA8A"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IY8Shfo2EeSsIq-QKcT_-Q" x="318" y="24"/>
+                    </children>
+                    <element xmi:type="hwresourceinstance:StructuredResourceInstance" href="../hardware_model.muml#_lOoF5vjtEeSrLMFBH0QA8A"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SaeeVvo1EeSsIq-QKcT_-Q" x="476" y="384"/>
+                  </children>
+                  <children xmi:type="notation:Shape" xmi:id="_SafFYfo1EeSsIq-QKcT_-Q" type="3034" fontName="Sans" fontHeight="10" lineColor="0">
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SafFY_o1EeSsIq-QKcT_-Q" type="5086"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SafFZPo1EeSsIq-QKcT_-Q" type="5087"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SafFZfo1EeSsIq-QKcT_-Q" type="5088"/>
+                    <children xmi:type="notation:Shape" xmi:id="_IZGDgPo2EeSsIq-QKcT_-Q" type="3030" fontName="Sans" fontHeight="10" lineColor="0">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_IZGDgvo2EeSsIq-QKcT_-Q" type="5082">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_IZGDg_o2EeSsIq-QKcT_-Q" y="5"/>
+                      </children>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../hardware_model.muml#_lOoF8PjtEeSrLMFBH0QA8A"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IZGDgfo2EeSsIq-QKcT_-Q" x="156" y="68"/>
+                    </children>
+                    <element xmi:type="hwresourceinstance:ActuatorInstance" href="../hardware_model.muml#_lOoF7_jtEeSrLMFBH0QA8A"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SafFYvo1EeSsIq-QKcT_-Q" x="128" y="36"/>
+                  </children>
+                  <children xmi:type="notation:Shape" xmi:id="_SafFZvo1EeSsIq-QKcT_-Q" type="3035" fontName="Sans" fontHeight="10" lineColor="0">
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SafFaPo1EeSsIq-QKcT_-Q" type="5089"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SafFafo1EeSsIq-QKcT_-Q" type="5090"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SafFavo1EeSsIq-QKcT_-Q" type="5091"/>
+                    <children xmi:type="notation:Shape" xmi:id="_IZH4sPo2EeSsIq-QKcT_-Q" type="3030" fontName="Sans" fontHeight="10" lineColor="0">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_IZH4svo2EeSsIq-QKcT_-Q" type="5082">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_IZH4s_o2EeSsIq-QKcT_-Q" y="5"/>
+                      </children>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../hardware_model.muml#_lOoF8vjtEeSrLMFBH0QA8A"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IZH4sfo2EeSsIq-QKcT_-Q" x="48" y="68"/>
+                    </children>
+                    <element xmi:type="hwresourceinstance:SensorInstance" href="../hardware_model.muml#_lOoF8fjtEeSrLMFBH0QA8A"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SafFZ_o1EeSsIq-QKcT_-Q" x="440" y="36"/>
+                  </children>
+                  <children xmi:type="notation:Shape" xmi:id="_SafFa_o1EeSsIq-QKcT_-Q" type="3035" fontName="Sans" fontHeight="10" lineColor="0">
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SafFbfo1EeSsIq-QKcT_-Q" type="5089"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SafFbvo1EeSsIq-QKcT_-Q" type="5090"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SafFb_o1EeSsIq-QKcT_-Q" type="5091"/>
+                    <children xmi:type="notation:Shape" xmi:id="_IZSQwPo2EeSsIq-QKcT_-Q" type="3030" fontName="Sans" fontHeight="10" lineColor="0">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_IZSQwvo2EeSsIq-QKcT_-Q" type="5082">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_IZSQw_o2EeSsIq-QKcT_-Q" x="-72" y="60"/>
+                      </children>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../hardware_model.muml#_lOoF9PjtEeSrLMFBH0QA8A"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IZSQwfo2EeSsIq-QKcT_-Q" x="-12" y="12"/>
+                    </children>
+                    <element xmi:type="hwresourceinstance:SensorInstance" href="../hardware_model.muml#_lOoF8_jtEeSrLMFBH0QA8A"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SafFbPo1EeSsIq-QKcT_-Q" x="524" y="204"/>
+                  </children>
+                  <children xmi:type="notation:Shape" xmi:id="_SafFcPo1EeSsIq-QKcT_-Q" type="3033" fontName="Sans" fontHeight="10" lineColor="0">
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SafFcvo1EeSsIq-QKcT_-Q" type="5083"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SafFc_o1EeSsIq-QKcT_-Q" type="5084"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SafFdPo1EeSsIq-QKcT_-Q" type="5085"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SafFdfo1EeSsIq-QKcT_-Q" type="5098"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SafFdvo1EeSsIq-QKcT_-Q" type="5099"/>
+                    <children xmi:type="notation:Shape" xmi:id="_IZVUEPo2EeSsIq-QKcT_-Q" type="3030" fontName="Sans" fontHeight="10" lineColor="0">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_IZV7Ifo2EeSsIq-QKcT_-Q" type="5082">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_IZV7Ivo2EeSsIq-QKcT_-Q" x="-96" y="-24"/>
+                      </children>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../hardware_model.muml#_lOoF9vjtEeSrLMFBH0QA8A"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IZV7IPo2EeSsIq-QKcT_-Q" x="216" y="-12"/>
+                    </children>
+                    <element xmi:type="hwresourceinstance:StructuredResourceInstance" href="../hardware_model.muml#_lOoF9fjtEeSrLMFBH0QA8A"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SafFcfo1EeSsIq-QKcT_-Q" x="32" y="384"/>
+                  </children>
+                  <children xmi:type="notation:Shape" xmi:id="_SafFd_o1EeSsIq-QKcT_-Q" type="3036" fontName="Sans" fontHeight="10" lineColor="0">
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SafFefo1EeSsIq-QKcT_-Q" type="5092"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SafFevo1EeSsIq-QKcT_-Q" type="5093"/>
+                    <element xmi:type="hwplatforminstance:BusInstance" href="../hardware_model.muml#_lOoF4_jtEeSrLMFBH0QA8A"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SafFePo1EeSsIq-QKcT_-Q" x="320" y="240"/>
+                  </children>
+                  <children xmi:type="notation:Shape" xmi:id="_SaeeUPo1EeSsIq-QKcT_-Q" type="3035" fontName="Sans" fontHeight="10" lineColor="0">
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SaeeUvo1EeSsIq-QKcT_-Q" type="5089"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SaeeU_o1EeSsIq-QKcT_-Q" type="5090"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_SaeeVPo1EeSsIq-QKcT_-Q" type="5091"/>
+                    <children xmi:type="notation:Shape" xmi:id="_05k6UPo2EeSsIq-QKcT_-Q" type="3030" fontName="Sans" fontHeight="10" lineColor="0">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_05k6Uvo2EeSsIq-QKcT_-Q" type="5082">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_05k6U_o2EeSsIq-QKcT_-Q" y="5"/>
+                      </children>
+                      <element xmi:type="hwplatforminstance:HWPortInstance" href="../hardware_model.muml#_lOoF5fjtEeSrLMFBH0QA8A"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_05k6Ufo2EeSsIq-QKcT_-Q"/>
+                    </children>
+                    <element xmi:type="hwresourceinstance:SensorInstance" href="../hardware_model.muml#_lOoF5PjtEeSrLMFBH0QA8A"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SaeeUfo1EeSsIq-QKcT_-Q" x="22" y="192"/>
+                  </children>
+                </children>
+                <element xmi:type="hwplatforminstance:HWPlatformInstanceConfiguration" href="../hardware_model.muml#_lOoF4vjtEeSrLMFBH0QA8A"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Sad3Qfo1EeSsIq-QKcT_-Q"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_SXpM0Po1EeSsIq-QKcT_-Q"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_SXpM0fo1EeSsIq-QKcT_-Q"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_Sbnt0Po1EeSsIq-QKcT_-Q" type="3028" fontName="Sans" fontHeight="10" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_Sbnt0vo1EeSsIq-QKcT_-Q" type="5078">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_Sbnt0_o1EeSsIq-QKcT_-Q" y="5"/>
+              </children>
+              <element xmi:type="hwplatforminstance:DelegationHWPortInstance" href="../hardware_model.muml#_lOoF4fjtEeSrLMFBH0QA8A"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Sbnt0fo1EeSsIq-QKcT_-Q" x="1145" y="228"/>
+            </children>
+            <element xmi:type="hwplatforminstance:HWPlatformInstance" href="../hardware_model.muml#_lOoF4PjtEeSrLMFBH0QA8A"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SXpMzfo1EeSsIq-QKcT_-Q" x="-364" y="1464" width="1157" height="653"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_05oksPo2EeSsIq-QKcT_-Q" type="3036" fontName="Sans" fontHeight="10" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_05oksvo2EeSsIq-QKcT_-Q" type="5092"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_05oks_o2EeSsIq-QKcT_-Q" type="5093"/>
+            <element xmi:type="hwplatforminstance:BusInstance" href="../hardware_model.muml#_zj8kIPo2EeSsIq-QKcT_-Q"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_05oksfo2EeSsIq-QKcT_-Q" x="1100" y="1116" width="130" height="54"/>
+          </children>
+        </children>
+        <element xmi:type="hwplatforminstance:HWPlatformInstanceConfiguration" href="../hardware_model.muml#_aUBZgfjtEeSrLMFBH0QA8A"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SXolsfo1EeSsIq-QKcT_-Q"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_SXliZPo1EeSsIq-QKcT_-Q"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_SXliZfo1EeSsIq-QKcT_-Q"/>
+    </children>
+    <element xmi:type="hwplatforminstance:HWPlatformInstance" href="../hardware_model.muml#_aUBZgPjtEeSrLMFBH0QA8A"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SXliYfo1EeSsIq-QKcT_-Q"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_H9qhMfo1EeSsIq-QKcT_-Q"/>
+  <element xmi:type="hwplatforminstance:HWPlatformInstanceConfiguration" href="../hardware_model.muml#_YyqUcPjtEeSrLMFBH0QA8A"/>
+  <edges xmi:type="notation:Connector" xmi:id="_05sPEPo2EeSsIq-QKcT_-Q" type="4011" source="_IYEv0Po2EeSsIq-QKcT_-Q" target="_IX6XxPo2EeSsIq-QKcT_-Q" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_05sPEfo2EeSsIq-QKcT_-Q" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../hardware_model.muml#_j8UJj_jtEeSrLMFBH0QA8A"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_05sPEvo2EeSsIq-QKcT_-Q" points="[-12, -12, 0, 0]$[-12, -12, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_05s2IPo2EeSsIq-QKcT_-Q" type="4011" source="_05eMoPo2EeSsIq-QKcT_-Q" target="_IX6XxPo2EeSsIq-QKcT_-Q" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_05s2Ifo2EeSsIq-QKcT_-Q" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../hardware_model.muml#_j8UJkPjtEeSrLMFBH0QA8A"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_05s2Ivo2EeSsIq-QKcT_-Q" points="[-12, -12, 0, 0]$[-12, -12, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_05tdMPo2EeSsIq-QKcT_-Q" type="4011" source="_IYXqwPo2EeSsIq-QKcT_-Q" target="_IX6XxPo2EeSsIq-QKcT_-Q" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_05tdMfo2EeSsIq-QKcT_-Q" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../hardware_model.muml#_j8UJkfjtEeSrLMFBH0QA8A"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_05tdMvo2EeSsIq-QKcT_-Q" points="[-12, -12, 0, 0]$[-12, -12, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_05uEQPo2EeSsIq-QKcT_-Q" type="4011" source="_IYFW4Po2EeSsIq-QKcT_-Q" target="_SYtjxPo1EeSsIq-QKcT_-Q" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_05uEQfo2EeSsIq-QKcT_-Q" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../hardware_model.muml#_j8UJkvjtEeSrLMFBH0QA8A"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_05uEQvo2EeSsIq-QKcT_-Q" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_05urUPo2EeSsIq-QKcT_-Q" type="4011" source="_IYXqxPo2EeSsIq-QKcT_-Q" target="_SYtjwPo1EeSsIq-QKcT_-Q" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_05urUfo2EeSsIq-QKcT_-Q" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../hardware_model.muml#_j8UJk_jtEeSrLMFBH0QA8A"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_05urUvo2EeSsIq-QKcT_-Q" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_05vSYPo2EeSsIq-QKcT_-Q" type="4011" source="_SZkfYPo1EeSsIq-QKcT_-Q" target="_SY6YE_o1EeSsIq-QKcT_-Q" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_05vSYfo2EeSsIq-QKcT_-Q" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../hardware_model.muml#_kt5Xj_jtEeSrLMFBH0QA8A"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_05vSYvo2EeSsIq-QKcT_-Q" points="[-12, -12, 0, 0]$[-12, -12, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_05v5cPo2EeSsIq-QKcT_-Q" type="4011" source="_SZ1lIPo1EeSsIq-QKcT_-Q" target="_SY6YE_o1EeSsIq-QKcT_-Q" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_05wggPo2EeSsIq-QKcT_-Q" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../hardware_model.muml#_kt5XkPjtEeSrLMFBH0QA8A"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_05wggfo2EeSsIq-QKcT_-Q" points="[-12, -12, 0, 0]$[-12, -12, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_05xHkPo2EeSsIq-QKcT_-Q" type="4011" source="_SaCZcPo1EeSsIq-QKcT_-Q" target="_SY6YE_o1EeSsIq-QKcT_-Q" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_05xHkfo2EeSsIq-QKcT_-Q" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../hardware_model.muml#_kt5XkfjtEeSrLMFBH0QA8A"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_05xHkvo2EeSsIq-QKcT_-Q" points="[-12, -12, 0, 0]$[-12, -12, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_05xuoPo2EeSsIq-QKcT_-Q" type="4011" source="_SZKPsPo1EeSsIq-QKcT_-Q" target="_SY6YE_o1EeSsIq-QKcT_-Q" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_05xuofo2EeSsIq-QKcT_-Q" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../hardware_model.muml#_kt5XkvjtEeSrLMFBH0QA8A"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_05xuovo2EeSsIq-QKcT_-Q" points="[-12, -12, 0, 0]$[-12, -12, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_05yVsPo2EeSsIq-QKcT_-Q" type="4011" source="_SaaM4Po1EeSsIq-QKcT_-Q" target="_SZKPtPo1EeSsIq-QKcT_-Q" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_05yVsfo2EeSsIq-QKcT_-Q" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../hardware_model.muml#_kt5Xk_jtEeSrLMFBH0QA8A"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_05yVsvo2EeSsIq-QKcT_-Q" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_05y8wPo2EeSsIq-QKcT_-Q" type="4011" source="_SaKVQPo1EeSsIq-QKcT_-Q" target="_SY6YE_o1EeSsIq-QKcT_-Q" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_05y8wfo2EeSsIq-QKcT_-Q" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../hardware_model.muml#_kt5XlPjtEeSrLMFBH0QA8A"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_05y8wvo2EeSsIq-QKcT_-Q" points="[-12, -12, 0, 0]$[-12, -12, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_05zj0Po2EeSsIq-QKcT_-Q" type="4011" source="_SaGq4Po1EeSsIq-QKcT_-Q" target="_SY6YE_o1EeSsIq-QKcT_-Q" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_05zj0fo2EeSsIq-QKcT_-Q" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../hardware_model.muml#_kt5XlfjtEeSrLMFBH0QA8A"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_05zj0vo2EeSsIq-QKcT_-Q" points="[-12, -12, 0, 0]$[-12, -12, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_050K4Po2EeSsIq-QKcT_-Q" type="4011" source="_SZow0Po1EeSsIq-QKcT_-Q" target="_SY6YE_o1EeSsIq-QKcT_-Q" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_050K4fo2EeSsIq-QKcT_-Q" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../hardware_model.muml#_kt5XlvjtEeSrLMFBH0QA8A"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_050K4vo2EeSsIq-QKcT_-Q" points="[-12, -12, 0, 0]$[-12, -12, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_050x8Po2EeSsIq-QKcT_-Q" type="4011" source="_05go4Po2EeSsIq-QKcT_-Q" target="_SY6YE_o1EeSsIq-QKcT_-Q" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_050x8fo2EeSsIq-QKcT_-Q" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../hardware_model.muml#_kt5Xl_jtEeSrLMFBH0QA8A"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_050x8vo2EeSsIq-QKcT_-Q" points="[-12, -12, 0, 0]$[-12, -12, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_052AEPo2EeSsIq-QKcT_-Q" type="4011" source="_SZV14Po1EeSsIq-QKcT_-Q" target="_SY6YE_o1EeSsIq-QKcT_-Q" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_052AEfo2EeSsIq-QKcT_-Q" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../hardware_model.muml#_kt5XmPjtEeSrLMFBH0QA8A"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_052AEvo2EeSsIq-QKcT_-Q" points="[-12, -12, 0, 0]$[-12, -12, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_052nIPo2EeSsIq-QKcT_-Q" type="4011" source="_IZVUEPo2EeSsIq-QKcT_-Q" target="_SafFd_o1EeSsIq-QKcT_-Q" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_052nIfo2EeSsIq-QKcT_-Q" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../hardware_model.muml#_lOoF_fjtEeSrLMFBH0QA8A"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_052nIvo2EeSsIq-QKcT_-Q" points="[-12, -12, 0, 0]$[-12, -12, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_053OMPo2EeSsIq-QKcT_-Q" type="4011" source="_IY8SgPo2EeSsIq-QKcT_-Q" target="_SafFd_o1EeSsIq-QKcT_-Q" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_053OMfo2EeSsIq-QKcT_-Q" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../hardware_model.muml#_lOoF_vjtEeSrLMFBH0QA8A"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_053OMvo2EeSsIq-QKcT_-Q" points="[-12, -12, 0, 0]$[-12, -12, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_0531QPo2EeSsIq-QKcT_-Q" type="4011" source="_Sbnt0Po1EeSsIq-QKcT_-Q" target="_IY8ShPo2EeSsIq-QKcT_-Q" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_0531Qfo2EeSsIq-QKcT_-Q" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../hardware_model.muml#_lOoF__jtEeSrLMFBH0QA8A"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_0531Qvo2EeSsIq-QKcT_-Q" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_055DYPo2EeSsIq-QKcT_-Q" type="4011" source="_IZGDgPo2EeSsIq-QKcT_-Q" target="_SafFd_o1EeSsIq-QKcT_-Q" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_055DYfo2EeSsIq-QKcT_-Q" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../hardware_model.muml#_lOoGAPjtEeSrLMFBH0QA8A"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_055DYvo2EeSsIq-QKcT_-Q" points="[-12, -12, 0, 0]$[-12, -12, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_055qcPo2EeSsIq-QKcT_-Q" type="4011" source="_05k6UPo2EeSsIq-QKcT_-Q" target="_SafFd_o1EeSsIq-QKcT_-Q" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_055qcfo2EeSsIq-QKcT_-Q" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../hardware_model.muml#_lOoGAfjtEeSrLMFBH0QA8A"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_055qcvo2EeSsIq-QKcT_-Q" points="[-12, -12, 0, 0]$[-12, -12, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_056RgPo2EeSsIq-QKcT_-Q" type="4011" source="_IZSQwPo2EeSsIq-QKcT_-Q" target="_SafFd_o1EeSsIq-QKcT_-Q" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_056Rgfo2EeSsIq-QKcT_-Q" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../hardware_model.muml#_lOoGAvjtEeSrLMFBH0QA8A"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_056Rgvo2EeSsIq-QKcT_-Q" points="[-12, -12, 0, 0]$[-12, -12, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_0564kPo2EeSsIq-QKcT_-Q" type="4011" source="_IZH4sPo2EeSsIq-QKcT_-Q" target="_SafFd_o1EeSsIq-QKcT_-Q" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_0564kfo2EeSsIq-QKcT_-Q" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../hardware_model.muml#_lOoGA_jtEeSrLMFBH0QA8A"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_0564kvo2EeSsIq-QKcT_-Q" points="[-12, -12, 0, 0]$[-12, -12, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_6slawPo2EeSsIq-QKcT_-Q" type="4011" source="_05oksPo2EeSsIq-QKcT_-Q" target="_SYtjxPo1EeSsIq-QKcT_-Q" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_6slawfo2EeSsIq-QKcT_-Q" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../hardware_model.muml#_6skMoPo2EeSsIq-QKcT_-Q"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6slawvo2EeSsIq-QKcT_-Q" points="[-65, -5, 380, 22]$[-447, -39, -2, -12]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_7cf0wPo2EeSsIq-QKcT_-Q" type="4011" source="_05oksPo2EeSsIq-QKcT_-Q" target="_SaaM4Po1EeSsIq-QKcT_-Q" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_7cgb0Po2EeSsIq-QKcT_-Q" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../hardware_model.muml#_7cemoPo2EeSsIq-QKcT_-Q"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_7cgb0fo2EeSsIq-QKcT_-Q" points="[-27, 27, 170, -174]$[-198, 189, -1, -12]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_8iw5QPo2EeSsIq-QKcT_-Q" type="4011" source="_05oksPo2EeSsIq-QKcT_-Q" target="_Sbnt0Po1EeSsIq-QKcT_-Q" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_8iw5Qfo2EeSsIq-QKcT_-Q" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../hardware_model.muml#_8ivrIPo2EeSsIq-QKcT_-Q"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_8iw5Qvo2EeSsIq-QKcT_-Q" points="[-5, 27, -1, -918]$[-5, 957, -1, 12]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_gpa-YPo3EeSsIq-QKcT_-Q" type="4011" source="_SYtjwPo1EeSsIq-QKcT_-Q" target="_05oksPo2EeSsIq-QKcT_-Q" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_gpa-Yfo3EeSsIq-QKcT_-Q" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../hardware_model.muml#_gpZwQPo3EeSsIq-QKcT_-Q"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_gpa-Yvo3EeSsIq-QKcT_-Q" points="[7, 12, -468, -781]$[491, 780, 16, -13]"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_gpeowPo3EeSsIq-QKcT_-Q" id="(0.6384615384615384,0.24074074074074073)"/>
+  </edges>
+</notation:Diagram>

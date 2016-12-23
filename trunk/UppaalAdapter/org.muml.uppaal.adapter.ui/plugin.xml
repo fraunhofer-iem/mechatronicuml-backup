@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension point="org.eclipse.ui.commands" id="menu-commands">
+      <category id="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID" name="UPPAAL Verification Command" description="Run UPPAAL model checking"/>
+      <command id="org.muml.uppaal.adapter.UppaalVerificationAction"
+         name="Run UPPAAL Model Checking"
+         categoryId="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"
+         defaultHandler="org.muml.uppaal.adapter.ui.UppaalVerifyForResultAction"/>
+   </extension>
+   
+   <extension point="org.eclipse.ui.commands" id="menu-commands">
+      <category id="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID" name="UPPAAL Verification Command" description="Run UPPAAL model checking"/>
+      <command id="org.muml.uppaal.adapter.GenerateIntermediateModelsAction"
+         name="Generate Intermediate Models"
+         categoryId="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"
+         defaultHandler="org.muml.uppaal.adapter.ui.UppaalGenerateIntermediateModelsAction"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.commands" id="menu-commands">
+      <category id="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID" name="UPPAAL XML Export Command" description="Export UPPAAL XML file"/>
+      <command id="org.muml.uppaal.adapter.ExportUppaalXMLAction"
+         name="Export UPPAAL XML File"
+         categoryId="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"
+         defaultHandler="org.muml.uppaal.adapter.ui.ExportUppaalXMLAction"/>
+   </extension>
+   
+   <extension point="org.eclipse.ui.commands" id="menu-commands">
+      <category id="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID" name="Export UPPAAL Model Command" description="Export UPPAAL model"/>
+      <command id="org.muml.uppaal.adapter.ExportUppaalModelAction"
+         name="Export UPPAAL Model"
+         categoryId="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"
+         defaultHandler="org.muml.uppaal.adapter.ui.ExportUppaalModelAction"/>
+   </extension>
+
+
+
+   <extension point="org.eclipse.ui.commands" id="menu-commands">
+      <category id="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID" name="Export UPPAAL Model Command" description="Export UPPAAL model (Wizard)..."/>
+      <command id="org.muml.uppaal.adapter.ExportUppaalWizardModelAction"
+         name="Export UPPAAL Model (Wizard)..."
+         categoryId="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"
+         defaultHandler="org.muml.uppaal.adapter.ui.wizard.MUML2ExportUppaalWizardDialogAction"/>
+   </extension>
+
+
+
+
+   <extension point="org.eclipse.ui.commands" id="menu-commands">
+      <category id="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID" name="Trace Image Export Command" description="Export trace image"/>
+      <command id="org.muml.uppaal.adapter.ExportTraceImageAction"
+         name="Run UPPAAL Model Checking for a Trace"
+         categoryId="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"
+         defaultHandler="org.muml.uppaal.adapter.ui.ExportTraceImageAction"/>
+   </extension>
+   
+   <extension point="org.eclipse.ui.commands" id="menu-commands">
+      <category id="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID" name="Add Default Properties Command" description="Add Default Verification Properties"/>
+      <command id="org.muml.uppaal.adapter.AddDefaultPropertiesAction"
+         name="Add Default Verification Properties"
+         categoryId="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"
+         defaultHandler="org.muml.uppaal.adapter.ui.AddDefaultPropertiesAction"/>
+   </extension>
+   
+   <extension point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.muml">
+         
+         
+
+
+         <command
+               commandId="org.muml.uppaal.adapter.AddDefaultPropertiesAction"
+               label="Add Default Verification Properties">
+            <visibleWhen>
+               <and>
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false">
+                        <adapt
+                              type="org.muml.pim.protocol.AbstractCoordinationSpecification">
+                        </adapt>
+                     </iterate>
+                  </with></and>
+            </visibleWhen>
+         </command>
+         <command
+               commandId="org.muml.uppaal.adapter.UppaalVerificationAction"
+               label="Verify Multiple Properties">
+             <visibleWhen>
+               <and>
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false">
+                        <adapt
+                              type="org.muml.pim.protocol.AbstractCoordinationSpecification">
+                        </adapt>
+                     </iterate>
+                  </with></and>
+            </visibleWhen>
+         </command>
+
+         <command
+               commandId="org.muml.uppaal.adapter.ExportTraceImageAction"
+               label="Verify Single Property for a Trace">
+            <visibleWhen>
+               <and>
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false">
+                        <adapt
+                              type="org.muml.pim.protocol.AbstractCoordinationSpecification">
+                        </adapt>
+                     </iterate>
+                  </with></and>
+            </visibleWhen>
+         </command>
+         <menu
+               id="de.uni_paderborn.de.fujaba.muml.uppaal.verification.debugging"
+               label="Debugging">
+               
+         
+         <command
+               commandId="org.muml.uppaal.adapter.GenerateIntermediateModelsAction"
+               label="Generate Intermediate Models">
+             <visibleWhen>
+               <and>
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false">
+                        <adapt
+                              type="org.muml.pim.protocol.AbstractCoordinationSpecification">
+                        </adapt>
+                     </iterate>
+                  </with></and>
+            </visibleWhen>
+         </command>
+               
+               
+         <command
+               commandId="org.muml.uppaal.adapter.ExportUppaalModelAction"
+               label="Generate Uppaal Model">
+            <visibleWhen>
+               <and>
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false">
+                        <adapt
+                              type="org.muml.pim.protocol.AbstractCoordinationSpecification">
+                        </adapt>
+                     </iterate>
+                  </with></and>
+            </visibleWhen>
+         </command>
+
+         <command
+               commandId="org.muml.uppaal.adapter.ExportUppaalXMLAction"
+               label="Generate Uppaal XML File">
+             <visibleWhen>
+               <and>
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false">
+                        <adapt
+                              type="org.muml.pim.protocol.AbstractCoordinationSpecification">
+                        </adapt>
+                     </iterate>
+                  </with></and>
+            </visibleWhen>
+         </command>
+         
+         
+         </menu>
+         
+         
+        <!-- The wizard should not be dispayed anymore
+         <command commandId="org.muml.uppaal.adapter.ExportUppaalWizardModelAction">
+            <visibleWhen>
+               <and>
+                  <with variable="activePartId"><equals value="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"/></with>
+               	  
+               	  <with variable="selection"><iterate ifEmpty="false">
+               	     <or> 
+                        <instanceof value="org.muml.pim.coordinationprotocol.diagram.edit.parts.CoordinationProtocolEditPart"/>
+                        <instanceof value="org.muml.pim.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart"/>
+                        <instanceof value="org.muml.pim.coordinationprotocol.diagram.edit.parts.CoordinationProtocolCoordinationProtocolContainerCompartmentEditPart"/>
+                        <instanceof value="org.muml.pim.coordinationprotocol.diagram.edit.parts.CoordinationProtocolNameEditPart"/>
+                     </or>
+                  </iterate></with>    
+               </and>              
+            </visibleWhen>
+         </command> -->
+         
+      </menuContribution>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.exportWizards">
+      <wizard
+            category="org.muml.core.export"
+            class="org.muml.uppaal.adapter.ui.wizard.MUML2UppaalExportWizard"
+            id="de.uni_paderborn.fujaba.verification.upaal.export"
+            name="MechatronicUML to Uppaal">
+      </wizard>
+   </extension>
+   
+   
+   <!-- extend verification preferences with additional controls -->
+   <extension
+         point="org.muml.uppaal.preferences.preferencesPageExtension">
+      <preferencesPageExtension id="org.muml.uppaal.adapter.ui.preferences.UppaalAdapterPreferencesExtension" after="org.muml.uppaal.preferences.DefaultUppaalPreferencesPageExtension"
+            implementation="org.muml.uppaal.adapter.ui.preferences.UppaalAdapterPreferencesExtension">
+      </preferencesPageExtension>
+   </extension>
+
+</plugin>

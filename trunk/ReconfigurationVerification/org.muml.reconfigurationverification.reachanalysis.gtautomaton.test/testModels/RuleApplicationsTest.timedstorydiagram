@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedGraphTransformationSystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba.muml.timedstorydiagram="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0" xmlns:expr="http://www.muml.org/core/expressions/1.0.0" xmlns:sda="http://www.muml.org/storydiagram/activities/1.0.0" xmlns:sdp="http://www.muml.org/storydiagram/patterns/1.0.0" name="tgts">
+  <rules name="rule1" resets="//@rules.0/@ownedActivityNode.1/@ownedRule/@variable.0">
+    <ownedActivityEdge target="//@rules.0/@ownedActivityNode.2" source="//@rules.0/@ownedActivityNode.1"/>
+    <ownedActivityEdge target="//@rules.0/@ownedActivityNode.1" source="//@rules.0/@ownedActivityNode.0"/>
+    <ownedActivityNode xsi:type="sda:InitialNode" name="init" outgoing="//@rules.0/@ownedActivityEdge.1"/>
+    <ownedActivityNode xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedActivityNode" name="node1" outgoing="//@rules.0/@ownedActivityEdge.0" incoming="//@rules.0/@ownedActivityEdge.1">
+      <ownedRule xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedStoryPattern">
+        <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="ci" outgoingLink="//@rules.0/@ownedActivityNode.1/@ownedRule/@linkVariable.0" clockInstanceConstraints="//@rules.0/@clockInstConstraint.0">
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="c" bindingState="BOUND" incomingLink="//@rules.0/@ownedActivityNode.1/@ownedRule/@linkVariable.0" outgoingLink="//@rules.0/@ownedActivityNode.1/@ownedRule/@linkVariable.1">
+          <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="o" incomingLink="//@rules.0/@ownedActivityNode.1/@ownedRule/@linkVariable.1" outgoingLink="//@rules.0/@ownedActivityNode.1/@ownedRule/@linkVariable.2">
+          <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EOperation"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="p" incomingLink="//@rules.0/@ownedActivityNode.1/@ownedRule/@linkVariable.2" bindingOperator="CREATE">
+          <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EParameter"/>
+        </variable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="hasNode" source="//@rules.0/@ownedActivityNode.1/@ownedRule/@variable.0" target="//@rules.0/@ownedActivityNode.1/@ownedRule/@variable.1">
+          <targetEnd href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance/hasNode"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="operation" source="//@rules.0/@ownedActivityNode.1/@ownedRule/@variable.1" target="//@rules.0/@ownedActivityNode.1/@ownedRule/@variable.2">
+          <targetEnd href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eOperations"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="parameter" bindingOperator="CREATE" source="//@rules.0/@ownedActivityNode.1/@ownedRule/@variable.2" target="//@rules.0/@ownedActivityNode.1/@ownedRule/@variable.3">
+          <targetEnd href="http://www.eclipse.org/emf/2002/Ecore#//EOperation/eParameters"/>
+        </linkVariable>
+      </ownedRule>
+    </ownedActivityNode>
+    <ownedActivityNode xsi:type="sda:ActivityFinalNode" name="final" incoming="//@rules.0/@ownedActivityEdge.0"/>
+    <clockInstConstraint clockInstanceVariable="//@rules.0/@ownedActivityNode.1/@ownedRule/@variable.0" operator="LESS_OR_EQUAL" value="100"/>
+  </rules>
+  <rules name="rule2" resets="//@rules.1/@ownedActivityNode.1/@ownedRule/@variable.0">
+    <ownedActivityEdge target="//@rules.1/@ownedActivityNode.2" source="//@rules.1/@ownedActivityNode.1"/>
+    <ownedActivityEdge target="//@rules.1/@ownedActivityNode.1" source="//@rules.1/@ownedActivityNode.0"/>
+    <ownedActivityNode xsi:type="sda:InitialNode" name="init" outgoing="//@rules.1/@ownedActivityEdge.1"/>
+    <ownedActivityNode xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedActivityNode" name="node1" outgoing="//@rules.1/@ownedActivityEdge.0" incoming="//@rules.1/@ownedActivityEdge.1">
+      <ownedRule xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedStoryPattern">
+        <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="ci" outgoingLink="//@rules.1/@ownedActivityNode.1/@ownedRule/@linkVariable.0" clockInstanceConstraints="//@rules.1/@clockInstConstraint.0">
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="c" bindingState="BOUND" incomingLink="//@rules.1/@ownedActivityNode.1/@ownedRule/@linkVariable.0" outgoingLink="//@rules.1/@ownedActivityNode.1/@ownedRule/@linkVariable.1">
+          <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="o" incomingLink="//@rules.1/@ownedActivityNode.1/@ownedRule/@linkVariable.1" outgoingLink="//@rules.1/@ownedActivityNode.1/@ownedRule/@linkVariable.2">
+          <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EOperation"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="p" incomingLink="//@rules.1/@ownedActivityNode.1/@ownedRule/@linkVariable.2" bindingOperator="CREATE">
+          <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EParameter"/>
+        </variable>
+        <constraint>
+          <constraintExpression xsi:type="expr:TextualExpression" expressionText="o.name='op1'" language="OCL" languageVersion="1.0"/>
+        </constraint>
+        <linkVariable xsi:type="sdp:LinkVariable" name="hasNode" source="//@rules.1/@ownedActivityNode.1/@ownedRule/@variable.0" target="//@rules.1/@ownedActivityNode.1/@ownedRule/@variable.1">
+          <targetEnd href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance/hasNode"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="operation" source="//@rules.1/@ownedActivityNode.1/@ownedRule/@variable.1" target="//@rules.1/@ownedActivityNode.1/@ownedRule/@variable.2">
+          <targetEnd href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eOperations"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="parameter" bindingOperator="CREATE" source="//@rules.1/@ownedActivityNode.1/@ownedRule/@variable.2" target="//@rules.1/@ownedActivityNode.1/@ownedRule/@variable.3">
+          <targetEnd href="http://www.eclipse.org/emf/2002/Ecore#//EOperation/eParameters"/>
+        </linkVariable>
+      </ownedRule>
+    </ownedActivityNode>
+    <ownedActivityNode xsi:type="sda:ActivityFinalNode" name="final" incoming="//@rules.1/@ownedActivityEdge.0"/>
+    <clockInstConstraint clockInstanceVariable="//@rules.1/@ownedActivityNode.1/@ownedRule/@variable.0" operator="LESS_OR_EQUAL" value="100"/>
+  </rules>
+  <rules name="rule3" resets="//@rules.2/@ownedActivityNode.1/@ownedRule/@variable.0">
+    <ownedActivityEdge target="//@rules.2/@ownedActivityNode.2" source="//@rules.2/@ownedActivityNode.1"/>
+    <ownedActivityEdge target="//@rules.2/@ownedActivityNode.1" source="//@rules.2/@ownedActivityNode.0"/>
+    <ownedActivityNode xsi:type="sda:InitialNode" name="init" outgoing="//@rules.2/@ownedActivityEdge.1"/>
+    <ownedActivityNode xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedActivityNode" name="node1" outgoing="//@rules.2/@ownedActivityEdge.0" incoming="//@rules.2/@ownedActivityEdge.1">
+      <ownedRule xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedStoryPattern">
+        <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="ci" outgoingLink="//@rules.2/@ownedActivityNode.1/@ownedRule/@linkVariable.0" clockInstanceConstraints="//@rules.2/@clockInstConstraint.0">
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="c" bindingState="BOUND" incomingLink="//@rules.2/@ownedActivityNode.1/@ownedRule/@linkVariable.0" outgoingLink="//@rules.2/@ownedActivityNode.1/@ownedRule/@linkVariable.1">
+          <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="o" incomingLink="//@rules.2/@ownedActivityNode.1/@ownedRule/@linkVariable.1" outgoingLink="//@rules.2/@ownedActivityNode.1/@ownedRule/@linkVariable.2">
+          <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EOperation"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="p" incomingLink="//@rules.2/@ownedActivityNode.1/@ownedRule/@linkVariable.2" bindingOperator="CREATE">
+          <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EParameter"/>
+        </variable>
+        <constraint>
+          <constraintExpression xsi:type="expr:TextualExpression" expressionText="o.name='op3'" language="OCL" languageVersion="1.0"/>
+        </constraint>
+        <linkVariable xsi:type="sdp:LinkVariable" name="hasNode" source="//@rules.2/@ownedActivityNode.1/@ownedRule/@variable.0" target="//@rules.2/@ownedActivityNode.1/@ownedRule/@variable.1">
+          <targetEnd href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance/hasNode"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="operation" source="//@rules.2/@ownedActivityNode.1/@ownedRule/@variable.1" target="//@rules.2/@ownedActivityNode.1/@ownedRule/@variable.2">
+          <targetEnd href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eOperations"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="parameter" bindingOperator="CREATE" source="//@rules.2/@ownedActivityNode.1/@ownedRule/@variable.2" target="//@rules.2/@ownedActivityNode.1/@ownedRule/@variable.3">
+          <targetEnd href="http://www.eclipse.org/emf/2002/Ecore#//EOperation/eParameters"/>
+        </linkVariable>
+      </ownedRule>
+    </ownedActivityNode>
+    <ownedActivityNode xsi:type="sda:ActivityFinalNode" name="final" incoming="//@rules.2/@ownedActivityEdge.0"/>
+    <clockInstConstraint clockInstanceVariable="//@rules.2/@ownedActivityNode.1/@ownedRule/@variable.0" operator="LESS_OR_EQUAL" value="100"/>
+  </rules>
+  <invariants name="invariant">
+    <ownedActivityEdge target="//@invariants.0/@ownedActivityNode.1" source="//@invariants.0/@ownedActivityNode.0"/>
+    <ownedActivityEdge target="//@invariants.0/@ownedActivityNode.2" source="//@invariants.0/@ownedActivityNode.1"/>
+    <ownedActivityNode xsi:type="sda:InitialNode" name="init" outgoing="//@invariants.0/@ownedActivityEdge.0"/>
+    <ownedActivityNode xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedActivityNode" name="node1" outgoing="//@invariants.0/@ownedActivityEdge.1" incoming="//@invariants.0/@ownedActivityEdge.0">
+      <ownedRule xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedStoryPattern">
+        <variable xsi:type="sdp:ObjectVariable" name="c" bindingState="BOUND" incomingLink="//@invariants.0/@ownedActivityNode.1/@ownedRule/@linkVariable.0">
+          <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+        </variable>
+        <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="ci" outgoingLink="//@invariants.0/@ownedActivityNode.1/@ownedRule/@linkVariable.0" clockInstanceConstraints="//@invariants.0/@clockInstConstraint">
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
+        </variable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="hasNode" source="//@invariants.0/@ownedActivityNode.1/@ownedRule/@variable.1" target="//@invariants.0/@ownedActivityNode.1/@ownedRule/@variable.0">
+          <targetEnd href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance/hasNode"/>
+        </linkVariable>
+      </ownedRule>
+    </ownedActivityNode>
+    <ownedActivityNode xsi:type="sda:ActivityFinalNode" name="final" incoming="//@invariants.0/@ownedActivityEdge.1"/>
+    <clockInstConstraint clockInstanceVariable="//@invariants.0/@ownedActivityNode.1/@ownedRule/@variable.1" operator="LESS_OR_EQUAL" value="200"/>
+  </invariants>
+  <clockInstanceRules name="clockInstanceRule">
+    <ownedActivityEdge target="//@clockInstanceRules.0/@ownedActivityNode.1" source="//@clockInstanceRules.0/@ownedActivityNode.0"/>
+    <ownedActivityEdge target="//@clockInstanceRules.0/@ownedActivityNode.2" source="//@clockInstanceRules.0/@ownedActivityNode.1"/>
+    <ownedActivityNode xsi:type="sda:InitialNode" name="init" outgoing="//@clockInstanceRules.0/@ownedActivityEdge.0"/>
+    <ownedActivityNode xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedActivityNode" name="node1" outgoing="//@clockInstanceRules.0/@ownedActivityEdge.1" incoming="//@clockInstanceRules.0/@ownedActivityEdge.0">
+      <ownedRule xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedStoryPattern">
+        <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="ci" outgoingLink="//@clockInstanceRules.0/@ownedActivityNode.1/@ownedRule/@linkVariable.1" bindingOperator="CREATE">
+          <attributeAssignment>
+            <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
+            <valueExpression xsi:type="expr:TextualExpression" expressionText="'ci2'" language="OCL" languageVersion="1.0"/>
+          </attributeAssignment>
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="c" bindingState="BOUND" incomingLink="//@clockInstanceRules.0/@ownedActivityNode.1/@ownedRule/@linkVariable.1 //@clockInstanceRules.0/@ownedActivityNode.1/@ownedRule/@linkVariable.0">
+          <constraint>
+            <constraintExpression xsi:type="expr:TextualExpression" expressionText="self.name='c2'" language="OCL" languageVersion="1.0"/>
+          </constraint>
+          <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+        </variable>
+        <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="NoSuchCI" outgoingLink="//@clockInstanceRules.0/@ownedActivityNode.1/@ownedRule/@linkVariable.0" bindingSemantics="NEGATIVE">
+          <constraint>
+            <constraintExpression xsi:type="expr:TextualExpression" expressionText="self.name='ci2'" language="OCL" languageVersion="1.0"/>
+          </constraint>
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
+        </variable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="hasNode" source="//@clockInstanceRules.0/@ownedActivityNode.1/@ownedRule/@variable.2" target="//@clockInstanceRules.0/@ownedActivityNode.1/@ownedRule/@variable.1">
+          <targetEnd href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance/hasNode"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="hasNode" bindingOperator="CREATE" source="//@clockInstanceRules.0/@ownedActivityNode.1/@ownedRule/@variable.0" target="//@clockInstanceRules.0/@ownedActivityNode.1/@ownedRule/@variable.1">
+          <targetEnd href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance/hasNode"/>
+        </linkVariable>
+      </ownedRule>
+    </ownedActivityNode>
+    <ownedActivityNode xsi:type="sda:ActivityFinalNode" name="final" incoming="//@clockInstanceRules.0/@ownedActivityEdge.1"/>
+  </clockInstanceRules>
+</de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedGraphTransformationSystem>

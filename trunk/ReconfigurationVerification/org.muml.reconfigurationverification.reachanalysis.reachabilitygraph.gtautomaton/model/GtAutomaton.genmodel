@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton/src"
+    modelPluginID="org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton"
+    modelName="GtAutomaton" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false" usedGenPackages="../../org.muml.core/model/core.genmodel#//core platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm/model/SDMReachabilityAnalysis.genmodel#//sdm ../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram ../../org.muml.reconfigurationverification.timedstorydiagram/model/TimedStoryDiagrams.genmodel#//timedstorydiagram ../../org.muml.core.reachanalysis.reachabilitygraph/model/ReachabilityAnalysisCore.genmodel#//reachabilitygraph">
+  <foreignModel>GtAutomaton.ecore</foreignModel>
+  <genPackages prefix="Gtautomaton" basePackage="org.muml.reconfigurationverification.reachanalysis.reachabilitygraph"
+      disposableProviderFactory="true" ecorePackage="GtAutomaton.ecore#/">
+    <genClasses ecoreClass="GtAutomaton.ecore#//GtStepGraph">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GtAutomaton.ecore#//GtStepGraph/invariant"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GtAutomaton.ecore#//GtStepGraph/objectIdentifier"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GtAutomaton.ecore#//GtStepGraph/clockInstances"/>
+    </genClasses>
+    <genClasses ecoreClass="GtAutomaton.ecore#//ObjectIdentifier">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GtAutomaton.ecore#//ObjectIdentifier/IdentifierToEObject"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GtAutomaton.ecore#//ObjectIdentifier/EObjectToIdentifier"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GtAutomaton.ecore#//ObjectIdentifier/freeClockInstanceIdentifiers"/>
+      <genOperations ecoreOperation="GtAutomaton.ecore#//ObjectIdentifier/putEObjectToIdentifier">
+        <genParameters ecoreParameter="GtAutomaton.ecore#//ObjectIdentifier/putEObjectToIdentifier/currentObject"/>
+        <genParameters ecoreParameter="GtAutomaton.ecore#//ObjectIdentifier/putEObjectToIdentifier/identifier"/>
+      </genOperations>
+      <genOperations ecoreOperation="GtAutomaton.ecore#//ObjectIdentifier/putIdentifierToEObject">
+        <genParameters ecoreParameter="GtAutomaton.ecore#//ObjectIdentifier/putIdentifierToEObject/identifier"/>
+        <genParameters ecoreParameter="GtAutomaton.ecore#//ObjectIdentifier/putIdentifierToEObject/currentObject"/>
+      </genOperations>
+      <genOperations ecoreOperation="GtAutomaton.ecore#//ObjectIdentifier/getIdentifier">
+        <genParameters ecoreParameter="GtAutomaton.ecore#//ObjectIdentifier/getIdentifier/currentObject"/>
+      </genOperations>
+      <genOperations ecoreOperation="GtAutomaton.ecore#//ObjectIdentifier/getEObject">
+        <genParameters ecoreParameter="GtAutomaton.ecore#//ObjectIdentifier/getEObject/currentIdentifier"/>
+      </genOperations>
+      <genOperations ecoreOperation="GtAutomaton.ecore#//ObjectIdentifier/getFreeClockInstanceIdentifier">
+        <genParameters ecoreParameter="GtAutomaton.ecore#//ObjectIdentifier/getFreeClockInstanceIdentifier/clockInstanceStoryDiagram"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="GtAutomaton.ecore#//EObjectToIdentifier">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GtAutomaton.ecore#//EObjectToIdentifier/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GtAutomaton.ecore#//EObjectToIdentifier/value"/>
+    </genClasses>
+    <genClasses ecoreClass="GtAutomaton.ecore#//IdentifierToEObject">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GtAutomaton.ecore#//IdentifierToEObject/key"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GtAutomaton.ecore#//IdentifierToEObject/value"/>
+    </genClasses>
+    <genClasses ecoreClass="GtAutomaton.ecore#//GtAutomatonTransition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GtAutomaton.ecore#//GtAutomatonTransition/timeGuards"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GtAutomaton.ecore#//GtAutomatonTransition/clockResets"/>
+    </genClasses>
+    <genClasses ecoreClass="GtAutomaton.ecore#//GtAutomatonClockConstraint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GtAutomaton.ecore#//GtAutomatonClockConstraint/clockInstanceIdentifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GtAutomaton.ecore#//GtAutomatonClockConstraint/operator"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GtAutomaton.ecore#//GtAutomatonClockConstraint/value"/>
+    </genClasses>
+    <genClasses ecoreClass="GtAutomaton.ecore#//GtAutomaton">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GtAutomaton.ecore#//GtAutomaton/clockInstanceIdentifiers"/>
+    </genClasses>
+    <genClasses ecoreClass="GtAutomaton.ecore#//ClockInstanceStoryDiagramToIdentifier">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GtAutomaton.ecore#//ClockInstanceStoryDiagramToIdentifier/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GtAutomaton.ecore#//ClockInstanceStoryDiagramToIdentifier/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

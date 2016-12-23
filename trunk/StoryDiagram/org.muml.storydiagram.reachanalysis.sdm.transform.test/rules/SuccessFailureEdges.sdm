@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sda:Activity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:expr="http://www.muml.org/core/expressions/1.0.0" xmlns:sda="http://www.muml.org/storydiagram/activities/1.0.0" name="SuccessFailureEdges">
+  <ownedActivityEdge target="//@ownedActivityNode.2" source="//@ownedActivityNode.1"/>
+  <ownedActivityEdge target="//@ownedActivityNode.3" source="//@ownedActivityNode.2" guard="FAILURE"/>
+  <ownedActivityEdge target="//@ownedActivityNode.1" source="//@ownedActivityNode.2" guard="SUCCESS"/>
+  <ownedActivityEdge target="//@ownedActivityNode.1" source="//@ownedActivityNode.0"/>
+  <ownedActivityEdge target="//@ownedActivityNode.4" source="//@ownedActivityNode.3"/>
+  <ownedActivityNode xsi:type="sda:InitialNode" name="init" outgoing="//@ownedActivityEdge.3"/>
+  <ownedActivityNode xsi:type="sda:ModifyingStoryNode" name="node1" outgoing="//@ownedActivityEdge.0" incoming="//@ownedActivityEdge.2 //@ownedActivityEdge.3">
+    <ownedRule comment=""/>
+  </ownedActivityNode>
+  <ownedActivityNode xsi:type="sda:ModifyingStoryNode" name="node2" outgoing="//@ownedActivityEdge.1 //@ownedActivityEdge.2" incoming="//@ownedActivityEdge.0">
+    <ownedRule comment=""/>
+  </ownedActivityNode>
+  <ownedActivityNode xsi:type="sda:ModifyingStoryNode" name="node3" outgoing="//@ownedActivityEdge.4" incoming="//@ownedActivityEdge.1">
+    <ownedRule comment=""/>
+  </ownedActivityNode>
+  <ownedActivityNode xsi:type="sda:ActivityFinalNode" name="final" incoming="//@ownedActivityEdge.4">
+    <returnValues xsi:type="expr:TextualExpression" expressionText="" language="OCL" languageVersion="1.0"/>
+  </ownedActivityNode>
+</sda:Activity>

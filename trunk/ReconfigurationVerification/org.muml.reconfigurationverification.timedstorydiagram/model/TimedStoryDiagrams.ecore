@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="timedstorydiagram" nsURI="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0"
+    nsPrefix="timedstorydiagram">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="TimedGraphTransformationSystem" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A timed graph transformation system consists of a set of timed graph &#xD;&#xA;transformation rules, a set of invariant rules, a set of clock instance rules, and&#xD;&#xA;a set of object that constitute the initial graph."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rules" upperBound="-1"
+        eType="#//TimedStoryDiagram" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="These are the timed story diagram rules of the timed graph transformation system.&#xD;&#xA;They define how the timed graph may be changed."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="invariants" upperBound="-1"
+        eType="#//InvariantStoryDiagram" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="These are the invariant rules of the timed graph transformation system.&#xD;&#xA;They define how long a particular subgraph may be contained in the timed graph."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clockInstanceRules" upperBound="-1"
+        eType="#//ClockInstanceStoryDiagram" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="These are the clock instance rules of the timed graph transformation system.&#xD;&#xA;They add clock instances to the timed graph."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialGraphObjects" upperBound="-1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The objects constituting the initial graph of this timed graph transformation system.&#xD;&#xA;This reference only contains those objects that are not contained elsewhere. &#xD;&#xA;All objects recursively contained in those objects are considered to be part of&#xD;&#xA;the initial graph as well."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="unchangeableNodes" upperBound="-1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="helperStoryDiagrams" upperBound="-1"
+        eType="ecore:EClass ../../org.muml.storydiagram/model/storydiagrams.ecore#//activities/Activity"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This is a set of helper story diagrams that are called by activity call nodes from&#xD;&#xA;the timed graph transformation rules. The story diagrams contained in this &#xD;&#xA;reference are not intended to be executed directly on the timed graph, but only&#xD;&#xA;after being invoked by a rule. This reference only contains those helper&#xD;&#xA;story diagrams that are not contained in other resources."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="typeGraphObjects" upperBound="-1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The objects constituting the type graph of this timed graph transformation system.&#xD;&#xA;This reference only contains those objects that are not contained elsewhere. &#xD;&#xA;All objects recursively contained in those objects are considered to be part of&#xD;&#xA;the type graph as well."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimedStoryDiagram" eSuperTypes="../../org.muml.storydiagram/model/storydiagrams.ecore#//activities/Activity">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="validDurations" value="self.minDuration >= 0 and self.minDuration &lt;= self.maxDuration"/>
+      <details key="OnlyContainsTimedActivityNodes" value="-- A TimedStoryDiagram may only contain an initial node, a final node, TimedActivityNodes, StatementNodes, and ActivityCallNodes --&#xD;&#xA;self.ownedActivityNode  -> select(v | v.oclIsTypeOf(timedstorydiagram::TimedActivityNode) or v.oclIsTypeOf(storydiagrams::activities::InitialNode) or v.oclIsTypeOf(storydiagrams::activities::ActivityFinalNode) or &#xD;&#xA;v.oclIsTypeOf(storydiagrams::activities::ActivityCallNode) or v.oclIsTypeOf(storydiagrams::activities::JunctionNode) or v.oclIsTypeOf(storydiagrams::activities::StatementNode)) -> size() = self.ownedActivityNode -> size()"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="validDurations OnlyContainsTimedActivityNodes"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clockInstConstraint" upperBound="-1"
+        eType="#//ClockInstanceConstraint" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resets" upperBound="-1"
+        eType="#//ClockInstanceVariable"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minDuration" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"
+        defaultValueLiteral="0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxDuration" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"
+        defaultValueLiteral="0"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InvariantStoryDiagram" eSuperTypes="../../org.muml.storydiagram/model/storydiagrams.ecore#//activities/Activity">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="NoModificationInInvariantRule OnlyContainsTimedActivityNodes"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="NoModificationInInvariantRule" value="-- In an InvariantStoryDiagram, all TimedActivityNodes need to be non-modifying--&#xD;&#xA;self.ownedActivityNode -> forAll(v | v.oclIsTypeOf(timedstorydiagram::TimedActivityNode) implies (v.oclAsType(timedstorydiagram::TimedActivityNode).ownedRule.oclAsType(timedstorydiagram::TimedStoryPattern).nonModifyingStoryPattern = true))"/>
+      <details key="OnlyContainsTimedActivityNodes" value="-- An InvariantStoryDiagram may only contain an initial node, a final node, and TimedActivityNodes --&#xD;&#xA;self.ownedActivityNode  -> select(v | v.oclIsTypeOf(timedstorydiagram::TimedActivityNode) or v.oclIsTypeOf(storydiagrams::activities::InitialNode) or v.oclIsTypeOf(storydiagrams::activities::ActivityFinalNode)) -> size() = self.ownedActivityNode -> size()"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clockInstConstraint" eType="#//ClockInstanceConstraint"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClockInstanceStoryDiagram" eSuperTypes="../../org.muml.storydiagram/model/storydiagrams.ecore#//activities/Activity">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="OnlyContainsTimedActivityNodes" value="-- A ClockInstanceStoryDiagram may only contain an initial node, a final node, and TimedActivityNodes --&#xD;&#xA;self.ownedActivityNode  -> select(v | v.oclIsTypeOf(timedstorydiagram::TimedActivityNode) or v.oclIsTypeOf(storydiagrams::activities::InitialNode) or v.oclIsTypeOf(storydiagrams::activities::ActivityFinalNode)) -> size() = self.ownedActivityNode -> size()"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="OnlyContainsTimedActivityNodes"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClockInstance" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasNode" ordered="false"
+        lowerBound="1" upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClockInstanceConstraint">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clockInstanceVariable"
+        eType="#//ClockInstanceVariable" eOpposite="#//ClockInstanceVariable/clockInstanceConstraints"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="ecore:EEnum ../../org.muml.core/model/core.ecore#//expressions/common/ComparingOperator"
+        defaultValueLiteral="LESS_OR_EQUAL"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"
+        defaultValueLiteral="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClockInstanceVariable" eSuperTypes="../../org.muml.storydiagram/model/storydiagrams.ecore#//patterns/ObjectVariable">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="ClockInstanceVariableOnlyRefersToClockInstances" value="self.classifier = timedstorydiagram::ClockInstance"/>
+      <details key="SetNameUponCreationOfClockInstance" value="if self.bindingOperator = storydiagrams::patterns::BindingOperator::CREATE then (self.attributeAssignment -> size() >= 1 and self.attributeAssignment -> select(attribute.name = 'name') -> size() >= 1) else true endif"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="ClockInstanceVariableOnlyRefersToClockInstances SetNameUponCreationOfClockInstance"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clockInstanceConstraints"
+        upperBound="-1" eType="#//ClockInstanceConstraint" eOpposite="#//ClockInstanceConstraint/clockInstanceVariable"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimedStoryPattern" eSuperTypes="../../org.muml.storydiagram/model/storydiagrams.ecore#//patterns/StoryPattern">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nonModifyingStoryPattern"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="-- Checks that all ObjectVariables and LinkVariables are check only and that no ObjectVariable has an AttributeAssignment--&#xD;&#xA;self.variable -> forAll(v | v.oclIsTypeOf(storydiagrams::patterns::ObjectVariable) implies (v.oclAsType(storydiagrams::patterns::ObjectVariable).bindingOperator = storydiagrams::patterns::BindingOperator::CHECK_ONLY and v.oclAsType(storydiagrams::patterns::ObjectVariable).attributeAssignment -> size() = 0)) and&#xD;&#xA;self.linkVariable -> forAll(bindingOperator = storydiagrams::patterns::BindingOperator::CHECK_ONLY)"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimedActivityNode" eSuperTypes="../../org.muml.storydiagram/model/storydiagrams.ecore#//activities/ModifyingStoryNode">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="TimedActivityNodeMayOnlyContainTimedStoryPattern"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="TimedActivityNodeMayOnlyContainTimedStoryPattern" value="self.ownedRule.oclIsKindOf(timedstorydiagram::TimedStoryPattern)"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedTimedStoryPattern"
+        eType="#//TimedStoryPattern" changeable="false" volatile="true" transient="true"
+        derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="if(self.ownedRule.oclIsKindOf(timedstorydiagram::TimedStoryPattern) )then self.ownedRule.oclAsType(timedstorydiagram::TimedStoryPattern) else null endif"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+</ecore:EPackage>

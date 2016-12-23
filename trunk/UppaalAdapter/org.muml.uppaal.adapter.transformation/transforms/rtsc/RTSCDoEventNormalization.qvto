@@ -1,0 +1,372 @@
+import transforms.lib.MUML2MUML;
+import transforms.lib.RTSCUtil;
+import transforms.lib.MultiMappingUtil;
+import transforms.lib.ExternalizedStrings;
+
+modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype verificationExtension uses 'http://www.muml.org/uppaal/adapter/extension/verificationextension/1.0.0';
+modeltype modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
+modeltype common uses core::expressions::common('http://www.muml.org/core/1.0.0');
+modeltype expressions uses core::expressions('http://www.muml.org/core/1.0.0');
+
+/**
+* Introduce regions into states that periodically execute the states' do event 
+*/
+transformation RTSCDoEventNormalization(in input:rtsc, out output:rtsc);
+
+main() {
+	assert fatal (input.objects()[Transition]->forAll(t | not t.source.isCompositeState() and not t.target.isCompositeState())) with log("Composite transitions unsupported here.");
+	input.objects()[RootNode]->map RootNode2RootNode();
+}
+
+mapping State :: State2State() : State {
+				
+		name := self.name;
+		
+		connectionPoints := self.connectionPoints->map StateConnectionPoint2StateConnectionPoint();
+		
+		--only map incoming and outgoing transitions simple if the source state is already a composite state. 
+		--In this case there are no composite transitions that would have to be redirected to entry/exit points.
+		if(self.embeddedRegions->size()>0)
+		then{
+			incomingTransitions := self.incomingTransitions->map Transition2Transition();
+			outgoingTransitions := self.outgoingTransitions->map Transition2Transition();
+		}
+		endif;
+		
+		
+		embeddedRegions := self.embeddedRegions->map Region2Region();
+		
+		entryEvent := self.entryEvent.map EntryEvent2EntryEvent();
+		exitEvent := self.exitEvent.map ExitEvent2ExitEvent();
+		
+		--Translate Do-events
+		if(not self.doEvent.oclIsUndefined() and self.doEvent != null)		
+			then{
+			
+			--map do-event to region and contained rtsc
+			var doRegion : Region := self.doEvent.map Do2DoRegion(); 
+			embeddedRegions += doRegion;
+
+			doRegion.embeddedStatechart := self.map createDoRtsc();
+
+			
+			--create States
+			self.map createDoRtsc().states += self.map createWaitState();
+			self.map createWaitState().invariants += object ClockConstraint{
+																		clock:= self.map createDoClock();
+																		bound:= self.doEvent.period.mapTimeValue();
+																		operator := ComparingOperator::LESS;
+																		};
+			self.map createDoRtsc().states += self.map createReleaseState();
+			self.map createReleaseState().invariants += object ClockConstraint{
+																		clock:= self.map createDoClock();
+																		bound:= self.doEvent.period.mapTimeValue();
+																		operator := ComparingOperator::LESS;
+																		};
+			self.map createDoRtsc().states += self.map createDoneState();
+			self.map createDoneState().invariants += object ClockConstraint{
+																		clock:= self.map createDoClock();
+																		bound:= self.doEvent.period.mapTimeValue();
+																		operator := ComparingOperator::LESS_OR_EQUAL;
+																		};
+			
+			--create transitions between states
+				-- Wait -> Release
+			var curTransition : Transition;
+			curTransition := map createTransition(self.map createWaitState(), self.map createReleaseState(), 2);
+			self.map createDoRtsc().transitions += curTransition;
+			curTransition.clockConstraints += object ClockConstraint{
+																		clock:= self.map createDoClock();
+																		bound:= self.doEvent.period.mapTimeValue();
+																		operator := ComparingOperator::LESS;
+																		};
+			
+				-- Realease -> Done
+			curTransition := map createTransition(self.map createReleaseState(), self.map createDoneState(), 2);
+			self.map createDoRtsc().transitions += curTransition;
+			curTransition.clockConstraints  += object ClockConstraint{
+																		clock:= self.map createDoClock();
+																		bound:= self.doEvent.period.mapTimeValue();
+																		operator := ComparingOperator::LESS;
+																		};
+			curTransition.action := self.doEvent.action.mapAction();
+			
+			
+				-- Done -> Wait
+			curTransition := map createTransition(self.map createDoneState(), self.map createWaitState(), 2);
+			self.map createDoRtsc().transitions += curTransition;
+			curTransition.clockConstraints += object ClockConstraint{
+																		clock:= self.map createDoClock();
+																		bound:= self.doEvent.period.mapTimeValue();
+																		operator := ComparingOperator::EQUAL;
+																		};
+			curTransition.clockResets += self.map createDoClock();
+			
+			--create Entry-Points for each incoming transition of state if there is no Entry-Point yet (state is simple)
+			if(self.connectionPoints[EntryPoint]->size()<1)
+				then{
+					
+					--redirect incoming transitions to entry point
+					if(self.embeddedRegions->size()<1)
+					then{
+						self.incomingTransitions->forEach(transition){
+							-- create entry point for each incoming transition
+							var entryPoint : EntryPoint := object EntryPoint{name:= "doEntry".addSuffixNumberUnderline();};
+							connectionPoints += entryPoint;
+							
+							-- redirect the transition to entry point
+							entryPoint.incomingTransitions := transition.map Transition2Transition();
+							transition.map Transition2Transition().target := entryPoint;
+							
+							-- set it to urgent
+							transition.map Transition2Transition().urgent := true;
+							
+							-- create transition to wait
+								-- Entry -> Wait
+							curTransition := map createTransition(entryPoint,self.map createWaitState(), 1);
+							self.map createDoRtsc().transitions += curTransition;
+							curTransition.urgent := true;
+							
+							-- steal the action :)
+							curTransition.action := transition.map Transition2Transition().action;
+							
+							-- steal the send message event
+							curTransition.events := transition.map Transition2Transition().raiseMessageEvent; 
+							}
+					}
+					endif;
+
+				}
+				--otherwise create Transition from each entry-point to wait state
+				else{
+					self.connectionPoints[EntryPoint]->forEach(curEntryPoint){
+						curTransition := map createTransition(curEntryPoint.map StateConnectionPoint2StateConnectionPoint(), self.map createWaitState(), 1);
+						self.map createDoRtsc().transitions += curTransition;
+						curTransition.urgent := true;
+					}
+				}
+			endif;
+			
+			--create Exit-Point for each outgoing Transition if there is none yet (state is simple)
+				if(self.connectionPoints[ExitPoint]->size()<1)
+				then{
+				
+				
+					if(self.embeddedRegions->size()<1)
+						then{
+							self.outgoingTransitions->forEach(transition){
+								-- create exit point for each outgoing transition
+								var exitPoint : ExitPoint := object ExitPoint{name:= "doExit".addSuffixNumberUnderline();};
+								connectionPoints += exitPoint;
+							
+								-- redirect the transition to entry point
+								exitPoint.outgoingTransitions := transition.map Transition2Transition();
+								transition.map Transition2Transition().source := exitPoint;
+							
+								-- set it to urgent
+								transition.map Transition2Transition().urgent := true;
+							
+								-- create transitions from wait to exit point
+								curTransition := map createTransition(self.map createWaitState(), exitPoint, 1);
+								self.map createDoRtsc().transitions += curTransition;
+								curTransition.urgent := transition.urgent;
+								
+								-- add guard
+								curTransition.guard := transition.guard.mapExpression();
+								-- add synchronization
+								curTransition.synchronization := transition.synchronization.mapSynchronization();
+								-- add trigger message event
+								curTransition.events := transition.triggerMessageEvent.mapAsynchronousMessageEvent(); 
+								
+								-- create transitions from done to exit point
+								curTransition := map createTransition(self.map createDoneState(), exitPoint, 1);
+								self.map createDoRtsc().transitions += curTransition;
+								curTransition.urgent := transition.urgent;
+							
+								-- steel the guard :) 
+								curTransition.guard := transition.map Transition2Transition().guard;
+								-- steal the synchronization
+								curTransition.synchronization := transition.map Transition2Transition().synchronization;
+								-- steal the trigger message event
+								curTransition.events := transition.map Transition2Transition().triggerMessageEvent;
+								
+							}
+					}
+					endif;
+				
+				}
+				--otherwise create Transition from wait and done state to each exit point
+				else{
+					self.connectionPoints[ExitPoint]->forEach(curExitPoint){
+						curTransition := map createTransition(self.map createWaitState(), curExitPoint.map StateConnectionPoint2StateConnectionPoint(), 1);
+						self.map createDoRtsc().transitions += curTransition;
+						curTransition.urgent := true;
+						curTransition := map createTransition(self.map createDoneState(), curExitPoint.map StateConnectionPoint2StateConnectionPoint(), 1);
+						self.map createDoRtsc().transitions += curTransition;
+						curTransition.urgent := true;
+					}
+				}
+			endif;
+				
+			}
+		endif;
+		
+		invariants := self.invariants->map ClockConstraint2ClockConstraint();		
+		initial := self.initial;	
+		final := self.final;	
+		urgent := self.urgent;	
+		channels := self.channels->map SynchronizationChannel2SynchronizationChannel();	
+		parentStatechart := self.parentStatechart.map RealtimeStatechart2RealtimeStatechart();
+		extensions := self.extensions.oclAsType(CommittedExtension).map CommittedExtension2CommittedExtension();	
+}
+	
+mapping pim::realtimestatechart::Transition :: Transition2Transition() : pim::realtimestatechart::Transition disjuncts Transition::doTargetTransition2Transition, Transition::doSourceTransition2Transition, Transition::normalTransition2Transition;
+
+mapping pim::realtimestatechart::Transition :: doTargetTransition2Transition() : pim::realtimestatechart::Transition when{not (self.target.oclAsType(State).doEvent = null)}{
+    	priority := self.priority;
+    	comment := self.comment;
+    	blockable := self.blockable;
+    	urgent := self.urgent;
+    	extensions := self.extensions.map Extension2Extension();
+    	synchronization := self.synchronization.map Synchronization2Synchronization();
+    	//do not set the target state because this transition is redirected to an entry point
+    	if(not self.target.oclIsKindOf(State))
+    		target := self.target.map Vertex2Vertex();
+    	source := self.source.map Vertex2Vertex();
+    	clockResets := self.clockResets.map Clock2Clock();
+    	clockConstraints := self.clockConstraints.map ClockConstraint2ClockConstraint();
+    	absoluteDeadlines := self.absoluteDeadlines.map AbsoluteDeadline2AbsoluteDeadline();
+    	relativeDeadline := self.relativeDeadline.map RelativeDeadline2RelativeDeadline();
+    	guard := self.guard.map Expression2Expression();
+    	events := self.events.map TransitionEvent2TransitionEvent();
+    	action := self.action.map Action2Action();
+}
+   		 
+mapping pim::realtimestatechart::Transition :: doSourceTransition2Transition() : pim::realtimestatechart::Transition when{not (self.source.oclAsType(State).doEvent = null)}{
+    	priority := self.priority;
+    	comment := self.comment;
+    	blockable := self.blockable;
+    	urgent := self.urgent;
+    	extensions := self.extensions.map Extension2Extension();
+    	synchronization := self.synchronization.map Synchronization2Synchronization();
+    	target := self.target.map Vertex2Vertex();
+    	//do not set the source state because this transition will have an exit point as source
+    	if(not self.source.oclIsKindOf(State))
+    		source := self.source.map Vertex2Vertex();
+    	clockResets := self.clockResets.map Clock2Clock();
+    	clockConstraints := self.clockConstraints.map ClockConstraint2ClockConstraint();
+    	absoluteDeadlines := self.absoluteDeadlines.map AbsoluteDeadline2AbsoluteDeadline();
+    	relativeDeadline := self.relativeDeadline.map RelativeDeadline2RelativeDeadline();
+    	guard := self.guard.map Expression2Expression();
+    	events := self.events.map TransitionEvent2TransitionEvent();
+    	action := self.action.map Action2Action();
+}
+   		 
+mapping pim::realtimestatechart::EntryPoint :: EntryPoint2EntryPoint() : pim::realtimestatechart::EntryPoint{
+    	name := self.name;
+    	comment := self.comment;
+    	extensions := self.extensions.map Extension2Extension();
+    	outgoingTransitions := self.outgoingTransitions.map Transition2Transition();
+    	if(self.state.doEvent != null){
+    		outgoingTransitions += map createTransition(result, self.state.map createWaitState(), 1);
+    		map createTransition(result, self.state.map createWaitState(), 1).urgent := true;
+    		incomingTransitions := self.incomingTransitions.map Transition2Transition();
+    	};
+    	
+    	state := self.state.map State2State();
+}
+   		 
+mapping pim::realtimestatechart::ExitPoint :: ExitPoint2ExitPoint() : pim::realtimestatechart::ExitPoint{
+    	name := self.name;
+    	comment := self.comment;
+    	extensions := self.extensions.map Extension2Extension();
+    	outgoingTransitions := self.outgoingTransitions.map Transition2Transition();
+    	incomingTransitions := self.incomingTransitions.map Transition2Transition();
+    	
+    	if(self.state.doEvent != null){
+    		incomingTransitions += map createTransition(self.state.map createWaitState(), result, 1);
+    		incomingTransitions += map createTransition(self.state.map createDoneState(), result, 1);
+    	};
+    	
+    	state := self.state.map State2State();
+}
+
+mapping pim::realtimestatechart::Transition :: normalTransition2Transition() : pim::realtimestatechart::Transition{
+    	priority := self.priority;
+    	comment := self.comment;
+    	blockable := self.blockable;
+    	urgent := self.urgent;
+    	extensions := self.extensions.map Extension2Extension();
+    	synchronization := self.synchronization.map Synchronization2Synchronization();
+    	target := self.target.map Vertex2Vertex();
+    	source := self.source.map Vertex2Vertex();
+    	clockResets := self.clockResets.map Clock2Clock();
+    	clockConstraints := self.clockConstraints.map ClockConstraint2ClockConstraint();
+    	absoluteDeadlines := self.absoluteDeadlines.map AbsoluteDeadline2AbsoluteDeadline();
+    	relativeDeadline := self.relativeDeadline.map RelativeDeadline2RelativeDeadline();
+    	guard := self.guard.map Expression2Expression();
+    	events := self.events.map TransitionEvent2TransitionEvent();
+    	action := self.action.map Action2Action();
+}
+   		
+mapping DoEvent :: Do2DoRegion() : Region{
+		var state := self.container().oclAsType(State);
+		priority := state.getUniqueRegionPriority(1);
+		embeddedStatechart := state.map createDoRtsc();
+
+}	
+
+mapping State :: createDoRtsc() : RealtimeStatechart {
+		name := doRtscName;
+		clocks += self.map createDoClock();	
+}
+
+mapping State :: createWaitState(): State{
+	initial := true;
+	name := waitState;
+	parentStatechart := self.map createDoRtsc();
+}
+
+mapping State :: createReleaseState(): State{
+	name := releaseState;
+	parentStatechart := self.map createDoRtsc();
+}
+
+mapping State :: createDoneState(): State{
+	name := doneState;
+	parentStatechart := self.map createDoRtsc();
+}
+
+
+mapping State :: createExitPoint() : ExitPoint{
+	name := "doExit".addSuffixNumberUnderline();
+}
+
+
+
+mapping State :: createDoClock() : Clock {
+	name := "doClock".addSuffixNumberUnderline();
+}
+
+mapping createTransition(sourceState:Vertex, targetState:Vertex, pri : Integer):Transition{
+	source := sourceState;
+	target := targetState;
+	urgent := false;
+	priority := sourceState.getUniqueTransitionPriority(pri);
+}
+
+	
+helper disjungateExpressions(firstExp:Expression, secondExp:Expression):Expression{
+	if(not (firstExp = secondExp))
+	then{
+	return object LogicalExpression{
+		leftExpression := firstExp.mapExpression();
+		rightExpression := secondExp.mapExpression();
+		operator := LogicOperator::OR;
+		}
+	}
+	endif;
+	return firstExp.mapExpression();
+}

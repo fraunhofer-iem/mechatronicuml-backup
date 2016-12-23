@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.muml.verification.core.reachanalysis.rtsc.test
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.muml.verification.core.reachanalysis.rtsc.test.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc,
+ org.muml.core.reachanalysis.core,
+ org.muml.udbm.java,
+ org.eclipse.ui;bundle-version="3.7.0",
+ org.eclipse.ocl.ecore;bundle-version="3.1.2",
+ org.muml.verification.core.runtime,
+ org.muml.verification.core.reachanalysis.rtsc,
+ org.muml.udbm,
+ org.junit;bundle-version="4.10.0",
+ org.muml.verification.core.actionlanguage.interpreter
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

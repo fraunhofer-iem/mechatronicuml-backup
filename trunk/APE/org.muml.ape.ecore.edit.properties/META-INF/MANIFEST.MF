@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ecore Editor-Support
+Bundle-SymbolicName: org.muml.ape.ecore.edit.properties; singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.emf.ecore,
+ org.eclipse.core.runtime,
+ org.muml.ape.runtime,
+ org.eclipse.emf.edit,
+ org.eclipse.ui,
+ org.eclipse.emf.ecore.edit
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.eclipse.emf.ecore.properties.metamodel, org.eclipse.emf.ecore.properties.constraint,
+ org.eclipse.emf.ecore.properties.ecore.editor,
+ org.eclipse.emf.ecore.properties.tabs
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

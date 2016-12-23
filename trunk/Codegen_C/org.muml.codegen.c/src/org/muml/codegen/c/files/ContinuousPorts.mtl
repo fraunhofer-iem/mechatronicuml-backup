@@ -1,0 +1,112 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module HybridPort.
+ */]
+[module ContinuousPorts('http://www.muml.org/pim/connector/1.0.0', 'http://www.muml.org/pim/behavior/1.0.0',
+				'http://www.muml.org/core/1.0.0',
+				'http://www.muml.org/pim/actionlanguage/1.0.0',
+				'http://www.muml.org/pim/msgtype/1.0.0',
+				'http://www.muml.org/pim/types/1.0.0',
+				'http://www.muml.org/modelinstance/1.0.0',
+				'http://www.muml.org/pim/component/1.0.0',
+				'http://www.muml.org/pim/instance/1.0.0',
+				'http://www.muml.org/pim/realtimestatechart/1.0.0')]
+
+[import org::muml::codegen::c::queries::stringQueries]
+[import org::muml::codegen::c::queries::modelQueries]
+[**
+ * The documentation of the template generateHybridPortFiles.
+ * @param aHybridPort
+ */]
+[template public generateContinuousPortFiles(CIs : OrderedSet(ComponentInstance), path : String, useSubDir : Boolean)]
+	[generateContinuousPortHeaderFile(CIs, path, useSubDir)/]
+	[generateContinuousPortClassFile(CIs, path, useSubDir)/]
+
+[/template]
+
+
+[template private includesCont(CIs : OrderedSet(ComponentInstance), useSubDir: Boolean)]
+
+	#include "[if (useSubDir)]../types/[/if]standardTypes.h"
+	#include "[if (useSubDir)]../types/[/if]customTypes.h"
+[/template]
+
+[template public generateContinuousPortHeaderFile(CIs : OrderedSet(ComponentInstance), path : String, useSubDir : Boolean)]
+
+[file (path +getFileName4ContinuousImpl(true, useSubDir),false, 'UTF-8')]
+#ifndef CONTIMPLEMENTATION_H
+#define CONTIMPLEMENTATION_H
+#ifdef __cplusplus
+  extern "C" {
+#endif
+[includesCont(CIs, useSubDir)/]
+
+void initializeContinuousImplementations();
+
+[for (ci: ComponentInstance | CIs) ? (ci.componentType.componentKind = ComponentKind::CONTINUOUS_COMPONENT)]
+[for (port : PortInstance | ci.portInstances) ? (oclIsKindOf(ContinuousPortInstance))]
+	[let cpi  :ContinuousPortInstance = port.oclAsType(ContinuousPortInstance)]
+	[if (cpi.portType.oclAsType(ContinuousPort).inPort)]
+	void [cpi.getWriteMethod()/]([cpi.portType.oclAsType(ContinuousPort).dataType.getTypeName()/] value);
+	[else]
+	[cpi.portType.oclAsType(ContinuousPort).dataType.getTypeName()/] [getReadMethod(cpi)/]();
+	[/if]
+	[/let]
+[/for]
+
+[/for]
+#ifdef __cplusplus
+  }
+#endif
+#endif /* CONTIMPLEMENTATION_H */
+[/file]
+
+[/template]
+
+[template public generateContinuousPortClassFile(CIs : OrderedSet(ComponentInstance), path : String, useSubDir : Boolean)]
+
+[file (path+getFileName4ContinuousImpl(false, useSubDir),false, 'UTF-8')]
+#include "[getFileName4ContinuousImpl(true, false)/]"	
+
+/** [protected ('user includes **/')]
+
+/**[/protected]**/
+
+
+void initializeContinuousImplementations(){
+/** [protected ('initialize continuous components **/')]
+
+/**[/protected]**/
+
+}
+[for (ci: ComponentInstance | CIs) ? (ci.componentType.componentKind = ComponentKind::CONTINUOUS_COMPONENT)]
+[for (port : PortInstance | ci.portInstances) ? (oclIsKindOf(ContinuousPortInstance))]
+	[let cpi  :ContinuousPortInstance = port.oclAsType(ContinuousPortInstance)]
+	[cpi.portType.oclAsType(ContinuousPort).dataType.getTypeName()/] [cpi.getReferenceVariableName()/] = [cpi.portType.oclAsType(ContinuousPort).dataType.getDefaultValue()/];
+	[if (cpi.portType.oclAsType(ContinuousPort).inPort)]
+	void [cpi.getWriteMethod()/]([cpi.portType.oclAsType(ContinuousPort).dataType.getTypeName()/] value){
+
+	if ([cpi.getReferenceVariableName()/] != value){
+	/** [protected (cpi.getWriteMethod()+' **/')] 
+
+	/**[/protected]**/
+	[cpi.getReferenceVariableName()/] = value;
+	}
+
+}
+	[else]
+	[cpi.portType.oclAsType(ContinuousPort).dataType.getTypeName()/] [getReadMethod(cpi)/](){
+	/** [protected (cpi.getReadMethod()+' **/')]
+
+	/**[/protected]**/
+	
+	//default return
+	return [cpi.portType.oclAsType(ContinuousPort).dataType.getDefaultValue()/];
+}
+	[/if]
+	[/let]
+[/for]
+
+[/for]
+[/file]
+[/template]

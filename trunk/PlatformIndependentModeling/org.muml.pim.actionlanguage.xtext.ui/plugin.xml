@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+    <extension
+            point="org.eclipse.ui.editors">
+        <editor
+            class="org.muml.pim.actionlanguage.xtext.ui.ActionLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
+            contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
+            default="true"
+            extensions="action"
+            id="org.muml.pim.actionlanguage"
+            name="ActionLanguage Editor">
+        </editor>
+    </extension>
+    <extension
+        point="org.eclipse.ui.handlers">
+        <handler
+            class="org.muml.pim.actionlanguage.xtext.ui.ActionLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
+            commandId="org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclaration">
+            <activeWhen>
+                <reference
+                    definitionId="org.muml.pim.actionlanguage.Editor.opened">
+                </reference>
+            </activeWhen>
+        </handler>
+        <handler
+            class="org.muml.pim.actionlanguage.xtext.ui.ActionLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
+            commandId="org.muml.pim.actionlanguage.validate">
+         <activeWhen>
+            <reference
+                    definitionId="org.muml.pim.actionlanguage.Editor.opened">
+            </reference>
+         </activeWhen>
+      </handler>
+    </extension>
+    <extension point="org.eclipse.core.expressions.definitions">
+        <definition id="org.muml.pim.actionlanguage.Editor.opened">
+            <and>
+                <reference definitionId="isActiveEditorAnInstanceOfXtextEditor"/>
+                <with variable="activeEditor">
+                    <test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
+                        value="org.muml.pim.actionlanguage" 
+                        forcePluginActivation="true"/>
+                </with>        
+            </and>
+        </definition>
+    </extension>
+    <extension
+            point="org.eclipse.ui.preferencePages">
+        <page
+            class="org.muml.pim.actionlanguage.xtext.ui.ActionLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+            id="org.muml.pim.actionlanguage"
+            name="ActionLanguage">
+            <keywordReference id="de.uni_paderborn.fujaba.muml.ui.keyword_ActionLanguage"/>
+        </page>
+        <page
+            category="org.muml.pim.actionlanguage"
+            class="org.muml.pim.actionlanguage.xtext.ui.ActionLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
+            id="org.muml.pim.actionlanguage.coloring"
+            name="Syntax Coloring">
+            <keywordReference id="de.uni_paderborn.fujaba.muml.ui.keyword_ActionLanguage"/>
+        </page>
+        <page
+            category="org.muml.pim.actionlanguage"
+            class="org.muml.pim.actionlanguage.xtext.ui.ActionLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
+            id="org.muml.pim.actionlanguage.templates"
+            name="Templates">
+            <keywordReference id="de.uni_paderborn.fujaba.muml.ui.keyword_ActionLanguage"/>
+        </page>
+    </extension>
+    <extension
+        point="org.eclipse.ui.keywords">
+        <keyword
+            id="de.uni_paderborn.fujaba.muml.ui.keyword_ActionLanguage"
+            label="ActionLanguage"/>
+    </extension>
+    <extension
+         point="org.eclipse.ui.commands">
+      <command
+            description="Trigger expensive validation"
+            id="org.muml.pim.actionlanguage.validate"
+            name="Validate">
+      </command>
+    </extension>
+    <extension point="org.eclipse.ui.menus">
+        <menuContribution
+            locationURI="popup:#TextEditorContext?after=group.edit">
+             <command
+                 commandId="org.muml.pim.actionlanguage.validate"
+                 style="push"
+                 tooltip="Trigger expensive validation">
+            <visibleWhen checkEnabled="false">
+                <reference
+                    definitionId="org.muml.pim.actionlanguage.Editor.opened">
+                </reference>
+            </visibleWhen>
+         </command>  
+         </menuContribution>
+    </extension>
+    <extension point="org.eclipse.ui.menus">
+		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
+			<command commandId="org.eclipse.xtext.ui.editor.FindReferences">
+				<visibleWhen checkEnabled="false">
+                	<reference definitionId="org.muml.pim.actionlanguage.Editor.opened">
+                	</reference>
+            	</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+	<extension point="org.eclipse.ui.handlers">
+	    <handler
+            class="org.muml.pim.actionlanguage.xtext.ui.ActionLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
+            commandId="org.eclipse.xtext.ui.editor.FindReferences">
+            <activeWhen>
+                <reference
+                    definitionId="org.muml.pim.actionlanguage.Editor.opened">
+                </reference>
+            </activeWhen>
+        </handler>
+    </extension>   
+
+<!-- adding resource factories -->
+
+	<extension
+		point="org.eclipse.emf.ecore.extension_parser">
+		<parser
+			class="org.muml.pim.actionlanguage.xtext.ui.ActionLanguageExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
+			type="action">
+		</parser>
+	</extension>
+	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
+        <resourceServiceProvider
+            class="org.muml.pim.actionlanguage.xtext.ui.ActionLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+            uriExtension="action">
+        </resourceServiceProvider>
+    </extension>
+
+
+
+   <!-- quickfix marker resolution generator -->
+   <extension
+         point="org.eclipse.ui.ide.markerResolution">
+      <markerResolutionGenerator
+            class="org.muml.pim.actionlanguage.xtext.ui.ActionLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator">
+      </markerResolutionGenerator>
+   </extension>
+   
+<!--
+   REMOVED DEPENDENCY TO RTSC EDITOR
+
+
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="org.muml.pim.actionlanguage.xtext.ui.objectContribution1"
+            objectClass="org.muml.pim.realtimestatechart.diagram.edit.parts.DoEventEditPart">
+         <action
+               class="de.uni_paderborn.fujaba.muml.ui.popup.actions.OpenEditorAction"
+               id="org.muml.pim.actionlanguage.xtext.ui.action1"
+               label="open Action Editor">
+         </action>
+      </objectContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="org.muml.pim.actionlanguage.xtext.ui.objectContribution2"
+            objectClass="org.muml.pim.realtimestatechart.diagram.edit.parts.EntryEventEditPart">
+         <action
+               class="de.uni_paderborn.fujaba.muml.ui.popup.actions.OpenEditorAction"
+               id="org.muml.pim.actionlanguage.xtext.ui.action2"
+               label="open Action Editor">
+         </action>
+      </objectContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="org.muml.pim.actionlanguage.xtext.ui.objectContribution3"
+            objectClass="org.muml.pim.realtimestatechart.diagram.edit.parts.ExitEventEditPart">
+         <action
+               class="de.uni_paderborn.fujaba.muml.ui.popup.actions.OpenEditorAction"
+               id="org.muml.pim.actionlanguage.xtext.ui.action3"
+               label="open Action Editor">
+         </action>
+      </objectContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="org.muml.pim.actionlanguage.xtext.ui.objectContribution4"
+            objectClass="org.muml.pim.realtimestatechart.diagram.edit.parts.TransitionEditPart">
+         <action
+               class="de.uni_paderborn.fujaba.muml.ui.popup.actions.OpenEditorAction"
+               id="org.muml.pim.actionlanguage.xtext.ui.action4"
+               label="open Action Editor">
+         </action>
+      </objectContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="org.muml.pim.actionlanguage.xtext.ui.objectContribution5"
+            objectClass="org.muml.pim.realtimestatechart.diagram.edit.parts.TransitionEditPart">
+         <action
+               class="de.uni_paderborn.fujaba.muml.ui.popup.actions.OpenEditorGuard"
+               id="org.muml.pim.actionlanguage.xtext.ui.action5"
+               label="open Guard Editor">
+         </action>
+      </objectContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="org.muml.pim.actionlanguage.xtext.ui.objectContribution6"
+            objectClass="org.muml.pim.realtimestatechart.diagram.edit.parts.TransitionEditPart">
+         <action
+               class="de.uni_paderborn.fujaba.muml.ui.popup.actions.OpenEditorSynchronization"
+               id="org.muml.pim.actionlanguage.xtext.ui.action6"
+               label="open Synchronization Editor">
+         </action>
+      </objectContribution>
+   </extension>
+--> 
+  
+   <!-- extension
+         point="org.eclipse.ui.views">
+      <view
+            category="org.muml.pim.actionlanguage.xtext.ui.Fujaba"
+            class="de.uni_paderborn.fujaba.muml.ui.view.EmbeddedXtextEditorView"
+            id="org.muml.pim.actionlanguage.xtext.ui.view1"
+            name="Fujaba Action Editor"
+            restorable="true">
+      </view>
+      <category
+            id="org.muml.pim.actionlanguage.xtext.ui.Fujaba"
+            name="MechatronicUML">
+      </category>
+   </extension -->
+</plugin>

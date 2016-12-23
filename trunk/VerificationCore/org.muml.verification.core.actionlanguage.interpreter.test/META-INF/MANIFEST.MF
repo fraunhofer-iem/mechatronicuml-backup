@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Test
+Bundle-SymbolicName: org.muml.verification.core.actionlanguage.interpreter.test
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.core.runtime,
+ org.muml.verification.core.runtime,
+ org.muml.pim.actionlanguage,
+ org.muml.verification.core.actionlanguage.interpreter,
+ org.junit;bundle-version="4.10.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

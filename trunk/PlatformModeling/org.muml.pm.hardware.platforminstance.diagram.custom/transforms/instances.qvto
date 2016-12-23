@@ -1,0 +1,342 @@
+transformation PlatformInstanceTransformation(inout input:ModelInstancePackage, out output:ModelInstancePackage);
+
+modeltype CorePackage uses core("http://www.muml.org/core/1.0.0");
+modeltype ModelInstancePackage uses core::modelinstance("http://www.muml.org/core/1.0.0");
+modeltype PimPackage uses pim('http://www.muml.org/pim/1.0.0');
+modeltype ValuetypePackage uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+modeltype HardwarePackage uses hardware('http://www.muml.org/pm/hardware/1.0.0');
+modeltype ResourcePackage uses hardware::hwresource('http://www.muml.org/pm/hardware/1.0.0');
+modeltype ResourceInstancePackage uses hardware::hwresourceinstance('http://www.muml.org/pm/hardware/1.0.0');
+modeltype PlatformPackage uses hardware::hwplatform('http://www.muml.org/pm/hardware/1.0.0');
+modeltype PlatformInstancePackage uses hardware::hwplatforminstance('http://www.muml.org/pm/hardware/1.0.0');
+modeltype HWValueTypePackage uses hardware::hwvaluetype('http://www.muml.org/pm/hardware/1.0.0');
+
+
+
+
+//This transformation creates an initial HWPlatformInstance.
+//Therefore all embedded HWPlatforms, ResourceInstances and CommunicationResources 
+//are created according to their cardinality of the HWPlatform type.
+
+main() {
+	
+	log("QVT-O Script \"PlatformInstanceTransformation.qvto\" started.");
+		
+		//create a HWPlatformInstance from a HWPlatformType
+	var hwplatformInstances:Bag(HWPlatformInstance) := input.rootObjects()[HWPlatform]->map createHWPlatformInstance(".0", null);
+	if(hwplatformInstances->notEmpty()) then{
+		var hwplatformInstanceConfiguration : HWPlatformInstanceConfiguration:=map createHWPlatformInstanceConfiguration(); 
+		hwplatformInstanceConfiguration.hwplatformInstances+=hwplatformInstances;		
+	}endif;
+		
+		var hwplatformInstancesToconfigure : Set(HWPlatformInstance) := input.rootObjects()[HWPlatformInstance];
+		hwplatformInstancesToconfigure->forEach(hwplatformInstance){
+			hwplatformInstance.configureHWPlatformInstance(hwplatformInstance,".0");
+		};
+		
+	
+}
+
+mapping createHWPlatformInstanceConfiguration():HWPlatformInstanceConfiguration @output{
+	
+}
+
+helper HWPlatformInstance::configureHWPlatformInstance(inout platformInstance:HWPlatformInstance, number:String){
+log("Configure HWPlatform instance");
+	platformInstance.name:=platformInstance.hwplatformType.name+number.toString();
+	log("Start to create the HWPlatformInstance for:" +platformInstance.hwplatformType.oclAsType(EObject).eClass().name +", Name:" +platformInstance.name);
+	
+	platformInstance.embeddedHPIC:=new HWPlatformInstanceConfiguration();
+	
+	
+	//create the embedded ResourceInstances
+	var instances:Set(ResourceInstance);
+	platformInstance.hwplatformType.embeddedPlatformParts[ResourcePart]->forEach(rip){
+		instances+=rip.ResourcePart2ResourceInstance(number,platformInstance.embeddedHPIC)->asOrderedSet();
+	};
+	platformInstance.embeddedHPIC.resources:=instances;
+	
+	
+	//the delegation and delegation Ports are created by the mapping createPort(), to ease resolving
+	platformInstance.delegationPorts:=platformInstance.hwplatformType.delegationPorts->map createDelegationHWPortInstance(number, platformInstance.embeddedHPIC,platformInstance.parentHPIC);
+	
+	//initialize the embedded HWPlatforms
+	var platforminstances:Set(HWPlatformInstance);
+	platformInstance.hwplatformType.embeddedPlatformParts[HWPlatformPart]->forEach(hwp){
+		platforminstances+=hwp.HWPlatformPart2HWPlatformInstance(number,platformInstance.embeddedHPIC);
+	};
+	platformInstance.embeddedHPIC.hwplatformInstances:=platforminstances;
+	
+	//create the embedded CommunicationMedia	
+	platformInstance.embeddedHPIC.networkingHardwareInstances+=platformInstance.hwplatformType.networkingHardware->map createNetworkingResourceInstance(number, platformInstance.embeddedHPIC);
+	//	platformInstance.embeddedHPIC.networkConnectorInstances+=platformInstance.hwplatformType.networkConnectors->map mapNetworkConnector2NetworkConnectorInstance(number, platformInstance.embeddedHPIC);
+	
+
+	
+}
+
+
+
+//create a HWPlatformInstance derived from a HWPlatform
+//the number is used to distinguish between multiple instances of the same HWPlatform
+mapping HWPlatform::createHWPlatformInstance(number:String, parent:HWPlatformInstanceConfiguration):HWPlatformInstance {
+	result.name:=self.name;//+number.toString();
+	log("Create HWPlatform instance");
+	result.hwplatformType:=self;
+	//result.parentOfPlatformInstance:=parent;
+	result.parentHPIC:=parent;
+	log("Start to create the HWPlatformInstance for:" +result.oclAsType(EObject).eClass().name +", Name:" +result.name);
+	
+	result.embeddedHPIC:=new HWPlatformInstanceConfiguration();
+		
+	
+	//create the embedded ResourceInstances
+	var instances:Set(ResourceInstance);
+	self.embeddedPlatformParts[ResourcePart]->forEach(rip){
+		instances+=rip.ResourcePart2ResourceInstance(number,result.embeddedHPIC)->asOrderedSet();
+	};
+	result.embeddedHPIC.resources:=instances;
+	
+	//create the delegation ports
+	result.delegationPorts:=self.delegationPorts->map createDelegationHWPortInstance(number,  result.embeddedHPIC,parent);
+	
+	//initialize the embedded HWPlatforms
+	var platforminstances:Set(HWPlatformInstance);
+	self.embeddedPlatformParts[HWPlatformPart]->forEach(hwp){
+		platforminstances+=hwp.HWPlatformPart2HWPlatformInstance(number,result.embeddedHPIC);
+	};
+	result.embeddedHPIC.hwplatformInstances:=platforminstances;
+	
+	//create the embedded CommunicationMedia	
+	result.embeddedHPIC.networkingHardwareInstances+=self.networkingHardware->map createNetworkingResourceInstance(number, result.embeddedHPIC);
+	//result.embeddedHPIC.networkConnectorInstances+=self.networkConnectors->map mapNetworkConnector2NetworkConnectorInstance(number, result.embeddedHPIC);
+	
+	
+}
+
+mapping HWPlatformPart::mapHWPlatformPart2HWPlatformInstance(number:String, parent:HWPlatformInstanceConfiguration):HWPlatformInstance {
+	result.name:=self.name;//+number.toString();
+	log("Create HWPlatform instance");
+	result.hwplatformType:=self.hwplatformType;
+	//result.parentOfPlatformInstance:=parent;
+	result.parentHPIC:=parent;
+	log("Start to create the HWPlatformInstance for:" +result.oclAsType(EObject).eClass().name +", Name:" +result.name);
+	
+	result.embeddedHPIC:=new HWPlatformInstanceConfiguration();
+		
+	
+	//create the embedded ResourceInstances
+	var instances:Set(ResourceInstance);
+	self.hwplatformType.embeddedPlatformParts[ResourcePart]->forEach(rip){
+		instances+=rip.ResourcePart2ResourceInstance(number,result.embeddedHPIC)->asOrderedSet();
+	};
+	result.embeddedHPIC.resources:=instances;
+	
+	//create the delegation ports
+	result.delegationPorts:=self.hwPortParts->map createDelgiationPortInstance(number,  result.embeddedHPIC,parent);
+	
+	//initialize the embedded HWPlatforms
+	var platforminstances:Set(HWPlatformInstance);
+	self.hwplatformType.embeddedPlatformParts[HWPlatformPart]->forEach(hwp){
+		platforminstances+=hwp.HWPlatformPart2HWPlatformInstance(number,result.embeddedHPIC);
+	};
+	result.embeddedHPIC.hwplatformInstances:=platforminstances;
+	
+	//create the embedded CommunicationMedia	
+	result.embeddedHPIC.networkingHardwareInstances+=self.hwplatformType.networkingHardware->map createNetworkingResourceInstance(number, result.embeddedHPIC);
+	//result.embeddedHPIC.networkConnectorInstances+=self.networkConnectors->map mapNetworkConnector2NetworkConnectorInstance(number, result.embeddedHPIC);
+	
+	
+}
+
+
+//create the embedded ResourceInstances derived by the ResourceInstancePart
+// each ResourceInstance gets a number
+//the number is used to distinguish between multiple instances of the same ResourceInstance
+// the argument parent is used to resolve the correct CommunicationMedia of the HWPortInstances
+query ResourcePart::ResourcePart2ResourceInstance(number:String,parent:HWPlatformInstanceConfiguration):Set(ResourceInstance){
+	var instances:Set(ResourceInstance);
+	var lowerBound: Integer:=InitValue(self);
+	while(lowerBound>0){
+			instances+=self.map createResourceInstance(self.name,number+"."+lowerBound.toString(),parent);
+			lowerBound:=lowerBound-1;
+			};
+	return instances;
+}
+
+
+
+//create the embedded HWPlatformInstances derived by the HWPlatformPart
+// each HWPlatformInstance gets a number
+//the number is used to distinguish between multiple instances of the same HWPlatformIstance
+query HWPlatformPart::HWPlatformPart2HWPlatformInstance(number:String,parent:HWPlatformInstanceConfiguration):Set(HWPlatformInstance){
+	var instances:Set(HWPlatformInstance);
+	var lowerBound: Integer:=InitValue(self);
+	while(lowerBound>0){
+			log("create embedded HWPlatformInstance for:"+self.oclAsType(EObject).eClass().name +", Name:" +self.name+", Parent is"+self.parentHWPlatform.name);
+			instances+=self.map mapHWPlatformPart2HWPlatformInstance(number+"."+lowerBound.toString(),parent);
+			lowerBound:=lowerBound-1;
+			};
+	return instances;
+}
+
+
+mapping  ResourcePart::createResourceInstance(partName:String,number:String,parent:HWPlatformInstanceConfiguration):ResourceInstance
+ disjuncts ResourcePart::createStructuredResourceInstance, ResourcePart::createActuatorInstance, ResourcePart::createSensorInstance
+	{}
+
+
+//create a StructuredResourceInstances
+// the argument parent is used to resolve the correct CommunicationMedia of the HWPortInstances
+mapping ResourcePart::createStructuredResourceInstance(partName:String,number:String,parent:HWPlatformInstanceConfiguration):StructuredResourceInstance when {self.resourceType.oclIsKindOf(StructuredResourceInstance)}{
+	result.name:=partName+number;
+	result.resourceType:=self.resourceType.resourceType;
+	result.hwports+=self.hwPortParts->createPortInstances(number,parent);
+	result.embeddedAtomicResourceInstances:=self.resourceType.oclAsType(StructuredResourceInstance).embeddedAtomicResourceInstances.deepclone().oclAsType(AtomicResourceInstance);
+	
+}
+
+
+mapping ResourcePart::createActuatorInstance(partName:String,number:String,parent:HWPlatformInstanceConfiguration):ActuatorInstance when {self.resourceType.oclIsKindOf(ActuatorInstance)}{
+	result.name:=partName+number;
+	result.resourceType:=self.resourceType.resourceType;
+ 	result.hwports+=self.hwPortParts->createPortInstances(number,parent);
+	
+}
+
+mapping ResourcePart::createSensorInstance(partName:String,number:String,parent:HWPlatformInstanceConfiguration):SensorInstance when {self.resourceType.oclIsKindOf(SensorInstance)}{
+	result.name:=partName+number;
+	result.resourceType:=self.resourceType.resourceType;
+ 	result.hwports+=self.hwPortParts->createPortInstances(number,parent);
+	
+}
+
+
+
+helper Set(HWPortPart)::createPortInstances(number:String,parent:HWPlatformInstanceConfiguration):Set(HWPortInstance){
+	var portInstances:Set(HWPortInstance);
+	var lowerBound: Integer;
+	self->forEach(portPart){
+		lowerBound:=portPart.connectors->size();
+		while(lowerBound>0){
+				portInstances+=portPart.map createPortInstance(number, parent);
+				lowerBound:=lowerBound-1;
+				};
+		};
+	return portInstances;
+}
+
+//create a HWPortInstance and resovle the correct connectedCommunicationMedia with the help of the argument parent
+mapping HWPortPart::createPortInstance(number:String,inout parent:HWPlatformInstanceConfiguration):HWPortInstance{
+
+//	result.name:=self.name+number;
+	type:= self;
+	name:=self.hwport.name;
+	comment:=self.comment;
+	communicationResource:=self.hwport.communicationResource;
+	var connectorInstance:Collection(NetworkConnectorInstance):=self.connectors.oclAsType(NetworkConnector)->map mapNetworkConnector2NetworkConnectorInstance(parent);
+	connectorInstances:=connectorInstance;
+	parent.networkConnectorInstances+=connectorInstance;
+
+}
+
+
+mapping HWPortPart::createDelgiationPortInstance(number:String,inout parent:HWPlatformInstanceConfiguration,inout parentParent:HWPlatformInstanceConfiguration):DelegationHWPortInstance{
+
+//	result.name:=self.name+number;
+	type:= self;
+	name:=self.hwport.name;
+	comment:=self.comment;
+	//self.hwport.communicationResource:=self.hwport.communicationResource;
+	var insideconnectorInstance:Collection(NetworkConnectorInstance):=self.hwport.oclAsType(DelegationHWPort).connectors.oclAsType(NetworkConnector)->map mapNetworkConnector2NetworkConnectorInstance(parent);
+	log("create connector: "+self.connectors->size().toString());
+	if(parentParent!=null) then{
+		var outsideconnectorInstance:Collection(NetworkConnectorInstance):=self.connectors.oclAsType(NetworkConnector)->map mapNetworkConnector2NetworkConnectorInstance(parentParent);
+		connectorInstances+=outsideconnectorInstance;
+		parentParent.networkConnectorInstances+=outsideconnectorInstance;
+	}endif;
+
+	connectorInstances+=insideconnectorInstance;
+	parent.networkConnectorInstances+=insideconnectorInstance;
+
+}
+
+
+
+//creates a CommunicationMedia
+mapping NetworkingHardware::createNetworkingResourceInstance(number:String, parentHPIC: HWPlatformInstanceConfiguration):NetworkingHardwareInstance
+disjuncts Bus::createBusInstance, NetworkBridge::createBridgeInstance{}
+
+
+
+
+
+	
+mapping NetworkConnector::mapNetworkConnector2NetworkConnectorInstance(parent:HWPlatformInstanceConfiguration):NetworkConnectorInstance{
+  	type:=self;
+	comment:=self.comment;
+	//connectorEndpointInstances+=self.connectorEndpoints.late resolve(pim::connector::ConnectorEndpointInstance);
+	}
+	
+mapping NetworkBridge::createBridgeInstance(number:String, inout parent:HWPlatformInstanceConfiguration):NetworkBridgeInstance{
+	type:=self;
+	comment:=self.comment+number;	 
+	var connectorInstance:Collection(NetworkConnectorInstance):=self.connectors.oclAsType(NetworkConnector)->map mapNetworkConnector2NetworkConnectorInstance( parent);
+	connectorInstances:=connectorInstance;
+	parent.networkConnectorInstances+=connectorInstance;
+	name:="Bridge";
+	}
+	
+
+	
+mapping Bus::createBusInstance(number:String, inout parent:HWPlatformInstanceConfiguration):BusInstance{
+	type:=self;
+	result.comment:=self.comment+number;
+	var connectorInstance:Collection(NetworkConnectorInstance):=self.connectors.oclAsType(NetworkConnector)->map mapNetworkConnector2NetworkConnectorInstance( parent);
+	connectorInstances:=connectorInstance;
+	parent.networkConnectorInstances+=connectorInstance;
+	name:="Bus";
+	}	
+	
+
+mapping DelegationHWPort::createDelegationHWPortInstance(number:String, inout parent:HWPlatformInstanceConfiguration, inout parentParent:HWPlatformInstanceConfiguration):DelegationHWPortInstance{
+	type:=self;
+	name:=self.comment+number;
+var insideconnectorInstance:Collection(NetworkConnectorInstance):=self.connectors.oclAsType(NetworkConnector)->map mapNetworkConnector2NetworkConnectorInstance(parent);
+	log("create connector: "+self.connectors->size().toString());
+//	if(parentParent!=null) then{
+	//	var outsideconnectorInstance:Collection(NetworkConnectorInstance):=self.connectors.oclAsType(NetworkConnector)->map mapNetworkConnector2NetworkConnectorInstance(parentParent);
+//		connectorInstances+=outsideconnectorInstance;
+//		parentParent.networkConnectorInstances+=outsideconnectorInstance;
+//	}endif;
+
+	connectorInstances+=insideconnectorInstance;
+	parent.networkConnectorInstances+=insideconnectorInstance;
+}
+
+// Convenience query to cast a natural number to an integer, using -1 as value for infinity.
+query NaturalNumber::toInteger() : Integer {
+	if (self.infinity) then {
+		return -1;
+	} endif;
+	return self.value;
+}
+
+//just for test purpose
+configuration property initVector : Dict(PlatformPart,Integer);
+			
+constructor HWPlatformInstanceConfiguration::HWPlatformInstanceConfiguration() {
+	
+}
+	
+query InitValue(part:PlatformPart) : Integer {
+log("looking for:"+part.name);
+if(initVector->hasKey(part)) then{
+		return initVector->get(part);
+		log("hit for: "+part.name);
+	}
+	endif;
+		return part.cardinality.lowerBound.toInteger();
+}
+ 

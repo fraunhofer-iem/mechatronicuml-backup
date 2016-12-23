@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+
+  <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+    <propertyContributor
+          contributorId="org.muml.ape.contributor">
+       <propertyCategory
+             category="domain">
+       </propertyCategory>
+       <propertyCategory
+             category="default">
+       </propertyCategory>
+       <propertyCategory
+             category="extended">
+       </propertyCategory>
+       <propertyCategory
+             category="advanced">
+       </propertyCategory>
+    </propertyContributor>
+  </extension>
+
+
+
+<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs contributorId="org.muml.ape.contributor">
+          <propertyTab
+             category="domain"
+             id="property.tab.constraint"
+             afterTab="property.tab.comment"
+             label="Constraint"/>
+          
+      </propertyTabs>
+  </extension>
+
+
+
+
+  <extension point="org.eclipse.ui.views.properties.tabbed.propertySections"> 
+      <propertySections contributorId="org.muml.ape.contributor">
+          <propertySection
+            class="org.muml.ape.runtime.sections.ObjectPropertySection"
+            filter="org.muml.reconfiguration.componentstorypattern.properties.tabs.Property_tab_constraintTabElementFilter"
+            id="property.tab.constraint"
+            tab="property.tab.constraint">
+             <input
+               type="org.eclipse.emf.ecore.EObject">
+             </input>
+          </propertySection>
+         
+      </propertySections>
+  </extension>
+
+
+
+ <extension point="org.muml.ape.runtime.propertyEditors">
+    <propertyEditors>
+    
+       <propertyEditor
+             factory="org.muml.reconfiguration.componentstorypattern.properties.componentstorypattern.editor.ComponentStoryPatternEditor$Factory"
+             type="http://www.muml.org/reconfiguration/componentstorypattern/1.0.0#ComponentStoryPattern">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.reconfiguration.componentstorypattern.properties.componentstorypattern.editor.ComponentStoryPatternVariableEditor$Factory"
+             type="http://www.muml.org/reconfiguration/componentstorypattern/1.0.0#ComponentStoryPatternVariable">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.reconfiguration.componentstorypattern.properties.componentstorypattern.editor.ComponentVariableEditor$Factory"
+             type="http://www.muml.org/reconfiguration/componentstorypattern/1.0.0#ComponentVariable">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.reconfiguration.componentstorypattern.properties.componentstorypattern.editor.AssemblyVariableEditor$Factory"
+             type="http://www.muml.org/reconfiguration/componentstorypattern/1.0.0#AssemblyVariable">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.reconfiguration.componentstorypattern.properties.componentstorypattern.editor.DelegationVariableEditor$Factory"
+             type="http://www.muml.org/reconfiguration/componentstorypattern/1.0.0#DelegationVariable">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.reconfiguration.componentstorypattern.properties.componentstorypattern.editor.SinglePortVariableEditor$Factory"
+             type="http://www.muml.org/reconfiguration/componentstorypattern/1.0.0#SinglePortVariable">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.reconfiguration.componentstorypattern.properties.componentstorypattern.editor.MultiPortVariableEditor$Factory"
+             type="http://www.muml.org/reconfiguration/componentstorypattern/1.0.0#MultiPortVariable">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.reconfiguration.componentstorypattern.properties.componentstorypattern.editor.FadingComponentPartVariableEditor$Factory"
+             type="http://www.muml.org/reconfiguration/componentstorypattern/1.0.0#FadingComponentPartVariable">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.reconfiguration.componentstorypattern.properties.componentstorypattern.editor.ComponentPartVariableEditor$Factory"
+             type="http://www.muml.org/reconfiguration/componentstorypattern/1.0.0#ComponentPartVariable">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.reconfiguration.componentstorypattern.properties.componentstorypattern.editor.MultiPortOrderConstraintEditor$Factory"
+             type="http://www.muml.org/reconfiguration/componentstorypattern/1.0.0#MultiPortOrderConstraint">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.reconfiguration.componentstorypattern.properties.componentstorypattern.editor.MultiPortPositionConstraintEditor$Factory"
+             type="http://www.muml.org/reconfiguration/componentstorypattern/1.0.0#MultiPortPositionConstraint">
+       </propertyEditor>
+    
+    </propertyEditors>
+ </extension>
+
+
+ <extension
+       point="org.muml.ape.runtime.metamodelContributor">
+    <metamodel
+          contributor="org.muml.reconfiguration.componentstorypattern.properties.metamodel.MetamodelContributor">
+    </metamodel>
+ </extension>
+
+
+ <extension
+       point="org.muml.ape.runtime.creationConstraintContributor">
+    <constraint
+          contributor="org.muml.reconfiguration.componentstorypattern.properties.constraint.CreationConstraintContributor">
+    </constraint>
+ </extension>
+
+</plugin>

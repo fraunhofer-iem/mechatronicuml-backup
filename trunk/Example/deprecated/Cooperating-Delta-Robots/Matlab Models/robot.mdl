@@ -1,0 +1,1525 @@
+Library {
+  Name			  "robot"
+  Version		  7.4
+  MdlSubVersion		  0
+  SavedCharacterEncoding  "UTF-8"
+  LibraryType		  "BlockLibrary"
+  SaveDefaultBlockParams  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  MaxMDLFileLineLength	  120
+  Created		  "Tue Apr 16 22:56:52 2013"
+  Creator		  "andrey"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "andrey"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Tue Apr 16 23:33:34 2013"
+  RTWModifiedTimeStamp	  288056010
+  ModelVersionFormat	  "1.%<AutoIncrement:1>"
+  ConfigurationManager	  "None"
+  SampleTimeColors	  off
+  SampleTimeAnnotations	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  CovForceBlockReductionOff on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  CovModelRefEnable	  "Off"
+  CovExternalEMLEnable	  off
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.6.0"
+      Array {
+	Type			"Handle"
+	Dimension		8
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.6.0"
+	  StartTime		  "0.0"
+	  StopTime		  "10.0"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  Solver		  "ode45"
+	  SolverName		  "ode45"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.6.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveCompleteFinalSimState off
+	  SaveFormat		  "Array"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  on
+	  ReturnWorkspaceOutputs  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  ReturnWorkspaceOutputsName "out"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Version		  "1.6.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    7
+	    Cell		    "BooleansAsBitfields"
+	    Cell		    "PassReuseOutputArgsAs"
+	    Cell		    "PassReuseOutputArgsThreshold"
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    PropName		    "DisabledProps"
+	  }
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  UseIntDivNetSlope	  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  StrengthReduction	  off
+	  EnforceIntegerDowncast  on
+	  ExpressionFolding	  on
+	  BooleansAsBitfields	  off
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  PassReuseOutputArgsAs	  "Structure reference"
+	  ExpressionDepthLimit	  2147483647
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  off
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero on
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "Off"
+	  AccelVerboseBuild	  off
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.6.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"warning"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Classic"
+	  MergeDetectMultiDrivingBlocksExec "none"
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "UseLocalSettings"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  SolverPrmCheckMsg	  "warning"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "warning"
+	  MultiTaskCondExecSysMsg "none"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  FixptConstUnderflowMsg  "none"
+	  FixptConstOverflowMsg	  "none"
+	  FixptConstPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  SimStateInterfaceChecksumMismatchMsg "warning"
+	  StrictBusMsg		  "Warning"
+	  LoggingUnavailableSignals "error"
+	  BlockIODiagnostic	  "none"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.6.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  off
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.6.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  8
+	  Version		  "1.6.0"
+	  SFSimEnableDebug	  on
+	  SFSimOverflowDetection  on
+	  SFSimEcho		  on
+	  SimBlas		  on
+	  SimCtrlC		  on
+	  SimExtrinsic		  on
+	  SimIntegrity		  on
+	  SimUseLocalCustomCode	  off
+	  SimBuildMode		  "sf_incremental_build"
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  9
+	  Version		  "1.6.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    6
+	    Cell		    "IncludeHyperlinkInReport"
+	    Cell		    "GenerateTraceInfo"
+	    Cell		    "GenerateTraceReport"
+	    Cell		    "GenerateTraceReportSl"
+	    Cell		    "GenerateTraceReportSf"
+	    Cell		    "GenerateTraceReportEml"
+	    PropName		    "DisabledProps"
+	  }
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  RTWUseLocalCustomCode	  off
+	  RTWUseSimCustomCode	  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  on
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateCodeInfo	  off
+	  RTWCompilerOptimization "Off"
+	  CheckMdlBeforeBuild	  "Off"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      10
+	      Version		      "1.6.0"
+	      Array {
+		Type			"Cell"
+		Dimension		19
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"IgnoreTestpoints"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrFcnArg"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		Cell			"ReqsInCode"
+		PropName		"DisabledProps"
+	      }
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IgnoreTestpoints	      off
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrFcnArg   "rt$I$N$M"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      SimulinkBlockComments   on
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      11
+	      Version		      "1.6.0"
+	      Array {
+		Type			"Cell"
+		Dimension		17
+		Cell			"GeneratePreprocessorConditionals"
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"GenerateTestInterfaces"
+		Cell			"ModelStepFunctionPrototypeControlCompliant"
+		Cell			"CPPClassGenCompliant"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportNonFinite"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		Cell			"PortableWordSizes"
+		PropName		"DisabledProps"
+	      }
+	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      TargetFunctionLibrary   "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      ERTMultiwordTypeDef     "System defined"
+	      ERTMultiwordLength      256
+	      MultiwordLength	      2048
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      ParMdlRefBuildCompliant on
+	      CompOptLevelCompliant   on
+	      IncludeMdlTerminateFcn  on
+	      GeneratePreprocessorConditionals "Disable all"
+	      CombineOutputUpdateFcns off
+	      SuppressErrorStatus     off
+	      ERTFirstTimeCompliant   off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      SupportVariableSizeSignals off
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      PortableWordSizes	      off
+	      ModelStepFunctionPrototypeControlCompliant off
+	      CPPClassGenCompliant    off
+	      AutosarCompliant	      off
+	      UseMalloc		      off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition    " [ 200, 145, 1080, 775 ] "
+    }
+    PropName		    "ConfigurationSets"
+  }
+  BlockDefaults {
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+    BlockRotation	    0
+    BlockMirror		    off
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      BusCreator
+      Inputs		      "4"
+      DisplayOption	      "none"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      NonVirtualBus	      off
+    }
+    Block {
+      BlockType		      BusSelector
+      OutputAsBus	      off
+    }
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "fixdt(1,16,0)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
+      LockScale		      off
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+    }
+    Block {
+      BlockType		      DigitalClock
+      SampleTime	      "1"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      DataType		      "auto"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchByCopyingInsideSignal off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      DataType		      "auto"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      SourceOfInitialOutputValue "Dialog"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Scope
+      ModelBased	      off
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      CheckFcnCallInpInsideContextMsg off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      UnitDelay
+      X0		      "0"
+      SampleTime	      "1"
+      StateMustResolveToSignalObject off
+      RTWStateStorageClass    "Auto"
+    }
+  }
+  System {
+    Name		    "robot"
+    Location		    [0, 79, 1280, 896]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "A4"
+    PaperUnits		    "centimeters"
+    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    SIDHighWatermark	    146
+    Block {
+      BlockType		      SubSystem
+      Name		      "robot"
+      SID		      116
+      Tag		      "id=_2CVEwKbHEeKVjd_905naCg"
+      Ports		      [11, 1]
+      Position		      [20, 20, 270, 820]
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"robot"
+	Location		[0, 79, 1280, 896]
+	Open			on
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "velocity:velocity"
+	  SID			  117
+	  Tag			  "id=_3IT1YKbHEeKVjd_905naCg"
+	  Position		  [100, 1220, 130, 1250]
+	  IconDisplay		  "Port number"
+	  DataType		  "double"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "double"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "timeOfArrival:timeOfArrival"
+	  SID			  118
+	  Tag			  "id=_3IliMKbHEeKVjd_905naCg"
+	  Position		  [100, 1170, 130, 1200]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  DataType		  "double"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "double"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "posX:posX"
+	  SID			  119
+	  Tag			  "id=_3I8HgKbHEeKVjd_905naCg"
+	  Position		  [100, 1020, 130, 1050]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  DataType		  "double"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "double"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "posY:posY"
+	  SID			  120
+	  Tag			  "id=_3JgvQKbHEeKVjd_905naCg"
+	  Position		  [100, 1070, 130, 1100]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  DataType		  "double"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "double"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "posZ:posZ"
+	  SID			  121
+	  Tag			  "id=_3KMEsKbHEeKVjd_905naCg"
+	  Position		  [100, 1120, 130, 1150]
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	  DataType		  "double"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "double"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "isMaster:isMaster"
+	  SID			  122
+	  Tag			  "id=_3Kp-wKbHEeKVjd_905naCg"
+	  Position		  [1400, 160, 1430, 190]
+	  Port			  "6"
+	  IconDisplay		  "Port number"
+	  DataType		  "boolean"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "ballRecognized:ballRecognized"
+	  SID			  123
+	  Tag			  "id=_3LJG8KbHEeKVjd_905naCg"
+	  Position		  [100, 1270, 130, 1300]
+	  Port			  "7"
+	  IconDisplay		  "Port number"
+	  DataType		  "boolean"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "stopPlaying:stopPlaying"
+	  SID			  124
+	  Tag			  "id=_3LnBAKbHEeKVjd_905naCg"
+	  Position		  [1400, 210, 1430, 240]
+	  Port			  "8"
+	  IconDisplay		  "Port number"
+	  DataType		  "boolean"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "BAT_Information_To_OtherRobot_recv"
+	  SID			  125
+	  Tag			  "id=_3MnGkKbHEeKVjd_905naCg"
+	  Position		  [1400, 260, 1430, 290]
+	  Port			  "9"
+	  IconDisplay		  "Port number"
+	  UseBusObject		  on
+	  BusObject		  "PacketBus"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "BAT_Information_To_OtherRobot_net_address"
+	  SID			  126
+	  Tag			  "id=_3MoUsKbHEeKVjd_905naCg"
+	  Position		  [1400, 310, 1430, 340]
+	  Port			  "10"
+	  IconDisplay		  "Port number"
+	  DataType		  "uint8"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "uint8"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "BAT_Information_To_OtherRobot_receiver_net_address"
+	  SID			  127
+	  Tag			  "id=_3MoUsabHEeKVjd_905naCg"
+	  Position		  [1400, 360, 1430, 390]
+	  Port			  "11"
+	  IconDisplay		  "Port number"
+	  DataType		  "uint8"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "uint8"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "CommunicationSwitch1"
+	  SID			  129
+	  Tag			  "id=_2CVr0KbHEeKVjd_905naCg"
+	  Ports			  [4, 4]
+	  Position		  [980, 500, 1080, 620]
+	  LoadFcn		  "MainBusGenerator"
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "CommunicationSwitch1"
+	    Location		    [70, 200, 650, 460]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Inport3"
+	      SID		      130
+	      Tag		      "id=_4yjJoKbHEeKVjd_905naCg"
+	      Position		      [15, 15, 35, 35]
+	      IconDisplay	      "Port number"
+	      UseBusObject	      on
+	      BusObject		      "PacketBus"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      Port {
+		PortNumber		1
+		Name			"rc1"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Inport4"
+	      SID		      131
+	      Tag		      "id=_4yjJoqbHEeKVjd_905naCg"
+	      Position		      [15, 15, 35, 35]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      UseBusObject	      on
+	      BusObject		      "PacketBus"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      Port {
+		PortNumber		1
+		Name			"rc2"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Inport5"
+	      SID		      132
+	      Tag		      "id=_4ysTkKbHEeKVjd_905naCg"
+	      Position		      [15, 15, 35, 35]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	      UseBusObject	      on
+	      BusObject		      "PacketBus"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      Port {
+		PortNumber		1
+		Name			"rc3"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Inport6"
+	      SID		      133
+	      Tag		      "id=_4ysTkqbHEeKVjd_905naCg"
+	      Position		      [15, 15, 35, 35]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	      UseBusObject	      on
+	      BusObject		      "PacketBus"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      Port {
+		PortNumber		1
+		Name			"rc4"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      BusCreator
+	      Name		      "BusCreator1"
+	      SID		      138
+	      Ports		      [4, 1]
+	      Position		      [110, 65, 130, 185]
+	      UseBusObject	      on
+	      BusObject		      "MainBus"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "BusImpl"
+	      SID		      141
+	      Ports		      [2, 1]
+	      Position		      [200, 91, 310, 164]
+	      LibraryVersion	      "1.1"
+	      SourceBlock	      "BusImpl/BusImpl"
+	      SourceType	      "Stateflow"
+	      ShowPortLabels	      "FromPortIcon"
+	    }
+	    Block {
+	      BlockType		      BusSelector
+	      Name		      "BusSelector1"
+	      SID		      139
+	      Ports		      [1, 4]
+	      Position		      [420, 65, 440, 185]
+	      OutputSignals	      "rc1,rc2,rc3,rc4"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Debug"
+	      SID		      142
+	      Position		      [150, 130, 180, 160]
+	      Value		      "0"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      UnitDelay
+	      Name		      "Unit Delay"
+	      SID		      140
+	      Position		      [350, 108, 385, 142]
+	      SampleTime	      "-1"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Outport3"
+	      SID		      134
+	      Tag		      "id=_4yjJoabHEeKVjd_905naCg"
+	      Position		      [15, 15, 35, 35]
+	      IconDisplay	      "Port number"
+	      UseBusObject	      on
+	      BusObject		      "PacketBus"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Outport4"
+	      SID		      135
+	      Tag		      "id=_4yjJo6bHEeKVjd_905naCg"
+	      Position		      [15, 15, 35, 35]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      UseBusObject	      on
+	      BusObject		      "PacketBus"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Outport5"
+	      SID		      136
+	      Tag		      "id=_4ysTkabHEeKVjd_905naCg"
+	      Position		      [15, 15, 35, 35]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	      UseBusObject	      on
+	      BusObject		      "PacketBus"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Outport6"
+	      SID		      137
+	      Tag		      "id=_4ysTk6bHEeKVjd_905naCg"
+	      Position		      [15, 15, 35, 35]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	      UseBusObject	      on
+	      BusObject		      "PacketBus"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	    }
+	    Line {
+	      SrcBlock		      "BusImpl"
+	      SrcPort		      1
+	      DstBlock		      "Unit Delay"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "BusCreator1"
+	      SrcPort		      1
+	      DstBlock		      "BusImpl"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Unit Delay"
+	      SrcPort		      1
+	      DstBlock		      "BusSelector1"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "rc1"
+	      SrcBlock		      "Inport3"
+	      SrcPort		      1
+	      DstBlock		      "BusCreator1"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "rc2"
+	      SrcBlock		      "Inport4"
+	      SrcPort		      1
+	      DstBlock		      "BusCreator1"
+	      DstPort		      2
+	    }
+	    Line {
+	      Name		      "rc3"
+	      SrcBlock		      "Inport5"
+	      SrcPort		      1
+	      DstBlock		      "BusCreator1"
+	      DstPort		      3
+	    }
+	    Line {
+	      Name		      "rc4"
+	      SrcBlock		      "Inport6"
+	      SrcPort		      1
+	      DstBlock		      "BusCreator1"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "BusSelector1"
+	      SrcPort		      1
+	      DstBlock		      "Outport3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "BusSelector1"
+	      SrcPort		      2
+	      DstBlock		      "Outport4"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "BusSelector1"
+	      SrcPort		      3
+	      DstBlock		      "Outport5"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "BusSelector1"
+	      SrcPort		      4
+	      DstBlock		      "Outport6"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Debug"
+	      SrcPort		      1
+	      DstBlock		      "BusImpl"
+	      DstPort		      2
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  DigitalClock
+	  Name			  "DigitalClock1"
+	  SID			  29
+	  Tag			  "id=_2EqnEKbHEeKVjd_905naCg"
+	  Position		  [100, 110, 130, 140]
+	  SampleTime		  "0.0010"
+	}
+	Block {
+	  BlockType		  DigitalClock
+	  Name			  "DigitalClock2"
+	  SID			  31
+	  Tag			  "id=_2ExUwKbHEeKVjd_905naCg"
+	  Position		  [1400, 110, 1430, 140]
+	  SampleTime		  "0.0010"
+	}
+	Block {
+	  BlockType		  DigitalClock
+	  Name			  "DigitalClock3"
+	  SID			  33
+	  Tag			  "id=_2E1mMKbHEeKVjd_905naCg"
+	  Position		  [100, 970, 130, 1000]
+	  SampleTime		  "0.0010"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "MainProcessing"
+	  SID			  144
+	  Tag			  "id=_2EwtsKbHEeKVjd_905naCg"
+	  Ports			  [12, 3]
+	  Position		  [1500, 102, 1750, 903]
+	  LibraryVersion	  "1.14"
+	  SourceBlock		  "AtomicLibrary/MainProcessing"
+	  SourceType		  "SubSystem"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "MainProcessing_BAT_Info_From_SensorProcessing1_net_address"
+	  SID			  148
+	  Tag			  "id=_3Dm7kKbHEeKVjd_905naCg"
+	  Position		  [1400, 510, 1430, 540]
+	  Value			  "2"
+	  OutDataTypeMode	  "uint8"
+	  OutDataTypeStr	  "uint8"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "MainProcessing_BAT_Info_From_SensorProcessing1_receiver_net_address"
+	  SID			  153
+	  Tag			  "id=_4yrFcabHEeKVjd_905naCg"
+	  Position		  [1400, 560, 1430, 590]
+	  Value			  "4"
+	  OutDataTypeMode	  "uint8"
+	  OutDataTypeStr	  "uint8"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "MainProcessing_BAT_Info_ToStrikeProcessing1_net_address"
+	  SID			  147
+	  Tag			  "id=_3DVOwKbHEeKVjd_905naCg"
+	  Position		  [1400, 410, 1430, 440]
+	  Value			  "3"
+	  OutDataTypeMode	  "uint8"
+	  OutDataTypeStr	  "uint8"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "MainProcessing_BAT_Info_ToStrikeProcessing1_receiver_net_address"
+	  SID			  150
+	  Tag			  "id=_4ygtZabHEeKVjd_905naCg"
+	  Position		  [1400, 460, 1430, 490]
+	  OutDataTypeMode	  "uint8"
+	  OutDataTypeStr	  "uint8"
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "Scope"
+	  SID			  146
+	  Ports			  [1]
+	  Position		  [70, 1484, 100, 1516]
+	  Floating		  off
+	  Location		  [188, 390, 512, 629]
+	  Open			  off
+	  NumInputPorts		  "1"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	  }
+	  DataFormat		  "StructureWithTime"
+	  SampleTime		  "0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "SensorProcessing"
+	  SID			  145
+	  Tag			  "id=_2E0_IKbHEeKVjd_905naCg"
+	  Ports			  [10, 1]
+	  Position		  [200, 960, 450, 1760]
+	  LibraryVersion	  "1.14"
+	  SourceBlock		  "AtomicLibrary/SensorProcessing"
+	  SourceType		  "SubSystem"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "SensorProcessing_BAT_Info1_net_address"
+	  SID			  149
+	  Tag			  "id=_3D-H8KbHEeKVjd_905naCg"
+	  Position		  [100, 1320, 130, 1350]
+	  Value			  "4"
+	  OutDataTypeMode	  "uint8"
+	  OutDataTypeStr	  "uint8"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "SensorProcessing_BAT_Info1_receiver_net_address"
+	  SID			  152
+	  Tag			  "id=_4yqeYabHEeKVjd_905naCg"
+	  Position		  [100, 1370, 130, 1400]
+	  Value			  "2"
+	  OutDataTypeMode	  "uint8"
+	  OutDataTypeStr	  "uint8"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "StrikeProcessing"
+	  SID			  143
+	  Tag			  "id=_2DLZUKbHEeKVjd_905naCg"
+	  Ports			  [4, 1]
+	  Position		  [200, 100, 450, 900]
+	  LibraryVersion	  "1.14"
+	  SourceBlock		  "AtomicLibrary/StrikeProcessing"
+	  SourceType		  "SubSystem"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "StrikeProcessing_BAT_Info1_net_address"
+	  SID			  146
+	  Tag			  "id=_3DEJAKbHEeKVjd_905naCg"
+	  Position		  [100, 160, 130, 190]
+	  OutDataTypeMode	  "uint8"
+	  OutDataTypeStr	  "uint8"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "StrikeProcessing_BAT_Info1_receiver_net_address"
+	  SID			  151
+	  Tag			  "id=_4yh7gabHEeKVjd_905naCg"
+	  Position		  [100, 210, 130, 240]
+	  Value			  "3"
+	  OutDataTypeMode	  "uint8"
+	  OutDataTypeStr	  "uint8"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "BAT_Information_To_OtherRobot_send"
+	  SID			  128
+	  Tag			  "id=_3MntoKbHEeKVjd_905naCg"
+	  Position		  [1850, 110, 1880, 140]
+	  IconDisplay		  "Port number"
+	  UseBusObject		  on
+	  BusObject		  "PacketBus"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Line {
+	  SrcBlock		  "DigitalClock1"
+	  SrcPort		  1
+	  DstBlock		  "StrikeProcessing"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "DigitalClock2"
+	  SrcPort		  1
+	  DstBlock		  "MainProcessing"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "DigitalClock3"
+	  SrcPort		  1
+	  DstBlock		  "SensorProcessing"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "StrikeProcessing_BAT_Info1_net_address"
+	  SrcPort		  1
+	  DstBlock		  "StrikeProcessing"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "MainProcessing_BAT_Info_ToStrikeProcessing1_net_address"
+	  SrcPort		  1
+	  DstBlock		  "MainProcessing"
+	  DstPort		  8
+	}
+	Line {
+	  SrcBlock		  "MainProcessing_BAT_Info_From_SensorProcessing1_net_address"
+	  SrcPort		  1
+	  DstBlock		  "MainProcessing"
+	  DstPort		  11
+	}
+	Line {
+	  SrcBlock		  "SensorProcessing_BAT_Info1_net_address"
+	  SrcPort		  1
+	  DstBlock		  "SensorProcessing"
+	  DstPort		  9
+	}
+	Line {
+	  SrcBlock		  "MainProcessing"
+	  SrcPort		  2
+	  DstBlock		  "CommunicationSwitch1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "StrikeProcessing"
+	  SrcPort		  1
+	  DstBlock		  "CommunicationSwitch1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "CommunicationSwitch1"
+	  SrcPort		  2
+	  DstBlock		  "StrikeProcessing"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "CommunicationSwitch1"
+	  SrcPort		  1
+	  DstBlock		  "MainProcessing"
+	  DstPort		  7
+	}
+	Line {
+	  SrcBlock		  "MainProcessing_BAT_Info_ToStrikeProcessing1_receiver_net_address"
+	  SrcPort		  1
+	  DstBlock		  "MainProcessing"
+	  DstPort		  9
+	}
+	Line {
+	  SrcBlock		  "StrikeProcessing_BAT_Info1_receiver_net_address"
+	  SrcPort		  1
+	  DstBlock		  "StrikeProcessing"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "SensorProcessing"
+	  SrcPort		  1
+	  DstBlock		  "CommunicationSwitch1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "MainProcessing"
+	  SrcPort		  3
+	  DstBlock		  "CommunicationSwitch1"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "CommunicationSwitch1"
+	  SrcPort		  4
+	  DstBlock		  "MainProcessing"
+	  DstPort		  10
+	}
+	Line {
+	  SrcBlock		  "CommunicationSwitch1"
+	  SrcPort		  3
+	  DstBlock		  "SensorProcessing"
+	  DstPort		  8
+	}
+	Line {
+	  SrcBlock		  "SensorProcessing_BAT_Info1_receiver_net_address"
+	  SrcPort		  1
+	  DstBlock		  "SensorProcessing"
+	  DstPort		  10
+	}
+	Line {
+	  SrcBlock		  "MainProcessing_BAT_Info_From_SensorProcessing1_receiver_net_address"
+	  SrcPort		  1
+	  DstBlock		  "MainProcessing"
+	  DstPort		  12
+	}
+	Line {
+	  SrcBlock		  "isMaster:isMaster"
+	  SrcPort		  1
+	  DstBlock		  "MainProcessing"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "stopPlaying:stopPlaying"
+	  SrcPort		  1
+	  DstBlock		  "MainProcessing"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "posY:posY"
+	  SrcPort		  1
+	  DstBlock		  "SensorProcessing"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "velocity:velocity"
+	  SrcPort		  1
+	  DstBlock		  "SensorProcessing"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "timeOfArrival:timeOfArrival"
+	  SrcPort		  1
+	  DstBlock		  "SensorProcessing"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "posZ:posZ"
+	  SrcPort		  1
+	  DstBlock		  "SensorProcessing"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "ballRecognized:ballRecognized"
+	  SrcPort		  1
+	  Points		  [35, 150]
+	  Branch {
+	    DstBlock		    "SensorProcessing"
+	    DstPort		    7
+	  }
+	  Branch {
+	    Points		    [15, 0; 0, 5; -130, 0]
+	    DstBlock		    "Scope"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "posX:posX"
+	  SrcPort		  1
+	  DstBlock		  "SensorProcessing"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "BAT_Information_To_OtherRobot_recv"
+	  SrcPort		  1
+	  DstBlock		  "MainProcessing"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "MainProcessing"
+	  SrcPort		  1
+	  DstBlock		  "BAT_Information_To_OtherRobot_send"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "BAT_Information_To_OtherRobot_receiver_net_address"
+	  SrcPort		  1
+	  DstBlock		  "MainProcessing"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "BAT_Information_To_OtherRobot_net_address"
+	  SrcPort		  1
+	  DstBlock		  "MainProcessing"
+	  DstPort		  5
+	}
+      }
+    }
+  }
+}

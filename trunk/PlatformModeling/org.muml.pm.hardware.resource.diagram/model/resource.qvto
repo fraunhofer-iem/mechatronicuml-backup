@@ -1,0 +1,33 @@
+import PostReconcileLibrary;
+modeltype GMFGEN uses gmfgen('http://www.eclipse.org/gmf/2009/GenModel');
+
+transformation transform(inout gmfgen:GMFGEN);
+
+
+
+main() {
+	gmfgen.rootObjects()![GenEditorGenerator]->map settings();
+}
+
+mapping inout GenEditorGenerator::settings() {
+	self->map general("resource_diagram","Resource Diagram Editor",true);
+	// self->map editorSpecific();
+}
+
+
+mapping inout GenEditorGenerator::editorSpecific() {
+	-- put settings here, that are often lost to apply them permanently
+	  
+    self.diagram.links.allSubobjectsOfType(InnerClassViewmap)[InnerClassViewmap] -> map setTextWrap("fFigureLinkCommentFigure","LinkFigure");
+    self.diagram.links.allSubobjectsOfType(InnerClassViewmap)[InnerClassViewmap] -> map setTextWrap("fFigureLinkCommentFigure","LinkFigure");
+    
+ 	 self.diagram.topLevelNodes.allSubobjectsOfType(InnerClassViewmap)[InnerClassViewmap] -> map setTextWrap("this","HWPortLabelFigure");
+  	 self.diagram.childNodes.allSubobjectsOfType(InnerClassViewmap)[InnerClassViewmap] -> map setTextWrap("this","HWPortLabelFigure");
+  	 
+  	 	 self.diagram.topLevelNodes.allSubobjectsOfType(InnerClassViewmap)[InnerClassViewmap] -> map underLine("this","HWPortLabelFigure");
+  	 self.diagram.childNodes.allSubobjectsOfType(InnerClassViewmap)[InnerClassViewmap] -> map underLine("this","HWPortLabelFigure");
+	
+}
+
+
+

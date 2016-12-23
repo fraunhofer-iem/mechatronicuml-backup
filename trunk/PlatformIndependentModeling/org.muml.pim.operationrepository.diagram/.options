@@ -1,0 +1,7 @@
+# Tracing options for the org.muml.pim.operationrepository.diagram plug-in
+
+# Common issues
+org.muml.pim.operationrepository.diagram/debug=false
+
+# Visual IDs
+org.muml.pim.operationrepository.diagram/debug/visualID=false

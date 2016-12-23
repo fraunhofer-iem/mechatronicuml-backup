@@ -1,0 +1,38 @@
+import "runningExample.fujaba"
+
+OperatingSystem:nxtOSEK{
+	
+	 Device_API_Calls: LightSensor {
+        VOID ecrobot_set_light_sensor_active(SHORT port_idLSactive); 
+        VOID ecrobot_set_light_sensor_inactive(SHORT port_idLSinactive);
+        INT  ecrobot_get_light_sensor(SHORT port_idLSget);
+    }
+	Device_API_Calls: TetrixMotor {
+        VOID ecrobot_tetrix_motors(SHORT port_idTM, INT i2c_addressTM, SHORT mode_motor1TM, SHORT mode_motor2TM, INT pwm_motor1TM, INT pwm_motor2TM);
+    }
+    Device_API_Calls: UltrasonicSensor {
+        VOID ecrobot_init_sonar_sensor(SHORT port_idUSinit); 
+        INT  ecrobot_get_sonar_sensor(SHORT port_idUSget); 
+        VOID ecrobot_term_sonar_sensor(SHORT port_idUSterm);
+    }
+    Device_API_Calls: Brick {
+        BYTE ecrobot_is_ENTER_button_pressed(); 
+        BYTE ecrobot_is_RUN_button_pressed(); 
+        INT ecrobot_get_battery_voltage();
+    }
+    Device_API_Calls: RS485 {
+        VOID ecrobot_init_rs485(INT baud_rate);
+        INT  ecrobot_send_rs485(ARRAYCHAR buf, BYTE off, INT len);
+        INT  ecrobot_read_rs485(ARRAYCHAR buf, BYTE off, INT len);
+        VOID ecrobot_term_rs485();
+    }
+    Device_API_Calls: Display {
+        VOID display_update();
+        VOID display_goto_xy(INT x, INT y); 
+        VOID display_string(ARRAYCHAR str);
+        VOID display_hex(INT  val, INT places);
+        VOID display_int(INT val, INT places);
+        VOID display_unsigned(INT val, INT places); 
+    } 
+	
+}

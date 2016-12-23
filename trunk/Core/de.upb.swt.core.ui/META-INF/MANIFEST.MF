@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Software Engineering Core UI
+Bundle-SymbolicName: de.upb.swt.core.ui;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.core.runtime,
+ de.upb.swt.core,
+ org.eclipse.emf.edit.ui
+Export-Package: de.upb.swt.core.ui,
+ de.upb.swt.core.ui.providers,
+ de.upb.swt.core.ui.runtime
+Bundle-Activator: de.upb.swt.core.ui.Activator

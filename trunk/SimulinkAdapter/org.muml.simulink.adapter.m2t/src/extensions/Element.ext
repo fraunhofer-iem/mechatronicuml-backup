@@ -1,0 +1,15 @@
+import simulink;
+
+extension org::eclipse::xtend::util::stdlib::counter;
+extension org::eclipse::xtend::util::stdlib::elementprops;
+
+int getSimulinkId(Element elem):
+	if getProperty(elem, 'SimulinkId') != null then
+		getProperty(elem, 'SimulinkId')
+	/*Define a new one*/
+	else 
+		setProperty(elem, 'SimulinkId', elem.getNewSimulinkId())
+		-> elem.getSimulinkId();
+		
+int getNewSimulinkId(Element elem):
+	counterInc('SimulinkIdSpace');

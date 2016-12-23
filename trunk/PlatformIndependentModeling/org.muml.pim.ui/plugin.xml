@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+  <!-- copied from atomiccomponenteditor -->
+      <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.muml">
+         <separator
+               name="org.muml.ui.separator1"
+               visible="true">
+         </separator>
+         <command
+               commandId="org.muml.pim.component.diagram.custom.copyRolePropertiesToPort"
+               id="org.muml.pim.component.diagram.custom.copyRolePropertiesToPort"
+               label="Copy Role Properties To Port"
+               style="push">
+            <visibleWhen>
+               <and>
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false">
+                        <adapt
+                              type="org.muml.pim.component.DiscretePort">
+                        </adapt>
+                     </iterate>
+                  </with></and>
+            </visibleWhen>
+         </command>
+         <command
+               commandId="org.muml.pim.component.diagram.custom.embedAllPortBehavior"
+               id="org.muml.pim.component.diagram.custom.embedAllPortBehavior"
+               label="Embed All Ports&apos; Behavior in the behavior Real-Time Statechart of the Atomic Component"
+               style="push">
+             <visibleWhen>
+               <and>
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false"
+                           operator="or">
+                        <adapt
+                              type="org.muml.pim.component.StaticAtomicComponent">
+                        </adapt>
+                     </iterate>
+                  </with>
+               </and>
+            </visibleWhen>
+         </command>
+         <command
+               commandId="org.muml.pim.component.diagram.custom.CreateComponentRTSCandCopyRolePropertiesToPortCommand"
+               id="CreateComponentRTSCandCopyRolePropertiesToPort"
+               label="Create Component-RTSC (incl. Diagram) And Copy All Role Properties to Ports"
+               style="push">
+            <visibleWhen>
+               <and>
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false">
+                        <adapt
+                              type="org.muml.pim.component.StaticAtomicComponent">
+                        </adapt>
+                     </iterate>
+                  </with>
+               </and>
+            </visibleWhen>
+         </command>
+         <command
+               commandId="org.muml.pim.coordinationprotocol.diagram.custom.createRoleRTSCCommand"
+               id="org.muml.pim.component.diagram.custom.copyRolePropertiesToPortorg.muml.pim.coordinationprotocol.diagram.custom.createRoleRTSC"
+               label="Create Role RTSC (incl. Diagram)"
+               style="push">
+            <visibleWhen>
+               <and>
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false">
+                        <adapt
+                              type="org.muml.pim.protocol.Role">
+                        </adapt>
+                     </iterate>
+                  </with></and>
+            </visibleWhen>
+         </command>
+          <command
+               commandId="org.muml.pim.realtimestatechart.diagram.custom.DisassembleOne2ManyComSchemata"
+               label="Disassemble One-To-Many Communication Schemata">
+            <visibleWhen>
+               <or>
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false">
+                        <adapt
+                              type="org.muml.pim.realtimestatechart.RealtimeStatechart">
+                        </adapt>
+                     </iterate>
+                  </with>
+               </or>
+            </visibleWhen>
+         </command>
+         <command
+               commandId="org.muml.pim.component.diagram.custom.embedAsParts"
+               id="org.muml.pim.component.diagram.custom.embedAsParts"
+               label="Embed Selected Components As Parts in a new Structured Component"
+               style="push">
+            <visibleWhen>
+               <and>
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false"
+                           operator="or">
+                        <or>
+                           <adapt
+                                 type="org.muml.pim.component.AtomicComponent">
+                           </adapt>
+                           <adapt
+                                 type="org.muml.pim.component.StructuredComponent">
+                           </adapt></or>
+                     </iterate>
+                  </with>
+               </and>
+            </visibleWhen>
+         </command>
+         <command
+               commandId="org.muml.pim.component.diagram.custom.createBufferForMsgType"
+               id="org.muml.pim.component.diagram.custom.createBufferForMsgType"
+               label="Create MessageBuffer for every ReceiverMessageType"
+               style="push">
+            <visibleWhen>
+               <and>
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false">
+                        <adapt
+                              type="org.muml.pim.connector.DiscreteInteractionEndpoint">
+                        </adapt>
+                     </iterate>
+                  </with>
+               </and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="org.muml"
+            defaultHandler="org.muml.pim.ui.contextmenu.handlers.component.CopyRolePropertiesToPortHandler"
+            description="Copy Properties defined in the Role to the Port."
+            id="org.muml.pim.component.diagram.custom.copyRolePropertiesToPort"
+            name="Copy Role Properties To Port">
+      </command>
+      <command
+            categoryId="org.muml"
+            defaultHandler="org.muml.pim.ui.contextmenu.handlers.component.EmbedAllPortBehaviorsToACHandler"
+            description="Embeds the behavior of all DiscretePorts into the Behavior of this Atomic Component"
+            id="org.muml.pim.component.diagram.custom.embedAllPortBehavior"
+            name="Embed All Port Behaviors">
+      </command>
+      <command
+            categoryId="org.muml"
+            defaultHandler="org.muml.pim.ui.contextmenu.handlers.component.CreateCompRTSCCopyRolePropertiesHandler"
+            description="Create Component-RTSC (incl. Diagram) And Copy All Role Properties to Ports"
+            id="org.muml.pim.component.diagram.custom.CreateComponentRTSCandCopyRolePropertiesToPortCommand"
+            name="Create Component-RTSC (incl. Diagram) And Copy All Role Properties to Ports">
+      </command>
+       <command
+            categoryId="org.muml"
+            defaultHandler="org.muml.pim.ui.contextmenu.handlers.coordinationprotocol.CreateRoleRTSCHandler"
+            description="Create the Role&apos;s RTSC and it&apos;s Diagram"
+            id="org.muml.pim.coordinationprotocol.diagram.custom.createRoleRTSCCommand"
+            name="Create Role RTSC">
+      </command>
+          <command
+            defaultHandler="org.muml.pim.ui.contextmenu.handlers.realtimestatechart.DisassembleOne2ManyComSchemataHandler"
+            id="org.muml.pim.realtimestatechart.diagram.custom.DisassembleOne2ManyComSchemata"
+            name="Disassemble One-To-Many Communication Schemata">
+      </command>
+       <command
+            categoryId="org.muml"
+            defaultHandler="org.muml.pim.ui.contextmenu.handlers.component.EmbedAsPartsHandler"
+            description="Embeds Atomic Components as Component Parts in a new Structured Component."
+            id="org.muml.pim.component.diagram.custom.embedAsParts"
+            name="Embed As Parts">
+      </command>
+       <command
+             categoryId="org.muml"
+             defaultHandler="org.muml.pim.ui.contextmenu.handlers.discreteInteractionEndpoint.CreateMessageBufferForEveryReceiverMessageTypeHandler"
+             description="Create a MessageBuffer for every Receiver MessageType"
+             id="org.muml.pim.component.diagram.custom.createBufferForMsgType"
+             name="Create MessageBuffer for every receiver message type">
+       </command>
+   </extension>
+   
+</plugin>

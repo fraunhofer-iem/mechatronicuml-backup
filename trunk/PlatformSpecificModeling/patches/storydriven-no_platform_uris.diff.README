@@ -1,0 +1,6 @@
+In order to use core.ecore or any other ecore model, which depends on it, in
+conjunction with xtext the org.storydriven.core has to be patched.
+
+- checkout org.storydriven.core
+  (http://svn.codespot.com/a/eclipselabs.org/sdm-commons/trunk/plugins/org.storydriven.core)
+- apply storydriven-no_platform_uris.diff

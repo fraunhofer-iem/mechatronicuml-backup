@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:connector="http://www.muml.org/pim/connector/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:protocol="http://www.muml.org/pim/protocol/1.0.0" xmi:id="_Gq0bUCygEeWilfSCCIuA_A" type="Coordination Protocol" name="Overtaking.coordinationprotocol_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_Gq1CYCygEeWilfSCCIuA_A" type="2005" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Gq1CYiygEeWilfSCCIuA_A" type="7005">
+      <children xmi:type="notation:Node" xmi:id="_G3WbcCygEeWilfSCCIuA_A" type="3015">
+        <children xmi:type="notation:DecorationNode" xmi:id="_G3WbdSygEeWilfSCCIuA_A" type="5023"/>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_G3WbcSygEeWilfSCCIuA_A"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_G3WbciygEeWilfSCCIuA_A" fontName="Segoe UI"/>
+        <styles xmi:type="notation:LineStyle" xmi:id="_G3WbcyygEeWilfSCCIuA_A" lineColor="0"/>
+        <element xmi:type="protocol:CoordinationProtocol" href="../overtaking-correct.muml#_GPaQMITCEeKO9r0VL65xcg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_G3WbdCygEeWilfSCCIuA_A" x="250" y="9"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_G3XCgCygEeWilfSCCIuA_A" type="3006" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_G3XCgiygEeWilfSCCIuA_A" type="5006">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_G3XCgyygEeWilfSCCIuA_A" y="5"/>
+        </children>
+        <element xmi:type="protocol:Role" href="../overtaking-correct.muml#_GQwUAITCEeKO9r0VL65xcg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_G3XCgSygEeWilfSCCIuA_A" x="220" y="69"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_G3XChCygEeWilfSCCIuA_A" type="3006" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_G3XChiygEeWilfSCCIuA_A" type="5006">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_G3XChyygEeWilfSCCIuA_A" y="5"/>
+        </children>
+        <element xmi:type="protocol:Role" href="../overtaking-correct.muml#_GRMY4oTCEeKO9r0VL65xcg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_G3XChSygEeWilfSCCIuA_A" x="370" y="69"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_G3XCiCygEeWilfSCCIuA_A" type="3013">
+        <children xmi:type="notation:DecorationNode" xmi:id="_G3XCjSygEeWilfSCCIuA_A" type="5018"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_G3XCjiygEeWilfSCCIuA_A" type="5019"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_G3XCjyygEeWilfSCCIuA_A" type="5025"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_G3XCkCygEeWilfSCCIuA_A" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_G3XCkSygEeWilfSCCIuA_A"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_G3XCkiygEeWilfSCCIuA_A"/>
+        </children>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_G3XCiSygEeWilfSCCIuA_A"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_G3XCiiygEeWilfSCCIuA_A" fontName="Segoe UI"/>
+        <styles xmi:type="notation:LineStyle" xmi:id="_G3XCiyygEeWilfSCCIuA_A" lineColor="0"/>
+        <element xmi:type="connector:MessageBuffer" href="../overtaking-correct.muml#_FRm7cITTEeKO9r0VL65xcg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_G3XCjCygEeWilfSCCIuA_A" x="21" y="125"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_G3XCkyygEeWilfSCCIuA_A" type="3013">
+        <children xmi:type="notation:DecorationNode" xmi:id="_G3XCmCygEeWilfSCCIuA_A" type="5018"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_G3XpkCygEeWilfSCCIuA_A" type="5019"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_G3XpkSygEeWilfSCCIuA_A" type="5025"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_G3XpkiygEeWilfSCCIuA_A" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_G3XpkyygEeWilfSCCIuA_A"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_G3XplCygEeWilfSCCIuA_A"/>
+        </children>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_G3XClCygEeWilfSCCIuA_A"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_G3XClSygEeWilfSCCIuA_A" fontName="Segoe UI"/>
+        <styles xmi:type="notation:LineStyle" xmi:id="_G3XCliygEeWilfSCCIuA_A" lineColor="0"/>
+        <element xmi:type="connector:MessageBuffer" href="../overtaking-correct.muml#_Jyhh4ITTEeKO9r0VL65xcg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_G3XClyygEeWilfSCCIuA_A" x="445" y="129"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_G3XplSygEeWilfSCCIuA_A" type="3014">
+        <children xmi:type="notation:DecorationNode" xmi:id="_G3XpmiygEeWilfSCCIuA_A" type="5020"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_G3XpmyygEeWilfSCCIuA_A" type="5021"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_G3XpnCygEeWilfSCCIuA_A" type="5022"/>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_G3XpliygEeWilfSCCIuA_A"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_G3XplyygEeWilfSCCIuA_A" fontName="Segoe UI"/>
+        <styles xmi:type="notation:LineStyle" xmi:id="_G3XpmCygEeWilfSCCIuA_A" lineColor="0"/>
+        <element xmi:type="protocol:ConnectorQualityOfServiceAssumptions" href="../overtaking-correct.muml#_GRf64ITCEeKO9r0VL65xcg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_G3XpmSygEeWilfSCCIuA_A" x="235" y="129"/>
+      </children>
+    </children>
+    <element xmi:type="protocol:CoordinationProtocol" href="../overtaking-correct.muml#_GPaQMITCEeKO9r0VL65xcg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Gq1CYSygEeWilfSCCIuA_A" width="1021" height="406"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_Gq0bUSygEeWilfSCCIuA_A"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../overtaking-correct.muml#_FN-BUITCEeKO9r0VL65xcg"/>
+</notation:Diagram>

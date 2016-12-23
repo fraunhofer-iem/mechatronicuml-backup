@@ -1,0 +1,188 @@
+«EXTENSION MetaModel»
+«EXTENSION xpt::StringOperations»
+«EXTENSION xpt::editor::Utils»
+«EXTENSION xpt::editor::GenDiagram»
+«EXTENSION fujaba::Fujaba»
+
+
+«AROUND extensions FOR gmfgen::GenEditorGenerator»
+	«REM» We want to remove the extension popupMenus with id init-diagram-extension. «ENDREM»
+	«REM» But unfortenately there are no rules for each extension, and so do not call«ENDREM»
+	«REM» targetDef.proceed(), but copy only those extensions that we want. «ENDREM»
+	
+	«REM» BEGIN COPIED: «ENDREM»
+	<extension point="org.eclipse.ui.editors" id="gmf-editor">
+      «EXPAND xpt::Common::xmlGeneratedTag»
+      <editor
+         id="«editor.iD»"
+         name="%editorName"
+         icon="«editor.iconPathX»"
+         extensions="«diagramFileExtension»"
+         default="true"
+         class="«editor.getQualifiedClassName()»"
+         matchingStrategy="«diagram.getMatchingStrategyQualifiedClassName()»"
+         contributorClass="«editor.getActionBarContributorQualifiedClassName()»">
+      </editor>
+   	</extension>
+   	<extension point="org.eclipse.ui.contexts" id="ui-context">
+      «EXPAND xpt::Common::xmlGeneratedTag»
+      <context
+         description="%context.description"
+         id="«editor.contextID»"
+         name="%context.name"
+         parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
+      </context>
+   	</extension>
+
+   	<extension point="org.eclipse.ui.newWizards" id="creation-wizard">
+      «EXPAND xpt::Common::xmlGeneratedTag»
+  	  <wizard
+  	     name="%newWizardName"
+  	     icon="«diagram.creationWizardIconPathX»"
+  	     category="«diagram.creationWizardCategoryID»"
+  	     class="«diagram.getCreationWizardQualifiedClassName()»"
+  	     id="«diagram.getCreationWizardQualifiedClassName()»ID">
+  	  	 <description>%newWizardDesc</description>  
+      </wizard>
+   	</extension>
+	«REM» END COPIED «ENDREM»
+	
+	«REM» Here we start to define our own extensions «ENDREM»
+	«EXPAND menus»
+	«EXPAND commands»
+	«EXPAND modelelementcategory»
+	«EXPAND diagraminformation»
+«ENDAROUND»
+
+«DEFINE afterSeparator FOR gmfgen::GenEditorGenerator-»
+«IF plugin.iD = 'org.muml.pim.component.diagram' or plugin.iD = 'org.muml.pim.componentinstanceconfiguration.diagram' or plugin.iD = 'org.muml.pim.coordinationprotocol.diagram'-»
+structural-diagrams«-»
+«ELSEIF plugin.iD = 'org.muml.pim.realtimestatechart.diagram'-»
+behavioral-diagrams«-»
+«ELSEIF plugin.iD = 'org.muml.pim.messagetype.diagram'-»
+types«-»
+«ELSE-»
+diagrams«-»
+«ENDIF-»
+«ENDDEFINE»
+
+«DEFINE menus FOR gmfgen::GenEditorGenerator»
+	<extension point="org.eclipse.ui.menus">
+	   «EXPAND xpt::Common::xmlGeneratedTag»
+	   <menuContribution
+	         allPopups="false"
+	         locationURI="popup:org.muml.core.browser.new.menu?after=additions">
+	  		<command
+                 commandId="«EXPAND MetaModel::QualifiedClassName FOR diagram.domainDiagramElement».browser.create"
+                 icon="«editor.iconPathX»"
+                 id="«EXPAND MetaModel::QualifiedClassName FOR diagram.domainDiagramElement».browser.create"
+                 label="«diagram.domainDiagramElement.ecoreClass.name»"
+                 style="push">
+              <visibleWhen
+                    checkEnabled="false">
+                    <iterate ifEmpty="false" operator="and">
+                       <adapt type="org.eclipse.core.resources.IResource">
+				       </adapt>
+                    </iterate>	
+              </visibleWhen>
+           </command>
+      </menuContribution>
+      «EXPAND xpt::Common::xmlGeneratedTag»   
+	  <menuContribution
+	         allPopups="false"
+	         locationURI="popup:org.muml?after=«EXPAND afterSeparator»">
+	      <command
+	            commandId="«plugin.iD».createDiagram"
+	            icon="«diagram.creationWizardIconPathX»"
+	            id="«plugin.iD».createDiagram"
+	            label="Create «modelID» Diagram"
+	            style="push">
+	            	<visibleWhen checkEnabled="false">
+		            	<or>
+		            	<reference definitionId="org.muml.expression.mumlfile"></reference>
+						<iterate ifEmpty="false" operator="or">
+		            		<adapt type="org.eclipse.core.resources.IResource">
+		            			<test property="org.eclipse.core.resources.name" value="*.«modelElementCategoryName(diagram)»"></test>
+	              			</adapt>
+		    			</iterate>
+		    			</or>
+          			</visibleWhen>
+	      </command>
+	   </menuContribution>
+	   
+	</extension>
+	
+	
+	<extension point="org.eclipse.ui.commands">
+	«EXPAND xpt::Common::xmlGeneratedTag»
+	<command
+           defaultHandler="«diagram.getInitDiagramFileActionQualifiedClassName()»$CreateDiagramElement"
+           categoryId="org.muml"
+           description="Create new «modelID»"
+           id="«EXPAND MetaModel::QualifiedClassName FOR diagram.domainDiagramElement».browser.create"
+           name="Create new «modelID»">
+    </command>
+    </extension>
+«ENDDEFINE»
+
+«DEFINE commands FOR gmfgen::GenEditorGenerator»
+	<extension point="org.eclipse.ui.commands">
+		«EXPAND xpt::Common::xmlGeneratedTag»
+		<command
+			categoryId="org.muml"
+			description="Initialize realtimestatechart_diagram"
+			defaultHandler="«diagram.getInitDiagramFileActionQualifiedClassName()»"
+			id="«plugin.iD».createDiagram"
+			name="%initDiagramActionLabel">
+		</command>
+	</extension>
+«ENDDEFINE»
+
+«DEFINE modelelementcategory FOR gmfgen::GenEditorGenerator»
+	<extension
+         point="org.muml.core.modelelementcategory">
+      «EXPAND xpt::Common::xmlGeneratedTag»  
+      <category
+            key="«modelElementCategoryKey(diagram)»"
+            name="«modelElementCategoryName(diagram)»">
+         «IF diagram.domainDiagramElement.ecoreClass.name = 'ModelElementCategory'»
+         «FOREACH diagram.topLevelNodes.getDomainMetaClass() AS node»
+         <child
+               class="«node.ecoreClass.name»"
+               packageNsUri="«node.genPackage.ecorePackage.nsURI»">
+         </child>
+         «ENDFOREACH»
+         «ELSE»
+         <child
+               class="«diagram.domainDiagramElement.ecoreClass.name»"
+               packageNsUri="«diagram.domainDiagramElement.genPackage.ecorePackage.nsURI»">
+         </child>
+         «ENDIF»
+      </category>
+   </extension>
+«ENDDEFINE»
+
+«DEFINE diagraminformation FOR gmfgen::GenEditorGenerator»
+	<extension
+         point="org.muml.core.modelinstance.ui.diagraminformation">
+      «EXPAND xpt::Common::xmlGeneratedTag»
+      <editor
+            preferencesHint="«plugin.iD»"
+            editorId="«editor.iD»"
+            editorName="«modelID» Editor"
+            fileExtension="«diagramFileExtension»"
+            modelElementCategoryKey="«modelElementCategoryKey(diagram)»"
+            modelId="«modelID»">
+         <diagramElement
+               packageNsURI="«diagram.domainDiagramElement.genPackage.ecorePackage.nsURI»"
+               className="«diagram.domainDiagramElement.ecoreClass.name»">
+         </diagramElement>
+         «FOREACH diagram.topLevelNodes AS container»
+         <topLevelNode
+               domainElement="«container.modelFacet.metaClass.ecoreClass.name»"
+               semanticHint="«container.visualID»">
+         </topLevelNode>
+         «ENDFOREACH»
+      </editor>
+   </extension>
+«ENDDEFINE»

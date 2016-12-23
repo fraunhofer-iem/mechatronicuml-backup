@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--muml metamodel version 0.3.2 (r2996)-->
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_tEUJECpqEeOJnb1xCalP4w">
+  <categories xmi:id="_tEUJESpqEeOJnb1xCalP4w" key="de.uni_paderborn.fujaba.muml.types.category" name="types">
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_tEUJEipqEeOJnb1xCalP4w" name="VOID"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_tEUJEypqEeOJnb1xCalP4w" name="BOOLEAN" primitiveType="BOOLEAN"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_tEUJFCpqEeOJnb1xCalP4w" name="INT8" primitiveType="INT8"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_tEUJFSpqEeOJnb1xCalP4w" name="INT16" primitiveType="INT16"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_tEUJFipqEeOJnb1xCalP4w" name="INT32" primitiveType="INT32"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_tEUJFypqEeOJnb1xCalP4w" name="INT64" primitiveType="INT64"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_tEUJGCpqEeOJnb1xCalP4w" name="DOUBLE" primitiveType="DOUBLE"/>
+  </categories>
+  <categories xmi:id="_uW_R4CpqEeOJnb1xCalP4w" key="de.uni_paderborn.fujaba.muml.components.category" name="component">
+    <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_vk7EoCpqEeOJnb1xCalP4w" name="DataProcessing">
+      <ports xsi:type="component:DiscretePort" xmi:id="_zW9y4CpqEeOJnb1xCalP4w" name="sender">
+        <cardinality xmi:id="_Gz5ZwCp4EeOJnb1xCalP4w">
+          <lowerBound xmi:id="_Gz5ZwSp4EeOJnb1xCalP4w"/>
+          <upperBound xmi:id="_Gz5Zwip4EeOJnb1xCalP4w"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:HybridPort" xmi:id="_5CSW8CpqEeOJnb1xCalP4w" name="getData" dataType="_tEUJFipqEeOJnb1xCalP4w"/>
+    </modelElements>
+    <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_wuPdICpqEeOJnb1xCalP4w" name="LimitControl">
+      <ports xsi:type="component:DiscretePort" xmi:id="_zsk2gCpqEeOJnb1xCalP4w" name="receiver">
+        <cardinality xmi:id="_MFE_gCp4EeOJnb1xCalP4w">
+          <lowerBound xmi:id="_MFE_gSp4EeOJnb1xCalP4w"/>
+          <upperBound xmi:id="_MFE_gip4EeOJnb1xCalP4w"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_0LQ9oCpqEeOJnb1xCalP4w" name="provider" senderMessageTypes="_5MT40CpuEeOJnb1xCalP4w _6UIcgCpuEeOJnb1xCalP4w" refinedRole="_vQg-ECpuEeOJnb1xCalP4w">
+        <cardinality xmi:id="_QurA0Cp4EeOJnb1xCalP4w">
+          <lowerBound xmi:id="_QurA0Sp4EeOJnb1xCalP4w"/>
+          <upperBound xmi:id="_QurA0ip4EeOJnb1xCalP4w"/>
+        </cardinality>
+      </ports>
+    </modelElements>
+    <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_xn3z0CpqEeOJnb1xCalP4w" name="CentralControl">
+      <ports xsi:type="component:DiscretePort" xmi:id="_0pyssCpqEeOJnb1xCalP4w" name="master" senderMessageTypes="_XCuOQCp3EeOJnb1xCalP4w" receiverMessageTypes="_aUb2oCp3EeOJnb1xCalP4w _Zw2BYCp3EeOJnb1xCalP4w" refinedRole="_JmpqsCp3EeOJnb1xCalP4w">
+        <cardinality xmi:id="_kapOoCqYEeOJnb1xCalP4w">
+          <lowerBound xmi:id="_kapOoSqYEeOJnb1xCalP4w"/>
+          <upperBound xmi:id="_kapOoiqYEeOJnb1xCalP4w"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_0_-YECpqEeOJnb1xCalP4w" name="observer" receiverMessageTypes="_5MT40CpuEeOJnb1xCalP4w _6UIcgCpuEeOJnb1xCalP4w" refinedRole="_vQg-FCpuEeOJnb1xCalP4w">
+        <cardinality xmi:id="_sFwgMCqYEeOJnb1xCalP4w">
+          <lowerBound xmi:id="_sFwgMSqYEeOJnb1xCalP4w"/>
+          <upperBound xmi:id="_sFwgMiqYEeOJnb1xCalP4w"/>
+        </cardinality>
+      </ports>
+    </modelElements>
+    <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_yd75ICpqEeOJnb1xCalP4w" name="Actuator"/>
+    <modelElements xsi:type="component:StaticStructuredComponent" xmi:id="_6OnA0Et_EeOVEI54_T8KSA" name="Robot">
+      <ports xsi:type="component:DiscretePort" xmi:id="_f-WsQGM9EeOY3OClxpdOXw" name="port">
+        <cardinality xmi:id="_f-X6YGM9EeOY3OClxpdOXw">
+          <lowerBound xmi:id="_gs5NQGM9EeOY3OClxpdOXw"/>
+          <upperBound xmi:id="_gtBJEGM9EeOY3OClxpdOXw"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_hapEEGM9EeOY3OClxpdOXw" name="port">
+        <cardinality xmi:id="_haqSMGM9EeOY3OClxpdOXw">
+          <lowerBound xmi:id="_haqSMWM9EeOY3OClxpdOXw"/>
+          <upperBound xmi:id="_haq5QGM9EeOY3OClxpdOXw"/>
+        </cardinality>
+      </ports>
+    </modelElements>
+    <modelElements xsi:type="component:StaticStructuredComponent" xmi:id="__NPeAEt_EeOVEI54_T8KSA" name="Warehouse">
+      <ports xsi:type="component:DiscretePort" xmi:id="_iVAakGM9EeOY3OClxpdOXw" name="port">
+        <cardinality xmi:id="_iVEE8GM9EeOY3OClxpdOXw">
+          <lowerBound xmi:id="_iVEE8WM9EeOY3OClxpdOXw"/>
+          <upperBound xmi:id="_iVEsAGM9EeOY3OClxpdOXw"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_jAQXAGM9EeOY3OClxpdOXw" name="port">
+        <cardinality xmi:id="_jASMMGM9EeOY3OClxpdOXw">
+          <lowerBound xmi:id="_j0AIIGM9EeOY3OClxpdOXw"/>
+          <upperBound xmi:id="_j0EZkGM9EeOY3OClxpdOXw"/>
+        </cardinality>
+      </ports>
+    </modelElements>
+    <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_TvGtoEuCEeOVEI54_T8KSA" name="Sensor">
+      <ports xsi:type="component:ContinuousPort" xmi:id="_WU6SQEuCEeOVEI54_T8KSA" name="temp" dataType="_tEUJFipqEeOJnb1xCalP4w"/>
+    </modelElements>
+    <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_UviqcGM9EeOY3OClxpdOXw" name="MasterControl"/>
+    <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_V_RM8GM9EeOY3OClxpdOXw" name="SlaveControl"/>
+  </categories>
+  <categories xmi:id="_OVeAsCprEeOJnb1xCalP4w" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol">
+    <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_SydpECpuEeOJnb1xCalP4w" name="PeriodicTransmission">
+      <roles xmi:id="_SydpESpuEeOJnb1xCalP4w" connectors="_SydpGSpuEeOJnb1xCalP4w" name="sender" senderMessageTypes="_fImmsCprEeOJnb1xCalP4w">
+        <cardinality xmi:id="_SydpEipuEeOJnb1xCalP4w">
+          <lowerBound xmi:id="_SydpEypuEeOJnb1xCalP4w"/>
+          <upperBound xmi:id="_SydpFCpuEeOJnb1xCalP4w"/>
+        </cardinality>
+      </roles>
+      <roles xmi:id="_SydpFSpuEeOJnb1xCalP4w" connectors="_SydpGSpuEeOJnb1xCalP4w" name="receiver" receiverMessageTypes="_fImmsCprEeOJnb1xCalP4w">
+        <cardinality xmi:id="_SydpFipuEeOJnb1xCalP4w">
+          <lowerBound xmi:id="_fPZCkGM_EeOY3OClxpdOXw"/>
+          <upperBound xmi:id="_fPcF4GM_EeOY3OClxpdOXw"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_dqj0ACpuEeOJnb1xCalP4w" messageType="_fImmsCprEeOJnb1xCalP4w"/>
+      </roles>
+      <roleConnector xmi:id="_SydpGSpuEeOJnb1xCalP4w" connectorEndpoints="_SydpESpuEeOJnb1xCalP4w _SydpFSpuEeOJnb1xCalP4w">
+        <connectorQualityOfServiceAssumptions xmi:id="_SymzACpuEeOJnb1xCalP4w" comment="">
+          <minMessageDelay xmi:id="_rduB4CpuEeOJnb1xCalP4w" unit="MICROSECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_ggSpwGM_EeOY3OClxpdOXw" value="0"/>
+          </minMessageDelay>
+          <maxMessageDelay xmi:id="_pam6oCpuEeOJnb1xCalP4w" unit="MICROSECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_g-7GgGM_EeOY3OClxpdOXw" value="0"/>
+          </maxMessageDelay>
+        </connectorQualityOfServiceAssumptions>
+      </roleConnector>
+    </modelElements>
+    <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_vQX0ICpuEeOJnb1xCalP4w" name="LimitObservation">
+      <roles xmi:id="_vQg-ECpuEeOJnb1xCalP4w" connectors="_vQg-GCpuEeOJnb1xCalP4w" name="provider" senderMessageTypes="_5MT40CpuEeOJnb1xCalP4w _6UIcgCpuEeOJnb1xCalP4w">
+        <cardinality xmi:id="_vQg-ESpuEeOJnb1xCalP4w">
+          <lowerBound xmi:id="_vQg-EipuEeOJnb1xCalP4w"/>
+          <upperBound xmi:id="_vQg-EypuEeOJnb1xCalP4w"/>
+        </cardinality>
+      </roles>
+      <roles xmi:id="_vQg-FCpuEeOJnb1xCalP4w" connectors="_vQg-GCpuEeOJnb1xCalP4w" name="observer" receiverMessageTypes="_5MT40CpuEeOJnb1xCalP4w _6UIcgCpuEeOJnb1xCalP4w">
+        <cardinality xmi:id="_vQg-FSpuEeOJnb1xCalP4w">
+          <lowerBound xmi:id="_vQg-FipuEeOJnb1xCalP4w"/>
+          <upperBound xmi:id="_vQg-FypuEeOJnb1xCalP4w"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_0ewIECpvEeOJnb1xCalP4w" messageType="_5MT40CpuEeOJnb1xCalP4w _6UIcgCpuEeOJnb1xCalP4w"/>
+      </roles>
+      <roleConnector xmi:id="_vQg-GCpuEeOJnb1xCalP4w" connectorEndpoints="_vQg-ECpuEeOJnb1xCalP4w _vQg-FCpuEeOJnb1xCalP4w">
+        <connectorQualityOfServiceAssumptions xmi:id="_vQg-GSpuEeOJnb1xCalP4w" comment="">
+          <minMessageDelay xmi:id="__2USsCpuEeOJnb1xCalP4w" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_cWJkkGM_EeOY3OClxpdOXw" value="0"/>
+          </minMessageDelay>
+          <maxMessageDelay xmi:id="_-swCkCpuEeOJnb1xCalP4w" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_bYxWUGM_EeOY3OClxpdOXw" value="0"/>
+          </maxMessageDelay>
+        </connectorQualityOfServiceAssumptions>
+      </roleConnector>
+    </modelElements>
+    <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_JmggwCp3EeOJnb1xCalP4w" name="FailOperationalDelegation">
+      <roles xmi:id="_JmpqsCp3EeOJnb1xCalP4w" connectors="_JmpquCp3EeOJnb1xCalP4w" name="master" senderMessageTypes="_XCuOQCp3EeOJnb1xCalP4w" receiverMessageTypes="_aUb2oCp3EeOJnb1xCalP4w _Zw2BYCp3EeOJnb1xCalP4w">
+        <cardinality xmi:id="_JmpqsSp3EeOJnb1xCalP4w">
+          <lowerBound xmi:id="_Jmpqsip3EeOJnb1xCalP4w"/>
+          <upperBound xmi:id="_Jmpqsyp3EeOJnb1xCalP4w"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_1iHv8Cp3EeOJnb1xCalP4w" messageType="_aUb2oCp3EeOJnb1xCalP4w"/>
+        <receiverMessageBuffer xmi:id="_4nygYCp3EeOJnb1xCalP4w" messageType="_Zw2BYCp3EeOJnb1xCalP4w"/>
+      </roles>
+      <roles xmi:id="_JmpqtCp3EeOJnb1xCalP4w" connectors="_JmpquCp3EeOJnb1xCalP4w" name="slave" senderMessageTypes="_Zw2BYCp3EeOJnb1xCalP4w _aUb2oCp3EeOJnb1xCalP4w" receiverMessageTypes="_XCuOQCp3EeOJnb1xCalP4w">
+        <cardinality xmi:id="_JmpqtSp3EeOJnb1xCalP4w">
+          <lowerBound xmi:id="_Jmpqtip3EeOJnb1xCalP4w"/>
+          <upperBound xmi:id="_Jmpqtyp3EeOJnb1xCalP4w"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_7jUdYCp3EeOJnb1xCalP4w" messageType="_XCuOQCp3EeOJnb1xCalP4w"/>
+      </roles>
+      <roleConnector xmi:id="_JmpquCp3EeOJnb1xCalP4w" connectorEndpoints="_JmpqsCp3EeOJnb1xCalP4w _JmpqtCp3EeOJnb1xCalP4w">
+        <connectorQualityOfServiceAssumptions xmi:id="_JmpquSp3EeOJnb1xCalP4w" comment="">
+          <minMessageDelay xmi:id="_zyEuoCp3EeOJnb1xCalP4w" unit="MILLISECONDS"/>
+          <maxMessageDelay xmi:id="_yb93UCp3EeOJnb1xCalP4w" unit="MILLISECONDS"/>
+        </connectorQualityOfServiceAssumptions>
+      </roleConnector>
+    </modelElements>
+    <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_7BOcsGM9EeOY3OClxpdOXw" name="Fail-SafeDelegation">
+      <roles xmi:id="_7BVKYGM9EeOY3OClxpdOXw" connectors="_7BYNsGM9EeOY3OClxpdOXw" name="master">
+        <cardinality xmi:id="_7BVxcGM9EeOY3OClxpdOXw">
+          <lowerBound xmi:id="_7BVxcWM9EeOY3OClxpdOXw"/>
+          <upperBound xmi:id="_7BWYgGM9EeOY3OClxpdOXw"/>
+        </cardinality>
+      </roles>
+      <roles xmi:id="_7BW_kGM9EeOY3OClxpdOXw" connectors="_7BYNsGM9EeOY3OClxpdOXw" name="slave">
+        <cardinality xmi:id="_7BXmoGM9EeOY3OClxpdOXw">
+          <lowerBound xmi:id="_T2fQoGM_EeOY3OClxpdOXw"/>
+          <upperBound xmi:id="_T2gewGM_EeOY3OClxpdOXw"/>
+        </cardinality>
+      </roles>
+      <roleConnector xmi:id="_7BYNsGM9EeOY3OClxpdOXw" connectorEndpoints="_7BVKYGM9EeOY3OClxpdOXw _7BW_kGM9EeOY3OClxpdOXw">
+        <connectorQualityOfServiceAssumptions xmi:id="_7BaC4GM9EeOY3OClxpdOXw" comment=""/>
+      </roleConnector>
+    </modelElements>
+    <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_Mo_5wGNAEeOY3OClxpdOXw" name="Alternating-Lock">
+      <roles xmi:id="_MpCWAGNAEeOY3OClxpdOXw" connectors="_MpC9EGNAEeOY3OClxpdOXw" behavior="_mYSF8WNBEeOY3OClxpdOXw" name="ressource" senderMessageTypes="_25-zIGNAEeOY3OClxpdOXw" receiverMessageTypes="_4_oRAGNAEeOY3OClxpdOXw">
+        <cardinality xmi:id="_MpCWAWNAEeOY3OClxpdOXw">
+          <lowerBound xmi:id="_2RmIAGNBEeOY3OClxpdOXw"/>
+          <upperBound xmi:id="_2RsOoGNBEeOY3OClxpdOXw"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_gV33kGNBEeOY3OClxpdOXw" messageType="_4_oRAGNAEeOY3OClxpdOXw">
+          <bufferSize xmi:id="_hjSF4GNBEeOY3OClxpdOXw"/>
+        </receiverMessageBuffer>
+      </roles>
+      <roles xmi:id="_MpCWBGNAEeOY3OClxpdOXw" connectors="_MpC9EGNAEeOY3OClxpdOXw" behavior="_BnfpQGNCEeOY3OClxpdOXw" name="consumer" senderMessageTypes="_4_oRAGNAEeOY3OClxpdOXw" receiverMessageTypes="_25-zIGNAEeOY3OClxpdOXw">
+        <cardinality xmi:id="_MpCWBWNAEeOY3OClxpdOXw">
+          <lowerBound xmi:id="_jo1dIGNBEeOY3OClxpdOXw"/>
+          <upperBound xmi:id="_jo2rQGNBEeOY3OClxpdOXw"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_ipk_kGNBEeOY3OClxpdOXw" messageType="_25-zIGNAEeOY3OClxpdOXw">
+          <bufferSize xmi:id="_jbHxQGNBEeOY3OClxpdOXw"/>
+        </receiverMessageBuffer>
+      </roles>
+      <roleConnector xmi:id="_MpC9EGNAEeOY3OClxpdOXw" connectorEndpoints="_MpCWAGNAEeOY3OClxpdOXw _MpCWBGNAEeOY3OClxpdOXw">
+        <connectorQualityOfServiceAssumptions xmi:id="_MpC9EWNAEeOY3OClxpdOXw" comment="">
+          <minMessageDelay xmi:id="_cwcpAGNBEeOY3OClxpdOXw" unit="SECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_dGH-EGNBEeOY3OClxpdOXw" value="0"/>
+          </minMessageDelay>
+          <maxMessageDelay xmi:id="_eJUgcGNBEeOY3OClxpdOXw" unit="SECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_eWojsGNBEeOY3OClxpdOXw" value="0"/>
+          </maxMessageDelay>
+        </connectorQualityOfServiceAssumptions>
+      </roleConnector>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_bJzO0CprEeOJnb1xCalP4w" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype">
+    <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_b8cMsCprEeOJnb1xCalP4w" name="PeriodicTransmission">
+      <messageTypes xmi:id="_fImmsCprEeOJnb1xCalP4w" name="data">
+        <parameters xmi:id="_gczZgCprEeOJnb1xCalP4w" name="dataValue" dataType="_tEUJFipqEeOJnb1xCalP4w"/>
+      </messageTypes>
+    </modelElements>
+    <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_3MMbMCpuEeOJnb1xCalP4w" name="lim-obs_provider-to-observer">
+      <messageTypes xmi:id="_5MT40CpuEeOJnb1xCalP4w" name="limitViolated"/>
+      <messageTypes xmi:id="_6UIcgCpuEeOJnb1xCalP4w" name="limitRedeemed"/>
+    </modelElements>
+    <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_UXIxwCp3EeOJnb1xCalP4w" name="fo-delegation_master-to-slave">
+      <messageTypes xmi:id="_XCuOQCp3EeOJnb1xCalP4w" name="order">
+        <parameters xmi:id="_fEeeMCp3EeOJnb1xCalP4w" name="value" dataType="_tEUJGCpqEeOJnb1xCalP4w"/>
+      </messageTypes>
+    </modelElements>
+    <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_X4zhsCp3EeOJnb1xCalP4w" name="fo-delgation_slave-to-master">
+      <messageTypes xmi:id="_Zw2BYCp3EeOJnb1xCalP4w" name="done"/>
+      <messageTypes xmi:id="_aUb2oCp3EeOJnb1xCalP4w" name="fail"/>
+    </modelElements>
+    <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_2u7PIGM_EeOY3OClxpdOXw" name="fs-delegation_master-to-slave">
+      <messageTypes xmi:id="_600GcGM_EeOY3OClxpdOXw" name="order"/>
+      <messageTypes xmi:id="_7mh3QGM_EeOY3OClxpdOXw" name="continue"/>
+    </modelElements>
+    <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_9il7UGM_EeOY3OClxpdOXw" name="fs-delegation_master-to-slave">
+      <messageTypes xmi:id="__FNkoGM_EeOY3OClxpdOXw" name="done"/>
+      <messageTypes xmi:id="_AXkkYGNAEeOY3OClxpdOXw" name="fail"/>
+    </modelElements>
+    <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_wzG7gGNAEeOY3OClxpdOXw" name="Alternating-Lock">
+      <messageTypes xmi:id="_25-zIGNAEeOY3OClxpdOXw" name="freeRessource"/>
+      <messageTypes xmi:id="_4_oRAGNAEeOY3OClxpdOXw" name="blockRessource"/>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_mYSF8GNBEeOY3OClxpdOXw" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_mYSF8WNBEeOY3OClxpdOXw" name="AlternatingLock_ressource" behavioralElement="_MpCWAGNAEeOY3OClxpdOXw">
+      <transitions xmi:id="_uP6JgGNBEeOY3OClxpdOXw" priority="1" target="_sfbqYGNBEeOY3OClxpdOXw" source="_mYSF8mNBEeOY3OClxpdOXw">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_3kMYUGNBEeOY3OClxpdOXw">
+          <message xmi:id="_30T38GNBEeOY3OClxpdOXw" instanceOf="_25-zIGNAEeOY3OClxpdOXw"/>
+        </events>
+      </transitions>
+      <transitions xmi:id="_uuMA8GNBEeOY3OClxpdOXw" priority="1" target="_mYSF8mNBEeOY3OClxpdOXw" source="_sfbqYGNBEeOY3OClxpdOXw">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_6mP0EGNBEeOY3OClxpdOXw" kind="TRIGGER">
+          <message xmi:id="_640x0GNBEeOY3OClxpdOXw" instanceOf="_4_oRAGNAEeOY3OClxpdOXw"/>
+        </events>
+      </transitions>
+      <states xmi:id="_mYSF8mNBEeOY3OClxpdOXw" name="RessourceBlocked" outgoingTransitions="_uP6JgGNBEeOY3OClxpdOXw" incomingTransitions="_uuMA8GNBEeOY3OClxpdOXw" initial="true"/>
+      <states xmi:id="_sfbqYGNBEeOY3OClxpdOXw" name="RessourceFree" outgoingTransitions="_uuMA8GNBEeOY3OClxpdOXw" incomingTransitions="_uP6JgGNBEeOY3OClxpdOXw"/>
+    </modelElements>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_BnfpQGNCEeOY3OClxpdOXw" name="AlternatingLock_consumer" behavioralElement="_MpCWBGNAEeOY3OClxpdOXw">
+      <transitions xmi:id="_BnfpQWNCEeOY3OClxpdOXw" priority="1" target="_BnfpSGNCEeOY3OClxpdOXw" source="_BnfpR2NCEeOY3OClxpdOXw">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_BnfpQmNCEeOY3OClxpdOXw" kind="TRIGGER">
+          <message xmi:id="_BnfpQ2NCEeOY3OClxpdOXw" instanceOf="_25-zIGNAEeOY3OClxpdOXw"/>
+        </events>
+      </transitions>
+      <transitions xmi:id="_BnfpRGNCEeOY3OClxpdOXw" priority="1" target="_BnfpR2NCEeOY3OClxpdOXw" source="_BnfpSGNCEeOY3OClxpdOXw">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_BnfpRWNCEeOY3OClxpdOXw">
+          <message xmi:id="_BnfpRmNCEeOY3OClxpdOXw" instanceOf="_4_oRAGNAEeOY3OClxpdOXw"/>
+        </events>
+      </transitions>
+      <states xmi:id="_BnfpR2NCEeOY3OClxpdOXw" name="RessourceBlocked" outgoingTransitions="_BnfpQWNCEeOY3OClxpdOXw" incomingTransitions="_BnfpRGNCEeOY3OClxpdOXw" initial="true"/>
+      <states xmi:id="_BnfpSGNCEeOY3OClxpdOXw" name="RessourceFree" outgoingTransitions="_BnfpRGNCEeOY3OClxpdOXw" incomingTransitions="_BnfpQWNCEeOY3OClxpdOXw"/>
+    </modelElements>
+  </categories>
+</modelinstance:RootNode>

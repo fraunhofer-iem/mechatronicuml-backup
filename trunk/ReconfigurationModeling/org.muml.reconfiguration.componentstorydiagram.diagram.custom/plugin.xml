@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
+      <editpartProvider
+            class="org.muml.reconfiguration.componentstorydiagram.diagram.custom.providers.CustomComponentStoryDiagramEditPartProvider">
+         <Priority
+               name="Low">
+         </Priority>
+      </editpartProvider>
+   </extension>
+   
+<extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+	      <metamodel nsURI="http://www.muml.org/reconfiguration/componentstorypattern/1.0.0">
+	         <adviceBinding
+                class="org.muml.reconfiguration.componentstorydiagram.diagram.custom.edit.helpers.SinglePortVariableEditHelperAdvice"
+                id="org.muml.reconfiguration.componentstorydiagram.diagram.SinglePortVariable_3017Advice"
+                inheritance="all"
+                typeId="org.muml.reconfiguration.componentstorydiagram.diagram.SinglePortVariable_3017">
+	         </adviceBinding>
+	      </metamodel>
+	    <metamodel nsURI="http://www.muml.org/reconfiguration/componentstorypattern/1.0.0">
+	         <adviceBinding
+                class="org.muml.reconfiguration.componentstorydiagram.diagram.custom.edit.helpers.SinglePortVariableEditHelperAdvice"
+                id="org.muml.reconfiguration.componentstorydiagram.diagram.SinglePortVariable_3018Advice"
+                inheritance="all"
+                typeId="org.muml.reconfiguration.componentstorydiagram.diagram.SinglePortVariable_3018">
+	         </adviceBinding>
+	      </metamodel>
+	      <metamodel nsURI="http://www.muml.org/reconfiguration/componentstorypattern/1.0.0">
+	         <adviceBinding
+                class="org.muml.reconfiguration.componentstorydiagram.diagram.custom.edit.helpers.SinglePortVariableEditHelperAdvice"
+                id="org.muml.reconfiguration.componentstorydiagram.diagram.SinglePortVariable_3020Advice"
+                inheritance="all"
+                typeId="org.muml.reconfiguration.componentstorydiagram.diagram.SinglePortVariable_3020">
+	         </adviceBinding>
+	      </metamodel>
+      </extension>
+      
+      <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
+      	<binding context="org.muml.reconfiguration.componentstorydiagram.diagram.TypeContext">
+      		<elementType ref="org.muml.reconfiguration.componentstorydiagram.diagram.SinglePortVariable_3017"/>
+      		<advice ref="org.muml.reconfiguration.componentstorydiagram.diagram.SinglePortVariable_3017Advice"/>
+      	</binding>
+      </extension>
+      
+      <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
+      	<binding context="org.muml.reconfiguration.componentstorydiagram.diagram.TypeContext">
+      		<elementType ref="org.muml.reconfiguration.componentstorydiagram.diagram.SinglePortVariable_3018"/>
+      		<advice ref="org.muml.reconfiguration.componentstorydiagram.diagram.SinglePortVariable_3018Advice"/>
+      	</binding>
+      </extension>
+      
+      <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
+      	<binding context="org.muml.reconfiguration.componentstorydiagram.diagram.TypeContext">
+      		<elementType ref="org.muml.reconfiguration.componentstorydiagram.diagram.SinglePortVariable_3020"/>
+      		<advice ref="org.muml.reconfiguration.componentstorydiagram.diagram.SinglePortVariable_3020Advice"/>
+      	</binding>
+      </extension>
+
+
+   <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
+      <viewProvider class="org.muml.reconfiguration.componentstorydiagram.diagram.custom.providers.CustomComponentStoryDiagramViewProvider">
+         <Priority name="Low"/>
+      </viewProvider>
+   </extension>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs contributorId="org.muml.ape.contributor">
+          <propertyTab
+                afterTab="property.tab.domain"
+                category="domain"
+                id="general"
+                label="Expression"/>
+
+      </propertyTabs>
+   </extension>
+
+<!-- deactivated, because current implementation in SDM throws many exceptions
+   <extension
+         id="activities"
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <propertySections
+            contributorId="org.muml.ape.contributor">
+         <propertySection
+               class="org.muml.reconfiguration.componentstorydiagram.diagram.custom.properties.sections.ActivityFinalNodeExpressionSection"
+               filter="org.muml.reconfiguration.componentstorydiagram.diagram.custom.properties.filters.ActivityFinalNodeFilter"
+               id="ActivityFinalNode.expression"
+               tab="general">
+         </propertySection>
+      </propertySections>
+   </extension>
+-->
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+      <propertyContributor
+            contributorId="org.muml.ape.contributor"
+            labelProvider="org.muml.reconfiguration.componentstorydiagram.diagram.custom.properties.StorydiagramsPropertiesLabelProvider">
+         <propertyCategory category="domain"/>
+         <propertyCategory
+               category="diagram">
+         </propertyCategory>
+      </propertyContributor>
+   </extension>
+   <extension
+         point="org.eclipse.gmf.runtime.diagram.ui.editpolicyProviders">
+      <editpolicyProvider
+            class="org.muml.reconfiguration.componentstorydiagram.diagram.custom.providers.CustomComponentStoryDiagramEditPolicyProvider">
+         <Priority
+               name="Low">
+         </Priority>
+      </editpolicyProvider>
+   </extension>
+
+</plugin>
+

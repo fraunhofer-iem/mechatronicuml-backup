@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Mtctl -->
+      <package
+            uri="http://www.muml.org/uppaal/adapter/mtctl/1.0.0"
+            class="org.muml.uppaal.adapter.mtctl.MtctlPackage"
+            genModel="model/Mtctl.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Mtctl -->
+      <package
+            uri="http://www.muml.org/uppaal/adapter/mtctl/quantifiers/1.0.0"
+            class="org.muml.uppaal.adapter.mtctl.quantifiers.QuantifiersPackage"
+            genModel="model/Mtctl.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Mtctl -->
+      <package
+            uri="http://www.muml.org/uppaal/adapter/mtctl/predicates/1.0.0"
+            class="org.muml.uppaal.adapter.mtctl.predicates.PredicatesPackage"
+            genModel="model/Mtctl.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Mtctl -->
+      <package
+            uri="http://www.muml.org/uppaal/adapter/mtctl/sets/1.0.0"
+            class="org.muml.uppaal.adapter.mtctl.sets.SetsPackage"
+            genModel="model/Mtctl.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Mtctl -->
+      <package
+            uri="http://www.muml.org/uppaal/adapter/mtctl/booleanlogic/1.0.0"
+            class="org.muml.uppaal.adapter.mtctl.booleanlogic.BooleanlogicPackage"
+            genModel="model/Mtctl.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Mtctl -->
+      <package
+            uri="http://www.muml.org/uppaal/adapter/mtctl/comparables/1.0.0"
+            class="org.muml.uppaal.adapter.mtctl.comparables.ComparablesPackage"
+            genModel="model/Mtctl.genmodel"/>
+   </extension>
+   <extension
+         point="org.muml.emm.migrator">
+      <Migrator
+            file="model/Mtctl.migrator">
+      </Migrator>
+   </extension>
+</plugin>

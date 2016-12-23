@@ -1,0 +1,40 @@
+transformation propsheet(inout properties : Properties);
+
+modeltype genmodel uses genmodel('http://www.eclipse.org/emf/2002/GenModel');
+modeltype ecore uses ecore ('http://www.eclipse.org/emf/2002/Ecore');
+modeltype Properties uses ape('http://www.muml.org/ape/1.0.0');
+
+main() {
+	properties.rootObjects()[PropertyGenerator]->map generator();
+}
+
+mapping inout PropertyGenerator::generator() {
+	self.plugin.requiredBundles += "org.muml.pim.actionlanguage.xtext.ui";
+
+	self.packages.classes.properties->select(p | p.genFeature.ecoreFeature.eType.name = 'Expression')->forEach(prop) {
+		if (prop.reconcile != false) then {
+			-- make sure the default reconciler does not change this back to ObjectPropertyEditor
+			-- normally no problem (because we would change it back), but the editor would become dirty
+			-- without an understandable reason for the user
+			prop.reconcile := false;
+		} endif;
+		
+		--if (not prop.category.oclIsUndefined()) then {
+		--	prop.category := null;
+		--} endif;
+		--prop.category := null;
+
+
+		if (prop.editor[CustomPropertyEditor]->select(editor | editor.fullyQualifiedClassName = 'org.muml.pim.actionlanguage.xtext.ui.properties.XtextPropertyEditor')->isEmpty()) then {
+			prop->map createXtextEditor();
+		} endif;
+	}
+}
+
+mapping inout Property::createXtextEditor() {
+	self.editor := new CustomPropertyEditor("org.muml.pim.actionlanguage.xtext.ui.properties.XtextPropertyEditor");
+}
+
+constructor CustomPropertyEditor::CustomPropertyEditor(className : String) {
+	fullyQualifiedClassName := className;
+}

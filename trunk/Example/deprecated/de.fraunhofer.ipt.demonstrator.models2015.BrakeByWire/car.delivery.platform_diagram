@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:hwplatform="http://www.fujaba.de/muml/hardware/hwplatform/1.0/" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_adYPQOmWEeSsPdK-DtuwOA" type="Platform" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_aiq-8OmWEeSsPdK-DtuwOA" type="2008" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_airmAOmWEeSsPdK-DtuwOA" type="5050"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_airmAemWEeSsPdK-DtuwOA" type="7002">
+      <children xmi:type="notation:Shape" xmi:id="_dJnMAOmWEeSsPdK-DtuwOA" type="3016" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_dJnzEOmWEeSsPdK-DtuwOA" type="5041"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_dJnzEemWEeSsPdK-DtuwOA" type="5042"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_dJnzEumWEeSsPdK-DtuwOA" type="5043"/>
+        <children xmi:type="notation:Shape" xmi:id="_dtO2cOmWEeSsPdK-DtuwOA" type="3022" fontName="Segoe UI" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_dtPdgOmWEeSsPdK-DtuwOA" type="5053">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_dtPdgemWEeSsPdK-DtuwOA" y="5"/>
+          </children>
+          <element xmi:type="hwplatform:HWPortPart" href="de.fraunhofer.ipt.demonstrator.models2015.fujaba#_dtNBQOmWEeSsPdK-DtuwOA"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dtO2cemWEeSsPdK-DtuwOA"/>
+        </children>
+        <element xmi:type="hwplatform:HWPlatformPart" href="de.fraunhofer.ipt.demonstrator.models2015.fujaba#_dJlW0OmWEeSsPdK-DtuwOA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dJnMAemWEeSsPdK-DtuwOA" x="45" y="38" width="193" height="85"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_jEhrQOmWEeSsPdK-DtuwOA" type="3016" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_jEhrQumWEeSsPdK-DtuwOA" type="5041"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_jEhrQ-mWEeSsPdK-DtuwOA" type="5042"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_jEhrROmWEeSsPdK-DtuwOA" type="5043"/>
+        <children xmi:type="notation:Shape" xmi:id="_j0aQEOmWEeSsPdK-DtuwOA" type="3022" fontName="Segoe UI" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_j0aQEumWEeSsPdK-DtuwOA" type="5053">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_j0aQE-mWEeSsPdK-DtuwOA" y="5"/>
+          </children>
+          <element xmi:type="hwplatform:HWPortPart" href="de.fraunhofer.ipt.demonstrator.models2015.fujaba#_j0Xz0OmWEeSsPdK-DtuwOA"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_j0aQEemWEeSsPdK-DtuwOA"/>
+        </children>
+        <element xmi:type="hwplatform:HWPlatformPart" href="de.fraunhofer.ipt.demonstrator.models2015.fujaba#_jEfPAOmWEeSsPdK-DtuwOA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jEhrQemWEeSsPdK-DtuwOA" x="33" y="194" width="133" height="73"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_lK0CUOmWEeSsPdK-DtuwOA" type="3016" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_lK0CUumWEeSsPdK-DtuwOA" type="5041"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_lK0CU-mWEeSsPdK-DtuwOA" type="5042"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_lK0CVOmWEeSsPdK-DtuwOA" type="5043"/>
+        <children xmi:type="notation:Shape" xmi:id="_mix60OmWEeSsPdK-DtuwOA" type="3022" fontName="Segoe UI" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_miyh4emWEeSsPdK-DtuwOA" type="5053">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_miyh4umWEeSsPdK-DtuwOA" y="5"/>
+          </children>
+          <element xmi:type="hwplatform:HWPortPart" href="de.fraunhofer.ipt.demonstrator.models2015.fujaba#_miwFoOmWEeSsPdK-DtuwOA"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_miyh4OmWEeSsPdK-DtuwOA" x="12" y="-12"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_miyh4-mWEeSsPdK-DtuwOA" type="3022" fontName="Segoe UI" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_mizI8OmWEeSsPdK-DtuwOA" type="5053">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_mizI8emWEeSsPdK-DtuwOA" y="5"/>
+          </children>
+          <element xmi:type="hwplatform:HWPortPart" href="de.fraunhofer.ipt.demonstrator.models2015.fujaba#_miwFoemWEeSsPdK-DtuwOA"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_miyh5OmWEeSsPdK-DtuwOA" x="12" y="-12"/>
+        </children>
+        <element xmi:type="hwplatform:HWPlatformPart" href="de.fraunhofer.ipt.demonstrator.models2015.fujaba#_lKyNIOmWEeSsPdK-DtuwOA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lK0CUemWEeSsPdK-DtuwOA" x="273" y="206" width="121" height="73"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_oN5_4OmWEeSsPdK-DtuwOA" type="3014" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_oN6m8OmWEeSsPdK-DtuwOA" type="5037"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_oN6m8emWEeSsPdK-DtuwOA" type="5038"/>
+        <element xmi:type="hwplatform:BusPart" href="de.fraunhofer.ipt.demonstrator.models2015.fujaba#_oNvn0OmWEeSsPdK-DtuwOA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oN5_4emWEeSsPdK-DtuwOA" x="441" y="98" width="229" height="73"/>
+      </children>
+    </children>
+    <element xmi:type="hwplatform:HWPlatform" href="de.fraunhofer.ipt.demonstrator.models2015.fujaba#_adXoMOmWEeSsPdK-DtuwOA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aiq-8emWEeSsPdK-DtuwOA" width="829"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_adYPQemWEeSsPdK-DtuwOA"/>
+  <element xmi:type="hwplatform:HWPlatform" href="de.fraunhofer.ipt.demonstrator.models2015.fujaba#_adXoMOmWEeSsPdK-DtuwOA"/>
+  <edges xmi:type="notation:Connector" xmi:id="_pRF7MOmWEeSsPdK-DtuwOA" type="4030" source="_mix60OmWEeSsPdK-DtuwOA" target="_oN5_4OmWEeSsPdK-DtuwOA" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_pRF7MemWEeSsPdK-DtuwOA" fontName="Segoe UI"/>
+    <element xmi:type="hwplatform:BusConnector" href="de.fraunhofer.ipt.demonstrator.models2015.fujaba#_pREtEOmWEeSsPdK-DtuwOA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_pRF7MumWEeSsPdK-DtuwOA" points="[12, -4, -246, 68]$[259, -54, 1, 18]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_pyh0UOmWEeSsPdK-DtuwOA" type="4030" source="_miyh4-mWEeSsPdK-DtuwOA" target="_oN5_4OmWEeSsPdK-DtuwOA" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_pyh0UemWEeSsPdK-DtuwOA" fontName="Segoe UI"/>
+    <element xmi:type="hwplatform:BusConnector" href="de.fraunhofer.ipt.demonstrator.models2015.fujaba#_pyf_IOmWEeSsPdK-DtuwOA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_pyh0UumWEeSsPdK-DtuwOA" points="[5, -2, -270, 87]$[199, -79, -76, 10]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_pyjpgOmWEeSsPdK-DtuwOA" id="(0.7916666666666666,0.20833333333333334)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_qPigcOmWEeSsPdK-DtuwOA" type="4030" source="_dtO2cOmWEeSsPdK-DtuwOA" target="_oN5_4OmWEeSsPdK-DtuwOA" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_qPigcemWEeSsPdK-DtuwOA" fontName="Segoe UI"/>
+    <element xmi:type="hwplatform:BusConnector" href="de.fraunhofer.ipt.demonstrator.models2015.fujaba#_qPgrQOmWEeSsPdK-DtuwOA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_qPigcumWEeSsPdK-DtuwOA" points="[3, 0, -305, -40]$[232, 41, -76, 1]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_qPkVoOmWEeSsPdK-DtuwOA" id="(0.875,0.5833333333333334)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_qpGP8OmWEeSsPdK-DtuwOA" type="4030" source="_j0aQEOmWEeSsPdK-DtuwOA" target="_oN5_4OmWEeSsPdK-DtuwOA" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_qpGP8emWEeSsPdK-DtuwOA" fontName="Segoe UI"/>
+    <element xmi:type="hwplatform:BusConnector" href="de.fraunhofer.ipt.demonstrator.models2015.fujaba#_qpEawOmWEeSsPdK-DtuwOA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_qpGP8umWEeSsPdK-DtuwOA" points="[12, -3, -377, 105]$[504, -108, 115, 0]"/>
+  </edges>
+</notation:Diagram>

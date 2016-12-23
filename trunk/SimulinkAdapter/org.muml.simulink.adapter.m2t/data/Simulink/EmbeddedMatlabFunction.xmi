@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="ASCII"?>
+<model:SimulinkContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://www.muml.org/simulink/1.0.0" id="_wy48kEs2EeGu8J0uOyzC3g">
+  <models id="_w1JmYEs2EeGu8J0uOyzC3g" name="EmbeddedMatlabFunction">
+    <parameters name="ExtModeEnableFloating" value="on"/>
+    <parameters name="ScopeRefreshTime" value="0.035000"/>
+    <parameters name="RTWModifiedTimeStamp" value="249826613"/>
+    <parameters name="LastModifiedDate" value="Mon Jan 30 12:17:08 2012"/>
+    <parameters name="ShowPortDataTypes" value="off"/>
+    <parameters name="LastModifiedBy" value="dread"/>
+    <parameters name="AccelSystemTargetFile" value="accel.tlc"/>
+    <parameters name="CovNameIncrementing" value="off"/>
+    <parameters name="MinMaxOverflowArchiveMode" value="Overwrite"/>
+    <parameters name="ModifiedByFormat" value="%&lt;Auto>"/>
+    <parameters name="WideLines" value="off"/>
+    <parameters name="BrowserLookUnderMasks" value="off"/>
+    <parameters name="ShowSignalResolutionIcons" value="on"/>
+    <parameters name="SaveDefaultBlockParams" value="on"/>
+    <parameters name="SampleTimeAnnotations" value="off"/>
+    <parameters name="CovExternalEMLEnable" value="off"/>
+    <parameters name="ShowModelReferenceBlockVersion" value="off"/>
+    <parameters name="BlockNameDataTip" value="off"/>
+    <parameters name="MdlSubVersion" value="0"/>
+    <parameters name="CovHtmlReporting" value="on"/>
+    <parameters name="ShowModelReferenceBlockIO" value="off"/>
+    <parameters name="Version" value="7.4"/>
+    <parameters name="SampleTimeColors" value="off"/>
+    <parameters name="ExtModeTrigDirection" value="rising"/>
+    <parameters name="BlockDescriptionStringDataTip" value="off"/>
+    <parameters name="ExtModeTrigLevel" value="0"/>
+    <parameters name="CovCumulativeReport" value="off"/>
+    <parameters name="ExtModeArchiveMode" value="off"/>
+    <parameters name="SavedCharacterEncoding" value="UTF-8"/>
+    <parameters name="DisableAllScopes" value="off"/>
+    <parameters name="CovSaveName" value="covdata"/>
+    <parameters name="ToolBar" value="on"/>
+    <parameters name="Profile" value="off"/>
+    <parameters name="ExtModeTrigPort" value="1"/>
+    <parameters name="ExtModeIncDirWhenArm" value="off"/>
+    <parameters name="CovSaveSingleToWorkspaceVar" value="on"/>
+    <parameters name="CovModelRefEnable" value="Off"/>
+    <parameters name="ExtModeArmWhenConnect" value="on"/>
+    <parameters name="ShowStorageClass" value="off"/>
+    <parameters name="ParamWorkspaceSource" value="MATLABWorkspace"/>
+    <parameters name="SortedOrder" value="off"/>
+    <parameters name="IgnoreBidirectionalLines" value="off"/>
+    <parameters name="RecordCoverage" value="off"/>
+    <parameters name="ModifiedDateFormat" value="%&lt;Auto>"/>
+    <parameters name="SimulationMode" value="normal"/>
+    <parameters name="ExtModeTrigDuration" value="1000"/>
+    <parameters name="ExtModeAutoUpdateStatusClock" value="on"/>
+    <parameters name="ExtModeLogAll" value="on"/>
+    <parameters name="LinearizationMsg" value="none"/>
+    <parameters name="StatusBar" value="on"/>
+    <parameters name="ExtModeTrigType" value="manual"/>
+    <parameters name="BrowserShowLibraryLinks" value="off"/>
+    <parameters name="ExecutionContextIcon" value="off"/>
+    <parameters name="DataTypeOverride" value="UseLocalSettings"/>
+    <parameters name="CovPath" value="/"/>
+    <parameters name="CovForceBlockReductionOff" value="on"/>
+    <parameters name="ShowViewerIcons" value="on"/>
+    <parameters name="ExtModeTrigElement" value="any"/>
+    <parameters name="Created" value="Sun Nov  6 16:42:16 2011"/>
+    <parameters name="TryForcingSFcnDF" value="off"/>
+    <parameters name="ExtModeTrigDurationFloating" value="auto"/>
+    <parameters name="AccelTemplateMakefile" value="accel_default_tmf"/>
+    <parameters name="ExtModeWriteAllDataToWs" value="off"/>
+    <parameters name="UpdateHistory" value="UpdateHistoryNever"/>
+    <parameters name="CovMetricSettings" value="dw"/>
+    <parameters name="OverrideScopeRefreshTime" value="on"/>
+    <parameters name="ExtModeAddSuffixToVar" value="off"/>
+    <parameters name="ShowLineDimensions" value="off"/>
+    <parameters name="Creator" value="dread"/>
+    <parameters name="ExtModeTrigHoldOff" value="0"/>
+    <parameters name="ExtModeTrigMode" value="normal"/>
+    <parameters name="ShowLoopsOnError" value="on"/>
+    <parameters name="CovCumulativeVarName" value="covCumulativeData"/>
+    <parameters name="BlockParametersDataTip" value="off"/>
+    <parameters name="MinMaxOverflowLogging" value="UseLocalSettings"/>
+    <parameters name="covSaveCumulativeToWorkspaceVar" value="on"/>
+    <parameters name="BufferReuse" value="on"/>
+    <parameters name="ShowLinearizationAnnotations" value="on"/>
+    <parameters name="ConfigurationManager" value="None"/>
+    <parameters name="MaxMDLFileLineLength" value="120"/>
+    <parameters name="ModelVersionFormat" value="1.%&lt;AutoIncrement:7>"/>
+    <parameters name="ShowTestPointIcons" value="on"/>
+    <parameters name="LibraryLinkDisplay" value="none"/>
+    <parameters name="ExtModeTrigDelay" value="0"/>
+    <parameters name="ExtModeAutoIncOneShot" value="off"/>
+    <parameters name="AccelMakeCommand" value="make_rtw"/>
+    <parameters name="CovReportOnPause" value="on"/>
+    <parameters name="ExtModeBatchMode" value="off"/>
+    <parameters name="ExtModeSkipDownloadWhenConnect" value="off"/>
+    <blocks xsi:type="model:EmbeddedMatlabFunction" id="_xBXdcEs2EeGu8J0uOyzC3g" name="Embedded\nMATLAB Function1" code="function y = fcn(u)\n%#eml\n\ny = u;">
+      <parameters name="System.ZoomFactor" value="100"/>
+      <parameters name="RTWSystemCode" value="Auto"/>
+      <parameters name="System.Name" value="Embedded\nMATLAB Function1"/>
+      <parameters name="PermitHierarchicalResolution" value="ExplicitOnly"/>
+      <parameters name="MaskPortRotate" value="default"/>
+      <parameters name="Opaque" value="off"/>
+      <parameters name="MaskIconOpaque" value="off"/>
+      <parameters name="MaskType" value="Stateflow"/>
+      <parameters name="System.SIDPrevWatermark" value="5"/>
+      <parameters name="System.PaperPositionMode" value="auto"/>
+      <parameters name="MaskDisplay" value="disp('fcn');"/>
+      <parameters name="System.ModelBrowserVisibility" value="off"/>
+      <parameters name="LibraryVersion" value="1.30"/>
+      <parameters name="BlockType" value="SubSystem"/>
+      <parameters name="MaskIconRotate" value="none"/>
+      <parameters name="MaskIconUnits" value="autoscale"/>
+      <parameters name="MinAlgLoopOccurrences" value="off"/>
+      <parameters name="System.ScreenColor" value="white"/>
+      <parameters name="MaskDescription" value="Embedded MATLAB block"/>
+      <parameters name="System.ShowPageBoundaries" value="off"/>
+      <parameters name="System.SIDHighWatermark" value="9"/>
+      <parameters name="System.Open" value="off"/>
+      <parameters name="System.PaperType" value="A4"/>
+      <parameters name="MaskSelfModifiable" value="on"/>
+      <parameters name="System.TiledPaperMargins" value="[1.270000, 1.270000, 1.270000, 1.270000]"/>
+      <parameters name="SID" value="2"/>
+      <parameters name="MaskHideContents" value="off"/>
+      <parameters name="System.Location" value="[257, 457, 812, 717]"/>
+      <parameters name="PropExecContextOutsideSubsystem" value="off"/>
+      <parameters name="RequestExecContextInheritance" value="off"/>
+      <parameters name="MaskIconFrame" value="on"/>
+      <parameters name="FunctionWithSeparateData" value="off"/>
+      <parameters name="System.ModelBrowserWidth" value="200"/>
+      <parameters name="System.PaperUnits" value="centimeters"/>
+      <parameters name="Position" value="[190, 47, 260, 93]"/>
+      <parameters name="System.PaperOrientation" value="landscape"/>
+      <parameters name="System.TiledPageScale" value="1"/>
+      <parameters name="Ports" value="[1, 1]"/>
+      <outPorts id="_xBkRwEs2EeGu8J0uOyzC3g" name="y" dimensions="-1" type="uint8">
+        <parameters name="SID" value="5"/>
+        <parameters name="IconDisplay" value="Port number"/>
+        <parameters name="OutDataType" value="sfix(16)"/>
+        <parameters name="OutScaling" value="2^0"/>
+        <parameters name="BlockType" value="Outport"/>
+        <parameters name="Position" value="[460, 101, 480, 119]"/>
+        <inPorts id="_xBk40Es2EeGu8J0uOyzC3g" name="In1"/>
+      </outPorts>
+      <inPorts id="_xBgnYEs2EeGu8J0uOyzC3g" name="u" dimensions="-1" type="uint8">
+        <parameters name="SID" value="1"/>
+        <parameters name="IconDisplay" value="Port number"/>
+        <parameters name="OutDataType" value="sfix(16)"/>
+        <parameters name="OutScaling" value="2^0"/>
+        <parameters name="BlockType" value="Inport"/>
+        <parameters name="Position" value="[20, 101, 40, 119]"/>
+        <outPorts id="_xBjqsEs2EeGu8J0uOyzC3g" name="Out1"/>
+      </inPorts>
+    </blocks>
+    <blocks xsi:type="model:EmbeddedMatlabFunction" id="_xBmG8Es2EeGu8J0uOyzC3g" name="Embedded\nMATLAB Function" code="function y = fcn(u)\n%#eml\n\ny = u;">
+      <parameters name="System.ZoomFactor" value="100"/>
+      <parameters name="RTWSystemCode" value="Auto"/>
+      <parameters name="System.Name" value="Embedded\nMATLAB Function"/>
+      <parameters name="PermitHierarchicalResolution" value="ExplicitOnly"/>
+      <parameters name="MaskPortRotate" value="default"/>
+      <parameters name="Opaque" value="off"/>
+      <parameters name="MaskIconOpaque" value="off"/>
+      <parameters name="MaskType" value="Stateflow"/>
+      <parameters name="System.SIDPrevWatermark" value="5"/>
+      <parameters name="System.PaperPositionMode" value="auto"/>
+      <parameters name="MaskDisplay" value="disp('fcn');"/>
+      <parameters name="System.ModelBrowserVisibility" value="off"/>
+      <parameters name="LibraryVersion" value="1.30"/>
+      <parameters name="BlockType" value="SubSystem"/>
+      <parameters name="MaskIconRotate" value="none"/>
+      <parameters name="MaskIconUnits" value="autoscale"/>
+      <parameters name="MinAlgLoopOccurrences" value="off"/>
+      <parameters name="System.ScreenColor" value="white"/>
+      <parameters name="MaskDescription" value="Embedded MATLAB block"/>
+      <parameters name="System.ShowPageBoundaries" value="off"/>
+      <parameters name="System.SIDHighWatermark" value="9"/>
+      <parameters name="System.Open" value="off"/>
+      <parameters name="System.PaperType" value="A4"/>
+      <parameters name="MaskSelfModifiable" value="on"/>
+      <parameters name="System.TiledPaperMargins" value="[1.270000, 1.270000, 1.270000, 1.270000]"/>
+      <parameters name="SID" value="1"/>
+      <parameters name="MaskHideContents" value="off"/>
+      <parameters name="System.Location" value="[257, 457, 812, 717]"/>
+      <parameters name="PropExecContextOutsideSubsystem" value="off"/>
+      <parameters name="RequestExecContextInheritance" value="off"/>
+      <parameters name="MaskIconFrame" value="on"/>
+      <parameters name="FunctionWithSeparateData" value="off"/>
+      <parameters name="System.ModelBrowserWidth" value="200"/>
+      <parameters name="System.PaperUnits" value="centimeters"/>
+      <parameters name="Position" value="[45, 47, 115, 93]"/>
+      <parameters name="System.PaperOrientation" value="landscape"/>
+      <parameters name="System.TiledPageScale" value="1"/>
+      <parameters name="Ports" value="[1, 1]"/>
+      <outPorts id="_xBrmgEs2EeGu8J0uOyzC3g" name="y" dimensions="-1" type="uint8">
+        <parameters name="SID" value="5"/>
+        <parameters name="IconDisplay" value="Port number"/>
+        <parameters name="OutDataType" value="sfix(16)"/>
+        <parameters name="OutScaling" value="2^0"/>
+        <parameters name="BlockType" value="Outport"/>
+        <parameters name="Position" value="[460, 101, 480, 119]"/>
+        <inPorts id="_xBsNkEs2EeGu8J0uOyzC3g" name="In1"/>
+      </outPorts>
+      <inPorts id="_xBqYYEs2EeGu8J0uOyzC3g" name="u" dimensions="-1" type="uint8">
+        <parameters name="SID" value="1"/>
+        <parameters name="IconDisplay" value="Port number"/>
+        <parameters name="OutDataType" value="sfix(16)"/>
+        <parameters name="OutScaling" value="2^0"/>
+        <parameters name="BlockType" value="Inport"/>
+        <parameters name="Position" value="[20, 101, 40, 119]"/>
+        <outPorts id="_xBq_cEs2EeGu8J0uOyzC3g" name="Out1"/>
+      </inPorts>
+    </blocks>
+  </models>
+</model:SimulinkContainer>

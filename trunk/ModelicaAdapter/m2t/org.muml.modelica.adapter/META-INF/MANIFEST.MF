@@ -1,0 +1,39 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MechatronicUML Modelica Adapter
+Bundle-SymbolicName: org.muml.modelica.adapter;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.muml.modelica.adapter.Activator
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
+Require-Bundle: org.eclipse.core.runtime,
+ org.muml.pim,
+ org.muml.pim.actionlanguage,
+ org.muml.core,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.ecore.xmi,
+ org.eclipse.ocl,
+ org.eclipse.ocl.ecore,
+ org.eclipse.acceleo.common;bundle-version="3.2.2",
+ org.eclipse.acceleo.model;bundle-version="3.2.2",
+ org.eclipse.acceleo.profiler;bundle-version="3.2.2",
+ org.eclipse.acceleo.engine;bundle-version="3.2.2",
+ org.muml.core,
+ org.eclipse.acceleo.parser;bundle-version="3.2.2",
+ org.muml.modelica.transform,
+ org.eclipse.m2m.qvt.oml.runtime,
+ org.eclipse.m2m.qvt.oml.project,
+ org.muml.graphviz.blackbox,
+ org.eclipse.m2m.qvt.oml;bundle-version="3.3.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Eclipse-LazyStart: true
+Export-Package: org.muml.modelica.adapter,
+ org.muml.modelica.adapter.component.transformation,
+ org.muml.modelica.adapter.instantiator,
+ org.muml.modelica.adapter.main,
+ org.muml.modelica.adapter.rtsc.transformation,
+ org.muml.modelica.adapter.rtsc.util.query,
+ org.muml.modelica.adapter.transformation
+Import-Package: org.eclipse.m2m.internal.qvt.oml,
+ org.eclipse.m2m.qvt.oml
+

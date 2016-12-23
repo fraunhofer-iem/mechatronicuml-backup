@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_epmhASETEeKLloA4O8HoyQ" type="EcoreTools" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_euXsQCETEeKLloA4O8HoyQ" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_eu-JMCETEeKLloA4O8HoyQ" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_eu-JMSETEeKLloA4O8HoyQ" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_eu-JMiETEeKLloA4O8HoyQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_eu-JMyETEeKLloA4O8HoyQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_eu-JNCETEeKLloA4O8HoyQ"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_eu-JNSETEeKLloA4O8HoyQ" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_eu-JNiETEeKLloA4O8HoyQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_eu-JNyETEeKLloA4O8HoyQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_eu-JOCETEeKLloA4O8HoyQ"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_euXsQSETEeKLloA4O8HoyQ" fontColor="4210752" fontName="MS Shell Dlg" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="RTSCReachabilityGraph.ecore#//ZoneGraph"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_euXsQiETEeKLloA4O8HoyQ"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_evtwECETEeKLloA4O8HoyQ" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_evtwEyETEeKLloA4O8HoyQ" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_evtwFCETEeKLloA4O8HoyQ" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_ewArACETEeKLloA4O8HoyQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="RTSCReachabilityGraph.ecore#//ZoneGraphState/federation"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_ewArASETEeKLloA4O8HoyQ"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_evtwFSETEeKLloA4O8HoyQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_evtwFiETEeKLloA4O8HoyQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_evtwFyETEeKLloA4O8HoyQ"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_ev3hECETEeKLloA4O8HoyQ" type="5002">
+      <children xmi:type="notation:Node" xmi:id="_ewArAiETEeKLloA4O8HoyQ" type="2002">
+        <element xmi:type="ecore:EOperation" href="RTSCReachabilityGraph.ecore#//ZoneGraphState/toString"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_ewArAyETEeKLloA4O8HoyQ"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_ev3hESETEeKLloA4O8HoyQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_ev3hEiETEeKLloA4O8HoyQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_ev3hEyETEeKLloA4O8HoyQ"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_evtwESETEeKLloA4O8HoyQ" fontColor="4210752" fontName="MS Shell Dlg" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="RTSCReachabilityGraph.ecore#//ZoneGraphState"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_evtwEiETEeKLloA4O8HoyQ" x="315" y="200"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_ewArBCETEeKLloA4O8HoyQ" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_ewArByETEeKLloA4O8HoyQ" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_ewArCCETEeKLloA4O8HoyQ" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_ewArCSETEeKLloA4O8HoyQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_ewArCiETEeKLloA4O8HoyQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_ewArCyETEeKLloA4O8HoyQ"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_ewArDCETEeKLloA4O8HoyQ" type="5002">
+      <children xmi:type="notation:Node" xmi:id="_ewArECETEeKLloA4O8HoyQ" type="2002">
+        <element xmi:type="ecore:EOperation" href="RTSCReachabilityGraph.ecore#//ZoneGraphTransition/toString"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_ewArESETEeKLloA4O8HoyQ"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_ewArDSETEeKLloA4O8HoyQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_ewArDiETEeKLloA4O8HoyQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_ewArDyETEeKLloA4O8HoyQ"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_ewArBSETEeKLloA4O8HoyQ" fontColor="4210752" fontName="MS Shell Dlg" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="RTSCReachabilityGraph.ecore#//ZoneGraphTransition"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ewArBiETEeKLloA4O8HoyQ" x="427"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_ewArEiETEeKLloA4O8HoyQ" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_ewArFSETEeKLloA4O8HoyQ" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_ewArFiETEeKLloA4O8HoyQ" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_ewArFyETEeKLloA4O8HoyQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_ewArGCETEeKLloA4O8HoyQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_ewArGSETEeKLloA4O8HoyQ"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_ewArGiETEeKLloA4O8HoyQ" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_ewArGyETEeKLloA4O8HoyQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_ewArHCETEeKLloA4O8HoyQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_ewArHSETEeKLloA4O8HoyQ"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_ewArEyETEeKLloA4O8HoyQ" fontColor="4210752" fontName="MS Shell Dlg" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="RTSCReachabilityGraph.ecore#//DelayTransition"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ewArFCETEeKLloA4O8HoyQ" x="636"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_ewArHiETEeKLloA4O8HoyQ" type="1004">
+    <children xmi:type="notation:Node" xmi:id="_ewArISETEeKLloA4O8HoyQ" type="4008"/>
+    <children xmi:type="notation:Node" xmi:id="_ewArIiETEeKLloA4O8HoyQ" type="4009"/>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_ewArHyETEeKLloA4O8HoyQ" fontColor="4210752" fontName="MS Shell Dlg" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EDataType" href="RTSCReachabilityGraph.ecore#//FederationObject"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ewArICETEeKLloA4O8HoyQ" x="813"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_qRUyECETEeKLloA4O8HoyQ" type="1001">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_qRUyHCETEeKLloA4O8HoyQ" source="Shortcut">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_qRUyHSETEeKLloA4O8HoyQ" key="modelID" value="EcoreTools"/>
+    </eAnnotations>
+    <children xmi:type="notation:Node" xmi:id="_qRUyEyETEeKLloA4O8HoyQ" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_qRUyFCETEeKLloA4O8HoyQ" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_qRUyFSETEeKLloA4O8HoyQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_qRUyFiETEeKLloA4O8HoyQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_qRUyFyETEeKLloA4O8HoyQ"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_qRUyGCETEeKLloA4O8HoyQ" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_qRUyGSETEeKLloA4O8HoyQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_qRUyGiETEeKLloA4O8HoyQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_qRUyGyETEeKLloA4O8HoyQ"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_qRUyESETEeKLloA4O8HoyQ" fontColor="4210752" fontName="MS Shell Dlg" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/org.muml.verification.core.runtime/model/RuntimeModel.ecore#//RealtimeStatechartInstance"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qRUyEiETEeKLloA4O8HoyQ" x="85" y="120"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_qRUyHiETEeKLloA4O8HoyQ" type="1001">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_qRUyKiETEeKLloA4O8HoyQ" source="Shortcut">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_qRUyKyETEeKLloA4O8HoyQ" key="modelID" value="EcoreTools"/>
+    </eAnnotations>
+    <children xmi:type="notation:Node" xmi:id="_qRUyISETEeKLloA4O8HoyQ" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_qRUyIiETEeKLloA4O8HoyQ" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_qRUyIyETEeKLloA4O8HoyQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_qRUyJCETEeKLloA4O8HoyQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_qRUyJSETEeKLloA4O8HoyQ"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_qRUyJiETEeKLloA4O8HoyQ" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_qRUyJyETEeKLloA4O8HoyQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_qRUyKCETEeKLloA4O8HoyQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_qRUyKSETEeKLloA4O8HoyQ"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_qRUyHyETEeKLloA4O8HoyQ" fontColor="4210752" fontName="MS Shell Dlg" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/org.muml.core.reachanalysis.reachabilitygraph/model/ReachabilityAnalysisCore.ecore#//ReachabilityGraphState"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qRUyICETEeKLloA4O8HoyQ" x="390" y="305"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_epmhAiETEeKLloA4O8HoyQ"/>
+  <element xmi:type="ecore:EPackage" href="RTSCReachabilityGraph.ecore#/"/>
+  <edges xmi:type="notation:Edge" xmi:id="_qSEY8CETEeKLloA4O8HoyQ" type="3002" source="_evtwECETEeKLloA4O8HoyQ" target="_qRUyECETEeKLloA4O8HoyQ">
+    <children xmi:type="notation:Node" xmi:id="_qSNi4CETEeKLloA4O8HoyQ" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_qSNi4SETEeKLloA4O8HoyQ" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_qSNi4iETEeKLloA4O8HoyQ" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_qSNi4yETEeKLloA4O8HoyQ" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_qSEY8SETEeKLloA4O8HoyQ" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_qSEY8iETEeKLloA4O8HoyQ" fontColor="4210752" fontName="MS Shell Dlg" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="RTSCReachabilityGraph.ecore#//ZoneGraphState/locations"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_qSEY8yETEeKLloA4O8HoyQ" points="[0, 0, 84, 90]$[-84, -90, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_qTjmsiETEeKLloA4O8HoyQ" id="(0.33170731707317075,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_qTjmsyETEeKLloA4O8HoyQ" id="(0.4972972972972973,1.0)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_qSNi5CETEeKLloA4O8HoyQ" type="3003" source="_evtwECETEeKLloA4O8HoyQ" target="_qRUyHiETEeKLloA4O8HoyQ">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_qSNi5SETEeKLloA4O8HoyQ" routing="Rectilinear" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_qSNi5iETEeKLloA4O8HoyQ" fontName="MS Shell Dlg"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_qSNi5yETEeKLloA4O8HoyQ" points="[0, 0, -84, 60]$[0, -30, -84, 30]$[84, -30, 0, 30]$[84, -60, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_qTjmsCETEeKLloA4O8HoyQ" id="(0.6634146341463415,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_qTjmsSETEeKLloA4O8HoyQ" id="(0.49700598802395207,1.0)"/>
+  </edges>
+</notation:Diagram>

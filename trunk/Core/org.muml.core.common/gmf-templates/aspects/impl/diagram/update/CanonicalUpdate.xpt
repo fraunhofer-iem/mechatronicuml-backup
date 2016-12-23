@@ -1,0 +1,316 @@
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+«IMPORT 'http://www.eclipse.org/emf/2002/GenModel'»
+
+«EXTENSION MetaModel»
+
+«EXTENSION xpt::diagram::updater::Utils»
+«EXTENSION impl::diagram::updater::CanonicalUpdate»
+
+«AROUND attributes FOR gmfgen::GenContainerBase-»
+	/**
+	 * @generated
+	 */
+	private boolean canonicalNodes = true;
+	
+	«targetDef.proceed()»
+	
+	/**
+	 * @generated
+	 */
+	public «canonicalEditPolicyClassName»() {
+	}
+	
+	/**
+	 * @generated
+	 */
+	public «canonicalEditPolicyClassName»(boolean canonicalNodes) {
+		this.canonicalNodes = canonicalNodes;
+	}
+
+	// BEGIN MUML TICKET #1247
+	/**
+	 * @generated
+	 */
+	private java.util.List<String> noConnectionViews = new java.util.ArrayList<String>();
+	
+	/**
+	 * @generated
+	 */
+	public void addNoConnectionView(String type) {
+		noConnectionViews.add(type);
+	}
+	
+	/**
+	 * @generated
+	 */
+	public void removeNoConnectionView(String type) {
+		noConnectionViews.remove(type);
+	}
+	// END MUML TICKET #1247
+	
+«ENDAROUND»
+
+
+«AROUND refreshConnectionsBody FOR gmfgen::GenDiagram-»
+	Domain2Notation domain2NotationMap = new Domain2Notation();
+	«EXPAND CodeStyle::G('java.util.Collection', editorGen.diagramUpdater.getLinkDescriptorQualifiedClassName())» linkDescriptors = collectAllLinks(getDiagram(), domain2NotationMap);
+	java.util.Collection existingLinks = new java.util.LinkedList(getDiagram().getEdges());
+	for (java.util.Iterator linksIterator = existingLinks.iterator(); linksIterator.hasNext();) {
+		org.eclipse.gmf.runtime.notation.Edge nextDiagramLink = (org.eclipse.gmf.runtime.notation.Edge) linksIterator.next();
+		int diagramLinkVisualID = «EXPAND xpt::editor::VisualIDRegistry::getVisualIDMethodCall»(nextDiagramLink);
+		if (diagramLinkVisualID == -1«EXPAND _compareLinkVisualID FOREACH links->select(gl | gl.modelFacet.oclIsUndefined())») {
+			if (nextDiagramLink.getSource() != null && nextDiagramLink.getTarget() != null) {
+				linksIterator.remove();
+			}
+			continue;
+		}
+		if (nextDiagramLink.getSource() != null && nextDiagramLink.getTarget() != null) {
+			org.eclipse.emf.ecore.EObject diagramLinkObject = nextDiagramLink.getElement();
+			org.eclipse.emf.ecore.EObject diagramLinkSrc = nextDiagramLink.getSource().getElement();
+			org.eclipse.emf.ecore.EObject diagramLinkDst = nextDiagramLink.getTarget().getElement();
+			«EXPAND CodeStyle::iterate('nextLinkDescriptor', editorGen.diagramUpdater.getLinkDescriptorQualifiedClassName(), 'linkDescriptorsIterator', 'linkDescriptors.iterator()')-»
+				if (diagramLinkObject == nextLinkDescriptor.getModelElement() && diagramLinkSrc == nextLinkDescriptor.getSource() && diagramLinkDst == nextLinkDescriptor.getDestination() && diagramLinkVisualID == nextLinkDescriptor.getVisualID()) {
+					linksIterator.remove();
+					linkDescriptorsIterator.remove();
+					break;
+				}
+			}
+		}
+	}
+	deleteViews(existingLinks.iterator());
+	return createConnections(linkDescriptors, domain2NotationMap);
+«ENDAROUND»
+
+
+«AROUND _caseSemanticElement FOR gmfgen::GenChildLabelNode»«ENDAROUND»
+«AROUND _caseSemanticElement FOR gmfgen::GenCommonBase-»
+«EXPAND xpt::Common::caseVisualID» {
+	if (noConnectionViews.contains(view.getType())) {
+		// MUML TICKET #1247
+		break;
+	}
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+«REM»
+	Processing each domain element only once. Prevents us from 
+	having duplicated links if a shortcut to one of the "main"
+	diagram elements present on diagram.
+«ENDREM»«-»
+		result.addAll(«EXPAND xpt::diagram::updater::DiagramUpdater::getContainedLinksMethodCall»(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+«ENDAROUND»
+
+
+
+
+
+«AROUND getSemanticChildrenListMethod FOR gmfgen::GenContainerBase-»
+
+«EXPAND xpt::Common::generatedMemberComment»
+«EXPAND CodeStyle::SuppressWarnings('"rawtypes"')»
+protected java.util.List getSemanticChildrenList() {
+	«EXPAND CodeStyle::G('java.util.List', getDiagram().editorGen.diagramUpdater.getNodeDescriptorQualifiedClassName())» childDescriptors = getSemanticChildrenViewDescriptors();
+	«EXPAND CodeStyle::newGenericInstance('result', 'java.util.LinkedList', 'org.eclipse.emf.ecore.EObject')»();
+	«EXPAND CodeStyle::iterate('d', getDiagram().editorGen.diagramUpdater.getNodeDescriptorQualifiedClassName(), 'childDescriptors')-»
+		result.add(d.getModelElement());
+	}
+	return result;
+}
+
+«EXPAND xpt::Common::generatedMemberComment»
+
+«EXPAND CodeStyle::SuppressWarnings('"rawtypes"')»
+protected java.util.List getSemanticChildrenViewDescriptors() {
+	// Begin added to switch off toplevel canonical behavior:
+	if (!canonicalNodes) {
+		org.eclipse.gmf.runtime.notation.View containerView = (org.eclipse.gmf.runtime.notation.View) getHost().getModel();
+		java.util.List<org.eclipse.gmf.runtime.notation.View> childViews = containerView.getChildren();
+		«EXPAND CodeStyle::G('java.util.List', getDiagram().editorGen.diagramUpdater.getNodeDescriptorQualifiedClassName())» result = new «EXPAND CodeStyle::G('java.util.LinkedList', getDiagram().editorGen.diagramUpdater.getNodeDescriptorQualifiedClassName())»(); 
+		
+		for (org.eclipse.gmf.runtime.notation.View childView : childViews) {
+			org.eclipse.emf.ecore.EObject childElement = childView.getElement();
+			int visualID = «EXPAND xpt::editor::VisualIDRegistry::getVisualIDMethodCall FOR getDiagram()»(childView);
+			java.util.List<Integer> visualIDs = java.util.Arrays.asList(new Integer[] { «EXPAND xpt::editor::VisualIDRegistry::visualID FOREACH getSemanticChildren(self) SEPARATOR ', '» });
+
+			// Note: childElement can be null, for diagram annotations!
+			if (childElement == null || childElement.eContainer() == containerView.getElement() && visualIDs.contains(visualID)) {
+				result.add(new «getDiagram().editorGen.diagramUpdater.getNodeDescriptorQualifiedClassName()»(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+	// End added
+
+	«IF hasSemanticChildren(self) /*REVISIT: is there real need for this check - Generator seems to consult needsCanonicalEP, which in turns ensures there are semantic children?*/-»
+	org.eclipse.gmf.runtime.notation.View viewObject = (org.eclipse.gmf.runtime.notation.View) getHost().getModel();
+	return «EXPAND xpt::diagram::updater::DiagramUpdater::getSemanticChildrenMethodCall»(viewObject);
+	«ELSE-»
+	return java.util.Collections.EMPTY_LIST;
+	«ENDIF-»
+	
+}
+«ENDAROUND»
+
+
+«DEFINE _checkOrphanedShortcuts(String orphanedCollectionVar, String viewVar) FOR gmfgen::GenContainerBase»«ENDDEFINE»
+«DEFINE _checkOrphanedShortcuts(String orphanedCollectionVar, String viewVar) FOR gmfgen::GenDiagram-»
+«IF containsShortcutsTo->notEmpty()-»
+	if («viewVar».getEAnnotation("Shortcut") != null && «editorGen.diagramUpdater.getDiagramUpdaterQualifiedClassName()».isShortcutOrphaned(«viewVar»)) {«EXPAND xpt::Common::nonNLS»
+		«orphanedCollectionVar».add(«viewVar»);
+	}
+«ENDIF-»
+«ENDDEFINE»
+
+
+
+
+
+
+// Alternative implementation of CEP.refreshSemanticChildren
+«AROUND refreshSemanticChildren(String createdViewsVar, gmfgen::GenDiagramUpdater diagramUpdater) FOR gmfgen::GenContainerBase-»
+«LET hasConformableSemanticChildren(self) AS childrenShareSameMetaclass-»
+		«EXPAND CodeStyle::G('java.util.List', diagramUpdater.getNodeDescriptorQualifiedClassName())» childDescriptors = getSemanticChildrenViewDescriptors();
+		«EXPAND CodeStyle::newGenericInstance('orphaned', 'java.util.LinkedList', 'org.eclipse.gmf.runtime.notation.View')»();
+		// we care to check only views we recognize as ours
+		«EXPAND CodeStyle::newGenericInstance('knownViewChildren', 'java.util.LinkedList', 'org.eclipse.gmf.runtime.notation.View')»();
+		«EXPAND CodeStyle::iterate('v', 'org.eclipse.gmf.runtime.notation.View', 'getViewChildren()')-»
+			if (isMyDiagramElement(v)) {
+				knownViewChildren.add(v);
+			}
+			«EXPAND _checkOrphanedShortcuts('orphaned', 'v')-»
+		}
+		// alternative to #cleanCanonicalSemanticChildren(getViewChildren(), semanticChildren)
+		«IF childrenShareSameMetaclass-»
+		«EXPAND CodeStyle::newGenericInstance2('potentialViews', 'java.util.HashMap', diagramUpdater.getNodeDescriptorQualifiedClassName(), 'java.util.LinkedList', 'org.eclipse.gmf.runtime.notation.View')»();
+		«ENDIF-»
+		//
+		// iteration happens over list of desired semantic elements, trying to find best matching View, while original CEP
+		// iterates views, potentially losing view (size/bounds) information - i.e. if there are few views to reference same EObject, only last one 
+		// to answer isOrphaned == true will be used for the domain element representation, see #cleanCanonicalSemanticChildren()
+		«EXPAND CodeStyle::iterate('next', diagramUpdater.getNodeDescriptorQualifiedClassName(), 'descriptorsIterator', 'childDescriptors.iterator()')-»
+			String hint = «EXPAND xpt::editor::VisualIDRegistry::typeMethodCall('next.getVisualID()')»;
+			«EXPAND CodeStyle::newGenericInstance('perfectMatch', 'java.util.LinkedList', 'org.eclipse.gmf.runtime.notation.View')»(); // both semanticElement and hint match that of NodeDescriptor
+			«IF childrenShareSameMetaclass-»
+			«EXPAND CodeStyle::newGenericInstance('potentialMatch', 'java.util.LinkedList', 'org.eclipse.gmf.runtime.notation.View')»(); // semanticElement matches, hint does not
+			«ENDIF-»
+			«EXPAND CodeStyle::iterate('childView', 'org.eclipse.gmf.runtime.notation.View', 'getViewChildren()')-»
+				org.eclipse.emf.ecore.EObject semanticElement = childView.getElement();
+
+				// Note: semanticElement can be null, for diagram annotations!
+				if (semanticElement != null && semanticElement.equals(next.getModelElement())) {
+					if (hint.equals(childView.getType())) {
+						perfectMatch.add(childView);
+						// actually, can stop iteration over view children here, but
+						// may want to use not the first view but last one as a 'real' match (the way original CEP does
+						// with its trick with viewToSemanticMap inside #cleanCanonicalSemanticChildren
+					«IF childrenShareSameMetaclass-»
+					} else {
+						potentialMatch.add(childView);
+					«ENDIF-»
+					}
+					«REM» do not break, loop through all potential view children in hope there would be precise match«ENDREM»«-»
+				}
+			}
+			if (perfectMatch.size() > 0) {
+				descriptorsIterator.remove(); // precise match found no need to create anything for the NodeDescriptor
+				// use only one view (first or last?), keep rest as orphaned for further consideration
+				knownViewChildren.remove(perfectMatch.getFirst());
+			«IF childrenShareSameMetaclass-»
+			} else if (potentialMatch.size() > 0) {
+				«REM»
+					Bug 224206 -  Support switching figure of EditPart with domain element property change: need to create new view for the node descriptor and copy old attributes.
+					To address this, old implementation tries to change VID of the first View known to reference same semantic element
+					but it is possible some potentialMatch would be perfectMatch for later NodeDescriptor
+				«ENDREM»«-»
+				potentialViews.put(next, potentialMatch); 
+			«ENDIF-»
+			}
+		}
+		// those left in knownViewChildren are subject to removal - they are our diagram elements we didn't find match to,
+		// or those we have potential matches to, and thus need to be recreated, preserving size/location information.
+		orphaned.addAll(knownViewChildren);
+		//
+		«IF childrenShareSameMetaclass-»
+		org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand boundsCommand = new org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand(host().getEditingDomain(), org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramUIMessages.SetLocationCommand_Label_Resize);
+		«ENDIF-»
+		«EXPAND CodeStyle::newGenericInstance('viewDescriptors', 'java.util.ArrayList', 'org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest.ViewDescriptor')»(childDescriptors.size());		
+		«EXPAND CodeStyle::iterate('next', diagramUpdater.getNodeDescriptorQualifiedClassName(), 'childDescriptors')-»
+			String hint = «EXPAND xpt::editor::VisualIDRegistry::typeMethodCall('next.getVisualID()')»;
+			org.eclipse.core.runtime.IAdaptable elementAdapter = new CanonicalElementAdapter(next.getModelElement(), hint);
+			org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest.ViewDescriptor descriptor = new org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest.ViewDescriptor(elementAdapter, org.eclipse.gmf.runtime.notation.Node.class, hint, org.eclipse.gmf.runtime.diagram.core.util.ViewUtil.APPEND, false, host().getDiagramPreferencesHint());
+			viewDescriptors.add(descriptor);
+		«IF childrenShareSameMetaclass /*code to preserve bounds makes sense only when there are children of same metaclass that may have distinctive attribute changed */-»
+			«REM»XXX: IN FACT, we should generate this code IFF child nodes are shapes - no sense to expect bounds in comparments. ASK Vano«ENDREM»
+			«EXPAND CodeStyle::G('java.util.LinkedList', 'org.eclipse.gmf.runtime.notation.View')» possibleMatches = «EXPAND CodeStyle::castTyped('java.util.LinkedList')»potentialViews.get(next);
+			if (possibleMatches != null) {
+				// from potential matches, leave those that were not eventually used for some other NodeDescriptor (i.e. those left as orphaned)
+				possibleMatches.retainAll(knownViewChildren);
+			}
+			if (possibleMatches != null && !possibleMatches.isEmpty()) {
+				org.eclipse.gmf.runtime.notation.View originalView = «EXPAND CodeStyle::castTyped('org.eclipse.gmf.runtime.notation.View')»possibleMatches.getFirst();
+				knownViewChildren.remove(originalView); // remove not to copy properties of the same view again and again
+				// add command to copy properties
+				if (originalView instanceof org.eclipse.gmf.runtime.notation.Node) {
+					if (((org.eclipse.gmf.runtime.notation.Node) originalView).getLayoutConstraint() instanceof org.eclipse.gmf.runtime.notation.Bounds) {
+						org.eclipse.gmf.runtime.notation.Bounds b = (org.eclipse.gmf.runtime.notation.Bounds) ((org.eclipse.gmf.runtime.notation.Node) originalView).getLayoutConstraint();
+						boundsCommand.add(new org.eclipse.gmf.runtime.diagram.ui.commands.SetBoundsCommand(boundsCommand.getEditingDomain(), boundsCommand.getLabel(), descriptor, new org.eclipse.draw2d.geometry.Rectangle(b.getX(), b.getY(), b.getWidth(), b.getHeight())));
+					} else if (((org.eclipse.gmf.runtime.notation.Node) originalView).getLayoutConstraint() instanceof org.eclipse.gmf.runtime.notation.Location) {
+						org.eclipse.gmf.runtime.notation.Location l = (org.eclipse.gmf.runtime.notation.Location) ((org.eclipse.gmf.runtime.notation.Node) originalView).getLayoutConstraint();
+						boundsCommand.add(new org.eclipse.gmf.runtime.diagram.ui.commands.SetBoundsCommand(boundsCommand.getEditingDomain(), boundsCommand.getLabel(), descriptor, new org.eclipse.draw2d.geometry.Point(l.getX(), l.getY())));
+					} else if (((org.eclipse.gmf.runtime.notation.Node) originalView).getLayoutConstraint() instanceof org.eclipse.gmf.runtime.notation.Size) {
+						org.eclipse.gmf.runtime.notation.Size s = (org.eclipse.gmf.runtime.notation.Size) ((org.eclipse.gmf.runtime.notation.Node) originalView).getLayoutConstraint();
+						boundsCommand.add(new org.eclipse.gmf.runtime.diagram.ui.commands.SetBoundsCommand(boundsCommand.getEditingDomain(), boundsCommand.getLabel(), descriptor, new org.eclipse.draw2d.geometry.Dimension(s.getWidth(), s.getHeight())));
+					}
+					«REM»
+					   Note, we don't support Ratio update (as it was done in #populateViewProperties). 
+					   First, SetCompartmentRatioCommand is internal; second reason - I don't believe we generate CEP to update compartments
+					   
+					   FIXME However, makes sense to extract this piece for potential extensions.
+					«ENDREM»«-»
+				}
+			}
+		«ENDIF-»
+		}
+
+		boolean changed = deleteViews(orphaned.iterator());
+		//
+		org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest request = getCreateViewRequest(viewDescriptors);
+		org.eclipse.gef.commands.Command cmd = getCreateViewCommand(request);
+		if (cmd != null && cmd.canExecute() ) {
+			org.eclipse.gmf.runtime.diagram.ui.commands.SetViewMutabilityCommand.makeMutable(new org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter(host().getNotationView())).execute();
+			executeCommand(cmd);
+			«IF childrenShareSameMetaclass»if (boundsCommand.canExecute()) {
+				executeCommand(new org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy(boundsCommand.reduce()));
+			}
+			«ENDIF-»
+			«EXPAND CodeStyle::SuppressWarnings('"unchecked"')»
+			«EXPAND CodeStyle::G('java.util.List', 'org.eclipse.core.runtime.IAdaptable')» nl = («EXPAND CodeStyle::G('java.util.List', 'org.eclipse.core.runtime.IAdaptable')») request.getNewObject();
+			«createdViewsVar».addAll(nl);
+		}
+		if (changed || «createdViewsVar».size() > 0) {
+			postProcessRefreshSemantic(createdViews);
+		}
+«ENDLET-»
+«ENDAROUND»
+
+
+// Begin switch visibility to protected, to allow overriding for #542
+«AROUND getSourceEditPartMethod FOR gmfgen::GenDiagram-»
+	«EXPAND xpt::Common::generatedMemberComment»
+protected org.eclipse.gef.EditPart getSourceEditPart(org.eclipse.gmf.tooling.runtime.update.UpdaterLinkDescriptor descriptor, «EXPAND _Domain2Notation» domain2NotationMap) { 
+	return getEditPart(descriptor.getSource(), domain2NotationMap);
+}
+«ENDAROUND»
+
+«AROUND getTargetEditPartMethod FOR gmfgen::GenDiagram-»
+	«EXPAND xpt::Common::generatedMemberComment»
+protected org.eclipse.gef.EditPart getTargetEditPart(org.eclipse.gmf.tooling.runtime.update.UpdaterLinkDescriptor descriptor, «EXPAND _Domain2Notation» domain2NotationMap) { 
+	return getEditPart(descriptor.getDestination(), domain2NotationMap);
+}
+«ENDAROUND»
+«DEFINE _Domain2Notation FOR gmfgen::GenDiagram»«EXPAND impl::diagram::update::domain2notation::DomainToNotationClassName»«ENDDEFINE»
+// End switch visibility
+

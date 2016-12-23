@@ -1,0 +1,6 @@
+«IMPORT simulink»
+
+«DEFINE main(String fileName) FOR SimulinkContainer»
+«EXPAND SimulinkFile::file(fileName) FOR this.models.first()»
+«EXPAND SimulinkFile::file FOREACH this.libraries»
+«ENDDEFINE»

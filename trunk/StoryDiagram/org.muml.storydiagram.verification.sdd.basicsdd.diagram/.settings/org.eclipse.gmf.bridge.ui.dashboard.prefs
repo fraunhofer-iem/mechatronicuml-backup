@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+gmf_dashboard/domainGenerationModel=platform\:/resource/org.muml.storydiagram.verification.sdd.basicsdd/model/BasicSDD.genmodel
+gmf_dashboard/domainModel=platform\:/resource/org.muml.storydiagram.verification.sdd.basicsdd/model/BasicSDD.ecore
+gmf_dashboard/generationModel=platform\:/resource/org.muml.storydiagram.verification.sdd.basicsdd.diagram/model/sdd.gmfgen
+gmf_dashboard/graphicalDefinitionModel=platform\:/resource/org.muml.storydiagram.verification.sdd.basicsdd.diagram/model/sdd.gmfgraph
+gmf_dashboard/mappingModel=platform\:/resource/org.muml.storydiagram.verification.sdd.basicsdd.diagram/model/sdd.gmfmap
+gmf_dashboard/toolingDefinitionModel=platform\:/resource/org.muml.storydiagram.verification.sdd.basicsdd.diagram/model/sdd.gmftool

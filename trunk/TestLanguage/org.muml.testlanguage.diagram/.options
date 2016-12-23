@@ -1,0 +1,7 @@
+# Tracing options for the org.muml.testlanguage.diagram plug-in
+
+# Common issues
+org.muml.testlanguage.diagram/debug=false
+
+# Visual IDs
+org.muml.testlanguage.diagram/debug/visualID=false

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ASCII"?>
+<model:SimulinkContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://www.muml.org/simulink/1.0.0" xmlns:stateflow="http://www.muml.org/simulink/stateflow/1.0.0" id="_t_fdwEXZEeGRyehUlJU_cA">
+  <models id="_t_gE0EXZEeGRyehUlJU_cA" name="SubStates">
+    <blocks xsi:type="model:ChartBlock" id="_t_gE0UXZEeGRyehUlJU_cA" name="Chart" chart="_t_gE00XZEeGRyehUlJU_cA"/>
+    <stateflowMachine id="_t_gE0kXZEeGRyehUlJU_cA">
+      <charts id="_t_gE00XZEeGRyehUlJU_cA" name="Chart" priority="1" initial="true" block="_t_gE0UXZEeGRyehUlJU_cA">
+        <nodes xsi:type="stateflow:State" id="_t_gE1EXZEeGRyehUlJU_cA" name="State" priority="1">
+          <nodes xsi:type="stateflow:State" id="_t_gE1UXZEeGRyehUlJU_cA" name="SubStateA" priority="1">
+            <nodes xsi:type="stateflow:State" id="_t_gE1kXZEeGRyehUlJU_cA" name="SubSubState" priority="1"/>
+          </nodes>
+          <nodes xsi:type="stateflow:State" id="_t_gE10XZEeGRyehUlJU_cA" name="SubStateB" priority="1">
+            <nodes xsi:type="stateflow:State" id="_t_gr4EXZEeGRyehUlJU_cA" name="SubSubState" priority="1"/>
+          </nodes>
+        </nodes>
+      </charts>
+    </stateflowMachine>
+  </models>
+</model:SimulinkContainer>

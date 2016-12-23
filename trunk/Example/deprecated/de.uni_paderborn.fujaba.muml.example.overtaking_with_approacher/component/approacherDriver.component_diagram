@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_Pu8VYKrGEeScJ-0YDJS4Tg" type="Component" name="approacherDriver.component_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_Pu8VYqrGEeScJ-0YDJS4Tg" type="2006" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Pu8VZKrGEeScJ-0YDJS4Tg" type="5028"/>
+    <children xmi:type="notation:Shape" xmi:id="_Gr6ucquyEeSOh7ww5c64Rw" type="3013" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_Gr6udKuyEeSOh7ww5c64Rw" type="5024">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Gr6udauyEeSOh7ww5c64Rw" y="5"/>
+      </children>
+      <element xmi:type="component:HybridPort" href="../fraunhoferDemo.fujaba#_bjdb0JRKEeSZM-zEIRk3lw"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Gr6uc6uyEeSOh7ww5c64Rw" x="48" y="133"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_GsEfcKuyEeSOh7ww5c64Rw" type="3013" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_GsEfcquyEeSOh7ww5c64Rw" type="5024">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_GsEfc6uyEeSOh7ww5c64Rw" y="5"/>
+      </children>
+      <element xmi:type="component:HybridPort" href="../fraunhoferDemo.fujaba#_dwFrcJRKEeSZM-zEIRk3lw"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GsEfcauyEeSOh7ww5c64Rw" x="108" y="133"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_GsEfdKuyEeSOh7ww5c64Rw" type="3010" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_GsEfdquyEeSOh7ww5c64Rw" type="5012">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_GsEfd6uyEeSOh7ww5c64Rw" y="5"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_GsEfeKuyEeSOh7ww5c64Rw" type="5025">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_GsEfeauyEeSOh7ww5c64Rw" y="5"/>
+      </children>
+      <element xmi:type="component:DiscretePort" href="../fraunhoferDemo.fujaba#_uk1BsJRPEeSZM-zEIRk3lw"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GsEfdauyEeSOh7ww5c64Rw" x="324" y="133"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_GsEfequyEeSOh7ww5c64Rw" type="3013" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_GsEffKuyEeSOh7ww5c64Rw" type="5024">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_GsEffauyEeSOh7ww5c64Rw" y="5"/>
+      </children>
+      <element xmi:type="component:HybridPort" href="../fraunhoferDemo.fujaba#_XX3b4J8QEeSDApXOK6N3KA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GsEfe6uyEeSOh7ww5c64Rw" x="373" y="60"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_JDPyMauyEeSOh7ww5c64Rw" type="3013" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_JDPyM6uyEeSOh7ww5c64Rw" type="5024">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_JDPyNKuyEeSOh7ww5c64Rw" y="5"/>
+      </children>
+      <element xmi:type="component:HybridPort" href="../fraunhoferDemo.fujaba#_JDPyMKuyEeSOh7ww5c64Rw"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JDPyMquyEeSOh7ww5c64Rw" x="216" y="133"/>
+    </children>
+    <element xmi:type="component:StaticAtomicComponent" href="../fraunhoferDemo.fujaba#_EGtqUJOWEeSZM-zEIRk3lw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Pu8VY6rGEeScJ-0YDJS4Tg" x="204" y="108" width="385" height="145"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_Pu8VYarGEeScJ-0YDJS4Tg"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../fraunhoferDemo.fujaba#_FB0TTZJ7EeSSMde45fnrcg"/>
+</notation:Diagram>

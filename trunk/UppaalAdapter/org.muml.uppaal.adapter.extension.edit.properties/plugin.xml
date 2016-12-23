@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+
+  <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+    <propertyContributor
+          contributorId=" ">
+       <propertyCategory
+             category="domain">
+       </propertyCategory>
+       <propertyCategory
+             category="default">
+       </propertyCategory>
+       <propertyCategory
+             category="extended">
+       </propertyCategory>
+       <propertyCategory
+             category="advanced">
+       </propertyCategory>
+    </propertyContributor>
+  </extension>
+
+
+
+
+
+
+
+
+ <extension point="org.muml.ape.runtime.propertyEditors">
+    <propertyEditors>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.extension.properties.verificationextension.editor.CommittedExtensionEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/extension/verificationextension/1.0.0#CommittedExtension">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.extension.properties.verificationextension.editor.ClockBindingEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/extension/verificationextension/1.0.0#ClockBinding">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.extension.properties.verificationextension.editor.ElementToVerifyExtensionEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/extension/verificationextension/1.0.0#ElementToVerifyExtension">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.extension.properties.verificationextension.editor.ClockBindingsExtensionEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/extension/verificationextension/1.0.0#ClockBindingsExtension">
+       </propertyEditor>
+    
+    </propertyEditors>
+ </extension>
+
+
+ <extension
+       point="org.muml.ape.runtime.metamodelContributor">
+    <metamodel
+          contributor="org.muml.uppaal.adapter.extension.properties.metamodel.MetamodelContributor">
+    </metamodel>
+ </extension>
+
+
+ <extension
+       point="org.muml.ape.runtime.creationConstraintContributor">
+    <constraint
+          contributor="org.muml.uppaal.adapter.extension.properties.constraint.CreationConstraintContributor">
+    </constraint>
+ </extension>
+
+</plugin>

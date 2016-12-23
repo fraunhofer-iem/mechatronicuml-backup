@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component="http://www.fujaba.de/muml/model/component/0.3.1" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.3.1" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_mTP4IDSJEeKn5qEB-cHwwA" type="Atomiccomponent" name="AtomicVelocityControllers.atomiccomponent_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_nCC30DSJEeKn5qEB-cHwwA" type="2005" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_nCDe4DSJEeKn5qEB-cHwwA" type="5011"/>
+    <children xmi:type="notation:Shape" xmi:id="_yjilEDSJEeKn5qEB-cHwwA" type="3007" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_yjjMIDSJEeKn5qEB-cHwwA" type="5008">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_yjjMITSJEeKn5qEB-cHwwA" x="-102" y="29"/>
+      </children>
+      <element xmi:type="component:ContinuousPort" href="Railcab.fujaba#_yjMm0DSJEeKn5qEB-cHwwA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yjilETSJEeKn5qEB-cHwwA" x="-12" y="40"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_0SGYoDSJEeKn5qEB-cHwwA" type="3007" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_0SG_sDSJEeKn5qEB-cHwwA" type="5008">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_0SG_sTSJEeKn5qEB-cHwwA" x="-91" y="29"/>
+      </children>
+      <element xmi:type="component:ContinuousPort" href="Railcab.fujaba#_0SD8YDSJEeKn5qEB-cHwwA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0SGYoTSJEeKn5qEB-cHwwA" x="-12" y="120"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_2QD6IDSJEeKn5qEB-cHwwA" type="3007" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_2QD6IjSJEeKn5qEB-cHwwA" type="5008">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_2QEhMDSJEeKn5qEB-cHwwA" y="5"/>
+      </children>
+      <element xmi:type="component:ContinuousPort" href="Railcab.fujaba#_2QBd4DSJEeKn5qEB-cHwwA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2QD6ITSJEeKn5qEB-cHwwA" x="319" y="75"/>
+    </children>
+    <element xmi:type="component:AtomicComponent" href="Railcab.fujaba#_nB01YDSJEeKn5qEB-cHwwA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nCC30TSJEeKn5qEB-cHwwA" x="270" y="70" width="331" height="174"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_pKRIkDSJEeKn5qEB-cHwwA" type="2005" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_pKRvoDSJEeKn5qEB-cHwwA" type="5011"/>
+    <children xmi:type="notation:Shape" xmi:id="_DsgRIDSKEeKn5qEB-cHwwA" type="3007" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_Dsg4MDSKEeKn5qEB-cHwwA" type="5008">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Dsg4MTSKEeKn5qEB-cHwwA" x="-102" y="29"/>
+      </children>
+      <element xmi:type="component:ContinuousPort" href="Railcab.fujaba#_Dsd04DSKEeKn5qEB-cHwwA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DsgRITSKEeKn5qEB-cHwwA" x="-12" y="25"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_F381ADSKEeKn5qEB-cHwwA" type="3007" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_F381AjSKEeKn5qEB-cHwwA" type="5008">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_F381AzSKEeKn5qEB-cHwwA" x="-91" y="29"/>
+      </children>
+      <element xmi:type="component:ContinuousPort" href="Railcab.fujaba#_F37m4DSKEeKn5qEB-cHwwA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_F381ATSKEeKn5qEB-cHwwA" x="-12" y="75"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_HmbwEDSKEeKn5qEB-cHwwA" type="3007" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_HmcXIDSKEeKn5qEB-cHwwA" type="5008">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_HmcXITSKEeKn5qEB-cHwwA" x="-115" y="29"/>
+      </children>
+      <element xmi:type="component:ContinuousPort" href="Railcab.fujaba#_HmZT0DSKEeKn5qEB-cHwwA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HmbwETSKEeKn5qEB-cHwwA" x="-12" y="125"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_Jo1FoDSKEeKn5qEB-cHwwA" type="3007" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_Jo1ssDSKEeKn5qEB-cHwwA" type="5008">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Jo1ssTSKEeKn5qEB-cHwwA" x="-104" y="29"/>
+      </children>
+      <element xmi:type="component:ContinuousPort" href="Railcab.fujaba#_JoypYDSKEeKn5qEB-cHwwA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Jo1FoTSKEeKn5qEB-cHwwA" x="-12" y="175"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_UN5m4DSKEeKn5qEB-cHwwA" type="3007" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_UN5m4jSKEeKn5qEB-cHwwA" type="5008">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_UN5m4zSKEeKn5qEB-cHwwA" y="5"/>
+      </children>
+      <element xmi:type="component:ContinuousPort" href="Railcab.fujaba#_UNvO0DSKEeKn5qEB-cHwwA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UN5m4TSKEeKn5qEB-cHwwA" x="322" y="105"/>
+    </children>
+    <element xmi:type="component:AtomicComponent" href="Railcab.fujaba#_pKPTYDSJEeKn5qEB-cHwwA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pKRIkTSJEeKn5qEB-cHwwA" x="267" y="340" width="334" height="221"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_mTP4ITSJEeKn5qEB-cHwwA"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="Railcab.fujaba#_B5tSgdcvEeG4XKjrX38Blg"/>
+</notation:Diagram>

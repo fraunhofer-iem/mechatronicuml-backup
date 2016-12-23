@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+
+  <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+    <propertyContributor
+          contributorId="org.muml.ape.contributor">
+       <propertyCategory
+             category="domain">
+       </propertyCategory>
+       <propertyCategory
+             category="default">
+       </propertyCategory>
+       <propertyCategory
+             category="extended">
+       </propertyCategory>
+       <propertyCategory
+             category="advanced">
+       </propertyCategory>
+    </propertyContributor>
+  </extension>
+
+
+
+<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs contributorId="org.muml.ape.contributor">
+          <propertyTab
+             category="domain"
+             id="tab.default"
+             afterTab=""
+             label="Default"/>
+          <propertyTab
+             category="domain"
+             id="tab.documentation"
+             afterTab="tab.default"
+             label="Documentation"/>
+          <propertyTab
+             category="domain"
+             id="tab.ocl"
+             afterTab="tab.documentation"
+             label="OCL"/>
+          <propertyTab
+             category="domain"
+             id="tab.filter"
+             afterTab="tab.ocl"
+             label="Filter"/>
+          
+      </propertyTabs>
+  </extension>
+
+
+
+
+  <extension point="org.eclipse.ui.views.properties.tabbed.propertySections"> 
+      <propertySections contributorId="org.muml.ape.contributor">
+          <propertySection
+            class="org.muml.ape.runtime.sections.ObjectPropertySection"
+            filter="org.eclipse.emf.ecore.properties.tabs.Tab_defaultTabElementFilter"
+            id="tab.default"
+            tab="tab.default">
+             <input
+               type="org.eclipse.emf.ecore.EObject">
+             </input>
+          </propertySection>
+          <propertySection
+            class="org.muml.ape.runtime.sections.ObjectPropertySection"
+            filter="org.eclipse.emf.ecore.properties.tabs.Tab_documentationTabElementFilter"
+            id="tab.documentation"
+            tab="tab.documentation">
+             <input
+               type="org.eclipse.emf.ecore.EObject">
+             </input>
+          </propertySection>
+          <propertySection
+            class="org.muml.ape.runtime.sections.ObjectPropertySection"
+            filter="org.eclipse.emf.ecore.properties.tabs.Tab_oclTabElementFilter"
+            id="tab.ocl"
+            tab="tab.ocl">
+             <input
+               type="org.eclipse.emf.ecore.EObject">
+             </input>
+          </propertySection>
+          <propertySection
+            class="org.muml.ape.runtime.sections.ObjectPropertySection"
+            filter="org.eclipse.emf.ecore.properties.tabs.Tab_filterTabElementFilter"
+            id="tab.filter"
+            tab="tab.filter">
+             <input
+               type="org.eclipse.emf.ecore.EObject">
+             </input>
+          </propertySection>
+         
+      </propertySections>
+  </extension>
+
+
+
+ <extension point="org.muml.ape.runtime.propertyEditors">
+    <propertyEditors>
+    
+       <propertyEditor
+             factory="org.eclipse.emf.ecore.properties.ecore.editor.EAttributeEditor$Factory"
+             type="http://www.eclipse.org/emf/2002/Ecore#EAttribute">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.eclipse.emf.ecore.properties.ecore.editor.EAnnotationEditor$Factory"
+             type="http://www.eclipse.org/emf/2002/Ecore#EAnnotation">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.eclipse.emf.ecore.properties.ecore.editor.EClassEditor$Factory"
+             type="http://www.eclipse.org/emf/2002/Ecore#EClass">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.eclipse.emf.ecore.properties.ecore.editor.EDataTypeEditor$Factory"
+             type="http://www.eclipse.org/emf/2002/Ecore#EDataType">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.eclipse.emf.ecore.properties.ecore.editor.EEnumEditor$Factory"
+             type="http://www.eclipse.org/emf/2002/Ecore#EEnum">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.eclipse.emf.ecore.properties.ecore.editor.EEnumLiteralEditor$Factory"
+             type="http://www.eclipse.org/emf/2002/Ecore#EEnumLiteral">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.eclipse.emf.ecore.properties.ecore.editor.EFactoryEditor$Factory"
+             type="http://www.eclipse.org/emf/2002/Ecore#EFactory">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.eclipse.emf.ecore.properties.ecore.editor.EObjectEditor$Factory"
+             type="http://www.eclipse.org/emf/2002/Ecore#EObject">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.eclipse.emf.ecore.properties.ecore.editor.EOperationEditor$Factory"
+             type="http://www.eclipse.org/emf/2002/Ecore#EOperation">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.eclipse.emf.ecore.properties.ecore.editor.EPackageEditor$Factory"
+             type="http://www.eclipse.org/emf/2002/Ecore#EPackage">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.eclipse.emf.ecore.properties.ecore.editor.EParameterEditor$Factory"
+             type="http://www.eclipse.org/emf/2002/Ecore#EParameter">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.eclipse.emf.ecore.properties.ecore.editor.EReferenceEditor$Factory"
+             type="http://www.eclipse.org/emf/2002/Ecore#EReference">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.eclipse.emf.ecore.properties.ecore.editor.EStringToStringMapEntryEditor$Factory"
+             type="http://www.eclipse.org/emf/2002/Ecore#EStringToStringMapEntry">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.eclipse.emf.ecore.properties.ecore.editor.EGenericTypeEditor$Factory"
+             type="http://www.eclipse.org/emf/2002/Ecore#EGenericType">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.eclipse.emf.ecore.properties.ecore.editor.ETypeParameterEditor$Factory"
+             type="http://www.eclipse.org/emf/2002/Ecore#ETypeParameter">
+       </propertyEditor>
+    
+    </propertyEditors>
+ </extension>
+
+
+ <extension
+       point="org.muml.ape.runtime.metamodelContributor">
+    <metamodel
+          contributor="org.eclipse.emf.ecore.properties.metamodel.MetamodelContributor">
+    </metamodel>
+ </extension>
+
+
+ <extension
+       point="org.muml.ape.runtime.creationConstraintContributor">
+    <constraint
+          contributor="org.eclipse.emf.ecore.properties.constraint.CreationConstraintContributor">
+    </constraint>
+ </extension>
+
+</plugin>

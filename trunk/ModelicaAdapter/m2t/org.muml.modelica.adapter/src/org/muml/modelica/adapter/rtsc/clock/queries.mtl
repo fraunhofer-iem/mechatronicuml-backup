@@ -1,0 +1,147 @@
+[module queries('http://www.muml.org/pim/behavior/1.0.0',
+				'http://www.muml.org/core/1.0.0',
+				'http://www.muml.org/pim/actionlanguage/1.0.0',
+				'http://www.muml.org/pim/msgtype/1.0.0',
+				'http://www.muml.org/pim/types/1.0.0',
+				'http://www.muml.org/pim/component/1.0.0',
+				'http://www.muml.org/pim/instance/1.0.0',
+				'http://www.muml.de/modelica/transform/1.0.0',
+				'http://www.muml.org/pim/realtimestatechart/1.0.0')/]
+
+[import org::muml::modelica::adapter::rtsc::util::query::naming]
+[import org::muml::modelica::adapter::rtsc::util::query::rtsc]
+
+[**
+ * Creates an annotation for a clock declaration
+ * @TODO currently it simply returns a hardcoded string
+ * @param clock the clock (currently unused)
+*/]
+[query public createClockDeclAnnotation(clock : Clock) : String =
+	'annotation (Placement(transformation(extent={{-80,62},{-72,70}})))'
+/]
+
+[**
+ * Returns the name of a clock constraint
+ * @param clockConstraint the clock constraint
+*/]
+[query public getName(clockConstraint : ClockConstraint, transition : Transition) : String =
+	'clock_constraint_' + transition.getName() + '_'
+	+ transition.clockConstraints->indexOf(clockConstraint)
+/]
+
+[**
+ * Creates an annotation for a comparing operator
+ * @TODO currently it simply returns a hardcoded string
+ * @param comparingOperator the comparing operator (currently unused)
+*/]
+[query public createComparingOperatorDeclAnnotation(comparingOperator : ComparingOperator) : String =
+	'annotation (Placement(transformation(extent={{-80,62},{-72,70}})))'
+/]
+
+[**
+ * Returns the (abbreviated) name of a comparing operator
+ * @param comparingOperator the comparing operator
+*/]
+[query public getComparingOperatorName(comparingOperator : ComparingOperator) : String =
+	if comparingOperator = ComparingOperator::LESS then
+		'Less'
+	else if comparingOperator = ComparingOperator::LESS_OR_EQUAL then
+		'LessOrEqual'
+	else if comparingOperator = ComparingOperator::GREATER then
+		'Greater'
+	else
+		'GreaterOrEqual'
+	endif
+	endif
+	endif
+/]
+
+[**
+ * Returns the number of entities (transition, entry event etc.)
+ * which can cause a clock reset.
+ * @param clock the clock
+*/]
+[query public getNumberOfResetInputs(clock : Clock) : Integer =
+	clock.getClockResetEntities()->size()
+/]
+
+[**
+ * Returns the clocks of the rtsc and all its substatecharts.
+ * @param rtsc the rtsc
+*/]
+[query public getAllClocks(rtsc : RealtimeStatechart) : Set(Clock) =
+	rtsc.allSubstatecharts()->union(Set(RealtimeStatechart){rtsc})->collect(clocks)->asSet()
+/]
+
+[**
+ * Returns the fully qualified name of the clock.
+ * @param clock the clock
+*/]
+[query public getFullyQualifiedName(clock : Clock) : String =
+	if clock.statechart.embedded then
+		clock.statechart.getFullyQualifiedName() + '.' + clock.getName()
+	else
+		clock.getName()
+	endif
+/]
+
+[**
+ * Returns the fully qualified path to the entry event's
+ * reset output.
+ * @param entryEvent the entry event
+*/]
+[query public getClockResetOutput(entryEvent : EntryEvent) : String =
+	entryEvent.getState().getFullyQualifiedName() + '.activePort'
+/]
+
+[**
+ * Returns the fully qualified path to the exit event's
+ * reset output.
+ * @param entryEvent the entry event
+*/]
+[query public getClockResetOutput(exitEvent : ExitEvent) : String =
+	exitEvent.getState().getFullyQualifiedExitMarkerName() + '.y'
+/]
+
+[**
+ * Returns the fully qualified path to the transition's
+ * reset output.
+*/]
+[query public getClockResetOutput(transition : Transition) : String =
+	transition.getFullyQualifiedName() + '.firePort'
+/]
+
+[**
+ * Returns the state to which the state event belongs to.
+ * @param stateEvent the state event
+*/]
+[query public getState(stateEvent : StateEvent) : realtimestatechart::State =
+	stateEvent.oclAsType(ecore::EObject).eContainer().oclAsType(State)
+/]
+
+[**
+ * Returns a set of entities (transition, entry event etc.)
+ * which can cause a clock reset.
+ * @param clock the clock
+*/]
+[query public getClockResetEntities(clock : Clock) : OrderedSet(OclAny) =
+	let rtscSet : Set(RealtimeStatechart) = clock.statechart.allSubstatecharts()->union(Set(RealtimeStatechart){clock.statechart})->asSet()
+	in
+	let stateSet : Set(State) = rtscSet->collect(states)->asSet()
+	in
+	stateSet->select(
+		not exitEvent.oclIsUndefined() and exitEvent.clockResets->notEmpty()
+	)->collect(exitEvent)->select(
+		clockResets->one(name = clock.name)
+	)->union(
+		stateSet->select(
+			not entryEvent.oclIsUndefined() and entryEvent.clockResets->notEmpty()
+		)->collect(entryEvent)->select(
+			clockResets->one(name = clock.name)
+		)
+	)->union(
+		rtscSet->collect(transitions)->select(
+			clockResets->one(name = clock.name)
+		)
+	)->asOrderedSet()
+/]

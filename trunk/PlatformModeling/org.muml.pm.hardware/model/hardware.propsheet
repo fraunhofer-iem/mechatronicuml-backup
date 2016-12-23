@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.muml:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.muml="http://www.muml.org/ape/1.0.0" xmi:id="_RlRs0M1gEeSIgPDefa6ZBw" contributorId="org.muml.ape.contributor">
+  <reconciler xmi:id="_RlRs0c1gEeSIgPDefa6ZBw">
+    <customTransformations xmi:id="_RlRs0s1gEeSIgPDefa6ZBw" uri="platform:/plugin/org.muml.pim.common/transformations/muml-propsheet.qvto"/>
+    <customTransformations xmi:id="_VZIdo8wbEeSjx7OWZCcdLw" uri="platform:/plugin/org.muml.pim.actionlanguage.xtext.ui/transformations/xtext-propsheet.qvto"/>
+  </reconciler>
+  <genModel href="hardware.genmodel#/"/>
+  <referencedGenerators href="../../org.muml.core/model/core.propsheet#_i_I4kOHNEeS5Putgio2lkg"/>
+  <referencedGenerators href="../../org.muml.pim/model/pim.propsheet#_VZIdoMwbEeSjx7OWZCcdLw"/>
+  <plugin xmi:id="_RlRs081gEeSIgPDefa6ZBw" id="org.muml.pm.hardware.edit.properties" name="MechatronicUML PSM Tabbed Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="1.0.0.qualifier">
+    <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
+    <requiredBundles>org.eclipse.core.runtime</requiredBundles>
+    <requiredBundles>org.eclipse.emf.edit</requiredBundles>
+    <requiredBundles>org.eclipse.ui</requiredBundles>
+    <requiredBundles>org.muml.pm.hardware</requiredBundles>
+    <requiredBundles>org.muml.pm.hardware.edit</requiredBundles>
+    <requiredBundles>org.muml.ape.runtime</requiredBundles>
+    <requiredBundles>org.muml.core.edit</requiredBundles>
+    <requiredBundles>org.muml.core.edit.properties</requiredBundles>
+    <requiredBundles>org.muml.pim.edit</requiredBundles>
+    <requiredBundles>org.muml.pim.edit.properties</requiredBundles>
+  </plugin>
+  <defaultTab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+  <tabs xmi:id="_RlST4M1gEeSIgPDefa6ZBw" id="property.tab.constraint" name="Constraint" afterTab="property.tab.comment"/>
+  <packages xmi:id="_RlST4c1gEeSIgPDefa6ZBw">
+    <genPackage href="hardware.genmodel#//hardware/hwplatform"/>
+    <classes xmi:id="_RlST481gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwplatform/HWPlatform"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwplatform/HWPlatform/embeddedPlatformParts"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwplatform/HWPlatform/networkingHardware"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwplatform/HWPlatform/delegationPorts"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwplatform/HWPlatform/networkConnectors"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
+    </classes>
+    <classes xmi:id="_RlST5M1gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwplatform/PlatformPart"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RlS68M1gEeSIgPDefa6ZBw" reconcile="false" initializeOCLExpression="">
+        <genFeature href="hardware.genmodel#//hardware/hwplatform/PlatformPart/parentHWPlatform"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RlS68c1gEeSIgPDefa6ZBw" tooltip="" reconcile="false">
+        <genFeature href="hardware.genmodel#//hardware/hwplatform/PlatformPart/cardinality"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:CustomPropertyEditor" xmi:id="_RlS68s1gEeSIgPDefa6ZBw" fullyQualifiedClassName="org.muml.pim.properties.valuetype.editor.CustomCardinalityPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwplatform/PlatformPart/hwPortParts"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
+    </classes>
+    <classes xmi:id="_RlS6881gEeSIgPDefa6ZBw" superClasses="_RlST5M1gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwplatform/HWPlatformPart"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RlS69M1gEeSIgPDefa6ZBw">
+        <genFeature href="hardware.genmodel#//hardware/hwplatform/HWPlatformPart/hwplatformType"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_RlS69c1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_RlTiAM1gEeSIgPDefa6ZBw" superClasses="_RlST5M1gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwplatform/ResourcePart"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RlTiAc1gEeSIgPDefa6ZBw">
+        <genFeature href="hardware.genmodel#//hardware/hwplatform/ResourcePart/resourceType"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_RlTiAs1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_RlTiBM1gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwplatform/DelegationHWPort"/>
+      <superClasses href="../../org.muml.pim/model/pim.propsheet#_VZXHLMwbEeSjx7OWZCcdLw"/>
+      <superClasses href="#//@packages.3/@classes.14"/>
+    </classes>
+    <classes xmi:id="_RlUwIM1gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwplatform/HWPortPart"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwplatform/HWPortPart/parentPlatformPart"/>
+        <readOnlyFilters xsi:type="org.muml:OCLFilter" expression="true"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwplatform/HWPortPart/hwport"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwplatform/HWPortPart/queuingTime"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwplatform/HWPortPart/payloadDataSize"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.pim/model/pim.propsheet#_VZXHLMwbEeSjx7OWZCcdLw"/>
+    </classes>
+    <classes>
+      <genClass href="hardware.genmodel#//hardware/hwplatform/NetworkConnector"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwplatform/NetworkConnector/protocol"/>
+        <readOnlyFilters xsi:type="org.muml:OCLFilter" expression="true"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.pim/model/pim.propsheet#_VZXHMMwbEeSjx7OWZCcdLw"/>
+    </classes>
+    <classes>
+      <genClass href="hardware.genmodel#//hardware/hwplatform/Bus"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwplatform/Bus/protocol"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.pim/model/pim.propsheet#_VZXHLMwbEeSjx7OWZCcdLw"/>
+      <superClasses href="#//@packages.0/@classes.9"/>
+    </classes>
+    <classes>
+      <genClass href="hardware.genmodel#//hardware/hwplatform/NetworkBridge"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwplatform/NetworkBridge/delay"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.pim/model/pim.propsheet#_VZXHLMwbEeSjx7OWZCcdLw"/>
+      <superClasses href="#//@packages.0/@classes.9"/>
+    </classes>
+    <classes>
+      <genClass href="hardware.genmodel#//hardware/hwplatform/NetworkingHardware"/>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_PmQuHNEeS5Putgio2lkg"/>
+    </classes>
+  </packages>
+  <packages xmi:id="_RlV-Rc1gEeSIgPDefa6ZBw">
+    <genPackage href="hardware.genmodel#//hardware/hwresource"/>
+    <classes xmi:id="_RlV-Rs1gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwresource/Resource"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwresource/Resource/communicationResources"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
+    </classes>
+    <classes xmi:id="_RlWlUM1gEeSIgPDefa6ZBw" superClasses="_RlcE5c1gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwresource/ComputingResource"/>
+    </classes>
+    <classes xmi:id="_RlWlUc1gEeSIgPDefa6ZBw" superClasses="_RlcE5c1gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwresource/MemoryResource"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RlWlUs1gEeSIgPDefa6ZBw">
+        <genFeature href="hardware.genmodel#//hardware/hwresource/MemoryResource/memoryAccess"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor" xmi:id="_RlWlU81gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RlWlVM1gEeSIgPDefa6ZBw">
+        <genFeature href="hardware.genmodel#//hardware/hwresource/MemoryResource/isVolatile"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:CheckboxPropertyEditor" xmi:id="_RlWlVc1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RlWlVs1gEeSIgPDefa6ZBw">
+        <genFeature href="hardware.genmodel#//hardware/hwresource/MemoryResource/memoryType"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor" xmi:id="_RlWlV81gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:PropertyCategory" xmi:id="_RlWlWM1gEeSIgPDefa6ZBw" title="Booleans" properties="_RlWlVM1gEeSIgPDefa6ZBw"/>
+    </classes>
+    <classes xmi:id="_RlXMYM1gEeSIgPDefa6ZBw" superClasses="_RlV-Rs1gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwresource/Device"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwresource/Device/deviceKind"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_RlXMY81gEeSIgPDefa6ZBw" superClasses="_RlWlUc1gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwresource/Cache"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RlXMZM1gEeSIgPDefa6ZBw">
+        <genFeature href="hardware.genmodel#//hardware/hwresource/Cache/writePolicy"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor" xmi:id="_RlXMZc1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RlXMZs1gEeSIgPDefa6ZBw">
+        <genFeature href="hardware.genmodel#//hardware/hwresource/Cache/replacementPolicy"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor" xmi:id="_Rla2wM1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_Rla2wc1gEeSIgPDefa6ZBw">
+        <genFeature href="hardware.genmodel#//hardware/hwresource/Cache/nbSets"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:SpinnerPropertyEditor" xmi:id="_Rlbd0M1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_Rlbd0c1gEeSIgPDefa6ZBw">
+        <genFeature href="hardware.genmodel#//hardware/hwresource/Cache/associativity"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:SpinnerPropertyEditor" xmi:id="_Rlbd0s1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_Rlbd081gEeSIgPDefa6ZBw">
+        <genFeature href="hardware.genmodel#//hardware/hwresource/Cache/usedByProcessor"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor" xmi:id="_Rlbd1M1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:PropertyCategory" xmi:id="_Rlbd1c1gEeSIgPDefa6ZBw" title="Lists" properties="_Rlbd081gEeSIgPDefa6ZBw"/>
+    </classes>
+    <classes xmi:id="_Rlbd1s1gEeSIgPDefa6ZBw" superClasses="_RlWlUM1gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwresource/ProgrammableLogicDevice"/>
+    </classes>
+    <classes xmi:id="_Rlbd181gEeSIgPDefa6ZBw" superClasses="_RlWlUM1gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwresource/Processor"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_Rlbd2M1gEeSIgPDefa6ZBw">
+        <genFeature href="hardware.genmodel#//hardware/hwresource/Processor/ownedCache"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_RlcE4M1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RlcE4c1gEeSIgPDefa6ZBw">
+        <genFeature href="hardware.genmodel#//hardware/hwresource/Processor/architecture"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor" xmi:id="_RlcE4s1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RlcE481gEeSIgPDefa6ZBw">
+        <genFeature href="hardware.genmodel#//hardware/hwresource/Processor/family"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:TextPropertyEditor" xmi:id="_RlcE5M1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" initializeOCLExpression="">
+        <genFeature href="hardware.genmodel#//hardware/hwresource/Processor/nbCores"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwresource/Processor/nbPipelineStages"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_RlcE5c1gEeSIgPDefa6ZBw" superClasses="_RlV-Rs1gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwresource/AtomicResource"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RlcE5s1gEeSIgPDefa6ZBw">
+        <genFeature href="hardware.genmodel#//hardware/hwresource/AtomicResource/parentStructuredResource"/>
+        <readOnlyFilters xsi:type="org.muml:OCLFilter" expression="true"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_RlcE581gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_RlcE6M1gEeSIgPDefa6ZBw" superClasses="_RlV-Rs1gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwresource/StructuredResource"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwresource/StructuredResource/embeddedAtomicResources"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_RlcE6c1gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwresource/ResourceRepository"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwresource/ResourceRepository/resources"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwresource/ResourceRepository/protocols"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
+    </classes>
+    <classes xmi:id="_Rlcr8M1gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwresource/CommunicationProtocolRepository"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwresource/CommunicationProtocolRepository/communicationProtocols"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
+    </classes>
+    <classes xmi:id="_Rlcr8c1gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwresource/CommunicationProtocol"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_Rlcr8s1gEeSIgPDefa6ZBw">
+        <genFeature href="hardware.genmodel#//hardware/hwresource/CommunicationProtocol/isTimeTriggered"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:CheckboxPropertyEditor" xmi:id="_Rlcr881gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_Rlcr9M1gEeSIgPDefa6ZBw" initializeOCLExpression="">
+        <genFeature href="hardware.genmodel#//hardware/hwresource/CommunicationProtocol/isEventTriggered"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:CheckboxPropertyEditor" xmi:id="_Rlcr9c1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_Rlcr9s1gEeSIgPDefa6ZBw">
+        <genFeature href="hardware.genmodel#//hardware/hwresource/CommunicationProtocol/furtherInformation"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:TextPropertyEditor" xmi:id="_RlehIM1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RlehIc1gEeSIgPDefa6ZBw">
+        <genFeature href="hardware.genmodel#//hardware/hwresource/CommunicationProtocol/isNetworkingProtocol"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:CheckboxPropertyEditor" xmi:id="_RlehIs1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:PropertyCategory" title="Booleans" properties="_Rlcr8s1gEeSIgPDefa6ZBw _Rlcr9M1gEeSIgPDefa6ZBw _RlehIc1gEeSIgPDefa6ZBw //@packages.1/@classes.11/@orderedElements.5"/>
+      <orderedElements xsi:type="org.muml:Property" initializeOCLExpression="">
+        <genFeature href="hardware.genmodel#//hardware/hwresource/CommunicationProtocol/isSerial"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:CheckboxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwresource/CommunicationProtocol/dataFrameSize"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwresource/CommunicationProtocol/bandwidth"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
+    </classes>
+    <classes xmi:id="_RlfIMM1gEeSIgPDefa6ZBw" superClasses="_Rlcr8c1gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwresource/BusProtocol"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RlfIMc1gEeSIgPDefa6ZBw">
+        <genFeature href="hardware.genmodel#//hardware/hwresource/BusProtocol/busProtocol"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor" xmi:id="_RlfIMs1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_RlfIM81gEeSIgPDefa6ZBw" superClasses="_Rlcr8c1gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwresource/LinkProtocol"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RlfINM1gEeSIgPDefa6ZBw">
+        <genFeature href="hardware.genmodel#//hardware/hwresource/LinkProtocol/linkProtocol"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor" xmi:id="_RlfINc1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_RlfINs1gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwresource/CommunicationResource"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RlfIN81gEeSIgPDefa6ZBw">
+        <genFeature href="hardware.genmodel#//hardware/hwresource/CommunicationResource/protocol"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_RlfvQM1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RlfvQc1gEeSIgPDefa6ZBw" tooltip="" reconcile="false">
+        <genFeature href="hardware.genmodel#//hardware/hwresource/CommunicationResource/cardinality"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:CustomPropertyEditor" xmi:id="_RlfvQs1gEeSIgPDefa6ZBw" fullyQualifiedClassName="org.muml.pim.properties.valuetype.editor.CustomCardinalityPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwresource/CommunicationResource/parentResource"/>
+        <readOnlyFilters xsi:type="org.muml:OCLFilter" expression="true"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
+    </classes>
+  </packages>
+  <packages xmi:id="_Rll15c1gEeSIgPDefa6ZBw">
+    <genPackage href="hardware.genmodel#//hardware/hwvaluetype"/>
+    <classes xmi:id="_Rll15s1gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwvaluetype/DataSize"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_Rll1581gEeSIgPDefa6ZBw">
+        <genFeature href="hardware.genmodel#//hardware/hwvaluetype/DataSize/value"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:TextPropertyEditor" xmi:id="_Rlmc8M1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_Rlmc8c1gEeSIgPDefa6ZBw">
+        <genFeature href="hardware.genmodel#//hardware/hwvaluetype/DataSize/unit"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor" xmi:id="_Rlmc8s1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_Rlmc881gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwvaluetype/Frequency"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_Rlmc9M1gEeSIgPDefa6ZBw">
+        <genFeature href="hardware.genmodel#//hardware/hwvaluetype/Frequency/value"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:TextPropertyEditor" xmi:id="_Rlmc9c1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_Rlmc9s1gEeSIgPDefa6ZBw">
+        <genFeature href="hardware.genmodel#//hardware/hwvaluetype/Frequency/unit"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor" xmi:id="_Rlmc981gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_Rlmc-M1gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwvaluetype/DataRate"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_Rlmc-c1gEeSIgPDefa6ZBw">
+        <genFeature href="hardware.genmodel#//hardware/hwvaluetype/DataRate/value"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:TextPropertyEditor" xmi:id="_RlnEAM1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RlnEAc1gEeSIgPDefa6ZBw">
+        <genFeature href="hardware.genmodel#//hardware/hwvaluetype/DataRate/unit"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor" xmi:id="_RlnEAs1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_RlnEA81gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwvaluetype/TimeInterval"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RlnEBM1gEeSIgPDefa6ZBw">
+        <genFeature href="hardware.genmodel#//hardware/hwvaluetype/TimeInterval/unit"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_RlnEBc1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.pim/model/pim.propsheet#_VZJrwcwbEeSjx7OWZCcdLw"/>
+    </classes>
+  </packages>
+  <packages xmi:id="_RlnEBs1gEeSIgPDefa6ZBw">
+    <genPackage href="hardware.genmodel#//hardware/hwresourceinstance"/>
+    <classes xmi:id="_RlnEB81gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwresourceinstance/ResourceInstance"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RlnECM1gEeSIgPDefa6ZBw">
+        <genFeature href="hardware.genmodel#//hardware/hwresourceinstance/ResourceInstance/resourceType"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_RlnECc1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwresourceinstance/ResourceInstance/hwports"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
+    </classes>
+    <classes xmi:id="_RlnrEM1gEeSIgPDefa6ZBw" superClasses="_RlqHUs1gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwresourceinstance/ComputingResourceInstance"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RlnrEc1gEeSIgPDefa6ZBw">
+        <genFeature href="hardware.genmodel#//hardware/hwresourceinstance/ComputingResourceInstance/frequency"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor" xmi:id="_RlnrEs1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_RlnrE81gEeSIgPDefa6ZBw" superClasses="_RlqHUs1gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwresourceinstance/MemoryResourceInstance"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RlnrFM1gEeSIgPDefa6ZBw">
+        <genFeature href="hardware.genmodel#//hardware/hwresourceinstance/MemoryResourceInstance/memorySize"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor" xmi:id="_RlnrFc1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RlnrFs1gEeSIgPDefa6ZBw">
+        <genFeature href="hardware.genmodel#//hardware/hwresourceinstance/MemoryResourceInstance/throughput"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor" xmi:id="_RlnrF81gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_RloSIM1gEeSIgPDefa6ZBw" superClasses="_RlnEB81gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwresourceinstance/DeviceInstance"/>
+    </classes>
+    <classes xmi:id="_RloSIc1gEeSIgPDefa6ZBw" superClasses="_RlnrE81gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwresourceinstance/StorageMemoryInstance"/>
+    </classes>
+    <classes xmi:id="_RloSIs1gEeSIgPDefa6ZBw" superClasses="_RlnrE81gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwresourceinstance/ProcessingMemoryInstance"/>
+    </classes>
+    <classes xmi:id="_RlpgQM1gEeSIgPDefa6ZBw" superClasses="_RlnrE81gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwresourceinstance/CacheInstance"/>
+    </classes>
+    <classes xmi:id="_RlpgQc1gEeSIgPDefa6ZBw" superClasses="_RlnrEM1gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwresourceinstance/ProgrammableLogicDeviceInstance"/>
+    </classes>
+    <classes xmi:id="_RlpgQs1gEeSIgPDefa6ZBw" superClasses="_RlnrEM1gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwresourceinstance/ProcessorInstance"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RlpgQ81gEeSIgPDefa6ZBw">
+        <genFeature href="hardware.genmodel#//hardware/hwresourceinstance/ProcessorInstance/MIPS"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:TextPropertyEditor" xmi:id="_RlpgRM1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RlpgRc1gEeSIgPDefa6ZBw">
+        <genFeature href="hardware.genmodel#//hardware/hwresourceinstance/ProcessorInstance/CPI"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:TextPropertyEditor" xmi:id="_RlpgRs1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RlqHUM1gEeSIgPDefa6ZBw">
+        <genFeature href="hardware.genmodel#//hardware/hwresourceinstance/ProcessorInstance/ownedCacheInstance"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_RlqHUc1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_RlqHUs1gEeSIgPDefa6ZBw" superClasses="_RlnEB81gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwresourceinstance/AtomicResourceInstance"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RlqHU81gEeSIgPDefa6ZBw" tooltip="" reconcile="false" initializeOCLExpression="">
+        <genFeature href="hardware.genmodel#//hardware/hwresourceinstance/AtomicResourceInstance/parentStructuredResourceInstance"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_RltxsM1gEeSIgPDefa6ZBw" superClasses="_RlnEB81gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwresourceinstance/StructuredResourceInstance"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwresourceinstance/StructuredResourceInstance/embeddedAtomicResourceInstances"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_Rlu_0M1gEeSIgPDefa6ZBw" superClasses="_RloSIM1gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwresourceinstance/SensorInstance"/>
+    </classes>
+    <classes xmi:id="_Rlu_0c1gEeSIgPDefa6ZBw" superClasses="_RloSIM1gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwresourceinstance/ActuatorInstance"/>
+    </classes>
+    <classes xmi:id="_Rlu_0s1gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwresourceinstance/ResourceInstanceRepository"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwresourceinstance/ResourceInstanceRepository/resourceInstances"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
+    </classes>
+    <classes>
+      <genClass href="hardware.genmodel#//hardware/hwresourceinstance/HWPort"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwresourceinstance/HWPort/parentResourceInstance"/>
+        <readOnlyFilters xsi:type="org.muml:OCLFilter" expression="true"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwresourceinstance/HWPort/communicationResource"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwresourceinstance/HWPort/cardinality"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
+    </classes>
+  </packages>
+  <packages xmi:id="_Rlvm4M1gEeSIgPDefa6ZBw">
+    <genPackage href="hardware.genmodel#//hardware/hwplatforminstance"/>
+    <classes xmi:id="_Rlvm4c1gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwplatforminstance/HWPlatformInstance"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_Rlvm4s1gEeSIgPDefa6ZBw">
+        <genFeature href="hardware.genmodel#//hardware/hwplatforminstance/HWPlatformInstance/hwplatformType"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_RlwN8M1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RlwN8c1gEeSIgPDefa6ZBw">
+        <genFeature href="hardware.genmodel#//hardware/hwplatforminstance/HWPlatformInstance/embeddedHPIC"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor" xmi:id="_RlwN8s1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_Rlw1AM1gEeSIgPDefa6ZBw">
+        <genFeature href="hardware.genmodel#//hardware/hwplatforminstance/HWPlatformInstance/parentHPIC"/>
+        <readOnlyFilters xsi:type="org.muml:OCLFilter" expression="true"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_RlxcEM1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwplatforminstance/HWPlatformInstance/delegationPorts"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
+    </classes>
+    <classes xmi:id="_RlzRQM1gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwplatforminstance/HWPlatformInstanceConfiguration"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_Rlz4UM1gEeSIgPDefa6ZBw">
+        <genFeature href="hardware.genmodel#//hardware/hwplatforminstance/HWPlatformInstanceConfiguration/parentHWPlatformInstance"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_Rlz4Uc1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwplatforminstance/HWPlatformInstanceConfiguration/hwplatformInstances"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwplatforminstance/HWPlatformInstanceConfiguration/networkingHardwareInstances"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwplatforminstance/HWPlatformInstanceConfiguration/resources"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwplatforminstance/HWPlatformInstanceConfiguration/networkConnectorInstances"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
+    </classes>
+    <classes xmi:id="_Rl0fYM1gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwplatforminstance/HWPortInstance"/>
+      <superClasses href="../../org.muml.pim/model/pim.propsheet#_VZXuMswbEeSjx7OWZCcdLw"/>
+      <superClasses href="#//@packages.3/@classes.14"/>
+    </classes>
+    <classes xmi:id="_Rl1Gcc1gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwplatforminstance/BusInstance"/>
+      <superClasses href="#_Rl6mAM1gEeSIgPDefa6ZBw"/>
+      <superClasses href="../../org.muml.pim/model/pim.propsheet#_VZXuMswbEeSjx7OWZCcdLw"/>
+    </classes>
+    <classes xmi:id="_Rl6mAM1gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwplatforminstance/NetworkingHardwareInstance"/>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_PmQuHNEeS5Putgio2lkg"/>
+    </classes>
+    <classes xmi:id="_Rl6mAc1gEeSIgPDefa6ZBw">
+      <genClass href="hardware.genmodel#//hardware/hwplatforminstance/DelegationHWPortInstance"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_Rl6mAs1gEeSIgPDefa6ZBw">
+        <genFeature href="hardware.genmodel#//hardware/hwplatforminstance/DelegationHWPortInstance/parentHWPlatformInstance"/>
+        <readOnlyFilters xsi:type="org.muml:OCLFilter" expression="true"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_Rl6mA81gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.pim/model/pim.propsheet#_VZXuMswbEeSjx7OWZCcdLw"/>
+    </classes>
+    <classes>
+      <genClass href="hardware.genmodel#//hardware/hwplatforminstance/NetworkBridgeInstance"/>
+      <superClasses href="#_Rl6mAM1gEeSIgPDefa6ZBw"/>
+      <superClasses href="../../org.muml.pim/model/pim.propsheet#_VZXuMswbEeSjx7OWZCcdLw"/>
+    </classes>
+    <classes>
+      <genClass href="hardware.genmodel#//hardware/hwplatforminstance/NetworkConnectorInstance"/>
+      <superClasses href="../../org.muml.pim/model/pim.propsheet#_VZXuOMwbEeSjx7OWZCcdLw"/>
+    </classes>
+  </packages>
+  <packages>
+    <genPackage href="hardware.genmodel#//hardware"/>
+    <classes>
+      <genClass href="hardware.genmodel#//hardware/Test"/>
+    </classes>
+  </packages>
+</org.muml:PropertyGenerator>

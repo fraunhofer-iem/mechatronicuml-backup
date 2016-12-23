@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:protocol="http://www.muml.org/pim/protocol/1.0.0" xmi:id="_ZXns4NUMEeOzB5sVHdJ6ng" type="Coordination Protocol" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_nuXwANUMEeOzB5sVHdJ6ng" type="2005" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_nuYXENUMEeOzB5sVHdJ6ng" type="7005">
+      <children xmi:type="notation:Shape" xmi:id="_nubaYNUMEeOzB5sVHdJ6ng" type="3005" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_nucBcdUMEeOzB5sVHdJ6ng" type="5005"/>
+        <element xmi:type="protocol:CoordinationProtocol" href="example1.fujaba#_ntp-UNUMEeOzB5sVHdJ6ng"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nucBcNUMEeOzB5sVHdJ6ng" x="63" y="3"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_nucogNUMEeOzB5sVHdJ6ng" type="3006" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_nufEwNUMEeOzB5sVHdJ6ng" type="5006">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_nufEwdUMEeOzB5sVHdJ6ng" y="5"/>
+        </children>
+        <element xmi:type="protocol:Role" href="example1.fujaba#_nuN_ANUMEeOzB5sVHdJ6ng"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nucogdUMEeOzB5sVHdJ6ng" y="93"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_nufr0NUMEeOzB5sVHdJ6ng" type="3006" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_nugS4NUMEeOzB5sVHdJ6ng" type="5006">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_nugS4dUMEeOzB5sVHdJ6ng" y="5"/>
+        </children>
+        <element xmi:type="protocol:Role" href="example1.fujaba#_nuQbQNUMEeOzB5sVHdJ6ng"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nufr0dUMEeOzB5sVHdJ6ng" x="126" y="93"/>
+      </children>
+    </children>
+    <element xmi:type="protocol:CoordinationProtocol" href="example1.fujaba#_ntp-UNUMEeOzB5sVHdJ6ng"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nuXwAdUMEeOzB5sVHdJ6ng" x="248" y="117"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_ZXns4dUMEeOzB5sVHdJ6ng"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="example1.fujaba#_W8MzW9UMEeOzB5sVHdJ6ng"/>
+  <edges xmi:type="notation:Connector" xmi:id="_nu5UcNUMEeOzB5sVHdJ6ng" type="4007" source="_nubaYNUMEeOzB5sVHdJ6ng" target="_nucogNUMEeOzB5sVHdJ6ng" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_nu5UcdUMEeOzB5sVHdJ6ng" fontName="Lucida Grande" fontHeight="11"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_nu5UctUMEeOzB5sVHdJ6ng" points="[13, 13, 13, 13]$[0, 0, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_nu7wsNUMEeOzB5sVHdJ6ng" type="4007" source="_nubaYNUMEeOzB5sVHdJ6ng" target="_nufr0NUMEeOzB5sVHdJ6ng" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_nu7wsdUMEeOzB5sVHdJ6ng" fontName="Lucida Grande" fontHeight="11"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_nu7wstUMEeOzB5sVHdJ6ng" points="[13, 13, 3, 3]$[0, 0, -10, -10]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_nu9l4NUMEeOzB5sVHdJ6ng" type="4006" source="_nucogNUMEeOzB5sVHdJ6ng" target="_nufr0NUMEeOzB5sVHdJ6ng" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_nu9l4dUMEeOzB5sVHdJ6ng" fontName="Lucida Grande" fontHeight="11"/>
+    <element xmi:type="protocol:RoleConnector" href="example1.fujaba#_nuRpYNUMEeOzB5sVHdJ6ng"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_nu9l4tUMEeOzB5sVHdJ6ng" points="[10, 10, 0, 0]$[0, 0, -10, -10]"/>
+  </edges>
+</notation:Diagram>

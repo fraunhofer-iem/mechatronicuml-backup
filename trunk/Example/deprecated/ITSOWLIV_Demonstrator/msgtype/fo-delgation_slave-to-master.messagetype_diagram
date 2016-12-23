@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_oagHQGM_EeOY3OClxpdOXw" type="Message Type" name="fo-delgation_slave-to-master.messagetype_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_oagHQmM_EeOY3OClxpdOXw" type="2008" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_oagHRGM_EeOY3OClxpdOXw" type="5017"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_oagHRWM_EeOY3OClxpdOXw" type="7010">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_oagHRmM_EeOY3OClxpdOXw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_oagHR2M_EeOY3OClxpdOXw"/>
+    </children>
+    <element xmi:type="msgtype:MessageTypeRepository" href="../ITSOWLIV_Demonstrator.fujaba#_X4zhsCp3EeOJnb1xCalP4w"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oagHQ2M_EeOY3OClxpdOXw"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_oagHQWM_EeOY3OClxpdOXw"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../ITSOWLIV_Demonstrator.fujaba#_bJzO0CprEeOJnb1xCalP4w"/>
+</notation:Diagram>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="UppaalEditor" version="8.1.0">
+  <ownedViewpoints name="uppaalEditor" modelFileExtension="uppaal">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="uppaalDiagramEditor" domainClass="uppaal.NTA">
+      <defaultLayer name="Default">
+        <edgeMappings name="Edge" sourceMapping="//@ownedViewpoints[name='uppaalEditor']/@ownedRepresentations[name='uppaalDiagramEditor']/@defaultLayer/@containerMappings[name='templateContainer']/@subNodeMappings[name='LocationNode']" targetMapping="//@ownedViewpoints[name='uppaalEditor']/@ownedRepresentations[name='uppaalDiagramEditor']/@defaultLayer/@containerMappings[name='templateContainer']/@subNodeMappings[name='LocationNode']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="templates.Edge" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelExpression="feature:guard">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="templateContainer" labelDirectEdit="//@ownedViewpoints[name='uppaalEditor']/@ownedRepresentations[name='uppaalDiagramEditor']/@defaultLayer/@toolSections.0/@ownedTools[name='EditLabel']" domainClass="templates.Template">
+          <subNodeMappings name="LocationNode" labelDirectEdit="//@ownedViewpoints[name='uppaalEditor']/@ownedRepresentations[name='uppaalDiagramEditor']/@defaultLayer/@toolSections.0/@ownedTools[name='EditLabel']" semanticCandidatesExpression="feature:location" domainClass="templates.Location">
+            <style xsi:type="style:SquareDescription" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+            <conditionnalStyles predicateExpression="[self.parentTemplate._init = self and self.locationTimeKind = LocationKind::COMMITED/]">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="12" sizeComputationExpression="10" resizeKind="NSEW" workspacePath="/uppaalSirius/images/locationImages/initialAndCommitedLocation.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="[self.parentTemplate._init = self and self.locationTimeKind = LocationKind::URGENT/]">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="12" sizeComputationExpression="1" resizeKind="NSEW" workspacePath="/uppaalSirius/images/locationImages/initialAndUrgentLocation.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="[self.parentTemplate._init = self/]">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="12" sizeComputationExpression="1" resizeKind="NSEW" workspacePath="/uppaalSirius/images/locationImages/initialLocation.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="[self.locationTimeKind = LocationKind::NORMAL/]">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="12" sizeComputationExpression="1" resizeKind="NSEW" workspacePath="uppaalSirius/images/locationImages/location.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="[self.locationTimeKind = LocationKind::COMMITED/]">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="12" sizeComputationExpression="1" resizeKind="NSEW" workspacePath="uppaalSirius/images/locationImages/commitedLocation.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="[self.locationTimeKind = LocationKind::URGENT/]">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="12" sizeComputationExpression="1" resizeKind="NSEW" workspacePath="uppaalSirius/images/locationImages/urgentLocation.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </conditionnalStyles>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" labelSize="12">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+        <toolSections name="CreationToolbar">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="CreateTemplate" containerMappings="//@ownedViewpoints[name='uppaalEditor']/@ownedRepresentations[name='uppaalDiagramEditor']/@defaultLayer/@containerMappings[name='templateContainer']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="templates.Template" referenceName="template">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="['T' + container.oclAsType(uppaal::NTA).template->size()/]"/>
+                  <subModelOperations xsi:type="tool_1:ExternalJavaActionCall" name="OpenEmbeddedEditor " action="//@ownedViewpoints[name='uppaalEditor']/@ownedRepresentations[name='uppaalDiagramEditor']/@defaultLayer/@toolSections.0/@ownedTools[name='CreateTemplate']/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.1/@subModelOperations.0">
+                    <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="xtext" id="org.obeonetwork.dsl.viewpoint.xtext.support.javaActions1"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="CreateLocation" nodeMappings="//@ownedViewpoints[name='uppaalEditor']/@ownedRepresentations[name='uppaalDiagramEditor']/@defaultLayer/@containerMappings[name='templateContainer']/@subNodeMappings[name='LocationNode']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="templates.Location" referenceName="location">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="['L' +container.oclAsType(uppaal::templates::Template).location->size()/]"/>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="parentTemplate" valueExpression="[container/]"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="CreateEdge" edgeMappings="//@ownedViewpoints[name='uppaalEditor']/@ownedRepresentations[name='uppaalDiagramEditor']/@defaultLayer/@edgeMappings[name='Edge']">
+            <sourceVariable name="sourceOfEdge"/>
+            <targetVariable name="targetOfEdge"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="feature:eContainer">
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="[targetOfEdge.oclAsType(uppaal::templates::Location).parentTemplate = sourceOfEdge.oclAsType(uppaal::templates::Location).parentTemplate/]">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="templates.Edge" referenceName="edge">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="[targetOfEdge/]"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="[sourceOfEdge/]"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditLabel">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="[arg0/]"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ToolDescription" name="mytool">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ExternalJavaActionCall" name="SelectSomethin" action="//@ownedViewpoints[name='uppaalEditor']/@ownedRepresentations[name='uppaalDiagramEditor']/@defaultLayer/@toolSections.0/@ownedTools[name='CreateTemplate']/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.1/@subModelOperations.0"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+  </ownedViewpoints>
+</description:Group>

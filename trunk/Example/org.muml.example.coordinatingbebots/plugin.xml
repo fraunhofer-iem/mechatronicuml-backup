@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="org.eclipse.ui.Examples/org.muml.example"
+            class="org.muml.core.example.ui.wizard.ExampleCreationWizard"
+            icon="images/muml.png"
+            id="org.muml.example.ui.CoordinatingBebotsCreationWizard"
+            name="Coordinating Bebots"
+            projectName="org.muml.example.coordinatingbebots"
+            projectPageDescription="Create a plug-in containing the Coordinating Bebots example models"
+            projectPageTitle="Coordinating Bebots Example">
+         <source bundle="org.muml.example.coordinatingbebots" path="data" />
+         <description>
+            Create the Models of the Coordinating Bebots Example
+         </description>
+      </wizard>
+   </extension>
+</plugin>

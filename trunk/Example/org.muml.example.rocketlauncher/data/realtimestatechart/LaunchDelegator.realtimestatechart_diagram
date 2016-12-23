@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:realtimestatechart="http://www.muml.org/pim/realtimestatechart/1.0.0" xmi:id="_bXy4UMjuEeW0gpRI-mS_yA" type="Real-Time Statechart" name="LaunchDelegator.realtimestatechart_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_nKB7wMmoEeWgH-bGO8AU1w" type="2007" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_nKDJ4MmoEeWgH-bGO8AU1w" type="5061"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_nKDJ4cmoEeWgH-bGO8AU1w" type="5062"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_nKDJ4smoEeWgH-bGO8AU1w" type="7030">
+      <children xmi:type="notation:Shape" xmi:id="_3-5vcOLIEeWXyfL4NpxXow" type="3032" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_3-6WgOLIEeWXyfL4NpxXow" type="5060"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_3-6WgeLIEeWXyfL4NpxXow" type="7031">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_3-6WguLIEeWXyfL4NpxXow" sorting="Automatic" sortingKeys="default_sorting_key:Ascending"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_3-6Wg-LIEeWXyfL4NpxXow"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_3-6WhOLIEeWXyfL4NpxXow" type="7032">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_3-6WheLIEeWXyfL4NpxXow"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_3-6WhuLIEeWXyfL4NpxXow"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_3-6Wh-LIEeWXyfL4NpxXow" type="7033">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_3-6WiOLIEeWXyfL4NpxXow"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_3-6WieLIEeWXyfL4NpxXow"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_3-6WiuLIEeWXyfL4NpxXow" type="7034">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_3-6Wi-LIEeWXyfL4NpxXow"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_3-6WjOLIEeWXyfL4NpxXow"/>
+        </children>
+        <element xmi:type="realtimestatechart:State" href="../rocketlauncher.muml#_bWFoIcjuEeW0gpRI-mS_yA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3-5vceLIEeWXyfL4NpxXow" width="291" height="321"/>
+      </children>
+    </children>
+    <element xmi:type="realtimestatechart:RealtimeStatechart" href="../rocketlauncher.muml#_bWFoIMjuEeW0gpRI-mS_yA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nKB7wcmoEeWgH-bGO8AU1w" width="331" height="406"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_bXy4UcjuEeW0gpRI-mS_yA"/>
+  <element xmi:type="realtimestatechart:RealtimeStatechart" href="../rocketlauncher.muml#_bWFoIMjuEeW0gpRI-mS_yA"/>
+</notation:Diagram>

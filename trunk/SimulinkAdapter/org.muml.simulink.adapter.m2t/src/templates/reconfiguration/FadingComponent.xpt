@@ -1,0 +1,36 @@
+«IMPORT simulink»
+«IMPORT simulink::reconfiguration»
+
+«EXTENSION org::eclipse::xtend::util::stdlib::counter»
+
+«EXTENSION extensions::Element»
+«EXTENSION extensions::Block»
+
+«EXTENSION extensions::reconfiguration::FadingComponent»
+
+«DEFINE fadingComponent FOR SubSystem»
+«EXPAND FadingComponent::file FOR this-»
+	Block {
+	  BlockType		  Reference
+	  Name			  "«this.getName()»"
+	  SID			  «this.getNewSimulinkId()»
+	  Ports			  [3, 2]
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "FadingComponent/FadingComponent"
+	  SourceType		  "SubSystem"
+	  ShowPortLabels	  "FromPortIcon"
+«EXPAND templates::Parameter::parameter FOREACH this.parameters.reject(p| {'BlockType','Name', 'SID', 'Tag', 'Ports'}.contains(p.name))-»
+	}
+«ENDDEFINE»
+
+
+«DEFINE file FOR SubSystem»
+«LET 'FadingComponent.mdl' AS filename-»
+«IF counterGet(filename) == 0-»
+«FILE filename-»
+«this.generateFadingComponent()»
+«ENDFILE-»
+«counterInc(filename)»
+«ENDIF»
+«ENDLET-»
+«ENDDEFINE»

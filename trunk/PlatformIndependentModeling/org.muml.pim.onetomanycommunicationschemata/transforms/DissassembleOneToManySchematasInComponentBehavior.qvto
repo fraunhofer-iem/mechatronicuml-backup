@@ -1,0 +1,42 @@
+import DisassembleOneToManySchemataInDiscreteInteractionEndpoint;
+
+
+
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype common uses core::expressions::common('http://www.muml.org/core/1.0.0');
+modeltype expressions uses core::expressions('http://www.muml.org/core/1.0.0');
+modeltype behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
+modeltype valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype storydriven uses 'http://www.muml.org/core/1.0.0';
+modeltype core uses core('http://www.muml.org/core/1.0.0');
+modeltype modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
+modeltype schemata uses pim::realtimestatechart::one_to_n_schemata('http://www.muml.org/pim/1.0.0');
+modeltype types uses pim::types('http://www.muml.org/pim/1.0.0');
+
+
+transformation DissassembleOneToManySchematasInComponentBehavior(inout input : modelinstance);
+
+
+main() {
+
+	// not debug
+	var componentRTSC : pim::realtimestatechart::RealtimeStatechart := input.rootObjects()[pim::realtimestatechart::RealtimeStatechart]->any(true).oclAsType(pim::realtimestatechart::RealtimeStatechart);
+	//debug 
+	//var componentRTSC : pim::realtimestatechart::RealtimeStatechart := getRealtimeStatechartCategory(input.rootObjects()[RootNode]->any(true)).modelElements->asOrderedSet()->at(1).oclAsType(RealtimeStatechart);
+	assert fatal (componentRTSC.behavioralElement.oclIsKindOf(pim::component::Component)) with log ("The specified RealtimeStatechart must be the behavior of a Component!");
+	assert fatal (componentRTSC.usesOneToManyCommunicationSchemata) with log ("The RealtimeStatechart uses no one-to-many schemata to disassemble!");
+
+	var childrenRTSCs : Set(RealtimeStatechart) := componentRTSC->closure(states.oclAsType(State).embeddedRegions.oclAsType(Region).embeddedStatechart);
+		
+	rootNode :=componentRTSC.getHighestParentStatechart().oclAsType(EObject).eContainer().eContainer().oclAsType(RootNode);
+	childrenRTSCs->select(statechart:RealtimeStatechart|statechart.behavioralElement.oclIsKindOf(pim::connector::DiscreteInteractionEndpoint) and not statechart.behavioralElement.oclIsUndefined())->forEach(chart){
+		
+		var region : Region := chart.oclAsType(RealtimeStatechart).parentRegion;
+		var statechart :=disassembleDiscreteInteractionPointRTSC(chart);
+		region.embeddedStatechart := statechart;
+	};
+	
+}

@@ -1,0 +1,7 @@
+# Tracing options for the org.muml.reconfiguration.verification.sdd.componentsdd.diagram plug-in
+
+# Common issues
+org.muml.reconfiguration.verification.sdd.componentsdd.diagram/debug=false
+
+# Visual IDs
+org.muml.reconfiguration.verification.sdd.componentsdd.diagram/debug/visualID=false

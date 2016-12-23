@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.muml.storydiagram.reachanalysis.sdm.test
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.muml.core.reachanalysis.core,
+ org.muml.core.reachanalysis.reachabilitygraph,
+ org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm,
+ org.eclipse.m2m.qvt.oml;bundle-version="3.0.1",
+ org.muml.storydiagram.interpreter.core.mdelab,
+ org.muml.storydiagram.interpreter.core.eclipse,
+ org.muml.storydiagram.interpreter.eclipse,
+ org.muml.storydiagram.reachanalysis.sdm,
+ org.muml.core,
+ org.muml.storydiagram,
+ org.muml.core,
+ org.muml.pim,
+ org.muml.storydiagram.diagram.interpreter,
+ org.junit;bundle-version="4.10.0",
+ org.muml.verification.core.runtime
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

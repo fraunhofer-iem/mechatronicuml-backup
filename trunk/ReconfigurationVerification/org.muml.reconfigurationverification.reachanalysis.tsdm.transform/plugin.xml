@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+ 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated TimedSDMReachabilityAnalysisHelper -->
+      <package
+            uri="http://www.muml.org/reconfigurationverification.reachanalysis.tsdm.transform/helper/1.0.0"
+            class="org.muml.reconfigurationverification.reachanalysis.tsdm.transform.tsdmhelper.TsdmhelperPackage"
+            genModel="model/TimedSDMReachabilityAnalysisHelper.genmodel"/>
+   </extension>
+
+</plugin>

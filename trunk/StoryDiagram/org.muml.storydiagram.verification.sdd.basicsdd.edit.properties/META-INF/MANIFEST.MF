@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Properties
+Bundle-SymbolicName: org.muml.storydiagram.verification.sdd.basicsdd.edit.properties; singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.emf.ecore,
+ org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.edit,
+ org.muml.storydiagram.verification.sdd.basicsdd,
+ org.muml.storydiagram.verification.sdd.basicsdd.edit,
+ org.muml.ape.runtime,
+ org.muml.core.edit,
+ org.muml.core.edit.properties,
+ org.muml.storydiagram.verification.sdd.edit,
+ org.muml.storydiagram.verification.sdd.edit.properties
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.muml.storydiagram.verification.sdd.basicsdd.properties.metamodel, org.muml.storydiagram.verification.sdd.basicsdd.properties.constraint,
+ org.muml.storydiagram.verification.sdd.basicsdd.properties.basicsdd.editor
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

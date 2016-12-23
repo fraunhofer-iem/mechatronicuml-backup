@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+
+  <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+    <propertyContributor
+          contributorId="">
+       <propertyCategory
+             category="domain">
+       </propertyCategory>
+       <propertyCategory
+             category="default">
+       </propertyCategory>
+       <propertyCategory
+             category="extended">
+       </propertyCategory>
+       <propertyCategory
+             category="advanced">
+       </propertyCategory>
+    </propertyContributor>
+  </extension>
+
+
+
+
+
+
+
+
+ <extension point="org.muml.ape.runtime.propertyEditors">
+    <propertyEditors>
+    
+       <propertyEditor
+             factory="org.muml.storydiagram.properties.activities.editor.ExceptionVariableEditor$Factory"
+             type="http://www.muml.org/storydiagram/activities/1.0.0#ExceptionVariable">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.storydiagram.properties.activities.editor.ActivityEdgeEditor$Factory"
+             type="http://www.muml.org/storydiagram/activities/1.0.0#ActivityEdge">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.storydiagram.properties.activities.editor.ActivityEditor$Factory"
+             type="http://www.muml.org/storydiagram/activities/1.0.0#Activity">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.storydiagram.properties.activities.editor.OperationExtensionEditor$Factory"
+             type="http://www.muml.org/storydiagram/activities/1.0.0#OperationExtension">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.storydiagram.properties.activities.editor.MatchingStoryNodeEditor$Factory"
+             type="http://www.muml.org/storydiagram/activities/1.0.0#MatchingStoryNode">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.storydiagram.properties.activities.editor.StructuredNodeEditor$Factory"
+             type="http://www.muml.org/storydiagram/activities/1.0.0#StructuredNode">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.storydiagram.properties.activities.editor.JunctionNodeEditor$Factory"
+             type="http://www.muml.org/storydiagram/activities/1.0.0#JunctionNode">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.storydiagram.properties.activities.editor.InitialNodeEditor$Factory"
+             type="http://www.muml.org/storydiagram/activities/1.0.0#InitialNode">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.storydiagram.properties.activities.editor.StatementNodeEditor$Factory"
+             type="http://www.muml.org/storydiagram/activities/1.0.0#StatementNode">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.storydiagram.properties.activities.editor.ActivityFinalNodeEditor$Factory"
+             type="http://www.muml.org/storydiagram/activities/1.0.0#ActivityFinalNode">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.storydiagram.properties.activities.editor.ActivityCallNodeEditor$Factory"
+             type="http://www.muml.org/storydiagram/activities/1.0.0#ActivityCallNode">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.storydiagram.properties.activities.editor.ModifyingStoryNodeEditor$Factory"
+             type="http://www.muml.org/storydiagram/activities/1.0.0#ModifyingStoryNode">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.storydiagram.properties.activities.editor.FlowFinalNodeEditor$Factory"
+             type="http://www.muml.org/storydiagram/activities/1.0.0#FlowFinalNode">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.storydiagram.properties.calls.editor.ParameterBindingEditor$Factory"
+             type="http://www.muml.org/storydiagram/calls/1.0.0#ParameterBinding">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.storydiagram.properties.calls.editor.OpaqueCallableEditor$Factory"
+             type="http://www.muml.org/storydiagram/calls/1.0.0#OpaqueCallable">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.storydiagram.properties.calls.editor.ParameterExtensionEditor$Factory"
+             type="http://www.muml.org/storydiagram/calls/1.0.0#ParameterExtension">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.storydiagram.properties.patterns.editor.ObjectVariableEditor$Factory"
+             type="http://www.muml.org/storydiagram/patterns/1.0.0#ObjectVariable">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.storydiagram.properties.patterns.editor.ConstraintEditor$Factory"
+             type="http://www.muml.org/storydiagram/patterns/1.0.0#Constraint">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.storydiagram.properties.patterns.editor.LinkConstraintEditor$Factory"
+             type="http://www.muml.org/storydiagram/patterns/1.0.0#LinkConstraint">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.storydiagram.properties.patterns.editor.AttributeAssignmentEditor$Factory"
+             type="http://www.muml.org/storydiagram/patterns/1.0.0#AttributeAssignment">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.storydiagram.properties.patterns.editor.CollectionVariableEditor$Factory"
+             type="http://www.muml.org/storydiagram/patterns/1.0.0#CollectionVariable">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.storydiagram.properties.patterns.editor.PrimitiveVariableEditor$Factory"
+             type="http://www.muml.org/storydiagram/patterns/1.0.0#PrimitiveVariable">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.storydiagram.properties.patterns.editor.PathEditor$Factory"
+             type="http://www.muml.org/storydiagram/patterns/1.0.0#Path">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.storydiagram.properties.patterns.editor.LinkVariableEditor$Factory"
+             type="http://www.muml.org/storydiagram/patterns/1.0.0#LinkVariable">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.storydiagram.properties.patterns.editor.InclusionLinkEditor$Factory"
+             type="http://www.muml.org/storydiagram/patterns/1.0.0#InclusionLink">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.storydiagram.properties.patterns.editor.MatchingPatternEditor$Factory"
+             type="http://www.muml.org/storydiagram/patterns/1.0.0#MatchingPattern">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.storydiagram.properties.patterns.editor.MaybeLinkEditor$Factory"
+             type="http://www.muml.org/storydiagram/patterns/1.0.0#MaybeLink">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.storydiagram.properties.patterns.editor.StoryPatternEditor$Factory"
+             type="http://www.muml.org/storydiagram/patterns/1.0.0#StoryPattern">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.storydiagram.properties.templates.editor.TemplateBindingEditor$Factory"
+             type="http://www.muml.org/storydiagram/templates/1.0.0#TemplateBinding">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.storydiagram.properties.templates.editor.PropertyBindingEditor$Factory"
+             type="http://www.muml.org/storydiagram/templates/1.0.0#PropertyBinding">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.storydiagram.properties.templates.editor.TemplateSignatureEditor$Factory"
+             type="http://www.muml.org/storydiagram/templates/1.0.0#TemplateSignature">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.storydiagram.properties.expressions.editor.MethodCallExpressionEditor$Factory"
+             type="http://www.muml.org/storydiagram/calls/expressions/1.0.0#MethodCallExpression">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.storydiagram.properties.expressions.editor.ParameterExpressionEditor$Factory"
+             type="http://www.muml.org/storydiagram/calls/expressions/1.0.0#ParameterExpression">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.storydiagram.properties.expressions.editor.AttributeValueExpressionEditor$Factory"
+             type="http://www.muml.org/storydiagram/patterns/expressions/1.0.0#AttributeValueExpression">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.storydiagram.properties.expressions.editor.ObjectVariableExpressionEditor$Factory"
+             type="http://www.muml.org/storydiagram/patterns/expressions/1.0.0#ObjectVariableExpression">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.storydiagram.properties.expressions.editor.CollectionSizeExpressionEditor$Factory"
+             type="http://www.muml.org/storydiagram/patterns/expressions/1.0.0#CollectionSizeExpression">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.storydiagram.properties.expressions.editor.PrimitiveVariableExpressionEditor$Factory"
+             type="http://www.muml.org/storydiagram/patterns/expressions/1.0.0#PrimitiveVariableExpression">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.storydiagram.properties.expressions.editor.ExceptionVariableExpressionEditor$Factory"
+             type="http://www.muml.org/storydiagram/activities/expressions/1.0.0#ExceptionVariableExpression">
+       </propertyEditor>
+    
+    </propertyEditors>
+ </extension>
+
+
+ <extension
+       point="org.muml.ape.runtime.metamodelContributor">
+    <metamodel
+          contributor="org.muml.storydiagram.properties.metamodel.MetamodelContributor">
+    </metamodel>
+ </extension>
+
+
+ <extension
+       point="org.muml.ape.runtime.creationConstraintContributor">
+    <constraint
+          contributor="org.muml.storydiagram.properties.constraint.CreationConstraintContributor">
+    </constraint>
+ </extension>
+
+</plugin>

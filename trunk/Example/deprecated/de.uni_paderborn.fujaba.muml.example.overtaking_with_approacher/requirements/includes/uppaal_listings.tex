@@ -1,0 +1,34 @@
+\usepackage{latexsym,multicol,color,pstricks}
+\usepackage{listings} % comes with texlive−latex−recomended
+\lstdefinelanguage{Uppaal}{ % syntax highlight via font
+basicstyle=\small\sffamily, % small sans−serif font (like verdana)
+keywords={after update,assign,before update,break,case,const,continue,
+default,else,enum,for,guard,if,meta,process,progress,return,select,
+state,sync,switch,trans,system,while},
+keywords={[2]broadcast,bool,clock,chan,commit,init,int,scalar,struct,
+typedef,urgent,void}, keywordstyle={[2]\bfseries},
+keywords={[3]false,true}, otherkeywords={[3]−>},
+morekeywords={[3]−>}, keywordstyle={[3]\bfseries},
+comment=[l]{//}, morecomment=[s]{/∗}{∗/}, % single and multi−line
+commentstyle=\itshape, % appear in italic
+tabsize=4, % tab treatment (going to be fixed in Uppaal)
+captionpos=b, % put captions at the bottom
+escapechar=@ % write LaTeX comments escaped by @ symbol
+}
+\lstdefinelanguage[GUI]{Uppaal}[]{Uppaal}{ % syntax like in GUI
+keywordstyle={[2]\color{black!50!green}}, % slightly darker than in GUI
+otherkeywords={−>}, keywordstyle={[3]\color{magenta}},
+commentstyle={\color{black!50!red}\itshape}, % dark red
+literate={{−−>}{$−−>$}3} % fix arrows
+}
+\lstdefinelanguage[LIT]{Uppaal}[GUI]{Uppaal}{ % replace some symbols
+literate={{−>}{{$\leadsto$} }2 {−−>}{{$\longrightarrow$} }2
+{=}{{$\gets$ }}2 {==}{{$==$}}2 {:=}{{$\gets$ }}2 {<=}{{$\leq$ }}2
+{>=}{{$\geq$ }}2 {&&}{{$\land$}}2 {||}{{$\lor$}}2 {<>}{{$\Diamond$}}1
+{[]}{{$\Box$}}1 {forall}{{$\forall$}}1 {exists}{{$\exists$}}1}
+}
+
+\lstnewenvironment{lstuppaal}[2]{\lstset{language={Uppaal}, 
+columns={[l]flexible},
+frameround=fftt, frame=shadowbox, rulesepcolor=\color{gray},
+caption={#2}, label=#1}}{}

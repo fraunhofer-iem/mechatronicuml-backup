@@ -1,0 +1,31 @@
+transformation CreateMessageBufferEveryReceiverMessageType(inout input : PimPackage);
+
+modeltype PimPackage uses pim('http://www.muml.org/pim/1.0.0');
+modeltype ComponentPackage uses pim::component('http://www.muml.org/pim/1.0.0');
+modeltype ProtocolPackage uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype RTSCPackage uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype ConnectorPackage uses pim::connector('http://www.muml.org/pim/1.0.0');
+modeltype TypesPackage uses pim::types('http://www.muml.org/pim/1.0.0');
+modeltype ValuetypePackage uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype MessageTypePackage uses pim::msgtype('http://www.muml.org/pim/1.0.0');
+modeltype BehaviorPackage uses pim::behavior('http://www.muml.org/pim/1.0.0');
+
+
+main() {
+
+	var inputEndpoint : DiscreteInteractionEndpoint := input.rootObjects()[DiscreteInteractionEndpoint]->any(true);
+	assert fatal (not inputEndpoint.oclIsUndefined()) with log ("The input must contain a DiscreteInteractionEndpoint!");
+	
+	// if there is no buffer for the messagetype yet, create new buffer
+	inputEndpoint.receiverMessageTypes->select(mt|not inputEndpoint.receiverMessageBuffer.messageType->includes(mt))-> forEach(mt) {
+					
+		var buffer : MessageBuffer := object MessageBuffer{		
+			name := "buffer_for_" + mt.name;
+			bufferSize := object NaturalNumber {
+				value := 1;				
+			};
+			messageType += mt;		
+		};
+		inputEndpoint.receiverMessageBuffer += buffer;
+	};
+}

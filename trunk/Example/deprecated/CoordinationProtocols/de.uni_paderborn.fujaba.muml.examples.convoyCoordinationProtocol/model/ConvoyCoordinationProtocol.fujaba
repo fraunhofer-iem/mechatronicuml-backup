@@ -1,0 +1,1757 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--muml metamodel version 0.3.2 (r2996)-->
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionlanguage="http://www.fujaba.de/muml/actionlanguage/0.4.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:expr="http://www.storydriven.org/core/expressions/0.3.1" xmlns:expression="http://www.fujaba.de/muml/reconfiguration/expression/0.3.7" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sda="http://www.storydriven.org/storydiagrams/activities/0.2.1" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:sdp="http://www.storydriven.org/storydiagrams/patterns/0.2.1" xmlns:structdatatype="http://www.fujaba.de/muml/reconfiguration/structdatatype/0.3.18" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_V_B5YGCUEeK08IWBu_4Dfg">
+  <categories xmi:id="_V_U0UGCUEeK08IWBu_4Dfg" key="de.uni_paderborn.fujaba.muml.types.category" name="types">
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_V_elUGCUEeK08IWBu_4Dfg" name="VOID"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_V_elUWCUEeK08IWBu_4Dfg" name="BOOLEAN" primitiveType="BOOLEAN"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_V_elUmCUEeK08IWBu_4Dfg" name="INT8" primitiveType="INT8"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_V_elU2CUEeK08IWBu_4Dfg" name="INT16" primitiveType="INT16"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_V_elVGCUEeK08IWBu_4Dfg" name="INT32" primitiveType="INT32"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_V_elVWCUEeK08IWBu_4Dfg" name="INT64" primitiveType="INT64"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_V_elVmCUEeK08IWBu_4Dfg" name="DOUBLE" primitiveType="DOUBLE"/>
+    <modelElements xsi:type="structdatatype:StructType" xmi:id="_PKXC4MRFEeKovq4g5K7Xxw" name="Profile"/>
+    <modelElements xsi:type="structdatatype:StructType" xmi:id="_PKXC4cRFEeKovq4g5K7Xxw" name="ProfileStore">
+      <references xmi:id="_ejPRYMRFEeKovq4g5K7Xxw" name="roleProfiles" type="_PKXC5MRFEeKovq4g5K7Xxw">
+        <cardinality xmi:id="_jDHWAMRFEeKovq4g5K7Xxw">
+          <lowerBound xmi:id="_j0z4sMRFEeKovq4g5K7Xxw" value="0"/>
+          <upperBound xmi:id="_lKD0YMRFEeKovq4g5K7Xxw" infinity="true"/>
+        </cardinality>
+      </references>
+    </modelElements>
+    <modelElements xsi:type="structdatatype:StructType" xmi:id="_PKXC4sRFEeKovq4g5K7Xxw" name="ProfileList">
+      <references xmi:id="_EpfPsMRGEeKovq4g5K7Xxw" name="profiles" type="_PKXC4MRFEeKovq4g5K7Xxw">
+        <cardinality xmi:id="_EpfPscRGEeKovq4g5K7Xxw">
+          <lowerBound xmi:id="_EpfPssRGEeKovq4g5K7Xxw" value="0"/>
+          <upperBound xmi:id="_EpfPs8RGEeKovq4g5K7Xxw" infinity="true"/>
+        </cardinality>
+      </references>
+    </modelElements>
+    <modelElements xsi:type="structdatatype:StructType" xmi:id="_PKXC48RFEeKovq4g5K7Xxw" name="ProfileIterator">
+      <references xmi:id="_9s87YMRFEeKovq4g5K7Xxw" name="profilesToDo" type="_PKXC4MRFEeKovq4g5K7Xxw">
+        <cardinality xmi:id="_ByDIgMRGEeKovq4g5K7Xxw">
+          <lowerBound xmi:id="_ByDIgcRGEeKovq4g5K7Xxw" value="0"/>
+          <upperBound xmi:id="_ByDIgsRGEeKovq4g5K7Xxw" infinity="true"/>
+        </cardinality>
+      </references>
+    </modelElements>
+    <modelElements xsi:type="structdatatype:StructType" xmi:id="_PKXC5MRFEeKovq4g5K7Xxw" name="RoleProfiles">
+      <references xmi:id="_tYaV4MRFEeKovq4g5K7Xxw" name="allProfiles" type="_PKXC4MRFEeKovq4g5K7Xxw">
+        <cardinality xmi:id="_0bpIEMRFEeKovq4g5K7Xxw">
+          <lowerBound xmi:id="_0bpIEcRFEeKovq4g5K7Xxw" value="0"/>
+          <upperBound xmi:id="_0bpIEsRFEeKovq4g5K7Xxw" infinity="true"/>
+        </cardinality>
+      </references>
+      <references xmi:id="_16HRMMRFEeKovq4g5K7Xxw" name="currentProfile" type="_PKXC4MRFEeKovq4g5K7Xxw">
+        <cardinality xmi:id="_5sBckMRFEeKovq4g5K7Xxw">
+          <lowerBound xmi:id="_6GWoIMRFEeKovq4g5K7Xxw"/>
+          <upperBound xmi:id="_6m8MsMRFEeKovq4g5K7Xxw"/>
+        </cardinality>
+      </references>
+      <references xmi:id="_ReRw0MRGEeKovq4g5K7Xxw" name="roleInstance" type="_RgHooWCVEeK08IWBu_4Dfg">
+        <cardinality xmi:id="_VCVtcMRGEeKovq4g5K7Xxw">
+          <lowerBound xmi:id="_VCVtccRGEeKovq4g5K7Xxw"/>
+          <upperBound xmi:id="_VCVtcsRGEeKovq4g5K7Xxw"/>
+        </cardinality>
+      </references>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_ijwlQGCUEeK08IWBu_4Dfg" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol">
+    <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_RgHooGCVEeK08IWBu_4Dfg" name="ProfileTransmission">
+      <roles xmi:id="_RgHooWCVEeK08IWBu_4Dfg" connectors="_RgHoqWCVEeK08IWBu_4Dfg" behavior="_i8FJMWCVEeK08IWBu_4Dfg" name="coordinator" senderMessageTypes="_oSL9AGSMEeKKctqRpH_8DA _JsgiYGCVEeK08IWBu_4Dfg _7r3HcGSMEeKKctqRpH_8DA _u3NwQGSMEeKKctqRpH_8DA _sj7fAGSMEeKKctqRpH_8DA _16TYgGSMEeKKctqRpH_8DA _4ZMAUGSNEeKKctqRpH_8DA" receiverMessageTypes="_cRrjEGSNEeKKctqRpH_8DA _yyoAcGSNEeKKctqRpH_8DA _SUUiEGSNEeKKctqRpH_8DA _T9W8cGSNEeKKctqRpH_8DA _OEz0sGSNEeKKctqRpH_8DA _QqsR0GSNEeKKctqRpH_8DA" adaptationBehavior="_B9qscGR8EeKP2f27tWrwPA" subroleBehavior="_fKWk4GSDEeKKctqRpH_8DA">
+        <cardinality xmi:id="_RgHoomCVEeK08IWBu_4Dfg">
+          <lowerBound xmi:id="_o_jSEHJfEeSUj-2PlgD-kA"/>
+          <upperBound xmi:id="_o_jSEXJfEeSUj-2PlgD-kA" value="10"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_T_dw8MLiEeKElo7BVGwZsA" name="" messageType="_cRrjEGSNEeKKctqRpH_8DA _yyoAcGSNEeKKctqRpH_8DA _SUUiEGSNEeKKctqRpH_8DA _T9W8cGSNEeKKctqRpH_8DA _OEz0sGSNEeKKctqRpH_8DA _QqsR0GSNEeKKctqRpH_8DA">
+          <bufferSize xmi:id="_VuA9cMLiEeKElo7BVGwZsA" value="10"/>
+        </receiverMessageBuffer>
+      </roles>
+      <roles xmi:id="_RgHopWCVEeK08IWBu_4Dfg" connectors="_RgHoqWCVEeK08IWBu_4Dfg" behavior="_FAXG4GCWEeK08IWBu_4Dfg" name="member" senderMessageTypes="_cRrjEGSNEeKKctqRpH_8DA _yyoAcGSNEeKKctqRpH_8DA _SUUiEGSNEeKKctqRpH_8DA _T9W8cGSNEeKKctqRpH_8DA _OEz0sGSNEeKKctqRpH_8DA _QqsR0GSNEeKKctqRpH_8DA" receiverMessageTypes="_oSL9AGSMEeKKctqRpH_8DA _JsgiYGCVEeK08IWBu_4Dfg _7r3HcGSMEeKKctqRpH_8DA _u3NwQGSMEeKKctqRpH_8DA _sj7fAGSMEeKKctqRpH_8DA _16TYgGSMEeKKctqRpH_8DA _4ZMAUGSNEeKKctqRpH_8DA">
+        <cardinality xmi:id="_RgHopmCVEeK08IWBu_4Dfg">
+          <lowerBound xmi:id="_RgHop2CVEeK08IWBu_4Dfg"/>
+          <upperBound xmi:id="_RgHoqGCVEeK08IWBu_4Dfg"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_ZkSEYMLiEeKElo7BVGwZsA" name="" messageType="_oSL9AGSMEeKKctqRpH_8DA _JsgiYGCVEeK08IWBu_4Dfg _7r3HcGSMEeKKctqRpH_8DA _u3NwQGSMEeKKctqRpH_8DA _sj7fAGSMEeKKctqRpH_8DA _16TYgGSMEeKKctqRpH_8DA _4ZMAUGSNEeKKctqRpH_8DA">
+          <bufferSize xmi:id="_aV1dIMLiEeKElo7BVGwZsA" value="10"/>
+        </receiverMessageBuffer>
+      </roles>
+      <roleConnector xmi:id="_RgHoqWCVEeK08IWBu_4Dfg" connectorEndpoints="_RgHooWCVEeK08IWBu_4Dfg _RgHopWCVEeK08IWBu_4Dfg">
+        <connectorQualityOfServiceAssumptions xmi:id="_RgHoqmCVEeK08IWBu_4Dfg" comment="">
+          <minMessageDelay xmi:id="_LvWuUGlxEeKpCt9jhAsNlw">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_TY-yIGlxEeKpCt9jhAsNlw" value="0"/>
+          </minMessageDelay>
+          <maxMessageDelay xmi:id="_PJAxwGlxEeKpCt9jhAsNlw">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_UWuMwGlxEeKpCt9jhAsNlw" value="0"/>
+          </maxMessageDelay>
+        </connectorQualityOfServiceAssumptions>
+      </roleConnector>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_IpHLsGCVEeK08IWBu_4Dfg" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype">
+    <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_JUj8cGCVEeK08IWBu_4Dfg" name="Member">
+      <messageTypes xmi:id="_4ZMAUGSNEeKKctqRpH_8DA" name="updateProfile">
+        <parameters xmi:id="_OUmGsGSZEeKKctqRpH_8DA" name="profile"/>
+      </messageTypes>
+      <messageTypes xmi:id="_JsgiYGCVEeK08IWBu_4Dfg" name="declineConvoyEntry"/>
+      <messageTypes xmi:id="_oSL9AGSMEeKKctqRpH_8DA" name="approveConvoyEntry"/>
+      <messageTypes xmi:id="_sj7fAGSMEeKKctqRpH_8DA" name="readyForProfileTransmission"/>
+      <messageTypes xmi:id="_u3NwQGSMEeKKctqRpH_8DA" name="profileReceived"/>
+      <messageTypes xmi:id="_16TYgGSMEeKKctqRpH_8DA" name="startConvoy"/>
+      <messageTypes xmi:id="_7r3HcGSMEeKKctqRpH_8DA" name="enterConvoyAt">
+        <parameters xmi:id="_8_B_gGSMEeKKctqRpH_8DA" name="pos" dataType="_V_elVGCUEeK08IWBu_4Dfg"/>
+        <parameters xmi:id="_DRA68GSNEeKKctqRpH_8DA" name="profile" dataType="_RgHooWCVEeK08IWBu_4Dfg"/>
+      </messageTypes>
+    </modelElements>
+    <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_M5-ZQGSNEeKKctqRpH_8DA" name="Coordinator">
+      <messageTypes xmi:id="_OEz0sGSNEeKKctqRpH_8DA" name="requestConvoyEntry"/>
+      <messageTypes xmi:id="_QqsR0GSNEeKKctqRpH_8DA" name="startProfileTransmission"/>
+      <messageTypes xmi:id="_SUUiEGSNEeKKctqRpH_8DA" name="endOfProfileTransmission"/>
+      <messageTypes xmi:id="_T9W8cGSNEeKKctqRpH_8DA" name="profile">
+        <parameters xmi:id="_wcaygGSXEeKKctqRpH_8DA" name="p"/>
+      </messageTypes>
+      <messageTypes xmi:id="_cRrjEGSNEeKKctqRpH_8DA" name="acceptPosition"/>
+      <messageTypes xmi:id="_yyoAcGSNEeKKctqRpH_8DA" name="confirmProfileUpdate"/>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_i8FJMGCVEeK08IWBu_4Dfg" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_i8FJMWCVEeK08IWBu_4Dfg" name="ProfileTransmission_coordinator" behavioralElement="_RgHooWCVEeK08IWBu_4Dfg">
+      <operations xmi:id="_HtVboGSVEeKKctqRpH_8DA" name="isMemberPossible" returnType="_V_elUWCUEeK08IWBu_4Dfg"/>
+      <operations xmi:id="_LOGzsGSVEeKKctqRpH_8DA" name="calculateProfiles" returnType="_V_elUWCUEeK08IWBu_4Dfg"/>
+      <variables xmi:id="_VUS-YGSGEeKKctqRpH_8DA" name="memberPossible" dataType="_V_elUWCUEeK08IWBu_4Dfg">
+        <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_uTyRQECBEeOvbu5Rc7LDTQ" value="false"/>
+      </variables>
+      <variables xmi:id="_yIQmEGSTEeKKctqRpH_8DA" name="newRailCabPosition" dataType="_V_elVGCUEeK08IWBu_4Dfg"/>
+      <variables xmi:id="_1ZqFYGSTEeKKctqRpH_8DA" name="changed" dataType="_V_elUWCUEeK08IWBu_4Dfg"/>
+      <variables xmi:id="_3Jay0GSTEeKKctqRpH_8DA" name="newProfile" dataType="_PKXC4MRFEeKovq4g5K7Xxw"/>
+      <variables xmi:id="_KT8uAGSUEeKKctqRpH_8DA" name="allProfiles" dataType="_PKXC4cRFEeKovq4g5K7Xxw"/>
+      <states xmi:id="_sybRUGCXEeK08IWBu_4Dfg" name="ConvoyCoordination_Coordinator_Main" initial="true">
+        <embeddedRegions xmi:id="_1RnEIGCXEeK08IWBu_4Dfg" priority="1">
+          <embeddedStatechart xmi:id="_B9qscGR8EeKP2f27tWrwPA" name="Coordinator_adaptation">
+            <operations xmi:id="_PstLcHaoEeKvcqjVQl9Zxg" name="deleteSubRoleInstance" returnType="_V_elUGCUEeK08IWBu_4Dfg"/>
+            <operations xmi:id="_cMl4sHnLEeKCDc_q_UaEDA" name="createSubRoleInstance" returnType="_RgHopWCVEeK08IWBu_4Dfg">
+              <parameters xmi:id="_hqKUoHnLEeKCDc_q_UaEDA" name="multiRoleInstance" dataType="_RgHooWCVEeK08IWBu_4Dfg"/>
+            </operations>
+            <variables xmi:id="_bqDeMGSUEeKKctqRpH_8DA" name="curSubRole" dataType="_RgHooWCVEeK08IWBu_4Dfg"/>
+            <variables xmi:id="_PuFPAHapEeKvcqjVQl9Zxg" name="tmpSubRole" dataType="_RgHooWCVEeK08IWBu_4Dfg"/>
+            <variables xmi:id="_4IjvoMROEeKovq4g5K7Xxw" name="maxNumMembers" dataType="_V_elVGCUEeK08IWBu_4Dfg" constant="true">
+              <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_6Ya5cMROEeKovq4g5K7Xxw" value="3"/>
+            </variables>
+            <variables xmi:id="_6ym7EMROEeKovq4g5K7Xxw" name="members" dataType="_V_elVGCUEeK08IWBu_4Dfg">
+              <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_8Ggy8MROEeKovq4g5K7Xxw" value="0"/>
+            </variables>
+            <transitions xmi:id="_aYXFUMLlEeKElo7BVGwZsA" priority="2" target="_WqCN0GR8EeKP2f27tWrwPA" source="_UbXW0GR8EeKP2f27tWrwPA">
+              <synchronization xmi:id="_bghnQMLlEeKElo7BVGwZsA" syncChannel="_GMAxoGR7EeKP2f27tWrwPA" kind="RECEIVE"/>
+              <action xmi:id="_r7qkAMLlEeKElo7BVGwZsA" name="memberPossible := false">
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_tkbRkMLlEeKElo7BVGwZsA">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_tkbRkcLlEeKElo7BVGwZsA" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_tkbRksLlEeKElo7BVGwZsA" value="false"/>
+                    <lhs_typedNamedElementExpression xmi:id="_tkbRk8LlEeKElo7BVGwZsA" typedNamedElement="_VUS-YGSGEeKKctqRpH_8DA"/>
+                  </expressions>
+                </expressions>
+              </action>
+            </transitions>
+            <transitions xmi:id="_gHbVUGR8EeKP2f27tWrwPA" priority="1" target="_WqCN0GR8EeKP2f27tWrwPA" source="_UbXW0GR8EeKP2f27tWrwPA">
+              <synchronization xmi:id="_xkNf0GR9EeKP2f27tWrwPA" syncChannel="_GMAxoGR7EeKP2f27tWrwPA" kind="RECEIVE"/>
+              <action xmi:id="_unq2MGR9EeKP2f27tWrwPA" name="memberPossible := true">
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_qMg6kMLlEeKElo7BVGwZsA">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_qMg6kcLlEeKElo7BVGwZsA" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_qMg6ksLlEeKElo7BVGwZsA" value="true"/>
+                    <lhs_typedNamedElementExpression xmi:id="_qMg6k8LlEeKElo7BVGwZsA" typedNamedElement="_VUS-YGSGEeKKctqRpH_8DA"/>
+                  </expressions>
+                </expressions>
+              </action>
+            </transitions>
+            <transitions xmi:id="_j1jz8GR8EeKP2f27tWrwPA" priority="2" target="_Y6ChkGR8EeKP2f27tWrwPA" source="_WqCN0GR8EeKP2f27tWrwPA" clockResets="_xf6EEGR8EeKP2f27tWrwPA">
+              <synchronization xmi:id="_6e_CcGR9EeKP2f27tWrwPA" syncChannel="_I7B8oGR7EeKP2f27tWrwPA"/>
+              <guard xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_K24pkMLnEeKElo7BVGwZsA" typedNamedElement="_VUS-YGSGEeKKctqRpH_8DA"/>
+            </transitions>
+            <transitions xmi:id="_lTNdsGR8EeKP2f27tWrwPA" priority="1" target="_YHcnAGR8EeKP2f27tWrwPA" source="_Y6ChkGR8EeKP2f27tWrwPA">
+              <synchronization xmi:id="_90tBEGR9EeKP2f27tWrwPA" syncChannel="_J-VMsGR7EeKP2f27tWrwPA" kind="RECEIVE"/>
+              <relativeDeadline xmi:id="_coEWAHalEeKvcqjVQl9Zxg">
+                <upperBound xmi:id="_cpZywHalEeKvcqjVQl9Zxg" unit="MILLISECONDS">
+                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_dNQtwHalEeKvcqjVQl9Zxg" value="500"/>
+                </upperBound>
+                <lowerBound xmi:id="_co9t4HalEeKvcqjVQl9Zxg" unit="MILLISECONDS">
+                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_cpQo0HalEeKvcqjVQl9Zxg" value="500"/>
+                </lowerBound>
+              </relativeDeadline>
+              <action xmi:id="_IQ3XoMLpEeKElo7BVGwZsA" name="">
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_QT3kwMLpEeKElo7BVGwZsA">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_QT3kwcLpEeKElo7BVGwZsA" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_QT3kwsLpEeKElo7BVGwZsA" value="false"/>
+                    <lhs_typedNamedElementExpression xmi:id="_QT3kw8LpEeKElo7BVGwZsA" typedNamedElement="_1ZqFYGSTEeKKctqRpH_8DA"/>
+                  </expressions>
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_QT3kxMLpEeKElo7BVGwZsA" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_QT3kxcLpEeKElo7BVGwZsA" value="0"/>
+                    <lhs_typedNamedElementExpression xmi:id="_QT3kxsLpEeKElo7BVGwZsA" typedNamedElement="_yIQmEGSTEeKKctqRpH_8DA"/>
+                  </expressions>
+                </expressions>
+              </action>
+            </transitions>
+            <transitions xmi:id="_mlOfMGR8EeKP2f27tWrwPA" priority="1" target="_J0wPsHafEeKvcqjVQl9Zxg" source="_YHcnAGR8EeKP2f27tWrwPA">
+              <guard xsi:type="sdcec:ComparisonExpression" xmi:id="_dKYHsMLqEeKElo7BVGwZsA" operator="GREATER">
+                <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_dKYHscLqEeKElo7BVGwZsA" typedNamedElement="_yIQmEGSTEeKKctqRpH_8DA"/>
+                <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_dKYHssLqEeKElo7BVGwZsA" value="0"/>
+              </guard>
+            </transitions>
+            <transitions xmi:id="_nZZHEGR8EeKP2f27tWrwPA" priority="1" target="_zIkysHaeEeKvcqjVQl9Zxg" source="_ZvWY8GR8EeKP2f27tWrwPA" clockResets="_xf6EEGR8EeKP2f27tWrwPA">
+              <synchronization xmi:id="_oo3OEGSAEeKKctqRpH_8DA" syncChannel="_I7B8oGR7EeKP2f27tWrwPA"/>
+              <guard xsi:type="sdcec:ComparisonExpression" xmi:id="_It88APRcEeK0h5bDo3RUAg" operator="EQUAL">
+                <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_It88AfRcEeK0h5bDo3RUAg" typedNamedElement="_PuFPAHapEeKvcqjVQl9Zxg"/>
+                <rightExpression xsi:type="actionlanguage:DiscreteInteractionEndpointReference" xmi:id="_It88AvRcEeK0h5bDo3RUAg">
+                  <position xmi:id="_It88A_RcEeK0h5bDo3RUAg" kind="LAST"/>
+                </rightExpression>
+              </guard>
+              <action xmi:id="_6ytQgPRYEeK0h5bDo3RUAg" name="newProfile := getProfile(allProfiles, tmpSubRole)">
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_7Iuj0PRYEeK0h5bDo3RUAg">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_7Iuj0fRYEeK0h5bDo3RUAg" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="expression:ActivityCallExpression" xmi:id="_7Iuj0vRYEeK0h5bDo3RUAg" callee="_Jdf74PRXEeK0h5bDo3RUAg">
+                      <ownedParameterBindings xmi:id="_7Iuj0_RYEeK0h5bDo3RUAg" parameter="_scJQEPRXEeK0h5bDo3RUAg">
+                        <valueExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_7Iuj1PRYEeK0h5bDo3RUAg" typedNamedElement="_KT8uAGSUEeKKctqRpH_8DA"/>
+                      </ownedParameterBindings>
+                      <ownedParameterBindings xmi:id="_7Iuj1fRYEeK0h5bDo3RUAg" parameter="_u5QLsPRXEeK0h5bDo3RUAg">
+                        <valueExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_7Iuj1vRYEeK0h5bDo3RUAg" typedNamedElement="_PuFPAHapEeKvcqjVQl9Zxg"/>
+                      </ownedParameterBindings>
+                    </rhs_assignExpression>
+                    <lhs_typedNamedElementExpression xmi:id="_7Iuj1_RYEeK0h5bDo3RUAg" typedNamedElement="_3Jay0GSTEeKKctqRpH_8DA"/>
+                  </expressions>
+                </expressions>
+              </action>
+            </transitions>
+            <transitions xmi:id="_oJXLcGR8EeKP2f27tWrwPA" priority="2" target="_cXxMsGR8EeKP2f27tWrwPA" source="_ZvWY8GR8EeKP2f27tWrwPA">
+              <synchronization xmi:id="_qfcfwGSBEeKKctqRpH_8DA" syncChannel="_MpdWMGR7EeKP2f27tWrwPA">
+                <selectorExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_guTsAMLrEeKElo7BVGwZsA" typedNamedElement="_PuFPAHapEeKvcqjVQl9Zxg"/>
+              </synchronization>
+              <guard xsi:type="sdcec:ComparisonExpression" xmi:id="_XjGFcHJjEeSUj-2PlgD-kA" operator="UNEQUAL">
+                <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_XjGFcXJjEeSUj-2PlgD-kA" typedNamedElement="_PuFPAHapEeKvcqjVQl9Zxg"/>
+                <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_XjGFcnJjEeSUj-2PlgD-kA" typedNamedElement="_bqDeMGSUEeKKctqRpH_8DA"/>
+              </guard>
+              <action xmi:id="_JnQfYPRYEeK0h5bDo3RUAg" name="newProfile := getProfile(allProfiles, tmpSubRole)">
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_NWLoMPRYEeK0h5bDo3RUAg">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_NWLoMfRYEeK0h5bDo3RUAg" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="expression:ActivityCallExpression" xmi:id="_NWLoMvRYEeK0h5bDo3RUAg" callee="_Jdf74PRXEeK0h5bDo3RUAg">
+                      <ownedParameterBindings xmi:id="_NWLoM_RYEeK0h5bDo3RUAg" parameter="_scJQEPRXEeK0h5bDo3RUAg">
+                        <valueExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_NWLoNPRYEeK0h5bDo3RUAg" typedNamedElement="_KT8uAGSUEeKKctqRpH_8DA"/>
+                      </ownedParameterBindings>
+                      <ownedParameterBindings xmi:id="_X7s1YPRYEeK0h5bDo3RUAg" parameter="_u5QLsPRXEeK0h5bDo3RUAg">
+                        <valueExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_aqD5EPRYEeK0h5bDo3RUAg" typedNamedElement="_PuFPAHapEeKvcqjVQl9Zxg"/>
+                      </ownedParameterBindings>
+                    </rhs_assignExpression>
+                    <lhs_typedNamedElementExpression xmi:id="_NWLoNfRYEeK0h5bDo3RUAg" typedNamedElement="_3Jay0GSTEeKKctqRpH_8DA"/>
+                  </expressions>
+                </expressions>
+              </action>
+            </transitions>
+            <transitions xmi:id="_o1QBEGR8EeKP2f27tWrwPA" priority="1" target="_ZvWY8GR8EeKP2f27tWrwPA" source="_cXxMsGR8EeKP2f27tWrwPA">
+              <synchronization xmi:id="_heWdQGSCEeKKctqRpH_8DA" syncChannel="_ngHycGSCEeKKctqRpH_8DA" kind="RECEIVE">
+                <selectorExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_x7S8cMLrEeKElo7BVGwZsA" typedNamedElement="_PuFPAHapEeKvcqjVQl9Zxg"/>
+              </synchronization>
+              <action xmi:id="__6pSgGSAEeKKctqRpH_8DA" name="tmpSubRole := tmpSubRole.next">
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_1j4MsMLrEeKElo7BVGwZsA">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_1j4MscLrEeKElo7BVGwZsA" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="actionlanguage:DiscreteInteractionEndpointReference" xmi:id="_1j4MssLrEeKElo7BVGwZsA">
+                      <typedNamedElementExpression xmi:id="_1j4Ms8LrEeKElo7BVGwZsA" typedNamedElement="_PuFPAHapEeKvcqjVQl9Zxg"/>
+                      <position xmi:id="_1j4MtMLrEeKElo7BVGwZsA" kind="NEXT"/>
+                    </rhs_assignExpression>
+                    <lhs_typedNamedElementExpression xmi:id="_1j4MtcLrEeKElo7BVGwZsA" typedNamedElement="_PuFPAHapEeKvcqjVQl9Zxg"/>
+                  </expressions>
+                </expressions>
+              </action>
+            </transitions>
+            <transitions xmi:id="_vBm1oGR8EeKP2f27tWrwPA" priority="2" target="_9z5F4HaeEeKvcqjVQl9Zxg" source="_YHcnAGR8EeKP2f27tWrwPA" clockResets="_xf6EEGR8EeKP2f27tWrwPA">
+              <synchronization xmi:id="_erN5MGSAEeKKctqRpH_8DA" syncChannel="_HofWsGR7EeKP2f27tWrwPA"/>
+              <guard xsi:type="sdcec:ComparisonExpression" xmi:id="_IfSqYPRbEeK0h5bDo3RUAg" operator="EQUAL">
+                <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_IfSqYfRbEeK0h5bDo3RUAg" typedNamedElement="_yIQmEGSTEeKKctqRpH_8DA"/>
+                <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_IfSqYvRbEeK0h5bDo3RUAg" value="0"/>
+              </guard>
+            </transitions>
+            <transitions xmi:id="_H5HpcHafEeKvcqjVQl9Zxg" priority="1" target="_Tr96MGR8EeKP2f27tWrwPA" source="_9z5F4HaeEeKvcqjVQl9Zxg">
+              <clockConstraints xmi:id="_L4R3kHaoEeKvcqjVQl9Zxg" clock="_VjIowHanEeKvcqjVQl9Zxg" operator="GREATER_OR_EQUAL">
+                <bound xmi:id="_MgS50HaoEeKvcqjVQl9Zxg" unit="MILLISECONDS">
+                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_Mgcq0HaoEeKvcqjVQl9Zxg" value="200"/>
+                </bound>
+              </clockConstraints>
+              <action xmi:id="_Hl0hMPRaEeK0h5bDo3RUAg" name="deleteSRProfiles(curSubRole,allProfiles);deleteSubRoleInstance(curSubRole); members := members-1">
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_RMQ3APRaEeK0h5bDo3RUAg">
+                  <expressions xsi:type="expression:ActivityCallExpression" xmi:id="_RMQ3AfRaEeK0h5bDo3RUAg" callee="_S8RIkBO1EeOAuaMKfutCTA">
+                    <ownedParameterBindings xmi:id="_RMQ3AvRaEeK0h5bDo3RUAg" parameter="_7DM6UBO3EeOAuaMKfutCTA">
+                      <valueExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_RMQ3A_RaEeK0h5bDo3RUAg" typedNamedElement="_bqDeMGSUEeKKctqRpH_8DA"/>
+                    </ownedParameterBindings>
+                    <ownedParameterBindings xmi:id="_-DBtIBSWEeO3x__0Wt67tg" parameter="_8uBdYBO3EeOAuaMKfutCTA">
+                      <valueExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_DxTekBSXEeO3x__0Wt67tg" typedNamedElement="_KT8uAGSUEeKKctqRpH_8DA"/>
+                    </ownedParameterBindings>
+                  </expressions>
+                  <expressions xsi:type="expression:ActivityCallExpression" xmi:id="_1_SyIBSUEeO3x__0Wt67tg" callee="_UefGIMwgEeK3Lq4j1h1LZw">
+                    <ownedParameterBindings xmi:id="_1_SyIRSUEeO3x__0Wt67tg" parameter="_zShTsMwjEeK3Lq4j1h1LZw">
+                      <valueExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_1_SyIhSUEeO3x__0Wt67tg" typedNamedElement="_bqDeMGSUEeKKctqRpH_8DA"/>
+                    </ownedParameterBindings>
+                  </expressions>
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_K16qcECBEeOvbu5Rc7LDTQ" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="sdcec:ArithmeticExpression" xmi:id="_K16qcUCBEeOvbu5Rc7LDTQ" operator="MINUS">
+                      <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_K16qckCBEeOvbu5Rc7LDTQ" typedNamedElement="_6ym7EMROEeKovq4g5K7Xxw"/>
+                      <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_K16qc0CBEeOvbu5Rc7LDTQ" value="1"/>
+                    </rhs_assignExpression>
+                    <lhs_typedNamedElementExpression xmi:id="_K16qdECBEeOvbu5Rc7LDTQ" typedNamedElement="_6ym7EMROEeKovq4g5K7Xxw"/>
+                  </expressions>
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_tmfGIEYCEeOiObE8zXZuSQ" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_zzsPQEYCEeOiObE8zXZuSQ" value="null"/>
+                    <lhs_typedNamedElementExpression xmi:id="_xmpI4EYCEeOiObE8zXZuSQ" typedNamedElement="_bqDeMGSUEeKKctqRpH_8DA"/>
+                  </expressions>
+                </expressions>
+              </action>
+            </transitions>
+            <transitions xmi:id="_IfNZEHafEeKvcqjVQl9Zxg" priority="1" target="_Tr96MGR8EeKP2f27tWrwPA" source="_zIkysHaeEeKvcqjVQl9Zxg">
+              <synchronization xmi:id="_BKGGsHbhEeKvcqjVQl9Zxg" syncChannel="_FHNcgHbhEeKvcqjVQl9Zxg" kind="RECEIVE"/>
+              <action xmi:id="_3caSUHJhEeSUj-2PlgD-kA" name="curSubRole := null;">
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_5DmSkHJhEeSUj-2PlgD-kA">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_5DmSkXJhEeSUj-2PlgD-kA" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_5DmSknJhEeSUj-2PlgD-kA" value="null"/>
+                    <lhs_typedNamedElementExpression xmi:id="_5DmSk3JhEeSUj-2PlgD-kA" typedNamedElement="_bqDeMGSUEeKKctqRpH_8DA"/>
+                  </expressions>
+                </expressions>
+              </action>
+            </transitions>
+            <transitions xmi:id="_jwYZUHahEeKvcqjVQl9Zxg" priority="1" target="_UbXW0GR8EeKP2f27tWrwPA" source="_Tr96MGR8EeKP2f27tWrwPA" clockResets="_xf6EEGR8EeKP2f27tWrwPA">
+              <guard xsi:type="sdcec:ComparisonExpression" xmi:id="_Eyx_gMRPEeKovq4g5K7Xxw">
+                <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_Eyx_gcRPEeKovq4g5K7Xxw" typedNamedElement="_6ym7EMROEeKovq4g5K7Xxw"/>
+                <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_Eyx_gsRPEeKovq4g5K7Xxw" typedNamedElement="_4IjvoMROEeKovq4g5K7Xxw"/>
+              </guard>
+              <action xmi:id="_GNPyYMRPEeKovq4g5K7Xxw" name="curSubRole := createSubRole(multiRoleInst); members := members + 1">
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_fa_0QMRPEeKovq4g5K7Xxw">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_fa_0QcRPEeKovq4g5K7Xxw" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="expression:ActivityCallExpression" xmi:id="_Ft13cMheEeKcBt8hHNfolQ" callee="_2NOjUHm7EeKZXonDzNJBaA">
+                      <ownedParameterBindings xmi:id="_9euaQMwpEeK3Lq4j1h1LZw" parameter="_kg4A4Hm8EeKZXonDzNJBaA">
+                        <valueExpression xsi:type="actionlanguage:DiscreteInteractionEndpointReference" xmi:id="_q0mRwNKdEeKVp4Fl65mg5Q">
+                          <position xmi:id="_sCQ-wNKdEeKVp4Fl65mg5Q"/>
+                        </valueExpression>
+                      </ownedParameterBindings>
+                    </rhs_assignExpression>
+                    <lhs_typedNamedElementExpression xmi:id="_fa_0RsRPEeKovq4g5K7Xxw" typedNamedElement="_bqDeMGSUEeKKctqRpH_8DA"/>
+                  </expressions>
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_fa_0R8RPEeKovq4g5K7Xxw" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="sdcec:ArithmeticExpression" xmi:id="_fa_0SMRPEeKovq4g5K7Xxw">
+                      <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_fa_0ScRPEeKovq4g5K7Xxw" typedNamedElement="_6ym7EMROEeKovq4g5K7Xxw"/>
+                      <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_fa_0SsRPEeKovq4g5K7Xxw" value="1"/>
+                    </rhs_assignExpression>
+                    <lhs_typedNamedElementExpression xmi:id="_fa_0S8RPEeKovq4g5K7Xxw" typedNamedElement="_6ym7EMROEeKovq4g5K7Xxw"/>
+                  </expressions>
+                </expressions>
+              </action>
+            </transitions>
+            <transitions xmi:id="_ljl0oHanEeKvcqjVQl9Zxg" priority="3" target="_9z5F4HaeEeKvcqjVQl9Zxg" source="_WqCN0GR8EeKP2f27tWrwPA">
+              <synchronization xmi:id="_9fWqMHanEeKvcqjVQl9Zxg" syncChannel="_HofWsGR7EeKP2f27tWrwPA"/>
+              <guard xsi:type="sdcec:UnaryExpression" xmi:id="_2K1twMLlEeKElo7BVGwZsA">
+                <enclosedExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_2K1twcLlEeKElo7BVGwZsA" typedNamedElement="_VUS-YGSGEeKKctqRpH_8DA"/>
+              </guard>
+            </transitions>
+            <transitions xmi:id="_3SS4wHasEeKvcqjVQl9Zxg" priority="1" target="_zIkysHaeEeKvcqjVQl9Zxg" source="_J0wPsHafEeKvcqjVQl9Zxg" clockResets="_xf6EEGR8EeKP2f27tWrwPA">
+              <synchronization xmi:id="_sXsi4HbtEeKvcqjVQl9Zxg" syncChannel="_I7B8oGR7EeKP2f27tWrwPA"/>
+              <guard xsi:type="sdcec:UnaryExpression" xmi:id="_4n3-oMLqEeKElo7BVGwZsA">
+                <enclosedExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_4n3-ocLqEeKElo7BVGwZsA" typedNamedElement="_1ZqFYGSTEeKKctqRpH_8DA"/>
+              </guard>
+              <action xmi:id="_iIXdsPRYEeK0h5bDo3RUAg" name="newProfile := getProfile(allProfiles, curSubRole)">
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_mE16UPRYEeK0h5bDo3RUAg">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_mE16UfRYEeK0h5bDo3RUAg" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="expression:ActivityCallExpression" xmi:id="_mE16UvRYEeK0h5bDo3RUAg" callee="_Jdf74PRXEeK0h5bDo3RUAg">
+                      <ownedParameterBindings xmi:id="_mE16U_RYEeK0h5bDo3RUAg" parameter="_scJQEPRXEeK0h5bDo3RUAg">
+                        <valueExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_mE16VPRYEeK0h5bDo3RUAg" typedNamedElement="_KT8uAGSUEeKKctqRpH_8DA"/>
+                      </ownedParameterBindings>
+                      <ownedParameterBindings xmi:id="_mE16VfRYEeK0h5bDo3RUAg" parameter="_u5QLsPRXEeK0h5bDo3RUAg">
+                        <valueExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_mE16VvRYEeK0h5bDo3RUAg" typedNamedElement="_bqDeMGSUEeKKctqRpH_8DA"/>
+                      </ownedParameterBindings>
+                    </rhs_assignExpression>
+                    <lhs_typedNamedElementExpression xmi:id="_mE16V_RYEeK0h5bDo3RUAg" typedNamedElement="_3Jay0GSTEeKKctqRpH_8DA"/>
+                  </expressions>
+                </expressions>
+              </action>
+            </transitions>
+            <transitions xmi:id="_36ndAHasEeKvcqjVQl9Zxg" priority="2" target="_ZvWY8GR8EeKP2f27tWrwPA" source="_J0wPsHafEeKvcqjVQl9Zxg" clockResets="_VjIowHanEeKvcqjVQl9Zxg">
+              <guard xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_9q8P4MLqEeKElo7BVGwZsA" typedNamedElement="_1ZqFYGSTEeKKctqRpH_8DA"/>
+              <action xmi:id="_37gN0HasEeKvcqjVQl9Zxg" name="tmpSubRole := first">
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_AaF9wMLrEeKElo7BVGwZsA">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_AaF9wcLrEeKElo7BVGwZsA" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="actionlanguage:DiscreteInteractionEndpointReference" xmi:id="_AaF9wsLrEeKElo7BVGwZsA">
+                      <position xmi:id="_AaF9w8LrEeKElo7BVGwZsA" kind="FIRST"/>
+                    </rhs_assignExpression>
+                    <lhs_typedNamedElementExpression xmi:id="_AaF9xMLrEeKElo7BVGwZsA" typedNamedElement="_PuFPAHapEeKvcqjVQl9Zxg"/>
+                  </expressions>
+                </expressions>
+              </action>
+            </transitions>
+            <transitions xmi:id="_9l6F4HbuEeKvcqjVQl9Zxg" priority="3" target="_ZvWY8GR8EeKP2f27tWrwPA" source="_ZvWY8GR8EeKP2f27tWrwPA">
+              <guard xsi:type="sdcec:ComparisonExpression" xmi:id="_KPFF4MLrEeKElo7BVGwZsA" operator="EQUAL">
+                <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_KPFF4cLrEeKElo7BVGwZsA" typedNamedElement="_PuFPAHapEeKvcqjVQl9Zxg"/>
+                <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_KPFF4sLrEeKElo7BVGwZsA" typedNamedElement="_bqDeMGSUEeKKctqRpH_8DA"/>
+              </guard>
+              <action xmi:id="_Jf2IUHbvEeKvcqjVQl9Zxg" name="tmpSubRole := tmpSubRole.next">
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_OGsQoMLrEeKElo7BVGwZsA">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_OGsQocLrEeKElo7BVGwZsA" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="actionlanguage:DiscreteInteractionEndpointReference" xmi:id="_OGsQosLrEeKElo7BVGwZsA">
+                      <typedNamedElementExpression xmi:id="_OGsQo8LrEeKElo7BVGwZsA" typedNamedElement="_PuFPAHapEeKvcqjVQl9Zxg"/>
+                      <position xmi:id="_OGsQpMLrEeKElo7BVGwZsA" kind="NEXT"/>
+                    </rhs_assignExpression>
+                    <lhs_typedNamedElementExpression xmi:id="_OGsQpcLrEeKElo7BVGwZsA" typedNamedElement="_PuFPAHapEeKvcqjVQl9Zxg"/>
+                  </expressions>
+                </expressions>
+              </action>
+            </transitions>
+            <transitions xmi:id="_j43D0MLoEeKElo7BVGwZsA" priority="2" target="_YHcnAGR8EeKP2f27tWrwPA" source="_Y6ChkGR8EeKP2f27tWrwPA">
+              <synchronization xmi:id="_EM5y8MLpEeKElo7BVGwZsA" syncChannel="_J-VMsGR7EeKP2f27tWrwPA" kind="RECEIVE"/>
+              <relativeDeadline xmi:id="_EM5y8cLpEeKElo7BVGwZsA">
+                <upperBound xmi:id="_EM5y8sLpEeKElo7BVGwZsA" unit="MILLISECONDS">
+                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_EM5y88LpEeKElo7BVGwZsA" value="500"/>
+                </upperBound>
+                <lowerBound xmi:id="_EM5y9MLpEeKElo7BVGwZsA" unit="MILLISECONDS">
+                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_EM5y9cLpEeKElo7BVGwZsA" value="500"/>
+                </lowerBound>
+              </relativeDeadline>
+              <action xmi:id="_U-hWAMLpEeKElo7BVGwZsA" name="changed := false; newRailCabPosition := 1">
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_uqmSoMLpEeKElo7BVGwZsA">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_uqmSocLpEeKElo7BVGwZsA" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_uqmSosLpEeKElo7BVGwZsA" value="false"/>
+                    <lhs_typedNamedElementExpression xmi:id="_uqmSo8LpEeKElo7BVGwZsA" typedNamedElement="_1ZqFYGSTEeKKctqRpH_8DA"/>
+                  </expressions>
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_uqmSpMLpEeKElo7BVGwZsA" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_uqmSpcLpEeKElo7BVGwZsA" value="1"/>
+                    <lhs_typedNamedElementExpression xmi:id="_uqmSpsLpEeKElo7BVGwZsA" typedNamedElement="_yIQmEGSTEeKKctqRpH_8DA"/>
+                  </expressions>
+                </expressions>
+              </action>
+            </transitions>
+            <transitions xmi:id="_lLJLEMLoEeKElo7BVGwZsA" priority="3" target="_YHcnAGR8EeKP2f27tWrwPA" source="_Y6ChkGR8EeKP2f27tWrwPA">
+              <synchronization xmi:id="_EW4OUMLpEeKElo7BVGwZsA" syncChannel="_J-VMsGR7EeKP2f27tWrwPA" kind="RECEIVE"/>
+              <relativeDeadline xmi:id="_EW4OUcLpEeKElo7BVGwZsA">
+                <upperBound xmi:id="_EW4OUsLpEeKElo7BVGwZsA" unit="MILLISECONDS">
+                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_EW4OU8LpEeKElo7BVGwZsA" value="500"/>
+                </upperBound>
+                <lowerBound xmi:id="_EW4OVMLpEeKElo7BVGwZsA" unit="MILLISECONDS">
+                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_EW4OVcLpEeKElo7BVGwZsA" value="500"/>
+                </lowerBound>
+              </relativeDeadline>
+              <action xmi:id="_jnTu4MLqEeKElo7BVGwZsA" name="changed := true; newRailCabPosition := 1">
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_oo2WIMLqEeKElo7BVGwZsA">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_oo2WIcLqEeKElo7BVGwZsA" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_oo2WIsLqEeKElo7BVGwZsA" value="true"/>
+                    <lhs_typedNamedElementExpression xmi:id="_oo2WI8LqEeKElo7BVGwZsA" typedNamedElement="_1ZqFYGSTEeKKctqRpH_8DA"/>
+                  </expressions>
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_oo2WJMLqEeKElo7BVGwZsA" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_oo2WJcLqEeKElo7BVGwZsA" value="1"/>
+                    <lhs_typedNamedElementExpression xmi:id="_oo2WJsLqEeKElo7BVGwZsA" typedNamedElement="_yIQmEGSTEeKKctqRpH_8DA"/>
+                  </expressions>
+                </expressions>
+              </action>
+            </transitions>
+            <transitions xmi:id="_YDhyIPRMEeK0h5bDo3RUAg" priority="1" target="_Tr96MGR8EeKP2f27tWrwPA" source="_N-bKYPRMEeK0h5bDo3RUAg">
+              <action xmi:id="_LPIdIPRNEeK0h5bDo3RUAg" name="allProfiles := initializeVariables()">
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_PKQ18PRNEeK0h5bDo3RUAg">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_REjYYPRNEeK0h5bDo3RUAg" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="expression:ActivityCallExpression" xmi:id="_PKQ18fRNEeK0h5bDo3RUAg" callee="_k2r7kPRMEeK0h5bDo3RUAg"/>
+                    <lhs_typedNamedElementExpression xmi:id="_SBHHQPRNEeK0h5bDo3RUAg" typedNamedElement="_KT8uAGSUEeKKctqRpH_8DA"/>
+                  </expressions>
+                </expressions>
+              </action>
+            </transitions>
+            <states xmi:id="_Tr96MGR8EeKP2f27tWrwPA" name="Idle" outgoingTransitions="_jwYZUHahEeKvcqjVQl9Zxg" incomingTransitions="_H5HpcHafEeKvcqjVQl9Zxg _IfNZEHafEeKvcqjVQl9Zxg _YDhyIPRMEeK0h5bDo3RUAg"/>
+            <states xmi:id="_UbXW0GR8EeKP2f27tWrwPA" name="HandleNewMember" outgoingTransitions="_gHbVUGR8EeKP2f27tWrwPA _aYXFUMLlEeKElo7BVGwZsA" incomingTransitions="_jwYZUHahEeKvcqjVQl9Zxg">
+              <invariants xmi:id="_cl6vAHanEeKvcqjVQl9Zxg" clock="_xf6EEGR8EeKP2f27tWrwPA">
+                <bound xmi:id="_dri6UHanEeKvcqjVQl9Zxg" unit="MILLISECONDS">
+                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_dri6UXanEeKvcqjVQl9Zxg" value="10"/>
+                </bound>
+              </invariants>
+            </states>
+            <states xmi:id="_WqCN0GR8EeKP2f27tWrwPA" name="NewQuery" outgoingTransitions="_j1jz8GR8EeKP2f27tWrwPA _ljl0oHanEeKvcqjVQl9Zxg" incomingTransitions="_gHbVUGR8EeKP2f27tWrwPA _aYXFUMLlEeKElo7BVGwZsA" urgent="true"/>
+            <states xmi:id="_YHcnAGR8EeKP2f27tWrwPA" name="Calculate" outgoingTransitions="_mlOfMGR8EeKP2f27tWrwPA _vBm1oGR8EeKP2f27tWrwPA" incomingTransitions="_lTNdsGR8EeKP2f27tWrwPA _j43D0MLoEeKElo7BVGwZsA _lLJLEMLoEeKElo7BVGwZsA" urgent="true"/>
+            <states xmi:id="_Y6ChkGR8EeKP2f27tWrwPA" name="NewMember" outgoingTransitions="_lTNdsGR8EeKP2f27tWrwPA _j43D0MLoEeKElo7BVGwZsA _lLJLEMLoEeKElo7BVGwZsA" incomingTransitions="_j1jz8GR8EeKP2f27tWrwPA">
+              <invariants xmi:id="_8G3-4HaoEeKvcqjVQl9Zxg" clock="_xf6EEGR8EeKP2f27tWrwPA">
+                <bound xmi:id="_9H5XAHaoEeKvcqjVQl9Zxg" unit="MILLISECONDS">
+                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_9H5XAXaoEeKvcqjVQl9Zxg" value="1000"/>
+                </bound>
+              </invariants>
+            </states>
+            <states xmi:id="_ZvWY8GR8EeKP2f27tWrwPA" name="UpdateProfiles" outgoingTransitions="_nZZHEGR8EeKP2f27tWrwPA _oJXLcGR8EeKP2f27tWrwPA _9l6F4HbuEeKvcqjVQl9Zxg" incomingTransitions="_o1QBEGR8EeKP2f27tWrwPA _36ndAHasEeKvcqjVQl9Zxg _9l6F4HbuEeKvcqjVQl9Zxg">
+              <entryEvent xmi:id="_kAfK4HbuEeKvcqjVQl9Zxg" clockResets="_xf6EEGR8EeKP2f27tWrwPA"/>
+              <invariants xmi:id="_adWnwHbuEeKvcqjVQl9Zxg" clock="_xf6EEGR8EeKP2f27tWrwPA">
+                <bound xmi:id="_cMgRMHbuEeKvcqjVQl9Zxg" unit="MILLISECONDS">
+                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_cMgRMXbuEeKvcqjVQl9Zxg" value="10"/>
+                </bound>
+              </invariants>
+              <invariants xmi:id="_d4XWEHbuEeKvcqjVQl9Zxg" clock="_VjIowHanEeKvcqjVQl9Zxg">
+                <bound xmi:id="_e4MbYHbuEeKvcqjVQl9Zxg" unit="MILLISECONDS">
+                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_e4MbYXbuEeKvcqjVQl9Zxg" value="1000"/>
+                </bound>
+              </invariants>
+            </states>
+            <states xmi:id="_cXxMsGR8EeKP2f27tWrwPA" name="WaitForSubrole" outgoingTransitions="_o1QBEGR8EeKP2f27tWrwPA" incomingTransitions="_oJXLcGR8EeKP2f27tWrwPA">
+              <invariants xmi:id="_peLioHbuEeKvcqjVQl9Zxg" clock="_xf6EEGR8EeKP2f27tWrwPA">
+                <bound xmi:id="_qpeREHbuEeKvcqjVQl9Zxg" unit="MILLISECONDS">
+                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_qpeREXbuEeKvcqjVQl9Zxg" value="100"/>
+                </bound>
+              </invariants>
+            </states>
+            <states xmi:id="_zIkysHaeEeKvcqjVQl9Zxg" name="Finish" outgoingTransitions="_IfNZEHafEeKvcqjVQl9Zxg" incomingTransitions="_nZZHEGR8EeKP2f27tWrwPA _3SS4wHasEeKvcqjVQl9Zxg">
+              <invariants xmi:id="_ThKRsHbuEeKvcqjVQl9Zxg" clock="_xf6EEGR8EeKP2f27tWrwPA">
+                <bound xmi:id="_UqzaUHbuEeKvcqjVQl9Zxg" unit="MILLISECONDS">
+                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_UqzaUXbuEeKvcqjVQl9Zxg" value="200"/>
+                </bound>
+              </invariants>
+            </states>
+            <states xmi:id="_9z5F4HaeEeKvcqjVQl9Zxg" name="DeleteSR" outgoingTransitions="_H5HpcHafEeKvcqjVQl9Zxg" incomingTransitions="_vBm1oGR8EeKP2f27tWrwPA _ljl0oHanEeKvcqjVQl9Zxg">
+              <invariants xmi:id="_AUS0UPRaEeK0h5bDo3RUAg" clock="_xf6EEGR8EeKP2f27tWrwPA">
+                <bound xmi:id="_B0jGIPRaEeK0h5bDo3RUAg" unit="MILLISECONDS">
+                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_B0jGIfRaEeK0h5bDo3RUAg" value="200"/>
+                </bound>
+              </invariants>
+            </states>
+            <states xmi:id="_J0wPsHafEeKvcqjVQl9Zxg" name="UpdateRequired" outgoingTransitions="_3SS4wHasEeKvcqjVQl9Zxg _36ndAHasEeKvcqjVQl9Zxg" incomingTransitions="_mlOfMGR8EeKP2f27tWrwPA" urgent="true"/>
+            <states xmi:id="_N-bKYPRMEeK0h5bDo3RUAg" name="Initialize" outgoingTransitions="_YDhyIPRMEeK0h5bDo3RUAg" initial="true" urgent="true"/>
+            <clocks xmi:id="_xf6EEGR8EeKP2f27tWrwPA" name="c1"/>
+            <clocks xmi:id="_VjIowHanEeKvcqjVQl9Zxg" name="c2"/>
+          </embeddedStatechart>
+        </embeddedRegions>
+        <embeddedRegions xmi:id="_5S_18GCXEeK08IWBu_4Dfg" priority="2">
+          <embeddedStatechart xmi:id="_fKWk4GSDEeKKctqRpH_8DA" name="Coordinator_subRole">
+            <variables xmi:id="_7zYLEGSUEeKKctqRpH_8DA" name="newPos" dataType="_V_elVGCUEeK08IWBu_4Dfg">
+              <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_57948PRcEeK0h5bDo3RUAg" value="1"/>
+            </variables>
+            <transitions xmi:id="_-M7FEGSDEeKKctqRpH_8DA" priority="1" target="_uuF_kGSDEeKKctqRpH_8DA" source="_siPzEGSDEeKKctqRpH_8DA">
+              <synchronization xmi:id="_djb08GSEEeKKctqRpH_8DA" syncChannel="_GMAxoGR7EeKP2f27tWrwPA"/>
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_BeuzEGSPEeKKctqRpH_8DA" kind="TRIGGER">
+                <message xmi:id="_BeuzEWSPEeKKctqRpH_8DA" instanceOf="_OEz0sGSNEeKKctqRpH_8DA"/>
+              </events>
+            </transitions>
+            <transitions xmi:id="_-y3DsGSDEeKKctqRpH_8DA" priority="1" target="_wEOsEGSDEeKKctqRpH_8DA" source="_uuF_kGSDEeKKctqRpH_8DA" clockResets="_KNGacHbwEeKvcqjVQl9Zxg">
+              <synchronization xmi:id="_S2zdsGSFEeKKctqRpH_8DA" syncChannel="_I7B8oGR7EeKP2f27tWrwPA" kind="RECEIVE"/>
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_DdwrkGSPEeKKctqRpH_8DA">
+                <message xmi:id="_Ddx5sGSPEeKKctqRpH_8DA" instanceOf="_oSL9AGSMEeKKctqRpH_8DA"/>
+              </events>
+            </transitions>
+            <transitions xmi:id="_AGeAoGSEEeKKctqRpH_8DA" priority="1" target="_xSMUAGSDEeKKctqRpH_8DA" source="_yJPQwGSDEeKKctqRpH_8DA">
+              <synchronization xmi:id="_e1So8GSFEeKKctqRpH_8DA" syncChannel="_HofWsGR7EeKP2f27tWrwPA" kind="RECEIVE"/>
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_31FvcMLtEeKElo7BVGwZsA">
+                <message xmi:id="_31FvccLtEeKElo7BVGwZsA" instanceOf="_JsgiYGCVEeK08IWBu_4Dfg"/>
+              </events>
+            </transitions>
+            <transitions xmi:id="_A-QkQGSEEeKKctqRpH_8DA" priority="2" target="_xSMUAGSDEeKKctqRpH_8DA" source="_uuF_kGSDEeKKctqRpH_8DA">
+              <synchronization xmi:id="_Nf4cUGSFEeKKctqRpH_8DA" syncChannel="_HofWsGR7EeKP2f27tWrwPA" kind="RECEIVE"/>
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_-sQrcGSOEeKKctqRpH_8DA">
+                <message xmi:id="_-s8A4GSOEeKKctqRpH_8DA" instanceOf="_JsgiYGCVEeK08IWBu_4Dfg"/>
+              </events>
+            </transitions>
+            <transitions xmi:id="_K7m-MGSEEeKKctqRpH_8DA" priority="1" target="_yJPQwGSDEeKKctqRpH_8DA" source="_zRFpoGSDEeKKctqRpH_8DA">
+              <synchronization xmi:id="_jxk8wGSFEeKKctqRpH_8DA" syncChannel="_J-VMsGR7EeKP2f27tWrwPA"/>
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_ZiDpMGSPEeKKctqRpH_8DA" kind="TRIGGER">
+                <message xmi:id="_ZiEQQGSPEeKKctqRpH_8DA" instanceOf="_SUUiEGSNEeKKctqRpH_8DA"/>
+              </events>
+            </transitions>
+            <transitions xmi:id="_Lce2oGSEEeKKctqRpH_8DA" priority="1" target="_zRFpoGSDEeKKctqRpH_8DA" source="_wEOsEGSDEeKKctqRpH_8DA" clockResets="_YKJkIHbwEeKvcqjVQl9Zxg">
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_HHd9MGSPEeKKctqRpH_8DA">
+                <message xmi:id="_HHekQGSPEeKKctqRpH_8DA" instanceOf="_sj7fAGSMEeKKctqRpH_8DA"/>
+              </events>
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_HH3l0GSPEeKKctqRpH_8DA" kind="TRIGGER">
+                <message xmi:id="_HH3l0WSPEeKKctqRpH_8DA" instanceOf="_QqsR0GSNEeKKctqRpH_8DA"/>
+              </events>
+              <action xmi:id="_CY7pwPRTEeK0h5bDo3RUAg" name="createProfileList(allProfiles, self)">
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_I8ePQPRTEeK0h5bDo3RUAg">
+                  <expressions xsi:type="expression:ActivityCallExpression" xmi:id="_I8ePQfRTEeK0h5bDo3RUAg" callee="_nisj8PROEeK0h5bDo3RUAg">
+                    <ownedParameterBindings xmi:id="_I8ePQvRTEeK0h5bDo3RUAg" parameter="_z9h3gPRPEeK0h5bDo3RUAg">
+                      <valueExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_I8ePQ_RTEeK0h5bDo3RUAg" typedNamedElement="_KT8uAGSUEeKKctqRpH_8DA"/>
+                    </ownedParameterBindings>
+                    <ownedParameterBindings xmi:id="_NO0OMPRTEeK0h5bDo3RUAg" parameter="_4DOhkPRPEeK0h5bDo3RUAg">
+                      <valueExpression xsi:type="actionlanguage:DiscreteInteractionEndpointReference" xmi:id="_l0rwsPRTEeK0h5bDo3RUAg">
+                        <position xmi:id="_l0rwsfRTEeK0h5bDo3RUAg"/>
+                      </valueExpression>
+                    </ownedParameterBindings>
+                  </expressions>
+                </expressions>
+              </action>
+            </transitions>
+            <transitions xmi:id="_MOLZUGSEEeKKctqRpH_8DA" priority="2" target="_3UQkIGSDEeKKctqRpH_8DA" source="_yJPQwGSDEeKKctqRpH_8DA" clockResets="_KNGacHbwEeKvcqjVQl9Zxg">
+              <synchronization xmi:id="_9lGi0PRcEeK0h5bDo3RUAg" syncChannel="_I7B8oGR7EeKP2f27tWrwPA" kind="RECEIVE"/>
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_hVhlgGSPEeKKctqRpH_8DA">
+                <message xmi:id="_hVizoGSPEeKKctqRpH_8DA" instanceOf="_7r3HcGSMEeKKctqRpH_8DA">
+                  <parameterBinding xmi:id="_wryZUGSZEeKKctqRpH_8DA" parameter="_8_B_gGSMEeKKctqRpH_8DA">
+                    <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_yzAgMMLuEeKElo7BVGwZsA" typedNamedElement="_7zYLEGSUEeKKctqRpH_8DA"/>
+                  </parameterBinding>
+                  <parameterBinding xmi:id="_xxgEMGSZEeKKctqRpH_8DA" parameter="_DRA68GSNEeKKctqRpH_8DA">
+                    <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_1bmTEMLuEeKElo7BVGwZsA" typedNamedElement="_3Jay0GSTEeKKctqRpH_8DA"/>
+                  </parameterBinding>
+                </message>
+              </events>
+              <action xmi:id="_MO7AMGSEEeKKctqRpH_8DA" name="newPos := newRailCabPosition">
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_ZwalcMLuEeKElo7BVGwZsA">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_ZwalccLuEeKElo7BVGwZsA" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_ZwalcsLuEeKElo7BVGwZsA" typedNamedElement="_yIQmEGSTEeKKctqRpH_8DA"/>
+                    <lhs_typedNamedElementExpression xmi:id="_Zwalc8LuEeKElo7BVGwZsA" typedNamedElement="_7zYLEGSUEeKKctqRpH_8DA"/>
+                  </expressions>
+                </expressions>
+              </action>
+            </transitions>
+            <transitions xmi:id="_MwPkkGSEEeKKctqRpH_8DA" priority="1" target="_4V3LEGSDEeKKctqRpH_8DA" source="_3UQkIGSDEeKKctqRpH_8DA">
+              <synchronization xmi:id="_CS4HgMLvEeKElo7BVGwZsA" syncChannel="_FHNcgHbhEeKvcqjVQl9Zxg"/>
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_mGMfMGSPEeKKctqRpH_8DA">
+                <message xmi:id="_mGMfMWSPEeKKctqRpH_8DA" instanceOf="_16TYgGSMEeKKctqRpH_8DA"/>
+              </events>
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_mGkSoGSPEeKKctqRpH_8DA" kind="TRIGGER">
+                <message xmi:id="_mGkSoWSPEeKKctqRpH_8DA" instanceOf="_cRrjEGSNEeKKctqRpH_8DA"/>
+              </events>
+            </transitions>
+            <transitions xmi:id="_NvVDAGSEEeKKctqRpH_8DA" priority="2" target="_zRFpoGSDEeKKctqRpH_8DA" source="_zRFpoGSDEeKKctqRpH_8DA">
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_L12-8GSPEeKKctqRpH_8DA">
+                <message xmi:id="_L13mAGSPEeKKctqRpH_8DA" instanceOf="_u3NwQGSMEeKKctqRpH_8DA"/>
+              </events>
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_L2R1sGSPEeKKctqRpH_8DA" kind="TRIGGER">
+                <message xmi:id="_L2R1sWSPEeKKctqRpH_8DA" instanceOf="_T9W8cGSNEeKKctqRpH_8DA"/>
+              </events>
+              <action xmi:id="_HMv2sPRWEeK0h5bDo3RUAg" name="addProfile(allProfiles, self, profile.p)">
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_LVIBUPRWEeK0h5bDo3RUAg">
+                  <expressions xsi:type="expression:ActivityCallExpression" xmi:id="_LVIBUfRWEeK0h5bDo3RUAg" callee="_2IxqQPRTEeK0h5bDo3RUAg">
+                    <ownedParameterBindings xmi:id="_LVIBUvRWEeK0h5bDo3RUAg" parameter="_0TLvsPRVEeK0h5bDo3RUAg">
+                      <valueExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_LVIBU_RWEeK0h5bDo3RUAg" typedNamedElement="_KT8uAGSUEeKKctqRpH_8DA"/>
+                    </ownedParameterBindings>
+                    <ownedParameterBindings xmi:id="_LVIBVPRWEeK0h5bDo3RUAg" parameter="_3h-m8PRVEeK0h5bDo3RUAg">
+                      <valueExpression xsi:type="actionlanguage:DiscreteInteractionEndpointReference" xmi:id="_LVIBVfRWEeK0h5bDo3RUAg">
+                        <position xmi:id="_LVIBVvRWEeK0h5bDo3RUAg"/>
+                      </valueExpression>
+                    </ownedParameterBindings>
+                    <ownedParameterBindings xmi:id="_R_DisPRWEeK0h5bDo3RUAg" parameter="_6QqawPRVEeK0h5bDo3RUAg">
+                      <valueExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_neeRoPRWEeK0h5bDo3RUAg" messageType="_T9W8cGSNEeKKctqRpH_8DA" parameter="_wcaygGSXEeKKctqRpH_8DA"/>
+                    </ownedParameterBindings>
+                  </expressions>
+                </expressions>
+              </action>
+            </transitions>
+            <transitions xmi:id="_OpC5QGSEEeKKctqRpH_8DA" priority="1" target="_4V3LEGSDEeKKctqRpH_8DA" source="_5J7sUGSDEeKKctqRpH_8DA">
+              <synchronization xmi:id="_wGH3kGSFEeKKctqRpH_8DA" syncChannel="_ngHycGSCEeKKctqRpH_8DA">
+                <selectorExpression xsi:type="actionlanguage:DiscreteInteractionEndpointReference" xmi:id="_EFl3wMLuEeKElo7BVGwZsA">
+                  <position xmi:id="_EFl3wcLuEeKElo7BVGwZsA"/>
+                </selectorExpression>
+              </synchronization>
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_P9IrcGSREeKKctqRpH_8DA" kind="TRIGGER">
+                <message xmi:id="_P9IrcWSREeKKctqRpH_8DA" instanceOf="_yyoAcGSNEeKKctqRpH_8DA"/>
+              </events>
+            </transitions>
+            <transitions xmi:id="_jVyXoGSQEeKKctqRpH_8DA" priority="1" target="_5J7sUGSDEeKKctqRpH_8DA" source="_4V3LEGSDEeKKctqRpH_8DA" clockResets="_KNGacHbwEeKvcqjVQl9Zxg">
+              <synchronization xmi:id="_5sgiAGSQEeKKctqRpH_8DA" syncChannel="_MpdWMGR7EeKP2f27tWrwPA" kind="RECEIVE">
+                <selectorExpression xsi:type="actionlanguage:DiscreteInteractionEndpointReference" xmi:id="_fjxAsPRdEeK0h5bDo3RUAg">
+                  <position xmi:id="_fjxAsfRdEeK0h5bDo3RUAg"/>
+                </selectorExpression>
+              </synchronization>
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_MmCz0GSREeKKctqRpH_8DA">
+                <message xmi:id="_MmCz0WSREeKKctqRpH_8DA" instanceOf="_4ZMAUGSNEeKKctqRpH_8DA">
+                  <parameterBinding xmi:id="_vKnioHJeEeSUj-2PlgD-kA" parameter="_OUmGsGSZEeKKctqRpH_8DA">
+                    <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_wTB8MHJeEeSUj-2PlgD-kA" typedNamedElement="_3Jay0GSTEeKKctqRpH_8DA"/>
+                  </parameterBinding>
+                </message>
+              </events>
+            </transitions>
+            <states xmi:id="_siPzEGSDEeKKctqRpH_8DA" name="Idle" outgoingTransitions="_-M7FEGSDEeKKctqRpH_8DA" initial="true">
+              <invariants xmi:id="_MmMYwHbwEeKvcqjVQl9Zxg" clock="_KNGacHbwEeKvcqjVQl9Zxg">
+                <bound xmi:id="_NdFkgHbwEeKvcqjVQl9Zxg" unit="MILLISECONDS">
+                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_NdFkgXbwEeKvcqjVQl9Zxg" value="10"/>
+                </bound>
+              </invariants>
+            </states>
+            <states xmi:id="_uuF_kGSDEeKKctqRpH_8DA" name="Request" outgoingTransitions="_-y3DsGSDEeKKctqRpH_8DA _A-QkQGSEEeKKctqRpH_8DA" incomingTransitions="_-M7FEGSDEeKKctqRpH_8DA"/>
+            <states xmi:id="_wEOsEGSDEeKKctqRpH_8DA" name="EntryPossible" outgoingTransitions="_Lce2oGSEEeKKctqRpH_8DA" incomingTransitions="_-y3DsGSDEeKKctqRpH_8DA">
+              <invariants xmi:id="_Tti18HbwEeKvcqjVQl9Zxg" clock="_KNGacHbwEeKvcqjVQl9Zxg">
+                <bound xmi:id="_Uc_88HbwEeKvcqjVQl9Zxg" unit="MILLISECONDS">
+                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_UdJt8HbwEeKvcqjVQl9Zxg" value="50"/>
+                </bound>
+              </invariants>
+            </states>
+            <states xmi:id="_xSMUAGSDEeKKctqRpH_8DA" name="Failed" incomingTransitions="_AGeAoGSEEeKKctqRpH_8DA _A-QkQGSEEeKKctqRpH_8DA" final="true"/>
+            <states xmi:id="_yJPQwGSDEeKKctqRpH_8DA" name="Profiles Received" outgoingTransitions="_AGeAoGSEEeKKctqRpH_8DA _MOLZUGSEEeKKctqRpH_8DA" incomingTransitions="_K7m-MGSEEeKKctqRpH_8DA"/>
+            <states xmi:id="_zRFpoGSDEeKKctqRpH_8DA" name="Perform Transmission" outgoingTransitions="_K7m-MGSEEeKKctqRpH_8DA _NvVDAGSEEeKKctqRpH_8DA" incomingTransitions="_Lce2oGSEEeKKctqRpH_8DA _NvVDAGSEEeKKctqRpH_8DA">
+              <entryEvent xmi:id="_jNmqgHbwEeKvcqjVQl9Zxg" clockResets="_KNGacHbwEeKvcqjVQl9Zxg">
+                <action xmi:id="_pCH8AMROEeKovq4g5K7Xxw" name="">
+                  <expressions xsi:type="actionlanguage:Block" xmi:id="_pHVMIMROEeKovq4g5K7Xxw"/>
+                </action>
+              </entryEvent>
+              <invariants xmi:id="_eAUGQHbwEeKvcqjVQl9Zxg" clock="_KNGacHbwEeKvcqjVQl9Zxg">
+                <bound xmi:id="_fFDgwHbwEeKvcqjVQl9Zxg" unit="MILLISECONDS">
+                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_fFMqsHbwEeKvcqjVQl9Zxg" value="100"/>
+                </bound>
+              </invariants>
+              <invariants xmi:id="_geR9gHbwEeKvcqjVQl9Zxg" clock="_YKJkIHbwEeKvcqjVQl9Zxg">
+                <bound xmi:id="_hvNZ4HbwEeKvcqjVQl9Zxg" unit="MILLISECONDS">
+                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_hvNZ4XbwEeKvcqjVQl9Zxg" value="1000"/>
+                </bound>
+              </invariants>
+            </states>
+            <states xmi:id="_3UQkIGSDEeKKctqRpH_8DA" name="Wait" outgoingTransitions="_MwPkkGSEEeKKctqRpH_8DA" incomingTransitions="_MOLZUGSEEeKKctqRpH_8DA">
+              <invariants xmi:id="_4R8YQHb2EeKvcqjVQl9Zxg" clock="_KNGacHbwEeKvcqjVQl9Zxg">
+                <bound xmi:id="_5OMlIHb2EeKvcqjVQl9Zxg" unit="MILLISECONDS">
+                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_5OVvEHb2EeKvcqjVQl9Zxg" value="200"/>
+                </bound>
+              </invariants>
+            </states>
+            <states xmi:id="_4V3LEGSDEeKKctqRpH_8DA" name="Convoy" outgoingTransitions="_jVyXoGSQEeKKctqRpH_8DA" incomingTransitions="_MwPkkGSEEeKKctqRpH_8DA _OpC5QGSEEeKKctqRpH_8DA"/>
+            <states xmi:id="_5J7sUGSDEeKKctqRpH_8DA" name="NewProfile" outgoingTransitions="_OpC5QGSEEeKKctqRpH_8DA" incomingTransitions="_jVyXoGSQEeKKctqRpH_8DA">
+              <invariants xmi:id="_BtXw4Hb3EeKvcqjVQl9Zxg" clock="_KNGacHbwEeKvcqjVQl9Zxg">
+                <bound xmi:id="_CfzTYHb3EeKvcqjVQl9Zxg" unit="MILLISECONDS">
+                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_CfzTYXb3EeKvcqjVQl9Zxg" value="100"/>
+                </bound>
+              </invariants>
+            </states>
+            <clocks xmi:id="_KNGacHbwEeKvcqjVQl9Zxg" name="c3"/>
+            <clocks xmi:id="_YKJkIHbwEeKvcqjVQl9Zxg" name="c4"/>
+          </embeddedStatechart>
+        </embeddedRegions>
+        <channels xmi:id="_D35Z8GR7EeKP2f27tWrwPA" name="newMember"/>
+        <channels xmi:id="_GMAxoGR7EeKP2f27tWrwPA" name="newMemberPossible"/>
+        <channels xmi:id="_HofWsGR7EeKP2f27tWrwPA" name="entryFail"/>
+        <channels xmi:id="_I7B8oGR7EeKP2f27tWrwPA" name="entrySuccess"/>
+        <channels xmi:id="_J-VMsGR7EeKP2f27tWrwPA" name="requestPosition"/>
+        <channels xmi:id="_MpdWMGR7EeKP2f27tWrwPA" name="sendNewProfile" selectorType="_RgHooWCVEeK08IWBu_4Dfg"/>
+        <channels xmi:id="_ngHycGSCEeKKctqRpH_8DA" name="finished" selectorType="_RgHooWCVEeK08IWBu_4Dfg"/>
+        <channels xmi:id="_FHNcgHbhEeKvcqjVQl9Zxg" name="convoy"/>
+      </states>
+    </modelElements>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_FAXG4GCWEeK08IWBu_4Dfg" name="ProfileTransmission_member" behavioralElement="_RgHopWCVEeK08IWBu_4Dfg">
+      <variables xmi:id="_YZDqsGSYEeKKctqRpH_8DA" name="numOfProfiles" dataType="_V_elVGCUEeK08IWBu_4Dfg" constant="true">
+        <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_pNizwMRMEeKovq4g5K7Xxw" value="5"/>
+      </variables>
+      <variables xmi:id="_f05KIGSYEeKKctqRpH_8DA" name="entryPosition" dataType="_V_elVGCUEeK08IWBu_4Dfg"/>
+      <variables xmi:id="_iqmzAGSYEeKKctqRpH_8DA" name="curProfile" dataType="_PKXC4MRFEeKovq4g5K7Xxw"/>
+      <variables xmi:id="_kEW0MGSYEeKKctqRpH_8DA" name="profiles" dataType="_PKXC4sRFEeKovq4g5K7Xxw"/>
+      <variables xmi:id="_zA6yUMRMEeKovq4g5K7Xxw" name="iterator" dataType="_PKXC48RFEeKovq4g5K7Xxw"/>
+      <variables xmi:id="_1JV3YMRMEeKovq4g5K7Xxw" name="hasNext" dataType="_V_elUWCUEeK08IWBu_4Dfg"/>
+      <variables xmi:id="_DdfPIPQ0EeK0h5bDo3RUAg" name="tmpProfile" dataType="_PKXC4MRFEeKovq4g5K7Xxw"/>
+      <transitions xmi:id="_yXUnsGSREeKKctqRpH_8DA" priority="1" target="_mQexsGSREeKKctqRpH_8DA" source="_lj9C4GSREeKKctqRpH_8DA">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_tS7EQGSSEeKKctqRpH_8DA">
+          <message xmi:id="_tS7rUGSSEeKKctqRpH_8DA" instanceOf="_OEz0sGSNEeKKctqRpH_8DA"/>
+        </events>
+        <action xmi:id="_fJVBwMwsEeK85KaJhTFgdg" name="profiles := obtainProfiles(numOfProfiles)">
+          <expressions xsi:type="actionlanguage:Block" xmi:id="_KHSGgN2fEeKZjKO-vxfGCQ">
+            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_nqWC4PQ0EeK0h5bDo3RUAg" assignOperator=":=">
+              <rhs_assignExpression xsi:type="expression:ActivityCallExpression" xmi:id="_h2DGsMwsEeK85KaJhTFgdg" callee="_UDKtUMhVEeKqgvOVLMq5Kg">
+                <ownedParameterBindings xmi:id="_h2DGscwsEeK85KaJhTFgdg" parameter="_pwRoEMhXEeKqgvOVLMq5Kg">
+                  <valueExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_ETRhIMwzEeK85KaJhTFgdg" typedNamedElement="_YZDqsGSYEeKKctqRpH_8DA"/>
+                </ownedParameterBindings>
+              </rhs_assignExpression>
+              <lhs_typedNamedElementExpression xmi:id="_u4JGUPQ0EeK0h5bDo3RUAg" typedNamedElement="_kEW0MGSYEeKKctqRpH_8DA"/>
+            </expressions>
+          </expressions>
+        </action>
+      </transitions>
+      <transitions xmi:id="_y4_KUGSREeKKctqRpH_8DA" priority="1" target="_nDzFAGSREeKKctqRpH_8DA" source="_mQexsGSREeKKctqRpH_8DA">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_vHy7MGSSEeKKctqRpH_8DA" kind="TRIGGER">
+          <message xmi:id="_vH0JUGSSEeKKctqRpH_8DA" instanceOf="_JsgiYGCVEeK08IWBu_4Dfg"/>
+        </events>
+      </transitions>
+      <transitions xmi:id="_zbn9UGSREeKKctqRpH_8DA" priority="1" target="_nDzFAGSREeKKctqRpH_8DA" source="_sXYegGSREeKKctqRpH_8DA">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_vwR3gGSSEeKKctqRpH_8DA" kind="TRIGGER">
+          <message xmi:id="_vwR3gWSSEeKKctqRpH_8DA" instanceOf="_JsgiYGCVEeK08IWBu_4Dfg"/>
+        </events>
+      </transitions>
+      <transitions xmi:id="_z7d7AGSREeKKctqRpH_8DA" priority="2" target="_n3UMoGSREeKKctqRpH_8DA" source="_mQexsGSREeKKctqRpH_8DA" clockResets="_QEUcEGSSEeKKctqRpH_8DA">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_y6RuUGSSEeKKctqRpH_8DA" kind="TRIGGER">
+          <message xmi:id="_y6SVYGSSEeKKctqRpH_8DA" instanceOf="_oSL9AGSMEeKKctqRpH_8DA"/>
+        </events>
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_y6mecGSSEeKKctqRpH_8DA">
+          <message xmi:id="_y6mecWSSEeKKctqRpH_8DA" instanceOf="_QqsR0GSNEeKKctqRpH_8DA"/>
+        </events>
+      </transitions>
+      <transitions xmi:id="_0V7pcGSREeKKctqRpH_8DA" priority="1" target="_ohUL4GSREeKKctqRpH_8DA" source="_n3UMoGSREeKKctqRpH_8DA">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_3kezoGSSEeKKctqRpH_8DA" kind="TRIGGER">
+          <message xmi:id="_3kezoWSSEeKKctqRpH_8DA" instanceOf="_sj7fAGSMEeKKctqRpH_8DA"/>
+        </events>
+        <action xmi:id="_MOCnAMwtEeK85KaJhTFgdg" name="iterator := getIterator(profiles)">
+          <expressions xsi:type="actionlanguage:Block" xmi:id="_MoCbsN5SEeKZjZweYg6caA">
+            <expressions xsi:type="actionlanguage:Assignment" xmi:id="__CAQYPQ1EeK0h5bDo3RUAg" assignOperator=":=">
+              <rhs_assignExpression xsi:type="expression:ActivityCallExpression" xmi:id="_MlZXEMwtEeK85KaJhTFgdg" callee="_47XPEMePEeKcyL_eirdkdw">
+                <ownedParameterBindings xmi:id="_MlZXEcwtEeK85KaJhTFgdg" parameter="_l_DgkMhUEeKqgvOVLMq5Kg">
+                  <valueExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_OjDH0MwzEeK85KaJhTFgdg" typedNamedElement="_kEW0MGSYEeKKctqRpH_8DA"/>
+                </ownedParameterBindings>
+              </rhs_assignExpression>
+              <lhs_typedNamedElementExpression xmi:id="_Bl8z0PQ2EeK0h5bDo3RUAg" typedNamedElement="_zA6yUMRMEeKovq4g5K7Xxw"/>
+            </expressions>
+          </expressions>
+        </action>
+      </transitions>
+      <transitions xmi:id="_1cqoAGSREeKKctqRpH_8DA" priority="1" target="_sXYegGSREeKKctqRpH_8DA" source="_ohUL4GSREeKKctqRpH_8DA">
+        <guard xsi:type="sdcec:UnaryExpression" xmi:id="_4LMBMPRDEeK0h5bDo3RUAg">
+          <enclosedExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_4LMBMfRDEeK0h5bDo3RUAg" typedNamedElement="_1JV3YMRMEeKovq4g5K7Xxw"/>
+        </guard>
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_XsfR4GSTEeKKctqRpH_8DA">
+          <message xmi:id="_Xsf48GSTEeKKctqRpH_8DA" instanceOf="_SUUiEGSNEeKKctqRpH_8DA"/>
+        </events>
+        <action xmi:id="_69SVYPRDEeK0h5bDo3RUAg" name="deleteIterator(iterator)">
+          <expressions xsi:type="actionlanguage:Block" xmi:id="_-nv08PRDEeK0h5bDo3RUAg">
+            <expressions xsi:type="expression:ActivityCallExpression" xmi:id="_-nv08vRDEeK0h5bDo3RUAg" callee="_8OxdUPRBEeK0h5bDo3RUAg">
+              <ownedParameterBindings xmi:id="_-nv08_RDEeK0h5bDo3RUAg" parameter="_K4OaAPRCEeK0h5bDo3RUAg">
+                <valueExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_-nv09PRDEeK0h5bDo3RUAg" typedNamedElement="_zA6yUMRMEeKovq4g5K7Xxw"/>
+              </ownedParameterBindings>
+            </expressions>
+          </expressions>
+        </action>
+      </transitions>
+      <transitions xmi:id="_GjHyoGSSEeKKctqRpH_8DA" priority="1" target="_ohUL4GSREeKKctqRpH_8DA" source="_uCptgGSREeKKctqRpH_8DA">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_DBis0GSTEeKKctqRpH_8DA" kind="TRIGGER">
+          <message xmi:id="_DBis0WSTEeKKctqRpH_8DA" instanceOf="_u3NwQGSMEeKKctqRpH_8DA"/>
+        </events>
+        <action xmi:id="_5NZfYPQzEeK0h5bDo3RUAg" name="">
+          <expressions xsi:type="actionlanguage:Block" xmi:id="_5spAIPQzEeK0h5bDo3RUAg"/>
+        </action>
+      </transitions>
+      <transitions xmi:id="_HRy2gGSSEeKKctqRpH_8DA" priority="2" target="_vMhfoGSREeKKctqRpH_8DA" source="_sXYegGSREeKKctqRpH_8DA">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_eZnRMGSTEeKKctqRpH_8DA" kind="TRIGGER">
+          <message xmi:id="_eZn4QGSTEeKKctqRpH_8DA" instanceOf="_7r3HcGSMEeKKctqRpH_8DA"/>
+        </events>
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_eZ6zMGSTEeKKctqRpH_8DA">
+          <message xmi:id="_eZ8BUGSTEeKKctqRpH_8DA" instanceOf="_cRrjEGSNEeKKctqRpH_8DA"/>
+        </events>
+        <action xmi:id="_HSk5oGSSEeKKctqRpH_8DA" name="entryPosition := enterConvoyAt . pos ; curProfile := enterConvoyAt . profile;">
+          <expressions xsi:type="actionlanguage:Block" xmi:id="_3xqRcPREEeK0h5bDo3RUAg">
+            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_3xqRcfREEeK0h5bDo3RUAg" assignOperator=":=">
+              <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_3xqRcvREEeK0h5bDo3RUAg" messageType="_7r3HcGSMEeKKctqRpH_8DA" parameter="_8_B_gGSMEeKKctqRpH_8DA"/>
+              <lhs_typedNamedElementExpression xmi:id="_3xqRc_REEeK0h5bDo3RUAg" typedNamedElement="_f05KIGSYEeKKctqRpH_8DA"/>
+            </expressions>
+            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_3xqRdPREEeK0h5bDo3RUAg" assignOperator=":=">
+              <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_3xqRdfREEeK0h5bDo3RUAg" messageType="_7r3HcGSMEeKKctqRpH_8DA" parameter="_DRA68GSNEeKKctqRpH_8DA"/>
+              <lhs_typedNamedElementExpression xmi:id="_3xqRdvREEeK0h5bDo3RUAg" typedNamedElement="_iqmzAGSYEeKKctqRpH_8DA"/>
+            </expressions>
+          </expressions>
+        </action>
+      </transitions>
+      <transitions xmi:id="_H015MGSSEeKKctqRpH_8DA" priority="1" target="_wdW1YGSREeKKctqRpH_8DA" source="_vMhfoGSREeKKctqRpH_8DA">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_GcqI0GSTEeKKctqRpH_8DA" kind="TRIGGER">
+          <message xmi:id="_GcqI0WSTEeKKctqRpH_8DA" instanceOf="_16TYgGSMEeKKctqRpH_8DA"/>
+        </events>
+      </transitions>
+      <transitions xmi:id="_Ib0ZoGSSEeKKctqRpH_8DA" priority="1" target="_wdW1YGSREeKKctqRpH_8DA" source="_wdW1YGSREeKKctqRpH_8DA">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_j16h0GSTEeKKctqRpH_8DA" kind="TRIGGER">
+          <message xmi:id="_j16h0WSTEeKKctqRpH_8DA" instanceOf="_4ZMAUGSNEeKKctqRpH_8DA"/>
+        </events>
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_j2H9MGSTEeKKctqRpH_8DA">
+          <message xmi:id="_j2H9MWSTEeKKctqRpH_8DA" instanceOf="_yyoAcGSNEeKKctqRpH_8DA"/>
+        </events>
+        <action xmi:id="_IckAgGSSEeKKctqRpH_8DA" name="curProfile := updateProfile . profile ;">
+          <expressions xsi:type="actionlanguage:Block" xmi:id="_-YLScPREEeK0h5bDo3RUAg">
+            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_-YLScfREEeK0h5bDo3RUAg" assignOperator=":=">
+              <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_-YLScvREEeK0h5bDo3RUAg" messageType="_4ZMAUGSNEeKKctqRpH_8DA" parameter="_OUmGsGSZEeKKctqRpH_8DA"/>
+              <lhs_typedNamedElementExpression xmi:id="_-YLSc_REEeK0h5bDo3RUAg" typedNamedElement="_iqmzAGSYEeKKctqRpH_8DA"/>
+            </expressions>
+          </expressions>
+        </action>
+      </transitions>
+      <transitions xmi:id="__L-wgGSSEeKKctqRpH_8DA" priority="2" target="_uCptgGSREeKKctqRpH_8DA" source="_ohUL4GSREeKKctqRpH_8DA">
+        <guard xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_3WhqEPRDEeK0h5bDo3RUAg" typedNamedElement="_1JV3YMRMEeKovq4g5K7Xxw"/>
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_BfGpsGSTEeKKctqRpH_8DA">
+          <message xmi:id="_BfGpsWSTEeKKctqRpH_8DA" instanceOf="_T9W8cGSNEeKKctqRpH_8DA">
+            <parameterBinding xmi:id="_0aBcsPRDEeK0h5bDo3RUAg" parameter="_wcaygGSXEeKKctqRpH_8DA">
+              <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_0aBcsfRDEeK0h5bDo3RUAg" typedNamedElement="_DdfPIPQ0EeK0h5bDo3RUAg"/>
+            </parameterBinding>
+          </message>
+        </events>
+        <action xmi:id="_ZEbkkPRDEeK0h5bDo3RUAg" name="tmpProfile := getNextProfile(iterator)">
+          <expressions xsi:type="actionlanguage:Block" xmi:id="_byWjYPRDEeK0h5bDo3RUAg">
+            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_byWjYfRDEeK0h5bDo3RUAg" assignOperator=":=">
+              <rhs_assignExpression xsi:type="expression:ActivityCallExpression" xmi:id="_byWjYvRDEeK0h5bDo3RUAg" callee="_IwtwYPRBEeK0h5bDo3RUAg">
+                <ownedParameterBindings xmi:id="_byWjY_RDEeK0h5bDo3RUAg" parameter="_h6ppQPRBEeK0h5bDo3RUAg">
+                  <valueExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_byWjZPRDEeK0h5bDo3RUAg" typedNamedElement="_zA6yUMRMEeKovq4g5K7Xxw"/>
+                </ownedParameterBindings>
+              </rhs_assignExpression>
+              <lhs_typedNamedElementExpression xmi:id="_byWjZfRDEeK0h5bDo3RUAg" typedNamedElement="_DdfPIPQ0EeK0h5bDo3RUAg"/>
+            </expressions>
+          </expressions>
+        </action>
+      </transitions>
+      <states xmi:id="_lj9C4GSREeKKctqRpH_8DA" name="Idle" outgoingTransitions="_yXUnsGSREeKKctqRpH_8DA" initial="true">
+        <invariants xmi:id="_bwq6sHb3EeKvcqjVQl9Zxg" clock="_QEUcEGSSEeKKctqRpH_8DA">
+          <bound xmi:id="_cc2rQHb3EeKvcqjVQl9Zxg" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_cc2rQXb3EeKvcqjVQl9Zxg" value="10"/>
+          </bound>
+        </invariants>
+      </states>
+      <states xmi:id="_mQexsGSREeKKctqRpH_8DA" name="Request" outgoingTransitions="_y4_KUGSREeKKctqRpH_8DA _z7d7AGSREeKKctqRpH_8DA" incomingTransitions="_yXUnsGSREeKKctqRpH_8DA">
+        <invariants xmi:id="_g9Lb0Hb3EeKvcqjVQl9Zxg" clock="_QEUcEGSSEeKKctqRpH_8DA">
+          <bound xmi:id="_iRF6wHb3EeKvcqjVQl9Zxg" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_iRF6wXb3EeKvcqjVQl9Zxg" value="75"/>
+          </bound>
+        </invariants>
+      </states>
+      <states xmi:id="_nDzFAGSREeKKctqRpH_8DA" name="Declined" incomingTransitions="_y4_KUGSREeKKctqRpH_8DA _zbn9UGSREeKKctqRpH_8DA" final="true"/>
+      <states xmi:id="_n3UMoGSREeKKctqRpH_8DA" name="Wait" outgoingTransitions="_0V7pcGSREeKKctqRpH_8DA" incomingTransitions="_z7d7AGSREeKKctqRpH_8DA">
+        <invariants xmi:id="_kVy9cHb3EeKvcqjVQl9Zxg" clock="_QEUcEGSSEeKKctqRpH_8DA">
+          <bound xmi:id="_kyp4kHb3EeKvcqjVQl9Zxg" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_kyp4kXb3EeKvcqjVQl9Zxg" value="50"/>
+          </bound>
+        </invariants>
+      </states>
+      <states xmi:id="_ohUL4GSREeKKctqRpH_8DA" name="Transmit" outgoingTransitions="_1cqoAGSREeKKctqRpH_8DA __L-wgGSSEeKKctqRpH_8DA" incomingTransitions="_0V7pcGSREeKKctqRpH_8DA _GjHyoGSSEeKKctqRpH_8DA">
+        <entryEvent xmi:id="_e92y8Hb4EeKvcqjVQl9Zxg" clockResets="_QEUcEGSSEeKKctqRpH_8DA">
+          <action xmi:id="_lmO5YMRNEeKovq4g5K7Xxw" name="">
+            <expressions xsi:type="actionlanguage:Block" xmi:id="_lrSYgMRNEeKovq4g5K7Xxw">
+              <expressions xsi:type="actionlanguage:Assignment" xmi:id="_bTmEcPQ7EeK0h5bDo3RUAg" assignOperator=":=">
+                <rhs_assignExpression xsi:type="expression:ActivityCallExpression" xmi:id="_k0hoIPQ7EeK0h5bDo3RUAg" callee="__9d9oPQ2EeK0h5bDo3RUAg">
+                  <ownedParameterBindings xmi:id="_k0hoIfQ7EeK0h5bDo3RUAg" parameter="_GwHEMPQ5EeK0h5bDo3RUAg">
+                    <valueExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_k0hoIvQ7EeK0h5bDo3RUAg" typedNamedElement="_zA6yUMRMEeKovq4g5K7Xxw"/>
+                  </ownedParameterBindings>
+                </rhs_assignExpression>
+                <lhs_typedNamedElementExpression xmi:id="_clkpsPQ7EeK0h5bDo3RUAg" typedNamedElement="_1JV3YMRMEeKovq4g5K7Xxw"/>
+              </expressions>
+            </expressions>
+          </action>
+        </entryEvent>
+        <invariants xmi:id="_cHBIsHb4EeKvcqjVQl9Zxg" clock="_QEUcEGSSEeKKctqRpH_8DA">
+          <bound xmi:id="_c6yvAHb4EeKvcqjVQl9Zxg" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_c6yvAXb4EeKvcqjVQl9Zxg" value="10"/>
+          </bound>
+        </invariants>
+      </states>
+      <states xmi:id="_sXYegGSREeKKctqRpH_8DA" name="Wait For Position" outgoingTransitions="_zbn9UGSREeKKctqRpH_8DA _HRy2gGSSEeKKctqRpH_8DA" incomingTransitions="_1cqoAGSREeKKctqRpH_8DA">
+        <invariants xmi:id="_nETyIHb3EeKvcqjVQl9Zxg" clock="_QEUcEGSSEeKKctqRpH_8DA">
+          <bound xmi:id="_n53hIHb3EeKvcqjVQl9Zxg" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_n53hIXb3EeKvcqjVQl9Zxg" value="1000"/>
+          </bound>
+        </invariants>
+      </states>
+      <states xmi:id="_uCptgGSREeKKctqRpH_8DA" name="AwaitAck" outgoingTransitions="_GjHyoGSSEeKKctqRpH_8DA" incomingTransitions="__L-wgGSSEeKKctqRpH_8DA">
+        <invariants xmi:id="_uXmZkHb3EeKvcqjVQl9Zxg" clock="_QEUcEGSSEeKKctqRpH_8DA">
+          <bound xmi:id="_vKVeEHb3EeKvcqjVQl9Zxg" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_vKVeEXb3EeKvcqjVQl9Zxg" value="50"/>
+          </bound>
+        </invariants>
+      </states>
+      <states xmi:id="_vMhfoGSREeKKctqRpH_8DA" name="Received Position" outgoingTransitions="_H015MGSSEeKKctqRpH_8DA" incomingTransitions="_HRy2gGSSEeKKctqRpH_8DA">
+        <invariants xmi:id="_vYpKYHb4EeKvcqjVQl9Zxg" clock="_QEUcEGSSEeKKctqRpH_8DA">
+          <bound xmi:id="_wGK-wHb4EeKvcqjVQl9Zxg" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_wGK-wXb4EeKvcqjVQl9Zxg" value="100"/>
+          </bound>
+        </invariants>
+      </states>
+      <states xmi:id="_wdW1YGSREeKKctqRpH_8DA" name="Convoy" outgoingTransitions="_Ib0ZoGSSEeKKctqRpH_8DA" incomingTransitions="_H015MGSSEeKKctqRpH_8DA _Ib0ZoGSSEeKKctqRpH_8DA"/>
+      <clocks xmi:id="_QEUcEGSSEeKKctqRpH_8DA" name="c"/>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_2M8PcHm7EeKZXonDzNJBaA" key="org.storydriven.storydiagrams.category" name="storydiagrams">
+    <modelElements xsi:type="sda:Activity" xmi:id="_2NOjUHm7EeKZXonDzNJBaA" inParameter="_kg4A4Hm8EeKZXonDzNJBaA" outParameter="_vOqQwMIfEeKOj7LJk0zCFA" name="createSubRoleInstance">
+      <annotation xmi:id="_S0dpgHm8EeKZXonDzNJBaA" source="http://www.storydriven.org/storydiagrams/types">
+        <details xmi:id="_S0fesHm8EeKZXonDzNJBaA" key="http://www.fujaba.de/muml/runtime/0.4.0" value="true"/>
+        <details xmi:id="_fqeAsHm-EeKZXonDzNJBaA" key="http://www.fujaba.de/muml/protocol/0.4.0" value="true"/>
+        <details xmi:id="_lP7loHnEEeKZXonDzNJBaA" key="http://www.fujaba.de/muml/realtimestatechart/0.4.0" value="true"/>
+        <details xmi:id="_Yok3oMLCEeKUTNnD-kbf9g" key="http://www.fujaba.de/muml/behavior/0.4.0" value="true"/>
+        <details xmi:id="_d_qvANNTEeKwibyRRRlRHg" key="http://www.fujaba.de/muml/connector/0.4.0" value="true"/>
+        <details xmi:id="_oB_IgNNTEeKwibyRRRlRHg" key="http://www.storydriven.org/core/expressions/common/0.3.1" value="true"/>
+        <details xmi:id="_rzwJ8NNTEeKwibyRRRlRHg" key="http://www.storydriven.org/core/expressions/0.3.1" value="true"/>
+      </annotation>
+      <containedParameters xmi:id="_kg4A4Hm8EeKZXonDzNJBaA" name="multiRoleInstance">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/runtime/0.4.0#//MultiRoleInstance"/>
+      </containedParameters>
+      <containedParameters xmi:id="_vOqQwMIfEeKOj7LJk0zCFA" name="subRoleInstance">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/runtime/0.4.0#//SingleRoleInstance"/>
+      </containedParameters>
+      <ownedActivityEdge xmi:id="_6ndS8Hm7EeKZXonDzNJBaA" target="_5Cx0IHm7EeKZXonDzNJBaA" source="_4TwK8Hm7EeKZXonDzNJBaA"/>
+      <ownedActivityEdge xmi:id="_7SvEkHm7EeKZXonDzNJBaA" target="_GRERULDyEeOBF94vhyNN8A" source="_5Cx0IHm7EeKZXonDzNJBaA"/>
+      <ownedActivityEdge xmi:id="_B15UkMLDEeKUTNnD-kbf9g" target="__fiWoMLBEeKUTNnD-kbf9g" source="__fiWoMLBEeKUTNnD-kbf9g" guard="EACH_TIME"/>
+      <ownedActivityEdge xmi:id="_4i5CsMLDEeKUTNnD-kbf9g" target="_HVw2kMLDEeKUTNnD-kbf9g" source="__fiWoMLBEeKUTNnD-kbf9g" guard="END"/>
+      <ownedActivityEdge xmi:id="_6RQB8MLDEeKUTNnD-kbf9g" target="_HVw2kMLDEeKUTNnD-kbf9g" source="_HVw2kMLDEeKUTNnD-kbf9g" guard="EACH_TIME"/>
+      <ownedActivityEdge xmi:id="_7o5xYMLDEeKUTNnD-kbf9g" target="_56CMQHm7EeKZXonDzNJBaA" source="_HVw2kMLDEeKUTNnD-kbf9g" guard="END"/>
+      <ownedActivityEdge xmi:id="_fTi3ULDyEeOBF94vhyNN8A" target="__fiWoMLBEeKUTNnD-kbf9g" source="_GRERULDyEeOBF94vhyNN8A" guard="SUCCESS"/>
+      <ownedActivityEdge xmi:id="_sUjPgLDyEeOBF94vhyNN8A" target="_gRcC8LDyEeOBF94vhyNN8A" source="_GRERULDyEeOBF94vhyNN8A" guard="FAILURE"/>
+      <ownedActivityEdge xmi:id="_uYp1QLDyEeOBF94vhyNN8A" target="__fiWoMLBEeKUTNnD-kbf9g" source="_gRcC8LDyEeOBF94vhyNN8A"/>
+      <ownedActivityNode xsi:type="sda:InitialNode" xmi:id="_4TwK8Hm7EeKZXonDzNJBaA" name="initCreateSubRoleInstance" outgoing="_6ndS8Hm7EeKZXonDzNJBaA"/>
+      <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_5Cx0IHm7EeKZXonDzNJBaA" name="Create Subrole Instance" outgoing="_7SvEkHm7EeKZXonDzNJBaA" incoming="_6ndS8Hm7EeKZXonDzNJBaA">
+        <ownedRule xmi:id="_5Dj3QHm7EeKZXonDzNJBaA" comment="">
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_rsn14Hm8EeKZXonDzNJBaA" name="multiRoleInstance" bindingState="BOUND" outgoingLink="_vVIYMHm9EeKZXonDzNJBaA _jfsl0Hm-EeKZXonDzNJBaA _1CAdkHqQEeK47scX6NJllQ _5S3OwHqQEeK47scX6NJllQ _vXokoKaWEeKg5cVXMGsqOw">
+            <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//MultiRoleInstance"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_DsfvYHm9EeKZXonDzNJBaA" name="roleConnectorInstance" outgoingLink="_P6Hi0Hm9EeKZXonDzNJBaA _so7QoHm9EeKZXonDzNJBaA _4wiCAHnFEeKZXonDzNJBaA" bindingOperator="CREATE">
+            <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//RuntimeRoleConnectorInstance"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_KLWpMHm9EeKZXonDzNJBaA" name="singleRoleInstance" incomingLink="_P6Hi0Hm9EeKZXonDzNJBaA" outgoingLink="_atFR8HnEEeKZXonDzNJBaA _2hTxYHnFEeKZXonDzNJBaA _n6bMIKdaEeKMmY3uY3KYPw" bindingOperator="CREATE">
+            <attributeAssignment xmi:id="_rrf50BlEEeOcYuY_E-aX1g">
+              <attribute href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+              <valueExpression xsi:type="expr:TextualExpression" xmi:id="_rtbzgBlEEeOcYuY_E-aX1g" expressionText="'memberInstance_'.concat(multiRoleInstance.subInteractionEndpointInstances->size().toString())" language="OCL" languageVersion="1.0"/>
+            </attributeAssignment>
+            <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//SingleRoleInstance"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_mWwH8Hm9EeKZXonDzNJBaA" name="subRoleInstance" incomingLink="_so7QoHm9EeKZXonDzNJBaA _vVIYMHm9EeKZXonDzNJBaA _3b_MsHqQEeK47scX6NJllQ _5S3OwHqQEeK47scX6NJllQ" outgoingLink="_IOLtsHnEEeKZXonDzNJBaA _tUM-EHnEEeKZXonDzNJBaA _hX56UKdaEeKMmY3uY3KYPw" bindingOperator="CREATE">
+            <attributeAssignment xmi:id="_1Six0Hm9EeKZXonDzNJBaA">
+              <attribute href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+              <valueExpression xsi:type="expr:TextualExpression" xmi:id="_1TChEHm9EeKZXonDzNJBaA" expressionText="'subRoleInstance_'.concat(multiRoleInstance.name).concat('_').concat(multiRoleInstance.subInteractionEndpointInstances->size().toString())" language="OCL" languageVersion="1.0"/>
+            </attributeAssignment>
+            <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//SingleRoleInstance"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_MtxGIHm-EeKZXonDzNJBaA" name="multiRole" incomingLink="_jfsl0Hm-EeKZXonDzNJBaA _IOLtsHnEEeKZXonDzNJBaA" outgoingLink="_Olt3gHnEEeKZXonDzNJBaA _qCn4kHnEEeKZXonDzNJBaA">
+            <classifier href="http://www.fujaba.de/muml/protocol/0.4.0#//Role"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_L9zaEHnEEeKZXonDzNJBaA" name="roleConnector" incomingLink="_Olt3gHnEEeKZXonDzNJBaA _4wiCAHnFEeKZXonDzNJBaA" outgoingLink="_V_aB4HnEEeKZXonDzNJBaA">
+            <classifier href="http://www.fujaba.de/muml/protocol/0.4.0#//RoleConnector"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_Uj2p4HnEEeKZXonDzNJBaA" name="singleRole" incomingLink="_V_aB4HnEEeKZXonDzNJBaA _atFR8HnEEeKZXonDzNJBaA _SiFxAHnFEeKZXonDzNJBaA">
+            <classifier href="http://www.fujaba.de/muml/protocol/0.4.0#//Role"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_g6l9EHnEEeKZXonDzNJBaA" name="subRoleRTSC" incomingLink="_qCn4kHnEEeKZXonDzNJBaA _tow40HnEEeKZXonDzNJBaA" outgoingLink="_DnARwHnFEeKZXonDzNJBaA">
+            <classifier href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_sdIMIHnEEeKZXonDzNJBaA" name="subRoleRTSCInstance" incomingLink="_tUM-EHnEEeKZXonDzNJBaA _yQtqkKaWEeKg5cVXMGsqOw" outgoingLink="_tow40HnEEeKZXonDzNJBaA _LRU5IHnFEeKZXonDzNJBaA" bindingOperator="CREATE">
+            <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//RealtimeStatechartInstance"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_9y4XAHnEEeKZXonDzNJBaA" name="subRoleInitialState" incomingLink="_DnARwHnFEeKZXonDzNJBaA _LRU5IHnFEeKZXonDzNJBaA">
+            <constraint xmi:id="_Fkt7oHnFEeKZXonDzNJBaA">
+              <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_HnVToHnFEeKZXonDzNJBaA" expressionText="self.initial" language="OCL" languageVersion="1.0"/>
+            </constraint>
+            <classifier href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_O6UZEHnFEeKZXonDzNJBaA" name="singleRoleRTSC" incomingLink="_bhhxMHnFEeKZXonDzNJBaA" outgoingLink="_SiFxAHnFEeKZXonDzNJBaA _wAdTgHnFEeKZXonDzNJBaA">
+            <classifier href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_UNuMYHnFEeKZXonDzNJBaA" name="singleRoleRTSCInstance" incomingLink="_2hTxYHnFEeKZXonDzNJBaA" outgoingLink="_bhhxMHnFEeKZXonDzNJBaA _xSh_YHnFEeKZXonDzNJBaA" bindingOperator="CREATE">
+            <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//RealtimeStatechartInstance"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_mGuOQHnFEeKZXonDzNJBaA" name="singleRoleInitialState" incomingLink="_wAdTgHnFEeKZXonDzNJBaA _xSh_YHnFEeKZXonDzNJBaA">
+            <constraint xmi:id="_yDh-gHnFEeKZXonDzNJBaA">
+              <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_yW60kHnFEeKZXonDzNJBaA" expressionText="self.initial" language="OCL" languageVersion="1.0"/>
+            </constraint>
+            <classifier href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_mkymEHqQEeK47scX6NJllQ" name="existingSubRoleInstance" incomingLink="_1CAdkHqQEeK47scX6NJllQ" outgoingLink="_3b_MsHqQEeK47scX6NJllQ" bindingSemantics="OPTIONAL">
+            <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//SingleRoleInstance"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_nw_jYKaWEeKg5cVXMGsqOw" name="parentRTSCInstance" incomingLink="_vXokoKaWEeKg5cVXMGsqOw" outgoingLink="_yQtqkKaWEeKg5cVXMGsqOw">
+            <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//RealtimeStatechartInstance"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_bA1qkKdaEeKMmY3uY3KYPw" name="messageBufferSubRole" incomingLink="_hX56UKdaEeKMmY3uY3KYPw" bindingOperator="CREATE">
+            <attributeAssignment xmi:id="_b6CuAKdbEeKMmY3uY3KYPw">
+              <attribute href="http://www.fujaba.de/muml/runtime/0.4.0#//RuntimeMessageBuffer/bufferSize"/>
+              <valueExpression xsi:type="expr:TextualExpression" xmi:id="_b7PA0KdbEeKMmY3uY3KYPw" expressionText="10" language="OCL" languageVersion="1.0"/>
+            </attributeAssignment>
+            <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//RuntimeMessageBuffer"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_jGcfwKdaEeKMmY3uY3KYPw" name="messageBufferSingleRoleInstance" incomingLink="_n6bMIKdaEeKMmY3uY3KYPw" bindingOperator="CREATE">
+            <attributeAssignment xmi:id="_d_pvoKdbEeKMmY3uY3KYPw">
+              <attribute href="http://www.fujaba.de/muml/runtime/0.4.0#//RuntimeMessageBuffer/bufferSize"/>
+              <valueExpression xsi:type="expr:TextualExpression" xmi:id="_eAigcKdbEeKMmY3uY3KYPw" expressionText="10" language="OCL" languageVersion="1.0"/>
+            </attributeAssignment>
+            <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//RuntimeMessageBuffer"/>
+          </variable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_P6Hi0Hm9EeKZXonDzNJBaA" name="roleConnectorInstance_2_singleRoleInstance" bindingOperator="CREATE" source="_DsfvYHm9EeKZXonDzNJBaA" target="_KLWpMHm9EeKZXonDzNJBaA">
+            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//ConnectorInstance/connectorEndpointInstances"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_so7QoHm9EeKZXonDzNJBaA" name="roleConnectorInstance_2_subRoleInstance" bindingOperator="CREATE" source="_DsfvYHm9EeKZXonDzNJBaA" target="_mWwH8Hm9EeKZXonDzNJBaA">
+            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//ConnectorInstance/connectorEndpointInstances"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_vVIYMHm9EeKZXonDzNJBaA" name="multiRoleInstance_2_subRoleInstance" bindingOperator="CREATE" source="_rsn14Hm8EeKZXonDzNJBaA" target="_mWwH8Hm9EeKZXonDzNJBaA">
+            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//DiscreteMultiInteractionEndpointInstance/subInteractionEndpointInstances"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_jfsl0Hm-EeKZXonDzNJBaA" name="multiRoleInstance_2_multiRole" source="_rsn14Hm8EeKZXonDzNJBaA" target="_MtxGIHm-EeKZXonDzNJBaA">
+            <targetEnd href="http://www.fujaba.de/muml/runtime/0.4.0#//RoleInstance/role"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_IOLtsHnEEeKZXonDzNJBaA" name="subRoleInstance_2_multiRole" bindingOperator="CREATE" source="_mWwH8Hm9EeKZXonDzNJBaA" target="_MtxGIHm-EeKZXonDzNJBaA">
+            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//ConnectorEndpointInstance/type"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_Olt3gHnEEeKZXonDzNJBaA" name="multiRole_2_roleConnector" source="_MtxGIHm-EeKZXonDzNJBaA" target="_L9zaEHnEEeKZXonDzNJBaA">
+            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//ConnectorEndpoint/connectors"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_V_aB4HnEEeKZXonDzNJBaA" name="roleConnector_2_singleRole" source="_L9zaEHnEEeKZXonDzNJBaA" target="_Uj2p4HnEEeKZXonDzNJBaA">
+            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//Connector/connectorEndpoints"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_atFR8HnEEeKZXonDzNJBaA" name="singleRoleInstance_2_singleRole" bindingOperator="CREATE" source="_KLWpMHm9EeKZXonDzNJBaA" target="_Uj2p4HnEEeKZXonDzNJBaA">
+            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//ConnectorEndpointInstance/type"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_qCn4kHnEEeKZXonDzNJBaA" name="multiRole_2_subRoleRTSC" source="_MtxGIHm-EeKZXonDzNJBaA" target="_g6l9EHnEEeKZXonDzNJBaA">
+            <targetEnd href="http://www.fujaba.de/muml/behavior/0.4.0#//BehavioralElement/behavior"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_tUM-EHnEEeKZXonDzNJBaA" name="subRoleInstance_2_subRoleRTSCInstance" bindingOperator="CREATE" source="_mWwH8Hm9EeKZXonDzNJBaA" target="_sdIMIHnEEeKZXonDzNJBaA">
+            <targetEnd href="http://www.fujaba.de/muml/runtime/0.4.0#//RuntimeBehavioralElement/statechartInstance"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_tow40HnEEeKZXonDzNJBaA" name="subRoleRTSCInstance_2_subRoleRTSC" bindingOperator="CREATE" source="_sdIMIHnEEeKZXonDzNJBaA" target="_g6l9EHnEEeKZXonDzNJBaA">
+            <targetEnd href="http://www.fujaba.de/muml/runtime/0.4.0#//RealtimeStatechartInstance/instanceOf"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_DnARwHnFEeKZXonDzNJBaA" name="subRoleRTSC_2_subRoleInitialState" source="_g6l9EHnEEeKZXonDzNJBaA" target="_9y4XAHnEEeKZXonDzNJBaA">
+            <targetEnd href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/states"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_LRU5IHnFEeKZXonDzNJBaA" name="subRoleRTSCInstance_2_subRoleInitialState" bindingOperator="CREATE" source="_sdIMIHnEEeKZXonDzNJBaA" target="_9y4XAHnEEeKZXonDzNJBaA">
+            <targetEnd href="http://www.fujaba.de/muml/runtime/0.4.0#//RealtimeStatechartInstance/active"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_SiFxAHnFEeKZXonDzNJBaA" name="singleRoleRTSC_2_singleRole" source="_O6UZEHnFEeKZXonDzNJBaA" target="_Uj2p4HnEEeKZXonDzNJBaA">
+            <targetEnd href="http://www.fujaba.de/muml/behavior/0.4.0#//Behavior/behavioralElement"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_bhhxMHnFEeKZXonDzNJBaA" name="singleRoleRTSCInstance_2_singleRoleRTSC" bindingOperator="CREATE" source="_UNuMYHnFEeKZXonDzNJBaA" target="_O6UZEHnFEeKZXonDzNJBaA">
+            <targetEnd href="http://www.fujaba.de/muml/runtime/0.4.0#//RealtimeStatechartInstance/instanceOf"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_wAdTgHnFEeKZXonDzNJBaA" name="singleRoleRTSC_2_singleRoleInitialState" source="_O6UZEHnFEeKZXonDzNJBaA" target="_mGuOQHnFEeKZXonDzNJBaA">
+            <targetEnd href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/states"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_xSh_YHnFEeKZXonDzNJBaA" name="singleRoleRTSCInstance_2_singleRoleInitialState" bindingOperator="CREATE" source="_UNuMYHnFEeKZXonDzNJBaA" target="_mGuOQHnFEeKZXonDzNJBaA">
+            <targetEnd href="http://www.fujaba.de/muml/runtime/0.4.0#//RealtimeStatechartInstance/active"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_2hTxYHnFEeKZXonDzNJBaA" name="singleRoleInstance_2_singleRoleRTSCInstance" bindingOperator="CREATE" source="_KLWpMHm9EeKZXonDzNJBaA" target="_UNuMYHnFEeKZXonDzNJBaA">
+            <targetEnd href="http://www.fujaba.de/muml/runtime/0.4.0#//RuntimeBehavioralElement/statechartInstance"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_4wiCAHnFEeKZXonDzNJBaA" name="roleConnectorInstance_2_roleConnector" bindingOperator="CREATE" source="_DsfvYHm9EeKZXonDzNJBaA" target="_L9zaEHnEEeKZXonDzNJBaA">
+            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//ConnectorInstance/type"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_1CAdkHqQEeK47scX6NJllQ" name="multiRoleInstance_2_existingSubRoleInstance" bindingSemantics="OPTIONAL" bindingOperator="DESTROY" source="_rsn14Hm8EeKZXonDzNJBaA" target="_mkymEHqQEeK47scX6NJllQ">
+            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//DiscreteMultiInteractionEndpointInstance/last"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_3b_MsHqQEeK47scX6NJllQ" name="existingSubRoleInstance_2_subRoleInstance" bindingSemantics="OPTIONAL" bindingOperator="CREATE" source="_mkymEHqQEeK47scX6NJllQ" target="_mWwH8Hm9EeKZXonDzNJBaA">
+            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//DiscreteSingleInteractionEndpointInstance/next"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_5S3OwHqQEeK47scX6NJllQ" name="multiRoleInstance_2_subRoleInstance" bindingOperator="CREATE" source="_rsn14Hm8EeKZXonDzNJBaA" target="_mWwH8Hm9EeKZXonDzNJBaA">
+            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//DiscreteMultiInteractionEndpointInstance/last"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_vXokoKaWEeKg5cVXMGsqOw" name="multiRoleInstance_2_parentRTSCInstance" source="_rsn14Hm8EeKZXonDzNJBaA" target="_nw_jYKaWEeKg5cVXMGsqOw">
+            <targetEnd href="http://www.fujaba.de/muml/runtime/0.4.0#//RuntimeBehavioralElement/statechartInstance"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_yQtqkKaWEeKg5cVXMGsqOw" name="parentRTSCInstance_2_subRoleRTSCInstance" bindingOperator="CREATE" source="_nw_jYKaWEeKg5cVXMGsqOw" target="_sdIMIHnEEeKZXonDzNJBaA">
+            <targetEnd href="http://www.fujaba.de/muml/runtime/0.4.0#//RealtimeStatechartInstance/subRealtimeStatechartInstances"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_hX56UKdaEeKMmY3uY3KYPw" name="subRoleInstance_2_messageBufferSubRole" bindingOperator="CREATE" source="_mWwH8Hm9EeKZXonDzNJBaA" target="_bA1qkKdaEeKMmY3uY3KYPw">
+            <targetEnd href="http://www.fujaba.de/muml/runtime/0.4.0#//RuntimeBehavioralElement/messageBuffer"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_n6bMIKdaEeKMmY3uY3KYPw" name="singleRoleInstance_2_messageBufferSingleRoleInstance" bindingOperator="CREATE" source="_KLWpMHm9EeKZXonDzNJBaA" target="_jGcfwKdaEeKMmY3uY3KYPw">
+            <targetEnd href="http://www.fujaba.de/muml/runtime/0.4.0#//RuntimeBehavioralElement/messageBuffer"/>
+          </linkVariable>
+        </ownedRule>
+      </ownedActivityNode>
+      <ownedActivityNode xsi:type="sda:ActivityFinalNode" xmi:id="_56CMQHm7EeKZXonDzNJBaA" name="finalCreateSubRoleInstance" incoming="_7o5xYMLDEeKUTNnD-kbf9g">
+        <returnValues xsi:type="expr:TextualExpression" xmi:id="_9AKJYNNEEeKtZNNS62H1gQ" expressionText="" language="OCL" languageVersion="1.0"/>
+      </ownedActivityNode>
+      <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="__fiWoMLBEeKUTNnD-kbf9g" name="Add Variable Bindings to Subrole" outgoing="_B15UkMLDEeKUTNnD-kbf9g _4i5CsMLDEeKUTNnD-kbf9g" incoming="_B15UkMLDEeKUTNnD-kbf9g _fTi3ULDyEeOBF94vhyNN8A _uYp1QLDyEeOBF94vhyNN8A" forEach="true">
+        <ownedRule xmi:id="__fiWocLBEeKUTNnD-kbf9g" comment="">
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_CFAkEMLCEeKUTNnD-kbf9g" name="subRoleRTSC" bindingState="BOUND" outgoingLink="_xG_HQMLCEeKUTNnD-kbf9g">
+            <classifier href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_MKqlcMLCEeKUTNnD-kbf9g" name="variable" incomingLink="_xG_HQMLCEeKUTNnD-kbf9g _8WAkcMLCEeKUTNnD-kbf9g">
+            <classifier href="http://www.fujaba.de/muml/behavior/0.4.0#//Variable"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_dj6wQMLCEeKUTNnD-kbf9g" name="subRoleRTSCInstance" bindingState="BOUND" outgoingLink="_Y_POsMLDEeKUTNnD-kbf9g">
+            <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//RealtimeStatechartInstance"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_htLEoMLCEeKUTNnD-kbf9g" name="variableBinding" incomingLink="_Y_POsMLDEeKUTNnD-kbf9g" outgoingLink="_8WAkcMLCEeKUTNnD-kbf9g" bindingOperator="CREATE">
+            <attributeAssignment xmi:id="_ug33sMwlEeK3Lq4j1h1LZw">
+              <attribute href="http://www.fujaba.de/muml/runtime/0.4.0#//VariableBinding/value"/>
+              <valueExpression xsi:type="expr:TextualExpression" xmi:id="_uhBBoMwlEeK3Lq4j1h1LZw" expressionText="variable.initializeExpression" language="OCL" languageVersion="1.0"/>
+            </attributeAssignment>
+            <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//VariableBinding"/>
+          </variable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_xG_HQMLCEeKUTNnD-kbf9g" name="subRoleRTSC_2_variable" source="_CFAkEMLCEeKUTNnD-kbf9g" target="_MKqlcMLCEeKUTNnD-kbf9g">
+            <targetEnd href="http://www.fujaba.de/muml/behavior/0.4.0#//Behavior/variables"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_8WAkcMLCEeKUTNnD-kbf9g" name="variableBinding_2_variable" bindingOperator="CREATE" source="_htLEoMLCEeKUTNnD-kbf9g" target="_MKqlcMLCEeKUTNnD-kbf9g">
+            <targetEnd href="http://www.fujaba.de/muml/runtime/0.4.0#//VariableBinding/variable"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_Y_POsMLDEeKUTNnD-kbf9g" name="subRoleRTSCInstance_2_variableBinding" bindingOperator="CREATE" source="_dj6wQMLCEeKUTNnD-kbf9g" target="_htLEoMLCEeKUTNnD-kbf9g">
+            <targetEnd href="http://www.fujaba.de/muml/runtime/0.4.0#//RealtimeStatechartInstance/variableBindings"/>
+          </linkVariable>
+        </ownedRule>
+      </ownedActivityNode>
+      <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_HVw2kMLDEeKUTNnD-kbf9g" name="Add Variable Bindings to Singlerole" outgoing="_6RQB8MLDEeKUTNnD-kbf9g _7o5xYMLDEeKUTNnD-kbf9g" incoming="_4i5CsMLDEeKUTNnD-kbf9g _6RQB8MLDEeKUTNnD-kbf9g" forEach="true">
+        <ownedRule xmi:id="_HV29MMLDEeKUTNnD-kbf9g" comment="">
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_RTE0QMLDEeKUTNnD-kbf9g" name="singleRoleRTSC" bindingState="BOUND" outgoingLink="_oz_g4MLDEeKUTNnD-kbf9g">
+            <classifier href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_RdeGYMLDEeKUTNnD-kbf9g" name="variable2" incomingLink="_oz_g4MLDEeKUTNnD-kbf9g _2IMh4MLDEeKUTNnD-kbf9g">
+            <classifier href="http://www.fujaba.de/muml/behavior/0.4.0#//Variable"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_RrZNoMLDEeKUTNnD-kbf9g" name="singleRoleRTSCInstance" bindingState="BOUND" outgoingLink="_1Dh_4MLDEeKUTNnD-kbf9g">
+            <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//RealtimeStatechartInstance"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_R3skQMLDEeKUTNnD-kbf9g" name="variableBinding2" incomingLink="_1Dh_4MLDEeKUTNnD-kbf9g" outgoingLink="_2IMh4MLDEeKUTNnD-kbf9g" bindingOperator="CREATE">
+            <attributeAssignment xmi:id="_131LQMwyEeK85KaJhTFgdg">
+              <attribute href="http://www.fujaba.de/muml/runtime/0.4.0#//VariableBinding/value"/>
+              <valueExpression xsi:type="expr:TextualExpression" xmi:id="_15KoAMwyEeK85KaJhTFgdg" expressionText="variable2.initializeExpression" language="OCL" languageVersion="1.0"/>
+            </attributeAssignment>
+            <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//VariableBinding"/>
+          </variable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_oz_g4MLDEeKUTNnD-kbf9g" name="singleRoleRTSC_2_variable2" source="_RTE0QMLDEeKUTNnD-kbf9g" target="_RdeGYMLDEeKUTNnD-kbf9g">
+            <targetEnd href="http://www.fujaba.de/muml/behavior/0.4.0#//Behavior/variables"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_1Dh_4MLDEeKUTNnD-kbf9g" name="singleRoleRTSCInstance_2_variableBinding" bindingOperator="CREATE" source="_RrZNoMLDEeKUTNnD-kbf9g" target="_R3skQMLDEeKUTNnD-kbf9g">
+            <targetEnd href="http://www.fujaba.de/muml/runtime/0.4.0#//RealtimeStatechartInstance/variableBindings"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_2IMh4MLDEeKUTNnD-kbf9g" name="variableBinding_2_variable2" bindingOperator="CREATE" source="_R3skQMLDEeKUTNnD-kbf9g" target="_RdeGYMLDEeKUTNnD-kbf9g">
+            <targetEnd href="http://www.fujaba.de/muml/runtime/0.4.0#//VariableBinding/variable"/>
+          </linkVariable>
+        </ownedRule>
+      </ownedActivityNode>
+      <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_GRERULDyEeOBF94vhyNN8A" name="Get first subrole" outgoing="_fTi3ULDyEeOBF94vhyNN8A _sUjPgLDyEeOBF94vhyNN8A" incoming="_7SvEkHm7EeKZXonDzNJBaA">
+        <ownedRule xmi:id="_GROCULDyEeOBF94vhyNN8A" comment="">
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_JzzYQLDyEeOBF94vhyNN8A" name="multiRoleInstance" bindingState="BOUND" outgoingLink="_ckvHsLDyEeOBF94vhyNN8A">
+            <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//MultiRoleInstance"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_XbMbALDyEeOBF94vhyNN8A" name="firstSubrole" incomingLink="_ckvHsLDyEeOBF94vhyNN8A">
+            <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//SingleRoleInstance"/>
+          </variable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_ckvHsLDyEeOBF94vhyNN8A" source="_JzzYQLDyEeOBF94vhyNN8A" target="_XbMbALDyEeOBF94vhyNN8A">
+            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//DiscreteMultiInteractionEndpointInstance/first"/>
+          </linkVariable>
+        </ownedRule>
+      </ownedActivityNode>
+      <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_gRcC8LDyEeOBF94vhyNN8A" name="Set first subrole" outgoing="_uYp1QLDyEeOBF94vhyNN8A" incoming="_sUjPgLDyEeOBF94vhyNN8A">
+        <ownedRule xmi:id="_gRu94LDyEeOBF94vhyNN8A" comment="">
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_iHQ8ILDyEeOBF94vhyNN8A" name="multiRoleInstance" bindingState="BOUND" outgoingLink="_rOeYQLDyEeOBF94vhyNN8A">
+            <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//MultiRoleInstance"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_l7HBMLDyEeOBF94vhyNN8A" name="subRoleInstance" bindingState="BOUND" incomingLink="_rOeYQLDyEeOBF94vhyNN8A">
+            <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//SingleRoleInstance"/>
+          </variable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_rOeYQLDyEeOBF94vhyNN8A" bindingOperator="CREATE" source="_iHQ8ILDyEeOBF94vhyNN8A" target="_l7HBMLDyEeOBF94vhyNN8A">
+            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//DiscreteMultiInteractionEndpointInstance/first"/>
+          </linkVariable>
+        </ownedRule>
+      </ownedActivityNode>
+    </modelElements>
+    <modelElements xsi:type="sda:Activity" xmi:id="_47XPEMePEeKcyL_eirdkdw" inParameter="_l_DgkMhUEeKqgvOVLMq5Kg" outParameter="_r3c3UMhUEeKqgvOVLMq5Kg" name="getIterator">
+      <annotation xmi:id="_ianl8MhTEeKqgvOVLMq5Kg" source="http://www.storydriven.org/storydiagrams/types">
+        <details xmi:id="_iaxW8MhTEeKqgvOVLMq5Kg" key="http://www.fujaba.de/muml/examples/profiles/0.3.2" value="true"/>
+        <details xmi:id="_GymroMhUEeKqgvOVLMq5Kg" key="http://www.fujaba.de/muml/runtime/0.4.0" value="true"/>
+      </annotation>
+      <containedParameters xmi:id="_l_DgkMhUEeKqgvOVLMq5Kg" name="profiles">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileList"/>
+      </containedParameters>
+      <containedParameters xmi:id="_r3c3UMhUEeKqgvOVLMq5Kg" name="iterator">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileIterator"/>
+      </containedParameters>
+      <ownedActivityEdge xmi:id="_jEjeYMeQEeKcyL_eirdkdw" target="_6lJQUMePEeKcyL_eirdkdw" source="_56ctgMePEeKcyL_eirdkdw"/>
+      <ownedActivityEdge xmi:id="_jvG3QMeQEeKcyL_eirdkdw" target="_9Bf-AMePEeKcyL_eirdkdw" source="_6lJQUMePEeKcyL_eirdkdw"/>
+      <ownedActivityEdge xmi:id="_aqgNwMeREeKPqe8C2iJhpA" target="_kWFXsMeQEeKcyL_eirdkdw" source="_9Bf-AMePEeKcyL_eirdkdw" guard="END"/>
+      <ownedActivityEdge xmi:id="_QCzO4MwpEeK3Lq4j1h1LZw" target="_9Bf-AMePEeKcyL_eirdkdw" source="_9Bf-AMePEeKcyL_eirdkdw" guard="EACH_TIME"/>
+      <ownedActivityNode xsi:type="sda:InitialNode" xmi:id="_56ctgMePEeKcyL_eirdkdw" name="init" outgoing="_jEjeYMeQEeKcyL_eirdkdw"/>
+      <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_6lJQUMePEeKcyL_eirdkdw" name="Create Iterator Object" outgoing="_jvG3QMeQEeKcyL_eirdkdw" incoming="_jEjeYMeQEeKcyL_eirdkdw">
+        <ownedRule xmi:id="_6lJQUcePEeKcyL_eirdkdw" comment="">
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_kNB-wMhTEeKqgvOVLMq5Kg" name="iterator" bindingOperator="CREATE">
+            <classifier href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileIterator"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_v71IMMhTEeKqgvOVLMq5Kg" name="profiles" bindingState="BOUND">
+            <classifier href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileList"/>
+          </variable>
+        </ownedRule>
+      </ownedActivityNode>
+      <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_9Bf-AMePEeKcyL_eirdkdw" name="Add Links" outgoing="_aqgNwMeREeKPqe8C2iJhpA _QCzO4MwpEeK3Lq4j1h1LZw" incoming="_jvG3QMeQEeKcyL_eirdkdw _QCzO4MwpEeK3Lq4j1h1LZw" forEach="true">
+        <ownedRule xmi:id="_9Bf-AcePEeKcyL_eirdkdw" comment="">
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_N0y8AMhUEeKqgvOVLMq5Kg" name="iterator" bindingState="BOUND" outgoingLink="_g_77MMhUEeKqgvOVLMq5Kg">
+            <classifier href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileIterator"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_S7ESQMhUEeKqgvOVLMq5Kg" name="profiles" bindingState="BOUND" outgoingLink="_esyz4MhUEeKqgvOVLMq5Kg">
+            <classifier href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileList"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_ctQlEMhUEeKqgvOVLMq5Kg" name="p" incomingLink="_esyz4MhUEeKqgvOVLMq5Kg _g_77MMhUEeKqgvOVLMq5Kg">
+            <classifier href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//Profile"/>
+          </variable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_esyz4MhUEeKqgvOVLMq5Kg" name="profiles_2_p" source="_S7ESQMhUEeKqgvOVLMq5Kg" target="_ctQlEMhUEeKqgvOVLMq5Kg">
+            <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileList/profiles"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_g_77MMhUEeKqgvOVLMq5Kg" name="iterator_2_p" bindingOperator="CREATE" source="_N0y8AMhUEeKqgvOVLMq5Kg" target="_ctQlEMhUEeKqgvOVLMq5Kg">
+            <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileIterator/profilesToDo"/>
+          </linkVariable>
+        </ownedRule>
+      </ownedActivityNode>
+      <ownedActivityNode xsi:type="sda:ActivityFinalNode" xmi:id="_kWFXsMeQEeKcyL_eirdkdw" name="final" incoming="_aqgNwMeREeKPqe8C2iJhpA">
+        <returnValues xsi:type="expr:TextualExpression" xmi:id="_MpzvkMhUEeKqgvOVLMq5Kg" expressionText="" language="OCL" languageVersion="1.0"/>
+      </ownedActivityNode>
+    </modelElements>
+    <modelElements xsi:type="sda:Activity" xmi:id="_UDKtUMhVEeKqgvOVLMq5Kg" inParameter="_pwRoEMhXEeKqgvOVLMq5Kg" outParameter="__V3lkMhZEeKXesUZ7WBHLA" name="obtainProfiles">
+      <annotation xmi:id="_ipe2cMhVEeKqgvOVLMq5Kg" source="http://www.storydriven.org/storydiagrams/types">
+        <details xmi:id="_iponcMhVEeKqgvOVLMq5Kg" key="http://www.fujaba.de/muml/examples/profiles/0.3.2" value="true"/>
+        <details xmi:id="_tTN1QMhVEeKqgvOVLMq5Kg" key="http://www.fujaba.de/muml/runtime/0.4.0" value="true"/>
+        <details xmi:id="_44EbsMhZEeKXesUZ7WBHLA" key="http://www.fujaba.de/reachabilityGraph/sdm/wrapper/0.4.0" value="true"/>
+      </annotation>
+      <containedParameters xmi:id="_pwRoEMhXEeKqgvOVLMq5Kg" name="numberOfProfilesObject">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+      </containedParameters>
+      <containedParameters xmi:id="__V3lkMhZEeKXesUZ7WBHLA" name="profileList">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileList"/>
+      </containedParameters>
+      <ownedActivityEdge xmi:id="_yZTlUMhVEeKqgvOVLMq5Kg" target="_dchCUMhVEeKqgvOVLMq5Kg" source="_VDuycMhVEeKqgvOVLMq5Kg"/>
+      <ownedActivityEdge xmi:id="_y1H-oMhVEeKqgvOVLMq5Kg" target="_VtikcMhVEeKqgvOVLMq5Kg" source="_dchCUMhVEeKqgvOVLMq5Kg"/>
+      <ownedActivityEdge xmi:id="_KJEw0MhXEeKqgvOVLMq5Kg" target="_UA7d8ECAEeOvbu5Rc7LDTQ" source="_VtikcMhVEeKqgvOVLMq5Kg" guard="END"/>
+      <ownedActivityEdge xmi:id="_OGHfwMwpEeK3Lq4j1h1LZw" target="_VtikcMhVEeKqgvOVLMq5Kg" source="_VtikcMhVEeKqgvOVLMq5Kg" guard="EACH_TIME"/>
+      <ownedActivityEdge xmi:id="_bPG74ECAEeOvbu5Rc7LDTQ" target="_XcFJ4MhVEeKqgvOVLMq5Kg" source="_UA7d8ECAEeOvbu5Rc7LDTQ"/>
+      <ownedActivityNode xsi:type="sda:InitialNode" xmi:id="_VDuycMhVEeKqgvOVLMq5Kg" name="init" outgoing="_yZTlUMhVEeKqgvOVLMq5Kg"/>
+      <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_VtikcMhVEeKqgvOVLMq5Kg" name="Create Profile" outgoing="_KJEw0MhXEeKqgvOVLMq5Kg _OGHfwMwpEeK3Lq4j1h1LZw" incoming="_y1H-oMhVEeKqgvOVLMq5Kg _OGHfwMwpEeK3Lq4j1h1LZw" forEach="true">
+        <ownedRule xmi:id="_VtikcchVEeKqgvOVLMq5Kg" comment="">
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_1E1-gMhVEeKqgvOVLMq5Kg" name="profileList" bindingState="BOUND" outgoingLink="_9ENo0MhVEeKqgvOVLMq5Kg">
+            <classifier href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileList"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_3d0BAMhVEeKqgvOVLMq5Kg" name="p" incomingLink="_9ENo0MhVEeKqgvOVLMq5Kg" bindingOperator="CREATE">
+            <classifier href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//Profile"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_WH4hoMhWEeKqgvOVLMq5Kg" name="numberOfProfilesWrapper" bindingState="BOUND">
+            <constraint xmi:id="_9sCBUMhWEeKqgvOVLMq5Kg">
+              <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_OtQtsMhXEeKqgvOVLMq5Kg" expressionText="intValue > 0" language="OCL" languageVersion="1.0"/>
+            </constraint>
+            <attributeAssignment xmi:id="_DwgsQMhXEeKqgvOVLMq5Kg">
+              <attribute href="http://www.fujaba.de/reachabilityGraph/sdm/wrapper/0.4.0#//IntWrapper/intValue"/>
+              <valueExpression xsi:type="expr:TextualExpression" xmi:id="_ENFTgMhXEeKqgvOVLMq5Kg" expressionText="intValue - 1" language="OCL" languageVersion="1.0"/>
+            </attributeAssignment>
+            <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/wrapper/0.4.0#//IntWrapper"/>
+          </variable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_9ENo0MhVEeKqgvOVLMq5Kg" name="profileList_2_p" bindingOperator="CREATE" source="_1E1-gMhVEeKqgvOVLMq5Kg" target="_3d0BAMhVEeKqgvOVLMq5Kg">
+            <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileList/profiles"/>
+          </linkVariable>
+        </ownedRule>
+      </ownedActivityNode>
+      <ownedActivityNode xsi:type="sda:ActivityFinalNode" xmi:id="_XcFJ4MhVEeKqgvOVLMq5Kg" name="final" incoming="_bPG74ECAEeOvbu5Rc7LDTQ">
+        <returnValues xsi:type="expr:TextualExpression" xmi:id="_Xc0wwMhVEeKqgvOVLMq5Kg" expressionText="" language="OCL" languageVersion="1.0"/>
+      </ownedActivityNode>
+      <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_dchCUMhVEeKqgvOVLMq5Kg" name="Create ProfileList" outgoing="_y1H-oMhVEeKqgvOVLMq5Kg" incoming="_yZTlUMhVEeKqgvOVLMq5Kg">
+        <ownedRule xmi:id="_dchCUchVEeKqgvOVLMq5Kg" comment="">
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_fYJokMhVEeKqgvOVLMq5Kg" name="profileList" bindingOperator="CREATE">
+            <classifier href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileList"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="__6t2wN2cEeKZjKO-vxfGCQ" name="numberOfProfilesWrapper" bindingOperator="CREATE">
+            <attributeAssignment xmi:id="_DnecYN2dEeKZjKO-vxfGCQ">
+              <attribute href="http://www.fujaba.de/reachabilityGraph/sdm/wrapper/0.4.0#//IntWrapper/intValue"/>
+              <valueExpression xsi:type="expr:TextualExpression" xmi:id="_EHeyIN2dEeKZjKO-vxfGCQ" expressionText="numberOfProfilesObject" language="OCL" languageVersion="1.0"/>
+            </attributeAssignment>
+            <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/wrapper/0.4.0#//IntWrapper"/>
+          </variable>
+        </ownedRule>
+      </ownedActivityNode>
+      <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_UA7d8ECAEeOvbu5Rc7LDTQ" name="Delete Int Wrapper" outgoing="_bPG74ECAEeOvbu5Rc7LDTQ" incoming="_KJEw0MhXEeKqgvOVLMq5Kg">
+        <ownedRule xmi:id="_UBBkkECAEeOvbu5Rc7LDTQ" comment="">
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_UgZoMECAEeOvbu5Rc7LDTQ" name="numberOfProfilesWrapper" bindingState="BOUND" bindingOperator="DESTROY">
+            <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/wrapper/0.4.0#//IntWrapper"/>
+          </variable>
+        </ownedRule>
+      </ownedActivityNode>
+    </modelElements>
+    <modelElements xsi:type="sda:Activity" xmi:id="_UefGIMwgEeK3Lq4j1h1LZw" inParameter="_zShTsMwjEeK3Lq4j1h1LZw" name="deleteSubRoleInstance">
+      <annotation xmi:id="_IPkAQMwiEeK3Lq4j1h1LZw" source="http://www.storydriven.org/storydiagrams/types">
+        <details xmi:id="_IP27MMwiEeK3Lq4j1h1LZw" key="http://www.fujaba.de/muml/protocol/0.3.20" value="true"/>
+        <details xmi:id="_p93t8MwiEeK3Lq4j1h1LZw" key="http://www.fujaba.de/muml/runtime/0.4.0" value="true"/>
+      </annotation>
+      <containedParameters xmi:id="_zShTsMwjEeK3Lq4j1h1LZw" name="subRoleInstance">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/runtime/0.4.0#//SingleRoleInstance"/>
+      </containedParameters>
+      <ownedActivityEdge xmi:id="_bRSPoMwgEeK3Lq4j1h1LZw" target="_2ma88BoNEeOEHbkWB6GdpQ" source="_WT4hgMwgEeK3Lq4j1h1LZw"/>
+      <ownedActivityEdge xmi:id="_bpR44MwgEeK3Lq4j1h1LZw" target="_aIYG0MwgEeK3Lq4j1h1LZw" source="_YrFCYMwgEeK3Lq4j1h1LZw"/>
+      <ownedActivityEdge xmi:id="_crh2UBoPEeOEHbkWB6GdpQ" target="_5IQyIBoOEeOEHbkWB6GdpQ" source="_5IQyIBoOEeOEHbkWB6GdpQ" guard="EACH_TIME"/>
+      <ownedActivityEdge xmi:id="_hKO2QBoPEeOEHbkWB6GdpQ" target="_XjnhUBoPEeOEHbkWB6GdpQ" source="_5IQyIBoOEeOEHbkWB6GdpQ" guard="END"/>
+      <ownedActivityEdge xmi:id="_iEs6cBoPEeOEHbkWB6GdpQ" target="_XjnhUBoPEeOEHbkWB6GdpQ" source="_XjnhUBoPEeOEHbkWB6GdpQ" guard="EACH_TIME"/>
+      <ownedActivityEdge xmi:id="_nzb-4BoPEeOEHbkWB6GdpQ" target="_YrFCYMwgEeK3Lq4j1h1LZw" source="_XjnhUBoPEeOEHbkWB6GdpQ" guard="END"/>
+      <ownedActivityEdge xmi:id="_sHuekBoPEeOEHbkWB6GdpQ" target="_5IQyIBoOEeOEHbkWB6GdpQ" source="_2ma88BoNEeOEHbkWB6GdpQ"/>
+      <ownedActivityNode xsi:type="sda:InitialNode" xmi:id="_WT4hgMwgEeK3Lq4j1h1LZw" name="init" outgoing="_bRSPoMwgEeK3Lq4j1h1LZw"/>
+      <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_YrFCYMwgEeK3Lq4j1h1LZw" name="Delete SubRole Instance" outgoing="_bpR44MwgEeK3Lq4j1h1LZw" incoming="_nzb-4BoPEeOEHbkWB6GdpQ">
+        <ownedRule xmi:id="_YrFCYcwgEeK3Lq4j1h1LZw" comment="">
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_2DLIUMwhEeK3Lq4j1h1LZw" name="multiRoleInstance" incomingLink="_0NVLkMwiEeK3Lq4j1h1LZw" outgoingLink="_8pwkYA_FEeOfjKpZwKN9mQ">
+            <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//MultiRoleInstance"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_dHvJAMwiEeK3Lq4j1h1LZw" name="subRoleInstance" bindingState="BOUND" incomingLink="_VlGBgMwjEeK3Lq4j1h1LZw _8pwkYA_FEeOfjKpZwKN9mQ" outgoingLink="_0NVLkMwiEeK3Lq4j1h1LZw _bbemEMwjEeK3Lq4j1h1LZw _koJx4CzXEeOsS43Sp3gYWA" bindingOperator="DESTROY">
+            <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//SingleRoleInstance"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_MyT9QMwjEeK3Lq4j1h1LZw" name="subRoleRTSCInstance" bindingState="BOUND" outgoingLink="_VlGBgMwjEeK3Lq4j1h1LZw" bindingOperator="DESTROY">
+            <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//RealtimeStatechartInstance"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_W_HvgMwjEeK3Lq4j1h1LZw" name="connectorInstance" bindingState="BOUND" incomingLink="_bbemEMwjEeK3Lq4j1h1LZw" outgoingLink="_kY_6sMwjEeK3Lq4j1h1LZw" bindingOperator="DESTROY">
+            <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//RuntimeRoleConnectorInstance"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_gPYZ8MwjEeK3Lq4j1h1LZw" name="singleRoleInstance" bindingState="BOUND" incomingLink="_kY_6sMwjEeK3Lq4j1h1LZw _X60Q0MwlEeK3Lq4j1h1LZw" outgoingLink="_qob5UCzXEeOsS43Sp3gYWA" bindingOperator="DESTROY">
+            <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//SingleRoleInstance"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_SsTkkMwlEeK3Lq4j1h1LZw" name="singleRoleRTSCInstance" bindingState="BOUND" outgoingLink="_X60Q0MwlEeK3Lq4j1h1LZw" bindingOperator="DESTROY">
+            <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//RealtimeStatechartInstance"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_fhbIoCzXEeOsS43Sp3gYWA" name="subRoleMessageBuffer" incomingLink="_koJx4CzXEeOsS43Sp3gYWA" bindingOperator="DESTROY">
+            <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//RuntimeMessageBuffer"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_nVxOsCzXEeOsS43Sp3gYWA" name="singleRoleMessageBuffer" incomingLink="_qob5UCzXEeOsS43Sp3gYWA" bindingOperator="DESTROY">
+            <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//RuntimeMessageBuffer"/>
+          </variable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_0NVLkMwiEeK3Lq4j1h1LZw" name="subRoleInstance_2_multiRoleInstance" bindingOperator="DESTROY" source="_dHvJAMwiEeK3Lq4j1h1LZw" target="_2DLIUMwhEeK3Lq4j1h1LZw">
+            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//DiscreteSingleInteractionEndpointInstance/multiInteractionEndpointInstance"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_VlGBgMwjEeK3Lq4j1h1LZw" name="subRoleRTSCInstance_2_subRoleInstance" bindingOperator="DESTROY" source="_MyT9QMwjEeK3Lq4j1h1LZw" target="_dHvJAMwiEeK3Lq4j1h1LZw">
+            <targetEnd href="http://www.fujaba.de/muml/runtime/0.4.0#//RealtimeStatechartInstance/runtimeBehavioralElement"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_bbemEMwjEeK3Lq4j1h1LZw" name="subRoleInstance_2_connectorInstance" bindingOperator="DESTROY" source="_dHvJAMwiEeK3Lq4j1h1LZw" target="_W_HvgMwjEeK3Lq4j1h1LZw">
+            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//ConnectorEndpointInstance/connectorInstances"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_kY_6sMwjEeK3Lq4j1h1LZw" name="connectorInstance_2_singleRoleInstance" bindingOperator="DESTROY" source="_W_HvgMwjEeK3Lq4j1h1LZw" target="_gPYZ8MwjEeK3Lq4j1h1LZw">
+            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//ConnectorInstance/connectorEndpointInstances"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_X60Q0MwlEeK3Lq4j1h1LZw" name="singleRoleRTSCInstance_2_singleRoleInstance" bindingOperator="DESTROY" source="_SsTkkMwlEeK3Lq4j1h1LZw" target="_gPYZ8MwjEeK3Lq4j1h1LZw">
+            <targetEnd href="http://www.fujaba.de/muml/runtime/0.4.0#//RealtimeStatechartInstance/runtimeBehavioralElement"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_8pwkYA_FEeOfjKpZwKN9mQ" bindingOperator="DESTROY" source="_2DLIUMwhEeK3Lq4j1h1LZw" target="_dHvJAMwiEeK3Lq4j1h1LZw">
+            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//DiscreteMultiInteractionEndpointInstance/last"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_koJx4CzXEeOsS43Sp3gYWA" bindingOperator="DESTROY" source="_dHvJAMwiEeK3Lq4j1h1LZw" target="_fhbIoCzXEeOsS43Sp3gYWA">
+            <targetEnd href="http://www.fujaba.de/muml/runtime/0.4.0#//RuntimeBehavioralElement/messageBuffer"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_qob5UCzXEeOsS43Sp3gYWA" bindingOperator="DESTROY" source="_gPYZ8MwjEeK3Lq4j1h1LZw" target="_nVxOsCzXEeOsS43Sp3gYWA">
+            <targetEnd href="http://www.fujaba.de/muml/runtime/0.4.0#//RuntimeBehavioralElement/messageBuffer"/>
+          </linkVariable>
+        </ownedRule>
+      </ownedActivityNode>
+      <ownedActivityNode xsi:type="sda:ActivityFinalNode" xmi:id="_aIYG0MwgEeK3Lq4j1h1LZw" name="final" incoming="_bpR44MwgEeK3Lq4j1h1LZw">
+        <returnValues xsi:type="expr:TextualExpression" xmi:id="_aI0ywMwgEeK3Lq4j1h1LZw" expressionText="" language="OCL" languageVersion="1.0"/>
+      </ownedActivityNode>
+      <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_2ma88BoNEeOEHbkWB6GdpQ" name="Bind RTSC Instances" outgoing="_sHuekBoPEeOEHbkWB6GdpQ" incoming="_bRSPoMwgEeK3Lq4j1h1LZw">
+        <ownedRule xmi:id="_2ma88RoNEeOEHbkWB6GdpQ" comment="">
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_BpQ_UBoOEeOEHbkWB6GdpQ" name="subRoleInstance" bindingState="BOUND" outgoingLink="_oC5MoBoOEeOEHbkWB6GdpQ _pvDzgBoOEeOEHbkWB6GdpQ">
+            <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//SingleRoleInstance"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_IJ_hYBoOEeOEHbkWB6GdpQ" name="subRoleRTSCInstance" incomingLink="_oC5MoBoOEeOEHbkWB6GdpQ">
+            <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//RealtimeStatechartInstance"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_MLOiMBoOEeOEHbkWB6GdpQ" name="connectorInstance" incomingLink="_pvDzgBoOEeOEHbkWB6GdpQ" outgoingLink="_q_ij8BoOEeOEHbkWB6GdpQ">
+            <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//RuntimeRoleConnectorInstance"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_So03wBoOEeOEHbkWB6GdpQ" name="singleRoleInstance" incomingLink="_q_ij8BoOEeOEHbkWB6GdpQ" outgoingLink="_uHWCYBoOEeOEHbkWB6GdpQ">
+            <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//SingleRoleInstance"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_XPQQUBoOEeOEHbkWB6GdpQ" name="singleRoleRTSCInstance" incomingLink="_uHWCYBoOEeOEHbkWB6GdpQ">
+            <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//RealtimeStatechartInstance"/>
+          </variable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_oC5MoBoOEeOEHbkWB6GdpQ" name="subRoleRTSCInstance_runtimeBehavioralElement" source="_BpQ_UBoOEeOEHbkWB6GdpQ" target="_IJ_hYBoOEeOEHbkWB6GdpQ">
+            <targetEnd href="http://www.fujaba.de/muml/runtime/0.4.0#//RuntimeBehavioralElement/statechartInstance"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_pvDzgBoOEeOEHbkWB6GdpQ" name="connectorEndpointInstances_connectorInstances" source="_BpQ_UBoOEeOEHbkWB6GdpQ" target="_MLOiMBoOEeOEHbkWB6GdpQ">
+            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//ConnectorEndpointInstance/connectorInstances"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_q_ij8BoOEeOEHbkWB6GdpQ" name="connectorEndpointInstances_connectorInstances" source="_MLOiMBoOEeOEHbkWB6GdpQ" target="_So03wBoOEeOEHbkWB6GdpQ">
+            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//ConnectorInstance/connectorEndpointInstances"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_uHWCYBoOEeOEHbkWB6GdpQ" name="statechartInstance_runtimeBehavioralElement" source="_So03wBoOEeOEHbkWB6GdpQ" target="_XPQQUBoOEeOEHbkWB6GdpQ">
+            <targetEnd href="http://www.fujaba.de/muml/runtime/0.4.0#//RuntimeBehavioralElement/statechartInstance"/>
+          </linkVariable>
+        </ownedRule>
+      </ownedActivityNode>
+      <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_5IQyIBoOEeOEHbkWB6GdpQ" name="Delete Variable Bindings of Subrole" outgoing="_crh2UBoPEeOEHbkWB6GdpQ _hKO2QBoPEeOEHbkWB6GdpQ" incoming="_crh2UBoPEeOEHbkWB6GdpQ _sHuekBoPEeOEHbkWB6GdpQ" forEach="true">
+        <ownedRule xmi:id="_5IjtEBoOEeOEHbkWB6GdpQ" comment="">
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_7P83YBoOEeOEHbkWB6GdpQ" name="subRoleRTSCInstance" bindingState="BOUND" outgoingLink="_CxkOsBoPEeOEHbkWB6GdpQ">
+            <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//RealtimeStatechartInstance"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="__18yIBoOEeOEHbkWB6GdpQ" name="variableBinding" incomingLink="_CxkOsBoPEeOEHbkWB6GdpQ" bindingOperator="DESTROY">
+            <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//VariableBinding"/>
+          </variable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_CxkOsBoPEeOEHbkWB6GdpQ" name="varBindings" bindingOperator="DESTROY" source="_7P83YBoOEeOEHbkWB6GdpQ" target="__18yIBoOEeOEHbkWB6GdpQ">
+            <targetEnd href="http://www.fujaba.de/muml/runtime/0.4.0#//RealtimeStatechartInstance/variableBindings"/>
+          </linkVariable>
+        </ownedRule>
+      </ownedActivityNode>
+      <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_XjnhUBoPEeOEHbkWB6GdpQ" name="Delete Variable Bindings of Member" outgoing="_iEs6cBoPEeOEHbkWB6GdpQ _nzb-4BoPEeOEHbkWB6GdpQ" incoming="_hKO2QBoPEeOEHbkWB6GdpQ _iEs6cBoPEeOEHbkWB6GdpQ" forEach="true">
+        <ownedRule xmi:id="_XjwrQBoPEeOEHbkWB6GdpQ" comment="">
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_t2kmABoPEeOEHbkWB6GdpQ" name="singleRoleRTSCInstance" bindingState="BOUND" outgoingLink="_0BJ48BoPEeOEHbkWB6GdpQ">
+            <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//RealtimeStatechartInstance"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_xkBvMBoPEeOEHbkWB6GdpQ" name="variableBinding" incomingLink="_0BJ48BoPEeOEHbkWB6GdpQ" bindingOperator="DESTROY">
+            <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//VariableBinding"/>
+          </variable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_0BJ48BoPEeOEHbkWB6GdpQ" name="varBindings" bindingOperator="DESTROY" source="_t2kmABoPEeOEHbkWB6GdpQ" target="_xkBvMBoPEeOEHbkWB6GdpQ">
+            <targetEnd href="http://www.fujaba.de/muml/runtime/0.4.0#//RealtimeStatechartInstance/variableBindings"/>
+          </linkVariable>
+        </ownedRule>
+      </ownedActivityNode>
+    </modelElements>
+    <modelElements xsi:type="sda:Activity" xmi:id="__9d9oPQ2EeK0h5bDo3RUAg" inParameter="_GwHEMPQ5EeK0h5bDo3RUAg" outParameter="_jPDxEPQ5EeK0h5bDo3RUAg" name="hasFurtherProfile">
+      <annotation xmi:id="_-NTgMPQ5EeK0h5bDo3RUAg" source="http://www.storydriven.org/storydiagrams/types">
+        <details xmi:id="_-NdRMPQ5EeK0h5bDo3RUAg" key="http://www.fujaba.de/muml/examples/profiles/0.3.2" value="true"/>
+        <details xmi:id="_3YlOoPQ6EeK0h5bDo3RUAg" key="http://www.fujaba.de/reachabilityGraph/sdm/wrapper/0.4.0" value="true"/>
+      </annotation>
+      <containedParameters xmi:id="_GwHEMPQ5EeK0h5bDo3RUAg" name="iterator">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileIterator"/>
+      </containedParameters>
+      <containedParameters xmi:id="_jPDxEPQ5EeK0h5bDo3RUAg" name="result">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/reachabilityGraph/sdm/wrapper/0.4.0#//BoolWrapper"/>
+      </containedParameters>
+      <ownedActivityEdge xmi:id="_zAZNwPQ3EeK0h5bDo3RUAg" target="_DWIsIPRDEeK0h5bDo3RUAg" source="_A5RekPQ3EeK0h5bDo3RUAg"/>
+      <ownedActivityEdge xmi:id="_77rtwPQ3EeK0h5bDo3RUAg" target="_4riysPQ3EeK0h5bDo3RUAg" source="_DWIsIPRDEeK0h5bDo3RUAg" guard="SUCCESS"/>
+      <ownedActivityEdge xmi:id="__H81cPQ3EeK0h5bDo3RUAg" target="_BktoQPQ3EeK0h5bDo3RUAg" source="_DWIsIPRDEeK0h5bDo3RUAg" guard="FAILURE"/>
+      <ownedActivityEdge xmi:id="_CfXdMPQ4EeK0h5bDo3RUAg" target="_A3FQwPQ4EeK0h5bDo3RUAg" source="_BktoQPQ3EeK0h5bDo3RUAg"/>
+      <ownedActivityEdge xmi:id="_DD01IPQ4EeK0h5bDo3RUAg" target="_BirLcPQ4EeK0h5bDo3RUAg" source="_4riysPQ3EeK0h5bDo3RUAg"/>
+      <ownedActivityNode xsi:type="sda:InitialNode" xmi:id="_A5RekPQ3EeK0h5bDo3RUAg" name="init" outgoing="_zAZNwPQ3EeK0h5bDo3RUAg"/>
+      <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_BktoQPQ3EeK0h5bDo3RUAg" name="Return false" outgoing="_CfXdMPQ4EeK0h5bDo3RUAg" incoming="__H81cPQ3EeK0h5bDo3RUAg">
+        <ownedRule xmi:id="_Bk3ZQPQ3EeK0h5bDo3RUAg" comment="">
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_m4kY8PQ6EeK0h5bDo3RUAg" name="result" bindingOperator="CREATE">
+            <attributeAssignment xmi:id="_6oQ2sPQ6EeK0h5bDo3RUAg">
+              <attribute href="http://www.fujaba.de/reachabilityGraph/sdm/wrapper/0.4.0#//BoolWrapper/boolValue"/>
+              <valueExpression xsi:type="expr:TextualExpression" xmi:id="_8w2T0PQ6EeK0h5bDo3RUAg" expressionText="false" language="OCL" languageVersion="1.0"/>
+            </attributeAssignment>
+            <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/wrapper/0.4.0#//BoolWrapper"/>
+          </variable>
+        </ownedRule>
+      </ownedActivityNode>
+      <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_4riysPQ3EeK0h5bDo3RUAg" name="Return true" outgoing="_DD01IPQ4EeK0h5bDo3RUAg" incoming="_77rtwPQ3EeK0h5bDo3RUAg">
+        <ownedRule xmi:id="_4riysfQ3EeK0h5bDo3RUAg" comment="">
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_rgV1UPQ6EeK0h5bDo3RUAg" name="result" bindingOperator="CREATE">
+            <attributeAssignment xmi:id="__VPjMPQ6EeK0h5bDo3RUAg">
+              <attribute href="http://www.fujaba.de/reachabilityGraph/sdm/wrapper/0.4.0#//BoolWrapper/boolValue"/>
+              <valueExpression xsi:type="expr:TextualExpression" xmi:id="__V_KEPQ6EeK0h5bDo3RUAg" expressionText="true" language="OCL" languageVersion="1.0"/>
+            </attributeAssignment>
+            <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/wrapper/0.4.0#//BoolWrapper"/>
+          </variable>
+        </ownedRule>
+      </ownedActivityNode>
+      <ownedActivityNode xsi:type="sda:ActivityFinalNode" xmi:id="_A3FQwPQ4EeK0h5bDo3RUAg" name="final1" incoming="_CfXdMPQ4EeK0h5bDo3RUAg" success="false">
+        <returnValues xsi:type="expr:TextualExpression" xmi:id="_A3-BkPQ4EeK0h5bDo3RUAg" expressionText="" language="OCL" languageVersion="1.0"/>
+      </ownedActivityNode>
+      <ownedActivityNode xsi:type="sda:ActivityFinalNode" xmi:id="_BirLcPQ4EeK0h5bDo3RUAg" name="final2" incoming="_DD01IPQ4EeK0h5bDo3RUAg">
+        <returnValues xsi:type="expr:TextualExpression" xmi:id="_BjRBUPQ4EeK0h5bDo3RUAg" expressionText="" language="OCL" languageVersion="1.0"/>
+      </ownedActivityNode>
+      <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_DWIsIPRDEeK0h5bDo3RUAg" name="Bind Profile" outgoing="__H81cPQ3EeK0h5bDo3RUAg _77rtwPQ3EeK0h5bDo3RUAg" incoming="_zAZNwPQ3EeK0h5bDo3RUAg">
+        <ownedRule xmi:id="_DWSdIPRDEeK0h5bDo3RUAg" comment="">
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_PGTdoPQ6EeK0h5bDo3RUAg" name="profile" incomingLink="_Wkd4UPQ6EeK0h5bDo3RUAg">
+            <classifier href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//Profile"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_BwViEPQ6EeK0h5bDo3RUAg" name="iterator" bindingState="BOUND" outgoingLink="_Wkd4UPQ6EeK0h5bDo3RUAg">
+            <classifier href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileIterator"/>
+          </variable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_Wkd4UPQ6EeK0h5bDo3RUAg" name="iterator_2_profile" source="_BwViEPQ6EeK0h5bDo3RUAg" target="_PGTdoPQ6EeK0h5bDo3RUAg">
+            <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileIterator/profilesToDo"/>
+          </linkVariable>
+        </ownedRule>
+      </ownedActivityNode>
+    </modelElements>
+    <modelElements xsi:type="sda:Activity" xmi:id="_IwtwYPRBEeK0h5bDo3RUAg" inParameter="_h6ppQPRBEeK0h5bDo3RUAg" outParameter="_mVnYsPRBEeK0h5bDo3RUAg" name="getNextProfile">
+      <annotation xmi:id="_RV3BQPRBEeK0h5bDo3RUAg" source="http://www.storydriven.org/storydiagrams/types">
+        <details xmi:id="_RWAyQPRBEeK0h5bDo3RUAg" key="http://www.fujaba.de/muml/examples/profiles/0.3.2" value="true"/>
+      </annotation>
+      <containedParameters xmi:id="_h6ppQPRBEeK0h5bDo3RUAg" name="iter">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileIterator"/>
+      </containedParameters>
+      <containedParameters xmi:id="_mVnYsPRBEeK0h5bDo3RUAg" name="p">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//Profile"/>
+      </containedParameters>
+      <ownedActivityEdge xmi:id="_NLFp8PRBEeK0h5bDo3RUAg" target="_KqkN8PRBEeK0h5bDo3RUAg" source="_J5BcQPRBEeK0h5bDo3RUAg"/>
+      <ownedActivityEdge xmi:id="_Njfi4PRBEeK0h5bDo3RUAg" target="_MYXMgPRBEeK0h5bDo3RUAg" source="_KqkN8PRBEeK0h5bDo3RUAg"/>
+      <ownedActivityNode xsi:type="sda:InitialNode" xmi:id="_J5BcQPRBEeK0h5bDo3RUAg" name="init" outgoing="_NLFp8PRBEeK0h5bDo3RUAg"/>
+      <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_KqkN8PRBEeK0h5bDo3RUAg" name="Match Profile" outgoing="_Njfi4PRBEeK0h5bDo3RUAg" incoming="_NLFp8PRBEeK0h5bDo3RUAg">
+        <ownedRule xmi:id="_KqkN8fRBEeK0h5bDo3RUAg" comment="">
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_SEIcgPRBEeK0h5bDo3RUAg" name="iter" bindingState="BOUND" outgoingLink="_WaOTAPRBEeK0h5bDo3RUAg">
+            <classifier href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileIterator"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_U4JcQPRBEeK0h5bDo3RUAg" name="p" incomingLink="_WaOTAPRBEeK0h5bDo3RUAg">
+            <classifier href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//Profile"/>
+          </variable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_WaOTAPRBEeK0h5bDo3RUAg" name="iter_2_p" bindingOperator="DESTROY" source="_SEIcgPRBEeK0h5bDo3RUAg" target="_U4JcQPRBEeK0h5bDo3RUAg">
+            <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileIterator/profilesToDo"/>
+          </linkVariable>
+        </ownedRule>
+      </ownedActivityNode>
+      <ownedActivityNode xsi:type="sda:ActivityFinalNode" xmi:id="_MYXMgPRBEeK0h5bDo3RUAg" name="final" incoming="_Njfi4PRBEeK0h5bDo3RUAg">
+        <returnValues xsi:type="expr:TextualExpression" xmi:id="_MYzRYPRBEeK0h5bDo3RUAg" expressionText="" language="OCL" languageVersion="1.0"/>
+      </ownedActivityNode>
+    </modelElements>
+    <modelElements xsi:type="sda:Activity" xmi:id="_8OxdUPRBEeK0h5bDo3RUAg" inParameter="_K4OaAPRCEeK0h5bDo3RUAg" name="deleteIterator">
+      <annotation xmi:id="_C_kbsPRCEeK0h5bDo3RUAg" source="http://www.storydriven.org/storydiagrams/types">
+        <details xmi:id="_C_tloPRCEeK0h5bDo3RUAg" key="http://www.fujaba.de/muml/examples/profiles/0.3.2" value="true"/>
+      </annotation>
+      <containedParameters xmi:id="_K4OaAPRCEeK0h5bDo3RUAg" name="iterator">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileIterator"/>
+      </containedParameters>
+      <ownedActivityEdge xmi:id="__GWucPRBEeK0h5bDo3RUAg" target="_9TXG0PRBEeK0h5bDo3RUAg" source="_82C4sPRBEeK0h5bDo3RUAg"/>
+      <ownedActivityEdge xmi:id="__gY_EPRBEeK0h5bDo3RUAg" target="_-nj5oPRBEeK0h5bDo3RUAg" source="_9TXG0PRBEeK0h5bDo3RUAg"/>
+      <ownedActivityNode xsi:type="sda:InitialNode" xmi:id="_82C4sPRBEeK0h5bDo3RUAg" name="init" outgoing="__GWucPRBEeK0h5bDo3RUAg"/>
+      <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_9TXG0PRBEeK0h5bDo3RUAg" name="Delete Iterator" outgoing="__gY_EPRBEeK0h5bDo3RUAg" incoming="__GWucPRBEeK0h5bDo3RUAg">
+        <ownedRule xmi:id="_9TXG0fRBEeK0h5bDo3RUAg" comment="">
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_DjtqkPRCEeK0h5bDo3RUAg" name="iterator" bindingState="BOUND" bindingOperator="DESTROY">
+            <classifier href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileIterator"/>
+          </variable>
+        </ownedRule>
+      </ownedActivityNode>
+      <ownedActivityNode xsi:type="sda:ActivityFinalNode" xmi:id="_-nj5oPRBEeK0h5bDo3RUAg" name="final" incoming="__gY_EPRBEeK0h5bDo3RUAg">
+        <returnValues xsi:type="expr:TextualExpression" xmi:id="_-oAlkPRBEeK0h5bDo3RUAg" expressionText="" language="OCL" languageVersion="1.0"/>
+      </ownedActivityNode>
+    </modelElements>
+    <modelElements xsi:type="sda:Activity" xmi:id="_k2r7kPRMEeK0h5bDo3RUAg" outParameter="_3zqi8PRMEeK0h5bDo3RUAg" name="initializeVariables">
+      <annotation xmi:id="_rX3JkPRMEeK0h5bDo3RUAg" source="http://www.storydriven.org/storydiagrams/types">
+        <details xmi:id="_rYATgPRMEeK0h5bDo3RUAg" key="http://www.fujaba.de/muml/examples/profiles/0.3.2" value="true"/>
+      </annotation>
+      <containedParameters xmi:id="_3zqi8PRMEeK0h5bDo3RUAg" name="store">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileStore"/>
+      </containedParameters>
+      <ownedActivityEdge xmi:id="_n-WQEPRMEeK0h5bDo3RUAg" target="_lyWSkPRMEeK0h5bDo3RUAg" source="_lVCrgPRMEeK0h5bDo3RUAg"/>
+      <ownedActivityEdge xmi:id="_oYE-sPRMEeK0h5bDo3RUAg" target="_nmGIIPRMEeK0h5bDo3RUAg" source="_lyWSkPRMEeK0h5bDo3RUAg"/>
+      <ownedActivityNode xsi:type="sda:InitialNode" xmi:id="_lVCrgPRMEeK0h5bDo3RUAg" name="init" outgoing="_n-WQEPRMEeK0h5bDo3RUAg"/>
+      <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_lyWSkPRMEeK0h5bDo3RUAg" name="Create Objects" outgoing="_oYE-sPRMEeK0h5bDo3RUAg" incoming="_n-WQEPRMEeK0h5bDo3RUAg">
+        <ownedRule xmi:id="_lyWSkfRMEeK0h5bDo3RUAg" comment="">
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_sNa4kPRMEeK0h5bDo3RUAg" name="store" bindingOperator="CREATE">
+            <classifier href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileStore"/>
+          </variable>
+        </ownedRule>
+      </ownedActivityNode>
+      <ownedActivityNode xsi:type="sda:ActivityFinalNode" xmi:id="_nmGIIPRMEeK0h5bDo3RUAg" name="final" incoming="_oYE-sPRMEeK0h5bDo3RUAg">
+        <returnValues xsi:type="expr:TextualExpression" xmi:id="_nmr-APRMEeK0h5bDo3RUAg" expressionText="" language="OCL" languageVersion="1.0"/>
+      </ownedActivityNode>
+    </modelElements>
+    <modelElements xsi:type="sda:Activity" xmi:id="_nisj8PROEeK0h5bDo3RUAg" inParameter="_z9h3gPRPEeK0h5bDo3RUAg _4DOhkPRPEeK0h5bDo3RUAg" name="createProfileList">
+      <annotation xmi:id="_KkbBUPRPEeK0h5bDo3RUAg" source="http://www.storydriven.org/storydiagrams/types">
+        <details xmi:id="_KkkyUPRPEeK0h5bDo3RUAg" key="http://www.fujaba.de/muml/examples/profiles/0.3.2" value="true"/>
+        <details xmi:id="_C2AHoPRQEeK0h5bDo3RUAg" key="http://www.fujaba.de/muml/runtime/0.4.0" value="true"/>
+      </annotation>
+      <containedParameters xmi:id="_z9h3gPRPEeK0h5bDo3RUAg" name="store">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileStore"/>
+      </containedParameters>
+      <containedParameters xmi:id="_4DOhkPRPEeK0h5bDo3RUAg" name="role">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/runtime/0.4.0#//SingleRoleInstance"/>
+      </containedParameters>
+      <ownedActivityEdge xmi:id="_9vU-MPROEeK0h5bDo3RUAg" target="_o5btYPROEeK0h5bDo3RUAg" source="_oLwIAPROEeK0h5bDo3RUAg"/>
+      <ownedActivityEdge xmi:id="_-RP_gPROEeK0h5bDo3RUAg" target="_9R4NMPROEeK0h5bDo3RUAg" source="_o5btYPROEeK0h5bDo3RUAg"/>
+      <ownedActivityNode xsi:type="sda:InitialNode" xmi:id="_oLwIAPROEeK0h5bDo3RUAg" name="init" outgoing="_9vU-MPROEeK0h5bDo3RUAg"/>
+      <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_o5btYPROEeK0h5bDo3RUAg" name="Create List" outgoing="_-RP_gPROEeK0h5bDo3RUAg" incoming="_9vU-MPROEeK0h5bDo3RUAg">
+        <ownedRule xmi:id="_o5btYfROEeK0h5bDo3RUAg" comment="">
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_LSPwoPRPEeK0h5bDo3RUAg" name="store" bindingState="BOUND" outgoingLink="_qjSxsPRPEeK0h5bDo3RUAg">
+            <classifier href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileStore"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_Uw0j4PRPEeK0h5bDo3RUAg" name="r" incomingLink="_qjSxsPRPEeK0h5bDo3RUAg" outgoingLink="_GVwzEPRQEeK0h5bDo3RUAg" bindingOperator="CREATE">
+            <classifier href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//RoleProfiles"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_dyhN4PRPEeK0h5bDo3RUAg" name="role" bindingState="BOUND" incomingLink="_GVwzEPRQEeK0h5bDo3RUAg">
+            <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//SingleRoleInstance"/>
+          </variable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_qjSxsPRPEeK0h5bDo3RUAg" name="store_2_r" bindingOperator="CREATE" source="_LSPwoPRPEeK0h5bDo3RUAg" target="_Uw0j4PRPEeK0h5bDo3RUAg">
+            <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileStore/roleProfiles"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_GVwzEPRQEeK0h5bDo3RUAg" name="r_2_role" bindingOperator="CREATE" source="_Uw0j4PRPEeK0h5bDo3RUAg" target="_dyhN4PRPEeK0h5bDo3RUAg">
+            <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//RoleProfiles/roleInstance"/>
+          </linkVariable>
+        </ownedRule>
+      </ownedActivityNode>
+      <ownedActivityNode xsi:type="sda:ActivityFinalNode" xmi:id="_9R4NMPROEeK0h5bDo3RUAg" name="final" incoming="_-RP_gPROEeK0h5bDo3RUAg">
+        <returnValues xsi:type="expr:TextualExpression" xmi:id="_9SeDEPROEeK0h5bDo3RUAg" expressionText="" language="OCL" languageVersion="1.0"/>
+      </ownedActivityNode>
+    </modelElements>
+    <modelElements xsi:type="sda:Activity" xmi:id="_2IxqQPRTEeK0h5bDo3RUAg" inParameter="_0TLvsPRVEeK0h5bDo3RUAg _3h-m8PRVEeK0h5bDo3RUAg _6QqawPRVEeK0h5bDo3RUAg" name="addProfile">
+      <annotation xmi:id="_Afu3APRUEeK0h5bDo3RUAg" source="http://www.storydriven.org/storydiagrams/types">
+        <details xmi:id="_Af4oAPRUEeK0h5bDo3RUAg" key="http://www.fujaba.de/muml/examples/profiles/0.3.2" value="true"/>
+        <details xmi:id="_TN178PRUEeK0h5bDo3RUAg" key="http://www.fujaba.de/muml/runtime/0.4.0" value="true"/>
+      </annotation>
+      <containedParameters xmi:id="_0TLvsPRVEeK0h5bDo3RUAg" name="allProfiles">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileStore"/>
+      </containedParameters>
+      <containedParameters xmi:id="_3h-m8PRVEeK0h5bDo3RUAg" name="role">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/runtime/0.4.0#//SingleRoleInstance"/>
+      </containedParameters>
+      <containedParameters xmi:id="_6QqawPRVEeK0h5bDo3RUAg" name="profile">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//Profile"/>
+      </containedParameters>
+      <ownedActivityEdge xmi:id="_6A7nkPRTEeK0h5bDo3RUAg" target="_3fgzsPRTEeK0h5bDo3RUAg" source="_2vUF0PRTEeK0h5bDo3RUAg"/>
+      <ownedActivityEdge xmi:id="_6c5x4PRTEeK0h5bDo3RUAg" target="_40BIgPRTEeK0h5bDo3RUAg" source="_WdrVAPRUEeK0h5bDo3RUAg"/>
+      <ownedActivityEdge xmi:id="_ltpfIPRUEeK0h5bDo3RUAg" target="_WdrVAPRUEeK0h5bDo3RUAg" source="_3fgzsPRTEeK0h5bDo3RUAg"/>
+      <ownedActivityNode xsi:type="sda:InitialNode" xmi:id="_2vUF0PRTEeK0h5bDo3RUAg" name="init" outgoing="_6A7nkPRTEeK0h5bDo3RUAg"/>
+      <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_3fgzsPRTEeK0h5bDo3RUAg" name="add Profile" outgoing="_ltpfIPRUEeK0h5bDo3RUAg" incoming="_6A7nkPRTEeK0h5bDo3RUAg">
+        <ownedRule xmi:id="_3fgzsfRTEeK0h5bDo3RUAg" comment="">
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_75u8QPRTEeK0h5bDo3RUAg" name="allProfiles" bindingState="BOUND" outgoingLink="_JqFGsPRUEeK0h5bDo3RUAg">
+            <classifier href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileStore"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_DkaI8PRUEeK0h5bDo3RUAg" name="role" bindingState="BOUND" incomingLink="_LFRSUPRUEeK0h5bDo3RUAg">
+            <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//SingleRoleInstance"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_HRthIPRUEeK0h5bDo3RUAg" name="r" incomingLink="_JqFGsPRUEeK0h5bDo3RUAg" outgoingLink="_LFRSUPRUEeK0h5bDo3RUAg _NeOGsPRUEeK0h5bDo3RUAg">
+            <classifier href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//RoleProfiles"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_LjxMMPRUEeK0h5bDo3RUAg" name="profile" bindingState="BOUND" incomingLink="_NeOGsPRUEeK0h5bDo3RUAg">
+            <classifier href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//Profile"/>
+          </variable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_JqFGsPRUEeK0h5bDo3RUAg" name="allProfiles_2_r" source="_75u8QPRTEeK0h5bDo3RUAg" target="_HRthIPRUEeK0h5bDo3RUAg">
+            <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileStore/roleProfiles"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_LFRSUPRUEeK0h5bDo3RUAg" name="r_2_role" source="_HRthIPRUEeK0h5bDo3RUAg" target="_DkaI8PRUEeK0h5bDo3RUAg">
+            <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//RoleProfiles/roleInstance"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_NeOGsPRUEeK0h5bDo3RUAg" name="r_2_profile" bindingOperator="CREATE" source="_HRthIPRUEeK0h5bDo3RUAg" target="_LjxMMPRUEeK0h5bDo3RUAg">
+            <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//RoleProfiles/allProfiles"/>
+          </linkVariable>
+        </ownedRule>
+      </ownedActivityNode>
+      <ownedActivityNode xsi:type="sda:ActivityFinalNode" xmi:id="_40BIgPRTEeK0h5bDo3RUAg" name="final" incoming="_6c5x4PRTEeK0h5bDo3RUAg">
+        <returnValues xsi:type="expr:TextualExpression" xmi:id="_40d0cPRTEeK0h5bDo3RUAg" expressionText="" language="OCL" languageVersion="1.0"/>
+      </ownedActivityNode>
+      <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_WdrVAPRUEeK0h5bDo3RUAg" name="Set current Profile if not already set" outgoing="_6c5x4PRTEeK0h5bDo3RUAg" incoming="_ltpfIPRUEeK0h5bDo3RUAg">
+        <ownedRule xmi:id="_Wd1GAPRUEeK0h5bDo3RUAg" comment="">
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_aW30IPRUEeK0h5bDo3RUAg" name="r" bindingState="BOUND" outgoingLink="_nI8jAPRVEeK0h5bDo3RUAg">
+            <classifier href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//RoleProfiles"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_u1xhQPRUEeK0h5bDo3RUAg" name="profile" bindingState="BOUND" incomingLink="_nI8jAPRVEeK0h5bDo3RUAg">
+            <classifier href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//Profile"/>
+          </variable>
+          <constraint xmi:id="_86NsYPRUEeK0h5bDo3RUAg">
+            <constraintExpression xsi:type="expr:TextualExpression" xmi:id="__lfm4PRUEeK0h5bDo3RUAg" expressionText="r.currentProfile.oclIsUndefined()" language="OCL" languageVersion="1.0"/>
+          </constraint>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_nI8jAPRVEeK0h5bDo3RUAg" name="r_2_profile2" bindingOperator="CREATE" source="_aW30IPRUEeK0h5bDo3RUAg" target="_u1xhQPRUEeK0h5bDo3RUAg">
+            <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//RoleProfiles/currentProfile"/>
+          </linkVariable>
+        </ownedRule>
+      </ownedActivityNode>
+    </modelElements>
+    <modelElements xsi:type="sda:Activity" xmi:id="_Jdf74PRXEeK0h5bDo3RUAg" inParameter="_scJQEPRXEeK0h5bDo3RUAg _u5QLsPRXEeK0h5bDo3RUAg" outParameter="_xRAGMPRXEeK0h5bDo3RUAg" name="getProfile">
+      <annotation xmi:id="_T8VSQPRXEeK0h5bDo3RUAg" source="http://www.storydriven.org/storydiagrams/types">
+        <details xmi:id="_T8VSQfRXEeK0h5bDo3RUAg" key="http://www.fujaba.de/muml/examples/profiles/0.3.2" value="true"/>
+        <details xmi:id="_T8VSQvRXEeK0h5bDo3RUAg" key="http://www.fujaba.de/muml/runtime/0.4.0" value="true"/>
+      </annotation>
+      <containedParameters xmi:id="_scJQEPRXEeK0h5bDo3RUAg" name="allProfiles">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileStore"/>
+      </containedParameters>
+      <containedParameters xmi:id="_u5QLsPRXEeK0h5bDo3RUAg" name="role">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/runtime/0.4.0#//SingleRoleInstance"/>
+      </containedParameters>
+      <containedParameters xmi:id="_xRAGMPRXEeK0h5bDo3RUAg" name="profile">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//Profile"/>
+      </containedParameters>
+      <ownedActivityEdge xmi:id="_M89FUPRXEeK0h5bDo3RUAg" target="_KubYQPRXEeK0h5bDo3RUAg" source="_KTpgwPRXEeK0h5bDo3RUAg"/>
+      <ownedActivityEdge xmi:id="_NatYUPRXEeK0h5bDo3RUAg" target="_L4OR4PRXEeK0h5bDo3RUAg" source="_KubYQPRXEeK0h5bDo3RUAg"/>
+      <ownedActivityNode xsi:type="sda:InitialNode" xmi:id="_KTpgwPRXEeK0h5bDo3RUAg" name="init" outgoing="_M89FUPRXEeK0h5bDo3RUAg"/>
+      <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_KubYQPRXEeK0h5bDo3RUAg" name="Get Profile" outgoing="_NatYUPRXEeK0h5bDo3RUAg" incoming="_M89FUPRXEeK0h5bDo3RUAg">
+        <ownedRule xmi:id="_KubYQfRXEeK0h5bDo3RUAg" comment="">
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_P-p7wPRXEeK0h5bDo3RUAg" name="allProfiles" bindingState="BOUND" outgoingLink="_cGQmwPRXEeK0h5bDo3RUAg">
+            <classifier href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileStore"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_WU-koPRXEeK0h5bDo3RUAg" name="role" bindingState="BOUND" incomingLink="_cfGkkPRXEeK0h5bDo3RUAg">
+            <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//SingleRoleInstance"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_Ychf8PRXEeK0h5bDo3RUAg" name="r" incomingLink="_cGQmwPRXEeK0h5bDo3RUAg" outgoingLink="_cfGkkPRXEeK0h5bDo3RUAg _c2UKsPRXEeK0h5bDo3RUAg">
+            <classifier href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//RoleProfiles"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_agC24PRXEeK0h5bDo3RUAg" name="profile" incomingLink="_c2UKsPRXEeK0h5bDo3RUAg">
+            <classifier href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//Profile"/>
+          </variable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_cGQmwPRXEeK0h5bDo3RUAg" name="allProfiles_2_r" source="_P-p7wPRXEeK0h5bDo3RUAg" target="_Ychf8PRXEeK0h5bDo3RUAg">
+            <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileStore/roleProfiles"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_cfGkkPRXEeK0h5bDo3RUAg" name="r_2_role" source="_Ychf8PRXEeK0h5bDo3RUAg" target="_WU-koPRXEeK0h5bDo3RUAg">
+            <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//RoleProfiles/roleInstance"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_c2UKsPRXEeK0h5bDo3RUAg" name="r_2_profile" source="_Ychf8PRXEeK0h5bDo3RUAg" target="_agC24PRXEeK0h5bDo3RUAg">
+            <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//RoleProfiles/currentProfile"/>
+          </linkVariable>
+        </ownedRule>
+      </ownedActivityNode>
+      <ownedActivityNode xsi:type="sda:ActivityFinalNode" xmi:id="_L4OR4PRXEeK0h5bDo3RUAg" name="final" incoming="_NatYUPRXEeK0h5bDo3RUAg">
+        <returnValues xsi:type="expr:TextualExpression" xmi:id="_L4q90PRXEeK0h5bDo3RUAg" expressionText="" language="OCL" languageVersion="1.0"/>
+      </ownedActivityNode>
+    </modelElements>
+    <modelElements xsi:type="sda:Activity" xmi:id="_S8RIkBO1EeOAuaMKfutCTA" inParameter="_8uBdYBO3EeOAuaMKfutCTA _7DM6UBO3EeOAuaMKfutCTA" name="deleteSRProfiles">
+      <annotation xmi:id="_dzlkgBPCEeOfWJbe-ZadEQ" source="http://www.storydriven.org/storydiagrams/types">
+        <details xmi:id="_dzlkgRPCEeOfWJbe-ZadEQ" key="http://www.fujaba.de/muml/runtime/0.4.0" value="true"/>
+        <details xmi:id="_ulvTEBPCEeOfWJbe-ZadEQ" key="http://www.fujaba.de/muml/examples/profiles/0.3.2" value="true"/>
+      </annotation>
+      <containedParameters xmi:id="_7DM6UBO3EeOAuaMKfutCTA" name="subRole">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/runtime/0.4.0#//SingleRoleInstance"/>
+      </containedParameters>
+      <containedParameters xmi:id="_8uBdYBO3EeOAuaMKfutCTA" name="allProfiles">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileStore"/>
+      </containedParameters>
+      <ownedActivityEdge xmi:id="_zRS5sBO2EeOAuaMKfutCTA" target="_yMaVQBO2EeOAuaMKfutCTA" source="_UGNMIBO1EeOAuaMKfutCTA"/>
+      <ownedActivityEdge xmi:id="_0kKPwBO2EeOAuaMKfutCTA" target="_zzN7ABO2EeOAuaMKfutCTA" source="_yMaVQBO2EeOAuaMKfutCTA"/>
+      <ownedActivityNode xsi:type="sda:InitialNode" xmi:id="_UGNMIBO1EeOAuaMKfutCTA" name="deleteSRProfilesInit" outgoing="_zRS5sBO2EeOAuaMKfutCTA"/>
+      <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_yMaVQBO2EeOAuaMKfutCTA" name="Delete All Profiles" outgoing="_0kKPwBO2EeOAuaMKfutCTA" incoming="_zRS5sBO2EeOAuaMKfutCTA">
+        <ownedRule xmi:id="_yMkGQBO2EeOAuaMKfutCTA" comment="">
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_-VfbYBPAEeOfWJbe-ZadEQ" name="subRole" bindingState="BOUND" incomingLink="_WZet8BPDEeOfWJbe-ZadEQ">
+            <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//SingleRoleInstance"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_lNSV8BPCEeOfWJbe-ZadEQ" name="allProfiles" bindingState="BOUND" outgoingLink="_SU1MwBPDEeOfWJbe-ZadEQ">
+            <classifier href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileStore"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_5RLiEBPCEeOfWJbe-ZadEQ" name="profiles" incomingLink="_SU1MwBPDEeOfWJbe-ZadEQ" outgoingLink="_WZet8BPDEeOfWJbe-ZadEQ" bindingOperator="DESTROY">
+            <classifier href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//RoleProfiles"/>
+          </variable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_SU1MwBPDEeOfWJbe-ZadEQ" bindingOperator="DESTROY" source="_lNSV8BPCEeOfWJbe-ZadEQ" target="_5RLiEBPCEeOfWJbe-ZadEQ">
+            <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileStore/roleProfiles"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_WZet8BPDEeOfWJbe-ZadEQ" bindingOperator="DESTROY" source="_5RLiEBPCEeOfWJbe-ZadEQ" target="_-VfbYBPAEeOfWJbe-ZadEQ">
+            <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//RoleProfiles/roleInstance"/>
+          </linkVariable>
+        </ownedRule>
+      </ownedActivityNode>
+      <ownedActivityNode xsi:type="sda:ActivityFinalNode" xmi:id="_zzN7ABO2EeOAuaMKfutCTA" incoming="_0kKPwBO2EeOAuaMKfutCTA">
+        <returnValues xsi:type="expr:TextualExpression" xmi:id="_zzzw4BO2EeOAuaMKfutCTA" expressionText="" language="OCL" languageVersion="1.0"/>
+      </ownedActivityNode>
+    </modelElements>
+  </categories>
+</modelinstance:RootNode>

@@ -1,0 +1,637 @@
+import common.AllSchemataMappings;
+import schemata.Multicast;
+import schemata.Unicast;
+import schemata.MultiReceive;
+import schemata.UniReceive;
+import schemata.IterateSchema;
+import schemata.LoadBalancing;
+import normalisations;
+
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype common uses core::expressions::common('http://www.muml.org/core/1.0.0');
+modeltype expressions uses core::expressions('http://www.muml.org/core/1.0.0');
+modeltype behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
+modeltype valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype storydriven uses 'http://www.muml.org/core/1.0.0';
+modeltype core uses core('http://www.muml.org/core/1.0.0');
+modeltype modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
+modeltype schemata uses pim::realtimestatechart::one_to_n_schemata('http://www.muml.org/pim/1.0.0');
+modeltype types uses pim::types('http://www.muml.org/pim/1.0.0');
+
+--------------------------------------------- 		
+transformation DisassembleOneToManySchemataInDiscreteInteractionEndpoint(inout input:rtsc);
+
+property currentRealtimeStatechart : RealtimeStatechart;
+property schemaCount : Integer =0; // counter for the schemata in order to enumerate the realtimestatechart names
+
+main() {
+	var debugging : Boolean := false;
+ 	
+ 	if(debugging) {
+ 		//debug:
+	currentRealtimeStatechart := getRealtimeStatechartCategory(input.rootObjects()[RootNode]->any(true)).modelElements->asOrderedSet()->at(1).oclAsType(RealtimeStatechart);
+		
+ 	}
+ 	else
+ 	{
+ 		// not debug:
+		currentRealtimeStatechart := input.rootObjects()[RealtimeStatechart]->any(true);
+ 	};
+ 	// disassemble only when necessary!
+ 	assert fatal (currentRealtimeStatechart.usesOneToManyCommunicationSchemata) with log ("The RealtimeStatechart uses no one-to-many schemata to disassemble!");
+	disassembleDiscreteInteractionPointRTSC(currentRealtimeStatechart);
+	
+	if( not debugging ) {
+		
+		// when deleting the original/input statechart, we only have to consider the case when the currentRealtimeStatechart was contained in a ModelElementCategory.
+		// Otherwise, it is embedded in a region. In this case it is deleted anyways.
+		if(currentRealtimeStatechart.oclAsType(EObject).eContainer().oclIsTypeOf(ModelElementCategory)) {
+			currentRealtimeStatechart.oclAsType(EObject).eContainer().oclAsType(ModelElementCategory).modelElements := currentRealtimeStatechart.oclAsType(EObject).eContainer().oclAsType(ModelElementCategory).modelElements->excluding(currentRealtimeStatechart);			
+		}
+	};
+}
+
+helper disassembleDiscreteInteractionPointRTSC(inputRTSC : RealtimeStatechart) : RealtimeStatechart 
+{	
+	if(inputRTSC.usesOneToManyCommunicationSchemata) {
+		currentRealtimeStatechart := inputRTSC;
+		rootNode :=currentRealtimeStatechart.getHighestParentStatechart().oclAsType(EObject).eContainer().eContainer().oclAsType(RootNode);
+		assert fatal (currentRealtimeStatechart.behavioralElement.oclIsKindOf(pim::connector::DiscreteInteractionEndpoint)) with log ("The specified RealtimeStatechart must be the behavior of a discrete port or a role!");
+		
+		
+		// step 1: normalize transitions that define two schemata:
+		normalize(currentRealtimeStatechart);
+		// step 2: disassemble schematas
+		return currentRealtimeStatechart.map RTSC2RTSC();	
+	} else 
+	return inputRTSC;	
+}
+
+query getRealtimeStatechartCategory(theRootNode : RootNode) : ModelElementCategory {
+	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'org.muml.pim.realtimestatechart.category') -> any(true);
+}
+
+query getRealtimeStatechartCategory(): ModelElementCategory
+{
+	return currentRealtimeStatechart.oclAsType(EObject).eContainer().oclAsType(ModelElementCategory);
+}
+helper  isClockSubRoleSpecific(c : Clock): Boolean
+{
+	return currentRealtimeStatechart.subRoleSpecificClocks->includes(c);
+}
+helper isVariableSubRoleSpecific(v : Variable): Boolean
+{
+	return currentRealtimeStatechart.subRoleSpecificVariables->includes(v);
+}
+helper isOperationSubRoleSpecific(o : Operation): Boolean
+{
+	return currentRealtimeStatechart.subRoleSpecificOperations->includes(o);
+}	
+
+
+mapping RealtimeStatechart :: RTSC2RTSC() : RealtimeStatechart {		
+		
+		var allRTSCs : Set(RealtimeStatechart) := self->closure(states.oclAsType(State).embeddedRegions.oclAsType(Region).embeddedStatechart)->append(self);
+		internalClocks := allRTSCs.clocks;
+		internalVariables := allRTSCs.variables;
+		internalSynchronizations := allRTSCs.states.channels;
+		
+		// add dummy condition for LoadBalancing and Iterate!
+		allRTSCs.transitions->forEach(t| 
+			not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined() and t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()
+			and (t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(pim::realtimestatechart::one_to_n_schemata::LoadBalancing) or 
+				t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(pim::realtimestatechart::one_to_n_schemata::Iterate))){
+					var lit : LiteralExpression := new LiteralExpression("true");
+					t.oclAsType(Transition).raiseMessageEvent.oneToManyCommunicationSchema.condition := lit;									
+				};
+		
+		
+		-- check whether every unicast defines a condition!
+		assert fatal (self.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and
+		 t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(pim::realtimestatechart::one_to_n_schemata::Unicast) and (t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()))->isEmpty()
+		) with log ("Unicast must define a condition!");		
+		
+		name := self.name;
+		
+		// **select non subrolespecific elements
+		clocks += self.clocks.map transform().oclAsType(Clock);
+		
+		variables += self.variables.map transform().oclAsType(Variable);
+		
+		operations += self.operations.map transform().oclAsType(Operation);
+		// the proper transformation
+		states += self.map Rtsc2InitialState();
+		
+		
+		
+		
+		// if the one-to-many-coordination-schema defined a condition, we need a boolean variable that checks whether the schema eexecution works or not.
+		
+		allRTSCs.transitions->select(t| t.usesMulticastSchema() 
+				and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()))->forEach(transition){
+			var newVar : Variable := transition.map Schema2BooleanVariable(multicastPossibleName);
+			newVar.initializeExpression := new LiteralExpression("false");
+			variables +=newVar ;
+			
+		};
+		
+		allRTSCs.transitions->select(t| t.usesLoadBalancingSchema() 
+				and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()))->forEach(transition){
+			var newVar : Variable := transition.map Schema2BooleanVariable(loadBalancingPossibleName);		
+			newVar.initializeExpression := 	 new LiteralExpression("false");
+			variables +=newVar ;
+		};
+		
+		allRTSCs.transitions->select(t|t.usesUnicastSchema() 
+				and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()))->forEach(transition){		
+			var newVar : Variable := transition.map Schema2BooleanVariable(unicastPossibleName);
+			newVar.initializeExpression := new LiteralExpression("false");
+			variables +=newVar ;
+		};
+		
+		// iterate without condition?? 
+		allRTSCs.transitions->select(t|t.usesIterateSchema() 
+				and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()))->forEach(transition){		
+			var newVar : Variable := transition.map Schema2BooleanVariable(terminateIterationName);
+			newVar.initializeExpression := new LiteralExpression("false");			
+			variables +=newVar ;
+			
+			newVar := transition.map Schema2BooleanVariable(iteratePossibleName);
+			newVar.initializeExpression := new LiteralExpression("false");			
+			variables +=newVar ;
+			
+			if(not transition.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(pim::realtimestatechart::one_to_n_schemata::Iterate).delay.oclIsUndefined()) {
+				clocks += transition.map Schema2Clock(iterateDelayClockName);
+			};
+		};
+			
+				
+		allRTSCs.transitions->select(t|t.usesUniReceiveSchema())->forEach(transition){
+			var newVar : Variable := transition.map Schema2BooleanVariable(consumeSingleReceiveName);
+			newVar.initializeExpression := new LiteralExpression("false");
+			variables +=newVar;			
+			newVar := transition.map Schema2BooleanVariable(singleReceivePossibleName);
+			newVar.initializeExpression := new LiteralExpression("false");
+			variables +=newVar ;
+		};		
+		
+		
+		
+		
+		// normally override the behavorialElement
+		result.behavioralElement := self.behavioralElement;
+		
+		result.behavioralElement.oclAsType(pim::connector::DiscreteInteractionEndpoint).coordinatorBehavior := self.map State2CoordinatorRegion(self).embeddedStatechart;
+		result.behavioralElement.oclAsType(pim::connector::DiscreteInteractionEndpoint).subroleBehavior := self.map State2SubroleRegion(self).embeddedStatechart;
+		
+		getRealtimeStatechartCategory().modelElements += result;
+	}
+	
+
+	
+mapping RealtimeStatechart :: RTSC2CoordinatorRTSC(context:OclAny) : RealtimeStatechart {		
+		
+		if(self = context) {
+			result.name := "coordinator"; // name the highest statechart of the coordinator region 'coordinator', see #1478
+		} else {
+			result.name := self.name;	
+		};		
+		
+		var region : RealtimeStatechart := result;
+		
+		if(self = currentRealtimeStatechart){	
+			parentRegion := self.map State2CoordinatorRegion(self);
+		}
+		else {
+			parentRegion := self.parentRegion.map EmbeddedRegion2EmbeddedCoordinatorRegion(context );
+		} endif;	
+		
+		states += self.states.map States2StatesCoordinator(context);
+		
+		transitions += self.transitions->select(t|t.triggerMessageEvent.oclIsUndefined() and t.raiseMessageEvent.oclIsUndefined()).map Transition2TransitionCoordinator(context, region);
+		
+		--transition with multicast not conditional
+		transitions += self.transitions.map NonConditionalMulticast2TranssitionFromSourceToIntermediate(context, region);
+		transitions += self.transitions.map NonConditionalMulticast2TransitionFromIntermediateToTarget(context, region);
+		
+		// @author sthiele2 -- these are the new mappings for the multicast coordinator region
+		transitions += self.transitions.map Multicast2CoordinatorStartTransition(context, region);
+		transitions += self.transitions.map Multicast2CoordinatorIntermediateTransition(context, region);
+		transitions += self.transitions.map Multicast2CoordinatorEndTransition(context, region);
+		
+		
+		// @author: sthiele2 -- there is no unicast without condition anymore!
+		--transition with unicast  conditional
+		transitions += self.transitions.map Unicast2CoordinatorStartTransition(context, region);
+		transitions += self.transitions.map Unicast2CoordinatorIntermediateTransition(context, region);
+		transitions += self.transitions.map Unicast2CoordinatorEndTransition(context, region);
+			
+		--transition with MultiReceive
+		transitions += self.transitions.map MultiReceive2TransitionFromSourceToIntermediateCoordinator(context, region);
+		transitions += self.transitions.map MultiReceive2TransitionFromIntermediateToTargetCoordinator(context, region);
+		
+		--transition with singleReceive
+		transitions += self.transitions.map SingleReceive2TransitionFromSourceToIntermediate1(context, region);
+		transitions += self.transitions.map SingleReceive2TransitionFromIntermediate1ToIntermediate2(context,region);
+		transitions += self.transitions.map SingleReceive2TransitionFromIntermediate2ToTarget(context,region);
+		
+		--transitions with LoadBalancing
+		transitions += self.transitions.map LoadBalancing2CoordinatorStartTransition(context, region);
+		transitions += self.transitions.map LoadBalancing2CoordinatorIntermediateTransition(context,region);
+		transitions += self.transitions.map LoadBalancing2CoordinatorEndTransition(context,region);
+		
+		
+		transitions += self.transitions.map Iterate2CoordinatorStartTransition(context, region);
+		transitions += self.transitions.map Iterate2CoordinatorIntermediateTransition(context,region);
+		transitions += self.transitions.map Iterate2CoordinatorEndTransition(context,region);
+			
+		
+		// @author: sthiele2 -- add clocks for the implementation of the relative deadlines
+		clocks += self.transitions->select(t| t.usesUnicastSchema() and not t.relativeDeadline.oclIsUndefined()).map Schema2Clock(unicastDLCName);
+		clocks += self.transitions->select(t| t.usesMulticastSchema() and not t.relativeDeadline.oclIsUndefined()).map Schema2Clock(multicastDLCName);
+		clocks += self.transitions->select(t| t.usesUniReceiveSchema() and not t.relativeDeadline.oclIsUndefined()).map Schema2Clock(singleReceiveDLCName);
+		clocks += self.transitions->select(t| t.usesMultiReceiveSchema() and not t.relativeDeadline.oclIsUndefined()).map Schema2Clock(multiReceiveDLCName);
+		clocks += self.transitions->select(t| t.usesLoadBalancingSchema() and not t.relativeDeadline.oclIsUndefined()).map Schema2Clock(loadBalancingDLCName);
+			
+		//self.behavioralElement.oclAsType(pim::connector::DiscreteInteractionEndpoint).coordinatorBehavior := result;
+		}
+	
+mapping RealtimeStatechart :: RTSC2SubroleRTSC() : RealtimeStatechart {
+		name := "subrole";
+		
+		// add one main state on toplevel of subrole statechart
+		var mainState = new State();
+			
+		mainState.name := "subrole_Main";
+		mainState.initial := true;
+		
+		// add embedded regions for every used schema	
+		var allRTSCs : Set(RealtimeStatechart) := self->closure(states.oclAsType(State).embeddedRegions.oclAsType(Region).embeddedStatechart)->append(self);
+		allRTSCs.transitions
+			->select(t|not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined())		
+		->union(allRTSCs.transitions
+			->select(t|not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()))		
+		->forEach(t) {			
+			if(not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined() and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsKindOf(pim::realtimestatechart::one_to_n_schemata::LoadBalancing)) {
+				// add global subrole clocks and variables for LoadBalancing:
+				var lb : pim::realtimestatechart::one_to_n_schemata::LoadBalancing := t.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(pim::realtimestatechart::one_to_n_schemata::LoadBalancing);
+				// distinguish variants of LoadBalancing: maxWCET or responseMessage 
+				if(not lb.maxWorkingTime.oclIsUndefined()) {
+					clocks+= self.getPortOrRoleStatechart().map getLoadBalancingTaskMessageClock();
+					variables += self.getPortOrRoleStatechart().map getNeverHadATaskVariable();
+				};
+				if(not lb.responseMessage.oclIsUndefined()) {
+					variables += self.getPortOrRoleStatechart().map getFreeForWorkVariable();
+				};
+				// create exactly one extra region for all LoadBalancing Schemata that define a response Message
+				if( not lb.responseMessage.oclIsUndefined()) {
+					var region := self.map DiscreteInteractionEndpointStatechart2LoadBalancingResponseMessageRegion(lb.responseMessage);
+					mainState.embeddedRegions += region;
+					region.priority := mainState.embeddedRegions->size() + 1;
+					if (not lb.onResponseAction.oclIsUndefined()) {
+						self.AddResponseActionsToResponseMessageRTSC(lb);
+					};
+				};				
+			};
+			var region :=  t.map OneToManyCommunicationSchema2SubroleRegion(self);
+			mainState.embeddedRegions += region;
+			region.priority := mainState.embeddedRegions->size() +1;
+		};		
+		
+		states += mainState;		
+		
+		//self.behavioralElement.oclAsType(pim::connector::DiscreteInteractionEndpoint).subroleBehavior := result;
+}
+
+mapping Transition:: OneToManyCommunicationSchema2SubroleRegion(sourceRealtimeStatechart : RealtimeStatechart) : Region {		
+		
+		result.embeddedStatechart := self.map RTSC2SubroleSchemaRTSC(sourceRealtimeStatechart);		
+}
+
+mapping Transition :: RTSC2SubroleSchemaRTSC(sourceRealtimeStatechart:RealtimeStatechart) : RealtimeStatechart when {self.usesAnySchema()} {
+		
+		schemaCount := schemaCount + 1;
+		
+		
+		
+		// use the channels' name for the statechart names. #1478
+		if(self.usesLoadBalancingSchema()) {			
+			name := "subrole_schema_" + self.map Schema2Channel(loadBalancing,true, self).name;
+		};
+		if(self.usesUniReceiveSchema()) {
+			name := "subrole_schema_" + self.map Schema2Channel(singleReceive,true, self).name;
+		};
+		if(self.usesIterateSchema()) {
+			name := "subrole_schema_" + self.map Schema2Channel(iterate,true, self).name;
+		};
+		if(self.usesMulticastSchema()) {
+			name := "subrole_schema_" + self.map Schema2Channel(multicast,true, self).name;
+		};
+		if(self.usesUnicastSchema()) {
+			name := "subrole_schema_" + self.map Schema2Channel(unicast,true, self).name;
+		};
+		if(self.usesMultiReceiveSchema()) {
+			name := "subrole_schema_" + self.map Schema2Channel(multiReceiceChannelName,true, self).name;
+		};
+		
+		
+		var region : RealtimeStatechart := result;		
+		var context = sourceRealtimeStatechart;
+		var toplevel = false;
+		
+		
+		// add subrole specific schema variables: 		
+		if(self.usesUnicastSchema() 
+				and (not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())){
+			var newVar :=  self.map Schema2BooleanVariable(sendUnicastName);	
+			var initExpression := new LiteralExpression("false");		
+			newVar.initializeExpression := initExpression;			
+			variables += newVar;
+		};
+		
+		if(self.usesMulticastSchema() 
+				and (not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())){
+			
+			var newVar := self.map Schema2BooleanVariable(sendMulticastName);
+			newVar.initializeExpression := new LiteralExpression("false");
+			variables += newVar;
+		};
+		
+		if(self.usesLoadBalancingSchema() 
+				and (not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())){
+			var newVar := self.map Schema2BooleanVariable(taskPlannedName); 
+			newVar.initializeExpression := new LiteralExpression("false");
+			variables += newVar;
+		};
+		
+		if(self.usesIterateSchema()) {		
+			if(not self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(pim::realtimestatechart::one_to_n_schemata::Iterate).terminationCondition.oclIsUndefined()) {
+				var newVar := self.map Schema2BooleanVariable(sendIterateName);
+				newVar.initializeExpression := new LiteralExpression("false");
+				variables += newVar;
+			};
+			if(not self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(pim::realtimestatechart::one_to_n_schemata::Iterate).delay.oclIsUndefined()) {
+				var newVar := self.map Schema2BooleanVariable(iterateDelayVariableName);
+				newVar.initializeExpression := new LiteralExpression("true");
+				variables += newVar;
+			};					
+		};
+		
+		// add the source and target of the schema transition to the subrole schema realtimestatechart
+		states += self.map Transition2SourceStateSubrole(region);		
+		 
+		 // only used in uniReceive schema
+		states += self.map Transition2TargetStateSubrole(region);				
+		
+		
+		--transitions with LoadBalancing
+		transitions += self.map LoadBalancing2TransSendSyncFirstSubrole(context, region);
+		transitions += self.map LoadBalancing2TransReceiveSyncNotLastSubrole(context, region);
+		transitions += self.map LoadBalancing2TransReceiveSyncLastSubrole(context, region);
+		transitions += self.map LoadBalancing2TransSendSynNotFirstcSubrole(context, region);
+		
+		
+		--transitions with Iterate
+		if(self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(pim::realtimestatechart::one_to_n_schemata::Iterate)) {
+			
+			transitions += self.map Iterate2Transition1Intermediate1ToIntermedediate2SubroleRegion(context,region,false);
+			transitions += self.map Iterate2Transition2Intermediate1ToIntermedediate2SubroleRegion(context,region,false);
+			
+			if(not self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(pim::realtimestatechart::one_to_n_schemata::Iterate).terminationCondition.oclIsUndefined()) {
+				transitions += self.map Iterate2Transition3Intermediate1ToIntermedediate2SubroleRegion(context,region,false);
+			};
+			transitions += self.map Iterate2TransSendSyncSubrole(context,region,false);
+			transitions += self.map Iterate2TransSendSyncNotConditionSubrole(context,region,false);
+			transitions += self.map Iterate2IdleToIntermediate2SubroleRegion(context,region,false);
+			
+			transitions += self.map Iterate2TransReceiveSyncNotLastSubrole(context,region,false);
+			transitions += self.map Iterate2TransReceiveSyncLastSubrole(context,region,false);
+		};
+		
+		
+		--transition with multicast
+		transitions += self.map Multicast2TransSendSyncSubrole(context, region);
+		transitions += self.map Multicast2TransReceiveSyncNotLastSubrole(context, region);
+		transitions += self.map Multicast2TransReceiveSyncLastSubrole(context, region);
+		transitions += self.map Multicast2TransSendSyncNotConditionSubrole(context, region); 
+		
+		--transition with unicast
+		transitions += self.map Unicast2TransSendSyncFirstSubrole(context, region);
+		transitions += self.map Unicast2TransReceiveSyncNotLastSubrole(context, region);
+		transitions += self.map Unicast2TransReceiveSyncLastSubrole(context, region);
+		transitions += self.map Unicast2TransSendSyncNotConditionSubrole(context, region); 
+		
+		--transition with MultiReceive
+		transitions += self.map MultiReceive2TransitionFromSourceToIntermediateState1Subrole(context, region);
+		transitions += self.map MultiReceive2Transition1FromIntermediate1ToIntermediate2Subrole(context, region);
+		transitions += self.map MultiReceive2Transition2FromIntermediate1ToIntermediate2Subrole(context);
+		transitions += self.map MultiReceive2Transition1FromIntermediate2ToTarget(context, region);
+		transitions += self.map MultiReceive2Transition2FromIntermediate2ToTarget(context, region);
+		
+		-- if MultiReceive is conditional, add one more transition
+		transitions +=  self.map MultiReceive2TransitionFromSourceToIntermediate2Subrole(context, region);
+		
+		--transition with singlereceive
+		transitions += self.map SingleReceive2TransitionFromSourceToIntermediate(context, region);
+		transitions += self.map SingleReceive2Transition1TargetToSourceSubrole(context, region);
+		transitions += self.map SingleReceive2Transition2TargetToSourceSubrole(context, region);
+		transitions += self.map SingleReceive2Transition1FromIntermediateToReceivedSubrole(context, region);
+		transitions += self.map SingleReceive2TransitionFromStateExitPointToIntermediateStateOfSubRole(context,region);
+				
+		-- add variable assignments to Entry Events of intermediate states of multicast and iterate 
+		
+		if(self.usesMulticastSchema() and not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()) {
+			
+			var intermediateState1 : State := self.map Schema2SubroleIntermediateState(context, 1);
+			if(intermediateState1.entryEvent.oclIsUndefined()) {
+				
+				intermediateState1.entryEvent := new EntryEvent();				
+				intermediateState1.entryEvent.kind := EventKind::RAISE;
+							
+			};
+			if(intermediateState1.entryEvent.action.oclIsUndefined()) {
+				intermediateState1.entryEvent.action := new Action();
+				intermediateState1.entryEvent.action.name := "";
+			};
+			intermediateState1.entryEvent.action.expressions += self.createBlockWithVariableAssignment(sendMulticastName, "false");
+			intermediateState1.entryEvent.action.name := intermediateState1.entryEvent.action.name + " " + sendMulticastName + " := false;";
+		};
+		
+		if(self.usesIterateSchema()) {
+			
+			var intermediateState1 : State := self.map Schema2SubroleIntermediateState(context, 1);
+			if(intermediateState1.entryEvent.oclIsUndefined()) {
+				
+				intermediateState1.entryEvent := new EntryEvent();
+				
+				intermediateState1.entryEvent.kind := EventKind::RAISE;
+							
+			};
+			if(intermediateState1.entryEvent.action.oclIsUndefined()) {
+				intermediateState1.entryEvent.action := new Action();
+				intermediateState1.entryEvent.action.name := "";
+			};
+			intermediateState1.entryEvent.action.expressions += self.createBlockWithVariableAssignment(sendIterateName, "false");
+			intermediateState1.entryEvent.action.name := intermediateState1.entryEvent.action.name + " " + sendIterateName + " := false;";
+			
+			if(not self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(pim::realtimestatechart::one_to_n_schemata::Iterate).delay.oclIsUndefined()) {
+				intermediateState1.entryEvent.clockResets += self.map Schema2Clock(iterateDelayClockName);
+			};
+		};
+				
+		operations += sourceRealtimeStatechart.subRoleSpecificOperations.map transform().oclAsType(Operation);
+		
+		variables += sourceRealtimeStatechart.subRoleSpecificVariables->map transform().oclAsType(Variable);
+		
+		clocks += sourceRealtimeStatechart.subRoleSpecificClocks.map transform().oclAsType(Clock);
+				
+	}
+
+
+mapping State :: States2StatesCoordinator(context:OclAny) : State {
+		
+		self.parentStatechart.map RTSC2CoordinatorRTSC(context);
+		
+		name := self.name;
+		
+		initial := self.initial;
+		
+		final := self.final;
+		
+		urgent := self.urgent;				
+	
+		entryEvent := self.entryEvent.map transform(result).oclAsType(EntryEvent);			
+		
+		// @author: sthiele2 -- add clock resets for the source states of schema transitions 
+		self.outgoingTransitions->select(t|((not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined())
+		or (not t.triggerMessageEvent.oclIsUndefined() and not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined())
+		 ))->forEach(t){
+			if(entryEvent.oclIsUndefined())
+			{
+				entryEvent :=  new EntryEvent();
+				entryEvent.kind := EventKind::RAISE;
+			}; 
+		
+			var block : Block;
+			
+			var raiseSchema : OneToManyCommunicationSchema := t.raiseMessageEvent.oneToManyCommunicationSchema;
+			if(raiseSchema.oclIsTypeOf(pim::realtimestatechart::one_to_n_schemata::Unicast))  
+			{
+				if(entryEvent.action.oclIsUndefined()) {
+					entryEvent.action := new Action();
+					entryEvent.action.name := "";				
+				};
+				block := new Block();
+				entryEvent.action.name := entryEvent.action.name.concat(" unicastPossible := false;");
+				block.expressions += createTypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,t.map Schema2BooleanVariable(unicastPossibleName),new LiteralExpression("false")  );
+				if(not t.relativeDeadline.oclIsUndefined()) {
+					entryEvent.clockResets += t.map Schema2Clock(unicastDLCName);
+				};
+			}
+			else if (raiseSchema.oclIsTypeOf(pim::realtimestatechart::one_to_n_schemata::Multicast))
+			{						
+				if(not raiseSchema.condition.oclIsUndefined()) {
+					if(entryEvent.action.oclIsUndefined()) {
+						entryEvent.action := new Action();
+						entryEvent.action.name := "";				
+					};		
+					entryEvent.action.name := entryEvent.action.name.concat(" multicastPossible := false;");
+					block := new Block();
+					block.expressions +=createTypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,t.map Schema2BooleanVariable(multicastPossibleName),new LiteralExpression("false")  );
+				};
+				if(not t.relativeDeadline.oclIsUndefined()) {						
+					entryEvent.clockResets += t.map Schema2Clock(multicastDLCName);
+				};
+			}
+			else if (raiseSchema.oclIsTypeOf(pim::realtimestatechart::one_to_n_schemata::LoadBalancing)) {
+				if(entryEvent.action.oclIsUndefined()) {
+					entryEvent.action := new Action();
+					entryEvent.action.name := "";				
+				};
+				entryEvent.action.name := entryEvent.action.name.concat(" loadBalancingPossible := false;");
+				block := new Block();
+				block.expressions += createTypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,t.map Schema2BooleanVariable(loadBalancingPossibleName), new LiteralExpression("false")  );
+			}
+			else if (raiseSchema.oclIsTypeOf(pim::realtimestatechart::one_to_n_schemata::Iterate)) {
+				if(entryEvent.action.oclIsUndefined()) {
+					entryEvent.action := new Action();
+					entryEvent.action.name := "";				
+				};
+				entryEvent.action.name := entryEvent.action.name.concat(" iteratePossible := false;");
+				block := new Block();
+				block.expressions += createTypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,t.map Schema2BooleanVariable(iteratePossibleName), new LiteralExpression("false")  );
+				entryEvent.action.name.concat(" terminate := false;");
+				block.expressions += createTypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,t.map Schema2BooleanVariable(terminateIterationName),new LiteralExpression("false")  );
+			};
+			var triggerSchema : OneToManyCommunicationSchema := t.triggerMessageEvent.oneToManyCommunicationSchema;
+			if(triggerSchema.oclIsTypeOf(pim::realtimestatechart::one_to_n_schemata::SingleReceive))
+			{
+				if(not t.relativeDeadline.oclIsUndefined()) {
+					entryEvent.clockResets += t.map Schema2Clock(singleReceiveDLCName)
+				};
+			}else if(triggerSchema.oclIsTypeOf(pim::realtimestatechart::one_to_n_schemata::MultiReceive))
+			{
+				if(not t.relativeDeadline.oclIsUndefined()) {
+					entryEvent.clockResets += t.map Schema2Clock(multiReceiveDLCName);
+				};
+			};
+			if(block.expressions->size() > 0) {
+				entryEvent.action.expressions += block;
+			};
+		};
+		
+		
+		exitEvent := self.exitEvent.map transform(result).oclAsType(ExitEvent);
+		
+		doEvent := self.doEvent.map transform(result).oclAsType(DoEvent);
+		
+		invariants := self.invariants->select(c|not isClockSubRoleSpecific(c.clock)).map transform(result).oclAsType(ClockConstraint);
+	
+	
+		-- copy the embedded regions of the state:
+		embeddedRegions += self.embeddedRegions.map EmbeddedRegion2EmbeddedCoordinatorRegion(context);
+		
+		-- add embedded Regions for transfer schemata
+		embeddedRegions += self.outgoingTransitions.map Multicast2SourceRegionCoordinator(context);
+		embeddedRegions += self.outgoingTransitions.map Unicast2SourceRegionCoordinator(context);
+		embeddedRegions += self.outgoingTransitions.map LoadBalancing2SourceRegionCoordinator(context);	
+		embeddedRegions += self.outgoingTransitions.map SingleReceive2SourceRegionCoordinator(context);
+		
+	}
+
+mapping Region :: EmbeddedRegion2EmbeddedCoordinatorRegion(context : OclAny) : Region{
+	
+		result.priority := self.priority;		
+		result.parentState := self.parentState.map States2StatesCoordinator(context);
+		result.embeddedStatechart := self.embeddedStatechart.map RTSC2CoordinatorRTSC(context);	
+}
+
+
+
+mapping Transition::Transition2SourceStateSubrole(inout containerRegion : RealtimeStatechart):State {
+		name := self.source.name;
+		
+		result.initial := true;
+		
+		containerRegion.states += result;
+		
+		if(_initial) { 
+			--embedded Regions for transfer schemata
+			embeddedRegions += self->asSet()->select(t|t.usesMulticastSchema() and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())).map Multicast2SourceRegionSubrole(result, containerRegion);
+			embeddedRegions += self->asSet()->select(t|t.usesUnicastSchema() and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())).map Unicast2SourceRegionSubrole(result, containerRegion);	
+			embeddedRegions += self->asSet()->select(t|t.usesUniReceiveSchema()).map SingleReceive2SourceRegionSubrole(result, containerRegion);	
+			embeddedRegions += self->asSet()->select(t|t.usesLoadBalancingSchema() and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())).map LoadBalancing2SourceRegionSubrole(result, containerRegion);
+			embeddedRegions += self->asSet()->select(t|t.usesIterateSchema() and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())).map Iterate2SourceRegionSubrole(result, containerRegion);	
+			
+		};
+}
+
+	
+
+
+	
+
+

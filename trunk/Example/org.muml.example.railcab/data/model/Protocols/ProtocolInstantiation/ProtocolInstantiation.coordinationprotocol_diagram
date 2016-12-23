@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:protocol="http://www.muml.org/pim/protocol/1.0.0" xmi:id="_GvT6gOHeEeW5TKefARosBQ" type="Coordination Protocol" name="ProtocolInstantiation.coordinationprotocol_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_GvT6guHeEeW5TKefARosBQ" type="2005" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_GvT6hOHeEeW5TKefARosBQ" type="7005"/>
+    <element xmi:type="protocol:CoordinationProtocol" href="../../RailCab.muml#_UPQaUI9PEeOh26Tom612Wg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GvT6g-HeEeW5TKefARosBQ"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_GvT6geHeEeW5TKefARosBQ"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../../RailCab.muml#_gSpDkHasEeOh__JNCv2_1A"/>
+</notation:Diagram>

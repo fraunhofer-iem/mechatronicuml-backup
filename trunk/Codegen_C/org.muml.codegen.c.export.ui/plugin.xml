@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="org.muml.codegen.targetPlatformExtension" name="TargetPlatform" schema="schema/org.muml.codegen.targetPlatformExtension.exsd"/>
+   <extension
+         point="org.eclipse.ui.exportWizards">
+         <wizard
+            category="org.muml.core.export"
+            class="org.muml.codegen.c.export.ui.FujabaSourceCodeExportWizard"
+            id="org.muml.codegen.c.export"
+            name="Source Code">
+      </wizard>
+   </extension>
+
+</plugin>

@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Coordination Specification Common Plugin
+Bundle-SymbolicName: org.muml.pim.coordinationspecification.common;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.muml.pim.coordinationspecification.common.Activator
+Export-Package: org.muml.pim.coordinationspecification.common.edit.helpers,
+ org.muml.pim.coordinationspecification.common.edit.policies
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.gmf.runtime.diagram.ui.providers;bundle-version="1.5.0",
+ org.muml.pim.actionlanguage,
+ org.eclipse.m2m.qvt.oml;bundle-version="3.3.0",
+ org.eclipse.ui.workbench,
+ org.eclipse.gmf.runtime.diagram.ui
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:hwplatform="http://www.fujaba.de/muml/hardware/hwplatform/1.1/" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_mBEssArwEeaopdRB2_MGAg" type="Platform" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_wt4NoArwEeaopdRB2_MGAg" type="2009" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_wt4NogrwEeaopdRB2_MGAg" type="5069"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_wt4NowrwEeaopdRB2_MGAg" type="7003">
+      <children xmi:type="notation:Shape" xmi:id="_5rwHkArwEeaopdRB2_MGAg" type="3030" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_5rwuoArwEeaopdRB2_MGAg" type="5064"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_5rwuoQrwEeaopdRB2_MGAg" type="5065"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_5rwuogrwEeaopdRB2_MGAg" type="5066"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_5rwuowrwEeaopdRB2_MGAg" type="5067"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_5rwupArwEeaopdRB2_MGAg" type="5068"/>
+        <element xmi:type="hwplatform:ResourcePart" href="../SeminarVergabe.muml#_5rdMoArwEeaopdRB2_MGAg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5rwHkQrwEeaopdRB2_MGAg" x="70" y="70"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_7_BKsArwEeaopdRB2_MGAg" type="3030" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_7_BxwArwEeaopdRB2_MGAg" type="5064"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_7_BxwQrwEeaopdRB2_MGAg" type="5065"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_7_BxwgrwEeaopdRB2_MGAg" type="5066"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_7_BxwwrwEeaopdRB2_MGAg" type="5067"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_7_BxxArwEeaopdRB2_MGAg" type="5068"/>
+        <element xmi:type="hwplatform:ResourcePart" href="../SeminarVergabe.muml#_7-niEArwEeaopdRB2_MGAg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7_BKsQrwEeaopdRB2_MGAg" x="351" y="69"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_9Z50UArwEeaopdRB2_MGAg" type="3030" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_9Z6bYArwEeaopdRB2_MGAg" type="5064"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_9Z6bYQrwEeaopdRB2_MGAg" type="5065"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_9Z6bYgrwEeaopdRB2_MGAg" type="5066"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_9Z6bYwrwEeaopdRB2_MGAg" type="5067"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_9Z6bZArwEeaopdRB2_MGAg" type="5068"/>
+        <element xmi:type="hwplatform:ResourcePart" href="../SeminarVergabe.muml#_9ZoukArwEeaopdRB2_MGAg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9Z50UQrwEeaopdRB2_MGAg" x="33" y="237" width="229" height="82"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_-q0poArwEeaopdRB2_MGAg" type="3030" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_-q0pogrwEeaopdRB2_MGAg" type="5064"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_-q1QsArwEeaopdRB2_MGAg" type="5065"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_-q1QsQrwEeaopdRB2_MGAg" type="5066"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_-q1QsgrwEeaopdRB2_MGAg" type="5067"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_-q1QswrwEeaopdRB2_MGAg" type="5068"/>
+        <element xmi:type="hwplatform:ResourcePart" href="../SeminarVergabe.muml#_-qf5gArwEeaopdRB2_MGAg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-q0poQrwEeaopdRB2_MGAg" x="321" y="252" width="205" height="85"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_AZIlkArxEeaopdRB2_MGAg" type="3030" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_AZJMoArxEeaopdRB2_MGAg" type="5064"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_AZJMoQrxEeaopdRB2_MGAg" type="5065"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_AZJMogrxEeaopdRB2_MGAg" type="5066"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_AZJMowrxEeaopdRB2_MGAg" type="5067"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_AZJMpArxEeaopdRB2_MGAg" type="5068"/>
+        <element xmi:type="hwplatform:ResourcePart" href="../SeminarVergabe.muml#_AY5VAArxEeaopdRB2_MGAg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AZIlkQrxEeaopdRB2_MGAg" x="549" y="249" width="193" height="85"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_44JOcAryEeaopdRB2_MGAg" type="3030" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_44J1gAryEeaopdRB2_MGAg" type="5064"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_44J1gQryEeaopdRB2_MGAg" type="5065"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_44J1ggryEeaopdRB2_MGAg" type="5066"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_44J1gwryEeaopdRB2_MGAg" type="5067"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_44J1hAryEeaopdRB2_MGAg" type="5068"/>
+        <element xmi:type="hwplatform:ResourcePart" href="../SeminarVergabe.muml#_43mb4AryEeaopdRB2_MGAg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_44JOcQryEeaopdRB2_MGAg" x="561" y="57" width="193" height="133"/>
+      </children>
+    </children>
+    <element xmi:type="hwplatform:HWPlatform" href="../SeminarVergabe.muml#_mA67sQrwEeaopdRB2_MGAg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wt4NoQrwEeaopdRB2_MGAg" width="817" height="577"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_mBEssQrwEeaopdRB2_MGAg"/>
+  <element xmi:type="hwplatform:HWPlatform" href="../SeminarVergabe.muml#_mA67sQrwEeaopdRB2_MGAg"/>
+</notation:Diagram>

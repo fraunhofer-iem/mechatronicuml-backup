@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component="http://www.fujaba.de/muml/model/component/0.3.1" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.3.1" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_Wr1PQFZzEeKY3N7GF1dHWw" type="Atomiccomponent" name="Zentralsteuerung.atomiccomponent_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_XNntsFZzEeKY3N7GF1dHWw" type="2005" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_XNo70FZzEeKY3N7GF1dHWw" type="5011"/>
+    <children xmi:type="notation:Shape" xmi:id="_MMN-sHtzEeKLftECdm97kg" type="3006" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_MMOlwHtzEeKLftECdm97kg" type="5007">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_MMPM0HtzEeKLftECdm97kg" y="5"/>
+      </children>
+      <element xmi:type="component:DiscretePort" href="../../ENTIME_Demonstrator.fujaba#_MME0wHtzEeKLftECdm97kg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MMN-sXtzEeKLftECdm97kg" x="184" y="40"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_H26s8HwkEeKLftECdm97kg" type="3006" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_H26s8nwkEeKLftECdm97kg" type="5007">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_H26s83wkEeKLftECdm97kg" x="-20" y="-35"/>
+      </children>
+      <element xmi:type="component:DiscretePort" href="../../ENTIME_Demonstrator.fujaba#_H22bgHwkEeKLftECdm97kg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_H26s8XwkEeKLftECdm97kg" x="20" y="-12"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_LYlc4HwkEeKLftECdm97kg" type="3006" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_LYmD8HwkEeKLftECdm97kg" type="5007">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_LYmD8XwkEeKLftECdm97kg" x="-185" y="5"/>
+      </children>
+      <element xmi:type="component:DiscretePort" href="../../ENTIME_Demonstrator.fujaba#_LYiZkHwkEeKLftECdm97kg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LYlc4XwkEeKLftECdm97kg" x="-12" y="75"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_nynYsIgFEeKnZc536BloyA" type="3005" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_nyn_wIgFEeKnZc536BloyA" type="5006">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_nyom0IgFEeKnZc536BloyA" y="5"/>
+      </children>
+      <element xmi:type="component:HybridPort" href="../../ENTIME_Demonstrator.fujaba#_LKynMIgGEeKnZc536BloyA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nynYsYgFEeKnZc536BloyA"/>
+    </children>
+    <element xmi:type="component:AtomicComponent" href="../../ENTIME_Demonstrator.fujaba#_XNfx4FZzEeKY3N7GF1dHWw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XNntsVZzEeKY3N7GF1dHWw" x="230" y="105" width="196" height="132"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_wEx6oIfuEeKnZc536BloyA" type="2005" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_wEyhsIfuEeKnZc536BloyA" type="5011"/>
+    <children xmi:type="notation:Shape" xmi:id="_zGWOMIfuEeKnZc536BloyA" type="3007" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_zGW1QIfuEeKnZc536BloyA" type="5008">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_zGW1QYfuEeKnZc536BloyA" y="5"/>
+      </children>
+      <element xmi:type="component:ContinuousPort" href="../../ENTIME_Demonstrator.fujaba#_2uVBgIfuEeKnZc536BloyA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zGWOMYfuEeKnZc536BloyA" x="20" y="99"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_Gdg_wIgGEeKnZc536BloyA" type="3007" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_Gdhm0IgGEeKnZc536BloyA" type="5008">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Gdhm0YgGEeKnZc536BloyA" y="5"/>
+      </children>
+      <element xmi:type="component:ContinuousPort" href="../../ENTIME_Demonstrator.fujaba#_LK0cYIgGEeKnZc536BloyA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Gdg_wYgGEeKnZc536BloyA"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_ycoNcI1tEeKjOIt6xW2jaA" type="3007" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_ycqCoI1tEeKjOIt6xW2jaA" type="5008">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_ycqCoY1tEeKjOIt6xW2jaA" y="5"/>
+      </children>
+      <element xmi:type="component:ContinuousPort" href="../../ENTIME_Demonstrator.fujaba#_ybQ7gI1tEeKjOIt6xW2jaA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ycoNcY1tEeKjOIt6xW2jaA" x="135" y="-12"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_0Wmm0I1tEeKjOIt6xW2jaA" type="3007" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_0WnN4I1tEeKjOIt6xW2jaA" type="5008">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_0WnN4Y1tEeKjOIt6xW2jaA" y="5"/>
+      </children>
+      <element xmi:type="component:ContinuousPort" href="../../ENTIME_Demonstrator.fujaba#_0WlYsI1tEeKjOIt6xW2jaA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0Wmm0Y1tEeKjOIt6xW2jaA" x="70" y="-12"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_1hHSII1tEeKjOIt6xW2jaA" type="3007" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_1hIgQI1tEeKjOIt6xW2jaA" type="5008">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_1hJuYI1tEeKjOIt6xW2jaA" x="-20" y="-35"/>
+      </children>
+      <element xmi:type="component:ContinuousPort" href="../../ENTIME_Demonstrator.fujaba#_1hEO0I1tEeKjOIt6xW2jaA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1hH5MI1tEeKjOIt6xW2jaA" x="-12" y="5"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_k6YT8I1uEeKjOIt6xW2jaA" type="3007" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_k6YT8o1uEeKjOIt6xW2jaA" type="5008">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_k6Y7AI1uEeKjOIt6xW2jaA" y="5"/>
+      </children>
+      <element xmi:type="component:ContinuousPort" href="../../ENTIME_Demonstrator.fujaba#_k6RmQI1uEeKjOIt6xW2jaA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k6YT8Y1uEeKjOIt6xW2jaA"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_Abh2oI2BEeKjOIt6xW2jaA" type="3007" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_AbidsI2BEeKjOIt6xW2jaA" type="5008">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_AbidsY2BEeKjOIt6xW2jaA" y="5"/>
+      </children>
+      <element xmi:type="component:ContinuousPort" href="../../ENTIME_Demonstrator.fujaba#//@categories.1/@modelElements.5/@ports.6"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Abh2oY2BEeKjOIt6xW2jaA"/>
+    </children>
+    <element xmi:type="component:AtomicComponent" href="../../ENTIME_Demonstrator.fujaba#_2uUacIfuEeKnZc536BloyA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wEx6oYfuEeKnZc536BloyA" x="790" y="95" width="201" height="111"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_A322QIfvEeKnZc536BloyA" type="2005" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_A34EYIfvEeKnZc536BloyA" type="5011"/>
+    <children xmi:type="notation:Shape" xmi:id="_CSGmsIfvEeKnZc536BloyA" type="3007" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_CSHNwIfvEeKnZc536BloyA" type="5008">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_CSHNwYfvEeKnZc536BloyA" y="5"/>
+      </children>
+      <element xmi:type="component:ContinuousPort" href="../../ENTIME_Demonstrator.fujaba#_JEZZ4YfvEeKnZc536BloyA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CSGmsYfvEeKnZc536BloyA" x="50" y="84"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_JjsGgIgGEeKnZc536BloyA" type="3007" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_JjstkIgGEeKnZc536BloyA" type="5008">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_JjstkYgGEeKnZc536BloyA" y="5"/>
+      </children>
+      <element xmi:type="component:ContinuousPort" href="../../ENTIME_Demonstrator.fujaba#_LK1DcIgGEeKnZc536BloyA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JjsGgYgGEeKnZc536BloyA"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_TdHL0I1uEeKjOIt6xW2jaA" type="3007" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_TdIZ8I1uEeKjOIt6xW2jaA" type="5008">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_TdIZ8Y1uEeKjOIt6xW2jaA" y="5"/>
+      </children>
+      <element xmi:type="component:ContinuousPort" href="../../ENTIME_Demonstrator.fujaba#_Tc_3EI1uEeKjOIt6xW2jaA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TdHL0Y1uEeKjOIt6xW2jaA"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_WQerUI1uEeKjOIt6xW2jaA" type="3007" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_WQfSYI1uEeKjOIt6xW2jaA" type="5008">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_WQfSYY1uEeKjOIt6xW2jaA" y="5"/>
+      </children>
+      <element xmi:type="component:ContinuousPort" href="../../ENTIME_Demonstrator.fujaba#_WQWvgI1uEeKjOIt6xW2jaA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WQerUY1uEeKjOIt6xW2jaA"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_b6oKsI1uEeKjOIt6xW2jaA" type="3007" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_b6pY0I1uEeKjOIt6xW2jaA" type="5008">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_b6pY0Y1uEeKjOIt6xW2jaA" y="5"/>
+      </children>
+      <element xmi:type="component:ContinuousPort" href="../../ENTIME_Demonstrator.fujaba#_b6lucI1uEeKjOIt6xW2jaA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_b6oKsY1uEeKjOIt6xW2jaA"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_f3PKMI1uEeKjOIt6xW2jaA" type="3007" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_f3QYUI1uEeKjOIt6xW2jaA" type="5008">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_f3QYUY1uEeKjOIt6xW2jaA" y="5"/>
+      </children>
+      <element xmi:type="component:ContinuousPort" href="../../ENTIME_Demonstrator.fujaba#_f3H1cI1uEeKjOIt6xW2jaA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f3PKMY1uEeKjOIt6xW2jaA"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_8WlagI2AEeKjOIt6xW2jaA" type="3007" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_8Wlago2AEeKjOIt6xW2jaA" type="5008">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_8Wlag42AEeKjOIt6xW2jaA" y="5"/>
+      </children>
+      <element xmi:type="component:ContinuousPort" href="../../ENTIME_Demonstrator.fujaba#//@categories.1/@modelElements.6/@ports.6"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8WlagY2AEeKjOIt6xW2jaA"/>
+    </children>
+    <element xmi:type="component:AtomicComponent" href="../../ENTIME_Demonstrator.fujaba#_JEZZ4IfvEeKnZc536BloyA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_A322QYfvEeKnZc536BloyA" x="760" y="295" width="261" height="96"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_Wr1PQVZzEeKY3N7GF1dHWw"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../../ENTIME_Demonstrator.fujaba#_bTpMEFZsEeKY3N7GF1dHWw"/>
+</notation:Diagram>

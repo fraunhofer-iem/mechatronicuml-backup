@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmftool:ToolRegistry
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
+  <palette
+      title="componentinstanceconfigurationPalette">
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="componentinstanceconfiguration">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="AtomicComponentInstance"
+          description="Create new AtomicComponentInstance">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/ComponentInstance.gif"
+            bundle="org.muml.pim.common"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="StructuredComponentInstance"
+          description="Create new StructuredComponentInstance">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/ComponentInstance.gif"
+            bundle="org.muml.pim.common"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="AssemblyInstance"
+          description="Create new AssemblyInstance">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/Assembly.gif"
+            bundle="org.muml.pim.common"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="DelegationInstance"
+          description="Create new DelegationInstance">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/Assembly.gif"
+            bundle="org.muml.pim.common"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="DiscreteSinglePortInstance"
+          description="Create new DiscreteSinglePortInstance">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/DiscretePort.gif"
+            bundle="org.muml.pim.common"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="DiscreteMultiPortInstance"
+          description="Create new DiscreteMultiPortInstance">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/DiscretePort.gif"
+            bundle="org.muml.pim.common"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="ContinuousPortInstance"
+          description="Create new ContinuousPortInstance">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/ContinuousPort.gif"
+            bundle="org.muml.pim.common"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="HybridPortInstance"
+          description="Create new HybridPortInstance">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/HybridPort.gif"
+            bundle="org.muml.pim.common"/>
+      </tools>
+    </tools>
+  </palette>
+</gmftool:ToolRegistry>

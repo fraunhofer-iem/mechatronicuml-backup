@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Reconfiguration Tabbed Properties
+Bundle-SymbolicName: org.muml.reconfiguration.edit.properties; singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.emf.ecore,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.edit,
+ org.eclipse.ui,
+ org.muml.ape.runtime,
+ org.muml.reconfiguration,
+ org.muml.reconfiguration.edit,
+ org.muml.pim.edit,
+ org.muml.pim.edit.properties,
+ org.muml.storydiagram.edit,
+ org.muml.storydiagram.edit.properties
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.muml.reconfiguration.properties.metamodel, org.muml.reconfiguration.properties.constraint,
+ org.muml.reconfiguration.properties.protocolinstantiation.editor,
+ org.muml.reconfiguration.properties.reconfiguration.editor,
+ org.muml.reconfiguration.properties.expression.editor,
+ org.muml.reconfiguration.properties.structdatatype.editor,
+ org.muml.reconfiguration.properties.reconfInstance.editor,
+ org.muml.reconfiguration.properties.tabs
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

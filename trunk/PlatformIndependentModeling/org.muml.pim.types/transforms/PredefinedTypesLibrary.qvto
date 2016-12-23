@@ -1,0 +1,21 @@
+import org.muml.pim.types._library.TypesBlackbox;
+modeltype types uses pim::types('http://www.muml.org/pim/1.0.0');
+modeltype core uses core('http://www.muml.org/core/1.0.0');
+modeltype modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
+modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+library TestLibrary;
+
+property INT8 : PrimitiveDataType = findPredefinedType(EObject.allInstances()->asList(), "int8");
+property INT16 : PrimitiveDataType = findPredefinedType(EObject.allInstances()->asList(), "int16");
+property INT32 : PrimitiveDataType = findPredefinedType(EObject.allInstances()->asList(), "int32");
+property INT64 : PrimitiveDataType = findPredefinedType(EObject.allInstances()->asList(), "int64");
+
+
+property UINT8 : PrimitiveDataType = findPredefinedType(EObject.allInstances()->asList(), "uint8");
+property UINT16 : PrimitiveDataType = findPredefinedType(EObject.allInstances()->asList(), "uint16");
+property UINT32 : PrimitiveDataType = findPredefinedType(EObject.allInstances()->asList(), "uint32");
+property UINT64 : PrimitiveDataType = findPredefinedType(EObject.allInstances()->asList(), "uint64");
+
+property DOUBLE : PrimitiveDataType = findPredefinedType(EObject.allInstances()->asList(), "double");
+property BOOLEAN : PrimitiveDataType = findPredefinedType(EObject.allInstances()->asList(), "boolean");
+property VOID : PrimitiveDataType = findPredefinedType(EObject.allInstances()->asList(), "void");

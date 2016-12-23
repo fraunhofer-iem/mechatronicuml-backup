@@ -1,0 +1,68 @@
+«IMPORT simulink»
+«IMPORT simulink::msglib»
+
+«EXTENSION org::eclipse::xtend::util::stdlib::counter»
+
+«EXTENSION extensions::Element»
+«EXTENSION extensions::Block»
+«EXTENSION extensions::msglib::CommunicationSwitch»
+«EXTENSION extensions::msglib::LinkLayer»
+
+
+«DEFINE linkLayer FOR LinkLayer»
+«EXPAND LinkLayer::file FOR this-»
+«IF this.messageRetransmission-»
+«EXPAND LinkLayer::reliableLinkLayer FOR this-» 
+«ELSE-»
+«EXPAND LinkLayer::unreliableLinkLayer FOR this-» 
+«ENDIF-»
+«ENDDEFINE»
+
+«DEFINE reliableLinkLayer FOR LinkLayer»
+	Block {
+	  BlockType		  Reference
+	  Name			  "«this.getName()»"
+	  SID			  «this.getNewSimulinkId()»
+	  Ports			  [10, 5]
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "LinkLayer«this.bufferSize»/Link Layer"
+	  SourceType		  "SubSystem"
+	  ShowPortLabels	  "FromPortIcon"
+«EXPAND templates::Parameter::parameter FOREACH this.parameters.reject(p| {'BlockType','Name', 'SID', 'Tag', 'Ports'}.contains(p.name))-»
+	  «EXPAND LinkLayer::commonParameters FOR this-»  
+	}
+«ENDDEFINE»
+
+«DEFINE unreliableLinkLayer FOR LinkLayer»
+	Block {
+	  BlockType		  Reference
+	  Name			  "«this.getName()»"
+	  SID			  «this.getNewSimulinkId()»
+	  Ports			  [9, 5]
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "LinkLayer«this.bufferSize»/Link Layer UDP"
+	  SourceType		  "SubSystem"
+	  ShowPortLabels	  "FromPortIcon"
+«EXPAND templates::Parameter::parameter FOREACH this.parameters.reject(p| {'BlockType','Name', 'SID', 'Tag', 'Ports'}.contains(p.name))-»
+«EXPAND LinkLayer::commonParameters FOR this-»  
+	}	  	  
+«ENDDEFINE»
+
+«DEFINE commonParameters FOR LinkLayer»
+	  DelayMin "«this.delayMin»"
+	  DelayMax "«this.delayMax»"
+	  MessageLossProbability "«this.messageLossProbability»"	
+	  BufferOverflowPossible "«IF this.bufferOverflowPossible»on«ELSE»off«ENDIF»"
+	  SourceBufferSize "«this.sourceBufferSize»"
+	  MessageMapping "«this.messageMapping»"  	  
+«ENDDEFINE»
+
+«DEFINE file FOR LinkLayer»
+«LET 'LinkLayer' + this.bufferSize + '.mdl' AS filename-»
+«IF counterInc(filename) <= 1-»
+«FILE filename-»
+«this.generateLinkLayer()»
+«ENDFILE-»
+«ENDIF-»
+«ENDLET-»
+«ENDDEFINE»

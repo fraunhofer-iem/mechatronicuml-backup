@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_YU0usKnAEeOHxO33vmqIUg" type="Component Instance Configuration" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_ZRFioKnAEeOHxO33vmqIUg" type="2015" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_ZRGJsKnAEeOHxO33vmqIUg" type="5026"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_ZRHX0KnAEeOHxO33vmqIUg" type="7012">
+      <children xmi:type="notation:Shape" xmi:id="_ajaGIKnAEeOHxO33vmqIUg" type="3023" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_ajatMKnAEeOHxO33vmqIUg" type="7013">
+          <children xmi:type="notation:Shape" xmi:id="_ajdJcKnAEeOHxO33vmqIUg" type="3024" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_ajeXkKnAEeOHxO33vmqIUg" type="5028"/>
+            <children xmi:type="notation:Shape" xmi:id="_ajx5kKnAEeOHxO33vmqIUg" type="3032" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_ajygoKnAEeOHxO33vmqIUg" type="5044">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_ajygoanAEeOHxO33vmqIUg" y="5"/>
+              </children>
+              <element xmi:type="instance:DiscreteSinglePortInstance" href="PathFinder.fujaba#_ah3OAqnAEeOHxO33vmqIUg"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ajx5kanAEeOHxO33vmqIUg"/>
+            </children>
+            <element xmi:type="instance:AtomicComponentInstance" href="PathFinder.fujaba#_ah3OAanAEeOHxO33vmqIUg"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ajdJcanAEeOHxO33vmqIUg" x="48" y="12"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_ajeXkanAEeOHxO33vmqIUg" type="3024" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_aje-oKnAEeOHxO33vmqIUg" type="5028"/>
+            <children xmi:type="notation:Shape" xmi:id="_aj_8AKnAEeOHxO33vmqIUg" type="3032" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_akAjEKnAEeOHxO33vmqIUg" type="5044">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_akAjEanAEeOHxO33vmqIUg" y="5"/>
+              </children>
+              <element xmi:type="instance:DiscreteSinglePortInstance" href="PathFinder.fujaba#_ah3OBKnAEeOHxO33vmqIUg"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aj_8AanAEeOHxO33vmqIUg" x="12" y="-12"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_akAjEqnAEeOHxO33vmqIUg" type="3032" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_akBKIKnAEeOHxO33vmqIUg" type="5044">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_akBKIanAEeOHxO33vmqIUg" y="5"/>
+              </children>
+              <element xmi:type="instance:DiscreteSinglePortInstance" href="PathFinder.fujaba#_ah3OBanAEeOHxO33vmqIUg"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_akAjE6nAEeOHxO33vmqIUg" x="12" y="-12"/>
+            </children>
+            <element xmi:type="instance:AtomicComponentInstance" href="PathFinder.fujaba#_ah3OA6nAEeOHxO33vmqIUg"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ajeXkqnAEeOHxO33vmqIUg" x="372" y="3"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_ajflsKnAEeOHxO33vmqIUg" type="3024" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_ajgMwKnAEeOHxO33vmqIUg" type="5028"/>
+            <children xmi:type="notation:Shape" xmi:id="_akfrQKnAEeOHxO33vmqIUg" type="3032" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_akfrQqnAEeOHxO33vmqIUg" type="5044">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_akgSUKnAEeOHxO33vmqIUg" y="5"/>
+              </children>
+              <element xmi:type="instance:DiscreteSinglePortInstance" href="PathFinder.fujaba#_ah3OB6nAEeOHxO33vmqIUg"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_akfrQanAEeOHxO33vmqIUg"/>
+            </children>
+            <element xmi:type="instance:AtomicComponentInstance" href="PathFinder.fujaba#_ah3OBqnAEeOHxO33vmqIUg"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ajflsanAEeOHxO33vmqIUg" x="345" y="219"/>
+          </children>
+        </children>
+        <element xmi:type="instance:ComponentInstanceConfiguration" href="PathFinder.fujaba#_ah3OAKnAEeOHxO33vmqIUg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ajaGIanAEeOHxO33vmqIUg"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_ZRHX0anAEeOHxO33vmqIUg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_ZRHX0qnAEeOHxO33vmqIUg"/>
+    </children>
+    <element xmi:type="instance:StructuredComponentInstance" href="PathFinder.fujaba#_ZQ9m0KnAEeOHxO33vmqIUg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZRFioanAEeOHxO33vmqIUg" x="72" y="135" width="802" height="406"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_YU0usanAEeOHxO33vmqIUg"/>
+  <element xmi:type="instance:ComponentInstanceConfiguration" href="PathFinder.fujaba#_YUyScKnAEeOHxO33vmqIUg"/>
+  <edges xmi:type="notation:Connector" xmi:id="_akttsKnAEeOHxO33vmqIUg" type="4001" source="_ajx5kKnAEeOHxO33vmqIUg" target="_akAjEqnAEeOHxO33vmqIUg" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_akttsanAEeOHxO33vmqIUg" fontName="Lucida Grande" fontHeight="11"/>
+    <element xmi:type="instance:AssemblyConnectorInstance" href="PathFinder.fujaba#_ah3OCKnAEeOHxO33vmqIUg"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_akttsqnAEeOHxO33vmqIUg" points="[-12, 4, 15, -6]$[-15, 5, 12, -5]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_akvi4KnAEeOHxO33vmqIUg" type="4001" source="_aj_8AKnAEeOHxO33vmqIUg" target="_akfrQKnAEeOHxO33vmqIUg" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_akvi4anAEeOHxO33vmqIUg" fontName="Lucida Grande" fontHeight="11"/>
+    <element xmi:type="instance:AssemblyConnectorInstance" href="PathFinder.fujaba#_ah3OCanAEeOHxO33vmqIUg"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_akvi4qnAEeOHxO33vmqIUg" points="[12, 1, -51, -9]$[51, 8, -12, -2]"/>
+  </edges>
+</notation:Diagram>

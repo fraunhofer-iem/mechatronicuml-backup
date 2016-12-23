@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Simulink -->
+      <package
+            uri="http://www.muml.org/simulink/1.0.0"
+            class="org.muml.simulink.SimulinkPackage"
+            genModel="model/Simulink.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Simulink -->
+      <package
+            uri="http://www.muml.org/simulink/stateflow/1.0.0"
+            class="org.muml.simulink.stateflow.StateflowPackage"
+            genModel="model/Simulink.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Simulink -->
+      <package
+            uri="http://www.muml.org/simulink/msglib/1.0.0"
+            class="org.muml.simulink.msglib.MsglibPackage"
+            genModel="model/Simulink.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Simulink -->
+      <package
+            uri="http://www.muml.org/simulink/msglib/buffer/1.0.0"
+            class="org.muml.simulink.msglib.buffer.BufferPackage"
+            genModel="model/Simulink.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Simulink -->
+      <package
+            uri="http://www.muml.org/simulink/reconfiguration/1.0.0"
+            class="org.muml.simulink.reconfiguration.ReconfigurationPackage"
+            genModel="model/Simulink.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated Simulink -->
+      <parser
+            type="reconfiguration"
+            class="org.muml.simulink.reconfiguration.util.ReconfigurationResourceFactoryImpl"/>
+   </extension>
+</plugin>

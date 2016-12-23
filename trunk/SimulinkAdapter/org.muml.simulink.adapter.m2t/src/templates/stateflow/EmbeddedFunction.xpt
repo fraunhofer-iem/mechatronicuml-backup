@@ -1,0 +1,49 @@
+«IMPORT simulink»
+«IMPORT simulink::stateflow»
+«IMPORT simulink::msglib::buffer»
+
+«EXTENSION extensions::stateflow::StateflowElement»
+«EXTENSION extensions::stateflow::Node»
+«EXTENSION extensions::stateflow::EmbeddedFunction»
+
+«DEFINE embeddedFunction FOR EmbeddedFunction-»
+«IF Enqueue.isInstance(this)-»
+«EXPAND templates::msglib::buffer::Enqueue::enqueue FOR (Enqueue)this-»
+«ELSEIF Dequeue.isInstance(this)-»
+«EXPAND templates::msglib::buffer::Dequeue::dequeue FOR (Dequeue)this-»
+«ELSEIF CheckQueue.isInstance(this)-»
+«EXPAND templates::msglib::buffer::CheckQueue::checkQueue FOR (CheckQueue)this-»
+«ELSEIF SharedEnqueue.isInstance(this)-»
+«EXPAND templates::msglib::buffer::SharedEnqueue::sharedEnqueue FOR (SharedEnqueue)this-»
+«ELSEIF SharedCheckQueue.isInstance(this)-»
+«EXPAND templates::msglib::buffer::SharedCheckQueue::sharedCheckQueue FOR (SharedCheckQueue)this-»
+«ELSEIF SharedDequeue.isInstance(this)-»
+«EXPAND templates::msglib::buffer::SharedDequeue::sharedDequeue FOR (SharedDequeue)this-»
+«ELSE»
+«EXPAND EmbeddedFunction::generic FOR this-»
+«ENDIF»
+«ENDDEFINE»
+
+«DEFINE generic FOR EmbeddedFunction-»
+	state {
+		id				«this.getStateflowId()»
+		chart			«((State)this.eContainer).getChart().getStateflowId()»
+		tag				"id=«this.id»"
+		treeNode		[«((State)this.eContainer).getStateflowId()» 0 0 0]
+		labelString		"«IF !this.output.isEmpty»«IF this.output.typeSelect(Object).size == 1»«this.output.first().name»«ELSE»[«FOREACH this.output AS output SEPARATOR ', '»«output.name»«ENDFOREACH»]«ENDIF» = «ENDIF»«this.name»(«FOREACH this.input AS input SEPARATOR ', '»«input.name»«ENDFOREACH»)"
+		type			FUNC_STATE
+		decomposition	CLUSTER_STATE
+«IF this.getAllData().size > 0-»
+		firstData       «this.getAllData().first().getStateflowId()»
+«ENDIF»
+«EXPAND Parameter::stateflowParameter FOREACH this.parameters.select(p| !{'chart', 'id', 'tag', 'treeNode', 'labelString', 'type', 'decomposition', 'subviewer'}.contains(p.name) && !p.name.startsWith('eml') )-»
+		eml {
+			isEML	1
+			script	"«this.code.foldLine(20,120)»"		
+		}	
+	}
+«EXPAND Data::embeddedFunctionIn FOREACH this.input-»
+«EXPAND Data::embeddedFunctionOut FOREACH this.output-»
+«EXPAND Data::embeddedFunctionConstant FOREACH this.constant-»
+«EXPAND Data::embeddedFunctionLocal FOREACH this.local-»
+«ENDDEFINE»

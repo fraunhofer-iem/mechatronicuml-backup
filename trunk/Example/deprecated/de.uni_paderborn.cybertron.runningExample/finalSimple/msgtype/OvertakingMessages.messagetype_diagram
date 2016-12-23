@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_TzkqUNLvEeOpC8A7seHy-g" type="Message Type" name="OvertakingMessages.messagetype_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_TzlRYNLvEeOpC8A7seHy-g" type="2008" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Tzl4cNLvEeOpC8A7seHy-g" type="5017"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_Tzl4cdLvEeOpC8A7seHy-g" type="7010">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_Tzl4ctLvEeOpC8A7seHy-g"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_Tzl4c9LvEeOpC8A7seHy-g"/>
+    </children>
+    <element xmi:type="msgtype:MessageTypeRepository" href="../runningExample.fujaba#_YUYDULZkEeOeFtIawEHrMg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TzlRYdLvEeOpC8A7seHy-g" width="157" height="133"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_TzkqUdLvEeOpC8A7seHy-g"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../runningExample.fujaba#_XacKoLZkEeOeFtIawEHrMg"/>
+</notation:Diagram>

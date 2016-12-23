@@ -1,0 +1,215 @@
+import InstanceLibrary;
+
+transformation syncTypeInstance(inout instance : InstancePackage);
+modeltype PimPackage uses pim('http://www.muml.org/pim/1.0.0');
+modeltype ConnectorPackage uses pim::connector('http://www.muml.org/pim/1.0.0');
+modeltype ComponentPackage uses pim::component('http://www.muml.org/pim/1.0.0');
+modeltype ProtocolPackage uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype ValueTypePackage uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype InstancePackage uses pim::instance('http://www.muml.org/pim/1.0.0');
+
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+
+main() {
+log("QVT-O Script \"updateInstance.qvto\" started.");
+
+	// process AtomicComponentInstances
+	instance.rootObjects()[AtomicComponentInstance]->forEach(ci){
+		//	assert fatal (not ci.componentType.oclIsUndefined()) with log("No Component Type is set.");
+		if (not ci.componentType.oclIsUndefined()) then {
+			ci.portInstances += ci.syncPortInstances(); // update PortInstances
+			} endif;
+	
+	};
+	
+	// process StructuredComponentInstances
+	instance.rootObjects()[StructuredComponentInstance]->forEach(ci) {
+	//	assert fatal (not ci.componentType.oclIsUndefined()) with log("No Component Type is set.");
+		if (not ci.componentType.oclIsUndefined()) then {
+		ci.portInstances += ci.syncPortInstances(); // update PortInstances
+		ci.embeddedCIC.componentInstances+=ci.embeddedCIC.updateComponentInstanceConfiguration(ci.componentType.oclAsType(StructuredComponent)); //update 
+		
+		//update the connector Instances and create connectors which are not initiliazed
+		var oldConnectorInstances:Set(ConnectorInstance);
+		var connectorsToInit:Set(Connector);
+		
+		if (ci.container().oclIsKindOf(ComponentInstanceConfiguration)) then {
+			
+			oldConnectorInstances:=ci.container().oclAsType(ComponentInstanceConfiguration).portConnectorInstances;
+			connectorsToInit:=ci.componentType.oclAsType(StructuredComponent).connectors->select(connector|not oldConnectorInstances.type->includes(connector));
+			
+			
+		} endif;
+	}endif;
+};
+
+instance.removeElement(NULL_COMPONENT_PART_HELPER);
+instance.removeElement(NULL_PORT_PART_HELPER);
+	
+}
+
+
+/*
+* Creates new PortInstances if required and update old PortInstances if required
+*
+*/
+query ComponentInstance::syncPortInstances():Set(PortInstance){
+
+	var oldPortInstances:Set(PortInstance) = self.portInstances;
+	var newPortInstances:Set(PortInstance) = OrderedSet{};
+	var portTypes:Set(Port)=OrderedSet{};
+	var componentPart:ComponentPart;
+	var portPartForPortInstance:PortPart:=NULL_PORT_PART_HELPER;
+	/**
+		get the portTypes
+	**/
+	if(not self.componentPart.oclIsUndefined()) then {
+		portTypes:=self.componentPart.portParts->collect(portType)->asOrderedSet();
+		componentPart:=self.componentPart;
+	}
+	else{
+		portTypes:=self.componentType.ports;
+		componentPart:=NULL_COMPONENT_PART_HELPER;
+	}endif;
+	/**
+	 * Look for all initialized PortInstances and check if they need to be updated
+	 * due to changes in cardinality or optinal attribute of the correspondng PortType
+	 **/
+	var alreadyInitializedPortInstances:Set(PortInstance) = oldPortInstances->select(pi |portTypes->includes(pi.portType));
+	alreadyInitializedPortInstances->forEach(portInstance){
+		if(componentPart!=NULL_COMPONENT_PART_HELPER)then {
+			 portPartForPortInstance:=portInstance.portPart;
+		}endif;
+		switch{
+			case (portInstance.oclIsKindOf(DiscreteMultiPortInstance) and portInstance.portType.oclIsKindOf(DiscretePort)){
+			
+			/**
+			* if the portType has changed from multiPort to singlePort then create a new DiscreteSinglePortInstance
+			* after that remove the old DiscreteMultiPortInstane
+			*
+			**/
+			if(not portInstance.portType.oclAsType(DiscretePort).multiPort) then{
+				//	portInstances+=portInstance.portType.createInstances(part,NULL_PORT_PART_HELPER)[PortInstance];
+				//	portInstances+=portInstance.oclAsType(DiscreteMultiPortInstance).subInteractionEndpointInstances[PortInstance];
+					portInstance.oclAsType(DiscreteMultiPortInstance).subInteractionEndpointInstances:=OrderedSet{};
+					instance.removeElement(portInstance);
+					portInstance.dump();
+					
+				}
+				else{
+					//update the SubPortInstances
+					var numberOfAlreadyInitSubPortInstances:Integer = portInstance.oclAsType(DiscreteMultiPortInstance).subInteractionEndpointInstances->size();
+						var subPortInstances:Set(PortInstance);
+						subPortInstances+=portInstance.portType.oclAsType(DiscretePort).updateSubPortInstances(componentPart,portPartForPortInstance,numberOfAlreadyInitSubPortInstances)[DiscreteSinglePortInstance];
+					  portInstance.oclAsType(DiscreteMultiPortInstance).subInteractionEndpointInstances+=subPortInstances[DiscreteSinglePortInstance];
+					  newPortInstances+=subPortInstances;
+					
+				}
+				
+				endif;
+			}
+			/** 
+			* if the portType has changed from a singlePort to multiPort then create a new DiscreteMultiPortInstance
+			* after that remove the old DiscreteSinglePortInstane
+			**/
+			case (portInstance.oclIsKindOf(DiscreteSinglePortInstance) and portInstance.portType.oclIsKindOf(DiscretePort) and portInstance.oclAsType(DiscreteSinglePortInstance).multiInteractionEndpointInstance.oclIsUndefined()){
+				if(portInstance.portType.oclAsType(DiscretePort).multiPort) then{
+				// when discrete singe port changes to multiport move single port as SubPortInstance
+					var multiPortInstance : DiscreteMultiPortInstance = portInstance.portType.oclAsType(DiscretePort).map multi(componentPart, portPartForPortInstance);
+					var subPortInstances:Set(PortInstance);
+					subPortInstances+=portInstance;
+					subPortInstances+=multiPortInstance.portType.oclAsType(DiscretePort).updateSubPortInstances(componentPart,portPartForPortInstance,1)[DiscreteSinglePortInstance];
+					multiPortInstance.subInteractionEndpointInstances:=subPortInstances[DiscreteSinglePortInstance];
+					newPortInstances+=multiPortInstance;
+					newPortInstances+=subPortInstances;					
+				}endif;
+			}
+		
+		}
+		
+	
+	};
+	//Look for new Ports to create/initialize
+	/**
+	*	If the componentType is a ComponentPart we need to initialize the PortParts
+	**/
+	if(not self.componentPart.oclIsUndefined()) then {
+		self.componentPart.portParts->forEach(portPart){
+			if(self.portInstances->collect(portType)->excludes(portPart.portType)) then{
+				newPortInstances+=portPart.portType.createInstances(self.componentPart,portPart)[PortInstance];
+			}endif;
+		};
+	}
+	/**
+	* If the componentType is not a ComponentPart we need to initialize the Ports
+	**/
+	else{
+		portTypes->forEach(port){
+		if (self.portInstances->collect(portType)->excludes(port)) then{
+			newPortInstances+=port.createInstances(NULL_COMPONENT_PART_HELPER, NULL_PORT_PART_HELPER)[PortInstance];
+		}endif;
+	};
+	}endif;
+	
+	
+	return newPortInstances;
+}
+
+query ComponentInstanceConfiguration::updateComponentInstanceConfiguration(structuredComponent:StructuredComponent):Set(ComponentInstance){
+	var newComponentInstances:Set(ComponentInstance):=OrderedSet{};
+	var alreadyInitComponentInstances:Set(ComponentInstance):=self.componentInstances;
+	var componentParts:Set(ComponentPart):=structuredComponent.embeddedComponentParts;
+	var oldConnectorInstances:Set(ConnectorInstance);
+	var connectorsToInit:Set(Connector);
+	//update alreadyInitComponentInstances
+	alreadyInitComponentInstances[AtomicComponentInstance]->forEach(ci){
+		ci.portInstances+=ci.syncPortInstances();
+	};
+	
+	alreadyInitComponentInstances[StructuredComponentInstance]->forEach(ci){
+		ci.portInstances+=ci.syncPortInstances();
+		if(not ci.embeddedCIC.oclIsUndefined()) then{
+			ci.embeddedCIC.componentInstances+=ci.embeddedCIC.updateComponentInstanceConfiguration(ci.componentType.oclAsType(StructuredComponent));
+		}endif;
+		
+		if (ci.container().oclIsKindOf(ComponentInstanceConfiguration)) then {
+			
+			oldConnectorInstances:=ci.container().oclAsType(ComponentInstanceConfiguration).portConnectorInstances;
+			connectorsToInit:=ci.componentType.oclAsType(StructuredComponent).connectors->select(connector|not oldConnectorInstances.type->includes(connector));
+			
+			
+		} endif;
+	};
+	
+	
+	//check if for existing instances lower bound has been raise
+	var componentInstancesOfSamePart:Set(ComponentInstance);
+	var numberOfcomponentsToInit:Integer:=0;
+	componentParts->forEach(part){
+		componentInstancesOfSamePart:=alreadyInitComponentInstances->select(ci|ci.componentPart=part);
+		numberOfcomponentsToInit:=part.cardinality.lowerBound.toInteger()-(componentInstancesOfSamePart->size());
+		while(numberOfcomponentsToInit>0){
+					numberOfcomponentsToInit:=numberOfcomponentsToInit-1;
+			if(part.componentType.oclIsKindOf(AtomicComponent)) then{
+				newComponentInstances+=new AtomicComponentInstance(part.componentType.oclAsType(AtomicComponent),part);
+			}
+			else{
+				newComponentInstances+=new StructuredComponentInstance(part.componentType.oclAsType(StructuredComponent),part);
+			}endif;
+		};
+	};
+	return newComponentInstances;
+}
+
+query DiscretePort::updateSubPortInstances(part : ComponentPart, portPart : PortPart, alreadyInitSubPortInstances:Integer) : Set(PortInstance) {
+	var subPortInstances : Set(PortInstance);
+	var count : Integer := 0;
+	while (count < self.cardinality.lowerBound.toInteger()-alreadyInitSubPortInstances) {
+		var portInstance : PortInstance := self.createInstance(part, portPart, count).oclAsType(PortInstance);
+		portInstance.name := self.name + (count + 1).toString();
+		subPortInstances += portInstance;
+		count := count + 1;
+	};
+	return subPortInstances
+}

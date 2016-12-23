@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
+      <editpartProvider
+            class="org.muml.pm.hardware.platform.diagram.custom.providers.CustomPlatformEditPartProvider">
+         <Priority
+               name="Low">
+         </Priority>
+      </editpartProvider>
+   </extension>
+   <extension
+         point="org.eclipse.gmf.runtime.common.ui.services.parserProviders">
+      <ParserProvider
+            class="org.muml.pm.hardware.platform.diagram.custom.providers.CustomPlatformParserProvider">
+         <Priority
+               name="Low">
+         </Priority>
+      </ParserProvider>
+   </extension>
+   <extension
+         point="org.muml.core.modelinstance.ui.modelinitializer">
+      <initializer
+            initializer="org.muml.pm.hardware.platform.diagram.custom.HWPlatformDiagramInitializer">
+      </initializer>
+   </extension>
+
+</plugin>

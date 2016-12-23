@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ActionLanguage Tabbed Properties
+Bundle-SymbolicName: org.muml.pim.actionlanguage.edit.properties; singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.emf.ecore,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.edit,
+ org.eclipse.ui,
+ org.muml.pim.actionlanguage.edit,
+ org.muml.pim.actionlanguage,
+ org.muml.ape.runtime,
+ org.muml.pim.edit,
+ org.muml.pim.edit.properties
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.muml.pim.actionlanguage.properties.metamodel, org.muml.pim.actionlanguage.properties.constraint,
+ org.muml.pim.actionlanguage.properties.actionlanguage.editor
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

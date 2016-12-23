@@ -1,0 +1,95 @@
+[module clock('http://www.muml.org/pim/realtimestatechart/1.0.0',
+'http://www.muml.org/core/1.0.0',
+				'http://www.muml.org/pim/actionlanguage/1.0.0',
+'http://www.muml.org/pim/valuetype/1.0.0')/]
+
+[import org::muml::modelica::adapter::rtsc::actionlanguage::expression]
+
+[import org::muml::modelica::adapter::rtsc::clock::queries]
+[import org::muml::modelica::adapter::rtsc::util::query::naming]
+[import org::muml::modelica::adapter::rtsc::util::query::time]
+
+[**
+ * Create clock declarations
+ * @param rtsc the rtsc
+*/]
+[template public createClockDeclarations(rtsc : RealtimeStatechart)]
+	// clock declarations
+[for (clock : Clock | rtsc.availableClocks)]
+	[if rtsc.clocks->includes(clock)]inner[else]outer[/if] RealTimeCoordinationLibrary.RealTimeCoordination.TimeElements.Clock [clock.getName()/](nu=[getNumberOfResetInputs(clock)/])
+		[clock.createClockDeclAnnotation()/];
+[/for]
+	// end clock declarations
+[/template]
+
+[**
+ * Create clock constraint declarations
+ * @param transitionSet the set of transitions
+*/]
+[template public createClockConstraintDeclarations(transitionSet : Set(Transition))]
+	// clock constraint declarations
+[for (transition : Transition | transitionSet->select(clockConstraints->notEmpty()))]
+	Modelica_StateGraph2.Blocks.MathBoolean.And [transition.getName()/]_AND(nu=[transition.clockConstraints->size()/])
+		annotation (Placement(transformation(extent={{-80,62},{-72,70}})));
+		[for (clockConstraint : ClockConstraint | transition.clockConstraints)]
+	RealTimeCoordinationLibrary.RealTimeCoordination.TimeElements.ClockConstraint.ClockConstraint[clockConstraint.operator.getComparingOperatorName()/] [clockConstraint.getName(transition)/](
+		bound=([generateExpression(clockConstraint.bound.value, false, '')/]) * [clockConstraint.bound.getTimeUnitFactor()/])
+		[clockConstraint.operator.createComparingOperatorDeclAnnotation()/];
+		[/for]
+[/for]
+	// end clock constraint declarations
+[/template]
+
+[**
+ * Create clock constraints
+ * @param transitionSet the set of transition
+*/]
+[template public createClockConstraints(transitionSet : Set(Transition))]
+	// connect clock constraints
+[for (transition : Transition | transitionSet)]
+	[for (clockConstraint : ClockConstraint | transition.clockConstraints)]
+	connect([clockConstraint.clock.getName()/].y, [clockConstraint.getName(transition)/].clockValue);
+	connect([clockConstraint.getName(transition)/].firePort,
+		[transition.getName()/]_AND.u['[' + transition.clockConstraints->indexOf(clockConstraint) +']'/]);
+	[/for]
+	[if transition.clockConstraints->notEmpty()]
+	connect([transition.getName()/]_AND.y, [transition.getName()/].conditionPort);
+	[/if]
+[/for]
+	// end connect clock constraints
+[/template]
+
+[**
+ * Connect clock resets.
+ * @TODO the semantic is not always correct:
+ * - s1 -> t1(c >= 3, reset c) -> s2 -> t2(c >= 2) -> s3
+ *   in this case t1 and t2 will fire at the "same" time (probably because
+ *   no time passes) (if the transition's clock constraints are exchanged
+ *   everything works as expected)
+ * - s1 - t1(c >= 3) -> s2(exit: reset c) -> t2(c >= 2) -> s3
+ *   will also fire at the "same" time for similar reasons
+ *   (exchanging constraints does not work here (the clock should be resetted after the
+ *   action was executed))
+ * @param rtsc the (component) rtsc
+*/]
+[template public connectClockResets(rtsc : RealtimeStatechart)]
+	// connect clock resets
+[for (clock : Clock | rtsc.getAllClocks())]
+	[let entitySet : OrderedSet(ExitEvent) = clock.getClockResetEntities()]
+	[for (entryEvent : EntryEvent | entitySet->select(oclIsKindOf(EntryEvent))->collect(oclAsType(EntryEvent))->asSet())]
+	connect([entryEvent.getClockResetOutput()/],
+		[clock.getFullyQualifiedName()/].u['[' + entitySet->indexOf(entryEvent) + ']'/]);
+	[/for]
+	[for (exitEvent : ExitEvent | entitySet->select(oclIsKindOf(ExitEvent))->collect(oclAsType(ExitEvent))->asSet())]
+	connect([exitEvent.getClockResetOutput()/],
+		[clock.getFullyQualifiedName()/].u['[' + entitySet->indexOf(exitEvent) + ']'/]);
+	[exitEvent.getState().getFullyQualifiedExitMarkerName()/].u = not (pre([exitEvent.getState().getFullyQualifiedName()/].active) and not [exitEvent.getState().getFullyQualifiedName()/].active); 
+	[/for]
+	[for (transition : Transition | entitySet->select(oclIsKindOf(Transition))->collect(oclAsType(Transition)))]
+	connect([transition.getClockResetOutput()/],
+		[clock.getFullyQualifiedName()/].u['[' + entitySet->indexOf(transition) + ']'/]);
+	[/for]
+	[/let]
+[/for]
+	// end connect clock resets
+[/template]

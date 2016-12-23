@@ -1,0 +1,115 @@
+«IMPORT simulink»
+
+«EXTENSION extensions::Element»
+«EXTENSION extensions::Block»
+
+«DEFINE stateflowLink(Integer chartId, String maskDescription, String maskDisplay) FOR Block»
+Block {
+      BlockType		      SubSystem
+      Name		      	"«this.name»"  
+      SID				«this.getSimulinkId()»
+      Ports				[«this.inPorts.size», «this.outPorts.size»]      
+«IF this.getParameter('Position') != null-»
+	  Position		«this.getParameter('Position')»
+«ENDIF-»
+      Tag				"id=«this.id»"   
+      MaskHideContents	      off
+      MaskType		      "Stateflow"
+      MaskDescription	      "«maskDescription»"
+      MaskDisplay	      "«maskDisplay»"
+      MaskSelfModifiable      on
+      MaskIconFrame	      off
+      MaskIconOpaque	      off
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"            
+      System {
+		Name			"«this.name»"	
+		SIDHighWatermark	    «this.getSimulinkId()»
+«IF this.inPorts.isEmpty-»
+		Block {
+	  		BlockType		  Ground
+	  		Name			  " Ground "
+	  		SID               «this.getNewSimulinkId()»
+		}
+«ELSE-»
+«FOREACH this.inPorts AS inPort-»
+		Block {
+			BlockType		  Inport
+			Name			  "«inPort.getName()»"
+			Port			  "«this.inPorts.indexOf(inPort)+1»"
+			IconDisplay		  "Port number"
+		}
+«ENDFOREACH»
+«ENDIF»			
+		Block {
+	  		BlockType		  Demux
+	  		Name			  " Demux "
+	  		Ports		      [1, 1]
+	  		Outputs		  "1"
+	  		SID               «this.getNewSimulinkId()»
+		}
+		Block {
+	  		BlockType		  "S-Function"
+	  		Name			  " SFunction "
+	  		SID               «this.getNewSimulinkId()»
+	  		Tag			  "Stateflow S-Function «this.getModel().getName()» «chartId»"
+	  		Ports			  [«IF this.inPorts.isEmpty»1«ELSE»«this.inPorts.size»«ENDIF», «IF this.outPorts.isEmpty»1«ELSE»«this.outPorts.size+1»«ENDIF»]
+	  		FunctionName		  "sf_sfun"
+	  		PortCounts		  "[«IF this.inPorts.isEmpty»1«ELSE»«this.inPorts.size»«ENDIF» «IF this.outPorts.isEmpty»1«ELSE»«this.outPorts.size+1»«ENDIF»]"
+«FOREACH this.outPorts AS outPort-»
+			Port {
+				PortNumber		«this.outPorts.indexOf(outPort)+2»«REM»1 port connects DEMUX«ENDREM»
+				Name			"«outPort.getName()»"
+				RTWStorageClass		"Auto"
+				DataLoggingNameMode	"SignalName"			
+			}
+«ENDFOREACH»
+		}
+		Block {
+	  		BlockType		  Terminator
+	  		Name			  " Terminator "
+	  		SID               «this.getNewSimulinkId()»
+		}
+«EXPAND OutPortBlock::outPortBlock FOREACH this.outPorts-»		
+		Line {
+	  		SrcBlock		  " SFunction "
+	  		SrcPort		  1
+	  		DstBlock		  " Demux "
+	  		DstPort		  1
+		}
+«IF this.inPorts.isEmpty-»
+		Line {
+	  		SrcBlock		  " Ground "
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  1
+		}
+«ELSE-»
+«FOREACH this.inPorts AS inport-»
+		Line {
+	  		SrcBlock		  "«inport.getName()»"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  «this.inPorts.indexOf(inport)+1»
+		}
+«ENDFOREACH-»
+«ENDIF-»
+«FOREACH this.outPorts AS outport-»
+		Line {
+			Name		  	  "«outport.getName()»"
+	  		SrcBlock		  " SFunction "
+	  		SrcPort		  	«this.outPorts.indexOf(outport)+2»«REM» 1 port connects demux«ENDREM»
+	  		DstBlock		  "«outport.getName()»"
+	  		DstPort		  		1
+		}
+«ENDFOREACH-»	
+		Line {
+	  		SrcBlock		  " Demux "
+	  		SrcPort		  1
+	  		DstBlock		  " Terminator "
+	  		DstPort		  1
+		}
+	}
+}
+«ENDDEFINE»

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="&lt;copyright>&#xD;&#xA;Copyright (c) 2014 Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT&#xD;&#xA;All rights reserved. This program and the accompanying materials&#xD;&#xA;are made available under the terms of the Eclipse Public License v1.0&#xD;&#xA;which accompanies this distribution, and is available at&#xD;&#xA;http://www.eclipse.org/legal/epl-v10.html&#xD;&#xA;&#xD;&#xA;Contributors:&#xD;&#xA;    Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT - initial API and implementation&#xD;&#xA;&lt;/copyright>"
+    modelDirectory="/org.muml.ontology/src" modelPluginID="org.muml.ontology" modelName="Ontology"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="7.0" copyrightFields="false" usedGenPackages="../../org.muml.core/model/core.genmodel#//core"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>ontology.ecore</foreignModel>
+  <genPackages prefix="Ontology" basePackage="org.muml" disposableProviderFactory="true"
+      ecorePackage="ontology.ecore#/">
+    <genClasses ecoreClass="ontology.ecore#//OntologyExtension">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontology.ecore#//OntologyExtension/ontologyReference"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

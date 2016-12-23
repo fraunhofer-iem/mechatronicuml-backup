@@ -1,0 +1,296 @@
+«EXTENSION metamodel::Extensions»
+
+String implClassSuffix() : GLOBALVAR ImplClassSuffix;
+
+«IMPORT ecore»
+
+«DEFINE Generate FOR List[EPackage]-»
+	«FILE (GLOBALVAR filename).toString()»
+		\newcommand{\todoo}[1]{\todo[inline, color=red!40]{ecore2latex: #1}}
+		«FOREACH this.typeSelect(EPackage) AS pack»
+			«EXPAND PackageNavigation FOR pack-»
+		«ENDFOREACH-»
+	«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE PackageNavigation FOR EPackage-»
+	«EXPAND PackageDoc FOR this-»
+	«EXPAND PackageNavigation FOREACH this.eSubpackages.sortBy(e|e.name)-»
+«ENDDEFINE»
+
+«DEFINE PackageDoc FOR EPackage-»
+	«IF !this.eClassifiers.select(c | c.metaType==ecore::EClass).isEmpty ||
+	    !this.eClassifiers.select(c | c.metaType==ecore::EEnum).isEmpty || 
+	    !this.getDocumentation().isEmpty-»
+		\section{EPackage \bfseries \texttt{«this.qualifiedName().toString().escapeLatexString()»}\normalfont}
+		
+		% Here comes the package documentation
+		\begin{longdescription}
+		\item[Overview]	«EXPAND WriteDoc FOR this-»
+		\end{longdescription}
+		«IF !this.eClassifiers.select(c | c.metaType==ecore::EClass).isEmpty ||
+			!this.eClassifiers.select(c | c.metaType==ecore::EDataType).isEmpty ||
+    		!this.eClassifiers.select(c | c.metaType==ecore::EEnum).isEmpty-» 
+			«LET getDiagrams(this) AS diagramList-»
+				«IF diagramList.size > 0-»
+					\paragraph{Package Diagrams}
+					«FOREACH diagramList AS list-»
+						«LET list.split("\\n") AS s»
+							\paragraph{Figure «s.get(1)-» Description}«s.get(2).escapeLatexString()-» (see Figure~\ref{fig:«s.get(0)-»})
+							\begin{center}
+							\begin{figure}[htbp]
+							\includegraphics[width=\textwidth]{«s.get(0)-»}
+							\caption{«s.get(1)-»}
+							\label{fig:«s.get(0)-»}
+							\end{figure}
+							\end{center}
+						«ENDLET»
+					«ENDFOREACH-»
+				«ENDIF-»
+			«ENDLET-»
+			«EXPAND IncludePackageFigures FOR this.qualifiedName("_").toString()+"/graphics.tex"-»
+			«EXPAND ClassifierDoc FOREACH this.eClassifiers.sortBy(e|e.name)-»
+			\newpage
+		«ELSE»
+			\textbf{Note:} This package does not contain any classes.
+		«ENDIF-»
+	«ENDIF-»
+«ENDDEFINE»
+
+«DEFINE ClassifierDoc FOR ecore::EClassifier-»
+«ENDDEFINE»
+
+«DEFINE ClassifierDoc FOR ecore::EClass-»
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{«IF this.abstract»Abstract «ENDIF»«IF this.interface»Interface «ENDIF»EClass \bfseries \texttt{«this.name.toString().escapeLatexString()»}\normalfont}
+\label{cls:«this.qualifiedName()»} \index{«this.getClassifierID()»}
+	
+	\begin{longdescription}
+		\item[Overview] «EXPAND WriteDoc FOR this-»
+		«IF this.eSuperTypes.size > 0-»
+		\item[ESuper Types of \texttt{«this.name.toString().escapeLatexString()»}] ~
+			\begin{longdescription}
+			«FOREACH this.eSuperTypes AS parentClass -»
+				\item[\texttt{«parentClass.name.toString().escapeLatexString()-»}] «parentClass.see()-»
+			«ENDFOREACH-»
+			\end{longdescription}
+		«ENDIF-»
+		
+	«EXPAND ClassifierInnerDoc FOR this-»
+	
+	\end{longdescription}
+	
+«ENDDEFINE»
+
+«DEFINE ClassifierDoc FOR ecore::EDataType-»
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{EDataType \bfseries \texttt{«this.name.escapeLatexString()»}\normalfont}
+\label{cls:«this.qualifiedName()»} \index{«this.getClassifierID()»}
+
+	\begin{longdescription}
+		\item[Overview] «EXPAND WriteDoc FOR this-»
+		\item[Instance Type Name] «this.instanceTypeName.escapeLatexString()-» 
+		«IF this.defaultValue!=null-»
+		\item[Default Value] «this.defaultValue.toString().escapeLatexString()-»
+		«ENDIF-»
+	\end{longdescription}
+	
+«ENDDEFINE»
+
+«DEFINE ClassifierDoc FOR ecore::EEnum-»
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{EEnumeration \bfseries \texttt{«this.name.toString().escapeLatexString()»}\normalfont}
+\label{cls:«this.qualifiedName()»} \index{«this.fullIndex()»}
+
+	\begin{longdescription}
+		\item[Overview] «EXPAND WriteDoc FOR this-»
+	«EXPAND ClassifierInnerDoc FOR this-»
+	\end{longdescription}
+	
+	«REM»
+		Temporarily removed by Ingo Budde: I think an EEnum does not have inheritance in EMF. 
+	
+		«IF this.generalization.size > 0-»
+			\paragraph{Parent Classes}
+			\begin{itemize}
+			«FOREACH this.generalization AS parentClass SEPARATOR ", "-»
+				\item «parentClass.general.name-» (see Section~\ref{cls:«parentClass.general.qualifiedName()-»} on Page~\pageref{cls:«parentClass.general.qualifiedName()-»}) 
+			«ENDFOREACH-»
+			\end{itemize}
+		«ENDIF-»
+	«ENDREM»
+«ENDDEFINE»
+
+«DEFINE ClassifierInnerDoc FOR EClassifier-»
+«ENDDEFINE»
+
+«DEFINE ClassifierInnerDoc FOR EClass»
+		«IF !this.eAttributes.isEmpty-»
+			\item[\textbf{EAttributes of} \texttt{«this.name.toString().escapeLatexString()»}] ~
+			\begin{longdescription}
+			«EXPAND FeatureDoc FOREACH this.eAttributes.sortBy(e|e.name)-»
+			\end{longdescription}
+		«ENDIF-»
+		«IF !this.eReferences.isEmpty-»
+			\item[\textbf{EReferences of} \texttt{«this.name.toString().escapeLatexString()»}] ~
+			\begin{longdescription}
+			«EXPAND FeatureDoc FOREACH this.eReferences.sortBy(e|e.name)-»
+			\end{longdescription}
+		«ENDIF-»
+		«IF !this.eOperations.isEmpty-»
+			\item[\textbf{EOperations of} \texttt{«this.name.toString().escapeLatexString()»}] ~
+			\begin{longdescription}
+			«EXPAND OperationDoc FOREACH this.eOperations.sortBy(e|e.name)-»
+			\end{longdescription}
+		«ENDIF-»
+		«IF !this.getOCLAnnotations().isEmpty-»
+			\item[\textbf{OCL Constraints of} \texttt{«this.name.toString().escapeLatexString()»}] ~
+			\begin{longdescription}
+			«EXPAND AnnotationDoc FOREACH this.getOCLAnnotations()-»
+			\end{longdescription}
+		«ENDIF-»
+«ENDDEFINE»
+
+«DEFINE ClassifierInnerDoc FOR EEnum»
+	«IF !this.eLiterals.isEmpty-»
+		\item[\textbf{ELiterals of} \texttt{«this.name.toString().escapeLatexString()»}] ~
+		\begin{longdescription}
+			«EXPAND FeatureDoc(this) FOREACH this.enumLiteralValues()-»
+		\end{longdescription}
+	«ENDIF-»
+«ENDDEFINE»
+
+«DEFINE FeatureDoc FOR ecore::EStructuralFeature-»
+	\item[\texttt{«IF this.derived.toBoolean()-»/«ENDIF-»«this.name.toString().escapeLatexString()-» : «this.eType.typeName().toString().escapeLatexString()» «EXPAND Cardinality FOR this-»}] ~
+	«this.eType.see()»
+	
+	\nopagebreak
+	«EXPAND WriteDoc FOR this-»
+	«IF !this.getOCLAnnotations().isEmpty-»
+		\begin{longdescription}
+		«EXPAND AnnotationDoc FOREACH this.getOCLAnnotations().details-»
+		\end{longdescription}
+	«ENDIF-»
+«ENDDEFINE»
+
+«DEFINE OperationDoc FOR ecore::EOperation-»
+	
+	«IF this.eType == null-»
+	\item[\texttt{«this.name.toString().escapeLatexString()-» : Void «EXPAND Cardinality FOR this-»}] ~
+	«ELSE-»
+		\item[\texttt{«this.name.toString().escapeLatexString()-» : «this.eType.typeName().toString().escapeLatexString()» «EXPAND Cardinality FOR this-»}] ~
+		«this.eType.see()»
+		\nopagebreak
+	«ENDIF-»
+	
+	«EXPAND WriteDoc FOR this-»
+	
+	«IF !this.eParameters.isEmpty-»
+		\begin{longdescription}
+		\item[\textit{EParameters}]~
+			\begin{longdescription}
+			«FOREACH this.eParameters AS p-»
+				\item[\texttt{«p.name.toString().escapeLatexString()-» : «p.eType.typeName().toString()» «EXPAND Cardinality FOR p-»}] ~
+				«EXPAND WriteDoc FOR p-»
+				«IF !p.getOCLAnnotations().isEmpty-»
+					\begin{longdescription}		
+					«EXPAND AnnotationDoc FOREACH p.getOCLAnnotations().details-»
+					\end{longdescription}
+				«ENDIF-»
+			«ENDFOREACH-»
+			\end{longdescription}
+		\end{longdescription}
+	«ENDIF-»
+	
+	«IF !this.eAnnotations.isEmpty-»
+		«FOREACH this.eAnnotations AS a-»
+			«IF a.source.toString().escapeLatexString() == "http://www.eclipse.org/emf/2002/GenModel"-»
+				«FOREACH a.details AS d-»
+					«IF d.key.toString() == "body"-»
+			\begin{longdescription}
+			\item[\textit{body (in Java)}] ~
+			
+			\begin{lstlisting}[breaklines=true,language=Java]
+« d.value.toString().escapeLatexString() -»
+			\end{lstlisting}
+			
+			\end{longdescription}
+					«ENDIF-»
+				«ENDFOREACH-»
+			«ENDIF-»
+		«ENDFOREACH-»
+	«ENDIF-»
+	
+«ENDDEFINE»
+
+«DEFINE FeatureDoc(ecore::EEnum enum) FOR Integer»
+\item[\texttt{«enum.enumLiteralName(this).escapeLatexString()-» = «this»}] ~
+\nopagebreak
+«EXPAND WriteDoc FOREACH enum.enumAnnotations(this)-»
+«ENDDEFINE» 
+
+«DEFINE Cardinality FOR ecore::ETypedElement-»
+\symbol{"5B}«this.lowerBound.toInt()»..«(upperBound.toInt() < 0 ? "$*$" : upperBound.toInt())-»\symbol{"5D}
+«ENDDEFINE»
+
+«DEFINE AnnotationDoc FOR ecore::EAnnotation-»
+	«EXPAND AnnotationDoc FOREACH this.details-»
+«ENDDEFINE»
+
+«DEFINE AnnotationDoc FOR ecore::EStringToStringMapEntry-»
+	\item[\small\textit{«this.key.toString().escapeLatexString()-»}] ~ 
+	\nopagebreak
+	«IF this.key.toString().compareTo("derivation") == 0 -»
+		\begin{lstlisting}[language=OCL, breaklines=true]
+«this.value.escapeLatexString()-»
+		\end{lstlisting}
+	«ELSE»
+		\begin{lstlisting}[breaklines=true]
+«this.value.escapeLatexString()-»
+		\end{lstlisting}
+	«ENDIF-»
+«ENDDEFINE»
+
+«DEFINE WriteDoc FOR ecore::EModelElement-»
+		«IF this.getEAnnotation("http://www.eclipse.org/emf/2002/GenModel")==null»
+			~\todoo{Documentation missing (GenModel is not defined)}	
+		«ELSE»
+				«EXPAND WriteDoc FOR this.getEAnnotation("http://www.eclipse.org/emf/2002/GenModel")-»
+		«ENDIF-»
+«ENDDEFINE»
+
+«DEFINE WriteDoc FOR ecore::EAnnotation»
+
+	«IF this.getDocumentation()==null || this.getDocumentation().isEmpty-»
+		~\todoo{Documentation missing (Documentation is not defined)}
+	«ELSE»
+
+	«FOREACH this.getDocumentation() AS s-»
+		«s.toString().escapeLatexString()-»
+	«ENDFOREACH-»
+	
+	«ENDIF-»
+«ENDDEFINE»
+
+«DEFINE IncludePackageFigures FOR String-»
+	% Here a manual modifiable file is included: «this»
+	\input{«((String) GLOBALVAR figurepath)»/«this.replaceAll(".tex","")»}
+	«FILE this PACKAGEFIGURES-»
+		%
+		% This file has been generated by Ecore2LaTeX written in MWE Xpand
+		% It is save to alter this file as it WILL NOT be overwritten.
+		% The file is included by the main latex file in the appropriate place, not further
+		% actions are required
+		%
+		~\missingfigure{Package Diagram missing}
+	«ENDFILE-»
+«ENDDEFINE»

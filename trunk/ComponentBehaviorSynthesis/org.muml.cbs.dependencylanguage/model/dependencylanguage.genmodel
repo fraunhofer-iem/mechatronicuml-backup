@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.muml.cbs.dependencylanguage/src" modelPluginID="org.muml.cbs.dependencylanguage"
+    modelName="Dependencylanguage" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
+    usedGenPackages="../../org.muml.pim.actionlanguage/model/actionlanguage.genmodel#//actionlanguage ../../org.muml.core/model/core.genmodel#//core ../../org.muml.pim/model/pim.genmodel#//pim"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>dependencylanguage.ecore</foreignModel>
+  <genPackages prefix="Dependencylanguage" basePackage="org.muml.cbs" disposableProviderFactory="true"
+      ecorePackage="dependencylanguage.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="dependencylanguage.ecore#//AssignmentDirection">
+      <genEnumLiterals ecoreEnumLiteral="dependencylanguage.ecore#//AssignmentDirection/PUSH"/>
+      <genEnumLiterals ecoreEnumLiteral="dependencylanguage.ecore#//AssignmentDirection/PULL"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="dependencylanguage.ecore#//StateStatusKind">
+      <genEnumLiterals ecoreEnumLiteral="dependencylanguage.ecore#//StateStatusKind/UNDEFIEND"/>
+      <genEnumLiterals ecoreEnumLiteral="dependencylanguage.ecore#//StateStatusKind/ACTIVE"/>
+      <genEnumLiterals ecoreEnumLiteral="dependencylanguage.ecore#//StateStatusKind/INACTIVE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="dependencylanguage.ecore#//StateEventKind">
+      <genEnumLiterals ecoreEnumLiteral="dependencylanguage.ecore#//StateEventKind/UNDEFIEND"/>
+      <genEnumLiterals ecoreEnumLiteral="dependencylanguage.ecore#//StateEventKind/ENTRY"/>
+      <genEnumLiterals ecoreEnumLiteral="dependencylanguage.ecore#//StateEventKind/EXIT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="dependencylanguage.ecore#//MessageEventKind">
+      <genEnumLiterals ecoreEnumLiteral="dependencylanguage.ecore#//MessageEventKind/UNDEFIEND"/>
+      <genEnumLiterals ecoreEnumLiteral="dependencylanguage.ecore#//MessageEventKind/CONSUMING"/>
+      <genEnumLiterals ecoreEnumLiteral="dependencylanguage.ecore#//MessageEventKind/SENDING"/>
+    </genEnums>
+    <genClasses ecoreClass="dependencylanguage.ecore#//SynthesizableBehavior">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//SynthesizableBehavior/dependencyModel"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute dependencylanguage.ecore#//SynthesizableBehavior/name"/>
+    </genClasses>
+    <genClasses ecoreClass="dependencylanguage.ecore#//DependencyModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//DependencyModel/dependencies"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="dependencylanguage.ecore#//Dependency"/>
+    <genClasses ecoreClass="dependencylanguage.ecore#//Synchronization">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//Synchronization/sendingEvents"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//Synchronization/receivingEvents"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dependencylanguage.ecore#//Synchronization/channelName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//Synchronization/selectorType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//Synchronization/generalSelectorExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="dependencylanguage.ecore#//ForbiddenStateCombination">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//ForbiddenStateCombination/states"/>
+    </genClasses>
+    <genClasses ecoreClass="dependencylanguage.ecore#//ClockMerge">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//ClockMerge/clocks"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dependencylanguage.ecore#//ClockMerge/clockName"/>
+    </genClasses>
+    <genClasses ecoreClass="dependencylanguage.ecore#//DataMerge">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//DataMerge/variables"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dependencylanguage.ecore#//DataMerge/variableName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//DataMerge/port"/>
+    </genClasses>
+    <genClasses ecoreClass="dependencylanguage.ecore#//ConditionalDependency">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//ConditionalDependency/event"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//ConditionalDependency/condition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//ConditionalDependency/effects"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="dependencylanguage.ecore#//Effect"/>
+    <genClasses ecoreClass="dependencylanguage.ecore#//EnableDisableEffect">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//EnableDisableEffect/event"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dependencylanguage.ecore#//EnableDisableEffect/isEnable"/>
+    </genClasses>
+    <genClasses ecoreClass="dependencylanguage.ecore#//ClockResetEffect">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//ClockResetEffect/clocks"/>
+    </genClasses>
+    <genClasses ecoreClass="dependencylanguage.ecore#//DataAssignmentEffect">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dependencylanguage.ecore#//DataAssignmentEffect/direction"/>
+    </genClasses>
+    <genClasses ecoreClass="dependencylanguage.ecore#//BoundedActiveState">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//BoundedActiveState/states"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//BoundedActiveState/constraint"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="dependencylanguage.ecore#//Condition"/>
+    <genClasses ecoreClass="dependencylanguage.ecore#//StateStatusCondition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//StateStatusCondition/states"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dependencylanguage.ecore#//StateStatusCondition/kind"/>
+    </genClasses>
+    <genClasses ecoreClass="dependencylanguage.ecore#//EventConstrainedIntervalCondition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//EventConstrainedIntervalCondition/fromEvent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dependencylanguage.ecore#//EventConstrainedIntervalCondition/initialEnabled"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//EventConstrainedIntervalCondition/untilEvent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dependencylanguage.ecore#//EventConstrainedIntervalCondition/enabledInfite"/>
+    </genClasses>
+    <genClasses ecoreClass="dependencylanguage.ecore#//ClockCondition"/>
+    <genClasses ecoreClass="dependencylanguage.ecore#//AuxiliaryClockCondition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//AuxiliaryClockCondition/event"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//AuxiliaryClockCondition/bound"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dependencylanguage.ecore#//AuxiliaryClockCondition/operator"/>
+    </genClasses>
+    <genClasses ecoreClass="dependencylanguage.ecore#//HybridClockCondition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//HybridClockCondition/condition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//HybridClockCondition/bound"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dependencylanguage.ecore#//HybridClockCondition/operator"/>
+    </genClasses>
+    <genClasses ecoreClass="dependencylanguage.ecore#//BasicClockCondition"/>
+    <genClasses ecoreClass="dependencylanguage.ecore#//DataCondition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//DataCondition/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="dependencylanguage.ecore#//CompositionCondition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//CompositionCondition/leftCondition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dependencylanguage.ecore#//CompositionCondition/kind"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//CompositionCondition/rightCondition"/>
+    </genClasses>
+    <genClasses ecoreClass="dependencylanguage.ecore#//Event"/>
+    <genClasses image="false" ecoreClass="dependencylanguage.ecore#//SimpleEvent"/>
+    <genClasses ecoreClass="dependencylanguage.ecore#//CompositionEvent">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//CompositionEvent/leftEvent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dependencylanguage.ecore#//CompositionEvent/kind"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//CompositionEvent/rightEvent"/>
+    </genClasses>
+    <genClasses ecoreClass="dependencylanguage.ecore#//CountedEvent">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//CountedEvent/event"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dependencylanguage.ecore#//CountedEvent/counter"/>
+    </genClasses>
+    <genClasses ecoreClass="dependencylanguage.ecore#//DelayedEvent">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//DelayedEvent/delay"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//DelayedEvent/event"/>
+    </genClasses>
+    <genClasses ecoreClass="dependencylanguage.ecore#//SynchronizationEvent">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//SynchronizationEvent/selectorExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//SynchronizationEvent/event"/>
+    </genClasses>
+    <genClasses ecoreClass="dependencylanguage.ecore#//TransitionEvent">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//TransitionEvent/transition"/>
+    </genClasses>
+    <genClasses ecoreClass="dependencylanguage.ecore#//StateEvent">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//StateEvent/state"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dependencylanguage.ecore#//StateEvent/kind"/>
+    </genClasses>
+    <genClasses ecoreClass="dependencylanguage.ecore#//StateCombinationEvent">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//StateCombinationEvent/states"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dependencylanguage.ecore#//StateCombinationEvent/kind"/>
+    </genClasses>
+    <genClasses ecoreClass="dependencylanguage.ecore#//MessageEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dependencylanguage.ecore#//MessageEvent/kind"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//MessageEvent/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//MessageEvent/port"/>
+    </genClasses>
+    <genClasses ecoreClass="dependencylanguage.ecore#//TriggerMessage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//TriggerMessage/effects"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//TriggerMessage/messageEvent"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

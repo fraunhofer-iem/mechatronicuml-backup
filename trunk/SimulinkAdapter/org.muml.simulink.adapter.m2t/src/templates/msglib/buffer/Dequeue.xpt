@@ -1,0 +1,10 @@
+«IMPORT simulink»
+«IMPORT simulink::stateflow»
+«IMPORT simulink::msglib»
+«IMPORT simulink::msglib::buffer»
+
+«EXTENSION extensions::msglib::buffer::Dequeue»
+
+«DEFINE dequeue FOR Dequeue-»
+«EXPAND templates::stateflow::EmbeddedFunction::generic FOR this.generateContent()-»
+«ENDDEFINE»

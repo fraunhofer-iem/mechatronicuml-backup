@@ -1,0 +1,47 @@
+import simulink::stateflow;
+
+// event [condition]{condition_action}/transition_action
+String getLabelString(Transition transition):
+	transition.formattedEvent() + 
+	transition.formattedCondition() +
+	transition.linebreakAfterCondition() +
+	transition.formattedConditionAction()
+	;
+	
+String formattedEvent(Transition transition):
+	if Event.isInstance(transition.event) then
+		transition.event.name
+	else
+		"";
+
+String formattedCondition(Transition transition):
+	if !transition.guard.isEmpty then
+		"[" + transition.guard.listCondition() + "]"
+	else
+		"";
+
+String formattedConditionAction(Transition transition):
+	if !transition.action.isEmpty then
+		"{" + transition.action.listConditionAction() + "}" 
+	else
+		"";
+
+String linebreakAfterCondition(Transition transition):
+	if !transition.guard.isEmpty && !transition.action.isEmpty then
+		"\\n"
+	else
+		"";
+		
+String listConditionAction(List[Action] actions):
+	if actions.size > 0 then
+		actions.first().expression + "; " + actions.withoutFirst().listConditionAction()
+	else
+		"";
+		
+String listCondition(List[Action] actions):
+	if actions.size > 2 then
+		"(" + actions.first().expression + ") && " + actions.withoutFirst().listCondition()
+	else if actions.size == 2 then
+		"(" + actions.first().expression + ") && (" + actions.last().expression + ")"
+	else
+		actions.first().expression;

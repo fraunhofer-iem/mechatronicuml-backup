@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+
+ <extension-point id="expressionLanguage" name="Expression Language" schema="schema/expressionLanguage.exsd"/>
+
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated core -->
+      <package
+            uri="http://www.muml.org/core/1.0.0"
+            class="org.muml.core.CorePackage"
+            genModel="model/core.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated core -->
+      <package
+            uri="http://www.muml.org/core/expressions/1.0.0"
+            class="org.muml.core.expressions.ExpressionsPackage"
+            genModel="model/core.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated core -->
+      <package
+            uri="http://www.muml.org/core/expressions/common/1.0.0"
+            class="org.muml.core.expressions.common.CommonExpressionsPackage"
+            genModel="model/core.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated core -->
+      <package
+            uri="http://www.muml.org/modelinstance/1.0.0"
+            class="org.muml.core.modelinstance.ModelinstancePackage"
+            genModel="model/core.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated core -->
+      <parser
+            type="muml"
+            class="org.muml.core.modelinstance.util.ModelinstanceResourceFactoryImpl"/>
+   </extension>
+
+<extension-point id="modelelementcategory" name="modelelementcategory" schema="schema/modelelementcategory.exsd"/>
+<extension-point id="version" name="version" schema="schema/version.exsd"/>
+
+
+   
+</plugin>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.muml:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.muml="http://www.muml.org/ape/1.0.0" xmi:id="_Rl70IM1gEeSIgPDefa6ZBw" defaultTab="_Rl8bMc1gEeSIgPDefa6ZBw" contributorId="org.muml.ape.contributor">
+  <reconciler xmi:id="_Rl70Ic1gEeSIgPDefa6ZBw">
+    <customTransformations xmi:id="_Rl70Is1gEeSIgPDefa6ZBw" uri="/org.muml.pim.common/transformations/muml-propsheet.qvto"/>
+  </reconciler>
+  <genModel href="ontology.genmodel#/"/>
+  <referencedGenerators href="../../org.muml.core/model/core.propsheet#_i_I4kOHNEeS5Putgio2lkg"/>
+  <referencedGenerators href="../../org.muml.pim/model/pim.propsheet#_VZIdoMwbEeSjx7OWZCcdLw"/>
+  <plugin xmi:id="_Rl8bMM1gEeSIgPDefa6ZBw" id="org.muml.ontology.edit.properties" name="Ontology Properties" vendor="Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT " version="1.0.0.qualifier">
+    <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
+    <requiredBundles>org.eclipse.core.runtime</requiredBundles>
+    <requiredBundles>org.eclipse.emf.edit</requiredBundles>
+    <requiredBundles>org.eclipse.ui</requiredBundles>
+    <requiredBundles>org.eclipse.core.resources</requiredBundles>
+    <requiredBundles>org.eclipse.jface</requiredBundles>
+    <requiredBundles>org.muml.ontology.edit</requiredBundles>
+    <requiredBundles>org.muml.ape.runtime</requiredBundles>
+    <requiredBundles>org.muml.ontology</requiredBundles>
+    <requiredBundles>org.muml.core.edit</requiredBundles>
+    <requiredBundles>org.muml.core.edit.properties</requiredBundles>
+    <requiredBundles>org.muml.pim.edit</requiredBundles>
+    <requiredBundles>org.muml.pim.edit.properties</requiredBundles>
+    <requiredBundles>org.muml.core.modelinstance.edit</requiredBundles>
+    <requiredBundles>org.muml.core.modelinstance.edit.properties</requiredBundles>
+    <requiredBundles>org.muml.external.ontology.owlapi</requiredBundles>
+    <requiredBundles>org.muml.pim.common</requiredBundles>
+  </plugin>
+  <tabs xmi:id="_Rl8bMc1gEeSIgPDefa6ZBw" id="property.tab.ontology" name="Ontology" afterTab=""/>
+  <packages xmi:id="_Rl8bMs1gEeSIgPDefa6ZBw">
+    <genPackage href="ontology.genmodel#//ontology"/>
+    <classes xmi:id="_Rl8bM81gEeSIgPDefa6ZBw">
+      <genClass href="ontology.genmodel#//ontology/OntologyExtension"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_Rl9CQM1gEeSIgPDefa6ZBw" tab="_Rl8bMc1gEeSIgPDefa6ZBw" tooltip="" reconcile="false" initializeOCLExpression="">
+        <genFeature href="ontology.genmodel#//ontology/OntologyExtension/ontologyReference"/>
+        <editor xsi:type="org.muml:CustomPropertyEditor" xmi:id="_Rl9CQc1gEeSIgPDefa6ZBw" fullyQualifiedClassName="org.muml.ontology.edit.properties.custom.OntologyPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_Rl9CQs1gEeSIgPDefa6ZBw" tooltip="" reconcile="false" initializeOCLExpression="">
+        <genFeature href="../../org.muml.core/model/core.genmodel#//core/Extension/extendableBase"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_OYIeHNEeS5Putgio2lkg"/>
+        <creationOppositeConstraint xmi:id="_Rl9CQ81gEeSIgPDefa6ZBw">
+          <filters xsi:type="org.muml:OCLFilter" xmi:id="_Rl9CRM1gEeSIgPDefa6ZBw" expression="self.oclIsKindOf(pim::component::Port) or self.oclIsKindOf(pim::component::Component) or self.oclIsKindOf(pim::component::ComponentPart) or self.oclIsKindOf(pim::component::PortPart)"/>
+        </creationOppositeConstraint>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNUeHNEeS5Putgio2lkg"/>
+    </classes>
+  </packages>
+</org.muml:PropertyGenerator>

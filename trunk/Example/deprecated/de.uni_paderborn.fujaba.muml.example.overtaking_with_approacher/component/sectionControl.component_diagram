@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_PugQharGEeScJ-0YDJS4Tg" type="Component" name="sectionControl.component_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_PugQh6rGEeScJ-0YDJS4Tg" type="2006" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_PupacKrGEeScJ-0YDJS4Tg" type="5028"/>
+    <children xmi:type="notation:Shape" xmi:id="_g-X5EMJwEeSFFPWsf1QKow" type="3010" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_g-X5EsJwEeSFFPWsf1QKow" type="5012">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g-X5E8JwEeSFFPWsf1QKow" x="-108" y="30"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_g-X5FMJwEeSFFPWsf1QKow" type="5025">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g-X5FcJwEeSFFPWsf1QKow" x="-93" y="-30"/>
+      </children>
+      <element xmi:type="component:DiscretePort" href="../fraunhoferDemo.fujaba#_tKp0oJRNEeSZM-zEIRk3lw"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_g-X5EcJwEeSFFPWsf1QKow" x="-12" y="120"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_g-X5FsJwEeSFFPWsf1QKow" type="3010" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_g-X5GMJwEeSFFPWsf1QKow" type="5012">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g-X5GcJwEeSFFPWsf1QKow" x="26" y="-15"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_g-X5GsJwEeSFFPWsf1QKow" type="5025">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g-X5G8JwEeSFFPWsf1QKow" x="41" y="30"/>
+      </children>
+      <element xmi:type="component:DiscretePort" href="../fraunhoferDemo.fujaba#_tjyGUJRNEeSZM-zEIRk3lw"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_g-X5F8JwEeSFFPWsf1QKow" x="559" y="90"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_g-X5HMJwEeSFFPWsf1QKow" type="3010" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_g-X5HsJwEeSFFPWsf1QKow" type="5012">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g-X5H8JwEeSFFPWsf1QKow" y="5"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_g-X5IMJwEeSFFPWsf1QKow" type="5025">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g-X5IcJwEeSFFPWsf1QKow" y="5"/>
+      </children>
+      <element xmi:type="component:DiscretePort" href="../fraunhoferDemo.fujaba#_uCcYQJRNEeSZM-zEIRk3lw"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_g-X5HcJwEeSFFPWsf1QKow" x="60" y="184"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_g-X5IsJwEeSFFPWsf1QKow" type="3010" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_g-X5JMJwEeSFFPWsf1QKow" type="5012">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g-X5JcJwEeSFFPWsf1QKow" x="-45" y="26"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_g-X5JsJwEeSFFPWsf1QKow" type="5025">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g-X5J8JwEeSFFPWsf1QKow" y="5"/>
+      </children>
+      <element xmi:type="component:DiscretePort" href="../fraunhoferDemo.fujaba#_oEiLwJ6HEeSNj-oH_1Kb-Q"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_g-X5I8JwEeSFFPWsf1QKow" x="315" y="184"/>
+    </children>
+    <element xmi:type="component:StaticAtomicComponent" href="../fraunhoferDemo.fujaba#_LUR84JOZEeSZM-zEIRk3lw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PugQiKrGEeScJ-0YDJS4Tg" x="300" y="60" width="421" height="196"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_PugQhqrGEeScJ-0YDJS4Tg"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../fraunhoferDemo.fujaba#_FB0TTZJ7EeSSMde45fnrcg"/>
+</notation:Diagram>

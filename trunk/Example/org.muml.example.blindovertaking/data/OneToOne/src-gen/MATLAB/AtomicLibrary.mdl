@@ -1,0 +1,3402 @@
+Library {
+  Name			  "AtomicLibrary"
+  MaxMDLFileLineLength	  120
+  PostLoadFcn		  "PacketBusGenerator"
+  LibraryType "BlockLibrary"    Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+    }  
+    PropName		    "ConfigurationSets"
+  }
+  
+  BlockDefaults {
+  }
+  AnnotationDefaults {
+  }
+  LineDefaults {
+  }
+  BlockParameterDefaults {
+  }
+  System {
+    Name		    "AtomicLibrary"    
+	
+  Block {
+    BlockType SubSystem
+    Name "RedSw"
+    SID				2
+    Ports [5, 2, 0, 0]
+    Tag		"id=_73wJYPUnEeOqvInL61-gjw"
+  Position "[20, 20, 270, 370]"
+	  System {
+	  	Name  "RedSw"
+	  	Open			off 	  	
+	  	
+  Block {
+    BlockType Inport
+    Name "clockSignal"
+    SID				3
+    Tag		"id=_7356YvUnEeOqvInL61-gjw"
+    Port "1"
+
+
+      DataType		      "auto"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: auto"
+
+  Position "[190, 30, 220, 60]"
+  }
+
+  Block {
+    BlockType Inport
+    Name "distance"
+    SID				4
+    Tag		"id=_77xGsPUnEeOqvInL61-gjw"
+    Port "2"
+
+
+
+      DataType		      "double"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "double"
+
+  Position "[60, 90, 90, 120]"
+  }
+
+  Block {
+    BlockType Inport
+    Name "overtaker_recv"
+    SID				5
+    Tag		"id=_780PkfUnEeOqvInL61-gjw"
+    Port "3"
+
+
+      DataType		      "auto"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: auto"
+
+    UseBusObject 	"on"
+    BusObject		"PacketBus"	
+  Position "[190, 300, 220, 330]"
+  }
+
+  Block {
+    BlockType Inport
+    Name "overtaker_net_address"
+    SID				6
+    Tag		"id=_780Pk_UnEeOqvInL61-gjw"
+    Port "4"
+
+
+
+      DataType		      "uint8"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "uint8"
+
+  Position "[190, 360, 220, 390]"
+  }
+
+  Block {
+    BlockType Inport
+    Name "overtaker_receiver_net_address"
+    SID				7
+    Tag		"id=_780PlPUnEeOqvInL61-gjw"
+    Port "5"
+
+
+
+      DataType		      "uint8"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "uint8"
+
+  Position "[190, 420, 220, 450]"
+  }
+	  	
+  Block {
+    BlockType Outport
+    Name "velocity"
+    SID				8
+    Tag		"id=_77VB0vUnEeOqvInL61-gjw"
+    Port "1"
+
+
+
+      DataType		      "double"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "double"
+
+  Position "[860, 30, 890, 60]"
+  }
+
+  Block {
+    BlockType Outport
+    Name "overtaker_send"
+    SID				9
+    Tag		"id=_780PkPUnEeOqvInL61-gjw"
+    Port "2"
+
+
+      DataType		      "auto"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: auto"
+
+    UseBusObject 	"on"
+    BusObject		"PacketBus"	
+  Position "[860, 300, 890, 330]"
+  }
+	  	
+
+
+Block {
+      BlockType		      SubSystem
+      Name		      	"RedSw_Statechart"  
+      SID				10
+      Ports				[6, 5]      
+	  Position		[250, 30, 800, 240]
+      Tag				"id=_73m_cPUnEeOqvInL61-gjw"   
+      MaskHideContents	      off
+      MaskType		      "Stateflow"
+      MaskDescription	      "Stateflow diagram"
+      MaskDisplay	      "plot(sf('Private','sfblk','xIcon'),sf('Private','sfblk','yIcon'));text(0.5,0,sf('Private', 'sfblk', 'tIcon'),'HorizontalAl','Center','VerticalAl','Bottom');"
+      MaskSelfModifiable      on
+      MaskIconFrame	      off
+      MaskIconOpaque	      off
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"            
+      System {
+		Name			"RedSw_Statechart"	
+		SIDHighWatermark	    10
+		Block {
+			BlockType		  Inport
+			Name			  "clockSignal"
+			Port			  "1"
+			IconDisplay		  "Port number"
+		}
+		Block {
+			BlockType		  Inport
+			Name			  "distance"
+			Port			  "2"
+			IconDisplay		  "Port number"
+		}
+		Block {
+			BlockType		  Inport
+			Name			  "overtakerReadIn"
+			Port			  "3"
+			IconDisplay		  "Port number"
+		}
+		Block {
+			BlockType		  Inport
+			Name			  "overtakerParamReadIn"
+			Port			  "4"
+			IconDisplay		  "Port number"
+		}
+		Block {
+			BlockType		  Inport
+			Name			  "overtakerWriteIn"
+			Port			  "5"
+			IconDisplay		  "Port number"
+		}
+		Block {
+			BlockType		  Inport
+			Name			  "overtakerParamWriteIn"
+			Port			  "6"
+			IconDisplay		  "Port number"
+		}
+
+			
+		Block {
+	  		BlockType		  Demux
+	  		Name			  " Demux "
+	  		Ports		      [1, 1]
+	  		Outputs		  "1"
+	  		SID               11
+		}
+		Block {
+	  		BlockType		  "S-Function"
+	  		Name			  " SFunction "
+	  		SID               12
+	  		Tag			  "Stateflow S-Function AtomicLibrary 2"
+	  		Ports			  [6, 6]
+	  		FunctionName		  "sf_sfun"
+	  		PortCounts		  "[6 6]"
+			Port {
+				PortNumber		2
+				Name			"velocity"
+				RTWStorageClass		"Auto"
+				DataLoggingNameMode	"SignalName"			
+			}
+			Port {
+				PortNumber		3
+				Name			"overtakerReadOut"
+				RTWStorageClass		"Auto"
+				DataLoggingNameMode	"SignalName"			
+			}
+			Port {
+				PortNumber		4
+				Name			"overtakerParamReadOut"
+				RTWStorageClass		"Auto"
+				DataLoggingNameMode	"SignalName"			
+			}
+			Port {
+				PortNumber		5
+				Name			"overtakerWriteOut"
+				RTWStorageClass		"Auto"
+				DataLoggingNameMode	"SignalName"			
+			}
+			Port {
+				PortNumber		6
+				Name			"overtakerParamWriteOut"
+				RTWStorageClass		"Auto"
+				DataLoggingNameMode	"SignalName"			
+			}
+
+		}
+		Block {
+	  		BlockType		  Terminator
+	  		Name			  " Terminator "
+	  		SID               13
+		}
+
+  Block {
+    BlockType Outport
+    Name "velocity"
+    SID				14
+    Tag		"id=_77VB0PUnEeOqvInL61-gjw"
+    Port "1"
+
+
+
+      DataType		      "double"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "double"
+
+  }
+
+  Block {
+    BlockType Outport
+    Name "overtakerReadOut"
+    SID				15
+    Tag		"id=_7-cnRPUnEeOqvInL61-gjw"
+    Port "2"
+
+
+      DataType		      "auto"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: auto"
+
+  }
+
+  Block {
+    BlockType Outport
+    Name "overtakerParamReadOut"
+    SID				16
+    Tag		"id=_7-cnRfUnEeOqvInL61-gjw"
+    Port "3"
+
+
+      DataType		      "auto"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: auto"
+
+  }
+
+  Block {
+    BlockType Outport
+    Name "overtakerWriteOut"
+    SID				17
+    Tag		"id=_7-cnRvUnEeOqvInL61-gjw"
+    Port "4"
+
+
+      DataType		      "auto"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: auto"
+
+  }
+
+  Block {
+    BlockType Outport
+    Name "overtakerParamWriteOut"
+    SID				18
+    Tag		"id=_7-cnR_UnEeOqvInL61-gjw"
+    Port "5"
+
+
+      DataType		      "auto"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: auto"
+
+  }
+		Line {
+	  		SrcBlock		  " SFunction "
+	  		SrcPort		  1
+	  		DstBlock		  " Demux "
+	  		DstPort		  1
+		}
+		Line {
+	  		SrcBlock		  "clockSignal"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  1
+		}
+		Line {
+	  		SrcBlock		  "distance"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  2
+		}
+		Line {
+	  		SrcBlock		  "overtakerReadIn"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  3
+		}
+		Line {
+	  		SrcBlock		  "overtakerParamReadIn"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  4
+		}
+		Line {
+	  		SrcBlock		  "overtakerWriteIn"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  5
+		}
+		Line {
+	  		SrcBlock		  "overtakerParamWriteIn"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  6
+		}
+		Line {
+			Name		  	  "velocity"
+	  		SrcBlock		  " SFunction "
+	  		SrcPort		  	2
+	  		DstBlock		  "velocity"
+	  		DstPort		  		1
+		}
+		Line {
+			Name		  	  "overtakerReadOut"
+	  		SrcBlock		  " SFunction "
+	  		SrcPort		  	3
+	  		DstBlock		  "overtakerReadOut"
+	  		DstPort		  		1
+		}
+		Line {
+			Name		  	  "overtakerParamReadOut"
+	  		SrcBlock		  " SFunction "
+	  		SrcPort		  	4
+	  		DstBlock		  "overtakerParamReadOut"
+	  		DstPort		  		1
+		}
+		Line {
+			Name		  	  "overtakerWriteOut"
+	  		SrcBlock		  " SFunction "
+	  		SrcPort		  	5
+	  		DstBlock		  "overtakerWriteOut"
+	  		DstPort		  		1
+		}
+		Line {
+			Name		  	  "overtakerParamWriteOut"
+	  		SrcBlock		  " SFunction "
+	  		SrcPort		  	6
+	  		DstBlock		  "overtakerParamWriteOut"
+	  		DstPort		  		1
+		}
+		Line {
+	  		SrcBlock		  " Demux "
+	  		SrcPort		  1
+	  		DstBlock		  " Terminator "
+	  		DstPort		  1
+		}
+	}
+}
+
+
+  Block {
+    BlockType 			ZeroOrderHold
+    Name 				"distance_ZeroOrderHold"
+    Tag					"id=_7763sPUnEeOqvInL61-gjw"
+    SID				    19 
+    SampleTime			"30*0.001*1"
+  Position "[160, 90, 190, 120]"
+  }
+
+
+
+
+	Block {
+	  BlockType		  Reference
+	  Name			  "Link Layer overtaker"
+	  SID			  20
+	  Ports			  [9, 5]
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "LinkLayer5/Link Layer UDP"
+	  SourceType		  "SubSystem"
+	  ShowPortLabels	  "FromPortIcon"
+  Position "[250, 300, 800, 700]"
+
+	  DelayMin "1*1000"
+	  DelayMax "1*1000"
+	  MessageLossProbability "0"	
+	  BufferOverflowPossible "on"
+	  SourceBufferSize "5"
+	  MessageMapping "[1 1; 2 1; 3 1; 4 1; 5 1]"  	  
+	}	  	  
+  Line {
+    SrcBlock "clockSignal"
+    SrcPort 1
+    Tag				"id=_7356YfUnEeOqvInL61-gjw"
+    DstBlock "RedSw_Statechart"
+    DstPort 1
+  }
+  Line {
+    SrcBlock "RedSw_Statechart"
+    SrcPort 1
+    Tag				"id=_77VB0fUnEeOqvInL61-gjw"
+    DstBlock "velocity"
+    DstPort 1
+  }
+  Line {
+    SrcBlock "distance"
+    SrcPort 1
+    Tag				"id=_7763sfUnEeOqvInL61-gjw"
+    DstBlock "distance_ZeroOrderHold"
+    DstPort 1
+  }
+  Line {
+    SrcBlock "distance_ZeroOrderHold"
+    SrcPort 1
+    Tag				"id=_7763svUnEeOqvInL61-gjw"
+    DstBlock "RedSw_Statechart"
+    DstPort 2
+  }
+  Line {
+    SrcBlock "Link Layer overtaker"
+    SrcPort 1
+    Tag				"id=_78qekPUnEeOqvInL61-gjw"
+    DstBlock "overtaker_send"
+    DstPort 1
+  }
+  Line {
+    SrcBlock "overtaker_recv"
+    SrcPort 1
+    Tag				"id=_78qekfUnEeOqvInL61-gjw"
+    DstBlock "Link Layer overtaker"
+    DstPort 1
+  }
+  Line {
+    SrcBlock "overtaker_net_address"
+    SrcPort 1
+    Tag				"id=_780PlfUnEeOqvInL61-gjw"
+    DstBlock "Link Layer overtaker"
+    DstPort 2
+  }
+  Line {
+    SrcBlock "overtaker_receiver_net_address"
+    SrcPort 1
+    Tag				"id=_780PlvUnEeOqvInL61-gjw"
+    DstBlock "Link Layer overtaker"
+    DstPort 3
+  }
+  Line {
+    SrcBlock "RedSw_Statechart"
+    SrcPort 2
+    Tag				"id=_7-cnQPUnEeOqvInL61-gjw"
+    DstBlock "Link Layer overtaker"
+    DstPort 4
+  }
+  Line {
+    SrcBlock "RedSw_Statechart"
+    SrcPort 3
+    Tag				"id=_7-cnQfUnEeOqvInL61-gjw"
+    DstBlock "Link Layer overtaker"
+    DstPort 5
+  }
+  Line {
+    SrcBlock "RedSw_Statechart"
+    SrcPort 4
+    Tag				"id=_7-cnQvUnEeOqvInL61-gjw"
+    DstBlock "Link Layer overtaker"
+    DstPort 6
+  }
+  Line {
+    SrcBlock "RedSw_Statechart"
+    SrcPort 5
+    Tag				"id=_7-cnQ_UnEeOqvInL61-gjw"
+    DstBlock "Link Layer overtaker"
+    DstPort 7
+  }
+  Line {
+    SrcBlock "Link Layer overtaker"
+    SrcPort 2
+    Tag				"id=_7_yrEvUnEeOqvInL61-gjw"
+    DstBlock "RedSw_Statechart"
+    DstPort 3
+  }
+  Line {
+    SrcBlock "Link Layer overtaker"
+    SrcPort 3
+    Tag				"id=_7_yrE_UnEeOqvInL61-gjw"
+    DstBlock "RedSw_Statechart"
+    DstPort 4
+  }
+  Line {
+    SrcBlock "Link Layer overtaker"
+    SrcPort 4
+    Tag				"id=_7_yrFPUnEeOqvInL61-gjw"
+    DstBlock "RedSw_Statechart"
+    DstPort 5
+  }
+  Line {
+    SrcBlock "Link Layer overtaker"
+    SrcPort 5
+    Tag				"id=_7_yrFfUnEeOqvInL61-gjw"
+    DstBlock "RedSw_Statechart"
+    DstPort 6
+  }
+	  }
+  }
+
+  Block {
+    BlockType SubSystem
+    Name "YellowSw"
+    SID				21
+    Ports [4, 2, 0, 0]
+    Tag		"id=_74DEU_UnEeOqvInL61-gjw"
+  Position "[330, 20, 580, 370]"
+	  System {
+	  	Name  "YellowSw"
+	  	Open			off 	  	
+	  	
+  Block {
+    BlockType Inport
+    Name "clockSignal"
+    SID				22
+    Tag		"id=_74DEVvUnEeOqvInL61-gjw"
+    Port "1"
+
+
+      DataType		      "auto"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: auto"
+
+  Position "[190, 30, 220, 60]"
+  }
+
+  Block {
+    BlockType Inport
+    Name "overtakee_recv"
+    SID				23
+    Tag		"id=_78gtlvUnEeOqvInL61-gjw"
+    Port "2"
+
+
+      DataType		      "auto"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: auto"
+
+    UseBusObject 	"on"
+    BusObject		"PacketBus"	
+  Position "[190, 300, 220, 330]"
+  }
+
+  Block {
+    BlockType Inport
+    Name "overtakee_net_address"
+    SID				24
+    Tag		"id=_78gtmPUnEeOqvInL61-gjw"
+    Port "3"
+
+
+
+      DataType		      "uint8"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "uint8"
+
+  Position "[190, 360, 220, 390]"
+  }
+
+  Block {
+    BlockType Inport
+    Name "overtakee_receiver_net_address"
+    SID				25
+    Tag		"id=_78gtmfUnEeOqvInL61-gjw"
+    Port "4"
+
+
+
+      DataType		      "uint8"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "uint8"
+
+  Position "[190, 420, 220, 450]"
+  }
+	  	
+  Block {
+    BlockType Outport
+    Name "velocity"
+    SID				26
+    Tag		"id=_77Bf0vUnEeOqvInL61-gjw"
+    Port "1"
+
+
+
+      DataType		      "double"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "double"
+
+  Position "[860, 30, 890, 60]"
+  }
+
+  Block {
+    BlockType Outport
+    Name "overtakee_send"
+    SID				27
+    Tag		"id=_78gtlfUnEeOqvInL61-gjw"
+    Port "2"
+
+
+      DataType		      "auto"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: auto"
+
+    UseBusObject 	"on"
+    BusObject		"PacketBus"	
+  Position "[860, 300, 890, 330]"
+  }
+	  	
+
+
+Block {
+      BlockType		      SubSystem
+      Name		      	"YellowSw_Statechart"  
+      SID				28
+      Ports				[5, 5]      
+	  Position		[250, 30, 800, 240]
+      Tag				"id=_74DEUfUnEeOqvInL61-gjw"   
+      MaskHideContents	      off
+      MaskType		      "Stateflow"
+      MaskDescription	      "Stateflow diagram"
+      MaskDisplay	      "plot(sf('Private','sfblk','xIcon'),sf('Private','sfblk','yIcon'));text(0.5,0,sf('Private', 'sfblk', 'tIcon'),'HorizontalAl','Center','VerticalAl','Bottom');"
+      MaskSelfModifiable      on
+      MaskIconFrame	      off
+      MaskIconOpaque	      off
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"            
+      System {
+		Name			"YellowSw_Statechart"	
+		SIDHighWatermark	    28
+		Block {
+			BlockType		  Inport
+			Name			  "clockSignal"
+			Port			  "1"
+			IconDisplay		  "Port number"
+		}
+		Block {
+			BlockType		  Inport
+			Name			  "overtakeeReadIn"
+			Port			  "2"
+			IconDisplay		  "Port number"
+		}
+		Block {
+			BlockType		  Inport
+			Name			  "overtakeeParamReadIn"
+			Port			  "3"
+			IconDisplay		  "Port number"
+		}
+		Block {
+			BlockType		  Inport
+			Name			  "overtakeeWriteIn"
+			Port			  "4"
+			IconDisplay		  "Port number"
+		}
+		Block {
+			BlockType		  Inport
+			Name			  "overtakeeParamWriteIn"
+			Port			  "5"
+			IconDisplay		  "Port number"
+		}
+
+			
+		Block {
+	  		BlockType		  Demux
+	  		Name			  " Demux "
+	  		Ports		      [1, 1]
+	  		Outputs		  "1"
+	  		SID               29
+		}
+		Block {
+	  		BlockType		  "S-Function"
+	  		Name			  " SFunction "
+	  		SID               30
+	  		Tag			  "Stateflow S-Function AtomicLibrary 1"
+	  		Ports			  [5, 6]
+	  		FunctionName		  "sf_sfun"
+	  		PortCounts		  "[5 6]"
+			Port {
+				PortNumber		2
+				Name			"velocity"
+				RTWStorageClass		"Auto"
+				DataLoggingNameMode	"SignalName"			
+			}
+			Port {
+				PortNumber		3
+				Name			"overtakeeReadOut"
+				RTWStorageClass		"Auto"
+				DataLoggingNameMode	"SignalName"			
+			}
+			Port {
+				PortNumber		4
+				Name			"overtakeeParamReadOut"
+				RTWStorageClass		"Auto"
+				DataLoggingNameMode	"SignalName"			
+			}
+			Port {
+				PortNumber		5
+				Name			"overtakeeWriteOut"
+				RTWStorageClass		"Auto"
+				DataLoggingNameMode	"SignalName"			
+			}
+			Port {
+				PortNumber		6
+				Name			"overtakeeParamWriteOut"
+				RTWStorageClass		"Auto"
+				DataLoggingNameMode	"SignalName"			
+			}
+
+		}
+		Block {
+	  		BlockType		  Terminator
+	  		Name			  " Terminator "
+	  		SID               31
+		}
+
+  Block {
+    BlockType Outport
+    Name "velocity"
+    SID				32
+    Tag		"id=_77Bf0PUnEeOqvInL61-gjw"
+    Port "1"
+
+
+
+      DataType		      "double"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "double"
+
+  }
+
+  Block {
+    BlockType Outport
+    Name "overtakeeReadOut"
+    SID				33
+    Tag		"id=_7-JsVPUnEeOqvInL61-gjw"
+    Port "2"
+
+
+      DataType		      "auto"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: auto"
+
+  }
+
+  Block {
+    BlockType Outport
+    Name "overtakeeParamReadOut"
+    SID				34
+    Tag		"id=_7-JsVfUnEeOqvInL61-gjw"
+    Port "3"
+
+
+      DataType		      "auto"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: auto"
+
+  }
+
+  Block {
+    BlockType Outport
+    Name "overtakeeWriteOut"
+    SID				35
+    Tag		"id=_7-JsVvUnEeOqvInL61-gjw"
+    Port "4"
+
+
+      DataType		      "auto"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: auto"
+
+  }
+
+  Block {
+    BlockType Outport
+    Name "overtakeeParamWriteOut"
+    SID				36
+    Tag		"id=_7-JsV_UnEeOqvInL61-gjw"
+    Port "5"
+
+
+      DataType		      "auto"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: auto"
+
+  }
+		Line {
+	  		SrcBlock		  " SFunction "
+	  		SrcPort		  1
+	  		DstBlock		  " Demux "
+	  		DstPort		  1
+		}
+		Line {
+	  		SrcBlock		  "clockSignal"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  1
+		}
+		Line {
+	  		SrcBlock		  "overtakeeReadIn"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  2
+		}
+		Line {
+	  		SrcBlock		  "overtakeeParamReadIn"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  3
+		}
+		Line {
+	  		SrcBlock		  "overtakeeWriteIn"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  4
+		}
+		Line {
+	  		SrcBlock		  "overtakeeParamWriteIn"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  5
+		}
+		Line {
+			Name		  	  "velocity"
+	  		SrcBlock		  " SFunction "
+	  		SrcPort		  	2
+	  		DstBlock		  "velocity"
+	  		DstPort		  		1
+		}
+		Line {
+			Name		  	  "overtakeeReadOut"
+	  		SrcBlock		  " SFunction "
+	  		SrcPort		  	3
+	  		DstBlock		  "overtakeeReadOut"
+	  		DstPort		  		1
+		}
+		Line {
+			Name		  	  "overtakeeParamReadOut"
+	  		SrcBlock		  " SFunction "
+	  		SrcPort		  	4
+	  		DstBlock		  "overtakeeParamReadOut"
+	  		DstPort		  		1
+		}
+		Line {
+			Name		  	  "overtakeeWriteOut"
+	  		SrcBlock		  " SFunction "
+	  		SrcPort		  	5
+	  		DstBlock		  "overtakeeWriteOut"
+	  		DstPort		  		1
+		}
+		Line {
+			Name		  	  "overtakeeParamWriteOut"
+	  		SrcBlock		  " SFunction "
+	  		SrcPort		  	6
+	  		DstBlock		  "overtakeeParamWriteOut"
+	  		DstPort		  		1
+		}
+		Line {
+	  		SrcBlock		  " Demux "
+	  		SrcPort		  1
+	  		DstBlock		  " Terminator "
+	  		DstPort		  1
+		}
+	}
+}
+
+
+
+
+	Block {
+	  BlockType		  Reference
+	  Name			  "Link Layer overtakee"
+	  SID			  37
+	  Ports			  [9, 5]
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "LinkLayer5/Link Layer UDP"
+	  SourceType		  "SubSystem"
+	  ShowPortLabels	  "FromPortIcon"
+  Position "[250, 300, 800, 700]"
+
+	  DelayMin "1*1000"
+	  DelayMax "1*1000"
+	  MessageLossProbability "0"	
+	  BufferOverflowPossible "on"
+	  SourceBufferSize "5"
+	  MessageMapping "[1 1; 2 1; 3 1; 4 1; 5 1]"  	  
+	}	  	  
+  Line {
+    SrcBlock "clockSignal"
+    SrcPort 1
+    Tag				"id=_74DEVfUnEeOqvInL61-gjw"
+    DstBlock "YellowSw_Statechart"
+    DstPort 1
+  }
+  Line {
+    SrcBlock "YellowSw_Statechart"
+    SrcPort 1
+    Tag				"id=_77Bf0fUnEeOqvInL61-gjw"
+    DstBlock "velocity"
+    DstPort 1
+  }
+  Line {
+    SrcBlock "Link Layer overtakee"
+    SrcPort 1
+    Tag				"id=_78XjoPUnEeOqvInL61-gjw"
+    DstBlock "overtakee_send"
+    DstPort 1
+  }
+  Line {
+    SrcBlock "overtakee_recv"
+    SrcPort 1
+    Tag				"id=_78XjofUnEeOqvInL61-gjw"
+    DstBlock "Link Layer overtakee"
+    DstPort 1
+  }
+  Line {
+    SrcBlock "overtakee_net_address"
+    SrcPort 1
+    Tag				"id=_78gtmvUnEeOqvInL61-gjw"
+    DstBlock "Link Layer overtakee"
+    DstPort 2
+  }
+  Line {
+    SrcBlock "overtakee_receiver_net_address"
+    SrcPort 1
+    Tag				"id=_78gtm_UnEeOqvInL61-gjw"
+    DstBlock "Link Layer overtakee"
+    DstPort 3
+  }
+  Line {
+    SrcBlock "YellowSw_Statechart"
+    SrcPort 2
+    Tag				"id=_7-JsUPUnEeOqvInL61-gjw"
+    DstBlock "Link Layer overtakee"
+    DstPort 4
+  }
+  Line {
+    SrcBlock "YellowSw_Statechart"
+    SrcPort 3
+    Tag				"id=_7-JsUfUnEeOqvInL61-gjw"
+    DstBlock "Link Layer overtakee"
+    DstPort 5
+  }
+  Line {
+    SrcBlock "YellowSw_Statechart"
+    SrcPort 4
+    Tag				"id=_7-JsUvUnEeOqvInL61-gjw"
+    DstBlock "Link Layer overtakee"
+    DstPort 6
+  }
+  Line {
+    SrcBlock "YellowSw_Statechart"
+    SrcPort 5
+    Tag				"id=_7-JsU_UnEeOqvInL61-gjw"
+    DstBlock "Link Layer overtakee"
+    DstPort 7
+  }
+  Line {
+    SrcBlock "Link Layer overtakee"
+    SrcPort 2
+    Tag				"id=_7_o6EPUnEeOqvInL61-gjw"
+    DstBlock "YellowSw_Statechart"
+    DstPort 2
+  }
+  Line {
+    SrcBlock "Link Layer overtakee"
+    SrcPort 3
+    Tag				"id=_7_o6EfUnEeOqvInL61-gjw"
+    DstBlock "YellowSw_Statechart"
+    DstPort 3
+  }
+  Line {
+    SrcBlock "Link Layer overtakee"
+    SrcPort 4
+    Tag				"id=_7_o6EvUnEeOqvInL61-gjw"
+    DstBlock "YellowSw_Statechart"
+    DstPort 4
+  }
+  Line {
+    SrcBlock "Link Layer overtakee"
+    SrcPort 5
+    Tag				"id=_7_o6E_UnEeOqvInL61-gjw"
+    DstBlock "YellowSw_Statechart"
+    DstPort 5
+  }
+	  }
+  }
+
+  Block {
+    BlockType SubSystem
+    Name "CarHw"
+    SID				38
+    Ports [2, 0, 0, 0]
+    Tag		"id=_74WmUPUnEeOqvInL61-gjw"
+  Position "[640, 20, 890, 370]"
+	  System {
+	  	Name  "CarHw"
+	  	Open			off 	  	
+	  	
+  Block {
+    BlockType Inport
+    Name "omegaR_des"
+    SID				39
+    Tag		"id=_76bp8PUnEeOqvInL61-gjw"
+    Port "1"
+
+
+
+      DataType		      "double"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "double"
+
+  Position "[50, 40, 80, 70]"
+  }
+
+  Block {
+    BlockType Inport
+    Name "omegaL_des"
+    SID				40
+    Tag		"id=_76la8PUnEeOqvInL61-gjw"
+    Port "2"
+
+
+
+      DataType		      "double"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "double"
+
+  Position "[50, 150, 80, 180]"
+  }
+	  }
+  }
+
+  Block {
+    BlockType SubSystem
+    Name "DistanceSensor"
+    SID				41
+    Ports [0, 1, 0, 0]
+    Tag		"id=_74WmUfUnEeOqvInL61-gjw"
+  Position "[950, 20, 1200, 370]"
+	  System {
+	  	Name  "DistanceSensor"
+	  	Open			off 	  	
+	  	
+  Block {
+    BlockType Outport
+    Name "y"
+    SID				42
+    Tag		"id=_764V4PUnEeOqvInL61-gjw"
+    Port "1"
+
+
+
+      DataType		      "double"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "double"
+
+  Position "[700, 40, 730, 70]"
+  }
+	  }
+  }
+  }
+}
+
+
+
+Stateflow {
+	machine {
+		id		2
+		name    "AtomicLibrary"
+		tag			"id=_7xM1cPUnEeOqvInL61-gjw"
+		firstTarget 	1
+		sfVersion		    71014000.00001
+		isLibrary		1
+	}
+	chart {
+		id			3
+		name		"YellowSw/YellowSw_Statechart"
+		tag			"id=_7yFmQPUnEeOqvInL61-gjw"
+		machine		2
+		chartFileNumber		1
+		viewObj		3    
+		decomposition	    CLUSTER_CHART
+		treeNode		[0 4 0 0]
+		firstData		5
+		disableImplicitCasting  1
+		userSpecifiedStateTransitionExecutionOrder 1
+	}
+	state {
+		id			4
+		chart		3
+		tag			"id=_7yFmQfUnEeOqvInL61-gjw"
+		treeNode	[3 0 0 0]
+		labelString	"chart"
+
+	decomposition	    SET_STATE
+		
+	type		    OR_STATE    	
+		firstTransition		6
+  position [377.44 121.92 815.96 772.0]
+	}
+	state {
+		id			7
+		chart		3
+		tag			"id=_7yFmQvUnEeOqvInL61-gjw"
+		treeNode	[4 0 0 0]
+		labelString	"chartRegion"
+	decomposition	    CLUSTER_STATE
+		
+	type		AND_STATE	
+
+	executionOrder	    2
+
+  position [385.59 271.62 706.01 614.0]
+	}
+	state {
+		id			8
+		chart		3
+		tag			"id=_8F5TEPUnEeOqvInL61-gjw"
+		treeNode	[7 0 0 0]
+		labelString	"yellowSW_Component_Main"
+	decomposition	    CLUSTER_STATE
+		
+	type		    OR_STATE    	
+  position [393.73 302.82 532.0 495.0]
+	}
+	state {
+		id			9
+		chart		3
+		tag			"id=_8GV_APUnEeOqvInL61-gjw"
+		treeNode	[8 0 0 0]
+		labelString	"overtakee"
+	decomposition	    CLUSTER_STATE
+		
+	type		    OR_STATE    	
+		firstData		10
+		firstTransition		11
+  position [401.88 333.53 516.0 456.00003]
+	}
+	state {
+		id			12
+		chart		3
+		tag			"id=_8GfwAPUnEeOqvInL61-gjw"
+		treeNode	[9 0 0 0]
+		labelString	"noAcceleration"
+	decomposition	    CLUSTER_STATE
+		
+	type		    OR_STATE    	
+  position [662.02 364.73 248.0 206.99997]
+	}
+	state {
+		id			13
+		chart		3
+		tag			"id=_8amXwPUnEeOqvInL61-gjw"
+		treeNode	[12 0 0 0]
+		labelString	"overtakee_noAcceleration"
+	decomposition	    CLUSTER_STATE
+		
+	type		    OR_STATE    	
+		firstTransition		14
+  position [670.16 395.44 232.0 168.0]
+	}
+	state {
+		id			15
+		chart		3
+		tag			"id=_8bo5kPUnEeOqvInL61-gjw"
+		treeNode	[13 0 0 0]
+		labelString	"noBraking"
+	decomposition	    CLUSTER_STATE
+		
+	type		    OR_STATE    	
+  position [693.9712 472.38 77.9976 36.0]
+	}
+	transition {
+		id			16
+		chart		3
+
+		midPoint	[742.67 467.14]
+		src {
+			intersection	[1 0 -1 0 744.73 462.210 0]
+		}
+		dst {
+			id	15
+			intersection	[1 0 -1 0 740.61 472.070 0]
+		}
+		dataLimits			[740.61 744.73 462.21 472.07]
+		
+	}
+
+	state {
+		id			17
+		chart		3
+		tag			"id=_8bo5kfUnEeOqvInL61-gjw"
+		treeNode	[13 0 0 0]
+		labelString	"brakingAllowed"
+	decomposition	    CLUSTER_STATE
+		
+	type		    OR_STATE    	
+  position [784.4292 519.9 110.001595 36.0]
+	}
+
+  transition {
+  	id			14
+    chart		3
+    tag			"id=_8byDgPUnEeOqvInL61-gjw"
+    labelString "[overtakee_checkQueue(EVT_LANECHANGED, overtakeeReadOut)]\n{[overtakeeReadOut, overtakeeParamReadOut] = overtakee_dequeue(EVT_LANECHANGED, overtakeeReadOut, overtakeeParamReadOut); }"
+    linkNode 	[13 0 0]
+    executionOrder 1
+  labelPosition [79.859985 520.76 1392.0 8.0]
+  midPoint [785.49 513.82]
+  dataLimits [772.01 798.97 507.8 519.84]
+  	src {
+  	  id		15
+  	    	  
+      intersection	[2 1 0 0 772.01 507.8 0 0]
+  	}
+  	dst {
+  	  id		17
+  	    	  
+      intersection	[1 0 -1 0 798.97 519.84 0 0]
+  	}
+  	slide {
+  	}
+  }
+
+
+	state {
+		id			18
+		chart		3
+		tag			"id=_8GfwAfUnEeOqvInL61-gjw"
+		treeNode	[9 0 0 0]
+		labelString	"noOvertaking\nentry: localVelocity = 2 ;  velocity = localVelocity; "
+	decomposition	    CLUSTER_STATE
+		
+	type		    OR_STATE    	
+  position [410.02 596.73 266.00003 185.0]
+	}
+	state {
+		id			19
+		chart		3
+		tag			"id=_8amXwfUnEeOqvInL61-gjw"
+		treeNode	[18 0 0 0]
+		labelString	"overtakee_noOvertaking"
+	decomposition	    CLUSTER_STATE
+		
+	type		    OR_STATE    	
+		firstData		20
+		firstTransition		21
+  position [418.16 627.44 249.99997 146.0]
+	}
+	state {
+		id			22
+		chart		3
+		tag			"id=_8bCcoPUnEeOqvInL61-gjw"
+		treeNode	[19 0 0 0]
+		labelString	"init"
+	decomposition	    CLUSTER_STATE
+		
+	type		    OR_STATE    	
+  position [498.65997 729.12 54.0 36.0]
+	}
+	transition {
+		id			23
+		chart		3
+
+		midPoint	[513.0 723.94]
+		src {
+			intersection	[1 0 -1 0 510.21 718.830 0]
+		}
+		dst {
+			id	22
+			intersection	[1 0 -1 0 515.79 729.050 0]
+		}
+		dataLimits			[510.21 515.79 718.83 729.05]
+		
+	}
+
+	state {
+		id			24
+		chart		3
+		tag			"id=_8bMNoPUnEeOqvInL61-gjw"
+		treeNode	[19 0 0 0]
+		labelString	"received\nentry: c2=reset(); "
+	decomposition	    CLUSTER_STATE
+		
+	type		    OR_STATE    	
+  position [589.31995 704.87 64.000084 36.0]
+	}
+
+	state {
+		id			25
+		chart		3
+		tag			"id=_8sBe8PUnEeOqvInL61-gjw"
+		treeNode	[19 0 0 0]
+		labelString	"Inv_Error\nentry: invariant(); "
+	decomposition	    CLUSTER_STATE
+		
+	type		    OR_STATE    	
+  position [586.2992 658.77 74.001595 36.0]
+	}
+
+  transition {
+  	id			21
+    chart		3
+    tag			"id=_8cFlgPUnEeOqvInL61-gjw"
+    labelString "[overtakee_checkQueue(EVT_REQUEST, overtakeeReadOut)]\n{[overtakeeReadOut, overtakeeParamReadOut] = overtakee_dequeue(EVT_REQUEST, overtakeeReadOut, overtakeeParamReadOut); }"
+    linkNode 	[19 0 0]
+    executionOrder 1
+  labelPosition [-95.0 738.23 1328.0 8.0]
+  midPoint [570.955 729.14]
+  dataLimits [552.83 589.08 724.49 733.79]
+  	src {
+  	  id		22
+  	    	  
+      intersection	[2 1 0 0 552.83 733.79 0 0]
+  	}
+  	dst {
+  	  id		24
+  	    	  
+      intersection	[4 -1 0 0 589.08 724.49 0 0]
+  	}
+  	slide {
+  	}
+  }
+  transition {
+  	id			26
+    chart		3
+    tag			"id=_8cYgcPUnEeOqvInL61-gjw"
+    labelString "{[overtakeeWriteOut, overtakeeParamWriteOut] = overtakee_enqueue(EVT_DECLINE_FRONTVELOCITY, overtakeeWriteOut, double(localVelocity), overtakeeParamWriteOut)
+; }"
+    linkNode 	[19 0 0]
+    executionOrder 2
+  labelPosition [-56.049988 718.09 1256.0 8.0]
+  midPoint [570.975 742.1]
+  dataLimits [552.76 589.19 737.7 746.5]
+  	src {
+  	  id		24
+  	    	  
+      intersection	[4 -1 0 0 589.19 737.7 0 0]
+  	}
+  	dst {
+  	  id		22
+  	    	  
+      intersection	[2 1 0 0 552.76 746.5 0 0]
+  	}
+  	slide {
+  	}
+  }
+  transition {
+  	id			27
+    chart		3
+    tag			"id=_8sBe8fUnEeOqvInL61-gjw"
+    labelString "[time(c2) > 3*1000]"
+    linkNode 	[19 0 0]
+    executionOrder 3
+  labelPosition [554.11 708.5 136.0 8.0]
+  midPoint [622.31 699.755]
+  dataLimits [622.1 622.52 694.86 704.65]
+  	src {
+  	  id		24
+  	    	  
+      intersection	[1 0 -1 0 622.1 704.65 0 0]
+  	}
+  	dst {
+  	  id		25
+  	    	  
+      intersection	[3 0 1 0 622.52 694.86 0 0]
+  	}
+  	slide {
+  	}
+  }
+	data {
+		id				20
+		name		    "c2"
+		tag				"id=_8mNK0PUnEeOqvInL61-gjw"
+		linkNode		    [19 0 0]
+		machine		    2
+		
+		dataType		"double"
+		scope		    LOCAL_DATA	
+		props {
+		
+			initialValue	"0.0"
+
+    	}	    				
+	}  
+
+	transition {
+		id			28
+		chart		3
+
+		midPoint	[557.06 629.55]
+		src {
+			intersection	[2 1 0 0 570.77 571.290 0]
+		}
+		dst {
+			id	18
+			intersection	[1 0 -1 0 543.35 687.810 0]
+		}
+		dataLimits			[543.35 570.77 571.29 687.81]
+		
+	}
+
+  transition {
+  	id			11
+    chart		3
+    tag			"id=_8G704PUnEeOqvInL61-gjw"
+    labelString "[overtakee_checkQueue(EVT_FINISH, overtakeeReadOut)]\n{[overtakeeReadOut, overtakeeParamReadOut] = overtakee_dequeue(EVT_FINISH, overtakeeReadOut, overtakeeParamReadOut); }"
+    linkNode 	[9 0 0]
+    executionOrder 2
+  labelPosition [0.3300171 558.27 1312.0 8.0]
+  midPoint [664.56 578.695]
+  dataLimits [544.92 784.2 469.88 687.51]
+  	src {
+  	  id		12
+  	    	  
+      intersection	[2 1 0 0 784.2 469.88 0 0]
+  	}
+  	dst {
+  	  id		18
+  	    	  
+      intersection	[2 1 0 0 544.92 687.51 0 0]
+  	}
+  	slide {
+  	}
+  }
+	data {
+		id				10
+		name		    "localVelocity"
+		tag				"id=_8YqeEPUnEeOqvInL61-gjw"
+		linkNode		    [9 0 0]
+		machine		    2
+		
+		dataType		"int32"
+		scope		    LOCAL_DATA	
+		props {
+		
+			initialValue	"0"
+
+    	}	    				
+	}  
+
+	transition {
+		id			29
+		chart		3
+
+		midPoint	[841.54004 698.55005]
+		src {
+			intersection	[2 1 0 0 1018.9 843.150 0]
+		}
+		dst {
+			id	8
+			intersection	[3 0 1 0 664.18 553.950 0]
+		}
+		dataLimits			[664.18 1018.9 553.95 843.15]
+		
+	}
+
+
+	state {
+		id			30
+		chart		3
+		tag			"id=_7yFmQ_UnEeOqvInL61-gjw"
+		treeNode	[4 0 0 0]
+		labelString	"DataInit"
+	decomposition	    CLUSTER_STATE
+		
+	type		AND_STATE	
+
+	executionOrder	    1
+
+  position [1123.6 152.62 61.999916 36.0]
+	}
+
+  transition {
+  	id			6
+    chart		3
+    tag			"id=_7yFmRPUnEeOqvInL61-gjw"
+    labelString "{overtakeeWriteOut = overtakeeWriteIn;
+overtakeeParamWriteOut = overtakeeParamWriteIn;
+overtakeeReadOut = overtakeeReadIn;
+overtakeeParamReadOut = overtakeeParamReadIn;
+; }"
+    linkNode 	[4 0 0]
+    executionOrder 0
+  labelPosition [680.6 166.62 1344.0 8.0]
+  midPoint [1170.0999 161.62]
+  dataLimits [1154.6 1185.5999 152.62 170.62]
+  	src {
+  	  id		30
+  	    	  
+      intersection	[1 0 1 0 1154.6 152.62 0 0]
+  	}
+  	dst {
+  	  id		30
+  	    	  
+      intersection	[2 -1 0 0 1185.5999 170.62 0 0]
+  	}
+  	slide {
+  	}
+  }
+	transition {
+		id			31
+		chart		3
+
+		midPoint	[942.38 307.6]
+		src {
+			intersection	[2 1 0 0 1095.0 112.80 0]
+		}
+		dst {
+			id	4
+			intersection	[1 0 -1 0 789.76 502.40 0]
+		}
+		dataLimits			[789.76 1095.0 112.8 502.4]
+		
+	}
+
+
+	state {
+		id				32
+		chart			3
+		tag				"id=_7yPXQPUnEeOqvInL61-gjw"
+		treeNode		[3 0 0 0]
+		labelString		"logicalTime = time(clock)"
+		type			FUNC_STATE
+		decomposition	CLUSTER_STATE
+		firstData       33
+
+  position [1103.6 -0.29599953 54.0 36.0]
+		eml {
+			isEML	1
+			script	"function logicalTime = time(clock) \n\n sample = 0.001;  % the sample time of the system clock \n\n "
+      "%convert to pass units of time after last reset \n\n logicalTime = uint32((clockSignal - clock)/sample);"		
+		}	
+	}
+	data {
+		id				33
+		name		    "clock"
+		tag				"id=_7yZIQvUnEeOqvInL61-gjw"
+		linkNode		    [32 0 34]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				34
+		name		    "logicalTime"
+		tag				"id=_7yZIQfUnEeOqvInL61-gjw"
+		linkNode		    [32 33 0]
+		machine		    2
+		
+		dataType		"uint32"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+
+
+	state {
+		id				35
+		chart			3
+		tag				"id=_7yPXQfUnEeOqvInL61-gjw"
+		treeNode		[3 0 0 0]
+		labelString		"clock = reset()"
+		type			FUNC_STATE
+		decomposition	CLUSTER_STATE
+		firstData       36
+
+  position [1202.6 32.704 54.0 36.0]
+		eml {
+			isEML	1
+			script	"function clock = reset() \n
+ %set clock variable to current time \n
+ clock = clockSignal;"		
+		}	
+	}
+	data {
+		id				36
+		name		    "clock"
+		tag				"id=_7yZIQ_UnEeOqvInL61-gjw"
+		linkNode		    [35 0 0]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+
+
+	state {
+		id				37
+		chart			3
+		tag				"id=_7yPXQvUnEeOqvInL61-gjw"
+		treeNode		[3 0 0 0]
+		labelString		"invariant()"
+		type			FUNC_STATE
+		decomposition	CLUSTER_STATE
+
+  position [443.10983 32.704 67.00032 36.0]
+		eml {
+			isEML	1
+			script	"function invariant() 
+ error('Simulation stopped in Error State. An invariant is violated');"		
+		}	
+	}
+
+	state {
+		id				38
+		chart			3
+		tag				"id=_72j2kPUnEeOqvInL61-gjw"
+		treeNode		[3 0 0 0]
+		labelString		"[evtQueue, paramQueue] = overtakee_enqueue(event, evtQueueIn, param, paramQueueIn)"
+		type			FUNC_STATE
+		decomposition	CLUSTER_STATE
+		firstData       39
+
+  position [773.10956 32.704 127.0008 36.0]
+		eml {
+			isEML	1
+			script	"function [evtQueue, paramQueue] = overtakee_enqueue(event, evtQueueIn, param, paramQueueIn) %eml \n "
+      "evtQueue = evtQueueIn; \n paramQueue = paramQueueIn; \n for i = 1:length(evtQueue) \n 	if evtQueue(i) == uint8(0"
+      ") \n 		evtQueue(i) = event; \n 		paramQueue(i) = param; \n 		return \n 	end \n end"		
+		}	
+	}
+	data {
+		id				39
+		name		    "event"
+		tag				"id=__jLSQPUnEeOqvInL61-gjw"
+		linkNode		    [38 0 40]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				40
+		name		    "evtQueueIn"
+		tag				"id=__jLSQfUnEeOqvInL61-gjw"
+		linkNode		    [38 39 41]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+      		array {
+				size			"[5]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				41
+		name		    "param"
+		tag				"id=__jLSQvUnEeOqvInL61-gjw"
+		linkNode		    [38 40 42]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				42
+		name		    "paramQueueIn"
+		tag				"id=__jLSQ_UnEeOqvInL61-gjw"
+		linkNode		    [38 41 43]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+      		array {
+				size			"[5]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				43
+		name		    "evtQueue"
+		tag				"id=__jLSRPUnEeOqvInL61-gjw"
+		linkNode		    [38 42 44]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"[5]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				44
+		name		    "paramQueue"
+		tag				"id=__jLSRfUnEeOqvInL61-gjw"
+		linkNode		    [38 43 0]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"[5]"
+      		}
+    	}	    				
+	}  
+
+	state {
+		id				45
+		chart			3
+		tag				"id=_72j2kfUnEeOqvInL61-gjw"
+		treeNode		[3 0 0 0]
+		labelString		"[evtQueue, paramQueue, parameter] = overtakee_dequeue(event, evtQueueIn, paramQueueIn)"
+		type			FUNC_STATE
+		decomposition	CLUSTER_STATE
+		firstData       46
+
+  position [938.09955 32.704 127.0008 36.0]
+		eml {
+			isEML	1
+			script	"function [evtQueue, paramQueue, parameter] = overtakee_dequeue(event, evtQueueIn, paramQueueIn) %eml"
+      " \n  evtQueue = evtQueueIn; \n  paramQueue = paramQueueIn; \n  parameter = 0; \n  for i = 1:length(evtQueue) \n "
+      "   if evtQueue(i) == event \n         parameter = paramQueue(i); \n         for j = i:length(evtQueue)-1 \n     "
+      "        evtQueue(j) = evtQueue(j+1); \n             paramQueue(j) = paramQueue(j+1); \n         end \n         e"
+      "vtQueue(length(evtQueue)) = 0;\n         paramQueue(length(paramQueue)) = 0; \n         return \n     end \n  en"
+      "d"		
+		}	
+	}
+	data {
+		id				46
+		name		    "event"
+		tag				"id=__uVZYPUnEeOqvInL61-gjw"
+		linkNode		    [45 0 47]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				47
+		name		    "evtQueueIn"
+		tag				"id=__uVZYfUnEeOqvInL61-gjw"
+		linkNode		    [45 46 48]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+      		array {
+				size			"[5]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				48
+		name		    "paramQueueIn"
+		tag				"id=__uVZYvUnEeOqvInL61-gjw"
+		linkNode		    [45 47 49]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+      		array {
+				size			"[5]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				49
+		name		    "evtQueue"
+		tag				"id=__uVZY_UnEeOqvInL61-gjw"
+		linkNode		    [45 48 50]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"[5]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				50
+		name		    "paramQueue"
+		tag				"id=__uVZZPUnEeOqvInL61-gjw"
+		linkNode		    [45 49 51]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"[5]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				51
+		name		    "parameter"
+		tag				"id=__uVZZfUnEeOqvInL61-gjw"
+		linkNode		    [45 50 0]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+
+	state {
+		id				52
+		chart			3
+		tag				"id=_72tnkPUnEeOqvInL61-gjw"
+		treeNode		[3 0 0 0]
+		labelString		"available = overtakee_checkQueue(event, evtQueue)"
+		type			FUNC_STATE
+		decomposition	CLUSTER_STATE
+		firstData       53
+
+  position [575.1116 32.704 148.99681 36.0]
+		eml {
+			isEML	1
+			script	"function available = overtakee_checkQueue(event, evtQueue) %eml \n available = false; \n for i = 1:l"
+      "ength(evtQueue) \n     if evtQueue(i) == event \n         available = true;    \n         return \n     end \n e"
+      "nd"		
+		}	
+	}
+	data {
+		id				53
+		name		    "event"
+		tag				"id=__5pRgPUnEeOqvInL61-gjw"
+		linkNode		    [52 0 54]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				54
+		name		    "evtQueue"
+		tag				"id=__5pRgfUnEeOqvInL61-gjw"
+		linkNode		    [52 53 55]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+      		array {
+				size			"[5]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				55
+		name		    "available"
+		tag				"id=__5pRgvUnEeOqvInL61-gjw"
+		linkNode		    [52 54 0]
+		machine		    2
+		
+		dataType		"boolean"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+
+	data {
+		id				5
+		name		    "clockSignal"
+		tag				"id=_74DEUvUnEeOqvInL61-gjw"
+		linkNode		    [3 0 56]
+		machine		    2
+		
+		dataType		"double"
+		scope		    INPUT_DATA	
+		props {
+
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				56
+		name		    "overtakeeReadIn"
+		tag				"id=_78XjovUnEeOqvInL61-gjw"
+		linkNode		    [3 5 57]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    INPUT_DATA	
+		props {
+
+      		array {
+				size			"[5]"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				57
+		name		    "overtakeeParamReadIn"
+		tag				"id=_78Xjo_UnEeOqvInL61-gjw"
+		linkNode		    [3 56 58]
+		machine		    2
+		
+		dataType		"double"
+		scope		    INPUT_DATA	
+		props {
+
+      		array {
+				size			"5"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				58
+		name		    "overtakeeWriteIn"
+		tag				"id=_78gtkfUnEeOqvInL61-gjw"
+		linkNode		    [3 57 59]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    INPUT_DATA	
+		props {
+
+      		array {
+				size			"[5]"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				59
+		name		    "overtakeeParamWriteIn"
+		tag				"id=_78gtkvUnEeOqvInL61-gjw"
+		linkNode		    [3 58 60]
+		machine		    2
+		
+		dataType		"double"
+		scope		    INPUT_DATA	
+		props {
+
+      		array {
+				size			"5"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				60
+		name		    "velocity"
+		tag				"id=_77LQ0PUnEeOqvInL61-gjw"
+		linkNode		    [3 59 61]
+		machine		    2
+		
+		dataType		"double"
+		scope		    OUTPUT_DATA	
+		props {
+		
+			initialValue	" 0"
+
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				61
+		name		    "overtakeeReadOut"
+		tag				"id=_78XjpPUnEeOqvInL61-gjw"
+		linkNode		    [3 60 62]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"[5]"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				62
+		name		    "overtakeeParamReadOut"
+		tag				"id=_78gtkPUnEeOqvInL61-gjw"
+		linkNode		    [3 61 63]
+		machine		    2
+		
+		dataType		"double"
+		scope		    OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"5"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				63
+		name		    "overtakeeWriteOut"
+		tag				"id=_78gtk_UnEeOqvInL61-gjw"
+		linkNode		    [3 62 64]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"[5]"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				64
+		name		    "overtakeeParamWriteOut"
+		tag				"id=_78gtlPUnEeOqvInL61-gjw"
+		linkNode		    [3 63 65]
+		machine		    2
+		
+		dataType		"double"
+		scope		    OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"5"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				65
+		name		    "EVT_DECLINE_FRONTVELOCITY"
+		tag				"id=_8NV-4PUnEeOqvInL61-gjw"
+		linkNode		    [3 64 66]
+		machine		    2
+		
+		dataType		"uint32"
+		scope		    CONSTANT_DATA	
+		props {
+		
+			initialValue	"3"
+
+    	}	    				
+	}  
+	data {
+		id				66
+		name		    "EVT_ACCEPT"
+		tag				"id=_8PIHkPUnEeOqvInL61-gjw"
+		linkNode		    [3 65 67]
+		machine		    2
+		
+		dataType		"uint32"
+		scope		    CONSTANT_DATA	
+		props {
+		
+			initialValue	"2"
+
+    	}	    				
+	}  
+	data {
+		id				67
+		name		    "EVT_REQUEST"
+		tag				"id=_8TS14PUnEeOqvInL61-gjw"
+		linkNode		    [3 66 68]
+		machine		    2
+		
+		dataType		"uint32"
+		scope		    CONSTANT_DATA	
+		props {
+		
+			initialValue	"1"
+
+    	}	    				
+	}  
+	data {
+		id				68
+		name		    "EVT_FINISH"
+		tag				"id=_8TwI4PUnEeOqvInL61-gjw"
+		linkNode		    [3 67 69]
+		machine		    2
+		
+		dataType		"uint32"
+		scope		    CONSTANT_DATA	
+		props {
+		
+			initialValue	"4"
+
+    	}	    				
+	}  
+	data {
+		id				69
+		name		    "EVT_LANECHANGED"
+		tag				"id=_8UDD0PUnEeOqvInL61-gjw"
+		linkNode		    [3 68 0]
+		machine		    2
+		
+		dataType		"uint32"
+		scope		    CONSTANT_DATA	
+		props {
+		
+			initialValue	"5"
+
+    	}	    				
+	}  
+	instance {
+		id			70
+		name		"YellowSw/YellowSw_Statechart"
+		machine		2
+		chart		3
+	}
+	chart {
+		id			71
+		name		"RedSw/RedSw_Statechart"
+		tag			"id=_7ysDMPUnEeOqvInL61-gjw"
+		machine		2
+		chartFileNumber		2
+		viewObj		71    
+		decomposition	    CLUSTER_CHART
+		treeNode		[0 72 0 0]
+		firstData		73
+		disableImplicitCasting  1
+		userSpecifiedStateTransitionExecutionOrder 1
+	}
+	state {
+		id			72
+		chart		71
+		tag			"id=_7ysDMfUnEeOqvInL61-gjw"
+		treeNode	[71 0 0 0]
+		labelString	"chart"
+
+	decomposition	    SET_STATE
+		
+	type		    OR_STATE    	
+		firstTransition		74
+  position [589.36 103.16 762.04004 683.0]
+	}
+	state {
+		id			75
+		chart		71
+		tag			"id=_7ysDMvUnEeOqvInL61-gjw"
+		treeNode	[72 0 0 0]
+		labelString	"chartRegion"
+	decomposition	    CLUSTER_STATE
+		
+	type		AND_STATE	
+
+	executionOrder	    2
+
+  position [597.5 223.37 666.0 555.0]
+	}
+	state {
+		id			76
+		chart		71
+		tag			"id=_8GDEEPUnEeOqvInL61-gjw"
+		treeNode	[75 0 0 0]
+		labelString	"redSW_Component_Main"
+	decomposition	    CLUSTER_STATE
+		
+	type		    OR_STATE    	
+  position [605.65 254.07 513.94995 516.0]
+	}
+	state {
+		id			77
+		chart		71
+		tag			"id=_8GMOAPUnEeOqvInL61-gjw"
+		treeNode	[76 0 0 0]
+		labelString	"overtaker"
+	decomposition	    CLUSTER_STATE
+		
+	type		    OR_STATE    	
+		firstData		78
+		firstTransition		79
+  position [613.79 285.27 498.01007 477.00003]
+	}
+	state {
+		id			80
+		chart		71
+		tag			"id=_8Go58PUnEeOqvInL61-gjw"
+		treeNode	[77 0 0 0]
+		labelString	"overtaking\nentry: c1=reset(); "
+	decomposition	    CLUSTER_STATE
+		
+	type		    OR_STATE    	
+  position [906.44 316.48 196.96002 191.0]
+	}
+	state {
+		id			81
+		chart		71
+		tag			"id=_8amXwvUnEeOqvInL61-gjw"
+		treeNode	[80 0 0 0]
+		labelString	"overtaker_overtaking"
+	decomposition	    CLUSTER_STATE
+		
+	type		    OR_STATE    	
+		firstTransition		82
+  position [914.08 347.18 181.01996 152.0]
+	}
+	state {
+		id			83
+		chart		71
+		tag			"id=_8bMNofUnEeOqvInL61-gjw"
+		treeNode	[81 0 0 0]
+		labelString	"init"
+	decomposition	    CLUSTER_STATE
+		
+	type		    OR_STATE    	
+  position [953.95 428.0 54.0 36.0]
+	}
+	transition {
+		id			84
+		chart		71
+
+		midPoint	[988.65 421.04]
+		src {
+			intersection	[1 0 -1 0 990.76 414.190 0]
+		}
+		dst {
+			id	83
+			intersection	[1 0 -1 0 986.54 427.890 0]
+		}
+		dataLimits			[986.54 990.76 414.19 427.89]
+		
+	}
+
+	state {
+		id			85
+		chart		71
+		tag			"id=_8bV-oPUnEeOqvInL61-gjw"
+		treeNode	[81 0 0 0]
+		labelString	"changed"
+	decomposition	    CLUSTER_STATE
+		
+	type		    OR_STATE    	
+  position [1022.65015 455.13 64.499756 36.0]
+	}
+
+  transition {
+  	id			82
+    chart		71
+    tag			"id=_8c1MYPUnEeOqvInL61-gjw"
+    labelString "{[overtakerWriteOut, overtakerParamWriteOut] = overtaker_enqueue(EVT_LANECHANGED, overtakerWriteOut, 0, overtakerParamWriteOut); }"
+    linkNode 	[81 0 0]
+    executionOrder 1
+  labelPosition [503.2 464.75 1008.0 8.0]
+  midPoint [1015.15 458.555]
+  dataLimits [1008.1 1022.2 455.95 461.16]
+  	src {
+  	  id		83
+  	    	  
+      intersection	[2 1 0 0 1008.1 455.95 0 0]
+  	}
+  	dst {
+  	  id		85
+  	    	  
+      intersection	[4 -1 0 0 1022.2 461.16 0 0]
+  	}
+  	slide {
+  	}
+  }
+
+
+	state {
+		id			86
+		chart		71
+		tag			"id=_8Go58fUnEeOqvInL61-gjw"
+		treeNode	[77 0 0 0]
+		labelString	"noOvertaking\nentry: velocity = 8; "
+	decomposition	    CLUSTER_STATE
+		
+	type		    OR_STATE    	
+  position [621.94 533.98 302.0 220.0]
+	}
+	state {
+		id			87
+		chart		71
+		tag			"id=_8amXw_UnEeOqvInL61-gjw"
+		treeNode	[86 0 0 0]
+		labelString	"overtaker_noOvertaking"
+	decomposition	    CLUSTER_STATE
+		
+	type		    OR_STATE    	
+		firstTransition		88
+  position [630.08 565.18 286.0 181.0]
+	}
+	state {
+		id			89
+		chart		71
+		tag			"id=_8bV-ofUnEeOqvInL61-gjw"
+		treeNode	[87 0 0 0]
+		labelString	"init"
+	decomposition	    CLUSTER_STATE
+		
+	type		    OR_STATE    	
+  position [701.27 641.78 54.0 36.0]
+	}
+	transition {
+		id			90
+		chart		71
+
+		midPoint	[720.295 636.845]
+		src {
+			intersection	[1 0 -1 0 718.66 632.140 0]
+		}
+		dst {
+			id	89
+			intersection	[1 0 -1 0 721.93 641.550 0]
+		}
+		dataLimits			[718.66 721.93 632.14 641.55]
+		
+	}
+
+	state {
+		id			91
+		chart		71
+		tag			"id=_8bV-ovUnEeOqvInL61-gjw"
+		treeNode	[87 0 0 0]
+		labelString	"requested\nentry: c1=reset(); "
+	decomposition	    CLUSTER_STATE
+		
+	type		    OR_STATE    	
+  position [744.5799 702.23 70.500244 36.0]
+	}
+
+	state {
+		id			92
+		chart		71
+		tag			"id=_8bfIkPUnEeOqvInL61-gjw"
+		treeNode	[87 0 0 0]
+		labelString	"Wait"
+	decomposition	    CLUSTER_STATE
+		
+	type		    OR_STATE    	
+  position [796.07 604.32 54.0 36.0]
+	}
+
+	state {
+		id			93
+		chart		71
+		tag			"id=_8sKo4PUnEeOqvInL61-gjw"
+		treeNode	[87 0 0 0]
+		labelString	"Inv_Error\nentry: invariant(); "
+	decomposition	    CLUSTER_STATE
+		
+	type		    OR_STATE    	
+  position [834.5592 683.15 74.001595 36.0]
+	}
+
+  transition {
+  	id			88
+    chart		71
+    tag			"id=_8dIHUPUnEeOqvInL61-gjw"
+    labelString "[distance < 0.1]\n{[overtakerWriteOut, overtakerParamWriteOut] = overtaker_enqueue(EVT_REQUEST, overtakerWriteOut, 0, overtakerParamWriteOut); }"
+    linkNode 	[87 0 0]
+    executionOrder 1
+  labelPosition [201.21997 694.0 1088.0 8.0]
+  midPoint [762.27 690.1]
+  dataLimits [752.45 772.09 678.04 702.16]
+  	src {
+  	  id		89
+  	    	  
+      intersection	[3 0 1 0 752.45 678.04 0 0]
+  	}
+  	dst {
+  	  id		91
+  	    	  
+      intersection	[1 0 -1 0 772.09 702.16 0 0]
+  	}
+  	slide {
+  	}
+  }
+  transition {
+  	id			94
+    chart		71
+    tag			"id=_8dIHUfUnEeOqvInL61-gjw"
+    labelString "[time(c1) >= 6*1000]"
+    linkNode 	[87 0 0]
+    executionOrder 2
+  labelPosition [690.87 678.01 144.0 8.0]
+  midPoint [745.83 689.91]
+  dataLimits [736.01 755.65 677.85 701.97]
+  	src {
+  	  id		91
+  	    	  
+      intersection	[1 0 -1 0 755.65 701.97 0 0]
+  	}
+  	dst {
+  	  id		89
+  	    	  
+      intersection	[3 0 1 0 736.01 677.85 0 0]
+  	}
+  	slide {
+  	}
+  }
+  transition {
+  	id			95
+    chart		71
+    tag			"id=_8dRRQPUnEeOqvInL61-gjw"
+    labelString "[overtaker_checkQueue(EVT_DECLINE_FRONTVELOCITY, overtakerReadOut)]\n{c2=reset(); velocity = tmp_var_1; [overtakerReadOut, overtakerParamReadOut, tmp_var_1] = overtaker_dequeue(EVT_DECLINE_FRONTVELOCITY, overtakerReadOut, overtakerParamReadOut); }"
+    linkNode 	[87 0 0]
+    executionOrder 3
+  labelPosition [-122.5 679.69 1880.0 8.0]
+  midPoint [801.54004 671.065]
+  dataLimits [787.96 815.12 640.32 701.81]
+  	src {
+  	  id		91
+  	    	  
+      intersection	[1 0 -1 0 787.96 701.81 0 0]
+  	}
+  	dst {
+  	  id		92
+  	    	  
+      intersection	[2 1 0 0 815.12 640.32 0 0]
+  	}
+  	slide {
+  	}
+  }
+  transition {
+  	id			96
+    chart		71
+    tag			"id=_8dbCQPUnEeOqvInL61-gjw"
+    labelString "[time(c2) > 2*1000]"
+    linkNode 	[87 0 0]
+    executionOrder 1
+  labelPosition [717.46 648.16 136.0 8.0]
+  midPoint [775.67004 641.05]
+  dataLimits [755.44 795.9 633.05 649.05]
+  	src {
+  	  id		92
+  	    	  
+      intersection	[4 -1 0 0 795.9 633.05 0 0]
+  	}
+  	dst {
+  	  id		89
+  	    	  
+      intersection	[2 1 0 0 755.44 649.05 0 0]
+  	}
+  	slide {
+  	}
+  }
+  transition {
+  	id			97
+    chart		71
+    tag			"id=_8sKo4fUnEeOqvInL61-gjw"
+    labelString "[time(c1) > 7*1000]"
+    linkNode 	[87 0 0]
+    executionOrder 4
+  labelPosition [752.91 717.89 136.0 8.0]
+  midPoint [824.83496 710.865]
+  dataLimits [815.3 834.37 708.88 712.85]
+  	src {
+  	  id		91
+  	    	  
+      intersection	[2 1 0 0 815.3 712.85 0 0]
+  	}
+  	dst {
+  	  id		93
+  	    	  
+      intersection	[4 -1 0 0 834.37 708.88 0 0]
+  	}
+  	slide {
+  	}
+  }
+
+	transition {
+		id			98
+		chart		71
+
+		midPoint	[791.71497 574.675]
+		src {
+			intersection	[2 1 0 0 810.04 507.060 0]
+		}
+		dst {
+			id	86
+			intersection	[1 0 -1 0 773.39 642.290 0]
+		}
+		dataLimits			[773.39 810.04 507.06 642.29]
+		
+	}
+
+	state {
+		id			99
+		chart		71
+		tag			"id=_8KOZcPUnEeOqvInL61-gjw"
+		treeNode	[77 0 0 0]
+		labelString	"Inv_Error\nentry: invariant(); "
+	decomposition	    CLUSTER_STATE
+		
+	type		    OR_STATE    	
+  position [640.9392 470.98 74.001595 36.0]
+	}
+
+  transition {
+  	id			79
+    chart		71
+    tag			"id=_8KOZcfUnEeOqvInL61-gjw"
+    labelString "[time(c1) > 10*1000]"
+    linkNode 	[77 0 0]
+    executionOrder 1
+  labelPosition [788.15 429.6 144.0 8.0]
+  midPoint [857.16003 446.775]
+  dataLimits [715.06 999.26 413.31 480.24]
+  	src {
+  	  id		80
+  	    	  
+      intersection	[2 1 0 0 999.26 413.31 0 0]
+  	}
+  	dst {
+  	  id		99
+  	    	  
+      intersection	[2 1 0 0 715.06 480.24 0 0]
+  	}
+  	slide {
+  	}
+  }
+	data {
+		id				78
+		name		    "c1"
+		tag				"id=_8KEocPUnEeOqvInL61-gjw"
+		linkNode		    [77 0 100]
+		machine		    2
+		
+		dataType		"double"
+		scope		    LOCAL_DATA	
+		props {
+		
+			initialValue	"0.0"
+
+    	}	    				
+	}  
+	data {
+		id				100
+		name		    "c2"
+		tag				"id=_8KEocfUnEeOqvInL61-gjw"
+		linkNode		    [77 78 0]
+		machine		    2
+		
+		dataType		"double"
+		scope		    LOCAL_DATA	
+		props {
+		
+			initialValue	"0.0"
+
+    	}	    				
+	}  
+
+	transition {
+		id			101
+		chart		71
+
+		midPoint	[1027.99 626.095]
+		src {
+			intersection	[2 1 0 0 1188.1 736.510 0]
+		}
+		dst {
+			id	76
+			intersection	[2 1 0 0 867.88 515.680 0]
+		}
+		dataLimits			[867.88 1188.1 515.68 736.51]
+		
+	}
+
+
+	state {
+		id			102
+		chart		71
+		tag			"id=_7ysDM_UnEeOqvInL61-gjw"
+		treeNode	[72 0 0 0]
+		labelString	"DataInit"
+	decomposition	    CLUSTER_STATE
+		
+	type		AND_STATE	
+
+	executionOrder	    1
+
+  position [1281.5 133.87 61.999916 36.0]
+	}
+
+  transition {
+  	id			74
+    chart		71
+    tag			"id=_7ysDNPUnEeOqvInL61-gjw"
+    labelString "{overtakerWriteOut = overtakerWriteIn;
+overtakerParamWriteOut = overtakerParamWriteIn;
+overtakerReadOut = overtakerReadIn;
+overtakerParamReadOut = overtakerParamReadIn;
+; }"
+    linkNode 	[72 0 0]
+    executionOrder 0
+  labelPosition [837.0 147.87 1344.0 8.0]
+  midPoint [1328.0 142.87]
+  dataLimits [1312.5 1343.4999 133.87 151.87]
+  	src {
+  	  id		102
+  	    	  
+      intersection	[1 0 1 0 1312.5 133.87 0 0]
+  	}
+  	dst {
+  	  id		102
+  	    	  
+      intersection	[2 -1 0 0 1343.4999 151.87 0 0]
+  	}
+  	slide {
+  	}
+  }
+	transition {
+		id			103
+		chart		71
+
+		midPoint	[1109.5701 266.9485]
+		src {
+			intersection	[2 1 0 0 1245.0 94.0670 0]
+		}
+		dst {
+			id	72
+			intersection	[1 0 -1 0 974.14 439.830 0]
+		}
+		dataLimits			[974.14 1245.0 94.067 439.83]
+		
+	}
+
+
+	state {
+		id				104
+		chart			71
+		tag				"id=_7ysDNfUnEeOqvInL61-gjw"
+		treeNode		[71 0 0 0]
+		labelString		"logicalTime = time(clock)"
+		type			FUNC_STATE
+		decomposition	CLUSTER_STATE
+		firstData       105
+
+  position [589.09 -0.29599953 54.0 36.0]
+		eml {
+			isEML	1
+			script	"function logicalTime = time(clock) \n\n sample = 0.001;  % the sample time of the system clock \n\n "
+      "%convert to pass units of time after last reset \n\n logicalTime = uint32((clockSignal - clock)/sample);"		
+		}	
+	}
+	data {
+		id				105
+		name		    "clock"
+		tag				"id=_7ysDOvUnEeOqvInL61-gjw"
+		linkNode		    [104 0 106]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				106
+		name		    "logicalTime"
+		tag				"id=_7ysDOfUnEeOqvInL61-gjw"
+		linkNode		    [104 105 0]
+		machine		    2
+		
+		dataType		"uint32"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+
+
+	state {
+		id				107
+		chart			71
+		tag				"id=_7ysDNvUnEeOqvInL61-gjw"
+		treeNode		[71 0 0 0]
+		labelString		"clock = reset()"
+		type			FUNC_STATE
+		decomposition	CLUSTER_STATE
+		firstData       108
+
+  position [679.09 29.703999 54.0 36.0]
+		eml {
+			isEML	1
+			script	"function clock = reset() \n
+ %set clock variable to current time \n
+ clock = clockSignal;"		
+		}	
+	}
+	data {
+		id				108
+		name		    "clock"
+		tag				"id=_7ysDO_UnEeOqvInL61-gjw"
+		linkNode		    [107 0 0]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+
+
+	state {
+		id				109
+		chart			71
+		tag				"id=_7ysDN_UnEeOqvInL61-gjw"
+		treeNode		[71 0 0 0]
+		labelString		"invariant()"
+		type			FUNC_STATE
+		decomposition	CLUSTER_STATE
+
+  position [768.58984 29.703999 67.00032 36.0]
+		eml {
+			isEML	1
+			script	"function invariant() 
+ error('Simulation stopped in Error State. An invariant is violated');"		
+		}	
+	}
+
+	state {
+		id				110
+		chart			71
+		tag				"id=_72tnkfUnEeOqvInL61-gjw"
+		treeNode		[71 0 0 0]
+		labelString		"[evtQueue, paramQueue] = overtaker_enqueue(event, evtQueueIn, param, paramQueueIn)"
+		type			FUNC_STATE
+		decomposition	CLUSTER_STATE
+		firstData       111
+
+  position [1068.6003 29.703999 124.9992 36.0]
+		eml {
+			isEML	1
+			script	"function [evtQueue, paramQueue] = overtaker_enqueue(event, evtQueueIn, param, paramQueueIn) %eml \n "
+      "evtQueue = evtQueueIn; \n paramQueue = paramQueueIn; \n for i = 1:length(evtQueue) \n 	if evtQueue(i) == uint8(0"
+      ") \n 		evtQueue(i) = event; \n 		paramQueue(i) = param; \n 		return \n 	end \n end"		
+		}	
+	}
+	data {
+		id				111
+		name		    "event"
+		tag				"id=_BaDUUPUoEeOqvInL61-gjw"
+		linkNode		    [110 0 112]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				112
+		name		    "evtQueueIn"
+		tag				"id=_BaDUUfUoEeOqvInL61-gjw"
+		linkNode		    [110 111 113]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+      		array {
+				size			"[5]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				113
+		name		    "param"
+		tag				"id=_BaDUUvUoEeOqvInL61-gjw"
+		linkNode		    [110 112 114]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				114
+		name		    "paramQueueIn"
+		tag				"id=_BaDUU_UoEeOqvInL61-gjw"
+		linkNode		    [110 113 115]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+      		array {
+				size			"[5]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				115
+		name		    "evtQueue"
+		tag				"id=_BaDUVPUoEeOqvInL61-gjw"
+		linkNode		    [110 114 116]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"[5]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				116
+		name		    "paramQueue"
+		tag				"id=_BaDUVfUoEeOqvInL61-gjw"
+		linkNode		    [110 115 0]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"[5]"
+      		}
+    	}	    				
+	}  
+
+	state {
+		id				117
+		chart			71
+		tag				"id=_72tnkvUnEeOqvInL61-gjw"
+		treeNode		[71 0 0 0]
+		labelString		"[evtQueue, paramQueue, parameter] = overtaker_dequeue(event, evtQueueIn, paramQueueIn)"
+		type			FUNC_STATE
+		decomposition	CLUSTER_STATE
+		firstData       118
+
+  position [888.59045 29.703999 124.9992 36.0]
+		eml {
+			isEML	1
+			script	"function [evtQueue, paramQueue, parameter] = overtaker_dequeue(event, evtQueueIn, paramQueueIn) %eml"
+      " \n  evtQueue = evtQueueIn; \n  paramQueue = paramQueueIn; \n  parameter = 0; \n  for i = 1:length(evtQueue) \n "
+      "   if evtQueue(i) == event \n         parameter = paramQueue(i); \n         for j = i:length(evtQueue)-1 \n     "
+      "        evtQueue(j) = evtQueue(j+1); \n             paramQueue(j) = paramQueue(j+1); \n         end \n         e"
+      "vtQueue(length(evtQueue)) = 0;\n         paramQueue(length(paramQueue)) = 0; \n         return \n     end \n  en"
+      "d"		
+		}	
+	}
+	data {
+		id				118
+		name		    "event"
+		tag				"id=_BlWlYPUoEeOqvInL61-gjw"
+		linkNode		    [117 0 119]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				119
+		name		    "evtQueueIn"
+		tag				"id=_BlWlYfUoEeOqvInL61-gjw"
+		linkNode		    [117 118 120]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+      		array {
+				size			"[5]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				120
+		name		    "paramQueueIn"
+		tag				"id=_BlWlYvUoEeOqvInL61-gjw"
+		linkNode		    [117 119 121]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+      		array {
+				size			"[5]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				121
+		name		    "evtQueue"
+		tag				"id=_BlWlY_UoEeOqvInL61-gjw"
+		linkNode		    [117 120 122]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"[5]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				122
+		name		    "paramQueue"
+		tag				"id=_BlWlZPUoEeOqvInL61-gjw"
+		linkNode		    [117 121 123]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"[5]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				123
+		name		    "parameter"
+		tag				"id=_BlWlZfUoEeOqvInL61-gjw"
+		linkNode		    [117 122 0]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+
+	state {
+		id				124
+		chart			71
+		tag				"id=_72tnk_UnEeOqvInL61-gjw"
+		treeNode		[71 0 0 0]
+		labelString		"available = overtaker_checkQueue(event, evtQueue)"
+		type			FUNC_STATE
+		decomposition	CLUSTER_STATE
+		firstData       125
+
+  position [1339.0984 29.703999 148.00319 36.0]
+		eml {
+			isEML	1
+			script	"function available = overtaker_checkQueue(event, evtQueue) %eml \n available = false; \n for i = 1:l"
+      "ength(evtQueue) \n     if evtQueue(i) == event \n         available = true;    \n         return \n     end \n e"
+      "nd"		
+		}	
+	}
+	data {
+		id				125
+		name		    "event"
+		tag				"id=_BwgsgPUoEeOqvInL61-gjw"
+		linkNode		    [124 0 126]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				126
+		name		    "evtQueue"
+		tag				"id=_BwgsgfUoEeOqvInL61-gjw"
+		linkNode		    [124 125 127]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+      		array {
+				size			"[5]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				127
+		name		    "available"
+		tag				"id=_BwgsgvUoEeOqvInL61-gjw"
+		linkNode		    [124 126 0]
+		machine		    2
+		
+		dataType		"boolean"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+
+	data {
+		id				73
+		name		    "clockSignal"
+		tag				"id=_73m_cfUnEeOqvInL61-gjw"
+		linkNode		    [71 0 128]
+		machine		    2
+		
+		dataType		"double"
+		scope		    INPUT_DATA	
+		props {
+
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				128
+		name		    "distance"
+		tag				"id=_7763s_UnEeOqvInL61-gjw"
+		linkNode		    [71 73 129]
+		machine		    2
+		
+		dataType		"double"
+		scope		    INPUT_DATA	
+		props {
+
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				129
+		name		    "overtakerReadIn"
+		tag				"id=_78qekvUnEeOqvInL61-gjw"
+		linkNode		    [71 128 130]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    INPUT_DATA	
+		props {
+
+      		array {
+				size			"[5]"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				130
+		name		    "overtakerParamReadIn"
+		tag				"id=_78qek_UnEeOqvInL61-gjw"
+		linkNode		    [71 129 131]
+		machine		    2
+		
+		dataType		"double"
+		scope		    INPUT_DATA	
+		props {
+
+      		array {
+				size			"5"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				131
+		name		    "overtakerWriteIn"
+		tag				"id=_78qelvUnEeOqvInL61-gjw"
+		linkNode		    [71 130 132]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    INPUT_DATA	
+		props {
+
+      		array {
+				size			"[5]"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				132
+		name		    "overtakerParamWriteIn"
+		tag				"id=_78qel_UnEeOqvInL61-gjw"
+		linkNode		    [71 131 133]
+		machine		    2
+		
+		dataType		"double"
+		scope		    INPUT_DATA	
+		props {
+
+      		array {
+				size			"5"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				133
+		name		    "velocity"
+		tag				"id=_77VB0_UnEeOqvInL61-gjw"
+		linkNode		    [71 132 134]
+		machine		    2
+		
+		dataType		"double"
+		scope		    OUTPUT_DATA	
+		props {
+		
+			initialValue	""
+
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				134
+		name		    "overtakerReadOut"
+		tag				"id=_78qelPUnEeOqvInL61-gjw"
+		linkNode		    [71 133 135]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"[5]"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				135
+		name		    "overtakerParamReadOut"
+		tag				"id=_78qelfUnEeOqvInL61-gjw"
+		linkNode		    [71 134 136]
+		machine		    2
+		
+		dataType		"double"
+		scope		    OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"5"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				136
+		name		    "overtakerWriteOut"
+		tag				"id=_78qemPUnEeOqvInL61-gjw"
+		linkNode		    [71 135 137]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"[5]"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				137
+		name		    "overtakerParamWriteOut"
+		tag				"id=_78qemfUnEeOqvInL61-gjw"
+		linkNode		    [71 136 138]
+		machine		    2
+		
+		dataType		"double"
+		scope		    OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"5"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				138
+		name		    "EVT_DECLINE_FRONTVELOCITY"
+		tag				"id=_8LtnMPUnEeOqvInL61-gjw"
+		linkNode		    [71 137 139]
+		machine		    2
+		
+		dataType		"uint32"
+		scope		    CONSTANT_DATA	
+		props {
+		
+			initialValue	"3"
+
+    	}	    				
+	}  
+	data {
+		id				139
+		name		    "EVT_REQUEST"
+		tag				"id=_8PukgPUnEeOqvInL61-gjw"
+		linkNode		    [71 138 140]
+		machine		    2
+		
+		dataType		"uint32"
+		scope		    CONSTANT_DATA	
+		props {
+		
+			initialValue	"1"
+
+    	}	    				
+	}  
+	data {
+		id				140
+		name		    "EVT_FINISH"
+		tag				"id=_8P3ucPUnEeOqvInL61-gjw"
+		linkNode		    [71 139 141]
+		machine		    2
+		
+		dataType		"uint32"
+		scope		    CONSTANT_DATA	
+		props {
+		
+			initialValue	"4"
+
+    	}	    				
+	}  
+	data {
+		id				141
+		name		    "EVT_LANECHANGED"
+		tag				"id=_8QBfcPUnEeOqvInL61-gjw"
+		linkNode		    [71 140 142]
+		machine		    2
+		
+		dataType		"uint32"
+		scope		    CONSTANT_DATA	
+		props {
+		
+			initialValue	"5"
+
+    	}	    				
+	}  
+	data {
+		id				142
+		name		    "EVT_ACCEPT"
+		tag				"id=_8S2J8PUnEeOqvInL61-gjw"
+		linkNode		    [71 141 143]
+		machine		    2
+		
+		dataType		"uint32"
+		scope		    CONSTANT_DATA	
+		props {
+		
+			initialValue	"2"
+
+    	}	    				
+	}  
+	data {
+		id				143
+		name		    "tmp_var_1"
+		tag				"id=_73KTgPUnEeOqvInL61-gjw"
+		linkNode		    [71 142 0]
+		machine		    2
+		
+		dataType		"double"
+		scope		    LOCAL_DATA	
+		props {
+
+    	}	    				
+	}  
+	instance {
+		id			144
+		name		"RedSw/RedSw_Statechart"
+		machine		2
+		chart		71
+	}
+	target {
+		id			1
+    	name		    "sfun"
+    	description		    "Default Simulink S-Function Target."		
+		machine		2
+		linkNode		    [2 0 0]	
+	}
+}
+
+

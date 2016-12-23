@@ -1,0 +1,110 @@
+import transforms.naming;
+import transforms.util;
+
+modeltype MINSTANCE uses modelinstance('http://www.muml.org/modelinstance/1.0.0');
+modeltype RTSC uses pim::realtimestatechart("http://www.muml.org/pim/1.0.0");
+modeltype MSGTYPE uses pim::msgtype('http://www.muml.org/pim/1.0.0');
+modeltype BEHAVIOR uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype TYPES uses pim::types('http://www.muml.org/pim/1.0.0');
+modeltype COREEXP uses core::expressions('http://www.muml.org/core/1.0.0');
+modeltype CORE uses core::expressions::common('http://www.muml.org/core/1.0.0');
+modeltype ACTION uses actionlanguage('http://www.muml.org/pim/actionlanguage/1.0.0');
+modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+modeltype TRANSFORM uses transform('http://www.muml.de/modelica/transform/1.0.0');
+
+library ExitPoints
+	access Naming extends Util; // extends is only used due to a qvto bug, which is fixed in luna
+	
+property INIT : String = "generatedInitState";
+property EXIT : String = "generatedExitState";
+property OUT : String = "generatedOutputState";
+property EXITVAR : String = "ExitVar";
+
+helper RealtimeStatechart::translateExitPoints() {
+	self.embeddedStatecharts()->collect(states)->select(connectionPoints->notEmpty())
+		->collect(connectionPoints)[ExitPoint]->translateExitPoint();
+	self.embeddedStatecharts()->collect(states)->map removeExitPoints();
+	return;
+}
+
+mapping inout State::removeExitPoints()
+	when {self.connectionPoints[ExitPoint]->notEmpty()}
+{
+	self.connectionPoints := self.connectionPoints->reject(cp : StateConnectionPoint | cp.oclIsKindOf(ExitPoint));
+}
+
+mapping inout Transition::fixupOutgoingTransition(exitVariable : Variable, rNum : Integer) {
+	var expression : Expression := new ComparisonExpression(exitVariable, rNum.toString());
+	if (not self.guard.oclIsUndefined()) then {
+		expression := new LogicalExpression(expression, self.guard);
+	} endif;
+	self.guard := expression;
+}
+
+helper ExitPoint::translateExitPoint() {
+	log("translate: " + self.getName());
+	var variable : Variable := self.map createVariable();
+	self.translateIncomingTransitions(variable);
+	self.translateOutgoingTransitions(variable);
+	resetVariable(self.state, variable);
+	//self.state.embeddedRegions->forEach(r) {
+	//	var state : State := self.getOrCreateInitState(r);
+	//};
+	return;
+}
+
+helper ExitPoint::translateIncomingTransitions(variable : Variable) {
+	
+	//var target : State := self.getOrCreateExitState(variable, self.state.parentStatechart);
+	//self.incomingTransitions->map changeTarget(tar);
+	self.incomingTransitions->translateIncomingTransition(variable, self);
+	return
+}
+
+helper Transition::translateIncomingTransition(variable : Variable, exitPoint : ExitPoint) {
+	var target : State := exitPoint.getOrCreateExitState(variable, self.statechart);
+	self.map changeTarget(target);
+	return;
+}
+
+mapping inout Transition::changeTarget(state : State) {
+	self.target := state;
+}
+
+helper ExitPoint::getOrCreateExitState(variable : Variable, inout rtsc : RealtimeStatechart) : State {
+	var state : State := self.resolveIn(RealtimeStatechart::createState, State)->select(name = self.getName())->any(true);
+	if (state.oclIsUndefined()) then {
+		state := rtsc.map createState(self.getName());
+		getOrCreateEntryBlock(state).expressions += new Assignment(variable,
+			new ArithmeticExpression(new TypedNamedElementExpression(variable), new LiteralExpression('1')));
+	} endif;
+	return state;
+}
+
+mapping inout RealtimeStatechart::createState(name : String) : State {
+	result.name := name;
+	initial := false;
+	self.states += result;
+}
+
+helper ExitPoint::translateOutgoingTransitions(variable : Variable) {
+	self.outgoingTransitions->map translateOutgoingTransition(variable, self.state.embeddedRegions->size());
+	return;
+}
+
+mapping inout Transition::translateOutgoingTransition(variable : Variable, num : Integer) {
+	assert fatal (self.guard.oclIsUndefined()) with log("guard is not undefined");
+	self.source := self.source.oclAsType(ExitPoint).state;
+	self.guard := new ComparisonExpression(variable, num.toString());
+}
+
+mapping ExitPoint::createVariable() : Variable {
+	init {
+		result := createVariable(self.state.parentStatechart, self.getVariableName(), self.oclAsType(EObject).getDataType(INT));
+	}
+}
+
+helper resetVariable(inout state : State, variable : Variable) {
+	getOrCreateEntryBlock(state).expressions += new Assignment(variable, '0');
+	return;
+}

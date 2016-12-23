@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.muml.reconfiguration.componentstorypattern.edit;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Activator: org.muml.reconfiguration.componentstorypattern.provider.ComponentStoryPatternEditPlugin$Implementation
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.muml.reconfiguration.componentstorypattern.provider
+Require-Bundle: org.eclipse.ocl.ecore,
+ org.eclipse.core.runtime,
+ org.muml.reconfiguration.componentstorypattern;visibility:=reexport,
+ org.eclipse.emf.edit;visibility:=reexport,
+ org.muml.core;visibility:=reexport,
+ org.muml.core.edit;visibility:=reexport,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.emf.ecore.edit;visibility:=reexport,
+ org.muml.pim;visibility:=reexport,
+ org.muml.pim.edit;visibility:=reexport,
+ org.muml.reconfiguration;visibility:=reexport,
+ org.muml.reconfiguration.edit;visibility:=reexport,
+ org.muml.storydiagram;visibility:=reexport,
+ org.muml.storydiagram.edit;visibility:=reexport,
+ org.muml.reconfiguration.verification.sdd.componentsdd
+Bundle-ActivationPolicy: lazy

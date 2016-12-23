@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="migrator" name="Migrator" schema="schema/migrator.exsd"/>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated migration -->
+      <package
+            uri="http://www.muml.org/emm/1.0.0"
+            class="org.muml.emm.MigrationPackage"
+            genModel="model/emm.genmodel"/>
+   </extension>
+
+</plugin>

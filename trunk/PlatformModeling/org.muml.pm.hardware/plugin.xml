@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated hardware -->
+      <package
+            uri="http://www.muml.org/pm/hardware/hwplatform/1.0.0"
+            class="org.muml.pm.hardware.hwplatform.HwplatformPackage"
+            genModel="model/hardware.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated hardware -->
+      <package
+            uri="http://www.muml.org/pm/hardware/hwvaluetype/1.0.0"
+            class="org.muml.pm.hardware.hwvaluetype.HwvaluetypePackage"
+            genModel="model/hardware.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated hardware -->
+      <package
+            uri="http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0"
+            class="org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage"
+            genModel="model/hardware.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated hardware -->
+      <package
+            uri="http://www.muml.org/pm/hardware/hwresource/1.0.0"
+            class="org.muml.pm.hardware.hwresource.HwresourcePackage"
+            genModel="model/hardware.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated hardware -->
+      <package
+            uri="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0"
+            class="org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage"
+            genModel="model/hardware.genmodel"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.generated_package">
+      <package
+            class="org.muml.pm.hardware.HardwarePackage"
+            genModel="model/hardware.genmodel"
+            uri="http://www.muml.org/pm/hardware/1.0.0">
+      </package>
+   </extension>
+</plugin>

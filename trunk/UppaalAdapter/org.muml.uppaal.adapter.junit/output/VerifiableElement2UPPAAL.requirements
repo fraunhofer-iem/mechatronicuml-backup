@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<requirements:PropertyRepository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:declarations="http://www.muml.org/uppaal/declarations/1.0.0" xmlns:expressions="http://www.muml.org/uppaal/expressions/1.0.0" xmlns:requirements="http://www.muml.org/uppaal/requirements/1.0.0" xmlns:templates="http://www.muml.org/uppaal/templates/1.0.0" xsi:schemaLocation="http://www.muml.org/uppaal/declarations/1.0.0 http://www.muml.org/uppaal/1.0.0#//declarations http://www.muml.org/uppaal/expressions/1.0.0 http://www.muml.org/uppaal/1.0.0#//expressions http://www.muml.org/uppaal/templates/1.0.0 http://www.muml.org/uppaal/1.0.0#//templates">
+  <properties xsi:type="requirements:UnaryProperty" comment="&quot;no comment provided&quot;" quantifier="A" operator="[]">
+    <expression xsi:type="expressions:NegationExpression">
+      <negatedExpression xsi:type="requirements:DeadlockExpression"/>
+    </expression>
+  </properties>
+  <properties xsi:type="requirements:UnaryProperty" comment="&quot;no comment provided&quot;" quantifier="A" operator="[]">
+    <expression xsi:type="expressions:NegationExpression">
+      <negatedExpression xsi:type="expressions:IdentifierExpression" identifier="declarations:Variable VerifiableElement2UPPAAL.uppaal#//@globalDeclarations/@declaration.27/@elements.0"/>
+    </expression>
+  </properties>
+  <properties xsi:type="requirements:LeadsToProperty" comment="&quot;no comment provided&quot;">
+    <leftExpression xsi:type="expressions:ScopedIdentifierExpression">
+      <scope xsi:type="expressions:IdentifierExpression" identifier="templates:RedefinedTemplate VerifiableElement2UPPAAL.uppaal#//@systemDeclarations/@declaration.4/@declaredTemplate"/>
+      <identifier identifier="templates:Location VerifiableElement2UPPAAL.uppaal#//@template.5/@location.2"/>
+    </leftExpression>
+    <rightExpression xsi:type="expressions:ScopedIdentifierExpression">
+      <scope xsi:type="expressions:IdentifierExpression" identifier="templates:RedefinedTemplate VerifiableElement2UPPAAL.uppaal#//@systemDeclarations/@declaration.1/@declaredTemplate"/>
+      <identifier identifier="templates:Location VerifiableElement2UPPAAL.uppaal#//@template.2/@location.1"/>
+    </rightExpression>
+  </properties>
+  <properties xsi:type="requirements:LeadsToProperty" comment="&quot;no comment provided&quot;">
+    <leftExpression xsi:type="expressions:FunctionCallExpression" function="VerifiableElement2UPPAAL.uppaal#//@globalDeclarations/@declaration.53/@elements.0">
+      <argument xsi:type="expressions:IdentifierExpression" identifier="declarations:Variable VerifiableElement2UPPAAL.uppaal#//@globalDeclarations/@declaration.29/@elements.0">
+        <index xsi:type="expressions:LiteralExpression" text="1"/>
+        <index xsi:type="expressions:LiteralExpression" text="0"/>
+      </argument>
+      <argument xsi:type="expressions:IdentifierExpression" identifier="declarations:Variable VerifiableElement2UPPAAL.uppaal#//@globalDeclarations/@declaration.34/@elements.2"/>
+    </leftExpression>
+    <rightExpression xsi:type="expressions:ScopedIdentifierExpression">
+      <scope xsi:type="expressions:IdentifierExpression" identifier="templates:RedefinedTemplate VerifiableElement2UPPAAL.uppaal#//@systemDeclarations/@declaration.3/@declaredTemplate"/>
+      <identifier identifier="templates:Location VerifiableElement2UPPAAL.uppaal#//@template.4/@location.1"/>
+    </rightExpression>
+  </properties>
+  <properties xsi:type="requirements:LeadsToProperty" comment="&quot;no comment provided&quot;">
+    <leftExpression xsi:type="expressions:LogicalExpression">
+      <firstExpr xsi:type="expressions:LogicalExpression">
+        <firstExpr xsi:type="expressions:NegationExpression">
+          <negatedExpression xsi:type="expressions:FunctionCallExpression" function="VerifiableElement2UPPAAL.uppaal#//@globalDeclarations/@declaration.53/@elements.0">
+            <argument xsi:type="expressions:IdentifierExpression" identifier="declarations:Variable VerifiableElement2UPPAAL.uppaal#//@globalDeclarations/@declaration.29/@elements.0">
+              <index xsi:type="expressions:LiteralExpression" text="0"/>
+              <index xsi:type="expressions:LiteralExpression" text="0"/>
+            </argument>
+            <argument xsi:type="expressions:IdentifierExpression" identifier="declarations:Variable VerifiableElement2UPPAAL.uppaal#//@globalDeclarations/@declaration.34/@elements.3"/>
+          </negatedExpression>
+        </firstExpr>
+        <secondExpr xsi:type="expressions:ScopedIdentifierExpression">
+          <scope xsi:type="expressions:IdentifierExpression" identifier="templates:RedefinedTemplate VerifiableElement2UPPAAL.uppaal#//@systemDeclarations/@declaration.1/@declaredTemplate"/>
+          <identifier identifier="templates:Location VerifiableElement2UPPAAL.uppaal#//@template.2/@location.2"/>
+        </secondExpr>
+      </firstExpr>
+      <secondExpr xsi:type="expressions:CompareExpression" operator=">=">
+        <firstExpr xsi:type="expressions:IdentifierExpression" identifier="declarations:Variable VerifiableElement2UPPAAL.uppaal#//@globalDeclarations/@declaration.71/@elements.0">
+          <index xsi:type="expressions:LiteralExpression" text="0"/>
+        </firstExpr>
+        <secondExpr xsi:type="expressions:LiteralExpression" text="1"/>
+      </secondExpr>
+    </leftExpression>
+    <rightExpression xsi:type="expressions:ScopedIdentifierExpression">
+      <scope xsi:type="expressions:IdentifierExpression" identifier="templates:RedefinedTemplate VerifiableElement2UPPAAL.uppaal#//@systemDeclarations/@declaration.1/@declaredTemplate"/>
+      <identifier identifier="templates:Location VerifiableElement2UPPAAL.uppaal#//@template.2/@location.3"/>
+    </rightExpression>
+  </properties>
+</requirements:PropertyRepository>

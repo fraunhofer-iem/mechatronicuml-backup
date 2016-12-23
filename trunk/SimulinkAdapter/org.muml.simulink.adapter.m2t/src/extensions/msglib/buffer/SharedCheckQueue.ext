@@ -1,0 +1,29 @@
+import simulink;
+import simulink::stateflow;
+import simulink::msglib;
+import simulink::msglib::buffer;
+
+String getCode(SharedCheckQueue function):
+'function available = ' + function.name + '(event, evtQueue) %eml 
+  available = false; 
+ for i = 1:length(evtQueue) 
+     if evtQueue(i) == event 
+         available = true;    
+         return 
+     end 
+ end'
+;
+
+EmbeddedFunction generateContent(SharedCheckQueue function):
+function.setCode(function.getCode()).setInput(function.generateInputData(function.bufferSize)).setOutput(function.generateOutputData(function.bufferSize));
+
+List[Data] generateInputData(SharedCheckQueue function, Integer bufferSize):
+{let d=new Data:d.setName('event').setType(DataType::UINT8)->d,
+let d=new Data:d.setName('evtQueue').setType(DataType::UINT8).setSize('[' + bufferSize + ']')->d
+}
+;
+
+List[Data] generateOutputData(SharedCheckQueue function, Integer bufferSize):
+{let d=new Data:d.setName('available').setType(DataType::BOOLEAN)->d
+}
+;

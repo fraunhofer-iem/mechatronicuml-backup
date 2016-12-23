@@ -1,0 +1,354 @@
+library APIBindingLibrary;
+import CommonLibrary;
+import StateChartLibrary;
+
+modeltype SoftPlattform uses software('http://www.muml.org/pm/software/1.0.0');
+
+modeltype PSM uses psm('http://www.muml.org/psm/1.0.0');
+modeltype PortMappingModel uses psm::portapimapping('http://www.muml.org/psm/1.0.0');
+modeltype ApiExpessions uses psm::apiexpressions('http://www.muml.org/psm/1.0.0');
+
+modeltype PSMInstance uses psm::psm_instance('http://www.muml.org/psm/1.0.0');
+modeltype PSMStateChart uses psm::psm_realtimestatechart('http://www.muml.org/psm/1.0.0');
+modeltype Realtimestatechartparameter uses psm::psm_realtimestatechart::realtimestatechartparameter('http://www.muml.org/psm/1.0.0');
+modeltype PSMparameterBinding uses psm::psm_realtimestatechart::realtimestatechartparameterbinding('http://www.muml.org/psm/1.0.0');
+
+modeltype Modelinstance uses modelinstance('http://www.muml.org/modelinstance/1.0.0');
+modeltype Muml uses muml('http://www.muml.org/pim/1.0.0');
+modeltype InstancePacakge uses pim::instance('http://www.muml.org/pim/1.0.0');
+modeltype ComponentPackage uses pim::component('http://www.muml.org/pim/1.0.0');
+modeltype Actionlanguage uses actionlanguage('http://www.muml.org/pim/actionlanguage/1.0.0');
+modeltype Core uses core('http://www.muml.org/core/1.0.0');
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+property initApiName : String = "InitApi";
+property execApiName : String = "ExecApi";
+property timeBetweenApiExecsName : String = "TimeBetweenApiExececutions";
+
+//TODO: fix the mess
+
+/**
+* Creates the ParameterBinding for a ParametriableDiscreteSinglePortInstance
+* These ParameterBindings containts the API-Calls and TimeConstraints for the StateCharts of the "sensor/actuator" component
+* self has to be the orignal PortInstance
+**/
+helper ContinuousPortInstance::createPortBindingExecParameter(in newPortInstance:ParameterisableDiscreteSinglePortInstance) : APICallParameterBinding{
+	return newPortInstance.createAPICallParameterBinding(self.getGenPortInstance().execCommand,self.type.oclAsType(ContinuousPort));
+}
+
+
+
+/**
+ self is the orignal PortInstance
+**/
+helper PortInstance::createPortBindingSamplingTimeParameter(in newPortInstance:ParameterisableDiscreteSinglePortInstance) : TimeParameterBinding{
+	var timeParameterBinding: TimeParameterBinding := null;
+	if(self.oclIsKindOf(HybridPortInstance) or self.oclIsKindOf(ContinuousPortInstance)) then{
+			timeParameterBinding:=new TimeParameterBinding();
+			timeParameterBinding.parameter:=self.portType.oclAsType(DirectedTypedPort).map mapDirectedTypedPort2SamplingTimeParameter();
+			timeParameterBinding.timeValue:=self.getGenPortInstance().samplingTime;
+	}endif;
+	return timeParameterBinding;
+}
+
+
+/**
+* Create the API-CallParameterBinding for a ParameterizedRealtimeStateChart
+* requires the concrete Expression which describes the API-Call
+* and the signature of the API-Call as it is used in the RealtimeStateChart
+**/
+helper ParameterisableDiscreteSinglePortInstance::createAPICallParameterBinding(mappingExpressiong:Core::expressions::Expression, org_port:ContinuousPort):APICallParameterBinding{
+	var binding:APICallParameterBinding:=new APICallParameterBinding();
+	binding.name:=self.componentInstance.name+"_"+self.name+"_"+org_port.map mapContinuousPort2APICallParameter().name;
+	binding.parameter:=org_port.map mapContinuousPort2APICallParameter();
+	binding.returnType:=org_port.map mapContinuousPort2APICallParameter().returnType;
+	binding.parameters:=org_port.map mapContinuousPort2APICallParameter().parameters->deepclone()->oclAsType(pim::behavior::Parameter);
+	binding.implementations+=mappingExpressiong.createMumlValidExpression();
+	return binding;
+}
+
+
+
+
+//marios stuff
+query ApiExpessions::APICallExpression::createMumlValidExpression() : Core::expressions::Expression {
+return object Core::expressions::TextualExpression {
+					language := "plattform";
+					languageVersion := "1";
+					
+					-- make the string for the api-call
+					var apiText : String := self.apiCommand.name + "(";
+					var paramsWerePrinted : Boolean := false;
+					
+					self.apiCommand.parameters->forEach(param) {
+						self.parameterBindings->forEach(binding) {
+							if (binding.parameter = param) then {
+								if (paramsWerePrinted) then {
+									apiText := apiText + ", ";
+								} else {
+									paramsWerePrinted := true;
+								} endif;
+								apiText := apiText + binding.value.getPureString();
+								break;
+							} endif;
+						};
+					};
+					apiText := apiText + ")";
+					expressionText := apiText;
+				};
+}
+
+
+query Core::expressions::common::UnaryExpression::createMumlValidExpression() : Core::expressions::Expression {
+return object Core::expressions::common::UnaryExpression {
+					enclosedExpression := self
+							
+							.enclosedExpression.createMumlValidExpression();
+				};
+}
+
+
+query Core::expressions::common::ComparisonExpression::createMumlValidExpression() : Core::expressions::Expression {
+	return object Core::expressions::common::ComparisonExpression {
+					leftExpression := self
+						
+							.leftExpression.
+							createMumlValidExpression()
+							;
+					rightExpression := self
+						
+							.rightExpression
+							.createMumlValidExpression()
+							;
+   };
+}
+query Core::expressions::common::ArithmeticExpression::createMumlValidExpression() : Core::expressions::Expression {
+	return object Core::expressions::common::ArithmeticExpression {
+					leftExpression := self
+						
+							.leftExpression
+							.createMumlValidExpression()
+							;
+					rightExpression := self
+						
+							.rightExpression
+							.createMumlValidExpression()
+							;
+				};
+}
+
+query Core::expressions::common::LogicalExpression::createMumlValidExpression() : Core::expressions::Expression {
+return object Core::expressions::common::LogicalExpression {
+					leftExpression := self
+							
+							.leftExpression
+							.createMumlValidExpression()
+							;
+					rightExpression := self
+							
+							.rightExpression
+							.createMumlValidExpression()
+							;
+				};
+}
+
+query Core::expressions::TextualExpression::createMumlValidExpression() : Core::expressions::Expression {
+return object Core::expressions::TextualExpression {
+					expressionText := self
+							
+							.expressionText;
+					language := self
+							
+							.language;
+					languageVersion := self
+							
+							.languageVersion;
+				};
+}
+
+query Actionlanguage::WhileLoop::createMumlValidExpression() : Core::expressions::Expression {
+return object Actionlanguage::WhileLoop {
+
+					block  := self
+							
+							.block
+							.createMumlValidExpression()
+							.oclAsType(Actionlanguage::Block)
+							;
+					loopTest  := self
+							
+							.loopTest
+							.createMumlValidExpression()
+							;
+				};
+}
+
+query Actionlanguage::DoWhileLoop::createMumlValidExpression() : Core::expressions::Expression {
+return object Actionlanguage::DoWhileLoop {
+					block  := self	.block
+							.createMumlValidExpression()
+							.oclAsType(Actionlanguage::Block)
+							;
+					loopTest  := self.loopTest
+							.createMumlValidExpression()
+							;
+				};
+}
+
+query Actionlanguage::ForLoop::createMumlValidExpression() : Core::expressions::Expression {
+return object Actionlanguage::ForLoop {
+
+					block  := self
+							
+							.block
+							.createMumlValidExpression()
+							.oclAsType(Actionlanguage::Block)
+							;
+					loopTest  := self
+							
+							.loopTest
+							.createMumlValidExpression()
+							;
+					initializeExpression := self
+							
+							.initializeExpression
+							.createMumlValidExpression()
+							.oclAsType(Actionlanguage::Assignment)
+							;
+					countingExpression := self
+							
+							.countingExpression
+							.createMumlValidExpression()
+							.oclAsType(Actionlanguage::Assignment)
+							;
+				};
+}
+
+query Actionlanguage::Block::createMumlValidExpression() : Core::expressions::Expression {
+return object Actionlanguage::Block {
+					expressions := self
+							
+							.expressions
+							->createMumlValidExpression();
+				};
+}
+
+
+query Actionlanguage::Assignment::createMumlValidExpression() : Core::expressions::Expression {
+return object Actionlanguage::Assignment {
+					lhs_typedNamedElementExpression := self
+							
+							.lhs_typedNamedElementExpression
+							.createMumlValidExpression()
+							.oclAsType(Actionlanguage::TypedNamedElementExpression)
+							;
+					rhs_assignExpression := self
+							
+							.rhs_assignExpression
+							.createMumlValidExpression()
+							;
+				};
+}
+
+query Actionlanguage::IfStatement::createMumlValidExpression() : Core::expressions::Expression {
+	return object Actionlanguage::IfStatement {
+					ifCondition := self
+					
+							.ifCondition
+							.createMumlValidExpression()
+							;
+					ifBlock := self
+						
+							.ifBlock
+							.createMumlValidExpression()
+							.oclAsType(Actionlanguage::Block)
+							;
+					elseIfStatements:=self.elseIfStatements->createMumlValidExpression();
+
+					elseBlock := self
+						
+							.elseBlock
+							.createMumlValidExpression()
+							.oclAsType(Actionlanguage::Block)
+							;
+				};
+}
+
+
+query Actionlanguage::ElseIfStatement::createMumlValidExpression():Actionlanguage::ElseIfStatement{
+	return object Actionlanguage::ElseIfStatement{
+		elseIfCondition:=self.elseIfCondition.createMumlValidExpression();
+		elseIfBlock:=self.elseIfBlock.createMumlValidExpression().oclAsType(Actionlanguage::Block);
+	};
+}
+
+query Actionlanguage::ReturnStatement::createMumlValidExpression() : Core::expressions::Expression {
+return object Actionlanguage::ReturnStatement {
+					expression := self
+							.expression
+							.createMumlValidExpression()
+							;
+				};
+}
+
+query Actionlanguage::TypedNamedElementExpression::createMumlValidExpression() : Core::expressions::Expression {
+return object Actionlanguage::TypedNamedElementExpression {
+					typedNamedElement := self
+							
+							.typedNamedElement;
+							elementAccessors:=self.elementAccessors->createMumlValidExpression().oclAsType(ElementAccessorExpression);
+				};
+}
+
+
+
+
+
+
+query Core::expressions::Expression::createMumlValidExpression() : Core::expressions::Expression {
+	return self;
+}
+
+
+ query Actionlanguage::ElementAccessorExpression::createMumlValidExpression(): Core::expressions::Expression {
+ return self;
+}
+
+ query Actionlanguage::ArrayIndexExpression::createMumlValidExpression(): Core::expressions::Expression {
+ 	return object Actionlanguage::ArrayIndexExpression{
+ 		index:=self.index.createMumlValidExpression();
+ 	}
+}
+
+ query Actionlanguage::AttributeAccessorExpression::createMumlValidExpression(): Core::expressions::Expression {
+ 	return object Actionlanguage::AttributeAccessorExpression{
+ 		attribute:=self.attribute;
+ 	}
+}
+
+
+
+query Core::expressions::Expression::getPureString() : String {
+	switch {
+		case (self.oclIsKindOf(ApiExpessions::EnumerationValueExpression)) {
+			-- self is a EnumerationValueExpression
+			return self.oclAsType(ApiExpessions::EnumerationValueExpression).enumValue.value;
+		} case (self.oclIsKindOf(ApiExpessions::ContinuousPortExpression)) {
+			-- self is a ContinuousPortExpression
+			return  self.oclAsType(ApiExpessions::ContinuousPortExpression).continuousPort.portType.name;
+			-- this is C-Code that is very depending on the CodeGen
+	--=============================================================================================================================================================
+		} case (self.oclIsKindOf(Core::expressions::common::LiteralExpression)) {
+			return self.oclAsType(Core::expressions::common::LiteralExpression).value;
+		} case (self.oclIsKindOf(Core::expressions::TextualExpression)) {
+			return self.oclAsType(Core::expressions::TextualExpression).expressionText;
+			
+		} case (self.oclIsKindOf(Actionlanguage::TypedNamedElementExpression)) {
+			return self.oclAsType(Actionlanguage::TypedNamedElementExpression).typedNamedElement.name;
+		} else {
+			
+		}
+	};
+	
+	return self.toString();
+};

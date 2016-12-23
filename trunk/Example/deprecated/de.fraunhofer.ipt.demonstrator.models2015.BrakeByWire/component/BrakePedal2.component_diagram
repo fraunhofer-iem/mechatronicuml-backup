@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_LzOE8Om3EeSE4Zrj1GnMCg" type="Component" name="BrakePedal2.component_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_LzOE8um3EeSE4Zrj1GnMCg" type="2005" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_LzOE9Om3EeSE4Zrj1GnMCg" type="5021"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_LzOE9em3EeSE4Zrj1GnMCg" type="7005"/>
+    <element xmi:type="component:StaticStructuredComponent" href="../de.fraunhofer.ipt.demonstrator.models2015.fujaba#_cCDggOm2EeSE4Zrj1GnMCg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LzOE8-m3EeSE4Zrj1GnMCg"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_LzOE8em3EeSE4Zrj1GnMCg"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../de.fraunhofer.ipt.demonstrator.models2015.fujaba#_P_fLLcvpEeSqLp1EdST_nQ"/>
+</notation:Diagram>

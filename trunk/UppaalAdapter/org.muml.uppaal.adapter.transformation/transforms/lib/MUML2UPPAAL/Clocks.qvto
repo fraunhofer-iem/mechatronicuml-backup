@@ -1,0 +1,124 @@
+import transforms.lib.MUML2UPPAAL.Queries;
+import transforms.lib.MUML2UPPAAL.Enums;
+import transforms.lib.MUML2UPPAAL.Types;
+import transforms.lib.MUML2UPPAAL.IDs;
+import transforms.lib.MUML2UPPAAL.Util;
+import transforms.lib.MUML2UPPAAL.Expressions;
+import transforms.lib.RTSCUtil;
+
+library Clocks;
+
+modeltype muml_rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype muml_behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype muml_valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype uppaal uses 'http://www.muml.org/uppaal/1.0.0';
+modeltype uppaal_declarations uses uppaal::declarations('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_expressions uses uppaal::expressions('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_types uses uppaal::types('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_templates uses uppaal::templates('http://www.muml.org/uppaal/1.0.0');
+	
+	query Clock :: belongsToSubrole() : Boolean {
+		return assert fatal (false) with log('Should never be reached.') 
+	}
+	
+	constructor AssignmentExpression :: AssignmentExpression(clock : Clock, componentInstanceID : uppaal_declarations::Variable, portOrRoleInstanceID : uppaal_declarations::Variable, subPortOrRoleInstanceID : uppaal_declarations::Variable) {
+		
+		firstExpr := new IdentifierExpression(clock, componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);	
+		
+		operator := AssignmentOperator::EQUAL;
+		
+		secondExpr := new LiteralExpression(0);
+		
+	}
+		
+	mapping ClockConstraint :: ClockConstraint2CompareExpression(componentInstanceID : uppaal_declarations::Variable, portOrRoleInstanceID : uppaal_declarations::Variable, subPortOrRoleInstanceID : uppaal_declarations::Variable) : CompareExpression {
+				
+		firstExpr := new IdentifierExpression(self.clock, componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
+		
+		secondExpr := self.bound.map TimeValue2Expression(componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
+		
+		operator := self.operator.mapOperator();
+		
+	}
+	
+	helper TimeValue :: mapTimeValue2Expression(componentInstanceID : uppaal_declarations::Variable, portOrRoleInstanceID : uppaal_declarations::Variable, subPortOrRoleInstanceID : uppaal_declarations::Variable) : Expression {
+		
+		var resolved : Expression = self.resolveoneIn(TimeValue::TimeValue2Expression, Expression);
+		
+		var expression : Expression;
+					
+		if (not resolved.oclIsUndefined())
+		then {
+			expression := resolved.deepclone().oclAsType(Expression);
+		}
+		else {
+			expression := self.map TimeValue2Expression(componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
+		}
+		endif;
+		
+		return expression
+			
+	}
+	
+	mapping TimeValue :: TimeValue2Expression(componentInstanceID : uppaal_declarations::Variable, portOrRoleInstanceID : uppaal_declarations::Variable, subPortOrRoleInstanceID : uppaal_declarations::Variable) : Expression {
+		
+		-- TODO At this point, the scaling happens, remove everything but...
+		init {
+			result := self.value.map createExpression(componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID); -- TODO ...this one		
+		}
+		
+	}
+	
+	mapping Clock :: Clock2VariableDeclaration() : ClockVariableDeclaration {
+		
+		typeDefinition := object TypeReference {
+		
+			referredType := CLOCK
+			
+		};
+		
+		variable += self.map Clock2Variable()
+		
+	}			
+					
+	mapping Clock :: Clock2Variable() : uppaal_declarations::Variable {
+		
+		name := self.name.addSuffixNumberUnderline();
+		
+		index += object TypeIndex {
+			
+			typeDefinition := object TypeReference {
+				referredType := self.map Clock2IDRange();
+			}			
+		}
+				
+	}
+	
+	constructor uppaal_expressions::IdentifierExpression :: IdentifierExpression(clock : Clock, componentInstanceID : uppaal_declarations::Variable, portOrRoleInstanceID : uppaal_declarations::Variable, subPortOrRoleInstanceID : uppaal_declarations::Variable) {
+		
+		identifier := clock.resolveoneIn(Clock::Clock2Variable, uppaal_declarations::Variable);
+		
+		var ID : uppaal_declarations::Variable;
+		if (clock.isPortOrRoleClock())
+		then {
+			assert fatal (portOrRoleInstanceID != null) with log('Port/role instance ID required.');
+			if(clock.belongsToSubrole())
+			then {
+				assert fatal (subPortOrRoleInstanceID != null) with log('Subport/role instance ID must be specified.');
+				ID := subPortOrRoleInstanceID // in case of multiport behavior, this is the subrole singleport instance ID
+			} else {
+				ID := portOrRoleInstanceID	// in case of multiport behavior, this is the multiport instance ID
+			} endif;
+		}
+		else {
+			assert fatal (clock.isComponentClock()) with log('Component clock expected.');
+			assert fatal (componentInstanceID != null) with log('Component instance ID required.');
+			ID := componentInstanceID
+		}
+		endif;
+		
+		index += object uppaal_expressions::IdentifierExpression {
+			identifier := ID	
+		}
+		
+	}	

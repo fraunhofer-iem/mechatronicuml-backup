@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.muml.psm.feature_1.0.0.qualifier.jar" id="org.muml.psm.feature" version="1.0.0.qualifier">
+      <category name="org.muml.psm.repository.category"/>
+   </feature>
+   <category-def name="org.muml.psm.repository.category" label="MUML PSM"/>
+</site>

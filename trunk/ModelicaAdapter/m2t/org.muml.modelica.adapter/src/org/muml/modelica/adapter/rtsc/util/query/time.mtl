@@ -1,0 +1,11 @@
+[module time('http://www.muml.org/pim/valuetype/1.0.0')]
+
+[**
+ * Returns a factor for the time value's unit.
+ * @param timeValue the time value
+*/]
+[query public getTimeUnitFactor(timeValue : TimeValue) : Real =
+	invoke('org.muml.modelica.adapter.rtsc.util.query.TimeHelper',
+		'getFactor(org.muml.pim.valuetype.TimeValue)',
+		Sequence{timeValue})
+/]

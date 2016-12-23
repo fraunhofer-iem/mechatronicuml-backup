@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="actionlanguage" nsURI="http://www.muml.org/pim/actionlanguage/1.0.0"
+    nsPrefix="actionlanguage">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+    <details key="documentation" value="The base package for the muml action language. It is an extension to the core.ecore expression package.&#xD;&#xA;The action language contains block definition, control structures like conditional statements and loops, assignments, and variable and operation call expressions. "/>
+  </eAnnotations>
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EEnum" name="AssignOperator">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An AssignOperator is used to assign a new value to its left operand."/>
+    </eAnnotations>
+    <eLiterals name="UNSET" literal="UNSET"/>
+    <eLiterals name="ASSIGN" value="1" literal=":=">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The value of the right operand is assigned to the left operand."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="PLUS_EQUAL" value="2" literal="+=">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The value of the right operand is added to the value of the left operand and&#xA;then assigned to the left operand. a += b can be rewritten as a := a + b."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="MINUS_EQUAL" value="4" literal="-=">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The value of the right operand is subtracted from the value of the left operand and&#xA;then assigned to the left operand. a -= b can be rewritten as a := a - b."/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="IncrementDecrementOperator">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The operator type for increment or decrement operators."/>
+    </eAnnotations>
+    <eLiterals name="UNSET" literal="UNSET"/>
+    <eLiterals name="INCREMENT" value="2" literal="++">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Represents a post increment. The expression &quot;a++&quot; evaluates to the value of&#xA;the operand &quot;a&quot;. After the execution, the operand &quot;a&quot; is incremented by 1&#xA;(a := a + 1)."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="DECREMENT" value="1" literal="--">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Represents a post decrement. The expression &quot;a--&quot; evaluates to the value of&#xA;the operand &quot;a&quot;. After the execution, the operand &quot;a&quot; is decremented by 1&#xA;(a := a - 1)."/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Block" eSuperTypes="../../org.muml.core/model/core.ecore#//expressions/Expression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A block is used to group expressions. "/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expressions" upperBound="-1"
+        eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="List of expressions may be attached as a body of a loop or represent a path of a conditional statement."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Loop" abstract="true" eSuperTypes="../../org.muml.core/model/core.ecore#//expressions/Expression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A loop statement executed a block until the Boolean value of loop test expression is false."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="block" eType="#//Block"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Body block of the loop."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="loopTest" eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="If the loop test expression evaluates to true the block is executed. "/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WhileLoop" eSuperTypes="#//Loop">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The while statement first evaluates the loop test expression and afterwards if the expression evaluates to true it executes the block. "/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DoWhileLoop" eSuperTypes="#//Loop">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The do while statement first executes the block and afterwards it evaluates the loop test expression. If the expression evaluates to true it executes the block again. "/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Assignment" eSuperTypes="../../org.muml.core/model/core.ecore#//expressions/Expression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An assignment is used to assign a value to a variable. "/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value=""/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="ValidLHS" value="-- a hybrid in port is not allowed as a lhs of an assignment&#xA;let lhs : TypedNamedElementExpression = lhs_typedNamedElementExpression&#xA;in&#xA;if not lhs.oclIsUndefined() and lhs.typedNamedElement.oclIsKindOf(component::HybridPort) then&#xA;&#x9;lhs.typedNamedElement.oclAsType(component::HybridPort).outPort&#xA;else&#xA;&#x9;true&#xA;endif"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="assignOperator" eType="#//AssignOperator">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="An assignment is used to assign a value to a variable. A simple assignment is one made using the \emph{&lt;ASSIGN>} Operator \emph{':='}. Further, we have  four more assign operators which are used as abbreviated syntax form. "/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rhs_assignExpression" eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The right-hand-side expression evaluates to a value which is assigned to the left-hand-side variable."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="incrementDecrementOperator"
+        eType="#//IncrementDecrementOperator">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Abbreviated form of x := x+1; or x :=x-1."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lhs_typedNamedElementExpression"
+        eType="#//TypedNamedElementExpression" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=" The left-hand-side of an assignment must be a single variable and must not be another expression."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ForLoop" eSuperTypes="#//Loop">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The for loop statement firstly initialize a loop variable by the initialize expression and assigning on each loop run afterwards a loop variable by the counting expression to successive values of a sequence."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initializeExpression" eType="#//Assignment"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Initialize a loop variable by the initialize expression."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="countingExpression" eType="#//Assignment"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Assigning on each loop run afterwards a loop variable by the counting expression to successive values of a sequence."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IfStatement" eSuperTypes="../../org.muml.core/model/core.ecore#//expressions/Expression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An if statement is used if the referenced block should be executed only when the condition expression evaluates to true.&#xD;&#xA;An if statement always have one if-condition and one corresponding if-block, any number of else-if-conditions and corresponding else-if-blocks and at most one else-block. &#xD;&#xA; "/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ifCondition" eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="If condition of the if statement."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ifBlock" eType="#//Block"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Block which is executed if the if condition evaluates to true."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elseBlock" eType="#//Block"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Block which is executed if no if or elseif condition evaluates to true."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elseIfStatements" upperBound="-1"
+        eType="#//ElseIfStatement" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="List of ElseIfStatements. If the IfStatement's ifCondition evaluates to false&#xA;and it exists an ElseIfStatement in this list, whose elseIfCondition evaluates&#xA;to true, then the first ElseIfStatement (wrt. the list index), whose elseIfCondition&#xA;evaluates to true is executed. Otherwise, the elseBlock is executed (if present)."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OperationCall" eSuperTypes="../../org.muml.core/model/core.ecore#//expressions/Expression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Operation calls are used to call an operation with concrete parameter bindings. "/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="ParameterBindingForEveryParameter"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="ParameterBindingForEveryParameter" value="-- An OperationCall must bind exactly one value to every parameter&#xA;not operation.oclIsUndefined() implies &#xA;operation.parameters->asBag() = parameterBinding.parameter->asBag()&#xA;-- author: bingo, adann"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operation" lowerBound="1"
+        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//behavior/Operation">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Operation which belongs to an operation call."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameterBinding" upperBound="-1"
+        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//behavior/ParameterBinding"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Parameter bindings which belongs to an operation call."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReturnStatement" eSuperTypes="../../org.muml.core/model/core.ecore#//expressions/Expression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The return statement specifies the return expression of an operation call. "/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Return expression which blongs to a return statement."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TriggerMessageExpression" eSuperTypes="../../org.muml.core/model/core.ecore#//expressions/Expression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Represents a parameter of a transition's trigger message."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="messageType" lowerBound="1"
+        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//msgtype/MessageType">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The MessageType that this TriggerMessageExpression represents."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" lowerBound="1"
+        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//behavior/Parameter">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The messageType's parameter that should be accessed."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DiscreteInteractionEndpointReference"
+      eSuperTypes="../../org.muml.core/model/core.ecore#//expressions/Expression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A DiscreteInteractionEndpointReference is used for defining SelectorExpressions&#xD;&#xA;in a multi-role or multi-port. There, a SelectorExpression may reference a&#xD;&#xA;sub-role instance or sub-port instance for selecting the synchronization partner. &#xD;&#xA;The DiscreteInteractionEndpointReference always specifies a PositionSelector that&#xD;&#xA;defines the position of the reference sub-role instance or sub-port instance. It may, &#xD;&#xA;e.g., be the first or last one in a multi-role or multi-port. The reference &#xD;&#xA;typedNamedElementExpressions allows to reference a variable containing a &#xD;&#xA;sub-role instance or a sub-port instance. In combination, both references enable&#xD;&#xA;to select the next or previous sub-role (or sub-port) instance, e.g., as var1.next. In &#xD;&#xA;this case, next is the PositionSelector while var1 is the typedNamedElementExpression."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="typedNamedElementExpression"
+        eType="#//TypedNamedElementExpression" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Allows to reference a variable containing a sub-role instance of sub-port instance.&#xD;&#xA;This field is optional. "/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="position" lowerBound="1"
+        eType="#//PositionSelector" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the relative position of the sub-role instance or sub-port instance.&#xD;&#xA;In particular, it enables to select the first or last sub-role instance (sub-port instance) of a &#xD;&#xA;multi-role instance (multi-port instance) using keyword first and last, to select itself&#xD;&#xA;in case of a sub-role instance (sub-port instance) using keyword self, or the next&#xD;&#xA;or previous sub-role given a reference either by self or a variable using keywords&#xD;&#xA;next and prev."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PositionSelectorKind">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Defines keywords for referring to sub-role instance (sub-port instances) of a&#xD;&#xA;multi-role instance (multi-port instance). Self may be used by a sub-role&#xD;&#xA;instance (sub-port instance) and refers to the corresponding sub-role instance&#xD;&#xA;(sub-port instance) itself. First and last may be used by the adaptation behavior&#xD;&#xA;and refer to the first or last sub-role instance (sub-port instance) of the multi-role&#xD;&#xA;instance (multi-port instance). Given a reference sub-role instance (sub-port&#xD;&#xA;instance), next and prev refer to the next or previous sub-role instance (sub-port&#xD;&#xA;instance). If the reference sub-role instance (sub-port instance) is the last one &#xD;&#xA;(first one), then next (first) refers to null."/>
+    </eAnnotations>
+    <eLiterals name="SELF">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="See documentation of the PositionSelectorKind enumeration."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="FIRST" value="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="See documentation of the PositionSelectorKind enumeration."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="LAST" value="2">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="See documentation of the PositionSelectorKind enumeration."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="PREV" value="3" literal="PREV">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="See documentation of the PositionSelectorKind enumeration."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="NEXT" value="4">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="See documentation of the PositionSelectorKind enumeration."/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PositionSelector" eSuperTypes="../../org.muml.core/model/core.ecore#//expressions/Expression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Defines a relative position of a sub-role instance or sub-port instance.&#xD;&#xA;The kind defines the particular reference using an enum literal where&#xD;&#xA;self refers to a sub-role instance (sub-port instance) itself, first or last refer to the&#xD;&#xA;first or last sub-role instance (sub-port instance) or a multi-role instance (multi-port&#xD;&#xA;instance), and next or prev refer to the next or previous sub-role instance (sub-port&#xD;&#xA;instance). PositionSelectors can be concatenated using the successor reference.&#xD;&#xA;That enables to specify, e.g., self.next, first.next, or self.prev.prev."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//PositionSelectorKind">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The enum literal defining the position."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="successor" eType="#//PositionSelector"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Successors of a PositionSelector enable to concatenate PositionSelectors for&#xD;&#xA;specifying more complex expression like self.next or self.prev.prev."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LocalVariableDeclarationStatement" eSuperTypes="../../org.muml.core/model/core.ecore#//expressions/Expression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="UniqueName"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="UniqueName" value="-- check if no variable with the same name was defined before&#xD;&#xA;self.allSurroundingBlocks->collect(&#xD;&#xA;&#x9;expressions&#xD;&#xA;)->select(&#xD;&#xA;&#x9;oclIsKindOf(LocalVariableDeclarationStatement)&#xD;&#xA;)->collect(&#xD;&#xA;&#x9;oclAsType(LocalVariableDeclarationStatement)&#xD;&#xA;)->one(&#xD;&#xA;&#x9;variable.name = self.variable.name&#xD;&#xA;)"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Enables to declare a local variable inside a Block. Local variables are declared &#xD;&#xA;according to the C-rule and have the scope of the block they are defined in.&#xD;&#xA;Local variables may not have the same name as a variable that is declared in the&#xD;&#xA;real-time statechart."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variable" lowerBound="1"
+        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//behavior/Variable"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The variable that is declared and optionally initialized by this declaration &#xD;&#xA;statement."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allSurroundingBlocks" upperBound="-1"
+        eType="#//Block" changeable="false" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="-- collect all blocks which surround this LocalVariableDeclarationStatement&#xA;self.oclAsType(ecore::EObject).eContainer()->closure(c : ecore::EObject |&#xA;&#x9;if c.eContainer().oclIsKindOf(core::expressions::Expression) then&#xA;&#x9;&#x9;c.eContainer()&#xA;&#x9;else&#xA;&#x9;&#x9;c&#xA;&#x9;endif&#xA;)->union(&#xA;&#x9;-- by default, the closure operation does not include the source value(s) (at least&#xA;&#x9;-- in the &quot;old&quot; OCL case)&#xA;&#x9;-- (see org.eclipse.ocl.internal.evaluation.IterationTemplateClosure.evaluateResult method)&#xA;&#x9;Set{self.eContainer()}&#xA;)->select(oclIsKindOf(Block))->collect(&#xA;&#x9;oclAsType(Block)&#xA;)->asOrderedSet()"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This derived feature returns all blocks that surround this local variable declaration.&#xD;&#xA;This is a helper feature for ensuring that the names of local variables are unique."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TypedNamedElementExpression" eSuperTypes="../../org.muml.core/model/core.ecore#//expressions/Expression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="To perform an action on a value of a variable of a \rtsc we use the typed named element expression, which has a reference to a typed named element and optional indices if a concrete array element should be referenced."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="typedNamedElement" lowerBound="1"
+        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//behavior/TypedNamedElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The typed named element that is referenced."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elementAccessors" upperBound="-1"
+        eType="#//ElementAccessorExpression" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The indices used to access an element inside a referenced array."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ArrayInitializeExpression" eSuperTypes="../../org.muml.core/model/core.ecore#//expressions/Expression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Used to initialize a typed named element of type ArrayDataType (or a subtype)."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expressions" upperBound="-1"
+        eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="List of expressions where each Expression is used to initialize a particular&#xA;array element."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NondeterministicChoiceExpression" eSuperTypes="../../org.muml.core/model/core.ecore#//expressions/Expression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The nondeterministic choice expression selects a value from an interval of integers&#xD;&#xA;nondeterministically. It may be used to abstract from computations or interactions&#xD;&#xA;that will modify a value of a variable, but are not yet implementable, e.g., within&#xD;&#xA;a real-time coordination protocol. Nondeterministic choice expressions may only&#xD;&#xA;be used as right-hand side of an assignment."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="range" lowerBound="1" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/Range"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The range defines the lower bound and the upper bound of the interval from which&#xD;&#xA;values will be chosen nondeterministically. Every value in this interval will be&#xD;&#xA;chosen with the same probability."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" lowerBound="1"
+        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//types/PrimitiveDataType">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The base type for the interval defined by the range. We only allow for integer types."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeValueExpression" eSuperTypes="../../org.muml.core/model/core.ecore#//expressions/Expression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This class is used to reference a TimeValue."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timeValue" lowerBound="1"
+        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/TimeValue">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The TimeValue which is referenced by the TimeValueExpression."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TypeCastExpression" eSuperTypes="../../org.muml.core/model/core.ecore#//expressions/Expression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A TypeCastExpression enables to perform an explicit type cast of the value of the enclosedExpression to the data type given in the eponymous reference. "/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//types/DataType">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Represents the DataType to which the value of the enclosedExpression is converted."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enclosedExpression" lowerBound="1"
+        eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Represents the expression that should be converted."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ElementAccessorExpression" abstract="true"
+      eSuperTypes="../../org.muml.core/model/core.ecore#//expressions/Expression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Abstract base class for an element accessor."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ArrayIndexExpression" eSuperTypes="#//ElementAccessorExpression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Used to access an array element at a particular index."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="index" lowerBound="1" eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indices which refer to an concrete index of an array."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AttributeAccessorExpression" eSuperTypes="#//ElementAccessorExpression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Used to access an attribute of a StructuredDataType."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" lowerBound="1"
+        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//types/Attribute">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The attribute of a StructuredDataType that should be accessed."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ElseIfStatement" eSuperTypes="../../org.muml.core/model/core.ecore#//CommentableElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An elseif statement is used if the referenced block should be executed only when the condition expression evaluates to true.&#xD;&#xA;An elseif statement always have one elseif-condition and one corresponding elseif-block.&#xD;&#xA; "/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elseIfCondition" lowerBound="1"
+        eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="ElseIf condition of the if statement."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elseIfBlock" lowerBound="1"
+        eType="#//Block" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Block which is executed if the corresponding elseif condition evaluates to true."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+</ecore:EPackage>

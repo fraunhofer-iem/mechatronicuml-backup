@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.muml.external.aopalliance.feature_1.0.0.qualifier.jar" id="org.muml.external.aopalliance.feature" version="1.0.0.qualifier">
+      <category name="org.muml.external.repository.category"/>
+   </feature>
+   <feature url="features/org.muml.external.guava.feature_1.0.0.qualifier.jar" id="org.muml.external.guava.feature" version="1.0.0.qualifier">
+      <category name="org.muml.external.repository.category"/>
+   </feature>
+   <feature url="features/org.muml.external.guice.feature_1.0.0.qualifier.jar" id="org.muml.external.guice.feature" version="1.0.0.qualifier">
+      <category name="org.muml.external.repository.category"/>
+   </feature>
+   <feature url="features/org.muml.external.guice.multibindings.feature_1.0.0.qualifier.jar" id="org.muml.external.guice.multibindings.feature" version="1.0.0.qualifier">
+      <category name="org.muml.external.repository.category"/>
+   </feature>
+   <feature url="features/org.muml.external.javax.inject.feature_1.0.0.qualifier.jar" id="org.muml.external.javax.inject.feature" version="1.0.0.qualifier">
+      <category name="org.muml.external.repository.category"/>
+   </feature>
+   <feature url="features/org.muml.external.opt4j.feature_1.0.0.qualifier.jar" id="org.muml.external.opt4j.feature" version="1.0.0.qualifier">
+      <category name="org.muml.external.repository.category"/>
+   </feature>
+   <feature url="features/org.muml.external.owlapi.feature_1.0.0.qualifier.jar" id="org.muml.external.owlapi.feature" version="1.0.0.qualifier">
+      <category name="org.muml.external.repository.category"/>
+   </feature>
+   <feature url="features/org.muml.external.sat4j.core.feature_1.0.0.qualifier.jar" id="org.muml.external.sat4j.core.feature" version="1.0.0.qualifier">
+      <category name="org.muml.external.repository.category"/>
+   </feature>
+   <feature url="features/org.muml.external.sat4j.pb.feature_1.0.0.qualifier.jar" id="org.muml.external.sat4j.pb.feature" version="1.0.0.qualifier">
+      <category name="org.muml.external.repository.category"/>
+   </feature>
+   <feature url="features/org.muml.external.unitontology.feature_1.0.0.qualifier.jar" id="org.muml.external.unitontology.feature" version="1.0.0.qualifier">
+      <category name="org.muml.external.repository.category"/>
+   </feature>
+   <feature url="features/org.muml.external.sat4j.core.feature_1.0.0.qualifier.jar" id="org.muml.external.sat4j.core.feature" version="1.0.0.qualifier">
+      <category name="org.muml.external.repository.category"/>
+   </feature>
+   <category-def name="org.muml.external.repository.category" label="MUML external"/>
+</site>

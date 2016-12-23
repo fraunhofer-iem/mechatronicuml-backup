@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:msgtype="http://www.muml.org/pim/msgtype/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_D4rz0AOAEeWYuPKYu7E8Kw" type="Message Type" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_EyDr0AOAEeWYuPKYu7E8Kw" type="2008" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_EyE58AOAEeWYuPKYu7E8Kw" type="5017"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_EyH9QAOAEeWYuPKYu7E8Kw" type="7010">
+      <children xmi:type="notation:Shape" xmi:id="_GMcmMAOAEeWYuPKYu7E8Kw" type="3007" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_GMd0UAOAEeWYuPKYu7E8Kw" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_GMfpgAOAEeWYuPKYu7E8Kw" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_GMfpgQOAEeWYuPKYu7E8Kw"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_GMfpggOAEeWYuPKYu7E8Kw"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="CompositeTransition.muml#_GL5zoAOAEeWYuPKYu7E8Kw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GMcmMQOAEeWYuPKYu7E8Kw"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_EyIkUAOAEeWYuPKYu7E8Kw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_EyIkUQOAEeWYuPKYu7E8Kw"/>
+    </children>
+    <element xmi:type="msgtype:MessageTypeRepository" href="CompositeTransition.muml#_EwSKMAOAEeWYuPKYu7E8Kw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EyDr0QOAEeWYuPKYu7E8Kw" x="220" y="72"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_D4rz0QOAEeWYuPKYu7E8Kw"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="CompositeTransition.muml#_0pwLjwN_EeWYuPKYu7E8Kw"/>
+</notation:Diagram>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ASCII"?>
+<realtimestatechart:Action xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionLanguage="http://www.fujaba.de/muml/actionlanguage/0.2.0" xmlns:expr="http://www.muml.org/core/expressions/1.0.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/model/realtimestatechart/0.3.1">
+  <expressions xsi:type="actionLanguage:Block">
+    <expressions xsi:type="actionLanguage:Assignment"/>
+    <expressions xsi:type="actionLanguage:IfStatement">
+      <ifBlock xsi:type="actionLanguage:ForLoop">
+        <block>
+          <expressions xsi:type="actionLanguage:Assignment"/>
+        </block>
+      </ifBlock>
+      <elseIfConditions xsi:type="expr:TextualExpression" expressionText="Text"/>
+      <elseIfBlocks xsi:type="actionLanguage:WhileLoop">
+        <block>
+          <expressions xsi:type="actionLanguage:Assignment"/>
+        </block>
+      </elseIfBlocks>
+      <elseBlock xsi:type="actionLanguage:DoWhileLoop">
+        <block>
+          <expressions xsi:type="actionLanguage:Assignment"/>
+        </block>
+      </elseBlock>
+    </expressions>
+  </expressions>
+</realtimestatechart:Action>

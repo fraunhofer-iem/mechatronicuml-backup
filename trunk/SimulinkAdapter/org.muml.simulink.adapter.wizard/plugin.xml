@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="trans_wizard.contribution1"
+            nameFilter="*.fujaba"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               label="MechatronicUML to Simulink"
+               path="additions"
+               id="trans_wizard.menu1">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               label="MechatronicUML analysis"
+               class="org.muml.simulink.adapter.wizard.popup.actions.MUMLAnalysisAction"
+               menubarPath="trans_wizard.menu1/group1"
+               enablesFor="1"
+               id="trans_wizard.newAction">
+         </action>
+      </objectContribution>
+      <objectContribution
+            id="trans_wizard.contribution2"
+            nameFilter="*.model"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               id="trans_wizard.menu2"
+               label="MechatronicUML to Simulink"
+               path="additions">
+            <separator
+                  name="group2">
+            </separator>
+         </menu>
+         <action
+               class="org.muml.simulink.adapter.wizard.popup.actions.PostTransformationModificationAction"
+               enablesFor="1"
+               id="trans_wizard.newAction2"
+               label="Layout Simulink model"
+               menubarPath="trans_wizard.menu2/group2">
+         </action>
+      </objectContribution>
+   </extension>
+   <extension
+         id="org.muml.simulink.adapter.reconfiguration.wizard"
+         name="MUML to MATLAB/Simulink Transformation"
+         point="org.eclipse.ui.exportWizards">
+      <wizard
+            class="org.muml.simulink.adapter.wizard.TransformationWizard"
+            id="org.muml.simulink.adapter.reconfiguration.wizard.transformation"
+            name="MUML to MATLAB/Simulink Transformation">
+         <selection
+               class="org.eclipse.core.resources.IResource"
+               name="*.fujaba">
+         </selection>
+      </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.muml?endof=utilities">
+         <command
+               commandId="org.eclipse.ui.file.export"
+               label="Transform to MATLAB/Simulink"
+               style="push">
+            <parameter
+                  name="exportWizardId"
+                  value="org.muml.simulink.adapter.reconfiguration.wizard.transformation">
+            </parameter>
+            <visibleWhen
+                  checkEnabled="true">
+               <reference
+                     definitionId="org.muml.expression.mumlfile">
+               </reference>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+
+</plugin>

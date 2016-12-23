@@ -1,0 +1,23 @@
+import simulink;
+
+extension org::eclipse::xtend::util::stdlib::elementprops;
+
+Boolean hasBranches(Line line):
+	line.getLinesWithSameSource().size > 1;
+ 
+List[Line] getLinesWithSameSource(Line line):
+	line.sourceBlock.outgoingLines.select(l|l.sourcePort == line.sourcePort);
+	
+setProcessed(Line line):
+	setProperty(line, 'processed', true);
+	
+hasBeenProcessed(Line line):
+	getProperty(line, 'processed') != null;
+	
+String getTargetPortIndex(Line line):
+	if EnablePort.isInstance(line.targetPort) then
+		'enable'
+	else if TriggerPort.isInstance(line.targetPort) then
+		'trigger'
+	else
+		line.targetBlock.inPorts.select(p|!EnablePort.isInstance(p) && !TriggerPort.isInstance(p)).indexOf(line.targetPort)+1; 

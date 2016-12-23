@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.exportWizards">
+      <wizard
+            category="org.muml.core.export"
+            class="org.muml.psm.transformation.ui.CodegenWizard"
+            id="org.muml.psm.codegen.transformation.ui.CodeGenWizard"
+            name="Transform Continuous Components to Discrete Components for Code-Generation">
+      </wizard>
+   </extension>
+</plugin>

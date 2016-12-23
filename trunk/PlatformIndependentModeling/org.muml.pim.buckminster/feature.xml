@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.muml.pim.buckminster"
+      label="Buckminster"
+      version="1.0.0.qualifier">
+
+   <description>
+      [Enter Feature Description here.]
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <includes
+         id="org.muml.pim.sdk.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.muml.pim.feature"
+         version="0.0.0"/>
+
+   <requires>
+      <import plugin="org.eclipse.emf.ecore" version="2.7.0" match="greaterOrEqual"/>
+      <import plugin="org.junit"/>
+      <import plugin="org.eclipse.emf.ecore.xmi" version="2.7.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.codegen.ecore" version="2.7.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.pim" version="0.3.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ocl" version="3.1.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ocl.ecore" version="3.1.2" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.gmf"/>
+      <import plugin="org.eclipse.gmf.runtime.emf.core"/>
+      <import plugin="org.eclipse.gmf.graphdef"/>
+      <import plugin="org.eclipse.gmf.tooldef"/>
+      <import plugin="org.eclipse.gmf.map"/>
+      <import plugin="org.eclipse.gmf.codegen"/>
+      <import plugin="org.eclipse.gmf.validate"/>
+      <import plugin="org.apache.commons.io" version="2.0.1" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="org.muml.pim.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

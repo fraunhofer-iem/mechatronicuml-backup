@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--muml metamodel version 0.3.2 (r15221)-->
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:allocation="http://www.fujaba.de/muml/psm/allocation/0.4.0/" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:hwplatform="http://www.fujaba.de/muml/hardware/hwplatform/1.1/" xmlns:hwplatforminstance="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.1/" xmlns:hwresource="http://www.fujaba.de/muml/hardware/hwresource/1.1/" xmlns:hwresourceinstance="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmi:id="_6TD0oArvEeaopdRB2_MGAg">
+  <categories xmi:id="_6TEbsArvEeaopdRB2_MGAg" key="de.uni_paderborn.fujaba.muml.types.category" name="types"/>
+  <categories xmi:id="_6TEbsQrvEeaopdRB2_MGAg" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart"/>
+  <categories xmi:id="_6TEbsgrvEeaopdRB2_MGAg" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol"/>
+  <categories xmi:id="_6TEbswrvEeaopdRB2_MGAg" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype"/>
+  <categories xmi:id="_6TEbtArvEeaopdRB2_MGAg" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance">
+    <modelElements xsi:type="instance:ComponentInstanceConfiguration" xmi:id="_ZnmOkArwEeaopdRB2_MGAg" name="root-cic">
+      <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_FXhxMAr8EeaLS7pefom96A" name="ab"/>
+      <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_HupZkAr8EeaLS7pefom96A" name="jns"/>
+      <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_IjJ_sAr8EeaLS7pefom96A" name="jhs"/>
+      <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_LyXtsAr8EeaLS7pefom96A" name="fb"/>
+      <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_MkTg8Ar8EeaLS7pefom96A" name="pf"/>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_6TEbtQrvEeaopdRB2_MGAg" key="de.uni_paderborn.fujaba.muml.components.category" name="component">
+    <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_DT_poArwEeaopdRB2_MGAg" name="Student"/>
+  </categories>
+  <categories xmi:id="_6TEbtgrvEeaopdRB2_MGAg" key="de.uni_paderborn.fujaba.muml.pattern.category" name="pattern"/>
+  <categories xmi:id="_mA67sArwEeaopdRB2_MGAg" key="de.uni_paderborn.fujaba.muml.hardware.hwplatform.category" name="hwplatform">
+    <modelElements xsi:type="hwplatform:HWPlatform" xmi:id="_mA67sQrwEeaopdRB2_MGAg" name="Platform">
+      <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_5rdMoArwEeaopdRB2_MGAg" name="eins" resourceType="_3TDx4ArwEeaopdRB2_MGAg">
+        <cardinality xmi:id="_5rtEQArwEeaopdRB2_MGAg">
+          <lowerBound xmi:id="_B1ZIMArxEeaopdRB2_MGAg"/>
+          <upperBound xmi:id="_B1gc8ArxEeaopdRB2_MGAg"/>
+        </cardinality>
+      </embeddedPlatformParts>
+      <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_7-niEArwEeaopdRB2_MGAg" name="zwei" resourceType="_3TDx4ArwEeaopdRB2_MGAg">
+        <cardinality xmi:id="_7-6dAArwEeaopdRB2_MGAg">
+          <lowerBound xmi:id="_CLq6MArxEeaopdRB2_MGAg"/>
+          <upperBound xmi:id="_CLt9gArxEeaopdRB2_MGAg"/>
+        </cardinality>
+      </embeddedPlatformParts>
+      <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_9ZoukArwEeaopdRB2_MGAg" name="drei" resourceType="_3TDx4ArwEeaopdRB2_MGAg">
+        <cardinality xmi:id="_9Z070ArwEeaopdRB2_MGAg">
+          <lowerBound xmi:id="_CfgcMArxEeaopdRB2_MGAg"/>
+          <upperBound xmi:id="_CfktoArxEeaopdRB2_MGAg"/>
+        </cardinality>
+      </embeddedPlatformParts>
+      <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_-qf5gArwEeaopdRB2_MGAg" name="vierA" resourceType="_3TDx4ArwEeaopdRB2_MGAg">
+        <cardinality xmi:id="_-qvKEArwEeaopdRB2_MGAg">
+          <lowerBound xmi:id="_CzGtoArxEeaopdRB2_MGAg"/>
+          <upperBound xmi:id="_CzKYAArxEeaopdRB2_MGAg"/>
+        </cardinality>
+      </embeddedPlatformParts>
+      <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_AY5VAArxEeaopdRB2_MGAg" name="vierB" resourceType="_3TDx4ArwEeaopdRB2_MGAg">
+        <cardinality xmi:id="_AZE7MArxEeaopdRB2_MGAg">
+          <lowerBound xmi:id="_Dd6lMArxEeaopdRB2_MGAg"/>
+          <upperBound xmi:id="_Dd-PkArxEeaopdRB2_MGAg"/>
+        </cardinality>
+      </embeddedPlatformParts>
+      <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_43mb4AryEeaopdRB2_MGAg" name="acht" resourceType="_3TDx4ArwEeaopdRB2_MGAg">
+        <cardinality xmi:id="_43wM4AryEeaopdRB2_MGAg">
+          <lowerBound xmi:id="_8VSDsAryEeaopdRB2_MGAg"/>
+          <upperBound xmi:id="_8VXjQAryEeaopdRB2_MGAg"/>
+        </cardinality>
+      </embeddedPlatformParts>
+    </modelElements>
+    <modelElements xsi:type="hwplatforminstance:HWPlatformInstanceConfiguration" xmi:id="_FKRZUArxEeaopdRB2_MGAg">
+      <hwplatformInstances xmi:id="_WroLsAr7EeaopdRB2_MGAg" name="test" hwplatformType="_mA67sQrwEeaopdRB2_MGAg">
+        <embeddedHPIC xmi:id="_XQsAkAr7EeaopdRB2_MGAg">
+          <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_XQwSAAr7EeaopdRB2_MGAg" name="vierB" resourceType="_qvNPwArwEeaopdRB2_MGAg">
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_XQwSAQr7EeaopdRB2_MGAg" name="t" resourceType="_toJLwArwEeaopdRB2_MGAg">
+              <frequency xmi:id="_XQwSAgr7EeaopdRB2_MGAg"/>
+            </embeddedAtomicResourceInstances>
+          </resources>
+          <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_XQwSAwr7EeaopdRB2_MGAg" name="drei" resourceType="_qvNPwArwEeaopdRB2_MGAg">
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_XQwSBAr7EeaopdRB2_MGAg" name="t" resourceType="_toJLwArwEeaopdRB2_MGAg">
+              <frequency xmi:id="_XQwSBQr7EeaopdRB2_MGAg"/>
+            </embeddedAtomicResourceInstances>
+          </resources>
+          <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_XQwSBgr7EeaopdRB2_MGAg" name="zwei" resourceType="_qvNPwArwEeaopdRB2_MGAg">
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_XQwSBwr7EeaopdRB2_MGAg" name="t" resourceType="_toJLwArwEeaopdRB2_MGAg">
+              <frequency xmi:id="_XQwSCAr7EeaopdRB2_MGAg"/>
+            </embeddedAtomicResourceInstances>
+          </resources>
+          <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_XQwSCQr7EeaopdRB2_MGAg" name="vierA" resourceType="_qvNPwArwEeaopdRB2_MGAg">
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_XQwSCgr7EeaopdRB2_MGAg" name="t" resourceType="_toJLwArwEeaopdRB2_MGAg">
+              <frequency xmi:id="_XQwSCwr7EeaopdRB2_MGAg"/>
+            </embeddedAtomicResourceInstances>
+          </resources>
+          <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_XQwSDAr7EeaopdRB2_MGAg" name="eins" resourceType="_qvNPwArwEeaopdRB2_MGAg">
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_XQwSDQr7EeaopdRB2_MGAg" name="t" resourceType="_toJLwArwEeaopdRB2_MGAg">
+              <frequency xmi:id="_XQwSDgr7EeaopdRB2_MGAg"/>
+            </embeddedAtomicResourceInstances>
+          </resources>
+          <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_XQw5EAr7EeaopdRB2_MGAg" name="acht" resourceType="_qvNPwArwEeaopdRB2_MGAg">
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_XQw5EQr7EeaopdRB2_MGAg" name="t" resourceType="_toJLwArwEeaopdRB2_MGAg">
+              <frequency xmi:id="_XQw5Egr7EeaopdRB2_MGAg"/>
+            </embeddedAtomicResourceInstances>
+          </resources>
+          <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_Mr3dEAuiEeaLS7pefom96A" name="fuenf" resourceType="_qvNPwArwEeaopdRB2_MGAg"/>
+          <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_PTltQAuiEeaLS7pefom96A" name="sieben" resourceType="_qvNPwArwEeaopdRB2_MGAg"/>
+        </embeddedHPIC>
+      </hwplatformInstances>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_pbUmAArwEeaopdRB2_MGAg" key="de.uni_paderborn.fujaba.muml.hardware.hwresource.category" name="hwresource">
+    <modelElements xsi:type="hwresource:ResourceRepository" xmi:id="_pbUmAQrwEeaopdRB2_MGAg">
+      <resources xsi:type="hwresource:StructuredResource" xmi:id="_qvNPwArwEeaopdRB2_MGAg" name="test">
+        <embeddedAtomicResources xsi:type="hwresource:Processor" xmi:id="_toJLwArwEeaopdRB2_MGAg" name="t">
+          <nbCores xmi:id="_togYIArwEeaopdRB2_MGAg"/>
+        </embeddedAtomicResources>
+      </resources>
+    </modelElements>
+    <modelElements xsi:type="hwresourceinstance:ResourceInstanceRepository" xmi:id="_2dgC4ArwEeaopdRB2_MGAg">
+      <resourceInstances xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_3TDx4ArwEeaopdRB2_MGAg" name="tt" resourceType="_qvNPwArwEeaopdRB2_MGAg">
+        <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_3shawArwEeaopdRB2_MGAg" name="t" resourceType="_toJLwArwEeaopdRB2_MGAg">
+          <frequency xmi:id="_3shawQrwEeaopdRB2_MGAg"/>
+        </embeddedAtomicResourceInstances>
+      </resourceInstances>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_d7NRcArzEeaopdRB2_MGAg" key="de.uni_paderborn.fujaba.muml.psm.allocation.category" name="allocation">
+    <modelElements xsi:type="allocation:SystemAllocation" xmi:id="_cJlzwAr8EeaLS7pefom96A" cic="_ZnmOkArwEeaopdRB2_MGAg" hpic="_FKRZUArxEeaopdRB2_MGAg">
+      <allocations xmi:id="_cJlzwQr8EeaLS7pefom96A" componentInstance="_FXhxMAr8EeaLS7pefom96A" resourceInstance="_XQwSDAr7EeaopdRB2_MGAg"/>
+      <allocations xmi:id="_cJlzwgr8EeaLS7pefom96A" componentInstance="_LyXtsAr8EeaLS7pefom96A" resourceInstance="_XQw5EAr7EeaopdRB2_MGAg"/>
+      <allocations xmi:id="_cJlzwwr8EeaLS7pefom96A" componentInstance="_IjJ_sAr8EeaLS7pefom96A" resourceInstance="_XQw5EAr7EeaopdRB2_MGAg"/>
+      <allocations xmi:id="_cJlzxAr8EeaLS7pefom96A" componentInstance="_HupZkAr8EeaLS7pefom96A" resourceInstance="_XQw5EAr7EeaopdRB2_MGAg"/>
+      <allocations xmi:id="_cJlzxQr8EeaLS7pefom96A" componentInstance="_MkTg8Ar8EeaLS7pefom96A" resourceInstance="_XQwSDAr7EeaopdRB2_MGAg"/>
+    </modelElements>
+    <modelElements xsi:type="allocation:SystemAllocation" xmi:id="_uNyZAAr8EeaLS7pefom96A" cic="_ZnmOkArwEeaopdRB2_MGAg" hpic="_FKRZUArxEeaopdRB2_MGAg"/>
+    <modelElements xsi:type="allocation:SystemAllocation" xmi:id="_e-K-wAr9EeaLS7pefom96A" cic="_ZnmOkArwEeaopdRB2_MGAg" hpic="_FKRZUArxEeaopdRB2_MGAg"/>
+    <modelElements xsi:type="allocation:SystemAllocation" xmi:id="_RbqXkAujEeaLS7pefom96A">
+      <allocations xmi:id="_RbqXkQujEeaLS7pefom96A">
+        <componentInstance xsi:type="instance:AtomicComponentInstance" href="#_FXhxMAr8EeaLS7pefom96A"/>
+        <resourceInstance href="#_XQwSDAr7EeaopdRB2_MGAg"/>
+      </allocations>
+      <allocations xmi:id="_RbqXkgujEeaLS7pefom96A">
+        <componentInstance xsi:type="instance:AtomicComponentInstance" href="#_LyXtsAr8EeaLS7pefom96A"/>
+        <resourceInstance href="#_XQw5EAr7EeaopdRB2_MGAg"/>
+      </allocations>
+      <allocations xmi:id="_RbqXkwujEeaLS7pefom96A">
+        <componentInstance xsi:type="instance:AtomicComponentInstance" href="#_IjJ_sAr8EeaLS7pefom96A"/>
+        <resourceInstance href="#_XQwSCQr7EeaopdRB2_MGAg"/>
+      </allocations>
+      <allocations xmi:id="_RbqXlAujEeaLS7pefom96A">
+        <componentInstance xsi:type="instance:AtomicComponentInstance" href="#_HupZkAr8EeaLS7pefom96A"/>
+        <resourceInstance href="#_Mr3dEAuiEeaLS7pefom96A"/>
+      </allocations>
+      <allocations xmi:id="_RbqXlQujEeaLS7pefom96A">
+        <componentInstance xsi:type="instance:AtomicComponentInstance" href="#_MkTg8Ar8EeaLS7pefom96A"/>
+        <resourceInstance href="#_XQwSAAr7EeaopdRB2_MGAg"/>
+      </allocations>
+      <cic href="#_ZnmOkArwEeaopdRB2_MGAg"/>
+      <hpic href="#_FKRZUArxEeaopdRB2_MGAg"/>
+    </modelElements>
+    <modelElements xsi:type="allocation:SystemAllocation" xmi:id="_fL50UAujEeaLS7pefom96A">
+      <allocations xmi:id="_fL50UQujEeaLS7pefom96A">
+        <componentInstance xsi:type="instance:AtomicComponentInstance" href="#_FXhxMAr8EeaLS7pefom96A"/>
+        <resourceInstance href="#_XQwSDAr7EeaopdRB2_MGAg"/>
+      </allocations>
+      <allocations xmi:id="_fL50UgujEeaLS7pefom96A">
+        <componentInstance xsi:type="instance:AtomicComponentInstance" href="#_LyXtsAr8EeaLS7pefom96A"/>
+        <resourceInstance href="#_XQwSBgr7EeaopdRB2_MGAg"/>
+      </allocations>
+      <allocations xmi:id="_fL50UwujEeaLS7pefom96A">
+        <componentInstance xsi:type="instance:AtomicComponentInstance" href="#_IjJ_sAr8EeaLS7pefom96A"/>
+        <resourceInstance href="#_XQw5EAr7EeaopdRB2_MGAg"/>
+      </allocations>
+      <allocations xmi:id="_fL50VAujEeaLS7pefom96A">
+        <componentInstance xsi:type="instance:AtomicComponentInstance" href="#_HupZkAr8EeaLS7pefom96A"/>
+        <resourceInstance href="#_XQwSAAr7EeaopdRB2_MGAg"/>
+      </allocations>
+      <allocations xmi:id="_fL50VQujEeaLS7pefom96A">
+        <componentInstance xsi:type="instance:AtomicComponentInstance" href="#_MkTg8Ar8EeaLS7pefom96A"/>
+        <resourceInstance href="#_XQwSCQr7EeaopdRB2_MGAg"/>
+      </allocations>
+      <cic href="#_ZnmOkArwEeaopdRB2_MGAg"/>
+      <hpic href="#_FKRZUArxEeaopdRB2_MGAg"/>
+    </modelElements>
+    <modelElements xsi:type="allocation:SystemAllocation" xmi:id="_u_0nEEdOEeafG6ZSJch1RA">
+      <allocations xmi:id="_u_0nEUdOEeafG6ZSJch1RA">
+        <componentInstance xsi:type="instance:AtomicComponentInstance" href="#_FXhxMAr8EeaLS7pefom96A"/>
+        <resourceInstance href="#_XQwSDAr7EeaopdRB2_MGAg"/>
+      </allocations>
+      <allocations xmi:id="_u_0nEkdOEeafG6ZSJch1RA">
+        <componentInstance xsi:type="instance:AtomicComponentInstance" href="#_LyXtsAr8EeaLS7pefom96A"/>
+        <resourceInstance href="#_XQw5EAr7EeaopdRB2_MGAg"/>
+      </allocations>
+      <allocations xmi:id="_u_0nE0dOEeafG6ZSJch1RA">
+        <componentInstance xsi:type="instance:AtomicComponentInstance" href="#_IjJ_sAr8EeaLS7pefom96A"/>
+        <resourceInstance href="#_XQwSCQr7EeaopdRB2_MGAg"/>
+      </allocations>
+      <allocations xmi:id="_u_0nFEdOEeafG6ZSJch1RA">
+        <componentInstance xsi:type="instance:AtomicComponentInstance" href="#_HupZkAr8EeaLS7pefom96A"/>
+        <resourceInstance href="#_Mr3dEAuiEeaLS7pefom96A"/>
+      </allocations>
+      <allocations xmi:id="_u_0nFUdOEeafG6ZSJch1RA">
+        <componentInstance xsi:type="instance:AtomicComponentInstance" href="#_MkTg8Ar8EeaLS7pefom96A"/>
+        <resourceInstance href="#_XQwSAAr7EeaopdRB2_MGAg"/>
+      </allocations>
+      <cic href="#_ZnmOkArwEeaopdRB2_MGAg"/>
+      <hpic href="#_FKRZUArxEeaopdRB2_MGAg"/>
+    </modelElements>
+  </categories>
+</modelinstance:RootNode>

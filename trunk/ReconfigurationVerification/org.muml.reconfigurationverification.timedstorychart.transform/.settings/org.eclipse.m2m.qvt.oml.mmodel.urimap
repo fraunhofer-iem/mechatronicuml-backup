@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uriMap:MappingContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:uriMap="http:///www.eclipse.org/m2m/qvt/oml/MModelUriMap/1.0.0">
+  <mapping sourceURI="http://www.muml.org/core/1.0.0" targetURI="platform:/resource/org.muml.core/model/core.ecore"/>
+  <mapping sourceURI="http://www.muml.org/reconfigurationverification/timedstorychart/transform/helper/1.0.0" targetURI="platform:/resource/de.uni_paderborn.fujaba.muml.verification.timedstorychart.transform/model/TSCTransformationHelper.ecore"/>
+  <mapping sourceURI="http://www.muml.org/storydiagram/1.0.0" targetURI="platform:/resource/org.muml.storydiagram/model/storydiagrams.ecore"/>
+  <mapping sourceURI="http://www.muml.org/pim/1.0.0" targetURI="platform:/resource/org.muml.pim/model/pim.ecore"/>
+  <mapping sourceURI="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0" targetURI="platform:/resource/org.muml.reconfigurationverification.timedstorydiagram/model/TimedStoryDiagrams.ecore"/>
+  <mapping sourceURI="http://www.muml.org/pim/actionlanguage/1.0.0" targetURI="platform:/resource/org.muml.pim.actionlanguage/model/actionlanguage.ecore"/>
+  <mapping sourceURI="http://www.muml.org/verification/core/runtime/1.0.0" targetURI="platform:/resource/org.muml.verification.core.runtime/model/RuntimeModel.ecore"/>
+  <mapping sourceURI="http://www.muml.org/reconfiguration/1.0.0" targetURI="platform:/resource/org.muml.reconfiguration/model/MumlReconfiguration.ecore"/>
+  <mapping sourceURI="http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0" targetURI="platform:/resource/de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.wrapper/model/SDMWrapper.ecore"/>
+</uriMap:MappingContainer>

@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.pde.ui.JunitLaunchConfig">
+<setAttribute key="additional_plugins"/>
+<booleanAttribute key="append.args" value="true"/>
+<booleanAttribute key="askclear" value="false"/>
+<booleanAttribute key="automaticAdd" value="true"/>
+<booleanAttribute key="automaticValidate" value="false"/>
+<stringAttribute key="bootstrap" value=""/>
+<stringAttribute key="checked" value="[NONE]"/>
+<booleanAttribute key="clearConfig" value="true"/>
+<booleanAttribute key="clearws" value="true"/>
+<booleanAttribute key="clearwslog" value="false"/>
+<stringAttribute key="configLocation" value="${workspace_loc}/.metadata/.plugins/org.eclipse.pde.core/pde-junit"/>
+<booleanAttribute key="default" value="true"/>
+<stringAttribute key="featureDefaultLocation" value="workspace"/>
+<stringAttribute key="featurePluginResolution" value="workspace"/>
+<booleanAttribute key="includeOptional" value="true"/>
+<stringAttribute key="location" value="${workspace_loc}/../junit-workspace"/>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/org.muml.graphviz.plain.xtext.tests"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="4"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.junit.CONTAINER" value=""/>
+<booleanAttribute key="org.eclipse.jdt.junit.KEEPRUNNING_ATTR" value="false"/>
+<stringAttribute key="org.eclipse.jdt.junit.TESTNAME" value=""/>
+<stringAttribute key="org.eclipse.jdt.junit.TEST_KIND" value="org.eclipse.jdt.junit.loader.junit4"/>
+<stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="org.muml.graphviz.plain.xtext.tests.GraphvizPlainTest"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-os ${target.os} -ws ${target.ws} -arch ${target.arch} -nl ${target.nl} -consoleLog"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="org.muml.graphviz.plain.xtext.tests"/>
+<stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.pde.ui.workbenchClasspathProvider"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dosgi.requiredJavaVersion=1.6 -XX:MaxPermSize=256m -Xms40m -Xmx512m"/>
+<stringAttribute key="pde.version" value="3.3"/>
+<stringAttribute key="product" value="org.eclipse.buckminster.cmdline.product"/>
+<booleanAttribute key="run_in_ui_thread" value="false"/>
+<setAttribute key="selected_features">
+<setEntry value="de.uni_paderborn.fujaba.muml.releng.site.feature:default"/>
+<setEntry value="org.eclipse.acceleo:default"/>
+<setEntry value="org.eclipse.amalgam.discovery:default"/>
+<setEntry value="org.eclipse.buckminster.core.feature:default"/>
+<setEntry value="org.eclipse.cdt.gdb:default"/>
+<setEntry value="org.eclipse.cdt.gnu.build:default"/>
+<setEntry value="org.eclipse.cdt.gnu.debug:default"/>
+<setEntry value="org.eclipse.cdt.gnu.dsf:default"/>
+<setEntry value="org.eclipse.cdt.native:default"/>
+<setEntry value="org.eclipse.cdt.platform:default"/>
+<setEntry value="org.eclipse.cdt:default"/>
+<setEntry value="org.eclipse.cvs.source:default"/>
+<setEntry value="org.eclipse.cvs:default"/>
+<setEntry value="org.eclipse.draw2d.sdk:default"/>
+<setEntry value="org.eclipse.draw2d.source:default"/>
+<setEntry value="org.eclipse.draw2d:default"/>
+<setEntry value="org.eclipse.e4.rcp.source:default"/>
+<setEntry value="org.eclipse.e4.rcp:default"/>
+<setEntry value="org.eclipse.ecf.core.feature:default"/>
+<setEntry value="org.eclipse.ecf.core.source.feature:default"/>
+<setEntry value="org.eclipse.ecf.core.ssl.feature:default"/>
+<setEntry value="org.eclipse.ecf.core.ssl.source.feature:default"/>
+<setEntry value="org.eclipse.ecf.filetransfer.feature:default"/>
+<setEntry value="org.eclipse.ecf.filetransfer.httpclient4.feature:default"/>
+<setEntry value="org.eclipse.ecf.filetransfer.httpclient4.source.feature:default"/>
+<setEntry value="org.eclipse.ecf.filetransfer.httpclient4.ssl.feature:default"/>
+<setEntry value="org.eclipse.ecf.filetransfer.httpclient4.ssl.source.feature:default"/>
+<setEntry value="org.eclipse.ecf.filetransfer.source.feature:default"/>
+<setEntry value="org.eclipse.ecf.filetransfer.ssl.feature:default"/>
+<setEntry value="org.eclipse.ecf.filetransfer.ssl.source.feature:default"/>
+<setEntry value="org.eclipse.egit:default"/>
+<setEntry value="org.eclipse.emf.cdo.compare:default"/>
+<setEntry value="org.eclipse.emf.cdo.doc:default"/>
+<setEntry value="org.eclipse.emf.cdo.epp:default"/>
+<setEntry value="org.eclipse.emf.cdo.examples.installer.source:default"/>
+<setEntry value="org.eclipse.emf.cdo.examples.installer:default"/>
+<setEntry value="org.eclipse.emf.cdo.server.db:default"/>
+<setEntry value="org.eclipse.emf.cdo.server:default"/>
+<setEntry value="org.eclipse.emf.cdo:default"/>
+<setEntry value="org.eclipse.emf.codegen.ecore.source:default"/>
+<setEntry value="org.eclipse.emf.codegen.ecore.ui.source:default"/>
+<setEntry value="org.eclipse.emf.codegen.ecore.ui:default"/>
+<setEntry value="org.eclipse.emf.codegen.ecore:default"/>
+<setEntry value="org.eclipse.emf.codegen.source:default"/>
+<setEntry value="org.eclipse.emf.codegen.ui.source:default"/>
+<setEntry value="org.eclipse.emf.codegen.ui:default"/>
+<setEntry value="org.eclipse.emf.codegen:default"/>
+<setEntry value="org.eclipse.emf.common.source:default"/>
+<setEntry value="org.eclipse.emf.common.ui.source:default"/>
+<setEntry value="org.eclipse.emf.common.ui:default"/>
+<setEntry value="org.eclipse.emf.common:default"/>
+<setEntry value="org.eclipse.emf.compare.ide.ui.source:default"/>
+<setEntry value="org.eclipse.emf.compare.ide.ui:default"/>
+<setEntry value="org.eclipse.emf.compare.source:default"/>
+<setEntry value="org.eclipse.emf.compare:default"/>
+<setEntry value="org.eclipse.emf.converter.source:default"/>
+<setEntry value="org.eclipse.emf.converter:default"/>
+<setEntry value="org.eclipse.emf.databinding.edit.source:default"/>
+<setEntry value="org.eclipse.emf.databinding.edit:default"/>
+<setEntry value="org.eclipse.emf.databinding.source:default"/>
+<setEntry value="org.eclipse.emf.databinding:default"/>
+<setEntry value="org.eclipse.emf.doc.source:default"/>
+<setEntry value="org.eclipse.emf.doc:default"/>
+<setEntry value="org.eclipse.emf.ecore.edit.source:default"/>
+<setEntry value="org.eclipse.emf.ecore.edit:default"/>
+<setEntry value="org.eclipse.emf.ecore.editor.source:default"/>
+<setEntry value="org.eclipse.emf.ecore.editor:default"/>
+<setEntry value="org.eclipse.emf.ecore.improved.feature:default"/>
+<setEntry value="org.eclipse.emf.ecore.source:default"/>
+<setEntry value="org.eclipse.emf.ecore:default"/>
+<setEntry value="org.eclipse.emf.ecoretools.design:default"/>
+<setEntry value="org.eclipse.emf.ecp.cdo.feature:default"/>
+<setEntry value="org.eclipse.emf.ecp.demo.e3.feature:default"/>
+<setEntry value="org.eclipse.emf.ecp.e3.feature:default"/>
+<setEntry value="org.eclipse.emf.ecp.emfforms.idetooling.feature:default"/>
+<setEntry value="org.eclipse.emf.ecp.emfforms.runtime.feature:default"/>
+<setEntry value="org.eclipse.emf.ecp.emfforms.sdk.feature:default"/>
+<setEntry value="org.eclipse.emf.ecp.emfstore.feature:default"/>
+<setEntry value="org.eclipse.emf.ecp.feature:default"/>
+<setEntry value="org.eclipse.emf.ecp.license.feature:default"/>
+<setEntry value="org.eclipse.emf.ecp.sdk.feature:default"/>
+<setEntry value="org.eclipse.emf.ecp.view.categorization.feature:default"/>
+<setEntry value="org.eclipse.emf.ecp.view.custom.feature:default"/>
+<setEntry value="org.eclipse.emf.ecp.view.group.feature:default"/>
+<setEntry value="org.eclipse.emf.ecp.view.horizontal.feature:default"/>
+<setEntry value="org.eclipse.emf.ecp.view.label.feature:default"/>
+<setEntry value="org.eclipse.emf.ecp.view.model.controls.feature:default"/>
+<setEntry value="org.eclipse.emf.ecp.view.model.editor.feature:default"/>
+<setEntry value="org.eclipse.emf.ecp.view.rule.feature:default"/>
+<setEntry value="org.eclipse.emf.ecp.view.table.feature:default"/>
+<setEntry value="org.eclipse.emf.ecp.view.template.feature:default"/>
+<setEntry value="org.eclipse.emf.ecp.view.template.helper.feature:default"/>
+<setEntry value="org.eclipse.emf.ecp.view.treemasterdetail.feature:default"/>
+<setEntry value="org.eclipse.emf.ecp.view.unset.feature:default"/>
+<setEntry value="org.eclipse.emf.ecp.view.validation.feature:default"/>
+<setEntry value="org.eclipse.emf.ecp.view.vertical.feature:default"/>
+<setEntry value="org.eclipse.emf.ecp.viewmodel.feature:default"/>
+<setEntry value="org.eclipse.emf.ecp.workspace.feature:default"/>
+<setEntry value="org.eclipse.emf.edit.source:default"/>
+<setEntry value="org.eclipse.emf.edit.ui.source:default"/>
+<setEntry value="org.eclipse.emf.edit.ui:default"/>
+<setEntry value="org.eclipse.emf.edit:default"/>
+<setEntry value="org.eclipse.emf.eef.codegen.ecore-feature:default"/>
+<setEntry value="org.eclipse.emf.emfstore.client.feature:default"/>
+<setEntry value="org.eclipse.emf.emfstore.client.ui.feature:default"/>
+<setEntry value="org.eclipse.emf.emfstore.common.feature:default"/>
+<setEntry value="org.eclipse.emf.emfstore.example.feature:default"/>
+<setEntry value="org.eclipse.emf.emfstore.license.feature:default"/>
+<setEntry value="org.eclipse.emf.emfstore.sdk.feature:default"/>
+<setEntry value="org.eclipse.emf.emfstore.server.feature:default"/>
+<setEntry value="org.eclipse.emf.mapping.ecore.editor.source:default"/>
+<setEntry value="org.eclipse.emf.mapping.ecore.editor:default"/>
+<setEntry value="org.eclipse.emf.mapping.ecore.source:default"/>
+<setEntry value="org.eclipse.emf.mapping.ecore:default"/>
+<setEntry value="org.eclipse.emf.mapping.source:default"/>
+<setEntry value="org.eclipse.emf.mapping.ui.source:default"/>
+<setEntry value="org.eclipse.emf.mapping.ui:default"/>
+<setEntry value="org.eclipse.emf.mapping:default"/>
+<setEntry value="org.eclipse.emf.query.doc:default"/>
+<setEntry value="org.eclipse.emf.query.ocl.source:default"/>
+<setEntry value="org.eclipse.emf.query.ocl:default"/>
+<setEntry value="org.eclipse.emf.query.sdk:default"/>
+<setEntry value="org.eclipse.emf.query.source:default"/>
+<setEntry value="org.eclipse.emf.query:default"/>
+<setEntry value="org.eclipse.emf.sdk:default"/>
+<setEntry value="org.eclipse.emf.source:default"/>
+<setEntry value="org.eclipse.emf.transaction.doc:default"/>
+<setEntry value="org.eclipse.emf.transaction.sdk:default"/>
+<setEntry value="org.eclipse.emf.transaction.source:default"/>
+<setEntry value="org.eclipse.emf.transaction:default"/>
+<setEntry value="org.eclipse.emf.validation.doc:default"/>
+<setEntry value="org.eclipse.emf.validation.ocl.source:default"/>
+<setEntry value="org.eclipse.emf.validation.ocl:default"/>
+<setEntry value="org.eclipse.emf.validation.sdk:default"/>
+<setEntry value="org.eclipse.emf.validation.source:default"/>
+<setEntry value="org.eclipse.emf.validation:default"/>
+<setEntry value="org.eclipse.emf.workspace.doc:default"/>
+<setEntry value="org.eclipse.emf.workspace.source:default"/>
+<setEntry value="org.eclipse.emf.workspace:default"/>
+<setEntry value="org.eclipse.emf:default"/>
+<setEntry value="org.eclipse.epp.mpc:default"/>
+<setEntry value="org.eclipse.epp.package.common.feature:default"/>
+<setEntry value="org.eclipse.epp.package.modeling.feature:default"/>
+<setEntry value="org.eclipse.equinox.p2.core.feature.source:default"/>
+<setEntry value="org.eclipse.equinox.p2.core.feature:default"/>
+<setEntry value="org.eclipse.equinox.p2.discovery.feature:default"/>
+<setEntry value="org.eclipse.equinox.p2.extras.feature.source:default"/>
+<setEntry value="org.eclipse.equinox.p2.extras.feature:default"/>
+<setEntry value="org.eclipse.equinox.p2.rcp.feature.source:default"/>
+<setEntry value="org.eclipse.equinox.p2.rcp.feature:default"/>
+<setEntry value="org.eclipse.equinox.p2.user.ui.source:default"/>
+<setEntry value="org.eclipse.equinox.p2.user.ui:default"/>
+<setEntry value="org.eclipse.gef.sdk:default"/>
+<setEntry value="org.eclipse.gef.source:default"/>
+<setEntry value="org.eclipse.gef:default"/>
+<setEntry value="org.eclipse.gmf.doc:default"/>
+<setEntry value="org.eclipse.gmf.examples.runtime.ui.pde:default"/>
+<setEntry value="org.eclipse.gmf.runtime.notation.sdk:default"/>
+<setEntry value="org.eclipse.gmf.runtime.notation.source:default"/>
+<setEntry value="org.eclipse.gmf.runtime.notation:default"/>
+<setEntry value="org.eclipse.gmf.runtime.sdk:default"/>
+<setEntry value="org.eclipse.gmf.runtime.thirdparty.source:default"/>
+<setEntry value="org.eclipse.gmf.runtime.thirdparty:default"/>
+<setEntry value="org.eclipse.gmf.sdk:default"/>
+<setEntry value="org.eclipse.gmf.source:default"/>
+<setEntry value="org.eclipse.gmf.tooling.runtime.source:default"/>
+<setEntry value="org.eclipse.gmf.tooling.runtime:default"/>
+<setEntry value="org.eclipse.gmf.tooling.source:default"/>
+<setEntry value="org.eclipse.gmf.tooling:default"/>
+<setEntry value="org.eclipse.gmf:default"/>
+<setEntry value="org.eclipse.help.source:default"/>
+<setEntry value="org.eclipse.help:default"/>
+<setEntry value="org.eclipse.jdt.source:default"/>
+<setEntry value="org.eclipse.jdt:default"/>
+<setEntry value="org.eclipse.jgit:default"/>
+<setEntry value="org.eclipse.m2m.qvt.oml.debug.source:default"/>
+<setEntry value="org.eclipse.m2m.qvt.oml.debug:default"/>
+<setEntry value="org.eclipse.m2m.qvt.oml.doc:default"/>
+<setEntry value="org.eclipse.m2m.qvt.oml.editor.source:default"/>
+<setEntry value="org.eclipse.m2m.qvt.oml.editor:default"/>
+<setEntry value="org.eclipse.m2m.qvt.oml.examples:default"/>
+<setEntry value="org.eclipse.m2m.qvt.oml.runtime.source:default"/>
+<setEntry value="org.eclipse.m2m.qvt.oml.runtime:default"/>
+<setEntry value="org.eclipse.m2m.qvt.oml.sdk:default"/>
+<setEntry value="org.eclipse.m2m.qvt.oml.source:default"/>
+<setEntry value="org.eclipse.m2m.qvt.oml:default"/>
+<setEntry value="org.eclipse.mylyn.bugzilla_feature:default"/>
+<setEntry value="org.eclipse.mylyn.commons.identity:default"/>
+<setEntry value="org.eclipse.mylyn.commons.notifications:default"/>
+<setEntry value="org.eclipse.mylyn.commons.repositories:default"/>
+<setEntry value="org.eclipse.mylyn.commons:default"/>
+<setEntry value="org.eclipse.mylyn.context_feature:default"/>
+<setEntry value="org.eclipse.mylyn.discovery:default"/>
+<setEntry value="org.eclipse.mylyn.ide_feature:default"/>
+<setEntry value="org.eclipse.mylyn.java_feature:default"/>
+<setEntry value="org.eclipse.mylyn.monitor:default"/>
+<setEntry value="org.eclipse.mylyn.pde_feature:default"/>
+<setEntry value="org.eclipse.mylyn.tasks.ide:default"/>
+<setEntry value="org.eclipse.mylyn.team_feature:default"/>
+<setEntry value="org.eclipse.mylyn.wikitext_feature:default"/>
+<setEntry value="org.eclipse.mylyn_feature:default"/>
+<setEntry value="org.eclipse.net4j.db.h2:default"/>
+<setEntry value="org.eclipse.net4j.db:default"/>
+<setEntry value="org.eclipse.net4j.examples.installer.source:default"/>
+<setEntry value="org.eclipse.net4j.examples.installer:default"/>
+<setEntry value="org.eclipse.net4j.util.ui:default"/>
+<setEntry value="org.eclipse.net4j.util:default"/>
+<setEntry value="org.eclipse.net4j:default"/>
+<setEntry value="org.eclipse.ocl.all.sdk.source:default"/>
+<setEntry value="org.eclipse.ocl.all.sdk:default"/>
+<setEntry value="org.eclipse.ocl.all.source:default"/>
+<setEntry value="org.eclipse.ocl.all:default"/>
+<setEntry value="org.eclipse.ocl.core.sdk.source:default"/>
+<setEntry value="org.eclipse.ocl.core.sdk:default"/>
+<setEntry value="org.eclipse.ocl.doc.source:default"/>
+<setEntry value="org.eclipse.ocl.doc:default"/>
+<setEntry value="org.eclipse.ocl.edit.source:default"/>
+<setEntry value="org.eclipse.ocl.edit:default"/>
+<setEntry value="org.eclipse.ocl.examples.classic.source:default"/>
+<setEntry value="org.eclipse.ocl.examples.classic:default"/>
+<setEntry value="org.eclipse.ocl.examples.source:default"/>
+<setEntry value="org.eclipse.ocl.examples.unified.core.source:default"/>
+<setEntry value="org.eclipse.ocl.examples.unified.core:default"/>
+<setEntry value="org.eclipse.ocl.examples.unified.source:default"/>
+<setEntry value="org.eclipse.ocl.examples.unified:default"/>
+<setEntry value="org.eclipse.ocl.examples:default"/>
+<setEntry value="org.eclipse.ocl.source:default"/>
+<setEntry value="org.eclipse.ocl.ui.source:default"/>
+<setEntry value="org.eclipse.ocl.ui:default"/>
+<setEntry value="org.eclipse.ocl.uml.source:default"/>
+<setEntry value="org.eclipse.ocl.uml:default"/>
+<setEntry value="org.eclipse.ocl:default"/>
+<setEntry value="org.eclipse.pde.source:default"/>
+<setEntry value="org.eclipse.pde:default"/>
+<setEntry value="org.eclipse.platform.source:default"/>
+<setEntry value="org.eclipse.platform:default"/>
+<setEntry value="org.eclipse.rcp.configuration:default"/>
+<setEntry value="org.eclipse.rcp.source:default"/>
+<setEntry value="org.eclipse.rcp:default"/>
+<setEntry value="org.eclipse.sdk:default"/>
+<setEntry value="org.eclipse.sirius.doc.feature:default"/>
+<setEntry value="org.eclipse.sirius.runtime.acceleo:default"/>
+<setEntry value="org.eclipse.sirius.runtime.ide.ui.acceleo:default"/>
+<setEntry value="org.eclipse.sirius.runtime.ide.ui:default"/>
+<setEntry value="org.eclipse.sirius.runtime:default"/>
+<setEntry value="org.eclipse.sirius.specifier.ide.ui.acceleo:default"/>
+<setEntry value="org.eclipse.sirius.specifier.ide.ui:default"/>
+<setEntry value="org.eclipse.team.svn:default"/>
+<setEntry value="org.eclipse.uml2.codegen.ecore.ui.source:default"/>
+<setEntry value="org.eclipse.uml2.codegen.ecore.ui:default"/>
+<setEntry value="org.eclipse.uml2.common.edit.source:default"/>
+<setEntry value="org.eclipse.uml2.common.edit:default"/>
+<setEntry value="org.eclipse.uml2.common.source:default"/>
+<setEntry value="org.eclipse.uml2.common:default"/>
+<setEntry value="org.eclipse.uml2.doc:default"/>
+<setEntry value="org.eclipse.uml2.examples.source:default"/>
+<setEntry value="org.eclipse.uml2.examples:default"/>
+<setEntry value="org.eclipse.uml2.sdk:default"/>
+<setEntry value="org.eclipse.uml2.source:default"/>
+<setEntry value="org.eclipse.uml2.uml.edit.source:default"/>
+<setEntry value="org.eclipse.uml2.uml.edit:default"/>
+<setEntry value="org.eclipse.uml2.uml.source:default"/>
+<setEntry value="org.eclipse.uml2.uml:default"/>
+<setEntry value="org.eclipse.uml2:default"/>
+<setEntry value="org.eclipse.xsd.doc.source:default"/>
+<setEntry value="org.eclipse.xsd.doc:default"/>
+<setEntry value="org.eclipse.xsd.ecore.converter.source:default"/>
+<setEntry value="org.eclipse.xsd.ecore.converter:default"/>
+<setEntry value="org.eclipse.xsd.edit.source:default"/>
+<setEntry value="org.eclipse.xsd.edit:default"/>
+<setEntry value="org.eclipse.xsd.editor.source:default"/>
+<setEntry value="org.eclipse.xsd.editor:default"/>
+<setEntry value="org.eclipse.xsd.mapping.editor.source:default"/>
+<setEntry value="org.eclipse.xsd.mapping.editor:default"/>
+<setEntry value="org.eclipse.xsd.mapping.source:default"/>
+<setEntry value="org.eclipse.xsd.mapping:default"/>
+<setEntry value="org.eclipse.xsd.sdk:default"/>
+<setEntry value="org.eclipse.xsd.source:default"/>
+<setEntry value="org.eclipse.xsd:default"/>
+<setEntry value="org.eclipse.xtend.sdk:default"/>
+<setEntry value="org.eclipse.xtext.docs:default"/>
+<setEntry value="org.eclipse.xtext.examples.source:default"/>
+<setEntry value="org.eclipse.xtext.examples:default"/>
+<setEntry value="org.eclipse.xtext.runtime.source:default"/>
+<setEntry value="org.eclipse.xtext.runtime:default"/>
+<setEntry value="org.eclipse.xtext.sdk:default"/>
+<setEntry value="org.eclipse.xtext.ui.source:default"/>
+<setEntry value="org.eclipse.xtext.ui:default"/>
+<setEntry value="org.eclipse.xtext.xbase.lib.source:default"/>
+<setEntry value="org.eclipse.xtext.xbase.lib:default"/>
+<setEntry value="org.eclipse.xtext.xbase.source:default"/>
+<setEntry value="org.eclipse.xtext.xbase:default"/>
+<setEntry value="org.eclipse.xtext.xtext.ui.source:default"/>
+<setEntry value="org.eclipse.xtext.xtext.ui:default"/>
+<setEntry value="org.muml.ape.buckminster:default"/>
+<setEntry value="org.muml.ape.feature:default"/>
+<setEntry value="org.muml.core.buckminster:default"/>
+<setEntry value="org.muml.core.feature:default"/>
+<setEntry value="org.muml.modelica.adapter.feature:default"/>
+<setEntry value="org.muml.pim.buckminster:default"/>
+<setEntry value="org.muml.pim.feature:default"/>
+<setEntry value="org.muml.pm.buckminster:default"/>
+<setEntry value="org.muml.pm.feature:default"/>
+<setEntry value="org.muml.udbm.buckminster:default"/>
+<setEntry value="org.muml.udbm.feature:default"/>
+<setEntry value="org.muml.uppaal.buckminster:default"/>
+<setEntry value="org.muml.uppaal.feature:default"/>
+<setEntry value="org.muml.verification.core.buckminster:default"/>
+<setEntry value="org.muml.verification.core.feature:default"/>
+<setEntry value="org.polarion.eclipse.team.svn.connector.svnkit17:default"/>
+<setEntry value="org.polarion.eclipse.team.svn.connector:default"/>
+</setAttribute>
+<booleanAttribute key="show_selected_only" value="false"/>
+<booleanAttribute key="tracing" value="false"/>
+<booleanAttribute key="useCustomFeatures" value="false"/>
+<booleanAttribute key="useDefaultConfig" value="true"/>
+<booleanAttribute key="useDefaultConfigArea" value="false"/>
+<booleanAttribute key="useProduct" value="true"/>
+</launchConfiguration>

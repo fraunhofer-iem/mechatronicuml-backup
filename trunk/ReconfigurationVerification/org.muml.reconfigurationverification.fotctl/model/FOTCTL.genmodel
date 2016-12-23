@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.muml.reconfigurationverification.fotctl/src"
+    modelPluginID="org.muml.reconfigurationverification.fotctl" modelName="FOTCTL"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
+    usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.muml.reconfigurationverification.tctl/model/TCTL.genmodel#//tctl ../../org.muml.core/model/core.genmodel#//core">
+  <foreignModel>FOTCTL.ecore</foreignModel>
+  <genPackages prefix="Fotctl" basePackage="org.muml.reconfigurationverification"
+      disposableProviderFactory="true" ecorePackage="FOTCTL.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="FOTCTL.ecore#//Quantifier">
+      <genEnumLiterals ecoreEnumLiteral="FOTCTL.ecore#//Quantifier/FORALL"/>
+      <genEnumLiterals ecoreEnumLiteral="FOTCTL.ecore#//Quantifier/EXISTS"/>
+    </genEnums>
+    <genClasses ecoreClass="FOTCTL.ecore#//FoTCTLSpec">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FOTCTL.ecore#//FoTCTLSpec/formulas"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FOTCTL.ecore#//FoTCTLSpec/nodeLabelPredicates"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FOTCTL.ecore#//FoTCTLSpec/edgeLabelPredicates"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FOTCTL.ecore#//FoTCTLSpec/constants"/>
+    </genClasses>
+    <genClasses ecoreClass="FOTCTL.ecore#//FoTCTLFormula"/>
+    <genClasses ecoreClass="FOTCTL.ecore#//NodeLabelPredicateDecl"/>
+    <genClasses ecoreClass="FOTCTL.ecore#//EdgeLabelPredicateDecl"/>
+    <genClasses ecoreClass="FOTCTL.ecore#//ConstantSymbolDecl"/>
+    <genClasses ecoreClass="FOTCTL.ecore#//QuantifiedFormula">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FOTCTL.ecore#//QuantifiedFormula/variables"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FOTCTL.ecore#//QuantifiedFormula/quantifier"/>
+    </genClasses>
+    <genClasses ecoreClass="FOTCTL.ecore#//NodeLabelPredicate">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FOTCTL.ecore#//NodeLabelPredicate/declaration"/>
+    </genClasses>
+    <genClasses ecoreClass="FOTCTL.ecore#//EdgeLabelPredicate">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FOTCTL.ecore#//EdgeLabelPredicate/declaration"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FOTCTL.ecore#//EdgeLabelPredicate/secondTerm"/>
+    </genClasses>
+    <genClasses ecoreClass="FOTCTL.ecore#//Variable">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FOTCTL.ecore#//Variable/declaration"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute FOTCTL.ecore#//Variable/name"/>
+    </genClasses>
+    <genClasses ecoreClass="FOTCTL.ecore#//Constant">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FOTCTL.ecore#//Constant/declaration"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute FOTCTL.ecore#//Constant/name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

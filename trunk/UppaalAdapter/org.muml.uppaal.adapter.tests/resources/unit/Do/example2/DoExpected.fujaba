@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--muml metamodel version 0.3.2 (r2996)-->
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionlanguage="http://www.muml.org/pim/actionlanguage/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:msgtype="http://www.muml.org/pim/msgtype/1.0.0" xmlns:protocol="http://www.muml.org/pim/protocol/1.0.0" xmlns:realtimestatechart="http://www.muml.org/pim/realtimestatechart/1.0.0" xmlns:sdcec="http://www.muml.org/core/expressions/common/1.0.0" xmlns:types="http://www.muml.org/pim/types/1.0.0" xmi:id="_IMTf0J43EeOxcJlxv_jijA">
+  <categories xmi:id="_IMTf0Z43EeOxcJlxv_jijA" key="org.muml.types.category" name="types">
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_IMTf0p43EeOxcJlxv_jijA" name="VOID"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_IMTf0543EeOxcJlxv_jijA" name="BOOLEAN" primitiveType="BOOLEAN"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_IMTf1J43EeOxcJlxv_jijA" name="BYTE" primitiveType="BYTE"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_IMTf1Z43EeOxcJlxv_jijA" name="SHORT" primitiveType="SHORT"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_IMTf1p43EeOxcJlxv_jijA" name="INT" primitiveType="INT"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_IMTf1543EeOxcJlxv_jijA" name="LONG" primitiveType="LONG"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_IMTf2J43EeOxcJlxv_jijA" name="DOUBLE" primitiveType="DOUBLE"/>
+  </categories>
+  <categories xmi:id="_IMTf2Z43EeOxcJlxv_jijA" key="org.muml.pim.components.category" name="component"/>
+  <categories xmi:id="_IMTf2p43EeOxcJlxv_jijA" key="org.muml.pim.protocol.category" name="protocol">
+    <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_IMTf2543EeOxcJlxv_jijA" name="proto">
+      <roles xmi:id="_IMTf3J43EeOxcJlxv_jijA" connectors="_IMTf6J43EeOxcJlxv_jijA" behavior="_IMTf7543EeOxcJlxv_jijA" name="role1" senderMessageTypes="_IMTgPZ43EeOxcJlxv_jijA" receiverMessageTypes="_IMTgPZ43EeOxcJlxv_jijA">
+        <cardinality xmi:id="_IMTf3Z43EeOxcJlxv_jijA">
+          <lowerBound xmi:id="_IMTf3p43EeOxcJlxv_jijA"/>
+          <upperBound xmi:id="_IMTf3543EeOxcJlxv_jijA"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_IMTf4J43EeOxcJlxv_jijA" name="role1buffer" messageType="_IMTgPZ43EeOxcJlxv_jijA">
+          <bufferSize xmi:id="_IMTf4Z43EeOxcJlxv_jijA" value="9223372036854775807" infinity="true"/>
+        </receiverMessageBuffer>
+      </roles>
+      <roles xmi:id="_IMTf4p43EeOxcJlxv_jijA" connectors="_IMTf6J43EeOxcJlxv_jijA" behavior="_IMTgOZ43EeOxcJlxv_jijA" name="role2" senderMessageTypes="_IMTgPZ43EeOxcJlxv_jijA" receiverMessageTypes="_IMTgPZ43EeOxcJlxv_jijA">
+        <cardinality xmi:id="_IMTf4543EeOxcJlxv_jijA">
+          <lowerBound xmi:id="_IMTf5J43EeOxcJlxv_jijA"/>
+          <upperBound xmi:id="_IMTf5Z43EeOxcJlxv_jijA"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_IMTf5p43EeOxcJlxv_jijA" name="role2buffer" messageType="_IMTgPZ43EeOxcJlxv_jijA">
+          <bufferSize xmi:id="_IMTf5543EeOxcJlxv_jijA" value="9223372036854775807" infinity="true"/>
+        </receiverMessageBuffer>
+      </roles>
+      <roleConnector xmi:id="_IMTf6J43EeOxcJlxv_jijA" connectorEndpoints="_IMTf3J43EeOxcJlxv_jijA _IMTf4p43EeOxcJlxv_jijA">
+        <connectorQualityOfServiceAssumptions xmi:id="_IMTf6Z43EeOxcJlxv_jijA" comment="">
+          <minMessageDelay xmi:id="_IMTf6p43EeOxcJlxv_jijA" unit="SECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_IMTf6543EeOxcJlxv_jijA" value="0"/>
+          </minMessageDelay>
+          <maxMessageDelay xmi:id="_IMTf7J43EeOxcJlxv_jijA" unit="SECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_IMTf7Z43EeOxcJlxv_jijA" value="0"/>
+          </maxMessageDelay>
+        </connectorQualityOfServiceAssumptions>
+      </roleConnector>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_IMTf7p43EeOxcJlxv_jijA" key="org.muml.pim.realtimestatechart.category" name="realtimestatechart">
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_IMTf7543EeOxcJlxv_jijA" name="role1" behavioralElement="_IMTf3J43EeOxcJlxv_jijA">
+      <states xmi:id="_IMTf8J43EeOxcJlxv_jijA" name="init" initial="true">
+        <embeddedRegions xmi:id="_IMTf8Z43EeOxcJlxv_jijA" priority="1">
+          <embeddedStatechart xmi:id="_IMTf8p43EeOxcJlxv_jijA" name="statechart">
+            <variables xmi:id="_IMTf8543EeOxcJlxv_jijA" name="nonDet" dataType="_IMTf0543EeOxcJlxv_jijA">
+              <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_IMTf9J43EeOxcJlxv_jijA" value="0"/>
+            </variables>
+            <transitions xmi:id="_IMTf9Z43EeOxcJlxv_jijA" priority="1" target="_IMTgNJ43EeOxcJlxv_jijA" source="_IMTf-Z43EeOxcJlxv_jijA"/>
+            <transitions xmi:id="_IMTf9p43EeOxcJlxv_jijA" priority="1" target="_IMTf-Z43EeOxcJlxv_jijA" source="_IMTgNp43EeOxcJlxv_jijA"/>
+            <transitions xmi:id="_IMTf9543EeOxcJlxv_jijA" priority="2" target="_IMTgOJ43EeOxcJlxv_jijA" source="_IMTgN543EeOxcJlxv_jijA"/>
+            <transitions xmi:id="_IMTf-J43EeOxcJlxv_jijA" priority="1" target="_IMTgNZ43EeOxcJlxv_jijA" source="_IMTgOJ43EeOxcJlxv_jijA"/>
+            <states xmi:id="_IMTf-Z43EeOxcJlxv_jijA" name="State1" outgoingTransitions="_IMTf9Z43EeOxcJlxv_jijA" incomingTransitions="_IMTf9p43EeOxcJlxv_jijA" initial="true"/>
+            <states xmi:id="_IMTf-p43EeOxcJlxv_jijA" name="State2">
+              <embeddedRegions xmi:id="_IMTf-543EeOxcJlxv_jijA" priority="1">
+                <embeddedStatechart xmi:id="_IMTf_J43EeOxcJlxv_jijA" name="DoRTSC">
+                  <transitions xmi:id="_IMTf_Z43EeOxcJlxv_jijA" priority="1" target="_IMTgK543EeOxcJlxv_jijA" source="_IMTgJ543EeOxcJlxv_jijA" urgent="false">
+                    <clockConstraints xmi:id="_IMTf_p43EeOxcJlxv_jijA" clock="_IMTgM543EeOxcJlxv_jijA" operator="LESS">
+                      <bound xmi:id="_IMTf_543EeOxcJlxv_jijA" unit="SECONDS">
+                        <value xsi:type="sdcec:LiteralExpression" xmi:id="_IMTgAJ43EeOxcJlxv_jijA" value="1"/>
+                      </bound>
+                    </clockConstraints>
+                  </transitions>
+                  <transitions xmi:id="_IMTgAZ43EeOxcJlxv_jijA" priority="1" target="_IMTgL543EeOxcJlxv_jijA" source="_IMTgK543EeOxcJlxv_jijA" urgent="false">
+                    <clockConstraints xmi:id="_IMTgAp43EeOxcJlxv_jijA" clock="_IMTgM543EeOxcJlxv_jijA" operator="LESS">
+                      <bound xmi:id="_IMTgA543EeOxcJlxv_jijA" unit="SECONDS">
+                        <value xsi:type="sdcec:LiteralExpression" xmi:id="_IMTgBJ43EeOxcJlxv_jijA" value="1"/>
+                      </bound>
+                    </clockConstraints>
+                    <action xmi:id="_IMTgBZ43EeOxcJlxv_jijA" name="do">
+                      <expressions xsi:type="actionlanguage:Block" xmi:id="_IMTgBp43EeOxcJlxv_jijA">
+                        <expressions xsi:type="actionlanguage:Assignment" xmi:id="_IMTgB543EeOxcJlxv_jijA" assignOperator=":=">
+                          <rhs_assignExpression xsi:type="actionlanguage:NondeterministicChoiceExpression" xmi:id="_IMTgCJ43EeOxcJlxv_jijA" dataType="_IMTf1p43EeOxcJlxv_jijA">
+                            <range xmi:id="_IMTgCZ43EeOxcJlxv_jijA"/>
+                          </rhs_assignExpression>
+                          <lhs_typedNamedElementExpression xmi:id="_IMTgCp43EeOxcJlxv_jijA" typedNamedElement="_IMTf8543EeOxcJlxv_jijA"/>
+                        </expressions>
+                      </expressions>
+                    </action>
+                  </transitions>
+                  <transitions xmi:id="_IMTgC543EeOxcJlxv_jijA" priority="1" target="_IMTgJ543EeOxcJlxv_jijA" source="_IMTgL543EeOxcJlxv_jijA" clockResets="_IMTgM543EeOxcJlxv_jijA" urgent="false">
+                    <clockConstraints xmi:id="_IMTgDJ43EeOxcJlxv_jijA" clock="_IMTgM543EeOxcJlxv_jijA" operator="EQUAL">
+                      <bound xmi:id="_IMTgDZ43EeOxcJlxv_jijA" unit="SECONDS">
+                        <value xsi:type="sdcec:LiteralExpression" xmi:id="_IMTgDp43EeOxcJlxv_jijA" value="1"/>
+                      </bound>
+                    </clockConstraints>
+                  </transitions>
+                  <transitions xmi:id="_IMTgD543EeOxcJlxv_jijA" priority="1" target="_IMTgJ543EeOxcJlxv_jijA" source="_IMTgNJ43EeOxcJlxv_jijA">
+                    <action xmi:id="_IMTgEJ43EeOxcJlxv_jijA" name="entryFromState1">
+                      <expressions xsi:type="actionlanguage:Block" xmi:id="_IMTgEZ43EeOxcJlxv_jijA">
+                        <expressions xsi:type="actionlanguage:Assignment" xmi:id="_IMTgEp43EeOxcJlxv_jijA" assignOperator=":=">
+                          <rhs_assignExpression xsi:type="actionlanguage:NondeterministicChoiceExpression" xmi:id="_IMTgE543EeOxcJlxv_jijA" dataType="_IMTf1p43EeOxcJlxv_jijA">
+                            <range xmi:id="_IMTgFJ43EeOxcJlxv_jijA"/>
+                          </rhs_assignExpression>
+                          <lhs_typedNamedElementExpression xmi:id="_IMTgFZ43EeOxcJlxv_jijA" typedNamedElement="_IMTf8543EeOxcJlxv_jijA"/>
+                        </expressions>
+                      </expressions>
+                    </action>
+                  </transitions>
+                  <transitions xmi:id="_IMTgFp43EeOxcJlxv_jijA" priority="1" target="_IMTgJ543EeOxcJlxv_jijA" source="_IMTgNZ43EeOxcJlxv_jijA">
+                    <action xmi:id="_IMTgF543EeOxcJlxv_jijA" name="entryFromState3">
+                      <expressions xsi:type="actionlanguage:Block" xmi:id="_IMTgGJ43EeOxcJlxv_jijA">
+                        <expressions xsi:type="actionlanguage:Assignment" xmi:id="_IMTgGZ43EeOxcJlxv_jijA" assignOperator=":=">
+                          <rhs_assignExpression xsi:type="actionlanguage:NondeterministicChoiceExpression" xmi:id="_IMTgGp43EeOxcJlxv_jijA" dataType="_IMTf1p43EeOxcJlxv_jijA">
+                            <range xmi:id="_IMTgG543EeOxcJlxv_jijA"/>
+                          </rhs_assignExpression>
+                          <lhs_typedNamedElementExpression xmi:id="_IMTgHJ43EeOxcJlxv_jijA" typedNamedElement="_IMTf8543EeOxcJlxv_jijA"/>
+                        </expressions>
+                      </expressions>
+                    </action>
+                  </transitions>
+                  <transitions xmi:id="_IMTgHZ43EeOxcJlxv_jijA" priority="2" target="_IMTgNp43EeOxcJlxv_jijA" source="_IMTgJ543EeOxcJlxv_jijA">
+                    <guard xsi:type="sdcec:UnaryExpression" xmi:id="_IMTgHp43EeOxcJlxv_jijA">
+                      <enclosedExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_IMTgH543EeOxcJlxv_jijA" typedNamedElement="_IMTf8543EeOxcJlxv_jijA"/>
+                    </guard>
+                  </transitions>
+                  <transitions xmi:id="_IMTgIJ43EeOxcJlxv_jijA" priority="2" target="_IMTgNp43EeOxcJlxv_jijA" source="_IMTgL543EeOxcJlxv_jijA">
+                    <guard xsi:type="sdcec:UnaryExpression" xmi:id="_IMTgIZ43EeOxcJlxv_jijA">
+                      <enclosedExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_IMTgIp43EeOxcJlxv_jijA" typedNamedElement="_IMTf8543EeOxcJlxv_jijA"/>
+                    </guard>
+                  </transitions>
+                  <transitions xmi:id="_IMTgI543EeOxcJlxv_jijA" priority="3" target="_IMTgN543EeOxcJlxv_jijA" source="_IMTgJ543EeOxcJlxv_jijA">
+                    <guard xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_IMTgJJ43EeOxcJlxv_jijA" typedNamedElement="_IMTf8543EeOxcJlxv_jijA"/>
+                  </transitions>
+                  <transitions xmi:id="_IMTgJZ43EeOxcJlxv_jijA" priority="3" target="_IMTgN543EeOxcJlxv_jijA" source="_IMTgL543EeOxcJlxv_jijA">
+                    <guard xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_IMTgJp43EeOxcJlxv_jijA" typedNamedElement="_IMTf8543EeOxcJlxv_jijA"/>
+                  </transitions>
+                  <states xmi:id="_IMTgJ543EeOxcJlxv_jijA" name="Wait" outgoingTransitions="_IMTf_Z43EeOxcJlxv_jijA _IMTgHZ43EeOxcJlxv_jijA _IMTgI543EeOxcJlxv_jijA" incomingTransitions="_IMTgC543EeOxcJlxv_jijA _IMTgD543EeOxcJlxv_jijA _IMTgFp43EeOxcJlxv_jijA" initial="true">
+                    <invariants xmi:id="_IMTgKJ43EeOxcJlxv_jijA" clock="_IMTgM543EeOxcJlxv_jijA" operator="LESS">
+                      <bound xmi:id="_IMTgKZ43EeOxcJlxv_jijA" unit="SECONDS">
+                        <value xsi:type="sdcec:LiteralExpression" xmi:id="_IMTgKp43EeOxcJlxv_jijA" value="1"/>
+                      </bound>
+                    </invariants>
+                  </states>
+                  <states xmi:id="_IMTgK543EeOxcJlxv_jijA" name="Release" outgoingTransitions="_IMTgAZ43EeOxcJlxv_jijA" incomingTransitions="_IMTf_Z43EeOxcJlxv_jijA">
+                    <invariants xmi:id="_IMTgLJ43EeOxcJlxv_jijA" clock="_IMTgM543EeOxcJlxv_jijA" operator="LESS">
+                      <bound xmi:id="_IMTgLZ43EeOxcJlxv_jijA" unit="SECONDS">
+                        <value xsi:type="sdcec:LiteralExpression" xmi:id="_IMTgLp43EeOxcJlxv_jijA" value="1"/>
+                      </bound>
+                    </invariants>
+                  </states>
+                  <states xmi:id="_IMTgL543EeOxcJlxv_jijA" name="Done" outgoingTransitions="_IMTgC543EeOxcJlxv_jijA _IMTgIJ43EeOxcJlxv_jijA _IMTgJZ43EeOxcJlxv_jijA" incomingTransitions="_IMTgAZ43EeOxcJlxv_jijA">
+                    <invariants xmi:id="_IMTgMJ43EeOxcJlxv_jijA" clock="_IMTgM543EeOxcJlxv_jijA">
+                      <bound xmi:id="_IMTgMZ43EeOxcJlxv_jijA" unit="SECONDS">
+                        <value xsi:type="sdcec:LiteralExpression" xmi:id="_IMTgMp43EeOxcJlxv_jijA" value="1"/>
+                      </bound>
+                    </invariants>
+                  </states>
+                  <clocks xmi:id="_IMTgM543EeOxcJlxv_jijA" name="doClock"/>
+                </embeddedStatechart>
+              </embeddedRegions>
+              <connectionPoints xsi:type="realtimestatechart:EntryPoint" xmi:id="_IMTgNJ43EeOxcJlxv_jijA" name="doEntry" outgoingTransitions="_IMTgD543EeOxcJlxv_jijA" incomingTransitions="_IMTf9Z43EeOxcJlxv_jijA"/>
+              <connectionPoints xsi:type="realtimestatechart:EntryPoint" xmi:id="_IMTgNZ43EeOxcJlxv_jijA" name="doEntry0" outgoingTransitions="_IMTgFp43EeOxcJlxv_jijA" incomingTransitions="_IMTf-J43EeOxcJlxv_jijA"/>
+              <connectionPoints xsi:type="realtimestatechart:ExitPoint" xmi:id="_IMTgNp43EeOxcJlxv_jijA" name="doExit" outgoingTransitions="_IMTf9p43EeOxcJlxv_jijA" incomingTransitions="_IMTgHZ43EeOxcJlxv_jijA _IMTgIJ43EeOxcJlxv_jijA"/>
+              <connectionPoints xsi:type="realtimestatechart:ExitPoint" xmi:id="_IMTgN543EeOxcJlxv_jijA" name="doExit0" outgoingTransitions="_IMTf9543EeOxcJlxv_jijA" incomingTransitions="_IMTgI543EeOxcJlxv_jijA _IMTgJZ43EeOxcJlxv_jijA"/>
+            </states>
+            <states xmi:id="_IMTgOJ43EeOxcJlxv_jijA" name="State3" outgoingTransitions="_IMTf-J43EeOxcJlxv_jijA" incomingTransitions="_IMTf9543EeOxcJlxv_jijA"/>
+          </embeddedStatechart>
+        </embeddedRegions>
+      </states>
+    </modelElements>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_IMTgOZ43EeOxcJlxv_jijA" name="role2" behavioralElement="_IMTf4p43EeOxcJlxv_jijA">
+      <states xmi:id="_IMTgOp43EeOxcJlxv_jijA" name="init" initial="true"/>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_IMTgO543EeOxcJlxv_jijA" key="org.muml.pim.messagetype.category" name="msgtype">
+    <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_IMTgPJ43EeOxcJlxv_jijA" name="Repository">
+      <messageTypes xmi:id="_IMTgPZ43EeOxcJlxv_jijA" name="exampleMessage"/>
+    </modelElements>
+  </categories>
+</modelinstance:RootNode>

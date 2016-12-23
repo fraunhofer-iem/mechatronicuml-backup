@@ -1,0 +1,28 @@
+import transforms.rtsc2graphviz;
+import transforms.plain2rtscAnnotation;
+import transforms.GraphvizPlainLayouterTransformation;
+import transforms.util;
+
+modeltype DOT uses dot("http://www.muml.org/graphviz/dot/1.0.0");
+modeltype PLAIN uses plain("http://www.muml.org/graphviz/plain/1.0.0");
+modeltype RTSC uses pim::realtimestatechart("http://www.muml.org/pim/1.0.0");
+
+transformation layout(inout rtscModel : RTSC)
+	access rtsc2graphviz, plain2rtscAnnotation, Util;
+
+main() {
+	// prev trans == RegionInstantiation
+	assert fatal (rtscModel.objects()[StateConnectionPoint]->isEmpty()) with log("prev trans failed");
+	var gModel : DOT := DOT.createEmptyModel().oclAsType(DOT);
+	var ret : Status := new rtsc2graphviz(rtscModel, gModel).transform();
+	assert fatal (ret.succeeded()) with log("rtsc2graphviz failed");
+	log("nodes: " + gModel.objects()[DotNode]->size().toString());
+	var plainModel : PLAIN := PLAIN.createEmptyModel().oclAsType(PLAIN);
+	ret := new GraphvizPlainLayouterTransformation(gModel, plainModel).transform();
+	assert fatal (ret.succeeded()) with log("GraphvizPlainLayouterTransformation failed");
+	log("nodes (plain): " + plainModel.objects()[PlainNode]->size().toString());
+	// XXX: rtscModel is unused
+	ret := new plain2rtscAnnotation(rtscModel, gModel, plainModel).transform();
+	assert fatal (ret.succeeded()) with log("plain2rtscAnnotation failed");
+	log("transformation " + this.toString() + " finished");
+}

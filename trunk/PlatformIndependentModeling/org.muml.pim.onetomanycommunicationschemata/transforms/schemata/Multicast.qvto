@@ -1,0 +1,268 @@
+library Multicast;
+import common.AllSchemataMappings;
+import CoordinatorBehaviorTemplate;
+
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype common uses core::expressions::common('http://www.muml.org/core/1.0.0');
+modeltype expressions uses core::expressions('http://www.muml.org/core/1.0.0');
+modeltype behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
+modeltype valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype storydriven uses 'http://www.muml.org/core/1.0.0';
+modeltype schemata uses pim::realtimestatechart::one_to_n_schemata('http://www.muml.org/pim/1.0.0');
+modeltype types uses pim::types('http://www.muml.org/pim/1.0.0');
+
+----------------------------------------------------------XXXXXXXXXXXXXXXXX--MULTICAST--XXXXXXXXXXXXXXXXX-------------------------------------------------------------------------	
+property multicastCheckDone : String = "multicastCheckDone";
+property multicast : String = "multicast";
+property multicastDone : String = "multicastDone";
+property multicastCheck : String = "multicastCheck";
+property multicastPossibleName : String = "multicastPossible";
+property sendMulticastName : String = "sendMulticast";
+
+----------------------------------------------------------------Transfer Schema Multicast of Coordinator------------------------------------------------------------------
+
+// @author: sthiele2
+mapping Transition :: Multicast2CoordinatorStartTransition(context:OclAny, region:RealtimeStatechart) : Transition 
+	// this mapping creates an outgoing transition from the (mapped) source of the schema transition to a first intermediate state
+	when {self.usesMulticastSchema() and not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()} {
+	// this mapping creates an outgoing transition from the (mapped) source of the schema transition to a first intermediate state
+	init {
+		result := self.map Schema2CoordinatorStartTransition(context, region, multicastCheckDone, multicastDLCName, multicastPossibleName);
+	}
+}
+
+// @author: sthiele2
+mapping Transition :: Multicast2CoordinatorIntermediateTransition(context:OclAny, region:RealtimeStatechart): Transition
+	when {self.usesMulticastSchema() and not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()} {
+	// creates the transition from intermediate state 1 to intermediate state 2
+	init {			
+		result := self.map Schema2CoordinatorIntermediateTransition(context, region, multicast, multicastDLCName);		
+	}
+}
+
+// @author: sthiele2
+mapping Transition :: Multicast2CoordinatorEndTransition(context:OclAny, region:RealtimeStatechart): Transition
+when {self.usesMulticastSchema() and not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()} {
+	init {
+		result := self.map Schema2CoordinatorEndTransition(context, region, multicastDone,multicastDLCName);
+	}	
+}
+
+---------------- Coordinator Mappings for Embedded State
+
+mapping Transition :: Multicast2SourceRegionCoordinator(context:OclAny) : Region 
+	when {self.usesMulticastSchema() and not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()} {
+		init {
+			result := self.map Schema2SourceRegionCoordinator(context, multicastCheck, multicastCheckDone, multicastPossibleName);	
+		}					
+	}
+
+		
+------------- non Conditional Coordinator Mappings	
+mapping Transition :: NonConditionalMulticast2TranssitionFromSourceToIntermediate(context:OclAny, region:RealtimeStatechart) : Transition
+	when {self.usesMulticastSchema() and self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()} {
+
+		priority := self.priority;
+						
+		source := self.source.map Vertex2VertexCoordinator(context);
+		
+		target := self.map Schema2CoordinatorIntermediateState(context,1, multicastDLCName);
+		
+		synchronization := self. createSynchronization(  multicast,SynchronizationKind::SEND, PositionSelectorKind::FIRST);
+		
+		if(not self.clockConstraints->isEmpty()) {
+			urgent := false;
+		}
+		else {
+			urgent := self.urgent;
+		};
+		
+		clockConstraints += self.clockConstraints->map transform(result).oclAsType(ClockConstraint);
+		
+		guard := self.guard.map transform(result).oclAsType(Expression);
+}
+
+mapping Transition :: NonConditionalMulticast2TransitionFromIntermediateToTarget(context:OclAny, region:RealtimeStatechart) : Transition
+when {self.usesMulticastSchema() and self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()} {
+	
+		priority := 1;
+		
+		source := self.map Schema2CoordinatorIntermediateState(context, 1,multicastDLCName);
+	
+		target := self.target.map Vertex2VertexCoordinator(context);
+		
+		action := self.action.map transform(result).oclAsType(Action);
+		
+		clockResets += self.clockResets->select(c|not isClockSubRoleSpecific(c)).map transform().oclAsType(Clock);
+	
+		synchronization := self. createSynchronization(  multicastDone,SynchronizationKind::RECEIVE);	
+}
+
+
+----------------------------------------------------------------- Transfer Schema Multicast of Subrole-------------------------------------------------------------------
+
+// first mapping from 	
+mapping Transition :: Multicast2TransSendSyncSubrole(context:OclAny, region:RealtimeStatechart) : Transition 
+	when {self.usesMulticastSchema()} {
+		priority := 1;
+		
+		source := self.map Transition2SourceStateSubrole(region);
+		
+		target := self.map Schema2SubroleIntermediateState(context,1);
+		
+		synchronization := self.createSynchronization( multicast,SynchronizationKind::RECEIVE  ,PositionSelectorKind::SELF);
+		
+		clockResets += self.clockResets->select(c|isClockSubRoleSpecific(c)).map transform().oclAsType(Clock);
+		
+		action := self.raiseMessageEvent.oneToManyCommunicationSchema.action.map transform(result).oclAsType(Action);
+		
+		events += self.raiseMessageEvent.map transform(result).oclAsType(AsynchronousMessageEvent);
+		
+		if(not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())
+			guard := createTypedNamedElementExpression(self.map Schema2BooleanVariable(sendMulticastName));
+		
+	}
+	
+	
+mapping Transition :: Multicast2TransSendSyncNotConditionSubrole(context:OclAny, region:RealtimeStatechart) : Transition 
+	when {self.usesMulticastSchema() and not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()} {
+		
+		source := self.map Transition2SourceStateSubrole(region);
+		
+		target := self.map Schema2SubroleIntermediateState(context,1);
+		
+		synchronization := self.createSynchronization(multicast,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
+		
+		if(not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())					
+			guard := self.createUnaryExpressionEnclosingTypedNamedElementExpression(sendMulticastName, UnaryOperator::NOT);
+		
+		priority := 2;
+		
+	}
+	
+	
+mapping Transition :: Multicast2TransReceiveSyncNotLastSubrole(context:OclAny, region:RealtimeStatechart) : Transition 
+	when {self.usesMulticastSchema()} {
+	
+		priority := 2;
+		
+		target := self.map Transition2SourceStateSubrole(region);
+		
+		source := self.map Schema2SubroleIntermediateState(context,1);	
+		
+		synchronization := self. createSynchronization( multicast,SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
+		
+		guard := createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
+					
+	}
+			
+mapping Transition :: Multicast2TransReceiveSyncLastSubrole(context:OclAny, region:RealtimeStatechart) : Transition 
+	when {self.usesMulticastSchema()} {
+	
+		priority := 1;
+		
+		target := self.map Transition2SourceStateSubrole(region);
+		
+		source := self.map Schema2SubroleIntermediateState(context,1);		
+		
+		guard :=  createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
+		
+		if((not self.raiseMessageEvent.oclIsUndefined()) and (not self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
+				and self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(pim::realtimestatechart::one_to_n_schemata::Multicast) 
+				and (not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())){
+				
+			action := self. createActionWithVariableAssignmentBlock("multicastPossible:=false", multicastPossibleName, "false");
+			
+		}endif;
+		synchronization := self. createSynchronization( multicastDone,SynchronizationKind::SEND);			
+	}
+	
+
+	
+mapping Transition :: Multicast2SourceRegionSubrole(context:OclAny, region:RealtimeStatechart) : Region {
+		
+		priority := self.priority;
+		
+		parentState := self.map Transition2SourceStateSubrole(region).oclAsType(State);
+		
+		embeddedStatechart := self.map Multicast2SourceEmbeddedRTSCSubrole(context, region);
+					
+	}
+	
+mapping Transition :: Multicast2SourceEmbeddedRTSCSubrole(context:OclAny, region:RealtimeStatechart) : RealtimeStatechart {
+		
+		name:= "multicastCheck" + "_" + self.source.name + "_" + self.target.name + "_" + self.priority.toString();
+		
+		states += self.map RegionState(context,  "Idle", true);
+		states += self.map RegionState(context,  "Requested", false);
+		
+		transitions += self.map Multicast2RequestedIdleCheckSubrole(context, region);
+		transitions += self.map Multicast2RequestedIdleCheckDoneSubrole(context, region);
+		transitions += self.map Multicast2IdleRequestedFulfilledSubrole(context, region);
+		transitions += self.map Multicast2IdleRequestedNotFulfilledSubrole(context, region);
+					
+	}
+	
+mapping Transition :: Multicast2RequestedIdleCheckSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
+	
+		priority := 2;
+				
+		source := self.map RegionState(context,  "Requested", false);
+		
+		target := self.map RegionState(context,  "Idle", true);
+		
+		guard :=  createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
+		
+		synchronization := self.createSynchronization( "multicastCheck", SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
+					
+	}
+	
+mapping Transition :: Multicast2RequestedIdleCheckDoneSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
+	
+		priority := 1;
+				
+		source := self.map RegionState(context,  "Requested", false);
+		
+		target := self.map RegionState(context,  "Idle", true);
+		
+		guard := createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
+		
+		synchronization := self.createSynchronization(multicastCheckDone,SynchronizationKind::SEND);
+					
+	}
+	
+mapping Transition :: Multicast2IdleRequestedFulfilledSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
+	
+		priority := 2;
+				
+		target := self.map RegionState(context,  "Requested", false);
+		
+		source := self.map RegionState(context,  "Idle", true);
+		
+		guard := self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map transform(result).oclAsType(Expression);
+		
+		synchronization := 	self.createSynchronization(multicastCheck,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
+		
+		action := self.createActionWithTwoVariableAssignments(multicastPossibleName + " :=true; " + sendMulticastName + ":= true;",multicastPossibleName, sendMulticastName,"true");
+		
+	}
+	
+mapping Transition :: Multicast2IdleRequestedNotFulfilledSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
+	
+		priority := 1;
+				
+		target := self.map RegionState(context,  "Requested", false);
+		
+		source := self.map RegionState(context,  "Idle", true);
+		
+		guard := self. TransferSchemaNotCondition();
+
+		synchronization := self.createSynchronization(multicastCheck,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
+					
+	}
+	
+
+	

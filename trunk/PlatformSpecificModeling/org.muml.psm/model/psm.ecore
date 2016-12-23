@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="psm" nsURI="http://www.muml.org/psm/1.0.0" nsPrefix="psm">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+    <details key="documentation" value="This package provides all Classes for modeling a platform-specific model."/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="Import">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This class is necessary to allow the import of models within Xtext editors."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="importURI" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The URI of the imported model."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eSubpackages name="allocation" nsURI="http://www.muml.org/psm/allocation/1.0.0"
+      nsPrefix="allocation">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This package provides the model elements to allocate a ComponentInstanceConfiguration to a HarwarePlatformInstanceConfiguration."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </eAnnotations>
+    <eClassifiers xsi:type="ecore:EClass" name="SystemAllocation" eSuperTypes="../../org.muml.core/model/core.ecore#//ExtendableElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents an allocation of a Component Instance Configuration to a Hardware Platform Instance Configuration."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value=""/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="AllComponentInstancesAllocated" value="-- All component instances must be allocated&#xA;let componentInstances : Bag(instance::ComponentInstance)&#xA;=&#xA;self.cic->union(&#xA;&#x9;-- XXX: is the union really needed (pivot ocl)?&#xA;&#x9;self.cic->closure(&#xA;&#x9;&#x9;componentInstances->select(&#xA;&#x9;&#x9;&#x9;oclIsKindOf(instance::StructuredComponentInstance)&#xA;&#x9;&#x9;)->collect(&#xA;&#x9;&#x9;&#x9;oclAsType(instance::StructuredComponentInstance).embeddedCIC&#xA;&#x9;&#x9;)&#xA;&#x9;)->asSet()&#xA;)->collect(&#xA;&#x9;componentInstances&#xA;)->asBag()&#xA;in&#xA;componentInstances = self.allocations->collect(componentInstance)->asBag()"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="allocations" lowerBound="1"
+          upperBound="-1" eType="#//allocation/Allocation" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The different allocations that have been defined for this System Allocation."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="cic" lowerBound="1" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//instance/ComponentInstanceConfiguration">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The allocated ComponentInstanceConfiguration."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hpic" lowerBound="1"
+          eType="ecore:EClass ../../org.muml.pm.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The allocated HardwarePlatformInstanceConfiguration."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyConnectorInstanceAllocations"
+          upperBound="-1" eType="#//allocation/AssemblyConnectorInstanceAllocation"
+          containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The assembly connector instance allocations."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Allocation" eSuperTypes="../../org.muml.core/model/core.ecore#//ExtendableElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents an allocation of exactly one Component Instance to exactly one Resource Instance."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstance" lowerBound="1"
+          eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//instance/ComponentInstance">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The allocated Component Instance."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resourceInstance" lowerBound="1"
+          eType="ecore:EClass ../../org.muml.pm.hardware/model/hardware.ecore#//hwresourceinstance/StructuredResourceInstance">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The allocated Resource Instance."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AssemblyConnectorInstanceAllocation">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents an allocation of exactly one AssemblyConnectorInstance&#xA;to at most one NetworkConnectorInstance. If the networkConnectorInstance reference&#xA;is null, the component instances that are connected via the assemblyConnectorInstance&#xA;reference are allocated to the same ECU (and communicate by local means)."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyConnectorInstance"
+          lowerBound="1" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//instance/AssemblyConnectorInstance">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The assembly connector instance."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="networkConnectorInstance"
+          eType="ecore:EClass ../../org.muml.pm.hardware/model/hardware.ecore#//hwplatforminstance/NetworkConnectorInstance">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The network connector instance that is used by the assemblyConnector.connectorEndpointInstances&#xA;to communicate with each other. If this reference is null, the assemblyConnector.connectorEndpointInstances&#xA;communicate with each other by local means."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="properties" nsURI="http://www.muml.org/psm/properties/1.0.0"
+      nsPrefix="properties">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This package provides classes to annotate component with non-functional requirements."/>
+    </eAnnotations>
+    <eClassifiers xsi:type="ecore:EClass" name="WCET" eSuperTypes="../../org.muml.core/model/core.ecore#//Extension">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The Worst-Case-Execution Time of a Component Instance, if its allocated to a specific Resource Instance."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="wcet" lowerBound="1"
+          eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/TimeValue"
+          containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The amount of the WCET."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resourceInstance" eType="ecore:EClass ../../org.muml.pm.hardware/model/hardware.ecore#//hwresourceinstance/StructuredResourceInstance">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The used Resource Instance."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RequiredMemory" eSuperTypes="../../org.muml.core/model/core.ecore#//Extension">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The amount of required memory of a Component Instance, if its allocated to a specific Resource Instance."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="requiredMemory" lowerBound="1"
+          eType="ecore:EClass ../../org.muml.pm.hardware/model/hardware.ecore#//hwvaluetype/DataSize"
+          containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The required amount of memory."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resourceInstance" eType="ecore:EClass ../../org.muml.pm.hardware/model/hardware.ecore#//hwresourceinstance/StructuredResourceInstance">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The used Resource Instance."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Scheduling" eSuperTypes="../../org.muml.core/model/core.ecore#//Extension">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="deadline" lowerBound="1"
+          eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/TimeValue"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="period" lowerBound="1"
+          eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/TimeValue"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="priority" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/NaturalNumber"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MessageFrame" eSuperTypes="../../org.muml.core/model/core.ecore#//Extension">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Represents a general message frame."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="size" lowerBound="1"
+          eType="ecore:EClass ../../org.muml.pm.hardware/model/hardware.ecore#//hwvaluetype/DataSize"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="period" lowerBound="1"
+          eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/TimeValue"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CANMessageFrame" eSuperTypes="#//properties/MessageFrame">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Represents a CAN message frame."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="priority" lowerBound="1"
+          eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/NaturalNumber"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="deadline" lowerBound="1"
+          eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/TimeValue"
+          containment="true"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="psm_realtimestatechart" nsURI="http://www.muml.org/psm/realtimestatechart/1.0.0"
+      nsPrefix="psm_realtimestatechart">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The package extends the realtimestatechart-package of muml. Here a statechart with parameters is introduced."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </eAnnotations>
+    <eClassifiers xsi:type="ecore:EClass" name="ParameterizedRealtimeStatechart" eSuperTypes="../../org.muml.pim/model/pim.ecore#//realtimestatechart/RealtimeStatechart">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class is a extension of a real-time statechart, which has additional plattformspecific parameters."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+          eType="#//psm_realtimestatechart/realtimestatechartparameter/RealtimeStatechartParameter"
+          containment="true" eOpposite="#//psm_realtimestatechart/realtimestatechartparameter/RealtimeStatechartParameter/statechart">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="All parameter for this statechart."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="allParameters" upperBound="-1"
+          eType="#//psm_realtimestatechart/realtimestatechartparameter/RealtimeStatechartParameter"
+          volatile="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="self->closure(states.embeddedRegions.embeddedStatechart.oclAsType(psm_realtimestatechart::ParameterizedRealtimeStatechart)).parameters->asOrderedSet()"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="APICall" eSuperTypes="../../org.muml.pim.actionlanguage/model/actionlanguage.ecore#//OperationCall">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a expression for a CallParameter. This Expression can be used within the realtimestatechart. It refers to the parameter, which is given to the realtimestatechart."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="apiCallSignature" lowerBound="1"
+          eType="#//psm_realtimestatechart/realtimestatechartparameter/APICallParameter"/>
+    </eClassifiers>
+    <eSubpackages name="realtimestatechartparameter" nsURI="http://www.muml.org/psm/realtimestatechart/realtimestatechartparameter/1.0.0"
+        nsPrefix="realtimestatechartparameter">
+      <eClassifiers xsi:type="ecore:EClass" name="APICallParameter" eSuperTypes="#//psm_realtimestatechart/realtimestatechartparameter/RealtimeStatechartParameter ../../org.muml.pim/model/pim.ecore#//behavior/Operation">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="With this parameter a discrete port instance can insert a expression into its behavior described by a realtimestatechart."/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="TimeParameter" eSuperTypes="#//psm_realtimestatechart/realtimestatechartparameter/RealtimeStatechartParameter ../../org.muml.pim/model/pim.ecore#//behavior/Variable">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="With this parameter a discrete port instance can insert a time value into its behavior described by a realtimestatechart."/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RealtimeStatechartParameter" abstract="true"
+          eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement ../../org.muml.core/model/core.ecore#//CommentableElement">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This class represents a parameter of a realtimestatechart, which can be bound by a instance of a discrete port. A parameter is used to add parts of a realtimestatechart that are only known in a instance of a discrete port."/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" lowerBound="1"
+            eType="#//psm_realtimestatechart/ParameterizedRealtimeStatechart" eOpposite="#//psm_realtimestatechart/ParameterizedRealtimeStatechart/parameters">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The statechart, to which this parameter belongs."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </eSubpackages>
+    <eSubpackages name="realtimestatechartparameterbinding" nsURI="http://www.muml.org/psm/realtimestatechart/realtimestatechartparameterbinding/1.0.0"
+        nsPrefix="realtimestatechartparameterbinding">
+      <eClassifiers xsi:type="ecore:EClass" name="APICallParameterBinding" eSuperTypes="#//psm_realtimestatechart/realtimestatechartparameterbinding/RealtimeStatechartParameterBinding ../../org.muml.pim/model/pim.ecore#//behavior/Operation">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This class represents a binding for a CallParameter. The parameter is bound to a concrete expression."/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="expression" lowerBound="1"
+            eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
+            containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The expression, used for the parameter."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="TimeParameterBinding" eSuperTypes="#//psm_realtimestatechart/realtimestatechartparameterbinding/RealtimeStatechartParameterBinding">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This class represents a binding for a TimeParameter. The parameter is bound to a concrete time value."/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="timeValue" lowerBound="1"
+            eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/TimeValue"
+            containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The time value used for the parameter."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RealtimeStatechartParameterBinding"
+          abstract="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This class represents a binding for a parameter of a realtimestatechart."/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="portInstance" lowerBound="1"
+            eType="#//psm_instance/ParameterisableDiscreteSinglePortInstance" eOpposite="#//psm_instance/ParameterisableDiscreteSinglePortInstance/bindings">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The instance of a discrete port."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" lowerBound="1"
+            eType="#//psm_realtimestatechart/realtimestatechartparameter/RealtimeStatechartParameter">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The parameter, to which a concrete value will be assigned."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </eSubpackages>
+  </eSubpackages>
+  <eSubpackages name="psm_instance" nsURI="http://www.muml.org/psm/instance/1.0.0"
+      nsPrefix="psm_instance">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The package extends the instance-package of muml. Here all parameters of a statechart will be bound within an instance of a discrete port."/>
+    </eAnnotations>
+    <eClassifiers xsi:type="ecore:EClass" name="ParameterisableDiscreteSinglePortInstance"
+        eSuperTypes="../../org.muml.pim/model/pim.ecore#//instance/DiscreteSinglePortInstance">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class is a extension of a discrete port at instance level. The behavior of this port instance can have parameters. To these parameters this class defines parameter bindings."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="bindings" upperBound="-1"
+          eType="#//psm_realtimestatechart/realtimestatechartparameterbinding/RealtimeStatechartParameterBinding"
+          containment="true" eOpposite="#//psm_realtimestatechart/realtimestatechartparameterbinding/RealtimeStatechartParameterBinding/portInstance">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The parameter bindings for each parameter of the statechart of the port."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="portapimapping" nsURI="http://www.muml.org/psm/portapimapping/1.0.0"
+      nsPrefix="portapimapping">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This package describes the informations that are needed to model a mapping from continuouse ports in MechatronicUML to api-commands. The ports of a continuourse component can be mapped to an expression, which can e.g. be a call of an api-command."/>
+    </eAnnotations>
+    <eClassifiers xsi:type="ecore:EClass" name="PortApiMapping" eSuperTypes="../../org.muml.core/model/core.ecore#//CommentableElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents the mapping of a muml-model. The continuous port from that model will be mapped to an expression, that should be executet, when the continuours ports send/recieve values."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="port" lowerBound="1"
+          eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//instance/ContinuousPortInstance">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The continuous port, that will be mapped to an expression."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="execCommand" lowerBound="1"
+          eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
+          containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The command to which a continuous port will be mapped. This command is executed each time, the continuous port is queried."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="repository" lowerBound="1"
+          eType="#//portapimapping/MappingRepository" eOpposite="#//portapimapping/MappingRepository/portApiMappings">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The repository to which the mapping belongs."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="initCommand" eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
+          containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="A optional command which has to be executed before any other api-command can be executed. For example some sonsors and actuators require an initial api-command."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MappingRepository" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement ../../org.muml.core/model/core.ecore#//CommentableElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class orders the mappings of a port. It is used to declare port mappings that assign api-commands to a conutinous port."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="portApiMappings" upperBound="-1"
+          eType="#//portapimapping/PortApiMapping" containment="true" eOpposite="#//portapimapping/PortApiMapping/repository">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The mapping of a port, that assigns a api-command to a continuous port."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
+          eType="#//Import" containment="true"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="apiexpressions" nsURI="http://www.muml.org/psm/apiexpressions/1.0.0"
+      nsPrefix="apiexpressions">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This package contains all expressions, which are used to model a call of an api-command with actual parameters."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </eAnnotations>
+    <eClassifiers xsi:type="ecore:EClass" name="APICallExpression" eSuperTypes="../../org.muml.core/model/core.ecore#//expressions/Expression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents an api call. It has an actual parameter for each formal parameter of an api-command. Inside an actual parameter a concrete value will be mapped to the formal parameters of an api-command from the swplatform-package."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="apiCommand" lowerBound="1"
+          eType="ecore:EClass ../../org.muml.pm.software/model/software.ecore#//APICommand">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The APICommand to which this expression belongs."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameterBindings" upperBound="-1"
+          eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//behavior/ParameterBinding"
+          containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The mapping where an actual parameter will be bound to a formal parameter."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EnumerationValueExpression" eSuperTypes="../../org.muml.core/model/core.ecore#//expressions/Expression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents an EnumerationValue at runtime. At runtime the Enumeration is bound to one of its possible values. This means, that a concrete EnumerationValue will be mapped to the Enumeration from the swplatform-package."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="enumValue" lowerBound="1"
+          eType="ecore:EClass ../../org.muml.pm.software/model/software.ecore#//EnumerationValue">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The EnumerationValue to which this expression belongs."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ContinuousPortExpression" eSuperTypes="../../org.muml.core/model/core.ecore#//expressions/Expression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="OnlyInPortsAllowed"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents an expression, that contains a continuous port instance. In that way an api-command of an actuator can access the new value of the actuator."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="OnlyInPortsAllowed" value="-- Only Inport are allowed&#xA;let result :  Boolean = (self.continuousPort.portType.oclAsType(component::DirectedTypedPort).kind = component::PortDirectionKind::IN) in&#xA;if ( result.oclIsUndefined()) &#xA;then &#xA;true&#xA;else&#xA;false&#xA; endif"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="continuousPort" lowerBound="1"
+          eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//instance/ContinuousPortInstance">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The continuous port instance that belongs to the expression."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>

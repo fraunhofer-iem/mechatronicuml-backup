@@ -1,0 +1,295 @@
+library SchemaSpecificMUML2MUML;
+import ModelcopyLibrary;
+
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype common uses core::expressions::common('http://www.muml.org/core/1.0.0');
+modeltype expressions uses core::expressions('http://www.muml.org/core/1.0.0');
+modeltype behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
+modeltype valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype storydriven uses 'http://www.muml.org/core/1.0.0';
+modeltype schemata uses pim::realtimestatechart::one_to_n_schemata('http://www.muml.org/pim/1.0.0');
+modeltype types uses pim::types('http://www.muml.org/pim/1.0.0');
+
+
+helper  isClockSubRoleSpecific(c : Clock): Boolean
+{
+	
+}
+helper isVariableSubRoleSpecific(v : Variable): Boolean
+{
+	
+}
+helper isOperationSubRoleSpecific(o : Operation): Boolean
+{
+	
+}
+
+property internalVariables			: Set(Variable);
+property internalOperations			: Set(Operation);
+property internalClocks				: Set(Clock);
+property internalSynchronizations	: Set(SynchronizationChannel);
+
+// helpers that are needed to deepCopy Elements. In order to simplify the helpers, they use internally the MUML2MUML library. 
+// When a Variable is acces
+// It is not possible to use self.deepclone() since references to other elements should reference the mapped elements instead of the original values, as it is done in deepClone()
+
+
+	
+	mapping actionlanguage::TriggerMessageExpression :: transform() : EObject {
+		init {
+			result := self.map create();
+		}
+		var element := self.oclAsType(TriggerMessageExpression);
+		var resultingElement : TriggerMessageExpression := result.oclAsType(TriggerMessageExpression);
+		resultingElement.messageType := self.messageType;
+		resultingElement.parameter := self.parameter;
+		
+	    resultingElement._extensions := self._extensions.map transform().oclAsType(Extension);
+	    	
+		element.oclAsType(EObject).eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+			setValues(result, f, getValues(element.oclAsType(EObject), f));
+		};
+	}
+
+	mapping actionlanguage::TriggerMessageExpression :: transform(container : OclAny) : EObject {
+		init {
+			result := self.map create(container);
+		}
+		var element := self.oclAsType(TriggerMessageExpression);
+		var resultingElement : TriggerMessageExpression := result.oclAsType(TriggerMessageExpression);
+		resultingElement.messageType := self.messageType;
+		resultingElement.parameter := self.parameter;
+		
+	    resultingElement._extensions := self._extensions.map transform(container).oclAsType(Extension);
+	    	
+		element.oclAsType(EObject).eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+			setValues(result, f, getValues(element.oclAsType(EObject), f));
+		};
+	}
+	
+	mapping actionLanguage::NondeterministicChoiceExpression ::transform() : EObject {
+		init {
+			result := self.map create();
+		}
+		var element := self.oclAsType(actionLanguage::NondeterministicChoiceExpression);
+		var resultingElement : actionLanguage::NondeterministicChoiceExpression := result.oclAsType(actionLanguage::NondeterministicChoiceExpression);
+		resultingElement.range := self.range.map transform().oclAsType(Range);
+		resultingElement.dataType := self.dataType;
+		
+	    resultingElement._extensions := self._extensions.map transform().oclAsType(Extension);
+	    	
+		element.oclAsType(EObject).eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+			setValues(result, f, getValues(element.oclAsType(EObject), f));
+		};	
+	}
+	
+	mapping actionLanguage::NondeterministicChoiceExpression ::transform(container : OclAny) : EObject {
+		init {
+			result := self.map create(container);
+		}
+		var element := self.oclAsType(actionLanguage::NondeterministicChoiceExpression);
+		var resultingElement : actionLanguage::NondeterministicChoiceExpression := result.oclAsType(actionLanguage::NondeterministicChoiceExpression);
+		resultingElement.range := self.range.map transform(container).oclAsType(Range);
+		resultingElement.dataType := self.dataType;
+		
+	    resultingElement._extensions := self._extensions.map transform(container).oclAsType(Extension);
+	    	
+		element.oclAsType(EObject).eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+			setValues(result, f, getValues(element.oclAsType(EObject), f));
+		};	
+	}
+-- variables, operations, parametes...
+
+
+
+	mapping Variable :: transform() : EObject {
+		init {
+			if(internalVariables->includes(self)){
+				result := self.map create();
+				
+				var resultingElement : behavior::Variable := result.oclAsType(behavior::Variable);
+		
+				resultingElement.dataType := self.dataType;
+				resultingElement.initializeExpression := self.initializeExpression.map transform(result).oclAsType(Expression);
+			    resultingElement._extensions := self._extensions.map transform().oclAsType(Extension);
+				
+				var element := self.oclAsType(behavior::Variable);	    	
+				element.oclAsType(EObject).eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+					setValues(result, f, getValues(element.oclAsType(EObject), f));
+				};		
+			}
+			else {
+				result := self.oclAsType(EObject);
+			}			
+		}			
+	}	
+
+ 	mapping Variable :: transform(container : OclAny) : EObject {
+ 		init {
+ 			result := self.map transform();
+ 		}
+ 	}
+	
+	mapping Operation :: transform() : EObject {
+		init {
+			if(internalOperations->includes(self)){
+				result := self.map create();
+				
+				var resultingElement : behavior::Operation := result.oclAsType(behavior::Operation);
+		
+				resultingElement.returnType := self.returnType;
+				
+				resultingElement.implementations := self.implementations->map transform().oclAsType(Expression);
+			    resultingElement._extensions := self._extensions.map transform().oclAsType(Extension);
+			    resultingElement.parameters := self.parameters -> map transform().oclAsType(Parameter);
+			    
+			    var element := self.oclAsType(behavior::Operation);			    	
+				element.oclAsType(EObject).eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+					setValues(result, f, getValues(element.oclAsType(EObject), f));
+				};		
+			}
+			else {
+				result := self.oclAsType(EObject);
+			}			
+		}			
+	}
+	
+	mapping Operation :: transform(container : OclAny) : EObject {
+ 		init {
+ 			result := self.map transform();
+ 		}
+ 	}
+
+	mapping Parameter :: transform() : EObject {
+		init{
+			result := self.map create ();			
+		}
+		
+		var resultingElement : Parameter := result.oclAsType(Parameter);
+		resultingElement.dataType := self.dataType;
+		
+		var element := self.oclAsType(Parameter);			    	
+			element.oclAsType(EObject).eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+				setValues(result, f, getValues(element.oclAsType(EObject), f));
+		};
+		
+	}
+
+	mapping Parameter :: transform(container : OclAny) : EObject {
+ 		init {
+ 			result := self.map transform();
+ 		}
+ 	}
+		-- synchronizations
+	mapping SynchronizationChannel :: transform() : EObject {
+		init {
+			if(internalSynchronizations->includes(self)){
+				result := self.map create();
+				
+				var resultingElement : SynchronizationChannel := result.oclAsType(SynchronizationChannel);		
+		
+			    resultingElement._extensions := self._extensions.map transform().oclAsType(Extension);
+				resultingElement.selectorType := self.selectorType;
+				resultingElement.state := self.state.map transform().oclAsType(State);
+			    
+			    var element := self.oclAsType(SynchronizationChannel);			    	
+				element.oclAsType(EObject).eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+					setValues(result, f, getValues(element.oclAsType(EObject), f));
+				};		
+			}
+			else {
+				result := self.oclAsType(EObject);
+			}			
+		}		
+	}
+	
+	
+	mapping SynchronizationChannel :: transform(container : OclAny) : EObject {
+ 		init {
+ 			result := self.map transform();
+ 		}
+ 	}
+	-- Clocks	
+	
+	mapping Clock :: transform() : EObject {
+		init {
+			if(internalClocks->includes(self)){
+				result := self.map create();
+				
+				var resultingElement : Clock := result.oclAsType(Clock);		
+		
+			    resultingElement._extensions := self._extensions.map transform().oclAsType(Extension);
+			 	//resultingElement.statechart := self.statechart.map transform().oclAsType(RealtimeStatechart);
+			    
+			    var element := self.oclAsType(Clock);			    	
+				element.oclAsType(EObject).eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+					setValues(result, f, getValues(element.oclAsType(EObject), f));
+				};		
+			}
+			else {
+				result := self.oclAsType(EObject);
+			}
+			endif;			
+		}		
+	}
+
+
+	mapping Clock :: transform(container : OclAny) : EObject {
+ 		init {
+ 			result := self.map transform();
+ 		}
+ 	}
+ 	
+	mapping pim::realtimestatechart::AsynchronousMessageEvent :: transform() : EObject {
+		init {
+			result := self.map create();
+		}		
+		var resultingElement : AsynchronousMessageEvent := result.oclAsType(AsynchronousMessageEvent);
+		resultingElement.message := self.message.map transform().oclAsType(Message);
+		resultingElement.kind := self.kind;
+				
+	}
+	
+	mapping pim::realtimestatechart::AsynchronousMessageEvent :: transform(container : OclAny) : EObject {
+		init {
+			result := self.map create(container);
+		}		
+		var resultingElement : AsynchronousMessageEvent := result.oclAsType(AsynchronousMessageEvent);
+		resultingElement.message := self.message.map transform().oclAsType(Message);
+		resultingElement.kind := self.kind;		
+	}
+	
+	
+	mapping pim::realtimestatechart::Message :: transform() : EObject {
+		init {
+			result := self.map create();
+		}
+		
+		var resultingElement : Message := result.oclAsType(Message);
+		resultingElement._extensions := self._extensions.map transform().oclAsType(Extension);
+		resultingElement.instanceOf := self.instanceOf;
+		resultingElement.parameterBinding := self.parameterBinding.map transform().oclAsType(ParameterBinding);
+		
+		var element := self.oclAsType(Message);			    	
+		element.oclAsType(EObject).eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+			setValues(result, f, getValues(element.oclAsType(EObject), f));
+		};	
+	}
+	
+	mapping pim::behavior::ParameterBinding :: transform() : EObject {
+		init {
+			result := self.map create();
+		}
+		
+		var resultingElement : ParameterBinding := result.oclAsType(ParameterBinding);
+		resultingElement.parameter := self.parameter;
+		resultingElement.value := self.value.map transform().oclAsType(Expression);
+		resultingElement._extensions := self._extensions.map transform().oclAsType(Extension);		
+	}
+	
+	
+	
+	

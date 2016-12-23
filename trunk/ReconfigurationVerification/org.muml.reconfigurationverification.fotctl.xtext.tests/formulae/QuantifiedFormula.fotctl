@@ -1,0 +1,5 @@
+Declaration
+NodeLabelPredicates {Nlp1,Nlp2}
+Formulas
+forall x (Nlp1(x) => Nlp2(x));
+exists x (Nlp2(x) => Nlp1(x));

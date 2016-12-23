@@ -1,0 +1,35 @@
+«IMPORT simulink»
+
+«EXTENSION extensions::Element»
+«EXTENSION extensions::Block»
+«EXTENSION extensions::Line»
+
+«DEFINE line FOR Line-»
+«IF this.hasBeenProcessed() == false-»
+  Line {
+«IF BusCreator.isInstance(this.targetBlock) && ((BusCreator)this.targetBlock).bus==null-»
+	Name	"«this.targetPort.getName()»"
+«ELSEIF BusCreator.isInstance(this.targetBlock)-»«REM»Label incoming line to a BusCreator according to the bus element«ENDREM»
+	Name	"«((BusCreator)this.targetBlock).bus.elements.get(this.targetBlock.inPorts.indexOf(this.targetPort)).name»"
+«ELSEIF BusCreator.isInstance(this.sourceBlock)-»
+	Name	"«this.sourcePort.getName()»"
+«ENDIF-»
+    SrcBlock "«this.sourceBlock.getName()»"
+    SrcPort «this.sourceBlock.outPorts.indexOf(this.sourcePort)+1»«REM»Counting: We start with 0, Simulink with 1«ENDREM»
+    Tag				"id=«this.id»"
+«IF this.hasBranches()-»
+    Points    [0, 0]
+«FOREACH this.getLinesWithSameSource() AS branch-»
+    Branch {
+      DstBlock "«branch.targetBlock.getName()»"
+      DstPort «branch.getTargetPortIndex()»    
+    }
+    «branch.setProcessed()-»
+«ENDFOREACH-» 
+«ELSE-»   
+    DstBlock "«this.targetBlock.getName()»"
+    DstPort «this.getTargetPortIndex()»
+«ENDIF-»
+  }
+«ENDIF-»
+«ENDDEFINE»

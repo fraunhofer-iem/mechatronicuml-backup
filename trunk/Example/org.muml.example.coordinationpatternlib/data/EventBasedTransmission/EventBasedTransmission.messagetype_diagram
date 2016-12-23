@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:msgtype="http://www.muml.org/pim/msgtype/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_THiSoO5CEeSkkcvANuOg5g" type="Message Type" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_2NOC8O5CEeSkkcvANuOg5g" type="2008" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_2NOqAO5CEeSkkcvANuOg5g" type="5017"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_2NOqAe5CEeSkkcvANuOg5g" type="7010">
+      <children xmi:type="notation:Shape" xmi:id="_4KC8AO5CEeSkkcvANuOg5g" type="3007" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_4KC8Au5CEeSkkcvANuOg5g" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_4KC8A-5CEeSkkcvANuOg5g" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_4KC8BO5CEeSkkcvANuOg5g"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_4KC8Be5CEeSkkcvANuOg5g"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="../patterns.muml#_4J5yEO5CEeSkkcvANuOg5g"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4KC8Ae5CEeSkkcvANuOg5g"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_2NOqAu5CEeSkkcvANuOg5g"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_2NOqA-5CEeSkkcvANuOg5g"/>
+    </children>
+    <element xmi:type="msgtype:MessageTypeRepository" href="../patterns.muml#_2MPykO5CEeSkkcvANuOg5g"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2NOC8e5CEeSkkcvANuOg5g" x="175" y="93" width="246"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_THiSoe5CEeSkkcvANuOg5g"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../patterns.muml#_t0IlzedrEeSmgcfWtmVOuw"/>
+</notation:Diagram>

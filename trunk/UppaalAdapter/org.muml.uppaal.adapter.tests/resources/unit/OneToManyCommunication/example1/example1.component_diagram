@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component="http://www.muml.org/pim/component/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_mOYNkN0HEeOokIiF69iPLA" type="Component" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_2hzYwN0HEeOokIiF69iPLA" type="2006" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_2hz_0N0HEeOokIiF69iPLA" type="5028"/>
+    <children xmi:type="notation:Shape" xmi:id="_7REkQN0HEeOokIiF69iPLA" type="3010" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_7REkQt0HEeOokIiF69iPLA" type="5012">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_7REkQ90HEeOokIiF69iPLA" y="5"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_7REkRN0HEeOokIiF69iPLA" type="5025">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_7REkRd0HEeOokIiF69iPLA" y="5"/>
+      </children>
+      <element xmi:type="component:DiscretePort" href="example1.fujaba#_7RAS0N0HEeOokIiF69iPLA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7REkQd0HEeOokIiF69iPLA"/>
+    </children>
+    <element xmi:type="component:StaticAtomicComponent" href="example1.fujaba#_2hwVcN0HEeOokIiF69iPLA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2hzYwd0HEeOokIiF69iPLA" x="54" y="135" width="154" height="73"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_Hkp1wN0IEeOokIiF69iPLA" type="2006" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Hkqc0N0IEeOokIiF69iPLA" type="5028"/>
+    <children xmi:type="notation:Shape" xmi:id="_M00u4N0IEeOokIiF69iPLA" type="3010" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_M00u4t0IEeOokIiF69iPLA" type="5012">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_M01V8N0IEeOokIiF69iPLA" y="5"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_M01V8d0IEeOokIiF69iPLA" type="5025">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_M01V8t0IEeOokIiF69iPLA" y="5"/>
+      </children>
+      <element xmi:type="component:DiscretePort" href="example1.fujaba#_M0vPUN0IEeOokIiF69iPLA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_M00u4d0IEeOokIiF69iPLA"/>
+    </children>
+    <element xmi:type="component:StaticAtomicComponent" href="example1.fujaba#_HklkUN0IEeOokIiF69iPLA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Hkp1wd0IEeOokIiF69iPLA" x="63" y="342"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_mOYNkd0HEeOokIiF69iPLA"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="example1.fujaba#_F2LXMN0HEeOokIiF69iPLA"/>
+</notation:Diagram>

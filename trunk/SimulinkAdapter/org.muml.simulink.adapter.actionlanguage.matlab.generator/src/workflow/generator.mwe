@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<workflow>
+	<property name="model" value="org.muml.pim.actionlanguage.matlab.generator/src/test2.xmi" />
+	<property name="src-gen" value="src-gen" />
+	
+	<!-- set up EMF for standalone execution -->
+	<bean class="org.eclipse.emf.mwe.utils.StandaloneSetup" >
+		<platformUri value=".."/> 
+		<registerGeneratedEPackage value="org.muml.core.expressions.ExpressionsPackage"/>
+		<registerGeneratedEPackage value="org.muml.core.expressions.common.CommonExpressionsPackage"/>
+		<registerGeneratedEPackage value="org.muml.pim.actionlanguage.ActionLanguagePackage"/>
+		<registerGeneratedEPackage value="org.muml.pim.realtimestatechart.RealtimestatechartPackage"/>
+	</bean>
+	
+	<!-- instantiate metamodel -->
+	<bean id="mm_emf" class="org.eclipse.xtend.typesystem.emf.EmfRegistryMetaModel"/>
+
+	<!-- load model and store it in slot 'model' -->
+	<component class="org.eclipse.emf.mwe.utils.Reader">
+		<uri value="platform:/resource/${model}" />
+		<modelSlot value="model" />
+	</component>
+
+	<!--  generate code -->
+	<component class="org.muml.pim.actionlanguage.matlab.generator.ExpressionsAnnotator">
+	</component>
+</workflow>

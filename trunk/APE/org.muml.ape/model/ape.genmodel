@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.muml.ape/src" modelPluginID="org.muml.ape"
+    modelName="Properties" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/plugin/org.eclipse.emf.codegen.ecore/model/GenModel.genmodel#//genmodel">
+  <foreignModel>ape.ecore</foreignModel>
+  <genPackages prefix="Properties" basePackage="org.muml" disposableProviderFactory="true"
+      fileExtensions="propsheet" ecorePackage="ape.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ape.ecore#//TransformationPosition">
+      <genEnumLiterals ecoreEnumLiteral="ape.ecore#//TransformationPosition/PRE_RECONCILE"/>
+      <genEnumLiterals ecoreEnumLiteral="ape.ecore#//TransformationPosition/POST_RECONCILE"/>
+    </genEnums>
+    <genClasses ecoreClass="ape.ecore#//PropertyGenerator">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference ape.ecore#//PropertyGenerator/reconciler"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ape.ecore#//PropertyGenerator/genModel"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ape.ecore#//PropertyGenerator/referencedGenerators"/>
+      <genFeatures notify="false" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference ape.ecore#//PropertyGenerator/plugin"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ape.ecore#//PropertyGenerator/defaultTab"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ape.ecore#//PropertyGenerator/tabs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ape.ecore#//PropertyGenerator/packages"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ape.ecore#//PropertyGenerator/contributorId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ape.ecore#//PropertyGenerator/sourceFolder"/>
+    </genClasses>
+    <genClasses ecoreClass="ape.ecore#//Reconciler">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ape.ecore#//Reconciler/enabled"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ape.ecore#//Reconciler/reconcilePackages"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ape.ecore#//Reconciler/reconcileClasses"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ape.ecore#//Reconciler/reconcileProperties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ape.ecore#//Reconciler/customTransformations"/>
+    </genClasses>
+    <genClasses ecoreClass="ape.ecore#//CustomTransformation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ape.ecore#//CustomTransformation/uri"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ape.ecore#//CustomTransformation/enabled"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ape.ecore#//CustomTransformation/position"/>
+    </genClasses>
+    <genClasses ecoreClass="ape.ecore#//Plugin">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ape.ecore#//Plugin/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ape.ecore#//Plugin/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ape.ecore#//Plugin/vendor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ape.ecore#//Plugin/version"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ape.ecore#//Plugin/requiredBundles"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ape.ecore#//Plugin/requiredExecutionEnvironment"/>
+    </genClasses>
+    <genClasses ecoreClass="ape.ecore#//PropertyTab">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ape.ecore#//PropertyTab/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ape.ecore#//PropertyTab/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ape.ecore#//PropertyTab/afterTab"/>
+      <genOperations ecoreOperation="ape.ecore#//PropertyTab/getQualifiedId"/>
+    </genClasses>
+    <genClasses ecoreClass="ape.ecore#//Package">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ape.ecore#//Package/genPackage"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ape.ecore#//Package/classes"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ape.ecore#//Package/generator"/>
+    </genClasses>
+    <genClasses ecoreClass="ape.ecore#//Class">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ape.ecore#//Class/genClass"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ape.ecore#//Class/package"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ape.ecore#//Class/orderedElements"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ape.ecore#//Class/superClasses"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ape.ecore#//Class/allSuperClasses"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ape.ecore#//Class/properties"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ape.ecore#//Class/baseInsertPoints"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ape.ecore#//Class/propertyCategories"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ape.ecore#//OrderedElement">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ape.ecore#//OrderedElement/clazz"/>
+    </genClasses>
+    <genClasses ecoreClass="ape.ecore#//BaseInsertPoint">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ape.ecore#//BaseInsertPoint/baseClass"/>
+    </genClasses>
+    <genClasses ecoreClass="ape.ecore#//Property">
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ape.ecore#//Property/genFeature"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ape.ecore#//Property/visibilityFilters"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ape.ecore#//Property/tab"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ape.ecore#//Property/editor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ape.ecore#//Property/tooltip"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ape.ecore#//Property/reconcile"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ape.ecore#//Property/creationConstraint"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ape.ecore#//Property/creationOppositeConstraint"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ape.ecore#//Property/initializeOCLExpression"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ape.ecore#//PropertyEditor">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ape.ecore#//PropertyEditor/property"/>
+    </genClasses>
+    <genClasses ecoreClass="ape.ecore#//TextPropertyEditor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ape.ecore#//TextPropertyEditor/multiLine"/>
+    </genClasses>
+    <genClasses ecoreClass="ape.ecore#//SpinnerPropertyEditor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ape.ecore#//SpinnerPropertyEditor/digits"/>
+    </genClasses>
+    <genClasses ecoreClass="ape.ecore#//ComboBoxPropertyEditor"/>
+    <genClasses ecoreClass="ape.ecore#//CheckboxPropertyEditor"/>
+    <genClasses ecoreClass="ape.ecore#//RadioPropertyEditor"/>
+    <genClasses ecoreClass="ape.ecore#//ListPropertyEditor"/>
+    <genClasses ecoreClass="ape.ecore#//FlattenedListPropertyEditor"/>
+    <genClasses ecoreClass="ape.ecore#//ObjectPropertyEditor"/>
+    <genClasses ecoreClass="ape.ecore#//OCLPropertyEditor"/>
+    <genClasses ecoreClass="ape.ecore#//CustomPropertyEditor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ape.ecore#//CustomPropertyEditor/fullyQualifiedClassName"/>
+    </genClasses>
+    <genClasses ecoreClass="ape.ecore#//PropertyCategory">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ape.ecore#//PropertyCategory/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ape.ecore#//PropertyCategory/vertical"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ape.ecore#//PropertyCategory/open"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ape.ecore#//PropertyCategory/properties"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ape.ecore#//Filter">
+      <genOperations ecoreOperation="ape.ecore#//Filter/isValid">
+        <genParameters ecoreParameter="ape.ecore#//Filter/isValid/object"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="ape.ecore#//OCLFilter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ape.ecore#//OCLFilter/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="ape.ecore#//CreationConstraint">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference ape.ecore#//CreationConstraint/filters"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

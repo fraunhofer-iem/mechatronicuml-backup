@@ -1,0 +1,2324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd'>
+<nta>
+	<declaration>
+urgent chan hurry;
+
+typedef int[-2147483648,2147483647] MUMLInt;
+
+typedef int[-32768,32767] MUMLShort;
+
+typedef int[-128,127] MUMLByte;
+
+const int NUM_OF_MESSAGE_KINDS = 4;
+
+const int NUM_MAX_MESSAGES_IN_TRANSIT = 25;
+
+const int MAX_OF_BUFFER_AND_CONNECTOR_SIZE = 5;
+
+const int CONNECTOR_SIZE = 5;
+
+const int MAX_NUM_OF_MESSAGE_BUFFERS_PER_ROLE = 1;
+
+typedef int[0,NUM_MAX_MESSAGES_IN_TRANSIT] MessageId;
+
+typedef int[0,NUM_OF_MESSAGE_KINDS] MessageKind;
+
+typedef struct {
+	MessageId mId;
+	MessageKind mType;
+	int mArgsPosition;
+} Message;
+
+typedef struct {
+	int[0,MAX_OF_BUFFER_AND_CONNECTOR_SIZE] tail;
+	Message messages[MAX_OF_BUFFER_AND_CONNECTOR_SIZE];
+	bool messageDiscarded;
+} Buffer;
+
+typedef struct {
+	MessageId muml_request_48MessageID;
+	MUMLByte muml_speed_49_;
+} muml_request_48Parameters;
+
+typedef struct {
+	MessageId muml_finished_44MessageID;
+} muml_finished_44Parameters;
+
+typedef struct {
+	MessageId muml_laneChanged_47MessageID;
+} muml_laneChanged_47Parameters;
+
+typedef struct {
+	MessageId muml_answer_45MessageID;
+	bool muml_accept_46_0;
+} muml_answer_45Parameters;
+
+const int NUM_OF_DISCRETE_PORT_INSTANCES = 5;
+
+const int NUM_OF_COMPONENT_INSTANCES = 5;
+
+typedef int[0,NUM_OF_DISCRETE_PORT_INSTANCES-1] discretePortInstance;
+
+typedef int[0,NUM_OF_COMPONENT_INSTANCES-1] componentInstance;
+
+const int[-1,NUM_OF_DISCRETE_PORT_INSTANCES] next[discretePortInstance] = {1,-1,-1,-1,-1};
+
+const int[-1,NUM_OF_DISCRETE_PORT_INSTANCES] previous[discretePortInstance] = {-1,0,-1,-1,-1};
+
+const int[-1,NUM_OF_DISCRETE_PORT_INSTANCES] first[discretePortInstance] = {0,0,0,-1,-1};
+
+const int[-1,NUM_OF_DISCRETE_PORT_INSTANCES] last[discretePortInstance] = {1,1,1,-1,-1};
+
+const int[-1,NUM_OF_DISCRETE_PORT_INSTANCES] self[discretePortInstance] = {0,1,2,3,4};
+
+const int[-1,MAX_NUM_OF_MESSAGE_BUFFERS_PER_ROLE-1] buffer_assignment[discretePortInstance][NUM_OF_MESSAGE_KINDS+1] = {{-1,-1,-1,-1,0},{-1,-1,-1,-1,0},{-1,-1,-1,-1,0},{-1,0,0,0,-1},{-1,0,0,0,-1}};
+
+const int[-1,MAX_OF_BUFFER_AND_CONNECTOR_SIZE] bufferSize[discretePortInstance][NUM_OF_MESSAGE_KINDS+1] = {{-1,-1,-1,-1,1},{-1,-1,-1,-1,1},{-1,-1,-1,-1,1},{-1,3,3,3,-1},{-1,3,3,3,-1}};
+
+const int DISCARD_INCOMING = 0;
+
+const int DISCARD_OLDEST = 1;
+
+const int[-1,1] bufferOverflowStrategies[discretePortInstance][NUM_OF_MESSAGE_KINDS+1] = {{-1,-1,-1,-1,DISCARD_INCOMING},{-1,-1,-1,-1,DISCARD_INCOMING},{-1,-1,-1,-1,DISCARD_INCOMING},{-1,DISCARD_INCOMING,DISCARD_INCOMING,DISCARD_INCOMING,-1},{-1,DISCARD_INCOMING,DISCARD_INCOMING,DISCARD_INCOMING,-1}};
+
+bool connectorOverflow;
+
+int[0,34] intermediateLocationSemaphore;
+
+Buffer buffers[discretePortInstance][MAX_NUM_OF_MESSAGE_BUFFERS_PER_ROLE];
+
+Buffer connectors[discretePortInstance];
+
+int earliest[discretePortInstance];
+
+int latest[discretePortInstance];
+
+clock transmissionTimes[discretePortInstance][CONNECTOR_SIZE];
+
+const MessageKind nullMessageKind = 0, muml_request_48 = 1, muml_finished_44 = 2, muml_laneChanged_47 = 3, muml_answer_45 = 4;
+
+const MessageId nullMessageId = 0;
+
+const Message nullMessage = {nullMessageId,nullMessageKind,0};
+
+MessageId freeIds[NUM_MAX_MESSAGES_IN_TRANSIT] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25};
+
+muml_request_48Parameters muml_request_48NullMessage;
+
+muml_finished_44Parameters muml_finished_44NullMessage;
+
+muml_laneChanged_47Parameters muml_laneChanged_47NullMessage;
+
+muml_answer_45Parameters muml_answer_45NullMessage;
+
+int[0,NUM_MAX_MESSAGES_IN_TRANSIT] muml_request_48Tail;
+
+int[0,NUM_MAX_MESSAGES_IN_TRANSIT] muml_finished_44Tail;
+
+int[0,NUM_MAX_MESSAGES_IN_TRANSIT] muml_laneChanged_47Tail;
+
+int[0,NUM_MAX_MESSAGES_IN_TRANSIT] muml_answer_45Tail;
+
+muml_request_48Parameters muml_request_48MessageArguments[NUM_MAX_MESSAGES_IN_TRANSIT];
+
+muml_finished_44Parameters muml_finished_44MessageArguments[NUM_MAX_MESSAGES_IN_TRANSIT];
+
+muml_laneChanged_47Parameters muml_laneChanged_47MessageArguments[NUM_MAX_MESSAGES_IN_TRANSIT];
+
+muml_answer_45Parameters muml_answer_45MessageArguments[NUM_MAX_MESSAGES_IN_TRANSIT];
+
+void add(Buffer &amp;buffer, Message message) {
+	buffer.messages[buffer.tail] = message;
+	buffer.tail++;
+}
+
+int getNumberOfElementsInBuffer(Buffer b) {
+	return b.tail;
+}
+
+bool check(Buffer buffer, MessageKind mKind) {
+	Message nextMessage = buffer.messages[0];
+	return mKind != nullMessageKind and nextMessage.mType == mKind;
+}
+
+bool checkMessageInBuffer(Buffer buffer, MessageKind mKind) {
+	int i;
+	for(i = 0; i &lt; MAX_OF_BUFFER_AND_CONNECTOR_SIZE; i++) 
+		if(buffer.messages[i].mType == mKind) 
+			return true; 
+	return false;
+}
+
+void remove(Buffer &amp;buffer, MessageKind m) {
+	if(check(buffer, m)) {
+		int i;
+		for(i = 0; i &lt; MAX_OF_BUFFER_AND_CONNECTOR_SIZE-1; i++) 
+			buffer.messages[i] = buffer.messages[i+1];
+		buffer.messages[MAX_OF_BUFFER_AND_CONNECTOR_SIZE-1] = nullMessage;
+		buffer.tail--;
+	} 
+}
+
+bool receive(discretePortInstance receiver, MessageKind mKind) {
+	return check(buffers[receiver][buffer_assignment[receiver][mKind]], mKind);
+}
+
+MessageId requestId() {
+	int i;
+	for(i = 0; i &lt; NUM_MAX_MESSAGES_IN_TRANSIT; i++) 
+		if(freeIds[i] != nullMessageId) {
+		MessageId result;
+		result = freeIds[i];
+		freeIds[i] = nullMessageId;
+		return result;
+	} 
+	return nullMessageId;
+}
+
+bool releaseId(MessageId id) {
+	int i;
+	for(i = 0; i &lt; NUM_MAX_MESSAGES_IN_TRANSIT; i++) 
+		if(freeIds[i] == id) 
+			return false; 
+	for(i = 0; i &lt; NUM_MAX_MESSAGES_IN_TRANSIT; i++) 
+		if(freeIds[i] == nullMessageId) {
+		freeIds[i] = id;
+		return true;
+	} 
+	return false;
+}
+
+int addmuml_request_48Arguments(muml_request_48Parameters m) {
+	muml_request_48MessageArguments[muml_request_48Tail] = m;
+	muml_request_48Tail++;
+	return muml_request_48Tail-1;
+}
+
+int addmuml_finished_44Arguments(muml_finished_44Parameters m) {
+	muml_finished_44MessageArguments[muml_finished_44Tail] = m;
+	muml_finished_44Tail++;
+	return muml_finished_44Tail-1;
+}
+
+int addmuml_laneChanged_47Arguments(muml_laneChanged_47Parameters m) {
+	muml_laneChanged_47MessageArguments[muml_laneChanged_47Tail] = m;
+	muml_laneChanged_47Tail++;
+	return muml_laneChanged_47Tail-1;
+}
+
+int addmuml_answer_45Arguments(muml_answer_45Parameters m) {
+	muml_answer_45MessageArguments[muml_answer_45Tail] = m;
+	muml_answer_45Tail++;
+	return muml_answer_45Tail-1;
+}
+
+bool removemuml_request_48Arguments(MessageId mId) {
+	int i;
+	for(i = 0; i &lt; NUM_MAX_MESSAGES_IN_TRANSIT; i++) {
+		if(muml_request_48MessageArguments[i].muml_request_48MessageID == mId) {
+			int j;
+			for(j = i+1; j &lt; NUM_MAX_MESSAGES_IN_TRANSIT; j++) 
+				muml_request_48MessageArguments[j-1] = muml_request_48MessageArguments[j];
+			muml_request_48MessageArguments[NUM_MAX_MESSAGES_IN_TRANSIT-1] = muml_request_48NullMessage;
+			muml_request_48Tail--;
+			return true;
+		} 
+	}
+	return false;
+}
+
+bool removemuml_finished_44Arguments(MessageId mId) {
+	int i;
+	for(i = 0; i &lt; NUM_MAX_MESSAGES_IN_TRANSIT; i++) {
+		if(muml_finished_44MessageArguments[i].muml_finished_44MessageID == mId) {
+			int j;
+			for(j = i+1; j &lt; NUM_MAX_MESSAGES_IN_TRANSIT; j++) 
+				muml_finished_44MessageArguments[j-1] = muml_finished_44MessageArguments[j];
+			muml_finished_44MessageArguments[NUM_MAX_MESSAGES_IN_TRANSIT-1] = muml_finished_44NullMessage;
+			muml_finished_44Tail--;
+			return true;
+		} 
+	}
+	return false;
+}
+
+bool removemuml_laneChanged_47Arguments(MessageId mId) {
+	int i;
+	for(i = 0; i &lt; NUM_MAX_MESSAGES_IN_TRANSIT; i++) {
+		if(muml_laneChanged_47MessageArguments[i].muml_laneChanged_47MessageID == mId) {
+			int j;
+			for(j = i+1; j &lt; NUM_MAX_MESSAGES_IN_TRANSIT; j++) 
+				muml_laneChanged_47MessageArguments[j-1] = muml_laneChanged_47MessageArguments[j];
+			muml_laneChanged_47MessageArguments[NUM_MAX_MESSAGES_IN_TRANSIT-1] = muml_laneChanged_47NullMessage;
+			muml_laneChanged_47Tail--;
+			return true;
+		} 
+	}
+	return false;
+}
+
+bool removemuml_answer_45Arguments(MessageId mId) {
+	int i;
+	for(i = 0; i &lt; NUM_MAX_MESSAGES_IN_TRANSIT; i++) {
+		if(muml_answer_45MessageArguments[i].muml_answer_45MessageID == mId) {
+			int j;
+			for(j = i+1; j &lt; NUM_MAX_MESSAGES_IN_TRANSIT; j++) 
+				muml_answer_45MessageArguments[j-1] = muml_answer_45MessageArguments[j];
+			muml_answer_45MessageArguments[NUM_MAX_MESSAGES_IN_TRANSIT-1] = muml_answer_45NullMessage;
+			muml_answer_45Tail--;
+			return true;
+		} 
+	}
+	return false;
+}
+
+void sendmuml_request_48(discretePortInstance sender, MUMLByte muml_speed_49_1) {
+	if(connectors[sender].tail &lt; CONNECTOR_SIZE) {
+		muml_request_48Parameters muml_request_48Instance = {nullMessageId,muml_speed_49_1};
+		Message message = nullMessage;
+		MessageId mId = nullMessageId;
+		mId = requestId();
+		muml_request_48Instance.muml_request_48MessageID = mId;
+		message.mId = mId;
+		message.mType = muml_request_48;
+		message.mArgsPosition = addmuml_request_48Arguments(muml_request_48Instance);
+		add(connectors[sender], message);
+		transmissionTimes[sender][latest[sender]] = 0;
+		latest[sender] == CONNECTOR_SIZE-1 ? (latest[sender] = 0) : latest[sender]++;
+	} 
+	else 
+		connectorOverflow = true;
+}
+
+void sendmuml_finished_44(discretePortInstance sender) {
+	if(connectors[sender].tail &lt; CONNECTOR_SIZE) {
+		muml_finished_44Parameters muml_finished_44Instance = {nullMessageId};
+		Message message = nullMessage;
+		MessageId mId = nullMessageId;
+		mId = requestId();
+		muml_finished_44Instance.muml_finished_44MessageID = mId;
+		message.mId = mId;
+		message.mType = muml_finished_44;
+		message.mArgsPosition = addmuml_finished_44Arguments(muml_finished_44Instance);
+		add(connectors[sender], message);
+		transmissionTimes[sender][latest[sender]] = 0;
+		latest[sender] == CONNECTOR_SIZE-1 ? (latest[sender] = 0) : latest[sender]++;
+	} 
+	else 
+		connectorOverflow = true;
+}
+
+void sendmuml_laneChanged_47(discretePortInstance sender) {
+	if(connectors[sender].tail &lt; CONNECTOR_SIZE) {
+		muml_laneChanged_47Parameters muml_laneChanged_47Instance = {nullMessageId};
+		Message message = nullMessage;
+		MessageId mId = nullMessageId;
+		mId = requestId();
+		muml_laneChanged_47Instance.muml_laneChanged_47MessageID = mId;
+		message.mId = mId;
+		message.mType = muml_laneChanged_47;
+		message.mArgsPosition = addmuml_laneChanged_47Arguments(muml_laneChanged_47Instance);
+		add(connectors[sender], message);
+		transmissionTimes[sender][latest[sender]] = 0;
+		latest[sender] == CONNECTOR_SIZE-1 ? (latest[sender] = 0) : latest[sender]++;
+	} 
+	else 
+		connectorOverflow = true;
+}
+
+void sendmuml_answer_45(discretePortInstance sender, bool muml_accept_46_2) {
+	if(connectors[sender].tail &lt; CONNECTOR_SIZE) {
+		muml_answer_45Parameters muml_answer_45Instance = {nullMessageId,muml_accept_46_2};
+		Message message = nullMessage;
+		MessageId mId = nullMessageId;
+		mId = requestId();
+		muml_answer_45Instance.muml_answer_45MessageID = mId;
+		message.mId = mId;
+		message.mType = muml_answer_45;
+		message.mArgsPosition = addmuml_answer_45Arguments(muml_answer_45Instance);
+		add(connectors[sender], message);
+		transmissionTimes[sender][latest[sender]] = 0;
+		latest[sender] == CONNECTOR_SIZE-1 ? (latest[sender] = 0) : latest[sender]++;
+	} 
+	else 
+		connectorOverflow = true;
+}
+
+void consume(discretePortInstance receiver, MessageKind mKind) {
+	if(receive(receiver, mKind)) {
+		Message nextMessage = buffers[receiver][buffer_assignment[receiver][mKind]].messages[0];
+		releaseId(nextMessage.mId);
+		remove(buffers[receiver][buffer_assignment[receiver][mKind]], mKind);
+		if(mKind == muml_request_48) 
+				removemuml_request_48Arguments(nextMessage.mId); 
+		if(mKind == muml_finished_44) 
+				removemuml_finished_44Arguments(nextMessage.mId); 
+		if(mKind == muml_laneChanged_47) 
+				removemuml_laneChanged_47Arguments(nextMessage.mId); 
+		if(mKind == muml_answer_45) 
+				removemuml_answer_45Arguments(nextMessage.mId); 
+	} 
+}
+
+void clearConnector(MessageId id, MessageKind messageTypeToDiscard) {
+	releaseId(id);
+	if(messageTypeToDiscard == muml_request_48) 
+			removemuml_request_48Arguments(id); 
+	if(messageTypeToDiscard == muml_finished_44) 
+			removemuml_finished_44Arguments(id); 
+	if(messageTypeToDiscard == muml_laneChanged_47) 
+			removemuml_laneChanged_47Arguments(id); 
+	if(messageTypeToDiscard == muml_answer_45) 
+			removemuml_answer_45Arguments(id); 
+}
+
+void discard(Buffer &amp;buffer, int bufferOverflowStrategy, Message message) {
+	MessageId messageToDiscard = message.mId;
+	MessageKind messageTypeToDiscard = message.mType;
+	if(bufferOverflowStrategy == DISCARD_OLDEST) {
+		messageToDiscard = buffer.messages[0].mId;
+		messageTypeToDiscard = buffer.messages[0].mType;
+		remove(buffer, messageTypeToDiscard);
+		buffer.messages[buffer.tail] = message;
+		buffer.tail++;
+	} 
+	releaseId(messageToDiscard);
+	buffer.messageDiscarded = true;
+	clearConnector(messageToDiscard, messageTypeToDiscard);
+}
+
+MUMLByte muml_speed_61_3[discretePortInstance] = {10,10,10,10,10};
+
+bool muml_allAccept_62_4[discretePortInstance] = {true,true,true,true,true};
+
+clock muml_c_93_5[discretePortInstance];
+
+clock muml_DLC_multicast_1_76_6[discretePortInstance];
+
+urgent chan muml_multicast1_85[discretePortInstance][discretePortInstance];
+
+urgent chan muml_multicastDone1_86[discretePortInstance];
+
+urgent chan muml_multicastDone2_88[discretePortInstance];
+
+urgent chan muml_multiReceive1_89[discretePortInstance][discretePortInstance];
+
+urgent chan muml_multiReceiveDone1_90[discretePortInstance];
+
+urgent chan muml_multicast3_91[discretePortInstance][discretePortInstance];
+
+urgent chan muml_multicastDone3_92[discretePortInstance];
+
+urgent chan exit_muml_Initial_59_9[componentInstance];
+
+urgent chan exit_muml_Main_63_10[componentInstance];
+
+urgent chan exit_muml_coordinator_64_11[componentInstance];
+
+urgent chan exit_muml_subrole_77_12[componentInstance];
+
+urgent chan muml_multicast2_87Urgent[discretePortInstance][discretePortInstance];
+
+chan muml_multicast2_87NonUrgent[discretePortInstance][discretePortInstance];
+
+bool muml_accepted_100_33[componentInstance];
+
+clock muml_c_eval_106_34[componentInstance];
+
+urgent chan exit_muml_Initial_98_15[componentInstance];
+
+		</declaration>
+	<template>
+		<name>Connector</name>
+		<parameter> const discretePortInstance sender, const discretePortInstance receiver, const int min, const int max, const bool loss </parameter>
+		<declaration>
+Message tmp;
+
+</declaration>
+		<location id="id0" x="89" y="30">
+			<name x="79" y="0">Idle</name>
+			<label kind="invariant" x="79" y="45">connectors[sender].tail &gt; 0 imply transmissionTimes[sender][earliest[sender]] &lt;= max</label>
+		</location>
+		<location id="id1" x="89" y="150">
+			<name x="79" y="120">transfer_loc</name>
+			<committed/>
+		</location>
+		<init ref="id0"/>
+		<transition>
+			<source ref="id0"/>
+			<target ref="id1"/>
+			<label kind="select" x="29" y="45">i : MessageKind</label>
+			<label kind="guard" x="29" y="60">check(connectors[sender], i) and transmissionTimes[sender][earliest[sender]] &gt;= min and transmissionTimes[sender][earliest[sender]] &lt;= max and not intermediateLocationSemaphore</label>
+			<label kind="assignment" x="29" y="90">tmp = connectors[sender].messages[0],
+remove(connectors[sender], i),
+earliest[sender] == CONNECTOR_SIZE-1 ? (earliest[sender] = 0) : earliest[sender]++</label>
+			<nail x="80" y="59"/>
+			<nail x="78" y="72"/>
+			<nail x="78" y="88"/>
+			<nail x="78" y="103"/>
+		</transition>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id0"/>
+			<label kind="guard" x="29" y="60">buffers[receiver][buffer_assignment[receiver][tmp.mType]].tail &lt; bufferSize[receiver][tmp.mType] and not intermediateLocationSemaphore</label>
+			<label kind="assignment" x="29" y="90">add(buffers[receiver][buffer_assignment[receiver][tmp.mType]], tmp)</label>
+			<nail x="60" y="121"/>
+			<nail x="55" y="106"/>
+			<nail x="54" y="87"/>
+			<nail x="57" y="70"/>
+		</transition>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id0"/>
+			<label kind="guard" x="29" y="60">buffers[receiver][buffer_assignment[receiver][tmp.mType]].tail &gt;= bufferSize[receiver][tmp.mType] and not intermediateLocationSemaphore</label>
+			<label kind="assignment" x="29" y="90">discard(buffers[receiver][buffer_assignment[receiver][tmp.mType]], bufferOverflowStrategies[receiver][tmp.mType], tmp)</label>
+			<nail x="99" y="120"/>
+			<nail x="101" y="107"/>
+			<nail x="101" y="91"/>
+			<nail x="100" y="76"/>
+		</transition>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id0"/>
+			<label kind="guard" x="29" y="60">loss == true and not intermediateLocationSemaphore</label>
+			<label kind="assignment" x="29" y="90">releaseId(tmp.mType),
+clearConnector(tmp.mId, tmp.mType)</label>
+			<nail x="118" y="121"/>
+			<nail x="123" y="106"/>
+			<nail x="124" y="87"/>
+			<nail x="121" y="70"/>
+		</transition>
+	</template>
+	<template>
+		<name>muml_OvertakerCompRTSC_58_13</name>
+		<parameter> const componentInstance componentInstanceID </parameter>
+		<declaration>
+Message msg;
+
+</declaration>
+		<location id="id2" x="1114" y="30">
+			<name x="1104" y="0">muml_OvertakerCompRTSC_58_IDLE</name>
+		</location>
+		<location id="id3" x="411" y="30">
+			<name x="401" y="0">muml_Initial_59_ACTIVE_IN_muml_OvertakerCompRTSC_58</name>
+		</location>
+		<init ref="id3"/>
+	</template>
+	<template>
+		<name>muml_overtaker_Role_60_6</name>
+		<parameter> const componentInstance componentInstanceID, const discretePortInstance discretePortInstanceID </parameter>
+		<declaration>
+Message msg;
+
+</declaration>
+		<location id="id4" x="973" y="30">
+			<name x="963" y="0">muml_overtaker_Role_60_IDLE</name>
+		</location>
+		<location id="id5" x="363" y="30">
+			<name x="353" y="0">muml_Main_63_ACTIVE_IN_muml_overtaker_Role_60</name>
+		</location>
+		<init ref="id5"/>
+	</template>
+	<template>
+		<name>muml_coordinator_64_7</name>
+		<parameter> const componentInstance componentInstanceID, const discretePortInstance discretePortInstanceID </parameter>
+		<declaration>
+Message msg;
+
+</declaration>
+		<location id="id6" x="1308" y="2310">
+			<name x="1298" y="2280">muml_coordinator_64_IDLE</name>
+		</location>
+		<location id="id7" x="624" y="1350">
+			<name x="614" y="1320">muml_Intermediate_Node3_65_ACTIVE_IN_muml_coordinator_64</name>
+			<urgent/>
+		</location>
+		<location id="id8" x="621" y="1110">
+			<name x="611" y="1080">muml_Intermediate2_66_ACTIVE_IN_muml_coordinator_64</name>
+		</location>
+		<location id="id9" x="649" y="1590">
+			<name x="639" y="1560">muml_Changed_67_ACTIVE_IN_muml_coordinator_64</name>
+			<label kind="invariant" x="639" y="1605">muml_c_93_5[discretePortInstanceID] &lt;= 20*1000</label>
+		</location>
+		<location id="id10" x="684" y="1830">
+			<name x="674" y="1800">muml_Init_Intermediate_1_Changed_1_68_ACTIVE_IN_muml_coordinator_64</name>
+			<label kind="invariant" x="674" y="1845">muml_DLC_multicast_1_76_6[discretePortInstanceID] &lt;= 4500 and muml_c_93_5[discretePortInstanceID] &lt;= 20*1000</label>
+		</location>
+		<location id="id11" x="684" y="2070">
+			<name x="674" y="2040">muml_Init_69_ACTIVE_IN_muml_coordinator_64</name>
+			<label kind="invariant" x="674" y="2085">muml_c_93_5[discretePortInstanceID] &lt;= 20*1000</label>
+		</location>
+		<location id="id12" x="619" y="870">
+			<name x="609" y="840">muml_Idle_70_ACTIVE_IN_muml_coordinator_64</name>
+		</location>
+		<location id="id13" x="684" y="2310">
+			<name x="674" y="2280">muml_AnalyzeResult_71_ACTIVE_IN_muml_coordinator_64</name>
+			<urgent/>
+		</location>
+		<location id="id14" x="619" y="630">
+			<name x="609" y="600">muml_Idle_Intermediate_1_WaitingForAnswer_2_72_ACTIVE_IN_muml_coordinator_64</name>
+		</location>
+		<location id="id15" x="728" y="390">
+			<name x="718" y="360">muml_WaitingForAnswer_73_ACTIVE_IN_muml_coordinator_64</name>
+			<label kind="invariant" x="718" y="405">muml_c_93_5[discretePortInstanceID] &lt;= (4+2*1)*1000</label>
+		</location>
+		<location id="id16" x="774" y="150">
+			<name x="764" y="120">muml_Intermediate_1_75_ACTIVE_IN_muml_coordinator_64</name>
+		</location>
+		<location id="id17" x="633" y="1470" color="#ffffff">
+			<name x="623" y="1440">INTERMEDIATE_7</name>
+			<committed/>
+		</location>
+		<location id="id18" x="623" y="1230" color="#ffffff">
+			<name x="613" y="1200">INTERMEDIATE_8</name>
+			<committed/>
+		</location>
+		<location id="id19" x="621" y="990" color="#ffffff">
+			<name x="611" y="960">INTERMEDIATE_9</name>
+			<committed/>
+		</location>
+		<location id="id20" x="681" y="1710" color="#ffffff">
+			<name x="671" y="1680">INTERMEDIATE_10</name>
+			<committed/>
+		</location>
+		<location id="id21" x="684" y="1950" color="#ffffff">
+			<name x="674" y="1920">INTERMEDIATE_11</name>
+			<committed/>
+		</location>
+		<location id="id22" x="684" y="2190" color="#ffffff">
+			<name x="674" y="2160">INTERMEDIATE_12</name>
+			<committed/>
+		</location>
+		<location id="id23" x="151" y="2070" color="#ffffff">
+			<name x="141" y="2040">INTERMEDIATE_13</name>
+			<committed/>
+		</location>
+		<location id="id24" x="619" y="750" color="#ffffff">
+			<name x="609" y="720">INTERMEDIATE_14</name>
+			<committed/>
+		</location>
+		<location id="id25" x="1006" y="30" color="#ffffff">
+			<name x="996" y="0">INTERMEDIATE_15</name>
+			<committed/>
+		</location>
+		<location id="id26" x="656" y="510" color="#ffffff">
+			<name x="646" y="480">INTERMEDIATE_16</name>
+			<committed/>
+		</location>
+		<location id="id27" x="744" y="270" color="#ffffff">
+			<name x="734" y="240">INTERMEDIATE_17</name>
+			<committed/>
+		</location>
+		<init ref="id12"/>
+		<transition>
+			<source ref="id9"/>
+			<target ref="id17"/>
+			<label kind="guard" x="581" y="1500">not intermediateLocationSemaphore</label>
+			<label kind="assignment" x="581" y="1530">intermediateLocationSemaphore++</label>
+			<nail x="645" y="1559"/>
+			<nail x="644" y="1546"/>
+			<nail x="641" y="1531"/>
+			<nail x="639" y="1516"/>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id18"/>
+			<label kind="guard" x="563" y="1260">not intermediateLocationSemaphore</label>
+			<label kind="synchronisation" x="563" y="1275">muml_multicast3_91[discretePortInstanceID][first[discretePortInstanceID]]!</label>
+			<label kind="assignment" x="563" y="1290">intermediateLocationSemaphore++</label>
+			<nail x="624" y="1319"/>
+			<nail x="624" y="1306"/>
+			<nail x="624" y="1291"/>
+			<nail x="623" y="1276"/>
+		</transition>
+		<transition>
+			<source ref="id8"/>
+			<target ref="id19"/>
+			<label kind="guard" x="561" y="1020">not intermediateLocationSemaphore</label>
+			<label kind="synchronisation" x="561" y="1035">muml_multicastDone3_92[discretePortInstanceID]?</label>
+			<label kind="assignment" x="561" y="1050">intermediateLocationSemaphore++</label>
+			<nail x="621" y="1079"/>
+			<nail x="621" y="1066"/>
+			<nail x="621" y="1051"/>
+			<nail x="621" y="1036"/>
+		</transition>
+		<transition>
+			<source ref="id10"/>
+			<target ref="id20"/>
+			<label kind="guard" x="622" y="1740">not intermediateLocationSemaphore</label>
+			<label kind="synchronisation" x="622" y="1755">muml_multicastDone1_86[discretePortInstanceID]?</label>
+			<label kind="assignment" x="622" y="1770">intermediateLocationSemaphore++</label>
+			<nail x="684" y="1799"/>
+			<nail x="683" y="1786"/>
+			<nail x="683" y="1771"/>
+			<nail x="682" y="1756"/>
+		</transition>
+		<transition>
+			<source ref="id11"/>
+			<target ref="id21"/>
+			<label kind="guard" x="624" y="1980">not intermediateLocationSemaphore</label>
+			<label kind="synchronisation" x="624" y="1995">muml_multicast1_85[discretePortInstanceID][first[discretePortInstanceID]]!</label>
+			<label kind="assignment" x="624" y="2010">intermediateLocationSemaphore++</label>
+			<nail x="684" y="2039"/>
+			<nail x="684" y="2026"/>
+			<nail x="684" y="2011"/>
+			<nail x="684" y="1996"/>
+		</transition>
+		<transition>
+			<source ref="id13"/>
+			<target ref="id22"/>
+			<label kind="guard" x="624" y="2220">muml_allAccept_62_4[discretePortInstanceID] and not intermediateLocationSemaphore</label>
+			<label kind="synchronisation" x="624" y="2235">hurry?</label>
+			<label kind="assignment" x="624" y="2250">muml_DLC_multicast_1_76_6[discretePortInstanceID] = 0,
+muml_c_93_5[discretePortInstanceID] = 0,
+intermediateLocationSemaphore++</label>
+			<nail x="684" y="2279"/>
+			<nail x="684" y="2266"/>
+			<nail x="684" y="2251"/>
+			<nail x="684" y="2236"/>
+		</transition>
+		<transition>
+			<source ref="id13"/>
+			<target ref="id23"/>
+			<label kind="guard" x="357" y="2160">not muml_allAccept_62_4[discretePortInstanceID] and not intermediateLocationSemaphore</label>
+			<label kind="synchronisation" x="357" y="2175">hurry?</label>
+			<label kind="assignment" x="357" y="2190">intermediateLocationSemaphore++</label>
+			<nail x="621" y="2280"/>
+			<nail x="522" y="2236"/>
+			<nail x="331" y="2151"/>
+			<nail x="226" y="2104"/>
+		</transition>
+		<transition>
+			<source ref="id12"/>
+			<target ref="id24"/>
+			<label kind="guard" x="559" y="780">not intermediateLocationSemaphore</label>
+			<label kind="synchronisation" x="559" y="795">muml_multicast2_87NonUrgent[discretePortInstanceID][first[discretePortInstanceID]]!</label>
+			<label kind="assignment" x="559" y="810">intermediateLocationSemaphore++</label>
+			<nail x="619" y="839"/>
+			<nail x="619" y="826"/>
+			<nail x="619" y="811"/>
+			<nail x="619" y="796"/>
+		</transition>
+		<transition>
+			<source ref="id16"/>
+			<target ref="id25"/>
+			<label kind="guard" x="830" y="60">not intermediateLocationSemaphore</label>
+			<label kind="synchronisation" x="830" y="75">muml_multiReceiveDone1_90[discretePortInstanceID]?</label>
+			<label kind="assignment" x="830" y="90">intermediateLocationSemaphore++</label>
+			<nail x="831" y="120"/>
+			<nail x="863" y="103"/>
+			<nail x="904" y="83"/>
+			<nail x="938" y="66"/>
+		</transition>
+		<transition>
+			<source ref="id14"/>
+			<target ref="id26"/>
+			<label kind="guard" x="577" y="540">not intermediateLocationSemaphore</label>
+			<label kind="synchronisation" x="577" y="555">muml_multicastDone2_88[discretePortInstanceID]?</label>
+			<label kind="assignment" x="577" y="570">muml_c_93_5[discretePortInstanceID] = 0,
+muml_allAccept_62_4[discretePortInstanceID] = true,
+intermediateLocationSemaphore++</label>
+			<nail x="629" y="599"/>
+			<nail x="633" y="586"/>
+			<nail x="638" y="570"/>
+			<nail x="642" y="556"/>
+		</transition>
+		<transition>
+			<source ref="id15"/>
+			<target ref="id27"/>
+			<label kind="guard" x="676" y="300">not intermediateLocationSemaphore</label>
+			<label kind="synchronisation" x="676" y="315">muml_multiReceive1_89[discretePortInstanceID][first[discretePortInstanceID]]!</label>
+			<label kind="assignment" x="676" y="330">intermediateLocationSemaphore++</label>
+			<nail x="732" y="359"/>
+			<nail x="734" y="346"/>
+			<nail x="736" y="331"/>
+			<nail x="738" y="316"/>
+		</transition>
+		<transition>
+			<source ref="id17"/>
+			<target ref="id7"/>
+			<label kind="assignment" x="568" y="1410">intermediateLocationSemaphore--</label>
+			<nail x="631" y="1439"/>
+			<nail x="630" y="1426"/>
+			<nail x="629" y="1411"/>
+			<nail x="628" y="1396"/>
+		</transition>
+		<transition>
+			<source ref="id18"/>
+			<target ref="id8"/>
+			<label kind="assignment" x="562" y="1170">intermediateLocationSemaphore--</label>
+			<nail x="622" y="1199"/>
+			<nail x="622" y="1186"/>
+			<nail x="622" y="1171"/>
+			<nail x="622" y="1156"/>
+		</transition>
+		<transition>
+			<source ref="id19"/>
+			<target ref="id12"/>
+			<label kind="assignment" x="560" y="930">intermediateLocationSemaphore--</label>
+			<nail x="621" y="959"/>
+			<nail x="621" y="946"/>
+			<nail x="620" y="931"/>
+			<nail x="620" y="916"/>
+		</transition>
+		<transition>
+			<source ref="id20"/>
+			<target ref="id9"/>
+			<label kind="assignment" x="605" y="1650">intermediateLocationSemaphore--</label>
+			<nail x="673" y="1679"/>
+			<nail x="670" y="1666"/>
+			<nail x="666" y="1650"/>
+			<nail x="662" y="1636"/>
+		</transition>
+		<transition>
+			<source ref="id21"/>
+			<target ref="id10"/>
+			<label kind="assignment" x="624" y="1890">intermediateLocationSemaphore--</label>
+			<nail x="684" y="1919"/>
+			<nail x="684" y="1906"/>
+			<nail x="684" y="1891"/>
+			<nail x="684" y="1876"/>
+		</transition>
+		<transition>
+			<source ref="id22"/>
+			<target ref="id11"/>
+			<label kind="assignment" x="624" y="2130">intermediateLocationSemaphore--</label>
+			<nail x="684" y="2159"/>
+			<nail x="684" y="2146"/>
+			<nail x="684" y="2131"/>
+			<nail x="684" y="2116"/>
+		</transition>
+		<transition>
+			<source ref="id23"/>
+			<target ref="id12"/>
+			<label kind="assignment" x="325" y="1470">intermediateLocationSemaphore--</label>
+			<nail x="147" y="2040"/>
+			<nail x="141" y="1995"/>
+			<nail x="131" y="1907"/>
+			<nail x="131" y="1831"/>
+			<nail x="131" y="1831"/>
+			<nail x="131" y="1831"/>
+			<nail x="131" y="1108"/>
+			<nail x="131" y="983"/>
+			<nail x="262" y="924"/>
+			<nail x="388" y="896"/>
+		</transition>
+		<transition>
+			<source ref="id24"/>
+			<target ref="id14"/>
+			<label kind="assignment" x="559" y="690">intermediateLocationSemaphore--</label>
+			<nail x="619" y="719"/>
+			<nail x="619" y="706"/>
+			<nail x="619" y="691"/>
+			<nail x="619" y="676"/>
+		</transition>
+		<transition>
+			<source ref="id25"/>
+			<target ref="id13"/>
+			<label kind="assignment" x="785" y="1170">intermediateLocationSemaphore--</label>
+			<nail x="1090" y="55"/>
+			<nail x="1126" y="68"/>
+			<nail x="1165" y="89"/>
+			<nail x="1191" y="120"/>
+			<nail x="1236" y="172"/>
+			<nail x="1238" y="199"/>
+			<nail x="1238" y="268"/>
+			<nail x="1238" y="2071"/>
+			<nail x="1238" y="2071"/>
+			<nail x="1238" y="2071"/>
+			<nail x="1238" y="2197"/>
+			<nail x="1115" y="2257"/>
+			<nail x="985" y="2285"/>
+		</transition>
+		<transition>
+			<source ref="id26"/>
+			<target ref="id15"/>
+			<label kind="assignment" x="632" y="450">intermediateLocationSemaphore--</label>
+			<nail x="674" y="480"/>
+			<nail x="682" y="466"/>
+			<nail x="692" y="450"/>
+			<nail x="701" y="434"/>
+		</transition>
+		<transition>
+			<source ref="id27"/>
+			<target ref="id16"/>
+			<label kind="assignment" x="699" y="210">intermediateLocationSemaphore--</label>
+			<nail x="752" y="239"/>
+			<nail x="755" y="226"/>
+			<nail x="759" y="210"/>
+			<nail x="763" y="196"/>
+		</transition>
+	</template>
+	<template>
+		<name>muml_subrole_77_8</name>
+		<parameter> const componentInstance componentInstanceID, const discretePortInstance discretePortInstanceID, const discretePortInstance discreteSubPortInstanceID </parameter>
+		<declaration>
+Message msg;
+
+</declaration>
+		<location id="id28" x="3000" y="705">
+			<name x="2990" y="675">muml_subrole_77_IDLE</name>
+		</location>
+		<location id="id29" x="643" y="390">
+			<name x="633" y="360">muml_WaitingForAnswer_Intermediate_1_AnalyzeResult_79_ACTIVE_IN_muml_subrole_77</name>
+			<urgent/>
+		</location>
+		<location id="id30" x="643" y="150">
+			<name x="633" y="120">muml_WaitingForAnswer_Intermediate_2_AnalyzeResult_80_ACTIVE_IN_muml_subrole_77</name>
+			<urgent/>
+		</location>
+		<location id="id31" x="2329" y="858">
+			<name x="2319" y="828">muml_WaitingForAnswer_81_ACTIVE_IN_muml_subrole_77</name>
+		</location>
+		<location id="id32" x="1858" y="390">
+			<name x="1848" y="360">muml_Init_Intermediate_1_Changed_82_ACTIVE_IN_muml_subrole_77</name>
+			<urgent/>
+		</location>
+		<location id="id33" x="4165" y="390">
+			<name x="4155" y="360">muml_Intermediate_Node1_83_ACTIVE_IN_muml_subrole_77</name>
+			<urgent/>
+		</location>
+		<location id="id34" x="3072" y="390">
+			<name x="3068" y="391">muml_Idle_Intermediate_1_WaitingForAnswer_84_ACTIVE_IN_muml_subrole_77</name>
+			<urgent/>
+		</location>
+		<location id="id35" x="863" y="510" color="#ffffff">
+			<name x="853" y="480">INTERMEDIATE_18</name>
+			<committed/>
+		</location>
+		<location id="id36" x="643" y="270" color="#ffffff">
+			<name x="633" y="240">INTERMEDIATE_19</name>
+			<committed/>
+		</location>
+		<location id="id37" x="400" y="30" color="#ffffff">
+			<name x="390" y="0">INTERMEDIATE_20</name>
+			<committed/>
+		</location>
+		<location id="id38" x="887" y="30" color="#ffffff">
+			<name x="877" y="0">INTERMEDIATE_21</name>
+			<committed/>
+		</location>
+		<location id="id39" x="1670" y="270" color="#ffffff">
+			<name x="1660" y="240">INTERMEDIATE_22</name>
+			<committed/>
+		</location>
+		<location id="id40" x="2025" y="270" color="#ffffff">
+			<name x="2015" y="240">INTERMEDIATE_23</name>
+			<committed/>
+		</location>
+		<location id="id41" x="4392" y="270" color="#ffffff">
+			<name x="4382" y="240">INTERMEDIATE_24</name>
+			<committed/>
+		</location>
+		<location id="id42" x="3827" y="270" color="#ffffff">
+			<name x="3817" y="240">INTERMEDIATE_25</name>
+			<committed/>
+		</location>
+		<location id="id43" x="2953" y="270" color="#ffffff">
+			<name x="2943" y="240">INTERMEDIATE_26</name>
+			<committed/>
+		</location>
+		<location id="id44" x="3425" y="270" color="#ffffff">
+			<name x="3415" y="240">INTERMEDIATE_28</name>
+			<committed/>
+		</location>
+		<location id="id45" x="4037" y="510" color="#ffffff">
+			<name x="4027" y="480">INTERMEDIATE_29</name>
+			<committed/>
+		</location>
+		<location id="id46" x="2015" y="510" color="#ffffff">
+			<name x="2005" y="480">INTERMEDIATE_30</name>
+			<committed/>
+		</location>
+		<location id="id47" x="2705" y="510" color="#ffffff">
+			<name x="2695" y="480">INTERMEDIATE_32</name>
+			<committed/>
+		</location>
+		<init ref="id31"/>
+		<transition>
+			<source ref="id31"/>
+			<target ref="id35"/>
+			<label kind="guard" x="1604" y="540">not intermediateLocationSemaphore</label>
+			<label kind="synchronisation" x="1604" y="555">muml_multiReceive1_89[discretePortInstanceID][self[discreteSubPortInstanceID]]?</label>
+			<label kind="assignment" x="1604" y="570">intermediateLocationSemaphore++</label>
+			<nail x="2189" y="608"/>
+			<nail x="1851" y="583"/>
+			<nail x="1290" y="542"/>
+			<nail x="1020" y="523"/>
+		</transition>
+		<transition>
+			<source ref="id29"/>
+			<target ref="id36"/>
+			<label kind="guard" x="583" y="300">receive(discreteSubPortInstanceID, muml_answer_45) and not intermediateLocationSemaphore</label>
+			<label kind="synchronisation" x="583" y="315">hurry?</label>
+			<label kind="assignment" x="680" y="374">msg = buffers[discreteSubPortInstanceID][buffer_assignment[discreteSubPortInstanceID][muml_answer_45]].messages[0],
+muml_allAccept_62_4[discretePortInstanceID] = (muml_allAccept_62_4[discretePortInstanceID] and muml_answer_45MessageArguments[msg.mArgsPosition].muml_accept_46_0),
+consume(discreteSubPortInstanceID, muml_answer_45),
+intermediateLocationSemaphore++</label>
+			<nail x="643" y="359"/>
+			<nail x="643" y="346"/>
+			<nail x="643" y="331"/>
+			<nail x="643" y="316"/>
+		</transition>
+		<transition>
+			<source ref="id30"/>
+			<target ref="id37"/>
+			<label kind="guard" x="461" y="60">self[discreteSubPortInstanceID] == last[discreteSubPortInstanceID] and not intermediateLocationSemaphore</label>
+			<label kind="synchronisation" x="461" y="75">muml_multiReceiveDone1_90[discretePortInstanceID]!</label>
+			<label kind="assignment" x="461" y="90">intermediateLocationSemaphore++</label>
+			<nail x="584" y="120"/>
+			<nail x="550" y="103"/>
+			<nail x="507" y="82"/>
+			<nail x="471" y="65"/>
+		</transition>
+		<transition>
+			<source ref="id30"/>
+			<target ref="id38"/>
+			<label kind="guard" x="705" y="60">self[discreteSubPortInstanceID] != last[discreteSubPortInstanceID] and not intermediateLocationSemaphore</label>
+			<label kind="synchronisation" x="705" y="75">muml_multiReceive1_89[discretePortInstanceID][next[self[discreteSubPortInstanceID]]]!</label>
+			<label kind="assignment" x="705" y="90">intermediateLocationSemaphore++</label>
+			<nail x="702" y="120"/>
+			<nail x="737" y="103"/>
+			<nail x="780" y="82"/>
+			<nail x="816" y="65"/>
+		</transition>
+		<transition>
+			<source ref="id32"/>
+			<target ref="id39"/>
+			<label kind="guard" x="1704" y="300">self[discreteSubPortInstanceID] != last[discreteSubPortInstanceID] and not intermediateLocationSemaphore</label>
+			<label kind="synchronisation" x="1704" y="315">muml_multicast1_85[discretePortInstanceID][next[self[discreteSubPortInstanceID]]]!</label>
+			<label kind="assignment" x="1704" y="330">intermediateLocationSemaphore++</label>
+			<nail x="1813" y="360"/>
+			<nail x="1787" y="344"/>
+			<nail x="1756" y="324"/>
+			<nail x="1728" y="307"/>
+		</transition>
+		<transition>
+			<source ref="id32"/>
+			<target ref="id40"/>
+			<label kind="guard" x="1881" y="300">self[discreteSubPortInstanceID] == last[discreteSubPortInstanceID] and not intermediateLocationSemaphore</label>
+			<label kind="synchronisation" x="1881" y="315">muml_multicastDone1_86[discretePortInstanceID]!</label>
+			<label kind="assignment" x="1881" y="330">intermediateLocationSemaphore++</label>
+			<nail x="1899" y="360"/>
+			<nail x="1921" y="344"/>
+			<nail x="1948" y="325"/>
+			<nail x="1971" y="309"/>
+		</transition>
+		<transition>
+			<source ref="id33"/>
+			<target ref="id41"/>
+			<label kind="guard" x="4218" y="300">self[discreteSubPortInstanceID] != last[discreteSubPortInstanceID] and not intermediateLocationSemaphore</label>
+			<label kind="synchronisation" x="4218" y="315">muml_multicast3_91[discretePortInstanceID][next[self[discreteSubPortInstanceID]]]!</label>
+			<label kind="assignment" x="4218" y="330">intermediateLocationSemaphore++</label>
+			<nail x="4220" y="360"/>
+			<nail x="4251" y="343"/>
+			<nail x="4291" y="323"/>
+			<nail x="4325" y="306"/>
+		</transition>
+		<transition>
+			<source ref="id33"/>
+			<target ref="id42"/>
+			<label kind="guard" x="3936" y="300">self[discreteSubPortInstanceID] == last[discreteSubPortInstanceID] and not intermediateLocationSemaphore</label>
+			<label kind="synchronisation" x="3936" y="315">muml_multicastDone3_92[discretePortInstanceID]!</label>
+			<label kind="assignment" x="3936" y="330">intermediateLocationSemaphore++</label>
+			<nail x="4084" y="360"/>
+			<nail x="4033" y="342"/>
+			<nail x="3967" y="320"/>
+			<nail x="3914" y="301"/>
+		</transition>
+		<transition>
+			<source ref="id34"/>
+			<target ref="id43"/>
+			<label kind="guard" x="2952" y="300">self[discreteSubPortInstanceID] == last[discreteSubPortInstanceID] and not intermediateLocationSemaphore</label>
+			<label kind="synchronisation" x="2952" y="315">muml_multicastDone2_88[discretePortInstanceID]!</label>
+			<label kind="assignment" x="2952" y="330">intermediateLocationSemaphore++</label>
+			<nail x="3042" y="359"/>
+			<nail x="3028" y="345"/>
+			<nail x="3010" y="327"/>
+			<nail x="2994" y="312"/>
+		</transition>
+		<transition>
+			<source ref="id34"/>
+			<target ref="id44"/>
+			<label kind="guard" x="3188" y="300">self[discreteSubPortInstanceID] != last[discreteSubPortInstanceID] and not intermediateLocationSemaphore</label>
+			<label kind="synchronisation" x="3188" y="315">muml_multicast2_87NonUrgent[discretePortInstanceID][next[self[discreteSubPortInstanceID]]]!</label>
+			<label kind="assignment" x="3188" y="330">intermediateLocationSemaphore++</label>
+			<nail x="3157" y="360"/>
+			<nail x="3210" y="342"/>
+			<nail x="3279" y="319"/>
+			<nail x="3334" y="301"/>
+		</transition>
+		<transition>
+			<source ref="id31"/>
+			<target ref="id45"/>
+			<label kind="guard" x="3450" y="782">not intermediateLocationSemaphore</label>
+			<label kind="synchronisation" x="3450" y="797">muml_multicast3_91[discretePortInstanceID][self[discreteSubPortInstanceID]]?</label>
+			<label kind="assignment" x="3450" y="812">sendmuml_finished_44(discreteSubPortInstanceID),
+intermediateLocationSemaphore++</label>
+			<nail x="3009" y="850"/>
+			<nail x="3353" y="827"/>
+			<nail x="3897" y="789"/>
+			<nail x="3992" y="782"/>
+			<nail x="4042" y="777"/>
+			<nail x="4097" y="772"/>
+			<nail x="4146" y="768"/>
+		</transition>
+		<transition>
+			<source ref="id31"/>
+			<target ref="id46"/>
+			<label kind="guard" x="2180" y="540">not intermediateLocationSemaphore</label>
+			<label kind="synchronisation" x="2180" y="555">muml_multicast1_85[discretePortInstanceID][self[discreteSubPortInstanceID]]?</label>
+			<label kind="assignment" x="2180" y="570">sendmuml_laneChanged_47(discreteSubPortInstanceID),
+intermediateLocationSemaphore++</label>
+			<nail x="2360" y="600"/>
+			<nail x="2287" y="582"/>
+			<nail x="2192" y="557"/>
+			<nail x="2120" y="538"/>
+		</transition>
+		<transition>
+			<source ref="id31"/>
+			<target ref="id47"/>
+			<label kind="guard" x="2525" y="540">not intermediateLocationSemaphore</label>
+			<label kind="synchronisation" x="2525" y="555">muml_multicast2_87NonUrgent[discretePortInstanceID][self[discreteSubPortInstanceID]]?</label>
+			<label kind="assignment" x="2525" y="570">sendmuml_request_48(discreteSubPortInstanceID, muml_speed_61_3[discretePortInstanceID]),
+intermediateLocationSemaphore++</label>
+			<nail x="2523" y="600"/>
+			<nail x="2557" y="583"/>
+			<nail x="2600" y="562"/>
+			<nail x="2635" y="545"/>
+		</transition>
+		<transition>
+			<source ref="id35"/>
+			<target ref="id29"/>
+			<label kind="assignment" x="693" y="450">intermediateLocationSemaphore--</label>
+			<nail x="813" y="481"/>
+			<nail x="783" y="465"/>
+			<nail x="744" y="445"/>
+			<nail x="712" y="427"/>
+		</transition>
+		<transition>
+			<source ref="id36"/>
+			<target ref="id30"/>
+			<label kind="assignment" x="583" y="210">intermediateLocationSemaphore--</label>
+			<nail x="643" y="239"/>
+			<nail x="643" y="226"/>
+			<nail x="643" y="211"/>
+			<nail x="643" y="196"/>
+		</transition>
+		<transition>
+			<source ref="id37"/>
+			<target ref="id31"/>
+			<label kind="assignment" x="1372" y="330">intermediateLocationSemaphore--</label>
+			<nail x="276" y="47"/>
+			<nail x="184" y="61"/>
+			<nail x="68" y="85"/>
+			<nail x="35" y="120"/>
+			<nail x="-11" y="168"/>
+			<nail x="3" y="200"/>
+			<nail x="3" y="268"/>
+			<nail x="3" y="391"/>
+			<nail x="3" y="391"/>
+			<nail x="3" y="391"/>
+			<nail x="3" y="706"/>
+			<nail x="384" y="503"/>
+			<nail x="697" y="540"/>
+			<nail x="1161" y="593"/>
+			<nail x="1698" y="614"/>
+			<nail x="2057" y="622"/>
+		</transition>
+		<transition>
+			<source ref="id38"/>
+			<target ref="id31"/>
+			<label kind="assignment" x="1616" y="330">intermediateLocationSemaphore--</label>
+			<nail x="1011" y="47"/>
+			<nail x="1103" y="61"/>
+			<nail x="1218" y="85"/>
+			<nail x="1252" y="120"/>
+			<nail x="1299" y="168"/>
+			<nail x="1283" y="200"/>
+			<nail x="1283" y="268"/>
+			<nail x="1283" y="391"/>
+			<nail x="1283" y="391"/>
+			<nail x="1283" y="391"/>
+			<nail x="1283" y="553"/>
+			<nail x="1716" y="606"/>
+			<nail x="2057" y="622"/>
+		</transition>
+		<transition>
+			<source ref="id39"/>
+			<target ref="id31"/>
+			<label kind="assignment" x="2007" y="450">intermediateLocationSemaphore--</label>
+			<nail x="1552" y="288"/>
+			<nail x="1449" y="308"/>
+			<nail x="1323" y="348"/>
+			<nail x="1378" y="420"/>
+			<nail x="1469" y="536"/>
+			<nail x="1841" y="588"/>
+			<nail x="2125" y="610"/>
+		</transition>
+		<transition>
+			<source ref="id40"/>
+			<target ref="id31"/>
+			<label kind="assignment" x="2185" y="450">intermediateLocationSemaphore--</label>
+			<nail x="2160" y="284"/>
+			<nail x="2220" y="295"/>
+			<nail x="2289" y="317"/>
+			<nail x="2338" y="360"/>
+			<nail x="2408" y="418"/>
+			<nail x="2442" y="523"/>
+			<nail x="2456" y="583"/>
+		</transition>
+		<transition>
+			<source ref="id41"/>
+			<target ref="id31"/>
+			<label kind="assignment" x="3368" y="450">intermediateLocationSemaphore--</label>
+			<nail x="4492" y="292"/>
+			<nail x="4529" y="305"/>
+			<nail x="4567" y="326"/>
+			<nail x="4588" y="360"/>
+			<nail x="4603" y="382"/>
+			<nail x="4604" y="398"/>
+			<nail x="4588" y="420"/>
+			<nail x="4482" y="564"/>
+			<nail x="4380" y="509"/>
+			<nail x="4203" y="540"/>
+			<nail x="3624" y="641"/>
+			<nail x="3468" y="566"/>
+			<nail x="2880" y="600"/>
+			<nail x="2842" y="602"/>
+			<nail x="3221" y="722"/>
+			<nail x="2856" y="756"/>
+		</transition>
+		<transition>
+			<source ref="id42"/>
+			<target ref="id31"/>
+			<label kind="assignment" x="3086" y="450">intermediateLocationSemaphore--</label>
+			<nail x="3797" y="299"/>
+			<nail x="3734" y="358"/>
+			<nail x="3577" y="492"/>
+			<nail x="3415" y="540"/>
+			<nail x="3353" y="558"/>
+			<nail x="3013" y="587"/>
+			<nail x="2757" y="606"/>
+		</transition>
+		<transition>
+			<source ref="id43"/>
+			<target ref="id31"/>
+			<label kind="assignment" x="2649" y="450">intermediateLocationSemaphore--</label>
+			<nail x="2819" y="283"/>
+			<nail x="2710" y="296"/>
+			<nail x="2569" y="320"/>
+			<nail x="2528" y="360"/>
+			<nail x="2497" y="390"/>
+			<nail x="2478" y="514"/>
+			<nail x="2470" y="582"/>
+		</transition>
+		<transition>
+			<source ref="id44"/>
+			<target ref="id31"/>
+			<label kind="assignment" x="2885" y="450">intermediateLocationSemaphore--</label>
+			<nail x="3522" y="293"/>
+			<nail x="3558" y="306"/>
+			<nail x="3594" y="327"/>
+			<nail x="3615" y="360"/>
+			<nail x="3629" y="382"/>
+			<nail x="3631" y="398"/>
+			<nail x="3615" y="420"/>
+			<nail x="3508" y="565"/>
+			<nail x="3403" y="502"/>
+			<nail x="3227" y="540"/>
+			<nail x="3074" y="572"/>
+			<nail x="2902" y="593"/>
+			<nail x="2760" y="606"/>
+		</transition>
+		<transition>
+			<source ref="id45"/>
+			<target ref="id33"/>
+			<label kind="assignment" x="4041" y="450">intermediateLocationSemaphore--</label>
+			<nail x="4068" y="480"/>
+			<nail x="4084" y="465"/>
+			<nail x="4104" y="447"/>
+			<nail x="4121" y="431"/>
+		</transition>
+		<transition>
+			<source ref="id46"/>
+			<target ref="id32"/>
+			<label kind="assignment" x="1876" y="450">intermediateLocationSemaphore--</label>
+			<nail x="1978" y="480"/>
+			<nail x="1958" y="465"/>
+			<nail x="1932" y="446"/>
+			<nail x="1910" y="430"/>
+		</transition>
+		<transition>
+			<source ref="id47"/>
+			<target ref="id34"/>
+			<label kind="assignment" x="2828" y="450">intermediateLocationSemaphore--</label>
+			<nail x="2781" y="484"/>
+			<nail x="2835" y="466"/>
+			<nail x="2908" y="443"/>
+			<nail x="2967" y="424"/>
+		</transition>
+	</template>
+	<template>
+		<name>muml_Main_63</name>
+		<parameter> const componentInstance componentInstanceID, const discretePortInstance discretePortInstanceID </parameter>
+		<declaration>
+Message msg;
+
+</declaration>
+		<location id="id48" x="175" y="30">
+			<name x="165" y="0">muml_Main_63_IDLE</name>
+		</location>
+		<location id="id49" x="175" y="150">
+			<name x="165" y="120">muml_Main_63_ACTIVE</name>
+		</location>
+		<init ref="id49"/>
+		<transition>
+			<source ref="id49"/>
+			<target ref="id48"/>
+			<label kind="guard" x="115" y="60">not intermediateLocationSemaphore</label>
+			<label kind="synchronisation" x="115" y="75">exit_muml_Main_63_10[componentInstanceID]?</label>
+			<nail x="175" y="119"/>
+			<nail x="175" y="106"/>
+			<nail x="175" y="91"/>
+			<nail x="175" y="76"/>
+		</transition>
+	</template>
+	<template>
+		<name>muml_OvertakeeCompRTSC_97_16</name>
+		<parameter> const componentInstance componentInstanceID </parameter>
+		<declaration>
+Message msg;
+
+</declaration>
+		<location id="id50" x="262" y="30">
+			<name x="252" y="0">muml_OvertakeeCompRTSC_97_IDLE</name>
+		</location>
+		<location id="id51" x="967" y="30">
+			<name x="957" y="0">muml_Initial_98_ACTIVE_IN_muml_OvertakeeCompRTSC_97</name>
+		</location>
+		<init ref="id51"/>
+	</template>
+	<template>
+		<name>muml_overtakee_Role_99_14</name>
+		<parameter> const componentInstance componentInstanceID, const discretePortInstance discretePortInstanceID </parameter>
+		<declaration>
+Message msg;
+
+</declaration>
+		<location id="id52" x="1598" y="870">
+			<name x="1588" y="840">muml_overtakee_Role_99_IDLE</name>
+		</location>
+		<location id="id53" x="569" y="374">
+			<name x="559" y="344">muml_NoBraking_101_ACTIVE_IN_muml_overtakee_Role_99</name>
+		</location>
+		<location id="id54" x="562" y="150">
+			<name x="552" y="120">muml_BrakingAllowed_102_ACTIVE_IN_muml_overtakee_Role_99</name>
+		</location>
+		<location id="id55" x="985" y="870">
+			<name x="975" y="840">muml_Idle_103_ACTIVE_IN_muml_overtakee_Role_99</name>
+		</location>
+		<location id="id56" x="314" y="731">
+			<name x="304" y="701">muml_EvaluatingRequest_104_ACTIVE_IN_muml_overtakee_Role_99</name>
+			<label kind="invariant" x="304" y="746">muml_c_eval_106_34[componentInstanceID] &lt;= 3*1000</label>
+		</location>
+		<location id="id57" x="462" y="510" color="#ffffff">
+			<name x="452" y="480">INTERMEDIATE_35</name>
+			<committed/>
+		</location>
+		<location id="id58" x="569" y="255" color="#ffffff">
+			<name x="559" y="225">INTERMEDIATE_36</name>
+			<committed/>
+		</location>
+		<location id="id59" x="1096" y="221" color="#ffffff">
+			<name x="1086" y="191">INTERMEDIATE_37</name>
+			<committed/>
+		</location>
+		<location id="id60" x="228" y="270" color="#ffffff">
+			<name x="218" y="240">INTERMEDIATE_38</name>
+			<committed/>
+		</location>
+		<location id="id61" x="777" y="30" color="#ffffff">
+			<name x="767" y="0">INTERMEDIATE_39</name>
+			<committed/>
+		</location>
+		<location id="id62" x="345" y="30" color="#ffffff">
+			<name x="335" y="0">INTERMEDIATE_40</name>
+			<committed/>
+		</location>
+		<location id="id63" x="810" y="510" color="#ffffff">
+			<name x="800" y="480">INTERMEDIATE_41</name>
+			<committed/>
+		</location>
+		<location id="id64" x="605" y="750" color="#ffffff">
+			<name x="595" y="720">INTERMEDIATE_42</name>
+			<committed/>
+		</location>
+		<init ref="id55"/>
+		<transition>
+			<source ref="id56"/>
+			<target ref="id57"/>
+			<label kind="guard" x="397" y="540">muml_accepted_100_33[componentInstanceID] and not intermediateLocationSemaphore</label>
+			<label kind="assignment" x="397" y="570">sendmuml_answer_45(discretePortInstanceID, true),
+intermediateLocationSemaphore++</label>
+			<nail x="455" y="599"/>
+			<nail x="456" y="586"/>
+			<nail x="457" y="571"/>
+			<nail x="458" y="556"/>
+		</transition>
+		<transition>
+			<source ref="id53"/>
+			<target ref="id58"/>
+			<label kind="guard" x="502" y="300">receive(discretePortInstanceID, muml_laneChanged_47) and not intermediateLocationSemaphore</label>
+			<label kind="synchronisation" x="502" y="315">hurry?</label>
+			<label kind="assignment" x="629" y="314">msg = buffers[discretePortInstanceID][buffer_assignment[discretePortInstanceID][muml_laneChanged_47]].messages[0],
+consume(discretePortInstanceID, muml_laneChanged_47),
+intermediateLocationSemaphore++</label>
+			<nail x="562" y="359"/>
+			<nail x="562" y="346"/>
+			<nail x="562" y="331"/>
+			<nail x="562" y="316"/>
+		</transition>
+		<transition>
+			<source ref="id53"/>
+			<target ref="id59"/>
+			<label kind="guard" x="668" y="300">receive(discretePortInstanceID, muml_finished_44) and not intermediateLocationSemaphore</label>
+			<label kind="synchronisation" x="668" y="315">hurry?</label>
+			<label kind="assignment" x="663" y="374">msg = buffers[discretePortInstanceID][buffer_assignment[discretePortInstanceID][muml_finished_44]].messages[0],
+consume(discretePortInstanceID, muml_finished_44),
+intermediateLocationSemaphore++</label>
+			<nail x="641" y="360"/>
+			<nail x="691" y="343"/>
+			<nail x="756" y="320"/>
+			<nail x="807" y="302"/>
+		</transition>
+		<transition>
+			<source ref="id53"/>
+			<target ref="id60"/>
+			<label kind="select" x="335" y="285">choice_43 : int[0,1]</label>
+			<label kind="guard" x="348" y="272">receive(discretePortInstanceID, muml_request_48) and not intermediateLocationSemaphore</label>
+			<label kind="synchronisation" x="335" y="315">hurry?</label>
+			<label kind="assignment" x="280" y="357">muml_c_eval_106_34[componentInstanceID] = 0,
+msg = buffers[discretePortInstanceID][buffer_assignment[discretePortInstanceID][muml_request_48]].messages[0],
+muml_accepted_100_33[componentInstanceID] = choice_43,
+consume(discretePortInstanceID, muml_request_48),
+intermediateLocationSemaphore++</label>
+			<nail x="482" y="360"/>
+			<nail x="432" y="343"/>
+			<nail x="368" y="320"/>
+			<nail x="316" y="302"/>
+		</transition>
+		<transition>
+			<source ref="id54"/>
+			<target ref="id61"/>
+			<label kind="guard" x="609" y="60">receive(discretePortInstanceID, muml_finished_44) and not intermediateLocationSemaphore</label>
+			<label kind="synchronisation" x="609" y="75">hurry?</label>
+			<label kind="assignment" x="609" y="90">msg = buffers[discretePortInstanceID][buffer_assignment[discretePortInstanceID][muml_finished_44]].messages[0],
+consume(discretePortInstanceID, muml_finished_44),
+intermediateLocationSemaphore++</label>
+			<nail x="614" y="120"/>
+			<nail x="643" y="103"/>
+			<nail x="681" y="83"/>
+			<nail x="712" y="66"/>
+		</transition>
+		<transition>
+			<source ref="id54"/>
+			<target ref="id62"/>
+			<label kind="select" x="393" y="45">choice_44 : int[0,1]</label>
+			<label kind="guard" x="393" y="60">receive(discretePortInstanceID, muml_request_48) and not intermediateLocationSemaphore</label>
+			<label kind="synchronisation" x="393" y="75">hurry?</label>
+			<label kind="assignment" x="393" y="90">muml_c_eval_106_34[componentInstanceID] = 0,
+msg = buffers[discretePortInstanceID][buffer_assignment[discretePortInstanceID][muml_request_48]].messages[0],
+muml_accepted_100_33[componentInstanceID] = choice_44,
+consume(discretePortInstanceID, muml_request_48),
+intermediateLocationSemaphore++</label>
+			<nail x="509" y="120"/>
+			<nail x="479" y="103"/>
+			<nail x="442" y="83"/>
+			<nail x="410" y="66"/>
+		</transition>
+		<transition>
+			<source ref="id56"/>
+			<target ref="id63"/>
+			<label kind="guard" x="571" y="540">not muml_accepted_100_33[componentInstanceID] and not intermediateLocationSemaphore</label>
+			<label kind="assignment" x="571" y="570">sendmuml_answer_45(discretePortInstanceID, false),
+intermediateLocationSemaphore++</label>
+			<nail x="539" y="600"/>
+			<nail x="593" y="582"/>
+			<nail x="664" y="559"/>
+			<nail x="719" y="541"/>
+		</transition>
+		<transition>
+			<source ref="id55"/>
+			<target ref="id64"/>
+			<label kind="select" x="735" y="765">choice_45 : int[0,1]</label>
+			<label kind="guard" x="735" y="780">receive(discretePortInstanceID, muml_request_48) and not intermediateLocationSemaphore</label>
+			<label kind="synchronisation" x="735" y="795">hurry?</label>
+			<label kind="assignment" x="735" y="810">muml_c_eval_106_34[componentInstanceID] = 0,
+msg = buffers[discretePortInstanceID][buffer_assignment[discretePortInstanceID][muml_request_48]].messages[0],
+muml_accepted_100_33[componentInstanceID] = choice_45,
+consume(discretePortInstanceID, muml_request_48),
+intermediateLocationSemaphore++</label>
+			<nail x="895" y="840"/>
+			<nail x="837" y="822"/>
+			<nail x="760" y="799"/>
+			<nail x="700" y="780"/>
+		</transition>
+		<transition>
+			<source ref="id57"/>
+			<target ref="id53"/>
+			<label kind="assignment" x="452" y="450">intermediateLocationSemaphore--</label>
+			<nail x="486" y="480"/>
+			<nail x="498" y="466"/>
+			<nail x="513" y="448"/>
+			<nail x="526" y="433"/>
+		</transition>
+		<transition>
+			<source ref="id58"/>
+			<target ref="id54"/>
+			<label kind="assignment" x="502" y="210">intermediateLocationSemaphore--</label>
+			<nail x="562" y="239"/>
+			<nail x="562" y="226"/>
+			<nail x="562" y="211"/>
+			<nail x="562" y="196"/>
+		</transition>
+		<transition>
+			<source ref="id59"/>
+			<target ref="id55"/>
+			<label kind="assignment" x="1138" y="504">intermediateLocationSemaphore--</label>
+			<nail x="1190" y="233"/>
+			<nail x="1209" y="249"/>
+			<nail x="1230" y="270"/>
+			<nail x="1243" y="294"/>
+			<nail x="1276" y="353"/>
+			<nail x="1275" y="374"/>
+			<nail x="1275" y="442"/>
+			<nail x="1275" y="565"/>
+			<nail x="1275" y="565"/>
+			<nail x="1275" y="565"/>
+			<nail x="1275" y="632"/>
+			<nail x="1262" y="709"/>
+			<nail x="1253" y="756"/>
+		</transition>
+		<transition>
+			<source ref="id60"/>
+			<target ref="id56"/>
+			<label kind="assignment" x="280" y="450">intermediateLocationSemaphore--</label>
+			<nail x="188" y="299"/>
+			<nail x="169" y="314"/>
+			<nail x="149" y="335"/>
+			<nail x="138" y="360"/>
+			<nail x="128" y="384"/>
+			<nail x="127" y="396"/>
+			<nail x="138" y="420"/>
+			<nail x="181" y="506"/>
+			<nail x="278" y="561"/>
+			<nail x="353" y="593"/>
+		</transition>
+		<transition>
+			<source ref="id61"/>
+			<target ref="id55"/>
+			<label kind="assignment" x="1190" y="397">intermediateLocationSemaphore--</label>
+			<nail x="1250" y="-2"/>
+			<nail x="1296" y="12"/>
+			<nail x="1348" y="33"/>
+			<nail x="1386" y="67"/>
+			<nail x="1441" y="116"/>
+			<nail x="1462" y="141"/>
+			<nail x="1462" y="215"/>
+			<nail x="1462" y="578"/>
+			<nail x="1462" y="578"/>
+			<nail x="1462" y="578"/>
+			<nail x="1462" y="652"/>
+			<nail x="1419" y="727"/>
+			<nail x="1387" y="773"/>
+		</transition>
+		<transition>
+			<source ref="id62"/>
+			<target ref="id56"/>
+			<label kind="assignment" x="339" y="330">intermediateLocationSemaphore--</label>
+			<nail x="242" y="52"/>
+			<nail x="196" y="65"/>
+			<nail x="145" y="86"/>
+			<nail x="107" y="120"/>
+			<nail x="51" y="169"/>
+			<nail x="30" y="194"/>
+			<nail x="30" y="268"/>
+			<nail x="30" y="391"/>
+			<nail x="30" y="391"/>
+			<nail x="30" y="391"/>
+			<nail x="30" y="507"/>
+			<nail x="153" y="567"/>
+			<nail x="266" y="597"/>
+		</transition>
+		<transition>
+			<source ref="id63"/>
+			<target ref="id55"/>
+			<label kind="assignment" x="837" y="690">intermediateLocationSemaphore--</label>
+			<nail x="858" y="538"/>
+			<nail x="880" y="554"/>
+			<nail x="906" y="574"/>
+			<nail x="922" y="600"/>
+			<nail x="966" y="669"/>
+			<nail x="979" y="766"/>
+			<nail x="983" y="822"/>
+		</transition>
+		<transition>
+			<source ref="id64"/>
+			<target ref="id56"/>
+			<label kind="assignment" x="469" y="690">intermediateLocationSemaphore--</label>
+			<nail x="569" y="720"/>
+			<nail x="550" y="705"/>
+			<nail x="525" y="686"/>
+			<nail x="504" y="670"/>
+		</transition>
+	</template>
+	<template>
+		<name>UrgencyProvider</name>
+		<declaration>
+</declaration>
+		<location id="id65" x="45" y="30">
+			<name x="35" y="0">idle</name>
+		</location>
+		<init ref="id65"/>
+		<transition>
+			<source ref="id65"/>
+			<target ref="id65"/>
+			<label kind="guard" x="-15" y="0">not intermediateLocationSemaphore</label>
+			<label kind="synchronisation" x="-15" y="15">hurry!</label>
+			<nail x="87" y="41"/>
+			<nail x="105" y="41"/>
+			<nail x="120" y="38"/>
+			<nail x="120" y="30"/>
+			<nail x="120" y="24"/>
+			<nail x="113" y="21"/>
+			<nail x="104" y="19"/>
+		</transition>
+	</template>
+	<system>
+muml_OvertakeeCompRTSC_97_16_component_2 = muml_OvertakeeCompRTSC_97_16(2);
+
+muml_overtakee_Role_99_14_4 = muml_overtakee_Role_99_14(2, 4);
+
+muml_OvertakeeCompRTSC_97_16_component_1 = muml_OvertakeeCompRTSC_97_16(1);
+
+muml_overtakee_Role_99_14_3 = muml_overtakee_Role_99_14(1, 3);
+
+muml_OvertakerCompRTSC_58_13_component_0 = muml_OvertakerCompRTSC_58_13(0);
+
+muml_overtaker_Role_60_6_2 = muml_overtaker_Role_60_6(0, 2);
+
+muml_coordinator_64_7_2 = muml_coordinator_64_7(0, 2);
+
+muml_Main_63_2 = muml_Main_63(0, 2);
+
+muml_subrole_77_8_subport_0 = muml_subrole_77_8(0, 2, 0);
+
+muml_subrole_77_8_subport_1 = muml_subrole_77_8(0, 2, 1);
+
+Connector_0_3 = Connector(0, 3, 0*1000, 1*1000, false);
+
+Connector_3_0 = Connector(3, 0, 0*1000, 1*1000, false);
+
+Connector_1_4 = Connector(1, 4, 0*1000, 1*1000, false);
+
+Connector_4_1 = Connector(4, 1, 0*1000, 1*1000, false);
+
+	system 
+Connector_0_3,
+Connector_1_4,
+Connector_3_0,
+Connector_4_1,
+//muml_Main_63_2,muml_OvertakeeCompRTSC_97_16_component_1,
+//muml_OvertakeeCompRTSC_97_16_component_2,
+//muml_OvertakerCompRTSC_58_13_component_0,
+muml_coordinator_64_7_2,
+muml_overtakee_Role_99_14_3,
+muml_overtakee_Role_99_14_4,
+//muml_overtaker_Role_60_6_2,
+muml_subrole_77_8_subport_0,
+muml_subrole_77_8_subport_1,
+UrgencyProvider;
+		</system>
+	<queries>
+		<query>
+			<formula>A[] not deadlock
+			</formula>
+			<comment> a deadlock never occurs
+			</comment>
+		</query>
+		<query>
+			<formula>A[] not connectorOverflow
+			</formula>
+			<comment> a connector overflow never occurs
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_subrole_77_8_subport_1.INTERMEDIATE_29
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_overtakee_Role_99_14_3.INTERMEDIATE_36
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_coordinator_64_7_2.INTERMEDIATE_17
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_subrole_77_8_subport_1.INTERMEDIATE_23
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_coordinator_64_7_2.INTERMEDIATE_9
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_coordinator_64_7_2.INTERMEDIATE_13
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_subrole_77_8_subport_0.INTERMEDIATE_24
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_coordinator_64_7_2.INTERMEDIATE_14
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_subrole_77_8_subport_0.INTERMEDIATE_29
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_overtakee_Role_99_14_4.INTERMEDIATE_40
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_overtakee_Role_99_14_4.INTERMEDIATE_35
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_coordinator_64_7_2.INTERMEDIATE_11
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_subrole_77_8_subport_0.INTERMEDIATE_26
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_subrole_77_8_subport_0.INTERMEDIATE_27 or muml_subrole_77_8_subport_0.INTERMEDIATE_28
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_subrole_77_8_subport_0.INTERMEDIATE_22
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_overtakee_Role_99_14_4.INTERMEDIATE_38
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_subrole_77_8_subport_1.INTERMEDIATE_22
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_overtakee_Role_99_14_4.INTERMEDIATE_37
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_overtakee_Role_99_14_3.INTERMEDIATE_38
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_coordinator_64_7_2.INTERMEDIATE_12
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_overtakee_Role_99_14_3.INTERMEDIATE_41
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_overtakee_Role_99_14_3.INTERMEDIATE_35
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_subrole_77_8_subport_0.INTERMEDIATE_18
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_subrole_77_8_subport_1.INTERMEDIATE_19
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_subrole_77_8_subport_1.INTERMEDIATE_31 or muml_subrole_77_8_subport_1.INTERMEDIATE_32
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_overtakee_Role_99_14_3.INTERMEDIATE_40
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_overtakee_Role_99_14_3.INTERMEDIATE_39
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_coordinator_64_7_2.INTERMEDIATE_8
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_subrole_77_8_subport_0.INTERMEDIATE_23
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_overtakee_Role_99_14_3.INTERMEDIATE_42
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_subrole_77_8_subport_0.INTERMEDIATE_20
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_subrole_77_8_subport_1.INTERMEDIATE_30
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_subrole_77_8_subport_1.INTERMEDIATE_21
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_subrole_77_8_subport_0.INTERMEDIATE_19
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_subrole_77_8_subport_0.INTERMEDIATE_21
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_subrole_77_8_subport_1.INTERMEDIATE_20
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_overtakee_Role_99_14_3.INTERMEDIATE_37
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_subrole_77_8_subport_1.INTERMEDIATE_18
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_subrole_77_8_subport_1.INTERMEDIATE_25
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_subrole_77_8_subport_1.INTERMEDIATE_26
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_coordinator_64_7_2.INTERMEDIATE_7
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_coordinator_64_7_2.INTERMEDIATE_16
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_overtakee_Role_99_14_4.INTERMEDIATE_39
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_coordinator_64_7_2.INTERMEDIATE_15
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_coordinator_64_7_2.INTERMEDIATE_10
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_subrole_77_8_subport_1.INTERMEDIATE_24
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_subrole_77_8_subport_0.INTERMEDIATE_25
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_subrole_77_8_subport_1.INTERMEDIATE_27 or muml_subrole_77_8_subport_1.INTERMEDIATE_28
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_subrole_77_8_subport_0.INTERMEDIATE_31 or muml_subrole_77_8_subport_0.INTERMEDIATE_32
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_overtakee_Role_99_14_4.INTERMEDIATE_42
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_overtakee_Role_99_14_4.INTERMEDIATE_36
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_overtakee_Role_99_14_4.INTERMEDIATE_41
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_subrole_77_8_subport_0.INTERMEDIATE_30
+			</formula>
+			<comment> there is no transition that can never be fired
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_coordinator_64_7_2.muml_WaitingForAnswer_73_ACTIVE_IN_muml_coordinator_64
+			</formula>
+			<comment> there is no state that can never be active
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_subrole_77_8_subport_1.muml_WaitingForAnswer_81_ACTIVE_IN_muml_subrole_77
+			</formula>
+			<comment> there is no state that can never be active
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_OvertakerCompRTSC_58_13_component_0.muml_Initial_59_ACTIVE_IN_muml_OvertakerCompRTSC_58
+			</formula>
+			<comment> there is no state that can never be active
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_coordinator_64_7_2.muml_Intermediate_Node3_65_ACTIVE_IN_muml_coordinator_64
+			</formula>
+			<comment> there is no state that can never be active
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_overtakee_Role_99_14_4.muml_EvaluatingRequest_104_ACTIVE_IN_muml_overtakee_Role_99
+			</formula>
+			<comment> there is no state that can never be active
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_coordinator_64_7_2.muml_AnalyzeResult_71_ACTIVE_IN_muml_coordinator_64
+			</formula>
+			<comment> there is no state that can never be active
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_subrole_77_8_subport_1.muml_Idle_Intermediate_1_WaitingForAnswer_84_ACTIVE_IN_muml_subrole_77
+			</formula>
+			<comment> there is no state that can never be active
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_overtakee_Role_99_14_4.muml_BrakingAllowed_102_ACTIVE_IN_muml_overtakee_Role_99
+			</formula>
+			<comment> there is no state that can never be active
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_overtakee_Role_99_14_3.muml_NoBraking_101_ACTIVE_IN_muml_overtakee_Role_99
+			</formula>
+			<comment> there is no state that can never be active
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_subrole_77_8_subport_1.muml_WaitingForAnswer_Intermediate_2_AnalyzeResult_80_ACTIVE_IN_muml_subrole_77
+			</formula>
+			<comment> there is no state that can never be active
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_subrole_77_8_subport_0.muml_Idle_Intermediate_1_WaitingForAnswer_84_ACTIVE_IN_muml_subrole_77
+			</formula>
+			<comment> there is no state that can never be active
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_overtakee_Role_99_14_4.muml_Idle_103_ACTIVE_IN_muml_overtakee_Role_99
+			</formula>
+			<comment> there is no state that can never be active
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_coordinator_64_7_2.muml_Init_Intermediate_1_Changed_1_68_ACTIVE_IN_muml_coordinator_64
+			</formula>
+			<comment> there is no state that can never be active
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_subrole_77_8_subport_0.muml_WaitingForAnswer_Intermediate_2_AnalyzeResult_80_ACTIVE_IN_muml_subrole_77
+			</formula>
+			<comment> there is no state that can never be active
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_overtakee_Role_99_14_4.muml_NoBraking_101_ACTIVE_IN_muml_overtakee_Role_99
+			</formula>
+			<comment> there is no state that can never be active
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_subrole_77_8_subport_0.muml_WaitingForAnswer_81_ACTIVE_IN_muml_subrole_77
+			</formula>
+			<comment> there is no state that can never be active
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_overtakee_Role_99_14_3.muml_BrakingAllowed_102_ACTIVE_IN_muml_overtakee_Role_99
+			</formula>
+			<comment> there is no state that can never be active
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_overtaker_Role_60_6_2.muml_Main_63_ACTIVE_IN_muml_overtaker_Role_60
+			</formula>
+			<comment> there is no state that can never be active
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_subrole_77_8_subport_1.muml_Intermediate_Node1_83_ACTIVE_IN_muml_subrole_77
+			</formula>
+			<comment> there is no state that can never be active
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_coordinator_64_7_2.muml_Idle_70_ACTIVE_IN_muml_coordinator_64
+			</formula>
+			<comment> there is no state that can never be active
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_subrole_77_8_subport_0.muml_WaitingForAnswer_Intermediate_1_AnalyzeResult_79_ACTIVE_IN_muml_subrole_77
+			</formula>
+			<comment> there is no state that can never be active
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_OvertakeeCompRTSC_97_16_component_2.muml_Initial_98_ACTIVE_IN_muml_OvertakeeCompRTSC_97
+			</formula>
+			<comment> there is no state that can never be active
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_coordinator_64_7_2.muml_Changed_67_ACTIVE_IN_muml_coordinator_64
+			</formula>
+			<comment> there is no state that can never be active
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_subrole_77_8_subport_0.muml_Init_Intermediate_1_Changed_82_ACTIVE_IN_muml_subrole_77
+			</formula>
+			<comment> there is no state that can never be active
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_coordinator_64_7_2.muml_Intermediate_1_75_ACTIVE_IN_muml_coordinator_64
+			</formula>
+			<comment> there is no state that can never be active
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_subrole_77_8_subport_1.muml_WaitingForAnswer_Intermediate_1_AnalyzeResult_79_ACTIVE_IN_muml_subrole_77
+			</formula>
+			<comment> there is no state that can never be active
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_overtakee_Role_99_14_3.muml_EvaluatingRequest_104_ACTIVE_IN_muml_overtakee_Role_99
+			</formula>
+			<comment> there is no state that can never be active
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_overtakee_Role_99_14_3.muml_Idle_103_ACTIVE_IN_muml_overtakee_Role_99
+			</formula>
+			<comment> there is no state that can never be active
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_subrole_77_8_subport_1.muml_Init_Intermediate_1_Changed_82_ACTIVE_IN_muml_subrole_77
+			</formula>
+			<comment> there is no state that can never be active
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_subrole_77_8_subport_0.muml_Intermediate_Node1_83_ACTIVE_IN_muml_subrole_77
+			</formula>
+			<comment> there is no state that can never be active
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_coordinator_64_7_2.muml_Intermediate2_66_ACTIVE_IN_muml_coordinator_64
+			</formula>
+			<comment> there is no state that can never be active
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_OvertakeeCompRTSC_97_16_component_1.muml_Initial_98_ACTIVE_IN_muml_OvertakeeCompRTSC_97
+			</formula>
+			<comment> there is no state that can never be active
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_coordinator_64_7_2.muml_Init_69_ACTIVE_IN_muml_coordinator_64
+			</formula>
+			<comment> there is no state that can never be active
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; muml_coordinator_64_7_2.muml_Idle_Intermediate_1_WaitingForAnswer_2_72_ACTIVE_IN_muml_coordinator_64
+			</formula>
+			<comment> there is no state that can never be active
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; checkMessageInBuffer(buffers[4][0], muml_finished_44)
+			</formula>
+			<comment> there is no message type that cannot possibly arrive in a buffer
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; checkMessageInBuffer(buffers[3][0], muml_finished_44)
+			</formula>
+			<comment> there is no message type that cannot possibly arrive in a buffer
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; checkMessageInBuffer(buffers[0][0], muml_laneChanged_47)
+			</formula>
+			<comment> there is no message type that cannot possibly arrive in a buffer
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; checkMessageInBuffer(buffers[0][0], muml_answer_45)
+			</formula>
+			<comment> there is no message type that cannot possibly arrive in a buffer
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; checkMessageInBuffer(buffers[4][0], muml_request_48)
+			</formula>
+			<comment> there is no message type that cannot possibly arrive in a buffer
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; checkMessageInBuffer(buffers[0][0], muml_finished_44)
+			</formula>
+			<comment> there is no message type that cannot possibly arrive in a buffer
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; checkMessageInBuffer(buffers[3][0], muml_request_48)
+			</formula>
+			<comment> there is no message type that cannot possibly arrive in a buffer
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; checkMessageInBuffer(buffers[1][0], muml_request_48)
+			</formula>
+			<comment> there is no message type that cannot possibly arrive in a buffer
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; checkMessageInBuffer(buffers[4][0], muml_answer_45)
+			</formula>
+			<comment> there is no message type that cannot possibly arrive in a buffer
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; checkMessageInBuffer(buffers[3][0], muml_answer_45)
+			</formula>
+			<comment> there is no message type that cannot possibly arrive in a buffer
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; checkMessageInBuffer(buffers[4][0], muml_laneChanged_47)
+			</formula>
+			<comment> there is no message type that cannot possibly arrive in a buffer
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; checkMessageInBuffer(buffers[1][0], muml_finished_44)
+			</formula>
+			<comment> there is no message type that cannot possibly arrive in a buffer
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; checkMessageInBuffer(buffers[0][0], muml_request_48)
+			</formula>
+			<comment> there is no message type that cannot possibly arrive in a buffer
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; checkMessageInBuffer(buffers[3][0], muml_laneChanged_47)
+			</formula>
+			<comment> there is no message type that cannot possibly arrive in a buffer
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; checkMessageInBuffer(buffers[1][0], muml_laneChanged_47)
+			</formula>
+			<comment> there is no message type that cannot possibly arrive in a buffer
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; checkMessageInBuffer(buffers[1][0], muml_answer_45)
+			</formula>
+			<comment> there is no message type that cannot possibly arrive in a buffer
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; exists (i : discretePortInstance) checkMessageInBuffer(connectors[i], muml_laneChanged_47)
+			</formula>
+			<comment> there is no message type that cannot possibly be in transit
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; exists (i : discretePortInstance) checkMessageInBuffer(connectors[i], muml_answer_45)
+			</formula>
+			<comment> there is no message type that cannot possibly be in transit
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; exists (i : discretePortInstance) checkMessageInBuffer(connectors[i], muml_finished_44)
+			</formula>
+			<comment> there is no message type that cannot possibly be in transit
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; exists (i : discretePortInstance) checkMessageInBuffer(connectors[i], muml_request_48)
+			</formula>
+			<comment> there is no message type that cannot possibly be in transit
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; getNumberOfElementsInBuffer(buffers[1][0]) &gt;= 1
+			</formula>
+			<comment> there is no buffer that is always empty
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; getNumberOfElementsInBuffer(buffers[3][0]) &gt;= 1
+			</formula>
+			<comment> there is no buffer that is always empty
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; getNumberOfElementsInBuffer(buffers[4][0]) &gt;= 1
+			</formula>
+			<comment> there is no buffer that is always empty
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; getNumberOfElementsInBuffer(buffers[0][0]) &gt;= 1
+			</formula>
+			<comment> there is no buffer that is always empty
+			</comment>
+		</query>
+	</queries>
+</nta>

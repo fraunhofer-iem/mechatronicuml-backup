@@ -1,0 +1,30 @@
+[comment encoding = UTF-8 /]
+[module generate('http://www.muml.org/pim/behavior/1.0.0',
+				'http://www.muml.org/core/1.0.0',
+				'http://www.muml.org/pim/actionlanguage/1.0.0',
+				'http://www.muml.org/pim/msgtype/1.0.0',
+				'http://www.muml.org/pim/types/1.0.0',
+				'http://www.muml.org/modelinstance/1.0.0',
+				'http://www.muml.org/pim/component/1.0.0',
+				'http://www.muml.org/pim/instance/1.0.0',
+				'http://www.muml.de/modelica/transform/1.0.0',
+				'http://www.muml.org/pim/realtimestatechart/1.0.0')]
+
+[import org::muml::modelica::adapter::component::component]
+
+[template public generateElement(cic : ComponentInstanceConfiguration)]
+[comment @main/]
+	[cic.generateRootCIC(cic.createRegionInstances())/]
+[/template]
+
+[**
+ * Invokes the qvto transformation which transforms a Region into a
+ * RegionInstance. This is an in-place m2m transformation and does not
+ * change the original/source model.
+ * @param cic the "root" component instance configuration
+*/]
+[query public createRegionInstances(cic : ComponentInstanceConfiguration) : Map =
+	invoke('org.muml.modelica.adapter.instantiator.RegionInstanceInstantiator',
+		'instantiate(org.muml.pim.instance.ComponentInstanceConfiguration)',
+		Sequence{cic}) 
+/]

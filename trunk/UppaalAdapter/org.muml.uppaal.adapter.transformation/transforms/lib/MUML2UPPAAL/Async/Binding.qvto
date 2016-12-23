@@ -1,0 +1,276 @@
+import transforms.lib.MUML2UPPAAL.Types;
+import transforms.lib.MUML2MUML;
+import transforms.lib.MUML2UPPAAL.Expressions;
+
+library Binding;
+
+modeltype uppaal_declarations uses uppaal::declarations('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_expressions uses uppaal::expressions('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_types uses uppaal::types('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_statements uses uppaal::statements('http://www.muml.org/uppaal/1.0.0');
+modeltype behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype muml_actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
+
+
+	mapping ParameterBinding :: ParameterBinding2ArrayInitializerExpressionBindingVariableDecl(componentInstanceID : Variable, portOrRoleInstanceID : Variable,  subPortOrRoleInstanceID : Variable) : DataVariableDeclaration when { self.parameter.dataType.oclIsKindOf(pim::types::ArrayDataType) and self.value.oclIsKindOf(muml_actionLanguage::ArrayInitializeExpression) } {
+		
+		typeDefinition := object TypeReference {
+			
+			referredType := self.parameter.dataType.map DataType2Type();
+			
+		};
+		
+		variable := self.map ParameterBinding2ArrayInitializerExpressionBindingVariable(componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
+		
+	}
+	
+	mapping ParameterBinding :: ParameterBinding2ArrayInitializerExpressionBindingVariable(componentInstanceID : Variable, portOrRoleInstanceID : Variable,  subPortOrRoleInstanceID : Variable) : Variable when { self.parameter.dataType.oclIsKindOf(pim::types::ArrayDataType) and self.value.oclIsKindOf(muml_actionLanguage::ArrayInitializeExpression) } {
+		
+		name := self.parameter.name.addSuffixNumberUnderline();
+		
+		var t : pim::types::DataType = self.parameter.dataType;
+			
+		-- assert non-null type to avoid infinite while loop 		
+		assert fatal (t != null) with log('No data type specified.');
+		
+		while (t.oclIsKindOf(pim::types::ArrayDataType)) {
+			
+			index += object ValueIndex {
+			
+				sizeExpression := object uppaal_expressions::LiteralExpression {
+					
+					text := t.oclAsType(pim::types::ArrayDataType).cardinality.value.repr();
+				}
+				
+			};
+			
+			t := t.oclAsType(pim::types::ArrayDataType).type;
+			
+		}
+		
+	}
+	
+	mapping ParameterBinding :: ParameterBinding2ArrayInitializeFunctionDeclaration(componentInstanceID : Variable, portOrRoleInstanceID : Variable,  subPortOrRoleInstanceID : Variable) : FunctionDeclaration when { self.parameter.dataType.oclIsKindOf(pim::types::ArrayDataType) and self.value.oclIsKindOf(muml_actionLanguage::ArrayInitializeExpression) } {
+		
+		function := self.map ParameterBinding2ArrayInitializeFunction(componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID); 
+		
+	}
+	
+	mapping ParameterBinding :: ParameterBinding2ArrayInitializeFunction(componentInstanceID : uppaal_declarations::Variable, portOrRoleInstanceID : uppaal_declarations::Variable, subPortOrRoleInstanceID : uppaal_declarations::Variable) : Function {
+		
+		name := 'initializeArray'.addSuffixNumberUnderline();
+		
+		returnType := object TypeReference {
+			referredType := VOID;
+		};
+				
+		var arrayIdVar := self.parameter.map MUML2MUML::Parameter2Parameter().map TypedNamedElement2Variable();
+		
+		var iterVars : Set(Variable) := Set{};
+		
+		var arrayExpVar := object uppaal_declarations::Variable {
+			
+			name := "arrayInitExp";
+			
+			initializer := self.value.oclAsType(muml_actionLanguage::ArrayInitializeExpression).map Expression2ArrayInitializer(componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
+			
+			-- traverse type structure of the typed element, add an index as long as we face an array data type 
+		
+			var t : pim::types::DataType = self.parameter.dataType;
+			
+			-- assert non-null type to avoid infinite while loop 		
+			assert fatal (t != null) with log('No data type specified.');
+			
+			while (t.oclIsKindOf(pim::types::ArrayDataType)) {
+							
+				-- prepend to ensure correct index order (changed to append TODO is this correct?)
+				
+				index += object ValueIndex {
+				
+					sizeExpression := object uppaal_expressions::LiteralExpression {
+						
+						text := t.oclAsType(pim::types::ArrayDataType).cardinality.value.repr();
+					}
+					
+				};
+				
+				iterVars += object Variable {
+					name := "i".addSuffixNumberUnderline();
+				};
+				
+				t := t.oclAsType(pim::types::ArrayDataType).type;
+				
+			}
+			
+		};
+		
+		var portOrRoleInstanceId := object Variable {
+			name := 'portOrRoleInstanceID';
+		};
+			
+		parameter += object uppaal_declarations::Parameter {
+			
+			callType := CallType::CALL_BY_REFERENCE;
+			
+			variableDeclaration := object DataVariableDeclaration {
+				
+				typeDefinition := object TypeReference {
+					referredType := self.parameter.dataType.map DataType2Type();
+				};
+				
+				variable += arrayIdVar;
+				
+			}
+			
+		};
+		
+		parameter += object uppaal_declarations::Parameter {
+			
+			callType := CallType::CALL_BY_VALUE;
+			
+			variableDeclaration := object DataVariableDeclaration {
+				
+				-- todo adapt this type to the one used in the RTSC
+				typeDefinition := object TypeReference {
+					referredType := INT;
+				};
+				
+				variable += portOrRoleInstanceId;
+				
+			}
+			
+		};
+		
+		block := object uppaal_statements::Block {
+			
+			declarations := object LocalDeclarations {
+				
+				declaration += object DataVariableDeclaration {
+					
+					typeDefinition := object TypeReference {
+						
+						referredType := self.parameter.dataType.map DataType2Type();
+						
+					};
+					
+					variable += arrayExpVar;
+
+				};
+				
+				iterVars->forEach(i) {
+					declaration += object DataVariableDeclaration {
+						
+						typeDefinition := object TypeReference {
+							
+							referredType := INT;
+							
+						};
+						
+						variable += i;
+						
+					}
+				}
+				
+				
+				
+			};
+			
+			statement += createAssignmentForLoop(self.parameter.dataType, arrayIdVar, arrayExpVar, iterVars, OrderedSet{});	
+			
+		};
+		
+	}
+	
+	helper createAssignmentForLoop(t : pim::types::DataType, arrayIdVar : uppaal_declarations::Variable, arrayExpVar : uppaal_declarations::Variable, inout iterVars : Set(uppaal_declarations::Variable), inout indexVars : OrderedSet(uppaal_declarations::Variable)) : uppaal_statements::Statement {
+		
+		if(not t.oclIsKindOf(pim::types::ArrayDataType)) {
+			
+			return object uppaal_statements::ExpressionStatement {
+				
+				expression := object uppaal_expressions::AssignmentExpression {
+					
+					firstExpr := object IdentifierExpression {
+						
+						identifier := arrayIdVar;
+						
+						indexVars->forEach(v) {
+							
+							index += object LiteralExpression {
+								
+								text := v.name.repr();
+								
+							}
+							
+						}
+						
+					};
+					
+					secondExpr := object IdentifierExpression {
+						
+						identifier := arrayExpVar;
+						
+						indexVars->forEach(v) {
+							
+							index += object LiteralExpression {
+								
+								text := v.name.repr();
+								
+							}
+							
+						}
+						
+					}
+					
+				}
+				
+			}
+			
+		};
+		var i := iterVars->any(true);
+		return object uppaal_statements::ForLoop {
+			
+			initialization := object AssignmentExpression {
+				
+				firstExpr := object IdentifierExpression {
+					identifier := i;
+				};
+				
+				
+				operator := AssignmentOperator::EQUAL;
+						
+				secondExpr := object uppaal_expressions::LiteralExpression {
+					text := 0.repr()	
+				}
+				
+			};
+			
+			condition := object CompareExpression {
+			
+				firstExpr := object IdentifierExpression {
+					identifier := i;
+				};
+				
+				operator := CompareOperator::LESS;
+				
+				secondExpr := object uppaal_expressions::LiteralExpression {
+					text := t.oclAsType(pim::types::ArrayDataType).cardinality.value.repr();
+				}
+			};
+			
+			iteration := object IncrementDecrementExpression {
+						
+				expression := object IdentifierExpression {
+					identifier := i
+				};
+				
+				position := IncrementDecrementPosition::POST;
+				
+				operator := uppaal_expressions::IncrementDecrementOperator::INCREMENT;
+
+			};
+			
+			statement := createAssignmentForLoop(t.oclAsType(pim::types::ArrayDataType).type, arrayIdVar, arrayExpVar, iterVars->reject(e | e = i), indexVars->append(i))
+			
+		}
+		
+	}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated sdd -->
+      <package
+            uri="http://www.muml.org/storydiagram/verification/sdd/1.0.0"
+            class="org.muml.storydiagram.verification.sdd.SDDPackage"
+            genModel="model/sdd.genmodel"/>
+   </extension>
+   <extension
+         point="org.muml.emm.migrator">
+      <Migrator
+            file="model/sdd.migrator">
+      </Migrator>
+   </extension>
+
+</plugin>

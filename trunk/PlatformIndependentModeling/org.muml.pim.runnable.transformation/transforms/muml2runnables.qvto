@@ -1,0 +1,473 @@
+/*******************************************************************************
+ * Copyright (c) 2016 Fraunhofer IEM.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Johannes Geismann - initial implementation
+ *    David Schmelter - migration to MechatronicUML 1.0, APP4MC 0.7.x
+ *******************************************************************************/
+import runnableTransformationHelperQueries;
+
+library muml2runnables;
+
+//modeltype ecore uses ecore ('http://www.eclipse.org/emf/2002/Ecore');
+
+modeltype muml_core uses 'http://www.muml.org/core/1.0.0';
+modeltype muml_modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
+//modeltype muml_expression uses core::expressions('http://www.muml.org/core/1.0.0');
+modeltype muml_expression_types uses core::expressions::common('http://www.muml.org/core/1.0.0');
+
+modeltype muml_rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype muml_component uses pim::component('http://www.muml.org/pim/1.0.0');
+modeltype muml_instance uses pim::instance('http://www.muml.org/pim/1.0.0');
+//modeltype muml_connector uses pim::connector('http://www.muml.org/pim/1.0.0');
+//modeltype muml_constraint uses pim::constraint('http://www.muml.org/pim/1.0.0');
+modeltype muml_behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+//modeltype muml_protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
+//modeltype muml_msgtype uses pim::msgtype('http://www.muml.org/pim/1.0.0');
+//modeltype muml_types uses pim::types('http://www.muml.org/pim/1.0.0');
+modeltype muml_valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype muml_runnable uses pim::runnable('http://www.muml.org/pim/1.0.0');
+
+modeltype muml_actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
+
+property runnableCategoryKey = "org.muml.pim.runnables.category";
+property runnableCategoryName = "runnables";
+property rootNode:RootNode;
+
+query initRootNode(rn:RootNode) {
+	rootNode := rn;
+}
+
+query getRunnableModelElementCategory():ModelElementCategory {
+    
+    return rootNode.categories->select(c | c.name = runnableCategoryName and c.key = runnableCategoryKey)->first();
+}
+
+mapping ComponentInstanceConfiguration::ComponentInstanceConfiguration2ComponentRunnables(inout cic : ComponentInstanceConfiguration){
+	
+	var allAtomicComps := ComponentInstance.allInstances()->selectByKind(AtomicComponentInstance);
+	//create new runnables
+	//allAtomicComps->forEach(ci)
+		
+	
+	cic.getAllComponentInstances()->select( not (componentType.componentKind = ComponentKind::CONTINUOUS_COMPONENT))->forEach(ci){
+		//create new runnables
+		ci.map ComponentInstance2Runnables(ci);	
+		
+		ci.labels += ci.map ComponentInstance2ComponentLabels(ci);
+	};	
+}
+
+mapping ComponentInstance::ComponentInstance2ComponentLabels(inout ci : ComponentInstance){
+		
+	//***LABELS FOR REGIONS***//
+	//ci.labels += ci.map ComponentInstance2Label(ci);
+	
+	//***LABELS FOR HYBRID PORTS***//
+	ci.labels += ci.portInstances->selectByKind(HybridPortInstance)->map HybridPortInstance2Label(ci);
+}
+
+mapping ComponentInstance::ComponentInstance2Label(inout ci : ComponentInstance): Label{
+	
+	name := self.getVariableName(ci);
+	componentInstance := ci;
+	componentStatechart := ci.componentType.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart)
+}
+
+mapping ComponentInstanceConfiguration::ComponentInstanceConfiguration2RegionRunnables(inout cic : ComponentInstanceConfiguration){
+	
+	var allAtomicComps := ComponentInstance.allInstances()->selectByKind(AtomicComponentInstance);
+	//create new runnables
+	//allAtomicComps->forEach(ci){
+	
+	cic.getAllComponentInstances()->forEach(ci){
+		//create new runnables
+		ci.map ComponentInstance2RegionRunnables(ci);	
+		
+		//create Labels
+		ci.labels += ci.map ComponentInstance2RegionLabels(ci);
+        getRunnableModelElementCategory().modelElements += ci.labels;
+	};	
+}
+
+mapping ComponentInstance::ComponentInstance2Runnables(inout ci : ComponentInstance){
+	
+	//create Runnables for continuous component instances
+	ci.portInstances->selectByKind(HybridPortInstance)->map HybridPort2Runnables(ci);
+	
+	ci.runnables += ci.map ComponentInstance2Runnable(ci);
+}
+
+mapping ComponentInstance::ComponentInstance2Runnable(inout ci : ComponentInstance):Runnable{
+    var partName := "";
+	if (not ci.componentPart.oclIsUndefined()){
+		partName := ci.componentPart.name;
+	};
+	name := ci.name + partName + ci.componentType.name  + '_Runnable';
+	componentInstance := ci;
+
+	result.portInstance += ci.portInstances->selectByKind(DiscretePortInstance);
+	//extension += self.map Region2WCET(ci);
+	
+	var regions : OrderedSet(Region);
+	regions += (self.componentType.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart).states->at(1).embeddedRegions);
+	
+	period := self.map ComponentInstance2Period();
+	deadline := self.map ComponentInstance2Deadline();
+
+	//label accesses
+	labelAccesses += ci.portInstances->selectByKind(HybridPortInstance)->map HybridPortInstance2LabelAccess4DC(ci);
+	getRunnableModelElementCategory().modelElements += labelAccesses;
+}
+
+/**
+ * creates runnables for given component instance
+ */
+mapping ComponentInstance::ComponentInstance2RegionRunnables(inout ci:ComponentInstance){
+
+	//create Runnables for discrete component instances
+	let rtsc = ci.componentType.oclAsType(AtomicComponent).behavior in
+	ci.runnables += rtsc.oclAsType(RealtimeStatechart).map RTSC2Runnables(ci);
+	
+	//create Runnables for continuous component instances
+	ci.runnables += ci.portInstances->selectByKind(HybridPortInstance)->map HybridPort2Runnables(ci);
+	
+    getRunnableModelElementCategory().modelElements += ci.runnables;
+}
+
+/**
+  * creates labels for a given component instance
+ **/
+mapping ComponentInstance::ComponentInstance2RegionLabels(inout ci:ComponentInstance) : Set(Label){
+	var regions : OrderedSet(Region);
+	regions += (self.componentType.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart).states->at(1).embeddedRegions);
+		
+	//***LABELS FOR REGIONS***//
+	ci.labels += regions->map Region2Label(ci);
+	
+	//***LABELS FOR HYBRID PORTS***//
+	ci.labels += ci.portInstances->selectByKind(HybridPortInstance)->map HybridPortInstance2Label(ci);
+	
+	//***LABELS FOR CLOCKS***//
+	var clocks := regions->getAllSubRegions()->collect(embeddedStatechart)->collect(clocks)
+					->union(regions->getComponentRTSC()->collect(clocks)->asSet());
+	ci.labels += regions->getAllSubRegions()->collect(embeddedStatechart)->collect(clocks)->map Clock2Label(ci);
+	
+	//***LABELS FOR VARIABLES***//
+	var variables := regions->getAllSubRegions()->collect(embeddedStatechart)->collect(variables)
+					->union(regions->getComponentRTSC()->collect(variables)->asSet());
+	ci.labels += regions->getAllSubRegions()->collect(embeddedStatechart)->collect(variables)->map Variable2Label(ci);
+}
+
+/**
+ * creates a label for the current state of the region
+ */
+mapping Region::Region2Label(inout ci : ComponentInstance) : Label{
+	name := self.getVariableName(ci);
+	componentInstance := ci;
+	componentStatechart := ci.componentType.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart)
+}
+
+/**
+ * creates a label for a given clock
+ */
+mapping Clock::Clock2Label(inout ci : ComponentInstance) : Label{
+    
+    name := self.getVariableName(ci);
+    componentInstance := ci;
+	componentStatechart := ci.componentType.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart)
+}
+
+/**
+ * creates a label for a given variable
+ */
+mapping Variable::Variable2Label(inout ci : ComponentInstance) : Label{
+	
+	name := self.getVariableName(ci);
+	isConstant := self.constant;
+	componentInstance := ci;
+	componentStatechart := ci.componentType.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart)
+}
+
+/**
+ * creates a label for a given hybrid port instance
+ */
+mapping HybridPortInstance::HybridPortInstance2Label(inout ci : ComponentInstance) : Label{
+	
+	name := self.getVariableName();
+	componentInstance := ci;
+	componentStatechart := ci.componentType.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart)
+}
+
+/**
+ * creates runnables for a component state chart, i.e., for all root-regions
+ */
+mapping RealtimeStatechart::RTSC2Runnables(ci: ComponentInstance) : OrderedSet(Runnable){
+init{
+	result := OrderedSet{};
+	result += self.states.embeddedRegions->Region2Runnable(ci);
+}
+}
+
+/**
+ * creates a runnable with all runnable-properties for given region
+ */
+mapping Region::Region2Runnable(ci : ComponentInstance):Runnable {
+var partName := "";
+if (not ci.componentPart.oclIsUndefined()){
+	partName := ci.componentPart.name;
+};
+	name := ci.name + partName + ci.componentType.name + self.name + '_Runnable';
+	componentInstance := ci;
+	if (self.embeddedStatechart.behavioralElement.oclIsKindOf(Port)){
+		result.portInstance := getPortInstance(self.embeddedStatechart.behavioralElement.oclAsType(Port), ci);
+	};
+	extensions += self.map Region2WCET(ci);
+	period := self.map Region2Period();
+	deadline := self.map Region2Deadline();
+	
+	if(deadline.value.toString() = "-1") {
+		deadline.value := period.value;
+	};
+	
+	//set access to currentState variable
+	labelAccesses += self.map Region2LabelAccess(ci);
+	
+	//set label accesses for clocks
+	labelAccesses += self.getAllReadClocks()->map Clock2ReadLabelAccess(ci);
+	labelAccesses += self.getAllWrittenClocks()->map Clock2WriteLabelAccess(ci);
+	
+	//read variables / hybrid ports
+	labelAccesses += self.embeddedStatechart.getAllTypedNamedElementExpressionsParents()->
+			selectByKind(Assignment).rhs_assignExpression->selectByKind(
+			TypedNamedElementExpression)->union(self.embeddedStatechart.getAllTypedNamedElementExpressionsParents()
+			->selectByKind(ComparisonExpression).leftExpression->selectByKind(TypedNamedElementExpression)
+			->union(
+			self.embeddedStatechart.getAllTypedNamedElementExpressionsParents()
+			->selectByKind(ComparisonExpression).rightExpression->selectByKind(TypedNamedElementExpression)))->asSet()
+			.typedNamedElement-> map TypedNamedElement2LabelAccess(false,ci);
+
+	//written variables / hybrid ports
+	labelAccesses += self.embeddedStatechart.getAllTypedNamedElementExpressionsParents()->
+			selectByKind(Assignment).lhs_typedNamedElementExpression.typedNamedElement->map TypedNamedElement2LabelAccess(true, ci);
+			
+	//syncChannel
+	var partner := self.getAllSyncChannelPartnerRegions();
+	labelAccesses += partner->map Region2LabelAccess(ci, self);
+	
+    getRunnableModelElementCategory().modelElements += labelAccesses;
+}
+
+mapping Region::Region2LabelAccess(inout ci : ComponentInstance) : LabelAccess{
+	accessLabel := self.late resolveone(l : Label|l.componentInstance = ci);
+	accessKind := LabelAccessKind::WRITEACCESS;
+}
+
+mapping Region::Region2LabelAccess(inout ci : ComponentInstance, parent : Region) : LabelAccess{
+	accessLabel := self.late resolveone(l : Label|l.componentInstance = ci);
+	accessKind := LabelAccessKind::WRITEACCESS;
+	accessingRunnable := parent.late resolveone(Runnable);
+}
+
+/**
+ * Maps a given HybridPortInstance to its runnable and set runnable-properties and runnable-items
+ */
+mapping HybridPortInstance::HybridPort2Runnables(inout ci : ComponentInstance): Runnable{
+	name := self.getRunnableName();
+	componentInstance := self.getContinuousComponentInstance();
+	extensions += self.map HybridPortInstance2WCET(ci);
+	period := self.map HybridPortInstance2Period(/*ci*/);
+	deadline := object TimeValue {
+		value := object LiteralExpression{
+			value := period.value.oclAsType(LiteralExpression).value;
+		};
+		unit := period.unit;
+	};
+	labelAccesses += self.map HybridPortInstance2LabelAccesses(ci);
+	
+    getRunnableModelElementCategory().modelElements += labelAccesses;
+}
+
+/**
+ * creates a WCET extension for a given region
+ * @TODO 
+ */
+mapping Region::Region2WCET(ci : ComponentInstance) : Set(Extension) {
+	init {
+		result := Set{};
+	}
+};
+
+/**
+ * creates a WCET extension for a given hybrid port instance
+ * @TODO 
+ */
+mapping HybridPortInstance::HybridPortInstance2WCET(ci : ComponentInstance) : Set(Extension) {
+	init {
+		result := Set{};
+	}
+};
+
+/**
+ * returns the period for a hybridPorInstance as TimeValue
+ */
+mapping HybridPortInstance::HybridPortInstance2Period(/*inout ci : ComponentInstance*/) : TimeValue{
+
+	var activationTime := self.getPeriodicActivationTime();
+	unit := activationTime.unit;
+	
+	value := object LiteralExpression{
+		value := activationTime.value.oclAsType(LiteralExpression).value;
+	};
+}
+
+/**
+ * returns the period for a hybridPorInstance as TimeValue
+ */
+mapping HybridPortInstance::HybridPortInstance2LabelAccesses(inout ci : ComponentInstance) : Set(LabelAccess){
+	init {
+		result := Set{};
+		result += self.map HybridPortInstance2LabelAccess4CC(ci);
+	}
+}
+
+mapping Region::Region2Period() : TimeValue{
+	//unit := new TimeUnit();
+	var exp := object LiteralExpression{};
+	exp.value := self.getPeriodicActivationTime().toString();
+	value := exp;
+}
+
+property d:Integer = null;
+mapping Region::Region2Deadline() : TimeValue{
+	//unit := new TimeUnit();
+	var exp := object LiteralExpression{};
+	
+	var period = self.getPeriodicActivationTime();
+	var deadline = self.getDeadline();
+	if(deadline = -1) {
+		deadline := period;
+	}
+	elif(deadline > period) {
+		deadline := period;
+	};
+	
+	exp.value := deadline.toString();
+	value := exp;
+}
+
+mapping ComponentInstance::ComponentInstance2Period() : TimeValue{
+	
+	var regions : OrderedSet(Region);
+	regions += (self.componentType.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart).states->at(1).embeddedRegions);
+	var exp := object LiteralExpression{};
+	var periods := regions->collect(getPeriodicActivationTime())->reject(v | v = -1);
+	//log(periods.toString());
+	exp.value := regions->collect(getPeriodicActivationTime())->min().toString();
+	value := exp;
+}
+
+mapping ComponentInstance::ComponentInstance2Deadline() : TimeValue{
+	
+	var regions : OrderedSet(Region);
+	regions += (self.componentType.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart).states->at(1).embeddedRegions);
+	var exp := object LiteralExpression{};
+	exp.value := regions->collect(getDeadline())->min().toString();
+	value := exp;
+}
+
+query getPortInstance(port : Port, ci : ComponentInstance) : PortInstance{
+	
+	return ci.portInstances->select(pi | pi.portType.name = port.name)->at(1)
+}
+
+/*
+ * sets label accesses for hybrid ports in the runnable of the continuous component
+ */
+mapping HybridPortInstance::HybridPortInstance2LabelAccess4CC(inout ci : ComponentInstance) : LabelAccess {
+	
+	accessLabel := self.late resolveone(Label);
+	//set read/write - depends on in/out of port:
+	//if IN-Port, it gets WRITTEN by the continuous component runnable
+	//if OUT-Port, it gets READ by the conitnuous compoennt runnable
+	if (self.type.oclAsType(HybridPort).inPort){
+   		result.accessKind := LabelAccessKind::WRITEACCESS;
+	}else{
+   		result.accessKind := LabelAccessKind::READACCESS;
+	}
+}
+
+/* 
+ * sets label accesses for hybrid ports in the runnable of the discrete component
+ */
+mapping HybridPortInstance::HybridPortInstance2LabelAccess4DC(inout ci : ComponentInstance) : LabelAccess {
+	
+	accessLabel := self.late resolveone(l : Label | l.componentInstance = ci);
+		name := 'access_to_label_' + accessLabel.name;
+	//set read/write - depends on in/out of port:
+	//if OUT-Port, it gets WRITTEN by the continuous component runnable
+	//if IN-Port, it gets READ by the conitnuous compoennt runnable
+	if (self.type.oclAsType(HybridPort).inPort){
+   		result.accessKind := LabelAccessKind::READACCESS;
+   		   		   		name := 'read_'+ name;
+	}else{
+   		result.accessKind := LabelAccessKind::WRITEACCESS;
+   		   		name := 'write_'+ name;
+	}
+}
+
+/*
+ * maps an assignment to a LabelAccess
+ * read access for rhs, write access for lhs
+ */
+mapping Assignment::Assignment2LabelAccess(ci : ComponentInstance) : LabelAccess {
+
+ self.lhs_typedNamedElementExpression.typedNamedElement.map TypedNamedElement2LabelAccess(true, ci);
+ 	
+ if (self.rhs_assignExpression.oclIsKindOf(TypedNamedElementExpression)){
+ 	self.rhs_assignExpression.oclAsType(TypedNamedElementExpression).typedNamedElement.map TypedNamedElement2LabelAccess(false, ci)
+ }
+}
+
+mapping TypedNamedElement::TypedNamedElement2LabelAccess(writeAcess: Boolean, ci : ComponentInstance) : LabelAccess
+	disjuncts Variable::Variable2LabelAccess,  HybridPort::HybridPort2LabelAccess;
+
+/*
+ * maps a hybrid port variable to a label access.
+ */
+mapping HybridPort::HybridPort2LabelAccess(writeAcess : Boolean, ci : ComponentInstance) : LabelAccess{
+	
+	accessLabel := self.getHybridPortInstance(ci).late resolveone(l : Label|l.componentInstance = ci);
+	accessKind := if writeAcess then LabelAccessKind::WRITEACCESS else LabelAccessKind::READACCESS endif
+}
+
+/*
+ * maps a variable to a label access.
+ */
+mapping Variable::Variable2LabelAccess(writeAcess : Boolean, ci : ComponentInstance) : LabelAccess{
+	
+	accessLabel := self.late resolveone(l : Label|l.componentInstance = ci);
+	accessKind := if writeAcess then LabelAccessKind::WRITEACCESS else LabelAccessKind::READACCESS endif
+}
+
+/**
+ * creates a read-LabelAccess for a given clock
+ */
+mapping Clock::Clock2ReadLabelAccess(ci : ComponentInstance) : LabelAccess{
+	
+	accessLabel := self.late resolveone(l : Label|l.componentInstance = ci);
+	accessKind := LabelAccessKind::READACCESS;
+}
+
+/**
+ * creates a write-LabelAccess for a given clock
+ */
+mapping Clock::Clock2WriteLabelAccess(ci : ComponentInstance) : LabelAccess{
+	
+	accessLabel := self.late resolveone(l : Label|l.componentInstance = ci);
+	accessKind := LabelAccessKind::WRITEACCESS;
+}

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.muml.core/src" modelPluginID="org.muml.core"
+    modelName="Core" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
+    usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore" operationReflection="true"
+    importOrganizing="true">
+  <foreignModel>core.ecore</foreignModel>
+  <genPackages prefix="Core" basePackage="org.muml" disposableProviderFactory="true"
+      fileExtensions="muml" ecorePackage="core.ecore#/">
+    <genClasses image="false" ecoreClass="core.ecore#//CommentableElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//CommentableElement/comment"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="core.ecore#//ExtendableElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//ExtendableElement/extensions"/>
+      <genOperations ecoreOperation="core.ecore#//ExtendableElement/getExtension">
+        <genParameters ecoreParameter="core.ecore#//ExtendableElement/getExtension/type"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="core.ecore#//Extension">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference core.ecore#//Extension/extendableBase"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="core.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//NamedElement/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="core.ecore#//TypedElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//TypedElement/genericType"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference core.ecore#//TypedElement/classifier"/>
+      <genOperations ecoreOperation="core.ecore#//TypedElement/setClassifier">
+        <genParameters ecoreParameter="core.ecore#//TypedElement/setClassifier/classifier"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="core.ecore#//Repository"/>
+    <nestedGenPackages prefix="Expressions" basePackage="org.muml.core" disposableProviderFactory="true"
+        ecorePackage="core.ecore#//expressions">
+      <genClasses image="false" ecoreClass="core.ecore#//expressions/Expression"/>
+      <genClasses ecoreClass="core.ecore#//expressions/TextualExpression">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//expressions/TextualExpression/expressionText"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//expressions/TextualExpression/language"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//expressions/TextualExpression/languageVersion"/>
+      </genClasses>
+      <nestedGenPackages prefix="CommonExpressions" basePackage="org.muml.core.expressions"
+          disposableProviderFactory="true" ecorePackage="core.ecore#//expressions/common">
+        <genEnums typeSafeEnumCompatible="false" ecoreEnum="core.ecore#//expressions/common/LogicOperator">
+          <genEnumLiterals ecoreEnumLiteral="core.ecore#//expressions/common/LogicOperator/AND"/>
+          <genEnumLiterals ecoreEnumLiteral="core.ecore#//expressions/common/LogicOperator/OR"/>
+          <genEnumLiterals ecoreEnumLiteral="core.ecore#//expressions/common/LogicOperator/XOR"/>
+          <genEnumLiterals ecoreEnumLiteral="core.ecore#//expressions/common/LogicOperator/IMPLY"/>
+          <genEnumLiterals ecoreEnumLiteral="core.ecore#//expressions/common/LogicOperator/EQUIVALENT"/>
+        </genEnums>
+        <genEnums typeSafeEnumCompatible="false" ecoreEnum="core.ecore#//expressions/common/ComparingOperator">
+          <genEnumLiterals ecoreEnumLiteral="core.ecore#//expressions/common/ComparingOperator/LESS"/>
+          <genEnumLiterals ecoreEnumLiteral="core.ecore#//expressions/common/ComparingOperator/LESS_OR_EQUAL"/>
+          <genEnumLiterals ecoreEnumLiteral="core.ecore#//expressions/common/ComparingOperator/EQUAL"/>
+          <genEnumLiterals ecoreEnumLiteral="core.ecore#//expressions/common/ComparingOperator/GREATER_OR_EQUAL"/>
+          <genEnumLiterals ecoreEnumLiteral="core.ecore#//expressions/common/ComparingOperator/GREATER"/>
+          <genEnumLiterals ecoreEnumLiteral="core.ecore#//expressions/common/ComparingOperator/UNEQUAL"/>
+          <genEnumLiterals ecoreEnumLiteral="core.ecore#//expressions/common/ComparingOperator/REGULAR_EXPRESSION"/>
+        </genEnums>
+        <genEnums typeSafeEnumCompatible="false" ecoreEnum="core.ecore#//expressions/common/ArithmeticOperator">
+          <genEnumLiterals ecoreEnumLiteral="core.ecore#//expressions/common/ArithmeticOperator/PLUS"/>
+          <genEnumLiterals ecoreEnumLiteral="core.ecore#//expressions/common/ArithmeticOperator/MINUS"/>
+          <genEnumLiterals ecoreEnumLiteral="core.ecore#//expressions/common/ArithmeticOperator/TIMES"/>
+          <genEnumLiterals ecoreEnumLiteral="core.ecore#//expressions/common/ArithmeticOperator/DIVIDE"/>
+          <genEnumLiterals ecoreEnumLiteral="core.ecore#//expressions/common/ArithmeticOperator/MODULO"/>
+        </genEnums>
+        <genEnums typeSafeEnumCompatible="false" ecoreEnum="core.ecore#//expressions/common/UnaryOperator">
+          <genEnumLiterals ecoreEnumLiteral="core.ecore#//expressions/common/UnaryOperator/NOT"/>
+          <genEnumLiterals ecoreEnumLiteral="core.ecore#//expressions/common/UnaryOperator/MINUS"/>
+          <genEnumLiterals ecoreEnumLiteral="core.ecore#//expressions/common/UnaryOperator/INCREMENT"/>
+          <genEnumLiterals ecoreEnumLiteral="core.ecore#//expressions/common/UnaryOperator/DECREMENT"/>
+        </genEnums>
+        <genClasses ecoreClass="core.ecore#//expressions/common/UnaryExpression">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//expressions/common/UnaryExpression/enclosedExpression"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//expressions/common/UnaryExpression/operator"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="core.ecore#//expressions/common/BinaryExpression">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//expressions/common/BinaryExpression/leftExpression"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//expressions/common/BinaryExpression/rightExpression"/>
+        </genClasses>
+        <genClasses ecoreClass="core.ecore#//expressions/common/ComparisonExpression">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//expressions/common/ComparisonExpression/operator"/>
+        </genClasses>
+        <genClasses ecoreClass="core.ecore#//expressions/common/ArithmeticExpression">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//expressions/common/ArithmeticExpression/operator"/>
+        </genClasses>
+        <genClasses ecoreClass="core.ecore#//expressions/common/LogicalExpression">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//expressions/common/LogicalExpression/operator"/>
+        </genClasses>
+        <genClasses ecoreClass="core.ecore#//expressions/common/LiteralExpression">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//expressions/common/LiteralExpression/value"/>
+        </genClasses>
+      </nestedGenPackages>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Modelinstance" basePackage="org.muml.core" resource="XMI"
+        disposableProviderFactory="true" fileExtensions="muml" ecorePackage="core.ecore#//modelinstance">
+      <genClasses ecoreClass="core.ecore#//modelinstance/RootNode">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//modelinstance/RootNode/categories"/>
+      </genClasses>
+      <genClasses ecoreClass="core.ecore#//modelinstance/ModelElementCategory">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//modelinstance/ModelElementCategory/modelElements"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//modelinstance/ModelElementCategory/key"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//modelinstance/ModelElementCategory/name"/>
+        <genOperations ecoreOperation="core.ecore#//modelinstance/ModelElementCategory/isValidElement">
+          <genParameters ecoreParameter="core.ecore#//modelinstance/ModelElementCategory/isValidElement/object"/>
+        </genOperations>
+        <genOperations ecoreOperation="core.ecore#//modelinstance/ModelElementCategory/isValidEClass">
+          <genParameters ecoreParameter="core.ecore#//modelinstance/ModelElementCategory/isValidEClass/eClass"/>
+        </genOperations>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

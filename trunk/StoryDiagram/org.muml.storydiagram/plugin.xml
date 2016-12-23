@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.5"?>
+<!--
+<copyright>
+	Copyright 2013 by storydriven.org and others. All rights reserved. This
+	program and its materials are made available under the terms of the Eclipse
+	Public License v1.0 which is referenced inside the distribution.
+
+	Contributors:
+		Development Team <sdm-commons-dev@googlegroups.com> - Initial code
+
+</copyright>
+-->
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated storydiagrams -->
+      <package
+            uri="http://www.muml.org/storydiagram/1.0.0"
+            class="org.muml.storydiagram.StorydiagramPackage"
+            genModel="model/storydiagrams.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated storydiagrams -->
+      <package
+            uri="http://www.muml.org/storydiagram/activities/1.0.0"
+            class="org.muml.storydiagram.activities.ActivitiesPackage"
+            genModel="model/storydiagrams.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated storydiagrams -->
+      <package
+            uri="http://www.muml.org/storydiagram/activities/expressions/1.0.0"
+            class="org.muml.storydiagram.activities.expressions.ActivitiesExpressionsPackage"
+            genModel="model/storydiagrams.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated storydiagrams -->
+      <package
+            uri="http://www.muml.org/storydiagram/calls/1.0.0"
+            class="org.muml.storydiagram.calls.CallsPackage"
+            genModel="model/storydiagrams.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated storydiagrams -->
+      <package
+            uri="http://www.muml.org/storydiagram/calls/expressions/1.0.0"
+            class="org.muml.storydiagram.calls.expressions.CallsExpressionsPackage"
+            genModel="model/storydiagrams.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated storydiagrams -->
+      <package
+            uri="http://www.muml.org/storydiagram/patterns/1.0.0"
+            class="org.muml.storydiagram.patterns.PatternsPackage"
+            genModel="model/storydiagrams.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated storydiagrams -->
+      <package
+            uri="http://www.muml.org/storydiagram/patterns/expressions/1.0.0"
+            class="org.muml.storydiagram.patterns.expressions.PatternsExpressionsPackage"
+            genModel="model/storydiagrams.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated storydiagrams -->
+      <package
+            uri="http://www.muml.org/storydiagram/templates/1.0.0"
+            class="org.muml.storydiagram.templates.TemplatesPackage"
+            genModel="model/storydiagrams.genmodel"/>
+   </extension>
+   <extension
+         point="org.muml.emm.migrator">
+      <Migrator
+            file="model/storydiagrams.migrator">
+      </Migrator>
+   </extension>
+</plugin>

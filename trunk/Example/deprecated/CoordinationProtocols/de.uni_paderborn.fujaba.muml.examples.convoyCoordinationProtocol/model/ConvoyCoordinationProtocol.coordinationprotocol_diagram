@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:connector="http://www.fujaba.de/muml/connector/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmi:id="_Q5ksUNGvEeK5iMGRBcpqGw" type="Coordination Protocol" name="ConvoyCoordinationProtocol.coordinationprotocol_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_Q6hukNGvEeK5iMGRBcpqGw" type="2005" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Q6huktGvEeK5iMGRBcpqGw" type="7005">
+      <children xmi:type="notation:Shape" xmi:id="_RYwisNGvEeK5iMGRBcpqGw" type="3005" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_RYwistGvEeK5iMGRBcpqGw" type="5005"/>
+        <element xmi:type="protocol:CoordinationProtocol" href="ConvoyCoordinationProtocol.fujaba#_RgHooGCVEeK08IWBu_4Dfg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RYwisdGvEeK5iMGRBcpqGw" x="175" y="66"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_RYwis9GvEeK5iMGRBcpqGw" type="3006" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_RYwitdGvEeK5iMGRBcpqGw" type="5006">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_RYwittGvEeK5iMGRBcpqGw" y="5"/>
+        </children>
+        <element xmi:type="protocol:Role" href="ConvoyCoordinationProtocol.fujaba#_RgHooWCVEeK08IWBu_4Dfg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RYwitNGvEeK5iMGRBcpqGw" x="79" y="198"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_RYwit9GvEeK5iMGRBcpqGw" type="3006" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_RYwiudGvEeK5iMGRBcpqGw" type="5006">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_RYwiutGvEeK5iMGRBcpqGw" y="5"/>
+        </children>
+        <element xmi:type="protocol:Role" href="ConvoyCoordinationProtocol.fujaba#_RgHopWCVEeK08IWBu_4Dfg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RYwiuNGvEeK5iMGRBcpqGw" x="355" y="198"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_UZiQUHJfEeSUj-2PlgD-kA" type="3010" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_UZi3YHJfEeSUj-2PlgD-kA" type="5012"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_UZi3YXJfEeSUj-2PlgD-kA" type="5013"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_UZi3YnJfEeSUj-2PlgD-kA" type="7008">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_UZi3Y3JfEeSUj-2PlgD-kA"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_UZi3ZHJfEeSUj-2PlgD-kA"/>
+        </children>
+        <element xmi:type="connector:MessageBuffer" href="ConvoyCoordinationProtocol.fujaba#_T_dw8MLiEeKElo7BVGwZsA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UZiQUXJfEeSUj-2PlgD-kA" x="43" y="270"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_UZi3ZXJfEeSUj-2PlgD-kA" type="3010" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_UZi3Z3JfEeSUj-2PlgD-kA" type="5012"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_UZi3aHJfEeSUj-2PlgD-kA" type="5013"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_UZi3aXJfEeSUj-2PlgD-kA" type="7008">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_UZi3anJfEeSUj-2PlgD-kA"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_UZi3a3JfEeSUj-2PlgD-kA"/>
+        </children>
+        <element xmi:type="connector:MessageBuffer" href="ConvoyCoordinationProtocol.fujaba#_ZkSEYMLiEeKElo7BVGwZsA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UZi3ZnJfEeSUj-2PlgD-kA" x="403" y="282"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_UZjecHJfEeSUj-2PlgD-kA" type="3011" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_UZjecnJfEeSUj-2PlgD-kA" type="5014"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_UZjec3JfEeSUj-2PlgD-kA" type="5015"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_UZjedHJfEeSUj-2PlgD-kA" type="5016"/>
+        <element xmi:type="protocol:ConnectorQualityOfServiceAssumptions" href="ConvoyCoordinationProtocol.fujaba#_RgHoqmCVEeK08IWBu_4Dfg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UZjecXJfEeSUj-2PlgD-kA" x="482" y="75"/>
+      </children>
+    </children>
+    <element xmi:type="protocol:CoordinationProtocol" href="ConvoyCoordinationProtocol.fujaba#_RgHooGCVEeK08IWBu_4Dfg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Q6hukdGvEeK5iMGRBcpqGw" width="841" height="541"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_Q5ksUdGvEeK5iMGRBcpqGw"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="ConvoyCoordinationProtocol.fujaba#_ijwlQGCUEeK08IWBu_4Dfg"/>
+</notation:Diagram>

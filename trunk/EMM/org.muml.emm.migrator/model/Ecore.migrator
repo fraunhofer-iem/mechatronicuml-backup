@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<migration:Migrator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:migration="http://www.muml.org/emm/1.0.0">
+  <sourcePackages href="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#/"/>
+  <release href="Ecore.releaseset#//@releases.0"/>
+</migration:Migrator>

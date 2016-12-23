@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:behavior="http://www.muml.org/pim/behavior/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:msgtype="http://www.muml.org/pim/msgtype/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_gs3s0ByBEeSKP_lLzmbIVg" type="Message Type" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_hfuGEByBEeSKP_lLzmbIVg" type="2008" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_hfutIByBEeSKP_lLzmbIVg" type="5017"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_hfutIRyBEeSKP_lLzmbIVg" type="7010">
+      <children xmi:type="notation:Shape" xmi:id="_iSSygByBEeSKP_lLzmbIVg" type="3007" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_iSTZkByBEeSKP_lLzmbIVg" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_iSVOwByBEeSKP_lLzmbIVg" type="7009">
+          <children xmi:type="notation:Shape" xmi:id="_jFDFIByBEeSKP_lLzmbIVg" type="3009" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_jFDsMByBEeSKP_lLzmbIVg" type="5016"/>
+            <element xmi:type="behavior:Parameter" href="../messages.muml#_jE5UIByBEeSKP_lLzmbIVg"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jFDFIRyBEeSKP_lLzmbIVg"/>
+          </children>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_iSVOwRyBEeSKP_lLzmbIVg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_iSVOwhyBEeSKP_lLzmbIVg"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="../messages.muml#_iSJokByBEeSKP_lLzmbIVg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iSSygRyBEeSKP_lLzmbIVg"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_hfutIhyBEeSKP_lLzmbIVg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_hfutIxyBEeSKP_lLzmbIVg"/>
+    </children>
+    <element xmi:type="msgtype:MessageTypeRepository" href="../messages.muml#_hfgDoByBEeSKP_lLzmbIVg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hfuGERyBEeSKP_lLzmbIVg" x="369" y="225" width="343" height="253"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_gs3s0RyBEeSKP_lLzmbIVg"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../messages.muml#_onxjXByAEeSKP_lLzmbIVg"/>
+</notation:Diagram>

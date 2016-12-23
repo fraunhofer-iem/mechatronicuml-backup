@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.muml:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.muml="http://www.muml.org/ape/1.0.0" xmi:id="_RnsusM1gEeSIgPDefa6ZBw" contributorId="">
+  <reconciler xmi:id="_Rnsusc1gEeSIgPDefa6ZBw">
+    <customTransformations xmi:id="_RntVwM1gEeSIgPDefa6ZBw" uri="platform:/plugin/org.muml.pim.common/transformations/muml-propsheet.qvto"/>
+    <customTransformations xmi:id="_Rnt80M1gEeSIgPDefa6ZBw" uri="platform:/plugin/org.muml.pim.actionlanguage.xtext.ui/transformations/xtext-propsheet.qvto"/>
+  </reconciler>
+  <genModel href="storydiagrams.genmodel#/"/>
+  <referencedGenerators href="../../org.muml.core/model/core.propsheet#_i_I4kOHNEeS5Putgio2lkg"/>
+  <plugin xmi:id="_Rnuj4M1gEeSIgPDefa6ZBw" id="org.muml.storydiagram.edit.properties" name="Storydiagrams Tabbed Properties" vendor="" version="1.0.0.qualifier">
+    <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
+    <requiredBundles>org.eclipse.ui</requiredBundles>
+    <requiredBundles>org.eclipse.core.runtime</requiredBundles>
+    <requiredBundles>org.eclipse.emf.edit</requiredBundles>
+    <requiredBundles>org.muml.storydiagram</requiredBundles>
+    <requiredBundles>org.muml.storydiagram.edit</requiredBundles>
+    <requiredBundles>org.muml.ape.runtime</requiredBundles>
+  </plugin>
+  <defaultTab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+  <packages xmi:id="_RnvK8M1gEeSIgPDefa6ZBw">
+    <genPackage href="storydiagrams.genmodel#//storydiagram"/>
+    <classes>
+      <genClass href="storydiagrams.genmodel#//storydiagram/Variable"/>
+    </classes>
+    <classes>
+      <genClass href="storydiagrams.genmodel#//storydiagram/SDMExtension"/>
+    </classes>
+  </packages>
+  <packages xmi:id="_RnvK8s1gEeSIgPDefa6ZBw">
+    <genPackage href="storydiagrams.genmodel#//storydiagram/activities"/>
+    <classes superClasses="//@packages.0/@classes.0">
+      <genClass href="storydiagrams.genmodel#//storydiagram/activities/ExceptionVariable"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/activities/ExceptionVariable/name"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:TextPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/activities/ExceptionVariable/genericExceptionTypes"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:PropertyCategory" title="Lists" properties="//@packages.1/@classes.0/@orderedElements.1"/>
+    </classes>
+    <classes>
+      <genClass href="storydiagrams.genmodel#//storydiagram/activities/ActivityEdge"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/activities/ActivityEdge/target"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/activities/ActivityEdge/source"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/activities/ActivityEdge/guard"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes>
+      <genClass href="storydiagrams.genmodel#//storydiagram/activities/ActivityNode"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/activities/ActivityNode/outgoings"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/activities/ActivityNode/incomings"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:PropertyCategory" title="Lists" properties="//@packages.1/@classes.2/@orderedElements.0 //@packages.1/@classes.2/@orderedElements.1"/>
+    </classes>
+    <classes superClasses="//@packages.2/@classes.4">
+      <genClass href="storydiagrams.genmodel#//storydiagram/activities/Activity"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/activities/Activity/precondition"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes superClasses="//@packages.2/@classes.4 //@packages.0/@classes.1">
+      <genClass href="storydiagrams.genmodel#//storydiagram/activities/OperationExtension"/>
+    </classes>
+    <classes superClasses="//@packages.1/@classes.6">
+      <genClass href="storydiagrams.genmodel#//storydiagram/activities/MatchingStoryNode"/>
+    </classes>
+    <classes superClasses="//@packages.1/@classes.2">
+      <genClass href="storydiagrams.genmodel#//storydiagram/activities/StoryNode"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/activities/StoryNode/forEach"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:CheckboxPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes superClasses="//@packages.1/@classes.2">
+      <genClass href="storydiagrams.genmodel#//storydiagram/activities/StructuredNode"/>
+    </classes>
+    <classes superClasses="//@packages.1/@classes.2">
+      <genClass href="storydiagrams.genmodel#//storydiagram/activities/JunctionNode"/>
+    </classes>
+    <classes superClasses="//@packages.1/@classes.2">
+      <genClass href="storydiagrams.genmodel#//storydiagram/activities/InitialNode"/>
+    </classes>
+    <classes superClasses="//@packages.1/@classes.2">
+      <genClass href="storydiagrams.genmodel#//storydiagram/activities/StatementNode"/>
+    </classes>
+    <classes superClasses="//@packages.1/@classes.2">
+      <genClass href="storydiagrams.genmodel#//storydiagram/activities/ActivityFinalNode"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/activities/ActivityFinalNode/success"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:CheckboxPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes superClasses="//@packages.1/@classes.2 //@packages.2/@classes.0">
+      <genClass href="storydiagrams.genmodel#//storydiagram/activities/ActivityCallNode"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/activities/ActivityCallNode/calledActivities"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes superClasses="//@packages.1/@classes.6">
+      <genClass href="storydiagrams.genmodel#//storydiagram/activities/ModifyingStoryNode"/>
+    </classes>
+    <classes superClasses="//@packages.1/@classes.11">
+      <genClass href="storydiagrams.genmodel#//storydiagram/activities/FlowFinalNode"/>
+    </classes>
+  </packages>
+  <packages xmi:id="_Rn7YM81gEeSIgPDefa6ZBw">
+    <genPackage href="storydiagrams.genmodel#//storydiagram/calls"/>
+    <classes>
+      <genClass href="storydiagrams.genmodel#//storydiagram/calls/Invocation"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/calls/Invocation/callee"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes>
+      <genClass href="storydiagrams.genmodel#//storydiagram/calls/ParameterBinding"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/calls/ParameterBinding/parameter"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes superClasses="//@packages.2/@classes.4">
+      <genClass href="storydiagrams.genmodel#//storydiagram/calls/OpaqueCallable"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/calls/OpaqueCallable/name"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:TextPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes superClasses="//@packages.0/@classes.0 //@packages.0/@classes.1">
+      <genClass href="storydiagrams.genmodel#//storydiagram/calls/ParameterExtension"/>
+    </classes>
+    <classes>
+      <genClass href="storydiagrams.genmodel#//storydiagram/calls/Callable"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/calls/Callable/inParameters"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/calls/Callable/outParameters"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:PropertyCategory" title="Lists" properties="//@packages.2/@classes.4/@orderedElements.0 //@packages.2/@classes.4/@orderedElements.1"/>
+    </classes>
+  </packages>
+  <packages xmi:id="_Rn-bgc1gEeSIgPDefa6ZBw">
+    <genPackage href="storydiagrams.genmodel#//storydiagram/patterns"/>
+    <classes superClasses="//@packages.3/@classes.1">
+      <genClass href="storydiagrams.genmodel#//storydiagram/patterns/ObjectVariable"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/patterns/ObjectVariable/linkOrderConstraints"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/patterns/ObjectVariable/bindingSemantics"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/patterns/ObjectVariable/bindingOperator"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/patterns/ObjectVariable/outgoingLinks"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes superClasses="//@packages.0/@classes.0">
+      <genClass href="storydiagrams.genmodel#//storydiagram/patterns/AbstractVariable"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/patterns/AbstractVariable/bindingState"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/patterns/AbstractVariable/incomingLinks"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes>
+      <genClass href="storydiagrams.genmodel#//storydiagram/patterns/Constraint"/>
+    </classes>
+    <classes>
+      <genClass href="storydiagrams.genmodel#//storydiagram/patterns/AbstractLinkVariable"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/patterns/AbstractLinkVariable/bindingSemantics"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/patterns/AbstractLinkVariable/bindingOperator"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/patterns/AbstractLinkVariable/source"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/patterns/AbstractLinkVariable/secondLinkConstraints"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/patterns/AbstractLinkVariable/firstLinkConstraints"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/patterns/AbstractLinkVariable/target"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:PropertyCategory" title="Lists" properties="//@packages.3/@classes.3/@orderedElements.3 //@packages.3/@classes.3/@orderedElements.4"/>
+    </classes>
+    <classes>
+      <genClass href="storydiagrams.genmodel#//storydiagram/patterns/LinkConstraint"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/patterns/LinkConstraint/index"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:SpinnerPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/patterns/LinkConstraint/constraintType"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/patterns/LinkConstraint/negative"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:CheckboxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/patterns/LinkConstraint/firstLink"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/patterns/LinkConstraint/secondLink"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes>
+      <genClass href="storydiagrams.genmodel#//storydiagram/patterns/AttributeAssignment"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/patterns/AttributeAssignment/attribute"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.0">
+      <genClass href="storydiagrams.genmodel#//storydiagram/patterns/CollectionVariable"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/patterns/CollectionVariable/atLeastOne"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:CheckboxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/patterns/CollectionVariable/unique"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:CheckboxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:PropertyCategory" title="Booleans" properties="//@packages.3/@classes.6/@orderedElements.0 //@packages.3/@classes.6/@orderedElements.1"/>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.1">
+      <genClass href="storydiagrams.genmodel#//storydiagram/patterns/PrimitiveVariable"/>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.3">
+      <genClass href="storydiagrams.genmodel#//storydiagram/patterns/Path"/>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.3">
+      <genClass href="storydiagrams.genmodel#//storydiagram/patterns/LinkVariable"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/patterns/LinkVariable/targetEnd"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.3">
+      <genClass href="storydiagrams.genmodel#//storydiagram/patterns/InclusionLink"/>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.13">
+      <genClass href="storydiagrams.genmodel#//storydiagram/patterns/MatchingPattern"/>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.3">
+      <genClass href="storydiagrams.genmodel#//storydiagram/patterns/MaybeLink"/>
+    </classes>
+    <classes>
+      <genClass href="storydiagrams.genmodel#//storydiagram/patterns/StoryPattern"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/patterns/StoryPattern/bindingSemantics"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor"/>
+      </orderedElements>
+    </classes>
+  </packages>
+  <packages xmi:id="_RoHlds1gEeSIgPDefa6ZBw">
+    <genPackage href="storydiagrams.genmodel#//storydiagram/templates"/>
+    <classes>
+      <genClass href="storydiagrams.genmodel#//storydiagram/templates/TemplateBinding"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/templates/TemplateBinding/boundParameter"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes>
+      <genClass href="storydiagrams.genmodel#//storydiagram/templates/PropertyBinding"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/templates/PropertyBinding/boundProperty"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes>
+      <genClass href="storydiagrams.genmodel#//storydiagram/templates/TemplateSignature"/>
+    </classes>
+  </packages>
+  <packages>
+    <genPackage href="storydiagrams.genmodel#//storydiagram/calls/expressions"/>
+    <classes superClasses="//@packages.2/@classes.0">
+      <genClass href="storydiagrams.genmodel#//storydiagram/calls/expressions/MethodCallExpression"/>
+    </classes>
+    <classes>
+      <genClass href="storydiagrams.genmodel#//storydiagram/calls/expressions/ParameterExpression"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/calls/expressions/ParameterExpression/parameter"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+    </classes>
+  </packages>
+  <packages>
+    <genPackage href="storydiagrams.genmodel#//storydiagram/patterns/expressions"/>
+    <classes>
+      <genClass href="storydiagrams.genmodel#//storydiagram/patterns/expressions/AttributeValueExpression"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/patterns/expressions/AttributeValueExpression/object"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/patterns/expressions/AttributeValueExpression/attribute"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes>
+      <genClass href="storydiagrams.genmodel#//storydiagram/patterns/expressions/ObjectVariableExpression"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/patterns/expressions/ObjectVariableExpression/object"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes>
+      <genClass href="storydiagrams.genmodel#//storydiagram/patterns/expressions/CollectionSizeExpression"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/patterns/expressions/CollectionSizeExpression/set"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes>
+      <genClass href="storydiagrams.genmodel#//storydiagram/patterns/expressions/PrimitiveVariableExpression"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/patterns/expressions/PrimitiveVariableExpression/primitiveVariable"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+    </classes>
+  </packages>
+  <packages>
+    <genPackage href="storydiagrams.genmodel#//storydiagram/activities/expressions"/>
+    <classes>
+      <genClass href="storydiagrams.genmodel#//storydiagram/activities/expressions/ExceptionVariableExpression"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="storydiagrams.genmodel#//storydiagram/activities/expressions/ExceptionVariableExpression/exceptionVariable"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+    </classes>
+  </packages>
+</org.muml:PropertyGenerator>

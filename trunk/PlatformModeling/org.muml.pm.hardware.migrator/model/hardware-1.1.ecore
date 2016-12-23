@@ -1,0 +1,1301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="hardware" nsURI="http://www.fujaba.de/muml/hardware/1.1/" nsPrefix="hardware">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+    <details key="documentation" value="The hardware package contains the  meta-model for the specification of a hardware platform.&#xA;The subpackage resourcetype defines the base classes for the Resource Type Viewpoint.&#xA;The subpackage platform defines the base classes for the Platform Type Viewpoint.&#xA;The subpackage platforminstance defines the base classes for the Platform Instance Viewpoint.&#xA;The subpackage hwvaluetype defines the classes to specify attributes of  hardware resources.&#x9;"/>
+  </eAnnotations>
+  <eSubpackages name="hwplatform" nsURI="http://www.fujaba.de/muml/hardware/hwplatform/1.1/"
+      nsPrefix="hwplatform">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The package platform contains all classes of the Platform Type Viewpoint.&#xA;Hardware platforms are defined at the type level and may be instantiated in a HWPlatformInstanceConfiguration at the Platform Instance Viewpoint.&#xA;"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a hardware platform at the type level. &#xA;A HWPlatform consists of several embedded PlatformParts and several CommunicationResources to connect the embedded PlatformParts."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="embeddedPlatformParts"
+          lowerBound="1" upperBound="-1" eType="#//hwplatform/PlatformPart" containment="true"
+          eOpposite="#//hwplatform/PlatformPart/parentHWPlatform">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The PlatformParts which are embedded in this HWPlatform. &#xA;A PlatformPart is either a  HWPlatformPart or a ResourceInstancePart."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="networkingHardware" upperBound="-1"
+          eType="#//hwplatform/NetworkingHardware" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The CommunicationResources this HWPlatform contains."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="delegationPorts" upperBound="-1"
+          eType="#//hwplatform/DelegationHWPort" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The HWPortInstances of this HWPlatform that are used as delegation ports."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="networkConnectors" upperBound="-1"
+          eType="#//hwplatform/NetworkConnector" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PlatformPart" abstract="true" eSuperTypes="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="CardinalityLowerBoundSet CardinalityUpperBoundSet"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="CardinalityLowerBoundSet" value="-- Lower Bound of Cardinality must be set&#xA;if self.cardinality.lowerBound.oclIsUndefined() then&#xD;&#xA;false&#xD;&#xA;else&#xD;&#xA;self.cardinality.lowerBound->notEmpty()&#xD;&#xA;endif"/>
+        <details key="CardinalityUpperBoundSet" value="-- Upper bound of cardinality must be set&#xD;&#xA;if self.cardinality.upperBound.oclIsUndefined() then&#xD;&#xA;false&#xD;&#xA;else&#xD;&#xA;self.cardinality.upperBound->notEmpty()&#xD;&#xA;endif"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This abstract class represents a PlatformPart. &#xA;PlatformParts are used to specify the inner structure of a HWPlatform.&#xD;&#xA;A PlatformPart can be a HWPlatformPart or a ResourceInstancePart."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parentHWPlatform" lowerBound="1"
+          eType="#//hwplatform/HWPlatform" eOpposite="#//hwplatform/HWPlatform/embeddedPlatformParts">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The HWPlatform, this PlatformPart belongs to."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" lowerBound="1"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Cardinality"
+          containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cardinality of a PlatformPart determines how many instances are allowed to exist in the associated HWPlatformInstance at instance level."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hwPortParts" upperBound="-1"
+          eType="#//hwplatform/HWPortPart" containment="true" eOpposite="#//hwplatform/HWPortPart/parentPlatformPart">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The delegation ports of this HWPlatformPart.&#xA;They are derived from the hwPlatformType."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HWPlatformPart" eSuperTypes="#//hwplatform/PlatformPart">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="NoLoop"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="NoLoop" value="-- HWPlatformPart must NOT have the same type as its parent HWPlatform&#xA;self.hwplatformType&lt;>self.parentHWPlatform"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a HWPlatformPart. &#xA;HWPlatformParts are used to specify the structure of a HWPlatform. &#xA;A HWPlatformPart is embedded in a HWPlatform and it is typed over a HWPlatform."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hwplatformType" lowerBound="1"
+          eType="#//hwplatform/HWPlatform">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The HWPlatform type of this HWPlatformPart."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="embeddedBridges" upperBound="-1"
+          eType="#//hwplatform/NetworkBridge" changeable="false" volatile="true" transient="true"
+          derived="true" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="if hwplatformType.oclIsUndefined() then&#xD;&#xA;&#x9;OrderedSet { }&#xD;&#xA;else&#xD;&#xA;&#x9;self.hwplatformType.networkingHardware->select(c| c.oclIsTypeOf(hwplatform::NetworkBridge)).oclAsType(hwplatform::NetworkBridge)->asOrderedSet()&#xD;&#xA;endif"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The Bridges of this HWPlatform. &#xA;They are derived from the reference embeddedCommunicationResource of the hwplatformType."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ResourcePart" eSuperTypes="#//hwplatform/PlatformPart">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a ResourceInstancePart. &#xA;ResourceInstanceParts are used to specify the structure of a HWPlatform. &#xA;A ResourceInstancePart is embedded in a HWPlatform and it is typed over a ResourceInstance."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resourceType" lowerBound="1"
+          eType="#//hwresourceinstance/ResourceInstance">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The ResourceInstance type of this ResourceInstancePart."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DelegationHWPort" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpoint #//hwresourceinstance/HWPort">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a DelegationPort of a HWPlatform.&#xA;DelegationPorts are used  to delegate HWPorts of embedded HWResourses to the outside.&#xA;In order to be conistent with the muml metamodel, this class inherits from muml::ConnectorEndpoint.&#xA;Furthermore, this class inherits from HWPort, because a DelegationPort provides to the outside the same features as a standard HWPort."/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HWPortPart" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpoint">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a hardware port of a PlatformPart and is derived from a HWPort.&#xA;The purpose of a HWPortPart is to enable the reuse of defined HWPorts in different HWPlatforms and in different Confiugrations.&#xA;For Instance, HWPortParts are derived from one HWPort but can be attached to different NetworkConnectors."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="connectedNetworkConnector"
+          upperBound="-1" eType="#//hwplatform/NetworkConnector" volatile="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The NetworkConnector which are connected to this HWPortPart."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="self.connectors->select(c|c.oclIsKindOf(hwplatform::NetworkConnector)).oclAsType(hwplatform::NetworkConnector)->asOrderedSet()"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="queuingTime" eType="#//hwvaluetype/TimeInterval"
+          containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The queuing time of this HWPortInstance."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="payloadDataSize" eType="#//hwvaluetype/DataSize"
+          containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The average size of the payload data that is transmitted over this HWPortInstance."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parentPlatformPart" lowerBound="1"
+          eType="#//hwplatform/PlatformPart" eOpposite="#//hwplatform/PlatformPart/hwPortParts">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The PlatformPort to which is HWPortPart belongs to."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hwport" lowerBound="1"
+          eType="#//hwresourceinstance/HWPort">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The original HWPort which is represented by this HWPortPart."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Bus" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpoint #//hwplatform/NetworkingHardware">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a bus. A bus is used to connect several BusPortInstances."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="SameBusProtocol"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="SameBusProtocol" value="-- Connected Ports must use the same BusProtocol&#xD;&#xA;self.connectedHWPortParts.hwport->forAll(p  | p.protocol =self.protocol )"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="connectedHWPortParts"
+          upperBound="-1" eType="#//hwplatform/HWPortPart" changeable="false" volatile="true"
+          transient="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="self.connectors->select(c|c.oclIsKindOf(NetworkConnector)).oclAsType(NetworkConnector)->collect(hwportParts)->asOrderedSet()"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The connected BusPortInstances. &#xA; They are derived from the reference connectedHWPortInstances of the super class CommunicationMedia."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="protocol" lowerBound="1"
+          eType="#//hwresource/CommunicationProtocol">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The protocol this CommunicationMedia uses to transmit data. A CommunicationMedia can only be connected to HWPortInstances that use the same protocol."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="bandwidth" lowerBound="1"
+          eType="#//hwvaluetype/DataRate" volatile="true" derived="true" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The bandwidth of this CommunicationMedia."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="if (self.protocol.oclIsUndefined()) then&#xD;&#xA;&#x9;null&#xD;&#xA;else &#xD;&#xA;&#x9;self.protocol.bandwidth&#xD;&#xA;endif"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="NetworkBridge" eSuperTypes="#//hwplatform/NetworkingHardware ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpoint">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a bridge or a gateway. Bridges are used to connect two or more Networks."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="connectedNetworkConnector"
+          lowerBound="2" upperBound="-1" eType="#//hwplatform/NetworkConnector" volatile="true"
+          derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The CommunicationMedia which are connected to this Bridge."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="self.connectors->select(c|c.oclIsKindOf(hwplatform::NetworkConnector)).oclAsType(hwplatform::NetworkConnector)->asOrderedSet()"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="delay" eType="#//hwvaluetype/TimeInterval"
+          containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The time variation this Bridge needs to transmit data between different Networks."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="NetworkingHardware" abstract="true"
+        eSuperTypes="../../org.muml.core.migrator/model/core-0.4.ecore#//ExtendableElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This abstract class represents hardware devices which are used to connect ECUs, e.g., bridge, router, bus."/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="NetworkConnector" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="SameProtocol"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="SameProtocol" value="-- Connected Ports must use the same Protocol&#xD;&#xA;self.hwportParts.hwport->forAll(p1 , p2 | p1.protocol = p2.protocol)"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a network connection between hardware resources.&#xA;This class inherits from muml::Connector to be conistent with the muml metamodel."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="protocol" eType="#//hwresource/CommunicationProtocol"
+          volatile="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The protocol this CommunicationMedia uses to transmit data. A CommunicationMedia can only be connected to HWPortInstances that use the same protocol."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="if (self.hwportParts->notEmpty()) then &#x9;&#xA;&#x9;self.hwportParts.hwport->select(p| not p.protocol.oclIsUndefined())->any(true).protocol &#xA;else      &#xA;&#x9;null &#xA;endif"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="bandwidth" eType="#//hwvaluetype/DataRate"
+          volatile="true" derived="true" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The bandwidth of this CommunicationMedia."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="if (self.protocol.oclIsUndefined()) then&#xD;&#xA;&#x9;null&#xD;&#xA;else &#xD;&#xA;&#x9;self.protocol.bandwidth&#xD;&#xA;endif"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hwportParts" upperBound="2"
+          eType="#//hwplatform/HWPortPart" changeable="false" volatile="true" transient="true"
+          derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="self.connectorEndpoints->select(c | c.oclIsKindOf(HWPortPart)).oclAsType(HWPortPart)->asOrderedSet()"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The hardware port parts that the NetworkConnector connects. "/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="connectorKind" lowerBound="1"
+          eType="#//hwresource/CommunicationKind" volatile="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Determines if this HWPort is  a bus or a link port."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="if (self.delegationHWPorts->notEmpty()) then&#xD;&#xA;&#x9;hwresource::CommunicationKind::DELEGATION&#xD;&#xA;else &#xD;&#xA;   self.hwportParts.hwport->any(true).portKind&#xD;&#xA;  endif"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="delegationHWPorts" upperBound="2"
+          eType="#//hwplatform/DelegationHWPort" changeable="false" volatile="true"
+          transient="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="self.connectorEndpoints->select(c | c.oclIsKindOf(DelegationHWPort)).oclAsType(DelegationHWPort)->asOrderedSet()"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The hardware port parts that the NetworkConnector connects. "/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="hwvaluetype" nsURI="http://www.fujaba.de/muml/hardware/hwvaluetype/1.1/"
+      nsPrefix="hwvaluetype">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This package defines the basic data types needed to characterize resources&#xA;(i.e. DataSize, Frequency)."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </eAnnotations>
+    <eClassifiers xsi:type="ecore:EClass" name="DataSize">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents the data size of an element or the size of a memory resource."/>
+      </eAnnotations>
+      <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="// Return value concatenated with unit&#xA;StringBuffer sb = new StringBuffer();&#xA;sb.append(String.valueOf(value));&#xA;&#x9;if (unit != null) {&#xA;&#x9;&#x9;sb.append(' ');&#xA;&#x9;&#x9;sb.append(unit.toString());&#xA;&#x9;&#x9;}&#xA;return sb.toString();"/>
+          <details key="documentation" value="Converts the entered data size into a String with the appended unit."/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="getInByte" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="double inByte=0;&#xA;&#x9;&#x9;if(unit!=null){&#xA;&#x9;&#x9;inByte=value*Math.pow(2, unit.getValue());&#x9;&#xA;&#x9;&#x9;}&#xA;return inByte;"/>
+          <details key="documentation" value="Converts the entered data size in Bytes."/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The value of this DataSize."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" lowerBound="1"
+          eType="#//hwvaluetype/DataSizeUnit">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The unit of the value."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="DataSizeUnit">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The base unit is Byte. The value of the literal is the conversion factor.&#xA;For example 3 KByte (value=10) = 3*2^(value) Byte."/>
+      </eAnnotations>
+      <eLiterals name="Byte"/>
+      <eLiterals name="KByte" value="10"/>
+      <eLiterals name="MByte" value="20"/>
+      <eLiterals name="GByte" value="30"/>
+      <eLiterals name="Bit" value="-3"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Frequency">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents the frequency of a computing resource."/>
+      </eAnnotations>
+      <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="// Return value concatenated with unit&#xA;StringBuffer sb = new StringBuffer();&#xA;sb.append(String.valueOf(value));&#xA;&#x9;if (unit != null) {&#xA;&#x9;&#x9;sb.append(' ');&#xA;&#x9;&#x9;sb.append(unit.toString());&#xA;&#x9;&#x9;}&#xA;return sb.toString();"/>
+          <details key="documentation" value="Converts the entered frequency into a String with the appended unit."/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="getInHz" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="double inHz=0;&#xA;&#x9;&#x9;if(unit!=null){&#xA;&#x9;&#x9;inHz=value*Math.pow(10, unit.getValue());&#x9;&#xA;&#x9;&#x9;}&#xA;return inHz;"/>
+          <details key="documentation" value="Converts the entered frequency in Hz."/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The value of the frequency."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="#//hwvaluetype/FrequencyUnit">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The unit of this value (i.e. Hz, MHz,etc)."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="FrequencyUnit">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The base unit is Hz. The value of the literal is the conversion factor.&#xA;For example 2.5 KHz (value=3) =2.5*10^(value) Hz."/>
+      </eAnnotations>
+      <eLiterals name="Hz"/>
+      <eLiterals name="kHz" value="3"/>
+      <eLiterals name="MHz" value="6"/>
+      <eLiterals name="GHz" value="9"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="DataRateUnit">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The base unit is bit/s. The value of the literal is the conversion factor.&#xA;For example 2.5 Kbit/s (value=20) = 2.5*2^(value) bit/s."/>
+      </eAnnotations>
+      <eLiterals name="bs" literal="b\s"/>
+      <eLiterals name="Kbs" value="10" literal="Kb\s"/>
+      <eLiterals name="Mbs" value="20" literal="Mb\s"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DataRate">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents the data rate of a resource (i.e. the bandwidth of a bus)."/>
+      </eAnnotations>
+      <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="// Return value concatenated with unit&#xA;StringBuffer sb = new StringBuffer();&#xA;sb.append(String.valueOf(value));&#xA;&#x9;if (unit != null) {&#xA;&#x9;&#x9;sb.append(' ');&#xA;&#x9;&#x9;sb.append(unit.toString());&#xA;&#x9;&#x9;}&#xA;return sb.toString();"/>
+          <details key="documentation" value="Converts the entered data rate into a String with the appended unit."/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="getInBpS" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="double inBpS=0;&#xA;&#x9;&#x9;if(unit!=null){&#xA;&#x9;&#x9;inBpS=value*Math.pow(2, unit.getValue());&#x9;&#xA;&#x9;&#x9;}&#xA;return inBpS;"/>
+          <details key="documentation" value="Converts the entered data rate in bytes per second."/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The value of this DataRate."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="#//hwvaluetype/DataRateUnit">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The unit of the value (i.e. b/s, Kb/s)."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TimeInterval" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Range">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents an interval to specify time bounds."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" lowerBound="1"
+          eType="ecore:EDataType ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/TimeUnit">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The unit for this TimeInterval."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="hwplatforminstance" nsURI="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.1/"
+      nsPrefix="hwplatforminstance">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This package contains all classes of the Platform Instance Viewpoint.&#xA;"/>
+    </eAnnotations>
+    <eClassifiers xsi:type="ecore:EClass" name="HWPlatformInstance" eSuperTypes="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a hardware platform at instance level. "/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hwplatformType" lowerBound="1"
+          eType="#//hwplatform/HWPlatform">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The HWPlatform type of which this instance is derived."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="delegationPorts" upperBound="-1"
+          eType="#//hwplatforminstance/DelegationHWPortInstance" containment="true"
+          eOpposite="#//hwplatforminstance/DelegationHWPortInstance/parentHWPlatformInstance">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The delegation ports of this HWPlatformInstance. They are derived from the HWPlatform type."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="embeddedHPIC" lowerBound="1"
+          eType="#//hwplatforminstance/HWPlatformInstanceConfiguration" containment="true"
+          eOpposite="#//hwplatforminstance/HWPlatformInstanceConfiguration/parentHWPlatformInstance">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The embedded Hardware Platform Instance Configuration.&#xA;"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parentHPIC" lowerBound="1"
+          eType="#//hwplatforminstance/HWPlatformInstanceConfiguration" eOpposite="#//hwplatforminstance/HWPlatformInstanceConfiguration/hwplatformInstances">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The Hardware Platform Instance Configuration in which this HWPlatformInstance is embedded.&#xA;"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HWPlatformInstanceConfiguration" eSuperTypes="../../org.muml.core.migrator/model/core-0.4.ecore#//CommentableElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a HWPlatformInstanceConfiguration.&#xA;A HWPlatformInstanceConfiguration consists of several HWPlatformInstances.&#xA;The HWPlatformInstances might be connected via different NetworkConnectorInstances."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hwplatformInstances"
+          upperBound="-1" eType="#//hwplatforminstance/HWPlatformInstance" containment="true"
+          eOpposite="#//hwplatforminstance/HWPlatformInstance/parentHPIC">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The set of HWPlatformInstances of this HWPlatformInstanceConfiguration."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="networkingHardwareInstances"
+          upperBound="-1" eType="#//hwplatforminstance/NetworkingHardwareInstance"
+          containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The NetworkingHardwareInstances of this HWPlatformInstanceConfiguration. &#xA;"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resources" upperBound="-1"
+          eType="#//hwresourceinstance/ResourceInstance" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The ResourceInstances that belong to this HWPlatformInstance."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parentHWPlatformInstance"
+          eType="#//hwplatforminstance/HWPlatformInstance" eOpposite="#//hwplatforminstance/HWPlatformInstance/embeddedHPIC">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The parent HWPlatformInstance is which this HWPlatformInstanceConfiguration is embedded.&#xA;The bound is 0..1, because the root HWPlatformInstanceConfiguration is not embedded in any HWPlatformInstance."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="networkConnectorInstances"
+          upperBound="-1" eType="#//hwplatforminstance/NetworkConnectorInstance" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The NetworkingConnectorInstances of this HWPlatformInstanceConfiguration. &#xA;NetworkConnectorInstances are used to connect different HWPlatformInstances via bridges or HWPortInstances."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HWPortInstance" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpointInstance #//hwresourceinstance/HWPort">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="connectedNetworkConnectorInstances"
+          upperBound="-1" eType="#//hwplatforminstance/NetworkConnectorInstance" volatile="true"
+          derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The communication media to which this HWPortPart is connected."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="self.connectorInstances->select(c|c.oclIsKindOf(NetworkConnectorInstance)).oclAsType(NetworkConnectorInstance)->asOrderedSet()"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isNetworkInterface" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          volatile="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="if (self.protocol.oclIsUndefined()) then&#xA;&#x9;false&#xA;else self.protocol.isNetworkingProtocol&#xA;endif"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Specfies wheter this HWPortInstance is used for network communication or for reading/writing sensors/actuators.&#xA;This attribute is derived from the used CommunicationProtocol.&#xA;Moreover, this attribute is used in the CodeGeneration to identify possible routings for messages."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BusInstance" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpointInstance #//hwplatforminstance/NetworkingHardwareInstance">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a bus. A bus is used to connect several BusPortInstances."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="connectedHWPortInstances"
+          upperBound="-1" eType="#//hwplatforminstance/HWPortInstance" changeable="false"
+          volatile="true" transient="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="self.connectorInstances->select(c|c.oclIsKindOf(hwplatforminstance::NetworkConnectorInstance))->collect(connectedHWPortInstances)->asOrderedSet()"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The connected BusPortInstances. &#xA; They are derived from the reference connectedHWPortInstances of the super class CommunicationMedia."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="busType" lowerBound="1"
+          eType="#//hwplatform/Bus" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="if  self.type.oclIsKindOf(hwplatform::Bus) then&#xD;&#xA;&#x9;self.type.oclAsType(hwplatform::Bus)&#xD;&#xA;else&#xD;&#xA;&#x9;null&#xD;&#xA;endif"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The Bus type of this BusInstance."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="protocol" lowerBound="1"
+          eType="#//hwresource/CommunicationProtocol" volatile="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The protocol this CommunicationMedia uses to transmit data. A CommunicationMedia can only be connected to HWPortInstances that use the same protocol."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="if (self.busType.oclIsUndefined()) then&#xD;&#xA;&#x9;null&#xD;&#xA;else &#xD;&#xA;&#x9;self.busType.protocol&#xD;&#xA;endif&#xD;&#xA;"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="bandwidth" lowerBound="1"
+          eType="#//hwvaluetype/DataRate" volatile="true" derived="true" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The bandwidth of this CommunicationMedia."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="if (self.busType.oclIsUndefined()) then&#xD;&#xA;&#x9;null&#xD;&#xA;else &#xD;&#xA;&#x9;self.busType.bandwidth&#xD;&#xA;endif"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="NetworkBridgeInstance" eSuperTypes="#//hwplatforminstance/NetworkingHardwareInstance ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpointInstance">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a bridge or a gateway. Bridges are used to connect two or more CommunicationMedia."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="connectedNetworkConnectorInstances"
+          lowerBound="2" upperBound="-1" eType="#//hwplatforminstance/NetworkConnectorInstance"
+          volatile="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The CommunicationMedia which are connected to this Bridge."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="self.connectorInstances->select(c|c.oclIsKindOf(hwplatforminstance::NetworkConnectorInstance)).oclAsType(hwplatforminstance::NetworkConnectorInstance)->asOrderedSet()"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="networkBridgeType" lowerBound="1"
+          eType="#//hwplatform/NetworkBridge" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="if  self.type.oclIsKindOf(hwplatform::NetworkBridge) then&#xD;&#xA;&#x9;self.type.oclAsType(hwplatform::NetworkBridge)&#xD;&#xA;else&#xD;&#xA;&#x9;null&#xD;&#xA;endif"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The NetworkBridge type of this NetworkBridgeInstance."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="NetworkingHardwareInstance" abstract="true"
+        eSuperTypes="../../org.muml.core.migrator/model/core-0.4.ecore#//ExtendableElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This abstract class represents hardware devices which are used to connect ECUs, e.g., bridge, router, bus, on instance-level."/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DelegationHWPortInstance" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpointInstance">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a DelegationPort of a HWPlatform on instance-level.&#xA;In order to be conistent with the muml metamodel, this class inherits from muml::ConnectorEndpointInstance."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parentHWPlatformInstance"
+          lowerBound="1" eType="#//hwplatforminstance/HWPlatformInstance" eOpposite="#//hwplatforminstance/HWPlatformInstance/delegationPorts">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The HWPlatformInstance this DelegationHWPortInstance belongs to."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="NetworkConnectorInstance" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorInstance">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a network connection between hardware resources on instance-level.&#xA;This class inherits from muml::ConnectorInstance to be conistent with the muml metamodel."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="connectedHWPortInstances"
+          upperBound="-1" eType="#//hwplatforminstance/HWPortInstance" changeable="false"
+          volatile="true" transient="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="self.connectorEndpointInstances->select(e|e.oclIsKindOf(HWPortInstance)).oclAsType(HWPortInstance)->asOrderedSet()&#xA;"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The connected LinkPortInstances.&#xA; They are derived from the reference connectedHWPortInstances of the super class CommunicationMedia."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="protocol" eType="#//hwresource/CommunicationProtocol"
+          volatile="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The protocol this CommunicationMedia uses to transmit data. A CommunicationMedia can only be connected to HWPortInstances that use the same protocol."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="if (self.networkConnectorType.oclIsUndefined()) then&#xD;&#xA;&#x9;null&#xD;&#xA;else &#xD;&#xA;&#x9;self.networkConnectorType.protocol&#xD;&#xA;endif"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="bandwidth" eType="#//hwvaluetype/DataRate"
+          volatile="true" derived="true" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The bandwidth of this CommunicationMedia."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="if (self.networkConnectorType.oclIsUndefined()) then&#xD;&#xA;&#x9;null&#xD;&#xA;else &#xD;&#xA;&#x9;self.networkConnectorType.bandwidth&#xD;&#xA;endif"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="connectorKind" eType="#//hwresource/CommunicationKind"
+          volatile="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Determines if this HWPort is  a bus or a link port."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="if (self.networkConnectorType.oclIsUndefined()) then&#xD;&#xA;&#x9;null&#xD;&#xA;else &#xD;&#xA;  self.networkConnectorType.connectorKind&#xD;&#xA;endif"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="networkConnectorType"
+          eType="#//hwplatform/NetworkConnector" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="if  self.type.oclIsKindOf(hwplatform::NetworkConnector) then&#xD;&#xA;&#x9;self.type.oclAsType(hwplatform::NetworkConnector)&#xD;&#xA;else&#xD;&#xA;&#x9;null&#xD;&#xA;endif"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="hwresource" nsURI="http://www.fujaba.de/muml/hardware/hwresource/1.1/"
+      nsPrefix="hwresource">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </eAnnotations>
+    <eClassifiers xsi:type="ecore:EClass" name="Resource" abstract="true" eSuperTypes="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This abstract class is the super class of all resource types."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="communicationResources"
+          upperBound="-1" eType="#//hwresource/CommunicationResource" containment="true"
+          eOpposite="#//hwresource/CommunicationResource/parentResource">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The HWPort of this ResourceType.&#xA;&#xA;"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ComputingResource" abstract="true"
+        eSuperTypes="#//hwresource/AtomicResource">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This abstract class represent all resources which are able to execute code."/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MemoryResource" eSuperTypes="#//hwresource/AtomicResource">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="RAMimpliesRW ROMimpliesReadOnly"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="RAMimpliesRW" value="-- A RAM implies R/W Access&#xA;self.memoryType = MemoryKind::RAM implies self.memoryAccess=MemoryAccessKind::READ_WRITE"/>
+        <details key="ROMimpliesReadOnly" value="-- A ROM implies Read-Only Access&#xA;self.memoryType = MemoryKind::ROM implies self.memoryAccess = MemoryAccessKind::READ_ONLY"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents an AtomicResource that is capable of storing data. &#xA;"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="memoryAccess" eType="#//hwresource/MemoryAccessKind">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Specifies what kind of access is allowed for this MemoryResource."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isVolatile" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Specifies if this MemoryResource is volatile or non-volatile. &#xA;Non-volatile Memory (i.e. ROM) could be used to store the binary code.&#xA;Volatile Memory (i.e SRAM) is used during execution of code."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="memoryType" eType="#//hwresource/MemoryKind">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The type of this MemoryResource."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Device" eSuperTypes="#//hwresource/Resource">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a device.&#xA;Devices are resources that interact with the environment (i.e. sensors, actuators)."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="deviceKind" lowerBound="1"
+          eType="#//hwresource/DeviceKind">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Determines the type of the Device: Sensor or Actuator."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Cache" eSuperTypes="#//hwresource/MemoryResource">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The class Cache represents a Cache used by a Processor."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="writePolicy" eType="#//hwresource/WritePolicy"
+          defaultValueLiteral="WRITE_THROUGH">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Determines the write policy of the Cache."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="replacementPolicy" eType="#//hwresource/ReplacementPolicy"
+          defaultValueLiteral="FIFO">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Determines the replacement policy for this Cache."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbSets" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Specifies the number of sets.&#xA; If the nbSets are one, the cache is full-associative."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="associativity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The associativity of this cache. It represents the number of blocks in one set. An associativity of 1 represents a direct mapped cache."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="usedByProcessor" upperBound="-1"
+          eType="#//hwresource/Processor" eOpposite="#//hwresource/Processor/ownedCache">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The processors which use this cache."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ProgrammableLogicDevice" eSuperTypes="#//hwresource/ComputingResource">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class  represents a hardware component to build reconfigurable digital circuits (i.e. FPGA)."/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Processor" eSuperTypes="#//hwresource/ComputingResource">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The class Processor is a ComputingResource. It represents different kind of a processor specified by its family and architecture."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="ownedCacheInSameStructuredResource" value="-- The used Cache must be containted in the same parent Resource&#xA;if not self.ownedCache.oclIsUndefined() then&#xA;&#x9;self.parentStructuredResource=self.ownedCache.parentStructuredResource&#xA;else&#xA;&#x9; true&#xA;endif&#xA;"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="ownedCacheInSameStructuredResource"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedCache" eType="#//hwresource/Cache"
+          eOpposite="#//hwresource/Cache/usedByProcessor">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The Cache which belongs to this Processor."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="architecture" eType="#//hwresource/ProcessorArchitecture">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The architecture of this Processor (i.e. RISC,CISC,..)."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="nbCores" lowerBound="1"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/NaturalNumber"
+          containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The number of cores of this Processor."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="family" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The family of this Processor (i.e. x86, ARM, MIPS,..)."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="nbPipelineStages" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/NaturalNumber"
+          containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The number of pipelines for this processor."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AtomicResource" abstract="true" eSuperTypes="#//hwresource/Resource">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This abstract class is the super class of all atomic resource types.&#xA;AtomicResources  can not be further sub-divided."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parentStructuredResource"
+          lowerBound="1" eType="#//hwresource/StructuredResource" eOpposite="#//hwresource/StructuredResource/embeddedAtomicResources">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The StructuredResource, this AtomicResource belongs to."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StructuredResource" eSuperTypes="#//hwresource/Resource">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents all StructuredResource (i.e. ECUs, Server,etc.). A StructuredResource consists of several AtomicResources."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="embeddedAtomicResources"
+          lowerBound="1" upperBound="-1" eType="#//hwresource/AtomicResource" containment="true"
+          eOpposite="#//hwresource/AtomicResource/parentStructuredResource">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="All AtomicResources which are contained in this StructuredResource."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="DeviceKind">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Specifies the kind of the device."/>
+      </eAnnotations>
+      <eLiterals name="SENSOR" literal="SENSOR"/>
+      <eLiterals name="ACTUATOR" value="1" literal="ACTUATOR"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="ProcessorArchitecture">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Determines the architecture of a Processor."/>
+      </eAnnotations>
+      <eLiterals name="RISC"/>
+      <eLiterals name="CISC" value="1"/>
+      <eLiterals name="VLIW" value="2"/>
+      <eLiterals name="SIMD" value="3" literal="SIMD"/>
+      <eLiterals name="OTHER" value="4" literal="OTHER"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="MemoryAccessKind">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Decides what kind of access is allowed for a MemoryResource."/>
+      </eAnnotations>
+      <eLiterals name="READ_WRITE" literal="READ_WRITE"/>
+      <eLiterals name="READ_ONLY" value="1" literal="READ_ONLY"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="MemoryKind">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Decides the type of a MemoryResource."/>
+      </eAnnotations>
+      <eLiterals name="RAM"/>
+      <eLiterals name="ROM" value="1"/>
+      <eLiterals name="DISK" value="2"/>
+      <eLiterals name="FLASH" value="3" literal="FLASH"/>
+      <eLiterals name="OTHER" value="4" literal="OTHER"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="ReplacementPolicy">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The entries of the enumeration represent different kinds of replacement policies for a Cache."/>
+      </eAnnotations>
+      <eLiterals name="LRU"/>
+      <eLiterals name="FIFO" value="1"/>
+      <eLiterals name="NFU" value="2"/>
+      <eLiterals name="NRU" value="3" literal="NRU"/>
+      <eLiterals name="OTHER" value="4" literal="OTHER"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="WritePolicy">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Determines the write policy of a cache."/>
+      </eAnnotations>
+      <eLiterals name="WRITE_BACK"/>
+      <eLiterals name="WRITE_THROUGH" value="1"/>
+      <eLiterals name="OTHER" value="2"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="CommunicationKind">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Determines the kind of a HWPort."/>
+      </eAnnotations>
+      <eLiterals name="BUS"/>
+      <eLiterals name="LINK" value="1" literal="LINK"/>
+      <eLiterals name="DELEGATION" literal="DELEGATION"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ResourceRepository" eSuperTypes="../../org.muml.core.migrator/model/core-0.4.ecore#//CommentableElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a repository containing several resource types."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="UniqueProtocolName" value="-- A Protocol must have an unique name&#xA;self.protocols->isUnique(name)"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="UniqueProtocolName"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resources" lowerBound="1"
+          upperBound="-1" eType="#//hwresource/Resource" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The ResourceTypes that are contained in this ResourceTypeRepository."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="protocols" lowerBound="1"
+          upperBound="-1" eType="#//hwresource/CommunicationProtocolRepository" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The CommunicationProtocols that belong to this ResourceTypeRepository.&#xA;CommunicationProtocols are used to specify the protocol used by HWPort and CommunicationMedia."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CommunicationProtocolRepository" eSuperTypes="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a repository containing several CommunicationProtocol which are used in the hardware models."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="communicationProtocols"
+          upperBound="-1" eType="#//hwresource/CommunicationProtocol" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The contained CommunicationProtocols."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CommunicationProtocol" abstract="true"
+        eSuperTypes="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This abstract class represents the CommunicationProtocol used by the HWPorts and CommunicationMedia.&#xA;It is used to match Ports and CommunicationMedia."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isTimeTriggered" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="false">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Determines if the protocol is time triggered. "/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isEventTriggered" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="false">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Determines if this protocol is event triggered."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="furtherInformation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Further information for this protocol (i.e. Version, or another Protocol)."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isNetworkingProtocol"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Used t inidicate wether this Protocol is used for Networking ECUs or for triggering Sensors or Actuators."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="dataFrameSize" eType="#//hwvaluetype/DataSize"
+          containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The size of a data frame."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="bandwidth" eType="#//hwvaluetype/DataRate"
+          containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The bandwidth of this CommunicationMedia."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isSerial" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Determines if this CommunicationMedia uses a serial communication."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="BusProtocolKind">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Decides the used protocol for a BusProtocol."/>
+      </eAnnotations>
+      <eLiterals name="CAN"/>
+      <eLiterals name="FLEXRAY" value="1" literal="FLEXRAY"/>
+      <eLiterals name="LIN" value="2" literal="LIN"/>
+      <eLiterals name="BYTEFLIGHT" value="3" literal="BYTEFLIGHT"/>
+      <eLiterals name="TTP" value="4" literal="TTP"/>
+      <eLiterals name="MOST" value="5" literal="MOST"/>
+      <eLiterals name="I2C" value="6" literal="I2C"/>
+      <eLiterals name="USB" value="7"/>
+      <eLiterals name="OTHER" value="8" literal="OTHER"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BusProtocol" eSuperTypes="#//hwresource/CommunicationProtocol">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a bus protocol used by bus media and bus ports."/>
+      </eAnnotations>
+      <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="if (busProtocol == null) {&#xA;&#x9;&#x9;&#x9;return busProtocol.toString();&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;return super.toString();"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Redefinition of the Java toString method.&#xA;StringBuffer sb = new StringBuffer();&#xA;&#x9;&#x9;&#x9;&#x9;if (name == null) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;sb.append(&quot;null&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;} else {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;sb.append(this.name);&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;if (this.busProtocol != null) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;sb.append('_');&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;sb.append(this.busProtocol.toString());&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;return sb.toString();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="busProtocol" lowerBound="1"
+          eType="#//hwresource/BusProtocolKind">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The bus protocol type."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="LinkProtocol" eSuperTypes="#//hwresource/CommunicationProtocol">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a link protocol used by link media and link ports."/>
+      </eAnnotations>
+      <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="if (linkProtocol == null) {&#xA;&#x9;&#x9;&#x9;return linkProtocol.toString();&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;return super.toString();"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Redefinition of the Java toString method.&#xA;if (name == null) {&#xA;&#x9;&#x9;&#x9;sb.append(&quot;null&quot;);&#xA;&#x9;&#x9;} else {&#xA;&#x9;&#x9;&#x9;sb.append(this.name);&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;if (this.linkProtocol != null) {&#xA;&#x9;&#x9;&#x9;sb.append('_');&#xA;&#x9;&#x9;&#x9;sb.append(this.linkProtocol.toString());&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;return sb.toString();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="linkProtocol" lowerBound="1"
+          eType="#//hwresource/LinkProtocolKind">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The link protocol type."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="LinkProtocolKind">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Decides the used protocol for a LinkProtocol."/>
+      </eAnnotations>
+      <eLiterals name="ETHERNET"/>
+      <eLiterals name="ETHERCAT" value="1"/>
+      <eLiterals name="ANALOG" value="2" literal="ANALOG"/>
+      <eLiterals name="OTHER" value="3"/>
+      <eLiterals name="BLUETOOTH" value="4" literal="BLUETOOTH"/>
+      <eLiterals name="WIFI" value="5"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CommunicationResource" eSuperTypes="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents all resources which are able to transmit data."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="portKind" lowerBound="1"
+          eType="#//hwresource/CommunicationKind" volatile="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Determines if this HWPort is  a bus or a link port."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="if (self.protocol.oclIsUndefined()) then&#xD;&#xA;&#x9;hwresource::CommunicationKind::BUS&#xD;&#xA;else if (self.protocol.oclIsKindOf(hwresource::BusProtocol)) then&#xD;&#xA;&#x9;&#x9;hwresource::CommunicationKind::BUS&#xD;&#xA;else&#xD;&#xA;&#x9;&#x9;hwresource::CommunicationKind::LINK&#xD;&#xA;endif endif"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="protocol" lowerBound="1"
+          eType="#//hwresource/CommunicationProtocol">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The CommunicationProtocol this HWPort uses to transmit data."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" lowerBound="1"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Cardinality"
+          containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cardinality of this HWPort.&#xA;It determines the number of allowed hardware port instances."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiHWPort" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          volatile="true" transient="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="if (self.cardinality.oclIsUndefined()) then false else self.cardinality.upperBound.value>1 endif&#xA;"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This attribute indicates whether this HWPort is a multi port or not."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parentResource" lowerBound="1"
+          eType="#//hwresource/Resource" eOpposite="#//hwresource/Resource/communicationResources">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The hardware resource this CommunicationResource belongs to."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="hwresourceinstance" nsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/"
+      nsPrefix="hwresourceinstance">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The package platform contains all classes of the Platform Type Viewpoint.&#xA;Hardware platforms are defined at the type level and may be instantiated in a HWPlatformInstanceConfiguration at the Platform Instance Viewpoint.&#xA;"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </eAnnotations>
+    <eClassifiers xsi:type="ecore:EClass" name="ResourceInstance" abstract="true"
+        eSuperTypes="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This abstract class is the super class of all resource instances.&#xA;The associated HWPortInstances are determined by its resource type."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hwports" upperBound="-1"
+          eType="#//hwresourceinstance/HWPort" containment="true" eOpposite="#//hwresourceinstance/HWPort/parentResourceInstance">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The HWPort of this ResourceType.&#xA;&#xA;"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resourceType" lowerBound="1"
+          eType="#//hwresource/Resource">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The resource type of which this ResourceInstance is derived."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ComputingResourceInstance" abstract="true"
+        eSuperTypes="#//hwresourceinstance/AtomicResourceInstance">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents an instance of a ComputingResource.&#xA;ComputingResources are resources that are able to execute code."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="frequency" lowerBound="1"
+          eType="#//hwvaluetype/Frequency" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The frequency or clock rate of this ComputingResource."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MemoryResourceInstance" abstract="true"
+        eSuperTypes="#//hwresourceinstance/AtomicResourceInstance">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="CheckResourceType"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="CheckResourceType" value="-- The ResourceType must be of Kind MemoryResource&#xA;self.resourceType.oclIsKindOf(hwresource::MemoryResource)"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This abstract class is the super class for all memory instances."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="memorySize" lowerBound="1"
+          eType="#//hwvaluetype/DataSize" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The total size of  memory this instances provides."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="throughput" eType="#//hwvaluetype/DataRate"
+          containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The maximum speed at which the memory can be read."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="memoryType" lowerBound="1"
+          eType="#//hwresource/MemoryKind" changeable="false" volatile="true" transient="true"
+          derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="self.resourceType.oclAsType(hwresource::MemoryResource).memoryType"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The type of this MemoryInstance. It is derived from its resourceType."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DeviceInstance" abstract="true" eSuperTypes="#//hwresourceinstance/ResourceInstance">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This abstract class is the super class of all sensors and actuators at instance level."/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StorageMemoryInstance" eSuperTypes="#//hwresourceinstance/MemoryResourceInstance">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="CheckMemoryNonVolatile"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="CheckMemoryNonVolatile" value="-- The ResourceType must be of Kind non-volatile MemoryResource&#xA;-- The ResourceType must be of Kind volatile MemoryResource&#xA;if self.resourceType.oclIsUndefined() then&#xD;&#xA;false&#xD;&#xA;else&#xD;&#xA;self.resourceType.oclAsType(hwresource::MemoryResource).isVolatile=false&#xD;&#xA;endif&#xA;&#xA;"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents an instance of non-volatile memory which is capable of storing data."/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ProcessingMemoryInstance" eSuperTypes="#//hwresourceinstance/MemoryResourceInstance">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="CheckMemoryVolatile"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="CheckMemoryVolatile" value="-- The ResourceType must be of Kind volatile MemoryResource&#xA;if self.resourceType.oclIsUndefined() then&#xD;&#xA;false&#xD;&#xA;else&#xD;&#xA;self.resourceType.oclAsType(hwresource::MemoryResource).isVolatile=true&#xD;&#xA;endif&#xA;&#xA;"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents fast and volatile processing memory (i.e. SRAM)."/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CacheInstance" eSuperTypes="#//hwresourceinstance/MemoryResourceInstance">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a cache at instance level."/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ProgrammableLogicDeviceInstance" eSuperTypes="#//hwresourceinstance/ComputingResourceInstance">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="CheckResourceType"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="CheckResourceType" value="-- ResourceType must be of Kind PLD&#xA;self.resourceType.oclIsKindOf(hwresource::ProgrammableLogicDevice)"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a PLD at instance level."/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ProcessorInstance" eSuperTypes="#//hwresourceinstance/ComputingResourceInstance">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="CheckResourceType"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="CheckResourceType" value="-- ResourceType must be of Kind Processor&#xA;self.resourceType.oclIsKindOf(hwresource::Processor)"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A processor at instance level."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="MIPS" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The MIPS-Rate (Million instructions per second) of this ProcessorInstance."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="CPI" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The average count of cycles per instruction (CPI) of this ProcessorInstance."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedCacheInstance" eType="#//hwresourceinstance/CacheInstance">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The CacheInstance this ProcessorInstance uses."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AtomicResourceInstance" abstract="true"
+        eSuperTypes="#//hwresourceinstance/ResourceInstance">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The abstract class AtomicResourceInstance is the super class for all atomic resource instances."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parentStructuredResourceInstance"
+          lowerBound="1" eType="#//hwresourceinstance/StructuredResourceInstance"
+          eOpposite="#//hwresourceinstance/StructuredResourceInstance/embeddedAtomicResourceInstances">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The StructuredResourceInstance, this AtomicResourceInstance belongs to."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StructuredResourceInstance" eSuperTypes="#//hwresourceinstance/ResourceInstance">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="CheckResourceType AllAtomicResourceTypesAreInitialized UniquePortNames"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="AllAtomicResourceTypesAreInitialized" value="-- All Atomic Resources must be initialized&#xA;if(self.resourceType.oclIsUndefined()) then&#xA;&#x9;true&#xA;else &#xA;&#x9;self.resourceType.oclAsType(hwresource::StructuredResource).embeddedAtomicResources->forAll(atomicResourceType | self.embeddedAtomicResourceInstances->exists(atomicResourceInstance | atomicResourceInstance.oclAsType(hwresourceinstance::AtomicResourceInstance).resourceType = atomicResourceType))&#xA;endif"/>
+        <details key="CheckResourceType" value="-- ResourceType must be of Kind StructuredResource&#xA;self.resourceType.oclIsKindOf(hwresource::StructuredResource)"/>
+        <details key="UniquePortNames" value="-- The Ports must have an unique name&#xA;self.hwports->isUnique(name)"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a structured resource at instance level.&#xA;A StructuredResourceInstance is  derived from its resourcetype.&#xA;The embedded AtomicResourceInstances of this StructuredResourceInstance are derived from its type."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="embeddedAtomicResourceInstances"
+          lowerBound="1" upperBound="-1" eType="#//hwresourceinstance/AtomicResourceInstance"
+          containment="true" eOpposite="#//hwresourceinstance/AtomicResourceInstance/parentStructuredResourceInstance">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The AtomicResourceInstances which are contained in this StructuredResourceInstance.&#xA;The AtomicResourceInstances are determined by the AtomicResources which are embedded in the StructuredResource type."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SensorInstance" eSuperTypes="#//hwresourceinstance/DeviceInstance">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a sensor device at instance level."/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ActuatorInstance" eSuperTypes="#//hwresourceinstance/DeviceInstance">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents an actuator device at instance level."/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ResourceInstanceRepository" eSuperTypes="../../org.muml.core.migrator/model/core-0.4.ecore#//CommentableElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a ResourceInstanceRepository. &#xA;A ResourceInstanceRepository contains all ResourceInstances to build a HWPlatform. The ResourceInstances are derived from a ResourceTypeRepository."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resourceInstances" lowerBound="1"
+          upperBound="-1" eType="#//hwresourceinstance/ResourceInstance" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The ResourceInstances that are contained in this ResourceInstanceRepository. They are derived from a ResourceTypeRepository."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HWPort" eSuperTypes="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a hardware port of a resource instance."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parentResourceInstance"
+          eType="#//hwresourceinstance/ResourceInstance" eOpposite="#//hwresourceinstance/ResourceInstance/hwports">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The ResourceInstance this hardware port belongs to.&#xA;Theoretically the bound shall be 1..1. However this would prevent the reuse of this class in the platform and platforminstance model."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="communicationResource"
+          eType="#//hwresource/CommunicationResource"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="protocol" eType="#//hwresource/CommunicationProtocol"
+          changeable="false" volatile="true" transient="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="if(self.communicationResource.oclIsUndefined()) then&#xA;&#x9;if self.oclIsKindOf(hwplatform::DelegationHWPort) then&#xA;   &#x9;&#x9; let endpoints : Set(connector::ConnectorEndpoint) = self.oclAsType(connector::ConnectorEndpoint)->closure(c| c.oclAsType(connector::ConnectorEndpoint).connectors.connectorEndpoints)->asOrderedSet() in&#xA;   &#x9;&#x9; let buses : Bag (hwplatform::Bus) = endpoints->select(e|e.oclIsKindOf(hwplatform::Bus) and not e.oclAsType(hwplatform::Bus).protocol.oclIsUndefined()).oclAsType(hwplatform::Bus) in&#xA;   &#x9;&#x9; let ports : Bag (hwplatform::HWPortPart) = endpoints->select(e|e.oclIsKindOf(hwplatform::HWPortPart) and not e.oclAsType(hwplatform::HWPortPart).hwport.protocol.oclIsUndefined()).oclAsType(hwplatform::HWPortPart) in&#xA;  &#x9;&#x9;let usedprotocols : Bag(hwresource::CommunicationProtocol) = buses.protocol->union(ports.hwport.protocol) in&#xA;  &#x9;&#x9;usedprotocols->any(true)&#xA; &#x9;else null&#xA;&#x9;endif&#xA;else&#xA; &#x9;self.communicationResource.protocol&#xA; endif"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The used protocol of this HWPortInstance."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Cardinality"
+          volatile="true" derived="true" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cardinality of this HWPort.&#xA;It determines the number of allowed hardware port instances."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="if(self.communicationResource.oclIsUndefined()) then&#xA;&#x9; null&#xA;&#x9;else&#xA;&#x9; &#x9;self.communicationResource.cardinality&#xA;&#x9; endif"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiHWPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          volatile="true" transient="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="if (self.communicationResource.oclIsUndefined()) then&#xA;&#x9;false&#xA;else &#xA;   self.communicationResource.multiHWPort&#xA;  endif"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This attribute indicates whether this HWPort is a multi port or not."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="portKind" lowerBound="1"
+          eType="#//hwresource/CommunicationKind" volatile="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Determines if this HWPort is  a bus or a link port."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="if (self.communicationResource.oclIsUndefined()) then&#xA;&#x9;hwresource::CommunicationKind::DELEGATION&#xA;else &#xA;   self.communicationResource.portKind&#xA; endif"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>

@@ -1,0 +1,69 @@
+library PatternProtocolSameRootTransformationLibrary;
+import ModelcopyLibrary;
+
+modeltype common uses core::expressions::common('http://www.muml.org/core/1.0.0');
+modeltype PimPackage uses pim('http://www.muml.org/pim/1.0.0');
+modeltype ComponentPackage uses pim::component('http://www.muml.org/pim/1.0.0');
+modeltype ProtocolPackage uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype RTSCPackage uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype ConnectorPackage uses pim::connector('http://www.muml.org/pim/1.0.0');
+modeltype TypesPackage uses pim::types('http://www.muml.org/pim/1.0.0');
+modeltype ValuetypePackage uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype MessageTypePackage uses pim::msgtype('http://www.muml.org/pim/1.0.0');
+modeltype BehaviorPackage uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype core uses core('http://www.muml.org/core/1.0.0');
+modeltype ModelInstancePackage uses core::modelinstance('http://www.muml.org/core/1.0.0');
+modeltype PatternPackage uses pim::pattern('http://www.muml.org/pim/1.0.0');
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+modeltype actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
+
+mapping DiscreteInteractionEndpoint :: transform() : EObject {
+	init {
+		result := self.map create();
+	}
+	var element := self.oclAsType(EObject);
+	element.eClass().eAllReferences->select(f | f.isValidFeature())->forEach(f) {
+		setValues(result, f, getValues(element, f).map transform());
+	};
+	element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+		setValues(result, f, getValues(element, f));
+	}
+}
+
+mapping ParameterBinding :: transform() : EObject {
+	
+	init {
+		result := self.map create();
+		
+		var resultingBinding := result.oclAsType(ParameterBinding);
+		resultingBinding.parameter := self.parameter.map transform().oclAsType(Parameter);
+		resultingBinding.value := self.value.map transform().oclAsType(core::expressions::Expression);
+		resultingBinding.extensions := self.extensions.map transform().oclAsType(core::Extension);		
+	}
+}
+
+mapping DataType :: transform() : EObject {
+	init{
+		if(not self.oclIsKindOf(DiscreteInteractionEndpoint) and not self.oclIsKindOf(Component) and not self.oclIsKindOf(ComponentPart)){
+			result :=  self.oclAsType(EObject);	
+		}
+		else {
+			if(self.oclIsKindOf(pim::protocol::Role)) {
+				result := self.oclAsType(pim::protocol::Role).map transform();
+			}
+			else if(self.oclIsKindOf(pim::connector::DiscreteInteractionEndpoint)) {
+				result := self.oclAsType(pim::connector::DiscreteInteractionEndpoint).map transform();
+			}
+			else if(self.oclIsKindOf(pim::component::Component)){
+				result := self.oclAsType(pim::component::Component).map transform();
+			}
+			else if(self.oclIsKindOf(pim::component::ComponentPart)){
+				result := self.oclAsType(pim::component::ComponentPart).map transform();
+			}
+			else assert fatal (false) with log ("Error: transformation for DataType not yet created");
+		}		
+	}
+}
+
+
+

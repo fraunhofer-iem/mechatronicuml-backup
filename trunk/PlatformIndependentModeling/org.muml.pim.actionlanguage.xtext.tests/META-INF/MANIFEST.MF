@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MechatronicUML ActionLanguage Tests
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.muml.pim.actionlanguage.xtext.tests;singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.muml.pim.actionlanguage.xtext,
+ org.muml.pim.actionlanguage.xtext.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.xtext,
+ org.eclipse.xtext.junit4,
+ org.junit,
+ org.eclipse.ui.workbench;resolution:=optional,
+ org.muml.pim,
+ org.muml.pim.actionlanguage,
+ org.eclipse.xtext.xbase.lib
+Import-Package: org.apache.log4j,
+ org.apache.commons.logging,
+ org.junit.runner;version="4.5.0",
+ org.junit.runner.manipulation;version="4.5.0",
+ org.junit.runner.notification;version="4.5.0",
+ org.junit.runners;version="4.5.0",
+ org.junit.runners.model;version="4.5.0",
+ org.hamcrest.core
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: org.muml.pim.actionlanguage.xtext

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.muml.external.owlapi.feature" label="owlapi external dependency" provider-name="%providerName" version="1.0.0.qualifier">
+
+   <description>
+      This feature provides a plugin that ships the owlapi-distribution-4.0.0-distribution.jar
+and owlapi-distribution-4.0.0-javadoc.jar, which are provided by
+http://sourceforge.net/projects/owlapi/
+   </description>
+
+   <copyright url="%copyrightURL">
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <plugin download-size="0" id="org.muml.external.owlapi" install-size="0" unpack="false" version="0.0.0"/>
+
+</feature>

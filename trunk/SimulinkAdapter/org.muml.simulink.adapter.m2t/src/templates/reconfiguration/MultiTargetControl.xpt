@@ -1,0 +1,106 @@
+«IMPORT simulink»
+«IMPORT reconfiguration»
+
+
+«EXTENSION extensions::Element»
+«EXTENSION extensions::Block»
+
+«DEFINE multiTargetControl FOR MultiTargetControl»
+  Block {
+    BlockType SubSystem
+    Name "«this.getName()»"
+    SID				«this.getSimulinkId()»
+    Ports [«this.inPorts.select(p|!EnablePort.isInstance(p) && !TriggerPort.isInstance(p)).size», «this.outPorts.size», «this.inPorts.select(p|EnablePort.isInstance(p)).size», «this.inPorts.select(p|TriggerPort.isInstance(p)).size»]
+    Tag		"id=«this.id»"
+	«EXPAND templates::Parameter::parameter FOREACH this.parameters.reject(p| {'BlockType','Name', 'SID', 'Tag', 'Ports'}.contains(p.name)  || p.name.startsWith('System.'))-»
+	  System {
+	  	Name  "«this.getName()»"
+	  	Open			off 	  	
+	  	«FOREACH this.parameters.select(p|p.name.startsWith('System.') && p.name != 'System.Name') AS parameter-»
+	  	«parameter.name.replaceFirst('System.','')» "«parameter.value»"
+	  	«ENDFOREACH-»
+	  	«EXPAND templates::InPortBlock::inPortBlock FOREACH this.inPorts.select(p| !EnablePort.isInstance(p)&& !TriggerPort.isInstance(p))-»
+	  	«EXPAND templates::OutPortBlock::outPortBlock FOREACH this.outPorts-»
+	  	
+	    Block {
+	      BlockType		      Constant
+	      Name		      "default"
+	      Position		      [35, 110, 65, 140]
+	      Value		      "0"
+	      OutDataTypeMode	      "Inherit via back propagation"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "Inherit: Inherit via back propagation"	      
+	    }	  	
+	  	
+ 		Block {
+	      BlockType		      Demux
+	      Name		      "Demux"
+	      Ports		      [1, «this.outPorts.size»]
+	      Position		      [170, 51, 175, 89]
+	      ShowName		      off
+	      Outputs		      "«this.outPorts.size»"
+	      DisplayOption	      "bar"
+	    }
+	    
+	    «FOREACH this.outPorts AS outPort ITERATOR it»
+	    Block {
+	      BlockType		      Switch
+	      Name		      "Switch«it.counter0»"
+	      Position		      [265, «85 +(it.counter0*85)», 295, «115 +(it.counter0*75)»]
+	      InputSameDT	      off
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      SaturateOnIntegerOverflow	off
+	    }	  
+	   Line {
+	      SrcBlock		      "Switch«it.counter0»"
+	      SrcPort		      «1»
+	      DstBlock		      "«outPort.getName()»"
+	      DstPort		      1
+	    }  
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      «it.counter1»
+	      DstBlock		      "Switch«it.counter0»"
+	      DstPort		      2
+	    }
+	    «ENDFOREACH»
+	    
+	    Line {
+	      SrcBlock		      "in"
+	      SrcPort		      1   
+	      [60, 0; 0, 5]
+	    «FOREACH this.outPorts AS outPort ITERATOR it-»
+	     Branch {
+	     Points			[0, «it.counter0*85»]
+		DstBlock		"Switch«it.counter0»"
+		DstPort			1
+	      }
+		«ENDFOREACH-»
+	    }	 
+	    
+	    Line {
+	      SrcBlock		      "default"
+	      SrcPort		      1    
+	       Points		      [25, 0] 
+	    «FOREACH this.outPorts AS outPort ITERATOR it-»
+	     Branch {
+	     Points			[0, «-35+(it.counter0*110)»]
+		DstBlock		"Switch«it.counter0»"
+		DstPort			3
+	      }
+		«ENDFOREACH-»
+	    }	    
+
+	    Line {
+	      SrcBlock		      "ctrl"
+	      SrcPort		      1
+	      DstBlock		      "Demux"
+	      DstPort		      1
+	    }
+	    	    
+	    
+	  }
+  }
+«ENDDEFINE»

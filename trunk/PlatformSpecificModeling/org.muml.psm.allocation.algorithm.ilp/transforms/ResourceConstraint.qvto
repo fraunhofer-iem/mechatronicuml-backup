@@ -1,0 +1,100 @@
+import Expressions;
+import OCLEvaluator;
+import TupleAccessor;
+import Sort;
+import Util;
+import Variables;
+import VariableHelper;
+
+modeltype allocationSpecification uses cs('http://www.muml.org/psm/allocation/language/cs/1.0.0');
+modeltype oclcontext uses oclcontext('http://www.muml.org/psm/allocation/language/oclcontext/1.0.0');
+modeltype core uses core('http://www.muml.org/core/1.0.0');
+modeltype ilptype uses ilp('http://www.muml.org/psm/allocation/ilp/1.0.0');
+modeltype expressions uses core::expressions('http://www.muml.org/core/expressions/1.0.0');
+modeltype common uses core::expressions::common('http://www.muml.org/core/expressions/common/1.0.0');
+modeltype instance uses pim::instance('http://www.muml.org/pim/instance/1.0.0');
+modeltype hwpinstance uses hardware::hwplatforminstance('http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0');
+modeltype hwrinstance uses hardware::hwresourceinstance('http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0');
+modeltype values uses values('http://www.eclipse.org/ocl/2015/Values');
+
+
+library ResourceConstraint;
+
+// In this lib we do a lot of sorting: this is only needed to get
+// a reproducable output (and it indirectly reduces the number of
+// needed variables in some cases (see
+// resourceConstraint/resourceConstraintMultipleConstraintsAndDescriptorsOrder.allocation_specification
+// fixture file)). All this sorting is needed, because we often
+// switch between a tuple value and its sequence representation
+// (we cannot solely use the sequence representation, because we need access
+// to the lhs value (and maintaining the lhs value in the sequence is awkward
+// (NamedElement + Real => common supertype OclAny))).
+
+helper SpecificationCS::createResourceConstraints(inout ilp : IntegerLinearProgram,
+	cic : ComponentInstanceConfiguration,
+	hpic : HWPlatformInstanceConfiguration) {
+	self.getResourceConstraints()->createResourceConstraint(ilp, cic, hpic);
+}
+
+helper ResourceConstraintCS::createResourceConstraint(inout ilp : IntegerLinearProgram,
+	cic : ComponentInstanceConfiguration,
+	hpic : HWPlatformInstanceConfiguration) {
+	var oclContext : OCLContext := createOCLContext(cic, hpic);
+	var sequences : Sequence(TupleValue) := self.evaluateOCL(oclContext);
+	sequences->sortOuterResultSequence(self)->createResourceConstraint(ilp, self);
+}
+
+query Sequence(TupleValue)::sortOuterResultSequence(constraintCS : ResourceConstraintCS) : Sequence(TupleValue) {
+	return self->sortedBy(tv : TupleValue | tv.getOuterId(constraintCS));
+}
+
+query TupleValue::getOuterId(constraintCS : ResourceConstraintCS) : String {
+	// the outer id consists of the rhs + the join of all inner ids
+	// this uniquely identifies an outer tuple (because the outer tuples
+	// are contained in a set => no duplicates)
+	return let char : String = ILLEGAL_VARIABLE_CHARS()->at(1)
+	in
+	self.getRhsValue(constraintCS) + char + char.join(
+		self.getSequence(constraintCS.weighting.value)
+			->sortWeightingComponentResourceTuples(constraintCS)
+			->collect(tv : TupleValue | tv.getWeightingComponentResourceTupleSortId(constraintCS))
+	);
+}
+
+helper TupleValue::createResourceConstraint(inout ilp : IntegerLinearProgram, constraintCS : ResourceConstraintCS) {
+	var sequence : Sequence(TupleValue) := self.getSortedInnerResultSequence(constraintCS);
+	log("invalid? " + sequence->oclIsInvalid().toString());
+	sequence->collectNested(tv : TupleValue |
+		tv.toSequence()->sortComponentResourceSequence() // sort the sequence
+	)->createHelperVariablesAndConstraints(ilp);
+	sequence->createResourceConstraintExpression(ilp, constraintCS, self.getRhsValue(constraintCS));
+}
+
+query TupleValue::getSortedInnerResultSequence(constraintCS : ResourceConstraintCS) : Sequence(TupleValue) {
+	return self.getSequence(constraintCS.weighting.value)
+		->sortWeightingComponentResourceTuples(constraintCS);
+}
+
+helper Sequence(TupleValue)::createResourceConstraintExpression(inout ilp : IntegerLinearProgram,
+	constraintCS : ResourceConstraintCS, rhsValue : String) {
+	var comment : String := if constraintCS.name <> '' then constraintCS.name else constraintCS.repr() endif;
+	ilp.constraints += new ConstraintExpression(
+		self->createWeightingComponentResourceTuplesAdditionExpression(constraintCS, null),
+		new LiteralExpression(rhsValue),
+		ComparingOperator::LESS_OR_EQUAL, comment);
+}
+
+query TupleValue::getRhsValue(constraintCS : ResourceConstraintCS) : String {
+	return self.getValue(constraintCS.rhs.value);
+}
+
+query TupleValue::getValue(namedPart : String) : String {
+	return self.get(namedPart).oclAsType(Real).toString();
+}
+
+query SpecificationCS::getResourceConstraints() : OrderedSet(ResourceConstraintCS) {
+	return self.constraints
+		->select(oclIsKindOf(ResourceConstraintCS))
+		->collect(oclAsType(ResourceConstraintCS))
+		->asOrderedSet();
+}

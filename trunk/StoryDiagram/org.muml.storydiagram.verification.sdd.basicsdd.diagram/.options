@@ -1,0 +1,7 @@
+# Tracing options for the org.muml.storydiagram.verification.sdd.basicsdd.diagram plug-in
+
+# Common issues
+org.muml.storydiagram.verification.sdd.basicsdd.diagram/debug=false
+
+# Visual IDs
+org.muml.storydiagram.verification.sdd.basicsdd.diagram/debug/visualID=false

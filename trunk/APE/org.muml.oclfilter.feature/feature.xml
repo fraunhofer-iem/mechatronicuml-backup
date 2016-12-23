@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.muml.oclfilter.feature"
+      label="EMF Codegen OCL-Filter Feature"
+      version="1.0.0.qualifier"
+      provider-name="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn">
+
+   <description>
+      An EMF property choices filter that allows filters to be defined in OCL. 
+   </description>
+
+   <requires>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.emf.codegen.ecore"/>
+      <import plugin="org.eclipse.emf.edit"/>
+      <import plugin="org.eclipse.ocl.ecore" version="3.3.100" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="org.muml.oclfilter"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

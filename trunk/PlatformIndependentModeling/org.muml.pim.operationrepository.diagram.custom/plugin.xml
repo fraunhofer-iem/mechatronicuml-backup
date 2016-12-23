@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
+      <editpartProvider
+            class="org.muml.pim.operationrepository.diagram.custom.providers.CustomOperationrepositoryEditPartProvider">
+         <Priority
+               name="Low">
+         </Priority>
+      </editpartProvider>
+   </extension>
+   
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
+      <ParserProvider class="org.muml.pim.operationrepository.diagram.custom.providers.CustomOperationrepositoryParserProvider">
+         <Priority name="Low"/>
+      </ParserProvider>
+   </extension>
+
+</plugin>

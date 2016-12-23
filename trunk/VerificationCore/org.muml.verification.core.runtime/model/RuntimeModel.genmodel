@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="&lt;copyright>&#xD;&#xA;Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.&#xD;&#xA;All rights reserved. This program and the accompanying materials&#xD;&#xA;are made available under the terms of the Eclipse Public License v1.0&#xD;&#xA;which accompanies this distribution, and is available at&#xD;&#xA;http://www.eclipse.org/legal/epl-v10.html&#xD;&#xA;&#xD;&#xA;Contributors:&#xD;&#xA;    Software Engineering Group - initial API and implementation&#xD;&#xA;&lt;/copyright>"
+    modelDirectory="/org.muml.verification.core.runtime/src" modelPluginID="org.muml.verification.core.runtime"
+    modelName="RuntimeModel" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false" usedGenPackages="../../org.muml.pim/model/pim.genmodel#//pim ../../org.muml.core/model/core.genmodel#//core">
+  <foreignModel>RuntimeModel.ecore</foreignModel>
+  <genPackages prefix="Runtime" basePackage="org.muml.verification.core" disposableProviderFactory="true"
+      ecorePackage="RuntimeModel.ecore#/">
+    <genDataTypes ecoreDataType="RuntimeModel.ecore#//JavaObject"/>
+    <genClasses ecoreClass="RuntimeModel.ecore#//RuntimeComponentInstance"/>
+    <genClasses ecoreClass="RuntimeModel.ecore#//RuntimeDiscretePortInstance"/>
+    <genClasses image="false" ecoreClass="RuntimeModel.ecore#//RoleInstance">
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RoleInstance/role"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RoleInstance/assembly"/>
+    </genClasses>
+    <genClasses ecoreClass="RuntimeModel.ecore#//RuntimeMessageBuffer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RuntimeMessageBuffer/messages"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RuntimeMessageBuffer/runtimeBehavioralElement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RuntimeMessageBuffer/messageBuffer"/>
+    </genClasses>
+    <genClasses ecoreClass="RuntimeModel.ecore#//RealtimeStatechartInstance">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RealtimeStatechartInstance/runtimeBehavioralElement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RealtimeStatechartInstance/instanceOf"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RealtimeStatechartInstance/activeVertex"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RealtimeStatechartInstance/subRealtimeStatechartInstances"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RealtimeStatechartInstance/parentRealtimeStatechartInstance"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RealtimeStatechartInstance/variableBindings"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RealtimeStatechartInstance/allAvailableVariableBindings"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RealtimeStatechartInstance/nearestRuntimeBehavioralElement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RealtimeStatechartInstance/activeTransition"/>
+    </genClasses>
+    <genClasses ecoreClass="RuntimeModel.ecore#//RuntimeMessage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RuntimeMessage/parameters"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RuntimeMessage/type"/>
+    </genClasses>
+    <genClasses ecoreClass="RuntimeModel.ecore#//RuntimeParameter">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RuntimeParameter/message"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EAttribute RuntimeModel.ecore#//RuntimeParameter/value"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RuntimeParameter/parameter"/>
+    </genClasses>
+    <genClasses ecoreClass="RuntimeModel.ecore#//VariableBinding">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//VariableBinding/variable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RuntimeModel.ecore#//VariableBinding/value"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="RuntimeModel.ecore#//RuntimeBehavioralElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RuntimeBehavioralElement/statechartInstance"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RuntimeBehavioralElement/messageBuffer"/>
+    </genClasses>
+    <genClasses ecoreClass="RuntimeModel.ecore#//SingleRoleInstance"/>
+    <genClasses ecoreClass="RuntimeModel.ecore#//MultiRoleInstance"/>
+    <genClasses ecoreClass="RuntimeModel.ecore#//RuntimeRoleConnectorInstance"/>
+    <genClasses image="false" ecoreClass="RuntimeModel.ecore#//RuntimeConnectorInstance">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RuntimeConnectorInstance/transientMessages"/>
+    </genClasses>
+    <genClasses ecoreClass="RuntimeModel.ecore#//RuntimeAssemblyConnectorInstance"/>
+    <genClasses ecoreClass="RuntimeModel.ecore#//MessageOnConnector">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//MessageOnConnector/receiver"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//MessageOnConnector/message"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference RuntimeModel.ecore#//MessageOnConnector/runtimeConnectorInstance"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="RuntimeModel.ecore#//RuntimeDiscreteInteractionEndpointInstance"/>
+    <genClasses ecoreClass="RuntimeModel.ecore#//RuntimeDiscreteSinglePortInstance"/>
+    <genClasses ecoreClass="RuntimeModel.ecore#//RuntimeDiscreteMultiPortInstance"/>
+  </genPackages>
+</genmodel:GenModel>

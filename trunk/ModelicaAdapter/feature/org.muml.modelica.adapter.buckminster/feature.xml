@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.muml.modelica.adapter.buckminster"
+      label="Buckminster"
+      version="1.0.0.qualifier">
+
+   <description>
+      [Enter Feature Description here.]
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <includes
+         id="org.muml.modelica.adapter.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.muml.modelica.adapter.sdk.feature"
+         version="0.0.0"/>
+
+   <requires>
+      <import plugin="org.muml.graphviz.dot.xtext"/>
+      <import plugin="org.muml.graphviz.dot.xtext.ui"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.xtext.junit4"/>
+      <import plugin="org.muml.graphviz" version="0.1.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.core" version="1.0.1" match="greaterOrEqual"/>
+      <import plugin="org.apache.log4j"/>
+      <import plugin="org.junit"/>
+      <import plugin="org.hamcrest.core"/>
+      <import plugin="org.muml.graphviz.plain.xtext"/>
+      <import plugin="org.muml.graphviz.plain.xtext.ui"/>
+   </requires>
+
+</feature>

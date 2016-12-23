@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_uysmQKr6EeO4TtKifqniAw" type="Component" name="SensorController.component_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_uytNUKr6EeO4TtKifqniAw" type="2006" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_uytNUqr6EeO4TtKifqniAw" type="5028"/>
+    <element xmi:type="component:StaticAtomicComponent" href="../VehicleExample.fujaba#_jG2gQJI6EeOKvL3T9kRl_w"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uytNUar6EeO4TtKifqniAw"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_uysmQar6EeO4TtKifqniAw"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../VehicleExample.fujaba#_eqWfwJI6EeOKvL3T9kRl_w"/>
+</notation:Diagram>

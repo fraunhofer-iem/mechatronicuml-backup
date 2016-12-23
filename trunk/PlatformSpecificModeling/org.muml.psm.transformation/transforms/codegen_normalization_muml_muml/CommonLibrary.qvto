@@ -1,0 +1,50 @@
+import PredefinedTypesLibrary;
+
+library CommonLibrary;
+
+modeltype Core uses core('http://www.muml.org/core/1.0.0');
+
+modeltype PimPackage uses pim('http://www.muml.org/pim/1.0.0');
+modeltype ConnectorPackage uses pim::connector('http://www.muml.org/pim/1.0.0');
+modeltype ValuetypePackage uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype ComponentPackage uses pim::component('http://www.muml.org/pim/1.0.0');
+modeltype MessagePackage uses pim::msgtype('http://www.muml.org/pim/1.0.0');
+modeltype Behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype RTSC uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype InstancePackage uses pim::instance('http://www.muml.org/pim/1.0.0');
+modeltype TypesPackage uses pim::types('http://www.muml.org/pim/1.0.0');
+
+modeltype ModelInstance uses modelinstance('http://www.muml.org/modelinstance/1.0.0');
+modeltype Actionlanguage uses actionlanguage('http://www.muml.org/pim/actionlanguage/1.0.0');
+
+modeltype PSM uses psm('http://www.muml.org/psm/1.0.0');
+modeltype Allocation uses psm::allocation('http://www.muml.org/psm/1.0.0');
+modeltype Codegen uses psm::codegen('http://www.muml.org/psm/1.0.0');
+modeltype PortMappingModel uses psm::portapimapping('http://www.muml.org/psm/1.0.0');
+modeltype ApiExpessions uses psm::apiexpressions('http://www.muml.org/psm/1.0.0');
+
+modeltype SoftPlattform uses software('http://www.muml.org/pm/software/1.0.0');
+modeltype Hardware uses hardware('http://www.muml.org/pm/hardware/1.0.0');
+modeltype Platform uses hardware::hwplatform('http://www.muml.org/pm/hardware/1.0.0');
+modeltype PlatformInstance uses hardware::hwplatforminstance('http://www.muml.org/pm/hardware/1.0.0');
+modeltype ResourceInstance uses hardware::hwresourceinstance('http://www.muml.org/pm/hardware/1.0.0');
+modeltype Resource uses hardware::hwresource('http://www.muml.org/pm/hardware/1.0.0');
+
+// the message Type Repository for the api values 
+property property_apiMessageRepository: MessageTypeRepository= object MessageTypeRepository{
+	name:="API_MESSAGES"	
+};
+property property_genComponentInstance:Set(GenComponentInstance);
+
+
+
+/***
+* Query the CodeGen Model to get relevant information
+**/
+query ComponentInstance::getGenComponentInstance():GenComponentInstance{
+	return property_genComponentInstance->select(genComp|genComp.componentInstance=self)->any(true);
+}
+
+query PortInstance::getGenPortInstance():GenPortInstance{
+	return property_genComponentInstance.genPortInstances->select(port|port.portInstance=self)->any(true);
+}

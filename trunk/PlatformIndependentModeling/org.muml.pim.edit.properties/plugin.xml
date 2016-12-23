@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+
+  <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+    <propertyContributor
+          contributorId="org.muml.ape.contributor">
+       <propertyCategory
+             category="domain">
+       </propertyCategory>
+       <propertyCategory
+             category="default">
+       </propertyCategory>
+       <propertyCategory
+             category="extended">
+       </propertyCategory>
+       <propertyCategory
+             category="advanced">
+       </propertyCategory>
+    </propertyContributor>
+  </extension>
+
+
+
+<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs contributorId="org.muml.ape.contributor">
+          <propertyTab
+             category="domain"
+             id="property.tab.constraint"
+             afterTab="property.tab.comment"
+             label="Constraint"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.descriptionAspects"
+             afterTab="property.tab.constraint"
+             label="Description Aspects"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.condition"
+             afterTab="property.tab.general"
+             label="Condition"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.effect"
+             afterTab="property.tab.condition"
+             label="Effect"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.deadline"
+             afterTab="property.tab.effect"
+             label="Deadline"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.sampling"
+             afterTab="property.tab.deadline"
+             label="Sampling"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.message"
+             afterTab="property.tab.sampling"
+             label="Message"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.behavior"
+             afterTab="property.tab.behavior"
+             label="Behavior"/>
+          
+      </propertyTabs>
+  </extension>
+
+
+
+
+  <extension point="org.eclipse.ui.views.properties.tabbed.propertySections"> 
+      <propertySections contributorId="org.muml.ape.contributor">
+          <propertySection
+            class="org.muml.ape.runtime.sections.ObjectPropertySection"
+            filter="org.muml.pim.properties.tabs.Property_tab_constraintTabElementFilter"
+            id="property.tab.constraint"
+            tab="property.tab.constraint">
+             <input
+               type="org.eclipse.emf.ecore.EObject">
+             </input>
+          </propertySection>
+          <propertySection
+            class="org.muml.ape.runtime.sections.ObjectPropertySection"
+            filter="org.muml.pim.properties.tabs.Property_tab_descriptionAspectsTabElementFilter"
+            id="property.tab.descriptionAspects"
+            tab="property.tab.descriptionAspects">
+             <input
+               type="org.eclipse.emf.ecore.EObject">
+             </input>
+          </propertySection>
+          <propertySection
+            class="org.muml.ape.runtime.sections.ObjectPropertySection"
+            filter="org.muml.pim.properties.tabs.Property_tab_conditionTabElementFilter"
+            id="property.tab.condition"
+            tab="property.tab.condition">
+             <input
+               type="org.eclipse.emf.ecore.EObject">
+             </input>
+          </propertySection>
+          <propertySection
+            class="org.muml.ape.runtime.sections.ObjectPropertySection"
+            filter="org.muml.pim.properties.tabs.Property_tab_effectTabElementFilter"
+            id="property.tab.effect"
+            tab="property.tab.effect">
+             <input
+               type="org.eclipse.emf.ecore.EObject">
+             </input>
+          </propertySection>
+          <propertySection
+            class="org.muml.ape.runtime.sections.ObjectPropertySection"
+            filter="org.muml.pim.properties.tabs.Property_tab_deadlineTabElementFilter"
+            id="property.tab.deadline"
+            tab="property.tab.deadline">
+             <input
+               type="org.eclipse.emf.ecore.EObject">
+             </input>
+          </propertySection>
+          <propertySection
+            class="org.muml.ape.runtime.sections.ObjectPropertySection"
+            filter="org.muml.pim.properties.tabs.Property_tab_samplingTabElementFilter"
+            id="property.tab.sampling"
+            tab="property.tab.sampling">
+             <input
+               type="org.eclipse.emf.ecore.EObject">
+             </input>
+          </propertySection>
+          <propertySection
+            class="org.muml.ape.runtime.sections.ObjectPropertySection"
+            filter="org.muml.pim.properties.tabs.Property_tab_messageTabElementFilter"
+            id="property.tab.message"
+            tab="property.tab.message">
+             <input
+               type="org.eclipse.emf.ecore.EObject">
+             </input>
+          </propertySection>
+          <propertySection
+            class="org.muml.ape.runtime.sections.ObjectPropertySection"
+            filter="org.muml.pim.properties.tabs.Property_tab_behaviorTabElementFilter"
+            id="property.tab.behavior"
+            tab="property.tab.behavior">
+             <input
+               type="org.eclipse.emf.ecore.EObject">
+             </input>
+          </propertySection>
+         
+      </propertySections>
+  </extension>
+
+
+
+ <extension point="org.muml.ape.runtime.propertyEditors">
+    <propertyEditors>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.valuetype.editor.CardinalityEditor$Factory"
+             type="http://www.muml.org/pim/valuetype/1.0.0#Cardinality">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.valuetype.editor.NaturalNumberEditor$Factory"
+             type="http://www.muml.org/pim/valuetype/1.0.0#NaturalNumber">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.valuetype.editor.RangeEditor$Factory"
+             type="http://www.muml.org/pim/valuetype/1.0.0#Range">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.valuetype.editor.TimeValueEditor$Factory"
+             type="http://www.muml.org/pim/valuetype/1.0.0#TimeValue">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.realtimestatechart.editor.AbsoluteDeadlineEditor$Factory"
+             type="http://www.muml.org/pim/realtimestatechart/1.0.0#AbsoluteDeadline">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.realtimestatechart.editor.RelativeDeadlineEditor$Factory"
+             type="http://www.muml.org/pim/realtimestatechart/1.0.0#RelativeDeadline">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.realtimestatechart.editor.ClockEditor$Factory"
+             type="http://www.muml.org/pim/realtimestatechart/1.0.0#Clock">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.realtimestatechart.editor.RegionEditor$Factory"
+             type="http://www.muml.org/pim/realtimestatechart/1.0.0#Region">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.realtimestatechart.editor.StateEditor$Factory"
+             type="http://www.muml.org/pim/realtimestatechart/1.0.0#State">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.realtimestatechart.editor.TransitionEditor$Factory"
+             type="http://www.muml.org/pim/realtimestatechart/1.0.0#Transition">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.realtimestatechart.editor.ClockConstraintEditor$Factory"
+             type="http://www.muml.org/pim/realtimestatechart/1.0.0#ClockConstraint">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.realtimestatechart.editor.ActionEditor$Factory"
+             type="http://www.muml.org/pim/realtimestatechart/1.0.0#Action">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.realtimestatechart.editor.AsynchronousMessageEventEditor$Factory"
+             type="http://www.muml.org/pim/realtimestatechart/1.0.0#AsynchronousMessageEvent">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.realtimestatechart.editor.DoEventEditor$Factory"
+             type="http://www.muml.org/pim/realtimestatechart/1.0.0#DoEvent">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.realtimestatechart.editor.SynchronizationChannelEditor$Factory"
+             type="http://www.muml.org/pim/realtimestatechart/1.0.0#SynchronizationChannel">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.realtimestatechart.editor.SynchronizationEditor$Factory"
+             type="http://www.muml.org/pim/realtimestatechart/1.0.0#Synchronization">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.realtimestatechart.editor.RealtimeStatechartEditor$Factory"
+             type="http://www.muml.org/pim/realtimestatechart/1.0.0#RealtimeStatechart">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.realtimestatechart.editor.MessageEditor$Factory"
+             type="http://www.muml.org/pim/realtimestatechart/1.0.0#Message">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.realtimestatechart.editor.EntryEventEditor$Factory"
+             type="http://www.muml.org/pim/realtimestatechart/1.0.0#EntryEvent">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.realtimestatechart.editor.ExitEventEditor$Factory"
+             type="http://www.muml.org/pim/realtimestatechart/1.0.0#ExitEvent">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.realtimestatechart.editor.EntryPointEditor$Factory"
+             type="http://www.muml.org/pim/realtimestatechart/1.0.0#EntryPoint">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.realtimestatechart.editor.ExitPointEditor$Factory"
+             type="http://www.muml.org/pim/realtimestatechart/1.0.0#ExitPoint">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.instance.editor.AssemblyConnectorInstanceEditor$Factory"
+             type="http://www.muml.org/pim/instance/1.0.0#AssemblyConnectorInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.instance.editor.DelegationConnectorInstanceEditor$Factory"
+             type="http://www.muml.org/pim/instance/1.0.0#DelegationConnectorInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.instance.editor.ComponentInstanceConfigurationEditor$Factory"
+             type="http://www.muml.org/pim/instance/1.0.0#ComponentInstanceConfiguration">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.instance.editor.ContinuousPortInstanceEditor$Factory"
+             type="http://www.muml.org/pim/instance/1.0.0#ContinuousPortInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.instance.editor.HybridPortInstanceEditor$Factory"
+             type="http://www.muml.org/pim/instance/1.0.0#HybridPortInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.instance.editor.DiscreteSinglePortInstanceEditor$Factory"
+             type="http://www.muml.org/pim/instance/1.0.0#DiscreteSinglePortInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.instance.editor.DiscreteMultiPortInstanceEditor$Factory"
+             type="http://www.muml.org/pim/instance/1.0.0#DiscreteMultiPortInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.instance.editor.StructuredComponentInstanceEditor$Factory"
+             type="http://www.muml.org/pim/instance/1.0.0#StructuredComponentInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.instance.editor.AtomicComponentInstanceEditor$Factory"
+             type="http://www.muml.org/pim/instance/1.0.0#AtomicComponentInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.instance.editor.CoordinationProtocolInstanceEditor$Factory"
+             type="http://www.muml.org/pim/instance/1.0.0#CoordinationProtocolInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.msgtype.editor.MessageTypeEditor$Factory"
+             type="http://www.muml.org/pim/msgtype/1.0.0#MessageType">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.msgtype.editor.MessageTypeRepositoryEditor$Factory"
+             type="http://www.muml.org/pim/msgtype/1.0.0#MessageTypeRepository">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.types.editor.ArrayDataTypeEditor$Factory"
+             type="http://www.muml.org/pim/types/1.0.0#ArrayDataType">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.types.editor.PrimitiveDataTypeEditor$Factory"
+             type="http://www.muml.org/pim/types/1.0.0#PrimitiveDataType">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.types.editor.RangedPrimitiveDataTypeEditor$Factory"
+             type="http://www.muml.org/pim/types/1.0.0#RangedPrimitiveDataType">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.types.editor.StructureDataTypeEditor$Factory"
+             type="http://www.muml.org/pim/types/1.0.0#StructureDataType">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.types.editor.AttributeEditor$Factory"
+             type="http://www.muml.org/pim/types/1.0.0#Attribute">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.protocol.editor.CoordinationProtocolEditor$Factory"
+             type="http://www.muml.org/pim/protocol/1.0.0#CoordinationProtocol">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.protocol.editor.RoleEditor$Factory"
+             type="http://www.muml.org/pim/protocol/1.0.0#Role">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.protocol.editor.RoleConnectorEditor$Factory"
+             type="http://www.muml.org/pim/protocol/1.0.0#RoleConnector">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.protocol.editor.ConnectorQualityOfServiceAssumptionsEditor$Factory"
+             type="http://www.muml.org/pim/protocol/1.0.0#ConnectorQualityOfServiceAssumptions">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.behavior.editor.VariableEditor$Factory"
+             type="http://www.muml.org/pim/behavior/1.0.0#Variable">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.behavior.editor.OperationEditor$Factory"
+             type="http://www.muml.org/pim/behavior/1.0.0#Operation">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.behavior.editor.ParameterEditor$Factory"
+             type="http://www.muml.org/pim/behavior/1.0.0#Parameter">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.behavior.editor.ParameterBindingEditor$Factory"
+             type="http://www.muml.org/pim/behavior/1.0.0#ParameterBinding">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.behavior.editor.OperationRepositoryEditor$Factory"
+             type="http://www.muml.org/pim/behavior/1.0.0#OperationRepository">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.component.editor.ContinuousPortEditor$Factory"
+             type="http://www.muml.org/pim/component/1.0.0#ContinuousPort">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.component.editor.DiscretePortEditor$Factory"
+             type="http://www.muml.org/pim/component/1.0.0#DiscretePort">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.component.editor.ComponentPartEditor$Factory"
+             type="http://www.muml.org/pim/component/1.0.0#ComponentPart">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.component.editor.StaticStructuredComponentEditor$Factory"
+             type="http://www.muml.org/pim/component/1.0.0#StaticStructuredComponent">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.component.editor.AssemblyConnectorEditor$Factory"
+             type="http://www.muml.org/pim/component/1.0.0#AssemblyConnector">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.component.editor.DelegationConnectorEditor$Factory"
+             type="http://www.muml.org/pim/component/1.0.0#DelegationConnector">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.component.editor.HybridPortEditor$Factory"
+             type="http://www.muml.org/pim/component/1.0.0#HybridPort">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.component.editor.StaticAtomicComponentEditor$Factory"
+             type="http://www.muml.org/pim/component/1.0.0#StaticAtomicComponent">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.component.editor.CoordinationProtocolPartEditor$Factory"
+             type="http://www.muml.org/pim/component/1.0.0#CoordinationProtocolPart">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.component.editor.PortPartEditor$Factory"
+             type="http://www.muml.org/pim/component/1.0.0#PortPart">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.connector.editor.MessageBufferEditor$Factory"
+             type="http://www.muml.org/pim/connector/1.0.0#MessageBuffer">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.pattern.editor.CoordinationPatternEditor$Factory"
+             type="http://www.muml.org/pim/pattern/1.0.0#CoordinationPattern">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.pattern.editor.DescriptionAspectsEditor$Factory"
+             type="http://www.muml.org/pim/pattern/1.0.0#DescriptionAspects">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.pattern.editor.VerifiedConfigurationEditor$Factory"
+             type="http://www.muml.org/pim/pattern/1.0.0#VerifiedConfiguration">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.pattern.editor.CoordinationPatternVariantEditor$Factory"
+             type="http://www.muml.org/pim/pattern/1.0.0#CoordinationPatternVariant">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.one_to_n_schemata.editor.MulticastEditor$Factory"
+             type="http://www.muml.org/pim/one_to_n_schemata/1.0.0#Multicast">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.one_to_n_schemata.editor.UnicastEditor$Factory"
+             type="http://www.muml.org/pim/one_to_n_schemata/1.0.0#Unicast">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.one_to_n_schemata.editor.IterateEditor$Factory"
+             type="http://www.muml.org/pim/one_to_n_schemata/1.0.0#Iterate">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.one_to_n_schemata.editor.LoadBalancingEditor$Factory"
+             type="http://www.muml.org/pim/one_to_n_schemata/1.0.0#LoadBalancing">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.one_to_n_schemata.editor.SingleReceiveEditor$Factory"
+             type="http://www.muml.org/pim/one_to_n_schemata/1.0.0#SingleReceive">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.one_to_n_schemata.editor.MultiReceiveEditor$Factory"
+             type="http://www.muml.org/pim/one_to_n_schemata/1.0.0#MultiReceive">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.pim.editor.TestEditor$Factory"
+             type="http://www.muml.org/pim/1.0.0#Test">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.runnable.editor.RunnableEditor$Factory"
+             type="http://www.muml.org/pim/runnable/1.0.0#Runnable">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.runnable.editor.LabelEditor$Factory"
+             type="http://www.muml.org/pim/runnable/1.0.0#Label">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.runnable.editor.LabelAccessEditor$Factory"
+             type="http://www.muml.org/pim/runnable/1.0.0#LabelAccess">
+       </propertyEditor>
+    
+    </propertyEditors>
+ </extension>
+
+
+ <extension
+       point="org.muml.ape.runtime.metamodelContributor">
+    <metamodel
+          contributor="org.muml.pim.properties.metamodel.MetamodelContributor">
+    </metamodel>
+ </extension>
+
+
+ <extension
+       point="org.muml.ape.runtime.creationConstraintContributor">
+    <constraint
+          contributor="org.muml.pim.properties.constraint.CreationConstraintContributor">
+    </constraint>
+ </extension>
+
+</plugin>

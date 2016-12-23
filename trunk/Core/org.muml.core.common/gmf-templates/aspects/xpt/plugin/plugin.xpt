@@ -1,0 +1,12 @@
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+
+«AROUND extension_parser FOR gmfgen::GenPlugin»
+«targetDef.proceed()»
+   <extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
+      «EXPAND xpt::Common::xmlGeneratedTag»
+      <parser
+         type="«editorGen.diagram.domainDiagramElement.ecoreClass.name.toLowerCase()»»"
+         class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
+      </parser>
+   </extension>
+«ENDAROUND»

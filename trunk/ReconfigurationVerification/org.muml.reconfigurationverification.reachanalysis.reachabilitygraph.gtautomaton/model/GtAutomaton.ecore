@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="gtautomaton" nsURI="http://www.muml.org/reconfigurationverification/reachanalysis/reachabilitygraph/gtautomaton/1.0.0"
+    nsPrefix="gtautomaton">
+  <eClassifiers xsi:type="ecore:EClass" name="GtStepGraph" eSuperTypes="../../org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm/model/SDMReachabilityAnalysis.ecore#//StepGraph">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="invariant" upperBound="-1"
+        eType="#//GtAutomatonClockConstraint" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="objectIdentifier" eType="#//ObjectIdentifier"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clockInstances" upperBound="-1"
+        eType="ecore:EClass ../../org.muml.reconfigurationverification.timedstorydiagram/model/TimedStoryDiagrams.ecore#//ClockInstance"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ObjectIdentifier">
+    <eOperations name="putEObjectToIdentifier">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Adds a new object to identifier mapping to the object identifier store."/>
+        <details key="body" value="this.getEObjectToIdentifier().put(currentObject, identifier);"/>
+      </eAnnotations>
+      <eParameters name="currentObject" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+      <eParameters name="identifier" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    </eOperations>
+    <eOperations name="putIdentifierToEObject">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Adds a new identifier to object mapping to the object identifier store."/>
+        <details key="body" value="this.getIdentifierToEObject().put(identifier,currentObject);"/>
+      </eAnnotations>
+      <eParameters name="identifier" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+      <eParameters name="currentObject" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+    </eOperations>
+    <eOperations name="getIdentifier" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Returns the identifier of the object given as a parameter."/>
+        <details key="body" value="return this.getEObjectToIdentifier().get(currentObject);"/>
+      </eAnnotations>
+      <eParameters name="currentObject" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+    </eOperations>
+    <eOperations name="getEObject" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Returns the object which has the identifier given as a parameter."/>
+        <details key="body" value="return this.getIdentifierToEObject().get(currentIdentifier);"/>
+      </eAnnotations>
+      <eParameters name="currentIdentifier" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    </eOperations>
+    <eOperations name="getFreeClockInstanceIdentifier" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Returns a free clock instance identifier that exists for clock created by the&#xD;&#xA;ClockInstanceStoryDiagram given as a parameter. If no such clock instance&#xD;&#xA;identifier exists, the operation returns null."/>
+        <details key="body" value="EList&lt;String> identifiers = this.getFreeClockInstanceIdentifiers().get(clockInstanceStoryDiagram);&#xD;&#xA;if(identifiers == null || identifiers.size() == 0){&#xD;&#xA;&#x9;return null;&#xD;&#xA;} else {&#xD;&#xA;&#x9;String result = identifiers.get(0);&#xD;&#xA;&#x9;identifiers.remove(0);&#xD;&#xA;&#x9;return result;&#xD;&#xA;}"/>
+      </eAnnotations>
+      <eParameters name="clockInstanceStoryDiagram" eType="ecore:EClass ../../org.muml.reconfigurationverification.timedstorydiagram/model/TimedStoryDiagrams.ecore#//ClockInstanceStoryDiagram"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="IdentifierToEObject" upperBound="-1"
+        eType="#//IdentifierToEObject" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EObjectToIdentifier" upperBound="-1"
+        eType="#//EObjectToIdentifier" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="freeClockInstanceIdentifiers"
+        upperBound="-1" eType="#//ClockInstanceStoryDiagramToIdentifier" transient="true"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EObjectToIdentifier" instanceClassName="java.util.Map$Entry">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="key" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IdentifierToEObject" instanceClassName="java.util.Map$Entry">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GtAutomatonTransition" eSuperTypes="../../org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm/model/SDMReachabilityAnalysis.ecore#//SDMTransition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timeGuards" upperBound="-1"
+        eType="#//GtAutomatonClockConstraint" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="clockResets" upperBound="-1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GtAutomatonClockConstraint">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="clockInstanceIdentifier"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="ecore:EEnum ../../org.muml.core/model/core.ecore#//expressions/common/ComparingOperator"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GtAutomaton" eSuperTypes="../../org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm/model/SDMReachabilityAnalysis.ecore#//SDMReachabilityGraph">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="clockInstanceIdentifiers"
+        upperBound="-1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClockInstanceStoryDiagramToIdentifier"
+      instanceClassName="java.util.Map$Entry">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="key" eType="ecore:EClass ../../org.muml.reconfigurationverification.timedstorydiagram/model/TimedStoryDiagrams.ecore#//ClockInstanceStoryDiagram"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" upperBound="-1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

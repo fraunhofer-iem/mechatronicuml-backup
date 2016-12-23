@@ -1,0 +1,7 @@
+# Tracing options for the org.muml.pim.component.diagram plug-in
+
+# Common issues
+org.muml.pim.component.diagram/debug=false
+
+# Visual IDs
+org.muml.pim.component.diagram/debug/visualID=false

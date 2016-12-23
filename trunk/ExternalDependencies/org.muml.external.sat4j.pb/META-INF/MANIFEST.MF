@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Pb
+Bundle-SymbolicName: org.muml.external.sat4j.pb
+Bundle-Version: 2.3.3.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
+Export-Package: org.sat4j.pb,
+ org.sat4j.pb.constraints,
+ org.sat4j.pb.constraints.pb,
+ org.sat4j.pb.core,
+ org.sat4j.pb.orders,
+ org.sat4j.pb.reader,
+ org.sat4j.pb.tools
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.muml.external.sat4j.core

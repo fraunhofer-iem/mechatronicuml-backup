@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.muml.pim.types;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.emf.ecore,
+ org.eclipse.emf.ecore.xmi,
+ org.eclipse.core.runtime,
+ org.muml.pim,
+ org.eclipse.m2m.qvt.oml
+Bundle-ActivationPolicy: lazy
+Bundle-Activator: org.muml.pim.types.Activator
+Export-Package: org.muml.pim.types,
+ org.muml.pim.types.blackbox
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8

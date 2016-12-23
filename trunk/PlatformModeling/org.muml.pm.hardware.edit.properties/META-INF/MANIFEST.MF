@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MechatronicUML PSM Tabbed Properties
+Bundle-SymbolicName: org.muml.pm.hardware.edit.properties; singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.emf.ecore,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.edit,
+ org.eclipse.ui,
+ org.muml.pm.hardware,
+ org.muml.pm.hardware.edit,
+ org.muml.ape.runtime,
+ org.muml.core.edit,
+ org.muml.core.edit.properties,
+ org.muml.pim.edit,
+ org.muml.pim.edit.properties
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.muml.pm.hardware.properties.metamodel, org.muml.pm.hardware.properties.constraint,
+ org.muml.pm.hardware.properties.hwplatform.editor,
+ org.muml.pm.hardware.properties.hwresource.editor,
+ org.muml.pm.hardware.properties.hwvaluetype.editor,
+ org.muml.pm.hardware.properties.hwresourceinstance.editor,
+ org.muml.pm.hardware.properties.hwplatforminstance.editor,
+ org.muml.pm.hardware.properties.hardware.editor,
+ org.muml.pm.hardware.properties.tabs
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

@@ -1,0 +1,119 @@
+brakeByWireAllocationSpecification {
+	
+	-- include our library with predefined OCL constraints
+	include 'platform:/plugin/de.uni_paderborn.fujaba.muml.allocation.language.xtext/operations/OCLContext.ocl'
+	
+	constraint collocation colocateBrakePedalComponents {
+		descriptors (first, second);
+		ocl	self.colocateSCIAndEmbeddedParts('wheel');
+	}
+	
+	constraint collocation collocateSC11AndSC12 {
+		descriptors (first, second);
+		ocl self.allocateToSameECUs('sc11','sc12');
+	}
+	
+	constraint requiredLocation calliperToBrakeECU {
+		descriptors (first, second);
+		ocl	self.allocateEmbeddedToPlatformInstance('calliper', 'Brake.0');
+	}
+	
+	constraint requiredLocation communicatingComponents {
+		descriptors (c1, e1), (c2, e2);
+		ocl self.allocateCommunicatingComponentsToConnectedECUs();
+	}
+	
+	constraint requiredResource maxMemoryConsumption {
+		lhs requiredMemory;
+		rhs maxMemory;
+		descriptors (componentInstance, resourceInstance);
+		ocl	self.maxMemoryConsumption();
+	}
+	
+	constraint requiredResource canRTA {
+		lhs lval;
+		rhs rval;
+		descriptors (c1, e1), (c2, e2);
+		ocl
+			-- the results can be inspected e.g. via
+			--self.canRTA('CAN-Bus-Brake-Platform')->asOrderedSet()->at(1).lval
+			-- (the result set has size 3)
+			self.canRTA('CAN-Bus-Brake-Platform')
+		;
+	}
+	
+	constraint requiredResource busUtilization {
+		lhs utilization;
+		rhs rval;
+		descriptors (c1, e1), (c2, e2);
+		ocl
+			-- the results can be inspected e.g. via
+			--self.busUtilization('CAN-Bus-Brake-Platform')->asOrderedSet()->at(1).utilization
+			self.busUtilization('CAN-Bus-Brake-Platform')
+		;
+	}
+	
+	constraint requiredLocation allowedECUs {
+		descriptors (first, second);
+		ocl
+			self.getAllSWInstances()->collect(ci |
+				self.allowedECUNames(ci.name)->collect(ecu |
+					self.allocateToECU(ci, ecu)
+				)
+			)->asSet()
+		;
+	}
+	
+	context oclcontext::OCLContext
+		def: sensorActuatorMapping(componentName : String) : Set(String) =
+			-- calliper component instances
+			if componentName = 'sc1' then
+				-- temperatureSensor
+				Set{'R1.0.1'}
+			else if componentName = 'sc2' then
+				-- calliper position sensor
+				Set{'R2.0.1'}
+			else if componentName = 'sc3' then
+				-- parking brake actuator
+				Set{'R3.0.1'}
+			else if componentName = 'sc5' then
+				-- calliper clamp actuator
+				Set{'R5.0.1'}
+			-- brake pedal component instances
+			else if componentName = 'sc11' then
+				-- pedal position sensor
+				Set{'R11.0.1'}
+			else if componentName = 'sc12' then
+				-- brake force sensor
+				Set{'R12.0.1'}
+			else if componentName = 'sc13' then
+				-- brake feedback actuator
+				Set{'R13.0.1'}
+			-- wheel component instances
+			else if componentName = 'sc7' then
+				Set{'R7.0.1'} -- (brake platform)
+			-- other sensors (not part of a structured ci)
+			else if componentName = 'sc9' then
+				Set{'R9.0.1'}
+			else
+				Set{}
+			endif
+			endif
+			endif
+			endif
+			endif
+			endif
+			endif
+			endif
+			endif
+			
+		def: allowedECUNames(componentName : String) : Set(String) =
+			let ecuNames : Set(String) = self.sensorActuatorMapping(componentName)
+			in
+			if ecuNames->isEmpty() then
+				self.getAllHWInstances()->collect(name)->asSet()
+			else
+				ecuNames
+			endif
+
+}

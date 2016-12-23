@@ -1,0 +1,302 @@
+transformation ResourceInstanceRepositoryTransformation(inout input : ModelInstancePackage);
+
+modeltype CorePackage uses core("http://www.muml.org/core/1.0.0");
+modeltype ModelInstancePackage uses core::modelinstance("http://www.muml.org/core/1.0.0");
+modeltype PimPackage uses pim('http://www.muml.org/pim/1.0.0');
+modeltype ValuetypePackage uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+modeltype HardwarePackage uses hardware('http://www.muml.org/pm/hardware/1.0.0');
+modeltype ResourceTypePackage uses hardware::hwresource('http://www.muml.org/pm/hardware/1.0.0');
+modeltype ResourceInstancePackage uses hardware::hwresourceinstance('http://www.muml.org/pm/hardware/1.0.0');
+modeltype HWValuetypePackage uses hardware::hwvaluetype('http://www.muml.org/pm/hardware/1.0.0');
+
+
+
+/* This transformation creates and initialises the ResourceInstances of a ResourceInstanceRepository.
+	A ResourceInstanceRepository references a ResourceTypeRepository which contains the ResourceTypes that are initialized
+	in this ResourceInstanceRepository.
+	Therefore this transformation creates all instances of the ResourceTypes which are contained in the corresponding ResourceTypeRepository.
+*/
+
+main() {
+log("QVT-O Script \"ResourceInstanceRepositoryTransformation.qvto\" started.");
+	// process ResourceInstanceRepository
+	
+	
+//	input.rootObjects()[ResourceInstanceRepository]->forEach(rip){
+//		rip.resourceTypeRepository:=rip.resourceTypeRepository;
+//		rip.name:=rip.resourceTypeRepository.name;
+//		log("Start to create the ResourceInstances for" +rip.eClass().name +", Name:" +rip.name);
+//		var instances : Set(ResourceInstance);
+		//create the StructuredResourceInstances of the ResourceInstanceRepository derived from the StructuredResources
+//		instances +=rip.resourceTypeRepository.resourceTypes[StructuredResource]->map mapStructuredResource2StructuredResourceInstance();
+		
+		// A lonely AtomicResource does not make sense in a ResourceInstanceRepository or in a HWPlatform, so we do not initialize them //
+		//instances +=rip.resourceTypeRepository.resourceTypes[AtomicResource]-> map mapAtomicResource2AtomicResourceInstance(); 
+		
+		//create the DeviceInstances of the ResourceInstanceRepository derived from the Devices
+//		instances +=rip.resourceTypeRepository.resourceTypes[Device]->map mapDevice2DeviceInstance();
+//		rip.resourceInstances:=instances; 
+//	}; 
+	var theRootNode : RootNode := input.rootObjects()[RootNode] -> any(true);
+
+
+	//process ResourceType
+	var resourceInstances:Bag(ResourceInstance) := input.rootObjects()[Resource]->map mapResourceType();
+	if(resourceInstances->notEmpty()) then{
+		var modelElementCategory : ModelElementCategory := theRootNode.categories->select(cat | cat.key = "org.muml.pm.hardware.hwresource.category")->any(true);
+		var repository : ResourceInstanceRepository := new ResourceInstanceRepository();
+		repository.resourceInstances:=resourceInstances;
+		modelElementCategory.modelElements+=repository;
+		
+	}endif;
+	
+	// process StructuredResourceInstance
+	input.rootObjects()[StructuredResourceInstance]->forEach(sri){
+		log("Initialize the StructuredResourceInstance for" +sri.oclAsType(EObject).eClass().name +", Name:" +sri.name);
+			sri.isResourceTypeSet();
+			//sri.name:=sri.resourceType.name;
+			sri.embeddedAtomicResourceInstances+=sri.synchEmbeddedAtomicResourceInstances();
+			sri.hwports+=sri.synchHWPortInstances();
+	};
+	
+	//process DeviceInstance
+	input.rootObjects()[SensorInstance]->forEach(di){
+		log("Initialize the DeviceInstance for" +di.oclAsType(EObject).eClass().name +", Name:" +di.name);
+		di.isResourceTypeSet();
+		if(di.resourceType.oclIsTypeOf(ResourceTypePackage::Device) and di.resourceType.oclAsType(ResourceTypePackage::Device).deviceKind=ResourceTypePackage::DeviceKind::SENSOR) then{
+		//di.name:=di.resourceType.name;
+		di.hwports+=di.synchHWPortInstances();
+		}
+		endif;
+	};
+	
+	input.rootObjects()[ActuatorInstance]->forEach(di){
+		log("Initialize the DeviceInstance for" +di.oclAsType(EObject).eClass().name +", Name:" +di.name);
+		di.isResourceTypeSet();
+		if(di.resourceType.oclIsTypeOf(ResourceTypePackage::Device) and di.resourceType.oclAsType(ResourceTypePackage::Device).deviceKind=ResourceTypePackage::DeviceKind::ACTUATOR) then{
+		//di.name:=di.resourceType.name;
+		di.hwports+=di.synchHWPortInstances();
+		}
+		endif;
+	};
+		
+}
+
+
+mapping Resource::mapResourceType() : ResourceInstance   disjuncts Device::mapDevice2DeviceInstance, StructuredResource::mapStructuredResource2StructuredResourceInstance, AtomicResource::mapAtomicResource2AtomicResourceInstance {}
+
+
+
+/*tests if a resource type is set
+* if no resource type is set the transformation is aborted
+*/
+helper ResourceInstance::isResourceTypeSet(){
+	assert fatal (not self.resourceType.oclIsUndefined()) with log ("No Resource Type is set for:"+self.oclAsType(EObject).eClass().name + ", Name:"+self.name);
+}
+
+
+
+//keeps the port types and port instances in synch
+helper ResourceInstance::synchHWPortInstances():OrderedSet(HWPort){
+var resourceType : Resource := self.resourceType;
+var hwPortInstances : Set(HWPort);
+var lowerBound : Integer;
+	self.hwports->forEach(portInstance) {
+			-- only delete those HWPortParts whose hwPortInstanceType is not contained in the current resourceInstance
+		if (resourceType.communicationResources ->select(p|p = portInstance.communicationResource)->isEmpty()) then {
+		
+				//input.removeElement(portInstance);
+			//	portInstance.dump();
+			}endif;
+			
+		}; 
+	
+	//create new ports
+	resourceType.communicationResources -> forEach(communicationResource){
+	if((self.hwports -> select(p|p.communicationResource =communicationResource)) -> isEmpty()) then {
+	/*	lowerBound:=hwport.cardinality.lowerBound.toInteger();
+		while(lowerBound>0){
+			hwPortInstances += hwport ->map mapHWPort2HWPortInstance(lowerBound);
+			lowerBound:=lowerBound-1;
+			}; */
+			hwPortInstances+=communicationResource.map mapCommunicationResource2HWPortResource();
+		} endif; 
+	};
+	
+	
+	//update  ports
+	self.hwports->select(hwp|resourceType.communicationResources->includes(hwp.communicationResource))->forEach(port){
+		port.name:=port.communicationResource.name;
+		//port.cardinality:=port
+	};
+	
+	return hwPortInstances->asOrderedSet();
+}
+
+mapping CommunicationResource::mapCommunicationResource2HWPortResource():HWPort{
+	communicationResource:=self;
+	name:=self.name;
+}
+
+
+
+// synchs the embedded AtomicResources of a type and an instance of a structured resource
+helper StructuredResourceInstance::synchEmbeddedAtomicResourceInstances():OrderedSet(AtomicResourceInstance){
+var resourceType : StructuredResource := self.resourceType.oclAsType(StructuredResource);
+var embeddedAtomicResourceInstances : Set(AtomicResourceInstance);
+
+self.embeddedAtomicResourceInstances->forEach(atomicInstance) {
+			// only delete those HWPortParts whose hwPortInstanceType is not contained in the current resourceInstance
+		if (resourceType.embeddedAtomicResources ->excludes(atomicInstance.resourceType.oclAsType(AtomicResource))) then {
+		
+				input.removeElement(atomicInstance);
+				atomicInstance.dump();
+			}endif;
+			
+		}; 
+		
+	resourceType.embeddedAtomicResources -> forEach(atomicResource){
+	if((self.embeddedAtomicResourceInstances -> select(r | r.resourceType = atomicResource)) -> isEmpty()) then {
+			embeddedAtomicResourceInstances += atomicResource ->map mapAtomicResource2AtomicResourceInstance();
+		} endif;
+	};
+
+
+return embeddedAtomicResourceInstances->asOrderedSet();
+}
+
+
+//create a StructuredResourceInstance derived from a StructuredResource
+mapping  StructuredResource::mapStructuredResource2StructuredResourceInstance():StructuredResourceInstance{
+	log("create StructuredResourceInstance for:"+self.oclAsType(EObject).eClass().name +", Name:" +self.name);
+	name:=self.name;
+	resourceType:=self;
+	//create the AtomicResourceInstances of this StructuredResourceInstance derived from the embedded AtomicResources of the StructuredResource
+	embeddedAtomicResourceInstances:=self.embeddedAtomicResources->map mapAtomicResource2AtomicResourceInstance();
+	hwports+=result.synchHWPortInstances();
+}
+
+
+//create a AtomicResourceInstance derived from a AtomicResource.
+// The type of the returned AtomicResourceInstance is determined by the type of the AtomicResource.
+mapping AtomicResource::mapAtomicResource2AtomicResourceInstance():AtomicResourceInstance{
+	init{
+		switch{ 	
+			case (self.oclIsTypeOf(Processor)){
+			result:=new ProcessorInstance(self.oclAsType(Processor));
+					}
+			case (self.oclIsTypeOf(ProgrammableLogicDevice)){
+			result:=new ProgrammableLogicDeviceInstance();
+					}
+					
+			case (self.oclIsTypeOf(Cache)){
+			result:=new CacheInstance();
+					}
+			case (self.oclIsTypeOf(MemoryResource)){
+			if(self.oclAsType(MemoryResource).isVolatile=true) then{
+					result:=new ProcessingMemoryInstance();
+						}endif;
+				if(self.oclAsType(MemoryResource).isVolatile=false) then{
+					result:=new StorageMemoryInstance();
+						}endif;
+					}
+			else{//sollte nich aufgerufen werden
+				result:=new ProcessorInstance();
+			}
+			};
+	}
+	log("create AtomicResourceInstance for:"+self.oclAsType(EObject).eClass().name+", Name:" +self.name+", Parent is:"+self.parentStructuredResource.name);
+	name:=self.name;
+	resourceType:=self;
+	hwports:=null;
+	
+}
+
+
+/*
+//create a HWPortInstance derived from a HWPort
+// The type of the returned HWPortInstance is derminted by the portType of the HWPort.
+mapping HWPort::mapHWPort2HWPortInstance(number:Integer):HW{
+	init{
+		switch{ 
+			case (self.portType=(HWPortKind::BUS)){
+			result:=new BusPortInstance();
+					}
+			case (self.portType=(HWPortKind::LINK)){
+			result:= new LinkPortInstance();
+					}			
+			};
+	}
+	log("create HWPortInstance for:"+self.eClass().name+", Name:" +self.name+", Parent is:"+self.parentResource.name);
+	hwportType:=self;
+	name:=self.name+" "+number.toString();
+}
+
+*/
+
+
+//create a DeviceInstance derived from a Device
+// The type of the returned DeviceInstance is derminted by the deviceType of the Device.
+mapping  Device::mapDevice2DeviceInstance():DeviceInstance{
+init{
+	switch{ 
+			case (self.deviceKind=(DeviceKind::SENSOR)){
+			result:=new SensorInstance();
+					}
+			case (self.deviceKind=(DeviceKind::ACTUATOR)){
+			result:= new ActuatorInstance();
+					}			
+			};
+	
+}
+	log("create DeviceInstance for:"+self.oclAsType(EObject).eClass().name+", Name:" +self.name);
+	name:=self.name;
+	resourceType:=self;
+	hwports+=result.synchHWPortInstances();
+}
+
+
+//Constructor for a ProcessorInstance
+// The ownedCacheInstance is resolved from the ownedCache of the Processor.
+constructor ProcessorInstance::ProcessorInstance(resource:Processor){
+	ownedCacheInstance:=resource.ownedCache.late resolveone(CacheInstance);
+	frequency:=new Frequency(0);
+	
+}
+
+constructor ProcessingMemoryInstance::ProcessingMemoryInstance(){
+	result.memorySize:=new DataSize(0);
+}
+
+constructor StorageMemoryInstance::StorageMemoryInstance(){
+	result.memorySize:=new DataSize(0);
+}
+
+constructor CacheInstance::CacheInstance(){
+	result.memorySize:=new DataSize(0);
+}
+
+constructor ProgrammableLogicDeviceInstance::ProgrammableLogicDeviceInstance(){
+	result.frequency:=new Frequency(0);
+}
+
+constructor DataSize::DataSize(value:EDouble){
+	result.value:=value;
+	result.unit:=DataSizeUnit::Byte;
+}
+
+constructor Frequency::Frequency(value:EDouble){
+	result.value:=value;
+	result.unit:=FrequencyUnit::Hz;
+} 
+
+// Convenience query to cast a natural number to an integer, using -1 as value for infinity.
+query NaturalNumber::toInteger() : Integer {
+	if (self.infinity) then {
+		return -1;
+	} endif;
+	return self.value;
+}
+
+

@@ -1,0 +1,17 @@
+«IMPORT simulink»
+
+«EXTENSION extensions::Element»
+«EXTENSION extensions::Block»
+
+«DEFINE triggerPort FOR TriggerPort»
+  Block {
+    BlockType TriggerPort
+    Name 	"Trigger"
+    SID				«this.getSimulinkId()»
+    Tag		"id=«this.id»"
+	Ports	[]
+	TriggerType		"«this.triggerInput.toString()»"
+	StatesWhenEnabling	  "held"
+	«EXPAND Parameter::parameter FOREACH this.parameters.select(p| !{'BlockType','Name', 'SID', 'Tag', 'Ports', 'TriggerType', 'StatesWhenEnabling'}.contains(p.name) )-»
+  }
+«ENDDEFINE»

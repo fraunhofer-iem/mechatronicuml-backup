@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:sda="http://www.muml.org/storydiagram/activities/1.0.0" xsi:schemaLocation="http://www.muml.org/storydiagram/activities/1.0.0 http://www.muml.org/storydiagram/1.0.0#//activities" xmi:id="_fntssPTtEeGDg-bJCK8EaA" type="Storydiagrams" name="SuccessFailureEdges.sdm_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_gR0ZoPTtEeGDg-bJCK8EaA" type="2005" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_gR0ZovTtEeGDg-bJCK8EaA" type="5013"/>
+    <element xmi:type="sda:InitialNode" href="SuccessFailureEdges.sdm#//@ownedActivityNode.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gR0ZofTtEeGDg-bJCK8EaA" x="56" y="43"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_g4pJEPTtEeGDg-bJCK8EaA" type="2003" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_g4pJEvTtEeGDg-bJCK8EaA" type="5011"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_g4pJE_TtEeGDg-bJCK8EaA" type="7001"/>
+    <element xmi:type="sda:ModifyingStoryNode" href="SuccessFailureEdges.sdm#//@ownedActivityNode.1"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_g4pJEfTtEeGDg-bJCK8EaA" x="100" y="115"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_hFJUAPTtEeGDg-bJCK8EaA" type="2003" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_hFJUAvTtEeGDg-bJCK8EaA" type="5011"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_hFJUA_TtEeGDg-bJCK8EaA" type="7001"/>
+    <element xmi:type="sda:ModifyingStoryNode" href="SuccessFailureEdges.sdm#//@ownedActivityNode.2"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hFJUAfTtEeGDg-bJCK8EaA" x="410" y="115"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_hWGhIPTtEeGDg-bJCK8EaA" type="2003" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_hWQSIPTtEeGDg-bJCK8EaA" type="5011"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_hWQSIfTtEeGDg-bJCK8EaA" type="7001"/>
+    <element xmi:type="sda:ModifyingStoryNode" href="SuccessFailureEdges.sdm#//@ownedActivityNode.3"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hWGhIfTtEeGDg-bJCK8EaA" x="265" y="240"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_sJJ0APTtEeGDg-bJCK8EaA" type="2008" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_sJJ0AvTtEeGDg-bJCK8EaA" type="5014"/>
+    <element xmi:type="sda:ActivityFinalNode" href="SuccessFailureEdges.sdm#//@ownedActivityNode.4"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sJJ0AfTtEeGDg-bJCK8EaA" x="486" y="271"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_fntssfTtEeGDg-bJCK8EaA"/>
+  <element xmi:type="sda:Activity" href="SuccessFailureEdges.sdm#/"/>
+  <edges xmi:type="notation:Edge" xmi:id="_kLdksPTtEeGDg-bJCK8EaA" type="4001" source="_g4pJEPTtEeGDg-bJCK8EaA" target="_hFJUAPTtEeGDg-bJCK8EaA">
+    <children xmi:type="notation:DecorationNode" xmi:id="_kLdktPTtEeGDg-bJCK8EaA" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_kLdktfTtEeGDg-bJCK8EaA" y="40"/>
+    </children>
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_kLdksfTtEeGDg-bJCK8EaA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_kLdksvTtEeGDg-bJCK8EaA" fontName="Segoe UI"/>
+    <element xmi:type="sda:ActivityEdge" href="SuccessFailureEdges.sdm#//@ownedActivityEdge.0"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_kLdks_TtEeGDg-bJCK8EaA" points="[41, 5, -224, 0]$[251, -2, -14, -7]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_kLdktvTtEeGDg-bJCK8EaA" id="(0.59,0.18309859154929578)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_kLdkt_TtEeGDg-bJCK8EaA" id="(0.14,0.2535211267605634)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_mTSM0PTtEeGDg-bJCK8EaA" type="4001" source="_hFJUAPTtEeGDg-bJCK8EaA" target="_hWGhIPTtEeGDg-bJCK8EaA">
+    <children xmi:type="notation:DecorationNode" xmi:id="_mTSM1PTtEeGDg-bJCK8EaA" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_mTSM1fTtEeGDg-bJCK8EaA" x="-26" y="-30"/>
+    </children>
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_mTSM0fTtEeGDg-bJCK8EaA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_mTSM0vTtEeGDg-bJCK8EaA" fontName="Segoe UI"/>
+    <element xmi:type="sda:ActivityEdge" href="SuccessFailureEdges.sdm#//@ownedActivityEdge.1"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_mTSM0_TtEeGDg-bJCK8EaA" points="[-37, 36, 74, -71]$[-95, 98, 16, -9]"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_mTb90PTtEeGDg-bJCK8EaA" id="(0.84,0.23943661971830985)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_nHgfEPTtEeGDg-bJCK8EaA" type="4001" source="_hFJUAPTtEeGDg-bJCK8EaA" target="_g4pJEPTtEeGDg-bJCK8EaA">
+    <children xmi:type="notation:DecorationNode" xmi:id="_nHgfFPTtEeGDg-bJCK8EaA" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_nHgfFfTtEeGDg-bJCK8EaA" x="-1" y="-17"/>
+    </children>
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_nHgfEfTtEeGDg-bJCK8EaA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_nHgfEvTtEeGDg-bJCK8EaA" fontName="Segoe UI"/>
+    <element xmi:type="sda:ActivityEdge" href="SuccessFailureEdges.sdm#//@ownedActivityEdge.2"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_nHgfE_TtEeGDg-bJCK8EaA" points="[-28, 8, 260, -12]$[-338, -7, -50, -27]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nHgfFvTtEeGDg-bJCK8EaA" id="(0.07,0.39436619718309857)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_rcErkPTtEeGDg-bJCK8EaA" type="4001" source="_gR0ZoPTtEeGDg-bJCK8EaA" target="_g4pJEPTtEeGDg-bJCK8EaA">
+    <children xmi:type="notation:DecorationNode" xmi:id="_rcOckPTtEeGDg-bJCK8EaA" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_rcOckfTtEeGDg-bJCK8EaA" y="40"/>
+    </children>
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_rcErkfTtEeGDg-bJCK8EaA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_rcErkvTtEeGDg-bJCK8EaA" fontName="Segoe UI"/>
+    <element xmi:type="sda:ActivityEdge" href="SuccessFailureEdges.sdm#//@ownedActivityEdge.3"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_rcErk_TtEeGDg-bJCK8EaA" points="[27, 36, -29, -62]$[62, 63, 6, -35]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_rcOckvTtEeGDg-bJCK8EaA" id="(0.5588235294117647,0.2)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_tM_2oPTtEeGDg-bJCK8EaA" type="4001" source="_hWGhIPTtEeGDg-bJCK8EaA" target="_sJJ0APTtEeGDg-bJCK8EaA">
+    <children xmi:type="notation:DecorationNode" xmi:id="_tM_2pPTtEeGDg-bJCK8EaA" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_tM_2pfTtEeGDg-bJCK8EaA" y="40"/>
+    </children>
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_tM_2ofTtEeGDg-bJCK8EaA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_tM_2ovTtEeGDg-bJCK8EaA" fontName="Segoe UI"/>
+    <element xmi:type="sda:ActivityEdge" href="SuccessFailureEdges.sdm#//@ownedActivityEdge.4"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_tM_2o_TtEeGDg-bJCK8EaA" points="[17, 4, -141, -36]$[155, 20, -3, -20]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tM_2pvTtEeGDg-bJCK8EaA" id="(0.83,0.15492957746478872)"/>
+  </edges>
+</notation:Diagram>

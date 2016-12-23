@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--muml metamodel version 0.3.2 (r2996)-->
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:msgtype="http://www.muml.org/pim/msgtype/1.0.0" xmlns:protocol="http://www.muml.org/pim/protocol/1.0.0" xmlns:realtimestatechart="http://www.muml.org/pim/realtimestatechart/1.0.0" xmlns:sdcec="http://www.muml.org/core/expressions/common/1.0.0" xmlns:types="http://www.muml.org/pim/types/1.0.0" xmi:id="_dAEM8KO5EeOb1Y6uHOGMMw">
+  <categories xmi:id="_dAEM8aO5EeOb1Y6uHOGMMw" key="org.muml.types.category" name="types">
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_dAEM8qO5EeOb1Y6uHOGMMw" name="VOID"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_dAEM86O5EeOb1Y6uHOGMMw" name="BOOLEAN" primitiveType="BOOLEAN"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_dAEM9KO5EeOb1Y6uHOGMMw" name="BYTE" primitiveType="BYTE"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_dAEM9aO5EeOb1Y6uHOGMMw" name="SHORT" primitiveType="SHORT"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_dAEM9qO5EeOb1Y6uHOGMMw" name="INT" primitiveType="INT"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_dAEM96O5EeOb1Y6uHOGMMw" name="LONG" primitiveType="LONG"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_dAEM-KO5EeOb1Y6uHOGMMw" name="DOUBLE" primitiveType="DOUBLE"/>
+  </categories>
+  <categories xmi:id="_dAEM-aO5EeOb1Y6uHOGMMw" key="org.muml.pim.components.category" name="component"/>
+  <categories xmi:id="_dAEM-qO5EeOb1Y6uHOGMMw" key="org.muml.pim.protocol.category" name="protocol">
+    <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_dAEM-6O5EeOb1Y6uHOGMMw" name="proto">
+      <roles xmi:id="_dAEM_KO5EeOb1Y6uHOGMMw" connectors="_dAENCKO5EeOb1Y6uHOGMMw" behavior="_dAEND6O5EeOb1Y6uHOGMMw" name="role1" senderMessageTypes="_dAENNqO5EeOb1Y6uHOGMMw" receiverMessageTypes="_dAENNqO5EeOb1Y6uHOGMMw">
+        <cardinality xmi:id="_dAEM_aO5EeOb1Y6uHOGMMw">
+          <lowerBound xmi:id="_dAEM_qO5EeOb1Y6uHOGMMw"/>
+          <upperBound xmi:id="_dAEM_6O5EeOb1Y6uHOGMMw"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_dAENAKO5EeOb1Y6uHOGMMw" name="role1buffer" messageType="_dAENNqO5EeOb1Y6uHOGMMw">
+          <bufferSize xmi:id="_dAENAaO5EeOb1Y6uHOGMMw" value="9223372036854775807" infinity="true"/>
+        </receiverMessageBuffer>
+      </roles>
+      <roles xmi:id="_dAENAqO5EeOb1Y6uHOGMMw" connectors="_dAENCKO5EeOb1Y6uHOGMMw" behavior="_dAENMqO5EeOb1Y6uHOGMMw" name="role2" senderMessageTypes="_dAENNqO5EeOb1Y6uHOGMMw" receiverMessageTypes="_dAENNqO5EeOb1Y6uHOGMMw">
+        <cardinality xmi:id="_dAENA6O5EeOb1Y6uHOGMMw">
+          <lowerBound xmi:id="_dAENBKO5EeOb1Y6uHOGMMw"/>
+          <upperBound xmi:id="_dAENBaO5EeOb1Y6uHOGMMw"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_dAENBqO5EeOb1Y6uHOGMMw" name="role2buffer" messageType="_dAENNqO5EeOb1Y6uHOGMMw">
+          <bufferSize xmi:id="_dAENB6O5EeOb1Y6uHOGMMw" value="9223372036854775807" infinity="true"/>
+        </receiverMessageBuffer>
+      </roles>
+      <roleConnector xmi:id="_dAENCKO5EeOb1Y6uHOGMMw" connectorEndpoints="_dAEM_KO5EeOb1Y6uHOGMMw _dAENAqO5EeOb1Y6uHOGMMw">
+        <connectorQualityOfServiceAssumptions xmi:id="_dAENCaO5EeOb1Y6uHOGMMw" comment="">
+          <minMessageDelay xmi:id="_dAENCqO5EeOb1Y6uHOGMMw" unit="SECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_dAENC6O5EeOb1Y6uHOGMMw" value="0"/>
+          </minMessageDelay>
+          <maxMessageDelay xmi:id="_dAENDKO5EeOb1Y6uHOGMMw" unit="SECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_dAENDaO5EeOb1Y6uHOGMMw" value="0"/>
+          </maxMessageDelay>
+        </connectorQualityOfServiceAssumptions>
+      </roleConnector>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_dAENDqO5EeOb1Y6uHOGMMw" key="org.muml.pim.realtimestatechart.category" name="realtimestatechart">
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_dAEND6O5EeOb1Y6uHOGMMw" name="role1" behavioralElement="_dAEM_KO5EeOb1Y6uHOGMMw">
+      <states xmi:id="_dAENEKO5EeOb1Y6uHOGMMw" name="init" initial="true">
+        <embeddedRegions xmi:id="_dAENEaO5EeOb1Y6uHOGMMw" priority="1">
+          <embeddedStatechart xmi:id="_dAENEqO5EeOb1Y6uHOGMMw" name="region1">
+            <transitions xmi:id="_dAENE6O5EeOb1Y6uHOGMMw" priority="1" target="_dAENFqO5EeOb1Y6uHOGMMw" source="_dAENFaO5EeOb1Y6uHOGMMw" urgent="false">
+              <synchronization xmi:id="_dAENFKO5EeOb1Y6uHOGMMw" syncChannel="_dAENMaO5EeOb1Y6uHOGMMw"/>
+            </transitions>
+            <states xmi:id="_dAENFaO5EeOb1Y6uHOGMMw" name="State11" outgoingTransitions="_dAENE6O5EeOb1Y6uHOGMMw" initial="true"/>
+            <states xmi:id="_dAENFqO5EeOb1Y6uHOGMMw" name="State12" incomingTransitions="_dAENE6O5EeOb1Y6uHOGMMw"/>
+          </embeddedStatechart>
+        </embeddedRegions>
+        <embeddedRegions xmi:id="_dAENF6O5EeOb1Y6uHOGMMw" priority="2">
+          <embeddedStatechart xmi:id="_dAENGKO5EeOb1Y6uHOGMMw" name="region2">
+            <transitions xmi:id="_dAENGaO5EeOb1Y6uHOGMMw" priority="3" target="_dAENIqO5EeOb1Y6uHOGMMw" source="_dAENIKO5EeOb1Y6uHOGMMw">
+              <synchronization xmi:id="_dAENGqO5EeOb1Y6uHOGMMw" syncChannel="_dAENL6O5EeOb1Y6uHOGMMw"/>
+            </transitions>
+            <transitions xmi:id="_dAENG6O5EeOb1Y6uHOGMMw" priority="4" target="_dAENI6O5EeOb1Y6uHOGMMw" source="_dAENIKO5EeOb1Y6uHOGMMw" urgent="false"/>
+            <transitions xmi:id="_dAENHKO5EeOb1Y6uHOGMMw" priority="1" target="_dAENIaO5EeOb1Y6uHOGMMw" source="_dAENIKO5EeOb1Y6uHOGMMw">
+              <synchronization xmi:id="_dAENHaO5EeOb1Y6uHOGMMw" syncChannel="_dAENMKO5EeOb1Y6uHOGMMw" kind="RECEIVE"/>
+            </transitions>
+            <transitions xmi:id="_dAENHqO5EeOb1Y6uHOGMMw" priority="2" target="_dAENIaO5EeOb1Y6uHOGMMw" source="_dAENIKO5EeOb1Y6uHOGMMw" urgent="false">
+              <synchronization xmi:id="_dAENH6O5EeOb1Y6uHOGMMw" syncChannel="_dAENMaO5EeOb1Y6uHOGMMw" kind="RECEIVE"/>
+            </transitions>
+            <states xmi:id="_dAENIKO5EeOb1Y6uHOGMMw" name="State21" outgoingTransitions="_dAENGaO5EeOb1Y6uHOGMMw _dAENG6O5EeOb1Y6uHOGMMw _dAENHKO5EeOb1Y6uHOGMMw _dAENHqO5EeOb1Y6uHOGMMw" initial="true"/>
+            <states xmi:id="_dAENIaO5EeOb1Y6uHOGMMw" name="State22" incomingTransitions="_dAENHKO5EeOb1Y6uHOGMMw _dAENHqO5EeOb1Y6uHOGMMw"/>
+            <states xmi:id="_dAENIqO5EeOb1Y6uHOGMMw" name="State23" incomingTransitions="_dAENGaO5EeOb1Y6uHOGMMw"/>
+            <states xmi:id="_dAENI6O5EeOb1Y6uHOGMMw" name="State24" incomingTransitions="_dAENG6O5EeOb1Y6uHOGMMw"/>
+          </embeddedStatechart>
+        </embeddedRegions>
+        <embeddedRegions xmi:id="_dAENJKO5EeOb1Y6uHOGMMw" priority="3">
+          <embeddedStatechart xmi:id="_dAENJaO5EeOb1Y6uHOGMMw" name="region3">
+            <transitions xmi:id="_dAENJqO5EeOb1Y6uHOGMMw" priority="3" target="_dAENLqO5EeOb1Y6uHOGMMw" source="_dAENLKO5EeOb1Y6uHOGMMw">
+              <synchronization xmi:id="_dAENJ6O5EeOb1Y6uHOGMMw" syncChannel="_dAENL6O5EeOb1Y6uHOGMMw" kind="RECEIVE"/>
+            </transitions>
+            <transitions xmi:id="_dAENKKO5EeOb1Y6uHOGMMw" priority="1" target="_dAENLaO5EeOb1Y6uHOGMMw" source="_dAENLKO5EeOb1Y6uHOGMMw">
+              <synchronization xmi:id="_dAENKaO5EeOb1Y6uHOGMMw" syncChannel="_dAENMKO5EeOb1Y6uHOGMMw"/>
+            </transitions>
+            <transitions xmi:id="_dAENKqO5EeOb1Y6uHOGMMw" priority="2" target="_dAENLaO5EeOb1Y6uHOGMMw" source="_dAENLKO5EeOb1Y6uHOGMMw" urgent="false">
+              <synchronization xmi:id="_dAENK6O5EeOb1Y6uHOGMMw" syncChannel="_dAENMaO5EeOb1Y6uHOGMMw"/>
+            </transitions>
+            <states xmi:id="_dAENLKO5EeOb1Y6uHOGMMw" name="State31" outgoingTransitions="_dAENJqO5EeOb1Y6uHOGMMw _dAENKKO5EeOb1Y6uHOGMMw _dAENKqO5EeOb1Y6uHOGMMw" initial="true"/>
+            <states xmi:id="_dAENLaO5EeOb1Y6uHOGMMw" name="State32" incomingTransitions="_dAENKKO5EeOb1Y6uHOGMMw _dAENKqO5EeOb1Y6uHOGMMw"/>
+            <states xmi:id="_dAENLqO5EeOb1Y6uHOGMMw" name="State33" incomingTransitions="_dAENJqO5EeOb1Y6uHOGMMw"/>
+          </embeddedStatechart>
+        </embeddedRegions>
+        <channels xmi:id="_dAENL6O5EeOb1Y6uHOGMMw" name="b"/>
+        <channels xmi:id="_dAENMKO5EeOb1Y6uHOGMMw" name="aUrgent"/>
+        <channels xmi:id="_dAENMaO5EeOb1Y6uHOGMMw" name="aNon-Urgent"/>
+      </states>
+    </modelElements>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_dAENMqO5EeOb1Y6uHOGMMw" name="role2" behavioralElement="_dAENAqO5EeOb1Y6uHOGMMw">
+      <states xmi:id="_dAENM6O5EeOb1Y6uHOGMMw" name="init" initial="true"/>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_dAENNKO5EeOb1Y6uHOGMMw" key="org.muml.pim.messagetype.category" name="msgtype">
+    <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_dAENNaO5EeOb1Y6uHOGMMw" name="Repository">
+      <messageTypes xmi:id="_dAENNqO5EeOb1Y6uHOGMMw" name="exampleMessage"/>
+    </modelElements>
+  </categories>
+</modelinstance:RootNode>

@@ -1,0 +1,92 @@
+«IMPORT simulink»
+«IMPORT simulink::stateflow»
+
+«EXTENSION extensions::Block»
+«EXTENSION extensions::stateflow::StateflowElement»
+«EXTENSION extensions::stateflow::Data»
+«EXTENSION extensions::stateflow::Node»
+«EXTENSION extensions::stateflow::Chart»
+«EXTENSION extensions::stateflow::State»
+«EXTENSION extensions::stateflow::EmbeddedFunction»
+
+
+«DEFINE data(String scope, StateflowElement parent, List[StateflowElement] list, String complexity) FOR Data-»
+	data {
+		id				«this.getStateflowId()»
+		name		    "«this.name»"
+		tag				"id=«this.id»"
+		linkNode		    [«parent.getStateflowId()» «this.getPrevSiblingStateflowIdId(list)» «this.getNextSiblingStateflowIdId(list)»]
+		machine		    «this.getMachine().getStateflowId()»
+«IF this.type == DataType::BUS-»
+		dataType		"Bus: «this.getParameter('BusObject')»"
+«ELSE»		
+		dataType		"«this.type»"
+«ENDIF-»
+		scope		    «scope»	
+		props {
+«IF this.value != null»		
+			initialValue	"«this.value»"
+«ENDIF»
+«IF this.size != null-»
+      		array {
+				size			"«this.size»"
+      		}
+«ENDIF-»
+«IF this.type == DataType::INHERIT-»
+      		type {
+				method			SF_INHERITED_TYPE
+      		}
+«ELSEIF this.type == DataType::BUS-»
+            type {
+	            method			SF_SIMULINK_OBJECT_TYPE
+	            expression		"Bus: «this.getParameter('BusObject')»"
+	            busObject		"«this.getParameter('BusObject')»"
+            }
+«ENDIF-»
+«IF complexity != null-»
+      		complexity	      «complexity»
+«ENDIF-»
+    	}	    				
+	}  
+«ENDDEFINE»
+
+«DEFINE embeddedFunctionIn FOR Data-»
+«EXPAND Data::data("FUNCTION_INPUT_DATA", this.getEmbeddedFunction(), this.getEmbeddedFunction().getAllData(), null) FOR this-»
+«ENDDEFINE»
+
+«DEFINE embeddedFunctionOut FOR Data-»
+«EXPAND Data::data("FUNCTION_OUTPUT_DATA", this.getEmbeddedFunction(), this.getEmbeddedFunction().getAllData(), null) FOR this-»
+«ENDDEFINE»
+
+«DEFINE embeddedFunctionConstant FOR Data-»
+«EXPAND Data::data("CONSTANT_DATA", this.getEmbeddedFunction(), this.getEmbeddedFunction().getAllData(), null) FOR this-»
+«ENDDEFINE»
+
+«DEFINE embeddedFunctionLocal FOR Data-»
+«EXPAND Data::data("LOCAL_DATA", this.getEmbeddedFunction(), this.getEmbeddedFunction().getAllData(), null) FOR this-»
+«ENDDEFINE»
+
+«DEFINE embeddedMatlabFunctionIn FOR Data-»
+«EXPAND Data::data("INPUT_DATA", this.getChart(), this.getChart().getAllData(), "SF_COMPLEX_INHERITED") FOR this-»
+«ENDDEFINE»
+
+«DEFINE embeddedMatlabFunctionOut FOR Data-»
+«EXPAND Data::data("OUTPUT_DATA", this.getChart(), this.getChart().getAllData(), "SF_COMPLEX_INHERITED") FOR this-»
+«ENDDEFINE»
+
+«DEFINE chartConstant FOR Data-»
+«EXPAND Data::data("CONSTANT_DATA", this.getChart(), this.getChart().getAllData(), null) FOR this-»
+«ENDDEFINE»
+
+«DEFINE chartLocal FOR Data-»
+«EXPAND Data::data("LOCAL_DATA", this.getChart(), this.getChart().getAllData(), null) FOR this-»
+«ENDDEFINE»
+
+«DEFINE stateConstant FOR Data-»
+«EXPAND Data::data("CONSTANT_DATA", this.getState(), this.getState().getAllData(), null) FOR this-»
+«ENDDEFINE»
+
+«DEFINE stateLocal FOR Data-»
+«EXPAND Data::data("LOCAL_DATA", this.getState(), this.getState().getAllData(), null) FOR this-»
+«ENDDEFINE»
+

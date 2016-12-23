@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--muml metamodel version 0.3.2 (r2996)-->
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:msgtype="http://www.muml.org/pim/msgtype/1.0.0" xmlns:protocol="http://www.muml.org/pim/protocol/1.0.0" xmlns:realtimestatechart="http://www.muml.org/pim/realtimestatechart/1.0.0" xmlns:sdcec="http://www.muml.org/core/expressions/common/1.0.0" xmlns:types="http://www.muml.org/pim/types/1.0.0" xmi:id="_3MpXcJPHEeO5ccOxUJdcGw">
+  <categories xmi:id="_3Mp-gJPHEeO5ccOxUJdcGw" key="org.muml.types.category" name="types">
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_3M2LwJPHEeO5ccOxUJdcGw" name="VOID"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_3M2LwZPHEeO5ccOxUJdcGw" name="BOOLEAN" primitiveType="BOOLEAN"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_3M2LwpPHEeO5ccOxUJdcGw" name="BYTE" primitiveType="BYTE"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_3M2Lw5PHEeO5ccOxUJdcGw" name="SHORT" primitiveType="SHORT"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_3M2LxJPHEeO5ccOxUJdcGw" name="INT" primitiveType="INT"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_3M2LxZPHEeO5ccOxUJdcGw" name="LONG" primitiveType="LONG"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_3M2LxpPHEeO5ccOxUJdcGw" name="DOUBLE" primitiveType="DOUBLE"/>
+  </categories>
+  <categories xmi:id="_BOzY4JPIEeO5ccOxUJdcGw" key="org.muml.pim.realtimestatechart.category" name="realtimestatechart">
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_BPA0QJPIEeO5ccOxUJdcGw" name="Statechart" behavioralElement="_8Gf68JPKEeOrms8TmXbKaQ">
+      <transitions xmi:id="_cwJOAJPIEeO5ccOxUJdcGw" priority="1" target="_IpsdIJPIEeO5ccOxUJdcGw" source="_BPBbUJPIEeO5ccOxUJdcGw" clockResets="_N_33oJPIEeO5ccOxUJdcGw">
+        <clockConstraints xmi:id="_d8JuIJPIEeO5ccOxUJdcGw" clock="_N_33oJPIEeO5ccOxUJdcGw" operator="GREATER_OR_EQUAL">
+          <bound xmi:id="_e1tMUJPIEeO5ccOxUJdcGw" unit="NANOSECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_hqZhgJPIEeO5ccOxUJdcGw" value="1000"/>
+          </bound>
+        </clockConstraints>
+      </transitions>
+      <states xmi:id="_BPBbUJPIEeO5ccOxUJdcGw" name="init" outgoingTransitions="_cwJOAJPIEeO5ccOxUJdcGw" initial="true">
+        <invariants xmi:id="_VBdrEJPIEeO5ccOxUJdcGw" clock="_N_33oJPIEeO5ccOxUJdcGw">
+          <bound xmi:id="_VmBwsJPIEeO5ccOxUJdcGw" unit="SECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_WaCnkJPIEeO5ccOxUJdcGw" value="3"/>
+          </bound>
+        </invariants>
+      </states>
+      <states xmi:id="_IpsdIJPIEeO5ccOxUJdcGw" name="State" incomingTransitions="_cwJOAJPIEeO5ccOxUJdcGw">
+        <invariants xmi:id="_QbTYQJPIEeO5ccOxUJdcGw" clock="_N_33oJPIEeO5ccOxUJdcGw">
+          <bound xmi:id="_RD5CQJPIEeO5ccOxUJdcGw" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_TCuGcJPIEeO5ccOxUJdcGw" value="500"/>
+          </bound>
+        </invariants>
+      </states>
+      <clocks xmi:id="_N_33oJPIEeO5ccOxUJdcGw" name="c"/>
+    </modelElements>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_IGkAMJvyEeOdXYbrwwJ4PA" name="role2" behavioralElement="_8GxAsJPKEeOrms8TmXbKaQ">
+      <states xmi:id="_IGkANZvyEeOdXYbrwwJ4PA" name="init" initial="true"/>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_r_5VsJPIEeO5ccOxUJdcGw" key="org.muml.pim.protocol.category" name="protocol">
+    <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_8F7TMJPKEeOrms8TmXbKaQ" name="ScalingClockValues">
+      <roles xmi:id="_8Gf68JPKEeOrms8TmXbKaQ" connectors="_8GyO0ZPKEeOrms8TmXbKaQ" behavior="_BPA0QJPIEeO5ccOxUJdcGw" name="role1" senderMessageTypes="_XAtUEJPKEeO5ccOxUJdcGw" receiverMessageTypes="_XAtUEJPKEeO5ccOxUJdcGw">
+        <cardinality xmi:id="_8Gt9YJPKEeOrms8TmXbKaQ">
+          <lowerBound xmi:id="_UjU2MJPLEeOrms8TmXbKaQ"/>
+          <upperBound xmi:id="_UjX5gJPLEeOrms8TmXbKaQ"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_PswI0JPLEeOrms8TmXbKaQ" name="role1buffer" messageType="_XAtUEJPKEeO5ccOxUJdcGw">
+          <bufferSize xmi:id="_RaEmQJPLEeOrms8TmXbKaQ"/>
+        </receiverMessageBuffer>
+      </roles>
+      <roles xmi:id="_8GxAsJPKEeOrms8TmXbKaQ" connectors="_8GyO0ZPKEeOrms8TmXbKaQ" behavior="_IGkAMJvyEeOdXYbrwwJ4PA" name="role2" senderMessageTypes="_XAtUEJPKEeO5ccOxUJdcGw" receiverMessageTypes="_XAtUEJPKEeO5ccOxUJdcGw">
+        <cardinality xmi:id="_8GxnwJPKEeOrms8TmXbKaQ">
+          <lowerBound xmi:id="_8GxnwZPKEeOrms8TmXbKaQ"/>
+          <upperBound xmi:id="_8GyO0JPKEeOrms8TmXbKaQ"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_Q18yMJvyEeOdXYbrwwJ4PA" name="role2buffer" messageType="_XAtUEJPKEeO5ccOxUJdcGw">
+          <bufferSize xmi:id="_SJHDMJvyEeOdXYbrwwJ4PA"/>
+        </receiverMessageBuffer>
+      </roles>
+      <roleConnector xmi:id="_8GyO0ZPKEeOrms8TmXbKaQ" connectorEndpoints="_8Gf68JPKEeOrms8TmXbKaQ _8GxAsJPKEeOrms8TmXbKaQ">
+        <connectorQualityOfServiceAssumptions xmi:id="_8G15MJPKEeOrms8TmXbKaQ" comment="">
+          <minMessageDelay xmi:id="_mFLwEJvyEeOdXYbrwwJ4PA" unit="SECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_tJT6IJvyEeOdXYbrwwJ4PA" value="0"/>
+          </minMessageDelay>
+          <maxMessageDelay xmi:id="_mw7bwJvyEeOdXYbrwwJ4PA" unit="SECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_tuDl8JvyEeOdXYbrwwJ4PA" value="0"/>
+          </maxMessageDelay>
+        </connectorQualityOfServiceAssumptions>
+      </roleConnector>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_WHFkcJPKEeO5ccOxUJdcGw" key="org.muml.pim.messagetype.category" name="msgtype">
+    <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_Wu_5AJPKEeO5ccOxUJdcGw" name="Repository">
+      <messageTypes xmi:id="_XAtUEJPKEeO5ccOxUJdcGw" name="integerMessage"/>
+    </modelElements>
+  </categories>
+</modelinstance:RootNode>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.muml.core.feature" label="%featureName" provider-name="%providerName" version="1.0.0.qualifier">
+
+   <description>
+      %description
+   </description>
+
+   <copyright url="%copyrightURL">
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <requires>
+      <import feature="org.muml.emm.feature" version="0.1.0.qualifier"/>
+      <import feature="org.muml.ape.feature"/>
+   </requires>
+
+   <plugin download-size="0" id="org.muml.core" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.core.edit" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.core.edit.properties" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.core.ui" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.core.common" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.core.modelinstance.ui" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.core.preferences" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.core.reachanalysis.core" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.core.reachanalysis.reachabilitygraph" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="de.upb.swt.core" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="de.upb.swt.core.ui" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="de.upb.swt.core.ui.properties" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.core.export" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.core.ocl" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.core.example.ui" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.core.migrator" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.core.common.editingdomain" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.core.editor" install-size="0" unpack="false" version="0.0.0"/>
+
+</feature>

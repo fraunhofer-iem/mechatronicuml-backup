@@ -1,0 +1,41 @@
+«IMPORT simulink»
+«IMPORT simulink::msglib»
+
+«EXTENSION extensions::Block»
+
+«DEFINE common FOR Block»
+«IF LibraryReference.isInstance(this)-»
+«EXPAND LibraryReference::libraryReference FOR (LibraryReference)this-»
+«ELSEIF InPortBlock.isInstance(this)-»
+«EXPAND InPortBlock::inPortBlock FOR (InPortBlock)this-»
+«ELSEIF OutPortBlock.isInstance(this)-»
+«EXPAND OutPortBlock::outPortBlock FOR (OutPortBlock)this-»
+«ELSEIF ChartBlock.isInstance(this)-»
+«EXPAND ChartBlock::chartBlock FOR (ChartBlock)this-»
+«ELSEIF BusCreator.isInstance(this)-»
+«EXPAND BusCreator::busCreator FOR (BusCreator)this-»
+«ELSEIF BusSelector.isInstance(this)-»
+«EXPAND BusSelector::busSelector FOR (BusSelector)this-»
+«ELSEIF EmbeddedMatlabFunction.isInstance(this)-»
+«EXPAND EmbeddedMatlabFunction::embeddedMatlabFunction FOR (EmbeddedMatlabFunction)this-»
+«ELSEIF UnitDelay.isInstance(this)-»
+«EXPAND UnitDelay::unitDelay FOR (UnitDelay)this-»
+«ELSEIF DigitalClock.isInstance(this)-»
+«EXPAND DigitalClock::digitalClock FOR (DigitalClock)this-»
+«ELSEIF Constant.isInstance(this)-»
+«EXPAND Constant::constant FOR (Constant)this-»
+«ELSEIF ZeroOrderHold.isInstance(this)-»
+«EXPAND ZeroOrderHold::zeroOrderHold FOR (ZeroOrderHold)this-»
+«ELSEIF CommunicationSwitch.isInstance(this)-»
+«EXPAND msglib::CommunicationSwitch::communicationSwitch FOR (CommunicationSwitch)this-»
+«ELSEIF LinkLayer.isInstance(this)-»
+«EXPAND msglib::LinkLayer::linkLayer FOR (LinkLayer)this-»
+«ELSE-»
+  Block {
+    BlockType "«this.getBlockType()»"
+    Name "«this.getName()»"
+    Tag		"id=«this.id»"
+	«EXPAND Parameter::parameter FOREACH this.parameters.select(p| !{'BlockType','Name', 'Tag'}.contains(p.name) )-»
+  }
+«ENDIF-»
+«ENDDEFINE»

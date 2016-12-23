@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.muml.testlanguage:TestCase xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.muml.testlanguage="http://www.muml.org/testlanguage/1.0" xmlns:org.muml.testlanguage.specification="http://www.muml.org/testlanguage/specification/1.0">
+  <nodes label="Load Model" specificationClassName="LoadModel">
+    <outputs name="model" targets="//@nodes.1/@inputs[name='input']"/>
+    <specification xsi:type="org.muml.testlanguage.specification:LoadModel" label="Load Model" uri="platform:/resource/org.muml.uppaal.adapter.junit/tests/einparkhilfe/simplerExample.muml">
+      <portSpecifications name="model" optional="true" type="OUT"/>
+    </specification>
+  </nodes>
+  <nodes label="Transformation" specificationClassName="Transformation">
+    <inputs name="input" source="//@nodes.0/@outputs[name='model']" dataType="org.eclipse.emf.ecore.EObject"/>
+    <inputs name="options" source="//@nodes.2/@outputs[name='model']" dataType="org.eclipse.emf.ecore.EObject"/>
+    <outputs name="output_uppaal" targets="//@nodes.3/@inputs[name='model']"/>
+    <outputs name="output_req"/>
+    <outputs name="originalCIC"/>
+    <outputs name="mtctlStaticallyNormalizedModel"/>
+    <outputs name="verifiableCIC"/>
+    <specification xsi:type="org.muml.testlanguage.specification:Transformation" label="Transformation" uri="platform:/resource/org.muml.uppaal.adapter.transformation/transforms/VerifiableElement2UPPAAL.qvto" parameterOrder="//@nodes.1/@specification/@portSpecifications.0 //@nodes.1/@specification/@portSpecifications.1 //@nodes.1/@specification/@portSpecifications.2 //@nodes.1/@specification/@portSpecifications.3 //@nodes.1/@specification/@portSpecifications.4 //@nodes.1/@specification/@portSpecifications.5 //@nodes.1/@specification/@portSpecifications.6">
+      <portSpecifications name="input" dataType="org.eclipse.emf.ecore.EObject"/>
+      <portSpecifications name="options" dataType="org.eclipse.emf.ecore.EObject"/>
+      <portSpecifications name="output_uppaal" type="OUT" dataType="org.eclipse.emf.ecore.EObject"/>
+      <portSpecifications name="output_req" type="OUT" dataType="org.eclipse.emf.ecore.EObject"/>
+      <portSpecifications name="originalCIC" type="OUT" dataType="org.eclipse.emf.ecore.EObject"/>
+      <portSpecifications name="mtctlStaticallyNormalizedModel" type="OUT" dataType="org.eclipse.emf.ecore.EObject"/>
+      <portSpecifications name="verifiableCIC" type="OUT" dataType="org.eclipse.emf.ecore.EObject"/>
+    </specification>
+  </nodes>
+  <nodes label="Load Model" specificationClassName="LoadModel">
+    <outputs name="model" targets="//@nodes.1/@inputs[name='options']"/>
+    <specification xsi:type="org.muml.testlanguage.specification:LoadModel" label="Load Model" uri="platform:/resource/org.muml.uppaal.adapter.junit/tests/syntacticCheck/default.options">
+      <portSpecifications name="model" optional="true" type="OUT"/>
+    </specification>
+  </nodes>
+  <nodes label="Save Model" specificationClassName="SaveModel">
+    <inputs name="model" source="//@nodes.1/@outputs[name='output_uppaal']" dataType="org.eclipse.emf.ecore.EObject"/>
+    <specification xsi:type="org.muml.testlanguage.specification:SaveModel" label="Save Model" uri="platform:/resource/org.muml.uppaal.adapter.junit/output/blabla.uppaal">
+      <portSpecifications name="model" dataType="org.eclipse.emf.ecore.EObject"/>
+    </specification>
+  </nodes>
+</org.muml.testlanguage:TestCase>

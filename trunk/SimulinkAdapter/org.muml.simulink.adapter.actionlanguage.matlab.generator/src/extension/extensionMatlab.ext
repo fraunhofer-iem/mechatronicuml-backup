@@ -1,0 +1,110 @@
+
+import core::expressions::common;
+import core::expressions;
+import actionlanguage;
+import pim::types;  
+import pim::behavior;
+
+
+String logicOp(LogicOperator op):
+	switch (op) {
+		case LogicOperator::AND : '&&' //and
+		case LogicOperator::OR : '||' //or
+		case LogicOperator::XOR : '' //xor(A,B)
+		case LogicOperator::IMPLY : '==>'
+		case LogicOperator::EQUIVALENT : '<=>'
+		default: ""
+	}
+;
+
+
+String comparingOp(ComparingOperator op):
+	switch (op) {
+		case ComparingOperator::LESS : '<'
+		case ComparingOperator::LESS_OR_EQUAL : '<='
+		case ComparingOperator::EQUAL : '=='
+		case ComparingOperator::GREATER_OR_EQUAL : '>='
+		case ComparingOperator::GREATER : '>'
+		case ComparingOperator::UNEQUAL : '~='
+		case ComparingOperator::REGULAR_EXPRESSION : '' //?
+		default: ""
+	}
+;
+
+
+String arithmeticOp(ArithmeticOperator op):
+	switch (op) {
+		case ArithmeticOperator::PLUS : '+'
+		case ArithmeticOperator::MINUS : '-'
+		case ArithmeticOperator::TIMES : '*'
+		case ArithmeticOperator::DIVIDE : '/'
+		case ArithmeticOperator::MODULO : '' //mod(A,B)
+		default: ""
+	}
+;
+
+
+String unaryOp(UnaryOperator op):
+	switch (op) {
+		case UnaryOperator::NOT : '~'
+		case UnaryOperator::MINUS : '-'
+		case UnaryOperator::INCREMENT : '+1'
+		case UnaryOperator::DECREMENT : '-1'
+		default: ""
+	}
+;
+
+//ActionLanguage
+//tested, not for equalplus and equalminus
+String assignOp(AssignOperator op):
+	switch (op) {
+		case AssignOperator::UNSET : ''
+		case AssignOperator::ASSIGN : '='
+		case AssignOperator::PLUS_EQUAL : ''//x=x+y
+		case AssignOperator::MINUS_EQUAL : ''//x=x-y
+		default: ""
+	}
+;
+
+
+String incDecOp (IncrementDecrementOperator op):
+	switch (op) {
+		case IncrementDecrementOperator::UNSET : ''
+		case IncrementDecrementOperator::INCREMENT : '+1'//x=x+1
+		case IncrementDecrementOperator::DECREMENT : '-1'//x=x-1
+		default: ""
+	}
+;
+
+String dataType(PrimitiveDataType type):
+	switch (type.primitiveType) {
+		case PrimitiveTypes::BOOLEAN : ''
+		case PrimitiveTypes::INT8 : 'int8('
+		case PrimitiveTypes::UINT8 : 'uint8('
+		case PrimitiveTypes::INT16 : 'int16('
+		case PrimitiveTypes::UINT16 : 'uint16('
+		case PrimitiveTypes::INT32 : 'int32('
+		case PrimitiveTypes::UINT32 : 'uint32('
+		case PrimitiveTypes::INT64 : 'int32(' 		//32-bit MATLAB does not support 64-bit data types
+		case PrimitiveTypes::UINT64 : 'uint32('
+		case PrimitiveTypes::DOUBLE : 'double('
+		default: ""
+	}
+;
+// recursively traverse expression upwards until the Operation is reached...
+String getOperationName(ReturnStatement retState):
+	let opName = getOperationName(retState.eContainer):
+	if opName == null 
+	then null
+	else opName
+;
+
+//if Operation has been reached, return its name
+String getOperationName(Operation op): op.name;
+
+//for any expression traverse to eContainer
+String getOperationName(Expression exp): getOperationName(exp.eContainer);
+
+//if any other object has been reached, return null
+String getOperationName(Object obj) : null;
+ 

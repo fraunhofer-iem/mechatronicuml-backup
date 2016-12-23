@@ -1,0 +1,11 @@
+import simulink;
+import simulink::msglib;
+
+extension org::eclipse::xtend::util::stdlib::globalvar;
+
+cached String linkLayerToString(String source):
+	JAVA org.muml.simulink.adapter.m2t.xtend.CopyUtil.mdlFileToString(java.lang.String)
+;
+
+String generateLinkLayer(LinkLayer ll):
+	linkLayerToString('templates::msglib::LinkLayer');

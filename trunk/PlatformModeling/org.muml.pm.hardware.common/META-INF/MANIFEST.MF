@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %Bundle-Name
+Bundle-SymbolicName: org.muml.pm.hardware.common;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.muml.pm.hardware.common.edit.policies,
+ org.muml.pm.hardware.common.edit.policies.container,
+ org.muml.pm.hardware.common.edit.policies.hwport,
+ org.muml.pm.hardware.common.edit.policies.opendiagram,
+ org.muml.pm.hardware.common.edit.policies.resource,
+ org.muml.pm.hardware.common.figures,
+ org.muml.pm.hardware.common.icons,
+ org.muml.pm.hardware.common.parsers,
+ org.muml.pm.hardware.common.refactor
+Require-Bundle: org.eclipse.gmf.runtime.diagram.ui.properties,
+ org.muml.pim.common,
+ org.muml.pm.hardware,
+ org.eclipse.gmf.runtime.diagram.ui,
+ org.eclipse.gmf.runtime.emf.commands.core,
+ org.eclipse.xtext,
+ org.muml.core.modelinstance.ui,
+ org.eclipse.gmf.runtime.diagram.ui.render,
+ org.eclipse.ui.ide;bundle-version="3.7.0"
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
+Import-Package: org.eclipse.gmf.runtime.notation

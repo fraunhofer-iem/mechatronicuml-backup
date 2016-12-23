@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+<!-- DEACTIVATED new wizard, because it does not work yet -->
+
+<!--
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="properties.presentation.PropertiesModelWizardID"
+            name="%_UI_PropertiesModelWizard_label"
+            class="org.muml.ape.presentation.PropertiesModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/PropertiesModelFile.gif">
+         <description>%_UI_PropertiesModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+-->
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="properties.presentation.PropertiesEditorID"
+            name="%_UI_PropertiesEditor_label"
+            icon="icons/full/obj16/PropertiesModelFile.gif"
+            extensions="propsheet"
+            class="org.muml.ape.presentation.PropertiesEditor"
+            contributorClass="org.muml.ape.presentation.PropertiesActionBarContributor">
+      </editor>
+   </extension>
+   
+    <extension
+        point="org.eclipse.core.expressions.definitions">
+     <definition
+           id="org.muml.ape.expression.genmodelfile">
+	    <iterate
+           ifEmpty="false"
+           operator="and">
+	       <adapt type="org.eclipse.core.resources.IResource">
+	          <test property="org.eclipse.core.resources.name" 
+	                value="*.genmodel"/>
+	       </adapt>
+	    </iterate>
+     </definition>
+    </extension>
+    
+        <extension
+        point="org.eclipse.core.expressions.definitions">
+     <definition
+           id="org.muml.ape.expression.propsheetfile">
+	    <iterate
+           ifEmpty="false"
+           operator="and">
+	       <adapt type="org.eclipse.core.resources.IResource">
+	          <test property="org.eclipse.core.resources.name" 
+	                value="*.propsheet"/>
+	       </adapt>
+	    </iterate>
+     </definition>
+    </extension>
+
+    <extension point="org.eclipse.ui.menus">
+	   <menuContribution
+	          locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+       <command
+             commandId="org.muml.ape.initializePropsheet"
+             icon="icons/full/obj16/PropertiesModelFile.gif"
+             id="org.muml.ape.initializePropsheet"
+             label="Initialize Propsheet Model"
+             style="push">
+          <visibleWhen
+                checkEnabled="false">
+             <reference
+                   definitionId="org.muml.ape.expression.genmodelfile">
+             </reference>
+          </visibleWhen>
+       </command>
+	   </menuContribution>
+	</extension>
+	
+	<extension point="org.eclipse.ui.menus">
+	   <menuContribution
+	          locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+       <command
+             commandId="org.muml.ape.generateProperties"
+             icon="icons/full/obj16/Generate.gif"
+             id="org.muml.ape.generateProperties"
+             label="Generate Properties"
+             style="push">
+          <visibleWhen
+                checkEnabled="false">
+             <reference
+                   definitionId="org.muml.ape.expression.propsheetfile">
+             </reference>
+          </visibleWhen>
+       </command>
+	   </menuContribution>
+	</extension>
+
+    <extension point="org.eclipse.ui.commands">
+		<command
+			description="Initialize Propsheet"
+			defaultHandler="org.muml.ape.presentation.InitializePropsheetHandler"
+			id="org.muml.ape.initializePropsheet"
+			name="%initDiagramActionLabel">
+		</command>
+	</extension>
+
+
+    <extension point="org.eclipse.ui.commands">
+		<command
+			description="Generate Propsheet"
+			defaultHandler="org.muml.ape.presentation.GeneratePropertiesHandler"
+			id="org.muml.ape.generateProperties"
+			name="%initDiagramActionLabel">
+		</command>
+	</extension>
+	
+	
+	<!-- Fix for #1173: [Propsheet Editor] GenFeatures are shown as "GenFeature" without name -->
+    <extension
+          point="org.muml.ape.runtime.metamodelContributor">
+       <metamodel
+             contributor="org.muml.ape.presentation.GenmodelMetamodelContributor">
+       </metamodel>
+    </extension>
+
+
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated ape -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.muml.ape.presentation.PropertiesModelWizardID"
+            name="%_UI_PropertiesModelWizard_label"
+            class="org.muml.ape.presentation.PropertiesModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/PropertiesModelFile.gif">
+         <description>%_UI_PropertiesModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated ape -->
+      <editor
+            id="org.muml.ape.presentation.PropertiesEditorID"
+            name="%_UI_PropertiesEditor_label"
+            icon="icons/full/obj16/PropertiesModelFile.gif"
+            extensions="propsheet"
+            class="org.muml.ape.presentation.PropertiesEditor"
+            contributorClass="org.muml.ape.presentation.PropertiesActionBarContributor">
+      </editor>
+   </extension>
+</plugin>

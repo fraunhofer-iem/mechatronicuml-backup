@@ -1,0 +1,240 @@
+grammar org.muml.uppaal.adapter.mtctl.xtext.Mtctl with org.eclipse.xtext.common.Terminals
+
+import "platform:/resource/org.muml.uppaal.adapter.mtctl/model/Mtctl.ecore" as mtctl
+import "platform:/resource/org.muml.uppaal.adapter.mtctl/model/Mtctl.ecore#//booleanlogic" as mtctl
+import "platform:/resource/org.muml.uppaal.adapter.mtctl/model/Mtctl.ecore#//comparables" as mtctl
+import "platform:/resource/org.muml.uppaal.adapter.mtctl/model/Mtctl.ecore#//predicates" as mtctl
+import "platform:/resource/org.muml.uppaal.adapter.mtctl/model/Mtctl.ecore#//quantifiers" as mtctl
+import "platform:/resource/org.muml.uppaal.adapter.mtctl/model/Mtctl.ecore#//sets" as mtctl
+
+import "platform:/resource/org.muml.pim/model/pim.ecore#//valuetype" as valuetype
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+PropertyRepository returns mtctl::PropertyRepository:
+	(properties+=Property)*
+;
+
+Property returns mtctl::Property hidden(WS, ML_COMMENT):
+	expression=Expression ';' (comment=SL_COMMENT)?
+;
+
+Expression returns mtctl::Expression:
+	LeadsToExpr
+;
+
+//Binary operators (increasing precedence)
+LeadsToExpr returns mtctl::Expression:
+	ImplyExpr ({mtctl::LeadsToExpr.leftOpd=current} 'leadsTo' rightOpd=ImplyExpr)*
+;
+
+ImplyExpr returns mtctl::Expression:
+	AndExpr ({mtctl::ImplyExpr.leftOpd=current} 'implies' rightOpd=AndExpr)*
+;
+
+AndExpr returns mtctl::Expression:
+	OrExpr ({mtctl::AndExpr.leftOpd=current} 'and' rightOpd=OrExpr)*
+;
+
+OrExpr returns mtctl::Expression:
+	NotExpr ({mtctl::OrExpr.leftOpd=current} 'or' rightOpd=NotExpr)*
+;
+
+//Unary operators
+NotExpr returns mtctl::Expression:
+	'not' {mtctl::NotExpr} opd=NotExpr | QuantifierExpr
+;
+
+QuantifierExpr returns mtctl::Expression:
+	UniversalQuantExpr | ExistentialQuantExpr | TemporalQuantifierExpr | AtomExpr
+;
+
+UniversalQuantExpr returns mtctl::QuantifierExpr:
+	'forall' '(' {mtctl::UniversalQuantExpr} var=VariableBinding ')' formula=(NotExpr)
+;
+
+ExistentialQuantExpr returns mtctl::QuantifierExpr:
+	'exists' '(' {mtctl::ExistenceQuantExpr} var=VariableBinding ')' formula=(NotExpr)
+;
+
+VariableBinding returns mtctl::BoundVariable:
+	name=ID ':' set=SetExpr
+;
+
+TemporalQuantifierExpr returns mtctl::Expression:
+	EFExpr | AFExpr | EGExpr | AGExpr
+;
+
+EFExpr returns mtctl::TemporalQuantifierExpr:
+	('EF' | 'E<>') {mtctl::EFExpr} expr=NotExpr
+;
+
+AFExpr returns mtctl::TemporalQuantifierExpr:
+	('AF' | 'A<>') {mtctl::AFExpr} expr=NotExpr
+;
+
+EGExpr returns mtctl::TemporalQuantifierExpr:
+	('EG' | 'E[]') {mtctl::EGExpr} expr=NotExpr
+;
+
+AGExpr returns mtctl::TemporalQuantifierExpr:
+	('AG' | 'A[]') {mtctl::AGExpr} expr=NotExpr
+;
+
+//Bottom of precedence chain.
+AtomExpr returns mtctl::Expression:
+	'(' Expression ')' | PredicateExpr | ComparisonExpr
+;
+
+//Predicates
+PredicateExpr returns mtctl::Expression:
+	TrueExpr | FalseExpr | DeadlockExpr | ConnectorOverflowExpr | StateExpr | MessageExpr | TransitionExpr
+;
+
+DeadlockExpr returns mtctl::DeadlockExpr:
+	{mtctl::DeadlockExpr} 'deadlock'
+;
+
+ConnectorOverflowExpr returns mtctl::ConnectorOverflowExpr:
+	{mtctl::ConnectorOverflowExpr} 'connectorOverflow'
+;
+
+TrueExpr returns mtctl::TrueExpr:
+	{mtctl::TrueExpr} 'true'
+;
+
+FalseExpr returns mtctl::FalseExpr:
+	{mtctl::FalseExpr} 'false'
+;
+
+StateExpr returns mtctl::PredicateExpr:
+	StateActiveExpr | SubstateOfExpr | StateInStatechartExpr
+;
+
+StateActiveExpr returns mtctl::StateActiveExpr:
+	'stateActive' '(' state=StateMapExpr ')'
+;
+
+SubstateOfExpr returns mtctl::SubstateOfExpr:
+	'substateOf' '(' state=StateMapExpr ','	superstate=StateMapExpr ')'
+;
+
+StateInStatechartExpr returns mtctl::StateInStatechartExpr:
+	'stateInStatechart' '(' state = StateMapExpr ',' statechart = StatechartMapExpr ')'
+;
+
+MessageExpr returns mtctl::PredicateExpr:
+	MessageInBufferExpr | MessageInTransitExpr | MessageDiscardedExpr
+;
+
+MessageInTransitExpr returns mtctl::MessageInTransitExpr:
+	'messageInTransit' '(' message=MessageMapExpr ')'
+;
+
+MessageInBufferExpr returns mtctl::MessageInBufferExpr:
+	'messageInBuffer' '(' message=MessageMapExpr ',' buffer=BufferMapExpr ')'
+;
+
+MessageDiscardedExpr returns mtctl::MessageDiscardedExpr:
+	'messageDiscarded' '('buffer = BufferMapExpr')'
+;
+
+TransitionExpr returns mtctl::PredicateExpr:
+	TransitionFiringExpr
+;
+
+TransitionFiringExpr returns mtctl::TransitionFiringExpr:
+	'transitionFiring' '(' transition=TransitionMapExpr ')'
+;
+
+//Comparisons
+ComparisonExpr returns mtctl::Expression:
+	{mtctl::ComparisonExpr} lhs=MapExpr op=ComparisonOp rhs=MapExpr
+;
+
+enum ComparisonOp returns mtctl::ComparisonOp:
+	EQUALS='==' | GREATER='>' | GREATER_OR_EQUAL='>=' | LESS='<' | LESS_OR_EQUAL='<=' | NOT_EQUAL='!='
+;
+
+//Expressions usable in comparisons. Starting with MapExpressions arranged by return type
+MapExpr returns mtctl::MapExpr:
+	MumlElemExpr | BufferMessageCountExpr | ConstExpr | SourceStateExpr | TargetStateExpr
+;
+
+IntegerMapExpr returns mtctl::MapExpr:
+	MumlElemExpr | BufferMessageCountExpr | ConstExpr
+;
+
+TransitionMapExpr returns mtctl::MapExpr:
+	MumlElemExpr
+;
+
+StateMapExpr returns mtctl::MapExpr:
+	MumlElemExpr | SourceStateExpr | TargetStateExpr
+;
+
+StatechartMapExpr returns mtctl::MapExpr:
+	MumlElemExpr
+;
+
+BufferMapExpr returns mtctl::MapExpr:
+	MumlElemExpr
+;
+
+MessageMapExpr returns mtctl::MapExpr:
+	MumlElemExpr
+;
+
+BufferMessageCountExpr returns mtctl::BufferMsgCountExpr:
+	'bufferMessageCount' '(' buffer=BufferMapExpr ')'
+;
+
+SourceStateExpr returns mtctl::SourceStateExpr:
+	'sourceState' '(' transition=TransitionMapExpr ')'
+;
+
+TargetStateExpr returns mtctl::TargetStateExpr:
+	'targetState' '(' transition=TransitionMapExpr ')'
+;
+
+MumlElemExpr returns mtctl::MumlElemExpr:
+	elem=[ecore::EObject|QualifiedName] ('[' instance=[ecore::EObject|QualifiedName] ']')?
+;
+
+ConstExpr returns mtctl::ConstExpr:
+	val=EInt (timeUnit=TimeUnitExpr)?
+;
+
+TimeUnitExpr returns valuetype::TimeUnit:
+	'days' | 'hrs' | 'mins' | 'secs' | 'msecs' | 'µsecs' | 'nsecs'
+;
+
+//Sets
+SetExpr returns mtctl::SetExpr:
+	InstanceSetExpr | SubinstanceSetExpr | IntervalSetExpr | {mtctl::StateSetExpr} 'States' | {mtctl::TransitionSetExpr} 'Transitions' | {mtctl::MessageSetExpr} 'MessageTypes' | {mtctl::ClockSetExpr} 'Clocks' | {mtctl::BufferSetExpr} 'Buffers'
+;
+
+IntervalSetExpr returns mtctl::SetExpr:
+	{mtctl::IntervalSetExpr} '[' lowerVal=INT ',' upperVal=INT ']'
+;
+
+InstanceSetExpr returns mtctl::SetExpr:
+	{mtctl::InstanceSetExpr} 'Instances' '<' type=MumlElemExpr '>'
+;
+
+SubinstanceSetExpr returns mtctl::SetExpr:
+	{mtctl::SubinstanceSetExpr} 'Subinstances' '<' type=MumlElemExpr '>'
+;
+
+//Other necessary definitions
+
+QualifiedName:
+	QNAME | ID
+;
+
+terminal QNAME:
+	ID ('.' ID)+
+;
+
+EInt returns ecore::EInt:
+	'-'? INT
+;

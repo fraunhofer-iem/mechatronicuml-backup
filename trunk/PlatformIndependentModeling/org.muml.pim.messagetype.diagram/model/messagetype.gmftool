@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmftool:ToolRegistry
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
+  <palette
+      title="messageinterfaceeditorPalette">
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="messageinterfaceeditor">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="MessageTypeRepository"
+          description="Create new MessageInterface">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/MessageInterface.gif"
+            bundle="org.muml.pim.messagetype.diagram.custom"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="MessageType"
+          description="Create new MessageType">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Parameter"
+          description="Create new Parameter">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+    </tools>
+  </palette>
+</gmftool:ToolRegistry>

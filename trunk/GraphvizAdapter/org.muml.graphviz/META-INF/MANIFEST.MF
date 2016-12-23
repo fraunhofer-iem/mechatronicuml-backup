@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.muml.graphviz;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.muml.graphviz,
+ org.muml.graphviz.common,
+ org.muml.graphviz.common.impl,
+ org.muml.graphviz.common.util,
+ org.muml.graphviz.dot,
+ org.muml.graphviz.dot.impl,
+ org.muml.graphviz.dot.util,
+ org.muml.graphviz.impl,
+ org.muml.graphviz.plain,
+ org.muml.graphviz.plain.impl,
+ org.muml.graphviz.plain.util,
+ org.muml.graphviz.util,
+ org.muml.graphviz.util.impl,
+ org.muml.graphviz.util.util
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.muml.core;visibility:=reexport
+Bundle-ActivationPolicy: lazy

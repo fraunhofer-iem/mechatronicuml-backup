@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--muml metamodel version 0.3.2 (r2996)-->
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionlanguage="http://www.muml.org/pim/actionlanguage/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:msgtype="http://www.muml.org/pim/msgtype/1.0.0" xmlns:protocol="http://www.muml.org/pim/protocol/1.0.0" xmlns:realtimestatechart="http://www.muml.org/pim/realtimestatechart/1.0.0" xmlns:sdcec="http://www.muml.org/core/expressions/common/1.0.0" xmlns:types="http://www.muml.org/pim/types/1.0.0" xmi:id="_KM7xUMboEeOTKYUvCtrl0A">
+  <categories xmi:id="_KM7xUcboEeOTKYUvCtrl0A" key="org.muml.types.category" name="types">
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_KM7xUsboEeOTKYUvCtrl0A" name="VOID"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_KM7xU8boEeOTKYUvCtrl0A" name="BOOLEAN" primitiveType="BOOLEAN"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_KM7xVMboEeOTKYUvCtrl0A" name="BYTE" primitiveType="BYTE"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_KM7xVcboEeOTKYUvCtrl0A" name="SHORT" primitiveType="SHORT"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_KM7xVsboEeOTKYUvCtrl0A" name="INT" primitiveType="INT"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_KM7xV8boEeOTKYUvCtrl0A" name="LONG" primitiveType="LONG"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_KM7xWMboEeOTKYUvCtrl0A" name="DOUBLE" primitiveType="DOUBLE"/>
+  </categories>
+  <categories xmi:id="_MDg4cMboEeOTKYUvCtrl0A" key="org.muml.pim.messagetype.category" name="msgtype">
+    <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_4mMHoMboEeOTKYUvCtrl0A" name="Repository">
+      <messageTypes xmi:id="_5F3tQMboEeOTKYUvCtrl0A" name="aMessage">
+        <parameters xmi:id="_6LG3AMboEeOTKYUvCtrl0A" name="aParam" dataType="_KM7xVsboEeOTKYUvCtrl0A"/>
+      </messageTypes>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_9Mj10MboEeOTKYUvCtrl0A" key="org.muml.pim.realtimestatechart.category" name="realtimestatechart">
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_9Mj10cboEeOTKYUvCtrl0A" name="sender" behavioralElement="_FEdmMMbpEeOTKYUvCtrl0A">
+      <transitions xmi:id="_ZtijAMbpEeOTKYUvCtrl0A" priority="1" target="_-uSHQMboEeOTKYUvCtrl0A" source="_9Mj10sboEeOTKYUvCtrl0A" urgent="false">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_bJaEEMbpEeOTKYUvCtrl0A">
+          <message xmi:id="_b_TKQMbpEeOTKYUvCtrl0A" instanceOf="_5F3tQMboEeOTKYUvCtrl0A">
+            <parameterBinding xmi:id="_cvX8UMbpEeOTKYUvCtrl0A" parameter="_6LG3AMboEeOTKYUvCtrl0A">
+              <value xsi:type="sdcec:LiteralExpression" xmi:id="_d8srEMbpEeOTKYUvCtrl0A" value="2"/>
+            </parameterBinding>
+          </message>
+        </events>
+      </transitions>
+      <transitions xmi:id="_ojCXoMbpEeOTKYUvCtrl0A" priority="1" target="_9Mj10sboEeOTKYUvCtrl0A" source="_-uSHQMboEeOTKYUvCtrl0A"/>
+      <states xmi:id="_9Mj10sboEeOTKYUvCtrl0A" name="init" outgoingTransitions="_ZtijAMbpEeOTKYUvCtrl0A" incomingTransitions="_ojCXoMbpEeOTKYUvCtrl0A" initial="true"/>
+      <states xmi:id="_-uSHQMboEeOTKYUvCtrl0A" name="State" outgoingTransitions="_ojCXoMbpEeOTKYUvCtrl0A" incomingTransitions="_ZtijAMbpEeOTKYUvCtrl0A"/>
+    </modelElements>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_CElUsMbpEeOTKYUvCtrl0A" name="receiver" behavioralElement="_FEiesMbpEeOTKYUvCtrl0A">
+      <variables xmi:id="_sTB3cMbpEeOTKYUvCtrl0A" name="sum" dataType="_KM7xVsboEeOTKYUvCtrl0A">
+        <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_tuQfUMbpEeOTKYUvCtrl0A" value="0"/>
+      </variables>
+      <transitions xmi:id="_vy868MbpEeOTKYUvCtrl0A" priority="1" target="_utRFQMbpEeOTKYUvCtrl0A" source="_CElUscbpEeOTKYUvCtrl0A">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_wh32cMbpEeOTKYUvCtrl0A" kind="TRIGGER">
+          <message xmi:id="_wxNS8MbpEeOTKYUvCtrl0A" instanceOf="_5F3tQMboEeOTKYUvCtrl0A"/>
+        </events>
+        <action xmi:id="_yqhlAMbpEeOTKYUvCtrl0A" name="addToSum">
+          <expressions xsi:type="actionlanguage:Block" xmi:id="_3G_JQMbpEeOTKYUvCtrl0A">
+            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_3G_JQcbpEeOTKYUvCtrl0A" assignOperator=":=">
+              <rhs_assignExpression xsi:type="sdcec:ArithmeticExpression" xmi:id="_3G_JQsbpEeOTKYUvCtrl0A">
+                <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_3G_JQ8bpEeOTKYUvCtrl0A" typedNamedElement="_sTB3cMbpEeOTKYUvCtrl0A"/>
+                <rightExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_3G_JRMbpEeOTKYUvCtrl0A" messageType="_5F3tQMboEeOTKYUvCtrl0A" parameter="_6LG3AMboEeOTKYUvCtrl0A"/>
+              </rhs_assignExpression>
+              <lhs_typedNamedElementExpression xmi:id="_3G_JRcbpEeOTKYUvCtrl0A" typedNamedElement="_sTB3cMbpEeOTKYUvCtrl0A"/>
+            </expressions>
+          </expressions>
+        </action>
+      </transitions>
+      <transitions xmi:id="_6J12QMbpEeOTKYUvCtrl0A" priority="1" target="_CElUscbpEeOTKYUvCtrl0A" source="_utRFQMbpEeOTKYUvCtrl0A"/>
+      <states xmi:id="_CElUscbpEeOTKYUvCtrl0A" name="init" outgoingTransitions="_vy868MbpEeOTKYUvCtrl0A" incomingTransitions="_6J12QMbpEeOTKYUvCtrl0A" initial="true"/>
+      <states xmi:id="_utRFQMbpEeOTKYUvCtrl0A" name="State" outgoingTransitions="_6J12QMbpEeOTKYUvCtrl0A" incomingTransitions="_vy868MbpEeOTKYUvCtrl0A"/>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_EngkcMbpEeOTKYUvCtrl0A" key="org.muml.pim.protocol.category" name="protocol">
+    <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_FEPjwMbpEeOTKYUvCtrl0A" name="Example3">
+      <roles xmi:id="_FEdmMMbpEeOTKYUvCtrl0A" connectors="_FEjs0MbpEeOTKYUvCtrl0A" behavior="_9Mj10cboEeOTKYUvCtrl0A" name="role1" senderMessageTypes="_5F3tQMboEeOTKYUvCtrl0A" receiverMessageTypes="_5F3tQMboEeOTKYUvCtrl0A">
+        <cardinality xmi:id="_FEe0UMbpEeOTKYUvCtrl0A">
+          <lowerBound xmi:id="_FEfbYMbpEeOTKYUvCtrl0A"/>
+          <upperBound xmi:id="_FEhQkMbpEeOTKYUvCtrl0A"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_I-i2IMbpEeOTKYUvCtrl0A" messageType="_5F3tQMboEeOTKYUvCtrl0A">
+          <bufferSize xmi:id="_KMhsMMbpEeOTKYUvCtrl0A" value="2"/>
+        </receiverMessageBuffer>
+      </roles>
+      <roles xmi:id="_FEiesMbpEeOTKYUvCtrl0A" connectors="_FEjs0MbpEeOTKYUvCtrl0A" behavior="_CElUsMbpEeOTKYUvCtrl0A" name="role2" senderMessageTypes="_5F3tQMboEeOTKYUvCtrl0A" receiverMessageTypes="_5F3tQMboEeOTKYUvCtrl0A">
+        <cardinality xmi:id="_FEjFwMbpEeOTKYUvCtrl0A">
+          <lowerBound xmi:id="_OHNZEMbpEeOTKYUvCtrl0A"/>
+          <upperBound xmi:id="_OHOAIMbpEeOTKYUvCtrl0A"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_MbSCwMbpEeOTKYUvCtrl0A" messageType="_5F3tQMboEeOTKYUvCtrl0A">
+          <bufferSize xmi:id="_NEEhEMbpEeOTKYUvCtrl0A" value="4"/>
+        </receiverMessageBuffer>
+      </roles>
+      <roleConnector xmi:id="_FEjs0MbpEeOTKYUvCtrl0A" connectorEndpoints="_FEdmMMbpEeOTKYUvCtrl0A _FEiesMbpEeOTKYUvCtrl0A">
+        <connectorQualityOfServiceAssumptions xmi:id="_FEk68MbpEeOTKYUvCtrl0A" comment="">
+          <minMessageDelay xmi:id="_PU4tIMbpEeOTKYUvCtrl0A" unit="SECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_QfyaAMbpEeOTKYUvCtrl0A" value="1"/>
+          </minMessageDelay>
+          <maxMessageDelay xmi:id="_Qj2aoMbpEeOTKYUvCtrl0A" unit="SECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_RcnOoMbpEeOTKYUvCtrl0A" value="1"/>
+          </maxMessageDelay>
+        </connectorQualityOfServiceAssumptions>
+      </roleConnector>
+    </modelElements>
+  </categories>
+</modelinstance:RootNode>

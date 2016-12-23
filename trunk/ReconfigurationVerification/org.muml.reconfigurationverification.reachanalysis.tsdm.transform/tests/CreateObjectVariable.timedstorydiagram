@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedGraphTransformationSystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba.muml.timedstorydiagram="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0" xmlns:sda="http://www.muml.org/storydiagram/activities/1.0.0" xmlns:sdp="http://www.muml.org/storydiagram/patterns/1.0.0" name="CreateObjectVariableTGTS">
+  <rules name="CreateObjectVariable">
+    <ownedActivityEdge target="//@rules.0/@ownedActivityNode.1" source="//@rules.0/@ownedActivityNode.0"/>
+    <ownedActivityEdge target="//@rules.0/@ownedActivityNode.2" source="//@rules.0/@ownedActivityNode.1"/>
+    <ownedActivityNode xsi:type="sda:InitialNode" name="init" outgoing="//@rules.0/@ownedActivityEdge.0"/>
+    <ownedActivityNode xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedActivityNode" name="node1" outgoing="//@rules.0/@ownedActivityEdge.1" incoming="//@rules.0/@ownedActivityEdge.0">
+      <ownedRule xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedStoryPattern">
+        <variable xsi:type="sdp:ObjectVariable" name="comp" bindingState="BOUND" outgoingLink="//@rules.0/@ownedActivityNode.1/@ownedRule/@linkVariable.0">
+          <classifier href="component.ecore#//Component"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="p" incomingLink="//@rules.0/@ownedActivityNode.1/@ownedRule/@linkVariable.0" bindingOperator="CREATE">
+          <classifier href="component.ecore#//Port"/>
+        </variable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="port" bindingOperator="CREATE" source="//@rules.0/@ownedActivityNode.1/@ownedRule/@variable.0" target="//@rules.0/@ownedActivityNode.1/@ownedRule/@variable.1">
+          <targetEnd href="component.ecore#//Component/ports"/>
+        </linkVariable>
+      </ownedRule>
+    </ownedActivityNode>
+    <ownedActivityNode xsi:type="sda:ActivityFinalNode" name="final" incoming="//@rules.0/@ownedActivityEdge.1"/>
+  </rules>
+</de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedGraphTransformationSystem>

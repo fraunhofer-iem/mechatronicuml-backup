@@ -1,0 +1,351 @@
+library InstanceLibrary;
+
+modeltype PimPackage uses pim('http://www.muml.org/pim/1.0.0');
+modeltype ConnectorPackage uses pim::connector('http://www.muml.org/pim/1.0.0');
+modeltype ComponentPackage uses pim::component('http://www.muml.org/pim/1.0.0');
+modeltype ProtocolPackage uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype ValueTypePackage uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype InstancePackage uses pim::instance('http://www.muml.org/pim/1.0.0');
+
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+property NULL_COMPONENT_PART_HELPER : ComponentPart = object ComponentPart{};
+property NULL_PORT_PART_HELPER : PortPart = object PortPart{};
+
+// Convenience query to cast a natural number as integer, using -1 as value for infinity.
+query NaturalNumber::toInteger() : Integer {
+	if (self.infinity) then {
+		return -1;
+	} endif;
+	return self.value;
+}
+
+// Convenience query to get all Port Instances that have already been created for a port at a given ComponentInstance
+query Port::portInstances(componentInstance : ComponentInstance) : Set(PortInstance) {
+	return componentInstance.portInstances->select(i | i.type = self);
+}
+
+
+query Component::createPortInstances(part : ComponentPart) : Set(PortInstance) {
+	var portInstances : Set(PortInstance);
+	self.ports->forEach(port) {
+		portInstances += port.createInstances(part, NULL_PORT_PART_HELPER)[PortInstance];
+	};
+	return portInstances;
+}
+
+query ComponentPart::createPortInstances() : Set(PortInstance) {
+	var portInstances : Set(PortInstance);
+	self.portParts->forEach(portPart) {
+		var instances : Set(PortInstance) := portPart.portType.createInstances(self, portPart)[PortInstance];
+		instances->forEach(instance) {
+			portPart.map remember(instance);
+		};
+		portInstances += instances;
+	};
+	return portInstances;
+}
+mapping PortPart::remember(portInstance : PortInstance) : PortInstance {
+	init {
+		result := portInstance;
+	}
+}
+
+// Creating multiple Port Instances for multi ports and one Port Instance for single ports.
+query ConnectorEndpoint::createInstances(part : ComponentPart, portPart : PortPart) : Set(ConnectorEndpointInstance) {
+	return Set { self.createInstance(part, portPart, 0) }
+}
+query DirectedTypedPort::createInstances(part : ComponentPart, portPart : PortPart) : Set(ConnectorEndpointInstance) {
+	if (self.optional) then {
+		return Set { };
+ 	} endif;
+	return Set { self.createInstance(part, portPart, 0) };
+}
+query DiscretePort::createInstances(part : ComponentPart, portPart : PortPart) : Set(ConnectorEndpointInstance) {
+	if (self.multiPort) then {
+		var multiPortInstance : DiscreteMultiPortInstance := self.map multi(part, portPart);
+		multiPortInstance.subInteractionEndpointInstances := self.createSubPortInstances(part, portPart, self.cardinality.lowerBound.value)[DiscreteSinglePortInstance];
+		
+		//return OrderedSet { multiPortInstance }
+		return OrderedSet { multiPortInstance }[PortInstance]->union(multiPortInstance.subInteractionEndpointInstances[PortInstance])
+	} endif;
+	return self.createSubPortInstances(part, portPart, self.cardinality.lowerBound.value);
+}
+
+query DiscretePort::createSubPortInstances(part : ComponentPart, portPart : PortPart, numberOfInstantiations : Integer) : Set(PortInstance) {
+	var subPortInstances : Set(PortInstance);
+	var count : Integer := 0;
+	while (count < numberOfInstantiations) {
+		var portInstance : PortInstance := self.createInstance(part, portPart, count).oclAsType(PortInstance);
+		portInstance.name := self.name + (count + 1).toString();
+		subPortInstances += portInstance;
+		count := count + 1;
+	};
+	return subPortInstances
+}
+
+property multiMappingHelper : Integer = 0;
+// Primitively creating and initializing one PortInstance by PortType
+query ConnectorEndpoint::createInstance(part : ComponentPart, portPart : PortPart, id : Integer) : ConnectorEndpointInstance {
+	
+	multiMappingHelper := multiMappingHelper + 1;
+	// 
+	return self.map single(part, portPart, multiMappingHelper);
+}
+
+// Connector instances
+query Connector::otherEnd(thisEnd : ConnectorEndpoint) : ConnectorEndpoint {
+	return self.connectorEndpoints->select(e | e != thisEnd)->first();
+}
+
+ mapping Connector::mapConnectorInstance(endpoints : Set(ConnectorEndpointInstance)) : ConnectorInstance {
+init{
+	switch{ 	
+			case (self.oclIsKindOf(AssemblyConnector)){
+			result:=new AssemblyConnectorInstance(self.oclAsType(AssemblyConnector));
+					}
+			case (self.oclIsKindOf(DelegationConnector)){
+			result:=new DelegationConnectorInstance(self.oclAsType(DelegationConnector));
+					}
+			
+			else{//shall not be called
+				assert fatal(false) with log ("Only AssemblyConnector and DelegationConnector are correct");
+				//result:=self.createConnectorInstance(endpoints);
+				}
+		};	
+}
+	result.type:=self;
+	result.connectorEndpointInstances:= endpoints;
+}
+
+
+query Connector::primCreateConnectorInstance() : ConnectorInstance {
+	assert fatal (false) with log ("Tried to instantiate abstract class Connector.");
+	return null;
+}
+query AssemblyConnector::primCreateConnectorInstance() : ConnectorInstance {
+	return new AssemblyConnectorInstance(self);
+}
+query DelegationConnector::primCreateConnectorInstance() : ConnectorInstance {
+	return new DelegationConnectorInstance(self);
+}
+
+
+
+
+// Constructors
+constructor ComponentInstanceConfiguration::ComponentInstanceConfiguration(component : StructuredComponent) {
+	name := component.name;
+	var count : Integer := 0;
+	
+	component.embeddedComponentParts->select(p | p.componentType.oclIsKindOf(AtomicComponent))->forEach(part) {
+	count := 0;
+	while (count < part.cardinality.lowerBound.toInteger()) {
+				componentInstances += new AtomicComponentInstance(part.componentType.oclAsType(AtomicComponent), part);
+		
+		count := count + 1;
+		};
+	};
+	component.embeddedComponentParts->select(p | p.componentType.oclIsKindOf(StructuredComponent))->forEach(part) {
+	count := 0;
+	while (count < part.cardinality.lowerBound.toInteger()) {
+		componentInstances += new StructuredComponentInstance(part.componentType.oclAsType(StructuredComponent), part);
+			count := count + 1;
+	};
+	
+	};
+
+	result.oclAsType(ComponentInstanceConfiguration).portConnectorInstances := 	result. createConnectors( component);
+	
+}
+
+
+// TODO: Same code as below
+constructor AtomicComponentInstance::AtomicComponentInstance(type : AtomicComponent, part : ComponentPart) {
+	componentType := type;
+	
+	if (part != NULL_COMPONENT_PART_HELPER) then {
+		// Creating Port Instances also sets the opposite feature PortInstance.component
+		portInstances := part.createPortInstances();	
+		name:=part.name;
+		// Set ComponentPart
+		componentPart := part;
+	} else {
+			name := type.name;
+		
+		// Creating Port Instances also sets the opposite feature PortInstance.component
+		portInstances := componentType.createPortInstances(part);
+	} endif;
+
+}
+
+// TODO: Same code as above
+constructor StructuredComponentInstance::StructuredComponentInstance(type : StructuredComponent, part : ComponentPart) {
+	componentType := type;
+	
+	if (part != NULL_COMPONENT_PART_HELPER) then {
+		
+		name:=part.name;
+		
+		// Creating Port Instances also sets the opposite feature PortInstance.component
+		portInstances := part.createPortInstances();	
+	
+		// Set ComponentPart
+		componentPart := part;
+	} else {
+		
+		name := type.name;
+		
+		// Creating Port Instances also sets the opposite feature PortInstance.component
+		portInstances := componentType.createPortInstances(part);
+	} endif;
+	
+	embeddedCIC := new ComponentInstanceConfiguration(type);
+}
+
+
+
+
+property alreadyConnectedInstances : Set(PortInstance);
+//new Query to createConnetctorInstances
+query ComponentInstanceConfiguration::createConnectors(parentStructuredComponent:StructuredComponent) : Sequence(PortConnectorInstance){
+	var newConnectorInstances : Sequence(PortConnectorInstance);
+	// Add new connector instances
+			parentStructuredComponent.connectors->forEach(portConnector) {
+				var endpoint1 : ConnectorEndpoint := portConnector.connectorEndpoints->first();
+				var endpoint2 : ConnectorEndpoint := portConnector.connectorEndpoints->last();
+				if (endpoint1 != endpoint2)  {
+					var endpoint1Instances : Sequence(PortInstance) := endpoint1.resolve().oclAsSet()[PortInstance];
+					var endpoint2Instances : Sequence(PortInstance) := endpoint2.resolve().oclAsSet()[PortInstance];					
+					
+					var totalNumberOfInstancesEndpoint1 := endpoint1Instances->size();
+					var totalNumberOfInstancesEndpoint2 := endpoint2Instances->size();
+					endpoint1Instances->forEach(endPointInstance1) {					
+						endpoint2Instances->forEach(endPointInstance2) {								
+								// first check if the connector instances already contain one of the ConnectorEndpoints
+							if(not endPointInstance1.oclIsKindOf(DiscreteMultiPortInstance) and not endPointInstance2.oclIsKindOf(DiscreteMultiPortInstance) and							
+							newConnectorInstances->select(connectorInstance|connectorInstance.connectorEndpointInstances->includes(endPointInstance1) or connectorInstance.connectorEndpointInstances->includes(endPointInstance2))->isEmpty()) {
+								
+								// case discrete interaction endpoints
+								if(endPointInstance1.oclIsKindOf(DiscreteInteractionEndpointInstance) and endPointInstance2.oclIsKindOf(DiscreteInteractionEndpointInstance)) {
+									// case 1 of ticket #1455
+									if(not endpoint1.oclAsType(PortPart).portType.oclAsType(DiscreteInteractionEndpoint).multi and not endpoint2.oclAsType(PortPart).portType.oclAsType(DiscreteInteractionEndpoint).multi) {
+										// check number of portInstantiations since they give the lower bound number of involved componentParts
+										if(totalNumberOfInstancesEndpoint1 = 1 and totalNumberOfInstancesEndpoint2 = 1) {
+											// check whether there is no other component connected to endpoint1 or endpoint2
+											if(endpoint1.connectors->size() = 1 and endpoint2.connectors->size() = 1) {
+												// --> create assembly instance
+												newConnectorInstances += portConnector->map mapConnectorInstance(Set { endPointInstance1, endPointInstance2 })[PortConnectorInstance];
+											}
+										}
+									};
+									
+									// case 2 of ticket #1455: exactly one of the connected endpoints is multi							
+									if((not endpoint1.oclAsType(PortPart).portType.oclAsType(DiscreteInteractionEndpoint).multi and endpoint2.oclAsType(PortPart).portType.oclAsType(DiscreteInteractionEndpoint).multi)
+										or (not endpoint2.oclAsType(PortPart).portType.oclAsType(DiscreteInteractionEndpoint).multi and endpoint1.oclAsType(PortPart).portType.oclAsType(DiscreteInteractionEndpoint).multi)) {
+										
+										var multiPortInstance : DiscreteSinglePortInstance;
+										var singlePortInstance : DiscreteSinglePortInstance;
+										var multiPort : PortPart;
+										var singlePort : PortPart;
+										
+										var endpointInstance2IsMulti : Boolean:= not endpoint1.oclAsType(PortPart).portType.oclAsType(DiscreteInteractionEndpoint).multi and endpoint2.oclAsType(PortPart).portType.oclAsType(DiscreteInteractionEndpoint).multi;
+										// case 2.1: endPoint1 is single, endPoint2 is multi
+										if(endpointInstance2IsMulti){
+											multiPortInstance := endPointInstance2.oclAsType(DiscreteSinglePortInstance);
+											singlePortInstance := endPointInstance1.oclAsType(DiscreteSinglePortInstance);
+											multiPort := endpoint2.oclAsType(PortPart);
+											singlePort := endpoint1.oclAsType(PortPart);
+											
+										}
+										
+										// case 2.2: endPoint2 is single, endPoint1 is multi
+										else {
+											multiPortInstance := endPointInstance1.oclAsType(DiscreteSinglePortInstance);
+											singlePortInstance := endPointInstance2.oclAsType(DiscreteSinglePortInstance);
+											multiPort := endpoint1.oclAsType(PortPart);
+											singlePort := endpoint2.oclAsType(PortPart);
+											
+										};		
+										// check whether the lower bound of multiPort's ComponentPart is 1
+										if(multiPort.componentPart.cardinality.lowerBound.value = 1) {
+											var allConnectedEndpoints := multiPort.connectors.connectorEndpoints->select(endpoint| endpoint != multiPort);	
+											// check whether all non-multiPort connectorEndpoints connected to the multiport do not connect to other endpoints									
+											if(allConnectedEndpoints->forAll(otherEndpoint|otherEndpoint.oclAsType(ConnectorEndpoint).connectors->size() = 1)) {
+												var sumOfLowerBounds : Integer := 0;
+												// sum up the lower bounds of all involved components
+												allConnectedEndpoints->forEach(otherEndpoint) {
+													var intt := otherEndpoint.resolve();
+												
+													 sumOfLowerBounds := sumOfLowerBounds + intt->size();
+												};												
+												var s := multiPort.resolve().oclAsSet()[PortInstance];
+												var correspondingDiscreteMultiPortInstance : DiscreteMultiPortInstance := s->selectByKind(DiscreteMultiPortInstance)->any(true);
+												var diff : Integer := sumOfLowerBounds - s->size() + 1;
+												
+												assert warning(diff >= 0 ) with log ("The lower bound of the MultiPort " + correspondingDiscreteMultiPortInstance.name+ "is greater than the sum the lower bounds of all connected ComponentParts!");												
+													
+												if(diff > 0 ) {		
+													// compute additional instances if necessary					
+													
+													var newInstances : Sequence(PortInstance);
+														
+													while(diff > 0 ) {
+														 newInstances+= multiPort.portType.oclAsType(DiscretePort).createInstance(multiPort.componentPart, multiPort, diff + s->size() ).oclAsType(PortInstance);
+														 diff := diff -1;
+													};
+																									
+													newInstances->forEach(portInstance) {
+														correspondingDiscreteMultiPortInstance.subInteractionEndpointInstances += multiPort.map remember(portInstance).oclAsType(DiscreteSingleInteractionEndpointInstance);
+														correspondingDiscreteMultiPortInstance.componentInstance.portInstances += multiPort.map remember(portInstance);												
+													};													
+																																						
+												};
+																								
+												// sum must be lower or equal than the lower bound of the multiport
+												if(sumOfLowerBounds <= multiPort.portType.oclAsType(DiscretePort).cardinality.upperBound.value) {												
+													newConnectorInstances += portConnector->map mapConnectorInstance(Set { endPointInstance1, endPointInstance2 })[PortConnectorInstance];													
+												};
+											};	
+										};																			
+									}									
+								}
+								// non discrete interaction endpoints
+								else {								
+									newConnectorInstances+= portConnector->map mapConnectorInstance(Set { endPointInstance1, endPointInstance2 })[PortConnectorInstance];
+								};								
+							};	
+						};	
+					};						
+		}
+	};
+	return newConnectorInstances;
+}
+
+
+constructor AssemblyConnectorInstance::AssemblyConnectorInstance(assembly : AssemblyConnector) {
+	type := assembly;
+}
+constructor DelegationConnectorInstance::DelegationConnectorInstance(delegation : DelegationConnector) {
+	type := delegation;	
+}
+
+mapping ConnectorEndpoint::single(part : ComponentPart, portPart : PortPart, id : Integer) : ConnectorEndpointInstance
+	disjuncts DiscretePort::singleDiscrete, ContinuousPort::singleContinuous, HybridPort::singleHybrid;
+
+mapping DiscretePort::multi(part : ComponentPart, portPart : PortPart) : DiscreteMultiPortInstance {
+	type := self;
+	name := self.name;
+}
+mapping DiscretePort::singleDiscrete(part : ComponentPart, portPart : PortPart, id : Integer) : DiscreteSinglePortInstance {
+	type := self;
+	name := self.name;
+}
+mapping ContinuousPort::singleContinuous(part : ComponentPart, portPart : PortPart, id : Integer) : ContinuousPortInstance {
+	type := self;
+	name := self.name;
+}
+mapping HybridPort::singleHybrid(part : ComponentPart, portPart : PortPart, id : Integer) : HybridPortInstance {
+	type := self;
+	name := self.name;
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.muml.storydiagram.verification.sdd.basicsdd/src"
+    modelPluginID="org.muml.storydiagram.verification.sdd.basicsdd" modelName="BasicSDD"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
+    usedGenPackages="../../org.muml.core/model/core.genmodel#//core platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.muml.storydiagram.verification.sdd/model/sdd.genmodel#//sdd ../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram"
+    operationReflection="true">
+  <foreignModel>BasicSDD.ecore</foreignModel>
+  <genPackages prefix="BasicSDD" basePackage="org.muml.storydiagram.verification.sdd"
+      disposableProviderFactory="true" ecorePackage="BasicSDD.ecore#/">
+    <genClasses ecoreClass="BasicSDD.ecore#//StoryDecisionDiagram"/>
+    <genClasses ecoreClass="BasicSDD.ecore#//StoryPatternNode">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BasicSDD.ecore#//StoryPatternNode/pattern"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

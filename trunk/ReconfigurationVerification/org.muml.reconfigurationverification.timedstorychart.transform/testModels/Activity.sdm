@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sda:Activity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:expr="http://www.muml.org/core/expressions/1.0.0" xmlns:sda="http://www.muml.org/storydiagram/activities/1.0.0" xmlns:sdp="http://www.muml.org/storydiagram/patterns/1.0.0" inParameter="//@containedParameters.0 //@containedParameters.1 //@containedParameters.2 //@containedParameters.3 //@containedParameters.4" name="Action_Action1">
+  <containedParameters name="b_binding">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/runtime/0.3.14#//VariableBinding"/>
+  </containedParameters>
+  <containedParameters name="c_binding">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/runtime/0.3.14#//VariableBinding"/>
+  </containedParameters>
+  <containedParameters name="d_binding">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/runtime/0.3.14#//VariableBinding"/>
+  </containedParameters>
+  <containedParameters name="counter_binding">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/runtime/0.3.14#//VariableBinding"/>
+  </containedParameters>
+  <containedParameters name="a_binding">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/runtime/0.3.14#//VariableBinding"/>
+  </containedParameters>
+  <ownedActivityEdge target="//@ownedActivityNode.2" source="//@ownedActivityNode.0"/>
+  <ownedActivityEdge target="//@ownedActivityNode.3" source="//@ownedActivityNode.2"/>
+  <ownedActivityEdge target="//@ownedActivityNode.6" source="//@ownedActivityNode.3" guard="SUCCESS"/>
+  <ownedActivityEdge target="//@ownedActivityNode.5" source="//@ownedActivityNode.4" guard="SUCCESS"/>
+  <ownedActivityEdge target="//@ownedActivityNode.7" source="//@ownedActivityNode.5"/>
+  <ownedActivityEdge target="//@ownedActivityNode.4" source="//@ownedActivityNode.6"/>
+  <ownedActivityEdge target="//@ownedActivityNode.4" source="//@ownedActivityNode.7"/>
+  <ownedActivityEdge target="//@ownedActivityNode.1" source="//@ownedActivityNode.4" guard="FAILURE"/>
+  <ownedActivityEdge target="//@ownedActivityNode.8" source="//@ownedActivityNode.3" guard="FAILURE"/>
+  <ownedActivityEdge target="//@ownedActivityNode.9" source="//@ownedActivityNode.8" guard="SUCCESS"/>
+  <ownedActivityEdge target="//@ownedActivityNode.10" source="//@ownedActivityNode.9" guard="SUCCESS"/>
+  <ownedActivityEdge target="//@ownedActivityNode.9" source="//@ownedActivityNode.10"/>
+  <ownedActivityEdge target="//@ownedActivityNode.1" source="//@ownedActivityNode.9" guard="FAILURE"/>
+  <ownedActivityEdge target="//@ownedActivityNode.12" source="//@ownedActivityNode.8" guard="FAILURE"/>
+  <ownedActivityEdge target="//@ownedActivityNode.12" source="//@ownedActivityNode.11" guard="SUCCESS"/>
+  <ownedActivityEdge target="//@ownedActivityNode.11" source="//@ownedActivityNode.12"/>
+  <ownedActivityEdge target="//@ownedActivityNode.1" source="//@ownedActivityNode.11" guard="FAILURE"/>
+  <ownedActivityNode xsi:type="sda:InitialNode" name="initialNode" outgoing="//@ownedActivityEdge.0"/>
+  <ownedActivityNode xsi:type="sda:ActivityFinalNode" name="finalNode" incoming="//@ownedActivityEdge.7 //@ownedActivityEdge.12 //@ownedActivityEdge.16">
+    <returnValues xsi:type="expr:TextualExpression" expressionText="true" language="OCL" languageVersion="1.0"/>
+  </ownedActivityNode>
+  <ownedActivityNode xsi:type="sda:ModifyingStoryNode" name="Assignment" outgoing="//@ownedActivityEdge.1" incoming="//@ownedActivityEdge.0">
+    <ownedRule>
+      <variable xsi:type="sdp:ObjectVariable" name="a_binding" bindingState="BOUND">
+        <attributeAssignment>
+          <attribute href="http://www.fujaba.de/muml/model/runtime/0.3.14#//VariableBinding/value"/>
+          <valueExpression xsi:type="expr:TextualExpression" expressionText="(b_binding.value.oclAsType(Integer) + 5).oclAsType(Integer)" language="OCL" languageVersion="1.0"/>
+        </attributeAssignment>
+        <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//VariableBinding"/>
+      </variable>
+    </ownedRule>
+  </ownedActivityNode>
+  <ownedActivityNode xsi:type="sda:MatchingStoryNode" name="Check IF condition" outgoing="//@ownedActivityEdge.2 //@ownedActivityEdge.8" incoming="//@ownedActivityEdge.1">
+    <ownedPattern>
+      <constraint>
+        <constraintExpression xsi:type="expr:TextualExpression" expressionText="c_binding.value.oclAsType(Integer) &lt; d_binding.value.oclAsType(Integer) and d_binding.value.oclAsType(Integer) &lt; 4" language="OCL" languageVersion="1.0"/>
+      </constraint>
+    </ownedPattern>
+  </ownedActivityNode>
+  <ownedActivityNode xsi:type="sda:MatchingStoryNode" name="Check ForLoop condition" outgoing="//@ownedActivityEdge.3 //@ownedActivityEdge.7" incoming="//@ownedActivityEdge.5 //@ownedActivityEdge.6">
+    <ownedPattern>
+      <constraint>
+        <constraintExpression xsi:type="expr:TextualExpression" expressionText="counter_binding.value.oclAsType(Integer) &lt; 4" language="OCL" languageVersion="1.0"/>
+      </constraint>
+    </ownedPattern>
+  </ownedActivityNode>
+  <ownedActivityNode xsi:type="sda:ModifyingStoryNode" name="Assignment" outgoing="//@ownedActivityEdge.4" incoming="//@ownedActivityEdge.3">
+    <ownedRule>
+      <variable xsi:type="sdp:ObjectVariable" name="a_binding" bindingState="BOUND">
+        <attributeAssignment>
+          <attribute href="http://www.fujaba.de/muml/model/runtime/0.3.14#//VariableBinding/value"/>
+          <valueExpression xsi:type="expr:TextualExpression" expressionText="(b_binding.value.oclAsType(Integer) + 5).oclAsType(Integer)" language="OCL" languageVersion="1.0"/>
+        </attributeAssignment>
+        <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//VariableBinding"/>
+      </variable>
+    </ownedRule>
+  </ownedActivityNode>
+  <ownedActivityNode xsi:type="sda:ModifyingStoryNode" name="Execute initialize expression" outgoing="//@ownedActivityEdge.5" incoming="//@ownedActivityEdge.2">
+    <ownedRule>
+      <variable xsi:type="sdp:ObjectVariable" name="counter_binding" bindingState="BOUND">
+        <attributeAssignment>
+          <attribute href="http://www.fujaba.de/muml/model/runtime/0.3.14#//VariableBinding/value"/>
+          <valueExpression xsi:type="expr:TextualExpression" expressionText="(0).oclAsType(Integer)" language="OCL" languageVersion="1.0"/>
+        </attributeAssignment>
+        <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//VariableBinding"/>
+      </variable>
+    </ownedRule>
+  </ownedActivityNode>
+  <ownedActivityNode xsi:type="sda:ModifyingStoryNode" name="Execute counting expression" outgoing="//@ownedActivityEdge.6" incoming="//@ownedActivityEdge.4">
+    <ownedRule>
+      <variable xsi:type="sdp:ObjectVariable" name="counter_binding" bindingState="BOUND">
+        <attributeAssignment>
+          <attribute href="http://www.fujaba.de/muml/model/runtime/0.3.14#//VariableBinding/value"/>
+          <valueExpression xsi:type="expr:TextualExpression" expressionText="value.oclAsType(Integer)+1" language="OCL" languageVersion="1.0"/>
+        </attributeAssignment>
+        <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//VariableBinding"/>
+      </variable>
+    </ownedRule>
+  </ownedActivityNode>
+  <ownedActivityNode xsi:type="sda:MatchingStoryNode" name="Check ELSEIF condition" outgoing="//@ownedActivityEdge.9 //@ownedActivityEdge.13" incoming="//@ownedActivityEdge.8">
+    <ownedPattern>
+      <constraint>
+        <constraintExpression xsi:type="expr:TextualExpression" expressionText="c_binding.value.oclAsType(Integer) &lt; d_binding.value.oclAsType(Integer) and d_binding.value.oclAsType(Integer) &lt; 4" language="OCL" languageVersion="1.0"/>
+      </constraint>
+    </ownedPattern>
+  </ownedActivityNode>
+  <ownedActivityNode xsi:type="sda:MatchingStoryNode" name="Check WhileLoop condition" outgoing="//@ownedActivityEdge.10 //@ownedActivityEdge.12" incoming="//@ownedActivityEdge.9 //@ownedActivityEdge.11">
+    <ownedPattern>
+      <constraint>
+        <constraintExpression xsi:type="expr:TextualExpression" expressionText="c_binding.value.oclAsType(Integer) &lt; d_binding.value.oclAsType(Integer) and d_binding.value.oclAsType(Integer) &lt; 4" language="OCL" languageVersion="1.0"/>
+      </constraint>
+    </ownedPattern>
+  </ownedActivityNode>
+  <ownedActivityNode xsi:type="sda:ModifyingStoryNode" name="Assignment" outgoing="//@ownedActivityEdge.11" incoming="//@ownedActivityEdge.10">
+    <ownedRule>
+      <variable xsi:type="sdp:ObjectVariable" bindingState="BOUND">
+        <attributeAssignment>
+          <attribute href="http://www.fujaba.de/muml/model/runtime/0.3.14#//VariableBinding/value"/>
+          <valueExpression xsi:type="expr:TextualExpression" language="OCL" languageVersion="1.0"/>
+        </attributeAssignment>
+        <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//VariableBinding"/>
+      </variable>
+    </ownedRule>
+  </ownedActivityNode>
+  <ownedActivityNode xsi:type="sda:MatchingStoryNode" name="Check DoWhileLoop condition" outgoing="//@ownedActivityEdge.14 //@ownedActivityEdge.16" incoming="//@ownedActivityEdge.15">
+    <ownedPattern>
+      <constraint>
+        <constraintExpression xsi:type="expr:TextualExpression" expressionText="c_binding.value.oclAsType(Integer) &lt; d_binding.value.oclAsType(Integer) and d_binding.value.oclAsType(Integer) &lt; 4" language="OCL" languageVersion="1.0"/>
+      </constraint>
+    </ownedPattern>
+  </ownedActivityNode>
+  <ownedActivityNode xsi:type="sda:ModifyingStoryNode" name="Assignment" outgoing="//@ownedActivityEdge.15" incoming="//@ownedActivityEdge.13 //@ownedActivityEdge.14">
+    <ownedRule>
+      <variable xsi:type="sdp:ObjectVariable" bindingState="BOUND">
+        <attributeAssignment>
+          <attribute href="http://www.fujaba.de/muml/model/runtime/0.3.14#//VariableBinding/value"/>
+          <valueExpression xsi:type="expr:TextualExpression" language="OCL" languageVersion="1.0"/>
+        </attributeAssignment>
+        <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//VariableBinding"/>
+      </variable>
+    </ownedRule>
+  </ownedActivityNode>
+</sda:Activity>

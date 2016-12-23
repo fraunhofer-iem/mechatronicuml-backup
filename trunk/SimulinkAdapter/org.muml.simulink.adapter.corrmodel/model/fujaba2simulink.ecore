@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="corrmodel" nsURI="http://www.muml.org/simulink/adapter/corrmodel/1.0.0"
+    nsPrefix="fujaba2simulink">
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractContainerCorrespondenceNode"
+      abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="childCorresp" upperBound="-1"
+        eType="#//AbstractContainerCorrespondenceNode" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RootNode2SimulinkContainer" eSuperTypes="#//AbstractContainerCorrespondenceNode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RootNode" eType="ecore:EClass ../../org.muml.core.modelinstance/model/modelinstance.ecore#//RootNode"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SimulinkContainer" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//SimulinkContainer"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="packetBus" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//Bus"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="busOfBusses" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//Bus"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cic2ss" upperBound="-1"
+        eType="#//CompInstConfig2SubSys"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="atomCompLib" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//SimulinkLibrary"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModElCat2SimLib" eSuperTypes="#//AbstractContainerCorrespondenceNode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modElCat" eType="ecore:EClass ../../org.muml.core.modelinstance/model/modelinstance.ecore#//ModelElementCategory"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="simLib" upperBound="-1"
+        eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//SimulinkLibrary"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CompInstConfig2SubSys" eSuperTypes="#//AbstractContainerCorrespondenceNode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instConfig" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//instance/ComponentInstanceConfiguration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subSys" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//SubSystem"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="communicationSwitch" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//SubSystem"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="busCreator" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//BusCreator"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="busSelector" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//BusSelector"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="busCreatorOutPort" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//OutPortBlock"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="busSelectorInPort" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//InPortBlock"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="busOfBusses" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//Line"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CS_inPort" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//InPortBlock"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CS_outPort" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//OutPortBlock"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="compInstName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InstConfig2SimMod" eSuperTypes="#//AbstractContainerCorrespondenceNode #//CompInstConfig2SubSys">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ModelElementCategory" eType="ecore:EClass ../../org.muml.core.modelinstance/model/modelinstance.ecore#//ModelElementCategory"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AtomComp2AtomSys" eSuperTypes="#//AbstractContainerCorrespondenceNode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clockSignal" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//InPortBlock"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="chart" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//stateflow/Chart"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="comp" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//component/Component"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sys" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//SubSystem"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StructComp2SubSys" eSuperTypes="#//AbstractContainerCorrespondenceNode #//CompInstConfig2SubSys">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ComponentInstance" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//instance/ComponentInstance"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="LibraryReference" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//LibraryReference"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="comp" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//component/Component"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CompInst2LibRef" eSuperTypes="#//AbstractContainerCorrespondenceNode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="compInst" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//instance/ComponentInstance"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="libRef" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//LibraryReference"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Port2Ports" eSuperTypes="#//AbstractContainerCorrespondenceNode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inPort" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//InPortBlock"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outPort" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//OutPortBlock"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="port" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//component/Port"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="help_inPort" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//InPortBlock"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="help_outPort" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//OutPortBlock"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portInst" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//instance/PortInstance"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="multiPortInst" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//instance/DiscreteMultiPortInstance"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="compInst" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//instance/ComponentInstance"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sc_ReadIn" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//InPortBlock"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sc_ReadOut" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//OutPortBlock"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sc_WriteIn" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//InPortBlock"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sc_WriteOut" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//OutPortBlock"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sc_help_ReadIn" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//OutPortBlock"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sc_help_ReadOut" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//InPortBlock"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sc_help_WriteIn" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//OutPortBlock"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sc_help_WriteOut" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//InPortBlock"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mi" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//msgtype/MessageTypeRepository"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="net_address_inPort" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//InPortBlock"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="receiver_net_address_inPort"
+        eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//InPortBlock"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constant" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//Constant"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portType" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//types/DataType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lineFromReadOut" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//Line"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lineToReadIn" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//Line"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="linkLayer" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//msglib/LinkLayer"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AssemblyInst2Line" eSuperTypes="#//AbstractContainerCorrespondenceNode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyInst" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//instance/AssemblyConnectorInstance"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="line" upperBound="-1" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//Line"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Del2Line" eSuperTypes="#//AbstractContainerCorrespondenceNode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="DelegationInstance" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//instance/DelegationConnectorInstance"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Line" upperBound="-1" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//Line"/>
+  </eClassifiers>
+  <eSubpackages name="behavior" nsURI="http://www.muml.org/simulink/adapter/corrmodel/behavior/1.0.0"
+      nsPrefix="fujaba2simulinkbehavior">
+    <eClassifiers xsi:type="ecore:EClass" name="RtScCat2SfM" eSuperTypes="#//AbstractContainerCorrespondenceNode">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sfM" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//stateflow/StateflowMachine"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="rtScCat" eType="ecore:EClass ../../org.muml.core.modelinstance/model/modelinstance.ecore#//ModelElementCategory"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FRtSc2Chart" eSuperTypes="#//AbstractContainerCorrespondenceNode">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="chart" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//stateflow/Chart"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="fRtSc" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/RealtimeStatechart"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="mt_par" upperBound="-1"
+          eType="#//behavior/MT_Par2MTD"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sfChartState" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//stateflow/State"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sfChartRegion" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//stateflow/State"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sfQueueRegion" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//stateflow/State"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sfSelfTrans" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//stateflow/Transition"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ScState2SfState" eSuperTypes="#//AbstractContainerCorrespondenceNode">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scState" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/State"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sfState" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//stateflow/State"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ScTrans2SfTrans" eSuperTypes="#//AbstractContainerCorrespondenceNode">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scTrans" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Transition"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sfTrans" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//stateflow/Transition"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scReg" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Region"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ScRegion2sfParallel" eSuperTypes="#//AbstractContainerCorrespondenceNode">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scRegion" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Region"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sfParallelState" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//stateflow/State"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scRegRtsc" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/RealtimeStatechart"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ScEntry2sfEntry" eSuperTypes="#//AbstractContainerCorrespondenceNode">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scEntryEvent" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/EntryEvent"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sfEntryAction" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//stateflow/Action"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scEntryAction" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Action"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scExpr" eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scClock" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Clock"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ScExit2sfExit" eSuperTypes="#//AbstractContainerCorrespondenceNode">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scExitEvent" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/ExitEvent"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scExitAction" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Action"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scExitExpr" eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sfExitAction" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//stateflow/Action"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scClock" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Clock"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ScStEnPoint2sfTrans" eSuperTypes="#//AbstractContainerCorrespondenceNode">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sfTrans" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//stateflow/Transition"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scInTrans" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Transition"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scOutTrans" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Transition"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scStateEntryP" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/EntryPoint"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ScStExPoint2sfTrans" eSuperTypes="#//AbstractContainerCorrespondenceNode">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sfTrans" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//stateflow/Transition"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scOutTrans" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Transition"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scInTrans" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Transition"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scStExPoint" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/ExitPoint"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ScSyncChannel2sfSignal" eSuperTypes="#//AbstractContainerCorrespondenceNode">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scSyncChannel" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/SynchronizationChannel"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sfSyncEvent" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//stateflow/Event"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ScSyncReceiveAction2sfAction" eSuperTypes="#//AbstractContainerCorrespondenceNode">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scAction" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Action"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scActionExpr" eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/TextualExpression"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sfAction" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//stateflow/Action"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ScSyncReceive2sfSyncReceive" eSuperTypes="#//AbstractContainerCorrespondenceNode">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scSyncReceive" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Synchronization"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sfEntryAction" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//stateflow/Action"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sfExitAction" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//stateflow/Action"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sfTransEvent" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//stateflow/Event"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="scSyncSend2sfSyncSend" eSuperTypes="#//AbstractContainerCorrespondenceNode">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sfGuard" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//stateflow/Action"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sfAssignment" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//stateflow/Action"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scTransAnnotation" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EAnnotation"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scAnnDetails" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ScSyncPara2sfSyncParaData" eSuperTypes="#//AbstractContainerCorrespondenceNode"/>
+    <eClassifiers xsi:type="ecore:EClass" name="MT_Par2MTD" eSuperTypes="#//AbstractContainerCorrespondenceNode">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="mt" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//msgtype/MessageType"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="par" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//behavior/Parameter"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="data" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//stateflow/Data"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="scAttribute2sfData" eSuperTypes="#//AbstractContainerCorrespondenceNode">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scAttribute" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//behavior/Variable"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sfData" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//stateflow/Data"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scType" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//types/DataType"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scAttrType" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//types/DataType"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="scSendAsync2sfTransAction" eSuperTypes="#//AbstractContainerCorrespondenceNode">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sfSendAsync" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//stateflow/Action"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="AsynchronousMessageEvent"
+          eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/AsynchronousMessageEvent"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="Message" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Message"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="ActionValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral=""/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scPara" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EParameter"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parBind" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//behavior/ParameterBinding"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="scSendParaBind2sfAction" eSuperTypes="#//AbstractContainerCorrespondenceNode">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sfParaBAction" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//stateflow/Action"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scAnnotation" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EAnnotation"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scDetails" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EStringToStringMapEntry"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="scAsyncSend2sfAction" eSuperTypes="#//AbstractContainerCorrespondenceNode">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sfEnqAction" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//stateflow/Action"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="AsynchronousMessageEvent"
+          eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/AsynchronousMessageEvent"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="EAnnotation" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EAnnotation"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="EStringToStringMapEntry"
+          eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="scAsyncRec2sfAsyncGuard" eSuperTypes="#//AbstractContainerCorrespondenceNode">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="guardAnnotation" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="EAnnotation" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EAnnotation"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="AsynchronousMessageEvent"
+          eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/AsynchronousMessageEvent"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="asyncRecGuard" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//stateflow/Action"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="scClock2sfData" eSuperTypes="#//AbstractContainerCorrespondenceNode">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scClock" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Clock"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sfClockVariable" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//stateflow/Data"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="scClockConstr2sfGuard" eSuperTypes="#//AbstractContainerCorrespondenceNode">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scClockConstr" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/ClockConstraint"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scBound" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/TimeValue"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scClock" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Clock"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sfClockGuard" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//stateflow/Action"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="clock2ClockReset" eSuperTypes="#//AbstractContainerCorrespondenceNode">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scClock" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Clock"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sfClockReset" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//stateflow/Action"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="scInvariant2sfInvError" eSuperTypes="#//AbstractContainerCorrespondenceNode">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scInvariant" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/ClockConstraint"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scBound" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/TimeValue"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scClock" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Clock"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sfInvTrans" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//stateflow/Transition"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sfInvGuard" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//stateflow/Action"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sfInvNode" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//stateflow/State"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="scGuard2sfGuard" eSuperTypes="#//AbstractContainerCorrespondenceNode">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sfGuard" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//stateflow/Action"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scAnnotation" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EAnnotation"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scDetails" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="scAction2sfAction" eSuperTypes="#//AbstractContainerCorrespondenceNode">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scAction" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Action"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sfAction" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//stateflow/Action"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scActionExpr" eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="scOp2sfEmbFunc" eSuperTypes="#//AbstractContainerCorrespondenceNode">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scOperation" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//behavior/Operation"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sfEmbFunc" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//stateflow/EmbeddedFunction"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scAnnotation" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EAnnotation"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scDetails" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="scOpData2sfEmbFuncData" eSuperTypes="#//AbstractContainerCorrespondenceNode">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scParameter" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//behavior/Parameter"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sfData" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//stateflow/Data"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scParaType" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//types/PrimitiveDataType"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="scAsyncRec2sfDequeue" eSuperTypes="#//AbstractContainerCorrespondenceNode">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scDetailsDequeue" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scAction" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//stateflow/Action"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="scActionSelfTrans2sfAction" eSuperTypes="#//AbstractContainerCorrespondenceNode">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scAction" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Action"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sfAction" eType="ecore:EClass ../../org.muml.simulink/model/Simulink.ecore#//stateflow/Action"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>

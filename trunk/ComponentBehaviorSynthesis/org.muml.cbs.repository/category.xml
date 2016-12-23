@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.muml.cbs.feature_1.0.0.qualifier.jar" id="org.muml.cbs.feature" version="1.0.0.qualifier">
+      <category name="org.muml.cbs.category"/>
+   </feature>
+   <category-def name="org.muml.cbs.category" label="ComponentBehaviorSynthesis"/>
+</site>

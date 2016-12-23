@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated executionTrace -->
+      <package
+            uri="http://www.muml.org/storydiagram/interpreter/core/executiontrace/1.0"
+            class="org.muml.storydiagram.interpreter.core.executiontrace.ExecutiontracePackage"
+            genModel="model/executionTrace.genmodel"/>
+   </extension>
+
+</plugin>

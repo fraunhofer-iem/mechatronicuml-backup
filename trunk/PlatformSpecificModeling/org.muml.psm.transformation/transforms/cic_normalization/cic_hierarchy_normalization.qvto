@@ -1,0 +1,51 @@
+transformation cic_hierarchy_normalization(inout instance : ModelInstancePackage);
+
+
+modeltype PimPackage uses pim('http://www.muml.org/pim/1.0.0');
+modeltype ModelInstancePackage uses modelinstance('http://www.muml.org/modelinstance/1.0.0');
+modeltype Codegen uses psm::codegen('http://www.muml.org/psm/1.0.0');
+
+
+modeltype ConnectorPackage uses pim::connector('http://www.muml.org/pim/1.0.0');
+modeltype ValuetypePackage uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype ComponentPackage uses pim::component('http://www.muml.org/pim/1.0.0');
+modeltype InstancePackage uses pim::instance('http://www.muml.org/pim/1.0.0');
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+main() {
+	
+}
+
+//walk recursivly down the hierarchy
+helper ComponentInstanceConfiguration::flatComponentInstanceConfiguration(){
+	self.componentInstances[StructuredComponentInstance]->forEach(sci){
+		sci.flatStructuredComponentInstance();
+		instance.removeElement(sci);
+	};
+}
+
+//flatt a structured component instance
+helper StructuredComponentInstance::flatStructuredComponentInstance(){
+	var delegations:Set(DelegationConnectorInstance):=self.embeddedCIC.portConnectorInstances[DelegationConnectorInstance];
+	self.embeddedCIC.flatComponentInstanceConfiguration();
+	//work on the atomic component instances
+	self.embeddedCIC.componentInstances[AtomicComponentInstance]->forEach(aci){
+		var delegation:Set(DelegationConnectorInstance);
+		//rearrange the connectors of each port instance with the on of the connected delegetion port
+		aci.portInstances->forEach(pi){
+			delegation:=pi.connectorInstances[DelegationConnectorInstance]->intersection(delegations);
+			if(delegation->size()>0) then{
+				pi.connectorInstances:=delegation.connectorEndpointInstances->select(endpoint|endpoint<>pi).connectorInstances;
+			}endif;
+		};
+		//move a atomic component instance one level up
+		self.parentCIC.componentInstances+=aci;
+	};
+	moveConnectorInstanceUp(self);
+}
+
+//move the assembly connectors one level up
+helper moveConnectorInstanceUp(inout sci:StructuredComponentInstance){
+	sci.parentCIC.portConnectorInstances+=sci.embeddedCIC.portConnectorInstances[AssemblyConnectorInstance];
+	return null;
+}

@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emm:Migrator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:emm="http://www.muml.org/emm/1.0.0">
+  <sourcePackages href="MumlReconfiguration-0.4.ecore#/"/>
+  <sourcePackages href="MumlReconfiguration-0.4.ecore#//expression"/>
+  <sourcePackages href="MumlReconfiguration-0.4.ecore#//protocolinstantiation"/>
+  <sourcePackages href="MumlReconfiguration-0.4.ecore#//reconfInstance"/>
+  <sourcePackages href="MumlReconfiguration-0.4.ecore#//structdatatype"/>
+  <targetPackages href="MumlReconfiguration.ecore#/"/>
+  <targetPackages href="MumlReconfiguration.ecore#//expression"/>
+  <targetPackages href="MumlReconfiguration.ecore#//protocolinstantiation"/>
+  <targetPackages href="MumlReconfiguration.ecore#//reconfInstance"/>
+  <targetPackages href="MumlReconfiguration.ecore#//structdatatype"/>
+  <mappings>
+    <targetClass href="MumlReconfiguration.ecore#//reconfInstance/ReconfigurableStructuredComponentInstance"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//reconfInstance/ReconfigurableStructuredComponentInstance/controllerInstance"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//reconfInstance/ReconfigurableStructuredComponentInstance/controllerInstance"/>
+    </featureInitializers>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//reconfInstance/ReconfigurableStructuredComponentInstance"/>
+  </mappings>
+  <mappings>
+    <targetClass href="MumlReconfiguration.ecore#//reconfInstance/ExecutorInstance"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//reconfInstance/ExecutorInstance/executor"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//reconfInstance/ExecutorInstance/executor"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//reconfInstance/ExecutorInstance/reconfigurationControllerInstance"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//reconfInstance/ExecutorInstance/reconfigurationControllerInstance"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//reconfInstance/ExecutorInstance/portInstances"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//reconfInstance/ExecutorInstance/portInstances"/>
+    </featureInitializers>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//reconfInstance/ExecutorInstance"/>
+  </mappings>
+  <mappings>
+    <targetClass href="MumlReconfiguration.ecore#//reconfInstance/ManagerInstance"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//reconfInstance/ManagerInstance/manager"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//reconfInstance/ManagerInstance/manager"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//reconfInstance/ManagerInstance/reconfigurationControllerInstance"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//reconfInstance/ManagerInstance/reconfigurationControllerInstance"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//reconfInstance/ManagerInstance/portInstances"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//reconfInstance/ManagerInstance/portInstances"/>
+    </featureInitializers>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//reconfInstance/ManagerInstance"/>
+  </mappings>
+  <mappings>
+    <targetClass href="MumlReconfiguration.ecore#//reconfInstance/RuleBasedReconfigurationControllerInstance"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//reconfInstance/RuleBasedReconfigurationControllerInstance/managerInstance"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//reconfInstance/RuleBasedReconfigurationControllerInstance/managerInstance"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//reconfInstance/RuleBasedReconfigurationControllerInstance/executorInstance"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//reconfInstance/RuleBasedReconfigurationControllerInstance/executorInstance"/>
+    </featureInitializers>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//reconfInstance/RuleBasedReconfigurationControllerInstance"/>
+  </mappings>
+  <mappings>
+    <targetClass href="MumlReconfiguration.ecore#//protocolinstantiation/BroadcastPort"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="MumlReconfiguration.ecore#//protocolinstantiation/BroadcastPort/kind"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="MumlReconfiguration-0.4.ecore#//protocolinstantiation/BroadcastPort/kind"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//protocolinstantiation/BroadcastPort/specification"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//protocolinstantiation/BroadcastPort/specification"/>
+    </featureInitializers>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//protocolinstantiation/BroadcastPort"/>
+  </mappings>
+  <mappings>
+    <targetClass href="MumlReconfiguration.ecore#//structdatatype/Reference"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//structdatatype/Reference/structType"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//structdatatype/Reference/structType"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//structdatatype/Reference/cardinality"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//structdatatype/Reference/cardinality"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//structdatatype/Reference/type"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//structdatatype/Reference/type"/>
+    </featureInitializers>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//structdatatype/Reference"/>
+  </mappings>
+  <mappings>
+    <targetClass href="MumlReconfiguration.ecore#//structdatatype/StructType"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//structdatatype/StructType/references"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//structdatatype/StructType/references"/>
+    </featureInitializers>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//structdatatype/StructType"/>
+  </mappings>
+  <mappings>
+    <targetClass href="MumlReconfiguration.ecore#//expression/EvaluateStructuralConditionExpression"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//expression/EvaluateStructuralConditionExpression/parameterBindings"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//expression/EvaluateStructuralConditionExpression/parameterBindings"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//expression/EvaluateStructuralConditionExpression/structuralCondition"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//expression/EvaluateStructuralConditionExpression/structuralCondition"/>
+    </featureInitializers>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//expression/EvaluateStructuralConditionExpression"/>
+  </mappings>
+  <mappings>
+    <targetClass href="MumlReconfiguration.ecore#//expression/ReconfigurationRuleCallExpression"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//expression/ReconfigurationRuleCallExpression/reconfigurationRule"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//expression/ReconfigurationRuleCallExpression/reconfigurationRule"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//expression/ReconfigurationRuleCallExpression/parameterBindings"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//expression/ReconfigurationRuleCallExpression/parameterBindings"/>
+    </featureInitializers>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//expression/ReconfigurationRuleCallExpression"/>
+  </mappings>
+  <mappings>
+    <targetClass href="MumlReconfiguration.ecore#//expression/ActivityCallExpression"/>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//expression/ActivityCallExpression"/>
+  </mappings>
+  <mappings>
+    <targetClass href="MumlReconfiguration.ecore#//ReconfigurationManagementSpecificationEntry"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//ReconfigurationManagementSpecificationEntry/conditions"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//ReconfigurationManagementSpecificationEntry/conditions"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//ReconfigurationManagementSpecificationEntry/message"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//ReconfigurationManagementSpecificationEntry/message"/>
+    </featureInitializers>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//ReconfigurationManagementSpecificationEntry"/>
+  </mappings>
+  <mappings>
+    <targetClass href="MumlReconfiguration.ecore#//ReconfigurationExecutionSpecificationEntry"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//ReconfigurationExecutionSpecificationEntry/guards"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//ReconfigurationExecutionSpecificationEntry/guards"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//ReconfigurationExecutionSpecificationEntry/message"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//ReconfigurationExecutionSpecificationEntry/message"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//ReconfigurationExecutionSpecificationEntry/reconfigurationRule"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//ReconfigurationExecutionSpecificationEntry/reconfigurationRule"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//ReconfigurationExecutionSpecificationEntry/hybridPortMappings"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//ReconfigurationExecutionSpecificationEntry/hybridPortMappings"/>
+    </featureInitializers>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//ReconfigurationExecutionSpecificationEntry"/>
+  </mappings>
+  <mappings>
+    <targetClass href="MumlReconfiguration.ecore#//HybridPortMapping"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//HybridPortMapping/hybridPort"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//HybridPortMapping/hybridPort"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//HybridPortMapping/function"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//HybridPortMapping/function"/>
+    </featureInitializers>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//HybridPortMapping"/>
+  </mappings>
+  <mappings>
+    <targetClass href="MumlReconfiguration.ecore#//FadingFunction"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//FadingFunction/fromPort"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//FadingFunction/fromPort"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//FadingFunction/toPort"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//FadingFunction/toPort"/>
+    </featureInitializers>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//FadingFunction"/>
+  </mappings>
+  <mappings>
+    <targetClass href="MumlReconfiguration.ecore#//FadingComponent"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//FadingComponent/fadingFunction"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//FadingComponent/fadingFunction"/>
+    </featureInitializers>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//FadingComponent"/>
+  </mappings>
+  <mappings>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//StructuralCondition/parameters"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//StructuralCondition/parameters"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//StructuralCondition/reconfigurableComponent"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//StructuralCondition/reconfigurableComponent"/>
+    </featureInitializers>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//StructuralCondition"/>
+  </mappings>
+  <mappings>
+    <targetClass href="MumlReconfiguration.ecore#//Signature"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//Signature/parameters"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//Signature/parameters"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//Signature/returnParameters"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//Signature/returnParameters"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//Signature/reconfigurationRule"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//Signature/reconfigurationRule"/>
+    </featureInitializers>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//Signature"/>
+  </mappings>
+  <mappings>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//ReconfigurationRule/reconfiguredComponent"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//ReconfigurationRule/reconfiguredComponent"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//ReconfigurationRule/signature"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//ReconfigurationRule/signature"/>
+    </featureInitializers>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//ReconfigurationRule"/>
+  </mappings>
+  <mappings>
+    <targetClass href="MumlReconfiguration.ecore#//ExecutorSpecificationEntry"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="MumlReconfiguration.ecore#//ExecutorSpecificationEntry/id"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="MumlReconfiguration-0.4.ecore#//ExecutorSpecificationEntry/id"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//ExecutorSpecificationEntry/executor"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//ExecutorSpecificationEntry/executor"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//ExecutorSpecificationEntry/reconfigurationRule"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//ExecutorSpecificationEntry/reconfigurationRule"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//ExecutorSpecificationEntry/wcet"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//ExecutorSpecificationEntry/wcet"/>
+    </featureInitializers>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//ExecutorSpecificationEntry"/>
+  </mappings>
+  <mappings>
+    <targetClass href="MumlReconfiguration.ecore#//Executor"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//Executor/specificationEntries"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//Executor/specificationEntries"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//Executor/reconfigurationController"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//Executor/reconfigurationController"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//Executor/ports"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//Executor/ports"/>
+    </featureInitializers>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//Executor"/>
+  </mappings>
+  <mappings>
+    <targetClass href="MumlReconfiguration.ecore#//ManagerSpecificationEntry"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="MumlReconfiguration.ecore#//ManagerSpecificationEntry/treat"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="MumlReconfiguration-0.4.ecore#//ManagerSpecificationEntry/treat"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="MumlReconfiguration.ecore#//ManagerSpecificationEntry/propagate"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="MumlReconfiguration-0.4.ecore#//ManagerSpecificationEntry/propagate"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="MumlReconfiguration.ecore#//ManagerSpecificationEntry/invokePlanner"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="MumlReconfiguration-0.4.ecore#//ManagerSpecificationEntry/invokePlanner"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="MumlReconfiguration.ecore#//ManagerSpecificationEntry/blockable"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="MumlReconfiguration-0.4.ecore#//ManagerSpecificationEntry/blockable"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//ManagerSpecificationEntry/manager"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//ManagerSpecificationEntry/manager"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//ManagerSpecificationEntry/messageType"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//ManagerSpecificationEntry/messageType"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//ManagerSpecificationEntry/structuralCondition"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//ManagerSpecificationEntry/structuralCondition"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//ManagerSpecificationEntry/reconfigurationRule"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//ManagerSpecificationEntry/reconfigurationRule"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//ManagerSpecificationEntry/timeForPlanning"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//ManagerSpecificationEntry/timeForPlanning"/>
+    </featureInitializers>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//ManagerSpecificationEntry"/>
+  </mappings>
+  <mappings>
+    <targetClass href="MumlReconfiguration.ecore#//Manager"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//Manager/specificationEntries"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//Manager/specificationEntries"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//Manager/reconfigurationController"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//Manager/reconfigurationController"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//Manager/ports"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//Manager/ports"/>
+    </featureInitializers>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//Manager"/>
+  </mappings>
+  <mappings>
+    <targetClass href="MumlReconfiguration.ecore#//RuleBasedReconfigurationController"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//RuleBasedReconfigurationController/executor"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//RuleBasedReconfigurationController/executor"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//RuleBasedReconfigurationController/manager"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//RuleBasedReconfigurationController/manager"/>
+    </featureInitializers>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//RuleBasedReconfigurationController"/>
+  </mappings>
+  <mappings>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//Controller/structuredComponent"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//Controller/structuredComponent"/>
+    </featureInitializers>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//Controller"/>
+  </mappings>
+  <mappings>
+    <targetClass href="MumlReconfiguration.ecore#//ExecutionTimingSpecificationThreePhase"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//ExecutionTimingSpecificationThreePhase/timeForSetup"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//ExecutionTimingSpecificationThreePhase/timeForSetup"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//ExecutionTimingSpecificationThreePhase/timeForFading"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//ExecutionTimingSpecificationThreePhase/timeForFading"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//ExecutionTimingSpecificationThreePhase/timeForTeardown"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//ExecutionTimingSpecificationThreePhase/timeForTeardown"/>
+    </featureInitializers>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//ExecutionTimingSpecificationThreePhase"/>
+  </mappings>
+  <mappings>
+    <targetClass href="MumlReconfiguration.ecore#//ExecutionTimingSpecificationSinglePhase"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//ExecutionTimingSpecificationSinglePhase/timeForExecution"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//ExecutionTimingSpecificationSinglePhase/timeForExecution"/>
+    </featureInitializers>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//ExecutionTimingSpecificationSinglePhase"/>
+  </mappings>
+  <mappings>
+    <targetClass href="MumlReconfiguration.ecore#//ReconfigurationExecutionPortInterfaceEntry"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//ReconfigurationExecutionPortInterfaceEntry/timeForDecision"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//ReconfigurationExecutionPortInterfaceEntry/timeForDecision"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//ReconfigurationExecutionPortInterfaceEntry/timeForExecutionPhase"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//ReconfigurationExecutionPortInterfaceEntry/timeForExecutionPhase"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//ReconfigurationExecutionPortInterfaceEntry/reconfigurationExecutionPort"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//ReconfigurationExecutionPortInterfaceEntry/reconfigurationExecutionPort"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//ReconfigurationExecutionPortInterfaceEntry/minimumCommitTime"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//ReconfigurationExecutionPortInterfaceEntry/minimumCommitTime"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//ReconfigurationExecutionPortInterfaceEntry/returnValues"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//ReconfigurationExecutionPortInterfaceEntry/returnValues"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//ReconfigurationExecutionPortInterfaceEntry/minimumRetryTime"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//ReconfigurationExecutionPortInterfaceEntry/minimumRetryTime"/>
+    </featureInitializers>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//ReconfigurationExecutionPortInterfaceEntry"/>
+  </mappings>
+  <mappings>
+    <targetClass href="MumlReconfiguration.ecore#//ReconfigurationExecutionPort"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//ReconfigurationExecutionPort/interfaceEntries"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//ReconfigurationExecutionPort/interfaceEntries"/>
+    </featureInitializers>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//ReconfigurationExecutionPort"/>
+  </mappings>
+  <mappings>
+    <targetClass href="MumlReconfiguration.ecore#//ReconfigurationMessagePortInterfaceEntry"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="MumlReconfiguration.ecore#//ReconfigurationMessagePortInterfaceEntry/reconfigurationMessageType"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="MumlReconfiguration-0.4.ecore#//ReconfigurationMessagePortInterfaceEntry/reconfigurationMessageType"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//ReconfigurationMessagePortInterfaceEntry/expectedResponseTime"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//ReconfigurationMessagePortInterfaceEntry/expectedResponseTime"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//ReconfigurationMessagePortInterfaceEntry/reconfigurationMessagePort"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//ReconfigurationMessagePortInterfaceEntry/reconfigurationMessagePort"/>
+    </featureInitializers>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//ReconfigurationMessagePortInterfaceEntry"/>
+  </mappings>
+  <mappings>
+    <targetClass href="MumlReconfiguration.ecore#//ReconfigurationMessagePort"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//ReconfigurationMessagePort/interfaceEntries"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//ReconfigurationMessagePort/interfaceEntries"/>
+    </featureInitializers>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//ReconfigurationMessagePort"/>
+  </mappings>
+  <mappings>
+    <targetClass href="MumlReconfiguration.ecore#//ReconfigurationPortInterfaceEntry"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="MumlReconfiguration.ecore#//ReconfigurationPortInterfaceEntry/description"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="MumlReconfiguration-0.4.ecore#//ReconfigurationPortInterfaceEntry/description"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//ReconfigurationPortInterfaceEntry/messageType"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//ReconfigurationPortInterfaceEntry/messageType"/>
+    </featureInitializers>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//ReconfigurationPortInterfaceEntry"/>
+  </mappings>
+  <mappings>
+    <targetClass href="MumlReconfiguration.ecore#//ReconfigurableStructuredComponent"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//ReconfigurableStructuredComponent/controller"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//ReconfigurableStructuredComponent/controller"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//ReconfigurableStructuredComponent/initialConfiguration"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//ReconfigurableStructuredComponent/initialConfiguration"/>
+    </featureInitializers>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//ReconfigurableStructuredComponent"/>
+  </mappings>
+  <mappings>
+    <targetClass href="MumlReconfiguration.ecore#//ReconfigurableAtomicComponent"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//ReconfigurableAtomicComponent/executionEntries"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//ReconfigurableAtomicComponent/executionEntries"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//ReconfigurableAtomicComponent/managementEntries"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//ReconfigurableAtomicComponent/managementEntries"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="MumlReconfiguration.ecore#//ReconfigurableAtomicComponent/hybridPortMappings"/>
+      <sourceFeature xsi:type="ecore:EReference" href="MumlReconfiguration-0.4.ecore#//ReconfigurableAtomicComponent/hybridPortMappings"/>
+    </featureInitializers>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//ReconfigurableAtomicComponent"/>
+  </mappings>
+  <mappings>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//ReconfigurableComponent"/>
+  </mappings>
+  <mappings>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//ReconfigurationPort"/>
+  </mappings>
+  <mappings>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//ExecutionTimingSpecification"/>
+  </mappings>
+  <mappings>
+    <targetClass href="MumlReconfiguration.ecore#//InternalReconfigurationCommunicationPort"/>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//InternalReconfigurationCommunicationPort"/>
+  </mappings>
+  <mappings>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//ReconfigurationController"/>
+  </mappings>
+  <mappings>
+    <targetClass href="MumlReconfiguration.ecore#//ReconfigurationPortAssemblyConnector"/>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//ReconfigurationPortAssemblyConnector"/>
+  </mappings>
+  <mappings>
+    <targetClass href="MumlReconfiguration.ecore#//ReconfigurationPortDelegationConnector"/>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//ReconfigurationPortDelegationConnector"/>
+  </mappings>
+  <mappings>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//ReconfigurationConstraint"/>
+  </mappings>
+  <mappings>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//protocolinstantiation/BroadcastPortSpecification"/>
+  </mappings>
+  <mappings>
+    <targetClass href="MumlReconfiguration.ecore#//protocolinstantiation/ProtocolInstantiationPortSpecification"/>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//protocolinstantiation/ProtocolInstantiationPortSpecification"/>
+  </mappings>
+  <mappings>
+    <targetClass href="MumlReconfiguration.ecore#//protocolinstantiation/DiscoveryPortSpecification"/>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//protocolinstantiation/DiscoveryPortSpecification"/>
+  </mappings>
+  <mappings>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//reconfInstance/ReconfigurableComponentInstance"/>
+  </mappings>
+  <mappings>
+    <targetClass href="MumlReconfiguration.ecore#//reconfInstance/ReconfigurationPortInstance"/>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//reconfInstance/ReconfigurationPortInstance"/>
+  </mappings>
+  <mappings>
+    <targetClass href="MumlReconfiguration.ecore#//reconfInstance/ReconfigurationMessagePortInstance"/>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//reconfInstance/ReconfigurationMessagePortInstance"/>
+  </mappings>
+  <mappings>
+    <targetClass href="MumlReconfiguration.ecore#//reconfInstance/ReconfigurationExecutionPortInstance"/>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//reconfInstance/ReconfigurationExecutionPortInstance"/>
+  </mappings>
+  <mappings>
+    <targetClass href="MumlReconfiguration.ecore#//reconfInstance/InternalReconfigurationCommunicationPortInstance"/>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//reconfInstance/InternalReconfigurationCommunicationPortInstance"/>
+  </mappings>
+  <mappings>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//reconfInstance/ReconfigurationControllerInstance"/>
+  </mappings>
+  <mappings>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//reconfInstance/ControllerInstance"/>
+  </mappings>
+  <mappings>
+    <targetClass href="MumlReconfiguration.ecore#//reconfInstance/ReconfigurableAtomicComponentInstance"/>
+    <sourceClass href="MumlReconfiguration-0.4.ecore#//reconfInstance/ReconfigurableAtomicComponentInstance"/>
+  </mappings>
+  <release href="../../org.muml.core.migrator/model/muml.releaseset#//@releases.1"/>
+</emm:Migrator>

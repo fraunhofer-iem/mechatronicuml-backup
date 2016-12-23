@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+<!--
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="org.muml.pm.hardware.perspective.perspectives.HardwarePerspective"
+            icon="icons/Hardware.gif"
+            id="org.muml.pm.hardware.perspective.perspectives.HardwarePerspective"
+            name="Hardware">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.muml.pm.hardware.perspective.perspectives.HardwarePerspective">
+         <hiddenToolBarItem id="org.eclipse.debug.internal.ui.actions.RunDropDownAction" />
+         <hiddenToolBarItem id="org.eclipse.debug.ui.actions.RunLast" />
+         <hiddenToolBarItem id="org.eclipse.debug.internal.ui.actions.DebugWithConfigurationAction" />
+         <hiddenToolBarItem id="org.eclipse.debug.ui.actions.DebugLast" />
+         <hiddenToolBarItem id="org.eclipse.debug.internal.ui.actions.RunHistoryMenuAction" />
+         <hiddenToolBarItem id="org.eclipse.debug.internal.ui.actions.RunWithConfigurationAction" />
+         <hiddenToolBarItem id="org.eclipse.debug.ui.actions.OpenRunConfigurations" />
+        
+         <hiddenToolBarItem id="org.eclipse.mylyn.tasks.ui.search.open" />
+         
+         <hiddenToolBarItem id="org.eclipse.mylyn.doc.actionSet" />
+         <hiddenToolBarItem id="org.eclipse.mylyn.doc.actionSet" />
+         <hiddenToolBarItem id="org.eclipse.mylyn.doc.actionSet" />
+         <hiddenToolBarItem id="org.eclipse.mylyn.doc.actionSet" />
+         <hiddenToolBarItem id="org.eclipse.mylyn.doc.actionSet" />
+         <hiddenToolBarItem id="org.eclipse.mylyn.doc.actionSet" />
+         <hiddenToolBarItem id="org.eclipse.mylyn.doc.actionSet" />
+         <hiddenToolBarItem id="org.eclipse.mylyn.doc.actionSet" />
+         <hiddenToolBarItem id="org.eclipse.ui.window.preferences" />
+         <hiddenToolBarItem id="org.eclipse.ui.category.dialogs" />
+         <hiddenToolBarItem id="org.eclipse.ui.category.update" />
+         <hiddenToolBarItem id="org.eclipse.ui.cheatsheets.actionSet" />
+         <hiddenToolBarItem id="org.eclipse.mylyn.doc.actionSet" />
+         
+       </perspectiveExtension>
+   </extension>
+-->
+</plugin>

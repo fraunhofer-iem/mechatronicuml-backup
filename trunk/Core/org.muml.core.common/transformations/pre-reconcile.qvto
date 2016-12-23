@@ -1,0 +1,91 @@
+
+modeltype GMFGEN uses gmfgen('http://www.eclipse.org/gmf/2009/GenModel');
+modeltype propsheet uses ape('http://www.muml.org/ape/1.0.0');
+
+transformation transform(inout gmfgenModel : GMFGEN);
+
+--blackbox helper getResourceContents(uri : String) : Sequence(OclAny);
+
+main() {
+	--getResourceContents("Test");
+
+  --fix GMF BUG 331875
+  gmfgenModel.objectsOfType(ExpressionLabelParser)->forEach(parser)
+    {
+        parser.className :=
+parser.className.concat(parser._uses->first().container().oclAsType(GenCommonBase).visualID.toString());
+    };
+
+  -- prevent validation of OCL Constraints before code generation.
+  -- we deactivate it by adding "--" in front of all expressions; the templates are adapted to remove it afterwards.
+  -- see /org.muml.pim.common/gmf-templates/aspects/xpt/expressions/OCLExpressionFactory.xpt
+  gmfgenModel.objectsOfType(ValueExpression)->forEach(expression) {
+    --expression.body := '--'.concat(expression.body.replace('\n','\n--'));
+    
+
+    -- Add dependant plugins
+    var model = gmfgenModel.rootObjects()![GenEditorGenerator];
+    model.plugin.requiredPlugins += "org.muml.core.common";
+  --  model.plugin.requiredPlugins += "org.muml.pim.common";
+    model.plugin.requiredPlugins += "org.muml.core.modelinstance.ui";
+    model.plugin.requiredPlugins += "org.muml.core.edit.properties";
+    model.plugin.requiredPlugins += "org.muml.pim.edit.properties";
+    model.plugin.requiredPlugins += "org.muml.core.common.editingdomain";
+    model.plugin.requiredPlugins += "org.eclipse.ocl.pivot";
+    
+    -- For Custom Property Tab (MUML #459)
+    model.plugin.requiredPlugins += "org.muml.ape.runtime";
+
+    
+    -- set default colors
+    if (model.diagram.preferences.oclIsUndefined()) then {
+    	model.diagram.preferences := object GenDiagramPreferences{};
+    } endif;
+    model.diagram.preferences.lineColor := object GenConstantColor{name := DiagramColors::black;};
+    model.diagram.preferences.fillColor := object GenConstantColor{name := DiagramColors::white;};
+    model.diagram.preferences.fontColor := object GenConstantColor{name := DiagramColors::black;};
+    model.diagram.preferences.noteFillColor := object GenConstantColor{name := DiagramColors::yellow;};
+    model.diagram.preferences.noteLineColor := object GenConstantColor{name := DiagramColors::orange;};
+    
+    
+    -- Make parsers extensible
+    gmfgenModel.objectsOfType(GenParsers)->forEach(parser){
+    	parser.extensibleViaService := true;
+    };
+    
+    -- Add Custom Property Tab (MUML #459)
+    -- Does not work quite correctly (adds lots of tabs??)
+    -- Currently the gmfgen was adapted manually
+
+
+    --model.propertySheet.map createTab("general", "General", "org.muml.core.properties.tabs.Property_tab_generalTabElementFilter");
+    --model.propertySheet.map createTab("documentation", "Documentation", "org.muml.core.properties.tabs.Property_tab_documentationTabElementFilter");
+    --model.propertySheet.map createTab("constraint", "Constraint", "org.muml.core.properties.tabs.ConstraintTabElementFilter");
+   
+   
+   
+    --
+
+    
+  }
+}
+
+mapping inout GenPropertySheet::createTab(id : String, label : String, filter : String) {
+	if (tabs[GenCustomPropertyTab]->select(t | t.iD = id)->isEmpty()) then {
+		tabs += new GenCustomPropertyTab(id, label, "org.muml.ape.runtime.sections.ObjectPropertySection");
+	} endif;
+	var tab := tabs[GenCustomPropertyTab]->any(iD = id);
+	if (tab.filter[CustomTabFilter]->select(f | f.className <> filter)->isEmpty()) then {
+		tab.filter := new CustomTabFilter(filter);
+	} endif;
+} 
+
+constructor GenCustomPropertyTab::GenCustomPropertyTab(_iD : String, _label : String, _className : String) {
+	iD = _iD;
+	label = _label;
+	className = _className;
+}
+
+constructor CustomTabFilter::CustomTabFilter(_className : String) {
+	className = _className;
+}

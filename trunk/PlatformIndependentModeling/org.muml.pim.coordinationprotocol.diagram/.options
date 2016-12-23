@@ -1,0 +1,7 @@
+# Tracing options for the org.muml.pim.coordinationprotocol.diagram plug-in
+
+# Common issues
+org.muml.pim.coordinationprotocol.diagram/debug=false
+
+# Visual IDs
+org.muml.pim.coordinationprotocol.diagram/debug/visualID=false

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.emf.validation.constraintProviders">
+      <category
+            id="org.muml.testlanguage.topologicalConstraints"
+            mandatory="true"
+            name="TestLanguage Topological Constraints">
+      </category>
+      <constraintProvider
+            cache="true"
+            mode="Batch">
+         <package
+               namespaceUri="http://www.muml.org/testlanguage/1.0">
+         </package>
+         <constraints
+               categories="org.muml.testlanguage.topologicalConstraints">
+            <constraint
+                  class="org.muml.testlanguage.custom.validation.NodeExecutionConstraint"
+                  id="org.muml.testlanguage.custom.validation.NodeExecutionConstraint"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="Node Execution"
+                  severity="ERROR"
+                  statusCode="2">
+               <message>
+                  {1}
+               </message>
+               <description>
+                  Executes the Node.
+               </description>
+               <target
+                     class="Node">
+               </target>
+            </constraint>
+            <constraint
+                  class="org.muml.testlanguage.custom.validation.InputPortConstraint"
+                  id="org.muml.testlanguage.custom.validation.OptionalInputs"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="OptionalInputs"
+                  severity="ERROR"
+                  statusCode="3">
+               <message>
+                  {1}
+               </message>
+               <description>
+                  Checks if all non-optional input ports have a proper connection.
+               </description>
+               <target
+                     class="Input">
+               </target>
+            </constraint>
+         </constraints>
+      </constraintProvider>
+   </extension>
+   <extension
+         point="org.eclipse.emf.validation.constraintBindings">
+      <clientContext
+            default="true"
+            id="org.muml.testlanguage.topologicalContext">
+         <selector
+               class="org.muml.testlanguage.custom.ClientSelector">
+         </selector>
+      </clientContext>
+      <binding
+            context="org.muml.testlanguage.topologicalContext">
+         <category
+               ref="org.muml.testlanguage.topologicalConstraints">
+         </category>
+      </binding>
+   </extension>
+   <extension
+         point="org.eclipse.emf.validation.traversal">
+      <traversalStrategy
+            class="org.muml.testlanguage.custom.validation.TestLanguageTopologicalTraversalStrategy"
+            namespaceUri="http://www.muml.org/testlanguage/1.0">
+      </traversalStrategy>
+   </extension>
+   <extension
+         point="org.eclipse.emf.validation.validationListeners">
+      <listener
+            class="org.muml.testlanguage.custom.validation.MarkerListener">
+         <clientContext
+               id="org.muml.testlanguage.topologicalContext">
+         </clientContext>
+      </listener>
+   </extension>
+
+</plugin>

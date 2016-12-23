@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated ComponentSDD -->
+      <package
+            uri="http://www.muml.org/reconfiguration/verification/sdd/componentsdd/1.0.0"
+            class="org.muml.reconfiguration.verification.sdd.componentsdd.ComponentsddPackage"
+            genModel="model/ComponentSDD.genmodel"/>
+   </extension>
+   <extension
+         point="org.muml.emm.migrator">
+      <Migrator
+            file="model/ComponentSDD.migrator">
+      </Migrator>
+   </extension>
+
+</plugin>

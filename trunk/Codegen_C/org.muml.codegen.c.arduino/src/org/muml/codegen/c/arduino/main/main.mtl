@@ -1,0 +1,87 @@
+
+
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module main.
+ */]
+[module main('http://www.muml.org/pim/connector/1.0.0', 
+				'http://www.muml.org/pim/behavior/1.0.0',
+				'http://www.muml.org/core/1.0.0',
+				'http://www.muml.org/pim/actionlanguage/1.0.0',
+				'http://www.muml.org/pim/msgtype/1.0.0',
+				'http://www.muml.org/pim/types/1.0.0',
+				'http://www.muml.org/modelinstance/1.0.0',
+				'http://www.muml.org/pim/component/1.0.0',
+				'http://www.muml.org/pim/instance/1.0.0',
+				'http://www.muml.org/pim/realtimestatechart/1.0.0')]
+
+
+
+[import org::muml::codegen::c::arduino::files::main_Arduino]
+[import org::muml::codegen::c::arduino::files::make_Arduino]
+[import org::muml::codegen::c::files::RealtimeStatechart]
+[import org::muml::codegen::c::files::RealtimeStatechartHeader]
+[import org::muml::codegen::c::queries::stringQueries]
+[import org::muml::codegen::c::queries::modelQueries]
+[import org::muml::codegen::c::files::componentHeader]
+[import org::muml::codegen::c::files::component]
+[import org::muml::codegen::c::files::Message]
+[import org::muml::codegen::c::files::operations]
+[import org::muml::codegen::c::files::ContinuousPorts]
+[import org::muml::codegen::c::main::main]
+[import org::muml::codegen::c::files::customTypes]
+[import org::muml::codegen::c::files::LocalMiddleware]
+
+
+[template public generate(cic: ComponentInstanceConfiguration)]
+[comment @main/]
+
+[comment only generate, if CIC is a root-CIC/]
+[if cic.eContainer().oclIsKindOf(ModelElementCategory)]	
+	[comment generate software parts/]
+	[generateArduino(cic.eAllContents(ComponentInstance)->asOrderedSet(),cic.name, cic.name+'/', false)/]
+	
+	[comment generate mini version for middleware/]
+	[generateLocalMiddleware(cic.eAllContents(ComponentInstance)->asOrderedSet(), cic.name+'/', false)/]
+[/if]
+
+[/template]
+
+
+[**
+ * Generates a main file. This file contains code to create, initialize
+ * and execute a given MUML model on nxtOSEK.
+ * @param aModelElementCategory
+ */]
+[template public generateArduino(CIs : OrderedSet(ComponentInstance),inoName: String, path : String, useSubDir : Boolean)]
+
+[comment generate file for OS variable/]
+[generateOSFileDummy(path, 'ARDUINO', useSubDir)/]
+[comment create files for every component type/]
+[generateTypeFiles(CIs, path, useSubDir)/]
+
+[generateContinuousPortFiles(CIs, path, useSubDir)/]
+
+
+[comment create message file/]
+[generateProtobufMessageFile(CIs, path, useSubDir)/]
+[comment create header for using protobuf/]
+[generateProtobufNewHeader(CIs,path, useSubDir)/]
+
+[comment craeate files for RTSCs/]
+[generateRTSCFiles(CIs,path, useSubDir)/]
+
+[comment create makefile/]
+[generateMakeFileForArduino(CIs,path)/]
+
+[comment create Operation files/]
+[generateOperationFiles(CIs,path, useSubDir)/]
+
+[comment generate main file/]
+[generateArduinoMainFile(CIs, inoName, path)/]
+
+[generateCustomTypes(CIs, path, useSubDir)/]
+
+
+
+[/template]

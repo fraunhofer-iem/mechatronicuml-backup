@@ -1,0 +1,299 @@
+library ProjectSpecificConstants;
+
+-- name of the message type repository that is generated for the reconfiguration messages
+-- that are NOT user defined
+property reconfigurationMessageTypeRepositoryName : String = '_BaseReconfigurationMessageTypeRepo';
+
+-- name of the struct type used by the executor
+property genTypeAffectedComponents : String = 'AffectedComponents';
+property genTypeAffectedComponentsEntry : String = 'AffectedComponentsEntry';
+property genAttrRequest : String = 'request';
+property genAttrReply : String = 'reply';
+property genAttrAction : String = 'action';
+property genAttrVoteCommit : String = 'voteCommit';
+property genAttrFinished : String = 'finished';
+property genRefEntries : String = 'entries';
+property genRefPortInstance : String = 'portInstance';
+property genRefRule : String = 'rule';
+
+-- names of the generated reconfiguration message types that are NOT user defined
+property genMsgTypeSuccess : String = 'success';
+property genMsgTypeFailed : String = 'failed';
+property genMsgTypeOccupied : String = 'occupied';
+property genMsgTypeDeclineRequest : String = 'declineRequest';
+property genMsgTypeExecute : String = 'execute';
+property genMsgTypeAbort : String = 'abort';
+property genMsgTypeFinished : String = 'finished';
+property genMsgTypeExecuteReconf : String = 'executeReconf';
+property genMsgTypeConfirmRequest : String = 'confirmRequest';
+property genMsgTypeConfirm : String = 'confirm';
+property genMsgTypeSetup : String = 'setup';
+property genMsgTypeFading : String = 'fading';
+property genMsgTypeTeardown : String = 'teardown';
+
+-- names of parameters of the reconfiguration message types that are NOT user defined
+property genParamExecute_Reconf : String = 'reconf';
+property genParamConfirmRequest_Reconf : String = 'reconf';
+property genParamConfirm_T : String = 't';
+
+-- names of the manager synchronization channels that are not depending on user-defined messages
+property genSyncChanReply : String = 'reply';
+property genSyncChanParentReply : String = 'parentReply';
+property genSyncChanExecuted : String = 'executed';
+property genSyncChanExecuteReconf : String = 'executeReconf';
+
+property genSyncChanPrefix : String = 'sync';
+
+--names of embedded statecharts in the manager RTSC
+property genEmbeddedRTSCManager_Parent : String = 'parent';
+property genEmbeddedRTSCManager_Executor : String = 'executor';
+property genEmbeddedRTSCManager_Internal : String = 'internal behavior';
+property genEmbeddedRTSCManager_EmbeddedCI : String = 'embeddedCI';
+property genEmbeddedRTSCManager_EmbeddedCI_adapt : String = 'adaptation';
+property genEmbeddedRTSCManager_EmbeddedCI_subrole : String = 'subrole';
+
+-- names of manager internal variables
+property genVarManager_Reconfiguration : String = 'reconfiguration';
+property genVarManager_Parent_Request : String = 'request';
+property genVarManager_Executor_Reuqest : String = 'executor_request';
+property genVarManager_Internal_Request : String = 'request';
+property genVarManager_Internal_Result : String = 'result';
+property genVarManager_EmbeddedCI_Request : String = 'request';
+property genVarManager_EmbeddedCI_Propagate : String = 'propagate';
+
+-- names of manager internal operations
+property genOpManager_Internal_invokePlanner : String = 'invokePlanner';
+property genOpManager_Internal_isBlocked : String = 'isBlocked';
+property genOpManager_Internal_checkStructCond_Prefix : String = 'checkStructuralCondition';
+
+property genParamManager_Internal_invokePlanner_reconf : String = 'reconfiguration';
+property genParamManager_Internal_isBlocked_reconf : String = 'reconfiguration';
+
+-- names of manager internal clocks
+property genClockManager_embeddedCI_cReq : String = 'c_req';
+
+-- names of manager internal states
+property genStateManager_Main : String = 'Manager_Main';
+
+property genStateManager_Parent_Idle : String = 'Idle';
+property genStateManager_Parent_Propagated : String = 'Propagated';
+property genStateManager_Parent_AwaitReply : String = 'AwaitReply';
+
+property genStateManager_Executor_Idle : String = 'Idle';
+property genStateManager_Executor_Request : String = 'Request';
+property genStateManager_Executor_WaitForConfirm : String = 'WaitForConfirm';
+property genStateManager_Executor_ExecuteReconf : String = 'ExecuteReconf';
+property genStateManager_Executor_Finished : String = 'Finished';
+
+property genStateManager_Internal_Idle : String = 'Idle';
+property genStateManager_Internal_Check_Prefix : String = 'Check';
+property genStateManager_Internal_Plan : String = 'Plan';
+property genStateManager_Internal_Execute : String = 'Execute';
+property genStateManager_Internal_Success : String = 'Success';
+property genStateManager_Internal_Fail : String = 'Fail';
+
+property genStateManager_EmbeddedCI_Main : String = 'EmbeddedCI_Main';
+property genStateManager_EmbeddedCI_Idle : String = 'Idle';
+property genStateManager_EmbeddedCI_Received_Prefix : String = 'ReceivedMsg';
+property genStateManager_EmbeddedCI_Deliver : String = 'DeliverMsg';
+property genStateManager_EmbeddedCI_AwaitReply : String = 'AwaitReply';
+property genStateManager_EmbeddedCI_AwaitParent : String = 'AwaitParentReply';
+
+--names of embedded statecharts in the executor RTSC
+property genEmbeddedRTSCExecutor_Parent : String = 'parent';
+property genEmbeddedRTSCExecutor_Events : String = 'events';
+property genEmbeddedRTSCExecutor_Internal : String = 'internal behavior';
+property genEmbeddedRTSCExecutor_EmbeddedCI : String = 'embeddedCI';
+property genEmbeddedRTSCExecutor_EmbeddedCI_adapt : String = 'adaptation';
+property genEmbeddedRTSCExecutor_EmbeddedCI_subrole : String = 'subrole';
+
+-- names of the executor synchronization channels that are not depending on user-defined messages
+property genSyncChanExecutorExecute : String = 'execute';
+property genSyncChanExecutorStartExecution : String = 'startExecution';
+property genSyncChanExecutorInit2PC : String = 'init2PC';
+property genSyncChanExecutorVotingComplete : String = 'votingComplete';
+property genSyncChanExecutorDoAbort : String = 'doAbort';
+property genSyncChanExecutorFinished : String = 'finished';
+property genSyncChanExecutorPerformReconf : String = 'performReconf';
+property genSyncChanExecutorFinish : String = 'finish';
+property genSyncChanExecutorFinished2PC : String = 'finished2PC';
+property genSyncChanExecutorPerformSetup : String = 'performSetup';
+property genSyncChanExecutorFinishPhase : String = 'finishPhase';
+property genSyncChanExecutorPerformFading : String = 'performFading';
+property genSyncChanExecutorPerformTeardown : String = 'performTeardown';
+property genSyncChanExecutorEmbeddedCISendReq : String = 'sendRequest';
+property genSyncChanExecutorEmbeddedCIReplyRecv : String = 'replyReceived';
+property genSyncChanExecutorEmbeddedCISendC : String = 'sendCommit';
+property genSyncChanExecutorEmbeddedCISendA : String = 'sendAbort';
+property genSyncChanExecutorEmbeddedCIReconfFinished : String = 'reconfFinished';
+property genSyncChanExecutorEmbeddedCISendSetup : String = 'sendSetup';
+property genSyncChanExecutorEmbeddedCISendFading : String = 'sendFading';
+property genSyncChanExecutorEmbeddedCISendTeardown : String = 'sendTeardown';
+
+property genSyncChanExecutorLocalFinish : String = 'localFinish';
+property genSyncChanExecutorLocalSetup : String = 'localSetup';
+property genSyncChanExecutorLocalFading : String = 'localFading';
+property genSyncChanExecutorLocalTeardown : String = 'localTeardown';
+
+-- names of the executor synchronization channels that are depending on user-defined messages
+property genSyncChanExecutorCheckPrefix : String = 'check';
+
+-- names of executor internal variables
+property genVarExecutor_Reconfiguration : String = 'reconfiguration';
+property genVarExecutor_SinglePhase : String = 'singlePhase';
+property genVarExecutor_TwoPCResult : String = 'twoPCResult';
+property genVarExecutor_TmpCommitTime : String = 'tmpCommitTime';
+property genVarExecutor_Events_Deadline : String = 'deadline';
+property genVarExecutor_Events_FromParent : String = 'fromParent';
+property genVarExecutor_Events_AbortReqWaiting : String = 'abortedReqWaiting';
+property genVarExecutor_EmbeddedCI_SubPort : String = 'subPort';
+property genVarExecutor_EmbeddedCI_TmpMsg : String = 'tmpMsg';
+property genVarExecutor_EmbeddedCI_TmpCommit : String = 'tmpCommit';
+property genVarExecutor_EmbeddedCI_TmpCommitTime : String = 'tmpCommitTime';
+property genVarExecutor_EmbeddedCI_Adapt_Ac : String = 'ac';
+property genVarExecutor_EmbeddedCI_Adapt_ExecTime : String = 'executionTime';
+property genVarExecutor_EmbeddedCI_Adapt_MinCommitTime : String = 'minCommitTime';
+property genVarExecutor_EmbeddedCI_Adapt_CurPort : String = 'curPort';
+property genVarExecutor_EmbeddedCI_Adapt_Vote_Finished : String = 'finished';
+property genVarExecutor_EmbeddedCI_Adapt_Execute_Finished : String = 'finished';
+property genVarExecutor_EmbeddedCI_Adapt_Abort_Finished : String = 'finished';
+property genVarExecutor_EmbeddedCI_SubRole_CommitTime : String = 'commitTime';
+property genVarExecutor_EmbeddedCI_SubRole_TimeForDec : String = 'timeForDecision';
+property genVarExecutor_EmbeddedCI_SubRole_TimeForExec : String = 'timeForExecution';
+property genVarExecutor_EmbeddedCI_SubRole_TimeForSetup : String = 'timeForSetup';
+property genVarExecutor_EmbeddedCI_SubRole_TimeForFading : String = 'timeForFading';
+property genVarExecutor_EmbeddedCI_SubRole_TimeForTeardown : String = 'timeForTeardown';
+property genVarExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_finished = 'finished';
+
+-- names of executor internal clocks
+property genClockExecutor_Parent_c2 : String = 'c2';
+property genClockExecutor_Events_c1 : String = 'c1';
+property genClockExecutor_embeddedCI_c2 : String = 'c2';
+
+-- names of executor internal states
+property genStateExecutor_Main : String = 'Executor_Main';
+
+property genStateExecutor_Parent_Idle : String = 'Idle';
+property genStateExecutor_Parent_CheckX_Prefix : String = 'Check';
+property genStateExecutor_Parent_CheckSelf : String = 'CheckSelf';
+property genStateExecutor_Parent_AwaitVoting : String = 'AwaitVoting';
+property genStateExecutor_Parent_StartExecution : String = 'StartExecution';
+property genStateExecutor_Parent_SendAbort : String = 'SendAbort';
+property genStateExecutor_Parent_WaitForParent : String = 'WaitForParent';
+property genStateExecutor_Parent_Aborted : String = 'Aborted';
+property genStateExecutor_Parent_FinalizeAbort : String = 'FinalizeAbort';
+property genStateExecutor_Parent_Execution : String = 'Execution';
+property genStateExecutor_Parent_ExecuteSetup : String = 'ExecuteSetup';
+property genStateExecutor_Parent_WaitFading : String = 'WaitFading';
+property genStateExecutor_Parent_ExecuteFading : String = 'ExecuteFading';
+property genStateExecutor_Parent_WaitTeardown : String = 'WaitTeardown';
+property genStateExecutor_Parent_ExecuteTeardown : String = 'ExecuteTeardown';
+
+property genStateExecutor_Events_Idle : String = 'Idle';
+property genStateExecutor_Events_TimeOut : String = 'TimeOut';
+property genStateExecutor_Events_Check : String = 'Check';
+property genStateExecutor_Events_AbortParentReq : String = 'AbortParentReq';
+property genStateExecutor_Events_AwaitVoting : String = 'AwaitVoting';
+property genStateExecutor_Events_DoExecute : String = 'DoExecute';
+property genStateExecutor_Events_DoAbort : String = 'DoAbort';
+property genStateExecutor_Events_Busy : String = 'Busy';
+property genStateExecutor_Events_Finished : String = 'Finished';
+property genStateExecutor_Events_WaitForAnswer : String = 'WaitForAnswer';
+property genStateExecutor_Events_AnswerReceived : String = 'AnswerReceived';
+property genStateExecutor_Events_DoSetup : String = 'DoSetup';
+property genStateExecutor_Events_BusySetup : String = 'BusySetup';
+property genStateExecutor_Events_DoFading : String = 'DoFading';
+property genStateExecutor_Events_BusyFading : String = 'BusyFading';
+property genStateExecutor_Events_DoTeardown : String = 'DoTeardown';
+
+property genStateExecutor_InternalBehavior_Idle : String = 'Idle';
+property genStateExecutor_InternalBehavior_Start : String = 'Start';
+property genStateExecutor_InternalBehavior_Wait : String = 'Wait';
+property genStateExecutor_InternalBehavior_Execute : String = 'Execute';
+property genStateExecutor_InternalBehavior_Report : String = 'Report';
+
+property genStateExecutor_InternalBehavior_LocalExecuteY2Prefix = 'LocalExecute';
+property genStateExecutor_InternalBehavior_LocalExecuteY2_Setup = 'Setup';
+property genStateExecutor_InternalBehavior_LocalExecuteY2_WaitFading = 'WaitFading';
+property genStateExecutor_InternalBehavior_LocalExecuteY2_Fading = 'Fading';
+property genStateExecutor_InternalBehavior_LocalExecuteY2_WaitTeardown = 'WaitTeardown';
+property genStateExecutor_InternalBehavior_LocalExecuteY2_Teardown = 'Teardown';
+property genStateExecutor_InternalBehavior_LocalExecuteY2_Finish = 'Finish';
+
+property genStateExecutor_embeddedCI_Main : String = 'embeddedCI_Main';
+
+property genStateExecutor_embeddedCI_Adaptation_Idle : String = 'Idle';
+property genStateExecutor_embeddedCI_Adaptation_PrepareY_Prefix : String = 'Prepare';
+property genStateExecutor_embeddedCI_Adaptation_Vote : String = 'Vote';
+property genStateExecutor_embeddedCI_Adaptation_Report : String = 'Report';
+property genStateExecutor_embeddedCI_Adaptation_WaitForParent : String = 'WaitForParent';
+property genStateExecutor_embeddedCI_Adaptation_ExecuteSinglePhase : String = 'Execute_SinglePhase';
+property genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase : String = 'Execute_ThreePhase';
+property genStateExecutor_embeddedCI_Adaptation_Abort : String = 'Abort';
+property genStateExecutor_embeddedCI_Adaptation_Vote_TriggerSubPort : String = 'TriggerSubPort';
+property genStateExecutor_embeddedCI_Adaptation_Vote_GetReplies : String = 'GetReplies';
+property genStateExecutor_embeddedCI_Adaptation_Vote_CheckResult: String = 'CheckResult';
+property genStateExecutor_embeddedCI_Adaptation_Execute_SendExecute : String = 'SendExecute';
+property genStateExecutor_embeddedCI_Adaptation_Execute_Wait : String = 'Wait';
+property genStateExecutor_embeddedCI_Adaptation_Abort_SendAbort : String = 'SendAbort';
+property genStateExecutor_embeddedCI_Adaptation_PrepareY_Start : String = 'Start';
+property genStateExecutor_embeddedCI_Adaptation_PrepareY_Finished : String = 'Finished';
+
+property genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase_SendSetup : String = 'SendSetup';
+property genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase_Wait1 : String = 'Wait1';
+property genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase_ExecuteLocalSetup : String = 'ExecuteLocalSetup';
+property genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase_FinishedSetup : String = 'FinishedSetup';
+property genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase_WaitFading : String = 'WaitFading';
+property genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase_ExecuteLocalFading : String = 'ExecuteLocalFading';
+property genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase_SendFading : String = 'SendFading';
+property genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase_Wait2 : String = 'Wait2';
+property genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase_FinishedFading : String = 'FinishedFading';
+property genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase_WaitTeardown : String = 'WaitTeardown';
+property genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase_ExecuteLocalTeardown : String = 'ExecuteLocalTeardown';
+property genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase_WaitLocal : String = 'WaitLocal';
+property genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase_SendTeardown : String = 'SendTeardown';
+property genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase_Wait3 : String = 'Wait3';
+
+property genStateExecutor_embeddedCI_Subrole_Idle : String = 'Idle';
+property genStateExecutor_embeddedCI_Subrole_WaitForResponse : String = 'WaitForResponse';
+property genStateExecutor_embeddedCI_Subrole_VotedCommit : String = 'VotedCommit';
+property genStateExecutor_embeddedCI_Subrole_VotedAbort : String = 'VotedAbort';
+property genStateExecutor_embeddedCI_Subrole_ReplyReceived : String = 'ReplyReceived';
+property genStateExecutor_embeddedCI_Subrole_AwaitFinish : String = 'AwaitFinish';
+property genStateExecutor_embeddedCI_Subrole_Execute : String = 'Execute';
+property genStateExecutor_embeddedCI_Subrole_ExecuteSetup : String = 'ExecuteSetup';
+property genStateExecutor_embeddedCI_Subrole_WaitFading : String = 'WaitFading';
+property genStateExecutor_embeddedCI_Subrole_ExecuteFading : String = 'ExecuteFading';
+property genStateExecutor_embeddedCI_Subrole_WaitTeardown : String = 'WaitTeardown';
+property genStateExecutor_embeddedCI_Subrole_ExecuteTeardown : String = 'ExecuteTeardown';
+
+
+-- names of executor internal operations
+property genOpExecutor_EmbeddedCI_Adaptation_getNextPIAction : String = 'getNextPortInstanceForAction';
+property genOpExecutor_EmbeddedCI_Adaptation_allActionsPerformed : String = 'allActionsPerformed';
+property genOpExecutor_EmbeddedCI_Adaptation_Vote_storeMinCommitTime : String = 'storeMinCommitTime';
+property genOpExecutor_EmbeddedCI_Adaptation_Vote_getNextPIRequest : String = 'getNextPortInstanceForRequest';
+property genOpExecutor_EmbeddedCI_Adaptation_Vote_getMessageName : String = 'getMessage';
+property genOpExecutor_EmbeddedCI_Adaptation_Vote_allRepliesReceived : String = 'allRepliesReceived';
+property genOpExecutor_EmbeddedCI_Adaptation_Vote_setReply : String = 'setReply';
+property genOpExecutor_EmbeddedCI_Adaptation_Vote_canCommit : String = 'canCommit';
+property genOpExecutor_EmbeddedCI_Adaptation_Execute_allEmbeddedFinished : String = 'allEmbeddedFinished';
+property genOpExecutor_EmbeddedCI_Adaptation_Execute_setFinished : String = 'setFinished';
+
+property genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_setFinishedStup : String = 'setFinishedSetup';
+property genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_allEmbeddedFinishedSetup : String = 'allEmbeddedFinishedSetup';
+property genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_setFinishedFading : String = 'setFinishedFading';
+property genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_allEmbeddedFinishedFading : String = 'allEmbeddedFinishedFading';
+property genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_setFinishedTeardown : String = 'setFinishedTeardown';
+property genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_allEmbeddedFinishedTeardown : String = 'allEmbeddedFinishedTeardown';
+property genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_resetActionPerformed : String = 'resetActionPerformed';
+
+
+-- names of operation parameters
+property genParamExecutor_EmbeddedCI_Adaptation_AC : String = 'ac';
+property genParamExecutor_EmbeddedCI_Adaptation_Vote_commitTime : String = 'commitTime';
+property genParamExecutor_EmbeddedCI_Adaptation_Vote_commit : String = 'commit';
+property genParamExecutor_EmbeddedCI_Adaptation_Vote_port : String = 'port';
+
+property genParamExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_ac = 'ac';
+property genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_port = 'port';

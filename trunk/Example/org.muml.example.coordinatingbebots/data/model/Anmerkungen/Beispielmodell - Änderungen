@@ -1,0 +1,32 @@
+Verwischen hier nicht die Grenzen von Protokoll und Pattern?
+
+in der Realtimestatechart Distribution_Distributor im Zustand Distribution_distributor_Main ist eine id definiert, die vom himmel fällt.
+
+Position Transmission Sender: 
+Variable curRole fehlt!!
+
+DistancesTransmission_sender:
+Werden kontinuierlich die Distanzdaten gesendet????
+bzg. Bebot Observer: wofür die Variable distArray, wenn die Distanzen doch berechnet werden..
+
+
+Exploration Main Statechart: 
+Bei den Synchronisationskanälen die Variablen wegnehmen. Notation der Variablenzuweisung bei Messages ist falsch!
+
+
+Collision Control Statechart:
+Zwei Invarianten mit 0 sek!!
+in Ebene DistancesTransmission: Bei der Selbsttransition auf Active macht die Snychronisation mit distancesDataOk! keinen Sinn
+es wird der ! Operator zur Negation verwendet. Aber der wird durch den Parser nicht unterstützt..
+
+
+Distribution distributor:
+posArray[id][0] := position.pos; vs. posArray[id][0] := position.pos[0]; posArray[id][1]:= position.pos[1];
+Message Event und Channel an derselben Transition!
+
+Bebot Observer:
+Channel comm[Boolean] möglich???
+
+Channel Snych umgedreht bei Observer client
+
+Was soll die Clock im Internal behavior?

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="ASCII"?>
+<opendds:OpenDDSModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:opendds="http://www.opendds.org/modeling/schemas/OpenDDS/1.0" xmlns:qos="http://www.opendds.org/modeling/schemas/QoS/1.0" xmlns:topics="http://www.opendds.org/modeling/schemas/Topics/1.0" xmlns:types="http://www.opendds.org/modeling/schemas/Types/1.0" xmi:id="_ZMauQCM1EeaKgdiSINwsHw" name="MUML_DDS">
+  <libs xsi:type="types:DataLib" xmi:id="_ZMauQSM1EeaKgdiSINwsHw" name="MUML_DataLib">
+    <types xsi:type="types:Struct" xmi:id="_ZMauQiM1EeaKgdiSINwsHw" name="DDS_M1completeDeny_M1" isDcpsDataType="true">
+      <fields xmi:id="_ZMauQyM1EeaKgdiSINwsHw" name="dummy" type="_ZMauTiM1EeaKgdiSINwsHw"/>
+    </types>
+    <types xsi:type="types:Struct" xmi:id="_ZMauRCM1EeaKgdiSINwsHw" name="DDS_M1accessGranted_M1" isDcpsDataType="true">
+      <fields xmi:id="_ZMauRSM1EeaKgdiSINwsHw" name="dummy" type="_ZMauTiM1EeaKgdiSINwsHw"/>
+    </types>
+    <types xsi:type="types:Struct" xmi:id="_ZMauRiM1EeaKgdiSINwsHw" name="DDS_M1launchCode_M1" isDcpsDataType="true">
+      <fields xmi:id="_ZMauRyM1EeaKgdiSINwsHw" name="id" type="_ZMauTyM1EeaKgdiSINwsHw"/>
+    </types>
+    <types xsi:type="types:Struct" xmi:id="_ZMauSCM1EeaKgdiSINwsHw" name="DDS_M1ready_M1" isDcpsDataType="true">
+      <fields xmi:id="_ZMauSSM1EeaKgdiSINwsHw" name="dummy" type="_ZMauTiM1EeaKgdiSINwsHw"/>
+    </types>
+    <types xsi:type="types:Struct" xmi:id="_ZMauSiM1EeaKgdiSINwsHw" name="DDS_M1accessDenied_M1" isDcpsDataType="true">
+      <fields xmi:id="_ZMauSyM1EeaKgdiSINwsHw" name="dummy" type="_ZMauTiM1EeaKgdiSINwsHw"/>
+    </types>
+    <types xsi:type="types:Struct" xmi:id="_ZMauTCM1EeaKgdiSINwsHw" name="DDS_M1otherReady_M1" isDcpsDataType="true">
+      <fields xmi:id="_ZMauTSM1EeaKgdiSINwsHw" name="dummy" type="_ZMauTiM1EeaKgdiSINwsHw"/>
+    </types>
+    <types xsi:type="types:Char" xmi:id="_ZMauTiM1EeaKgdiSINwsHw"/>
+    <types xsi:type="types:Long" xmi:id="_ZMauTyM1EeaKgdiSINwsHw"/>
+  </libs>
+  <libs xsi:type="opendds:PolicyLib" xmi:id="_ZMauUCM1EeaKgdiSINwsHw">
+    <policies xsi:type="qos:HistoryQosPolicy" xmi:id="_ZMauUSM1EeaKgdiSINwsHw" name="verifierHistoryQos" depth="1" kind="KEEP_ALL"/>
+    <policies xsi:type="qos:ReliabilityQosPolicy" xmi:id="_ZMauUiM1EeaKgdiSINwsHw" name="peer2ReliabilityQos" kind="BEST_EFFORT">
+      <max_blocking_time xmi:id="_ZMauUyM1EeaKgdiSINwsHw" second="1"/>
+    </policies>
+    <policies xsi:type="qos:HistoryQosPolicy" xmi:id="_ZMauVCM1EeaKgdiSINwsHw" name="peer2HistoryQos" depth="1" kind="KEEP_ALL"/>
+    <policies xsi:type="qos:ReliabilityQosPolicy" xmi:id="_ZMauVSM1EeaKgdiSINwsHw" name="peer1ReliabilityQos" kind="BEST_EFFORT">
+      <max_blocking_time xmi:id="_ZMauViM1EeaKgdiSINwsHw" second="1"/>
+    </policies>
+    <policies xsi:type="qos:ReliabilityQosPolicy" xmi:id="_ZMauVyM1EeaKgdiSINwsHw" name="verifierReliabilityQos" kind="BEST_EFFORT">
+      <max_blocking_time xmi:id="_ZMauWCM1EeaKgdiSINwsHw" second="1"/>
+    </policies>
+    <policies xsi:type="qos:HistoryQosPolicy" xmi:id="_ZMauWSM1EeaKgdiSINwsHw" name="verifierHistoryQos" depth="1" kind="KEEP_ALL"/>
+    <policies xsi:type="qos:HistoryQosPolicy" xmi:id="_ZMauWiM1EeaKgdiSINwsHw" name="peer1HistoryQos" depth="1" kind="KEEP_ALL"/>
+  </libs>
+  <libs xsi:type="opendds:DcpsLib" xmi:id="_ZMauWyM1EeaKgdiSINwsHw">
+    <domains xmi:id="_ZMauXCM1EeaKgdiSINwsHw" name="dummyDomain" domainId="-42"/>
+    <participants xmi:id="_ZMauXSM1EeaKgdiSINwsHw" name="LaunchDelegator_verifierParticipant" domain="_ZMauXCM1EeaKgdiSINwsHw">
+      <publishers xmi:id="_ZMauXiM1EeaKgdiSINwsHw" name="verifierPublisher" transportId="-1">
+        <writers xmi:id="_ZMauXyM1EeaKgdiSINwsHw" name="DDS_M1launchCode_M1DataWriter" reliability="_ZMauVyM1EeaKgdiSINwsHw" copyFromTopicQos="false" topic="_ZMbVaiM1EeaKgdiSINwsHw"/>
+        <writers xmi:id="_ZMauYCM1EeaKgdiSINwsHw" name="DDS_M1ready_M1DataWriter" reliability="_ZMauVyM1EeaKgdiSINwsHw" copyFromTopicQos="false" topic="_ZMbVYiM1EeaKgdiSINwsHw"/>
+      </publishers>
+      <subscribers xmi:id="_ZMauYSM1EeaKgdiSINwsHw" name="verifierSubscriber" transportId="-1">
+        <readers xmi:id="_ZMauYiM1EeaKgdiSINwsHw" name="DDS_M1accessGranted_M1DataReader" history="_ZMauUSM1EeaKgdiSINwsHw" reliability="_ZMauVyM1EeaKgdiSINwsHw" copyFromTopicQos="false" topic="_ZMbVZyM1EeaKgdiSINwsHw"/>
+        <readers xmi:id="_ZMauYyM1EeaKgdiSINwsHw" name="DDS_M1accessDenied_M1DataReader" history="_ZMauUSM1EeaKgdiSINwsHw" reliability="_ZMauVyM1EeaKgdiSINwsHw" copyFromTopicQos="false" topic="_ZMbVYyM1EeaKgdiSINwsHw"/>
+        <readers xmi:id="_ZMauZCM1EeaKgdiSINwsHw" name="DDS_M1otherReady_M1DataReader" history="_ZMauUSM1EeaKgdiSINwsHw" reliability="_ZMauVyM1EeaKgdiSINwsHw" copyFromTopicQos="false" topic="_ZMbVZCM1EeaKgdiSINwsHw"/>
+        <readers xmi:id="_ZMauZSM1EeaKgdiSINwsHw" name="DDS_M1completeDeny_M1DataReader" history="_ZMauWSM1EeaKgdiSINwsHw" reliability="_ZMauVyM1EeaKgdiSINwsHw" copyFromTopicQos="false" topic="_ZMbVaSM1EeaKgdiSINwsHw"/>
+      </subscribers>
+    </participants>
+    <participants xmi:id="_ZMauZiM1EeaKgdiSINwsHw" name="LaunchVerifier_peer1Participant" domain="_ZMauXCM1EeaKgdiSINwsHw">
+      <publishers xmi:id="_ZMauZyM1EeaKgdiSINwsHw" name="peer1Publisher" transportId="-1">
+        <writers xmi:id="_ZMauaCM1EeaKgdiSINwsHw" name="DDS_M1accessGranted_M1DataWriter" reliability="_ZMauVSM1EeaKgdiSINwsHw" copyFromTopicQos="false" topic="_ZMbVaCM1EeaKgdiSINwsHw"/>
+        <writers xmi:id="_ZMauaSM1EeaKgdiSINwsHw" name="DDS_M1accessDenied_M1DataWriter" reliability="_ZMauVSM1EeaKgdiSINwsHw" copyFromTopicQos="false" topic="_ZMbVZSM1EeaKgdiSINwsHw"/>
+        <writers xmi:id="_ZMauaiM1EeaKgdiSINwsHw" name="DDS_M1otherReady_M1DataWriter" reliability="_ZMauVSM1EeaKgdiSINwsHw" copyFromTopicQos="false" topic="_ZMbVayM1EeaKgdiSINwsHw"/>
+        <writers xmi:id="_ZMauayM1EeaKgdiSINwsHw" name="DDS_M1completeDeny_M1DataWriter" reliability="_ZMauVSM1EeaKgdiSINwsHw" copyFromTopicQos="false" topic="_ZMbVZiM1EeaKgdiSINwsHw"/>
+      </publishers>
+      <subscribers xmi:id="_ZMaubCM1EeaKgdiSINwsHw" name="peer1Subscriber" transportId="-1">
+        <readers xmi:id="_ZMaubSM1EeaKgdiSINwsHw" name="DDS_M1launchCode_M1DataReader" history="_ZMauWiM1EeaKgdiSINwsHw" reliability="_ZMauVSM1EeaKgdiSINwsHw" copyFromTopicQos="false" topic="_ZMbVaiM1EeaKgdiSINwsHw"/>
+        <readers xmi:id="_ZMaubiM1EeaKgdiSINwsHw" name="DDS_M1ready_M1DataReader" history="_ZMauWiM1EeaKgdiSINwsHw" reliability="_ZMauVSM1EeaKgdiSINwsHw" copyFromTopicQos="false" topic="_ZMbVYiM1EeaKgdiSINwsHw"/>
+      </subscribers>
+    </participants>
+    <participants xmi:id="_ZMbVUCM1EeaKgdiSINwsHw" name="LaunchDelegator_verifierParticipant" domain="_ZMauXCM1EeaKgdiSINwsHw">
+      <publishers xmi:id="_ZMbVUSM1EeaKgdiSINwsHw" name="verifierPublisher" transportId="-1">
+        <writers xmi:id="_ZMbVUiM1EeaKgdiSINwsHw" name="DDS_M1launchCode_M1DataWriter" reliability="_ZMauVyM1EeaKgdiSINwsHw" copyFromTopicQos="false" topic="_ZMbVaiM1EeaKgdiSINwsHw"/>
+        <writers xmi:id="_ZMbVUyM1EeaKgdiSINwsHw" name="DDS_M1ready_M1DataWriter" reliability="_ZMauVyM1EeaKgdiSINwsHw" copyFromTopicQos="false" topic="_ZMbVYiM1EeaKgdiSINwsHw"/>
+      </publishers>
+      <subscribers xmi:id="_ZMbVVCM1EeaKgdiSINwsHw" name="verifierSubscriber" transportId="-1">
+        <readers xmi:id="_ZMbVVSM1EeaKgdiSINwsHw" name="DDS_M1accessGranted_M1DataReader" history="_ZMauUSM1EeaKgdiSINwsHw" reliability="_ZMauVyM1EeaKgdiSINwsHw" copyFromTopicQos="false" topic="_ZMbVaCM1EeaKgdiSINwsHw"/>
+        <readers xmi:id="_ZMbVViM1EeaKgdiSINwsHw" name="DDS_M1accessDenied_M1DataReader" history="_ZMauUSM1EeaKgdiSINwsHw" reliability="_ZMauVyM1EeaKgdiSINwsHw" copyFromTopicQos="false" topic="_ZMbVZSM1EeaKgdiSINwsHw"/>
+        <readers xmi:id="_ZMbVVyM1EeaKgdiSINwsHw" name="DDS_M1otherReady_M1DataReader" history="_ZMauUSM1EeaKgdiSINwsHw" reliability="_ZMauVyM1EeaKgdiSINwsHw" copyFromTopicQos="false" topic="_ZMbVayM1EeaKgdiSINwsHw"/>
+        <readers xmi:id="_ZMbVWCM1EeaKgdiSINwsHw" name="DDS_M1completeDeny_M1DataReader" history="_ZMauWSM1EeaKgdiSINwsHw" reliability="_ZMauVyM1EeaKgdiSINwsHw" copyFromTopicQos="false" topic="_ZMbVZiM1EeaKgdiSINwsHw"/>
+      </subscribers>
+    </participants>
+    <participants xmi:id="_ZMbVWSM1EeaKgdiSINwsHw" name="LaunchVerifier_peer2Participant" domain="_ZMauXCM1EeaKgdiSINwsHw">
+      <publishers xmi:id="_ZMbVWiM1EeaKgdiSINwsHw" name="peer2Publisher" transportId="-1">
+        <writers xmi:id="_ZMbVWyM1EeaKgdiSINwsHw" name="DDS_M1accessGranted_M1DataWriter" reliability="_ZMauUiM1EeaKgdiSINwsHw" copyFromTopicQos="false" topic="_ZMbVZyM1EeaKgdiSINwsHw"/>
+        <writers xmi:id="_ZMbVXCM1EeaKgdiSINwsHw" name="DDS_M1accessDenied_M1DataWriter" reliability="_ZMauUiM1EeaKgdiSINwsHw" copyFromTopicQos="false" topic="_ZMbVYyM1EeaKgdiSINwsHw"/>
+        <writers xmi:id="_ZMbVXSM1EeaKgdiSINwsHw" name="DDS_M1otherReady_M1DataWriter" reliability="_ZMauUiM1EeaKgdiSINwsHw" copyFromTopicQos="false" topic="_ZMbVZCM1EeaKgdiSINwsHw"/>
+        <writers xmi:id="_ZMbVXiM1EeaKgdiSINwsHw" name="DDS_M1completeDeny_M1DataWriter" reliability="_ZMauUiM1EeaKgdiSINwsHw" copyFromTopicQos="false" topic="_ZMbVaSM1EeaKgdiSINwsHw"/>
+      </publishers>
+      <subscribers xmi:id="_ZMbVXyM1EeaKgdiSINwsHw" name="peer2Subscriber" transportId="-1">
+        <readers xmi:id="_ZMbVYCM1EeaKgdiSINwsHw" name="DDS_M1launchCode_M1DataReader" history="_ZMauVCM1EeaKgdiSINwsHw" reliability="_ZMauUiM1EeaKgdiSINwsHw" copyFromTopicQos="false" topic="_ZMbVaiM1EeaKgdiSINwsHw"/>
+        <readers xmi:id="_ZMbVYSM1EeaKgdiSINwsHw" name="DDS_M1ready_M1DataReader" history="_ZMauVCM1EeaKgdiSINwsHw" reliability="_ZMauUiM1EeaKgdiSINwsHw" copyFromTopicQos="false" topic="_ZMbVYiM1EeaKgdiSINwsHw"/>
+      </subscribers>
+    </participants>
+    <topicDescriptions xsi:type="topics:Topic" xmi:id="_ZMbVYiM1EeaKgdiSINwsHw" name="DDS_M1ready_M1verifierLaunchDelegator_Topicverifier" datatype="_ZMauSCM1EeaKgdiSINwsHw"/>
+    <topicDescriptions xsi:type="topics:Topic" xmi:id="_ZMbVYyM1EeaKgdiSINwsHw" name="DDS_M1accessDenied_M1peer2LaunchVerifier_Topicpeer2" datatype="_ZMauSiM1EeaKgdiSINwsHw"/>
+    <topicDescriptions xsi:type="topics:Topic" xmi:id="_ZMbVZCM1EeaKgdiSINwsHw" name="DDS_M1otherReady_M1peer2LaunchVerifier_Topicpeer2" datatype="_ZMauTCM1EeaKgdiSINwsHw"/>
+    <topicDescriptions xsi:type="topics:Topic" xmi:id="_ZMbVZSM1EeaKgdiSINwsHw" name="DDS_M1accessDenied_M1peer1LaunchVerifier_Topicpeer1" datatype="_ZMauSiM1EeaKgdiSINwsHw"/>
+    <topicDescriptions xsi:type="topics:Topic" xmi:id="_ZMbVZiM1EeaKgdiSINwsHw" name="DDS_M1completeDeny_M1peer1LaunchVerifier_Topicpeer1" datatype="_ZMauQiM1EeaKgdiSINwsHw"/>
+    <topicDescriptions xsi:type="topics:Topic" xmi:id="_ZMbVZyM1EeaKgdiSINwsHw" name="DDS_M1accessGranted_M1peer2LaunchVerifier_Topicpeer2" datatype="_ZMauRCM1EeaKgdiSINwsHw"/>
+    <topicDescriptions xsi:type="topics:Topic" xmi:id="_ZMbVaCM1EeaKgdiSINwsHw" name="DDS_M1accessGranted_M1peer1LaunchVerifier_Topicpeer1" datatype="_ZMauRCM1EeaKgdiSINwsHw"/>
+    <topicDescriptions xsi:type="topics:Topic" xmi:id="_ZMbVaSM1EeaKgdiSINwsHw" name="DDS_M1completeDeny_M1peer2LaunchVerifier_Topicpeer2" datatype="_ZMauQiM1EeaKgdiSINwsHw"/>
+    <topicDescriptions xsi:type="topics:Topic" xmi:id="_ZMbVaiM1EeaKgdiSINwsHw" name="DDS_M1launchCode_M1verifierLaunchDelegator_Topicverifier" datatype="_ZMauRiM1EeaKgdiSINwsHw"/>
+    <topicDescriptions xsi:type="topics:Topic" xmi:id="_ZMbVayM1EeaKgdiSINwsHw" name="DDS_M1otherReady_M1peer1LaunchVerifier_Topicpeer1" datatype="_ZMauTCM1EeaKgdiSINwsHw"/>
+  </libs>
+</opendds:OpenDDSModel>

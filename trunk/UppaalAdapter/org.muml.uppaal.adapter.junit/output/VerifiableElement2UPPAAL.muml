@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BooleanLogic="http://www.muml.org/uppaal/adapter/mtctl/booleanlogic/1.0.0" xmlns:Comparables="http://www.muml.org/uppaal/adapter/mtctl/comparables/1.0.0" xmlns:Predicates="http://www.muml.org/uppaal/adapter/mtctl/predicates/1.0.0" xmlns:Quantifiers="http://www.muml.org/uppaal/adapter/mtctl/quantifiers/1.0.0" xmlns:component="http://www.muml.org/pim/component/1.0.0" xmlns:instance="http://www.muml.org/pim/instance/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:msgtype="http://www.muml.org/pim/msgtype/1.0.0" xmlns:mtctl="http://www.muml.org/uppaal/adapter/mtctl/1.0.0" xmlns:protocol="http://www.muml.org/pim/protocol/1.0.0" xmlns:realtimestatechart="http://www.muml.org/pim/realtimestatechart/1.0.0" xmlns:sdcec="http://www.muml.org/core/expressions/common/1.0.0" xmlns:types="http://www.muml.org/pim/types/1.0.0" xmlns:verificationExtension="http://www.muml.org/uppaal/adapter/extension/verificationextension/1.0.0">
+  <categories key="org.muml.types.category" name="types">
+    <modelElements xsi:type="types:PrimitiveDataType" name="VOID"/>
+    <modelElements xsi:type="types:PrimitiveDataType" name="BOOLEAN" primitiveType="BOOLEAN"/>
+    <modelElements xsi:type="types:PrimitiveDataType" name="BYTE" primitiveType="BYTE"/>
+    <modelElements xsi:type="types:PrimitiveDataType" name="SHORT" primitiveType="SHORT"/>
+    <modelElements xsi:type="types:PrimitiveDataType" name="INT" primitiveType="INT"/>
+    <modelElements xsi:type="types:PrimitiveDataType" name="LONG" primitiveType="LONG"/>
+    <modelElements xsi:type="types:PrimitiveDataType" name="DOUBLE" primitiveType="DOUBLE"/>
+  </categories>
+  <categories key="org.muml.pim.instance.category" name="instance">
+    <modelElements xsi:type="instance:ComponentInstanceConfiguration" name="EinparkhilfeCIC">
+      <extension xsi:type="verificationExtension:ElementToVerifyExtension"/>
+      <verificationConstraintRepositories xsi:type="mtctl:PropertyRepository">
+        <properties>
+          <expression xsi:type="Quantifiers:AGExpr">
+            <expr xsi:type="BooleanLogic:NotExpr">
+              <opd xsi:type="Predicates:DeadlockExpr"/>
+            </expr>
+          </expression>
+        </properties>
+        <properties>
+          <expression xsi:type="Quantifiers:AGExpr">
+            <expr xsi:type="BooleanLogic:NotExpr">
+              <opd xsi:type="Predicates:BufferOverflowExpr"/>
+            </expr>
+          </expression>
+        </properties>
+        <properties>
+          <expression xsi:type="Quantifiers:LeadsToExpr">
+            <leftOpd xsi:type="Predicates:StateActiveExpr">
+              <state xsi:type="Comparables:MumlElemExpr" elem="//@categories.5/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.1/@embeddedRegions.0/@embeddedStatechart/@states.1"/>
+            </leftOpd>
+            <rightOpd xsi:type="Predicates:StateActiveExpr">
+              <state xsi:type="Comparables:MumlElemExpr" elem="//@categories.5/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0"/>
+            </rightOpd>
+          </expression>
+        </properties>
+        <properties>
+          <expression xsi:type="Quantifiers:LeadsToExpr">
+            <leftOpd xsi:type="Predicates:MessageInBufferExpr">
+              <buffer xsi:type="Comparables:MumlElemExpr" elem="//@categories.2/@modelElements.1/@ports.0/@receiverMessageBuffer.0"/>
+              <message xsi:type="Comparables:MumlElemExpr" elem="//@categories.4/@modelElements.0/@messageTypes.2"/>
+            </leftOpd>
+            <rightOpd xsi:type="Predicates:StateActiveExpr">
+              <state xsi:type="Comparables:MumlElemExpr" elem="//@categories.5/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0"/>
+            </rightOpd>
+          </expression>
+        </properties>
+        <properties>
+          <expression xsi:type="Quantifiers:LeadsToExpr">
+            <leftOpd xsi:type="BooleanLogic:AndExpr">
+              <leftOpd xsi:type="BooleanLogic:AndExpr">
+                <leftOpd xsi:type="BooleanLogic:NotExpr">
+                  <opd xsi:type="Predicates:MessageInBufferExpr">
+                    <buffer xsi:type="Comparables:MumlElemExpr" elem="//@categories.2/@modelElements.0/@ports.0/@receiverMessageBuffer.0"/>
+                    <message xsi:type="Comparables:MumlElemExpr" elem="//@categories.4/@modelElements.0/@messageTypes.3"/>
+                  </opd>
+                </leftOpd>
+                <rightOpd xsi:type="Predicates:StateActiveExpr">
+                  <state xsi:type="Comparables:MumlElemExpr" elem="//@categories.5/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.1"/>
+                </rightOpd>
+              </leftOpd>
+              <rightOpd xsi:type="Predicates:ComparisonExpr" op=">=">
+                <lhs xsi:type="Comparables:MumlElemExpr" elem="//@categories.5/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@clocks.0"/>
+                <rhs xsi:type="Comparables:ConstExpr" val="1" timeUnit="MILLISECONDS"/>
+              </rightOpd>
+            </leftOpd>
+            <rightOpd xsi:type="Predicates:StateActiveExpr">
+              <state xsi:type="Comparables:MumlElemExpr" elem="//@categories.5/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.2"/>
+            </rightOpd>
+          </expression>
+        </properties>
+      </verificationConstraintRepositories>
+      <componentInstances xsi:type="instance:AtomicComponentInstance" name="ParksystemComponentInstance0" componentType="//@categories.2/@modelElements.0">
+        <portInstances xsi:type="instance:DiscreteSinglePortInstance" name="ParksystemPortInstance0" connectorInstances="//@categories.1/@modelElements.0/@portConnectorInstances.0" type="//@categories.2/@modelElements.0/@ports.0"/>
+      </componentInstances>
+      <componentInstances xsi:type="instance:AtomicComponentInstance" name="HinderniserkennungComponentInstance0" componentType="//@categories.2/@modelElements.1">
+        <portInstances xsi:type="instance:DiscreteSinglePortInstance" name="HinderniserkennungPortInstance0" connectorInstances="//@categories.1/@modelElements.0/@portConnectorInstances.0" type="//@categories.2/@modelElements.1/@ports.0"/>
+      </componentInstances>
+      <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" connectorEndpointInstances="//@categories.1/@modelElements.0/@componentInstances.0/@portInstances.0 //@categories.1/@modelElements.0/@componentInstances.1/@portInstances.0"/>
+    </modelElements>
+  </categories>
+  <categories key="org.muml.pim.components.category" name="component">
+    <modelElements xsi:type="component:StaticAtomicComponent" name="ParksystemComponent" behavior="//@categories.5/@modelElements.2">
+      <ports xsi:type="component:DiscretePort" name="ParksystemPort" behavior="//@categories.5/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart" senderMessageTypes="//@categories.4/@modelElements.0/@messageTypes.0 //@categories.4/@modelElements.0/@messageTypes.2" receiverMessageTypes="//@categories.4/@modelElements.0/@messageTypes.3 //@categories.4/@modelElements.0/@messageTypes.1" refinedRole="//@categories.3/@modelElements.0/@roles.0">
+        <cardinality>
+          <lowerBound/>
+          <upperBound/>
+        </cardinality>
+        <receiverMessageBuffer name="ParksystemBuffer" messageType="//@categories.4/@modelElements.0/@messageTypes.3 //@categories.4/@modelElements.0/@messageTypes.1">
+          <bufferSize value="2"/>
+        </receiverMessageBuffer>
+      </ports>
+    </modelElements>
+    <modelElements xsi:type="component:StaticAtomicComponent" name="HinderniserkennungComponent" behavior="//@categories.5/@modelElements.3">
+      <ports xsi:type="component:DiscretePort" name="HinderniserkennungPort" behavior="//@categories.5/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart" senderMessageTypes="//@categories.4/@modelElements.0/@messageTypes.3 //@categories.4/@modelElements.0/@messageTypes.1" receiverMessageTypes="//@categories.4/@modelElements.0/@messageTypes.0 //@categories.4/@modelElements.0/@messageTypes.2" refinedRole="//@categories.3/@modelElements.0/@roles.1">
+        <cardinality>
+          <lowerBound/>
+          <upperBound/>
+        </cardinality>
+        <receiverMessageBuffer name="HinderniserkennungBuffer" messageType="//@categories.4/@modelElements.0/@messageTypes.0 //@categories.4/@modelElements.0/@messageTypes.2">
+          <bufferSize value="2"/>
+        </receiverMessageBuffer>
+      </ports>
+    </modelElements>
+  </categories>
+  <categories key="org.muml.pim.protocol.category" name="protocol">
+    <modelElements xsi:type="protocol:CoordinationProtocol" name="Einparkhilfe">
+      <verificationConstraintRepositories xsi:type="mtctl:PropertyRepository">
+        <properties>
+          <expression xsi:type="Quantifiers:AGExpr">
+            <expr xsi:type="BooleanLogic:NotExpr">
+              <opd xsi:type="Predicates:DeadlockExpr"/>
+            </expr>
+          </expression>
+        </properties>
+        <properties>
+          <expression xsi:type="Quantifiers:AGExpr">
+            <expr xsi:type="BooleanLogic:NotExpr">
+              <opd xsi:type="Predicates:BufferOverflowExpr"/>
+            </expr>
+          </expression>
+        </properties>
+        <properties>
+          <expression xsi:type="Quantifiers:LeadsToExpr">
+            <leftOpd xsi:type="Predicates:StateActiveExpr">
+              <state xsi:type="Comparables:MumlElemExpr" elem="//@categories.5/@modelElements.1/@states.1/@embeddedRegions.0/@embeddedStatechart/@states.1"/>
+            </leftOpd>
+            <rightOpd xsi:type="Predicates:StateActiveExpr">
+              <state xsi:type="Comparables:MumlElemExpr" elem="//@categories.5/@modelElements.0/@states.0"/>
+            </rightOpd>
+          </expression>
+        </properties>
+        <properties>
+          <expression xsi:type="Quantifiers:LeadsToExpr">
+            <leftOpd xsi:type="Predicates:MessageInBufferExpr">
+              <buffer xsi:type="Comparables:MumlElemExpr" elem="//@categories.3/@modelElements.0/@roles.1/@receiverMessageBuffer.0"/>
+              <message xsi:type="Comparables:MumlElemExpr" elem="//@categories.4/@modelElements.0/@messageTypes.2"/>
+            </leftOpd>
+            <rightOpd xsi:type="Predicates:StateActiveExpr">
+              <state xsi:type="Comparables:MumlElemExpr" elem="//@categories.5/@modelElements.1/@states.0"/>
+            </rightOpd>
+          </expression>
+        </properties>
+        <properties>
+          <expression xsi:type="Quantifiers:LeadsToExpr">
+            <leftOpd xsi:type="BooleanLogic:AndExpr">
+              <leftOpd xsi:type="BooleanLogic:AndExpr">
+                <leftOpd xsi:type="BooleanLogic:NotExpr">
+                  <opd xsi:type="Predicates:MessageInBufferExpr">
+                    <buffer xsi:type="Comparables:MumlElemExpr" elem="//@categories.3/@modelElements.0/@roles.0/@receiverMessageBuffer.0"/>
+                    <message xsi:type="Comparables:MumlElemExpr" elem="//@categories.4/@modelElements.0/@messageTypes.3"/>
+                  </opd>
+                </leftOpd>
+                <rightOpd xsi:type="Predicates:StateActiveExpr">
+                  <state xsi:type="Comparables:MumlElemExpr" elem="//@categories.5/@modelElements.0/@states.1"/>
+                </rightOpd>
+              </leftOpd>
+              <rightOpd xsi:type="Predicates:ComparisonExpr" op=">=">
+                <lhs xsi:type="Comparables:MumlElemExpr" elem="//@categories.5/@modelElements.0/@clocks.0"/>
+                <rhs xsi:type="Comparables:ConstExpr" val="1" timeUnit="MILLISECONDS"/>
+              </rightOpd>
+            </leftOpd>
+            <rightOpd xsi:type="Predicates:StateActiveExpr">
+              <state xsi:type="Comparables:MumlElemExpr" elem="//@categories.5/@modelElements.0/@states.2"/>
+            </rightOpd>
+          </expression>
+        </properties>
+      </verificationConstraintRepositories>
+      <roles connectors="//@categories.3/@modelElements.0/@roleConnector" behavior="//@categories.5/@modelElements.0" name="Parksystem" senderMessageTypes="//@categories.4/@modelElements.0/@messageTypes.0 //@categories.4/@modelElements.0/@messageTypes.2" receiverMessageTypes="//@categories.4/@modelElements.0/@messageTypes.3 //@categories.4/@modelElements.0/@messageTypes.1">
+        <cardinality>
+          <lowerBound/>
+          <upperBound/>
+        </cardinality>
+        <receiverMessageBuffer name="ParksystemBuffer" messageType="//@categories.4/@modelElements.0/@messageTypes.3 //@categories.4/@modelElements.0/@messageTypes.1">
+          <bufferSize value="2"/>
+        </receiverMessageBuffer>
+      </roles>
+      <roles connectors="//@categories.3/@modelElements.0/@roleConnector" behavior="//@categories.5/@modelElements.1" name="Hinderniserkennung" senderMessageTypes="//@categories.4/@modelElements.0/@messageTypes.3 //@categories.4/@modelElements.0/@messageTypes.1" receiverMessageTypes="//@categories.4/@modelElements.0/@messageTypes.0 //@categories.4/@modelElements.0/@messageTypes.2">
+        <cardinality>
+          <lowerBound/>
+          <upperBound/>
+        </cardinality>
+        <receiverMessageBuffer name="HinderniserkennungBuffer" messageType="//@categories.4/@modelElements.0/@messageTypes.0 //@categories.4/@modelElements.0/@messageTypes.2">
+          <bufferSize value="2"/>
+        </receiverMessageBuffer>
+      </roles>
+      <roleConnector connectorEndpoints="//@categories.3/@modelElements.0/@roles.0 //@categories.3/@modelElements.0/@roles.1">
+        <connectorQualityOfServiceAssumptions comment="">
+          <minMessageDelay unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" value="0"/>
+          </minMessageDelay>
+          <maxMessageDelay unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" value="0"/>
+          </maxMessageDelay>
+        </connectorQualityOfServiceAssumptions>
+      </roleConnector>
+    </modelElements>
+  </categories>
+  <categories key="org.muml.pim.messagetype.category" name="msgtype">
+    <modelElements xsi:type="msgtype:MessageTypeRepository" name="EinparkhilfeNachrichten">
+      <messageTypes name="start"/>
+      <messageTypes name="akzeptiereStop"/>
+      <messageTypes name="stop"/>
+      <messageTypes name="frei"/>
+    </modelElements>
+  </categories>
+  <categories key="org.muml.pim.realtimestatechart.category" name="realtimestatechart">
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" name="RolleParksystem" behavioralElement="//@categories.3/@modelElements.0/@roles.0">
+      <transitions priority="1" target="//@categories.5/@modelElements.0/@states.1" source="//@categories.5/@modelElements.0/@states.0" clockResets="//@categories.5/@modelElements.0/@clocks.0" urgent="false">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent">
+          <message instanceOf="//@categories.4/@modelElements.0/@messageTypes.0"/>
+        </events>
+      </transitions>
+      <transitions priority="3" target="//@categories.5/@modelElements.0/@states.1" source="//@categories.5/@modelElements.0/@states.1" clockResets="//@categories.5/@modelElements.0/@clocks.0">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" kind="TRIGGER">
+          <message instanceOf="//@categories.4/@modelElements.0/@messageTypes.3"/>
+        </events>
+      </transitions>
+      <transitions priority="2" target="//@categories.5/@modelElements.0/@states.2" source="//@categories.5/@modelElements.0/@states.1" urgent="false">
+        <clockConstraints clock="//@categories.5/@modelElements.0/@clocks.0" operator="GREATER_OR_EQUAL">
+          <bound unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" value="1"/>
+          </bound>
+        </clockConstraints>
+      </transitions>
+      <transitions priority="1" target="//@categories.5/@modelElements.0/@states.3" source="//@categories.5/@modelElements.0/@states.2">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent">
+          <message instanceOf="//@categories.4/@modelElements.0/@messageTypes.2"/>
+        </events>
+      </transitions>
+      <transitions priority="1" target="//@categories.5/@modelElements.0/@states.3" source="//@categories.5/@modelElements.0/@states.1" urgent="false">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent">
+          <message instanceOf="//@categories.4/@modelElements.0/@messageTypes.2"/>
+        </events>
+      </transitions>
+      <transitions priority="1" target="//@categories.5/@modelElements.0/@states.0" source="//@categories.5/@modelElements.0/@states.3">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" kind="TRIGGER">
+          <message instanceOf="//@categories.4/@modelElements.0/@messageTypes.1"/>
+        </events>
+      </transitions>
+      <transitions priority="2" target="//@categories.5/@modelElements.0/@states.3" source="//@categories.5/@modelElements.0/@states.3">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" kind="TRIGGER">
+          <message instanceOf="//@categories.4/@modelElements.0/@messageTypes.3"/>
+        </events>
+      </transitions>
+      <states name="ausgeschaltet" outgoingTransitions="//@categories.5/@modelElements.0/@transitions.0" incomingTransitions="//@categories.5/@modelElements.0/@transitions.5" initial="true"/>
+      <states name="einparkend" outgoingTransitions="//@categories.5/@modelElements.0/@transitions.4 //@categories.5/@modelElements.0/@transitions.2 //@categories.5/@modelElements.0/@transitions.1" incomingTransitions="//@categories.5/@modelElements.0/@transitions.0 //@categories.5/@modelElements.0/@transitions.1">
+        <invariants clock="//@categories.5/@modelElements.0/@clocks.0">
+          <bound unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" value="1"/>
+          </bound>
+        </invariants>
+      </states>
+      <states name="fehler" outgoingTransitions="//@categories.5/@modelElements.0/@transitions.3" incomingTransitions="//@categories.5/@modelElements.0/@transitions.2"/>
+      <states name="stoppend" outgoingTransitions="//@categories.5/@modelElements.0/@transitions.5 //@categories.5/@modelElements.0/@transitions.6" incomingTransitions="//@categories.5/@modelElements.0/@transitions.3 //@categories.5/@modelElements.0/@transitions.4 //@categories.5/@modelElements.0/@transitions.6"/>
+      <clocks name="cFrei"/>
+    </modelElements>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" name="RolleHinderniserkennung" behavioralElement="//@categories.3/@modelElements.0/@roles.1">
+      <transitions priority="1" target="//@categories.5/@modelElements.1/@states.1" source="//@categories.5/@modelElements.1/@states.0" clockResets="//@categories.5/@modelElements.1/@clocks.0">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" kind="TRIGGER">
+          <message instanceOf="//@categories.4/@modelElements.0/@messageTypes.0"/>
+        </events>
+      </transitions>
+      <transitions priority="1" target="//@categories.5/@modelElements.1/@states.0" source="//@categories.5/@modelElements.1/@states.1">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent">
+          <message instanceOf="//@categories.4/@modelElements.0/@messageTypes.1"/>
+        </events>
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" kind="TRIGGER">
+          <message instanceOf="//@categories.4/@modelElements.0/@messageTypes.2"/>
+        </events>
+      </transitions>
+      <states name="inaktiv" outgoingTransitions="//@categories.5/@modelElements.1/@transitions.0" incomingTransitions="//@categories.5/@modelElements.1/@transitions.1" initial="true"/>
+      <states name="aktiv" outgoingTransitions="//@categories.5/@modelElements.1/@transitions.1" incomingTransitions="//@categories.5/@modelElements.1/@transitions.0">
+        <embeddedRegions priority="1">
+          <embeddedStatechart name="statechart">
+            <transitions priority="2" target="//@categories.5/@modelElements.1/@states.1/@embeddedRegions.0/@embeddedStatechart/@states.0" source="//@categories.5/@modelElements.1/@states.1/@embeddedRegions.0/@embeddedStatechart/@states.0" clockResets="//@categories.5/@modelElements.1/@clocks.0" urgent="false">
+              <clockConstraints clock="//@categories.5/@modelElements.1/@clocks.0" operator="GREATER_OR_EQUAL">
+                <bound unit="MILLISECONDS">
+                  <value xsi:type="sdcec:LiteralExpression" value="1"/>
+                </bound>
+              </clockConstraints>
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent">
+                <message instanceOf="//@categories.4/@modelElements.0/@messageTypes.3"/>
+              </events>
+            </transitions>
+            <transitions priority="1" target="//@categories.5/@modelElements.1/@states.1/@embeddedRegions.0/@embeddedStatechart/@states.1" source="//@categories.5/@modelElements.1/@states.1/@embeddedRegions.0/@embeddedStatechart/@states.0" urgent="false"/>
+            <states name="beobachtend" outgoingTransitions="//@categories.5/@modelElements.1/@states.1/@embeddedRegions.0/@embeddedStatechart/@transitions.1 //@categories.5/@modelElements.1/@states.1/@embeddedRegions.0/@embeddedStatechart/@transitions.0" incomingTransitions="//@categories.5/@modelElements.1/@states.1/@embeddedRegions.0/@embeddedStatechart/@transitions.0" initial="true">
+              <invariants clock="//@categories.5/@modelElements.1/@clocks.0">
+                <bound unit="MILLISECONDS">
+                  <value xsi:type="sdcec:LiteralExpression" value="1"/>
+                </bound>
+              </invariants>
+            </states>
+            <states name="hindernis" incomingTransitions="//@categories.5/@modelElements.1/@states.1/@embeddedRegions.0/@embeddedStatechart/@transitions.1"/>
+          </embeddedStatechart>
+        </embeddedRegions>
+      </states>
+      <clocks name="cHindernis"/>
+    </modelElements>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" name="ParksystemComponentRTSC" behavioralElement="//@categories.2/@modelElements.0">
+      <states name="Initial" initial="true">
+        <embeddedRegions priority="1">
+          <embeddedStatechart name="RolleParksystem" behavioralElement="//@categories.2/@modelElements.0/@ports.0">
+            <transitions priority="1" target="//@categories.5/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.1" source="//@categories.5/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0" clockResets="//@categories.5/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@clocks.0" urgent="false">
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent">
+                <message instanceOf="//@categories.4/@modelElements.0/@messageTypes.0"/>
+              </events>
+            </transitions>
+            <transitions priority="3" target="//@categories.5/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.1" source="//@categories.5/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.1" clockResets="//@categories.5/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@clocks.0">
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" kind="TRIGGER">
+                <message instanceOf="//@categories.4/@modelElements.0/@messageTypes.3"/>
+              </events>
+            </transitions>
+            <transitions priority="2" target="//@categories.5/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.2" source="//@categories.5/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.1" urgent="false">
+              <clockConstraints clock="//@categories.5/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@clocks.0" operator="GREATER_OR_EQUAL">
+                <bound unit="MILLISECONDS">
+                  <value xsi:type="sdcec:LiteralExpression" value="1"/>
+                </bound>
+              </clockConstraints>
+            </transitions>
+            <transitions priority="1" target="//@categories.5/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.3" source="//@categories.5/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.2">
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent">
+                <message instanceOf="//@categories.4/@modelElements.0/@messageTypes.2"/>
+              </events>
+            </transitions>
+            <transitions priority="1" target="//@categories.5/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.3" source="//@categories.5/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.1" urgent="false">
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent">
+                <message instanceOf="//@categories.4/@modelElements.0/@messageTypes.2"/>
+              </events>
+            </transitions>
+            <transitions priority="1" target="//@categories.5/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0" source="//@categories.5/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.3">
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" kind="TRIGGER">
+                <message instanceOf="//@categories.4/@modelElements.0/@messageTypes.1"/>
+              </events>
+            </transitions>
+            <transitions priority="2" target="//@categories.5/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.3" source="//@categories.5/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.3">
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" kind="TRIGGER">
+                <message instanceOf="//@categories.4/@modelElements.0/@messageTypes.3"/>
+              </events>
+            </transitions>
+            <states name="ausgeschaltet" outgoingTransitions="//@categories.5/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.0" incomingTransitions="//@categories.5/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.5" initial="true"/>
+            <states name="einparkend" outgoingTransitions="//@categories.5/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.4 //@categories.5/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.2 //@categories.5/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.1" incomingTransitions="//@categories.5/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.0 //@categories.5/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.1">
+              <invariants clock="//@categories.5/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@clocks.0">
+                <bound unit="MILLISECONDS">
+                  <value xsi:type="sdcec:LiteralExpression" value="1"/>
+                </bound>
+              </invariants>
+            </states>
+            <states name="fehler" outgoingTransitions="//@categories.5/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.3" incomingTransitions="//@categories.5/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.2"/>
+            <states name="stoppend" outgoingTransitions="//@categories.5/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.5 //@categories.5/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.6" incomingTransitions="//@categories.5/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.3 //@categories.5/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.4 //@categories.5/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.6"/>
+            <clocks name="cFrei"/>
+          </embeddedStatechart>
+        </embeddedRegions>
+      </states>
+    </modelElements>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" name="HinderniserkennungComponentRTSC" behavioralElement="//@categories.2/@modelElements.1">
+      <states name="Initial" initial="true">
+        <embeddedRegions priority="1">
+          <embeddedStatechart name="RolleHinderniserkennung" behavioralElement="//@categories.2/@modelElements.1/@ports.0">
+            <transitions priority="1" target="//@categories.5/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.1" source="//@categories.5/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0" clockResets="//@categories.5/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@clocks.0">
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" kind="TRIGGER">
+                <message instanceOf="//@categories.4/@modelElements.0/@messageTypes.0"/>
+              </events>
+            </transitions>
+            <transitions priority="1" target="//@categories.5/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.0" source="//@categories.5/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.1">
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent">
+                <message instanceOf="//@categories.4/@modelElements.0/@messageTypes.1"/>
+              </events>
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" kind="TRIGGER">
+                <message instanceOf="//@categories.4/@modelElements.0/@messageTypes.2"/>
+              </events>
+            </transitions>
+            <states name="inaktiv" outgoingTransitions="//@categories.5/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.0" incomingTransitions="//@categories.5/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.1" initial="true"/>
+            <states name="aktiv" outgoingTransitions="//@categories.5/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.1" incomingTransitions="//@categories.5/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.0">
+              <embeddedRegions priority="1">
+                <embeddedStatechart name="statechart">
+                  <transitions priority="2" target="//@categories.5/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.1/@embeddedRegions.0/@embeddedStatechart/@states.0" source="//@categories.5/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.1/@embeddedRegions.0/@embeddedStatechart/@states.0" clockResets="//@categories.5/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@clocks.0" urgent="false">
+                    <clockConstraints clock="//@categories.5/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@clocks.0" operator="GREATER_OR_EQUAL">
+                      <bound unit="MILLISECONDS">
+                        <value xsi:type="sdcec:LiteralExpression" value="1"/>
+                      </bound>
+                    </clockConstraints>
+                    <events xsi:type="realtimestatechart:AsynchronousMessageEvent">
+                      <message instanceOf="//@categories.4/@modelElements.0/@messageTypes.3"/>
+                    </events>
+                  </transitions>
+                  <transitions priority="1" target="//@categories.5/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.1/@embeddedRegions.0/@embeddedStatechart/@states.1" source="//@categories.5/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.1/@embeddedRegions.0/@embeddedStatechart/@states.0" urgent="false"/>
+                  <states name="beobachtend" outgoingTransitions="//@categories.5/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.1/@embeddedRegions.0/@embeddedStatechart/@transitions.1 //@categories.5/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.1/@embeddedRegions.0/@embeddedStatechart/@transitions.0" incomingTransitions="//@categories.5/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.1/@embeddedRegions.0/@embeddedStatechart/@transitions.0" initial="true">
+                    <invariants clock="//@categories.5/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@clocks.0">
+                      <bound unit="MILLISECONDS">
+                        <value xsi:type="sdcec:LiteralExpression" value="1"/>
+                      </bound>
+                    </invariants>
+                  </states>
+                  <states name="hindernis" incomingTransitions="//@categories.5/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.1/@embeddedRegions.0/@embeddedStatechart/@transitions.1"/>
+                </embeddedStatechart>
+              </embeddedRegions>
+            </states>
+            <clocks name="cHindernis"/>
+          </embeddedStatechart>
+        </embeddedRegions>
+      </states>
+    </modelElements>
+  </categories>
+</modelinstance:RootNode>

@@ -1,0 +1,9 @@
+import simulink::stateflow;
+
+extension extensions::stateflow::Node;
+
+StateflowMachine getMachine(Event event):
+	event.getState().getChart().machine;
+		
+State getState(Event event):
+	((State)event.eContainer);

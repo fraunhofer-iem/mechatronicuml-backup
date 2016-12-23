@@ -1,0 +1,805 @@
+import transforms.lib.RTSCBaseLibrary;
+import transforms.lib.ActionLanguageBaseLibrary;
+import transforms.lib.TypeAndBehaviorLibrary;
+import transforms.lib.MessageTypeLibrary;
+import transforms.lib.ProjectSpecificConstants;
+
+--core models
+modeltype core uses core('http://www.muml.org/core/1.0.0');
+modeltype expressions uses core::expressions('http://www.muml.org/core/1.0.0');
+modeltype expressions_common uses core::expressions::common('http://www.muml.org/core/1.0.0');
+modeltype modelinst uses modelinstance("http://www.muml.org/modelinstance/1.0.0");
+
+-- muml models 
+modeltype behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype component uses pim::component("http://www.muml.org/pim/1.0.0");
+modeltype connector uses pim::connector("http://www.muml.org/pim/1.0.0");
+modeltype constraints uses pim::constraint("http://www.muml.org/pim/1.0.0");
+modeltype instance uses pim::instance("http://www.muml.org/pim/1.0.0");
+modeltype msgi uses pim::msgtype('http://www.muml.org/pim/1.0.0');
+modeltype protocol uses pim::protocol("http://www.muml.org/pim/1.0.0");
+modeltype realtimestatechart uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype types uses pim::types('http://www.muml.org/pim/1.0.0');
+modeltype valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+
+modeltype actionlanguage uses actionlanguage('http://www.muml.org/pim/actionlanguage/1.0.0');
+modeltype reconf uses reconfiguration("http://www.muml.org/reconfiguration/1.0.0");
+modeltype reconf_expressions uses reconfiguration::expression("http://www.muml.org/reconfiguration/1.0.0");
+modeltype reconf_datatype uses reconfiguration::structdatatype("http://www.muml.org/reconfiguration/1.0.0");
+
+--modeltype componentpattern uses componentstorydiagram::componentstorypattern("http://www.fujaba.de/muml/componentstorydiagram/0.3.1");
+--modeltype componentstory uses componentstorydiagram::controlflow("http://www.fujaba.de/muml/componentstorydiagram/0.3.1");
+
+-- this transformation parses the reconfiguration specification of the manager of the
+-- reconfigurable structured component contained in inputComponent and generates a behavior
+-- specification in terms of real-time statecharts for it
+transformation GenerateManagerImplementation(inout inputComponent : component, inout category : modelinst);
+
+main() {
+
+	var theComponent : ReconfigurableStructuredComponent := inputComponent.rootObjects()[ReconfigurableStructuredComponent] -> any(true);
+	var rootNode : RootNode := category.rootObjects()[RootNode] -> any(true);
+	
+	createManagerImplementation(theComponent, rootNode);
+	
+}
+
+-- creates an implementation for the manager
+helper createManagerImplementation(inout theComponent : ReconfigurableStructuredComponent, inout rootNode : RootNode){
+	
+	-- configure internal ports (copy entries from RE-port of StructuredComponent and collect entries from children)
+	configurePorts(rootNode, theComponent);
+	
+	-- create the statechart
+	var rtsc : RealtimeStatechart := new RealtimeStatechart(theComponent.name + '_Manager_RTSC');
+	rtsc.comment := 'Generated Real-Time Statechart -- DO NOT EDIT!';
+	
+	-- assign it to the manager
+	theComponent.manager.behavior := rtsc;
+	
+	-- add statechart to category
+	getOrCreateRTSCCategory(rootNode).modelElements += rtsc;
+	
+	--generate static statechart frame (black parts in the generation template)
+	generateStaticStatechartFrame(rootNode, theComponent.manager);
+	
+	-- generate variable parts of the statechart (colored parts in the generation template)
+	generateVariableStatechartParts(rootNode, theComponent.manager, rtsc);
+	
+	return;
+}
+
+-- configure the ports of the Executor by copying the information of the surrounding StructuredComponent
+-- and the embedded components and sets up message type references
+helper configurePorts(inout rootNode : RootNode, inout theComponent : ReconfigurableStructuredComponent){
+	-- copy RM port interface entries of theComponent to the parent port of the Manager
+	var executor : Executor := theComponent.executor;
+	var manager : Manager := theComponent.manager;
+	var structCompRMPort : ReconfigurationMessagePort := theComponent.ports -> any(oclIsTypeOf(ReconfigurationMessagePort)).oclAsType(ReconfigurationMessagePort);
+	var structCompREPort : ReconfigurationExecutionPort := theComponent.ports -> any(oclIsTypeOf(ReconfigurationExecutionPort)).oclAsType(ReconfigurationExecutionPort);
+	var managerParentPort : ReconfigurationMessagePort := manager.reconfigurationMessagePorts -> any(name = 'parent');
+	var managerEmbeddedCIPort : ReconfigurationMessagePort := manager.reconfigurationMessagePorts -> any(name = 'embeddedCI');
+	var managerExecutorPort : InternalReconfigurationCommunicationPort := manager.ports -> any(name = 'executor').oclAsType(InternalReconfigurationCommunicationPort);
+	var executorParentPort : ReconfigurationExecutionPort := executor.reconfigurationExecutionPorts -> any(name = 'parent');
+	
+	-- copy entries of parent port
+	managerParentPort.interfaceEntries := structCompRMPort.interfaceEntries-> map mapRMInterfaceEntries();
+	
+	-- collect all entries of embedded components
+	managerEmbeddedCIPort.interfaceEntries := (theComponent.embeddedComponentParts.componentType.ports -> 
+			select(oclIsTypeOf(ReconfigurationMessagePort))).oclAsType(ReconfigurationMessagePort).interfaceEntries -> map mapRMInterfaceEntries();
+	
+	var buffer : MessageBuffer := null;
+	
+	-- setup message types and message buffer of structured component port 
+	structCompRMPort.senderMessageTypes := structCompRMPort.interfaceEntries.messageType;
+	structCompRMPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeSuccess);
+	structCompRMPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFailed);
+	structCompRMPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeOccupied);
+	buffer := new MessageBuffer(1);
+	buffer.messageType := structCompRMPort.receiverMessageTypes;
+	structCompRMPort.receiverMessageBuffer := buffer;
+	
+	-- parent port
+	managerParentPort.senderMessageTypes := managerParentPort.interfaceEntries.messageType;
+	managerParentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeSuccess);
+	managerParentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFailed);
+	managerParentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeOccupied);
+	buffer := new MessageBuffer(1);
+	buffer.messageType := managerParentPort.receiverMessageTypes;
+	managerParentPort.receiverMessageBuffer := buffer;
+	
+	-- executor port
+	managerExecutorPort.receiverMessageTypes := executorParentPort.interfaceEntries.messageType;
+	managerExecutorPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeSuccess);
+	managerExecutorPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFailed);
+	managerExecutorPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeDeclineRequest);
+	managerExecutorPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeConfirmRequest);
+	managerExecutorPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecuteReconf);
+	buffer := new MessageBuffer(1);
+	buffer.messageType := managerExecutorPort.receiverMessageTypes;
+	managerExecutorPort.receiverMessageBuffer := buffer;
+	
+	-- embeddedCI port
+	managerEmbeddedCIPort.receiverMessageTypes := managerEmbeddedCIPort.interfaceEntries.messageType;
+	managerEmbeddedCIPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeSuccess);
+	managerEmbeddedCIPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFailed);
+	managerEmbeddedCIPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeOccupied);
+	buffer := new MessageBuffer(1);
+	buffer.messageType := managerEmbeddedCIPort.receiverMessageTypes;
+	managerEmbeddedCIPort.receiverMessageBuffer := buffer;
+	
+	return;
+}
+
+-- copy the ReconfigurationMessagePortInterfaceEntries
+mapping ReconfigurationMessagePortInterfaceEntry::mapRMInterfaceEntries() : ReconfigurationMessagePortInterfaceEntry{
+	messageType := self.messageType;
+	reconfigurationMessageType := self.reconfigurationMessageType;
+	expectedResponseTime := self.expectedResponseTime . map mapTimeValue();
+	description := self.description;
+}
+
+-- generates the static statechart frame (the 'black' parts in the manager generation template)
+helper generateStaticStatechartFrame(inout rootNode : RootNode, inout manager : Manager){
+	
+	-- retrieve statechart
+	var managerRTSC : RealtimeStatechart := manager.behavior.oclAsType(RealtimeStatechart);
+	
+	-- generate initial state
+	var initialState : State := new State(genStateManager_Main);
+	initialState.initial := true;
+	managerRTSC.states += initialState;
+	
+	-- add variables
+	managerRTSC.variables += new Variable(genVarManager_Reconfiguration, INT32);
+	
+	-- add sync channels
+	initialState.channels += new SynchronizationChannel(genSyncChanReply, BOOLEAN);
+	initialState.channels += new SynchronizationChannel(genSyncChanParentReply, BOOLEAN);
+	initialState.channels += new SynchronizationChannel(genSyncChanExecuted, BOOLEAN);
+	initialState.channels += new SynchronizationChannel(genSyncChanExecuteReconf, null);
+	
+	-- generate embedded statecharts
+	var parentSubRTSC : RealtimeStatechart := createEmbeddedRTSC(genEmbeddedRTSCManager_Parent, initialState, 2);
+	generateStaticParentStatechartFrame(rootNode, parentSubRTSC);
+	manager.ports -> any(name = 'parent').behavior := parentSubRTSC;
+	
+	var executorSubRTSC : RealtimeStatechart := createEmbeddedRTSC(genEmbeddedRTSCManager_Executor, initialState, 1);
+	generateStaticExecutorStatechartFrame(rootNode, executorSubRTSC);
+	manager.ports -> any(name = 'executor').behavior := executorSubRTSC;
+	
+	var internalRTSC : RealtimeStatechart := createEmbeddedRTSC(genEmbeddedRTSCManager_Internal, initialState, 3);
+	generateStaticInternalBehaviorStatechartFrame(rootNode, internalRTSC);
+	
+	var embeddedCISubRTSC : RealtimeStatechart := createEmbeddedRTSC(genEmbeddedRTSCManager_EmbeddedCI, initialState, 4);
+	generateStaticEmbeddedCIStatechartFrame(rootNode, embeddedCISubRTSC);
+	manager.ports -> any(name = 'embeddedCI').behavior := embeddedCISubRTSC;
+	manager.ports -> any(name = 'embeddedCI').subroleBehavior := embeddedCISubRTSC.getEmbeddedRTSCByName(genEmbeddedRTSCManager_EmbeddedCI_subrole);
+	manager.ports -> any(name = 'embeddedCI').coordinatorBehavior := embeddedCISubRTSC.getEmbeddedRTSCByName(genEmbeddedRTSCManager_EmbeddedCI_adapt);
+	
+	-- configure message types of ports
+	var currentPort : ReconfigurationPort = null;
+	
+	-- parent port
+	currentPort := manager.ports -> any(name = 'parent');
+	currentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeSuccess);
+	currentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFailed);
+	currentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeOccupied);
+	
+	-- executor port
+	currentPort := manager.ports -> any(name = 'executor');
+	currentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeSuccess);
+	currentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFailed);
+	currentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeDeclineRequest);
+	currentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeConfirmRequest);
+	currentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecuteReconf);
+	
+	-- embeddedCI port
+	currentPort := manager.ports -> any(name = 'embeddedCI');
+	currentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeSuccess);
+	currentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFailed);
+	currentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeOccupied);
+	
+	return;
+}
+
+-- generates the static statechart frame for the parent statechart (the 'black' parts in the manager generation template)
+helper generateStaticParentStatechartFrame(inout rootNode : RootNode, inout rtsc : RealtimeStatechart){
+	
+	-- create variables
+	var requestVar : Variable := new Variable(genVarManager_Parent_Request, BOOLEAN);
+	rtsc.variables += requestVar;
+	
+	-- create states
+	var initState : State := new State(genStateManager_Parent_Idle);
+	initState.initial := true;
+	initState.entryEvent := new EntryEvent(createSimpleAssignmentExpressioninBlock(requestVar, 'false'), null);
+	rtsc.states += initState;
+	
+	var propState : State := new State(genStateManager_Parent_Propagated);
+	propState.urgent := true;
+	rtsc.states += propState;
+	
+	var awaitState : State := new State(genStateManager_Parent_AwaitReply);
+	rtsc.states += awaitState;
+	
+	-- create transitions
+	var currentTrans : Transition = null;
+	
+	-- Propagated -> Idle
+	currentTrans := new Transition(propState, initState, 1);
+	currentTrans.guard := createSimpleCompareGuardExpression(requestVar, 'false');
+	rtsc.transitions += currentTrans;
+	
+	-- Propagated -> AwaitReply
+	currentTrans := new Transition(propState, awaitState, 2);
+	currentTrans.guard := createSimpleCompareGuardExpression(requestVar, 'true');
+	rtsc.transitions += currentTrans;
+	
+	-- AwaitReply -> Idle (success)
+	currentTrans := new Transition(awaitState, initState, 3);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanReply), SynchronizationKind::SEND, 
+			new LiteralExpression('true'));
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeSuccess), EventKind::TRIGGER);
+	rtsc.transitions += currentTrans;
+	
+	-- AwaitReply -> Idle (failed)
+	currentTrans := new Transition(awaitState, initState, 2);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanReply), SynchronizationKind::SEND, 
+			new LiteralExpression('false'));
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFailed), EventKind::TRIGGER);
+	rtsc.transitions += currentTrans;
+	
+	-- AwaitReply -> Idle (occupied)
+	currentTrans := new Transition(awaitState, initState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanReply), SynchronizationKind::SEND, 
+			new LiteralExpression('false'));
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeOccupied), EventKind::TRIGGER);
+	rtsc.transitions += currentTrans;
+	
+	
+	return;
+}
+
+-- generates the static statechart frame for the executor statechart (the 'black' parts in the manager generation template)
+helper generateStaticExecutorStatechartFrame(inout rootNode : RootNode, inout rtsc : RealtimeStatechart){
+	
+	-- create variables
+	var requestVar : Variable = new Variable(genVarManager_Executor_Reuqest, BOOLEAN);
+	rtsc.variables += requestVar;
+	
+	-- create states
+	var idleState : State := new State(genStateManager_Executor_Idle);
+	idleState.initial := true;
+	idleState.entryEvent := new EntryEvent(createSimpleAssignmentExpressioninBlock(requestVar, 'false'), null);
+	rtsc.states += idleState;
+	
+	var requestState : State := new State(genStateManager_Executor_Request);
+	rtsc.states += requestState;
+	
+	var executeState : State := new State(genStateManager_Executor_ExecuteReconf);
+	rtsc.states += executeState;
+	
+	var waitState : State := new State(genStateManager_Executor_WaitForConfirm);
+	rtsc.states += waitState;
+	
+	var finishedState : State := new State(genStateManager_Executor_Finished);
+	finishedState.urgent := true;
+	rtsc.states += finishedState;
+	
+	-- create transitions
+	var currentTrans : Transition = null;
+	
+	-- Idle -> ExecuteReconf
+	currentTrans := new Transition(idleState, executeState, 2);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecuteReconf), SynchronizationKind::RECEIVE, 
+			null);
+	var msgType : MessageType := rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecuteReconf);
+	var sendMsg : AsynchronousMessageEvent := new AsynchronousMessageEvent(msgType, EventKind::RAISE);
+	sendMsg.message.parameterBinding += createSimpleSendVariableParameterBinding(msgType.getParameterByName(genParamExecute_Reconf), rtsc.getVariableByName(genVarManager_Reconfiguration));
+	currentTrans.events += sendMsg;
+	rtsc.transitions += currentTrans;
+	
+	-- ExecuteReconf -> Finished (success)
+	currentTrans := new Transition(executeState, finishedState, 2);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecuted), SynchronizationKind::SEND, 
+			new LiteralExpression('true'));
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeSuccess), EventKind::TRIGGER);
+	rtsc.transitions += currentTrans;
+	
+	-- ExecuteReconf -> Finished (failed)
+	currentTrans := new Transition(executeState, finishedState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecuted), SynchronizationKind::SEND, 
+			new LiteralExpression('false'));
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFailed), EventKind::TRIGGER);
+	rtsc.transitions += currentTrans;
+	
+	-- Finished -> Idle (request + sucess)
+	currentTrans := new Transition(finishedState, idleState, 2);
+	currentTrans.guard := createSimpleCompareGuardExpression(requestVar, 'true');
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanReply), SynchronizationKind::RECEIVE, 
+			new LiteralExpression('true'));
+	rtsc.transitions += currentTrans;
+	
+	-- Finished -> Idle (request + failed)
+	currentTrans := new Transition(finishedState, idleState, 1);
+	currentTrans.guard := createSimpleCompareGuardExpression(requestVar, 'true');
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanReply), SynchronizationKind::RECEIVE, 
+			new LiteralExpression('false'));
+	rtsc.transitions += currentTrans;
+	
+	-- Finished -> Idle (no request)
+	currentTrans := new Transition(finishedState, idleState, 3);
+	currentTrans.guard := createSimpleCompareGuardExpression(requestVar, 'false');
+	rtsc.transitions += currentTrans;
+	
+	-- Request -> ExecuteReconf
+	currentTrans := new Transition(requestState, executeState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecuteReconf), SynchronizationKind::RECEIVE, 
+			null);
+	msgType := rootNode.getGeneratedReconfigurationMessageType(genMsgTypeConfirmRequest);
+	sendMsg := new AsynchronousMessageEvent(msgType, EventKind::RAISE);
+	sendMsg.message.parameterBinding += createSimpleSendVariableParameterBinding(msgType.getParameterByName(genParamExecute_Reconf), rtsc.getVariableByName(genVarManager_Reconfiguration));
+	currentTrans.events += sendMsg;
+	rtsc.transitions += currentTrans;
+	
+		-- Request -> WaitForConfirm
+	currentTrans := new Transition(requestState, waitState, 2);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanReply), SynchronizationKind::RECEIVE, 
+			new LiteralExpression('false'));
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeDeclineRequest), EventKind::RAISE);
+	rtsc.transitions += currentTrans;
+	
+	-- WaitForConfirm -> Idle
+	currentTrans := new Transition(waitState, idleState, 1);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFailed), EventKind::TRIGGER);
+	rtsc.transitions += currentTrans;
+	
+	return;
+}
+
+-- generates the static statechart frame for the internal behavior statechart (the 'black' parts in the manager generation template)
+helper generateStaticInternalBehaviorStatechartFrame(inout rootNode : RootNode, inout rtsc : RealtimeStatechart){
+	
+	-- create variables
+	var requestVar : Variable := new Variable(genVarManager_Internal_Request, BOOLEAN);
+	rtsc.variables += requestVar;
+	
+	var resultVar : Variable := new Variable(genVarManager_Internal_Result, BOOLEAN);
+	rtsc.variables += resultVar;
+	
+	var invokePlannerOp : Operation := new Operation(genOpManager_Internal_invokePlanner, BOOLEAN);
+	invokePlannerOp.parameters += new Parameter(genParamManager_Internal_invokePlanner_reconf, INT32);
+	rtsc.operations += invokePlannerOp;
+	
+	var isBlockedOp : Operation := new Operation(genOpManager_Internal_isBlocked, BOOLEAN);
+	isBlockedOp.parameters += new Parameter(genParamManager_Internal_isBlocked_reconf, INT32);
+	rtsc.operations += isBlockedOp;
+	
+	-- create states
+	var idleState : State := new State(genStateManager_Internal_Idle);
+	idleState.initial := true;
+	idleState.entryEvent := new EntryEvent(createSimpleAssignmentExpressioninBlock(requestVar, 'false'), null);
+	rtsc.states += idleState;
+	
+	var planState : State := new State(genStateManager_Internal_Plan);
+	planState.urgent := true;
+	rtsc.states += planState;
+	
+	var executeState : State := new State(genStateManager_Internal_Execute);
+	rtsc.states += executeState;
+	
+	var successState : State := new State(genStateManager_Internal_Success);
+	successState.urgent := true;
+	rtsc.states += successState;
+	
+	var failState : State := new State(genStateManager_Internal_Fail);
+	successState.urgent := true;
+	rtsc.states += failState;
+	
+	-- create transitions
+	var currentTrans : Transition = null;
+	
+	-- Plan -> Execute
+	currentTrans := new Transition(planState, executeState, 2);
+	currentTrans.guard := createSimpleCompareGuardExpression(resultVar, 'true');
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecuteReconf), SynchronizationKind::SEND, 
+			null);
+	rtsc.transitions += currentTrans;
+	
+	-- Plan -> Fail
+	currentTrans := new Transition(planState, failState, 1);
+	currentTrans.guard := createSimpleCompareGuardExpression(resultVar, 'false');
+	rtsc.transitions += currentTrans;
+	
+	-- Execute -> Fail
+	currentTrans := new Transition(executeState, failState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecuted), SynchronizationKind::RECEIVE, 
+			new LiteralExpression('false'));
+	rtsc.transitions += currentTrans;
+	
+	-- Execute -> Success
+	currentTrans := new Transition(executeState, successState, 2);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecuted), SynchronizationKind::RECEIVE, 
+			new LiteralExpression('true'));
+	rtsc.transitions += currentTrans;
+	
+	-- Success -> Idle (request)
+	currentTrans := new Transition(successState, idleState, 2);
+	currentTrans.guard := createSimpleCompareGuardExpression(requestVar, 'true');
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanReply), SynchronizationKind::SEND, 
+			new LiteralExpression('true'));
+	rtsc.transitions += currentTrans;
+	
+	-- Success -> Idle (no request)
+	currentTrans := new Transition(successState, idleState, 1);
+	currentTrans.guard := createSimpleCompareGuardExpression(requestVar, 'false');
+	rtsc.transitions += currentTrans;
+	
+	-- Fail -> Idle (request)
+	currentTrans := new Transition(failState, idleState, 2);
+	currentTrans.guard := createSimpleCompareGuardExpression(requestVar, 'true');
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanReply), SynchronizationKind::SEND, 
+			new LiteralExpression('false'));
+	rtsc.transitions += currentTrans;
+	
+	-- Fail -> Idle (no request)
+	currentTrans := new Transition(failState, idleState, 1);
+	currentTrans.guard := createSimpleCompareGuardExpression(requestVar, 'false');
+	rtsc.transitions += currentTrans;
+	
+	return;
+}
+
+-- generates the static statechart frame for the embeddedCI statechart (the 'black' parts in the manager generation template)
+helper generateStaticEmbeddedCIStatechartFrame(inout rootNode : RootNode, inout rtsc : RealtimeStatechart){
+	
+	--create initial state
+	var mainState : State := new State(genStateManager_EmbeddedCI_Main);
+	mainState.initial := true;
+	rtsc.states += mainState;
+
+	-- create embedded statecharts	
+	var adaptationRTSC : RealtimeStatechart := createEmbeddedRTSC(genEmbeddedRTSCManager_EmbeddedCI_adapt, mainState, 2);
+	generateStaticEmbeddedCIAdaptationStatechartFrame(rootNode, adaptationRTSC);
+	
+	var subroleRTSC : RealtimeStatechart := createEmbeddedRTSC(genEmbeddedRTSCManager_EmbeddedCI_subrole, mainState, 1);
+	generateStaticEmbeddedCISubroleStatechartFrame(rootNode, subroleRTSC);
+	
+	return;
+}
+
+-- generates the static statechart frame for the adaptation substatechart of the embeddedCI statechart (the 'black' parts in the manager generation template)
+helper generateStaticEmbeddedCIAdaptationStatechartFrame(inout rootNode : RootNode, inout rtsc : RealtimeStatechart){
+	
+	-- create states
+	var initState : State := new State(genStateManager_EmbeddedCI_Idle);
+	initState.initial := true;
+	rtsc.states += initState;
+	
+	return;
+}
+
+-- generates the static statechart frame for the subrole substatechart of the embeddedCI statechart (the 'black' parts in the manager generation template)
+helper generateStaticEmbeddedCISubroleStatechartFrame(inout rootNode : RootNode, inout rtsc : RealtimeStatechart){
+	
+	-- create variables
+	var requestVar : Variable := new Variable(genVarManager_EmbeddedCI_Request, BOOLEAN);
+	rtsc.variables += requestVar;
+	
+	var propVar : Variable := new Variable(genVarManager_EmbeddedCI_Propagate, BOOLEAN);
+	rtsc.variables += propVar;
+	
+	-- create clocks
+	var reqClock : Clock := new Clock(genClockManager_embeddedCI_cReq);
+	rtsc.clocks += reqClock;
+	
+	-- create states
+	var idleState : State := new State(genStateManager_EmbeddedCI_Idle);
+	idleState.initial := true;
+	var theBlock : Block := new Block();
+	theBlock.expressions += createSimpleAssignmentExpression(requestVar, 'false');
+	theBlock.expressions += createSimpleAssignmentExpression(propVar, 'false');
+	idleState.entryEvent := new EntryEvent(theBlock, null);
+	rtsc.states += idleState;
+	
+	var deliverState : State := new State(genStateManager_EmbeddedCI_Deliver);
+	deliverState.urgent := true;
+	rtsc.states += deliverState;
+	
+	var awaitState : State := new State(genStateManager_EmbeddedCI_AwaitReply);
+	rtsc.states += awaitState;
+	
+	var awaitParentState : State := new State(genStateManager_EmbeddedCI_AwaitParent);
+	rtsc.states += awaitParentState;
+	
+	-- create transitions
+	var currentTrans : Transition = null;
+	
+	-- DeliverMsg -> Idle
+	currentTrans := new Transition(deliverState, idleState, 3);
+	currentTrans.guard := createSimpleCompareGuardExpression(requestVar, 'false');
+	rtsc.transitions += currentTrans;
+	
+	-- DeliverMsg -> AwaitReply
+	currentTrans := new Transition(deliverState, awaitState, 2);
+	currentTrans.guard := new LogicalExpression(createSimpleCompareGuardExpression(requestVar, 'true'),
+								LogicOperator::AND,
+								createSimpleCompareGuardExpression(propVar, 'false'));
+	rtsc.transitions += currentTrans;
+	
+	-- DeliverMsg -> AwaitParentReply
+	currentTrans := new Transition(deliverState, awaitParentState, 1);
+	currentTrans.guard := new LogicalExpression(createSimpleCompareGuardExpression(requestVar, 'true'),
+								LogicOperator::AND,
+								createSimpleCompareGuardExpression(propVar, 'true'));
+	rtsc.transitions += currentTrans;
+	
+	-- AwaitReply -> Idle (success)
+	currentTrans := new Transition(awaitState, idleState, 2);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanReply), SynchronizationKind::RECEIVE, 
+			new LiteralExpression('true'));
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeSuccess), EventKind::RAISE);
+	rtsc.transitions += currentTrans;
+	
+	-- AwaitReply -> Idle (failed)
+	currentTrans := new Transition(awaitState, idleState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanReply), SynchronizationKind::RECEIVE, 
+			new LiteralExpression('false'));
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFailed), EventKind::RAISE);
+	rtsc.transitions += currentTrans;
+	
+	-- AwaitParentReply -> Idle (success)
+	currentTrans := new Transition(awaitParentState, idleState, 2);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanParentReply), SynchronizationKind::RECEIVE, 
+			new LiteralExpression('true'));
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeSuccess), EventKind::RAISE);
+	rtsc.transitions += currentTrans;
+	
+	-- AwaitParentReply -> Idle (failed)
+	currentTrans := new Transition(awaitParentState, idleState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanParentReply), SynchronizationKind::RECEIVE, 
+			new LiteralExpression('false'));
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFailed), EventKind::RAISE);
+	rtsc.transitions += currentTrans;
+	
+	return;
+}
+
+-- generates the colored parts of the manager generation template based on the manager specification
+helper generateVariableStatechartParts(inout rootNode : RootNode, inout manager : Manager, inout rtsc : RealtimeStatechart){
+	
+	-- generate blue, brown, yellow, and purple parts for each ManagerSpecificationEntry in parent and internal RTSC
+	manager.specificationEntries -> map generateManagerSpecificationEntry(rootNode, manager, rtsc);
+	
+	-- generates the green and purple parts for each child request except for the executor region
+	manager.reconfigurationMessagePorts -> any(name = 'embeddedCI').interfaceEntries -> map generateChildMessage(rootNode, manager, rtsc);
+	
+	-- generate green parts in the executor region for each request from the Executor
+	manager.reconfigurationController.executor.reconfigurationExecutionPorts -> any(name = 'parent').interfaceEntries 
+					-> map generateExecutorRequestEntry(rootNode, rtsc); 
+	
+	return;
+}
+
+-- priority used for the transition Idle -> Propagated in the parent template
+property parentRTSCTransitionNumber : Integer = 1;
+
+-- priority used for the transition Idle -> CheckX in the internal behavior template
+property internalRTSCTransitionNumber : Integer = 1;
+
+-- generates the blue, brown, and yellow parts of the generation template for each ManagerSpecificationEntry
+mapping ManagerSpecificationEntry::generateManagerSpecificationEntry(inout rootNode : RootNode, inout manager : Manager, inout rtsc : RealtimeStatechart){
+	
+	var executor : Executor := manager.reconfigurationController.executor;
+	
+	var isChildReq : Boolean := manager.isChildRequest(self.messageType);
+	
+	-- obtain main state and embedded statecharts
+	var managerMainState : State := rtsc.getStateByName(genStateManager_Main);
+	var parentRTSC : RealtimeStatechart := rtsc.getEmbeddedRTSCByName(genEmbeddedRTSCManager_Parent);
+	var internalRTSC : RealtimeStatechart := rtsc.getEmbeddedRTSCByName(genEmbeddedRTSCManager_Internal);
+	
+	-- generate synchronization channel
+	var syncXSyncChan : SynchronizationChannel := null;
+	if(self.treat = true or self.propagate = true) then{
+		syncXSyncChan := new SynchronizationChannel(genSyncChanPrefix + self.messageType.name.firstToUpper(), null);
+		managerMainState.channels += syncXSyncChan;
+	} endif;
+	
+	var currentTrans : Transition := null;
+	
+	-- generate transition Idle -> Propagate in the parent RTSC if entry is propagated
+	if(self.propagate) then{
+		currentTrans := new Transition(parentRTSC.getStateByName(genStateManager_Parent_Idle), parentRTSC.getStateByName(genStateManager_Parent_Propagated), parentRTSCTransitionNumber);
+		currentTrans.synchronization := new Synchronization(syncXSyncChan, SynchronizationKind::RECEIVE, null);
+		currentTrans.events += new AsynchronousMessageEvent(self.messageType, EventKind::RAISE);
+		if(isChildReq) then {
+			currentTrans.action := new Action('request := true', 
+					createSimpleAssignmentExpressioninBlock(internalRTSC.getVariableByName(genVarManager_Parent_Request), 'true'));
+		} endif;
+		parentRTSC.transitions += currentTrans;
+		parentRTSCTransitionNumber := parentRTSCTransitionNumber + 1;
+	} endif;
+	
+	-- generate operation, state, and transitions in the internal behavior if entry is treated
+	if(self.treat) then{
+		var checkStructCondOp : Operation := new Operation(genOpManager_Internal_checkStructCond_Prefix + self.messageType.name.firstToUpper(), BOOLEAN);
+		internalRTSC.operations += checkStructCondOp;
+		
+		var checkXState : State := new State(genStateManager_Internal_Check_Prefix + self.messageType.name.firstToUpper());
+		checkXState.urgent := true;
+		internalRTSC.states += checkXState;
+		
+		var resultVar : Variable := internalRTSC.getVariableByName(genVarManager_Internal_Result);
+		var reconfID : Integer := executor.getReconfigurationID(self.reconfigurationRule);
+		
+		-- Idle -> CheckX
+		currentTrans := new Transition(internalRTSC.getStateByName(genStateManager_Internal_Idle), checkXState, internalRTSCTransitionNumber);
+		currentTrans.synchronization := new Synchronization(syncXSyncChan, SynchronizationKind::RECEIVE, null);
+		var block : Block := createSimpleAssignmentExpressioninBlock(internalRTSC.getVariableByName(genVarManager_Reconfiguration), reconfID.toString());
+		var assignExpRHS : Expression :=  new OperationCall(checkStructCondOp); 
+		if(self.blockable) then{ 	-- generate AND expression for blockable reconfigurations
+			var isBlockedOp : Operation := internalRTSC.getOperationByName(genOpManager_Internal_isBlocked);
+			var opCall : OperationCall := new OperationCall(isBlockedOp);
+			opCall.parameterBinding += new ParameterBinding(isBlockedOp.getParameterByName(genParamManager_Internal_isBlocked_reconf), new LiteralExpression(reconfID.toString()));
+			assignExpRHS := createNotExpression(new LogicalExpression(opCall, LogicOperator::AND, assignExpRHS));
+		} endif;
+		block.expressions += createAssignmentExpression(resultVar, assignExpRHS);
+		if(isChildReq) then {
+			block.expressions += createSimpleAssignmentExpression(internalRTSC.getVariableByName(genVarManager_Internal_Request), 'true');
+		} endif;
+		currentTrans.action := new Action('Assign vars', block);
+		internalRTSC.transitions += currentTrans;
+		
+		internalRTSCTransitionNumber := internalRTSCTransitionNumber + 1;
+		
+		-- CheckX -> Fail
+		currentTrans := new Transition(checkXState, internalRTSC.getStateByName(genStateManager_Internal_Fail), 2);
+		currentTrans.guard := createSimpleCompareGuardExpression(resultVar, 'false');
+		internalRTSC.transitions += currentTrans;
+		
+		-- CheckX -> Plan
+		currentTrans := new Transition(checkXState, internalRTSC.getStateByName(genStateManager_Internal_Plan), 1);
+		currentTrans.guard := createSimpleCompareGuardExpression(resultVar, 'true');
+		if(self.invokePlanner) then{
+			var invokeOp : Operation := internalRTSC.getOperationByName(genOpManager_Internal_invokePlanner);
+			var opCall : OperationCall := new OperationCall(invokeOp);
+			opCall.parameterBinding += new ParameterBinding(invokeOp.getParameterByName(genParamManager_Internal_invokePlanner_reconf), new LiteralExpression(reconfID.toString()));
+			currentTrans.action := new Action('Call Planner', createAssignmentExpressioninBlock(resultVar, opCall));
+			currentTrans.relativeDeadline := new RelativeDeadline(self.timeForPlanning.value.oclAsType(LiteralExpression).value, self.timeForPlanning.value.oclAsType(LiteralExpression).value, self.timeForPlanning.unit);
+		} endif;
+		internalRTSC.transitions += currentTrans;
+		
+		
+	} endif;
+	
+}
+
+-- returns the ID of the given ReconfigurationRule from the Executor specification
+query Executor::getReconfigurationID(in reconfRule : ReconfigurationRule) : Integer {
+	return self.specificationEntries -> any(reconfigurationRule.name = reconfRule.name).id;
+}
+
+-- returns whether the msgType is received as a request from a child component
+query Manager::isChildRequest(in msgType : MessageType) : Boolean{
+	var entry : ReconfigurationMessagePortInterfaceEntry := self.reconfigurationMessagePorts 
+			-> any(name = 'embeddedCI').interfaceEntries -> any(messageType.name = msgType.name);
+			
+	if (entry.oclIsUndefined()) then {
+		-- in this case, the message is a parent request
+		return false;
+	} else {
+		return (entry.reconfigurationMessageType = ReconfigurationMessageTypeEnum::REQUEST);
+	} endif;
+	
+	return false;
+}
+
+-- returns whether the msgType is propagated to the parent
+query Manager::isPropagatedMessage(in msgType : MessageType) : Boolean{
+	var entry : ManagerSpecificationEntry := self.specificationEntries -> any(messageType.name = msgType.name);
+	
+	if(entry.oclIsUndefined()) then{
+		return false;
+	} else {
+		return entry.propagate;
+	} endif;
+	
+	return false;
+}
+
+-- priority used for the transition Idle -> ReceivedMsgX in the subrole template
+property subroleTransitionNumber : Integer = 1;
+
+-- generates the green and purple parts of the manager generation template for the subrole RTSC
+mapping ReconfigurationMessagePortInterfaceEntry::generateChildMessage(inout rootNode : RootNode, inout manager : Manager, inout rtsc : RealtimeStatechart){
+	var subroleRTSC : RealtimeStatechart := rtsc.getEmbeddedRTSCByName(genEmbeddedRTSCManager_EmbeddedCI).getEmbeddedRTSCByName(genEmbeddedRTSCManager_EmbeddedCI_subrole);
+	
+	-- time to execute the reconfiguration rule associated to this message
+	var reconfRule : ReconfigurationRule := manager.getReconfigurationRuleAssociatedToMsgType(self.messageType);
+	var executionTime : Integer := 0;
+	
+	//TODO not sure if its really needed to search in all Executors
+	var executors : OrderedSet(Executor) := category.objects()[Executor]->asOrderedSet();
+	var executorEntry : ExecutorSpecificationEntry := executors.specificationEntries->select(reconfigurationRule = reconfRule)->any(true);
+	
+	if(not reconfRule.oclIsUndefined() and not executorEntry.wcet.oclIsUndefined()) then{
+		executionTime := executorEntry.wcet.value.parseInteger();
+	} endif;
+	
+	var beta : Integer := self.expectedResponseTime.value.parseInteger() - executionTime;
+	
+	-- obtain idle state and clock
+	var idleState : State := subroleRTSC.getStateByName(genStateManager_EmbeddedCI_Idle);
+	var subroleClock : Clock := subroleRTSC.getClockByName(genClockManager_embeddedCI_cReq);
+	
+	-- create ReceivedMsgX state
+	var receivedState : State := new State(genStateManager_EmbeddedCI_Received_Prefix + self.messageType.name.firstToUpper());
+	if(self.reconfigurationMessageType = ReconfigurationMessageTypeEnum::REQUEST) then{
+		receivedState.invariants += new ClockConstraint(subroleClock, ComparingOperator::LESS_OR_EQUAL, beta, self.expectedResponseTime.unit);
+	} endif;
+	subroleRTSC.states += receivedState;
+	
+	-- generate transitions
+	var currentTrans : Transition := null;
+	
+	-- Idle -> ReceivedMsgX
+	currentTrans := new Transition(idleState, receivedState, subroleTransitionNumber);
+	currentTrans.events += new AsynchronousMessageEvent(self.messageType, EventKind::TRIGGER);
+	var block : Block := new Block();
+	if(self.reconfigurationMessageType = ReconfigurationMessageTypeEnum::REQUEST) then{
+		block.expressions += createSimpleAssignmentExpression(subroleRTSC.getVariableByName(genVarManager_EmbeddedCI_Request), 'true');
+		currentTrans.clockResets += subroleClock;
+	} endif;
+	if(manager.isPropagatedMessage(self.messageType)) then{
+		block.expressions += createSimpleAssignmentExpression(subroleRTSC.getVariableByName(genVarManager_EmbeddedCI_Propagate), 'true');
+	} endif;
+	if(block.expressions -> size() > 0) then{
+		currentTrans.action := new Action('Assign Vars', block);
+	} endif;
+	subroleRTSC.transitions += currentTrans;
+	
+	subroleTransitionNumber := subroleTransitionNumber + 1;
+	
+	-- ReceivedMsgX -> Idle (if message is a request)
+	if(self.reconfigurationMessageType = ReconfigurationMessageTypeEnum::REQUEST) then{
+		currentTrans := new Transition(receivedState, idleState, 2);
+		currentTrans.clockConstraints += new ClockConstraint(subroleClock, ComparingOperator::GREATER_OR_EQUAL, beta, self.expectedResponseTime.unit);
+		currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeOccupied), EventKind::RAISE);
+		subroleRTSC.transitions += currentTrans;
+	} endif;
+	
+	-- ReceivedMsgX -> DeliverMsg
+	currentTrans := new Transition(receivedState, subroleRTSC.getStateByName(genStateManager_EmbeddedCI_Deliver), 1);
+	var syncXChannel : SynchronizationChannel := getSynchronizationChannel(subroleRTSC, genSyncChanPrefix + self.messageType.name.firstToUpper());
+	if(not syncXChannel.oclIsUndefined()) then{ -- channel exists, message is either propagated or treated
+		currentTrans.synchronization := new Synchronization(syncXChannel, SynchronizationKind::SEND, null);
+	} endif;
+	subroleRTSC.transitions += currentTrans;
+	
+}
+
+-- returns the reconfiguration rule that is associated to the msgType in the manager specification
+query Manager::getReconfigurationRuleAssociatedToMsgType(in msgType : MessageType) : ReconfigurationRule {
+	return self.specificationEntries -> any(messageType.name = msgType.name).reconfigurationRule;
+}
+
+-- priority used for the transition Idle -> Request in the executor region template
+property executorTransitionNumber : Integer = 1;
+
+-- generates the green parts of the generation template for each request send by the executor
+mapping ReconfigurationExecutionPortInterfaceEntry::generateExecutorRequestEntry(inout rootNode : RootNode, inout rtsc : RealtimeStatechart){
+	var executorRTSC : RealtimeStatechart := rtsc.getEmbeddedRTSCByName(genEmbeddedRTSCManager_Executor);
+	
+	-- generate green transition Idle -> Request
+	var currentTrans : Transition := new Transition(executorRTSC.getStateByName(genStateManager_Executor_Idle), executorRTSC.getStateByName(genStateManager_Executor_Request), executorTransitionNumber);
+	currentTrans.events += new AsynchronousMessageEvent(self.messageType, EventKind::TRIGGER);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(executorRTSC, genSyncChanPrefix + self.messageType.name.firstToUpper()),
+					SynchronizationKind::SEND, null);
+	currentTrans.action := new Action('executor_request := true', createSimpleAssignmentExpressioninBlock(executorRTSC.getVariableByName(genVarManager_Executor_Reuqest), 'true'));
+	executorRTSC.transitions += currentTrans;
+	
+	executorTransitionNumber := executorTransitionNumber + 1;
+}

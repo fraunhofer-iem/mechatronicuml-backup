@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_G5rzEOw8EeS3Ep2_Ev7oeg" type="Component Instance Configuration" name="root-cic.componentinstanceconfiguration_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_I7lZYOw8EeS3Ep2_Ev7oeg" type="2015" fontName="Sans" fontHeight="10" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_I7pq0Ow8EeS3Ep2_Ev7oeg" type="5026"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_I7rgAOw8EeS3Ep2_Ev7oeg" type="7012">
+      <children xmi:type="notation:Shape" xmi:id="_I-NPkOw8EeS3Ep2_Ev7oeg" type="3023" fontName="Sans" fontHeight="10" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_I-NPkuw8EeS3Ep2_Ev7oeg" type="7013">
+          <children xmi:type="notation:Shape" xmi:id="_I-bSAOw8EeS3Ep2_Ev7oeg" type="3024" fontName="Sans" fontHeight="10" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_I-bSAuw8EeS3Ep2_Ev7oeg" type="5028"/>
+            <children xmi:type="notation:Shape" xmi:id="_aI7hUPpBEeS5tqGzVBMV0A" type="3032" fontName="Sans" fontHeight="10" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_aJAZ0PpBEeS5tqGzVBMV0A" type="5044">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_aJAZ0fpBEeS5tqGzVBMV0A" y="5"/>
+              </children>
+              <element xmi:type="instance:DiscreteSinglePortInstance" href="../brakeByWire.muml#_Fd9hIum5EeSyWM-b9FAU_g"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aI7hUfpBEeS5tqGzVBMV0A" x="168" y="85"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_aJBA4PpBEeS5tqGzVBMV0A" type="3032" fontName="Sans" fontHeight="10" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_aJBA4vpBEeS5tqGzVBMV0A" type="5044">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_aJBA4_pBEeS5tqGzVBMV0A" y="5"/>
+              </children>
+              <element xmi:type="instance:DiscreteSinglePortInstance" href="../brakeByWire.muml#_Fd9hI-m5EeSyWM-b9FAU_g"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aJBA4fpBEeS5tqGzVBMV0A" x="313" y="36"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_aJBn8PpBEeS5tqGzVBMV0A" type="3032" fontName="Sans" fontHeight="10" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_aJBn8vpBEeS5tqGzVBMV0A" type="5044">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_aJBn8_pBEeS5tqGzVBMV0A" y="5"/>
+              </children>
+              <element xmi:type="instance:DiscreteSinglePortInstance" href="../brakeByWire.muml#_Fd9hJOm5EeSyWM-b9FAU_g"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aJBn8fpBEeS5tqGzVBMV0A" x="-12" y="36"/>
+            </children>
+            <element xmi:type="instance:AtomicComponentInstance" href="../brakeByWire.muml#_Fd9hIem5EeSyWM-b9FAU_g"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I-bSAew8EeS3Ep2_Ev7oeg" x="921" y="411" width="325" height="97"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_I-b5EOw8EeS3Ep2_Ev7oeg" type="3024" fontName="Sans" fontHeight="10" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_I-b5Euw8EeS3Ep2_Ev7oeg" type="5028"/>
+            <children xmi:type="notation:Shape" xmi:id="_aK6eUPpBEeS5tqGzVBMV0A" type="3034" fontName="Sans" fontHeight="10" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_aK6eUvpBEeS5tqGzVBMV0A" type="5046">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_aK6eU_pBEeS5tqGzVBMV0A" y="5"/>
+              </children>
+              <element xmi:type="instance:ContinuousPortInstance" href="../brakeByWire.muml#_Fd9hJum5EeSyWM-b9FAU_g"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aK6eUfpBEeS5tqGzVBMV0A" x="224" y="12"/>
+            </children>
+            <element xmi:type="instance:AtomicComponentInstance" href="../brakeByWire.muml#_Fd9hJem5EeSyWM-b9FAU_g"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I-b5Eew8EeS3Ep2_Ev7oeg" x="501" y="639"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_I-b5E-w8EeS3Ep2_Ev7oeg" type="3025" fontName="Sans" fontHeight="10" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_I-b5Few8EeS3Ep2_Ev7oeg" type="5029"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_I-b5Fuw8EeS3Ep2_Ev7oeg" type="7014">
+              <children xmi:type="notation:Shape" xmi:id="_aLXxUPpBEeS5tqGzVBMV0A" type="3023" fontName="Sans" fontHeight="10" lineColor="0">
+                <children xmi:type="notation:DecorationNode" xmi:id="_aLXxUvpBEeS5tqGzVBMV0A" type="7013">
+                  <children xmi:type="notation:Shape" xmi:id="_aLdQ4PpBEeS5tqGzVBMV0A" type="3024" fontName="Sans" fontHeight="10" lineColor="0">
+                    <children xmi:type="notation:DecorationNode" xmi:id="_aLdQ4vpBEeS5tqGzVBMV0A" type="5028"/>
+                    <children xmi:type="notation:Shape" xmi:id="_aLo3EPpBEeS5tqGzVBMV0A" type="3034" fontName="Sans" fontHeight="10" lineColor="0">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_aLqFMPpBEeS5tqGzVBMV0A" type="5046">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_aLqFMfpBEeS5tqGzVBMV0A" y="5"/>
+                      </children>
+                      <element xmi:type="instance:ContinuousPortInstance" href="../brakeByWire.muml#_Fd9hK-m5EeSyWM-b9FAU_g"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aLo3EfpBEeS5tqGzVBMV0A" x="235" y="11"/>
+                    </children>
+                    <element xmi:type="instance:AtomicComponentInstance" href="../brakeByWire.muml#_Fd9hKum5EeSyWM-b9FAU_g"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aLdQ4fpBEeS5tqGzVBMV0A" x="6" y="12"/>
+                  </children>
+                  <children xmi:type="notation:Shape" xmi:id="_aLd38PpBEeS5tqGzVBMV0A" type="3024" fontName="Sans" fontHeight="10" lineColor="0">
+                    <children xmi:type="notation:DecorationNode" xmi:id="_aLd38vpBEeS5tqGzVBMV0A" type="5028"/>
+                    <children xmi:type="notation:Shape" xmi:id="_aL4usPpBEeS5tqGzVBMV0A" type="3034" fontName="Sans" fontHeight="10" lineColor="0">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_aL5VwPpBEeS5tqGzVBMV0A" type="5046">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_aL5VwfpBEeS5tqGzVBMV0A" y="5"/>
+                      </children>
+                      <element xmi:type="instance:ContinuousPortInstance" href="../brakeByWire.muml#_Fd9hLem5EeSyWM-b9FAU_g"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aL4usfpBEeS5tqGzVBMV0A" x="119" y="35"/>
+                    </children>
+                    <element xmi:type="instance:AtomicComponentInstance" href="../brakeByWire.muml#_Fd9hLOm5EeSyWM-b9FAU_g"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aLd38fpBEeS5tqGzVBMV0A" x="307"/>
+                  </children>
+                  <children xmi:type="notation:Shape" xmi:id="_aLefAPpBEeS5tqGzVBMV0A" type="3024" fontName="Sans" fontHeight="10" lineColor="0">
+                    <children xmi:type="notation:DecorationNode" xmi:id="_aLefAvpBEeS5tqGzVBMV0A" type="5028"/>
+                    <children xmi:type="notation:Shape" xmi:id="_aMGKEPpBEeS5tqGzVBMV0A" type="3034" fontName="Sans" fontHeight="10" lineColor="0">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_aMGKEvpBEeS5tqGzVBMV0A" type="5046">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_aMGKE_pBEeS5tqGzVBMV0A" y="5"/>
+                      </children>
+                      <element xmi:type="instance:ContinuousPortInstance" href="../brakeByWire.muml#_Fd9hL-m5EeSyWM-b9FAU_g"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aMGKEfpBEeS5tqGzVBMV0A" x="92" y="35"/>
+                    </children>
+                    <element xmi:type="instance:AtomicComponentInstance" href="../brakeByWire.muml#_Fd9hLum5EeSyWM-b9FAU_g"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aLefAfpBEeS5tqGzVBMV0A" x="598"/>
+                  </children>
+                  <children xmi:type="notation:Shape" xmi:id="_aLefA_pBEeS5tqGzVBMV0A" type="3024" fontName="Sans" fontHeight="10" lineColor="0">
+                    <children xmi:type="notation:DecorationNode" xmi:id="_aLhiUPpBEeS5tqGzVBMV0A" type="5028"/>
+                    <children xmi:type="notation:Shape" xmi:id="_aMUMgPpBEeS5tqGzVBMV0A" type="3034" fontName="Sans" fontHeight="10" lineColor="0">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_aMWBsPpBEeS5tqGzVBMV0A" type="5046">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_aMWBsfpBEeS5tqGzVBMV0A" y="5"/>
+                      </children>
+                      <element xmi:type="instance:ContinuousPortInstance" href="../brakeByWire.muml#_Fd9hMem5EeSyWM-b9FAU_g"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aMUMgfpBEeS5tqGzVBMV0A" x="156" y="35"/>
+                    </children>
+                    <element xmi:type="instance:AtomicComponentInstance" href="../brakeByWire.muml#_Fd9hMOm5EeSyWM-b9FAU_g"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aLefBPpBEeS5tqGzVBMV0A" x="6" y="84"/>
+                  </children>
+                  <children xmi:type="notation:Shape" xmi:id="_aLhiUfpBEeS5tqGzVBMV0A" type="3024" fontName="Sans" fontHeight="10" lineColor="0">
+                    <children xmi:type="notation:DecorationNode" xmi:id="_aLhiU_pBEeS5tqGzVBMV0A" type="5028"/>
+                    <children xmi:type="notation:Shape" xmi:id="_aMkrMPpBEeS5tqGzVBMV0A" type="3031" fontName="Sans" fontHeight="10" lineColor="0">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_aMkrMvpBEeS5tqGzVBMV0A" type="5043">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_aMkrM_pBEeS5tqGzVBMV0A" y="5"/>
+                      </children>
+                      <element xmi:type="instance:HybridPortInstance" href="../brakeByWire.muml#_Fd9hM-m5EeSyWM-b9FAU_g"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aMkrMfpBEeS5tqGzVBMV0A" x="229" y="48"/>
+                    </children>
+                    <children xmi:type="notation:Shape" xmi:id="_aMkrNPpBEeS5tqGzVBMV0A" type="3031" fontName="Sans" fontHeight="10" lineColor="0">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_aMmgYPpBEeS5tqGzVBMV0A" type="5043">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_aMmgYfpBEeS5tqGzVBMV0A" x="27" y="-26"/>
+                      </children>
+                      <element xmi:type="instance:HybridPortInstance" href="../brakeByWire.muml#_Fd9hNOm5EeSyWM-b9FAU_g"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aMkrNfpBEeS5tqGzVBMV0A" x="24" y="-12"/>
+                    </children>
+                    <children xmi:type="notation:Shape" xmi:id="_aMnugPpBEeS5tqGzVBMV0A" type="3031" fontName="Sans" fontHeight="10" lineColor="0">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_aMnugvpBEeS5tqGzVBMV0A" type="5043">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_aMnug_pBEeS5tqGzVBMV0A" x="-24" y="24"/>
+                      </children>
+                      <element xmi:type="instance:HybridPortInstance" href="../brakeByWire.muml#_Fd9hNem5EeSyWM-b9FAU_g"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aMnugfpBEeS5tqGzVBMV0A" x="-12" y="36"/>
+                    </children>
+                    <children xmi:type="notation:Shape" xmi:id="_aMoVkPpBEeS5tqGzVBMV0A" type="3031" fontName="Sans" fontHeight="10" lineColor="0">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_aMoVkvpBEeS5tqGzVBMV0A" type="5043">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_aMoVk_pBEeS5tqGzVBMV0A" x="39" y="-14"/>
+                      </children>
+                      <element xmi:type="instance:HybridPortInstance" href="../brakeByWire.muml#_Fd9hNum5EeSyWM-b9FAU_g"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aMoVkfpBEeS5tqGzVBMV0A" x="84" y="-12"/>
+                    </children>
+                    <children xmi:type="notation:Shape" xmi:id="_aMoVlPpBEeS5tqGzVBMV0A" type="3032" fontName="Sans" fontHeight="10" lineColor="0">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_aMo8oPpBEeS5tqGzVBMV0A" type="5044">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_aMo8ofpBEeS5tqGzVBMV0A" x="24" y="21"/>
+                      </children>
+                      <element xmi:type="instance:DiscreteSinglePortInstance" href="../brakeByWire.muml#_Fd9hN-m5EeSyWM-b9FAU_g"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aMoVlfpBEeS5tqGzVBMV0A" x="51" y="85"/>
+                    </children>
+                    <element xmi:type="instance:AtomicComponentInstance" href="../brakeByWire.muml#_Fd9hMum5EeSyWM-b9FAU_g"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aLhiUvpBEeS5tqGzVBMV0A" x="345" y="166" width="241" height="97"/>
+                  </children>
+                </children>
+                <element xmi:type="instance:ComponentInstanceConfiguration" href="../brakeByWire.muml#_Fd9hKem5EeSyWM-b9FAU_g"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aLXxUfpBEeS5tqGzVBMV0A"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_I-b5F-w8EeS3Ep2_Ev7oeg"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_I-b5GOw8EeS3Ep2_Ev7oeg"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_aOL0wPpBEeS5tqGzVBMV0A" type="3032" fontName="Sans" fontHeight="10" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_aOL0wvpBEeS5tqGzVBMV0A" type="5044">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_aOL0w_pBEeS5tqGzVBMV0A" y="5"/>
+              </children>
+              <element xmi:type="instance:DiscreteSinglePortInstance" href="../brakeByWire.muml#_Fd9hKOm5EeSyWM-b9FAU_g"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aOL0wfpBEeS5tqGzVBMV0A" x="408" y="382"/>
+            </children>
+            <element xmi:type="instance:StructuredComponentInstance" href="../brakeByWire.muml#_Fd9hJ-m5EeSyWM-b9FAU_g"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I-b5FOw8EeS3Ep2_Ev7oeg" x="9" y="15" height="394"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_I-cgIOw8EeS3Ep2_Ev7oeg" type="3025" fontName="Sans" fontHeight="10" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_I-dHMOw8EeS3Ep2_Ev7oeg" type="5029"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_I-eVUOw8EeS3Ep2_Ev7oeg" type="7014">
+              <children xmi:type="notation:Shape" xmi:id="_aOUXoPpBEeS5tqGzVBMV0A" type="3023" fontName="Sans" fontHeight="10" lineColor="0">
+                <children xmi:type="notation:DecorationNode" xmi:id="_aOUXovpBEeS5tqGzVBMV0A" type="7013">
+                  <children xmi:type="notation:Shape" xmi:id="_aOYpEPpBEeS5tqGzVBMV0A" type="3024" fontName="Sans" fontHeight="10" lineColor="0">
+                    <children xmi:type="notation:DecorationNode" xmi:id="_aOYpEvpBEeS5tqGzVBMV0A" type="5028"/>
+                    <children xmi:type="notation:Shape" xmi:id="_aOjoMPpBEeS5tqGzVBMV0A" type="3034" fontName="Sans" fontHeight="10" lineColor="0">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_aOjoMvpBEeS5tqGzVBMV0A" type="5046">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_aOjoM_pBEeS5tqGzVBMV0A" y="5"/>
+                      </children>
+                      <element xmi:type="instance:ContinuousPortInstance" href="../brakeByWire.muml#_Fd9hQem5EeSyWM-b9FAU_g"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aOjoMfpBEeS5tqGzVBMV0A" x="225" y="12"/>
+                    </children>
+                    <element xmi:type="instance:AtomicComponentInstance" href="../brakeByWire.muml#_Fd9hQOm5EeSyWM-b9FAU_g"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aOYpEfpBEeS5tqGzVBMV0A" x="9" y="159"/>
+                  </children>
+                  <children xmi:type="notation:Shape" xmi:id="_aOYpE_pBEeS5tqGzVBMV0A" type="3024" fontName="Sans" fontHeight="10" lineColor="0">
+                    <children xmi:type="notation:DecorationNode" xmi:id="_aOYpFfpBEeS5tqGzVBMV0A" type="5028"/>
+                    <children xmi:type="notation:Shape" xmi:id="_aOunUPpBEeS5tqGzVBMV0A" type="3034" fontName="Sans" fontHeight="10" lineColor="0">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_aOunUvpBEeS5tqGzVBMV0A" type="5046">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_aOunU_pBEeS5tqGzVBMV0A" y="5"/>
+                      </children>
+                      <element xmi:type="instance:ContinuousPortInstance" href="../brakeByWire.muml#_Fd9hQ-m5EeSyWM-b9FAU_g"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aOunUfpBEeS5tqGzVBMV0A" x="216" y="35"/>
+                    </children>
+                    <element xmi:type="instance:AtomicComponentInstance" href="../brakeByWire.muml#_Fd9hQum5EeSyWM-b9FAU_g"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aOYpFPpBEeS5tqGzVBMV0A" x="12" y="15"/>
+                  </children>
+                  <children xmi:type="notation:Shape" xmi:id="_aOYpFvpBEeS5tqGzVBMV0A" type="3024" fontName="Sans" fontHeight="10" lineColor="0">
+                    <children xmi:type="notation:DecorationNode" xmi:id="_aOZQIPpBEeS5tqGzVBMV0A" type="5028"/>
+                    <children xmi:type="notation:Shape" xmi:id="_aO8pwPpBEeS5tqGzVBMV0A" type="3032" fontName="Sans" fontHeight="10" lineColor="0">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_aO8pwvpBEeS5tqGzVBMV0A" type="5044">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_aO8pw_pBEeS5tqGzVBMV0A" y="5"/>
+                      </children>
+                      <element xmi:type="instance:DiscreteSinglePortInstance" href="../brakeByWire.muml#_Fd9hRem5EeSyWM-b9FAU_g"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aO8pwfpBEeS5tqGzVBMV0A" x="45" y="73"/>
+                    </children>
+                    <children xmi:type="notation:Shape" xmi:id="_aO8pxPpBEeS5tqGzVBMV0A" type="3031" fontName="Sans" fontHeight="10" lineColor="0">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_aO9Q0PpBEeS5tqGzVBMV0A" type="5043">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_aO9Q0fpBEeS5tqGzVBMV0A" y="5"/>
+                      </children>
+                      <element xmi:type="instance:HybridPortInstance" href="../brakeByWire.muml#_Fd9hRum5EeSyWM-b9FAU_g"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aO8pxfpBEeS5tqGzVBMV0A" x="-12" y="24"/>
+                    </children>
+                    <children xmi:type="notation:Shape" xmi:id="_aO9Q0vpBEeS5tqGzVBMV0A" type="3031" fontName="Sans" fontHeight="10" lineColor="0">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_aO9Q1PpBEeS5tqGzVBMV0A" type="5043">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_aO9Q1fpBEeS5tqGzVBMV0A" y="5"/>
+                      </children>
+                      <element xmi:type="instance:HybridPortInstance" href="../brakeByWire.muml#_Fd9hR-m5EeSyWM-b9FAU_g"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aO9Q0_pBEeS5tqGzVBMV0A" x="132" y="-12"/>
+                    </children>
+                    <children xmi:type="notation:Shape" xmi:id="_aO9Q1vpBEeS5tqGzVBMV0A" type="3031" fontName="Sans" fontHeight="10" lineColor="0">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_aO9Q2PpBEeS5tqGzVBMV0A" type="5043">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_aO9Q2fpBEeS5tqGzVBMV0A" x="12" y="48"/>
+                      </children>
+                      <element xmi:type="instance:HybridPortInstance" href="../brakeByWire.muml#_Fd9hSOm5EeSyWM-b9FAU_g"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aO9Q1_pBEeS5tqGzVBMV0A" x="45" y="-12"/>
+                    </children>
+                    <element xmi:type="instance:AtomicComponentInstance" href="../brakeByWire.muml#_Fd9hROm5EeSyWM-b9FAU_g"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aOYpF_pBEeS5tqGzVBMV0A" x="312" y="147" width="277" height="85"/>
+                  </children>
+                  <children xmi:type="notation:Shape" xmi:id="_aOZQIfpBEeS5tqGzVBMV0A" type="3024" fontName="Sans" fontHeight="10" lineColor="0">
+                    <children xmi:type="notation:DecorationNode" xmi:id="_aOZQI_pBEeS5tqGzVBMV0A" type="5028"/>
+                    <children xmi:type="notation:Shape" xmi:id="_aPjtwPpBEeS5tqGzVBMV0A" type="3034" fontName="Sans" fontHeight="10" lineColor="0">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_aPjtwvpBEeS5tqGzVBMV0A" type="5046">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_aPjtw_pBEeS5tqGzVBMV0A" y="5"/>
+                      </children>
+                      <element xmi:type="instance:ContinuousPortInstance" href="../brakeByWire.muml#_Fd9hSum5EeSyWM-b9FAU_g"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aPjtwfpBEeS5tqGzVBMV0A" x="132" y="35"/>
+                    </children>
+                    <element xmi:type="instance:AtomicComponentInstance" href="../brakeByWire.muml#_Fd9hSem5EeSyWM-b9FAU_g"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aOZQIvpBEeS5tqGzVBMV0A" x="312" y="15"/>
+                  </children>
+                </children>
+                <element xmi:type="instance:ComponentInstanceConfiguration" href="../brakeByWire.muml#_Fd9hP-m5EeSyWM-b9FAU_g"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aOUXofpBEeS5tqGzVBMV0A"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_I-eVUew8EeS3Ep2_Ev7oeg"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_I-eVUuw8EeS3Ep2_Ev7oeg"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_aQC18PpBEeS5tqGzVBMV0A" type="3032" fontName="Sans" fontHeight="10" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_aQC18vpBEeS5tqGzVBMV0A" type="5044">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_aQC18_pBEeS5tqGzVBMV0A" y="5"/>
+              </children>
+              <element xmi:type="instance:DiscreteSinglePortInstance" href="../brakeByWire.muml#_Fd9hPum5EeSyWM-b9FAU_g"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aQC18fpBEeS5tqGzVBMV0A" x="372" y="397"/>
+            </children>
+            <element xmi:type="instance:StructuredComponentInstance" href="../brakeByWire.muml#_Fd9hPem5EeSyWM-b9FAU_g"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I-cgIew8EeS3Ep2_Ev7oeg" x="909" y="15" height="349"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_I-e8YOw8EeS3Ep2_Ev7oeg" type="3025" fontName="Sans" fontHeight="10" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_I-fjcOw8EeS3Ep2_Ev7oeg" type="5029"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_I-fjcew8EeS3Ep2_Ev7oeg" type="7014">
+              <children xmi:type="notation:Shape" xmi:id="_aQMm8PpBEeS5tqGzVBMV0A" type="3023" fontName="Sans" fontHeight="10" lineColor="0">
+                <children xmi:type="notation:DecorationNode" xmi:id="_aQMm8vpBEeS5tqGzVBMV0A" type="7013">
+                  <children xmi:type="notation:Shape" xmi:id="_aQRfcPpBEeS5tqGzVBMV0A" type="3024" fontName="Sans" fontHeight="10" lineColor="0">
+                    <children xmi:type="notation:DecorationNode" xmi:id="_aQRfcvpBEeS5tqGzVBMV0A" type="5028"/>
+                    <children xmi:type="notation:Shape" xmi:id="_aQeTwPpBEeS5tqGzVBMV0A" type="3032" fontName="Sans" fontHeight="10" lineColor="0">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_aQeTwvpBEeS5tqGzVBMV0A" type="5044">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_aQe60PpBEeS5tqGzVBMV0A" y="5"/>
+                      </children>
+                      <element xmi:type="instance:DiscreteSinglePortInstance" href="../brakeByWire.muml#_Fd9hVOm5EeSyWM-b9FAU_g"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aQeTwfpBEeS5tqGzVBMV0A" x="84" y="-12"/>
+                    </children>
+                    <children xmi:type="notation:Shape" xmi:id="_aQe60fpBEeS5tqGzVBMV0A" type="3031" fontName="Sans" fontHeight="10" lineColor="0">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_aQe60_pBEeS5tqGzVBMV0A" type="5043">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_aQe61PpBEeS5tqGzVBMV0A" y="5"/>
+                      </children>
+                      <element xmi:type="instance:HybridPortInstance" href="../brakeByWire.muml#_Fd9hVem5EeSyWM-b9FAU_g"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aQe60vpBEeS5tqGzVBMV0A" x="-12" y="12"/>
+                    </children>
+                    <children xmi:type="notation:Shape" xmi:id="_aQe61fpBEeS5tqGzVBMV0A" type="3031" fontName="Sans" fontHeight="10" lineColor="0">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_aQe61_pBEeS5tqGzVBMV0A" type="5043">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_aQe62PpBEeS5tqGzVBMV0A" y="5"/>
+                      </children>
+                      <element xmi:type="instance:HybridPortInstance" href="../brakeByWire.muml#_Fd9hVum5EeSyWM-b9FAU_g"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aQe61vpBEeS5tqGzVBMV0A" x="84" y="35"/>
+                    </children>
+                    <element xmi:type="instance:AtomicComponentInstance" href="../brakeByWire.muml#_Fd9hU-m5EeSyWM-b9FAU_g"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aQRfcfpBEeS5tqGzVBMV0A" x="69" y="39"/>
+                  </children>
+                  <children xmi:type="notation:Shape" xmi:id="_aQRfc_pBEeS5tqGzVBMV0A" type="3024" fontName="Sans" fontHeight="10" lineColor="0">
+                    <children xmi:type="notation:DecorationNode" xmi:id="_aQRfdfpBEeS5tqGzVBMV0A" type="5028"/>
+                    <children xmi:type="notation:Shape" xmi:id="_aQ7mwPpBEeS5tqGzVBMV0A" type="3034" fontName="Sans" fontHeight="10" lineColor="0">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_aQ7mwvpBEeS5tqGzVBMV0A" type="5046">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_aQ7mw_pBEeS5tqGzVBMV0A" y="5"/>
+                      </children>
+                      <element xmi:type="instance:ContinuousPortInstance" href="../brakeByWire.muml#_Fd9hWOm5EeSyWM-b9FAU_g"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aQ7mwfpBEeS5tqGzVBMV0A" x="96" y="-12"/>
+                    </children>
+                    <element xmi:type="instance:AtomicComponentInstance" href="../brakeByWire.muml#_Fd9hV-m5EeSyWM-b9FAU_g"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aQRfdPpBEeS5tqGzVBMV0A" x="57" y="147"/>
+                  </children>
+                </children>
+                <element xmi:type="instance:ComponentInstanceConfiguration" href="../brakeByWire.muml#_Fd9hUum5EeSyWM-b9FAU_g"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aQMm8fpBEeS5tqGzVBMV0A"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_I-fjcuw8EeS3Ep2_Ev7oeg"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_I-fjc-w8EeS3Ep2_Ev7oeg"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_aRF-0PpBEeS5tqGzVBMV0A" type="3034" fontName="Sans" fontHeight="10" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_aRF-0vpBEeS5tqGzVBMV0A" type="5046">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_aRF-0_pBEeS5tqGzVBMV0A" y="5"/>
+              </children>
+              <element xmi:type="instance:ContinuousPortInstance" href="../brakeByWire.muml#_Fd9hUOm5EeSyWM-b9FAU_g"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aRF-0fpBEeS5tqGzVBMV0A" x="-12" y="108"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_aRF-1PpBEeS5tqGzVBMV0A" type="3032" fontName="Sans" fontHeight="10" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_aRGl4PpBEeS5tqGzVBMV0A" type="5044">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_aRGl4fpBEeS5tqGzVBMV0A" y="5"/>
+              </children>
+              <element xmi:type="instance:DiscreteSinglePortInstance" href="../brakeByWire.muml#_Fd9hUem5EeSyWM-b9FAU_g"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aRF-1fpBEeS5tqGzVBMV0A" x="168" y="-12"/>
+            </children>
+            <element xmi:type="instance:StructuredComponentInstance" href="../brakeByWire.muml#_Fd9hT-m5EeSyWM-b9FAU_g"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I-e8Yew8EeS3Ep2_Ev7oeg" x="909" y="548" height="270"/>
+          </children>
+        </children>
+        <element xmi:type="instance:ComponentInstanceConfiguration" href="../brakeByWire.muml#_Fd9hIOm5EeSyWM-b9FAU_g"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I-NPkew8EeS3Ep2_Ev7oeg"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_I7rgAew8EeS3Ep2_Ev7oeg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_I7rgAuw8EeS3Ep2_Ev7oeg"/>
+    </children>
+    <element xmi:type="instance:StructuredComponentInstance" href="../brakeByWire.muml#_ERz3EOm5EeSyWM-b9FAU_g"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I7lZYew8EeS3Ep2_Ev7oeg" width="1585" height="913"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_G5rzEew8EeS3Ep2_Ev7oeg"/>
+  <element xmi:type="instance:ComponentInstanceConfiguration" href="../brakeByWire.muml#_C02w4Om5EeSyWM-b9FAU_g"/>
+  <edges xmi:type="notation:Connector" xmi:id="_aSuWgPpBEeS5tqGzVBMV0A" type="4001" source="_aRF-1PpBEeS5tqGzVBMV0A" target="_aI7hUPpBEeS5tqGzVBMV0A" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_aSuWgfpBEeS5tqGzVBMV0A" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="instance:AssemblyConnectorInstance" href="../brakeByWire.muml#_Fd9hXOm5EeSyWM-b9FAU_g"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_aSuWgvpBEeS5tqGzVBMV0A" points="[-12, -12, 12, 12]$[-12, -12, 12, 12]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_aSyn8PpBEeS5tqGzVBMV0A" type="4001" source="_aOL0wPpBEeS5tqGzVBMV0A" target="_aJBn8PpBEeS5tqGzVBMV0A" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_aSzPAPpBEeS5tqGzVBMV0A" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="instance:AssemblyConnectorInstance" href="../brakeByWire.muml#_Fd9hXem5EeSyWM-b9FAU_g"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_aSzPAfpBEeS5tqGzVBMV0A" points="[12, -12, 0, 0]$[0, 0, -12, 12]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_aS0dIPpBEeS5tqGzVBMV0A" type="4001" source="_aK6eUPpBEeS5tqGzVBMV0A" target="_aRF-0PpBEeS5tqGzVBMV0A" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_aS0dIfpBEeS5tqGzVBMV0A" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="instance:AssemblyConnectorInstance" href="../brakeByWire.muml#_Fd9hXum5EeSyWM-b9FAU_g"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_aS0dIvpBEeS5tqGzVBMV0A" points="[-12, -4, 24, 8]$[-24, -8, 12, 4]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_aS2SUPpBEeS5tqGzVBMV0A" type="4001" source="_aQC18PpBEeS5tqGzVBMV0A" target="_aJBA4PpBEeS5tqGzVBMV0A" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_aS2SUfpBEeS5tqGzVBMV0A" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="instance:AssemblyConnectorInstance" href="../brakeByWire.muml#_Fd9hX-m5EeSyWM-b9FAU_g"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_aS2SUvpBEeS5tqGzVBMV0A" points="[-12, 12, 0, 0]$[0, 0, 12, -12]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_aS4HgPpBEeS5tqGzVBMV0A" type="4001" source="_aMkrNPpBEeS5tqGzVBMV0A" target="_aLo3EPpBEeS5tqGzVBMV0A" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_aS4HgfpBEeS5tqGzVBMV0A" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="instance:AssemblyConnectorInstance" href="../brakeByWire.muml#_Fd9hOOm5EeSyWM-b9FAU_g"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_aS4HgvpBEeS5tqGzVBMV0A" points="[6, -12, -14, 28]$[14, -28, -6, 12]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_aS5VoPpBEeS5tqGzVBMV0A" type="4001" source="_aMUMgPpBEeS5tqGzVBMV0A" target="_aMnugPpBEeS5tqGzVBMV0A" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_aS5VofpBEeS5tqGzVBMV0A" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="instance:AssemblyConnectorInstance" href="../brakeByWire.muml#_Fd9hOem5EeSyWM-b9FAU_g"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_aS5VovpBEeS5tqGzVBMV0A" points="[-12, 1, 71, -9]$[-71, 8, 12, -2]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_aS7K0PpBEeS5tqGzVBMV0A" type="4001" source="_aMkrMPpBEeS5tqGzVBMV0A" target="_aMGKEPpBEeS5tqGzVBMV0A" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_aS7K0fpBEeS5tqGzVBMV0A" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="instance:AssemblyConnectorInstance" href="../brakeByWire.muml#_Fd9hOum5EeSyWM-b9FAU_g"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_aS7K0vpBEeS5tqGzVBMV0A" points="[6, -12, -5, 8]$[4, -8, -7, 12]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_aS9AAPpBEeS5tqGzVBMV0A" type="4001" source="_aL4usPpBEeS5tqGzVBMV0A" target="_aMoVkPpBEeS5tqGzVBMV0A" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_aS9AAfpBEeS5tqGzVBMV0A" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="instance:AssemblyConnectorInstance" href="../brakeByWire.muml#_Fd9hO-m5EeSyWM-b9FAU_g"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_aS9AAvpBEeS5tqGzVBMV0A" points="[-12, 6, 85, -48]$[-85, 47, 12, -7]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_aS-OIPpBEeS5tqGzVBMV0A" type="4002" source="_aMoVlPpBEeS5tqGzVBMV0A" target="_aOL0wPpBEeS5tqGzVBMV0A" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_aS-OIfpBEeS5tqGzVBMV0A" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="instance:DelegationConnectorInstance" href="../brakeByWire.muml#_Fd9hPOm5EeSyWM-b9FAU_g"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_aS-OIvpBEeS5tqGzVBMV0A" points="[-7, -12, 45, 81]$[-46, -81, 6, 12]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_aTBRcPpBEeS5tqGzVBMV0A" type="4001" source="_aO8pxPpBEeS5tqGzVBMV0A" target="_aOjoMPpBEeS5tqGzVBMV0A" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_aTBRcfpBEeS5tqGzVBMV0A" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="instance:AssemblyConnectorInstance" href="../brakeByWire.muml#_Fd9hS-m5EeSyWM-b9FAU_g"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_aTBRcvpBEeS5tqGzVBMV0A" points="[6, -12, -4, 8]$[4, -8, -6, 12]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_aTDGoPpBEeS5tqGzVBMV0A" type="4001" source="_aPjtwPpBEeS5tqGzVBMV0A" target="_aO9Q0vpBEeS5tqGzVBMV0A" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_aTDGofpBEeS5tqGzVBMV0A" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="instance:AssemblyConnectorInstance" href="../brakeByWire.muml#_Fd9hTOm5EeSyWM-b9FAU_g"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_aTDGovpBEeS5tqGzVBMV0A" points="[-12, -2, 80, 8]$[-80, -9, 12, 1]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_aTGJ8PpBEeS5tqGzVBMV0A" type="4001" source="_aOunUPpBEeS5tqGzVBMV0A" target="_aO9Q1vpBEeS5tqGzVBMV0A" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_aTGJ8fpBEeS5tqGzVBMV0A" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="instance:AssemblyConnectorInstance" href="../brakeByWire.muml#_Fd9hTum5EeSyWM-b9FAU_g"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_aTGJ8vpBEeS5tqGzVBMV0A" points="[-12, 1, 81, -9]$[-81, 8, 12, -2]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_aTH_IPpBEeS5tqGzVBMV0A" type="4001" source="_aQ7mwPpBEeS5tqGzVBMV0A" target="_aQe61fpBEeS5tqGzVBMV0A" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_aTH_IfpBEeS5tqGzVBMV0A" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="instance:AssemblyConnectorInstance" href="../brakeByWire.muml#_Fd9hWum5EeSyWM-b9FAU_g"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_aTH_IvpBEeS5tqGzVBMV0A" points="[-12, 1, 380, -46]$[-380, 45, 12, -2]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_aTJNQPpBEeS5tqGzVBMV0A" type="4002" source="_aQe60fpBEeS5tqGzVBMV0A" target="_aRF-0PpBEeS5tqGzVBMV0A" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_aTJNQfpBEeS5tqGzVBMV0A" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="instance:DelegationConnectorInstance" href="../brakeByWire.muml#_Fd9hWem5EeSyWM-b9FAU_g"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_aTJNQvpBEeS5tqGzVBMV0A" points="[-5, -12, 29, 81]$[-30, -81, 4, 12]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_aTLCcPpBEeS5tqGzVBMV0A" type="4002" source="_aRF-1PpBEeS5tqGzVBMV0A" target="_aQeTwPpBEeS5tqGzVBMV0A" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_aTLCcfpBEeS5tqGzVBMV0A" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="instance:DelegationConnectorInstance" href="../brakeByWire.muml#_Fd9hW-m5EeSyWM-b9FAU_g"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_aTLCcvpBEeS5tqGzVBMV0A" points="[9, 12, -25, -33]$[24, 33, -10, -12]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_dbF1oPpBEeS5tqGzVBMV0A" type="4002" source="_aQC18PpBEeS5tqGzVBMV0A" target="_aO8pwPpBEeS5tqGzVBMV0A" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_dbF1ofpBEeS5tqGzVBMV0A" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="instance:DelegationConnectorInstance" href="../brakeByWire.muml#_dbCLQPpBEeS5tqGzVBMV0A"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_dbF1ovpBEeS5tqGzVBMV0A" points="[4, 12, -25, -57]$[29, 81, 0, 12]"/>
+  </edges>
+</notation:Diagram>

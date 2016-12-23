@@ -1,0 +1,791 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+   <extension point="org.eclipse.team.core.fileTypes" id="repo-ftype">
+      <?gmfgen generated="true"?>
+      <fileTypes type="text" extension="resourceinstance_diagram"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
+      <?gmfgen generated="true"?>
+      <parser
+         type="resourceinstance_diagram"
+         class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
+      </parser>
+   </extension>
+
+	
+	
+	
+	
+	
+	<extension point="org.eclipse.ui.editors" id="gmf-editor">
+      <?gmfgen generated="true"?>
+      <editor
+         id="org.muml.pm.hardware.resourceinstance.diagram.part.HardwareDiagramEditorID"
+         name="%editorName"
+         icon="icons/obj16/HwresourceinstanceDiagramFile.gif"
+         extensions="resourceinstance_diagram"
+         default="true"
+         class="org.muml.pm.hardware.resourceinstance.diagram.part.HardwareDiagramEditor"
+         matchingStrategy="org.muml.pm.hardware.resourceinstance.diagram.part.HardwareMatchingStrategy"
+         contributorClass="org.muml.pm.hardware.resourceinstance.diagram.part.HardwareDiagramActionBarContributor">
+      </editor>
+   	</extension>
+   	<extension point="org.eclipse.ui.contexts" id="ui-context">
+      <?gmfgen generated="true"?>
+      <context
+         description="%context.description"
+         id="org.muml.pm.hardware.resourceinstance.diagram.ui.diagramContext"
+         name="%context.name"
+         parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
+      </context>
+   	</extension>
+
+   	<extension point="org.eclipse.ui.newWizards" id="creation-wizard">
+      <?gmfgen generated="true"?>
+  	  <wizard
+  	     name="%newWizardName"
+  	     icon="icons/obj16/HwresourceinstanceDiagramFile.gif"
+  	     category="org.eclipse.ui.Examples"
+  	     class="org.muml.pm.hardware.resourceinstance.diagram.part.HardwareCreationWizard"
+  	     id="org.muml.pm.hardware.resourceinstance.diagram.part.HardwareCreationWizardID">
+  	  	 <description>%newWizardDesc</description>  
+      </wizard>
+   	</extension>
+	
+	
+	
+	
+	<extension point="org.eclipse.ui.menus">
+	   <?gmfgen generated="true"?>
+	   <menuContribution
+	         allPopups="false"
+	         locationURI="popup:org.muml.core.browser.new.menu?after=additions">
+	  		<command
+                 commandId="org.muml.pm.hardware.hwresourceinstance.ResourceInstanceRepository.browser.create"
+                 icon="icons/obj16/HwresourceinstanceDiagramFile.gif"
+                 id="org.muml.pm.hardware.hwresourceinstance.ResourceInstanceRepository.browser.create"
+                 label="ResourceInstanceRepository"
+                 style="push">
+              <visibleWhen
+                    checkEnabled="false">
+                    <iterate ifEmpty="false" operator="and">
+                       <adapt type="org.eclipse.core.resources.IResource">
+				       </adapt>
+                    </iterate>	
+              </visibleWhen>
+           </command>
+      </menuContribution>
+      <?gmfgen generated="true"?>   
+	  <menuContribution
+	         allPopups="false"
+	         locationURI="popup:org.muml?after=diagrams">
+	      <command
+	            commandId="org.muml.pm.hardware.resourceinstance.diagram.createDiagram"
+	            icon="icons/obj16/HwresourceinstanceDiagramFile.gif"
+	            id="org.muml.pm.hardware.resourceinstance.diagram.createDiagram"
+	            label="Create ResourceInstance Diagram"
+	            style="push">
+	            	<visibleWhen checkEnabled="false">
+		            	<or>
+		            	<reference definitionId="org.muml.expression.mumlfile"></reference>
+						<iterate ifEmpty="false" operator="or">
+		            		<adapt type="org.eclipse.core.resources.IResource">
+		            			<test property="org.eclipse.core.resources.name" value="*.hwresource"></test>
+	              			</adapt>
+		    			</iterate>
+		    			</or>
+          			</visibleWhen>
+	      </command>
+	   </menuContribution>
+	   
+	</extension>
+	
+	
+	<extension point="org.eclipse.ui.commands">
+	<?gmfgen generated="true"?>
+	<command
+           defaultHandler="org.muml.pm.hardware.resourceinstance.diagram.part.HardwareInitDiagramFileAction$CreateDiagramElement"
+           categoryId="org.muml"
+           description="Create new ResourceInstance"
+           id="org.muml.pm.hardware.hwresourceinstance.ResourceInstanceRepository.browser.create"
+           name="Create new ResourceInstance">
+    </command>
+    </extension>
+	
+	
+	
+	<extension point="org.eclipse.ui.commands">
+		<?gmfgen generated="true"?>
+		<command
+			categoryId="org.muml"
+			description="Initialize realtimestatechart_diagram"
+			defaultHandler="org.muml.pm.hardware.resourceinstance.diagram.part.HardwareInitDiagramFileAction"
+			id="org.muml.pm.hardware.resourceinstance.diagram.createDiagram"
+			name="%initDiagramActionLabel">
+		</command>
+	</extension>
+
+	
+	
+	
+	<extension
+         point="org.muml.core.modelinstance.ui.diagraminformation">
+      <?gmfgen generated="true"?>
+      <editor
+            preferencesHint="org.muml.pm.hardware.resourceinstance.diagram"
+            editorId="org.muml.pm.hardware.resourceinstance.diagram.part.HardwareDiagramEditorID"
+            editorName="ResourceInstance Editor"
+            fileExtension="resourceinstance_diagram"
+            modelElementCategoryKey="org.muml.pm.hardware.hwresource.category"
+            modelId="ResourceInstance">
+         <diagramElement
+               packageNsURI="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0"
+               className="ResourceInstanceRepository">
+         </diagramElement>
+         
+         <topLevelNode
+               domainElement="SensorInstance"
+               semanticHint="2007">
+         </topLevelNode>
+         
+         <topLevelNode
+               domainElement="ActuatorInstance"
+               semanticHint="2008">
+         </topLevelNode>
+         
+         <topLevelNode
+               domainElement="StructuredResourceInstance"
+               semanticHint="2009">
+         </topLevelNode>
+         
+      </editor>
+   </extension>
+
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders" id="global-actions">
+      <?gmfgen generated="true"?>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
+         id="ResourceInstancePresentation">
+         <Priority name="Lowest"/>
+         <ViewId id="org.muml.pm.hardware.resourceinstance.diagram.part.HardwareDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="delete"/>
+            </ElementType>
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart">
+               <GlobalActionId actionId="save"/>
+            </ElementType>
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="save">
+               </GlobalActionId>
+            </ElementType>        
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
+         id="ResourceInstancePresentationIDE">
+         <Priority name="Lowest"/>
+         <ViewId id="org.muml.pm.hardware.resourceinstance.diagram.part.HardwareDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="bookmark"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+            class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
+            id="ResourceInstanceRender">
+         <Priority name="Lowest"/>
+         <ViewId id="org.muml.pm.hardware.resourceinstance.diagram.part.HardwareDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="cut"/>
+               <GlobalActionId actionId="copy"/>
+               <GlobalActionId actionId="paste"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+   </extension>
+
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders" id="markers-navigation">
+      <?gmfgen generated="true"?>
+      <MarkerNavigationProvider class="org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareMarkerNavigationProvider">
+         <MarkerType name="org.muml.pm.hardware.resourceinstance.diagram.diagnostic"/>
+         <Priority name="Lowest"/>
+      </MarkerNavigationProvider>
+   </extension>
+
+   <extension id="diagnostic" name="Resource Instance Diagram Editor problems" point="org.eclipse.core.resources.markers">
+      <?gmfgen generated="true"?>
+      <super type="org.eclipse.core.resources.problemmarker"/>
+      <super type="org.eclipse.gmf.runtime.common.ui.services.marker"/>
+      <persistent value="true"/>
+   </extension>   
+
+   <extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
+      <?gmfgen generated="true"?>
+      <decoratorProvider class="org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareValidationDecoratorProvider">
+         <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart(org.eclipse.gmf.runtime.diagram.ui)" id="PRIMARY_VIEW"/>
+         <context decoratorTargets="PRIMARY_VIEW"/>
+      </decoratorProvider>
+   </extension>
+
+   <extension point="org.eclipse.core.runtime.preferences" id="prefs">
+      <?gmfgen generated="true"?>
+      <initializer class="org.muml.pm.hardware.resourceinstance.diagram.preferences.DiagramPreferenceInitializer"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.preferencePages" id="prefpages">
+      <?gmfgen generated="true"?>
+      <page
+            id="org.muml.pm.hardware.resourceinstance.diagram.general"
+            name="%prefpage.org.muml.pm.hardware.resourceinstance.diagram.general"
+            category="org.muml.preferences"
+            class="org.muml.pm.hardware.resourceinstance.diagram.preferences.DiagramGeneralPreferencePage">
+      </page>
+      <page
+            id="org.muml.pm.hardware.resourceinstance.diagram.appearance"
+            name="%prefpage.org.muml.pm.hardware.resourceinstance.diagram.appearance"
+            category="org.muml.pm.hardware.resourceinstance.diagram.general"
+            class="org.muml.pm.hardware.resourceinstance.diagram.preferences.DiagramAppearancePreferencePage">
+      </page>
+      <page
+            id="org.muml.pm.hardware.resourceinstance.diagram.connections"
+            name="%prefpage.org.muml.pm.hardware.resourceinstance.diagram.connections"
+            category="org.muml.pm.hardware.resourceinstance.diagram.general"
+            class="org.muml.pm.hardware.resourceinstance.diagram.preferences.DiagramConnectionsPreferencePage">
+      </page>
+      <page
+            id="org.muml.pm.hardware.resourceinstance.diagram.printing"
+            name="%prefpage.org.muml.pm.hardware.resourceinstance.diagram.printing"
+            category="org.muml.pm.hardware.resourceinstance.diagram.general"
+            class="org.muml.pm.hardware.resourceinstance.diagram.preferences.DiagramPrintingPreferencePage">
+      </page>
+      <page
+            id="org.muml.pm.hardware.resourceinstance.diagram.rulersAndGrid"
+            name="%prefpage.org.muml.pm.hardware.resourceinstance.diagram.rulersAndGrid"
+            category="org.muml.pm.hardware.resourceinstance.diagram.general"
+            class="org.muml.pm.hardware.resourceinstance.diagram.preferences.DiagramRulersAndGridPreferencePage">
+      </page>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor" id="prop-contrib">
+      <?gmfgen generated="true"?>
+      <propertyContributor
+            contributorId="org.muml.pm.hardware.resourceinstance.diagram"
+            labelProvider="org.muml.pm.hardware.resourceinstance.diagram.sheet.HardwareSheetLabelProvider">
+         <propertyCategory category="domain"/>
+         <propertyCategory category="visual"/>
+         <propertyCategory category="extra"/>
+      </propertyContributor>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs">
+      <?gmfgen generated="true"?>   
+      <propertyTabs contributorId="org.muml.pm.hardware.resourceinstance.diagram">
+         <propertyTab
+             category="visual"
+             id="property.tab.AppearancePropertySection"
+             label="%tab.appearance"/>
+          <propertyTab
+             category="visual"
+             id="property.tab.DiagramPropertySection"
+             label="%tab.diagram"/>
+          <propertyTab
+                       category="extra"
+             id="property.tab.domain"
+             label="%tab.domain"/>
+          <propertyTab
+                       category="domain"
+             id="property.tab.general"
+             label="%tab.general"/>
+          <propertyTab
+          			 category="domain"
+             afterTab="property.tab.general"
+             id="property.tab.documentation"
+             label="%tab.documentation"/>
+      </propertyTabs>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
+      <?gmfgen generated="true"?>   
+      <propertySections contributorId="org.muml.pm.hardware.resourceinstance.diagram">
+         <propertySection id="property.section.ConnectorAppearancePropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ConnectionEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ConnectionAppearancePropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>
+         <propertySection id="property.section.ShapeColorAndFontPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ShapeEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ShapeColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection> 
+         <propertySection id="property.section.DiagramColorsAndFontsPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.DiagramColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>     
+         <propertySection id="property.section.RulerGridPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.grid.RulerGridPropertySection" 
+            tab="property.tab.DiagramPropertySection">
+         </propertySection>     
+         <propertySection
+            id="property.section.domain" 
+            tab="property.tab.domain"
+            class="org.muml.pm.hardware.resourceinstance.diagram.sheet.HardwarePropertySection">
+            <input type="org.eclipse.gmf.runtime.notation.View"/>
+            <input type="org.eclipse.gef.EditPart"/>
+            <input type="org.muml.pm.hardware.resourceinstance.diagram.navigator.HardwareAbstractNavigatorItem"/>
+         </propertySection>
+         <propertySection
+            id="property.section.general" 
+            tab="property.tab.general"
+            filter="org.muml.core.properties.tabs.Property_tab_generalTabElementFilter"
+            class="org.muml.ape.runtime.sections.ObjectPropertySection">
+         </propertySection>
+         <propertySection
+            id="property.section.documentation" 
+            tab="property.tab.documentation"
+            filter="org.muml.core.properties.tabs.Property_tab_documentationTabElementFilter"
+            class="org.muml.ape.runtime.sections.ObjectPropertySection">
+         </propertySection>
+      </propertySections>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
+      <?gmfgen generated="true"?>
+      <viewProvider class="org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareViewProvider">
+         <Priority name="Lowest"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="ResourceInstance"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2007,2008,2009,3017,3018,3019,3020,3021,3022"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4003"/>
+      </viewProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders" id="ep-provider">
+      <?gmfgen generated="true"?>
+      <editpartProvider class="org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareEditPartProvider">
+         <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
+            <method name="getType()" value="ResourceInstance"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
+            <method name="getType()" value="2007,2008,2009,3017,3018,3019,3020,3021,3022"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
+            <method name="getType()" value="4003"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
+            <method name="getType()" value="5072,5073,5074,5075,5076,5077,5101,5102,5103,5071,5078,5079,5080,5081,5082,5083,5084,5085,5086,5087,5088,5089,5090,5091,5092,5093,5094,5095,5096,5097,5098,5099,5100"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
+            <method name="getType()" value="7003"/>
+         </object>
+         <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
+      </editpartProvider>
+   </extension>
+
+   
+   <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
+      <?gmfgen generated="true"?>
+      <modelingAssistantProvider class="org.muml.pm.hardware.resourceinstance.diagram.providers.assistants.HardwareModelingAssistantProviderOfResourceInstanceRepositoryEditPart">
+         <Priority name="Lowest"/>
+         <object class="org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ResourceInstanceRepositoryEditPart" id="ResourceInstanceRepository_1000"/>
+         <context elements="ResourceInstanceRepository_1000"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="org.muml.pm.hardware.resourceinstance.diagram.providers.assistants.HardwareModelingAssistantProviderOfSensorInstanceEditPart">
+         <Priority name="Lowest"/>
+         <object class="org.muml.pm.hardware.resourceinstance.diagram.edit.parts.SensorInstanceEditPart" id="SensorInstance_2007"/>
+         <context elements="SensorInstance_2007"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="org.muml.pm.hardware.resourceinstance.diagram.providers.assistants.HardwareModelingAssistantProviderOfActuatorInstanceEditPart">
+         <Priority name="Lowest"/>
+         <object class="org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ActuatorInstanceEditPart" id="ActuatorInstance_2008"/>
+         <context elements="ActuatorInstance_2008"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="org.muml.pm.hardware.resourceinstance.diagram.providers.assistants.HardwareModelingAssistantProviderOfStructuredResourceInstanceEditPart">
+         <Priority name="Lowest"/>
+         <object class="org.muml.pm.hardware.resourceinstance.diagram.edit.parts.StructuredResourceInstanceEditPart" id="StructuredResourceInstance_2009"/>
+         <context elements="StructuredResourceInstance_2009"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="org.muml.pm.hardware.resourceinstance.diagram.providers.assistants.HardwareModelingAssistantProviderOfHWPortEditPart">
+         <Priority name="Lowest"/>
+         <object class="org.muml.pm.hardware.resourceinstance.diagram.edit.parts.HWPortEditPart" id="HWPort_3017"/>
+         <context elements="HWPort_3017"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="org.muml.pm.hardware.resourceinstance.diagram.providers.assistants.HardwareModelingAssistantProviderOfCacheInstanceEditPart">
+         <Priority name="Lowest"/>
+         <object class="org.muml.pm.hardware.resourceinstance.diagram.edit.parts.CacheInstanceEditPart" id="CacheInstance_3018"/>
+         <context elements="CacheInstance_3018"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="org.muml.pm.hardware.resourceinstance.diagram.providers.assistants.HardwareModelingAssistantProviderOfProgrammableLogicDeviceInstanceEditPart">
+         <Priority name="Lowest"/>
+         <object class="org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProgrammableLogicDeviceInstanceEditPart" id="ProgrammableLogicDeviceInstance_3019"/>
+         <context elements="ProgrammableLogicDeviceInstance_3019"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="org.muml.pm.hardware.resourceinstance.diagram.providers.assistants.HardwareModelingAssistantProviderOfProcessorInstanceEditPart">
+         <Priority name="Lowest"/>
+         <object class="org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProcessorInstanceEditPart" id="ProcessorInstance_3020"/>
+         <context elements="ProcessorInstance_3020"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="org.muml.pm.hardware.resourceinstance.diagram.providers.assistants.HardwareModelingAssistantProviderOfProcessingMemoryInstanceEditPart">
+         <Priority name="Lowest"/>
+         <object class="org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProcessingMemoryInstanceEditPart" id="ProcessingMemoryInstance_3021"/>
+         <context elements="ProcessingMemoryInstance_3021"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="org.muml.pm.hardware.resourceinstance.diagram.providers.assistants.HardwareModelingAssistantProviderOfStorageMemoryInstanceEditPart">
+         <Priority name="Lowest"/>
+         <object class="org.muml.pm.hardware.resourceinstance.diagram.edit.parts.StorageMemoryInstanceEditPart" id="StorageMemoryInstance_3022"/>
+         <context elements="StorageMemoryInstance_3022"/>
+      </modelingAssistantProvider>
+      
+   </extension>
+
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
+      <?gmfgen generated="true"?>
+      <IconProvider class="org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareIconProvider">
+         <Priority name="Low"/>
+      </IconProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
+      <?gmfgen generated="true"?>
+      <ParserProvider class="org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareParserProvider">
+         <Priority name="Lowest"/>
+      </ParserProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <?gmfgen generated="true"?>
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0">
+         <metamodelType
+               id="org.muml.pm.hardware.resourceinstance.diagram.ResourceInstanceRepository_1000"
+               name="%metatype.name.ResourceInstanceRepository_1000"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ResourceInstanceRepository"
+               edithelper="org.muml.pm.hardware.resourceinstance.diagram.edit.helpers.ResourceInstanceRepositoryEditHelper">
+            <param name="semanticHint" value="1000"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0">
+         <metamodelType
+               id="org.muml.pm.hardware.resourceinstance.diagram.SensorInstance_2007"
+               name="%metatype.name.SensorInstance_2007"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="SensorInstance"
+               edithelper="org.muml.pm.hardware.resourceinstance.diagram.edit.helpers.SensorInstanceEditHelper">
+            <param name="semanticHint" value="2007"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0">
+         <metamodelType
+               id="org.muml.pm.hardware.resourceinstance.diagram.ActuatorInstance_2008"
+               name="%metatype.name.ActuatorInstance_2008"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ActuatorInstance"
+               edithelper="org.muml.pm.hardware.resourceinstance.diagram.edit.helpers.ActuatorInstanceEditHelper">
+            <param name="semanticHint" value="2008"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0">
+         <metamodelType
+               id="org.muml.pm.hardware.resourceinstance.diagram.StructuredResourceInstance_2009"
+               name="%metatype.name.StructuredResourceInstance_2009"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="StructuredResourceInstance"
+               edithelper="org.muml.pm.hardware.resourceinstance.diagram.edit.helpers.StructuredResourceInstanceEditHelper">
+            <param name="semanticHint" value="2009"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0">
+         <metamodelType
+               id="org.muml.pm.hardware.resourceinstance.diagram.HWPort_3017"
+               name="%metatype.name.HWPort_3017"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="HWPort"
+               edithelper="org.muml.pm.hardware.resourceinstance.diagram.edit.helpers.HWPortEditHelper">
+            <param name="semanticHint" value="3017"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0">
+         <metamodelType
+               id="org.muml.pm.hardware.resourceinstance.diagram.CacheInstance_3018"
+               name="%metatype.name.CacheInstance_3018"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="CacheInstance"
+               edithelper="org.muml.pm.hardware.resourceinstance.diagram.edit.helpers.CacheInstanceEditHelper">
+            <param name="semanticHint" value="3018"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0">
+         <metamodelType
+               id="org.muml.pm.hardware.resourceinstance.diagram.ProgrammableLogicDeviceInstance_3019"
+               name="%metatype.name.ProgrammableLogicDeviceInstance_3019"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ProgrammableLogicDeviceInstance"
+               edithelper="org.muml.pm.hardware.resourceinstance.diagram.edit.helpers.ProgrammableLogicDeviceInstanceEditHelper">
+            <param name="semanticHint" value="3019"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0">
+         <metamodelType
+               id="org.muml.pm.hardware.resourceinstance.diagram.ProcessorInstance_3020"
+               name="%metatype.name.ProcessorInstance_3020"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ProcessorInstance"
+               edithelper="org.muml.pm.hardware.resourceinstance.diagram.edit.helpers.ProcessorInstanceEditHelper">
+            <param name="semanticHint" value="3020"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0">
+         <metamodelType
+               id="org.muml.pm.hardware.resourceinstance.diagram.ProcessingMemoryInstance_3021"
+               name="%metatype.name.ProcessingMemoryInstance_3021"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ProcessingMemoryInstance"
+               edithelper="org.muml.pm.hardware.resourceinstance.diagram.edit.helpers.ProcessingMemoryInstanceEditHelper">
+            <param name="semanticHint" value="3021"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0">
+         <metamodelType
+               id="org.muml.pm.hardware.resourceinstance.diagram.StorageMemoryInstance_3022"
+               name="%metatype.name.StorageMemoryInstance_3022"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="StorageMemoryInstance"
+               edithelper="org.muml.pm.hardware.resourceinstance.diagram.edit.helpers.StorageMemoryInstanceEditHelper">
+            <param name="semanticHint" value="3022"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0">
+         <specializationType
+               id="org.muml.pm.hardware.resourceinstance.diagram.ProcessorInstanceOwnedCacheInstance_4003"
+               name="%metatype.name.ProcessorInstanceOwnedCacheInstance_4003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4003"/>
+         </specializationType>
+      </metamodel>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <?gmfgen generated="true"?>
+      <clientContext id="org.muml.pm.hardware.resourceinstance.diagram.TypeContext">
+         <enablement>
+            <test
+               property="org.eclipse.gmf.runtime.emf.core.editingDomain"
+               value="org.muml.pm.hardware.resourceinstance.diagram.EditingDomain"/>
+         </enablement>
+      </clientContext> 
+      <binding context="org.muml.pm.hardware.resourceinstance.diagram.TypeContext">
+         <elementType ref="org.muml.pm.hardware.resourceinstance.diagram.ResourceInstanceRepository_1000"/>
+         <elementType ref="org.muml.pm.hardware.resourceinstance.diagram.SensorInstance_2007"/>
+         <elementType ref="org.muml.pm.hardware.resourceinstance.diagram.ActuatorInstance_2008"/>
+         <elementType ref="org.muml.pm.hardware.resourceinstance.diagram.StructuredResourceInstance_2009"/>
+         <elementType ref="org.muml.pm.hardware.resourceinstance.diagram.HWPort_3017"/>
+         <elementType ref="org.muml.pm.hardware.resourceinstance.diagram.CacheInstance_3018"/>
+         <elementType ref="org.muml.pm.hardware.resourceinstance.diagram.ProgrammableLogicDeviceInstance_3019"/>
+         <elementType ref="org.muml.pm.hardware.resourceinstance.diagram.ProcessorInstance_3020"/>
+         <elementType ref="org.muml.pm.hardware.resourceinstance.diagram.ProcessingMemoryInstance_3021"/>
+         <elementType ref="org.muml.pm.hardware.resourceinstance.diagram.StorageMemoryInstance_3022"/>
+         <elementType ref="org.muml.pm.hardware.resourceinstance.diagram.ProcessorInstanceOwnedCacheInstance_4003"/>
+         <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
+      </binding>
+   </extension>
+	   <extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isURIEditorInput">
+      <?gmfgen generated="true"?>
+       <propertyTester
+           id="org.muml.pm.hardware.resourceinstance.diagram.URIEditorInputPropertyTester"
+           type="org.eclipse.emf.common.ui.URIEditorInput"
+           namespace="org.muml.pm.hardware.resourceinstance.diagram"
+           properties="isURIEditorInput"
+           class="org.muml.pm.hardware.resourceinstance.diagram.part.HardwareUriEditorInputTester">
+       </propertyTester>
+   </extension>
+
+	   <extension point="org.eclipse.ui.navigator.viewer" id="navigator-viewbinding">
+      <?gmfgen generated="true"?>
+      <viewerContentBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+         <includes>
+            <contentExtension pattern="org.muml.pm.hardware.resourceinstance.diagram.resourceContent"/>
+			<contentExtension pattern="org.muml.pm.hardware.resourceinstance.diagram.domainResourceContent"/>
+            <contentExtension pattern="org.muml.pm.hardware.resourceinstance.diagram.navigatorLinkHelper"/>
+         </includes>
+      </viewerContentBinding>
+      <viewerActionBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+         <includes>
+            <actionExtension pattern="org.muml.pm.hardware.resourceinstance.diagram.navigatorActionProvider"/>
+         </includes>
+      </viewerActionBinding>
+   </extension>
+
+   <extension point="org.eclipse.ui.navigator.navigatorContent" id="navigator-content">
+      <?gmfgen generated="true"?>
+      <navigatorContent
+            id="org.muml.pm.hardware.resourceinstance.diagram.resourceContent" 
+            name="%navigatorContentName" 
+            priority="normal" 
+            contentProvider="org.muml.pm.hardware.resourceinstance.diagram.navigator.HardwareNavigatorContentProvider" 
+            labelProvider="org.muml.pm.hardware.resourceinstance.diagram.navigator.HardwareNavigatorLabelProvider"
+            icon="icons/obj16/HwresourceinstanceDiagramFile.gif"
+            activeByDefault="true">
+         <triggerPoints>
+            <or>
+	           <and>
+    	          <instanceof value="org.eclipse.core.resources.IFile"/>
+        	      <test property="org.eclipse.core.resources.extension" value="resourceinstance_diagram"/>
+               </and>
+               <instanceof value="org.muml.pm.hardware.resourceinstance.diagram.navigator.HardwareAbstractNavigatorItem"/>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <or>
+         	   <instanceof value="org.muml.pm.hardware.resourceinstance.diagram.navigator.HardwareAbstractNavigatorItem"/>
+            </or>
+         </possibleChildren>
+         <commonSorter 
+               id="org.muml.pm.hardware.resourceinstance.diagram.navigatorSorter" 
+               class="org.muml.pm.hardware.resourceinstance.diagram.navigator.HardwareNavigatorSorter">
+            <parentExpression>
+               <or>
+	              <and>
+    	             <instanceof value="org.eclipse.core.resources.IFile"/>
+        	         <test property="org.eclipse.core.resources.extension" value="resourceinstance_diagram"/>
+                  </and>
+                  <instanceof value="org.muml.pm.hardware.resourceinstance.diagram.navigator.HardwareAbstractNavigatorItem"/>
+               </or>
+            </parentExpression>
+         </commonSorter>
+      </navigatorContent>
+      <navigatorContent
+            id="org.muml.pm.hardware.resourceinstance.diagram.domainResourceContent" 
+            name="%domainNavigatorContentName" 
+            priority="normal" 
+            contentProvider="org.muml.pm.hardware.resourceinstance.diagram.navigator.HardwareDomainNavigatorContentProvider" 
+            labelProvider="org.muml.pm.hardware.resourceinstance.diagram.navigator.HardwareDomainNavigatorLabelProvider"
+            icon="icons/obj16/HwresourceinstanceDiagramFile.gif"
+            activeByDefault="true">
+         <triggerPoints>
+            <or>
+	           <and>
+    	          <instanceof value="org.eclipse.core.resources.IFile"/>
+        	      <test property="org.eclipse.core.resources.extension" value="fujaba"/>
+               </and>
+               <instanceof value="org.muml.pm.hardware.resourceinstance.diagram.navigator.HardwareDomainNavigatorItem"/>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <instanceof value="org.muml.pm.hardware.resourceinstance.diagram.navigator.HardwareDomainNavigatorItem"/>
+         </possibleChildren>
+      </navigatorContent>
+      <actionProvider
+            id="org.muml.pm.hardware.resourceinstance.diagram.navigatorActionProvider"
+            class="org.muml.pm.hardware.resourceinstance.diagram.navigator.HardwareNavigatorActionProvider">
+         <enablement>
+            <or>
+               <instanceof value="org.muml.pm.hardware.resourceinstance.diagram.navigator.HardwareAbstractNavigatorItem"/>
+            </or>
+         </enablement>
+      </actionProvider>
+   </extension>
+   
+	   <extension point="org.eclipse.ui.navigator.linkHelper" id="navigator-linkhelper">
+      <?gmfgen generated="true"?>
+      <linkHelper
+            id="org.muml.pm.hardware.resourceinstance.diagram.navigatorLinkHelper"
+            class="org.muml.pm.hardware.resourceinstance.diagram.navigator.HardwareNavigatorLinkHelper">
+         <editorInputEnablement>
+            <and>
+               <instanceof value="org.eclipse.emf.common.ui.URIEditorInput"/>
+               <test property="org.muml.pm.hardware.resourceinstance.diagram.isURIEditorInput"/>
+            </and>
+         </editorInputEnablement>
+         <selectionEnablement>
+            <instanceof value="org.muml.pm.hardware.resourceinstance.diagram.navigator.HardwareAbstractNavigatorItem"/>
+         </selectionEnablement>
+      </linkHelper>
+   </extension>
+   <extension point="org.eclipse.ui.commands" id="update-cmd">
+      <?gmfgen generated="true"?>
+      <command
+         categoryId="org.eclipse.ui.category.edit"
+         defaultHandler="org.muml.pm.hardware.resourceinstance.diagram.part.HardwareDiagramUpdateCommand"
+         description="%update.diagram.description"
+         id="org.muml.pm.hardware.resourceinstance.diagram.updateDiagram"
+         name="%update.diagram.name"/>
+   </extension>
+   
+   <extension point="org.eclipse.ui.bindings" id="update-cmd-binding">
+      <?gmfgen generated="true"?>
+      <key 
+         commandId="org.muml.pm.hardware.resourceinstance.diagram.updateDiagram"
+         contextId="org.muml.pm.hardware.resourceinstance.diagram.ui.diagramContext"
+         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+         sequence="F5"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.menus" id="context-menus">
+      <?gmfgen generated="true"?>
+      <!-- menuContribution locationURI="menu:org.eclipse.ui.main.menu?after=">
+      </menuContribution>
+      <menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar?after=">
+      </menuContribution -->
+      <menuContribution locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
+         <command commandId="org.muml.pm.hardware.resourceinstance.diagram.LoadResourceAction">
+            <visibleWhen>
+               <and>
+                  <with variable="activePartId"><equals value="org.muml.pm.hardware.resourceinstance.diagram.part.HardwareDiagramEditorID"/></with>
+                  <with variable="selection"><iterate ifEmpty="false"> 
+                     <instanceof value="org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ResourceInstanceRepositoryEditPart"/>
+                  </iterate></with>
+               </and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   
+   
+
+   <extension point="org.eclipse.ui.commands" id="menu-commands">
+      <?gmfgen generated="true"?>
+      <category id="org.muml.pm.hardware.resourceinstance.diagram.part.HardwareDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
+      <command id="org.muml.pm.hardware.resourceinstance.diagram.LoadResourceAction"
+         name="Load Resource"
+         categoryId="org.muml.pm.hardware.resourceinstance.diagram.part.HardwareDiagramEditorID"
+         defaultHandler="org.muml.pm.hardware.resourceinstance.diagram.part.LoadResourceAction"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.handlers" id="menu-handlers">
+      <?gmfgen generated="true"?>
+   </extension>
+<extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
+      <?gmfgen generated="true"?>
+      <parser
+         type="resourceinstancerepository"
+         class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
+      </parser>
+   </extension>
+<extension
+         point="org.muml.core.modelelementcategory">
+      <?gmfgen generated="true"?>  
+      <category
+            key="org.muml.pm.hardware.hwresource.category"
+            name="hwresource">
+         
+         <child
+               class="ResourceInstanceRepository"
+               packageNsUri="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0">
+         </child>
+         
+      </category>
+   </extension>
+
+
+
+   <!-- optionally, specify keybindings -->
+</plugin>

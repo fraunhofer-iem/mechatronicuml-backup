@@ -1,0 +1,27 @@
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+
+«EXTENSION xpt::editor::Utils»
+«EXTENSION xpt::GenAuditRoot»
+
+«AROUND runEMFValidator FOR gmfgen::GenDiagram-»
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	private static org.eclipse.emf.common.util.Diagnostic runEMFValidator(
+			org.eclipse.gmf.runtime.notation.View target) {
+		if (target.isSetElement() && target.getElement() != null) {
+			return new org.eclipse.emf.ecore.util.Diagnostician() {
+
+				public String getObjectLabel(org.eclipse.emf.ecore.EObject eObject) {
+					// BEGIN Fix for muml bug #341:
+					try {
+						return org.eclipse.gmf.runtime.emf.core.util.EMFCoreUtil.getName(eObject);
+					} catch (NullPointerException e) {
+						return "null";
+					}
+					// END Fix
+				}
+			}.validate(target.getElement());
+		}
+		return org.eclipse.emf.common.util.Diagnostic.OK_INSTANCE;
+	}
+«ENDAROUND»

@@ -1,0 +1,133 @@
+import genmodel;
+import ecore;
+import ape;
+
+PropertyGenerator allGenerators(PropertyGenerator this) :
+	{ this }.union(referencedGenerators.allGenerators());
+
+
+String escapeString(String this) :
+	replaceAll("\\\\", "\\\\\\\\").replaceAll("\"", "\\\\\"").replaceAll("\\r\\n", "\\\\n").replaceAll("\\r", "").replaceAll("\\n", "\\\\n").replaceAll("\r\n", "\\\\n").replaceAll("\r", "").replaceAll("\n", "\\\\n");
+
+String fullyQualifiedName(ecore::EClassifier this, genmodel::GenModel genmodel) :
+	fullyQualifiedName(getGenClassifier(this, { genmodel }));
+String fullyQualifiedName(genmodel::GenClassifier this) :
+	'';
+String fullyQualifiedName(genmodel::GenClass this) :
+	genPackage.fullyQualifiedName() + '.' + ecoreClass.name;
+String fullyQualifiedName(genmodel::GenDataType this) :
+	genPackage.fullyQualifiedName() + '.' + ecoreDataType.name;
+String fullyQualifiedName(GenBase this) :
+	'';
+String fullyQualifiedName(genmodel::GenPackage this) :
+	(if basePackage.length > 0 then
+		basePackage + '.'
+	else if eContainer != null && { eContainer }.typeSelect(GenPackage).size > 0 then
+		 fullyQualifiedName({ eContainer }.typeSelect(GenBase).first()) + '.' 
+	else
+		'') + ecorePackage.name;
+
+//String sectionName(Property this) :
+//	genFeature.genClass.ecoreClass.name + genFeature.ecoreFeature.name;
+
+List[GenPackage] getAllGenPackages(GenModel this) :
+	this.usedGenPackages.union(this.genPackages);
+	
+List[GenBase] getAllGenBases(GenModel this) :
+	getAllGenPackages().eAllContents.typeSelect(GenBase);
+	
+GenClassifier getType(GenFeature this) : 
+	getGenClassifier(ecoreFeature.eType, { genClass.genPackage.genModel });
+	
+GenFeature getGenFeature(ecore::EStructuralFeature this, List[genmodel::GenModel] genModels) : 
+	getGenClassifier(eContainingClass, genModels).eContents.typeSelect(genmodel::GenFeature).selectFirst(e|e.ecoreFeature == this);
+
+GenClassifier getGenClassifier(ecore::EClassifier this, List[genmodel::GenModel] genModels) : 
+	genModels.getAllGenBases().typeSelect(GenClassifier).selectFirst(e | e.isGenClassifierFor(this));
+	
+Boolean isGenClassifierFor(genmodel::GenClassifier classifier, ecore::EClassifier this) :
+	false;
+
+Boolean isGenClassifierFor(genmodel::GenClassifier classifier, ecore::EClass this) :
+	{ classifier }.typeSelect(GenClass).first().ecoreClass == this;
+
+Boolean isGenClassifierFor(genmodel::GenClassifier classifier, ecore::EDataType this) :
+	{ classifier }.typeSelect(GenDataType).first().ecoreDataType == this;
+
+String propertyType(Property this) :
+	genFeature.ecoreFeature.eType.fullyQualifiedName(genFeature.genClass.genPackage.genModel);
+	
+String genPluginId(PropertyGenerator this) :
+	genModel.modelPluginID + '.properties';
+
+String genPackageName(Package this) :
+	generator.genPluginId() + '.' + genPackage.ecorePackage.name;
+
+String genEditorName(ape::Class this) :
+	genClass.ecoreClass.name.toString() + 'Editor';
+
+String genQualifiedEditorName(ape::Class this) :
+	package.genPackageName() + '.editor.' + genEditorName();
+
+String genCategoryKey(PropertyCategory this) :
+	"org.muml.ape.category." + /*clazz.genClass.ecoreClass.name.toString() + "." +*/ title; // Reuse categories from super classes!
+
+String genCreator(Property this) :
+	'create' + genField().toFirstUpper() + "_Editor";	
+
+String genEditorIndexSuffix(Property this) : 
+	if (clazz.properties.select(p | p.genFeature == genFeature && p != this).isEmpty) then
+		""
+	else
+		"_" + clazz.properties.select(p | p.genFeature == genFeature).indexOf(this).toString();
+
+String genField(Property this) :
+	'editor' /* + clazz.genClass.ecoreClass.name.toString().toFirstUpper() + "_" */ + genFeature.ecoreFeature.name.toString().toFirstUpper() + '_' + tab.id.toString().replaceAll('\\.', '_') + 'Tab' + genEditorIndexSuffix();	
+
+Class getHighestContainer(Class this, Property property) :
+	if properties.select(p | p.genFeature == property.genFeature).isEmpty then
+		superClasses.getHighestContainer(property).reject(c | c == null).selectFirst(true)
+	else if properties.selectFirst(p | p.genFeature == property.genFeature).shouldGenerateEditor() then
+		this
+	else
+		null;
+		
+Class getHighestContainer(Class this, PropertyCategory category) :
+	if propertyCategories.select(c | c.title == category.title).isEmpty then
+		superClasses.getHighestContainer(category).reject(c | c == null).selectFirst(true)
+	else
+		this;
+		
+Property findHighestProperty(Class this, Property property) :
+	if properties.select(p | p.genFeature == property.genFeature).isEmpty then
+		superClasses.findHighestProperty(property).reject(p | p == null).selectFirst(true)
+	else if properties.selectFirst(p | p.genFeature == property.genFeature).shouldGenerateEditor() then
+		properties.selectFirst(p | p.genFeature == property.genFeature)
+	else
+		null;
+
+List[Property] genProperties(Class this) :
+	properties;
+
+String genClassLiteral(GenClassifier this) :
+	'';
+String genClassLiteral(GenClass this) :
+	genPackage.fullyQualifiedName() + '.' + genPackage.prefix.toString().toFirstUpper() + 'Package.eINSTANCE.get' + ecoreClass.name.toString().toFirstUpper() + (if ecoreClass.name.toString().toFirstUpper() == "Class" then '_' else '') + '()';
+
+
+String genFeatureLiteral(GenFeature this) :
+	genClass.genPackage.fullyQualifiedName() + '.' + genClass.genPackage.prefix.toString().toFirstUpper() + 'Package.eINSTANCE.get' + genClass.ecoreClass.name.toString().toFirstUpper() + '_' + ecoreFeature.name.toString().toFirstUpper() + '()';
+
+Boolean shouldGenerateEditor(Property this) :
+	editor != null;
+	
+String genDocumentation(Property this) :
+	genFeature.ecoreFeature.eAnnotations.genDocumentation().selectFirst(d | d != null && d != "");
+
+String genDocumentation(EAnnotation this) : 
+	if source.toString()=="http://www.eclipse.org/emf/2002/GenModel" then
+		details.select(d | d.key.toString() == "documentation").value;
+	
+
+Set[PropertyTab] genAllTabs(Class this) :
+	{ this }.union(allSuperClasses).orderedElements.typeSelect(Property).tab;

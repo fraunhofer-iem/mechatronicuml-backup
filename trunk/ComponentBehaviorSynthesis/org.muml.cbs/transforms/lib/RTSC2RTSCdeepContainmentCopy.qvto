@@ -1,0 +1,509 @@
+/*
+ * Reused many mappings from Christopher Gerking's org.muml.uppaal.adapter.transformation/transforms/lib/MUML2MUML.qvto
+ * 
+ * The additional context element. Enables create multiple copies of the same element for different contexts.
+ */
+
+library RTSC2RTSCdeepContainmentCopy;
+
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
+modeltype common uses core::expressions::common('http://www.muml.org/core/1.0.0');
+modeltype expressions uses core::expressions('http://www.muml.org/core/1.0.0');
+modeltype valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+
+modeltype storydriven uses 'http://www.muml.org/core/1.0.0';
+
+	
+	-- realtime statecharts
+	
+	mapping RealtimeStatechart :: RTSC2RTSC(context:OclAny) : RealtimeStatechart {
+		
+		name := self.name;
+		
+		behavioralElement := self.behavioralElement;
+		
+		operations += self.operations->map Operation2Operation(context);
+		
+		variables += self.variables->map Variable2Variable(context);
+		
+		transitions += self.transitions->map Transition2Transition(context);
+		
+		states += self.states->map State2State(context);
+		
+		clocks += self.clocks->map Clock2Clock(context);
+					
+	}
+	
+	mapping Vertex :: Vertex2Vertex(context:OclAny) : Vertex
+		disjuncts State::State2State, StateConnectionPoint::StateConnectionPoint2StateConnectionPoint;
+	
+	mapping State :: State2State(context:OclAny) : State {
+				
+		name := self.name;
+		
+		incomingTransitions += self.incomingTransitions->map Transition2Transition(context);
+		outgoingTransitions += self.outgoingTransitions->map Transition2Transition(context);
+		
+		embeddedRegions += self.embeddedRegions->map Region2Region(context);
+		
+		entryEvent := self.entryEvent.map Entry2Entry(context);
+		doEvent := self.doEvent.map Do2Do(context);
+		exitEvent := self.exitEvent.map Exit2Exit(context);
+		
+		invariants += self.invariants->map ClockConstraint2ClockConstraint(context);
+		
+		initial := self.initial;
+		
+		final := self.final;
+		
+		urgent := self.urgent;
+		
+		channels := self.channels->map SyncChannel2SyncChannel(context);
+		
+		connectionPoints := self.connectionPoints->map StateConnectionPoint2StateConnectionPoint(context);
+		
+		parentStatechart := self.parentStatechart.map RTSC2RTSC(context);
+		
+	}
+	
+	mapping Region :: Region2Region(context:OclAny) : Region {
+				
+		priority := self.priority;
+		
+		embeddedStatechart := self.embeddedStatechart.map RTSC2RTSC(context);
+		
+		parentState := self.parentState.map State2State(context);
+	}
+	
+	mapping StateConnectionPoint :: StateConnectionPoint2StateConnectionPoint(context:OclAny) : StateConnectionPoint
+		disjuncts EntryPoint::EntryPoint2EntryPoint, ExitPoint::ExitPoint2ExitPoint;
+	
+	mapping EntryPoint :: EntryPoint2EntryPoint(context:OclAny) : EntryPoint {
+		
+		name := self.name;
+		
+		state := self.state.map State2State(context);
+		
+	}
+	
+	mapping ExitPoint :: ExitPoint2ExitPoint(context:OclAny) : ExitPoint {
+		
+		name := self.name;
+		
+		state := self.state.map State2State(context);
+		
+	}
+	
+	mapping Transition :: Transition2Transition(context:OclAny) : Transition {
+		
+		source := self.source.map Vertex2Vertex(context);
+		target := self.target.map Vertex2Vertex(context);
+		
+		priority := self.priority;
+		
+		synchronization := self.synchronization.map Synchronization2Synchronization(context);
+		
+		clockResets := self.clockResets->map Clock2Clock(context);
+		
+		clockConstraints := self.clockConstraints->map ClockConstraint2ClockConstraint(context);
+		
+		absoluteDeadlines := self.absoluteDeadlines->map AbsoluteDeadline2AbsoluteDeadline(context);
+		
+		relativeDeadline := self.relativeDeadline.map RelativeDeadline2RelativeDeadline(context);
+		
+		blockable := self.blockable;
+		
+		guard := self.guard.map Expression2Expression(context);
+		
+		events += self.events->map TransitionEvent2TransitionEvent(context);
+		
+		action := self.action.map Action2Action(context);
+		
+		urgent := self.urgent;
+						
+	}
+	
+	
+	-- clocks
+	
+	mapping Clock :: Clock2Clock(context:OclAny) : Clock {
+		
+		name := self.name;
+				
+	}
+	
+	mapping ClockConstraint :: ClockConstraint2ClockConstraint(context:OclAny) : ClockConstraint {
+				
+		clock := self.clock.map Clock2Clock(context);
+				
+		operator := self.operator;
+		
+		bound := self.bound.map TimeValue2TimeValue(context);
+	}
+	
+	mapping AbsoluteDeadline :: AbsoluteDeadline2AbsoluteDeadline(context:OclAny) : AbsoluteDeadline {
+		
+		upperBound := self.upperBound.map TimeValue2TimeValue(context);
+		lowerBound := self.lowerBound.map TimeValue2TimeValue(context);
+		
+		clock := self.clock.map Clock2Clock(context);
+		
+	}
+	
+	mapping RelativeDeadline :: RelativeDeadline2RelativeDeadline(context:OclAny) : RelativeDeadline {
+		
+		upperBound := self.upperBound.map TimeValue2TimeValue(context);
+		lowerBound := self.lowerBound.map TimeValue2TimeValue(context);
+				
+	}
+		
+		
+	-- actions
+		
+	mapping Action :: Action2Action(context:OclAny) : Action {
+	
+		name := self.name;
+		
+		result.expressions += self.expressions->map Expression2Expression(context);
+		
+	}
+	
+		
+	-- events
+	
+	abstract mapping Event :: Event2Event(context:OclAny) : Event {
+		
+		kind := self.kind;
+		
+	}
+
+	abstract mapping EntryOrExitEvent :: EntryExit2EntryExitPrimitive(context:OclAny) : EntryOrExitEvent inherits Event::Event2Event {
+		
+		clockResets += self.clockResets->map Clock2Clock(context);
+		
+		action := self.action.map Action2Action(context);
+		
+	}
+		
+	mapping TransitionEvent :: TransitionEvent2TransitionEvent(context:OclAny) : TransitionEvent disjuncts
+		AsynchronousMessageEvent::Asynchronous2Asynchronous;
+	
+	mapping AsynchronousMessageEvent :: Asynchronous2Asynchronous(context:OclAny) : AsynchronousMessageEvent inherits Event::Event2Event {
+		
+		kind := self.kind;
+		
+		message := self.message.map Message2Message(context);
+		
+	}
+	
+	mapping StateEvent :: StateEvent2StateEvent(context:OclAny) : StateEvent disjuncts
+		DoEvent::Do2Do,
+		EntryOrExitEvent::EntryExit2EntryExit;
+	
+	mapping DoEvent :: Do2Do(context:OclAny) : DoEvent inherits Event::Event2Event {
+	
+		action := self.action.map Action2Action(context);
+		
+		period := self.period.map TimeValue2TimeValue(context);
+			
+	}
+	
+	mapping EntryOrExitEvent :: EntryExit2EntryExit(context:OclAny) : EntryOrExitEvent disjuncts
+		EntryEvent::Entry2Entry,
+		ExitEvent::Exit2Exit;
+		
+	mapping EntryEvent :: Entry2Entry(context:OclAny) : EntryEvent inherits EntryOrExitEvent::EntryExit2EntryExitPrimitive{};
+	
+	mapping ExitEvent :: Exit2Exit(context:OclAny) : ExitEvent inherits EntryOrExitEvent::EntryExit2EntryExitPrimitive{};
+	
+		
+	-- typed named elements
+	
+	mapping TypedNamedElement :: TypedNamedElement2TypedNamedElement(context:OclAny) : TypedNamedElement
+		disjuncts Variable::Variable2Variable,Parameter::Parameter2Parameter;
+	
+	abstract mapping TypedNamedElement :: BasicTypedNamedElement2TypedNamedElement(context:OclAny) : TypedNamedElement {
+		name := self.name;
+		dataType := self.dataType;		
+	}
+	
+	mapping Variable :: Variable2Variable(context:OclAny) : Variable inherits TypedNamedElement::BasicTypedNamedElement2TypedNamedElement {
+		initializeExpression := self.initializeExpression.map Expression2Expression(context);
+		constant := self.constant;
+	};
+		
+	mapping Parameter :: Parameter2Parameter(context:OclAny) : Parameter inherits TypedNamedElement::BasicTypedNamedElement2TypedNamedElement{
+		
+	};
+	
+	
+	mapping ParameterBinding :: Binding2Binding(context:OclAny) : ParameterBinding {
+		parameter := self.parameter;
+		value := self.value.map Expression2Expression(context);
+	}
+	
+	
+	-- operations
+	
+	mapping Operation :: Operation2Operation(context:OclAny) : Operation {
+	
+		name := self.name;
+		returnType := self.returnType;
+		implementations := self.implementations->map Expression2Expression(context);
+		parameters := self.parameters->map Parameter2Parameter(context);
+				
+	}
+	
+	
+		
+	mapping Message :: Message2Message(context:OclAny) : Message {
+		
+		instanceOf := self.instanceOf
+		
+	}
+	
+	
+	-- synchronization
+	
+	mapping SynchronizationChannel :: SyncChannel2SyncChannel(context:OclAny) : SynchronizationChannel {
+		
+		name := self.name;
+						
+		selectorType := self.selectorType;		
+						
+	}
+	
+	mapping Synchronization :: Synchronization2Synchronization(context:OclAny) : Synchronization {
+		
+			kind := self.kind;
+			
+			syncChannel := self.syncChannel.map SyncChannel2SyncChannel(context);
+			
+			selectorExpression := self.selectorExpression.map Expression2Expression(context);
+		
+	}
+	
+	
+	-- expressions
+		
+	mapping Expression :: Expression2Expression(context:OclAny) : Expression disjuncts
+		LiteralExpression::Literal2Literal,
+		UnaryExpression::Unary2Unary, 
+		BinaryExpression::Binary2Binary,
+		Block::Block2Block,
+		Loop::Loop2Loop,
+		Assignment::Assignment2Assignment,
+		IfStatement::If2If,
+		TypedNamedElementExpression::TypedNamedElementExpression2TypedNamedElementExpression,
+		OperationCall::Call2Call,
+		ReturnStatement::Return2Return,
+		TriggerMessageExpression::Trigger2Trigger,
+		DiscreteInteractionEndpointReference::EndpointReference2EndpointReference,
+		PositionSelector::Position2Position,
+		LocalVariableDeclarationStatement::Local2Local,
+		NondeterministicChoiceExpression::Choice2Choice,
+		Expression::failOnUnsupportedExpression;
+		
+	mapping Expression :: failOnUnsupportedExpression(context:OclAny) : Expression {
+		init {
+			assert fatal (false) with log('Unsupported expression type.')
+		}
+	}	
+			
+	mapping LiteralExpression :: Literal2Literal(context:OclAny) : LiteralExpression {
+		
+		value := self.value;		
+		
+	}
+	
+	mapping BinaryExpression :: Binary2Binary(context:OclAny) : BinaryExpression disjuncts
+		ComparisonExpression::Comparison2Comparison,
+		ArithmeticExpression::Arithmetic2Arithmetic,
+		LogicalExpression::BinaryLogic2BinaryLogic;	
+		
+	
+	mapping LogicalExpression :: BinaryLogic2BinaryLogic(context:OclAny) : LogicalExpression {
+		
+		leftExpression := self.leftExpression.map Expression2Expression(context);
+		rightExpression := self.rightExpression.map Expression2Expression(context);
+		
+		operator := self.operator;
+		
+	}
+		
+	mapping UnaryExpression :: Unary2Unary(context:OclAny) : UnaryExpression {
+				
+		enclosedExpression := self.enclosedExpression.map Expression2Expression(context);
+		
+		operator := self.operator;
+				
+	}	
+	
+	mapping TypedNamedElementExpression :: TypedNamedElementExpression2TypedNamedElementExpression(context:OclAny) : TypedNamedElementExpression {
+			
+		typedNamedElement := self.typedNamedElement.map TypedNamedElement2TypedNamedElement(context);
+
+//		indices += self.indices->map Expression2Expression(context);
+					
+	}
+			
+	mapping ComparisonExpression :: Comparison2Comparison(context:OclAny) : ComparisonExpression inherits BinaryExpression::Binary2BinaryPrimitive {
+		
+		operator := self.operator;
+		
+	}
+	
+	mapping ArithmeticExpression :: Arithmetic2Arithmetic(context:OclAny) : ArithmeticExpression inherits BinaryExpression::Binary2BinaryPrimitive {
+		
+		operator := self.operator;
+		
+	}
+	
+	abstract mapping BinaryExpression :: Binary2BinaryPrimitive(context:OclAny) : BinaryExpression {
+		
+		leftExpression := self.leftExpression.map Expression2Expression(context);
+		rightExpression := self.rightExpression.map Expression2Expression(context);
+		
+	}
+		
+	mapping Block :: Block2Block(context:OclAny) : Block {
+		
+		result.expressions += self.expressions->map Expression2Expression(context);
+		
+	}
+	
+	mapping Loop :: Loop2Loop(context:OclAny) : Loop disjuncts
+		WhileLoop::While2While,
+		DoWhileLoop::DoWhile2DoWhile,
+		ForLoop::For2For;
+	
+	mapping WhileLoop :: While2While(context:OclAny) : WhileLoop inherits Loop::Loop2LoopPrimitive{};
+	
+	mapping DoWhileLoop :: DoWhile2DoWhile(context:OclAny) : DoWhileLoop inherits Loop::Loop2LoopPrimitive{};
+
+	mapping ForLoop :: For2For(context:OclAny) : ForLoop inherits Loop::Loop2LoopPrimitive {
+		
+		initializeExpression := self.initializeExpression.map Assignment2Assignment(context);
+		countingExpression := self.countingExpression.map Assignment2Assignment(context);
+			
+	}
+	
+	abstract mapping Loop :: Loop2LoopPrimitive(context:OclAny) : Loop {
+		
+		block := self.block.map Block2Block(context);
+		loopTest := self.loopTest.map Expression2Expression(context);
+		
+	}	
+	
+	mapping Assignment :: Assignment2Assignment(context:OclAny) : Assignment {
+		
+		lhs_typedNamedElementExpression := self.lhs_typedNamedElementExpression.map TypedNamedElementExpression2TypedNamedElementExpression(context);
+		
+		assignOperator := self.assignOperator;
+		
+		rhs_assignExpression := self.rhs_assignExpression.map Expression2Expression(context);
+		
+		incrementDecrementOperator := self.incrementDecrementOperator;
+		
+	}
+	
+	mapping IfStatement :: If2If(context:OclAny) : IfStatement {
+	
+		ifCondition := self.ifCondition.map Expression2Expression(context);
+		
+		ifBlock := self.ifBlock.map Block2Block(context);
+		
+		elseIfConditions := self.elseIfConditions->map Expression2Expression(context);
+		
+		elseIfBlocks := self.elseIfBlocks->map Block2Block(context);
+		
+		elseBlock := self.elseBlock.map Block2Block(context);
+		
+	}
+	
+	mapping OperationCall :: Call2Call(context:OclAny) : OperationCall {
+		
+		operation := self.operation.map Operation2Operation(context);
+		
+		parameterBinding := self.parameterBinding->map Binding2Binding(context);
+		
+	}
+	
+	mapping ReturnStatement :: Return2Return(context:OclAny) : ReturnStatement {
+		
+		expression := self.expression.map Expression2Expression(context);
+		
+	}
+	
+	mapping TriggerMessageExpression :: Trigger2Trigger(context:OclAny) : TriggerMessageExpression {
+		
+		messageType := self.messageType;
+		parameter := self.parameter;
+		
+		
+	}
+	
+	mapping DiscreteInteractionEndpointReference :: EndpointReference2EndpointReference(context:OclAny) : DiscreteInteractionEndpointReference {
+		
+		typedNamedElementExpression := self.typedNamedElementExpression.map TypedNamedElementExpression2TypedNamedElementExpression(context);
+		
+		position := self.position.map Position2Position(context);
+		
+	}
+	
+	mapping PositionSelector :: Position2Position(context:OclAny) : PositionSelector {
+		
+		kind := self.kind;
+		successor := self.successor.map Position2Position(context);
+		
+	}
+	
+	mapping LocalVariableDeclarationStatement :: Local2Local(context:OclAny) : LocalVariableDeclarationStatement {
+		
+		variable := self.variable.map Variable2Variable(context);
+		
+	}
+	
+	mapping NondeterministicChoiceExpression :: Choice2Choice(context:OclAny) : NondeterministicChoiceExpression {
+		
+		range := self.range.map Range2Range(context);
+		
+		dataType := self.dataType;
+		
+	}
+	
+	mapping Range :: Range2Range(context:OclAny) : Range {
+		
+		lowerBound := self.lowerBound;
+		upperBound := self.upperBound;
+	}
+	
+	-- time value
+	
+	mapping TimeValue :: TimeValue2TimeValue(context:OclAny) : TimeValue {
+	
+		value := self.value.map Expression2Expression(context);
+		unit := self.unit;
+		
+	}
+	
+	
+	
+	//TODO move to shared library
+	query Collection(OclAny) :: sortedByName(context:OclAny) : Sequence(OclAny) {
+	
+		var named : Collection(OclAny) = self->select(not oclIsUndefined() and oclIsKindOf(NamedElement));
+		
+		var unnamed : Collection(OclAny) = self->select(not oclIsUndefined() and not oclIsKindOf(NamedElement));
+	
+		var objects : Sequence(OclAny) = object Sequence(OclAny) {};
+		
+		objects += named.oclAsType(NamedElement)->sortedBy(name);
+		objects += unnamed;
+	
+		return objects;
+	
+	}

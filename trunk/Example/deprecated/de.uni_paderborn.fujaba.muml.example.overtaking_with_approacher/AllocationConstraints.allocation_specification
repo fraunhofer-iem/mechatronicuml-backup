@@ -1,0 +1,101 @@
+runningExample {
+	
+		include 'platform:/plugin/de.uni_paderborn.fujaba.muml.allocation.language.xtext/operations/OCLContext.ocl'
+		
+		constraint separateLocation OvertakerDistributeCommAndDrv {
+			descriptors (first, second);
+			ocl self.allocateToDifferentECUs('overtakerCommunicator', 'overtakerDriver');
+		}
+		constraint separateLocation OvertakeeDistributeCommAndDrv {
+		descriptors (first, second);
+		ocl self.allocateToDifferentECUs('overtakeeCommunicator', 'overtakeeDriver');
+		}
+		constraint separateLocation ApproacherDistributeCommAndDrv {
+		descriptors (first, second);
+		ocl self.allocateToDifferentECUs('approacherCommunicator', 'approacherDriver');
+		}
+		
+	constraint requiredLocation OvertakerMotorLSensor {
+		descriptors (first, second);
+		ocl self.allocateToECU('overtakerMotorL', 'overtakerMotor');
+	}
+	constraint requiredLocation OvertakeeMotorLSensor {
+		descriptors (first, second);
+		ocl self.allocateToECU('overtakeeMotorL', 'overtakeeMotor');
+	}
+	constraint requiredLocation ApproacherMotorLSensor {
+		descriptors (first, second);
+		ocl self.allocateToECU('approacherMotorL', 'approacherMotor');
+	}
+	constraint requiredLocation OvertakerMotorRSensor {
+		descriptors (first, second);
+		ocl self.allocateToECU('overtakerMotorR', 'overtakerMotor');
+	}
+	constraint requiredLocation OvertakeeMotorRSensor {
+		descriptors (first, second);
+		ocl self.allocateToECU('overtakeeMotorR', 'overtakeeMotor');
+	}
+	constraint requiredLocation ApproacherMotorRSensor {
+		descriptors (first, second);
+		ocl self.allocateToECU('approacherMotorR', 'approacherMotor');
+	}
+		
+	constraint requiredLocation OvertakerLineSensor {
+		descriptors (first, second);
+		ocl self.allocateToECU('overtakerLine', 'overtakerLine');
+	}
+	constraint requiredLocation OvertakeeLineSensor {
+		descriptors (first, second);
+		ocl self.allocateToECU('overtakeeLine', 'overtakeeLine');
+	}
+	constraint requiredLocation ApproacherLineSensor {
+		descriptors (first, second);
+		ocl self.allocateToECU('approacherLine', 'approacherLine');
+	}
+		
+	constraint requiredLocation OvertakerDistanceSensor {
+		descriptors (first, second);
+		ocl self.allocateToECU('overtakerDistance', 'overtakerDistance');
+	}
+	constraint requiredLocation OvertakeeDistanceSensor {
+		descriptors (first, second);
+		ocl self.allocateToECU('overtakeeDistance', 'overtakeeDistance');
+	}
+	constraint requiredLocation ApproacherDistanceSensor {
+		descriptors (first, second);
+		ocl self.allocateToECU('approacherDistance', 'approacherDistance');
+	}
+	
+	constraint requiredLocation OvertakerColorSensor {
+		descriptors (first, second);
+		ocl self.allocateToECU('overtakerColor', 'overtakerColor');
+	}
+	constraint requiredLocation OvertakeeColorSensor {
+		descriptors (first, second);
+		ocl self.allocateToECU('overtakeeColor', 'overtakeeColor');
+	}
+	constraint requiredLocation ApproacherColorSensor {
+		descriptors (first, second);
+		ocl self.allocateToECU('approacherColor', 'approacherColor');
+	}
+		
+		
+	constraint requiredLocation OvertakerComponentsToOvertakerPlatform {
+		descriptors (first, second);
+		ocl self.allocateEmbeddedToPlatformInstance('overtaker', 'Overtaker');
+	}
+	constraint requiredLocation OvertakeeComponentsToOvertakeePlatform {
+		descriptors (first, second);
+		ocl self.allocateEmbeddedToPlatformInstance('overtakee', 'Overtakee');
+	}
+	constraint requiredLocation ApproacherComponentsToOvertakeePlatform {
+		descriptors (first, second);
+		ocl self.allocateEmbeddedToPlatformInstance('approacher', 'Approacher');
+	}
+	
+	constraint requiredLocation SectionToServerInstance {
+        descriptors (first, second);
+        ocl self.allocateEmbeddedToPlatformInstance('section', 'SectionControlInstance');
+}
+		
+}

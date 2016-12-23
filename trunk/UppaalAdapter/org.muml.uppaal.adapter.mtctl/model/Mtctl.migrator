@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emm:Migrator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:emm="http://www.muml.org/emm/1.0.0">
+  <sourcePackages href="Mtctl-0.4.ecore#/"/>
+  <sourcePackages href="Mtctl-0.4.ecore#//BooleanLogic"/>
+  <sourcePackages href="Mtctl-0.4.ecore#//Comparables"/>
+  <sourcePackages href="Mtctl-0.4.ecore#//Predicates"/>
+  <sourcePackages href="Mtctl-0.4.ecore#//Quantifiers"/>
+  <sourcePackages href="Mtctl-0.4.ecore#//Sets"/>
+  <targetPackages href="Mtctl.ecore#/"/>
+  <targetPackages href="Mtctl.ecore#//booleanlogic"/>
+  <targetPackages href="Mtctl.ecore#//comparables"/>
+  <targetPackages href="Mtctl.ecore#//predicates"/>
+  <targetPackages href="Mtctl.ecore#//quantifiers"/>
+  <targetPackages href="Mtctl.ecore#//sets"/>
+  <mappings>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="Mtctl.ecore#//comparables/TransitionMap/transition"/>
+      <sourceFeature xsi:type="ecore:EReference" href="Mtctl-0.4.ecore#//Comparables/TransitionMap/transition"/>
+    </featureInitializers>
+    <sourceClass href="Mtctl-0.4.ecore#//Comparables/TransitionMap"/>
+  </mappings>
+  <mappings>
+    <targetClass href="Mtctl.ecore#//comparables/MumlElemExpr"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="Mtctl.ecore#//comparables/MumlElemExpr/elem"/>
+      <sourceFeature xsi:type="ecore:EReference" href="Mtctl-0.4.ecore#//Comparables/MumlElemExpr/elem"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="Mtctl.ecore#//comparables/MumlElemExpr/instance"/>
+      <sourceFeature xsi:type="ecore:EReference" href="Mtctl-0.4.ecore#//Comparables/MumlElemExpr/instance"/>
+    </featureInitializers>
+    <sourceClass href="Mtctl-0.4.ecore#//Comparables/MumlElemExpr"/>
+  </mappings>
+  <mappings>
+    <targetClass href="Mtctl.ecore#//comparables/BufferMsgCountExpr"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="Mtctl.ecore#//comparables/BufferMsgCountExpr/buffer"/>
+      <sourceFeature xsi:type="ecore:EReference" href="Mtctl-0.4.ecore#//Comparables/BufferMsgCountExpr/buffer"/>
+    </featureInitializers>
+    <sourceClass href="Mtctl-0.4.ecore#//Comparables/BufferMsgCountExpr"/>
+  </mappings>
+  <mappings>
+    <targetClass href="Mtctl.ecore#//booleanlogic/OrExpr"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="Mtctl.ecore#//booleanlogic/OrExpr/leftOpd"/>
+      <sourceFeature xsi:type="ecore:EReference" href="Mtctl-0.4.ecore#//BooleanLogic/OrExpr/leftOpd"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="Mtctl.ecore#//booleanlogic/OrExpr/rightOpd"/>
+      <sourceFeature xsi:type="ecore:EReference" href="Mtctl-0.4.ecore#//BooleanLogic/OrExpr/rightOpd"/>
+    </featureInitializers>
+    <sourceClass href="Mtctl-0.4.ecore#//BooleanLogic/OrExpr"/>
+  </mappings>
+  <mappings>
+    <targetClass href="Mtctl.ecore#//booleanlogic/NotExpr"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="Mtctl.ecore#//booleanlogic/NotExpr/opd"/>
+      <sourceFeature xsi:type="ecore:EReference" href="Mtctl-0.4.ecore#//BooleanLogic/NotExpr/opd"/>
+    </featureInitializers>
+    <sourceClass href="Mtctl-0.4.ecore#//BooleanLogic/NotExpr"/>
+  </mappings>
+  <mappings>
+    <targetClass href="Mtctl.ecore#//booleanlogic/ImplyExpr"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="Mtctl.ecore#//booleanlogic/ImplyExpr/leftOpd"/>
+      <sourceFeature xsi:type="ecore:EReference" href="Mtctl-0.4.ecore#//BooleanLogic/ImplyExpr/leftOpd"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="Mtctl.ecore#//booleanlogic/ImplyExpr/rightOpd"/>
+      <sourceFeature xsi:type="ecore:EReference" href="Mtctl-0.4.ecore#//BooleanLogic/ImplyExpr/rightOpd"/>
+    </featureInitializers>
+    <sourceClass href="Mtctl-0.4.ecore#//BooleanLogic/ImplyExpr"/>
+  </mappings>
+  <mappings>
+    <targetClass href="Mtctl.ecore#//booleanlogic/AndExpr"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="Mtctl.ecore#//booleanlogic/AndExpr/leftOpd"/>
+      <sourceFeature xsi:type="ecore:EReference" href="Mtctl-0.4.ecore#//BooleanLogic/AndExpr/leftOpd"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="Mtctl.ecore#//booleanlogic/AndExpr/rightOpd"/>
+      <sourceFeature xsi:type="ecore:EReference" href="Mtctl-0.4.ecore#//BooleanLogic/AndExpr/rightOpd"/>
+    </featureInitializers>
+    <sourceClass href="Mtctl-0.4.ecore#//BooleanLogic/AndExpr"/>
+  </mappings>
+  <mappings>
+    <targetClass href="Mtctl.ecore#//sets/SubinstanceSetExpr"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="Mtctl.ecore#//sets/SubinstanceSetExpr/type"/>
+      <sourceFeature xsi:type="ecore:EReference" href="Mtctl-0.4.ecore#//Sets/SubinstanceSetExpr/type"/>
+    </featureInitializers>
+    <sourceClass href="Mtctl-0.4.ecore#//Sets/SubinstanceSetExpr"/>
+  </mappings>
+  <mappings>
+    <targetClass href="Mtctl.ecore#//sets/InstanceSetExpr"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="Mtctl.ecore#//sets/InstanceSetExpr/type"/>
+      <sourceFeature xsi:type="ecore:EReference" href="Mtctl-0.4.ecore#//Sets/InstanceSetExpr/type"/>
+    </featureInitializers>
+    <sourceClass href="Mtctl-0.4.ecore#//Sets/InstanceSetExpr"/>
+  </mappings>
+  <mappings>
+    <targetClass href="Mtctl.ecore#//predicates/MessageDiscardedExpr"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="Mtctl.ecore#//predicates/MessageDiscardedExpr/buffer"/>
+      <sourceFeature xsi:type="ecore:EReference" href="Mtctl-0.4.ecore#//Predicates/MessageDiscardedExpr/buffer"/>
+    </featureInitializers>
+    <sourceClass href="Mtctl-0.4.ecore#//Predicates/MessageDiscardedExpr"/>
+  </mappings>
+  <mappings>
+    <targetClass href="Mtctl.ecore#//predicates/StateInStatechartExpr"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="Mtctl.ecore#//predicates/StateInStatechartExpr/state"/>
+      <sourceFeature xsi:type="ecore:EReference" href="Mtctl-0.4.ecore#//Predicates/StateInStatechartExpr/state"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="Mtctl.ecore#//predicates/StateInStatechartExpr/statechart"/>
+      <sourceFeature xsi:type="ecore:EReference" href="Mtctl-0.4.ecore#//Predicates/StateInStatechartExpr/statechart"/>
+    </featureInitializers>
+    <sourceClass href="Mtctl-0.4.ecore#//Predicates/StateInStatechartExpr"/>
+  </mappings>
+  <mappings>
+    <targetClass href="Mtctl.ecore#//predicates/TransitionFiringExpr"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="Mtctl.ecore#//predicates/TransitionFiringExpr/transition"/>
+      <sourceFeature xsi:type="ecore:EReference" href="Mtctl-0.4.ecore#//Predicates/TransitionFiringExpr/transition"/>
+    </featureInitializers>
+    <sourceClass href="Mtctl-0.4.ecore#//Predicates/TransitionFiringExpr"/>
+  </mappings>
+  <mappings>
+    <targetClass href="Mtctl.ecore#//predicates/SubstateOfExpr"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="Mtctl.ecore#//predicates/SubstateOfExpr/superstate"/>
+      <sourceFeature xsi:type="ecore:EReference" href="Mtctl-0.4.ecore#//Predicates/SubstateOfExpr/superstate"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="Mtctl.ecore#//predicates/SubstateOfExpr/state"/>
+      <sourceFeature xsi:type="ecore:EReference" href="Mtctl-0.4.ecore#//Predicates/SubstateOfExpr/state"/>
+    </featureInitializers>
+    <sourceClass href="Mtctl-0.4.ecore#//Predicates/SubstateOfExpr"/>
+  </mappings>
+  <mappings>
+    <targetClass href="Mtctl.ecore#//predicates/StateActiveExpr"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="Mtctl.ecore#//predicates/StateActiveExpr/state"/>
+      <sourceFeature xsi:type="ecore:EReference" href="Mtctl-0.4.ecore#//Predicates/StateActiveExpr/state"/>
+    </featureInitializers>
+    <sourceClass href="Mtctl-0.4.ecore#//Predicates/StateActiveExpr"/>
+  </mappings>
+  <mappings>
+    <targetClass href="Mtctl.ecore#//predicates/MessageInTransitExpr"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="Mtctl.ecore#//predicates/MessageInTransitExpr/message"/>
+      <sourceFeature xsi:type="ecore:EReference" href="Mtctl-0.4.ecore#//Predicates/MessageInTransitExpr/message"/>
+    </featureInitializers>
+    <sourceClass href="Mtctl-0.4.ecore#//Predicates/MessageInTransitExpr"/>
+  </mappings>
+  <mappings>
+    <targetClass href="Mtctl.ecore#//predicates/MessageInBufferExpr"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="Mtctl.ecore#//predicates/MessageInBufferExpr/buffer"/>
+      <sourceFeature xsi:type="ecore:EReference" href="Mtctl-0.4.ecore#//Predicates/MessageInBufferExpr/buffer"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="Mtctl.ecore#//predicates/MessageInBufferExpr/message"/>
+      <sourceFeature xsi:type="ecore:EReference" href="Mtctl-0.4.ecore#//Predicates/MessageInBufferExpr/message"/>
+    </featureInitializers>
+    <sourceClass href="Mtctl-0.4.ecore#//Predicates/MessageInBufferExpr"/>
+  </mappings>
+  <mappings>
+    <targetClass href="Mtctl.ecore#//predicates/ComparisonExpr"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="Mtctl.ecore#//predicates/ComparisonExpr/op"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="Mtctl-0.4.ecore#//Predicates/ComparisonExpr/op"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="Mtctl.ecore#//predicates/ComparisonExpr/lhs"/>
+      <sourceFeature xsi:type="ecore:EReference" href="Mtctl-0.4.ecore#//Predicates/ComparisonExpr/lhs"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="Mtctl.ecore#//predicates/ComparisonExpr/rhs"/>
+      <sourceFeature xsi:type="ecore:EReference" href="Mtctl-0.4.ecore#//Predicates/ComparisonExpr/rhs"/>
+    </featureInitializers>
+    <sourceClass href="Mtctl-0.4.ecore#//Predicates/ComparisonExpr"/>
+  </mappings>
+  <mappings>
+    <targetClass href="Mtctl.ecore#//quantifiers/LeadsToExpr"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="Mtctl.ecore#//quantifiers/LeadsToExpr/leftOpd"/>
+      <sourceFeature xsi:type="ecore:EReference" href="Mtctl-0.4.ecore#//Quantifiers/LeadsToExpr/leftOpd"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="Mtctl.ecore#//quantifiers/LeadsToExpr/rightOpd"/>
+      <sourceFeature xsi:type="ecore:EReference" href="Mtctl-0.4.ecore#//Quantifiers/LeadsToExpr/rightOpd"/>
+    </featureInitializers>
+    <sourceClass href="Mtctl-0.4.ecore#//Quantifiers/LeadsToExpr"/>
+  </mappings>
+  <mappings>
+    <targetClass href="Mtctl.ecore#//quantifiers/BoundVariable"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="Mtctl.ecore#//quantifiers/BoundVariable/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="Mtctl-0.4.ecore#//Quantifiers/BoundVariable/name"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="Mtctl.ecore#//quantifiers/BoundVariable/set"/>
+      <sourceFeature xsi:type="ecore:EReference" href="Mtctl-0.4.ecore#//Quantifiers/BoundVariable/set"/>
+    </featureInitializers>
+    <sourceClass href="Mtctl-0.4.ecore#//Quantifiers/BoundVariable"/>
+  </mappings>
+  <mappings>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="Mtctl.ecore#//quantifiers/QuantifierExpr/formula"/>
+      <sourceFeature xsi:type="ecore:EReference" href="Mtctl-0.4.ecore#//Quantifiers/QuantifierExpr/formula"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="Mtctl.ecore#//quantifiers/QuantifierExpr/var"/>
+      <sourceFeature xsi:type="ecore:EReference" href="Mtctl-0.4.ecore#//Quantifiers/QuantifierExpr/var"/>
+    </featureInitializers>
+    <sourceClass href="Mtctl-0.4.ecore#//Quantifiers/QuantifierExpr"/>
+  </mappings>
+  <mappings>
+    <targetClass href="Mtctl.ecore#//quantifiers/EGExpr"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="Mtctl.ecore#//quantifiers/EGExpr/expr"/>
+      <sourceFeature xsi:type="ecore:EReference" href="Mtctl-0.4.ecore#//Quantifiers/EGExpr/expr"/>
+    </featureInitializers>
+    <sourceClass href="Mtctl-0.4.ecore#//Quantifiers/EGExpr"/>
+  </mappings>
+  <mappings>
+    <targetClass href="Mtctl.ecore#//quantifiers/EFExpr"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="Mtctl.ecore#//quantifiers/EFExpr/expr"/>
+      <sourceFeature xsi:type="ecore:EReference" href="Mtctl-0.4.ecore#//Quantifiers/EFExpr/expr"/>
+    </featureInitializers>
+    <sourceClass href="Mtctl-0.4.ecore#//Quantifiers/EFExpr"/>
+  </mappings>
+  <mappings>
+    <targetClass href="Mtctl.ecore#//quantifiers/AGExpr"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="Mtctl.ecore#//quantifiers/AGExpr/expr"/>
+      <sourceFeature xsi:type="ecore:EReference" href="Mtctl-0.4.ecore#//Quantifiers/AGExpr/expr"/>
+    </featureInitializers>
+    <sourceClass href="Mtctl-0.4.ecore#//Quantifiers/AGExpr"/>
+  </mappings>
+  <mappings>
+    <targetClass href="Mtctl.ecore#//quantifiers/AFExpr"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="Mtctl.ecore#//quantifiers/AFExpr/expr"/>
+      <sourceFeature xsi:type="ecore:EReference" href="Mtctl-0.4.ecore#//Quantifiers/AFExpr/expr"/>
+    </featureInitializers>
+    <sourceClass href="Mtctl-0.4.ecore#//Quantifiers/AFExpr"/>
+  </mappings>
+  <mappings>
+    <targetClass href="Mtctl.ecore#//Property"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="Mtctl.ecore#//Property/expression"/>
+      <sourceFeature xsi:type="ecore:EReference" href="Mtctl-0.4.ecore#//Property/expression"/>
+    </featureInitializers>
+    <sourceClass href="Mtctl-0.4.ecore#//Property"/>
+  </mappings>
+  <mappings>
+    <targetClass href="Mtctl.ecore#//PropertyRepository"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="Mtctl.ecore#//PropertyRepository/properties"/>
+      <sourceFeature xsi:type="ecore:EReference" href="Mtctl-0.4.ecore#//PropertyRepository/properties"/>
+    </featureInitializers>
+    <sourceClass href="Mtctl-0.4.ecore#//PropertyRepository"/>
+  </mappings>
+  <mappings>
+    <targetClass href="Mtctl.ecore#//comparables/ConstExpr"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="Mtctl.ecore#//comparables/ConstExpr/val"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="Mtctl-0.4.ecore#//Comparables/ConstExpr/val"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="Mtctl.ecore#//comparables/ConstExpr/timeUnit"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="Mtctl-0.4.ecore#//Comparables/ConstExpr/timeUnit"/>
+    </featureInitializers>
+    <sourceClass href="Mtctl-0.4.ecore#//Comparables/ConstExpr"/>
+  </mappings>
+  <mappings>
+    <targetClass href="Mtctl.ecore#//sets/IntervalSetExpr"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="Mtctl.ecore#//sets/IntervalSetExpr/lowerVal"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="Mtctl-0.4.ecore#//Sets/IntervalSetExpr/lowerVal"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="Mtctl.ecore#//sets/IntervalSetExpr/upperVal"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="Mtctl-0.4.ecore#//Sets/IntervalSetExpr/upperVal"/>
+    </featureInitializers>
+    <sourceClass href="Mtctl-0.4.ecore#//Sets/IntervalSetExpr"/>
+  </mappings>
+  <mappings>
+    <sourceClass href="Mtctl-0.4.ecore#//Expression"/>
+  </mappings>
+  <mappings>
+    <targetClass href="Mtctl.ecore#//quantifiers/ExistenceQuantExpr"/>
+    <sourceClass href="Mtctl-0.4.ecore#//Quantifiers/ExistenceQuantExpr"/>
+  </mappings>
+  <mappings>
+    <sourceClass href="Mtctl-0.4.ecore#//Quantifiers/TemporalQuantifierExpr"/>
+  </mappings>
+  <mappings>
+    <targetClass href="Mtctl.ecore#//quantifiers/UniversalQuantExpr"/>
+    <sourceClass href="Mtctl-0.4.ecore#//Quantifiers/UniversalQuantExpr"/>
+  </mappings>
+  <mappings>
+    <targetClass href="Mtctl.ecore#//predicates/DeadlockExpr"/>
+    <sourceClass href="Mtctl-0.4.ecore#//Predicates/DeadlockExpr"/>
+  </mappings>
+  <mappings>
+    <targetClass href="Mtctl.ecore#//predicates/ConnectorOverflowExpr"/>
+    <sourceClass href="Mtctl-0.4.ecore#//Predicates/ConnectorOverflowExpr"/>
+  </mappings>
+  <mappings>
+    <targetClass href="Mtctl.ecore#//predicates/PredicateExpr"/>
+    <sourceClass href="Mtctl-0.4.ecore#//Predicates/PredicateExpr"/>
+  </mappings>
+  <mappings>
+    <sourceClass href="Mtctl-0.4.ecore#//Predicates/DynamicPredicateExpr"/>
+  </mappings>
+  <mappings>
+    <sourceClass href="Mtctl-0.4.ecore#//Predicates/StaticPredicateExpr"/>
+  </mappings>
+  <mappings>
+    <targetClass href="Mtctl.ecore#//predicates/TrueExpr"/>
+    <sourceClass href="Mtctl-0.4.ecore#//Predicates/TrueExpr"/>
+  </mappings>
+  <mappings>
+    <targetClass href="Mtctl.ecore#//predicates/FalseExpr"/>
+    <sourceClass href="Mtctl-0.4.ecore#//Predicates/FalseExpr"/>
+  </mappings>
+  <mappings>
+    <sourceClass href="Mtctl-0.4.ecore#//Sets/SetExpr"/>
+  </mappings>
+  <mappings>
+    <targetClass href="Mtctl.ecore#//sets/ClockSetExpr"/>
+    <sourceClass href="Mtctl-0.4.ecore#//Sets/ClockSetExpr"/>
+  </mappings>
+  <mappings>
+    <targetClass href="Mtctl.ecore#//sets/MessageSetExpr"/>
+    <sourceClass href="Mtctl-0.4.ecore#//Sets/MessageSetExpr"/>
+  </mappings>
+  <mappings>
+    <targetClass href="Mtctl.ecore#//sets/StateSetExpr"/>
+    <sourceClass href="Mtctl-0.4.ecore#//Sets/StateSetExpr"/>
+  </mappings>
+  <mappings>
+    <targetClass href="Mtctl.ecore#//sets/TransitionSetExpr"/>
+    <sourceClass href="Mtctl-0.4.ecore#//Sets/TransitionSetExpr"/>
+  </mappings>
+  <mappings>
+    <targetClass href="Mtctl.ecore#//sets/BufferSetExpr"/>
+    <sourceClass href="Mtctl-0.4.ecore#//Sets/BufferSetExpr"/>
+  </mappings>
+  <mappings>
+    <sourceClass href="Mtctl-0.4.ecore#//Comparables/MapExpr"/>
+  </mappings>
+  <mappings>
+    <targetClass href="Mtctl.ecore#//comparables/SourceStateExpr"/>
+    <sourceClass href="Mtctl-0.4.ecore#//Comparables/SourceStateExpr"/>
+  </mappings>
+  <mappings>
+    <targetClass href="Mtctl.ecore#//comparables/TargetStateExpr"/>
+    <sourceClass href="Mtctl-0.4.ecore#//Comparables/TargetStateExpr"/>
+  </mappings>
+  <release href="../../org.muml.core.migrator/model/muml.releaseset#//@releases.1"/>
+</emm:Migrator>

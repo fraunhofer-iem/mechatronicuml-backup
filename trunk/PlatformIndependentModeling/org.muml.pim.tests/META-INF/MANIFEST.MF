@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MechatronicUML Meta-Model Tests
+Bundle-SymbolicName: org.muml.pim.tests
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.emf.ecore;bundle-version="2.7.0",
+ org.junit;visibility:=reexport,
+ org.eclipse.emf.ecore.xmi;bundle-version="2.7.0",
+ org.eclipse.emf.codegen.ecore;bundle-version="2.7.0",
+ org.muml.pim,
+ org.eclipse.ocl;bundle-version="3.1.0",
+ org.eclipse.ocl.ecore;bundle-version="3.1.2",
+ org.eclipse.gmf,
+ org.eclipse.gmf.runtime.emf.core,
+ org.eclipse.gmf.graphdef,
+ org.eclipse.gmf.tooldef,
+ org.eclipse.gmf.map,
+ org.eclipse.gmf.codegen,
+ org.eclipse.gmf.validate,
+ org.muml.core.tests,
+ org.muml.pim.common,
+ org.muml.ape,
+ org.muml.modelcopy.qvto.library,
+ org.muml.pim.actionlanguage;bundle-version="0.5.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
+Export-Package: org.muml.pim.tests

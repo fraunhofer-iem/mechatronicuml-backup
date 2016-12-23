@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<generator:CodeGen xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:generator="http://www.opendds.org/modeling/schemas/Generator/1.0" xmi:id="_0vu3IJrHEeajy9bLT812Ig">
+  <source xmi:id="_0vwFQJrHEeajy9bLT812Ig" name="/org.muml.example.blinkingled2/dds/MUML_DDS.opendds"/>
+  <target xmi:id="_0vwFQZrHEeajy9bLT812Ig" name="/org.muml.example.blinkingled2/dds"/>
+  <instances xmi:id="_0vwFQprHEeajy9bLT812Ig">
+    <instance xmi:id="_0vwFQ5rHEeajy9bLT812Ig" name="default"/>
+  </instances>
+  <searchPaths xmi:id="_0vwFRJrHEeajy9bLT812Ig"/>
+  <transports xmi:id="_0vwFRZrHEeajy9bLT812Ig"/>
+</generator:CodeGen>

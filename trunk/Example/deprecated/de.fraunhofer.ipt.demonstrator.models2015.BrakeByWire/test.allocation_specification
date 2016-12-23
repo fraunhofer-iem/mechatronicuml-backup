@@ -1,0 +1,108 @@
+brakeByWireAllocationSpecification {
+	
+	include 'platform:/plugin/de.uni_paderborn.fujaba.muml.allocation.language.xtext/operations/OCLContext.ocl'
+	
+	constraint requiredLocation allowedECUs {
+		descriptors (first, second);
+		ocl
+			self.getAllSWInstances()->collect(ci |
+				-- do not pass false, otherwise we might allocate to a sensor
+				-- instead of a StructuredResourceInstance
+				self.allowedECUNames(ci.name, true)->collect(ecu |
+					self.allocateToECU(ci, ecu)
+				)
+			)->asSet()
+		;
+	}
+	
+	constraint requiredLocation communicatingComponents {
+		descriptors (c1, e1), (c2, e2);
+		ocl
+			self.allocateCommunicatingComponentsToConnectedECUs()
+		;
+	}
+	
+	constraint collocation colocateBrakePedalComponents {
+		descriptors (first, second);
+		ocl
+			-- C2 = BrakePedal
+			--self.colocateSCIAndEmbeddedParts('C2')
+			-- C3 = wheel (sc7, sc8)
+			self.colocateSCIAndEmbeddedParts('wheel');
+	}
+	
+		constraint sameLocation collocateSC11AndSC12 {
+descriptors (first, second);
+ocl self.allocateToSameECUs('sc11','sc12');
+}
+	
+	constraint requiredResource maxMemoryConsumption {
+		lhs requiredMemory;
+		rhs maxMemory;
+		descriptors (componentInstance, resourceInstance);
+		ocl
+			self.maxMemoryConsumption()
+		;
+	}
+	
+	constraint requiredLocation calliperToBrakeECU {
+		descriptors (first, second);
+		ocl
+			-- C1 = Calliper
+			self.allocateEmbeddedToPlatformInstance('calliper', 'Brake.0')
+		;
+	}
+	
+	context oclcontext::OCLContext
+		def: allowedECUNames(componentName : String) : Set(String) =
+			-- calliper component instances
+			if componentName = 'sc1' then
+				-- temperatureSensor
+				Set{'R1.0.1'}
+			else if componentName = 'sc2' then
+				-- calliper position sensor
+				Set{'R2.0.1'}
+			else if componentName = 'sc3' then
+				-- parking brake actuator
+				Set{'R3.0.1'}
+			else if componentName = 'sc5' then
+				-- calliper clamp actuator
+				Set{'R5.0.1'}
+			-- brake pedal component instances
+			else if componentName = 'sc11' then
+				-- pedal position sensor
+				Set{'11.0.1'}
+			else if componentName = 'sc12' then
+				-- brake force sensor
+				Set{'12.0.1'}
+			else if componentName = 'sc13' then
+				-- brake feedback actuator
+				Set{'13.0.1'}
+			-- wheel component instances
+			else if componentName = 'sc7' then
+				Set{'R7.0.1'} -- (brake platform)
+			-- other sensors (not part of a structured ci)
+			else if componentName = 'sc9' then
+				Set{'9.0.1'}
+			else
+				Set{}
+			endif
+			endif
+			endif
+			endif
+			endif
+			endif
+			endif
+			endif
+			endif
+			
+		def: allowedECUNames(componentName : String, allIfNoRestriction : Boolean) : Set(String) =
+			let ecuNames : Set(String) = self.allowedECUNames(componentName)
+			in
+			if ecuNames->isEmpty() and allIfNoRestriction then
+				self.getAllHWInstances()->collect(name)
+			else
+				ecuNames
+			endif
+
+}

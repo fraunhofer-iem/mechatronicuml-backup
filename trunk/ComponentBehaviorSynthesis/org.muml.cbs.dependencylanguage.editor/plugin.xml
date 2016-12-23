@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated dependencylanguage -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.muml.cbs.dependencylanguage.presentation.DependencylanguageModelWizardID"
+            name="%_UI_DependencylanguageModelWizard_label"
+            class="org.muml.cbs.dependencylanguage.presentation.DependencylanguageModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/DependencylanguageModelFile.gif">
+         <description>%_UI_DependencylanguageModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated dependencylanguage -->
+      <editor
+            id="org.muml.cbs.dependencylanguage.presentation.DependencylanguageEditorID"
+            name="%_UI_DependencylanguageEditor_label"
+            icon="icons/full/obj16/DependencylanguageModelFile.gif"
+            extensions="dependencylanguage"
+            class="org.muml.cbs.dependencylanguage.presentation.DependencylanguageEditor"
+            contributorClass="org.muml.cbs.dependencylanguage.presentation.DependencylanguageActionBarContributor">
+      </editor>
+   </extension>
+</plugin>

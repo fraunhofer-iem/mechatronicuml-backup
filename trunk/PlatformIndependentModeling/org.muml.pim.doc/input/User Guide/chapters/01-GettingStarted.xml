@@ -1,0 +1,401 @@
+<sect1 xml:id="gettingstarted"><title>Getting Started</title>
+	<para>
+		This chapter gives an instruction to install the MechatronicUML Tool Suite within Eclipse.
+	</para>
+	
+	<sect2><title>Preconditions</title>
+		<para>
+			MechatronicUML Tool Suite needs Java 1.6 for full feature support.
+
+			If Java 1.6 is not yet on your computer: please visit
+			<ulink url="http://www.oracle.com/technetwork/java/">
+				http://www.oracle.com/technetwork/java/
+			</ulink>​
+			and download the latest Java JDK 1.6 release (SE aka Standard Edition) for your platform 
+			(install JDK and not the JRE, if possible).
+
+			<important>
+				Make sure the Java 1.6 is the default Java platform implementation on your platform 
+				(for example, on Windows, open a command-line window and type "java -version" 
+				into it, without the double quotes).
+			</important>
+		
+		</para>
+	
+	</sect2>
+	
+	<sect2><title>Installing Eclipse And Basic Modeling Plugins</title>
+		<orderedlist numeration="arabic">
+			<listitem>
+				<para>
+					Download and install the Eclipse Modeling Tools (Indigo-Release):
+					<ulink url="http://www.eclipse.org/downloads/packages/eclipse-modeling-tools/indigor">
+						http://www.eclipse.org/downloads/packages/eclipse-modeling-tools/indigor
+					</ulink>
+				</para>
+			</listitem>
+			
+			<listitem>
+				<para>
+					Be sure that you choose Java 6 as default Java Runtime.
+					Window -> Preference -> Java -> Installed JREs -> JRE6 must be checked. 
+					The common windows path (32Bit) is "C:\Program Files\Java\jre6".
+					<!--Siehe dazu <xref linkend="img:window_preferences"/>.-->
+					<figure id="img:jre6check">
+						<title>JRE 6 must be checked.</title>
+						<mediaobject>
+      						<imageobject>
+ 	     						<imagedata fileref="User Guide/images/window_preferences.png" scale="100"/>
+      						</imageobject>
+						</mediaobject>
+						<mediaobject>
+      						<imageobject>
+ 	     						<imagedata fileref="User Guide/images/space.png" scale="100"/>
+      						</imageobject>
+						</mediaobject>
+						<mediaobject>
+							<imageobject>
+ 	     						<imagedata fileref="User Guide/images/jre6check.png" scale="100"/>
+      						</imageobject>
+						</mediaobject>
+					</figure>
+				</para>
+			</listitem>
+			
+			<listitem>
+				<para>
+					Install the Subversive-Plugin to be able to checkout and commit to repositories with SVN: 
+					<orderedlist numeration="lowerroman">
+						<listitem>
+							<para>
+								Click Help -> Install New Software...
+								<figure id="img:installnewsoftware">
+									<title>Install New Software...</title>
+									<mediaobject>
+      									<imageobject>
+ 	     									<imagedata fileref="User Guide/images/installnewsoftware.png" scale="100"/>
+      									</imageobject>
+									</mediaobject>
+								</figure> 
+							</para>
+						</listitem>
+						
+						<listitem>
+							<para>
+								Select Site "Indigo - ​http://download.eclipse.org/releases/indigo"
+								<figure id="img:selectindigo">
+									<title>Select Indigo.</title>
+									<mediaobject>
+      									<imageobject>
+ 	     									<imagedata fileref="User Guide/images/selectindigo.png" scale="100"/>
+      									</imageobject>
+									</mediaobject>
+								</figure> 
+							</para>
+						</listitem>
+						
+						<listitem>
+							<para>
+								Choose the following plugin: *Category "Collaboration": 
+								Subversive SVN Team Provider (Incubation)
+								<figure id="img:svnplugin">
+									<title>Choose the Subversive SVN Team Provider.</title>
+									<mediaobject>
+      									<imageobject>
+ 	     									<imagedata fileref="User Guide/images/collaboration.png" scale="100"/>
+      									</imageobject>
+									</mediaobject>
+									<mediaobject>
+      									<imageobject>
+ 	     									<imagedata fileref="User Guide/images/subversive.png" scale="100"/>
+      									</imageobject>
+									</mediaobject>
+								</figure> 
+							</para>
+						</listitem>
+						
+						<listitem>
+							<para>
+								Press Next and follow the installation instructions. 
+							</para>
+						</listitem>
+					</orderedlist>
+				</para>
+			</listitem>
+			
+			<listitem>
+				<para>
+					After the restart of Eclipse, Subversive will prompt you to install an SVN Adapter. 
+					Please choose a propriate adapter for your plattform and install the required plugins.
+					<figure id="img:svnadapter">
+						<title>Choose a SVN adapter.</title>
+						<mediaobject>
+      						<imageobject>
+ 	     						<imagedata fileref="User Guide/images/svnadaptersmall.png" scale="100"/>
+      						</imageobject>
+						</mediaobject>
+					</figure> 
+				</para>
+			</listitem>
+			
+			<listitem>
+				<para>
+					Install required modeling components with the "Installing modeling components" wizard:
+					ModelingComponents
+					<orderedlist numeration="lowerroman">
+						<listitem>
+							<para>
+								click on the button
+								<imageobject>
+ 	     							<imagedata fileref="User Guide/images/ModelingComponents.png" scale="100"/>
+      							</imageobject>
+      							"Installing modeling components"
+							</para>
+						</listitem>	 
+						<listitem>
+							<para>
+								select from the component list:
+ 								<itemizedlist mark='bullet'>
+      								<listitem><para>
+      									Graphical Modeling Framework Tooling
+      								</para></listitem>
+      								<listitem><para>
+      									XPand
+      								</para></listitem>
+      								<listitem><para>
+      									XText
+      								</para></listitem>
+      								<listitem><para>
+      									Operational QVT
+      								</para></listitem>
+      								<listitem><para>
+      									Extended Editing Framework
+      								</para></listitem>
+     							</itemizedlist>
+     							<figure id="img:components">
+									<title>Choose these components.</title>
+									<mediaobject>
+      									<imageobject>
+ 	     									<imagedata fileref="User Guide/images/modelingcomponents1.png" scale="100"/>
+      									</imageobject>
+									</mediaobject>
+									<mediaobject>
+      									<imageobject>
+ 	     									<imagedata fileref="User Guide/images/space.png" scale="100"/>
+      									</imageobject>
+									</mediaobject>
+									<mediaobject>
+      									<imageobject>
+ 	     									<imagedata fileref="User Guide/images/modelingcomponents2.png" scale="100"/>
+      									</imageobject>
+									</mediaobject>
+								</figure> 
+							</para>
+						</listitem>	
+						
+						<listitem>
+							<para>
+								Click "Finish" and follow the instructions.  
+							</para>
+						</listitem>
+					</orderedlist>
+				</para>
+			</listitem>
+			
+			<listitem>
+				<para>
+					Install Eclipse Edapt (all features provided in the Update-Site at
+					<ulink url="http://download.eclipse.org/edapt/update-site">
+						http://download.eclipse.org/edapt/update-site
+					</ulink>
+					​). 
+					Edapt enables us to migrate old fujaba-files each time our Meta-Model changes. 
+					If you want to apply changes to the meta-model as well, you have to use the Edapt 
+					operations so that Edapt can track your changes. 
+				</para>
+			</listitem>
+			
+			<listitem>
+				<para>
+					OPTIONAL: For layouting GMF-based diagrams, you have to install KIELER.
+					Its short for Kiel Integrated Environment for Layout and is an Eclipse-Plugin
+					that has better layouting algorithmes than the ones shipped with Eclipse.
+					We mainly use Kieler for layouting our EMF Meta Model diagrams,
+					but you can also use Kieler to layout any other GMF-based diagrams
+					like the MUML Real-Time Statechart Diagram.
+
+					<itemizedlist mark='bullet'>
+      					<listitem><para>
+      						Click Help -> Install New Software... -> Click on Add...
+      					</para></listitem>
+      					<listitem><para>
+      						Choose a name and copy the following link to Location and click OK:
+   				 			<ulink url="http://rtsys.informatik.uni-kiel.de/~kieler/updatesite/release_0.6/">
+    				​			http://rtsys.informatik.uni-kiel.de/~kieler/updatesite/release_0.6/
+    						</ulink>
+      					</para></listitem>
+      					<listitem><para>
+      						Install the wanted plug-ins.
+      					</para></listitem>
+      				</itemizedlist>
+				</para>
+			</listitem>
+			<listitem>
+				<para>
+					Check for updates by clicking on Help -> Check for Updates. 
+				</para>
+			</listitem>
+		</orderedlist>
+	</sect2>
+	
+	<sect2><title>Installing Plugins of the MechatronicUML Tool Suite</title>
+		<para>
+			Our Main-MechatronicUML-SVN is at:
+			<ulink url="​https://svn-serv.cs.upb.de/mechatronicuml">
+				​https://svn-serv.cs.upb.de/mechatronicuml
+			</ulink>
+			(anonymous login for checkout; IMT-Account and write access needed for checkin).
+	
+			Check-Out:
+			
+			<itemizedlist mark='bullet'>
+      			<listitem><para>
+      				Switch to folder "trunk"
+      			</para></listitem>
+      			<listitem><para>
+      				Mark all Subfolders
+      			</para></listitem>
+      			<listitem><para>
+      				Right mouse click --> choose "Check Out" 
+      				<figure id="img:checkout">
+						<title>That's how you check out.</title>
+						<mediaobject>
+		      				<imageobject>
+ 	     						<imagedata fileref="User Guide/images/checkout.png" scale="100"/>
+      						</imageobject>
+						</mediaobject>
+					</figure> 
+      			</para></listitem>
+      		</itemizedlist>
+      		
+			Additionally you need some plugins from another SVN (org.muml.modeling):
+			<ulink url="http://svn.codespot.com/a/eclipselabs.org/sdm-commons">
+				http://svn.codespot.com/a/eclipselabs.org/sdm-commons
+			</ulink>
+			(anonymous login for checkout; Google-Code-Account and write access needed for checkin)
+	
+			Check-Out:
+			
+			<itemizedlist mark='bullet'>
+      			<listitem><para>
+      				Switch to folder "trunk/plugins"
+      			</para></listitem>
+      			<listitem><para>
+      				Mark all Subfolders
+      			</para></listitem>
+      			<listitem><para>
+      				Right mouse click --> choose "Check Out"  
+      			</para></listitem>
+      		</itemizedlist>
+   		 	
+   		 	Since we do not need all the plug-ins from the storydriven-SVN, you may close all unrelated projects as described below:
+			<itemizedlist mark='bullet'>
+      			<listitem><para>
+      				Within the Package Explorer mark all the projects from the mechatronicuml-SVN.
+      			</para></listitem>
+      			<listitem><para>
+      				Right click on on of the projects and select "close unrelated projects" and confirm with OK.
+      				<figure id="img:closeunrelated">
+						<title>That's how you close unrelated projects.</title>
+						<mediaobject>
+      						<imageobject>
+ 	     						<imagedata fileref="User Guide/images/closeunrelated.png" scale="100"/>
+      						</imageobject>
+						</mediaobject>
+					</figure>
+      			</para></listitem>
+      			<listitem><para>
+      				In the following screenshot all the selected projects are the current required projects from the storydriven-SVN.
+      				<figure id="img:neededSVN">
+						<title>That's how you close unrelated projects.</title>
+						<mediaobject>
+      						<imageobject>
+ 	     						<imagedata fileref="User Guide/images/neededSVN.png" scale="100"/>
+      						</imageobject>
+						</mediaobject>
+					</figure>
+      			</para></listitem>
+      		</itemizedlist>
+    	</para>
+	</sect2>
+	
+	<sect2><title>Run Configurations</title>
+		<para>
+			Be sure to add the following vmarks to your run configuration! -XX:PermSize=256M -XX:MaxPermSize=512M
+			<itemizedlist mark='bullet'>
+      			<listitem><para>
+      				Switch to java Perspective
+      			</para></listitem>
+      			<listitem><para>
+      				Right click on one of the projects
+      			</para></listitem>
+      			<listitem><para>
+      				select Run As -> Run Configuration...
+      				<figure id="img:MaxPerm1">
+						<title>Select Run As -> Run Configuration...</title>
+						<mediaobject>
+      						<imageobject>
+ 	     						<imagedata fileref="User Guide/images/MaxPerm1.png" scale="100"/>
+      						</imageobject>
+						</mediaobject>
+					</figure>
+      			</para></listitem>
+      			<listitem><para>
+      				Add the following vmarks to your run configuration! -XX:PermSize=256M -XX:MaxPermSize=512M
+      				<figure id="img:MaxPerm2">
+						<title>Add these arguments.</title>
+						<mediaobject>
+      						<imageobject>
+ 	     						<imagedata fileref="User Guide/images/MaxPerm2.png" scale="100"/>
+      						</imageobject>
+						</mediaobject>
+					</figure>
+      			</para></listitem>
+      		</itemizedlist>
+      		
+			Otherwise you probably get the following error at your eclipse console.
+      		!ENTRY org.eclipse.ui 4 0 2011-06-28 14:57:41.478 !MESSAGE Unhandled event loop
+      		exception Error while logging event loop exception: java.lang.OutOfMemoryError?: PermGen? space
+			
+   			See also: 
+   			<ulink url="http://wiki.eclipse.org/FAQ_How_do_I_increase_the_permgen_size_available_to_Eclipse%3F">
+   				http://wiki.eclipse.org/FAQ_How_do_I_increase_the_permgen_size_available_to_Eclipse%3F
+   			</ulink>
+   			​
+		</para>
+	</sect2>
+	
+	<sect2><title>Starting FujabaRT</title>
+		<para>
+			Start FujabaRT after checking out the sources:
+			<itemizedlist mark='bullet'>
+      			<listitem><para>
+      				In Eclipse, switch to Java perspective.
+      			</para></listitem>
+      			<listitem><para>
+      				Select one of the projects.
+      			</para></listitem>
+      			<listitem><para>
+      				Press the "Run"-button (green circle with white triangle)
+      				<imageobject>
+ 	     				<imagedata fileref="User Guide/images/Run.png" scale="100"/>
+      				</imageobject>
+      			</para></listitem>
+      			<listitem><para>
+      				It might happen, that some projects do not compile. Do not pay attention to that, nevertheless it should work.
+      			</para></listitem>
+      		</itemizedlist>
+		</para>
+	</sect2>
+	
+</sect1>

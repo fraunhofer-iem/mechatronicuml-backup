@@ -1,0 +1,28 @@
+import simulink::stateflow;
+
+extension org::eclipse::xtend::util::stdlib::counter;
+extension org::eclipse::xtend::util::stdlib::elementprops;
+
+int getStateflowId(StateflowElement elem):
+	if getProperty(elem, 'StateflowId') != null then
+		getProperty(elem, 'StateflowId')
+	/*Define a new one*/
+	else 
+		setProperty(elem, 'StateflowId', elem.getNewStateflowId())
+		-> elem.getStateflowId();
+		
+int getNewStateflowId(StateflowElement elem):
+	counterInc('StateflowIDspace');
+	
+int getNextSiblingStateflowIdId(StateflowElement element, List[StateflowElement] list):
+	if(list.indexOf(element) == list.size -1) then
+	 	0
+	 else
+	 	list.get(list.indexOf(element)+1).getStateflowId();
+	 	
+	 	
+int getPrevSiblingStateflowIdId(StateflowElement element, List[StateflowElement] list):
+	if(list.indexOf(element) == 0) then
+	 	0
+	 else
+	 	list.get(list.indexOf(element)-1).getStateflowId();	 	

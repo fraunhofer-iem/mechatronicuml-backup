@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:realtimestatechart="http://www.muml.org/pim/realtimestatechart/1.0.0" xmi:id="_oi1QUMDAEeS7le8XRznCjg" type="Real-Time Statechart" name="informApproacherRoleRTSC.realtimestatechart_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_vyeGYME6EeSGhLo9NApUcQ" type="2007" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_vyeGYsE6EeSGhLo9NApUcQ" type="5061"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_vyeGY8E6EeSGhLo9NApUcQ" type="5062"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_vyeGZME6EeSGhLo9NApUcQ" type="7030">
+      <children xmi:type="notation:Shape" xmi:id="_v1OfcME6EeSGhLo9NApUcQ" type="3032" fontName="Segoe UI" fillColor="16764057" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_v1OfcsE6EeSGhLo9NApUcQ" type="5060"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_v1Ofc8E6EeSGhLo9NApUcQ" type="7031">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_v1OfdME6EeSGhLo9NApUcQ" sorting="Automatic" sortingKeys="default_sorting_key:Ascending"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_v1OfdcE6EeSGhLo9NApUcQ"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_v1OfdsE6EeSGhLo9NApUcQ" type="7032">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_v1Ofd8E6EeSGhLo9NApUcQ"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_v1OfeME6EeSGhLo9NApUcQ"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_v1OfecE6EeSGhLo9NApUcQ" type="7033">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_v1OfesE6EeSGhLo9NApUcQ"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_v1Ofe8E6EeSGhLo9NApUcQ"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_v1OffME6EeSGhLo9NApUcQ" type="7034">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_v1OffcE6EeSGhLo9NApUcQ"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_v1OffsE6EeSGhLo9NApUcQ"/>
+        </children>
+        <element xmi:type="realtimestatechart:State" href="../overtaking-cars-w-contraflow_Correct.muml#_9of38Z6REeSNj-oH_1Kb-Q"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_v1OfccE6EeSGhLo9NApUcQ"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_v1Off8E6EeSGhLo9NApUcQ" type="3032" fontName="Segoe UI" fillColor="16764057" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_v1OfgcE6EeSGhLo9NApUcQ" type="5060"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_v1OfgsE6EeSGhLo9NApUcQ" type="7031">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_v1Ofg8E6EeSGhLo9NApUcQ" sorting="Automatic" sortingKeys="default_sorting_key:Ascending"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_v1OfhME6EeSGhLo9NApUcQ"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_v1OfhcE6EeSGhLo9NApUcQ" type="7032">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_v1OfhsE6EeSGhLo9NApUcQ"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_v1Ofh8E6EeSGhLo9NApUcQ"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_v1OfiME6EeSGhLo9NApUcQ" type="7033">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_v1OficE6EeSGhLo9NApUcQ"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_v1OfisE6EeSGhLo9NApUcQ"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_v1Ofi8E6EeSGhLo9NApUcQ" type="7034">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_v1OfjME6EeSGhLo9NApUcQ"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_v1OfjcE6EeSGhLo9NApUcQ"/>
+        </children>
+        <element xmi:type="realtimestatechart:State" href="../overtaking-cars-w-contraflow_Correct.muml#_LpuiAKL7EeSbmbyTJYAEVw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_v1OfgME6EeSGhLo9NApUcQ" x="410" y="10"/>
+      </children>
+    </children>
+    <element xmi:type="realtimestatechart:RealtimeStatechart" href="../overtaking-cars-w-contraflow_Correct.muml#_9of38J6REeSNj-oH_1Kb-Q"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vyeGYcE6EeSGhLo9NApUcQ" height="226"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_oi1QUcDAEeS7le8XRznCjg"/>
+  <element xmi:type="realtimestatechart:RealtimeStatechart" href="../overtaking-cars-w-contraflow_Correct.muml#_9of38J6REeSNj-oH_1Kb-Q"/>
+  <edges xmi:type="notation:Connector" xmi:id="_v1V0MME6EeSGhLo9NApUcQ" type="4003" source="_v1OfcME6EeSGhLo9NApUcQ" target="_v1Off8E6EeSGhLo9NApUcQ" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_v1V0M8E6EeSGhLo9NApUcQ" type="6005">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_v1V0NME6EeSGhLo9NApUcQ" y="-20"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_v1V0NcE6EeSGhLo9NApUcQ" type="6006">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_v1V0NsE6EeSGhLo9NApUcQ" x="-10" y="20"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_v1V0McE6EeSGhLo9NApUcQ" fontName="Segoe UI"/>
+    <element xmi:type="realtimestatechart:Transition" href="../overtaking-cars-w-contraflow_Correct.muml#_N5vc0KL7EeSbmbyTJYAEVw"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_v1V0MsE6EeSGhLo9NApUcQ" points="[4, -20, 0, -23]$[0, -23, -4, -26]"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_w2OCYME6EeSGhLo9NApUcQ" id="(0.013333333333333334,0.5471698113207547)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_v1gzUME6EeSGhLo9NApUcQ" type="4003" source="_v1Off8E6EeSGhLo9NApUcQ" target="_v1OfcME6EeSGhLo9NApUcQ" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_v1gzU8E6EeSGhLo9NApUcQ" type="6005">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_v1gzVME6EeSGhLo9NApUcQ" y="-20"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_v1gzVcE6EeSGhLo9NApUcQ" type="6006">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_v1gzVsE6EeSGhLo9NApUcQ" x="-10" y="20"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_v1gzUcE6EeSGhLo9NApUcQ" fontName="Segoe UI"/>
+    <element xmi:type="realtimestatechart:Transition" href="../overtaking-cars-w-contraflow_Correct.muml#_OXP4MKL7EeSbmbyTJYAEVw"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_v1gzUsE6EeSGhLo9NApUcQ" points="[0, 9, 407, 30]$[0, 46, 407, 67]$[-415, 46, -8, 67]$[-415, 12, -8, 33]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xZqGoME6EeSGhLo9NApUcQ" id="(0.5333333333333333,0.8301886792452831)"/>
+  </edges>
+</notation:Diagram>

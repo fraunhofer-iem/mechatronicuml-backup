@@ -1,0 +1,100 @@
+	\newif\ifshowinternal
+\showinternaltrue %flag for showing/hiding owners of chapters/sections... Use \showinternaltrue or \showinternalfalse. The toc may not respond immediately (~> clear cache files)
+% !TeX spellcheck = en_US
+\documentclass[a4paper, % DIN A4 Format
+	12pt, %Schriftgröße
+	%twoside, %zweiseitiges Layout (linke und rechte Seiten)
+	%openright, %Kapitel fangen immer auf rechter Seite an
+	cleardoublepage=empty, %evtl. eingefügte Seiten sind leer (ohne Seitenzahl), alternativ: cleardoublepage=plain (mit Seitenzahl)
+	numbers=noenddot, %hinter Kapitel- und Abschnittsnummern grundsätzlich kein Punkt am Ende
+	BCOR1.5cm
+	]{scrbook} % Dokumentklasse aus KOMA-Paket, alternativ: scrartcl oder scrreprt
+\usepackage[utf8]{inputenc}
+\usepackage{cite}
+\usepackage[hidelinks]{hyperref} %Jan: I hope this does not cause problems again. Just remove the [hidelinks] parameter if it does.
+\usepackage{listings}
+\usepackage[pdftex]{graphicx}
+\usepackage[\ifshowinternal \else disable\fi]{todonotes}
+\usepackage{enumerate}
+\usepackage{longtable}
+\usepackage{float}
+
+%for fancy table stuff
+\usepackage{xcolor} 
+\usepackage{colortbl}
+\usepackage{multicol} 
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{rotating}
+\usepackage{tabularx}
+
+
+\input{includes/uppaal_listings} %listing definition for Uppaal. Command: \begin{lstuppaal}{label}{caption}
+
+% --- Macros ---
+\input{includes/macros} %it's in another file so we can easily migrate macro changes between theses. 
+\newcommand{\titleinfo}{Overtaking with approacher} 
+\title{\titleinfo}
+%\subtitle{} % no subtitle. 
+\author{} %TODO
+
+
+\begin{document}
+
+\thispagestyle{empty}
+\begin{titlepage}
+	\begin{center}
+	  
+
+	  \begin{figure}[h!]
+	  \centering
+	  \begin{minipage}{.5\textwidth}
+	  	\centering
+	  	\includegraphics[width=.8\linewidth]{figures/hni}
+	  \end{minipage}%
+	  \begin{minipage}{.5\textwidth}
+	  	\centering
+	  	\includegraphics[width=.8\linewidth]{figures/ipt}
+	  \end{minipage}
+	  \end{figure}
+	  \vspace{.5cm}
+	  \begin{figure}[h!]
+	  \centering
+	  \includegraphics[width=0.4\textwidth]{figures/muml-rgb}
+	  \end{figure}
+	  \vspace{.5cm}
+	  \begin{figure}[h!]
+	  \centering
+
+
+	  \end{figure}
+	   	  
+	  \vspace{2cm}
+	  \Huge{\titleinfo}\\
+	  \normalsize
+	  \vspace{1cm}
+	
+	  \vspace{0.5cm}
+	  
+	  \vspace{1cm}
+	  
+	  \vfill
+	  
+	  Paderborn, January 2015
+	\end{center}
+\end{titlepage}
+
+This document summarizes the requirements for the Overtaking scenario with approacher. In Chapter \ref{chap-scenario-1}, we shortly describe the scenario. The basic requirements are listed in Chapter \ref{chap-basic-2}. Finally, more advanced requirements are listed in Chapter \ref{chap-optional-3}. 
+
+\input{scenario}
+\input{requirements}
+\input{optional}
+
+
+
+
+%\nocite{*} %uncomment if you want unreferenced sources to appear
+\bibliographystyle{includes/splncs}
+\bibliography{citations,../../02_seminar/seminartheses}{}
+
+\end{document}

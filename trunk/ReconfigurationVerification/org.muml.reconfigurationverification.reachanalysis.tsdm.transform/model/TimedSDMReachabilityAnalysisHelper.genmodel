@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.muml.reconfigurationverification.reachanalysis.tsdm.transform/src"
+    modelPluginID="org.muml.reconfigurationverification.reachanalysis.tsdm.transform"
+    modelName="TimedSDMReachabilityAnalysisHelper" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.muml.pim/model/pim.genmodel#//pim ../../org.muml.reconfigurationverification.timedstorydiagram/model/TimedStoryDiagrams.genmodel#//timedstorydiagram ../../org.muml.core/model/core.genmodel#//core ../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram">
+  <foreignModel>TimedSDMReachabilityAnalysisHelper.ecore</foreignModel>
+  <genPackages prefix="Tsdmhelper" basePackage="org.muml.reconfigurationverification.reachanalysis.tsdm.transform"
+      disposableProviderFactory="true" ecorePackage="TimedSDMReachabilityAnalysisHelper.ecore#/">
+    <genClasses ecoreClass="TimedSDMReachabilityAnalysisHelper.ecore#//BoundClockInstances">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TimedSDMReachabilityAnalysisHelper.ecore#//BoundClockInstances/clockInstances"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

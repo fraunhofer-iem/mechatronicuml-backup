@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:realtimestatechart="http://www.muml.org/pim/realtimestatechart/1.0.0" xmi:id="_RTF5gu5CEeSkkcvANuOg5g" type="Real-Time Statechart" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_2F6roO5DEeSkkcvANuOg5g" type="2007" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_2F6rou5DEeSkkcvANuOg5g" type="5061"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_2F6ro-5DEeSkkcvANuOg5g" type="5062"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_2F6rpO5DEeSkkcvANuOg5g" type="7030">
+      <children xmi:type="notation:Shape" xmi:id="_2F_kIO5DEeSkkcvANuOg5g" type="3032" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_2GALMO5DEeSkkcvANuOg5g" type="5060"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_2GALMe5DEeSkkcvANuOg5g" type="7031">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_2GALMu5DEeSkkcvANuOg5g" sorting="Automatic" sortingKeys="default_sorting_key:Ascending"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_2GALM-5DEeSkkcvANuOg5g"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_2GALNO5DEeSkkcvANuOg5g" type="7032">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_2GALNe5DEeSkkcvANuOg5g"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_2GALNu5DEeSkkcvANuOg5g"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_2GALN-5DEeSkkcvANuOg5g" type="7033">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_2GALOO5DEeSkkcvANuOg5g"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_2GALOe5DEeSkkcvANuOg5g"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_2GALOu5DEeSkkcvANuOg5g" type="7034">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_2GALO-5DEeSkkcvANuOg5g"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_2GALPO5DEeSkkcvANuOg5g"/>
+        </children>
+        <element xmi:type="realtimestatechart:State" href="../patterns.muml#_RTF5ge5CEeSkkcvANuOg5g"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2F_kIe5DEeSkkcvANuOg5g"/>
+      </children>
+    </children>
+    <element xmi:type="realtimestatechart:RealtimeStatechart" href="../patterns.muml#_RTF5gO5CEeSkkcvANuOg5g"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2F6roe5DEeSkkcvANuOg5g" width="229" height="217"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_RTF5g-5CEeSkkcvANuOg5g"/>
+  <element xmi:type="realtimestatechart:RealtimeStatechart" href="../patterns.muml#_RTF5gO5CEeSkkcvANuOg5g"/>
+  <edges xmi:type="notation:Connector" xmi:id="_BRS-8O5EEeSkkcvANuOg5g" type="4003" source="_2F_kIO5DEeSkkcvANuOg5g" target="_2F_kIO5DEeSkkcvANuOg5g" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_BRTmAO5EEeSkkcvANuOg5g" type="6005">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_BRTmAe5EEeSkkcvANuOg5g" y="-20"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_BRTmAu5EEeSkkcvANuOg5g" type="6006">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_BRTmA-5EEeSkkcvANuOg5g" x="-10" y="20"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_BRS-8e5EEeSkkcvANuOg5g" fontName="Segoe UI"/>
+    <element xmi:type="realtimestatechart:Transition" href="../patterns.muml#_BRJN8O5EEeSkkcvANuOg5g"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_BRS-8u5EEeSkkcvANuOg5g" points="[5, -1, 18, 0]$[5, 10, 18, 11]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_BRl54O5EEeSkkcvANuOg5g" id="(0.9411764705882353,0.7666666666666667)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_BRl54e5EEeSkkcvANuOg5g" id="(0.788235294117647,0.75)"/>
+  </edges>
+</notation:Diagram>

@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<plugin>
+	
+	<extension point="org.eclipse.m2m.qvt.oml.javaBlackboxUnits">
+	
+   	<unit name="TraceLibUnit" namespace="org.muml.uppaal.adapter._blackbox">
+    <library name="TraceLib" 
+             class="org.muml.uppaal.adapter.blackbox.TraceLibrary">
+      <metamodel nsURI="http://www.muml.org/uppaal/1.0.0"/>       
+      <metamodel nsURI="http://www.muml.org/uppaal/trace/1.0.0"/>
+      <metamodel
+            nsURI="http://www.muml.org/uppaal/requirements/1.0.0">
+      </metamodel>
+      <metamodel
+            nsURI="http://www.muml.org/uppaal/options/1.0.0">
+      </metamodel>
+    </library>
+    </unit>
+    <unit
+          name="ValueUnit"
+          namespace="org.muml.uppaal.adapter._blackbox">
+       <library
+             class="org.muml.uppaal.adapter.blackbox.ValueLibrary"
+             name="ValueLib">
+          <metamodel
+                nsURI="http://www.muml.org/uppaal/trace/1.0.0">
+          </metamodel>
+          <metamodel
+                nsURI="http://www.muml.org/verification/core/runtime/1.0.0">
+          </metamodel>
+       </library>
+    </unit>
+    <unit
+          name="ProgressUnit"
+          namespace="org.muml.uppaal.adapter._blackbox">
+       <library
+             class="org.muml.uppaal.adapter.blackbox.ProgressLibrary"
+             name="ProgressLib">
+       </library>
+    </unit>
+   
+    <unit
+          name="CharSubstitutionUnit"
+          namespace="org.muml.uppaal.adapter._blackbox">
+       <library
+             class="org.muml.uppaal.adapter.blackbox.CharSubstitutionLibrary"
+             name="CharSubstitutionLibrary">
+       </library>
+    </unit>
+   </extension>
+   <extension
+       point="org.eclipse.m2m.qvt.oml.javaBlackboxUnits">
+    <unit
+          name="MtctlLibrary"
+          namespace="org.muml.uppaal.adapter._blackbox">
+       <library
+             class="org.muml.uppaal.adapter.blackbox.MtctlLibrary"
+             name="MtctlLibrary">
+             <metamodel
+             	nsURI="http://www.eclipse.org/emf/2002/Ecore">
+             </metamodel>
+             <metamodel
+             	nsURI="http://www.muml.org/uppaal/adapter/mtctl/comparables/1.0.0">
+             </metamodel>
+             <metamodel
+             	nsURI="http://www.muml.org/pim/constraint/1.0.0">
+             </metamodel>
+             <metamodel
+                nsURI="http://www.muml.org/pim/realtimestatechart/1.0.0">
+          </metamodel>
+             <metamodel
+                   nsURI="http://www.muml.org/pim/connector/1.0.0">
+             </metamodel>
+             <metamodel
+                   nsURI="http://www.muml.org/pim/msgtype/1.0.0">
+             </metamodel>
+       </library>
+    </unit>
+   </extension>
+ <extension
+       point="org.eclipse.m2m.qvt.oml.javaBlackboxUnits">
+    <unit
+          name="TimeLibUnit"
+          namespace="org.muml.uppaal.adapter._blackbox">
+       <library
+             class="org.muml.uppaal.adapter.blackbox.TimeUnitLibrary"
+             name="TimeLib">
+          <metamodel
+                nsURI="http://www.muml.org/pim/valuetype/1.0.0">
+          </metamodel>
+       </library>
+    </unit>
+ </extension>
+	
+</plugin>

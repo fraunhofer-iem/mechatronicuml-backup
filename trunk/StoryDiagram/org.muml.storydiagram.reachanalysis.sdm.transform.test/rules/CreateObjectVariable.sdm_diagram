@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:sda="http://www.muml.org/storydiagram/activities/1.0.0" xmlns:sdp="http://www.muml.org/storydiagram/patterns/1.0.0" xsi:schemaLocation="http://www.muml.org/storydiagram/activities/1.0.0 http://www.muml.org/storydiagram/1.0.0#//activities http://www.muml.org/storydiagram/patterns/1.0.0 http://www.muml.org/storydiagram/1.0.0#//patterns" xmi:id="_ptvPkPTvEeGDg-bJCK8EaA" type="Storydiagrams" name="CreateObjectVariable.sdm_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_q9LeMPTvEeGDg-bJCK8EaA" type="2005" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_q9LeMvTvEeGDg-bJCK8EaA" type="5013"/>
+    <element xmi:type="sda:InitialNode" href="CreateObjectVariable.sdm#//@ownedActivityNode.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_q9LeMfTvEeGDg-bJCK8EaA" x="30" y="20"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_swoY0PTvEeGDg-bJCK8EaA" type="2003" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_swoY0vTvEeGDg-bJCK8EaA" type="5011"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_swoY0_TvEeGDg-bJCK8EaA" type="7001">
+      <children xmi:type="notation:Shape" xmi:id="_swoY1PTvEeGDg-bJCK8EaA" type="3001" fontName="Segoe UI">
+        <children xmi:type="notation:DecorationNode" xmi:id="_swoY1vTvEeGDg-bJCK8EaA" type="7002">
+          <children xmi:type="notation:Shape" xmi:id="_yHtLMPTvEeGDg-bJCK8EaA" type="3005" fontName="Segoe UI">
+            <children xmi:type="notation:DecorationNode" xmi:id="_yHtLMvTvEeGDg-bJCK8EaA" type="5008"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_yHtLM_TvEeGDg-bJCK8EaA" type="5009"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_yHtLNPTvEeGDg-bJCK8EaA" type="5010"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_yHtLNfTvEeGDg-bJCK8EaA" type="7006">
+              <styles xmi:type="notation:SortingStyle" xmi:id="_yHtLNvTvEeGDg-bJCK8EaA"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_yHtLN_TvEeGDg-bJCK8EaA"/>
+            </children>
+            <children xmi:type="notation:DecorationNode" xmi:id="_yHtLOPTvEeGDg-bJCK8EaA" type="7007">
+              <styles xmi:type="notation:SortingStyle" xmi:id="_yHtLOfTvEeGDg-bJCK8EaA"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_yHtLOvTvEeGDg-bJCK8EaA"/>
+            </children>
+            <element xmi:type="sdp:ObjectVariable" href="CreateObjectVariable.sdm#//@ownedActivityNode.1/@ownedRule/@variable.0"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yHtLMfTvEeGDg-bJCK8EaA" y="4"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_OHsrMPTwEeGDg-bJCK8EaA" type="3005" fontName="Segoe UI">
+            <children xmi:type="notation:DecorationNode" xmi:id="_OHsrMvTwEeGDg-bJCK8EaA" type="5008"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_OHsrM_TwEeGDg-bJCK8EaA" type="5009"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_OHsrNPTwEeGDg-bJCK8EaA" type="5010"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_OHsrNfTwEeGDg-bJCK8EaA" type="7006">
+              <styles xmi:type="notation:SortingStyle" xmi:id="_OHsrNvTwEeGDg-bJCK8EaA"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_OHsrN_TwEeGDg-bJCK8EaA"/>
+            </children>
+            <children xmi:type="notation:DecorationNode" xmi:id="_OHsrOPTwEeGDg-bJCK8EaA" type="7007">
+              <styles xmi:type="notation:SortingStyle" xmi:id="_OHsrOfTwEeGDg-bJCK8EaA"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_OHsrOvTwEeGDg-bJCK8EaA"/>
+            </children>
+            <element xmi:type="sdp:ObjectVariable" href="CreateObjectVariable.sdm#//@ownedActivityNode.1/@ownedRule/@variable.1"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OHsrMfTwEeGDg-bJCK8EaA" x="180" y="50"/>
+          </children>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_swoY1_TvEeGDg-bJCK8EaA" type="7003">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_swoY2PTvEeGDg-bJCK8EaA"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_swoY2fTvEeGDg-bJCK8EaA"/>
+        </children>
+        <element xmi:type="sdp:StoryPattern" href="CreateObjectVariable.sdm#//@ownedActivityNode.1/@ownedRule"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_swoY1fTvEeGDg-bJCK8EaA"/>
+      </children>
+    </children>
+    <element xmi:type="sda:ModifyingStoryNode" href="CreateObjectVariable.sdm#//@ownedActivityNode.1"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_swoY0fTvEeGDg-bJCK8EaA" x="205" y="95" width="281" height="221"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_temSEPTvEeGDg-bJCK8EaA" type="2008" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_temSEvTvEeGDg-bJCK8EaA" type="5014"/>
+    <element xmi:type="sda:ActivityFinalNode" href="CreateObjectVariable.sdm#//@ownedActivityNode.2"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_temSEfTvEeGDg-bJCK8EaA" x="531" y="267"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_ptvPkfTvEeGDg-bJCK8EaA"/>
+  <element xmi:type="sda:Activity" href="CreateObjectVariable.sdm#/"/>
+  <edges xmi:type="notation:Edge" xmi:id="_TpVHwPTwEeGDg-bJCK8EaA" type="4002" source="_yHtLMPTvEeGDg-bJCK8EaA" target="_OHsrMPTwEeGDg-bJCK8EaA">
+    <children xmi:type="notation:DecorationNode" xmi:id="_TpVHxPTwEeGDg-bJCK8EaA" type="6002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_TpVHxfTwEeGDg-bJCK8EaA" x="10" y="10"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_TpVHxvTwEeGDg-bJCK8EaA" type="6003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_TpVHx_TwEeGDg-bJCK8EaA" y="-10"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_TpVHyPTwEeGDg-bJCK8EaA" type="6004">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_TpVHyfTwEeGDg-bJCK8EaA" x="5" y="18"/>
+    </children>
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_TpVHwfTwEeGDg-bJCK8EaA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_TpVHwvTwEeGDg-bJCK8EaA" fontName="Segoe UI"/>
+    <element xmi:type="sdp:LinkVariable" href="CreateObjectVariable.sdm#//@ownedActivityNode.1/@ownedRule/@linkVariable.0"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_TpVHw_TwEeGDg-bJCK8EaA" points="[20, 7, -124, -49]$[137, 12, -7, -44]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Tpe4wPTwEeGDg-bJCK8EaA" id="(0.7619047619047619,0.4594594594594595)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_X0-o0PTwEeGDg-bJCK8EaA" type="4001" source="_q9LeMPTvEeGDg-bJCK8EaA" target="_swoY0PTvEeGDg-bJCK8EaA">
+    <children xmi:type="notation:DecorationNode" xmi:id="_X0-o1PTwEeGDg-bJCK8EaA" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_X0-o1fTwEeGDg-bJCK8EaA" y="40"/>
+    </children>
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_X0-o0fTwEeGDg-bJCK8EaA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_X0-o0vTwEeGDg-bJCK8EaA" fontName="Segoe UI"/>
+    <element xmi:type="sda:ActivityEdge" href="CreateObjectVariable.sdm#//@ownedActivityEdge.0"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_X0-o0_TwEeGDg-bJCK8EaA" points="[48, 34, -62, -43]$[94, 64, -16, -13]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_X1HywPTwEeGDg-bJCK8EaA" id="(0.5094339622641509,0.24444444444444444)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_X1HywfTwEeGDg-bJCK8EaA" id="(0.05693950177935943,0.058823529411764705)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_YTxdoPTwEeGDg-bJCK8EaA" type="4001" source="_swoY0PTvEeGDg-bJCK8EaA" target="_temSEPTvEeGDg-bJCK8EaA">
+    <children xmi:type="notation:DecorationNode" xmi:id="_YTxdpPTwEeGDg-bJCK8EaA" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_YTxdpfTwEeGDg-bJCK8EaA" y="40"/>
+    </children>
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_YTxdofTwEeGDg-bJCK8EaA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_YTxdovTwEeGDg-bJCK8EaA" fontName="Segoe UI"/>
+    <element xmi:type="sda:ActivityEdge" href="CreateObjectVariable.sdm#//@ownedActivityEdge.1"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_YTxdo_TwEeGDg-bJCK8EaA" points="[13, 28, -65, -149]$[81, 157, 3, -20]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_YTxdpvTwEeGDg-bJCK8EaA" id="(0.9537366548042705,0.06787330316742081)"/>
+  </edges>
+</notation:Diagram>

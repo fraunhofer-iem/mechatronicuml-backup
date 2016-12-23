@@ -1,0 +1,58 @@
+Model {
+  Name			  "LibraryReference"
+  MaxMDLFileLineLength	  120
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+	  Array {
+	    Type			"Handle"
+		Dimension		1
+		Simulink.SolverCC {
+	  		$ObjectID		  2
+	  		StartTime		  "0.0"
+		    StopTime		  "10.0"
+		    FixedStep		  "0.001"
+		    SolverMode		  "Auto"
+		    Solver		  	  "FixedStepDiscrete"
+	  		SolverName		  "FixedStepDiscrete"
+			AutoInsertRateTranBlk	on
+			InsertRTBMode		  	"Whenever possible"	  		
+		}
+		PropName		"Components"
+      }   
+    }  
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    1
+  }
+  
+  BlockDefaults {
+  }
+  AnnotationDefaults {
+  }
+  LineDefaults {
+  }
+  BlockParameterDefaults {
+  }
+  System {
+    Name		    "LibraryReference"    
+	
+
+  Block {
+    BlockType Reference
+    Name 			"_system"
+    SID				1
+    Tag		"id=_748cMPUnEeOqvInL61-gjw"
+    SourceBlock	      "_system/_system"
+    SourceType	      "SubSystem"
+    Ports             [0, 0, 0, 0]
+  Position "[200, 100, 450, 450]"
+  }
+  }
+}
+
+

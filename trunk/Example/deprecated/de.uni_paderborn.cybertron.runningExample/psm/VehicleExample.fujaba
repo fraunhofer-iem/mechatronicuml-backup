@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--muml metamodel version 0.3.2 (r2996)-->
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:platform="http://www.fujaba.de/muml/hardware/platform/1.0/" xmlns:platforminstance="http://www.fujaba.de/muml/hardware/platforminstance/1.0/" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:resourcetype="http://www.fujaba.de/muml/hardware/resourcetype/1.0/" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_gE_P0I8bEeOqm8ffjHADtw">
+  <categories xmi:id="_gE_P0Y8bEeOqm8ffjHADtw" key="de.uni_paderborn.fujaba.muml.types.category" name="types">
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_gE_P0o8bEeOqm8ffjHADtw" name="VOID"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_gE_P048bEeOqm8ffjHADtw" name="BOOLEAN" primitiveType="BOOLEAN"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_gE_P1I8bEeOqm8ffjHADtw" name="INT8" primitiveType="INT8"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_gE_P1Y8bEeOqm8ffjHADtw" name="INT16" primitiveType="INT16"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_gE_P1o8bEeOqm8ffjHADtw" name="INT32" primitiveType="INT32"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_gE_P148bEeOqm8ffjHADtw" name="INT64" primitiveType="INT64"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_gE_P2I8bEeOqm8ffjHADtw" name="DOUBLE" primitiveType="DOUBLE"/>
+  </categories>
+  <categories xmi:id="_hRA-EI8bEeOqm8ffjHADtw" key="de.uni_paderborn.fujaba.muml.hardware.resource.category" name="resource">
+    <modelElements xsi:type="resourcetype:ResourceTypeRepository" xmi:id="_hRBlII8bEeOqm8ffjHADtw">
+      <resourceTypes xsi:type="resourcetype:StructuredResource" xmi:id="_ojlz0I8bEeOqm8ffjHADtw" name="BrickECU">
+        <hwports xmi:id="_RONMUI8cEeOqm8ffjHADtw" name="MOTORPORT" portType="LINK" protocol="_SBSfAI8wEeOqm8ffjHADtw">
+          <cardinality xmi:id="_RONMUY8cEeOqm8ffjHADtw">
+            <lowerBound xmi:id="_cy_eII8cEeOqm8ffjHADtw" value="3"/>
+            <upperBound xmi:id="_czAsQI8cEeOqm8ffjHADtw" value="3"/>
+          </cardinality>
+        </hwports>
+        <hwports xmi:id="_dpMtYI8cEeOqm8ffjHADtw" name="SENSORPORT" portType="LINK" protocol="_SBSfAI8wEeOqm8ffjHADtw">
+          <cardinality xmi:id="_dpN7gI8cEeOqm8ffjHADtw">
+            <lowerBound xmi:id="_ga-RcI8cEeOqm8ffjHADtw" value="4"/>
+            <upperBound xmi:id="_gbBUwI8cEeOqm8ffjHADtw" value="4"/>
+          </cardinality>
+        </hwports>
+        <embeddedAtomicResources xsi:type="resourcetype:Processor" xmi:id="__i-gsI8bEeOqm8ffjHADtw" name="Main processor" family="ARM">
+          <nbCores xmi:id="__i_HwI8bEeOqm8ffjHADtw"/>
+        </embeddedAtomicResources>
+        <embeddedAtomicResources xsi:type="resourcetype:MemoryResource" xmi:id="_LnGZ4I8cEeOqm8ffjHADtw" name="Flash" memoryType="ROM"/>
+        <embeddedAtomicResources xsi:type="resourcetype:MemoryResource" xmi:id="_Op9t8I8cEeOqm8ffjHADtw" name="RAM"/>
+      </resourceTypes>
+      <resourceTypes xsi:type="resourcetype:Device" xmi:id="_hFyJAI8cEeOqm8ffjHADtw" name="WiFi-Block">
+        <hwports xmi:id="_viPLgI8cEeOqm8ffjHADtw" name="hw-port" portType="LINK" protocol="_SBSfAI8wEeOqm8ffjHADtw">
+          <cardinality xmi:id="_viPykI8cEeOqm8ffjHADtw">
+            <lowerBound xmi:id="_viPykY8cEeOqm8ffjHADtw"/>
+            <upperBound xmi:id="_viPyko8cEeOqm8ffjHADtw"/>
+          </cardinality>
+        </hwports>
+      </resourceTypes>
+      <resourceTypes xsi:type="resourcetype:Device" xmi:id="_kwybII8cEeOqm8ffjHADtw" name="LegoMotor" deviceType="ACTUATOR">
+        <hwports xmi:id="_wVqMgI8cEeOqm8ffjHADtw" name="hw-port" portType="LINK" protocol="_SBSfAI8wEeOqm8ffjHADtw">
+          <cardinality xmi:id="_wVqMgY8cEeOqm8ffjHADtw">
+            <lowerBound xmi:id="_wVqMgo8cEeOqm8ffjHADtw"/>
+            <upperBound xmi:id="_wVqMg48cEeOqm8ffjHADtw"/>
+          </cardinality>
+        </hwports>
+      </resourceTypes>
+      <resourceTypes xsi:type="resourcetype:Device" xmi:id="_os8HoI8cEeOqm8ffjHADtw" name="LightSensor">
+        <hwports xmi:id="_uARpgI8cEeOqm8ffjHADtw" name="hw-port" portType="LINK" protocol="_SBSfAI8wEeOqm8ffjHADtw">
+          <cardinality xmi:id="_uATesI8cEeOqm8ffjHADtw">
+            <lowerBound xmi:id="_uATesY8cEeOqm8ffjHADtw"/>
+            <upperBound xmi:id="_uATeso8cEeOqm8ffjHADtw"/>
+          </cardinality>
+        </hwports>
+      </resourceTypes>
+      <protocols xsi:type="resourcetype:BusProtocol" xmi:id="_Uc1EcI8cEeOqm8ffjHADtw" name="SensorAktor" furtherInformation="" busProtocol="I2C"/>
+      <protocols xsi:type="resourcetype:LinkProtocol" xmi:id="_SBSfAI8wEeOqm8ffjHADtw" name="I2C-SensorActor" furtherInformation="" linkProtocol="OTHER"/>
+    </modelElements>
+    <modelElements xsi:type="platform:ResourceInstanceRepository" xmi:id="_SqDCwI8dEeOqm8ffjHADtw">
+      <resourceInstances xsi:type="platform:StructuredResourceInstance" xmi:id="_DNKJ0I_UEeOYR-WFM5vRTQ" name="BrickECU" resourceType="_ojlz0I8bEeOqm8ffjHADtw">
+        <hwportInstances xsi:type="platform:LinkPortInstance" xmi:id="_FOr8sI_UEeOYR-WFM5vRTQ" name="SENSORPORT 1" hwportType="_dpMtYI8cEeOqm8ffjHADtw"/>
+        <hwportInstances xsi:type="platform:LinkPortInstance" xmi:id="_FOvAAI_UEeOYR-WFM5vRTQ" name="MOTORPORT 1" hwportType="_RONMUI8cEeOqm8ffjHADtw"/>
+        <hwportInstances xsi:type="platform:LinkPortInstance" xmi:id="_FOvnEI_UEeOYR-WFM5vRTQ" name="MOTORPORT 2" hwportType="_RONMUI8cEeOqm8ffjHADtw"/>
+        <hwportInstances xsi:type="platform:LinkPortInstance" xmi:id="_FOwOII_UEeOYR-WFM5vRTQ" name="SENSORPORT 4" hwportType="_dpMtYI8cEeOqm8ffjHADtw"/>
+        <hwportInstances xsi:type="platform:LinkPortInstance" xmi:id="_FOw1MI_UEeOYR-WFM5vRTQ" name="MOTORPORT 3" hwportType="_RONMUI8cEeOqm8ffjHADtw"/>
+        <hwportInstances xsi:type="platform:LinkPortInstance" xmi:id="_FOyqYI_UEeOYR-WFM5vRTQ" name="SENSORPORT 2" hwportType="_dpMtYI8cEeOqm8ffjHADtw"/>
+        <hwportInstances xsi:type="platform:LinkPortInstance" xmi:id="_FO0fkI_UEeOYR-WFM5vRTQ" name="SENSORPORT 3" hwportType="_dpMtYI8cEeOqm8ffjHADtw"/>
+        <embeddedAtomicResourceInstances xsi:type="platform:StorageMemoryInstance" xmi:id="_FOoSUI_UEeOYR-WFM5vRTQ" name="RAM" resourceType="_Op9t8I8cEeOqm8ffjHADtw">
+          <memorySize xmi:id="_FOoSUY_UEeOYR-WFM5vRTQ"/>
+        </embeddedAtomicResourceInstances>
+        <embeddedAtomicResourceInstances xsi:type="platform:ProcessorInstance" xmi:id="_FOo5YI_UEeOYR-WFM5vRTQ" name="Main processor" resourceType="__i-gsI8bEeOqm8ffjHADtw">
+          <frequency xmi:id="_FOo5YY_UEeOYR-WFM5vRTQ"/>
+        </embeddedAtomicResourceInstances>
+        <embeddedAtomicResourceInstances xsi:type="platform:StorageMemoryInstance" xmi:id="_FOo5Yo_UEeOYR-WFM5vRTQ" name="Flash" resourceType="_LnGZ4I8cEeOqm8ffjHADtw">
+          <memorySize xmi:id="_FOo5Y4_UEeOYR-WFM5vRTQ"/>
+        </embeddedAtomicResourceInstances>
+      </resourceInstances>
+      <resourceInstances xsi:type="platform:SensorInstance" xmi:id="_GWRP0I_UEeOYR-WFM5vRTQ" name="Licht" resourceType="_os8HoI8cEeOqm8ffjHADtw">
+        <hwportInstances xsi:type="platform:LinkPortInstance" xmi:id="_HxdbcI_UEeOYR-WFM5vRTQ" name="hw-port 1" hwportType="_uARpgI8cEeOqm8ffjHADtw"/>
+      </resourceInstances>
+      <resourceInstances xsi:type="platform:SensorInstance" xmi:id="_IoS80I_UEeOYR-WFM5vRTQ" name="WifiBlock" resourceType="_hFyJAI8cEeOqm8ffjHADtw">
+        <hwportInstances xsi:type="platform:LinkPortInstance" xmi:id="_KELsAI_UEeOYR-WFM5vRTQ" name="hw-port 1" hwportType="_viPLgI8cEeOqm8ffjHADtw"/>
+      </resourceInstances>
+      <resourceInstances xsi:type="platform:ActuatorInstance" xmi:id="_KvVh0I_UEeOYR-WFM5vRTQ" name="LegoMotor" resourceType="_kwybII8cEeOqm8ffjHADtw">
+        <hwportInstances xsi:type="platform:LinkPortInstance" xmi:id="_LFXcMI_UEeOYR-WFM5vRTQ" name="hw-port 1" hwportType="_wVqMgI8cEeOqm8ffjHADtw"/>
+      </resourceInstances>
+      <resourceInstances xsi:type="platform:ActuatorInstance" xmi:id="_Nrei0I_UEeOYR-WFM5vRTQ" name="LegoMotor" resourceType="_kwybII8cEeOqm8ffjHADtw">
+        <hwportInstances xsi:type="platform:LinkPortInstance" xmi:id="_OEvXYI_UEeOYR-WFM5vRTQ" name="hw-port 1" hwportType="_wVqMgI8cEeOqm8ffjHADtw"/>
+      </resourceInstances>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_adyMII_eEeOYR-WFM5vRTQ" key="de.uni_paderborn.fujaba.muml.hardware.platform.category" name="platform">
+    <modelElements xsi:type="platform:HWPlatform" xmi:id="_adyzMI_eEeOYR-WFM5vRTQ" name="Vehicle">
+      <embeddedPlatformParts xsi:type="platform:ResourceInstancePart" xmi:id="_0fnWUI_eEeOYR-WFM5vRTQ" name="Communication" resourceInstanceType="_DNKJ0I_UEeOYR-WFM5vRTQ">
+        <cardinality xmi:id="_0fokcI_eEeOYR-WFM5vRTQ">
+          <lowerBound xmi:id="_0fokcY_eEeOYR-WFM5vRTQ" value="0"/>
+          <upperBound xmi:id="_0fpykI_eEeOYR-WFM5vRTQ"/>
+        </cardinality>
+        <hwportParts xmi:id="_6NCMII_eEeOYR-WFM5vRTQ" name="SENSORPORT 1" hwPortInstance="_FOr8sI_UEeOYR-WFM5vRTQ" connectedMedia="_4OPuwI_fEeOYR-WFM5vRTQ"/>
+        <hwportParts xmi:id="_6NCMIY_eEeOYR-WFM5vRTQ" name="MOTORPORT 1" hwPortInstance="_FOvAAI_UEeOYR-WFM5vRTQ"/>
+        <hwportParts xmi:id="_6NCMIo_eEeOYR-WFM5vRTQ" name="MOTORPORT 2" hwPortInstance="_FOvnEI_UEeOYR-WFM5vRTQ"/>
+        <hwportParts xmi:id="_6NCzMI_eEeOYR-WFM5vRTQ" name="SENSORPORT 4" hwPortInstance="_FOwOII_UEeOYR-WFM5vRTQ"/>
+        <hwportParts xmi:id="_6NCzMY_eEeOYR-WFM5vRTQ" name="MOTORPORT 3" hwPortInstance="_FOw1MI_UEeOYR-WFM5vRTQ"/>
+        <hwportParts xmi:id="_6NDaQI_eEeOYR-WFM5vRTQ" name="SENSORPORT 2" hwPortInstance="_FOyqYI_UEeOYR-WFM5vRTQ"/>
+        <hwportParts xmi:id="_6NDaQY_eEeOYR-WFM5vRTQ" name="SENSORPORT 3" hwPortInstance="_FO0fkI_UEeOYR-WFM5vRTQ"/>
+      </embeddedPlatformParts>
+      <embeddedPlatformParts xsi:type="platform:ResourceInstancePart" xmi:id="_7FlkwI_eEeOYR-WFM5vRTQ" name="DriveController" resourceInstanceType="_DNKJ0I_UEeOYR-WFM5vRTQ">
+        <cardinality xmi:id="_7FmL0I_eEeOYR-WFM5vRTQ">
+          <lowerBound xmi:id="__BhO0I_eEeOYR-WFM5vRTQ"/>
+          <upperBound xmi:id="__BmHUI_eEeOYR-WFM5vRTQ"/>
+        </cardinality>
+        <hwportParts xmi:id="_-q6FoI_eEeOYR-WFM5vRTQ" name="SENSORPORT 1" hwPortInstance="_FOr8sI_UEeOYR-WFM5vRTQ" connectedMedia="_4OPuwI_fEeOYR-WFM5vRTQ"/>
+        <hwportParts xmi:id="_-q6FoY_eEeOYR-WFM5vRTQ" name="MOTORPORT 1" hwPortInstance="_FOvAAI_UEeOYR-WFM5vRTQ" connectedMedia="_wYGR4I_fEeOYR-WFM5vRTQ"/>
+        <hwportParts xmi:id="_-q6ssI_eEeOYR-WFM5vRTQ" name="MOTORPORT 2" hwPortInstance="_FOvnEI_UEeOYR-WFM5vRTQ" connectedMedia="_zVX7UI_fEeOYR-WFM5vRTQ"/>
+        <hwportParts xmi:id="_-q6ssY_eEeOYR-WFM5vRTQ" name="SENSORPORT 4" hwPortInstance="_FOwOII_UEeOYR-WFM5vRTQ" connectedMedia="_EWQpcI_gEeOYR-WFM5vRTQ"/>
+        <hwportParts xmi:id="_-q6sso_eEeOYR-WFM5vRTQ" name="MOTORPORT 3" hwPortInstance="_FOw1MI_UEeOYR-WFM5vRTQ"/>
+        <hwportParts xmi:id="_-q7TwI_eEeOYR-WFM5vRTQ" name="SENSORPORT 2" hwPortInstance="_FOyqYI_UEeOYR-WFM5vRTQ"/>
+        <hwportParts xmi:id="_-q7TwY_eEeOYR-WFM5vRTQ" name="SENSORPORT 3" hwPortInstance="_FO0fkI_UEeOYR-WFM5vRTQ"/>
+      </embeddedPlatformParts>
+      <embeddedPlatformParts xsi:type="platform:ResourceInstancePart" xmi:id="_jZvlEI_fEeOYR-WFM5vRTQ" name="left" resourceInstanceType="_KvVh0I_UEeOYR-WFM5vRTQ">
+        <cardinality xmi:id="_jZvlEY_fEeOYR-WFM5vRTQ">
+          <lowerBound xmi:id="_jZvlEo_fEeOYR-WFM5vRTQ" value="0"/>
+          <upperBound xmi:id="_jZvlE4_fEeOYR-WFM5vRTQ"/>
+        </cardinality>
+        <hwportParts xmi:id="_lVSEsI_fEeOYR-WFM5vRTQ" name="hw-port 1" hwPortInstance="_LFXcMI_UEeOYR-WFM5vRTQ" connectedMedia="_wYGR4I_fEeOYR-WFM5vRTQ"/>
+      </embeddedPlatformParts>
+      <embeddedPlatformParts xsi:type="platform:ResourceInstancePart" xmi:id="_tzzJII_fEeOYR-WFM5vRTQ" name="Right" resourceInstanceType="_KvVh0I_UEeOYR-WFM5vRTQ">
+        <cardinality xmi:id="_tz0-UI_fEeOYR-WFM5vRTQ">
+          <lowerBound xmi:id="_tz0-UY_fEeOYR-WFM5vRTQ" value="0"/>
+          <upperBound xmi:id="_tz0-Uo_fEeOYR-WFM5vRTQ"/>
+        </cardinality>
+        <hwportParts xmi:id="_vMFxwI_fEeOYR-WFM5vRTQ" name="hw-port 1" hwPortInstance="_LFXcMI_UEeOYR-WFM5vRTQ" connectedMedia="_zVX7UI_fEeOYR-WFM5vRTQ"/>
+      </embeddedPlatformParts>
+      <embeddedPlatformParts xsi:type="platform:ResourceInstancePart" xmi:id="_AadiQI_gEeOYR-WFM5vRTQ" name="LineSensor" resourceInstanceType="_GWRP0I_UEeOYR-WFM5vRTQ">
+        <cardinality xmi:id="_AadiQY_gEeOYR-WFM5vRTQ">
+          <lowerBound xmi:id="_AadiQo_gEeOYR-WFM5vRTQ" value="0"/>
+          <upperBound xmi:id="_AadiQ4_gEeOYR-WFM5vRTQ"/>
+        </cardinality>
+        <hwportParts xmi:id="_DnHrgI_gEeOYR-WFM5vRTQ" name="hw-port 1" hwPortInstance="_HxdbcI_UEeOYR-WFM5vRTQ" connectedMedia="_EWQpcI_gEeOYR-WFM5vRTQ"/>
+      </embeddedPlatformParts>
+      <embeddedCommunicationResources xsi:type="platform:Link" xmi:id="_wYGR4I_fEeOYR-WFM5vRTQ" protocol="_SBSfAI8wEeOqm8ffjHADtw" connectedHWPortParts="_-q6FoY_eEeOYR-WFM5vRTQ _lVSEsI_fEeOYR-WFM5vRTQ">
+        <bandwidth xmi:id="_wYJVMI_fEeOYR-WFM5vRTQ"/>
+      </embeddedCommunicationResources>
+      <embeddedCommunicationResources xsi:type="platform:Link" xmi:id="_zVX7UI_fEeOYR-WFM5vRTQ" protocol="_SBSfAI8wEeOqm8ffjHADtw" connectedHWPortParts="_-q6ssI_eEeOYR-WFM5vRTQ _vMFxwI_fEeOYR-WFM5vRTQ">
+        <bandwidth xmi:id="_zVYiYI_fEeOYR-WFM5vRTQ"/>
+      </embeddedCommunicationResources>
+      <embeddedCommunicationResources xsi:type="platform:Link" xmi:id="_4OPuwI_fEeOYR-WFM5vRTQ" protocol="_SBSfAI8wEeOqm8ffjHADtw" connectedHWPortParts="_-q6FoI_eEeOYR-WFM5vRTQ _6NCMII_eEeOYR-WFM5vRTQ">
+        <bandwidth xmi:id="_4ORj8I_fEeOYR-WFM5vRTQ"/>
+      </embeddedCommunicationResources>
+      <embeddedCommunicationResources xsi:type="platform:Link" xmi:id="_EWQpcI_gEeOYR-WFM5vRTQ" protocol="_SBSfAI8wEeOqm8ffjHADtw" connectedHWPortParts="_-q6ssY_eEeOYR-WFM5vRTQ _DnHrgI_gEeOYR-WFM5vRTQ">
+        <bandwidth xmi:id="_EWQpcY_gEeOYR-WFM5vRTQ"/>
+      </embeddedCommunicationResources>
+      <delegationPorts xsi:type="platform:LinkPortInstance" xmi:id="_YU7-YI_gEeOYR-WFM5vRTQ" name="Wifi" hwportType="_viPLgI8cEeOqm8ffjHADtw" delegation="_edcNsI_gEeOYR-WFM5vRTQ"/>
+      <delegations xmi:id="_edcNsI_gEeOYR-WFM5vRTQ" hwPortInstance="_YU7-YI_gEeOYR-WFM5vRTQ" hwPortPart="_6NCzMI_eEeOYR-WFM5vRTQ"/>
+    </modelElements>
+    <modelElements xsi:type="platforminstance:HWPlatformInstanceConfiguration" xmi:id="_lYIH4I_gEeOYR-WFM5vRTQ" name="VehicleInstance">
+      <hwplatformInstances xmi:id="_ugurII_gEeOYR-WFM5vRTQ" name="Vehicle.0" hwplatformType="_adyzMI_eEeOYR-WFM5vRTQ">
+        <resourceInstances xsi:type="platform:StructuredResourceInstance" xmi:id="_ugurIY_gEeOYR-WFM5vRTQ" name="DriveController.0.1" resourceType="_ojlz0I8bEeOqm8ffjHADtw">
+          <hwportInstances xsi:type="platform:LinkPortInstance" xmi:id="_ugurIo_gEeOYR-WFM5vRTQ" name="SENSORPORT 1.0.1" hwportType="_dpMtYI8cEeOqm8ffjHADtw"/>
+          <hwportInstances xsi:type="platform:LinkPortInstance" xmi:id="_ugurI4_gEeOYR-WFM5vRTQ" name="MOTORPORT 1.0.1" hwportType="_RONMUI8cEeOqm8ffjHADtw"/>
+          <hwportInstances xsi:type="platform:LinkPortInstance" xmi:id="_ugurJI_gEeOYR-WFM5vRTQ" name="MOTORPORT 2.0.1" hwportType="_RONMUI8cEeOqm8ffjHADtw"/>
+          <hwportInstances xsi:type="platform:LinkPortInstance" xmi:id="_ugurJY_gEeOYR-WFM5vRTQ" name="SENSORPORT 4.0.1" hwportType="_dpMtYI8cEeOqm8ffjHADtw" connectedMedia="_nZgVIK9uEeOM47bvnTcFXw"/>
+          <hwportInstances xsi:type="platform:LinkPortInstance" xmi:id="_ugurJo_gEeOYR-WFM5vRTQ" name="MOTORPORT 3.0.1" hwportType="_RONMUI8cEeOqm8ffjHADtw"/>
+          <hwportInstances xsi:type="platform:LinkPortInstance" xmi:id="_ugurJ4_gEeOYR-WFM5vRTQ" name="SENSORPORT 2.0.1" hwportType="_dpMtYI8cEeOqm8ffjHADtw"/>
+          <hwportInstances xsi:type="platform:LinkPortInstance" xmi:id="_ugurKI_gEeOYR-WFM5vRTQ" name="SENSORPORT 3.0.1" hwportType="_dpMtYI8cEeOqm8ffjHADtw"/>
+          <embeddedAtomicResourceInstances xsi:type="platform:StorageMemoryInstance" xmi:id="_ugurKY_gEeOYR-WFM5vRTQ" name="RAM" resourceType="_Op9t8I8cEeOqm8ffjHADtw">
+            <memorySize xmi:id="_ugurKo_gEeOYR-WFM5vRTQ"/>
+          </embeddedAtomicResourceInstances>
+          <embeddedAtomicResourceInstances xsi:type="platform:ProcessorInstance" xmi:id="_ugurK4_gEeOYR-WFM5vRTQ" name="Main processor" resourceType="__i-gsI8bEeOqm8ffjHADtw">
+            <frequency xmi:id="_ugurLI_gEeOYR-WFM5vRTQ"/>
+          </embeddedAtomicResourceInstances>
+          <embeddedAtomicResourceInstances xsi:type="platform:StorageMemoryInstance" xmi:id="_ugurLY_gEeOYR-WFM5vRTQ" name="Flash" resourceType="_LnGZ4I8cEeOqm8ffjHADtw">
+            <memorySize xmi:id="_ugurLo_gEeOYR-WFM5vRTQ"/>
+          </embeddedAtomicResourceInstances>
+        </resourceInstances>
+        <resourceInstances xsi:type="platform:SensorInstance" xmi:id="_ugurL4_gEeOYR-WFM5vRTQ" name="LineSensor.0.1" resourceType="_os8HoI8cEeOqm8ffjHADtw">
+          <hwportInstances xsi:type="platform:LinkPortInstance" xmi:id="_ugurMI_gEeOYR-WFM5vRTQ" name="hw-port 1.0.1" hwportType="_uARpgI8cEeOqm8ffjHADtw"/>
+        </resourceInstances>
+        <resourceInstances xsi:type="platform:ActuatorInstance" xmi:id="_ugurMY_gEeOYR-WFM5vRTQ" name="left.0.1" resourceType="_kwybII8cEeOqm8ffjHADtw"/>
+        <resourceInstances xsi:type="platform:StructuredResourceInstance" xmi:id="_ugurMo_gEeOYR-WFM5vRTQ" name="Communication.0.1" resourceType="_ojlz0I8bEeOqm8ffjHADtw">
+          <hwportInstances xsi:type="platform:LinkPortInstance" xmi:id="_lRbOUK9uEeOM47bvnTcFXw" name="port1" hwportType="_dpMtYI8cEeOqm8ffjHADtw" connectedMedia="_nZgVIK9uEeOM47bvnTcFXw"/>
+          <embeddedAtomicResourceInstances xsi:type="platform:StorageMemoryInstance" xmi:id="_ugurM4_gEeOYR-WFM5vRTQ" name="RAM" resourceType="_Op9t8I8cEeOqm8ffjHADtw">
+            <memorySize xmi:id="_ugurNI_gEeOYR-WFM5vRTQ"/>
+          </embeddedAtomicResourceInstances>
+          <embeddedAtomicResourceInstances xsi:type="platform:ProcessorInstance" xmi:id="_ugurNY_gEeOYR-WFM5vRTQ" name="Main processor" resourceType="__i-gsI8bEeOqm8ffjHADtw">
+            <frequency xmi:id="_ugurNo_gEeOYR-WFM5vRTQ"/>
+          </embeddedAtomicResourceInstances>
+          <embeddedAtomicResourceInstances xsi:type="platform:StorageMemoryInstance" xmi:id="_ugurN4_gEeOYR-WFM5vRTQ" name="Flash" resourceType="_LnGZ4I8cEeOqm8ffjHADtw">
+            <memorySize xmi:id="_ugurOI_gEeOYR-WFM5vRTQ"/>
+          </embeddedAtomicResourceInstances>
+        </resourceInstances>
+        <resourceInstances xsi:type="platform:ActuatorInstance" xmi:id="_ugurOY_gEeOYR-WFM5vRTQ" name="Right.0.1" resourceType="_kwybII8cEeOqm8ffjHADtw">
+          <hwportInstances xsi:type="platform:LinkPortInstance" xmi:id="_ugurOo_gEeOYR-WFM5vRTQ" name="hw-port 1.0.1" hwportType="_wVqMgI8cEeOqm8ffjHADtw"/>
+        </resourceInstances>
+        <communicationResources xsi:type="platform:Link" xmi:id="_ugurO4_gEeOYR-WFM5vRTQ" comment="&quot;no comment provided&quot;.0" protocol="_SBSfAI8wEeOqm8ffjHADtw">
+          <bandwidth xmi:id="_ugurPI_gEeOYR-WFM5vRTQ"/>
+        </communicationResources>
+        <communicationResources xsi:type="platform:Link" xmi:id="_ugurPY_gEeOYR-WFM5vRTQ" comment="&quot;no comment provided&quot;.0" protocol="_SBSfAI8wEeOqm8ffjHADtw">
+          <bandwidth xmi:id="_ugurPo_gEeOYR-WFM5vRTQ"/>
+        </communicationResources>
+        <communicationResources xsi:type="platform:Link" xmi:id="_ugurP4_gEeOYR-WFM5vRTQ" comment="&quot;no comment provided&quot;.0" protocol="_SBSfAI8wEeOqm8ffjHADtw">
+          <bandwidth xmi:id="_ugurQI_gEeOYR-WFM5vRTQ"/>
+        </communicationResources>
+        <communicationResources xsi:type="platform:Link" xmi:id="_ugurQY_gEeOYR-WFM5vRTQ" comment="&quot;no comment provided&quot;.0" protocol="_SBSfAI8wEeOqm8ffjHADtw">
+          <bandwidth xmi:id="_ugurQo_gEeOYR-WFM5vRTQ"/>
+        </communicationResources>
+        <communicationResources xsi:type="platform:Link" xmi:id="_nZgVIK9uEeOM47bvnTcFXw" protocol="_SBSfAI8wEeOqm8ffjHADtw" connectedHWPortInstances="_lRbOUK9uEeOM47bvnTcFXw _ugurJY_gEeOYR-WFM5vRTQ">
+          <bandwidth xmi:id="_nZtJcK9uEeOM47bvnTcFXw"/>
+        </communicationResources>
+      </hwplatformInstances>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_eqWfwJI6EeOKvL3T9kRl_w" key="de.uni_paderborn.fujaba.muml.components.category" name="component">
+    <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_gEh-wJI6EeOKvL3T9kRl_w" name="MotorController" behavior="_H_sogJMFEeOIAbRzLo-vMg">
+      <ports xsi:type="component:HybridPort" xmi:id="_0T3l0JL-EeOSHsl3APwt-w" name="motorRight" dataType="_gE_P1o8bEeOqm8ffjHADtw" kind="OUT">
+        <samplingInterval xmi:id="_7GLAEJL-EeOSHsl3APwt-w" unit="MILLISECONDS">
+          <value xsi:type="sdcec:LiteralExpression" xmi:id="_7xXSIJL-EeOSHsl3APwt-w" value="25"/>
+        </samplingInterval>
+      </ports>
+      <ports xsi:type="component:HybridPort" xmi:id="_1ARY0JL-EeOSHsl3APwt-w" name="motorLeft" dataType="_gE_P1o8bEeOqm8ffjHADtw" kind="OUT">
+        <samplingInterval xmi:id="_38LJQJL-EeOSHsl3APwt-w" unit="MILLISECONDS">
+          <value xsi:type="sdcec:LiteralExpression" xmi:id="_5J5goJL-EeOSHsl3APwt-w" value="25"/>
+        </samplingInterval>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_br9KAJMAEeOKvdQCsRkL-g" name="controller" behavior="_IABYoJMFEeOIAbRzLo-vMg" receiverMessageTypes="_FVBu0JMBEeOTreLsSKWNBA" refinedRole="_B_0REZMCEeOowcKXwKHTCg">
+        <cardinality xmi:id="_H_VcIJMFEeOIAbRzLo-vMg">
+          <lowerBound xmi:id="_H_VcIZMFEeOIAbRzLo-vMg"/>
+          <upperBound xmi:id="_H_VcIpMFEeOIAbRzLo-vMg"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_H_nI8JMFEeOIAbRzLo-vMg" messageType="_FVBu0JMBEeOTreLsSKWNBA">
+          <bufferSize xmi:id="_H_nI8ZMFEeOIAbRzLo-vMg" value="5"/>
+        </receiverMessageBuffer>
+      </ports>
+    </modelElements>
+    <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_jG2gQJI6EeOKvL3T9kRl_w" name="SensorController" behavior="_MZEcgJMFEeOIAbRzLo-vMg">
+      <ports xsi:type="component:DiscretePort" xmi:id="_54MUkJL_EeOgn_iPPWiMxQ" name="controllerPort" behavior="_MZGRsJMFEeOIAbRzLo-vMg" senderMessageTypes="_BA0usJMBEeOTreLsSKWNBA" receiverMessageTypes="_CYaMsJMBEeOTreLsSKWNBA" refinedRole="_EZisEJMDEeO8-e-lxEb-xg">
+        <cardinality xmi:id="_MY2aEJMFEeOIAbRzLo-vMg">
+          <lowerBound xmi:id="_VXKY4JMFEeOIDchXYj7RNg"/>
+          <upperBound xmi:id="_VYNhwJMFEeOIDchXYj7RNg"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_MZAyIJMFEeOIAbRzLo-vMg" messageType="_CYaMsJMBEeOTreLsSKWNBA">
+          <bufferSize xmi:id="_MZAyIZMFEeOIAbRzLo-vMg" value="5"/>
+        </receiverMessageBuffer>
+      </ports>
+      <ports xsi:type="component:HybridPort" xmi:id="_eh5cYJMAEeOKvdQCsRkL-g" name="light" dataType="_gE_P1o8bEeOqm8ffjHADtw">
+        <samplingInterval xmi:id="_g3Z7MJMAEeOKvdQCsRkL-g" unit="MILLISECONDS">
+          <value xsi:type="sdcec:LiteralExpression" xmi:id="_iAqpUJMAEeOKvdQCsRkL-g" value="25"/>
+        </samplingInterval>
+      </ports>
+    </modelElements>
+    <modelElements xsi:type="component:StaticStructuredComponent" xmi:id="_DoJBMJI7EeOKvL3T9kRl_w" name="HWController" componentKind="hybrid component">
+      <ports xsi:type="component:ContinuousPort" xmi:id="_AJkBcJL_EeOSHsl3APwt-w" connectors="_DOmfwJL_EeOSHsl3APwt-w" name="motorLeft" dataType="_gE_P1o8bEeOqm8ffjHADtw" kind="OUT"/>
+      <ports xsi:type="component:ContinuousPort" xmi:id="_D_iNcJL_EeOSHsl3APwt-w" connectors="_F8tEwJL_EeOSHsl3APwt-w" name="motorRight" dataType="_gE_P1o8bEeOqm8ffjHADtw" kind="OUT"/>
+      <ports xsi:type="component:ContinuousPort" xmi:id="_kil-EJMBEeOowcKXwKHTCg" connectors="_rUrV4JMBEeOowcKXwKHTCg" name="port" dataType="_gE_P1o8bEeOqm8ffjHADtw"/>
+      <embeddedComponentParts xmi:id="_mhMjYJI-EeO1frWp6pXzVg" name="m" componentType="_gEh-wJI6EeOKvL3T9kRl_w">
+        <cardinality xmi:id="_mhQNwJI-EeO1frWp6pXzVg">
+          <lowerBound xmi:id="_nsXWAJI-EeO1frWp6pXzVg"/>
+          <upperBound xmi:id="_nskKUJI-EeO1frWp6pXzVg"/>
+        </cardinality>
+        <portParts xmi:id="_8t4kwJL-EeOSHsl3APwt-w" connectors="_F8tEwJL_EeOSHsl3APwt-w" portType="_0T3l0JL-EeOSHsl3APwt-w"/>
+        <portParts xmi:id="_8t6Z8JL-EeOSHsl3APwt-w" connectors="_DOmfwJL_EeOSHsl3APwt-w" portType="_1ARY0JL-EeOSHsl3APwt-w"/>
+        <portParts xmi:id="_ILaGEJMBEeOTreLsSKWNBA" connectors="_YHImIJMFEeOIDchXYj7RNg" portType="_br9KAJMAEeOKvdQCsRkL-g" coordinationProtocolPart="_YHXPoJMFEeOIDchXYj7RNg"/>
+      </embeddedComponentParts>
+      <embeddedComponentParts xmi:id="_1jtgUJI-EeOY4Y2LFYlN-w" name="s" componentType="_jG2gQJI6EeOKvL3T9kRl_w">
+        <cardinality xmi:id="_1juucJI-EeOY4Y2LFYlN-w">
+          <lowerBound xmi:id="_merlcJI_EeOHWfHX3_-M4g"/>
+          <upperBound xmi:id="_me62AJI_EeOHWfHX3_-M4g"/>
+        </cardinality>
+        <portParts xmi:id="_IMCYMJMBEeOTreLsSKWNBA" connectors="_XXjjUJMFEeOIDchXYj7RNg" portType="_54MUkJL_EeOgn_iPPWiMxQ" coordinationProtocolPart="_XX0CAJMFEeOIDchXYj7RNg"/>
+        <portParts xmi:id="_IMC_QJMBEeOTreLsSKWNBA" connectors="_rUrV4JMBEeOowcKXwKHTCg" portType="_eh5cYJMAEeOKvdQCsRkL-g"/>
+      </embeddedComponentParts>
+      <embeddedComponentParts xmi:id="_gzeoAJMBEeOowcKXwKHTCg" name="Controller" componentType="_WA1PsJL_EeOgn_iPPWiMxQ">
+        <cardinality xmi:id="_gzfPEJMBEeOowcKXwKHTCg">
+          <lowerBound xmi:id="_jPc7MJMBEeOowcKXwKHTCg"/>
+          <upperBound xmi:id="_jPpvgJMBEeOowcKXwKHTCg"/>
+        </cardinality>
+        <portParts xmi:id="_i9u5EJMBEeOowcKXwKHTCg" connectors="_YHImIJMFEeOIDchXYj7RNg" portType="_fA3FwJL_EeOgn_iPPWiMxQ" coordinationProtocolPart="_YHXPoJMFEeOIDchXYj7RNg"/>
+        <portParts xmi:id="_i9vgIJMBEeOowcKXwKHTCg" connectors="_XXjjUJMFEeOIDchXYj7RNg" portType="_fpJNwJL_EeOgn_iPPWiMxQ" coordinationProtocolPart="_XX0CAJMFEeOIDchXYj7RNg"/>
+      </embeddedComponentParts>
+      <connectors xsi:type="component:DelegationConnector" xmi:id="_DOmfwJL_EeOSHsl3APwt-w" connectorEndpoints="_8t6Z8JL-EeOSHsl3APwt-w _AJkBcJL_EeOSHsl3APwt-w"/>
+      <connectors xsi:type="component:DelegationConnector" xmi:id="_F8tEwJL_EeOSHsl3APwt-w" connectorEndpoints="_8t4kwJL-EeOSHsl3APwt-w _D_iNcJL_EeOSHsl3APwt-w"/>
+      <connectors xsi:type="component:DelegationConnector" xmi:id="_rUrV4JMBEeOowcKXwKHTCg" connectorEndpoints="_IMC_QJMBEeOTreLsSKWNBA _kil-EJMBEeOowcKXwKHTCg"/>
+      <connectors xsi:type="component:AssemblyConnector" xmi:id="_XXjjUJMFEeOIDchXYj7RNg" connectorEndpoints="_i9vgIJMBEeOowcKXwKHTCg _IMCYMJMBEeOTreLsSKWNBA"/>
+      <connectors xsi:type="component:AssemblyConnector" xmi:id="_YHImIJMFEeOIDchXYj7RNg" connectorEndpoints="_i9u5EJMBEeOowcKXwKHTCg _ILaGEJMBEeOTreLsSKWNBA"/>
+      <coordinationProtocolParts xmi:id="_XX0CAJMFEeOIDchXYj7RNg" coordinationProtocol="_EZclcJMDEeO8-e-lxEb-xg" portParts="_IMCYMJMBEeOTreLsSKWNBA _i9vgIJMBEeOowcKXwKHTCg"/>
+      <coordinationProtocolParts xmi:id="_YHXPoJMFEeOIDchXYj7RNg" coordinationProtocol="_B_s8UJMCEeOowcKXwKHTCg" portParts="_ILaGEJMBEeOTreLsSKWNBA _i9u5EJMBEeOowcKXwKHTCg"/>
+    </modelElements>
+    <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_WA1PsJL_EeOgn_iPPWiMxQ" name="HWMaincontroller" behavior="_I81qYJL-EeOSHsl3APwt-w">
+      <ports xsi:type="component:DiscretePort" xmi:id="_fA3FwJL_EeOgn_iPPWiMxQ" name="motors" behavior="_3bkH0JMEEeOZsPJe5L5rxw" senderMessageTypes="_FVBu0JMBEeOTreLsSKWNBA" refinedRole="_B_yb4JMCEeOowcKXwKHTCg">
+        <cardinality xmi:id="_3bWscJMEEeOZsPJe5L5rxw">
+          <lowerBound xmi:id="_3bWscZMEEeOZsPJe5L5rxw"/>
+          <upperBound xmi:id="_3bWscpMEEeOZsPJe5L5rxw"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_fpJNwJL_EeOgn_iPPWiMxQ" name="sensors" behavior="_6KIm4ZMEEeOZsPJe5L5rxw" senderMessageTypes="_CYaMsJMBEeOTreLsSKWNBA" receiverMessageTypes="_BA0usJMBEeOTreLsSKWNBA" refinedRole="_EZg24JMDEeO8-e-lxEb-xg">
+        <cardinality xmi:id="_6J59YJMEEeOZsPJe5L5rxw">
+          <lowerBound xmi:id="_6J59YZMEEeOZsPJe5L5rxw"/>
+          <upperBound xmi:id="_6J59YpMEEeOZsPJe5L5rxw"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_6KE8gJMEEeOZsPJe5L5rxw" messageType="_BA0usJMBEeOTreLsSKWNBA">
+          <bufferSize xmi:id="_6KE8gZMEEeOZsPJe5L5rxw" value="5"/>
+        </receiverMessageBuffer>
+      </ports>
+    </modelElements>
+    <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_uiDUAJMFEeOIDchXYj7RNg" name="lightSensor" componentKind="continuous component">
+      <ports xsi:type="component:ContinuousPort" xmi:id="_U81X4JMGEeOwbPp1FwM8PA" name="sensor" dataType="_gE_P1o8bEeOqm8ffjHADtw" kind="OUT"/>
+    </modelElements>
+    <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_yqGugJMFEeOIDchXYj7RNg" name="motor" componentKind="continuous component">
+      <ports xsi:type="component:ContinuousPort" xmi:id="_VbbYYJMGEeOwbPp1FwM8PA" name="motor" dataType="_gE_P1o8bEeOqm8ffjHADtw"/>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_uWtD4JI6EeOKvL3T9kRl_w" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_4OJqIJI6EeOKvL3T9kRl_w" name="SensorController" behavioralElement="_EZisEJMDEeO8-e-lxEb-xg">
+      <states xmi:id="_4OJqIZI6EeOKvL3T9kRl_w" name="init" initial="true">
+        <embeddedRegions xmi:id="_pt0QYJI-EeO1frWp6pXzVg" priority="1">
+          <embeddedStatechart xmi:id="_pt0QYZI-EeO1frWp6pXzVg" name="SensorPort_SensorPort">
+            <states xmi:id="_pt0QYpI-EeO1frWp6pXzVg" name="init" initial="true"/>
+          </embeddedStatechart>
+        </embeddedRegions>
+      </states>
+    </modelElements>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_T51uEJI7EeOKvL3T9kRl_w" name="SensorPort">
+      <states xmi:id="_T51uEZI7EeOKvL3T9kRl_w" name="init" initial="true"/>
+    </modelElements>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_I81qYJL-EeOSHsl3APwt-w" name="HWMain-RTSC" behavioralElement="_WA1PsJL_EeOgn_iPPWiMxQ">
+      <states xmi:id="_I81qYZL-EeOSHsl3APwt-w" name="init" initial="true">
+        <embeddedRegions xmi:id="_3biSoJMEEeOZsPJe5L5rxw" priority="1">
+          <embeddedStatechart xmi:id="_3bkH0JMEEeOZsPJe5L5rxw" name="MainController_MotorPort_motors" behavioralElement="_fA3FwJL_EeOgn_iPPWiMxQ">
+            <states xmi:id="_3bkH0ZMEEeOZsPJe5L5rxw" name="init" initial="true"/>
+          </embeddedStatechart>
+        </embeddedRegions>
+        <embeddedRegions xmi:id="_6KIm4JMEEeOZsPJe5L5rxw" priority="2">
+          <embeddedStatechart xmi:id="_6KIm4ZMEEeOZsPJe5L5rxw" name="Sensor_Controller_Port_sensors" behavioralElement="_fpJNwJL_EeOgn_iPPWiMxQ">
+            <states xmi:id="_6KIm4pMEEeOZsPJe5L5rxw" name="init" initial="true"/>
+          </embeddedStatechart>
+        </embeddedRegions>
+      </states>
+    </modelElements>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_T93LAJMCEeOgHtdZ_BIAyA" name="MainController_MotorPort" behavioralElement="_B_yb4JMCEeOowcKXwKHTCg">
+      <states xmi:id="_T93LAZMCEeOgHtdZ_BIAyA" name="init" initial="true"/>
+    </modelElements>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_ZNuiIJMCEeOgHtdZ_BIAyA" name="Motor_ControllerPort" behavioralElement="_B_0REZMCEeOowcKXwKHTCg">
+      <states xmi:id="_ZNuiIZMCEeOgHtdZ_BIAyA" name="init" initial="true"/>
+    </modelElements>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_IRIosJMDEeO8-e-lxEb-xg" name="SensorPort">
+      <states xmi:id="_IRIosZMDEeO8-e-lxEb-xg" name="init" initial="true"/>
+    </modelElements>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_Ba3fAJMEEeOiz79r5bvUJA" name="Sensor_Controller_Port" behavioralElement="_EZg24JMDEeO8-e-lxEb-xg">
+      <states xmi:id="_Ba3fAZMEEeOiz79r5bvUJA" name="init" initial="true"/>
+    </modelElements>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_H_sogJMFEeOIAbRzLo-vMg" name="MotorController" behavioralElement="_gEh-wJI6EeOKvL3T9kRl_w">
+      <states xmi:id="_H_sogZMFEeOIAbRzLo-vMg" initial="true">
+        <embeddedRegions xmi:id="_IAAKgJMFEeOIAbRzLo-vMg" priority="1">
+          <embeddedStatechart xmi:id="_IABYoJMFEeOIAbRzLo-vMg" name="Motor_ControllerPort_controller" behavioralElement="_br9KAJMAEeOKvdQCsRkL-g">
+            <states xmi:id="_IABYoZMFEeOIAbRzLo-vMg" name="init" initial="true"/>
+          </embeddedStatechart>
+        </embeddedRegions>
+      </states>
+    </modelElements>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_MZEcgJMFEeOIAbRzLo-vMg" name="SensorController" behavioralElement="_jG2gQJI6EeOKvL3T9kRl_w">
+      <states xmi:id="_MZEcgZMFEeOIAbRzLo-vMg" initial="true">
+        <embeddedRegions xmi:id="_MZFqoJMFEeOIAbRzLo-vMg" priority="1">
+          <embeddedStatechart xmi:id="_MZGRsJMFEeOIAbRzLo-vMg" name="SensorController_controllerPort" behavioralElement="_54MUkJL_EeOgn_iPPWiMxQ">
+            <states xmi:id="_MZGRsZMFEeOIAbRzLo-vMg" name="init" initial="true">
+              <embeddedRegions xmi:id="_MZGRspMFEeOIAbRzLo-vMg" priority="1">
+                <embeddedStatechart xmi:id="_MZGRs5MFEeOIAbRzLo-vMg" name="SensorPort_SensorPort">
+                  <states xmi:id="_MZGRtJMFEeOIAbRzLo-vMg" name="init" initial="true"/>
+                </embeddedStatechart>
+              </embeddedRegions>
+            </states>
+          </embeddedStatechart>
+        </embeddedRegions>
+      </states>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_aAefsJI8EeOKvL3T9kRl_w" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype">
+    <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_agutEJI8EeOKvL3T9kRl_w" name="Repository">
+      <messageTypes xmi:id="_aybhEJI8EeOKvL3T9kRl_w" name="messagetype"/>
+      <messageTypes xmi:id="_bHLCAJI8EeOKvL3T9kRl_w" name="messagetype2"/>
+    </modelElements>
+    <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="__tfekJMAEeOTreLsSKWNBA" name="Sensors">
+      <messageTypes xmi:id="_BA0usJMBEeOTreLsSKWNBA" name="setSensorValue"/>
+      <messageTypes xmi:id="_CYaMsJMBEeOTreLsSKWNBA" name="getSensorValue"/>
+    </modelElements>
+    <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_EkbYUJMBEeOTreLsSKWNBA" name="Motors">
+      <messageTypes xmi:id="_FVBu0JMBEeOTreLsSKWNBA" name="setMotorSpeed"/>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_dNspoJI8EeOKvL3T9kRl_w" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol">
+    <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_B_s8UJMCEeOowcKXwKHTCg" name="Controller2Motor">
+      <roles xmi:id="_B_yb4JMCEeOowcKXwKHTCg" connectors="_B_1fMJMCEeOowcKXwKHTCg" behavior="_T93LAJMCEeOgHtdZ_BIAyA" name="controller" senderMessageTypes="_FVBu0JMBEeOTreLsSKWNBA">
+        <cardinality xmi:id="_B_zC8JMCEeOowcKXwKHTCg">
+          <lowerBound xmi:id="_B_zqAJMCEeOowcKXwKHTCg"/>
+          <upperBound xmi:id="_B_0REJMCEeOowcKXwKHTCg"/>
+        </cardinality>
+      </roles>
+      <roles xmi:id="_B_0REZMCEeOowcKXwKHTCg" connectors="_B_1fMJMCEeOowcKXwKHTCg" behavior="_ZNuiIJMCEeOgHtdZ_BIAyA" name="motor" receiverMessageTypes="_FVBu0JMBEeOTreLsSKWNBA">
+        <cardinality xmi:id="_B_04IJMCEeOowcKXwKHTCg">
+          <lowerBound xmi:id="_B_04IZMCEeOowcKXwKHTCg"/>
+          <upperBound xmi:id="_B_04IpMCEeOowcKXwKHTCg"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_pOny4JMCEeOgHtdZ_BIAyA" messageType="_FVBu0JMBEeOTreLsSKWNBA">
+          <bufferSize xmi:id="_p31H8JMCEeOgHtdZ_BIAyA" value="5"/>
+        </receiverMessageBuffer>
+      </roles>
+      <roleConnector xmi:id="_B_1fMJMCEeOowcKXwKHTCg" connectorEndpoints="_B_yb4JMCEeOowcKXwKHTCg _B_0REZMCEeOowcKXwKHTCg">
+        <connectorQualityOfServiceAssumptions xmi:id="_B_2tUJMCEeOowcKXwKHTCg" comment="">
+          <minMessageDelay xmi:id="_sN-f8JMCEeOgHtdZ_BIAyA" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_toZ2kJMCEeOgHtdZ_BIAyA" value="100"/>
+          </minMessageDelay>
+          <maxMessageDelay xmi:id="_tp0y4JMCEeOgHtdZ_BIAyA" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_wsZMAJMCEeOgHtdZ_BIAyA" value="100"/>
+          </maxMessageDelay>
+        </connectorQualityOfServiceAssumptions>
+      </roleConnector>
+    </modelElements>
+    <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_EZclcJMDEeO8-e-lxEb-xg" name="Controller2Sensor">
+      <roles xmi:id="_EZg24JMDEeO8-e-lxEb-xg" connectors="_EZj6MZMDEeO8-e-lxEb-xg" behavior="_Ba3fAJMEEeOiz79r5bvUJA" name="Controller" senderMessageTypes="_CYaMsJMBEeOTreLsSKWNBA" receiverMessageTypes="_BA0usJMBEeOTreLsSKWNBA">
+        <cardinality xmi:id="_EZhd8JMDEeO8-e-lxEb-xg">
+          <lowerBound xmi:id="_EZhd8ZMDEeO8-e-lxEb-xg"/>
+          <upperBound xmi:id="_EZiFAJMDEeO8-e-lxEb-xg"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_Rz3twJMEEeOiz79r5bvUJA" messageType="_BA0usJMBEeOTreLsSKWNBA">
+          <bufferSize xmi:id="_SO9HQJMEEeOiz79r5bvUJA" value="5"/>
+        </receiverMessageBuffer>
+      </roles>
+      <roles xmi:id="_EZisEJMDEeO8-e-lxEb-xg" connectors="_EZj6MZMDEeO8-e-lxEb-xg" behavior="_4OJqIJI6EeOKvL3T9kRl_w" name="Sensor" senderMessageTypes="_BA0usJMBEeOTreLsSKWNBA" receiverMessageTypes="_CYaMsJMBEeOTreLsSKWNBA">
+        <cardinality xmi:id="_EZjTIJMDEeO8-e-lxEb-xg">
+          <lowerBound xmi:id="_EZjTIZMDEeO8-e-lxEb-xg"/>
+          <upperBound xmi:id="_EZj6MJMDEeO8-e-lxEb-xg"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_abFbMJMEEeOiz79r5bvUJA" messageType="_CYaMsJMBEeOTreLsSKWNBA">
+          <bufferSize xmi:id="_bIrhAJMEEeOiz79r5bvUJA" value="5"/>
+        </receiverMessageBuffer>
+      </roles>
+      <roleConnector xmi:id="_EZj6MZMDEeO8-e-lxEb-xg" connectorEndpoints="_EZg24JMDEeO8-e-lxEb-xg _EZisEJMDEeO8-e-lxEb-xg">
+        <connectorQualityOfServiceAssumptions xmi:id="_EZlIUJMDEeO8-e-lxEb-xg" comment="">
+          <minMessageDelay xmi:id="_cZXFwJMEEeOiz79r5bvUJA" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_d0lGkJMEEeOiz79r5bvUJA" value="100"/>
+          </minMessageDelay>
+          <maxMessageDelay xmi:id="_d16jUJMEEeOiz79r5bvUJA" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_e9aW4JMEEeOiz79r5bvUJA" value="100"/>
+          </maxMessageDelay>
+        </connectorQualityOfServiceAssumptions>
+      </roleConnector>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_hlyR4JMFEeOIDchXYj7RNg" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance">
+    <modelElements xsi:type="instance:ComponentInstanceConfiguration" xmi:id="_hlyR4ZMFEeOIDchXYj7RNg">
+      <componentInstances xsi:type="instance:StructuredComponentInstance" xmi:id="_1XtkQJMFEeOIDchXYj7RNg" name="RobotController" componentType="_DoJBMJI7EeOKvL3T9kRl_w">
+        <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_3QgR4JMFEeOIDchXYj7RNg" name="port" connectorInstances="_3Q5TfZMFEeOIDchXYj7RNg _3Q5TfpMFEeOIDchXYj7RNg _juToIJMGEeOwbPp1FwM8PA" type="_kil-EJMBEeOowcKXwKHTCg"/>
+        <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_3QmYgJMFEeOIDchXYj7RNg" name="motorLeft" connectorInstances="_3Q5TfJMFEeOIDchXYj7RNg _3Q5TgpMFEeOIDchXYj7RNg _igUyEJMGEeOwbPp1FwM8PA" type="_AJkBcJL_EeOSHsl3APwt-w"/>
+        <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_3QnmoJMFEeOIDchXYj7RNg" name="motorRight" connectorInstances="_3Q5Tf5MFEeOIDchXYj7RNg _3Q5Te5MFEeOIDchXYj7RNg _h24zgJMGEeOwbPp1FwM8PA" type="_D_iNcJL_EeOSHsl3APwt-w"/>
+        <embeddedCIC xmi:id="_3Q5TcJMFEeOIDchXYj7RNg" name="HWController">
+          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_3Q5TcZMFEeOIDchXYj7RNg" name="m" componentType="_gEh-wJI6EeOKvL3T9kRl_w" componentPart="_mhMjYJI-EeO1frWp6pXzVg">
+            <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_3Q5TcpMFEeOIDchXYj7RNg" name="motorRight" connectorInstances="_3Q5Tf5MFEeOIDchXYj7RNg _3Q5Te5MFEeOIDchXYj7RNg" type="_0T3l0JL-EeOSHsl3APwt-w"/>
+            <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_3Q5Tc5MFEeOIDchXYj7RNg" name="controller1" connectorInstances="_3Q5TgZMFEeOIDchXYj7RNg" type="_br9KAJMAEeOKvdQCsRkL-g"/>
+            <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_3Q5TdJMFEeOIDchXYj7RNg" name="motorLeft" connectorInstances="_3Q5TfJMFEeOIDchXYj7RNg _3Q5TgpMFEeOIDchXYj7RNg" type="_1ARY0JL-EeOSHsl3APwt-w"/>
+          </componentInstances>
+          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_3Q5TdZMFEeOIDchXYj7RNg" name="s" componentType="_jG2gQJI6EeOKvL3T9kRl_w" componentPart="_1jtgUJI-EeOY4Y2LFYlN-w">
+            <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_3Q5TdpMFEeOIDchXYj7RNg" name="controllerPort1" connectorInstances="_3Q5TgJMFEeOIDchXYj7RNg" type="_54MUkJL_EeOgn_iPPWiMxQ"/>
+            <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_3Q5Td5MFEeOIDchXYj7RNg" name="light" connectorInstances="_3Q5TfZMFEeOIDchXYj7RNg _3Q5TfpMFEeOIDchXYj7RNg" type="_eh5cYJMAEeOKvdQCsRkL-g"/>
+          </componentInstances>
+          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_3Q5TeJMFEeOIDchXYj7RNg" name="Controller" componentType="_WA1PsJL_EeOgn_iPPWiMxQ" componentPart="_gzeoAJMBEeOowcKXwKHTCg">
+            <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_3Q5TeZMFEeOIDchXYj7RNg" name="sensors1" connectorInstances="_3Q5TgJMFEeOIDchXYj7RNg" type="_fpJNwJL_EeOgn_iPPWiMxQ"/>
+            <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_3Q5TepMFEeOIDchXYj7RNg" name="motors1" connectorInstances="_3Q5TgZMFEeOIDchXYj7RNg" type="_fA3FwJL_EeOgn_iPPWiMxQ"/>
+          </componentInstances>
+          <portConnectorInstances xsi:type="instance:DelegationConnectorInstance" xmi:id="_3Q5Te5MFEeOIDchXYj7RNg" type="_F8tEwJL_EeOSHsl3APwt-w" connectorEndpointInstances="_3Q5TcpMFEeOIDchXYj7RNg _3QnmoJMFEeOIDchXYj7RNg"/>
+          <portConnectorInstances xsi:type="instance:DelegationConnectorInstance" xmi:id="_3Q5TfJMFEeOIDchXYj7RNg" type="_DOmfwJL_EeOSHsl3APwt-w" connectorEndpointInstances="_3QmYgJMFEeOIDchXYj7RNg _3Q5TdJMFEeOIDchXYj7RNg"/>
+          <portConnectorInstances xsi:type="instance:DelegationConnectorInstance" xmi:id="_3Q5TfZMFEeOIDchXYj7RNg" type="_rUrV4JMBEeOowcKXwKHTCg" connectorEndpointInstances="_3QgR4JMFEeOIDchXYj7RNg _3Q5Td5MFEeOIDchXYj7RNg"/>
+          <portConnectorInstances xsi:type="instance:DelegationConnectorInstance" xmi:id="_3Q5TfpMFEeOIDchXYj7RNg" type="_rUrV4JMBEeOowcKXwKHTCg" connectorEndpointInstances="_3QgR4JMFEeOIDchXYj7RNg _3Q5Td5MFEeOIDchXYj7RNg"/>
+          <portConnectorInstances xsi:type="instance:DelegationConnectorInstance" xmi:id="_3Q5Tf5MFEeOIDchXYj7RNg" type="_F8tEwJL_EeOSHsl3APwt-w" connectorEndpointInstances="_3Q5TcpMFEeOIDchXYj7RNg _3QnmoJMFEeOIDchXYj7RNg"/>
+          <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_3Q5TgJMFEeOIDchXYj7RNg" type="_XXjjUJMFEeOIDchXYj7RNg" connectorEndpointInstances="_3Q5TdpMFEeOIDchXYj7RNg _3Q5TeZMFEeOIDchXYj7RNg"/>
+          <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_3Q5TgZMFEeOIDchXYj7RNg" type="_YHImIJMFEeOIDchXYj7RNg" connectorEndpointInstances="_3Q5TepMFEeOIDchXYj7RNg _3Q5Tc5MFEeOIDchXYj7RNg"/>
+          <portConnectorInstances xsi:type="instance:DelegationConnectorInstance" xmi:id="_3Q5TgpMFEeOIDchXYj7RNg" type="_DOmfwJL_EeOSHsl3APwt-w" connectorEndpointInstances="_3QmYgJMFEeOIDchXYj7RNg _3Q5TdJMFEeOIDchXYj7RNg"/>
+        </embeddedCIC>
+      </componentInstances>
+      <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_Fp9DsJMGEeOwbPp1FwM8PA" name="Left" componentType="_yqGugJMFEeOIDchXYj7RNg">
+        <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_Zldv4JMGEeOwbPp1FwM8PA" name="motor" connectorInstances="_igUyEJMGEeOwbPp1FwM8PA" type="_VbbYYJMGEeOwbPp1FwM8PA"/>
+      </componentInstances>
+      <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_IIgw0JMGEeOwbPp1FwM8PA" name="Right" componentType="_yqGugJMFEeOIDchXYj7RNg">
+        <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_ZlkdkJMGEeOwbPp1FwM8PA" name="motor" connectorInstances="_h24zgJMGEeOwbPp1FwM8PA" type="_VbbYYJMGEeOwbPp1FwM8PA"/>
+      </componentInstances>
+      <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_NSVKUJMGEeOwbPp1FwM8PA" name="LEGOLightSensor" componentType="_uiDUAJMFEeOIDchXYj7RNg">
+        <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_ZlqkMJMGEeOwbPp1FwM8PA" name="sensor" connectorInstances="_juToIJMGEeOwbPp1FwM8PA" type="_U81X4JMGEeOwbPp1FwM8PA"/>
+      </componentInstances>
+      <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_h24zgJMGEeOwbPp1FwM8PA" connectorEndpointInstances="_3QnmoJMFEeOIDchXYj7RNg _ZlkdkJMGEeOwbPp1FwM8PA"/>
+      <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_igUyEJMGEeOwbPp1FwM8PA" connectorEndpointInstances="_3QmYgJMFEeOIDchXYj7RNg _Zldv4JMGEeOwbPp1FwM8PA"/>
+      <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_juToIJMGEeOwbPp1FwM8PA" connectorEndpointInstances="_ZlqkMJMGEeOwbPp1FwM8PA _3QgR4JMFEeOIDchXYj7RNg"/>
+    </modelElements>
+  </categories>
+</modelinstance:RootNode>

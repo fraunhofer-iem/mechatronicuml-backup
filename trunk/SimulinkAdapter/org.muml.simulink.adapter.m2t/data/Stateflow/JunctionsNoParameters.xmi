@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ASCII"?>
+<model:SimulinkContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://www.muml.org/simulink/1.0.0" xmlns:stateflow="http://www.muml.org/simulink/stateflow/1.0.0" id="_nZ8tIEXZEeGRyehUlJU_cA">
+  <models id="_nZ8tIUXZEeGRyehUlJU_cA" name="Junctions">
+    <blocks xsi:type="model:ChartBlock" id="_nZ8tIkXZEeGRyehUlJU_cA" name="Chart" chart="_nZ9UMUXZEeGRyehUlJU_cA"/>
+    <stateflowMachine id="_nZ9UMEXZEeGRyehUlJU_cA">
+      <charts id="_nZ9UMUXZEeGRyehUlJU_cA" name="Chart" priority="1" initial="true" block="_nZ8tIkXZEeGRyehUlJU_cA">
+        <nodes xsi:type="stateflow:State" id="_nZ9UMkXZEeGRyehUlJU_cA" incoming="_naEB4EXZEeGRyehUlJU_cA" name="End" priority="1"/>
+        <nodes xsi:type="stateflow:Junction" id="_naCzwEXZEeGRyehUlJU_cA" incoming="_naDa0UXZEeGRyehUlJU_cA _naDa0kXZEeGRyehUlJU_cA" outgoing="_naEB4EXZEeGRyehUlJU_cA"/>
+        <nodes xsi:type="stateflow:State" id="_naCzwUXZEeGRyehUlJU_cA" outgoing="_naDa00XZEeGRyehUlJU_cA" name="Start" priority="1"/>
+        <nodes xsi:type="stateflow:Junction" id="_naDa0EXZEeGRyehUlJU_cA" incoming="_naDa00XZEeGRyehUlJU_cA" outgoing="_naDa0UXZEeGRyehUlJU_cA _naDa0kXZEeGRyehUlJU_cA"/>
+        <transitions id="_naDa0UXZEeGRyehUlJU_cA" source="_naDa0EXZEeGRyehUlJU_cA" target="_naCzwEXZEeGRyehUlJU_cA" priority="2"/>
+        <transitions id="_naDa0kXZEeGRyehUlJU_cA" source="_naDa0EXZEeGRyehUlJU_cA" target="_naCzwEXZEeGRyehUlJU_cA" priority="1"/>
+        <transitions id="_naDa00XZEeGRyehUlJU_cA" source="_naCzwUXZEeGRyehUlJU_cA" target="_naDa0EXZEeGRyehUlJU_cA" priority="1"/>
+        <transitions id="_naEB4EXZEeGRyehUlJU_cA" source="_naCzwEXZEeGRyehUlJU_cA" target="_nZ9UMkXZEeGRyehUlJU_cA" priority="1"/>
+      </charts>
+    </stateflowMachine>
+  </models>
+</model:SimulinkContainer>

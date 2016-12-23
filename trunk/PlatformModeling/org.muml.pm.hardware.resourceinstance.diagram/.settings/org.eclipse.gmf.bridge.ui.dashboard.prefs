@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+gmf_dashboard/domainGenerationModel=platform\:/resource/org.muml.pm.hardware/model/hardware.genmodel
+gmf_dashboard/domainModel=platform\:/resource/org.muml.pm.hardware/model/hardware.ecore
+gmf_dashboard/generationModel=platform\:/resource/org.muml.pm.hardware.resourceinstance.diagram/model/resourceinstance.gmfgen
+gmf_dashboard/graphicalDefinitionModel=platform\:/resource/org.muml.pm.hardware.resourceinstance.diagram/model/resourceinstance.gmfgraph
+gmf_dashboard/mappingModel=platform\:/resource/org.muml.pm.hardware.resourceinstance.diagram/model/resourceinstance.gmfmap
+gmf_dashboard/toolingDefinitionModel=platform\:/resource/org.muml.pm.hardware.resourceinstance.diagram/model/resourceinstance.gmftool

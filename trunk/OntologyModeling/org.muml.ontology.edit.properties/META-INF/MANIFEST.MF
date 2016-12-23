@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ontology Properties
+Bundle-SymbolicName: org.muml.ontology.edit.properties; singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.emf.ecore,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.edit,
+ org.eclipse.ui,
+ org.eclipse.core.resources,
+ org.eclipse.jface,
+ org.muml.ontology.edit,
+ org.muml.ape.runtime,
+ org.muml.ontology,
+ org.muml.core.edit,
+ org.muml.core.edit.properties,
+ org.muml.pim.edit,
+ org.muml.pim.edit.properties,
+ org.muml.pim.common,
+ org.muml.external.owlapi
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.muml.ontology.properties.metamodel, org.muml.ontology.properties.constraint,
+ org.muml.ontology.properties.ontology.editor,
+ org.muml.ontology.properties.tabs
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

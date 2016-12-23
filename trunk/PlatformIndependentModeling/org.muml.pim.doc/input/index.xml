@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE book [
+	<!ENTITY UserGuide SYSTEM "User Guide/index.xml">
+	<!ENTITY DeveloperGuide SYSTEM "Developer Guide/index.xml">
+	<!ENTITY GettingStarted SYSTEM "User Guide/chapters/01-GettingStarted.xml">
+	<!ENTITY HowTo SYSTEM "User Guide/chapters/02-HowTo.xml">
+	<!ENTITY Tutorials SYSTEM "User Guide/chapters/03-Tutorials.xml">
+	<!ENTITY FAQ SYSTEM "User Guide/chapters/04-FAQ.xml">
+	<!ENTITY Legal SYSTEM "User Guide/chapters/05-Legal.xml">
+]>
+<book xmlns="http://docbook.org/ns/docbook" version="5.0" xml:lang="en">
+
+	<title>MechatronicUML Tool Suite Guide</title>
+	
+	<titleabbrev>FujabaRT Guide</titleabbrev>
+	
+	&DeveloperGuide;
+	&UserGuide;
+</book>

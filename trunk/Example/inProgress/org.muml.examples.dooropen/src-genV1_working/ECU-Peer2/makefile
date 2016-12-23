@@ -1,0 +1,59 @@
+
+
+ifndef NDDSHOME
+NDDSHOME := "/home/ralle/rti_connext_dds-5.2.0"
+endif
+#TARGET_ARCH = x64Linux3.xgcc4.6.3
+
+SYSLIBS = -ldl -lnsl -lm -lpthread -lrt
+DEFINES = -DRTI_UNIX -DRTI_LINUX -DRTI_64BIT 
+LIBS = -L$(NDDSHOME)/lib/x64Linux3.xgcc4.6.3 \
+        -lnddscz -lnddscorez $(SYSLIBS)
+DDSSOURCES = MUML_DDSSupport.o MUML_DDSPlugin.o MUML_DDS.o 
+
+
+CONT =  MCC_launchDelegatorComponent.o MCC_identificationInputComponent.o
+CONT_LIB =  MessageBuffer.o LocalBufferManager.o DDS_Custom_Lib.o
+
+RTSC = launchDelegatorLaunchDelegatorStateChart.o 
+COMP = launchDelegatorComponent.o  
+LIB =   Debug.o
+CC = gcc
+CFLAGS = -static -ggdb -Wall -c  $(DEFINES) -I types -I lib -I $(NDDSHOME)/include -I $(NDDSHOME)/include/ndds -DDEBUG
+all: app
+
+app : main.o $(RTSC) $(COMP) $(LIB) $(CONT_LIB) $(HYB) $(CONT)   $(DDSSOURCES)
+	$(CC) main.o $(RTSC) $(COMP) $(LIB) $(CONT_LIB) $(HYB) $(CONT)  $(DDSSOURCES) $(LIBS) -o app
+launchDelegatorLaunchDelegatorStateChart.o: RTSCs/launchDelegatorLaunchDelegatorStateChart.c
+	$(CC) $(CFLAGS) RTSCs/launchDelegatorLaunchDelegatorStateChart.c
+launchDelegatorComponent.o: components/launchDelegatorComponent.c
+	$(CC) $(CFLAGS) components/launchDelegatorComponent.c
+#contImplementations.o: continuousComponents/contImplementations.c
+	#$(CC) $(CFLAGS) continuousComponents/contImplementations.c
+
+MUML_DDSSupport.o: dds/MUML_DDSSupport.c
+	$(CC) $(CFLAGS) dds/MUML_DDSSupport.c
+MUML_DDSPlugin.o: dds/MUML_DDSPlugin.c
+	$(CC) $(CFLAGS) dds/MUML_DDSPlugin.c
+MUML_DDS.o: dds/MUML_DDS.c
+	$(CC) $(CFLAGS) dds/MUML_DDS.c
+
+
+MessageBuffer.o: container_lib/MessageBuffer.c
+	$(CC) $(CFLAGS) container_lib/MessageBuffer.c
+LocalBufferManager.o: container_lib/LocalBufferManager.c
+	$(CC) $(CFLAGS) container_lib/LocalBufferManager.c
+DDS_Custom_Lib.o: container_lib/DDS_Custom_Lib.c
+	$(CC) $(CFLAGS) container_lib/DDS_Custom_Lib.c
+
+
+MCC_launchDelegatorComponent.o: component_container/MCC_launchDelegatorComponent.c
+	$(CC) $(CFLAGS) component_container/MCC_launchDelegatorComponent.c
+MCC_identificationInputComponent.o: component_container/MCC_identificationInputComponent.c
+	$(CC) $(CFLAGS) component_container/MCC_identificationInputComponent.c
+
+Debug.o: lib/Debug.c
+	$(CC) $(CFLAGS) lib/Debug.c
+
+clean:
+	rm -rf *o 

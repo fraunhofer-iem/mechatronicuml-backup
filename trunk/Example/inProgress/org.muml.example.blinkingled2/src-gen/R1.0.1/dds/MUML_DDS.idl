@@ -1,0 +1,10 @@
+#ifndef MUML_DDS_IDL
+#define MUML_DDS_IDL
+
+  struct DDS_MAIN_LED_VOLTAGE;
+
+#pragma DCPS_DATA_TYPE "DDS_MAIN_LED_VOLTAGE"
+  struct DDS_MAIN_LED_VOLTAGE {
+    char value;
+  };
+#endif 

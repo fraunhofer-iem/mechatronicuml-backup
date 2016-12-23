@@ -1,0 +1,38 @@
+import simulink;
+import simulink::stateflow;
+import simulink::msglib;
+import simulink::msglib::buffer;
+
+String getCode(SharedDequeue function):
+'function [evtQueue, paramQueue, parameter] = ' + function.name + '(event, evtQueueIn, paramQueueIn) %eml 
+evtQueue = evtQueueIn; 
+paramQueue = paramQueueIn; 
+parameter = 0; 
+if evtQueue(1) == event 
+     parameter = paramQueue(1); 
+     for j = 1:length(evtQueue)-1 
+         evtQueue(j) = evtQueue(j+1);
+         paramQueue(j) = paramQueue(j+1); 
+     end 
+     evtQueue(length(evtQueue)) = 0; 
+     paramQueue(length(paramQueue)) = 0; 
+     return 
+ end'
+;
+
+EmbeddedFunction generateContent(SharedDequeue function):
+function.setCode(function.getCode()).setInput(function.generateInputData(function.bufferSize)).setOutput(function.generateOutputData(function.bufferSize));
+
+List[Data] generateInputData(SharedDequeue function, Integer bufferSize):
+{let d=new Data:d.setName('event').setType(DataType::UINT8)->d,
+let d=new Data:d.setName('evtQueueIn').setType(DataType::UINT8).setSize('[' + bufferSize + ']')->d,
+let d=new Data:d.setName('paramQueueIn').setType(DataType::DOUBLE).setSize('[' + bufferSize + ']')->d
+}
+;
+
+List[Data] generateOutputData(SharedDequeue function, Integer bufferSize):
+{let d=new Data:d.setName('evtQueue').setType(DataType::UINT8).setSize('[' + bufferSize + ']')->d,
+let d=new Data:d.setName('paramQueue').setType(DataType::DOUBLE).setSize('[' + bufferSize + ']')->d,
+let d=new Data:d.setName('parameter').setType(DataType::DOUBLE)->d
+}
+;

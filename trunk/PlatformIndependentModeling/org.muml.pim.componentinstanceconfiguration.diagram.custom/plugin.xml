@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
+      <editpartProvider
+            class="org.muml.pim.componentinstanceconfiguration.diagram.custom.providers.CustomComponentinstanceconfigurationEditPartProvider">
+         <Priority
+               name="Low">
+         </Priority>
+      </editpartProvider>
+   </extension>
+   
+      
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
+      <binding context="org.muml.pim.componentinstanceconfiguration.diagram.TypeContext">
+         <elementType ref="org.muml.pim.componentinstanceconfiguration.diagram.AssemblyConnectorInstance_4001"/>
+         <advice ref="org.muml.pim.componentinstanceconfiguration.diagram.AssemblyConnectorInstanceAdvice"/>
+      </binding>
+   </extension>
+   
+   
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
+      <binding context="org.muml.pim.componentinstanceconfiguration.diagram.TypeContext">
+         <elementType ref="org.muml.pim.componentinstanceconfiguration.diagram.DiscreteSinglePortInstance_2022"/>
+         <advice ref="org.muml.pim.componentinstanceconfiguration.diagram.DiscreteSinglePortInstanceAdvice"/>
+      </binding>
+   </extension>
+   
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
+      <binding context="org.muml.pim.componentinstanceconfiguration.diagram.TypeContext">
+         <elementType ref="org.muml.pim.componentinstanceconfiguration.diagram.DiscreteMultiPortInstance_2023"/>
+         <advice ref="org.muml.pim.componentinstanceconfiguration.diagram.DiscreteMultiPortInstanceAdvice"/>
+      </binding>
+   </extension>
+   
+   
+   
+   
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
+      <metamodel nsURI="http://www.muml.org/pim/instance/1.0.0">
+        <adviceBinding id="org.muml.pim.componentinstanceconfiguration.diagram.AssemblyConnectorInstanceAdvice"
+		  typeId="org.muml.pim.componentinstanceconfiguration.diagram.AssemblyConnectorInstance_4001"
+		  class="org.muml.pim.componentinstanceconfiguration.diagram.custom.edit.helpers.AssemblyConnectorInstanceEditHelperAdvice"
+		  inheritance="all">
+        </adviceBinding>
+      </metamodel>
+   </extension>
+   
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
+      <metamodel nsURI="http://www.muml.org/pim/instance/1.0.0">
+        <adviceBinding id="org.muml.pim.componentinstanceconfiguration.diagram.DiscreteSinglePortInstanceAdvice"
+		  typeId="org.muml.pim.componentinstanceconfiguration.diagram.DiscreteSinglePortInstance_2022"
+		  class="org.muml.pim.componentinstanceconfiguration.diagram.custom.edit.helpers.DiscreteSinglePortInstanceEditHelperAdvice"
+		  inheritance="all">
+        </adviceBinding>
+      </metamodel>
+   </extension>
+   
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
+      <metamodel nsURI="http://www.muml.org/pim/instance/1.0.0">
+        <adviceBinding id="org.muml.pim.componentinstanceconfiguration.diagram.DiscreteMultiPortInstanceAdvice"
+		  typeId="org.muml.pim.componentinstanceconfiguration.diagram.DiscreteMultiPortInstance_2023"
+		  class="org.muml.pim.componentinstanceconfiguration.diagram.custom.edit.helpers.DiscreteMultiPortInstanceEditHelperAdvice"
+		  inheritance="all">
+        </adviceBinding>
+      </metamodel>
+   </extension>
+   
+   
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
+      <ParserProvider class="org.muml.pim.componentinstanceconfiguration.diagram.custom.providers.CustomMumlParserProvider">
+         <Priority name="Low"/>
+      </ParserProvider>
+   </extension>
+   
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.layoutProviders">
+       <layoutProvider class="org.muml.pim.componentinstanceconfiguration.diagram.custom.layout.CICLayoutProvider">
+            <Priority name="High"/>
+       </layoutProvider>
+   </extension>
+
+   <extension
+       point="org.muml.core.modelinstance.ui.modelinitializer">
+      <initializer
+          initializer="org.muml.pim.componentinstanceconfiguration.diagram.custom.initializer.ComponentInstanceConfigurationInitializer">
+      </initializer>
+   </extension>
+</plugin>

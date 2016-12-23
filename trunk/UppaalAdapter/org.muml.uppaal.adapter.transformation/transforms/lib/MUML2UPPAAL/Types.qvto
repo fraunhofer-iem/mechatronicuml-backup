@@ -1,0 +1,217 @@
+library Types;
+
+modeltype uppaal uses 'http://www.muml.org/uppaal/1.0.0';
+modeltype uppaal_types uses uppaal::types('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_declarations uses uppaal::declarations('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_expressions uses uppaal::expressions('http://www.muml.org/uppaal/1.0.0');
+modeltype core uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype types uses pim::types('http://www.muml.org/pim/1.0.0');
+modeltype proto uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype component uses pim::component('http://www.muml.org/pim/1.0.0');
+
+	property INT : PredefinedType = null;
+	property BOOL : PredefinedType = null;
+	property CLOCK : PredefinedType = null;
+	property CHAN : PredefinedType = null;
+	property VOID : PredefinedType = null;
+	
+	property MUMLINT : DeclaredType = null;
+	property MUMLSHORT : DeclaredType = null;
+	property MUMLBYTE : DeclaredType = null;
+	property MUMLBOOL : DeclaredType = null;
+	
+	helper initialize() {
+		
+		-- workaround for https://bugs.eclipse.org/bugs/show_bug.cgi?id=392080
+		-- initialize constants only after module initialization (avoid missing out extent)
+		
+		INT := new PredefinedType(BuiltInType::INT);
+		BOOL := new PredefinedType(BuiltInType::BOOL);
+		CLOCK := new PredefinedType(BuiltInType::CLOCK);
+		CHAN := new PredefinedType(BuiltInType::CHAN);
+		VOID := new PredefinedType(BuiltInType::VOID);
+		
+		MUMLINT := new DeclaredType("MUMLInt");
+		MUMLSHORT := new DeclaredType("MUMLShort");
+		MUMLBYTE := new DeclaredType("MUMLByte");
+		
+		return
+		
+	}
+	
+	constructor PredefinedType::PredefinedType(t : BuiltInType) {
+		
+		type := t;
+				
+		name := t.repr();
+		
+	}
+	
+	constructor DeclaredType::DeclaredType(typeName : String) {
+		
+		name := typeName;
+		
+	}
+						
+	mapping DataType :: createTypeDeclaration() : TypeDeclaration 
+	when {
+		not self.oclIsKindOf(PrimitiveDataType) and 
+		not self.oclIsKindOf(ArrayDataType) and
+		not self.oclIsKindOf(Role) and
+		not self.oclIsKindOf(Port)
+	} {
+	
+		var t : Type = self.map DataType2Type();
+		
+		assert fatal (t.oclIsKindOf(DeclaredType)) with log('Declared type expected.');
+		
+		type += t.oclAsType(DeclaredType);
+		
+		typeDefinition := self.map createTypeSpec();
+		
+	}
+		
+	mapping DataType :: DataType2Type() : Type disjuncts
+		PrimitiveDataType::Primitive2Type,
+		ArrayDataType::createArrayType,
+		DataType::failOnUnsupportedType;
+	
+	mapping PrimitiveDataType :: Primitive2Type() : Type {
+	
+		init {
+			
+			-- Long values are not supported due to missing Uppaal support
+			result := switch {
+				case (self.primitiveType = PrimitiveTypes::INT32) MUMLINT;
+				case (self.primitiveType = PrimitiveTypes::VOID) VOID;
+				case (self.primitiveType = PrimitiveTypes::BOOLEAN) BOOL;
+				case (self.primitiveType = PrimitiveTypes::INT16) MUMLSHORT;
+				case (self.primitiveType = PrimitiveTypes::INT8) MUMLBYTE;
+				else assert fatal (false) with log(self.primitiveType.toString()+" is not supported");
+			}
+			
+		}
+				
+	}
+	
+	/*
+	query PrimitiveTypes::mapType() : uppaal_types::BuiltInType {
+		
+		return switch {
+			case (self = PrimitiveTypes::BOOLEAN) uppaal_types::BuiltInType::BOOL;
+			case (self = PrimitiveTypes::INT) uppaal_types::BuiltInType::INT;
+			else assert fatal (false) with log("Illegal enum value");
+		}
+		
+	}
+	
+	query BuiltInType::mapType() : PredefinedType {
+		
+		return switch {
+			case (self = BuiltInType::INT) INT;
+			case (self = BuiltInType::BOOL) BOOL;
+			case (self = BuiltInType::CLOCK) CLOCK;
+			case (self = BuiltInType::CHAN) CHAN;
+			case (self = BuiltInType::VOID) VOID;
+			else assert fatal (false) with log("Illegal enum value");
+		}
+		
+	}*/
+	
+	mapping ArrayDataType :: createArrayType() : Type {
+		
+		-- disregard array type because UPPAAL does not distinguish array type and base type 
+			
+		init {
+			
+			result := self.type.map DataType2Type();
+			
+		}
+				
+	}
+	
+	mapping DataType :: failOnUnsupportedType() : Type {
+	
+		init {
+			assert fatal (false) with log("The DataType "+self.toString()+" is unsupported.")
+		}
+	
+	}
+	
+			
+	mapping DataType :: createTypeSpec() : TypeSpecification disjuncts
+		DataType::failOnUnsupportedTypeSpec;
+	
+	mapping DataType :: failOnUnsupportedTypeSpec() : TypeSpecification {
+		
+		init {
+			assert fatal (false) with log("Mapping this type spec is unsupported.")
+		}
+		
+	}
+	
+	-- define MUML type declaration mappings w.r.t. the MUML specification
+	
+	mapping createMumlIntegerTypeDeclaration() : TypeDeclaration {
+	
+		typeDefinition := object RangeTypeSpecification {
+	
+			bounds := object IntegerBounds {
+				
+				lowerBound := object LiteralExpression {
+					text := "-2147483648";
+				};
+				
+				upperBound := object LiteralExpression {
+					text := "2147483647";
+				};
+			}
+			
+		};
+		
+		type += MUMLINT;
+		
+	}
+	
+	mapping createMumlShortTypeDeclaration() : TypeDeclaration {
+	
+		typeDefinition := object RangeTypeSpecification {
+					
+			bounds := object IntegerBounds {
+				
+				lowerBound := object LiteralExpression {
+					text := "-32768";
+				};
+				
+				upperBound := object LiteralExpression {
+					text := "32767";
+				};
+			}
+			
+		};
+		
+		type += MUMLSHORT;
+		
+	}
+	
+	mapping createMumlByteTypeDeclaration() : TypeDeclaration {
+	
+		typeDefinition := object RangeTypeSpecification {
+					
+			bounds := object IntegerBounds {
+				
+				lowerBound := object LiteralExpression {
+					text := "-128";
+				};
+				
+				upperBound := object LiteralExpression {
+					text := "127";
+				};
+				
+			}
+			
+		};
+		
+		type += MUMLBYTE;
+		
+	}

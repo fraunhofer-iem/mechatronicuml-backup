@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="ASCII"?>
+<model:SimulinkContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://www.muml.org/simulink/1.0.0" xmlns:stateflow="http://www.muml.org/simulink/stateflow/1.0.0" id="_qeFMgEXZEeGRyehUlJU_cA">
+  <models id="_qeFzkEXZEeGRyehUlJU_cA" name="SimpleStateflow">
+    <parameters name="ExtModeEnableFloating" value="on"/>
+    <parameters name="ScopeRefreshTime" value="0.035000"/>
+    <parameters name="RTWModifiedTimeStamp" value="226410779"/>
+    <parameters name="LastModifiedDate" value="Wed May  4 11:53:24 2011"/>
+    <parameters name="ShowPortDataTypes" value="off"/>
+    <parameters name="LastModifiedBy" value="dread"/>
+    <parameters name="AccelSystemTargetFile" value="accel.tlc"/>
+    <parameters name="CovNameIncrementing" value="off"/>
+    <parameters name="MinMaxOverflowArchiveMode" value="Overwrite"/>
+    <parameters name="ModifiedByFormat" value="%&lt;Auto>"/>
+    <parameters name="WideLines" value="off"/>
+    <parameters name="BrowserLookUnderMasks" value="off"/>
+    <parameters name="ShowSignalResolutionIcons" value="on"/>
+    <parameters name="SaveDefaultBlockParams" value="on"/>
+    <parameters name="SampleTimeAnnotations" value="off"/>
+    <parameters name="CovExternalEMLEnable" value="off"/>
+    <parameters name="ShowModelReferenceBlockVersion" value="off"/>
+    <parameters name="BlockNameDataTip" value="off"/>
+    <parameters name="MdlSubVersion" value="0"/>
+    <parameters name="CovHtmlReporting" value="on"/>
+    <parameters name="ShowModelReferenceBlockIO" value="off"/>
+    <parameters name="Version" value="7.4"/>
+    <parameters name="SampleTimeColors" value="off"/>
+    <parameters name="ExtModeTrigDirection" value="rising"/>
+    <parameters name="BlockDescriptionStringDataTip" value="off"/>
+    <parameters name="ExtModeTrigLevel" value="0"/>
+    <parameters name="CovCumulativeReport" value="off"/>
+    <parameters name="ExtModeArchiveMode" value="off"/>
+    <parameters name="SavedCharacterEncoding" value="UTF-8"/>
+    <parameters name="DisableAllScopes" value="off"/>
+    <parameters name="CovSaveName" value="covdata"/>
+    <parameters name="ToolBar" value="on"/>
+    <parameters name="Profile" value="off"/>
+    <parameters name="ExtModeTrigPort" value="1"/>
+    <parameters name="ExtModeIncDirWhenArm" value="off"/>
+    <parameters name="CovSaveSingleToWorkspaceVar" value="on"/>
+    <parameters name="CovModelRefEnable" value="Off"/>
+    <parameters name="ExtModeArmWhenConnect" value="on"/>
+    <parameters name="ShowStorageClass" value="off"/>
+    <parameters name="ParamWorkspaceSource" value="MATLABWorkspace"/>
+    <parameters name="SortedOrder" value="off"/>
+    <parameters name="IgnoreBidirectionalLines" value="off"/>
+    <parameters name="RecordCoverage" value="off"/>
+    <parameters name="ModifiedDateFormat" value="%&lt;Auto>"/>
+    <parameters name="SimulationMode" value="normal"/>
+    <parameters name="ExtModeTrigDuration" value="1000"/>
+    <parameters name="ExtModeAutoUpdateStatusClock" value="on"/>
+    <parameters name="ExtModeLogAll" value="on"/>
+    <parameters name="LinearizationMsg" value="none"/>
+    <parameters name="StatusBar" value="on"/>
+    <parameters name="ExtModeTrigType" value="manual"/>
+    <parameters name="BrowserShowLibraryLinks" value="off"/>
+    <parameters name="ExecutionContextIcon" value="off"/>
+    <parameters name="DataTypeOverride" value="UseLocalSettings"/>
+    <parameters name="CovPath" value="/"/>
+    <parameters name="CovForceBlockReductionOff" value="on"/>
+    <parameters name="ShowViewerIcons" value="on"/>
+    <parameters name="ExtModeTrigElement" value="any"/>
+    <parameters name="Created" value="Wed May  4 11:48:44 2011"/>
+    <parameters name="TryForcingSFcnDF" value="off"/>
+    <parameters name="ExtModeTrigDurationFloating" value="auto"/>
+    <parameters name="AccelTemplateMakefile" value="accel_default_tmf"/>
+    <parameters name="ExtModeWriteAllDataToWs" value="off"/>
+    <parameters name="UpdateHistory" value="UpdateHistoryNever"/>
+    <parameters name="CovMetricSettings" value="dw"/>
+    <parameters name="OverrideScopeRefreshTime" value="on"/>
+    <parameters name="ExtModeAddSuffixToVar" value="off"/>
+    <parameters name="ShowLineDimensions" value="off"/>
+    <parameters name="Creator" value="dread"/>
+    <parameters name="ExtModeTrigHoldOff" value="0"/>
+    <parameters name="ExtModeTrigMode" value="normal"/>
+    <parameters name="ShowLoopsOnError" value="on"/>
+    <parameters name="CovCumulativeVarName" value="covCumulativeData"/>
+    <parameters name="BlockParametersDataTip" value="off"/>
+    <parameters name="MinMaxOverflowLogging" value="UseLocalSettings"/>
+    <parameters name="covSaveCumulativeToWorkspaceVar" value="on"/>
+    <parameters name="BufferReuse" value="on"/>
+    <parameters name="ShowLinearizationAnnotations" value="on"/>
+    <parameters name="ConfigurationManager" value="None"/>
+    <parameters name="MaxMDLFileLineLength" value="120"/>
+    <parameters name="ModelVersionFormat" value="1.%&lt;AutoIncrement:3>"/>
+    <parameters name="ShowTestPointIcons" value="on"/>
+    <parameters name="LibraryLinkDisplay" value="none"/>
+    <parameters name="ExtModeTrigDelay" value="0"/>
+    <parameters name="ExtModeAutoIncOneShot" value="off"/>
+    <parameters name="AccelMakeCommand" value="make_rtw"/>
+    <parameters name="CovReportOnPause" value="on"/>
+    <parameters name="ExtModeBatchMode" value="off"/>
+    <parameters name="ExtModeSkipDownloadWhenConnect" value="off"/>
+    <blocks xsi:type="model:ChartBlock" id="_qeKsEEXZEeGRyehUlJU_cA" name="Chart" chart="_qeNIUEXZEeGRyehUlJU_cA">
+      <parameters name="System.ZoomFactor" value="100"/>
+      <parameters name="RTWSystemCode" value="Auto"/>
+      <parameters name="System.Name" value="Chart"/>
+      <parameters name="PermitHierarchicalResolution" value="ExplicitOnly"/>
+      <parameters name="MaskPortRotate" value="default"/>
+      <parameters name="Opaque" value="off"/>
+      <parameters name="MaskIconOpaque" value="on"/>
+      <parameters name="MaskType" value="Stateflow"/>
+      <parameters name="System.SIDPrevWatermark" value="4"/>
+      <parameters name="System.PaperPositionMode" value="auto"/>
+      <parameters name="MaskDisplay" value="plot(sf('Private','sfblk','xIcon'),sf('Private','sfblk','yIcon'));text(0.5,0,sf('Private', 'sfblk', 'tIcon'),'HorizontalAl','Center','VerticalAl','Bottom');"/>
+      <parameters name="System.ModelBrowserVisibility" value="off"/>
+      <parameters name="LibraryVersion" value="1.233"/>
+      <parameters name="BlockType" value="SubSystem"/>
+      <parameters name="MaskIconRotate" value="none"/>
+      <parameters name="MaskIconUnits" value="autoscale"/>
+      <parameters name="MinAlgLoopOccurrences" value="off"/>
+      <parameters name="System.ScreenColor" value="white"/>
+      <parameters name="MaskDescription" value="Stateflow diagram"/>
+      <parameters name="System.ShowPageBoundaries" value="off"/>
+      <parameters name="System.SIDHighWatermark" value="8"/>
+      <parameters name="System.Open" value="off"/>
+      <parameters name="System.PaperType" value="A4"/>
+      <parameters name="MaskSelfModifiable" value="on"/>
+      <parameters name="System.TiledPaperMargins" value="[1.270000, 1.270000, 1.270000, 1.270000]"/>
+      <parameters name="SID" value="2"/>
+      <parameters name="MaskHideContents" value="off"/>
+      <parameters name="System.Location" value="[257, 457, 812, 717]"/>
+      <parameters name="PropExecContextOutsideSubsystem" value="off"/>
+      <parameters name="RequestExecContextInheritance" value="off"/>
+      <parameters name="MaskIconFrame" value="off"/>
+      <parameters name="FunctionWithSeparateData" value="off"/>
+      <parameters name="System.ModelBrowserWidth" value="200"/>
+      <parameters name="System.PaperUnits" value="centimeters"/>
+      <parameters name="Position" value="[250, 84, 310, 136]"/>
+      <parameters name="System.PaperOrientation" value="landscape"/>
+      <parameters name="System.TiledPageScale" value="1"/>
+      <parameters name="Ports" value="[]"/>
+    </blocks>
+    <stateflowMachine id="_qeMhQEXZEeGRyehUlJU_cA">
+      <parameters name="isLibrary" value="0"/>
+      <parameters name="id" value="1"/>
+      <parameters name="sfVersion" value="71014000.00001"/>
+      <parameters name="firstTarget" value="8"/>
+      <parameters name="created" value="04-May-2011 11:49:05"/>
+      <parameters name="name" value="SimpleStateflow"/>
+      <charts id="_qeNIUEXZEeGRyehUlJU_cA" name="Chart" priority="1" initial="true" block="_qeKsEEXZEeGRyehUlJU_cA">
+        <parameters name="disableImplicitCasting" value="1"/>
+        <parameters name="firstTransition" value="6"/>
+        <parameters name="visible" value="1"/>
+        <parameters name="machine" value="1"/>
+        <parameters name="id" value="2"/>
+        <parameters name="decomposition" value="CLUSTER_CHART"/>
+        <parameters name="userSpecifiedStateTransitionExecutionOrder" value="1"/>
+        <parameters name="treeNode" value="[0, 3, 0, 0]"/>
+        <parameters name="chartFileNumber" value="1"/>
+        <parameters name="viewObj" value="2"/>
+        <parameters name="ssIdHighWaterMark" value="18"/>
+        <nodes xsi:type="stateflow:State" id="_qeNvYEXZEeGRyehUlJU_cA" incoming="_qeRZwEXZEeGRyehUlJU_cA" outgoing="_qeSA0EXZEeGRyehUlJU_cA" name="Start" priority="1" initial="true">
+          <parameters name="id" value="3"/>
+          <parameters name="decomposition" value="CLUSTER_STATE"/>
+          <parameters name="treeNode" value="[2, 0, 0, 4]"/>
+          <parameters name="chart" value="2"/>
+          <parameters name="subviewer" value="2"/>
+          <parameters name="fontSize" value="12"/>
+          <parameters name="ssIdNumber" value="1"/>
+        </nodes>
+        <nodes xsi:type="stateflow:State" id="_qeOWcEXZEeGRyehUlJU_cA" incoming="_qeSA0EXZEeGRyehUlJU_cA" name="End" priority="1">
+          <parameters name="id" value="4"/>
+          <parameters name="decomposition" value="CLUSTER_STATE"/>
+          <parameters name="treeNode" value="[2, 0, 3, 0]"/>
+          <parameters name="chart" value="2"/>
+          <parameters name="subviewer" value="2"/>
+          <parameters name="fontSize" value="12"/>
+          <parameters name="ssIdNumber" value="8"/>
+        </nodes>
+        <transitions id="_qeRZwEXZEeGRyehUlJU_cA" target="_qeNvYEXZEeGRyehUlJU_cA" priority="1">
+          <parameters name="linkNode" value="[2, 0, 5]"/>
+          <parameters name="drawStyle" value="SMART"/>
+          <parameters name="fontSize" value="12"/>
+          <parameters name="dst.id" value="3"/>
+          <parameters name="ssIdNumber" value="17"/>
+          <parameters name="id" value="6"/>
+          <parameters name="chart" value="2"/>
+          <parameters name="subviewer" value="2"/>
+        </transitions>
+        <transitions id="_qeSA0EXZEeGRyehUlJU_cA" source="_qeNvYEXZEeGRyehUlJU_cA" target="_qeOWcEXZEeGRyehUlJU_cA" priority="1">
+          <parameters name="linkNode" value="[2, 6, 0]"/>
+          <parameters name="drawStyle" value="SMART"/>
+          <parameters name="stampAngle" value="NaN"/>
+          <parameters name="slide.mode" value="MIRROR_SLIDE"/>
+          <parameters name="fontSize" value="12"/>
+          <parameters name="dst.id" value="4"/>
+          <parameters name="ssIdNumber" value="12"/>
+          <parameters name="id" value="5"/>
+          <parameters name="src.id" value="3"/>
+          <parameters name="slide.sticky" value="BOTH_STICK"/>
+          <parameters name="chart" value="2"/>
+          <parameters name="subviewer" value="2"/>
+        </transitions>
+      </charts>
+    </stateflowMachine>
+  </models>
+</model:SimulinkContainer>

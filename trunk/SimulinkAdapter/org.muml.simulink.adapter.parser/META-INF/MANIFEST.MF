@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MATLAB/Simulink Parser
+Bundle-SymbolicName: org.muml.simulink.adapter.parser;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.core.runtime;bundle-version="3.6.0",
+ org.eclipse.emf.ecore;bundle-version="2.6.1",
+ org.eclipse.emf.cdo;bundle-version="3.0.1",
+ org.muml.simulink,
+ org.eclipse.ui,
+ org.eclipse.core.resources;bundle-version="3.6.1",
+ org.eclipse.ui.ide,
+ org.eclipse.ocl.ecore;bundle-version="3.0.2"
+Import-Package: org.junit
+Bundle-ClassPath: lib/ccsm-commons.jar,
+ lib/simulink.jar,
+ lib/cup-runtime.jar,
+ .
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

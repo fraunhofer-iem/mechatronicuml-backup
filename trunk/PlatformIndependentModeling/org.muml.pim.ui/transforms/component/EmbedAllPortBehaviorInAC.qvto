@@ -1,0 +1,73 @@
+modeltype PimPackage uses pim('http://www.muml.org/pim/1.0.0');
+modeltype ComponentPackage uses pim::component('http://www.muml.org/pim/1.0.0');
+modeltype ProtocolPackage uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype RTSCPackage uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype ConnectorPackage uses pim::connector('http://www.muml.org/pim/1.0.0');
+modeltype TypesPackage uses pim::types('http://www.muml.org/pim/1.0.0');
+modeltype ValuetypePackage uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype MessageTypePackage uses pim::msgtype('http://www.muml.org/pim/1.0.0');
+modeltype BehaviorPackage uses pim::behavior('http://www.muml.org/pim/1.0.0');
+
+
+transformation EmbeddedPortsBehaviorInAC(inout input : ComponentPackage);
+
+main() {
+
+	-- parse input parameters
+	input.rootObjects()[AtomicComponent]->forEach(ac){
+	ac.embedPortsBehavior();
+	};
+	
+}
+
+helper AtomicComponent::embedPortsBehavior(){
+	
+	assert fatal (self.behavior!=null) with log ("The behavior of the AtomicComponent must be specified");
+	var embeddedPortBehavior:Set(RealtimeStatechart):=self.getEmbeddedPortBehavior();
+	var ports:Set(DiscretePort) := self.ports[DiscretePort]->select(port|embeddedPortBehavior->excludes(port.oclAsType(DiscretePort).behavior.oclAsType(RealtimeStatechart)));
+	ports->forEach(port){
+		storeRealtimeStatechart(port,self);
+	};
+
+}
+
+
+helper AtomicComponent::getEmbeddedPortBehavior():Set(RealtimeStatechart){
+	var behavior:Set(RealtimeStatechart) := OrderedSet{};
+	var portBehavior:OrderedSet(RealtimeStatechart):=self.ports[DiscretePort]->collect(behavior).oclAsType(RealtimeStatechart)->asOrderedSet();
+	var componentRTSC: RealtimeStatechart := self.behavior.oclAsType(RealtimeStatechart);
+		componentRTSC.states -> forEach(state){
+			-- search initial state and add new region containing the statechart to it
+			if(state.initial = true) then{
+				behavior:=state.embeddedRegions->collect(embeddedStatechart)->asOrderedSet()->intersection(portBehavior);
+			}endif;
+		};
+	return behavior;
+}
+
+
+-- this mapping ensures that the port RTSC will be contained in the resource at the right place
+helper storeRealtimeStatechart(inout port : DiscretePort, inout component : AtomicComponent){
+	
+		-- obtain component RTSC
+		var portRTSC : RealtimeStatechart := port.behavior.oclAsType(RealtimeStatechart);
+		var componentRTSC: RealtimeStatechart := component.behavior.oclAsType(RealtimeStatechart);
+		componentRTSC.states -> forEach(state){
+			-- search initial state and add new region containing the statechart to it
+			if(state.initial = true) then{
+				var newRegion : Region := new Region();
+				state.embeddedRegions += newRegion;
+				newRegion.embeddedStatechart := portRTSC;
+				portRTSC.behavioralElement:=port;
+			} endif;
+		}
+		
+	
+}
+
+
+
+-- constructor for creating new regions
+constructor Region::Region() {
+	
+}

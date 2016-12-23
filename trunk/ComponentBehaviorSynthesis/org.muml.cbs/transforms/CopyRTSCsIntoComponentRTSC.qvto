@@ -1,0 +1,123 @@
+import transforms.lib.RTSC2RTSCdeepContainmentCopy;
+
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype component uses pim::component('http://www.muml.org/pim/1.0.0');
+modeltype depLang uses 'http://www.muml.org/cbs/dependencylanguage/1.0.0';
+modeltype modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
+
+transformation CopyRTSCsIntoComponentRTSC(inout input:modelinstance);
+
+property synBehavior : SynthesizableBehavior;
+property topState : State;
+property listOfRTSCs : OrderedSet(RealtimeStatechart) = null;
+property statechartCategory : ModelElementCategory = null;
+property RtscCatKey : String = 'org.muml.pim.realtimestatechart.category';
+
+configuration property nameOfComponentToSynthesize : String;
+configuration property componentToSynthesize: OrderedSet(AtomicComponent);
+
+main() {
+	assert fatal (not (componentToSynthesize->isEmpty() and nameOfComponentToSynthesize.oclIsUndefined())) with log('The configuration property nameOfComponentToSynthesize or componentToSynthesize must be specified.');
+	if(componentToSynthesize->oclIsUndefined() and input.objectsOfType(AtomicComponent)->notEmpty()) then {
+		if (input.objectsOfType(AtomicComponent)->exists(c : AtomicComponent | c.name.equalsIgnoreCase(nameOfComponentToSynthesize))){
+			componentToSynthesize += input.objectsOfType(AtomicComponent)->any(c : AtomicComponent | c.name.equalsIgnoreCase(nameOfComponentToSynthesize)).oclAsType(AtomicComponent);
+		}
+		else{
+			assert fatal (false) with log('There is no component with the name: '.concat(nameOfComponentToSynthesize));
+		}endif;
+	}endif;
+	assert fatal (componentToSynthesize->notEmpty()) with log('There is no atomic component (Error-Code: NoComp1).');
+	
+	// Add inner behavior to the RTSCs which will be copied
+	componentToSynthesize.extensions[SynthesizableBehavior]->forOne(synBeh){
+		synBehavior := synBeh;	
+	};
+	
+	// Add all ports to the RTSCs which will be copied
+	componentToSynthesize->first().ports[DiscretePort]->forEach(p) {
+		if(not p.behavior.oclIsUndefined() and p.behavior.oclIsKindOf(RealtimeStatechart)) then {
+			listOfRTSCs += p.behavior.oclAsType(RealtimeStatechart)
+		}endif;
+	};
+	
+	// Add inner behavior to the RTSCs which will be copied
+	componentToSynthesize->first().extensions[SynthesizableBehavior]->forOne(synBeh){
+		synBehavior := synBeh;
+		if(not synBeh.behavior.oclIsUndefined() and synBeh.behavior.oclIsKindOf(RealtimeStatechart)) then {
+			listOfRTSCs += synBeh.behavior.oclAsType(RealtimeStatechart);
+		} endif;
+		
+	};
+	
+	// Create component's RTSC with initial state
+	componentToSynthesize->first().behavior := new RealtimeStatechart(componentToSynthesize->first());
+
+	// Copy RTSCs
+	listOfRTSCs->map RTSC2RTSC(componentToSynthesize->first());
+}
+
+mapping RealtimeStatechart :: RTSC2RTSC(context:OclAny) : RealtimeStatechart {
+		name := self.name;
+		//FIXME behavioralElement cannot be set because than the DependencyModel becomes invalid to serialize.
+		//behavioralElement := self.behavioralElement;
+		operations += self.operations->map Operation2Operation(context);
+		variables += self.variables->map Variable2Variable(context);
+		transitions += self.transitions->map Transition2Transition(context);
+		states += self.states->map State2State(context);
+		clocks += self.clocks->map Clock2Clock(context);
+		if(self.parentRegion.oclIsUndefined()){
+			parentRegion := new Region(getFirstState());
+			parentRegion.priority:=1;
+		}
+		else{
+			parentRegion := self.parentRegion.map Region2Region(context);
+		}
+		
+		endif;
+			
+	}
+	
+helper RealtimeStatechart::addToCategory(){
+	getStatechartCategory().modelElements+=self;
+	return;
+}
+
+constructor Region :: Region(s:State) {
+	parentState:= s;
+	priority := getPriority();
+}
+
+property priority : Integer = 0;
+
+helper getPriority():Integer{
+	var i = priority;
+	priority := priority + 1;
+	return i;
+}
+	
+constructor RealtimeStatechart :: RealtimeStatechart(c:AtomicComponent){
+	name := c.name.concat('-rtsc');
+	states += getFirstState();
+	result.addToCategory();
+	
+}	
+
+constructor State :: State(s:String, initialState:Boolean){
+	name := s;
+	initial := initialState;
+}
+
+helper getStatechartCategory():ModelElementCategory{
+	if(statechartCategory.oclIsUndefined()){
+		statechartCategory := input.objects()[ModelElementCategory]->any(cat|cat.key.equalsIgnoreCase(RtscCatKey));
+	}endif;
+	return statechartCategory;
+}
+
+helper getFirstState():State{
+	if(topState.oclIsUndefined()){
+		topState := new State('Top State',true);
+	}endif;
+	return topState;
+}

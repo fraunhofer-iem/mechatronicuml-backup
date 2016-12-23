@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:realtimestatechart="http://www.muml.org/pim/realtimestatechart/1.0.0" xmi:id="_ROG1cFO7EeSqXakma9nUUA" type="Real-Time Statechart" name="RolleHinderniserkennung.realtimestatechart_diagram" measurementUnit="Pixel">
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_ROG1cVO7EeSqXakma9nUUA"/>
+  <element xmi:type="realtimestatechart:RealtimeStatechart" href="../einparkhilfe_original.fujaba#_6CDXQAUmEeSJTqo7jlVMjA"/>
+</notation:Diagram>

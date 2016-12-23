@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component="http://www.fujaba.de/muml/model/component/0.3.2" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.3.2" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_4VhKUD7HEeKoHt7ZS0Qi3A" type="Atomiccomponent" name="ac_continuous1.atomiccomponent_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_4VhxYT7HEeKoHt7ZS0Qi3A" type="2005" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_4VhxYz7HEeKoHt7ZS0Qi3A" type="5011"/>
+    <children xmi:type="notation:Shape" xmi:id="_FWVVQD7IEeKoHt7ZS0Qi3A" type="3007" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_FWVVQj7IEeKoHt7ZS0Qi3A" type="5008">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_FWVVQz7IEeKoHt7ZS0Qi3A" x="-78" y="5"/>
+      </children>
+      <element xmi:type="component:ContinuousPort" href="../Migration_Test_Models_3.2.fujaba#_O_XREDieEeKRUZY316r4gg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FWVVQT7IEeKoHt7ZS0Qi3A" x="-12" y="30"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_FWVVRD7IEeKoHt7ZS0Qi3A" type="3007" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_FWV8UD7IEeKoHt7ZS0Qi3A" type="5008">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_FWV8UT7IEeKoHt7ZS0Qi3A" x="44" y="5"/>
+      </children>
+      <element xmi:type="component:ContinuousPort" href="../Migration_Test_Models_3.2.fujaba#_PbnvQDieEeKRUZY316r4gg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FWVVRT7IEeKoHt7ZS0Qi3A" x="214" y="30"/>
+    </children>
+    <element xmi:type="component:AtomicComponent" href="../Migration_Test_Models_3.2.fujaba#_NYTMoDieEeKRUZY316r4gg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4VhxYj7HEeKoHt7ZS0Qi3A" x="125" y="25" width="226" height="91"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_4VhxYD7HEeKoHt7ZS0Qi3A"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../Migration_Test_Models_3.2.fujaba#_QMmX0CN3EeKLhfefX2P8ew"/>
+</notation:Diagram>

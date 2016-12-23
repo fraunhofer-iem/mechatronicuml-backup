@@ -1,0 +1,143 @@
+import transforms.lib.common.PatternProtocolSameRootTransformationLibrary;
+import transforms.lib.common.PatternProtocolCommon;
+ 
+
+modeltype common uses core::expressions::common('http://www.muml.org/core/1.0.0');
+modeltype PimPackage uses pim('http://www.muml.org/pim/1.0.0');
+modeltype ComponentPackage uses pim::component('http://www.muml.org/pim/1.0.0');
+modeltype ProtocolPackage uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype RTSCPackage uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype ConnectorPackage uses pim::connector('http://www.muml.org/pim/1.0.0');
+modeltype TypesPackage uses pim::types('http://www.muml.org/pim/1.0.0');
+modeltype ValuetypePackage uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype MessageTypePackage uses pim::msgtype('http://www.muml.org/pim/1.0.0');
+modeltype BehaviorPackage uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype core uses core('http://www.muml.org/core/1.0.0');
+modeltype ModelInstancePackage uses core::modelinstance('http://www.muml.org/core/1.0.0');
+modeltype PatternPackage uses pim::pattern('http://www.muml.org/pim/1.0.0');
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+modeltype actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
+
+// @author sthiele2
+transformation TransformProtocolToPattern(in  input : ModelInstancePackage, out output : ModelInstancePackage);
+
+property variablesToParameter : Set(Variable);
+property theProtocol : CoordinationProtocol;
+property theRootNode : RootNode;
+
+
+
+main()
+{ 	
+	
+	// fetch input
+	
+	var theRootNode  := input.rootObjects()[RootNode] -> any(true);
+		
+		
+	// not debug:
+	variablesToParameter := input.rootObjects()[Variable];	
+	theProtocol  := input.rootObjects()[CoordinationProtocol] -> any(true);
+	
+		
+	// debug:	
+	//variablesToParameter := getRealtimeStatechartCategory(theRootNode).modelElements.oclAsType(RealtimeStatechart)->at(2).variables;
+	//theProtocol := getProtocolCategory(theRootNode).modelElements.oclAsType(CoordinationProtocol)->at(1);
+	
+		
+	// check input
+	assert fatal (theProtocol != null) with log ("CoordinationProtocol is null!" + theProtocol.name);
+	assert fatal (theRootNode != null) with log ("RootNode is null!");  	
+    assert fatal (variablesToParameter != null) with log ("variablesToParameter are null!");
+	
+	// start transformation
+	createPatternFromProtocol();
+}
+
+helper createPatternFromProtocol()
+{
+	var newPattern : CoordinationPattern :=theProtocol.map CoordinationProtocol2CoordinationPattern();	
+	//var patternCategory : ModelElementCategory := getPatternCategory(theRootNode);	
+	//patternCategory.modelElements +=newPattern;
+	newPattern.verificationConstraintRepositories+= theProtocol.verificationConstraintRepositories.map transform().oclAsType(pim::constraint::VerificationConstraintRepository);
+}
+
+mapping pim::protocol::CoordinationProtocol:: CoordinationProtocol2CoordinationPattern() : pim::pattern::CoordinationPattern
+{
+	result.name := self.name + timeStamp;
+	result.comment := self.comment;
+	result.extensions := self.extensions.map transform().oclAsType(Extension);		
+	//var statechartCategory : ModelElementCategory := getRealtimeStatechartCategory(theRootNode);	
+	result.patternParameters := variablesToParameter.map transform().oclAsType(Parameter);
+	self.roles->forEach(role)
+	{
+		// the role was already mapped in RoleConnector2RoleConnector
+		var newRole : Role := role.map transform().oclAsType(Role);
+		//newRole.behavior := role.behavior.oclAsType(RealtimeStatechart).map RealtimeStatechart2RealtimeStatechart();
+		//set behavorial element?? --> should be already considered when setting behavior of the role!
+		newRole.coordinationProtocol := result;
+		//statechartCategory.modelElements += newRole.behavior.oclAsType(RealtimeStatechart);
+
+		result.roles+= newRole;
+	};
+	result._roleConnector := self.roleConnector.map transform().oclAsType(RoleConnector);
+	result.roleConnector.coordinationProtocol := result;		
+}
+
+mapping Variable::Variable2Parameter(): Parameter
+{
+		_name := self._name;
+		_comment := self._comment;
+		_dataType := self.dataType;
+		extensions := self.extensions.map transform().oclAsType(core::Extension);
+}
+mapping pim::realtimestatechart::RealtimeStatechart :: transform() : EObject{
+    	init {
+    		result := self.map create();
+    	}
+    	var element := self.oclAsType(EObject);
+			element.oclAsType(EObject).eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+			setValues(result, f, getValues(element, f));
+			};
+			
+    	var resultingRTSC : RealtimeStatechart := result.oclAsType(pim::realtimestatechart::RealtimeStatechart);
+    	
+    	
+    	
+    	resultingRTSC._name := self._name + timeStamp;
+    	resultingRTSC._comment := self._comment;
+    	resultingRTSC._extensions := self._extensions.map transform().oclAsType(core::Extension);
+   
+    	resultingRTSC._operations := self._operations.map transform().oclAsType(Operation);
+    	// only transform variables that are not converted into parameter
+    	resultingRTSC._variables := (self._variables-(variablesToParameter)).map transform().oclAsType(Variable);
+    	resultingRTSC._parentRegion := self._parentRegion.map transform().oclAsType(Region);
+    	resultingRTSC._transitions := self._transitions.map transform().oclAsType(Transition);
+    	resultingRTSC._states := self._states.map transform().oclAsType(State);
+    	resultingRTSC._clocks := self._clocks.map transform().oclAsType(Clock);
+   		 }
+   		 
+mapping Variable :: transform() : EObject {
+		init{
+			if(variablesToParameter->includes(self)) {
+				result := self.map Variable2Parameter().oclAsType(EObject);
+			}
+			else {
+				result := self.map create();
+				result.oclAsType(Variable).initializeExpression := self.initializeExpression.map transform().oclAsType(core::expressions::Expression);
+				result.oclAsType(Variable).dataType := self.dataType;
+				var element := self.oclAsType(EObject);	
+				element.oclAsType(EObject).eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+					setValues(result, f, getValues(element, f));
+				};
+			}
+			
+		}	
+}
+
+mapping RealtimeStatechart::create():EObject{
+	init{
+		result:=new RealtimeStatechart().oclAsType(EObject);
+		}
+	}
+

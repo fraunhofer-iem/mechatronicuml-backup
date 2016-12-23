@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.3.15" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.3.6" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_n8cS0J3tEeKiuKmEjvlIFQ" type="Messagetype" name="TurnTransmission.messagetype_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_owZfUJ3tEeKiuKmEjvlIFQ" type="2008" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_owZfUp3tEeKiuKmEjvlIFQ" type="5017"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_owaGYJ3tEeKiuKmEjvlIFQ" type="7010">
+      <children xmi:type="notation:Shape" xmi:id="_p5f1YJ3tEeKiuKmEjvlIFQ" type="3007" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_p5f1Yp3tEeKiuKmEjvlIFQ" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_p5f1Y53tEeKiuKmEjvlIFQ" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_p5f1ZJ3tEeKiuKmEjvlIFQ"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_p5f1ZZ3tEeKiuKmEjvlIFQ"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="../../demonstrator.fujaba#_p5cyEJ3tEeKiuKmEjvlIFQ"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_p5f1YZ3tEeKiuKmEjvlIFQ"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_XhslUKYJEeKR7Lwk7UC7tQ" type="3007" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_XhtMYKYJEeKR7Lwk7UC7tQ" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_XhtMYaYJEeKR7Lwk7UC7tQ" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_XhtMYqYJEeKR7Lwk7UC7tQ"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_XhtMY6YJEeKR7Lwk7UC7tQ"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="../../demonstrator.fujaba#//@categories.3/@modelElements.2/@messageTypes.1"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XhslUaYJEeKR7Lwk7UC7tQ"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_owaGYZ3tEeKiuKmEjvlIFQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_owaGYp3tEeKiuKmEjvlIFQ"/>
+    </children>
+    <element xmi:type="msgtype:MessageTypeRepository" href="../../demonstrator.fujaba#_ovrtoJ3tEeKiuKmEjvlIFQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_owZfUZ3tEeKiuKmEjvlIFQ" x="84" y="84"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_n8cS0Z3tEeKiuKmEjvlIFQ"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../../demonstrator.fujaba#_rIvYIJ0bEeKe1dmyo6HznA"/>
+</notation:Diagram>

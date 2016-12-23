@@ -1,0 +1,497 @@
+import CoreLibrary;
+
+modeltype activity uses storydiagrams::activities('http://www.muml.org/storydiagram/1.0.0');
+modeltype patterns uses storydiagrams::patterns('http://www.muml.org/storydiagram/1.0.0');
+modeltype calls uses storydiagrams::calls('http://www.muml.org/storydiagram/1.0.0');
+
+modeltype patternExpression uses storydiagrams::patterns::expressions('http://www.muml.org/storydiagram/1.0.0');
+
+modeltype tgts uses timedstorydiagram ('http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0');
+
+modeltype runtime uses runtime('http://www.muml.org/verification/core/runtime/1.0.0');
+
+modeltype core uses core('http://www.muml.org/core/1.0.0');
+modeltype expressions uses core::expressions('http://www.muml.org/core/1.0.0');
+modeltype expressions_common uses core::expressions::common('http://www.muml.org/core/1.0.0');
+
+modeltype actionlanguage uses actionlanguage('http://www.muml.org/pim/actionlanguage/1.0.0');
+
+--modeltype tgts uses timedstorydiagram ('http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0');
+
+modeltype realtimestatechart uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype mumlbehavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype mumltypes uses pim::types('http://www.muml.org/pim/1.0.0');
+modeltype mumlconnector uses pim::connector("http://www.muml.org/pim/1.0.0");
+
+modeltype exp uses reconfiguration::expression('http://www.muml.org/reconfiguration/1.0.0');
+
+modeltype help uses _helper('http://www.muml.org/reconfigurationverification/timedstorychart/transform/helper/1.0.0');
+
+modeltype ecore uses ecore;
+
+library ActionLanguageTransformation;
+--transformation ActionLanguageTransformation(in input : realtimestatechart, out activity : activity);
+
+property returnValue : OrderedSet(ActivityEdge) = null;
+property actionActivity : Activity = null;
+property registeredActivities : OrderedSet(Activity) = object OrderedSet(Activity){};
+property usedTypedNamedElements : Set(TypedNamedElement) = object Set(TypedNamedElement) {}; // to ensure unique binding of needed variable (bindings)
+property rtscContainingAction : RealtimeStatechart = null; 
+property timedGTS : TimedGraphTransformationSystem = null;
+
+
+mapping Action::actionToActivity(inout containingTimedGTS : TimedGraphTransformationSystem, in isInSingleRTSC : Boolean) : TimedStoryDiagram {
+	annotation := createMetaModelAnnotations();
+	name := 'Action_'+self.name;
+	actionActivity := result;
+	timedGTS := containingTimedGTS; 
+	timedGTS.helperStoryDiagrams += actionActivity;
+	
+	var rtsc : RealtimeStatechart := self.getContainingRtsc();
+	--inParameter += rtsc.allAvailableVariables -> map createInputParameter();
+	--containedParameters += inParameter;
+	var runtimeBehavioralElementParameter : EParameter := object EParameter{
+		name := runtimeBEName;
+		eType := RuntimeBehavioralElement.oclAsType(EClass);
+	};
+	inParameter += runtimeBehavioralElementParameter;
+	containedParameters += runtimeBehavioralElementParameter;
+	
+	var rtscInstanceParameter : EParameter := object EParameter {
+		name := 'rtscInstance';
+		eType := RealtimeStatechartInstance.oclAsType(EClass);
+	};
+	inParameter += rtscInstanceParameter;
+	containedParameters += rtscInstanceParameter;
+	
+	if(self.eContainer().oclIsKindOf(Transition) 
+			and not self.eContainer().oclAsType(Transition).triggerMessageEvent.oclIsUndefined()
+			and self.eContainer().oclAsType(Transition).triggerMessageEvent.message.instanceOf.parameters->notEmpty()) then {
+		
+		var messageParameter : EParameter := object EParameter {
+			name := 'runtimeMessage';
+			eType := RuntimeMessage.oclAsType(EClass);
+		};
+		inParameter += messageParameter;
+		containedParameters += messageParameter;
+	}endif; 
+	
+	var initialNode : InitialNode := object InitialNode{name := 'initialNode'};
+	var successFinalNode : ActivityFinalNode := new ActivityFinalNode(true,'true');
+	var variableMatchingNode : ModifyingStoryNode := object ModifyingStoryNode {
+		name := 'Bind Variable Bindings';
+	};
+	ownedActivityNode += variableMatchingNode;
+	usedTypedNamedElements := object Set(TypedNamedElement) {};
+		
+	ownedActivityNode += initialNode;
+	ownedActivityNode += successFinalNode;
+	var firstEdge : ActivityEdge := new ActivityEdge(initialNode,variableMatchingNode,actionActivity);
+	var secondEdge : ActivityEdge := new ActivityEdge(variableMatchingNode,null,actionActivity);
+	self.expressions[Block] . map addNodesForExpression(secondEdge, isInSingleRTSC)->asOrderedSet(); 
+	var lastEdges : OrderedSet(ActivityEdge) := returnValue;
+	addTargetToEdges(lastEdges,successFinalNode);
+	
+	
+	variableMatchingNode.ownedRule := object StoryPattern {
+		var rtscInstanceVariable : ObjectVariable := object ObjectVariable {
+			name := 'rtscInstance';
+			bindingState := BindingState::BOUND;
+			classifier := RealtimeStatechartInstance.oclAsType(EClass);
+		};
+		variable += rtscInstanceVariable; 
+		usedTypedNamedElements->select(oclIsTypeOf(Variable))->forEach(currentVar){
+			var varBinding : ObjectVariable := object ObjectVariable {
+				name := currentVar.name + '_binding';
+				classifier := VariableBinding.oclAsType(EClass); 
+			};
+			variable += varBinding;
+			linkVariable += map createLinkVariable(rtscInstanceVariable,varBinding,'allAvailableVariableBindings');
+			var variableObjectVar : ObjectVariable := object ObjectVariable {
+				name := currentVar.name+'_variable';
+				classifier := Variable.oclAsType(EClass);
+			};
+			variable += variableObjectVar; 
+			map addConstraintToObjectVariable('name=\''+currentVar.name+'\'', variableObjectVar);
+			linkVariable += map createLinkVariable(varBinding,variableObjectVar,'variable');
+
+		};
+		
+		if(self.eContainer().oclIsKindOf(Transition) 
+			and not self.eContainer().oclAsType(Transition).triggerMessageEvent.oclIsUndefined()
+			and self.eContainer().oclAsType(Transition).triggerMessageEvent.message.instanceOf.parameters->notEmpty()) then {
+	
+			var messageVariable : ObjectVariable := object ObjectVariable{
+				name := 'runtimeMessage';
+				bindingState := BindingState::BOUND;
+				classifier := RuntimeMessage.oclAsType(EClass);
+			};
+			variable += messageVariable;
+			
+			-- create object variable for each RuntimeParameter of the RuntimeMessage
+			self.eContainer().oclAsType(Transition).triggerMessageEvent.message.instanceOf.parameters->forEach(currentParam){
+				var runtimeParameterVariable : ObjectVariable := object ObjectVariable {
+					name := 'runtimeParameter_' + currentParam.name;
+					classifier := RuntimeParameter.oclAsType(EClass);
+				};
+				variable += runtimeParameterVariable;
+				linkVariable += map createLinkVariable(messageVariable,runtimeParameterVariable,'parameters');
+				
+/*				var parameterVariable : ObjectVariable := object ObjectVariable {
+					name := 'parameter_' + currentParam.name;
+					classifier := Parameter.oclAsType(EClass);
+				};
+				variable += parameterVariable;
+				linkVariable += map createLinkVariable(runtimeParameterVariable,parameterVariable,'parameter');
+				map addConstraintToObjectVariable('self.name='+currentParam.name,parameterVariable);*/
+			};
+		}endif;
+	};
+	
+	end{
+		actionActivity . registerActivity();
+		--tempActivities -> registerActivity();
+	}
+}
+
+
+mapping Expression::addNodesForExpression(inout toBlockNode : ActivityEdge, in isInSingleRTSC : Boolean) : OrderedSet(ActivityEdge) 
+disjuncts Expression::addNodeForAssignment,Expression::returnStatementToFinalNode,
+			Expression::addNodesForIfStatement,Expression::addNodesForLoop
+			,Expression::addNodesForBlock, Expression::addNodesForActivityCallExpression
+			--,Expression::addNodesForOperationCall
+;
+
+/*
+mapping Expression::addNodesForOperationCall(inout toBlockNode : ActivityEdge) : OrderedSet(ActivityEdge) 
+when{self.oclIsTypeOf(OperationCall)} {
+	var activityCallNode : ActivityCallNode := object ActivityCallNode{
+		name := 'ActivityCallNode';
+		owningActivity := actionActivity;
+		ownedParameterBindings := self.oclAsType(OperationCall).parameterBinding -> map parameterBinding2ParameterBinding();
+
+	};
+	toBlockNode.target := activityCallNode;
+	var outEdge : ActivityEdge := new ActivityEdge(activityCallNode,null);
+	returnValue := object OrderedSet(ActivityEdge){};
+	returnValue += outEdge;
+}
+*/
+
+mapping Expression::addNodesForActivityCallExpression (inout toBlockNode : ActivityEdge, in isInSingleRTSC : Boolean) : OrderedSet(ActivityEdge) 
+when{self.oclIsTypeOf(ActivityCallExpression)}{
+
+	var activityCallNode : ActivityCallNode := object ActivityCallNode{
+		name := 'ActivityCallNode';
+		owningActivity := actionActivity;
+		ownedParameterBindings := self.oclAsType(ActivityCallExpression).ownedParameterBindings -> map parameterBinding2ParameterBinding(self.oclAsType(ActivityCallExpression).activity, isInSingleRTSC);
+		calledActivity += self.oclAsType(ActivityCallExpression).activity;
+		
+		-- currently, all activities called by an ActivityCallExpression are cloned before invoking this transformation
+		timedGTS.helperStoryDiagrams += calledActivity;
+	};
+	toBlockNode.target := activityCallNode;
+
+	var outEdge : ActivityEdge := new ActivityEdge(activityCallNode,null,actionActivity);
+	returnValue := object OrderedSet(ActivityEdge){};
+	returnValue += outEdge;
+}
+
+
+mapping inout Activity::modifyActivity() {
+	self.ownedActivityNode -> selectByKind(ModifyingStoryNode) -> forEach(node) {
+
+		var variableBindingObjectVar : ObjectVariable := node.ownedRule.variable -> selectByType(ObjectVariable) -> select(classifier = VariableBinding.oclAsType(EClass) and bindingOperator = BindingOperator::CREATE) -> any(true);
+		if(variableBindingObjectVar != null) then {
+			node._forEach := false;
+		}endif;
+	};
+}
+
+helper Activity::registerActivity() : Activity {
+	registeredActivities += self;
+	return self;
+}
+
+mapping calls::ParameterBinding::parameterBinding2ParameterBinding(in calledActivity : Activity, in isInSingleRTSC : Boolean) : calls::ParameterBinding {
+	var exp1 : Expression;
+	parameter := self.parameter;
+	if(self.valueExpression.oclIsTypeOf(DiscreteInteractionEndpointReference)) then {
+		exp1 := object TextualExpression {
+			language := 'OCL';
+			languageVersion := '1.0';
+			expressionText := self.valueExpression.createExpressionString(runtimeBEName,null, isInSingleRTSC);
+		};
+	}
+	else {
+		if (self.valueExpression.oclIsTypeOf(TypedNamedElementExpression)) then {
+			var typedNamedElement : TypedNamedElement := self.valueExpression.oclAsType(TypedNamedElementExpression).typedNamedElement;
+			
+			usedTypedNamedElements += typedNamedElement.oclAsType(Variable);
+			
+			exp1 := object TextualExpression {
+				language := 'OCL';
+				languageVersion := '1.0';
+				expressionText := typedNamedElement.name + '_binding.value';
+			};
+		}
+		else {
+			if(self.valueExpression.oclIsTypeOf(TriggerMessageExpression)) then {
+				var param : Parameter := self.valueExpression.oclAsType(TriggerMessageExpression).parameter;
+			
+				usedTypedNamedElements += param;
+							
+				exp1 := object TextualExpression {
+					language := 'OCL';
+					languageVersion := '1.0';
+					expressionText := 'runtimeParameter_' + param.name +'.value';
+				};
+			}
+			else {
+				exp1 := self.valueExpression;
+			}endif;
+		}endif;
+	}endif;
+	valueExpression := exp1;
+}
+
+mapping Expression::addNodesForBlock(inout toBlockNode : ActivityEdge, in isInSingleRTSC : Boolean) : OrderedSet(ActivityEdge) 
+when {self.oclIsTypeOf(Block)} {
+	var currentEdges : OrderedSet(ActivityEdge);
+	currentEdges += toBlockNode;
+	
+	self.oclAsType(Block).expressions -> forEach(expression){
+		var lastEdges : OrderedSet(ActivityEdge) := currentEdges;
+		expression . map addNodesForExpression(lastEdges->last(),isInSingleRTSC);
+		currentEdges := returnValue;
+	};
+	returnValue := object OrderedSet(ActivityEdge){};
+	returnValue := currentEdges;
+}
+
+mapping Expression::addNodeForAssignment(inout toBlockNode : ActivityEdge, in isInSingleRTSC : Boolean) : OrderedSet(ActivityEdge) 
+when {self.oclIsTypeOf(Assignment)}{
+	
+	self.oclAsType(Assignment).rhs_assignExpression. map createAdditionalNodes(toBlockNode, isInSingleRTSC);
+	var edge : ActivityEdge := returnValue->last();
+	
+	var assignmentNode : ModifyingStoryNode := object ModifyingStoryNode{
+		name := 'Assignment';
+		owningActivity := actionActivity;
+		ownedRule := self.oclAsType(Assignment) . map createPatternForAssignment(isInSingleRTSC)
+	};
+	edge.target := assignmentNode;
+	var outEdge : ActivityEdge := new ActivityEdge(assignmentNode,null,actionActivity);
+	returnValue := object OrderedSet(ActivityEdge){};
+	returnValue += outEdge;
+}
+
+mapping Expression::createAdditionalNodes(inout toBlockNode : ActivityEdge, in isInSingleRTSC : Boolean) : OrderedSet(ActivityEdge) {
+	var returnEdge: ActivityEdge;
+	switch {
+		case (self.oclIsKindOf(BinaryExpression)) {
+			self.oclAsType(BinaryExpression).leftExpression. map createAdditionalNodes(toBlockNode, isInSingleRTSC);
+			returnEdge := returnValue->first();
+			self.oclAsType(BinaryExpression).rightExpression. map createAdditionalNodes(returnEdge, isInSingleRTSC);
+		};
+		case (self.oclIsTypeOf(ActivityCallExpression)) {
+			self. map addNodesForActivityCallExpression(toBlockNode,isInSingleRTSC);
+			returnEdge := returnValue->first();
+		}
+		else returnEdge := toBlockNode;
+	};
+	returnValue := object OrderedSet(ActivityEdge){};
+	returnValue += returnEdge;
+}
+
+mapping Expression::returnStatementToFinalNode(inout toBlockNode : ActivityEdge, in isInSingleRTSC : Boolean) : OrderedSet(ActivityEdge)  
+when {self.oclIsTypeOf(ReturnStatement)}{
+	var finalNode : ActivityFinalNode := new ActivityFinalNode(true,self.oclAsType(ReturnStatement).expression.createExpressionString('',null,isInSingleRTSC));
+	toBlockNode.target := finalNode;
+	returnValue := object OrderedSet(ActivityEdge){};
+}
+
+mapping Expression::addNodesForIfStatement(inout toBlockNode : ActivityEdge, in isInSingleRTSC : Boolean) : OrderedSet(ActivityEdge) 
+when {self.oclIsTypeOf(IfStatement)}{
+	var thisResult : OrderedSet(ActivityEdge) := object OrderedSet(ActivityEdge){};
+	var checkIfConditionNode : ModifyingStoryNode := object ModifyingStoryNode{
+		name := 'Check IF condition';
+		owningActivity := actionActivity;
+		ownedRule := self.oclAsType(IfStatement).ifCondition.map createCheckPattern(isInSingleRTSC);
+	};
+	toBlockNode.target := checkIfConditionNode;
+	var enterIfBlock : ActivityEdge := new ActivityEdge(checkIfConditionNode,null,actionActivity);
+	enterIfBlock.guard := EdgeGuard::SUCCESS;
+	self.oclAsType(IfStatement).ifBlock. map addNodesForExpression(enterIfBlock, isInSingleRTSC);
+	thisResult += returnValue;
+	var lastConditionNode : ActivityNode := checkIfConditionNode;
+	self.oclAsType(IfStatement).elseIfConditions -> forEach(elseifCondition){
+		var checkElseIfConditionNode : ModifyingStoryNode := object ModifyingStoryNode{
+			name := 'Check ELSEIF condition';
+			owningActivity := actionActivity;
+			ownedRule := elseifCondition.map createCheckPattern(isInSingleRTSC);
+		};
+		var toNextCondition : ActivityEdge := new ActivityEdge(lastConditionNode, checkElseIfConditionNode,actionActivity);
+		toNextCondition.guard := EdgeGuard::FAILURE;
+		var enterElseIfBlock : ActivityEdge := new ActivityEdge(checkElseIfConditionNode,null,actionActivity);
+		enterElseIfBlock.guard := EdgeGuard::SUCCESS;
+		self.oclAsType(IfStatement).elseIfBlocks->at(self.oclAsType(IfStatement).elseIfConditions->indexOf(elseifCondition))
+															. map addNodesForExpression(enterElseIfBlock, isInSingleRTSC);
+		var exitElseIfBlock : OrderedSet(ActivityEdge) := returnValue;
+		thisResult += exitElseIfBlock;
+		lastConditionNode := checkElseIfConditionNode;
+	};
+	if(not self.oclAsType(IfStatement).elseBlock.oclIsUndefined()) then {
+		var enterElseBlock : ActivityEdge := new ActivityEdge(lastConditionNode,null,actionActivity);
+		enterElseBlock.guard := EdgeGuard::FAILURE; // this is the failure edge of the preceding condition node
+		self.oclAsType(IfStatement).elseBlock . map addNodesForExpression(enterElseBlock, isInSingleRTSC);
+		var exitElseBlock : OrderedSet(ActivityEdge) := returnValue;
+		thisResult += exitElseBlock;
+	}endif;	
+	returnValue := object OrderedSet(ActivityEdge){};
+	returnValue := thisResult;
+}
+
+mapping Expression::addNodesForLoop(inout toBlockNode : ActivityEdge, in isInSingleRTSC : Boolean) : OrderedSet(ActivityEdge) 
+when {self.oclIsKindOf(Loop)}{
+
+	var checkLoopConditionNode : ModifyingStoryNode := object ModifyingStoryNode {
+		name := 'Check '+ self.eClass().name +' condition';
+		owningActivity := actionActivity;
+		ownedRule := self.oclAsType(Loop).loopTest.map createCheckPattern(isInSingleRTSC);
+	};
+	var enterBlock : ActivityEdge := new ActivityEdge(checkLoopConditionNode,null,actionActivity);
+	enterBlock.guard := EdgeGuard::SUCCESS;
+	if(self.oclIsTypeOf(DoWhileLoop)) then {
+		self.oclAsType(Loop).block . map addNodesForExpression(toBlockNode, isInSingleRTSC);
+		enterBlock.target := toBlockNode.target;
+	}	
+	else {
+		self.oclAsType(Loop).block . map addNodesForExpression(enterBlock, isInSingleRTSC);
+		if(self.oclIsTypeOf(ForLoop)) then {
+			// add initialize counter node
+			var initializeCounterNode : ModifyingStoryNode := object ModifyingStoryNode{
+				name := 'Execute initialize expression';
+				owningActivity := actionActivity;
+				ownedRule := self.oclAsType(ForLoop).initializeExpression.map createPatternForAssignment(isInSingleRTSC);
+			};
+			toBlockNode.target := initializeCounterNode;
+			var initToCheckLookpCondition : ActivityEdge := new ActivityEdge(initializeCounterNode,checkLoopConditionNode,actionActivity);
+		}
+		else {
+			toBlockNode.target := checkLoopConditionNode;
+		}endif;
+	}endif;
+	var exitBlock : OrderedSet(ActivityEdge) := returnValue;
+	if(self.oclIsTypeOf(ForLoop)) then {
+		// add increase counter node
+		var increaseCounterNode : ModifyingStoryNode := object ModifyingStoryNode{
+			name := 'Execute counting expression';
+			owningActivity := actionActivity;
+			ownedRule := self.oclAsType(ForLoop).countingExpression.map createPatternForAssignment(isInSingleRTSC);
+		};
+		addTargetToEdges(exitBlock,increaseCounterNode);
+		var increaseCounterToCheckCondition : ActivityEdge := new ActivityEdge(increaseCounterNode,checkLoopConditionNode,actionActivity);
+	}
+	else {
+		addTargetToEdges(exitBlock,checkLoopConditionNode);
+	}endif;
+	var outEdge : ActivityEdge :=  new ActivityEdge(checkLoopConditionNode,null,actionActivity);
+	outEdge.guard := EdgeGuard::FAILURE;
+	returnValue := object OrderedSet(ActivityEdge){};
+	returnValue += outEdge;
+}
+
+helper addTargetToEdges(inout edges : OrderedSet(ActivityEdge),in target : ActivityNode) : Boolean {
+	edges->forEach(edge){
+		edge.target := target;
+	};
+	return true;
+}
+
+mapping Assignment::createPatternForAssignment(in isInSingleRTSC : Boolean) : StoryPattern {
+	var lhsBinding : ObjectVariable := map addObjectVariableToRule(self.lhs_typedNamedElementExpression.typedNamedElement.name+"_binding",VariableBinding.oclAsType(EClass),result);
+	lhsBinding.bindingState := BindingState::BOUND;
+	if(self.lhs_typedNamedElementExpression.typedNamedElement.oclIsTypeOf(Variable)) then {
+		usedTypedNamedElements += self.lhs_typedNamedElementExpression.typedNamedElement.oclAsType(Variable);
+	}endif;
+	
+	var valueEAttribute : EAttribute := VariableBinding.oclAsType(EClass).eAllAttributes -> select(name = 'value')->any(true);
+	var assignmentString : String := '';
+	var attributeType: String = '';
+	if(self.lhs_typedNamedElementExpression.typedNamedElement.dataType.oclIsTypeOf(PrimitiveDataType)) then {
+		attributeType := self.lhs_typedNamedElementExpression.typedNamedElement.dataType.oclAsType(PrimitiveDataType).primitiveType.primitiveTypeToString();
+	}else{
+		if (self.lhs_typedNamedElementExpression.typedNamedElement.dataType.oclIsKindOf(DiscreteInteractionEndpoint)) then {
+			attributeType := DiscreteInteractionEndpointInstance.oclAsType(EClass).ePackage.name + '::' + DiscreteInteractionEndpointInstance.oclAsType(EClass).name;
+		}endif;
+	} endif;
+	switch {
+		case (self.incrementDecrementOperator.oclIsUndefined() or self.incrementDecrementOperator = IncrementDecrementOperator::UNSET) {
+			assignmentString := self.rhs_assignExpression . createExpressionString(assignmentString,null, isInSingleRTSC);
+			self.rhs_assignExpression . collectTypedNamedElements();
+			if(attributeType <> '') then {
+				assignmentString := '('+ assignmentString+')'+'.oclAsType('+attributeType+')'; 
+			}endif;
+		};
+		case (self.incrementDecrementOperator = IncrementDecrementOperator::INCREMENT) assignmentString :=  'value.oclAsType('+ attributeType + ')+1';
+		case (self.incrementDecrementOperator = IncrementDecrementOperator::DECREMENT) assignmentString :=  'value.oclAsType('+ attributeType + ')-1';
+		else assignmentString := 'error';
+	};
+		
+	lhsBinding.attributeAssignment += valueEAttribute ->  createAttributeAssignment(assignmentString,lhsBinding);
+}
+
+helper Expression::collectTypedNamedElements() : Boolean {
+	switch {
+		case(self.oclIsTypeOf(UnaryExpression)){
+			self.oclAsType(UnaryExpression).enclosedExpression . collectTypedNamedElements();
+		}
+		case (self.oclIsTypeOf(BinaryExpression)) {
+			self.oclAsType(BinaryExpression).leftExpression . collectTypedNamedElements();
+			self.oclAsType(BinaryExpression).rightExpression . collectTypedNamedElements();
+		};
+		case (self.oclIsTypeOf(TypedNamedElementExpression)) {
+			usedTypedNamedElements += self.oclAsType(TypedNamedElementExpression).typedNamedElement.oclAsType(Variable);
+		};
+		case (self.oclIsTypeOf(TriggerMessageExpression)) {
+			usedTypedNamedElements += self.oclAsType(TriggerMessageExpression).parameter.oclAsType(Parameter);
+		};
+		else return true ;
+	};
+	return true;
+}
+
+mapping Expression::createCheckPattern(in isInSingleRTSC : Boolean) : MatchingPattern {
+	var loopTestString : String := '';
+	loopTestString := self.createExpressionString(loopTestString,null, isInSingleRTSC);
+	map addConstraintToRule(loopTestString,result);
+}
+
+
+helper Action::getContainingRtsc() : RealtimeStatechart {
+	var container : EObject := self.eContainer();
+	while(not (container.oclIsUndefined() or container.oclIsTypeOf(RealtimeStatechart))) {
+		container := container.eContainer();		
+	};
+	return container.oclAsType(RealtimeStatechart);
+} 
+
+helper createMetaModelAnnotations() : Set(EAnnotation) {
+	var annotations : Set(EAnnotation) := object Set(EAnnotation) {};
+	
+	annotations += object EAnnotation {
+		source := 'http://www.storydriven.org/storydiagrams/types';
+		details += object EStringToStringMapEntry {
+			key := 'http://www.fujaba.de/muml/connector/0.3.15';
+			value := 'true';
+		};
+		details += object EStringToStringMapEntry {
+			key := 'http://www.fujaba.de/muml/runtime/0.3.20';
+			value := 'true';
+		};
+
+	};
+
+	return annotations;
+}

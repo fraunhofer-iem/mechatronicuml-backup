@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmfgraph:Canvas
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition"
+    name="hardware">
+  <figures
+      name="Default">
+    <descriptors
+        name="HWPInstanceConfigurationFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="HWPInstanceConfigurationFigure"
+          outline="false">
+        <layout
+            xsi:type="gmfgraph:StackLayout"/>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="HWPInstanceConfigurationContentsCompartmentFigure"
+            outline="false"/>
+      </actualFigure>
+      <accessors
+          accessor="getFigureHWPInstanceConfigurationContentsCompartmentFigure"
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+    </descriptors>
+  </figures>
+  <nodes
+      name="HWPInstanceConfiguration"
+      figure="HWPInstanceConfigurationFigure"/>
+  <compartments
+      name="HWPInstanceConfigurationContentsCompartment"
+      figure="HWPInstanceConfigurationFigure"
+      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+</gmfgraph:Canvas>

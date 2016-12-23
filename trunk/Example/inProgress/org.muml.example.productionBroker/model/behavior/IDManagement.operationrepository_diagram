@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:behavior="http://www.muml.org/pim/behavior/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xsi:schemaLocation="http://www.muml.org/pim/behavior/1.0.0 http://www.muml.org/pim/1.0.0#//behavior http://www.muml.org/modelinstance/1.0.0 http://www.muml.org/core/1.0.0#//modelinstance" xmi:id="_BWiHcBWxEea4t_vvK_A9tw" type="Operation Repository" name="IDManagement.operationrepository_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_BWjVkBWxEea4t_vvK_A9tw" type="2001" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_BWjVkhWxEea4t_vvK_A9tw" type="5003"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_BWjVkxWxEea4t_vvK_A9tw" type="7001">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_BWjVlBWxEea4t_vvK_A9tw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_BWjVlRWxEea4t_vvK_A9tw"/>
+    </children>
+    <element xmi:type="behavior:OperationRepository" href="../productionBroker.muml#_BoCNwOa3EeWyd6JHVas6Kw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BWjVkRWxEea4t_vvK_A9tw"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_BWiHcRWxEea4t_vvK_A9tw"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../productionBroker.muml#_A42REN02EeW-N_z6XJQq2w"/>
+</notation:Diagram>

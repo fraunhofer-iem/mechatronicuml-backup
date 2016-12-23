@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedGraphTransformationSystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba.muml.timedstorydiagram="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0" xmlns:sdma="http://ns.storydriven.org/sdm/activities/0.1.0" xmlns:sdme="http://ns.storydriven.org/sdm/expressions/0.1.0" xmlns:sdmp="http://ns.storydriven.org/sdm/patterns/0.1.0" xmlns:sdmpe="http://ns.storydriven.org/sdm/patterns/expressions/0.1.0" name="TestGTS">
+  <clocks name="c1"/>
+  <rules name="someRule" resets="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.3">
+    <ownedActivityEdge target="//@rules.0/@ownedActivityNode.2" source="//@rules.0/@ownedActivityNode.0"/>
+    <ownedActivityEdge target="//@rules.0/@ownedActivityNode.1" source="//@rules.0/@ownedActivityNode.2"/>
+    <ownedActivityNode xsi:type="sdma:StartNode" name="initial" outgoing="//@rules.0/@ownedActivityEdge.0"/>
+    <ownedActivityNode xsi:type="sdma:StopNode" name="final" incoming="//@rules.0/@ownedActivityEdge.1"/>
+    <ownedActivityNode xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedActivityNode" name="ruleNode" outgoing="//@rules.0/@ownedActivityEdge.1" incoming="//@rules.0/@ownedActivityEdge.0">
+      <ownedRule xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedStoryPattern">
+        <variable xsi:type="sdmp:ObjectVariable" name="sc" incomingLink="//@rules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.0 //@rules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.1 //@rules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.4 //@rules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.6">
+          <constraint>
+            <constraintExpression xsi:type="sdme:ComparisonExpression" operator="EQUAL">
+              <leftExpression xsi:type="sdmpe:AttributeValueExpression" object="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.0">
+                <attribute href="http:///de/uni_paderborn/fujaba/umlrt/storychecking/tsc#//Parameter/name"/>
+              </leftExpression>
+              <rightExpression xsi:type="sdme:LiteralExpression" value="xy">
+                <valueType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              </rightExpression>
+            </constraintExpression>
+          </constraint>
+          <classifier href="http:///de/uni_paderborn/fujaba/umlrt/storychecking/tsc#//Statechart"/>
+        </variable>
+        <variable xsi:type="sdmp:ObjectVariable" name="as" incomingLink="//@rules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.3" outgoingLink="//@rules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.1 //@rules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.2 //@rules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.5">
+          <classifier href="http:///de/uni_paderborn/fujaba/umlrt/storychecking/tsc#//ActiveState"/>
+        </variable>
+        <variable xsi:type="sdmp:ObjectVariable" name="s1" incomingLink="//@rules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.2" outgoingLink="//@rules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.0">
+          <constraint>
+            <constraintExpression xsi:type="sdme:ComparisonExpression" operator="EQUAL">
+              <leftExpression xsi:type="sdmpe:AttributeValueExpression" object="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.2">
+                <attribute href="http:///de/uni_paderborn/fujaba/umlrt/storychecking/tsc#//Event/name"/>
+              </leftExpression>
+              <rightExpression xsi:type="sdme:LiteralExpression" value="s1">
+                <valueType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              </rightExpression>
+            </constraintExpression>
+          </constraint>
+          <classifier href="http:///de/uni_paderborn/fujaba/umlrt/storychecking/tsc#//State"/>
+        </variable>
+        <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="ci" outgoingLink="//@rules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.3 //@rules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.4" bindingSemantics="OPTIONAL" bindingOperator="CREATE" clockInstanceConstraints="//@rules.0/@clockInstConstraint.0">
+          <constraint>
+            <constraintExpression xsi:type="sdme:ComparisonExpression" operator="EQUAL">
+              <leftExpression xsi:type="sdmpe:AttributeValueExpression" object="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.3">
+                <attribute href="http:///de/uni_paderborn/fujaba/umlrt/storychecking/tsc#//Parameter/name"/>
+              </leftExpression>
+              <rightExpression xsi:type="sdme:LiteralExpression" value="c1">
+                <valueType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              </rightExpression>
+            </constraintExpression>
+          </constraint>
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
+        </variable>
+        <variable xsi:type="sdmp:ObjectVariable" name="s2" incomingLink="//@rules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.5" outgoingLink="//@rules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.6">
+          <constraint>
+            <constraintExpression xsi:type="sdme:ComparisonExpression" operator="EQUAL">
+              <leftExpression xsi:type="sdmpe:AttributeValueExpression" object="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.4">
+                <attribute href="http:///de/uni_paderborn/fujaba/umlrt/storychecking/tsc#//Event/name"/>
+              </leftExpression>
+              <rightExpression xsi:type="sdme:LiteralExpression" value="s2">
+                <valueType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              </rightExpression>
+            </constraintExpression>
+          </constraint>
+          <classifier href="http:///de/uni_paderborn/fujaba/umlrt/storychecking/tsc#//State"/>
+        </variable>
+        <linkVariable xsi:type="sdmp:LinkVariable" name="s1InStatechart" source="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.2" target="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.0">
+          <targetEnd href="http:///de/uni_paderborn/fujaba/umlrt/storychecking/tsc#//State/in"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdmp:LinkVariable" name="asInStatechart" source="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.1" target="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.0">
+          <targetEnd href="http:///de/uni_paderborn/fujaba/umlrt/storychecking/tsc#//ActiveState/in"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdmp:LinkVariable" name="activeS1" bindingOperator="DESTROY" source="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.1" target="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.2">
+          <targetEnd href="http:///de/uni_paderborn/fujaba/umlrt/storychecking/tsc#//ActiveState/active"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdmp:LinkVariable" name="hasNodeAs" bindingOperator="CREATE" source="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.3" target="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.1">
+          <targetEnd href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance/hasNode"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdmp:LinkVariable" name="hasNodeSc" bindingOperator="CREATE" source="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.3" target="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.0">
+          <targetEnd href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance/hasNode"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdmp:LinkVariable" name="activeS2" bindingOperator="CREATE" source="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.1" target="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.4">
+          <targetEnd href="http:///de/uni_paderborn/fujaba/umlrt/storychecking/tsc#//ActiveState/active"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdmp:LinkVariable" name="s2InStatechart" source="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.4" target="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.0">
+          <targetEnd href="http:///de/uni_paderborn/fujaba/umlrt/storychecking/tsc#//State/in"/>
+        </linkVariable>
+      </ownedRule>
+    </ownedActivityNode>
+    <clockInstConstraint clockInstanceVariable="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.3" operator="LESS_OR_EQUAL" value="100"/>
+  </rules>
+  <invariants name="someInvariantStoryDiagram">
+    <ownedActivityEdge target="//@clockInstanceRules.0/@ownedActivityNode.2" source="//@invariants.0/@ownedActivityNode.0"/>
+    <ownedActivityEdge target="//@invariants.0/@ownedActivityNode.1" source="//@invariants.0/@ownedActivityNode.2"/>
+    <ownedActivityNode xsi:type="sdma:StartNode" name="initial" outgoing="//@invariants.0/@ownedActivityEdge.0"/>
+    <ownedActivityNode xsi:type="sdma:StopNode" name="final" incoming="//@invariants.0/@ownedActivityEdge.1"/>
+    <ownedActivityNode xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedActivityNode" name="invariant" outgoing="//@invariants.0/@ownedActivityEdge.1">
+      <ownedRule xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedStoryPattern">
+        <variable xsi:type="sdmp:ObjectVariable" name="sc" incomingLink="//@invariants.0/@ownedActivityNode.2/@ownedRule/@linkVariable.0 //@invariants.0/@ownedActivityNode.2/@ownedRule/@linkVariable.1 //@invariants.0/@ownedActivityNode.2/@ownedRule/@linkVariable.4">
+          <constraint>
+            <constraintExpression xsi:type="sdme:ComparisonExpression" operator="EQUAL">
+              <leftExpression xsi:type="sdmpe:AttributeValueExpression" object="//@invariants.0/@ownedActivityNode.2/@ownedRule/@variable.0">
+                <attribute href="http:///de/uni_paderborn/fujaba/umlrt/storychecking/tsc#//Parameter/name"/>
+              </leftExpression>
+              <rightExpression xsi:type="sdme:LiteralExpression" value="xy">
+                <valueType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              </rightExpression>
+            </constraintExpression>
+          </constraint>
+          <classifier href="http:///de/uni_paderborn/fujaba/umlrt/storychecking/tsc#//Statechart"/>
+        </variable>
+        <variable xsi:type="sdmp:ObjectVariable" name="as" incomingLink="//@invariants.0/@ownedActivityNode.2/@ownedRule/@linkVariable.3" outgoingLink="//@invariants.0/@ownedActivityNode.2/@ownedRule/@linkVariable.1 //@invariants.0/@ownedActivityNode.2/@ownedRule/@linkVariable.2">
+          <classifier href="http:///de/uni_paderborn/fujaba/umlrt/storychecking/tsc#//ActiveState"/>
+        </variable>
+        <variable xsi:type="sdmp:ObjectVariable" name="s1" incomingLink="//@invariants.0/@ownedActivityNode.2/@ownedRule/@linkVariable.2" outgoingLink="//@invariants.0/@ownedActivityNode.2/@ownedRule/@linkVariable.0">
+          <constraint>
+            <constraintExpression xsi:type="sdme:ComparisonExpression" operator="EQUAL">
+              <leftExpression xsi:type="sdmpe:AttributeValueExpression" object="//@invariants.0/@ownedActivityNode.2/@ownedRule/@variable.2">
+                <attribute href="http:///de/uni_paderborn/fujaba/umlrt/storychecking/tsc#//Event/name"/>
+              </leftExpression>
+              <rightExpression xsi:type="sdme:LiteralExpression" value="s1">
+                <valueType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              </rightExpression>
+            </constraintExpression>
+          </constraint>
+          <classifier href="http:///de/uni_paderborn/fujaba/umlrt/storychecking/tsc#//State"/>
+        </variable>
+        <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="ci" outgoingLink="//@invariants.0/@ownedActivityNode.2/@ownedRule/@linkVariable.3 //@invariants.0/@ownedActivityNode.2/@ownedRule/@linkVariable.4" bindingSemantics="OPTIONAL" clockInstanceConstraints="//@invariants.0/@clockInstConstraint">
+          <constraint>
+            <constraintExpression xsi:type="sdme:ComparisonExpression" operator="EQUAL">
+              <leftExpression xsi:type="sdmpe:AttributeValueExpression" object="//@invariants.0/@ownedActivityNode.2/@ownedRule/@variable.3">
+                <attribute href="http:///de/uni_paderborn/fujaba/umlrt/storychecking/tsc#//Parameter/name"/>
+              </leftExpression>
+              <rightExpression xsi:type="sdme:LiteralExpression" value="c1">
+                <valueType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              </rightExpression>
+            </constraintExpression>
+          </constraint>
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
+        </variable>
+        <linkVariable xsi:type="sdmp:LinkVariable" name="sInStatechart" source="//@invariants.0/@ownedActivityNode.2/@ownedRule/@variable.2" target="//@invariants.0/@ownedActivityNode.2/@ownedRule/@variable.0">
+          <targetEnd href="http:///de/uni_paderborn/fujaba/umlrt/storychecking/tsc#//State/in"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdmp:LinkVariable" name="asInStatechart" source="//@invariants.0/@ownedActivityNode.2/@ownedRule/@variable.1" target="//@invariants.0/@ownedActivityNode.2/@ownedRule/@variable.0">
+          <targetEnd href="http:///de/uni_paderborn/fujaba/umlrt/storychecking/tsc#//ActiveState/in"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdmp:LinkVariable" name="active" source="//@invariants.0/@ownedActivityNode.2/@ownedRule/@variable.1" target="//@invariants.0/@ownedActivityNode.2/@ownedRule/@variable.2">
+          <targetEnd href="http:///de/uni_paderborn/fujaba/umlrt/storychecking/tsc#//ActiveState/active"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdmp:LinkVariable" name="hasNodeAs" source="//@invariants.0/@ownedActivityNode.2/@ownedRule/@variable.3" target="//@invariants.0/@ownedActivityNode.2/@ownedRule/@variable.1">
+          <targetEnd href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance/hasNode"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdmp:LinkVariable" name="hasNodeSc" source="//@invariants.0/@ownedActivityNode.2/@ownedRule/@variable.3" target="//@invariants.0/@ownedActivityNode.2/@ownedRule/@variable.0">
+          <targetEnd href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance/hasNode"/>
+        </linkVariable>
+      </ownedRule>
+    </ownedActivityNode>
+    <clockInstConstraint clockInstanceVariable="//@invariants.0/@ownedActivityNode.2/@ownedRule/@variable.3" operator="LESS_OR_EQUAL" value="100"/>
+  </invariants>
+  <clockInstanceRules name="someClockInstanceStoryDiagram" clock="//@clocks">
+    <ownedActivityEdge target="//@clockInstanceRules.0/@ownedActivityNode.2" source="//@clockInstanceRules.0/@ownedActivityNode.0"/>
+    <ownedActivityEdge target="//@clockInstanceRules.0/@ownedActivityNode.1" source="//@clockInstanceRules.0/@ownedActivityNode.2"/>
+    <ownedActivityNode xsi:type="sdma:StartNode" name="initial" outgoing="//@clockInstanceRules.0/@ownedActivityEdge.0"/>
+    <ownedActivityNode xsi:type="sdma:StopNode" name="final" incoming="//@clockInstanceRules.0/@ownedActivityEdge.1"/>
+    <ownedActivityNode xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedActivityNode" name="story1" outgoing="//@clockInstanceRules.0/@ownedActivityEdge.1" incoming="//@clockInstanceRules.0/@ownedActivityEdge.0 //@invariants.0/@ownedActivityEdge.0">
+      <ownedRule xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedStoryPattern">
+        <variable xsi:type="sdmp:ObjectVariable" name="sc" incomingLink="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.0 //@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.1">
+          <constraint>
+            <constraintExpression xsi:type="sdme:ComparisonExpression" operator="EQUAL">
+              <leftExpression xsi:type="sdmpe:AttributeValueExpression" object="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@variable.0">
+                <attribute href="http:///de/uni_paderborn/fujaba/umlrt/storychecking/tsc#//Parameter/name"/>
+              </leftExpression>
+              <rightExpression xsi:type="sdme:LiteralExpression" value="xy">
+                <valueType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              </rightExpression>
+            </constraintExpression>
+          </constraint>
+          <classifier href="http:///de/uni_paderborn/fujaba/umlrt/storychecking/tsc#//Statechart"/>
+        </variable>
+        <variable xsi:type="sdmp:ObjectVariable" name="as" incomingLink="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.2" outgoingLink="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.0">
+          <classifier href="http:///de/uni_paderborn/fujaba/umlrt/storychecking/tsc#//ActiveState"/>
+        </variable>
+        <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="ci" outgoingLink="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.1 //@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.2" bindingSemantics="OPTIONAL" bindingOperator="CREATE">
+          <constraint>
+            <constraintExpression xsi:type="sdme:ComparisonExpression" operator="EQUAL">
+              <leftExpression xsi:type="sdmpe:AttributeValueExpression" object="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@variable.2">
+                <attribute href="http:///de/uni_paderborn/fujaba/umlrt/storychecking/tsc#//Parameter/name"/>
+              </leftExpression>
+              <rightExpression xsi:type="sdme:LiteralExpression" value="c1">
+                <valueType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              </rightExpression>
+            </constraintExpression>
+          </constraint>
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
+        </variable>
+        <linkVariable xsi:type="sdmp:LinkVariable" name="inEdge" source="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@variable.1" target="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@variable.0">
+          <targetEnd href="http:///de/uni_paderborn/fujaba/umlrt/storychecking/tsc#//ActiveState/in"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdmp:LinkVariable" name="hasNodeSc" bindingSemantics="OPTIONAL" bindingOperator="CREATE" source="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@variable.2" target="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@variable.0">
+          <targetEnd href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance/hasNode"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdmp:LinkVariable" name="hasNodeAs" bindingSemantics="OPTIONAL" bindingOperator="CREATE" source="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@variable.2" target="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@variable.1">
+          <targetEnd href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance/hasNode"/>
+        </linkVariable>
+      </ownedRule>
+    </ownedActivityNode>
+  </clockInstanceRules>
+</de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedGraphTransformationSystem>

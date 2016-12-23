@@ -1,0 +1,150 @@
+transformation InstantiationTransformation(inout instance : InstancePackage);
+
+modeltype PimPackage uses pim('http://www.muml.org/pim/1.0.0');
+modeltype ConnectorPackage uses pim::connector('http://www.muml.org/pim/1.0.0');
+modeltype ComponentPackage uses pim::component('http://www.muml.org/pim/1.0.0');
+modeltype ProtocolPackage uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype ValueTypePackage uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype InstancePackage uses pim::instance('http://www.muml.org/pim/1.0.0');
+
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+main(){
+
+instance.rootObjects()[StructuredComponentInstance]->forEach(ci) {
+		updateCoordinationProtocolInstancesHierarchically(ci.embeddedCIC);
+		updateCoordinationProtocolInstancesFlat(ci.parentCIC);
+	}; 
+	
+instance.rootObjects()[ComponentInstanceConfiguration]->forEach(cic){
+		updateCoordinationProtocolInstancesFlat(cic);
+	};
+	
+instance.rootObjects()[AtomicComponentInstance]->forEach(aic){
+		updateCoordinationProtocolInstancesFlat(aic.parentCIC);
+	};
+}
+
+
+helper updateCoordinationProtocolInstancesHierarchically(inout cic:ComponentInstanceConfiguration){
+	var allComponentInstances:OrderedSet(ComponentInstance);
+	allComponentInstances:=cic.getAllComponentInstances();
+	
+	allComponentInstances->forEach(aci){
+		aci.portInstances[DiscretePortInstance]->forEach(portInstance){
+				portInstance.createCoordinationProtocolInstance(portInstance);
+		};
+	};
+	
+}
+
+helper updateCoordinationProtocolInstancesFlat(inout cic:ComponentInstanceConfiguration){
+	var allComponentInstances:OrderedSet(ComponentInstance);
+	allComponentInstances:=cic.componentInstances;
+	
+		-- Disconnect invalid PortParts
+		cic.coordinationProtocolInstances->forEach(protocolInstance){
+			var invalidPortInstances : Set(PortInstance) := protocolInstance.portInstances->select(p | not p.isValid());
+			protocolInstance.portInstances:=protocolInstance.portInstances->symmetricDifference(invalidPortInstances);
+			
+		};
+		-- Remove empty CoordinationProtocolInstances
+		cic.coordinationProtocolInstances->select(portInstances->isEmpty())->forEach(p) {
+			instance.removeElement(p);
+		};
+	
+	allComponentInstances->forEach(aci){
+		aci.portInstances->select(p|p.oclIsKindOf(DiscretePortInstance) and not (p.allReachablePortInstances()->isEmpty())).oclAsType(DiscretePortInstance)->forEach(portInstance){
+				portInstance.createCoordinationProtocolInstance(portInstance);
+		};
+	}; 
+	
+	return null;
+}
+
+query ComponentInstanceConfiguration::getAllComponentInstances():OrderedSet(ComponentInstance){
+	var allComponentInstances:OrderedSet(ComponentInstance);
+	allComponentInstances+=self.componentInstances[AtomicComponentInstance];
+	self.componentInstances[StructuredComponentInstance]->forEach(sci){
+		allComponentInstances+=sci.embeddedCIC.getAllComponentInstances();
+	};
+	
+	return allComponentInstances;
+}
+
+query StructuredComponentInstance::getAllembeddedCICs():OrderedSet(ComponentInstanceConfiguration){
+	var cics:OrderedSet(ComponentInstanceConfiguration);
+	cics+=self.embeddedCIC;
+	self.embeddedCIC.componentInstances[StructuredComponentInstance]->forEach(sci){
+		cics+=sci.getAllembeddedCICs();
+	};
+	return cics;
+}
+
+/*******************************************************
+****** Test for CoordinationProtocolInstances
+**********************************************************/
+/**
+Shall be called after a CIC is complettly/sucessfully created
+*/
+query DiscretePortInstance::createCoordinationProtocolInstance(inout port:DiscretePortInstance) {
+	if(port.refinedRole.oclIsUndefined()) then{
+		return;
+	}endif;
+		-- Find all PortParts that are reachable via AssemblyConnectors
+			var reachablePortInstances : Set(PortInstance) := port.allReachablePortInstances();
+			var refinedRole : Role := port.refinedRole;
+		-- Find CoordinationProtocolPart that already contains any PortPart that is reachable via AssemblyConnectors.
+		var coordinationProtocolInstance: CoordinationProtocolInstance := port.componentInstance.parentCIC.coordinationProtocolInstances->any(c | not c.portInstances->intersection(reachablePortInstances)->isEmpty());
+			-- Make sure we have one CoordinationProtocolPart to add to; if none was found, create a new one
+	if (coordinationProtocolInstance = null) then {
+			coordinationProtocolInstance := new CoordinationProtocolInstance(port);
+			port.componentInstance.parentCIC.coordinationProtocolInstances += coordinationProtocolInstance;
+			}
+			else{
+			coordinationProtocolInstance.setPortInstanceInProtocolInstance(coordinationProtocolInstance,port);
+			} endif;
+			
+			-- Associate this PortPart with the Coordination Protocol Part
+		//	port.coordinationProtocolInstance := coordinationProtocolInstance;
+}
+
+
+query PortInstance::isValid() : Boolean {
+	return (not self.connectorInstances[AssemblyConnector]->isEmpty() and (not self.portPart.oclIsUndefined()) and (self.portPart.coordinationProtocolPart != null) and self.oclIsKindOf(DiscreteInteractionEndpointInstance)) ;
+	//and self.componentInstance.parentCIC.coordinationProtocolInstances->select(p | not p.portInstances->intersection(self.allReachablePortInstances())->isEmpty())->excluding(self.componentInstance.parentCIC.coordinationProtocolInstances->any(p|p.portInstances->includes(self)))->isEmpty()
+} 
+
+query CoordinationProtocolInstance::isReachable(port : PortInstance) : Boolean {
+	return not (self.portInstances.allReachablePortInstances()->includes(port));
+}
+
+query PortInstance::allReachablePortInstances() : OrderedSet(PortInstance) {
+	//return OrderedSet{ self }->closure(connectorInstances[AssemblyConnectorInstance].portInstances);
+	var portInstances:OrderedSet(PortInstance):= self.oclAsType(ConnectorEndpointInstance)->closure(connectorInstances->select(c|c.oclIsKindOf(AssemblyConnectorInstance)).connectorEndpointInstances).oclAsType(PortInstance)->asOrderedSet();
+	//union with discrteMultiport
+	var multiPortInstances:OrderedSet(DiscreteMultiInteractionEndpointInstance) := portInstances->select(p|p.oclIsKindOf(DiscreteSinglePortInstance) and (not p.oclAsType(DiscreteSinglePortInstance).multiInteractionEndpointInstance.oclIsUndefined())).oclAsType(DiscreteSinglePortInstance).multiInteractionEndpointInstance->asOrderedSet();
+	return portInstances->union(multiPortInstances.oclAsType(PortInstance)->asOrderedSet())->asOrderedSet();
+}
+
+constructor CoordinationProtocolInstance::CoordinationProtocolInstance(port:DiscretePortInstance) {
+	name:="";
+	if(not port.portType.oclIsUndefined() and port.portType.oclIsKindOf(DiscretePort) and not (port.portType.oclAsType(DiscretePort).refinedRole.oclIsUndefined() and port.portType.oclAsType(DiscretePort).refinedRole.coordinationProtocol.oclIsUndefined())) then{
+			coordinationProtocol:=port.portType.oclAsType(DiscretePort).refinedRole.coordinationProtocol.oclAsType(CoordinationProtocol);
+	}endif;
+	if(not port.portPart.oclIsUndefined()) then{
+			coordinationProtocolPart := port.portPart.coordinationProtocolPart;
+	}endif;
+	setPortInstanceInProtocolInstance(result,port);
+}
+
+
+helper CoordinationProtocolInstance::setPortInstanceInProtocolInstance(inout coordinationProtocolInstance:CoordinationProtocolInstance,port:DiscretePortInstance){
+if(port.oclIsKindOf(DiscreteSinglePortInstance) and not port.oclAsType(DiscreteSinglePortInstance).multiInteractionEndpointInstance.oclIsUndefined()) then{
+		coordinationProtocolInstance.portInstances+=port.oclAsType(DiscreteSinglePortInstance).multiInteractionEndpointInstance.oclAsType(DiscreteMultiPortInstance);
+	}
+	else{
+		coordinationProtocolInstance.portInstances+=port;
+	}endif;
+return null;
+}

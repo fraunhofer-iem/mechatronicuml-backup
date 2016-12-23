@@ -1,0 +1,931 @@
+Library {
+  Name			  "robot"
+  MaxMDLFileLineLength	  120
+  LibraryType "BlockLibrary"    Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+    }  
+    PropName		    "ConfigurationSets"
+  }
+  
+  BlockDefaults {
+  }
+  AnnotationDefaults {
+  }
+  LineDefaults {
+  }
+  BlockParameterDefaults {
+  }
+  System {
+    Name		    "robot"    
+	
+  Block {
+    BlockType SubSystem
+    Name "robot"
+    SID				116
+    Ports [11, 1, 0, 0]
+    Tag		"id=_SbJJ8KYDEeKR7Lwk7UC7tQ"
+  Position "[20, 20, 270, 820]"
+	  System {
+	  	Name  "robot"
+	  	Open			off 	  	
+	  	
+  Block {
+    BlockType Inport
+    Name "velocity:velocity"
+    SID				117
+    Tag		"id=_TiZs8KYDEeKR7Lwk7UC7tQ"
+    Port "1"
+
+
+
+      DataType		      "double"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "double"
+
+  Position "[100, 1220, 130, 1250]"
+  }
+
+  Block {
+    BlockType Inport
+    Name "timeOfArrival:timeOfArrival"
+    SID				118
+    Tag		"id=_TirZwKYDEeKR7Lwk7UC7tQ"
+    Port "2"
+
+
+
+      DataType		      "double"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "double"
+
+  Position "[100, 1170, 130, 1200]"
+  }
+
+  Block {
+    BlockType Inport
+    Name "posX:posX"
+    SID				119
+    Tag		"id=_Ti-UsKYDEeKR7Lwk7UC7tQ"
+    Port "3"
+
+
+
+      DataType		      "double"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "double"
+
+  Position "[100, 1020, 130, 1050]"
+  }
+
+  Block {
+    BlockType Inport
+    Name "posY:posY"
+    SID				120
+    Tag		"id=_TjU6AKYDEeKR7Lwk7UC7tQ"
+    Port "4"
+
+
+
+      DataType		      "double"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "double"
+
+  Position "[100, 1070, 130, 1100]"
+  }
+
+  Block {
+    BlockType Inport
+    Name "posZ:posZ"
+    SID				121
+    Tag		"id=_TjvJsKYDEeKR7Lwk7UC7tQ"
+    Port "5"
+
+
+
+      DataType		      "double"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "double"
+
+  Position "[100, 1120, 130, 1150]"
+  }
+
+  Block {
+    BlockType Inport
+    Name "isMaster:isMaster"
+    SID				122
+    Tag		"id=_TkSjUKYDEeKR7Lwk7UC7tQ"
+    Port "6"
+
+
+
+      DataType		      "boolean"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "boolean"
+
+  Position "[1400, 160, 1430, 190]"
+  }
+
+  Block {
+    BlockType Inport
+    Name "ballRecognized:ballRecognized"
+    SID				123
+    Tag		"id=_TkqWwKYDEeKR7Lwk7UC7tQ"
+    Port "7"
+
+
+
+      DataType		      "boolean"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "boolean"
+
+  Position "[100, 1270, 130, 1300]"
+  }
+
+  Block {
+    BlockType Inport
+    Name "stopPlaying:stopPlaying"
+    SID				124
+    Tag		"id=_TlBjIKYDEeKR7Lwk7UC7tQ"
+    Port "8"
+
+
+
+      DataType		      "boolean"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "boolean"
+
+  Position "[1400, 210, 1430, 240]"
+  }
+
+  Block {
+    BlockType Inport
+    Name "BAT_Information_To_OtherRobot_recv"
+    SID				125
+    Tag		"id=_Tl8JIKYDEeKR7Lwk7UC7tQ"
+    Port "9"
+
+
+      DataType		      "auto"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: auto"
+
+    UseBusObject 	"on"
+    BusObject		"PacketBus"	
+  Position "[1400, 260, 1430, 290]"
+  }
+
+  Block {
+    BlockType Inport
+    Name "BAT_Information_To_OtherRobot_net_address"
+    SID				126
+    Tag		"id=_Tl9-UKYDEeKR7Lwk7UC7tQ"
+    Port "10"
+
+
+
+      DataType		      "uint8"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "uint8"
+
+  Position "[1400, 310, 1430, 340]"
+  }
+
+  Block {
+    BlockType Inport
+    Name "BAT_Information_To_OtherRobot_receiver_net_address"
+    SID				127
+    Tag		"id=_Tl-lYKYDEeKR7Lwk7UC7tQ"
+    Port "11"
+
+
+
+      DataType		      "uint8"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "uint8"
+
+  Position "[1400, 360, 1430, 390]"
+  }
+	  	
+  Block {
+    BlockType Outport
+    Name "BAT_Information_To_OtherRobot_send"
+    SID				128
+    Tag		"id=_Tl9XQKYDEeKR7Lwk7UC7tQ"
+    Port "1"
+
+
+      DataType		      "auto"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: auto"
+
+    UseBusObject 	"on"
+    BusObject		"PacketBus"	
+  Position "[1850, 110, 1880, 140]"
+  }
+	  	
+
+
+
+  Block {
+    BlockType SubSystem
+    Name "CommunicationSwitch1"
+    SID				129
+    Ports [4, 4, 0, 0]
+    Tag		"id=_SbK_IKYDEeKR7Lwk7UC7tQ"
+    LoadFcn		      "MainBusGenerator"
+  Position "[980, 500, 1080, 620]"
+	  System {
+	  	Name  "CommunicationSwitch1"
+	  	Open			off 	  	
+	  	
+  Block {
+    BlockType Inport
+    Name "Inport3"
+    SID				130
+    Tag		"id=_VSbgIaYDEeKR7Lwk7UC7tQ"
+    Port "1"
+
+
+      DataType		      "auto"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: auto"
+
+    UseBusObject 	"on"
+    BusObject		"PacketBus"	
+  }
+
+  Block {
+    BlockType Inport
+    Name "Inport4"
+    SID				131
+    Tag		"id=_VSbgI6YDEeKR7Lwk7UC7tQ"
+    Port "2"
+
+
+      DataType		      "auto"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: auto"
+
+    UseBusObject 	"on"
+    BusObject		"PacketBus"	
+  }
+
+  Block {
+    BlockType Inport
+    Name "Inport5"
+    SID				132
+    Tag		"id=_VSntY6YDEeKR7Lwk7UC7tQ"
+    Port "3"
+
+
+      DataType		      "auto"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: auto"
+
+    UseBusObject 	"on"
+    BusObject		"PacketBus"	
+  }
+
+  Block {
+    BlockType Inport
+    Name "Inport6"
+    SID				133
+    Tag		"id=_VSntZaYDEeKR7Lwk7UC7tQ"
+    Port "4"
+
+
+      DataType		      "auto"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: auto"
+
+    UseBusObject 	"on"
+    BusObject		"PacketBus"	
+  }
+	  	
+  Block {
+    BlockType Outport
+    Name "Outport3"
+    SID				134
+    Tag		"id=_VSbgIqYDEeKR7Lwk7UC7tQ"
+    Port "1"
+
+
+      DataType		      "auto"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: auto"
+
+    UseBusObject 	"on"
+    BusObject		"PacketBus"	
+  }
+
+  Block {
+    BlockType Outport
+    Name "Outport4"
+    SID				135
+    Tag		"id=_VSbgJKYDEeKR7Lwk7UC7tQ"
+    Port "2"
+
+
+      DataType		      "auto"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: auto"
+
+    UseBusObject 	"on"
+    BusObject		"PacketBus"	
+  }
+
+  Block {
+    BlockType Outport
+    Name "Outport5"
+    SID				136
+    Tag		"id=_VSntZKYDEeKR7Lwk7UC7tQ"
+    Port "3"
+
+
+      DataType		      "auto"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: auto"
+
+    UseBusObject 	"on"
+    BusObject		"PacketBus"	
+  }
+
+  Block {
+    BlockType Outport
+    Name "Outport6"
+    SID				137
+    Tag		"id=_VSntZqYDEeKR7Lwk7UC7tQ"
+    Port "4"
+
+
+      DataType		      "auto"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: auto"
+
+    UseBusObject 	"on"
+    BusObject		"PacketBus"	
+  }
+		Block {
+		  BlockType		  BusCreator
+		  Name			  "BusCreator1"
+		  SID			  138
+		  Ports			  [4, 1]
+		  Position		  [110, 65, 130, 185]
+		  Inputs		  "4"
+		  UseBusObject		  on
+		  BusObject		  "MainBus"
+		}
+		Block {
+		  BlockType		  BusSelector
+		  Name			  "BusSelector1"
+		  SID			  139
+		  Ports			  [1, 4]
+		  Position		  [420, 65, 440, 185]
+		  OutputSignals		  "rc1,rc2,rc3,rc4"
+		}
+		Block {
+		  BlockType		  UnitDelay
+		  Name			  "Unit Delay"
+		  SID			  140
+		  Position		  [350, 108, 385, 142]
+		  SampleTime		  "-1"
+		}		
+		Block {
+		  BlockType		  Reference
+		  Name			  "BusImpl"
+		  SID			  141
+		  Ports			  [2, 1]
+		  Position		  [200, 89, 310, 161]
+		  LibraryVersion	  "1.1"
+		  SourceBlock		  "BusImpl/BusImpl"
+		  SourceType		  "Stateflow"
+		  ShowPortLabels	  "FromPortIcon"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Debug"
+		  SID			  142
+		  Position		  [150, 130, 180, 160]
+		  Value			  "0"
+		  OutDataType		  "fixdt(1, 16)"
+		  OutScaling		  "2^0"
+		}		
+		Line {
+		  SrcBlock		  "BusImpl"
+		  SrcPort		  1
+		  DstBlock		  "Unit Delay"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "BusCreator1"
+		  SrcPort		  1
+		  DstBlock		  "BusImpl"
+		  DstPort		  1
+		}		
+		Line {
+		  SrcBlock		  "Unit Delay"
+		  SrcPort		  1
+		  DstBlock		  "BusSelector1"
+		  DstPort		  1
+		}		
+		
+		Line {
+		  SrcBlock		  "Inport3"
+		  SrcPort		  1
+		  DstBlock		  "BusCreator1"
+		  DstPort		  1
+		  Name			  rc1
+		}		
+		
+		Line {
+		  SrcBlock		  "Inport4"
+		  SrcPort		  1
+		  DstBlock		  "BusCreator1"
+		  DstPort		  2
+		  Name			  rc2
+		}		
+		
+		Line {
+		  SrcBlock		  "Inport5"
+		  SrcPort		  1
+		  DstBlock		  "BusCreator1"
+		  DstPort		  3
+		  Name			  rc3
+		}		
+		
+		Line {
+		  SrcBlock		  "Inport6"
+		  SrcPort		  1
+		  DstBlock		  "BusCreator1"
+		  DstPort		  4
+		  Name			  rc4
+		}		
+		
+		
+		Line {
+		  SrcBlock		  "BusSelector1"
+		  SrcPort		  1
+		  DstBlock		  "Outport3"
+		  DstPort		  1
+		}		
+		
+		Line {
+		  SrcBlock		  "BusSelector1"
+		  SrcPort		  2
+		  DstBlock		  "Outport4"
+		  DstPort		  1
+		}		
+		
+		Line {
+		  SrcBlock		  "BusSelector1"
+		  SrcPort		  3
+		  DstBlock		  "Outport5"
+		  DstPort		  1
+		}		
+		
+		Line {
+		  SrcBlock		  "BusSelector1"
+		  SrcPort		  4
+		  DstBlock		  "Outport6"
+		  DstPort		  1
+		}		
+		
+		Line {
+		  SrcBlock		  "Debug"
+		  SrcPort		  1
+		  DstBlock		  "BusImpl"
+		  DstPort		  2
+		}	
+		
+	  }
+  }
+ 
+
+
+  Block {
+    BlockType Reference
+    Name 			"StrikeProcessing"
+    SID				143
+    Tag		"id=_ScXR8KYDEeKR7Lwk7UC7tQ"
+    SourceBlock	      "AtomicLibrary/StrikeProcessing"
+    SourceType	      "SubSystem"
+    Ports             [4, 1]
+  Position "[200, 100, 450, 900]"
+  }
+
+
+  Block {
+    BlockType		    DigitalClock
+    Name 				"DigitalClock1"
+    Tag					"id=_SccxgKYDEeKR7Lwk7UC7tQ"
+    SampleTime	        "0.0010"
+  Position "[100, 110, 130, 140]"
+    }
+
+
+  Block {
+    BlockType Reference
+    Name 			"MainProcessing"
+    SID				144
+    Tag		"id=_ScktUKYDEeKR7Lwk7UC7tQ"
+    SourceBlock	      "AtomicLibrary/MainProcessing"
+    SourceType	      "SubSystem"
+    Ports             [12, 3]
+  Position "[1500, 100, 1750, 900]"
+  }
+
+
+  Block {
+    BlockType		    DigitalClock
+    Name 				"DigitalClock2"
+    Tag					"id=_Scl7cKYDEeKR7Lwk7UC7tQ"
+    SampleTime	        "0.0010"
+  Position "[1400, 110, 1430, 140]"
+    }
+
+
+  Block {
+    BlockType Reference
+    Name 			"SensorProcessing"
+    SID				145
+    Tag		"id=_ScspIKYDEeKR7Lwk7UC7tQ"
+    SourceBlock	      "AtomicLibrary/SensorProcessing"
+    SourceType	      "SubSystem"
+    Ports             [10, 1]
+  Position "[200, 960, 450, 1760]"
+  }
+
+
+  Block {
+    BlockType		    DigitalClock
+    Name 				"DigitalClock3"
+    Tag					"id=_SctQMKYDEeKR7Lwk7UC7tQ"
+    SampleTime	        "0.0010"
+  Position "[100, 970, 130, 1000]"
+    }
+
+
+  Block {
+    BlockType 			Constant
+    Name 				"StrikeProcessing_BAT_Info1_net_address"
+    Tag					"id=_Tc13gKYDEeKR7Lwk7UC7tQ"
+    SID				    146 
+    Value				"1"
+    
+
+      OutDataTypeMode     "uint8"
+      OutDataTypeStr	      "uint8"
+
+  Position "[100, 160, 130, 190]"
+  }
+
+
+  Block {
+    BlockType 			Constant
+    Name 				"MainProcessing_BAT_Info_ToStrikeProcessing1_net_address"
+    Tag					"id=_TdG9QaYDEeKR7Lwk7UC7tQ"
+    SID				    147 
+    Value				"3"
+    
+
+      OutDataTypeMode     "uint8"
+      OutDataTypeStr	      "uint8"
+
+  Position "[1400, 410, 1430, 440]"
+  }
+
+
+  Block {
+    BlockType 			Constant
+    Name 				"MainProcessing_BAT_Info_From_SensorProcessing1_net_address"
+    Tag					"id=_TdYqEKYDEeKR7Lwk7UC7tQ"
+    SID				    148 
+    Value				"2"
+    
+
+      OutDataTypeMode     "uint8"
+      OutDataTypeStr	      "uint8"
+
+  Position "[1400, 510, 1430, 540]"
+  }
+
+
+  Block {
+    BlockType 			Constant
+    Name 				"SensorProcessing_BAT_Info1_net_address"
+    Tag					"id=_TdvPYaYDEeKR7Lwk7UC7tQ"
+    SID				    149 
+    Value				"4"
+    
+
+      OutDataTypeMode     "uint8"
+      OutDataTypeStr	      "uint8"
+
+  Position "[100, 1320, 130, 1350]"
+  }
+
+
+  Block {
+    BlockType 			Constant
+    Name 				"MainProcessing_BAT_Info_ToStrikeProcessing1_receiver_net_address"
+    Tag					"id=_VScHMqYDEeKR7Lwk7UC7tQ"
+    SID				    150 
+    Value				"1"
+    
+
+      OutDataTypeMode     "uint8"
+      OutDataTypeStr	      "uint8"
+
+  Position "[1400, 460, 1430, 490]"
+  }
+
+
+  Block {
+    BlockType 			Constant
+    Name 				"StrikeProcessing_BAT_Info1_receiver_net_address"
+    Tag					"id=_VSdVUKYDEeKR7Lwk7UC7tQ"
+    SID				    151 
+    Value				"3"
+    
+
+      OutDataTypeMode     "uint8"
+      OutDataTypeStr	      "uint8"
+
+  Position "[100, 210, 130, 240]"
+  }
+
+
+  Block {
+    BlockType 			Constant
+    Name 				"SensorProcessing_BAT_Info1_receiver_net_address"
+    Tag					"id=_VSo7gKYDEeKR7Lwk7UC7tQ"
+    SID				    152 
+    Value				"2"
+    
+
+      OutDataTypeMode     "uint8"
+      OutDataTypeStr	      "uint8"
+
+  Position "[100, 1370, 130, 1400]"
+  }
+
+
+  Block {
+    BlockType 			Constant
+    Name 				"MainProcessing_BAT_Info_From_SensorProcessing1_receiver_net_address"
+    Tag					"id=_VSqJoKYDEeKR7Lwk7UC7tQ"
+    SID				    153 
+    Value				"4"
+    
+
+      OutDataTypeMode     "uint8"
+      OutDataTypeStr	      "uint8"
+
+  Position "[1400, 560, 1430, 590]"
+  }
+  Line {
+    SrcBlock "DigitalClock1"
+    SrcPort 1
+    Tag				"id=_ScWq4KYDEeKR7Lwk7UC7tQ"
+    DstBlock "StrikeProcessing"
+    DstPort 1
+  }
+  Line {
+    SrcBlock "DigitalClock2"
+    SrcPort 1
+    Tag				"id=_SckGQKYDEeKR7Lwk7UC7tQ"
+    DstBlock "MainProcessing"
+    DstPort 1
+  }
+  Line {
+    SrcBlock "DigitalClock3"
+    SrcPort 1
+    Tag				"id=_ScsCEKYDEeKR7Lwk7UC7tQ"
+    DstBlock "SensorProcessing"
+    DstPort 1
+  }
+  Line {
+    SrcBlock "StrikeProcessing_BAT_Info1_net_address"
+    SrcPort 1
+    Tag				"id=_Tcvw4KYDEeKR7Lwk7UC7tQ"
+    DstBlock "StrikeProcessing"
+    DstPort 3
+  }
+  Line {
+    SrcBlock "MainProcessing_BAT_Info_ToStrikeProcessing1_net_address"
+    SrcPort 1
+    Tag				"id=_TdG9QKYDEeKR7Lwk7UC7tQ"
+    DstBlock "MainProcessing"
+    DstPort 8
+  }
+  Line {
+    SrcBlock "MainProcessing_BAT_Info_From_SensorProcessing1_net_address"
+    SrcPort 1
+    Tag				"id=_TdYDAKYDEeKR7Lwk7UC7tQ"
+    DstBlock "MainProcessing"
+    DstPort 11
+  }
+  Line {
+    SrcBlock "SensorProcessing_BAT_Info1_net_address"
+    SrcPort 1
+    Tag				"id=_TdvPYKYDEeKR7Lwk7UC7tQ"
+    DstBlock "SensorProcessing"
+    DstPort 9
+  }
+  Line {
+    SrcBlock "MainProcessing"
+    SrcPort 2
+    Tag				"id=_VSa5EaYDEeKR7Lwk7UC7tQ"
+    DstBlock "CommunicationSwitch1"
+    DstPort 1
+  }
+  Line {
+    SrcBlock "StrikeProcessing"
+    SrcPort 1
+    Tag				"id=_VSa5EKYDEeKR7Lwk7UC7tQ"
+    DstBlock "CommunicationSwitch1"
+    DstPort 2
+  }
+  Line {
+    SrcBlock "CommunicationSwitch1"
+    SrcPort 2
+    Tag				"id=_VSbgIKYDEeKR7Lwk7UC7tQ"
+    DstBlock "StrikeProcessing"
+    DstPort 2
+  }
+  Line {
+    SrcBlock "CommunicationSwitch1"
+    SrcPort 1
+    Tag				"id=_VSa5EqYDEeKR7Lwk7UC7tQ"
+    DstBlock "MainProcessing"
+    DstPort 7
+  }
+  Line {
+    SrcBlock "MainProcessing_BAT_Info_ToStrikeProcessing1_receiver_net_address"
+    SrcPort 1
+    Tag				"id=_VScHMKYDEeKR7Lwk7UC7tQ"
+    DstBlock "MainProcessing"
+    DstPort 9
+  }
+  Line {
+    SrcBlock "StrikeProcessing_BAT_Info1_receiver_net_address"
+    SrcPort 1
+    Tag				"id=_VScHMaYDEeKR7Lwk7UC7tQ"
+    DstBlock "StrikeProcessing"
+    DstPort 4
+  }
+  Line {
+    SrcBlock "SensorProcessing"
+    SrcPort 1
+    Tag				"id=_VSntYKYDEeKR7Lwk7UC7tQ"
+    DstBlock "CommunicationSwitch1"
+    DstPort 3
+  }
+  Line {
+    SrcBlock "MainProcessing"
+    SrcPort 3
+    Tag				"id=_VSnGUKYDEeKR7Lwk7UC7tQ"
+    DstBlock "CommunicationSwitch1"
+    DstPort 4
+  }
+  Line {
+    SrcBlock "CommunicationSwitch1"
+    SrcPort 4
+    Tag				"id=_VSntYqYDEeKR7Lwk7UC7tQ"
+    DstBlock "MainProcessing"
+    DstPort 10
+  }
+  Line {
+    SrcBlock "CommunicationSwitch1"
+    SrcPort 3
+    Tag				"id=_VSntYaYDEeKR7Lwk7UC7tQ"
+    DstBlock "SensorProcessing"
+    DstPort 8
+  }
+  Line {
+    SrcBlock "SensorProcessing_BAT_Info1_receiver_net_address"
+    SrcPort 1
+    Tag				"id=_VSntZ6YDEeKR7Lwk7UC7tQ"
+    DstBlock "SensorProcessing"
+    DstPort 10
+  }
+  Line {
+    SrcBlock "MainProcessing_BAT_Info_From_SensorProcessing1_receiver_net_address"
+    SrcPort 1
+    Tag				"id=_VSoUcKYDEeKR7Lwk7UC7tQ"
+    DstBlock "MainProcessing"
+    DstPort 12
+  }
+  Line {
+    SrcBlock "isMaster:isMaster"
+    SrcPort 1
+    Tag				"id=_VaczsKYDEeKR7Lwk7UC7tQ"
+    DstBlock "MainProcessing"
+    DstPort 2
+  }
+  Line {
+    SrcBlock "stopPlaying:stopPlaying"
+    SrcPort 1
+    Tag				"id=_Vaeo4KYDEeKR7Lwk7UC7tQ"
+    DstBlock "MainProcessing"
+    DstPort 3
+  }
+  Line {
+    SrcBlock "posY:posY"
+    SrcPort 1
+    Tag				"id=_VahFIKYDEeKR7Lwk7UC7tQ"
+    DstBlock "SensorProcessing"
+    DstPort 3
+  }
+  Line {
+    SrcBlock "velocity:velocity"
+    SrcPort 1
+    Tag				"id=_VakIcKYDEeKR7Lwk7UC7tQ"
+    DstBlock "SensorProcessing"
+    DstPort 6
+  }
+  Line {
+    SrcBlock "timeOfArrival:timeOfArrival"
+    SrcPort 1
+    Tag				"id=_Vany0KYDEeKR7Lwk7UC7tQ"
+    DstBlock "SensorProcessing"
+    DstPort 5
+  }
+  Line {
+    SrcBlock "posZ:posZ"
+    SrcPort 1
+    Tag				"id=_VasEQKYDEeKR7Lwk7UC7tQ"
+    DstBlock "SensorProcessing"
+    DstPort 4
+  }
+  Line {
+    SrcBlock "ballRecognized:ballRecognized"
+    SrcPort 1
+    Tag				"id=_Vayx8KYDEeKR7Lwk7UC7tQ"
+    DstBlock "SensorProcessing"
+    DstPort 7
+  }
+  Line {
+    SrcBlock "posX:posX"
+    SrcPort 1
+    Tag				"id=_Va3DYKYDEeKR7Lwk7UC7tQ"
+    DstBlock "SensorProcessing"
+    DstPort 2
+  }
+  Line {
+    SrcBlock "BAT_Information_To_OtherRobot_recv"
+    SrcPort 1
+    Tag				"id=_Ve_8gKYDEeKR7Lwk7UC7tQ"
+    DstBlock "MainProcessing"
+    DstPort 4
+  }
+  Line {
+    SrcBlock "MainProcessing"
+    SrcPort 1
+    Tag				"id=_Ve_8gaYDEeKR7Lwk7UC7tQ"
+    DstBlock "BAT_Information_To_OtherRobot_send"
+    DstPort 1
+  }
+  Line {
+    SrcBlock "BAT_Information_To_OtherRobot_receiver_net_address"
+    SrcPort 1
+    Tag				"id=_Ve_8gqYDEeKR7Lwk7UC7tQ"
+    DstBlock "MainProcessing"
+    DstPort 6
+  }
+  Line {
+    SrcBlock "BAT_Information_To_OtherRobot_net_address"
+    SrcPort 1
+    Tag				"id=_Ve_8g6YDEeKR7Lwk7UC7tQ"
+    DstBlock "MainProcessing"
+    DstPort 5
+  }
+	  }
+  }
+  }
+}
+
+

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.3.15" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.3.18" xmi:id="_MHh24J3sEeKiuKmEjvlIFQ" type="CoordinationProtocol" name="TurnTransmission.coordinationprotocol_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_Of3nQJ3sEeKiuKmEjvlIFQ" type="2005" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Of4OUJ3sEeKiuKmEjvlIFQ" type="7005">
+      <children xmi:type="notation:Shape" xmi:id="_Ogq4gJ3sEeKiuKmEjvlIFQ" type="3005" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_Ogq4gp3sEeKiuKmEjvlIFQ" type="5005"/>
+        <element xmi:type="protocol:CoordinationProtocol" href="../../demonstrator.fujaba#_OfAEkJ3sEeKiuKmEjvlIFQ"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ogq4gZ3sEeKiuKmEjvlIFQ" x="103" y="78" width="145" height="64"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_Ogq4g53sEeKiuKmEjvlIFQ" type="3006" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_OgrfkJ3sEeKiuKmEjvlIFQ" type="5006">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_OgrfkZ3sEeKiuKmEjvlIFQ" y="5"/>
+        </children>
+        <element xmi:type="protocol:Role" href="../../demonstrator.fujaba#_OfsBEJ3sEeKiuKmEjvlIFQ"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ogq4hJ3sEeKiuKmEjvlIFQ" x="91" y="174"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_Ogrfkp3sEeKiuKmEjvlIFQ" type="3006" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_OgrflJ3sEeKiuKmEjvlIFQ" type="5006">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_OgrflZ3sEeKiuKmEjvlIFQ" y="5"/>
+        </children>
+        <element xmi:type="protocol:Role" href="../../demonstrator.fujaba#_OftPMZ3sEeKiuKmEjvlIFQ"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ogrfk53sEeKiuKmEjvlIFQ" x="235" y="174"/>
+      </children>
+    </children>
+    <element xmi:type="protocol:CoordinationProtocol" href="../../demonstrator.fujaba#_OfAEkJ3sEeKiuKmEjvlIFQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Of3nQZ3sEeKiuKmEjvlIFQ" x="132" y="72" width="361" height="265"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_MHh24Z3sEeKiuKmEjvlIFQ"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../../demonstrator.fujaba#_MGeuAJ3sEeKiuKmEjvlIFQ"/>
+  <edges xmi:type="notation:Connector" xmi:id="_OnpDMJ3sEeKiuKmEjvlIFQ" type="4007" source="_Ogq4gJ3sEeKiuKmEjvlIFQ" target="_Ogq4g53sEeKiuKmEjvlIFQ" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_OnpDMZ3sEeKiuKmEjvlIFQ" fontName="Segoe UI"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_OnpDMp3sEeKiuKmEjvlIFQ" points="[0, 0, -20, -26]$[12, 16, -8, -10]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_On3FoJ3sEeKiuKmEjvlIFQ" type="4007" source="_Ogq4gJ3sEeKiuKmEjvlIFQ" target="_Ogrfkp3sEeKiuKmEjvlIFQ" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_On3FoZ3sEeKiuKmEjvlIFQ" fontName="Segoe UI"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_On3Fop3sEeKiuKmEjvlIFQ" points="[235, -87, 147, -55]$[98, -36, 10, -4]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_On3ssJ3sEeKiuKmEjvlIFQ" type="4006" source="_Ogq4g53sEeKiuKmEjvlIFQ" target="_Ogrfkp3sEeKiuKmEjvlIFQ" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_On3ssZ3sEeKiuKmEjvlIFQ" fontName="Segoe UI"/>
+    <element xmi:type="protocol:RoleConnector" href="../../demonstrator.fujaba#_Oft2QZ3sEeKiuKmEjvlIFQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_On3ssp3sEeKiuKmEjvlIFQ" points="[10, 10, 0, 0]$[0, 0, -10, -10]"/>
+  </edges>
+</notation:Diagram>

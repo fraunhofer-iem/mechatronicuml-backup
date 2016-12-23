@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmi:id="_AkHIAKm_EeOm7bbPSJmxhg" type="Coordination Protocol" name="ExplorationToNavigation.coordinationprotocol_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_AkHIAqm_EeOm7bbPSJmxhg" type="2005" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_AkHIBKm_EeOm7bbPSJmxhg" type="7005"/>
+    <element xmi:type="protocol:CoordinationProtocol" href="../PathFinder.fujaba#_ygFvUH9bEeO-DvQQYvJh6Q"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AkHIA6m_EeOm7bbPSJmxhg"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_AkHIAam_EeOm7bbPSJmxhg"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../PathFinder.fujaba#_xXyqgH9bEeO-DvQQYvJh6Q"/>
+</notation:Diagram>

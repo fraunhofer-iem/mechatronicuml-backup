@@ -1,0 +1,730 @@
+<?xml version="1.0" encoding="ASCII"?>
+<de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedGraphTransformationSystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba.muml.timedstorydiagram="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:expr="http://www.muml.org/core/expressions/1.0.0" xmlns:sda="http://www.muml.org/storydiagram/activities/1.0.0" xmlns:sdce="http://www.muml.org/storydiagram/calls/expressions/1.0.0" xmlns:sdp="http://www.muml.org/storydiagram/patterns/1.0.0">
+  <rules inParameter="//@rules.0/@containedParameters.0 //@rules.0/@containedParameters.1" name="rule1_forEach" resets="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.2">
+    <containedParameters name="step">
+      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//StepGraph"/>
+    </containedParameters>
+    <containedParameters name="result">
+      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//SuccessorStepGraphs"/>
+    </containedParameters>
+    <ownedActivityEdge target="//@rules.0/@ownedActivityNode.2" source="//@rules.0/@ownedActivityNode.0"/>
+    <ownedActivityEdge target="//@rules.0/@ownedActivityNode.3" source="//@rules.0/@ownedActivityNode.2" guard="EACH_TIME"/>
+    <ownedActivityEdge target="//@rules.0/@ownedActivityNode.1" source="//@rules.0/@ownedActivityNode.2" guard="END"/>
+    <ownedActivityEdge target="//@rules.0/@ownedActivityNode.4" source="//@rules.0/@ownedActivityNode.3"/>
+    <ownedActivityEdge target="//@rules.0/@ownedActivityNode.5" source="//@rules.0/@ownedActivityNode.4"/>
+    <ownedActivityEdge target="//@rules.0/@ownedActivityNode.2" source="//@rules.0/@ownedActivityNode.5"/>
+    <ownedActivityNode xsi:type="sda:InitialNode" name="startNode" outgoing="//@rules.0/@ownedActivityEdge.0"/>
+    <ownedActivityNode xsi:type="sda:ActivityFinalNode" name="stopNode" incoming="//@rules.0/@ownedActivityEdge.2"/>
+    <ownedActivityNode xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedActivityNode" name="forEachNode" outgoing="//@rules.0/@ownedActivityEdge.1 //@rules.0/@ownedActivityEdge.2" incoming="//@rules.0/@ownedActivityEdge.0 //@rules.0/@ownedActivityEdge.5" forEach="true">
+      <ownedRule xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedStoryPattern">
+        <variable xsi:type="sdp:ObjectVariable" name="c" incomingLink="//@rules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.0 //@rules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.2 //@rules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.5" outgoingLink="//@rules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.1">
+          <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="o" incomingLink="//@rules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.1 //@rules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.9">
+          <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EOperation"/>
+        </variable>
+        <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="ci" incomingLink="//@rules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.3 //@rules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.7" outgoingLink="//@rules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.0" clockInstanceConstraints="//@rules.0/@clockInstConstraint.0">
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="step" bindingState="BOUND" outgoingLink="//@rules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.2 //@rules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.3">
+          <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//StepGraph"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="trans" outgoingLink="//@rules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.4 //@rules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.6 //@rules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.8" bindingOperator="CREATE">
+          <classifier href="http://www.fujaba.de/reachabilityGraph/gtautomaton/0.1.0#//GtAutomatonTransition"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="c_entry" incomingLink="//@rules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.4" outgoingLink="//@rules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.5" bindingOperator="CREATE">
+          <attributeAssignment>
+            <attribute href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//MatchingEntry/key"/>
+            <valueExpression xsi:type="expr:TextualExpression" expressionText="'c'" language="OCL" languageVersion="1.0"/>
+          </attributeAssignment>
+          <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//MatchingEntry"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="ci_entry" incomingLink="//@rules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.6" outgoingLink="//@rules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.7" bindingOperator="CREATE">
+          <attributeAssignment>
+            <attribute href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//MatchingEntry/key"/>
+            <valueExpression xsi:type="expr:TextualExpression" expressionText="'ci'" language="OCL" languageVersion="1.0"/>
+          </attributeAssignment>
+          <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//MatchingEntry"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="o_entry" incomingLink="//@rules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.8" outgoingLink="//@rules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.9" bindingOperator="CREATE">
+          <attributeAssignment>
+            <attribute href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//MatchingEntry/key"/>
+            <valueExpression xsi:type="expr:TextualExpression" expressionText="'o'" language="OCL" languageVersion="1.0"/>
+          </attributeAssignment>
+          <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//MatchingEntry"/>
+        </variable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="hasNode" source="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.2" target="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.0">
+          <targetEnd href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance/hasNode"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="operation" source="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.0" target="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.1">
+          <targetEnd href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eOperations"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="changeable" source="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.3" target="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.0">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//StepGraph/changeableNodes"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="clockInstances" source="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.3" target="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.2">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/gtautomaton/0.1.0#//GtStepGraph/clockInstances"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="matching" bindingOperator="CREATE" source="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.4" target="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.5">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//SDMTransition/matching"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="value" bindingOperator="CREATE" source="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.5" target="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.0">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//MatchingEntry/value"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="matching" bindingOperator="CREATE" source="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.4" target="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.6">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//SDMTransition/matching"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="value" bindingOperator="CREATE" source="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.6" target="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.2">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//MatchingEntry/value"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="matching" bindingOperator="CREATE" source="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.4" target="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.7">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//SDMTransition/matching"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="value" bindingOperator="CREATE" source="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.7" target="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.1">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//MatchingEntry/value"/>
+        </linkVariable>
+      </ownedRule>
+    </ownedActivityNode>
+    <ownedActivityNode xsi:type="sda:StatementNode" name="copyNode" outgoing="//@rules.0/@ownedActivityEdge.3" incoming="//@rules.0/@ownedActivityEdge.1">
+      <statementExpression xsi:type="sdce:MethodCallExpression" callee="//@rules.0/@ownedActivityNode.3/@statementExpression/@opaqueCallable">
+        <ownedParameterBindings parameter="//@rules.2/@ownedActivityNode.3/@statementExpression/@opaqueCallable/@containedParameters.0">
+          <valueExpression xsi:type="expr:TextualExpression" expressionText="step" language="OCL" languageVersion="1.0"/>
+        </ownedParameterBindings>
+        <ownedParameterBindings parameter="//@rules.2/@ownedActivityNode.3/@statementExpression/@opaqueCallable/@containedParameters.1">
+          <valueExpression xsi:type="expr:TextualExpression" expressionText="trans" language="OCL" languageVersion="1.0"/>
+        </ownedParameterBindings>
+        <ownedParameterBindings parameter="//@rules.2/@ownedActivityNode.3/@statementExpression/@opaqueCallable/@containedParameters.2">
+          <valueExpression xsi:type="expr:TextualExpression" expressionText="succ" language="OCL" languageVersion="1.0"/>
+        </ownedParameterBindings>
+        <opaqueCallable inParameter="//@rules.2/@ownedActivityNode.3/@statementExpression/@opaqueCallable/@containedParameters.0 //@rules.2/@ownedActivityNode.3/@statementExpression/@opaqueCallable/@containedParameters.1" outParameter="//@rules.2/@ownedActivityNode.3/@statementExpression/@opaqueCallable/@containedParameters.2" name="de.uni_paderborn.fujaba.muml.reachanalysis.gtautomaton.GtAutomatonComputation.copyGtStepGraph"/>
+      </statementExpression>
+    </ownedActivityNode>
+    <ownedActivityNode xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedActivityNode" name="boundResultNode" outgoing="//@rules.0/@ownedActivityEdge.4" incoming="//@rules.0/@ownedActivityEdge.3">
+      <ownedRule>
+        <variable xsi:type="sdp:ObjectVariable" name="step" bindingState="BOUND" outgoingLink="//@rules.0/@ownedActivityNode.4/@ownedRule/@linkVariable.0">
+          <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//StepGraph"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="succ" incomingLink="//@rules.0/@ownedActivityNode.4/@ownedRule/@linkVariable.2 //@rules.0/@ownedActivityNode.4/@ownedRule/@linkVariable.3" outgoingLink="//@rules.0/@ownedActivityNode.4/@ownedRule/@linkVariable.1">
+          <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//StepGraph"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="trans" bindingState="BOUND" outgoingLink="//@rules.0/@ownedActivityNode.4/@ownedRule/@linkVariable.3">
+          <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//SDMTransition"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="result" bindingState="BOUND" outgoingLink="//@rules.0/@ownedActivityNode.4/@ownedRule/@linkVariable.2">
+          <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//SuccessorStepGraphs"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="reachGraph" incomingLink="//@rules.0/@ownedActivityNode.4/@ownedRule/@linkVariable.0 //@rules.0/@ownedActivityNode.4/@ownedRule/@linkVariable.1">
+          <classifier href="http://www.fujaba.de/reachabilityGraph/0.1.0#//ReachabilityGraph"/>
+        </variable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="reachabilityGraph" source="//@rules.0/@ownedActivityNode.4/@ownedRule/@variable.0" target="//@rules.0/@ownedActivityNode.4/@ownedRule/@variable.4">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/0.1.0#//ReachabilityGraphState/reachabilityGraph"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="reachabilityGraph" bindingOperator="CREATE" source="//@rules.0/@ownedActivityNode.4/@ownedRule/@variable.1" target="//@rules.0/@ownedActivityNode.4/@ownedRule/@variable.4">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/0.1.0#//ReachabilityGraphState/reachabilityGraph"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="successors" bindingOperator="CREATE" source="//@rules.0/@ownedActivityNode.4/@ownedRule/@variable.3" target="//@rules.0/@ownedActivityNode.4/@ownedRule/@variable.1">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//SuccessorStepGraphs/successors"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="targetSucc" source="//@rules.0/@ownedActivityNode.4/@ownedRule/@variable.2" target="//@rules.0/@ownedActivityNode.4/@ownedRule/@variable.1">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/0.1.0#//ReachabilityGraphTransition/target"/>
+        </linkVariable>
+      </ownedRule>
+    </ownedActivityNode>
+    <ownedActivityNode xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedActivityNode" name="node1_restoreMatchingNode" outgoing="//@rules.0/@ownedActivityEdge.5" incoming="//@rules.0/@ownedActivityEdge.4">
+      <ownedRule xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedStoryPattern">
+        <variable xsi:type="sdp:ObjectVariable" name="trans" bindingState="BOUND" outgoingLink="//@rules.0/@ownedActivityNode.5/@ownedRule/@linkVariable.1 //@rules.0/@ownedActivityNode.5/@ownedRule/@linkVariable.4 //@rules.0/@ownedActivityNode.5/@ownedRule/@linkVariable.7">
+          <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//SDMTransition"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="succ" bindingState="BOUND" outgoingLink="//@rules.0/@ownedActivityNode.5/@ownedRule/@linkVariable.0">
+          <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//StepGraph"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="p_succ" incomingLink="//@rules.0/@ownedActivityNode.5/@ownedRule/@linkVariable.0 //@rules.0/@ownedActivityNode.5/@ownedRule/@linkVariable.10" bindingOperator="CREATE">
+          <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EParameter"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="c_succ" incomingLink="//@rules.0/@ownedActivityNode.5/@ownedRule/@linkVariable.3">
+          <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="c_entry" incomingLink="//@rules.0/@ownedActivityNode.5/@ownedRule/@linkVariable.1" outgoingLink="//@rules.0/@ownedActivityNode.5/@ownedRule/@linkVariable.2 //@rules.0/@ownedActivityNode.5/@ownedRule/@linkVariable.3">
+          <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//IndexEntry"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="c" bindingState="BOUND" incomingLink="//@rules.0/@ownedActivityNode.5/@ownedRule/@linkVariable.2">
+          <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+        </variable>
+        <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="ci_succ" incomingLink="//@rules.0/@ownedActivityNode.5/@ownedRule/@linkVariable.6">
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="ci_entry" incomingLink="//@rules.0/@ownedActivityNode.5/@ownedRule/@linkVariable.4" outgoingLink="//@rules.0/@ownedActivityNode.5/@ownedRule/@linkVariable.5 //@rules.0/@ownedActivityNode.5/@ownedRule/@linkVariable.6">
+          <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//IndexEntry"/>
+        </variable>
+        <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="ci" bindingState="BOUND" incomingLink="//@rules.0/@ownedActivityNode.5/@ownedRule/@linkVariable.5">
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="o_succ" incomingLink="//@rules.0/@ownedActivityNode.5/@ownedRule/@linkVariable.9" outgoingLink="//@rules.0/@ownedActivityNode.5/@ownedRule/@linkVariable.10">
+          <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EOperation"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="o_entry" incomingLink="//@rules.0/@ownedActivityNode.5/@ownedRule/@linkVariable.7" outgoingLink="//@rules.0/@ownedActivityNode.5/@ownedRule/@linkVariable.8 //@rules.0/@ownedActivityNode.5/@ownedRule/@linkVariable.9">
+          <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//IndexEntry"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="o" bindingState="BOUND" incomingLink="//@rules.0/@ownedActivityNode.5/@ownedRule/@linkVariable.8">
+          <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EOperation"/>
+        </variable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="changeable" bindingOperator="CREATE" source="//@rules.0/@ownedActivityNode.5/@ownedRule/@variable.1" target="//@rules.0/@ownedActivityNode.5/@ownedRule/@variable.2">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//StepGraph/changeableNodes"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="index" source="//@rules.0/@ownedActivityNode.5/@ownedRule/@variable.0" target="//@rules.0/@ownedActivityNode.5/@ownedRule/@variable.4">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//SDMTransition/index"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="key" source="//@rules.0/@ownedActivityNode.5/@ownedRule/@variable.4" target="//@rules.0/@ownedActivityNode.5/@ownedRule/@variable.5">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//IndexEntry/key"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="value" source="//@rules.0/@ownedActivityNode.5/@ownedRule/@variable.4" target="//@rules.0/@ownedActivityNode.5/@ownedRule/@variable.3">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//IndexEntry/value"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="index" source="//@rules.0/@ownedActivityNode.5/@ownedRule/@variable.0" target="//@rules.0/@ownedActivityNode.5/@ownedRule/@variable.7">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//SDMTransition/index"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="key" source="//@rules.0/@ownedActivityNode.5/@ownedRule/@variable.7" target="//@rules.0/@ownedActivityNode.5/@ownedRule/@variable.8">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//IndexEntry/key"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="value" source="//@rules.0/@ownedActivityNode.5/@ownedRule/@variable.7" target="//@rules.0/@ownedActivityNode.5/@ownedRule/@variable.6">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//IndexEntry/value"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="index" source="//@rules.0/@ownedActivityNode.5/@ownedRule/@variable.0" target="//@rules.0/@ownedActivityNode.5/@ownedRule/@variable.10">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//SDMTransition/index"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="key" source="//@rules.0/@ownedActivityNode.5/@ownedRule/@variable.10" target="//@rules.0/@ownedActivityNode.5/@ownedRule/@variable.11">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//IndexEntry/key"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="value" source="//@rules.0/@ownedActivityNode.5/@ownedRule/@variable.10" target="//@rules.0/@ownedActivityNode.5/@ownedRule/@variable.9">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//IndexEntry/value"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="parameter" bindingOperator="CREATE" source="//@rules.0/@ownedActivityNode.5/@ownedRule/@variable.9" target="//@rules.0/@ownedActivityNode.5/@ownedRule/@variable.2">
+          <targetEnd href="http://www.eclipse.org/emf/2002/Ecore#//EOperation/eParameters"/>
+        </linkVariable>
+      </ownedRule>
+    </ownedActivityNode>
+    <clockInstConstraint clockInstanceVariable="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.2" operator="LESS_OR_EQUAL" value="100"/>
+  </rules>
+  <rules inParameter="//@rules.1/@containedParameters.0 //@rules.1/@containedParameters.1" name="rule2_forEach" resets="//@rules.1/@ownedActivityNode.2/@ownedRule/@variable.2">
+    <containedParameters name="step">
+      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//StepGraph"/>
+    </containedParameters>
+    <containedParameters name="result">
+      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//SuccessorStepGraphs"/>
+    </containedParameters>
+    <ownedActivityEdge target="//@rules.1/@ownedActivityNode.2" source="//@rules.1/@ownedActivityNode.0"/>
+    <ownedActivityEdge target="//@rules.1/@ownedActivityNode.3" source="//@rules.1/@ownedActivityNode.2" guard="EACH_TIME"/>
+    <ownedActivityEdge target="//@rules.1/@ownedActivityNode.1" source="//@rules.1/@ownedActivityNode.2" guard="END"/>
+    <ownedActivityEdge target="//@rules.1/@ownedActivityNode.4" source="//@rules.1/@ownedActivityNode.3"/>
+    <ownedActivityEdge target="//@rules.1/@ownedActivityNode.5" source="//@rules.1/@ownedActivityNode.4"/>
+    <ownedActivityEdge target="//@rules.1/@ownedActivityNode.2" source="//@rules.1/@ownedActivityNode.5"/>
+    <ownedActivityNode xsi:type="sda:InitialNode" name="startNode" outgoing="//@rules.1/@ownedActivityEdge.0"/>
+    <ownedActivityNode xsi:type="sda:ActivityFinalNode" name="stopNode" incoming="//@rules.1/@ownedActivityEdge.2"/>
+    <ownedActivityNode xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedActivityNode" name="forEachNode" outgoing="//@rules.1/@ownedActivityEdge.1 //@rules.1/@ownedActivityEdge.2" incoming="//@rules.1/@ownedActivityEdge.0 //@rules.1/@ownedActivityEdge.5" forEach="true">
+      <ownedRule xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedStoryPattern">
+        <variable xsi:type="sdp:ObjectVariable" name="o" incomingLink="//@rules.1/@ownedActivityNode.2/@ownedRule/@linkVariable.1 //@rules.1/@ownedActivityNode.2/@ownedRule/@linkVariable.5">
+          <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EOperation"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="c" incomingLink="//@rules.1/@ownedActivityNode.2/@ownedRule/@linkVariable.0 //@rules.1/@ownedActivityNode.2/@ownedRule/@linkVariable.2 //@rules.1/@ownedActivityNode.2/@ownedRule/@linkVariable.7" outgoingLink="//@rules.1/@ownedActivityNode.2/@ownedRule/@linkVariable.1">
+          <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+        </variable>
+        <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="ci" incomingLink="//@rules.1/@ownedActivityNode.2/@ownedRule/@linkVariable.3 //@rules.1/@ownedActivityNode.2/@ownedRule/@linkVariable.9" outgoingLink="//@rules.1/@ownedActivityNode.2/@ownedRule/@linkVariable.0" clockInstanceConstraints="//@rules.1/@clockInstConstraint.0">
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="step" bindingState="BOUND" outgoingLink="//@rules.1/@ownedActivityNode.2/@ownedRule/@linkVariable.2 //@rules.1/@ownedActivityNode.2/@ownedRule/@linkVariable.3">
+          <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//StepGraph"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="trans" outgoingLink="//@rules.1/@ownedActivityNode.2/@ownedRule/@linkVariable.4 //@rules.1/@ownedActivityNode.2/@ownedRule/@linkVariable.6 //@rules.1/@ownedActivityNode.2/@ownedRule/@linkVariable.8" bindingOperator="CREATE">
+          <classifier href="http://www.fujaba.de/reachabilityGraph/gtautomaton/0.1.0#//GtAutomatonTransition"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="o_entry" incomingLink="//@rules.1/@ownedActivityNode.2/@ownedRule/@linkVariable.4" outgoingLink="//@rules.1/@ownedActivityNode.2/@ownedRule/@linkVariable.5" bindingOperator="CREATE">
+          <attributeAssignment>
+            <attribute href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//MatchingEntry/key"/>
+            <valueExpression xsi:type="expr:TextualExpression" expressionText="'o'" language="OCL" languageVersion="1.0"/>
+          </attributeAssignment>
+          <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//MatchingEntry"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="c_entry" incomingLink="//@rules.1/@ownedActivityNode.2/@ownedRule/@linkVariable.6" outgoingLink="//@rules.1/@ownedActivityNode.2/@ownedRule/@linkVariable.7" bindingOperator="CREATE">
+          <attributeAssignment>
+            <attribute href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//MatchingEntry/key"/>
+            <valueExpression xsi:type="expr:TextualExpression" expressionText="'c'" language="OCL" languageVersion="1.0"/>
+          </attributeAssignment>
+          <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//MatchingEntry"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="ci_entry" incomingLink="//@rules.1/@ownedActivityNode.2/@ownedRule/@linkVariable.8" outgoingLink="//@rules.1/@ownedActivityNode.2/@ownedRule/@linkVariable.9" bindingOperator="CREATE">
+          <attributeAssignment>
+            <attribute href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//MatchingEntry/key"/>
+            <valueExpression xsi:type="expr:TextualExpression" expressionText="'ci'" language="OCL" languageVersion="1.0"/>
+          </attributeAssignment>
+          <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//MatchingEntry"/>
+        </variable>
+        <constraint>
+          <constraintExpression xsi:type="expr:TextualExpression" expressionText="o.name='op1'" language="OCL" languageVersion="1.0"/>
+        </constraint>
+        <linkVariable xsi:type="sdp:LinkVariable" name="hasNode" source="//@rules.1/@ownedActivityNode.2/@ownedRule/@variable.2" target="//@rules.1/@ownedActivityNode.2/@ownedRule/@variable.1">
+          <targetEnd href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance/hasNode"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="operation" source="//@rules.1/@ownedActivityNode.2/@ownedRule/@variable.1" target="//@rules.1/@ownedActivityNode.2/@ownedRule/@variable.0">
+          <targetEnd href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eOperations"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="changeable" source="//@rules.1/@ownedActivityNode.2/@ownedRule/@variable.3" target="//@rules.1/@ownedActivityNode.2/@ownedRule/@variable.1">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//StepGraph/changeableNodes"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="clockInstances" source="//@rules.1/@ownedActivityNode.2/@ownedRule/@variable.3" target="//@rules.1/@ownedActivityNode.2/@ownedRule/@variable.2">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/gtautomaton/0.1.0#//GtStepGraph/clockInstances"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="matching" bindingOperator="CREATE" source="//@rules.1/@ownedActivityNode.2/@ownedRule/@variable.4" target="//@rules.1/@ownedActivityNode.2/@ownedRule/@variable.5">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//SDMTransition/matching"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="value" bindingOperator="CREATE" source="//@rules.1/@ownedActivityNode.2/@ownedRule/@variable.5" target="//@rules.1/@ownedActivityNode.2/@ownedRule/@variable.0">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//MatchingEntry/value"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="matching" bindingOperator="CREATE" source="//@rules.1/@ownedActivityNode.2/@ownedRule/@variable.4" target="//@rules.1/@ownedActivityNode.2/@ownedRule/@variable.6">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//SDMTransition/matching"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="value" bindingOperator="CREATE" source="//@rules.1/@ownedActivityNode.2/@ownedRule/@variable.6" target="//@rules.1/@ownedActivityNode.2/@ownedRule/@variable.1">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//MatchingEntry/value"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="matching" bindingOperator="CREATE" source="//@rules.1/@ownedActivityNode.2/@ownedRule/@variable.4" target="//@rules.1/@ownedActivityNode.2/@ownedRule/@variable.7">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//SDMTransition/matching"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="value" bindingOperator="CREATE" source="//@rules.1/@ownedActivityNode.2/@ownedRule/@variable.7" target="//@rules.1/@ownedActivityNode.2/@ownedRule/@variable.2">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//MatchingEntry/value"/>
+        </linkVariable>
+      </ownedRule>
+    </ownedActivityNode>
+    <ownedActivityNode xsi:type="sda:StatementNode" name="copyNode" outgoing="//@rules.1/@ownedActivityEdge.3" incoming="//@rules.1/@ownedActivityEdge.1">
+      <statementExpression xsi:type="sdce:MethodCallExpression" callee="//@rules.1/@ownedActivityNode.3/@statementExpression/@opaqueCallable">
+        <ownedParameterBindings parameter="//@rules.2/@ownedActivityNode.3/@statementExpression/@opaqueCallable/@containedParameters.0">
+          <valueExpression xsi:type="expr:TextualExpression" expressionText="step" language="OCL" languageVersion="1.0"/>
+        </ownedParameterBindings>
+        <ownedParameterBindings parameter="//@rules.2/@ownedActivityNode.3/@statementExpression/@opaqueCallable/@containedParameters.1">
+          <valueExpression xsi:type="expr:TextualExpression" expressionText="trans" language="OCL" languageVersion="1.0"/>
+        </ownedParameterBindings>
+        <ownedParameterBindings parameter="//@rules.2/@ownedActivityNode.3/@statementExpression/@opaqueCallable/@containedParameters.2">
+          <valueExpression xsi:type="expr:TextualExpression" expressionText="succ" language="OCL" languageVersion="1.0"/>
+        </ownedParameterBindings>
+        <opaqueCallable inParameter="//@rules.2/@ownedActivityNode.3/@statementExpression/@opaqueCallable/@containedParameters.0 //@rules.2/@ownedActivityNode.3/@statementExpression/@opaqueCallable/@containedParameters.1" outParameter="//@rules.2/@ownedActivityNode.3/@statementExpression/@opaqueCallable/@containedParameters.2" name="de.uni_paderborn.fujaba.muml.reachanalysis.gtautomaton.GtAutomatonComputation.copyGtStepGraph"/>
+      </statementExpression>
+    </ownedActivityNode>
+    <ownedActivityNode xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedActivityNode" name="boundResultNode" outgoing="//@rules.1/@ownedActivityEdge.4" incoming="//@rules.1/@ownedActivityEdge.3">
+      <ownedRule>
+        <variable xsi:type="sdp:ObjectVariable" name="step" bindingState="BOUND" outgoingLink="//@rules.1/@ownedActivityNode.4/@ownedRule/@linkVariable.0">
+          <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//StepGraph"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="succ" incomingLink="//@rules.1/@ownedActivityNode.4/@ownedRule/@linkVariable.2 //@rules.1/@ownedActivityNode.4/@ownedRule/@linkVariable.3" outgoingLink="//@rules.1/@ownedActivityNode.4/@ownedRule/@linkVariable.1">
+          <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//StepGraph"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="trans" bindingState="BOUND" outgoingLink="//@rules.1/@ownedActivityNode.4/@ownedRule/@linkVariable.3">
+          <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//SDMTransition"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="result" bindingState="BOUND" outgoingLink="//@rules.1/@ownedActivityNode.4/@ownedRule/@linkVariable.2">
+          <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//SuccessorStepGraphs"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="reachGraph" incomingLink="//@rules.1/@ownedActivityNode.4/@ownedRule/@linkVariable.0 //@rules.1/@ownedActivityNode.4/@ownedRule/@linkVariable.1">
+          <classifier href="http://www.fujaba.de/reachabilityGraph/0.1.0#//ReachabilityGraph"/>
+        </variable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="reachabilityGraph" source="//@rules.1/@ownedActivityNode.4/@ownedRule/@variable.0" target="//@rules.1/@ownedActivityNode.4/@ownedRule/@variable.4">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/0.1.0#//ReachabilityGraphState/reachabilityGraph"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="reachabilityGraph" bindingOperator="CREATE" source="//@rules.1/@ownedActivityNode.4/@ownedRule/@variable.1" target="//@rules.1/@ownedActivityNode.4/@ownedRule/@variable.4">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/0.1.0#//ReachabilityGraphState/reachabilityGraph"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="successors" bindingOperator="CREATE" source="//@rules.1/@ownedActivityNode.4/@ownedRule/@variable.3" target="//@rules.1/@ownedActivityNode.4/@ownedRule/@variable.1">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//SuccessorStepGraphs/successors"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="targetSucc" source="//@rules.1/@ownedActivityNode.4/@ownedRule/@variable.2" target="//@rules.1/@ownedActivityNode.4/@ownedRule/@variable.1">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/0.1.0#//ReachabilityGraphTransition/target"/>
+        </linkVariable>
+      </ownedRule>
+    </ownedActivityNode>
+    <ownedActivityNode xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedActivityNode" name="node1_restoreMatchingNode" outgoing="//@rules.1/@ownedActivityEdge.5" incoming="//@rules.1/@ownedActivityEdge.4">
+      <ownedRule xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedStoryPattern">
+        <variable xsi:type="sdp:ObjectVariable" name="trans" bindingState="BOUND" outgoingLink="//@rules.1/@ownedActivityNode.5/@ownedRule/@linkVariable.0 //@rules.1/@ownedActivityNode.5/@ownedRule/@linkVariable.3 //@rules.1/@ownedActivityNode.5/@ownedRule/@linkVariable.6">
+          <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//SDMTransition"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="succ" bindingState="BOUND" outgoingLink="//@rules.1/@ownedActivityNode.5/@ownedRule/@linkVariable.9">
+          <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//StepGraph"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="o_succ" incomingLink="//@rules.1/@ownedActivityNode.5/@ownedRule/@linkVariable.2" outgoingLink="//@rules.1/@ownedActivityNode.5/@ownedRule/@linkVariable.10">
+          <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EOperation"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="o_entry" incomingLink="//@rules.1/@ownedActivityNode.5/@ownedRule/@linkVariable.0" outgoingLink="//@rules.1/@ownedActivityNode.5/@ownedRule/@linkVariable.1 //@rules.1/@ownedActivityNode.5/@ownedRule/@linkVariable.2">
+          <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//IndexEntry"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="o" bindingState="BOUND" incomingLink="//@rules.1/@ownedActivityNode.5/@ownedRule/@linkVariable.1">
+          <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EOperation"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="c_succ" incomingLink="//@rules.1/@ownedActivityNode.5/@ownedRule/@linkVariable.5">
+          <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="c_entry" incomingLink="//@rules.1/@ownedActivityNode.5/@ownedRule/@linkVariable.3" outgoingLink="//@rules.1/@ownedActivityNode.5/@ownedRule/@linkVariable.4 //@rules.1/@ownedActivityNode.5/@ownedRule/@linkVariable.5">
+          <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//IndexEntry"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="c" bindingState="BOUND" incomingLink="//@rules.1/@ownedActivityNode.5/@ownedRule/@linkVariable.4">
+          <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+        </variable>
+        <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="ci_succ" incomingLink="//@rules.1/@ownedActivityNode.5/@ownedRule/@linkVariable.8">
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="ci_entry" incomingLink="//@rules.1/@ownedActivityNode.5/@ownedRule/@linkVariable.6" outgoingLink="//@rules.1/@ownedActivityNode.5/@ownedRule/@linkVariable.7 //@rules.1/@ownedActivityNode.5/@ownedRule/@linkVariable.8">
+          <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//IndexEntry"/>
+        </variable>
+        <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="ci" bindingState="BOUND" incomingLink="//@rules.1/@ownedActivityNode.5/@ownedRule/@linkVariable.7">
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="p_succ" incomingLink="//@rules.1/@ownedActivityNode.5/@ownedRule/@linkVariable.9 //@rules.1/@ownedActivityNode.5/@ownedRule/@linkVariable.10" bindingOperator="CREATE">
+          <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EParameter"/>
+        </variable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="index" source="//@rules.1/@ownedActivityNode.5/@ownedRule/@variable.0" target="//@rules.1/@ownedActivityNode.5/@ownedRule/@variable.3">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//SDMTransition/index"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="key" source="//@rules.1/@ownedActivityNode.5/@ownedRule/@variable.3" target="//@rules.1/@ownedActivityNode.5/@ownedRule/@variable.4">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//IndexEntry/key"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="value" source="//@rules.1/@ownedActivityNode.5/@ownedRule/@variable.3" target="//@rules.1/@ownedActivityNode.5/@ownedRule/@variable.2">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//IndexEntry/value"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="index" source="//@rules.1/@ownedActivityNode.5/@ownedRule/@variable.0" target="//@rules.1/@ownedActivityNode.5/@ownedRule/@variable.6">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//SDMTransition/index"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="key" source="//@rules.1/@ownedActivityNode.5/@ownedRule/@variable.6" target="//@rules.1/@ownedActivityNode.5/@ownedRule/@variable.7">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//IndexEntry/key"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="value" source="//@rules.1/@ownedActivityNode.5/@ownedRule/@variable.6" target="//@rules.1/@ownedActivityNode.5/@ownedRule/@variable.5">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//IndexEntry/value"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="index" source="//@rules.1/@ownedActivityNode.5/@ownedRule/@variable.0" target="//@rules.1/@ownedActivityNode.5/@ownedRule/@variable.9">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//SDMTransition/index"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="key" source="//@rules.1/@ownedActivityNode.5/@ownedRule/@variable.9" target="//@rules.1/@ownedActivityNode.5/@ownedRule/@variable.10">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//IndexEntry/key"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="value" source="//@rules.1/@ownedActivityNode.5/@ownedRule/@variable.9" target="//@rules.1/@ownedActivityNode.5/@ownedRule/@variable.8">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//IndexEntry/value"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="changeable" bindingOperator="CREATE" source="//@rules.1/@ownedActivityNode.5/@ownedRule/@variable.1" target="//@rules.1/@ownedActivityNode.5/@ownedRule/@variable.11">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//StepGraph/changeableNodes"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="parameter" bindingOperator="CREATE" source="//@rules.1/@ownedActivityNode.5/@ownedRule/@variable.2" target="//@rules.1/@ownedActivityNode.5/@ownedRule/@variable.11">
+          <targetEnd href="http://www.eclipse.org/emf/2002/Ecore#//EOperation/eParameters"/>
+        </linkVariable>
+      </ownedRule>
+    </ownedActivityNode>
+    <clockInstConstraint clockInstanceVariable="//@rules.1/@ownedActivityNode.2/@ownedRule/@variable.2" operator="LESS_OR_EQUAL" value="100"/>
+  </rules>
+  <rules inParameter="//@rules.2/@containedParameters.0 //@rules.2/@containedParameters.1" name="rule3_forEach" resets="//@rules.2/@ownedActivityNode.2/@ownedRule/@variable.2">
+    <containedParameters name="step">
+      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//StepGraph"/>
+    </containedParameters>
+    <containedParameters name="result">
+      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//SuccessorStepGraphs"/>
+    </containedParameters>
+    <ownedActivityEdge target="//@rules.2/@ownedActivityNode.2" source="//@rules.2/@ownedActivityNode.0"/>
+    <ownedActivityEdge target="//@rules.2/@ownedActivityNode.3" source="//@rules.2/@ownedActivityNode.2" guard="EACH_TIME"/>
+    <ownedActivityEdge target="//@rules.2/@ownedActivityNode.1" source="//@rules.2/@ownedActivityNode.2" guard="END"/>
+    <ownedActivityEdge target="//@rules.2/@ownedActivityNode.4" source="//@rules.2/@ownedActivityNode.3"/>
+    <ownedActivityEdge target="//@rules.2/@ownedActivityNode.5" source="//@rules.2/@ownedActivityNode.4"/>
+    <ownedActivityEdge target="//@rules.2/@ownedActivityNode.2" source="//@rules.2/@ownedActivityNode.5"/>
+    <ownedActivityNode xsi:type="sda:InitialNode" name="startNode" outgoing="//@rules.2/@ownedActivityEdge.0"/>
+    <ownedActivityNode xsi:type="sda:ActivityFinalNode" name="stopNode" incoming="//@rules.2/@ownedActivityEdge.2"/>
+    <ownedActivityNode xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedActivityNode" name="forEachNode" outgoing="//@rules.2/@ownedActivityEdge.1 //@rules.2/@ownedActivityEdge.2" incoming="//@rules.2/@ownedActivityEdge.0 //@rules.2/@ownedActivityEdge.5" forEach="true">
+      <ownedRule xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedStoryPattern">
+        <variable xsi:type="sdp:ObjectVariable" name="o" incomingLink="//@rules.2/@ownedActivityNode.2/@ownedRule/@linkVariable.1 //@rules.2/@ownedActivityNode.2/@ownedRule/@linkVariable.5">
+          <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EOperation"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="c" incomingLink="//@rules.2/@ownedActivityNode.2/@ownedRule/@linkVariable.0 //@rules.2/@ownedActivityNode.2/@ownedRule/@linkVariable.2 //@rules.2/@ownedActivityNode.2/@ownedRule/@linkVariable.9" outgoingLink="//@rules.2/@ownedActivityNode.2/@ownedRule/@linkVariable.1">
+          <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+        </variable>
+        <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="ci" incomingLink="//@rules.2/@ownedActivityNode.2/@ownedRule/@linkVariable.3 //@rules.2/@ownedActivityNode.2/@ownedRule/@linkVariable.7" outgoingLink="//@rules.2/@ownedActivityNode.2/@ownedRule/@linkVariable.0" clockInstanceConstraints="//@rules.2/@clockInstConstraint.0">
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="step" bindingState="BOUND" outgoingLink="//@rules.2/@ownedActivityNode.2/@ownedRule/@linkVariable.2 //@rules.2/@ownedActivityNode.2/@ownedRule/@linkVariable.3">
+          <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//StepGraph"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="trans" outgoingLink="//@rules.2/@ownedActivityNode.2/@ownedRule/@linkVariable.4 //@rules.2/@ownedActivityNode.2/@ownedRule/@linkVariable.6 //@rules.2/@ownedActivityNode.2/@ownedRule/@linkVariable.8" bindingOperator="CREATE">
+          <classifier href="http://www.fujaba.de/reachabilityGraph/gtautomaton/0.1.0#//GtAutomatonTransition"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="o_entry" incomingLink="//@rules.2/@ownedActivityNode.2/@ownedRule/@linkVariable.4" outgoingLink="//@rules.2/@ownedActivityNode.2/@ownedRule/@linkVariable.5" bindingOperator="CREATE">
+          <attributeAssignment>
+            <attribute href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//MatchingEntry/key"/>
+            <valueExpression xsi:type="expr:TextualExpression" expressionText="'o'" language="OCL" languageVersion="1.0"/>
+          </attributeAssignment>
+          <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//MatchingEntry"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="ci_entry" incomingLink="//@rules.2/@ownedActivityNode.2/@ownedRule/@linkVariable.6" outgoingLink="//@rules.2/@ownedActivityNode.2/@ownedRule/@linkVariable.7" bindingOperator="CREATE">
+          <attributeAssignment>
+            <attribute href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//MatchingEntry/key"/>
+            <valueExpression xsi:type="expr:TextualExpression" expressionText="'ci'" language="OCL" languageVersion="1.0"/>
+          </attributeAssignment>
+          <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//MatchingEntry"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="c_entry" incomingLink="//@rules.2/@ownedActivityNode.2/@ownedRule/@linkVariable.8" outgoingLink="//@rules.2/@ownedActivityNode.2/@ownedRule/@linkVariable.9" bindingOperator="CREATE">
+          <attributeAssignment>
+            <attribute href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//MatchingEntry/key"/>
+            <valueExpression xsi:type="expr:TextualExpression" expressionText="'c'" language="OCL" languageVersion="1.0"/>
+          </attributeAssignment>
+          <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//MatchingEntry"/>
+        </variable>
+        <constraint>
+          <constraintExpression xsi:type="expr:TextualExpression" expressionText="o.name='op3'" language="OCL" languageVersion="1.0"/>
+        </constraint>
+        <linkVariable xsi:type="sdp:LinkVariable" name="hasNode" source="//@rules.2/@ownedActivityNode.2/@ownedRule/@variable.2" target="//@rules.2/@ownedActivityNode.2/@ownedRule/@variable.1">
+          <targetEnd href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance/hasNode"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="operation" source="//@rules.2/@ownedActivityNode.2/@ownedRule/@variable.1" target="//@rules.2/@ownedActivityNode.2/@ownedRule/@variable.0">
+          <targetEnd href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eOperations"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="changeable" source="//@rules.2/@ownedActivityNode.2/@ownedRule/@variable.3" target="//@rules.2/@ownedActivityNode.2/@ownedRule/@variable.1">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//StepGraph/changeableNodes"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="clockInstances" source="//@rules.2/@ownedActivityNode.2/@ownedRule/@variable.3" target="//@rules.2/@ownedActivityNode.2/@ownedRule/@variable.2">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/gtautomaton/0.1.0#//GtStepGraph/clockInstances"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="matching" bindingOperator="CREATE" source="//@rules.2/@ownedActivityNode.2/@ownedRule/@variable.4" target="//@rules.2/@ownedActivityNode.2/@ownedRule/@variable.5">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//SDMTransition/matching"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="value" bindingOperator="CREATE" source="//@rules.2/@ownedActivityNode.2/@ownedRule/@variable.5" target="//@rules.2/@ownedActivityNode.2/@ownedRule/@variable.0">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//MatchingEntry/value"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="matching" bindingOperator="CREATE" source="//@rules.2/@ownedActivityNode.2/@ownedRule/@variable.4" target="//@rules.2/@ownedActivityNode.2/@ownedRule/@variable.6">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//SDMTransition/matching"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="value" bindingOperator="CREATE" source="//@rules.2/@ownedActivityNode.2/@ownedRule/@variable.6" target="//@rules.2/@ownedActivityNode.2/@ownedRule/@variable.2">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//MatchingEntry/value"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="matching" bindingOperator="CREATE" source="//@rules.2/@ownedActivityNode.2/@ownedRule/@variable.4" target="//@rules.2/@ownedActivityNode.2/@ownedRule/@variable.7">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//SDMTransition/matching"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="value" bindingOperator="CREATE" source="//@rules.2/@ownedActivityNode.2/@ownedRule/@variable.7" target="//@rules.2/@ownedActivityNode.2/@ownedRule/@variable.1">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//MatchingEntry/value"/>
+        </linkVariable>
+      </ownedRule>
+    </ownedActivityNode>
+    <ownedActivityNode xsi:type="sda:StatementNode" name="copyNode" outgoing="//@rules.2/@ownedActivityEdge.3" incoming="//@rules.2/@ownedActivityEdge.1">
+      <statementExpression xsi:type="sdce:MethodCallExpression" callee="//@rules.2/@ownedActivityNode.3/@statementExpression/@opaqueCallable">
+        <ownedParameterBindings parameter="//@rules.2/@ownedActivityNode.3/@statementExpression/@opaqueCallable/@containedParameters.0">
+          <valueExpression xsi:type="expr:TextualExpression" expressionText="step" language="OCL" languageVersion="1.0"/>
+        </ownedParameterBindings>
+        <ownedParameterBindings parameter="//@rules.2/@ownedActivityNode.3/@statementExpression/@opaqueCallable/@containedParameters.1">
+          <valueExpression xsi:type="expr:TextualExpression" expressionText="trans" language="OCL" languageVersion="1.0"/>
+        </ownedParameterBindings>
+        <ownedParameterBindings parameter="//@rules.2/@ownedActivityNode.3/@statementExpression/@opaqueCallable/@containedParameters.2">
+          <valueExpression xsi:type="expr:TextualExpression" expressionText="succ" language="OCL" languageVersion="1.0"/>
+        </ownedParameterBindings>
+        <opaqueCallable inParameter="//@rules.2/@ownedActivityNode.3/@statementExpression/@opaqueCallable/@containedParameters.0 //@rules.2/@ownedActivityNode.3/@statementExpression/@opaqueCallable/@containedParameters.1" outParameter="//@rules.2/@ownedActivityNode.3/@statementExpression/@opaqueCallable/@containedParameters.2" name="de.uni_paderborn.fujaba.muml.reachanalysis.gtautomaton.GtAutomatonComputation.copyGtStepGraph">
+          <containedParameters name="step">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/reachabilityGraph/gtautomaton/0.1.0#//GtStepGraph"/>
+          </containedParameters>
+          <containedParameters name="trans">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/reachabilityGraph/gtautomaton/0.1.0#//GtAutomatonTransition"/>
+          </containedParameters>
+          <containedParameters name="succ">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/reachabilityGraph/gtautomaton/0.1.0#//GtStepGraph"/>
+          </containedParameters>
+        </opaqueCallable>
+      </statementExpression>
+    </ownedActivityNode>
+    <ownedActivityNode xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedActivityNode" name="boundResultNode" outgoing="//@rules.2/@ownedActivityEdge.4" incoming="//@rules.2/@ownedActivityEdge.3">
+      <ownedRule>
+        <variable xsi:type="sdp:ObjectVariable" name="step" bindingState="BOUND" outgoingLink="//@rules.2/@ownedActivityNode.4/@ownedRule/@linkVariable.0">
+          <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//StepGraph"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="succ" incomingLink="//@rules.2/@ownedActivityNode.4/@ownedRule/@linkVariable.2 //@rules.2/@ownedActivityNode.4/@ownedRule/@linkVariable.3" outgoingLink="//@rules.2/@ownedActivityNode.4/@ownedRule/@linkVariable.1">
+          <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//StepGraph"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="trans" bindingState="BOUND" outgoingLink="//@rules.2/@ownedActivityNode.4/@ownedRule/@linkVariable.3">
+          <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//SDMTransition"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="result" bindingState="BOUND" outgoingLink="//@rules.2/@ownedActivityNode.4/@ownedRule/@linkVariable.2">
+          <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//SuccessorStepGraphs"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="reachGraph" incomingLink="//@rules.2/@ownedActivityNode.4/@ownedRule/@linkVariable.0 //@rules.2/@ownedActivityNode.4/@ownedRule/@linkVariable.1">
+          <classifier href="http://www.fujaba.de/reachabilityGraph/0.1.0#//ReachabilityGraph"/>
+        </variable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="reachabilityGraph" source="//@rules.2/@ownedActivityNode.4/@ownedRule/@variable.0" target="//@rules.2/@ownedActivityNode.4/@ownedRule/@variable.4">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/0.1.0#//ReachabilityGraphState/reachabilityGraph"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="reachabilityGraph" bindingOperator="CREATE" source="//@rules.2/@ownedActivityNode.4/@ownedRule/@variable.1" target="//@rules.2/@ownedActivityNode.4/@ownedRule/@variable.4">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/0.1.0#//ReachabilityGraphState/reachabilityGraph"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="successors" bindingOperator="CREATE" source="//@rules.2/@ownedActivityNode.4/@ownedRule/@variable.3" target="//@rules.2/@ownedActivityNode.4/@ownedRule/@variable.1">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//SuccessorStepGraphs/successors"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="targetSucc" source="//@rules.2/@ownedActivityNode.4/@ownedRule/@variable.2" target="//@rules.2/@ownedActivityNode.4/@ownedRule/@variable.1">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/0.1.0#//ReachabilityGraphTransition/target"/>
+        </linkVariable>
+      </ownedRule>
+    </ownedActivityNode>
+    <ownedActivityNode xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedActivityNode" name="node1_restoreMatchingNode" outgoing="//@rules.2/@ownedActivityEdge.5" incoming="//@rules.2/@ownedActivityEdge.4">
+      <ownedRule xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedStoryPattern">
+        <variable xsi:type="sdp:ObjectVariable" name="trans" bindingState="BOUND" outgoingLink="//@rules.2/@ownedActivityNode.5/@ownedRule/@linkVariable.1 //@rules.2/@ownedActivityNode.5/@ownedRule/@linkVariable.4 //@rules.2/@ownedActivityNode.5/@ownedRule/@linkVariable.7">
+          <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//SDMTransition"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="succ" bindingState="BOUND" outgoingLink="//@rules.2/@ownedActivityNode.5/@ownedRule/@linkVariable.0">
+          <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//StepGraph"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="p_succ" incomingLink="//@rules.2/@ownedActivityNode.5/@ownedRule/@linkVariable.0 //@rules.2/@ownedActivityNode.5/@ownedRule/@linkVariable.10" bindingOperator="CREATE">
+          <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EParameter"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="o_succ" incomingLink="//@rules.2/@ownedActivityNode.5/@ownedRule/@linkVariable.3" outgoingLink="//@rules.2/@ownedActivityNode.5/@ownedRule/@linkVariable.10">
+          <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EOperation"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="o_entry" incomingLink="//@rules.2/@ownedActivityNode.5/@ownedRule/@linkVariable.1" outgoingLink="//@rules.2/@ownedActivityNode.5/@ownedRule/@linkVariable.2 //@rules.2/@ownedActivityNode.5/@ownedRule/@linkVariable.3">
+          <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//IndexEntry"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="o" bindingState="BOUND" incomingLink="//@rules.2/@ownedActivityNode.5/@ownedRule/@linkVariable.2">
+          <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EOperation"/>
+        </variable>
+        <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="ci_succ" incomingLink="//@rules.2/@ownedActivityNode.5/@ownedRule/@linkVariable.6">
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="ci_entry" incomingLink="//@rules.2/@ownedActivityNode.5/@ownedRule/@linkVariable.4" outgoingLink="//@rules.2/@ownedActivityNode.5/@ownedRule/@linkVariable.5 //@rules.2/@ownedActivityNode.5/@ownedRule/@linkVariable.6">
+          <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//IndexEntry"/>
+        </variable>
+        <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="ci" bindingState="BOUND" incomingLink="//@rules.2/@ownedActivityNode.5/@ownedRule/@linkVariable.5">
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="c_succ" incomingLink="//@rules.2/@ownedActivityNode.5/@ownedRule/@linkVariable.9">
+          <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="c_entry" incomingLink="//@rules.2/@ownedActivityNode.5/@ownedRule/@linkVariable.7" outgoingLink="//@rules.2/@ownedActivityNode.5/@ownedRule/@linkVariable.8 //@rules.2/@ownedActivityNode.5/@ownedRule/@linkVariable.9">
+          <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//IndexEntry"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="c" bindingState="BOUND" incomingLink="//@rules.2/@ownedActivityNode.5/@ownedRule/@linkVariable.8">
+          <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+        </variable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="changeable" bindingOperator="CREATE" source="//@rules.2/@ownedActivityNode.5/@ownedRule/@variable.1" target="//@rules.2/@ownedActivityNode.5/@ownedRule/@variable.2">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//StepGraph/changeableNodes"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="index" source="//@rules.2/@ownedActivityNode.5/@ownedRule/@variable.0" target="//@rules.2/@ownedActivityNode.5/@ownedRule/@variable.4">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//SDMTransition/index"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="key" source="//@rules.2/@ownedActivityNode.5/@ownedRule/@variable.4" target="//@rules.2/@ownedActivityNode.5/@ownedRule/@variable.5">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//IndexEntry/key"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="value" source="//@rules.2/@ownedActivityNode.5/@ownedRule/@variable.4" target="//@rules.2/@ownedActivityNode.5/@ownedRule/@variable.3">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//IndexEntry/value"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="index" source="//@rules.2/@ownedActivityNode.5/@ownedRule/@variable.0" target="//@rules.2/@ownedActivityNode.5/@ownedRule/@variable.7">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//SDMTransition/index"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="key" source="//@rules.2/@ownedActivityNode.5/@ownedRule/@variable.7" target="//@rules.2/@ownedActivityNode.5/@ownedRule/@variable.8">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//IndexEntry/key"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="value" source="//@rules.2/@ownedActivityNode.5/@ownedRule/@variable.7" target="//@rules.2/@ownedActivityNode.5/@ownedRule/@variable.6">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//IndexEntry/value"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="index" source="//@rules.2/@ownedActivityNode.5/@ownedRule/@variable.0" target="//@rules.2/@ownedActivityNode.5/@ownedRule/@variable.10">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//SDMTransition/index"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="key" source="//@rules.2/@ownedActivityNode.5/@ownedRule/@variable.10" target="//@rules.2/@ownedActivityNode.5/@ownedRule/@variable.11">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//IndexEntry/key"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="value" source="//@rules.2/@ownedActivityNode.5/@ownedRule/@variable.10" target="//@rules.2/@ownedActivityNode.5/@ownedRule/@variable.9">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//IndexEntry/value"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="parameter" bindingOperator="CREATE" source="//@rules.2/@ownedActivityNode.5/@ownedRule/@variable.3" target="//@rules.2/@ownedActivityNode.5/@ownedRule/@variable.2">
+          <targetEnd href="http://www.eclipse.org/emf/2002/Ecore#//EOperation/eParameters"/>
+        </linkVariable>
+      </ownedRule>
+    </ownedActivityNode>
+    <clockInstConstraint clockInstanceVariable="//@rules.2/@ownedActivityNode.2/@ownedRule/@variable.2" operator="LESS_OR_EQUAL" value="100"/>
+  </rules>
+  <invariants inParameter="//@invariants.0/@containedParameters.0 //@invariants.0/@containedParameters.1" name="invariant_forEach">
+    <containedParameters name="step">
+      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//StepGraph"/>
+    </containedParameters>
+    <containedParameters name="boundClockInstances">
+      <eType xsi:type="ecore:EClass" href="http://www.muml.org/reconfigurationverification.reachanalysis.tsdm.transform/helper/1.0.0#//BoundClockInstances"/>
+    </containedParameters>
+    <ownedActivityEdge target="//@invariants.0/@ownedActivityNode.2" source="//@invariants.0/@ownedActivityNode.0"/>
+    <ownedActivityEdge target="//@invariants.0/@ownedActivityNode.1" source="//@invariants.0/@ownedActivityNode.2" guard="END"/>
+    <ownedActivityEdge target="//@invariants.0/@ownedActivityNode.2" source="//@invariants.0/@ownedActivityNode.2" guard="EACH_TIME"/>
+    <ownedActivityNode xsi:type="sda:InitialNode" name="startNode" outgoing="//@invariants.0/@ownedActivityEdge.0"/>
+    <ownedActivityNode xsi:type="sda:ActivityFinalNode" name="stopNode" incoming="//@invariants.0/@ownedActivityEdge.1"/>
+    <ownedActivityNode xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedActivityNode" name="forEachNode" outgoing="//@invariants.0/@ownedActivityEdge.1 //@invariants.0/@ownedActivityEdge.2" incoming="//@invariants.0/@ownedActivityEdge.0 //@invariants.0/@ownedActivityEdge.2" forEach="true">
+      <ownedRule xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedStoryPattern">
+        <variable xsi:type="sdp:ObjectVariable" name="c" incomingLink="//@invariants.0/@ownedActivityNode.2/@ownedRule/@linkVariable.0 //@invariants.0/@ownedActivityNode.2/@ownedRule/@linkVariable.1">
+          <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+        </variable>
+        <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="ci" incomingLink="//@invariants.0/@ownedActivityNode.2/@ownedRule/@linkVariable.2 //@invariants.0/@ownedActivityNode.2/@ownedRule/@linkVariable.3" outgoingLink="//@invariants.0/@ownedActivityNode.2/@ownedRule/@linkVariable.0" clockInstanceConstraints="//@invariants.0/@clockInstConstraint">
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="step" bindingState="BOUND" outgoingLink="//@invariants.0/@ownedActivityNode.2/@ownedRule/@linkVariable.1 //@invariants.0/@ownedActivityNode.2/@ownedRule/@linkVariable.2">
+          <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//StepGraph"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="result" bindingState="BOUND" outgoingLink="//@invariants.0/@ownedActivityNode.2/@ownedRule/@linkVariable.3">
+          <classifier href="http://www.muml.org/reconfigurationverification.reachanalysis.tsdm.transform/helper/1.0.0#//BoundClockInstances"/>
+        </variable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="hasNode" source="//@invariants.0/@ownedActivityNode.2/@ownedRule/@variable.1" target="//@invariants.0/@ownedActivityNode.2/@ownedRule/@variable.0">
+          <targetEnd href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance/hasNode"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="changeable" source="//@invariants.0/@ownedActivityNode.2/@ownedRule/@variable.2" target="//@invariants.0/@ownedActivityNode.2/@ownedRule/@variable.0">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//StepGraph/changeableNodes"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="clockInstances" source="//@invariants.0/@ownedActivityNode.2/@ownedRule/@variable.2" target="//@invariants.0/@ownedActivityNode.2/@ownedRule/@variable.1">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/gtautomaton/0.1.0#//GtStepGraph/clockInstances"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="boundClockInstanceReference" bindingOperator="CREATE" source="//@invariants.0/@ownedActivityNode.2/@ownedRule/@variable.3" target="//@invariants.0/@ownedActivityNode.2/@ownedRule/@variable.1">
+          <targetEnd href="http://www.muml.org/reconfigurationverification.reachanalysis.tsdm.transform/helper/1.0.0#//BoundClockInstances/clockInstances"/>
+        </linkVariable>
+      </ownedRule>
+    </ownedActivityNode>
+    <clockInstConstraint clockInstanceVariable="//@invariants.0/@ownedActivityNode.2/@ownedRule/@variable.1" operator="LESS_OR_EQUAL" value="200"/>
+  </invariants>
+  <clockInstanceRules inParameter="//@clockInstanceRules.0/@containedParameters.0" name="clockInstanceRule_forEach">
+    <containedParameters name="step">
+      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//StepGraph"/>
+    </containedParameters>
+    <ownedActivityEdge target="//@clockInstanceRules.0/@ownedActivityNode.2" source="//@clockInstanceRules.0/@ownedActivityNode.0"/>
+    <ownedActivityEdge target="//@clockInstanceRules.0/@ownedActivityNode.1" source="//@clockInstanceRules.0/@ownedActivityNode.2" guard="END"/>
+    <ownedActivityEdge target="//@clockInstanceRules.0/@ownedActivityNode.2" source="//@clockInstanceRules.0/@ownedActivityNode.2" guard="EACH_TIME"/>
+    <ownedActivityNode xsi:type="sda:InitialNode" name="startNode" outgoing="//@clockInstanceRules.0/@ownedActivityEdge.0"/>
+    <ownedActivityNode xsi:type="sda:ActivityFinalNode" name="stopNode" incoming="//@clockInstanceRules.0/@ownedActivityEdge.1"/>
+    <ownedActivityNode xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedActivityNode" name="forEachNode" outgoing="//@clockInstanceRules.0/@ownedActivityEdge.1 //@clockInstanceRules.0/@ownedActivityEdge.2" incoming="//@clockInstanceRules.0/@ownedActivityEdge.0 //@clockInstanceRules.0/@ownedActivityEdge.2" forEach="true">
+      <ownedRule xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedStoryPattern">
+        <variable xsi:type="sdp:ObjectVariable" name="c" incomingLink="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.0 //@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.1 //@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.2">
+          <constraint>
+            <constraintExpression xsi:type="expr:TextualExpression" expressionText="self.name='c2'" language="OCL" languageVersion="1.0"/>
+          </constraint>
+          <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+        </variable>
+        <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="ci" incomingLink="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.4 //@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.5" outgoingLink="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.1" bindingOperator="CREATE">
+          <attributeAssignment>
+            <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
+            <valueExpression xsi:type="expr:TextualExpression" expressionText="'ci2'" language="OCL" languageVersion="1.0"/>
+          </attributeAssignment>
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
+        </variable>
+        <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="NoSuchCI" incomingLink="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.3" outgoingLink="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.0" bindingSemantics="NEGATIVE">
+          <constraint>
+            <constraintExpression xsi:type="expr:TextualExpression" expressionText="self.name='ci2'" language="OCL" languageVersion="1.0"/>
+          </constraint>
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="step" bindingState="BOUND" outgoingLink="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.2 //@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.3 //@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.4 //@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.5">
+          <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//StepGraph"/>
+        </variable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="hasNode" source="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@variable.2" target="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@variable.0">
+          <targetEnd href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance/hasNode"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="hasNode" source="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@variable.1" target="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@variable.0">
+          <targetEnd href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance/hasNode"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="changeable" source="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@variable.3" target="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@variable.0">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//StepGraph/changeableNodes"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="clockInstances" bindingSemantics="NEGATIVE" source="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@variable.3" target="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@variable.2">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/gtautomaton/0.1.0#//GtStepGraph/clockInstances"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="clockInstances" bindingOperator="CREATE" source="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@variable.3" target="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@variable.1">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/gtautomaton/0.1.0#//GtStepGraph/clockInstances"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="changeable" bindingOperator="CREATE" source="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@variable.3" target="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@variable.1">
+          <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//StepGraph/changeableNodes"/>
+        </linkVariable>
+      </ownedRule>
+    </ownedActivityNode>
+  </clockInstanceRules>
+</de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedGraphTransformationSystem>

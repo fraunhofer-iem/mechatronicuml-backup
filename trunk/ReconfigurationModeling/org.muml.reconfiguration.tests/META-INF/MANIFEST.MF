@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Reconfiguration Tests
+Bundle-SymbolicName: org.muml.reconfiguration.tests
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.junit;bundle-version="3.8.2",
+ org.muml.storydiagram,
+ org.muml.pim,
+ org.muml.reconfiguration.componentstorydiagram,
+ org.muml.reconfiguration.componentstorypattern,
+ org.muml.core,
+ org.muml.core.tests
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

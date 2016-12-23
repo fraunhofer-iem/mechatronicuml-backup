@@ -1,0 +1,18 @@
+«IMPORT simulink»
+«IMPORT simulink::stateflow»
+
+«EXTENSION extensions::stateflow::StateflowElement»
+«EXTENSION extensions::stateflow::Event»
+
+«DEFINE event FOR Event-»
+	event {
+		id				«this.getStateflowId()»
+		ssIdNumber		«this.getStateflowId()»
+		name		    "«this.name»"
+		tag				"id=«this.id»"
+		linkNode		    [«this.getState().getStateflowId()» «this.getPrevSiblingStateflowIdId(this.getState().events)» «this.getNextSiblingStateflowIdId(this.getState().events)»]
+		scope		    LOCAL_EVENT
+		trigger		    EITHER_EDGE_EVENT
+		machine		    «this.getMachine().getStateflowId()»		
+	}  
+«ENDDEFINE»

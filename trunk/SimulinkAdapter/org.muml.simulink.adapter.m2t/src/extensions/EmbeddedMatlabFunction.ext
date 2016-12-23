@@ -1,0 +1,5 @@
+import simulink;
+
+int generateAdditionalModelElements(EmbeddedMatlabFunction emf):
+	JAVA org.muml.simulink.adapter.m2t.xtend.EmbeddedMatlabFunction.generateAdditionalModelElements(org.muml.simulink.EmbeddedMatlabFunction)
+;

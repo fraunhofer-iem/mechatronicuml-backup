@@ -1,0 +1,273 @@
+<html><head><META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Getting Started</title><meta content="DocBook XSL Stylesheets V1.77.0" name="generator"><link rel="home" href="index.html" title="MechatronicUML Tool Suite Guide"><link rel="up" href="ch02.html" title="Chapter&nbsp;2.&nbsp;User Guide"><link rel="prev" href="ch02.html" title="Chapter&nbsp;2.&nbsp;User Guide"><link rel="next" href="ch02s03.html" title="How To..."></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table summary="Navigation header" width="100%"><tr><th align="center" colspan="3">Getting Started</th></tr><tr><td align="left" width="20%"><a accesskey="p" href="ch02.html">Prev</a>&nbsp;</td><th align="center" width="60%">Chapter&nbsp;2.&nbsp;User Guide</th><td align="right" width="20%">&nbsp;<a accesskey="n" href="ch02s03.html">Next</a></td></tr></table><hr></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="gettingstarted"></a>Getting Started</h2></div></div></div>
+	<p>
+		This chapter gives an instruction to install the MechatronicUML Tool Suite within Eclipse.
+	</p>
+	
+	<div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="N20039"></a>Preconditions</h3></div></div></div>
+		<p>
+			MechatronicUML Tool Suite needs Java 1.6 for full feature support.
+
+			If Java 1.6 is not yet on your computer: please visit
+			<a class="ulink" href="http://www.oracle.com/technetwork/java/" target="_top">
+				http://www.oracle.com/technetwork/java/
+			</a>&#8203;
+			and download the latest Java JDK 1.6 release (SE aka Standard Edition) for your platform 
+			(install JDK and not the JRE, if possible).
+
+			</p><div class="important" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Important</h3>
+				Make sure the Java 1.6 is the default Java platform implementation on your platform 
+				(for example, on Windows, open a command-line window and type "java -version" 
+				into it, without the double quotes).
+			</div><p>
+		
+		</p>
+	
+	</div>
+	
+	<div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="N20048"></a>Installing Eclipse And Basic Modeling Plugins</h3></div></div></div>
+		<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+				<p>
+					Download and install the Eclipse Modeling Tools (Indigo-Release):
+					<a class="ulink" href="http://www.eclipse.org/downloads/packages/eclipse-modeling-tools/indigor" target="_top">
+						http://www.eclipse.org/downloads/packages/eclipse-modeling-tools/indigor
+					</a>
+				</p>
+			</li><li class="listitem">
+				<p>
+					Be sure that you choose Java 6 as default Java Runtime.
+					Window -&gt; Preference -&gt; Java -&gt; Installed JREs -&gt; JRE6 must be checked. 
+					The common windows path (32Bit) is "C:\Program Files\Java\jre6".
+					
+					</p><div class="figure"><a name="img:jre6check"></a><p class="title"><b>Figure&nbsp;2.1.&nbsp;JRE 6 must be checked.</b></p><div class="figure-contents">
+						
+						<div class="mediaobject"><img src="User Guide/images/window_preferences.png" alt="JRE 6 must be checked."></div>
+						<div class="mediaobject"><img src="User Guide/images/space.png" alt="JRE 6 must be checked."></div>
+						<div class="mediaobject"><img src="User Guide/images/jre6check.png" alt="JRE 6 must be checked."></div>
+					</div></div><p><br class="figure-break">
+				</p>
+			</li><li class="listitem">
+				<p>
+					Install the Subversive-Plugin to be able to checkout and commit to repositories with SVN: 
+					</p><div class="orderedlist"><ol class="orderedlist" type="i"><li class="listitem">
+							<p>
+								Click Help -&gt; Install New Software...
+								</p><div class="figure"><a name="img:installnewsoftware"></a><p class="title"><b>Figure&nbsp;2.2.&nbsp;Install New Software...</b></p><div class="figure-contents">
+									
+									<div class="mediaobject"><img src="User Guide/images/installnewsoftware.png" alt="Install New Software..."></div>
+								</div></div><p><br class="figure-break"> 
+							</p>
+						</li><li class="listitem">
+							<p>
+								Select Site "Indigo - &#8203;http://download.eclipse.org/releases/indigo"
+								</p><div class="figure"><a name="img:selectindigo"></a><p class="title"><b>Figure&nbsp;2.3.&nbsp;Select Indigo.</b></p><div class="figure-contents">
+									
+									<div class="mediaobject"><img src="User Guide/images/selectindigo.png" alt="Select Indigo."></div>
+								</div></div><p><br class="figure-break"> 
+							</p>
+						</li><li class="listitem">
+							<p>
+								Choose the following plugin: *Category "Collaboration": 
+								Subversive SVN Team Provider (Incubation)
+								</p><div class="figure"><a name="img:svnplugin"></a><p class="title"><b>Figure&nbsp;2.4.&nbsp;Choose the Subversive SVN Team Provider.</b></p><div class="figure-contents">
+									
+									<div class="mediaobject"><img src="User Guide/images/collaboration.png" alt="Choose the Subversive SVN Team Provider."></div>
+									<div class="mediaobject"><img src="User Guide/images/subversive.png" alt="Choose the Subversive SVN Team Provider."></div>
+								</div></div><p><br class="figure-break"> 
+							</p>
+						</li><li class="listitem">
+							<p>
+								Press Next and follow the installation instructions. 
+							</p>
+						</li></ol></div><p>
+				</p>
+			</li><li class="listitem">
+				<p>
+					After the restart of Eclipse, Subversive will prompt you to install an SVN Adapter. 
+					Please choose a propriate adapter for your plattform and install the required plugins.
+					</p><div class="figure"><a name="img:svnadapter"></a><p class="title"><b>Figure&nbsp;2.5.&nbsp;Choose a SVN adapter.</b></p><div class="figure-contents">
+						
+						<div class="mediaobject"><img src="User Guide/images/svnadaptersmall.png" alt="Choose a SVN adapter."></div>
+					</div></div><p><br class="figure-break"> 
+				</p>
+			</li><li class="listitem">
+				<p>
+					Install required modeling components with the "Installing modeling components" wizard:
+					ModelingComponents
+					</p><div class="orderedlist"><ol class="orderedlist" type="i"><li class="listitem">
+							<p>
+								click on the button
+								<img src="User Guide/images/ModelingComponents.png">
+      							"Installing modeling components"
+							</p>
+						</li><li class="listitem">
+							<p>
+								select from the component list:
+ 								</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+      									Graphical Modeling Framework Tooling
+      								</p></li><li class="listitem" style="list-style-type: disc"><p>
+      									XPand
+      								</p></li><li class="listitem" style="list-style-type: disc"><p>
+      									XText
+      								</p></li><li class="listitem" style="list-style-type: disc"><p>
+      									Operational QVT
+      								</p></li><li class="listitem" style="list-style-type: disc"><p>
+      									Extended Editing Framework
+      								</p></li></ul></div><p>
+     							</p><div class="figure"><a name="img:components"></a><p class="title"><b>Figure&nbsp;2.6.&nbsp;Choose these components.</b></p><div class="figure-contents">
+									
+									<div class="mediaobject"><img src="User Guide/images/modelingcomponents1.png" alt="Choose these components."></div>
+									<div class="mediaobject"><img src="User Guide/images/space.png" alt="Choose these components."></div>
+									<div class="mediaobject"><img src="User Guide/images/modelingcomponents2.png" alt="Choose these components."></div>
+								</div></div><p><br class="figure-break"> 
+							</p>
+						</li><li class="listitem">
+							<p>
+								Click "Finish" and follow the instructions.  
+							</p>
+						</li></ol></div><p>
+				</p>
+			</li><li class="listitem">
+				<p>
+					Install Eclipse Edapt (all features provided in the Update-Site at
+					<a class="ulink" href="http://download.eclipse.org/edapt/update-site" target="_top">
+						http://download.eclipse.org/edapt/update-site
+					</a>
+					&#8203;). 
+					Edapt enables us to migrate old fujaba-files each time our Meta-Model changes. 
+					If you want to apply changes to the meta-model as well, you have to use the Edapt 
+					operations so that Edapt can track your changes. 
+				</p>
+			</li><li class="listitem">
+				<p>
+					OPTIONAL: For layouting GMF-based diagrams, you have to install KIELER.
+					Its short for Kiel Integrated Environment for Layout and is an Eclipse-Plugin
+					that has better layouting algorithmes than the ones shipped with Eclipse.
+					We mainly use Kieler for layouting our EMF Meta Model diagrams,
+					but you can also use Kieler to layout any other GMF-based diagrams
+					like the MUML Real-Time Statechart Diagram.
+
+					</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+      						Click Help -&gt; Install New Software... -&gt; Click on Add...
+      					</p></li><li class="listitem" style="list-style-type: disc"><p>
+      						Choose a name and copy the following link to Location and click OK:
+   				 			<a class="ulink" href="http://rtsys.informatik.uni-kiel.de/~kieler/updatesite/release_0.6/" target="_top">
+    				&#8203;			http://rtsys.informatik.uni-kiel.de/~kieler/updatesite/release_0.6/
+    						</a>
+      					</p></li><li class="listitem" style="list-style-type: disc"><p>
+      						Install the wanted plug-ins.
+      					</p></li></ul></div><p>
+				</p>
+			</li><li class="listitem">
+				<p>
+					Check for updates by clicking on Help -&gt; Check for Updates. 
+				</p>
+			</li></ol></div>
+	</div>
+	
+	<div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="N20188"></a>Installing Plugins of the MechatronicUML Tool Suite</h3></div></div></div>
+		<p>
+			Our Main-MechatronicUML-SVN is at:
+			<a class="ulink" href="%E2%80%8Bhttps://svn-serv.cs.upb.de/mechatronicuml" target="_top">
+				&#8203;https://svn-serv.cs.upb.de/mechatronicuml
+			</a>
+			(anonymous login for checkout; IMT-Account and write access needed for checkin).
+	
+			Check-Out:
+			
+			</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+      				Switch to folder "trunk"
+      			</p></li><li class="listitem" style="list-style-type: disc"><p>
+      				Mark all Subfolders
+      			</p></li><li class="listitem" style="list-style-type: disc"><p>
+      				Right mouse click --&gt; choose "Check Out" 
+      				</p><div class="figure"><a name="img:checkout"></a><p class="title"><b>Figure&nbsp;2.7.&nbsp;That's how you check out.</b></p><div class="figure-contents">
+						
+						<div class="mediaobject"><img src="User Guide/images/checkout.png" alt="That's how you check out."></div>
+					</div></div><p><br class="figure-break"> 
+      			</p></li></ul></div><p>
+      		
+			Additionally you need some plugins from another SVN (org.muml.modeling):
+			<a class="ulink" href="http://svn.codespot.com/a/eclipselabs.org/sdm-commons" target="_top">
+				http://svn.codespot.com/a/eclipselabs.org/sdm-commons
+			</a>
+			(anonymous login for checkout; Google-Code-Account and write access needed for checkin)
+	
+			Check-Out:
+			
+			</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+      				Switch to folder "trunk/plugins"
+      			</p></li><li class="listitem" style="list-style-type: disc"><p>
+      				Mark all Subfolders
+      			</p></li><li class="listitem" style="list-style-type: disc"><p>
+      				Right mouse click --&gt; choose "Check Out"  
+      			</p></li></ul></div><p>
+   		 	
+   		 	Since we do not need all the plug-ins from the storydriven-SVN, you may close all unrelated projects as described below:
+			</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+      				Within the Package Explorer mark all the projects from the mechatronicuml-SVN.
+      			</p></li><li class="listitem" style="list-style-type: disc"><p>
+      				Right click on on of the projects and select "close unrelated projects" and confirm with OK.
+      				</p><div class="figure"><a name="img:closeunrelated"></a><p class="title"><b>Figure&nbsp;2.8.&nbsp;That's how you close unrelated projects.</b></p><div class="figure-contents">
+						
+						<div class="mediaobject"><img src="User Guide/images/closeunrelated.png" alt="That's how you close unrelated projects."></div>
+					</div></div><p><br class="figure-break">
+      			</p></li><li class="listitem" style="list-style-type: disc"><p>
+      				In the following screenshot all the selected projects are the current required projects from the storydriven-SVN.
+      				</p><div class="figure"><a name="img:neededSVN"></a><p class="title"><b>Figure&nbsp;2.9.&nbsp;That's how you close unrelated projects.</b></p><div class="figure-contents">
+						
+						<div class="mediaobject"><img src="User Guide/images/neededSVN.png" alt="That's how you close unrelated projects."></div>
+					</div></div><p><br class="figure-break">
+      			</p></li></ul></div><p>
+    	</p>
+	</div>
+	
+	<div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="N201FB"></a>Run Configurations</h3></div></div></div>
+		<p>
+			Be sure to add the following vmarks to your run configuration! -XX:PermSize=256M -XX:MaxPermSize=512M
+			</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+      				Switch to java Perspective
+      			</p></li><li class="listitem" style="list-style-type: disc"><p>
+      				Right click on one of the projects
+      			</p></li><li class="listitem" style="list-style-type: disc"><p>
+      				select Run As -&gt; Run Configuration...
+      				</p><div class="figure"><a name="img:MaxPerm1"></a><p class="title"><b>Figure&nbsp;2.10.&nbsp;Select Run As -&gt; Run Configuration...</b></p><div class="figure-contents">
+						
+						<div class="mediaobject"><img src="User Guide/images/MaxPerm1.png" alt="Select Run As -> Run Configuration..."></div>
+					</div></div><p><br class="figure-break">
+      			</p></li><li class="listitem" style="list-style-type: disc"><p>
+      				Add the following vmarks to your run configuration! -XX:PermSize=256M -XX:MaxPermSize=512M
+      				</p><div class="figure"><a name="img:MaxPerm2"></a><p class="title"><b>Figure&nbsp;2.11.&nbsp;Add these arguments.</b></p><div class="figure-contents">
+						
+						<div class="mediaobject"><img src="User Guide/images/MaxPerm2.png" alt="Add these arguments."></div>
+					</div></div><p><br class="figure-break">
+      			</p></li></ul></div><p>
+      		
+			Otherwise you probably get the following error at your eclipse console.
+      		!ENTRY org.eclipse.ui 4 0 2011-06-28 14:57:41.478 !MESSAGE Unhandled event loop
+      		exception Error while logging event loop exception: java.lang.OutOfMemoryError?: PermGen? space
+			
+   			See also: 
+   			<a class="ulink" href="http://wiki.eclipse.org/FAQ_How_do_I_increase_the_permgen_size_available_to_Eclipse%3F" target="_top">
+   				http://wiki.eclipse.org/FAQ_How_do_I_increase_the_permgen_size_available_to_Eclipse%3F
+   			</a>
+   			&#8203;
+		</p>
+	</div>
+	
+	<div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="N2023D"></a>Starting FujabaRT</h3></div></div></div>
+		<p>
+			Start FujabaRT after checking out the sources:
+			</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+      				In Eclipse, switch to Java perspective.
+      			</p></li><li class="listitem" style="list-style-type: disc"><p>
+      				Select one of the projects.
+      			</p></li><li class="listitem" style="list-style-type: disc"><p>
+      				Press the "Run"-button (green circle with white triangle)
+      				<img src="User Guide/images/Run.png">
+      			</p></li><li class="listitem" style="list-style-type: disc"><p>
+      				It might happen, that some projects do not compile. Do not pay attention to that, nevertheless it should work.
+      			</p></li></ul></div><p>
+		</p>
+	</div>
+	
+</div><div class="navfooter"><hr><table summary="Navigation footer" width="100%"><tr><td align="left" width="40%"><a accesskey="p" href="ch02.html">Prev</a>&nbsp;</td><td align="center" width="20%"><a accesskey="u" href="ch02.html">Up</a></td><td align="right" width="40%">&nbsp;<a accesskey="n" href="ch02s03.html">Next</a></td></tr><tr><td valign="top" align="left" width="40%">Chapter&nbsp;2.&nbsp;User Guide&nbsp;</td><td align="center" width="20%"><a accesskey="h" href="index.html">Home</a></td><td valign="top" align="right" width="40%">&nbsp;How To...</td></tr></table></div></body></html>

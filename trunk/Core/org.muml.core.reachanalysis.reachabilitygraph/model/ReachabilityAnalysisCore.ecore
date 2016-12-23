@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="reachabilitygraph" nsURI="http://www.muml.org/core/reachabilitygraph/1.0.0"
+    nsPrefix="reachabilitygraph">
+  <eClassifiers xsi:type="ecore:EClass" name="HashToStateList">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Helper data structure that allows accessing all states with a given hash value."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hash" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="states" upperBound="-1"
+        eType="#//ReachabilityGraphState">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Contains all states that share the hash value &quot;hash&quot;."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HashToStateListMapEntry" instanceClassName="java.util.Map$Entry">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Helper class to force the creation of a map to story the HashToElementList helper objects."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELongObject"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//HashToStateList"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReachabilityGraph" eSuperTypes="../../org.muml.core/model/core.ecore#//ExtendableElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The Reachability Graph represents the reachable system behavior which is &#xD;&#xA;explored by the reachability analysis. For timed reachability analyses, it is &#xD;&#xA;equivalent to the zone graph. In the literature, it is refered as the Timed Graph&#xD;&#xA;Transition System or Labeled Transition System."/>
+    </eAnnotations>
+    <eOperations name="addToStatesMap">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Helper function that adds the state given as a parameter to the Map that maps the hash&#xA;value of a state to the state."/>
+        <details key="body" value="Long hashValue = state.getHash();&#xD;&#xA;&#xD;&#xA;//check if entry for that hash exists&#xD;&#xA;HashToStateList list = this.getStatesWithHash().get(hashValue);&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;//create new list and add it to the map&#xD;&#xA;if (list == null){&#xD;&#xA;&#x9;list = ReachabilityGraphFactory.eINSTANCE.createHashToStateList();&#xD;&#xA;&#x9;list.setHash(hashValue);&#xD;&#xA;&#x9;list.getStates().add(state);&#xD;&#xA;&#x9;this.getStatesWithHash().put(hashValue, list);&#xD;&#xA;}&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;//add state to list&#xD;&#xA;list.getStates().add(state);"/>
+      </eAnnotations>
+      <eParameters name="state" eType="#//ReachabilityGraphState"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="states" upperBound="-1"
+        eType="#//ReachabilityGraphState" containment="true" eOpposite="#//ReachabilityGraphState/reachabilityGraph">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The set of all states being contained in this ReachabilityGraph."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transitions" upperBound="-1"
+        eType="#//ReachabilityGraphTransition" containment="true" eOpposite="#//ReachabilityGraphTransition/reachabilityGraph">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="All transitions that are contained in this ReachabilityGraph."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="startState" eType="#//ReachabilityGraphState">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The unique start state of this ReachabilityGraph. All other states in the &#xD;&#xA;Reachability Graph can be reached from this state by traversing the transitions&#xD;&#xA;of the ReachabilityGraph."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statesWithHash" upperBound="-1"
+        eType="#//HashToStateListMapEntry" transient="true" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A hashmap that maps a hash value to a list of all states having that hash value.&#xD;&#xA;This data structure is used to identify states that are potentially equal."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReachabilityGraphTransition" abstract="true"
+      eSuperTypes="../../org.muml.core/model/core.ecore#//ExtendableElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="One transition of the ReachabilityGraph, connects two states of the graph.&#xD;&#xA;This class is intended to be subclassed if the transition has to carry additional&#xD;&#xA;information."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//ReachabilityGraphState"
+        eOpposite="#//ReachabilityGraphState/outgoingTransitions">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The source state of this transition."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//ReachabilityGraphState"
+        eOpposite="#//ReachabilityGraphState/incomingTransitions">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The target state of this transition."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reachabilityGraph" eType="#//ReachabilityGraph"
+        eOpposite="#//ReachabilityGraph/transitions">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The ReachabilityGraph in which this transition is contained."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActionTransition" eSuperTypes="#//ReachabilityGraphTransition">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Represents a transition which results from an action, i.e. firing a transition or &#xD;&#xA;executing a story diagram."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReachabilityGraphState" abstract="true"
+      eSuperTypes="../../org.muml.core/model/core.ecore#//ExtendableElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="One state of the ReachabilityGraph. A state represents one run-time state of a&#xD;&#xA;system under investigation."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hash" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
+        defaultValueLiteral="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Stores the hash value that has been computed for this state. "/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incomingTransitions" upperBound="-1"
+        eType="#//ReachabilityGraphTransition" eOpposite="#//ReachabilityGraphTransition/target">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="All transitions leading to this state."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingTransitions" upperBound="-1"
+        eType="#//ReachabilityGraphTransition" eOpposite="#//ReachabilityGraphTransition/source">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="All transitions originating from this state."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reachabilityGraph" eType="#//ReachabilityGraph"
+        eOpposite="#//ReachabilityGraph/states">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The ReachabilityGraph this state is contained in."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pathDepth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="0">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Encodes the length of the path from the root node of the reachability graph to this state."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+</ecore:EPackage>

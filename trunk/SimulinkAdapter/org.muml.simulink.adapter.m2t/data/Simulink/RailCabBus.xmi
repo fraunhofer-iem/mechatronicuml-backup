@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ASCII"?>
+<model:SimulinkContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:model="http://www.muml.org/simulink/1.0.0" id="_QOoykG01EeGB6sXGPiiDSg">
+  <models id="_7K9WII7uEeGTBPExsBmtEw" name="RailCabBusModel">
+    <buses id="_9zCLs47uEeGTBPExsBmtEw" name="RailCabBus">
+      <elements name="rc1" type="Bus" bus="__ZWpO47uEeGTBPExsBmtEw"/>
+      <elements name="rc2" type="Bus" bus="__ZWpO47uEeGTBPExsBmtEw"/>
+      <elements name="rc3" type="Bus" bus="__ZWpO47uEeGTBPExsBmtEw"/>
+      <elements name="rc4" type="Bus" bus="__ZWpO47uEeGTBPExsBmtEw"/>
+      <elements name="rc5" type="Bus" bus="__ZWpO47uEeGTBPExsBmtEw"/>
+      <elements name="rc6" type="Bus" bus="__ZWpO47uEeGTBPExsBmtEw"/>
+    </buses>
+    <buses id="__ZWpO47uEeGTBPExsBmtEw" name="PacketBus">
+      <elements name="from" dimensions="10" type="uint8"/>
+      <elements name="to" dimensions="10" type="uint8"/>
+      <elements name="msg" dimensions="10" type="uint16"/>
+      <elements name="param" dimensions="10" type="double"/>
+      <elements name="pkgid" dimensions="10" type="uint32"/>
+      <elements name="time" dimensions="10" type="double"/>
+    </buses>
+  </models>
+</model:SimulinkContainer>

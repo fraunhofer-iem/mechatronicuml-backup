@@ -1,0 +1,189 @@
+import StateChartLibrary;
+import CommonLibrary;
+import MessageLibrary;
+
+import ModelcopyLibrary;
+
+library ComponentLibrary;
+
+modeltype Core uses core('http://www.muml.org/core/1.0.0');
+
+modeltype PimPackage uses pim('http://www.muml.org/pim/1.0.0');
+modeltype ConnectorPackage uses pim::connector('http://www.muml.org/pim/1.0.0');
+modeltype ValuetypePackage uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype ComponentPackage uses pim::component('http://www.muml.org/pim/1.0.0');
+modeltype MessagePackage uses pim::msgtype('http://www.muml.org/pim/1.0.0');
+modeltype Behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype RTSC uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype InstancePackage uses pim::instance('http://www.muml.org/pim/1.0.0');
+modeltype TypesPackage uses pim::types('http://www.muml.org/pim/1.0.0');
+
+modeltype ModelInstance uses modelinstance('http://www.muml.org/modelinstance/1.0.0');
+modeltype Actionlanguage uses actionlanguage('http://www.muml.org/pim/actionlanguage/1.0.0');
+
+modeltype PSM uses psm('http://www.muml.org/psm/1.0.0');
+modeltype Allocation uses psm::allocation('http://www.muml.org/psm/1.0.0');
+modeltype Codegen uses psm::codegen('http://www.muml.org/psm/1.0.0');
+modeltype PortMappingModel uses psm::portapimapping('http://www.muml.org/psm/1.0.0');
+modeltype ApiExpessions uses psm::apiexpressions('http://www.muml.org/psm/1.0.0');
+modeltype PSMRTSC uses psm::psm_realtimestatechart('http://www.muml.org/psm/1.0.0');
+
+modeltype SoftPlattform uses software('http://www.muml.org/pm/software/1.0.0');
+modeltype Hardware uses hardware('http://www.muml.org/pm/hardware/1.0.0');
+modeltype Platform uses hardware::hwplatform('http://www.muml.org/pm/hardware/1.0.0');
+modeltype PlatformInstance uses hardware::hwplatforminstance('http://www.muml.org/pm/hardware/1.0.0');
+modeltype ResourceInstance uses hardware::hwresourceinstance('http://www.muml.org/pm/hardware/1.0.0');
+modeltype Resource uses hardware::hwresource('http://www.muml.org/pm/hardware/1.0.0');
+
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+
+
+/***************************************************************************
+* 
+*  Here starts the logic for the transformation of Components (Type Level)
+*
+*****************************************************************************/
+//component logic
+
+/**
+* Map Structed Component and
+*  HybridPorts of a SturcutedComponent are Replaced  with DiscretePorts
+*/
+
+mapping StaticStructuredComponent::transform():EObject  {
+	init {
+		result := self.map transform();
+	}
+	var component:StaticStructuredComponent = result.oclAsType(StaticStructuredComponent);
+	component.componentKind:=	pim::component::ComponentKind::SOFTWARE_COMPONENT;
+	component.name:=self.name;
+} 
+
+
+/**
+* Changes a ContinousComponent to a DiscreteComponent and Replaces its ContinousPorts with DiscretePorts
+*/
+/**
+* The HybridPorts of a HybridComponent are Replaced  with DiscretePorts
+*/
+
+	
+
+mapping StaticAtomicComponent::transform():EObject{
+	init {
+		result := self.map transform();
+	}
+	var component:StaticAtomicComponent = result.oclAsType(StaticAtomicComponent);
+	component.componentKind:=	pim::component::ComponentKind::SOFTWARE_COMPONENT;
+	if(self.behavior.oclIsUndefined())then{
+			component.behavior:=self.map mapcreateEmptyRealtimeStateChart();
+	}endif;
+		component.name:=self.name;
+}
+
+
+
+
+/**
+* Replace a HybridPort with a  DiscretePort
+*/
+mapping HybridPort::transform():EObject {
+	init{
+	result:=new DiscretePort();
+	}
+	var discretePort:DiscretePort := result.oclAsType(DiscretePort);
+	discretePort.name:=self.name;
+	discretePort.annotation:=self.annotation;
+	discretePort.extension:=self.extension;
+	discretePort.comment:=self.comment;
+	discretePort.connectors:=self.connectors.late resolve(Connector);
+	//component:=self.component;
+	
+	//create the message stuff
+	var messageType:MessageType:=self.getMessageForDirectedTypedPort();
+	self.CreateMessageBufferForDiscretePort(discretePort,messageType);
+	
+	if(self.component.oclIsKindOf(AtomicComponent)) then{
+		var componentStateChart:RealtimeStatechart;
+		if(self.component.oclAsType(AtomicComponent).behavior.oclIsUndefined()) then{
+			componentStateChart:= self.component.oclAsType(StaticAtomicComponent).map mapcreateEmptyRealtimeStateChart();
+		}
+		else {
+			componentStateChart:=self.component.oclAsType(AtomicComponent).behavior.map transform().oclAsType(RealtimeStatechart);
+		}endif;
+		
+		var variable:Variable:=self.map mapCreateStateChartVariable();
+		//statechart stuff
+		AddVariableToStateChart(componentStateChart,variable);
+		self.ReplacePortExpressionWithVariableExpression(componentStateChart,variable);
+		var portStateChart:RealtimeStatechart;
+		portStateChart:=self.map createStatechartHybridPort(messageType,variable);
+		storeRealtimeStatechart(portStateChart,componentStateChart);
+		discretePort.behavior:=portStateChart;
+	}endif;
+		discretePort.cardinality:=object Cardinality{
+			lowerBound:=object NaturalNumber{
+				value:=1;
+			};
+			upperBound:=object NaturalNumber{
+				value:=1;
+			};
+	};
+}
+
+
+
+
+/**
+* Replace a ContinuousPort with a  DiscretePort
+*/
+
+mapping ContinuousPort::transform():EObject{
+	init{
+	result:=new DiscretePort();
+	}
+	var discretePort:DiscretePort := result.oclAsType(DiscretePort);
+	discretePort.name:=self.name;
+	discretePort.annotation:=self.annotation;
+	discretePort.extension:=self.extension;
+	discretePort.comment:=self.comment;
+	discretePort.connectors:=self.connectors.late resolve(Connector);
+	
+		//create the message stuff
+		var messageType:MessageType:=self.getMessageForDirectedTypedPort();
+		self.CreateMessageBufferForDiscretePort(discretePort,messageType);
+		
+	if(self.component.oclIsKindOf(AtomicComponent)) then{
+	
+		var componentStateChart:RealtimeStatechart;
+		if(self.component.oclAsType(AtomicComponent).behavior.oclIsUndefined()) then{
+			componentStateChart:= self.component.oclAsType(StaticAtomicComponent).map mapcreateEmptyRealtimeStateChart();
+		}
+		else {
+			componentStateChart:=self.component.oclAsType(AtomicComponent).behavior.map transform().oclAsType(RealtimeStatechart);
+		}endif;
+	
+		var variable:Variable:=self.map mapCreateStateChartVariable();
+		//statechart stuff		
+		AddVariableToStateChart(componentStateChart,variable);
+		var portStateChart:RealtimeStatechart;
+		portStateChart:=self.map createStatechartContinuousPort(messageType,variable,true);
+		storeRealtimeStatechart(portStateChart,componentStateChart);
+		discretePort.behavior:=portStateChart;
+	}endif;
+		discretePort.cardinality:=object Cardinality{
+			lowerBound:=object NaturalNumber{
+				value:=1;
+			};
+			upperBound:=object NaturalNumber{
+				value:=1;
+			};
+	};
+	
+} 
+
+
+
+
+

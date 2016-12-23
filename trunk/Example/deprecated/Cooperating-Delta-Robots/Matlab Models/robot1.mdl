@@ -1,0 +1,1684 @@
+Library {
+  Name			  "robot1"
+  Version		  7.4
+  MdlSubVersion		  0
+  SavedCharacterEncoding  "UTF-8"
+  PostLoadFcn		  "robot1_BusGenerator"
+  LibraryType		  "BlockLibrary"
+  SaveDefaultBlockParams  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  MaxMDLFileLineLength	  120
+  Created		  "Fri Mar 15 16:13:29 2013"
+  Creator		  "andrey"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "andrey"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Fri Mar 15 17:05:19 2013"
+  RTWModifiedTimeStamp	  285267901
+  ModelVersionFormat	  "1.%<AutoIncrement:1>"
+  ConfigurationManager	  "None"
+  SampleTimeColors	  off
+  SampleTimeAnnotations	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  CovForceBlockReductionOff on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  CovModelRefEnable	  "Off"
+  CovExternalEMLEnable	  off
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.6.0"
+      Array {
+	Type			"Handle"
+	Dimension		8
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.6.0"
+	  StartTime		  "0.0"
+	  StopTime		  "10.0"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  Solver		  "ode45"
+	  SolverName		  "ode45"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.6.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveCompleteFinalSimState off
+	  SaveFormat		  "Array"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  on
+	  ReturnWorkspaceOutputs  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  ReturnWorkspaceOutputsName "out"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Version		  "1.6.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    7
+	    Cell		    "BooleansAsBitfields"
+	    Cell		    "PassReuseOutputArgsAs"
+	    Cell		    "PassReuseOutputArgsThreshold"
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    PropName		    "DisabledProps"
+	  }
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  UseIntDivNetSlope	  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  StrengthReduction	  off
+	  EnforceIntegerDowncast  on
+	  ExpressionFolding	  on
+	  BooleansAsBitfields	  off
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  PassReuseOutputArgsAs	  "Structure reference"
+	  ExpressionDepthLimit	  2147483647
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  off
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero on
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "Off"
+	  AccelVerboseBuild	  off
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.6.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"warning"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Classic"
+	  MergeDetectMultiDrivingBlocksExec "none"
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "UseLocalSettings"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  SolverPrmCheckMsg	  "warning"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "warning"
+	  MultiTaskCondExecSysMsg "none"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  FixptConstUnderflowMsg  "none"
+	  FixptConstOverflowMsg	  "none"
+	  FixptConstPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  SimStateInterfaceChecksumMismatchMsg "warning"
+	  StrictBusMsg		  "Warning"
+	  LoggingUnavailableSignals "error"
+	  BlockIODiagnostic	  "none"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.6.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  off
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.6.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  8
+	  Version		  "1.6.0"
+	  SFSimEnableDebug	  on
+	  SFSimOverflowDetection  on
+	  SFSimEcho		  on
+	  SimBlas		  on
+	  SimCtrlC		  on
+	  SimExtrinsic		  on
+	  SimIntegrity		  on
+	  SimUseLocalCustomCode	  off
+	  SimBuildMode		  "sf_incremental_build"
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  9
+	  Version		  "1.6.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    6
+	    Cell		    "IncludeHyperlinkInReport"
+	    Cell		    "GenerateTraceInfo"
+	    Cell		    "GenerateTraceReport"
+	    Cell		    "GenerateTraceReportSl"
+	    Cell		    "GenerateTraceReportSf"
+	    Cell		    "GenerateTraceReportEml"
+	    PropName		    "DisabledProps"
+	  }
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  RTWUseLocalCustomCode	  off
+	  RTWUseSimCustomCode	  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  on
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateCodeInfo	  off
+	  RTWCompilerOptimization "Off"
+	  CheckMdlBeforeBuild	  "Off"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      10
+	      Version		      "1.6.0"
+	      Array {
+		Type			"Cell"
+		Dimension		19
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"IgnoreTestpoints"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrFcnArg"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		Cell			"ReqsInCode"
+		PropName		"DisabledProps"
+	      }
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IgnoreTestpoints	      off
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrFcnArg   "rt$I$N$M"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      SimulinkBlockComments   on
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      11
+	      Version		      "1.6.0"
+	      Array {
+		Type			"Cell"
+		Dimension		17
+		Cell			"GeneratePreprocessorConditionals"
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"GenerateTestInterfaces"
+		Cell			"ModelStepFunctionPrototypeControlCompliant"
+		Cell			"CPPClassGenCompliant"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportNonFinite"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		Cell			"PortableWordSizes"
+		PropName		"DisabledProps"
+	      }
+	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      TargetFunctionLibrary   "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      ERTMultiwordTypeDef     "System defined"
+	      ERTMultiwordLength      256
+	      MultiwordLength	      2048
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      ParMdlRefBuildCompliant on
+	      CompOptLevelCompliant   on
+	      IncludeMdlTerminateFcn  on
+	      GeneratePreprocessorConditionals "Disable all"
+	      CombineOutputUpdateFcns off
+	      SuppressErrorStatus     off
+	      ERTFirstTimeCompliant   off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      SupportVariableSizeSignals off
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      PortableWordSizes	      off
+	      ModelStepFunctionPrototypeControlCompliant off
+	      CPPClassGenCompliant    off
+	      AutosarCompliant	      off
+	      UseMalloc		      off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition    " [ 520, 253, 1400, 883 ] "
+    }
+    PropName		    "ConfigurationSets"
+  }
+  BlockDefaults {
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+    BlockRotation	    0
+    BlockMirror		    off
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      BusCreator
+      Inputs		      "4"
+      DisplayOption	      "none"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      NonVirtualBus	      off
+    }
+    Block {
+      BlockType		      BusSelector
+      OutputAsBus	      off
+    }
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "fixdt(1,16,0)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
+      LockScale		      off
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+    }
+    Block {
+      BlockType		      Demux
+      Outputs		      "4"
+      DisplayOption	      "none"
+      BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      DigitalClock
+      SampleTime	      "1"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      DataType		      "auto"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchByCopyingInsideSignal off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      DataType		      "auto"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      SourceOfInitialOutputValue "Dialog"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+      SFunctionDeploymentMode off
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      CheckFcnCallInpInsideContextMsg off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Terminator
+    }
+    Block {
+      BlockType		      UnitDelay
+      X0		      "0"
+      SampleTime	      "1"
+      StateMustResolveToSignalObject off
+      RTWStateStorageClass    "Auto"
+    }
+  }
+  System {
+    Name		    "robot1"
+    Location		    [0, 79, 1904, 1096]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "A4"
+    PaperUnits		    "centimeters"
+    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    SIDHighWatermark	    547
+    Block {
+      BlockType		      SubSystem
+      Name		      "robot1"
+      SID		      525
+      Tag		      "id=_KmxtMI2CEeKjOIt6xW2jaA"
+      Ports		      [10, 1]
+      Position		      [20, 20, 270, 720]
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"robot1"
+	Location		[1057, 164, 1684, 970]
+	Open			on
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "objectRec1:object_recognition"
+	  SID			  526
+	  Tag			  "id=_LtA8gI2CEeKjOIt6xW2jaA"
+	  Position		  [100, 970, 130, 1000]
+	  IconDisplay		  "Port number"
+	  DataType		  "boolean"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "isMaster1:isMaster"
+	  SID			  527
+	  Tag			  "id=_LtVsoI2CEeKjOIt6xW2jaA"
+	  Position		  [100, 160, 130, 190]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  DataType		  "boolean"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Pos_X:Pos_X"
+	  SID			  528
+	  Tag			  "id=_LtyYkI2CEeKjOIt6xW2jaA"
+	  Position		  [100, 920, 130, 950]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  DataType		  "double"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "double"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Pos_Y:Pos_Y"
+	  SID			  529
+	  Tag			  "id=_LuKMAI2CEeKjOIt6xW2jaA"
+	  Position		  [100, 1070, 130, 1100]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  DataType		  "double"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "double"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Pos_Z:Pos_Z"
+	  SID			  530
+	  Tag			  "id=_LugKQI2CEeKjOIt6xW2jaA"
+	  Position		  [100, 1020, 130, 1050]
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	  DataType		  "double"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "double"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Time:Time"
+	  SID			  531
+	  Tag			  "id=_Lu7BAI2CEeKjOIt6xW2jaA"
+	  Position		  [100, 1120, 130, 1150]
+	  Port			  "6"
+	  IconDisplay		  "Port number"
+	  DataType		  "double"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "double"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Velocity:Velocity"
+	  SID			  532
+	  Tag			  "id=_LvS0cI2CEeKjOIt6xW2jaA"
+	  Position		  [100, 1170, 130, 1200]
+	  Port			  "7"
+	  IconDisplay		  "Port number"
+	  DataType		  "double"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "double"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "BAT_Information_Other_Robot_recv"
+	  SID			  533
+	  Tag			  "id=_LwGFsI2CEeKjOIt6xW2jaA"
+	  Position		  [100, 210, 130, 240]
+	  Port			  "8"
+	  IconDisplay		  "Port number"
+	  UseBusObject		  on
+	  BusObject		  "PacketBus"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "BAT_Information_Other_Robot_net_address"
+	  SID			  534
+	  Tag			  "id=_LwGswI2CEeKjOIt6xW2jaA"
+	  Position		  [100, 260, 130, 290]
+	  Port			  "9"
+	  IconDisplay		  "Port number"
+	  DataType		  "uint8"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "uint8"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "BAT_Information_Other_Robot_receiver_net_address"
+	  SID			  535
+	  Tag			  "id=_LwGswY2CEeKjOIt6xW2jaA"
+	  Position		  [100, 310, 130, 340]
+	  Port			  "10"
+	  IconDisplay		  "Port number"
+	  DataType		  "uint8"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "uint8"
+	}
+	Block {
+	  BlockType		  BusCreator
+	  Name			  "BusCreator1"
+	  SID			  543
+	  Tag			  "id=_KmxtMY2CEeKjOIt6xW2jaA"
+	  Ports			  [4, 1]
+	  Position		  [900, 500, 920, 620]
+	  UseBusObject		  on
+	  BusObject		  "robot1_Bus"
+	  Port {
+	    PortNumber		    1
+	    Name		    "Outport12"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  BusSelector
+	  Name			  "BusSelector1"
+	  SID			  544
+	  Tag			  "id=_KmyUQI2CEeKjOIt6xW2jaA"
+	  Ports			  [1, 4]
+	  Position		  [1160, 500, 1180, 620]
+	  OutputSignals		  "rc1,rc2,rc3,rc4"
+	  Port {
+	    PortNumber		    1
+	    Name		    "<rc1>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    2
+	    Name		    "<rc2>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    3
+	    Name		    "<rc3>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    4
+	    Name		    "<rc4>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  DigitalClock
+	  Name			  "DigitalClock1"
+	  SID			  21
+	  Tag			  "id=_KoPFwI2CEeKjOIt6xW2jaA"
+	  Position		  [100, 110, 130, 140]
+	  SampleTime		  "0.0010"
+	}
+	Block {
+	  BlockType		  DigitalClock
+	  Name			  "DigitalClock2"
+	  SID			  23
+	  Tag			  "id=_KoSJEI2CEeKjOIt6xW2jaA"
+	  Position		  [1400, 110, 1430, 140]
+	  SampleTime		  "0.0010"
+	}
+	Block {
+	  BlockType		  DigitalClock
+	  Name			  "DigitalClock3"
+	  SID			  25
+	  Tag			  "id=_KoVMYY2CEeKjOIt6xW2jaA"
+	  Position		  [100, 870, 130, 900]
+	  SampleTime		  "0.0010"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "communicationSwitch"
+	  SID			  537
+	  Tag			  "id=_KmziYo2CEeKjOIt6xW2jaA"
+	  Ports			  [1, 1]
+	  Position		  [980, 500, 1080, 620]
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "communicationSwitch"
+	    Location		    [559, 228, 1057, 528]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In"
+	      SID		      538
+	      Tag		      "id=_Km1XkI2CEeKjOIt6xW2jaA"
+	      Position		      [100, 118, 130, 132]
+	      IconDisplay	      "Port number"
+	      UseBusObject	      on
+	      BusObject		      "robot1_Bus"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Embedded\nMATLAB Function"
+	      SID		      540
+	      Tag		      "id=_Km4a4Y2CEeKjOIt6xW2jaA"
+	      Ports		      [1, 1]
+	      Position		      [200, 89, 310, 161]
+	      PermitHierarchicalResolution "ExplicitOnly"
+	      MinAlgLoopOccurrences   off
+	      PropExecContextOutsideSubsystem off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      Opaque		      off
+	      RequestExecContextInheritance off
+	      MaskHideContents	      off
+	      MaskType		      "Stateflow"
+	      MaskDescription	      "Embedded MATLAB block"
+	      MaskDisplay	      "disp('fcn');"
+	      MaskSelfModifiable      on
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskPortRotate	      "default"
+	      MaskIconUnits	      "autoscale"
+	      System {
+		Name			"Embedded\nMATLAB Function"
+		Location		[70, 200, 650, 460]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"A4"
+		PaperUnits		"centimeters"
+		TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		SIDHighWatermark	540
+		Block {
+		  BlockType		  Inport
+		  Name			  "inBus"
+		  SID			  541
+		  Tag			  "id=_Km96cI2CEeKjOIt6xW2jaA"
+		  Position		  [20, 101, 40, 119]
+		  IconDisplay		  "Port number"
+		  UseBusObject		  on
+		  BusObject		  "robot1_Bus"
+		  OutDataType		  "fixdt(1, 16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  Demux
+		  Name			  " Demux "
+		  Ports			  [1, 4]
+		  Position		  [15, 17, 35, 38]
+		  Outputs		  "1"
+		}
+		Block {
+		  BlockType		  "S-Function"
+		  Name			  " SFunction "
+		  Tag			  "Stateflow S-Function robot1 1"
+		  Ports			  [1, 2]
+		  Position		  [15, 15, 35, 35]
+		  FunctionName		  "sf_sfun"
+		  PortCounts		  "[1 2]"
+		  EnableBusSupport	  off
+		  Port {
+		    PortNumber		    2
+		    Name		    "outBus"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		}
+		Block {
+		  BlockType		  Terminator
+		  Name			  " Terminator "
+		  Position		  [15, 15, 35, 35]
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "outBus"
+		  SID			  542
+		  Tag			  "id=_Km9TYI2CEeKjOIt6xW2jaA"
+		  Position		  [460, 101, 480, 119]
+		  IconDisplay		  "Port number"
+		  UseBusObject		  on
+		  BusObject		  "robot1_Bus"
+		  OutDataType		  "fixdt(1, 16)"
+		  OutScaling		  "2^0"
+		}
+		Line {
+		  SrcBlock		  " SFunction "
+		  SrcPort		  1
+		  DstBlock		  " Demux "
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "inBus"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "outBus"
+		  SrcBlock		  " SFunction "
+		  SrcPort		  2
+		  DstBlock		  "outBus"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  " Demux "
+		  SrcPort		  1
+		  DstBlock		  " Terminator "
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      UnitDelay
+	      Name		      "Unit Delay"
+	      SID		      16
+	      Tag		      "id=_Km4a4I2CEeKjOIt6xW2jaA"
+	      Position		      [350, 108, 385, 142]
+	      SampleTime	      "-1"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out"
+	      SID		      539
+	      Tag		      "id=_Km3MwI2CEeKjOIt6xW2jaA"
+	      Position		      [425, 118, 455, 132]
+	      IconDisplay	      "Port number"
+	      UseBusObject	      on
+	      BusObject		      "robot1_Bus"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	    }
+	    Line {
+	      SrcBlock		      "In"
+	      SrcPort		      1
+	      DstBlock		      "Embedded\nMATLAB Function"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Unit Delay"
+	      SrcPort		      1
+	      DstBlock		      "Out"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Embedded\nMATLAB Function"
+	      SrcPort		      1
+	      DstBlock		      "Unit Delay"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "mc1"
+	  SID			  545
+	  Tag			  "id=_KoOesI2CEeKjOIt6xW2jaA"
+	  Ports			  [11, 3]
+	  Position		  [200, 100, 450, 800]
+	  LibraryVersion	  "1.11"
+	  SourceBlock		  "AtomicLibrary/MainControl"
+	  SourceType		  "SubSystem"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  Port {
+	    PortNumber		    2
+	    Name		    "rc1"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    3
+	    Name		    "rc3"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "mc1_BAT_Info_ToSC_net_address"
+	  SID			  548
+	  Tag			  "id=_LpUIQY2CEeKjOIt6xW2jaA"
+	  Position		  [100, 360, 130, 390]
+	  Value			  "2"
+	  OutDataTypeMode	  "uint8"
+	  OutDataTypeStr	  "uint8"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "mc1_BAT_Info_ToSC_receiver_net_address"
+	  SID			  552
+	  Tag			  "id=_TiYWQo2CEeKjOIt6xW2jaA"
+	  Position		  [100, 410, 130, 440]
+	  Value			  "3"
+	  OutDataTypeMode	  "uint8"
+	  OutDataTypeStr	  "uint8"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "mc1_BAT_Info_ToSP_net_address"
+	  SID			  549
+	  Tag			  "id=_LpfHYY2CEeKjOIt6xW2jaA"
+	  Position		  [100, 460, 130, 490]
+	  OutDataTypeMode	  "uint8"
+	  OutDataTypeStr	  "uint8"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "mc1_BAT_Info_ToSP_receiver_net_address"
+	  SID			  554
+	  Tag			  "id=_TigSFo2CEeKjOIt6xW2jaA"
+	  Position		  [100, 510, 130, 540]
+	  Value			  "4"
+	  OutDataTypeMode	  "uint8"
+	  OutDataTypeStr	  "uint8"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "sc1"
+	  SID			  546
+	  Tag			  "id=_KoRiAI2CEeKjOIt6xW2jaA"
+	  Ports			  [4, 1]
+	  Position		  [1500, 102, 1750, 803]
+	  LibraryVersion	  "1.11"
+	  SourceBlock		  "AtomicLibrary/StrikeControl"
+	  SourceType		  "SubSystem"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  Port {
+	    PortNumber		    1
+	    Name		    "rc2"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "sc1_BAT_Info_net_address"
+	  SID			  550
+	  Tag			  "id=_LpqtkY2CEeKjOIt6xW2jaA"
+	  Position		  [1400, 160, 1430, 190]
+	  Value			  "3"
+	  OutDataTypeMode	  "uint8"
+	  OutDataTypeStr	  "uint8"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "sc1_BAT_Info_receiver_net_address"
+	  SID			  553
+	  Tag			  "id=_TiY9UY2CEeKjOIt6xW2jaA"
+	  Position		  [1400, 210, 1430, 240]
+	  Value			  "2"
+	  OutDataTypeMode	  "uint8"
+	  OutDataTypeStr	  "uint8"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "sp1"
+	  SID			  547
+	  Tag			  "id=_KoVMYI2CEeKjOIt6xW2jaA"
+	  Ports			  [10, 1]
+	  Position		  [200, 860, 450, 1560]
+	  LibraryVersion	  "1.11"
+	  SourceBlock		  "AtomicLibrary/SensorProcessing"
+	  SourceType		  "SubSystem"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  Port {
+	    PortNumber		    1
+	    Name		    "rc4"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "sp1_BAT_Info_net_address"
+	  SID			  551
+	  Tag			  "id=_Lp3h4Y2CEeKjOIt6xW2jaA"
+	  Position		  [100, 1220, 130, 1250]
+	  Value			  "4"
+	  OutDataTypeMode	  "uint8"
+	  OutDataTypeStr	  "uint8"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "sp1_BAT_Info_receiver_net_address"
+	  SID			  555
+	  Tag			  "id=_Tig5IY2CEeKjOIt6xW2jaA"
+	  Position		  [100, 1270, 130, 1300]
+	  OutDataTypeMode	  "uint8"
+	  OutDataTypeStr	  "uint8"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "BAT_Information_Other_Robot_send"
+	  SID			  536
+	  Tag			  "id=_LwGFsY2CEeKjOIt6xW2jaA"
+	  Position		  [550, 110, 580, 140]
+	  IconDisplay		  "Port number"
+	  UseBusObject		  on
+	  BusObject		  "PacketBus"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Line {
+	  Name			  "Outport12"
+	  Tag			  "id=_KmyUQY2CEeKjOIt6xW2jaA"
+	  SrcBlock		  "BusCreator1"
+	  SrcPort		  1
+	  DstBlock		  "communicationSwitch"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "communicationSwitch"
+	  SrcPort		  1
+	  DstBlock		  "BusSelector1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "DigitalClock1"
+	  SrcPort		  1
+	  DstBlock		  "mc1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "DigitalClock2"
+	  SrcPort		  1
+	  DstBlock		  "sc1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "DigitalClock3"
+	  SrcPort		  1
+	  DstBlock		  "sp1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "mc1_BAT_Info_ToSC_net_address"
+	  SrcPort		  1
+	  DstBlock		  "mc1"
+	  DstPort		  7
+	}
+	Line {
+	  SrcBlock		  "mc1_BAT_Info_ToSP_net_address"
+	  SrcPort		  1
+	  DstBlock		  "mc1"
+	  DstPort		  10
+	}
+	Line {
+	  SrcBlock		  "sc1_BAT_Info_net_address"
+	  SrcPort		  1
+	  DstBlock		  "sc1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "sp1_BAT_Info_net_address"
+	  SrcPort		  1
+	  DstBlock		  "sp1"
+	  DstPort		  9
+	}
+	Line {
+	  Name			  "rc1"
+	  Tag			  "id=_TiXvMY2CEeKjOIt6xW2jaA"
+	  SrcBlock		  "mc1"
+	  SrcPort		  2
+	  DstBlock		  "BusCreator1"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "rc2"
+	  Tag			  "id=_TiXvMI2CEeKjOIt6xW2jaA"
+	  SrcBlock		  "sc1"
+	  SrcPort		  1
+	  DstBlock		  "BusCreator1"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "<rc2>"
+	  Tag			  "id=_TiXvM42CEeKjOIt6xW2jaA"
+	  SrcBlock		  "BusSelector1"
+	  SrcPort		  2
+	  DstBlock		  "sc1"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "<rc1>"
+	  Tag			  "id=_TiXvMo2CEeKjOIt6xW2jaA"
+	  SrcBlock		  "BusSelector1"
+	  SrcPort		  1
+	  DstBlock		  "mc1"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "mc1_BAT_Info_ToSC_receiver_net_address"
+	  SrcPort		  1
+	  DstBlock		  "mc1"
+	  DstPort		  8
+	}
+	Line {
+	  SrcBlock		  "sc1_BAT_Info_receiver_net_address"
+	  SrcPort		  1
+	  DstBlock		  "sc1"
+	  DstPort		  4
+	}
+	Line {
+	  Name			  "rc3"
+	  Tag			  "id=_TigSEY2CEeKjOIt6xW2jaA"
+	  SrcBlock		  "mc1"
+	  SrcPort		  3
+	  DstBlock		  "BusCreator1"
+	  DstPort		  3
+	}
+	Line {
+	  Name			  "rc4"
+	  Tag			  "id=_TigSEI2CEeKjOIt6xW2jaA"
+	  SrcBlock		  "sp1"
+	  SrcPort		  1
+	  DstBlock		  "BusCreator1"
+	  DstPort		  4
+	}
+	Line {
+	  Name			  "<rc4>"
+	  Tag			  "id=_TigSE42CEeKjOIt6xW2jaA"
+	  SrcBlock		  "BusSelector1"
+	  SrcPort		  4
+	  DstBlock		  "sp1"
+	  DstPort		  8
+	}
+	Line {
+	  Name			  "<rc3>"
+	  Tag			  "id=_TigSEo2CEeKjOIt6xW2jaA"
+	  SrcBlock		  "BusSelector1"
+	  SrcPort		  3
+	  DstBlock		  "mc1"
+	  DstPort		  9
+	}
+	Line {
+	  SrcBlock		  "mc1_BAT_Info_ToSP_receiver_net_address"
+	  SrcPort		  1
+	  DstBlock		  "mc1"
+	  DstPort		  11
+	}
+	Line {
+	  SrcBlock		  "sp1_BAT_Info_receiver_net_address"
+	  SrcPort		  1
+	  DstBlock		  "sp1"
+	  DstPort		  10
+	}
+	Line {
+	  SrcBlock		  "isMaster1:isMaster"
+	  SrcPort		  1
+	  DstBlock		  "mc1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Pos_Z:Pos_Z"
+	  SrcPort		  1
+	  DstBlock		  "sp1"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Pos_Y:Pos_Y"
+	  SrcPort		  1
+	  DstBlock		  "sp1"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "Pos_X:Pos_X"
+	  SrcPort		  1
+	  DstBlock		  "sp1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Time:Time"
+	  SrcPort		  1
+	  DstBlock		  "sp1"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "objectRec1:object_recognition"
+	  SrcPort		  1
+	  DstBlock		  "sp1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Velocity:Velocity"
+	  SrcPort		  1
+	  DstBlock		  "sp1"
+	  DstPort		  7
+	}
+	Line {
+	  SrcBlock		  "BAT_Information_Other_Robot_recv"
+	  SrcPort		  1
+	  DstBlock		  "mc1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "mc1"
+	  SrcPort		  1
+	  DstBlock		  "BAT_Information_Other_Robot_send"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "BAT_Information_Other_Robot_receiver_net_address"
+	  SrcPort		  1
+	  DstBlock		  "mc1"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "BAT_Information_Other_Robot_net_address"
+	  SrcPort		  1
+	  DstBlock		  "mc1"
+	  DstPort		  4
+	}
+      }
+    }
+  }
+}
+# Finite State Machines
+#
+#    Stateflow Version 7.1 (R2009a) dated Jul 17 2009, 00:39:27
+#
+#
+
+
+Stateflow {
+  machine {
+    id			    1
+    name		    "robot1"
+    isLibrary		    1
+    firstTarget		    9
+    tag			    "100 T\"id=_XBStJ42CEeKjOIt6xW2jaA\""
+    sfVersion		    71014000.00001
+  }
+  chart {
+    id			    2
+    name		    "robot1/communicationSwitch/Embedded\nMATLAB Function"
+    screen		    [1 1 1920 1136 1.25]
+    treeNode		    [0 3 0 0]
+    viewObj		    2
+    machine		    1
+    decomposition	    CLUSTER_CHART
+    type		    EML_CHART
+    firstData		    6
+    chartFileNumber	    1
+    disableImplicitCasting  1
+    tag			    "100 T\"id=_XBStII2CEeKjOIt6xW2jaA\""
+  }
+  state {
+    id			    3
+    labelString		    "eML_blk_kernel()"
+    chart		    2
+    treeNode		    [2 0 0 0]
+    firstTransition	    5
+    firstJunction	    4
+    subviewer		    2
+    type		    FUNC_STATE
+    decomposition	    CLUSTER_STATE
+    tag			    "100 T\"id=_XBStJI2CEeKjOIt6xW2jaA\""
+    eml {
+      isEML		      1
+      script		      "function outBus = BusImpl(inBus)\n%#eml\neml.extrinsic('fieldnames','disp','setfield','fprintf');"
+      "\n\nbusSize = 1;\nqueueSize = 10*busSize; %length of queue\nnumShuttles = 0; %Define data type\nnumShuttles = nu"
+      "mel(fieldnames(inBus)); %Shuttles connected to the bus\nassert(numShuttles <= 20) %Defines an upper bound for nu"
+      "mber of shuttles. \n%Important for static memory allocation. \nlookupTableSize = 200;\n\n\n\nNOT_ASSIGNED = -1;\n"
+      "\n%We need persistent queues\npersistent queue;\npersistent lookupTable;\n\n%Initialize the queues\nif isempty(q"
+      "ueue)\n    queue = repmat(emptyPacket(), numShuttles, queueSize);\nend\n\nif isempty(lookupTable)\n    lookupTab"
+      "le = repmat(NOT_ASSIGNED, lookupTableSize,1);\nend\n\n%Clean outbus\noutBus = inBus;\nfor i = 1:numShuttles\n   "
+      " outBus = setfield(outBus, createRailCabName(i), emptyBus(busSize));\nend\n\n%Retrieve packets\nfor i = 1:numShu"
+      "ttles\n    %Get current bus\n    currentBus = getBusFromIndex(inBus, busSize, i);\n    for j = 1:busSize\n      "
+      "  %Read packet\n        packet = getPacketFromBus(currentBus, j);\n        \n        %Check if new packet\n     "
+      "   if isValid(packet, numShuttles)\n             %Save sender bus element to lookup table\n            if lookup"
+      "Table(packet.from) == NOT_ASSIGNED\n                lookupTable(packet.from) = i;\n            end\n            "
+      "\n            %Save packet in queue\n            target = lookupTable(packet.to);\n            %Destination unko"
+      "wn. Send to all unassigned.\n            if target == NOT_ASSIGNED\n                for k = 1:numShuttles\n     "
+      "               if(lookupTable(packet.from) ~= k)\n                        queue(k,:) = enqueue(queue(k,:), packe"
+      "t); \n                    end\n                end                \n            %Destination known\n            "
+      "else \n                queue(target,:) = enqueue(queue(target,:), packet);\n            end            \n       "
+      " end\n    end\n\nend\n\n%Send packet from queue\nfor i = 1:numShuttles    \n    currentBus = getBusFromIndex(out"
+      "Bus, busSize, i);\n    for j = 1:busSize\n        if ~isEmpty(queue(i,:))\n            \n            \n         "
+      "   %Read last packet\n            packet = front(queue(i,:));\n            queue(i,:) = dequeue(queue(i,:)); \n "
+      "           \n%            if packet.msg ~= 255 %No ACK\n%                fprintf('Sending on port %u[%u/%u]: %s'"
+      ", i, j, busSize, toString(packet));\n%            end            \n            \n            %Save packet to bus"
+      "\n            currentBus = setPacketToBus(currentBus, j, packet);\n            \n        else\n            break"
+      ";\n        end\n    end \n    %Save bus\n    outBus = setBusToIndex(outBus, i, currentBus);\nend\n\n%%%%%%%%%%%%"
+      "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%% BUS\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+      "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n\nfunction name = createRailCabName(index) %#eml\n%Create name for the rai"
+      "lcab used on the bus\neml.extrinsic('sprintf');\nname = sprintf('rc%d', index);\n\nfunction bus = getBusFromInde"
+      "x(inBus, busSize, index) %eml\n%Retrieve a PacketBus from the RailCaBbus\neml.extrinsic('getfield');\nbusName = "
+      "createRailCabName(index);\nbus = emptyBus(busSize);\nbus = getfield(inBus, busName);\n\nfunction rcBus = setBusT"
+      "oIndex(rcBus, index, packetBus) %eml\n%Save a PacketBus to RailCabBus\neml.extrinsic('setfield');\nbusName = cre"
+      "ateRailCabName(index);\nrcBus = setfield(rcBus, busName, packetBus);\n\nfunction packet = getPacketFromBus(packe"
+      "tBus, index) %eml\n%Retrieve a packet from the bus\npacket = emptyPacket();\npacket.from = packetBus.from(index)"
+      ";\npacket.to = packetBus.to(index);\npacket.msg = packetBus.msg(index);\npacket.param = packetBus.param (index);"
+      "\npacket.pkgid = packetBus.pkgid(index);\npacket.time = packetBus.time(index);\n\nfunction packetBus = setPacket"
+      "ToBus(packetBus, index, packet) %eml\n%Save a packet to the bus\npacketBus.from(index) = packet.from;\npacketBus"
+      ".to(index) = packet.to;\npacketBus.msg(index) = packet.msg;\npacketBus.param (index) = packet.param;\npacketBus."
+      "pkgid(index) = packet.pkgid;\npacketBus.time(index) = packet.time;\n\nfunction bus = emptyBus(size) %emp\n%Creat"
+      "e an empty bus\nbus = struct('from', zeros(size,1,'uint8'),'to', zeros(size,1,'uint8'),'msg', zeros(size,1,'uint"
+      "16'),'param', zeros(size,1,'double'),'pkgid', zeros(size,1,'uint32'), 'time', zeros(size,1,'double'));\n\n\n%%%%"
+      "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%% PACKET\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+      "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\nfunction packet = emptyPacket() %#eml\n%Creates an empty packet"
+      "\npacket = struct('from', uint8(0),'to', uint8(0),'msg', uint16(0),'param', double(0.0),'pkgid', uint32(0), 'tim"
+      "e', double(0));\n\nfunction valid = isValid(packet, numShuttles) %#eml\n%Checks wether the given packet is valid"
+      " and transported by the bus\neml.extrinsic('getfield');\nvalid = false;\nif packet.to > 0 && packet.to <= numShu"
+      "ttles \n    if packet.from > 0 && packet.from <= numShuttles\n        valid = true;\n    end\nend\n\nfunction pa"
+      "cketString = toString(packet) %#eml\neml.extrinsic('sprintf');\npacketString = sprintf('%3u: %u->%u :%3u (%.1f) "
+      "@%.2f', packet.pkgid, packet.from, packet.to, packet.msg, packet.param, packet.time);\n\n%%%%%%%%%%%%%%%%%%%%%%%"
+      "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%% QUEUE\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+      "%%%%%%%%%%%%%%%%%%%%%%%%%%%\n\nfunction queue = enqueue(queue, packet) %#eml\n%Insert the packet at the end of t"
+      "he queue\neml.extrinsic('warning');\nfor i=1:length(queue)\n    if queue(i).to == 0\n        queue(i) = packet;\n"
+      "        return;\n    end\nend\n%No empty entry found\nwarning('RailCab:Bus','Bus: buffer overflow for outgoing q"
+      "ueue to %d', queue(1).to);\n\nfunction queue = dequeue(queue) %#eml\n%Removes the first packet of the queue\nfor"
+      " i = 1:length(queue)-1\n    queue(i) = queue(i+1);\n    if queue(i).to == 0\n        %end reached\n        retur"
+      "n;\n    end\nend\nqueue(length(queue)) = emptyPacket();\n\nfunction packet = front(queue) %#eml\n%Returns the fi"
+      "rst element from the queue\npacket = queue(1);\n\nfunction empty = isEmpty(queue) %#eml\n%Checks whether the que"
+      "ue is empty or not\npacket = queue(1);\nif packet.to == 0\n    empty = true;\nelse\n    empty = false;\nend"
+    }
+  }
+  junction {
+    id			    4
+    chart		    2
+    linkNode		    [3 0 0]
+    subviewer		    2
+    type		    CONNECTIVE_JUNCTION
+    tag			    "100 T\"id=_XBStIY2CEeKjOIt6xW2jaA\""
+  }
+  transition {
+    id			    5
+    labelString		    "{eML_blk_kernel(); }"
+    dst {
+      id		      4
+    }
+    chart		    2
+    linkNode		    [3 0 0]
+    subviewer		    2
+    executionOrder	    1
+    tag			    "100 T\"id=_XBStIo2CEeKjOIt6xW2jaA\""
+  }
+  data {
+    id			    6
+    name		    "inBus"
+    linkNode		    [2 0 7]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_SIMULINK_OBJECT_TYPE
+	primitive		SF_DOUBLE_TYPE
+	expression		"Bus: robot1_Bus"
+	busObject		"robot1_Bus"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+    }
+    dataType		    "Bus: robot1_Bus"
+    tag			    "100 T\"id=_XBStJY2CEeKjOIt6xW2jaA\""
+  }
+  data {
+    id			    7
+    name		    "outBus"
+    linkNode		    [2 6 0]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_SIMULINK_OBJECT_TYPE
+	primitive		SF_DOUBLE_TYPE
+	expression		"Bus: robot1_Bus"
+	busObject		"robot1_Bus"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Bus: robot1_Bus"
+    tag			    "100 T\"id=_XBStJo2CEeKjOIt6xW2jaA\""
+  }
+  instance {
+    id			    8
+    name		    "robot1/communicationSwitch/Embedded\nMATLAB Function"
+    machine		    1
+    chart		    2
+  }
+  target {
+    id			    9
+    name		    "sfun"
+    description		    "Default Simulink S-Function Target."
+    machine		    1
+    linkNode		    [1 0 0]
+  }
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated BasicSDD -->
+      <package
+            uri="http://www.muml.org/storydiagram/verification/sdd/basicsdd/1.0.0"
+            class="org.muml.storydiagram.verification.sdd.basicsdd.BasicSDDPackage"
+            genModel="model/BasicSDD.genmodel"/>
+   </extension>
+
+</plugin>

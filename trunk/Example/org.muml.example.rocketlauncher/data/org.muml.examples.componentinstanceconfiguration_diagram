@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:instance="http://www.muml.org/pim/instance/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_8aSIMMj2EeWzrcBaL-cniQ" type="Component Instance Configuration" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_96Wz0Mj2EeWzrcBaL-cniQ" type="2015" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_96YB8Mj2EeWzrcBaL-cniQ" type="5026"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_96YB8cj2EeWzrcBaL-cniQ" type="7012">
+      <children xmi:type="notation:Shape" xmi:id="_-_i6QMj2EeWzrcBaL-cniQ" type="3023" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_-_jhUMj2EeWzrcBaL-cniQ" type="7013">
+          <children xmi:type="notation:Shape" xmi:id="_-_mkoMj2EeWzrcBaL-cniQ" type="3024" fontName="Segoe UI" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_-_nLsMj2EeWzrcBaL-cniQ" type="5028"/>
+            <children xmi:type="notation:Shape" xmi:id="__AMagMj2EeWzrcBaL-cniQ" type="3034" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="__ANBkMj2EeWzrcBaL-cniQ" type="5046">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="__ANBkcj2EeWzrcBaL-cniQ" x="30" y="26"/>
+              </children>
+              <element xmi:type="instance:ContinuousPortInstance" href="rocketlauncher.muml#_-15PAsj2EeWzrcBaL-cniQ"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="__AMagcj2EeWzrcBaL-cniQ" x="90" y="49"/>
+            </children>
+            <element xmi:type="instance:AtomicComponentInstance" href="rocketlauncher.muml#_-15PAcj2EeWzrcBaL-cniQ"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-_mkocj2EeWzrcBaL-cniQ" x="30" y="18" width="391" height="61"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_-_nLscj2EeWzrcBaL-cniQ" type="3024" fontName="Segoe UI" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_-_nLs8j2EeWzrcBaL-cniQ" type="5028"/>
+            <children xmi:type="notation:Shape" xmi:id="__AzegMj2EeWzrcBaL-cniQ" type="3032" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="__Azegsj2EeWzrcBaL-cniQ" type="5044">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="__Azeg8j2EeWzrcBaL-cniQ" x="36" y="-45"/>
+              </children>
+              <element xmi:type="instance:DiscreteSinglePortInstance" href="rocketlauncher.muml#_-15PBMj2EeWzrcBaL-cniQ"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="__Azegcj2EeWzrcBaL-cniQ" x="279" y="36"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="__A0FkMj2EeWzrcBaL-cniQ" type="3031" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="__A0Fksj2EeWzrcBaL-cniQ" type="5043">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="__A0Fk8j2EeWzrcBaL-cniQ" x="33" y="-18"/>
+              </children>
+              <element xmi:type="instance:HybridPortInstance" href="rocketlauncher.muml#_-15PBcj2EeWzrcBaL-cniQ"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="__A0Fkcj2EeWzrcBaL-cniQ" x="57" y="-12"/>
+            </children>
+            <element xmi:type="instance:AtomicComponentInstance" href="rocketlauncher.muml#_-15PA8j2EeWzrcBaL-cniQ"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-_nLssj2EeWzrcBaL-cniQ" x="60" y="153" width="291" height="97"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_-_nLtMj2EeWzrcBaL-cniQ" type="3024" fontName="Segoe UI" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_-_nywMj2EeWzrcBaL-cniQ" type="5028"/>
+            <children xmi:type="notation:Shape" xmi:id="__BzkEMj2EeWzrcBaL-cniQ" type="3032" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="__BzkEsj2EeWzrcBaL-cniQ" type="5044">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="__B0LIMj2EeWzrcBaL-cniQ" x="-3" y="60"/>
+              </children>
+              <element xmi:type="instance:DiscreteSinglePortInstance" href="rocketlauncher.muml#_-15PB8j2EeWzrcBaL-cniQ"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="__BzkEcj2EeWzrcBaL-cniQ" x="-12" y="60"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="__B0LIcj2EeWzrcBaL-cniQ" type="3032" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="__B0yMMj2EeWzrcBaL-cniQ" type="5044">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="__B0yMcj2EeWzrcBaL-cniQ" x="12" y="-60"/>
+              </children>
+              <element xmi:type="instance:DiscreteSinglePortInstance" href="rocketlauncher.muml#_-15PCMj2EeWzrcBaL-cniQ"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="__B0LIsj2EeWzrcBaL-cniQ" x="-12" y="15"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="__B0yMsj2EeWzrcBaL-cniQ" type="3031" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="__B0yNMj2EeWzrcBaL-cniQ" type="5043">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="__B0yNcj2EeWzrcBaL-cniQ" x="30" y="-18"/>
+              </children>
+              <element xmi:type="instance:HybridPortInstance" href="rocketlauncher.muml#_-15PCcj2EeWzrcBaL-cniQ"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="__B0yM8j2EeWzrcBaL-cniQ" x="180" y="-12"/>
+            </children>
+            <element xmi:type="instance:AtomicComponentInstance" href="rocketlauncher.muml#_-15PBsj2EeWzrcBaL-cniQ"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-_nLtcj2EeWzrcBaL-cniQ" x="525" y="219" height="106"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_-_nywcj2EeWzrcBaL-cniQ" type="3024" fontName="Segoe UI" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_-_nyw8j2EeWzrcBaL-cniQ" type="5028"/>
+            <children xmi:type="notation:Shape" xmi:id="__CYL0Mj2EeWzrcBaL-cniQ" type="3034" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="__CYL0sj2EeWzrcBaL-cniQ" type="5046">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="__CYL08j2EeWzrcBaL-cniQ" x="45" y="31"/>
+              </children>
+              <element xmi:type="instance:ContinuousPortInstance" href="rocketlauncher.muml#_-15PC8j2EeWzrcBaL-cniQ"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="__CYL0cj2EeWzrcBaL-cniQ" x="135" y="35"/>
+            </children>
+            <element xmi:type="instance:AtomicComponentInstance" href="rocketlauncher.muml#_-15PCsj2EeWzrcBaL-cniQ"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-_nywsj2EeWzrcBaL-cniQ" x="570" y="18" width="286"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_-_nyxMj2EeWzrcBaL-cniQ" type="3024" fontName="Segoe UI" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_-_oZ0Mj2EeWzrcBaL-cniQ" type="5028"/>
+            <children xmi:type="notation:Shape" xmi:id="__Ch80Mj2EeWzrcBaL-cniQ" type="3031" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="__Cij4Mj2EeWzrcBaL-cniQ" type="5043">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="__Cij4cj2EeWzrcBaL-cniQ" x="31" y="28"/>
+              </children>
+              <element xmi:type="instance:HybridPortInstance" href="rocketlauncher.muml#_-15PDcj2EeWzrcBaL-cniQ"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="__Ch80cj2EeWzrcBaL-cniQ" x="134" y="35"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="__Cij4sj2EeWzrcBaL-cniQ" type="3032" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="__CjK8Mj2EeWzrcBaL-cniQ" type="5044">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="__CjK8cj2EeWzrcBaL-cniQ" x="26" y="45"/>
+              </children>
+              <element xmi:type="instance:DiscreteSinglePortInstance" href="rocketlauncher.muml#_-15PDsj2EeWzrcBaL-cniQ"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="__Cij48j2EeWzrcBaL-cniQ" x="274" y="30"/>
+            </children>
+            <element xmi:type="instance:AtomicComponentInstance" href="rocketlauncher.muml#_-15PDMj2EeWzrcBaL-cniQ"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-_nyxcj2EeWzrcBaL-cniQ" x="60" y="294" width="286" height="74"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_-_oZ0cj2EeWzrcBaL-cniQ" type="3024" fontName="Segoe UI" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_-_oZ08j2EeWzrcBaL-cniQ" type="5028"/>
+            <children xmi:type="notation:Shape" xmi:id="__C1e0Mj2EeWzrcBaL-cniQ" type="3034" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="__C1e0sj2EeWzrcBaL-cniQ" type="5046">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="__C2F4Mj2EeWzrcBaL-cniQ" x="30" y="-18"/>
+              </children>
+              <element xmi:type="instance:ContinuousPortInstance" href="rocketlauncher.muml#_-15PEMj2EeWzrcBaL-cniQ"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="__C1e0cj2EeWzrcBaL-cniQ" x="180" y="-12"/>
+            </children>
+            <element xmi:type="instance:AtomicComponentInstance" href="rocketlauncher.muml#_-15PD8j2EeWzrcBaL-cniQ"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-_oZ0sj2EeWzrcBaL-cniQ" x="15" y="444" width="361"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_-_pA4Mj2EeWzrcBaL-cniQ" type="3035">
+            <children xmi:type="notation:DecorationNode" xmi:id="_-_pn8Mj2EeWzrcBaL-cniQ" type="5047"/>
+            <styles xmi:type="notation:DescriptionStyle" xmi:id="_-_pA4cj2EeWzrcBaL-cniQ"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_-_pA4sj2EeWzrcBaL-cniQ" fontName="Segoe UI"/>
+            <styles xmi:type="notation:LineStyle" xmi:id="_-_pA48j2EeWzrcBaL-cniQ" lineColor="0"/>
+            <element xmi:type="instance:CoordinationProtocolInstance" href="rocketlauncher.muml#_-_RNcMj2EeWzrcBaL-cniQ"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-_pA5Mj2EeWzrcBaL-cniQ" x="450" y="144"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_-_pn8cj2EeWzrcBaL-cniQ" type="3035">
+            <children xmi:type="notation:DecorationNode" xmi:id="_-_pn9sj2EeWzrcBaL-cniQ" type="5047"/>
+            <styles xmi:type="notation:DescriptionStyle" xmi:id="_-_pn8sj2EeWzrcBaL-cniQ"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_-_pn88j2EeWzrcBaL-cniQ" fontName="Segoe UI"/>
+            <styles xmi:type="notation:LineStyle" xmi:id="_-_pn9Mj2EeWzrcBaL-cniQ" lineColor="0"/>
+            <element xmi:type="instance:CoordinationProtocolInstance" href="rocketlauncher.muml#_-_U30Mj2EeWzrcBaL-cniQ"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-_pn9cj2EeWzrcBaL-cniQ" x="435" y="339"/>
+          </children>
+        </children>
+        <element xmi:type="instance:ComponentInstanceConfiguration" href="rocketlauncher.muml#_-15PAMj2EeWzrcBaL-cniQ"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-_i6Qcj2EeWzrcBaL-cniQ"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_96YB8sj2EeWzrcBaL-cniQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_96YB88j2EeWzrcBaL-cniQ"/>
+    </children>
+    <element xmi:type="instance:StructuredComponentInstance" href="rocketlauncher.muml#_95w98Mj2EeWzrcBaL-cniQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_96Wz0cj2EeWzrcBaL-cniQ" x="120" y="60" width="916" height="571"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_8aSIMcj2EeWzrcBaL-cniQ"/>
+  <element xmi:type="instance:ComponentInstanceConfiguration" href="rocketlauncher.muml#_8aQ6EMj2EeWzrcBaL-cniQ"/>
+  <edges xmi:type="notation:Connector" xmi:id="__D2ygMj2EeWzrcBaL-cniQ" type="4001" source="__AMagMj2EeWzrcBaL-cniQ" target="__A0FkMj2EeWzrcBaL-cniQ" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="__D2ygcj2EeWzrcBaL-cniQ" fontName="Segoe UI"/>
+    <element xmi:type="instance:AssemblyConnectorInstance" href="rocketlauncher.muml#_-15PEcj2EeWzrcBaL-cniQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__D2ygsj2EeWzrcBaL-cniQ" points="[-12, 2, 45, -8]$[-45, 7, 12, -3]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="__D5OwMj2EeWzrcBaL-cniQ" type="4001" source="__CYL0Mj2EeWzrcBaL-cniQ" target="__B0yMsj2EeWzrcBaL-cniQ" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="__D5Owcj2EeWzrcBaL-cniQ" fontName="Segoe UI"/>
+    <element xmi:type="instance:AssemblyConnectorInstance" href="rocketlauncher.muml#_-15PEsj2EeWzrcBaL-cniQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__D5Owsj2EeWzrcBaL-cniQ" points="[-12, -5, 15, 5]$[-15, -6, 12, 4]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="__D7D8Mj2EeWzrcBaL-cniQ" type="4001" source="__AzegMj2EeWzrcBaL-cniQ" target="__B0LIcj2EeWzrcBaL-cniQ" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="__D7D8cj2EeWzrcBaL-cniQ" fontName="Segoe UI"/>
+    <element xmi:type="instance:AssemblyConnectorInstance" href="rocketlauncher.muml#_-15PE8j2EeWzrcBaL-cniQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__D7D8sj2EeWzrcBaL-cniQ" points="[12, 5, -9, -5]$[9, 4, -12, -6]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="__D85IMj2EeWzrcBaL-cniQ" type="4001" source="__Cij4sj2EeWzrcBaL-cniQ" target="__BzkEMj2EeWzrcBaL-cniQ" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="__D85Icj2EeWzrcBaL-cniQ" fontName="Segoe UI"/>
+    <element xmi:type="instance:AssemblyConnectorInstance" href="rocketlauncher.muml#_-15PFMj2EeWzrcBaL-cniQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__D85Isj2EeWzrcBaL-cniQ" points="[12, -5, -43, 15]$[43, -16, -12, 4]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="__D-uUMj2EeWzrcBaL-cniQ" type="4001" source="__C1e0Mj2EeWzrcBaL-cniQ" target="__Ch80Mj2EeWzrcBaL-cniQ" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="__D-uUcj2EeWzrcBaL-cniQ" fontName="Segoe UI"/>
+    <element xmi:type="instance:AssemblyConnectorInstance" href="rocketlauncher.muml#_-15PFcj2EeWzrcBaL-cniQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__D-uUsj2EeWzrcBaL-cniQ" points="[-12, -3, 33, 7]$[-33, -8, 12, 2]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="__EAjgMj2EeWzrcBaL-cniQ" type="4003" source="_-_pA4Mj2EeWzrcBaL-cniQ" target="__AzegMj2EeWzrcBaL-cniQ" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="__EAjgcj2EeWzrcBaL-cniQ" fontName="Segoe UI"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__EAjgsj2EeWzrcBaL-cniQ" points="[12, -20, -30, 50]$[34, -58, -8, 12]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="__EBxoMj2EeWzrcBaL-cniQ" type="4003" source="_-_pA4Mj2EeWzrcBaL-cniQ" target="__B0LIcj2EeWzrcBaL-cniQ" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="__EBxocj2EeWzrcBaL-cniQ" fontName="Segoe UI"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__EBxosj2EeWzrcBaL-cniQ" points="[20, -20, -43, 40]$[51, -49, -12, 11]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="__EC_wMj2EeWzrcBaL-cniQ" type="4003" source="_-_pn8cj2EeWzrcBaL-cniQ" target="__BzkEMj2EeWzrcBaL-cniQ" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="__EC_wcj2EeWzrcBaL-cniQ" fontName="Segoe UI"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__EC_wsj2EeWzrcBaL-cniQ" points="[20, -17, -65, 53]$[73, -61, -12, 9]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="__EE08Mj2EeWzrcBaL-cniQ" type="4003" source="_-_pn8cj2EeWzrcBaL-cniQ" target="__Cij4sj2EeWzrcBaL-cniQ" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="__EE08cj2EeWzrcBaL-cniQ" fontName="Segoe UI"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__EE08sj2EeWzrcBaL-cniQ" points="[12, -20, -18, 30]$[22, -38, -8, 12]"/>
+  </edges>
+</notation:Diagram>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmftool:ToolRegistry
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
+  <palette
+      title="resourceInstancePalette">
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="hardware">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="StructuredResourceInstance"
+          description="Create new StructuredResourceInstance">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/box_small.gif"
+            bundle="org.muml.pm.hardware.common"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/box_large.gif"
+            bundle="org.muml.pm.hardware.common"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="SensorInstance"
+          description="Create new SensorInstance">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/sensor_small.gif"
+            bundle="org.muml.pm.hardware.common"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/sensor_large.gif"
+            bundle="org.muml.pm.hardware.common"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="ActuatorInstance"
+          description="Create new ActuatorInstance">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/actuator_small.gif"
+            bundle="org.muml.pm.hardware.common"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/actuator_large.gif"
+            bundle="org.muml.pm.hardware.common"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:PaletteSeparator"
+          title="HW-PortInstance"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Port-Instance"
+          description="Creates a new Bus-Port Instance">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/busportInst_small.gif"
+            bundle="org.muml.pm.hardware.common"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/busportInst_large.gif"
+            bundle="org.muml.pm.hardware.common"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="NetworkConnectorInstance"/>
+    </tools>
+  </palette>
+</gmftool:ToolRegistry>

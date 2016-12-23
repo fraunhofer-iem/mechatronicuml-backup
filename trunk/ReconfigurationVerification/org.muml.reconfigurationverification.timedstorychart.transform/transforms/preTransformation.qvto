@@ -1,0 +1,177 @@
+modeltype expressionscommon uses core::expressions::common('http://www.muml.org/core/1.0.0');
+
+modeltype realtimestatechart uses pim::realtimestatechart("http://www.muml.org/pim/1.0.0");
+modeltype valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype pattern uses pim::protocol("http://www.muml.org/pim/1.0.0");
+modeltype connector uses pim::connector("http://www.muml.org/pim/1.0.0");
+modeltype component uses pim::component("http://www.muml.org/pim/1.0.0");
+
+
+modeltype transformationHelper uses "http://www.muml.org/reconfigurationverification/timedstorychart/transform/helper/1.0.0";
+
+//todo constraint for triggert vs. raised events
+// guard is missing
+//constraint for execution is missing
+
+transformation preTransformation(inout input : transformationHelper);
+
+property deadClockCounter : Integer = 0;
+property doClockCounter : Integer = 0;
+property number : Integer = 0;
+property doClockPrefix : String = "cDo";
+property deadClockPrefix : String = "cDead";
+
+main() {
+	log("Started");
+	input.objects()[TSCTransformationInput]->map transformationInput();
+	log("Finished");
+}
+
+mapping inout TSCTransformationInput::transformationInput(){
+	log("TSC input found");
+	self.connector . connectorEndpoints -> map checkEndPoints();
+}
+
+mapping inout ConnectorEndpoint::checkEndPoints()
+disjuncts Role::checkRole, DiscretePort::checkPort {
+}
+
+mapping inout DiscretePort::checkPort() 
+when{self.oclIsTypeOf(DiscretePort)}{
+	behavior.oclAsType(RealtimeStatechart) -> map checkRTSC();
+}
+
+mapping inout Role::checkRole() 
+when{self.oclIsTypeOf(Role)}{
+	behavior.oclAsType(RealtimeStatechart) -> map checkRTSC();
+}
+
+mapping inout RealtimeStatechart::checkRTSC(){
+	log("Statechart found");
+	states -> map checkState(); 
+	transitions -> map deadlineElimination();
+}
+
+mapping inout State::checkState()
+when{self.oclIsTypeOf(State)}{
+	self -> map addDoClock();
+	self.embeddedRegions -> map checkRegion();
+	if (self.urgent) then {
+		var deadlineClock : Clock := getClock(deadClockPrefix, self.parentStatechart); 
+		self.entryEvent.clockResets += deadlineClock;
+		self.invariants += deadlineClock -> map createZeroInvariant();
+		self.urgent := false;
+	}endif;
+}
+
+mapping inout Region::checkRegion(){
+	self.embeddedStatechart -> map checkRTSC();
+}
+
+-- mapping for elimination of do Events
+mapping inout State::addDoClock()
+when{self.doEvent -> notEmpty() }{
+	log("State with do event found");
+	getClock(doClockPrefix, self.parentStatechart);
+ 
+}
+
+-- helper mapping that created a clock with the specified name
+mapping RealtimeStatechart::createClock(clockName : String, nameSuffix : String) : Clock{
+	log("clock created: " + clockName + nameSuffix);
+	result.name := clockName + nameSuffix;
+}
+
+-- Searches for a clock with the given name. If it exists, it will be returned
+-- if it does not exist, it will be created and returned.
+helper getClock(in clockName : String, inout rtsc : RealtimeStatechart) : Clock{
+	var returnClock : Clock;
+	
+	var clocksWithName : OrderedSet(Clock) := rtsc.clocks->select(name.startsWith(clockName));
+	if(clocksWithName->isEmpty())
+	then{
+		-- clock does not exist, create it
+		if(clockName.startsWith(doClockPrefix))
+		then{
+			doClockCounter := doClockCounter + 1;
+			returnClock := rtsc->map createClock(clockName, doClockCounter.toString())->any(true);
+		}else if(clockName.startsWith(deadClockPrefix))
+		then{
+			deadClockCounter := deadClockCounter + 1;
+			returnClock := rtsc->map createClock(clockName, deadClockCounter.toString())->any(true);
+		}endif
+		endif;
+		
+		rtsc.clocks += returnClock;
+	} else {
+		returnClock := clocksWithName -> any(true);
+	}endif;
+	
+	return returnClock;
+}
+
+
+-- mappings for elimination of realtive deadlines
+mapping inout Transition::deadlineElimination()
+when{self.relativeDeadline -> notEmpty() }
+{	
+	log("transition with relative deadline found");
+	
+	-- create intermediate state
+	var intermediateState : State := self->map createIntermediateState()->any(true);
+	self.statechart.states += intermediateState;
+	intermediateState.invariants += map invariant();
+	
+	-- create new transition
+	self.statechart.transitions += self->map deadTransOut(self.resolveone(State));
+	
+	-- redirect existing transition
+	self.target := self.resolveone(State);
+	
+	-- add a reset for the deadline clock
+	self.clockResets += getClock(deadClockPrefix, self.statechart); 
+	
+	-- remove relative deadline
+	self.relativeDeadline := null;
+
+}
+
+-- creates the intermediate state
+mapping Transition::createIntermediateState() : State{
+	log("Intermediate State created");
+	number := number + 1;
+	name := self.source.name +"_" + self.target.name + "_" + number.toString();
+}
+
+-- creates the transition from the intermediate state to the target state
+mapping Transition::deadTransOut(source : State): Transition{	
+	result.source:= source; 
+	result.target:= self.target;
+	result.events += self.raiseMessageEvent;
+	clockConstraints := self->map clockConst();
+}
+
+-- creates the invariant for the intermediate state
+mapping Transition::invariant(): ClockConstraint{
+	clock:= getClock(deadClockPrefix, self.statechart); 
+	bound:= self.relativeDeadline.upperBound.oclAsType(TimeValue);
+	operator:= ComparingOperator::LESS_OR_EQUAL;
+}
+
+-- create the timeguard for the transition from the intermediate state to the target state
+mapping Transition::clockConst(): ClockConstraint{
+	clock:= getClock(deadClockPrefix, self.statechart); 
+	bound:= self.relativeDeadline.lowerBound.oclAsType(TimeValue);
+	operator:= ComparingOperator::GREATER_OR_EQUAL;
+}
+
+mapping Clock::createZeroInvariant() : ClockConstraint{
+	clock := self;
+	operator := ComparingOperator::LESS_OR_EQUAL;
+	bound := object TimeValue{
+		value := object LiteralExpression{
+			value := '0';
+		};
+	};
+}
+

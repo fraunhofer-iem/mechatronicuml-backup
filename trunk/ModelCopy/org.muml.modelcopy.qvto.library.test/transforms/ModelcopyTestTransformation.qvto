@@ -1,0 +1,20 @@
+transformation ModelcopyTestTransformation(in i : ecore, out o : ecore);
+
+import ModelcopyLibrary;
+
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
+
+
+main() {
+	i.rootObjects()[RootNode].map transform();
+}
+
+
+
+
+mapping RootNode::create() : EObject {
+	init {
+		result := new RootNode().oclAsType(EObject);
+	}
+}

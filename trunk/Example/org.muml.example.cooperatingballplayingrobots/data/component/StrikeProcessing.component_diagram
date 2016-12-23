@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component="http://www.muml.org/pim/component/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_0g2JAGt7EeWbqKMK2So3OQ" type="Component" name="StrikeProcessing.component_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_0g2wEGt7EeWbqKMK2So3OQ" type="2006" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_0g3XIGt7EeWbqKMK2So3OQ" type="5028"/>
+    <element xmi:type="component:StaticAtomicComponent" href="../cooperatingballplayingrobots.muml#_MOsUgZe6EeKVX6r_GEFobQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0g2wEWt7EeWbqKMK2So3OQ" x="45" y="15" width="196" height="91"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_0g2JAWt7EeWbqKMK2So3OQ"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../cooperatingballplayingrobots.muml#_rwtbsJe4EeKIIefjcfllxA"/>
+</notation:Diagram>

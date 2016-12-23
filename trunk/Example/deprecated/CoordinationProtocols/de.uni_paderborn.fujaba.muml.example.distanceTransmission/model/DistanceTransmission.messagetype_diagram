@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_9p6R0JGCEeO3l_POQaehVg" type="Message Type" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_AAoRkJGDEeO3l_POQaehVg" type="2008" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_AAoRkpGDEeO3l_POQaehVg" type="5017"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_AAoRk5GDEeO3l_POQaehVg" type="7010">
+      <children xmi:type="notation:Shape" xmi:id="_CZRj8JGDEeO3l_POQaehVg" type="3007" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_CZRj8pGDEeO3l_POQaehVg" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_CZRj85GDEeO3l_POQaehVg" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_CZRj9JGDEeO3l_POQaehVg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_CZRj9ZGDEeO3l_POQaehVg"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="DistanceTransmission.fujaba#_CY04AJGDEeO3l_POQaehVg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CZRj8ZGDEeO3l_POQaehVg"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_KGThEJGDEeO3l_POQaehVg" type="3007" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_KGThEpGDEeO3l_POQaehVg" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_KGThE5GDEeO3l_POQaehVg" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_KGThFJGDEeO3l_POQaehVg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_KGThFZGDEeO3l_POQaehVg"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="DistanceTransmission.fujaba#_KGKXIJGDEeO3l_POQaehVg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KGThEZGDEeO3l_POQaehVg"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_AAoRlJGDEeO3l_POQaehVg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_AAoRlZGDEeO3l_POQaehVg"/>
+    </children>
+    <element xmi:type="msgtype:MessageTypeRepository" href="DistanceTransmission.fujaba#__-GiAJGCEeO3l_POQaehVg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AAoRkZGDEeO3l_POQaehVg" x="115" y="63"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_9p6R0ZGCEeO3l_POQaehVg"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="DistanceTransmission.fujaba#_9obEEJGCEeO3l_POQaehVg"/>
+</notation:Diagram>

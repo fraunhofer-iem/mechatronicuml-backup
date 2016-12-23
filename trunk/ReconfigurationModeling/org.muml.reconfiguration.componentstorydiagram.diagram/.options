@@ -1,0 +1,7 @@
+# Tracing options for the org.muml.reconfiguration.componentstorydiagram.diagram plug-in
+
+# Common issues
+org.muml.reconfiguration.componentstorydiagram.diagram/debug=false
+
+# Visual IDs
+org.muml.reconfiguration.componentstorydiagram.diagram/debug/visualID=false

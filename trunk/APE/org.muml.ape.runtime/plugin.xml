@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="propertyEditors" name="Property Editor Registration" schema="schema/propertyEditors.exsd"/>
+   <extension-point id="metamodelContributor" name="Metamodel Contributor" schema="schema/metamodelContributor.exsd"/>
+   <extension-point id="creationConstraintContributor" name="Creation Constraint Contributor" schema="schema/creationConstraintContributor.exsd"/>
+
+</plugin>

@@ -1,0 +1,42 @@
+
+
+Komfortfunktion:
+Bei angezeigten Fehlern könnten in den Properties die betreffenden Stellen markiert sein.
+
+Appearance aus den Properties schmeißen!
+
+Bei den einzelnen Punkten noch die erwarteten Datentypen angeben! Und dies auch bei der Fehlermeldung berücksichtigen.
+Beispiel:
+minDelay bei einem Connector: Das Feld lässt sich auch mit Text füllen. Dieser wird zwar rot unterstrichen. Eine Rückmeldung warum der eingetragene Wert falsch ist wird aber nicht 
+gegeben. Auch die Fehlermeldung an dem Connector im Diagramm besagt lediglich, dass die Angabe des minDelay fehlt.
+
+Allgemein in den Properties die Reihenfolge der einzelnen Items überdenken. Dabei vlt. auch thematisch gruppieren. Beispiel bei den Properties einer Role:
+
+erstes Item ist "Connectors", was in den Properties eigtl. nicht geändert wird, also sollte es ganz nach unten kommen. Sowas wie "Name" sollte da schon eher an erster
+Stelle stehen..
+
+Funktionen, dass man mit Rechtsklick auf einen Port direkt eine neue Statechart anlegen kann und diese im Port als Behavior gesetzt wird.
+
+An Stellen, wo man Parameter neu erstellen kann, sollte es auch möglich sein, dass falls es einen gewissen Datentyp noch nicht gibt, dieser an der Stelle noch angegeben werden kann.
+
+
+
+Wichtige Komfortfunktionen:
+Immer noch nicht nachvollziehbare Fehlermeldungen!
+
+
+Slash sollte bei Transitionen immer angezeigt werden, sobald an ihnen auch nur ein MessageEvent ist, da sonst nicht klar ist, ob dieses konsumiert oder produziert wird.
+
+
+Fehlende Funktionalität
+
+In der neuen Properties View gibt es keine Möglichkeit, die Message Types an Transitionen festzulegen. Das geht nur in den "alten" Properties, die unter dem Reiter "Advanced" zu
+finden sind.  (glaube das stimmt nicht!!)
+
+Bug in den Properties: Es werden bei der Bearbeitung von den Properties "null" Werte gesetzt, nur weil man Reiter öffnet. Beispiel: Ich öffne den Channel Reiter an einer 
+Transition. Dadurch wird ein channel "null!" an die Transition geschrieben.
+
+Häufiger Nullpointer -> beispielsweise beim Öffnen von bereits existierender MessageEvents an Transitionen
+
+Bei der Erstelleung eines ArrayTypes wird die Größe des Arrays festgelegt. Die Größe sollte aber erst beim Erstellen einer Variable dieses Typs erstellt werden. Ansonsten würde man für 
+ein Array unendlich viele Arraytypen anlegen müssen, für jede Größe eins.

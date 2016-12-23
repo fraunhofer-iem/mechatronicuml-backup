@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm/src"
+    modelPluginID="org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm" modelName="SDMReachabilityAnalysis"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
+    usedGenPackages="../../org.muml.core/model/core.genmodel#//core platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.muml.core.reachanalysis.reachabilitygraph/model/ReachabilityAnalysisCore.genmodel#//reachabilitygraph ../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram">
+  <foreignModel>SDMReachabilityAnalysis.ecore</foreignModel>
+  <genPackages prefix="Sdm" basePackage="org.muml.storydiagram.reachanalysis.reachabilitygraph"
+      disposableProviderFactory="true" ecorePackage="SDMReachabilityAnalysis.ecore#/">
+    <genClasses ecoreClass="SDMReachabilityAnalysis.ecore#//StepGraph">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SDMReachabilityAnalysis.ecore#//StepGraph/changeableNodes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SDMReachabilityAnalysis.ecore#//StepGraph/contains"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference SDMReachabilityAnalysis.ecore#//StepGraph/unchangeableNodes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SDMReachabilityAnalysis.ecore#//StepGraph/containedNodes"/>
+    </genClasses>
+    <genClasses ecoreClass="SDMReachabilityAnalysis.ecore#//SDMTransition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SDMReachabilityAnalysis.ecore#//SDMTransition/index"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SDMReachabilityAnalysis.ecore#//SDMTransition/appliedActivity"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SDMReachabilityAnalysis.ecore#//SDMTransition/matching"/>
+    </genClasses>
+    <genClasses ecoreClass="SDMReachabilityAnalysis.ecore#//IndexEntry">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SDMReachabilityAnalysis.ecore#//IndexEntry/key"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SDMReachabilityAnalysis.ecore#//IndexEntry/value"/>
+    </genClasses>
+    <genClasses ecoreClass="SDMReachabilityAnalysis.ecore#//SuccessorStepGraphs">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SDMReachabilityAnalysis.ecore#//SuccessorStepGraphs/successors"/>
+    </genClasses>
+    <genClasses ecoreClass="SDMReachabilityAnalysis.ecore#//GraphTransformationSystem">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SDMReachabilityAnalysis.ecore#//GraphTransformationSystem/activities"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SDMReachabilityAnalysis.ecore#//GraphTransformationSystem/unchangeableNodes"/>
+    </genClasses>
+    <genClasses ecoreClass="SDMReachabilityAnalysis.ecore#//SDMReachabilityGraph">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SDMReachabilityAnalysis.ecore#//SDMReachabilityGraph/unchangeableNodes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SDMReachabilityAnalysis.ecore#//SDMReachabilityGraph/containedUnchangeableNodes"/>
+    </genClasses>
+    <genClasses ecoreClass="SDMReachabilityAnalysis.ecore#//MatchingEntry">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SDMReachabilityAnalysis.ecore#//MatchingEntry/key"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SDMReachabilityAnalysis.ecore#//MatchingEntry/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

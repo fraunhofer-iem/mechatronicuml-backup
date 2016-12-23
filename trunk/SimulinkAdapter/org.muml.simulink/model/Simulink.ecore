@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="simulink" nsURI="http://www.muml.org/simulink/1.0.0" nsPrefix="simulink">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="Block" abstract="true" eSuperTypes="#//Element">
+    <eOperations name="getFullyQualifiedName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="&#xA;&#x9;&#x9;&#x9;&#x9;if self.parent.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;self.name&#xA;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;self.parent.getFullyQualifiedName().concat('/').concat(self.name)&#xA;&#x9;&#x9;&#x9;&#x9;endif"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//SubSystem"
+        eOpposite="#//SubSystem/blocks"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outPorts" upperBound="-1"
+        eType="#//OutPortBlock" changeable="false" containment="true" eOpposite="#//OutPortBlock/block"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inPorts" upperBound="-1"
+        eType="#//InPortBlock" changeable="false" containment="true" eOpposite="#//InPortBlock/block"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incomingLines" upperBound="-1"
+        eType="#//Line" eOpposite="#//Line/targetBlock"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingLines" upperBound="-1"
+        eType="#//Line" eOpposite="#//Line/sourceBlock"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SimulinkModel" eSuperTypes="#//SimulinkFile">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="root" eType="#//SimulinkContainer"
+        eOpposite="#//SimulinkContainer/models"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Element" abstract="true">
+    <eOperations name="getParameter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="&#xA;&#x9;&#x9;&#x9;&#x9;if self.parameters->select(p| p.name = name)->size() > 0 then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;self.parameters->select(p| p.name = name)->first().value&#xA;&#x9;&#x9;&#x9;&#x9;else &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;null&#xA;&#x9;&#x9;&#x9;&#x9;endif"/>
+      </eAnnotations>
+      <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="#//Parameter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="" iD="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Line" eSuperTypes="#//Element">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourcePort" lowerBound="1"
+        eType="#//OutPortBlock"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetPort" lowerBound="1"
+        eType="#//InPortBlock"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceBlock" lowerBound="1"
+        eType="#//Block" eOpposite="#//Block/outgoingLines"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetBlock" lowerBound="1"
+        eType="#//Block" eOpposite="#//Block/incomingLines"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bus" eType="#//Bus"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Parameter">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ParameterType"
+        defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SubSystem" eSuperTypes="#//Block">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="NoPortsInBlocks InPortInSubSystemNeedsOutPort OutPortInSubSystemNeedsInPort onlySingleTriggerPort onlySingleEnablePort"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="NoPortsInBlocks" value="&#xA;&#x9;&#x9;&#x9;self.blocks->forAll(p| not p.oclIsTypeOf(InPortBlock) and not p.oclIsTypeOf(OutPortBlock))"/>
+      <details key="InPortInSubSystemNeedsOutPort" value="self.inPorts->select(p| p.oclIsTypeOf(InPortBlock))->forAll(p| p.outPorts->size() = 1)"/>
+      <details key="OutPortInSubSystemNeedsInPort" value="&#xA;&#x9;&#x9;&#x9;self.outPorts->forAll(p| p.inPorts->size() = 1)"/>
+      <details key="onlySingleTriggerPort" value="self.inPorts->select(p|p.oclIsTypeOf(TriggerPort))->size() &lt;= 1"/>
+      <details key="onlySingleEnablePort" value="self.inPorts->select(p|p.oclIsTypeOf(EnablePort))->size() &lt;= 1"/>
+    </eAnnotations>
+    <eOperations name="getBlockByName" eType="#//Block">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="if(name.isEmpty())&#xA;&#x9;return this;&#xA;int firstSlash = name.indexOf(&quot;/&quot;);&#xA;&#xA;if(firstSlash != -1)&#xA;{&#xA;&#x9;final String rootName = name.substring(0, firstSlash);&#xA;&#x9;final String childName = name.substring(firstSlash+1);&#xA;&#x9;Block root = this.getBlockByName(rootName);&#xA;&#x9;if(root instanceof SubSystem)&#xA;&#x9;&#x9;return ((SubSystem)root).getBlockByName(childName);&#xA;}&#xA;else&#xA;&#x9;for(Block block: this.getAllBlocks())&#xA;&#x9;&#x9;if(name.equals(block.getName()))&#xA;&#x9;&#x9;&#x9;return block;&#xA;return null;"/>
+      </eAnnotations>
+      <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lines" ordered="false"
+        upperBound="-1" eType="#//Line" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="blocks" upperBound="-1"
+        eType="#//Block" containment="true" eOpposite="#//Block/parent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subSystems" upperBound="-1"
+        eType="#//SubSystem" changeable="false" derived="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value=""/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="self.blocks->select(b | b.oclIsTypeOf(SubSystem))->collect(b | b.oclAsType(SubSystem))->asOrderedSet()"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allBlocks" upperBound="-1"
+        eType="#//Block" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="allBlacks = blocks  + inPorts + outPorts"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="self.blocks->union(self.inPorts)->union(self.outPorts)->asOrderedSet()"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InPortBlock" eSuperTypes="#//PortBlock">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="block" lowerBound="1" eType="#//Block"
+        eOpposite="#//Block/inPorts"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EmbeddedMatlabFunction" eSuperTypes="#//Block">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value=""/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MiscBlock" eSuperTypes="#//Block">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="mustHaveType"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="mustHaveType" value="not self.type.oclIsUndefined()"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SimulinkContainer" eSuperTypes="#//Element">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="models" upperBound="-1"
+        eType="#//SimulinkModel" containment="true" eOpposite="#//SimulinkModel/root"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="libraries" upperBound="-1"
+        eType="#//SimulinkLibrary" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SimulinkLibrary" eSuperTypes="#//SimulinkFile"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LibraryReference" eSuperTypes="#//Block">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="noReferenceToAnEmptySubBlock referenceNeedsName"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="noReferenceToAnEmptySubBlock" value="&#xA;&#x9;&#x9;&#x9;self.sourceBlock.oclIsTypeOf(SubSystem) implies self.sourceBlock.oclAsType(SubSystem).allBlocks->size() > 0"/>
+      <details key="referenceNeedsName" value="self.sourceBlock.name &lt;> null and self.sourceBlock.name.size() > 0"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceBlock" lowerBound="1"
+        eType="#//Block"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SimulinkFile" abstract="true" eSuperTypes="#//SubSystem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stateflowMachine" eType="#//stateflow/StateflowMachine"
+        containment="true" eOpposite="#//stateflow/StateflowMachine/model"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="buses" upperBound="-1"
+        eType="#//Bus" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="ParameterType" instanceTypeName="T"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OutPortBlock" eSuperTypes="#//PortBlock">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="block" lowerBound="1" eType="#//Block"
+        eOpposite="#//Block/outPorts"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ChartBlock" eSuperTypes="#//Block">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="chart" lowerBound="1" eType="#//stateflow/Chart"
+        eOpposite="#//stateflow/Chart/block"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Bus" eSuperTypes="#//Element">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="busNeedsName" value="not self.name.oclIsUndefined() and self.name.size() > 0"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="busNeedsName"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//BusElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BusCreator" eSuperTypes="#//Block">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="oneOutPort"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="oneOutPort" value="self.outPorts->size() = 1"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bus" eType="#//Bus" changeable="false"
+        derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="self.outgoingLines->first().bus"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BusSelector" eSuperTypes="#//Block">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="oneInPort" value="self.inPorts->size() = 1"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="oneInPort"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bus" eType="#//Bus" changeable="false"
+        derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="self.incomingLines->first().bus"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PortBlock" eSuperTypes="#//Block">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dimensions" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//DataType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="initialCondition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UnitDelay" eSuperTypes="#//Block">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="unitDelayNeedsExactlyOneInportAndOneOutport"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="unitDelayNeedsExactlyOneInportAndOneOutport" value="self.inPorts->size() = 1 and self.outPorts->size() = 1"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DigitalClock" eSuperTypes="#//Block">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="digitalClockNeedsExactlyOneOutport"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="digitalClockNeedsExactlyOneOutport" value="self.outPorts->size() = 1"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sampleTime" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble" defaultValueLiteral="1.0"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DataType">
+    <eLiterals name="INHERIT" literal="Inherit: Same as Simulink">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Same as Simulink"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="DOUBLE" value="1" literal="double"/>
+    <eLiterals name="SINGLE" value="2" literal="single"/>
+    <eLiterals name="INT32" value="3" literal="int32"/>
+    <eLiterals name="INT16" value="4" literal="int16"/>
+    <eLiterals name="INT8" value="5" literal="int8"/>
+    <eLiterals name="UINT32" value="6" literal="uint32"/>
+    <eLiterals name="UINT16" value="7" literal="uint16"/>
+    <eLiterals name="UINT8" value="8" literal="uint8"/>
+    <eLiterals name="BOOLEAN" value="9" literal="boolean"/>
+    <eLiterals name="BUS" value="10" literal="Bus"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Constant" eSuperTypes="#//Block">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//DataType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TriggerPort" eSuperTypes="#//InPortBlock">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="triggerInput" lowerBound="1"
+        eType="#//TriggerEvent" defaultValueLiteral="rising"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TriggerEvent">
+    <eLiterals name="Rising" literal="rising"/>
+    <eLiterals name="Falling" value="1" literal="falling"/>
+    <eLiterals name="Either" value="2" literal="either"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnablePort" eSuperTypes="#//InPortBlock"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BusElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dimensions" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//DataType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bus" eType="#//Bus"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ZeroOrderHold" eSuperTypes="#//Block">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sampleTime" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eSubpackages name="stateflow" nsURI="http://www.muml.org/simulink/stateflow/1.0.0"
+      nsPrefix="stateflow">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </eAnnotations>
+    <eClassifiers xsi:type="ecore:EClass" name="StateflowMachine" eSuperTypes="#//stateflow/StateflowElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="charts" lowerBound="1"
+          upperBound="-1" eType="#//stateflow/Chart" containment="true" eOpposite="#//stateflow/Chart/machine"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="model" lowerBound="1"
+          eType="#//SimulinkFile" eOpposite="#//SimulinkFile/stateflowMachine"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Chart" eSuperTypes="#//stateflow/State">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="chartBlockPortSync"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="chartBlockPortSync" value="not self.block.oclIsUndefined() implies &#xA;&#x9;self.input->forAll(i| self.block.inPorts->exists(name= i.name)) and &#xA;&#x9;self.output->forAll(o| self.block.outPorts->exists(name= o.name)) and&#xA;&#x9;self.input->size() = self.block.inPorts->size() and&#xA;&#x9;self.output->size() = self.block.outPorts->size()"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="machine" lowerBound="1"
+          eType="#//stateflow/StateflowMachine" eOpposite="#//stateflow/StateflowMachine/charts"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="output" upperBound="-1"
+          eType="#//stateflow/Data" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="input" upperBound="-1"
+          eType="#//stateflow/Data" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="block" eType="#//ChartBlock"
+          eOpposite="#//ChartBlock/chart"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StateflowElement" eSuperTypes="#//Element"/>
+    <eClassifiers xsi:type="ecore:EClass" name="State" eSuperTypes="#//stateflow/Node">
+      <eOperations name="getSubState" eType="#//stateflow/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="body" value="self.nodes->select(n| n.oclIsTypeOf(State) and n.oclAsType(State).name = name)->append(null)->first().oclAsType(State)"/>
+        </eAnnotations>
+        <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="subStateType" eType="#//stateflow/SubStateType"
+          defaultValueLiteral="EXCLUSIVE"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" upperBound="-1"
+          eType="#//stateflow/Node" containment="true" eOpposite="#//stateflow/Node/parent"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="transitions" upperBound="-1"
+          eType="#//stateflow/Transition" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="events" upperBound="-1"
+          eType="#//stateflow/Event" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="initial" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="embeddedFunctions" upperBound="-1"
+          eType="#//stateflow/EmbeddedFunction" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="entryAction" upperBound="-1"
+          eType="#//stateflow/Action" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="exitAction" upperBound="-1"
+          eType="#//stateflow/Action" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="duringAction" upperBound="-1"
+          eType="#//stateflow/Action" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="local" upperBound="-1"
+          eType="#//stateflow/Data" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="constant" upperBound="-1"
+          eType="#//stateflow/Data" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="initial_guard" upperBound="-1"
+          eType="#//stateflow/Action" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Transition" eSuperTypes="#//stateflow/StateflowElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//stateflow/Node"
+          eOpposite="#//stateflow/Node/outgoing"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//stateflow/Node"
+          eOpposite="#//stateflow/Node/incoming"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+          defaultValueLiteral="0"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="event" eType="#//stateflow/Event"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="guard" upperBound="-1"
+          eType="#//stateflow/Action" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="action" upperBound="-1"
+          eType="#//stateflow/Action" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Junction" eSuperTypes="#//stateflow/Node"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Node" abstract="true" eSuperTypes="#//stateflow/StateflowElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//stateflow/State"
+          eOpposite="#//stateflow/State/nodes"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="incoming" upperBound="-1"
+          eType="#//stateflow/Transition" eOpposite="#//stateflow/Transition/target"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="outgoing" upperBound="-1"
+          eType="#//stateflow/Transition" eOpposite="#//stateflow/Transition/source"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="SubStateType">
+      <eLiterals name="EXCLUSIVE"/>
+      <eLiterals name="PARALLEL" value="1"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Event" eSuperTypes="#//stateflow/StateflowElement">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="History" eSuperTypes="#//stateflow/Node"/>
+    <eClassifiers xsi:type="ecore:EClass" name="EmbeddedFunction" eSuperTypes="#//stateflow/StateflowElement">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="input" upperBound="-1"
+          eType="#//stateflow/Data" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="output" upperBound="-1"
+          eType="#//stateflow/Data" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="local" upperBound="-1"
+          eType="#//stateflow/Data" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="constant" upperBound="-1"
+          eType="#//stateflow/Data" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="#//stateflow/StateflowElement">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="expression" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral=""/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Data" eSuperTypes="#//stateflow/StateflowElement">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//DataType"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Initial or constant value"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="msglib" nsURI="http://www.muml.org/simulink/msglib/1.0.0" nsPrefix="msglib">
+    <eClassifiers xsi:type="ecore:EClass" name="CommunicationSwitch" eSuperTypes="#//Block">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="debug" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="0"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="LinkLayer" eSuperTypes="#//Block">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A LinkLayer needs to have the following ports:&#xA;InPortBlocks:&#xA;1. port_in&#xA;2. net_address&#xA;3. receiver_net_address&#xA;4. read_event_queue_in&#xA;5. read_event_param_queue_in&#xA;6. read_event_queue_out&#xA;7. read_event_param_queue_out&#xA;&#xA;OutPortBlocks:&#xA;1. port_out&#xA;2. write_event_queue_in&#xA;3. write_event_param_queue_in&#xA;4. write_event_queue_out&#xA;5. write_event_param_queue_out"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="delayMin" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="2">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Minimal delay for every message. The attribute is a string,&#xD;&#xA;because it is defined as an expression in MechatronicUML."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="delayMax" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="100">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Maximal delay for every message. If a message needed more time than&#xD;&#xA;the maximal delay to be transmitted, it is dropped. The attribute is a string,&#xD;&#xA;because it is defined as an expression in MechatronicUML."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="messageLossProbability"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+          defaultValueLiteral="0">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The probability for a message to be lost. [0, 100]"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="messageRetransmission"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="false">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="If a message loss is detected, whether it should be sent again or not."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="bufferOverflowPossible"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Whether buffer overflows are desired/possible or not."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="bufferSize" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="10"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceBufferSize" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="10"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="messageMapping" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="[1 1; 2 1]"/>
+    </eClassifiers>
+    <eSubpackages name="buffer" nsURI="http://www.muml.org/simulink/msglib/buffer/1.0.0"
+        nsPrefix="buffer">
+      <eClassifiers xsi:type="ecore:EClass" name="Enqueue" eSuperTypes="#//msglib/buffer/BufferFunction"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Dequeue" eSuperTypes="#//msglib/buffer/BufferFunction"/>
+      <eClassifiers xsi:type="ecore:EClass" name="CheckQueue" eSuperTypes="#//msglib/buffer/BufferFunction"/>
+      <eClassifiers xsi:type="ecore:EClass" name="SharedEnqueue" eSuperTypes="#//msglib/buffer/BufferFunction"/>
+      <eClassifiers xsi:type="ecore:EClass" name="SharedDequeue" eSuperTypes="#//msglib/buffer/BufferFunction"/>
+      <eClassifiers xsi:type="ecore:EClass" name="SharedCheckQueue" eSuperTypes="#//msglib/buffer/BufferFunction"/>
+      <eClassifiers xsi:type="ecore:EClass" name="BufferFunction" eSuperTypes="#//stateflow/EmbeddedFunction">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="bufferSize" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="10"/>
+      </eClassifiers>
+    </eSubpackages>
+  </eSubpackages>
+  <eSubpackages name="reconfiguration" nsURI="http://www.muml.org/simulink/reconfiguration/1.0.0"
+      nsPrefix="reconfiguration">
+    <eClassifiers xsi:type="ecore:EClass" name="MultiTargetControl" eSuperTypes="#//Block"/>
+    <eClassifiers xsi:type="ecore:EClass" name="MultiSourceControl" eSuperTypes="#//Block"/>
+    <eClassifiers xsi:type="ecore:EClass" name="FadingComponent" eSuperTypes="#//Block">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="time" lowerBound="1"
+          upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>

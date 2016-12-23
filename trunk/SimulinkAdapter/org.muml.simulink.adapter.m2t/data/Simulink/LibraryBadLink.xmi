@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ASCII"?>
+<model:SimulinkContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://www.muml.org/simulink/1.0.0">
+  <models name="LibraryReferences">
+    <blocks xsi:type="model:LibraryReference" sourceBlock="//@libraries.0/@blocks.0"/>
+    <blocks xsi:type="model:LibraryReference" sourceBlock="//@libraries.0/@blocks.1"/>
+    <blocks xsi:type="model:LibraryReference" sourceBlock="//@libraries.0/@blocks.2"/>
+    <blocks xsi:type="model:LibraryReference" sourceBlock="//@libraries.0/@blocks.3"/>
+  </models>
+  <libraries name="ComponentLibrary">
+    <blocks xsi:type="model:SubSystem" name="atom_comp_01"/>
+    <blocks xsi:type="model:SubSystem" name="atom_comp_02"/>
+    <blocks xsi:type="model:SubSystem" name="struct_comp_inst_01"/>
+    <blocks xsi:type="model:SubSystem" name="struct_comp_inst_02"/>
+  </libraries>
+</model:SimulinkContainer>

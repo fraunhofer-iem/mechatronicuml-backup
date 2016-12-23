@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.muml.example.ttccarplatooning;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: de.uni_paderborn.fujaba.muml.reachanalysis.example.ttccarplatooning.test,
+ org.muml.example.storydiagram.reachanalysis.ttccarplatooning,
+ org.muml.example.storydiagram.reachanalysis.ttccarplatooning.impl,
+ org.muml.example.storydiagram.reachanalysis.ttccarplatooning.util
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.muml.core.reachanalysis.reachabilitygraph;visibility:=reexport,
+ org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm,
+ org.muml.core.reachanalysis.core,
+ org.muml.storydiagram.reachanalysis.sdm,
+ org.muml.core,
+ org.junit;bundle-version="4.10.0"
+Bundle-ActivationPolicy: lazy

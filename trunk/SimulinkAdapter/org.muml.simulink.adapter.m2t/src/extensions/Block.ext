@@ -1,0 +1,50 @@
+import simulink;
+
+extension org::eclipse::xtend::util::stdlib::counter;
+extension org::eclipse::xtend::util::stdlib::elementprops;
+
+String getBlockType(Block block) : 
+	if InPortBlock.isInstance(block) then 
+		'Inport'
+	else if OutPortBlock.isInstance(block) then 
+		'Outport'
+	else if SubSystem.isInstance(block) then 
+		'SubSystem'
+	else if LibraryReference.isInstance(block) then
+		'Reference'
+	else if BusCreator.isInstance(block) then
+		'BusCreator'
+	else if BusSelector.isInstance(block) then
+		'BusSelector'				
+	else if MiscBlock.isInstance(block) then
+		((MiscBlock)block).type 	
+	else if block.parameters.select(p| p.name == 'BlockType').size > 0 then
+		block.parameters.select(p| p.name == 'BlockType').first().value
+	else block.metaType.name.split('::').last();
+
+
+
+String getName(Block block) :
+	if block.name != null && block.name.length > 0 then
+		block.name
+	/*Name defined in m2t?*/
+	else if getProperty(block, 'Name') != null then
+		getProperty(block, 'Name')
+	/*Define a name*/
+	else
+		setProperty(block, 'Name', getBlockType(block) + counterInc(getBlockType(block) + block.parent.toString()))
+		-> block.getName();
+		
+SimulinkFile getModel(Block block):
+	if block.parent == null && SimulinkFile.isInstance(block) then
+		block
+	else
+		block.parent.getModel();
+	
+String getQualifiedName(Block block):
+	if block.parent == null then
+		block.name
+	else if SimulinkFile.isInstance(block.parent) then
+		block.name
+	else
+		block.parent.getQualifiedName() + '/' + block.name;

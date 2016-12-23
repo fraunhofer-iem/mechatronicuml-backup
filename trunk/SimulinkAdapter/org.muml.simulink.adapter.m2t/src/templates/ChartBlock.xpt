@@ -1,0 +1,10 @@
+«IMPORT simulink»
+
+«EXTENSION extensions::Element»
+«EXTENSION extensions::Block»
+
+«DEFINE chartBlock FOR ChartBlock»
+«EXPAND StateflowLink::stateflowLink(this.getModel().stateflowMachine.charts.indexOf(this.chart)+1,
+									"Stateflow diagram", 
+									"plot(sf('Private','sfblk','xIcon'),sf('Private','sfblk','yIcon'));text(0.5,0,sf('Private', 'sfblk', 'tIcon'),'HorizontalAl','Center','VerticalAl','Bottom');") FOR (Block)this-»
+«ENDDEFINE»

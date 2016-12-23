@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.muml.uppaal.adapter.buckminster"
+      label="Buckminster"
+      version="1.0.0.qualifier">
+
+   <description>
+      [Enter Feature Description here.]
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <includes
+         id="org.muml.uppaal.adapter.sdk.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.muml.uppaal.adapter.feature"
+         version="0.0.0"/>
+
+   <requires>
+      <import plugin="org.muml.uppaal.adapter.mtctl.xtext"/>
+      <import plugin="org.muml.uppaal.adapter.mtctl.xtext.ui"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.xtext.junit4"/>
+      <import plugin="org.muml.uppaal.adapter.mtctl"/>
+      <import plugin="org.muml.pim" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.apache.log4j"/>
+      <import plugin="org.junit"/>
+      <import plugin="org.hamcrest.core"/>
+   </requires>
+
+   <plugin
+         id="org.muml.uppaal.adapter.mtctl.xtext.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.muml.uppaal.adapter.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.muml.uppaal.adapter.junit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

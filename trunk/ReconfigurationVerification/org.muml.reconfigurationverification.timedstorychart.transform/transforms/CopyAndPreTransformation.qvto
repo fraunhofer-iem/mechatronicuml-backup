@@ -1,0 +1,498 @@
+import preTransformation;
+
+modeltype expressions uses core::expressions('http://www.muml.org/core/1.0.0');
+modeltype commonexpressions uses core::expressions::common('http://www.muml.org/core/1.0.0');
+
+modeltype rtsc uses pim::realtimestatechart("http://www.muml.org/pim/1.0.0");
+modeltype mumlBehavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype protocol uses pim::protocol("http://www.muml.org/pim/1.0.0");
+modeltype valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype connector uses pim::connector("http://www.muml.org/pim/1.0.0");
+modeltype component uses pim::component("http://www.muml.org/pim/1.0.0");
+modeltype datatypes uses pim::types('http://www.muml.org/pim/1.0.0');
+
+modeltype transformationHelper uses "http://www.muml.org/reconfigurationverification/timedstorychart/transform/helper/1.0.0";
+
+modeltype actionlanguage uses actionlanguage('http://www.muml.org/pim/actionlanguage/1.0.0');
+
+modeltype reconfigurationExpressions uses reconfiguration::expression('http://www.muml.org/reconfiguration/1.0.0');
+
+modeltype activities uses storydiagrams::activities('http://www.muml.org/storydiagram/1.0.0');
+modeltype calls uses storydiagrams::calls('http://www.muml.org/storydiagram/1.0.0');
+
+modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+
+-- this transformation copies the input model for the TSC transformation and calls the preTransformation
+transformation CopyAndPreTransformation(in input : transformationHelper, out copy : transformationHelper)
+access transformation preTransformation(inout transformationHelper) 
+;
+
+-- TODO: 
+--   - #1: consider Entry- and ExitPoints of a statechart
+
+main() {
+	-- copy input model
+	copy := input.objects()[TSCTransformationInput]->map transformationInput().oclAsType(transformationHelper)->any(true);
+	
+	-- call preTransformation
+	var preTrans := new preTransformation(copy);
+	preTrans.transform();
+
+}
+
+mapping TSCTransformationInput::transformationInput() : TSCTransformationInput{
+	_connector := self.connector . map copyConnector(); 		
+}
+
+mapping Connector::copyConnector() : Connector 
+disjuncts AssemblyConnector::copyAssemblyConnector, RoleConnector::copyRoleConnector
+{}
+
+mapping AssemblyConnector::copyAssemblyConnector() : AssemblyConnector 
+when{self.oclIsTypeOf(AssemblyConnector)}{
+	connectorEndpoints := self.connectorEndpoints -> map copyEndpoints();
+}
+
+mapping RoleConnector::copyRoleConnector() : RoleConnector 
+when{self.oclIsTypeOf(RoleConnector)}{
+	coordinationProtocol := self.coordinationProtocol.oclAsType(CoordinationProtocol) . map copyCoordinationProtocol();
+	connectorQualityOfServiceAssumptions := self.connectorQualityOfServiceAssumptions . map copyQoS(); 
+	connectorEndpoints := self.connectorEndpoints -> resolveIn(Role::copyRole, Role);
+}
+
+mapping ConnectorQualityOfServiceAssumptions::copyQoS() : ConnectorQualityOfServiceAssumptions{
+	messageLossPossible := self.messageLossPossible;
+	minMessageDelay := self.minMessageDelay . map copyTimeValue();
+	maxMessageDelay := self.maxMessageDelay . map copyTimeValue();
+}
+
+mapping CoordinationProtocol::copyCoordinationProtocol() : CoordinationProtocol{
+	name := self.name;
+	roles := self.roles -> map copyRole();
+}
+
+mapping ConnectorEndpoint::copyEndpoints() : ConnectorEndpoint
+disjuncts Role::copyRole, DiscretePort::copyPort{}
+
+mapping DiscretePort::copyPort() : DiscretePort 
+when{self.oclIsTypeOf(DiscretePort)}	
+{
+	name := self.name;
+	cardinality := self.cardinality . map copyCardinality();
+ 
+	if (self.multiPort) then {
+		behavior := self.behavior.oclAsType(RealtimeStatechart) . map copyStatechart();
+		coordinatorBehavior := self.coordinatorBehavior. late resolveoneIn(RealtimeStatechart::copyStatechart,RealtimeStatechart);
+		subroleBehavior := self.subroleBehavior. late resolveoneIn(RealtimeStatechart::copyStatechart,RealtimeStatechart);
+	}
+	else{
+		behavior := self.behavior.oclAsType(RealtimeStatechart) . map copyStatechart();
+	}
+	endif;
+}
+
+mapping Role::copyRole() : Role 
+when{self.oclIsTypeOf(Role)}	
+{
+	name := self.name;
+	cardinality := self.cardinality . map copyCardinality();
+	
+	-- transfer message type; since they are not contained in the protocol, they do not need to be mapped but may be referenced in the original model
+	receiverMessageTypes := self.receiverMessageTypes;
+	senderMessageTypes := self.senderMessageTypes;
+	
+	receiverMessageBuffer := self.receiverMessageBuffer . map copyMessageBuffer();
+ 
+	if (self.multiRole) then {
+		behavior := self.behavior.oclAsType(RealtimeStatechart) . map copyStatechart();
+		coordinatorBehavior := self.coordinatorBehavior. late resolveoneIn(RealtimeStatechart::copyStatechart,RealtimeStatechart);
+		subroleBehavior := self.subroleBehavior. late resolveoneIn(RealtimeStatechart::copyStatechart,RealtimeStatechart);
+	}
+	else {
+		behavior := self.behavior.oclAsType(RealtimeStatechart) . map copyStatechart();
+	}
+	endif;
+}
+
+mapping MessageBuffer::copyMessageBuffer() : MessageBuffer{
+	bufferSize := self.bufferSize . map copyNaturalNumber();
+	
+	-- transfer message type; since they are not contained in the protocol, they do not need to be mapped but may be referenced in the original model
+	messageType := self.messageType;
+}
+
+mapping Cardinality::copyCardinality() : Cardinality {
+	lowerBound := self.lowerBound . map copyNaturalNumber();
+	upperBound := self.upperBound . map copyNaturalNumber();
+}
+
+mapping ConnectorQualityOfServiceAssumptions::copyConnectorQualityOfServiceAssumptions() : ConnectorQualityOfServiceAssumptions {
+	minMessageDelay := self.minMessageDelay . map copyTimeValue();
+	maxMessageDelay := self.maxMessageDelay . map copyTimeValue();
+	messageLossPossible := self.messageLossPossible;
+}
+
+mapping RealtimeStatechart::copyStatechart() : RealtimeStatechart{
+	log("CopyStatechart");
+	-- copy attributes
+	name := self.name;
+	--eventQueueSize := self.eventQueueSize;
+
+	
+	-- copy references
+	clocks += self.clocks -> map copyClock();
+	states += self.states -> map copyStates();
+	transitions += self.transitions -> map copyTransitions();
+	variables += self.variables -> map copyVariable();
+	operations += self.operations -> map copyOperation();
+}
+
+mapping Operation::copyOperation() : Operation {
+	name := self.name;
+	returnType := self.returnType;
+	parameters := self.parameters -> map copyParameter();
+	implementations := self.implementations -> map copyExpression();
+}
+
+mapping TypedNamedElement::copyTypedNamedElement() : TypedNamedElement 
+disjuncts Variable::copyVariable, Parameter::copyParameter 
+{}
+
+mapping Parameter::copyParameter() : Parameter 
+when{self.oclIsTypeOf(Parameter)}{
+	name := self.name;
+	dataType := self.dataType;
+}
+
+mapping Variable::copyVariable() : Variable 
+when{self.oclIsTypeOf(Variable)}{
+	name := self.name;
+	dataType := self.dataType;
+	if(not self.initializeExpression.oclIsUndefined()) then{
+		initializeExpression := self.initializeExpression . deepclone().oclAsType(Expression);
+	} else {
+		initializeExpression := self.createDefaultInitializeExpression();
+	} endif;
+}
+
+-- create an initialize expression that explicitly initializes a variable
+-- having a primitive data type with the implicit default value
+helper Variable::createDefaultInitializeExpression() : Expression{
+	if(self.dataType.oclIsKindOf(PrimitiveDataType)) then{
+		var primDataType : PrimitiveDataType := self.dataType.oclAsType(PrimitiveDataType);
+		
+		-- distinguish the different primitive types
+		if(primDataType.primitiveType = PrimitiveTypes::INT8 or
+		   primDataType.primitiveType = PrimitiveTypes::INT16 or
+		   primDataType.primitiveType = PrimitiveTypes::INT32 or
+		   primDataType.primitiveType = PrimitiveTypes::INT64) then{
+			return object LiteralExpression {
+				value := '0';
+			};
+		} else {
+			if(primDataType.primitiveType = PrimitiveTypes::BOOLEAN) then{
+				return object LiteralExpression {
+					value := 'false';
+				};
+			} else {
+				if(primDataType.primitiveType = PrimitiveTypes::DOUBLE) then{
+					return object LiteralExpression {
+						value := '0.0';
+					};
+				} endif;
+			} endif;
+		} endif;
+	} endif;
+	
+	return null;
+}
+
+mapping Clock::copyClock() : Clock{
+	name := self.name;
+}
+
+mapping State::copyStates() : State{
+	-- copy attributes
+	initial := self.initial;
+	final := self.final;
+	urgent := self.urgent;
+	name := self.name;
+	
+	--copy references
+	channels := self.channels -> map copySynchronizationChannels();
+	invariants := self.invariants -> map copyClockConstraint();
+	doEvent := self.doEvent . map copyDoEvent(); 
+	entryEvent := self.entryEvent . map copyEntryEvent(); 
+	exitEvent := self.exitEvent . map copyExitEvent(); 
+	embeddedRegions := self.embeddedRegions -> map copyRegion(); 
+}
+
+mapping Transition::copyTransitions() : Transition{
+	-- copy attributes
+	priority := self.priority;
+	blockable := self.blockable;
+
+	-- copy references
+	absoluteDeadlines := self.absoluteDeadlines -> map copyAbsoluteDeadline();
+	action := self.action . map copyAction();
+	clockConstraints := self.clockConstraints -> map copyClockConstraint();
+	clockResets := self.clockResets.resolve(Clock);
+	events := (self.events -> select(v : TransitionEvent | v.oclIsTypeOf(AsynchronousMessageEvent))).oclAsType(AsynchronousMessageEvent) -> map copyAsynchronousMessageEvent();
+	relativeDeadline := self.relativeDeadline . map copyRelativeDeadline();
+	result.source := self.source.resolveone(State);
+	result.target := self.target.resolveone(State);
+	synchronization := self.synchronization . map copySynchronization();	
+	guard := self.guard . map copyExpression();
+}
+
+mapping Region::copyRegion() : Region{
+	log("Copy region");
+	-- copy attributes
+	priority := self.priority;
+	
+	-- copy the statechart
+	embeddedStatechart := self.embeddedStatechart . map copyStatechart();
+}
+
+mapping SynchronizationChannel::copySynchronizationChannels() : SynchronizationChannel{
+	name := self.name;
+	selectorType := self.selectorType;
+}
+
+mapping Synchronization::copySynchronization() : Synchronization{
+	kind := self.kind;
+	
+	--callee
+	syncChannel := self.syncChannel.resolveone(SynchronizationChannel);
+	
+	-- selector expression
+	selectorExpression := self.selectorExpression.deepclone().oclAsType(Expression);
+}
+
+
+
+mapping ClockConstraint::copyClockConstraint() : ClockConstraint{
+	bound := self.bound . map copyTimeValue();
+	operator := self.operator;
+	clock := self.clock.resolveone(Clock);
+}
+
+mapping NaturalNumber::copyNaturalNumber() : NaturalNumber{
+	value := self.value;
+	infinity := self.infinity;
+}
+
+mapping DoEvent::copyDoEvent() : DoEvent{
+	period := self.period;
+	action := self.action . map copyAction();
+}
+
+
+mapping EntryEvent::copyEntryEvent() : EntryEvent{
+	clockResets := self.clockResets.resolve(Clock);
+	action := self.action . map copyAction();
+}
+
+mapping ExitEvent::copyExitEvent() : ExitEvent{
+	clockResets := self.clockResets.resolve(Clock);
+	action := self.action . map copyAction(); 
+}
+
+mapping Action::copyAction() : Action {
+	name := self.name;
+	result.expressions := self.expressions -> map copyExpression();
+}
+
+mapping AsynchronousMessageEvent::copyAsynchronousMessageEvent() : AsynchronousMessageEvent{
+	kind := self.kind;
+	message := self.message . map copyMessage();
+}
+
+mapping Message::copyMessage() : Message{
+	instanceOf := self.instanceOf;
+	parameterBinding := self.parameterBinding . map copyParameterBinding();
+}
+
+mapping mumlBehavior::ParameterBinding::copyParameterBinding() : mumlBehavior::ParameterBinding {
+	parameter := self.parameter;
+	value := self.value . map copyExpression();
+}
+
+mapping calls::ParameterBinding::copyParameterBinding(in newActivity : Activity) : calls::ParameterBinding {
+	valueExpression := self.valueExpression . map copyExpression();
+	parameter := newActivity.containedParameters -> any(name = self.parameter.name);
+}
+
+mapping AbsoluteDeadline::copyAbsoluteDeadline() : AbsoluteDeadline{
+	lowerBound := self.lowerBound . map copyTimeValue();
+	upperBound := self.upperBound . map copyTimeValue();
+	clock := self.clock.resolveone(Clock);
+}
+
+mapping RelativeDeadline::copyRelativeDeadline() : RelativeDeadline{
+	lowerBound := self.lowerBound . map copyTimeValue();
+	upperBound := self.upperBound . map copyTimeValue();
+}
+
+mapping TimeValue::copyTimeValue() : TimeValue {
+	value := self.value . deepclone().oclAsType(Expression);
+	unit := self.unit;
+}
+
+// **************** Copy EXPRESSIONS   ***************      /// 
+
+mapping Expression::copyExpression() : Expression 
+disjuncts // core::expressions / core::expressions::common
+			TextualExpression::copyTextualExpression, BinaryExpression::copyBinaryExpression, 
+			LiteralExpression::copyLiteralExpression, UnaryExpression::copyUnaryExpression, 
+		  // actionlanguage 
+		  	Assignment::copyAssignment, TypedNamedElementExpression::copyTypedNamedElementExpression, 
+		  	Block::copyBlock, DiscreteInteractionEndpointReference::copyDiscreteInteractionEndpointReference, 
+		  	Loop::copyLoop,OperationCall::copyOperationCall,ReturnStatement::copyReturnStatement,
+		  	TriggerMessageExpression::copyTriggerMessageExpression, ActivityCallExpression::copyActivityCallExpression
+{}
+
+
+// core::expressions / core::expressions::common
+
+mapping UnaryExpression::copyUnaryExpression() : UnaryExpression 
+when{self.oclIsTypeOf(UnaryExpression)}{
+	operator := self.operator;
+	enclosedExpression := self.enclosedExpression . map copyExpression();	
+}
+
+mapping LiteralExpression::copyLiteralExpression() : LiteralExpression 
+when{self.oclIsTypeOf(LiteralExpression)}{
+	init {
+		result := self.deepclone().oclAsType(LiteralExpression);
+	}
+}
+
+mapping TextualExpression::copyTextualExpression() : TextualExpression 
+when{self.oclIsTypeOf(TextualExpression)}{
+	init {
+		result := self.deepclone().oclAsType(TextualExpression);
+	}
+}
+
+mapping BinaryExpression::copyBinaryExpression() : BinaryExpression 
+disjuncts ArithmeticExpression::copyArithmeticExpression, ComparisonExpression::copyComparisonExpression, 
+		 	LogicalExpression::copyLogicalExpression
+when{self.oclIsKindOf(BinaryExpression)}		 	
+{}
+
+mapping ArithmeticExpression::copyArithmeticExpression() : ArithmeticExpression 
+when{self.oclIsTypeOf(ArithmeticExpression)}{
+	leftExpression := self.leftExpression . map copyExpression();
+	rightExpression := self.rightExpression . map copyExpression();
+	operator := self.operator;
+}
+
+mapping ComparisonExpression::copyComparisonExpression() : ComparisonExpression 
+when{self.oclIsTypeOf(ComparisonExpression)}{
+	leftExpression := self.leftExpression . map copyExpression();
+	rightExpression := self.rightExpression . map copyExpression();
+	operator := self.operator;
+}
+
+mapping LogicalExpression::copyLogicalExpression() : LogicalExpression 
+when{self.oclIsTypeOf(LogicalExpression)}{
+	leftExpression := self.leftExpression . map copyExpression();
+	rightExpression := self.rightExpression . map copyExpression();
+	operator := self.operator;
+}
+
+// actionlanguage
+
+mapping Assignment::copyAssignment() : Assignment 
+when{self.oclIsTypeOf(Assignment)}{
+	assignOperator := self.assignOperator;
+	incrementDecrementOperator := self.incrementDecrementOperator;
+	lhs_typedNamedElementExpression := self.lhs_typedNamedElementExpression . map copyTypedNamedElementExpression();
+	rhs_assignExpression := self.rhs_assignExpression . map copyExpression();
+}
+
+mapping Block::copyBlock() : Block 
+when{self.oclIsTypeOf(Block)}{
+	result.expressions += self.expressions -> map copyExpression();
+}
+
+mapping DiscreteInteractionEndpointReference::copyDiscreteInteractionEndpointReference() : DiscreteInteractionEndpointReference 
+when{self.oclIsTypeOf(DiscreteInteractionEndpointReference)}{
+	position := self.position . map copyPositionSelector();
+	typedNamedElementExpression := self.typedNamedElementExpression . map copyTypedNamedElementExpression();
+}
+
+mapping PositionSelector::copyPositionSelector() : PositionSelector {
+	kind := self.kind;
+	successor := self.successor . late resolveoneIn(PositionSelector::copyPositionSelector,PositionSelector);
+}
+
+mapping Loop::copyLoop() : Loop 
+disjuncts DoWhileLoop::copyDoWhileLoop,ForLoop::copyForLoop,WhileLoop::copyWhileLoop
+when{self.oclIsKindOf(Loop)}
+{}
+
+mapping DoWhileLoop::copyDoWhileLoop() : DoWhileLoop 
+when{self.oclIsTypeOf(DoWhileLoop)}{
+	result.expressions += self.expressions . map copyExpression();
+	block := self.block . map copyBlock();
+	loopTest := self.loopTest . map copyExpression();
+}
+
+mapping ForLoop::copyForLoop() : ForLoop 
+when{self.oclIsTypeOf(ForLoop)}{
+	result.expressions += self.expressions . map copyExpression();
+	block := self.block . map copyBlock();
+	loopTest := self.loopTest . map copyExpression();
+	initializeExpression := self.initializeExpression . map copyAssignment();
+	countingExpression := self.countingExpression . map copyAssignment();
+}
+
+mapping WhileLoop::copyWhileLoop() : WhileLoop 
+when{self.oclIsTypeOf(WhileLoop)}{
+	result.expressions += self.expressions . map copyExpression();
+	block := self.block . map copyBlock();
+	loopTest := self.loopTest . map copyExpression();
+}
+
+mapping OperationCall::copyOperationCall() : OperationCall 
+when{self.oclIsTypeOf(OperationCall)}{
+	operation := self.operation . resolveoneIn(Operation::copyOperation,Operation);
+	parameterBinding += self.parameterBinding -> map copyParameterBinding();
+}
+
+mapping ReturnStatement::copyReturnStatement() : ReturnStatement 
+when{self.oclIsTypeOf(ReturnStatement)}{
+	expression := self.expression . map copyExpression();
+}
+
+mapping TriggerMessageExpression::copyTriggerMessageExpression() : TriggerMessageExpression 
+when{self.oclIsTypeOf(TriggerMessageExpression)}{
+	messageType := self.messageType;
+	parameter := self.parameter;
+}
+
+mapping TypedNamedElementExpression::copyTypedNamedElementExpression() : TypedNamedElementExpression 
+when{self.oclIsTypeOf(TypedNamedElementExpression)}{
+	if(self.typedNamedElement.oclIsTypeOf(Variable)) then {
+		typedNamedElement := self.typedNamedElement . late resolveoneIn(Variable::copyVariable,Variable);
+	}
+	else {
+		typedNamedElement := self.typedNamedElement . late resolveoneIn(Parameter::copyParameter,Parameter);
+	}endif;
+	elementAccessors += self.elementAccessors -> map copyAccessorExpression();
+}
+
+mapping ElementAccessorExpression::copyAccessorExpression() : ArrayIndexExpression
+when {self.oclIsTypeOf(ArrayIndexExpression)}{
+	index := self.oclAsType(ArrayIndexExpression).index . map copyExpression();
+}
+
+mapping ActivityCallExpression::copyActivityCallExpression() : ActivityCallExpression 
+when{self.oclIsTypeOf(ActivityCallExpression)}{
+	callee := self.callee . deepclone().oclAsType(Activity);
+	-- since callee is cloned, we have no trace information and cannot use resolve to obtain parameters of the cloned activity
+	ownedParameterBindings += self.ownedParameterBindings -> map copyParameterBinding(result.callee.oclAsType(Activity));
+}

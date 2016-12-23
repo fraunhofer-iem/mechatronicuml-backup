@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.exportWizards">
+      <wizard
+            category="org.muml.core.export"
+            class="org.muml.pim.app4mc.export.ui.APP4MCExportWizard"
+            icon="icons/app4mc-logo-16.png"
+            id="org.eclipse.muml.pim.app4mc.export.ui.wizard"
+            name="APP4MC">
+      </wizard>
+   </extension>
+
+</plugin>

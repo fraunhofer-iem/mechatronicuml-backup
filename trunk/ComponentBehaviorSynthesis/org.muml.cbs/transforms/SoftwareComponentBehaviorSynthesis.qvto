@@ -1,0 +1,47 @@
+import transforms.CopyRTSCsIntoComponentRTSC;
+import transforms.WeaveDependenciesIntoRTSC;
+
+modeltype component uses pim::component('http://www.muml.org/pim/1.0.0');
+modeltype modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
+
+transformation SoftwareComponentBehaviorSynthesis(inout input:modelinstance);
+
+configuration property namesOfComponentsToSynthesize : OrderedSet(String);
+configuration property componentsToSynthesize: OrderedSet(StaticAtomicComponent);
+
+main() {
+	log('huhu'); 
+
+	assert fatal (componentsToSynthesize->notEmpty() or namesOfComponentsToSynthesize->notEmpty()) with log('At least a name of component to synthesize must be specified using the property: namesOfComponentsToSynthesize');
+	namesOfComponentsToSynthesize->forEach(name){
+		if(input.objectsOfType(StaticAtomicComponent)->notEmpty()) then {
+			if (input.objectsOfType(StaticAtomicComponent)->exists(c : StaticAtomicComponent | c.name.equalsIgnoreCase(name))){
+				componentsToSynthesize += input.objectsOfType(StaticAtomicComponent)->any(c : StaticAtomicComponent | c.name.equalsIgnoreCase(name)).oclAsType(StaticAtomicComponent);
+			}
+			else{
+				assert fatal (false) with log('There is no component with the name: '.concat(name));
+			}endif;
+		}endif;
+	};
+	assert fatal (componentsToSynthesize->notEmpty()) with log('There is no atomic component (Error-Code: NoComp2).');
+	
+	componentsToSynthesize->forEach(comp){
+		var copyRTSC : CopyRTSCsIntoComponentRTSC = new CopyRTSCsIntoComponentRTSC(input);
+		
+		copyRTSC.nameOfComponentToSynthesize:=null;
+		copyRTSC.componentToSynthesize := OrderedSet{comp};
+	
+		var retcode : Status = copyRTSC.transform();
+		
+		assert fatal (retcode.succeeded()) with log('Copying Port RealtimeStatecharts and Inner-Behavior failed: ' + retcode.raisedException().repr());
+		
+		var weaveDependencies : WeaveDependenciesIntoRTSC = new WeaveDependenciesIntoRTSC(input);
+		
+		weaveDependencies.nameOfComponentToSynthesize :=null;
+		weaveDependencies.componentToSynthesize := OrderedSet{comp};
+		
+		retcode := weaveDependencies.transform();
+		
+		assert fatal (retcode.succeeded()) with log('Applying Dependencies failed: ' + retcode.raisedException().repr());	
+	}
+}

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.muml.testlanguage.feature" label="Feature" provider-name="%providerName" version="1.0.0.qualifier">
+
+   <description url="http://www.example.com/description">
+      [Enter Feature Description here.]
+   </description>
+
+   <copyright url="%copyrightURL">
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <requires>
+      <import feature="org.muml.uppaal.feature"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.emf.ecore"/>
+      <import match="greaterOrEqual" plugin="org.eclipse.emf.validation" version="1.7.0"/>
+      <import plugin="org.muml.testlanguage"/>
+      <import match="greaterOrEqual" plugin="org.eclipse.ui" version="3.105.0"/>
+      <import plugin="org.eclipse.emf.transaction"/>
+      <import match="greaterOrEqual" plugin="org.eclipse.gmf.runtime.notation" version="1.8.0"/>
+      <import plugin="org.eclipse.emf.validation.ui"/>
+      <import plugin="org.eclipse.swt"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.core.expressions"/>
+      <import plugin="org.eclipse.jface"/>
+      <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="org.eclipse.ui.views"/>
+      <import plugin="org.eclipse.ui.navigator"/>
+      <import plugin="org.eclipse.ui.navigator.resources"/>
+      <import plugin="org.eclipse.emf.ecore.xmi"/>
+      <import plugin="org.eclipse.emf.edit.ui"/>
+      <import plugin="org.eclipse.gmf.runtime.emf.core"/>
+      <import plugin="org.eclipse.gmf.runtime.emf.commands.core"/>
+      <import plugin="org.eclipse.gmf.runtime.emf.ui.properties"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.properties"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.providers"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.providers.ide"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.render"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.resources.editor"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide"/>
+      <import plugin="org.eclipse.gmf.tooling.runtime"/>
+      <import plugin="org.eclipse.draw2d"/>
+      <import plugin="org.eclipse.gef"/>
+      <import plugin="org.eclipse.gmf.runtime.draw2d.ui"/>
+      <import plugin="org.eclipse.ocl.ecore"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.printing"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.printing.render"/>
+      <import plugin="org.muml.testlanguage.custom"/>
+      <import plugin="org.muml.testlanguage.diagram"/>
+      <import match="greaterOrEqual" plugin="org.eclipse.gmf.validate" version="1.2.0"/>
+      <import plugin="org.eclipse.m2m.qvt.oml.common"/>
+      <import plugin="org.eclipse.m2m.qvt.oml.common.ui"/>
+      <import plugin="org.eclipse.m2m.qvt.oml.emf.util.ui"/>
+      <import plugin="org.eclipse.m2m.qvt.oml.runtime"/>
+      <import plugin="org.eclipse.m2m.qvt.oml.ui"/>
+      <import plugin="org.eclipse.emf.edit"/>
+      <import plugin="org.eclipse.emf.common"/>
+      <import match="greaterOrEqual" plugin="org.eclipse.emf.compare" version="3.0.0"/>
+      <import plugin="org.eclipse.m2m.qvt.oml"/>
+      <import plugin="org.muml.pim"/>
+      <import plugin="org.muml.uppaal.adapter.job"/>
+      <import plugin="org.muml.uppaal"/>
+      <import plugin="org.muml.uppaal.requirements"/>
+      <import plugin="org.muml.uppaal.trace"/>
+      <import plugin="org.muml.uppaal.adapter.results"/>
+      <import plugin="org.muml.uppaal.adapter.mtctl.xtext"/>
+      <import plugin="org.muml.uppaal.adapter.extension"/>
+      <import match="greaterOrEqual" plugin="org.muml.core"/>
+      <import plugin="org.muml.uppaal.options"/>
+      <import plugin="org.muml.uppaal.job"/>
+      <import plugin="org.muml.testlanguage.specification"/>
+      <import feature="org.muml.uppaal.adapter.feature"/>
+      <import feature="org.muml.udbm.feature"/>
+      <import feature="org.muml.core.feature"/>
+      <import feature="org.muml.verification.core.feature"/>
+      <import feature="org.muml.ape.feature"/>
+      <import feature="org.muml.graphviz.feature"/>
+      <import feature="org.muml.pim.feature"/>
+   </requires>
+
+   <plugin download-size="0" id="org.muml.testlanguage" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.testlanguage.custom" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.testlanguage.diagram" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.testlanguage.diagram.custom" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.testlanguage.edit" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.testlanguage.editor" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.testlanguage.specification" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.testlanguage.specification.edit" install-size="0" unpack="false" version="0.0.0"/>
+
+</feature>

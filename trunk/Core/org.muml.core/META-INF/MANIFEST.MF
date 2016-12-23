@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.muml.core;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.muml.core,
+ org.muml.core.expressions,
+ org.muml.core.expressions.common,
+ org.muml.core.expressions.common.impl,
+ org.muml.core.expressions.common.util,
+ org.muml.core.expressions.impl,
+ org.muml.core.expressions.util,
+ org.muml.core.impl,
+ org.muml.core.modelinstance,
+ org.muml.core.modelinstance.categories,
+ org.muml.core.modelinstance.impl,
+ org.muml.core.modelinstance.util,
+ org.muml.core.util
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.emf.ecore.xmi;visibility:=reexport
+Bundle-ActivationPolicy: lazy
+Bundle-Activator: org.muml.core.modelinstance.ModelInstancePlugin

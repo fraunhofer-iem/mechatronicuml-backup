@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="verificationextension" nsURI="http://www.muml.org/uppaal/adapter/extension/verificationextension/1.0.0"
+    nsPrefix="verificationextension">
+  <eClassifiers xsi:type="ecore:EClass" name="CommittedExtension" eSuperTypes="../../org.muml.core/model/core.ecore#//Extension"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ClockBindingsExtension" eSuperTypes="../../org.muml.core/model/core.ecore#//Extension">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clockBindings" upperBound="-1"
+        eType="#//ClockBinding" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClockBinding">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clock" lowerBound="1" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Clock"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ElementToVerifyExtension" eSuperTypes="../../org.muml.core/model/core.ecore#//Extension"/>
+</ecore:EPackage>

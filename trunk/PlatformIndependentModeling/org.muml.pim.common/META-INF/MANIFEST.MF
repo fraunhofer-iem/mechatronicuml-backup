@@ -1,0 +1,38 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MechatronicUML Common Plugin
+Bundle-SymbolicName: org.muml.pim.common;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.muml.core.common,
+ org.muml.pim.actionlanguage.xtext,
+ org.muml.pim.edit,
+ org.muml.core.modelinstance.ui,
+ org.eclipse.ui.ide;bundle-version="3.7.0",
+ org.eclipse.gmf.runtime.diagram.ui.properties;bundle-version="1.4.2",
+ org.muml.ape.runtime,
+ org.eclipse.emf.ecore,
+ org.eclipse.swt,
+ org.eclipse.draw2d,
+ org.eclipse.gmf.runtime.diagram.ui,
+ org.muml.pim.types;visibility:=reexport,
+ org.muml.core.common.editingdomain
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
+Export-Package: org.muml.pim.common,
+ org.muml.pim.common.edit.policies,
+ org.muml.pim.common.edit.policies.component,
+ org.muml.pim.common.edit.policies.opendiagram,
+ org.muml.pim.common.edit.policies.ports,
+ org.muml.pim.common.edit.policies.ports.layout,
+ org.muml.pim.common.edit.policies.statechart,
+ org.muml.pim.common.edit.policies.tether,
+ org.muml.pim.common.editingdomain,
+ org.muml.pim.common.emf.edit.provider,
+ org.muml.pim.common.figures,
+ org.muml.pim.common.naming,
+ org.muml.pim.common.refactoring
+Bundle-Activator: org.muml.pim.common.MumlCommonPlugin
+Import-Package: org.eclipse.ltk.core.refactoring,
+ org.eclipse.ltk.core.refactoring.participants
+

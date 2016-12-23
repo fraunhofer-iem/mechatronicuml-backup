@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII"?>
+<model:SimulinkModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://www.muml.org/simulink/1.0.0">
+  <blocks xsi:type="model:MiscBlock">
+    <parameters name="Name" value="sourceBlockOne"/>
+  </blocks>
+  <blocks xsi:type="model:MiscBlock">
+    <parameters name="Name" value="sourceBlockTwo"/>
+  </blocks>
+</model:SimulinkModel>

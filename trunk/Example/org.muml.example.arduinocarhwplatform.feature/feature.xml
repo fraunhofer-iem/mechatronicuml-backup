@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.muml.example.arduinocarhwplatform.feature" label="MechatronicUML Arduino Car Example" provider-name="%providerName" version="1.0.0.qualifier">
+
+   <description>
+      MechatronicUML Arduino Car Example
+   </description>
+
+   <copyright url="%copyrightURL">
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <requires>
+      <import plugin="org.muml.pim"/>
+      <import plugin="org.muml.pim.actionlanguage"/>
+      <import feature="org.muml.pim.feature"/>
+      <import feature="org.muml.core.feature"/>
+   </requires>
+
+   <plugin download-size="0" id="org.muml.example.arduinocarhwplatform" install-size="0" version="0.0.0"/>
+
+</feature>

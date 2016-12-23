@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_2zW_MLjeEeOgoclg3sd5rg" type="Component" name="Motor.component_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_2zXmQLjeEeOgoclg3sd5rg" type="2006" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_2zYNULjeEeOgoclg3sd5rg" type="5028"/>
+    <element xmi:type="component:StaticAtomicComponent" href="../runningExample.fujaba#_2pDl8LZoEeOeFtIawEHrMg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2zXmQbjeEeOgoclg3sd5rg"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_2zW_MbjeEeOgoclg3sd5rg"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../runningExample.fujaba#_oA5UoLZmEeOeFtIawEHrMg"/>
+</notation:Diagram>

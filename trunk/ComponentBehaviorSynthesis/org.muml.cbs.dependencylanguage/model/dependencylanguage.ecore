@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="dependencylanguage" nsURI="http://www.muml.org/cbs/dependencylanguage/1.0.0"
+    nsPrefix="dependencylanguage">
+  <eAnnotations source="http://www.eclipse.org/OCL/Import">
+    <details key="actionlanguage" value="/resource/org.muml.pim.actionlanguage/model/actionlanguage.ecore#/"/>
+    <details key="core" value="/resource/org.muml.core/model/core.ecore#/"/>
+    <details key="ecore" value="http://www.eclipse.org/emf/2002/Ecore#/"/>
+    <details key="behavior" value="/resource/org.muml.pim/model/pim.ecore#//behavior"/>
+    <details key="component" value="/resource/org.muml.pim/model/pim.ecore#//component"/>
+    <details key="expr" value="/resource/org.muml.core/model/core.ecore#//expressions"/>
+    <details key="realtimestatechart" value="/resource/org.muml.pim/model/pim.ecore#//realtimestatechart"/>
+    <details key="valueType" value="/resource/org.muml.pim/model/pim.ecore#//valuetype"/>
+    <details key="sdcec" value="/resource/org.muml.core/model/core.ecore#//expressions/common"/>
+  </eAnnotations>
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+  </eAnnotations>
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+    <details key="documentation" value="This package provides a the possiblity to describe dependencies between multiple RTCSs.&#xD;&#xA;The dependencies can be appended to AtomicComponent through the SynthesizableBehavior.&#xD;&#xA;&#xD;&#xA;@author Sebastian Goschin"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="SynthesizableBehavior" eSuperTypes="../../org.muml.core/model/core.ecore#//Extension ../../org.muml.pim/model/pim.ecore#//behavior/BehavioralElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This class is the container for the dependencies.&#xD;&#xA;It inherits from BehavioralElement to store the inner-behavior.&#xD;&#xA;It can be stored at a AtomicComponent through the Extension inheritance."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dependencyModel" eType="#//DependencyModel"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Container for all Dependency of one Atomic Component, Input for the XText Editor."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="if(not self.base.oclIsUndefined() and self.base.oclIsKindOf(component::AtomicComponent))&#xA;then (self.base).oclAsType(component::AtomicComponent).name.concat('-synth')&#xA;else&#xA;null endif"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=" Name of the Atomic Component + '-synth'"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DependencyModel" eSuperTypes="../../org.muml.core/model/core.ecore#//CommentableElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The dependency model is the container for all dependencies and it builds the root for the XText grammar."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dependencies" upperBound="-1"
+        eType="#//Dependency" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="  see Dependency"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Dependency" abstract="true" eSuperTypes="../../org.muml.core/model/core.ecore#//CommentableElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Each dependency must at least contain two references that lead to two different RealtimeStatecharts.&#xD;&#xA;This could be check by constraints."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Synchronization" eSuperTypes="#//Dependency">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The Synchronization describes which Transitions should be coupled.&#xD;&#xA;Each Transition can only be referenced once in this expression.&#xD;&#xA;This could be check by constraints."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sendingEvents" upperBound="-1"
+        eType="#//Event" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="They can be  SimpleEvents or  SynchronizationEvents.&#xD;&#xA;The second can only be used when a selectorType is defined."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="receivingEvents" upperBound="-1"
+        eType="#//Event" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="They can be  SimpleEvents or  SynchronizationEvents.&#xD;&#xA;The second can only be used when a selectorType is defined."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="channelName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Name for a new SynchronizationChannel. If channel with same name already exists, it is used, instead of a new created SynchronizationChannel.&#xD;&#xA;If it is empty an unique name is generated."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="selectorType" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//types/DataType">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Is optional and allows to specify a channel which uses the chosen selectortype.&#xD;&#xA;If it is empty it is a simple channel."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="generalSelectorExpression"
+        eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This expression is used as default selector expression.&#xD;&#xA;Thereby, it can be used either SynchronizationEvent or any other SimpleEvent."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ForbiddenStateCombination" eSuperTypes="#//Dependency">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="It forbids the combination of states. This dependency requires to add channels and an auxiliary region."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="2"
+        upperBound="-1" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/State">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Those states are not allowed to be entered in combination.&#xD;&#xA;If it contains more than two states, it does not forbid each possible combination, but only the one which is specified."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClockMerge" eSuperTypes="#//Dependency">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="It merges multiple clocks into one global."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clocks" lowerBound="2"
+        upperBound="-1" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Clock">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Clocks from different regions which are merged."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="clockName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="If not specified the name of the first clock will be used for the global clock."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataMerge" eSuperTypes="#//Dependency">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="It merges multiple variable into one global."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variables" lowerBound="1"
+        upperBound="-1" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//behavior/Variable">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=" Variables from different regions which are merged."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="variableName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="If not specified the name of the first variable will be used for the global variable."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="port" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//component/HybridPort"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConditionalDependency" eSuperTypes="#//Dependency">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A conditional dependency can be used to restrict Transition by Constraints, which have to be specified as Conditions.&#xD;&#xA;Through enable and disable the resolved Constraint will be attached to transitions.&#xD;&#xA;Also clock resets and data assignments can be specified.&#xD;&#xA;Those are applied for the specified event or when the Condition changes from false to true."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="event" eType="#//Event"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Either event or condition can be used.&#xD;&#xA;Event cannot be combined with EnableDisableEffect."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="condition" eType="#//Condition"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="see Condition"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="effects" upperBound="-1"
+        eType="#//Effect" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="see Effect"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Effect" abstract="true" eSuperTypes="http://www.eclipse.org/emf/2002/Ecore#//EObject">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The effect species for what the condition is used, e.g.,&#xD;&#xA;as Expression or as Position for Assignments."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnableDisableEffect" eSuperTypes="#//Effect">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="It restricts its event that the event can only occur if the condition is met.&#xD;&#xA;"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="event" lowerBound="1" eType="#//Event"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Transition or EntryOrExitEvent that shall be restricted (see Event)."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isEnable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="It is used to invert the &#xD;&#xA;If it is false the Expression is invertingly applied as the restriction."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClockResetEffect" eSuperTypes="#//Effect">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Specifies which Clocks should be reset, when the Condition or Event happens."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clocks" lowerBound="1"
+        upperBound="-1" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Clock">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Clocks that shall be reset."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataAssignmentEffect" eSuperTypes="#//Effect ../../org.muml.pim.actionlanguage/model/actionlanguage.ecore#//Assignment">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Specifies which Assignments that should be applied, when the Condition or Event happens."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" lowerBound="1"
+        eType="#//AssignmentDirection" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Direction of the dependency (see AssignmentDirection)."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AssignmentDirection">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="If a DataAssignmentEffect is specified for an Event and Variable of the same region and only reads from others, its called PULL.&#xD;&#xA;Otherwise, it is called PUSH, because the Variable is modified outside of the original owner."/>
+    </eAnnotations>
+    <eLiterals name="PUSH"/>
+    <eLiterals name="PULL" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BoundedActiveState" eSuperTypes="#//Dependency">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="It can specify invariants for states. Those invariants must include references of elements from other regions.&#xD;&#xA;"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1"
+        upperBound="-1" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/State">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=" "/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constraint" lowerBound="1"
+        eType="#//ClockCondition" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="It is currently only allowed to specify UpperBoundClockConditions, because invariants only support UpperBoundClockConstraints.&#xD;&#xA;However, it might be possible to drop the restriction, because also other Conditions might be simulatable through UpperBoundClockConstraints."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Condition" abstract="true" eSuperTypes="http://www.eclipse.org/emf/2002/Ecore#//EObject">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Those Conditions can evaluate to true or false and thereby specify intervals."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StateStatusCondition" eSuperTypes="#//Condition">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This condition specifies the interval that a state (combination) is active or inactive."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1"
+        upperBound="-1" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/State">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=" "/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1" eType="#//StateStatusKind">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="see StateStatusKind"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EventConstrainedIntervalCondition" eSuperTypes="#//Condition">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This condition specifies an interval in relation to two Events.&#xD;&#xA;initialEnabled and enabledInfinite should not be used, because it would be the same as writing true as Condition."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fromEvent" eType="#//Event"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="When this event occurs, the condition evaluation is changed to true."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="initialEnabled" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="When it is true, the evaluation after initialization true."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="untilEvent" eType="#//Event"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="When this event occurs, the condition evaluation is changed to false"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enabledInfite" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="When it is true, the evaluation never changes after it is true."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="StateStatusKind">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="It is used to specify that a state (combination) is active or inactive."/>
+    </eAnnotations>
+    <eLiterals name="UNDEFIEND"/>
+    <eLiterals name="ACTIVE" value="1" literal="ACTIVE"/>
+    <eLiterals name="INACTIVE" value="2" literal="INACTIVE"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClockCondition" eSuperTypes="#//Condition">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A clock condition describes a ClockConstraint that can be either be resolved to an existing or an auxiliary clock."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AuxiliaryClockCondition" eSuperTypes="#//ClockCondition">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This specifies a time dependency to an events last occurence.&#xD;&#xA;It leads to an introduction of an auxiliary clock."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="event" lowerBound="1" eType="#//Event"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=" "/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bound" lowerBound="1" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/TimeValue"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=" "/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
+        eType="ecore:EEnum ../../org.muml.core/model/core.ecore#//expressions/common/ComparingOperator">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=" "/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HybridClockCondition" eSuperTypes="#//ClockCondition">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This is a abreviation of a AuxiliaryClockCondition and a Condtion (mainly for StateStatusConditions).&#xD;&#xA;For example:&#xD;&#xA;HybridClockCondition(condition:= state 1 active ,  operation:= &lt; , bound:= 5s )&#xD;&#xA;&lt;=>&#xD;&#xA;AuxiliaryClockCondition(event:= entering state 1,  operation:= &lt; , bound:= 5s ) and StateStatusCondition(states:= state 1 , kind:= active)"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="condition" lowerBound="1"
+        eType="#//Condition" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=" "/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bound" lowerBound="1" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/TimeValue"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=" "/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
+        eType="ecore:EEnum ../../org.muml.core/model/core.ecore#//expressions/common/ComparingOperator">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=" "/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BasicClockCondition" eSuperTypes="../../org.muml.pim/model/pim.ecore#//realtimestatechart/ClockConstraint #//ClockCondition">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="It is just a ClockConstraint with the additional of ClockCondition, to better integratable into the DependencyLanguage."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataCondition" eSuperTypes="#//Condition">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This Condition can contain any Expression which can be specified for TypedNamedElements.&#xD;&#xA;This is also just required for an easier integration of Expression."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" lowerBound="1"
+        eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=" "/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CompositionCondition" eSuperTypes="#//Condition">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This can be used to logically compose multiple conditions.&#xD;&#xA;It is mostly required to shorten specifications, but also the OR composition is otherwise not possible."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="leftCondition" eType="#//Condition"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=" "/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1" eType="ecore:EEnum ../../org.muml.core/model/core.ecore#//expressions/common/LogicOperator">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=" "/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rightCondition" eType="#//Condition"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=" "/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Event" abstract="true" eSuperTypes="http://www.eclipse.org/emf/2002/Ecore#//EObject">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Events can be resolved to existing or auxiliary Transitions and EntryOrExitEvents."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleEvent" abstract="true" eSuperTypes="#//Event">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="They should be always resolveable to existing elements."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CompositionEvent" eSuperTypes="#//Event">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This can be used to logically compose multiple events.&#xD;&#xA;If an And composition is chosen it could require to introduce auxiliary elements."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="leftEvent" lowerBound="1"
+        eType="#//Event" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=" "/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1" eType="ecore:EEnum ../../org.muml.core/model/core.ecore#//expressions/common/LogicOperator">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=" "/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rightEvent" lowerBound="1"
+        eType="#//Event" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=" "/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CountedEvent" eSuperTypes="#//Event">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This event counts the occurences of its subevent. Its own occurence is triggered when the threshold defined in counter is reached."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="event" lowerBound="1" eType="#//Event"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=" "/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="counter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=" "/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DelayedEvent" eSuperTypes="#//Event">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This event occurs with the specified delay after its subevent occured.&#xD;&#xA;It requires an auxiliary elements such that event can happen without any other dependencies."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="delay" lowerBound="1" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/TimeValue"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=" "/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="event" lowerBound="1" eType="#//Event"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=" "/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SynchronizationEvent" eSuperTypes="#//Event">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="It is required to specify selector expressions for single events that are referenced in Synchronization.&#xD;&#xA;It is only allowed to be used if a selector type is specified.&#xD;&#xA;"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="selectorExpression" eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=" "/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="event" lowerBound="1" eType="#//Event"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=" "/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TransitionEvent" eSuperTypes="#//SimpleEvent">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Resolves to the single Transition it references.&#xD;&#xA;It is the simplest Event."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transition" lowerBound="1"
+        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Transition">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=" "/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="StateEventKind">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This is used to reference the EntryEvent and ExitEvent of a state.&#xD;&#xA;Even it is was not instantiate yet."/>
+    </eAnnotations>
+    <eLiterals name="UNDEFIEND"/>
+    <eLiterals name="ENTRY" value="1"/>
+    <eLiterals name="EXIT" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StateEvent" eSuperTypes="#//SimpleEvent">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Can be resolved either to a Set of Transitions or to an EntryOrExitEvent."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="state" lowerBound="1" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/State">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=" "/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1" eType="#//StateEventKind">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="see StateEventKind"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StateCombinationEvent" eSuperTypes="#//SimpleEvent">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Can be resolved either to a Set of Transitions or to a Set of EntryOrExitEvents."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="2"
+        upperBound="-1" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/State">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=" "/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1" eType="#//StateEventKind">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="see StateEventKind"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MessageEventKind">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A message can either be send or consumed at a Transition."/>
+    </eAnnotations>
+    <eLiterals name="UNDEFIEND"/>
+    <eLiterals name="CONSUMING" value="1"/>
+    <eLiterals name="SENDING" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageEvent" eSuperTypes="#//SimpleEvent">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Can be resolved to a Set of Transitions, that uses the declared Message."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1" eType="#//MessageEventKind">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=" see MessageEventKind"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//msgtype/MessageType">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=" Message which is send or consumed."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="port" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//connector/DiscreteInteractionEndpoint">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The Message Event can be optionally bound to one port."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TriggerMessage" eSuperTypes="#//Dependency">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="effects" upperBound="-1"
+        eType="#//Effect" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="messageEvent" lowerBound="1"
+        eType="#//MessageEvent" containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

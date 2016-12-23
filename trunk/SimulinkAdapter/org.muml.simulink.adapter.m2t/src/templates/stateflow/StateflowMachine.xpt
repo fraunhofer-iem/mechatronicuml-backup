@@ -1,0 +1,32 @@
+«IMPORT simulink»
+«IMPORT simulink::stateflow»
+
+«EXTENSION extensions::stateflow::StateflowElement»
+
+«DEFINE stateflowMachine FOR StateflowMachine-»
+«LET this.getNewStateflowId() AS targetId»
+Stateflow {
+	machine {
+		id		«this.getStateflowId()»
+		name    "«this.model.name»"
+		tag			"id=«this.id»"
+		firstTarget 	«targetId»
+		sfVersion		    71014000.00001
+«IF SimulinkLibrary.isInstance(this.model)-»
+		isLibrary		1
+«ELSE»
+		isLibrary		0
+«ENDIF-»
+«EXPAND Parameter::stateflowParameter FOREACH this.parameters.select(p| !{'name', 'id', 'firstTarget', 'tag'}.contains(p.name) )-»
+	}
+	«EXPAND Chart::chart FOREACH this.charts-»
+	target {
+		id			«targetId»
+    	name		    "sfun"
+    	description		    "Default Simulink S-Function Target."		
+		machine		«this.getStateflowId()»
+		linkNode		    [«this.getStateflowId()» 0 0]	
+	}
+}
+«ENDLET»
+«ENDDEFINE»

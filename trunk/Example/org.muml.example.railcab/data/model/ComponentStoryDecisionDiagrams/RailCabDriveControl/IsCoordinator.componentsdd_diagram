@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:componentsdd="http://www.muml.org/reconfiguration/verification/sdd/componentsdd/1.0.0" xmlns:componentstorypattern="http://www.muml.org/reconfiguration/componentstorypattern/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:sdd="http://www.muml.org/storydiagram/verification/sdd/1.0.0" xmi:id="_l0MesW9REeSItej-K-U2zQ" type="Component Story Decision" name="isCoordinator.componentsdd_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_oDfAwW9REeSItej-K-U2zQ" type="2004" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_oDfAw29REeSItej-K-U2zQ" type="5042"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_oDfAxG9REeSItej-K-U2zQ" type="5043"/>
+    <element xmi:type="componentsdd:InitialNode" href="../../RailCab.muml#_oDfAwG9REeSItej-K-U2zQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oDfAwm9REeSItej-K-U2zQ" x="286" y="69"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_q95jc29REeSItej-K-U2zQ" type="2003">
+    <children xmi:type="notation:DecorationNode" xmi:id="_q95jeG9REeSItej-K-U2zQ" type="5037"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_q95jeW9REeSItej-K-U2zQ" type="5038"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_q95jem9REeSItej-K-U2zQ" type="7001">
+      <children xmi:type="notation:Shape" xmi:id="_q-DUcG9REeSItej-K-U2zQ" type="3001" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_q-DUcm9REeSItej-K-U2zQ" type="7002">
+          <children xmi:type="notation:Shape" xmi:id="_q-DUc29REeSItej-K-U2zQ" type="3002" fontName="Segoe UI" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_q-DUdW9REeSItej-K-U2zQ" type="5033">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_q-DUdm9REeSItej-K-U2zQ" y="5"/>
+            </children>
+            <children xmi:type="notation:DecorationNode" xmi:id="_q-DUd29REeSItej-K-U2zQ" type="5034"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_q-DUeG9REeSItej-K-U2zQ" type="7003">
+              <children xmi:type="notation:Shape" xmi:id="_sUC3AW9REeSItej-K-U2zQ" type="3003" fontName="Segoe UI" lineColor="0">
+                <children xmi:type="notation:DecorationNode" xmi:id="_sUC3A29REeSItej-K-U2zQ" type="5025">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_sUC3BG9REeSItej-K-U2zQ" y="5"/>
+                </children>
+                <children xmi:type="notation:DecorationNode" xmi:id="_sUC3BW9REeSItej-K-U2zQ" type="5026"/>
+                <children xmi:type="notation:DecorationNode" xmi:id="_sUC3Bm9REeSItej-K-U2zQ" type="5040"/>
+                <children xmi:type="notation:Shape" xmi:id="_yKzPAW9REeSItej-K-U2zQ" type="3006" fontName="Segoe UI" lineColor="0">
+                  <children xmi:type="notation:DecorationNode" xmi:id="_yKzPA29REeSItej-K-U2zQ" type="5022">
+                    <layoutConstraint xmi:type="notation:Location" xmi:id="_yKzPBG9REeSItej-K-U2zQ" y="5"/>
+                  </children>
+                  <children xmi:type="notation:DecorationNode" xmi:id="_yKzPBW9REeSItej-K-U2zQ" type="5023">
+                    <layoutConstraint xmi:type="notation:Location" xmi:id="_yKzPBm9REeSItej-K-U2zQ" y="5"/>
+                  </children>
+                  <children xmi:type="notation:DecorationNode" xmi:id="_yKzPB29REeSItej-K-U2zQ" type="5024">
+                    <layoutConstraint xmi:type="notation:Location" xmi:id="_yKzPCG9REeSItej-K-U2zQ" x="36" y="17"/>
+                  </children>
+                  <styles xmi:type="notation:LineTypeStyle" xmi:id="_yKzPCW9REeSItej-K-U2zQ"/>
+                  <element xmi:type="componentstorypattern:SinglePortVariable" href="../../RailCab.muml#_yKzPAG9REeSItej-K-U2zQ"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yKzPAm9REeSItej-K-U2zQ" x="96" y="43"/>
+                </children>
+                <styles xmi:type="notation:LineTypeStyle" xmi:id="_sUVx8G9REeSItej-K-U2zQ"/>
+                <element xmi:type="componentstorypattern:ComponentPartVariable" href="../../RailCab.muml#_sUC3AG9REeSItej-K-U2zQ"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sUC3Am9REeSItej-K-U2zQ" x="16" y="10"/>
+              </children>
+              <children xmi:type="notation:Shape" xmi:id="_vvfDIW9REeSItej-K-U2zQ" type="3003" fontName="Segoe UI" lineColor="0">
+                <children xmi:type="notation:DecorationNode" xmi:id="_vvfDI29REeSItej-K-U2zQ" type="5025">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_vvfDJG9REeSItej-K-U2zQ" y="5"/>
+                </children>
+                <children xmi:type="notation:DecorationNode" xmi:id="_vvfDJW9REeSItej-K-U2zQ" type="5026"/>
+                <children xmi:type="notation:DecorationNode" xmi:id="_vvfDJm9REeSItej-K-U2zQ" type="5040"/>
+                <children xmi:type="notation:Shape" xmi:id="_zxKI0W9REeSItej-K-U2zQ" type="3006" fontName="Segoe UI" lineColor="0">
+                  <children xmi:type="notation:DecorationNode" xmi:id="_zxKI029REeSItej-K-U2zQ" type="5022">
+                    <layoutConstraint xmi:type="notation:Location" xmi:id="_zxKI1G9REeSItej-K-U2zQ" y="5"/>
+                  </children>
+                  <children xmi:type="notation:DecorationNode" xmi:id="_zxKI1W9REeSItej-K-U2zQ" type="5023">
+                    <layoutConstraint xmi:type="notation:Location" xmi:id="_zxKI1m9REeSItej-K-U2zQ" y="5"/>
+                  </children>
+                  <children xmi:type="notation:DecorationNode" xmi:id="_zxKI129REeSItej-K-U2zQ" type="5024">
+                    <layoutConstraint xmi:type="notation:Location" xmi:id="_zxKI2G9REeSItej-K-U2zQ" x="28" y="3"/>
+                  </children>
+                  <styles xmi:type="notation:LineTypeStyle" xmi:id="_zxT50G9REeSItej-K-U2zQ"/>
+                  <element xmi:type="componentstorypattern:SinglePortVariable" href="../../RailCab.muml#_zxKI0G9REeSItej-K-U2zQ"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zxKI0m9REeSItej-K-U2zQ"/>
+                </children>
+                <styles xmi:type="notation:LineTypeStyle" xmi:id="_vvoNEG9REeSItej-K-U2zQ"/>
+                <element xmi:type="componentstorypattern:ComponentPartVariable" href="../../RailCab.muml#_vvfDIG9REeSItej-K-U2zQ"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vvfDIm9REeSItej-K-U2zQ" x="16" y="157"/>
+              </children>
+            </children>
+            <styles xmi:type="notation:LineTypeStyle" xmi:id="_q-NFcG9REeSItej-K-U2zQ"/>
+            <element xmi:type="componentstorypattern:ComponentVariable" href="../../RailCab.muml#_q95jcm9REeSItej-K-U2zQ"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_q-DUdG9REeSItej-K-U2zQ" width="303" height="288"/>
+          </children>
+        </children>
+        <element xmi:type="componentstorypattern:ComponentStoryPattern" href="../../RailCab.muml#_q95jcW9REeSItej-K-U2zQ"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_q-DUcW9REeSItej-K-U2zQ"/>
+      </children>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_q95jdG9REeSItej-K-U2zQ"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_q95jdW9REeSItej-K-U2zQ" fontName="Segoe UI"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_q95jdm9REeSItej-K-U2zQ"/>
+    <element xmi:type="componentsdd:ComponentStoryPatternNode" href="../../RailCab.muml#_q95jcG9REeSItej-K-U2zQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_q95jd29REeSItej-K-U2zQ" x="204" y="156" width="325" height="337"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_5eZYcW9REeSItej-K-U2zQ" type="2002">
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_5eZYcm9REeSItej-K-U2zQ"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_5eZYc29REeSItej-K-U2zQ" fontName="Segoe UI"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_5eZYdG9REeSItej-K-U2zQ"/>
+    <element xmi:type="sdd:LeafNode" href="../../RailCab.muml#_5eZYcG9REeSItej-K-U2zQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5eZYdW9REeSItej-K-U2zQ" x="192" y="591"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_5yojEW9REeSItej-K-U2zQ" type="2002">
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_5yojEm9REeSItej-K-U2zQ"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_5yojE29REeSItej-K-U2zQ" fontName="Segoe UI"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_5yojFG9REeSItej-K-U2zQ"/>
+    <element xmi:type="sdd:LeafNode" href="../../RailCab.muml#_5yojEG9REeSItej-K-U2zQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5yojFW9REeSItej-K-U2zQ" x="423" y="583"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_l0Mesm9REeSItej-K-U2zQ"/>
+  <element xmi:type="componentsdd:ComponentStoryDecisionDiagram" href="../../RailCab.muml#_l0MesG9REeSItej-K-U2zQ"/>
+  <edges xmi:type="notation:Connector" xmi:id="_13WZQW9REeSItej-K-U2zQ" type="4002" source="_zxKI0W9REeSItej-K-U2zQ" target="_yKzPAW9REeSItej-K-U2zQ" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_13WZRG9REeSItej-K-U2zQ" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_13WZRW9REeSItej-K-U2zQ" y="40"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_13WZQm9REeSItej-K-U2zQ" fontName="Segoe UI"/>
+    <element xmi:type="componentstorypattern:AssemblyVariable" href="../../RailCab.muml#_13WZQG9REeSItej-K-U2zQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_13WZQ29REeSItej-K-U2zQ" points="[9, -15, 5, 71]$[9, -101, 5, -15]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_4nWbsW9REeSItej-K-U2zQ" type="4001" source="_oDfAwW9REeSItej-K-U2zQ" target="_q95jc29REeSItej-K-U2zQ">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_4nWbsm9REeSItej-K-U2zQ"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_4nWbs29REeSItej-K-U2zQ" fontName="Segoe UI"/>
+    <element xmi:type="sdd:Edge" href="../../RailCab.muml#_4nWbsG9REeSItej-K-U2zQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_4nWbtG9REeSItej-K-U2zQ" points="[-2, 10, 0, -43]$[-2, 47, 0, -6]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_4ngMsG9REeSItej-K-U2zQ" id="(0.4876847290640394,0.8)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_4ngMsW9REeSItej-K-U2zQ" id="(0.5507692307692308,0.017804154302670624)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_6t_YEW9REeSItej-K-U2zQ" type="4001" source="_q95jc29REeSItej-K-U2zQ" target="_5eZYcW9REeSItej-K-U2zQ">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_6t_YEm9REeSItej-K-U2zQ"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_6t_YE29REeSItej-K-U2zQ" fontName="Segoe UI"/>
+    <element xmi:type="sdd:Edge" href="../../RailCab.muml#_6t_YEG9REeSItej-K-U2zQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6t_YFG9REeSItej-K-U2zQ" points="[-14, 169, 32, -278]$[-26, 427, 20, -20]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6t_YFW9REeSItej-K-U2zQ" id="(0.043076923076923075,0.02373887240356083)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_7kJkAW9REeSItej-K-U2zQ" type="4001" source="_q95jc29REeSItej-K-U2zQ" target="_5yojEW9REeSItej-K-U2zQ">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_7kJkAm9REeSItej-K-U2zQ"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_7kJkA29REeSItej-K-U2zQ" fontName="Segoe UI"/>
+    <element xmi:type="sdd:Edge" href="../../RailCab.muml#_7kJkAG9REeSItej-K-U2zQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_7kJkBG9REeSItej-K-U2zQ" points="[169, 331, -59, -110]$[231, 461, 3, 20]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_7kJkBW9REeSItej-K-U2zQ" id="(0.033846153846153845,0.017804154302670624)"/>
+  </edges>
+</notation:Diagram>

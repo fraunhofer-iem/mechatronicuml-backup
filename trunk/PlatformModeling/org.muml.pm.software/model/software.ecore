@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="software" nsURI="http://www.muml.org/pm/software/1.0.0" nsPrefix="software">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+    <details key="documentation" value="The platform package describes the informatation of the platform, e.g. the api-commands.&#xD;&#xA;It serves the viewpoint for modelling api-commands in a concrete platform."/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="OperatingSystem" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement ../../org.muml.core/model/core.ecore#//CommentableElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This class represents a software plattform. It is the root element for describing a software plattform."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="apirepositories" upperBound="-1"
+        eType="#//APIRepository" containment="true" eOpposite="#//APIRepository/swPlatform">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A SWPlatform has an APIRepository. In this repository all api-commands of that platform are stored."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enumerationDataTypes" upperBound="-1"
+        eType="#//EnumerationDataType" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A SWPlatform can have several Enumerations. In this repository all api-commands of that platform are stored."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
+        eType="#//Import" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="APIRepository" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement ../../org.muml.core/model/core.ecore#//CommentableElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This repository is used to declare API-commands."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="apiCommands" lowerBound="1"
+        upperBound="-1" eType="#//APICommand" containment="true" eOpposite="#//APICommand/repository">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="An APIRepository can have several api-commands."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="swPlatform" lowerBound="1"
+        eType="#//OperatingSystem" eOpposite="#//OperatingSystem/apirepositories">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The platform to which this repository belongs."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="APICommand" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement ../../org.muml.core/model/core.ecore#//CommentableElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This class represents an API-command of a concrete platform."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="returnDataType" lowerBound="1"
+        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//types/DataType">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The type of the return value of an api-command."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//behavior/Parameter"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="An api-command can have several prarameters."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="repository" lowerBound="1"
+        eType="#//APIRepository" eOpposite="#//APIRepository/apiCommands">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The repository to which this api-command belongs."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constraints" upperBound="-1"
+        eType="#//Constraint" containment="true" eOpposite="#//Constraint/apiCommand">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The restraints that give restrictions on the usage of the API-command."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnumerationValue" eSuperTypes="../../org.muml.core/model/core.ecore#//ExtendableElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This class defines a possible value for an enumeration."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The value-attribute of an EnumerationValue represents the value of the EnumerationValue. This value represents the value from the concrete platform. The string given here will be used in the exactly same way in the concrete platform.&#xA;&#xA;For example if the platform defines an emumeration in the following way (C-example):&#xA;MyEnum {&#xA;MY_VALUE1;&#xA;MY_VALUE2;&#xA;}&#xA;In this case it should hold for the value-attribute of one EnumerationValue: value = &quot;MY_VALUE1&quot;"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enumerationDataType" lowerBound="1"
+        eType="#//EnumerationDataType" eOpposite="#//EnumerationDataType/enumerationValues">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The Enumeration, in which this value is contained."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnumerationDataType" eSuperTypes="../../org.muml.pim/model/pim.ecore#//types/DataType">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An Enumeration is a possible parameter for an API-command. The Enumeration defines its possible values that can be used as concrete values at runtime."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enumerationValues" lowerBound="1"
+        upperBound="-1" eType="#//EnumerationValue" containment="true" eOpposite="#//EnumerationValue/enumerationDataType">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The possible values from the enumeration."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Constraint" abstract="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An API-command can have a constraints that give restrictions on the usage of the API-command."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="apiCommand" lowerBound="1"
+        eType="#//APICommand" eOpposite="#//APICommand/constraints">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The api-command to which this constraint belongs."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeConstraint" eSuperTypes="#//Constraint">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This class represents a constraint in that way, that an API-command should only be called in a given time. E.g. It can be that the API-command doesn't return valid values, if the API-command is called to often within a time period."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="samplingTime" lowerBound="1"
+        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/TimeValue"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The sampling time say how often one can call an API-command."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Import">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="importURI" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

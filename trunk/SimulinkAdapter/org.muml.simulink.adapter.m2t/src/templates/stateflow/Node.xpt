@@ -1,0 +1,14 @@
+«IMPORT simulink»
+«IMPORT simulink::stateflow»
+
+«EXTENSION extensions::stateflow::Node»
+
+«DEFINE node FOR Node-»
+«IF State.isInstance(this)-»
+«EXPAND State::state FOR (State) this»
+«ELSEIF Junction.isInstance(this)-»
+«EXPAND Junction::junction FOR (Junction) this»
+«ELSEIF History.isInstance(this)-»
+«EXPAND History::history FOR (History) this»
+«ENDIF-»
+«ENDDEFINE»

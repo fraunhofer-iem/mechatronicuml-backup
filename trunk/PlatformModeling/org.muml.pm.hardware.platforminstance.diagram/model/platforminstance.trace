@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trace:TraceModel
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:trace="http://www.eclipse.org/gmf/2006/Trace">
+  <nodeTraces
+      visualID="2005"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0' and _eClass_.name = 'HWPlatformInstance') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0' and _eClass_.name = 'HWPlatformInstanceConfiguration') and _containmentMF_.name = 'hwplatformInstances')">
+    <nodeLabelTraces
+        visualID="5118"
+        queryText="true"/>
+    <compartmentTraces
+        visualID="7012"
+        queryText="true"/>
+  </nodeTraces>
+  <childNodeTraces
+      visualID="3039"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0' and _eClass_.name = 'HWPlatformInstanceConfiguration') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0' and _eClass_.name = 'HWPlatformInstance') and _containmentMF_.name = 'embeddedHPIC')">
+    <compartmentTraces
+        visualID="7013"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3040"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0' and _eClass_.name = 'HWPlatformInstance') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0' and _eClass_.name = 'HWPlatformInstanceConfiguration') and _containmentMF_.name = 'hwplatformInstances')">
+    <nodeLabelTraces
+        visualID="5117"
+        queryText="true"/>
+    <compartmentTraces
+        visualID="7014"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3041"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0' and _eClass_.name = 'DelegationHWPortInstance') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0' and _eClass_.name = 'HWPlatformInstance') and _containmentMF_.name = 'delegationPorts')">
+    <nodeLabelTraces
+        visualID="5100"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3042"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0' and _eClass_.name = 'StructuredResourceInstance') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0' and _eClass_.name = 'HWPlatformInstanceConfiguration') and _containmentMF_.name = 'resources')">
+    <nodeLabelTraces
+        visualID="5103"
+        queryText="true"/>
+    <nodeLabelTraces
+        visualID="5104"
+        queryText="true"/>
+    <nodeLabelTraces
+        visualID="5105"
+        queryText="true"/>
+    <nodeLabelTraces
+        visualID="5106"
+        queryText="true"/>
+    <nodeLabelTraces
+        visualID="5107"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3043"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0' and _eClass_.name = 'HWPortInstance') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0' and _eClass_.name = 'ResourceInstance') and _containmentMF_.name = 'hwports')">
+    <nodeLabelTraces
+        visualID="5102"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3044"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0' and _eClass_.name = 'ActuatorInstance') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0' and _eClass_.name = 'HWPlatformInstanceConfiguration') and _containmentMF_.name = 'resources')">
+    <nodeLabelTraces
+        visualID="5108"
+        queryText="true"/>
+    <nodeLabelTraces
+        visualID="5109"
+        queryText="true"/>
+    <nodeLabelTraces
+        visualID="5110"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3045"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0' and _eClass_.name = 'SensorInstance') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0' and _eClass_.name = 'HWPlatformInstanceConfiguration') and _containmentMF_.name = 'resources')">
+    <nodeLabelTraces
+        visualID="5111"
+        queryText="true"/>
+    <nodeLabelTraces
+        visualID="5112"
+        queryText="true"/>
+    <nodeLabelTraces
+        visualID="5113"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3046"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0' and _eClass_.name = 'BusInstance') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0' and _eClass_.name = 'HWPlatformInstanceConfiguration') and _containmentMF_.name = 'networkingHardwareInstances')">
+    <nodeLabelTraces
+        visualID="5114"
+        queryText="true"/>
+    <nodeLabelTraces
+        visualID="5115"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3047"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0' and _eClass_.name = 'NetworkBridgeInstance') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0' and _eClass_.name = 'HWPlatformInstanceConfiguration') and _containmentMF_.name = 'networkingHardwareInstances')">
+    <nodeLabelTraces
+        visualID="5116"
+        queryText="true"/>
+  </childNodeTraces>
+  <linkTraces
+      visualID="4012"
+      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0' and _eClass_.name = 'NetworkConnectorInstance')"/>
+</trace:TraceModel>

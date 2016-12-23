@@ -1,0 +1,90 @@
+import transforms.lib.common.PatternProtocolSameRootTransformationLibrary;
+import transforms.lib.common.PatternProtocolCommon;
+import transforms.lib.patternToprotocol.PatternToProtocolCommon;
+
+modeltype common uses core::expressions::common('http://www.muml.org/core/1.0.0');
+modeltype PimPackage uses pim('http://www.muml.org/pim/1.0.0');
+modeltype ComponentPackage uses pim::component('http://www.muml.org/pim/1.0.0');
+modeltype ProtocolPackage uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype RTSCPackage uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype ConnectorPackage uses pim::connector('http://www.muml.org/pim/1.0.0');
+modeltype TypesPackage uses pim::types('http://www.muml.org/pim/1.0.0');
+modeltype ValuetypePackage uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype MessageTypePackage uses pim::msgtype('http://www.muml.org/pim/1.0.0');
+modeltype BehaviorPackage uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype core uses core('http://www.muml.org/core/1.0.0');
+modeltype ModelInstancePackage uses core::modelinstance('http://www.muml.org/core/1.0.0');
+modeltype PatternPackage uses pim::pattern('http://www.muml.org/pim/1.0.0');
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+modeltype actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
+
+// @author sthiele2
+transformation TransformPatternToProtocolStep1(in input : ModelInstancePackage, out output : ModelInstancePackage);
+
+
+main()
+{ 
+	// get the input parameters. There is exactly one root and exactly one coordination pattern	
+	var theRootNode := input.rootObjects()[RootNode] -> any(true);
+	
+	// Debug:
+	//var patternCategory : ModelElementCategory := getPatternCategory(theRootNode); 
+	//var thePattern : CoordinationPattern := patternCategory.modelElements->at(1).oclAsType(CoordinationPattern);
+	//bindings := thePattern.legalConfigurations->at(1).parameterBindings;
+	
+	// not debug:	
+	var thePattern : AbstractCoordinationPattern := input.rootObjects()[AbstractCoordinationPattern] -> any(true);
+	bindings := input.rootObjects()[ParameterBinding];
+	
+	
+	
+	// check whether the input is correct: 
+	assert fatal (thePattern != null) with log ("CoordinationPattern is null!" + thePattern.name);
+	assert fatal (theRootNode != null) with log ("RootNode is null!");  	
+    assert fatal (if(thePattern.patternParameters->size() > 0) then (bindings != null and bindings->size() = thePattern.patternParameters->size()) else true endif) with log ("Parameter Bindings are null!");
+    assert fatal (if( bindings->size() >0) then bindings->size() = thePattern.patternParameters->size()  else true endif);
+    
+    // start transformation
+	createProtocol(thePattern);
+}
+helper createProtocol(pattern : AbstractCoordinationPattern)
+{
+	var newProtocol : CoordinationProtocol := pattern.map CoordinationPattern2CoordinationProtocol();	
+	//var protocolCategory : ModelElementCategory := getProtocolCategory(theRootNode);
+	//protocolCategory.modelElements +=newProtocol;
+	newProtocol.verificationConstraintRepositories += pattern.verificationConstraintRepositories.map transform().oclAsType( pim::constraint::VerificationConstraintRepository);  
+}
+
+
+mapping pim::pattern::AbstractCoordinationPattern :: CoordinationPattern2CoordinationProtocol() : pim::protocol::CoordinationProtocol
+{	
+	result.name := self.name + timeStamp;
+	result.comment := self.comment;
+	result.extensions := self.extensions.map transform().oclAsType(Extension);		
+	//var statechartCategory : ModelElementCategory := getRealtimeStatechartCategory(theRootNode);	
+
+	self.roles->forEach(role)
+	{
+		// the role was already mapped in RoleConnector2RoleConnector
+		var newRole : Role := role.map transform().oclAsType(Role);
+		//newRole.behavior := role.behavior.oclAsType(RealtimeStatechart).map RealtimeStatechart2RealtimeStatechart();
+		//set behavorial element?? --> should be already considered when setting behavior of the role!
+		
+		//newRole.coordinationProtocol := result;
+
+		//statechartCategory.modelElements += newRole.behavior.oclAsType(RealtimeStatechart);
+		newRole.subroleBehavior := role.subroleBehavior.map transform().oclAsType(Behavior);
+		result.roles+= newRole;
+	};
+	result._roleConnector := self.roleConnector.map transform().oclAsType(RoleConnector);
+	
+	//result.roleConnector.coordinationProtocol := result;
+	
+	result.adaptedFromPattern := self;
+} 
+
+mapping RealtimeStatechart::create():EObject{
+	init{
+		result:=new RealtimeStatechart().oclAsType(EObject);
+		}
+	}

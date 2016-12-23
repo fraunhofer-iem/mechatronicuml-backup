@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Properties
+Bundle-SymbolicName: org.muml.cbs.dependencylanguage.edit.properties; singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.emf.ecore,
+ org.eclipse.core.runtime,
+ org.muml.ape.runtime,
+ org.muml.ape,
+ org.muml.cbs.dependencylanguage,
+ org.muml.cbs.dependencylanguage.edit,
+ org.muml.cbs.dependencylanguage.xtext.ui,
+ org.eclipse.emf.edit,
+ org.eclipse.ui
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.muml.cbs.dependencylanguage.properties.metamodel, org.muml.cbs.dependencylanguage.properties.constraint,
+ org.muml.cbs.dependencylanguage.properties.dependencylanguage.editor,
+ org.muml.cbs.dependencylanguage.properties.tabs
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

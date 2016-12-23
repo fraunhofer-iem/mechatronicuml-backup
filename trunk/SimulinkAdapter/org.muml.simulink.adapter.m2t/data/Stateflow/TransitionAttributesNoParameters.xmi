@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ASCII"?>
+<model:SimulinkContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://www.muml.org/simulink/1.0.0" xmlns:stateflow="http://www.muml.org/simulink/stateflow/1.0.0" id="_x3zMEEXZEeGRyehUlJU_cA">
+  <models id="_x3zMEUXZEeGRyehUlJU_cA" name="TransitionAttributes">
+    <blocks xsi:type="model:ChartBlock" id="_x3zMEkXZEeGRyehUlJU_cA" name="Chart" chart="_x3zMFEXZEeGRyehUlJU_cA"/>
+    <stateflowMachine id="_x3zME0XZEeGRyehUlJU_cA">
+      <charts id="_x3zMFEXZEeGRyehUlJU_cA" name="Chart" priority="1" initial="true" block="_x3zMEkXZEeGRyehUlJU_cA">
+        <nodes xsi:type="stateflow:State" id="_x3zMFUXZEeGRyehUlJU_cA" incoming="_x3zzIUXZEeGRyehUlJU_cA" name="B" priority="1"/>
+        <nodes xsi:type="stateflow:State" id="_x3zzIEXZEeGRyehUlJU_cA" outgoing="_x3zzIUXZEeGRyehUlJU_cA" name="A" priority="1" initial="true"/>
+        <transitions id="_x3zzIUXZEeGRyehUlJU_cA" source="_x3zzIEXZEeGRyehUlJU_cA" target="_x3zMFUXZEeGRyehUlJU_cA" priority="1" event="_x322cEXZEeGRyehUlJU_cA">
+          <guard id="_x3zzIkXZEeGRyehUlJU_cA" expression="true"/>
+          <action id="_x3zzI0XZEeGRyehUlJU_cA" expression="doTransition()"/>
+        </transitions>
+        <events id="_x322cEXZEeGRyehUlJU_cA" name="event"/>
+      </charts>
+    </stateflowMachine>
+  </models>
+</model:SimulinkContainer>

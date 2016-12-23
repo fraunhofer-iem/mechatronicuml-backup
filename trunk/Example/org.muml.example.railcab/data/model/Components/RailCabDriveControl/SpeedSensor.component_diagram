@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component="http://www.muml.org/pim/component/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_Ir3gwPh4EeOdcfcso3gQlg" type="Component" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_JidxkPh4EeOdcfcso3gQlg" type="2006" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Jidxkvh4EeOdcfcso3gQlg" type="5028"/>
+    <children xmi:type="notation:Shape" xmi:id="_LjJ28fh4EeOdcfcso3gQlg" type="3011" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_LjJ28_h4EeOdcfcso3gQlg" type="5013">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_LjJ29Ph4EeOdcfcso3gQlg" y="5"/>
+      </children>
+      <element xmi:type="component:ContinuousPort" href="../../RailCab.muml#_LjJ28Ph4EeOdcfcso3gQlg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LjJ28vh4EeOdcfcso3gQlg"/>
+    </children>
+    <element xmi:type="component:StaticAtomicComponent" href="../../RailCab.muml#_JiUAkPh4EeOdcfcso3gQlg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Jidxkfh4EeOdcfcso3gQlg" x="180" y="204" width="301" height="97"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_Ir3gwfh4EeOdcfcso3gQlg"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../../RailCab.muml#_zEShsO5uEeOKI4bZ_bxwuQ"/>
+</notation:Diagram>

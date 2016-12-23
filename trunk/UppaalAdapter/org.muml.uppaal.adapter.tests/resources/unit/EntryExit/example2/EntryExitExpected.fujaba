@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--muml metamodel version 0.3.2 (r2996)-->
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionlanguage="http://www.muml.org/pim/actionlanguage/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:msgtype="http://www.muml.org/pim/msgtype/1.0.0" xmlns:protocol="http://www.muml.org/pim/protocol/1.0.0" xmlns:realtimestatechart="http://www.muml.org/pim/realtimestatechart/1.0.0" xmlns:sdcec="http://www.muml.org/core/expressions/common/1.0.0" xmlns:types="http://www.muml.org/pim/types/1.0.0" xmi:id="_FtCtYJydEeOSPY_MNk-8EA">
+  <categories xmi:id="_FtCtYZydEeOSPY_MNk-8EA" key="org.muml.types.category" name="types">
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_FtCtYpydEeOSPY_MNk-8EA" name="VOID"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_FtCtY5ydEeOSPY_MNk-8EA" name="BOOLEAN" primitiveType="BOOLEAN"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_FtCtZJydEeOSPY_MNk-8EA" name="BYTE" primitiveType="BYTE"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_FtCtZZydEeOSPY_MNk-8EA" name="SHORT" primitiveType="SHORT"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_FtCtZpydEeOSPY_MNk-8EA" name="INT" primitiveType="INT"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_FtCtZ5ydEeOSPY_MNk-8EA" name="LONG" primitiveType="LONG"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_FtCtaJydEeOSPY_MNk-8EA" name="DOUBLE" primitiveType="DOUBLE"/>
+  </categories>
+  <categories xmi:id="_FtCtaZydEeOSPY_MNk-8EA" key="org.muml.pim.components.category" name="component"/>
+  <categories xmi:id="_FtCtapydEeOSPY_MNk-8EA" key="org.muml.pim.protocol.category" name="protocol">
+    <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_FtCta5ydEeOSPY_MNk-8EA" name="proto">
+      <roles xmi:id="_FtCtbJydEeOSPY_MNk-8EA" connectors="_FtCteJydEeOSPY_MNk-8EA" behavior="_FtCtf5ydEeOSPY_MNk-8EA" name="role1" senderMessageTypes="_FtCtmpydEeOSPY_MNk-8EA" receiverMessageTypes="_FtCtmpydEeOSPY_MNk-8EA">
+        <cardinality xmi:id="_FtCtbZydEeOSPY_MNk-8EA">
+          <lowerBound xmi:id="_FtCtbpydEeOSPY_MNk-8EA"/>
+          <upperBound xmi:id="_FtCtb5ydEeOSPY_MNk-8EA"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_FtCtcJydEeOSPY_MNk-8EA" name="role1buffer" messageType="_FtCtmpydEeOSPY_MNk-8EA">
+          <bufferSize xmi:id="_FtCtcZydEeOSPY_MNk-8EA" value="9223372036854775807" infinity="true"/>
+        </receiverMessageBuffer>
+      </roles>
+      <roles xmi:id="_FtCtcpydEeOSPY_MNk-8EA" connectors="_FtCteJydEeOSPY_MNk-8EA" behavior="_FtCtlpydEeOSPY_MNk-8EA" name="role2" senderMessageTypes="_FtCtmpydEeOSPY_MNk-8EA" receiverMessageTypes="_FtCtmpydEeOSPY_MNk-8EA">
+        <cardinality xmi:id="_FtCtc5ydEeOSPY_MNk-8EA">
+          <lowerBound xmi:id="_FtCtdJydEeOSPY_MNk-8EA"/>
+          <upperBound xmi:id="_FtCtdZydEeOSPY_MNk-8EA"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_FtCtdpydEeOSPY_MNk-8EA" name="role2buffer" messageType="_FtCtmpydEeOSPY_MNk-8EA">
+          <bufferSize xmi:id="_FtCtd5ydEeOSPY_MNk-8EA" value="9223372036854775807" infinity="true"/>
+        </receiverMessageBuffer>
+      </roles>
+      <roleConnector xmi:id="_FtCteJydEeOSPY_MNk-8EA" connectorEndpoints="_FtCtbJydEeOSPY_MNk-8EA _FtCtcpydEeOSPY_MNk-8EA">
+        <connectorQualityOfServiceAssumptions xmi:id="_FtCteZydEeOSPY_MNk-8EA" comment="">
+          <minMessageDelay xmi:id="_FtCtepydEeOSPY_MNk-8EA" unit="SECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_FtCte5ydEeOSPY_MNk-8EA" value="0"/>
+          </minMessageDelay>
+          <maxMessageDelay xmi:id="_FtCtfJydEeOSPY_MNk-8EA" unit="SECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_FtCtfZydEeOSPY_MNk-8EA" value="0"/>
+          </maxMessageDelay>
+        </connectorQualityOfServiceAssumptions>
+      </roleConnector>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_FtCtfpydEeOSPY_MNk-8EA" key="org.muml.pim.realtimestatechart.category" name="realtimestatechart">
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_FtCtf5ydEeOSPY_MNk-8EA" name="role1" behavioralElement="_FtCtbJydEeOSPY_MNk-8EA">
+      <states xmi:id="_FtCtgJydEeOSPY_MNk-8EA" name="init" initial="true">
+        <embeddedRegions xmi:id="_FtCtgZydEeOSPY_MNk-8EA" priority="1">
+          <embeddedStatechart xmi:id="_FtCtgpydEeOSPY_MNk-8EA" name="statechart">
+            <variables xmi:id="_FtCtg5ydEeOSPY_MNk-8EA" name="exit" dataType="_FtCtZpydEeOSPY_MNk-8EA"/>
+            <variables xmi:id="_FtCthJydEeOSPY_MNk-8EA" name="transition" dataType="_FtCtZpydEeOSPY_MNk-8EA"/>
+            <variables xmi:id="_FtCthZydEeOSPY_MNk-8EA" name="entry" dataType="_FtCtZpydEeOSPY_MNk-8EA"/>
+            <transitions xmi:id="_FtCthpydEeOSPY_MNk-8EA" priority="1" target="_FtCtlZydEeOSPY_MNk-8EA" source="_FtCtlJydEeOSPY_MNk-8EA">
+              <action xmi:id="_FtCth5ydEeOSPY_MNk-8EA" name="exit + transition + entry">
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_FtCtiJydEeOSPY_MNk-8EA">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_FtCtiZydEeOSPY_MNk-8EA" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_FtCtipydEeOSPY_MNk-8EA" value="1"/>
+                    <lhs_typedNamedElementExpression xmi:id="_FtCti5ydEeOSPY_MNk-8EA" typedNamedElement="_FtCtg5ydEeOSPY_MNk-8EA"/>
+                  </expressions>
+                </expressions>
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_FtCtjJydEeOSPY_MNk-8EA">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_FtCtjZydEeOSPY_MNk-8EA" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_FtCtjpydEeOSPY_MNk-8EA" value="1"/>
+                    <lhs_typedNamedElementExpression xmi:id="_FtCtj5ydEeOSPY_MNk-8EA" typedNamedElement="_FtCthJydEeOSPY_MNk-8EA"/>
+                  </expressions>
+                </expressions>
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_FtCtkJydEeOSPY_MNk-8EA">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_FtCtkZydEeOSPY_MNk-8EA" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_FtCtkpydEeOSPY_MNk-8EA" value="1"/>
+                    <lhs_typedNamedElementExpression xmi:id="_FtCtk5ydEeOSPY_MNk-8EA" typedNamedElement="_FtCthZydEeOSPY_MNk-8EA"/>
+                  </expressions>
+                </expressions>
+              </action>
+            </transitions>
+            <states xmi:id="_FtCtlJydEeOSPY_MNk-8EA" name="State1" outgoingTransitions="_FtCthpydEeOSPY_MNk-8EA" initial="true"/>
+            <states xmi:id="_FtCtlZydEeOSPY_MNk-8EA" name="State2" incomingTransitions="_FtCthpydEeOSPY_MNk-8EA"/>
+          </embeddedStatechart>
+        </embeddedRegions>
+      </states>
+    </modelElements>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_FtCtlpydEeOSPY_MNk-8EA" name="role2" behavioralElement="_FtCtcpydEeOSPY_MNk-8EA">
+      <states xmi:id="_FtCtl5ydEeOSPY_MNk-8EA" name="init" initial="true"/>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_FtCtmJydEeOSPY_MNk-8EA" key="org.muml.pim.messagetype.category" name="msgtype">
+    <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_FtCtmZydEeOSPY_MNk-8EA" name="Repository">
+      <messageTypes xmi:id="_FtCtmpydEeOSPY_MNk-8EA" name="exampleMessage"/>
+    </modelElements>
+  </categories>
+</modelinstance:RootNode>

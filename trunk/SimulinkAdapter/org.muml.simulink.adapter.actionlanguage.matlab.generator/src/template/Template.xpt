@@ -1,0 +1,279 @@
+«IMPORT core»
+«IMPORT core::expressions»
+«IMPORT actionlanguage»
+«IMPORT pim::realtimestatechart»
+«IMPORT pim::behavior»
+«IMPORT pim::types»
+«IMPORT core::expressions::common»
+«IMPORT extension»
+
+«EXTENSION extension::extensionMatlab»
+
+«DEFINE main FOR Object»
+«FILE ((String) GLOBALVAR output)-»
+«EXPAND expression FOR this-»
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE main FOR List[Object]»
+«FILE ((String) GLOBALVAR output)-»
+«EXPAND expression FOREACH this SEPARATOR "»»"-»
+«ENDFILE» 
+«ENDDEFINE»
+
+«DEFINE expression FOR realtimestatechart::Action»
+«EXPAND expression FOREACH expressions SEPARATOR "; \n "-»
+«ENDDEFINE»
+
+
+«DEFINE expression FOR realtimestatechart::Transition»
+«IF this.guard.metaType == actionlanguage::Block»
+«EXPAND expression FOR guard»
+«ELSE»
+«EXPAND expression FOR guard»
+«ENDIF»
+«ENDDEFINE»
+
+
+«DEFINE expression FOR realtimestatechart::Synchronization»
+«EXPAND expression FOR selectorExpression»
+«ENDDEFINE»
+
+
+«DEFINE expression FOR behavior::ParameterBinding»
+«REM»
+«FOREACH parameterBinding AS p SEPARATOR '; \n '»; \n
+«p.parameter.name» = «EXPAND expression FOR p.value»
+«ENDFOREACH»
+«ENDREM»
+«EXPAND expression FOR value»
+«ENDDEFINE»
+
+
+«DEFINE expression FOR behavior::Operation»
+function «name»Out = «name»(«EXPAND parameter FOREACH parameters SEPARATOR ", "») \n
+ «EXPAND expression FOREACH implementations SEPARATOR "; \n "-»
+«ENDDEFINE»
+
+
+«DEFINE expression FOR behavior::Variable»
+«EXPAND expression FOR initializeExpression»
+«ENDDEFINE»
+
+«DEFINE expression FOR Object»
+«ENDDEFINE»
+
+«DEFINE expression FOR core::expressions::Expression»
+«ENDDEFINE»
+
+
+«DEFINE expression FOR core::expressions::common::LiteralExpression»
+«value»
+«ENDDEFINE»
+
+
+«DEFINE expression FOR core::expressions::TextualExpression»
+«IF language == 'embedded_matlab'»
+«expressionText»
+«ENDIF»
+«ENDDEFINE»
+
+
+«DEFINE parameter FOR behavior::Parameter»
+«name»
+«ENDDEFINE»
+
+«DEFINE expression FOR actionlanguage::TypedNamedElementExpression»
+«typedNamedElement.name»
+«FOREACH elementAccessors AS curAccessor»
+  «EXPAND expression FOR curAccessor» 
+«ENDFOREACH»
+«ENDDEFINE»
+
+«DEFINE expression FOR actionlanguage::ArrayIndexExpression»
+  [ «EXPAND expression FOR index» ]
+«ENDDEFINE»
+
+«DEFINE expression FOR actionlanguage::AttributeAccessorExpression»
+  . «attribute.name»
+«ENDDEFINE»
+
+
+«DEFINE expression FOR actionlanguage::ArrayInitializeExpression»
+[«FOREACH expressions AS curExpr SEPARATOR " "»
+«EXPAND expression FOR curExpr»
+«ENDFOREACH»]
+«ENDDEFINE»
+
+«DEFINE expression FOR core::expressions::common::UnaryExpression»
+«IF (operator == UnaryOperator::INCREMENT || operator == UnaryOperator::DECREMENT)»
+«EXPAND expression FOR enclosedExpression» «unaryOp(operator)»
+«ELSE»
+«unaryOp(operator)» «EXPAND expression FOR enclosedExpression»
+«ENDIF»
+«ENDDEFINE»
+
+
+«DEFINE expression FOR core::expressions::common::BinaryExpression»
+«ENDDEFINE»
+
+
+«DEFINE expression FOR core::expressions::common::ComparisonExpression»
+«EXPAND expression FOR leftExpression» «comparingOp(operator)» «EXPAND expression FOR rightExpression»
+«ENDDEFINE»
+
+
+«DEFINE expression FOR core::expressions::common::ArithmeticExpression»
+«IF (operator == common::ArithmeticOperator::MODULO)»
+mod(
+«IF (LiteralExpression.isInstance(leftExpression))»
+«EXPAND expression FOR leftExpression»,
+«ELSE» 
+(«EXPAND expression FOR leftExpression»),
+«ENDIF»
+«IF (LiteralExpression.isInstance(rightExpression))»
+«EXPAND expression FOR rightExpression»
+«ELSE» 
+(«EXPAND expression FOR rightExpression»)
+«ENDIF»
+)
+«ELSE»
+«EXPAND expression FOR leftExpression» «arithmeticOp(operator)» «EXPAND expression FOR rightExpression»
+«ENDIF»
+«ENDDEFINE»
+
+
+«DEFINE expression FOR core::expressions::common::LogicalExpression»
+«IF (operator == common::LogicOperator::XOR)»
+xor(
+«IF (LiteralExpression.isInstance(leftExpression))»
+«EXPAND expression FOR leftExpression»,
+«ELSE» 
+(«EXPAND expression FOR leftExpression»),
+«ENDIF»
+«IF (LiteralExpression.isInstance(rightExpression))»
+«EXPAND expression FOR rightExpression»
+«ELSE» 
+(«EXPAND expression FOR rightExpression»)
+«ENDIF»
+)
+«ELSE»
+«EXPAND expression FOR leftExpression» «logicOp(operator)» «EXPAND expression FOR rightExpression»
+«ENDIF»
+«ENDDEFINE»
+
+
+
+
+«DEFINE expression FOR actionlanguage::Block»
+«IF this.eContainer.metaType == realtimestatechart::Transition»
+«EXPAND expression FOREACH expressions SEPARATOR " && "-»
+«ELSE»
+«EXPAND expression FOREACH expressions SEPARATOR "; \n "-»
+«ENDIF»
+«ENDDEFINE»
+
+
+«DEFINE expression FOR actionlanguage::Loop»
+«ENDDEFINE»
+
+
+«DEFINE expression FOR actionlanguage::WhileLoop»
+while «EXPAND expression FOR loopTest»\n «EXPAND expression FOR block»;\nend
+«ENDDEFINE»
+
+
+«DEFINE expression FOR actionlanguage::DoWhileLoop»
+while 1\n «EXPAND expression FOR block»;\n if «EXPAND expression FOR loopTest»\n  break\n end\nend
+«ENDDEFINE»
+
+
+«DEFINE expression FOR actionlanguage::LocalVariableDeclarationStatement»
+«variable.name» = «dataType((PrimitiveDataType)variable.dataType)»
+«IF (variable.initializeExpression != null)»
+«EXPAND expression FOR variable.initializeExpression»)
+«ELSE»
+0)
+«ENDIF»
+«ENDDEFINE»
+
+
+
+«DEFINE expression FOR actionlanguage::Assignment»
+«EXPAND expression FOR lhs_typedNamedElementExpression»
+«IF (incrementDecrementOperator == IncrementDecrementOperator::INCREMENT)»
+ = «EXPAND expression FOR lhs_typedNamedElementExpression» +1
+«ELSEIF (incrementDecrementOperator == IncrementDecrementOperator::DECREMENT)»
+ = «EXPAND expression FOR lhs_typedNamedElementExpression» -1
+«ELSE»
+«IF (assignOperator == AssignOperator::PLUS_EQUAL)»
+ = «EXPAND expression FOR lhs_typedNamedElementExpression» + «EXPAND expression FOR rhs_assignExpression» 
+«ELSEIF (assignOperator == AssignOperator::MINUS_EQUAL)»
+ = «EXPAND expression FOR lhs_typedNamedElementExpression» - «EXPAND expression FOR rhs_assignExpression»
+«ELSE»
+ = «EXPAND expression FOR rhs_assignExpression» 
+«ENDIF»
+«ENDIF»
+«ENDDEFINE»
+
+
+«DEFINE expression FOR actionlanguage::ForLoop»
+«EXPAND expression FOR initializeExpression»;\n
+ while «EXPAND expression FOR loopTest»\n
+ «EXPAND expression FOR block»;\n
+ «EXPAND expression FOR countingExpression»;\n
+ end
+«ENDDEFINE»
+
+
+«DEFINE expression FOR actionlanguage::IfStatement»
+if («EXPAND expression FOR ifCondition») \n «EXPAND expression FOR ifBlock»;\n
+«IF ! elseIfBlocks.isEmpty»
+«FOREACH elseIfConditions AS c ITERATOR iter»
+ elseif («EXPAND expression FOR c») \n
+ «EXPAND expression FOR ((IfStatement)c.eContainer()).elseIfBlocks.get(iter.counter0)»;\n
+«ENDFOREACH»
+«ENDIF»
+«IF elseBlock != null»
+ else \n«EXPAND expression FOR elseBlock»;\n
+«ENDIF»
+ end
+«ENDDEFINE»
+
+
+«DEFINE expression FOR actionlanguage::ReturnStatement»
+«LET getOperationName(this) AS opName»
+«IF opName == null»
+ return
+«ELSE»  
+«opName»Out = «EXPAND expression FOR expression»; \n
+ return
+«ENDIF»
+«ENDLET»
+«ENDDEFINE»
+
+
+«DEFINE expression FOR actionlanguage::OperationCall»
+«operation.name» («EXPAND expression FOREACH parameterBinding.value SEPARATOR ", \n "-»)
+«ENDDEFINE»
+
+
+«DEFINE expression FOR actionlanguage::TriggerMessageExpression»
+«IF messageType.parameters.select(e|e.name == parameter.name).extensions.typeSelect(extension::SimulinkAnnotationExtension).exists(e|e.source == 'tmp_var')»
+«messageType.parameters.select(e|e.name == parameter.name).extensions.typeSelect(extension::SimulinkAnnotationExtension).select(e|e.source == 'tmp_var').details.get(0).value»
+«ENDIF»
+«ENDDEFINE»
+
+«REM» template for all model elements that contain time values «ENDREM»
+
+«DEFINE expression FOR realtimestatechart::ClockConstraint»
+«EXPAND expression FOR bound.value»
+«ENDDEFINE»
+
+«DEFINE expression FOR component::HybridPort»
+«EXPAND expression FOR samplingInterval.value»
+## «REM» use ## as a delimeter for the two expressions of HybridPort«ENDREM»
+«EXPAND expression FOR initializeExpression»
+«ENDDEFINE»
+
+

@@ -1,0 +1,6 @@
+Declaration
+NodeLabelPredicates {RailCab,SectionControl}
+EdgeLabelPredicates {member,sectionControl}
+Formulas
+forall x (RailCab(x) => EF[ >= 0] exists y (RailCab(y) & member(x,y)));
+forall g (RailCab(g) => AF[ >= 0] exists h (SectionControl(h) & sectionControl(g,h)));

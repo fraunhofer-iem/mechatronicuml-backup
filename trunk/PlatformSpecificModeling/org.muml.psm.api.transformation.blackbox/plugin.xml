@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.m2m.qvt.oml.javaBlackboxUnits">
+      <unit
+            name="TimeUnitLibUnit"
+            namespace="org.muml.psm.api._transformation._blackbox">
+         <library
+               class="org.muml.psm.api.transformation.blackbox.TimeUnitLibrary"
+               name="TimenitLib">
+            <metamodel
+                  nsURI="http://www.muml.org/pim/valuetype/1.0.0">
+            </metamodel>
+            <metamodel
+                  nsURI="http://www.muml.org/core/expressions/1.0.0">
+            </metamodel>
+         </library>
+      </unit>
+   </extension>
+
+</plugin>

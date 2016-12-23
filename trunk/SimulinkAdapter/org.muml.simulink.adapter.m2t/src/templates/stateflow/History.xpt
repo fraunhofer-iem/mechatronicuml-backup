@@ -1,0 +1,16 @@
+«IMPORT simulink»
+«IMPORT simulink::stateflow»
+
+«EXTENSION extensions::stateflow::StateflowElement»
+«EXTENSION extensions::stateflow::Node»
+
+«DEFINE history FOR History-»
+  junction {
+    id			    «this.getStateflowId()»
+    chart		    «this.getChart().getStateflowId()»
+    tag				"id=«this.id»"
+    linkNode		    [«this.parent.getStateflowId()» «this.getPrevSiblingStateflowIdId(this.parent.nodes.select(e|History.isInstance(e)))» «this.getNextSiblingStateflowIdId(this.parent.nodes.select(e|History.isInstance(e)))»]
+    type		    HISTORY_JUNCTION
+«EXPAND Parameter::stateflowParameter FOREACH this.parameters.select(p| !{'chart', 'id', 'tag', 'linkNode', 'type', 'subviewer'}.contains(p.name) )-»    
+  }
+«ENDDEFINE»

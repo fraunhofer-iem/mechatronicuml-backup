@@ -1,0 +1,128 @@
+«IMPORT ape»
+«EXTENSION Metamodel»
+«DEFINE Plugin FOR PropertyGenerator-»
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+«EXPAND extensions-»
+</plugin>
+«ENDDEFINE»
+
+UNUSED:
+<propertyContributor
+          contributorId="org.muml.ape.contributor">
+       <propertyCategory
+             category="domain">
+       </propertyCategory>
+       <propertyCategory
+             category="default">
+       </propertyCategory>
+       <propertyCategory
+             category="extended">
+       </propertyCategory>
+       <propertyCategory
+             category="advanced">
+       </propertyCategory>
+    </propertyContributor>
+  </extension>
+  
+  
+«DEFINE extensions FOR PropertyGenerator»
+«EXPAND propertyContributor»
+«EXPAND propertyTabs»
+«EXPAND propertySections»
+«EXPAND propertyEditor»
+«EXPAND metamodelContributor»
+«EXPAND creationConstraintContributor»
+«ENDDEFINE»
+
+«DEFINE propertyContributor FOR PropertyGenerator»
+  <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+    <propertyContributor
+          contributorId="«contributorId»">
+       <propertyCategory
+             category="domain">
+       </propertyCategory>
+       <propertyCategory
+             category="default">
+       </propertyCategory>
+       <propertyCategory
+             category="extended">
+       </propertyCategory>
+       <propertyCategory
+             category="advanced">
+       </propertyCategory>
+    </propertyContributor>
+  </extension>
+«ENDDEFINE»
+
+«DEFINE propertyTabs FOR PropertyGenerator»
+«IF !tabs.isEmpty»
+<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs contributorId="«contributorId»">
+          «FOREACH tabs AS this-»
+          <propertyTab
+             category="domain"
+             id="«id»"
+             «IF afterTab != ""-»
+             afterTab="«afterTab»"
+             «ENDIF-»
+             label="«name»"/>
+          «ENDFOREACH»
+      </propertyTabs>
+  </extension>
+«ENDIF»
+«ENDDEFINE»
+
+«DEFINE propertySections FOR PropertyGenerator»
+«IF !tabs.isEmpty»
+  <extension point="org.eclipse.ui.views.properties.tabbed.propertySections"> 
+      <propertySections contributorId="«contributorId»">
+        «FOREACH tabs AS tab-»
+          <propertySection
+            class="org.muml.ape.runtime.sections.ObjectPropertySection"
+            filter="«genPluginId().toString()».tabs.«tab.id.toString().replaceAll('\\.', '_').toFirstUpper()»TabElementFilter"
+            id="«tab.id»"
+            tab="«tab.id»">
+             <input
+               type="org.eclipse.emf.ecore.EObject">
+             </input>
+          </propertySection>
+        «ENDFOREACH» 
+      </propertySections>
+  </extension>
+«ENDIF»
+«ENDDEFINE»
+
+
+«DEFINE propertyEditor FOR PropertyGenerator»
+ <extension point="org.muml.ape.runtime.propertyEditors">
+    <propertyEditors>
+    «FOREACH packages.classes.reject(e | e.genClass.ecoreClass.abstract) AS this»
+       <propertyEditor
+             factory="«genQualifiedEditorName()»$Factory"
+             type="«genClass.ecoreClass.ePackage.nsURI»#«genClass.ecoreClass.name»">
+       </propertyEditor>
+    «ENDFOREACH»
+    </propertyEditors>
+ </extension>
+«ENDDEFINE»
+
+«DEFINE metamodelContributor FOR PropertyGenerator»
+ <extension
+       point="org.muml.ape.runtime.metamodelContributor">
+    <metamodel
+          contributor="«genPluginId()».metamodel.MetamodelContributor">
+    </metamodel>
+ </extension>
+«ENDDEFINE»
+
+«DEFINE creationConstraintContributor FOR PropertyGenerator»
+ <extension
+       point="org.muml.ape.runtime.creationConstraintContributor">
+    <constraint
+          contributor="«genPluginId()».constraint.CreationConstraintContributor">
+    </constraint>
+ </extension>
+«ENDDEFINE»

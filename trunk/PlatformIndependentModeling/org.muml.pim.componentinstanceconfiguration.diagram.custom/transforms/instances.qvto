@@ -1,0 +1,61 @@
+import InstanceLibrary;
+import updateInstance;
+
+transformation InstantiationTransformation(inout instance : InstancePackage) extends updateInstance;
+
+modeltype PimPackage uses pim('http://www.muml.org/pim/1.0.0');
+modeltype ConnectorPackage uses pim::connector('http://www.muml.org/pim/1.0.0');
+modeltype ComponentPackage uses pim::component('http://www.muml.org/pim/1.0.0');
+modeltype ProtocolPackage uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype ValueTypePackage uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype InstancePackage uses pim::instance('http://www.muml.org/pim/1.0.0');
+
+
+main() {
+	log("QVT-O Script \"instances.qvto\" started.");
+
+	// process AtomicComponentInstances
+	instance.rootObjects()[AtomicComponentInstance]->forEach(ci) {
+		if (not ci.componentType.oclIsUndefined()) then {
+			ci.portInstances += ci.syncPortInstances(); // update PortInstances
+			} endif;
+	};
+	
+	// process StructuredComponentInstances
+	instance.rootObjects()[StructuredComponentInstance]->forEach(ci) {
+		// Remove old port instances from resource
+		if (not ci.componentType.oclIsUndefined()) then {
+			ci.portInstances += ci.syncPortInstances(); // update PortInstances
+			} endif;
+		
+		// Remove old embedded cic from resource
+		instance.removeElement(ci.embeddedCIC);
+		ci.embeddedCIC := new ComponentInstanceConfiguration(ci.componentType.oclAsType(StructuredComponent));
+		
+		//Talko to Ingo what the purpose of this code is
+		
+		/*if (ci.container().oclIsKindOf(ComponentInstanceConfiguration)) then {
+			//do not remove connector from the overal root node
+			if(not ci.container().container().oclIsKindOf(ModelElementCategory)) then{
+			// Remove old connector instances from resource
+			ci.container().oclAsType(ComponentInstanceConfiguration).portConnectorInstances->forEach(pci) {
+				instance.removeElement(pci);
+			}; 
+			ci.container().oclAsType(ComponentInstanceConfiguration).portConnectorInstances := Set { };
+				}endif;
+			
+		} endif;  */
+		
+	};
+	
+	
+	instance.removeElement(NULL_COMPONENT_PART_HELPER);
+	instance.removeElement(NULL_PORT_PART_HELPER);
+}
+
+
+
+
+
+
+

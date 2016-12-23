@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="MechatronicUML"
+            id="org.muml.views">
+      </category>
+      <view
+            name="Muml Browser"
+            icon="icons/sample.gif"
+            category="org.muml.views"
+            class="org.muml.core.browser.ModelBrowser"
+            id="org.muml.core.browser.views.ModelBrowser">
+      </view>
+   </extension>
+   
+   
+   
+   <extension
+         point="org.eclipse.help.contexts">
+      <contexts
+            file="contexts.xml">
+      </contexts>
+   </extension>
+   
+   
+   
+ <extension point="org.eclipse.ui.navigator.navigatorContent" id="navigator-content">
+     <navigatorContent
+           activeByDefault="true"
+           contentProvider="org.muml.core.browser.providers.ModelBrowserContentProvider"
+           id="org.muml.core.browser.views.ModelBrowser.content"
+           labelProvider="org.muml.core.browser.providers.ModelBrowserLabelProvider"
+           name="MechatronicUML Browser Contents"
+           priority="lower"
+           providesSaveables="true">         
+        <enablement>
+            <or>
+                <instanceof value="org.eclipse.core.resources.IResource" /> 
+            </or>
+        </enablement>
+     </navigatorContent>
+     <actionProvider
+           appearsBefore="org.eclipse.ui.navigator.resources.OpenActions"
+           class="org.muml.core.browser.actions.OpenDiagramActionProvider"
+           id="org.muml.core.browser.providers.OpenDiagramNavigatorActionProvider">
+        <enablement>
+           <or>
+              <instanceof
+                    value="org.eclipse.emf.ecore.EObject">
+              </instanceof>
+              <instanceof
+                    value="org.eclipse.core.resources.IResource">
+              </instanceof>
+           </or></enablement>
+      </actionProvider>
+     <actionProvider
+           class="org.muml.core.browser.actions.NewActionProvider"
+           id="org.muml.core.browser.providers.NewActions"
+           overrides="org.eclipse.ui.navigator.resources.NewActions"
+           priority="high">
+        <enablement>
+           <or>
+              <instanceof
+                    value="org.eclipse.emf.ecore.EObject">
+              </instanceof>
+              <instanceof
+                    value="org.eclipse.core.resources.IResource">
+              </instanceof>
+           </or>
+        </enablement>
+     </actionProvider>
+     <actionProvider
+           class="org.muml.core.browser.actions.EditActionProvider"
+           id="org.muml.core.browser.providers.EditActions"
+           priority="high">
+        <enablement>
+           <or>
+              <instanceof
+                    value="org.eclipse.emf.ecore.EObject">
+              </instanceof>
+              <instanceof
+                    value="org.eclipse.core.resources.IResource">
+              </instanceof>
+           </or>
+        </enablement>
+     </actionProvider>
+ </extension>
+
+<!-- viewer content binding -->
+ <extension
+         point="org.eclipse.ui.navigator.viewer">
+       <viewer
+             helpContext="org.eclipse.ui.project_explorer_context"
+             viewerId="org.muml.core.browser.views.ModelBrowser">
+          <popupMenu
+                allowsPlatformContributions="true"
+                id="org.muml.core.browser.views.ModelBrowser#PopupMenu">  
+             <insertionPoint name="group.new"/>
+             <insertionPoint
+                   name="group.open"
+                   separator="true"/>
+             <insertionPoint name="group.openWith"/>   
+             <insertionPoint name="group.edit"
+                   separator="true"/>   
+             <insertionPoint name="group.reorganize" />   
+             <insertionPoint
+                   name="group.port"
+                   separator="true"/>     
+             <insertionPoint
+                   name="group.build"
+                   separator="true"/> 
+             <insertionPoint
+                   name="group.generate"
+                   separator="true"/> 
+             <insertionPoint
+                   name="group.search"
+                   separator="true"/>              
+             <insertionPoint
+                   name="additions"
+                   separator="true"/>              
+             <insertionPoint
+                   name="group.properties"
+                   separator="true"/>
+          </popupMenu>
+          <options>
+             <property
+                   name="org.eclipse.ui.navigator.customizeViewDialogHelpContext"
+                   value="org.eclipse.ui.project_explorer_customization_dialog">
+             </property>
+          </options>
+       </viewer>
+       
+       <viewerContentBinding 
+             viewerId="org.muml.core.browser.views.ModelBrowser">
+          <includes>
+       	      <contentExtension pattern="org.muml.core.browser.*" />		       	      
+	          <contentExtension pattern="org.eclipse.ui.navigator.resources.filters.*"/>
+           <contentExtension pattern="org.eclipse.ui.navigator.resources.linkHelper"/>
+           <contentExtension pattern="org.eclipse.ui.navigator.resources.workingSets"/>
+          </includes>
+       </viewerContentBinding>
+       <viewerActionBinding
+            viewerId="org.muml.core.browser.views.ModelBrowser">
+         <includes>
+             <actionExtension
+                   pattern="org.muml.core.browser.*">
+             </actionExtension>
+         </includes>
+       </viewerActionBinding>
+       <dragAssistant
+             class="org.eclipse.ui.navigator.resources.ResourceDragAdapterAssistant"
+             viewerId="org.muml.core.browser.views.ModelBrowser"/>
+   </extension>
+
+   <!-- show view as default in resource perspective -->
+   <extension point="org.eclipse.ui.perspectiveExtensions">
+   <perspectiveExtension
+      targetID="org.eclipse.ui.resourcePerspective">
+      <view
+         id="org.muml.core.browser.views.ModelBrowser"
+         relationship="stack"
+         relative="org.eclipse.ui.navigator.ProjectExplorer"
+         visible="true">
+      </view>
+   </perspectiveExtension>
+   </extension>
+
+</plugin>

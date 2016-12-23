@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:instance="http://www.muml.org/pim/instance/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xsi:schemaLocation="http://www.muml.org/pim/instance/1.0.0 http://www.muml.org/pim/1.0.0#//instance" xmi:id="_e61AYCMmEeaKgdiSINwsHw" type="Component Instance Configuration" name="rocketRoot.componentinstanceconfiguration_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_kfbRYCMmEeaKgdiSINwsHw" type="2015" fontName="Cantarell" fontHeight="11" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_kfcfgCMmEeaKgdiSINwsHw" type="5026"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_kfcfgSMmEeaKgdiSINwsHw" type="7012">
+      <children xmi:type="notation:Shape" xmi:id="_khLk4CMmEeaKgdiSINwsHw" type="3023" fontName="Cantarell" fontHeight="11" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_khLk4iMmEeaKgdiSINwsHw" type="7013">
+          <children xmi:type="notation:Shape" xmi:id="_khUHwCMmEeaKgdiSINwsHw" type="3024" fontName="Cantarell" fontHeight="11" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_khUHwiMmEeaKgdiSINwsHw" type="5028"/>
+            <element xmi:type="instance:AtomicComponentInstance" href="../org.muml.examples.muml#_-15PAcj2EeWzrcBaL-cniQ"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_khUHwSMmEeaKgdiSINwsHw" x="69" y="314"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_khUHwyMmEeaKgdiSINwsHw" type="3024" fontName="Cantarell" fontHeight="11" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_khUHxSMmEeaKgdiSINwsHw" type="5028"/>
+            <element xmi:type="instance:AtomicComponentInstance" href="../org.muml.examples.muml#_-15PA8j2EeWzrcBaL-cniQ"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_khUHxCMmEeaKgdiSINwsHw" x="45" y="206"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_khUHxiMmEeaKgdiSINwsHw" type="3024" fontName="Cantarell" fontHeight="11" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_khUHyCMmEeaKgdiSINwsHw" type="5028"/>
+            <element xmi:type="instance:AtomicComponentInstance" href="../org.muml.examples.muml#_-15PBsj2EeWzrcBaL-cniQ"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_khUHxyMmEeaKgdiSINwsHw" x="677"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_khUu0CMmEeaKgdiSINwsHw" type="3024" fontName="Cantarell" fontHeight="11" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_khUu0iMmEeaKgdiSINwsHw" type="5028"/>
+            <element xmi:type="instance:AtomicComponentInstance" href="../org.muml.examples.muml#_-15PCsj2EeWzrcBaL-cniQ"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_khUu0SMmEeaKgdiSINwsHw" x="1082"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_khUu0yMmEeaKgdiSINwsHw" type="3024" fontName="Cantarell" fontHeight="11" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_khUu1SMmEeaKgdiSINwsHw" type="5028"/>
+            <element xmi:type="instance:AtomicComponentInstance" href="../org.muml.examples.muml#_-15PDMj2EeWzrcBaL-cniQ"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_khUu1CMmEeaKgdiSINwsHw" x="909" y="278"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_khUu1iMmEeaKgdiSINwsHw" type="3024" fontName="Cantarell" fontHeight="11" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_khUu2CMmEeaKgdiSINwsHw" type="5028"/>
+            <element xmi:type="instance:AtomicComponentInstance" href="../org.muml.examples.muml#_-15PD8j2EeWzrcBaL-cniQ"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_khUu1yMmEeaKgdiSINwsHw" x="1089" y="350"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_khUu2SMmEeaKgdiSINwsHw" type="3035">
+            <children xmi:type="notation:DecorationNode" xmi:id="_khVV4CMmEeaKgdiSINwsHw" type="5047"/>
+            <styles xmi:type="notation:DescriptionStyle" xmi:id="_khUu2iMmEeaKgdiSINwsHw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_khUu2yMmEeaKgdiSINwsHw" fontName="Cantarell" fontHeight="11"/>
+            <styles xmi:type="notation:LineStyle" xmi:id="_khUu3CMmEeaKgdiSINwsHw" lineColor="0"/>
+            <element xmi:type="instance:CoordinationProtocolInstance" href="../org.muml.examples.muml#_-_RNcMj2EeWzrcBaL-cniQ"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_khUu3SMmEeaKgdiSINwsHw" x="2047"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_khVV4SMmEeaKgdiSINwsHw" type="3035">
+            <children xmi:type="notation:DecorationNode" xmi:id="_khVV5iMmEeaKgdiSINwsHw" type="5047"/>
+            <styles xmi:type="notation:DescriptionStyle" xmi:id="_khVV4iMmEeaKgdiSINwsHw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_khVV4yMmEeaKgdiSINwsHw" fontName="Cantarell" fontHeight="11"/>
+            <styles xmi:type="notation:LineStyle" xmi:id="_khVV5CMmEeaKgdiSINwsHw" lineColor="0"/>
+            <element xmi:type="instance:CoordinationProtocolInstance" href="../org.muml.examples.muml#_-_U30Mj2EeWzrcBaL-cniQ"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_khVV5SMmEeaKgdiSINwsHw" x="2147"/>
+          </children>
+        </children>
+        <element xmi:type="instance:ComponentInstanceConfiguration" href="../org.muml.examples.muml#_-15PAMj2EeWzrcBaL-cniQ"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_khLk4SMmEeaKgdiSINwsHw"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_kfcfgiMmEeaKgdiSINwsHw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_kfcfgyMmEeaKgdiSINwsHw"/>
+    </children>
+    <element xmi:type="instance:StructuredComponentInstance" href="../org.muml.examples.muml#_95w98Mj2EeWzrcBaL-cniQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kfbRYSMmEeaKgdiSINwsHw" x="60" width="1789" height="529"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_e61AYSMmEeaKgdiSINwsHw"/>
+  <element xmi:type="instance:ComponentInstanceConfiguration" href="../org.muml.examples.muml#_8aQ6EMj2EeWzrcBaL-cniQ"/>
+</notation:Diagram>

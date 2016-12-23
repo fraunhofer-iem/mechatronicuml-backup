@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+<extension point="org.eclipse.ui.menus">
+	   <menuContribution
+	         allPopups="false"
+	         locationURI="popup:org.muml?after=diagrams">
+	      <command
+	            commandId="org.muml.cbs.dependencylanguage.synthesis.ui.commands.InitialSynthesis"
+	            icon="icons/InitialSynthesis.gif"
+	            id="org.muml.pim.common.commands.OpenTypeDialogCommand"
+	            label="Synthesize Intra-Behavior"
+	            style="push">
+	            	<visibleWhen checkEnabled="true">
+						<or>
+							<with variable="selection">
+								<iterate ifEmpty="false">
+								<instanceof value="org.muml.pim.component.AtomicComponent">
+								</instanceof>
+								</iterate>
+							</with>
+							<and>
+								<with variable="activePartId">
+									<equals value="org.muml.pim.component.diagram.part.ComponentDiagramEditorID"/>
+								</with>
+								<with variable="selection">
+									<iterate ifEmpty="false">
+									<instanceof
+									value="org.muml.pim.component.diagram.edit.parts.StaticAtomicComponentEditPart">
+									</instanceof>
+									</iterate>
+								</with>
+							</and>
+						</or>
+					</visibleWhen>
+	      </command>
+	   </menuContribution>
+	</extension>
+	
+	<extension
+        point="org.eclipse.ui.commands">
+     <command
+           categoryId="org.muml"
+           defaultHandler="org.muml.cbs.ui.InitialSynthesisCommand"
+           description="Intially synthesize the component's behavior"
+           id="org.muml.cbs.dependencylanguage.synthesis.ui.commands.InitialSynthesis"
+           name="Synthesize Intra-Behavior">
+     </command>
+  </extension>
+</plugin>

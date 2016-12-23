@@ -1,0 +1,44 @@
+import simulink::stateflow;
+
+String getLabelString(State state):
+	state.name + 
+	state.formattedEntryAction() + 
+	state.formattedDuringAction() +
+	state.formattedExitAction()
+	;
+	
+String formattedDuringAction(State state):
+	if(!state.duringAction.isEmpty) then
+		"\\nduring: " + state.duringAction.listActions().replaceAll("\n", "\\n")
+	else
+		"";
+		
+String formattedEntryAction(State state):
+	if(!state.entryAction.isEmpty) then
+		"\\nentry: " + state.entryAction.listActions().replaceAll("\n", "\\n")
+	else
+		"";		
+		
+String formattedExitAction(State state):
+	if(!state.exitAction.isEmpty) then
+		"\\nexit: " + state.exitAction.listActions().replaceAll("\n", "\\n")
+	else
+		"";			
+		
+List[Data] getAllData(State state):
+	state.constant.union(state.local).toList();		
+	
+List[Event] getAllEvents(State state):
+	state.events;
+	
+List[Transition] getAllTransitions(State state):
+	state.transitions;
+	
+List[Junction] getAllJunctions(State state):
+	state.nodes.typeSelect(Junction).toList();
+	
+String listActions(List[Action] actions):
+	if actions.size > 0 then	
+		actions.first().expression + "; " + actions.withoutFirst().listActions()
+	else
+		"";

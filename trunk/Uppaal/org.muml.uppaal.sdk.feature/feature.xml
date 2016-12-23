@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.muml.uppaal.sdk.feature" label="%featureName" provider-name="%providerName" version="1.0.0.qualifier">
+
+   <description>
+      %description
+   </description>
+
+   <copyright url="%copyrightURL">
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <includes id="org.muml.uppaal.feature" version="0.0.0"/>
+   <includes id="org.muml.uppaal.source.feature" version="0.0.0"/>
+         
+   <requires>
+      <import match="greaterOrEqual" plugin="org.eclipse.core.runtime" version="3.8.0"/>
+      <import plugin="org.eclipse.emf.ecore"/>
+      <import plugin="org.eclipse.emf.ecore.xmi"/>
+      <import plugin="org.eclipse.emf.edit"/>
+      <import match="greaterOrEqual" plugin="org.eclipse.core.resources" version="3.8.1"/>
+      <import plugin="org.eclipse.emf.edit.ui"/>
+      <import match="greaterOrEqual" plugin="org.eclipse.ui.ide" version="3.6.2"/>
+      <import match="greaterOrEqual" plugin="org.muml.uppaal" version="0.1.0"/>
+      <import plugin="org.eclipse.ui"/>
+      <import match="greaterOrEqual" plugin="org.eclipse.emf.mwe.core" version="1.1.1"/>
+      <import match="greaterOrEqual" plugin="org.apache.commons.logging" version="1.0.4"/>
+      <import match="greaterOrEqual" plugin="org.eclipse.emf.mwe.utils" version="1.1.1"/>
+      <import match="greaterOrEqual" plugin="org.eclipse.xtend.typesystem.emf" version="1.0.1"/>
+      <import match="greaterOrEqual" plugin="org.eclipse.xpand" version="1.1.0"/>
+      <import match="greaterOrEqual" plugin="org.eclipse.xtend" version="1.1.0"/>
+      <import match="greaterOrEqual" plugin="org.antlr.runtime" version="3.2.0"/>
+      <import match="greaterOrEqual" plugin="org.eclipse.xtend.typesystem.xsd" version="1.0.1"/>
+      <import match="greaterOrEqual" plugin="org.eclipse.ocl.ecore" version="3.1.2"/>
+      <import match="greaterOrEqual" plugin="org.apache.log4j" version="1.2.15"/>
+      <import plugin="org.eclipse.xtext"/>
+      <import plugin="org.eclipse.xtext.util"/>
+      <import plugin="org.eclipse.emf.common"/>
+      <import plugin="org.eclipse.xtext.common.types"/>
+      <import match="greaterOrEqual" plugin="org.muml.uppaal" version="0.4.0"/>
+      <import plugin="org.eclipse.xtext.xbase.lib"/>
+      <import plugin="org.eclipse.xtext.ui"/>
+      <import match="greaterOrEqual" plugin="org.eclipse.ui.editors" version="3.5.0"/>
+      <import plugin="org.eclipse.xtext.ui.shared"/>
+      <import plugin="org.eclipse.xtext.builder"/>
+      <import plugin="org.eclipse.xtext.common.types.ui"/>
+      <import plugin="org.eclipse.xtext.ui.codetemplates.ui"/>
+      <import plugin="org.eclipse.compare"/>
+   </requires>
+
+</feature>

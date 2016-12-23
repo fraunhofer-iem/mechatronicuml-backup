@@ -1,0 +1,59 @@
+
+
+ifndef NDDSHOME
+NDDSHOME := "/home/ralle/rti_connext_dds-5.2.0"
+endif
+#TARGET_ARCH = x64Linux3.xgcc4.6.3
+
+SYSLIBS = -ldl -lnsl -lm -lpthread -lrt
+DEFINES = -fpic -DRTI_UNIX -DRTI_LINUX -march=armv6 -mfpu=vfp -mfloat-abi=hard -mlong-calls
+LIBS = -L$(NDDSHOME)/lib/armv6vfphLinux3.xgcc4.7.2 \
+        -lnddscz -lnddscorez $(SYSLIBS)
+DDSSOURCES = MUML_DDSSupport.o MUML_DDSPlugin.o MUML_DDS.o 
+
+
+CONT =  MCC_launcherComponent.o MCC_launchVerifierComponent.o
+CONT_LIB =  MessageBuffer.o LocalBufferManager.o DDS_Custom_Lib.o
+
+RTSC = launchVerifierLaunchVerifierStateChart.o 
+COMP = launchVerifierComponent.o  
+LIB =   Debug.o
+CC = arm-linux-gnueabihf-gcc
+CFLAGS = -static -ggdb -Wall -c  $(DEFINES) -I types -I lib -I $(NDDSHOME)/include -I $(NDDSHOME)/include/ndds -DDEBUG
+all: appPI
+
+appPI : main.o $(RTSC) $(COMP) $(LIB) $(CONT_LIB) $(HYB) $(CONT)   $(DDSSOURCES)
+	$(CC) main.o $(RTSC) $(COMP) $(LIB) $(CONT_LIB) $(HYB) $(CONT)  $(DDSSOURCES) $(LIBS) -o appPI
+launchVerifierLaunchVerifierStateChart.o: RTSCs/launchVerifierLaunchVerifierStateChart.c
+	$(CC) $(CFLAGS) RTSCs/launchVerifierLaunchVerifierStateChart.c
+launchVerifierComponent.o: components/launchVerifierComponent.c
+	$(CC) $(CFLAGS) components/launchVerifierComponent.c
+#contImplementations.o: continuousComponents/contImplementations.c
+	#$(CC) $(CFLAGS) continuousComponents/contImplementations.c
+
+MUML_DDSSupport.o: dds/MUML_DDSSupport.c
+	$(CC) $(CFLAGS) dds/MUML_DDSSupport.c
+MUML_DDSPlugin.o: dds/MUML_DDSPlugin.c
+	$(CC) $(CFLAGS) dds/MUML_DDSPlugin.c
+MUML_DDS.o: dds/MUML_DDS.c
+	$(CC) $(CFLAGS) dds/MUML_DDS.c
+
+
+MessageBuffer.o: container_lib/MessageBuffer.c
+	$(CC) $(CFLAGS) container_lib/MessageBuffer.c
+LocalBufferManager.o: container_lib/LocalBufferManager.c
+	$(CC) $(CFLAGS) container_lib/LocalBufferManager.c
+DDS_Custom_Lib.o: container_lib/DDS_Custom_Lib.c
+	$(CC) $(CFLAGS) container_lib/DDS_Custom_Lib.c
+
+
+MCC_launcherComponent.o: component_container/MCC_launcherComponent.c
+	$(CC) $(CFLAGS) component_container/MCC_launcherComponent.c
+MCC_launchVerifierComponent.o: component_container/MCC_launchVerifierComponent.c
+	$(CC) $(CFLAGS) component_container/MCC_launchVerifierComponent.c
+
+Debug.o: lib/Debug.c
+	$(CC) $(CFLAGS) lib/Debug.c
+
+clean:
+	rm -rf *o appPI

@@ -1,0 +1,45 @@
+«IMPORT simulink»
+
+«DEFINE raw(String dataType, String outDataType, String outScaling, String outDataTypeStr, String outDataTypeMode) FOR DataType»
+«IF dataType!= null-»
+      DataType		      "«dataType»"
+«ENDIF-»
+«IF outDataType!= null-»
+      OutDataType	      "«outDataType»"
+«ENDIF-»
+«IF outScaling!= null-»      
+      OutScaling	      "«outScaling»"
+«ENDIF-»
+«IF outDataTypeMode != null-»
+      OutDataTypeMode     "«outDataTypeMode»"
+«ENDIF-»
+«IF outDataTypeStr!= null-»      
+      OutDataTypeStr	      "«outDataTypeStr»"
+«ENDIF-»
+«ENDDEFINE»
+
+«DEFINE common FOR DataType»
+«EXPAND DataType::raw(this.toString(), "fixdt(1, 16)", "2^0",  this.toString(), null) FOR this-»
+«ENDDEFINE»
+
+«DEFINE simulink FOR DataType»
+«IF this == DataType::INHERIT-»
+«EXPAND DataType::raw("auto", "fixdt(1, 16)", "2^0" , "Inherit: auto", null) FOR this-»
+«ELSEIF this == DataType::BUS-»
+«EXPAND DataType::raw(null, "fixdt(1, 16)", "2^0", null, null) FOR this-»
+«ELSE-»
+«EXPAND DataType::common FOR this-»
+«ENDIF»
+«ENDDEFINE»
+
+«DEFINE stateflow FOR DataType»
+«EXPAND DataType::common FOR this-»
+«ENDDEFINE»
+
+«DEFINE constant FOR DataType»
+«IF this == DataType::INHERIT-»
+«EXPAND DataType::raw(null, "fixdt(1,16,0)", "[]" , "Inherit: Inherit from 'Constant value'", null) FOR this-»
+«ELSE-»
+«EXPAND DataType::raw(null, null, null, this.toString(), this.toString()) FOR this-»
+«ENDIF»
+«ENDDEFINE»

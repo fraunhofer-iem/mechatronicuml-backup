@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:hwresourceinstance="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xsi:schemaLocation="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0 http://www.muml.org/pm/hardware/1.0.0#//hwresourceinstance" xmi:id="_ltI4MJn3EeaXwNlr2mTDLg" type="ResourceInstance" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_mU4NoJn3EeaXwNlr2mTDLg" type="2009" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_mU40sJn3EeaXwNlr2mTDLg" type="5101"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_mU40sZn3EeaXwNlr2mTDLg" type="5102"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_mU5bwJn3EeaXwNlr2mTDLg" type="5103"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_mU5bwZn3EeaXwNlr2mTDLg" type="7003"/>
+    <children xmi:type="notation:Shape" xmi:id="_nEeekJn3EeaXwNlr2mTDLg" type="3017" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_nEeekpn3EeaXwNlr2mTDLg" type="5071">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_nEeek5n3EeaXwNlr2mTDLg" y="5"/>
+      </children>
+      <element xmi:type="hwresourceinstance:HWPort" href="../model.muml#_m0apUJn3EeaXwNlr2mTDLg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nEeekZn3EeaXwNlr2mTDLg"/>
+    </children>
+    <element xmi:type="hwresourceinstance:StructuredResourceInstance" href="../model.muml#_mTiw4Jn3EeaXwNlr2mTDLg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mU4NoZn3EeaXwNlr2mTDLg" x="144" y="120" width="565" height="277"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_ltI4MZn3EeaXwNlr2mTDLg"/>
+  <element xmi:type="hwresourceinstance:ResourceInstanceRepository" href="../model.muml#_ltGb8Jn3EeaXwNlr2mTDLg"/>
+</notation:Diagram>

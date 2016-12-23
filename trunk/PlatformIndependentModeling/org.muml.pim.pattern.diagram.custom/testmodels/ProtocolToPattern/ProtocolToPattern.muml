@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--muml metamodel version 0.3.2 (r15221)-->
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionlanguage="http://www.muml.org/pim/actionlanguage/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:msgtype="http://www.muml.org/pim/msgtype/1.0.0" xmlns:protocol="http://www.muml.org/pim/protocol/1.0.0" xmlns:realtimestatechart="http://www.muml.org/pim/realtimestatechart/1.0.0" xmlns:sdcec="http://www.muml.org/core/expressions/common/1.0.0" xmlns:types="http://www.muml.org/pim/types/1.0.0" xmi:id="_iIwXUGddEeW2PYMF5P3p8Q">
+  <categories xmi:id="_iIwXUWddEeW2PYMF5P3p8Q" key="org.muml.types.category" name="types">
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_iIwXUmddEeW2PYMF5P3p8Q" name="void"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_iIwXU2ddEeW2PYMF5P3p8Q" name="boolean" primitiveType="BOOLEAN"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_iIwXVGddEeW2PYMF5P3p8Q" name="int8" primitiveType="INT8"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_iIwXVWddEeW2PYMF5P3p8Q" name="int16" primitiveType="INT16"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_iIwXVmddEeW2PYMF5P3p8Q" name="int32" primitiveType="INT32"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_iIwXV2ddEeW2PYMF5P3p8Q" name="int64" primitiveType="INT64"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_iIwXWGddEeW2PYMF5P3p8Q" name="double" primitiveType="DOUBLE"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_iIwXWWddEeW2PYMF5P3p8Q" name="uint8" primitiveType="UINT8"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_iIwXWmddEeW2PYMF5P3p8Q" name="uint16" primitiveType="UINT16"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_iIwXW2ddEeW2PYMF5P3p8Q" name="uint32" primitiveType="UINT32"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_iIwXXGddEeW2PYMF5P3p8Q" name="uint64" primitiveType="UINT64"/>
+  </categories>
+  <categories xmi:id="_iIwXXWddEeW2PYMF5P3p8Q" key="org.muml.pim.realtimestatechart.category" name="realtimestatechart">
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_kokq4GdsEeWYidVd-9L3EQ" name="rol1" behavioralElement="_k6ooEGdoEeWVNolmKo9JXA">
+      <states xmi:id="_kolR8GdsEeWYidVd-9L3EQ" name="init" initial="true"/>
+    </modelElements>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_x2zmwGdsEeWYidVd-9L3EQ" name="role2" behavioralElement="_k6pPI2doEeWVNolmKo9JXA">
+      <variables xmi:id="_05158GdsEeWYidVd-9L3EQ" name="var1" dataType="_iIwXVmddEeW2PYMF5P3p8Q"/>
+      <transitions xmi:id="_3OBjEGdsEeWYidVd-9L3EQ" priority="1" target="_2BUfYGdsEeWYidVd-9L3EQ" source="_x2zmwWdsEeWYidVd-9L3EQ">
+        <guard xsi:type="sdcec:ComparisonExpression" xmi:id="_6RjlgGdsEeWYidVd-9L3EQ" operator="GREATER">
+          <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_6RjlgWdsEeWYidVd-9L3EQ" typedNamedElement="_05158GdsEeWYidVd-9L3EQ"/>
+          <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_6RjlgmdsEeWYidVd-9L3EQ" value="0"/>
+        </guard>
+        <action xmi:id="_6S-h0GdsEeWYidVd-9L3EQ" name="var1 := 0">
+          <expressions xsi:type="actionlanguage:Block" xmi:id="_8JR8IGdsEeWYidVd-9L3EQ">
+            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_8JR8IWdsEeWYidVd-9L3EQ" assignOperator=":=">
+              <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_8JR8ImdsEeWYidVd-9L3EQ" value="0"/>
+              <lhs_typedNamedElementExpression xmi:id="_8JR8I2dsEeWYidVd-9L3EQ" typedNamedElement="_05158GdsEeWYidVd-9L3EQ"/>
+            </expressions>
+          </expressions>
+        </action>
+      </transitions>
+      <states xmi:id="_x2zmwWdsEeWYidVd-9L3EQ" name="init" outgoingTransitions="_3OBjEGdsEeWYidVd-9L3EQ" initial="true"/>
+      <states xmi:id="_2BUfYGdsEeWYidVd-9L3EQ" name="asd" incomingTransitions="_3OBjEGdsEeWYidVd-9L3EQ"/>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_iIwXXmddEeW2PYMF5P3p8Q" key="org.muml.pim.protocol.category" name="protocol">
+    <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_k6gsQGdoEeWVNolmKo9JXA" name="C1123">
+      <roles xmi:id="_k6ooEGdoEeWVNolmKo9JXA" connectors="_k6p2MWdoEeWVNolmKo9JXA" behavior="_kokq4GdsEeWYidVd-9L3EQ" name="role1" senderMessageTypes="_iF7EwGdoEeWVNolmKo9JXA" receiverMessageTypes="_ifZ7wGdoEeWVNolmKo9JXA">
+        <cardinality xmi:id="_k6pPIGdoEeWVNolmKo9JXA">
+          <lowerBound xmi:id="_wWXrkGdoEeWVNolmKo9JXA"/>
+          <upperBound xmi:id="_wWeZQGdoEeWVNolmKo9JXA"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_mh6H4GdoEeWVNolmKo9JXA" name="buffer1" messageType="_ifZ7wGdoEeWVNolmKo9JXA">
+          <bufferSize xmi:id="_nWtB4GdoEeWVNolmKo9JXA" value="2"/>
+        </receiverMessageBuffer>
+      </roles>
+      <roles xmi:id="_k6pPI2doEeWVNolmKo9JXA" connectors="_k6p2MWdoEeWVNolmKo9JXA" behavior="_x2zmwGdsEeWYidVd-9L3EQ" name="role2" senderMessageTypes="_ifZ7wGdoEeWVNolmKo9JXA" receiverMessageTypes="_iF7EwGdoEeWVNolmKo9JXA">
+        <cardinality xmi:id="_k6pPJGdoEeWVNolmKo9JXA">
+          <lowerBound xmi:id="_DroTQGdtEeWYidVd-9L3EQ"/>
+          <upperBound xmi:id="_Dro6UGdtEeWYidVd-9L3EQ"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_WE_ssGdsEeWYidVd-9L3EQ" name="b" messageType="_iF7EwGdoEeWVNolmKo9JXA">
+          <bufferSize xmi:id="_Wl_g8GdsEeWYidVd-9L3EQ" infinity="true"/>
+        </receiverMessageBuffer>
+      </roles>
+      <roleConnector xmi:id="_k6p2MWdoEeWVNolmKo9JXA" connectorEndpoints="_k6ooEGdoEeWVNolmKo9JXA _k6pPI2doEeWVNolmKo9JXA">
+        <connectorQualityOfServiceAssumptions xmi:id="_k6p2MmdoEeWVNolmKo9JXA" comment="">
+          <minMessageDelay xmi:id="_k6qdQWdoEeWVNolmKo9JXA" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_k6qdQmdoEeWVNolmKo9JXA" value="0"/>
+          </minMessageDelay>
+          <maxMessageDelay xmi:id="_k6p2M2doEeWVNolmKo9JXA" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_k6qdQGdoEeWVNolmKo9JXA" value="0"/>
+          </maxMessageDelay>
+        </connectorQualityOfServiceAssumptions>
+      </roleConnector>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_iIwXX2ddEeW2PYMF5P3p8Q" key="org.muml.pim.messagetype.category" name="msgtype">
+    <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_hoeTwGdoEeWVNolmKo9JXA" name="M1">
+      <messageTypes xmi:id="_iF7EwGdoEeWVNolmKo9JXA" name="M1"/>
+      <messageTypes xmi:id="_ifZ7wGdoEeWVNolmKo9JXA" name="M2"/>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_iIwXYGddEeW2PYMF5P3p8Q" key="org.muml.pim.instance.category" name="instance"/>
+  <categories xmi:id="_iIwXYWddEeW2PYMF5P3p8Q" key="org.muml.pim.components.category" name="component"/>
+  <categories xmi:id="_V4IpcGg9EeWWh7EZAnFEGw" name="pattern" key="org.muml.pim.pattern.category"/>
+</modelinstance:RootNode>

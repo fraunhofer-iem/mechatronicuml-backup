@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" type="Storydiagrams" name="CreateCarProcess.storydiagrams_diagram" measurementUnit="Pixel">
+  <children xsi:type="notation:Shape" type="2005" fontName="Segoe UI">
+    <children xsi:type="notation:DecorationNode" type="5013"/>
+    <element href="../TTCActivities.fujaba#_CgnvMAPqEeK6h-t5wiM1Gg"/>
+    <layoutConstraint xsi:type="notation:Bounds" x="496" y="51"/>
+  </children>
+  <children xsi:type="notation:Shape" type="2008" fontName="Segoe UI">
+    <children xsi:type="notation:DecorationNode" type="5014"/>
+    <element href="../TTCActivities.fujaba#_C-YCMAPqEeK6h-t5wiM1Gg"/>
+    <layoutConstraint xsi:type="notation:Bounds" x="545" y="610"/>
+  </children>
+  <children xsi:type="notation:Shape" type="2003" fontName="Segoe UI">
+    <children xsi:type="notation:DecorationNode" type="5011"/>
+    <children xsi:type="notation:DecorationNode" type="7001">
+      <children xsi:type="notation:Shape" type="3001" fontName="Segoe UI">
+        <children xsi:type="notation:DecorationNode" type="7002">
+          <children xsi:type="notation:Shape" type="3005" fontName="Segoe UI">
+            <children xsi:type="notation:DecorationNode" type="5008"/>
+            <children xsi:type="notation:DecorationNode" type="5009"/>
+            <children xsi:type="notation:DecorationNode" type="5010"/>
+            <children xsi:type="notation:DecorationNode" type="7006">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <children xsi:type="notation:DecorationNode" type="7007">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <element href="../TTCActivities.fujaba#_M5MFgAPqEeK6h-t5wiM1Gg"/>
+            <layoutConstraint xsi:type="notation:Bounds" x="67" y="40"/>
+          </children>
+          <children xsi:type="notation:Shape" type="3005" fontName="Segoe UI">
+            <children xsi:type="notation:DecorationNode" type="5008"/>
+            <children xsi:type="notation:DecorationNode" type="5009"/>
+            <children xsi:type="notation:DecorationNode" type="5010"/>
+            <children xsi:type="notation:DecorationNode" type="7006">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <children xsi:type="notation:DecorationNode" type="7007">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <element href="../TTCActivities.fujaba#_Sh_hEAPqEeK6h-t5wiM1Gg"/>
+            <layoutConstraint xsi:type="notation:Bounds" x="275" y="39"/>
+          </children>
+          <children xsi:type="notation:Shape" type="3005" fontName="Segoe UI">
+            <children xsi:type="notation:DecorationNode" type="5008"/>
+            <children xsi:type="notation:DecorationNode" type="5009"/>
+            <children xsi:type="notation:DecorationNode" type="5010"/>
+            <children xsi:type="notation:DecorationNode" type="7006">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <children xsi:type="notation:DecorationNode" type="7007">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <element href="../TTCActivities.fujaba#_rSmT8APqEeK6h-t5wiM1Gg"/>
+            <layoutConstraint xsi:type="notation:Bounds" x="81" y="205"/>
+          </children>
+          <children xsi:type="notation:Shape" type="3005" fontName="Segoe UI">
+            <children xsi:type="notation:DecorationNode" type="5008"/>
+            <children xsi:type="notation:DecorationNode" type="5009"/>
+            <children xsi:type="notation:DecorationNode" type="5010"/>
+            <children xsi:type="notation:DecorationNode" type="7006">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <children xsi:type="notation:DecorationNode" type="7007">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <element href="../TTCActivities.fujaba#_4i9WwAPqEeK6h-t5wiM1Gg"/>
+            <layoutConstraint xsi:type="notation:Bounds" x="270" y="279"/>
+          </children>
+          <children xsi:type="notation:Shape" type="3005" fontName="Segoe UI">
+            <children xsi:type="notation:DecorationNode" type="5008"/>
+            <children xsi:type="notation:DecorationNode" type="5009"/>
+            <children xsi:type="notation:DecorationNode" type="5010"/>
+            <children xsi:type="notation:DecorationNode" type="7006">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <children xsi:type="notation:DecorationNode" type="7007">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <element href="../TTCActivities.fujaba#_9SUB0APqEeK6h-t5wiM1Gg"/>
+            <layoutConstraint xsi:type="notation:Bounds" x="280" y="159"/>
+          </children>
+          <children xsi:type="notation:Shape" type="3005" fontName="Segoe UI">
+            <children xsi:type="notation:DecorationNode" type="5008"/>
+            <children xsi:type="notation:DecorationNode" type="5009"/>
+            <children xsi:type="notation:DecorationNode" type="5010"/>
+            <children xsi:type="notation:DecorationNode" type="7006">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <children xsi:type="notation:DecorationNode" type="7007">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <element href="../TTCActivities.fujaba#_AVNLEAPrEeK6h-t5wiM1Gg"/>
+            <layoutConstraint xsi:type="notation:Bounds" x="504" y="161"/>
+          </children>
+        </children>
+        <children xsi:type="notation:DecorationNode" type="7003">
+          <children type="3006">
+            <element href="../TTCActivities.fujaba#_cjBEoAPrEeK6h-t5wiM1Gg"/>
+            <layoutConstraint xsi:type="notation:Location"/>
+          </children>
+          <children type="3006">
+            <element href="../TTCActivities.fujaba#_mQxjYAPrEeK6h-t5wiM1Gg"/>
+            <layoutConstraint xsi:type="notation:Location"/>
+          </children>
+          <styles xsi:type="notation:SortingStyle"/>
+          <styles xsi:type="notation:FilteringStyle"/>
+        </children>
+        <element href="../TTCActivities.fujaba#_Df2XkQPqEeK6h-t5wiM1Gg"/>
+        <layoutConstraint xsi:type="notation:Bounds"/>
+      </children>
+    </children>
+    <element href="../TTCActivities.fujaba#_Df2XkAPqEeK6h-t5wiM1Gg"/>
+    <layoutConstraint xsi:type="notation:Bounds" x="235" y="135" width="676" height="431"/>
+  </children>
+  <styles xsi:type="notation:DiagramStyle"/>
+  <element href="../TTCActivities.fujaba#__6vSEQPpEeK6h-t5wiM1Gg"/>
+  <edges type="4001" source="//@children.0" target="//@children.2">
+    <children xsi:type="notation:DecorationNode" type="6001">
+      <layoutConstraint xsi:type="notation:Location" y="40"/>
+    </children>
+    <styles xsi:type="notation:RoutingStyle"/>
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="../TTCActivities.fujaba#_Fall8APqEeK6h-t5wiM1Gg"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[30, 35, -54, -62]$[83, 79, -1, -18]"/>
+    <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.5,0.2222222222222222)"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.4933993399339934,0.05128205128205128)"/>
+  </edges>
+  <edges type="4001" source="//@children.2" target="//@children.1">
+    <children xsi:type="notation:DecorationNode" type="6001">
+      <layoutConstraint xsi:type="notation:Location" y="40"/>
+    </children>
+    <styles xsi:type="notation:RoutingStyle"/>
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="../TTCActivities.fujaba#_GIGzQAPqEeK6h-t5wiM1Gg"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[-120, 341, 18, -76]$[-143, 397, -5, -20]"/>
+    <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.6171617161716172,0.02849002849002849)"/>
+  </edges>
+  <edges type="4002" source="//@children.2/@children.1/@children.0/@children.0/@children.1" target="//@children.2/@children.1/@children.0/@children.0/@children.5">
+    <children xsi:type="notation:DecorationNode" type="6002">
+      <layoutConstraint xsi:type="notation:Location" x="10" y="10"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6003">
+      <layoutConstraint xsi:type="notation:Location" y="-10"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6004">
+      <layoutConstraint xsi:type="notation:Location" x="10" y="10"/>
+    </children>
+    <styles xsi:type="notation:RoutingStyle"/>
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="../TTCActivities.fujaba#_C7PZMAPrEeK6h-t5wiM1Gg"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[18, 16, -111, -104]$[129, 105, 0, -15]"/>
+    <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.7692307692307693,0.22972972972972974)"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.5102040816326531,0.20270270270270271)"/>
+  </edges>
+  <edges type="4002" source="//@children.2/@children.1/@children.0/@children.0/@children.4" target="//@children.2/@children.1/@children.0/@children.0/@children.5">
+    <children xsi:type="notation:DecorationNode" type="6002">
+      <layoutConstraint xsi:type="notation:Location" x="10" y="10"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6003">
+      <layoutConstraint xsi:type="notation:Location" y="-10"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6004">
+      <layoutConstraint xsi:type="notation:Location" x="10" y="10"/>
+    </children>
+    <styles xsi:type="notation:RoutingStyle"/>
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="../TTCActivities.fujaba#_KwKHAAPrEeK6h-t5wiM1Gg"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[20, 4, -163, -5]$[184, -28, 1, -37]"/>
+    <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.7647058823529411,0.33707865168539325)"/>
+  </edges>
+  <edges type="4002" source="//@children.2/@children.1/@children.0/@children.0/@children.4" target="//@children.2/@children.1/@children.0/@children.0/@children.1">
+    <children xsi:type="notation:DecorationNode" type="6002">
+      <layoutConstraint xsi:type="notation:Location" x="10" y="10"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6003">
+      <layoutConstraint xsi:type="notation:Location" y="-10"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6004">
+      <layoutConstraint xsi:type="notation:Location" x="10" y="10"/>
+    </children>
+    <styles xsi:type="notation:RoutingStyle"/>
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="../TTCActivities.fujaba#_NDvTMAPrEeK6h-t5wiM1Gg"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[5, -14, -36, 83]$[32, -60, -9, 37]"/>
+    <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.6823529411764706,0.15730337078651685)"/>
+  </edges>
+  <edges type="4002" source="//@children.2/@children.1/@children.0/@children.0/@children.2" target="//@children.2/@children.1/@children.0/@children.0/@children.4">
+    <children xsi:type="notation:DecorationNode" type="6002">
+      <layoutConstraint xsi:type="notation:Location" x="10" y="10"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6003">
+      <layoutConstraint xsi:type="notation:Location" y="-10"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6004">
+      <layoutConstraint xsi:type="notation:Location" x="10" y="10"/>
+    </children>
+    <styles xsi:type="notation:RoutingStyle"/>
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="../TTCActivities.fujaba#_OlxtsAPrEeK6h-t5wiM1Gg"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[40, -9, -135, 28]$[159, -32, -16, 5]"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.18823529411764706,0.5955056179775281)"/>
+  </edges>
+  <edges type="4002" source="//@children.2/@children.1/@children.0/@children.0/@children.0" target="//@children.2/@children.1/@children.0/@children.0/@children.2">
+    <children xsi:type="notation:DecorationNode" type="6002">
+      <layoutConstraint xsi:type="notation:Location" x="10" y="10"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6003">
+      <layoutConstraint xsi:type="notation:Location" y="-10"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6004">
+      <layoutConstraint xsi:type="notation:Location" x="10" y="10"/>
+    </children>
+    <styles xsi:type="notation:RoutingStyle"/>
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="../TTCActivities.fujaba#_P0MBkAPrEeK6h-t5wiM1Gg"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[5, 37, -13, -104]$[21, 128, 3, -13]"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.6125,0.14606741573033707)"/>
+  </edges>
+  <edges type="4002" source="//@children.2/@children.1/@children.0/@children.0/@children.2" target="//@children.2/@children.1/@children.0/@children.0/@children.3">
+    <children xsi:type="notation:DecorationNode" type="6002">
+      <layoutConstraint xsi:type="notation:Location" x="10" y="10"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6003">
+      <layoutConstraint xsi:type="notation:Location" y="-10"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6004">
+      <layoutConstraint xsi:type="notation:Location" x="10" y="10"/>
+    </children>
+    <styles xsi:type="notation:RoutingStyle"/>
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="../TTCActivities.fujaba#_RIilYAPrEeK6h-t5wiM1Gg"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[17, 5, -127, -43]$[126, 40, -18, -8]"/>
+    <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.7875,0.6404494382022472)"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.17307692307692307,0.34831460674157305)"/>
+  </edges>
+  <edges type="4002" source="//@children.2/@children.1/@children.0/@children.0/@children.2" target="//@children.2/@children.1/@children.0/@children.0/@children.1">
+    <children xsi:type="notation:DecorationNode" type="6002">
+      <layoutConstraint xsi:type="notation:Location" x="10" y="10"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6003">
+      <layoutConstraint xsi:type="notation:Location" y="-10"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6004">
+      <layoutConstraint xsi:type="notation:Location" x="10" y="10"/>
+    </children>
+    <styles xsi:type="notation:RoutingStyle"/>
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="../TTCActivities.fujaba#_VU7GQAPrEeK6h-t5wiM1Gg"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[13, -12, -155, 129]$[161, -178, -7, -37]"/>
+    <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.8125,0.1348314606741573)"/>
+  </edges>
+</notation:Diagram>

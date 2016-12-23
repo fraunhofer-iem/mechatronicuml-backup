@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--muml metamodel version 0.3.2 (r14616)-->
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BooleanLogic="http://www.muml.org/uppaal/adapter/mtctl/booleanlogic/1.0.0" xmlns:Comparables="http://www.muml.org/uppaal/adapter/mtctl/comparables/1.0.0" xmlns:Predicates="http://www.muml.org/uppaal/adapter/mtctl/predicates/1.0.0" xmlns:Quantifiers="http://www.muml.org/uppaal/adapter/mtctl/quantifiers/1.0.0" xmlns:actionlanguage="http://www.muml.org/pim/actionlanguage/1.0.0" xmlns:component="http://www.muml.org/pim/component/1.0.0" xmlns:dependencylanguage="http://www.muml.org/cbs/dependencylanguage/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:msgtype="http://www.muml.org/pim/msgtype/1.0.0" xmlns:mtctl="http://www.muml.org/uppaal/adapter/mtctl/1.0.0" xmlns:protocol="http://www.muml.org/pim/protocol/1.0.0" xmlns:realtimestatechart="http://www.muml.org/pim/realtimestatechart/1.0.0" xmlns:sdcec="http://www.muml.org/core/expressions/common/1.0.0" xmlns:types="http://www.muml.org/pim/types/1.0.0" xmi:id="_hjT_4IS6EeKrXO1iCP2aTw">
+  <categories xmi:id="_ZOIrYIS_EeKO9r0VL65xcg" key="org.muml.pim.realtimestatechart.category" name="realtimestatechart">
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_ZOLusIS_EeKO9r0VL65xcg" name="Overtaker_Role" behavioralElement="_GQwUAITCEeKO9r0VL65xcg">
+      <variables xmi:id="_jPg6wAdvEeScEaYFsu5sEQ" name="mySpeed" dataType="_Byc_tCqlEeOmGPWtq6tuHA"/>
+      <transitions xmi:id="_yXwJQITBEeKO9r0VL65xcg" priority="3" target="_p05XYITBEeKO9r0VL65xcg" source="_YbeQgCngEeOLOOFBfu_IMg"/>
+      <transitions xmi:id="_Lwt7UCnDEeOtyOUSDkuf3A" priority="1" target="_TTDlcKy-EeKcdYkvlDMjkw" source="_p05XYITBEeKO9r0VL65xcg" urgent="false">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_XU_ssKzFEeKcdYkvlDMjkw">
+          <message xmi:id="_XVATwKzFEeKcdYkvlDMjkw" instanceOf="_fSrzEJ2-EeKCPPYajybjTw"/>
+        </events>
+      </transitions>
+      <states xmi:id="_p05XYITBEeKO9r0VL65xcg" name="Overtaking" outgoingTransitions="_Lwt7UCnDEeOtyOUSDkuf3A" incomingTransitions="_yXwJQITBEeKO9r0VL65xcg"/>
+      <states xmi:id="_TTDlcKy-EeKcdYkvlDMjkw" name="NoOvertaking" incomingTransitions="_Lwt7UCnDEeOtyOUSDkuf3A" initial="true">
+        <embeddedRegions xmi:id="_VV_GgKy-EeKcdYkvlDMjkw" priority="1">
+          <embeddedStatechart xmi:id="_VWA7sKy-EeKcdYkvlDMjkw" name="overtaker_noOvertaking">
+            <transitions xmi:id="_aU5QQCngEeOLOOFBfu_IMg" priority="3" target="_YbeQgCngEeOLOOFBfu_IMg" source="_oZZpwITBEeKO9r0VL65xcg">
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_QvoiQKzFEeKcdYkvlDMjkw" kind="TRIGGER">
+                <message xmi:id="_QvoiQazFEeKcdYkvlDMjkw" instanceOf="_--9hYITBEeKO9r0VL65xcg"/>
+              </events>
+            </transitions>
+            <transitions xmi:id="_uYVAEFK2EeOhUqMO2Sn_wg" priority="1" target="_ZMCVkAdtEeScEaYFsu5sEQ" source="_oZZpwITBEeKO9r0VL65xcg">
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_v5zZ4FK2EeOhUqMO2Sn_wg" kind="TRIGGER">
+                <message xmi:id="_wOB9cFK2EeOhUqMO2Sn_wg" instanceOf="__4UyUITBEeKO9r0VL65xcg"/>
+              </events>
+            </transitions>
+            <transitions xmi:id="_zBQzgIpXEeK8UOyix3Z7KQ" priority="2" target="_ZMCVkAdtEeScEaYFsu5sEQ" source="_oZZpwITBEeKO9r0VL65xcg" urgent="false">
+              <clockConstraints xmi:id="_27oP8IpaEeK8UOyix3Z7KQ" clock="_HMl0sITDEeKO9r0VL65xcg" operator="GREATER_OR_EQUAL">
+                <bound xmi:id="_37ubAIpaEeK8UOyix3Z7KQ" unit="MILLISECONDS">
+                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_YH_eoAdtEeScEaYFsu5sEQ" value="75"/>
+                </bound>
+              </clockConstraints>
+            </transitions>
+            <transitions xmi:id="_sHMKIITBEeKO9r0VL65xcg" priority="1" target="_oZZpwITBEeKO9r0VL65xcg" source="_ZOLusYS_EeKO9r0VL65xcg" urgent="false">
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_05lXYITCEeKO9r0VL65xcg">
+                <message xmi:id="_08ao8ITCEeKO9r0VL65xcg" instanceOf="_9xK4kITBEeKO9r0VL65xcg">
+                  <parameterBinding xmi:id="_iMzG8AjXEeShtdwabZpR0Q" parameter="_Z70IMAjXEeShtdwabZpR0Q">
+                    <value xsi:type="sdcec:ArithmeticExpression" xmi:id="_kjMWkAjXEeShtdwabZpR0Q">
+                      <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_kjMWkQjXEeShtdwabZpR0Q" typedNamedElement="_jPg6wAdvEeScEaYFsu5sEQ"/>
+                      <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_kjMWkgjXEeShtdwabZpR0Q" value="10"/>
+                    </value>
+                  </parameterBinding>
+                </message>
+              </events>
+            </transitions>
+            <transitions xmi:id="_hVXNIAdtEeScEaYFsu5sEQ" priority="1" target="_ZOLusYS_EeKO9r0VL65xcg" source="_ZMCVkAdtEeScEaYFsu5sEQ" urgent="false">
+              <clockConstraints xmi:id="_jYe7cAdtEeScEaYFsu5sEQ" clock="_HMl0sITDEeKO9r0VL65xcg" operator="GREATER_OR_EQUAL">
+                <bound xmi:id="_kMpjUAdtEeScEaYFsu5sEQ" unit="MINUTES">
+                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_kgfsYAdtEeScEaYFsu5sEQ" value="1"/>
+                </bound>
+              </clockConstraints>
+            </transitions>
+            <states xmi:id="_ZOLusYS_EeKO9r0VL65xcg" name="Init" outgoingTransitions="_sHMKIITBEeKO9r0VL65xcg" incomingTransitions="_hVXNIAdtEeScEaYFsu5sEQ" initial="true"/>
+            <states xmi:id="_oZZpwITBEeKO9r0VL65xcg" name="Requested" outgoingTransitions="_uYVAEFK2EeOhUqMO2Sn_wg _zBQzgIpXEeK8UOyix3Z7KQ _aU5QQCngEeOLOOFBfu_IMg" incomingTransitions="_sHMKIITBEeKO9r0VL65xcg">
+              <entryEvent xmi:id="_HCstcKzGEeKcdYkvlDMjkw" clockResets="_HMl0sITDEeKO9r0VL65xcg"/>
+              <invariants xmi:id="_u4NMEIpaEeK8UOyix3Z7KQ" clock="_HMl0sITDEeKO9r0VL65xcg">
+                <bound xmi:id="_xrdW0IpaEeK8UOyix3Z7KQ" unit="MILLISECONDS">
+                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_Ve_cEAdtEeScEaYFsu5sEQ" value="80"/>
+                </bound>
+              </invariants>
+            </states>
+            <states xmi:id="_ZMCVkAdtEeScEaYFsu5sEQ" name="Wait" outgoingTransitions="_hVXNIAdtEeScEaYFsu5sEQ" incomingTransitions="_zBQzgIpXEeK8UOyix3Z7KQ _uYVAEFK2EeOhUqMO2Sn_wg"/>
+          </embeddedStatechart>
+        </embeddedRegions>
+        <connectionPoints xsi:type="realtimestatechart:ExitPoint" xmi:id="_YbeQgCngEeOLOOFBfu_IMg" name="exit2" outgoingTransitions="_yXwJQITBEeKO9r0VL65xcg" incomingTransitions="_aU5QQCngEeOLOOFBfu_IMg"/>
+      </states>
+      <clocks xmi:id="_HMl0sITDEeKO9r0VL65xcg" name="c"/>
+    </modelElements>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_liNIQITDEeKO9r0VL65xcg" name="Overtakee_Role" behavioralElement="_GRMY4oTCEeKO9r0VL65xcg">
+      <transitions xmi:id="_tkWZwITDEeKO9r0VL65xcg" priority="1" target="_fU-PsKwwEeKPNaIATZRLqw" source="_oILsAITDEeKO9r0VL65xcg">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_VKwrYJ2_EeKCPPYajybjTw" kind="TRIGGER">
+          <message xmi:id="_WmozgJ2_EeKCPPYajybjTw" instanceOf="_fSrzEJ2-EeKCPPYajybjTw"/>
+        </events>
+      </transitions>
+      <transitions xmi:id="_qdadQBuNEeOKLqh4ZoOwDw" priority="2" target="_f8CwQBuNEeOKLqh4ZoOwDw" source="_oILsAITDEeKO9r0VL65xcg">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_0LfsIBuNEeOKLqh4ZoOwDw" kind="TRIGGER">
+          <message xmi:id="_0Lg6QBuNEeOKLqh4ZoOwDw" instanceOf="_9xK4kITBEeKO9r0VL65xcg"/>
+        </events>
+      </transitions>
+      <transitions xmi:id="_uzFjgKwwEeKPNaIATZRLqw" priority="1" target="_oILsAITDEeKO9r0VL65xcg" source="_-FBfQDpIEeO6g-KU3zBcDg">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_w-aLkKwwEeKPNaIATZRLqw">
+          <message xmi:id="_w-d18KwwEeKPNaIATZRLqw" instanceOf="_--9hYITBEeKO9r0VL65xcg"/>
+        </events>
+      </transitions>
+      <states xmi:id="_oILsAITDEeKO9r0VL65xcg" name="NoAcceleration" outgoingTransitions="_tkWZwITDEeKO9r0VL65xcg _qdadQBuNEeOKLqh4ZoOwDw" incomingTransitions="_uzFjgKwwEeKPNaIATZRLqw"/>
+      <states xmi:id="_fU-PsKwwEeKPNaIATZRLqw" name="FreeAcceleration" incomingTransitions="_tkWZwITDEeKO9r0VL65xcg" initial="true">
+        <embeddedRegions xmi:id="_hluxYKwwEeKPNaIATZRLqw" priority="1">
+          <embeddedStatechart xmi:id="_hlwmkKwwEeKPNaIATZRLqw" name="overtakee_noOvertaking">
+            <transitions xmi:id="_q_DKsBuNEeOKLqh4ZoOwDw" priority="1" target="_nk3jkITDEeKO9r0VL65xcg" source="_f8CwQBuNEeOKLqh4ZoOwDw"/>
+            <transitions xmi:id="_BYHAoDpJEeO6g-KU3zBcDg" priority="2" target="_-FBfQDpIEeO6g-KU3zBcDg" source="_nk3jkITDEeKO9r0VL65xcg" urgent="false"/>
+            <transitions xmi:id="_reoqcITDEeKO9r0VL65xcg" priority="1" target="_nk3jkITDEeKO9r0VL65xcg" source="_liNIQYTDEeKO9r0VL65xcg">
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_8B8rwITDEeKO9r0VL65xcg" kind="TRIGGER">
+                <message xmi:id="_8CIR8ITDEeKO9r0VL65xcg" instanceOf="_9xK4kITBEeKO9r0VL65xcg"/>
+              </events>
+            </transitions>
+            <transitions xmi:id="_tRiLcITDEeKO9r0VL65xcg" priority="1" target="_liNIQYTDEeKO9r0VL65xcg" source="_nk3jkITDEeKO9r0VL65xcg" urgent="false">
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="__ZHb4ITDEeKO9r0VL65xcg">
+                <message xmi:id="__ZHb4YTDEeKO9r0VL65xcg" instanceOf="__4UyUITBEeKO9r0VL65xcg"/>
+              </events>
+            </transitions>
+            <states xmi:id="_liNIQYTDEeKO9r0VL65xcg" name="Init" outgoingTransitions="_reoqcITDEeKO9r0VL65xcg" incomingTransitions="_tRiLcITDEeKO9r0VL65xcg" initial="true"/>
+            <states xmi:id="_nk3jkITDEeKO9r0VL65xcg" name="Evaluating" outgoingTransitions="_tRiLcITDEeKO9r0VL65xcg _BYHAoDpJEeO6g-KU3zBcDg" incomingTransitions="_reoqcITDEeKO9r0VL65xcg _q_DKsBuNEeOKLqh4ZoOwDw">
+              <entryEvent xmi:id="_xVSl0KzFEeKcdYkvlDMjkw" clockResets="_B_K4IITEEeKO9r0VL65xcg"/>
+              <invariants xmi:id="_ZCgQ4ITEEeKO9r0VL65xcg" clock="_B_K4IITEEeKO9r0VL65xcg">
+                <bound xmi:id="_a_p6EITEEeKO9r0VL65xcg" unit="SECONDS">
+                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_nht6UAdwEeScEaYFsu5sEQ" value="50"/>
+                </bound>
+              </invariants>
+            </states>
+            <clocks xmi:id="_B_K4IITEEeKO9r0VL65xcg" name="c2"/>
+          </embeddedStatechart>
+        </embeddedRegions>
+        <connectionPoints xsi:type="realtimestatechart:EntryPoint" xmi:id="_f8CwQBuNEeOKLqh4ZoOwDw" name="entry1_SD" outgoingTransitions="_q_DKsBuNEeOKLqh4ZoOwDw" incomingTransitions="_qdadQBuNEeOKLqh4ZoOwDw"/>
+        <connectionPoints xsi:type="realtimestatechart:ExitPoint" xmi:id="_-FBfQDpIEeO6g-KU3zBcDg" name="exit1" outgoingTransitions="_uzFjgKwwEeKPNaIATZRLqw" incomingTransitions="_BYHAoDpJEeO6g-KU3zBcDg"/>
+      </states>
+    </modelElements>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_ISdB8AdwEeScEaYFsu5sEQ" name="Provider_Role" behavioralElement="_918RsQdtEeScEaYFsu5sEQ">
+      <transitions xmi:id="_sHFXYAd6EeScEaYFsu5sEQ" priority="1" target="_p6jOYAd6EeScEaYFsu5sEQ" source="_ISdB8QdwEeScEaYFsu5sEQ" urgent="false">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_w8Y5cAd6EeScEaYFsu5sEQ">
+          <message xmi:id="_xMNeIAd6EeScEaYFsu5sEQ" instanceOf="_HbLRIAdvEeScEaYFsu5sEQ"/>
+        </events>
+      </transitions>
+      <transitions xmi:id="_tO4F4Ad6EeScEaYFsu5sEQ" priority="1" target="_ISdB8QdwEeScEaYFsu5sEQ" source="_p6jOYAd6EeScEaYFsu5sEQ" urgent="false">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_yMKfQAd6EeScEaYFsu5sEQ">
+          <message xmi:id="_yanyAAd6EeScEaYFsu5sEQ" instanceOf="_JZR8kAdvEeScEaYFsu5sEQ"/>
+        </events>
+      </transitions>
+      <states xmi:id="_ISdB8QdwEeScEaYFsu5sEQ" name="TrackUnsafe" outgoingTransitions="_sHFXYAd6EeScEaYFsu5sEQ" incomingTransitions="_tO4F4Ad6EeScEaYFsu5sEQ" initial="true"/>
+      <states xmi:id="_p6jOYAd6EeScEaYFsu5sEQ" name="TrackSafe" outgoingTransitions="_tO4F4Ad6EeScEaYFsu5sEQ" incomingTransitions="_sHFXYAd6EeScEaYFsu5sEQ"/>
+    </modelElements>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_KYXlkAdwEeScEaYFsu5sEQ" name="Receiver_Role" behavioralElement="_917DkAdtEeScEaYFsu5sEQ">
+      <transitions xmi:id="_g6sXcAd6EeScEaYFsu5sEQ" priority="1" target="_exqOYAd6EeScEaYFsu5sEQ" source="_KYXlkQdwEeScEaYFsu5sEQ">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_j_NRUAd6EeScEaYFsu5sEQ" kind="TRIGGER">
+          <message xmi:id="_kK8AMAd6EeScEaYFsu5sEQ" instanceOf="_HbLRIAdvEeScEaYFsu5sEQ"/>
+        </events>
+      </transitions>
+      <transitions xmi:id="_habAYAd6EeScEaYFsu5sEQ" priority="1" target="_KYXlkQdwEeScEaYFsu5sEQ" source="_exqOYAd6EeScEaYFsu5sEQ">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_mWjjMAd6EeScEaYFsu5sEQ" kind="TRIGGER">
+          <message xmi:id="_ms4_kAd6EeScEaYFsu5sEQ" instanceOf="_JZR8kAdvEeScEaYFsu5sEQ"/>
+        </events>
+      </transitions>
+      <states xmi:id="_KYXlkQdwEeScEaYFsu5sEQ" name="TrackUnsafe" outgoingTransitions="_g6sXcAd6EeScEaYFsu5sEQ" incomingTransitions="_habAYAd6EeScEaYFsu5sEQ" initial="true"/>
+      <states xmi:id="_exqOYAd6EeScEaYFsu5sEQ" name="TrackSafe" outgoingTransitions="_habAYAd6EeScEaYFsu5sEQ" incomingTransitions="_g6sXcAd6EeScEaYFsu5sEQ"/>
+    </modelElements>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_tmUHcAjYEeShtdwabZpR0Q" name="WhiteSw" behavioralElement="_1vFz8EfOEeO56fW-RvmTLw">
+      <variables xmi:id="_KpnD0BC2EeSgttf4QYvSRQ" name="mySpeed" dataType="_Byc_tCqlEeOmGPWtq6tuHA"/>
+      <states xmi:id="_tmUHcQjYEeShtdwabZpR0Q" name="WhiteSw_Main" initial="true">
+        <embeddedRegions xmi:id="_tmUugAjYEeShtdwabZpR0Q" priority="1">
+          <embeddedStatechart xmi:id="_tmUugQjYEeShtdwabZpR0Q" name="Overtaker_Role_Overtaker" behavioralElement="___LHMEfPEeOKy6HrV27eJQ">
+            <variables xmi:id="_-TMrUBC2EeSgttf4QYvSRQ" name="mySpeed" dataType="_Byc_tCqlEeOmGPWtq6tuHA"/>
+            <transitions xmi:id="_tmUugwjYEeShtdwabZpR0Q" priority="3" target="_tmUuhwjYEeShtdwabZpR0Q" source="_tmUupwjYEeShtdwabZpR0Q"/>
+            <transitions xmi:id="_tmUuhAjYEeShtdwabZpR0Q" priority="1" target="_tmUuiAjYEeShtdwabZpR0Q" source="_tmUuhwjYEeShtdwabZpR0Q" urgent="false">
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_tmUuhQjYEeShtdwabZpR0Q">
+                <message xmi:id="_tmUuhgjYEeShtdwabZpR0Q" instanceOf="_fSrzEJ2-EeKCPPYajybjTw"/>
+              </events>
+            </transitions>
+            <states xmi:id="_tmUuhwjYEeShtdwabZpR0Q" name="Overtaking" outgoingTransitions="_tmUuhAjYEeShtdwabZpR0Q" incomingTransitions="_tmUugwjYEeShtdwabZpR0Q"/>
+            <states xmi:id="_tmUuiAjYEeShtdwabZpR0Q" name="NoOvertaking" incomingTransitions="_tmUuhAjYEeShtdwabZpR0Q" initial="true">
+              <embeddedRegions xmi:id="_tmUuiQjYEeShtdwabZpR0Q" priority="1">
+                <embeddedStatechart xmi:id="_tmUuigjYEeShtdwabZpR0Q" name="overtaker_noOvertaking">
+                  <transitions xmi:id="_tmUuiwjYEeShtdwabZpR0Q" priority="3" target="_tmUupwjYEeShtdwabZpR0Q" source="_tmUuoQjYEeShtdwabZpR0Q">
+                    <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_tmUujAjYEeShtdwabZpR0Q" kind="TRIGGER">
+                      <message xmi:id="_tmUujQjYEeShtdwabZpR0Q" instanceOf="_--9hYITBEeKO9r0VL65xcg"/>
+                    </events>
+                  </transitions>
+                  <transitions xmi:id="_tmUujgjYEeShtdwabZpR0Q" priority="1" target="_tmUupgjYEeShtdwabZpR0Q" source="_tmUuoQjYEeShtdwabZpR0Q">
+                    <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_tmUujwjYEeShtdwabZpR0Q" kind="TRIGGER">
+                      <message xmi:id="_tmUukAjYEeShtdwabZpR0Q" instanceOf="__4UyUITBEeKO9r0VL65xcg"/>
+                    </events>
+                  </transitions>
+                  <transitions xmi:id="_tmUukQjYEeShtdwabZpR0Q" priority="2" target="_tmUupgjYEeShtdwabZpR0Q" source="_tmUuoQjYEeShtdwabZpR0Q" urgent="false">
+                    <clockConstraints xmi:id="_tmUukgjYEeShtdwabZpR0Q" clock="_tmUuqAjYEeShtdwabZpR0Q" operator="GREATER_OR_EQUAL">
+                      <bound xmi:id="_tmUukwjYEeShtdwabZpR0Q" unit="MILLISECONDS">
+                        <value xsi:type="sdcec:LiteralExpression" xmi:id="_tmUulAjYEeShtdwabZpR0Q" value="75"/>
+                      </bound>
+                    </clockConstraints>
+                  </transitions>
+                  <transitions xmi:id="_tmUulQjYEeShtdwabZpR0Q" priority="1" target="_tmUuoQjYEeShtdwabZpR0Q" source="_tmUuoAjYEeShtdwabZpR0Q" urgent="false">
+                    <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_tmUulgjYEeShtdwabZpR0Q">
+                      <message xmi:id="_tmUulwjYEeShtdwabZpR0Q" instanceOf="_9xK4kITBEeKO9r0VL65xcg">
+                        <parameterBinding xmi:id="_tmUumAjYEeShtdwabZpR0Q" parameter="_Z70IMAjXEeShtdwabZpR0Q">
+                          <value xsi:type="sdcec:ArithmeticExpression" xmi:id="_fcLT0BC2EeSgttf4QYvSRQ">
+                            <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_fcLT0RC2EeSgttf4QYvSRQ" typedNamedElement="_KpnD0BC2EeSgttf4QYvSRQ"/>
+                            <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_fcLT0hC2EeSgttf4QYvSRQ" value="10"/>
+                          </value>
+                        </parameterBinding>
+                      </message>
+                    </events>
+                  </transitions>
+                  <transitions xmi:id="_tmUunAjYEeShtdwabZpR0Q" priority="1" target="_tmUuoAjYEeShtdwabZpR0Q" source="_tmUupgjYEeShtdwabZpR0Q" urgent="false">
+                    <clockConstraints xmi:id="_tmUunQjYEeShtdwabZpR0Q" clock="_tmUuqAjYEeShtdwabZpR0Q" operator="GREATER_OR_EQUAL">
+                      <bound xmi:id="_tmUungjYEeShtdwabZpR0Q" unit="MINUTES">
+                        <value xsi:type="sdcec:LiteralExpression" xmi:id="_tmUunwjYEeShtdwabZpR0Q" value="1"/>
+                      </bound>
+                    </clockConstraints>
+                  </transitions>
+                  <states xmi:id="_tmUuoAjYEeShtdwabZpR0Q" name="Init" outgoingTransitions="_tmUulQjYEeShtdwabZpR0Q" incomingTransitions="_tmUunAjYEeShtdwabZpR0Q" initial="true"/>
+                  <states xmi:id="_tmUuoQjYEeShtdwabZpR0Q" name="Requested" outgoingTransitions="_tmUujgjYEeShtdwabZpR0Q _tmUukQjYEeShtdwabZpR0Q _tmUuiwjYEeShtdwabZpR0Q" incomingTransitions="_tmUulQjYEeShtdwabZpR0Q">
+                    <entryEvent xmi:id="_tmUuogjYEeShtdwabZpR0Q" clockResets="_tmUuqAjYEeShtdwabZpR0Q"/>
+                    <invariants xmi:id="_tmUuowjYEeShtdwabZpR0Q" clock="_tmUuqAjYEeShtdwabZpR0Q">
+                      <bound xmi:id="_tmUupAjYEeShtdwabZpR0Q" unit="MILLISECONDS">
+                        <value xsi:type="sdcec:LiteralExpression" xmi:id="_tmUupQjYEeShtdwabZpR0Q" value="80"/>
+                      </bound>
+                    </invariants>
+                  </states>
+                  <states xmi:id="_tmUupgjYEeShtdwabZpR0Q" name="Wait" outgoingTransitions="_tmUunAjYEeShtdwabZpR0Q" incomingTransitions="_tmUukQjYEeShtdwabZpR0Q _tmUujgjYEeShtdwabZpR0Q"/>
+                </embeddedStatechart>
+              </embeddedRegions>
+              <connectionPoints xsi:type="realtimestatechart:ExitPoint" xmi:id="_tmUupwjYEeShtdwabZpR0Q" name="exit2" outgoingTransitions="_tmUugwjYEeShtdwabZpR0Q" incomingTransitions="_tmUuiwjYEeShtdwabZpR0Q"/>
+            </states>
+            <clocks xmi:id="_tmUuqAjYEeShtdwabZpR0Q" name="c1"/>
+          </embeddedStatechart>
+        </embeddedRegions>
+        <embeddedRegions xmi:id="_uQBy0AjYEeShtdwabZpR0Q" priority="2">
+          <embeddedStatechart xmi:id="_uQBy0QjYEeShtdwabZpR0Q" name="Receiver_Role_Receiver" behavioralElement="_Fsqf4Ad6EeScEaYFsu5sEQ">
+            <transitions xmi:id="_uQBy0gjYEeShtdwabZpR0Q" priority="1" target="_uQBy2QjYEeShtdwabZpR0Q" source="_uQBy2AjYEeShtdwabZpR0Q">
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_uQBy0wjYEeShtdwabZpR0Q" kind="TRIGGER">
+                <message xmi:id="_uQBy1AjYEeShtdwabZpR0Q" instanceOf="_HbLRIAdvEeScEaYFsu5sEQ"/>
+              </events>
+            </transitions>
+            <transitions xmi:id="_uQBy1QjYEeShtdwabZpR0Q" priority="1" target="_uQBy2AjYEeShtdwabZpR0Q" source="_uQBy2QjYEeShtdwabZpR0Q">
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_uQBy1gjYEeShtdwabZpR0Q" kind="TRIGGER">
+                <message xmi:id="_uQBy1wjYEeShtdwabZpR0Q" instanceOf="_JZR8kAdvEeScEaYFsu5sEQ"/>
+              </events>
+            </transitions>
+            <states xmi:id="_uQBy2AjYEeShtdwabZpR0Q" name="TrackeUnsafe" outgoingTransitions="_uQBy0gjYEeShtdwabZpR0Q" incomingTransitions="_uQBy1QjYEeShtdwabZpR0Q" initial="true"/>
+            <states xmi:id="_uQBy2QjYEeShtdwabZpR0Q" name="TrackSafe" outgoingTransitions="_uQBy1QjYEeShtdwabZpR0Q" incomingTransitions="_uQBy0gjYEeShtdwabZpR0Q"/>
+          </embeddedStatechart>
+        </embeddedRegions>
+      </states>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_8J0gQITBEeKO9r0VL65xcg" key="org.muml.pim.messagetype.category" name="msgtype">
+    <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_9E-g8ITBEeKO9r0VL65xcg" name="Overtaking">
+      <messageTypes xmi:id="_9xK4kITBEeKO9r0VL65xcg" name="request">
+        <parameters xmi:id="_Z70IMAjXEeShtdwabZpR0Q" name="plannedOvertakingSpeed" dataType="_Byc_tCqlEeOmGPWtq6tuHA"/>
+      </messageTypes>
+      <messageTypes xmi:id="_--9hYITBEeKO9r0VL65xcg" name="accept"/>
+      <messageTypes xmi:id="__4UyUITBEeKO9r0VL65xcg" name="decline"/>
+      <messageTypes xmi:id="_fSrzEJ2-EeKCPPYajybjTw" name="finish"/>
+    </modelElements>
+    <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_DDthoAdvEeScEaYFsu5sEQ" name="TrackInfo">
+      <messageTypes xmi:id="_HbLRIAdvEeScEaYFsu5sEQ" name="safe"/>
+      <messageTypes xmi:id="_JZR8kAdvEeScEaYFsu5sEQ" name="unsafe"/>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_FN-BUITCEeKO9r0VL65xcg" key="org.muml.pim.protocol.category" name="protocol">
+    <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_GPaQMITCEeKO9r0VL65xcg" name="Overtaking">
+      <verificationConstraintRepositories xsi:type="mtctl:PropertyRepository" xmi:id="_mlQtwOVxEeOKtovAzVvTtg">
+        <properties xmi:id="_F_PksAtLEeSUoKfUHBEMIA">
+          <expression xsi:type="Quantifiers:AGExpr" xmi:id="_F_PksQtLEeSUoKfUHBEMIA">
+            <expr xsi:type="BooleanLogic:NotExpr" xmi:id="_F_PksgtLEeSUoKfUHBEMIA">
+              <opd xsi:type="Predicates:BufferOverflowExpr" xmi:id="_F_PkswtLEeSUoKfUHBEMIA"/>
+            </expr>
+          </expression>
+        </properties>
+        <properties xmi:id="_F_PktAtLEeSUoKfUHBEMIA">
+          <expression xsi:type="Quantifiers:AGExpr" xmi:id="_F_PktQtLEeSUoKfUHBEMIA">
+            <expr xsi:type="BooleanLogic:NotExpr" xmi:id="_F_PktgtLEeSUoKfUHBEMIA">
+              <opd xsi:type="Predicates:DeadlockExpr" xmi:id="_F_PktwtLEeSUoKfUHBEMIA"/>
+            </expr>
+          </expression>
+        </properties>
+        <properties xmi:id="_F_PkuAtLEeSUoKfUHBEMIA">
+          <expression xsi:type="Quantifiers:EFExpr" xmi:id="_F_PkuQtLEeSUoKfUHBEMIA">
+            <expr xsi:type="Predicates:StateActiveExpr" xmi:id="_F_PkugtLEeSUoKfUHBEMIA">
+              <state xsi:type="Comparables:MumlElemExpr" xmi:id="_F_PkuwtLEeSUoKfUHBEMIA" elem="_liNIQYTDEeKO9r0VL65xcg"/>
+            </expr>
+          </expression>
+        </properties>
+        <properties xmi:id="_F_PkvAtLEeSUoKfUHBEMIA">
+          <expression xsi:type="Quantifiers:EFExpr" xmi:id="_F_PkvQtLEeSUoKfUHBEMIA">
+            <expr xsi:type="Predicates:StateActiveExpr" xmi:id="_F_PkvgtLEeSUoKfUHBEMIA">
+              <state xsi:type="Comparables:MumlElemExpr" xmi:id="_F_PkvwtLEeSUoKfUHBEMIA" elem="_oILsAITDEeKO9r0VL65xcg"/>
+            </expr>
+          </expression>
+        </properties>
+        <properties xmi:id="_F_PkwAtLEeSUoKfUHBEMIA">
+          <expression xsi:type="Quantifiers:AGExpr" xmi:id="_F_PkwQtLEeSUoKfUHBEMIA">
+            <expr xsi:type="BooleanLogic:ImplyExpr" xmi:id="_F_PkwgtLEeSUoKfUHBEMIA">
+              <leftOpd xsi:type="Predicates:StateActiveExpr" xmi:id="_F_PkwwtLEeSUoKfUHBEMIA">
+                <state xsi:type="Comparables:MumlElemExpr" xmi:id="_F_PkxAtLEeSUoKfUHBEMIA" elem="_p05XYITBEeKO9r0VL65xcg"/>
+              </leftOpd>
+              <rightOpd xsi:type="Predicates:StateActiveExpr" xmi:id="_F_PkxQtLEeSUoKfUHBEMIA">
+                <state xsi:type="Comparables:MumlElemExpr" xmi:id="_F_PkxgtLEeSUoKfUHBEMIA" elem="_oILsAITDEeKO9r0VL65xcg"/>
+              </rightOpd>
+            </expr>
+          </expression>
+        </properties>
+      </verificationConstraintRepositories>
+      <roles xmi:id="_GQwUAITCEeKO9r0VL65xcg" connectors="_GRMY5oTCEeKO9r0VL65xcg" behavior="_ZOLusIS_EeKO9r0VL65xcg" name="Overtaker" senderMessageTypes="_9xK4kITBEeKO9r0VL65xcg _fSrzEJ2-EeKCPPYajybjTw" receiverMessageTypes="__4UyUITBEeKO9r0VL65xcg _--9hYITBEeKO9r0VL65xcg">
+        <cardinality xmi:id="_GQ5d8ITCEeKO9r0VL65xcg">
+          <lowerBound xmi:id="_XE7F0AdyEeScEaYFsu5sEQ"/>
+          <upperBound xmi:id="_XE87AAdyEeScEaYFsu5sEQ"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_FRm7cITTEeKO9r0VL65xcg" name="buffer1" messageType="_--9hYITBEeKO9r0VL65xcg __4UyUITBEeKO9r0VL65xcg">
+          <bufferSize xmi:id="_lKSu0ITUEeKO9r0VL65xcg" value="5"/>
+        </receiverMessageBuffer>
+      </roles>
+      <roles xmi:id="_GRMY4oTCEeKO9r0VL65xcg" connectors="_GRMY5oTCEeKO9r0VL65xcg" behavior="_liNIQITDEeKO9r0VL65xcg" name="Overtakee" senderMessageTypes="__4UyUITBEeKO9r0VL65xcg _--9hYITBEeKO9r0VL65xcg" receiverMessageTypes="_9xK4kITBEeKO9r0VL65xcg _fSrzEJ2-EeKCPPYajybjTw">
+        <cardinality xmi:id="_GRMY44TCEeKO9r0VL65xcg">
+          <lowerBound xmi:id="_Qr7w4AtLEeSUoKfUHBEMIA"/>
+          <upperBound xmi:id="_Qr-NIAtLEeSUoKfUHBEMIA"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_Jyhh4ITTEeKO9r0VL65xcg" name="buffer1" messageType="_9xK4kITBEeKO9r0VL65xcg _fSrzEJ2-EeKCPPYajybjTw">
+          <bufferSize xmi:id="_oG9UQITUEeKO9r0VL65xcg" value="5"/>
+        </receiverMessageBuffer>
+      </roles>
+      <roleConnector xmi:id="_GRMY5oTCEeKO9r0VL65xcg" connectorEndpoints="_GQwUAITCEeKO9r0VL65xcg _GRMY4oTCEeKO9r0VL65xcg">
+        <connectorQualityOfServiceAssumptions xmi:id="_GRf64ITCEeKO9r0VL65xcg" comment="">
+          <minMessageDelay xmi:id="_aiB00ITCEeKO9r0VL65xcg" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_TB0VEAjYEeShtdwabZpR0Q" value="5"/>
+          </minMessageDelay>
+          <maxMessageDelay xmi:id="_eXEMsITCEeKO9r0VL65xcg" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_TR4KUAjYEeShtdwabZpR0Q" value="10"/>
+          </maxMessageDelay>
+        </connectorQualityOfServiceAssumptions>
+      </roleConnector>
+    </modelElements>
+    <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_912yIAdtEeScEaYFsu5sEQ" name="TrackInfo">
+      <verificationConstraintRepositories xsi:type="mtctl:PropertyRepository" xmi:id="_f69KsAjYEeShtdwabZpR0Q">
+        <properties xmi:id="_hqGNEAjYEeShtdwabZpR0Q">
+          <expression xsi:type="Quantifiers:AGExpr" xmi:id="_hqGNEQjYEeShtdwabZpR0Q">
+            <expr xsi:type="BooleanLogic:NotExpr" xmi:id="_hqGNEgjYEeShtdwabZpR0Q">
+              <opd xsi:type="Predicates:DeadlockExpr" xmi:id="_hqGNEwjYEeShtdwabZpR0Q"/>
+            </expr>
+          </expression>
+        </properties>
+      </verificationConstraintRepositories>
+      <roles xmi:id="_917DkAdtEeScEaYFsu5sEQ" connectors="_9184wAdtEeScEaYFsu5sEQ" behavior="_KYXlkAdwEeScEaYFsu5sEQ" name="Receiver" receiverMessageTypes="_HbLRIAdvEeScEaYFsu5sEQ _JZR8kAdvEeScEaYFsu5sEQ">
+        <cardinality xmi:id="_917qoAdtEeScEaYFsu5sEQ">
+          <lowerBound xmi:id="_V7IKcBCtEeSgttf4QYvSRQ"/>
+          <upperBound xmi:id="_V7KmsBCtEeSgttf4QYvSRQ"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_rvpIwAdvEeScEaYFsu5sEQ" name="buffer1" messageType="_HbLRIAdvEeScEaYFsu5sEQ _JZR8kAdvEeScEaYFsu5sEQ" bufferOverflowAvoidanceStrategy="displace oldest message in buffer">
+          <bufferSize xmi:id="_xA-fgAdvEeScEaYFsu5sEQ"/>
+        </receiverMessageBuffer>
+      </roles>
+      <roles xmi:id="_918RsQdtEeScEaYFsu5sEQ" connectors="_9184wAdtEeScEaYFsu5sEQ" behavior="_ISdB8AdwEeScEaYFsu5sEQ" name="Provider" senderMessageTypes="_HbLRIAdvEeScEaYFsu5sEQ _JZR8kAdvEeScEaYFsu5sEQ">
+        <cardinality xmi:id="_918RsgdtEeScEaYFsu5sEQ">
+          <lowerBound xmi:id="_JdnMgAd7EeScEaYFsu5sEQ"/>
+          <upperBound xmi:id="_JdnMgQd7EeScEaYFsu5sEQ"/>
+        </cardinality>
+      </roles>
+      <roleConnector xmi:id="_9184wAdtEeScEaYFsu5sEQ" connectorEndpoints="_917DkAdtEeScEaYFsu5sEQ _918RsQdtEeScEaYFsu5sEQ">
+        <connectorQualityOfServiceAssumptions xmi:id="_919f0AdtEeScEaYFsu5sEQ" comment="">
+          <minMessageDelay xmi:id="_91_VAgdtEeScEaYFsu5sEQ" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_zw9T0AdvEeScEaYFsu5sEQ" value="5"/>
+          </minMessageDelay>
+          <maxMessageDelay xmi:id="_91_VAAdtEeScEaYFsu5sEQ" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_0QZB0AdvEeScEaYFsu5sEQ" value="10"/>
+          </maxMessageDelay>
+        </connectorQualityOfServiceAssumptions>
+      </roleConnector>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_O_7KwCqeEeO22YgZcbz7_A" key="org.muml.types.category" name="types">
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Byc_sCqlEeOmGPWtq6tuHA" name="VOID"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Byc_sSqlEeOmGPWtq6tuHA" name="BOOLEAN" primitiveType="BOOLEAN"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Byc_siqlEeOmGPWtq6tuHA" name="INT8"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Byc_syqlEeOmGPWtq6tuHA" name="INT16"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Byc_tCqlEeOmGPWtq6tuHA" name="INT32"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Byc_tSqlEeOmGPWtq6tuHA" name="INT64"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Byc_tiqlEeOmGPWtq6tuHA" name="DOUBLE" primitiveType="DOUBLE"/>
+  </categories>
+  <categories xmi:id="_zp96gEfOEeO56fW-RvmTLw" key="org.muml.pim.components.category" name="component">
+    <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_1vFz8EfOEeO56fW-RvmTLw" name="WhiteSw" behavior="_tmUHcAjYEeShtdwabZpR0Q">
+      <extension xsi:type="dependencylanguage:SynthesizableBehavior" xmi:id="_PwNk8AjZEeShtdwabZpR0Q">
+        <dependencyModel xmi:id="_aPYecPEIEeSqYobe1M1FBA" comment="/* dependency 1: if track is safe longer than 5 seconds and the distance to grey is below 20, &#xD;&#xA; enable the requesting for overtaking&#xD;&#xA; */">
+          <dependencies xsi:type="dependencylanguage:ConditionalDependency" xmi:id="_aPYecfEIEeSqYobe1M1FBA" comment="// dependency 2: the local variable mySpeed complies to the velocity of the white car&#xD;&#xA;">
+            <condition xsi:type="dependencylanguage:CompositionCondition" xmi:id="_aPYecvEIEeSqYobe1M1FBA">
+              <leftCondition xsi:type="dependencylanguage:HybridClockCondition" xmi:id="_aPYec_EIEeSqYobe1M1FBA" operator="GREATER_OR_EQUAL">
+                <condition xsi:type="dependencylanguage:StateStatusCondition" xmi:id="_aPYedPEIEeSqYobe1M1FBA" states="_uQBy2QjYEeShtdwabZpR0Q" kind="ACTIVE"/>
+                <bound xmi:id="_aPYedfEIEeSqYobe1M1FBA" unit="SECONDS">
+                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_aPYedvEIEeSqYobe1M1FBA" value="5"/>
+                </bound>
+              </leftCondition>
+              <rightCondition xsi:type="dependencylanguage:DataCondition" xmi:id="_aPYed_EIEeSqYobe1M1FBA">
+                <expression xsi:type="sdcec:ComparisonExpression" xmi:id="_aPYeePEIEeSqYobe1M1FBA">
+                  <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_aPYeefEIEeSqYobe1M1FBA" typedNamedElement="_GEnvIE05EeOI293nB1lGXQ"/>
+                  <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_aPYeevEIEeSqYobe1M1FBA" value="20"/>
+                </expression>
+              </rightCondition>
+            </condition>
+            <effects xsi:type="dependencylanguage:EnableDisableEffect" xmi:id="_aPYee_EIEeSqYobe1M1FBA" isEnable="true">
+              <event xsi:type="dependencylanguage:TransitionEvent" xmi:id="_aPYefPEIEeSqYobe1M1FBA" transition="_tmUulQjYEeShtdwabZpR0Q"/>
+            </effects>
+          </dependencies>
+          <dependencies xsi:type="dependencylanguage:DataMerge" xmi:id="_aPYeffEIEeSqYobe1M1FBA" comment="//dependency 3: if the distance to grey is above 20, enable the end the overtaking&#xD;&#xA;" variables="_-TMrUBC2EeSgttf4QYvSRQ" variableName="Velocity"/>
+          <dependencies xsi:type="dependencylanguage:ConditionalDependency" xmi:id="_aPYefvEIEeSqYobe1M1FBA">
+            <condition xsi:type="dependencylanguage:DataCondition" xmi:id="_aPYef_EIEeSqYobe1M1FBA">
+              <expression xsi:type="sdcec:ComparisonExpression" xmi:id="_aPYegPEIEeSqYobe1M1FBA" operator="GREATER">
+                <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_aPYegfEIEeSqYobe1M1FBA" typedNamedElement="_GEnvIE05EeOI293nB1lGXQ"/>
+                <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_aPYegvEIEeSqYobe1M1FBA" value="20"/>
+              </expression>
+            </condition>
+            <effects xsi:type="dependencylanguage:EnableDisableEffect" xmi:id="_aPYeg_EIEeSqYobe1M1FBA" isEnable="true">
+              <event xsi:type="dependencylanguage:TransitionEvent" xmi:id="_aPYehPEIEeSqYobe1M1FBA" transition="_tmUuhAjYEeShtdwabZpR0Q"/>
+            </effects>
+          </dependencies>
+        </dependencyModel>
+      </extension>
+      <ports xsi:type="component:DiscretePort" xmi:id="___LHMEfPEeOKy6HrV27eJQ" name="Overtaker" behavior="_tmUugQjYEeShtdwabZpR0Q" senderMessageTypes="_9xK4kITBEeKO9r0VL65xcg _fSrzEJ2-EeKCPPYajybjTw" receiverMessageTypes="__4UyUITBEeKO9r0VL65xcg _--9hYITBEeKO9r0VL65xcg" refinedRole="_GQwUAITCEeKO9r0VL65xcg">
+        <cardinality xmi:id="_tlu4oAjYEeShtdwabZpR0Q">
+          <lowerBound xmi:id="_sop5ABCyEeSgttf4QYvSRQ"/>
+          <upperBound xmi:id="_soqgEBCyEeSgttf4QYvSRQ"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_tmMysAjYEeShtdwabZpR0Q" name="buffer1" messageType="_--9hYITBEeKO9r0VL65xcg __4UyUITBEeKO9r0VL65xcg">
+          <bufferSize xmi:id="_tmMysQjYEeShtdwabZpR0Q" value="5"/>
+        </receiverMessageBuffer>
+      </ports>
+      <ports xsi:type="component:HybridPort" xmi:id="_WEy5EE03EeOI293nB1lGXQ" name="Velocity" dataType="_Byc_tiqlEeOmGPWtq6tuHA" kind="OUT">
+        <samplingInterval xmi:id="_VOcqcE04EeOI293nB1lGXQ" unit="MILLISECONDS">
+          <value xsi:type="sdcec:LiteralExpression" xmi:id="_WZKKEE04EeOI293nB1lGXQ" value="30"/>
+        </samplingInterval>
+      </ports>
+      <ports xsi:type="component:HybridPort" xmi:id="_GEnvIE05EeOI293nB1lGXQ" name="Distance" dataType="_Byc_tiqlEeOmGPWtq6tuHA">
+        <samplingInterval xmi:id="_SnW28E05EeOI293nB1lGXQ" unit="MILLISECONDS">
+          <value xsi:type="sdcec:LiteralExpression" xmi:id="_TqjZUE05EeOI293nB1lGXQ" value="30"/>
+        </samplingInterval>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_Fsqf4Ad6EeScEaYFsu5sEQ" name="Receiver" behavior="_uQBy0QjYEeShtdwabZpR0Q" receiverMessageTypes="_HbLRIAdvEeScEaYFsu5sEQ _JZR8kAdvEeScEaYFsu5sEQ" refinedRole="_917DkAdtEeScEaYFsu5sEQ">
+        <cardinality xmi:id="_uPg1cAjYEeShtdwabZpR0Q">
+          <lowerBound xmi:id="_uq42gBCyEeSgttf4QYvSRQ"/>
+          <upperBound xmi:id="_uq5dkBCyEeSgttf4QYvSRQ"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_uP5P8AjYEeShtdwabZpR0Q" name="buffer1" messageType="_HbLRIAdvEeScEaYFsu5sEQ _JZR8kAdvEeScEaYFsu5sEQ" bufferOverflowAvoidanceStrategy="displace oldest message in buffer">
+          <bufferSize xmi:id="_uP5P8QjYEeShtdwabZpR0Q"/>
+        </receiverMessageBuffer>
+      </ports>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_CDbBcEfREeOKy6HrV27eJQ" key="org.muml.pim.instance.category" name="instance"/>
+</modelinstance:RootNode>

@@ -1,0 +1,52 @@
+«IMPORT simulink»
+«IMPORT simulink::stateflow»
+
+«EXTENSION extensions::Block»
+«EXTENSION extensions::stateflow::StateflowElement»
+«EXTENSION extensions::stateflow::Node»
+«EXTENSION extensions::stateflow::State»
+«EXTENSION extensions::stateflow::Chart»
+
+«DEFINE chart FOR Chart-»
+	chart {
+		id			«this.getStateflowId()»
+		name		"«IF this.block != null»«this.block.getQualifiedName()»«ELSE»«this.name»«ENDIF»"
+		tag			"id=«this.id»"
+		machine		«this.machine.getStateflowId()»
+		chartFileNumber		«this.machine.charts.indexOf(this)+1»«REM»Simulink starts by 1«ENDREM»
+		viewObj		«this.getStateflowId()»    
+		decomposition	    CLUSTER_CHART
+«IF this.nodes.typeSelect(State).size > 0 -»
+		treeNode		[0 «this.nodes.typeSelect(State).first().getStateflowId()» 0 0]
+«ENDIF-»		
+«IF !this.getAllData().isEmpty-»
+		firstData		«this.getAllData().first().getStateflowId()»
+«ENDIF-»
+«IF !this.getAllEvents().isEmpty-»
+		firstEvent		«this.getAllEvents().first().getStateflowId()»
+«ENDIF-»
+«IF !this.getAllJunctions().isEmpty-»
+		firstJunction	«this.getAllJunctions().first().getStateflowId()»
+«ENDIF-»
+«IF !this.getAllTransitions().isEmpty-»
+		firstTransition		«this.getAllTransitions().first().getStateflowId()»
+«ENDIF-»	
+		disableImplicitCasting  1
+		userSpecifiedStateTransitionExecutionOrder 1
+«EXPAND Parameter::stateflowParameter FOREACH this.parameters.select(p| !{'machine', 'chartFileNumber', 'id', 'name', 'tag', 'viewObj', 'decomposition', 'firstTransition', 'firstEvent', 'firstData',  'treeNode'}.contains(p.name) )-»	
+	}
+«EXPAND Node::node FOREACH this.nodes-»
+«EXPAND EmbeddedFunction::embeddedFunction FOREACH this.embeddedFunctions-»
+«EXPAND Event::event FOREACH this.events-»
+«EXPAND Transition::transition FOREACH this.transitions-»
+«EXPAND Data::embeddedMatlabFunctionIn FOREACH this.input-»
+«EXPAND Data::embeddedMatlabFunctionOut FOREACH this.output-»
+«EXPAND Data::chartConstant FOREACH this.constant-»
+«EXPAND Data::chartLocal FOREACH this.local-»
+	instance {
+		id			«this.getNewStateflowId()»
+		name		"«IF this.block != null»«this.block.getQualifiedName()»«ELSE»«this.name»«ENDIF»"
+		machine		«this.machine.getStateflowId()»
+		chart		«this.getStateflowId()»
+	}
+«ENDDEFINE»

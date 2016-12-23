@@ -1,0 +1,54 @@
+«IMPORT ape»
+«EXTENSION Metamodel»
+
+«DEFINE GenerateOnce FOR PropertyGenerator»
+«FILE 'build.properties'»
+source.. = src-gen/
+output.. = bin/
+bin.includes = META-INF/,\
+               .,\
+               plugin.xml
+«ENDFILE»
+
+«ENDDEFINE»
+
+«DEFINE GenerateOverwrite FOR PropertyGenerator»
+
+«FILE 'META-INF/MANIFEST.MF'-»
+«EXPAND plugin::Manifest::Manifest-»
+«ENDFILE-»
+
+«FILE 'plugin.xml'-»
+«EXPAND plugin::Plugin::Plugin-»
+«ENDFILE-»
+
+«FOREACH packages.classes AS class»
+«EXPAND editor::Editor::ClassEditor FOR class»
+«ENDFOREACH»
+
+«FOREACH tabs AS tab»
+«FILE sourceFolder + "/" + genPluginId().replaceAll("\\.", "/") + "/tabs/" + tab.id.toString().replaceAll('\\.', '_').toFirstUpper() + "TabElementFilter.java"»
+package «genPluginId()».tabs;
+«EXPAND util::Utility::TabElementFilter FOR tab»
+«ENDFILE»
+«ENDFOREACH»
+
+«FILE sourceFolder + "/" + genPluginId().replaceAll("\\.", "/") + "/util/PropertiesUtil.java"»
+package «genPluginId()».util;
+«EXPAND util::Utility::Utility»
+«ENDFILE»
+
+«FILE sourceFolder + "/" + genPluginId().replaceAll("\\.", "/") + "/metamodel/MetamodelContributor.java"»
+package «genPluginId()».metamodel;
+«EXPAND metamodel::Metamodel::Metamodel»
+«ENDFILE»
+
+«FILE sourceFolder + "/" + genPluginId().replaceAll("\\.", "/") + "/constraint/CreationConstraintContributor.java"»
+package «genPluginId()».constraint;
+«EXPAND constraint::Constraint::Constraint»
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE ClassEditor FOR Class»
+
+«ENDDEFINE»

@@ -1,0 +1,7 @@
+# Tracing options for the org.muml.pim.componentinstanceconfiguration.diagram plug-in
+
+# Common issues
+org.muml.pim.componentinstanceconfiguration.diagram/debug=false
+
+# Visual IDs
+org.muml.pim.componentinstanceconfiguration.diagram/debug/visualID=false

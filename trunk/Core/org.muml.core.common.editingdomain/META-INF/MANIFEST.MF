@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Shared Editingdomain Registry
+Bundle-SymbolicName: org.muml.core.common.editingdomain;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.muml.common.editingdomain.EditingDomainPlugin
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;bundle-version="2.11.0",
+ org.eclipse.emf.workspace,
+ org.eclipse.emf.ecore.xmi,
+ org.eclipse.gmf.runtime.notation;bundle-version="1.8.0",
+ org.eclipse.gmf.runtime.diagram.core,
+ org.eclipse.gmf.runtime.diagram.ui.resources.editor,
+ org.eclipse.ui.workbench,
+ org.eclipse.ui.ide,
+ org.eclipse.emf.common.ui,
+ org.eclipse.gmf.runtime.diagram.ui;bundle-version="1.8.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Export-Package: org.muml.common.editingdomain,
+ org.muml.common.editingdomain.initialize,
+ org.muml.common.editingdomain.registry

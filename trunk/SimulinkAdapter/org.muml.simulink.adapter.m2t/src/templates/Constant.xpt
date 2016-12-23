@@ -1,0 +1,18 @@
+«IMPORT simulink»
+
+«EXTENSION extensions::Element»
+«EXTENSION extensions::Block»
+
+«DEFINE constant FOR Constant»
+  Block {
+    BlockType 			Constant
+    Name 				"«this.getName()»"
+    Tag					"id=«this.id»"
+    SID				    «this.getSimulinkId()» 
+    Value				"«this.value»"
+«IF this.type != null-»
+    «EXPAND DataType::constant FOR this.type-»
+«ENDIF-»
+	«EXPAND Parameter::parameter FOREACH this.parameters.select(p| !{'BlockType','Name', 'Tag', 'Value', 'OutDataType', 'OutDataTypeMode', 'OutDataTypeStr'}.contains(p.name) )-»
+  }
+«ENDDEFINE»

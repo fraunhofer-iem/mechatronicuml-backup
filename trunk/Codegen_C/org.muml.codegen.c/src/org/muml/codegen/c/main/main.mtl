@@ -1,0 +1,131 @@
+
+
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module main.
+ */]
+[module main('http://www.muml.org/pim/connector/1.0.0', 'http://www.muml.org/pim/behavior/1.0.0',
+				'http://www.muml.org/core/1.0.0',
+				'http://www.muml.org/pim/actionlanguage/1.0.0',
+				'http://www.muml.org/pim/msgtype/1.0.0',
+				'http://www.muml.org/pim/types/1.0.0',
+				'http://www.muml.org/modelinstance/1.0.0',
+				'http://www.muml.org/pim/component/1.0.0',
+				'http://www.muml.org/pim/instance/1.0.0',
+				'http://www.muml.org/pim/realtimestatechart/1.0.0')]
+
+
+
+
+[import org::muml::codegen::c::files::RealtimeStatechart/]
+[import org::muml::codegen::c::queries::stringQueries/]
+[import org::muml::codegen::c::queries::modelQueries/]
+[import org::muml::codegen::c::files::component/]
+[import org::muml::codegen::c::files::Message/]
+[import org::muml::codegen::c::files::operations/]
+[import org::muml::codegen::c::files::ContinuousPorts/]
+[import org::muml::codegen::c::files::make]
+[import org::muml::codegen::c::files::CMake/]
+[import org::muml::codegen::c::files::main_C /]
+[import org::muml::codegen::c::files::customTypes /]
+[import org::muml::codegen::c::files::LocalMiddleware /]
+[import org::muml::codegen::c::files::componentInterface /]
+
+[template public generate(cic: ComponentInstanceConfiguration)]
+[comment @main/]
+[comment only generate, if CIC is a root-CIC/]
+[if cic.eContainer().oclIsKindOf(ModelElementCategory)]	
+	[comment generate software parts/]
+	 [generateANSIC(cic.eAllContents(ComponentInstance)->asOrderedSet(), cic.name+'/', true)/]
+	
+	[comment generate mini version for middleware/]
+	[generateLocalMiddleware(cic.eAllContents(ComponentInstance)->asOrderedSet(), cic.name+'/', true)/]
+
+	[generateCMakeFiles(cic, cic.name+'/')/]
+[/if]
+[/template]
+
+
+[**
+ * Generates a main file. This file contains code to create, initialize
+ * and execute a given MUML model on nxtOSEK.
+ * @param aModelElementCategory
+ */]
+[template public generateANSIC( CIs : OrderedSet(ComponentInstance), path : String, useSubDir: Boolean )]
+
+[comment create files for every component type/]
+[generateTypeFiles(CIs, path, useSubDir)/]
+[if CIs.componentType->select( c | c.componentKind=ComponentKind::CONTINUOUS_COMPONENT)->size()>0]
+[generateContinuousPortFiles(CIs, path, useSubDir)/]
+[/if]
+[comment generate file for OS variable/]
+[generateOSFileDummy(path, 'C99', useSubDir)/]
+
+[comment create message file/]
+[generateProtobufMessageFile(CIs, path, useSubDir)/]
+
+[comment create header for using protobuf/]
+[generateProtobufNewHeader(CIs,path, useSubDir)/]
+
+[comment craeate files for RTSCs/]
+[generateRTSCFiles(CIs, path, useSubDir)/]
+
+[comment create makefile for gcc/]
+[generateMakeFile(CIs, path, useSubDir)/]
+
+
+[comment create Operation files/]
+[generateOperationFiles(CIs, path, useSubDir)/]
+
+[comment create main file/]
+[generateANSICMainFile(CIs, path, useSubDir)/]
+
+[generateCustomTypes(CIs, path, useSubDir)/]
+
+
+[/template]
+
+
+
+[**
+ * Creates a header and an implementation file for every component (type) of the model
+ * (if modelElementCategory is 'components'
+ * @param modelElementCategory
+ */]
+[template public generateTypeFiles(CIs : OrderedSet(ComponentInstance), path : String, useSubDir: Boolean)]
+[for (component : Component | CIs.componentType->asOrderedSet()) ? (component.oclIsKindOf(AtomicComponent))]
+[if ((component.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (component.componentKind = ComponentKind::HYBRID_COMPONENT))]
+[generate_ComponentInterface(component, path, useSubDir)/]
+[generate_ComponentClass(component, path, useSubDir)/]
+[/if]
+[/for]
+[/template]
+
+
+[**
+ * Creates a header and an implementation file for every realtime statechart, which is the behavior of
+ * an atomic component of the model (if modelElementCategory is 'realtimestatechart'
+ * @param modelElementCategory
+ */]
+[template public generateRTSCFiles(CIs : OrderedSet(ComponentInstance), path: String, useSubDir: Boolean) ]
+
+	[for (comp : Component | CIs.componentType->asOrderedSet()) ? (oclIsKindOf(AtomicComponent))]
+	[if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (comp.componentKind = ComponentKind::HYBRID_COMPONENT))]
+	[let aComp : AtomicComponent = comp.oclAsType(AtomicComponent)]
+	
+	[comment if no behavior is defined/]
+	[if (aComp.behavior.oclIsUndefined())]
+		[comment @TODO generated empty bahavior file/]
+
+	[else]
+	[comment if RTSC is defined as behavior/]
+		[if (aComp.behavior.oclIsTypeOf(RealtimeStatechart))]
+		[comment	[generate_RTSCHeader(aComp, aComp.behavior.oclAsType(RealtimeStatechart), path, useSubDir)/]  
+			[generate_RTSC(aComp, aComp.behavior.oclAsType(RealtimeStatechart), path, useSubDir)/]
+		[/if]
+	[/if]
+	[/let]
+	[/if]
+	[/for]
+
+[/template]

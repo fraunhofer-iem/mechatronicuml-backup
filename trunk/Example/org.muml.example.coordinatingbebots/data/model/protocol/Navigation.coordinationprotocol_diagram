@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:connector="http://www.muml.org/pim/connector/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:protocol="http://www.muml.org/pim/protocol/1.0.0" xsi:schemaLocation="http://www.muml.org/pim/connector/1.0.0 http://www.muml.org/pim/1.0.0#//connector http://www.muml.org/modelinstance/1.0.0 http://www.muml.org/core/1.0.0#//modelinstance http://www.muml.org/pim/protocol/1.0.0 http://www.muml.org/pim/1.0.0#//protocol" xmi:id="_rKo_oNA5EeWxwcLCz5WDyg" type="Coordination Protocol" name="Navigation.coordinationprotocol_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_rKt4INA5EeWxwcLCz5WDyg" type="2005" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_rKufMNA5EeWxwcLCz5WDyg" type="7005">
+      <children xmi:type="notation:Node" xmi:id="_AkIswNA6EeWxwcLCz5WDyg" type="3015">
+        <children xmi:type="notation:DecorationNode" xmi:id="_AkJT0NA6EeWxwcLCz5WDyg" type="5023"/>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_AkIswdA6EeWxwcLCz5WDyg"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_AkIswtA6EeWxwcLCz5WDyg" fontName="Segoe UI"/>
+        <styles xmi:type="notation:LineStyle" xmi:id="_AkIsw9A6EeWxwcLCz5WDyg" lineColor="0"/>
+        <element xmi:type="protocol:CoordinationProtocol" href="../coordinatingBebots.muml#_Z9xpEF6LEeOogaHLhp186w"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AkIsxNA6EeWxwcLCz5WDyg" x="340" y="39"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_AkJT0dA6EeWxwcLCz5WDyg" type="3006" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_AkJT09A6EeWxwcLCz5WDyg" type="5006">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_AkJT1NA6EeWxwcLCz5WDyg" x="19" y="-45"/>
+        </children>
+        <element xmi:type="protocol:Role" href="../coordinatingBebots.muml#_Z_SsAF6LEeOogaHLhp186w"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AkJT0tA6EeWxwcLCz5WDyg" x="220" y="99"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_AkJT1dA6EeWxwcLCz5WDyg" type="3006" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_AkJT19A6EeWxwcLCz5WDyg" type="5006">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_AkJT2NA6EeWxwcLCz5WDyg" x="-15" y="-45"/>
+        </children>
+        <element xmi:type="protocol:Role" href="../coordinatingBebots.muml#_Z_k_4F6LEeOogaHLhp186w"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AkJT1tA6EeWxwcLCz5WDyg" x="535" y="99"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_AkJT2dA6EeWxwcLCz5WDyg" type="3013">
+        <children xmi:type="notation:DecorationNode" xmi:id="_AkJT3tA6EeWxwcLCz5WDyg" type="5018"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_AkJT39A6EeWxwcLCz5WDyg" type="5019"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_AkJT4NA6EeWxwcLCz5WDyg" type="5025"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_AkJT4dA6EeWxwcLCz5WDyg" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_AkJT4tA6EeWxwcLCz5WDyg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_AkJT49A6EeWxwcLCz5WDyg"/>
+        </children>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_AkJT2tA6EeWxwcLCz5WDyg"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_AkJT29A6EeWxwcLCz5WDyg" fontName="Segoe UI"/>
+        <styles xmi:type="notation:LineStyle" xmi:id="_AkJT3NA6EeWxwcLCz5WDyg" lineColor="0"/>
+        <element xmi:type="connector:MessageBuffer" href="../coordinatingBebots.muml#_I7cBEF6ZEeOU6dzb6wKMjg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AkJT3dA6EeWxwcLCz5WDyg" x="40" y="129"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_AkJT5NA6EeWxwcLCz5WDyg" type="3013">
+        <children xmi:type="notation:DecorationNode" xmi:id="_AkJT6dA6EeWxwcLCz5WDyg" type="5018"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_AkJT6tA6EeWxwcLCz5WDyg" type="5019"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_AkJT69A6EeWxwcLCz5WDyg" type="5025"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_AkJT7NA6EeWxwcLCz5WDyg" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_AkJT7dA6EeWxwcLCz5WDyg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_AkJT7tA6EeWxwcLCz5WDyg"/>
+        </children>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_AkJT5dA6EeWxwcLCz5WDyg"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_AkJT5tA6EeWxwcLCz5WDyg" fontName="Segoe UI"/>
+        <styles xmi:type="notation:LineStyle" xmi:id="_AkJT59A6EeWxwcLCz5WDyg" lineColor="0"/>
+        <element xmi:type="connector:MessageBuffer" href="../coordinatingBebots.muml#_fvGwsLZ-EeObnJbUcPIxUA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AkJT6NA6EeWxwcLCz5WDyg" x="430" y="129"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_AkJT79A6EeWxwcLCz5WDyg" type="3014">
+        <children xmi:type="notation:DecorationNode" xmi:id="_AkJT9NA6EeWxwcLCz5WDyg" type="5020"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_AkJT9dA6EeWxwcLCz5WDyg" type="5021"/>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_AkJT8NA6EeWxwcLCz5WDyg"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_AkJT8dA6EeWxwcLCz5WDyg" fontName="Segoe UI"/>
+        <styles xmi:type="notation:LineStyle" xmi:id="_AkJT8tA6EeWxwcLCz5WDyg" lineColor="0"/>
+        <element xmi:type="protocol:ConnectorQualityOfServiceAssumptions" href="../coordinatingBebots.muml#_Z_qfcF6LEeOogaHLhp186w"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AkJT89A6EeWxwcLCz5WDyg" x="259" y="138"/>
+      </children>
+    </children>
+    <element xmi:type="protocol:CoordinationProtocol" href="../coordinatingBebots.muml#_Z9xpEF6LEeOogaHLhp186w"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rKt4IdA5EeWxwcLCz5WDyg"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_rKo_odA5EeWxwcLCz5WDyg"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../coordinatingBebots.muml#_VrQD8F6LEeOogaHLhp186w"/>
+</notation:Diagram>

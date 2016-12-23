@@ -1,0 +1,54 @@
+import Expressions;
+import HWUtil;
+import VariableHelper;
+import Variables;
+import Util;
+
+modeltype core uses core('http://www.muml.org/core/1.0.0');
+modeltype ilptype uses ilp('http://www.muml.org/psm/allocation/ilp/1.0.0');
+modeltype expressions uses core::expressions('http://www.muml.org/core/expressions/1.0.0');
+modeltype common uses core::expressions::common('http://www.muml.org/core/expressions/common/1.0.0');
+modeltype instance uses pim::instance('http://www.muml.org/pim/instance/1.0.0');
+modeltype hwpinstance uses hardware::hwplatforminstance('http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0');
+modeltype hwrinstance uses hardware::hwresourceinstance('http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0');
+
+library GeneralConstraint;
+
+mapping inout IntegerLinearProgram::createGeneralConstraints(cic : ComponentInstanceConfiguration,
+	hpic : HWPlatformInstanceConfiguration) {
+	var resourceInstances : OrderedSet(hwrinstance::ResourceInstance) := hpic.getResourceInstances();
+	var vars : Bag(Variable) := cic.getAllComponentInstances()
+		->product(resourceInstances)
+		->toSequence()->map createBinaryVariable();
+	variables += vars->sortedBy(name);
+	constraints += cic.getAllComponentInstances()
+		->createGeneralConstraint(resourceInstances);
+}
+
+query ComponentInstanceConfiguration::getAllComponentInstances() : OrderedSet(ComponentInstance) {
+	return self.componentInstances->closure(ci : ComponentInstance |
+		if ci.oclIsKindOf(StructuredComponentInstance) then
+			ci->asSet()->union(
+				ci.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances
+			)
+		else
+			ci->asSet()
+		endif			
+	)->sortedBy(getVariableName());
+}
+
+// mapping just for syntactic sugar reasons: use when statement
+mapping ComponentInstance::createGeneralConstraint(resourceInstanceSet : OrderedSet(ResourceInstance)) : ConstraintExpression
+	when {resourceInstanceSet->size() > 1}
+{
+	init {
+		result := self->asSequence()->product(
+			resourceInstanceSet
+		)->collectNested(Sequence{first, second})
+		->sortedBy(s | s->getVariableName())->createAdditionConstraintExpression('1', self.getVariableName());
+	}
+}
+
+query Tuple(first : ComponentInstance, second : ResourceInstance)::toSequence() : Sequence(NamedElement) {
+	return Sequence{self.first, self.second};
+}

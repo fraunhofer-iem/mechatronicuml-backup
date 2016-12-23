@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codegen:CodGenAllocation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:codegen="http://www.fujaba.de/muml/psm/codegen/0.1.0" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:hwplatform="http://www.fujaba.de/muml/hardware/hwplatform/1.0/" xmlns:hwplatforminstance="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/" xmlns:hwresource="http://www.fujaba.de/muml/hardware/hwresource/1.0/" xmlns:hwresourceinstance="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/" xmlns:instance="http://www.fujaba.de/muml/psm/instance/0.1.0" xmlns:instance_1="http://www.fujaba.de/muml/instance/0.4.0" xmlns:realtimestatechartparameter="http://www.fujaba.de/muml/psm/realtimestatechart/realtimestatechartparameter/0.1.0/" xmlns:realtimestatechartparameterbinding="http://www.fujaba.de/muml/psm/realtimestatechart/realtimestatechartparameterbinding/0.1.0/" xmlns:types="http://www.fujaba.de/muml/types/0.4.0">
+  <hpic>
+    <hwplatformInstances name="Overtaker">
+      <delegationPorts name="overtaker_del_BluetoothPort" connectorInstances="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@networkingHardwareInstances.0 //@hpic/@networkingHardwareInstances.0">
+        <type xsi:type="hwplatform:DelegationHWPort" href="runningExample.fujaba#_ACtWoPxqEeOxbZORUyTiTA"/>
+      </delegationPorts>
+      <embeddedHPIC>
+        <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.0/@delegationPorts.0 //@hpic/@hwplatformInstances.0/@embeddedHPIC/@resources.3/@hwports.8">
+          <type xsi:type="hwplatform:Delegation" href="runningExample.fujaba#_C6gqMPxqEeOxbZORUyTiTA"/>
+        </networkingHardwareInstances>
+        <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@resources.1/@hwports.5 //@hpic/@hwplatformInstances.0/@embeddedHPIC/@resources.3/@hwports.7">
+          <communicationMediaPart xsi:type="hwplatform:LinkPart" href="runningExample.fujaba#_I8SmcPxqEeOxbZORUyTiTA"/>
+          <type xsi:type="hwplatform:LinkPart" href="runningExample.fujaba#_I8SmcPxqEeOxbZORUyTiTA"/>
+        </networkingHardwareInstances>
+        <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@resources.2/@hwports.0 //@hpic/@hwplatformInstances.0/@embeddedHPIC/@resources.3/@hwports.2">
+          <communicationMediaPart xsi:type="hwplatform:LinkPart" href="runningExample.fujaba#_NEHXcPxqEeOxbZORUyTiTA"/>
+          <type xsi:type="hwplatform:LinkPart" href="runningExample.fujaba#_NEHXcPxqEeOxbZORUyTiTA"/>
+        </networkingHardwareInstances>
+        <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@resources.3/@hwports.6 //@hpic/@hwplatformInstances.0/@embeddedHPIC/@resources.5/@hwports.0">
+          <communicationMediaPart xsi:type="hwplatform:LinkPart" href="runningExample.fujaba#_Nwlb4PxqEeOxbZORUyTiTA"/>
+          <type xsi:type="hwplatform:LinkPart" href="runningExample.fujaba#_Nwlb4PxqEeOxbZORUyTiTA"/>
+        </networkingHardwareInstances>
+        <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@resources.1/@hwports.8 //@hpic/@hwplatformInstances.0/@embeddedHPIC/@resources.4/@hwports.0">
+          <communicationMediaPart xsi:type="hwplatform:LinkPart" href="runningExample.fujaba#_XRQg4PxqEeOxbZORUyTiTA"/>
+          <type xsi:type="hwplatform:LinkPart" href="runningExample.fujaba#_XRQg4PxqEeOxbZORUyTiTA"/>
+        </networkingHardwareInstances>
+        <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@resources.0/@hwports.0 //@hpic/@hwplatformInstances.0/@embeddedHPIC/@resources.1/@hwports.2">
+          <communicationMediaPart xsi:type="hwplatform:LinkPart" href="runningExample.fujaba#_XxmN0PxqEeOxbZORUyTiTA"/>
+          <type xsi:type="hwplatform:LinkPart" href="runningExample.fujaba#_XxmN0PxqEeOxbZORUyTiTA"/>
+        </networkingHardwareInstances>
+        <resources xsi:type="hwresourceinstance:SensorInstance" name="overtaker_distance">
+          <resourceType xsi:type="hwresource:Device" href="runningExample.fujaba#_HOqgAOHcEeOpGvqK1LlQ0A"/>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtaker_usrp" connectorInstances="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@networkingHardwareInstances.5">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_PzwNgPxqEeOxbZORUyTiTA"/>
+          </hwports>
+        </resources>
+        <resources xsi:type="codegen:RefinedStructuredResourceInstance" name="overtaker_b2" allocatedAtomicComponentInstances="//@cic/@componentInstances.0 //@cic/@componentInstances.3 //@cic/@componentInstances.5">
+          <resourceType xsi:type="hwresource:StructuredResource" href="runningExample.fujaba#_e4jmcN8_EeOeZMHvrJab1w"/>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtaker_b2outputPortB">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_o4bBUPxpEeOxbZORUyTiTA"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtaker_b2outputPortA">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_o4ZzMPxpEeOxbZORUyTiTA"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtaker_b2inputPort3" connectorInstances="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@networkingHardwareInstances.5">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_o4aaQPxpEeOxbZORUyTiTA"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtaker_b2outputPortC">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_o4boYPxpEeOxbZORUyTiTA"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtaker_b2usbPort">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_o4ddkPxpEeOxbZORUyTiTA"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtaker_b2inputPort1" connectorInstances="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@networkingHardwareInstances.1">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_o4c2gPxpEeOxbZORUyTiTA"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtaker_b2inputPort4">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_o4cPcPxpEeOxbZORUyTiTA"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtaker_b2virtualBluetoothPort">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_o4boYfxpEeOxbZORUyTiTA"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtaker_b2inputPort2" connectorInstances="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@networkingHardwareInstances.4">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_o4eEoPxpEeOxbZORUyTiTA"/>
+          </hwports>
+          <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" name="ARMprocessor">
+            <resourceType xsi:type="hwresource:Processor" href="runningExample.fujaba#_4tfCUODaEeOxjPb3_k4ANw"/>
+            <frequency/>
+          </embeddedAtomicResourceInstances>
+          <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" name="RAMmemory">
+            <resourceType xsi:type="hwresource:MemoryResource" href="runningExample.fujaba#_0SePkODaEeOxjPb3_k4ANw"/>
+            <memorySize/>
+          </embeddedAtomicResourceInstances>
+          <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" name="FLASHmemory">
+            <resourceType xsi:type="hwresource:MemoryResource" href="runningExample.fujaba#_wDBMkODaEeOxjPb3_k4ANw"/>
+            <memorySize/>
+          </embeddedAtomicResourceInstances>
+        </resources>
+        <resources xsi:type="hwresourceinstance:ActuatorInstance" name="overtaker_motorL">
+          <resourceType xsi:type="hwresource:Device" href="runningExample.fujaba#_Do7IYOHcEeOpGvqK1LlQ0A"/>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtaker_mlp" connectorInstances="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@networkingHardwareInstances.2">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_p0FYUPxpEeOxbZORUyTiTA"/>
+          </hwports>
+        </resources>
+        <resources xsi:type="codegen:RefinedStructuredResourceInstance" name="overtaker_b1" allocatedAtomicComponentInstances="//@cic/@componentInstances.1 //@cic/@componentInstances.2 //@cic/@componentInstances.4">
+          <resourceType xsi:type="hwresource:StructuredResource" href="runningExample.fujaba#_e4jmcN8_EeOeZMHvrJab1w"/>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtaker_b1outputPortC">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_l-yhwPxpEeOxbZORUyTiTA"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtaker_b1usbPort">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_l-zv4fxpEeOxbZORUyTiTA"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtaker_b1inputPort2" connectorInstances="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@networkingHardwareInstances.2">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_l-0W8PxpEeOxbZORUyTiTA"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtaker_b1outputPortB">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_l-x6sPxpEeOxbZORUyTiTA"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtaker_b1outputPortA">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_l-wFgPxpEeOxbZORUyTiTA"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtaker_b1inputPort4">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_l-zI0PxpEeOxbZORUyTiTA"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtaker_b1inputPort3" connectorInstances="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@networkingHardwareInstances.3">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_l-xToPxpEeOxbZORUyTiTA"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtaker_b1inputPort1" connectorInstances="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@networkingHardwareInstances.1">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_l-zv4PxpEeOxbZORUyTiTA"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtaker_b1virtualBluetoothPort" connectorInstances="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@networkingHardwareInstances.0">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_l-yhwfxpEeOxbZORUyTiTA"/>
+          </hwports>
+          <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" name="ARMprocessor">
+            <resourceType xsi:type="hwresource:Processor" href="runningExample.fujaba#_4tfCUODaEeOxjPb3_k4ANw"/>
+            <frequency/>
+          </embeddedAtomicResourceInstances>
+          <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" name="RAMmemory">
+            <resourceType xsi:type="hwresource:MemoryResource" href="runningExample.fujaba#_0SePkODaEeOxjPb3_k4ANw"/>
+            <memorySize/>
+          </embeddedAtomicResourceInstances>
+          <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" name="FLASHmemory">
+            <resourceType xsi:type="hwresource:MemoryResource" href="runningExample.fujaba#_wDBMkODaEeOxjPb3_k4ANw"/>
+            <memorySize/>
+          </embeddedAtomicResourceInstances>
+        </resources>
+        <resources xsi:type="hwresourceinstance:SensorInstance" name="overtaker_light">
+          <resourceType xsi:type="hwresource:Device" href="runningExample.fujaba#_-rm50OHbEeOpGvqK1LlQ0A"/>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtaker_lrp" connectorInstances="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@networkingHardwareInstances.4">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_QizE0PxqEeOxbZORUyTiTA"/>
+          </hwports>
+        </resources>
+        <resources xsi:type="hwresourceinstance:ActuatorInstance" name="overtaker_motorR">
+          <resourceType xsi:type="hwresource:Device" href="runningExample.fujaba#_Do7IYOHcEeOpGvqK1LlQ0A"/>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtaker_mrp" connectorInstances="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@networkingHardwareInstances.3">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_qj99IPxpEeOxbZORUyTiTA"/>
+          </hwports>
+        </resources>
+      </embeddedHPIC>
+    </hwplatformInstances>
+    <hwplatformInstances name="Overtakee">
+      <delegationPorts name="overtakee_del_BluetoothPort" connectorInstances="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@networkingHardwareInstances.0 //@hpic/@networkingHardwareInstances.0">
+        <type xsi:type="hwplatform:DelegationHWPort" href="runningExample.fujaba#_ACtWoPxqEeOxbZORUyTiTA"/>
+      </delegationPorts>
+      <embeddedHPIC>
+        <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.1/@delegationPorts.0 //@hpic/@hwplatformInstances.1/@embeddedHPIC/@resources.2/@hwports.5">
+          <type xsi:type="hwplatform:Delegation" href="runningExample.fujaba#_C6gqMPxqEeOxbZORUyTiTA"/>
+        </networkingHardwareInstances>
+        <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@resources.1/@hwports.5 //@hpic/@hwplatformInstances.1/@embeddedHPIC/@resources.2/@hwports.8">
+          <communicationMediaPart xsi:type="hwplatform:LinkPart" href="runningExample.fujaba#_I8SmcPxqEeOxbZORUyTiTA"/>
+          <type xsi:type="hwplatform:LinkPart" href="runningExample.fujaba#_I8SmcPxqEeOxbZORUyTiTA"/>
+        </networkingHardwareInstances>
+        <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@resources.2/@hwports.4 //@hpic/@hwplatformInstances.1/@embeddedHPIC/@resources.4/@hwports.0">
+          <communicationMediaPart xsi:type="hwplatform:LinkPart" href="runningExample.fujaba#_NEHXcPxqEeOxbZORUyTiTA"/>
+          <type xsi:type="hwplatform:LinkPart" href="runningExample.fujaba#_NEHXcPxqEeOxbZORUyTiTA"/>
+        </networkingHardwareInstances>
+        <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@resources.0/@hwports.0 //@hpic/@hwplatformInstances.1/@embeddedHPIC/@resources.2/@hwports.6">
+          <communicationMediaPart xsi:type="hwplatform:LinkPart" href="runningExample.fujaba#_Nwlb4PxqEeOxbZORUyTiTA"/>
+          <type xsi:type="hwplatform:LinkPart" href="runningExample.fujaba#_Nwlb4PxqEeOxbZORUyTiTA"/>
+        </networkingHardwareInstances>
+        <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@resources.1/@hwports.2 //@hpic/@hwplatformInstances.1/@embeddedHPIC/@resources.3/@hwports.0">
+          <communicationMediaPart xsi:type="hwplatform:LinkPart" href="runningExample.fujaba#_XRQg4PxqEeOxbZORUyTiTA"/>
+          <type xsi:type="hwplatform:LinkPart" href="runningExample.fujaba#_XRQg4PxqEeOxbZORUyTiTA"/>
+        </networkingHardwareInstances>
+        <resources xsi:type="hwresourceinstance:ActuatorInstance" name="overtakee_motorR">
+          <resourceType xsi:type="hwresource:Device" href="runningExample.fujaba#_Do7IYOHcEeOpGvqK1LlQ0A"/>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtakee_mrp" connectorInstances="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@networkingHardwareInstances.3">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_qj99IPxpEeOxbZORUyTiTA"/>
+          </hwports>
+        </resources>
+        <resources xsi:type="codegen:RefinedStructuredResourceInstance" name="overtakee_b2" allocatedAtomicComponentInstances="//@cic/@componentInstances.6 //@cic/@componentInstances.10">
+          <resourceType xsi:type="hwresource:StructuredResource" href="runningExample.fujaba#_e4jmcN8_EeOeZMHvrJab1w"/>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtakee_b2outputPortB">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_o4bBUPxpEeOxbZORUyTiTA"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtakee_b2inputPort3">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_o4aaQPxpEeOxbZORUyTiTA"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtakee_b2inputPort2" connectorInstances="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@networkingHardwareInstances.4">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_o4eEoPxpEeOxbZORUyTiTA"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtakee_b2outputPortC">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_o4boYPxpEeOxbZORUyTiTA"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtakee_b2usbPort">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_o4ddkPxpEeOxbZORUyTiTA"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtakee_b2inputPort1" connectorInstances="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@networkingHardwareInstances.1">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_o4c2gPxpEeOxbZORUyTiTA"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtakee_b2virtualBluetoothPort">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_o4boYfxpEeOxbZORUyTiTA"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtakee_b2inputPort4">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_o4cPcPxpEeOxbZORUyTiTA"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtakee_b2outputPortA">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_o4ZzMPxpEeOxbZORUyTiTA"/>
+          </hwports>
+          <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" name="ARMprocessor">
+            <resourceType xsi:type="hwresource:Processor" href="runningExample.fujaba#_4tfCUODaEeOxjPb3_k4ANw"/>
+            <frequency/>
+          </embeddedAtomicResourceInstances>
+          <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" name="RAMmemory">
+            <resourceType xsi:type="hwresource:MemoryResource" href="runningExample.fujaba#_0SePkODaEeOxjPb3_k4ANw"/>
+            <memorySize/>
+          </embeddedAtomicResourceInstances>
+          <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" name="FLASHmemory">
+            <resourceType xsi:type="hwresource:MemoryResource" href="runningExample.fujaba#_wDBMkODaEeOxjPb3_k4ANw"/>
+            <memorySize/>
+          </embeddedAtomicResourceInstances>
+        </resources>
+        <resources xsi:type="codegen:RefinedStructuredResourceInstance" name="overtakee_b1" allocatedAtomicComponentInstances="//@cic/@componentInstances.7 //@cic/@componentInstances.8 //@cic/@componentInstances.9">
+          <resourceType xsi:type="hwresource:StructuredResource" href="runningExample.fujaba#_e4jmcN8_EeOeZMHvrJab1w"/>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtakee_b1outputPortB">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_l-x6sPxpEeOxbZORUyTiTA"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtakee_b1inputPort4">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_l-zI0PxpEeOxbZORUyTiTA"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtakee_b1usbPort">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_l-zv4fxpEeOxbZORUyTiTA"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtakee_b1outputPortA">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_l-wFgPxpEeOxbZORUyTiTA"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtakee_b1inputPort2" connectorInstances="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@networkingHardwareInstances.2">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_l-0W8PxpEeOxbZORUyTiTA"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtakee_b1virtualBluetoothPort" connectorInstances="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@networkingHardwareInstances.0">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_l-yhwfxpEeOxbZORUyTiTA"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtakee_b1inputPort3" connectorInstances="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@networkingHardwareInstances.3">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_l-xToPxpEeOxbZORUyTiTA"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtakee_b1outputPortC">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_l-yhwPxpEeOxbZORUyTiTA"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtakee_b1inputPort1" connectorInstances="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@networkingHardwareInstances.1">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_l-zv4PxpEeOxbZORUyTiTA"/>
+          </hwports>
+          <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" name="ARMprocessor">
+            <resourceType xsi:type="hwresource:Processor" href="runningExample.fujaba#_4tfCUODaEeOxjPb3_k4ANw"/>
+            <frequency/>
+          </embeddedAtomicResourceInstances>
+          <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" name="RAMmemory">
+            <resourceType xsi:type="hwresource:MemoryResource" href="runningExample.fujaba#_0SePkODaEeOxjPb3_k4ANw"/>
+            <memorySize/>
+          </embeddedAtomicResourceInstances>
+          <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" name="FLASHmemory">
+            <resourceType xsi:type="hwresource:MemoryResource" href="runningExample.fujaba#_wDBMkODaEeOxjPb3_k4ANw"/>
+            <memorySize/>
+          </embeddedAtomicResourceInstances>
+        </resources>
+        <resources xsi:type="hwresourceinstance:SensorInstance" name="overtakee_light">
+          <resourceType xsi:type="hwresource:Device" href="runningExample.fujaba#_-rm50OHbEeOpGvqK1LlQ0A"/>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtakee_lrp" connectorInstances="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@networkingHardwareInstances.4">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_QizE0PxqEeOxbZORUyTiTA"/>
+          </hwports>
+        </resources>
+        <resources xsi:type="hwresourceinstance:ActuatorInstance" name="overtakee_motorL">
+          <resourceType xsi:type="hwresource:Device" href="runningExample.fujaba#_Do7IYOHcEeOpGvqK1LlQ0A"/>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="overtakee_mlp" connectorInstances="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@networkingHardwareInstances.2">
+            <type xsi:type="hwplatform:HWPortPart" href="runningExample.fujaba#_p0FYUPxpEeOxbZORUyTiTA"/>
+          </hwports>
+        </resources>
+      </embeddedHPIC>
+    </hwplatformInstances>
+    <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.0/@delegationPorts.0 //@hpic/@hwplatformInstances.1/@delegationPorts.0">
+      <communicationMediaPart xsi:type="hwplatform:LinkPart" href="runningExample.fujaba#_GuMBEPxzEeOxbZORUyTiTA"/>
+      <type xsi:type="hwplatform:LinkPart" href="runningExample.fujaba#_GuMBEPxzEeOxbZORUyTiTA"/>
+    </networkingHardwareInstances>
+  </hpic>
+  <cic name="codeGenComponentInstanceConfiguration">
+    <componentInstances xsi:type="codegen:RefinedAtomicComponentInstance" name="overtaker_lineFollower" allocatedResourceInstance="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@resources.1">
+      <componentType xsi:type="component:StaticAtomicComponent" href="runningExample.fujaba#_sRpbULZqEeOeFtIawEHrMg"/>
+      <portInstances xsi:type="instance:ParameterisableDiscreteSinglePortInstance" name="overtaker_pLight" connectorInstances="//@cic/@portConnectorInstances.5">
+        <type xsi:type="component:DiscretePort" href="runningExample.fujaba#_N2PVMDj1EeSBssiweuIwLw"/>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="overtaker_lineFollower_overtaker_pLight_InitApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="runningExample.fujaba#_N2U05Tj1EeSBssiweuIwLw"/>
+          <returnType xsi:type="types:PrimitiveDataType" href="runningExample.fujaba#_5Nv6UKkBEeOcOOA57Wf2WQ"/>
+        </bindings>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="overtaker_lineFollower_overtaker_pLight_ExecApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="runningExample.fujaba#_N2U05jj1EeSBssiweuIwLw"/>
+          <returnType xsi:type="types:PrimitiveDataType" href="runningExample.fujaba#_5Nv6VKkBEeOcOOA57Wf2WQ"/>
+        </bindings>
+      </portInstances>
+      <componentPart href="runningExample.fujaba#_IbQQ8Lq2EeOiPMqKHLMhfw"/>
+    </componentInstances>
+    <componentInstances xsi:type="codegen:RefinedAtomicComponentInstance" name="overtaker_leftMotor" allocatedResourceInstance="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@resources.3">
+      <componentType xsi:type="component:StaticAtomicComponent" href="runningExample.fujaba#_2pDl8LZoEeOeFtIawEHrMg"/>
+      <portInstances xsi:type="instance:ParameterisableDiscreteSinglePortInstance" name="overtaker_pVelocityL" connectorInstances="//@cic/@portConnectorInstances.3">
+        <type xsi:type="component:DiscretePort" href="runningExample.fujaba#_N1VWQDj1EeSBssiweuIwLw"/>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="overtaker_leftMotor_overtaker_pVelocityL_InitApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="runningExample.fujaba#_N1tJ4jj1EeSBssiweuIwLw"/>
+          <returnType xsi:type="types:PrimitiveDataType" href="runningExample.fujaba#_5Nv6UKkBEeOcOOA57Wf2WQ"/>
+        </bindings>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="overtaker_leftMotor_overtaker_pVelocityL_ExecApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="runningExample.fujaba#_N1tJ4zj1EeSBssiweuIwLw"/>
+          <parameters name="velocity">
+            <dataType xsi:type="types:PrimitiveDataType" href="runningExample.fujaba#_5Nv6VKkBEeOcOOA57Wf2WQ"/>
+          </parameters>
+          <returnType xsi:type="types:PrimitiveDataType" href="runningExample.fujaba#_5Nv6UKkBEeOcOOA57Wf2WQ"/>
+        </bindings>
+      </portInstances>
+      <componentPart href="runningExample.fujaba#_MwNfALq2EeOiPMqKHLMhfw"/>
+    </componentInstances>
+    <componentInstances xsi:type="codegen:RefinedAtomicComponentInstance" name="overtaker_rightMotor" allocatedResourceInstance="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@resources.3">
+      <componentType xsi:type="component:StaticAtomicComponent" href="runningExample.fujaba#_2pDl8LZoEeOeFtIawEHrMg"/>
+      <portInstances xsi:type="instance:ParameterisableDiscreteSinglePortInstance" name="overtaker_pVelocityR" connectorInstances="//@cic/@portConnectorInstances.4">
+        <type xsi:type="component:DiscretePort" href="runningExample.fujaba#_N1VWQDj1EeSBssiweuIwLw"/>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="overtaker_rightMotor_overtaker_pVelocityR_InitApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="runningExample.fujaba#_N1tJ4jj1EeSBssiweuIwLw"/>
+          <returnType xsi:type="types:PrimitiveDataType" href="runningExample.fujaba#_5Nv6UKkBEeOcOOA57Wf2WQ"/>
+        </bindings>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="overtaker_rightMotor_overtaker_pVelocityR_ExecApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="runningExample.fujaba#_N1tJ4zj1EeSBssiweuIwLw"/>
+          <parameters name="velocity">
+            <dataType xsi:type="types:PrimitiveDataType" href="runningExample.fujaba#_5Nv6VKkBEeOcOOA57Wf2WQ"/>
+          </parameters>
+          <returnType xsi:type="types:PrimitiveDataType" href="runningExample.fujaba#_5Nv6UKkBEeOcOOA57Wf2WQ"/>
+        </bindings>
+      </portInstances>
+      <componentPart href="runningExample.fujaba#_PiZSwLq2EeOiPMqKHLMhfw"/>
+    </componentInstances>
+    <componentInstances xsi:type="codegen:RefinedAtomicComponentInstance" name="overtaker_distance" allocatedResourceInstance="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@resources.1">
+      <componentType xsi:type="component:StaticAtomicComponent" href="runningExample.fujaba#_ogZ-ULZqEeOeFtIawEHrMg"/>
+      <portInstances xsi:type="instance:ParameterisableDiscreteSinglePortInstance" name="overtaker_pDistance" connectorInstances="//@cic/@portConnectorInstances.2">
+        <type xsi:type="component:DiscretePort" href="runningExample.fujaba#_N2GyUDj1EeSBssiweuIwLw"/>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="overtaker_distance_overtaker_pDistance_InitApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="runningExample.fujaba#_N2NgJTj1EeSBssiweuIwLw"/>
+          <returnType xsi:type="types:PrimitiveDataType" href="runningExample.fujaba#_5Nv6UKkBEeOcOOA57Wf2WQ"/>
+        </bindings>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="overtaker_distance_overtaker_pDistance_ExecApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="runningExample.fujaba#_N2NgJjj1EeSBssiweuIwLw"/>
+          <returnType xsi:type="types:PrimitiveDataType" href="runningExample.fujaba#_5Nv6VKkBEeOcOOA57Wf2WQ"/>
+        </bindings>
+      </portInstances>
+      <componentPart href="runningExample.fujaba#_ZDnKULq2EeOiPMqKHLMhfw"/>
+    </componentInstances>
+    <componentInstances xsi:type="codegen:RefinedAtomicComponentInstance" name="overtakerDriver" allocatedResourceInstance="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@resources.3">
+      <componentType xsi:type="component:StaticAtomicComponent" href="runningExample.fujaba#_cgwjcLqyEeOiPMqKHLMhfw"/>
+      <portInstances xsi:type="instance_1:DiscreteSinglePortInstance" name="overtakerDriver_pDetector" connectorInstances="//@cic/@portConnectorInstances.1">
+        <type xsi:type="component:DiscretePort" href="runningExample.fujaba#_pFqOcLqyEeOiPMqKHLMhfw"/>
+      </portInstances>
+      <portInstances xsi:type="instance_1:DiscreteSinglePortInstance" name="overtakerDriver_pLight" connectorInstances="//@cic/@portConnectorInstances.5">
+        <type xsi:type="component:DiscretePort" href="runningExample.fujaba#_N2soMDj1EeSBssiweuIwLw"/>
+      </portInstances>
+      <portInstances xsi:type="instance_1:DiscreteSinglePortInstance" name="overtakerDriver_pDistance" connectorInstances="//@cic/@portConnectorInstances.2">
+        <type xsi:type="component:DiscretePort" href="runningExample.fujaba#_N2mhkDj1EeSBssiweuIwLw"/>
+      </portInstances>
+      <portInstances xsi:type="instance_1:DiscreteSinglePortInstance" name="overtakerDriver_pVelocityL" connectorInstances="//@cic/@portConnectorInstances.3">
+        <type xsi:type="component:DiscretePort" href="runningExample.fujaba#_N2hCADj1EeSBssiweuIwLw"/>
+      </portInstances>
+      <portInstances xsi:type="instance_1:DiscreteSinglePortInstance" name="overtakerDriver_pVelocityR" connectorInstances="//@cic/@portConnectorInstances.4">
+        <type xsi:type="component:DiscretePort" href="runningExample.fujaba#_N2WC4Dj1EeSBssiweuIwLw"/>
+      </portInstances>
+      <componentPart href="runningExample.fujaba#_eZRncLq2EeOiPMqKHLMhfw"/>
+    </componentInstances>
+    <componentInstances xsi:type="codegen:RefinedAtomicComponentInstance" name="overtakerCommunicator" allocatedResourceInstance="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@resources.1">
+      <componentType xsi:type="component:StaticAtomicComponent" href="runningExample.fujaba#_dBi8ULqyEeOiPMqKHLMhfw"/>
+      <portInstances xsi:type="instance_1:DiscreteSinglePortInstance" name="overtakerCommunicator_pOvertaker" connectorInstances="//@cic/@portConnectorInstances.0">
+        <type xsi:type="component:DiscretePort" href="runningExample.fujaba#_PgbOwLq0EeOiPMqKHLMhfw"/>
+      </portInstances>
+      <portInstances xsi:type="instance_1:DiscreteSinglePortInstance" name="overtakerCommunicator_pDelegator" connectorInstances="//@cic/@portConnectorInstances.1">
+        <type xsi:type="component:DiscretePort" href="runningExample.fujaba#_P_9qcLq0EeOiPMqKHLMhfw"/>
+      </portInstances>
+      <componentPart href="runningExample.fujaba#_rHRkELq2EeOiPMqKHLMhfw"/>
+    </componentInstances>
+    <componentInstances xsi:type="codegen:RefinedAtomicComponentInstance" name="overtakee_lineFollower" allocatedResourceInstance="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@resources.1">
+      <componentType xsi:type="component:StaticAtomicComponent" href="runningExample.fujaba#_sRpbULZqEeOeFtIawEHrMg"/>
+      <portInstances xsi:type="instance:ParameterisableDiscreteSinglePortInstance" name="overtakee_pLight" connectorInstances="//@cic/@portConnectorInstances.7">
+        <type xsi:type="component:DiscretePort" href="runningExample.fujaba#_N2PVMDj1EeSBssiweuIwLw"/>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="overtakee_lineFollower_overtakee_pLight_InitApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="runningExample.fujaba#_N2U05Tj1EeSBssiweuIwLw"/>
+          <returnType xsi:type="types:PrimitiveDataType" href="runningExample.fujaba#_5Nv6UKkBEeOcOOA57Wf2WQ"/>
+        </bindings>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="overtakee_lineFollower_overtakee_pLight_ExecApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="runningExample.fujaba#_N2U05jj1EeSBssiweuIwLw"/>
+          <returnType xsi:type="types:PrimitiveDataType" href="runningExample.fujaba#_5Nv6VKkBEeOcOOA57Wf2WQ"/>
+        </bindings>
+      </portInstances>
+      <componentPart href="runningExample.fujaba#_d7PyMLq3EeOiPMqKHLMhfw"/>
+    </componentInstances>
+    <componentInstances xsi:type="codegen:RefinedAtomicComponentInstance" name="overtakee_leftMotor" allocatedResourceInstance="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@resources.2">
+      <componentType xsi:type="component:StaticAtomicComponent" href="runningExample.fujaba#_2pDl8LZoEeOeFtIawEHrMg"/>
+      <portInstances xsi:type="instance:ParameterisableDiscreteSinglePortInstance" name="overtakee_pVelocityL" connectorInstances="//@cic/@portConnectorInstances.8">
+        <type xsi:type="component:DiscretePort" href="runningExample.fujaba#_N1VWQDj1EeSBssiweuIwLw"/>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="overtakee_leftMotor_overtakee_pVelocityL_InitApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="runningExample.fujaba#_N1tJ4jj1EeSBssiweuIwLw"/>
+          <returnType xsi:type="types:PrimitiveDataType" href="runningExample.fujaba#_5Nv6UKkBEeOcOOA57Wf2WQ"/>
+        </bindings>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="overtakee_leftMotor_overtakee_pVelocityL_ExecApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="runningExample.fujaba#_N1tJ4zj1EeSBssiweuIwLw"/>
+          <parameters name="velocity">
+            <dataType xsi:type="types:PrimitiveDataType" href="runningExample.fujaba#_5Nv6VKkBEeOcOOA57Wf2WQ"/>
+          </parameters>
+          <returnType xsi:type="types:PrimitiveDataType" href="runningExample.fujaba#_5Nv6UKkBEeOcOOA57Wf2WQ"/>
+        </bindings>
+      </portInstances>
+      <componentPart href="runningExample.fujaba#_eZsowLq3EeOiPMqKHLMhfw"/>
+    </componentInstances>
+    <componentInstances xsi:type="codegen:RefinedAtomicComponentInstance" name="overtakee_rightMotor" allocatedResourceInstance="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@resources.2">
+      <componentType xsi:type="component:StaticAtomicComponent" href="runningExample.fujaba#_2pDl8LZoEeOeFtIawEHrMg"/>
+      <portInstances xsi:type="instance:ParameterisableDiscreteSinglePortInstance" name="overtakee_pVelocityR" connectorInstances="//@cic/@portConnectorInstances.6">
+        <type xsi:type="component:DiscretePort" href="runningExample.fujaba#_N1VWQDj1EeSBssiweuIwLw"/>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="overtakee_rightMotor_overtakee_pVelocityR_InitApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="runningExample.fujaba#_N1tJ4jj1EeSBssiweuIwLw"/>
+          <returnType xsi:type="types:PrimitiveDataType" href="runningExample.fujaba#_5Nv6UKkBEeOcOOA57Wf2WQ"/>
+        </bindings>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="overtakee_rightMotor_overtakee_pVelocityR_ExecApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="runningExample.fujaba#_N1tJ4zj1EeSBssiweuIwLw"/>
+          <parameters name="velocity">
+            <dataType xsi:type="types:PrimitiveDataType" href="runningExample.fujaba#_5Nv6VKkBEeOcOOA57Wf2WQ"/>
+          </parameters>
+          <returnType xsi:type="types:PrimitiveDataType" href="runningExample.fujaba#_5Nv6UKkBEeOcOOA57Wf2WQ"/>
+        </bindings>
+      </portInstances>
+      <componentPart href="runningExample.fujaba#_fvBc8Lq3EeOiPMqKHLMhfw"/>
+    </componentInstances>
+    <componentInstances xsi:type="codegen:RefinedAtomicComponentInstance" name="overtakeeDriver" allocatedResourceInstance="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@resources.2">
+      <componentType xsi:type="component:StaticAtomicComponent" href="runningExample.fujaba#_dYbyULqyEeOiPMqKHLMhfw"/>
+      <portInstances xsi:type="instance_1:DiscreteSinglePortInstance" name="overtakeeDriver_pLight" connectorInstances="//@cic/@portConnectorInstances.7">
+        <type xsi:type="component:DiscretePort" href="runningExample.fujaba#_N1vl8Dj1EeSBssiweuIwLw"/>
+      </portInstances>
+      <portInstances xsi:type="instance_1:DiscreteSinglePortInstance" name="overtakeeDriver_pVelocityR" connectorInstances="//@cic/@portConnectorInstances.6">
+        <type xsi:type="component:DiscretePort" href="runningExample.fujaba#_N2AEoDj1EeSBssiweuIwLw"/>
+      </portInstances>
+      <portInstances xsi:type="instance_1:DiscreteSinglePortInstance" name="overtakeeDriver_pVelocityL" connectorInstances="//@cic/@portConnectorInstances.8">
+        <type xsi:type="component:DiscretePort" href="runningExample.fujaba#_N14v4Dj1EeSBssiweuIwLw"/>
+      </portInstances>
+      <componentPart href="runningExample.fujaba#_ge3lgLq3EeOiPMqKHLMhfw"/>
+    </componentInstances>
+    <componentInstances xsi:type="codegen:RefinedAtomicComponentInstance" name="overtakeeCommunicator" allocatedResourceInstance="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@resources.1">
+      <componentType xsi:type="component:StaticAtomicComponent" href="runningExample.fujaba#_d6ZP4LqyEeOiPMqKHLMhfw"/>
+      <portInstances xsi:type="instance_1:DiscreteSinglePortInstance" name="overtakeeCommunicator_pOvertakee" connectorInstances="//@cic/@portConnectorInstances.0">
+        <type xsi:type="component:DiscretePort" href="runningExample.fujaba#_gHMXQLq1EeOiPMqKHLMhfw"/>
+      </portInstances>
+      <componentPart href="runningExample.fujaba#_g3oDwLq3EeOiPMqKHLMhfw"/>
+    </componentInstances>
+    <portConnectorInstances xsi:type="instance_1:AssemblyConnectorInstance" connectorEndpointInstances="//@cic/@componentInstances.5/@portInstances.0 //@cic/@componentInstances.10/@portInstances.0"/>
+    <portConnectorInstances xsi:type="instance_1:AssemblyConnectorInstance" connectorEndpointInstances="//@cic/@componentInstances.4/@portInstances.0 //@cic/@componentInstances.5/@portInstances.1">
+      <type xsi:type="component:AssemblyConnector" href="runningExample.fujaba#_8R4O4Lq2EeOiPMqKHLMhfw"/>
+    </portConnectorInstances>
+    <portConnectorInstances xsi:type="instance_1:AssemblyConnectorInstance" connectorEndpointInstances="//@cic/@componentInstances.3/@portInstances.0 //@cic/@componentInstances.4/@portInstances.2">
+      <type xsi:type="component:AssemblyConnector" href="runningExample.fujaba#_6RaL8Lq2EeOiPMqKHLMhfw"/>
+    </portConnectorInstances>
+    <portConnectorInstances xsi:type="instance_1:AssemblyConnectorInstance" connectorEndpointInstances="//@cic/@componentInstances.4/@portInstances.3 //@cic/@componentInstances.1/@portInstances.0">
+      <type xsi:type="component:AssemblyConnector" href="runningExample.fujaba#_4bTl8Lq2EeOiPMqKHLMhfw"/>
+    </portConnectorInstances>
+    <portConnectorInstances xsi:type="instance_1:AssemblyConnectorInstance" connectorEndpointInstances="//@cic/@componentInstances.4/@portInstances.4 //@cic/@componentInstances.2/@portInstances.0">
+      <type xsi:type="component:AssemblyConnector" href="runningExample.fujaba#_3e1WoLq2EeOiPMqKHLMhfw"/>
+    </portConnectorInstances>
+    <portConnectorInstances xsi:type="instance_1:AssemblyConnectorInstance" connectorEndpointInstances="//@cic/@componentInstances.4/@portInstances.1 //@cic/@componentInstances.0/@portInstances.0">
+      <type xsi:type="component:AssemblyConnector" href="runningExample.fujaba#_5WO9ILq2EeOiPMqKHLMhfw"/>
+    </portConnectorInstances>
+    <portConnectorInstances xsi:type="instance_1:AssemblyConnectorInstance" connectorEndpointInstances="//@cic/@componentInstances.8/@portInstances.0 //@cic/@componentInstances.9/@portInstances.1">
+      <type xsi:type="component:AssemblyConnector" href="runningExample.fujaba#_7aYJsLq3EeOiPMqKHLMhfw"/>
+    </portConnectorInstances>
+    <portConnectorInstances xsi:type="instance_1:AssemblyConnectorInstance" connectorEndpointInstances="//@cic/@componentInstances.6/@portInstances.0 //@cic/@componentInstances.9/@portInstances.0">
+      <type xsi:type="component:AssemblyConnector" href="runningExample.fujaba#_6m9vwLq3EeOiPMqKHLMhfw"/>
+    </portConnectorInstances>
+    <portConnectorInstances xsi:type="instance_1:AssemblyConnectorInstance" connectorEndpointInstances="//@cic/@componentInstances.9/@portInstances.2 //@cic/@componentInstances.7/@portInstances.0">
+      <type xsi:type="component:AssemblyConnector" href="runningExample.fujaba#_77LwsLq3EeOiPMqKHLMhfw"/>
+    </portConnectorInstances>
+  </cic>
+</codegen:CodGenAllocation>

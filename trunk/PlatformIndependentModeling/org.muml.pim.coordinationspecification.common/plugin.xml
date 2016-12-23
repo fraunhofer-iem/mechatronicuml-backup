@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+  <extension point="org.eclipse.gmf.runtime.diagram.ui.layoutProviders">
+       <layoutProvider class="org.muml.pim.coordinationspecification.common.layout.provider.AbstractCoordinationSpecificationLayoutProvider">
+            <Priority name="Highest"/>
+       </layoutProvider>
+   </extension>
+</plugin>

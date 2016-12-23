@@ -1,0 +1,7 @@
+# Tracing options for the org.muml.pim.realtimestatechart.diagram plug-in
+
+# Common issues
+org.muml.pim.realtimestatechart.diagram/debug=false
+
+# Visual IDs
+org.muml.pim.realtimestatechart.diagram/debug/visualID=false

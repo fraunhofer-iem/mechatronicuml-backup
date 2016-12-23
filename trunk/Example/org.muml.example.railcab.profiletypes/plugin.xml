@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.0"?><!--
+--><plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated ConvoyCoordinationStructTypes -->
+      <package
+            uri="http://www.muml.org/examples/profiles/1.0.0"
+            class="org.muml.example.railcab.profiles.ProfilesPackage"
+            genModel="model/ConvoyCoordinationStructTypes.genmodel"/>
+   </extension>
+
+</plugin>

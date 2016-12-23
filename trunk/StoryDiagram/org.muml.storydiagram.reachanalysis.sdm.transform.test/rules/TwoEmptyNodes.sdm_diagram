@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:sda="http://www.muml.org/storydiagram/activities/1.0.0" xsi:schemaLocation="http://www.muml.org/storydiagram/activities/1.0.0 http://www.muml.org/storydiagram/1.0.0#//activities" xmi:id="_HKK_wPTtEeGDg-bJCK8EaA" type="Storydiagrams" name="TwoEmptyNodes.sdm_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_ICtKQPTtEeGDg-bJCK8EaA" type="2005" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_ICtKQvTtEeGDg-bJCK8EaA" type="5013"/>
+    <element xmi:type="sda:InitialNode" href="TwoEmptyNodes.sdm#//@ownedActivityNode.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ICtKQfTtEeGDg-bJCK8EaA" x="95" y="30"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_I1SdwPTtEeGDg-bJCK8EaA" type="2003" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_I1SdwvTtEeGDg-bJCK8EaA" type="5011"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_I1Sdw_TtEeGDg-bJCK8EaA" type="7001"/>
+    <element xmi:type="sda:ModifyingStoryNode" href="TwoEmptyNodes.sdm#//@ownedActivityNode.1"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I1SdwfTtEeGDg-bJCK8EaA" x="170" y="110"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_JR2d8PTtEeGDg-bJCK8EaA" type="2003" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_JR2d8vTtEeGDg-bJCK8EaA" type="5011"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_JR2d8_TtEeGDg-bJCK8EaA" type="7001"/>
+    <element xmi:type="sda:ModifyingStoryNode" href="TwoEmptyNodes.sdm#//@ownedActivityNode.2"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JR2d8fTtEeGDg-bJCK8EaA" x="345" y="115"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_LfokIPTtEeGDg-bJCK8EaA" type="2008" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_LfokIvTtEeGDg-bJCK8EaA" type="5014"/>
+    <element xmi:type="sda:ActivityFinalNode" href="TwoEmptyNodes.sdm#//@ownedActivityNode.3"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LfokIfTtEeGDg-bJCK8EaA" x="464" y="248"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_HKK_wfTtEeGDg-bJCK8EaA"/>
+  <element xmi:type="sda:Activity" href="TwoEmptyNodes.sdm#/"/>
+  <edges xmi:type="notation:Edge" xmi:id="_MHpmYPTtEeGDg-bJCK8EaA" type="4001" source="_ICtKQPTtEeGDg-bJCK8EaA" target="_I1SdwPTtEeGDg-bJCK8EaA">
+    <children xmi:type="notation:DecorationNode" xmi:id="_MHzXYPTtEeGDg-bJCK8EaA" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_MHzXYfTtEeGDg-bJCK8EaA" y="40"/>
+    </children>
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_MHpmYfTtEeGDg-bJCK8EaA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_MHpmYvTtEeGDg-bJCK8EaA" fontName="Segoe UI"/>
+    <element xmi:type="sda:ActivityEdge" href="TwoEmptyNodes.sdm#//@ownedActivityEdge.0"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_MHpmY_TtEeGDg-bJCK8EaA" points="[34, 23, -84, -70]$[124, 58, 6, -35]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_Mi4J0PTtEeGDg-bJCK8EaA" type="4001" source="_I1SdwPTtEeGDg-bJCK8EaA" target="_JR2d8PTtEeGDg-bJCK8EaA">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Mi4J1PTtEeGDg-bJCK8EaA" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Mi4J1fTtEeGDg-bJCK8EaA" y="40"/>
+    </children>
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_Mi4J0fTtEeGDg-bJCK8EaA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_Mi4J0vTtEeGDg-bJCK8EaA" fontName="Segoe UI"/>
+    <element xmi:type="sda:ActivityEdge" href="TwoEmptyNodes.sdm#//@ownedActivityEdge.1"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Mi4J0_TtEeGDg-bJCK8EaA" points="[25, 8, -125, -15]$[158, -12, 8, -35]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_MjB60PTtEeGDg-bJCK8EaA" id="(0.75,0.23943661971830985)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_M8nfgPTtEeGDg-bJCK8EaA" type="4001" source="_JR2d8PTtEeGDg-bJCK8EaA" target="_LfokIPTtEeGDg-bJCK8EaA">
+    <children xmi:type="notation:DecorationNode" xmi:id="_M8nfhPTtEeGDg-bJCK8EaA" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_M8nfhfTtEeGDg-bJCK8EaA" y="40"/>
+    </children>
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_M8nfgfTtEeGDg-bJCK8EaA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_M8nfgvTtEeGDg-bJCK8EaA" fontName="Segoe UI"/>
+    <element xmi:type="sda:ActivityEdge" href="TwoEmptyNodes.sdm#//@ownedActivityEdge.2"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_M8nfg_TtEeGDg-bJCK8EaA" points="[24, 52, -39, -85]$[64, 157, 1, 20]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_M8wpcPTtEeGDg-bJCK8EaA" id="(0.76,0.22535211267605634)"/>
+  </edges>
+</notation:Diagram>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.0"?><!--
+ <copyright>
+ </copyright>
+
+ $Id$
+--><plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated TimedStoryDiagrams -->
+      <package
+            uri="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0"
+            class="org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramPackage"
+            genModel="model/TimedStoryDiagrams.genmodel"/>
+   </extension>
+
+</plugin>

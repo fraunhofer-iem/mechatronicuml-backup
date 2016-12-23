@@ -1,0 +1,82 @@
+«IMPORT simulink»
+«IMPORT simulink::stateflow»
+
+«EXTENSION extensions::Block»
+
+
+«DEFINE file(String fileName) FOR SimulinkFile»
+
+«FILE fileName + ".mdl"-»
+«IF SimulinkLibrary.isInstance(this)-»
+Library {
+«ELSE-»
+Model {
+«ENDIF-»
+  Name			  "«this.getName()»"
+  MaxMDLFileLineLength	  120
+«IF !this.buses.isEmpty -»
+  PostLoadFcn		  "«FOREACH this.buses AS bus SEPARATOR '; '»«EXPAND Bus::busFile FOR bus»«bus.name»Generator«ENDFOREACH»"
+«ENDIF-»
+  «IF SimulinkLibrary.isInstance(this)»LibraryType "BlockLibrary"«ENDIF-»  
+  «EXPAND Parameter::parameter FOREACH parameters.reject(p| {'Name', 'LibraryType'}.contains(p.name))-»
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+«IF SimulinkModel.isInstance(this)-»      
+	  Array {
+	    Type			"Handle"
+		Dimension		1
+		Simulink.SolverCC {
+	  		$ObjectID		  2
+	  		StartTime		  "0.0"
+		    StopTime		  "10.0"
+		    FixedStep		  "0.001"
+		    SolverMode		  "Auto"
+		    Solver		  	  "FixedStepDiscrete"
+	  		SolverName		  "FixedStepDiscrete"
+			AutoInsertRateTranBlk	on
+			InsertRTBMode		  	"Whenever possible"	  		
+		}
+		PropName		"Components"
+      }   
+«ENDIF-»  
+    }  
+    PropName		    "ConfigurationSets"
+  }
+«IF SimulinkModel.isInstance(this)-»  
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    1
+  }
+«ENDIF»  
+  BlockDefaults {
+  }
+  AnnotationDefaults {
+  }
+  LineDefaults {
+  }
+  BlockParameterDefaults {
+  }
+  System {
+    Name		    "«this.getName()»"    
+	«EXPAND SubSystem::subSystem FOREACH this.subSystems-»
+	«EXPAND Block::common FOREACH this.allBlocks.select(b | !SubSystem.isInstance(b))-»
+    «EXPAND Line::line FOREACH lines-»
+  }
+}
+
+«IF StateflowMachine.isInstance(this.stateflowMachine)»
+	«EXPAND stateflow::StateflowMachine::stateflowMachine FOR this.stateflowMachine-»
+«ENDIF»
+«ENDFILE»
+
+«ENDDEFINE»
+
+«DEFINE file FOR SimulinkFile»
+«EXPAND SimulinkFile::file(this.getName()) FOR this-»
+«ENDDEFINE»
+
+
+

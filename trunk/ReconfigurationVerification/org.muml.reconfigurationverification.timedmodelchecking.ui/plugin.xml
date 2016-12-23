@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+
+	<extension point="org.eclipse.ui.menus">
+	   <menuContribution
+	         allPopups="true"
+	         locationURI="popup:org.muml?after=diagrams">
+	      <command
+	            commandId="de.uni_paderborn.fujaba.muml.reachanalysis.timedstorychart.ui.commands.TimedMCCommand"
+	            label="TMC"
+	            style="push">
+	            	<visibleWhen checkEnabled="false">
+                 <iterate
+                       ifEmpty="false"
+                       operator="and">
+                    <instanceof
+                          value="org.muml.pim.coordinationprotocol.diagram.edit.parts.CoordinationProtocolCoordinationProtocolContainerCompartmentEditPart">
+                    </instanceof>
+                 </iterate>
+          			</visibleWhen>
+	      </command>
+	   </menuContribution>
+	</extension>
+	
+	<extension
+        point="org.eclipse.ui.commands">
+     <command
+           categoryId="org.muml"
+           defaultHandler="org.muml.reconfigurationverification.timedmodelchecking.ui.commands.TimedMCCommand"
+           description="TMC"
+           id="de.uni_paderborn.fujaba.muml.reachanalysis.timedstorychart.ui.commands.TimedMCCommand"
+           name="TMC">
+     </command>
+  </extension>
+
+
+
+</plugin>

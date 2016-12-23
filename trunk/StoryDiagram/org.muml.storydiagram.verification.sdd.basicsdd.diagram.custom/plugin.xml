@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders" id="ep-provider">
+      <editpartProvider class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.custom.providers.CustomSDDEditPartProvider">
+         <Priority name="Low"/>
+      </editpartProvider>
+   </extension>
+   <!-- optionally, specify keybindings -->
+</plugin>

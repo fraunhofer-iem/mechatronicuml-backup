@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+
+  <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+    <propertyContributor
+          contributorId="org.muml.ape.contributor">
+       <propertyCategory
+             category="domain">
+       </propertyCategory>
+       <propertyCategory
+             category="default">
+       </propertyCategory>
+       <propertyCategory
+             category="extended">
+       </propertyCategory>
+       <propertyCategory
+             category="advanced">
+       </propertyCategory>
+    </propertyContributor>
+  </extension>
+
+
+
+<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs contributorId="org.muml.ape.contributor">
+          <propertyTab
+             category="domain"
+             id="property.tab.constraint"
+             afterTab="property.tab.comment"
+             label="Constraint"/>
+          
+      </propertyTabs>
+  </extension>
+
+
+
+
+  <extension point="org.eclipse.ui.views.properties.tabbed.propertySections"> 
+      <propertySections contributorId="org.muml.ape.contributor">
+          <propertySection
+            class="org.muml.ape.runtime.sections.ObjectPropertySection"
+            filter="org.muml.pm.hardware.properties.tabs.Property_tab_constraintTabElementFilter"
+            id="property.tab.constraint"
+            tab="property.tab.constraint">
+             <input
+               type="org.eclipse.emf.ecore.EObject">
+             </input>
+          </propertySection>
+         
+      </propertySections>
+  </extension>
+
+
+
+ <extension point="org.muml.ape.runtime.propertyEditors">
+    <propertyEditors>
+    
+       <propertyEditor
+             factory="org.muml.pm.hardware.properties.hwplatform.editor.HWPlatformEditor$Factory"
+             type="http://www.muml.org/pm/hardware/hwplatform/1.0.0#HWPlatform">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pm.hardware.properties.hwplatform.editor.HWPlatformPartEditor$Factory"
+             type="http://www.muml.org/pm/hardware/hwplatform/1.0.0#HWPlatformPart">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pm.hardware.properties.hwplatform.editor.ResourcePartEditor$Factory"
+             type="http://www.muml.org/pm/hardware/hwplatform/1.0.0#ResourcePart">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pm.hardware.properties.hwplatform.editor.DelegationHWPortEditor$Factory"
+             type="http://www.muml.org/pm/hardware/hwplatform/1.0.0#DelegationHWPort">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pm.hardware.properties.hwplatform.editor.HWPortPartEditor$Factory"
+             type="http://www.muml.org/pm/hardware/hwplatform/1.0.0#HWPortPart">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pm.hardware.properties.hwplatform.editor.NetworkConnectorEditor$Factory"
+             type="http://www.muml.org/pm/hardware/hwplatform/1.0.0#NetworkConnector">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pm.hardware.properties.hwplatform.editor.BusEditor$Factory"
+             type="http://www.muml.org/pm/hardware/hwplatform/1.0.0#Bus">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pm.hardware.properties.hwplatform.editor.NetworkBridgeEditor$Factory"
+             type="http://www.muml.org/pm/hardware/hwplatform/1.0.0#NetworkBridge">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pm.hardware.properties.hwresource.editor.MemoryResourceEditor$Factory"
+             type="http://www.muml.org/pm/hardware/hwresource/1.0.0#MemoryResource">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pm.hardware.properties.hwresource.editor.DeviceEditor$Factory"
+             type="http://www.muml.org/pm/hardware/hwresource/1.0.0#Device">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pm.hardware.properties.hwresource.editor.CacheEditor$Factory"
+             type="http://www.muml.org/pm/hardware/hwresource/1.0.0#Cache">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pm.hardware.properties.hwresource.editor.ProgrammableLogicDeviceEditor$Factory"
+             type="http://www.muml.org/pm/hardware/hwresource/1.0.0#ProgrammableLogicDevice">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pm.hardware.properties.hwresource.editor.ProcessorEditor$Factory"
+             type="http://www.muml.org/pm/hardware/hwresource/1.0.0#Processor">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pm.hardware.properties.hwresource.editor.StructuredResourceEditor$Factory"
+             type="http://www.muml.org/pm/hardware/hwresource/1.0.0#StructuredResource">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pm.hardware.properties.hwresource.editor.ResourceRepositoryEditor$Factory"
+             type="http://www.muml.org/pm/hardware/hwresource/1.0.0#ResourceRepository">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pm.hardware.properties.hwresource.editor.CommunicationProtocolRepositoryEditor$Factory"
+             type="http://www.muml.org/pm/hardware/hwresource/1.0.0#CommunicationProtocolRepository">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pm.hardware.properties.hwresource.editor.BusProtocolEditor$Factory"
+             type="http://www.muml.org/pm/hardware/hwresource/1.0.0#BusProtocol">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pm.hardware.properties.hwresource.editor.LinkProtocolEditor$Factory"
+             type="http://www.muml.org/pm/hardware/hwresource/1.0.0#LinkProtocol">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pm.hardware.properties.hwresource.editor.CommunicationResourceEditor$Factory"
+             type="http://www.muml.org/pm/hardware/hwresource/1.0.0#CommunicationResource">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pm.hardware.properties.hwvaluetype.editor.DataSizeEditor$Factory"
+             type="http://www.muml.org/pm/hardware/hwvaluetype/1.0.0#DataSize">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pm.hardware.properties.hwvaluetype.editor.FrequencyEditor$Factory"
+             type="http://www.muml.org/pm/hardware/hwvaluetype/1.0.0#Frequency">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pm.hardware.properties.hwvaluetype.editor.DataRateEditor$Factory"
+             type="http://www.muml.org/pm/hardware/hwvaluetype/1.0.0#DataRate">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pm.hardware.properties.hwvaluetype.editor.TimeIntervalEditor$Factory"
+             type="http://www.muml.org/pm/hardware/hwvaluetype/1.0.0#TimeInterval">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pm.hardware.properties.hwresourceinstance.editor.StorageMemoryInstanceEditor$Factory"
+             type="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0#StorageMemoryInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pm.hardware.properties.hwresourceinstance.editor.ProcessingMemoryInstanceEditor$Factory"
+             type="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0#ProcessingMemoryInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pm.hardware.properties.hwresourceinstance.editor.CacheInstanceEditor$Factory"
+             type="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0#CacheInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pm.hardware.properties.hwresourceinstance.editor.ProgrammableLogicDeviceInstanceEditor$Factory"
+             type="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0#ProgrammableLogicDeviceInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pm.hardware.properties.hwresourceinstance.editor.ProcessorInstanceEditor$Factory"
+             type="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0#ProcessorInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pm.hardware.properties.hwresourceinstance.editor.StructuredResourceInstanceEditor$Factory"
+             type="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0#StructuredResourceInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pm.hardware.properties.hwresourceinstance.editor.SensorInstanceEditor$Factory"
+             type="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0#SensorInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pm.hardware.properties.hwresourceinstance.editor.ActuatorInstanceEditor$Factory"
+             type="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0#ActuatorInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pm.hardware.properties.hwresourceinstance.editor.ResourceInstanceRepositoryEditor$Factory"
+             type="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0#ResourceInstanceRepository">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pm.hardware.properties.hwresourceinstance.editor.HWPortEditor$Factory"
+             type="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0#HWPort">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pm.hardware.properties.hwplatforminstance.editor.HWPlatformInstanceEditor$Factory"
+             type="http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0#HWPlatformInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pm.hardware.properties.hwplatforminstance.editor.HWPlatformInstanceConfigurationEditor$Factory"
+             type="http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0#HWPlatformInstanceConfiguration">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pm.hardware.properties.hwplatforminstance.editor.HWPortInstanceEditor$Factory"
+             type="http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0#HWPortInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pm.hardware.properties.hwplatforminstance.editor.BusInstanceEditor$Factory"
+             type="http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0#BusInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pm.hardware.properties.hwplatforminstance.editor.DelegationHWPortInstanceEditor$Factory"
+             type="http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0#DelegationHWPortInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pm.hardware.properties.hwplatforminstance.editor.NetworkBridgeInstanceEditor$Factory"
+             type="http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0#NetworkBridgeInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pm.hardware.properties.hwplatforminstance.editor.NetworkConnectorInstanceEditor$Factory"
+             type="http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0#NetworkConnectorInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pm.hardware.properties.hardware.editor.TestEditor$Factory"
+             type="http://www.muml.org/pm/hardware/1.0.0#Test">
+       </propertyEditor>
+    
+    </propertyEditors>
+ </extension>
+
+
+ <extension
+       point="org.muml.ape.runtime.metamodelContributor">
+    <metamodel
+          contributor="org.muml.pm.hardware.properties.metamodel.MetamodelContributor">
+    </metamodel>
+ </extension>
+
+
+ <extension
+       point="org.muml.ape.runtime.creationConstraintContributor">
+    <constraint
+          contributor="org.muml.pm.hardware.properties.constraint.CreationConstraintContributor">
+    </constraint>
+ </extension>
+
+</plugin>

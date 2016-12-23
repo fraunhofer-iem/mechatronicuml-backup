@@ -1,0 +1,980 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codegen:CodGenAllocation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:codegen="http://www.fujaba.de/muml/psm/codegen/0.1.0" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:hwplatform="http://www.fujaba.de/muml/hardware/hwplatform/1.0/" xmlns:hwplatforminstance="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/" xmlns:hwresource="http://www.fujaba.de/muml/hardware/hwresource/1.0/" xmlns:hwresourceinstance="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0" xmlns:instance_1="http://www.fujaba.de/muml/psm/instance/0.4.0/" xmlns:realtimestatechartparameter="http://www.fujaba.de/muml/psm/realtimestatechart/realtimestatechartparameter/0.1.0/" xmlns:realtimestatechartparameterbinding="http://www.fujaba.de/muml/psm/realtimestatechart/realtimestatechartparameterbinding/0.1.0/" xmlns:types="http://www.fujaba.de/muml/types/0.4.0">
+  <hpic>
+    <hwplatformInstances name="Overtakee">
+      <delegationPorts name="D1-virtualBluetooth.0" connectorInstances="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@networkingHardwareInstances.5 //@hpic/@networkingHardwareInstances.3">
+        <type xsi:type="hwplatform:DelegationHWPort" href="fraunhoferDemo.fujaba#__1O0gKfBEeSK_8TqY1SjtQ"/>
+      </delegationPorts>
+      <delegationPorts name="D1-virtualWifi.0" connectorInstances="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@networkingHardwareInstances.6 //@hpic/@networkingHardwareInstances.0">
+        <type xsi:type="hwplatform:DelegationHWPort" href="fraunhoferDemo.fujaba#_UUrCAKhjEeSJj6cnB4p9sw"/>
+      </delegationPorts>
+      <delegationPorts name="D1-virtualWifi.02" connectorInstances="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@networkingHardwareInstances.7 //@hpic/@networkingHardwareInstances.4">
+        <type xsi:type="hwplatform:DelegationHWPort" href="fraunhoferDemo.fujaba#_UUrCAKhjEeSJj6cnB4p9sw"/>
+      </delegationPorts>
+      <embeddedHPIC>
+        <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@resources.1/@hwports.6 //@hpic/@hwplatformInstances.0/@embeddedHPIC/@resources.5/@hwports.6">
+          <communicationMediaPart xsi:type="hwplatform:LinkPart" href="fraunhoferDemo.fujaba#_mTanIKfBEeSK_8TqY1SjtQ"/>
+          <type xsi:type="hwplatform:LinkPart" href="fraunhoferDemo.fujaba#_mTanIKfBEeSK_8TqY1SjtQ"/>
+        </networkingHardwareInstances>
+        <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@resources.4/@hwports.0 //@hpic/@hwplatformInstances.0/@embeddedHPIC/@resources.5/@hwports.7">
+          <communicationMediaPart xsi:type="hwplatform:LinkPart" href="fraunhoferDemo.fujaba#_yKlpcKfBEeSK_8TqY1SjtQ"/>
+          <type xsi:type="hwplatform:LinkPart" href="fraunhoferDemo.fujaba#_yKlpcKfBEeSK_8TqY1SjtQ"/>
+        </networkingHardwareInstances>
+        <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@resources.0/@hwports.0 //@hpic/@hwplatformInstances.0/@embeddedHPIC/@resources.5/@hwports.3">
+          <communicationMediaPart xsi:type="hwplatform:LinkPart" href="fraunhoferDemo.fujaba#_8wdb8KfBEeSK_8TqY1SjtQ"/>
+          <type xsi:type="hwplatform:LinkPart" href="fraunhoferDemo.fujaba#_8wdb8KfBEeSK_8TqY1SjtQ"/>
+        </networkingHardwareInstances>
+        <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@resources.1/@hwports.7 //@hpic/@hwplatformInstances.0/@embeddedHPIC/@resources.2/@hwports.0">
+          <communicationMediaPart xsi:type="hwplatform:LinkPart" href="fraunhoferDemo.fujaba#_Y5SH0KfCEeSK_8TqY1SjtQ"/>
+          <type xsi:type="hwplatform:LinkPart" href="fraunhoferDemo.fujaba#_Y5SH0KfCEeSK_8TqY1SjtQ"/>
+        </networkingHardwareInstances>
+        <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@resources.3/@hwports.0 //@hpic/@hwplatformInstances.0/@embeddedHPIC/@resources.5/@hwports.8">
+          <communicationMediaPart xsi:type="hwplatform:LinkPart" href="fraunhoferDemo.fujaba#_Z5IbQKfCEeSK_8TqY1SjtQ"/>
+          <type xsi:type="hwplatform:LinkPart" href="fraunhoferDemo.fujaba#_Z5IbQKfCEeSK_8TqY1SjtQ"/>
+        </networkingHardwareInstances>
+        <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.0/@delegationPorts.0 //@hpic/@hwplatformInstances.0/@embeddedHPIC/@resources.1/@hwports.0">
+          <type xsi:type="hwplatform:Delegation" href="fraunhoferDemo.fujaba#_0TjEkKfCEeSK_8TqY1SjtQ"/>
+        </networkingHardwareInstances>
+        <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.0/@delegationPorts.1 //@hpic/@hwplatformInstances.0/@embeddedHPIC/@resources.1/@hwports.8">
+          <type xsi:type="hwplatform:Delegation" href="fraunhoferDemo.fujaba#_al6WkKhjEeSJj6cnB4p9sw"/>
+        </networkingHardwareInstances>
+        <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.0/@delegationPorts.2 //@hpic/@hwplatformInstances.0/@embeddedHPIC/@resources.1/@hwports.10"/>
+        <resources xsi:type="hwresourceinstance:SensorInstance" name="overtakeeLine">
+          <resourceType xsi:type="hwresource:Device" href="fraunhoferDemo.fujaba#_-b7G8Ke7EeSK_8TqY1SjtQ"/>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="linehw-port" connectorInstances="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@networkingHardwareInstances.2">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_3mt68KfBEeSK_8TqY1SjtQ"/>
+          </hwports>
+        </resources>
+        <resources xsi:type="codegen:RefinedStructuredResourceInstance" name="overtakeeR2" allocatedAtomicComponentInstances="//@cic/@componentInstances.9 //@cic/@componentInstances.13">
+          <resourceType xsi:type="hwresource:StructuredResource" href="fraunhoferDemo.fujaba#_HcLmgKe8EeSK_8TqY1SjtQ"/>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="virtualBluetoothPort" connectorInstances="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@networkingHardwareInstances.5">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_eFHwCKfBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="inputPort3">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_eFHwA6fBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="inputPort2">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_eFHwBafBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="usbPort">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_eFHwBKfBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="outputPortC">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_eFHwBqfBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="outputPortB">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_eFHwAKfBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="inputPort4" connectorInstances="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@networkingHardwareInstances.0">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_eFHwAafBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="inputPort1" connectorInstances="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@networkingHardwareInstances.3">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_eFHwAqfBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="VirtualWifiPort" connectorInstances="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@networkingHardwareInstances.6">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_w-0uwKhiEeSJj6cnB4p9sw"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="outputPortA">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_eFHwB6fBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="VirtualWifiPort2" connectorInstances="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@networkingHardwareInstances.7">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_w-0uwKhiEeSJj6cnB4p9sw"/>
+          </hwports>
+          <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" name="Processor">
+            <resourceType xsi:type="hwresource:Processor" href="fraunhoferDemo.fujaba#_OAr1UKe8EeSK_8TqY1SjtQ"/>
+            <frequency value="60.0" unit="MHz"/>
+          </embeddedAtomicResourceInstances>
+          <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" name="RAMmemory">
+            <resourceType xsi:type="hwresource:MemoryResource" href="fraunhoferDemo.fujaba#_Q59vkKe8EeSK_8TqY1SjtQ"/>
+            <memorySize value="64.0" unit="KByte"/>
+          </embeddedAtomicResourceInstances>
+          <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" name="FLAHmemory">
+            <resourceType xsi:type="hwresource:MemoryResource" href="fraunhoferDemo.fujaba#_Whzh0Ke8EeSK_8TqY1SjtQ"/>
+            <memorySize value="256.0" unit="KByte"/>
+          </embeddedAtomicResourceInstances>
+        </resources>
+        <resources xsi:type="hwresourceinstance:SensorInstance" name="overtakeeDistance">
+          <resourceType xsi:type="hwresource:Device" href="fraunhoferDemo.fujaba#_A7FRAKe8EeSK_8TqY1SjtQ"/>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="distancehw-port" connectorInstances="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@networkingHardwareInstances.3">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_SUng8KfCEeSK_8TqY1SjtQ"/>
+          </hwports>
+        </resources>
+        <resources xsi:type="hwresourceinstance:SensorInstance" name="overtakeeColor">
+          <resourceType xsi:type="hwresource:Device" href="fraunhoferDemo.fujaba#_DG8roKe8EeSK_8TqY1SjtQ"/>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="colorhw-port" connectorInstances="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@networkingHardwareInstances.4">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_RXr-oKfCEeSK_8TqY1SjtQ"/>
+          </hwports>
+        </resources>
+        <resources xsi:type="hwresourceinstance:ActuatorInstance" name="overtakeeMotor">
+          <resourceType xsi:type="hwresource:Device" href="fraunhoferDemo.fujaba#_7Y-6YKe7EeSK_8TqY1SjtQ"/>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="motohw-port" connectorInstances="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@networkingHardwareInstances.1">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_ueX2YKfBEeSK_8TqY1SjtQ"/>
+          </hwports>
+        </resources>
+        <resources xsi:type="codegen:RefinedStructuredResourceInstance" name="overtakeeR1" allocatedAtomicComponentInstances="//@cic/@componentInstances.8 //@cic/@componentInstances.10 //@cic/@componentInstances.11 //@cic/@componentInstances.12 //@cic/@componentInstances.14">
+          <resourceType xsi:type="hwresource:StructuredResource" href="fraunhoferDemo.fujaba#_HcLmgKe8EeSK_8TqY1SjtQ"/>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="outputPortA">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_a4wht6fBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="outputPortC">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_a4whtqfBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="usbPort">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_a4whtKfBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="inputPort2" connectorInstances="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@networkingHardwareInstances.2">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_a4whtafBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="virtualBluetoothPort">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_a4whuKfBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="outputPortB">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_a4whsKfBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="inputPort4" connectorInstances="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@networkingHardwareInstances.0">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_a4whsafBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="inputPort1" connectorInstances="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@networkingHardwareInstances.1">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_a4whsqfBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="inputPort3" connectorInstances="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@networkingHardwareInstances.4">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_a4whs6fBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="VirtualWifiPort">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_w-OR0KhiEeSJj6cnB4p9sw"/>
+          </hwports>
+          <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" name="Processor">
+            <resourceType xsi:type="hwresource:Processor" href="fraunhoferDemo.fujaba#_OAr1UKe8EeSK_8TqY1SjtQ"/>
+            <frequency value="60.0" unit="MHz"/>
+          </embeddedAtomicResourceInstances>
+          <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" name="RAMmemory">
+            <resourceType xsi:type="hwresource:MemoryResource" href="fraunhoferDemo.fujaba#_Q59vkKe8EeSK_8TqY1SjtQ"/>
+            <memorySize value="64.0" unit="KByte"/>
+          </embeddedAtomicResourceInstances>
+          <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" name="FLAHmemory">
+            <resourceType xsi:type="hwresource:MemoryResource" href="fraunhoferDemo.fujaba#_Whzh0Ke8EeSK_8TqY1SjtQ"/>
+            <memorySize value="256.0" unit="KByte"/>
+          </embeddedAtomicResourceInstances>
+        </resources>
+      </embeddedHPIC>
+    </hwplatformInstances>
+    <hwplatformInstances name="Overtaker">
+      <delegationPorts name="D1-virtualBluetooth.0" connectorInstances="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@networkingHardwareInstances.5 //@hpic/@networkingHardwareInstances.3">
+        <type xsi:type="hwplatform:DelegationHWPort" href="fraunhoferDemo.fujaba#__1O0gKfBEeSK_8TqY1SjtQ"/>
+      </delegationPorts>
+      <delegationPorts name="D1-virtualWifi.0" connectorInstances="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@networkingHardwareInstances.6 //@hpic/@networkingHardwareInstances.1">
+        <type xsi:type="hwplatform:DelegationHWPort" href="fraunhoferDemo.fujaba#_UUrCAKhjEeSJj6cnB4p9sw"/>
+      </delegationPorts>
+      <embeddedHPIC>
+        <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@resources.0/@hwports.5 //@hpic/@hwplatformInstances.1/@embeddedHPIC/@resources.5/@hwports.2">
+          <communicationMediaPart xsi:type="hwplatform:LinkPart" href="fraunhoferDemo.fujaba#_mTanIKfBEeSK_8TqY1SjtQ"/>
+          <type xsi:type="hwplatform:LinkPart" href="fraunhoferDemo.fujaba#_mTanIKfBEeSK_8TqY1SjtQ"/>
+        </networkingHardwareInstances>
+        <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@resources.0/@hwports.3 //@hpic/@hwplatformInstances.1/@embeddedHPIC/@resources.1/@hwports.0">
+          <communicationMediaPart xsi:type="hwplatform:LinkPart" href="fraunhoferDemo.fujaba#_yKlpcKfBEeSK_8TqY1SjtQ"/>
+          <type xsi:type="hwplatform:LinkPart" href="fraunhoferDemo.fujaba#_yKlpcKfBEeSK_8TqY1SjtQ"/>
+        </networkingHardwareInstances>
+        <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@resources.0/@hwports.1 //@hpic/@hwplatformInstances.1/@embeddedHPIC/@resources.4/@hwports.0">
+          <communicationMediaPart xsi:type="hwplatform:LinkPart" href="fraunhoferDemo.fujaba#_8wdb8KfBEeSK_8TqY1SjtQ"/>
+          <type xsi:type="hwplatform:LinkPart" href="fraunhoferDemo.fujaba#_8wdb8KfBEeSK_8TqY1SjtQ"/>
+        </networkingHardwareInstances>
+        <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@resources.3/@hwports.0 //@hpic/@hwplatformInstances.1/@embeddedHPIC/@resources.5/@hwports.3">
+          <communicationMediaPart xsi:type="hwplatform:LinkPart" href="fraunhoferDemo.fujaba#_Y5SH0KfCEeSK_8TqY1SjtQ"/>
+          <type xsi:type="hwplatform:LinkPart" href="fraunhoferDemo.fujaba#_Y5SH0KfCEeSK_8TqY1SjtQ"/>
+        </networkingHardwareInstances>
+        <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@resources.0/@hwports.8 //@hpic/@hwplatformInstances.1/@embeddedHPIC/@resources.2/@hwports.0">
+          <communicationMediaPart xsi:type="hwplatform:LinkPart" href="fraunhoferDemo.fujaba#_Z5IbQKfCEeSK_8TqY1SjtQ"/>
+          <type xsi:type="hwplatform:LinkPart" href="fraunhoferDemo.fujaba#_Z5IbQKfCEeSK_8TqY1SjtQ"/>
+        </networkingHardwareInstances>
+        <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.1/@delegationPorts.0 //@hpic/@hwplatformInstances.1/@embeddedHPIC/@resources.5/@hwports.0">
+          <type xsi:type="hwplatform:Delegation" href="fraunhoferDemo.fujaba#_0TjEkKfCEeSK_8TqY1SjtQ"/>
+        </networkingHardwareInstances>
+        <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.1/@delegationPorts.1 //@hpic/@hwplatformInstances.1/@embeddedHPIC/@resources.5/@hwports.1">
+          <type xsi:type="hwplatform:Delegation" href="fraunhoferDemo.fujaba#_al6WkKhjEeSJj6cnB4p9sw"/>
+        </networkingHardwareInstances>
+        <resources xsi:type="codegen:RefinedStructuredResourceInstance" name="overtakerR1" allocatedAtomicComponentInstances="//@cic/@componentInstances.1 //@cic/@componentInstances.2 //@cic/@componentInstances.3 //@cic/@componentInstances.4 //@cic/@componentInstances.6">
+          <resourceType xsi:type="hwresource:StructuredResource" href="fraunhoferDemo.fujaba#_HcLmgKe8EeSK_8TqY1SjtQ"/>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="virtualBluetoothPort">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_a4whuKfBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="inputPort2" connectorInstances="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@networkingHardwareInstances.2">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_a4whtafBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="outputPortA">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_a4wht6fBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="inputPort1" connectorInstances="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@networkingHardwareInstances.1">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_a4whsqfBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="VirtualWifiPort">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_w-OR0KhiEeSJj6cnB4p9sw"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="inputPort4" connectorInstances="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@networkingHardwareInstances.0">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_a4whsafBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="usbPort">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_a4whtKfBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="outputPortC">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_a4whtqfBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="inputPort3" connectorInstances="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@networkingHardwareInstances.4">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_a4whs6fBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="outputPortB">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_a4whsKfBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" name="Processor">
+            <resourceType xsi:type="hwresource:Processor" href="fraunhoferDemo.fujaba#_OAr1UKe8EeSK_8TqY1SjtQ"/>
+            <frequency value="60.0" unit="MHz"/>
+          </embeddedAtomicResourceInstances>
+          <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" name="RAMmemory">
+            <resourceType xsi:type="hwresource:MemoryResource" href="fraunhoferDemo.fujaba#_Q59vkKe8EeSK_8TqY1SjtQ"/>
+            <memorySize value="64.0" unit="KByte"/>
+          </embeddedAtomicResourceInstances>
+          <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" name="FLAHmemory">
+            <resourceType xsi:type="hwresource:MemoryResource" href="fraunhoferDemo.fujaba#_Whzh0Ke8EeSK_8TqY1SjtQ"/>
+            <memorySize value="256.0" unit="KByte"/>
+          </embeddedAtomicResourceInstances>
+        </resources>
+        <resources xsi:type="hwresourceinstance:ActuatorInstance" name="overtakerMotor">
+          <resourceType xsi:type="hwresource:Device" href="fraunhoferDemo.fujaba#_7Y-6YKe7EeSK_8TqY1SjtQ"/>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="motohw-port" connectorInstances="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@networkingHardwareInstances.1">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_ueX2YKfBEeSK_8TqY1SjtQ"/>
+          </hwports>
+        </resources>
+        <resources xsi:type="hwresourceinstance:SensorInstance" name="overtakerColor">
+          <resourceType xsi:type="hwresource:Device" href="fraunhoferDemo.fujaba#_DG8roKe8EeSK_8TqY1SjtQ"/>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="colorhw-port" connectorInstances="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@networkingHardwareInstances.4">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_RXr-oKfCEeSK_8TqY1SjtQ"/>
+          </hwports>
+        </resources>
+        <resources xsi:type="hwresourceinstance:SensorInstance" name="overtakerDistance">
+          <resourceType xsi:type="hwresource:Device" href="fraunhoferDemo.fujaba#_A7FRAKe8EeSK_8TqY1SjtQ"/>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="distancehw-port" connectorInstances="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@networkingHardwareInstances.3">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_SUng8KfCEeSK_8TqY1SjtQ"/>
+          </hwports>
+        </resources>
+        <resources xsi:type="hwresourceinstance:SensorInstance" name="overtakerLine">
+          <resourceType xsi:type="hwresource:Device" href="fraunhoferDemo.fujaba#_-b7G8Ke7EeSK_8TqY1SjtQ"/>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="linehw-port" connectorInstances="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@networkingHardwareInstances.2">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_3mt68KfBEeSK_8TqY1SjtQ"/>
+          </hwports>
+        </resources>
+        <resources xsi:type="codegen:RefinedStructuredResourceInstance" name="overtakerR2" allocatedAtomicComponentInstances="//@cic/@componentInstances.5 //@cic/@componentInstances.7">
+          <resourceType xsi:type="hwresource:StructuredResource" href="fraunhoferDemo.fujaba#_HcLmgKe8EeSK_8TqY1SjtQ"/>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="virtualBluetoothPort" connectorInstances="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@networkingHardwareInstances.5">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_eFHwCKfBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="VirtualWifiPort" connectorInstances="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@networkingHardwareInstances.6">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_w-0uwKhiEeSJj6cnB4p9sw"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="inputPort4" connectorInstances="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@networkingHardwareInstances.0">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_eFHwAafBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="inputPort1" connectorInstances="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@networkingHardwareInstances.3">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_eFHwAqfBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="outputPortB">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_eFHwAKfBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="outputPortC">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_eFHwBqfBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="outputPortA">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_eFHwB6fBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="inputPort3">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_eFHwA6fBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="usbPort">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_eFHwBKfBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="inputPort2">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_eFHwBafBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" name="Processor">
+            <resourceType xsi:type="hwresource:Processor" href="fraunhoferDemo.fujaba#_OAr1UKe8EeSK_8TqY1SjtQ"/>
+            <frequency value="60.0" unit="MHz"/>
+          </embeddedAtomicResourceInstances>
+          <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" name="RAMmemory">
+            <resourceType xsi:type="hwresource:MemoryResource" href="fraunhoferDemo.fujaba#_Q59vkKe8EeSK_8TqY1SjtQ"/>
+            <memorySize value="64.0" unit="KByte"/>
+          </embeddedAtomicResourceInstances>
+          <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" name="FLAHmemory">
+            <resourceType xsi:type="hwresource:MemoryResource" href="fraunhoferDemo.fujaba#_Whzh0Ke8EeSK_8TqY1SjtQ"/>
+            <memorySize value="256.0" unit="KByte"/>
+          </embeddedAtomicResourceInstances>
+        </resources>
+      </embeddedHPIC>
+    </hwplatformInstances>
+    <hwplatformInstances name="Approacher">
+      <delegationPorts name="D1-virtualBluetooth.0" connectorInstances="//@hpic/@hwplatformInstances.2/@embeddedHPIC/@networkingHardwareInstances.5">
+        <type xsi:type="hwplatform:DelegationHWPort" href="fraunhoferDemo.fujaba#__1O0gKfBEeSK_8TqY1SjtQ"/>
+      </delegationPorts>
+      <delegationPorts name="D1-virtualWifi.0" connectorInstances="//@hpic/@hwplatformInstances.2/@embeddedHPIC/@networkingHardwareInstances.6 //@hpic/@networkingHardwareInstances.2">
+        <type xsi:type="hwplatform:DelegationHWPort" href="fraunhoferDemo.fujaba#_UUrCAKhjEeSJj6cnB4p9sw"/>
+      </delegationPorts>
+      <delegationPorts name="D1-virtualWifi.02" connectorInstances="//@hpic/@hwplatformInstances.2/@embeddedHPIC/@networkingHardwareInstances.7 //@hpic/@networkingHardwareInstances.4">
+        <type xsi:type="hwplatform:DelegationHWPort" href="fraunhoferDemo.fujaba#_UUrCAKhjEeSJj6cnB4p9sw"/>
+      </delegationPorts>
+      <embeddedHPIC>
+        <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.2/@embeddedHPIC/@resources.4/@hwports.0 //@hpic/@hwplatformInstances.2/@embeddedHPIC/@resources.5/@hwports.8">
+          <communicationMediaPart xsi:type="hwplatform:LinkPart" href="fraunhoferDemo.fujaba#_mTanIKfBEeSK_8TqY1SjtQ"/>
+          <type xsi:type="hwplatform:LinkPart" href="fraunhoferDemo.fujaba#_mTanIKfBEeSK_8TqY1SjtQ"/>
+        </networkingHardwareInstances>
+        <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.2/@embeddedHPIC/@resources.2/@hwports.0 //@hpic/@hwplatformInstances.2/@embeddedHPIC/@resources.4/@hwports.3">
+          <communicationMediaPart xsi:type="hwplatform:LinkPart" href="fraunhoferDemo.fujaba#_yKlpcKfBEeSK_8TqY1SjtQ"/>
+          <type xsi:type="hwplatform:LinkPart" href="fraunhoferDemo.fujaba#_yKlpcKfBEeSK_8TqY1SjtQ"/>
+        </networkingHardwareInstances>
+        <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.2/@embeddedHPIC/@resources.0/@hwports.0 //@hpic/@hwplatformInstances.2/@embeddedHPIC/@resources.4/@hwports.2">
+          <communicationMediaPart xsi:type="hwplatform:LinkPart" href="fraunhoferDemo.fujaba#_8wdb8KfBEeSK_8TqY1SjtQ"/>
+          <type xsi:type="hwplatform:LinkPart" href="fraunhoferDemo.fujaba#_8wdb8KfBEeSK_8TqY1SjtQ"/>
+        </networkingHardwareInstances>
+        <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.2/@embeddedHPIC/@resources.3/@hwports.0 //@hpic/@hwplatformInstances.2/@embeddedHPIC/@resources.5/@hwports.9">
+          <communicationMediaPart xsi:type="hwplatform:LinkPart" href="fraunhoferDemo.fujaba#_Y5SH0KfCEeSK_8TqY1SjtQ"/>
+          <type xsi:type="hwplatform:LinkPart" href="fraunhoferDemo.fujaba#_Y5SH0KfCEeSK_8TqY1SjtQ"/>
+        </networkingHardwareInstances>
+        <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.2/@embeddedHPIC/@resources.1/@hwports.0 //@hpic/@hwplatformInstances.2/@embeddedHPIC/@resources.4/@hwports.4">
+          <communicationMediaPart xsi:type="hwplatform:LinkPart" href="fraunhoferDemo.fujaba#_Z5IbQKfCEeSK_8TqY1SjtQ"/>
+          <type xsi:type="hwplatform:LinkPart" href="fraunhoferDemo.fujaba#_Z5IbQKfCEeSK_8TqY1SjtQ"/>
+        </networkingHardwareInstances>
+        <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.2/@delegationPorts.0 //@hpic/@hwplatformInstances.2/@embeddedHPIC/@resources.5/@hwports.0">
+          <type xsi:type="hwplatform:Delegation" href="fraunhoferDemo.fujaba#_0TjEkKfCEeSK_8TqY1SjtQ"/>
+        </networkingHardwareInstances>
+        <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.2/@delegationPorts.1 //@hpic/@hwplatformInstances.2/@embeddedHPIC/@resources.5/@hwports.2">
+          <type xsi:type="hwplatform:Delegation" href="fraunhoferDemo.fujaba#_al6WkKhjEeSJj6cnB4p9sw"/>
+        </networkingHardwareInstances>
+        <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.2/@delegationPorts.2 //@hpic/@hwplatformInstances.2/@embeddedHPIC/@resources.5/@hwports.10"/>
+        <resources xsi:type="hwresourceinstance:SensorInstance" name="approacherLine">
+          <resourceType xsi:type="hwresource:Device" href="fraunhoferDemo.fujaba#_-b7G8Ke7EeSK_8TqY1SjtQ"/>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="linehw-port" connectorInstances="//@hpic/@hwplatformInstances.2/@embeddedHPIC/@networkingHardwareInstances.2">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_3mt68KfBEeSK_8TqY1SjtQ"/>
+          </hwports>
+        </resources>
+        <resources xsi:type="hwresourceinstance:SensorInstance" name="approacherColor">
+          <resourceType xsi:type="hwresource:Device" href="fraunhoferDemo.fujaba#_DG8roKe8EeSK_8TqY1SjtQ"/>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="colorhw-port" connectorInstances="//@hpic/@hwplatformInstances.2/@embeddedHPIC/@networkingHardwareInstances.4">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_RXr-oKfCEeSK_8TqY1SjtQ"/>
+          </hwports>
+        </resources>
+        <resources xsi:type="hwresourceinstance:ActuatorInstance" name="approacherMotor">
+          <resourceType xsi:type="hwresource:Device" href="fraunhoferDemo.fujaba#_7Y-6YKe7EeSK_8TqY1SjtQ"/>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="motohw-port" connectorInstances="//@hpic/@hwplatformInstances.2/@embeddedHPIC/@networkingHardwareInstances.1">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_ueX2YKfBEeSK_8TqY1SjtQ"/>
+          </hwports>
+        </resources>
+        <resources xsi:type="hwresourceinstance:SensorInstance" name="approacherDistance">
+          <resourceType xsi:type="hwresource:Device" href="fraunhoferDemo.fujaba#_A7FRAKe8EeSK_8TqY1SjtQ"/>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="distancehw-port" connectorInstances="//@hpic/@hwplatformInstances.2/@embeddedHPIC/@networkingHardwareInstances.3">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_SUng8KfCEeSK_8TqY1SjtQ"/>
+          </hwports>
+        </resources>
+        <resources xsi:type="codegen:RefinedStructuredResourceInstance" name="approacherR1" allocatedAtomicComponentInstances="//@cic/@componentInstances.15 //@cic/@componentInstances.16 //@cic/@componentInstances.17 //@cic/@componentInstances.20 //@cic/@componentInstances.21">
+          <resourceType xsi:type="hwresource:StructuredResource" href="fraunhoferDemo.fujaba#_HcLmgKe8EeSK_8TqY1SjtQ"/>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="inputPort4" connectorInstances="//@hpic/@hwplatformInstances.2/@embeddedHPIC/@networkingHardwareInstances.0">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_a4whsafBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="VirtualWifiPort">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_w-OR0KhiEeSJj6cnB4p9sw"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="inputPort2" connectorInstances="//@hpic/@hwplatformInstances.2/@embeddedHPIC/@networkingHardwareInstances.2">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_a4whtafBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="inputPort1" connectorInstances="//@hpic/@hwplatformInstances.2/@embeddedHPIC/@networkingHardwareInstances.1">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_a4whsqfBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="inputPort3" connectorInstances="//@hpic/@hwplatformInstances.2/@embeddedHPIC/@networkingHardwareInstances.4">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_a4whs6fBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="virtualBluetoothPort">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_a4whuKfBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="outputPortB">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_a4whsKfBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="usbPort">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_a4whtKfBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="outputPortA">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_a4wht6fBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="outputPortC">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_a4whtqfBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" name="Processor">
+            <resourceType xsi:type="hwresource:Processor" href="fraunhoferDemo.fujaba#_OAr1UKe8EeSK_8TqY1SjtQ"/>
+            <frequency value="60.0" unit="MHz"/>
+          </embeddedAtomicResourceInstances>
+          <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" name="RAMmemory">
+            <resourceType xsi:type="hwresource:MemoryResource" href="fraunhoferDemo.fujaba#_Q59vkKe8EeSK_8TqY1SjtQ"/>
+            <memorySize value="64.0" unit="KByte"/>
+          </embeddedAtomicResourceInstances>
+          <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" name="FLAHmemory">
+            <resourceType xsi:type="hwresource:MemoryResource" href="fraunhoferDemo.fujaba#_Whzh0Ke8EeSK_8TqY1SjtQ"/>
+            <memorySize value="256.0" unit="KByte"/>
+          </embeddedAtomicResourceInstances>
+        </resources>
+        <resources xsi:type="codegen:RefinedStructuredResourceInstance" name="approacherR2" allocatedAtomicComponentInstances="//@cic/@componentInstances.18 //@cic/@componentInstances.19">
+          <resourceType xsi:type="hwresource:StructuredResource" href="fraunhoferDemo.fujaba#_HcLmgKe8EeSK_8TqY1SjtQ"/>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="virtualBluetoothPort" connectorInstances="//@hpic/@hwplatformInstances.2/@embeddedHPIC/@networkingHardwareInstances.5">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_eFHwCKfBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="outputPortB">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_eFHwAKfBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="VirtualWifiPort" connectorInstances="//@hpic/@hwplatformInstances.2/@embeddedHPIC/@networkingHardwareInstances.6">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_w-0uwKhiEeSJj6cnB4p9sw"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="usbPort">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_eFHwBKfBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="inputPort3">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_eFHwA6fBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="outputPortA">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_eFHwB6fBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="outputPortC">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_eFHwBqfBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="inputPort2">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_eFHwBafBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="inputPort4" connectorInstances="//@hpic/@hwplatformInstances.2/@embeddedHPIC/@networkingHardwareInstances.0">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_eFHwAafBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="inputPort1" connectorInstances="//@hpic/@hwplatformInstances.2/@embeddedHPIC/@networkingHardwareInstances.3">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_eFHwAqfBEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="VirtualWifiPort2" connectorInstances="//@hpic/@hwplatformInstances.2/@embeddedHPIC/@networkingHardwareInstances.7">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_w-0uwKhiEeSJj6cnB4p9sw"/>
+          </hwports>
+          <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" name="Processor">
+            <resourceType xsi:type="hwresource:Processor" href="fraunhoferDemo.fujaba#_OAr1UKe8EeSK_8TqY1SjtQ"/>
+            <frequency value="60.0" unit="MHz"/>
+          </embeddedAtomicResourceInstances>
+          <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" name="RAMmemory">
+            <resourceType xsi:type="hwresource:MemoryResource" href="fraunhoferDemo.fujaba#_Q59vkKe8EeSK_8TqY1SjtQ"/>
+            <memorySize value="64.0" unit="KByte"/>
+          </embeddedAtomicResourceInstances>
+          <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" name="FLAHmemory">
+            <resourceType xsi:type="hwresource:MemoryResource" href="fraunhoferDemo.fujaba#_Whzh0Ke8EeSK_8TqY1SjtQ"/>
+            <memorySize value="256.0" unit="KByte"/>
+          </embeddedAtomicResourceInstances>
+        </resources>
+      </embeddedHPIC>
+    </hwplatformInstances>
+    <hwplatformInstances name="SectionControlInstance">
+      <delegationPorts name="D1-virtualWifi.01" connectorInstances="//@hpic/@hwplatformInstances.3/@embeddedHPIC/@networkingHardwareInstances.0 //@hpic/@networkingHardwareInstances.0">
+        <type xsi:type="hwplatform:DelegationHWPort" href="fraunhoferDemo.fujaba#_eYQm0KhjEeSJj6cnB4p9sw"/>
+      </delegationPorts>
+      <delegationPorts name="D1-virtualBluetooth.0" connectorInstances="//@hpic/@hwplatformInstances.3/@embeddedHPIC/@networkingHardwareInstances.1">
+        <type xsi:type="hwplatform:DelegationHWPort" href="fraunhoferDemo.fujaba#_kUf7wKhjEeSJj6cnB4p9sw"/>
+      </delegationPorts>
+      <delegationPorts name="D1-virtualWifi.02" connectorInstances="//@hpic/@hwplatformInstances.3/@embeddedHPIC/@networkingHardwareInstances.6 //@hpic/@networkingHardwareInstances.1">
+        <type xsi:type="hwplatform:DelegationHWPort" href="fraunhoferDemo.fujaba#_eYQm0KhjEeSJj6cnB4p9sw"/>
+      </delegationPorts>
+      <delegationPorts name="D1-virtualWifi.03" connectorInstances="//@hpic/@hwplatformInstances.3/@embeddedHPIC/@networkingHardwareInstances.5 //@hpic/@networkingHardwareInstances.2">
+        <type xsi:type="hwplatform:DelegationHWPort" href="fraunhoferDemo.fujaba#_eYQm0KhjEeSJj6cnB4p9sw"/>
+      </delegationPorts>
+      <embeddedHPIC>
+        <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.3/@delegationPorts.0 //@hpic/@hwplatformInstances.3/@embeddedHPIC/@resources.0/@hwports.0">
+          <type xsi:type="hwplatform:Delegation" href="fraunhoferDemo.fujaba#_gSW8AKhjEeSJj6cnB4p9sw"/>
+        </networkingHardwareInstances>
+        <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.3/@delegationPorts.1 //@hpic/@hwplatformInstances.3/@embeddedHPIC/@resources.0/@hwports.1">
+          <type xsi:type="hwplatform:Delegation" href="fraunhoferDemo.fujaba#_pKpLUKhjEeSJj6cnB4p9sw"/>
+        </networkingHardwareInstances>
+        <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance">
+          <type xsi:type="hwplatform:Delegation" href="fraunhoferDemo.fujaba#_gSW8AKhjEeSJj6cnB4p9sw"/>
+        </networkingHardwareInstances>
+        <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance">
+          <type xsi:type="hwplatform:Delegation" href="fraunhoferDemo.fujaba#_gSW8AKhjEeSJj6cnB4p9sw"/>
+        </networkingHardwareInstances>
+        <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance">
+          <type xsi:type="hwplatform:Delegation" href="fraunhoferDemo.fujaba#_gSW8AKhjEeSJj6cnB4p9sw"/>
+        </networkingHardwareInstances>
+        <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.3/@delegationPorts.3 //@hpic/@hwplatformInstances.3/@embeddedHPIC/@resources.0/@hwports.2"/>
+        <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.3/@delegationPorts.2 //@hpic/@hwplatformInstances.3/@embeddedHPIC/@resources.0/@hwports.3"/>
+        <resources xsi:type="codegen:RefinedStructuredResourceInstance" name="sectionControlBrick" allocatedAtomicComponentInstances="//@cic/@componentInstances.0">
+          <resourceType xsi:type="hwresource:StructuredResource" href="fraunhoferDemo.fujaba#_HcLmgKe8EeSK_8TqY1SjtQ"/>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="VirtualWifiPort1" connectorInstances="//@hpic/@hwplatformInstances.3/@embeddedHPIC/@networkingHardwareInstances.0">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_ztc4MKhiEeSJj6cnB4p9sw"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="virtualBluetoothPort" connectorInstances="//@hpic/@hwplatformInstances.3/@embeddedHPIC/@networkingHardwareInstances.1">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_0unaiKfDEeSK_8TqY1SjtQ"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="VirtualWifiPort3" connectorInstances="//@hpic/@hwplatformInstances.3/@embeddedHPIC/@networkingHardwareInstances.5">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_ztc4MKhiEeSJj6cnB4p9sw"/>
+          </hwports>
+          <hwports xsi:type="hwplatforminstance:HWPortInstance" name="VirtualWifiPort2" connectorInstances="//@hpic/@hwplatformInstances.3/@embeddedHPIC/@networkingHardwareInstances.6">
+            <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_ztc4MKhiEeSJj6cnB4p9sw"/>
+          </hwports>
+          <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" name="Processor">
+            <resourceType xsi:type="hwresource:Processor" href="fraunhoferDemo.fujaba#_OAr1UKe8EeSK_8TqY1SjtQ"/>
+            <frequency value="60.0" unit="MHz"/>
+          </embeddedAtomicResourceInstances>
+          <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" name="RAMmemory">
+            <resourceType xsi:type="hwresource:MemoryResource" href="fraunhoferDemo.fujaba#_Q59vkKe8EeSK_8TqY1SjtQ"/>
+            <memorySize value="64.0" unit="KByte"/>
+          </embeddedAtomicResourceInstances>
+          <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" name="FLAHmemory">
+            <resourceType xsi:type="hwresource:MemoryResource" href="fraunhoferDemo.fujaba#_Whzh0Ke8EeSK_8TqY1SjtQ"/>
+            <memorySize value="256.0" unit="KByte"/>
+          </embeddedAtomicResourceInstances>
+        </resources>
+      </embeddedHPIC>
+    </hwplatformInstances>
+    <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.0/@delegationPorts.1 //@hpic/@hwplatformInstances.3/@delegationPorts.0">
+      <communicationMediaPart xsi:type="hwplatform:LinkPart" href="fraunhoferDemo.fujaba#_Y5SH0KfCEeSK_8TqY1SjtQ"/>
+      <type xsi:type="hwplatform:LinkPart" href="fraunhoferDemo.fujaba#_yKlpcKfBEeSK_8TqY1SjtQ"/>
+    </networkingHardwareInstances>
+    <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.1/@delegationPorts.1 //@hpic/@hwplatformInstances.3/@delegationPorts.2">
+      <communicationMediaPart xsi:type="hwplatform:LinkPart" href="fraunhoferDemo.fujaba#_Z5IbQKfCEeSK_8TqY1SjtQ"/>
+      <type xsi:type="hwplatform:LinkPart" href="fraunhoferDemo.fujaba#_mTanIKfBEeSK_8TqY1SjtQ"/>
+    </networkingHardwareInstances>
+    <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.3/@delegationPorts.3 //@hpic/@hwplatformInstances.2/@delegationPorts.1">
+      <communicationMediaPart xsi:type="hwplatform:LinkPart" href="fraunhoferDemo.fujaba#_8wdb8KfBEeSK_8TqY1SjtQ"/>
+      <type xsi:type="hwplatform:Delegation" href="fraunhoferDemo.fujaba#_gSW8AKhjEeSJj6cnB4p9sw"/>
+    </networkingHardwareInstances>
+    <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.0/@delegationPorts.0 //@hpic/@hwplatformInstances.1/@delegationPorts.0">
+      <communicationMediaPart xsi:type="hwplatform:LinkPart" href="fraunhoferDemo.fujaba#_Y5SH0KfCEeSK_8TqY1SjtQ"/>
+      <type xsi:type="hwplatform:Delegation" href="fraunhoferDemo.fujaba#_al6WkKhjEeSJj6cnB4p9sw"/>
+    </networkingHardwareInstances>
+    <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.2/@delegationPorts.2 //@hpic/@hwplatformInstances.0/@delegationPorts.2">
+      <communicationMediaPart xsi:type="hwplatform:LinkPart" href="fraunhoferDemo.fujaba#_yKlpcKfBEeSK_8TqY1SjtQ"/>
+      <type xsi:type="hwplatform:Delegation" href="fraunhoferDemo.fujaba#_0TjEkKfCEeSK_8TqY1SjtQ"/>
+    </networkingHardwareInstances>
+  </hpic>
+  <cic name="codeGenComponentInstanceConfiguration">
+    <componentInstances xsi:type="codegen:RefinedAtomicComponentInstance" name="section" allocatedResourceInstance="//@hpic/@hwplatformInstances.3/@embeddedHPIC/@resources.0">
+      <componentType xsi:type="component:StaticAtomicComponent" href="fraunhoferDemo.fujaba#_LUR84JOZEeSZM-zEIRk3lw"/>
+      <portInstances xsi:type="instance:DiscreteSinglePortInstance" name="sectionApproacherP1" connectorInstances="//@cic/@portConnectorInstances.4">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_tKp0oJRNEeSZM-zEIRk3lw"/>
+      </portInstances>
+      <portInstances xsi:type="instance:DiscreteSinglePortInstance" name="sectionOvertakerP1" connectorInstances="//@cic/@portConnectorInstances.2">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_tjyGUJRNEeSZM-zEIRk3lw"/>
+      </portInstances>
+      <portInstances xsi:type="instance:DiscreteSinglePortInstance" name="sectionOvertakeeP1" connectorInstances="//@cic/@portConnectorInstances.1">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_uCcYQJRNEeSZM-zEIRk3lw"/>
+      </portInstances>
+      <portInstances xsi:type="instance:DiscreteSinglePortInstance" name="controllerP1" connectorInstances="//@cic/@portConnectorInstances.3">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_oEiLwJ6HEeSNj-oH_1Kb-Q"/>
+      </portInstances>
+    </componentInstances>
+    <componentInstances xsi:type="codegen:RefinedAtomicComponentInstance" name="overtakerMotorR" allocatedResourceInstance="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@resources.0">
+      <componentType xsi:type="component:StaticAtomicComponent" href="fraunhoferDemo.fujaba#_65UR8JQqEeSZM-zEIRk3lw"/>
+      <portInstances xsi:type="instance_1:ParameterisableDiscreteSinglePortInstance" name="velocityContR" connectorInstances="//@cic/@portConnectorInstances.7">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_wDddsLtxEeSNn-5VJKJ8hg"/>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="overtakerMotorR_velocityContR_InitApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="fraunhoferDemo.fujaba#_wDrgUrtxEeSNn-5VJKJ8hg"/>
+          <returnType xsi:type="types:PrimitiveDataType" href="fraunhoferDemo.fujaba#_FB0TQpJ7EeSSMde45fnrcg"/>
+        </bindings>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="overtakerMotorR_velocityContR_ExecApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="fraunhoferDemo.fujaba#_wDrgU7txEeSNn-5VJKJ8hg"/>
+          <parameters name="velocity">
+            <dataType xsi:type="types:PrimitiveDataType" href="fraunhoferDemo.fujaba#_FB0TRpJ7EeSSMde45fnrcg"/>
+          </parameters>
+          <returnType xsi:type="types:PrimitiveDataType" href="fraunhoferDemo.fujaba#_FB0TQpJ7EeSSMde45fnrcg"/>
+        </bindings>
+      </portInstances>
+      <componentPart href="fraunhoferDemo.fujaba#_7qtEEJRVEeSZM-zEIRk3lw"/>
+    </componentInstances>
+    <componentInstances xsi:type="codegen:RefinedAtomicComponentInstance" name="overtakerMotorL" allocatedResourceInstance="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@resources.0">
+      <componentType xsi:type="component:StaticAtomicComponent" href="fraunhoferDemo.fujaba#_65UR8JQqEeSZM-zEIRk3lw"/>
+      <portInstances xsi:type="instance_1:ParameterisableDiscreteSinglePortInstance" name="velocityContL" connectorInstances="//@cic/@portConnectorInstances.10">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_wDddsLtxEeSNn-5VJKJ8hg"/>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="overtakerMotorL_velocityContL_InitApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="fraunhoferDemo.fujaba#_wDrgUrtxEeSNn-5VJKJ8hg"/>
+          <returnType xsi:type="types:PrimitiveDataType" href="fraunhoferDemo.fujaba#_FB0TQpJ7EeSSMde45fnrcg"/>
+        </bindings>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="overtakerMotorL_velocityContL_ExecApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="fraunhoferDemo.fujaba#_wDrgU7txEeSNn-5VJKJ8hg"/>
+          <parameters name="velocity">
+            <dataType xsi:type="types:PrimitiveDataType" href="fraunhoferDemo.fujaba#_FB0TRpJ7EeSSMde45fnrcg"/>
+          </parameters>
+          <returnType xsi:type="types:PrimitiveDataType" href="fraunhoferDemo.fujaba#_FB0TQpJ7EeSSMde45fnrcg"/>
+        </bindings>
+      </portInstances>
+      <componentPart href="fraunhoferDemo.fujaba#_8iLeoJRVEeSZM-zEIRk3lw"/>
+    </componentInstances>
+    <componentInstances xsi:type="codegen:RefinedAtomicComponentInstance" name="overtakerDriver" allocatedResourceInstance="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@resources.0">
+      <componentType xsi:type="component:StaticAtomicComponent" href="fraunhoferDemo.fujaba#_BQCDAJOUEeSZM-zEIRk3lw"/>
+      <portInstances xsi:type="instance:DiscreteSinglePortInstance" name="initiatorP1" connectorInstances="//@cic/@portConnectorInstances.6">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_bKPb0JRQEeSZM-zEIRk3lw"/>
+      </portInstances>
+      <portInstances xsi:type="instance:DiscreteSinglePortInstance" name="distance" connectorInstances="//@cic/@portConnectorInstances.11">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_wD7XwLtxEeSNn-5VJKJ8hg"/>
+      </portInstances>
+      <portInstances xsi:type="instance:DiscreteSinglePortInstance" name="line" connectorInstances="//@cic/@portConnectorInstances.8">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_wECsgLtxEeSNn-5VJKJ8hg"/>
+      </portInstances>
+      <portInstances xsi:type="instance:DiscreteSinglePortInstance" name="velocityR" connectorInstances="//@cic/@portConnectorInstances.7">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_wDsHMLtxEeSNn-5VJKJ8hg"/>
+      </portInstances>
+      <portInstances xsi:type="instance:DiscreteSinglePortInstance" name="velocityL" connectorInstances="//@cic/@portConnectorInstances.10">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_wDzb8LtxEeSNn-5VJKJ8hg"/>
+      </portInstances>
+      <componentPart href="fraunhoferDemo.fujaba#_9cr_EJRVEeSZM-zEIRk3lw"/>
+    </componentInstances>
+    <componentInstances xsi:type="codegen:RefinedAtomicComponentInstance" name="overtakerDistance" allocatedResourceInstance="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@resources.0">
+      <componentType xsi:type="component:StaticAtomicComponent" href="fraunhoferDemo.fujaba#_Vibi8JRJEeSZM-zEIRk3lw"/>
+      <portInstances xsi:type="instance_1:ParameterisableDiscreteSinglePortInstance" name="distance" connectorInstances="//@cic/@portConnectorInstances.11">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_wDMX8LtxEeSNn-5VJKJ8hg"/>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="overtakerDistance_distance_InitApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="fraunhoferDemo.fujaba#_wDTstrtxEeSNn-5VJKJ8hg"/>
+          <returnType xsi:type="types:PrimitiveDataType" href="fraunhoferDemo.fujaba#_FB0TQpJ7EeSSMde45fnrcg"/>
+        </bindings>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="overtakerDistance_distance_ExecApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="fraunhoferDemo.fujaba#_wDTst7txEeSNn-5VJKJ8hg"/>
+          <returnType xsi:type="types:PrimitiveDataType" href="fraunhoferDemo.fujaba#_FB0TRpJ7EeSSMde45fnrcg"/>
+        </bindings>
+      </portInstances>
+      <componentPart href="fraunhoferDemo.fujaba#_JoEW0JRWEeSZM-zEIRk3lw"/>
+    </componentInstances>
+    <componentInstances xsi:type="codegen:RefinedAtomicComponentInstance" name="overtakerCommunicator" allocatedResourceInstance="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@resources.5">
+      <componentType xsi:type="component:StaticAtomicComponent" href="fraunhoferDemo.fujaba#_5PGVoJOXEeSZM-zEIRk3lw"/>
+      <portInstances xsi:type="instance:DiscreteSinglePortInstance" name="executorP1" connectorInstances="//@cic/@portConnectorInstances.6">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_qBYPMJRQEeSZM-zEIRk3lw"/>
+      </portInstances>
+      <portInstances xsi:type="instance:DiscreteSinglePortInstance" name="vehicleOvertakerP1" connectorInstances="//@cic/@portConnectorInstances.2">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_pbVNwJROEeSZM-zEIRk3lw"/>
+      </portInstances>
+      <portInstances xsi:type="instance:DiscreteSinglePortInstance" name="overtakerP1" connectorInstances="//@cic/@portConnectorInstances.0">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_L5yGUJRMEeSZM-zEIRk3lw"/>
+      </portInstances>
+      <portInstances xsi:type="instance:DiscreteSinglePortInstance" name="requestorP1" connectorInstances="//@cic/@portConnectorInstances.3">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_2RHRIJ6FEeSNj-oH_1Kb-Q"/>
+      </portInstances>
+      <portInstances xsi:type="instance:DiscreteSinglePortInstance" name="color" connectorInstances="//@cic/@portConnectorInstances.9">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_wEKoULtxEeSNn-5VJKJ8hg"/>
+      </portInstances>
+      <componentPart href="fraunhoferDemo.fujaba#_8GCAoJ6GEeSNj-oH_1Kb-Q"/>
+    </componentInstances>
+    <componentInstances xsi:type="codegen:RefinedAtomicComponentInstance" name="overtakerLine" allocatedResourceInstance="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@resources.0">
+      <componentType xsi:type="component:StaticAtomicComponent" href="fraunhoferDemo.fujaba#_o9fgsJ8OEeSDApXOK6N3KA"/>
+      <portInstances xsi:type="instance_1:ParameterisableDiscreteSinglePortInstance" name="lineLight" connectorInstances="//@cic/@portConnectorInstances.8">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_wCks4LtxEeSNn-5VJKJ8hg"/>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="overtakerLine_lineLight_InitApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="fraunhoferDemo.fujaba#_wCtP2rtxEeSNn-5VJKJ8hg"/>
+          <returnType xsi:type="types:PrimitiveDataType" href="fraunhoferDemo.fujaba#_FB0TQpJ7EeSSMde45fnrcg"/>
+        </bindings>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="overtakerLine_lineLight_ExecApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="fraunhoferDemo.fujaba#_wCtP27txEeSNn-5VJKJ8hg"/>
+          <returnType xsi:type="types:PrimitiveDataType" href="fraunhoferDemo.fujaba#_FB0TRpJ7EeSSMde45fnrcg"/>
+        </bindings>
+      </portInstances>
+      <componentPart href="fraunhoferDemo.fujaba#_JFErsJ8QEeSDApXOK6N3KA"/>
+    </componentInstances>
+    <componentInstances xsi:type="codegen:RefinedAtomicComponentInstance" name="overtakerColor" allocatedResourceInstance="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@resources.5">
+      <componentType xsi:type="component:StaticAtomicComponent" href="fraunhoferDemo.fujaba#_7rgfAJ8OEeSDApXOK6N3KA"/>
+      <portInstances xsi:type="instance_1:ParameterisableDiscreteSinglePortInstance" name="color" connectorInstances="//@cic/@portConnectorInstances.9">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_wBnqoLtxEeSNn-5VJKJ8hg"/>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="overtakerColor_color_InitApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="fraunhoferDemo.fujaba#_wB9pBbtxEeSNn-5VJKJ8hg"/>
+          <returnType xsi:type="types:PrimitiveDataType" href="fraunhoferDemo.fujaba#_FB0TQpJ7EeSSMde45fnrcg"/>
+        </bindings>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="overtakerColor_color_ExecApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="fraunhoferDemo.fujaba#_wB9pBrtxEeSNn-5VJKJ8hg"/>
+          <returnType xsi:type="types:PrimitiveDataType" href="fraunhoferDemo.fujaba#_FB0TRpJ7EeSSMde45fnrcg"/>
+        </bindings>
+      </portInstances>
+      <componentPart href="fraunhoferDemo.fujaba#_OmVU0J8QEeSDApXOK6N3KA"/>
+    </componentInstances>
+    <componentInstances xsi:type="codegen:RefinedAtomicComponentInstance" name="overtakeeDriver" allocatedResourceInstance="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@resources.5">
+      <componentType xsi:type="component:StaticAtomicComponent" href="fraunhoferDemo.fujaba#_bDZ3QJOQEeSZM-zEIRk3lw"/>
+      <portInstances xsi:type="instance:DiscreteSinglePortInstance" name="velocityGetterP1" connectorInstances="//@cic/@portConnectorInstances.15">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_DWz7gJRTEeSZM-zEIRk3lw"/>
+      </portInstances>
+      <portInstances xsi:type="instance:DiscreteSinglePortInstance" name="velocityR" connectorInstances="//@cic/@portConnectorInstances.14">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_wC0kgrtxEeSNn-5VJKJ8hg"/>
+      </portInstances>
+      <portInstances xsi:type="instance:DiscreteSinglePortInstance" name="lineOvertakee" connectorInstances="//@cic/@portConnectorInstances.13">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_wC8gULtxEeSNn-5VJKJ8hg"/>
+      </portInstances>
+      <portInstances xsi:type="instance:DiscreteSinglePortInstance" name="velocityL" connectorInstances="//@cic/@portConnectorInstances.16">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_wCt20LtxEeSNn-5VJKJ8hg"/>
+      </portInstances>
+      <portInstances xsi:type="instance:DiscreteSinglePortInstance" name="distanceOvertakee" connectorInstances="//@cic/@portConnectorInstances.17">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_wDD1ELtxEeSNn-5VJKJ8hg"/>
+      </portInstances>
+      <componentPart href="fraunhoferDemo.fujaba#_lG7nEJRTEeSZM-zEIRk3lw"/>
+    </componentInstances>
+    <componentInstances xsi:type="codegen:RefinedAtomicComponentInstance" name="overtakeeCommunicator" allocatedResourceInstance="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@resources.1">
+      <componentType xsi:type="component:StaticAtomicComponent" href="fraunhoferDemo.fujaba#_1f2csJOXEeSZM-zEIRk3lw"/>
+      <portInstances xsi:type="instance:DiscreteSinglePortInstance" name="overtakeeP1" connectorInstances="//@cic/@portConnectorInstances.0">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_-B_QEJRLEeSZM-zEIRk3lw"/>
+      </portInstances>
+      <portInstances xsi:type="instance:DiscreteSinglePortInstance" name="velocitySetterP1" connectorInstances="//@cic/@portConnectorInstances.15">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_qJ-foJRSEeSZM-zEIRk3lw"/>
+      </portInstances>
+      <portInstances xsi:type="instance:DiscreteSinglePortInstance" name="vehicleOvertakeeP1" connectorInstances="//@cic/@portConnectorInstances.1">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_wCE4QJROEeSZM-zEIRk3lw"/>
+      </portInstances>
+      <portInstances xsi:type="instance:DiscreteSinglePortInstance" name="informOvertakee1" connectorInstances="//@cic/@portConnectorInstances.5">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_qw9moJ9UEeSDApXOK6N3KA"/>
+      </portInstances>
+      <portInstances xsi:type="instance:DiscreteSinglePortInstance" name="colorOvertakee" connectorInstances="//@cic/@portConnectorInstances.12">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_wEUZULtxEeSNn-5VJKJ8hg"/>
+      </portInstances>
+      <componentPart href="fraunhoferDemo.fujaba#_y4rfsJRTEeSZM-zEIRk3lw"/>
+    </componentInstances>
+    <componentInstances xsi:type="codegen:RefinedAtomicComponentInstance" name="overtakeeMotorL" allocatedResourceInstance="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@resources.5">
+      <componentType xsi:type="component:StaticAtomicComponent" href="fraunhoferDemo.fujaba#_65UR8JQqEeSZM-zEIRk3lw"/>
+      <portInstances xsi:type="instance_1:ParameterisableDiscreteSinglePortInstance" name="velocityContR" connectorInstances="//@cic/@portConnectorInstances.14">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_wDddsLtxEeSNn-5VJKJ8hg"/>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="overtakeeMotorL_velocityContR_InitApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="fraunhoferDemo.fujaba#_wDrgUrtxEeSNn-5VJKJ8hg"/>
+          <returnType xsi:type="types:PrimitiveDataType" href="fraunhoferDemo.fujaba#_FB0TQpJ7EeSSMde45fnrcg"/>
+        </bindings>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="overtakeeMotorL_velocityContR_ExecApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="fraunhoferDemo.fujaba#_wDrgU7txEeSNn-5VJKJ8hg"/>
+          <parameters name="velocity">
+            <dataType xsi:type="types:PrimitiveDataType" href="fraunhoferDemo.fujaba#_FB0TRpJ7EeSSMde45fnrcg"/>
+          </parameters>
+          <returnType xsi:type="types:PrimitiveDataType" href="fraunhoferDemo.fujaba#_FB0TQpJ7EeSSMde45fnrcg"/>
+        </bindings>
+      </portInstances>
+      <componentPart href="fraunhoferDemo.fujaba#_2nodsJRTEeSZM-zEIRk3lw"/>
+    </componentInstances>
+    <componentInstances xsi:type="codegen:RefinedAtomicComponentInstance" name="overtakeeMotorR" allocatedResourceInstance="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@resources.5">
+      <componentType xsi:type="component:StaticAtomicComponent" href="fraunhoferDemo.fujaba#_65UR8JQqEeSZM-zEIRk3lw"/>
+      <portInstances xsi:type="instance_1:ParameterisableDiscreteSinglePortInstance" name="velocityContL" connectorInstances="//@cic/@portConnectorInstances.16">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_wDddsLtxEeSNn-5VJKJ8hg"/>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="overtakeeMotorR_velocityContL_InitApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="fraunhoferDemo.fujaba#_wDrgUrtxEeSNn-5VJKJ8hg"/>
+          <returnType xsi:type="types:PrimitiveDataType" href="fraunhoferDemo.fujaba#_FB0TQpJ7EeSSMde45fnrcg"/>
+        </bindings>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="overtakeeMotorR_velocityContL_ExecApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="fraunhoferDemo.fujaba#_wDrgU7txEeSNn-5VJKJ8hg"/>
+          <parameters name="velocity">
+            <dataType xsi:type="types:PrimitiveDataType" href="fraunhoferDemo.fujaba#_FB0TRpJ7EeSSMde45fnrcg"/>
+          </parameters>
+          <returnType xsi:type="types:PrimitiveDataType" href="fraunhoferDemo.fujaba#_FB0TQpJ7EeSSMde45fnrcg"/>
+        </bindings>
+      </portInstances>
+      <componentPart href="fraunhoferDemo.fujaba#_3UI-YJRTEeSZM-zEIRk3lw"/>
+    </componentInstances>
+    <componentInstances xsi:type="codegen:RefinedAtomicComponentInstance" name="overtakeeLine" allocatedResourceInstance="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@resources.5">
+      <componentType xsi:type="component:StaticAtomicComponent" href="fraunhoferDemo.fujaba#_o9fgsJ8OEeSDApXOK6N3KA"/>
+      <portInstances xsi:type="instance_1:ParameterisableDiscreteSinglePortInstance" name="lineLight" connectorInstances="//@cic/@portConnectorInstances.13">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_wCks4LtxEeSNn-5VJKJ8hg"/>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="overtakeeLine_lineLight_InitApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="fraunhoferDemo.fujaba#_wCtP2rtxEeSNn-5VJKJ8hg"/>
+          <returnType xsi:type="types:PrimitiveDataType" href="fraunhoferDemo.fujaba#_FB0TQpJ7EeSSMde45fnrcg"/>
+        </bindings>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="overtakeeLine_lineLight_ExecApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="fraunhoferDemo.fujaba#_wCtP27txEeSNn-5VJKJ8hg"/>
+          <returnType xsi:type="types:PrimitiveDataType" href="fraunhoferDemo.fujaba#_FB0TRpJ7EeSSMde45fnrcg"/>
+        </bindings>
+      </portInstances>
+      <componentPart href="fraunhoferDemo.fujaba#_cfbBAJ8PEeSDApXOK6N3KA"/>
+    </componentInstances>
+    <componentInstances xsi:type="codegen:RefinedAtomicComponentInstance" name="overtakeeColor" allocatedResourceInstance="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@resources.1">
+      <componentType xsi:type="component:StaticAtomicComponent" href="fraunhoferDemo.fujaba#_7rgfAJ8OEeSDApXOK6N3KA"/>
+      <portInstances xsi:type="instance_1:ParameterisableDiscreteSinglePortInstance" name="color" connectorInstances="//@cic/@portConnectorInstances.12">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_wBnqoLtxEeSNn-5VJKJ8hg"/>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="overtakeeColor_color_InitApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="fraunhoferDemo.fujaba#_wB9pBbtxEeSNn-5VJKJ8hg"/>
+          <returnType xsi:type="types:PrimitiveDataType" href="fraunhoferDemo.fujaba#_FB0TQpJ7EeSSMde45fnrcg"/>
+        </bindings>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="overtakeeColor_color_ExecApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="fraunhoferDemo.fujaba#_wB9pBrtxEeSNn-5VJKJ8hg"/>
+          <returnType xsi:type="types:PrimitiveDataType" href="fraunhoferDemo.fujaba#_FB0TRpJ7EeSSMde45fnrcg"/>
+        </bindings>
+      </portInstances>
+      <componentPart href="fraunhoferDemo.fujaba#_dXM9kJ8PEeSDApXOK6N3KA"/>
+    </componentInstances>
+    <componentInstances xsi:type="codegen:RefinedAtomicComponentInstance" name="overtakeeDistance" allocatedResourceInstance="//@hpic/@hwplatformInstances.0/@embeddedHPIC/@resources.5">
+      <componentType xsi:type="component:StaticAtomicComponent" href="fraunhoferDemo.fujaba#_Vibi8JRJEeSZM-zEIRk3lw"/>
+      <portInstances xsi:type="instance_1:ParameterisableDiscreteSinglePortInstance" name="distanceOvertakee" connectorInstances="//@cic/@portConnectorInstances.17">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_wDMX8LtxEeSNn-5VJKJ8hg"/>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="overtakeeDistance_distanceOvertakee_InitApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="fraunhoferDemo.fujaba#_wDTstrtxEeSNn-5VJKJ8hg"/>
+          <returnType xsi:type="types:PrimitiveDataType" href="fraunhoferDemo.fujaba#_FB0TQpJ7EeSSMde45fnrcg"/>
+        </bindings>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="overtakeeDistance_distanceOvertakee_ExecApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="fraunhoferDemo.fujaba#_wDTst7txEeSNn-5VJKJ8hg"/>
+          <returnType xsi:type="types:PrimitiveDataType" href="fraunhoferDemo.fujaba#_FB0TRpJ7EeSSMde45fnrcg"/>
+        </bindings>
+      </portInstances>
+      <componentPart href="fraunhoferDemo.fujaba#_AhkaIKu0EeSOh7ww5c64Rw"/>
+    </componentInstances>
+    <componentInstances xsi:type="codegen:RefinedAtomicComponentInstance" name="approacherMotorR" allocatedResourceInstance="//@hpic/@hwplatformInstances.2/@embeddedHPIC/@resources.4">
+      <componentType xsi:type="component:StaticAtomicComponent" href="fraunhoferDemo.fujaba#_65UR8JQqEeSZM-zEIRk3lw"/>
+      <portInstances xsi:type="instance_1:ParameterisableDiscreteSinglePortInstance" name="velocityContR" connectorInstances="//@cic/@portConnectorInstances.18">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_wDddsLtxEeSNn-5VJKJ8hg"/>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="approacherMotorR_velocityContR_InitApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="fraunhoferDemo.fujaba#_wDrgUrtxEeSNn-5VJKJ8hg"/>
+          <returnType xsi:type="types:PrimitiveDataType" href="fraunhoferDemo.fujaba#_FB0TQpJ7EeSSMde45fnrcg"/>
+        </bindings>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="approacherMotorR_velocityContR_ExecApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="fraunhoferDemo.fujaba#_wDrgU7txEeSNn-5VJKJ8hg"/>
+          <parameters name="velocity">
+            <dataType xsi:type="types:PrimitiveDataType" href="fraunhoferDemo.fujaba#_FB0TRpJ7EeSSMde45fnrcg"/>
+          </parameters>
+          <returnType xsi:type="types:PrimitiveDataType" href="fraunhoferDemo.fujaba#_FB0TQpJ7EeSSMde45fnrcg"/>
+        </bindings>
+      </portInstances>
+      <componentPart href="fraunhoferDemo.fujaba#_x87hwJRWEeSZM-zEIRk3lw"/>
+    </componentInstances>
+    <componentInstances xsi:type="codegen:RefinedAtomicComponentInstance" name="approacherMotorL" allocatedResourceInstance="//@hpic/@hwplatformInstances.2/@embeddedHPIC/@resources.4">
+      <componentType xsi:type="component:StaticAtomicComponent" href="fraunhoferDemo.fujaba#_65UR8JQqEeSZM-zEIRk3lw"/>
+      <portInstances xsi:type="instance_1:ParameterisableDiscreteSinglePortInstance" name="velocityContL" connectorInstances="//@cic/@portConnectorInstances.21">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_wDddsLtxEeSNn-5VJKJ8hg"/>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="approacherMotorL_velocityContL_InitApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="fraunhoferDemo.fujaba#_wDrgUrtxEeSNn-5VJKJ8hg"/>
+          <returnType xsi:type="types:PrimitiveDataType" href="fraunhoferDemo.fujaba#_FB0TQpJ7EeSSMde45fnrcg"/>
+        </bindings>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="approacherMotorL_velocityContL_ExecApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="fraunhoferDemo.fujaba#_wDrgU7txEeSNn-5VJKJ8hg"/>
+          <parameters name="velocity">
+            <dataType xsi:type="types:PrimitiveDataType" href="fraunhoferDemo.fujaba#_FB0TRpJ7EeSSMde45fnrcg"/>
+          </parameters>
+          <returnType xsi:type="types:PrimitiveDataType" href="fraunhoferDemo.fujaba#_FB0TQpJ7EeSSMde45fnrcg"/>
+        </bindings>
+      </portInstances>
+      <componentPart href="fraunhoferDemo.fujaba#_yW6vEJRWEeSZM-zEIRk3lw"/>
+    </componentInstances>
+    <componentInstances xsi:type="codegen:RefinedAtomicComponentInstance" name="approacherDriver" allocatedResourceInstance="//@hpic/@hwplatformInstances.2/@embeddedHPIC/@resources.4">
+      <componentType xsi:type="component:StaticAtomicComponent" href="fraunhoferDemo.fujaba#_EGtqUJOWEeSZM-zEIRk3lw"/>
+      <portInstances xsi:type="instance:DiscreteSinglePortInstance" name="limiterP1" connectorInstances="//@cic/@portConnectorInstances.19">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_uk1BsJRPEeSZM-zEIRk3lw"/>
+      </portInstances>
+      <portInstances xsi:type="instance:DiscreteSinglePortInstance" name="velocityL" connectorInstances="//@cic/@portConnectorInstances.21">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_wB_eELtxEeSNn-5VJKJ8hg"/>
+      </portInstances>
+      <portInstances xsi:type="instance:DiscreteSinglePortInstance" name="lineApproacher" connectorInstances="//@cic/@portConnectorInstances.20">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_wCRK4LtxEeSNn-5VJKJ8hg"/>
+      </portInstances>
+      <portInstances xsi:type="instance:DiscreteSinglePortInstance" name="velocityR" connectorInstances="//@cic/@portConnectorInstances.18">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_wCIoALtxEeSNn-5VJKJ8hg"/>
+      </portInstances>
+      <portInstances xsi:type="instance:DiscreteSinglePortInstance" name="distanceAproacher" connectorInstances="//@cic/@portConnectorInstances.23">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_wCa74LtxEeSNn-5VJKJ8hg"/>
+      </portInstances>
+      <componentPart href="fraunhoferDemo.fujaba#_yyzZ0JRWEeSZM-zEIRk3lw"/>
+    </componentInstances>
+    <componentInstances xsi:type="codegen:RefinedAtomicComponentInstance" name="approacherCommunicator" allocatedResourceInstance="//@hpic/@hwplatformInstances.2/@embeddedHPIC/@resources.5">
+      <componentType xsi:type="component:StaticAtomicComponent" href="fraunhoferDemo.fujaba#_ZJhDUJ6aEeSB5YpXOU2UeA"/>
+      <portInstances xsi:type="instance:DiscreteSinglePortInstance" name="vehicleApproacherP1" connectorInstances="//@cic/@portConnectorInstances.4">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#__agSAJ6aEeSB5YpXOU2UeA"/>
+      </portInstances>
+      <portInstances xsi:type="instance:DiscreteSinglePortInstance" name="limitDrivingP1" connectorInstances="//@cic/@portConnectorInstances.19">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_zVXsMJ6aEeSB5YpXOU2UeA"/>
+      </portInstances>
+      <portInstances xsi:type="instance:DiscreteSinglePortInstance" name="informApproacherP1" connectorInstances="//@cic/@portConnectorInstances.5">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_ioqeUJ6aEeSB5YpXOU2UeA"/>
+      </portInstances>
+      <portInstances xsi:type="instance:DiscreteSinglePortInstance" name="colorApproacher" connectorInstances="//@cic/@portConnectorInstances.22">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_wDTsurtxEeSNn-5VJKJ8hg"/>
+      </portInstances>
+      <componentPart href="fraunhoferDemo.fujaba#_MPkx4J6ZEeSB5YpXOU2UeA"/>
+    </componentInstances>
+    <componentInstances xsi:type="codegen:RefinedAtomicComponentInstance" name="approacherColor" allocatedResourceInstance="//@hpic/@hwplatformInstances.2/@embeddedHPIC/@resources.5">
+      <componentType xsi:type="component:StaticAtomicComponent" href="fraunhoferDemo.fujaba#_7rgfAJ8OEeSDApXOK6N3KA"/>
+      <portInstances xsi:type="instance_1:ParameterisableDiscreteSinglePortInstance" name="color" connectorInstances="//@cic/@portConnectorInstances.22">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_wBnqoLtxEeSNn-5VJKJ8hg"/>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="approacherColor_color_InitApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="fraunhoferDemo.fujaba#_wB9pBbtxEeSNn-5VJKJ8hg"/>
+          <returnType xsi:type="types:PrimitiveDataType" href="fraunhoferDemo.fujaba#_FB0TQpJ7EeSSMde45fnrcg"/>
+        </bindings>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="approacherColor_color_ExecApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="fraunhoferDemo.fujaba#_wB9pBrtxEeSNn-5VJKJ8hg"/>
+          <returnType xsi:type="types:PrimitiveDataType" href="fraunhoferDemo.fujaba#_FB0TRpJ7EeSSMde45fnrcg"/>
+        </bindings>
+      </portInstances>
+      <componentPart href="fraunhoferDemo.fujaba#_fhUPQJ8QEeSDApXOK6N3KA"/>
+    </componentInstances>
+    <componentInstances xsi:type="codegen:RefinedAtomicComponentInstance" name="approacherLine" allocatedResourceInstance="//@hpic/@hwplatformInstances.2/@embeddedHPIC/@resources.4">
+      <componentType xsi:type="component:StaticAtomicComponent" href="fraunhoferDemo.fujaba#_o9fgsJ8OEeSDApXOK6N3KA"/>
+      <portInstances xsi:type="instance_1:ParameterisableDiscreteSinglePortInstance" name="lineLight" connectorInstances="//@cic/@portConnectorInstances.20">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_wCks4LtxEeSNn-5VJKJ8hg"/>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="approacherLine_lineLight_InitApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="fraunhoferDemo.fujaba#_wCtP2rtxEeSNn-5VJKJ8hg"/>
+          <returnType xsi:type="types:PrimitiveDataType" href="fraunhoferDemo.fujaba#_FB0TQpJ7EeSSMde45fnrcg"/>
+        </bindings>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="approacherLine_lineLight_ExecApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="fraunhoferDemo.fujaba#_wCtP27txEeSNn-5VJKJ8hg"/>
+          <returnType xsi:type="types:PrimitiveDataType" href="fraunhoferDemo.fujaba#_FB0TRpJ7EeSSMde45fnrcg"/>
+        </bindings>
+      </portInstances>
+      <componentPart href="fraunhoferDemo.fujaba#_i0ZwoJ8QEeSDApXOK6N3KA"/>
+    </componentInstances>
+    <componentInstances xsi:type="codegen:RefinedAtomicComponentInstance" name="approacherDistance" allocatedResourceInstance="//@hpic/@hwplatformInstances.2/@embeddedHPIC/@resources.4">
+      <componentType xsi:type="component:StaticAtomicComponent" href="fraunhoferDemo.fujaba#_Vibi8JRJEeSZM-zEIRk3lw"/>
+      <portInstances xsi:type="instance_1:ParameterisableDiscreteSinglePortInstance" name="distance" connectorInstances="//@cic/@portConnectorInstances.23">
+        <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_wDMX8LtxEeSNn-5VJKJ8hg"/>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="approacherDistance_distance_InitApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="fraunhoferDemo.fujaba#_wDTstrtxEeSNn-5VJKJ8hg"/>
+          <returnType xsi:type="types:PrimitiveDataType" href="fraunhoferDemo.fujaba#_FB0TQpJ7EeSSMde45fnrcg"/>
+        </bindings>
+        <bindings xsi:type="realtimestatechartparameterbinding:APICallParameterBinding" name="approacherDistance_distance_ExecApi">
+          <parameter xsi:type="realtimestatechartparameter:APICallParameter" href="fraunhoferDemo.fujaba#_wDTst7txEeSNn-5VJKJ8hg"/>
+          <returnType xsi:type="types:PrimitiveDataType" href="fraunhoferDemo.fujaba#_FB0TRpJ7EeSSMde45fnrcg"/>
+        </bindings>
+      </portInstances>
+      <componentPart href="fraunhoferDemo.fujaba#__q90MKuxEeSOh7ww5c64Rw"/>
+    </componentInstances>
+    <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" connectorEndpointInstances="//@cic/@componentInstances.5/@portInstances.2 //@cic/@componentInstances.9/@portInstances.0"/>
+    <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" connectorEndpointInstances="//@cic/@componentInstances.0/@portInstances.2 //@cic/@componentInstances.9/@portInstances.2"/>
+    <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" connectorEndpointInstances="//@cic/@componentInstances.0/@portInstances.1 //@cic/@componentInstances.5/@portInstances.1"/>
+    <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" connectorEndpointInstances="//@cic/@componentInstances.0/@portInstances.3 //@cic/@componentInstances.5/@portInstances.3"/>
+    <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" connectorEndpointInstances="//@cic/@componentInstances.0/@portInstances.0 //@cic/@componentInstances.18/@portInstances.0"/>
+    <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" connectorEndpointInstances="//@cic/@componentInstances.9/@portInstances.3 //@cic/@componentInstances.18/@portInstances.2"/>
+    <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" connectorEndpointInstances="//@cic/@componentInstances.5/@portInstances.0 //@cic/@componentInstances.3/@portInstances.0">
+      <type xsi:type="component:AssemblyConnector" href="fraunhoferDemo.fujaba#_GdSIUJ6HEeSNj-oH_1Kb-Q"/>
+    </portConnectorInstances>
+    <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" connectorEndpointInstances="//@cic/@componentInstances.1/@portInstances.0 //@cic/@componentInstances.3/@portInstances.3">
+      <type xsi:type="component:AssemblyConnector" href="fraunhoferDemo.fujaba#_NaKvcJRWEeSZM-zEIRk3lw"/>
+    </portConnectorInstances>
+    <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" connectorEndpointInstances="//@cic/@componentInstances.6/@portInstances.0 //@cic/@componentInstances.3/@portInstances.2">
+      <type xsi:type="component:AssemblyConnector" href="fraunhoferDemo.fujaba#_M3i3wJ8QEeSDApXOK6N3KA"/>
+    </portConnectorInstances>
+    <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" connectorEndpointInstances="//@cic/@componentInstances.7/@portInstances.0 //@cic/@componentInstances.5/@portInstances.4">
+      <type xsi:type="component:AssemblyConnector" href="fraunhoferDemo.fujaba#_RavWIJ8QEeSDApXOK6N3KA"/>
+    </portConnectorInstances>
+    <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" connectorEndpointInstances="//@cic/@componentInstances.2/@portInstances.0 //@cic/@componentInstances.3/@portInstances.4">
+      <type xsi:type="component:AssemblyConnector" href="fraunhoferDemo.fujaba#_OF9ecJRWEeSZM-zEIRk3lw"/>
+    </portConnectorInstances>
+    <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" connectorEndpointInstances="//@cic/@componentInstances.4/@portInstances.0 //@cic/@componentInstances.3/@portInstances.1">
+      <type xsi:type="component:AssemblyConnector" href="fraunhoferDemo.fujaba#_SiO1cJRWEeSZM-zEIRk3lw"/>
+    </portConnectorInstances>
+    <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" connectorEndpointInstances="//@cic/@componentInstances.13/@portInstances.0 //@cic/@componentInstances.9/@portInstances.4">
+      <type xsi:type="component:AssemblyConnector" href="fraunhoferDemo.fujaba#_5K01gJ8PEeSDApXOK6N3KA"/>
+    </portConnectorInstances>
+    <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" connectorEndpointInstances="//@cic/@componentInstances.8/@portInstances.2 //@cic/@componentInstances.12/@portInstances.0">
+      <type xsi:type="component:AssemblyConnector" href="fraunhoferDemo.fujaba#_3rIkYJ8PEeSDApXOK6N3KA"/>
+    </portConnectorInstances>
+    <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" connectorEndpointInstances="//@cic/@componentInstances.10/@portInstances.0 //@cic/@componentInstances.8/@portInstances.1">
+      <type xsi:type="component:AssemblyConnector" href="fraunhoferDemo.fujaba#__peRoJRTEeSZM-zEIRk3lw"/>
+    </portConnectorInstances>
+    <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" connectorEndpointInstances="//@cic/@componentInstances.9/@portInstances.1 //@cic/@componentInstances.8/@portInstances.0">
+      <type xsi:type="component:AssemblyConnector" href="fraunhoferDemo.fujaba#_vTdQAJRUEeSZM-zEIRk3lw"/>
+    </portConnectorInstances>
+    <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" connectorEndpointInstances="//@cic/@componentInstances.11/@portInstances.0 //@cic/@componentInstances.8/@portInstances.3">
+      <type xsi:type="component:AssemblyConnector" href="fraunhoferDemo.fujaba#_8OTyUJRTEeSZM-zEIRk3lw"/>
+    </portConnectorInstances>
+    <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" connectorEndpointInstances="//@cic/@componentInstances.14/@portInstances.0 //@cic/@componentInstances.8/@portInstances.4">
+      <type xsi:type="component:AssemblyConnector" href="fraunhoferDemo.fujaba#_C6bu8Ku0EeSOh7ww5c64Rw"/>
+    </portConnectorInstances>
+    <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" connectorEndpointInstances="//@cic/@componentInstances.17/@portInstances.3 //@cic/@componentInstances.15/@portInstances.0">
+      <type xsi:type="component:AssemblyConnector" href="fraunhoferDemo.fujaba#_Dj5YcJRXEeSZM-zEIRk3lw"/>
+    </portConnectorInstances>
+    <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" connectorEndpointInstances="//@cic/@componentInstances.18/@portInstances.1 //@cic/@componentInstances.17/@portInstances.0">
+      <type xsi:type="component:AssemblyConnector" href="fraunhoferDemo.fujaba#_WY9x0J6bEeSB5YpXOU2UeA"/>
+    </portConnectorInstances>
+    <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" connectorEndpointInstances="//@cic/@componentInstances.17/@portInstances.2 //@cic/@componentInstances.20/@portInstances.0">
+      <type xsi:type="component:AssemblyConnector" href="fraunhoferDemo.fujaba#_l4GLIJ8QEeSDApXOK6N3KA"/>
+    </portConnectorInstances>
+    <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" connectorEndpointInstances="//@cic/@componentInstances.17/@portInstances.1 //@cic/@componentInstances.16/@portInstances.0">
+      <type xsi:type="component:AssemblyConnector" href="fraunhoferDemo.fujaba#_C9rtAJRXEeSZM-zEIRk3lw"/>
+    </portConnectorInstances>
+    <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" connectorEndpointInstances="//@cic/@componentInstances.19/@portInstances.0 //@cic/@componentInstances.18/@portInstances.3">
+      <type xsi:type="component:AssemblyConnector" href="fraunhoferDemo.fujaba#_iP6jgJ8QEeSDApXOK6N3KA"/>
+    </portConnectorInstances>
+    <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" connectorEndpointInstances="//@cic/@componentInstances.21/@portInstances.0 //@cic/@componentInstances.17/@portInstances.4">
+      <type xsi:type="component:AssemblyConnector" href="fraunhoferDemo.fujaba#_XrVc8KuyEeSOh7ww5c64Rw"/>
+    </portConnectorInstances>
+  </cic>
+</codegen:CodGenAllocation>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="de.uni_paderborn.fujaba.muml.timedstorydiagram.presentation.TimedstorydiagramModelWizardID"
+            name="%_UI_TimedstorydiagramModelWizard_label"
+            class="org.muml.reconfigurationverification.timedstorydiagram.presentation.TimedstorydiagramModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/TimedstorydiagramModelFile.gif">
+         <description>%_UI_TimedstorydiagramModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="de.uni_paderborn.fujaba.muml.timedstorydiagram.presentation.TimedstorydiagramEditorID"
+            name="%_UI_TimedstorydiagramEditor_label"
+            icon="icons/full/obj16/TimedstorydiagramModelFile.gif"
+            extensions="timedstorydiagram"
+            class="org.muml.reconfigurationverification.timedstorydiagram.presentation.TimedstorydiagramEditor"
+            contributorClass="org.muml.reconfigurationverification.timedstorydiagram.presentation.TimedstorydiagramActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated TimedStoryDiagrams -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.muml.reconfigurationverification.timedstorydiagram.presentation.TimedstorydiagramModelWizardID"
+            name="%_UI_TimedstorydiagramModelWizard_label"
+            class="org.muml.reconfigurationverification.timedstorydiagram.presentation.TimedstorydiagramModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/TimedstorydiagramModelFile.gif">
+         <description>%_UI_TimedstorydiagramModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated TimedStoryDiagrams -->
+      <editor
+            id="org.muml.reconfigurationverification.timedstorydiagram.presentation.TimedstorydiagramEditorID"
+            name="%_UI_TimedstorydiagramEditor_label"
+            icon="icons/full/obj16/TimedstorydiagramModelFile.gif"
+            extensions="timedstorydiagram"
+            class="org.muml.reconfigurationverification.timedstorydiagram.presentation.TimedstorydiagramEditor"
+            contributorClass="org.muml.reconfigurationverification.timedstorydiagram.presentation.TimedstorydiagramActionBarContributor">
+      </editor>
+   </extension>
+</plugin>

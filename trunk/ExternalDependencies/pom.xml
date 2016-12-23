@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.muml.external.group</groupId>
+  <artifactId>ExternalDependencies</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  
+   <properties>
+		<tycho-version>0.26.0</tycho-version>
+		<maven-compiler-plugin-version>2.5.1</maven-compiler-plugin-version>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<jacoco.version>0.7.4.201502262128</jacoco.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+  
+  <modules>
+    <module>org.muml.external.aopalliance</module>
+    <module>org.muml.external.aopalliance.feature</module>
+    <!-- <module>org.muml.external.buckminster</module> -->
+    <module>org.muml.external.guava</module>
+    <module>org.muml.external.guava.feature</module>
+    <module>org.muml.external.guice</module>
+    <module>org.muml.external.guice.feature</module>
+    <module>org.muml.external.guice.multibindings</module>
+    <module>org.muml.external.guice.multibindings.feature</module>
+    <module>org.muml.external.javax.inject</module>
+    <module>org.muml.external.javax.inject.feature</module>
+    <module>org.muml.external.opt4j</module>
+    <module>org.muml.external.opt4j.feature</module>
+    <module>org.muml.external.owlapi</module>
+    <module>org.muml.external.owlapi.feature</module>
+    <module>org.muml.external.repository</module>
+    <module>org.muml.external.sat4j.core</module>
+    <module>org.muml.external.sat4j.core.feature</module>
+    <module>org.muml.external.sat4j.pb</module>
+    <module>org.muml.external.sat4j.pb.feature</module>
+    <module>org.muml.external.unitontology</module>
+    <module>org.muml.external.unitontology.feature</module>
+  </modules>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-maven-plugin</artifactId>
+        <version>0.26.0</version>
+        <extensions>true</extensions>
+      </plugin>
+    </plugins>
+  </build>
+</project>

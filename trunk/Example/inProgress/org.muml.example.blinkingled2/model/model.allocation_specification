@@ -1,0 +1,13 @@
+model {
+	include 'platform:/plugin/org.muml.psm.allocation.language.xtext/operations/OCLContext.ocl'
+	constraint requiredLocation c1
+	{
+		descriptors(first,second);
+		ocl Tuple{first=self.getSWInstance('C1'),second=getECU('R1.0.1')}.oclAsSet();
+	}
+		constraint requiredLocation c2
+	{
+		descriptors(first,second);
+		ocl Tuple{first=self.getSWInstance('C2'),second=getECU('R1.0.2')}.oclAsSet();
+	}
+}

@@ -1,0 +1,1639 @@
+import transforms.lib.RTSC2RTSCdeepContainmentCopy;	
+
+// SD: unneeded?
+//import org.muml.cbs.qvtoblackbox.XTextSerializerLibUnit;
+
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype component uses pim::component('http://www.muml.org/pim/1.0.0');
+modeltype types uses pim::types('http://www.muml.org/pim/1.0.0');
+modeltype depLang uses 'http://www.muml.org/cbs/dependencylanguage/1.0.0';
+modeltype modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
+modeltype actLang uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
+modeltype behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype expressions uses core::expressions('http://www.muml.org/core/1.0.0');
+modeltype common uses core::expressions::common('http://www.muml.org/core/1.0.0');
+modeltype core uses 'http://www.muml.org/core/1.0.0';
+modeltype valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+
+transformation WeaveDependenciesIntoRTSC(inout input:modelinstance);
+
+property synBehavior : SynthesizableBehavior;
+
+configuration property nameOfComponentToSynthesize : String;
+configuration property componentToSynthesize: OrderedSet(AtomicComponent);
+
+main() {
+	log('huhu_weave');
+	assert fatal (not (componentToSynthesize->isEmpty() and nameOfComponentToSynthesize.oclIsUndefined())) with log('The configuration property nameOfComponentToSynthesize or componentToSynthesize must be specified.');
+	if(componentToSynthesize->oclIsUndefined() and input.objectsOfType(AtomicComponent)->notEmpty()) then {
+		if (input.objectsOfType(AtomicComponent)->exists(c : AtomicComponent | c.name.equalsIgnoreCase(nameOfComponentToSynthesize))){
+			componentToSynthesize += input.objectsOfType(AtomicComponent)->any(c : AtomicComponent | c.name.equalsIgnoreCase(nameOfComponentToSynthesize)).oclAsType(AtomicComponent);
+		}
+		else{
+			assert fatal (false) with log('There is no component with the name: '.concat(nameOfComponentToSynthesize));
+		}endif;
+	}endif;
+	assert fatal (componentToSynthesize->notEmpty()) with log('There is no atomic component (Error-Code: NoComp3).');
+	
+	// Add inner behavior to the RTSCs which will be copied
+	componentToSynthesize.extensions[SynthesizableBehavior]->forOne(synBeh){
+		synBehavior := synBeh;	
+	};
+	
+	if(not synBehavior.dependencyModel.oclIsUndefined()) then {
+		if(not synBehavior.dependencyModel.dependencies->isEmpty()) then {
+			// split up conlict free dependencies and conflicting ones
+			
+			var conflictFreeDependencies : OrderedSet(Dependency);// = object OrderedSet(Dependency){};
+			var dataMergeDependencies : OrderedSet(Dependency);
+			var clockMergeDependencies : OrderedSet(Dependency); 
+		
+		    synBehavior.dependencyModel.dependencies->forEach(d) {
+		    	if (d.oclIsTypeOf(depLang::DataMerge)) {
+		    		dataMergeDependencies += d;
+		    	} elif (d.oclIsTypeOf(depLang::ClockMerge)) {
+		    		clockMergeDependencies += d;
+		    	} else {
+		    		conflictFreeDependencies += d;
+		    	}
+		    };
+		
+		    conflictFreeDependencies->map Dependency2EObjects();
+		    
+		    dataMergeDependencies->map Dependency2EObjects();
+		    
+		    clockMergeDependencies->map Dependency2EObjects();
+			//synBehavior.dependencyModel.dependencies->map Dependency2EObjects();
+		}endif;
+		
+	}endif;
+	assert warning (not synBehavior.dependencyModel.oclIsUndefined()) with log('There is no dependency model.');
+	assert warning (synBehavior.dependencyModel.dependencies->notEmpty()) with log('There are no dependencies.');	
+}
+
+//blackbox helper serializeActionLanguage(obj:EObject):String;
+//blackbox helper serializeDependencyLanguage(obj:EObject):String;
+
+mapping Dependency:: Dependency2EObjects():Set(EObject) disjuncts
+	depLang::Synchronization::Synchronization2Channel,
+	depLang::ForbiddenStateCombination::SynthesisFSC,
+	depLang::ClockMerge::ClockMerge2Clock,
+	depLang::BoundedActiveState::BAS2Behavior,
+	depLang::DataMerge::DataMerge2Behavior,
+	depLang::TriggerMessage::TriggerMessage2Behavior,
+	ConditionalDependency::ConditionalDependency2Effects,
+	Dependency::failOnUnsupportedDependency;
+	
+	
+mapping Dependency:: failOnUnsupportedDependency():Set(Dependency){
+	init{
+		//assert warning (false) with log(serializeDependencyLanguage(self).concat(' is an unsupported dependency type.'));
+		result:=Set{self};
+	}
+}
+
+mapping depLang::TriggerMessage:: TriggerMessage2Behavior() : Set(EObject) {
+	init {
+		getTopState().parentStatechart.allSubobjectsOfKind(Transition)->forEach(t) {
+			addTriggerActionToTransition(t.oclAsType(Transition), self);
+		};
+		
+		//getTopState().name := getTopState().parentStatechart.allSubobjectsOfKind(Transition)->size().toString();
+	}
+}
+
+mapping depLang::DataMerge:: DataMerge2Behavior():Set(EObject) {
+	init {
+		// check if we merge into a variable ...
+		if (self.port.oclIsUndefined()) {
+		    // check if all variables are of the same type
+		    var v : Variable := self.variables->at(0);
+		    
+		    self.variables->excluding(v)->forEach(i) {
+		    	if (i.dataType != v.dataType) {
+		    		assert fatal (false) with log("Data types for data-merge operation do not match: '" + v.name + "'' and '" + i.name + "' are in conflict.");
+		    	}
+		    };
+		    
+		    // create variable to merge into
+		    var newVariable : Variable := object Variable{};
+		    newVariable.dataType := getDataType(v.dataType.oclAsType(PrimitiveDataType).primitiveType);
+		    
+            var variableName : EString;
+            
+            // create a new variable name if needed or get the one the user provided
+            if (self.variableName.oclIsUndefined()) {
+            	variableName := createVariableName("aux_bas_s");
+            } else {
+            	variableName := self.variableName;
+            }endif;
+            
+            newVariable.comment := variableName;
+            newVariable.name := variableName;
+            newVariable.initializeExpression := v.initializeExpression;
+            
+            getTopState().parentStatechart.variables += newVariable;
+            result += newVariable;
+            
+            // replace variables in statecharts with reference to the newly created one
+            self.variables->forEach(oldVariable) {
+                replaceVariableInRTSC(getTopState().parentStatechart, oldVariable.resolveoneIn(Variable::Variable2Variable), newVariable);
+            };
+		}
+		// ... or into a hybrid port 
+		else {
+			self.variables->forEach(oldVariable) {
+				replaceVariableInRTSC(getTopState().parentStatechart, oldVariable.resolveoneIn(Variable::Variable2Variable), self.port);
+			};
+		}endif;
+		
+		
+		
+		// remove the variables from the statecharts/regions because we don't need them any longer
+		self.variables->forEach(v) {
+		    getTopState().parentStatechart.allSubobjectsOfKind(RealtimeStatechart)->forEach(s) {
+		    	var statechart := s.oclAsType(RealtimeStatechart);
+		        statechart.variables := statechart.variables->excluding(v.resolveoneIn(Variable::Variable2Variable));
+		    };
+		};
+	}
+}
+
+mapping depLang::BoundedActiveState:: BAS2Behavior():Set(EObject){
+	init{
+		
+		// create auxiliary region
+		var region : Region := object Region{};
+		region.parentState := getTopState();
+		region.priority := getHighestPriorityForRegion(getTopState());
+		result += region;
+		
+		var statechart : RealtimeStatechart := object RealtimeStatechart{};
+		region.embeddedStatechart := statechart;
+		statechart.name := createRegionName(getTopState().embeddedRegions, "bas_region_");
+		statechart.parentRegion := region;
+		result += statechart;
+		
+		// create clock
+		var clock : Clock := object Clock{};
+		clock.name := createVariableName("aux_clock_");
+		clock.statechart := getTopState().parentStatechart;
+		
+		getTopState().parentStatechart.clocks += clock;
+		result += clock;
+		
+		// create safe state
+		var safeState : State := object State{};
+		safeState.name := "Safe";
+		safeState.initial := true;
+		safeState.parentStatechart := statechart;
+		
+		statechart.states += safeState;
+		result += safeState;
+				
+		// create unsafe state
+		var unsafeState : State := object State{};
+		unsafeState.name := "Unsafe";
+		unsafeState.parentStatechart := statechart;
+		
+		statechart.states += unsafeState;
+		result += unsafeState;
+		
+		// create self transition for safe state
+		var safeToSafeTransition : Transition := object Transition{};
+		safeToSafeTransition.priority := 1;
+		safeToSafeTransition.target := safeState;
+		safeToSafeTransition.source := safeState;
+		safeToSafeTransition.clockResets += clock;
+		
+		statechart.transitions += safeToSafeTransition;
+		result += safeToSafeTransition;
+		
+		// create transition from save to unsave
+		var safeToUnsafeTransition : Transition := object Transition{};
+		safeToUnsafeTransition.priority := 2;
+		safeToUnsafeTransition.target := unsafeState;
+		safeToUnsafeTransition.source := safeState;
+		
+		statechart.transitions += safeToUnsafeTransition;
+		result += safeToUnsafeTransition;
+		
+		// create transition form unsave to save
+		var unsafeToSafeTransition : Transition := object Transition{};
+        unsafeToSafeTransition.priority := 1;
+        unsafeToSafeTransition.target := safeState;
+        unsafeToSafeTransition.source := unsafeState;
+        unsafeToSafeTransition.clockResets += clock;
+        
+        statechart.transitions += unsafeToSafeTransition;
+        result += unsafeToSafeTransition;
+               
+        // TODO: support more clock condition types
+        var hybridCondition :HybridClockCondition := self.constraint.oclAsType(HybridClockCondition);
+        
+        // add clock to all states that shall be bound 
+        self.states->forEach(s){
+        	var constraint : ClockConstraint := object ClockConstraint{};
+        	constraint.clock := clock;
+        	constraint.operator := hybridCondition.operator;
+        	constraint.bound := hybridCondition.bound;
+        	
+        	s.resolveoneIn(State::State2State).invariants += constraint;
+
+        	//switch  {
+        	//	case (hybridCondition.operator = ComparingOperator::LESS) {
+        	//	
+        	//};
+        	
+        	//constraint.operator := ComparingOperator::LESS;        	
+        };
+        
+        // create a boolean variable for each state listed
+        // create entry and exit events for all states in the clock condition list
+        //var guardList : OrderedSet(String);
+        
+        //var i := 1;
+        hybridCondition.condition.oclAsType(StateStatusCondition).states->forEach(s) {
+        	// create variable
+           	var v : Variable := object Variable{};
+        	//var vtype : PrimitiveDataType := object PrimitiveDataType{};
+        	//vtype.primitiveType := PrimitiveTypes::BOOLEAN;
+        	        	
+        	v.dataType := getDataType(PrimitiveTypes::BOOLEAN);
+        	
+        	var variableName = createVariableName("aux_bas_s");
+        	//vtype.comment := "vtype: " + variableName;
+        	v.comment := variableName;
+        	v.name := variableName;
+        	v.initializeExpression := new LiteralExpression("false");
+        	
+        	getTopState().parentStatechart.variables += v;
+        	result += v;
+        	//result += vtype;
+        	        	        	        	
+        	// create events
+        	var synthesizedState : State := s.resolveoneIn(State::State2State);
+        	
+        	// create entry event
+        	var entryAssignment : Assignment := new Assignment(v, "true");
+            var entryActionBlock : Block := object Block{};
+            entryActionBlock.expressions += entryAssignment;
+
+            synthesizedState.entryEvent := object EntryEvent{};                
+            synthesizedState.entryEvent.action := object Action{};
+            synthesizedState.entryEvent.action.name := v.name + " := true";
+            synthesizedState.entryEvent.action.expressions += entryActionBlock;
+            
+            //synthesizedState.entryEvent.action.expressions += entryAssignment;
+                                    
+            // create exit event
+            var exitAssignment : Assignment := new Assignment(v, "false");
+            var exitActionBlock : Block := object Block{};
+            exitActionBlock.expressions += exitAssignment;
+            
+            synthesizedState.exitEvent := object ExitEvent{};
+            synthesizedState.exitEvent.action := object Action{};
+            synthesizedState.exitEvent.action.name := v.name + " := false";
+            synthesizedState.exitEvent.action.expressions := OrderedSet{};
+            synthesizedState.exitEvent.action.expressions += exitActionBlock;
+                        
+            // add guards for each state to transitions in auxiliary region
+            if (safeToUnsafeTransition.guard.oclIsUndefined()){
+            	safeToUnsafeTransition.guard := new TypedNamedElementExpression(v);
+            	unsafeToSafeTransition.guard := invertExpression(new TypedNamedElementExpression(v));
+            } else {         
+                var nextAndVariable := new TypedNamedElementExpression(v);
+                var nextOrVariable := invertExpression(new TypedNamedElementExpression(v));
+            
+                safeToUnsafeTransition.guard := composeExpressions(safeToUnsafeTransition.guard, nextAndVariable);         
+                unsafeToSafeTransition.guard := composeExpressionsUsingOperator(unsafeToSafeTransition.guard, nextOrVariable, LogicOperator::OR);
+            }endif;
+            // add to list for guards for transitions
+            //guardList += variableName;
+        };
+        
+        
+        // TODO: remove this
+/*        var firstName := guardList->at(0);
+        var v1 : Variable := getOrCreateVariable(firstName); 
+        //v1.name := firstName;
+        
+        safeToUnsafeTransition.guard := new TypedNamedElementExpression(v1);
+        unsafeToSafeTransition.guard := invertExpression(new TypedNamedElementExpression(v1));
+        
+        guardList->excluding(firstName)->forEach(variableName) {
+        	var v := getOrCreateVariable(variableName);
+        	//v.name := variableName;
+        	//v.comment := "happy we are together";
+                
+            //var andedVariables : LogicalExpression := 
+            //composeExpressions(v1, v);
+            var nextVariable := new TypedNamedElementExpression(v);
+            
+            safeToUnsafeTransition.guard := composeExpressions(safeToUnsafeTransition.guard, nextVariable);        	
+            unsafeToSafeTransition.guard := composeExpressionsUsingOperator(unsafeToSafeTransition.guard, invertExpression(nextVariable), LogicOperator::OR);
+        };*/
+                
+	}
+}
+
+mapping depLang::ClockMerge:: ClockMerge2Clock() : Set(EObject) {
+	init {
+		var clock : Clock := object Clock{};
+		clock.statechart := getTopState().parentStatechart;
+		
+	    if (self.clockName.oclIsUndefined()) {
+	    	// generate a name for the clock because none was given
+	    	clock.name := createUniqueName(getTopState().parentStatechart.clocks, "aux_clock_");
+	    } else {
+		  clock.name := self.clockName
+		}endif;
+		
+		result += clock;
+		
+		
+		self.clocks->forEach(c) {
+		    // replace references to clocks with the new one
+		    // for each clock do: scan the containing region/state
+		    var synthesizedClock := c.resolveoneIn(Clock::Clock2Clock);
+		    
+		    replaceClocksInRTSC(synthesizedClock.statechart, synthesizedClock, clock);
+		    
+		    // remove all referenced clocks
+			var statechart := synthesizedClock.statechart;
+		    statechart.clocks := statechart.clocks->excluding(synthesizedClock);			
+		};
+	}
+}
+
+mapping depLang::ForbiddenStateCombination:: SynthesisFSC() : Set(EObject) {
+	init {
+	
+	var enterChannel : SynchronizationChannel := object SynchronizationChannel{};
+	enterChannel.name := createChannelName();
+	enterChannel.state := getTopState();
+	
+	var leaveChannel : SynchronizationChannel := object SynchronizationChannel{};
+	leaveChannel.name := createChannelName();
+    leaveChannel.state := getTopState();
+    
+	result += enterChannel;
+	result += leaveChannel;
+	
+	//var region : Region:= object Region{};
+	//region.parentState := getTopState();
+	//region.embeddedStatechart:= 
+	//result += region;
+	//result := Set{self.map FSC2Channel()};
+	result += self.map FSC2Region(enterChannel, leaveChannel);
+	
+		//if (result.oclIsUndefined()){
+	//	result := Set{};
+		//}endif;
+		
+	//	self.states;
+	//var c= object SynchronizationChannel{};
+	//c.channelName := "hello";
+	//result +=c;
+	
+	}
+	//c.channelName := "s";
+	
+}
+
+mapping depLang::ForbiddenStateCombination:: FSC2Region(enterChannel : SynchronizationChannel, leaveChannel : SynchronizationChannel) : Set(EObject) {
+	init {
+	    var region := object Region{};
+	    	    
+		region.parentState := getTopState();
+		region.priority := getHighestPriorityForRegion(getTopState());
+		
+		var stateChart:= object RealtimeStatechart{};
+		stateChart.name := createRegionName(getTopState().embeddedRegions, "fsc_region_");
+		stateChart.parentRegion := region;
+		region.embeddedStatechart := stateChart;
+		
+		var notOccupiedState : State := object State{};
+		notOccupiedState.name := "NotOccupied";
+		notOccupiedState.parentStatechart := stateChart;
+		notOccupiedState.initial := true;
+		stateChart.states += notOccupiedState;
+		
+		var occupiedState : State := object State{};
+		occupiedState.name := "Occupied";
+		occupiedState.parentStatechart := stateChart;
+		stateChart.states += occupiedState;
+		
+		var transitionToOccupied : Transition := object Transition{};
+		transitionToOccupied.priority := 1;
+		transitionToOccupied.source := notOccupiedState;
+		transitionToOccupied.target := occupiedState;
+		transitionToOccupied.synchronization := createSynchronization(transitionToOccupied, enterChannel, false, null);
+		stateChart.transitions += transitionToOccupied;
+		
+		var transitionFromOccupied : Transition := object Transition{};
+		transitionFromOccupied.priority := 1;
+        transitionFromOccupied.source := occupiedState;
+        transitionFromOccupied.target := notOccupiedState;
+        transitionFromOccupied.synchronization := createSynchronization(transitionFromOccupied, leaveChannel, false, null);
+        stateChart.transitions += transitionFromOccupied;
+        
+        result += region;
+        result += stateChart;
+        result += occupiedState;
+        result += notOccupiedState;
+        result += transitionToOccupied;
+        result += transitionFromOccupied;
+		
+		//result.embeddedStatechart.
+		
+		self.states->forEach(t) {
+		    // search all incoming transitions and add a sending sync to enterChannel
+			t.resolveoneIn(State::State2State,State).incomingTransitions->forEach(incoming) {
+				incoming.synchronization := createSynchronization(incoming, enterChannel, true, null);
+			};
+			
+			// search all outgoing transition and add a sending sync to leaveChannel
+			t.resolveoneIn(State::State2State,State).outgoingTransitions->forEach(outgoing) {
+				outgoing.synchronization := createSynchronization(outgoing, leaveChannel, true, null);
+			}
+		};
+		
+	//self.states->map FSC2Sync();	
+	}
+	
+//	self.states.
+}
+
+	
+mapping depLang::Synchronization:: Synchronization2Channel() :Set(SynchronizationChannel){
+	init{
+		result:= Set{self.map Sync2Channel()};
+	}
+}	
+	
+mapping depLang::Synchronization:: Sync2Channel() :SynchronizationChannel{
+	init {
+		var channel:SynchronizationChannel:= getReferencedSynchronizationChannel(self.channelName);
+		if(channel.oclIsUndefined()) then {
+			result := object SynchronizationChannel{};
+			result.state := getTopState();
+		}
+		else{
+			result:= channel;
+		}endif;
+	}
+	name := self.channelName;
+	if(name.oclIsUndefined()){
+		name := createChannelName();
+	}endif;
+	selectorType := self.selectorType;
+	end{
+		
+		self.sendingEvents->map EventsOfSync2Synchronization(result,true,self.generalSelectorExpression);
+		self.receivingEvents->map EventsOfSync2Synchronization(result,false,self.generalSelectorExpression);
+	}	
+}
+
+mapping depLang::Event::EventsOfSync2Synchronization(channel:SynchronizationChannel,isSending:Boolean, expression:Expression):Set(rtsc::Synchronization) disjuncts
+	SynchronizationEvent::SychronizationEvent2Synchronization,
+	depLang::TransitionEvent::TransitionEvent2Synchronization,
+	depLang::StateEvent::StateEvent2Synchronization,
+	depLang::Event::failOnUnsupportedEvent2Synchronization;
+
+mapping SynchronizationEvent::SychronizationEvent2Synchronization(channel:SynchronizationChannel,isSending:Boolean, expression:Expression):Set(rtsc::Synchronization){
+	init{
+		if (result->isEmpty()) then{
+			result := Set{};
+		}endif;
+		result += self.event.map EventsOfSync2Synchronization(channel, isSending, self.selectorExpression);
+	}
+}
+
+mapping depLang::TransitionEvent::TransitionEvent2Synchronization(channel:SynchronizationChannel,isSending:Boolean, expression:Expression):Set(rtsc::Synchronization){
+	init{
+		if (result->isEmpty()) then{
+			result := Set{};
+		}endif;
+		getActionContainer(self).transitions->forEach(t) {
+			result += createSynchronization(t,channel,isSending,expression);
+		};
+	}
+}
+
+mapping depLang::StateEvent::StateEvent2Synchronization(channel:SynchronizationChannel,isSending:Boolean, expression:Expression):Set(rtsc::Synchronization){
+	init{
+		if (result->isEmpty()) then{
+			result := Set{};
+		}endif;
+		getActionContainer(self).stateevents->forEach(e) {
+			eventToTransitions(e)->forEach(t){
+				result += createSynchronization(t,channel,isSending,expression);
+			};
+		};
+	}
+}
+
+mapping depLang::Event::failOnUnsupportedEvent2Synchronization(channel:SynchronizationChannel,isSending:Boolean, defaultSelectorExpression:Expression):Set(rtsc::Synchronization){
+	init{
+		//assert fatal (false) with log(serializeDependencyLanguage(self).concat(' is an unsupported event type for Synchronization.'));
+	}
+}
+
+mapping ConditionalDependency::ConditionalDependency2Effects():Set(EObject){
+	init{
+		if (result->isEmpty()) then{
+			result := Set{};
+		}endif;
+		
+		var container:ActionContainer := getActionContainer(self.event);
+		
+		if(container->notEmpty())
+			self.effects->map Effect2Objects(container,self)->forEach(o){result += o;};
+	}
+}
+
+/**
+  * The dependency parameter can be used for the EnableDisable to ensure that they use the same variable for enabling transitions.
+  */
+mapping Effect::Effect2Objects(container:ActionContainer,dep:Dependency):Set(EObject) disjuncts
+	DataAssignmentEffect::DataAssignmentEffect2Assignments,
+	ClockResetEffect::ClockResetEffect2Transition,
+	EnableDisableEffect::EnableDisableEffect2GuardsAndActions,
+	Effect::failOnUnsupportedEffect;
+
+mapping DataAssignmentEffect::DataAssignmentEffect2Assignments(inout container:ActionContainer,dep:Dependency):Set(Assignment){
+	init{
+		if (result->isEmpty()) then{
+				result := Set{};
+		}endif;
+		
+		if(dep.oclIsKindOf(ConditionalDependency)){
+			var condition:Condition := dep.oclAsType(ConditionalDependency).condition;
+			if(not condition.oclIsUndefined()){
+				var container2:ActionContainer:= getActionContainerFromCondition(condition);
+				container.transitions += container2.transitions;
+				container.stateevents += container2.stateevents;
+			}endif;
+		}endif;
+		
+		container.transitions->forEach(t){
+			if(t.action.oclIsUndefined()){
+				t.action:= object Action{};
+			}endif;
+			var block:Block := object Block{};
+			t.action.expressions+=block;
+			var assign:Assignment := self.map Assignment2Assignment(block);
+			block.expressions+=assign;
+			appendName(t.action,"test");
+			result+=assign;
+		};
+		container.stateevents->forEach(e){
+			if(e.action.oclIsUndefined()){
+				e.action:= object Action{};
+			}endif;
+			var block:Block := object Block{};
+			e.action.expressions+=block;
+			var assign:Assignment := self.map Assignment2Assignment(block);
+			block.expressions+=assign;
+			appendName(e.action,"test");
+			result+=assign;
+		};
+	}
+}
+
+mapping ClockResetEffect::ClockResetEffect2Transition(inout container:ActionContainer,dep:Dependency):Set(EObject){
+	init{
+		if (result->isEmpty()) then{
+				result := Set{};
+		}endif;
+		
+		if(dep.oclIsKindOf(ConditionalDependency)){
+			var condition:Condition := dep.oclAsType(ConditionalDependency).condition;
+			if(not condition.oclIsUndefined()){
+				var container2:ActionContainer:= getActionContainerFromCondition(condition);
+				container.transitions += container2.transitions;
+				container.stateevents += container2.stateevents;
+			}endif;
+		}endif;
+		
+		container.transitions->forEach(t){
+			t.clockResets+= self.clocks->resolveoneIn(Clock::Clock2Clock,Clock).map GlobalizeClock(t);
+			result+=t;
+		};
+		container.stateevents->forEach(e){
+			e.clockResets+= self.clocks->resolveoneIn(Clock::Clock2Clock,Clock).map GlobalizeClock(e.container().oclAsType(State));
+			result+=e.clockResets;
+		}
+	}
+}
+
+mapping EnableDisableEffect::EnableDisableEffect2GuardsAndActions(inout container:ActionContainer,dep:Dependency):Set(EObject){
+	init{
+		//assert fatal (container.transitions->isEmpty() and container.stateevents->isEmpty()) with log(serializeDependencyLanguage(self).concat(' is not supported in combinition with Events.'));
+		var constraint:EObject := self.eContainer().oclAsType(ConditionalDependency).condition.map Condition2EObject(self);
+		
+		var con:ActionContainer:= getActionContainer(self.event);
+		var transitions:OrderedSet(Transition):= getAllTransitions(con);
+		var first:Boolean := true;
+		if(constraint.oclIsKindOf(Expression)){
+			transitions->forEach(t){
+				if(not first){
+					constraint := constraint.oclAsType(Expression).map Expression2Expression(self);
+				}endif;
+				if(not t.guard.oclIsUndefined()){
+					constraint:=composeExpressions(t.guard,constraint.oclAsType(Expression)); 
+				}endif;
+				t.guard:=constraint.oclAsType(Expression);
+			};
+		}
+		else{
+			if(constraint.oclIsKindOf(ClockConstraint)){
+				transitions->forEach(t){
+					if(not first){
+						constraint := constraint.oclAsType(ClockConstraint).map ClockConstraint2ClockConstraint(self);
+					}endif;
+					t.clockConstraints := constraint.oclAsType(ClockConstraint);
+				};
+			}endif;
+		}endif;
+	}
+}
+
+mapping Effect::failOnUnsupportedEffect(inout container:ActionContainer,dep:Dependency): Set(EObject){
+	init{
+		//assert warning (false) with log(serializeDependencyLanguage(self).concat(' is an unsupported effect type for conditional dependencies.'));
+		result := Set{};
+	}
+}
+
+mapping Condition::Condition2EObject(effect:EnableDisableEffect):EObject disjuncts
+	DataCondition::DataCondition2Expression,
+	StateStatusCondition::StateStatusCondition2Expression,
+	EventConstrainedIntervalCondition::EventConstrainedIntervalCondition2Expression,
+	ClockCondition::ClockCondition2ClockConstraint,
+	Condition::failOnUnsupportedCondition
+;
+
+mapping Condition::failOnUnsupportedCondition(effect:EnableDisableEffect):EObject{
+	init{
+		//assert warning (false) with log(serializeDependencyLanguage(self.eContainer()).concat('contains an unsupported condition.'));
+		result := self;
+	}
+}
+
+mapping DataCondition::DataCondition2Expression(effect:EnableDisableEffect):Expression{
+	init{
+		var constraint:Expression :=self.expression.map Expression2Expression(effect);
+		if(not effect.isEnable){
+				constraint := invertExpression(constraint);
+		}endif;	
+		result:= constraint;
+	}
+}
+
+mapping ClockCondition::ClockCondition2ClockConstraint(effect:EnableDisableEffect):EObject disjuncts
+// TODO: AuxiliaryClockCondition, HybridClockCondition
+	BasicClockCondition::BasicClockCondition2ClockConstraint,
+	ClockCondition::failOnUnsupportedClockCondition;
+	
+mapping BasicClockCondition::BasicClockCondition2ClockConstraint(effect:EnableDisableEffect):ClockConstraint{
+	clock := self.clock.resolveoneIn(Clock::Clock2Clock,Clock).map GlobalizeClock(getAllTransitions(getActionContainer(effect.event))->first());
+	if(not effect.isEnable){
+				operator := getInvertComparingOperator(self.operator);
+	}else{
+		operator := self.operator;
+	}endif;
+	bound := self.bound.map TimeValue2TimeValue(effect);
+}	
+	
+mapping ClockCondition::failOnUnsupportedClockCondition(effect:EnableDisableEffect):EObject{
+	init{
+		//assert warning (false) with log(serializeDependencyLanguage(self.eContainer()).concat('contains an unsupported clock condition.'));
+		result := self;
+	}
+}
+
+mapping StateStatusCondition::StateStatusCondition2Expression(effect:EnableDisableEffect):EObject{
+	init {
+		if(self.states->size()>1){
+			result := self;
+			//assert warning (false) with log(serializeDependencyLanguage(self.eContainer()).concat(': State Status is not yet supported for state combinations'));
+		
+		}
+		else{
+			var state:State := self.states->first().resolveoneIn(State::State2State,State);
+			var variable:Variable := self.map Condition2Variable('aux_state_'.concat(state.name));
+			getTopState().parentStatechart.variables+=variable;
+			var exp:Expression;
+			variable.dataType := getDataType(PrimitiveTypes::BOOLEAN);
+			if(variable.initializeExpression.oclIsUndefined()){
+				variable.initializeExpression := new LiteralExpression('false');
+			}endif;
+			
+			exp:= new TypedNamedElementExpression(variable);
+			if(state.entryEvent.oclIsUndefined()){
+				state.entryEvent:= object EntryEvent{};
+			}endif;
+			if(state.exitEvent.oclIsUndefined()){
+				state.exitEvent:= object ExitEvent{};
+			}endif;
+			
+			state.entryEvent.map ActionContainer2Assignment(variable,'true');
+			state.exitEvent.map ActionContainer2Assignment(variable,'false');
+	
+			if((not effect.isEnable) xor (self.kind=StateStatusKind::INACTIVE)){
+					exp := invertExpression(exp);
+			}endif;		
+			result := exp;
+		}endif;
+	}
+}
+
+mapping OclAny::ActionContainer2Assignment(inout variable:Variable, value:String):Assignment{
+	init{
+			var assign:Assignment := new Assignment(variable,value);
+			result := assign;
+			switch{
+				case (self.oclIsKindOf(Transition)){
+					setEventAssignment(self.oclAsType(Transition),assign,true);
+				};
+				case (self.oclIsKindOf(EntryOrExitEvent)){
+					setEventAssignment(self.oclAsType(EntryOrExitEvent),assign,true);
+				};
+			};
+	}
+}
+
+mapping EventConstrainedIntervalCondition::EventConstrainedIntervalCondition2Expression(effect:EnableDisableEffect):EObject{
+	init {
+		var variable:Variable := self.map Condition2Variable();
+		getTopState().parentStatechart.variables+=variable;
+		var exp:Expression;
+		if (not self.fromEvent.oclIsUndefined()){
+			self.fromEvent.map SetEvent2Assignment(variable);
+		}endif;
+		if(variable.dataType.oclIsKindOf(PrimitiveDataType) and
+			variable.dataType.oclAsType(PrimitiveDataType).primitiveType.=(PrimitiveTypes::BOOLEAN)){
+			exp:= new TypedNamedElementExpression(variable);
+			if (self.initialEnabled){
+				if(variable.initializeExpression.oclIsUndefined()){
+					variable.initializeExpression := new LiteralExpression('true');
+				}endif;
+			}else{
+				if(variable.initializeExpression.oclIsUndefined()){
+					variable.initializeExpression := new LiteralExpression('false');
+				}endif;
+			}endif;
+		}else{
+			//FIXME Here other expressions must could be created.
+		}endif;
+		if (not self.fromEvent.oclIsUndefined()){
+			self.untilEvent.map UnsetEvent2Assignment(variable);
+		}endif;
+	
+		if (variable.dataType.oclIsUndefined()){
+			//assert warning (false) with log(serializeDependencyLanguage(self.eContainer()).concat('contains an unsupported event.'));
+			// TODO: what does dump?
+			variable.dump();
+			result := self;
+		}else{
+			if(not effect.isEnable){
+					exp := invertExpression(exp);
+			}endif;		
+			result := exp;
+		}endif;		
+	}
+}
+
+mapping Condition::Condition2Variable(name:String):Variable{
+	init{
+		result := getOrCreateVariable(name);
+	}
+}
+
+mapping Condition::Condition2Variable():Variable{
+	name := createVariableName();
+}
+
+mapping dependencylanguage::Event::SetEvent2Assignment(inout variable:Variable):EObject{
+	init{
+		if(self.oclIsKindOf(SimpleEvent)){
+			variable.dataType := getDataType(PrimitiveTypes::BOOLEAN);
+			var assign:Assignment := new Assignment(variable,'true');
+			result := assign;
+			setDPEventAssignment(self,assign);
+		}else{
+			//assert warning (false) with log(serializeDependencyLanguage(self.eContainer()).concat('contains an unsupported first interval event.'));
+			result := self;
+		}endif;
+	}
+}
+
+mapping dependencylanguage::Event::UnsetEvent2Assignment(variable:Variable):Assignment{
+	init{
+		var assign:Assignment :=  object Assignment{};
+		assign.lhs_typedNamedElementExpression:= new TypedNamedElementExpression(variable);
+		assign.assignOperator:=AssignOperator::ASSIGN;
+		if(variable.dataType.oclIsKindOf(PrimitiveDataType) and
+				variable.dataType.oclAsType(PrimitiveDataType).primitiveType=(PrimitiveTypes::BOOLEAN)){
+			assign.rhs_assignExpression:= new LiteralExpression('false');
+		}else{
+			assign.rhs_assignExpression:= new LiteralExpression('0');
+		}endif;
+		result := assign;
+		setDPEventAssignment(self,assign);
+	}
+}
+
+ -- Override copy function of TypedNamedElement to resolve function
+-- Mapping of unresolve expressions to resolved expression
+-- Including the globalization of referenced TypedNamedElements if required.
+
+mapping TypedNamedElementExpression :: TypedNamedElementExpression2TypedNamedElementExpression(context:OclAny) : TypedNamedElementExpression {
+	var element:TypedNamedElement := self.typedNamedElement.resolveoneIn(TypedNamedElement::TypedNamedElement2TypedNamedElement,TypedNamedElement);
+	if(element.oclIsUndefined()){
+		element:=  self.typedNamedElement.resolveoneIn(Variable::Variable2Variable,Variable);
+	}endif;
+	if(element.oclIsUndefined()){
+		element:=  self.typedNamedElement;
+	}endif;
+	if(element.oclIsKindOf(Variable)){
+		element:= element.oclAsType(Variable).map GlobalizeVariable(context);
+	}endif;
+	typedNamedElement := element;
+	//indices += self.indices->map Expression2Expression(context);			
+}
+
+mapping LocalVariableDeclarationStatement :: Local2Local(context:OclAny) : LocalVariableDeclarationStatement {	
+	variable := self.variable.resolveoneIn(Variable::Variable2Variable,Variable).map GlobalizeVariable(context);
+}
+
+mapping inout Variable::GlobalizeVariable(context:OclAny):Variable{
+	init{result:=self;}
+	assert fatal (context.oclIsKindOf(EObject)) with log ("Globalization of Variable expects EObject.");
+	var tmp:EObject:=context.oclAsType(EObject);
+	while(not tmp.oclIsUndefined()){
+		if(tmp.oclIsKindOf(RealtimeStatechart)){
+			var statechart:RealtimeStatechart := tmp.oclAsType(RealtimeStatechart);
+			if(statechart.allAvailableVariables->excludes(self)){
+				getTopState().parentStatechart.variables+=self;
+			}endif;
+			break;
+		}endif;	
+		tmp:=tmp.eContainer();
+	};
+}
+
+mapping inout Clock::GlobalizeClock(context:OclAny):Clock{
+	init{result:=self;}
+	assert fatal (context.oclIsKindOf(EObject)) with log ("Globalization of Clock expects EObject.");
+	var tmp:EObject:=context.oclAsType(EObject);
+	while(not tmp.oclIsUndefined()){
+		if(tmp.oclIsKindOf(RealtimeStatechart)){
+			var statechart:RealtimeStatechart := tmp.oclAsType(RealtimeStatechart);
+			if(statechart.availableClocks->excludes(self)){
+				getTopState().parentStatechart.clocks+=self;
+			}endif;
+			break;
+		}endif;	
+		tmp:=tmp.eContainer();
+	};
+}		
+
+mapping inout Operation::GlobalizeOperation(context:OclAny):Operation{
+	init{result:=self;}
+	assert fatal (context.oclIsKindOf(EObject)) with log ("Globalization of Operation expects EObject.");
+	var tmp:EObject:=context.oclAsType(EObject);
+	while(not tmp.oclIsUndefined()){
+		if(tmp.oclIsKindOf(RealtimeStatechart)){
+			var statechart:RealtimeStatechart := tmp.oclAsType(RealtimeStatechart);
+			if(statechart.allAvailableOperations->excludes(self)){
+				getTopState().parentStatechart.operations+=self;
+			}endif;
+			break;
+		}endif;	
+		tmp:=tmp.eContainer();
+	};
+}	
+		
+mapping OperationCall ::Call2Call(context:OclAny) : OperationCall {
+	operation := self.operation.resolveoneIn(Operation::Operation2Operation,Operation).map GlobalizeOperation(context);
+	parameterBinding := self.parameterBinding->map Binding2Binding(context);	
+}
+
+mapping ParameterBinding :: Binding2Binding(context:OclAny) : ParameterBinding {
+		parameter := self.parameter.resolveoneIn(Parameter::Parameter2Parameter,Parameter);
+		if(parameter.oclIsUndefined()){
+			parameter := self.parameter
+		}endif;
+		value := self.value.map Expression2Expression(context);
+	}
+	
+-- constructor
+
+constructor Assignment::Assignment(inout v:Variable,value:String){	
+			lhs_typedNamedElementExpression:= new TypedNamedElementExpression(v);
+			assignOperator:=AssignOperator::ASSIGN;
+			rhs_assignExpression:= new LiteralExpression(value);
+}
+
+constructor Assignment::Assignment(inout lhs:TypedNamedElementExpression, op : AssignOperator, inout rhs : Expression){  
+            lhs_typedNamedElementExpression:= lhs;
+            assignOperator:=op;
+            rhs_assignExpression:= rhs;
+}
+
+constructor TypedNamedElementExpression::TypedNamedElementExpression(element:TypedNamedElement){
+	typedNamedElement:= element;
+}
+
+constructor LiteralExpression::LiteralExpression(text:String){
+	value:= text;
+}
+
+-- helper
+
+helper getOrCreateVariable(name:String):Variable{
+	var variable:Variable := getTopState().parentStatechart.allAvailableVariables->any(v:Variable|v.name.matches(name));
+	if(variable.oclIsUndefined()){
+		variable := object Variable{};
+		variable.name := name;
+	}endif;
+	return variable;
+}
+
+helper addTriggerActionToTransition(inout t : Transition, inout triggerMessage : TriggerMessage) {
+	        
+    t.events->forEach(event) { 
+    	
+    
+        if (event.oclIsKindOf(AsynchronousMessageEvent)) {
+            
+            /*var eventKind : EventKind;
+            
+            if () {
+            	
+            } else {
+            	
+            }*/
+                        
+            // find all transitions which consume a message
+            if (triggerMessage.messageEvent.kind = MessageEventKind::CONSUMING) {
+            
+                if (not t.triggerMessageEvent.oclIsUndefined()) {
+                
+                    if (t.triggerMessageEvent.kind = EventKind::TRIGGER) {
+                    
+                        if (t.triggerMessageEvent.message.instanceOf = triggerMessage.messageEvent.type) {
+                            var action := t.action;
+                        
+                            if (action.oclIsUndefined()) {
+                                action := object Action{};
+                                action.name := "trigger on " + triggerMessage.messageEvent.type.name;
+                            }endif;
+                            
+                            var block : Block := object Block{};
+                            action.expressions += block;
+                                
+                            triggerMessage.effects->forEach(e) {
+                                var effect = e.oclAsType(DataAssignmentEffect);
+                                block.expressions += effect.map Assignment2Assignment(block);
+                            };
+                            
+                            t.action := action;
+                        }
+                    }
+                }
+                
+                
+            }
+            // find all transitions which send this message
+            elif (triggerMessage.messageEvent.kind = MessageEventKind::SENDING) {
+                
+            } endif;
+        
+	    }endif;
+    };
+}
+
+//var effect := self.effects.oclAsType(DataAssignmentEffect);
+                            
+                            //new Assignment(effect.lhs_typedNamedElementExpression, "w");
+                            //var assignment : Assignment := new Assignment(effect.lhs_typedNamedElementExpression, effect.assignOperator, effect.rhs_assignExpression);
+
+/*log("a consuming dependency");
+                if (t.receiverMessageTypes->includes(self.messageEvent.type)) {
+                    //t.action.
+                    log("happy is happy as always being happy");
+                }endif;
+                
+                var r : TransitionEvent;*/
+
+/**
+    Returns the variable with the given name defined in getTopState().parentStatechart.
+    In contrast to getOrCreateVariable this helper does not use all variables which are accessible here but only those
+    which were defined in getTopState().
+*/
+helper getVariableInTopState(name:String):Variable{
+	var variable : Variable := getTopState().parentStatechart.variables->any(v:Variable | v.name.matches(name));
+	if (variable.oclIsUndefined()){
+		variable := object Variable{};
+		variable.name := name;
+	}endif;
+	return variable;
+}
+
+helper replaceVariableInRTSC(inout statechart: RealtimeStatechart, oldVariable : Variable, newVariable : TypedNamedElement) {
+	statechart.allSubobjectsOfKind(State)->forEach(s) {
+		replaceVariableInState(s.oclAsType(State), oldVariable, newVariable);
+	};
+	
+	statechart.allSubobjectsOfKind(Transition)->forEach(t) {
+		replaceVariableInTransition(t.oclAsType(Transition), oldVariable, newVariable);
+	}
+}
+
+helper replaceVariableInState(inout state : State, oldVariable : Variable, newVariable : TypedNamedElement) {
+	
+	if (not state.entryEvent.oclIsUndefined()){ 
+		if (not state.entryEvent.action.oclIsUndefined()) {
+	        state.entryEvent.action.expressions->forEach(e) {
+		        replaceTypedNamedElementInExpression(e, oldVariable, newVariable);
+		    };
+		};
+	};
+	
+	if (not state.doEvent.oclIsUndefined()) {
+		if (not state.doEvent.action.oclIsUndefined()) {
+	      	state.doEvent.action.expressions->forEach(e) {
+                replaceTypedNamedElementInExpression(e, oldVariable, newVariable);
+            };
+        };
+    };
+	
+	if (not state.exitEvent.oclIsUndefined()) {
+		if (not state.exitEvent.action.oclIsUndefined()) {
+			state.exitEvent.action.expressions->forEach(e) {
+                replaceTypedNamedElementInExpression(e, oldVariable, newVariable);
+            };
+		};
+	};
+	
+}
+
+helper replaceVariableInTransition(inout transition : Transition, oldVariable : Variable, newVariable : TypedNamedElement) {
+	if (not transition.guard.oclIsUndefined()) {
+        replaceTypedNamedElementInExpression(transition.guard, oldVariable, newVariable);
+    };
+    
+    if (not transition.action.oclIsUndefined()) {
+    	transition.action.expressions->forEach(e) {
+    	   replaceTypedNamedElementInExpression(e, oldVariable, newVariable);
+    	};
+    };
+}
+
+helper replaceTypedNamedElementInExpression(inout exprTree : Expression, oldTNE :TypedNamedElement, newTNE : TypedNamedElement) {
+
+    switch{
+    	case (exprTree.oclIsTypeOf(ArrayIndexExpression)){
+    		var aie := exprTree.oclAsType(ArrayIndexExpression);
+    		replaceTypedNamedElementInExpression(aie.index, oldTNE, newTNE);
+    	};
+    	case (exprTree.oclIsTypeOf(ArrayInitializeExpression)) {
+    		var aie := exprTree.oclAsType(ArrayInitializeExpression);
+    		aie.expressions->forEach(e) {
+    			replaceTypedNamedElementInExpression(e, oldTNE, newTNE);
+    		};
+    	}
+    	case (exprTree.oclIsTypeOf(Assignment)) {
+    		var assignment := exprTree.oclAsType(Assignment);
+    		
+    		replaceTypedNamedElementInExpression(assignment.lhs_typedNamedElementExpression, oldTNE, newTNE);
+            replaceTypedNamedElementInExpression(assignment.rhs_assignExpression, oldTNE, newTNE);
+    	}
+//    	case (exprTree.oclIsTypeOf(AttributeAccessorExpression)) {
+//            var aae := exprTree.oclAsType(AttributeAccessorExpression);
+//            replaceTypedNamedElementInExpression(aae, oldTNE, newTNE);
+//        }
+        case (exprTree.oclIsTypeOf(DiscreteInteractionEndpointReference)) {
+            var dier := exprTree.oclAsType(DiscreteInteractionEndpointReference);
+            replaceTypedNamedElementInExpression(dier.position, oldTNE, newTNE);
+            replaceTypedNamedElementInExpression(dier.typedNamedElementExpression, oldTNE, newTNE);
+        }
+        case (exprTree.oclIsTypeOf(DoWhileLoop)) {
+            var doWhileLoop := exprTree.oclAsType(DoWhileLoop);
+            
+            doWhileLoop.expressions->forEach(e) {
+            	replaceTypedNamedElementInExpression(e, oldTNE, newTNE);
+            };
+            
+            replaceTypedNamedElementInExpression(doWhileLoop.block, oldTNE, newTNE);
+            replaceTypedNamedElementInExpression(doWhileLoop.loopTest, oldTNE, newTNE);
+        }
+        case (exprTree.oclIsTypeOf(ForLoop)) {
+            var forLoop := exprTree.oclAsType(ForLoop);
+            
+            forLoop.expressions->forEach(e) {
+                replaceTypedNamedElementInExpression(e, oldTNE, newTNE);
+            };
+            
+            replaceTypedNamedElementInExpression(forLoop.block, oldTNE, newTNE);
+            replaceTypedNamedElementInExpression(forLoop.loopTest, oldTNE, newTNE);
+            replaceTypedNamedElementInExpression(forLoop.initializeExpression, oldTNE, newTNE);
+            replaceTypedNamedElementInExpression(forLoop.countingExpression, oldTNE, newTNE);
+        }
+//        case (exprTree.oclIsTypeOf(ElementAccessorExpression)) {
+//            var eae := exprTree.oclAsType(ElementAccessorExpression);
+//            replaceTypedNamedElementInExpression(eae, oldTNE, newTNE);
+//        }
+        case (exprTree.oclIsTypeOf(IfStatement)) {
+            var ifStatement := exprTree.oclAsType(IfStatement);
+            
+            replaceTypedNamedElementInExpression(ifStatement.ifCondition, oldTNE, newTNE);
+            replaceTypedNamedElementInExpression(ifStatement.ifBlock, oldTNE, newTNE);
+            
+            ifStatement.elseIfConditions->forEach(e) {
+            	replaceTypedNamedElementInExpression(e, oldTNE, newTNE);
+            };
+            
+            ifStatement.elseIfBlocks->forEach(b) {
+            	replaceTypedNamedElementInExpression(b, oldTNE, newTNE);
+            };
+            
+            replaceTypedNamedElementInExpression(ifStatement.elseBlock, oldTNE, newTNE);
+        }
+//        case (exprTree.oclIsTypeOf(LocalVariableDeclarationStatement)) {
+//            var lvds := exprTree.oclAsType(LocalVariableDeclarationStatement);
+//            replaceTypedNamedElementInExpression(lvds, oldTNE, newTNE);
+//        }
+//        case (exprTree.oclIsTypeOf(NondeterministicChoiceExpression)) {
+//            var nce := exprTree.oclAsType(NondeterministicChoiceExpression);
+//            replaceTypedNamedElementInExpression(nce, oldTNE, newTNE);
+//        }
+        case (exprTree.oclIsTypeOf(OperationCall)) {
+            var oc := exprTree.oclAsType(OperationCall);
+            
+            oc.parameterBinding->forEach(b) {
+            	replaceTypedNamedElementInExpression(b.value, oldTNE, newTNE);
+            };
+        }
+//        case (exprTree.oclIsTypeOf(PositionSelector)) {
+//            var ps := exprTree.oclAsType(PositionSelector);
+//            replaceTypedNamedElementInExpression(ps, oldTNE, newTNE);
+//        }
+        case (exprTree.oclIsTypeOf(ReturnStatement)) {
+            var rt := exprTree.oclAsType(ReturnStatement);
+            replaceTypedNamedElementInExpression(rt.expression, oldTNE, newTNE);
+        }
+        case (exprTree.oclIsTypeOf(TimeValueExpression)) {
+            var tve := exprTree.oclAsType(TimeValueExpression);
+            replaceTypedNamedElementInExpression(tve.timeValue.value, oldTNE, newTNE);
+        }
+//        case (exprTree.oclIsTypeOf(TriggerMessageExpression)) {
+//            var tme := exprTree.oclAsType(TriggerMessageExpression);
+//            replaceTypedNamedElementInExpression(tme, oldTNE, newTNE);
+//        }
+        case (exprTree.oclIsTypeOf(TypedNamedElementExpression)) {
+            var tnee := exprTree.oclAsType(TypedNamedElementExpression);
+            
+            if (tnee.typedNamedElement = oldTNE) {
+            	tnee.typedNamedElement := newTNE;
+            };
+            
+            tnee.elementAccessors->forEach(e) {
+            	replaceTypedNamedElementInExpression(e, oldTNE, newTNE);
+            }
+        }
+        case (exprTree.oclIsTypeOf(WhileLoop)) {
+            var whileLoop := exprTree.oclAsType(WhileLoop);
+            
+            whileLoop.expressions->forEach(e) {
+            	replaceTypedNamedElementInExpression(e, oldTNE, newTNE);
+            };
+            
+            replaceTypedNamedElementInExpression(whileLoop.block, oldTNE, newTNE);
+            replaceTypedNamedElementInExpression(whileLoop.loopTest, oldTNE, newTNE);
+        }
+        // Loop is the supertype to other loops, thus it has to be the last to check
+        case (exprTree.oclIsTypeOf(Loop)) {
+            var loop := exprTree.oclAsType(Loop);
+            
+            loop.expressions->forEach(e) {
+                replaceTypedNamedElementInExpression(e, oldTNE, newTNE);
+            };
+            
+            replaceTypedNamedElementInExpression(loop.block, oldTNE, newTNE);
+            replaceTypedNamedElementInExpression(loop.loopTest, oldTNE, newTNE);
+        }
+        // Block is supertype to all loops
+        case (exprTree.oclIsTypeOf(Block)) {
+            var block := exprTree.oclAsType(Block);
+            
+            block.expressions->forEach(e) {
+                replaceTypedNamedElementInExpression(e, oldTNE, newTNE);
+            };
+        }
+        case (exprTree.oclIsTypeOf(ArithmeticExpression)) {
+        	var ae := exprTree.oclAsType(ArithmeticExpression);
+        	replaceTypedNamedElementInExpression(ae.leftExpression, oldTNE, newTNE);
+        	replaceTypedNamedElementInExpression(ae.rightExpression, oldTNE, newTNE);
+        }
+        case (exprTree.oclIsTypeOf(BinaryExpression)) {
+            var be := exprTree.oclAsType(BinaryExpression);
+            replaceTypedNamedElementInExpression(be.leftExpression, oldTNE, newTNE);
+            replaceTypedNamedElementInExpression(be.rightExpression, oldTNE, newTNE);
+        }
+        case (exprTree.oclIsTypeOf(ComparisonExpression)) {
+            var ce := exprTree.oclAsType(ComparisonExpression);
+            replaceTypedNamedElementInExpression(ce.leftExpression, oldTNE, newTNE);
+            replaceTypedNamedElementInExpression(ce.rightExpression, oldTNE, newTNE);
+        }
+//        case (exprTree.oclIsTypeOf(LiteralExpression)) {
+//            var varvar := exprTree.oclAsType(LiteralExpression);
+//            replaceTypedNamedElementInExpression(varvar, oldTNE, newTNE);
+//        }
+        case (exprTree.oclIsTypeOf(LogicalExpression)) {
+            var le := exprTree.oclAsType(LogicalExpression);
+            replaceTypedNamedElementInExpression(le.leftExpression, oldTNE, newTNE);
+            replaceTypedNamedElementInExpression(le.rightExpression, oldTNE, newTNE);
+        }
+        case (exprTree.oclIsTypeOf(UnaryExpression)) {
+            var ue := exprTree.oclAsType(UnaryExpression);
+            replaceTypedNamedElementInExpression(ue.enclosedExpression, oldTNE, newTNE);
+        }
+    };
+
+	//var qwe : TypedNamedElementExpression;
+	//qwe.typedNamedElement := object HybridPort{};
+}
+
+helper replaceClocksInRTSC(inout statechart: RealtimeStatechart, oldClock: Clock, newClock: Clock){
+	statechart.allSubobjectsOfKind(State)->forEach(s) {
+	   replaceClocksInStates(s.oclAsType(State), oldClock, newClock);
+	};
+	
+	statechart.allSubobjectsOfKind(Transition)->forEach(t) {
+		replaceClocksInTransitions(t.oclAsType(Transition), oldClock, newClock);
+	}
+}
+
+helper replaceClocksInStates(inout state:State, oldClock: Clock, newClock: Clock) { 
+    
+	// replace clock reset in entry events
+	var entryEvent := state.entryEvent;
+	
+	if (entryEvent.clockResets->includes(oldClock)) {
+	   entryEvent.clockResets := entryEvent.clockResets->excluding(oldClock)->including(newClock); 
+	}endif;
+	
+	// replace clock reset in exit events
+    var exitEvent := state.exitEvent;
+    
+    if (exitEvent.clockResets->includes(oldClock)) {
+       exitEvent.clockResets := exitEvent.clockResets->excluding(oldClock)->including(newClock); 
+    }endif;
+    
+    //state.embeddedRegions->forEach(r){
+    //	r.embeddedStatechart.allSubobjectsOfKind(State))
+    //};
+}
+
+/**
+   Replace references to clocks in transitions.
+   These are: clock resets, clock constraints
+   
+   Notice: clocks are not allowed in guards. 
+*/
+helper replaceClocksInTransitions(inout transition:Transition, oldClock: Clock, newClock: Clock) {
+    // replace in clock resets
+    if (transition.clockResets->includes(oldClock)) {
+       transition.clockResets := transition.clockResets->excluding(oldClock)->including(newClock); 
+    }endif;
+    
+    // replace in clock constraints
+    transition.clockConstraints->forEach(c) {
+    	if (c.clock = oldClock){
+    		c.clock := newClock;
+    	}
+    };
+
+    // replace absolute deadlines
+    transition.absoluteDeadlines->forEach(d) {
+    	if (d.clock = oldClock) { 
+    		d.clock := newClock;
+    	}
+    };
+         
+}
+
+helper createRegionName(list:OrderedSet(Region), prefix:String) : String {
+    var states : OrderedSet(NamedElement) := object OrderedSet(NamedElement){};
+    
+	list->forEach(r) {
+	   states += r.embeddedStatechart;
+	};
+	
+	return createUniqueName(states, prefix);
+}
+
+helper createVariableName(prefix:String):String{
+	return createUniqueName(getTopState().parentStatechart.allAvailableVariables,prefix);
+}
+
+helper createVariableName():String{
+	return createUniqueName(getTopState().parentStatechart.allAvailableVariables,'aux_var_');
+}
+
+helper createChannelName():String{
+	return createUniqueName(getTopState().allAvailableChannels,'aux_ch_');
+}
+
+helper createUniqueName(list:OrderedSet(NamedElement),prefix:String):String{
+	var number:Integer := 1;
+	while(list->exists(e:NamedElement|e.name.matches(prefix.concat(number.toString())))){
+		number := number + 1;
+	};
+	return prefix.concat(number.toString());
+}
+
+helper createSynchronization(inout transition:Transition, channel:SynchronizationChannel,isSending:Boolean, expression:Expression):rtsc::Synchronization{
+	var sync:rtsc::Synchronization := null;
+	if(transition.synchronization.oclIsUndefined()) then {
+		sync := object rtsc::Synchronization{};
+		sync.syncChannel:=channel;
+		transition.synchronization:=sync;
+		if(isSending) then {
+			sync.kind:=SynchronizationKind::SEND;
+		}
+		else{
+			sync.kind:=SynchronizationKind::RECEIVE;
+		}endif;
+		sync.selectorExpression := expression.map Expression2Expression(transition);
+	}
+	else{
+		assert fatal (false) with log('The transition '.concat(transition.toString()).concat(' already contains a synchronization.'));
+	}endif;
+	return sync;
+}
+
+helper composeExpressions(left:Expression, right:Expression):Expression{
+	    var compos:LogicalExpression := object LogicalExpression{};
+        compos.operator:= LogicOperator::AND;
+        compos.leftExpression:= left;
+        compos.rightExpression:=right;
+        return compos;
+}
+
+helper composeExpressionsUsingOperator(left: Expression, right:Expression, operator:LogicOperator) :Expression{
+	var compos:LogicalExpression := object LogicalExpression{};
+        compos.operator:= operator;
+        compos.leftExpression:= left;
+        compos.rightExpression:=right;
+        return compos;
+}
+
+helper invertExpression(exp:Expression):Expression{
+	var inverted:UnaryExpression := object UnaryExpression{};
+	inverted.operator:=UnaryOperator::NOT;
+	inverted.enclosedExpression:=exp;
+	return inverted;
+}
+
+helper setDPEventAssignment(inout event:dependencylanguage::Event,inout inputassign:Assignment){
+	var assign:Assignment := inputassign;
+	var con:ActionContainer:= getActionContainer(event);
+	var first:Boolean:=true;
+	con.transitions->forEach(t){
+			assign:= setEventAssignment(t,assign,first);
+			first:=false;
+	};
+	con.stateevents->forEach(e){
+		assign:= setEventAssignment(e,assign,first);
+		first:=false;
+	};
+}
+
+helper setEventAssignment(inout event:Transition,inout inputassign:Assignment,inout first:Boolean):Assignment{
+		var assign:Assignment := inputassign;
+		if(event.action.oclIsUndefined()){
+			event.action:= object Action{};
+		}endif;
+		var block:Block := object Block{};
+		event.action.expressions+=block;
+		if(not first){
+			assign := assign.map Assignment2Assignment(block);
+		}endif;
+		block.expressions+=assign;
+		appendName(event.action,"test");
+		return assign;	
+}
+
+helper setEventAssignment(inout event:EntryOrExitEvent,inout inputassign:Assignment,inout first:Boolean):Assignment{
+		var assign:Assignment := inputassign;
+		if(event.action.oclIsUndefined()){
+			event.action:= object Action{};
+		}endif;
+		var block:Block := object Block{};
+		event.action.expressions+=block;
+		if(not first){
+			assign := assign.map Assignment2Assignment(block);
+		}endif;
+		block.expressions+=assign;
+		appendName(event.action,"test");
+		return assign;	
+}
+
+helper appendName(inout element:NamedElement,name:String){
+	if(element.name.oclIsUndefined() or element.name.startsWith('unable to serialize expression')){
+		element.name:=name;
+	}
+	else{
+		element.name:= element.name.concat('; ').concat(name);
+	}endif;
+}
+
+helper getHighestPriorityForRegion(state : State) :Integer{
+    var max : Integer:=-1;
+	state.embeddedRegions->forEach(r) {
+		if (r.priority > max) {
+			max := r.priority;
+		}
+	};
+	
+	return max + 1; 
+}
+
+-- queries
+property topState:State;
+
+query getTopState():State{
+	if(topState.oclIsUndefined()){
+		if(componentToSynthesize->first().behavior.oclIsKindOf(RealtimeStatechart)){
+			topState := componentToSynthesize->first().behavior.oclAsType(RealtimeStatechart).states->first();
+		}endif;		
+	assert fatal (not topState.oclIsInvalid()) with log('Top state or component behavior is missing.');
+	}endif;
+	return topState;
+}
+
+query getReferencedSynchronizationChannel(name:String):SynchronizationChannel{
+	return getReferencedElement(name,'SynchronizationChannel').oclAsType(SynchronizationChannel);
+}
+
+query getReferencedElement(name:String, type:String):EObject{
+	if(type.matches('SynchronizationChannel')) then {
+		return getTopState().channels->collect(c:SynchronizationChannel|c.name.matches(name))->first().oclAsType(EObject);
+	}endif;
+	return null;
+}
+
+query getActionContainer(unresolvedEvent:depLang::Event):ActionContainer{
+	switch{
+		case(unresolvedEvent.oclIsKindOf(depLang::TransitionEvent))
+			return object ActionContainer {transitions:= OrderedSet{unresolvedEvent.oclAsType(depLang::TransitionEvent).transition.resolveoneIn(Transition::Transition2Transition,Transition)}};
+		case(unresolvedEvent.oclIsKindOf(depLang::StateEvent)){
+			var event:depLang::StateEvent:=unresolvedEvent.oclAsType(depLang::StateEvent);
+			var actionTarget: EntryOrExitEvent;
+			switch{
+				case (event.kind.=(StateEventKind::ENTRY)){
+					actionTarget := event.state.resolveoneIn(State::State2State,State).entryEvent;
+					if(actionTarget.oclIsUndefined()){
+						actionTarget := object EntryEvent{};
+						//actionTarget.kind := EventKind::RAISE;
+						event.state.resolveoneIn(State::State2State,State).entryEvent:= actionTarget.oclAsType(EntryEvent);
+					}endif;
+				};
+				case (event.kind.=(StateEventKind::EXIT)){
+					actionTarget := event.state.resolveoneIn(State::State2State,State).exitEvent;
+					if(actionTarget.oclIsUndefined()){
+						actionTarget := object ExitEvent{};
+						//actionTarget.kind := EventKind::TRIGGER;
+						event.state.resolveoneIn(State::State2State,State).exitEvent:= actionTarget.oclAsType(ExitEvent);
+					}endif;
+				};
+			};
+			return object ActionContainer {stateevents:=OrderedSet{actionTarget};}
+		};
+		case (unresolvedEvent.oclIsKindOf(CompositionEvent)){
+			var composite:CompositionEvent := unresolvedEvent.oclAsType(CompositionEvent);
+			switch{
+				case (composite.kind=LogicOperator::OR){
+					var container:ActionContainer:= object ActionContainer{};
+					var left:ActionContainer:= getActionContainer(composite.leftEvent);
+					container.transitions+=left.transitions;
+					container.stateevents+=left.stateevents;
+					var right:ActionContainer:= getActionContainer(composite.rightEvent);
+					container.transitions+=right.transitions;
+					container.stateevents+=right.stateevents;
+					return container;
+				}
+			};
+		};
+	};
+	//assert warning (false) with log(serializeDependencyLanguage(unresolvedEvent).concat('is not yet supported for the transition determination.'));
+	return object ActionContainer{};
+}
+
+query getActionContainerFromCondition(condition:Condition):ActionContainer{
+	switch{
+		case(condition.oclIsKindOf(EventConstrainedIntervalCondition)){
+					var e:depLang::Event:= condition.oclAsType(EventConstrainedIntervalCondition).fromEvent;
+					return getActionContainer(e);
+		};
+		
+		case (condition.oclIsKindOf(CompositionCondition)){
+			var cond:CompositionCondition := condition.oclAsType(CompositionCondition);
+			switch{
+				case (cond.kind=LogicOperator::OR){
+					var container:ActionContainer:= object ActionContainer{};
+					var left:ActionContainer:= getActionContainerFromCondition(cond.leftCondition);
+					container.transitions+=left.transitions;
+					container.stateevents+=left.stateevents;
+					var right:ActionContainer:= getActionContainerFromCondition(cond.rightCondition);
+					container.transitions+=right.transitions;
+					container.stateevents+=right.stateevents;
+					return container;
+				}
+			};
+		};
+	};
+	//assert warning (false) with log(serializeDependencyLanguage(condition).concat(' is an unsupported condition type for conditional dependencies.'));
+	return object ActionContainer{};
+}
+
+
+query eventToTransitions(event:EntryOrExitEvent):OrderedSet(Transition){
+	switch{
+		case(event.oclIsKindOf(EntryEvent))
+			return event.container().oclAsType(State).incomingTransitions;
+		case(event.oclIsKindOf(ExitEvent))
+			return event.container().oclAsType(State).outgoingTransitions;
+	};
+	assert warning (false) with log(event.toString().concat('is not yet supported for the transition determination.'));
+	return null;
+}
+
+query getAllTransitions(container:ActionContainer):OrderedSet(Transition){
+		var transitions:OrderedSet(Transition);
+		container.transitions->forEach(t){
+			transitions += t;
+		};
+		container.stateevents->forEach(e){
+			eventToTransitions(e)->forEach(t){
+				transitions += t;
+			};
+		};
+		return transitions;
+}
+
+query getInvertComparingOperator(op:ComparingOperator):ComparingOperator{
+	switch{
+		case (op.=(ComparingOperator::LESS))
+			return ComparingOperator::GREATER_OR_EQUAL;
+		case (op.=(ComparingOperator::LESS_OR_EQUAL))
+			return ComparingOperator::GREATER;
+		case (op.=(ComparingOperator::GREATER_OR_EQUAL))
+			return ComparingOperator::LESS;
+		case (op.=(ComparingOperator::GREATER))
+			return ComparingOperator::LESS_OR_EQUAL;
+		case (op.=(ComparingOperator::EQUAL))
+			return ComparingOperator::UNEQUAL;
+		case (op.=(ComparingOperator::UNEQUAL))
+			return ComparingOperator::EQUAL;
+	};
+	assert warning (false) with log ('Inverting Comparing Operator failt.');
+	return op;
+}
+
+query getDataType(pType:PrimitiveTypes):DataType{
+	return getModelElementCategory(componentToSynthesize->first(),'org.muml.types.category')
+		.modelElements[PrimitiveDataType]->any(type:PrimitiveDataType|type.primitiveType=(pType));
+}
+
+query getModelElementCategory(context:EObject, key:String):ModelElementCategory{
+	var tmp:EObject := context;
+	while(not tmp.oclIsUndefined()){
+		if(tmp.oclIsKindOf(RootNode)){
+			var category:ModelElementCategory := tmp.oclAsType(RootNode).categories->any(c:ModelElementCategory|c.key.=(key));
+			assert warning (not category.oclIsUndefined()) with log ('ModelElementCategory '.concat(key).concat(' not found for ').concat(context.toString()));
+			return category;
+		}
+		else{
+			tmp:=tmp.eContainer();
+		}
+	};
+	assert warning (false) with log ('ModelElementCategory '.concat(key).concat(' not found for ').concat(context.toString()));
+	return null;
+}
+
+-- intermediate classes
+
+//FIXME A generic superclass vor both types is required that has a action as containment. This would save a lot code duplicates
+
+intermediate class ActionContainer{
+	references transitions:Transition[*]; 
+	references stateevents:EntryOrExitEvent[*]; 
+}

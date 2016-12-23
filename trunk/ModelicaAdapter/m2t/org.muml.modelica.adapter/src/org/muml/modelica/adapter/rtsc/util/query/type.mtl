@@ -1,0 +1,75 @@
+[module type('http://www.muml.org/pim/behavior/1.0.0',
+				'http://www.muml.org/core/1.0.0',
+				'http://www.muml.org/pim/actionlanguage/1.0.0',
+				'http://www.muml.org/pim/msgtype/1.0.0',
+				'http://www.muml.org/pim/types/1.0.0',
+				'http://www.muml.org/pim/component/1.0.0',
+				'http://www.muml.org/pim/instance/1.0.0',
+				'http://www.muml.de/modelica/transform/1.0.0',
+				'http://www.muml.org/pim/realtimestatechart/1.0.0')/]
+
+
+[**
+ * Returns the primitive datatype of the given
+ * ArrayDataType
+ * @param type the array data type
+*/]
+[query private getPrimitiveType(type : ArrayDataType) : PrimitiveDataType =
+	type.getIntermediateDataTypes()->select(oclIsKindOf(PrimitiveDataType))->any(true).oclAsType(PrimitiveDataType)
+/]
+
+[**
+ * Returns the corresponding modelica type
+ * @param type the data type
+*/]
+[query public getType(type : DataType) : String =
+	if type.oclIsKindOf(ArrayDataType) then
+		type.oclAsType(ArrayDataType).getPrimitiveType()._getType()
+	else
+		type._getType()
+	endif
+/]
+
+[**
+ * Returns an ordered set of all intermediate array data types
+ * @param type the array data type
+*/]
+[query public getIntermediateArrayDataTypes(type : ArrayDataType) : OrderedSet(ArrayDataType) =
+	type.getIntermediateDataTypes()->select(oclIsKindOf(ArrayDataType))
+/]
+
+[**
+ * Returns an ordered set containing all intermediate data types
+ * @param type the array data type
+*/]
+[query private getIntermediateDataTypes(type : ArrayDataType) : OrderedSet(DataType) =
+	type->asOrderedSet()->union(
+		type.oclAsType(DataType)->asSet()->closure(t |
+			if t.oclIsKindOf(ArrayDataType) then
+				t.oclAsType(ArrayDataType).type
+			else
+				t
+			endif
+		)
+	)->asOrderedSet()
+/]
+
+[**
+ * Returns the corresponding modelica type for the
+ * given PrimitiveDataType
+ * @param type the primitive data type
+*/]
+[query private _getType(type : DataType) : String =
+	if type.name.contains('int')  then
+		'Integer'
+	else if type.name = 'double' then
+		'Real'
+	else if type.name = 'boolean' then
+		'Boolean'
+	else
+		-- this might be incorrect
+		type.name.toLower().toUpperFirst()
+	endif
+	endif
+	endif
+/]

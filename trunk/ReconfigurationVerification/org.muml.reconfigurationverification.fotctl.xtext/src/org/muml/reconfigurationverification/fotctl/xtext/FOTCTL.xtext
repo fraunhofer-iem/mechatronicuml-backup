@@ -1,0 +1,210 @@
+grammar org.muml.reconfigurationverification.fotctl.xtext.FOTCTL with org.eclipse.xtext.common.Terminals 
+
+import "platform:/resource/org.muml.reconfigurationverification.fotctl/model/FOTCTL.ecore" 
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+import "platform:/resource/org.muml.core/model/core.ecore" as modeling
+
+import "platform:/resource/org.muml.reconfigurationverification.tctl/model/TCTL.ecore" as tctl
+
+
+FoTCTLSpec returns FoTCTLSpec:
+	{FoTCTLSpec}
+	'Declaration\n'
+	('NodeLabelPredicates {' nodeLabelPredicates+=NodeLabelPredicateDecl (',' nodeLabelPredicates+=NodeLabelPredicateDecl)* '}\n')?
+	('EdgeLabelPredicates {' edgeLabelPredicates+=EdgeLabelPredicateDecl (',' edgeLabelPredicates+=EdgeLabelPredicateDecl)* '}\n')?
+	('Constants {' constants+=ConstantSymbolDecl (',' constants+=ConstantSymbolDecl)* '}\n')?
+	
+	'Formulas\n'
+	(formulas+=FoTCTLFormula)+
+;
+
+
+FoTCTLFormula returns FoTCTLFormula:
+	{FoTCTLFormula}
+	formula=FormulaDefinition
+	';\n'
+;
+
+FormulaDefinition returns tctl::FormulaDefinition:
+	AtomicFormula | UnaryFormula | BinaryFormula
+;
+
+
+
+
+NodeLabelPredicateDecl returns NodeLabelPredicateDecl: 
+{NodeLabelPredicateDecl}
+	name=node_predicate_name
+;
+
+
+EdgeLabelPredicateDecl returns EdgeLabelPredicateDecl:
+	{EdgeLabelPredicateDecl}
+	name=edge_predicate_name
+;
+
+
+ConstantSymbolDecl returns ConstantSymbolDecl:
+	{ConstantSymbolDecl}
+	name=constant_name
+;
+
+
+
+Constant returns Constant:
+	{Constant}
+	declaration=[ConstantSymbolDecl|constant_name]
+;
+
+
+Variable returns Variable:
+	{Variable}
+	declaration=[QuantifiedFormula|variable_name]
+;
+
+
+UnaryFormula returns tctl::UnaryFormula:
+	NotFormula | 
+	UnaryTemporalFormula |
+	QuantifiedFormula	
+;
+
+BinaryFormula returns tctl::BinaryFormula:
+	BinaryLogicFormula |
+	BinaryTemporalFormula
+;
+
+AtomicFormula returns tctl::AtomicFormula:
+	NodeLabelPredicate |
+	EdgeLabelPredicate
+;
+
+NodeLabelPredicate returns NodeLabelPredicate:
+	{NodeLabelPredicate}
+	declaration=[NodeLabelPredicateDecl|node_predicate_name]'('term=Term')'
+;
+
+
+EdgeLabelPredicate returns EdgeLabelPredicate:
+	{EdgeLabelPredicate}
+	declaration=[EdgeLabelPredicateDecl|edge_predicate_name]'('term=Term','secondTerm=Term')'
+;
+
+
+QuantifiedFormula returns QuantifiedFormula:
+	{QuantifiedFormula}
+	quantifier=Quantifier' '
+	name=variable_name' '//' ('(variables+=[Variable|name](','variables+=[Variable|name])*)?') '
+	subformula=FormulaDefinition
+;
+
+enum Quantifier returns Quantifier:
+	 EXISTS="exists" | FORALL="forall"
+;
+
+
+TCTLFormula returns tctl::TCTLFormula:
+		{tctl::TCTLFormula}
+		formula=FormulaDefinition
+		|
+		FoTCTLFormula
+;
+
+
+
+
+
+
+
+
+NotFormula returns tctl::NotFormula:
+	'NOT '
+	{tctl::NotFormula}
+	subformula=FormulaDefinition
+;
+
+
+
+TemporalFormula returns tctl::TemporalFormula:
+	BinaryTemporalFormula |
+	UnaryTemporalFormula
+;
+
+
+UnaryTemporalFormula returns tctl::UnaryTemporalFormula:
+	{tctl::UnaryTemporalFormula}
+	temporalOperator=TemporalOperator
+	'['comparisonOperator=ComparisonOperator value=INT '] '
+	subformula=FormulaDefinition
+;
+
+
+BinaryTemporalFormula returns tctl::BinaryTemporalFormula:
+	{tctl::BinaryTemporalFormula}
+	'('leftSubformula=FormulaDefinition ' '
+	temporalOperator=TemporalOperator
+	'['comparisonOperator=ComparisonOperator value=INT '] ' 
+	rightSubformula=FormulaDefinition')'
+;
+
+
+BinaryLogicFormula returns tctl::BinaryLogicFormula:
+	{tctl::BinaryLogicFormula}
+	'('leftSubformula=FormulaDefinition operator=BinaryLogicOperator rightSubformula=FormulaDefinition')'
+;
+
+
+enum BinaryLogicOperator returns tctl::BinaryLogicOperator:
+	AND=' & ' |
+	EQUIV=' <=> ' |
+	IMPLY=' => ' |
+	OR=' | ' |
+	XOR=' ^ '
+;
+
+
+Term returns tctl::Term:
+	Variable |
+	Constant | 
+	AtomicProposition
+;
+
+
+AtomicProposition returns tctl::AtomicProposition:
+	{tctl::AtomicProposition}
+	name=variable_name
+;
+
+
+enum ComparisonOperator returns tctl::ComparisonOperator:
+	EQUAL=' = ' | 
+	GREATER=' > ' |
+	GREATER_OR_EQUAL=' >= ' |
+	LESS=' < ' | 
+	LESS_OR_EQUAL=' <= '
+;
+
+
+enum TemporalOperator returns tctl::TemporalOperator:
+	AF | AG | AU | EF | EG | EU
+;
+
+
+terminal node_predicate_name returns ecore::EString:
+	('A'..'Z') ('a'..'z'|'A'..'Z')+
+;
+
+terminal edge_predicate_name returns ecore::EString:
+	('a'..'z') ('a'..'z'|'A'..'Z')+
+;
+
+terminal variable_name returns ecore::EString:
+	('a'..'z') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*
+;
+
+terminal constant_name returns ecore::EString:
+	('A'..'Z') ('A'..'Z'|'_'|'0'..'9')*
+;
+

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:msgtype="http://www.muml.org/pim/msgtype/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_QPpxgPR2EeOKmIQk3FL8KA" type="Message Type" name="EnterSection.messagetype_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_QPpxgvR2EeOKmIQk3FL8KA" type="2008" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_QPpxhPR2EeOKmIQk3FL8KA" type="5017"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_QPpxhfR2EeOKmIQk3FL8KA" type="7010">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_QPpxhvR2EeOKmIQk3FL8KA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_QPpxh_R2EeOKmIQk3FL8KA"/>
+    </children>
+    <element xmi:type="msgtype:MessageTypeRepository" href="../../RailCab.muml#_cSf78Oo8EeO-8csd75FEHw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QPpxg_R2EeOKmIQk3FL8KA"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_QPpxgfR2EeOKmIQk3FL8KA"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../../RailCab.muml#_SuoZoLi6EeKp46K0r5yxrg"/>
+</notation:Diagram>

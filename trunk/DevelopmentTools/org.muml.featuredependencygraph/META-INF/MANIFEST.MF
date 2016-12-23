@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: FeatureDependencyGraph
+Bundle-SymbolicName: org.muml.featuredependencygraph
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.muml.graphviz,
+ org.muml.graphviz.dot.xtext,
+ org.muml.graphviz.blackbox,
+ org.muml.core.common,
+ org.apache.commons.io;bundle-version="2.2.0",
+ org.junit

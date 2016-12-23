@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.muml.example.cooperatingballplayingrobots.feature" label="MechatronicUML Cooperating Ball Playing Delta Robots Example" provider-name="%providerName" version="1.0.0.qualifier">
+
+   <description>
+      MechatronicUML Cooperating Ball Playing Delta Robots Example
+   </description>
+
+   <copyright url="%copyrightURL">
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <requires>
+      <import match="greaterOrEqual" plugin="org.muml.core.example.ui" version="0.5.0"/>
+      <import match="greaterOrEqual" plugin="org.muml.pim.actionlanguage" version="0.5.0"/>
+      <import feature="org.muml.pim.feature" version="0.5.0"/>
+      <import feature="org.muml.core.feature"/>
+      <import feature="org.eclipse.xtext.sdk" match="compatible" version="2.10.0.v201605250459"/>
+   </requires>
+
+   <plugin download-size="0" id="org.muml.example.cooperatingballplayingrobots" install-size="0" version="0.0.0"/>
+
+</feature>

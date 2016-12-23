@@ -1,0 +1,18 @@
+import Workflow;
+
+modeltype csd uses 'http://www.muml.org/reconfiguration/componentstorydiagram/1.0.0';
+modeltype sd uses 'http://www.muml.org/storydiagram/1.0.0';
+
+modeltype modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
+
+// For Debugging
+//transformation CSD2SDTransform(inout model: modelinstance);
+
+transformation CSD2SDTransform(in input: csd, out output : sd);
+
+main() {
+// For Debugging
+//	model.objects()[modelinstance::RootNode]->map RootNode2RootNode();
+
+input.objects()[storydiagrams::activities::Activity]->map Activity2Activity();
+}

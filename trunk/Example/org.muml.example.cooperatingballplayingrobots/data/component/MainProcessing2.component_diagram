@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component="http://www.muml.org/pim/component/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_QtsT0GwtEeWrT_TGhbgDWg" type="Component" name="MainProcessing2.component_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_QtxMUGwtEeWrT_TGhbgDWg" type="2006" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_QtxzYGwtEeWrT_TGhbgDWg" type="5028"/>
+    <children xmi:type="notation:Shape" xmi:id="_qpIZMNwaEeWVGefPVpopOA" type="3010" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_qpIZMtwaEeWVGefPVpopOA" type="5012">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_qpIZM9waEeWVGefPVpopOA" y="5"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_qpIZNNwaEeWVGefPVpopOA" type="5025">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_qpIZNdwaEeWVGefPVpopOA" x="59" y="-51"/>
+      </children>
+      <element xmi:type="component:DiscretePort" href="../cooperatingballplayingrobots.muml#_iwyccJ0gEeKe1dmyo6HznA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qpIZMdwaEeWVGefPVpopOA" x="541" y="96"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_qpIZNtwaEeWVGefPVpopOA" type="3010" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_qpIZONwaEeWVGefPVpopOA" type="5012">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_qpIZOdwaEeWVGefPVpopOA" y="5"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_qpIZOtwaEeWVGefPVpopOA" type="5025">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_qpIZO9waEeWVGefPVpopOA" y="5"/>
+      </children>
+      <element xmi:type="component:DiscretePort" href="../cooperatingballplayingrobots.muml#_lAhDYJ0gEeKe1dmyo6HznA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qpIZN9waEeWVGefPVpopOA" x="541" y="141"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_qpIZPNwaEeWVGefPVpopOA" type="3010" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_qpIZPtwaEeWVGefPVpopOA" type="5012">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_qpIZP9waEeWVGefPVpopOA" y="5"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_qpIZQNwaEeWVGefPVpopOA" type="5025">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_qpIZQdwaEeWVGefPVpopOA" y="5"/>
+      </children>
+      <element xmi:type="component:DiscretePort" href="../cooperatingballplayingrobots.muml#_nrRZcJ0gEeKe1dmyo6HznA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qpIZPdwaEeWVGefPVpopOA" x="541" y="186"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_qpIZQtwaEeWVGefPVpopOA" type="3013" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_qpIZRNwaEeWVGefPVpopOA" type="5024">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_qpIZRdwaEeWVGefPVpopOA" y="5"/>
+      </children>
+      <element xmi:type="component:HybridPort" href="../cooperatingballplayingrobots.muml#_5foZoJ0lEeKe1dmyo6HznA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qpIZQ9waEeWVGefPVpopOA" x="541" y="231"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_qpIZRtwaEeWVGefPVpopOA" type="3013" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_qpIZSNwaEeWVGefPVpopOA" type="5024">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_qpIZSdwaEeWVGefPVpopOA" y="5"/>
+      </children>
+      <element xmi:type="component:HybridPort" href="../cooperatingballplayingrobots.muml#_zik1AKK6EeKHT8i8WqTL9g"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qpIZR9waEeWVGefPVpopOA" x="541" y="276"/>
+    </children>
+    <element xmi:type="component:StaticAtomicComponent" href="../cooperatingballplayingrobots.muml#_S4NmMJe6EeKVX6r_GEFobQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QtxMUWwtEeWrT_TGhbgDWg" x="30" y="30" width="208" height="331"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_QtsT0WwtEeWrT_TGhbgDWg"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../cooperatingballplayingrobots.muml#_rwtbsJe4EeKIIefjcfllxA"/>
+</notation:Diagram>

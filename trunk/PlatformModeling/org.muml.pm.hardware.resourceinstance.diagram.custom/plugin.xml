@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
+      <editpartProvider
+            class="org.muml.pm.hardware.resourceinstance.diagram.custom.providers.CustomResourceInstanceEditPartProvider">
+         <Priority
+               name="Low">
+         </Priority>
+      </editpartProvider>
+   </extension>
+   <extension
+         point="org.eclipse.gmf.runtime.common.ui.services.parserProviders">
+      <ParserProvider
+            class="org.muml.pm.hardware.resourceinstance.diagram.custom.providers.CustomResourceInstanceParserProvider">
+         <Priority
+               name="Low">
+         </Priority>
+      </ParserProvider>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.muml">
+         <separator
+               name="org.muml.pm.hardware.resource.diagram.custom.separator1"
+               visible="true">
+         </separator>
+         <command
+               commandId="org.muml.pm.hardware.resourceinstance.diagram.custom.instantiateResource"
+               id="org.muml.pm.hardware.resourceinstance.diagram.custom.instantiateResource"
+               label="Instantiate Resource"
+               style="push">
+            <visibleWhen>
+               <or>
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false">
+                        <adapt
+                              type="org.muml.pm.hardware.hwresource.Resource">
+                        </adapt>
+                     </iterate>
+                  </with></or>
+            </visibleWhen>
+         </command>
+         </menuContribution>
+         </extension>
+           <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="org.muml"
+            defaultHandler="org.muml.pm.hardware.resourceinstance.diagram.custom.handlers.InstantiateResourceTypeHandler"
+            description="InstanticateResource"
+            id="org.muml.pm.hardware.resourceinstance.diagram.custom.instantiateResource"
+            name="Instantiate Resource">
+      </command>
+      </extension>
+
+</plugin>

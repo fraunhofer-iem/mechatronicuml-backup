@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Custom
+Bundle-SymbolicName: org.muml.pm.hardware.platform.diagram.custom;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.muml.pm.hardware.common,
+ org.muml.pm.hardware.platform.diagram,
+ org.eclipse.gmf.runtime.diagram.ui.properties,
+ org.eclipse.m2m.qvt.oml;bundle-version="3.1.0"
+Export-Package: org.muml.pm.hardware.platform.diagram.custom.parsers,
+ org.muml.pm.hardware.platform.diagram.custom.part,
+ org.muml.pm.hardware.platform.diagram.custom.parts,
+ org.muml.pm.hardware.platform.diagram.custom.providers
+Bundle-Activator: org.muml.pm.hardware.platform.diagram.custom.part.Activator
+Bundle-ActivationPolicy: lazy

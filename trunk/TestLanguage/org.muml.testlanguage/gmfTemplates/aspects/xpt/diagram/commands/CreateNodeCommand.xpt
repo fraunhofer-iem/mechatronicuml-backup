@@ -1,0 +1,15 @@
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+«EXTENSION xpt::diagram::Utils»
+«EXTENSION xpt::OclMigrationProblems»
+
+«AROUND initialize(node : gmfgen::GenNode, newElementVar : String) FOR gmfgen::TypeModelFacet»
+	«targetDef.proceed()»
+
+	// Generate the ports of the node if it is one.
+	«IF node.createCommandClassName = 'NodeCreateCommand'»
+			newElement.setSpecificationClassName((String) this.getRequest().getParameter("specificationClassName"));
+			newElement.createSpecification();
+			newElement.setupFromSpecification();
+	«ENDIF»
+
+«ENDAROUND»

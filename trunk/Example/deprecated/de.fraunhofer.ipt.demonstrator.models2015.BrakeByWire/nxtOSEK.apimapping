@@ -1,0 +1,9 @@
+ import "de.fraunhofer.ipt.demonstrator.models2015.fujaba"
+
+import "nxtOSEK.osdsl"
+
+MappingRepository:nxtOSEKMapping{
+	
+}
+
+

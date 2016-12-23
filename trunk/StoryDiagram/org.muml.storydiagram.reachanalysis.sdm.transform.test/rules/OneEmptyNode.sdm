@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sda:Activity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:expr="http://www.muml.org/core/expressions/1.0.0" xmlns:sda="http://www.muml.org/storydiagram/activities/1.0.0" name="OneEmptyNode">
+  <ownedActivityEdge target="//@ownedActivityNode.1" source="//@ownedActivityNode.0"/>
+  <ownedActivityEdge target="//@ownedActivityNode.2" source="//@ownedActivityNode.1"/>
+  <ownedActivityNode xsi:type="sda:InitialNode" name="init" outgoing="//@ownedActivityEdge.0"/>
+  <ownedActivityNode xsi:type="sda:ModifyingStoryNode" name="node1" outgoing="//@ownedActivityEdge.1" incoming="//@ownedActivityEdge.0">
+    <ownedRule comment=""/>
+  </ownedActivityNode>
+  <ownedActivityNode xsi:type="sda:ActivityFinalNode" name="final" incoming="//@ownedActivityEdge.1">
+    <returnValues xsi:type="expr:TextualExpression" expressionText="" language="OCL" languageVersion="1.0"/>
+  </ownedActivityNode>
+</sda:Activity>

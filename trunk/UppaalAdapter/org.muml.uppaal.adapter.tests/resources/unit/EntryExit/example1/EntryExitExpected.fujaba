@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--muml metamodel version 0.3.2 (r2996)-->
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:msgtype="http://www.muml.org/pim/msgtype/1.0.0" xmlns:protocol="http://www.muml.org/pim/protocol/1.0.0" xmlns:realtimestatechart="http://www.muml.org/pim/realtimestatechart/1.0.0" xmlns:sdcec="http://www.muml.org/core/expressions/common/1.0.0" xmlns:types="http://www.muml.org/pim/types/1.0.0" xmi:id="_sHhusLqLEeOkMfYs3U5IsQ">
+  <categories xmi:id="_sHhusbqLEeOkMfYs3U5IsQ" key="org.muml.types.category" name="types">
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_sHhusrqLEeOkMfYs3U5IsQ" name="VOID"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_sHhus7qLEeOkMfYs3U5IsQ" name="BOOLEAN" primitiveType="BOOLEAN"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_sHhutLqLEeOkMfYs3U5IsQ" name="BYTE" primitiveType="BYTE"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_sHhutbqLEeOkMfYs3U5IsQ" name="SHORT" primitiveType="SHORT"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_sHhutrqLEeOkMfYs3U5IsQ" name="INT" primitiveType="INT"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_sHhut7qLEeOkMfYs3U5IsQ" name="LONG" primitiveType="LONG"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_sHhuuLqLEeOkMfYs3U5IsQ" name="DOUBLE" primitiveType="DOUBLE"/>
+  </categories>
+  <categories xmi:id="_sHhuubqLEeOkMfYs3U5IsQ" key="org.muml.pim.components.category" name="component"/>
+  <categories xmi:id="_sHhuurqLEeOkMfYs3U5IsQ" key="org.muml.pim.protocol.category" name="protocol">
+    <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_sHhuu7qLEeOkMfYs3U5IsQ" name="proto">
+      <roles xmi:id="_sHhuvLqLEeOkMfYs3U5IsQ" connectors="_sHhuyLqLEeOkMfYs3U5IsQ" behavior="_sHhuz7qLEeOkMfYs3U5IsQ" name="role1" senderMessageTypes="_sHhu37qLEeOkMfYs3U5IsQ" receiverMessageTypes="_sHhu37qLEeOkMfYs3U5IsQ">
+        <cardinality xmi:id="_sHhuvbqLEeOkMfYs3U5IsQ">
+          <lowerBound xmi:id="_sHhuvrqLEeOkMfYs3U5IsQ"/>
+          <upperBound xmi:id="_sHhuv7qLEeOkMfYs3U5IsQ"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_sHhuwLqLEeOkMfYs3U5IsQ" name="role1buffer" messageType="_sHhu37qLEeOkMfYs3U5IsQ">
+          <bufferSize xmi:id="_sHhuwbqLEeOkMfYs3U5IsQ" value="9223372036854775807" infinity="true"/>
+        </receiverMessageBuffer>
+      </roles>
+      <roles xmi:id="_sHhuwrqLEeOkMfYs3U5IsQ" connectors="_sHhuyLqLEeOkMfYs3U5IsQ" behavior="_sHhu27qLEeOkMfYs3U5IsQ" name="role2" senderMessageTypes="_sHhu37qLEeOkMfYs3U5IsQ" receiverMessageTypes="_sHhu37qLEeOkMfYs3U5IsQ">
+        <cardinality xmi:id="_sHhuw7qLEeOkMfYs3U5IsQ">
+          <lowerBound xmi:id="_sHhuxLqLEeOkMfYs3U5IsQ"/>
+          <upperBound xmi:id="_sHhuxbqLEeOkMfYs3U5IsQ"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_sHhuxrqLEeOkMfYs3U5IsQ" name="role2buffer" messageType="_sHhu37qLEeOkMfYs3U5IsQ">
+          <bufferSize xmi:id="_sHhux7qLEeOkMfYs3U5IsQ" value="9223372036854775807" infinity="true"/>
+        </receiverMessageBuffer>
+      </roles>
+      <roleConnector xmi:id="_sHhuyLqLEeOkMfYs3U5IsQ" connectorEndpoints="_sHhuvLqLEeOkMfYs3U5IsQ _sHhuwrqLEeOkMfYs3U5IsQ">
+        <connectorQualityOfServiceAssumptions xmi:id="_sHhuybqLEeOkMfYs3U5IsQ" comment="">
+          <minMessageDelay xmi:id="_sHhuyrqLEeOkMfYs3U5IsQ" unit="SECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_sHhuy7qLEeOkMfYs3U5IsQ" value="0"/>
+          </minMessageDelay>
+          <maxMessageDelay xmi:id="_sHhuzLqLEeOkMfYs3U5IsQ" unit="SECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_sHhuzbqLEeOkMfYs3U5IsQ" value="0"/>
+          </maxMessageDelay>
+        </connectorQualityOfServiceAssumptions>
+      </roleConnector>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_sHhuzrqLEeOkMfYs3U5IsQ" key="org.muml.pim.realtimestatechart.category" name="realtimestatechart">
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_sHhuz7qLEeOkMfYs3U5IsQ" name="role1" behavioralElement="_sHhuvLqLEeOkMfYs3U5IsQ">
+      <states xmi:id="_sHhu0LqLEeOkMfYs3U5IsQ" name="init" initial="true">
+        <embeddedRegions xmi:id="_sHhu0bqLEeOkMfYs3U5IsQ" priority="1">
+          <embeddedStatechart xmi:id="_sHhu0rqLEeOkMfYs3U5IsQ" name="statechart">
+            <transitions xmi:id="_sHhu07qLEeOkMfYs3U5IsQ" priority="1" target="_sHhu2rqLEeOkMfYs3U5IsQ" source="_sHhu2bqLEeOkMfYs3U5IsQ">
+              <action xmi:id="_sHhu1LqLEeOkMfYs3U5IsQ" name="entry">
+                <expressions xsi:type="sdcec:LiteralExpression" xmi:id="_sHhu1bqLEeOkMfYs3U5IsQ" value="true"/>
+              </action>
+            </transitions>
+            <transitions xmi:id="_sHhu1rqLEeOkMfYs3U5IsQ" priority="1" target="_sHhu2bqLEeOkMfYs3U5IsQ" source="_sHhu2rqLEeOkMfYs3U5IsQ">
+              <action xmi:id="_sHhu17qLEeOkMfYs3U5IsQ" name="exit">
+                <expressions xsi:type="sdcec:LiteralExpression" xmi:id="_sHhu2LqLEeOkMfYs3U5IsQ" value="true"/>
+              </action>
+            </transitions>
+            <states xmi:id="_sHhu2bqLEeOkMfYs3U5IsQ" name="State1" outgoingTransitions="_sHhu07qLEeOkMfYs3U5IsQ" incomingTransitions="_sHhu1rqLEeOkMfYs3U5IsQ" initial="true"/>
+            <states xmi:id="_sHhu2rqLEeOkMfYs3U5IsQ" name="State2" outgoingTransitions="_sHhu1rqLEeOkMfYs3U5IsQ" incomingTransitions="_sHhu07qLEeOkMfYs3U5IsQ"/>
+          </embeddedStatechart>
+        </embeddedRegions>
+      </states>
+    </modelElements>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_sHhu27qLEeOkMfYs3U5IsQ" name="role2" behavioralElement="_sHhuwrqLEeOkMfYs3U5IsQ">
+      <states xmi:id="_sHhu3LqLEeOkMfYs3U5IsQ" name="init" initial="true"/>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_sHhu3bqLEeOkMfYs3U5IsQ" key="org.muml.pim.messagetype.category" name="msgtype">
+    <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_sHhu3rqLEeOkMfYs3U5IsQ" name="Repository">
+      <messageTypes xmi:id="_sHhu37qLEeOkMfYs3U5IsQ" name="exampleMessage"/>
+    </modelElements>
+  </categories>
+</modelinstance:RootNode>

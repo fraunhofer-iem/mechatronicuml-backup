@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="rtsc" nsURI="http://www.muml.org/verification/core/reachanalysis/reachabilitygraph/rtsc/1.0.0"
+    nsPrefix="reachabilitygraphrtsc">
+  <eClassifiers xsi:type="ecore:EClass" name="ZoneGraph" eSuperTypes="../../org.muml.core.reachanalysis.reachabilitygraph/model/ReachabilityAnalysisCore.ecore#//ReachabilityGraph">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clocks" ordered="false"
+        upperBound="-1" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Clock"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ZoneGraphState" eSuperTypes="../../org.muml.core.reachanalysis.reachabilitygraph/model/ReachabilityAnalysisCore.ecore#//ReachabilityGraphState">
+    <eOperations name="toString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="Vector&lt;String> locationNames = new Vector&lt;String>();&#xD;&#xA;for (RealtimeStatechartInstance location : locations) {&#xD;&#xA;&#x9;locationNames.add(location.getInstanceOf().getName());&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;String[] locationNamesArray = locationNames.toArray(new String[0]);&#xD;&#xA;Arrays.sort(locationNamesArray);&#xD;&#xA;&#xD;&#xA;locationNames = new Vector&lt;String>();&#xD;&#xA;&#xD;&#xA;for (String name : locationNamesArray) {&#xD;&#xA;&#x9;locationNames.add(name);&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;return &quot;[zone locations:&quot; + locationNames.toString() + &quot;; federation:&quot;&#xD;&#xA;&#x9;+ federation.toString() + &quot;]&quot;;&#xD;&#xA;"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="federation" eType="#//FederationObject"
+        transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="locations" upperBound="-1"
+        eType="ecore:EClass ../../org.muml.verification.core.runtime/model/RuntimeModel.ecore#//RealtimeStatechartInstance">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Refers to all Real-Time Statechart instances considered by this zone graph state."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containedToplevelStatechartInstances"
+        upperBound="-1" eType="ecore:EClass ../../org.muml.verification.core.runtime/model/RuntimeModel.ecore#//RealtimeStatechartInstance"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Contains the top-level Real-Time Statechart instances considered by this zone graph state."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ZoneGraphTransition" eSuperTypes="../../org.muml.core.reachanalysis.reachabilitygraph/model/ReachabilityAnalysisCore.ecore#//ActionTransition">
+    <eOperations name="toString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="return this.getSource().toString() + &quot; --> &quot; + this.getTarget().toString();"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="firedRTSCTransitions" ordered="false"
+        upperBound="-1" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Transition"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DelayTransition" eSuperTypes="../../org.muml.core.reachanalysis.reachabilitygraph/model/ReachabilityAnalysisCore.ecore#//ReachabilityGraphTransition">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Represents a transition in a reachability graph that resulted from a delay in a timed&#xD;&#xA;reachability computation. Will only occur if Uppaal semantics are used."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="FederationObject" instanceClassName="org.muml.udbm.Federation"
+      serializable="false"/>
+</ecore:EPackage>

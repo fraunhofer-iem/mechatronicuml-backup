@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmftool:ToolRegistry
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
+  <palette
+      title="platformPalette">
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="Communication"
+        collapsible="true">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="NetworkConnector"
+          description="Creates a Connection">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/toBus_small.gif"
+            bundle="org.muml.pm.hardware.common"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/toBus_large.gif"
+            bundle="org.muml.pm.hardware.common"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="NetworkBridge"
+          description="Create new Bridge">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/bridge_small.gif"
+            bundle="org.muml.pm.hardware.common"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/bridge_large.gif"
+            bundle="org.muml.pm.hardware.common"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="DelegationPort"
+          description="Create new Delegation Port">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/linkport_small.gif"
+            bundle="org.muml.pm.hardware.common"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/linkport_large.gif"
+            bundle="org.muml.pm.hardware.common"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Bus"
+          description="Create a NetworkBus">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/bus_small.gif"
+            bundle="org.muml.pm.hardware.common"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/bus_large.gif"
+            bundle="org.muml.pm.hardware.common"/>
+      </tools>
+    </tools>
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="Hardware-Platform"
+        collapsible="true">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="HWPlatformPart"
+          description="Create new HWPlatformPart">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/box_small.gif"
+            bundle="org.muml.pm.hardware.common"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/box_large.gif"
+            bundle="org.muml.pm.hardware.common"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="ResourceInstancePart"
+          description="Create new ResourceInstancePart">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/box_small.gif"
+            bundle="org.muml.pm.hardware.common"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/box_large.gif"
+            bundle="org.muml.pm.hardware.common"/>
+      </tools>
+    </tools>
+  </palette>
+</gmftool:ToolRegistry>

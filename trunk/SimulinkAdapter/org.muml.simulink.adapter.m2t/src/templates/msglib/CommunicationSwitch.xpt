@@ -1,0 +1,149 @@
+«IMPORT simulink»
+«IMPORT simulink::msglib»
+
+«EXTENSION org::eclipse::xtend::util::stdlib::counter»
+
+«EXTENSION extensions::Element»
+«EXTENSION extensions::Block»
+«EXTENSION extensions::msglib::CommunicationSwitch»
+
+«DEFINE communicationSwitch FOR CommunicationSwitch»
+«LET this.generateBus(this.getMainBusMaxSize()) AS bus-»
+«EXPAND CommunicationSwitch::file FOR this-»
+«EXPAND templates::Bus::busFile FOR bus-»
+  Block {
+    BlockType SubSystem
+    Name "«this.getName()»"
+    SID				«this.getSimulinkId()»
+    Ports [«this.inPorts.size», «this.outPorts.size», 0, 0]
+    Tag		"id=«this.id»"
+    LoadFcn		      "«bus.name»Generator"
+	«EXPAND templates::Parameter::parameter FOREACH this.parameters.reject(p| {'BlockType','Name', 'SID', 'Tag', 'Ports'}.contains(p.name)  || p.name.startsWith('System.'))-»
+	  System {
+	  	Name  "«this.getName()»"
+	  	Open			off 	  	
+	  	«FOREACH this.parameters.select(p|p.name.startsWith('System.') && p.name != 'System.Name') AS parameter-»
+	  	«parameter.name.replaceFirst('System.','')» "«parameter.value»"
+	  	«ENDFOREACH-»
+	  	«EXPAND templates::InPortBlock::inPortBlock FOREACH this.inPorts-»
+	  	«EXPAND templates::OutPortBlock::outPortBlock FOREACH this.outPorts-»
+		Block {
+		  BlockType		  BusCreator
+		  Name			  "BusCreator1"
+		  SID			  «this.getNewSimulinkId()»
+		  Ports			  [«bus.elements.size», 1]
+		  Position		  [110, 65, 130, 185]
+		  Inputs		  "«bus.elements.size»"
+		  UseBusObject		  on
+		  BusObject		  "«bus.name»"
+		}
+		Block {
+		  BlockType		  BusSelector
+		  Name			  "BusSelector1"
+		  SID			  «this.getNewSimulinkId()»
+		  Ports			  [1, «this.outPorts.size»]
+		  Position		  [420, 65, 440, 185]
+		  OutputSignals		  "«FOREACH bus.elements AS element SEPARATOR ","»«element.name»«ENDFOREACH»"
+		}
+		Block {
+		  BlockType		  UnitDelay
+		  Name			  "Unit Delay"
+		  SID			  «this.getNewSimulinkId()»
+		  Position		  [350, 108, 385, 142]
+		  SampleTime		  "-1"
+		}		
+		Block {
+		  BlockType		  Reference
+		  Name			  "BusImpl"
+		  SID			  «this.getNewSimulinkId()»
+		  Ports			  [2, 1]
+		  Position		  [200, 89, 310, 161]
+		  LibraryVersion	  "1.1"
+		  SourceBlock		  "BusImpl/BusImpl"
+		  SourceType		  "Stateflow"
+		  ShowPortLabels	  "FromPortIcon"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Debug"
+		  SID			  «this.getNewSimulinkId()»
+		  Position		  [150, 130, 180, 160]
+		  Value			  "«this.getDebugValue()»"
+		  OutDataType		  "fixdt(1, 16)"
+		  OutScaling		  "2^0"
+		}		
+		Line {
+		  SrcBlock		  "BusImpl"
+		  SrcPort		  1
+		  DstBlock		  "Unit Delay"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "BusCreator1"
+		  SrcPort		  1
+		  DstBlock		  "BusImpl"
+		  DstPort		  1
+		}		
+		Line {
+		  SrcBlock		  "Unit Delay"
+		  SrcPort		  1
+		  DstBlock		  "BusSelector1"
+		  DstPort		  1
+		}		
+		«FOREACH this.inPorts AS port»
+		Line {
+		  SrcBlock		  "«port.getName()»"
+		  SrcPort		  1
+		  DstBlock		  "BusCreator1"
+		  DstPort		  «this.inPorts.indexOf(port)+1»
+		  Name			  rc«this.inPorts.indexOf(port)+1»
+		}		
+		«ENDFOREACH»
+		«FOREACH this.outPorts AS port»
+		Line {
+		  SrcBlock		  "BusSelector1"
+		  SrcPort		  «this.outPorts.indexOf(port)+1»
+		  DstBlock		  "«port.getName()»"
+		  DstPort		  1
+		}		
+		«ENDFOREACH»
+		Line {
+		  SrcBlock		  "Debug"
+		  SrcPort		  1
+		  DstBlock		  "BusImpl"
+		  DstPort		  2
+		}	
+		«FOREACH (this.inPorts.size+1).upTo(this.getMainBusMaxSize()) AS num-»
+		Block {
+		  BlockType		  Reference
+		  Name			  "EmptyPacket«num»"
+		  SID			  «this.getNewSimulinkId()»
+		  Ports			  [0, 1]
+		  Position		  [20, «100+(30*num)», 55, «120+(30*num)»]
+		  LibraryVersion	  "1.1"
+		  SourceBlock		  "BusImpl/EmptyPacketBus"
+		  SourceType		  "Stateflow"
+		  ShowPortLabels	  "FromPortIcon"
+		}		
+		Line {
+		  SrcBlock		  "EmptyPacket«num»"
+		  SrcPort		  1
+		  DstBlock		  "BusCreator1"
+		  DstPort		  «num»
+		}			
+		«ENDFOREACH»
+	  }
+  }
+ «ENDLET»
+«ENDDEFINE»
+
+«DEFINE file FOR CommunicationSwitch»
+«LET 'BusImpl.mdl' AS filename-»
+«IF counterGet(filename) == 0-»
+«FILE filename-»
+«this.generateBusImpl()»
+«ENDFILE-»
+«counterInc(filename)»
+«ENDIF»
+«ENDLET-»
+«ENDDEFINE»

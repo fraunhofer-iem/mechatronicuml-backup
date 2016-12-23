@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+
+    
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <metamodel nsURI="http://www.muml.org/pim/realtimestatechart/1.0.0">
+      
+        <adviceBinding  id="org.muml.pim.realtimestatechart.diagram.custom.TransitionAdvice"
+		  typeId="org.muml.pim.realtimestatechart.diagram.Transition_4003"
+		  class="org.muml.pim.realtimestatechart.diagram.custom.edit.helpers.TransitionContainerAdaptionEditHelperAdvice"
+		  inheritance="all">
+        </adviceBinding>
+
+      </metamodel>
+   </extension>
+   
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <binding context="org.muml.pim.realtimestatechart.diagram.TypeContext">
+         <elementType ref="org.muml.pim.realtimestatechart.diagram.Transition_4003"/>
+         <advice ref="org.muml.pim.realtimestatechart.diagram.custom.TransitionAdvice"/>
+      </binding>
+   </extension>
+  
+   <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
+      <viewProvider class="org.muml.pim.realtimestatechart.diagram.custom.providers.CustomRealtimestatechartViewProvider">
+         <Priority name="Low"/>
+		 <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="org.muml.pim.realtimestatechart.diagram"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints=""/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints=""/>
+      </viewProvider>
+   </extension>
+
+   <extension
+         point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
+      <editpartProvider
+            class="org.muml.pim.realtimestatechart.diagram.custom.providers.CustomRealtimestatechartEditPartProvider">
+         <Priority
+               name="Medium">
+         </Priority>
+      </editpartProvider>
+   </extension>
+   
+   
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
+      <ParserProvider class="org.muml.pim.realtimestatechart.diagram.custom.providers.CustomMumlParserProvider">
+         <Priority name="Low"/>
+      </ParserProvider>
+   </extension>
+   
+   <extension
+       point="org.muml.core.modelinstance.ui.modelinitializer">
+      <initializer
+          initializer="org.muml.pim.realtimestatechart.diagram.custom.initializer.RealtimeStatechartModelInitializer">
+      </initializer>
+   </extension>
+   
+   
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.layoutProviders">
+       <layoutProvider class="org.muml.pim.realtimestatechart.diagram.custom.layout.RealtimeStatechartLayoutProvider">
+            <Priority name="High"/>
+       </layoutProvider>
+   </extension>
+   
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <binding context="org.muml.pim.realtimestatechart.diagram.TypeContext">
+         <elementType ref="org.muml.pim.realtimestatechart.diagram.State_3032"/>
+         <advice ref="org.muml.pim.realtimestatechart.diagram.custom.StateAdvice"/>
+      </binding>
+   </extension>
+       
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <metamodel nsURI="http://www.muml.org/pim/realtimestatechart/1.0.0">
+        <adviceBinding  id="org.muml.pim.realtimestatechart.diagram.custom.StateAdvice"
+		  typeId="org.muml.pim.realtimestatechart.diagram.State_3032"
+		  class="org.muml.pim.realtimestatechart.diagram.custom.edit.helpers.TransitionContainerAdaptionEditHelperAdvice"
+		  inheritance="all">
+        </adviceBinding>
+      </metamodel>
+   </extension>
+   
+   
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <binding context="org.muml.pim.realtimestatechart.diagram.TypeContext">
+         <elementType ref="org.muml.pim.realtimestatechart.diagram.Region_3042"/>
+         <advice ref="org.muml.pim.realtimestatechart.diagram.custom.RegionAdvice"/>
+      </binding>
+   </extension>
+       
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <metamodel nsURI="http://www.muml.org/pim/realtimestatechart/1.0.0">
+        <adviceBinding  id="org.muml.pim.realtimestatechart.diagram.custom.RegionAdvice"
+		  typeId="org.muml.pim.realtimestatechart.diagram.Region_3042"
+		  class="org.muml.pim.realtimestatechart.diagram.custom.edit.helpers.TransitionContainerAdaptionEditHelperAdvice"
+		  inheritance="all">
+        </adviceBinding>
+      </metamodel>
+   </extension>
+   
+   
+   
+   
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <binding context="org.muml.pim.realtimestatechart.diagram.TypeContext">
+         <elementType ref="org.muml.pim.realtimestatechart.diagram.RealtimeStatechart_1000"/>
+         <advice ref="org.muml.pim.realtimestatechart.diagram.custom.ModelElementCategoryAdvice"/>
+      </binding>
+   </extension>
+       
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <metamodel nsURI="http://www.muml.org/pim/realtimestatechart/1.0.0">
+        <adviceBinding  id="org.muml.pim.realtimestatechart.diagram.custom.ModelElementCategoryAdvice"
+		  typeId="org.muml.pim.realtimestatechart.diagram.RealtimeStatechart_1000"
+		  class="org.muml.pim.realtimestatechart.diagram.custom.edit.helpers.TransitionContainerAdaptionEditHelperAdvice"
+		  inheritance="all">
+        </adviceBinding>
+      </metamodel>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.muml">
+        
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+  
+   </extension>
+   
+<!-- does not work -->
+<!--
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
+       <elementTypeFactory
+           factory="org.muml.pim.realtimestatechart.diagram.custom.edit.helpers.StateTypeFactory"
+           kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+       </elementTypeFactory>
+   </extension>   
+-->
+
+</plugin>

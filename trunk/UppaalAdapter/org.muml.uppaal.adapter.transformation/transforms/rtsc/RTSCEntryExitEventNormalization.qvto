@@ -1,0 +1,121 @@
+import transforms.lib.MUML2MUML;
+import transforms.lib.RTSCUtil;
+import transforms.lib.MultiMappingUtil;
+
+modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype verificationExtension uses 'http://www.muml.org/uppaal/adapter/extension/verificationextension/1.0.0';
+modeltype modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
+
+-- we assume the absence of entry/exit points
+-- TODO add explicit precondition
+/**
+* Move entry/exit events of a state to incoming/outgoing transitions
+*/
+transformation RTSCEntryExitEventNormalization(in input:rtsc, out output:rtsc);
+
+
+	main() {
+		assert fatal (input.objects()[Transition]->forAll(t | not t.source.isCompositeState() and not t.target.isCompositeState())) with log("Composite transitions unsupported here.");
+		assert fatal (input.objects()[EntryPoint]->isEmpty() and input.objects()[ExitPoint]->isEmpty());
+
+	
+		input.objects()[RootNode]->map RootNode2RootNode();
+		
+	}
+	
+
+		mapping Transition :: Transition2Transition() : Transition {
+		
+		source := self.source.map Vertex2Vertex();
+		target := self.target.map Vertex2Vertex();
+
+		assert fatal (source != null) with log('Source state must be specified.');
+		assert fatal (target != null) with log('Target state must be specified.');
+
+
+		priority := self.priority;
+		
+		synchronization := self.synchronization.map Synchronization2Synchronization();
+		
+		clockResets += self.source.getDeactivatedState().exitEvent.clockResets->map Clock2Clock();				
+		clockResets += self.clockResets->map Clock2Clock();
+		clockResets += self.target.getActivatedState().entryEvent.clockResets->map Clock2Clock();
+		
+		clockConstraints := self.clockConstraints->map ClockConstraint2ClockConstraint();
+		
+		absoluteDeadlines := self.absoluteDeadlines->map AbsoluteDeadline2AbsoluteDeadline();
+		
+		relativeDeadline := self.relativeDeadline.map RelativeDeadline2RelativeDeadline();
+		
+		blockable := self.blockable;
+		
+		guard := self.guard.map Expression2Expression();
+		
+		events := self.events->map TransitionEvent2TransitionEvent();
+		
+		action := self.source.getDeactivatedState().exitEvent.action.mapAction();
+	
+		if (action = null) 
+		then {
+			action := self.action.map Action2Action();
+		}
+		else {
+			if(not self.action.oclIsUndefined() and self.action!= null)
+			then{
+				action.name := action.name + " + " + self.action.name;
+				action.expressions += self.action.expressions->map Expression2Expression();
+				}
+			endif;
+		}
+		endif;
+		
+		if (action = null) 
+		then {
+			action := self.target.getActivatedState().entryEvent.action.mapAction();	
+		}
+		else {
+			if(not self.target.getActivatedState().entryEvent.action.oclIsUndefined() and self.target.getActivatedState().entryEvent.action.oclIsUndefined()!=null)
+			then{
+				action.name := action.name + " + " + self.target.getActivatedState().entryEvent.action.name;
+				action.expressions += self.target.getActivatedState().entryEvent.action.expressions->mapExpression();
+			}
+			endif;
+		}
+		endif;
+		
+		urgent := self.urgent;
+	}
+	
+	
+	
+	mapping State :: State2State() : State {
+		name := self.name;
+		
+		outgoingTransitions := self.outgoingTransitions-> map Transition2Transition();
+		incomingTransitions := self.incomingTransitions -> map Transition2Transition();
+		
+		invariants := self.invariants->map ClockConstraint2ClockConstraint();
+		
+		initial := self.initial;
+		final := self.final;
+		urgent := self.urgent;
+		
+		channels := self.channels-> map SynchronizationChannel2SynchronizationChannel();
+		embeddedRegions := self.embeddedRegions-> map Region2Region();
+		
+		--do not create entry/exit events, these are added to the transitions in Transition2Transition
+		
+		doEvent := self.doEvent.map DoEvent2DoEvent();
+		
+		--in the context of the MUML2UPPAAL transformation chain there shouldn't be any connection points in the models at this time
+		--however, we copy these if the transformation is called in a different context
+		connectionPoints := self.connectionPoints[EntryPoint]->map EntryPoint2EntryPoint();
+		connectionPoints := self.connectionPoints[ExitPoint]->map ExitPoint2ExitPoint();
+		
+		extensions := self.extensions[CommittedExtension]->map CommittedExtension2CommittedExtension();
+		
+	
+	}
+	
+	

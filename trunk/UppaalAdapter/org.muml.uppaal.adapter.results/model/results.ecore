@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="results" nsURI="http://www.muml.org/uppaal/adapter/results/1.0.0"
+    nsPrefix="results">
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyResultRepository">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="results" upperBound="-1"
+        eType="#//PropertyResult" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyResult">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="property" eType="ecore:EClass ../../org.muml.uppaal.adapter.mtctl/model/Mtctl.ecore#//Property"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fulfilled" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subPropertyResults" upperBound="-1"
+        eType="#//PropertyResult" containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

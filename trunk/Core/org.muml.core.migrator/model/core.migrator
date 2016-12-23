@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emm:Migrator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:emm="http://www.muml.org/emm/1.0.0">
+  <sourcePackages href="core-0.4.ecore#/"/>
+  <sourcePackages href="core-0.4.ecore#//expressions"/>
+  <sourcePackages href="core-0.4.ecore#//expressions/common"/>
+  <sourcePackages href="modelinstance-0.4.ecore#/"/>
+  <targetPackages href="../../org.muml.core/model/core.ecore#/"/>
+  <targetPackages href="../../org.muml.core/model/core.ecore#//expressions"/>
+  <targetPackages href="../../org.muml.core/model/core.ecore#//expressions/common"/>
+  <targetPackages href="../../org.muml.core/model/core.ecore#//modelinstance"/>
+  <mappings>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../org.muml.core/model/core.ecore#//expressions/common/BinaryExpression/leftExpression"/>
+      <sourceFeature xsi:type="ecore:EReference" href="core-0.4.ecore#//expressions/common/BinaryExpression/leftExpression"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../org.muml.core/model/core.ecore#//expressions/common/BinaryExpression/rightExpression"/>
+      <sourceFeature xsi:type="ecore:EReference" href="core-0.4.ecore#//expressions/common/BinaryExpression/rightExpression"/>
+    </featureInitializers>
+    <sourceClass href="core-0.4.ecore#//expressions/common/BinaryExpression"/>
+  </mappings>
+  <mappings>
+    <targetClass href="../../org.muml.core/model/core.ecore#//expressions/common/UnaryExpression"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//expressions/common/UnaryExpression/operator"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="core-0.4.ecore#//expressions/common/UnaryExpression/operator"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../org.muml.core/model/core.ecore#//expressions/common/UnaryExpression/enclosedExpression"/>
+      <sourceFeature xsi:type="ecore:EReference" href="core-0.4.ecore#//expressions/common/UnaryExpression/enclosedExpression"/>
+    </featureInitializers>
+    <sourceClass href="core-0.4.ecore#//expressions/common/UnaryExpression"/>
+  </mappings>
+  <mappings>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../org.muml.core/model/core.ecore#//TypedElement/genericType"/>
+      <sourceFeature xsi:type="ecore:EReference" href="core-0.4.ecore#//TypedElement/genericType"/>
+    </featureInitializers>
+    <sourceClass href="core-0.4.ecore#//TypedElement"/>
+  </mappings>
+  <mappings>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../org.muml.core/model/core.ecore#//Extension/extendableBase"/>
+      <sourceFeature xsi:type="ecore:EReference" href="core-0.4.ecore#//Extension/extendableBase"/>
+    </featureInitializers>
+    <sourceClass href="core-0.4.ecore#//Extension"/>
+  </mappings>
+  <mappings>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../org.muml.core/model/core.ecore#//ExtendableElement/extensions"/>
+      <sourceFeature xsi:type="ecore:EReference" href="core-0.4.ecore#//ExtendableElement/extension"/>
+    </featureInitializers>
+    <sourceClass href="core-0.4.ecore#//ExtendableElement"/>
+  </mappings>
+  <mappings>
+    <targetClass href="../../org.muml.core/model/core.ecore#//expressions/common/LiteralExpression"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//expressions/common/LiteralExpression/value"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="core-0.4.ecore#//expressions/common/LiteralExpression/value"/>
+    </featureInitializers>
+    <sourceClass href="core-0.4.ecore#//expressions/common/LiteralExpression"/>
+  </mappings>
+  <mappings>
+    <targetClass href="../../org.muml.core/model/core.ecore#//expressions/common/LogicalExpression"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//expressions/common/LogicalExpression/operator"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="core-0.4.ecore#//expressions/common/LogicalExpression/operator"/>
+    </featureInitializers>
+    <sourceClass href="core-0.4.ecore#//expressions/common/LogicalExpression"/>
+  </mappings>
+  <mappings>
+    <targetClass href="../../org.muml.core/model/core.ecore#//expressions/common/ArithmeticExpression"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//expressions/common/ArithmeticExpression/operator"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="core-0.4.ecore#//expressions/common/ArithmeticExpression/operator"/>
+    </featureInitializers>
+    <sourceClass href="core-0.4.ecore#//expressions/common/ArithmeticExpression"/>
+  </mappings>
+  <mappings>
+    <targetClass href="../../org.muml.core/model/core.ecore#//expressions/common/ComparisonExpression"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//expressions/common/ComparisonExpression/operator"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="core-0.4.ecore#//expressions/common/ComparisonExpression/operator"/>
+    </featureInitializers>
+    <sourceClass href="core-0.4.ecore#//expressions/common/ComparisonExpression"/>
+  </mappings>
+  <mappings>
+    <targetClass href="../../org.muml.core/model/core.ecore#//expressions/TextualExpression"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//expressions/TextualExpression/expressionText"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="core-0.4.ecore#//expressions/TextualExpression/expressionText"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//expressions/TextualExpression/language"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="core-0.4.ecore#//expressions/TextualExpression/language"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//expressions/TextualExpression/languageVersion"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="core-0.4.ecore#//expressions/TextualExpression/languageVersion"/>
+    </featureInitializers>
+    <sourceClass href="core-0.4.ecore#//expressions/TextualExpression"/>
+  </mappings>
+  <mappings>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="core-0.4.ecore#//NamedElement/name"/>
+    </featureInitializers>
+    <sourceClass href="core-0.4.ecore#//NamedElement"/>
+  </mappings>
+  <mappings>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//CommentableElement/comment"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="core-0.4.ecore#//CommentableElement/comment"/>
+    </featureInitializers>
+    <sourceClass href="core-0.4.ecore#//CommentableElement"/>
+  </mappings>
+  <mappings>
+    <sourceClass href="core-0.4.ecore#//Repository"/>
+  </mappings>
+  <mappings>
+    <sourceClass href="core-0.4.ecore#//expressions/Expression"/>
+  </mappings>
+  <mappings>
+    <targetClass href="../../org.muml.core/model/core.ecore#//modelinstance/ModelElementCategory"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//modelinstance/ModelElementCategory/key"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="modelinstance-0.4.ecore#//ModelElementCategory/key"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//modelinstance/ModelElementCategory/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="modelinstance-0.4.ecore#//ModelElementCategory/name"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../org.muml.core/model/core.ecore#//modelinstance/ModelElementCategory/modelElements"/>
+      <sourceFeature xsi:type="ecore:EReference" href="modelinstance-0.4.ecore#//ModelElementCategory/modelElements"/>
+    </featureInitializers>
+    <sourceClass href="modelinstance-0.4.ecore#//ModelElementCategory"/>
+  </mappings>
+  <mappings>
+    <targetClass href="../../org.muml.core/model/core.ecore#//modelinstance/RootNode"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../org.muml.core/model/core.ecore#//modelinstance/RootNode/categories"/>
+      <sourceFeature xsi:type="ecore:EReference" href="modelinstance-0.4.ecore#//RootNode/categories"/>
+    </featureInitializers>
+    <sourceClass href="modelinstance-0.4.ecore#//RootNode"/>
+  </mappings>
+  <release href="muml.releaseset#//@releases.1"/>
+</emm:Migrator>

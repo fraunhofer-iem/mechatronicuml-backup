@@ -1,0 +1,1554 @@
+import ActionLanguageTransformation;
+import CoreLibrary;
+
+//ns.storydriven.org
+modeltype activity uses storydiagrams::activities('http://www.muml.org/storydiagram/1.0.0');
+modeltype patterns uses storydiagrams::patterns('http://www.muml.org/storydiagram/1.0.0');
+modeltype calls uses storydiagrams::calls('http://www.muml.org/storydiagram/1.0.0');
+modeltype core uses core('http://www.muml.org/core/1.0.0');
+modeltype expressions uses core::expressions('http://www.muml.org/core/1.0.0');
+modeltype expressions_common uses core::expressions::common('http://www.muml.org/core/1.0.0');
+
+modeltype tgts uses timedstorydiagram ('http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0');
+
+modeltype realtimestatechart uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype mumlpattern uses pim::protocol("http://www.muml.org/pim/1.0.0");
+modeltype msgi uses pim::msgtype('http://www.muml.org/pim/1.0.0');
+modeltype valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype types uses pim::types('http://www.muml.org/pim/1.0.0');
+modeltype connector uses pim::connector("http://www.muml.org/pim/1.0.0");
+modeltype component uses pim::component("http://www.muml.org/pim/1.0.0");
+modeltype mumlbehavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+
+modeltype actionlanguage uses actionlanguage('http://www.muml.org/pim/actionlanguage/1.0.0');
+
+modeltype runtime uses runtime('http://www.muml.org/verification/core/runtime/1.0.0');
+
+modeltype transformationHelper uses _helper('http://www.muml.org/reconfigurationverification/timedstorychart/transform/helper/1.0.0');
+
+modeltype ecore uses ecore;
+
+-- This transformation transforms clocks, invariants, and transitions 
+-- of the RTSC of Realtime Coordination Pattern to clock instance rules, 
+-- invariant rules, and Timed Storydiagrams respectively. 
+transformation RTSC2RuleTransformation(in input : transformationHelper, out output : transformationHelper);
+--access transformation ActionLanguageTransformation(in input : realtimestatechart, out output : activity);
+
+
+main() {
+	input.objects()[TSCTransformationInput]->map inputToOutput();	
+}
+
+mapping TSCTransformationInput::inputToOutput() : TSCTransformationOutput {
+	result.tgts := object TimedGraphTransformationSystem{name := 'Generated_TSC'};
+	
+	var specifiesDelay : Boolean := self.connector . specifiesDelay();
+	
+	self.connector.connectorEndpoints->forEach(discreteInteractionEndPoint) {
+	
+		var rtsc : RealtimeStatechart := discreteInteractionEndPoint.oclAsType(DiscreteInteractionEndpoint).behavior.oclAsType(RealtimeStatechart);
+		if( (discreteInteractionEndPoint.oclIsKindOf(Role) and discreteInteractionEndPoint.oclAsType(Role).multiRole)
+			 or (discreteInteractionEndPoint.oclIsKindOf(DiscretePort) and discreteInteractionEndPoint.oclAsType(DiscretePort).multiPort) ) then { 
+							discreteInteractionEndPoint.oclAsType(DiscreteInteractionEndpoint).
+									behavior.oclAsType(RealtimeStatechart) . createClockInstanceRules();
+							discreteInteractionEndPoint.oclAsType(DiscreteInteractionEndpoint).
+									behavior.oclAsType(RealtimeStatechart) . createInvariantRules();
+		} 
+		else {
+			rtsc.clocks -> map clockToClockInstanceStorydiagram(rtsc);
+			rtsc.states->forEach(state) {
+				state.invariants -> map stateInvariantToInvariantStorydiagram(rtsc,state);
+			};
+		} endif;
+		
+		result.tgts.oclAsType(TimedGraphTransformationSystem).clockInstanceRules += late resolveIn(Clock::clockToClockInstanceStorydiagram,ClockInstanceStoryDiagram);
+		result.tgts.invariants += late resolveIn(ClockConstraint::stateInvariantToInvariantStorydiagram,InvariantStoryDiagram);
+		
+		self.noSyncTransitions -> forEach(transition) {
+			result.tgts.oclAsType(TimedGraphTransformationSystem).rules += transition -> 
+				map createRuleForNonSyncTransition(specifiesDelay, result.tgts);
+		};
+		self.syncTransitionTuples -> forEach(transitionTuple){
+			result.tgts.rules += transitionTuple -> 
+				map createRuleForSyncTransitionTuple(specifiesDelay, result.tgts);
+		};
+
+		
+
+	};
+	
+	if(specifiesDelay) then {
+		var maxDelay : Integer := 0;
+		var minDelay : Integer := 0;
+		if(self.connector.oclIsTypeOf(RoleConnector)) then {
+			maxDelay := self.oclAsType(RoleConnector).connectorQualityOfServiceAssumptions.maxMessageDelay.value.parseInteger();
+			minDelay := self.oclAsType(RoleConnector).connectorQualityOfServiceAssumptions.minMessageDelay.value.parseInteger();
+		} endif;
+		if(self.connector.oclIsTypeOf(AssemblyConnector)) then {
+			maxDelay := self.oclAsType(AssemblyConnector).coordinationProtocolPart.coordinationProtocol.roleConnector.connectorQualityOfServiceAssumptions.maxMessageDelay.value.parseInteger();
+			minDelay := self.oclAsType(AssemblyConnector).coordinationProtocolPart.coordinationProtocol.roleConnector.connectorQualityOfServiceAssumptions.minMessageDelay.value.parseInteger();
+		} endif;
+	
+		result.tgts.oclAsType(TimedGraphTransformationSystem).clockInstanceRules += map createClockInstanceRuleForMessageDelay();
+		result.tgts.oclAsType(TimedGraphTransformationSystem).rules += map createDeliverMessageRule(minDelay);
+		result.tgts.oclAsType(TimedGraphTransformationSystem).invariants += map createMessageDelayInvariant(maxDelay);
+	}endif;
+}
+
+
+mapping Transition::createRuleForNonSyncTransition(in assemblySpecifiesDelay : Boolean, inout timedGTS : TimedGraphTransformationSystem) : TimedStoryDiagram {
+	name := 'Transition_'+self.source.name + '_' + self.target.name + '_' + self.statechart.name;
+	
+	var act : Activity;
+	var isInSingleRTSC : Boolean := self.isTransitionInSingleDiscreteInteractionEndpointInstanceRTSC();
+
+	var initialNode : InitialNode := new InitialNode();
+	var successFinalNode : ActivityFinalNode := new ActivityFinalNode(true,'');
+	var failureFinalNode : ActivityFinalNode := new ActivityFinalNode(true,'');
+	var checkApplicationNode : TimedActivityNode := new TimedActivityNode('Check application condition');
+	checkApplicationNode.oclAsType(TimedActivityNode).ownedRule := self . map createPattern4CheckApplicationNode();
+	
+	var lastNode : ActivityNode := checkApplicationNode; 
+	
+	
+	if(not self.source.oclAsType(State).exitEvent.action . isEmptyBlock()) then{
+		act := self.source.oclAsType(State).exitEvent.action . map actionToActivity(timedGTS, isInSingleRTSC);
+
+		var exitActionNode : ActivityCallNode := new ActivityCallNode('Exit Action',act);
+		var runtimeBEParameter : EParameter := act.inParameter -> select(name = runtimeBEName) -> any(true);
+		if(not runtimeBEParameter.oclIsUndefined()) then {
+			exitActionNode.ownedParameterBindings += object ParameterBinding {
+				parameter := runtimeBEParameter;
+				valueExpression := object TextualExpression {
+					language := 'OCL';
+					languageVersion := '1.0';
+					expressionText := 're_succ';
+				};
+			};
+		}endif;
+		
+		var rtscInstanceParameter : EParameter := act.inParameter -> select(name = 'rtscInstance') -> any(true);
+		if(not rtscInstanceParameter.oclIsUndefined()) then {
+			exitActionNode.ownedParameterBindings += object ParameterBinding {
+				parameter := rtscInstanceParameter;
+				valueExpression := object TextualExpression {
+					language := 'OCL';
+					languageVersion := '1.0';
+					expressionText := 'ri_succ';
+				};
+			};
+		}endif;
+		ownedActivityNode += exitActionNode;
+		
+		var checkToActionEdge : ActivityEdge := new ActivityEdge(lastNode,exitActionNode);
+		checkToActionEdge.oclAsType(ActivityEdge).guard := EdgeGuard::SUCCESS;
+		ownedActivityEdge += checkToActionEdge;
+		
+		lastNode := exitActionNode;
+		
+	}endif;
+	--exitActionNode.ownedParameterBindings += self.statechart.variables -> map createVariableParameterBinding();
+	
+	
+	// ** map the transition action to an activity .. 
+	if(not self.action . isEmptyBlock()) then{
+		act := self.action . map actionToActivity(timedGTS, isInSingleRTSC);
+
+		// ** ... and call it from and ActivityCallNode
+		var transitionActionNode : ActivityCallNode := new ActivityCallNode('Transition Action',act);
+		var runtimeBEParameter := act.containedParameters -> select(name = runtimeBEName) -> any(true);
+		if(not runtimeBEParameter.oclIsUndefined()) then {
+			transitionActionNode.ownedParameterBindings += object ParameterBinding {
+				parameter := runtimeBEParameter;
+				valueExpression := object TextualExpression {
+					language := 'OCL';
+					languageVersion := '1.0';
+					expressionText := 're_succ';
+				};
+			};
+		}endif;
+
+		var rtscInstanceParameter := act.containedParameters -> select(name = 'rtscInstance') -> any(true);
+		if(not rtscInstanceParameter.oclIsUndefined()) then {
+			transitionActionNode.ownedParameterBindings += object ParameterBinding {
+				parameter := rtscInstanceParameter;
+				valueExpression := object TextualExpression {
+					language := 'OCL';
+					languageVersion := '1.0';
+					expressionText := 'ri_succ';
+				};
+			};
+		}endif;
+		
+		var messageParameter := act.containedParameters -> select(name = 'runtimeMessage') -> any(true);
+		if(not messageParameter.oclIsUndefined()) then {
+			transitionActionNode.ownedParameterBindings += object ParameterBinding {
+				parameter := messageParameter;
+				valueExpression := object TextualExpression {
+					language := 'OCL';
+					languageVersion := '1.0';
+					expressionText := 'm1_succ';
+				};
+			};
+		}endif;
+		
+		ownedActivityNode += transitionActionNode;
+		
+		if(lastNode = checkApplicationNode) then {
+			var checkToActionEdge : ActivityEdge := new ActivityEdge(lastNode,transitionActionNode);
+			checkToActionEdge.oclAsType(ActivityEdge).guard := EdgeGuard::SUCCESS;
+			ownedActivityEdge += checkToActionEdge;
+		}
+		else {
+			ownedActivityEdge += new ActivityEdge(lastNode,transitionActionNode);
+		}endif;
+		
+		lastNode := transitionActionNode;
+	}endif;
+	
+	-- consider entry action
+	if(not self.target.oclAsType(State).entryEvent.action . isEmptyBlock()) then{
+		act := self.target.oclAsType(State).entryEvent.action . map actionToActivity(timedGTS, isInSingleRTSC);
+	
+		var entryActionNode : ActivityCallNode := new ActivityCallNode('Entry Action',act);
+		var runtimeBEParameter := act.inParameter -> select(name = runtimeBEName) -> any(true);
+		if(not runtimeBEParameter.oclIsUndefined()) then {
+			entryActionNode.ownedParameterBindings += object ParameterBinding {
+				parameter := runtimeBEParameter;
+				valueExpression := object TextualExpression {
+					language := 'OCL';
+					languageVersion := '1.0';
+					expressionText := 're_succ';
+				};
+			};
+		}endif;
+
+		var rtscInstanceParameter := act.inParameter -> select(name = 'rtscInstance') -> any(true);
+		if(not rtscInstanceParameter.oclIsUndefined()) then {
+			entryActionNode.ownedParameterBindings += object ParameterBinding {
+				parameter := rtscInstanceParameter;
+				valueExpression := object TextualExpression {
+					language := 'OCL';
+					languageVersion := '1.0';
+					expressionText := 'ri_succ';
+				};
+			};
+		}endif;
+					
+		ownedActivityNode += entryActionNode;
+		
+		if(lastNode = checkApplicationNode) then {
+			var checkToActionEdge : ActivityEdge := new ActivityEdge(lastNode,entryActionNode);
+			checkToActionEdge.oclAsType(ActivityEdge).guard := EdgeGuard::SUCCESS;
+			ownedActivityEdge += checkToActionEdge;
+		}
+		else {
+			ownedActivityEdge += new ActivityEdge(lastNode,entryActionNode);
+		}endif;
+		
+		lastNode := entryActionNode;
+	}endif;
+	var establishTransitionEffectNode : TimedActivityNode := new TimedActivityNode('Establish Transition Effect');
+	
+	ownedActivityNode += initialNode;
+	ownedActivityNode += successFinalNode;
+	ownedActivityNode += failureFinalNode;
+	ownedActivityNode += checkApplicationNode;
+	ownedActivityNode += establishTransitionEffectNode;
+
+	ownedActivityEdge += new ActivityEdge(initialNode,checkApplicationNode);
+	var checkToFailureFinalEdge : ActivityEdge := new ActivityEdge(checkApplicationNode,failureFinalNode);
+	checkToFailureFinalEdge.oclAsType(ActivityEdge).guard := EdgeGuard::FAILURE;
+	ownedActivityEdge += checkToFailureFinalEdge;
+	if(lastNode = checkApplicationNode) then {
+		var checkToActionEdge : ActivityEdge := new ActivityEdge(lastNode,establishTransitionEffectNode);
+		checkToActionEdge.oclAsType(ActivityEdge).guard := EdgeGuard::SUCCESS;
+		ownedActivityEdge += checkToActionEdge;
+	}
+	else {
+		ownedActivityEdge += new ActivityEdge(lastNode,establishTransitionEffectNode);
+	}endif;
+	ownedActivityEdge += new ActivityEdge(establishTransitionEffectNode,successFinalNode);
+	
+		
+	checkApplicationNode.oclAsType(TimedActivityNode).ownedRule.variable[ClockInstanceVariable] -> forEach (civ) {
+		// if the civ was used in a clock instance constraint, 
+		// add this constraint to the reference
+		clockInstConstraint += civ . resolveoneIn(ClockInstanceVariable::createClockInstanceConstraint,ClockInstanceConstraint);
+	};
+	--if(not self.action.oclIsUndefined()) then {
+	--	self.action . map actionToActivity(); 
+	--}endif;
+	establishTransitionEffectNode.oclAsType(TimedActivityNode).ownedRule := self . map createPattern4EstablishTransitionEffectNode(assemblySpecifiesDelay);
+}
+
+
+
+mapping TransitionTuple::createRuleForSyncTransitionTuple(in assemblySpecifiesDelay : Boolean, inout timedGTS : TimedGraphTransformationSystem) : TimedStoryDiagram {
+	name := 'SyncTransition_sender:'+self.sending.source.name + '_' + self.sending.target.name + '_' + self.sending.statechart.name
+				+'receiver:'+self.receiving.source.name + '_' + self.receiving.target.name + '_' + self.receiving.statechart.name;
+
+	var initialNode : InitialNode := new InitialNode();
+	var successFinalNode : ActivityFinalNode := new ActivityFinalNode(true,'');
+	var failureFinalNode : ActivityFinalNode := new ActivityFinalNode(true,'');
+	var checkApplicationTransitionNode : TimedActivityNode := new TimedActivityNode('Check application condition transitions');
+	
+	var isSenderInSingleRTSC : Boolean := self.sending.isTransitionInSingleDiscreteInteractionEndpointInstanceRTSC();
+	var isReceiverInSingleRTSC : Boolean := self.receiving.isTransitionInSingleDiscreteInteractionEndpointInstanceRTSC();
+	
+	ownedActivityEdge += new ActivityEdge(initialNode,checkApplicationTransitionNode);
+	
+	var lastNode : ActivityNode := checkApplicationTransitionNode; 
+	
+	var act : Activity; 
+	if(not self.sending.source.oclAsType(State).exitEvent.action.isEmptyBlock()) then{
+		act := self.sending.source.oclAsType(State).exitEvent.action . map actionToActivity(timedGTS, isSenderInSingleRTSC);
+
+
+		var exitAction1Node : ActivityCallNode := new ActivityCallNode('Exit Action before sending transition',act);
+		var runtimeBEParameter : EParameter := act.inParameter -> select(name = runtimeBEName) -> any(true);
+		if(not runtimeBEParameter.oclIsUndefined()) then {
+			exitAction1Node.ownedParameterBindings += object ParameterBinding {
+				parameter := runtimeBEParameter;
+				valueExpression := object TextualExpression {
+					language := 'OCL';
+					languageVersion := '1.0';
+					expressionText := 're_1_succ';
+				};
+			};
+		}endif;
+
+		var rtscInstanceParameter : EParameter := act.inParameter -> select(name = 'rtscInstance') -> any(true);
+		if(not rtscInstanceParameter.oclIsUndefined()) then {
+			exitAction1Node.ownedParameterBindings += object ParameterBinding {
+				parameter := rtscInstanceParameter;
+				valueExpression := object TextualExpression {
+					language := 'OCL';
+					languageVersion := '1.0';
+					expressionText := 'ri_1_succ';
+				};
+			};
+		}endif;
+		
+		ownedActivityNode += exitAction1Node;
+		
+		var checkToActionEdge : ActivityEdge := new ActivityEdge(lastNode,exitAction1Node);
+		checkToActionEdge.oclAsType(ActivityEdge).guard := EdgeGuard::SUCCESS;
+		ownedActivityEdge += checkToActionEdge;
+		
+		lastNode := exitAction1Node;
+		
+	}endif;
+	
+	if(not self.receiving.source.oclAsType(State).exitEvent.action . isEmptyBlock()) then{
+		act := self.receiving.source.oclAsType(State).exitEvent.action . map actionToActivity(timedGTS, isReceiverInSingleRTSC);
+
+		var exitAction2Node : ActivityCallNode := new ActivityCallNode('Exit Action before receiving transition',act);
+		var runtimeBEParameter := act.inParameter -> select(name = runtimeBEName) -> any(true);
+		if(not runtimeBEParameter.oclIsUndefined()) then {
+			exitAction2Node.ownedParameterBindings += object ParameterBinding {
+				parameter := runtimeBEParameter;
+				valueExpression := object TextualExpression {
+					language := 'OCL';
+					languageVersion := '1.0';
+					expressionText := 're_2_succ';
+				};
+			};
+		}endif;
+
+		var rtscInstanceParameter := act.inParameter -> select(name = 'rtscInstance') -> any(true);
+		if(not rtscInstanceParameter.oclIsUndefined()) then {
+			exitAction2Node.ownedParameterBindings += object ParameterBinding {
+				parameter := rtscInstanceParameter;
+				valueExpression := object TextualExpression {
+					language := 'OCL';
+					languageVersion := '1.0';
+					expressionText := 'ri_2_succ';
+				};
+			};
+		}endif;
+		
+		ownedActivityNode += exitAction2Node;
+		
+		if(lastNode = checkApplicationTransitionNode) then {
+			var checkToActionEdge : ActivityEdge := new ActivityEdge(lastNode,exitAction2Node);
+			checkToActionEdge.oclAsType(ActivityEdge).guard := EdgeGuard::SUCCESS;
+			ownedActivityEdge += checkToActionEdge;
+		}
+		else {
+			ownedActivityEdge += new ActivityEdge(lastNode,exitAction2Node);
+		}endif;
+		
+		lastNode := exitAction2Node;
+	}endif;
+	
+	// ** map the transition action to an activity .. 
+	if(not self.sending.action . isEmptyBlock()) then{
+		act := self.sending.action . map actionToActivity(timedGTS, isSenderInSingleRTSC);
+	
+		// ** ... and call it from and ActivityCallNode
+		var transition1ActionNode : ActivityCallNode := new ActivityCallNode('Transition Action of sending transition',act);
+		var runtimeBEParameter := act.inParameter -> select(name = runtimeBEName) -> any(true);
+		if(not runtimeBEParameter.oclIsUndefined()) then {
+			transition1ActionNode.ownedParameterBindings += object ParameterBinding {
+				parameter := runtimeBEParameter;
+				valueExpression := object TextualExpression {
+					language := 'OCL';
+					languageVersion := '1.0';
+					expressionText := 're_1_succ';
+				};
+			};
+		}endif;
+
+		var rtscInstanceParameter := act.inParameter -> select(name = 'rtscInstance') -> any(true);
+		if(not rtscInstanceParameter.oclIsUndefined()) then {
+			transition1ActionNode.ownedParameterBindings += object ParameterBinding {
+				parameter := rtscInstanceParameter;
+				valueExpression := object TextualExpression {
+					language := 'OCL';
+					languageVersion := '1.0';
+					expressionText := 'ri_1_succ';
+				};
+			};
+		}endif;
+		
+		var messageParameter := act.containedParameters -> select(name = 'runtimeMessage') -> any(true);
+		if(not messageParameter.oclIsUndefined()) then {
+			transition1ActionNode.ownedParameterBindings += object ParameterBinding {
+				parameter := messageParameter;
+				valueExpression := object TextualExpression {
+					language := 'OCL';
+					languageVersion := '1.0';
+					expressionText := 'm1_1_succ';
+				};
+			};
+		}endif;
+		
+		
+		ownedActivityNode += transition1ActionNode;
+		
+		if(lastNode = checkApplicationTransitionNode) then {
+			var checkToActionEdge : ActivityEdge := new ActivityEdge(lastNode,transition1ActionNode);
+			checkToActionEdge.oclAsType(ActivityEdge).guard := EdgeGuard::SUCCESS;
+			ownedActivityEdge += checkToActionEdge;
+		}
+		else {
+			ownedActivityEdge += new ActivityEdge(lastNode,transition1ActionNode);
+		}endif;
+		
+		lastNode := transition1ActionNode;
+	}endif;
+		
+
+	// ** map the transition action to an activity .. 
+	if(not self.receiving.action . isEmptyBlock()) then{
+		act := self.receiving.action . map actionToActivity(timedGTS, isReceiverInSingleRTSC);
+
+		// ** ... and call it from and ActivityCallNode
+		var transition2ActionNode : ActivityCallNode := new ActivityCallNode('Transition Action of receiving transition',act);
+		var runtimeBEParameter := act.inParameter -> select(name = runtimeBEName) -> any(true);
+		if(not runtimeBEParameter.oclIsUndefined()) then {
+			transition2ActionNode.ownedParameterBindings += object ParameterBinding {
+				parameter := runtimeBEParameter;
+				valueExpression := object TextualExpression {
+					language := 'OCL';
+					languageVersion := '1.0';
+					expressionText := 're_2_succ';
+				};
+			};
+		}endif;
+
+		var rtscInstanceParameter := act.inParameter -> select(name = 'rtscInstance') -> any(true);
+		if(not rtscInstanceParameter.oclIsUndefined()) then {
+			transition2ActionNode.ownedParameterBindings += object ParameterBinding {
+				parameter := rtscInstanceParameter;
+				valueExpression := object TextualExpression {
+					language := 'OCL';
+					languageVersion := '1.0';
+					expressionText := 'ri_2_succ';
+				};
+			};
+		}endif;
+		
+		var messageParameter := act.containedParameters -> select(name = 'runtimeMessage') -> any(true);
+		if(not messageParameter.oclIsUndefined()) then {
+			transition2ActionNode.ownedParameterBindings += object ParameterBinding {
+				parameter := messageParameter;
+				valueExpression := object TextualExpression {
+					language := 'OCL';
+					languageVersion := '1.0';
+					expressionText := 'm1_2_succ';
+				};
+			};
+		}endif;
+		
+		ownedActivityNode += transition2ActionNode;
+		
+		if(lastNode = checkApplicationTransitionNode) then {
+			var checkToActionEdge : ActivityEdge := new ActivityEdge(lastNode,transition2ActionNode);
+			checkToActionEdge.oclAsType(ActivityEdge).guard := EdgeGuard::SUCCESS;
+			ownedActivityEdge += checkToActionEdge;
+		}
+		else {
+			ownedActivityEdge += new ActivityEdge(lastNode,transition2ActionNode);
+		}endif;
+		
+		lastNode := transition2ActionNode;
+	}endif;
+	
+
+	if(not self.sending.target.oclAsType(State).entryEvent.action . isEmptyBlock()) then{
+		act := self.sending.target.oclAsType(State).entryEvent.action . map actionToActivity(timedGTS, isSenderInSingleRTSC);
+
+		var entryAction1Node : ActivityCallNode := new ActivityCallNode('Entry Action after sending transition',act);
+		var runtimeBEParameter := act.inParameter -> select(name = runtimeBEName) -> any(true);
+		if(not runtimeBEParameter.oclIsUndefined()) then {
+			entryAction1Node.ownedParameterBindings += object ParameterBinding {
+				parameter := runtimeBEParameter;
+				valueExpression := object TextualExpression {
+					language := 'OCL';
+					languageVersion := '1.0';
+					expressionText := 're_1_succ';
+				};
+			};
+		}endif;
+
+		var rtscInstanceParameter := act.inParameter -> select(name = 'rtscInstance') -> any(true);
+		if(not rtscInstanceParameter.oclIsUndefined()) then {
+			entryAction1Node.ownedParameterBindings += object ParameterBinding {
+				parameter := rtscInstanceParameter;
+				valueExpression := object TextualExpression {
+					language := 'OCL';
+					languageVersion := '1.0';
+					expressionText := 'ri_1_succ';
+				};
+			};
+		}endif;
+			
+		ownedActivityNode += entryAction1Node;
+		
+		if(lastNode = checkApplicationTransitionNode) then {
+			var checkToActionEdge : ActivityEdge := new ActivityEdge(lastNode,entryAction1Node);
+			checkToActionEdge.oclAsType(ActivityEdge).guard := EdgeGuard::SUCCESS;
+			ownedActivityEdge += checkToActionEdge;
+		}
+		else {
+			ownedActivityEdge += new ActivityEdge(lastNode,entryAction1Node);
+		}endif;
+		
+		lastNode := entryAction1Node;
+	}endif;
+
+	if(not self.receiving.target.oclAsType(State).entryEvent.action . isEmptyBlock()) then{
+		act := self.receiving.target.oclAsType(State).entryEvent.action . map actionToActivity(timedGTS, isReceiverInSingleRTSC);
+
+		var entryAction2Node : ActivityCallNode := new ActivityCallNode('Entry Action after receiving transition',act);
+		var runtimeBEParameter := act.inParameter -> select(name = runtimeBEName) -> any(true);
+		if(not runtimeBEParameter.oclIsUndefined()) then {
+			entryAction2Node.ownedParameterBindings += object ParameterBinding {
+				parameter := runtimeBEParameter;
+				valueExpression := object TextualExpression {
+					language := 'OCL';
+					languageVersion := '1.0';
+					expressionText := 're_2_succ';
+				};
+			};
+		}endif;
+
+		var rtscInstanceParameter := act.inParameter -> select(name = 'rtscInstance') -> any(true);
+		if(not rtscInstanceParameter.oclIsUndefined()) then {
+			entryAction2Node.ownedParameterBindings += object ParameterBinding {
+				parameter := rtscInstanceParameter;
+				valueExpression := object TextualExpression {
+					language := 'OCL';
+					languageVersion := '1.0';
+					expressionText := 'ri_2_succ';
+				};
+			};
+		}endif;
+		
+		ownedActivityNode += entryAction2Node;
+		
+		if(lastNode = checkApplicationTransitionNode) then {
+			var checkToActionEdge : ActivityEdge := new ActivityEdge(lastNode,entryAction2Node);
+			checkToActionEdge.oclAsType(ActivityEdge).guard := EdgeGuard::SUCCESS;
+			ownedActivityEdge += checkToActionEdge;
+		}
+		else {
+			ownedActivityEdge += new ActivityEdge(lastNode,entryAction2Node);
+		}endif;
+		
+		lastNode := entryAction2Node;
+	}endif;
+	
+	var establishTransitionEffectNode : TimedActivityNode := new TimedActivityNode('Establish Transition Effect of sending transition');
+	
+	ownedActivityNode += initialNode;
+	ownedActivityNode += successFinalNode;
+	ownedActivityNode += failureFinalNode;
+	ownedActivityNode += checkApplicationTransitionNode;
+	ownedActivityNode += establishTransitionEffectNode;
+
+	var check1ToFailureFinalEdge : ActivityEdge := new ActivityEdge(checkApplicationTransitionNode,failureFinalNode);
+	check1ToFailureFinalEdge.oclAsType(ActivityEdge).guard := EdgeGuard::FAILURE;
+	ownedActivityEdge += check1ToFailureFinalEdge;
+	
+	if(lastNode = checkApplicationTransitionNode) then {
+		var checkToActionEdge : ActivityEdge := new ActivityEdge(lastNode,establishTransitionEffectNode);
+		checkToActionEdge.oclAsType(ActivityEdge).guard := EdgeGuard::SUCCESS;
+		ownedActivityEdge += checkToActionEdge;
+	}
+	else {
+		ownedActivityEdge += new ActivityEdge(lastNode,establishTransitionEffectNode);
+	}endif;
+	ownedActivityEdge += new ActivityEdge(establishTransitionEffectNode,successFinalNode);
+	
+	checkApplicationTransitionNode.oclAsType(TimedActivityNode).ownedRule := self. map createPattern4CheckApplicationSynchronTransitionNode();
+	
+	checkApplicationTransitionNode.oclAsType(TimedActivityNode).ownedRule.variable[ClockInstanceVariable] -> forEach (civ) {
+		// if the civ was used in a clock instance constraint, 
+		// add this constraint to the reference
+		clockInstConstraint += civ . resolveoneIn(ClockInstanceVariable::createClockInstanceConstraint,ClockInstanceConstraint);
+	};
+	
+	establishTransitionEffectNode.oclAsType(TimedActivityNode).ownedRule := self. map createPattern4EstablishSynchronTransitionEffectNode(assemblySpecifiesDelay);
+
+}
+
+mapping TransitionTuple::createPattern4CheckApplicationSynchronTransitionNode() : TimedStoryPattern {
+	var sender : Transition := self.sending;
+	var senderInSingleRTSC : Boolean := sender.isTransitionInSingleDiscreteInteractionEndpointInstanceRTSC();
+	var receiver : Transition := self.receiving;
+	var receiverInSingleRTSC : Boolean := receiver.isTransitionInSingleDiscreteInteractionEndpointInstanceRTSC();
+	
+	// create object variables and their constraints
+	var sc1 : ObjectVariable := map addObjectVariableToRule('rtsc_1',RealtimeStatechart.oclAsType(EClass),result);
+	map addConstraintToObjectVariable('self.name=\''+sender.statechart.name+'\'',sc1.oclAsType(ObjectVariable));
+	
+	var scI1 : ObjectVariable := map addObjectVariableToRule('ri_1',RealtimeStatechartInstance.oclAsType(EClass),result);
+	scI1.bindingState := BindingState::BOUND;
+	
+	var s1_1 : ObjectVariable := map addObjectVariableToRule('s1_1',State.oclAsType(EClass),result);
+	map addConstraintToObjectVariable('self.name=\''+sender.source.name+'\'',s1_1.oclAsType(ObjectVariable));
+	
+	var re1 : ObjectVariable := map addObjectVariableToRule('re_1',RuntimeDiscreteInteractionEndpointInstance.oclAsType(EClass),result);
+	var b1_1 : ObjectVariable := map addObjectVariableToRule('b1_1',RuntimeMessageBuffer.oclAsType(EClass),result);
+	if(sender.triggerMessageEvent != null) then {
+		var m1_1 : ObjectVariable := map addObjectVariableToRule('m1_1',RuntimeMessage.oclAsType(EClass),result);
+		map addConstraintToObjectVariable('self.name=\''+sender.triggerMessageEvent.message.instanceOf.name+'\'',m1_1.oclAsType(ObjectVariable));
+		
+		sender.triggerMessageEvent.message.parameterBinding -> forEach(paramBinding) {
+			var param : ObjectVariable := map addObjectVariableToRule('p_'+paramBinding.parameter.name+'_1',RuntimeParameter.oclAsType(EClass),result);
+			linkVariable += map createLinkVariable(m1_1,param,'parameters');	
+		};
+		
+		var bufferToMessageLink : LinkVariable := map createLinkVariable(b1_1,m1_1,'messages');
+		bufferToMessageLink.oclAsType(LinkVariable).bindingOperator := BindingOperator::DESTROY;
+		var linkConstraint : LinkConstraint := object LinkConstraint {
+			constraintType := LinkConstraintType::FIRST;
+		};
+		bufferToMessageLink.oclAsType(LinkVariable).firstLinkConstraint += linkConstraint;
+		m1_1.oclAsType(ObjectVariable).linkOrderConstraint += linkConstraint;
+		linkVariable += bufferToMessageLink;
+	} endif;
+	
+	sender.clockConstraints -> forEach(cc) {
+		var ci : ClockInstanceVariable := map addClockInstanceVariableToRule('ci_'+cc.clock.name+'_1',ClockInstance.oclAsType(EClass),result);
+		map addConstraintToObjectVariable('self.name=\''+cc.clock.statechart.name+'.'+cc.clock.name+'\'',ci.oclAsType(ClockInstanceVariable));
+	// create link variables	
+		linkVariable += map createLinkVariable(ci,sc1,'hasNode');
+		linkVariable += map createLinkVariable(ci,scI1,'hasNode');
+		ci -> map createClockInstanceConstraint(cc);
+	};
+	
+	sender.clockResets -> forEach(transition_cr) {
+		var ci : ClockInstanceVariable := map addClockInstanceVariableToRule('ci_'+transition_cr.name+'_1',ClockInstance.oclAsType(EClass),result);
+		map addConstraintToObjectVariable('self.name=\''+transition_cr.statechart.name+'.'+transition_cr.name+'\'',ci.oclAsType(ClockInstanceVariable));
+		// add this ClockInstanceVariable to the clock resets of the containing TimedStoryDiagram
+		sender.resolveoneIn(Transition::createRuleForNonSyncTransition,TimedStoryDiagram).resets += ci;
+	// create link variables	
+		linkVariable += map createLinkVariable(ci,sc1,'hasNode');
+		linkVariable += map createLinkVariable(ci,scI1,'hasNode');
+	};
+	
+	linkVariable += map createLinkVariable(scI1,sc1,'instanceOf');
+	linkVariable += map createLinkVariable(re1,b1_1,'messageBuffer');
+	linkVariable += map createLinkVariable(sc1,s1_1,'states');
+	linkVariable += map createLinkVariable(scI1,s1_1,'active');
+	linkVariable += map createLinkVariable(scI1,re1,'nearestRuntimeBehavioralElement');
+	
+	if(not self.sending.guard.oclIsUndefined()) then {
+		var guard1 : String := self.sending.guard . createExpressionString('',result, senderInSingleRTSC);
+		map addConstraintToRule(guard1,result);
+		result.variable->select(type = VariableBinding)->forEach(variableBinding) {
+			if(not scI1.outgoingLink -> exists(target = variableBinding)) then {
+				linkVariable += map createLinkVariable(scI1, variableBinding.oclAsType(ObjectVariable), 'allAvailableVariableBindings');
+			}endif;
+		};
+		result.variable->select(type = Variable)->forEach(variable) {
+			if(not sc1.outgoingLink -> exists(target = variable)) then {
+				linkVariable += map createLinkVariable(sc1, variable.oclAsType(ObjectVariable), 'allAvailableVariables');
+			}endif;
+		};
+	}endif;
+	
+	
+	// *******************************************************
+	
+		// create object variables and their constraints
+	var sc2 : ObjectVariable := map addObjectVariableToRule('rtsc_2',RealtimeStatechart.oclAsType(EClass),result);
+	map addConstraintToObjectVariable('self.name=\''+receiver.statechart.name+'\'',sc2.oclAsType(ObjectVariable));
+	
+	var scI2 : ObjectVariable := map addObjectVariableToRule('ri_2',RealtimeStatechartInstance.oclAsType(EClass),result);
+	scI2.bindingState := BindingState::BOUND;
+	
+	var s1_2 : ObjectVariable := map addObjectVariableToRule('s1_2',State.oclAsType(EClass),result);
+	map addConstraintToObjectVariable('self.name=\''+receiver.source.name+'\'',s1_2.oclAsType(ObjectVariable));
+	
+	var re2 : ObjectVariable := map addObjectVariableToRule('re_2',RuntimeDiscreteInteractionEndpointInstance.oclAsType(EClass),result);
+	var b1_2 : ObjectVariable := map addObjectVariableToRule('b1_2',RuntimeMessageBuffer.oclAsType(EClass),result);
+	if(receiver.triggerMessageEvent != null) then {
+		var m1_2 : ObjectVariable := map addObjectVariableToRule('m1_2',RuntimeMessage.oclAsType(EClass),result);
+		map addConstraintToObjectVariable('self.name=\''+receiver.triggerMessageEvent.message.instanceOf.name+'\'',m1_2.oclAsType(ObjectVariable));
+		
+		receiver.triggerMessageEvent.message.parameterBinding -> forEach(paramBinding) {
+			var param : ObjectVariable := map addObjectVariableToRule('p_'+paramBinding.parameter.name+'_2',RuntimeParameter.oclAsType(EClass),result);
+			linkVariable += map createLinkVariable(m1_2,param,'parameters');	
+		};
+		
+		var bufferToMessageLink : LinkVariable := map createLinkVariable(b1_2,m1_2,'messages');
+		bufferToMessageLink.oclAsType(LinkVariable).bindingOperator := BindingOperator::DESTROY;
+		var linkConstraint : LinkConstraint := object LinkConstraint {
+			constraintType := LinkConstraintType::FIRST;
+		};
+		bufferToMessageLink.oclAsType(LinkVariable).firstLinkConstraint += linkConstraint;
+		m1_2.oclAsType(ObjectVariable).linkOrderConstraint += linkConstraint;
+		linkVariable += bufferToMessageLink;
+	} endif;
+	
+	receiver.clockConstraints -> forEach(cc) {
+		var ci : ClockInstanceVariable := map addClockInstanceVariableToRule('ci_'+cc.clock.name+'_2',ClockInstance.oclAsType(EClass),result);
+		map addConstraintToObjectVariable('self.name=\''+cc.clock.statechart.name+'.'+cc.clock.name+'\'',ci.oclAsType(ClockInstanceVariable));
+	// create link variables	
+		linkVariable += map createLinkVariable(ci,sc2,'hasNode');
+		linkVariable += map createLinkVariable(ci,scI2,'hasNode');
+		ci -> map createClockInstanceConstraint(cc);
+	};
+	
+	receiver.clockResets -> forEach(transition_cr) {
+		var ci : ClockInstanceVariable := map addClockInstanceVariableToRule('ci_'+transition_cr.name+'_2',ClockInstance.oclAsType(EClass),result);
+		map addConstraintToObjectVariable('self.name=\''+transition_cr.statechart.name+'.'+transition_cr.name+'\'',ci.oclAsType(ClockInstanceVariable));
+		// add this ClockInstanceVariable to the clock resets of the containing TimedStoryDiagram
+		receiver.resolveoneIn(Transition::createRuleForNonSyncTransition,TimedStoryDiagram).resets += ci;
+	// create link variables	
+		linkVariable += map createLinkVariable(ci,sc2,'hasNode');
+		linkVariable += map createLinkVariable(ci,scI2,'hasNode');
+	};
+	
+	linkVariable += map createLinkVariable(scI2,sc2,'instanceOf');
+	linkVariable += map createLinkVariable(re2,b1_2,'messageBuffer');
+	linkVariable += map createLinkVariable(sc2,s1_2,'states');
+	linkVariable += map createLinkVariable(scI2,s1_2,'active');
+	linkVariable += map createLinkVariable(scI2,re2,'nearestRuntimeBehavioralElement'); 
+
+	if(not self.receiving.guard.oclIsUndefined()) then {
+		var guard2 : String := self.receiving.guard . createExpressionString('',result,receiverInSingleRTSC);
+		map addConstraintToRule(guard2,result);
+		result.variable->select(type = VariableBinding)->forEach(variableBinding) {
+			if(not scI2.outgoingLink -> exists(target = variableBinding)) then {
+				linkVariable += map createLinkVariable(scI2, variableBinding.oclAsType(ObjectVariable), 'allAvailableVariableBindings');
+			}endif;
+		};
+		result.variable->select(type = Variable)->forEach(variable) {
+			if(not sc2.outgoingLink -> exists(target = variable)) then {
+				linkVariable += map createLinkVariable(sc2, variable.oclAsType(ObjectVariable), 'allAvailableVariables');
+			}endif;
+		};
+	}endif;
+	
+	// Selector expressions
+	if(not self.sending.synchronization.selectorExpression.oclIsUndefined() and not self.receiving.synchronization.selectorExpression.oclIsUndefined()) then {
+		var senderSelectorExpression : String := self.sending.synchronization.selectorExpression.createExpressionString("",result, senderInSingleRTSC);
+		var receiverSelectorExpression : String := self.receiving.synchronization.selectorExpression.createExpressionString("",result, receiverInSingleRTSC);
+		
+		map addConstraintToRule(senderSelectorExpression + '=' + receiverSelectorExpression ,result);
+	}endif;
+}
+
+
+
+mapping Transition::createPattern4CheckApplicationNode() : TimedStoryPattern {
+	// create object variables and their constraints
+
+	var isInSingleRTSC : Boolean := self.isTransitionInSingleDiscreteInteractionEndpointInstanceRTSC();
+
+	var sc : ObjectVariable := map addObjectVariableToRule('rtsc',RealtimeStatechart.oclAsType(EClass),result);
+	map addConstraintToObjectVariable('self.name=\''+self.statechart.name+'\'',sc.oclAsType(ObjectVariable));
+	
+	var scI : ObjectVariable := map addObjectVariableToRule('ri',RealtimeStatechartInstance.oclAsType(EClass),result);
+	scI.bindingState := BindingState::BOUND; 
+	
+	var s1 : ObjectVariable := map addObjectVariableToRule('s1',State.oclAsType(EClass),result);
+	map addConstraintToObjectVariable('self.name=\''+self.source.name+'\'',s1.oclAsType(ObjectVariable));
+	
+
+	self.clockConstraints -> forEach(cc) {
+		var ci : ClockInstanceVariable := map addClockInstanceVariableToRule('ci_'+cc.clock.name,ClockInstance.oclAsType(EClass),result);
+		map addConstraintToObjectVariable('self.name=\''+cc.clock.statechart.name+'.'+cc.clock.name+'\'',ci.oclAsType(ClockInstanceVariable));
+		// create link variables	
+		linkVariable += map createLinkVariable(ci,sc,'hasNode');
+		linkVariable += map createLinkVariable(ci,scI,'hasNode');
+		ci -> map createClockInstanceConstraint(cc);
+	};
+	
+	self.clockResets -> forEach(transition_cr) {
+		var ci : ClockInstanceVariable := map addClockInstanceVariableToRule('ci_'+transition_cr.name,ClockInstance.oclAsType(EClass),result);
+		map addConstraintToObjectVariable('self.name=\''+transition_cr.statechart.name+'.'+transition_cr.name+'\'',ci.oclAsType(ClockInstanceVariable));
+		// add this ClockInstanceVariable to the clock resets of the containing TimedStoryDiagram
+		self.resolveoneIn(Transition::createRuleForNonSyncTransition,TimedStoryDiagram).resets += ci;
+		// create link variables	
+		linkVariable += map createLinkVariable(ci,sc,'hasNode');
+		linkVariable += map createLinkVariable(ci,scI,'hasNode');
+	};
+	
+	linkVariable += map createLinkVariable(scI,sc,'instanceOf');
+	linkVariable += map createLinkVariable(sc,s1,'states');
+	linkVariable += map createLinkVariable(scI,s1,'active');
+	
+	var re : ObjectVariable := map addObjectVariableToRule('re',RuntimeDiscreteInteractionEndpointInstance.oclAsType(EClass),result);
+	var b1 : ObjectVariable := map addObjectVariableToRule('b1',RuntimeMessageBuffer.oclAsType(EClass),result);
+	
+	linkVariable += map createLinkVariable(scI,re,'nearestRuntimeBehavioralElement');
+	linkVariable += map createLinkVariable(re,b1,'messageBuffer');
+	if(self.triggerMessageEvent != null) then {
+		var m1 : ObjectVariable := map addObjectVariableToRule('m1',RuntimeMessage.oclAsType(EClass),result);
+		map addConstraintToObjectVariable('self.name=\''+self.triggerMessageEvent.message.instanceOf.name+'\'',m1.oclAsType(ObjectVariable));
+			
+		self.triggerMessageEvent.message.parameterBinding -> forEach(paramBinding) {
+			var param : ObjectVariable := map addObjectVariableToRule('p_'+paramBinding.parameter.name+'',RuntimeParameter.oclAsType(EClass),result);
+			--rthvar attribute : EAttribute := RuntimeParameter.oclAsType(EClass).eAttributes->select(name = 'value')->any(true);
+			--param.attributeAssignment += attribute -> createAttributeAssignment('m1.',paramBinding);
+			
+			linkVariable += map createLinkVariable(m1,param,'parameters');	
+		};
+			
+		var bufferToMessageLink : LinkVariable := map createLinkVariable(b1,m1,'messages');
+		bufferToMessageLink.oclAsType(LinkVariable).bindingOperator := BindingOperator::DESTROY;
+		var linkConstraint : LinkConstraint := object LinkConstraint {
+			constraintType := LinkConstraintType::FIRST;
+		};
+		bufferToMessageLink.oclAsType(LinkVariable).firstLinkConstraint += linkConstraint;
+		m1.oclAsType(ObjectVariable).linkOrderConstraint += linkConstraint;
+		linkVariable += bufferToMessageLink;
+	} endif;
+	
+	if(not self.guard.oclIsUndefined()) then {
+		var guard1 : String := self.guard . createExpressionString('',result, isInSingleRTSC);
+		map addConstraintToRule(guard1,result);
+		result.variable->select(type = VariableBinding)->forEach(variableBinding) {
+			if(not scI.outgoingLink -> exists(target = variableBinding)) then {
+				linkVariable += map createLinkVariable(scI, variableBinding.oclAsType(ObjectVariable), 'allAvailableVariableBindings');
+			}endif;
+		};
+		result.variable->select(type = Variable)->forEach(variable) {
+			if(not sc.outgoingLink -> exists(target = variable)) then {
+				linkVariable += map createLinkVariable(sc, variable.oclAsType(ObjectVariable), 'allAvailableVariables');
+			}endif;
+		};
+
+	}endif;
+
+}
+
+mapping ClockInstanceVariable::createClockInstanceConstraint(in cc : ClockConstraint) : ClockInstanceConstraint {
+	clockInstanceVariable := self;
+	operator := cc.operator;
+	value := cc.bound.value.parseInteger();
+}
+
+
+
+mapping TransitionTuple::createPattern4EstablishSynchronTransitionEffectNode(in assemblySpecifiesDelay : Boolean) : TimedStoryPattern {
+	
+	var senderInSingleRTSC : Boolean := self.sending.isTransitionInSingleDiscreteInteractionEndpointInstanceRTSC(); 
+	var receiverInSingleRTSC : Boolean := self.receiving.isTransitionInSingleDiscreteInteractionEndpointInstanceRTSC();
+	 
+	// create object variables that were bound in the first node 
+	var sc1 : ObjectVariable := map addObjectVariableToRule('rtsc_1',RealtimeStatechart.oclAsType(EClass),result);
+	sc1.bindingState := BindingState::BOUND;
+	
+	var scI1 : ObjectVariable := map addObjectVariableToRule('ri_1',RealtimeStatechartInstance.oclAsType(EClass),result);
+	scI1.bindingState := BindingState::BOUND;
+	
+	var s1_1 : ObjectVariable := map addObjectVariableToRule('s1_1',State.oclAsType(EClass),result);
+	s1_1.bindingState := BindingState::BOUND;
+	
+	
+	if(self.sending.source.name != self.sending.target.name) then {
+		var s2_1 : ObjectVariable := map addObjectVariableToRule('s2_1',State.oclAsType(EClass),result);
+		map addConstraintToObjectVariable('self.name=\''+self.sending.target.name+'\'',s2_1.oclAsType(ObjectVariable));
+		
+		linkVariable += map createLinkVariable(sc1,s2_1,'states');
+		var oldActiveLink: LinkVariable := map createLinkVariable(scI1,s1_1,'active');
+		oldActiveLink.bindingOperator := BindingOperator::DESTROY;
+		linkVariable += oldActiveLink;
+		var newActiveLink : LinkVariable := map createLinkVariable(scI1,s2_1,'active');
+		newActiveLink.bindingOperator := BindingOperator::CREATE;
+		linkVariable += newActiveLink;
+	}endif;
+	
+	-- delete trigger message incl. parameters
+	if(self.sending.triggerMessageEvent != null) then {		
+		var m1_1 : ObjectVariable := map addObjectVariableToRule('m1_1',RuntimeMessage.oclAsType(EClass),result);
+		m1_1.bindingState := BindingState::BOUND;
+		m1_1.bindingOperator := BindingOperator::DESTROY;
+		
+		self.sending.triggerMessageEvent.message.instanceOf.parameters -> forEach(param) {
+			var param1 : ObjectVariable := map addObjectVariableToRule('p_'+param.name,RuntimeParameter.oclAsType(EClass),result);
+			param1.bindingState := BindingState::UNBOUND;
+			param1.bindingOperator := BindingOperator::DESTROY;
+			
+			var parametersLink : LinkVariable := map createLinkVariable(m1_1,param1,'parameters');
+			parametersLink.bindingOperator := BindingOperator::DESTROY;	
+			linkVariable += parametersLink;		
+		};
+	} endif;
+	
+	if(self.sending.raiseMessageEvent != null) then {
+		var re1 : ObjectVariable := map addObjectVariableToRule('re_1',RuntimeDiscreteInteractionEndpointInstance.oclAsType(EClass),result);
+		re1.bindingState := BindingState::BOUND;
+		var ai1 : ObjectVariable := map addObjectVariableToRule('ai_1',RuntimeConnectorInstance.oclAsType(EClass),result);
+		var recv1 : ObjectVariable := map addObjectVariableToRule('recv_1',RuntimeDiscreteInteractionEndpointInstance.oclAsType(EClass),result);
+		
+		linkVariable += map createLinkVariable(recv1,ai1,'connectorInstances');
+		linkVariable += map createLinkVariable(re1,ai1,'connectorInstances');
+		
+		var m2_1 : ObjectVariable := map addObjectVariableToRule('m2_1',RuntimeMessage.oclAsType(EClass),result);
+		m2_1.bindingOperator := BindingOperator::CREATE;
+		var attribute : EAttribute := RuntimeMessage.oclAsType(EClass).eAllAttributes->select(name = 'name')->any(true);
+		m2_1.attributeAssignment += attribute -> 
+			 createAttributeAssignment('\'' + self.sending.raiseMessageEvent.message.instanceOf.name + '\'',self.sending);
+			
+		self.sending.raiseMessageEvent.message.parameterBinding -> forEach(paramBinding) {
+			var param : ObjectVariable := map addObjectVariableToRule('p_'+paramBinding.parameter.name,RuntimeParameter.oclAsType(EClass),result);
+			param.bindingOperator := BindingOperator::CREATE;
+			attribute := RuntimeParameter.oclAsType(EClass).eAllAttributes->select(name = 'name')->any(true);
+			param.attributeAssignment += attribute ->
+				 createAttributeAssignment ('\''+ paramBinding.parameter.name + '\'',self.sending);
+			attribute := RuntimeParameter.oclAsType(EClass).eAllAttributes->any(name = 'value');
+			
+			var patternForCheckTransitionApplication : TimedStoryPattern := self.resolveoneIn(TransitionTuple::createPattern4CheckApplicationSynchronTransitionNode, TimedStoryPattern);
+			
+			param.attributeAssignment += attribute ->
+				 createAttributeAssignment (paramBinding.value.createExpressionString('',patternForCheckTransitionApplication,senderInSingleRTSC),self.sending);
+			patternForCheckTransitionApplication.variable->select(type = VariableBinding)->forEach(variableBinding) {
+				if(not scI1.outgoingLink -> exists(target = variableBinding)) then {
+					patternForCheckTransitionApplication.linkVariable += map createLinkVariable(getVariableWithNameFromPattern(patternForCheckTransitionApplication,scI1.name), variableBinding.oclAsType(ObjectVariable), 'allAvailableVariableBindings');
+				}endif;
+			};
+			patternForCheckTransitionApplication.variable->select(type = Variable)->forEach(variable) {
+				if(not sc1.outgoingLink -> exists(target = variable)) then {
+					patternForCheckTransitionApplication.linkVariable += map createLinkVariable(getVariableWithNameFromPattern(patternForCheckTransitionApplication,sc1.name), variable.oclAsType(ObjectVariable), 'allAvailableVariables');
+				}endif;
+			};
+						
+			var newParametersLink : LinkVariable := map createLinkVariable(m2_1,param,'parameters');
+			newParametersLink.bindingOperator := BindingOperator::CREATE;
+			linkVariable += newParametersLink;
+		};
+			 
+		if(assemblySpecifiesDelay) then {
+			var moc1 : ObjectVariable := map addObjectVariableToRule('moc',MessageOnConnector.oclAsType(EClass),result);
+			moc1.bindingOperator := BindingOperator::CREATE;
+			var messageLink : LinkVariable := map createLinkVariable(moc1,m2_1,'message');
+			messageLink.bindingOperator := BindingOperator::CREATE;
+			linkVariable += messageLink;
+			var receiverLink : LinkVariable := map createLinkVariable(moc1,recv1,'receiver');
+			receiverLink.bindingOperator := BindingOperator::CREATE;
+			linkVariable += receiverLink;
+			var transientMessagesLink : LinkVariable := map createLinkVariable(ai1,moc1,'transientMessages');
+			transientMessagesLink.bindingOperator := BindingOperator::CREATE;
+			linkVariable += transientMessagesLink;	
+		} 
+		else {
+			var b2_1 : ObjectVariable := map addObjectVariableToRule('b2_1',RuntimeMessageBuffer.oclAsType(EClass),result);
+
+			var messagesLink : LinkVariable := map createLinkVariable(b2_1,m2_1,'messages');
+			messagesLink.bindingOperator := BindingOperator::CREATE;
+			linkVariable += messagesLink;
+
+			linkVariable += map createLinkVariable(recv1,b2_1,'messageBuffer');
+		}endif;
+	}endif;
+	
+	
+	 	// create object variables that were bound in the first node 
+	var sc2 : ObjectVariable := map addObjectVariableToRule('rtsc_2',RealtimeStatechart.oclAsType(EClass),result);
+	sc2.bindingState := BindingState::BOUND;
+	
+	var scI2 : ObjectVariable := map addObjectVariableToRule('ri_2',RealtimeStatechartInstance.oclAsType(EClass),result);
+	scI2.bindingState := BindingState::BOUND;
+	
+	var s1_2 : ObjectVariable := map addObjectVariableToRule('s1_2',State.oclAsType(EClass),result);
+	s1_2.bindingState := BindingState::BOUND;
+	if(self.receiving.source.name != self.receiving.target.name) then {
+		var s2_2 : ObjectVariable := map addObjectVariableToRule('s2_2',State.oclAsType(EClass),result);
+		map addConstraintToObjectVariable('self.name=\''+self.receiving.target.name+'\'',s2_2.oclAsType(ObjectVariable));
+		
+		linkVariable += map createLinkVariable(sc2,s2_2,'states');
+		var oldActiveLink2: LinkVariable := map createLinkVariable(scI2,s1_2,'active');
+		oldActiveLink2.bindingOperator := BindingOperator::DESTROY;
+		linkVariable += oldActiveLink2;
+		var newActiveLink2 : LinkVariable := map createLinkVariable(scI2,s2_2,'active');
+		newActiveLink2.bindingOperator := BindingOperator::CREATE;
+		linkVariable += newActiveLink2;
+	}endif;
+	
+	-- delete trigger message incl. parameters
+	if(self.receiving.triggerMessageEvent != null) then {		
+		var m1_2 : ObjectVariable := map addObjectVariableToRule('m1_2',RuntimeMessage.oclAsType(EClass),result);
+		m1_2.bindingState := BindingState::BOUND;
+		m1_2.bindingOperator := BindingOperator::DESTROY;
+		
+		self.receiving.triggerMessageEvent.message.instanceOf.parameters -> forEach(param) {
+			var param2 : ObjectVariable := map addObjectVariableToRule('p_'+param.name,RuntimeParameter.oclAsType(EClass),result);
+			param2.bindingState := BindingState::UNBOUND;
+			param2.bindingOperator := BindingOperator::DESTROY;
+			
+			var parametersLink : LinkVariable := map createLinkVariable(m1_2,param2,'parameters');
+			parametersLink.bindingOperator := BindingOperator::DESTROY;	
+			linkVariable += parametersLink;
+		};
+	} endif;
+	
+	if(self.receiving.raiseMessageEvent != null) then {
+		var re2 : ObjectVariable := map addObjectVariableToRule('re_2',RuntimeDiscreteInteractionEndpointInstance.oclAsType(EClass),result);
+		re2.bindingState := BindingState::BOUND;
+		var ai2 : ObjectVariable := map addObjectVariableToRule('ai_2',RuntimeConnectorInstance.oclAsType(EClass),result);
+		var recv2 : ObjectVariable := map addObjectVariableToRule('recv_2',RuntimeDiscreteInteractionEndpointInstance.oclAsType(EClass),result);
+		
+		linkVariable += map createLinkVariable(recv2,ai2,'connectorInstances');
+		linkVariable += map createLinkVariable(re2,ai2,'connectorInstances');
+		
+		var m2_2 : ObjectVariable := map addObjectVariableToRule('m2_2',RuntimeMessage.oclAsType(EClass),result);
+		m2_2.bindingOperator := BindingOperator::CREATE;
+		var attribute : EAttribute := RuntimeMessage.oclAsType(EClass).eAllAttributes->select(name = 'name')->any(true);
+		m2_2.attributeAssignment += attribute -> 
+			createAttributeAssignment('\'' + self.receiving.raiseMessageEvent.message.instanceOf.name + '\'',self.receiving);
+			
+		self.receiving.raiseMessageEvent.message.parameterBinding -> forEach(paramBinding) {
+			var param : ObjectVariable := map addObjectVariableToRule('p_'+paramBinding.parameter.name,RuntimeParameter.oclAsType(EClass),result);
+			param.bindingOperator := BindingOperator::CREATE;
+			attribute := RuntimeParameter.oclAsType(EClass).eAllAttributes->select(name = 'name')->any(true);
+			param.attributeAssignment += attribute ->
+				 createAttributeAssignment ('\''+ paramBinding.parameter.name + '\'',self.receiving);
+
+			attribute := RuntimeParameter.oclAsType(EClass).eAllAttributes->any(name = 'value');
+			
+			var patternForCheckTransitionApplication : TimedStoryPattern := self.resolveoneIn(TransitionTuple::createPattern4CheckApplicationSynchronTransitionNode, TimedStoryPattern);
+			
+			param.attributeAssignment += attribute ->
+				 createAttributeAssignment (paramBinding.value.createExpressionString('',patternForCheckTransitionApplication, senderInSingleRTSC),self.receiving);
+			patternForCheckTransitionApplication.variable->select(type = VariableBinding)->forEach(variableBinding) {
+				if(not scI2.outgoingLink -> exists(target = variableBinding)) then {
+					patternForCheckTransitionApplication.linkVariable += map createLinkVariable(getVariableWithNameFromPattern(patternForCheckTransitionApplication,scI2.name), variableBinding.oclAsType(ObjectVariable), 'allAvailableVariableBindings');
+				}endif;
+			};
+			patternForCheckTransitionApplication.variable->select(type = Variable)->forEach(variable) {
+				if(not sc2.outgoingLink -> exists(target = variable)) then {
+					patternForCheckTransitionApplication.linkVariable += map createLinkVariable(getVariableWithNameFromPattern(patternForCheckTransitionApplication,sc2.name), variable.oclAsType(ObjectVariable), 'allAvailableVariables');
+				}endif;
+			};
+							
+			var newParametersLink : LinkVariable := map createLinkVariable(m2_2,param,'parameters');
+			newParametersLink.bindingOperator := BindingOperator::CREATE;
+			linkVariable += newParametersLink;
+		};
+			 
+		if(assemblySpecifiesDelay) then {
+			var moc2 : ObjectVariable := map addObjectVariableToRule('moc_2',MessageOnConnector.oclAsType(EClass),result);
+			moc2.bindingOperator := BindingOperator::CREATE;
+			var messageLink : LinkVariable := map createLinkVariable(moc2,m2_2,'message');
+			messageLink.bindingOperator := BindingOperator::CREATE;
+			linkVariable += messageLink;
+			var receiverLink : LinkVariable := map createLinkVariable(moc2,recv2,'receiver');
+			receiverLink.bindingOperator := BindingOperator::CREATE;
+			linkVariable += receiverLink;
+			var transientMessagesLink : LinkVariable := map createLinkVariable(ai2,moc2,'transientMessages');
+			transientMessagesLink.bindingOperator := BindingOperator::CREATE;
+			linkVariable += transientMessagesLink;	
+		} 
+		else {
+			var b2_2 : ObjectVariable := map addObjectVariableToRule('b2_2',RuntimeMessageBuffer.oclAsType(EClass),result);
+
+			var messagesLink : LinkVariable := map createLinkVariable(b2_2,m2_2,'messages');
+			messagesLink.bindingOperator := BindingOperator::CREATE;
+			linkVariable += messagesLink;
+
+			linkVariable += map createLinkVariable(recv2,b2_2,'messageBuffer');
+		}endif;
+	}endif;
+	
+}
+
+helper getVariableWithNameFromPattern(in pattern : TimedStoryPattern, in variableName : String) : ObjectVariable {
+	
+	return pattern.variable -> select (name = variableName)->any(true).oclAsType(ObjectVariable);
+}
+
+mapping Transition::createPattern4EstablishTransitionEffectNode(in assemblySpecifiesDelay : Boolean) : TimedStoryPattern {
+ 	var isInSingleRTSC : Boolean := self.isTransitionInSingleDiscreteInteractionEndpointInstanceRTSC();
+ 	
+ 	// create object variables that were bound in the first node 
+	var sc : ObjectVariable := map addObjectVariableToRule('rtsc',RealtimeStatechart.oclAsType(EClass),result);
+	sc.bindingState := BindingState::BOUND;
+	
+	var scI : ObjectVariable := map addObjectVariableToRule('ri',RealtimeStatechartInstance.oclAsType(EClass),result);
+	scI.bindingState := BindingState::BOUND;
+	
+	var s1 : ObjectVariable := map addObjectVariableToRule('s1',State.oclAsType(EClass),result);
+	s1.bindingState := BindingState::BOUND;
+	
+	if(self.source.name != self.target.name) then {
+		var s2 : ObjectVariable := map addObjectVariableToRule('s2',State.oclAsType(EClass),result);
+		map addConstraintToObjectVariable('self.name=\''+self.target.name+'\'',s2.oclAsType(ObjectVariable));
+		
+		linkVariable += map createLinkVariable(sc,s2,'states');
+		var oldActiveLink: LinkVariable := map createLinkVariable(scI,s1,'active');
+		oldActiveLink.bindingOperator := BindingOperator::DESTROY;
+		linkVariable += oldActiveLink;
+		var newActiveLink : LinkVariable := map createLinkVariable(scI,s2,'active');
+		newActiveLink.bindingOperator := BindingOperator::CREATE;
+		linkVariable += newActiveLink;
+	}endif;
+	
+	if(self.triggerMessageEvent != null) then {		
+		var m1 : ObjectVariable := map addObjectVariableToRule('m1',RuntimeMessage.oclAsType(EClass),result);
+		m1.bindingState := BindingState::BOUND;
+		m1.bindingOperator := BindingOperator::DESTROY;
+		
+		self.triggerMessageEvent.message.instanceOf.parameters -> forEach(param) {
+			var paramVar : ObjectVariable := map addObjectVariableToRule('p_'+param.name+'',RuntimeParameter.oclAsType(EClass),result);
+			paramVar.bindingState := BindingState::UNBOUND; -- parameter has only been used inside the action, so it should be unbound here! 
+			paramVar.bindingOperator := BindingOperator::DESTROY;
+			
+			var parametersLink : LinkVariable := map createLinkVariable(m1,paramVar,'parameters');
+			parametersLink.bindingOperator := BindingOperator::DESTROY;	
+			linkVariable += parametersLink;		
+		};
+	} endif;
+	
+	if(self.raiseMessageEvent != null) then {
+		var re : ObjectVariable := map addObjectVariableToRule('re',RuntimeDiscreteInteractionEndpointInstance.oclAsType(EClass),result);
+		re.bindingState := BindingState::BOUND;
+		var ai : ObjectVariable := map addObjectVariableToRule('ai',RuntimeConnectorInstance.oclAsType(EClass),result);
+		var recv : ObjectVariable := map addObjectVariableToRule('recv',RuntimeDiscreteInteractionEndpointInstance.oclAsType(EClass),result);
+		
+		linkVariable += map createLinkVariable(recv,ai,'connectorInstances');
+		linkVariable += map createLinkVariable(re,ai,'connectorInstances');
+		
+		var m2 : ObjectVariable := map addObjectVariableToRule('m2',RuntimeMessage.oclAsType(EClass),result);
+		m2.bindingOperator := BindingOperator::CREATE;
+		var attribute : EAttribute := RuntimeMessage.oclAsType(EClass).eAllAttributes->select(name = 'name')->any(true);
+		m2.attributeAssignment += attribute -> 
+			 createAttributeAssignment('\'' + self.raiseMessageEvent.message.instanceOf.name + '\'',self);
+			
+		self.raiseMessageEvent.message.parameterBinding -> forEach(paramBinding) {
+			var param : ObjectVariable := map addObjectVariableToRule('p_'+paramBinding.parameter.name,RuntimeParameter.oclAsType(EClass),result);
+			param.bindingOperator := BindingOperator::CREATE;
+			attribute := RuntimeParameter.oclAsType(EClass).eAllAttributes->select(name = 'name')->any(true);
+			param.attributeAssignment += attribute ->
+				 createAttributeAssignment ('\''+ paramBinding.parameter.name + '\'',self);
+			attribute := RuntimeParameter.oclAsType(EClass).eAllAttributes->any(name = 'value');
+			var patternForCheckTransitionApplication : TimedStoryPattern := self.resolveoneIn(Transition::createPattern4CheckApplicationNode, TimedStoryPattern);
+			param.attributeAssignment += attribute ->
+				 createAttributeAssignment (paramBinding.value.createExpressionString('',patternForCheckTransitionApplication,isInSingleRTSC),self);
+			patternForCheckTransitionApplication.variable->select(type = VariableBinding)->forEach(variableBinding) {
+				if(not scI.outgoingLink -> exists(target = variableBinding)) then {
+					patternForCheckTransitionApplication.linkVariable += map createLinkVariable(getVariableWithNameFromPattern(patternForCheckTransitionApplication,scI.name), variableBinding.oclAsType(ObjectVariable), 'allAvailableVariableBindings');
+				}endif;
+			};
+			patternForCheckTransitionApplication.variable->select(type = Variable)->forEach(variable) {
+				if(not sc.outgoingLink -> exists(target = variable)) then {
+					patternForCheckTransitionApplication.linkVariable += map createLinkVariable(getVariableWithNameFromPattern(patternForCheckTransitionApplication,sc.name), variable.oclAsType(ObjectVariable), 'allAvailableVariables');
+				}endif;
+			};
+							
+			var newParametersLink : LinkVariable := map createLinkVariable(m2,param,'parameters');
+			newParametersLink.bindingOperator := BindingOperator::CREATE;
+			linkVariable += newParametersLink;
+		};
+			 
+		if(assemblySpecifiesDelay) then {
+			var moc : ObjectVariable := map addObjectVariableToRule('moc',MessageOnConnector.oclAsType(EClass),result);
+			moc.bindingOperator := BindingOperator::CREATE;
+			var messageLink : LinkVariable := map createLinkVariable(moc,m2,'message');
+			messageLink.bindingOperator := BindingOperator::CREATE;
+			linkVariable += messageLink;
+			var receiverLink : LinkVariable := map createLinkVariable(moc,recv,'receiver');
+			receiverLink.bindingOperator := BindingOperator::CREATE;
+			linkVariable += receiverLink;
+			var transientMessagesLink : LinkVariable := map createLinkVariable(ai,moc,'transientMessages');
+			transientMessagesLink.bindingOperator := BindingOperator::CREATE;
+			linkVariable += transientMessagesLink;	
+		} 
+		else {
+			var b2 : ObjectVariable := map addObjectVariableToRule('b2',RuntimeMessageBuffer.oclAsType(EClass),result);
+
+			var messagesLink : LinkVariable := map createLinkVariable(b2,m2,'messages');
+			messagesLink.bindingOperator := BindingOperator::CREATE;
+			linkVariable += messagesLink;
+
+			linkVariable += map createLinkVariable(recv,b2,'messageBuffer');
+		}endif;
+	}endif;
+}
+
+mapping createClockInstanceRuleForMessageDelay() : ClockInstanceStoryDiagram {
+	
+	name := 'MessageDelay_addClock';
+	
+	var initialNode : InitialNode := new InitialNode();
+	var finalNode : ActivityFinalNode := new ActivityFinalNode(true,'');
+	var node : TimedActivityNode := new TimedActivityNode('add_ConnectorClockInstance');
+	
+	ownedActivityNode += initialNode;
+	ownedActivityNode += finalNode;
+	ownedActivityNode += node;
+	
+	ownedActivityEdge += new ActivityEdge(initialNode,node);
+	ownedActivityEdge += new ActivityEdge(node,finalNode);
+	
+	var rule : TimedStoryPattern := object TimedStoryPattern{};
+	node.oclAsType(TimedActivityNode).ownedRule := rule;
+
+	var moc : ObjectVariable := map addObjectVariableToRule('moc',MessageOnConnector.oclAsType(EClass),rule);
+	var ai : ObjectVariable := map addObjectVariableToRule('ai',RuntimeConnectorInstance.oclAsType(EClass),rule);
+	var ci_neg : ClockInstanceVariable := map addClockInstanceVariableToRule('NoSuchCI',ClockInstance.oclAsType(EClass),rule);
+	ci_neg.oclAsType(ClockInstanceVariable).bindingSemantics := BindingSemantics::NEGATIVE;
+	map addConstraintToObjectVariable('self.name=\'cConn\'',ci_neg.oclAsType(ClockInstanceVariable));
+	var ci : ClockInstanceVariable := map addClockInstanceVariableToRule('ci',ClockInstance.oclAsType(EClass),rule);
+	ci.oclAsType(ClockInstanceVariable).bindingOperator := BindingOperator::CREATE;
+	var attribute : EAttribute := ClockInstance.oclAsType(EClass).eAllAttributes->select(name = 'name')->any(true); 
+	ci.oclAsType(ClockInstanceVariable).attributeAssignment += attribute -> 
+		 createAttributeAssignment('\'cConn\'',ci);
+	
+	var ci_moc : LinkVariable := map createLinkVariable(ci,moc,'hasNode');
+	ci_moc.oclAsType(LinkVariable).bindingOperator := BindingOperator::CREATE;
+	rule.oclAsType(StoryPattern).linkVariable += ci_moc;
+	
+	var ci_ai : LinkVariable := map createLinkVariable(ci,ai,'hasNode');
+	ci_ai.oclAsType(LinkVariable).bindingOperator := BindingOperator::CREATE;
+	rule.oclAsType(StoryPattern).linkVariable += ci_ai;
+	
+	rule.oclAsType(StoryPattern).linkVariable += map createLinkVariable(ci_neg,moc,'hasNode');
+	
+	rule.oclAsType(StoryPattern).linkVariable += map createLinkVariable(ci_neg,ai,'hasNode');
+	
+	rule.oclAsType(StoryPattern).linkVariable += map createLinkVariable(ai,moc,'transientMessages');
+	
+}
+
+mapping createDeliverMessageRule(in minMessageDelay : Integer) : TimedStoryDiagram {
+	name := 'DeliverMessage';
+	
+	var initialNode : InitialNode := new InitialNode();
+	var finalNode : ActivityFinalNode := new ActivityFinalNode(true,'');
+	var node : TimedActivityNode := new TimedActivityNode('Deliver stored Message');
+	
+	ownedActivityNode += initialNode;
+	ownedActivityNode += finalNode;
+	ownedActivityNode += node;
+	
+	ownedActivityEdge += new ActivityEdge(initialNode,node);
+	ownedActivityEdge += new ActivityEdge(node,finalNode);
+	
+	var rule : TimedStoryPattern := object TimedStoryPattern{};
+	node.oclAsType(TimedActivityNode).ownedRule := rule;
+
+	var moc : ObjectVariable := map addObjectVariableToRule('moc',MessageOnConnector.oclAsType(EClass),rule);
+	moc.bindingOperator := BindingOperator::DESTROY;
+	var ai : ObjectVariable := map addObjectVariableToRule('ai',RuntimeConnectorInstance.oclAsType(EClass),rule);
+	var ci : ClockInstanceVariable := map addClockInstanceVariableToRule('ci',ClockInstance.oclAsType(EClass),rule);
+	map addConstraintToObjectVariable('self.name=\'cConn\'',ci.oclAsType(ClockInstanceVariable));
+	var m : ObjectVariable := map addObjectVariableToRule('m',RuntimeMessage.oclAsType(EClass),rule);
+	var b : ObjectVariable := map addObjectVariableToRule('b',RuntimeMessageBuffer.oclAsType(EClass),rule);
+	var recv : ObjectVariable := map addObjectVariableToRule('recv',RuntimeDiscreteInteractionEndpointInstance.oclAsType(EClass),rule);	
+	
+	rule.oclAsType(TimedStoryPattern).linkVariable += map createLinkVariable(ci,moc,'hasNode');
+	rule.oclAsType(TimedStoryPattern).linkVariable += map createLinkVariable(ci,ai,'hasNode');
+	rule.oclAsType(TimedStoryPattern).linkVariable += map createLinkVariable(recv,ai,'connectorInstances');
+	rule.oclAsType(TimedStoryPattern).linkVariable += map createLinkVariable(recv,b,'messageBuffer');
+	var transientMessagesLink : LinkVariable := map createLinkVariable(ai,moc,'transientMessages');
+	transientMessagesLink.bindingOperator := BindingOperator::DESTROY;
+	rule.oclAsType(TimedStoryPattern).linkVariable += transientMessagesLink;
+	var receiverLink : LinkVariable := map createLinkVariable(moc,recv,'receiver');
+	receiverLink.bindingOperator := BindingOperator::DESTROY;
+	rule.oclAsType(TimedStoryPattern).linkVariable += receiverLink;
+	var messageLink : LinkVariable := map createLinkVariable(moc,m,'message');
+	messageLink.bindingOperator := BindingOperator::DESTROY;
+	rule.oclAsType(TimedStoryPattern).linkVariable += messageLink;
+	var messagesLink : LinkVariable := map createLinkVariable(b,m,'messages');
+	messagesLink.bindingOperator := BindingOperator::CREATE;
+	rule.oclAsType(TimedStoryPattern).linkVariable += messagesLink;
+
+	clockInstConstraint += object ClockInstanceConstraint {
+		clockInstanceVariable := ci;
+		operator := ComparingOperator::GREATER_OR_EQUAL;
+		value := minMessageDelay;
+	};
+}
+
+
+mapping createMessageDelayInvariant(in maxMessageDelay : Integer) : InvariantStoryDiagram {
+	name := 'MessageDelay_Invariant';
+
+	var initialNode : InitialNode := new InitialNode();
+	var finalNode : ActivityFinalNode := new ActivityFinalNode(true,'');
+	var node : TimedActivityNode := new TimedActivityNode('Enforce Maximum Delay');
+	
+	ownedActivityNode += initialNode;
+	ownedActivityNode += finalNode;
+	ownedActivityNode += node;
+	
+	ownedActivityEdge += new ActivityEdge(initialNode,node);
+	ownedActivityEdge += new ActivityEdge(node,finalNode);
+	
+	var rule : TimedStoryPattern := object TimedStoryPattern{};
+	node.oclAsType(TimedActivityNode).ownedRule := rule;
+
+	var moc : ObjectVariable := map addObjectVariableToRule('moc',MessageOnConnector.oclAsType(EClass),rule);
+	var ai : ObjectVariable := map addObjectVariableToRule('ai',RuntimeConnectorInstance.oclAsType(EClass),rule);
+	var ci : ClockInstanceVariable := map addClockInstanceVariableToRule('ci',ClockInstance.oclAsType(EClass),rule);
+	map addConstraintToObjectVariable('self.name=\'cConn\'',ci.oclAsType(ClockInstanceVariable));
+	
+	rule.oclAsType(TimedStoryPattern).linkVariable += map createLinkVariable(ci,moc,'hasNode');
+	rule.oclAsType(TimedStoryPattern).linkVariable += map createLinkVariable(ci,ai,'hasNode');
+	rule.oclAsType(TimedStoryPattern).linkVariable += map createLinkVariable(ai,moc,'transientMessages');
+	
+	clockInstConstraint := object ClockInstanceConstraint {
+		clockInstanceVariable := ci;
+		operator := ComparingOperator::LESS_OR_EQUAL;
+		value := maxMessageDelay;
+	};
+
+}
+
+
+helper RealtimeStatechart::createClockInstanceRules() : Set(ClockInstanceStoryDiagram) {
+	var clockInstanceRules : Set(ClockInstanceStoryDiagram) := object Set(ClockInstanceStoryDiagram){};
+	clockInstanceRules += self.clocks -> map clockToClockInstanceStorydiagram(self);
+	
+	self.states -> embeddedRegions -> forEach(region){
+		clockInstanceRules += region . embeddedStatechart . createClockInstanceRules();
+	};
+	
+	return clockInstanceRules;
+}
+
+
+mapping Clock::clockToClockInstanceStorydiagram(in rtsc : RealtimeStatechart) : ClockInstanceStoryDiagram {
+	name := rtsc.oclAsType(RealtimeStatechart).name + '_addCI_' + self.name;
+	
+	var initialNode : InitialNode := new InitialNode();
+	var finalNode : ActivityFinalNode := new ActivityFinalNode(true, '');
+	var iterateRTSCs : TimedActivityNode := new TimedActivityNode('Iterate over RTSC Instances');
+	var checkClockInst : TimedActivityNode := new TimedActivityNode('Check for Existing Clock Instance');
+	var createClockInst : TimedActivityNode := new TimedActivityNode('Create Clock Instance');
+	
+	ownedActivityNode += initialNode;
+	ownedActivityNode += finalNode;
+	ownedActivityNode += iterateRTSCs;
+	ownedActivityNode += checkClockInst;
+	ownedActivityNode += createClockInst;
+	
+	ownedActivityEdge += new ActivityEdge(initialNode,iterateRTSCs);
+	var iterateToCheck : ActivityEdge := new ActivityEdge(iterateRTSCs,checkClockInst);
+	iterateToCheck.guard := EdgeGuard::EACH_TIME;
+	ownedActivityEdge += iterateToCheck;
+	var iterateToFinal : ActivityEdge := new ActivityEdge(iterateRTSCs,finalNode);
+	iterateToFinal.guard := EdgeGuard::END;
+	ownedActivityEdge += iterateToFinal;
+	var checkToIterate : ActivityEdge := new ActivityEdge(checkClockInst,iterateRTSCs);
+	checkToIterate.guard := EdgeGuard::SUCCESS;
+	ownedActivityEdge += checkToIterate;
+	var checkToCreate : ActivityEdge := new ActivityEdge(checkClockInst,createClockInst);
+	checkToCreate.guard := EdgeGuard::FAILURE;
+	ownedActivityEdge += checkToCreate;
+	ownedActivityEdge += new ActivityEdge(createClockInst,iterateRTSCs);
+	
+	
+	// node: Iterate over RTSC Instances
+	
+	iterateRTSCs._forEach := true; 
+	
+	var iterateRTSCsRule : TimedStoryPattern := object TimedStoryPattern{};
+	iterateRTSCs.oclAsType(TimedActivityNode).ownedRule := iterateRTSCsRule;
+	
+	var sc : ObjectVariable := map addObjectVariableToRule('statechart',RealtimeStatechart.oclAsType(EClass),iterateRTSCsRule);
+	--map addConstraintToRule('sc.name=\''+ rtsc.oclAsType(RealtimeStatechart).name +'\'',rule);
+	map addConstraintToObjectVariable('self.name=\''+ rtsc.oclAsType(RealtimeStatechart).name +'\'',sc);
+	
+	var scI : ObjectVariable := map addObjectVariableToRule('statechartInstance',RealtimeStatechartInstance.oclAsType(EClass),iterateRTSCsRule);
+	scI.bindingState := BindingState::BOUND;
+	
+	iterateRTSCsRule.oclAsType(StoryPattern).linkVariable += map createLinkVariable(scI,sc,'instanceOf');
+
+	
+	// node: Check for Existing Clock Instances
+	
+	var checkClockInstRule: TimedStoryPattern := object TimedStoryPattern{};
+	checkClockInst.ownedRule := checkClockInstRule; 
+	
+	var boundSc : ObjectVariable := map addObjectVariableToRule('statechart',RealtimeStatechart.oclAsType(EClass),checkClockInstRule);
+	boundSc.bindingState := BindingState::BOUND;
+	
+	var boundScI : ObjectVariable := map addObjectVariableToRule('statechartInstance',RealtimeStatechartInstance.oclAsType(EClass),checkClockInstRule);
+	boundScI.bindingState := BindingState::BOUND;
+
+	var existingCI : ClockInstanceVariable := map addClockInstanceVariableToRule('existingCI',ClockInstance.oclAsType(EClass),checkClockInstRule);
+	map addConstraintToObjectVariable('self.name=\''+rtsc.oclAsType(RealtimeStatechart).name + '.' + self.name+'\'',existingCI);
+		
+	var existingCI_Sc : LinkVariable := map createLinkVariable(existingCI,boundSc,'hasNode');
+	checkClockInstRule.oclAsType(StoryPattern).linkVariable += existingCI_Sc;
+	
+	var existingCI_ScI : LinkVariable := map createLinkVariable(existingCI,boundScI,'hasNode');
+	checkClockInstRule.oclAsType(StoryPattern).linkVariable += existingCI_ScI;
+
+	
+	// node: Create Clock Instances
+	
+	var createClockInstRule : TimedStoryPattern := object TimedStoryPattern{};
+	createClockInst.ownedRule := createClockInstRule; 
+	
+	var boundSc2 : ObjectVariable := map addObjectVariableToRule('statechart',RealtimeStatechart.oclAsType(EClass),createClockInstRule);
+	boundSc.bindingState := BindingState::BOUND;
+	
+	var boundScI2 : ObjectVariable := map addObjectVariableToRule('statechartInstance',RealtimeStatechartInstance.oclAsType(EClass),createClockInstRule);
+	boundScI.bindingState := BindingState::BOUND;
+	
+	var ci : ClockInstanceVariable := map addClockInstanceVariableToRule('ci',ClockInstance.oclAsType(EClass),createClockInstRule);
+	ci.oclAsType(ClockInstanceVariable).bindingOperator := BindingOperator::CREATE;
+	var attribute : EAttribute := ClockInstance.oclAsType(EClass).eAllAttributes->select(name = 'name')->any(true); 
+	ci.oclAsType(ClockInstanceVariable).attributeAssignment += attribute -> 
+		 createAttributeAssignment('\''+rtsc.oclAsType(RealtimeStatechart).name + '.' + self.name+'\'',self);
+	
+	var ci_sc : LinkVariable := map createLinkVariable(ci,boundSc2,'hasNode');
+	ci_sc.oclAsType(LinkVariable).bindingOperator := BindingOperator::CREATE;
+	createClockInstRule.oclAsType(StoryPattern).linkVariable += ci_sc;
+	
+	var ci_scI : LinkVariable := map createLinkVariable(ci,boundScI2,'hasNode');
+	ci_scI.oclAsType(LinkVariable).bindingOperator := BindingOperator::CREATE;
+	createClockInstRule.oclAsType(StoryPattern).linkVariable += ci_scI;
+	
+} 
+
+// creates an InvariantStoryDiagram for each invariant in the states of the RealtimeStatechart
+helper RealtimeStatechart::createInvariantRules() : Set(InvariantStoryDiagram) {
+	var invariantRules : Set(InvariantStoryDiagram) := object Set(InvariantStoryDiagram){};
+	self.states->forEach(state){
+		invariantRules += state.invariants -> map stateInvariantToInvariantStorydiagram(self, state);
+	};
+	
+	self.states -> embeddedRegions -> forEach(region){
+		invariantRules += region . embeddedStatechart . createInvariantRules();
+	};
+	return invariantRules;
+}
+
+// creates an InvariantStoryDiagram for the ClockConstraint
+mapping ClockConstraint::stateInvariantToInvariantStorydiagram(in rtsc: RealtimeStatechart, in state: State) : InvariantStoryDiagram {
+	name := rtsc.oclAsType(RealtimeStatechart).name + '_Invariant_' + state.name + '_' + self.clock.name;
+	
+	var initialNode : InitialNode := new InitialNode();
+	var finalNode : ActivityFinalNode := new ActivityFinalNode(true,'');
+	var node : TimedActivityNode := new TimedActivityNode(name);
+	
+	ownedActivityNode += initialNode;
+	ownedActivityNode += finalNode;
+	ownedActivityNode += node;
+	
+	ownedActivityEdge += new ActivityEdge(initialNode,node);
+	ownedActivityEdge += new ActivityEdge(node,finalNode);
+	
+	var rule : TimedStoryPattern := object TimedStoryPattern{};
+	node.oclAsType(TimedActivityNode).ownedRule := rule;
+	
+	var ci : ClockInstanceVariable := map addClockInstanceVariableToRule('ci',ClockInstance.oclAsType(EClass),rule);
+	--map addConstraintToRule('ci.name=\''+ rtsc.oclAsType(RealtimeStatechart).name+ '.'+ self.clock.name + '\'',rule);
+	map addConstraintToObjectVariable('self.name=\''+ rtsc.oclAsType(RealtimeStatechart).name+ '.'+ self.clock.name + '\'',ci);
+	
+	var sc : ObjectVariable := map addObjectVariableToRule('sc',RealtimeStatechart.oclAsType(EClass),rule);
+	--map addConstraintToRule('sc.name=\''+ rtsc.oclAsType(RealtimeStatechart).name +'\'',rule);
+	map addConstraintToObjectVariable('self.name=\''+ rtsc.oclAsType(RealtimeStatechart).name +'\'',sc);
+	
+	var scI : ObjectVariable := map addObjectVariableToRule('r1',RealtimeStatechartInstance.oclAsType(EClass),rule);
+	scI.bindingState := BindingState::BOUND;
+	
+	var s : ObjectVariable := map addObjectVariableToRule('s', State.oclAsType(EClass),rule);
+	--map addConstraintToRule('s.name=\''+ state.name +'\'',rule);
+	map addConstraintToObjectVariable('self.name=\''+ state.name +'\'',s);
+	
+	rule.oclAsType(StoryPattern).linkVariable += map createLinkVariable(ci,sc,'hasNode');
+	rule.oclAsType(StoryPattern).linkVariable += map createLinkVariable(ci,scI,'hasNode');
+	rule.oclAsType(StoryPattern).linkVariable += map createLinkVariable(sc,s,'states');
+	rule.oclAsType(StoryPattern).linkVariable += map createLinkVariable(scI,sc,'instanceOf');
+	rule.oclAsType(StoryPattern).linkVariable += map createLinkVariable(scI,s,'active');
+	
+	clockInstConstraint := ci . map createClockInstanceConstraint(self);
+} 
+
+mapping addObjectVariableToRule(in varName : String, in varType : EClass, inout rule : StoryPattern) : ObjectVariable {
+	classifier := varType;
+	name := varName;
+	rule.oclAsType(StoryPattern).variable += result;
+}
+
+mapping addClockInstanceVariableToRule(in varName : String, in varType : EClass, inout rule : StoryPattern) : ClockInstanceVariable {
+	classifier := varType;
+	name := varName;
+	rule.oclAsType(StoryPattern).variable += result;
+}
+
+constructor ClockInstanceVariable::ClockInstanceVariable() {
+	name := 'ci';
+}
+
+constructor InitialNode::InitialNode() {
+	name := 'initialNode';
+}
+
+
+constructor TimedActivityNode::TimedActivityNode(in nodename : String) {
+	name := nodename;
+}
+
+constructor ActivityCallNode::ActivityCallNode(in nodename : String, in calledAct : Activity) {
+	name := nodename;
+	calledActivity += calledAct;	
+}
+
+
+query Connector::specifiesDelay() : Boolean {
+	if(self.oclIsTypeOf(RoleConnector)) then {
+		return self.oclAsType(RoleConnector).connectorQualityOfServiceAssumptions.maxMessageDelay.value.parseInteger() > 0;
+	} endif;
+	if(self.oclIsTypeOf(AssemblyConnector)) then {
+		return self.oclAsType(AssemblyConnector).coordinationProtocolPart.coordinationProtocol.roleConnector.connectorQualityOfServiceAssumptions.maxMessageDelay.value.parseInteger() > 0;
+	} endif;
+	return false;
+}
+
+query Action::isEmptyBlock() : Boolean {
+	return self.expressions->first().oclAsType(Block).expressions->isEmpty();
+}
+
+-- if the Expression is a literal expression containing an Integer, this query returns the value of the Integer
+query Expression::parseInteger() : Integer{
+	
+	if(self.oclIsTypeOf(LiteralExpression)) then{
+		return self.oclAsType(LiteralExpression).value.toInteger();
+	} endif;
+	
+	return null;
+}

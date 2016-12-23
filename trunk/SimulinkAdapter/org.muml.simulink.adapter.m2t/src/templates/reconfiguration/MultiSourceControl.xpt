@@ -1,0 +1,82 @@
+«IMPORT simulink»
+«IMPORT reconfiguration»
+
+
+«EXTENSION extensions::Element»
+«EXTENSION extensions::Block»
+
+«DEFINE multiSourceControl FOR MultiSourceControl»
+  Block {
+    BlockType SubSystem
+    Name "«this.getName()»"
+    SID				«this.getSimulinkId()»
+    Ports [«this.inPorts.select(p|!EnablePort.isInstance(p) && !TriggerPort.isInstance(p)).size», «this.outPorts.size», «this.inPorts.select(p|EnablePort.isInstance(p)).size», «this.inPorts.select(p|TriggerPort.isInstance(p)).size»]
+    Tag		"id=«this.id»"
+	«EXPAND templates::Parameter::parameter FOREACH this.parameters.reject(p| {'BlockType','Name', 'SID', 'Tag', 'Ports'}.contains(p.name)  || p.name.startsWith('System.'))-»
+	  System {
+	  	Name  "«this.getName()»"
+	  	Open			off 	  	
+	  	«FOREACH this.parameters.select(p|p.name.startsWith('System.') && p.name != 'System.Name') AS parameter-»
+	  	«parameter.name.replaceFirst('System.','')» "«parameter.value»"
+	  	«ENDFOREACH-»
+	  	«EXPAND templates::InPortBlock::inPortBlock FOREACH this.inPorts.select(p| !EnablePort.isInstance(p)&& !TriggerPort.isInstance(p))-»
+	  	«EXPAND templates::OutPortBlock::outPortBlock FOREACH this.outPorts-»
+	  	
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Default"
+	      SID		      61
+	      Position		      [80, 75, 110, 105]
+	      Value		      "0"
+	      OutDataTypeMode	      "Inherit via back propagation"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "Inherit: Inherit via back propagation"
+	    }
+	    Block {
+	      BlockType		      MultiPortSwitch
+	      Name		      "Multiport\nSwitch"
+	      SID		      60
+	      Ports		      [«this.inPorts.size+1», 1]
+	      Position		      [250, 112, 280, 158]
+	      zeroidx		      on
+	      InputSameDT	      off
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      SaturateOnIntegerOverflow	off
+	    }	
+	    
+
+	    Line {
+	      SrcBlock		      "ctrl"
+	      SrcPort		      1
+	      DstBlock		      "Multiport\nSwitch"
+	      DstPort		      1
+	    }	    
+	    Line {
+	      SrcBlock		      "Default"
+	      SrcPort		      1
+	      Points		      [50, 0; 0, 40]
+	      DstBlock		      "Multiport\nSwitch"
+	      DstPort		      2
+	    }
+		«FOREACH this.outPorts AS outPort»
+	    Line {
+	      SrcBlock		      "Multiport\nSwitch"
+	      SrcPort		      1
+	      DstBlock		      "«outPort.getName()»"
+	      DstPort		      1
+	    }		
+		«ENDFOREACH»
+		
+		«FOREACH this.inPorts.withoutFirst() AS inPort»
+	    Line {
+	      SrcBlock		      "«inPort.getName()»"
+	      SrcPort		      1
+	      DstBlock		      "Multiport\nSwitch"
+	      DstPort		      «this.inPorts.indexOf(inPort)+2»
+	    }
+	    «ENDFOREACH»	    	      	
+	  }
+  }
+«ENDDEFINE»

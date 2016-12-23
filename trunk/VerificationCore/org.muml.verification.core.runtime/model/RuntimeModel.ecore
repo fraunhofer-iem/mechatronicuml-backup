@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="runtime" nsURI="http://www.muml.org/verification/core/runtime/1.0.0"
+    nsPrefix="runtime">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="RuntimeComponentInstance" eSuperTypes="../../org.muml.pim/model/pim.ecore#//instance/ComponentInstance #//RuntimeBehavioralElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RuntimeDiscretePortInstance" abstract="true"
+      eSuperTypes="../../org.muml.pim/model/pim.ecore#//instance/DiscretePortInstance #//RuntimeDiscreteInteractionEndpointInstance"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RoleInstance" abstract="true" eSuperTypes="#//RuntimeDiscreteInteractionEndpointInstance">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="role" lowerBound="1" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//protocol/Role"
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="self.type.oclAsType(pim::protocol::Role)"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assembly" eType="#//RuntimeRoleConnectorInstance"
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="if not self.oclAsType(pim::connector::ConnectorEndpointInstance).connectorInstances->isEmpty() then&#xD;&#xA;&#x9;self.oclAsType(pim::connector::ConnectorEndpointInstance).connectorInstances->first().oclAsType(RuntimeRoleConnectorInstance)&#xD;&#xA;else&#xD;&#xA;&#x9;null&#xD;&#xA;endif"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RuntimeMessageBuffer" eSuperTypes="../../org.muml.core/model/core.ecore#//ExtendableElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="messages" upperBound="-1"
+        eType="#//RuntimeMessage" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="runtimeBehavioralElement"
+        lowerBound="1" eType="#//RuntimeBehavioralElement" eOpposite="#//RuntimeBehavioralElement/messageBuffer"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="messageBuffer" lowerBound="1"
+        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//connector/MessageBuffer"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RealtimeStatechartInstance" eSuperTypes="../../org.muml.core/model/core.ecore#//ExtendableElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="StateAndTransitionActive" value="-- A Vertex and a Transition of one RTSC can not be active at the same time&#xD;&#xA;activeVertex.oclIsUndefined() or activeTransition.oclIsUndefined()"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="runtimeBehavioralElement"
+        eType="#//RuntimeBehavioralElement" eOpposite="#//RuntimeBehavioralElement/statechartInstance"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instanceOf" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/RealtimeStatechart"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activeVertex" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Vertex"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subRealtimeStatechartInstances"
+        upperBound="-1" eType="#//RealtimeStatechartInstance" containment="true" eOpposite="#//RealtimeStatechartInstance/parentRealtimeStatechartInstance"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentRealtimeStatechartInstance"
+        eType="#//RealtimeStatechartInstance" eOpposite="#//RealtimeStatechartInstance/subRealtimeStatechartInstances"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variableBindings" upperBound="-1"
+        eType="#//VariableBinding" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allAvailableVariableBindings"
+        upperBound="-1" eType="#//VariableBinding" changeable="false" volatile="true"
+        transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="self -> closure(if parentRealtimeStatechartInstance.oclIsUndefined() then self else parentRealtimeStatechartInstance endif).variableBindings->asOrderedSet()"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nearestRuntimeBehavioralElement"
+        eType="#//RuntimeBehavioralElement" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="-- traverse to parent if no runtime behavioral element itself&#xD;&#xA;if self.runtimeBehavioralElement.oclIsUndefined() then&#xD;&#xA;&#x9;-- guard against NPE&#xD;&#xA;&#x9;if (self.parentRealtimeStatechartInstance.oclIsUndefined()) then&#x9;&#xD;&#xA;&#x9;&#x9;null&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;self.parentRealtimeStatechartInstance.nearestRuntimeBehavioralElement&#xD;&#xA;&#x9;endif&#xD;&#xA;else&#xD;&#xA;&#x9;self.runtimeBehavioralElement&#xD;&#xA;endif"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activeTransition" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Transition"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RuntimeMessage" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="#//RuntimeParameter" containment="true" eOpposite="#//RuntimeParameter/message"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//msgtype/MessageType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RuntimeParameter" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="message" lowerBound="1"
+        eType="#//RuntimeMessage" eOpposite="#//RuntimeMessage/parameters"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//JavaObject"
+        transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//behavior/Parameter"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VariableBinding" eSuperTypes="../../org.muml.core/model/core.ecore#//ExtendableElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variable" lowerBound="1"
+        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//behavior/Variable"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//JavaObject"
+        transient="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RuntimeBehavioralElement" abstract="true"
+      eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="ElementMustNotContainMessageBuffers"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="ElementMustNotContainMessageBuffers" value="if(self.oclIsTypeOf(RuntimeComponentInstance) or self.oclIsTypeOf(MultiRoleInstance) or self.oclIsTypeOf(RuntimeDiscreteMultiPortInstance))&#xD;&#xA;then messageBuffer->size() = 0&#xD;&#xA;else true&#xD;&#xA;endif"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statechartInstance" eType="#//RealtimeStatechartInstance"
+        eOpposite="#//RealtimeStatechartInstance/runtimeBehavioralElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="messageBuffer" upperBound="-1"
+        eType="#//RuntimeMessageBuffer" containment="true" eOpposite="#//RuntimeMessageBuffer/runtimeBehavioralElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="JavaObject" instanceClassName="java.lang.Object"
+      serializable="false"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SingleRoleInstance" eSuperTypes="#//RoleInstance ../../org.muml.pim/model/pim.ecore#//connector/DiscreteSingleInteractionEndpointInstance"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MultiRoleInstance" eSuperTypes="#//RoleInstance ../../org.muml.pim/model/pim.ecore#//connector/DiscreteMultiInteractionEndpointInstance"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RuntimeRoleConnectorInstance" eSuperTypes="#//RuntimeConnectorInstance"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RuntimeConnectorInstance" abstract="true"
+      eSuperTypes="../../org.muml.pim/model/pim.ecore#//connector/ConnectorInstance">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transientMessages" upperBound="-1"
+        eType="#//MessageOnConnector" containment="true" eOpposite="#//MessageOnConnector/runtimeConnectorInstance"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RuntimeAssemblyConnectorInstance" eSuperTypes="../../org.muml.pim/model/pim.ecore#//instance/AssemblyConnectorInstance #//RuntimeConnectorInstance"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageOnConnector" eSuperTypes="../../org.muml.core/model/core.ecore#//ExtendableElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="receiver" lowerBound="1"
+        eType="#//RuntimeBehavioralElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="message" lowerBound="1"
+        eType="#//RuntimeMessage" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="runtimeConnectorInstance"
+        lowerBound="1" eType="#//RuntimeConnectorInstance" eOpposite="#//RuntimeConnectorInstance/transientMessages"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RuntimeDiscreteInteractionEndpointInstance"
+      abstract="true" eSuperTypes="#//RuntimeBehavioralElement ../../org.muml.pim/model/pim.ecore#//connector/DiscreteInteractionEndpointInstance ../../org.muml.pim/model/pim.ecore#//types/DataType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RuntimeDiscreteSinglePortInstance" eSuperTypes="#//RuntimeDiscretePortInstance ../../org.muml.pim/model/pim.ecore#//instance/DiscreteSinglePortInstance"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RuntimeDiscreteMultiPortInstance" eSuperTypes="../../org.muml.pim/model/pim.ecore#//instance/DiscreteMultiPortInstance #//RuntimeDiscretePortInstance"/>
+</ecore:EPackage>

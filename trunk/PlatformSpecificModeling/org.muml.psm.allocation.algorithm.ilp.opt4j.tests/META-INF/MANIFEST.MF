@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Tests
+Bundle-SymbolicName: org.muml.psm.allocation.algorithm.ilp.opt4j.tests
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.junit;bundle-version="4.11.0",
+ org.muml.psm.allocation.ilp,
+ org.muml.psm.allocation.algorithm,
+ org.muml.psm.allocation.algorithm.ilp.opt4j,
+ org.eclipse.xtend.lib;bundle-version="2.7.2",
+ org.muml.psm.allocation.algorithm.tests,
+ org.muml.external.opt4j,
+ org.muml.psm.allocation.ilp.lpsolve.xtext,
+ org.muml.psm.allocation.language.xtext,
+ org.muml.pim,
+ org.muml.pm.hardware
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
+Export-Package: org.muml.psm.allocation.algorithm.ilp.opt4j.tests

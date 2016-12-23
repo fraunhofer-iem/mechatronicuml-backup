@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.3.2" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:pattern="http://www.fujaba.de/muml/model/pattern/0.3.2" xmi:id="_4WkTMD7HEeKoHt7ZS0Qi3A" type="Pattern" name="bi_1N.pattern_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_4WkTMj7HEeKoHt7ZS0Qi3A" type="2004" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_4Wk6QD7HEeKoHt7ZS0Qi3A" type="7004">
+      <children xmi:type="notation:Shape" xmi:id="_oPtnkD7LEeKoHt7ZS0Qi3A" type="3003" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_oPuOoD7LEeKoHt7ZS0Qi3A" type="5003"/>
+        <element xmi:type="pattern:CoordinationPattern" href="../Migration_Test_Models_3.2.fujaba#_loXs0DhzEeKRUZY316r4gg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oPtnkT7LEeKoHt7ZS0Qi3A" x="95" y="24"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_oPuOoT7LEeKoHt7ZS0Qi3A" type="3004" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_oPuOoz7LEeKoHt7ZS0Qi3A" type="5004">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_oPuOpD7LEeKoHt7ZS0Qi3A" y="5"/>
+        </children>
+        <element xmi:type="pattern:Role" href="../Migration_Test_Models_3.2.fujaba#_loYT4DhzEeKRUZY316r4gg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oPuOoj7LEeKoHt7ZS0Qi3A" x="45" y="134"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_oPuOpT7LEeKoHt7ZS0Qi3A" type="3004" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_oPuOpz7LEeKoHt7ZS0Qi3A" type="5004">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_oPuOqD7LEeKoHt7ZS0Qi3A" x="-20" y="44"/>
+        </children>
+        <element xmi:type="pattern:Role" href="../Migration_Test_Models_3.2.fujaba#_loZiADhzEeKRUZY316r4gg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oPuOpj7LEeKoHt7ZS0Qi3A" x="180" y="134"/>
+      </children>
+    </children>
+    <element xmi:type="pattern:CoordinationPattern" href="../Migration_Test_Models_3.2.fujaba#_loXs0DhzEeKRUZY316r4gg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4WkTMz7HEeKoHt7ZS0Qi3A" x="145" y="90" width="271" height="226"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_4WkTMT7HEeKoHt7ZS0Qi3A"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../Migration_Test_Models_3.2.fujaba#_YLajMDO3EeKKgMGDxsj_YA"/>
+</notation:Diagram>

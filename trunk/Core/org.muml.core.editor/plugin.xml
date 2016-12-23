@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   
+   
+   
+   <extension point="org.eclipse.core.contenttype.contentTypes">
+		<content-type file-extensions="fujaba,muml" id="model" name="MechatronicUML Model Files"></content-type>
+		<file-association content-type="org.muml.core.modelinstance.editor.model" file-extensions="fujaba,muml"/>
+   </extension>
+  
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated core -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.muml.core.expressions.presentation.ExpressionsModelWizardID"
+            name="%_UI_ExpressionsModelWizard_label"
+            class="org.muml.core.expressions.presentation.ExpressionsModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ExpressionsModelFile.gif">
+         <description>%_UI_ExpressionsModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated core -->
+      <editor
+            id="org.muml.core.expressions.presentation.ExpressionsEditorID"
+            name="%_UI_ExpressionsEditor_label"
+            icon="icons/full/obj16/ExpressionsModelFile.gif"
+            extensions="expressions"
+            class="org.muml.core.expressions.presentation.ExpressionsEditor"
+            contributorClass="org.muml.core.expressions.presentation.ExpressionsActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated core -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.muml.core.expressions.common.presentation.CommonExpressionsModelWizardID"
+            name="%_UI_CommonExpressionsModelWizard_label"
+            class="org.muml.core.expressions.common.presentation.CommonExpressionsModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/CommonExpressionsModelFile.gif">
+         <description>%_UI_CommonExpressionsModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated core -->
+      <editor
+            id="org.muml.core.expressions.common.presentation.CommonExpressionsEditorID"
+            name="%_UI_CommonExpressionsEditor_label"
+            icon="icons/full/obj16/CommonExpressionsModelFile.gif"
+            extensions="commonexpressions"
+            class="org.muml.core.expressions.common.presentation.CommonExpressionsEditor"
+            contributorClass="org.muml.core.expressions.common.presentation.CommonExpressionsActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated core -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.muml.core.modelinstance.presentation.ModelinstanceModelWizardID"
+            name="%_UI_ModelinstanceModelWizard_label"
+            class="org.muml.core.modelinstance.presentation.ModelinstanceModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ModelinstanceModelFile.gif">
+         <description>%_UI_ModelinstanceModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.muml.core.modelinstance.presentation.ModelinstanceEditorID"
+            name="%_UI_ModelinstanceEditor_label"
+            icon="icons/full/obj16/muml.png"
+            class="org.muml.core.modelinstance.presentation.ModelinstanceEditor"
+            contributorClass="org.muml.core.modelinstance.presentation.ModelinstanceActionBarContributor">
+         <contentTypeBinding contentTypeId="org.muml.core.editor.model"/>
+      </editor>
+   </extension>
+
+</plugin>

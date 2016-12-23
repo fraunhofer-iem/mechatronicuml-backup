@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<migration:Migrator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:migration="http://www.muml.org/emm/1.0.0">
+  <sourcePackages href="hardware-1.0.ecore#/"/>
+  <sourcePackages href="hardware-1.0.ecore#//hwplatform"/>
+  <sourcePackages href="hardware-1.0.ecore#//hwplatforminstance"/>
+  <sourcePackages href="hardware-1.0.ecore#//hwresource"/>
+  <sourcePackages href="hardware-1.0.ecore#//hwresourceinstance"/>
+  <sourcePackages href="hardware-1.0.ecore#//hwvaluetype"/>
+  <targetPackages href="hardware-1.1.ecore#/"/>
+  <targetPackages href="hardware-1.1.ecore#//hwplatform"/>
+  <targetPackages href="hardware-1.1.ecore#//hwplatforminstance"/>
+  <targetPackages href="hardware-1.1.ecore#//hwresource"/>
+  <targetPackages href="hardware-1.1.ecore#//hwresourceinstance"/>
+  <targetPackages href="hardware-1.1.ecore#//hwvaluetype"/>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwresourceinstance/ResourceInstanceRepository"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresourceinstance/ResourceInstanceRepository/resourceInstances"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresourceinstance/ResourceInstanceRepository/resourceInstances"/>
+    </featureInitializers>
+    <sourceClass href="hardware-1.0.ecore#//hwresourceinstance/ResourceInstanceRepository"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwresourceinstance/StructuredResourceInstance"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresourceinstance/StructuredResourceInstance/embeddedAtomicResourceInstances"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresourceinstance/StructuredResourceInstance/embeddedAtomicResourceInstances"/>
+    </featureInitializers>
+    <sourceClass href="hardware-1.0.ecore#//hwresourceinstance/StructuredResourceInstance"/>
+  </mappings>
+  <mappings>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresourceinstance/AtomicResourceInstance/parentStructuredResourceInstance"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresourceinstance/AtomicResourceInstance/parentStructuredResourceInstance"/>
+    </featureInitializers>
+    <sourceClass href="hardware-1.0.ecore#//hwresourceinstance/AtomicResourceInstance"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwresourceinstance/ProcessorInstance"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="hardware-1.1.ecore#//hwresourceinstance/ProcessorInstance/MIPS"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="hardware-1.0.ecore#//hwresourceinstance/ProcessorInstance/MIPS"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="hardware-1.1.ecore#//hwresourceinstance/ProcessorInstance/CPI"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="hardware-1.0.ecore#//hwresourceinstance/ProcessorInstance/CPI"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresourceinstance/ProcessorInstance/ownedCacheInstance"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresourceinstance/ProcessorInstance/ownedCacheInstance"/>
+    </featureInitializers>
+    <sourceClass href="hardware-1.0.ecore#//hwresourceinstance/ProcessorInstance"/>
+  </mappings>
+  <mappings>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresourceinstance/MemoryResourceInstance/memorySize"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresourceinstance/MemoryResourceInstance/memorySize"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresourceinstance/MemoryResourceInstance/throughput"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresourceinstance/MemoryResourceInstance/throughput"/>
+    </featureInitializers>
+    <sourceClass href="hardware-1.0.ecore#//hwresourceinstance/MemoryResourceInstance"/>
+  </mappings>
+  <mappings>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresourceinstance/ComputingResourceInstance/frequency"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresourceinstance/ComputingResourceInstance/frequency"/>
+    </featureInitializers>
+    <sourceClass href="hardware-1.0.ecore#//hwresourceinstance/ComputingResourceInstance"/>
+  </mappings>
+  <mappings>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresourceinstance/ResourceInstance/resourceType"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresourceinstance/ResourceInstance/resourceType"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresourceinstance/ResourceInstance/hwports"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresourceinstance/ResourceInstance/hwports"/>
+    </featureInitializers>
+    <sourceClass href="hardware-1.0.ecore#//hwresourceinstance/ResourceInstance"/>
+  </mappings>
+  <mappings>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresourceinstance/HWPort/communicationResource"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresource/HWPort/parentResource"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresourceinstance/HWPort/parentResourceInstance"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresource/HWPort/parentResourceInstance"/>
+    </featureInitializers>
+    <sourceClass href="hardware-1.0.ecore#//hwresource/HWPort"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwresource/CommunicationResource"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresource/CommunicationResource/protocol"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresource/CommunicationResource/protocol"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresource/CommunicationResource/cardinality"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresource/CommunicationResource/cardinality"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresource/CommunicationResource/parentResource"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresource/HWPort/parentResource"/>
+    </featureInitializers>
+    <sourceClass href="hardware-1.0.ecore#//hwresource/CommunicationResource"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwresource/CommunicationProtocolRepository"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresource/CommunicationProtocolRepository/communicationProtocols"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresource/CommunicationProtocolRepository/communicationProtocols"/>
+    </featureInitializers>
+    <sourceClass href="hardware-1.0.ecore#//hwresource/CommunicationProtocolRepository"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwresource/ResourceRepository"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresource/ResourceRepository/resources"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresource/ResourceRepository/resources"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresource/ResourceRepository/protocols"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresource/ResourceRepository/protocols"/>
+    </featureInitializers>
+    <sourceClass href="hardware-1.0.ecore#//hwresource/ResourceRepository"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwresource/StructuredResource"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresource/StructuredResource/embeddedAtomicResources"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresource/StructuredResource/embeddedAtomicResources"/>
+    </featureInitializers>
+    <sourceClass href="hardware-1.0.ecore#//hwresource/StructuredResource"/>
+  </mappings>
+  <mappings>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresource/AtomicResource/parentStructuredResource"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresource/AtomicResource/parentStructuredResource"/>
+    </featureInitializers>
+    <sourceClass href="hardware-1.0.ecore#//hwresource/AtomicResource"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwresource/Processor"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="hardware-1.1.ecore#//hwresource/Processor/architecture"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="hardware-1.0.ecore#//hwresource/Processor/architecture"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="hardware-1.1.ecore#//hwresource/Processor/family"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="hardware-1.0.ecore#//hwresource/Processor/family"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresource/Processor/ownedCache"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresource/Processor/ownedCache"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresource/Processor/nbCores"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresource/Processor/nbCores"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresource/Processor/nbPipelineStages"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresource/Processor/nbPipelineStages"/>
+    </featureInitializers>
+    <sourceClass href="hardware-1.0.ecore#//hwresource/Processor"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwresource/Cache"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="hardware-1.1.ecore#//hwresource/Cache/writePolicy"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="hardware-1.0.ecore#//hwresource/Cache/writePolicy"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="hardware-1.1.ecore#//hwresource/Cache/replacementPolicy"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="hardware-1.0.ecore#//hwresource/Cache/replacementPolicy"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="hardware-1.1.ecore#//hwresource/Cache/nbSets"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="hardware-1.0.ecore#//hwresource/Cache/nbSets"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="hardware-1.1.ecore#//hwresource/Cache/associativity"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="hardware-1.0.ecore#//hwresource/Cache/associativity"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresource/Cache/usedByProcessor"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresource/Cache/usedByProcessor"/>
+    </featureInitializers>
+    <sourceClass href="hardware-1.0.ecore#//hwresource/Cache"/>
+  </mappings>
+  <mappings>
+    <sourceClass href="hardware-1.0.ecore#//hwresource/Resource"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwplatforminstance/DelegationHWPortInstance"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatforminstance/DelegationHWPortInstance/parentHWPlatformInstance"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwplatforminstance/DelegationHWPortInstance/parentHWPlatformInstance"/>
+    </featureInitializers>
+    <sourceClass href="hardware-1.0.ecore#//hwplatforminstance/DelegationHWPortInstance"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwplatforminstance/NetworkBridgeInstance"/>
+    <sourceClass href="hardware-1.0.ecore#//hwplatforminstance/BridgeInstance"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwplatforminstance/BusInstance"/>
+    <sourceClass href="hardware-1.0.ecore#//hwplatforminstance/BusInstance"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwplatforminstance/NetworkConnectorInstance"/>
+    <sourceClass href="hardware-1.0.ecore#//hwplatforminstance/BusConnectorInstance"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwplatforminstance/HWPortInstance"/>
+    <sourceClass href="hardware-1.0.ecore#//hwplatforminstance/HWPortInstance"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/hwplatformInstances"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/hwplatformInstances"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/networkingHardwareInstances"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/networkingHardwareInstances"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/resources"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/resources"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/parentHWPlatformInstance"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/parentHWPlatformInstance"/>
+    </featureInitializers>
+    <sourceClass href="hardware-1.0.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwplatforminstance/HWPlatformInstance"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatforminstance/HWPlatformInstance/hwplatformType"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwplatforminstance/HWPlatformInstance/hwplatformType"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatforminstance/HWPlatformInstance/delegationPorts"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwplatforminstance/HWPlatformInstance/delegationPorts"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatforminstance/HWPlatformInstance/embeddedHPIC"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwplatforminstance/HWPlatformInstance/embeddedHPIC"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatforminstance/HWPlatformInstance/parentHPIC"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwplatforminstance/HWPlatformInstance/parentHPIC"/>
+    </featureInitializers>
+    <sourceClass href="hardware-1.0.ecore#//hwplatforminstance/HWPlatformInstance"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwplatform/NetworkBridge"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatform/NetworkBridge/delay"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwplatform/BridgePart/delay"/>
+    </featureInitializers>
+    <sourceClass href="hardware-1.0.ecore#//hwplatform/BridgePart"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwplatform/NetworkConnector"/>
+    <sourceClass href="hardware-1.0.ecore#//hwplatform/BusConnector"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwplatform/HWPortPart"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatform/HWPortPart/queuingTime"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwplatform/HWPortPart/queuingTime"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatform/HWPortPart/payloadDataSize"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwplatform/HWPortPart/payloadDataSize"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatform/HWPortPart/parentPlatformPart"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwplatform/HWPortPart/parentResourcePart"/>
+    </featureInitializers>
+    <sourceClass href="hardware-1.0.ecore#//hwplatform/HWPortPart"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwplatform/ResourcePart"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatform/ResourcePart/resourceType"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwplatform/ResourcePart/resourceType"/>
+    </featureInitializers>
+    <sourceClass href="hardware-1.0.ecore#//hwplatform/ResourcePart"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwplatform/HWPlatformPart"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatform/HWPlatformPart/hwplatformType"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwplatform/HWPlatformPart/hwplatformType"/>
+    </featureInitializers>
+    <sourceClass href="hardware-1.0.ecore#//hwplatform/HWPlatformPart"/>
+  </mappings>
+  <mappings>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatform/PlatformPart/parentHWPlatform"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwplatform/PlatformPart/parentHWPlatform"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatform/PlatformPart/cardinality"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwplatform/PlatformPart/cardinality"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatform/PlatformPart/hwPortParts"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwplatform/PlatformPart/hwPortParts"/>
+    </featureInitializers>
+    <sourceClass href="hardware-1.0.ecore#//hwplatform/PlatformPart"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwplatform/HWPlatform"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatform/HWPlatform/embeddedPlatformParts"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwplatform/HWPlatform/embeddedPlatformParts"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatform/HWPlatform/networkingHardware"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwplatform/HWPlatform/networkingHardwareParts"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatform/HWPlatform/delegationPorts"/>
+      <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwplatform/HWPlatform/delegationPorts"/>
+    </featureInitializers>
+    <sourceClass href="hardware-1.0.ecore#//hwplatform/HWPlatform"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwresource/LinkProtocol"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="hardware-1.1.ecore#//hwresource/LinkProtocol/linkProtocol"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="hardware-1.0.ecore#//hwresource/LinkProtocol/linkProtocol"/>
+    </featureInitializers>
+    <sourceClass href="hardware-1.0.ecore#//hwresource/LinkProtocol"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwresource/BusProtocol"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="hardware-1.1.ecore#//hwresource/BusProtocol/busProtocol"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="hardware-1.0.ecore#//hwresource/BusProtocol/busProtocol"/>
+    </featureInitializers>
+    <sourceClass href="hardware-1.0.ecore#//hwresource/BusProtocol"/>
+  </mappings>
+  <mappings>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="hardware-1.1.ecore#//hwresource/CommunicationProtocol/isTimeTriggered"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="hardware-1.0.ecore#//hwresource/CommunicationProtocol/isTimeTriggered"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="hardware-1.1.ecore#//hwresource/CommunicationProtocol/isEventTriggered"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="hardware-1.0.ecore#//hwresource/CommunicationProtocol/isEventTriggered"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="hardware-1.1.ecore#//hwresource/CommunicationProtocol/furtherInformation"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="hardware-1.0.ecore#//hwresource/CommunicationProtocol/furtherInformation"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="hardware-1.1.ecore#//hwresource/CommunicationProtocol/isNetworkingProtocol"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="hardware-1.0.ecore#//hwresource/CommunicationProtocol/isNetworkingProtocol"/>
+    </featureInitializers>
+    <sourceClass href="hardware-1.0.ecore#//hwresource/CommunicationProtocol"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwresource/Device"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="hardware-1.1.ecore#//hwresource/Device/deviceKind"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="hardware-1.0.ecore#//hwresource/Device/deviceType"/>
+    </featureInitializers>
+    <sourceClass href="hardware-1.0.ecore#//hwresource/Device"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwresource/MemoryResource"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="hardware-1.1.ecore#//hwresource/MemoryResource/memoryAccess"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="hardware-1.0.ecore#//hwresource/MemoryResource/memoryAccess"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="hardware-1.1.ecore#//hwresource/MemoryResource/isVolatile"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="hardware-1.0.ecore#//hwresource/MemoryResource/isVolatile"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="hardware-1.1.ecore#//hwresource/MemoryResource/memoryType"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="hardware-1.0.ecore#//hwresource/MemoryResource/memoryType"/>
+    </featureInitializers>
+    <sourceClass href="hardware-1.0.ecore#//hwresource/MemoryResource"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwvaluetype/TimeInterval"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="hardware-1.1.ecore#//hwvaluetype/TimeInterval/unit"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="hardware-1.0.ecore#//hwvaluetype/TimeInterval/unit"/>
+    </featureInitializers>
+    <sourceClass href="hardware-1.0.ecore#//hwvaluetype/TimeInterval"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwvaluetype/DataRate"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="hardware-1.1.ecore#//hwvaluetype/DataRate/value"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="hardware-1.0.ecore#//hwvaluetype/DataRate/value"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="hardware-1.1.ecore#//hwvaluetype/DataRate/unit"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="hardware-1.0.ecore#//hwvaluetype/DataRate/unit"/>
+    </featureInitializers>
+    <sourceClass href="hardware-1.0.ecore#//hwvaluetype/DataRate"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwvaluetype/Frequency"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="hardware-1.1.ecore#//hwvaluetype/Frequency/value"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="hardware-1.0.ecore#//hwvaluetype/Frequency/value"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="hardware-1.1.ecore#//hwvaluetype/Frequency/unit"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="hardware-1.0.ecore#//hwvaluetype/Frequency/unit"/>
+    </featureInitializers>
+    <sourceClass href="hardware-1.0.ecore#//hwvaluetype/Frequency"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwvaluetype/DataSize"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="hardware-1.1.ecore#//hwvaluetype/DataSize/value"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="hardware-1.0.ecore#//hwvaluetype/DataSize/value"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="hardware-1.1.ecore#//hwvaluetype/DataSize/unit"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="hardware-1.0.ecore#//hwvaluetype/DataSize/unit"/>
+    </featureInitializers>
+    <sourceClass href="hardware-1.0.ecore#//hwvaluetype/DataSize"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwplatform/DelegationHWPort"/>
+    <sourceClass href="hardware-1.0.ecore#//hwplatform/DelegationHWPort"/>
+  </mappings>
+  <mappings>
+    <sourceClass href="hardware-1.0.ecore#//hwplatform/NetworkingHardwarePart"/>
+  </mappings>
+  <mappings>
+    <sourceClass href="hardware-1.0.ecore#//hwplatforminstance/NetworkingHardwareInstance"/>
+  </mappings>
+  <mappings>
+    <sourceClass href="hardware-1.0.ecore#//hwresource/ComputingResource"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwresource/ProgrammableLogicDevice"/>
+    <sourceClass href="hardware-1.0.ecore#//hwresource/ProgrammableLogicDevice"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwplatform/Bus"/>
+    <sourceClass href="hardware-1.0.ecore#//hwresource/Bus"/>
+  </mappings>
+  <mappings>
+    <sourceClass href="hardware-1.0.ecore#//hwresourceinstance/DeviceInstance"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwresourceinstance/StorageMemoryInstance"/>
+    <sourceClass href="hardware-1.0.ecore#//hwresourceinstance/StorageMemoryInstance"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwresourceinstance/ProcessingMemoryInstance"/>
+    <sourceClass href="hardware-1.0.ecore#//hwresourceinstance/ProcessingMemoryInstance"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwresourceinstance/CacheInstance"/>
+    <sourceClass href="hardware-1.0.ecore#//hwresourceinstance/CacheInstance"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwresourceinstance/ProgrammableLogicDeviceInstance"/>
+    <sourceClass href="hardware-1.0.ecore#//hwresourceinstance/ProgrammableLogicDeviceInstance"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwresourceinstance/SensorInstance"/>
+    <sourceClass href="hardware-1.0.ecore#//hwresourceinstance/SensorInstance"/>
+  </mappings>
+  <mappings>
+    <targetClass href="hardware-1.1.ecore#//hwresourceinstance/ActuatorInstance"/>
+    <sourceClass href="hardware-1.0.ecore#//hwresourceinstance/ActuatorInstance"/>
+  </mappings>
+  <release href="../../org.muml.core.migrator/model/muml.releaseset#//@releases.1"/>
+</migration:Migrator>

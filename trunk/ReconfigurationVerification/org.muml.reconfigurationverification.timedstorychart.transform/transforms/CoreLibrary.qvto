@@ -1,0 +1,308 @@
+modeltype activity uses storydiagrams::activities('http://www.muml.org/storydiagram/1.0.0');
+modeltype patterns uses storydiagrams::patterns('http://www.muml.org/storydiagram/1.0.0');
+
+modeltype core uses core('http://www.muml.org/core/1.0.0');
+modeltype expressions uses core::expressions('http://www.muml.org/core/1.0.0');
+modeltype expressions_common uses core::expressions::common('http://www.muml.org/core/1.0.0');
+
+modeltype actionlanguage uses actionlanguage('http://www.muml.org/pim/actionlanguage/1.0.0');
+
+modeltype tgts uses timedstorydiagram ('http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0');
+
+modeltype types uses pim::types('http://www.muml.org/pim/1.0.0');
+modeltype protocol uses pim::protocol("http://www.muml.org/pim/1.0.0");
+modeltype mumlbehavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype realtimestatechart uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype mumlconnector uses pim::connector("http://www.muml.org/pim/1.0.0");
+
+modeltype wrapper uses wrapper('http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0');
+
+modeltype exp uses reconfiguration::expression('http://www.muml.org/reconfiguration/1.0.0');
+
+modeltype runtime uses runtime('http://www.muml.org/verification/core/runtime/1.0.0');
+
+
+modeltype ecore uses ecore;
+	
+// This library encapsulates mappings and helper functions used by several transformations
+library CoreLibrary;
+
+property runtimeBEName : String = "runtimeBE";
+
+helper Expression::createExpressionString(in currentString : String,inout variableMatchingPattern : TimedStoryPattern, in exprInSubRoleRTSC : Boolean) : String {
+	var returnString : String;
+	switch {
+		case(self.oclIsTypeOf(UnaryExpression)){
+			switch {
+				case (self.oclAsType(UnaryExpression).operator = UnaryOperator::NOT) returnString := currentString + 'not ' + self.oclAsType(UnaryExpression).enclosedExpression . createExpressionString(currentString, variableMatchingPattern, exprInSubRoleRTSC);
+				else self.oclAsType(UnaryExpression).enclosedExpression . createExpressionString(currentString, variableMatchingPattern, exprInSubRoleRTSC);
+			};
+		}
+		case (self.oclIsTypeOf(LogicalExpression)) {
+			var leftString : String := self.oclAsType(LogicalExpression).leftExpression . createExpressionString(currentString, variableMatchingPattern, exprInSubRoleRTSC);
+			var rightString : String := self.oclAsType(LogicalExpression).rightExpression . createExpressionString(currentString, variableMatchingPattern, exprInSubRoleRTSC);
+			returnString := currentString + leftString +' '+ self.oclAsType(LogicalExpression).operator.logicOperatorToString() +' '+ rightString;
+		};
+		case (self.oclIsTypeOf(ComparisonExpression)) {
+			var leftString : String := self.oclAsType(ComparisonExpression).leftExpression . createExpressionString(currentString,variableMatchingPattern, exprInSubRoleRTSC);
+			var rightString : String := self.oclAsType(ComparisonExpression).rightExpression . createExpressionString(currentString, variableMatchingPattern, exprInSubRoleRTSC);
+			returnString := currentString + leftString +' '+ self.oclAsType(ComparisonExpression).operator.comparisonOperatorToString() +' '+ rightString;
+		};
+		case (self.oclIsTypeOf(ArithmeticExpression)) {
+			var leftString : String := self.oclAsType(ArithmeticExpression).leftExpression . createExpressionString(currentString,variableMatchingPattern, exprInSubRoleRTSC);
+			var rightString : String := self.oclAsType(ArithmeticExpression).rightExpression . createExpressionString(currentString,variableMatchingPattern, exprInSubRoleRTSC);
+			returnString := currentString + leftString +' '+ self.oclAsType(ArithmeticExpression).operator.arithmeticOperatorToString() +' '+ rightString;
+		};
+		case (self.oclIsTypeOf(TypedNamedElementExpression)) {
+			var typedNamedElement : TypedNamedElement := self.oclAsType(TypedNamedElementExpression).typedNamedElement;
+			if(not variableMatchingPattern.variable -> exists(name = typedNamedElement.name+'_variable')) then {
+				var variableBinding : ObjectVariable := object ObjectVariable {
+					name := typedNamedElement.name + '_binding';
+					classifier := VariableBinding.oclAsType(EClass);
+				};
+				var variable : ObjectVariable := object ObjectVariable {
+					name := typedNamedElement.name+'_variable';
+					classifier := Variable.oclAsType(EClass);
+				};
+				map addConstraintToObjectVariable('name=\''+typedNamedElement.name+'\'', variable);
+				variableMatchingPattern.variable += variable;
+				variableMatchingPattern.variable += variableBinding;
+				variableMatchingPattern.linkVariable += map createLinkVariable(variableBinding, variable, 'variable');
+			}endif;
+			
+			var attributeName : String := typedNamedElement.name + '_binding';
+			var attributeType : String := '';
+			if(typedNamedElement.dataType.oclIsTypeOf(PrimitiveDataType)) then {
+				attributeType := typedNamedElement.dataType.oclAsType(PrimitiveDataType).primitiveType.primitiveTypeToString();
+				returnString := currentString + attributeName + '.value.oclAsType(' + attributeType + ')';
+			}
+			else {
+				--attributeType := typedNamedElement.dataType.name;
+				--attributeType := typedNamedElement.dataType.eClass().ePackage.name + '::' + attributeType;
+				returnString := currentString + attributeName + '_succ.value';
+			}endif;
+		};
+		case (self.oclIsTypeOf(LiteralExpression)) {
+			returnString := currentString + self.oclAsType(LiteralExpression).value.toString();
+		};
+		case (self.oclIsTypeOf(DiscreteInteractionEndpointReference)) {
+			var hasVariableExp : Boolean := not self.oclAsType(DiscreteInteractionEndpointReference).typedNamedElementExpression.oclIsUndefined();
+			var hasSelectorExp : Boolean := not self.oclAsType(DiscreteInteractionEndpointReference).position.oclIsUndefined();
+			if(hasVariableExp) then {
+				returnString := returnString + self.oclAsType(DiscreteInteractionEndpointReference).typedNamedElementExpression . createExpressionString(currentString,variableMatchingPattern, exprInSubRoleRTSC);
+			}endif;
+			if(hasVariableExp and hasSelectorExp) then {
+				returnString := returnString + '.';
+			}endif;
+			if(hasSelectorExp) then {
+				returnString := returnString + createSelectorExpressionString(currentString,self.oclAsType(DiscreteInteractionEndpointReference).position, exprInSubRoleRTSC);
+			}endif;
+		};
+		case (self.oclIsTypeOf(ActivityCallExpression)){
+			var outParameter : EParameter := self.oclAsType(ActivityCallExpression).activity.outParameter->first();
+			return currentString + outParameter.name + switch {
+				case (outParameter.eType = BoolWrapper.oclAsType(EClass)) '.boolValue';
+				case (outParameter.eType = DoubleWrapper.oclAsType(EClass)) '.doubleValue';
+				case (outParameter.eType = IntWrapper.oclAsType(EClass)) '.intValue';
+				case (outParameter.eType = LongWrapper.oclAsType(EClass)) '.longValue';
+				case (outParameter.eType = StringWrapper.oclAsType(EClass)) '.stringValue';
+				else '';
+			};
+		};
+		case (self.oclIsTypeOf(TextualExpression)){
+			return currentString + self.oclAsType(TextualExpression).expressionText;
+		};
+		case (self.oclIsTypeOf(TriggerMessageExpression)) {
+			return currentString + 'runtimeParameter_' + self.oclAsType(TriggerMessageExpression).parameter.name + '.value';
+		};
+		else return currentString;
+	};
+
+	return returnString;
+}
+
+
+helper createSelectorExpressionString(inout currentExpressionString : String,in currentPositionSelector : PositionSelector, in isInSingleRTSC : Boolean) : String {
+	var returnString : String := currentExpressionString;
+	if(returnString = "") then {
+		if (isInSingleRTSC) then{
+			-- cast to DiscreteSingleInteractionEndpointInstance if transition is contained in single RTSC
+			returnString := runtimeBEName + '.oclAsType(connector::DiscreteSingleInteractionEndpointInstance)';
+		} else {
+			-- cast to DiscreteMultiInteractionEndpointInstance if transition is contained in adaptation RTSC
+			returnString := runtimeBEName + '.oclAsType(connector::DiscreteMultiInteractionEndpointInstance)';
+		} endif;
+	} endif; 
+	switch {
+		case (currentPositionSelector.kind = PositionSelectorKind::SELF) returnString := currentExpressionString;
+		case (currentPositionSelector.kind = PositionSelectorKind::FIRST) returnString := returnString + '.first';
+		case (currentPositionSelector.kind = PositionSelectorKind::LAST) returnString := returnString + '.last';
+		case (currentPositionSelector.kind = PositionSelectorKind::PREV) returnString := returnString + '.previous';
+		case (currentPositionSelector.kind = PositionSelectorKind::NEXT) returnString := returnString + '.next';
+		else return "";
+	};
+	if(currentPositionSelector.successor.oclIsUndefined()) then {
+		return returnString;
+	}endif;
+	return createSelectorExpressionString(returnString,currentPositionSelector.successor, isInSingleRTSC);
+}
+
+helper ArithmeticOperator::arithmeticOperatorToString() : String {
+	return switch {
+		case (self = ArithmeticOperator::PLUS) '+';
+		case (self = ArithmeticOperator::MINUS) '-';
+		case (self = ArithmeticOperator::TIMES) '*';
+		case (self = ArithmeticOperator::DIVIDE) '/';
+		case (self = ArithmeticOperator::MODULO) '%';
+		else '';
+	};
+}
+
+helper LogicOperator::logicOperatorToString() : String {
+	return switch {
+		case (self = LogicOperator::AND) 'and';
+		case (self = LogicOperator::OR) 'or';
+		case (self = LogicOperator::XOR) 'xor';
+		case (self = LogicOperator::IMPLY) 'implies';
+		else '';
+	};
+}
+
+helper ComparingOperator::comparisonOperatorToString() : String {
+	return switch {
+		case (self = ComparingOperator::LESS) '<';
+		case (self = ComparingOperator::LESS_OR_EQUAL) '<=';
+		case (self = ComparingOperator::EQUAL) '=';
+		case (self = ComparingOperator::GREATER_OR_EQUAL) '>=';
+		case (self = ComparingOperator::GREATER) '>';
+		case (self = ComparingOperator::UNEQUAL) '<>';
+		else '';
+	};
+}
+
+helper PrimitiveTypes::primitiveTypeToString() : String {
+	return switch {
+		case (self = PrimitiveTypes::INT32) 'Integer';
+		case (self = PrimitiveTypes::INT8) 'Integer';
+		case (self = PrimitiveTypes::INT16) 'Integer';
+		case (self = PrimitiveTypes::INT64) 'Integer';
+		case (self = PrimitiveTypes::BOOLEAN) 'Boolean';
+		case (self = PrimitiveTypes::DOUBLE) 'Real';
+		else '';
+	};
+}
+
+
+
+helper DataType::dataTypeToEClassifier() : EClassifier {
+	if(self.oclIsTypeOf(PrimitiveDataType)) then {
+		return switch {
+			case (self.oclAsType(PrimitiveDataType).primitiveType = PrimitiveTypes::INT32) EInt.oclAsType(EDataType);
+			case (self.oclAsType(PrimitiveDataType).primitiveType = PrimitiveTypes::INT8) EByte.oclAsType(EDataType);
+			case (self.oclAsType(PrimitiveDataType).primitiveType = PrimitiveTypes::INT16) EShort.oclAsType(EDataType);
+			case (self.oclAsType(PrimitiveDataType).primitiveType = PrimitiveTypes::INT64) ELong.oclAsType(EDataType);
+			case (self.oclAsType(PrimitiveDataType).primitiveType = PrimitiveTypes::BOOLEAN) EBoolean.oclAsType(EDataType);
+			case (self.oclAsType(PrimitiveDataType).primitiveType = PrimitiveTypes::DOUBLE) EDouble.oclAsType(EDataType);
+			else null;
+		};
+	}
+	else {
+		return self.oclAsType(EClass);
+	}endif;
+	return null;
+}
+
+
+//***********************************************************************************
+//** COPIED FROM RTSC2RuleTransformation ********************************************
+//***********************************************************************************
+constructor ActivityFinalNode::ActivityFinalNode(in isSuccess : Boolean, in returnString : String) {
+	name := 'finalNode';
+	success := isSuccess;
+	returnValues += object TextualExpression{
+		expressionText := returnString;
+		language := 'OCL';
+		languageVersion := '1.0';
+	};
+}
+
+constructor ActivityEdge::ActivityEdge(in sourceNode: ActivityNode, in targetNode: ActivityNode,in owning : Activity) {
+	source := sourceNode;
+	target := targetNode;
+	owningActivity := owning;
+}
+
+constructor ActivityEdge::ActivityEdge(in sourceNode: ActivityNode, in targetNode: ActivityNode) {
+	source := sourceNode;
+	target := targetNode;
+}
+
+mapping addObjectVariableToRule(in varName : String, in varType : EClass, inout rule : StoryPattern) : ObjectVariable {
+	classifier := varType;
+	name := varName;
+	rule.oclAsType(StoryPattern).variable += result;
+}
+
+
+mapping addConstraintToRule(in constraintText : String, inout rule : StoryPattern) : Constraint {
+	constraintExpression := object TextualExpression{
+		expressionText := constraintText;
+		language := 'OCL';
+		languageVersion := '1.0';
+	};
+	rule.constraint += result;
+}
+
+mapping addConstraintToObjectVariable(in constraintText : String, inout variable : ObjectVariable) : Constraint {
+	constraintExpression := object TextualExpression{
+		expressionText := constraintText;
+		language := 'OCL';
+		languageVersion := '1.0';
+	};
+	variable.constraint += result;
+}
+
+mapping createLinkVariable(in sourceObject : ObjectVariable, in targetObject : ObjectVariable, in targetEndName : String) : LinkVariable {
+	name := targetEndName;
+	source := sourceObject;
+	target := targetObject;
+	targetEnd := sourceObject.classifier.eAllReferences->select(name = targetEndName)->any(true);
+}
+
+helper EAttribute::createAttributeAssignment(in text : String, in identifier : EObject) : AttributeAssignment {
+	// identifier is needed, because otherwise 
+	// for one EAttribute and one String always 
+	// the same object is returned by the mapping
+	var assignment : AttributeAssignment := object AttributeAssignment {
+		
+		valueExpression := object TextualExpression{
+			expressionText := text;
+			language := 'OCL';
+			languageVersion := '1.0';
+		};
+		attribute := self;
+	};
+	return assignment;
+}
+	
+	
+	-- determine whether the transition is part of a single or subrole/subport RTSC
+query Transition::isTransitionInSingleDiscreteInteractionEndpointInstanceRTSC() : Boolean{
+	var rtsc : RealtimeStatechart := self.statechart;
+	
+	-- get highest parent statechart
+	var highestParent := rtsc;
+	while(highestParent.embedded and highestParent.behavioralElement.oclIsUndefined()){
+		highestParent := highestParent.parentRegion.parentState.parentStatechart;
+	};
+	
+	-- each single or subrole RTSC has a behavioral element. Thus, if it is undefined we have a transition in an adaptation RTSC
+	if(highestParent.behavioralElement.oclIsUndefined()) then{
+		return false;
+	} else {
+		return true;
+	} endif;
+	
+	-- we can never reach this line, but QVT demands that a return statement is the last one in a query
+	return true; 
+}

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:msgtype="http://www.muml.org/pim/msgtype/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xsi:schemaLocation="http://www.muml.org/modelinstance/1.0.0 http://www.muml.org/core/1.0.0#//modelinstance http://www.muml.org/pim/msgtype/1.0.0 http://www.muml.org/pim/1.0.0#//msgtype" xmi:id="_e66f8CMmEeaKgdiSINwsHw" type="Message Type" name="M1.messagetype_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_e7BNoCMmEeaKgdiSINwsHw" type="2008" fontName="Cantarell" fontHeight="11" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_e7FfECMmEeaKgdiSINwsHw" type="5017"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_e7FfESMmEeaKgdiSINwsHw" type="7010">
+      <children xmi:type="notation:Shape" xmi:id="_Duit4CMpEeaKgdiSINwsHw" type="3007" fontName="Cantarell" fontHeight="11" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_DujU8CMpEeaKgdiSINwsHw" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_DumYQCMpEeaKgdiSINwsHw" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_DumYQSMpEeaKgdiSINwsHw"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_DumYQiMpEeaKgdiSINwsHw"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="../org.muml.examples.muml#_jxLsgMjrEeW0gpRI-mS_yA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Duit4SMpEeaKgdiSINwsHw"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_F0ZnICMpEeaKgdiSINwsHw" type="3007" fontName="Cantarell" fontHeight="11" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_F0ZnIiMpEeaKgdiSINwsHw" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_F0ZnIyMpEeaKgdiSINwsHw" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_F0aOMCMpEeaKgdiSINwsHw"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_F0aOMSMpEeaKgdiSINwsHw"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="../org.muml.examples.muml#//@categories.3/@modelElements.0/@messageTypes.1"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_F0ZnISMpEeaKgdiSINwsHw"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_HY_mYCMpEeaKgdiSINwsHw" type="3007" fontName="Cantarell" fontHeight="11" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_HY_mYiMpEeaKgdiSINwsHw" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_HY_mYyMpEeaKgdiSINwsHw" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_HY_mZCMpEeaKgdiSINwsHw"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_HY_mZSMpEeaKgdiSINwsHw"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="../org.muml.examples.muml#//@categories.3/@modelElements.0/@messageTypes.2"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HY_mYSMpEeaKgdiSINwsHw"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_ImoBsCMqEeaKgdiSINwsHw" type="3007" fontName="Cantarell" fontHeight="11" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_ImoowCMqEeaKgdiSINwsHw" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_ImoowSMqEeaKgdiSINwsHw" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_ImoowiMqEeaKgdiSINwsHw"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_ImoowyMqEeaKgdiSINwsHw"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="../org.muml.examples.muml#//@categories.3/@modelElements.0/@messageTypes.3"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ImoBsSMqEeaKgdiSINwsHw"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_JVcPgCMqEeaKgdiSINwsHw" type="3007" fontName="Cantarell" fontHeight="11" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_JVc2kSMqEeaKgdiSINwsHw" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_JVc2kiMqEeaKgdiSINwsHw" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_JVc2kyMqEeaKgdiSINwsHw"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_JVc2lCMqEeaKgdiSINwsHw"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="../org.muml.examples.muml#//@categories.3/@modelElements.0/@messageTypes.4"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JVc2kCMqEeaKgdiSINwsHw"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_lg3RgCMsEeaKgdiSINwsHw" type="3007" fontName="Cantarell" fontHeight="11" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_lg34kCMsEeaKgdiSINwsHw" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_lg34kSMsEeaKgdiSINwsHw" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_lg34kiMsEeaKgdiSINwsHw"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_lg34kyMsEeaKgdiSINwsHw"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="../org.muml.examples.muml#//@categories.3/@modelElements.0/@messageTypes.5"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lg3RgSMsEeaKgdiSINwsHw"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_e7FfEiMmEeaKgdiSINwsHw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_e7FfEyMmEeaKgdiSINwsHw"/>
+    </children>
+    <element xmi:type="msgtype:MessageTypeRepository" href="../org.muml.examples.muml#_jLAdUMjrEeW0gpRI-mS_yA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_e7BNoSMmEeaKgdiSINwsHw" width="613" height="313"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_e66f8SMmEeaKgdiSINwsHw"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../org.muml.examples.muml#//@categories.10"/>
+</notation:Diagram>

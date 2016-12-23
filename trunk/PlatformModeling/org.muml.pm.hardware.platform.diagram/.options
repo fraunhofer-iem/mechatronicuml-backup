@@ -1,0 +1,7 @@
+# Tracing options for the org.muml.pm.hardware.platform.diagram plug-in
+
+# Common issues
+org.muml.pm.hardware.platform.diagram/debug=false
+
+# Visual IDs
+org.muml.pm.hardware.platform.diagram/debug/visualID=false

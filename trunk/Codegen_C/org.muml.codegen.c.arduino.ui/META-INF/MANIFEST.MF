@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Acceleo Arduino Module IDE Plug-in
+Bundle-SymbolicName: org.muml.codegen.c.arduino.ui;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.muml.codegen.c.arduino.ui.Activator
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.muml.codegen.c.arduino,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.ecore.xmi,
+ org.eclipse.ocl,
+ org.eclipse.ocl.ecore,
+ org.eclipse.acceleo.model,
+ org.eclipse.acceleo.engine,
+ org.muml.codegen.c.export.ui,
+ org.muml.pim,
+ org.eclipse.gmf.runtime.notation.edit,
+ org.muml.codegen.c,
+ org.apache.commons.io
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-ActivationPolicy: lazy
+Eclipse-LazyStart: true

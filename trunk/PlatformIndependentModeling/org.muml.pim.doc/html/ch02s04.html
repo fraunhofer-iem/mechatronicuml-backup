@@ -1,0 +1,888 @@
+<html><head><META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Tutorial</title><meta content="DocBook XSL Stylesheets V1.77.0" name="generator"><link rel="home" href="index.html" title="MechatronicUML Tool Suite Guide"><link rel="up" href="ch02.html" title="Chapter&nbsp;2.&nbsp;User Guide"><link rel="prev" href="ch02s03.html" title="How To..."><link rel="next" href="ch02s05.html" title="FAQ"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table summary="Navigation header" width="100%"><tr><th align="center" colspan="3">Tutorial</th></tr><tr><td align="left" width="20%"><a accesskey="p" href="ch02s03.html">Prev</a>&nbsp;</td><th align="center" width="60%">Chapter&nbsp;2.&nbsp;User Guide</th><td align="right" width="20%">&nbsp;<a accesskey="n" href="ch02s05.html">Next</a></td></tr></table><hr></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="tutorials"></a>Tutorial</h2></div></div></div>
+	
+	<p>
+		This tutorial will show you how to create models with the MechatronicUML Tool Suite.
+		To understand this tutorial you need to now what Mechatronic UML (MUML) is.
+		The tutorial will not explain the features of MUML, so please look into the Tech Report (LINK)
+		if you have any questions concerning MUML.
+		To teach you how to use the MechatronicUML Tool Suite we will create all the required models of the following example.
+	</p>
+	<p>
+		Let there be two robots called BeBots. One shall be the master and one the slave.
+		The master BeBot has a task list and each task represents a target position the slave has to drive to.
+		From this task list a task shall be sent to the slave BeBot and be executed by him.
+		When the slave has finished the task within a given time, the master transmits the next one.
+		If the slave fails executing the task in the given time, the same task will be sent again.
+		For execution the slave shall know its current position.
+		In this example we will abstract from engine control in the behavior of the BeBots.
+	</p>
+	<p>
+		To implement this example in Fujaba models we will perform the following steps - as far as possible - gradually:
+	</p>
+	<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc">
+			<p>
+			Create a new project for this tutorial
+			</p>
+		</li><li class="listitem" style="list-style-type: disc">
+			<p>
+			Create data types for storing positions and the task list
+			</p>
+		</li><li class="listitem" style="list-style-type: disc">
+			<p>
+			Create Message Interfaces defining message types for the communication between the BeBots
+			</p>
+		</li><li class="listitem" style="list-style-type: disc">
+			<p>
+			Create a Real-Time Coordination Protocol "Delegation" defining how the master and the
+			slave BeBots can communicate using the Message Interfaces
+			</p>
+		</li><li class="listitem" style="list-style-type: disc">
+			<p>
+			Create Real-Time Statecharts (RTSCs) defining the behavior of the roles of the delegation pattern
+			</p>
+		</li><li class="listitem" style="list-style-type: disc">
+			<p>
+			Create an Atomic Component for the Software of the BeBots
+			</p>
+		</li><li class="listitem" style="list-style-type: disc">
+			<p>
+			Create an Atomic Component for the position detection of the BeBots (abstracted as a GPS module)
+			</p>
+		</li><li class="listitem" style="list-style-type: disc">
+			<p>
+			Create a Structured Component defining how a master resp. slave BeBot is constructed
+			</p>
+		</li><li class="listitem" style="list-style-type: disc">
+			<p>
+			Create RTSCs defining the behavior of the components and the components&rsquo; ports
+			</p>
+		</li><li class="listitem" style="list-style-type: disc">
+			<p>
+			Create a Component Instance Configuration to bind the whole example
+			</p>
+		</li><li class="listitem" style="list-style-type: disc">
+			<p>
+			Finally we create a Deployment to allocate the defined software components to hardware nodes
+			</p>
+		</li></ul></div>
+	
+	
+	<div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="N202D2"></a>Step 1: Create a new project</h3></div></div></div>
+		<p>
+			Before we can start modeling the example, we need a project to work in.
+			Click on "File --&gt; New --&gt; Other" as seen in the following screenshot:
+			</p><div class="figure"><a name="img:step001"></a><p class="title"><b>Figure&nbsp;2.12.&nbsp;</b></p><div class="figure-contents">
+				<div class="mediaobject"><img src="User Guide/images/tutorial/tutorialStep001.png" width="648"></div>
+			</div></div><p><br class="figure-break">
+			Select "Project" from the folder "General" and click "Next".
+			</p><div class="figure"><a name="img:step002"></a><p class="title"><b>Figure&nbsp;2.13.&nbsp;</b></p><div class="figure-contents">
+				<div class="mediaobject"><img src="User Guide/images/tutorial/tutorialStep002.png"></div>
+			</div></div><p><br class="figure-break">
+			Name the project "Fujaba_Tutorial" and click "Finish".
+			You now have created an empty project that can be seen in the Project Explorer View.
+		</p>
+		<p>
+			Now right click on the new project and select "New --&gt; Other".
+			Within the folder "Fujaba" select "Fujaba Model" and click "Next".
+			Change the file name to "FujabaTutorial.fujaba" and click "Finish".
+			Open the project "Fujaba_Tutorial" by double clicking.
+			There you can see a file "FujabaTutorial.fujaba".
+			This is the Fujaba model you created in the last step.
+			Your window should look like this now:
+			</p><div class="figure"><a name="img:step003"></a><p class="title"><b>Figure&nbsp;2.14.&nbsp;</b></p><div class="figure-contents">
+				<div class="mediaobject"><img src="User Guide/images/tutorial/tutorialStep003.png" width="648"></div>
+			</div></div><p><br class="figure-break">
+			Now we can start defining the models described in the introduction.
+		</p>
+	</div>
+	
+	
+	<div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="N20309"></a>Step 2: Create Data Types</h3></div></div></div>
+		<p>
+			First of all we need two array data types for this tutorial.
+			The first type is called "XYPosition" and is an integer array with two
+			entries for the x and y value of a position. 
+			The second type is called "XYPositionArray" and is an array with ten
+			entries of type "XYPosition" representing the task list of the master BeBot.
+		</p>
+		<p>
+			To create these types right click onto the drawing surface of any diagram
+			(here you only have the Message Interface diagram) and select
+			"Fujaba --&gt; Open Type Dialog", as seen in the next screenshot.
+			
+			</p><div class="figure"><a name="img:step006"></a><p class="title"><b>Figure&nbsp;2.15.&nbsp;</b></p><div class="figure-contents">
+				<div class="mediaobject"><img src="User Guide/images/tutorial/tutorialStep006.png" width="648"></div>
+			</div></div><p><br class="figure-break">
+			A new dialog pops up. Here you can define your own array data types.
+			For that, click on "Create". Now you can find a new type in the list.
+			Click on it.In the lower part of the dialog you can change the properties.
+			At this point we want to create the XYPosition type.
+			Therefore, change the properties as follows:
+			</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+      				<span class="bold"><strong>Cardinality:</strong></span> 2
+      			</p></li><li class="listitem" style="list-style-type: disc"><p>
+      				<span class="bold"><strong>Comment:</strong></span> x and y values of a position
+      			</p></li><li class="listitem" style="list-style-type: disc"><p>
+      				<span class="bold"><strong>Name:</strong></span> XYPosition
+      			</p></li><li class="listitem" style="list-style-type: disc"><p>
+      				<span class="bold"><strong>Type:</strong></span> Primitive Data Type INT
+      			</p></li></ul></div><p>
+      		The settings can also be seen in the following screenshot:
+      		</p><div class="figure"><a name="img:step007"></a><p class="title"><b>Figure&nbsp;2.16.&nbsp;</b></p><div class="figure-contents">
+				<div class="mediaobject"><img src="User Guide/images/tutorial/tutorialStep007.png"></div>
+			</div></div><p><br class="figure-break">
+			After this create the XYPositionArray type with the following properties:
+			</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+      				<span class="bold"><strong>Cardinality:</strong></span> 10
+      			</p></li><li class="listitem" style="list-style-type: disc"><p>
+      				<span class="bold"><strong>Comment:</strong></span> an array of xy-positions
+      			</p></li><li class="listitem" style="list-style-type: disc"><p>
+      				<span class="bold"><strong>Name:</strong></span> XYPositionArray
+      			</p></li><li class="listitem" style="list-style-type: disc"><p>
+      				<span class="bold"><strong>Type:</strong></span> XYPosition
+      			</p></li></ul></div><p>
+      		Click "OK".
+		</p>
+	</div>
+	
+	
+	<div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="N2037C"></a>Step 3: Create Message Interfaces</h3></div></div></div>
+		<p>
+			We need two Message Interfaces that define the interfaces
+			for a coordination pattern that we generate in step 3.
+			For that, right click on your "FujabaTutorial.fujaba" model and select
+			"New --&gt; Other". Within "Fujaba --&gt; Diagrams" select "Messageinterface Diagram"
+			and click "Next", as seen in the following screenshot:
+			</p><div class="figure"><a name="img:step005"></a><p class="title"><b>Figure&nbsp;2.17.&nbsp;</b></p><div class="figure-contents">
+				<div class="mediaobject"><img src="User Guide/images/tutorial/tutorialStep005.png"></div>
+			</div></div><p><br class="figure-break">
+			Change the file name to "delegation.messageinterface_diagram" and click  "Next".
+			Make sure that the correct model is selected (FujabaTutorial.fujaba) and click "Finish".
+			The generation of new models always works like this whereas you need to select another
+			model than "Messageinterface Diagram" of course.
+		</p>
+		<p>
+			The Message Interface diagram opens in a new tab.
+			You can also find it within your project folder.
+		</p>
+		<p>
+			Now we can start with our Message Interfaces.
+			Open the file "delegation.messageinterface_diagram" and select "MessageInterface"
+			within the palette on the right side of the editor.
+			Click into the drawing surface and a new Message Interface will be created.
+			Change the name to "Master2Slave" by selecting the interface and pressing F2 or
+			double-clicking on the name of the interface.
+			Changing the name of an element should always be possible this way.
+			If not, you have to change the property "Name" within the Properties View
+			(<a class="ulink" href="https://trac.cs.upb.de/mechatronicuml/wiki/FujabaTutorial#ThePropertiesView" target="_top">
+	   			--&gt; How to use the Properties View
+	   		</a>).
+			Add a Message Type to the interface by selecting "MessageType" from the palette
+			and clicking into the existing interface and name it "order".
+			This message type needs a parameter. Hence click on "Parameter" and then on the
+			message type "order". Name the parameter "target".
+			Now it is the first time we need to change a property.
+			For that click on the parameter "target".
+			Within the Properties View you find the property "Type".
+			Select "Array Data Type XYPosition" to set the type
+			(<a class="ulink" href="https://trac.cs.upb.de/mechatronicuml/wiki/FujabaTutorial#ThePropertiesView" target="_top">
+	   			--&gt; How to use the Properties View
+	   		</a>).
+			Your diagram should look like this now:
+			</p><div class="figure"><a name="img:step008"></a><p class="title"><b>Figure&nbsp;2.18.&nbsp;</b></p><div class="figure-contents">
+				<div class="mediaobject"><img src="User Guide/images/tutorial/tutorialStep008.png" width="648"></div>
+			</div></div><p><br class="figure-break">
+			Now create a second Message Interface with the following properties analogously:
+			</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+	   				<span class="bold"><strong>Name:</strong></span> Slave2Master
+	   			</p></li><li class="listitem" style="list-style-type: disc"><p>
+	      			<span class="bold"><strong>MessageType:</strong></span> "fail" and "done" without any paramters
+	      		</p></li></ul></div><p>
+	      	You probably should save your work now. The Message Interface diagram should look like this:
+	      	</p><div class="figure"><a name="img:step009"></a><p class="title"><b>Figure&nbsp;2.19.&nbsp;</b></p><div class="figure-contents">
+				<div class="mediaobject"><img src="User Guide/images/tutorial/tutorialStep009.png" width="648"></div>
+			</div></div><p><br class="figure-break">
+		</p>
+	</div>
+	
+	
+	<div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="N203D2"></a>Step 4: Create a Real-Time Coordination Protocol "Delegation"</h3></div></div></div>
+		<p>
+			To define how the master and the slave BeBots of our example can communicate
+			we need to create a Real-Time Coordination Protocol.
+			As said before we need a pattern named "Delegation".
+			This pattern defines the coordination of how a master part delegates work to the slave part.
+			Therefore, create a Pattern diagram analogously to the way of generating a Message Interface
+			diagram with the name "delegation.pattern_diagram".
+		</p>
+		<p>
+			In the editor that opens in a new tab we can now define Coordination Protocols.
+			Click on "CoordinationProtocol" and then onto the drawing surface to add a new pattern.
+			Change the name "pattern" to "Delegation" and the names "role1" and "role2" to "master"
+			and "slave". At this moment your diagram should look like this:
+			</p><div class="figure"><a name="img:step010"></a><p class="title"><b>Figure&nbsp;2.20.&nbsp;</b></p><div class="figure-contents">
+			<div class="mediaobject"><img src="User Guide/images/tutorial/tutorialStep010.png" width="648"></div>
+			</div></div><p><br class="figure-break">
+			Furthermore we need to set Message Interfaces for the roles that define which message
+			types they can use for communication. For that click on the role "master".
+			Within the category "Misc" you can find the properties
+			"Receiver Message Interface" and "Sender Message Interface".
+			As Receiver Message Interface select "Message Interface Slave2Master" and as Sender Message
+			Interface select "Message Interface Master2Slave".
+			Summarizing this means that the master BeBot can send messages of the message type
+			order( target: XYPosition) and receive messages of the types fail() and done().
+		</p>
+		<p>
+			For the role "slave" we also have to set these interfaces.
+			As Receiver Message Interface select "Message Interface Master2Slave"
+			and as Sender Message Interface select "Message Interface Slave2Master". 
+			The assignments of the interfaces are vice versa to the master role,
+			because it is the opposition of the communication.
+		</p>
+		<p>
+			By setting these interfaces we defined our roles to be in-out-roles.
+			That is shown by the two triangles on the inside of a role.
+		</p>
+		<p>
+			When you now save your work, two red Xs appear at the roles.
+			These Xs tell you that your model violates constraints of the Mechatronic UML.
+			When you move the cursor to an X and wait a second a description pops up.
+			At this point we did not set a behavior in form of a Real-Time Statechart for the roles.
+			Therefore, we have to create two RTSCs describing the behavior first.
+		</p>
+		<p>
+			At this point your Pattern diagram should look like this:
+			</p><div class="figure"><a name="img:step011"></a><p class="title"><b>Figure&nbsp;2.21.&nbsp;</b></p><div class="figure-contents">
+			<div class="mediaobject"><img src="User Guide/images/tutorial/tutorialStep011.png" width="648"></div>
+			</div></div><p><br class="figure-break">
+		</p>
+	</div>
+	
+	
+	<div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="N20407"></a>Step 5: Create RTSC for role behavior</h3></div></div></div>
+		<p>
+			Now we want to describe the roles&rsquo; behavior by assigning RTSCs.
+			These RTSCs have to be created first.
+		</p>
+		<p>
+			Therefore, create a RTSC diagram with the name "role_master.realtimestatechart_diagram".
+			In the editor that opens in a new tab we can now define our first RTSC.
+			In the upper left corner of the drawing surface you can see a small rectangle.
+			That is our RTSC. Select it and make it a little bigger.
+			Press F2 to change the name and set it to "rtsc_role_master".
+		</p>
+		<p>
+			As said before this RTSC shall describe the behavior of the role "master"
+			of our delegation pattern.
+			Therefore, click on the rectangle and take a look into the Properties View.
+			Within the category "General" you can find the property "Behavioral Element".
+			Of course choose "Role Delegation.master". Now the master role of our pattern is 
+			linked to this RTSC.
+		</p>
+		<p>
+			Moreover the RTSC needs a clock.
+			To add clocks click on the Property "Clocks" within the category "Misc".
+			In the value field click on the button "&hellip;".
+			A dialog opens that looks similar to the data type dialog seen before.
+			Analogously create a new clock by clicking on "Create" and name it "c_timeout".	
+		</p>
+		<p>
+			Now we need some states.
+			Therefore, click on "State" in the palette and then click into the
+			RTSC and name the created state "Inactive".
+			This state shall be our initial state for this RTSC.
+			Within the Properties View under "General" change the property "Initial" to true.
+			Immediately the state is illustrated as an initial state.
+		</p>
+		<p>
+			Now create a second state named "Waiting".
+			This state shall have a clock invariant.
+			To add one, select the state and under "Misc" in the Properties View select
+			"Invariants" and click on "&hellip;".
+			By clicking on "Create" within the new window a new clock constraint is added.
+			Change the properties as follows to create one of the form 
+			c_timeout &lt; 1000 :
+			</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+	   				<span class="bold"><strong>Bound:</strong></span> 1000
+	   			</p></li><li class="listitem" style="list-style-type: disc"><p>
+	      			<span class="bold"><strong>Clock:</strong></span> Clock rtsc_role_master: c_timeout
+	      		</p></li><li class="listitem" style="list-style-type: disc"><p>
+	      			<span class="bold"><strong>Operator:</strong></span> LESS
+	      		</p></li></ul></div><p>
+	      	The RTSC should look like this now:
+	      	</p><div class="figure"><a name="img:step012"></a><p class="title"><b>Figure&nbsp;2.22.&nbsp;</b></p><div class="figure-contents">
+			<div class="mediaobject"><img src="User Guide/images/tutorial/tutorialStep012.png" width="648"></div>
+			</div></div><p><br class="figure-break">
+			At this point we need some transitions between the two states.
+			To add a transition select "Transition" in the palette and click on the state
+			in which the transition should start, keep the mouse button pressed and drag
+			the cursor to the state in which the transition should end.
+			Add a transition from "Inactive" to "Waiting".
+			The priority of the transition is chosen in the order you create the transitions,
+			but you can also change it in the Properties View under "Misc".
+			Here we want the priority to be 1.
+			The transition shall carry a clock reset for the clock "c_timeout".
+			Select the transition.
+			Within the Properties View and the category "Clock" you can find the property
+			"Clock Resets". Click on "&hellip;" of this property and a dialog pops up again. 
+			Select the clock "c_timeout" and click on "Add" to add the chosen clock to the reset list.
+			This can be seen in the following screenshot:
+			</p><div class="figure"><a name="img:step013"></a><p class="title"><b>Figure&nbsp;2.23.&nbsp;</b></p><div class="figure-contents">
+			<div class="mediaobject"><img src="User Guide/images/tutorial/tutorialStep013.png"></div>
+			</div></div><p><br class="figure-break">
+			Furthermore the created transition from "Inactive" to "Waiting" should raise a message event.
+			For that select the transition and in the Properties View within the category
+			"Raise MessageEvent" the property "Instance Of" must be set. Select "Message Type order"
+			to raise the message "order()" we defined a few steps before.
+			You can choose this message type, because we set the behavior of the RTSC to the "master"
+			role of our delegation pattern and this role has got the "Master2Slave" Message Interface
+			as Sender Message Interface.
+		</p>
+		<p>
+			Now create three transitions from "Waiting" to "Inactive" with the following properties:
+			</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+	   				Transition 1
+	   				</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+	      					Set the priority of this transition to 1.
+	   					</p></li><li class="listitem" style="list-style-type: disc"><p>
+							Add a clock constraint by clicking on "..." under "Clock --&gt; Clock Constraint"
+							analogously to adding a clock reset with the following properties:
+							</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+	      							<span class="Bold">Bound:</span> 1000
+	      						</p></li><li class="listitem" style="list-style-type: disc"><p>
+	      							<span class="Bold">Clock:</span> c_timeout
+	      						</p></li><li class="listitem" style="list-style-type: disc"><p>
+	      							<span class="Bold">Operator:</span> GREATER_OR_EQUAL
+	      						</p></li></ul></div><p>				   						
+	   					</p></li></ul></div><p>
+	   			</p></li><li class="listitem" style="list-style-type: disc"><p>
+	   				Transition 2
+	   				</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+	      					Set the priority of this transition to 2.
+	   					</p></li><li class="listitem" style="list-style-type: disc"><p>
+							Add a Trigger Message Event	of Message Type "fail" analogously
+							to adding a Raise Message Event.				
+	   					</p></li></ul></div><p>
+	   			</p></li><li class="listitem" style="list-style-type: disc"><p>
+	   				Transition 3
+	   				</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+	      					Set the priority of this transition to 3.
+	   					</p></li><li class="listitem" style="list-style-type: disc"><p>
+							Add a Trigger Message Event	of Message Type "done".
+	   					</p></li></ul></div><p>
+	   			</p></li></ul></div><p>
+	      	Your diagram should look like this now:
+	      	</p><div class="figure"><a name="img:step014"></a><p class="title"><b>Figure&nbsp;2.24.&nbsp;</b></p><div class="figure-contents">
+			<div class="mediaobject"><img src="User Guide/images/tutorial/tutorialStep014.png" width="648"></div>
+			</div></div><p><br class="figure-break">
+			When you now open the delegation pattern you can see within the properties of the "master"
+			role that the behavior is set to "Real-Time Statechart rtsc_role_master" automatically.
+			Also the red X at the role should be gone.
+		</p>
+		<p>
+			Anyway, what did we do now?
+			Generally, we created a RTSC that describes the behavior of the role "master"
+			of our delegation pattern.
+			But what does this RTSC describe exactly.
+			It says that a master role  is either in the state "Inactive" or "Waiting".
+			"Inactive" stands for the status the role did not delegate any work to the slave role.
+			"Waiting" stand for the status the role did delegate some work and is waiting for an
+			answer of the slave.
+			The master delegates work by raising the message order().
+			Now it has to wait for the slave, which is either sending done() if the work was successful
+			or else fail(). If the master gets theses messages it changes its state to "Inactive" again.
+			Furthermore the clock constraint we created has the consequence that if the slave
+			does not answer within 1000 seconds the master also switches to "Inactive".
+		</p>
+		<p>
+			Now we have to define a RTSC for the role "slave".
+			The RTSC for the role "slave" is created analogously to the generation of the RTSC
+			for the "master" role.
+			That is why we do not describe it again in detail.
+			Build it up on your own by taking the following screenshot
+			of the RTSC as a reference:
+			</p><div class="figure"><a name="img:step015"></a><p class="title"><b>Figure&nbsp;2.25.&nbsp;</b></p><div class="figure-contents">
+				<div class="mediaobject"><img src="User Guide/images/tutorial/tutorialStep015.png" width="648"></div>
+			</div></div><p><br class="figure-break">
+			Your delegation pattern should now be free of violations of constraints.
+		</p>
+	</div>
+	
+	
+	<div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="N204CD"></a>Step 6: Create Atomic Components for Software and GPS</h3></div></div></div>
+		<p>
+			Now we want to start specifying the BeBots.
+			Therefore we have to create two Atomic Components.
+		</p>
+		<p>
+			Create a new Atomiccomponent Diagram named "bebot_ac".
+			Add an Atomic Component by clicking on "AtomicComponent" in the palette and then
+			clicking into the drawing surface.
+			Name it "BeBot_SW". This component will describe how the BeBot works internally.
+		</p>
+		<p>
+			Add a Hybrid Port to this Atomic Component by clicking on "HybridPort" in the palette
+			and then clicking on the Atomic Component.
+			Name it "position".
+			Select the Hybrid Port and set the type to XYPosition by selecting this in the Properties
+			View under "Misc --&gt; Type".
+			Make sure that the port is an IN-port by checking the property "Kind" under "General".
+			Via this port the BeBot will request its position.
+		</p>
+		<p>
+			Add a Discrete Port named "master" analogously.
+			This port shall refine the role "master" from our delegation pattern.
+			Therefore, you have to change some properties in the Properties View:
+			</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+	      			General --&gt; Refines: select "Role Delegation.master"
+	      			(to bind the master role of the delegation pattern to this port)
+	   			</p></li><li class="listitem" style="list-style-type: disc"><p>
+					MessageInterface --&gt; Receiver Message Interface: select "Slave2Master"				
+	   			</p></li><li class="listitem" style="list-style-type: disc"><p>
+					MessageInterface --&gt; Sender Message Interface: select "Master2Slave"				
+	   			</p></li><li class="listitem" style="list-style-type: disc"><p>
+					Cardinality --&gt; Lower Bound: set to 0				
+	   			</p></li><li class="listitem" style="list-style-type: disc"><p>
+					Cardinality --&gt; Upper Bound: set to 1			
+	   			</p></li></ul></div><p>
+	   		The cardinality is chosen to be 0 or 1 because this component will be either
+	   		build into a master BeBot or a slave BeBot.
+	   		So if we have a master BeBot it will get the master port.
+	   		A slave BeBot will not get this port of course.
+		</p>
+		<p>
+			Now create a Discrete Port "slave" with the same properties,
+			but commute the Message Interfaces.
+			The refinement of course has to be set to "Role Delegation.slave".
+		</p>
+		<p>
+			Save your work.
+			As we did not set behaviors for the Atomic Component BeBot_SW and the Discrete Ports,
+			we are again getting some red Xs, but we will care about them later.
+		</p>
+		<p>
+			Now create a new Atomic Component named "GPS" with the following properties:
+			</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+	      			Make the component a continuous component by setting it under "General --&gt; Component Type".
+	   			</p></li><li class="listitem" style="list-style-type: disc"><p>
+					Add a Continuous OUT-Port named "position" of type "XYPosition".
+	   			</p></li><li class="listitem" style="list-style-type: disc"><p>
+					Add a Continuous IN-Port named "gps" of type "XYPosition".			
+	   			</p></li></ul></div><p>
+	   		This component will be in charge of computing the position of the BeBot.
+		</p>
+		<p>
+			Save your work. Your Atomic Component Diagram should look like this now:
+			</p><div class="figure"><a name="img:step016"></a><p class="title"><b>Figure&nbsp;2.26.&nbsp;</b></p><div class="figure-contents">
+				<div class="mediaobject"><img src="User Guide/images/tutorial/tutorialStep016.png" width="648"></div>
+			</div></div><p><br class="figure-break">
+		</p>
+	</div>
+	
+	
+	<div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="N20522"></a>Step 7: Create a Structure Component for the BeBot</h3></div></div></div>
+		<p>
+			Once we have defined our Atomic Components,
+			we now can define the Structure of our BeBot as a whole by creating a Structured Component.
+			Therefore, create a new Structured Component Diagram with the name "bebot".
+		</p>
+			Add a new Structured Component by clicking on "StructuredComponent"
+			in the palette and then clicking into the drawing surface. Name it "BeBot".
+			Because this component shall embed both atomic components we created and these were of different types
+			this structured component has to be of the component type "hybrid component".
+			Set this within the properties of the structured component "BeBot".
+		<p>
+			Add a Component Part by selecting "ComponentPart" from the palette and clicking
+			into the BeBot component. A new Component Part is generated.
+			Now you have to set the type. For that in the Properties View select
+			"General --&gt; Component Type --&gt; BeBot_SW" to set the type to the atomic component "BeBot_SW" 
+			defined before. Name the component "software".
+		</p>
+		<p>
+			Add another Component Part of the type "GPS" with the name "gps" analogously.
+		</p>
+		<p>
+			When you save this diagram now it shows the same errors at the Atomic Component Diagram,
+			because the Atomic Component is contained in the current diagram.
+			These errors will disappear as soon as we define a behavior for it.
+		</p>
+		<p>
+			Your Diagram should look like this at the moment:
+			</p><div class="figure"><a name="img:step017"></a><p class="title"><b>Figure&nbsp;2.27.&nbsp;</b></p><div class="figure-contents">
+				<div class="mediaobject"><img src="User Guide/images/tutorial/tutorialStep017.png" width="648"></div>
+			</div></div><p><br class="figure-break">
+			Connect the "position" ports of both components by an assembly.
+		</p>
+		<p>
+			Create a Discrete Port "Slave" at the border of the component "BeBot".
+			Set the Receiver Message Interface to "Master2Slave" and the Sender Message Interface to
+			"Slave2Master".
+		</p>
+		<p>
+			Create a Discrete Port "Master" but with commuted Message Interfaces.
+		</p>
+		<p>
+			Connect the Ports "Master" and "master" by a Delegation by clicking on "Delegation"
+			in the palette and drag and drop from "Master" to "master".
+			Do the same with the "Slave" and "slave" ports. Now the ports of the "BeBot_SW"
+			component are delegated to appropriate ports of the Structured Component.
+		</p>
+		<p>
+			Now create a ContinuousPort "Gps" at the border of the component "BeBot" and connect
+			it with a delegation to "gps".
+		</p>
+		<p>
+			Save your work. Now even more Xs are shown.
+			That is because we did not define any behavior of these components and ports,
+			but this will be changed in a few steps.
+		</p>
+	</div>
+	
+	
+	<div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="N20555"></a>Step 8: RTSCs describing the behavior of the ports</h3></div></div></div>
+		<p>
+			We start with creating RTSCs for the Ports "master", "slave" and "position".
+			The port "gps" does not need any behavior, because it is continuous.
+		</p>
+		<p>
+			Create three RTSC diagrams with name "port_master", "port_slave" and "port_position".
+			Name the RTSCs of the diagrams "rtsc_port_master" and so on.
+			That is all for the moment. The rest of the definition of these diagrams will be done later,
+			because they will be embedded into another RTSC.
+		</p>
+	</div>
+	
+	
+	<div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="N20562"></a> Step 9: RTSCs describing the behavior of the Atomic Component BeBot_SW</h3></div></div></div>
+		<p>
+			Now we want to define the behavior of the software of a BeBot.
+			Therefore, create a RTSC Diagram with name "component_bebot-sw".
+			Name the statechart itself "rtsc_component_bebot-sw".
+		</p>
+		<p>
+			In the Properties View set the Behavioral Element to "Atomic Component BeBot_SW".
+			The software of a BeBot needs an attribute for the current position.
+			Hence, add an attribute by clicking on "&hellip;" of the property "Attributes".
+			In the new window click on "Create" to add a new attribute to the attribute list.
+			Set the properties to:
+			</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+	      			Name: pos_xy
+	   			</p></li><li class="listitem" style="list-style-type: disc"><p>
+					Type: Array Data Type XYPosition
+	   			</p></li></ul></div><p>
+	   		Click "OK".
+		</p>
+		<p>
+			To keep track of the diagram we create one superstate for the RTSC.
+			Therefore, add a state and name it "bebotsw_main" and change the "Initial" property to true.
+		</p>
+		<p>
+			Now we need three channels for the synchronization of the regions that we create in a moment.
+			Select the state and click on "&hellip;" of the property "Misc --&gt; Channels". Click on "Create" to add a channel.
+			Create three channels with the following properties:
+			</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+	      			First channel:
+	      			</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+	      					Name: driveTo
+	   					</p></li><li class="listitem" style="list-style-type: disc"><p>
+							Parameters: Add a parameter with name "target" of type "XYPosition" like adding attributes to a RTSC
+	   					</p></li></ul></div><p>
+	   			</p></li><li class="listitem" style="list-style-type: disc"><p>
+					Second channel:
+					</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+	      					Name: success
+	   					</p></li></ul></div><p>
+	   			</p></li><li class="listitem" style="list-style-type: disc"><p>
+	   				Third channel:
+	   				</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+	      					Name: failure
+	   					</p></li></ul></div><p>
+	   			</p></li></ul></div><p>
+			Click "OK". Now you see the list of channels inside the state "bebotsw_main".
+			In total our superstate needs four regions, one for each port of the atomic component "BeBot_SW"
+			and one describing the internal behavior itself.	
+		</p>
+		<p>
+			Add a region to the superstate by selecting "Region" from the palette and clicking into the state.
+			Name it "r_position". This region shall be the part describing the behavior of the position port. 
+			In the step before we already created empty RTSCs for the ports. Hence, we add these RTSCs instead of creating new ones. 
+			Click on the region name and take a look at the Properties View.
+			The property "Statechart" now has to be changed to "Realtime Statechart rtsc_port_position". 
+			Now we have added the statechart of "port_position.realtimestatechart_diagram" to the region.
+			Set the behavior of this RTSC of region "r_position" to "Hybrid Port position".
+			As described before add an attribute with the name "IN_position" of type "XYPosition" and a clock "c_period".
+			Now add a state with the name "Idle" and make it an initial state.
+			Add a clock invariant within the property "Misc --&gt; Invariants" of the form "c_period &lt; 50".
+			Now add a self transition for "Idle" and add the following properties for this transition:
+			</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+	      			Clock Reset for "c_period"
+	   			</p></li><li class="listitem" style="list-style-type: disc"><p>
+					Clock Constraint of the form "c_period &lt;= 50"
+	   			</p></li></ul></div><p>	
+	   		Now we want to describe an action performed when this transition is taken.
+	   		Therefore, click on "&hellip;" of the property "Action --&gt; Expression". Again a window pops up.
+	   		From the drop-down list at the upper-left corner select "TextualExpression" and click on "Create".
+	   		Set the property "Expression Text" to "pos_xy := IN_position" and "Language" to "java".
+	   		This describes that the action is written in Java and the code is found in "Expression Text".
+	   		Here we set the attribute "pos_xy" of the superstate to the value of "IN_position",
+	   		an attribute of the current region. Click "OK" and now change "Action --&gt; Name" to "position assignment".
+		</p>
+		<p>
+			Your diagram should look like this now:
+			</p><div class="figure"><a name="img:step018"></a><p class="title"><b>Figure&nbsp;2.28.&nbsp;</b></p><div class="figure-contents">
+				<div class="mediaobject"><img src="User Guide/images/tutorial/tutorialStep018.png" width="648"></div>
+			</div></div><p><br class="figure-break">
+			Now add a new region to "bebotsw_main" and name it "r_master".
+			Like before change the statechart to "rtsc_port_master" and set the behavior of this RTSC
+			of the region to "Discrete Port master" As for the last region add an attribute "currentTask"
+			of type "XYPosition" and a clock "c_timeout". Now you have to add a statechart that is exactly
+			like the statechart of "role_master". Therefore, create such a statechart.
+		</p>
+		<p>
+			Now we need to add some things. Select the transition from "Inactive" to "Waiting".
+			When raising the message "order(target)" we want to bind the parameter "target" of
+			the type "XYPosition" to "currentTask". Therefore, click on "&hellip;" of "Raise MessageEvent --&gt; Parameter Binding"
+			and type "currentTask" into the value of "target". Furthermore we want to do some synchronization.
+			Select the transition with priority 2.
+			Change the property "Synchronization --&gt; Sync Channel" to "Synchronization Channel failure" and make
+			sure that "Synchronization --&gt; Kind" is set to "SEND". Do the same for the transition with priority 3,
+			but for the channel "success" and of kind "RECEIVE". Now we refined our behavior definition for a role
+			"master" for this port.
+		</p>
+		<p>
+			Your diagram should look like this now:
+			</p><div class="figure"><a name="img:step019"></a><p class="title"><b>Figure&nbsp;2.29.&nbsp;</b></p><div class="figure-contents">
+				<div class="mediaobject"><img src="User Guide/images/tutorial/tutorialStep019.png" width="648"></div>
+			</div></div><p><br class="figure-break">
+			Again, add a new region to "bebotsw_main" and name it "r_slave".
+			As you can imagine, we want to define the behavior of the port "slave" in this step.
+			Like before change the statechart to "rtsc_port_slave".
+			The following steps have to be handled analogously to the description for the last two ports.
+			Therefore, this port is only described in notes.
+			Try to implement these on your own and if you are not sure look at the description before.
+			</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+					Set Behavioral Element to "Discrete Port slave"
+	   			</p></li><li class="listitem" style="list-style-type: disc"><p>
+					Create Attribute with name "Target" of type "XYPosition"
+	   			</p></li><li class="listitem" style="list-style-type: disc"><p>
+	   				Create the following operation
+					</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+							"DriveTo" with parameter "target" of type "XYPosition" and Return Type "Boolean"
+	   					</p></li></ul></div><p>	
+	   			</p></li><li class="listitem" style="list-style-type: disc"><p>
+					Add Clock with name "c_work"
+	   			</p></li><li class="listitem" style="list-style-type: disc"><p>
+					Add State named "Inactive", make it initial
+	   			</p></li><li class="listitem" style="list-style-type: disc"><p>
+	   				Add State named "Working"
+					</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+							Add an Invariant of the form "c_work &lt; 800"
+	   					</p></li><li class="listitem" style="list-style-type: disc"><p>
+							Add an Entry Action with the following settings
+							</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+	   								Name: "driving"
+	   							</p></li><li class="listitem" style="list-style-type: disc"><p>
+	   								Entry Action type: "Textual Expression"
+	   							</p></li><li class="listitem" style="list-style-type: disc"><p>
+	   								Expression Text: "//todo" (the implementation at this point is not important for this tutorial)
+	   							</p></li></ul></div><p>
+	   					</p></li></ul></div><p>	
+	   			</p></li><li class="listitem" style="list-style-type: disc"><p>
+	   				Add a Transition from "Inactive" to "Working"
+					</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+							Priority: 1
+	   					</p></li><li class="listitem" style="list-style-type: disc"><p>
+							Add a Clock Reset for "c_work"
+	   					</p></li><li class="listitem" style="list-style-type: disc"><p>
+							Add a Trigger Message Event of type "order"
+	   					</p></li></ul></div><p>	
+	   			</p></li><li class="listitem" style="list-style-type: disc"><p>
+	   				Add a Transition from "Working" to "Inactive"
+					</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+							Priority: 1
+	   					</p></li><li class="listitem" style="list-style-type: disc"><p>
+							Add a Raise Message Event of type "done"
+	   					</p></li><li class="listitem" style="list-style-type: disc"><p>
+	   						Add a Guard with the settings
+							</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+	   								Expression Text: "xy_pos == target"
+	   							</p></li><li class="listitem" style="list-style-type: disc"><p>
+	   								Language: "java"
+	   							</p></li></ul></div><p>
+	   					</p></li></ul></div><p>	
+	   			</p></li><li class="listitem" style="list-style-type: disc"><p>
+	   				Add another Transition from "Working" to "Inactive"
+					</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+							Priority: 2
+	   					</p></li><li class="listitem" style="list-style-type: disc"><p>
+							Add a Raise Message Event of type "fail"
+	   					</p></li><li class="listitem" style="list-style-type: disc"><p>
+							Add a Clock Constraint of the form "c_work &lt;= 800"
+	   					</p></li></ul></div><p>	
+	   			</p></li></ul></div><p>	
+	   		The lower part of your diagram should now look like this:
+	   		</p><div class="figure"><a name="img:step020"></a><p class="title"><b>Figure&nbsp;2.30.&nbsp;</b></p><div class="figure-contents">
+				<div class="mediaobject"><img src="User Guide/images/tutorial/tutorialStep020.png" width="648"></div>
+			</div></div><p><br class="figure-break">
+		</p>
+		<p>
+			Now we are done with defining the behavior of the ports of the BeBots.
+			At this point the Bebots themselves do not have any behavior.
+			Hence, we need a fourth region named "r_internalBahavior".
+			Create this and name the corresponding statechart "rtsc_internalBehavior".
+			Again this step is a little bit boring, because it is very similar to the steps before.
+			Nevertheless, it is reasonable for you to fill this statechart with information to practice using the editor.
+			Like before this step is only described in notes:
+			</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+					Add Attributes
+					</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+							taskList of type "XYPositionArray" (this is an array storing all targets the slave should drive to)
+	   					</p></li></ul></div><p>
+	   			</p></li><li class="listitem" style="list-style-type: disc"><p>
+	   				Add States
+					</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+							NoJobGiven, initial
+	   					</p></li></ul></div><p>	
+	   			</p></li><li class="listitem" style="list-style-type: disc"><p>
+	   				Add Transitions
+					</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+							From "NoJobGiven" to "JobGIven"
+							</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+									Set Synchronizations within the Properties View
+									</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+											Kind: Send
+					   					</p></li><li class="listitem" style="list-style-type: disc"><p>
+											Sync Channel: driveTo
+					   					</p></li><li class="listitem" style="list-style-type: disc"><p>
+											ParameterBinding: set the value of the property "target" to "taskList[currentTask]"
+					   					</p></li></ul></div><p>	
+	   							</p></li></ul></div><p>	
+	   					</p></li><li class="listitem" style="list-style-type: disc"><p>
+							From "JobGiven" to "NoJobGiven"
+							</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+									Priority: 1
+			   					</p></li><li class="listitem" style="list-style-type: disc"><p>
+									Synchronization
+									</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+											Kind: Receive
+					   					</p></li><li class="listitem" style="list-style-type: disc"><p>
+											Channel: success
+					   					</p></li></ul></div><p>	
+			   					</p></li><li class="listitem" style="list-style-type: disc"><p>
+									Action
+									</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+											Name: "nextTask"
+					   					</p></li><li class="listitem" style="list-style-type: disc"><p>
+											Type: Textual Expression
+					   					</p></li><li class="listitem" style="list-style-type: disc"><p>
+											Expression Test: "currentTask++"
+					   					</p></li><li class="listitem" style="list-style-type: disc"><p>
+											Language: "java"
+					   					</p></li></ul></div><p>	
+			   					</p></li></ul></div><p>	
+	   					</p></li><li class="listitem" style="list-style-type: disc"><p>
+							From "JobGiven" to "NoJobGiven"
+							</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+									Priority: 2
+			   					</p></li><li class="listitem" style="list-style-type: disc"><p>
+									Synchronization
+									</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+											Kind: Receive
+					   					</p></li><li class="listitem" style="list-style-type: disc"><p>
+											Channel: failure
+					   					</p></li></ul></div><p>	
+			   					</p></li></ul></div><p>	
+	   					</p></li></ul></div><p>	
+	   			</p></li></ul></div><p>	
+	   		The lower part of your diagram should now look like this:
+	   		</p><div class="figure"><a name="img:step021"></a><p class="title"><b>Figure&nbsp;2.31.&nbsp;</b></p><div class="figure-contents">
+				<div class="mediaobject"><img src="User Guide/images/tutorial/tutorialStep021.png" width="648"></div>
+			</div></div><p><br class="figure-break">
+		</p>
+	</div>
+	
+	<div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="N20718"></a>Step 10: The Component Instance Configuration</h3></div></div></div>
+		<p>
+			At this point the behavior of our BeBots is defined completely.
+			Now we want to create our scenario of the master BeBot sending a task list to the slave BeBot by
+			defining a Component Instance Configuration. Therefore, create a Component Instance Configuration
+			Diagram named "compInstConfig". What we have to do now is adding instances of our before defined components.
+			Hence, add a Structured Component Instance to the diagram. Within the properties as Component Type select 
+			"Static Structured Component BeBot". Automatically an instance of this component is created. Now name the
+			component "masterBeBot". Connect the "position" ports with an Assembly Instance like we did within the
+			Structured Component Diagram before. Furthermore connect the "gps" ports with a Delegation Instance, too.
+			Because we defined the master and slave ports with lower bound "0" currently there are no instances for
+			these ports. We have to create the needed ones. At the moment we define the master robot.
+			Hence, this component instance only needs the master ports and not the slave ports. Click on the "BeBot_SW"
+			component part. In the properties click on "&hellip;" of "Port Instances" to add ports.
+			The master port of this component was a discrete single port. Hence, select "DiscreteSinglePortInstance"
+			and click "Create". A new port appears in the list. Select this port and set the "Port Type" to "Discrete
+			Port master". Set the name to "master". The remaining properties are filled automatically.
+			Now do the same for the "Master" port of the structured component instance "masterBeBot" and connect
+			the master ports with a delegation instance.
+		</p>
+		<p>
+			Now our master BeBot is complete and should look like this:
+			</p><div class="figure"><a name="img:step022"></a><p class="title"><b>Figure&nbsp;2.32.&nbsp;</b></p><div class="figure-contents">
+				<div class="mediaobject"><img src="User Guide/images/tutorial/tutorialStep022.png" width="648"></div>
+			</div></div><p><br class="figure-break">
+		</p>
+		<p>
+			Now we need the slave BeBot. This BeBot is built up almost equally. The only differences are:
+			</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+					The name should be "slaveBeBot", of course.
+				</p></li><li class="listitem" style="list-style-type: disc"><p>
+					Instead of the master ports we now have to add slave ports.
+				</p></li></ul></div><p>	
+			The rest is equally to the master BeBot. Create this instance. It should look like this:
+			</p><div class="figure"><a name="img:step023"></a><p class="title"><b>Figure&nbsp;2.33.&nbsp;</b></p><div class="figure-contents">
+				<div class="mediaobject"><img src="User Guide/images/tutorial/tutorialStep023.png" width="648"></div>
+			</div></div><p><br class="figure-break">
+		</p>
+		<p>
+			The last step is to connecting the "Master" and the "Slave" port of both BeBots
+			to enable communication between these two BeBots. Now our component instance configuration is finished.
+			Altogether it should look like this:
+			</p><div class="figure"><a name="img:step024"></a><p class="title"><b>Figure&nbsp;2.34.&nbsp;</b></p><div class="figure-contents">
+				<div class="mediaobject"><img src="User Guide/images/tutorial/tutorialStep024.png" width="648"></div>
+			</div></div><p><br class="figure-break">
+		</p>
+		<p>
+			 Now there is only one thing left: The Deployment.
+		</p>
+	</div>
+	
+	<div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="N20764"></a>Step 11: The Deployment</h3></div></div></div>
+		<p>
+			At this point we want to link the software we created up to now to hardware.
+			Therefore, create a Deployment Diagram named "deployment".
+		</p>
+		<p>
+			Within the Properties View set the Name of the diagram to "deployment" and select
+			as Component Instance Configuration the before created "Component Instance Configuration compInstConfig".
+		</p>
+		<p>
+			Now we can define the deployment. We need two Hardware Nodes, one for the Master and one for the Slave.
+			Hence, add two nodes and name them "masterBeBot" and "slaveBeBot".
+			For the correct deployment select "Structured Component Instance masterBeBot" resp.
+			"Structured Component Instance slaveBeBot" for Deployed Instances within the properties of the nodes.
+			The component instances we created before had a GPS port and a Master resp. Slave port.
+			Therefore, add Hardware Ports to the Hardware Nodes. Within the Properties of the Ports you can set
+			the "Deployed Port Instance". The Master BeBot needs the Gps1 port and the Master port.
+			Analogously the Slave BeBot also needs the Gps1 port and the Slave port. The GPS ports have
+			to be in-Ports as preset, but the Master resp. Slave port are in/out-Ports. Hence, set the Property
+			"Kind" of the ports to "IN_OUT".
+		</p>
+		<p>
+			Now create a Communication Link between these two ports so that the BeBots can communicate.
+			The final deployment should look like this:
+			</p><div class="figure"><a name="img:step025"></a><p class="title"><b>Figure&nbsp;2.35.&nbsp;</b></p><div class="figure-contents">
+				<div class="mediaobject"><img src="User Guide/images/tutorial/tutorialStep025.png" width="648"></div>
+			</div></div><p><br class="figure-break">
+		</p>
+		<p>
+			At this point this tutorial ends. We created a scenario where one BeBot sends missions to another BeBot. 
+			This is a very simple example, but you got to know the most common features of the MechatronicUML Tool Suite.
+		</p>
+	</div>
+</div><div class="navfooter"><hr><table summary="Navigation footer" width="100%"><tr><td align="left" width="40%"><a accesskey="p" href="ch02s03.html">Prev</a>&nbsp;</td><td align="center" width="20%"><a accesskey="u" href="ch02.html">Up</a></td><td align="right" width="40%">&nbsp;<a accesskey="n" href="ch02s05.html">Next</a></td></tr><tr><td valign="top" align="left" width="40%">How To...&nbsp;</td><td align="center" width="20%"><a accesskey="h" href="index.html">Home</a></td><td valign="top" align="right" width="40%">&nbsp;FAQ</td></tr></table></div></body></html>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.muml.pim.actionlanguage.xtext.ScopeProvider">
+      <provider
+            class="org.muml.reconfiguration.common.xtext.CSDExecutableExtensionFactory:org.muml.reconfiguration.common.xtext.CSDLanguageScopeProvider">
+      </provider>
+   </extension>
+
+</plugin>

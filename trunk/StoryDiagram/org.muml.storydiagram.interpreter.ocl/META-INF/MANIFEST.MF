@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SDM Expression Interpreter for OCL
+Bundle-SymbolicName: org.muml.storydiagram.interpreter.ocl;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.ocl.ecore;bundle-version="3.0.0";visibility:=reexport,
+ org.muml.storydiagram.interpreter.core.eclipse;visibility:=reexport
+Export-Package: org.muml.storydiagram.interpreter.ocl,
+ org.muml.storydiagram.interpreter.ocl.environment

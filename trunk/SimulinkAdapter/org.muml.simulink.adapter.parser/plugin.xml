@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.importWizards">
+      <wizard
+            class="org.muml.simulink.adapter.parser.ui.ImportWizard"
+            icon="icons/sample.gif"
+            id="de.uni_paderborn.fujaba.simulink.parser.ui.importWizard"
+            name="Simulink Model Import Wizard">
+         <selection
+               class="org.eclipse.core.resources.IResource"
+               name="*.mdl">
+         </selection>
+      </wizard>
+   </extension>
+
+</plugin>

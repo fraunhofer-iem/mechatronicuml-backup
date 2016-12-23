@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MechatronicUML Export Mechanism
+Bundle-SymbolicName: org.muml.core.export;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.muml.core.export.ExportPlugin
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.ui.workbench,
+ org.eclipse.ui.ide;visibility:=reexport,
+ org.eclipse.core.resources,
+ org.eclipse.emf.ecore,
+ org.eclipse.ui.forms;visibility:=reexport,
+ org.muml.core.common,
+ org.eclipse.emf.edit.ui,
+ org.eclipse.emf.workspace
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
+Export-Package: org.muml.core.export.operation,
+ org.muml.core.export.pages,
+ org.muml.core.export.providers,
+ org.muml.core.export.wizard

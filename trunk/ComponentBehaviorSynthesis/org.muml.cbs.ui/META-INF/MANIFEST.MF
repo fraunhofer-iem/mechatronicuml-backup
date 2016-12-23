@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.muml.cbs.ui;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
+ %providerName
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.muml.pim,
+ org.eclipse.jface,
+ org.eclipse.ui.workbench,
+ org.eclipse.m2m.qvt.oml,
+ org.eclipse.gmf.runtime.common.core,
+ org.muml.cbs.jobs
+Export-Package: org.muml.cbs.ui

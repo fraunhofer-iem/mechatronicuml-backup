@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+
+  <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+    <propertyContributor
+          contributorId="org.muml.ape.contributor">
+       <propertyCategory
+             category="domain">
+       </propertyCategory>
+       <propertyCategory
+             category="default">
+       </propertyCategory>
+       <propertyCategory
+             category="extended">
+       </propertyCategory>
+       <propertyCategory
+             category="advanced">
+       </propertyCategory>
+    </propertyContributor>
+  </extension>
+
+
+
+<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs contributorId="org.muml.ape.contributor">
+          <propertyTab
+             category="domain"
+             id="property.tab.constraint"
+             afterTab="property.tab.comment"
+             label="Constraint"/>
+          
+      </propertyTabs>
+  </extension>
+
+
+
+
+  <extension point="org.eclipse.ui.views.properties.tabbed.propertySections"> 
+      <propertySections contributorId="org.muml.ape.contributor">
+          <propertySection
+            class="org.muml.ape.runtime.sections.ObjectPropertySection"
+            filter="org.muml.reconfiguration.componentstorydiagram.properties.tabs.Property_tab_constraintTabElementFilter"
+            id="property.tab.constraint"
+            tab="property.tab.constraint">
+             <input
+               type="org.eclipse.emf.ecore.EObject">
+             </input>
+          </propertySection>
+         
+      </propertySections>
+  </extension>
+
+
+
+ <extension point="org.muml.ape.runtime.propertyEditors">
+    <propertyEditors>
+    
+       <propertyEditor
+             factory="org.muml.reconfiguration.componentstorydiagram.properties.componentstorydiagram.editor.ComponentStoryRuleEditor$Factory"
+             type="http://www.muml.org/reconfiguration/componentstorydiagram/1.0.0#ComponentStoryRule">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.reconfiguration.componentstorydiagram.properties.componentstorydiagram.editor.ComponentStoryNodeEditor$Factory"
+             type="http://www.muml.org/reconfiguration/componentstorydiagram/1.0.0#ComponentStoryNode">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.reconfiguration.componentstorydiagram.properties.componentstorydiagram.editor.ControllerExchangeNodeEditor$Factory"
+             type="http://www.muml.org/reconfiguration/componentstorydiagram/1.0.0#ControllerExchangeNode">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.reconfiguration.componentstorydiagram.properties.componentstorydiagram.editor.SendReconfigurationMessageExpressionEditor$Factory"
+             type="http://www.muml.org/reconfiguration/componentstorydiagram/1.0.0#SendReconfigurationMessageExpression">
+       </propertyEditor>
+    
+    </propertyEditors>
+ </extension>
+
+
+ <extension
+       point="org.muml.ape.runtime.metamodelContributor">
+    <metamodel
+          contributor="org.muml.reconfiguration.componentstorydiagram.properties.metamodel.MetamodelContributor">
+    </metamodel>
+ </extension>
+
+
+ <extension
+       point="org.muml.ape.runtime.creationConstraintContributor">
+    <constraint
+          contributor="org.muml.reconfiguration.componentstorydiagram.properties.constraint.CreationConstraintContributor">
+    </constraint>
+ </extension>
+
+</plugin>

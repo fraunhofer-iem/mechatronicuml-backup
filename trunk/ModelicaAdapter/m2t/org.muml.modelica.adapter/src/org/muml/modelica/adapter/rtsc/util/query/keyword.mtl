@@ -1,0 +1,51 @@
+[module keyword('http://www.muml.org/pim/behavior/1.0.0',
+				'http://www.muml.org/core/1.0.0',
+				'http://www.muml.org/pim/actionlanguage/1.0.0',
+				'http://www.muml.org/pim/msgtype/1.0.0',
+				'http://www.muml.org/pim/types/1.0.0',
+				'http://www.muml.org/pim/component/1.0.0',
+				'http://www.muml.org/pim/instance/1.0.0',
+				'http://www.muml.de/modelica/transform/1.0.0',
+				'http://www.muml.org/pim/realtimestatechart/1.0.0',
+				'http://www.eclipse.org/emf/2002/Ecore')/]
+
+[import org::muml::modelica::adapter::rtsc::util::query::reporter]
+
+[**
+ * Check if object or any of its direct or indirect containments'
+ * name attribute represents a modelica keyword.
+ * @param object the object
+*/]
+[query public checkModelicaKeywords(object : OclAny) : Boolean =
+	let keywords : Set(String)
+	=
+	Set{'algorithm', 'discrete', 'false', 'model', 'redeclare', 'and', 'each',
+		'final', 'not', 'replaceable', 'annotation', 'else', 'flow', 'operator',
+		'return', 'assert', 'elseif', 'for', 'or', 'stream', 'block', 'elsewhen',
+		'function', 'outer', 'then', 'break', 'encapsulated', 'if', 'output', 'true',
+		'class', 'end', 'import', 'package', 'type', 'connect', 'enumeration', 'in',
+		'parameter', 'when', 'connector', 'equation', 'initial', 'partial', 'while',
+		'constant', 'expandable', 'inner', 'protected', 'within', 'constrainedby',
+		'extends', 'input', 'public', 'der', 'external', 'loop', 'record'}
+	in
+	object.getAllNamedElements()->asSequence()->select(keywords->includes(name))
+	->collect(
+		'"' + name + '" (element type: ' + eClass().name + ') is a reserved Modelica keyword'
+	)->displayErrors()
+/]
+
+[**
+ * Returns a set of all direct or indirect contained NamedElements.
+ * @param object the object
+*/]
+[query private getAllNamedElements(object : OclAny) : Set(NamedElement) =
+	object->asSet()->closure(e |
+		if e.oclIsKindOf(EObject) then
+			e.oclAsType(EObject).eAllContents()
+		else
+			e
+		endif
+	)->select(oclIsKindOf(NamedElement))
+	->collect(oclAsType(NamedElement))
+	->asSet()
+/]

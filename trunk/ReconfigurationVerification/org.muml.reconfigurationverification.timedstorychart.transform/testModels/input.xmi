@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="ASCII"?>
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionLanguage="http://www.fujaba.de/muml/actionlanguage/0.3.14" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.3.15" xmlns:realtimestatechart="http://www.fujaba.de/muml/model/realtimestatechart/0.3.8" xmlns:sdcec="http://www.muml.org/core/expressions/common/1.0.0" xmlns:types="http://www.fujaba.de/muml/model/types/0.3.6">
+  <categories key="org.muml.pim.realtimestatechart.category">
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart">
+      <variables name="counter" dataType="//@categories.1/@modelElements.0"/>
+      <variables name="a" dataType="//@categories.1/@modelElements.0"/>
+      <variables name="b" dataType="//@categories.1/@modelElements.0"/>
+      <variables name="c" dataType="//@categories.1/@modelElements.0"/>
+      <variables name="d" dataType="//@categories.1/@modelElements.0"/>
+      <states>
+        <entryEvent>
+          <action name="Action1">
+            <expressions xsi:type="actionLanguage:Block">
+              <expressions xsi:type="actionLanguage:Assignment" assignOperator=":=">
+                <rhs_assignExpression xsi:type="sdcec:ArithmeticExpression">
+                  <leftExpression xsi:type="actionLanguage:VariableOrParameterExpression" typedNamedElement="//@categories.0/@modelElements.0/@variables.2"/>
+                  <rightExpression xsi:type="sdcec:LiteralExpression" value="5"/>
+                </rhs_assignExpression>
+                <lhs_typedNamedElementExpression xsi:type="actionLanguage:VariableOrParameterExpression" typedNamedElement="//@categories.0/@modelElements.0/@variables.1"/>
+              </expressions>
+              <expressions xsi:type="actionLanguage:IfStatement">
+                <ifCondition xsi:type="sdcec:LogicalExpression">
+                  <leftExpression xsi:type="sdcec:ComparisonExpression">
+                    <leftExpression xsi:type="actionLanguage:VariableOrParameterExpression" typedNamedElement="//@categories.0/@modelElements.0/@variables.3"/>
+                    <rightExpression xsi:type="actionLanguage:VariableOrParameterExpression" typedNamedElement="//@categories.0/@modelElements.0/@variables.4"/>
+                  </leftExpression>
+                  <rightExpression xsi:type="sdcec:ComparisonExpression">
+                    <leftExpression xsi:type="actionLanguage:VariableOrParameterExpression" typedNamedElement="//@categories.0/@modelElements.0/@variables.4"/>
+                    <rightExpression xsi:type="sdcec:LiteralExpression" value="4"/>
+                  </rightExpression>
+                </ifCondition>
+                <ifBlock xsi:type="actionLanguage:ForLoop">
+                  <block>
+                    <expressions xsi:type="actionLanguage:Assignment" assignOperator=":=">
+                      <rhs_assignExpression xsi:type="sdcec:ArithmeticExpression">
+                        <leftExpression xsi:type="actionLanguage:VariableOrParameterExpression" typedNamedElement="//@categories.0/@modelElements.0/@variables.2"/>
+                        <rightExpression xsi:type="sdcec:LiteralExpression" value="5"/>
+                      </rhs_assignExpression>
+                      <lhs_typedNamedElementExpression xsi:type="actionLanguage:VariableOrParameterExpression" typedNamedElement="//@categories.0/@modelElements.0/@variables.1"/>
+                    </expressions>
+                  </block>
+                  <loopTest xsi:type="sdcec:ComparisonExpression">
+                    <leftExpression xsi:type="actionLanguage:VariableOrParameterExpression" typedNamedElement="//@categories.0/@modelElements.0/@variables.0"/>
+                    <rightExpression xsi:type="sdcec:LiteralExpression" value="4"/>
+                  </loopTest>
+                  <initializeExpression assignOperator=":=">
+                    <rhs_assignExpression xsi:type="sdcec:LiteralExpression" value="0"/>
+                    <lhs_typedNamedElementExpression xsi:type="actionLanguage:VariableOrParameterExpression" typedNamedElement="//@categories.0/@modelElements.0/@variables.0"/>
+                  </initializeExpression>
+                  <countingExpression incrementDecrementOperator="++">
+                    <lhs_typedNamedElementExpression xsi:type="actionLanguage:VariableOrParameterExpression" typedNamedElement="//@categories.0/@modelElements.0/@variables.0"/>
+                  </countingExpression>
+                </ifBlock>
+                <elseIfConditions xsi:type="sdcec:LogicalExpression">
+                  <leftExpression xsi:type="sdcec:ComparisonExpression">
+                    <leftExpression xsi:type="actionLanguage:VariableOrParameterExpression" typedNamedElement="//@categories.0/@modelElements.0/@variables.3"/>
+                    <rightExpression xsi:type="actionLanguage:VariableOrParameterExpression" typedNamedElement="//@categories.0/@modelElements.0/@variables.4"/>
+                  </leftExpression>
+                  <rightExpression xsi:type="sdcec:ComparisonExpression">
+                    <leftExpression xsi:type="actionLanguage:VariableOrParameterExpression" typedNamedElement="//@categories.0/@modelElements.0/@variables.4"/>
+                    <rightExpression xsi:type="sdcec:LiteralExpression" value="4"/>
+                  </rightExpression>
+                </elseIfConditions>
+                <elseIfBlocks xsi:type="actionLanguage:WhileLoop">
+                  <block>
+                    <expressions xsi:type="actionLanguage:Assignment"/>
+                  </block>
+                  <loopTest xsi:type="sdcec:LogicalExpression">
+                    <leftExpression xsi:type="sdcec:ComparisonExpression">
+                      <leftExpression xsi:type="actionLanguage:VariableOrParameterExpression" typedNamedElement="//@categories.0/@modelElements.0/@variables.3"/>
+                      <rightExpression xsi:type="actionLanguage:VariableOrParameterExpression" typedNamedElement="//@categories.0/@modelElements.0/@variables.4"/>
+                    </leftExpression>
+                    <rightExpression xsi:type="sdcec:ComparisonExpression">
+                      <leftExpression xsi:type="actionLanguage:VariableOrParameterExpression" typedNamedElement="//@categories.0/@modelElements.0/@variables.4"/>
+                      <rightExpression xsi:type="sdcec:LiteralExpression" value="4"/>
+                    </rightExpression>
+                  </loopTest>
+                </elseIfBlocks>
+                <elseBlock xsi:type="actionLanguage:DoWhileLoop">
+                  <block>
+                    <expressions xsi:type="actionLanguage:Assignment"/>
+                  </block>
+                  <loopTest xsi:type="sdcec:LogicalExpression">
+                    <leftExpression xsi:type="sdcec:ComparisonExpression">
+                      <leftExpression xsi:type="actionLanguage:VariableOrParameterExpression" typedNamedElement="//@categories.0/@modelElements.0/@variables.3"/>
+                      <rightExpression xsi:type="actionLanguage:VariableOrParameterExpression" typedNamedElement="//@categories.0/@modelElements.0/@variables.4"/>
+                    </leftExpression>
+                    <rightExpression xsi:type="sdcec:ComparisonExpression">
+                      <leftExpression xsi:type="actionLanguage:VariableOrParameterExpression" typedNamedElement="//@categories.0/@modelElements.0/@variables.4"/>
+                      <rightExpression xsi:type="sdcec:LiteralExpression" value="4"/>
+                    </rightExpression>
+                  </loopTest>
+                </elseBlock>
+              </expressions>
+            </expressions>
+          </action>
+        </entryEvent>
+      </states>
+    </modelElements>
+  </categories>
+  <categories key="org.muml.types.category">
+    <modelElements xsi:type="types:PrimitiveDataType" primitiveType="INT"/>
+  </categories>
+</modelinstance:RootNode>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emm:Migrator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:emm="http://www.muml.org/emm/1.0.0">
+  <sourcePackages href="sdd-0.4.ecore#/"/>
+  <targetPackages href="sdd.ecore#/"/>
+  <mappings>
+    <targetClass href="sdd.ecore#//Edge"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="sdd.ecore#//Edge/type"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="sdd-0.4.ecore#//Edge/type"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="sdd.ecore#//Edge/sourceNode"/>
+      <sourceFeature xsi:type="ecore:EReference" href="sdd-0.4.ecore#//Edge/sourceNode"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="sdd.ecore#//Edge/targetNode"/>
+      <sourceFeature xsi:type="ecore:EReference" href="sdd-0.4.ecore#//Edge/targetNode"/>
+    </featureInitializers>
+    <sourceClass href="sdd-0.4.ecore#//Edge"/>
+  </mappings>
+  <mappings>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="sdd.ecore#//Node/outgoingEdges"/>
+      <sourceFeature xsi:type="ecore:EReference" href="sdd-0.4.ecore#//Node/outgoingEdges"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="sdd.ecore#//Node/incomingEdges"/>
+      <sourceFeature xsi:type="ecore:EReference" href="sdd-0.4.ecore#//Node/incomingEdges"/>
+    </featureInitializers>
+    <sourceClass href="sdd-0.4.ecore#//Node"/>
+  </mappings>
+  <mappings>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="sdd.ecore#//AbstractStoryDecisionDiagram/nodes"/>
+      <sourceFeature xsi:type="ecore:EReference" href="sdd-0.4.ecore#//AbstractStoryDecisionDiagram/nodes"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="sdd.ecore#//AbstractStoryDecisionDiagram/edges"/>
+      <sourceFeature xsi:type="ecore:EReference" href="sdd-0.4.ecore#//AbstractStoryDecisionDiagram/edges"/>
+    </featureInitializers>
+    <sourceClass href="sdd-0.4.ecore#//AbstractStoryDecisionDiagram"/>
+  </mappings>
+  <mappings>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="sdd.ecore#//PatternNode/type"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="sdd-0.4.ecore#//PatternNode/type"/>
+    </featureInitializers>
+    <sourceClass href="sdd-0.4.ecore#//PatternNode"/>
+  </mappings>
+  <mappings>
+    <targetClass href="sdd.ecore#//LeafNode"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="sdd.ecore#//LeafNode/value"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="sdd-0.4.ecore#//LeafNode/value"/>
+    </featureInitializers>
+    <sourceClass href="sdd-0.4.ecore#//LeafNode"/>
+  </mappings>
+  <release href="../../org.muml.core.migrator/model/muml.releaseset#//@releases.1"/>
+</emm:Migrator>

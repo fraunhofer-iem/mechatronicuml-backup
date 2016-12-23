@@ -1,0 +1,60 @@
+/*******************************************************************************
+ * Copyright (c) 2016 Fraunhofer IEM.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Johannes Geismann - initial implementation
+ *    David Schmelter - migration to MechatronicUML 1.0, APP4MC 0.7.x
+ *******************************************************************************/
+import runnableTransformationHelperQueries;
+import muml2runnables;
+
+//modeltype ecore uses ecore ('http://www.eclipse.org/emf/2002/Ecore');
+
+modeltype muml_modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
+
+//modeltype muml_core uses 'http://www.muml.org/core/1.0.0';
+//modeltype muml_expression uses core::expressions('http://www.muml.org/core/1.0.0');
+//modeltype muml_expression_types uses core::expressions::common('http://www.muml.org/core/1.0.0');
+
+//modeltype muml_rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+//modeltype muml_component uses pim::component('http://www.muml.org/pim/1.0.0');
+modeltype muml_instance uses pim::instance('http://www.muml.org/pim/1.0.0');
+//modeltype muml_connector uses pim::connector('http://www.muml.org/pim/1.0.0');
+//modeltype muml_constraint uses pim::constraint('http://www.muml.org/pim/1.0.0');
+//modeltype muml_behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+//modeltype muml_protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
+//modeltype muml_msgtype uses pim::msgtype('http://www.muml.org/pim/1.0.0');
+//modeltype muml_types uses pim::types('http://www.muml.org/pim/1.0.0');
+//modeltype muml_valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+//modeltype muml_runnable uses pim::runnable('http://www.muml.org/pim/1.0.0');
+
+//modeltype muml_actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
+
+transformation regions2runnables(inout startCIC:muml_instance, inout rootNode:muml_modelinstance);
+
+property runnableCategoryKey = "org.muml.pim.runnables.category";
+property runnableCategoryName = "runnables";
+
+main() {
+	var embCIC := startCIC.rootObjects()[ComponentInstanceConfiguration]->any(true);
+	
+	if(not embCIC.oclIsTypeOf(ComponentInstanceConfiguration)) {
+		embCIC := ComponentInstanceConfiguration.allInstances() -> any(c | c.name = "OvertakerVehicle");
+	};
+	
+	var rootNode = rootNode.rootObjects()[RootNode]->any(true);
+	initRootNode(rootNode);
+    rootNode.categories += rootNode.map CreateModelElementCategory();
+	
+	embCIC.map ComponentInstanceConfiguration2RegionRunnables(embCIC);
+}
+
+mapping RootNode::CreateModelElementCategory():ModelElementCategory when {not self.categories->exists(rn | rn.name=runnableCategoryName and rn.key=runnableCategoryKey);} {
+	
+	key := runnableCategoryKey;
+	name := runnableCategoryName;
+}

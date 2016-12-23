@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<release:ReleaseSet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:release="http://www.muml.org/emm/release/1.0.0" name="Ecore Metamodel">
+  <releases name="2002"/>
+</release:ReleaseSet>

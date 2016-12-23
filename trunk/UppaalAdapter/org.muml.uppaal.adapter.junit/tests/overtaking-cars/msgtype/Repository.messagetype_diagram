@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:msgtype="http://www.muml.org/pim/msgtype/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_DHk2UFK3EeOhUqMO2Sn_wg" type="Message Type" name="Repository.messagetype_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_DHldYFK3EeOhUqMO2Sn_wg" type="2008" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_DHldYlK3EeOhUqMO2Sn_wg" type="5017"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_DHldY1K3EeOhUqMO2Sn_wg" type="7010">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_DHldZFK3EeOhUqMO2Sn_wg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_DHldZVK3EeOhUqMO2Sn_wg"/>
+    </children>
+    <element xmi:type="msgtype:MessageTypeRepository" href="../overtaking-correct.muml#_9E-g8ITBEeKO9r0VL65xcg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DHldYVK3EeOhUqMO2Sn_wg" width="286" height="181"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_DHk2UVK3EeOhUqMO2Sn_wg"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../overtaking-correct.muml#_8J0gQITBEeKO9r0VL65xcg"/>
+</notation:Diagram>

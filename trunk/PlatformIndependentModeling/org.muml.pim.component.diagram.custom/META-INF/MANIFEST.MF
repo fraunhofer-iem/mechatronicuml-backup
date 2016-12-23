@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Structured Component Diagram-Editor (Customizations)
+Bundle-SymbolicName: org.muml.pim.component.diagram.custom;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.gmf.runtime.diagram.ui.properties;bundle-version="1.4.0",
+ org.muml.pim.component.diagram,
+ org.eclipse.gmf.runtime.diagram.ui.providers;bundle-version="1.5.0",
+ org.eclipse.m2m.qvt.oml.project;bundle-version="3.1.0",
+ org.eclipse.m2m.qvt.oml;bundle-version="3.2.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.gmf.runtime.diagram.ui,
+ org.eclipse.draw2d,
+ org.eclipse.swt,
+ org.muml.pim.ui
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
+Import-Package: org.eclipse.m2m.qvt.oml
+Bundle-Activator: org.muml.pim.component.diagram.custom.part.Activator
+Export-Package: org.muml.pim.component.diagram.custom.edit.parts,
+ org.muml.pim.component.diagram.custom.part,
+ org.muml.pim.component.diagram.custom.providers

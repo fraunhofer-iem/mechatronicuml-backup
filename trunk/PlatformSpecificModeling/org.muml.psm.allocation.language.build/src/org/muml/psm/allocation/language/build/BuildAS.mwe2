@@ -1,0 +1,30 @@
+module BuildAS
+
+import org.eclipse.ocl.examples.build.utilities.GenModelSetup
+import org.eclipse.ocl.examples.build.utilities.UMLGenModelSetup
+import org.eclipse.emf.mwe.utils.StandaloneSetup
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
+import org.muml.psm.allocation.language.build.PivotModelSetup
+
+Workflow {
+	bean = ResourceSetImpl : resourceSet {}
+	bean = StandaloneSetup { resourceSet = resourceSet
+    	platformUri = ".."
+    	scanClassPath = true
+    }
+    bean = GenModelSetup { resourceSet = resourceSet }
+    bean = UMLGenModelSetup { resourceSet = resourceSet }
+    bean = PivotModelSetup { resourceSet = resourceSet }
+	component = @GenerateLanguageSpecificationAS {
+		resourceSet = resourceSet
+		csModelURI = "platform:/resource/org.muml.psm.allocation.language/model/LanguageSpecificationCS.ecore"
+		pivotModelURI = "platform:/resource/org.eclipse.ocl.pivot/model/Pivot.ecore"
+		pivotGenModelURI = "platform:/resource/org.eclipse.ocl.pivot/model/Pivot.genmodel"
+		asModelURI = "platform:/resource/org.muml.psm.allocation.language/model-gen/LanguageSpecificationAS.ecore"
+		asGenModelURI = "platform:/resource/org.muml.psm.allocation.language/model-gen/LanguageSpecificationAS.genmodel"
+		basePackage = "org.muml.psm.allocation.language"
+		modelDirectory = "/org.muml.psm.allocation.language/src"
+		pluginID = "org.muml.psm.allocation.language"
+	}
+
+}

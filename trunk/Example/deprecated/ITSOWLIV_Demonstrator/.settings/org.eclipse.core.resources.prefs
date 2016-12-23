@@ -1,0 +1,17 @@
+eclipse.preferences.version=1
+encoding//msgtype/Alternating-Lock.messagetype_diagram=UTF-8
+encoding//msgtype/PeriodicTransmission.messagetype_diagram=UTF-8
+encoding//msgtype/fail-safeDelegation.messagetype_diagram=UTF-8
+encoding//msgtype/fo-delegation_master-to-slyve.messagetype_diagram=UTF-8
+encoding//msgtype/fo-delgation_slave-to-master.messagetype_diagram=UTF-8
+encoding//msgtype/lim-obs_provider-to-observer.messagetype_diagram=UTF-8
+encoding//protocol/Alternating-Lock.coordinationprotocol_diagram=UTF-8
+encoding//protocol/Fail-SafeDelegation.coordinationprotocol_diagram=UTF-8
+encoding//protocol/FailOperationalDelegation.coordinationprotocol_diagram=UTF-8
+encoding//protocol/LimitObservation.coordinationprotocol_diagram=UTF-8
+encoding//protocol/PeriodicTransmission.coordinationprotocol_diagram=UTF-8
+encoding//realtimestatechart/AlternatingLockProtocol/AlternatingLock_consumer.realtimestatechart_diagram=UTF-8
+encoding//realtimestatechart/AlternatingLockProtocol/AlternatingLock_ressource.realtimestatechart_diagram=UTF-8
+encoding/ITSOWLIV_Demonstrator.component_diagram=UTF-8
+encoding/ITSOWLIV_Demonstrator.coordinationprotocol_diagram=UTF-8
+encoding/ITSOWLIV_Demonstrator.fujaba=UTF-8

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<release:ReleaseSet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:release="http://www.muml.org/emm/release/1.0.0" name="MechatronicUML">
+  <releases name="0.3"/>
+  <releases name="0.4"/>
+  <releases name="0.5"/>
+  <releases name="0.6"/>
+</release:ReleaseSet>

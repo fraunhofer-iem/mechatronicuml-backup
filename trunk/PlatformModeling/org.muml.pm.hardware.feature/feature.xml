@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.muml.pm.hardware.feature" label="Hardware Platform Modeling Feature" provider-name="%providerName" version="1.0.0.qualifier">
+
+   <description>
+      Hardware Platform Modeling Feature
+   </description>
+
+   <copyright url="%copyrightURL">
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <requires>
+      <import feature="org.muml.core.feature" version="0.5.0"/>
+      <import feature="org.muml.pim.feature" version="0.5.0"/>
+      <import feature="org.muml.ape.feature" version="0.5.0"/>
+   </requires>
+
+   <plugin download-size="0" id="org.muml.pm.hardware" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.pm.hardware.edit" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.pm.hardware.common" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.pm.hardware.platform.diagram" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.pm.hardware.platform.diagram.custom" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.pm.hardware.resourceinstance.diagram" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.pm.hardware.resourceinstance.diagram.custom" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.pm.hardware.edit.properties" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.pm.hardware.platforminstance.diagram" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.pm.hardware.platforminstance.diagram.custom" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.pm.hardware.resource.diagram" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.pm.hardware.resource.diagram.custom" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.pm.hardware.migrator" install-size="0" unpack="false" version="0.0.0"/>
+
+</feature>

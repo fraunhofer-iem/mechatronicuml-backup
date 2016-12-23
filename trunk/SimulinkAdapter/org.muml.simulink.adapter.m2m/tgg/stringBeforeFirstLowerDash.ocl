@@ -1,0 +1,17 @@
+package ecore
+
+	context EString
+		def: at(i:Integer) : String = 
+			self.substring(i, i)
+			/* "body" is an OCL keyword. The trick is to add an underscore
+			   ("_body") to access the feature. */
+		def: helperSequence : Sequence(Integer) = 
+			Sequence{1..self.size()}
+		def: firstOccOfLowerDash : Integer = self.helperSequence
+			->iterate(counter : Integer; result : Integer = 0 | 
+				if ((self.at(counter) = '_') 
+				and result = 0) then counter else result endif)
+		def: stringBeforeFirstLowerDash() : String = 
+					self.substring(1, self.firstOccOfLowerDash-1)
+	
+endpackage

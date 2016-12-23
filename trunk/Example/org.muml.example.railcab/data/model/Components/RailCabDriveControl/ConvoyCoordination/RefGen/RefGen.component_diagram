@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component="http://www.muml.org/pim/component/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:reconfiguration="http://www.muml.org/reconfiguration/1.0.0" xmi:id="_SVbfkO8CEeOkfud6pZP9gQ" type="Component" name="RefGen.component_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_SVbfku8CEeOkfud6pZP9gQ" type="2078" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_SVbflO8CEeOkfud6pZP9gQ" type="5028"/>
+    <children xmi:type="notation:Shape" xmi:id="_Tvb_cO8CEeOkfud6pZP9gQ" type="3010" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_Tvb_cu8CEeOkfud6pZP9gQ" type="5012">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Tvb_c-8CEeOkfud6pZP9gQ" x="36" y="-12"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_Tvb_dO8CEeOkfud6pZP9gQ" type="5025">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Tvb_de8CEeOkfud6pZP9gQ" x="-12" y="-48"/>
+      </children>
+      <element xmi:type="component:DiscretePort" href="../../../../RailCab.muml#_C5W68O6FEeOKI4bZ_bxwuQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Tvb_ce8CEeOkfud6pZP9gQ" x="168" y="-12"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_Tvb_du8CEeOkfud6pZP9gQ" type="3010" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_Tvb_eO8CEeOkfud6pZP9gQ" type="5012">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Tvb_ee8CEeOkfud6pZP9gQ" x="-84" y="24"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_Tvb_eu8CEeOkfud6pZP9gQ" type="5025">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Tvb_e-8CEeOkfud6pZP9gQ" y="5"/>
+      </children>
+      <element xmi:type="component:DiscretePort" href="../../../../RailCab.muml#_FpmN8O6FEeOKI4bZ_bxwuQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Tvb_d-8CEeOkfud6pZP9gQ" x="-12" y="96"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_Tvb_fO8CEeOkfud6pZP9gQ" type="3013" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_Tvb_fu8CEeOkfud6pZP9gQ" type="5024">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Tvb_f-8CEeOkfud6pZP9gQ" x="-48" y="24"/>
+      </children>
+      <element xmi:type="component:HybridPort" href="../../../../RailCab.muml#_H5mhsO6FEeOKI4bZ_bxwuQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Tvb_fe8CEeOkfud6pZP9gQ" x="-12" y="24"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_Tvb_gO8CEeOkfud6pZP9gQ" type="3010" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_Tvb_gu8CEeOkfud6pZP9gQ" type="5012">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Tvb_g-8CEeOkfud6pZP9gQ" x="-36" y="24"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_Tvb_hO8CEeOkfud6pZP9gQ" type="5025">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Tvb_he8CEeOkfud6pZP9gQ" y="5"/>
+      </children>
+      <element xmi:type="component:DiscretePort" href="../../../../RailCab.muml#_QPsC4O6FEeOKI4bZ_bxwuQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Tvb_ge8CEeOkfud6pZP9gQ" x="-12" y="180"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_Tvb_hu8CEeOkfud6pZP9gQ" type="3010" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_Tvb_iO8CEeOkfud6pZP9gQ" type="5012">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Tvb_ie8CEeOkfud6pZP9gQ" y="5"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_Tvb_iu8CEeOkfud6pZP9gQ" type="5025">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Tvb_i-8CEeOkfud6pZP9gQ" y="5"/>
+      </children>
+      <element xmi:type="component:DiscretePort" href="../../../../RailCab.muml#_Rm8wwO6FEeOKI4bZ_bxwuQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Tvb_h-8CEeOkfud6pZP9gQ" x="325" y="180"/>
+    </children>
+    <element xmi:type="reconfiguration:ReconfigurableAtomicComponent" href="../../../../RailCab.muml#_BXanEO6FEeOKI4bZ_bxwuQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SVbfk-8CEeOkfud6pZP9gQ" x="240" y="228" width="337" height="217"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_SVbfke8CEeOkfud6pZP9gQ"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../../../../RailCab.muml#_zEShsO5uEeOKI4bZ_bxwuQ"/>
+</notation:Diagram>

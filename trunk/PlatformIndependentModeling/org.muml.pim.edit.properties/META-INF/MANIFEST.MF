@@ -1,0 +1,34 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MechatronicUML Tabbed Properties
+Bundle-SymbolicName: org.muml.pim.edit.properties; singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.emf.ecore,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.edit,
+ org.eclipse.ui,
+ org.muml.pim.edit,
+ org.muml.ape.runtime,
+ org.muml.pim,
+ org.muml.core.edit,
+ org.muml.pim.actionlanguage.xtext.ui,
+ org.muml.core.edit.properties
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.muml.pim.properties.metamodel, org.muml.pim.properties.constraint,
+ org.muml.pim.properties.valuetype.editor,
+ org.muml.pim.properties.realtimestatechart.editor,
+ org.muml.pim.properties.instance.editor,
+ org.muml.pim.properties.msgtype.editor,
+ org.muml.pim.properties.types.editor,
+ org.muml.pim.properties.protocol.editor,
+ org.muml.pim.properties.constraint.editor,
+ org.muml.pim.properties.behavior.editor,
+ org.muml.pim.properties.component.editor,
+ org.muml.pim.properties.connector.editor,
+ org.muml.pim.properties.pattern.editor,
+ org.muml.pim.properties.one_to_n_schemata.editor,
+ org.muml.pim.properties.pim.editor,
+ org.muml.pim.properties.runnable.editor,
+ org.muml.pim.properties.tabs
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

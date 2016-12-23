@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MDELab SDM Interpreter Core
+Bundle-SymbolicName: org.muml.storydiagram.interpreter.core.mdelab
+Bundle-Version: 1.0.0.qualifier
+Export-Package: org.muml.storydiagram.interpreter.core.mdelab,
+ org.muml.storydiagram.interpreter.core.mdelab.expressions,
+ org.muml.storydiagram.interpreter.core.mdelab.facade,
+ org.muml.storydiagram.interpreter.core.mdelab.notifications,
+ org.muml.storydiagram.interpreter.core.mdelab.patternmatcher,
+ org.muml.storydiagram.interpreter.core.mdelab.patternmatcher.patternPartBased,
+ org.muml.storydiagram.interpreter.core.mdelab.variables
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_1.dtd'>
+	<nta>
+		<declaration>
+
+
+urgent  chan  hurry  ;  
+
+
+const int  NUM_OF_MESSAGES   = 2;  
+
+typedef int [0, NUM_OF_MESSAGES]
+Message;
+
+
+const Message  null   = 0, stopCooperation   = 1, turn   = 2;  
+
+
+const int  CAPACITY   = 5;  
+
+typedef struct {
+
+int [0, CAPACITY]
+tail  ;  
+
+
+Message  messages [CAPACITY]
+;  
+}
+Buffer;
+
+bool check(
+Buffer  buffer  , 
+Message  m  )
+{
+return (m != null 
+and buffer.messages[0] == m); 
+} 
+ 
+
+void remove(
+Buffer &amp; buffer  , 
+Message  m  )
+{
+if(check(buffer,m)
+)
+{
+
+
+int  i  ;  
+for(i = 0; i &lt; CAPACITY - 1; i++)
+buffer.messages[i] = buffer.messages[i + 1];
+;
+; buffer.messages[CAPACITY - 1] = null;
+; buffer.tail--;
+} 
+;
+} 
+ 
+
+void add(
+Buffer &amp; b  , 
+Message  e  )
+{
+b.messages[b.tail] = e;
+; b.tail++;
+} 
+ 
+
+
+const int  NUM_OF_INSTANCES   = 2;  
+
+typedef int [0, NUM_OF_INSTANCES - 1]
+instance;
+
+
+bool  overflow  ;  
+
+
+Buffer  buffers [instance]
+;  
+
+
+Buffer  connectors [instance]
+;  
+
+
+int  earliest [instance]
+;  
+
+
+int  latest [instance]
+;  
+
+
+clock  transmissionTimes [instance]
+[CAPACITY]
+;  
+
+void send(
+instance  sender  , 
+Message  m  )
+{
+if(connectors[sender].tail &lt; CAPACITY)
+{
+add(connectors[sender],m)
+;
+; transmissionTimes[sender][latest[sender]] = 0;
+; latest[sender] == CAPACITY - 1 ? latest[sender] = 0 : latest[sender]++;
+} 
+else overflow = true;
+;
+} 
+ 
+
+bool receive(
+instance  receiver  , 
+Message  m  )
+{
+return check(buffers[receiver],m)
+; 
+} 
+ 
+
+void consume(
+instance  receiver  , 
+Message  m  )
+{
+if(receive(receiver,m)
+)
+remove(buffers[receiver],m)
+;
+;
+} 
+ 
+
+typedef int [0, 0]
+PartnerA_RANGE;
+
+
+bool  stopCooperationA [PartnerA_RANGE]
+;  
+
+
+clock  c0A [PartnerA_RANGE]
+;  
+
+typedef int [1, 1]
+PartnerB_RANGE;
+
+
+bool  stopCooperationB [PartnerB_RANGE]
+;  
+
+
+clock  c0B [PartnerB_RANGE]
+;  
+
+
+
+		</declaration>
+		
+<template>
+    <name>Connector</name>
+	
+		<parameter>
+
+const instance  sender  , 
+const instance  receiver  , 
+const int  min  , 
+const int  max  , 
+const bool  loss  , 
+const int  bufferSize  
+		</parameter>
+	
+	<declaration>
+		
+
+
+Message  tmp  ;  
+
+
+	</declaration>	
+	
+<location id="Idle_Connector" x="" y="" color="Default">
+	<name>Idle</name>
+<label kind="invariant">connectors[sender].tail &gt; 0 imply transmissionTimes[sender][earliest[sender]] &lt;= max</label>
+
+
+</location>
+
+<location id="transfer_loc_Connector" x="" y="" color="Default">
+	<name>transfer_loc</name>
+
+
+<committed/>
+</location>
+
+	<init ref="Idle_Connector"/>
+	
+<transition>
+<source ref="Idle_Connector"/>
+<target ref="transfer_loc_Connector"/>
+<label kind="select">i   : Message</label>
+<label kind="guard">(check(connectors[sender],i)
+ 
+and transmissionTimes[sender][earliest[sender]] &gt;= min 
+and transmissionTimes[sender][earliest[sender]] &lt;= max)</label>
+
+<label kind="assignment">tmp = i, 
+remove(connectors[sender],i)
+, 
+earliest[sender] == CAPACITY - 1 ? earliest[sender] = 0 : earliest[sender]++</label>
+</transition>
+
+<transition>
+<source ref="transfer_loc_Connector"/>
+<target ref="Idle_Connector"/>
+<label kind="select"></label>
+<label kind="guard">buffers[receiver].tail &lt; bufferSize</label>
+
+<label kind="assignment">add(buffers[receiver],tmp)
+</label>
+</transition>
+
+<transition>
+<source ref="transfer_loc_Connector"/>
+<target ref="Idle_Connector"/>
+<label kind="select"></label>
+<label kind="guard">buffers[receiver].tail &gt;= bufferSize</label>
+
+<label kind="assignment">overflow = true</label>
+</transition>
+
+<transition>
+<source ref="transfer_loc_Connector"/>
+<target ref="Idle_Connector"/>
+<label kind="select"></label>
+<label kind="guard">loss == true</label>
+
+<label kind="assignment"></label>
+</transition>
+
+</template>
+
+<template>
+    <name>TurnTransmission_PartnerA</name>
+	
+		<parameter>
+
+const PartnerA_RANGE  portOrRoleInstanceID  
+		</parameter>
+	
+	<declaration>
+		
+	</declaration>	
+	
+<location id="TurnTransmission_PartnerA_IDLE_TurnTransmission_PartnerA" x="" y="" color="Default">
+	<name>TurnTransmission_PartnerA_IDLE</name>
+
+
+
+</location>
+
+<location id="MyTurn_ACTIVE_IN_TurnTransmission_PartnerA_TurnTransmission_PartnerA" x="" y="" color="Default">
+	<name>MyTurn_ACTIVE_IN_TurnTransmission_PartnerA</name>
+<label kind="invariant">c0A[portOrRoleInstanceID] &lt;= 5</label>
+
+
+</location>
+
+<location id="YourTurn_ACTIVE_IN_TurnTransmission_PartnerA_TurnTransmission_PartnerA" x="" y="" color="Default">
+	<name>YourTurn_ACTIVE_IN_TurnTransmission_PartnerA</name>
+<label kind="invariant">c0A[portOrRoleInstanceID] &lt;= 10</label>
+
+
+</location>
+
+<location id="Initial_ACTIVE_IN_TurnTransmission_PartnerA_TurnTransmission_PartnerA" x="" y="" color="Default">
+	<name>Initial_ACTIVE_IN_TurnTransmission_PartnerA</name>
+
+
+
+</location>
+
+<location id="Timeout_ACTIVE_IN_TurnTransmission_PartnerA_TurnTransmission_PartnerA" x="" y="" color="Default">
+	<name>Timeout_ACTIVE_IN_TurnTransmission_PartnerA</name>
+
+
+
+</location>
+
+	<init ref="Initial_ACTIVE_IN_TurnTransmission_PartnerA_TurnTransmission_PartnerA"/>
+	
+<transition>
+<source ref="Initial_ACTIVE_IN_TurnTransmission_PartnerA_TurnTransmission_PartnerA"/>
+<target ref="MyTurn_ACTIVE_IN_TurnTransmission_PartnerA_TurnTransmission_PartnerA"/>
+<label kind="select"></label>
+<label kind="guard">receive(portOrRoleInstanceID,turn)
+</label>
+<label kind="synchronisation">hurry?</label>
+<label kind="assignment">consume(portOrRoleInstanceID,turn)
+, 
+c0A[portOrRoleInstanceID] = 0</label>
+</transition>
+
+<transition>
+<source ref="YourTurn_ACTIVE_IN_TurnTransmission_PartnerA_TurnTransmission_PartnerA"/>
+<target ref="MyTurn_ACTIVE_IN_TurnTransmission_PartnerA_TurnTransmission_PartnerA"/>
+<label kind="select"></label>
+<label kind="guard">receive(portOrRoleInstanceID,turn)
+</label>
+<label kind="synchronisation">hurry?</label>
+<label kind="assignment">consume(portOrRoleInstanceID,turn)
+, 
+c0A[portOrRoleInstanceID] = 0</label>
+</transition>
+
+<transition>
+<source ref="MyTurn_ACTIVE_IN_TurnTransmission_PartnerA_TurnTransmission_PartnerA"/>
+<target ref="YourTurn_ACTIVE_IN_TurnTransmission_PartnerA_TurnTransmission_PartnerA"/>
+<label kind="select"></label>
+
+
+<label kind="assignment">c0A[portOrRoleInstanceID] = 0, 
+send(portOrRoleInstanceID,turn)
+</label>
+</transition>
+
+<transition>
+<source ref="MyTurn_ACTIVE_IN_TurnTransmission_PartnerA_TurnTransmission_PartnerA"/>
+<target ref="Initial_ACTIVE_IN_TurnTransmission_PartnerA_TurnTransmission_PartnerA"/>
+<label kind="select"></label>
+
+
+<label kind="assignment">send(portOrRoleInstanceID,stopCooperation)
+</label>
+</transition>
+
+<transition>
+<source ref="Initial_ACTIVE_IN_TurnTransmission_PartnerA_TurnTransmission_PartnerA"/>
+<target ref="YourTurn_ACTIVE_IN_TurnTransmission_PartnerA_TurnTransmission_PartnerA"/>
+<label kind="select"></label>
+
+<label kind="synchronisation">hurry?</label>
+<label kind="assignment">c0A[portOrRoleInstanceID] = 0, 
+send(portOrRoleInstanceID,turn)
+</label>
+</transition>
+
+<transition>
+<source ref="YourTurn_ACTIVE_IN_TurnTransmission_PartnerA_TurnTransmission_PartnerA"/>
+<target ref="Initial_ACTIVE_IN_TurnTransmission_PartnerA_TurnTransmission_PartnerA"/>
+<label kind="select"></label>
+<label kind="guard">receive(portOrRoleInstanceID,stopCooperation)
+</label>
+<label kind="synchronisation">hurry?</label>
+<label kind="assignment">consume(portOrRoleInstanceID,stopCooperation)
+</label>
+</transition>
+
+<transition>
+<source ref="YourTurn_ACTIVE_IN_TurnTransmission_PartnerA_TurnTransmission_PartnerA"/>
+<target ref="Timeout_ACTIVE_IN_TurnTransmission_PartnerA_TurnTransmission_PartnerA"/>
+<label kind="select"></label>
+<label kind="guard">c0A[portOrRoleInstanceID] &gt;= 10</label>
+
+<label kind="assignment"></label>
+</transition>
+
+<transition>
+<source ref="Timeout_ACTIVE_IN_TurnTransmission_PartnerA_TurnTransmission_PartnerA"/>
+<target ref="Initial_ACTIVE_IN_TurnTransmission_PartnerA_TurnTransmission_PartnerA"/>
+<label kind="select"></label>
+
+<label kind="synchronisation">hurry?</label>
+<label kind="assignment"></label>
+</transition>
+
+</template>
+
+<template>
+    <name>TurnTransmission_PartnerB</name>
+	
+		<parameter>
+
+const PartnerB_RANGE  portOrRoleInstanceID  
+		</parameter>
+	
+	<declaration>
+		
+	</declaration>	
+	
+<location id="TurnTransmission_PartnerB_IDLE_TurnTransmission_PartnerB" x="" y="" color="Default">
+	<name>TurnTransmission_PartnerB_IDLE</name>
+
+
+
+</location>
+
+<location id="init_ACTIVE_IN_TurnTransmission_PartnerB_TurnTransmission_PartnerB" x="" y="" color="Default">
+	<name>init_ACTIVE_IN_TurnTransmission_PartnerB</name>
+
+
+
+</location>
+
+<location id="MyTurn_ACTIVE_IN_TurnTransmission_PartnerB_TurnTransmission_PartnerB" x="" y="" color="Default">
+	<name>MyTurn_ACTIVE_IN_TurnTransmission_PartnerB</name>
+<label kind="invariant">c0B[portOrRoleInstanceID] &lt;= 5</label>
+
+
+</location>
+
+<location id="YourTurn_ACTIVE_IN_TurnTransmission_PartnerB_TurnTransmission_PartnerB" x="" y="" color="Default">
+	<name>YourTurn_ACTIVE_IN_TurnTransmission_PartnerB</name>
+<label kind="invariant">c0B[portOrRoleInstanceID] &lt;= 10</label>
+
+
+</location>
+
+<location id="Timeout_ACTIVE_IN_TurnTransmission_PartnerB_TurnTransmission_PartnerB" x="" y="" color="Default">
+	<name>Timeout_ACTIVE_IN_TurnTransmission_PartnerB</name>
+
+
+
+</location>
+
+	<init ref="init_ACTIVE_IN_TurnTransmission_PartnerB_TurnTransmission_PartnerB"/>
+	
+<transition>
+<source ref="Timeout_ACTIVE_IN_TurnTransmission_PartnerB_TurnTransmission_PartnerB"/>
+<target ref="init_ACTIVE_IN_TurnTransmission_PartnerB_TurnTransmission_PartnerB"/>
+<label kind="select"></label>
+
+<label kind="synchronisation">hurry?</label>
+<label kind="assignment"></label>
+</transition>
+
+<transition>
+<source ref="init_ACTIVE_IN_TurnTransmission_PartnerB_TurnTransmission_PartnerB"/>
+<target ref="MyTurn_ACTIVE_IN_TurnTransmission_PartnerB_TurnTransmission_PartnerB"/>
+<label kind="select"></label>
+<label kind="guard">receive(portOrRoleInstanceID,turn)
+</label>
+<label kind="synchronisation">hurry?</label>
+<label kind="assignment">consume(portOrRoleInstanceID,turn)
+, 
+c0B[portOrRoleInstanceID] = 0</label>
+</transition>
+
+<transition>
+<source ref="YourTurn_ACTIVE_IN_TurnTransmission_PartnerB_TurnTransmission_PartnerB"/>
+<target ref="init_ACTIVE_IN_TurnTransmission_PartnerB_TurnTransmission_PartnerB"/>
+<label kind="select"></label>
+<label kind="guard">receive(portOrRoleInstanceID,stopCooperation)
+</label>
+<label kind="synchronisation">hurry?</label>
+<label kind="assignment">consume(portOrRoleInstanceID,stopCooperation)
+</label>
+</transition>
+
+<transition>
+<source ref="MyTurn_ACTIVE_IN_TurnTransmission_PartnerB_TurnTransmission_PartnerB"/>
+<target ref="init_ACTIVE_IN_TurnTransmission_PartnerB_TurnTransmission_PartnerB"/>
+<label kind="select"></label>
+
+
+<label kind="assignment">send(portOrRoleInstanceID,stopCooperation)
+</label>
+</transition>
+
+<transition>
+<source ref="MyTurn_ACTIVE_IN_TurnTransmission_PartnerB_TurnTransmission_PartnerB"/>
+<target ref="YourTurn_ACTIVE_IN_TurnTransmission_PartnerB_TurnTransmission_PartnerB"/>
+<label kind="select"></label>
+
+
+<label kind="assignment">c0B[portOrRoleInstanceID] = 0, 
+send(portOrRoleInstanceID,turn)
+</label>
+</transition>
+
+<transition>
+<source ref="YourTurn_ACTIVE_IN_TurnTransmission_PartnerB_TurnTransmission_PartnerB"/>
+<target ref="MyTurn_ACTIVE_IN_TurnTransmission_PartnerB_TurnTransmission_PartnerB"/>
+<label kind="select"></label>
+<label kind="guard">receive(portOrRoleInstanceID,turn)
+</label>
+<label kind="synchronisation">hurry?</label>
+<label kind="assignment">consume(portOrRoleInstanceID,turn)
+, 
+c0B[portOrRoleInstanceID] = 0</label>
+</transition>
+
+<transition>
+<source ref="YourTurn_ACTIVE_IN_TurnTransmission_PartnerB_TurnTransmission_PartnerB"/>
+<target ref="Timeout_ACTIVE_IN_TurnTransmission_PartnerB_TurnTransmission_PartnerB"/>
+<label kind="select"></label>
+<label kind="guard">c0B[portOrRoleInstanceID] &gt;= 10</label>
+
+<label kind="assignment"></label>
+</transition>
+
+</template>
+
+<template>
+    <name>UrgencyProvider</name>
+	
+	<declaration>
+		
+	</declaration>	
+	
+<location id="idle_UrgencyProvider" x="" y="" color="Default">
+	<name>idle</name>
+
+
+
+</location>
+
+	<init ref="idle_UrgencyProvider"/>
+	
+<transition>
+<source ref="idle_UrgencyProvider"/>
+<target ref="idle_UrgencyProvider"/>
+<label kind="select"></label>
+
+<label kind="synchronisation">hurry!</label>
+<label kind="assignment"></label>
+</transition>
+
+</template>
+
+		<system>
+			
+
+TurnTransmission_PartnerB_1 = TurnTransmission_PartnerB(1);
+
+TurnTransmission_PartnerA_0 = TurnTransmission_PartnerA(0);
+
+Connector_1_0 = Connector(1, 0, 1, 1, false, 5);
+
+Connector_0_1 = Connector(0, 1, 1, 1, false, 5);
+
+
+system TurnTransmission_PartnerB_1,TurnTransmission_PartnerA_0,Connector_1_0,Connector_0_1,UrgencyProvider;
+
+
+		</system>
+	</nta>
+	

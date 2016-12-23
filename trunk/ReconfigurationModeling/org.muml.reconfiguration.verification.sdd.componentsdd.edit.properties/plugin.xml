@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+
+  <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+    <propertyContributor
+          contributorId="org.muml.ape.contributor">
+       <propertyCategory
+             category="domain">
+       </propertyCategory>
+       <propertyCategory
+             category="default">
+       </propertyCategory>
+       <propertyCategory
+             category="extended">
+       </propertyCategory>
+       <propertyCategory
+             category="advanced">
+       </propertyCategory>
+    </propertyContributor>
+  </extension>
+
+
+
+<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs contributorId="org.muml.ape.contributor">
+          <propertyTab
+             category="domain"
+             id="property.tab.constraint"
+             afterTab="property.tab.comment"
+             label="Constraint"/>
+          
+      </propertyTabs>
+  </extension>
+
+
+
+
+  <extension point="org.eclipse.ui.views.properties.tabbed.propertySections"> 
+      <propertySections contributorId="org.muml.ape.contributor">
+          <propertySection
+            class="org.muml.ape.runtime.sections.ObjectPropertySection"
+            filter="org.muml.reconfiguration.verification.sdd.componentsdd.properties.tabs.Property_tab_constraintTabElementFilter"
+            id="property.tab.constraint"
+            tab="property.tab.constraint">
+             <input
+               type="org.eclipse.emf.ecore.EObject">
+             </input>
+          </propertySection>
+         
+      </propertySections>
+  </extension>
+
+
+
+ <extension point="org.muml.ape.runtime.propertyEditors">
+    <propertyEditors>
+    
+       <propertyEditor
+             factory="org.muml.reconfiguration.verification.sdd.componentsdd.properties.componentsdd.editor.ComponentStoryDecisionDiagramEditor$Factory"
+             type="http://www.muml.org/reconfiguration/verification/sdd/componentsdd/1.0.0#ComponentStoryDecisionDiagram">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.reconfiguration.verification.sdd.componentsdd.properties.componentsdd.editor.ComponentStoryPatternNodeEditor$Factory"
+             type="http://www.muml.org/reconfiguration/verification/sdd/componentsdd/1.0.0#ComponentStoryPatternNode">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.reconfiguration.verification.sdd.componentsdd.properties.componentsdd.editor.EvaluateComponentSDDExpressionEditor$Factory"
+             type="http://www.muml.org/reconfiguration/verification/sdd/componentsdd/1.0.0#EvaluateComponentSDDExpression">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.reconfiguration.verification.sdd.componentsdd.properties.componentsdd.editor.InitialNodeEditor$Factory"
+             type="http://www.muml.org/reconfiguration/verification/sdd/componentsdd/1.0.0#InitialNode">
+       </propertyEditor>
+    
+    </propertyEditors>
+ </extension>
+
+
+ <extension
+       point="org.muml.ape.runtime.metamodelContributor">
+    <metamodel
+          contributor="org.muml.reconfiguration.verification.sdd.componentsdd.properties.metamodel.MetamodelContributor">
+    </metamodel>
+ </extension>
+
+
+ <extension
+       point="org.muml.ape.runtime.creationConstraintContributor">
+    <constraint
+          contributor="org.muml.reconfiguration.verification.sdd.componentsdd.properties.constraint.CreationConstraintContributor">
+    </constraint>
+ </extension>
+
+</plugin>

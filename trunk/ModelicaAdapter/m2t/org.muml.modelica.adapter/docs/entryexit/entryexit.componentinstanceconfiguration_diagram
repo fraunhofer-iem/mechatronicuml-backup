@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:instance="http://www.muml.org/pim/instance/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_RpqUUPxsEeOgTKCYN32qOw" type="Component Instance Configuration" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_TKcxoPxsEeOgTKCYN32qOw" type="2016" fontName="Sans" fontHeight="10" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_TKdYsPxsEeOgTKCYN32qOw" type="5027"/>
+    <element xmi:type="instance:AtomicComponentInstance" href="entryexit.fujaba#_TKU10PxsEeOgTKCYN32qOw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TKcxofxsEeOgTKCYN32qOw" x="295" y="119" width="174"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_RpqUUfxsEeOgTKCYN32qOw"/>
+  <element xmi:type="instance:ComponentInstanceConfiguration" href="entryexit.fujaba#_RpptQPxsEeOgTKCYN32qOw"/>
+</notation:Diagram>

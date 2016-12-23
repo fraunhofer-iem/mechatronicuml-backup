@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+    
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
+      <ParserProvider class="org.muml.pim.coordinationprotocol.diagram.custom.providers.CustomMumlParserProvider">
+         <Priority name="Low"/>
+      </ParserProvider>
+   </extension>
+    
+   
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.muml">
+         
+      </menuContribution>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.commands">
+     
+   </extension>
+   
+    
+   
+
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-delete-from-diagram">
+		<contributionItemProvider class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContributionItemProvider"
+   			checkPluginLoaded="false">
+			<Priority name="Low"/>
+			<popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+				<popupStructuredContributionCriteria objectClass="org.muml.pim.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart"/>
+				<popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+			</popupContribution>
+		</contributionItemProvider>
+   </extension>
+   
+   
+   
+   <!-- prevent deleting inner coordination protocol -->
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <binding context="org.muml.pim.coordinationprotocol.diagram.TypeContext">
+         <elementType ref="org.muml.pim.coordinationprotocol.diagram.CoordinationProtocol_3015"/>
+         <advice ref="org.muml.pim.coordinationprotocol.diagram.CoordinationProtocol2Advice"/>
+      </binding>
+   </extension>
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <metamodel nsURI="http://www.muml.org/pim/protocol/1.0.0">
+        <adviceBinding  id="org.muml.pim.coordinationprotocol.diagram.CoordinationProtocol2Advice"
+		  typeId="org.muml.pim.coordinationprotocol.diagram.CoordinationProtocol_3015"
+		  class="org.muml.pim.coordinationspecification.common.edit.helpers.PreventDeleteEditHelperAdvice"
+		  inheritance="all">
+        </adviceBinding>
+      </metamodel>
+   </extension>
+	
+   <!-- fix for #1230. See referenced class "DeleteWithChildrenEditHelperAdvice" for detailed explanations. -->
+    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <binding context="org.muml.pim.coordinationprotocol.diagram.TypeContext">
+         <elementType ref="org.muml.pim.coordinationprotocol.diagram.CoordinationProtocol_2005"/>
+         <advice ref="org.muml.pim.coordinationprotocol.diagram.CoordinationProtocolAdvice"/>
+      </binding>
+   </extension>
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <metamodel nsURI="http://www.muml.org/pim/protocol/1.0.0">
+        <adviceBinding  id="org.muml.pim.coordinationprotocol.diagram.CoordinationProtocolAdvice"
+		  typeId="org.muml.pim.coordinationprotocol.diagram.CoordinationProtocol_2005"
+		  class="org.muml.pim.coordinationspecification.common.edit.helpers.DeleteWithChildrenEditHelperAdvice"
+		  inheritance="all">
+        </adviceBinding>
+      </metamodel>
+   </extension>
+</plugin>

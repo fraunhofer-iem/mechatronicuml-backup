@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uriMap:MappingContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:uriMap="http:///www.eclipse.org/m2m/qvt/oml/MModelUriMap/1.0.0">
+  <mapping sourceURI="http://www.muml.org/storydiagram/1.0.0" targetURI="platform:/resource/org.muml.storydiagram/model/storydiagrams.ecore"/>
+  <mapping sourceURI="http://www.muml.org/core/1.0.0" targetURI="platform:/resource/org.muml.core/model/core.ecore"/>
+  <mapping sourceURI="http://www.muml.org/storydiagram.reachanalysis.reachabilitygraph/sdm/1.0.0" targetURI="platform:/resource/org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm/model/SDMReachabilityAnalysis.ecore"/>
+  <mapping sourceURI="http://www.muml.org/core/reachabilitygraph/1.0.0" targetURI="platform:/resource/org.muml.core.reachanalysis.reachabilitygraph/model/ReachabilityAnalysisCore.ecore"/>
+  <mapping sourceURI="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0" targetURI="platform:/resource/org.muml.reconfigurationverification.timedstorydiagram/model/TimedStoryDiagrams.ecore"/>
+  <mapping sourceURI="http://www.muml.org/reconfigurationverification.reachanalysis.tsdm.transform/helper/1.0.0" targetURI="platform:/resource/de.uni_paderborn.fujaba.muml.reachanalysis.tsdm.transform/model/TimedSDMReachabilityAnalysisHelper.ecore"/>
+  <mapping sourceURI="http://www.muml.org/reconfigurationverification/reachanalysis/reachabilitygraph/gtautomaton/1.0.0" targetURI="platform:/resource/de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton/model/GtAutomaton.ecore"/>
+</uriMap:MappingContainer>

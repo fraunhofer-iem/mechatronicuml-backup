@@ -1,0 +1,823 @@
+<?xml version="1.0" encoding="ASCII"?>
+<de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedGraphTransformationSystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba.muml.timedstorydiagram="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0" xmlns:expr="http://www.muml.org/core/expressions/1.0.0" xmlns:sda="http://www.muml.org/storydiagram/activities/1.0.0" xmlns:sdp="http://www.muml.org/storydiagram/patterns/1.0.0">
+  <rules name="SyncTransition_sender:state1_state2_role2_adaptation_rtscreceiver:state1_state2_role2_behavior">
+    <ownedActivityEdge target="//@rules.0/@ownedActivityNode.3" source="//@rules.0/@ownedActivityNode.0"/>
+    <ownedActivityEdge target="//@rules.0/@ownedActivityNode.4" source="//@rules.0/@ownedActivityNode.3" guard="SUCCESS"/>
+    <ownedActivityEdge target="//@rules.0/@ownedActivityNode.2" source="//@rules.0/@ownedActivityNode.3" guard="FAILURE"/>
+    <ownedActivityEdge target="//@rules.0/@ownedActivityNode.8" source="//@rules.0/@ownedActivityNode.4"/>
+    <ownedActivityEdge target="//@rules.0/@ownedActivityNode.5" source="//@rules.0/@ownedActivityNode.8"/>
+    <ownedActivityEdge target="//@rules.0/@ownedActivityNode.9" source="//@rules.0/@ownedActivityNode.5"/>
+    <ownedActivityEdge target="//@rules.0/@ownedActivityNode.6" source="//@rules.0/@ownedActivityNode.9"/>
+    <ownedActivityEdge target="//@rules.0/@ownedActivityNode.10" source="//@rules.0/@ownedActivityNode.6"/>
+    <ownedActivityEdge target="//@rules.0/@ownedActivityNode.7" source="//@rules.0/@ownedActivityNode.10"/>
+    <ownedActivityEdge target="//@rules.0/@ownedActivityNode.1" source="//@rules.0/@ownedActivityNode.7"/>
+    <ownedActivityNode xsi:type="sda:InitialNode" name="initialNode" outgoing="//@rules.0/@ownedActivityEdge.0"/>
+    <ownedActivityNode xsi:type="sda:ActivityFinalNode" name="finalNode" incoming="//@rules.0/@ownedActivityEdge.9"/>
+    <ownedActivityNode xsi:type="sda:ActivityFinalNode" name="finalNode" incoming="//@rules.0/@ownedActivityEdge.2"/>
+    <ownedActivityNode xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedActivityNode" name="Check application condition transitions" outgoing="//@rules.0/@ownedActivityEdge.1 //@rules.0/@ownedActivityEdge.2" incoming="//@rules.0/@ownedActivityEdge.0">
+      <ownedRule xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedStoryPattern">
+        <variable xsi:type="sdp:ObjectVariable" name="rtsc_1" incomingLink="//@rules.0/@ownedActivityNode.3/@ownedRule/@linkVariable.3" outgoingLink="//@rules.0/@ownedActivityNode.3/@ownedRule/@linkVariable.6">
+          <constraint>
+            <constraintExpression xsi:type="expr:TextualExpression" expressionText="self.name='role2_adaptation_rtsc'" language="OCL" languageVersion="1.0"/>
+          </constraint>
+          <classifier href="http://www.fujaba.de/muml/model/realtimestatechart/0.3.17#//RealtimeStatechart"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="ri_1" outgoingLink="//@rules.0/@ownedActivityNode.3/@ownedRule/@linkVariable.3 //@rules.0/@ownedActivityNode.3/@ownedRule/@linkVariable.4 //@rules.0/@ownedActivityNode.3/@ownedRule/@linkVariable.7">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RealtimeStatechartInstance"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="s1_1" incomingLink="//@rules.0/@ownedActivityNode.3/@ownedRule/@linkVariable.6 //@rules.0/@ownedActivityNode.3/@ownedRule/@linkVariable.7">
+          <constraint>
+            <constraintExpression xsi:type="expr:TextualExpression" expressionText="self.name='state1'" language="OCL" languageVersion="1.0"/>
+          </constraint>
+          <classifier href="http://www.fujaba.de/muml/model/realtimestatechart/0.3.17#//State"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="re_1" incomingLink="//@rules.0/@ownedActivityNode.3/@ownedRule/@linkVariable.4" outgoingLink="//@rules.0/@ownedActivityNode.3/@ownedRule/@linkVariable.5">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeBehavioralElement"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="b1_1" incomingLink="//@rules.0/@ownedActivityNode.3/@ownedRule/@linkVariable.5" outgoingLink="//@rules.0/@ownedActivityNode.3/@ownedRule/@linkVariable.2">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//MessageBuffer"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="m1_1" incomingLink="//@rules.0/@ownedActivityNode.3/@ownedRule/@linkVariable.2" outgoingLink="//@rules.0/@ownedActivityNode.3/@ownedRule/@linkVariable.0 //@rules.0/@ownedActivityNode.3/@ownedRule/@linkVariable.1">
+          <constraint>
+            <constraintExpression xsi:type="expr:TextualExpression" expressionText="self.name='m1'" language="OCL" languageVersion="1.0"/>
+          </constraint>
+          <linkOrderConstraint firstLink="//@rules.0/@ownedActivityNode.3/@ownedRule/@linkVariable.2"/>
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeMessage"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="p_param3_1" incomingLink="//@rules.0/@ownedActivityNode.3/@ownedRule/@linkVariable.0">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeParameter"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="p_param4_1" incomingLink="//@rules.0/@ownedActivityNode.3/@ownedRule/@linkVariable.1">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeParameter"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="rtsc_2" incomingLink="//@rules.0/@ownedActivityNode.3/@ownedRule/@linkVariable.11" outgoingLink="//@rules.0/@ownedActivityNode.3/@ownedRule/@linkVariable.14">
+          <constraint>
+            <constraintExpression xsi:type="expr:TextualExpression" expressionText="self.name='role2_behavior'" language="OCL" languageVersion="1.0"/>
+          </constraint>
+          <classifier href="http://www.fujaba.de/muml/model/realtimestatechart/0.3.17#//RealtimeStatechart"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="ri_2" outgoingLink="//@rules.0/@ownedActivityNode.3/@ownedRule/@linkVariable.11 //@rules.0/@ownedActivityNode.3/@ownedRule/@linkVariable.12 //@rules.0/@ownedActivityNode.3/@ownedRule/@linkVariable.15">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RealtimeStatechartInstance"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="s1_2" incomingLink="//@rules.0/@ownedActivityNode.3/@ownedRule/@linkVariable.14 //@rules.0/@ownedActivityNode.3/@ownedRule/@linkVariable.15">
+          <constraint>
+            <constraintExpression xsi:type="expr:TextualExpression" expressionText="self.name='state1'" language="OCL" languageVersion="1.0"/>
+          </constraint>
+          <classifier href="http://www.fujaba.de/muml/model/realtimestatechart/0.3.17#//State"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="re_2" incomingLink="//@rules.0/@ownedActivityNode.3/@ownedRule/@linkVariable.12" outgoingLink="//@rules.0/@ownedActivityNode.3/@ownedRule/@linkVariable.13">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeBehavioralElement"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="b1_2" incomingLink="//@rules.0/@ownedActivityNode.3/@ownedRule/@linkVariable.13" outgoingLink="//@rules.0/@ownedActivityNode.3/@ownedRule/@linkVariable.10">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//MessageBuffer"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="m1_2" incomingLink="//@rules.0/@ownedActivityNode.3/@ownedRule/@linkVariable.10" outgoingLink="//@rules.0/@ownedActivityNode.3/@ownedRule/@linkVariable.8 //@rules.0/@ownedActivityNode.3/@ownedRule/@linkVariable.9">
+          <constraint>
+            <constraintExpression xsi:type="expr:TextualExpression" expressionText="self.name='m1'" language="OCL" languageVersion="1.0"/>
+          </constraint>
+          <linkOrderConstraint firstLink="//@rules.0/@ownedActivityNode.3/@ownedRule/@linkVariable.10"/>
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeMessage"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="p_param3_2" incomingLink="//@rules.0/@ownedActivityNode.3/@ownedRule/@linkVariable.8">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeParameter"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="p_param4_2" incomingLink="//@rules.0/@ownedActivityNode.3/@ownedRule/@linkVariable.9">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeParameter"/>
+        </variable>
+        <constraint>
+          <constraintExpression xsi:type="expr:TextualExpression" expressionText=".first=.next" language="OCL" languageVersion="1.0"/>
+        </constraint>
+        <linkVariable xsi:type="sdp:LinkVariable" name="parameters" source="//@rules.0/@ownedActivityNode.3/@ownedRule/@variable.5" target="//@rules.0/@ownedActivityNode.3/@ownedRule/@variable.6">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeMessage/parameters"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="parameters" source="//@rules.0/@ownedActivityNode.3/@ownedRule/@variable.5" target="//@rules.0/@ownedActivityNode.3/@ownedRule/@variable.7">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeMessage/parameters"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="messages" bindingOperator="DESTROY" source="//@rules.0/@ownedActivityNode.3/@ownedRule/@variable.4" firstLinkConstraint="//@rules.0/@ownedActivityNode.3/@ownedRule/@variable.5/@linkOrderConstraint.0" target="//@rules.0/@ownedActivityNode.3/@ownedRule/@variable.5">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//MessageBuffer/messages"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="instanceOf" source="//@rules.0/@ownedActivityNode.3/@ownedRule/@variable.1" target="//@rules.0/@ownedActivityNode.3/@ownedRule/@variable.0">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RealtimeStatechartInstance/instanceOf"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="runtimeBehavioralElement" source="//@rules.0/@ownedActivityNode.3/@ownedRule/@variable.1" target="//@rules.0/@ownedActivityNode.3/@ownedRule/@variable.3">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RealtimeStatechartInstance/runtimeBehavioralElement"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="messageBuffer" source="//@rules.0/@ownedActivityNode.3/@ownedRule/@variable.3" target="//@rules.0/@ownedActivityNode.3/@ownedRule/@variable.4">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeBehavioralElement/messageBuffer"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="vertices" source="//@rules.0/@ownedActivityNode.3/@ownedRule/@variable.0" target="//@rules.0/@ownedActivityNode.3/@ownedRule/@variable.2"/>
+        <linkVariable xsi:type="sdp:LinkVariable" name="active" source="//@rules.0/@ownedActivityNode.3/@ownedRule/@variable.1" target="//@rules.0/@ownedActivityNode.3/@ownedRule/@variable.2">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RealtimeStatechartInstance/active"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="parameters" source="//@rules.0/@ownedActivityNode.3/@ownedRule/@variable.13" target="//@rules.0/@ownedActivityNode.3/@ownedRule/@variable.14">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeMessage/parameters"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="parameters" source="//@rules.0/@ownedActivityNode.3/@ownedRule/@variable.13" target="//@rules.0/@ownedActivityNode.3/@ownedRule/@variable.15">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeMessage/parameters"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="messages" bindingOperator="DESTROY" source="//@rules.0/@ownedActivityNode.3/@ownedRule/@variable.12" firstLinkConstraint="//@rules.0/@ownedActivityNode.3/@ownedRule/@variable.13/@linkOrderConstraint.0" target="//@rules.0/@ownedActivityNode.3/@ownedRule/@variable.13">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//MessageBuffer/messages"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="instanceOf" source="//@rules.0/@ownedActivityNode.3/@ownedRule/@variable.9" target="//@rules.0/@ownedActivityNode.3/@ownedRule/@variable.8">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RealtimeStatechartInstance/instanceOf"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="runtimeBehavioralElement" source="//@rules.0/@ownedActivityNode.3/@ownedRule/@variable.9" target="//@rules.0/@ownedActivityNode.3/@ownedRule/@variable.11">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RealtimeStatechartInstance/runtimeBehavioralElement"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="messageBuffer" source="//@rules.0/@ownedActivityNode.3/@ownedRule/@variable.11" target="//@rules.0/@ownedActivityNode.3/@ownedRule/@variable.12">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeBehavioralElement/messageBuffer"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="vertices" source="//@rules.0/@ownedActivityNode.3/@ownedRule/@variable.8" target="//@rules.0/@ownedActivityNode.3/@ownedRule/@variable.10"/>
+        <linkVariable xsi:type="sdp:LinkVariable" name="active" source="//@rules.0/@ownedActivityNode.3/@ownedRule/@variable.9" target="//@rules.0/@ownedActivityNode.3/@ownedRule/@variable.10">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RealtimeStatechartInstance/active"/>
+        </linkVariable>
+      </ownedRule>
+    </ownedActivityNode>
+    <ownedActivityNode xsi:type="sda:ActivityCallNode" name="Exit Action before sending transition" outgoing="//@rules.0/@ownedActivityEdge.3" incoming="//@rules.0/@ownedActivityEdge.1"/>
+    <ownedActivityNode xsi:type="sda:ActivityCallNode" name="Sending Transition Action" outgoing="//@rules.0/@ownedActivityEdge.5" incoming="//@rules.0/@ownedActivityEdge.4"/>
+    <ownedActivityNode xsi:type="sda:ActivityCallNode" name="Entry Action after sending transition" outgoing="//@rules.0/@ownedActivityEdge.7" incoming="//@rules.0/@ownedActivityEdge.6"/>
+    <ownedActivityNode xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedActivityNode" name="Establish Transition Effect of sending transition" outgoing="//@rules.0/@ownedActivityEdge.9" incoming="//@rules.0/@ownedActivityEdge.8">
+      <ownedRule xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedStoryPattern">
+        <variable xsi:type="sdp:ObjectVariable" name="rtsc_1" bindingState="BOUND" outgoingLink="//@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.0">
+          <classifier href="http://www.fujaba.de/muml/model/realtimestatechart/0.3.17#//RealtimeStatechart"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="ri_1" bindingState="BOUND" outgoingLink="//@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.1 //@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.2">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RealtimeStatechartInstance"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="s1_1" bindingState="BOUND" incomingLink="//@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.1">
+          <classifier href="http://www.fujaba.de/muml/model/realtimestatechart/0.3.17#//State"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="s2_1" incomingLink="//@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.0 //@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.2">
+          <constraint>
+            <constraintExpression xsi:type="expr:TextualExpression" expressionText="self.name='state2'" language="OCL" languageVersion="1.0"/>
+          </constraint>
+          <classifier href="http://www.fujaba.de/muml/model/realtimestatechart/0.3.17#//State"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="m1_1" bindingState="BOUND" outgoingLink="//@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.3 //@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.4" bindingOperator="DESTROY">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeMessage"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="p_param3" bindingState="BOUND" incomingLink="//@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.3 //@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.14" bindingOperator="DESTROY">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeParameter"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="p_param4" bindingState="BOUND" incomingLink="//@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.4 //@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.15" bindingOperator="DESTROY">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeParameter"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="re_1" bindingState="BOUND" outgoingLink="//@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.6">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeBehavioralElement"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="ai_1" incomingLink="//@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.5 //@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.6">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeAssemblyConnectorInstance"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="recv_1" outgoingLink="//@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.5 //@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.10">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeBehavioralElement"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="m2_1" incomingLink="//@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.9" outgoingLink="//@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.7 //@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.8" bindingOperator="CREATE">
+          <attributeAssignment>
+            <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
+            <valueExpression xsi:type="expr:TextualExpression" expressionText="'m1'" language="OCL" languageVersion="1.0"/>
+          </attributeAssignment>
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeMessage"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="p_param1" incomingLink="//@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.7 //@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.18" bindingOperator="CREATE">
+          <attributeAssignment>
+            <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
+            <valueExpression xsi:type="expr:TextualExpression" expressionText="'param1'" language="OCL" languageVersion="1.0"/>
+          </attributeAssignment>
+          <attributeAssignment>
+            <attribute href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeParameter/value"/>
+            <valueExpression xsi:type="expr:TextualExpression" expressionText="'org.muml.core.expressions.common.impl.LiteralExpressionImpl@7783ec (comment: &quot;no comment provided&quot;) (value: 11)'" language="OCL" languageVersion="1.0"/>
+          </attributeAssignment>
+          <attributeAssignment>
+            <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
+            <valueExpression xsi:type="expr:TextualExpression" expressionText="'param1'" language="OCL" languageVersion="1.0"/>
+          </attributeAssignment>
+          <attributeAssignment>
+            <attribute href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeParameter/value"/>
+            <valueExpression xsi:type="expr:TextualExpression" expressionText="'org.muml.core.expressions.common.impl.LiteralExpressionImpl@8ffd84 (comment: &quot;no comment provided&quot;) (value: 11)'" language="OCL" languageVersion="1.0"/>
+          </attributeAssignment>
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeParameter"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="p_param2" incomingLink="//@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.8 //@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.19" bindingOperator="CREATE">
+          <attributeAssignment>
+            <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
+            <valueExpression xsi:type="expr:TextualExpression" expressionText="'param2'" language="OCL" languageVersion="1.0"/>
+          </attributeAssignment>
+          <attributeAssignment>
+            <attribute href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeParameter/value"/>
+            <valueExpression xsi:type="expr:TextualExpression" expressionText="'org.muml.core.expressions.common.impl.LiteralExpressionImpl@7aa244 (comment: &quot;no comment provided&quot;) (value: 12)'" language="OCL" languageVersion="1.0"/>
+          </attributeAssignment>
+          <attributeAssignment>
+            <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
+            <valueExpression xsi:type="expr:TextualExpression" expressionText="'param2'" language="OCL" languageVersion="1.0"/>
+          </attributeAssignment>
+          <attributeAssignment>
+            <attribute href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeParameter/value"/>
+            <valueExpression xsi:type="expr:TextualExpression" expressionText="'org.muml.core.expressions.common.impl.LiteralExpressionImpl@9daa2e (comment: &quot;no comment provided&quot;) (value: 12)'" language="OCL" languageVersion="1.0"/>
+          </attributeAssignment>
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeParameter"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="b2_1" incomingLink="//@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.10" outgoingLink="//@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.9">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//MessageBuffer"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="rtsc_2" bindingState="BOUND" outgoingLink="//@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.11">
+          <classifier href="http://www.fujaba.de/muml/model/realtimestatechart/0.3.17#//RealtimeStatechart"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="ri_2" bindingState="BOUND" outgoingLink="//@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.12 //@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.13">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RealtimeStatechartInstance"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="s1_2" bindingState="BOUND" incomingLink="//@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.12">
+          <classifier href="http://www.fujaba.de/muml/model/realtimestatechart/0.3.17#//State"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="s2_2" incomingLink="//@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.11 //@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.13">
+          <constraint>
+            <constraintExpression xsi:type="expr:TextualExpression" expressionText="self.name='state2'" language="OCL" languageVersion="1.0"/>
+          </constraint>
+          <classifier href="http://www.fujaba.de/muml/model/realtimestatechart/0.3.17#//State"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="m1_2" bindingState="BOUND" outgoingLink="//@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.14 //@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.15" bindingOperator="DESTROY">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeMessage"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="re_2" bindingState="BOUND" outgoingLink="//@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.17">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeBehavioralElement"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="ai_2" incomingLink="//@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.16 //@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.17">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeAssemblyConnectorInstance"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="recv_2" outgoingLink="//@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.16 //@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.21">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeBehavioralElement"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="m2_2" incomingLink="//@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.20" outgoingLink="//@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.18 //@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.19" bindingOperator="CREATE">
+          <attributeAssignment>
+            <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
+            <valueExpression xsi:type="expr:TextualExpression" expressionText="'m1'" language="OCL" languageVersion="1.0"/>
+          </attributeAssignment>
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeMessage"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="b2_2" incomingLink="//@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.21" outgoingLink="//@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.20">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//MessageBuffer"/>
+        </variable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="vertices" source="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.0" target="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.3"/>
+        <linkVariable xsi:type="sdp:LinkVariable" name="active" bindingOperator="DESTROY" source="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.1" target="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.2">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RealtimeStatechartInstance/active"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="active" bindingOperator="CREATE" source="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.1" target="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.3">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RealtimeStatechartInstance/active"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="parameters" bindingOperator="DESTROY" source="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.4" target="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.5">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeMessage/parameters"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="parameters" bindingOperator="DESTROY" source="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.4" target="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.6">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeMessage/parameters"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="assemblyInst" source="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.9" target="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.8"/>
+        <linkVariable xsi:type="sdp:LinkVariable" name="assemblyInst" source="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.7" target="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.8"/>
+        <linkVariable xsi:type="sdp:LinkVariable" name="parameters" bindingOperator="CREATE" source="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.10" target="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.11">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeMessage/parameters"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="parameters" bindingOperator="CREATE" source="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.10" target="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.12">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeMessage/parameters"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="messages" bindingOperator="CREATE" source="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.13" target="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.10">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//MessageBuffer/messages"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="messageBuffer" source="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.9" target="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.13">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeBehavioralElement/messageBuffer"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="vertices" source="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.14" target="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.17"/>
+        <linkVariable xsi:type="sdp:LinkVariable" name="active" bindingOperator="DESTROY" source="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.15" target="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.16">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RealtimeStatechartInstance/active"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="active" bindingOperator="CREATE" source="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.15" target="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.17">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RealtimeStatechartInstance/active"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="parameters" bindingOperator="DESTROY" source="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.18" target="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.5">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeMessage/parameters"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="parameters" bindingOperator="DESTROY" source="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.18" target="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.6">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeMessage/parameters"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="assemblyInst" source="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.21" target="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.20"/>
+        <linkVariable xsi:type="sdp:LinkVariable" name="assemblyInst" source="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.19" target="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.20"/>
+        <linkVariable xsi:type="sdp:LinkVariable" name="parameters" bindingOperator="CREATE" source="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.22" target="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.11">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeMessage/parameters"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="parameters" bindingOperator="CREATE" source="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.22" target="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.12">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeMessage/parameters"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="messages" bindingOperator="CREATE" source="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.23" target="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.22">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//MessageBuffer/messages"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="messageBuffer" source="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.21" target="//@rules.0/@ownedActivityNode.7/@ownedRule/@variable.23">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeBehavioralElement/messageBuffer"/>
+        </linkVariable>
+      </ownedRule>
+    </ownedActivityNode>
+    <ownedActivityNode xsi:type="sda:ActivityCallNode" name="Exit Action before receiving transition" outgoing="//@rules.0/@ownedActivityEdge.4" incoming="//@rules.0/@ownedActivityEdge.3"/>
+    <ownedActivityNode xsi:type="sda:ActivityCallNode" name="ReceivingTransition Action" outgoing="//@rules.0/@ownedActivityEdge.6" incoming="//@rules.0/@ownedActivityEdge.5"/>
+    <ownedActivityNode xsi:type="sda:ActivityCallNode" name="Entry Action after receiving transition" outgoing="//@rules.0/@ownedActivityEdge.8" incoming="//@rules.0/@ownedActivityEdge.7"/>
+  </rules>
+  <rules name="SyncTransition_sender:state1_state2_role1_adaptation_rtscreceiver:state1_state2_role1_behavior">
+    <ownedActivityEdge target="//@rules.1/@ownedActivityNode.3" source="//@rules.1/@ownedActivityNode.0"/>
+    <ownedActivityEdge target="//@rules.1/@ownedActivityNode.4" source="//@rules.1/@ownedActivityNode.3" guard="SUCCESS"/>
+    <ownedActivityEdge target="//@rules.1/@ownedActivityNode.2" source="//@rules.1/@ownedActivityNode.3" guard="FAILURE"/>
+    <ownedActivityEdge target="//@rules.1/@ownedActivityNode.8" source="//@rules.1/@ownedActivityNode.4"/>
+    <ownedActivityEdge target="//@rules.1/@ownedActivityNode.5" source="//@rules.1/@ownedActivityNode.8"/>
+    <ownedActivityEdge target="//@rules.1/@ownedActivityNode.9" source="//@rules.1/@ownedActivityNode.5"/>
+    <ownedActivityEdge target="//@rules.1/@ownedActivityNode.6" source="//@rules.1/@ownedActivityNode.9"/>
+    <ownedActivityEdge target="//@rules.1/@ownedActivityNode.10" source="//@rules.1/@ownedActivityNode.6"/>
+    <ownedActivityEdge target="//@rules.1/@ownedActivityNode.7" source="//@rules.1/@ownedActivityNode.10"/>
+    <ownedActivityEdge target="//@rules.1/@ownedActivityNode.1" source="//@rules.1/@ownedActivityNode.7"/>
+    <ownedActivityNode xsi:type="sda:InitialNode" name="initialNode" outgoing="//@rules.1/@ownedActivityEdge.0"/>
+    <ownedActivityNode xsi:type="sda:ActivityFinalNode" name="finalNode" incoming="//@rules.1/@ownedActivityEdge.9"/>
+    <ownedActivityNode xsi:type="sda:ActivityFinalNode" name="finalNode" incoming="//@rules.1/@ownedActivityEdge.2"/>
+    <ownedActivityNode xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedActivityNode" name="Check application condition transitions" outgoing="//@rules.1/@ownedActivityEdge.1 //@rules.1/@ownedActivityEdge.2" incoming="//@rules.1/@ownedActivityEdge.0">
+      <ownedRule xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedStoryPattern">
+        <variable xsi:type="sdp:ObjectVariable" name="rtsc_1" incomingLink="//@rules.1/@ownedActivityNode.3/@ownedRule/@linkVariable.3" outgoingLink="//@rules.1/@ownedActivityNode.3/@ownedRule/@linkVariable.6">
+          <constraint>
+            <constraintExpression xsi:type="expr:TextualExpression" expressionText="self.name='role1_adaptation_rtsc'" language="OCL" languageVersion="1.0"/>
+          </constraint>
+          <classifier href="http://www.fujaba.de/muml/model/realtimestatechart/0.3.17#//RealtimeStatechart"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="ri_1" outgoingLink="//@rules.1/@ownedActivityNode.3/@ownedRule/@linkVariable.3 //@rules.1/@ownedActivityNode.3/@ownedRule/@linkVariable.4 //@rules.1/@ownedActivityNode.3/@ownedRule/@linkVariable.7">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RealtimeStatechartInstance"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="s1_1" incomingLink="//@rules.1/@ownedActivityNode.3/@ownedRule/@linkVariable.6 //@rules.1/@ownedActivityNode.3/@ownedRule/@linkVariable.7">
+          <constraint>
+            <constraintExpression xsi:type="expr:TextualExpression" expressionText="self.name='state1'" language="OCL" languageVersion="1.0"/>
+          </constraint>
+          <classifier href="http://www.fujaba.de/muml/model/realtimestatechart/0.3.17#//State"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="re_1" incomingLink="//@rules.1/@ownedActivityNode.3/@ownedRule/@linkVariable.4" outgoingLink="//@rules.1/@ownedActivityNode.3/@ownedRule/@linkVariable.5">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeBehavioralElement"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="b1_1" incomingLink="//@rules.1/@ownedActivityNode.3/@ownedRule/@linkVariable.5" outgoingLink="//@rules.1/@ownedActivityNode.3/@ownedRule/@linkVariable.2">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//MessageBuffer"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="m1_1" incomingLink="//@rules.1/@ownedActivityNode.3/@ownedRule/@linkVariable.2" outgoingLink="//@rules.1/@ownedActivityNode.3/@ownedRule/@linkVariable.0 //@rules.1/@ownedActivityNode.3/@ownedRule/@linkVariable.1">
+          <constraint>
+            <constraintExpression xsi:type="expr:TextualExpression" expressionText="self.name='m1'" language="OCL" languageVersion="1.0"/>
+          </constraint>
+          <linkOrderConstraint firstLink="//@rules.1/@ownedActivityNode.3/@ownedRule/@linkVariable.2"/>
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeMessage"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="p_param3_1" incomingLink="//@rules.1/@ownedActivityNode.3/@ownedRule/@linkVariable.0">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeParameter"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="p_param4_1" incomingLink="//@rules.1/@ownedActivityNode.3/@ownedRule/@linkVariable.1">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeParameter"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="rtsc_2" incomingLink="//@rules.1/@ownedActivityNode.3/@ownedRule/@linkVariable.11" outgoingLink="//@rules.1/@ownedActivityNode.3/@ownedRule/@linkVariable.14">
+          <constraint>
+            <constraintExpression xsi:type="expr:TextualExpression" expressionText="self.name='role1_behavior'" language="OCL" languageVersion="1.0"/>
+          </constraint>
+          <classifier href="http://www.fujaba.de/muml/model/realtimestatechart/0.3.17#//RealtimeStatechart"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="ri_2" outgoingLink="//@rules.1/@ownedActivityNode.3/@ownedRule/@linkVariable.11 //@rules.1/@ownedActivityNode.3/@ownedRule/@linkVariable.12 //@rules.1/@ownedActivityNode.3/@ownedRule/@linkVariable.15">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RealtimeStatechartInstance"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="s1_2" incomingLink="//@rules.1/@ownedActivityNode.3/@ownedRule/@linkVariable.14 //@rules.1/@ownedActivityNode.3/@ownedRule/@linkVariable.15">
+          <constraint>
+            <constraintExpression xsi:type="expr:TextualExpression" expressionText="self.name='state1'" language="OCL" languageVersion="1.0"/>
+          </constraint>
+          <classifier href="http://www.fujaba.de/muml/model/realtimestatechart/0.3.17#//State"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="re_2" incomingLink="//@rules.1/@ownedActivityNode.3/@ownedRule/@linkVariable.12" outgoingLink="//@rules.1/@ownedActivityNode.3/@ownedRule/@linkVariable.13">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeBehavioralElement"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="b1_2" incomingLink="//@rules.1/@ownedActivityNode.3/@ownedRule/@linkVariable.13" outgoingLink="//@rules.1/@ownedActivityNode.3/@ownedRule/@linkVariable.10">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//MessageBuffer"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="m1_2" incomingLink="//@rules.1/@ownedActivityNode.3/@ownedRule/@linkVariable.10" outgoingLink="//@rules.1/@ownedActivityNode.3/@ownedRule/@linkVariable.8 //@rules.1/@ownedActivityNode.3/@ownedRule/@linkVariable.9">
+          <constraint>
+            <constraintExpression xsi:type="expr:TextualExpression" expressionText="self.name='m1'" language="OCL" languageVersion="1.0"/>
+          </constraint>
+          <linkOrderConstraint firstLink="//@rules.1/@ownedActivityNode.3/@ownedRule/@linkVariable.10"/>
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeMessage"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="p_param3_2" incomingLink="//@rules.1/@ownedActivityNode.3/@ownedRule/@linkVariable.8">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeParameter"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="p_param4_2" incomingLink="//@rules.1/@ownedActivityNode.3/@ownedRule/@linkVariable.9">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeParameter"/>
+        </variable>
+        <constraint>
+          <constraintExpression xsi:type="expr:TextualExpression" expressionText=".first=.next" language="OCL" languageVersion="1.0"/>
+        </constraint>
+        <linkVariable xsi:type="sdp:LinkVariable" name="parameters" source="//@rules.1/@ownedActivityNode.3/@ownedRule/@variable.5" target="//@rules.1/@ownedActivityNode.3/@ownedRule/@variable.6">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeMessage/parameters"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="parameters" source="//@rules.1/@ownedActivityNode.3/@ownedRule/@variable.5" target="//@rules.1/@ownedActivityNode.3/@ownedRule/@variable.7">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeMessage/parameters"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="messages" bindingOperator="DESTROY" source="//@rules.1/@ownedActivityNode.3/@ownedRule/@variable.4" firstLinkConstraint="//@rules.1/@ownedActivityNode.3/@ownedRule/@variable.5/@linkOrderConstraint.0" target="//@rules.1/@ownedActivityNode.3/@ownedRule/@variable.5">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//MessageBuffer/messages"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="instanceOf" source="//@rules.1/@ownedActivityNode.3/@ownedRule/@variable.1" target="//@rules.1/@ownedActivityNode.3/@ownedRule/@variable.0">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RealtimeStatechartInstance/instanceOf"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="runtimeBehavioralElement" source="//@rules.1/@ownedActivityNode.3/@ownedRule/@variable.1" target="//@rules.1/@ownedActivityNode.3/@ownedRule/@variable.3">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RealtimeStatechartInstance/runtimeBehavioralElement"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="messageBuffer" source="//@rules.1/@ownedActivityNode.3/@ownedRule/@variable.3" target="//@rules.1/@ownedActivityNode.3/@ownedRule/@variable.4">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeBehavioralElement/messageBuffer"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="vertices" source="//@rules.1/@ownedActivityNode.3/@ownedRule/@variable.0" target="//@rules.1/@ownedActivityNode.3/@ownedRule/@variable.2"/>
+        <linkVariable xsi:type="sdp:LinkVariable" name="active" source="//@rules.1/@ownedActivityNode.3/@ownedRule/@variable.1" target="//@rules.1/@ownedActivityNode.3/@ownedRule/@variable.2">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RealtimeStatechartInstance/active"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="parameters" source="//@rules.1/@ownedActivityNode.3/@ownedRule/@variable.13" target="//@rules.1/@ownedActivityNode.3/@ownedRule/@variable.14">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeMessage/parameters"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="parameters" source="//@rules.1/@ownedActivityNode.3/@ownedRule/@variable.13" target="//@rules.1/@ownedActivityNode.3/@ownedRule/@variable.15">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeMessage/parameters"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="messages" bindingOperator="DESTROY" source="//@rules.1/@ownedActivityNode.3/@ownedRule/@variable.12" firstLinkConstraint="//@rules.1/@ownedActivityNode.3/@ownedRule/@variable.13/@linkOrderConstraint.0" target="//@rules.1/@ownedActivityNode.3/@ownedRule/@variable.13">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//MessageBuffer/messages"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="instanceOf" source="//@rules.1/@ownedActivityNode.3/@ownedRule/@variable.9" target="//@rules.1/@ownedActivityNode.3/@ownedRule/@variable.8">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RealtimeStatechartInstance/instanceOf"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="runtimeBehavioralElement" source="//@rules.1/@ownedActivityNode.3/@ownedRule/@variable.9" target="//@rules.1/@ownedActivityNode.3/@ownedRule/@variable.11">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RealtimeStatechartInstance/runtimeBehavioralElement"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="messageBuffer" source="//@rules.1/@ownedActivityNode.3/@ownedRule/@variable.11" target="//@rules.1/@ownedActivityNode.3/@ownedRule/@variable.12">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeBehavioralElement/messageBuffer"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="vertices" source="//@rules.1/@ownedActivityNode.3/@ownedRule/@variable.8" target="//@rules.1/@ownedActivityNode.3/@ownedRule/@variable.10"/>
+        <linkVariable xsi:type="sdp:LinkVariable" name="active" source="//@rules.1/@ownedActivityNode.3/@ownedRule/@variable.9" target="//@rules.1/@ownedActivityNode.3/@ownedRule/@variable.10">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RealtimeStatechartInstance/active"/>
+        </linkVariable>
+      </ownedRule>
+    </ownedActivityNode>
+    <ownedActivityNode xsi:type="sda:ActivityCallNode" name="Exit Action before sending transition" outgoing="//@rules.1/@ownedActivityEdge.3" incoming="//@rules.1/@ownedActivityEdge.1"/>
+    <ownedActivityNode xsi:type="sda:ActivityCallNode" name="Sending Transition Action" outgoing="//@rules.1/@ownedActivityEdge.5" incoming="//@rules.1/@ownedActivityEdge.4"/>
+    <ownedActivityNode xsi:type="sda:ActivityCallNode" name="Entry Action after sending transition" outgoing="//@rules.1/@ownedActivityEdge.7" incoming="//@rules.1/@ownedActivityEdge.6"/>
+    <ownedActivityNode xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedActivityNode" name="Establish Transition Effect of sending transition" outgoing="//@rules.1/@ownedActivityEdge.9" incoming="//@rules.1/@ownedActivityEdge.8">
+      <ownedRule xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedStoryPattern">
+        <variable xsi:type="sdp:ObjectVariable" name="rtsc_1" bindingState="BOUND" outgoingLink="//@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.0">
+          <classifier href="http://www.fujaba.de/muml/model/realtimestatechart/0.3.17#//RealtimeStatechart"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="ri_1" bindingState="BOUND" outgoingLink="//@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.1 //@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.2">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RealtimeStatechartInstance"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="s1_1" bindingState="BOUND" incomingLink="//@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.1">
+          <classifier href="http://www.fujaba.de/muml/model/realtimestatechart/0.3.17#//State"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="s2_1" incomingLink="//@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.0 //@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.2">
+          <constraint>
+            <constraintExpression xsi:type="expr:TextualExpression" expressionText="self.name='state2'" language="OCL" languageVersion="1.0"/>
+          </constraint>
+          <classifier href="http://www.fujaba.de/muml/model/realtimestatechart/0.3.17#//State"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="m1_1" bindingState="BOUND" outgoingLink="//@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.3 //@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.4" bindingOperator="DESTROY">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeMessage"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="p_param3" bindingState="BOUND" incomingLink="//@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.3 //@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.14" bindingOperator="DESTROY">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeParameter"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="p_param4" bindingState="BOUND" incomingLink="//@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.4 //@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.15" bindingOperator="DESTROY">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeParameter"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="re_1" bindingState="BOUND" outgoingLink="//@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.6">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeBehavioralElement"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="ai_1" incomingLink="//@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.5 //@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.6">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeAssemblyConnectorInstance"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="recv_1" outgoingLink="//@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.5 //@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.10">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeBehavioralElement"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="m2_1" incomingLink="//@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.9" outgoingLink="//@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.7 //@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.8" bindingOperator="CREATE">
+          <attributeAssignment>
+            <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
+            <valueExpression xsi:type="expr:TextualExpression" expressionText="'m1'" language="OCL" languageVersion="1.0"/>
+          </attributeAssignment>
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeMessage"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="p_param1" incomingLink="//@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.7 //@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.18" bindingOperator="CREATE">
+          <attributeAssignment>
+            <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
+            <valueExpression xsi:type="expr:TextualExpression" expressionText="'param1'" language="OCL" languageVersion="1.0"/>
+          </attributeAssignment>
+          <attributeAssignment>
+            <attribute href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeParameter/value"/>
+            <valueExpression xsi:type="expr:TextualExpression" expressionText="'org.muml.core.expressions.common.impl.LiteralExpressionImpl@16b0e26 (comment: &quot;no comment provided&quot;) (value: 11)'" language="OCL" languageVersion="1.0"/>
+          </attributeAssignment>
+          <attributeAssignment>
+            <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
+            <valueExpression xsi:type="expr:TextualExpression" expressionText="'param1'" language="OCL" languageVersion="1.0"/>
+          </attributeAssignment>
+          <attributeAssignment>
+            <attribute href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeParameter/value"/>
+            <valueExpression xsi:type="expr:TextualExpression" expressionText="'org.muml.core.expressions.common.impl.LiteralExpressionImpl@ab2a78 (comment: &quot;no comment provided&quot;) (value: 11)'" language="OCL" languageVersion="1.0"/>
+          </attributeAssignment>
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeParameter"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="p_param2" incomingLink="//@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.8 //@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.19" bindingOperator="CREATE">
+          <attributeAssignment>
+            <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
+            <valueExpression xsi:type="expr:TextualExpression" expressionText="'param2'" language="OCL" languageVersion="1.0"/>
+          </attributeAssignment>
+          <attributeAssignment>
+            <attribute href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeParameter/value"/>
+            <valueExpression xsi:type="expr:TextualExpression" expressionText="'org.muml.core.expressions.common.impl.LiteralExpressionImpl@9f8c12 (comment: &quot;no comment provided&quot;) (value: 12)'" language="OCL" languageVersion="1.0"/>
+          </attributeAssignment>
+          <attributeAssignment>
+            <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
+            <valueExpression xsi:type="expr:TextualExpression" expressionText="'param2'" language="OCL" languageVersion="1.0"/>
+          </attributeAssignment>
+          <attributeAssignment>
+            <attribute href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeParameter/value"/>
+            <valueExpression xsi:type="expr:TextualExpression" expressionText="'org.muml.core.expressions.common.impl.LiteralExpressionImpl@bcc447 (comment: &quot;no comment provided&quot;) (value: 12)'" language="OCL" languageVersion="1.0"/>
+          </attributeAssignment>
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeParameter"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="b2_1" incomingLink="//@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.10" outgoingLink="//@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.9">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//MessageBuffer"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="rtsc_2" bindingState="BOUND" outgoingLink="//@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.11">
+          <classifier href="http://www.fujaba.de/muml/model/realtimestatechart/0.3.17#//RealtimeStatechart"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="ri_2" bindingState="BOUND" outgoingLink="//@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.12 //@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.13">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RealtimeStatechartInstance"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="s1_2" bindingState="BOUND" incomingLink="//@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.12">
+          <classifier href="http://www.fujaba.de/muml/model/realtimestatechart/0.3.17#//State"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="s2_2" incomingLink="//@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.11 //@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.13">
+          <constraint>
+            <constraintExpression xsi:type="expr:TextualExpression" expressionText="self.name='state2'" language="OCL" languageVersion="1.0"/>
+          </constraint>
+          <classifier href="http://www.fujaba.de/muml/model/realtimestatechart/0.3.17#//State"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="m1_2" bindingState="BOUND" outgoingLink="//@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.14 //@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.15" bindingOperator="DESTROY">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeMessage"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="re_2" bindingState="BOUND" outgoingLink="//@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.17">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeBehavioralElement"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="ai_2" incomingLink="//@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.16 //@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.17">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeAssemblyConnectorInstance"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="recv_2" outgoingLink="//@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.16 //@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.21">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeBehavioralElement"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="m2_2" incomingLink="//@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.20" outgoingLink="//@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.18 //@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.19" bindingOperator="CREATE">
+          <attributeAssignment>
+            <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
+            <valueExpression xsi:type="expr:TextualExpression" expressionText="'m1'" language="OCL" languageVersion="1.0"/>
+          </attributeAssignment>
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeMessage"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="b2_2" incomingLink="//@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.21" outgoingLink="//@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.20">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//MessageBuffer"/>
+        </variable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="vertices" source="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.0" target="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.3"/>
+        <linkVariable xsi:type="sdp:LinkVariable" name="active" bindingOperator="DESTROY" source="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.1" target="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.2">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RealtimeStatechartInstance/active"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="active" bindingOperator="CREATE" source="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.1" target="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.3">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RealtimeStatechartInstance/active"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="parameters" bindingOperator="DESTROY" source="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.4" target="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.5">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeMessage/parameters"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="parameters" bindingOperator="DESTROY" source="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.4" target="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.6">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeMessage/parameters"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="assemblyInst" source="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.9" target="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.8"/>
+        <linkVariable xsi:type="sdp:LinkVariable" name="assemblyInst" source="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.7" target="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.8"/>
+        <linkVariable xsi:type="sdp:LinkVariable" name="parameters" bindingOperator="CREATE" source="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.10" target="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.11">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeMessage/parameters"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="parameters" bindingOperator="CREATE" source="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.10" target="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.12">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeMessage/parameters"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="messages" bindingOperator="CREATE" source="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.13" target="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.10">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//MessageBuffer/messages"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="messageBuffer" source="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.9" target="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.13">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeBehavioralElement/messageBuffer"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="vertices" source="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.14" target="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.17"/>
+        <linkVariable xsi:type="sdp:LinkVariable" name="active" bindingOperator="DESTROY" source="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.15" target="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.16">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RealtimeStatechartInstance/active"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="active" bindingOperator="CREATE" source="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.15" target="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.17">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RealtimeStatechartInstance/active"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="parameters" bindingOperator="DESTROY" source="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.18" target="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.5">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeMessage/parameters"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="parameters" bindingOperator="DESTROY" source="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.18" target="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.6">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeMessage/parameters"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="assemblyInst" source="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.21" target="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.20"/>
+        <linkVariable xsi:type="sdp:LinkVariable" name="assemblyInst" source="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.19" target="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.20"/>
+        <linkVariable xsi:type="sdp:LinkVariable" name="parameters" bindingOperator="CREATE" source="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.22" target="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.11">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeMessage/parameters"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="parameters" bindingOperator="CREATE" source="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.22" target="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.12">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeMessage/parameters"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="messages" bindingOperator="CREATE" source="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.23" target="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.22">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//MessageBuffer/messages"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="messageBuffer" source="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.21" target="//@rules.1/@ownedActivityNode.7/@ownedRule/@variable.23">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeBehavioralElement/messageBuffer"/>
+        </linkVariable>
+      </ownedRule>
+    </ownedActivityNode>
+    <ownedActivityNode xsi:type="sda:ActivityCallNode" name="Exit Action before receiving transition" outgoing="//@rules.1/@ownedActivityEdge.4" incoming="//@rules.1/@ownedActivityEdge.3"/>
+    <ownedActivityNode xsi:type="sda:ActivityCallNode" name="ReceivingTransition Action" outgoing="//@rules.1/@ownedActivityEdge.6" incoming="//@rules.1/@ownedActivityEdge.5"/>
+    <ownedActivityNode xsi:type="sda:ActivityCallNode" name="Entry Action after receiving transition" outgoing="//@rules.1/@ownedActivityEdge.8" incoming="//@rules.1/@ownedActivityEdge.7"/>
+  </rules>
+  <invariants name="role1_behavior_Invariant_state1_state2_1_cDead1">
+    <ownedActivityEdge target="//@invariants.0/@ownedActivityNode.2" source="//@invariants.0/@ownedActivityNode.0"/>
+    <ownedActivityEdge target="//@invariants.0/@ownedActivityNode.1" source="//@invariants.0/@ownedActivityNode.2"/>
+    <ownedActivityNode xsi:type="sda:InitialNode" name="initialNode" outgoing="//@invariants.0/@ownedActivityEdge.0"/>
+    <ownedActivityNode xsi:type="sda:ActivityFinalNode" name="finalNode" incoming="//@invariants.0/@ownedActivityEdge.1"/>
+    <ownedActivityNode xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedActivityNode" name="role1_behavior_Invariant_state1_state2_1_cDead1" outgoing="//@invariants.0/@ownedActivityEdge.1" incoming="//@invariants.0/@ownedActivityEdge.0">
+      <ownedRule xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedStoryPattern">
+        <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="ci" outgoingLink="//@invariants.0/@ownedActivityNode.2/@ownedRule/@linkVariable.0 //@invariants.0/@ownedActivityNode.2/@ownedRule/@linkVariable.1" clockInstanceConstraints="//@invariants.0/@clockInstConstraint">
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="sc" incomingLink="//@invariants.0/@ownedActivityNode.2/@ownedRule/@linkVariable.0 //@invariants.0/@ownedActivityNode.2/@ownedRule/@linkVariable.2 //@invariants.0/@ownedActivityNode.2/@ownedRule/@linkVariable.3">
+          <classifier href="http://www.fujaba.de/muml/model/realtimestatechart/0.3.17#//RealtimeStatechart"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="r1" incomingLink="//@invariants.0/@ownedActivityNode.2/@ownedRule/@linkVariable.1" outgoingLink="//@invariants.0/@ownedActivityNode.2/@ownedRule/@linkVariable.3 //@invariants.0/@ownedActivityNode.2/@ownedRule/@linkVariable.4">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RealtimeStatechartInstance"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="s" incomingLink="//@invariants.0/@ownedActivityNode.2/@ownedRule/@linkVariable.4" outgoingLink="//@invariants.0/@ownedActivityNode.2/@ownedRule/@linkVariable.2">
+          <classifier href="http://www.fujaba.de/muml/model/realtimestatechart/0.3.17#//State"/>
+        </variable>
+        <constraint>
+          <constraintExpression xsi:type="expr:TextualExpression" expressionText="ci.name='role1_behavior.cDead1'" language="OCL" languageVersion="1.0"/>
+        </constraint>
+        <constraint>
+          <constraintExpression xsi:type="expr:TextualExpression" expressionText="sc.name='role1_behavior'" language="OCL" languageVersion="1.0"/>
+        </constraint>
+        <constraint>
+          <constraintExpression xsi:type="expr:TextualExpression" expressionText="s.name='state1_state2_1'" language="OCL" languageVersion="1.0"/>
+        </constraint>
+        <linkVariable xsi:type="sdp:LinkVariable" name="hasNode" source="//@invariants.0/@ownedActivityNode.2/@ownedRule/@variable.0" target="//@invariants.0/@ownedActivityNode.2/@ownedRule/@variable.1">
+          <targetEnd href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance/hasNode"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="hasNode" source="//@invariants.0/@ownedActivityNode.2/@ownedRule/@variable.0" target="//@invariants.0/@ownedActivityNode.2/@ownedRule/@variable.2">
+          <targetEnd href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance/hasNode"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="statechart" source="//@invariants.0/@ownedActivityNode.2/@ownedRule/@variable.3" target="//@invariants.0/@ownedActivityNode.2/@ownedRule/@variable.1">
+          <targetEnd href="http://www.fujaba.de/muml/model/realtimestatechart/0.3.17#//State/statechart"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="instanceOf" source="//@invariants.0/@ownedActivityNode.2/@ownedRule/@variable.2" target="//@invariants.0/@ownedActivityNode.2/@ownedRule/@variable.1">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RealtimeStatechartInstance/instanceOf"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="active" source="//@invariants.0/@ownedActivityNode.2/@ownedRule/@variable.2" target="//@invariants.0/@ownedActivityNode.2/@ownedRule/@variable.3">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RealtimeStatechartInstance/active"/>
+        </linkVariable>
+      </ownedRule>
+    </ownedActivityNode>
+    <clockInstConstraint clockInstanceVariable="//@invariants.0/@ownedActivityNode.2/@ownedRule/@variable.0" operator="LESS_OR_EQUAL" value="5"/>
+  </invariants>
+  <invariants name="role2_behavior_Invariant_state1_state2_3_cDead3">
+    <ownedActivityEdge target="//@invariants.1/@ownedActivityNode.2" source="//@invariants.1/@ownedActivityNode.0"/>
+    <ownedActivityEdge target="//@invariants.1/@ownedActivityNode.1" source="//@invariants.1/@ownedActivityNode.2"/>
+    <ownedActivityNode xsi:type="sda:InitialNode" name="initialNode" outgoing="//@invariants.1/@ownedActivityEdge.0"/>
+    <ownedActivityNode xsi:type="sda:ActivityFinalNode" name="finalNode" incoming="//@invariants.1/@ownedActivityEdge.1"/>
+    <ownedActivityNode xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedActivityNode" name="role2_behavior_Invariant_state1_state2_3_cDead3" outgoing="//@invariants.1/@ownedActivityEdge.1" incoming="//@invariants.1/@ownedActivityEdge.0">
+      <ownedRule xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedStoryPattern">
+        <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="ci" outgoingLink="//@invariants.1/@ownedActivityNode.2/@ownedRule/@linkVariable.0 //@invariants.1/@ownedActivityNode.2/@ownedRule/@linkVariable.1" clockInstanceConstraints="//@invariants.1/@clockInstConstraint">
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="sc" incomingLink="//@invariants.1/@ownedActivityNode.2/@ownedRule/@linkVariable.0 //@invariants.1/@ownedActivityNode.2/@ownedRule/@linkVariable.2 //@invariants.1/@ownedActivityNode.2/@ownedRule/@linkVariable.3">
+          <classifier href="http://www.fujaba.de/muml/model/realtimestatechart/0.3.17#//RealtimeStatechart"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="r1" incomingLink="//@invariants.1/@ownedActivityNode.2/@ownedRule/@linkVariable.1" outgoingLink="//@invariants.1/@ownedActivityNode.2/@ownedRule/@linkVariable.3 //@invariants.1/@ownedActivityNode.2/@ownedRule/@linkVariable.4">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RealtimeStatechartInstance"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="s" incomingLink="//@invariants.1/@ownedActivityNode.2/@ownedRule/@linkVariable.4" outgoingLink="//@invariants.1/@ownedActivityNode.2/@ownedRule/@linkVariable.2">
+          <classifier href="http://www.fujaba.de/muml/model/realtimestatechart/0.3.17#//State"/>
+        </variable>
+        <constraint>
+          <constraintExpression xsi:type="expr:TextualExpression" expressionText="ci.name='role2_behavior.cDead3'" language="OCL" languageVersion="1.0"/>
+        </constraint>
+        <constraint>
+          <constraintExpression xsi:type="expr:TextualExpression" expressionText="sc.name='role2_behavior'" language="OCL" languageVersion="1.0"/>
+        </constraint>
+        <constraint>
+          <constraintExpression xsi:type="expr:TextualExpression" expressionText="s.name='state1_state2_3'" language="OCL" languageVersion="1.0"/>
+        </constraint>
+        <linkVariable xsi:type="sdp:LinkVariable" name="hasNode" source="//@invariants.1/@ownedActivityNode.2/@ownedRule/@variable.0" target="//@invariants.1/@ownedActivityNode.2/@ownedRule/@variable.1">
+          <targetEnd href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance/hasNode"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="hasNode" source="//@invariants.1/@ownedActivityNode.2/@ownedRule/@variable.0" target="//@invariants.1/@ownedActivityNode.2/@ownedRule/@variable.2">
+          <targetEnd href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance/hasNode"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="statechart" source="//@invariants.1/@ownedActivityNode.2/@ownedRule/@variable.3" target="//@invariants.1/@ownedActivityNode.2/@ownedRule/@variable.1">
+          <targetEnd href="http://www.fujaba.de/muml/model/realtimestatechart/0.3.17#//State/statechart"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="instanceOf" source="//@invariants.1/@ownedActivityNode.2/@ownedRule/@variable.2" target="//@invariants.1/@ownedActivityNode.2/@ownedRule/@variable.1">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RealtimeStatechartInstance/instanceOf"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="active" source="//@invariants.1/@ownedActivityNode.2/@ownedRule/@variable.2" target="//@invariants.1/@ownedActivityNode.2/@ownedRule/@variable.3">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RealtimeStatechartInstance/active"/>
+        </linkVariable>
+      </ownedRule>
+    </ownedActivityNode>
+    <clockInstConstraint clockInstanceVariable="//@invariants.1/@ownedActivityNode.2/@ownedRule/@variable.0" operator="LESS_OR_EQUAL" value="5"/>
+  </invariants>
+  <clockInstanceRules name="role1_behavior_addCI_cDead1">
+    <ownedActivityEdge target="//@clockInstanceRules.0/@ownedActivityNode.2" source="//@clockInstanceRules.0/@ownedActivityNode.0"/>
+    <ownedActivityEdge target="//@clockInstanceRules.0/@ownedActivityNode.1" source="//@clockInstanceRules.0/@ownedActivityNode.2"/>
+    <ownedActivityNode xsi:type="sda:InitialNode" name="initialNode" outgoing="//@clockInstanceRules.0/@ownedActivityEdge.0"/>
+    <ownedActivityNode xsi:type="sda:ActivityFinalNode" name="finalNode" incoming="//@clockInstanceRules.0/@ownedActivityEdge.1"/>
+    <ownedActivityNode xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedActivityNode" name="add_ConnectorClockInstance" outgoing="//@clockInstanceRules.0/@ownedActivityEdge.1" incoming="//@clockInstanceRules.0/@ownedActivityEdge.0">
+      <ownedRule xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedStoryPattern">
+        <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="ci" outgoingLink="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.0 //@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.1" bindingOperator="CREATE">
+          <attributeAssignment>
+            <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
+            <valueExpression xsi:type="expr:TextualExpression" expressionText="'role1_behavior.cDead1'" language="OCL" languageVersion="1.0"/>
+          </attributeAssignment>
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
+        </variable>
+        <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="NoSuchCI" outgoingLink="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.2 //@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.3" bindingSemantics="NEGATIVE">
+          <constraint>
+            <constraintExpression xsi:type="expr:TextualExpression" expressionText="self.name='role1_behavior.cDead1'" language="OCL" languageVersion="1.0"/>
+          </constraint>
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="sc" incomingLink="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.0 //@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.2 //@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.4">
+          <classifier href="http://www.fujaba.de/muml/model/realtimestatechart/0.3.17#//RealtimeStatechart"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="r1" incomingLink="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.1 //@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.3" outgoingLink="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.4">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RealtimeStatechartInstance"/>
+        </variable>
+        <constraint>
+          <constraintExpression xsi:type="expr:TextualExpression" expressionText="sc.name='role1_behavior'" language="OCL" languageVersion="1.0"/>
+        </constraint>
+        <linkVariable xsi:type="sdp:LinkVariable" name="hasNode" bindingOperator="CREATE" source="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@variable.0" target="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@variable.2">
+          <targetEnd href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance/hasNode"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="hasNode" bindingOperator="CREATE" source="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@variable.0" target="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@variable.3">
+          <targetEnd href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance/hasNode"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="hasNode" source="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@variable.1" target="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@variable.2">
+          <targetEnd href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance/hasNode"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="hasNode" source="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@variable.1" target="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@variable.3">
+          <targetEnd href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance/hasNode"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="instanceOf" source="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@variable.3" target="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@variable.2">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RealtimeStatechartInstance/instanceOf"/>
+        </linkVariable>
+      </ownedRule>
+    </ownedActivityNode>
+  </clockInstanceRules>
+  <clockInstanceRules name="role2_behavior_addCI_cDead3">
+    <ownedActivityEdge target="//@clockInstanceRules.1/@ownedActivityNode.2" source="//@clockInstanceRules.1/@ownedActivityNode.0"/>
+    <ownedActivityEdge target="//@clockInstanceRules.1/@ownedActivityNode.1" source="//@clockInstanceRules.1/@ownedActivityNode.2"/>
+    <ownedActivityNode xsi:type="sda:InitialNode" name="initialNode" outgoing="//@clockInstanceRules.1/@ownedActivityEdge.0"/>
+    <ownedActivityNode xsi:type="sda:ActivityFinalNode" name="finalNode" incoming="//@clockInstanceRules.1/@ownedActivityEdge.1"/>
+    <ownedActivityNode xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedActivityNode" name="add_ConnectorClockInstance" outgoing="//@clockInstanceRules.1/@ownedActivityEdge.1" incoming="//@clockInstanceRules.1/@ownedActivityEdge.0">
+      <ownedRule xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedStoryPattern">
+        <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="ci" outgoingLink="//@clockInstanceRules.1/@ownedActivityNode.2/@ownedRule/@linkVariable.0 //@clockInstanceRules.1/@ownedActivityNode.2/@ownedRule/@linkVariable.1" bindingOperator="CREATE">
+          <attributeAssignment>
+            <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
+            <valueExpression xsi:type="expr:TextualExpression" expressionText="'role2_behavior.cDead3'" language="OCL" languageVersion="1.0"/>
+          </attributeAssignment>
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
+        </variable>
+        <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="NoSuchCI" outgoingLink="//@clockInstanceRules.1/@ownedActivityNode.2/@ownedRule/@linkVariable.2 //@clockInstanceRules.1/@ownedActivityNode.2/@ownedRule/@linkVariable.3" bindingSemantics="NEGATIVE">
+          <constraint>
+            <constraintExpression xsi:type="expr:TextualExpression" expressionText="self.name='role2_behavior.cDead3'" language="OCL" languageVersion="1.0"/>
+          </constraint>
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="sc" incomingLink="//@clockInstanceRules.1/@ownedActivityNode.2/@ownedRule/@linkVariable.0 //@clockInstanceRules.1/@ownedActivityNode.2/@ownedRule/@linkVariable.2 //@clockInstanceRules.1/@ownedActivityNode.2/@ownedRule/@linkVariable.4">
+          <classifier href="http://www.fujaba.de/muml/model/realtimestatechart/0.3.17#//RealtimeStatechart"/>
+        </variable>
+        <variable xsi:type="sdp:ObjectVariable" name="r1" incomingLink="//@clockInstanceRules.1/@ownedActivityNode.2/@ownedRule/@linkVariable.1 //@clockInstanceRules.1/@ownedActivityNode.2/@ownedRule/@linkVariable.3" outgoingLink="//@clockInstanceRules.1/@ownedActivityNode.2/@ownedRule/@linkVariable.4">
+          <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RealtimeStatechartInstance"/>
+        </variable>
+        <constraint>
+          <constraintExpression xsi:type="expr:TextualExpression" expressionText="sc.name='role2_behavior'" language="OCL" languageVersion="1.0"/>
+        </constraint>
+        <linkVariable xsi:type="sdp:LinkVariable" name="hasNode" bindingOperator="CREATE" source="//@clockInstanceRules.1/@ownedActivityNode.2/@ownedRule/@variable.0" target="//@clockInstanceRules.1/@ownedActivityNode.2/@ownedRule/@variable.2">
+          <targetEnd href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance/hasNode"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="hasNode" bindingOperator="CREATE" source="//@clockInstanceRules.1/@ownedActivityNode.2/@ownedRule/@variable.0" target="//@clockInstanceRules.1/@ownedActivityNode.2/@ownedRule/@variable.3">
+          <targetEnd href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance/hasNode"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="hasNode" source="//@clockInstanceRules.1/@ownedActivityNode.2/@ownedRule/@variable.1" target="//@clockInstanceRules.1/@ownedActivityNode.2/@ownedRule/@variable.2">
+          <targetEnd href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance/hasNode"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="hasNode" source="//@clockInstanceRules.1/@ownedActivityNode.2/@ownedRule/@variable.1" target="//@clockInstanceRules.1/@ownedActivityNode.2/@ownedRule/@variable.3">
+          <targetEnd href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance/hasNode"/>
+        </linkVariable>
+        <linkVariable xsi:type="sdp:LinkVariable" name="instanceOf" source="//@clockInstanceRules.1/@ownedActivityNode.2/@ownedRule/@variable.3" target="//@clockInstanceRules.1/@ownedActivityNode.2/@ownedRule/@variable.2">
+          <targetEnd href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RealtimeStatechartInstance/instanceOf"/>
+        </linkVariable>
+      </ownedRule>
+    </ownedActivityNode>
+  </clockInstanceRules>
+</de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedGraphTransformationSystem>

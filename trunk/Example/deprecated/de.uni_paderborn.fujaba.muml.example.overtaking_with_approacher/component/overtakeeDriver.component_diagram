@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_PugQgKrGEeScJ-0YDJS4Tg" type="Component" name="overtakeeDriver.component_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_PugQgqrGEeScJ-0YDJS4Tg" type="2006" fontName="Segoe UI" fillColor="10011046" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_PugQhKrGEeScJ-0YDJS4Tg" type="5028"/>
+    <children xmi:type="notation:Shape" xmi:id="_x5LNYquzEeSOh7ww5c64Rw" type="3013" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_x5LNZKuzEeSOh7ww5c64Rw" type="5024">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_x5LNZauzEeSOh7ww5c64Rw" y="5"/>
+      </children>
+      <element xmi:type="component:HybridPort" href="../fraunhoferDemo.fujaba#_AoaKoJRKEeSZM-zEIRk3lw"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_x5LNY6uzEeSOh7ww5c64Rw" x="60" y="193"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_x5LNZquzEeSOh7ww5c64Rw" type="3013" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_x5LNaKuzEeSOh7ww5c64Rw" type="5024">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_x5LNaauzEeSOh7ww5c64Rw" y="5"/>
+      </children>
+      <element xmi:type="component:HybridPort" href="../fraunhoferDemo.fujaba#_E5QUwJRKEeSZM-zEIRk3lw"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_x5LNZ6uzEeSOh7ww5c64Rw" x="156" y="193"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_x5LNaquzEeSOh7ww5c64Rw" type="3010" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_x5LNbKuzEeSOh7ww5c64Rw" type="5012">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_x5LNbauzEeSOh7ww5c64Rw" x="23" y="30"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_x5LNbquzEeSOh7ww5c64Rw" type="5025">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_x5LNb6uzEeSOh7ww5c64Rw" x="83" y="-30"/>
+      </children>
+      <element xmi:type="component:DiscretePort" href="../fraunhoferDemo.fujaba#_DWz7gJRTEeSZM-zEIRk3lw"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_x5LNa6uzEeSOh7ww5c64Rw" x="481" y="96"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_x5LNcKuzEeSOh7ww5c64Rw" type="3013" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_x5LNcquzEeSOh7ww5c64Rw" type="5024">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_x5LNc6uzEeSOh7ww5c64Rw" x="11" y="39"/>
+      </children>
+      <element xmi:type="component:HybridPort" href="../fraunhoferDemo.fujaba#_oLm7UJ8PEeSDApXOK6N3KA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_x5LNcauzEeSOh7ww5c64Rw" x="240" y="193"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_0DK_wauzEeSOh7ww5c64Rw" type="3013" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_0DK_w6uzEeSOh7ww5c64Rw" type="5024">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_0DK_xKuzEeSOh7ww5c64Rw" x="-12" y="38"/>
+      </children>
+      <element xmi:type="component:HybridPort" href="../fraunhoferDemo.fujaba#_0DK_wKuzEeSOh7ww5c64Rw"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0DK_wquzEeSOh7ww5c64Rw" x="369" y="127"/>
+    </children>
+    <element xmi:type="component:StaticAtomicComponent" href="../fraunhoferDemo.fujaba#_bDZ3QJOQEeSZM-zEIRk3lw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PugQg6rGEeScJ-0YDJS4Tg" x="156" y="90" width="430" height="139"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_PugQgarGEeScJ-0YDJS4Tg"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../fraunhoferDemo.fujaba#_FB0TTZJ7EeSSMde45fnrcg"/>
+</notation:Diagram>

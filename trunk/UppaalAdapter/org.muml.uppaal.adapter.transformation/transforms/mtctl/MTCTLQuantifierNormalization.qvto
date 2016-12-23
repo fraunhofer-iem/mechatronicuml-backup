@@ -1,0 +1,246 @@
+import transforms.lib.MUML2MUML;
+import org.muml.uppaal.adapter._blackbox.MtctlLibrary;
+
+modeltype muml_cic uses pim::instance('http://www.muml.org/pim/1.0.0');
+modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype mumlConstraint uses pim::constraint('http://www.muml.org/pim/1.0.0');
+modeltype mumlBehavior uses pim::behavior('http://www.muml.org/pim/behavior/1.0.0');
+modeltype mumlConnector uses pim::connector('http://www.muml.org/pim/1.0.0');
+modeltype mumlMsgtype uses pim::msgtype('http://www.muml.org/pim/1.0.0');
+modeltype mumlComponent uses pim::component('http://www.muml.org/pim/1.0.0');
+modeltype modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
+modeltype verificationExtension uses 'http://www.muml.org/uppaal/adapter/extension/verificationextension/1.0.0';
+
+modeltype mtctl uses 'http://www.muml.org/uppaal/adapter/mtctl/1.0.0';
+modeltype mtctlQuantifiers uses mtctl::quantifiers('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlPredicates uses mtctl::predicates('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlSets uses mtctl::sets('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlBooleanLogic uses mtctl::booleanlogic('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlComparables uses mtctl::comparables('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+//Replaces all forall/exists quantifiers with equivalent and/or expressions (i.e. after this transformation, no forall/exists/BoundVariables will be present)
+//Also filters non-enabled repositories
+//the input parameter is inout - however, no persistent changes are done on input. TODO it _should_ be inout, but isn't right now to avoid pre-m7 qvt-o bug
+transformation MTCTLQuantifierNormalization(in input:muml_cic, out output:muml_cic) extends library MUML2MUML;
+
+main() {
+	input.objects()[RootNode]->map RootNode2RootNode();
+}
+
+//Filter not-enabled property repositories
+mapping mtctl::PropertyRepository :: PropertyRepository2PropertyRepository() : mtctl::PropertyRepository when {self.oclAsType(ecore::EObject).eContainer().oclAsType(VerifiableElement).extensions->exists(oclIsKindOf(ElementToVerifyExtension))} {
+	_extensions := self._extensions.map Extension2Extension();
+	_properties := self._properties.map Property2Property();
+}
+
+
+//Overridden from MUML2MUML: check if we should apply one of our mappings here, otherwise fall back to a simple copying map
+//TODO clean this up: mappings for subtypes do not have to be called here
+mapping mtctl::Expression :: Expression2Expression() : mtctl::Expression disjuncts
+	mtctl::quantifiers::QuantifierExpr::QuantifierExpr2RolledOut, 
+	 mtctl::sets::SubinstanceSetExpr::SubinstanceSetExpr2SubinstanceSetExpr,
+	  mtctl::sets::InstanceSetExpr::InstanceSetExpr2InstanceSetExpr,
+	   mtctl::predicates::SubstateOfExpr::SubstateOfExpr2SubstateOfExpr,
+	    mtctl::sets::TransitionSetExpr::TransitionSetExpr2TransitionSetExpr,
+	     mtctl::quantifiers::LeadsToExpr::LeadsToExpr2LeadsToExpr,
+	      mtctl::booleanlogic::ImplyExpr::ImplyExpr2ImplyExpr,
+	       mtctl::quantifiers::EFExpr::EFExpr2EFExpr,
+	        mtctl::quantifiers::QuantifierExpr::QuantifierExpr2QuantifierExpr,
+	         mtctl::predicates::DynamicPredicateExpr::DynamicPredicateExpr2DynamicPredicateExpr,
+	          mtctl::sets::ClockSetExpr::ClockSetExpr2ClockSetExpr,
+	           mtctl::sets::StateSetExpr::StateSetExpr2StateSetExpr,
+	            mtctl::predicates::FalseExpr::FalseExpr2FalseExpr,
+	             mtctl::quantifiers::TemporalQuantifierExpr::TemporalQuantifierExpr2TemporalQuantifierExpr,
+	              mtctl::comparables::TargetStateExpr::TargetStateExpr2TargetStateExpr,
+	               mtctl::predicates::StateActiveExpr::StateActiveExpr2StateActiveExpr,
+	                mtctl::quantifiers::BoundVariable::BoundVariable2BoundVariable,
+	                 mtctl::booleanlogic::NotExpr::NotExpr2NotExpr,
+	                  mtctl::quantifiers::EGExpr::EGExpr2EGExpr,
+	                   mtctl::predicates::ComparisonExpr::ComparisonExpr2ComparisonExpr,
+	                    mtctl::sets::MessageSetExpr::MessageSetExpr2MessageSetExpr,
+	                     mtctl::booleanlogic::AndExpr::AndExpr2AndExpr,
+	                      mtctl::comparables::MapExpr::MapExpr2MapExpr,
+	                       mtctl::quantifiers::AGExpr::AGExpr2AGExpr,
+	                        mtctl::quantifiers::UniversalQuantExpr::UniversalQuantExpr2UniversalQuantExpr,
+	                         mtctl::quantifiers::AFExpr::AFExpr2AFExpr,
+	                          mtctl::sets::IntervalSetExpr::IntervalSetExpr2IntervalSetExpr,
+	                           mtctl::booleanlogic::OrExpr::OrExpr2OrExpr,
+	                            mtctl::comparables::BufferMsgCountExpr::BufferMsgCountExpr2BufferMsgCountExpr,
+	                             mtctl::comparables::SourceStateExpr::SourceStateExpr2SourceStateExpr,
+	                              mtctl::comparables::TransitionMap::TransitionMap2TransitionMap,
+	                               mtctl::predicates::TransitionFiringExpr::TransitionFiringExpr2TransitionFiringExpr,
+	                                mtctl::predicates::TrueExpr::TrueExpr2TrueExpr,
+	                                 mtctl::predicates::MessageInBufferExpr::MessageInBufferExpr2MessageInBufferExpr,
+	                                  mtctl::predicates::MessageDiscardedExpr::MessageDiscardedExpr2MessageDiscardedExpr,
+	                                   mtctl::comparables::MumlElemExpr::MumlElemExpr2MumlElemExpr,
+	                                    mtctl::sets::BufferSetExpr::BufferSetExpr2BufferSetExpr,
+	                                     mtctl::predicates::MessageInTransitExpr::MessageInTransitExpr2MessageInTransitExpr,
+	                                      mtctl::predicates::ConnectorOverflowExpr::ConnectorOverflowExpr2ConnectorOverflowExpr,
+	                                       mtctl::predicates::StaticPredicateExpr::StaticPredicateExpr2StaticPredicateExpr,
+	                                        mtctl::predicates::PredicateExpr::PredicateExpr2PredicateExpr,
+	                                         mtctl::predicates::DeadlockExpr::DeadlockExpr2DeadlockExpr,
+	                                          mtctl::quantifiers::ExistenceQuantExpr::ExistenceQuantExpr2ExistenceQuantExpr,
+	                                           mtctl::comparables::ConstExpr::ConstExpr2ConstExpr,
+	                                            mtctl::sets::SetExpr::SetExpr2SetExpr;
+
+query Expression::getCIC() : ComponentInstanceConfiguration { //finds the CIC this Expression is part of
+	return self.oclAsType(EObject)->closure(x|if (x.oclIsKindOf(ComponentInstanceConfiguration)) then x else x.eContainer() endif)->any(oclIsKindOf(ComponentInstanceConfiguration)).oclAsType(ComponentInstanceConfiguration);
+}
+
+query SetExpr::getAllElements() : Set(EObject) { //finds all elements logically belonging to that SetExpr
+	if (self.oclIsTypeOf(StateSetExpr)) return self.getAllStates() endif;
+	if (self.oclIsTypeOf(TransitionSetExpr)) return self.getAllTransitions() endif;
+	if (self.oclIsTypeOf(ClockSetExpr)) return self.getAllClocks() endif;
+	if (self.oclIsTypeOf(BufferSetExpr)) return self.getAllBuffers() endif;
+	if (self.oclIsTypeOf(MessageSetExpr)) return self.getAllMessageTypes() endif;
+	if (self.oclIsTypeOf(IntervalSetExpr)) return self.oclAsType(IntervalSetExpr).getConstExprs() endif;
+	if (self.oclIsTypeOf(InstanceSetExpr)) return self.oclAsType(InstanceSetExpr).getAllInstances() endif;
+	if (self.oclIsTypeOf(SubinstanceSetExpr)) return self.oclAsType(SubinstanceSetExpr).getAllSubinstances() endif;
+	return Set{};
+}
+
+query ComponentInstanceConfiguration::getAllBehaviors() : Set(Behavior) {
+	return self.allSubobjectsOfKind(AtomicComponentInstance).oclAsType(AtomicComponentInstance).componentType->oclAsType(AtomicComponent).behavior->asSet();
+}
+
+query RealtimeStatechart::allChildRtscAndSelf() : Set(RealtimeStatechart) {
+	return self.allSubobjectsOfKind(RealtimeStatechart).oclAsType(RealtimeStatechart)->including(self)->asSet();
+}
+
+// get all pairs of RTSCs and the corresponding instances (AtomicComponentInstances or PortInstances)
+query Expression::getRTSCs() : Set(Tuple(rtsc:RealtimeStatechart,instance:EObject)) {
+	var resultVal := object Set(Tuple(rtsc:RealtimeStatechart,instance:EObject)) {};
+	getAllRTSCs(self.getCIC())->forEach(statechart) {
+		getAllInstancesFor(statechart, self.getCIC())->forEach(instance) {
+			resultVal += Tuple {rtsc = statechart, instance = instance};
+		};
+	};
+	return resultVal;
+}
+
+query Expression::getAllStates() : Set(MumlElemExpr) { //finds all referencable states from any Expression of the language
+	var resultVal : Set(MumlElemExpr) = object Set(MumlElemExpr) {};
+	
+	self.getRTSCs()->forEach(statechartTuple) {
+		statechartTuple.rtsc.states->forEach(state) {
+			resultVal += object MumlElemExpr {elem := state.oclAsType(EObject); instance := statechartTuple.instance};
+		}
+	};
+	return resultVal;
+}
+
+query Expression::getAllTransitions() : Set(MumlElemExpr) { //finds all referencable transitions from any Expression of the language
+	var resultVal : Set(MumlElemExpr) = object Set(MumlElemExpr) {};
+	
+	self.getRTSCs()->forEach(statechartTuple) {
+		statechartTuple.rtsc.transitions->forEach(transition) {
+			resultVal += object MumlElemExpr {elem := transition.oclAsType(EObject); instance := statechartTuple.instance};
+		}
+	};
+	return resultVal;
+}
+
+query Expression::getAllClocks() : Set(MumlElemExpr) { //finds all referencable clocks from any Expression of the language
+	var resultVal : Set(MumlElemExpr) = object Set(MumlElemExpr) {};
+	
+	self.getRTSCs()->forEach(statechartTuple) {
+		statechartTuple.rtsc.clocks->forEach(clock) {
+			resultVal += object MumlElemExpr {elem := clock.oclAsType(EObject); instance := statechartTuple.instance};
+		}
+	};
+	return resultVal;
+}
+
+query Expression::getAllBuffers() : Set(MumlElemExpr) { //finds all referencable buffers from any Expression of the language
+	var resultVal : Set(MumlElemExpr) = object Set(MumlElemExpr) {};
+	getAllBuffers(self.getCIC())->forEach(buffer) {
+		getAllInstancesFor(buffer, self.getCIC())->forEach(i) {
+			resultVal += object MumlElemExpr {elem := buffer.oclAsType(EObject); instance := i};
+		};
+	};
+	return resultVal;
+}
+
+query Expression::getAllMessageTypes() : Set(MumlElemExpr) { //finds all referencable MessageTypes from any Expression of the language
+	var resultVal : Set(MumlElemExpr) = object Set(MumlElemExpr) {};	
+	getAllMessageTypes(self.getCIC())->forEach(messageType){
+		resultVal += object MumlElemExpr {elem := messageType.oclAsType(EObject)};		
+	};
+	return resultVal;
+}
+
+query IntervalSetExpr::getConstExprs() : Set(ConstExpr) { //get all numbers in the interval and return them as ConstExprs
+	var resultVal : Set(ConstExpr) = object Set(ConstExpr) {};	
+	(self.oclAsType(IntervalSetExpr).lowerVal-1)->
+			closure(x|if (x < self.oclAsType(IntervalSetExpr).upperVal) then x+1 else 
+			if (x <= self.oclAsType(IntervalSetExpr).upperVal and x >= self.oclAsType(IntervalSetExpr).lowerVal) then x else null endif 
+			endif)->forEach(number) {
+				resultVal += object ConstExpr {val := number};
+			};
+	return resultVal;
+}
+
+query InstanceSetExpr::getAllInstances() : Set(EObject) {
+	var type := self.type.oclAsType(MumlElemExpr).elem.oclAsType(EObject);
+	return getAllInstancesOf(type, self.getCIC());
+}
+
+query SubinstanceSetExpr::getAllSubinstances() : Set(EObject) {
+	var type := self.type.oclAsType(MumlElemExpr).elem.oclAsType(EObject);
+	return getAllSubinstancesOf(type, self.getCIC());
+}
+
+//Roll out quantifier expressions ("forall(x:States) y" becomes "true and y[x/state1] and y[x/state2] and ... and y[x/stateN] and true",
+// exists analogously with "or")
+mapping QuantifierExpr::QuantifierExpr2RolledOut() : Expression {
+	init {
+		if (self.oclIsKindOf(UniversalQuantExpr)) result := object AndExpr {rightOpd := object TrueExpr {}}
+			else result := object OrExpr{rightOpd := object FalseExpr {}} endif;
+	}
+		
+	var currentLhs := result; //the current leftmost and (the one that we will set the leftOpd with the next state)
+	
+	self._var.set.getAllElements()->forEach(element) {
+		//Copy formula and replace references to the bound variable
+		var newFormula := self.formula.deepclone().oclAsType(Expression);
+		self.oclAsType(EObject)->closure(x|if (x.oclIsKindOf(PropertyRepository)) then x else x.eContainer() endif)->any(oclIsKindOf(PropertyRepository)).oclAsType(PropertyRepository).properties += object Property { expression := newFormula}; //temporally pretend this is a property on its own (so that the mapping for newFormula has access to the coordination protocol)
+		
+		newFormula.oclAsType(EObject)->closure(x|x.eContents())->selectByKind(MumlElemExpr)->forEach(mumlRef) {
+			if ((self._var.set.oclIsKindOf(InstanceSetExpr) or self._var.set.oclIsKindOf(SubinstanceSetExpr)) and mumlRef.instance = self._var) {
+				mumlRef._instance := element
+			} else if (mumlRef.oclAsType(MumlElemExpr).elem = self._var.oclAsType(EObject)) {
+				mumlRef.replaceWith(element.oclAsType(Expression)); //create a copy and replaces the boundVariable-referencing MumlElemExpr 'mumlRef'
+			};
+		};
+		
+		//Map the modified formula to the target model
+		var mappedFormula := newFormula.map Expression2Expression();
+		
+		//Create the new AndExpr/OrExpr for this element
+		if (self.oclIsKindOf(UniversalQuantExpr)) then {
+			currentLhs.oclAsType(AndExpr).leftOpd := object AndExpr { rightOpd := mappedFormula };
+			currentLhs := currentLhs.oclAsType(AndExpr).leftOpd; 
+		} else if (self.oclIsKindOf(ExistenceQuantExpr)) then {
+			currentLhs.oclAsType(OrExpr).leftOpd := object OrExpr { rightOpd := mappedFormula };
+			currentLhs := currentLhs.oclAsType(OrExpr).leftOpd;
+		} endif
+		endif;
+		
+		//Clean up
+		output.removeElement(newFormula.oclAsType(EObject).eContainer()); //remove Property
+		if (element.oclIsKindOf(MumlElemExpr))
+			output.removeElement(element); //remove element created in getAll...()
+	};
+	
+	//End the expression
+	if (self.oclIsKindOf(UniversalQuantExpr)) then currentLhs.oclAsType(AndExpr).leftOpd := object TrueExpr {} endif;
+	if (self.oclIsKindOf(ExistenceQuantExpr)) then currentLhs.oclAsType(OrExpr).leftOpd := object FalseExpr {} endif;
+}
+
+	
+//Modifies the model containing self such that self is replaced with a deep clone of newExpr //TODO put this into some shared file between MTCTLNormalization and MTCTLQuantifierNormalization
+helper Expression::replaceWith(newExpr : Expression) {
+	var containingFeature := self.oclAsType(EObject).eContainingFeature();
+	self.oclAsType(EObject).eContainer().eSet(containingFeature, newExpr.deepclone().oclAsType(EObject));
+}

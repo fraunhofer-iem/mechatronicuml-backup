@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:hwplatforminstance="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/" xmlns:hwresourceinstance="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_ASe7kB7mEeSSloAxXnInNQ" type="PlatformInstance" name="HWPlatformInstanceConfiguration.platforminstance_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_3blXECPtEeSlOpyqq3LJMw" type="2004" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_3bl-ICPtEeSlOpyqq3LJMw" type="5096"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_3bl-ISPtEeSlOpyqq3LJMw" type="7011">
+      <children xmi:type="notation:Shape" xmi:id="_3rGZwCPtEeSlOpyqq3LJMw" type="3032" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_3rGZwiPtEeSlOpyqq3LJMw" type="7008">
+          <children xmi:type="notation:Shape" xmi:id="_3uRpkCPtEeSlOpyqq3LJMw" type="3035" fontName="Segoe UI" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_3uRpkiPtEeSlOpyqq3LJMw" type="5089"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_3uRpkyPtEeSlOpyqq3LJMw" type="5090"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_3uSQoCPtEeSlOpyqq3LJMw" type="5091"/>
+            <children xmi:type="notation:Shape" xmi:id="_36m1YCPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_36nccCPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_36nccSPtEeSlOpyqq3LJMw" y="5"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_wOKqavxqEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_36m1YSPtEeSlOpyqq3LJMw"/>
+            </children>
+            <element xmi:type="hwresourceinstance:SensorInstance" href="../runningExample.fujaba#_wOKqafxqEeOxbZORUyTiTA"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3uRpkSPtEeSlOpyqq3LJMw" x="-6" y="19" width="319"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_3uSQoSPtEeSlOpyqq3LJMw" type="3033" fontName="Segoe UI" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_3uSQoyPtEeSlOpyqq3LJMw" type="5083"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_3uSQpCPtEeSlOpyqq3LJMw" type="5084"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_3uSQpSPtEeSlOpyqq3LJMw" type="5085"/>
+            <children xmi:type="notation:BasicCompartment" xmi:id="_3udPwCPtEeSlOpyqq3LJMw" type="7009"/>
+            <children xmi:type="notation:Shape" xmi:id="_4rkYQCPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_4rkYQiPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_4rkYQyPtEeSlOpyqq3LJMw" y="5"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_wOKqbPxqEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4rkYQSPtEeSlOpyqq3LJMw" x="675" y="216"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_4rk_UCPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_4rk_UiPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_4rk_UyPtEeSlOpyqq3LJMw" x="-12" y="-31"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_wOKqbfxqEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4rk_USPtEeSlOpyqq3LJMw" x="814" y="-12"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_4rlmYCPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_4rlmYiPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_4rlmYyPtEeSlOpyqq3LJMw" y="5"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_wOKqbvxqEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4rlmYSPtEeSlOpyqq3LJMw" x="324" y="-12"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_4rmNcCPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_4rmNciPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_4rmNcyPtEeSlOpyqq3LJMw" x="16" y="24"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_wOKqb_xqEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4rmNcSPtEeSlOpyqq3LJMw" x="954" y="17"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_4rm0gCPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_4rm0giPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_4rm0gyPtEeSlOpyqq3LJMw" y="5"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_wOKqcPxqEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4rm0gSPtEeSlOpyqq3LJMw" x="954" y="77"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_4rnbkCPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_4rnbkiPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_4rnbkyPtEeSlOpyqq3LJMw" y="5"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_wOKqcfxqEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4rnbkSPtEeSlOpyqq3LJMw" x="879" y="216"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_4roCoCPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_4roCoiPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_4roCoyPtEeSlOpyqq3LJMw" y="5"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_wOKqcvxqEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4roCoSPtEeSlOpyqq3LJMw" x="954" y="173"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_4ropsCPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_4ropsiPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_4ropsyPtEeSlOpyqq3LJMw" y="5"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_wOKqc_xqEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4ropsSPtEeSlOpyqq3LJMw" x="954" y="125"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_4rpQwCPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_4rpQwiPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_4rpQwyPtEeSlOpyqq3LJMw" y="5"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_wOKqdPxqEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4rpQwSPtEeSlOpyqq3LJMw" x="588" y="-12"/>
+            </children>
+            <element xmi:type="hwresourceinstance:StructuredResourceInstance" href="../runningExample.fujaba#_wOKqa_xqEeOxbZORUyTiTA"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3uSQoiPtEeSlOpyqq3LJMw" x="-2" y="151"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_3udPwSPtEeSlOpyqq3LJMw" type="3034" fontName="Segoe UI" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_3ud20CPtEeSlOpyqq3LJMw" type="5086"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_3ud20SPtEeSlOpyqq3LJMw" type="5087"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_3ud20iPtEeSlOpyqq3LJMw" type="5088"/>
+            <children xmi:type="notation:Shape" xmi:id="_4z84MCPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_4z84MiPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_4z84MyPtEeSlOpyqq3LJMw" x="11" y="-40"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_wOKqfPxqEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4z84MSPtEeSlOpyqq3LJMw"/>
+            </children>
+            <element xmi:type="hwresourceinstance:ActuatorInstance" href="../runningExample.fujaba#_wOKqe_xqEeOxbZORUyTiTA"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3udPwiPtEeSlOpyqq3LJMw" x="21" y="420"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_3ud20yPtEeSlOpyqq3LJMw" type="3033" fontName="Segoe UI" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_3ud21SPtEeSlOpyqq3LJMw" type="5083"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_3ud21iPtEeSlOpyqq3LJMw" type="5084"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_3ud21yPtEeSlOpyqq3LJMw" type="5085"/>
+            <children xmi:type="notation:BasicCompartment" xmi:id="_3ud22CPtEeSlOpyqq3LJMw" type="7009"/>
+            <children xmi:type="notation:Shape" xmi:id="_40lKUCPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_40lKUiPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_40lKUyPtEeSlOpyqq3LJMw" y="5"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_wOKqfvxqEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_40lKUSPtEeSlOpyqq3LJMw" x="954" y="84"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_40lKVCPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_40lKViPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_40lxYCPtEeSlOpyqq3LJMw" y="5"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_wOKqf_xqEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_40lKVSPtEeSlOpyqq3LJMw" x="207" y="216"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_40lxYSPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_40lxYyPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_40lxZCPtEeSlOpyqq3LJMw" x="-84" y="24"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_wOKqgPxqEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_40lxYiPtEeSlOpyqq3LJMw" x="423" y="-12"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_40lxZSPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_40mYcCPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_40mYcSPtEeSlOpyqq3LJMw" y="5"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_wOKqgfxqEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_40lxZiPtEeSlOpyqq3LJMw" x="387" y="216"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_40mYciPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_40mYdCPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_40mYdSPtEeSlOpyqq3LJMw" y="5"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_wOKqgvxqEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_40mYcyPtEeSlOpyqq3LJMw" x="954" y="144"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_40m_gCPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_40m_giPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_40m_gyPtEeSlOpyqq3LJMw" y="5"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_wOKqg_xqEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_40m_gSPtEeSlOpyqq3LJMw" x="855" y="216"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_40m_hCPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_40m_hiPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_40m_hyPtEeSlOpyqq3LJMw" x="-24" y="24"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_wOKqhPxqEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_40m_hSPtEeSlOpyqq3LJMw" x="783" y="-12"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_40nmkCPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_40nmkiPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_40nmkyPtEeSlOpyqq3LJMw" x="24" y="-12"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_wOKqhfxqEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_40nmkSPtEeSlOpyqq3LJMw" x="915" y="-12"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_40nmlCPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_40oNoCPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_40oNoSPtEeSlOpyqq3LJMw" y="5"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_wOKqhvxqEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_40nmlSPtEeSlOpyqq3LJMw" x="615" y="216"/>
+            </children>
+            <element xmi:type="hwresourceinstance:StructuredResourceInstance" href="../runningExample.fujaba#_wOKqffxqEeOxbZORUyTiTA"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3ud21CPtEeSlOpyqq3LJMw" x="-2" y="528"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_3ued4CPtEeSlOpyqq3LJMw" type="3035" fontName="Segoe UI" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_3ued4iPtEeSlOpyqq3LJMw" type="5089"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_3ued4yPtEeSlOpyqq3LJMw" type="5090"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_3ued5CPtEeSlOpyqq3LJMw" type="5091"/>
+            <children xmi:type="notation:Shape" xmi:id="_41ZCoCPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_41ZCoiPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_41ZCoyPtEeSlOpyqq3LJMw" x="31" y="-28"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_wOKqjvxqEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_41ZCoSPtEeSlOpyqq3LJMw"/>
+            </children>
+            <element xmi:type="hwresourceinstance:SensorInstance" href="../runningExample.fujaba#_wOKqjfxqEeOxbZORUyTiTA"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3ued4SPtEeSlOpyqq3LJMw" x="422" y="20"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_3ued5SPtEeSlOpyqq3LJMw" type="3034" fontName="Segoe UI" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_3ufE8CPtEeSlOpyqq3LJMw" type="5086"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_3ufE8SPtEeSlOpyqq3LJMw" type="5087"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_3ufE8iPtEeSlOpyqq3LJMw" type="5088"/>
+            <children xmi:type="notation:Shape" xmi:id="_41g-cCPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_41g-ciPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_41g-cyPtEeSlOpyqq3LJMw" x="6" y="-40"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_wOKqkPxqEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_41g-cSPtEeSlOpyqq3LJMw"/>
+            </children>
+            <element xmi:type="hwresourceinstance:ActuatorInstance" href="../runningExample.fujaba#_wOKqj_xqEeOxbZORUyTiTA"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3ued5iPtEeSlOpyqq3LJMw" x="421" y="420"/>
+          </children>
+        </children>
+        <element xmi:type="hwplatforminstance:HWPlatformInstanceConfiguration" href="../runningExample.fujaba#_wOKqYvxqEeOxbZORUyTiTA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3rGZwSPtEeSlOpyqq3LJMw"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_3bl-IiPtEeSlOpyqq3LJMw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_3bl-IyPtEeSlOpyqq3LJMw"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_42E_ICPtEeSlOpyqq3LJMw" type="3028" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_42E_IiPtEeSlOpyqq3LJMw" type="5078">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_42E_IyPtEeSlOpyqq3LJMw" y="5"/>
+      </children>
+      <element xmi:type="hwplatforminstance:DelegationHWPortInstance" href="../runningExample.fujaba#_wOKqYfxqEeOxbZORUyTiTA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_42E_ISPtEeSlOpyqq3LJMw" x="714" y="864"/>
+    </children>
+    <element xmi:type="hwplatforminstance:HWPlatformInstance" href="../runningExample.fujaba#_wOKqYPxqEeOxbZORUyTiTA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3blXESPtEeSlOpyqq3LJMw" x="-4464" y="-2784" width="1224" height="876"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_3bmlMCPtEeSlOpyqq3LJMw" type="2004" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_3bmlMiPtEeSlOpyqq3LJMw" type="5096"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_3bmlMyPtEeSlOpyqq3LJMw" type="7011">
+      <children xmi:type="notation:Shape" xmi:id="_456WQCPtEeSlOpyqq3LJMw" type="3032" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_4569UCPtEeSlOpyqq3LJMw" type="7008">
+          <children xmi:type="notation:Shape" xmi:id="_458LcCPtEeSlOpyqq3LJMw" type="3034" fontName="Segoe UI" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_458LciPtEeSlOpyqq3LJMw" type="5086"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_458ygCPtEeSlOpyqq3LJMw" type="5087"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_458ygSPtEeSlOpyqq3LJMw" type="5088"/>
+            <children xmi:type="notation:Shape" xmi:id="_46CSECPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_46C5ICPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_46C5ISPtEeSlOpyqq3LJMw" x="20" y="-41"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_DNrhCvxuEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_46CSESPtEeSlOpyqq3LJMw"/>
+            </children>
+            <element xmi:type="hwresourceinstance:ActuatorInstance" href="../runningExample.fujaba#_DNrhCfxuEeOxbZORUyTiTA"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_458LcSPtEeSlOpyqq3LJMw"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_458ygiPtEeSlOpyqq3LJMw" type="3033" fontName="Segoe UI" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_458yhCPtEeSlOpyqq3LJMw" type="5083"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_458yhSPtEeSlOpyqq3LJMw" type="5084"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_458yhiPtEeSlOpyqq3LJMw" type="5085"/>
+            <children xmi:type="notation:BasicCompartment" xmi:id="_458yhyPtEeSlOpyqq3LJMw" type="7009"/>
+            <children xmi:type="notation:Shape" xmi:id="_46ryUCPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_46sZYCPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_46sZYSPtEeSlOpyqq3LJMw" y="5"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_DNrhDPxuEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_46ryUSPtEeSlOpyqq3LJMw" x="954" y="196"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_46sZYiPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_46sZZCPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_46sZZSPtEeSlOpyqq3LJMw" y="5"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_DNrhDfxuEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_46sZYyPtEeSlOpyqq3LJMw" x="954" y="28"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_46tAcCPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_46tAciPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_46tAcyPtEeSlOpyqq3LJMw" x="24" y="-24"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_DNrhDvxuEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_46tAcSPtEeSlOpyqq3LJMw" x="864" y="-12"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_46tAdCPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_46tngCPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_46tngSPtEeSlOpyqq3LJMw" y="5"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_DNrhD_xuEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_46tAdSPtEeSlOpyqq3LJMw" x="954" y="88"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_46tngiPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_46tnhCPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_46tnhSPtEeSlOpyqq3LJMw" y="5"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_DNrhEPxuEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_46tngyPtEeSlOpyqq3LJMw" x="954" y="148"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_46uOkCPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_46uOkiPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_46uOkyPtEeSlOpyqq3LJMw" y="5"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_DNrhEfxuEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_46uOkSPtEeSlOpyqq3LJMw" x="252" y="-12"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_46uOlCPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_46u1oCPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_46u1oSPtEeSlOpyqq3LJMw" y="5"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_DNrhEvxuEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_46uOlSPtEeSlOpyqq3LJMw" x="696" y="216"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_46u1oiPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_46vcsCPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_46vcsSPtEeSlOpyqq3LJMw" y="5"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_DNrhE_xuEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_46u1oyPtEeSlOpyqq3LJMw" x="468" y="216"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_46vcsiPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_46vctCPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_46wDwCPtEeSlOpyqq3LJMw" y="5"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_DNrhFPxuEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_46vcsyPtEeSlOpyqq3LJMw" x="192" y="216"/>
+            </children>
+            <element xmi:type="hwresourceinstance:StructuredResourceInstance" href="../runningExample.fujaba#_DNrhC_xuEeOxbZORUyTiTA"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_458ygyPtEeSlOpyqq3LJMw" x="16" y="487"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_459ZkCPtEeSlOpyqq3LJMw" type="3033" fontName="Segoe UI" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_459ZkiPtEeSlOpyqq3LJMw" type="5083"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_459ZkyPtEeSlOpyqq3LJMw" type="5084"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_459ZlCPtEeSlOpyqq3LJMw" type="5085"/>
+            <children xmi:type="notation:BasicCompartment" xmi:id="_459ZlSPtEeSlOpyqq3LJMw" type="7009"/>
+            <children xmi:type="notation:Shape" xmi:id="_47_Z4CPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_48AA8CPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_48AA8SPtEeSlOpyqq3LJMw" y="5"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_DNrhHPxuEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_47_Z4SPtEeSlOpyqq3LJMw" x="876" y="216"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_48AA8iPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_48AA9CPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_48AA9SPtEeSlOpyqq3LJMw" y="5"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_DNrhHfxuEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_48AA8yPtEeSlOpyqq3LJMw" x="954" y="96"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_48AoACPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_48AoAiPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_48AoAyPtEeSlOpyqq3LJMw" y="5"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_DNrhHvxuEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_48AoASPtEeSlOpyqq3LJMw" x="48" y="216"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_48AoBCPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_48BPECPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_48BPESPtEeSlOpyqq3LJMw" y="5"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_DNrhH_xuEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_48AoBSPtEeSlOpyqq3LJMw" x="954" y="48"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_48BPEiPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_48BPFCPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_48BPFSPtEeSlOpyqq3LJMw" x="-12" y="24"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_DNrhIPxuEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_48BPEyPtEeSlOpyqq3LJMw" x="756" y="-12"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_48BPFiPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_48B2ICPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_48B2ISPtEeSlOpyqq3LJMw" x="36" y="-24"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_DNrhIfxuEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_48BPFyPtEeSlOpyqq3LJMw" x="876" y="-12"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_48B2IiPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_48B2JCPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_48B2JSPtEeSlOpyqq3LJMw" y="5"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_DNrhIvxuEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_48B2IyPtEeSlOpyqq3LJMw" x="384" y="-12"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_48CdMCPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_48CdMiPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_48CdMyPtEeSlOpyqq3LJMw" y="5"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_DNrhI_xuEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_48CdMSPtEeSlOpyqq3LJMw" x="954" y="156"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_48CdNCPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_48CdNiPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_48DEQCPtEeSlOpyqq3LJMw" y="5"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_DNrhJPxuEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_48CdNSPtEeSlOpyqq3LJMw" x="288" y="216"/>
+            </children>
+            <element xmi:type="hwresourceinstance:StructuredResourceInstance" href="../runningExample.fujaba#_DNrhG_xuEeOxbZORUyTiTA"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_459ZkSPtEeSlOpyqq3LJMw" x="4" y="131"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_459ZliPtEeSlOpyqq3LJMw" type="3035" fontName="Segoe UI" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_45-AoCPtEeSlOpyqq3LJMw" type="5089"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_45-AoSPtEeSlOpyqq3LJMw" type="5090"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_45-AoiPtEeSlOpyqq3LJMw" type="5091"/>
+            <children xmi:type="notation:Shape" xmi:id="_48zSMCPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_48zSMiPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_48zSMyPtEeSlOpyqq3LJMw" x="17" y="-40"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_DNrhLPxuEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_48zSMSPtEeSlOpyqq3LJMw"/>
+            </children>
+            <element xmi:type="hwresourceinstance:SensorInstance" href="../runningExample.fujaba#_DNrhK_xuEeOxbZORUyTiTA"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_459ZlyPtEeSlOpyqq3LJMw" x="484" y="391"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_45-AoyPtEeSlOpyqq3LJMw" type="3034" fontName="Segoe UI" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_45-ApSPtEeSlOpyqq3LJMw" type="5086"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_45-ApiPtEeSlOpyqq3LJMw" type="5087"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_45-ApyPtEeSlOpyqq3LJMw" type="5088"/>
+            <children xmi:type="notation:Shape" xmi:id="_4871ECPtEeSlOpyqq3LJMw" type="3030" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_4871EiPtEeSlOpyqq3LJMw" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_4871EyPtEeSlOpyqq3LJMw" x="17" y="-34"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../runningExample.fujaba#_DNrhLvxuEeOxbZORUyTiTA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4871ESPtEeSlOpyqq3LJMw"/>
+            </children>
+            <element xmi:type="hwresourceinstance:ActuatorInstance" href="../runningExample.fujaba#_DNrhLfxuEeOxbZORUyTiTA"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_45-ApCPtEeSlOpyqq3LJMw" x="412" y="5"/>
+          </children>
+        </children>
+        <element xmi:type="hwplatforminstance:HWPlatformInstanceConfiguration" href="../runningExample.fujaba#_DNrhAvxuEeOxbZORUyTiTA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_456WQSPtEeSlOpyqq3LJMw"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_3bmlNCPtEeSlOpyqq3LJMw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_3bmlNSPtEeSlOpyqq3LJMw"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_49WEwCPtEeSlOpyqq3LJMw" type="3028" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_49WEwiPtEeSlOpyqq3LJMw" type="5078">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_49WEwyPtEeSlOpyqq3LJMw" y="5"/>
+      </children>
+      <element xmi:type="hwplatforminstance:DelegationHWPortInstance" href="../runningExample.fujaba#_DNrhAfxuEeOxbZORUyTiTA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_49WEwSPtEeSlOpyqq3LJMw" x="900" y="-12"/>
+    </children>
+    <element xmi:type="hwplatforminstance:HWPlatformInstance" href="../runningExample.fujaba#_DNrhAPxuEeOxbZORUyTiTA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3bmlMSPtEeSlOpyqq3LJMw" x="-4464" y="-1860" width="1212" height="828"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_ASe7kR7mEeSSloAxXnInNQ"/>
+  <element xmi:type="hwplatforminstance:HWPlatformInstanceConfiguration" href="../runningExample.fujaba#_t6cUQfxqEeOxbZORUyTiTA"/>
+  <edges xmi:type="notation:Connector" xmi:id="_4-i-oCPtEeSlOpyqq3LJMw" type="4009" source="_42E_ICPtEeSlOpyqq3LJMw" target="_49WEwCPtEeSlOpyqq3LJMw" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_4-i-oyPtEeSlOpyqq3LJMw" type="6003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_4-i-pCPtEeSlOpyqq3LJMw" x="5" y="5"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_4-i-oSPtEeSlOpyqq3LJMw" fontName="Segoe UI"/>
+    <element xmi:type="hwplatforminstance:LinkInstance" href="../runningExample.fujaba#_ZeYbkPxxEeOxbZORUyTiTA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_4-i-oiPtEeSlOpyqq3LJMw" points="[-1147, 315, -956, -398]$[-1147, 375, -956, -338]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_5C_ZwCPtEeSlOpyqq3LJMw" type="4008" source="_42E_ICPtEeSlOpyqq3LJMw" target="_40nmlCPtEeSlOpyqq3LJMw" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_5C_ZwSPtEeSlOpyqq3LJMw" fontName="Segoe UI"/>
+    <element xmi:type="hwplatforminstance:DelegationInstance" href="../runningExample.fujaba#_wOKqY_xqEeOxbZORUyTiTA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_5C_ZwiPtEeSlOpyqq3LJMw" points="[12, 1, -178, -25]$[178, 24, -12, -2]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_5EJ3YCPtEeSlOpyqq3LJMw" type="4009" source="_40nmkCPtEeSlOpyqq3LJMw" target="_4rnbkCPtEeSlOpyqq3LJMw" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_5EJ3YyPtEeSlOpyqq3LJMw" type="6003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_5EJ3ZCPtEeSlOpyqq3LJMw" x="5" y="5"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_5EJ3YSPtEeSlOpyqq3LJMw" fontName="Segoe UI"/>
+    <element xmi:type="hwplatforminstance:LinkInstance" href="../runningExample.fujaba#_wOKqZPxqEeOxbZORUyTiTA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_5EJ3YiPtEeSlOpyqq3LJMw" points="[12, -6, -32, 14]$[32, -15, -12, 5]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_5EQlECPtEeSlOpyqq3LJMw" type="4009" source="_40lxYSPtEeSlOpyqq3LJMw" target="_4z84MCPtEeSlOpyqq3LJMw" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_5ERMICPtEeSlOpyqq3LJMw" type="6003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_5ERMISPtEeSlOpyqq3LJMw" x="5" y="5"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_5EQlESPtEeSlOpyqq3LJMw" fontName="Segoe UI"/>
+    <element xmi:type="hwplatforminstance:LinkInstance" href="../runningExample.fujaba#_wOKqZfxqEeOxbZORUyTiTA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_5EQlEiPtEeSlOpyqq3LJMw" points="[-12, -13, 17, 17]$[-17, -18, 12, 12]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_5EWrsCPtEeSlOpyqq3LJMw" type="4009" source="_40m_hCPtEeSlOpyqq3LJMw" target="_41g-cCPtEeSlOpyqq3LJMw" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_5EXSwCPtEeSlOpyqq3LJMw" type="6003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_5EXSwSPtEeSlOpyqq3LJMw" x="-1" y="22"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_5EWrsSPtEeSlOpyqq3LJMw" fontName="Segoe UI"/>
+    <element xmi:type="hwplatforminstance:LinkInstance" href="../runningExample.fujaba#_wOKqZvxqEeOxbZORUyTiTA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_5EWrsiPtEeSlOpyqq3LJMw" points="[12, 9, -78, -63]$[78, 62, -12, -10]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_5EeAcCPtEeSlOpyqq3LJMw" type="4009" source="_4rpQwCPtEeSlOpyqq3LJMw" target="_41ZCoCPtEeSlOpyqq3LJMw" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_5EeAcyPtEeSlOpyqq3LJMw" type="6003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_5EeAdCPtEeSlOpyqq3LJMw" x="10" y="27"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_5EeAcSPtEeSlOpyqq3LJMw" fontName="Segoe UI"/>
+    <element xmi:type="hwplatforminstance:LinkInstance" href="../runningExample.fujaba#_wOKqZ_xqEeOxbZORUyTiTA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_5EeAciPtEeSlOpyqq3LJMw" points="[12, 7, -127, -75]$[127, 74, -12, -8]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_5EkHECPtEeSlOpyqq3LJMw" type="4009" source="_4rlmYCPtEeSlOpyqq3LJMw" target="_36m1YCPtEeSlOpyqq3LJMw" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_5EkuICPtEeSlOpyqq3LJMw" type="6003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_5EkuISPtEeSlOpyqq3LJMw" x="70" y="33"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_5EkHESPtEeSlOpyqq3LJMw" fontName="Segoe UI"/>
+    <element xmi:type="hwplatforminstance:LinkInstance" href="../runningExample.fujaba#_wOKqaPxqEeOxbZORUyTiTA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_5EkHEiPtEeSlOpyqq3LJMw" points="[-4, -12, 0, 18]$[0, -18, 4, 12]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_5Eq0wCPtEeSlOpyqq3LJMw" type="4008" source="_49WEwCPtEeSlOpyqq3LJMw" target="_48BPFiPtEeSlOpyqq3LJMw" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_5Erb0CPtEeSlOpyqq3LJMw" fontName="Segoe UI"/>
+    <element xmi:type="hwplatforminstance:DelegationInstance" href="../runningExample.fujaba#_DNrhA_xuEeOxbZORUyTiTA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_5Erb0SPtEeSlOpyqq3LJMw" points="[12, 0, -264, -16]$[264, 15, -12, -1]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_5EtRACPtEeSlOpyqq3LJMw" type="4009" source="_48CdNCPtEeSlOpyqq3LJMw" target="_46uOkCPtEeSlOpyqq3LJMw" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_5EtRAyPtEeSlOpyqq3LJMw" type="6003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_5EtRBCPtEeSlOpyqq3LJMw" x="5" y="5"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_5EtRASPtEeSlOpyqq3LJMw" fontName="Segoe UI"/>
+    <element xmi:type="hwplatforminstance:LinkInstance" href="../runningExample.fujaba#_DNrhBPxuEeOxbZORUyTiTA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_5EtRAiPtEeSlOpyqq3LJMw" points="[12, 8, -168, -120]$[168, 119, -12, -9]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_5EzXoCPtEeSlOpyqq3LJMw" type="4009" source="_48BPEiPtEeSlOpyqq3LJMw" target="_4871ECPtEeSlOpyqq3LJMw" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_5EzXoyPtEeSlOpyqq3LJMw" type="6003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_5EzXpCPtEeSlOpyqq3LJMw" x="5" y="5"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_5EzXoSPtEeSlOpyqq3LJMw" fontName="Segoe UI"/>
+    <element xmi:type="hwplatforminstance:LinkInstance" href="../runningExample.fujaba#_DNrhBfxuEeOxbZORUyTiTA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_5EzXoiPtEeSlOpyqq3LJMw" points="[4, 12, -23, -60]$[22, 60, -5, -12]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_5E5eQCPtEeSlOpyqq3LJMw" type="4009" source="_48B2IiPtEeSlOpyqq3LJMw" target="_46CSECPtEeSlOpyqq3LJMw" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_5E5eQyPtEeSlOpyqq3LJMw" type="6003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_5E5eRCPtEeSlOpyqq3LJMw" x="5" y="5"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_5E5eQSPtEeSlOpyqq3LJMw" fontName="Segoe UI"/>
+    <element xmi:type="hwplatforminstance:LinkInstance" href="../runningExample.fujaba#_DNrhBvxuEeOxbZORUyTiTA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_5E5eQiPtEeSlOpyqq3LJMw" points="[12, 7, -40, -25]$[40, 24, -12, -8]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_5E-90CPtEeSlOpyqq3LJMw" type="4009" source="_46tAcCPtEeSlOpyqq3LJMw" target="_48zSMCPtEeSlOpyqq3LJMw" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_5E_k4CPtEeSlOpyqq3LJMw" type="6003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_5E_k4SPtEeSlOpyqq3LJMw" x="5" y="5"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_5E-90SPtEeSlOpyqq3LJMw" fontName="Segoe UI"/>
+    <element xmi:type="hwplatforminstance:LinkInstance" href="../runningExample.fujaba#_DNrhB_xuEeOxbZORUyTiTA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_5E-90iPtEeSlOpyqq3LJMw" points="[-12, 0, 9, 0]$[-9, 0, 12, 0]"/>
+  </edges>
+</notation:Diagram>

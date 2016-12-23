@@ -1,0 +1,7 @@
+# Tracing options for the org.muml.pim.messagetype.diagram plug-in
+
+# Common issues
+org.muml.pim.messagetype.diagram/debug=false
+
+# Visual IDs
+org.muml.pim.messagetype.diagram/debug/visualID=false

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:component="http://www.fujaba.de/muml/model/component/0.2.3" xmlns:expr="http://www.storydriven.org/core/expressions/0.2.0" xmlns:instance="http://www.fujaba.de/muml/model/instance/0.2.2" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.2.4" xmlns:msgiface="http://www.fujaba.de/muml/model/msgiface/0.2.2" xmlns:sda="http://www.storydriven.org/storydiagrams/activities/0.2.0" xmlns:sdp="http://www.storydriven.org/storydiagrams/patterns/0.2.0" xmi:id="_pX_QkZ9REeG4eMpbz4C8AQ">
+  <categories xmi:id="_y6ceQJ9REeG4eMpbz4C8AQ" key="org.muml.pim.components.category" name="component">
+    <modelElements xsi:type="component:AtomicComponent" xmi:id="_zemUMJ9REeG4eMpbz4C8AQ" name="compA">
+      <ports xsi:type="component:DiscretePort" xmi:id="_1YcxwJ9REeG4eMpbz4C8AQ" name="singlePort" receiverMessageInterface="_IV5TMJ9SEeG4eMpbz4C8AQ">
+        <cardinality xmi:id="_1YcxwZ9REeG4eMpbz4C8AQ">
+          <lowerBound xmi:id="_b-AiQJ9SEeG4eMpbz4C8AQ" value="0"/>
+          <upperBound xmi:id="_1Ycxw59REeG4eMpbz4C8AQ"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_3GPwUJ9REeG4eMpbz4C8AQ" name="multiPort" senderMessageInterface="_IV5TMJ9SEeG4eMpbz4C8AQ">
+        <cardinality xmi:id="_3GPwUZ9REeG4eMpbz4C8AQ">
+          <lowerBound xmi:id="_cnXoUJ9SEeG4eMpbz4C8AQ" value="0"/>
+          <upperBound xmi:id="_6s_NgJ9REeG4eMpbz4C8AQ" value="3"/>
+        </cardinality>
+      </ports>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_HisUoJ9SEeG4eMpbz4C8AQ" key="org.muml.pim.messagetype.category" name="msgiface">
+    <modelElements xsi:type="msgiface:MessageInterface" xmi:id="_IV5TMJ9SEeG4eMpbz4C8AQ" name="Interface">
+      <messageTypes xmi:id="_JLAWQJ9SEeG4eMpbz4C8AQ" name="messagetype"/>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_WXlsUJ9SEeG4eMpbz4C8AQ" key="org.muml.pim.instance.category" name="instance">
+    <modelElements xsi:type="instance:ComponentInstanceConfiguration" xmi:id="_WXlsUZ9SEeG4eMpbz4C8AQ">
+      <componentInstances xmi:id="_efuREJ9SEeG4eMpbz4C8AQ" name="instance" componentType="_zemUMJ9REeG4eMpbz4C8AQ">
+        <portInstances xsi:type="instance:DiscreteMultiPortInstance" xmi:id="_fi92wJ9SEeG4eMpbz4C8AQ" name="multiPort" portType="_3GPwUJ9REeG4eMpbz4C8AQ">
+          <subPortInstances xmi:id="_0ReGIJ9SEeG4eMpbz4C8AQ" name="portinstance" portType="_3GPwUJ9REeG4eMpbz4C8AQ"/>
+        </portInstances>
+      </componentInstances>
+      <componentInstances xmi:id="_iShNQJ9SEeG4eMpbz4C8AQ" name="instance2" componentType="_zemUMJ9REeG4eMpbz4C8AQ">
+        <portInstances xsi:type="instance:DiscreteMultiPortInstance" xmi:id="_kpivAJ9SEeG4eMpbz4C8AQ" name="multiPort" portType="_3GPwUJ9REeG4eMpbz4C8AQ"/>
+        <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_ljRMUJ9SEeG4eMpbz4C8AQ" name="portinstance" portType="_1YcxwJ9REeG4eMpbz4C8AQ"/>
+      </componentInstances>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_M8Zu0J9TEeG4eMpbz4C8AQ" key="org.muml.activities.category">
+    <modelElements xsi:type="sda:Activity" xmi:id="_M8Zu0Z9TEeG4eMpbz4C8AQ" name="createSubPortInstanceInOneActivity">
+      <ownedActivityEdge xmi:id="_Y899sJ9TEeG4eMpbz4C8AQ" target="_Pv-CoJ9TEeG4eMpbz4C8AQ" source="_OeJOYJ9TEeG4eMpbz4C8AQ"/>
+      <ownedActivityEdge xmi:id="_aWO2sJ9TEeG4eMpbz4C8AQ" target="_PHNZgJ9TEeG4eMpbz4C8AQ" source="_Pv-CoJ9TEeG4eMpbz4C8AQ"/>
+      <ownedActivityNode xsi:type="sda:StartNode" xmi:id="_OeJOYJ9TEeG4eMpbz4C8AQ" name="Start" outgoing="_Y899sJ9TEeG4eMpbz4C8AQ"/>
+      <ownedActivityNode xsi:type="sda:StopNode" xmi:id="_PHNZgJ9TEeG4eMpbz4C8AQ" name="Stop" incoming="_aWO2sJ9TEeG4eMpbz4C8AQ">
+        <returnValues xsi:type="expr:TextualExpression" xmi:id="_PLFM4J9TEeG4eMpbz4C8AQ" expressionText="" language="OCL" languageVersion="1.0"/>
+      </ownedActivityNode>
+      <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_Pv-CoJ9TEeG4eMpbz4C8AQ" name="StoryNode1" outgoing="_aWO2sJ9TEeG4eMpbz4C8AQ" incoming="_Y899sJ9TEeG4eMpbz4C8AQ">
+        <ownedRule xmi:id="_PwtpgJ9TEeG4eMpbz4C8AQ" comment="">
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_eRzUYJ9TEeG4eMpbz4C8AQ" name="compInstance" bindingState="BOUND" outgoingLink="_UOsJUJ9WEeG4eMpbz4C8AQ _A1WgoJ9XEeG4eMpbz4C8AQ">
+            <classifier href="../org.muml.pim/model/pim.ecore#//model/instance/ComponentInstance"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_W8FOkJ9UEeG4eMpbz4C8AQ" name="compType" bindingState="BOUND" incomingLink="_UOsJUJ9WEeG4eMpbz4C8AQ" outgoingLink="_y8R4AJ9WEeG4eMpbz4C8AQ">
+            <classifier href="../org.muml.pim/model/pim.ecore#//model/component/Component"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_RZTGAJ9VEeG4eMpbz4C8AQ" name="portType" incomingLink="_y8R4AJ9WEeG4eMpbz4C8AQ _PGKB4J9ZEeG4eMpbz4C8AQ _yQWewJ9ZEeG4eMpbz4C8AQ">
+            <classifier href="../org.muml.pim/model/pim.ecore#//model/component/Port"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_Gh0JoJ9WEeG4eMpbz4C8AQ" name="multiPortInst" incomingLink="_A1WgoJ9XEeG4eMpbz4C8AQ" outgoingLink="_PGKB4J9ZEeG4eMpbz4C8AQ _5zITsJ9ZEeG4eMpbz4C8AQ">
+            <classifier href="../org.muml.pim/model/pim.ecore#//model/instance/DiscreteMultiPortInstance"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_PEjmwJ9WEeG4eMpbz4C8AQ" name="singlePortInst" incomingLink="_5zITsJ9ZEeG4eMpbz4C8AQ" outgoingLink="_yQWewJ9ZEeG4eMpbz4C8AQ" bindingOperator="CREATE">
+            <classifier href="../org.muml.pim/model/pim.ecore#//model/instance/DiscreteSinglePortInstance"/>
+          </variable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_UOsJUJ9WEeG4eMpbz4C8AQ" name="compInstToCompType" source="_eRzUYJ9TEeG4eMpbz4C8AQ" target="_W8FOkJ9UEeG4eMpbz4C8AQ">
+            <targetEnd href="../org.muml.pim/model/pim.ecore#//model/component/ComponentPart/componentType"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_y8R4AJ9WEeG4eMpbz4C8AQ" name="compTypeToPortType" source="_W8FOkJ9UEeG4eMpbz4C8AQ" target="_RZTGAJ9VEeG4eMpbz4C8AQ">
+            <targetEnd href="../org.muml.pim/model/pim.ecore#//model/component/Component/ports"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_A1WgoJ9XEeG4eMpbz4C8AQ" name="compInstToMultiPortInst" source="_eRzUYJ9TEeG4eMpbz4C8AQ" target="_Gh0JoJ9WEeG4eMpbz4C8AQ">
+            <targetEnd href="../org.muml.pim/model/pim.ecore#//model/instance/ComponentInstance/portInstances"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_PGKB4J9ZEeG4eMpbz4C8AQ" name="multiPortInstToPortType" source="_Gh0JoJ9WEeG4eMpbz4C8AQ" target="_RZTGAJ9VEeG4eMpbz4C8AQ">
+            <targetEnd href="../org.muml.pim/model/pim.ecore#//model/instance/PortInstance/portType"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_yQWewJ9ZEeG4eMpbz4C8AQ" name="singlePortInstToPortType" bindingOperator="CREATE" source="_PEjmwJ9WEeG4eMpbz4C8AQ" target="_RZTGAJ9VEeG4eMpbz4C8AQ">
+            <targetEnd href="../org.muml.pim/model/pim.ecore#//model/instance/PortInstance/portType"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_5zITsJ9ZEeG4eMpbz4C8AQ" name="multiPortInstToSinglePortInst" bindingOperator="CREATE" source="_Gh0JoJ9WEeG4eMpbz4C8AQ" target="_PEjmwJ9WEeG4eMpbz4C8AQ">
+            <targetEnd href="../org.muml.pim/model/pim.ecore#//model/instance/DiscreteMultiPortInstance/subPortInstances"/>
+          </linkVariable>
+        </ownedRule>
+      </ownedActivityNode>
+    </modelElements>
+  </categories>
+</modelinstance:RootNode>

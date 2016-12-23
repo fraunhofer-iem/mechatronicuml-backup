@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated release -->
+      <package
+            uri="http://www.muml.org/emm/release/1.0.0"
+            class="org.muml.emm.release.ReleasePackage"
+            genModel="model/release.genmodel"/>
+   </extension>
+
+</plugin>

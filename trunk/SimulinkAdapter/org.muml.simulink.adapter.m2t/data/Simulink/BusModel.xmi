@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ASCII"?>
+<model:SimulinkContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:model="http://www.muml.org/simulink/1.0.0" id="_QOoykG01EeGB6sXGPiiDSg">
+  <models id="_PMst8II9EeGZA4xnCfdmYg" name="BusModel">
+    <buses id="_Sb_oA47UEeGWcpP0rXQzlQ" name="MyBus">
+      <elements name="firstElement" dimensions="5" type="uint32"/>
+      <elements name="secondElement" dimensions="[2 10]" type="double"/>
+      <elements name="thirdElement" dimensions="" type="Bus" bus="_mOhlAY7ZEeGTBPExsBmtEw"/>
+    </buses>
+    <buses id="_mOhlAY7ZEeGTBPExsBmtEw" name="NestedBus">
+      <elements name="firstElement" dimensions="1" type="double"/>
+    </buses>
+  </models>
+</model:SimulinkContainer>

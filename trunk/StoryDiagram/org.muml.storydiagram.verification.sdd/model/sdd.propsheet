@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.muml:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.muml="http://www.muml.org/ape/1.0.0" xmi:id="_RmkGQM1gEeSIgPDefa6ZBw" contributorId="org.muml.ape.contributor">
+  <reconciler xmi:id="_RmkGQc1gEeSIgPDefa6ZBw"/>
+  <genModel href="sdd.genmodel#/"/>
+  <referencedGenerators href="../../org.muml.core/model/core.propsheet#_i_I4kOHNEeS5Putgio2lkg"/>
+  <plugin xmi:id="_RmktUM1gEeSIgPDefa6ZBw" id="org.muml.storydiagram.verification.sdd.edit.properties" name="Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="1.0.0.qualifier">
+    <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
+    <requiredBundles>org.eclipse.ui</requiredBundles>
+    <requiredBundles>org.eclipse.core.runtime</requiredBundles>
+    <requiredBundles>org.eclipse.emf.edit</requiredBundles>
+    <requiredBundles>org.muml.ape.runtime</requiredBundles>
+    <requiredBundles>org.muml.core.edit</requiredBundles>
+    <requiredBundles>org.muml.core.edit.properties</requiredBundles>
+    <requiredBundles>org.muml.storydiagram.verification.sdd</requiredBundles>
+    <requiredBundles>org.muml.storydiagram.verification.sdd.edit</requiredBundles>
+  </plugin>
+  <defaultTab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+  <packages xmi:id="_RmktUc1gEeSIgPDefa6ZBw">
+    <genPackage href="sdd.genmodel#//sdd"/>
+    <classes xmi:id="_RmktUs1gEeSIgPDefa6ZBw">
+      <genClass href="sdd.genmodel#//sdd/AbstractStoryDecisionDiagram"/>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
+    </classes>
+    <classes xmi:id="_RmlUYM1gEeSIgPDefa6ZBw">
+      <genClass href="sdd.genmodel#//sdd/Node"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="sdd.genmodel#//sdd/Node/outgoingEdges"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="sdd.genmodel#//sdd/Node/incomingEdges"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_RmlUYc1gEeSIgPDefa6ZBw">
+      <genClass href="sdd.genmodel#//sdd/Edge"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RmlUYs1gEeSIgPDefa6ZBw" initializeOCLExpression="">
+        <genFeature href="sdd.genmodel#//sdd/Edge/sourceNode"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_RmlUY81gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RmlUZM1gEeSIgPDefa6ZBw" initializeOCLExpression="">
+        <genFeature href="sdd.genmodel#//sdd/Edge/targetNode"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_RmlUZc1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RmlUZs1gEeSIgPDefa6ZBw" initializeOCLExpression="">
+        <genFeature href="sdd.genmodel#//sdd/Edge/type"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor" xmi:id="_RmlUZ81gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_Rml7cM1gEeSIgPDefa6ZBw" superClasses="_RmlUYM1gEeSIgPDefa6ZBw">
+      <genClass href="sdd.genmodel#//sdd/LeafNode"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_Rml7cc1gEeSIgPDefa6ZBw" initializeOCLExpression="">
+        <genFeature href="sdd.genmodel#//sdd/LeafNode/value"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:CheckboxPropertyEditor" xmi:id="_Rml7cs1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:PropertyCategory" xmi:id="_Rml7c81gEeSIgPDefa6ZBw" title="Booleans" properties="_Rml7cc1gEeSIgPDefa6ZBw"/>
+    </classes>
+    <classes xmi:id="_Rml7dM1gEeSIgPDefa6ZBw">
+      <genClass href="sdd.genmodel#//sdd/PatternNode"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_Rml7dc1gEeSIgPDefa6ZBw" initializeOCLExpression="">
+        <genFeature href="sdd.genmodel#//sdd/PatternNode/type"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor" xmi:id="_Rml7ds1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <superClasses href="#_RmlUYM1gEeSIgPDefa6ZBw"/>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
+    </classes>
+  </packages>
+</org.muml:PropertyGenerator>

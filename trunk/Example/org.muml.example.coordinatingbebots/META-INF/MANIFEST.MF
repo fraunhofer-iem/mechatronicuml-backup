@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CoordinatingBebots
+Bundle-SymbolicName: org.muml.example.coordinatingbebots;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.muml.core.example.ui,
+ org.muml.uppaal.adapter.mtctl,
+ org.muml.pim.actionlanguage,
+ org.eclipse.core.expressions;bundle-version="3.5.0"
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

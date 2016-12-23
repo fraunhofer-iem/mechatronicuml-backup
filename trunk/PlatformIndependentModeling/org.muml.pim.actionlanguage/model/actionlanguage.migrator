@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emm:Migrator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:emm="http://www.muml.org/emm/1.0.0">
+  <sourcePackages href="actionlanguage-0.4.ecore#/"/>
+  <targetPackages href="actionlanguage.ecore#/"/>
+  <mappings>
+    <targetClass href="actionlanguage.ecore#//ElseIfStatement"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="actionlanguage.ecore#//ElseIfStatement/elseIfCondition"/>
+      <sourceFeature xsi:type="ecore:EReference" href="actionlanguage-0.4.ecore#//ElseIfStatement/elseIfCondition"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="actionlanguage.ecore#//ElseIfStatement/elseIfBlock"/>
+      <sourceFeature xsi:type="ecore:EReference" href="actionlanguage-0.4.ecore#//ElseIfStatement/elseIfBlock"/>
+    </featureInitializers>
+    <sourceClass href="actionlanguage-0.4.ecore#//ElseIfStatement"/>
+  </mappings>
+  <mappings>
+    <targetClass href="actionlanguage.ecore#//AttributeAccessorExpression"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="actionlanguage.ecore#//AttributeAccessorExpression/attribute"/>
+      <sourceFeature xsi:type="ecore:EReference" href="actionlanguage-0.4.ecore#//AttributeAccessorExpression/attribute"/>
+    </featureInitializers>
+    <sourceClass href="actionlanguage-0.4.ecore#//AttributeAccessorExpression"/>
+  </mappings>
+  <mappings>
+    <targetClass href="actionlanguage.ecore#//ArrayIndexExpression"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="actionlanguage.ecore#//ArrayIndexExpression/index"/>
+      <sourceFeature xsi:type="ecore:EReference" href="actionlanguage-0.4.ecore#//ArrayIndexExpression/index"/>
+    </featureInitializers>
+    <sourceClass href="actionlanguage-0.4.ecore#//ArrayIndexExpression"/>
+  </mappings>
+  <mappings>
+    <targetClass href="actionlanguage.ecore#//TypeCastExpression"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="actionlanguage.ecore#//TypeCastExpression/dataType"/>
+      <sourceFeature xsi:type="ecore:EReference" href="actionlanguage-0.4.ecore#//TypeCastExpression/dataType"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="actionlanguage.ecore#//TypeCastExpression/enclosedExpression"/>
+      <sourceFeature xsi:type="ecore:EReference" href="actionlanguage-0.4.ecore#//TypeCastExpression/enclosedExpression"/>
+    </featureInitializers>
+    <sourceClass href="actionlanguage-0.4.ecore#//TypeCastExpression"/>
+  </mappings>
+  <mappings>
+    <targetClass href="actionlanguage.ecore#//TimeValueExpression"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="actionlanguage.ecore#//TimeValueExpression/timeValue"/>
+      <sourceFeature xsi:type="ecore:EReference" href="actionlanguage-0.4.ecore#//TimeValueExpression/timeValue"/>
+    </featureInitializers>
+    <sourceClass href="actionlanguage-0.4.ecore#//TimeValueExpression"/>
+  </mappings>
+  <mappings>
+    <targetClass href="actionlanguage.ecore#//NondeterministicChoiceExpression"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="actionlanguage.ecore#//NondeterministicChoiceExpression/range"/>
+      <sourceFeature xsi:type="ecore:EReference" href="actionlanguage-0.4.ecore#//NondeterministicChoiceExpression/range"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="actionlanguage.ecore#//NondeterministicChoiceExpression/dataType"/>
+      <sourceFeature xsi:type="ecore:EReference" href="actionlanguage-0.4.ecore#//NondeterministicChoiceExpression/dataType"/>
+    </featureInitializers>
+    <sourceClass href="actionlanguage-0.4.ecore#//NondeterministicChoiceExpression"/>
+  </mappings>
+  <mappings>
+    <targetClass href="actionlanguage.ecore#//ArrayInitializeExpression"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="actionlanguage.ecore#//ArrayInitializeExpression/expressions"/>
+      <sourceFeature xsi:type="ecore:EReference" href="actionlanguage-0.4.ecore#//ArrayInitializeExpression/expressions"/>
+    </featureInitializers>
+    <sourceClass href="actionlanguage-0.4.ecore#//ArrayInitializeExpression"/>
+  </mappings>
+  <mappings>
+    <targetClass href="actionlanguage.ecore#//TypedNamedElementExpression"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="actionlanguage.ecore#//TypedNamedElementExpression/typedNamedElement"/>
+      <sourceFeature xsi:type="ecore:EReference" href="actionlanguage-0.4.ecore#//TypedNamedElementExpression/typedNamedElement"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="actionlanguage.ecore#//TypedNamedElementExpression/elementAccessors"/>
+      <sourceFeature xsi:type="ecore:EReference" href="actionlanguage-0.4.ecore#//TypedNamedElementExpression/elementAccessors"/>
+    </featureInitializers>
+    <sourceClass href="actionlanguage-0.4.ecore#//TypedNamedElementExpression"/>
+  </mappings>
+  <mappings>
+    <targetClass href="actionlanguage.ecore#//LocalVariableDeclarationStatement"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="actionlanguage.ecore#//LocalVariableDeclarationStatement/variable"/>
+      <sourceFeature xsi:type="ecore:EReference" href="actionlanguage-0.4.ecore#//LocalVariableDeclarationStatement/variable"/>
+    </featureInitializers>
+    <sourceClass href="actionlanguage-0.4.ecore#//LocalVariableDeclarationStatement"/>
+  </mappings>
+  <mappings>
+    <targetClass href="actionlanguage.ecore#//PositionSelector"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="actionlanguage.ecore#//PositionSelector/kind"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="actionlanguage-0.4.ecore#//PositionSelector/kind"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="actionlanguage.ecore#//PositionSelector/successor"/>
+      <sourceFeature xsi:type="ecore:EReference" href="actionlanguage-0.4.ecore#//PositionSelector/successor"/>
+    </featureInitializers>
+    <sourceClass href="actionlanguage-0.4.ecore#//PositionSelector"/>
+  </mappings>
+  <mappings>
+    <targetClass href="actionlanguage.ecore#//DiscreteInteractionEndpointReference"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="actionlanguage.ecore#//DiscreteInteractionEndpointReference/typedNamedElementExpression"/>
+      <sourceFeature xsi:type="ecore:EReference" href="actionlanguage-0.4.ecore#//DiscreteInteractionEndpointReference/typedNamedElementExpression"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="actionlanguage.ecore#//DiscreteInteractionEndpointReference/position"/>
+      <sourceFeature xsi:type="ecore:EReference" href="actionlanguage-0.4.ecore#//DiscreteInteractionEndpointReference/position"/>
+    </featureInitializers>
+    <sourceClass href="actionlanguage-0.4.ecore#//DiscreteInteractionEndpointReference"/>
+  </mappings>
+  <mappings>
+    <targetClass href="actionlanguage.ecore#//TriggerMessageExpression"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="actionlanguage.ecore#//TriggerMessageExpression/messageType"/>
+      <sourceFeature xsi:type="ecore:EReference" href="actionlanguage-0.4.ecore#//TriggerMessageExpression/messageType"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="actionlanguage.ecore#//TriggerMessageExpression/parameter"/>
+      <sourceFeature xsi:type="ecore:EReference" href="actionlanguage-0.4.ecore#//TriggerMessageExpression/parameter"/>
+    </featureInitializers>
+    <sourceClass href="actionlanguage-0.4.ecore#//TriggerMessageExpression"/>
+  </mappings>
+  <mappings>
+    <targetClass href="actionlanguage.ecore#//ReturnStatement"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="actionlanguage.ecore#//ReturnStatement/expression"/>
+      <sourceFeature xsi:type="ecore:EReference" href="actionlanguage-0.4.ecore#//ReturnStatement/expression"/>
+    </featureInitializers>
+    <sourceClass href="actionlanguage-0.4.ecore#//ReturnStatement"/>
+  </mappings>
+  <mappings>
+    <targetClass href="actionlanguage.ecore#//OperationCall"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="actionlanguage.ecore#//OperationCall/operation"/>
+      <sourceFeature xsi:type="ecore:EReference" href="actionlanguage-0.4.ecore#//OperationCall/operation"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="actionlanguage.ecore#//OperationCall/parameterBinding"/>
+      <sourceFeature xsi:type="ecore:EReference" href="actionlanguage-0.4.ecore#//OperationCall/parameterBinding"/>
+    </featureInitializers>
+    <sourceClass href="actionlanguage-0.4.ecore#//OperationCall"/>
+  </mappings>
+  <mappings>
+    <targetClass href="actionlanguage.ecore#//IfStatement"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="actionlanguage.ecore#//IfStatement/ifCondition"/>
+      <sourceFeature xsi:type="ecore:EReference" href="actionlanguage-0.4.ecore#//IfStatement/ifCondition"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="actionlanguage.ecore#//IfStatement/ifBlock"/>
+      <sourceFeature xsi:type="ecore:EReference" href="actionlanguage-0.4.ecore#//IfStatement/ifBlock"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="actionlanguage.ecore#//IfStatement/elseBlock"/>
+      <sourceFeature xsi:type="ecore:EReference" href="actionlanguage-0.4.ecore#//IfStatement/elseBlock"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="actionlanguage.ecore#//IfStatement/elseIfStatements"/>
+      <sourceFeature xsi:type="ecore:EReference" href="actionlanguage-0.4.ecore#//IfStatement/elseIfStatements"/>
+    </featureInitializers>
+    <sourceClass href="actionlanguage-0.4.ecore#//IfStatement"/>
+  </mappings>
+  <mappings>
+    <targetClass href="actionlanguage.ecore#//ForLoop"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="actionlanguage.ecore#//ForLoop/initializeExpression"/>
+      <sourceFeature xsi:type="ecore:EReference" href="actionlanguage-0.4.ecore#//ForLoop/initializeExpression"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="actionlanguage.ecore#//ForLoop/countingExpression"/>
+      <sourceFeature xsi:type="ecore:EReference" href="actionlanguage-0.4.ecore#//ForLoop/countingExpression"/>
+    </featureInitializers>
+    <sourceClass href="actionlanguage-0.4.ecore#//ForLoop"/>
+  </mappings>
+  <mappings>
+    <targetClass href="actionlanguage.ecore#//Assignment"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="actionlanguage.ecore#//Assignment/assignOperator"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="actionlanguage-0.4.ecore#//Assignment/assignOperator"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="actionlanguage.ecore#//Assignment/incrementDecrementOperator"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="actionlanguage-0.4.ecore#//Assignment/incrementDecrementOperator"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="actionlanguage.ecore#//Assignment/rhs_assignExpression"/>
+      <sourceFeature xsi:type="ecore:EReference" href="actionlanguage-0.4.ecore#//Assignment/rhs_assignExpression"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="actionlanguage.ecore#//Assignment/lhs_typedNamedElementExpression"/>
+      <sourceFeature xsi:type="ecore:EReference" href="actionlanguage-0.4.ecore#//Assignment/lhs_typedNamedElementExpression"/>
+    </featureInitializers>
+    <sourceClass href="actionlanguage-0.4.ecore#//Assignment"/>
+  </mappings>
+  <mappings>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="actionlanguage.ecore#//Loop/block"/>
+      <sourceFeature xsi:type="ecore:EReference" href="actionlanguage-0.4.ecore#//Loop/block"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="actionlanguage.ecore#//Loop/loopTest"/>
+      <sourceFeature xsi:type="ecore:EReference" href="actionlanguage-0.4.ecore#//Loop/loopTest"/>
+    </featureInitializers>
+    <sourceClass href="actionlanguage-0.4.ecore#//Loop"/>
+  </mappings>
+  <mappings>
+    <targetClass href="actionlanguage.ecore#//Block"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="actionlanguage.ecore#//Block/expressions"/>
+      <sourceFeature xsi:type="ecore:EReference" href="actionlanguage-0.4.ecore#//Block/expressions"/>
+    </featureInitializers>
+    <sourceClass href="actionlanguage-0.4.ecore#//Block"/>
+  </mappings>
+  <mappings>
+    <targetClass href="actionlanguage.ecore#//WhileLoop"/>
+    <sourceClass href="actionlanguage-0.4.ecore#//WhileLoop"/>
+  </mappings>
+  <mappings>
+    <targetClass href="actionlanguage.ecore#//DoWhileLoop"/>
+    <sourceClass href="actionlanguage-0.4.ecore#//DoWhileLoop"/>
+  </mappings>
+  <mappings>
+    <sourceClass href="actionlanguage-0.4.ecore#//ElementAccessorExpression"/>
+  </mappings>
+  <release href="../../org.muml.core.migrator/model/muml.releaseset#//@releases.1"/>
+</emm:Migrator>

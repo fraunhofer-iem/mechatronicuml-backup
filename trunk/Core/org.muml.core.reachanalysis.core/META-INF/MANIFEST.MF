@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Localization: plugin
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.muml.core.reachanalysis.core
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.muml.core.reachanalysis.core.Activator
+Require-Bundle: org.muml.core.reachanalysis.reachabilitygraph,
+ org.eclipse.ui,
+ org.eclipse.osgi,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.muml.core.reachanalysis.core,
+ org.muml.core.reachanalysis.core.export
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:protocol="http://www.muml.org/pim/protocol/1.0.0" xmi:id="_8zZeEPt4EeKbMb-I2MBdag" type="Coordination Protocol" name="default.coordinationprotocol_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_8ziA8Pt4EeKbMb-I2MBdag" type="2005" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_8zioAPt4EeKbMb-I2MBdag" type="7005">
+      <children xmi:type="notation:Shape" xmi:id="_C9Ix0DpWEeO6g-KU3zBcDg" type="3005" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_C9Ix0jpWEeO6g-KU3zBcDg" type="5005"/>
+        <element xmi:type="protocol:CoordinationProtocol" href="overtaking.fujaba#_GPaQMITCEeKO9r0VL65xcg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_C9Ix0TpWEeO6g-KU3zBcDg" x="67" y="18"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_C9Ix0zpWEeO6g-KU3zBcDg" type="3006" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_C9JY4DpWEeO6g-KU3zBcDg" type="5006">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_C9JY4TpWEeO6g-KU3zBcDg" x="-20" y="40"/>
+        </children>
+        <element xmi:type="protocol:Role" href="overtaking.fujaba#_GQwUAITCEeKO9r0VL65xcg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_C9Ix1DpWEeO6g-KU3zBcDg" x="43" y="66"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_C9JY4jpWEeO6g-KU3zBcDg" type="3006" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_C9J_8DpWEeO6g-KU3zBcDg" type="5006">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_C9J_8TpWEeO6g-KU3zBcDg" y="5"/>
+        </children>
+        <element xmi:type="protocol:Role" href="overtaking.fujaba#_GRMY4oTCEeKO9r0VL65xcg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_C9JY4zpWEeO6g-KU3zBcDg" x="139" y="66"/>
+      </children>
+    </children>
+    <element xmi:type="protocol:CoordinationProtocol" href="overtaking.fujaba#_GPaQMITCEeKO9r0VL65xcg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8ziA8ft4EeKbMb-I2MBdag" x="132" y="48" width="229" height="157"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_8zZeEft4EeKbMb-I2MBdag"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="overtaking.fujaba#_FN-BUITCEeKO9r0VL65xcg"/>
+</notation:Diagram>

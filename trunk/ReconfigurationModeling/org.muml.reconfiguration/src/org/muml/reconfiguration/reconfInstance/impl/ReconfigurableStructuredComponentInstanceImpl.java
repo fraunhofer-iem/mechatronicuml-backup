@@ -1,0 +1,154 @@
+/**
+ */
+package org.muml.reconfiguration.reconfInstance.impl;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.muml.pim.instance.impl.StructuredComponentInstanceImpl;
+import org.muml.reconfiguration.reconfInstance.ControllerInstance;
+import org.muml.reconfiguration.reconfInstance.ReconfInstancePackage;
+import org.muml.reconfiguration.reconfInstance.ReconfigurableStructuredComponentInstance;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Reconfigurable Structured Component Instance</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link org.muml.reconfiguration.reconfInstance.impl.ReconfigurableStructuredComponentInstanceImpl#getControllerInstance <em>Controller Instance</em>}</li>
+ * </ul>
+ *
+ * @generated
+ */
+public class ReconfigurableStructuredComponentInstanceImpl extends StructuredComponentInstanceImpl implements ReconfigurableStructuredComponentInstance {
+	/**
+	 * The cached value of the '{@link #getControllerInstance() <em>Controller Instance</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getControllerInstance()
+	 * @generated
+	 * @ordered
+	 */
+	protected ControllerInstance controllerInstance;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ReconfigurableStructuredComponentInstanceImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return ReconfInstancePackage.Literals.RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ControllerInstance getControllerInstance() {
+		if (controllerInstance != null && controllerInstance.eIsProxy()) {
+			InternalEObject oldControllerInstance = (InternalEObject)controllerInstance;
+			controllerInstance = (ControllerInstance)eResolveProxy(oldControllerInstance);
+			if (controllerInstance != oldControllerInstance) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReconfInstancePackage.RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE__CONTROLLER_INSTANCE, oldControllerInstance, controllerInstance));
+			}
+		}
+		return controllerInstance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ControllerInstance basicGetControllerInstance() {
+		return controllerInstance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setControllerInstance(ControllerInstance newControllerInstance) {
+		ControllerInstance oldControllerInstance = controllerInstance;
+		controllerInstance = newControllerInstance;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReconfInstancePackage.RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE__CONTROLLER_INSTANCE, oldControllerInstance, controllerInstance));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case ReconfInstancePackage.RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE__CONTROLLER_INSTANCE:
+				if (resolve) return getControllerInstance();
+				return basicGetControllerInstance();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case ReconfInstancePackage.RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE__CONTROLLER_INSTANCE:
+				setControllerInstance((ControllerInstance)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case ReconfInstancePackage.RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE__CONTROLLER_INSTANCE:
+				setControllerInstance((ControllerInstance)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case ReconfInstancePackage.RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE__CONTROLLER_INSTANCE:
+				return controllerInstance != null;
+		}
+		return super.eIsSet(featureID);
+	}
+
+} //ReconfigurableStructuredComponentInstanceImpl

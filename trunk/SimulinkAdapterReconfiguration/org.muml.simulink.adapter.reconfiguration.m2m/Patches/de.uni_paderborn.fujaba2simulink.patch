@@ -1,0 +1,25 @@
+Index: tgg/fujaba2simulink.tgg
+===================================================================
+--- tgg/fujaba2simulink.tgg	(revision 1238)
++++ tgg/fujaba2simulink.tgg	(working copy)
+@@ -23,12 +23,14 @@
+     <usedPackage href="http://www.muml.org/storydiagram/1.0.0#//patterns/expressions"/>
+     <usedPackage href="http://www.muml.org/pim/component/1.0.0#/"/>
+     <usedPackage href="http://www.muml.org/pim/instance/1.0.0#/"/>
++    <usedPackage href="http://www.muml.org/reconfiguration/1.0.0#/"/>
+   </modelParameter>
+   <modelParameter xmi:id="_NK6IcJzXEeCxo-rGjpVr5g" name="simulink">
+     <usedPackage href="http://www.muml.org/simulink/1.0.0#/"/>
+     <usedPackage href="http://www.muml.org/simulink/1.0.0#//stateflow"/>
+     <usedPackage href="http://www.muml.org/simulink/1.0.0#//msglib"/>
+     <usedPackage href="http://www.muml.org/simulink/1.0.0#//msglib/buffer"/>
++    <usedPackage href="http://www.muml.org/simulink/reconfiguration/1.0.0#/"/>
+   </modelParameter>
+   <modelParameter xmi:id="_NYLIYJzXEeCxo-rGjpVr5g" name="fujaba2simulink">
+     <usedPackage href="http://www.muml.org/simulink/adapter/corrmodel/1.0.0#/"/>
+@@ -9061,4 +9063,5 @@
+     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_896no6N2EeKatOJLdR2mGA" typedModel="_NYLIYJzXEeCxo-rGjpVr5g" node="_896npKN2EeKatOJLdR2mGA _896npaN2EeKatOJLdR2mGA _896np6N2EeKatOJLdR2mGA _896nqqN2EeKatOJLdR2mGA _896nrKN2EeKatOJLdR2mGA"/>
+   </rule>
+   <childTransformation href="behavior/behavior.tgg#_X9eBwP7wEeCCF4gKSgh4sQ"/>
++  <childTransformation href="../../de.uni_paderborn.fujaba.simulink.reconfiguration.m2m/tgg/SimulinkReconfiguration.tgg#_9a2ZALyVEeKECZRvzt-XfQ"/>
+ </de.upb.swt.qvt.tgg:TripleGraphGrammar>

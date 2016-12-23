@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<allocation:SystemAllocation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:allocation="http://www.fujaba.de/muml/psm/allocation/0.1.0" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0">
+  <allocations>
+    <componentInstance xsi:type="instance:AtomicComponentInstance" href="VehicleExample.fujaba#_3Q5TeJMFEeOIDchXYj7RNg"/>
+    <resourceInstance href="VehicleExample.fujaba#_ugurMo_gEeOYR-WFM5vRTQ"/>
+  </allocations>
+  <allocations>
+    <componentInstance xsi:type="instance:AtomicComponentInstance" href="VehicleExample.fujaba#_3Q5TdZMFEeOIDchXYj7RNg"/>
+    <resourceInstance href="VehicleExample.fujaba#_ugurIY_gEeOYR-WFM5vRTQ"/>
+  </allocations>
+  <allocations>
+    <componentInstance xsi:type="instance:AtomicComponentInstance" href="VehicleExample.fujaba#_3Q5TcZMFEeOIDchXYj7RNg"/>
+    <resourceInstance href="VehicleExample.fujaba#_ugurIY_gEeOYR-WFM5vRTQ"/>
+  </allocations>
+</allocation:SystemAllocation>

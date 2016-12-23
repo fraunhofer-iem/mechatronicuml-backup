@@ -1,0 +1,14 @@
+«IMPORT simulink»
+
+«EXTENSION extensions::Element»
+«EXTENSION extensions::Block»
+
+«DEFINE digitalClock FOR DigitalClock»
+  Block {
+    BlockType		    DigitalClock
+    Name 				"«this.getName()»"
+    Tag					"id=«this.id»"
+    SampleTime	        "«this.sampleTime»"
+	«EXPAND Parameter::parameter FOREACH this.parameters.select(p| !{'BlockType','Name', 'Tag', 'SampleTime'}.contains(p.name) )-»      
+    }
+«ENDDEFINE»

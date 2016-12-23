@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="railcab" nsURI="http://www.muml.org/example/railcab/1.0.0" nsPrefix="railcab">
+  <eClassifiers xsi:type="ecore:EClass" name="RailCab" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="member" upperBound="-1"
+        eType="#//RailCab" eOpposite="#//RailCab/leader"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sectionControl" eType="#//SectionControl"
+        eOpposite="#//SectionControl/railcabs"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isLeader" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="leader" eType="#//RailCab"
+        eOpposite="#//RailCab/member"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SectionControl" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="railcabs" upperBound="-1"
+        eType="#//RailCab" eOpposite="#//RailCab/sectionControl"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,223 @@
+modeltype PimPackage uses pim('http://www.muml.org/pim/1.0.0');
+modeltype ComponentPackage uses pim::component('http://www.muml.org/pim/1.0.0');
+modeltype ProtocolPackage uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype RTSCPackage uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype ConnectorPackage uses pim::connector('http://www.muml.org/pim/1.0.0');
+modeltype TypesPackage uses pim::types('http://www.muml.org/pim/1.0.0');
+modeltype ValuetypePackage uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype MessageTypePackage uses pim::msgtype('http://www.muml.org/pim/1.0.0');
+modeltype BehaviorPackage uses pim::behavior('http://www.muml.org/pim/1.0.0');
+
+
+transformation CopyRolePropertiesToPort(in input : ComponentPackage, out output : RTSCPackage);
+configuration property replacePortRTSC : Boolean;
+	
+
+main() {
+
+	-- parse input parameters
+	var thePort : DiscretePort := input.rootObjects()[DiscretePort] -> any(true);
+	var component : AtomicComponent := input.rootObjects()[AtomicComponent] -> any(true);
+
+	-- create component RTSC if it does not exists yet
+	if(component.behavior.oclIsUndefined()) then{
+			component.behavior:=component.map createComponentRTSC();
+		
+	}endif;
+	
+	
+	
+	if(not thePort.oclIsUndefined()) then{
+	
+	if(replacePortRTSC)then {
+		var	statechart :RealtimeStatechart := thePort.oclAsType(DiscretePort).behavior.oclAsType(RealtimeStatechart);
+		var region : Region := statechart.parentRegion;
+		thePort.oclAsType(DiscretePort).behavior := null;
+		input.removeElement(statechart);
+		input.removeElement(region);
+	}endif;
+
+	-- copy the role properties
+	copyRolePropertiesToPort(thePort);
+	}endif; 
+}
+
+-- copies all relevant role properties to the port
+helper copyRolePropertiesToPort(inout thePort : DiscretePort){
+	
+	-- get role
+	var theRole := thePort.refinedRole;
+	
+	assert fatal (theRole != null) with log ("Refined role must be specified");
+	
+	-- check constraint
+	-- multi port => subroleBehavior must be set
+	assert fatal (
+		(theRole.cardinality.upperBound.value > 1)
+		implies
+		(not theRole.subroleBehavior.oclIsUndefined())
+	)
+	with log("Multi role must have 'subroleBehavior' property set!");
+
+	-- check constraint
+	-- multi port => coordinatorBehavior must be set
+	assert fatal (
+		(theRole.cardinality.upperBound.value > 1)
+		implies
+		(not theRole.coordinatorBehavior.oclIsUndefined())
+	)
+	with log("Multi role must have 'coordinatorBehavior' property set!");
+	
+	-- copy cardinality (creating a new one, to force notification in the diagram)
+	thePort.cardinality := theRole.cardinality.map copyCardinality();
+	
+	-- receiver message types
+	var recvMsgTypes : OrderedSet(MessageType);
+	theRole.receiverMessageTypes -> forEach(msgType){
+		recvMsgTypes += msgType;
+	};
+	thePort.receiverMessageTypes := recvMsgTypes;
+	
+	-- sender message types
+	var senderMsgTypes : OrderedSet(MessageType);
+	theRole.senderMessageTypes -> forEach(msgType){
+		senderMsgTypes += msgType;
+	};
+	thePort.senderMessageTypes := senderMsgTypes;
+	
+	-- MessageBuffer Properties (just copy all MessageBuffer objects, deleting the old ones)
+	assert warning (not thePort.receiverMessageBuffer->isEmpty()) with log ("Existing MessageBuffer specification was overwritten.");
+	thePort.receiverMessageBuffer := theRole.receiverMessageBuffer->deepclone()[MessageBuffer];
+	
+	-- copy behavior specification
+	copyBehavior(theRole, thePort);
+}
+
+
+-- copies the behavior of the role into the port if the port belongs to an atomic component
+helper copyBehavior(inout theRole : Role, inout thePort : DiscretePort){
+
+	if(thePort.component.oclIsKindOf(AtomicComponent)) then {
+		-- copy real-time statechart
+
+		-- RTSC is referenced by behavior reference
+		thePort.behavior := (theRole.behavior.deepclone()).oclAsType(RealtimeStatechart);
+		
+		-- contain in resource
+		storeRealtimeStatechart(thePort.behavior.oclAsType(RealtimeStatechart), thePort.component.oclAsType(AtomicComponent));
+		
+		-- adjust name
+		thePort.behavior.oclAsType(RealtimeStatechart).name := thePort.behavior.oclAsType(RealtimeStatechart).name + '_' + thePort.name;
+
+		if(thePort.cardinality.upperBound.value > 1) then{			
+			
+			-- set behavior and coordinatorBehavior references
+			thePort.subroleBehavior := getMultiPortSubroleBehaviorRTSC(theRole, thePort);
+			thePort.coordinatorBehavior := getMultiPortAdaptationRTSC(theRole, thePort);
+			
+		} endif;
+	} endif;
+}
+
+
+mapping AtomicComponent::createComponentRTSC():RealtimeStatechart  @output when {self.behavior.oclIsUndefined()}{
+	name := self.name;
+	states += new State(true, false);
+		result.states -> first().name :=  self.name + '_main';
+
+}
+
+-- this mapping stores the rtsc in the component rtsc (creates the component rtsc if not yet existing)
+helper storeRealtimeStatechart(inout rtsc : RealtimeStatechart, inout component : AtomicComponent){
+	
+	-- hook into component RTSC
+	var componentRTSC: RealtimeStatechart := component.behavior.oclAsType(RealtimeStatechart);
+	componentRTSC.states -> forEach(state){
+		-- search initial state and add new region containing the statechart to it
+		if(state.initial = true) then{
+			var newRegion : Region := new Region();
+			state.embeddedRegions += newRegion;
+			newRegion.embeddedStatechart := rtsc;
+			if(not componentRTSC.parentRegion.oclIsUndefined()) then {
+					newRegion.priority:=componentRTSC.parentRegion.priority;
+				}
+				else{
+					newRegion.priority:=state.embeddedRegions.priority->max()+1;
+				}endif;
+		} endif;
+	}
+
+}
+
+query getMaxPriority(regions:Set(Region)):Integer{
+	var maxPriority:Integer:=regions.priority->max();
+	if(maxPriority.oclIsInvalid()) then{
+		maxPriority:=1;
+	}
+	else{
+		maxPriority:=maxPriority+1;
+	}endif;
+	return maxPriority;
+}
+
+-- returns the RTSC of a multi-port corresponding to the subrole RTSC of a multirole 
+query getMultiPortSubroleBehaviorRTSC(in theRole : Role, in thePort : DiscretePort) : RealtimeStatechart{
+	-- obtain RTSC name
+	var rtscName := theRole.subroleBehavior.oclAsType(RealtimeStatechart).name;
+	
+	-- search in port RTSC
+	thePort.behavior.oclAsType(RealtimeStatechart).states -> forEach(state){
+		state.embeddedRegions -> forEach(region){
+			if(region.embeddedStatechart.name = rtscName) then{
+				return region.embeddedStatechart;
+			} endif;
+		}
+	};
+	
+	return null;
+} 
+
+-- returns the RTSC of a multi-port corresponding to the adaptation RTSC of a multirole 
+query getMultiPortAdaptationRTSC(in theRole : Role, in thePort : DiscretePort) : RealtimeStatechart{
+	-- obtain RTSC name
+	var rtscName := theRole.coordinatorBehavior.oclAsType(RealtimeStatechart).name;
+	
+	-- search in port RTSC
+	thePort.behavior.oclAsType(RealtimeStatechart).states -> forEach(state){
+		state.embeddedRegions -> forEach(region){
+			if(region.embeddedStatechart.name = rtscName) then{
+				return region.embeddedStatechart;
+			} endif;
+		}
+	};
+	
+	return null;
+} 
+
+
+-- constructor for creating new regions
+constructor Region::Region() {
+	
+}
+
+constructor RealtimeStatechart::RealtimeStatechart(_name : String)  {
+	name := _name;
+	states += new State(true, false);
+}
+
+constructor State::State(_initial : Boolean, _final : Boolean) {
+	initial := _initial;
+	final := _final;
+}
+
+-- mapping that creates an exact copy of a cardinality
+mapping Cardinality::copyCardinality() : Cardinality{
+	lowerBound := self.lowerBound.map copyNaturalNumber();
+	upperBound := self.upperBound.map copyNaturalNumber();
+}
+
+-- mapping that creates an exact copy of a NaturalNumber
+mapping NaturalNumber::copyNaturalNumber() : NaturalNumber {
+	value := self.value;
+	infinity := self.infinity;
+}

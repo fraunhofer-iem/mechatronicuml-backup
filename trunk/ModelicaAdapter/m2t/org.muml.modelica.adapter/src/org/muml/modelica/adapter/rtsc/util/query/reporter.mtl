@@ -1,0 +1,30 @@
+[module reporter('http://www.muml.org/pim/behavior/1.0.0',
+				 'http://www.muml.org/core/1.0.0',
+				 'http://www.muml.org/pim/actionlanguage/1.0.0',
+				 'http://www.muml.org/pim/msgtype/1.0.0',
+				 'http://www.muml.org/pim/types/1.0.0',
+				 'http://www.muml.org/pim/component/1.0.0',
+				 'http://www.muml.org/pim/instance/1.0.0',
+				 'http://www.muml.de/modelica/transform/1.0.0',
+				 'http://www.muml.org/pim/realtimestatechart/1.0.0',
+				 'http://www.eclipse.org/emf/2002/Ecore')/]
+
+[**
+ * Display errors the error log.
+ * @param errorStringList a sequence of error strings, which should be displayed
+*/]
+[query public displayErrors(errorStringList : Sequence(String)) : Boolean =
+	invoke('org.muml.modelica.adapter.rtsc.util.query.ErrorReporter',
+		'displayErrors(java.util.List)',
+		Sequence{errorStringList}) 
+/]
+
+[**
+ * Display warnings the error log.
+ * @param warningStringList a sequence of warning strings, which should be displayed
+*/]
+[query public displayWarnings(warningStringList : Sequence(String)) : Boolean =
+	invoke('org.muml.modelica.adapter.rtsc.util.query.ErrorReporter',
+		'displayWarnings(java.util.List)',
+		Sequence{warningStringList}) 
+/]

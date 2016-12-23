@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.muml.verification.core.sdk.feature" label="Verification Core SDK" provider-name="%providerName" version="1.0.0.qualifier">
+
+   <description>
+      Verification Core
+   </description>
+
+   <copyright url="%copyrightURL">
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <includes id="org.muml.verification.core.feature" version="0.0.0"/>
+
+   <includes id="org.muml.verification.core.source.feature" version="0.0.0"/>
+
+</feature>

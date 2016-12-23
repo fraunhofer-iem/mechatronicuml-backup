@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.muml.reconfigurationverification.tctl/src"
+    modelPluginID="org.muml.reconfigurationverification.tctl" modelName="TCTL" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false" usedGenPackages="../../org.muml.core/model/core.genmodel#//core">
+  <foreignModel>TCTL.ecore</foreignModel>
+  <genPackages prefix="Tctl" basePackage="org.muml.reconfigurationverification" disposableProviderFactory="true"
+      ecorePackage="TCTL.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="TCTL.ecore#//ComparisonOperator">
+      <genEnumLiterals ecoreEnumLiteral="TCTL.ecore#//ComparisonOperator/LESS"/>
+      <genEnumLiterals ecoreEnumLiteral="TCTL.ecore#//ComparisonOperator/LESS_OR_EQUAL"/>
+      <genEnumLiterals ecoreEnumLiteral="TCTL.ecore#//ComparisonOperator/EQUAL"/>
+      <genEnumLiterals ecoreEnumLiteral="TCTL.ecore#//ComparisonOperator/GREATER_OR_EQUAL"/>
+      <genEnumLiterals ecoreEnumLiteral="TCTL.ecore#//ComparisonOperator/GREATER"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="TCTL.ecore#//BinaryLogicOperator">
+      <genEnumLiterals ecoreEnumLiteral="TCTL.ecore#//BinaryLogicOperator/AND"/>
+      <genEnumLiterals ecoreEnumLiteral="TCTL.ecore#//BinaryLogicOperator/OR"/>
+      <genEnumLiterals ecoreEnumLiteral="TCTL.ecore#//BinaryLogicOperator/IMPLY"/>
+      <genEnumLiterals ecoreEnumLiteral="TCTL.ecore#//BinaryLogicOperator/EQUIV"/>
+      <genEnumLiterals ecoreEnumLiteral="TCTL.ecore#//BinaryLogicOperator/XOR"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="TCTL.ecore#//TemporalOperator">
+      <genEnumLiterals ecoreEnumLiteral="TCTL.ecore#//TemporalOperator/AF"/>
+      <genEnumLiterals ecoreEnumLiteral="TCTL.ecore#//TemporalOperator/AG"/>
+      <genEnumLiterals ecoreEnumLiteral="TCTL.ecore#//TemporalOperator/AU"/>
+      <genEnumLiterals ecoreEnumLiteral="TCTL.ecore#//TemporalOperator/EF"/>
+      <genEnumLiterals ecoreEnumLiteral="TCTL.ecore#//TemporalOperator/EG"/>
+      <genEnumLiterals ecoreEnumLiteral="TCTL.ecore#//TemporalOperator/EU"/>
+    </genEnums>
+    <genClasses image="false" ecoreClass="TCTL.ecore#//FormulaDefinition"/>
+    <genClasses ecoreClass="TCTL.ecore#//AtomicFormula">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TCTL.ecore#//AtomicFormula/term"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="TCTL.ecore#//UnaryFormula">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TCTL.ecore#//UnaryFormula/subformula"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="TCTL.ecore#//BinaryFormula">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TCTL.ecore#//BinaryFormula/leftSubformula"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TCTL.ecore#//BinaryFormula/rightSubformula"/>
+    </genClasses>
+    <genClasses ecoreClass="TCTL.ecore#//NotFormula"/>
+    <genClasses ecoreClass="TCTL.ecore#//UnaryTemporalFormula"/>
+    <genClasses ecoreClass="TCTL.ecore#//BinaryLogicFormula">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TCTL.ecore#//BinaryLogicFormula/operator"/>
+    </genClasses>
+    <genClasses ecoreClass="TCTL.ecore#//BinaryTemporalFormula"/>
+    <genClasses image="false" ecoreClass="TCTL.ecore#//TemporalFormula">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TCTL.ecore#//TemporalFormula/comparisonOperator"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TCTL.ecore#//TemporalFormula/temporalOperator"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TCTL.ecore#//TemporalFormula/value"/>
+    </genClasses>
+    <genClasses ecoreClass="TCTL.ecore#//Term"/>
+    <genClasses ecoreClass="TCTL.ecore#//AtomicProposition"/>
+    <genClasses image="false" ecoreClass="TCTL.ecore#//TCTLFormula">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TCTL.ecore#//TCTLFormula/formula"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

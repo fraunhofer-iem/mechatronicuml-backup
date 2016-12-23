@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="objectContribution.Zone"
+            objectClass="org.muml.pim.realtimestatechart.diagram.edit.parts.StateEditPart">
+         <menu
+               id="RTSCZoneGraph.zoneGraph"
+               label="Zone Graph"
+               path="additions">
+            <separator
+                  name="zonegroup">
+            </separator>
+         </menu>
+         <action
+               class="org.muml.verification.core.reachanalysis.rtsc.actions.ZoneGraphAction"
+               id="RTSCZoneGraph.action2"
+               label="Create"
+               menubarPath="RTSCZoneGraph.zoneGraph/zonegroup">
+         </action>
+      </objectContribution>
+   </extension>
+</plugin>

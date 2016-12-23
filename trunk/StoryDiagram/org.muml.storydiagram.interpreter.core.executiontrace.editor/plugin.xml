@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="de.mdelab.sdm.interpreter.core.executionTrace.presentation.ExecutionTraceModelWizardID"
+            name="%_UI_ExecutionTraceModelWizard_label"
+            class="org.muml.storydiagram.interpreter.core.executiontrace.presentation.ExecutionTraceModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ExecutionTraceModelFile.gif">
+         <description>%_UI_ExecutionTraceModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="de.mdelab.sdm.interpreter.core.executionTrace.presentation.ExecutionTraceEditorID"
+            name="%_UI_ExecutionTraceEditor_label"
+            icon="icons/full/obj16/ExecutionTraceModelFile.gif"
+            extensions="executiontrace"
+            class="org.muml.storydiagram.interpreter.core.executiontrace.presentation.ExecutionTraceEditor"
+            contributorClass="org.muml.storydiagram.interpreter.core.executiontrace.presentation.ExecutionTraceActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated executionTrace -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.muml.storydiagram.interpreter.core.executiontrace.presentation.ExecutiontraceModelWizardID"
+            name="%_UI_ExecutiontraceModelWizard_label"
+            class="org.muml.storydiagram.interpreter.core.executiontrace.presentation.ExecutiontraceModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ExecutiontraceModelFile.gif">
+         <description>%_UI_ExecutiontraceModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated executionTrace -->
+      <editor
+            id="org.muml.storydiagram.interpreter.core.executiontrace.presentation.ExecutiontraceEditorID"
+            name="%_UI_ExecutiontraceEditor_label"
+            icon="icons/full/obj16/ExecutiontraceModelFile.gif"
+            extensions="executiontrace"
+            class="org.muml.storydiagram.interpreter.core.executiontrace.presentation.ExecutiontraceEditor"
+            contributorClass="org.muml.storydiagram.interpreter.core.executiontrace.presentation.ExecutiontraceActionBarContributor">
+      </editor>
+   </extension>
+</plugin>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated RuntimeModel -->
+      <package
+            uri="http://www.muml.org/verification/core/runtime/1.0.0"
+            class="org.muml.verification.core.runtime.RuntimePackage"
+            genModel="model/RuntimeModel.genmodel"/>
+   </extension>
+   <extension
+         point="org.muml.emm.migrator">
+      <Migrator
+            file="model/RuntimeModel.migrator">
+      </Migrator>
+   </extension>
+
+</plugin>

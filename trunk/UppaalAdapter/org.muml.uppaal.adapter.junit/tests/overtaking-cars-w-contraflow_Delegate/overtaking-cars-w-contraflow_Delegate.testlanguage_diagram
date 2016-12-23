@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.muml.testlanguage="http://www.muml.org/testlanguage/1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_vpdr8I9tEeWpFeLihqqhEw" type="TestLanguage" name="overtaking-cars-w-contraflow_Delegate.testlanguage_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_wjMwUI9tEeWpFeLihqqhEw" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_wjNXYI9tEeWpFeLihqqhEw" type="5003"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_wjNXYY9tEeWpFeLihqqhEw" type="7001">
+      <children xmi:type="notation:Shape" xmi:id="_wjRBwI9tEeWpFeLihqqhEw" type="3002" fontName="Segoe UI">
+        <children xmi:type="notation:DecorationNode" xmi:id="_wjRBwo9tEeWpFeLihqqhEw" type="5002"/>
+        <element xmi:type="org.muml.testlanguage:Output" href="overtaking-cars-w-contraflow_Delegate.testlanguage#//@nodes.0/@outputs[name='model']"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wjRBwY9tEeWpFeLihqqhEw"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_wjNXYo9tEeWpFeLihqqhEw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_wjNXY49tEeWpFeLihqqhEw"/>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_wjMwUY9tEeWpFeLihqqhEw"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_wjMwUo9tEeWpFeLihqqhEw" fontName="Segoe UI"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_wjMwU49tEeWpFeLihqqhEw"/>
+    <element xmi:type="org.muml.testlanguage:Node" href="overtaking-cars-w-contraflow_Delegate.testlanguage#//@nodes.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wjMwVI9tEeWpFeLihqqhEw" x="88" y="165"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_w2SEYI9tEeWpFeLihqqhEw" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_w2SrcI9tEeWpFeLihqqhEw" type="5003"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_w2SrcY9tEeWpFeLihqqhEw" type="7001">
+      <children xmi:type="notation:Shape" xmi:id="_w2UgoI9tEeWpFeLihqqhEw" type="3001" fontName="Segoe UI">
+        <children xmi:type="notation:DecorationNode" xmi:id="_w2VHsI9tEeWpFeLihqqhEw" type="5001"/>
+        <element xmi:type="org.muml.testlanguage:Input" href="overtaking-cars-w-contraflow_Delegate.testlanguage#//@nodes.1/@inputs[name='muml']"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_w2UgoY9tEeWpFeLihqqhEw"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_w2VHsY9tEeWpFeLihqqhEw" type="3001" fontName="Segoe UI">
+        <children xmi:type="notation:DecorationNode" xmi:id="_w2VuwI9tEeWpFeLihqqhEw" type="5001"/>
+        <element xmi:type="org.muml.testlanguage:Input" href="overtaking-cars-w-contraflow_Delegate.testlanguage#//@nodes.1/@inputs[name='options']"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_w2VHso9tEeWpFeLihqqhEw"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_w2VuwY9tEeWpFeLihqqhEw" type="3002" fontName="Segoe UI">
+        <children xmi:type="notation:DecorationNode" xmi:id="_w2Vuw49tEeWpFeLihqqhEw" type="5002"/>
+        <element xmi:type="org.muml.testlanguage:Output" href="overtaking-cars-w-contraflow_Delegate.testlanguage#//@nodes.1/@outputs[name='results']"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_w2Vuwo9tEeWpFeLihqqhEw"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_w2Srco9tEeWpFeLihqqhEw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_w2Src49tEeWpFeLihqqhEw"/>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_w2SEYY9tEeWpFeLihqqhEw"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_w2SEYo9tEeWpFeLihqqhEw" fontName="Segoe UI"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_w2SEY49tEeWpFeLihqqhEw"/>
+    <element xmi:type="org.muml.testlanguage:Node" href="overtaking-cars-w-contraflow_Delegate.testlanguage#//@nodes.1"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_w2SEZI9tEeWpFeLihqqhEw" x="326" y="149"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_xNQZ8I9tEeWpFeLihqqhEw" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_xNQZ9Y9tEeWpFeLihqqhEw" type="5003"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_xNQZ9o9tEeWpFeLihqqhEw" type="7001">
+      <children xmi:type="notation:Shape" xmi:id="_xNSPII9tEeWpFeLihqqhEw" type="3001" fontName="Segoe UI">
+        <children xmi:type="notation:DecorationNode" xmi:id="_xNS2MI9tEeWpFeLihqqhEw" type="5001"/>
+        <element xmi:type="org.muml.testlanguage:Input" href="overtaking-cars-w-contraflow_Delegate.testlanguage#//@nodes.2/@inputs[name='property_result_repository']"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xNSPIY9tEeWpFeLihqqhEw"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_xNQZ949tEeWpFeLihqqhEw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_xNQZ-I9tEeWpFeLihqqhEw"/>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_xNQZ8Y9tEeWpFeLihqqhEw"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_xNQZ8o9tEeWpFeLihqqhEw" fontName="Segoe UI"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_xNQZ849tEeWpFeLihqqhEw"/>
+    <element xmi:type="org.muml.testlanguage:Node" href="overtaking-cars-w-contraflow_Delegate.testlanguage#//@nodes.2"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xNQZ9I9tEeWpFeLihqqhEw" x="578" y="167"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_vpdr8Y9tEeWpFeLihqqhEw"/>
+  <element xmi:type="org.muml.testlanguage:TestCase" href="overtaking-cars-w-contraflow_Delegate.testlanguage#/"/>
+  <edges xmi:type="notation:Connector" xmi:id="_xkl74I9tEeWpFeLihqqhEw" type="4001" source="_wjRBwI9tEeWpFeLihqqhEw" target="_w2UgoI9tEeWpFeLihqqhEw">
+    <styles xmi:type="notation:FontStyle" xmi:id="_xkl74Y9tEeWpFeLihqqhEw" fontName="Segoe UI"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xkl74o9tEeWpFeLihqqhEw" points="[50, 0, -163, 16]$[188, -16, -25, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xko_MI9tEeWpFeLihqqhEw"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xko_MY9tEeWpFeLihqqhEw"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_x7agcI9tEeWpFeLihqqhEw" type="4001" source="_w2VuwY9tEeWpFeLihqqhEw" target="_xNSPII9tEeWpFeLihqqhEw">
+    <styles xmi:type="notation:FontStyle" xmi:id="_x7agcY9tEeWpFeLihqqhEw" fontName="Segoe UI"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_x7agco9tEeWpFeLihqqhEw" points="[25, 0, -227, -8]$[177, 8, -75, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_x7c8sI9tEeWpFeLihqqhEw"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_x7djwI9tEeWpFeLihqqhEw"/>
+  </edges>
+</notation:Diagram>

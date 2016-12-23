@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+
+  <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+    <propertyContributor
+          contributorId="org.muml.ape.contributor">
+       <propertyCategory
+             category="domain">
+       </propertyCategory>
+       <propertyCategory
+             category="default">
+       </propertyCategory>
+       <propertyCategory
+             category="extended">
+       </propertyCategory>
+       <propertyCategory
+             category="advanced">
+       </propertyCategory>
+    </propertyContributor>
+  </extension>
+
+
+
+<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs contributorId="org.muml.ape.contributor">
+          <propertyTab
+             category="domain"
+             id="property.tab.psm"
+             label="PSM"/>
+          
+      </propertyTabs>
+  </extension>
+
+
+
+
+  <extension point="org.eclipse.ui.views.properties.tabbed.propertySections"> 
+      <propertySections contributorId="org.muml.ape.contributor">
+          <propertySection
+            class="org.muml.ape.runtime.sections.ObjectPropertySection"
+            filter="org.muml.psm.properties.tabs.Property_tab_psmTabElementFilter"
+            id="property.tab.psm"
+            tab="property.tab.psm">
+             <input
+               type="org.eclipse.emf.ecore.EObject">
+             </input>
+          </propertySection>
+         
+      </propertySections>
+  </extension>
+
+
+
+ <extension point="org.muml.ape.runtime.propertyEditors">
+    <propertyEditors>
+    
+       <propertyEditor
+             factory="org.muml.psm.properties.realtimestatechartparameterbinding.editor.APICallParameterBindingEditor$Factory"
+             type="http://www.muml.org/psm/realtimestatechart/realtimestatechartparameterbinding/1.0.0#APICallParameterBinding">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.psm.properties.realtimestatechartparameterbinding.editor.TimeParameterBindingEditor$Factory"
+             type="http://www.muml.org/psm/realtimestatechart/realtimestatechartparameterbinding/1.0.0#TimeParameterBinding">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.psm.properties.properties.editor.WCETEditor$Factory"
+             type="http://www.muml.org/psm/properties/1.0.0#WCET">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.psm.properties.properties.editor.RequiredMemoryEditor$Factory"
+             type="http://www.muml.org/psm/properties/1.0.0#RequiredMemory">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.psm.properties.properties.editor.SchedulingEditor$Factory"
+             type="http://www.muml.org/psm/properties/1.0.0#Scheduling">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.psm.properties.properties.editor.MessageFrameEditor$Factory"
+             type="http://www.muml.org/psm/properties/1.0.0#MessageFrame">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.psm.properties.properties.editor.CANMessageFrameEditor$Factory"
+             type="http://www.muml.org/psm/properties/1.0.0#CANMessageFrame">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.psm.properties.psm.editor.ImportEditor$Factory"
+             type="http://www.muml.org/psm/1.0.0#Import">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.psm.properties.psm_realtimestatechart.editor.ParameterizedRealtimeStatechartEditor$Factory"
+             type="http://www.muml.org/psm/realtimestatechart/1.0.0#ParameterizedRealtimeStatechart">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.psm.properties.psm_realtimestatechart.editor.APICallEditor$Factory"
+             type="http://www.muml.org/psm/realtimestatechart/1.0.0#APICall">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.psm.properties.allocation.editor.SystemAllocationEditor$Factory"
+             type="http://www.muml.org/psm/allocation/1.0.0#SystemAllocation">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.psm.properties.allocation.editor.AllocationEditor$Factory"
+             type="http://www.muml.org/psm/allocation/1.0.0#Allocation">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.psm.properties.allocation.editor.AssemblyConnectorInstanceAllocationEditor$Factory"
+             type="http://www.muml.org/psm/allocation/1.0.0#AssemblyConnectorInstanceAllocation">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.psm.properties.portapimapping.editor.PortApiMappingEditor$Factory"
+             type="http://www.muml.org/psm/portapimapping/1.0.0#PortApiMapping">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.psm.properties.portapimapping.editor.MappingRepositoryEditor$Factory"
+             type="http://www.muml.org/psm/portapimapping/1.0.0#MappingRepository">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.psm.properties.realtimestatechartparameter.editor.APICallParameterEditor$Factory"
+             type="http://www.muml.org/psm/realtimestatechart/realtimestatechartparameter/1.0.0#APICallParameter">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.psm.properties.realtimestatechartparameter.editor.TimeParameterEditor$Factory"
+             type="http://www.muml.org/psm/realtimestatechart/realtimestatechartparameter/1.0.0#TimeParameter">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.psm.properties.apiexpressions.editor.APICallExpressionEditor$Factory"
+             type="http://www.muml.org/psm/apiexpressions/1.0.0#APICallExpression">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.psm.properties.apiexpressions.editor.EnumerationValueExpressionEditor$Factory"
+             type="http://www.muml.org/psm/apiexpressions/1.0.0#EnumerationValueExpression">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.psm.properties.apiexpressions.editor.ContinuousPortExpressionEditor$Factory"
+             type="http://www.muml.org/psm/apiexpressions/1.0.0#ContinuousPortExpression">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.psm.properties.psm_instance.editor.ParameterisableDiscreteSinglePortInstanceEditor$Factory"
+             type="http://www.muml.org/psm/instance/1.0.0#ParameterisableDiscreteSinglePortInstance">
+       </propertyEditor>
+    
+    </propertyEditors>
+ </extension>
+
+
+ <extension
+       point="org.muml.ape.runtime.metamodelContributor">
+    <metamodel
+          contributor="org.muml.psm.properties.metamodel.MetamodelContributor">
+    </metamodel>
+ </extension>
+
+
+ <extension
+       point="org.muml.ape.runtime.creationConstraintContributor">
+    <constraint
+          contributor="org.muml.psm.properties.constraint.CreationConstraintContributor">
+    </constraint>
+ </extension>
+
+</plugin>

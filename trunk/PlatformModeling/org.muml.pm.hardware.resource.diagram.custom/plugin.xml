@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
+      <editpartProvider
+            class="org.muml.pm.hardware.resource.diagram.custom.providers.CustomResourceEditPartProvider">
+         <Priority
+               name="Low">
+         </Priority>
+      </editpartProvider>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="org.muml.pm.hardware.resource.diagram.custom.objectContribution1"
+            objectClass="org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationResourceEditPart">
+         <action
+               class="org.muml.pm.hardware.resource.diagram.custom.dialog.OpenProtocolDialog"
+               id="org.muml.pm.hardware.resource.diagram.custom.action1"
+               label="Choose Communication Protocol ">
+         </action>
+      </objectContribution>
+      <objectContribution
+            adaptable="false"
+            id="org.muml.pm.hardware.resource.diagram.custom.objectContribution1"
+            objectClass="org.muml.pm.hardware.resource.diagram.edit.parts.BusEditPart">
+         <action
+               class="org.muml.pm.hardware.resource.diagram.custom.dialog.OpenProtocolDialog"
+               id="org.muml.pm.hardware.resource.diagram.custom.action1"
+               label="Choose Communication Protocol ">
+         </action>
+      </objectContribution>
+      <objectContribution
+            adaptable="false"
+            id="org.muml.pm.hardware.resource.diagram.custom.objectContribution1"
+            objectClass="org.muml.pm.hardware.resource.diagram.edit.parts.LinkEditPart">
+         <action
+               class="org.muml.pm.hardware.resource.diagram.custom.dialog.OpenProtocolDialog"
+               id="org.muml.pm.hardware.resource.diagram.custom.action1"
+               label="Choose Communication Protocol ">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>

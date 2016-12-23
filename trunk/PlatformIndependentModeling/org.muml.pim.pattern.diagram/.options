@@ -1,0 +1,7 @@
+# Tracing options for the org.muml.pim.pattern.diagram plug-in
+
+# Common issues
+org.muml.pim.pattern.diagram/debug=false
+
+# Visual IDs
+org.muml.pim.pattern.diagram/debug/visualID=false

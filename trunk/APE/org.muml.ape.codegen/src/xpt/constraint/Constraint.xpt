@@ -1,0 +1,44 @@
+«IMPORT ape»
+«EXTENSION Metamodel»
+
+
+«DEFINE Constraint FOR PropertyGenerator»
+
+public class CreationConstraintContributor
+	extends org.muml.ape.runtime.constraint.DefaultCreationConstraintContributor {
+	
+	public CreationConstraintContributor() {
+		«FOREACH packages.classes.orderedElements.typeSelect(Property) AS property»
+			«EXPAND oppositeConstraintFilter(property.genFeature.ecoreFeature, property.clazz.genClass.ecoreClass, this) FOREACH property.creationOppositeConstraint.filters»
+		«ENDFOREACH»
+	}
+
+}
+
+«ENDDEFINE»
+
+«DEFINE oppositeConstraintFilter(ecore::EStructuralFeature feature, ecore::EClass concreteClass, PropertyGenerator generator) FOR Filter»
+«ENDDEFINE»
+
+«DEFINE oppositeConstraintFilter(ecore::EReference reference, ecore::EClass concreteClass, PropertyGenerator generator) FOR OCLFilter»
+	{
+		final org.eclipse.emf.ecore.EClass myClass = «getGenClassifier(concreteClass, { generator }.union(generator.referencedGenerators).genModel).genClassLiteral()»;
+		final org.eclipse.emf.ecore.EReference opposite = «getGenFeature(reference.eOpposite, { generator }.union(generator.referencedGenerators).genModel).genFeatureLiteral()»;
+		final org.eclipse.emf.ecore.EClass oppositeClass = «getGenClassifier(reference.eOpposite.eContainingClass, { generator }.union(generator.referencedGenerators).genModel).genClassLiteral()»;
+		final org.eclipse.ocl.ecore.OCLExpression expression = org.muml.ape.runtime.RuntimePlugin.createOCLExpression("«expression»", opposite, oppositeClass);
+		if (expression != null) {
+			final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = org.muml.ape.runtime.RuntimePlugin.OCL_ECORE.createQuery(expression);
+			org.muml.ape.runtime.filter.ICreationFilter filter = new org.muml.ape.runtime.filter.ICreationFilter() {
+	
+				@Override
+				public boolean select(Object object, org.eclipse.emf.ecore.EClass eClass) {
+					return !eClass.isSuperTypeOf(myClass) || (object != null && Boolean.TRUE.equals(query.evaluate(object)));
+				}
+	
+			};
+			if (filter != null) {
+				addConstraintFilter(opposite, filter);
+			}
+		}
+	}
+«ENDDEFINE»

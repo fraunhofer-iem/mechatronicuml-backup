@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="org.muml.simulink.adapter.reconfiguration.wizard"
+         name="Reconfiguration MUML to MATLAB/Simulink Transformation"
+         point="org.eclipse.ui.exportWizards">
+      <wizard
+            class="org.muml.simulink.adapter.reconfiguration.wizard.ReconfigurationWizard"
+            id="org.muml.simulink.adapter.reconfiguration.wizard.transformation"
+            name="Rekonfiguration MUML to MATLAB/Simulink Transformation">
+         <selection
+               class="org.eclipse.core.resources.IResource"
+               name="*.fujaba">
+         </selection>
+      </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.muml?endof=utilities">
+         <command
+               commandId="org.eclipse.ui.file.export"
+               label="Reconfiguration Transform to MATLAB/Simulink"
+               style="push">
+            <parameter
+                  name="exportWizardId"
+                  value="org.muml.simulink.adapter.reconfiguration.wizard.transformation">
+            </parameter>
+            <visibleWhen
+                  checkEnabled="true">
+               <reference
+                     definitionId="org.muml.expression.mumlfile">
+               </reference>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+
+</plugin>

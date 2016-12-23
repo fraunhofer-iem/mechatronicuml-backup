@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.muml:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.muml="http://www.muml.org/ape/1.0.0" xmi:id="_VaCckMwbEeSjx7OWZCcdLw" contributorId="org.muml.ape.contributor">
+  <reconciler xmi:id="_VaCckcwbEeSjx7OWZCcdLw"/>
+  <genModel href="actionlanguage.genmodel#/"/>
+  <referencedGenerators href="../../org.muml.pim/model/pim.propsheet#_VZIdoMwbEeSjx7OWZCcdLw"/>
+  <plugin xmi:id="_VaCckswbEeSjx7OWZCcdLw" id="org.muml.pim.actionlanguage.edit.properties" name="ActionLanguage Tabbed Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.5.0.qualifier">
+    <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
+    <requiredBundles>org.eclipse.core.runtime</requiredBundles>
+    <requiredBundles>org.eclipse.emf.edit</requiredBundles>
+    <requiredBundles>org.eclipse.ui</requiredBundles>
+    <requiredBundles>org.muml.pim.actionlanguage.edit</requiredBundles>
+    <requiredBundles>org.muml.pim.actionlanguage</requiredBundles>
+    <requiredBundles>org.muml.ape.runtime</requiredBundles>
+    <requiredBundles>org.muml.pim.edit</requiredBundles>
+    <requiredBundles>org.muml.pim.edit.properties</requiredBundles>
+  </plugin>
+  <defaultTab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+  <packages xmi:id="_VaCck8wbEeSjx7OWZCcdLw">
+    <genPackage href="actionlanguage.genmodel#//actionlanguage"/>
+    <classes xmi:id="_VaCclMwbEeSjx7OWZCcdLw">
+      <genClass href="actionlanguage.genmodel#//actionlanguage/Block"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VaCclcwbEeSjx7OWZCcdLw">
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/Block/expressions"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor" xmi:id="_VaDDoMwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:PropertyCategory" xmi:id="_VaDDocwbEeSjx7OWZCcdLw" title="Lists" properties="_VaCclcwbEeSjx7OWZCcdLw"/>
+    </classes>
+    <classes xmi:id="_VaDDoswbEeSjx7OWZCcdLw">
+      <genClass href="actionlanguage.genmodel#//actionlanguage/Loop"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VaDDo8wbEeSjx7OWZCcdLw">
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/Loop/block"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor" xmi:id="_VaDDpMwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VaDDpcwbEeSjx7OWZCcdLw">
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/Loop/loopTest"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor" xmi:id="_VaDDpswbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_VaDDp8wbEeSjx7OWZCcdLw" superClasses="_VaDDoswbEeSjx7OWZCcdLw">
+      <genClass href="actionlanguage.genmodel#//actionlanguage/WhileLoop"/>
+    </classes>
+    <classes xmi:id="_VaDDqMwbEeSjx7OWZCcdLw" superClasses="_VaDDoswbEeSjx7OWZCcdLw">
+      <genClass href="actionlanguage.genmodel#//actionlanguage/DoWhileLoop"/>
+    </classes>
+    <classes xmi:id="_VaDDqcwbEeSjx7OWZCcdLw">
+      <genClass href="actionlanguage.genmodel#//actionlanguage/Assignment"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VaDDqswbEeSjx7OWZCcdLw">
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/Assignment/assignOperator"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor" xmi:id="_VaDDq8wbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VaDDrMwbEeSjx7OWZCcdLw">
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/Assignment/rhs_assignExpression"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor" xmi:id="_VaDDrcwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VaDDrswbEeSjx7OWZCcdLw">
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/Assignment/incrementDecrementOperator"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor" xmi:id="_VaDDr8wbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VaDDsMwbEeSjx7OWZCcdLw">
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/Assignment/lhs_typedNamedElementExpression"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor" xmi:id="_VaDqsMwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_VaDqscwbEeSjx7OWZCcdLw" superClasses="_VaDDoswbEeSjx7OWZCcdLw">
+      <genClass href="actionlanguage.genmodel#//actionlanguage/ForLoop"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VaDqsswbEeSjx7OWZCcdLw">
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/ForLoop/initializeExpression"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor" xmi:id="_VaDqs8wbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VaDqtMwbEeSjx7OWZCcdLw">
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/ForLoop/countingExpression"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor" xmi:id="_VaDqtcwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_VaDqtswbEeSjx7OWZCcdLw">
+      <genClass href="actionlanguage.genmodel#//actionlanguage/IfStatement"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VaDqt8wbEeSjx7OWZCcdLw">
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/IfStatement/ifCondition"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor" xmi:id="_VaDquMwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VaDqucwbEeSjx7OWZCcdLw">
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/IfStatement/ifBlock"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor" xmi:id="_VaDquswbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VaDqv8wbEeSjx7OWZCcdLw">
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/IfStatement/elseBlock"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor" xmi:id="_VaDqwMwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:PropertyCategory" xmi:id="_VaDqwcwbEeSjx7OWZCcdLw" title="Lists"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/IfStatement/elseIfStatements"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_VaERwMwbEeSjx7OWZCcdLw">
+      <genClass href="actionlanguage.genmodel#//actionlanguage/OperationCall"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VaERwcwbEeSjx7OWZCcdLw">
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/OperationCall/operation"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_VaERwswbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VaERw8wbEeSjx7OWZCcdLw">
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/OperationCall/parameterBinding"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor" xmi:id="_VaERxMwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:PropertyCategory" xmi:id="_VaERxcwbEeSjx7OWZCcdLw" title="Lists" properties="_VaERw8wbEeSjx7OWZCcdLw"/>
+    </classes>
+    <classes xmi:id="_VaERxswbEeSjx7OWZCcdLw">
+      <genClass href="actionlanguage.genmodel#//actionlanguage/ReturnStatement"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VaERx8wbEeSjx7OWZCcdLw">
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/ReturnStatement/expression"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor" xmi:id="_VaERyMwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_VaERycwbEeSjx7OWZCcdLw">
+      <genClass href="actionlanguage.genmodel#//actionlanguage/TriggerMessageExpression"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VaERyswbEeSjx7OWZCcdLw">
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/TriggerMessageExpression/messageType"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_VaERy8wbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VaERzMwbEeSjx7OWZCcdLw">
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/TriggerMessageExpression/parameter"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_VaERzcwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_VaERzswbEeSjx7OWZCcdLw">
+      <genClass href="actionlanguage.genmodel#//actionlanguage/DiscreteInteractionEndpointReference"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VaERz8wbEeSjx7OWZCcdLw">
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/DiscreteInteractionEndpointReference/typedNamedElementExpression"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor" xmi:id="_VaER0MwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VaER0cwbEeSjx7OWZCcdLw">
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/DiscreteInteractionEndpointReference/position"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor" xmi:id="_VaE40MwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_VaE40cwbEeSjx7OWZCcdLw">
+      <genClass href="actionlanguage.genmodel#//actionlanguage/PositionSelector"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VaE40swbEeSjx7OWZCcdLw">
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/PositionSelector/kind"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor" xmi:id="_VaE408wbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VaE41MwbEeSjx7OWZCcdLw">
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/PositionSelector/successor"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor" xmi:id="_VaE41cwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_VaE41swbEeSjx7OWZCcdLw">
+      <genClass href="actionlanguage.genmodel#//actionlanguage/LocalVariableDeclarationStatement"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VaE418wbEeSjx7OWZCcdLw">
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/LocalVariableDeclarationStatement/variable"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor" xmi:id="_VaE42MwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_VaE42cwbEeSjx7OWZCcdLw">
+      <genClass href="actionlanguage.genmodel#//actionlanguage/TypedNamedElementExpression"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VaE42swbEeSjx7OWZCcdLw" tooltip="" initializeOCLExpression="">
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/TypedNamedElementExpression/typedNamedElement"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_VaE428wbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VaE43MwbEeSjx7OWZCcdLw" tooltip="" initializeOCLExpression="">
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/TypedNamedElementExpression/elementAccessors"/>
+        <readOnlyFilters xsi:type="org.muml:OCLFilter" expression="true"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor" xmi:id="_VaE43cwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:PropertyCategory" xmi:id="_VaE43swbEeSjx7OWZCcdLw" title="Lists" properties="_VaE43MwbEeSjx7OWZCcdLw"/>
+    </classes>
+    <classes xmi:id="_VaE438wbEeSjx7OWZCcdLw">
+      <genClass href="actionlanguage.genmodel#//actionlanguage/ArrayInitializeExpression"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VaE44MwbEeSjx7OWZCcdLw">
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/ArrayInitializeExpression/expressions"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor" xmi:id="_VaFf4MwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:PropertyCategory" xmi:id="_VaFf4cwbEeSjx7OWZCcdLw" title="Lists" properties="_VaE44MwbEeSjx7OWZCcdLw"/>
+    </classes>
+    <classes xmi:id="_VaFf4swbEeSjx7OWZCcdLw">
+      <genClass href="actionlanguage.genmodel#//actionlanguage/NondeterministicChoiceExpression"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VaFf48wbEeSjx7OWZCcdLw">
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/NondeterministicChoiceExpression/range"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor" xmi:id="_VaFf5MwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VaFf5cwbEeSjx7OWZCcdLw">
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/NondeterministicChoiceExpression/dataType"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_VaFf5swbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_VaFf6swbEeSjx7OWZCcdLw">
+      <genClass href="actionlanguage.genmodel#//actionlanguage/TimeValueExpression"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VaFf68wbEeSjx7OWZCcdLw">
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/TimeValueExpression/timeValue"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_VaFf7MwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_VaFf7cwbEeSjx7OWZCcdLw">
+      <genClass href="actionlanguage.genmodel#//actionlanguage/TypeCastExpression"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VaFf7swbEeSjx7OWZCcdLw">
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/TypeCastExpression/dataType"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_VaFf78wbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_VaFf8MwbEeSjx7OWZCcdLw">
+      <genClass href="actionlanguage.genmodel#//actionlanguage/ElementAccessorExpression"/>
+    </classes>
+    <classes xmi:id="_VaFf8cwbEeSjx7OWZCcdLw" superClasses="_VaFf8MwbEeSjx7OWZCcdLw">
+      <genClass href="actionlanguage.genmodel#//actionlanguage/ArrayIndexExpression"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VaFf8swbEeSjx7OWZCcdLw" tooltip="" initializeOCLExpression="">
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/ArrayIndexExpression/index"/>
+        <readOnlyFilters xsi:type="org.muml:OCLFilter" expression="true"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor" xmi:id="_VaGG8MwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_VaGG8cwbEeSjx7OWZCcdLw" superClasses="_VaFf8MwbEeSjx7OWZCcdLw">
+      <genClass href="actionlanguage.genmodel#//actionlanguage/AttributeAccessorExpression"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VaGG8swbEeSjx7OWZCcdLw">
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/AttributeAccessorExpression/attribute"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_VaGG88wbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+    </classes>
+    <classes>
+      <genClass href="actionlanguage.genmodel#//actionlanguage/ElseIfStatement"/>
+      <orderedElements xsi:type="org.muml:Property" initializeOCLExpression="">
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/ElseIfStatement/elseIfCondition"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/ElseIfStatement/elseIfBlock"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor"/>
+      </orderedElements>
+    </classes>
+  </packages>
+</org.muml:PropertyGenerator>

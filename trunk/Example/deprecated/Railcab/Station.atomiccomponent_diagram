@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component="http://www.fujaba.de/muml/model/component/0.3.1" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.3.1" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_wejNoNi3EeGwn9m4SbJYXw" type="Atomiccomponent" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_0HtssNi3EeGwn9m4SbJYXw" type="2005" fontName="Sans" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_0Hvh4Ni3EeGwn9m4SbJYXw" type="5011"/>
+    <element xmi:type="component:AtomicComponent" href="Railcab.fujaba#//@categories.1/@modelElements.2"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0Htssdi3EeGwn9m4SbJYXw" x="95" y="65" width="382" height="194"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_weoGINi3EeGwn9m4SbJYXw"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="Railcab.fujaba#_B5tSgdcvEeG4XKjrX38Blg"/>
+</notation:Diagram>
