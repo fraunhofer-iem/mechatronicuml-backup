@@ -206,58 +206,58 @@
           </bound>
         </clockConstraints>
         <action xmi:id="_B-efEKraEeSKOswDMkFBbA" name="colorChange">
-          <expressions xsi:type="actionlanguage:Block" xmi:id="_AKpqgLE8EeS4YZ-tAGs1dg">
-            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_AKpqgbE8EeS4YZ-tAGs1dg" assignOperator=":=">
-              <rhs_assignExpression xsi:type="actionlanguage:NondeterministicChoiceExpression" xmi:id="_AKpqgrE8EeS4YZ-tAGs1dg" dataType="_FB0TRpJ7EeSSMde45fnrcg">
-                <range xmi:id="_AKpqg7E8EeS4YZ-tAGs1dg" lowerBound="111" upperBound="222"/>
+          <expressions xsi:type="actionlanguage:Block" xmi:id="_2r3Q0MkjEeafhN2WTsB3OA">
+            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_2r3Q0ckjEeafhN2WTsB3OA" assignOperator=":=">
+              <rhs_assignExpression xsi:type="actionlanguage:NondeterministicChoiceExpression" xmi:id="_2r3Q0skjEeafhN2WTsB3OA" dataType="_FB0TRpJ7EeSSMde45fnrcg">
+                <range xmi:id="_2r3Q08kjEeafhN2WTsB3OA" lowerBound="111" upperBound="222"/>
               </rhs_assignExpression>
-              <lhs_typedNamedElementExpression xmi:id="_AKpqhLE8EeS4YZ-tAGs1dg" typedNamedElement="_MuAI0KMDEeSbmbyTJYAEVw"/>
+              <lhs_typedNamedElementExpression xmi:id="_2r3Q1MkjEeafhN2WTsB3OA" typedNamedElement="_MuAI0KMDEeSbmbyTJYAEVw"/>
             </expressions>
-            <expressions xsi:type="actionlanguage:IfStatement" xmi:id="_AKpqhbE8EeS4YZ-tAGs1dg">
-              <ifCondition xsi:type="common:ComparisonExpression" xmi:id="_AKpqhrE8EeS4YZ-tAGs1dg" operator="EQUAL">
-                <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_AKpqh7E8EeS4YZ-tAGs1dg" typedNamedElement="_MuAI0KMDEeSbmbyTJYAEVw"/>
-                <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_AKpqiLE8EeS4YZ-tAGs1dg" typedNamedElement="_5dUiUKMCEeSbmbyTJYAEVw"/>
+            <expressions xsi:type="actionlanguage:IfStatement" xmi:id="_2r3Q1ckjEeafhN2WTsB3OA">
+              <ifCondition xsi:type="common:ComparisonExpression" xmi:id="_2r3Q1skjEeafhN2WTsB3OA" operator="EQUAL">
+                <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_2r3Q18kjEeafhN2WTsB3OA" typedNamedElement="_MuAI0KMDEeSbmbyTJYAEVw"/>
+                <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_2r3Q2MkjEeafhN2WTsB3OA" typedNamedElement="_5dUiUKMCEeSbmbyTJYAEVw"/>
               </ifCondition>
-              <ifBlock xmi:id="_AKpqibE8EeS4YZ-tAGs1dg">
-                <expressions xsi:type="actionlanguage:Assignment" xmi:id="_AKpqirE8EeS4YZ-tAGs1dg" assignOperator=":=">
-                  <rhs_assignExpression xsi:type="common:LiteralExpression" xmi:id="_AKpqi7E8EeS4YZ-tAGs1dg" value="true"/>
-                  <lhs_typedNamedElementExpression xmi:id="_AKpqjLE8EeS4YZ-tAGs1dg" typedNamedElement="_e4UZoKMCEeSbmbyTJYAEVw"/>
+              <ifBlock xmi:id="_2r3Q2ckjEeafhN2WTsB3OA">
+                <expressions xsi:type="actionlanguage:Assignment" xmi:id="_2r3Q2skjEeafhN2WTsB3OA" assignOperator=":=">
+                  <rhs_assignExpression xsi:type="common:LiteralExpression" xmi:id="_2r3Q28kjEeafhN2WTsB3OA" value="true"/>
+                  <lhs_typedNamedElementExpression xmi:id="_2r3Q3MkjEeafhN2WTsB3OA" typedNamedElement="_e4UZoKMCEeSbmbyTJYAEVw"/>
                 </expressions>
               </ifBlock>
             </expressions>
-            <expressions xsi:type="actionlanguage:IfStatement" xmi:id="_AKpqjbE8EeS4YZ-tAGs1dg">
-              <ifCondition xsi:type="common:ComparisonExpression" xmi:id="_AKpqjrE8EeS4YZ-tAGs1dg" operator="EQUAL">
-                <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_AKpqj7E8EeS4YZ-tAGs1dg" typedNamedElement="_MuAI0KMDEeSbmbyTJYAEVw"/>
-                <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_AKpqkLE8EeS4YZ-tAGs1dg" typedNamedElement="_5dUiUKMCEeSbmbyTJYAEVw"/>
+            <expressions xsi:type="actionlanguage:IfStatement" xmi:id="_2r3Q3ckjEeafhN2WTsB3OA">
+              <ifCondition xsi:type="common:ComparisonExpression" xmi:id="_2r3Q3skjEeafhN2WTsB3OA" operator="EQUAL">
+                <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_2r3Q38kjEeafhN2WTsB3OA" typedNamedElement="_MuAI0KMDEeSbmbyTJYAEVw"/>
+                <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_2r3Q4MkjEeafhN2WTsB3OA" typedNamedElement="_5dUiUKMCEeSbmbyTJYAEVw"/>
               </ifCondition>
-              <ifBlock xmi:id="_AKpqkbE8EeS4YZ-tAGs1dg">
-                <expressions xsi:type="actionlanguage:Assignment" xmi:id="_AKpqkrE8EeS4YZ-tAGs1dg" assignOperator=":=">
-                  <rhs_assignExpression xsi:type="common:LiteralExpression" xmi:id="_AKpqk7E8EeS4YZ-tAGs1dg" value="1"/>
-                  <lhs_typedNamedElementExpression xmi:id="_AKpqlLE8EeS4YZ-tAGs1dg" typedNamedElement="_YmU3IKMCEeSbmbyTJYAEVw"/>
+              <ifBlock xmi:id="_2r3Q4ckjEeafhN2WTsB3OA">
+                <expressions xsi:type="actionlanguage:Assignment" xmi:id="_2r3Q4skjEeafhN2WTsB3OA" assignOperator=":=">
+                  <rhs_assignExpression xsi:type="common:LiteralExpression" xmi:id="_2r3Q48kjEeafhN2WTsB3OA" value="1"/>
+                  <lhs_typedNamedElementExpression xmi:id="_2r3Q5MkjEeafhN2WTsB3OA" typedNamedElement="_YmU3IKMCEeSbmbyTJYAEVw"/>
                 </expressions>
               </ifBlock>
             </expressions>
-            <expressions xsi:type="actionlanguage:IfStatement" xmi:id="_AKpqlbE8EeS4YZ-tAGs1dg">
-              <ifCondition xsi:type="common:ComparisonExpression" xmi:id="_AKpqlrE8EeS4YZ-tAGs1dg" operator="EQUAL">
-                <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_AKpql7E8EeS4YZ-tAGs1dg" typedNamedElement="_MuAI0KMDEeSbmbyTJYAEVw"/>
-                <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_AKpqmLE8EeS4YZ-tAGs1dg" typedNamedElement="_9iJpsKMCEeSbmbyTJYAEVw"/>
+            <expressions xsi:type="actionlanguage:IfStatement" xmi:id="_2r3Q5ckjEeafhN2WTsB3OA">
+              <ifCondition xsi:type="common:ComparisonExpression" xmi:id="_2r3Q5skjEeafhN2WTsB3OA" operator="EQUAL">
+                <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_2r3Q58kjEeafhN2WTsB3OA" typedNamedElement="_MuAI0KMDEeSbmbyTJYAEVw"/>
+                <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_2r3Q6MkjEeafhN2WTsB3OA" typedNamedElement="_9iJpsKMCEeSbmbyTJYAEVw"/>
               </ifCondition>
-              <ifBlock xmi:id="_AKpqmbE8EeS4YZ-tAGs1dg">
-                <expressions xsi:type="actionlanguage:Assignment" xmi:id="_AKpqmrE8EeS4YZ-tAGs1dg" assignOperator=":=">
-                  <rhs_assignExpression xsi:type="common:LiteralExpression" xmi:id="_AKpqm7E8EeS4YZ-tAGs1dg" value="2"/>
-                  <lhs_typedNamedElementExpression xmi:id="_AKpqnLE8EeS4YZ-tAGs1dg" typedNamedElement="_YmU3IKMCEeSbmbyTJYAEVw"/>
+              <ifBlock xmi:id="_2r3Q6ckjEeafhN2WTsB3OA">
+                <expressions xsi:type="actionlanguage:Assignment" xmi:id="_2r3Q6skjEeafhN2WTsB3OA" assignOperator=":=">
+                  <rhs_assignExpression xsi:type="common:LiteralExpression" xmi:id="_2r3Q68kjEeafhN2WTsB3OA" value="2"/>
+                  <lhs_typedNamedElementExpression xmi:id="_2r3Q7MkjEeafhN2WTsB3OA" typedNamedElement="_YmU3IKMCEeSbmbyTJYAEVw"/>
                 </expressions>
               </ifBlock>
             </expressions>
-            <expressions xsi:type="actionlanguage:IfStatement" xmi:id="_AKpqnbE8EeS4YZ-tAGs1dg">
-              <ifCondition xsi:type="common:ComparisonExpression" xmi:id="_AKpqnrE8EeS4YZ-tAGs1dg" operator="EQUAL">
-                <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_AKpqn7E8EeS4YZ-tAGs1dg" typedNamedElement="_MuAI0KMDEeSbmbyTJYAEVw"/>
-                <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_AKpqoLE8EeS4YZ-tAGs1dg" typedNamedElement="_9iJpsKMCEeSbmbyTJYAEVw"/>
+            <expressions xsi:type="actionlanguage:IfStatement" xmi:id="_2r3Q7ckjEeafhN2WTsB3OA">
+              <ifCondition xsi:type="common:ComparisonExpression" xmi:id="_2r3Q7skjEeafhN2WTsB3OA" operator="EQUAL">
+                <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_2r3Q78kjEeafhN2WTsB3OA" typedNamedElement="_MuAI0KMDEeSbmbyTJYAEVw"/>
+                <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_2r3Q8MkjEeafhN2WTsB3OA" typedNamedElement="_9iJpsKMCEeSbmbyTJYAEVw"/>
               </ifCondition>
-              <ifBlock xmi:id="_AKpqobE8EeS4YZ-tAGs1dg">
-                <expressions xsi:type="actionlanguage:Assignment" xmi:id="_AKpqorE8EeS4YZ-tAGs1dg" assignOperator=":=">
-                  <rhs_assignExpression xsi:type="common:LiteralExpression" xmi:id="_AKpqo7E8EeS4YZ-tAGs1dg" value="true"/>
-                  <lhs_typedNamedElementExpression xmi:id="_AKpqpLE8EeS4YZ-tAGs1dg" typedNamedElement="_e4UZoKMCEeSbmbyTJYAEVw"/>
+              <ifBlock xmi:id="_2r3Q8ckjEeafhN2WTsB3OA">
+                <expressions xsi:type="actionlanguage:Assignment" xmi:id="_2r3Q8skjEeafhN2WTsB3OA" assignOperator=":=">
+                  <rhs_assignExpression xsi:type="common:LiteralExpression" xmi:id="_2r3Q88kjEeafhN2WTsB3OA" value="true"/>
+                  <lhs_typedNamedElementExpression xmi:id="_2r3Q9MkjEeafhN2WTsB3OA" typedNamedElement="_e4UZoKMCEeSbmbyTJYAEVw"/>
                 </expressions>
               </ifBlock>
             </expressions>
@@ -2529,19 +2529,19 @@
           </expression>
         </properties>
       </verificationConstraintRepositories>
-      <roles xmi:id="_V7ls8JKgEeSSMde45fnrcg" connectors="_V7niIZKgEeSSMde45fnrcg" behavior="_17zEoJKhEeSSMde45fnrcg" name="overtakeeR" senderMessageTypes="_dRjDUJKfEeSSMde45fnrcg _efL7IJKfEeSSMde45fnrcg" receiverMessageTypes="_a_7mAJKfEeSSMde45fnrcg _ffloMJKfEeSSMde45fnrcg">
+      <roles xmi:id="_V7ls8JKgEeSSMde45fnrcg" connectors="_V7niIZKgEeSSMde45fnrcg" behavior="_17zEoJKhEeSSMde45fnrcg" name="Overtakee" senderMessageTypes="_dRjDUJKfEeSSMde45fnrcg _efL7IJKfEeSSMde45fnrcg" receiverMessageTypes="_a_7mAJKfEeSSMde45fnrcg _ffloMJKfEeSSMde45fnrcg">
         <cardinality xmi:id="_V7ls8ZKgEeSSMde45fnrcg">
-          <lowerBound xmi:id="_75Hk4MJHEeSFFPWsf1QKow"/>
-          <upperBound xmi:id="_75Hk4cJHEeSFFPWsf1QKow"/>
+          <lowerBound xmi:id="_dS3mIMhQEeaQC5VdJitBwA"/>
+          <upperBound xmi:id="_dS7QgMhQEeaQC5VdJitBwA"/>
         </cardinality>
         <receiverMessageBuffer xmi:id="_itL6sJKhEeSSMde45fnrcg" name="overtakeeRbuf" messageType="_a_7mAJKfEeSSMde45fnrcg _ffloMJKfEeSSMde45fnrcg">
           <bufferSize xmi:id="_kyfaUJKhEeSSMde45fnrcg" value="5"/>
         </receiverMessageBuffer>
       </roles>
-      <roles xmi:id="_V7mUApKgEeSSMde45fnrcg" connectors="_V7niIZKgEeSSMde45fnrcg" behavior="_7MdtAJKhEeSSMde45fnrcg" name="overtakerR" senderMessageTypes="_a_7mAJKfEeSSMde45fnrcg _ffloMJKfEeSSMde45fnrcg" receiverMessageTypes="_dRjDUJKfEeSSMde45fnrcg _efL7IJKfEeSSMde45fnrcg">
+      <roles xmi:id="_V7mUApKgEeSSMde45fnrcg" connectors="_V7niIZKgEeSSMde45fnrcg" behavior="_7MdtAJKhEeSSMde45fnrcg" name="Overtaker" senderMessageTypes="_a_7mAJKfEeSSMde45fnrcg _ffloMJKfEeSSMde45fnrcg" receiverMessageTypes="_dRjDUJKfEeSSMde45fnrcg _efL7IJKfEeSSMde45fnrcg">
         <cardinality xmi:id="_V7m7EJKgEeSSMde45fnrcg">
-          <lowerBound xmi:id="_XDqPgJQlEeSZM-zEIRk3lw"/>
-          <upperBound xmi:id="_XDqPgZQlEeSZM-zEIRk3lw"/>
+          <lowerBound xmi:id="_c-i78MhQEeaQC5VdJitBwA"/>
+          <upperBound xmi:id="_c-ss8MhQEeaQC5VdJitBwA"/>
         </cardinality>
         <receiverMessageBuffer xmi:id="_e57g8JKgEeSSMde45fnrcg" name="overtakerRbuf" messageType="_dRjDUJKfEeSSMde45fnrcg _efL7IJKfEeSSMde45fnrcg">
           <bufferSize xmi:id="_jHyBcJKgEeSSMde45fnrcg" value="5"/>
@@ -2644,16 +2644,16 @@
           </expression>
         </properties>
       </verificationConstraintRepositories>
-      <roles xmi:id="_sgumcJKjEeSSMde45fnrcg" connectors="_sgwbo5KjEeSSMde45fnrcg" behavior="_f9MX8JKkEeSSMde45fnrcg" name="vehicleR" senderMessageTypes="_h8AAQJKfEeSSMde45fnrcg">
+      <roles xmi:id="_sgumcJKjEeSSMde45fnrcg" connectors="_sgwbo5KjEeSSMde45fnrcg" behavior="_f9MX8JKkEeSSMde45fnrcg" name="Vehicle" senderMessageTypes="_h8AAQJKfEeSSMde45fnrcg">
         <cardinality xmi:id="_sgv0kJKjEeSSMde45fnrcg">
-          <lowerBound xmi:id="_rKMwgMJHEeSFFPWsf1QKow"/>
-          <upperBound xmi:id="_rKMwgcJHEeSFFPWsf1QKow"/>
+          <lowerBound xmi:id="_P0LZEMkkEeafhN2WTsB3OA"/>
+          <upperBound xmi:id="_P0T78MkkEeafhN2WTsB3OA"/>
         </cardinality>
       </roles>
-      <roles xmi:id="_sgv0k5KjEeSSMde45fnrcg" connectors="_sgwbo5KjEeSSMde45fnrcg" behavior="_tTuUMJKkEeSSMde45fnrcg" name="sectionR" receiverMessageTypes="_h8AAQJKfEeSSMde45fnrcg">
+      <roles xmi:id="_sgv0k5KjEeSSMde45fnrcg" connectors="_sgwbo5KjEeSSMde45fnrcg" behavior="_tTuUMJKkEeSSMde45fnrcg" name="Section" receiverMessageTypes="_h8AAQJKfEeSSMde45fnrcg">
         <cardinality xmi:id="_sgwboJKjEeSSMde45fnrcg">
-          <lowerBound xmi:id="_r3qTcMJHEeSFFPWsf1QKow"/>
-          <upperBound xmi:id="_r3q6gMJHEeSFFPWsf1QKow"/>
+          <lowerBound xmi:id="_QwmlEMkkEeafhN2WTsB3OA"/>
+          <upperBound xmi:id="_QwnzMMkkEeafhN2WTsB3OA"/>
         </cardinality>
         <receiverMessageBuffer xmi:id="_MkAVsJKkEeSSMde45fnrcg" name="sectionRbuf" messageType="_h8AAQJKfEeSSMde45fnrcg">
           <bufferSize xmi:id="_Oawb8JKkEeSSMde45fnrcg" value="5"/>
@@ -2756,19 +2756,19 @@
           </expression>
         </properties>
       </verificationConstraintRepositories>
-      <roles xmi:id="_DCAo4JOSEeSZM-zEIRk3lw" connectors="_DCE6UZOSEeSZM-zEIRk3lw" behavior="_fKmEMJOSEeSZM-zEIRk3lw" name="requestorR" senderMessageTypes="_jMgl4JKfEeSSMde45fnrcg" receiverMessageTypes="_lJ5foJKfEeSSMde45fnrcg _nDO_0JKfEeSSMde45fnrcg">
+      <roles xmi:id="_DCAo4JOSEeSZM-zEIRk3lw" connectors="_DCE6UZOSEeSZM-zEIRk3lw" behavior="_fKmEMJOSEeSZM-zEIRk3lw" name="Requestor" senderMessageTypes="_jMgl4JKfEeSSMde45fnrcg" receiverMessageTypes="_lJ5foJKfEeSSMde45fnrcg _nDO_0JKfEeSSMde45fnrcg">
         <cardinality xmi:id="_DCDFIJOSEeSZM-zEIRk3lw">
-          <lowerBound xmi:id="_x4n8QJQkEeSZM-zEIRk3lw"/>
-          <upperBound xmi:id="_x4xtQJQkEeSZM-zEIRk3lw"/>
+          <lowerBound xmi:id="_KWNUgMkkEeafhN2WTsB3OA"/>
+          <upperBound xmi:id="_KWVQUMkkEeafhN2WTsB3OA"/>
         </cardinality>
         <receiverMessageBuffer xmi:id="_w80TMJOTEeSZM-zEIRk3lw" name="requestorRbuf" messageType="_lJ5foJKfEeSSMde45fnrcg _nDO_0JKfEeSSMde45fnrcg">
           <bufferSize xmi:id="_zeSKYJOTEeSZM-zEIRk3lw" value="5"/>
         </receiverMessageBuffer>
       </roles>
-      <roles xmi:id="_DCETQZOSEeSZM-zEIRk3lw" connectors="_DCE6UZOSEeSZM-zEIRk3lw" behavior="_50iXQJOSEeSZM-zEIRk3lw" name="controllerR" senderMessageTypes="_lJ5foJKfEeSSMde45fnrcg _nDO_0JKfEeSSMde45fnrcg" receiverMessageTypes="_jMgl4JKfEeSSMde45fnrcg">
+      <roles xmi:id="_DCETQZOSEeSZM-zEIRk3lw" connectors="_DCE6UZOSEeSZM-zEIRk3lw" behavior="_50iXQJOSEeSZM-zEIRk3lw" name="Controller" senderMessageTypes="_lJ5foJKfEeSSMde45fnrcg _nDO_0JKfEeSSMde45fnrcg" receiverMessageTypes="_jMgl4JKfEeSSMde45fnrcg">
         <cardinality xmi:id="_DCETQpOSEeSZM-zEIRk3lw">
-          <lowerBound xmi:id="_n2EtUMJHEeSFFPWsf1QKow"/>
-          <upperBound xmi:id="_n2F7cMJHEeSFFPWsf1QKow"/>
+          <lowerBound xmi:id="_KsY_4MkkEeafhN2WTsB3OA"/>
+          <upperBound xmi:id="_KscDMMkkEeafhN2WTsB3OA"/>
         </cardinality>
         <receiverMessageBuffer xmi:id="_JkQYcJOTEeSZM-zEIRk3lw" name="controllerRbuf" messageType="_jMgl4JKfEeSSMde45fnrcg">
           <bufferSize xmi:id="_LmA00JOTEeSZM-zEIRk3lw" value="5"/>
@@ -2873,14 +2873,14 @@
       </verificationConstraintRepositories>
       <roles xmi:id="_P1MlEJQiEeSZM-zEIRk3lw" connectors="_P1MlGJQiEeSZM-zEIRk3lw" behavior="_cGvZwJQjEeSZM-zEIRk3lw" name="VelocitySetter" senderMessageTypes="_z8GAEJnbEeSlOsDDn13LAA _1OxI4JnbEeSlOsDDn13LAA">
         <cardinality xmi:id="_P1MlEZQiEeSZM-zEIRk3lw">
-          <lowerBound xmi:id="_oCce8MJTEeSlwNyNCkfQFQ"/>
-          <upperBound xmi:id="_oCdtEMJTEeSlwNyNCkfQFQ"/>
+          <lowerBound xmi:id="_g4oy8MhQEeaQC5VdJitBwA"/>
+          <upperBound xmi:id="_g4vgoMhQEeaQC5VdJitBwA"/>
         </cardinality>
       </roles>
       <roles xmi:id="_P1MlFJQiEeSZM-zEIRk3lw" connectors="_P1MlGJQiEeSZM-zEIRk3lw" behavior="_dKEfAJQjEeSZM-zEIRk3lw" name="VelocityGetter" receiverMessageTypes="_z8GAEJnbEeSlOsDDn13LAA _1OxI4JnbEeSlOsDDn13LAA">
         <cardinality xmi:id="_P1MlFZQiEeSZM-zEIRk3lw">
-          <lowerBound xmi:id="_rCH8IMJTEeSlwNyNCkfQFQ"/>
-          <upperBound xmi:id="_rCJKQMJTEeSlwNyNCkfQFQ"/>
+          <lowerBound xmi:id="_eJOMAMkkEeafhN2WTsB3OA"/>
+          <upperBound xmi:id="_eJSdcMkkEeafhN2WTsB3OA"/>
         </cardinality>
         <receiverMessageBuffer xmi:id="_V48awJQjEeSZM-zEIRk3lw" name="getterRbuf" messageType="_z8GAEJnbEeSlOsDDn13LAA _1OxI4JnbEeSlOsDDn13LAA">
           <bufferSize xmi:id="_X7PpsJQjEeSZM-zEIRk3lw" value="5"/>
@@ -2983,19 +2983,19 @@
           </expression>
         </properties>
       </verificationConstraintRepositories>
-      <roles xmi:id="_hBCUEZQkEeSZM-zEIRk3lw" connectors="_hBCUGZQkEeSZM-zEIRk3lw" behavior="_Isl4wJQkEeSZM-zEIRk3lw" name="initiatorR" senderMessageTypes="_ruXrYJQiEeSZM-zEIRk3lw _th9I4JQiEeSZM-zEIRk3lw" receiverMessageTypes="_sp11IJQiEeSZM-zEIRk3lw">
+      <roles xmi:id="_hBCUEZQkEeSZM-zEIRk3lw" connectors="_hBCUGZQkEeSZM-zEIRk3lw" behavior="_Isl4wJQkEeSZM-zEIRk3lw" name="Initiator" senderMessageTypes="_ruXrYJQiEeSZM-zEIRk3lw _th9I4JQiEeSZM-zEIRk3lw" receiverMessageTypes="_sp11IJQiEeSZM-zEIRk3lw">
         <cardinality xmi:id="_hBCUEpQkEeSZM-zEIRk3lw">
-          <lowerBound xmi:id="_a2XIEI0KEeWjA_K9BoQ2Lg"/>
-          <upperBound xmi:id="_a21pMI0KEeWjA_K9BoQ2Lg"/>
+          <lowerBound xmi:id="_OlTlgMhQEeaQC5VdJitBwA"/>
+          <upperBound xmi:id="_Old9kMhQEeaQC5VdJitBwA"/>
         </cardinality>
         <receiverMessageBuffer xmi:id="_DIm2UJQlEeSZM-zEIRk3lw" name="initiatorRbuf" messageType="_sp11IJQiEeSZM-zEIRk3lw">
           <bufferSize xmi:id="_E3idUJQlEeSZM-zEIRk3lw" value="5"/>
         </receiverMessageBuffer>
       </roles>
-      <roles xmi:id="_hBCUFZQkEeSZM-zEIRk3lw" connectors="_hBCUGZQkEeSZM-zEIRk3lw" behavior="_JlgdwJQkEeSZM-zEIRk3lw" name="executorR" senderMessageTypes="_sp11IJQiEeSZM-zEIRk3lw" receiverMessageTypes="_ruXrYJQiEeSZM-zEIRk3lw _th9I4JQiEeSZM-zEIRk3lw">
+      <roles xmi:id="_hBCUFZQkEeSZM-zEIRk3lw" connectors="_hBCUGZQkEeSZM-zEIRk3lw" behavior="_JlgdwJQkEeSZM-zEIRk3lw" name="Executor" senderMessageTypes="_sp11IJQiEeSZM-zEIRk3lw" receiverMessageTypes="_ruXrYJQiEeSZM-zEIRk3lw _th9I4JQiEeSZM-zEIRk3lw">
         <cardinality xmi:id="_hBCUFpQkEeSZM-zEIRk3lw">
-          <lowerBound xmi:id="_UJ4ZEMJTEeSlwNyNCkfQFQ"/>
-          <upperBound xmi:id="_UJ4ZEcJTEeSlwNyNCkfQFQ"/>
+          <lowerBound xmi:id="_UFF0oMkkEeafhN2WTsB3OA"/>
+          <upperBound xmi:id="_UFHCwMkkEeafhN2WTsB3OA"/>
         </cardinality>
         <receiverMessageBuffer xmi:id="_MFJTgJQlEeSZM-zEIRk3lw" name="executorRbuf" messageType="_ruXrYJQiEeSZM-zEIRk3lw _th9I4JQiEeSZM-zEIRk3lw">
           <bufferSize xmi:id="_Nmr-wJQlEeSZM-zEIRk3lw" value="5"/>
@@ -3098,19 +3098,19 @@
           </expression>
         </properties>
       </verificationConstraintRepositories>
-      <roles xmi:id="_nWrgIJQnEeSZM-zEIRk3lw" connectors="_nWrgKJQnEeSZM-zEIRk3lw" behavior="_Far0YJQqEeSZM-zEIRk3lw" name="limiterR" receiverMessageTypes="_veCbEJQiEeSZM-zEIRk3lw _xib7wJQiEeSZM-zEIRk3lw">
+      <roles xmi:id="_nWrgIJQnEeSZM-zEIRk3lw" connectors="_nWrgKJQnEeSZM-zEIRk3lw" behavior="_Far0YJQqEeSZM-zEIRk3lw" name="Limiter" receiverMessageTypes="_veCbEJQiEeSZM-zEIRk3lw _xib7wJQiEeSZM-zEIRk3lw">
         <cardinality xmi:id="_nWrgIZQnEeSZM-zEIRk3lw">
-          <lowerBound xmi:id="_tPvfsMJSEeSlwNyNCkfQFQ"/>
-          <upperBound xmi:id="_tPyjAMJSEeSlwNyNCkfQFQ"/>
+          <lowerBound xmi:id="_aUE5wMhQEeaQC5VdJitBwA"/>
+          <upperBound xmi:id="_aUGH4MhQEeaQC5VdJitBwA"/>
         </cardinality>
         <receiverMessageBuffer xmi:id="_8o_VQJQpEeSZM-zEIRk3lw" name="limiterRbuf" messageType="_veCbEJQiEeSZM-zEIRk3lw _xib7wJQiEeSZM-zEIRk3lw">
           <bufferSize xmi:id="_-JfesJQpEeSZM-zEIRk3lw" value="5"/>
         </receiverMessageBuffer>
       </roles>
-      <roles xmi:id="_nWrgJJQnEeSZM-zEIRk3lw" connectors="_nWrgKJQnEeSZM-zEIRk3lw" behavior="_EacfYJQqEeSZM-zEIRk3lw" name="limitDrivingR" senderMessageTypes="_veCbEJQiEeSZM-zEIRk3lw _xib7wJQiEeSZM-zEIRk3lw">
+      <roles xmi:id="_nWrgJJQnEeSZM-zEIRk3lw" connectors="_nWrgKJQnEeSZM-zEIRk3lw" behavior="_EacfYJQqEeSZM-zEIRk3lw" name="LimitDriving" senderMessageTypes="_veCbEJQiEeSZM-zEIRk3lw _xib7wJQiEeSZM-zEIRk3lw">
         <cardinality xmi:id="_nWrgJZQnEeSZM-zEIRk3lw">
-          <lowerBound xmi:id="_v3EHQMJSEeSlwNyNCkfQFQ"/>
-          <upperBound xmi:id="_v3FVYMJSEeSlwNyNCkfQFQ"/>
+          <lowerBound xmi:id="_ZiYXEMhQEeaQC5VdJitBwA"/>
+          <upperBound xmi:id="_ZibaYMhQEeaQC5VdJitBwA"/>
         </cardinality>
       </roles>
       <roleConnector xmi:id="_nWrgKJQnEeSZM-zEIRk3lw" connectorEndpoints="_nWrgIJQnEeSZM-zEIRk3lw _nWrgJJQnEeSZM-zEIRk3lw">
@@ -3210,16 +3210,16 @@
           </expression>
         </properties>
       </verificationConstraintRepositories>
-      <roles xmi:id="_Oc_zEZ6WEeSB5YpXOU2UeA" connectors="_OdJkF56WEeSB5YpXOU2UeA" behavior="_xSEt0J6REeSNj-oH_1Kb-Q" name="informOvertakee" senderMessageTypes="_fnBL4J6SEeSNj-oH_1Kb-Q _hONzMJ6SEeSNj-oH_1Kb-Q">
+      <roles xmi:id="_Oc_zEZ6WEeSB5YpXOU2UeA" connectors="_OdJkF56WEeSB5YpXOU2UeA" behavior="_xSEt0J6REeSNj-oH_1Kb-Q" name="Overtakee" senderMessageTypes="_fnBL4J6SEeSNj-oH_1Kb-Q _hONzMJ6SEeSNj-oH_1Kb-Q">
         <cardinality xmi:id="_OdJkEJ6WEeSB5YpXOU2UeA">
-          <lowerBound xmi:id="_ytb4cMJHEeSFFPWsf1QKow"/>
-          <upperBound xmi:id="_ytcfgMJHEeSFFPWsf1QKow"/>
+          <lowerBound xmi:id="_UKeeQMhQEeaQC5VdJitBwA"/>
+          <upperBound xmi:id="_UKnBIMhQEeaQC5VdJitBwA"/>
         </cardinality>
       </roles>
-      <roles xmi:id="_OdJkE56WEeSB5YpXOU2UeA" connectors="_OdJkF56WEeSB5YpXOU2UeA" behavior="_9of38J6REeSNj-oH_1Kb-Q" name="informApproacher" receiverMessageTypes="_fnBL4J6SEeSNj-oH_1Kb-Q _hONzMJ6SEeSNj-oH_1Kb-Q">
+      <roles xmi:id="_OdJkE56WEeSB5YpXOU2UeA" connectors="_OdJkF56WEeSB5YpXOU2UeA" behavior="_9of38J6REeSNj-oH_1Kb-Q" name="Approacher" receiverMessageTypes="_fnBL4J6SEeSNj-oH_1Kb-Q _hONzMJ6SEeSNj-oH_1Kb-Q">
         <cardinality xmi:id="_OdJkFJ6WEeSB5YpXOU2UeA">
-          <lowerBound xmi:id="_zJoFMMJHEeSFFPWsf1QKow"/>
-          <upperBound xmi:id="_zJoFMcJHEeSFFPWsf1QKow"/>
+          <lowerBound xmi:id="_VoYmsMhQEeaQC5VdJitBwA"/>
+          <upperBound xmi:id="_VodfMMhQEeaQC5VdJitBwA"/>
         </cardinality>
         <receiverMessageBuffer xmi:id="_lNbBcJ6XEeSB5YpXOU2UeA" name="informApproacherRbuf" messageType="_fnBL4J6SEeSNj-oH_1Kb-Q _hONzMJ6SEeSNj-oH_1Kb-Q">
           <bufferSize xmi:id="_nXJuEJ6XEeSB5YpXOU2UeA" value="5"/>
@@ -3247,8 +3247,8 @@
         <parameters xmi:id="_PNP3MJ6JEeSNj-oH_1Kb-Q" name="secID" dataType="_FB0TRpJ7EeSSMde45fnrcg"/>
       </messageTypes>
       <messageTypes xmi:id="_jMgl4JKfEeSSMde45fnrcg" name="overtake"/>
-      <messageTypes xmi:id="_lJ5foJKfEeSSMde45fnrcg" name="save"/>
-      <messageTypes xmi:id="_nDO_0JKfEeSSMde45fnrcg" name="unsave"/>
+      <messageTypes xmi:id="_lJ5foJKfEeSSMde45fnrcg" name="safe"/>
+      <messageTypes xmi:id="_nDO_0JKfEeSSMde45fnrcg" name="unsafe"/>
       <messageTypes xmi:id="_ruXrYJQiEeSZM-zEIRk3lw" name="initiate"/>
       <messageTypes xmi:id="_sp11IJQiEeSZM-zEIRk3lw" name="execute"/>
       <messageTypes xmi:id="_th9I4JQiEeSZM-zEIRk3lw" name="executed"/>

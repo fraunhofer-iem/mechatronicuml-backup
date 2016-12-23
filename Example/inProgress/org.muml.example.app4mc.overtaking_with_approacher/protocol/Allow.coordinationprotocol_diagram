@@ -8,21 +8,21 @@
         <styles xmi:type="notation:FontStyle" xmi:id="_1TKgJKs1EeahOakP9zdesg" fontName="Segoe UI"/>
         <styles xmi:type="notation:LineStyle" xmi:id="_1TKgJas1EeahOakP9zdesg" lineColor="0"/>
         <element xmi:type="protocol:CoordinationProtocol" href="../OvertakingRegions2Runnables.muml#_DB-MoJOSEeSZM-zEIRk3lw"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1TKgJqs1EeahOakP9zdesg" x="490" y="84"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1TKgJqs1EeahOakP9zdesg" x="358"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_1TKgKKs1EeahOakP9zdesg" type="3006" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_1TKgKqs1EeahOakP9zdesg" type="5006">
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_1TKgK6s1EeahOakP9zdesg" y="5"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_1TKgK6s1EeahOakP9zdesg" x="34" y="-44"/>
         </children>
         <element xmi:type="protocol:Role" href="../OvertakingRegions2Runnables.muml#_DCAo4JOSEeSZM-zEIRk3lw"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1TKgKas1EeahOakP9zdesg" x="260" y="177"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1TKgKas1EeahOakP9zdesg" x="128" y="93"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_1TKgLKs1EeahOakP9zdesg" type="3006" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_1TKgLqs1EeahOakP9zdesg" type="5006">
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_1TKgL6s1EeahOakP9zdesg" y="5"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_1TKgL6s1EeahOakP9zdesg" x="-54" y="-44"/>
         </children>
         <element xmi:type="protocol:Role" href="../OvertakingRegions2Runnables.muml#_DCETQZOSEeSZM-zEIRk3lw"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1TKgLas1EeahOakP9zdesg" x="780" y="177"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1TKgLas1EeahOakP9zdesg" x="648" y="93"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_1TKgMKs1EeahOakP9zdesg" type="3013">
         <children xmi:type="notation:DecorationNode" xmi:id="_1TKgNas1EeahOakP9zdesg" type="5018"/>
@@ -36,7 +36,7 @@
         <styles xmi:type="notation:FontStyle" xmi:id="_1TKgMqs1EeahOakP9zdesg" fontName="Segoe UI"/>
         <styles xmi:type="notation:LineStyle" xmi:id="_1TKgM6s1EeahOakP9zdesg" lineColor="0"/>
         <element xmi:type="connector:MessageBuffer" href="../OvertakingRegions2Runnables.muml#_w80TMJOTEeSZM-zEIRk3lw"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1TKgNKs1EeahOakP9zdesg" x="143" y="207"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1TKgNKs1EeahOakP9zdesg" x="66" y="145"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_1TKgO6s1EeahOakP9zdesg" type="3013">
         <children xmi:type="notation:DecorationNode" xmi:id="_1TKgQKs1EeahOakP9zdesg" type="5018"/>
@@ -50,7 +50,7 @@
         <styles xmi:type="notation:FontStyle" xmi:id="_1TKgPas1EeahOakP9zdesg" fontName="Segoe UI"/>
         <styles xmi:type="notation:LineStyle" xmi:id="_1TKgPqs1EeahOakP9zdesg" lineColor="0"/>
         <element xmi:type="connector:MessageBuffer" href="../OvertakingRegions2Runnables.muml#_JkQYcJOTEeSZM-zEIRk3lw"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1TKgP6s1EeahOakP9zdesg" x="663" y="207"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1TKgP6s1EeahOakP9zdesg" x="502" y="130"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_1TKgRqs1EeahOakP9zdesg" type="3014">
         <children xmi:type="notation:DecorationNode" xmi:id="_1TKgS6s1EeahOakP9zdesg" type="5020"/>
@@ -59,11 +59,11 @@
         <styles xmi:type="notation:FontStyle" xmi:id="_1TKgSKs1EeahOakP9zdesg" fontName="Segoe UI"/>
         <styles xmi:type="notation:LineStyle" xmi:id="_1TKgSas1EeahOakP9zdesg" lineColor="0"/>
         <element xmi:type="protocol:ConnectorQualityOfServiceAssumptions" href="../OvertakingRegions2Runnables.muml#_DCGvgJOSEeSZM-zEIRk3lw"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1TKgSqs1EeahOakP9zdesg" x="438" y="229"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1TKgSqs1EeahOakP9zdesg" x="306" y="145"/>
       </children>
     </children>
     <element xmi:type="protocol:CoordinationProtocol" href="../OvertakingRegions2Runnables.muml#_DB-MoJOSEeSZM-zEIRk3lw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0R-v86s1EeahOakP9zdesg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0R-v86s1EeahOakP9zdesg" x="13" y="5"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_0R-v8as1EeahOakP9zdesg"/>
   <element xmi:type="modelinstance:ModelElementCategory" href="../OvertakingRegions2Runnables.muml#_FB0TSpJ7EeSSMde45fnrcg"/>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:realtimestatechart="http://www.muml.org/pim/realtimestatechart/1.0.0" xsi:schemaLocation="http://www.muml.org/pim/realtimestatechart/1.0.0 http://www.muml.org/pim/1.0.0#//realtimestatechart" xmi:id="_DqNJ4MhQEeaQC5VdJitBwA" type="Real-Time Statechart" name="sectionRoleRTSC.realtimestatechart_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_27kMsMhSEeaQC5VdJitBwA" type="2007" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_27kMsshSEeaQC5VdJitBwA" type="5061"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_27kMs8hSEeaQC5VdJitBwA" type="5062"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_27kMtMhSEeaQC5VdJitBwA" type="7030">
+      <children xmi:type="notation:Shape" xmi:id="_28ojsMhSEeaQC5VdJitBwA" type="3032" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_28ojsshSEeaQC5VdJitBwA" type="5060"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_28ojs8hSEeaQC5VdJitBwA" type="7031">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_28ojtMhSEeaQC5VdJitBwA" sorting="Automatic" sortingKeys="default_sorting_key:Ascending"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_28ojtchSEeaQC5VdJitBwA"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_28ojtshSEeaQC5VdJitBwA" type="7032">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_28ojt8hSEeaQC5VdJitBwA"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_28ojuMhSEeaQC5VdJitBwA"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_28ojuchSEeaQC5VdJitBwA" type="7033">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_28ojushSEeaQC5VdJitBwA"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_28oju8hSEeaQC5VdJitBwA"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_28ojvMhSEeaQC5VdJitBwA" type="7034">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_28ojvchSEeaQC5VdJitBwA"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_28ojvshSEeaQC5VdJitBwA"/>
+        </children>
+        <element xmi:type="realtimestatechart:State" href="../OvertakingRegions2Runnables.muml#_tTuUMZKkEeSSMde45fnrcg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_28ojschSEeaQC5VdJitBwA"/>
+      </children>
+    </children>
+    <element xmi:type="realtimestatechart:RealtimeStatechart" href="../OvertakingRegions2Runnables.muml#_tTuUMJKkEeSSMde45fnrcg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_27kMschSEeaQC5VdJitBwA" width="313" height="133"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_DqNJ4chQEeaQC5VdJitBwA"/>
+  <element xmi:type="realtimestatechart:RealtimeStatechart" href="../OvertakingRegions2Runnables.muml#_tTuUMJKkEeSSMde45fnrcg"/>
+  <edges xmi:type="notation:Connector" xmi:id="_28qY4MhSEeaQC5VdJitBwA" type="4003" source="_28ojsMhSEeaQC5VdJitBwA" target="_28ojsMhSEeaQC5VdJitBwA" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_28qY48hSEeaQC5VdJitBwA" type="6005">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_28qY5MhSEeaQC5VdJitBwA" x="-4" y="-70"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_28qY5chSEeaQC5VdJitBwA" type="6006">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_28qY5shSEeaQC5VdJitBwA" x="-10" y="20"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_28qY4chSEeaQC5VdJitBwA" fontName="Segoe UI"/>
+    <element xmi:type="realtimestatechart:Transition" href="../OvertakingRegions2Runnables.muml#_mozlUKMAEeSbmbyTJYAEVw"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_28qY4shSEeaQC5VdJitBwA" points="[20, 0, 10, -19]$[78, 0, 68, -19]$[78, 19, 68, 0]$[20, 19, 10, 0]"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_uQ8JcMhTEeaQC5VdJitBwA" id="(0.75,0.8166666666666667)"/>
+  </edges>
+</notation:Diagram>

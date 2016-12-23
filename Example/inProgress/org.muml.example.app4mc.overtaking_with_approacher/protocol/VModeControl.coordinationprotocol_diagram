@@ -1,7 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:protocol="http://www.muml.org/pim/protocol/1.0.0" xsi:schemaLocation="http://www.muml.org/modelinstance/1.0.0 http://www.muml.org/core/1.0.0#//modelinstance http://www.muml.org/pim/protocol/1.0.0 http://www.muml.org/pim/1.0.0#//protocol" xmi:id="_0Rr1AKs1EeahOakP9zdesg" type="Coordination Protocol" name="VModeControl.coordinationprotocol_diagram" measurementUnit="Pixel">
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:connector="http://www.muml.org/pim/connector/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:protocol="http://www.muml.org/pim/protocol/1.0.0" xsi:schemaLocation="http://www.muml.org/pim/connector/1.0.0 http://www.muml.org/pim/1.0.0#//connector http://www.muml.org/modelinstance/1.0.0 http://www.muml.org/core/1.0.0#//modelinstance http://www.muml.org/pim/protocol/1.0.0 http://www.muml.org/pim/1.0.0#//protocol" xmi:id="_0Rr1AKs1EeahOakP9zdesg" type="Coordination Protocol" name="VModeControl.coordinationprotocol_diagram" measurementUnit="Pixel">
   <children xmi:type="notation:Shape" xmi:id="_0Rr1Aqs1EeahOakP9zdesg" type="2005" fontName="Segoe UI" lineColor="0">
-    <children xmi:type="notation:DecorationNode" xmi:id="_0Rr1BKs1EeahOakP9zdesg" type="7005"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_0Rr1BKs1EeahOakP9zdesg" type="7005">
+      <children xmi:type="notation:Node" xmi:id="_fIV6AMhQEeaQC5VdJitBwA" type="3015">
+        <children xmi:type="notation:DecorationNode" xmi:id="_fIV6BchQEeaQC5VdJitBwA" type="5023"/>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_fIV6AchQEeaQC5VdJitBwA"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_fIV6AshQEeaQC5VdJitBwA" fontName="Segoe UI"/>
+        <styles xmi:type="notation:LineStyle" xmi:id="_fIV6A8hQEeaQC5VdJitBwA" lineColor="0"/>
+        <element xmi:type="protocol:CoordinationProtocol" href="../OvertakingRegions2Runnables.muml#_P1DbIJQiEeSZM-zEIRk3lw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fIV6BMhQEeaQC5VdJitBwA" x="122" y="10"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_fIV6BshQEeaQC5VdJitBwA" type="3006" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_fIV6CMhQEeaQC5VdJitBwA" type="5006">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_fIWhEMhQEeaQC5VdJitBwA" x="3" y="-38"/>
+        </children>
+        <element xmi:type="protocol:Role" href="../OvertakingRegions2Runnables.muml#_P1MlEJQiEeSZM-zEIRk3lw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fIV6B8hQEeaQC5VdJitBwA" x="14" y="94"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_fIWhEchQEeaQC5VdJitBwA" type="3006" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_fIWhE8hQEeaQC5VdJitBwA" type="5006">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_fIWhFMhQEeaQC5VdJitBwA" x="-36" y="-42"/>
+        </children>
+        <element xmi:type="protocol:Role" href="../OvertakingRegions2Runnables.muml#_P1MlFJQiEeSZM-zEIRk3lw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fIWhEshQEeaQC5VdJitBwA" x="295" y="96"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_fIWhFchQEeaQC5VdJitBwA" type="3013">
+        <children xmi:type="notation:DecorationNode" xmi:id="_fIWhGshQEeaQC5VdJitBwA" type="5018"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_fIWhG8hQEeaQC5VdJitBwA" type="5019"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_fIWhHMhQEeaQC5VdJitBwA" type="5025"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_fIWhHchQEeaQC5VdJitBwA" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_fIWhHshQEeaQC5VdJitBwA"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_fIWhH8hQEeaQC5VdJitBwA"/>
+        </children>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_fIWhFshQEeaQC5VdJitBwA"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_fIWhF8hQEeaQC5VdJitBwA" fontName="Segoe UI"/>
+        <styles xmi:type="notation:LineStyle" xmi:id="_fIWhGMhQEeaQC5VdJitBwA" lineColor="0"/>
+        <element xmi:type="connector:MessageBuffer" href="../OvertakingRegions2Runnables.muml#_V48awJQjEeSZM-zEIRk3lw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fIWhGchQEeaQC5VdJitBwA" x="210" y="126"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_fIWhIMhQEeaQC5VdJitBwA" type="3014">
+        <children xmi:type="notation:DecorationNode" xmi:id="_fIWhJchQEeaQC5VdJitBwA" type="5020"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_fIWhJshQEeaQC5VdJitBwA" type="5021"/>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_fIWhIchQEeaQC5VdJitBwA"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_fIWhIshQEeaQC5VdJitBwA" fontName="Segoe UI"/>
+        <styles xmi:type="notation:LineStyle" xmi:id="_fIWhI8hQEeaQC5VdJitBwA" lineColor="0"/>
+        <element xmi:type="protocol:ConnectorQualityOfServiceAssumptions" href="../OvertakingRegions2Runnables.muml#_P1MlGZQiEeSZM-zEIRk3lw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fIWhJMhQEeaQC5VdJitBwA" x="31" y="138"/>
+      </children>
+    </children>
     <element xmi:type="protocol:CoordinationProtocol" href="../OvertakingRegions2Runnables.muml#_P1DbIJQiEeSZM-zEIRk3lw"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0Rr1A6s1EeahOakP9zdesg"/>
   </children>
