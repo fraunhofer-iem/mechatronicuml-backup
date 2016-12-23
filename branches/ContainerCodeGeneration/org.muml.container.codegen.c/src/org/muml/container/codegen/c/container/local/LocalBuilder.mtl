@@ -1,0 +1,86 @@
+[comment encoding = UTF-8 /]
+[**
+ * This module contains all templates, that are used to generate the Configuration-files
+ * for a given Container.
+ */]
+[module LocalBuilder('http://www.muml.org/pim/connector/1.0.0',
+				'http://www.muml.org/pim/behavior/1.0.0',
+				'http://www.muml.org/core/1.0.0',
+				'http://www.muml.org/pim/actionlanguage/1.0.0',
+				'http://www.muml.org/core/expressions/common/1.0.0',
+				'http://www.muml.org/pim/msgtype/1.0.0',
+				'http://www.muml.org/pim/types/1.0.0',
+				'http://www.muml.org/modelinstance/1.0.0',
+				'http://www.muml.org/pim/component/1.0.0',
+				'http://www.muml.org/pim/instance/1.0.0',
+				'http://www.muml.org/pim/realtimestatechart/1.0.0',
+				'http://www.muml.org/psm/1.0.0',
+				'http://www.muml.org/psm/muml_container/0.5.0',
+				'http://www.opendds.org/modeling/schemas/DCPS/1.0',
+				'http://www.opendds.org/modeling/schemas/Core/1.0',
+				'http://www.opendds.org/modeling/schemas/Application/1.0',
+				'http://www.opendds.org/modeling/schemas/Topics/1.0')/]
+
+[import org::muml::codegen::componenttype::c::queries::ContainerQueries/]
+
+[import org::muml::container::codegen::c::queries::containerStringQueries/]
+[import org::muml::codegen::componenttype::c::queries::stringQueries/]
+[import org::muml::codegen::componenttype::c::queries::modelQueries/]
+
+
+[query public getMethodNameForLocalPortBuilder(port:Port): String =
+	'create_'+port.name.toUpper()+'LocalHandle'
+/]
+
+[template public generateBuilderForPortHandleLocal(port : Port, portInstanceCfg : Collection(PortInstanceConfiguration_Local))]
+		[if (port.oclIsKindOf(DiscretePort))]
+			[generateBuilderForPortHandleLocal(port.oclAsType(DiscretePort), portInstanceCfg)/]
+		[else]
+			[generateBuilderForPortHandleLocal(port.oclAsType(DirectedTypedPort), portInstanceCfg)/]
+		[/if]
+[/template]
+
+[template public generateBuilderForPortHandleLocal(port : DiscretePort, portInstanceCfg : Collection(PortInstanceConfiguration_Local))]
+/**
+*
+*@brief The Builder for a LocalHandle for Discrete port [port.name/]
+*@details Creates a struct LocalHandle which encapsualtes the logic for communication
+*
+*/
+	static PortHandle* [port.getMethodNameForLocalPortBuilder()/]([port.component.getBuilderStructName()/]* b, PortHandle *ptr){
+		ptr->type = PORT_HANDLE_TYPE_LOCAL;
+		LocalHandle* hndl = malloc(sizeof(LocalHandle)+[port.receiverMessageTypes->size()/]*sizeof(LocalSubscriber));
+		ptr->concreteHandle = hndl;
+		hndl->pubID = b->[port.name.toUpper()/]_op.local_option.pubID;
+		hndl->subID = b->[port.name.toUpper()/]_op.local_option.subID;
+		hndl->numOfSubs = [port.receiverMessageTypes->size()/];
+		//subscribe to every receiver message type of Port [port.name/]
+		[comment in the MUML model is exactly one message per buffer/]
+			[for (buffer : MessageBuffer | port.receiverMessageBuffer)]
+			[let j : Integer = i-1]			
+				[for (msg : MessageType | buffer.messageType)]
+		 subscribeToMessage(&(hndl->localSubscribers['['/][j/][']'/]), hndl->subID, [msg.getIdentifierVariableName()/],[buffer.bufferSize.value/] ,
+					sizeof([msg.getMessageType()/]),
+					[if buffer.bufferOverflowAvoidanceStrategy=BufferOverflowAvoidanceStrategy::DISCARD_OLDEST_MESSAGE_IN_BUFFER] true [else] false	[/if]);
+				[/for]
+			[/let]
+			[/for]	
+		return ptr;
+	}
+[/template]
+
+[template public generateBuilderForPortHandleLocal(port : DirectedTypedPort, portInstanceCfg : Collection(PortInstanceConfiguration_Local))]
+	static PortHandle* [port.getMethodNameForLocalPortBuilder()/]([port.component.getBuilderStructName()/]* b, PortHandle *ptr){
+		ptr->type = PORT_HANDLE_TYPE_LOCAL;
+		LocalHandle* hndl = malloc(sizeof(LocalHandle)+[if (port.inPort)]1[else]0[/if]*sizeof(LocalSubscriber));
+		ptr->concreteHandle = hndl;
+		hndl->pubID = b->[port.name.toUpper()/]_op.local_option.pubID;
+		hndl->subID = b->[port.name.toUpper()/]_op.local_option.subID;
+		[if (port.inPort)]
+		//create space for Subscriber
+		hndl->numOfSubs = 1;
+		subscribeToMessage(&(hndl->localSubscribers['['/]0[']'/] ),hndl->subID, 0, 1, sizeof([port.dataType.getTypeName()/]), true);
+		[/if]
+		return ptr;
+	}
+[/template]

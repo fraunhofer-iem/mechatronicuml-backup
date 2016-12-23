@@ -1,0 +1,114 @@
+
+
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module main.
+ */]
+[module main('http://www.muml.org/pim/connector/1.0.0', 'http://www.muml.org/pim/behavior/1.0.0',
+				'http://www.muml.org/core/1.0.0',
+				'http://www.muml.org/pim/actionlanguage/1.0.0',
+				'http://www.muml.org/pim/msgtype/1.0.0',
+				'http://www.muml.org/pim/types/1.0.0',
+				'http://www.muml.org/modelinstance/1.0.0',
+				'http://www.muml.org/pim/component/1.0.0',
+				'http://www.muml.org/pim/instance/1.0.0',
+				'http://www.muml.org/pim/realtimestatechart/1.0.0')/]
+
+
+
+
+[import org::muml::codegen::componenttype::c::rtsc::RealtimeStatechart/]
+[import org::muml::codegen::componenttype::c::queries::stringQueries/]
+[import org::muml::codegen::componenttype::c::queries::modelQueries/]
+[import org::muml::codegen::componenttype::c::component::component/]
+[import org::muml::codegen::componenttype::c::messages::Message/]
+[import org::muml::codegen::componenttype::c::files::operations/]
+[import org::muml::codegen::componenttype::c::files::CMake/]
+[import org::muml::codegen::componenttype::c::types::customTypes /]
+[import org::muml::codegen::componenttype::c::componentInterface::componentInterface /]
+
+[template public generate(cic: ComponentInstanceConfiguration)]
+[comment @main/]
+[comment only generate, if CIC is a root-CIC/]
+[if cic.eContainer().oclIsKindOf(ModelElementCategory)]	
+	[comment generate software parts/]
+	 [generateANSIC(cic.eAllContents(ComponentInstance).componentType->asOrderedSet(), cic.name+'/', true)/]
+	
+	[generateCMakeFiles(cic, cic.name+'/')/]
+[/if]
+[/template]
+
+
+[**
+ * Generates a main file. This file contains code to create, initialize
+ * and execute a given MUML model on nxtOSEK.
+ * @param aModelElementCategory
+ */]
+[template public generateANSIC( COs : OrderedSet(Component), path : String, useSubDir: Boolean )]
+
+[comment create files for every component type/]
+[generateTypeFiles(COs, path, useSubDir)/]
+
+
+[comment create message file/]
+[generateMessageHeader(COs, path, useSubDir)/]
+
+
+[comment craeate files for RTSCs/]
+[generateRTSCFiles(COs, path, useSubDir)/]
+
+[comment create makefile for gcc generateMakeFile(COs, path, useSubDir)/]
+
+
+[comment create Operation files/]
+[generateOperationFiles(COs, path, useSubDir)/]
+
+[comment create main file [generateANSICMainFile(CIs, path, useSubDir)/]
+
+[generateCustomTypes(COs, path, useSubDir)/]
+
+
+[/template]
+
+
+
+[**
+ * Creates a header and an implementation file for every component (type) of the model
+ * (if modelElementCategory is 'components'
+ * @param modelElementCategory
+ */]
+[template public generateTypeFiles(COs : OrderedSet(Component), path : String, useSubDir: Boolean)]
+[for (component : Component | COs) ? (component.oclIsKindOf(AtomicComponent))]
+[generate_ComponentInterface(component, path, useSubDir)/]
+[generate_ComponentClass(component, path, useSubDir)/]
+[/for]
+[/template]
+
+
+[**
+ * Creates a header and an implementation file for every realtime statechart, which is the behavior of
+ * an atomic component of the model (if modelElementCategory is 'realtimestatechart'
+ * @param modelElementCategory
+ */]
+[template public generateRTSCFiles(COs : OrderedSet(Component), path: String, useSubDir: Boolean) ]
+
+	[for (comp : Component | COs) ? (oclIsKindOf(AtomicComponent))]
+	[if (comp.componentKind = ComponentKind::SOFTWARE_COMPONENT)]
+	[let aComp : AtomicComponent = comp.oclAsType(AtomicComponent)]
+	
+	[comment if no behavior is defined/]
+	[if (aComp.behavior.oclIsUndefined())]
+		[comment @TODO generated empty bahavior file/]
+
+	[else]
+	[comment if RTSC is defined as behavior/]
+		[if (aComp.behavior.oclIsTypeOf(RealtimeStatechart))]
+		[comment	[generate_RTSCHeader(aComp, aComp.behavior.oclAsType(RealtimeStatechart), path, useSubDir)/]  
+			[generate_RTSC(aComp, aComp.behavior.oclAsType(RealtimeStatechart), path, useSubDir)/]
+		[/if]
+	[/if]
+	[/let]
+	[/if]
+	[/for]
+
+[/template]

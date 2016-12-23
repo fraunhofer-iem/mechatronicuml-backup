@@ -1,0 +1,26 @@
+<!-- ===================================================================== -->
+<!-- Custom targets.                                                       -->
+<!-- Set customBuildCallbacks = build.acceleo in your build.properties.    -->
+<!-- ===================================================================== -->
+<project name="Build Acceleo Module" default="noDefault">    
+    <!-- ================================================================= -->
+    <!-- Default target                                                    -->
+    <!-- ================================================================= -->
+    <target name="noDefault">
+        <echo message="This file must be called with explicit targets" />
+    </target>
+
+    <!-- ================================================================= -->
+    <!-- This will be called automatically after the compilation of each   -->
+    <!-- Bundle... in dependency order.                                    -->
+    <!-- ================================================================= -->
+    <target name="post.compile.@dot">
+        <acceleoCompiler 
+            sourceFolder="${target.folder}/../src"
+            outputFolder="${target.folder}/../bin"
+            dependencies="${target.folder}/../../org.muml.codegen.c.beautifier;"
+            binaryResource="false"
+           packagesToRegister="org.muml.psm.muml_container.Muml_containerPackage;org.opendds.modeling.model.opendds.OpenDDSPackage;org.muml.psm.PsmPackage;org.muml.pm.hardware.HardwarePackage;org.muml.pim.instance.InstancePackage;org.muml.pim.component.ComponentPackage;org.muml.pim.actionlanguage.ActionlanguagePackage;org.muml.pim.behavior.BehaviorPackage;org.muml.core.CorePackage;org.muml.pim.connector.ConnectorPackage;org.muml.pim.protocol.ProtocolPackage;org.muml.pim.realtimestatechart.RealtimestatechartPackage;org.muml.pim.types.TypesPackage;org.muml.pim.valuetype.ValuetypePackage;org.muml.core.modelinstance.ModelinstancePackage;org.muml.core.expressions.ExpressionsPackage;org.muml.core.expressions.common.CommonExpressionsPackage;org.muml.core.CorePackage">		
+       </acceleoCompiler>
+    </target>    
+</project>

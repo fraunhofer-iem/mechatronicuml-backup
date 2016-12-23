@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Transformation Plug-in
+Bundle-SymbolicName: org.muml.psm.container.transformation;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: 
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.m2m.qvt.oml,
+ org.eclipse.ui;bundle-version="3.107.0",
+ org.muml.psm.container,
+ org.eclipse.emf.edit;bundle-version="2.11.1",
+ org.muml.ext.dependency.jgrapht,
+ org.eclipse.emf.workspace;bundle-version="1.5.1",
+ org.muml.core.export,
+ org.muml.pim.common,
+ org.muml.pm.hardware
+Export-Package: org.muml.container.transformation.blackbox,
+ org.muml.container.transformation.job,
+ org.muml.container.transformation.ui
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Bundle-Activator: org.muml.container.transformation.ui.Activator

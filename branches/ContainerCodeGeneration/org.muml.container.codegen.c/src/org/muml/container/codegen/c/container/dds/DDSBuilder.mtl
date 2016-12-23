@@ -1,0 +1,360 @@
+[comment encoding = UTF-8 /]
+[**
+ * This module contains all templates, that are used to generate the Configuration-files
+ * for a given Container.
+ */]
+[module DDSBuilder('http://www.muml.org/pim/connector/1.0.0',
+				'http://www.muml.org/pim/behavior/1.0.0',
+				'http://www.muml.org/core/1.0.0',
+				'http://www.muml.org/pim/actionlanguage/1.0.0',
+				'http://www.muml.org/pim/msgtype/1.0.0',
+				'http://www.muml.org/pim/types/1.0.0',
+				'http://www.muml.org/modelinstance/1.0.0',
+				'http://www.muml.org/pim/component/1.0.0',
+				'http://www.muml.org/pim/instance/1.0.0',
+				'http://www.muml.org/pim/realtimestatechart/1.0.0',
+				'http://www.muml.org/psm/1.0.0',
+				'http://www.muml.org/psm/muml_container/0.5.0',
+				'http://www.opendds.org/modeling/schemas/DCPS/1.0',
+				'http://www.opendds.org/modeling/schemas/Core/1.0',
+				'http://www.opendds.org/modeling/schemas/Application/1.0',
+				'http://www.opendds.org/modeling/schemas/Topics/1.0')/]
+
+[import org::muml::codegen::componenttype::c::queries::ContainerQueries/]
+
+
+[import org::muml::container::codegen::c::queries::containerStringQueries/]
+[import org::muml::codegen::componenttype::c::queries::stringQueries/]
+[import org::muml::codegen::componenttype::c::queries::modelQueries/]
+[import org::muml::container::codegen::c::container::dds::DDSListener/]
+[import org::muml::container::codegen::c::container::dds::DDSQoS/]
+
+
+[query public getMethodNameForDDSPortBuilder(port:Port): String =
+	'create_'+port.name.toUpper()+'DDSHandle'
+/]
+
+[template public generateBuilderForPortHandleDDS(port : Port, portInstanceCfg : Collection(PortInstanceConfiguration_DDS))]
+			[if (port.oclIsKindOf(DiscretePort))]
+			[generateBuilderForPortHandleDDS(port.oclAsType(DiscretePort), portInstanceCfg)/]
+		[else]
+			[generateBuilderForPortHandleDDS(port.oclAsType(DirectedTypedPort), portInstanceCfg)/]
+		[/if]
+[/template]
+
+[template public generateBuilderForPortHandleDDS(port : DiscretePort, portInstanceCfg : Collection(PortInstanceConfiguration_DDS))]
+	static PortHandle* [port.getMethodNameForDDSPortBuilder()/]([port.component.getBuilderStructName()/]* b, PortHandle *ptr){
+	DDS_Topic *topic = NULL;
+	const char *type_name = NULL;
+	DDS_ReturnCode_t retcode;
+	DDS_DataWriter *writer = NULL;
+	DDS_DataReader *reader = NULL;
+	
+	//FIXME: create fixed QoS attributes including partition
+
+	ptr->type = PORT_HANDLE_TYPE_DDS;
+	DDSHandle *hndl = malloc(sizeof(DDSHandle));
+	ptr->concreteHandle = hndl;
+
+		//set variables for listeners
+		hndl->numOfReaderToMatch=[if  (portInstanceCfg->any(true).subscriber.oclIsUndefined())] 0 [else] [portInstanceCfg.subscriber.readers->size()/] [/if];
+		hndl->numOfWriterToMatch=[if  (portInstanceCfg->any(true).publisher.oclIsUndefined())] 0 [else] [portInstanceCfg.publisher.writers->size()/]  [/if];
+
+	//create domain participant
+	hndl->participant = DDS_DomainParticipantFactory_create_participant(
+	DDS_TheParticipantFactory, b->[port.name.toUpper()/]_op.dds_option.domainID,
+			&DDS_PARTICIPANT_QOS_DEFAULT,
+			NULL /* listener */, DDS_STATUS_MASK_NONE);
+	if (hndl->participant == NULL) {
+		printf("create_participant error\n");
+		publisher_shutdown(hndl->participant);
+		return NULL;
+	}
+
+[if (portInstanceCfg.publisher->size()>0)]
+	[let publisher:Publisher = portInstanceCfg.publisher->any(true)]
+	//create PublisherLister
+	DDS_StatusMask pubmask = DDS_STATUS_MASK_NONE;
+	struct DDS_PublisherListener pub_listener = DDS_PublisherListener_INITIALIZER;
+	[generatePublisherListenerDDS('pub_listener', 'pubmask', 'ptr')/]
+
+
+	//create Publisher Partition
+	struct DDS_PublisherQos pubQoS = DDS_PublisherQos_INITIALIZER;
+	retcode = DDS_DomainParticipant_get_default_publisher_qos(hndl->participant,&pubQoS);
+	 if (retcode != DDS_RETCODE_OK) {
+       printf("get_default_publisher_qos error\n");
+	    return NULL;
+	 }
+	[generatePartition(port, portInstanceCfg->any(true), 'pubQoS')/]
+	
+	//create Publisher
+	hndl->publisher = DDS_DomainParticipant_create_publisher(hndl->participant,
+			&pubQoS, &pub_listener /* listener */,
+			pubmask);
+	DDS_PublisherQos_finalize(&pubQoS);
+	if (hndl->publisher == NULL) {
+		printf("create_publisher error\n");
+		publisher_shutdown(hndl->participant);
+		return NULL;
+	}
+
+	//create Writer QoS
+		struct DDS_DataWriterQos writerQoS = DDS_DataWriterQos_INITIALIZER;
+		retcode = DDS_Publisher_get_default_datawriter_qos(hndl->publisher, &writerQoS);
+		if (retcode != DDS_RETCODE_OK) {
+      		 printf("get_default_publisher_qos error\n");
+	    	return NULL;
+		}
+	
+	[for (writer : DataWriter | publisher.writers)]
+		//register the dataType
+		type_name = [writer.topic.datatype.name/]TypeSupport_get_type_name();
+		retcode = [writer.topic.datatype.name/]TypeSupport_register_type(hndl->participant, type_name);
+		if (retcode != DDS_RETCODE_OK) {
+			printf("register_type error %d\n", retcode);
+			publisher_shutdown(hndl->participant);
+			return NULL;
+		}
+		//register the topic
+		topic = DDS_DomainParticipant_create_topic(hndl->participant, "[writer.topic.name/]", type_name,
+			&DDS_TOPIC_QOS_DEFAULT, NULL /* listener */,
+			DDS_STATUS_MASK_NONE);
+		if (topic == NULL) {
+			printf("create_topic error\n");
+			publisher_shutdown(hndl->participant);
+			return NULL;
+		}
+
+		
+
+		[generateWriterQoS(writer, 'writerQoS')/]
+		//create writer for Topic
+		writer = DDS_Publisher_create_datawriter(hndl->publisher, topic,
+				&writerQoS, NULL /* listener */,
+				DDS_STATUS_MASK_NONE);
+
+
+		if (writer == NULL) {
+			printf("create_datawriter error\n");
+			publisher_shutdown(hndl->participant);
+			return NULL;
+		}
+	[/for]
+	DDS_DataWriterQos_finalize(&writerQoS);
+	[/let]
+[/if]
+
+[if (portInstanceCfg.subscriber->size()>0)]
+	[let subscriber:Subscriber = portInstanceCfg.subscriber->any(true)]
+	//create SubscriberListener	
+	DDS_StatusMask submask = DDS_STATUS_MASK_NONE;
+	struct DDS_SubscriberListener sub_listener = DDS_SubscriberListener_INITIALIZER;
+	[generateSubscribererListenerDDS('sub_listener', 'submask', 'ptr')/]	
+	
+
+	//create Subscriber Partition
+	struct DDS_SubscriberQos subQoS = DDS_SubscriberQos_INITIALIZER;
+	retcode = DDS_DomainParticipant_get_default_subscriber_qos(hndl->participant,&subQoS);
+	 if (retcode != DDS_RETCODE_OK) {
+       printf("get_default_publisher_qos error\n");
+	    return NULL;
+	 }
+	[generatePartition(port, portInstanceCfg->any(true), 'subQoS')/]
+
+	//create Subscriber
+	hndl->subscriber = DDS_DomainParticipant_create_subscriber(
+			hndl->participant, &subQoS, &sub_listener /* listener */,
+			submask);
+	DDS_SubscriberQos_finalize(&subQoS);
+	if (hndl->subscriber == NULL) {
+		printf("create_subscriber error\n");
+		subscriber_shutdown(hndl->participant);
+		return NULL;
+	}
+
+	//create Reader QoS
+		struct DDS_DataReaderQos readerQoS = DDS_DataReaderQos_INITIALIZER;
+		retcode = DDS_Subscriber_get_default_datareader_qos(hndl->subscriber, &readerQoS);
+		if (retcode != DDS_RETCODE_OK) {
+      		 printf("get_default_subscriber_qos error\n");
+	    	return NULL;
+		}
+
+	[for (reader : DataReader | subscriber.readers)]
+		//register the dataType
+		type_name = [reader.topic.oclAsType(topics::Topic).datatype.name/]TypeSupport_get_type_name();
+		retcode = [reader.topic.oclAsType(topics::Topic).datatype.name/]TypeSupport_register_type(hndl->participant, type_name);
+		if (retcode != DDS_RETCODE_OK) {
+			printf("register_type error %d\n", retcode);
+			publisher_shutdown(hndl->participant);
+			return NULL;
+		}
+		//register the topic
+		topic = DDS_DomainParticipant_create_topic(hndl->participant, "[reader.topic.name/]", type_name,
+			&DDS_TOPIC_QOS_DEFAULT, NULL /* listener */,
+			DDS_STATUS_MASK_NONE);
+		if (topic == NULL) {
+			printf("create_topic error\n");
+			publisher_shutdown(hndl->participant);
+			return NULL;
+		}
+		
+		[generateReaderQoS(reader, 'readerQoS')/]
+
+
+		//create reader for Topic
+		reader = DDS_Subscriber_create_datareader(hndl->subscriber,
+			DDS_Topic_as_topicdescription(topic), &readerQoS,
+			NULL, DDS_STATUS_MASK_ALL);
+
+		if (reader == NULL) {
+			printf("create_datareader error\n");
+			subscriber_shutdown(hndl->participant);
+			return NULL;
+		}
+	[/for]
+			DDS_DataReaderQos_finalize(&readerQoS);
+	[/let]
+[/if]
+		
+	return ptr;
+	}	
+[/template]
+
+
+[comment currenlty the same as above for discreteports/]
+[template public generateBuilderForPortHandleDDS(port : DirectedTypedPort, portInstanceCfg : Collection(PortInstanceConfiguration_DDS))]
+static PortHandle* [port.getMethodNameForDDSPortBuilder()/]([port.component.getBuilderStructName()/]* b, PortHandle *ptr){
+	DDS_Topic *topic = NULL;
+	const char *type_name = NULL;
+	DDS_ReturnCode_t retcode;
+	DDS_DataWriter *writer = NULL;
+	DDS_DataReader *reader = NULL;
+	
+	//FIXME: create fixed QoS attributes including partition
+
+	ptr->type = PORT_HANDLE_TYPE_DDS;
+	DDSHandle *hndl = malloc(sizeof(DDSHandle));
+	ptr->concreteHandle = hndl;
+
+	//create domain participant
+	hndl->participant = DDS_DomainParticipantFactory_create_participant(
+	DDS_TheParticipantFactory, b->[port.name.toUpper()/]_op.dds_option.domainID,
+			&DDS_PARTICIPANT_QOS_DEFAULT,
+			NULL /* listener */, DDS_STATUS_MASK_NONE);
+	if (hndl->participant == NULL) {
+		printf("create_participant error\n");
+		publisher_shutdown(hndl->participant);
+		return NULL;
+	}
+[if (portInstanceCfg.publisher->size()>0)]
+	[let publisher:Publisher = portInstanceCfg.publisher->any(true)]
+	//create Publisher Partition
+	struct DDS_PublisherQos pubQoS = DDS_PublisherQos_INITIALIZER;
+	retcode = DDS_DomainParticipant_get_default_publisher_qos(hndl->participant,&pubQoS);
+	 if (retcode != DDS_RETCODE_OK) {
+       printf("get_default_publisher_qos error\n");
+	    return NULL;
+	 }
+	[generatePartition(port, portInstanceCfg->any(true), 'pubQoS')/]
+
+	//create Publisher
+	hndl->publisher = DDS_DomainParticipant_create_publisher(hndl->participant,
+			&pubQoS, NULL /* listener */,
+			DDS_STATUS_MASK_NONE);
+	DDS_PublisherQos_finalize(&pubQoS);
+	if (hndl->publisher == NULL) {
+		printf("create_publisher error\n");
+		publisher_shutdown(hndl->participant);
+		return NULL;
+	}
+
+	[for (writer : DataWriter | publisher.writers)]
+		//register the dataType
+		type_name = [writer.topic.datatype.name/]TypeSupport_get_type_name();
+		retcode = [writer.topic.datatype.name/]TypeSupport_register_type(hndl->participant, type_name);
+		if (retcode != DDS_RETCODE_OK) {
+			printf("register_type error %d\n", retcode);
+			publisher_shutdown(hndl->participant);
+			return NULL;
+		}
+		//register the topic
+		topic = DDS_DomainParticipant_create_topic(hndl->participant, "[writer.topic.name/]", type_name,
+			&DDS_TOPIC_QOS_DEFAULT, NULL /* listener */,
+			DDS_STATUS_MASK_NONE);
+		if (topic == NULL) {
+			printf("create_topic error\n");
+			publisher_shutdown(hndl->participant);
+			return NULL;
+		}
+		//create writer for Topic
+		writer = DDS_Publisher_create_datawriter(hndl->publisher, topic,
+				&DDS_DATAWRITER_QOS_DEFAULT, NULL /* listener */,
+				DDS_STATUS_MASK_NONE);
+		if (writer == NULL) {
+			printf("create_datawriter error\n");
+			publisher_shutdown(hndl->participant);
+			return NULL;
+		}
+	[/for]
+	[/let]
+[/if]
+
+
+
+[if (portInstanceCfg.subscriber->size()>0)]
+	[let subscriber:Subscriber = portInstanceCfg.subscriber->any(true)]
+	//create Subscriber Partition
+	struct DDS_SubscriberQos subQoS = DDS_SubscriberQos_INITIALIZER;
+	retcode = DDS_DomainParticipant_get_default_subscriber_qos(hndl->participant,&subQoS);
+	 if (retcode != DDS_RETCODE_OK) {
+       printf("get_default_publisher_qos error\n");
+	    return NULL;
+	 }
+	[generatePartition(port, portInstanceCfg->any(true), 'subQoS')/]
+	//create Subscriber
+	hndl->subscriber = DDS_DomainParticipant_create_subscriber(
+			hndl->participant, &subQoS, NULL /* listener */,
+			DDS_STATUS_MASK_NONE);
+	DDS_SubscriberQos_finalize(&subQoS);
+	if (hndl->subscriber == NULL) {
+		printf("create_subscriber error\n");
+		subscriber_shutdown(hndl->participant);
+		return NULL;
+	}
+
+	[for (reader : DataReader | subscriber.readers)]
+		//register the dataType
+		type_name = [reader.topic.oclAsType(topics::Topic).datatype.name/]TypeSupport_get_type_name();
+		retcode = [reader.topic.oclAsType(topics::Topic).datatype.name/]TypeSupport_register_type(hndl->participant, type_name);
+		if (retcode != DDS_RETCODE_OK) {
+			printf("register_type error %d\n", retcode);
+			publisher_shutdown(hndl->participant);
+			return NULL;
+		}
+		//register the topic
+		topic = DDS_DomainParticipant_create_topic(hndl->participant, "[reader.topic.name/]", type_name,
+			&DDS_TOPIC_QOS_DEFAULT, NULL /* listener */,
+			DDS_STATUS_MASK_NONE);
+		if (topic == NULL) {
+			printf("create_topic error\n");
+			publisher_shutdown(hndl->participant);
+			return NULL;
+		}
+		//create reader for Topic
+		reader = DDS_Subscriber_create_datareader(hndl->subscriber,
+			DDS_Topic_as_topicdescription(topic), &DDS_DATAREADER_QOS_DEFAULT,
+			NULL, DDS_STATUS_MASK_ALL);
+		if (reader == NULL) {
+			printf("create_datareader error\n");
+			subscriber_shutdown(hndl->participant);
+			return NULL;
+		}
+	[/for]
+	[/let]
+[/if]
+
+	return ptr;
+	}	
+[/template]

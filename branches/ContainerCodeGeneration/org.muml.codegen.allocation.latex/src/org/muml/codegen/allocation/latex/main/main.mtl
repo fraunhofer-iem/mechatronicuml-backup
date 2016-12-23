@@ -1,0 +1,47 @@
+
+
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module main.
+ */]
+[module main('http://www.muml.org/pim/connector/1.0.0',
+				 'http://www.muml.org/pim/behavior/1.0.0',
+				'http://www.muml.org/core/1.0.0',
+				'http://www.muml.org/pim/actionlanguage/1.0.0',
+				'http://www.muml.org/pim/msgtype/1.0.0',
+				'http://www.muml.org/pim/types/1.0.0',
+				'http://www.muml.org/modelinstance/1.0.0',
+				'http://www.muml.org/pim/component/1.0.0',
+				'http://www.muml.org/pim/instance/1.0.0',
+				'http://www.muml.org/pim/realtimestatechart/1.0.0',
+				'http://www.muml.org/psm/allocation/1.0.0',
+				'http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0')/]
+
+
+[template public generate(sysAll: SystemAllocation)]
+[comment @main/]
+[file ('SystemAllocationOf'+sysAll.cic.name+'.tex', false, 'Utf8')]
+[comment only generate, if CIC is a root-CIC/]
+[if cic.eContainer().oclIsKindOf(ModelElementCategory)]	
+	[comment generate software parts/]
+	[let ecus : OrderedSet(StructuredResourceInstance) = sysAll.allocations.resourceInstance->asOrderedSet()->sortedBy(name)]
+	[let instances : OrderedSet(ComponentInstance) = sysAll.allocations.componentInstance->asOrderedSet()->sortedBy(name)]
+	\documentclass{article}
+	\begin{document}
+	\section{System Allocation}
+	\begin{tabular}{c |[for (ecus) separator(' | ')]c[/for]}
+	~[for (ecu : StructuredResourceInstance | ecus)] & [ecu.name/][/for] \\\hline
+	[for (instance : ComponentInstance | instances)]
+		[instance.name/] [for (ecu : StructuredResourceInstance | ecus)] & [if (instance.getAllocationTarget(sysAll).name=ecu.name)]1[else]0[/if][/for]\\ 
+	[/for]
+	\end{tabular}
+	\end{document}
+ 	[/let]
+	[/let]
+[/if]
+[/file]
+[/template]
+[query public getAllocationTarget(cI : ComponentInstance, sysAll:SystemAllocation) : StructuredResourceInstance = 
+sysAll.allocations->select(allocation:Allocation|allocation.componentInstance=cI)->any(true).resourceInstance /]
+
+

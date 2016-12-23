@@ -1,0 +1,118 @@
+[comment encoding = UTF-8 /]
+[**
+ * This module contains all templates, that are used to generate the Configuration-files
+ * for a given Container.
+ */]
+[module MakeFile('http://www.muml.org/pim/connector/1.0.0',
+				'http://www.muml.org/pim/behavior/1.0.0',
+				'http://www.muml.org/core/1.0.0',
+				'http://www.muml.org/pim/actionlanguage/1.0.0',
+				'http://www.muml.org/pim/msgtype/1.0.0',
+				'http://www.muml.org/pim/types/1.0.0',
+				'http://www.muml.org/modelinstance/1.0.0',
+				'http://www.muml.org/pim/component/1.0.0',
+				'http://www.muml.org/pim/instance/1.0.0',
+				'http://www.muml.org/pim/realtimestatechart/1.0.0',
+				'http://www.muml.org/psm/1.0.0',
+				'http://www.muml.org/psm/muml_container/0.5.0')/]
+
+[import org::muml::codegen::componenttype::c::queries::stringQueries/]
+[import org::muml::codegen::componenttype::c::queries::modelQueries/]
+[import org::muml::codegen::componenttype::c::queries::ContainerQueries/]
+
+[import org::muml::container::codegen::c::queries::containerStringQueries/]
+[import org::muml::container::codegen::c::container::ContainerCommunication/]
+[import org::muml::container::codegen::c::container::ContainerBuilder/]
+
+[template public generateMakeFile(ecuConfig:ECUConfiguration, useSubDir:Boolean, path: String)]
+	[file (path+'makefile', false, 'UTF-8')]
+[let CIs : OrderedSet(ComponentInstance) = ecuConfig.componentContainers.componentInstanceConfigurations.componentInstance->asOrderedSet()]
+
+
+ifndef NDDSHOME
+#EXPORT THE VARIABLE NDDSHOME AND MAKE SHURE YOU HAVE A VALID RTI LICENCE. OTHERWISE PROGRAMS DO NOT RUN
+NDDSHOME := "NOT SET"
+endif
+#TARGET_ARCH = x64Linux3.xgcc4.6.3
+
+SYSLIBS = -ldl -lnsl -lm -lpthread -lrt
+DEFINES = -DRTI_UNIX -DRTI_LINUX -DRTI_64BIT 
+#FIXME CHANGE LIB PATH IF DDS PROVIDES ANOTHER PATH
+LIBS = -L$(NDDSHOME)/lib/x64Linux3gcc4.8.2/ \
+        -lnddscz -lnddscorez $(SYSLIBS)
+DDSSOURCES = [getDDSFileName()/]Support.o [getDDSFileName()/]Plugin.o [getDDSFileName()/].o 
+
+
+CONT = [for (container:ComponentContainer| ecuConfig.componentContainers)] MCC_[getClassName(container.componentType).toLowerFirst()/].o[/for]
+CONT_LIB =  MessageBuffer.o LocalBufferManager.o DDS_Custom_Lib.o
+
+RTSC = [for (comp : Component | CIs.componentType->asSet())][if ((comp.oclIsKindOf(AtomicComponent)) and (comp.componentKind = ComponentKind::SOFTWARE_COMPONENT))][comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart).getClassName().toLowerFirst()/].o [/if][/for]
+COMP = [for (comp : Component | CIs.componentType->asSet())][if ((oclIsKindOf(AtomicComponent)))][comp.getClassName().toLowerFirst()/].o [/if][/for] 
+CONTMAPPING = [for (cInst : ComponentInstance | CIs->select(componentType.oclAsType(Component).componentKind=ComponentKind::CONTINUOUS_COMPONENT))][for (cPort : ContinuousPort | cInst.componentType.ports->filter(ContinuousPort))][cInst.getIdentifierVariableName()/][getVariableName(cPort)/]accessCommand.o [/for][/for]
+OPERATIONREPOSITORIES = [let opRepos : Sequence(OperationRepository) = CIs.componentType->filter(AtomicComponent)->select(a:AtomicComponent|a.componentKind=ComponentKind::SOFTWARE_COMPONENT).behavior.oclAsType(RealtimeStatechart).usedOperationRepositories]	[for (opRep: OperationRepository | opRepos)] [getClassName(opRep).toLowerFirst()/].o	[/for]	[/let]
+LIB =   Debug.o
+CC = gcc
+CFLAGS = -DC99 -DDEBUG -ggdb -Wall -c  $(DEFINES) -I types -I lib -I $(NDDSHOME)/include -I $(NDDSHOME)/include/ndds 
+all: app
+
+app : main.o $(RTSC) $(COMP) $(LIB) $(CONT_LIB) $(HYB) $(CONT) $(CONTMAPPING) [if (CIs.componentType->filter(AtomicComponent)->select(a:AtomicComponent|a.componentKind=ComponentKind::SOFTWARE_COMPONENT).behavior.oclAsType(RealtimeStatechart).usedOperationRepositories->size() > 0)]$(OPERATIONREPOSITORIES)[/if]  $(DDSSOURCES)
+	$(CC) main.o $(RTSC) $(COMP) $(LIB) $(CONT_LIB) $(HYB) $(CONT) $(CONTMAPPING)[if (CIs.componentType->filter(AtomicComponent)->select(a:AtomicComponent|a.componentKind=ComponentKind::SOFTWARE_COMPONENT).behavior.oclAsType(RealtimeStatechart).usedOperationRepositories->size() > 0)]$(OPERATIONREPOSITORIES)[/if] $(DDSSOURCES) $(LIBS) -o app
+[for (comp : Component | CIs.componentType->asSet())? (componentKind=ComponentKind::SOFTWARE_COMPONENT and oclIsKindOf(AtomicComponent))]
+[let rtsc : RealtimeStatechart = comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart)]
+[rtsc.getClassName().toLowerFirst()/].o: [rtsc.getFileName(false,useSubDir)/]
+	$(CC) $(CFLAGS) [rtsc.getFileName(false,useSubDir)/]
+[/let]
+[/for]
+[for (comp : Component | CIs.componentType->asSet()) ? (oclIsKindOf(AtomicComponent))]
+[comp.getClassName().toLowerFirst()/].o: [comp.getFileName(false,useSubDir)/]
+	$(CC) $(CFLAGS) [comp.getFileName(false,useSubDir)/]
+[/for]
+[for (cInst : ComponentInstance | CIs->select(componentType.oclAsType(Component).componentKind=ComponentKind::CONTINUOUS_COMPONENT))]
+[for (cPort : ContinuousPort | cInst.componentType.ports->filter(ContinuousPort))]
+[cInst.getIdentifierVariableName()/][getVariableName(cPort)/]accessCommand.o: APImappings/[cInst.getIdentifierVariableName()/][getVariableName(cPort)/]accessCommand.c
+	$(CC) $(CFLAGS) APImappings/[cInst.getIdentifierVariableName()/][getVariableName(cPort)/]accessCommand.c
+[/for]
+[/for]
+
+
+[getDDSFileName()/]Support.o: dds/[getDDSFileName()/]Support.c
+	$(CC) $(CFLAGS) dds/[getDDSFileName()/]Support.c
+[getDDSFileName()/]Plugin.o: dds/[getDDSFileName()/]Plugin.c
+	$(CC) $(CFLAGS) dds/[getDDSFileName()/]Plugin.c
+[getDDSFileName()/].o: dds/[getDDSFileName()/].c
+	$(CC) $(CFLAGS) dds/[getDDSFileName()/].c
+
+
+
+
+MessageBuffer.o: container_lib/MessageBuffer.c
+	$(CC) $(CFLAGS) container_lib/MessageBuffer.c
+LocalBufferManager.o: container_lib/LocalBufferManager.c
+	$(CC) $(CFLAGS) container_lib/LocalBufferManager.c
+DDS_Custom_Lib.o: container_lib/DDS_Custom_Lib.c
+	$(CC) $(CFLAGS) container_lib/DDS_Custom_Lib.c
+
+
+[for (container:ComponentContainer| ecuConfig.componentContainers)]
+MCC_[getClassName(container.componentType).toLowerFirst()/].o: [container.getFileName(false, true)/]
+	$(CC) $(CFLAGS) [container.getFileName(false, true)/]
+[/for]
+
+Debug.o: [if (useSubDir)]lib/[/if]Debug.c
+	$(CC) $(CFLAGS) [if (useSubDir)]lib/[/if]Debug.c
+
+
+[for (opRepo : OperationRepository | CIs.componentType->filter(AtomicComponent)->select(a:AtomicComponent|a.componentKind=ComponentKind::SOFTWARE_COMPONENT).behavior.oclAsType(RealtimeStatechart).usedOperationRepositories)]
+ [getClassName(opRepo).toLowerFirst()/].o: [opRepo.getFileName(false, true)/]
+	$(CC) $(CFLAGS) [opRepo.getFileName(false, true)/]
+[/for]	
+
+[/let]
+
+clean:
+	rm -rf *o app
+[/file]
+[/template]	
+
+
+

@@ -1,0 +1,243 @@
+library DDS_Library;
+import Naming_Library;
+import org.muml.container._library.DDSHelperBlackBox;
+property dummyType : Char = object Char{
+	
+};
+
+property dataLib: DataLib;
+
+property policyLib: PolicyLib;
+property dcpsLib: DcpsLib;
+
+property systemAllocation: SystemAllocation;
+
+
+
+/*
+ MUML- IMPORTS
+*/
+modeltype MumlPackage uses pim('http://www.muml.org/pim/1.0.0');
+modeltype Typespackage uses pim::types('http://www.muml.org/pim/1.0.0');
+modeltype ConnectorPackage uses pim::connector('http://www.muml.org/pim/1.0.0');
+modeltype ValuetypePackage uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype ComponentPackage uses pim::component('http://www.muml.org/pim/1.0.0');
+modeltype MessagePackage uses pim::msgtype('http://www.muml.org/pim/1.0.0');
+modeltype RTSCPackage uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype ProtocolPackage uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype InstancePackage uses pim::instance('http://www.muml.org/pim/1.0.0');
+modeltype core uses core('http://www.muml.org/core/1.0.0');
+modeltype ModelInstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
+modeltype Actionlanguage uses actionlanguage('http://www.muml.org/pim/actionlanguage/1.0.0');
+
+
+modeltype Hardware uses hardware('http://www.muml.org/pm/hardware/1.0.0');
+modeltype Platform uses hardware::hwplatform('http://www.muml.org/pm/hardware/1.0.0');
+modeltype hwpinstance uses hardware::hwplatforminstance('http://www.muml.org/pm/hardware/1.0.0');
+modeltype hwrinstance uses hardware::hwresourceinstance('http://www.muml.org/pm/hardware/1.0.0');
+modeltype Resource uses hardware::hwresource('http://www.muml.org/pm/hardware/1.0.0');
+
+
+modeltype PSM uses psm('http://www.muml.org/psm/1.0.0');
+modeltype Allocation uses psm::allocation('http://www.muml.org/psm/1.0.0');
+
+
+modeltype MumlContainer uses muml_container('http://www.muml.org/psm/muml_container/0.5.0');
+modeltype ECore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+
+/*
+  DDS-Imports
+*/
+modeltype DDSCore uses core('http://www.opendds.org/modeling/schemas/Core/1.0');
+modeltype DDSDCPS uses dcps('http://www.opendds.org/modeling/schemas/DCPS/1.0');
+modeltype DDSDomain uses domain('http://www.opendds.org/modeling/schemas/Domain/1.0');
+modeltype OpenDDS uses opendds('http://www.opendds.org/modeling/schemas/OpenDDS/1.0');
+modeltype DDSApplication uses application('http://www.opendds.org/modeling/schemas/Application/1.0');
+modeltype DDSEnumeration uses enumerations('http://www.opendds.org/modeling/schemas/Enumerations/1.0');
+modeltype DDSQoS uses qos('http://www.opendds.org/modeling/schemas/QoS/1.0');
+modeltype DDSTopics uses topics('http://www.opendds.org/modeling/schemas/Topics/1.0');
+modeltype DDSTypes uses types('http://www.opendds.org/modeling/schemas/Types/1.0');
+
+property globalCICs : OrderedSet(ComponentInstanceConfiguration)=OrderedSet{}; 
+	
+
+query SystemAllocation::getAllDirectedTypedPort():Collection(DirectedTypedPort){
+	return self.allocations.componentInstance.componentType->selectByType(AtomicComponent).ports->selectByKind(DirectedTypedPort);
+}
+
+query MessageType::getDDSStructName():String{
+	return 'DDS_'+getName(self.oclAsType(EObject))+'_'+getName(self.repository.oclAsType(EObject));
+}
+
+
+//all connected PortInstances shall share the same domainID
+//we compute the domain ID based on the common ComponentInstanceConfiguration of all connected PortInstances
+query PortInstanceConfiguration_DDS::getDomainID():Integer{
+	//find all connected PortInstances
+	var connectedPortInstances : Collection(PortInstance) :=self.portInstance.getConnectedPortInstances();
+	//find the common ComponentInstanceConfiguration
+	var commonCIC : ComponentInstanceConfiguration := null;
+	//climb up the hierarchy for 
+	var currentparentCICs : Set(ComponentInstanceConfiguration) = self.portInstance.getParentCICs();
+	connectedPortInstances->forEach(pi){
+		var parrentCICsofPort : OrderedSet(ComponentInstanceConfiguration) = pi.getParentCICs();
+		currentparentCICs:=currentparentCICs->intersection(parrentCICsofPort)->asOrderedSet();
+	};
+	//get currentparentCIC which is the lowest in the hierachy
+	//commonCIC:=currentparentCICs->;
+	
+	if(currentparentCICs->size()=0){
+		return 0;
+	};
+	//get the CICs which is the lowest in the hierachy
+	commonCIC  := currentparentCICs->asOrderedSet()->first();
+	var maxDepth : Integer = commonCIC->closure(c|if(c.parentStructuredComponentInstance.oclIsUndefined()) then null else c.parentStructuredComponentInstance.parentCIC endif)->including(commonCIC)->size();
+		currentparentCICs->forEach(c){
+			log("parent:"+c.name);
+		};
+	currentparentCICs->forEach(cic){
+		var depth:Integer:= cic->closure(c|if(c.parentStructuredComponentInstance.oclIsUndefined()) then null else c.parentStructuredComponentInstance.parentCIC endif)->including(cic)->size();
+		if(depth>maxDepth) then{
+			maxDepth := depth;
+			commonCIC:=cic;
+		}endif;
+	};
+	log("commonCI:"+commonCIC.name);
+	log("globalCICS:"+globalCICs->size().toString());
+	//by convention the domain ID must be smaller than 232 thus we use an index of a Map
+	if(not globalCICs->includes(commonCIC)) then{
+		globalCICs->including(commonCIC);
+	}endif;
+	return  globalCICs->indexOf(commonCIC);
+}
+
+query PortInstanceConfiguration_DDS::getPartitionID():Integer{
+	//find all connected PortInstances including self
+	var connectedPortInstances : Set(PortInstance) :=self.portInstance.getConnectedPortInstances()->asSet()->including(self.portInstance);
+	//compute partion ID for all connected portInstances
+	return getHash(connectedPortInstances);
+}
+
+query PortInstance::getParentCICs():OrderedSet(ComponentInstanceConfiguration){
+	var currentCIC:ComponentInstanceConfiguration:=self.componentInstance.parentCIC;
+	var parentCICs:OrderedSet(ComponentInstanceConfiguration) = OrderedSet{self.componentInstance.parentCIC};
+	while(not currentCIC.parentStructuredComponentInstance.oclIsUndefined()){
+		currentCIC:=currentCIC.parentStructuredComponentInstance.parentCIC;
+		parentCICs+=currentCIC;
+	};
+	return parentCICs;
+}
+
+
+query MessageType::getDDSTopicName(port:DiscretePort):String{
+	return self.getDDSStructName()+port.name+port.component.name+'_Topic';
+}
+
+query Port::getDomainParticipantName():String{
+	return self.component.name+'_'+self.name+'Participant';
+}
+
+query Port::getPublischerName():String{
+	return self.name+'Publisher';
+}
+
+query Port::getSubscriberName():String{
+	return self.name+'Subscriber';
+}
+
+query Port::getDataWriterName(msg:MessageType):String{
+		return msg.getDDSStructName()+'DataWriter';
+	
+}
+
+query Port::getDataReaderName(msg:MessageType):String{
+	return msg.getDDSStructName()+'DataReader';
+}
+
+query DirectedTypedPort::getWriterName():String{
+	//the name is defined based on the Out-Port, so we have to look for the outport first
+	var outport:DirectedTypedPort;
+	if(self.outPort) then{
+		outport:=self;
+	}
+	else{
+		
+	}endif;
+	return outport.getDDSStructName()+'DataReader';
+}
+
+query DirectedTypedPort::getReaderName():String{
+		//the name is defined based on the Out-Port, so we have to look for the outport first
+		var outport:DirectedTypedPort;
+		if(self.outPort) then{
+			outport:=self;
+		}
+		else{
+		
+		}endif;
+		return outport.getDDSStructName()+'DataReader';
+}
+
+query DirectedTypedPort::getDDSStructName():String{
+	return 'DDS_'+self.component.name.toUpper()+'_'+self.name.toUpper();
+}
+
+query DirectedTypedPort::getTopicName():String{
+		return self.getDDSStructName()+'_Topic';
+}
+
+///The dataType Mapping puts the dataType in the correspond Lib by itself (Shall be fixed later)
+mapping DataType::mapMumlDataType2DDSType():Type disjuncts
+PrimitiveDataType::mapPrimitiveType2DDSDataType, StructureDataType::mapMumlStructuredDataType2DDSStruct, ArrayDataType::mapMumlArrayDataType2DDSSequence;
+
+mapping StructureDataType::mapMumlStructuredDataType2DDSStruct():Struct{
+	
+}
+
+mapping ArrayDataType::mapMumlArrayDataType2DDSSequence():Array{
+
+	
+}
+/*
+* Mapping MUML DataTypes to dds DataTypes
+* 
+*/
+mapping PrimitiveDataType::mapPrimitiveType2DDSDataType():Type{
+init{
+		switch{
+			case(self.primitiveType=PrimitiveTypes::BOOLEAN){
+				result:=new types::_Boolean();
+			}
+			case(self.primitiveType=PrimitiveTypes::INT8){
+				result:=new types::Char();
+			}
+			case(self.primitiveType=PrimitiveTypes::INT16){
+				result:=new types::Short();
+			}
+			case(self.primitiveType=PrimitiveTypes::INT32){
+				result:=new types::Long();
+			}
+				case(self.primitiveType=PrimitiveTypes::INT64){
+				result:=new types::LongLong();
+			}
+				case(self.primitiveType=PrimitiveTypes::DOUBLE){
+				result:=new types::Double();
+			}
+				case(self.primitiveType=PrimitiveTypes::UINT8){
+				result:=new types::Char();
+			}
+				case(self.primitiveType=PrimitiveTypes::UINT16){
+				result:=new types::UShort();
+			}
+				case(self.primitiveType=PrimitiveTypes::UINT32){
+				result:=new types::ULong();
+			}
+				case(self.primitiveType=PrimitiveTypes::UINT64){
+				result:=new types::ULongLong();
+			}
+
+		};
+}
+	
+}

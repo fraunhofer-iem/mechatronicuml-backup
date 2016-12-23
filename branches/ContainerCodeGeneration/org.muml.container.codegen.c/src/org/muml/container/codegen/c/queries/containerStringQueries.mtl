@@ -1,0 +1,77 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module generate.
+ */]
+[module containerStringQueries('http://www.muml.org/pim/connector/1.0.0',
+				'http://www.muml.org/pim/behavior/1.0.0',
+				'http://www.muml.org/core/1.0.0',
+				'http://www.muml.org/pim/actionlanguage/1.0.0',
+				'http://www.muml.org/core/expressions/common/1.0.0',
+				'http://www.muml.org/pim/msgtype/1.0.0',
+				'http://www.muml.org/pim/types/1.0.0',
+				'http://www.muml.org/modelinstance/1.0.0',
+				'http://www.muml.org/pim/component/1.0.0',
+				'http://www.muml.org/pim/instance/1.0.0',
+				'http://www.muml.org/pim/realtimestatechart/1.0.0',
+				'http://www.muml.org/psm/1.0.0',
+				'http://www.muml.org/psm/muml_container/0.5.0',
+				'http://www.opendds.org/modeling/schemas/DCPS/1.0',
+				'http://www.opendds.org/modeling/schemas/Core/1.0',
+				'http://www.opendds.org/modeling/schemas/Application/1.0',
+				'http://www.opendds.org/modeling/schemas/Topics/1.0')/]
+
+[import org::muml::codegen::componenttype::c::queries::stringQueries/]
+
+
+[query public getDDSFileName (dummy:OclAny) : String = 'MUML_DDS' /]
+
+
+[query public isDDSused(container:ComponentContainer) : Boolean = 		
+if (container.componentInstanceConfigurations.portInstanceConfigurations->exists(c|c.oclIsKindOf(PortInstanceConfiguration_DDS))) then
+		true
+else
+		false
+endif
+/]
+
+
+[**
+ * @param component
+*/]
+[query public getFileName(container : ComponentContainer, header : Boolean, useSubDir : Boolean) : String = 
+	if useSubDir then 'component_container/' else '' endif + 
+		'MCC_'+getClassName(container.componentType).toLowerFirst()
+	+
+	if (header) then
+		'.h'
+	else
+		'.c'
+	endif
+/]
+
+[query public getContainerComponentCreateMethodName(cmp:Component) : String =
+	'MCC_create_'+cmp.getClassName()
+/]
+
+[query public getBuilderStructName(cmp:Component) : String =
+	cmp.getVariableName()+'_Builder'
+/]
+
+
+[**
+ * @param operation
+*/]
+[query public getHeaderDefine(container : ComponentContainer) : String = 
+	'MCC_'+'MCC_'+getClassName(container.componentType).toUpper() + '_H_'
+/]
+
+[query public getFileNameECU_Identifier(dummy:OclAny): String =
+	'ECU_Identifier.h'
+/]
+
+[query public getContainerComponentCreateMethod(container:ComponentContainer):String =
+	'MCC_create_'+container.componentType.getClassName()
+/]
+
+[query public getIdentifierVariableName (componentInstance: ComponentInstance) : String = 
+'CI_'+componentInstance.getName().toUpperCase()+componentInstance.componentType.getName().toUpperCase()/]

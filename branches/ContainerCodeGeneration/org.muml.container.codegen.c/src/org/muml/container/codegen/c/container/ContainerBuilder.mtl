@@ -1,0 +1,143 @@
+[comment encoding = UTF-8 /]
+[**
+ * This module contains all templates, that are used to generate the Configuration-files
+ * for a given Container.
+ */]
+[module ContainerBuilder('http://www.muml.org/pim/connector/1.0.0',
+				'http://www.muml.org/pim/behavior/1.0.0',
+				'http://www.muml.org/core/1.0.0',
+				'http://www.muml.org/pim/actionlanguage/1.0.0',
+				'http://www.muml.org/core/expressions/common/1.0.0',
+				'http://www.muml.org/pim/msgtype/1.0.0',
+				'http://www.muml.org/pim/types/1.0.0',
+				'http://www.muml.org/modelinstance/1.0.0',
+				'http://www.muml.org/pim/component/1.0.0',
+				'http://www.muml.org/pim/instance/1.0.0',
+				'http://www.muml.org/pim/realtimestatechart/1.0.0',
+				'http://www.muml.org/psm/1.0.0',
+				'http://www.muml.org/psm/muml_container/0.5.0',
+				'http://www.opendds.org/modeling/schemas/DCPS/1.0',
+				'http://www.opendds.org/modeling/schemas/Core/1.0',
+				'http://www.opendds.org/modeling/schemas/Application/1.0',
+				'http://www.opendds.org/modeling/schemas/Topics/1.0')/]
+
+[import org::muml::codegen::componenttype::c::queries::stringQueries/]
+[import org::muml::codegen::componenttype::c::queries::modelQueries/]
+[import org::muml::codegen::componenttype::c::queries::ContainerQueries/]
+
+[import org::muml::container::codegen::c::queries::containerStringQueries/]
+[import org::muml::container::codegen::c::container::ContainerCommunication/]
+[import org::muml::container::codegen::c::container::local::LocalBuilder/]
+[import org::muml::container::codegen::c::container::dds::DDSBuilder /]
+
+
+
+[template public generateBuilderStruct(component:Component)]
+						/**
+						*  
+						* @brief The options a port declases
+						* @details Thes options are used in the struct [component.getBuilderStructName()/]
+						*/ 
+	struct port_option {
+	union {
+		struct{
+		uint16_T pubID;
+		uint16_T subID;
+		} local_option;
+		struct {
+			int domainID;
+			int partition;
+		} dds_option;
+	};
+};
+
+						/**
+						*  
+						* @brief The builder struct for the Component Type: [component.getName()/]
+						* @details This is a realization of the builder pattern, the struct represents a Concrete Builder
+						*/ 
+typedef struct [component.getBuilderStructName()/] {
+		uint8_T ID;
+		//create Builder Functions for each Port
+		[for (port : Port | component.ports)]
+			PortStatus [port.name.toUpper()/]; /**< The status of port [port.name/] */
+			PortHandle* (*create[port.name.toUpper()/]Handle)(struct [component.getBuilderStructName()/]*, PortHandle*); /**< The builder method to create a PortHandle for port [port.name/] */
+			struct port_option [port.name.toUpper()/]_op; /**< The port_option for the PortHandle of port [port.name/] */
+		[/for]
+		[for (cPort : ContinuousPort | component.ports->filter(ContinuousPort))]
+		void (*[getVariableName(cPort)/]AccessFunction) ([cPort.dataType.getTypeName()/]*); /**access function pointer for continuous port */
+		/*FIXME add initialize and destroy function pointer*/
+		[/for]
+}[component.getBuilderStructName()/];
+
+/**
+*
+*@brief A initializer for the struct [component.getBuilderStructName()/]
+*@details Shall be used when creating a struct [component.getBuilderStructName()/] manually
+*/
+static const [component.getBuilderStructName()/] INIT_BUILDER = { 0, [for (port : Port | component.ports) separator (',') ] PORT_DEACTIVATED, NULL, .[port.name.toUpper()/]_op.local_option={0,0}  [/for] };
+[/template] 
+
+[template public generateComponetInstancePool(container:ComponentContainer)]
+/**
+*
+*@brief The pool of component instance of Component Type [container.componentType.getName()/]
+*@details The container manages the resource instances in this pool, and this pool allocates the memory for component instances statically
+*/
+	static [container.componentType.getClassName()/] instancePool ['['/][container.componentInstances->size()/][']'/];
+	static int pool_length = 0;
+	static int pool_index = 0;
+[/template]
+
+[template public generateComponentBuilder(cmp:Component)]
+/**
+*
+*@brief The builder for component instance of Component Type [cmp.getName()/]
+*@details This method creates and initializes a component instance properly by using the struct [cmp.getBuilderStructName()/]
+*/
+	static [cmp.getClassName()/]* MCC_[cmp.getClassName()/]_Builder([cmp.getBuilderStructName()/]* b){
+		instancePool['['/]pool_index[']'/].ID = b->ID;
+		[for (cPort:ContinuousPort|cmp.ports->filter(ContinuousPort))]	
+		instancePool['['/]pool_index[']'/].[getVariableName(cPort)/]AccessFunction = b->[getVariableName(cPort)/]AccessFunction;
+		[/for]
+[if cmp.componentKind=ComponentKind::SOFTWARE_COMPONENT]
+		instancePool['['/]pool_index[']'/].stateChart = [cmp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart).getCreateMethodName()/](
+			&instancePool['['/]pool_index[']'/]);
+		//call init after RTSC was created
+		[cmp.getInitializeMethodName()/](&instancePool['['/]pool_index[']'/]);
+[/if]	
+		//For each port initialize it
+		[for (port : Port | cmp.ports)]
+			if(b->[port.name.toUpper()/] != PORT_DEACTIVATED) {
+			instancePool['['/]pool_index[']'/].[port.getVariableName(true)/].status = b->[port.name.toUpper()/];
+			instancePool['['/]pool_index[']'/].[port.getVariableName(true)/].handle = (PortHandle*) malloc(sizeof(PortHandle));
+ 			instancePool['['/]pool_index[']'/].[port.getVariableName(true)/].handle->port = &(instancePool['['/]pool_index[']'/].[port.getVariableName(true)/]);
+			b->create[port.name.toUpper()/]Handle(b, (instancePool['['/]pool_index[']'/].[port.getVariableName(true)/].handle));
+			//instancePool['['/]pool_index[']'/].[port.getVariableName(true)/].handle->port = &(instancePool['['/]pool_index[']'/].[port.getVariableName(true)/]);
+		}
+		[/for]
+	
+		return &instancePool['['/]pool_index++[']'/];
+	}
+[/template]
+
+[template public generateBuilderForPortHandle(container:ComponentContainer)]
+	[comment generate builder for every port type if used by a component instance/]
+	[for (port : Port | container.componentType.ports)]
+		[comment check if port is used by any component instance/]
+		[let portInstanceConfigsForThisPort : Sequence(PortInstanceConfiguration) = container.componentInstanceConfigurations.portInstanceConfigurations->select(pcfg : PortInstanceConfiguration | pcfg.portInstance.portType = port)]
+			[if (portInstanceConfigsForThisPort->size()>0)]
+				[comment the port is used by some Component instance/]
+				[if (portInstanceConfigsForThisPort->exists(p|p.oclIsKindOf(PortInstanceConfiguration_Local)))]
+					 [generateBuilderForPortHandleLocal(port, portInstanceConfigsForThisPort->filter(PortInstanceConfiguration_Local))/]
+				[/if]
+				
+				[if (portInstanceConfigsForThisPort->exists(p|p.oclIsKindOf(PortInstanceConfiguration_DDS)))]
+					[generateBuilderForPortHandleDDS(port, portInstanceConfigsForThisPort->filter(PortInstanceConfiguration_DDS))/]
+				[/if]
+			[/if]	
+		[/let]
+	[/for]
+[/template]
+
+

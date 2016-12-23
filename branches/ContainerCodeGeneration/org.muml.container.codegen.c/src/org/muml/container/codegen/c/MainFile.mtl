@@ -1,0 +1,71 @@
+[comment encoding = UTF-8 /]
+[**
+ * This module contains all templates, that are used to generate the Configuration-files
+ * for a given Container.
+ */]
+[module MainFile('http://www.muml.org/pim/connector/1.0.0', 'http://www.muml.org/pim/behavior/1.0.0',
+				'http://www.muml.org/core/1.0.0',
+				'http://www.muml.org/pim/actionlanguage/1.0.0',
+				'http://www.muml.org/pim/msgtype/1.0.0',
+				'http://www.muml.org/pim/types/1.0.0',
+				'http://www.muml.org/modelinstance/1.0.0',
+				'http://www.muml.org/pim/component/1.0.0',
+				'http://www.muml.org/pim/instance/1.0.0',
+				'http://www.muml.org/pim/realtimestatechart/1.0.0',
+				'http://www.muml.org/psm/1.0.0',
+				'http://www.muml.org/psm/muml_container/0.5.0')/]
+
+[import org::muml::codegen::componenttype::c::queries::stringQueries]
+[import org::muml::codegen::componenttype::c::queries::modelQueries/]
+[import org::muml::codegen::componenttype::c::queries::ContainerQueries/]
+
+
+[import org::muml::container::codegen::c::container::ContainerCommunication/]
+[import org::muml::container::codegen::c::queries::containerStringQueries/]
+[import org::muml::container::codegen::c::container::ContainerBuilder/]
+[import org::muml::container::codegen::c::container::Container/]
+[template public generateMainFile(ecuConfig: ECUConfiguration, path : String, useSubDir : Boolean)]
+	[file (path+'main.c', false, 'UTF-8')]
+	#include "[if (useSubDir)]lib/[/if]Debug.h"
+	[for (container : ComponentContainer | ecuConfig.componentContainers)]
+		#include "[container.getFileName(container, true, useSubDir)/]"
+	[/for]
+
+
+[let cis : OrderedSet(ComponentInstance) = ecuConfig.componentContainers.componentInstanceConfigurations.componentInstance->asOrderedSet()]
+//variable for component Instances
+[for (ci : ComponentInstance | cis)]
+	[if (ci.componentType.oclIsKindOf(AtomicComponent))]
+			[ci.componentType.getClassName()/]* atomic_c[i/];
+	[/if]
+[/for]
+[for (ci : ComponentInstance | cis->filter(AtomicComponentInstance)->select(c:AtomicComponentInstance |  c.componentType=ComponentKind::SOFTWARE_COMPONENT)->asOrderedSet())]
+[/for]
+int main(){
+	[for (ci : ComponentInstance | cis)]
+		[if (ci.componentType.oclIsKindOf(AtomicComponent))]
+			atomic_c[i/]= [ci.componentType.getContainerComponentCreateMethodName()/]([ci.getIdentifierVariableName()/]);
+		[/if]
+
+	[/for]
+	#ifdef DEBUG
+	printDebugInformation("Initialization done...start execution.\n");
+	#endif
+	while (1) {
+
+	[for (ci : ComponentInstance | cis)]
+		[if (ci.componentType.oclIsKindOf(AtomicComponent))]
+			[ci.componentType.getProcessMethodName()/](atomic_c[i/]);
+		[/if]
+	[/for]
+	}
+}	
+
+[/let]
+
+
+	[/file]
+[/template]	
+
+
+
