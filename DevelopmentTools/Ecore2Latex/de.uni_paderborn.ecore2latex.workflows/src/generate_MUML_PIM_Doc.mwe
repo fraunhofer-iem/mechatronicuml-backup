@@ -2,10 +2,9 @@
 <workflow>
 	
 	<!-- Paths to metamodels -->
-	<property name="muml" value="de.uni_paderborn.fujaba.muml/model/muml.ecore" />
-	<property name="modelinstance" value="org.muml.core.modelinstance/model/modelinstance.ecore" />
-	<property name="sdmcore" value="org.muml.core/model/core.ecore" />
-	<property name="actionlanguage" value="de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore" />
+	<property name="muml" value="org.muml.pim/model/pim.ecore" />
+	<property name="core" value="org.muml.core/model/core.ecore" />
+	<property name="actionlanguage" value="org.muml.pim.actionlanguage/model/actionlanguage.ecore" />
 
 	<!-- set up EMF for standalone execution -->
 	<bean class="org.eclipse.emf.mwe.utils.StandaloneSetup" >
@@ -36,17 +35,11 @@
 		<uri value="platform:/resource/${muml}" />
 		<modelSlot value="muml" />
 	</component>
-	
-	<!-- load modelinstance-model and store it in slot 'modelinstance' -->
-	<component class="org.eclipse.emf.mwe.utils.Reader">
-		<uri value="platform:/resource/${modelinstance}" />
-		<modelSlot value="modelinstance" />
-	</component>
 
-	<!-- load sdmcore-model and store it in slot 'sdmcore' -->
+	<!-- load core-model and store it in slot 'core' -->
 	<component class="org.eclipse.emf.mwe.utils.Reader">
-		<uri value="platform:/resource/${sdmcore}" />
-		<modelSlot value="sdmcore" />
+		<uri value="platform:/resource/${core}" />
+		<modelSlot value="core" />
 	</component>
 	
 	<!-- load actionlanguage-model and store it in slot 'actionlanguage' -->
@@ -60,7 +53,7 @@
 		<metaModel idRef="mm_emf"/>
 		<globalVarDef name="filename" value="'A_TechDoc_Contents.tex'"/>
 		<globalVarDef name="figurepath" value="'figures/A_technical-reference/packages'"/>
-		<expand value="template::Generate::Generate FOR {modelinstance,muml,actionlanguage,sdmcore}"/> 	
+		<expand value="template::Generate::Generate FOR {muml,actionlanguage,core}"/> 	
 		<outlet path="../03_PIM-Design/" overwrite="true" />
 		<outlet name='PACKAGEFIGURES' path='../03_PIM-Design/figures/A_technical-reference/packages/' overwrite='false'/>
 	</component>		
