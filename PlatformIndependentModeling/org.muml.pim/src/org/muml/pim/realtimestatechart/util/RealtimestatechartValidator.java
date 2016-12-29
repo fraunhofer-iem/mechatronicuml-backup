@@ -579,7 +579,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String TRANSITION__USING_AONE_TO_MANY_SCHEMA_AT_ONE_TRANSITION_IMPLIES_USING_SCHEMA_AT_ALL_TRANSITIONS__EEXPRESSION = "-- If a One-To-Many Communication Schema is used at a transition, the behavioral element must be a multi-role/port and all other messages of the RTSC must use a One-To-Many Communication Schema  as well. Moreover, the RTSC may not distinguish between coordinator and subrole region.\r\n" +
+	protected static final String TRANSITION__USING_AONE_TO_MANY_SCHEMA_AT_ONE_TRANSITION_IMPLIES_USING_SCHEMA_AT_ALL_TRANSITIONS__EEXPRESSION = "-- If a one-to-many communication schema is used at a transition, the behavioral element must be a multi role or multi port and all other messages of the RTSC must use a one-to-many communication schema  as well. Moreover, the RTSC may not define explicit coordinator and subrole regions.\r\n" +
 		"let result : Boolean = (\r\n" +
 		"let selfStatechart : RealtimeStatechart = self.statechart in \r\n" +
 		"let allChildrenOfRoleOrPortStatechart : Set(RealtimeStatechart) =if selfStatechart.oclIsUndefined() then Set{} else selfStatechart.getPortOrRoleStatechart() -> closure(states.embeddedRegions.embeddedStatechart) endif in \r\n" +
@@ -1404,7 +1404,6 @@ public class RealtimestatechartValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validateRealtimeStatechart_NoCycles(realtimeStatechart, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRealtimeStatechart_OneInitialState(realtimeStatechart, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRealtimeStatechart_OnlyDefineSchemataBeforeDisassembling(realtimeStatechart, diagnostics, context);
-		if (result || diagnostics != null) result &= validateRealtimeStatechart_OnlyDefineSchemataWhenStatechartIsRoleOrPortStatechart(realtimeStatechart, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRealtimeStatechart_ComponentBehaviorStatechartMustBeWellFormed(realtimeStatechart, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRealtimeStatechart_NoMessageSendInCoordinatorRegion(realtimeStatechart, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRealtimeStatechart_MultiDiscreteInteractionEndpointBehaviorStatechartMustBeWellFormed(realtimeStatechart, diagnostics, context);
@@ -1417,7 +1416,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String REALTIME_STATECHART__HYBRID_PORT_NAMES_AND_VARIABLE_NAMES_MUST_DIFFER__EEXPRESSION = "-- The names of hybrid ports and variable names of the Statechart must differ\r\n" +
+	protected static final String REALTIME_STATECHART__HYBRID_PORT_NAMES_AND_VARIABLE_NAMES_MUST_DIFFER__EEXPRESSION = "-- The names of hybrid ports and variable names of the RTSC must differ.\r\n" +
 		"let com:component::AtomicComponent = if(self.getHighestParentStatechart().behavioralElement.oclIsKindOf(component::AtomicComponent)) \r\n" +
 		"then self.getHighestParentStatechart().behavioralElement.oclAsType(component::AtomicComponent) else null endif\r\n" +
 		" in  let allSubRoleSpecificVariables:Set(behavior::Variable) = self -> closure(if parentRegion.oclIsUndefined() then self else parentRegion.parentState.parentStatechart endif).subRoleSpecificVariables->asSet() in\r\n" +
@@ -1451,10 +1450,14 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String REALTIME_STATECHART__COMMUNICATION_SCHEMA_ONLY_USED_IN_MULTI_ROLE_OR_MULTI_PORT__EEXPRESSION = "-- When using a One-To-Many Communication Schema, the RTSC must be embedded in a RTSC that describes the behavior of a MultiRole or MultiPort\r\n" +
+	protected static final String REALTIME_STATECHART__COMMUNICATION_SCHEMA_ONLY_USED_IN_MULTI_ROLE_OR_MULTI_PORT__EEXPRESSION = "-- An RTSC may only use one-to-many communication schema if its behavioral element is a multi role or multi port.\r\n" +
+		"(not (self.getPortOrRoleStatechart().behavioralElement.oclIsUndefined()) and  self.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(component::AtomicComponent))\r\n" +
+		"or\r\n" +
+		"(\r\n" +
 		"self.usesOneToManyCommunicationSchemata implies (\r\n" +
-		"not (self.getPortOrRoleStatechart().behavioralElement = null) and not (self.getPortOrRoleStatechart().behavioralElement.oclIsInvalid()) and  self.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(connector::DiscreteInteractionEndpoint)\r\n" +
-		"and self.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).multi)";
+		"not (self.getPortOrRoleStatechart().behavioralElement.oclIsUndefined()) and  self.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(connector::DiscreteInteractionEndpoint)\r\n" +
+		"and self.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).multi)\r\n" +
+		")";
 
 	/**
 	 * Validates the CommunicationSchemaOnlyUsedInMultiRoleOrMultiPort constraint of '<em>Realtime Statechart</em>'.
@@ -1483,7 +1486,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String REALTIME_STATECHART__UNIQUE_NAME_OF_STATES__EEXPRESSION = "-- State names must be unique\n" +
+	protected static final String REALTIME_STATECHART__UNIQUE_NAME_OF_STATES__EEXPRESSION = "-- State names must be unique.\n" +
 		"self.states->isUnique(name)";
 
 	/**
@@ -1513,12 +1516,9 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String REALTIME_STATECHART__NO_CYCLES__EEXPRESSION = "-- If we are contained within a statechart...\r\n" +
+	protected static final String REALTIME_STATECHART__NO_CYCLES__EEXPRESSION = "-- An RTSC may not be the parent of the RTSC that it contains, i.e., cycles are not allowed.\r\n" +
 		"(not self.parentRegion.parentState.parentStatechart.oclIsUndefined())\r\n" +
-		"\r\n" +
 		"implies\r\n" +
-		"\r\n" +
-		"-- ... then we must not be a super statechart of it.\r\n" +
 		"(not self.isSuperStatechartOf(self.parentRegion.parentState.parentStatechart))";
 
 	/**
@@ -1548,7 +1548,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String REALTIME_STATECHART__ONE_INITIAL_STATE__EEXPRESSION = "-- An initial state is missing\n" +
+	protected static final String REALTIME_STATECHART__ONE_INITIAL_STATE__EEXPRESSION = "-- An RTSC requires an initial state.\r\n" +
 		"self.states->select(s |  s.initial)->size() = 1";
 
 	/**
@@ -1578,7 +1578,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String REALTIME_STATECHART__ONLY_DEFINE_SCHEMATA_BEFORE_DISASSEMBLING__EEXPRESSION = "-- Communication schemata may only be used if the RTSC of the multi-role/port does not distinguish between coordinator and subrole RTSC.\r\n" +
+	protected static final String REALTIME_STATECHART__ONLY_DEFINE_SCHEMATA_BEFORE_DISASSEMBLING__EEXPRESSION = "-- One-to-many communication schemata may only be used if the RTSC of the multi role or multi port does not distinguish between coordinator and subrole RTSC.\r\n" +
 		"self.usesOneToManyCommunicationSchemata implies self.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).subroleBehavior.oclIsUndefined() and  self.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).coordinatorBehavior.oclIsUndefined() ";
 
 	/**
@@ -1603,45 +1603,12 @@ public class RealtimestatechartValidator extends MumlValidator {
 	}
 
 	/**
-	 * The cached validation expression for the OnlyDefineSchemataWhenStatechartIsRoleOrPortStatechart constraint of '<em>Realtime Statechart</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String REALTIME_STATECHART__ONLY_DEFINE_SCHEMATA_WHEN_STATECHART_IS_ROLE_OR_PORT_STATECHART__EEXPRESSION = "-- It is only possible to define communication schemata if the Realtime Statechart is the behavior of a Port or Role.\r\n" +
-		"self.usesOneToManyCommunicationSchemata implies (\r\n" +
-		"not self.getPortOrRoleStatechart().behavioralElement.oclIsUndefined() and self.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(connector::DiscreteInteractionEndpoint))\r\n" +
-		"\r\n" +
-		"";
-
-	/**
-	 * Validates the OnlyDefineSchemataWhenStatechartIsRoleOrPortStatechart constraint of '<em>Realtime Statechart</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateRealtimeStatechart_OnlyDefineSchemataWhenStatechartIsRoleOrPortStatechart(RealtimeStatechart realtimeStatechart, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(RealtimestatechartPackage.Literals.REALTIME_STATECHART,
-				 realtimeStatechart,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "OnlyDefineSchemataWhenStatechartIsRoleOrPortStatechart",
-				 REALTIME_STATECHART__ONLY_DEFINE_SCHEMATA_WHEN_STATECHART_IS_ROLE_OR_PORT_STATECHART__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
 	 * The cached validation expression for the ComponentBehaviorStatechartMustBeWellFormed constraint of '<em>Realtime Statechart</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String REALTIME_STATECHART__COMPONENT_BEHAVIOR_STATECHART_MUST_BE_WELL_FORMED__EEXPRESSION = "-- The component behavior Real-Time Statechart must contain at the top-level exactly one State and no Transitions.\r\n" +
+	protected static final String REALTIME_STATECHART__COMPONENT_BEHAVIOR_STATECHART_MUST_BE_WELL_FORMED__EEXPRESSION = "-- The component behavior RTSC must contain at the top-level exactly one state and no transitions.\r\n" +
 		"\r\n" +
 		"let behavioralElement : behavior::BehavioralElement = self.behavioralElement in \r\n" +
 		"(not behavioralElement.oclIsUndefined() and behavioralElement.oclIsKindOf(component::Component)) implies ( self.states->size() = 1 and self.transitions->size() = 0)";
@@ -1673,7 +1640,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String REALTIME_STATECHART__NO_MESSAGE_SEND_IN_COORDINATOR_REGION__EEXPRESSION = "-- It is not allowed to specify AsynchronousMessageEvents at coordinator region\r\n" +
+	protected static final String REALTIME_STATECHART__NO_MESSAGE_SEND_IN_COORDINATOR_REGION__EEXPRESSION = "-- It is not allowed to specify AsynchronousMessageEvents in the coordinator region.\r\n" +
 		"if(self.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).coordinatorBehavior.oclIsInvalid())\r\n" +
 		"then true else \r\n" +
 		"(self.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).coordinatorBehavior = self )implies (\r\n" +
@@ -1710,9 +1677,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String REALTIME_STATECHART__MULTI_DISCRETE_INTERACTION_ENDPOINT_BEHAVIOR_STATECHART_MUST_BE_WELL_FORMED__EEXPRESSION = "-- if the multi-discreteInteractionEndpoint behavior realtime-statechart does not use 1-N schemata, it must contain exaxtly one State and no Transitions on toplevel. Furthermore, the only toplevel state defines exactly two regions: one region defines the DiscreteInteractionEndpoint.coordinatorBehavior and the other region defines the DiscreteInteractionEndpoint.subRoleBehavior\r\n" +
-		"\r\n" +
-		"\r\n" +
+	protected static final String REALTIME_STATECHART__MULTI_DISCRETE_INTERACTION_ENDPOINT_BEHAVIOR_STATECHART_MUST_BE_WELL_FORMED__EEXPRESSION = "-- If a multi port or multi role RTSC does not use one-to-many communication schemata, then it must contain exactly one state and no transitions on top-level. Furthermore, the top level state defines exactly two regions: one region defines the DiscreteInteractionEndpoint.coordinatorBehavior, the other one defines the DiscreteInteractionEndpoint.subRoleBehavior.\r\n" +
 		"let behavioralElement : behavior::BehavioralElement = self.behavioralElement in \r\n" +
 		"(not behavioralElement.oclIsUndefined() and behavioralElement.oclIsKindOf(connector::DiscreteInteractionEndpoint) and behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).multi and not self.usesOneToManyCommunicationSchemata) implies ( self.states->size() = 1 \r\n" +
 		"and self.transitions->size() = 0 and self.states->at(1).embeddedRegions->size() = 2 and \r\n" +

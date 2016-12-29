@@ -553,10 +553,10 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
-		// http://www.eclipse.org/emf/2002/Ecore/OCL
-		createOCLAnnotations();
 		// http://www.muml.org/emf/OCLFilter
 		createOCLFilterAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL
+		createOCLAnnotations();
 	}
 
 	/**
@@ -574,11 +574,6 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });	
-		addAnnotation
-		  (parameterBindingEClass, 
-		   source, 
-		   new String[] {
 		   });	
 		addAnnotation
 		  (variableEClass, 
@@ -612,11 +607,6 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 */
 	protected void createOCLAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
-		addAnnotation
-		  (parameterBindingEClass, 
-		   source, 
-		   new String[] {
-		   });	
 		addAnnotation
 		  (variableEClass, 
 		   source, 
