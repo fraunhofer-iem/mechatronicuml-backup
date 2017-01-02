@@ -401,7 +401,9 @@ public class JavaClockZone extends ClockZone {
 	}
 	
 	public void and(ClockConstraint value) {
-
+		// for debugging
+		printDBM();
+		
 		hashCacheValid = false;
 		this.matrix [0][0] = 1;
 		if (value instanceof TrueClockConstraint)
@@ -485,7 +487,25 @@ public class JavaClockZone extends ClockZone {
 				}
 			}
 		}
+		printDBM();
 	}
+
+	// Used for debugging
+	private void printDBM() {
+		System.out.println("DBM"
+				+ "\n - first columb [i][0]: upper bounds"
+				+ "\n - first row [0][j]: lower bounds"
+				+ "\n - entry [0][0] == -3: DBM unsatifiable, means DBM is empty"
+				+ "\n - else: clock[i].value - clock[j]");
+		for (int i = 0; i < matrix.length; i++) {
+			for (int j = 0; j < matrix.length; j++) {
+				System.out.print(matrix[i][j] + "\t \t \t");
+			}
+			System.out.println();
+		}
+		
+	}
+
 
 	/**
 	 * As the matrix only supports < and <= operators the clock constraint needs to be adjusted if it contains > or >= operator. 

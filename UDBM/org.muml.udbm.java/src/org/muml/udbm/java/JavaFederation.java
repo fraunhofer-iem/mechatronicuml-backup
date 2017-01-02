@@ -231,7 +231,8 @@ public class JavaFederation extends Federation {
 			if (constraint instanceof FalseClockConstraint){
 				// curZone and FalseClockConstraint results in emptyZone
 				System.out.println("###     Remove *** Current zone and FalseClockConstraint: " + curZone);
-				it.remove();
+				curZone.removeAllFromClockConstraint();
+				it.remove();				
 			}
 			else {
 				curZone.and(constraint);
@@ -239,6 +240,7 @@ public class JavaFederation extends Federation {
 				// delete zone if it became empty
 				if (curZone.isEmpty()) {
 					System.out.println("###     Remove *** Current zone and constraint: " + curZone);
+					curZone.removeAllFromClockConstraint();
 					it.remove();
 				}
 			}
