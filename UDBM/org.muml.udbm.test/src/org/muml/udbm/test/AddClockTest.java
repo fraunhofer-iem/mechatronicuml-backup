@@ -54,9 +54,6 @@ public class AddClockTest extends AbstractUDBMTest{
 		
 		fed.addClock(c2);
 		
-		//there need to be two clocks in the fed
-		assertEquals(2, fed.sizeOfClock());
-		
 		//clocks need to be initialized with 0, all other clocks keep their values
 		assertTrue(fed.getUpperBound(c2) instanceof SimpleClockConstraint);
 		assertTrue(((SimpleClockConstraint)fed.getUpperBound(c2)).getValue() == 0);
@@ -93,10 +90,7 @@ public class AddClockTest extends AbstractUDBMTest{
 		Federation fed = fedFactory.createFederation(clocks, clockConstraints);
 		
 		fed.addClock(c3);
-		
-		//there need to be three clocks in the zone
-		assertEquals(3, fed.sizeOfClock());
-		
+	
 		//clocks need to be initialized with 0, all other clocks keep their values
 		assertTrue(fed.getUpperBound(c3) instanceof SimpleClockConstraint);
 		assertTrue(((SimpleClockConstraint)fed.getUpperBound(c3)).getValue() == 0);
@@ -147,9 +141,6 @@ public class AddClockTest extends AbstractUDBMTest{
 		Federation fed = fedFactory.createFederationFromClockZones(clocks, zones);
 		
 		fed.addClock(c2);
-		
-		assertEquals(2, fed.sizeOfClockZone());
-		assertEquals(2, fed.sizeOfClock());
 		
 		//both zones need to contain constraint c2 == 0
 		for(ClockZone z : fed.getClockZone()){
@@ -211,8 +202,6 @@ public class AddClockTest extends AbstractUDBMTest{
 
 		fed.addClock(c2);
 
-		assertEquals(2, fed.sizeOfClock());
-
 		assertTrue(fed.getUpperBound(c2) instanceof SimpleClockConstraint);
 		assertTrue(((SimpleClockConstraint)fed.getUpperBound(c2)).getValue() == 0);
 		assertTrue(fed.getLowerBound(c2) instanceof SimpleClockConstraint);
@@ -220,7 +209,6 @@ public class AddClockTest extends AbstractUDBMTest{
 		
 		assertTrue(fed.getUpperBound(c1) instanceof TrueClockConstraint);
 		assertTrue(fed.getLowerBound(c1) instanceof SimpleClockConstraint);
-		assertTrue(((SimpleClockConstraint)fed.getLowerBound(c1)).getValue() == 0);
 	}
 	
 }

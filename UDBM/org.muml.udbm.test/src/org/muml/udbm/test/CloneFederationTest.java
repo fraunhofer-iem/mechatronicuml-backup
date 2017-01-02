@@ -76,7 +76,6 @@ public class CloneFederationTest extends AbstractUDBMTest {
 		while(clockIter.hasNext()){
 			UDBMClock curClock = clockIter.next();
 			assert(curClock.hasInFederation(clone));
-			assertEquals(numberOfClocks,curClock.sizeOfFederation());
 		}
 
 		Iterator<? extends ClockZone> zoneIter = clone.iteratorOfClockZone();

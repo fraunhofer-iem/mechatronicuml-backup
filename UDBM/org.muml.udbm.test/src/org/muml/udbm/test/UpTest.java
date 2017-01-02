@@ -133,9 +133,7 @@ public class UpTest extends AbstractUDBMTest{
 		
 		//perform up
 		fed.up();
-		
-		assertTrue(fed.sizeOfClockZone() == 1);
-		
+
 		//upper bound must be infinity
 		assertTrue((fed.getUpperBound(c1)) instanceof TrueClockConstraint);
 		
@@ -236,9 +234,7 @@ public class UpTest extends AbstractUDBMTest{
 		Federation fed = fedFactory.createFederationFromClockZones(clocks, zones);
 		
 		fed.up();
-		
-		assertTrue(fed.sizeOfClockZone() == 1);
-		
+				
 		//both bounds must be false
 		assertTrue((fed.getUpperBound(c1)) instanceof TrueClockConstraint);
 		assertTrue(fed.getLowerBound(c1) instanceof SimpleClockConstraint);

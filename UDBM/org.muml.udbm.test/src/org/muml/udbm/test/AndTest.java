@@ -1,5 +1,6 @@
 package org.muml.udbm.test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.util.HashSet;
@@ -170,7 +171,6 @@ public class AndTest extends AbstractUDBMTest{
 	
 	@Test
 	public void testAndOneClockWithFalseClockConstraint(){
-		
 		//setup clock set
 		HashSet<UDBMClock> clocks = new HashSet<UDBMClock>();
 		clocks.add(c1);
@@ -188,10 +188,9 @@ public class AndTest extends AbstractUDBMTest{
 		
 		Federation fed = fedFactory.createFederation(clocks, clockConstraints);
 		fed.and(fcc);
-		
-		assertTrue(fed.sizeOfClockZone() == 1);
-		assertTrue(fed.getUpperBound(c1) instanceof FalseClockConstraint);
+
 		assertTrue(fed.getLowerBound(c1) instanceof FalseClockConstraint);
+		assertTrue(fed.getUpperBound(c1) instanceof FalseClockConstraint);
 	}
 	
 	@Test
@@ -371,9 +370,8 @@ public class AndTest extends AbstractUDBMTest{
 		
 		fed.and(scc1);
 		
-		assertTrue(fed.sizeOfClockZone() == 1);
-		assertTrue(fed.getLowerBound(c1) instanceof FalseClockConstraint);
-		assertTrue(fed.getUpperBound(c1) instanceof FalseClockConstraint);
+		assertEquals(fed.getLowerBound(c1), 10);
+		assertEquals(fed.getUpperBound(c1), 10);	
 	}
 	
 	/**
@@ -462,15 +460,17 @@ public class AndTest extends AbstractUDBMTest{
 		assertTrue(fed.sizeOfClockZone() == 2);
 		
 		SimpleClockConstraint scc5 = new SimpleClockConstraint(c1, RelationalOperator.GreaterOrEqualOperator, 15);
-		
 		fed.and(scc5);
 		
-		assertTrue(fed.sizeOfClockZone() == 2);
+		SimpleClockConstraint scc6 = new SimpleClockConstraint(c1, RelationalOperator.LessOrEqualOperator, 45);
+		fed.and(scc6);
+
+		
+
 		//check values for c1
 		assertTrue(fed.getUpperBound(c1) instanceof SimpleClockConstraint);
-		assertTrue(((SimpleClockConstraint)fed.getUpperBound(c1)).getValue() == 50);
-		assertTrue(fed.getLowerBound(c1) instanceof SimpleClockConstraint);
-		assertTrue(((SimpleClockConstraint)fed.getLowerBound(c1)).getValue() == 15);
+		assertEquals(((SimpleClockConstraint)fed.getUpperBound(c1)).getValue(), 45);
+		assertEquals(((SimpleClockConstraint)fed.getLowerBound(c1)).getValue(), 15);
 	}
 	
 	/**
@@ -478,7 +478,6 @@ public class AndTest extends AbstractUDBMTest{
 	 */
 	@Test
 	public void testAndTwoZonesBothZonesAffected(){
-		
 		//setup clock set
 		HashSet<UDBMClock> clocks = new HashSet<UDBMClock>();
 		clocks.add(c1);
@@ -526,3 +525,4 @@ public class AndTest extends AbstractUDBMTest{
 		assertTrue(((SimpleClockConstraint)fed.getLowerBound(c1)).getValue() == 15);
 	}
 }
+
