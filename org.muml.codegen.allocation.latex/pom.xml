@@ -190,8 +190,8 @@
 		<repository>
 			<id>Codegen</id>
 			<layout>p2</layout>
-			<url>file:///data/jenkins/jobs/Codegen_C/lastSuccessful/archive/targetPlatform/</url>
-			<!--<url> http://muml-build.cs.upb.de/job/Codegen_C/lastSuccessfulBuild/artifact/targetPlatform/</url>  -->
+			<url>file:///data/jenkins/jobs/Codegen_C/lastSuccessful/archive/targetPlatform/</url> 
+			<!--<url> http://muml-build.cs.upb.de/job/Codegen_C/lastSuccessfulBuild/artifact/targetPlatform/</url> -->
 		</repository>
 		<repository>
 			<id>EMM</id>
@@ -219,10 +219,6 @@
   </repositories>
   
     <pluginRepositories>
-		<pluginRepository>
-		  <id>codehaus.snapshots</id>
-		  <url>http://snapshots.repository.codehaus.org/</url>
-		</pluginRepository>
 		<pluginRepository>
 		  <id>Eclipse - Acceleo Snapshots</id>
 		  <url>https://repo.eclipse.org/content/repositories/acceleo-snapshots</url>
