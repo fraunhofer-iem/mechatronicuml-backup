@@ -13,6 +13,7 @@
   
   <modules>
     <module>org.muml.codegen.allocation.latex</module>
+	<module>org.muml.codegen.allocation.feature</module>
 	<module>org.muml.codegen.allocation.repository</module>
   </modules>
   
@@ -187,6 +188,16 @@
 			<id>EMM</id>
 			<layout>p2</layout>
 			<url>${repobase}/ModelMigration-Maven/${repopath}org.muml.emm.repository/target/repository</url>
+		</repository>
+		<repository>
+			<id>ModelCopy</id>
+			<layout>p2</layout>
+			<url>${repobase}/ModelCopy-Maven/${repopath}org.muml.modelcopy.repository/target/repository</url>
+		</repository>
+		<repository>
+			<id>ModelCopy</id>
+			<layout>p2</layout>
+			<url>${repobase}/ModelCopy-Maven/${repopath}org.muml.modelcopy.repository/target/repository</url>
 		</repository>
 		<repository>
 		  <id>eclipse-platform</id>
