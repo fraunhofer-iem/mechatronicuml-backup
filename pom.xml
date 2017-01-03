@@ -195,6 +195,11 @@
 			<url>${repobase}/ModelCopy-Maven/${repopath}org.muml.modelcopy.repository/target/repository</url>
 		</repository>
 		<repository>
+			<id>ExternalDependencies</id>
+			<layout>p2</layout>
+			<url>${repobase}/ExternalDependencies-Maven/${repopath}org.muml.external.repository/target/repository</url>
+		</repository>
+		<repository>
 		  <id>eclipse-platform</id>
 		  <layout>p2</layout>
 		  <url>http://download.eclipse.org/releases/neon/</url>
