@@ -150,10 +150,18 @@ class Mtctl2English {
 	}
 	
 	def dispatch expr(StateActiveExpr expr, boolean positive) {
-		if (positive)
-			'''the state «expr(expr.state, true)» is active'''
-		else
-			'''the state «expr(expr.state, true)» is not active'''
+		
+		if (expr.state instanceof SourceStateExpr || expr.state instanceof TargetStateExpr) {
+			if (positive)
+				'''the state«expr(expr.state, true)» is active''' // no whitespace as a comma follows
+			else
+				'''the state«expr(expr.state, true)» is not active''' // no whitespace as a comma follows
+		} else {
+			if (positive)
+				'''the state «expr(expr.state, true)» is active'''
+			else
+				'''the state «expr(expr.state, true)» is not active'''
+		}
 	}
 	
 	def dispatch expr(SubstateOfExpr expr, boolean positive) {
