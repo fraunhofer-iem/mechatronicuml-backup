@@ -260,11 +260,11 @@ class Mtctl2English {
 	}
 	
 	def dispatch expr(SourceStateExpr expr, boolean positive) {
-		'''the source state of «expr(expr.transition, true)»'''
+		''', which is the source of transition «expr(expr.transition, true)»,'''
 	}
 	
 	def dispatch expr(TargetStateExpr expr, boolean positive) {
-		'''the target state of «expr(expr.transition, true)»'''
+		''', which is the target of transition «expr(expr.transition, true)»,'''
 	}
 	
 	def comparisonOp(ComparisonOp op) {
