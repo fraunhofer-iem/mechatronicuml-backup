@@ -8,6 +8,14 @@
    <description>
       %description
    </description>
+   
+   <copyright url="%copyrightURL">
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
 
 
    <requires>
