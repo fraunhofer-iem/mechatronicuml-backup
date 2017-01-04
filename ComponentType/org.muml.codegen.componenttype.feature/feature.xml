@@ -8,6 +8,10 @@
    <description url="www.muml.org">
       Experimental Container Codegen. Including support for DDS.
    </description>
+   
+   <copyright url="%copyrightURL">
+      %copyright
+   </copyright>
 
    <license url=" http://opendds.org/license.html, http://www.gnu.de/documents/gpl-2.0.en.html, https://opensource.org/licenses/BSD-3-Clause">
       OpenDDS Plugins are protected by copyright, and is distributed under the following terms.
