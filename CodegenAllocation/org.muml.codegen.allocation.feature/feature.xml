@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.muml.codegen.allocation.feature"
+      label="Codegen Allocation"
+      version="1.0.0.qualifier"
+      provider-name="%providerName">
+
+   <description>
+      %description
+   </description>
+
+
+   <requires>
+      <import feature="org.muml.pim.feature" version="0.5.0.qualifier"/>
+      <import feature="org.muml.psm.feature" version="0.4.0.qualifier"/>
+      <import feature="org.muml.core.feature" version="0.5.0.qualifier"/>
+      <import feature="org.muml.ape.feature" version="0.5.0.qualifier"/>
+      <import feature="org.muml.emm.feature" version="0.1.0.qualifier"/>
+      <import feature="org.muml.pm.feature" version="0.5.0.qualifier"/>
+      <import feature="org.muml.pm.hardware.feature" version="1.0.0.qualifier"/>
+      <import feature="org.muml.pm.software.feature" version="1.0.0.qualifier"/>
+   </requires>
+
+   <plugin
+         id="org.muml.codegen.allocation.latex"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+		 
+	<plugin
+         id="org.muml.codegen.allocation.latex.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

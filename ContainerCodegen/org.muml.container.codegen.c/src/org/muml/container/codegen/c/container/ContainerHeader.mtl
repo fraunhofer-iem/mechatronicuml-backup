@@ -1,0 +1,89 @@
+[comment encoding = UTF-8 /]
+[**
+ * This module contains all templates, that are used to generate the Configuration-files
+ * for a given Container.
+ */]
+[module ContainerHeader('http://www.muml.org/pim/connector/1.0.0',
+				'http://www.muml.org/pim/behavior/1.0.0',
+				'http://www.muml.org/core/1.0.0',
+				'http://www.muml.org/pim/actionlanguage/1.0.0',
+				'http://www.muml.org/core/expressions/common/1.0.0',
+				'http://www.muml.org/pim/msgtype/1.0.0',
+				'http://www.muml.org/pim/types/1.0.0',
+				'http://www.muml.org/modelinstance/1.0.0',
+				'http://www.muml.org/pim/component/1.0.0',
+				'http://www.muml.org/pim/instance/1.0.0',
+				'http://www.muml.org/pim/realtimestatechart/1.0.0',
+				'http://www.muml.org/psm/1.0.0',
+				'http://www.muml.org/psm/muml_container/0.5.0',
+				'http://www.opendds.org/modeling/schemas/DCPS/1.0',
+				'http://www.opendds.org/modeling/schemas/Core/1.0',
+				'http://www.opendds.org/modeling/schemas/Application/1.0',
+				'http://www.opendds.org/modeling/schemas/Topics/1.0')/]
+
+[import org::muml::codegen::componenttype::c::queries::ContainerQueries/]
+
+[import org::muml::container::codegen::c::queries::containerStringQueries/]
+[import org::muml::codegen::componenttype::c::queries::stringQueries/]
+
+[template public generateContainerHeader(container:ComponentContainer, path: String, useSubDir:Boolean)]
+	[file (path+getFileName(container, true, useSubDir), false, 'UTF-8')]
+		#ifndef [getHeaderDefine(container)/]
+		#define [getHeaderDefine(container)/]
+
+#ifdef __cplusplus
+  extern "C" {
+#endif	
+			[includes(container, useSubDir)/]
+					
+			/**
+			 * @file 
+			 * @author generated
+			 * @brief Specification of Component Container for Component of Type: [container.componentType/]
+			 * @details This files contains an implementation of the container interfaces of a components
+			 */
+				
+			[containerOperations(container)/]
+#ifdef __cplusplus
+  }
+#endif
+		#endif /* [getHeaderDefine(container)/] */
+	[/file]
+[/template]	
+
+
+[template public includes(container : ComponentContainer, useSubDir: Boolean)]
+	// Library
+	#include "[if (useSubDir)]../container_lib/[/if]ContainerTypes.h"
+	#include "[if (useSubDir)]../container_lib/[/if]LocalBufferManager.h"
+	
+
+	//Identifier of this ECU
+	#include "[if (useSubDir)]../[/if][getFileNameECU_Identifier()/]"
+
+[if isDDSused(container)]
+//DDS Specific includes
+[comment FIXME: Depends on DDS File */]
+	#include "../container_lib/DDS_Custom_Lib.h"
+	#include "../dds/[getDDSFileName()/].h"
+	#include "../dds/[getDDSFileName()/]Plugin.h"
+	#include "../dds/[getDDSFileName()/]Support.h"
+	#include "ndds/ndds_c.h"
+[/if]	
+	//include the component_interfache header
+	#include "../[getFileNameComponentInterface(container.componentType,useSubDir)/]"
+	//include api mapping headers
+[for (cInst : ComponentInstance | container.componentInstances)]
+	[for (cPort : ContinuousPort | container.componentType.ports->filter(ContinuousPort))]
+	#include "../APImappings/[cInst.getIdentifierVariableName()/][getVariableName(cPort)/]accessCommand.h"
+	[/for]
+[/for] 
+	[/template]
+
+[template public containerOperations(container:ComponentContainer)]
+						/**
+						 * @brief Forward Declaration of the method [getContainerComponentCreateMethod(container)/]
+						 * @details The method for initializing and creating a component instance oc type: [container.componentType/]
+						 */
+	[container.componentType.getClassName()/]* [getContainerComponentCreateMethod(container)/](uint8_T id);
+[/template]

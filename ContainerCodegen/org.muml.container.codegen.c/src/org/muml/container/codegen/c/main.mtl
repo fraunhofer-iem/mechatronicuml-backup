@@ -1,0 +1,34 @@
+[comment encoding = UTF-8 /]
+[module main('http://www.muml.org/core/1.0.0',
+	'http://www.muml.org/modelinstance/1.0.0', 
+	'http://www.muml.org/pim/actionlanguage/1.0.0',
+	'http://www.muml.org/pim/behavior/1.0.0',
+	'http://www.muml.org/pim/component/1.0.0', 
+	'http://www.muml.org/pim/connector/1.0.0', 
+	'http://www.muml.org/pim/instance/1.0.0', 
+	'http://www.muml.org/pim/types/1.0.0', 
+	'http://www.muml.org/pim/1.0.0',
+	'http://www.muml.org/psm/1.0.0',
+	'http://www.muml.org/pm/hardware/1.0.0',
+	'http://www.muml.org/psm/muml_container/0.5.0')/]
+
+[import org::muml::container::codegen::c::MainFile /]
+[import org::muml::container::codegen::c::MakeFile /]
+[import org::muml::container::codegen::c::container::Container/]
+[import org::muml::container::codegen::c::container::ECUIdentifier/]
+[import org::muml::container::codegen::c::container::ContainerHeader/]
+[template public generate(systemConfig : DeploymentConfiguration)]
+	
+	[comment @main /]
+	[for (ecuCfg : ECUConfiguration | systemConfig.ecuConfigurations)]
+		[ecuCfg.generateMainFile(ecuCfg.structuredResourceInstance.name+'/', true)/]
+		[ecuCfg.generateMakeFile(true, ecuCfg.structuredResourceInstance.name+'/')/]
+		[ecuCfg.generateECUIdentifier(true, ecuCfg.structuredResourceInstance.name+'/')/]
+		[for (container : ComponentContainer  | ecuCfg.componentContainers)]
+			[container.generateContainerHeader(ecuCfg.structuredResourceInstance.name+'/', true)/]
+			[container.generateContainer(true, ecuCfg.structuredResourceInstance.name+'/')/]
+		[/for]
+	[/for]
+	
+	
+[/template]

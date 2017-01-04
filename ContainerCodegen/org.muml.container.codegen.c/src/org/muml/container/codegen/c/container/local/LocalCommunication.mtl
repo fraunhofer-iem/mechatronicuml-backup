@@ -1,0 +1,127 @@
+[comment encoding = UTF-8 /]
+[**
+ * This module contains all templates, that are used to generate the Configuration-files
+ * for a given Container.
+ */]
+[module LocalCommunication('http://www.muml.org/pim/connector/1.0.0',
+				'http://www.muml.org/pim/behavior/1.0.0',
+				'http://www.muml.org/core/1.0.0',
+				'http://www.muml.org/pim/actionlanguage/1.0.0',
+				'http://www.muml.org/core/expressions/common/1.0.0',
+				'http://www.muml.org/pim/msgtype/1.0.0',
+				'http://www.muml.org/pim/types/1.0.0',
+				'http://www.muml.org/modelinstance/1.0.0',
+				'http://www.muml.org/pim/component/1.0.0',
+				'http://www.muml.org/pim/instance/1.0.0',
+				'http://www.muml.org/pim/realtimestatechart/1.0.0',
+				'http://www.muml.org/psm/1.0.0',
+				'http://www.muml.org/psm/muml_container/0.5.0',
+				'http://www.opendds.org/modeling/schemas/DCPS/1.0',
+				'http://www.opendds.org/modeling/schemas/Core/1.0',
+				'http://www.opendds.org/modeling/schemas/Application/1.0',
+				'http://www.opendds.org/modeling/schemas/Topics/1.0')/]
+
+[import org::muml::codegen::componenttype::c::queries::ContainerQueries/]
+
+[import org::muml::container::codegen::c::queries::containerStringQueries/]
+[import org::muml::codegen::componenttype::c::queries::stringQueries/]
+[import org::muml::codegen::componenttype::c::queries::modelQueries/]
+
+
+[template public generateDeclarationsForSending_Local(dummy:OclAny)]
+		LocalHandle* localHandle;
+[/template]
+
+[template public generateDeclarationsForReceiving_Local(dummy:OclAny)]
+		LocalHandle* localHandle;
+		int i = 0;
+[/template]
+
+[comment Methods for discrete Ports and their Messages/]
+
+
+[template public generateSwitchCaseForSending_Local(msg:MessageType)]
+	case PORT_HANDLE_TYPE_LOCAL:
+		localHandle = (LocalHandle*) port->handle->concreteHandle;
+		//dont handle a pointer over the the buffer, because msg is already a pointer
+		publishMessage(localHandle->pubID, [msg.getIdentifierVariableName()/], msg);
+		break;
+[/template]
+
+
+[template public generateSwitchCaseForReceiving_Local(msg:MessageType)]
+	case PORT_HANDLE_TYPE_LOCAL:
+		localHandle = (LocalHandle*) port->handle->concreteHandle;
+		MessageBuffer* buf = NULL;
+		//dont handle a pointer over the the buffer, because msg is already a pointer
+		for (i = 0; i < localHandle->numOfSubs; i++) {
+			if (localHandle->localSubscribers['['/]i[']'/].msgID == [msg.getIdentifierVariableName()/]) {
+				buf = localHandle->localSubscribers['['/]i[']'/].buffer;
+				break;
+			}
+		}
+		return MessageBuffer_dequeue(buf, msg);
+		break;
+[/template]
+
+
+[template public generateSwitchCaseForMessageExists_Local(msg:MessageType)]
+	case PORT_HANDLE_TYPE_LOCAL:
+		localHandle = (LocalHandle*) port->handle->concreteHandle;
+		MessageBuffer* buf = NULL;
+		//dont handle a pointer over the the buffer, because msg is already a pointer
+		for (i = 0; i < localHandle->numOfSubs; i++) {
+			if (localHandle->localSubscribers['['/]i[']'/].msgID == [msg.getIdentifierVariableName()/]) {
+				buf = localHandle->localSubscribers['['/]i[']'/].buffer;
+				break;
+			}
+		}
+		return MessageBuffer_doesMessageExists(buf);
+		break;
+[/template]
+
+
+[comment Methods for DirectedTyped Ports /]
+
+[template public generateSwitchCaseForSending_Local(port:DirectedTypedPort)]
+	case PORT_HANDLE_TYPE_LOCAL:
+		localHandle = (LocalHandle*) port->handle->concreteHandle;
+		//dont handle a pointer over the the buffer, because msg is already a pointer
+		publishMessage(localHandle->pubID, 0, msg);
+		break;
+[/template]
+
+
+
+[template public generateSwitchCaseForReceiving_Local(port:DirectedTypedPort)]
+	case PORT_HANDLE_TYPE_LOCAL:
+		localHandle = (LocalHandle*) port->handle->concreteHandle;
+		MessageBuffer* buf = NULL;
+		//dont handle a pointer over the the buffer, because msg is already a pointer
+		for (i = 0; i < localHandle->numOfSubs; i++) {
+			if (localHandle->localSubscribers['['/]i[']'/].msgID == 0) {
+				buf = localHandle->localSubscribers['['/]i[']'/].buffer;
+				break;
+			}
+		}
+		return MessageBuffer_dequeue(buf, msg);
+		break;
+[/template]
+
+
+
+
+[template public generateSwitchCaseForMessageExists_Local(port:DirectedTypedPort)]
+	case PORT_HANDLE_TYPE_LOCAL:
+		localHandle = (LocalHandle*) port->handle->concreteHandle;
+		MessageBuffer* buf = NULL;
+		//dont handle a pointer over the the buffer, because msg is already a pointer
+		for (i = 0; i < localHandle->numOfSubs; i++) {
+			if (localHandle->localSubscribers['['/]i[']'/].msgID == 0) {
+				buf = localHandle->localSubscribers['['/]i[']'/].buffer;
+				break;
+			}
+		}
+		return MessageBuffer_doesMessageExists(buf);
+		break;
+[/template]

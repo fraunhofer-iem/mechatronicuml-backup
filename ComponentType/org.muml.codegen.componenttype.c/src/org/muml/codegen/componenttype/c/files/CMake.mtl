@@ -1,0 +1,34 @@
+[comment encoding = UTF-8 /]
+[**
+ * This module contains all templates to create CMake files.
+ * In the first stage, we only provide one CMakeLists.txt.
+ * Later, we will extend it to make use of more CMake possibilities.
+ */]
+[module CMake('http://www.muml.org/pim/connector/1.0.0', 
+				'http://www.muml.org/pim/behavior/1.0.0',
+				'http://www.muml.org/core/1.0.0',
+				'http://www.muml.org/pim/actionlanguage/1.0.0',
+				'http://www.muml.org/pim/msgtype/1.0.0',
+				'http://www.muml.org/pim/types/1.0.0',
+				'http://www.muml.org/modelinstance/1.0.0',
+				'http://www.muml.org/pim/component/1.0.0',
+				'http://www.muml.org/pim/instance/1.0.0',
+				'http://www.muml.org/pim/realtimestatechart/1.0.0')/]
+
+[**
+ * Generates the main file for CMake
+ */]
+[template public generateCMakeFiles(cic: ComponentInstanceConfiguration, path: String)]
+
+[file (path+'CMakeLists.txt', false, 'UTF-8')]
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
+PROJECT([cic.name/])
+
+file(GLOB_RECURSE SRCS *.c)
+file(GLOB_RECURSE HDRS *.h)
+include_directories(${CMAKE_SOURCE_DIR})
+
+ADD_EXECUTABLE([cic.name/]  ${SRCS} ${HDRS})
+TARGET_LINK_LIBRARIES([cic.name/]) 
+[/file]
+[/template]
