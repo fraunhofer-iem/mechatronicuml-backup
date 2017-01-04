@@ -160,8 +160,8 @@ public class JavaFederation extends Federation {
 		Set<? extends ClockZone> clockZones = jfCopy.getClockZone();
 
 		int containsValue;
-		boolean strictSubsetIsGiven = false;
-		
+		boolean strictSubsetIsGiven = true;
+				
 		// Check for every ClockZone in this Federation, if overloaded ClockZone is a subset of this Federation
 		for (ClockZone cz: clockZones){
 			
@@ -178,8 +178,8 @@ public class JavaFederation extends Federation {
 				containsValue =((JavaClockZone)cz).relation((JavaClockZone) clockZone);
 							
 				// Only strict subsets are allowed
-				if (containsValue == 1){
-					return true;
+				if (containsValue != 1){
+					return false;
 				}
 			}
 		}
