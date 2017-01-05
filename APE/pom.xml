@@ -31,7 +31,7 @@
     <module>org.muml.ape.migrator.feature</module>
     <module>org.muml.ape.reconcile</module>
     <module>org.muml.ape.runtime</module>
-    <!--<module>org.muml.ape.sdk.feature</module> -->
+  <!--  <module>org.muml.ape.sdk.feature</module> -->
     <module>org.muml.oclfilter</module>
     <module>org.muml.oclfilter.feature</module>
     <module>org.muml.ape.repository</module>
@@ -40,40 +40,90 @@
   
   <build>
     <plugins>
+   <!-- enable source feature generation -->
+   <plugin>
+    <groupId>org.eclipse.tycho.extras</groupId>
+    <artifactId>tycho-source-feature-plugin</artifactId>
+    <version>${tycho-version}</version>
+    <executions>
+     <execution>
+      <id>source-feature</id>
+      <phase>package</phase>
+      <goals>
+       <goal>source-feature</goal>
+      </goals>
+     </execution>
+    </executions>
+    <configuration>
+     <excludes>
+       <!--provide plug-ins not containing any source code -->
+	  <plugin id="org.muml.ape.migrator" />
+	  <plugin id="org.muml.ape.repository" />
+	  <plugin id="org.muml.ape.sdk.feature" />
+     </excludes>
+    </configuration>
+   </plugin>
+   <plugin>
+    <groupId>org.eclipse.tycho</groupId>
+    <artifactId>tycho-source-plugin</artifactId>
+    <version>${tycho-version}</version>
+    <executions>
+     <execution>
+      <id>plugin-source</id>
+      <goals>
+       <goal>plugin-source</goal>
+      </goals>
+     </execution>
+    </executions>
+   </plugin>
+   <plugin>
+    <groupId>org.eclipse.tycho</groupId>
+    <artifactId>tycho-p2-plugin</artifactId>
+    <version>${tycho-version}</version>
+    <executions>
+     <execution>
+      <id>attached-p2-metadata</id>
+      <phase>package</phase>
+      <goals>
+       <goal>p2-metadata</goal>
+      </goals>
+     </execution>
+    </executions>
+   </plugin>
       <plugin>
         <groupId>org.eclipse.tycho</groupId>
         <artifactId>tycho-maven-plugin</artifactId>
-        <version>0.26.0</version>
+        <version>${tycho-version}</version>
         <extensions>true</extensions>
       </plugin>
       <plugin>
-            <groupId>org.eclipse.tycho</groupId>
-            <artifactId>target-platform-configuration</artifactId>
-            <version>0.26.0</version>
-            <configuration>
-              <environments>
-                <environment>
-                  <os>win32</os>
-                  <ws>win32</ws>
-                  <arch>x86</arch>
-                </environment>
-                <environment>
-                  <os>linux</os>
-                  <ws>gtk</ws>
-                  <arch>x86_64</arch>
-                </environment>
-                <environment>
-                  <os>macosx</os>
-                  <ws>cocoa</ws>
-                  <arch>x86_64</arch>
-                </environment>
-              </environments>
-            </configuration>
-        </plugin>
+		<groupId>org.eclipse.tycho</groupId>
+		<artifactId>target-platform-configuration</artifactId>
+		<version>${tycho-version}</version>
+		<configuration>
+		  <environments>
+			<environment>
+			  <os>win32</os>
+			  <ws>win32</ws>
+			  <arch>x86</arch>
+			</environment>
+			<environment>
+			  <os>linux</os>
+			  <ws>gtk</ws>
+			  <arch>x86_64</arch>
+			</environment>
+			<environment>
+			  <os>macosx</os>
+			  <ws>cocoa</ws>
+			  <arch>x86_64</arch>
+			</environment>
+		  </environments>
+		</configuration>
+      </plugin>
     </plugins>
   </build>
   
-        <profiles>
+    <profiles>
         <profile>
           <id>Local</id> <!-- local build, uses local maven repositories -->
           <activation>
@@ -116,14 +166,11 @@
   </profiles>
 
     <repositories>
-        <!-- basic eclipse dependencies -->
 		<repository>
 			<id>eclipse-neon</id>
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/releases/neon</url>
         </repository>
-        
-        <!-- Model Migration dependencies -->
 		<repository>
 			<id>model-migration</id>
 			<layout>p2</layout>
