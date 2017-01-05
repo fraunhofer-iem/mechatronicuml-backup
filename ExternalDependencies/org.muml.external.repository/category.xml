@@ -15,6 +15,9 @@
    <feature url="features/org.muml.external.javax.inject.feature_1.0.0.qualifier.jar" id="org.muml.external.javax.inject.feature" version="1.0.0.qualifier">
       <category name="org.muml.external.repository.category"/>
    </feature>
+   <feature url="features/org.muml.external.jgrapht.feature_1.0.0.qualifier.jar" id="org.muml.external.jgrapht.feature" version="1.0.0.qualifier">
+      <category name="org.muml.external.repository.category"/>
+   </feature>
    <feature url="features/org.muml.external.opt4j.feature_1.0.0.qualifier.jar" id="org.muml.external.opt4j.feature" version="1.0.0.qualifier">
       <category name="org.muml.external.repository.category"/>
    </feature>
