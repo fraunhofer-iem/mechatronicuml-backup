@@ -28,6 +28,8 @@
     <module>org.muml.external.guice.multibindings.feature</module>
     <module>org.muml.external.javax.inject</module>
     <module>org.muml.external.javax.inject.feature</module>
+	<module>org.muml.external.jgrapht</module>
+	<module>org.muml.external.jgrapht.feature</module>
     <module>org.muml.external.opt4j</module>
     <module>org.muml.external.opt4j.feature</module>
     <module>org.muml.external.owlapi</module>
