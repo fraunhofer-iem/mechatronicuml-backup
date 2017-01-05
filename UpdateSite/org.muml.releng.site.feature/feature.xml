@@ -18,67 +18,37 @@ the Eclipse framework.
 
    <includes id="org.muml.pim.feature" version="0.0.0"/>
 
-   <includes id="org.muml.pim.sdk.feature" version="0.0.0"/>
-
    <includes id="org.muml.modelica.adapter.feature" version="0.0.0"/>
-
-   <includes id="org.muml.modelica.adapter.sdk.feature" version="0.0.0"/>
 
    <includes id="org.muml.ape.feature" name="" version="0.0.0"/>
 
-   <includes id="org.muml.ape.sdk.feature" name="" version="0.0.0"/>
-
    <includes id="org.muml.uppaal.feature" version="0.0.0"/>
-
-   <includes id="org.muml.uppaal.sdk.feature" version="0.0.0"/>
 
    <includes id="org.muml.ape.ecore.feature" version="0.0.0"/>
 
    <includes id="org.muml.core.feature" version="0.0.0"/>
 
-   <includes id="org.muml.core.sdk.feature" version="0.0.0"/>
-
    <includes id="org.muml.pm.feature" version="0.0.0"/>
-
-   <includes id="org.muml.pm.sdk.feature" version="0.0.0"/>
 
    <includes id="org.muml.codegen.c.feature" version="0.0.0"/>
 
-   <includes id="org.muml.codegen.c.source.feature" version="0.0.0"/>
-
    <includes id="org.muml.verification.core.feature" version="0.0.0"/>
-
-   <includes id="org.muml.verification.core.sdk.feature" version="0.0.0"/>
 
    <includes id="org.muml.uppaal.adapter.feature" version="0.0.0"/>
 
-   <includes id="org.muml.uppaal.adapter.sdk.feature" version="0.0.0"/>
-
    <includes id="org.muml.udbm.feature" version="0.0.0"/>
 
-   <includes id="org.muml.udbm.source.feature" version="0.0.0"/>
-
    <includes id="org.muml.graphviz.feature" version="0.0.0"/>
-
-   <includes id="org.muml.graphviz.source.feature" version="0.0.0"/>
-
+   
    <includes id="org.muml.reconfiguration.feature" version="0.0.0"/>
-
-   <includes id="org.muml.reconfiguration.source.feature" version="0.0.0"/>
 
    <includes id="org.muml.storydiagram.feature" version="0.0.0"/>
 
-   <includes id="org.muml.storydiagram.source.feature" version="0.0.0"/>
-
    <includes id="org.muml.psm.feature" version="0.0.0"/>
-
-   <includes id="org.muml.psm.sdk.feature" version="0.0.0"/>
 
    <includes id="org.muml.ape.migrator.feature" version="0.0.0"/>
 
    <includes id="org.muml.emm.feature" version="0.0.0"/>
-
-   <includes id="org.muml.emm.source.feature" version="0.0.0"/>
 
    <includes id="org.muml.external.aopalliance.feature" version="0.0.0"/>
 
@@ -95,10 +65,10 @@ the Eclipse framework.
    <includes id="org.muml.external.sat4j.core.feature" version="0.0.0"/>
 
    <includes id="org.muml.external.sat4j.pb.feature" version="0.0.0"/>
+   
+   <includes id="org.muml.external.jgrapht.feature" version="0.0.0"/>
 
    <includes id="org.muml.modelcopy.feature" version="0.0.0"/>
-
-   <includes id="org.muml.modelcopy.source.feature" version="0.0.0"/>
 
    <includes id="org.muml.example.coordinationpatternlib.feature" version="0.0.0"/>
 
