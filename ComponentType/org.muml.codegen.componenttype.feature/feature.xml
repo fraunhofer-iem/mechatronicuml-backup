@@ -2,18 +2,18 @@
 <feature
       id="org.muml.codegen.componenttype.feature"
       label="Container Code Generation"
-      version="1.0.38.qualifier"
+      version="1.1.0.qualifier"
       provider-name="Heinz Nixdorf Institute, Fraunhofer IEM">
 
    <description url="www.muml.org">
       Experimental Container Codegen. Including support for DDS.
    </description>
-   
+
    <copyright url="%copyrightURL">
       %copyright
    </copyright>
 
-     <license url="%licenseURL">
+   <license url="%licenseURL">
       %license
    </license>
 
@@ -35,64 +35,9 @@
       <import plugin="org.eclipse.ui"/>
       <import plugin="org.eclipse.core.resources"/>
       <import plugin="org.muml.core.export" version="0.5.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.pim" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="org.muml.codegen.c.export.ui" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.apache.commons.io" version="2.2.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.notation" version="1.8.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.core"/>
-      <import plugin="org.muml.pm.hardware"/>
-      <import plugin="org.muml.pm.software"/>
-      <import plugin="org.eclipse.emf.edit"/>
-      <import plugin="org.muml.pim.actionlanguage.edit"/>
-      <import plugin="org.muml.core.edit"/>
-      <import plugin="org.muml.pm.hardware.edit"/>
-      <import plugin="org.muml.pim.edit"/>
-      <import plugin="org.muml.psm.edit"/>
-      <import plugin="org.muml.pm.software.edit"/>
-      <import plugin="org.eclipse.emf.ecore.edit"/>
-      <import plugin="org.eclipse.m2m.qvt.oml"/>
-      <import plugin="org.eclipse.ui" version="3.107.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.emf.edit" version="2.11.1" match="greaterOrEqual"/>
-      <import plugin="org.muml.external.jgrapht" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.emf.workspace" version="1.5.1" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.acceleo.common" version="3.3.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.acceleo.model" version="3.3.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.acceleo.profiler" version="3.3.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.acceleo.engine" version="3.3.0" match="greaterOrEqual"/>
-      <import plugin="com.google.guava"/>
-      <import plugin="org.muml.core" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.psm.container" version="0.1.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.emf.common"/>
-      <import plugin="org.eclipse.gef"/>
-      <import plugin="org.eclipse.gmf.runtime.common.core"/>
-      <import plugin="org.eclipse.gmf.runtime.common.ui"/>
-      <import plugin="org.eclipse.gmf.runtime.diagram.ui.properties"/>
-      <import plugin="com.ociweb.emf.util"/>
-      <import plugin="org.eclipse.core.expressions"/>
-      <import plugin="org.eclipse.jface"/>
-      <import plugin="org.eclipse.ui.ide"/>
-      <import plugin="org.eclipse.ui.views"/>
-      <import plugin="org.eclipse.ui.navigator"/>
-      <import plugin="org.eclipse.ui.navigator.resources"/>
-      <import plugin="org.eclipse.emf.edit.ui"/>
-      <import plugin="org.eclipse.gmf.runtime.emf.core"/>
-      <import plugin="org.eclipse.gmf.runtime.emf.commands.core"/>
-      <import plugin="org.eclipse.gmf.runtime.emf.ui.properties"/>
-      <import plugin="org.eclipse.gmf.runtime.diagram.ui"/>
-      <import plugin="org.eclipse.gmf.runtime.diagram.ui.providers"/>
-      <import plugin="org.eclipse.gmf.runtime.diagram.ui.providers.ide"/>
-      <import plugin="org.eclipse.gmf.runtime.diagram.ui.render"/>
-      <import plugin="org.eclipse.gmf.runtime.diagram.ui.resources.editor"/>
-      <import plugin="org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide"/>
-      <import plugin="org.eclipse.draw2d"/>
-      <import plugin="org.eclipse.gmf.runtime.draw2d.ui"/>
-      <import plugin="org.eclipse.emf.validation"/>
-      <import plugin="org.eclipse.emf.validation.ocl"/>
-      <import plugin="com.ociweb.gmf"/>
-      <import plugin="org.eclipse.gmf.runtime.diagram.ui.printing"/>
-      <import plugin="org.eclipse.gmf.runtime.diagram.ui.printing.render"/>
-      <import plugin="org.opendds.modeling.validation" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.emf.codegen.ecore"/>
    </requires>
 
    <plugin
