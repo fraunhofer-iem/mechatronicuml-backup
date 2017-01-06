@@ -8,6 +8,8 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
+
+import org.apache.log4j.Logger;
 import org.muml.udbm.ClockConstraint;
 import org.muml.udbm.ClockZone;
 import org.muml.udbm.DifferenceClockConstraint;
@@ -18,9 +20,12 @@ import org.muml.udbm.clockconstraint.ComparativeClockConstraint;
 import org.muml.udbm.clockconstraint.FalseClockConstraint;
 import org.muml.udbm.clockconstraint.RelationalOperator;
 import org.muml.udbm.clockconstraint.TrueClockConstraint;
+import org.muml.udbm.java.plugin.Activator;
 
 public class JavaFederation extends Federation {
-
+	private static Logger logger = Activator.getLogManager().getLogger(
+			JavaFederation.class.getName());
+	
 	public JavaFederation() {
 		// Do nothing
 	}
@@ -227,25 +232,35 @@ public class JavaFederation extends Federation {
 		while (it.hasNext()) {
 			// Intersect against constraint
 			JavaClockZone curZone = (JavaClockZone) it.next();
-			//System.out.println("###     Current zone: " + curZone);
+//			if (logger.isDebugEnabled()){
+//				logger.debug("###     Current zone: " + curZone);
+//			}
 			if (constraint instanceof FalseClockConstraint){
 				// curZone and FalseClockConstraint results in emptyZone
-				System.out.println("###     Remove *** Current zone and FalseClockConstraint: " + curZone);
+				if (logger.isDebugEnabled()){
+					logger.debug("###     Remove *** Current zone and FalseClockConstraint: " + curZone);
+				}
 				curZone.removeAllFromClockConstraint();
 				it.remove();				
 			}
 			else {
 				curZone.and(constraint);
-				System.out.println("###     Current zone and constraint: " + curZone);
+				if (logger.isDebugEnabled()){
+					logger.debug("###     Current zone and constraint: " + curZone);
+				}
 				// delete zone if it became empty
 				if (curZone.isEmpty()) {
-					System.out.println("###     Remove *** Current zone and constraint: " + curZone);
+					if (logger.isDebugEnabled()){
+						logger.debug("###     Remove *** Current zone and constraint: " + curZone);
+					}
 					curZone.removeAllFromClockConstraint();
 					it.remove();
 				}
 			}
 		}
-		//System.out.println("###     Federation and constraint: " + this.toString());
+//		if (logger.isDebugEnabled()){
+//			logger.debug("###     Federation and constraint: " + this.toString());
+//		}
 	}
 
 	@Override

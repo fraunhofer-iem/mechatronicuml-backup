@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 
+import org.apache.log4j.Logger;
 import org.muml.udbm.ClockConstraint;
 import org.muml.udbm.ClockZone;
 import org.muml.udbm.DifferenceClockConstraint;
@@ -14,6 +15,7 @@ import org.muml.udbm.UDBMClock;
 import org.muml.udbm.clockconstraint.ComparativeClockConstraint;
 import org.muml.udbm.clockconstraint.RelationalOperator;
 import org.muml.udbm.clockconstraint.TrueClockConstraint;
+import org.muml.udbm.java.plugin.Activator;
 
 public class JavaClockZone extends ClockZone {
 
@@ -24,6 +26,9 @@ public class JavaClockZone extends ClockZone {
 	 * the Zero-Clock which is always 0.
 	 */
 	private int[][] matrix;
+	
+	private static Logger logger = Activator.getLogManager().getLogger(
+			JavaClockZone.class.getName());
 	
 	@Override
 	protected boolean setFederation(Federation value) 
@@ -401,9 +406,9 @@ public class JavaClockZone extends ClockZone {
 	}
 	
 	public void and(ClockConstraint value) {
-		// for debugging
-		printDBM();
 		
+		printDBM();
+				
 		hashCacheValid = false;
 		this.matrix [0][0] = 1;
 		if (value instanceof TrueClockConstraint)
@@ -487,21 +492,25 @@ public class JavaClockZone extends ClockZone {
 				}
 			}
 		}
+		
 		printDBM();
 	}
 
 	// Used for debugging
 	private void printDBM() {
-		System.out.println("DBM"
-				+ "\n - first columb [i][0]: upper bounds"
-				+ "\n - first row [0][j]: lower bounds"
-				+ "\n - entry [0][0] == -3: DBM unsatifiable, means DBM is empty"
-				+ "\n - else: clock[i].value - clock[j]");
-		for (int i = 0; i < matrix.length; i++) {
-			for (int j = 0; j < matrix.length; j++) {
-				System.out.print(matrix[i][j] + "\t \t \t");
+		if (logger.isDebugEnabled()){
+			logger.debug("DBM"
+					+ System.getProperty("line.separator") + " - first columb [i][0]: upper bounds"
+					+ System.getProperty("line.separator") + " - first row [0][j]: lower bounds"
+					+ System.getProperty("line.separator") + " - entry [0][0] == -3: DBM unsatifiable, means DBM is empty"
+					+ System.getProperty("line.separator") + " - else: clock[i].value - clock[j]"
+					+ System.getProperty("line.separator"));
+			for (int i = 0; i < matrix.length; i++) {
+				for (int j = 0; j < matrix.length; j++) {
+					logger.debug(matrix[i][j] + "\t \t \t");
+				}
+				logger.debug(System.getProperty("line.separator"));
 			}
-			System.out.println();
 		}
 		
 	}
