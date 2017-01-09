@@ -24,7 +24,8 @@ package org.muml.pim.realtimestatechart.one_to_n_schemata;
  *
  *
  * @see org.muml.pim.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage#getUnicast()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UnicastRequiresConditionAndRetryAfterAttribute'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UnicastRequiresConditionAndRetryAfterAttribute='-- When you use the communication schemata unicast, then you have to define the attributes condition and retryAfter.\r\nnot self.condition.oclIsUndefined() and not self.retryAfter.oclIsUndefined()'"
  * @generated
  */
 public interface Unicast extends SendingOneToManyCommunicationSchema {

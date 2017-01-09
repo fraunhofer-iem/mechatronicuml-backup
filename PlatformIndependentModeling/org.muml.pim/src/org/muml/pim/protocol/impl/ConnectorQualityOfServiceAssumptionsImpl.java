@@ -24,24 +24,14 @@ import org.muml.pim.valuetype.TimeValue;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.muml.pim.protocol.impl.ConnectorQualityOfServiceAssumptionsImpl#getMinMessageDelay <em>Min Message Delay</em>}</li>
  *   <li>{@link org.muml.pim.protocol.impl.ConnectorQualityOfServiceAssumptionsImpl#getMaxMessageDelay <em>Max Message Delay</em>}</li>
  *   <li>{@link org.muml.pim.protocol.impl.ConnectorQualityOfServiceAssumptionsImpl#isMessageLossPossible <em>Message Loss Possible</em>}</li>
+ *   <li>{@link org.muml.pim.protocol.impl.ConnectorQualityOfServiceAssumptionsImpl#isPreserveMessageOrder <em>Preserve Message Order</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ConnectorQualityOfServiceAssumptionsImpl extends CommentableElementImpl implements ConnectorQualityOfServiceAssumptions {
-	/**
-	 * The cached value of the '{@link #getMinMessageDelay() <em>Min Message Delay</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMinMessageDelay()
-	 * @generated
-	 * @ordered
-	 */
-	protected TimeValue minMessageDelay;
-
 	/**
 	 * The cached value of the '{@link #getMaxMessageDelay() <em>Max Message Delay</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -73,6 +63,26 @@ public class ConnectorQualityOfServiceAssumptionsImpl extends CommentableElement
 	protected boolean messageLossPossible = MESSAGE_LOSS_POSSIBLE_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #isPreserveMessageOrder() <em>Preserve Message Order</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isPreserveMessageOrder()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean PRESERVE_MESSAGE_ORDER_EDEFAULT = true;
+
+	/**
+	 * The cached value of the '{@link #isPreserveMessageOrder() <em>Preserve Message Order</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isPreserveMessageOrder()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean preserveMessageOrder = PRESERVE_MESSAGE_ORDER_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -89,49 +99,6 @@ public class ConnectorQualityOfServiceAssumptionsImpl extends CommentableElement
 	@Override
 	protected EClass eStaticClass() {
 		return ProtocolPackage.Literals.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TimeValue getMinMessageDelay() {
-		return minMessageDelay;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetMinMessageDelay(TimeValue newMinMessageDelay, NotificationChain msgs) {
-		TimeValue oldMinMessageDelay = minMessageDelay;
-		minMessageDelay = newMinMessageDelay;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ProtocolPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MIN_MESSAGE_DELAY, oldMinMessageDelay, newMinMessageDelay);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setMinMessageDelay(TimeValue newMinMessageDelay) {
-		if (newMinMessageDelay != minMessageDelay) {
-			NotificationChain msgs = null;
-			if (minMessageDelay != null)
-				msgs = ((InternalEObject)minMessageDelay).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ProtocolPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MIN_MESSAGE_DELAY, null, msgs);
-			if (newMinMessageDelay != null)
-				msgs = ((InternalEObject)newMinMessageDelay).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ProtocolPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MIN_MESSAGE_DELAY, null, msgs);
-			msgs = basicSetMinMessageDelay(newMinMessageDelay, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProtocolPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MIN_MESSAGE_DELAY, newMinMessageDelay, newMinMessageDelay));
 	}
 
 	/**
@@ -203,11 +170,30 @@ public class ConnectorQualityOfServiceAssumptionsImpl extends CommentableElement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isPreserveMessageOrder() {
+		return preserveMessageOrder;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPreserveMessageOrder(boolean newPreserveMessageOrder) {
+		boolean oldPreserveMessageOrder = preserveMessageOrder;
+		preserveMessageOrder = newPreserveMessageOrder;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProtocolPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__PRESERVE_MESSAGE_ORDER, oldPreserveMessageOrder, preserveMessageOrder));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ProtocolPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MIN_MESSAGE_DELAY:
-				return basicSetMinMessageDelay(null, msgs);
 			case ProtocolPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MAX_MESSAGE_DELAY:
 				return basicSetMaxMessageDelay(null, msgs);
 		}
@@ -222,12 +208,12 @@ public class ConnectorQualityOfServiceAssumptionsImpl extends CommentableElement
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ProtocolPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MIN_MESSAGE_DELAY:
-				return getMinMessageDelay();
 			case ProtocolPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MAX_MESSAGE_DELAY:
 				return getMaxMessageDelay();
 			case ProtocolPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MESSAGE_LOSS_POSSIBLE:
 				return isMessageLossPossible();
+			case ProtocolPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__PRESERVE_MESSAGE_ORDER:
+				return isPreserveMessageOrder();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -240,14 +226,14 @@ public class ConnectorQualityOfServiceAssumptionsImpl extends CommentableElement
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ProtocolPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MIN_MESSAGE_DELAY:
-				setMinMessageDelay((TimeValue)newValue);
-				return;
 			case ProtocolPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MAX_MESSAGE_DELAY:
 				setMaxMessageDelay((TimeValue)newValue);
 				return;
 			case ProtocolPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MESSAGE_LOSS_POSSIBLE:
 				setMessageLossPossible((Boolean)newValue);
+				return;
+			case ProtocolPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__PRESERVE_MESSAGE_ORDER:
+				setPreserveMessageOrder((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -261,14 +247,14 @@ public class ConnectorQualityOfServiceAssumptionsImpl extends CommentableElement
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ProtocolPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MIN_MESSAGE_DELAY:
-				setMinMessageDelay((TimeValue)null);
-				return;
 			case ProtocolPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MAX_MESSAGE_DELAY:
 				setMaxMessageDelay((TimeValue)null);
 				return;
 			case ProtocolPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MESSAGE_LOSS_POSSIBLE:
 				setMessageLossPossible(MESSAGE_LOSS_POSSIBLE_EDEFAULT);
+				return;
+			case ProtocolPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__PRESERVE_MESSAGE_ORDER:
+				setPreserveMessageOrder(PRESERVE_MESSAGE_ORDER_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -282,12 +268,12 @@ public class ConnectorQualityOfServiceAssumptionsImpl extends CommentableElement
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ProtocolPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MIN_MESSAGE_DELAY:
-				return minMessageDelay != null;
 			case ProtocolPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MAX_MESSAGE_DELAY:
 				return maxMessageDelay != null;
 			case ProtocolPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MESSAGE_LOSS_POSSIBLE:
 				return messageLossPossible != MESSAGE_LOSS_POSSIBLE_EDEFAULT;
+			case ProtocolPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__PRESERVE_MESSAGE_ORDER:
+				return preserveMessageOrder != PRESERVE_MESSAGE_ORDER_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -304,6 +290,8 @@ public class ConnectorQualityOfServiceAssumptionsImpl extends CommentableElement
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (messageLossPossible: ");
 		result.append(messageLossPossible);
+		result.append(", preserveMessageOrder: ");
+		result.append(preserveMessageOrder);
 		result.append(')');
 		return result.toString();
 	}

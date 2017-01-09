@@ -754,6 +754,7 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 		initEEnum(bufferOverflowAvoidanceStrategyEEnum, BufferOverflowAvoidanceStrategy.class, "BufferOverflowAvoidanceStrategy");
 		addEEnumLiteral(bufferOverflowAvoidanceStrategyEEnum, BufferOverflowAvoidanceStrategy.DISCARD_INCOMING_MESSAGE);
 		addEEnumLiteral(bufferOverflowAvoidanceStrategyEEnum, BufferOverflowAvoidanceStrategy.DISCARD_OLDEST_MESSAGE_IN_BUFFER);
+		addEEnumLiteral(bufferOverflowAvoidanceStrategyEEnum, BufferOverflowAvoidanceStrategy.NEVER_HAPPENS);
 
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore

@@ -49,7 +49,15 @@ public enum BufferOverflowAvoidanceStrategy implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DISCARD_OLDEST_MESSAGE_IN_BUFFER(1, "DISCARD_OLDEST_MESSAGE_IN_BUFFER", "discard oldest message in buffer");
+	DISCARD_OLDEST_MESSAGE_IN_BUFFER(1, "DISCARD_OLDEST_MESSAGE_IN_BUFFER", "discard oldest message in buffer"), /**
+	 * The '<em><b>NEVER HAPPENS</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #NEVER_HAPPENS_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	NEVER_HAPPENS(2, "NEVER_HAPPENS", "never happens");
 
 	/**
 	 * The '<em><b>DISCARD INCOMING MESSAGE</b></em>' literal value.
@@ -88,6 +96,21 @@ public enum BufferOverflowAvoidanceStrategy implements Enumerator {
 	public static final int DISCARD_OLDEST_MESSAGE_IN_BUFFER_VALUE = 1;
 
 	/**
+	 * The '<em><b>NEVER HAPPENS</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>NEVER HAPPENS</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #NEVER_HAPPENS
+	 * @model literal="never happens"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int NEVER_HAPPENS_VALUE = 2;
+
+	/**
 	 * An array of all the '<em><b>Buffer Overflow Avoidance Strategy</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -97,6 +120,7 @@ public enum BufferOverflowAvoidanceStrategy implements Enumerator {
 		new BufferOverflowAvoidanceStrategy[] {
 			DISCARD_INCOMING_MESSAGE,
 			DISCARD_OLDEST_MESSAGE_IN_BUFFER,
+			NEVER_HAPPENS,
 		};
 
 	/**
@@ -155,6 +179,7 @@ public enum BufferOverflowAvoidanceStrategy implements Enumerator {
 		switch (value) {
 			case DISCARD_INCOMING_MESSAGE_VALUE: return DISCARD_INCOMING_MESSAGE;
 			case DISCARD_OLDEST_MESSAGE_IN_BUFFER_VALUE: return DISCARD_OLDEST_MESSAGE_IN_BUFFER;
+			case NEVER_HAPPENS_VALUE: return NEVER_HAPPENS;
 		}
 		return null;
 	}

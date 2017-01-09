@@ -25,6 +25,8 @@ public class LoadBalancingEditor extends org.muml.ape.runtime.editors.ClassPrope
 
 			addPropertyEditor(createEditorAction_property_tab_effectTab_Editor(), false);
 
+			addPropertyEditor(createEditorRetryAfter_property_tab_generalTab_Editor(), false);
+
 			addPropertyEditor(createEditorOnResponseAction_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorMaxWorkingTime_property_tab_generalTab_Editor(), false);
@@ -52,6 +54,8 @@ public class LoadBalancingEditor extends org.muml.ape.runtime.editors.ClassPrope
 		} else if ("property.tab.behavior".equals(tab)) { // Tab Behavior
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
+
+			addPropertyEditor(createEditorRetryAfter_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorOnResponseAction_property_tab_generalTab_Editor(), false);
 
@@ -145,6 +149,22 @@ public class LoadBalancingEditor extends org.muml.ape.runtime.editors.ClassPrope
 		return this.editorAction_property_tab_effectTab;
 	}
 
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorRetryAfter_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorRetryAfter_property_tab_generalTab_Editor() {
+		if (this.editorRetryAfter_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage.eINSTANCE
+					.getOneToManyCommunicationSchema_RetryAfter();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.NavigationFeaturePropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage(
+					"If the transition uses a communication schemata with the condition attribute, then it may be that no subrole may send or receiver a message. Before the RTSC may retry again to execute the communication schemata, it has to wait a specific time. This time is encoded within the attribute retryAfter.");
+
+			this.editorRetryAfter_property_tab_generalTab = editor;
+		}
+		return this.editorRetryAfter_property_tab_generalTab;
+	}
+
 	//
 	// instantiation
 	//
@@ -170,8 +190,8 @@ public class LoadBalancingEditor extends org.muml.ape.runtime.editors.ClassPrope
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
-					"property.tab.general", "property.tab.condition", "property.tab.effect", "property.tab.general"})
-					.contains(tab);
+					"property.tab.general", "property.tab.condition", "property.tab.effect", "property.tab.general",
+					"property.tab.general"}).contains(tab);
 		}
 	}
 

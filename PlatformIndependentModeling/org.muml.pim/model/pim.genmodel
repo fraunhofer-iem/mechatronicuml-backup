@@ -4,7 +4,7 @@
     modelDirectory="/org.muml.pim/src" modelPluginID="org.muml.pim" modelName="Muml"
     testsDirectory="/org.muml.pim.modeltests/src" importerID="org.eclipse.emf.importer.ecore"
     complianceLevel="6.0" copyrightFields="false" testsPluginID="org.muml.pim.modeltests"
-    language="" usedGenPackages="../../org.muml.core/model/core.genmodel#//core ../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    language="" usedGenPackages="../../org.muml.core/model/core.genmodel#//core platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
     operationReflection="true">
   <foreignModel>pim.ecore</foreignModel>
   <genPackages prefix="Pim" basePackage="org.muml" disposableProviderFactory="true"
@@ -48,6 +48,7 @@
       </genClasses>
       <genClasses ecoreClass="pim.ecore#//instance/AssemblyConnectorInstance">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//instance/AssemblyConnectorInstance/assemblyConnectorType"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//instance/AssemblyConnectorInstance/connectorQualityOfServiceAssumptions"/>
       </genClasses>
       <genClasses ecoreClass="pim.ecore#//instance/DelegationConnectorInstance">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//instance/DelegationConnectorInstance/delegationConnectorType"/>
@@ -107,9 +108,9 @@
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//protocol/RoleConnector/roles"/>
       </genClasses>
       <genClasses ecoreClass="pim.ecore#//protocol/ConnectorQualityOfServiceAssumptions">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//protocol/ConnectorQualityOfServiceAssumptions/minMessageDelay"/>
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//protocol/ConnectorQualityOfServiceAssumptions/maxMessageDelay"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//protocol/ConnectorQualityOfServiceAssumptions/messageLossPossible"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//protocol/ConnectorQualityOfServiceAssumptions/preserveMessageOrder"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Realtimestatechart" basePackage="org.muml.pim" disposableProviderFactory="true"
@@ -288,6 +289,8 @@
           <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/condition"/>
           <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/asynchronousMessageEvent"/>
           <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/action"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/retryAfter"/>
         </genClasses>
         <genClasses ecoreClass="pim.ecore#//realtimestatechart/one_to_n_schemata/Multicast"/>
         <genClasses ecoreClass="pim.ecore#//realtimestatechart/one_to_n_schemata/Unicast"/>
@@ -359,6 +362,7 @@
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="pim.ecore#//connector/BufferOverflowAvoidanceStrategy">
         <genEnumLiterals ecoreEnumLiteral="pim.ecore#//connector/BufferOverflowAvoidanceStrategy/DISCARD_INCOMING_MESSAGE"/>
         <genEnumLiterals ecoreEnumLiteral="pim.ecore#//connector/BufferOverflowAvoidanceStrategy/DISCARD_OLDEST_MESSAGE_IN_BUFFER"/>
+        <genEnumLiterals ecoreEnumLiteral="pim.ecore#//connector/BufferOverflowAvoidanceStrategy/NEVER_HAPPENS"/>
       </genEnums>
       <genClasses image="false" ecoreClass="pim.ecore#//connector/ConnectorEndpoint">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"

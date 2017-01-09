@@ -1160,22 +1160,13 @@ public interface ProtocolPackage extends EPackage {
 	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__COMMENT = CorePackage.COMMENTABLE_ELEMENT__COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>Min Message Delay</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MIN_MESSAGE_DELAY = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Max Message Delay</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MAX_MESSAGE_DELAY = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
+	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MAX_MESSAGE_DELAY = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Message Loss Possible</b></em>' attribute.
@@ -1184,7 +1175,16 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MESSAGE_LOSS_POSSIBLE = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
+	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MESSAGE_LOSS_POSSIBLE = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Preserve Message Order</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__PRESERVE_MESSAGE_ORDER = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Connector Quality Of Service Assumptions</em>' class.
@@ -1533,17 +1533,6 @@ public interface ProtocolPackage extends EPackage {
 	EClass getConnectorQualityOfServiceAssumptions();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.muml.pim.protocol.ConnectorQualityOfServiceAssumptions#getMinMessageDelay <em>Min Message Delay</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Min Message Delay</em>'.
-	 * @see org.muml.pim.protocol.ConnectorQualityOfServiceAssumptions#getMinMessageDelay()
-	 * @see #getConnectorQualityOfServiceAssumptions()
-	 * @generated
-	 */
-	EReference getConnectorQualityOfServiceAssumptions_MinMessageDelay();
-
-	/**
 	 * Returns the meta object for the containment reference '{@link org.muml.pim.protocol.ConnectorQualityOfServiceAssumptions#getMaxMessageDelay <em>Max Message Delay</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1564,6 +1553,17 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getConnectorQualityOfServiceAssumptions_MessageLossPossible();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.muml.pim.protocol.ConnectorQualityOfServiceAssumptions#isPreserveMessageOrder <em>Preserve Message Order</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Preserve Message Order</em>'.
+	 * @see org.muml.pim.protocol.ConnectorQualityOfServiceAssumptions#isPreserveMessageOrder()
+	 * @see #getConnectorQualityOfServiceAssumptions()
+	 * @generated
+	 */
+	EAttribute getConnectorQualityOfServiceAssumptions_PreserveMessageOrder();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1734,14 +1734,6 @@ public interface ProtocolPackage extends EPackage {
 		EClass CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS = eINSTANCE.getConnectorQualityOfServiceAssumptions();
 
 		/**
-		 * The meta object literal for the '<em><b>Min Message Delay</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MIN_MESSAGE_DELAY = eINSTANCE.getConnectorQualityOfServiceAssumptions_MinMessageDelay();
-
-		/**
 		 * The meta object literal for the '<em><b>Max Message Delay</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1756,6 +1748,14 @@ public interface ProtocolPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MESSAGE_LOSS_POSSIBLE = eINSTANCE.getConnectorQualityOfServiceAssumptions_MessageLossPossible();
+
+		/**
+		 * The meta object literal for the '<em><b>Preserve Message Order</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__PRESERVE_MESSAGE_ORDER = eINSTANCE.getConnectorQualityOfServiceAssumptions_PreserveMessageOrder();
 
 	}
 

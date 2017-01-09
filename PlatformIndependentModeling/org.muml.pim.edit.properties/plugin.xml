@@ -267,11 +267,6 @@
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.pim.properties.instance.editor.AssemblyConnectorInstanceEditor$Factory"
-             type="http://www.muml.org/pim/instance/1.0.0#AssemblyConnectorInstance">
-       </propertyEditor>
-    
-       <propertyEditor
              factory="org.muml.pim.properties.instance.editor.DelegationConnectorInstanceEditor$Factory"
              type="http://www.muml.org/pim/instance/1.0.0#DelegationConnectorInstance">
        </propertyEditor>
@@ -302,6 +297,16 @@
        </propertyEditor>
     
        <propertyEditor
+             factory="org.muml.pim.properties.instance.editor.CoordinationProtocolInstanceEditor$Factory"
+             type="http://www.muml.org/pim/instance/1.0.0#CoordinationProtocolInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.instance.editor.AssemblyConnectorInstanceEditor$Factory"
+             type="http://www.muml.org/pim/instance/1.0.0#AssemblyConnectorInstance">
+       </propertyEditor>
+    
+       <propertyEditor
              factory="org.muml.pim.properties.instance.editor.StructuredComponentInstanceEditor$Factory"
              type="http://www.muml.org/pim/instance/1.0.0#StructuredComponentInstance">
        </propertyEditor>
@@ -309,11 +314,6 @@
        <propertyEditor
              factory="org.muml.pim.properties.instance.editor.AtomicComponentInstanceEditor$Factory"
              type="http://www.muml.org/pim/instance/1.0.0#AtomicComponentInstance">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="org.muml.pim.properties.instance.editor.CoordinationProtocolInstanceEditor$Factory"
-             type="http://www.muml.org/pim/instance/1.0.0#CoordinationProtocolInstance">
        </propertyEditor>
     
        <propertyEditor

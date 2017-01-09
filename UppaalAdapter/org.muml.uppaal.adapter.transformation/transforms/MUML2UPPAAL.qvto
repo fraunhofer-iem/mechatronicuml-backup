@@ -326,10 +326,6 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		return self.connectorEndpointInstances->first().oclAsType(DiscretePortInstance).refinedRole.roleConnector;		
 	}	
 	// QoS assumptions	
-			
-	query Connector :: getMinDelay() : Expression {
-		return new LiteralExpression(0);
-	}	
 	
 	query Connector :: getMaxDelay() : Expression {
 		return new LiteralExpression(0);
@@ -338,11 +334,6 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 	query Connector :: getMessageLoss() : Expression {
 		return new LiteralExpression(false);
 	}
-	
-	query RoleConnector :: getMinDelay() : Expression {
-		// TODO: if we support variables for protocols, replace the 'null' values below by appropriate IDs
-		return self.connectorQualityOfServiceAssumptions.minMessageDelay.mapTimeValue2Expression(null,null,null);
-	}	
 	
 	query RoleConnector :: getMaxDelay() : Expression {
 		// TODO: if we support variables for protocols, replace the 'null' values below by appropriate IDs
@@ -783,8 +774,6 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 					argument += new LiteralExpression(sourceID);
 				
 					argument += new LiteralExpression(targetID);
-									
-					argument += self.getRoleConnector().getMinDelay();
 					
 					argument += self.getRoleConnector().getMaxDelay();
 					
@@ -802,8 +791,6 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 					argument += new LiteralExpression(targetID);
 				
 					argument += new LiteralExpression(sourceID);
-									
-					argument += self.getRoleConnector().getMinDelay();
 					
 					argument += self.getRoleConnector().getMaxDelay();
 					

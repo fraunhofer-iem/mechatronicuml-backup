@@ -74,6 +74,7 @@ public class OneToManyCommunicationSchemaItemProvider
 			addConditionPropertyDescriptor(object);
 			addAsynchronousMessageEventPropertyDescriptor(object);
 			addActionPropertyDescriptor(object);
+			addRetryAfterPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -139,6 +140,28 @@ public class OneToManyCommunicationSchemaItemProvider
 				 true,
 				 false,
 				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Retry After feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRetryAfterPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_OneToManyCommunicationSchema_retryAfter_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_OneToManyCommunicationSchema_retryAfter_feature", "_UI_OneToManyCommunicationSchema_type"),
+				 One_to_n_schemataPackage.Literals.ONE_TO_MANY_COMMUNICATION_SCHEMA__RETRY_AFTER,
+				 true,
+				 false,
+				 true,
 				 null,
 				 null,
 				 null));

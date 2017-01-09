@@ -27,6 +27,10 @@ public class AssemblyConnectorInstanceEditor extends org.muml.ape.runtime.editor
 
 			addPropertyEditor(createEditorType_property_tab_generalTab_Editor(), false);
 
+			addPropertyEditor(createEditorConnectorEndpointInstances_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorConnectorQualityOfServiceAssumptions_property_tab_generalTab_Editor(), false);
+
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
@@ -47,6 +51,10 @@ public class AssemblyConnectorInstanceEditor extends org.muml.ape.runtime.editor
 
 			addPropertyEditor(createEditorType_property_tab_generalTab_Editor(), false);
 
+			addPropertyEditor(createEditorConnectorEndpointInstances_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorConnectorQualityOfServiceAssumptions_property_tab_generalTab_Editor(), false);
+
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
 			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
@@ -57,6 +65,19 @@ public class AssemblyConnectorInstanceEditor extends org.muml.ape.runtime.editor
 
 		} else {
 		}
+	}
+
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorConnectorQualityOfServiceAssumptions_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorConnectorQualityOfServiceAssumptions_property_tab_generalTab_Editor() {
+		if (this.editorConnectorQualityOfServiceAssumptions_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.instance.InstancePackage.eINSTANCE
+					.getAssemblyConnectorInstance_ConnectorQualityOfServiceAssumptions();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.NavigationFeaturePropertyEditor(
+					adapterFactory, feature);
+
+			this.editorConnectorQualityOfServiceAssumptions_property_tab_generalTab = editor;
+		}
+		return this.editorConnectorQualityOfServiceAssumptions_property_tab_generalTab;
 	}
 
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorType_property_tab_generalTab;
@@ -73,6 +94,54 @@ public class AssemblyConnectorInstanceEditor extends org.muml.ape.runtime.editor
 			this.editorType_property_tab_generalTab = editor;
 		}
 		return this.editorType_property_tab_generalTab;
+	}
+
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorConnectorEndpointInstances_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorConnectorEndpointInstances_property_tab_generalTab_Editor() {
+		if (this.editorConnectorEndpointInstances_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.connector.ConnectorPackage.eINSTANCE
+					.getConnectorInstance_ConnectorEndpointInstances();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			{
+				editor.setInput(input);
+				editor.registerOCLAdapter(new org.eclipse.emf.common.notify.impl.AdapterImpl() {
+					@Override
+					public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
+						editor.updateEnablement(true);
+					}
+				});
+
+				try {
+					final org.eclipse.ocl.pivot.utilities.OCL ocl = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
+					org.eclipse.ocl.pivot.utilities.OCLHelper helper = ocl.createOCLHelper(feature);
+					final org.eclipse.ocl.pivot.ExpressionInOCL oclExpression = helper.createQuery("true");
+
+					org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
+						@Override
+						public boolean select(Object object) {
+							try {
+								return object != null && Boolean.TRUE.equals(ocl.evaluate(object, oclExpression));
+							} catch (org.eclipse.ocl.pivot.values.InvalidValueException e) {
+								return false;
+							}
+						}
+					};
+					if (filter != null) {
+						editor.addReadOnlyFilter(filter);
+					}
+
+				} catch (org.eclipse.ocl.pivot.utilities.ParserException e) {
+					e.printStackTrace();
+				}
+			}
+
+			editor.setTooltipMessage("The connector endpoint instances connected by this connector instance.");
+
+			this.editorConnectorEndpointInstances_property_tab_generalTab = editor;
+		}
+		return this.editorConnectorEndpointInstances_property_tab_generalTab;
 	}
 
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComment_property_tab_documentationTab;
@@ -129,8 +198,10 @@ public class AssemblyConnectorInstanceEditor extends org.muml.ape.runtime.editor
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
-					"property.tab.documentation", "property.tab.extensions"}).contains(tab);
+			return java.util.Arrays
+					.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
+							"property.tab.general", "property.tab.documentation", "property.tab.extensions"})
+					.contains(tab);
 		}
 	}
 

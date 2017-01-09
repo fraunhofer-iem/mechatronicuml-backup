@@ -29,9 +29,16 @@ public class AtomicComponentInstanceEditor extends org.muml.ape.runtime.editors.
 
 			addPropertyEditor(createEditorComponentPart_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorRunnables_property_tab_generalTab_Editor(), false);
+			addSubCategory("org.muml.ape.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addPropertyEditor(createEditorLabels_property_tab_generalTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Lists",
+					createEditorPortInstances_property_tab_generalTab_Editor(), false);
+
+			addEditorToCategory("org.muml.ape.category.Lists", createEditorRunnables_property_tab_generalTab_Editor(),
+					false);
+
+			addEditorToCategory("org.muml.ape.category.Lists", createEditorLabels_property_tab_generalTab_Editor(),
+					false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -57,9 +64,16 @@ public class AtomicComponentInstanceEditor extends org.muml.ape.runtime.editors.
 
 			addPropertyEditor(createEditorComponentPart_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorRunnables_property_tab_generalTab_Editor(), false);
+			addSubCategory("org.muml.ape.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addPropertyEditor(createEditorLabels_property_tab_generalTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Lists",
+					createEditorPortInstances_property_tab_generalTab_Editor(), false);
+
+			addEditorToCategory("org.muml.ape.category.Lists", createEditorRunnables_property_tab_generalTab_Editor(),
+					false);
+
+			addEditorToCategory("org.muml.ape.category.Lists", createEditorLabels_property_tab_generalTab_Editor(),
+					false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -100,6 +114,22 @@ public class AtomicComponentInstanceEditor extends org.muml.ape.runtime.editors.
 			this.editorComponentPart_property_tab_generalTab = editor;
 		}
 		return this.editorComponentPart_property_tab_generalTab;
+	}
+
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorPortInstances_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorPortInstances_property_tab_generalTab_Editor() {
+		if (this.editorPortInstances_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.instance.InstancePackage.eINSTANCE
+					.getComponentInstance_PortInstances();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage(
+					"The port instances that belong to this component instance. \\todosd{Why are also DiscreteSinglePortInstances of DiscreteMultiPortInstances contained here and not in the DiscreteMultiPortInstance?}");
+
+			this.editorPortInstances_property_tab_generalTab = editor;
+		}
+		return this.editorPortInstances_property_tab_generalTab;
 	}
 
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorRunnables_property_tab_generalTab;

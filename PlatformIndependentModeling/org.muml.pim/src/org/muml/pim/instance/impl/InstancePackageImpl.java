@@ -453,6 +453,15 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getAssemblyConnectorInstance_ConnectorQualityOfServiceAssumptions() {
+		return (EReference)assemblyConnectorInstanceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDelegationConnectorInstance() {
 		return delegationConnectorInstanceEClass;
 	}
@@ -723,6 +732,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 
 		assemblyConnectorInstanceEClass = createEClass(ASSEMBLY_CONNECTOR_INSTANCE);
 		createEReference(assemblyConnectorInstanceEClass, ASSEMBLY_CONNECTOR_INSTANCE__ASSEMBLY_CONNECTOR_TYPE);
+		createEReference(assemblyConnectorInstanceEClass, ASSEMBLY_CONNECTOR_INSTANCE__CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS);
 
 		delegationConnectorInstanceEClass = createEClass(DELEGATION_CONNECTOR_INSTANCE);
 		createEReference(delegationConnectorInstanceEClass, DELEGATION_CONNECTOR_INSTANCE__DELEGATION_CONNECTOR_TYPE);
@@ -788,9 +798,9 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		ComponentPackage theComponentPackage = (ComponentPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI);
 		RunnablePackage theRunnablePackage = (RunnablePackage)EPackage.Registry.INSTANCE.getEPackage(RunnablePackage.eNS_URI);
 		ConnectorPackage theConnectorPackage = (ConnectorPackage)EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI);
+		ProtocolPackage theProtocolPackage = (ProtocolPackage)EPackage.Registry.INSTANCE.getEPackage(ProtocolPackage.eNS_URI);
 		ConstraintPackage theConstraintPackage = (ConstraintPackage)EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI);
 		MsgtypePackage theMsgtypePackage = (MsgtypePackage)EPackage.Registry.INSTANCE.getEPackage(MsgtypePackage.eNS_URI);
-		ProtocolPackage theProtocolPackage = (ProtocolPackage)EPackage.Registry.INSTANCE.getEPackage(ProtocolPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -840,6 +850,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 
 		initEClass(assemblyConnectorInstanceEClass, AssemblyConnectorInstance.class, "AssemblyConnectorInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAssemblyConnectorInstance_AssemblyConnectorType(), theComponentPackage.getAssemblyConnector(), null, "assemblyConnectorType", null, 0, 1, AssemblyConnectorInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getAssemblyConnectorInstance_ConnectorQualityOfServiceAssumptions(), theProtocolPackage.getConnectorQualityOfServiceAssumptions(), null, "connectorQualityOfServiceAssumptions", null, 0, 1, AssemblyConnectorInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(delegationConnectorInstanceEClass, DelegationConnectorInstance.class, "DelegationConnectorInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDelegationConnectorInstance_DelegationConnectorType(), theComponentPackage.getDelegationConnector(), null, "delegationConnectorType", null, 1, 1, DelegationConnectorInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
@@ -923,7 +934,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		  (assemblyConnectorInstanceEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "AssemblyConnectorInstanceNeedsTypeIfNotTopLevel"
+			 "constraints", "AssemblyConnectorInstanceNeedsTypeIfNotTopLevel NoQoSAssumptionsIfNotDiscretePortConnector"
 		   });	
 		addAnnotation
 		  (delegationConnectorInstanceEClass, 
@@ -1036,7 +1047,8 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		  (assemblyConnectorInstanceEClass, 
 		   source, 
 		   new String[] {
-			 "AssemblyConnectorInstanceNeedsTypeIfNotTopLevel", "-- Assembly Connector Instance needs type, if not top-level\r\nportInstances.componentInstance->exists(not parentCIC.parentStructuredComponentInstance.oclIsUndefined()) implies not assemblyConnectorType.oclIsUndefined()\r\n"
+			 "AssemblyConnectorInstanceNeedsTypeIfNotTopLevel", "-- Assembly Connector Instance needs type, if not top-level\r\nportInstances.componentInstance->exists(not parentCIC.parentStructuredComponentInstance.oclIsUndefined()) implies not assemblyConnectorType.oclIsUndefined()\r\n",
+			 "NoQoSAssumptionsIfNotDiscretePortConnector", "-- An assembly instance connector may only have QoS assumptions if it connects two discrete port instances\r\n(not connectorQualityOfServiceAssumptions.oclIsUndefined()) \r\nimplies \r\n(portInstances->forAll(portInstance | not portInstance.oclIsUndefined() and portInstance.oclIsKindOf(instance::DiscretePortInstance)))"
 		   });	
 		addAnnotation
 		  (getAssemblyConnectorInstance_AssemblyConnectorType(), 

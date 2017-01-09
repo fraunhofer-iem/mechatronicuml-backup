@@ -25,19 +25,11 @@ public class ConnectorQualityOfServiceAssumptionsEditor extends org.muml.ape.run
 
 			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
 
-			addSubCategory("org.muml.ape.category.Message Loss", "Message Loss", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addPropertyEditor(createEditorMaxMessageDelay_property_tab_generalTab_Editor(), false);
 
-			addEditorToCategory("org.muml.ape.category.Message Loss",
-					createEditorMessageLossPossible_property_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorMessageLossPossible_property_tab_generalTab_Editor(), false);
 
-			addSubCategory("org.muml.ape.category.Message Delay", "Message Delay", org.eclipse.swt.SWT.HORIZONTAL,
-					true);
-
-			addEditorToCategory("org.muml.ape.category.Message Delay",
-					createEditorMaxMessageDelay_property_tab_generalTab_Editor(), false);
-
-			addEditorToCategory("org.muml.ape.category.Message Delay",
-					createEditorMinMessageDelay_property_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorPreserveMessageOrder_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -57,19 +49,11 @@ public class ConnectorQualityOfServiceAssumptionsEditor extends org.muml.ape.run
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addSubCategory("org.muml.ape.category.Message Loss", "Message Loss", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addPropertyEditor(createEditorMaxMessageDelay_property_tab_generalTab_Editor(), false);
 
-			addEditorToCategory("org.muml.ape.category.Message Loss",
-					createEditorMessageLossPossible_property_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorMessageLossPossible_property_tab_generalTab_Editor(), false);
 
-			addSubCategory("org.muml.ape.category.Message Delay", "Message Delay", org.eclipse.swt.SWT.HORIZONTAL,
-					true);
-
-			addEditorToCategory("org.muml.ape.category.Message Delay",
-					createEditorMaxMessageDelay_property_tab_generalTab_Editor(), false);
-
-			addEditorToCategory("org.muml.ape.category.Message Delay",
-					createEditorMinMessageDelay_property_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorPreserveMessageOrder_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -99,61 +83,6 @@ public class ConnectorQualityOfServiceAssumptionsEditor extends org.muml.ape.run
 		return this.editorMaxMessageDelay_property_tab_generalTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorMinMessageDelay_property_tab_generalTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorMinMessageDelay_property_tab_generalTab_Editor() {
-		if (this.editorMinMessageDelay_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.protocol.ProtocolPackage.eINSTANCE
-					.getConnectorQualityOfServiceAssumptions_MinMessageDelay();
-			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.NavigationFeaturePropertyEditor(
-					adapterFactory, feature);
-
-			{
-				editor.setInput(input);
-				editor.registerOCLAdapter(new org.eclipse.emf.common.notify.impl.AdapterImpl() {
-					@Override
-					public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
-						boolean visibleBefore = editor.isVisible();
-						editor.updateVisibility(true);
-
-						// Set default value, if we are hiding the editor and it was not hidden before.
-						if (!editor.isVisible() && visibleBefore) {
-							editor.setDefaultValue();
-						}
-					}
-				});
-
-				try {
-					final org.eclipse.ocl.pivot.utilities.OCL ocl = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
-					org.eclipse.ocl.pivot.utilities.OCLHelper helper = ocl.createOCLHelper(feature);
-					final org.eclipse.ocl.pivot.ExpressionInOCL oclExpression = helper.createQuery("false");
-
-					org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
-						@Override
-						public boolean select(Object object) {
-							try {
-								return object != null && Boolean.TRUE.equals(ocl.evaluate(object, oclExpression));
-							} catch (org.eclipse.ocl.pivot.values.InvalidValueException e) {
-								return false;
-							}
-						}
-					};
-					if (filter != null) {
-						editor.addVisibilityFilter(filter);
-					}
-
-				} catch (org.eclipse.ocl.pivot.utilities.ParserException e) {
-					e.printStackTrace();
-				}
-			}
-
-			editor.setTooltipMessage(
-					"The minimal time a message needs from the sender to the receiver using this connector.");
-
-			this.editorMinMessageDelay_property_tab_generalTab = editor;
-		}
-		return this.editorMinMessageDelay_property_tab_generalTab;
-	}
-
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorMessageLossPossible_property_tab_generalTab;
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorMessageLossPossible_property_tab_generalTab_Editor() {
 		if (this.editorMessageLossPossible_property_tab_generalTab == null) {
@@ -168,6 +97,19 @@ public class ConnectorQualityOfServiceAssumptionsEditor extends org.muml.ape.run
 			this.editorMessageLossPossible_property_tab_generalTab = editor;
 		}
 		return this.editorMessageLossPossible_property_tab_generalTab;
+	}
+
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorPreserveMessageOrder_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorPreserveMessageOrder_property_tab_generalTab_Editor() {
+		if (this.editorPreserveMessageOrder_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.protocol.ProtocolPackage.eINSTANCE
+					.getConnectorQualityOfServiceAssumptions_PreserveMessageOrder();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.CheckboxPropertyEditor(
+					adapterFactory, feature);
+
+			this.editorPreserveMessageOrder_property_tab_generalTab = editor;
+		}
+		return this.editorPreserveMessageOrder_property_tab_generalTab;
 	}
 
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComment_property_tab_documentationTab;

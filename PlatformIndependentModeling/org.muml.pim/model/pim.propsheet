@@ -17,6 +17,10 @@
     <requiredBundles>org.muml.core.edit</requiredBundles>
     <requiredBundles>org.muml.pim.actionlanguage.xtext.ui</requiredBundles>
     <requiredBundles>org.muml.core.edit.properties</requiredBundles>
+    <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
+    <requiredBundles>org.eclipse.ui</requiredBundles>
+    <requiredBundles>org.eclipse.core.runtime</requiredBundles>
+    <requiredBundles>org.eclipse.emf.edit</requiredBundles>
   </plugin>
   <defaultTab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
   <tabs xmi:id="_VZJEsMwbEeSjx7OWZCcdLw" id="property.tab.constraint" name="Constraint" afterTab="property.tab.comment"/>
@@ -202,7 +206,7 @@
     </classes>
     <classes xmi:id="_VZLg-cwbEeSjx7OWZCcdLw">
       <genClass href="pim.genmodel#//pim/realtimestatechart/Transition"/>
-      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZMIBcwbEeSjx7OWZCcdLw" tab="//@tabs.2">
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZMIBcwbEeSjx7OWZCcdLw" tab="//@tabs.2" initializeOCLExpression="">
         <genFeature href="pim.genmodel#//pim/realtimestatechart/Transition/clockConstraints"/>
         <editor xsi:type="org.muml:ListPropertyEditor" xmi:id="_VZMIBswbEeSjx7OWZCcdLw"/>
       </orderedElements>
@@ -503,13 +507,14 @@
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_VZPyYcwbEeSjx7OWZCcdLw"/>
       </orderedElements>
-      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZPyYswbEeSjx7OWZCcdLw" reconcile="false">
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZPyYswbEeSjx7OWZCcdLw" reconcile="false" initializeOCLExpression="">
         <genFeature href="pim.genmodel#//pim/instance/ComponentInstance/parentCIC"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml:Property" xmi:id="_VZPLXswbEeSjx7OWZCcdLw" reconcile="false">
         <genFeature href="pim.genmodel#//pim/instance/ComponentInstance/portInstances"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml:Property">
         <genFeature href="pim.genmodel#//pim/instance/ComponentInstance/runnables"/>
@@ -521,6 +526,7 @@
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="org.muml:ListPropertyEditor"/>
       </orderedElements>
+      <orderedElements xsi:type="org.muml:PropertyCategory" title="Lists" properties="_VZPLXswbEeSjx7OWZCcdLw //@packages.2/@classes.0/@orderedElements.4 //@packages.2/@classes.0/@orderedElements.5"/>
       <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
     </classes>
     <classes xmi:id="_VZPyZcwbEeSjx7OWZCcdLw" superClasses="_VZXuOMwbEeSjx7OWZCcdLw">
@@ -538,30 +544,31 @@
         <editor xsi:type="org.muml:ListPropertyEditor"/>
       </orderedElements>
     </classes>
-    <classes xmi:id="_VZPyacwbEeSjx7OWZCcdLw" superClasses="_VZPyZcwbEeSjx7OWZCcdLw">
-      <genClass href="pim.genmodel#//pim/instance/AssemblyConnectorInstance"/>
-    </classes>
     <classes xmi:id="_VZPyaswbEeSjx7OWZCcdLw" superClasses="_VZPyZcwbEeSjx7OWZCcdLw">
       <genClass href="pim.genmodel#//pim/instance/DelegationConnectorInstance"/>
     </classes>
     <classes xmi:id="_VZPya8wbEeSjx7OWZCcdLw">
       <genClass href="pim.genmodel#//pim/instance/ComponentInstanceConfiguration"/>
-      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZQZcMwbEeSjx7OWZCcdLw" tooltip="" reconcile="false">
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZQZcMwbEeSjx7OWZCcdLw" tooltip="" reconcile="false" initializeOCLExpression="">
         <genFeature href="pim.genmodel#//pim/instance/ComponentInstanceConfiguration/parentStructuredComponentInstance"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml:Property" xmi:id="_VZPybMwbEeSjx7OWZCcdLw" reconcile="false">
         <genFeature href="pim.genmodel#//pim/instance/ComponentInstanceConfiguration/componentInstances"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml:Property" xmi:id="_VZPybswbEeSjx7OWZCcdLw" reconcile="false">
         <genFeature href="pim.genmodel#//pim/instance/ComponentInstanceConfiguration/portConnectorInstances"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="org.muml:Property" reconcile="false">
+      <orderedElements xsi:type="org.muml:Property" reconcile="false" initializeOCLExpression="">
         <genFeature href="pim.genmodel#//pim/instance/ComponentInstanceConfiguration/coordinationProtocolInstances"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
       </orderedElements>
+      <orderedElements xsi:type="org.muml:PropertyCategory" title="Lists" properties="_VZPybMwbEeSjx7OWZCcdLw _VZPybswbEeSjx7OWZCcdLw //@packages.2/@classes.4/@orderedElements.3"/>
       <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
       <superClasses href="../../org.muml.core/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
       <superClasses href="#_VZTcwMwbEeSjx7OWZCcdLw"/>
@@ -581,16 +588,6 @@
     <classes xmi:id="_VZQZd8wbEeSjx7OWZCcdLw" superClasses="_VZY8V8wbEeSjx7OWZCcdLw _VZQZdcwbEeSjx7OWZCcdLw">
       <genClass href="pim.genmodel#//pim/instance/DiscreteMultiPortInstance"/>
     </classes>
-    <classes xmi:id="_VZQZeMwbEeSjx7OWZCcdLw" superClasses="_VZPLW8wbEeSjx7OWZCcdLw">
-      <genClass href="pim.genmodel#//pim/instance/StructuredComponentInstance"/>
-      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZQZecwbEeSjx7OWZCcdLw" reconcile="false">
-        <genFeature href="pim.genmodel#//pim/instance/StructuredComponentInstance/embeddedCIC"/>
-        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-      </orderedElements>
-    </classes>
-    <classes xmi:id="_VZQZe8wbEeSjx7OWZCcdLw" superClasses="_VZPLW8wbEeSjx7OWZCcdLw">
-      <genClass href="pim.genmodel#//pim/instance/AtomicComponentInstance"/>
-    </classes>
     <classes xmi:id="_VZRAgMwbEeSjx7OWZCcdLw">
       <genClass href="pim.genmodel#//pim/instance/CoordinationProtocolInstance"/>
       <orderedElements xsi:type="org.muml:Property" xmi:id="_VZRAgcwbEeSjx7OWZCcdLw" reconcile="false">
@@ -606,6 +603,25 @@
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
       </orderedElements>
       <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
+    </classes>
+    <classes superClasses="_VZPyZcwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/instance/AssemblyConnectorInstance"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/instance/AssemblyConnectorInstance/connectorQualityOfServiceAssumptions"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes superClasses="_VZPLW8wbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/instance/StructuredComponentInstance"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/instance/StructuredComponentInstance/embeddedCIC"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes superClasses="_VZPLW8wbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/instance/AtomicComponentInstance"/>
     </classes>
   </packages>
   <packages xmi:id="_VZRAiMwbEeSjx7OWZCcdLw">
@@ -734,7 +750,7 @@
         <genFeature href="pim.genmodel#//pim/protocol/RoleConnector/coordinationProtocol"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
       </orderedElements>
-      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZS1s8wbEeSjx7OWZCcdLw">
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZS1s8wbEeSjx7OWZCcdLw" initializeOCLExpression="">
         <genFeature href="pim.genmodel#//pim/protocol/RoleConnector/connectorQualityOfServiceAssumptions"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="org.muml:ObjectPropertyEditor" xmi:id="_VZS1tMwbEeSjx7OWZCcdLw"/>
@@ -742,24 +758,21 @@
     </classes>
     <classes xmi:id="_VZS1tcwbEeSjx7OWZCcdLw">
       <genClass href="pim.genmodel#//pim/protocol/ConnectorQualityOfServiceAssumptions"/>
-      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZS1uMwbEeSjx7OWZCcdLw" tooltip="" initializeOCLExpression="">
+      <orderedElements xsi:type="org.muml:Property">
         <genFeature href="pim.genmodel#//pim/protocol/ConnectorQualityOfServiceAssumptions/maxMessageDelay"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="org.muml:ObjectPropertyEditor" xmi:id="_VZS1ucwbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZS1tswbEeSjx7OWZCcdLw" tooltip="" initializeOCLExpression="">
-        <genFeature href="pim.genmodel#//pim/protocol/ConnectorQualityOfServiceAssumptions/minMessageDelay"/>
-        <visibilityFilters xsi:type="org.muml:OCLFilter" expression="false"/>
-        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="org.muml:ObjectPropertyEditor" xmi:id="_VZS1t8wbEeSjx7OWZCcdLw"/>
-      </orderedElements>
-      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZS1uswbEeSjx7OWZCcdLw">
+      <orderedElements xsi:type="org.muml:Property">
         <genFeature href="pim.genmodel#//pim/protocol/ConnectorQualityOfServiceAssumptions/messageLossPossible"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="org.muml:CheckboxPropertyEditor" xmi:id="_VZS1u8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="org.muml:CheckboxPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="org.muml:PropertyCategory" xmi:id="_VZS1vMwbEeSjx7OWZCcdLw" title="Message Loss" properties="_VZS1uswbEeSjx7OWZCcdLw"/>
-      <orderedElements xsi:type="org.muml:PropertyCategory" xmi:id="_VZS1vcwbEeSjx7OWZCcdLw" title="Message Delay" properties="_VZS1uMwbEeSjx7OWZCcdLw _VZS1tswbEeSjx7OWZCcdLw"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/protocol/ConnectorQualityOfServiceAssumptions/preserveMessageOrder"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:CheckboxPropertyEditor"/>
+      </orderedElements>
       <superClasses href="../../org.muml.core/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
     </classes>
   </packages>
@@ -1080,9 +1093,11 @@
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_VZXuOswbEeSjx7OWZCcdLw"/>
       </orderedElements>
-      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZXuO8wbEeSjx7OWZCcdLw" reconcile="false">
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZXuO8wbEeSjx7OWZCcdLw" reconcile="false" initializeOCLExpression="">
         <genFeature href="pim.genmodel#//pim/connector/ConnectorInstance/connectorEndpointInstances"/>
+        <readOnlyFilters xsi:type="org.muml:OCLFilter" expression="true"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
       </orderedElements>
       <superClasses href="../../org.muml.core/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
     </classes>
@@ -1317,6 +1332,11 @@
       <orderedElements xsi:type="org.muml:Property" reconcile="false" initializeOCLExpression="">
         <genFeature href="pim.genmodel#//pim/realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/asynchronousMessageEvent"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/retryAfter"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes superClasses="//@packages.11/@classes.8">

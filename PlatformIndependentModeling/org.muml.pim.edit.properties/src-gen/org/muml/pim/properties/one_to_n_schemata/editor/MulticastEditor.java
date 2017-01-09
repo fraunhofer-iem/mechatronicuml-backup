@@ -25,6 +25,8 @@ public class MulticastEditor extends org.muml.ape.runtime.editors.ClassPropertyE
 
 			addPropertyEditor(createEditorAction_property_tab_effectTab_Editor(), false);
 
+			addPropertyEditor(createEditorRetryAfter_property_tab_generalTab_Editor(), false);
+
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
@@ -46,6 +48,8 @@ public class MulticastEditor extends org.muml.ape.runtime.editors.ClassPropertyE
 		} else if ("property.tab.behavior".equals(tab)) { // Tab Behavior
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
+
+			addPropertyEditor(createEditorRetryAfter_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -86,6 +90,22 @@ public class MulticastEditor extends org.muml.ape.runtime.editors.ClassPropertyE
 		return this.editorAction_property_tab_effectTab;
 	}
 
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorRetryAfter_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorRetryAfter_property_tab_generalTab_Editor() {
+		if (this.editorRetryAfter_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage.eINSTANCE
+					.getOneToManyCommunicationSchema_RetryAfter();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.NavigationFeaturePropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage(
+					"If the transition uses a communication schemata with the condition attribute, then it may be that no subrole may send or receiver a message. Before the RTSC may retry again to execute the communication schemata, it has to wait a specific time. This time is encoded within the attribute retryAfter.");
+
+			this.editorRetryAfter_property_tab_generalTab = editor;
+		}
+		return this.editorRetryAfter_property_tab_generalTab;
+	}
+
 	//
 	// instantiation
 	//
@@ -109,9 +129,8 @@ public class MulticastEditor extends org.muml.ape.runtime.editors.ClassPropertyE
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.condition", "property.tab.effect", "property.tab.general"})
-					.contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.condition", "property.tab.effect",
+					"property.tab.general", "property.tab.general"}).contains(tab);
 		}
 	}
 

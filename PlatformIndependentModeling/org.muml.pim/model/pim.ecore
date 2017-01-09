@@ -185,10 +185,11 @@
         <details key="documentation" value="This class represents an assembly connector at instance level."/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="AssemblyConnectorInstanceNeedsTypeIfNotTopLevel"/>
+        <details key="constraints" value="AssemblyConnectorInstanceNeedsTypeIfNotTopLevel NoQoSAssumptionsIfNotDiscretePortConnector"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="AssemblyConnectorInstanceNeedsTypeIfNotTopLevel" value="-- Assembly Connector Instance needs type, if not top-level&#xD;&#xA;portInstances.componentInstance->exists(not parentCIC.parentStructuredComponentInstance.oclIsUndefined()) implies not assemblyConnectorType.oclIsUndefined()&#xD;&#xA;"/>
+        <details key="NoQoSAssumptionsIfNotDiscretePortConnector" value="-- An assembly instance connector may only have QoS assumptions if it connects two discrete port instances&#xD;&#xA;(not connectorQualityOfServiceAssumptions.oclIsUndefined()) &#xD;&#xA;implies &#xD;&#xA;(portInstances->forAll(portInstance | not portInstance.oclIsUndefined() and portInstance.oclIsKindOf(instance::DiscretePortInstance)))"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyConnectorType"
           eType="#//component/AssemblyConnector" changeable="false" volatile="true"
@@ -200,6 +201,8 @@
           <details key="derivation" value="if  type.oclIsKindOf(component::AssemblyConnector) then&#xD;&#xA;&#x9;type.oclAsType(component::AssemblyConnector)&#xD;&#xA;else&#xD;&#xA;&#x9;null&#xD;&#xA;endif"/>
         </eAnnotations>
       </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="connectorQualityOfServiceAssumptions"
+          eType="#//protocol/ConnectorQualityOfServiceAssumptions" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DelegationConnectorInstance" eSuperTypes="#//instance/PortConnectorInstance">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -613,12 +616,15 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The list of quality of service assumptions for this connector. A developer defines these properties before modeling the role statecharts, because the statecharts depend on these assumptions. Software layers under the MechatronicUML layer respectively the hardware itself have to ensure that these assumptions are correct."/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="minMessageDelay" lowerBound="1"
-          eType="#//valuetype/TimeValue" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="PreserveMessageOrderIsTrueWhenConnectorIsReliable"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The minimal time a message needs from the sender to the receiver using this connector."/>
+          <details key="documentation" value="This class represents a role of a coordination protocol. "/>
         </eAnnotations>
-      </eStructuralFeatures>
+        <details key="PreserveMessageOrderIsTrueWhenConnectorIsReliable" value="-- Attribute preserveMessageOrder must be true of the connector is reliable (i.e., if no message may be lost).&#xD;&#xA;self.messageLossPossible implies self.preserveMessageOrder"/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="maxMessageDelay" lowerBound="1"
           eType="#//valuetype/TimeValue" containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -632,6 +638,9 @@
           <details key="documentation" value="Defines if messages that are send using this connector may be lost during transport."/>
         </eAnnotations>
       </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="preserveMessageOrder"
+          lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+          defaultValueLiteral="true"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="realtimestatechart" nsURI="http://www.muml.org/pim/realtimestatechart/1.0.0"
@@ -1516,6 +1525,12 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="An abstract class all communication schemata inherit from (at least indirectly)."/>
         </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="ConditionAttributeRequiresRetryAfterAttribute"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="ConditionAttributeRequiresRetryAfterAttribute" value="-- When you define the attribute condition for a communication schemata, you also have to state the attribute retryAfter.&#xD;&#xA;not self.condition.oclIsUndefined() implies not self.retryAfter.oclIsUndefined()"/>
+        </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="condition" eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
             containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1535,6 +1550,12 @@
             <details key="documentation" value="The action a subrole performs when sending or receiving a message with communication schema."/>
           </eAnnotations>
         </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="retryAfter" eType="#//valuetype/TimeValue"
+            containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="If the transition uses a communication schemata with the condition attribute, then it may be that no subrole may send or receiver a message. Before the RTSC may retry again to execute the communication schemata, it has to wait a specific time. This time is encoded within the attribute retryAfter."/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Multicast" eSuperTypes="#//realtimestatechart/one_to_n_schemata/SendingOneToManyCommunicationSchema">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1544,6 +1565,12 @@
       <eClassifiers xsi:type="ecore:EClass" name="Unicast" eSuperTypes="#//realtimestatechart/one_to_n_schemata/SendingOneToManyCommunicationSchema">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Using this communication schema, only one subrole is allowed to send a message."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="UnicastRequiresConditionAndRetryAfterAttribute"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="UnicastRequiresConditionAndRetryAfterAttribute" value="-- When you use the communication schemata unicast, then you have to define the attributes condition and retryAfter.&#xD;&#xA;not self.condition.oclIsUndefined() and not self.retryAfter.oclIsUndefined()"/>
         </eAnnotations>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Iterate" eSuperTypes="#//realtimestatechart/one_to_n_schemata/SendingOneToManyCommunicationSchema">
@@ -2073,6 +2100,7 @@
           <details key="documentation" value="If the incoming message buffer is full and a new message arrives, then discard the oldest message in the buffer."/>
         </eAnnotations>
       </eLiterals>
+      <eLiterals name="NEVER_HAPPENS" value="2" literal="never happens"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="valuetype" nsURI="http://www.muml.org/pim/valuetype/1.0.0" nsPrefix="valueType">

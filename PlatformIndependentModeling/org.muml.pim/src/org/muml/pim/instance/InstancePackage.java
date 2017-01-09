@@ -882,13 +882,22 @@ public interface InstancePackage extends EPackage {
 	int ASSEMBLY_CONNECTOR_INSTANCE__ASSEMBLY_CONNECTOR_TYPE = PORT_CONNECTOR_INSTANCE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Connector Quality Of Service Assumptions</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_CONNECTOR_INSTANCE__CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS = PORT_CONNECTOR_INSTANCE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Assembly Connector Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSEMBLY_CONNECTOR_INSTANCE_FEATURE_COUNT = PORT_CONNECTOR_INSTANCE_FEATURE_COUNT + 1;
+	int ASSEMBLY_CONNECTOR_INSTANCE_FEATURE_COUNT = PORT_CONNECTOR_INSTANCE_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -3969,6 +3978,17 @@ public interface InstancePackage extends EPackage {
 	EReference getAssemblyConnectorInstance_AssemblyConnectorType();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.muml.pim.instance.AssemblyConnectorInstance#getConnectorQualityOfServiceAssumptions <em>Connector Quality Of Service Assumptions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Connector Quality Of Service Assumptions</em>'.
+	 * @see org.muml.pim.instance.AssemblyConnectorInstance#getConnectorQualityOfServiceAssumptions()
+	 * @see #getAssemblyConnectorInstance()
+	 * @generated
+	 */
+	EReference getAssemblyConnectorInstance_ConnectorQualityOfServiceAssumptions();
+
+	/**
 	 * Returns the meta object for class '{@link org.muml.pim.instance.DelegationConnectorInstance <em>Delegation Connector Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4414,6 +4434,14 @@ public interface InstancePackage extends EPackage {
 		 * @generated
 		 */
 		EReference ASSEMBLY_CONNECTOR_INSTANCE__ASSEMBLY_CONNECTOR_TYPE = eINSTANCE.getAssemblyConnectorInstance_AssemblyConnectorType();
+
+		/**
+		 * The meta object literal for the '<em><b>Connector Quality Of Service Assumptions</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSEMBLY_CONNECTOR_INSTANCE__CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS = eINSTANCE.getAssemblyConnectorInstance_ConnectorQualityOfServiceAssumptions();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.pim.instance.impl.DelegationConnectorInstanceImpl <em>Delegation Connector Instance</em>}' class.

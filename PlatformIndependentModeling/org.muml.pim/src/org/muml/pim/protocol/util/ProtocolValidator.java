@@ -459,7 +459,47 @@ public class ProtocolValidator extends MumlValidator {
 	 * @generated
 	 */
 	public boolean validateConnectorQualityOfServiceAssumptions(ConnectorQualityOfServiceAssumptions connectorQualityOfServiceAssumptions, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(connectorQualityOfServiceAssumptions, diagnostics, context);
+		if (!validate_NoCircularContainment(connectorQualityOfServiceAssumptions, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(connectorQualityOfServiceAssumptions, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(connectorQualityOfServiceAssumptions, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(connectorQualityOfServiceAssumptions, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(connectorQualityOfServiceAssumptions, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(connectorQualityOfServiceAssumptions, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(connectorQualityOfServiceAssumptions, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(connectorQualityOfServiceAssumptions, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(connectorQualityOfServiceAssumptions, diagnostics, context);
+		if (result || diagnostics != null) result &= validateConnectorQualityOfServiceAssumptions_PreserveMessageOrderIsTrueWhenConnectorIsReliable(connectorQualityOfServiceAssumptions, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the PreserveMessageOrderIsTrueWhenConnectorIsReliable constraint of '<em>Connector Quality Of Service Assumptions</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__PRESERVE_MESSAGE_ORDER_IS_TRUE_WHEN_CONNECTOR_IS_RELIABLE__EEXPRESSION = "-- Attribute preserveMessageOrder must be true of the connector is reliable (i.e., if no message may be lost).\r\n" +
+		"self.messageLossPossible implies self.preserveMessageOrder";
+
+	/**
+	 * Validates the PreserveMessageOrderIsTrueWhenConnectorIsReliable constraint of '<em>Connector Quality Of Service Assumptions</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateConnectorQualityOfServiceAssumptions_PreserveMessageOrderIsTrueWhenConnectorIsReliable(ConnectorQualityOfServiceAssumptions connectorQualityOfServiceAssumptions, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ProtocolPackage.Literals.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS,
+				 connectorQualityOfServiceAssumptions,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "PreserveMessageOrderIsTrueWhenConnectorIsReliable",
+				 CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__PRESERVE_MESSAGE_ORDER_IS_TRUE_WHEN_CONNECTOR_IS_RELIABLE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

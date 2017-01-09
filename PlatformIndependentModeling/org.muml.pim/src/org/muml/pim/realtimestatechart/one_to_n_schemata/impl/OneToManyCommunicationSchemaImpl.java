@@ -25,6 +25,7 @@ import org.muml.pim.realtimestatechart.AsynchronousMessageEvent;
 import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
 import org.muml.pim.realtimestatechart.one_to_n_schemata.OneToManyCommunicationSchema;
 import org.muml.pim.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage;
+import org.muml.pim.valuetype.TimeValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,6 +38,7 @@ import org.muml.pim.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackag
  *   <li>{@link org.muml.pim.realtimestatechart.one_to_n_schemata.impl.OneToManyCommunicationSchemaImpl#getCondition <em>Condition</em>}</li>
  *   <li>{@link org.muml.pim.realtimestatechart.one_to_n_schemata.impl.OneToManyCommunicationSchemaImpl#getAsynchronousMessageEvent <em>Asynchronous Message Event</em>}</li>
  *   <li>{@link org.muml.pim.realtimestatechart.one_to_n_schemata.impl.OneToManyCommunicationSchemaImpl#getAction <em>Action</em>}</li>
+ *   <li>{@link org.muml.pim.realtimestatechart.one_to_n_schemata.impl.OneToManyCommunicationSchemaImpl#getRetryAfter <em>Retry After</em>}</li>
  * </ul>
  *
  * @generated
@@ -61,6 +63,16 @@ public abstract class OneToManyCommunicationSchemaImpl extends EObjectImpl imple
 	 * @ordered
 	 */
 	protected Action action;
+
+	/**
+	 * The cached value of the '{@link #getRetryAfter() <em>Retry After</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRetryAfter()
+	 * @generated
+	 * @ordered
+	 */
+	protected TimeValue retryAfter;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -213,6 +225,49 @@ public abstract class OneToManyCommunicationSchemaImpl extends EObjectImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public TimeValue getRetryAfter() {
+		return retryAfter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetRetryAfter(TimeValue newRetryAfter, NotificationChain msgs) {
+		TimeValue oldRetryAfter = retryAfter;
+		retryAfter = newRetryAfter;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, One_to_n_schemataPackage.ONE_TO_MANY_COMMUNICATION_SCHEMA__RETRY_AFTER, oldRetryAfter, newRetryAfter);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRetryAfter(TimeValue newRetryAfter) {
+		if (newRetryAfter != retryAfter) {
+			NotificationChain msgs = null;
+			if (retryAfter != null)
+				msgs = ((InternalEObject)retryAfter).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - One_to_n_schemataPackage.ONE_TO_MANY_COMMUNICATION_SCHEMA__RETRY_AFTER, null, msgs);
+			if (newRetryAfter != null)
+				msgs = ((InternalEObject)newRetryAfter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - One_to_n_schemataPackage.ONE_TO_MANY_COMMUNICATION_SCHEMA__RETRY_AFTER, null, msgs);
+			msgs = basicSetRetryAfter(newRetryAfter, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, One_to_n_schemataPackage.ONE_TO_MANY_COMMUNICATION_SCHEMA__RETRY_AFTER, newRetryAfter, newRetryAfter));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -238,6 +293,8 @@ public abstract class OneToManyCommunicationSchemaImpl extends EObjectImpl imple
 				return basicSetAsynchronousMessageEvent(null, msgs);
 			case One_to_n_schemataPackage.ONE_TO_MANY_COMMUNICATION_SCHEMA__ACTION:
 				return basicSetAction(null, msgs);
+			case One_to_n_schemataPackage.ONE_TO_MANY_COMMUNICATION_SCHEMA__RETRY_AFTER:
+				return basicSetRetryAfter(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -270,6 +327,8 @@ public abstract class OneToManyCommunicationSchemaImpl extends EObjectImpl imple
 				return getAsynchronousMessageEvent();
 			case One_to_n_schemataPackage.ONE_TO_MANY_COMMUNICATION_SCHEMA__ACTION:
 				return getAction();
+			case One_to_n_schemataPackage.ONE_TO_MANY_COMMUNICATION_SCHEMA__RETRY_AFTER:
+				return getRetryAfter();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -290,6 +349,9 @@ public abstract class OneToManyCommunicationSchemaImpl extends EObjectImpl imple
 				return;
 			case One_to_n_schemataPackage.ONE_TO_MANY_COMMUNICATION_SCHEMA__ACTION:
 				setAction((Action)newValue);
+				return;
+			case One_to_n_schemataPackage.ONE_TO_MANY_COMMUNICATION_SCHEMA__RETRY_AFTER:
+				setRetryAfter((TimeValue)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -312,6 +374,9 @@ public abstract class OneToManyCommunicationSchemaImpl extends EObjectImpl imple
 			case One_to_n_schemataPackage.ONE_TO_MANY_COMMUNICATION_SCHEMA__ACTION:
 				setAction((Action)null);
 				return;
+			case One_to_n_schemataPackage.ONE_TO_MANY_COMMUNICATION_SCHEMA__RETRY_AFTER:
+				setRetryAfter((TimeValue)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -330,6 +395,8 @@ public abstract class OneToManyCommunicationSchemaImpl extends EObjectImpl imple
 				return getAsynchronousMessageEvent() != null;
 			case One_to_n_schemataPackage.ONE_TO_MANY_COMMUNICATION_SCHEMA__ACTION:
 				return action != null;
+			case One_to_n_schemataPackage.ONE_TO_MANY_COMMUNICATION_SCHEMA__RETRY_AFTER:
+				return retryAfter != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -33,6 +33,17 @@ public class ComponentInstanceConfigurationEditor extends org.muml.ape.runtime.e
 
 			addPropertyEditor(createEditorVerificationConstraintRepositories_property_tab_generalTab_Editor(), false);
 
+			addSubCategory("org.muml.ape.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+			addEditorToCategory("org.muml.ape.category.Lists",
+					createEditorComponentInstances_property_tab_generalTab_Editor(), false);
+
+			addEditorToCategory("org.muml.ape.category.Lists",
+					createEditorPortConnectorInstances_property_tab_generalTab_Editor(), false);
+
+			addEditorToCategory("org.muml.ape.category.Lists",
+					createEditorCoordinationProtocolInstances_property_tab_generalTab_Editor(), false);
+
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
@@ -55,6 +66,17 @@ public class ComponentInstanceConfigurationEditor extends org.muml.ape.runtime.e
 
 			addPropertyEditor(createEditorVerificationConstraintRepositories_property_tab_generalTab_Editor(), false);
 
+			addSubCategory("org.muml.ape.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+			addEditorToCategory("org.muml.ape.category.Lists",
+					createEditorComponentInstances_property_tab_generalTab_Editor(), false);
+
+			addEditorToCategory("org.muml.ape.category.Lists",
+					createEditorPortConnectorInstances_property_tab_generalTab_Editor(), false);
+
+			addEditorToCategory("org.muml.ape.category.Lists",
+					createEditorCoordinationProtocolInstances_property_tab_generalTab_Editor(), false);
+
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
 			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
@@ -69,6 +91,52 @@ public class ComponentInstanceConfigurationEditor extends org.muml.ape.runtime.e
 
 		} else {
 		}
+	}
+
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComponentInstances_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorComponentInstances_property_tab_generalTab_Editor() {
+		if (this.editorComponentInstances_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.instance.InstancePackage.eINSTANCE
+					.getComponentInstanceConfiguration_ComponentInstances();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("The set of component instances of a component instance configuration.");
+
+			this.editorComponentInstances_property_tab_generalTab = editor;
+		}
+		return this.editorComponentInstances_property_tab_generalTab;
+	}
+
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorPortConnectorInstances_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorPortConnectorInstances_property_tab_generalTab_Editor() {
+		if (this.editorPortConnectorInstances_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.instance.InstancePackage.eINSTANCE
+					.getComponentInstanceConfiguration_PortConnectorInstances();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("The set of connector instances of a component instance configuration.");
+
+			this.editorPortConnectorInstances_property_tab_generalTab = editor;
+		}
+		return this.editorPortConnectorInstances_property_tab_generalTab;
+	}
+
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCoordinationProtocolInstances_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorCoordinationProtocolInstances_property_tab_generalTab_Editor() {
+		if (this.editorCoordinationProtocolInstances_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.instance.InstancePackage.eINSTANCE
+					.getComponentInstanceConfiguration_CoordinationProtocolInstances();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage(
+					"The set of coordination protocol instances of a component instance configuration.");
+
+			this.editorCoordinationProtocolInstances_property_tab_generalTab = editor;
+		}
+		return this.editorCoordinationProtocolInstances_property_tab_generalTab;
 	}
 
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_property_tab_generalTab;

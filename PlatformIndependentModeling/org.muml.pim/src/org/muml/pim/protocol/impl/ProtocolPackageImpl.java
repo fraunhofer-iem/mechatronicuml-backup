@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.muml.core.CorePackage;
 import org.muml.core.modelinstance.ModelinstancePackage;
@@ -363,7 +364,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getConnectorQualityOfServiceAssumptions_MinMessageDelay() {
+	public EReference getConnectorQualityOfServiceAssumptions_MaxMessageDelay() {
 		return (EReference)connectorQualityOfServiceAssumptionsEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -372,8 +373,8 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getConnectorQualityOfServiceAssumptions_MaxMessageDelay() {
-		return (EReference)connectorQualityOfServiceAssumptionsEClass.getEStructuralFeatures().get(1);
+	public EAttribute getConnectorQualityOfServiceAssumptions_MessageLossPossible() {
+		return (EAttribute)connectorQualityOfServiceAssumptionsEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -381,7 +382,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getConnectorQualityOfServiceAssumptions_MessageLossPossible() {
+	public EAttribute getConnectorQualityOfServiceAssumptions_PreserveMessageOrder() {
 		return (EAttribute)connectorQualityOfServiceAssumptionsEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -434,9 +435,9 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		createEReference(roleConnectorEClass, ROLE_CONNECTOR__ROLES);
 
 		connectorQualityOfServiceAssumptionsEClass = createEClass(CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS);
-		createEReference(connectorQualityOfServiceAssumptionsEClass, CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MIN_MESSAGE_DELAY);
 		createEReference(connectorQualityOfServiceAssumptionsEClass, CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MAX_MESSAGE_DELAY);
 		createEAttribute(connectorQualityOfServiceAssumptionsEClass, CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MESSAGE_LOSS_POSSIBLE);
+		createEAttribute(connectorQualityOfServiceAssumptionsEClass, CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__PRESERVE_MESSAGE_ORDER);
 	}
 
 	/**
@@ -469,6 +470,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		PatternPackage thePatternPackage = (PatternPackage)EPackage.Registry.INSTANCE.getEPackage(PatternPackage.eNS_URI);
 		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
 		ValuetypePackage theValuetypePackage = (ValuetypePackage)EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -506,9 +508,9 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		initEReference(getRoleConnector_Roles(), this.getRole(), this.getRole_RoleConnector(), "roles", null, 2, 2, RoleConnector.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(connectorQualityOfServiceAssumptionsEClass, ConnectorQualityOfServiceAssumptions.class, "ConnectorQualityOfServiceAssumptions", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getConnectorQualityOfServiceAssumptions_MinMessageDelay(), theValuetypePackage.getTimeValue(), null, "minMessageDelay", null, 1, 1, ConnectorQualityOfServiceAssumptions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConnectorQualityOfServiceAssumptions_MaxMessageDelay(), theValuetypePackage.getTimeValue(), null, "maxMessageDelay", null, 1, 1, ConnectorQualityOfServiceAssumptions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getConnectorQualityOfServiceAssumptions_MessageLossPossible(), ecorePackage.getEBoolean(), "messageLossPossible", "false", 1, 1, ConnectorQualityOfServiceAssumptions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getConnectorQualityOfServiceAssumptions_PreserveMessageOrder(), theEcorePackage.getEBoolean(), "preserveMessageOrder", "true", 1, 1, ConnectorQualityOfServiceAssumptions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore
@@ -558,6 +560,12 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		   source, 
 		   new String[] {
 			 "constraints", "OnlyRolesOfSameCoordinationProtocol"
+		   });	
+		addAnnotation
+		  (connectorQualityOfServiceAssumptionsEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "PreserveMessageOrderIsTrueWhenConnectorIsReliable"
 		   });
 	}
 
@@ -639,6 +647,19 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		   source, 
 		   new String[] {
 			 "derivation", "self.connectorEndpoints->select(e | e.oclIsKindOf(Role)).oclAsType(Role)->asOrderedSet()"
+		   });	
+		addAnnotation
+		  (connectorQualityOfServiceAssumptionsEClass, 
+		   source, 
+		   new String[] {
+			 "PreserveMessageOrderIsTrueWhenConnectorIsReliable", "-- Attribute preserveMessageOrder must be true of the connector is reliable (i.e., if no message may be lost).\r\nself.messageLossPossible implies self.preserveMessageOrder"
+		   });
+		addAnnotation
+		  (connectorQualityOfServiceAssumptionsEClass, 
+		   new boolean[] { true },
+		   "http://www.eclipse.org/emf/2002/GenModel",
+		   new String[] {
+			 "documentation", "This class represents a role of a coordination protocol. "
 		   });
 	}
 

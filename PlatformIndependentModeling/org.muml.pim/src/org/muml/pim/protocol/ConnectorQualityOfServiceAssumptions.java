@@ -22,41 +22,17 @@ import org.muml.pim.valuetype.TimeValue;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.muml.pim.protocol.ConnectorQualityOfServiceAssumptions#getMinMessageDelay <em>Min Message Delay</em>}</li>
  *   <li>{@link org.muml.pim.protocol.ConnectorQualityOfServiceAssumptions#getMaxMessageDelay <em>Max Message Delay</em>}</li>
  *   <li>{@link org.muml.pim.protocol.ConnectorQualityOfServiceAssumptions#isMessageLossPossible <em>Message Loss Possible</em>}</li>
+ *   <li>{@link org.muml.pim.protocol.ConnectorQualityOfServiceAssumptions#isPreserveMessageOrder <em>Preserve Message Order</em>}</li>
  * </ul>
  *
  * @see org.muml.pim.protocol.ProtocolPackage#getConnectorQualityOfServiceAssumptions()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='PreserveMessageOrderIsTrueWhenConnectorIsReliable'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL PreserveMessageOrderIsTrueWhenConnectorIsReliable='-- Attribute preserveMessageOrder must be true of the connector is reliable (i.e., if no message may be lost).\r\nself.messageLossPossible implies self.preserveMessageOrder'"
  * @generated
  */
 public interface ConnectorQualityOfServiceAssumptions extends CommentableElement {
-	/**
-	 * Returns the value of the '<em><b>Min Message Delay</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The minimal time a message needs from the sender to the receiver using this connector.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Min Message Delay</em>' containment reference.
-	 * @see #setMinMessageDelay(TimeValue)
-	 * @see org.muml.pim.protocol.ProtocolPackage#getConnectorQualityOfServiceAssumptions_MinMessageDelay()
-	 * @model containment="true" required="true"
-	 * @generated
-	 */
-	TimeValue getMinMessageDelay();
-
-	/**
-	 * Sets the value of the '{@link org.muml.pim.protocol.ConnectorQualityOfServiceAssumptions#getMinMessageDelay <em>Min Message Delay</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Min Message Delay</em>' containment reference.
-	 * @see #getMinMessageDelay()
-	 * @generated
-	 */
-	void setMinMessageDelay(TimeValue value);
-
 	/**
 	 * Returns the value of the '<em><b>Max Message Delay</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -107,5 +83,32 @@ public interface ConnectorQualityOfServiceAssumptions extends CommentableElement
 	 * @generated
 	 */
 	void setMessageLossPossible(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Preserve Message Order</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Preserve Message Order</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Preserve Message Order</em>' attribute.
+	 * @see #setPreserveMessageOrder(boolean)
+	 * @see org.muml.pim.protocol.ProtocolPackage#getConnectorQualityOfServiceAssumptions_PreserveMessageOrder()
+	 * @model default="true" required="true"
+	 * @generated
+	 */
+	boolean isPreserveMessageOrder();
+
+	/**
+	 * Sets the value of the '{@link org.muml.pim.protocol.ConnectorQualityOfServiceAssumptions#isPreserveMessageOrder <em>Preserve Message Order</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Preserve Message Order</em>' attribute.
+	 * @see #isPreserveMessageOrder()
+	 * @generated
+	 */
+	void setPreserveMessageOrder(boolean value);
 
 } // ConnectorQualityOfServiceAssumptions

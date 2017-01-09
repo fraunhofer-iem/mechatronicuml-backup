@@ -105,52 +105,6 @@ public class RoleConnectorItemProvider
 				 null,
 				 null,
 				 null);
-		
-		IChainedPropertyDescriptor minMessageDelay =
-			(new DefaultChainedPropertyDescriptor
-			(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			 getResourceLocator(),
-			 getString("_UI_ConnectorQualityOfServiceAssumptions_minMessageDelay_feature"),
-			 getString("_UI_PropertyDescriptor_description", "_UI_ConnectorQualityOfServiceAssumptions_minMessageDelay_feature", "_UI_ConnectorQualityOfServiceAssumptions_type"),
-			 ProtocolPackage.Literals.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MIN_MESSAGE_DELAY,
-			 false,
-			 false,
-			 false,
-			 null,
-			 "QoS Assumptions - Minimum Message Delay",
-			 null,
-			 rootDescriptor));
-		
-		itemPropertyDescriptors.add
-			(new DefaultChainedPropertyDescriptor
-			(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			 getResourceLocator(),
-			 getString("_UI_TimeValue_value_feature"),
-			 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_value_feature", "_UI_TimeValue_type"),
-			 ValuetypePackage.Literals.TIME_VALUE__VALUE,
-			 false,
-			 false,
-			 false,
-			 null,
-			 "QoS Assumptions - Minimum Message Delay",
-			 null,
-			 minMessageDelay));
-
-		itemPropertyDescriptors.add
-		(new EnumerationPropertyDescriptor
-			(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			 getResourceLocator(),
-			 getString("_UI_TimeValue_unit_feature"),
-			 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_unit_feature", "_UI_TimeValue_type"),
-			 ValuetypePackage.Literals.TIME_VALUE__UNIT,
-			 true,
-			 false,
-			 false,
-			 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-			 "QoS Assumptions - Minimum Message Delay",
-			 null,
-			 minMessageDelay));
-
 
 		IChainedPropertyDescriptor maxMessageDelay =
 		new DefaultChainedPropertyDescriptor

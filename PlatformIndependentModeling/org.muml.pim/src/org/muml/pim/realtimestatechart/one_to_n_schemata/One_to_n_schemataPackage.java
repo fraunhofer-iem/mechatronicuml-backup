@@ -109,13 +109,22 @@ public interface One_to_n_schemataPackage extends EPackage {
 	int ONE_TO_MANY_COMMUNICATION_SCHEMA__ACTION = 2;
 
 	/**
+	 * The feature id for the '<em><b>Retry After</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ONE_TO_MANY_COMMUNICATION_SCHEMA__RETRY_AFTER = 3;
+
+	/**
 	 * The number of structural features of the '<em>One To Many Communication Schema</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ONE_TO_MANY_COMMUNICATION_SCHEMA_FEATURE_COUNT = 3;
+	int ONE_TO_MANY_COMMUNICATION_SCHEMA_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>One To Many Communication Schema</em>' class.
@@ -162,6 +171,15 @@ public interface One_to_n_schemataPackage extends EPackage {
 	 * @ordered
 	 */
 	int SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA__ACTION = ONE_TO_MANY_COMMUNICATION_SCHEMA__ACTION;
+
+	/**
+	 * The feature id for the '<em><b>Retry After</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA__RETRY_AFTER = ONE_TO_MANY_COMMUNICATION_SCHEMA__RETRY_AFTER;
 
 	/**
 	 * The number of structural features of the '<em>Sending One To Many Communication Schema</em>' class.
@@ -219,6 +237,15 @@ public interface One_to_n_schemataPackage extends EPackage {
 	int MULTICAST__ACTION = SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA__ACTION;
 
 	/**
+	 * The feature id for the '<em><b>Retry After</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTICAST__RETRY_AFTER = SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA__RETRY_AFTER;
+
+	/**
 	 * The number of structural features of the '<em>Multicast</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -274,6 +301,15 @@ public interface One_to_n_schemataPackage extends EPackage {
 	int UNICAST__ACTION = SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA__ACTION;
 
 	/**
+	 * The feature id for the '<em><b>Retry After</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNICAST__RETRY_AFTER = SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA__RETRY_AFTER;
+
+	/**
 	 * The number of structural features of the '<em>Unicast</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -327,6 +363,15 @@ public interface One_to_n_schemataPackage extends EPackage {
 	 * @ordered
 	 */
 	int ITERATE__ACTION = SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA__ACTION;
+
+	/**
+	 * The feature id for the '<em><b>Retry After</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ITERATE__RETRY_AFTER = SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA__RETRY_AFTER;
 
 	/**
 	 * The feature id for the '<em><b>Termination Condition</b></em>' containment reference.
@@ -411,6 +456,15 @@ public interface One_to_n_schemataPackage extends EPackage {
 	int LOAD_BALANCING__ACTION = SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA__ACTION;
 
 	/**
+	 * The feature id for the '<em><b>Retry After</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOAD_BALANCING__RETRY_AFTER = SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA__RETRY_AFTER;
+
+	/**
 	 * The feature id for the '<em><b>Response Message</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -493,6 +547,15 @@ public interface One_to_n_schemataPackage extends EPackage {
 	int RECEIVING_ONE_TO_MANY_COMMUNICATION_SCHEMA__ACTION = ONE_TO_MANY_COMMUNICATION_SCHEMA__ACTION;
 
 	/**
+	 * The feature id for the '<em><b>Retry After</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECEIVING_ONE_TO_MANY_COMMUNICATION_SCHEMA__RETRY_AFTER = ONE_TO_MANY_COMMUNICATION_SCHEMA__RETRY_AFTER;
+
+	/**
 	 * The number of structural features of the '<em>Receiving One To Many Communication Schema</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -548,6 +611,15 @@ public interface One_to_n_schemataPackage extends EPackage {
 	int SINGLE_RECEIVE__ACTION = RECEIVING_ONE_TO_MANY_COMMUNICATION_SCHEMA__ACTION;
 
 	/**
+	 * The feature id for the '<em><b>Retry After</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLE_RECEIVE__RETRY_AFTER = RECEIVING_ONE_TO_MANY_COMMUNICATION_SCHEMA__RETRY_AFTER;
+
+	/**
 	 * The number of structural features of the '<em>Single Receive</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -601,6 +673,15 @@ public interface One_to_n_schemataPackage extends EPackage {
 	 * @ordered
 	 */
 	int MULTI_RECEIVE__ACTION = RECEIVING_ONE_TO_MANY_COMMUNICATION_SCHEMA__ACTION;
+
+	/**
+	 * The feature id for the '<em><b>Retry After</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_RECEIVE__RETRY_AFTER = RECEIVING_ONE_TO_MANY_COMMUNICATION_SCHEMA__RETRY_AFTER;
 
 	/**
 	 * The feature id for the '<em><b>Failure Action</b></em>' containment reference.
@@ -671,6 +752,17 @@ public interface One_to_n_schemataPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getOneToManyCommunicationSchema_Action();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.muml.pim.realtimestatechart.one_to_n_schemata.OneToManyCommunicationSchema#getRetryAfter <em>Retry After</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Retry After</em>'.
+	 * @see org.muml.pim.realtimestatechart.one_to_n_schemata.OneToManyCommunicationSchema#getRetryAfter()
+	 * @see #getOneToManyCommunicationSchema()
+	 * @generated
+	 */
+	EReference getOneToManyCommunicationSchema_RetryAfter();
 
 	/**
 	 * Returns the meta object for class '{@link org.muml.pim.realtimestatechart.one_to_n_schemata.Multicast <em>Multicast</em>}'.
@@ -885,6 +977,14 @@ public interface One_to_n_schemataPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ONE_TO_MANY_COMMUNICATION_SCHEMA__ACTION = eINSTANCE.getOneToManyCommunicationSchema_Action();
+
+		/**
+		 * The meta object literal for the '<em><b>Retry After</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ONE_TO_MANY_COMMUNICATION_SCHEMA__RETRY_AFTER = eINSTANCE.getOneToManyCommunicationSchema_RetryAfter();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.pim.realtimestatechart.one_to_n_schemata.impl.MulticastImpl <em>Multicast</em>}' class.

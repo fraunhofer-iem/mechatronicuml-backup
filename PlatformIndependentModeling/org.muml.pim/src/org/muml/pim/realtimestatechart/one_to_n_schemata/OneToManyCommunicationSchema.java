@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.muml.core.expressions.Expression;
 import org.muml.pim.realtimestatechart.Action;
 import org.muml.pim.realtimestatechart.AsynchronousMessageEvent;
+import org.muml.pim.valuetype.TimeValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,10 +34,13 @@ import org.muml.pim.realtimestatechart.AsynchronousMessageEvent;
  *   <li>{@link org.muml.pim.realtimestatechart.one_to_n_schemata.OneToManyCommunicationSchema#getCondition <em>Condition</em>}</li>
  *   <li>{@link org.muml.pim.realtimestatechart.one_to_n_schemata.OneToManyCommunicationSchema#getAsynchronousMessageEvent <em>Asynchronous Message Event</em>}</li>
  *   <li>{@link org.muml.pim.realtimestatechart.one_to_n_schemata.OneToManyCommunicationSchema#getAction <em>Action</em>}</li>
+ *   <li>{@link org.muml.pim.realtimestatechart.one_to_n_schemata.OneToManyCommunicationSchema#getRetryAfter <em>Retry After</em>}</li>
  * </ul>
  *
  * @see org.muml.pim.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage#getOneToManyCommunicationSchema()
  * @model abstract="true"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ConditionAttributeRequiresRetryAfterAttribute'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ConditionAttributeRequiresRetryAfterAttribute='-- When you define the attribute condition for a communication schemata, you also have to state the attribute retryAfter.\r\nnot self.condition.oclIsUndefined() implies not self.retryAfter.oclIsUndefined()'"
  * @generated
  */
 public interface OneToManyCommunicationSchema extends EObject {
@@ -116,5 +120,30 @@ public interface OneToManyCommunicationSchema extends EObject {
 	 * @generated
 	 */
 	void setAction(Action value);
+
+	/**
+	 * Returns the value of the '<em><b>Retry After</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * If the transition uses a communication schemata with the condition attribute, then it may be that no subrole may send or receiver a message. Before the RTSC may retry again to execute the communication schemata, it has to wait a specific time. This time is encoded within the attribute retryAfter.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Retry After</em>' containment reference.
+	 * @see #setRetryAfter(TimeValue)
+	 * @see org.muml.pim.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage#getOneToManyCommunicationSchema_RetryAfter()
+	 * @model containment="true"
+	 * @generated
+	 */
+	TimeValue getRetryAfter();
+
+	/**
+	 * Sets the value of the '{@link org.muml.pim.realtimestatechart.one_to_n_schemata.OneToManyCommunicationSchema#getRetryAfter <em>Retry After</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Retry After</em>' containment reference.
+	 * @see #getRetryAfter()
+	 * @generated
+	 */
+	void setRetryAfter(TimeValue value);
 
 } // OneToManyCommunicationSchema

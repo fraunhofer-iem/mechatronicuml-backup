@@ -1297,7 +1297,6 @@ mapping pim::protocol::ConnectorQualityOfServiceAssumptions :: ConnectorQualityO
     	_messageLossPossible := self._messageLossPossible;
     	
     	_extensions := self._extensions.map Extension2Extension();
-    	_minMessageDelay := self._minMessageDelay.map TimeValue2TimeValue();
     	_maxMessageDelay := self._maxMessageDelay.map TimeValue2TimeValue();
    		 }
    		 

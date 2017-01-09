@@ -285,6 +285,15 @@ public class One_to_n_schemataPackageImpl extends EPackageImpl implements One_to
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getOneToManyCommunicationSchema_RetryAfter() {
+		return (EReference)oneToManyCommunicationSchemaEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getMulticast() {
 		return multicastEClass;
 	}
@@ -447,6 +456,7 @@ public class One_to_n_schemataPackageImpl extends EPackageImpl implements One_to
 		createEReference(oneToManyCommunicationSchemaEClass, ONE_TO_MANY_COMMUNICATION_SCHEMA__CONDITION);
 		createEReference(oneToManyCommunicationSchemaEClass, ONE_TO_MANY_COMMUNICATION_SCHEMA__ASYNCHRONOUS_MESSAGE_EVENT);
 		createEReference(oneToManyCommunicationSchemaEClass, ONE_TO_MANY_COMMUNICATION_SCHEMA__ACTION);
+		createEReference(oneToManyCommunicationSchemaEClass, ONE_TO_MANY_COMMUNICATION_SCHEMA__RETRY_AFTER);
 
 		multicastEClass = createEClass(MULTICAST);
 
@@ -520,6 +530,7 @@ public class One_to_n_schemataPackageImpl extends EPackageImpl implements One_to
 		initEReference(getOneToManyCommunicationSchema_Condition(), theExpressionsPackage.getExpression(), null, "condition", null, 0, 1, OneToManyCommunicationSchema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOneToManyCommunicationSchema_AsynchronousMessageEvent(), theRealtimestatechartPackage.getAsynchronousMessageEvent(), theRealtimestatechartPackage.getAsynchronousMessageEvent_OneToManyCommunicationSchema(), "asynchronousMessageEvent", null, 1, 1, OneToManyCommunicationSchema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOneToManyCommunicationSchema_Action(), theRealtimestatechartPackage.getAction(), null, "action", null, 0, 1, OneToManyCommunicationSchema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOneToManyCommunicationSchema_RetryAfter(), theValuetypePackage.getTimeValue(), null, "retryAfter", null, 0, 1, OneToManyCommunicationSchema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(multicastEClass, Multicast.class, "Multicast", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -568,6 +579,18 @@ public class One_to_n_schemataPackageImpl extends EPackageImpl implements One_to
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
 		   });	
 		addAnnotation
+		  (oneToManyCommunicationSchemaEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "ConditionAttributeRequiresRetryAfterAttribute"
+		   });	
+		addAnnotation
+		  (unicastEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "UnicastRequiresConditionAndRetryAfterAttribute"
+		   });	
+		addAnnotation
 		  (loadBalancingEClass, 
 		   source, 
 		   new String[] {
@@ -583,6 +606,18 @@ public class One_to_n_schemataPackageImpl extends EPackageImpl implements One_to
 	 */
 	protected void createOCLAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
+		addAnnotation
+		  (oneToManyCommunicationSchemaEClass, 
+		   source, 
+		   new String[] {
+			 "ConditionAttributeRequiresRetryAfterAttribute", "-- When you define the attribute condition for a communication schemata, you also have to state the attribute retryAfter.\r\nnot self.condition.oclIsUndefined() implies not self.retryAfter.oclIsUndefined()"
+		   });	
+		addAnnotation
+		  (unicastEClass, 
+		   source, 
+		   new String[] {
+			 "UnicastRequiresConditionAndRetryAfterAttribute", "-- When you use the communication schemata unicast, then you have to define the attributes condition and retryAfter.\r\nnot self.condition.oclIsUndefined() and not self.retryAfter.oclIsUndefined()"
+		   });	
 		addAnnotation
 		  (loadBalancingEClass, 
 		   source, 
