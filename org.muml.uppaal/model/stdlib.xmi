@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ASCII"?>
+<types:Library 
+xmi:version="2.0" 
+xmlns:xmi="http://www.omg.org/XMI" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:types="http://www.muml.org/uppaal/types/1.0.0" 
+xsi:schemaLocation="http://www.muml.org/uppaal/types/1.0.0 uppaal.ecore#//types" name="stdlib" nsURI="http://www.uni-paderborn.de/uppaal/stdlib/0.4.0" nsPrefix="stdlib">
+  <eClassifiers xsi:type="types:PredefinedType" name="int"/>
+  <eClassifiers xsi:type="types:PredefinedType" name="clock" type="clock"/>
+  <eClassifiers xsi:type="types:PredefinedType" name="chan" type="chan"/>
+  <eClassifiers xsi:type="types:PredefinedType" name="bool" type="bool"/>
+  <eClassifiers xsi:type="types:PredefinedType" name="void" type="void"/>
+</types:Library>
