@@ -1,0 +1,191 @@
+import transforms.lib.MUML2MUML;
+
+/* Enables 1:n mappings for specific MUML model elements */
+library MultiMappingUtil;
+
+modeltype muml uses 'http://www.muml.org/pim/1.0.0';
+modeltype muml_rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype muml_behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype muml_protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype muml_actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
+modeltype muml_msgtype uses pim::msgtype('http://www.muml.org/pim/1.0.0');
+modeltype muml_types uses pim::types('http://www.muml.org/pim/1.0.0');
+modeltype muml_valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype storydriven_core_expressions_common uses core::expressions::common('http://www.muml.org/core/1.0.0');
+modeltype storydriven_core_expressions uses core::expressions('http://www.muml.org/core/1.0.0');
+
+helper Expression :: mapExpression() : Expression {
+	
+	var resolved : Expression = self.resolveoneIn(Expression::Expression2Expression,Expression);
+	
+	var mapped : Expression;
+	
+	if(resolved = null)
+	then {
+		mapped := self.map Expression2Expression();
+	}
+	else {
+		mapped := resolved.deepclone().oclAsType(Expression);
+	}
+	endif;
+	
+	return mapped
+	
+}
+
+helper TimeValue :: mapTimeValue() : TimeValue {
+	
+	var resolved : TimeValue = self.resolveoneIn(TimeValue::TimeValue2TimeValue, TimeValue);
+	
+	var mapped : TimeValue;
+	 
+	if(resolved = null)
+	then {
+		mapped := self.map TimeValue2TimeValue();
+	}
+	else {
+		mapped := resolved.deepclone().oclAsType(TimeValue);
+	}
+	endif;
+	
+	return mapped
+	
+}
+
+helper ClockConstraint :: mapClockConstraint() : ClockConstraint {
+	
+	var resolved : ClockConstraint = self.resolveoneIn(ClockConstraint::ClockConstraint2ClockConstraint, ClockConstraint);
+	
+	var mapped : ClockConstraint;
+	 
+	if(resolved = null)
+	then {
+		mapped := self.map ClockConstraint2ClockConstraint();
+	}
+	else {
+		mapped := resolved.deepclone().oclAsType(ClockConstraint);
+	}
+	endif;
+	
+	return mapped
+	
+}
+
+helper Synchronization :: mapSynchronization() : Synchronization {
+	
+	var resolved : Synchronization = self.resolveoneIn(Synchronization::Synchronization2Synchronization, Synchronization);
+	
+	var mapped : Synchronization;
+	 
+	if(resolved = null)
+	then {
+		mapped := self.map Synchronization2Synchronization();
+	}
+	else {
+		mapped := resolved.deepclone().oclAsType(Synchronization);
+	}
+	endif;
+	
+	return mapped
+	
+}
+
+helper AsynchronousMessageEvent :: mapAsynchronousMessageEvent() : AsynchronousMessageEvent {
+	
+	var resolved : AsynchronousMessageEvent = self.resolveoneIn(AsynchronousMessageEvent::AsynchronousMessageEvent2AsynchronousMessageEvent,AsynchronousMessageEvent);
+	
+	var mapped : AsynchronousMessageEvent;
+	 
+	if(resolved = null)
+	then {
+		mapped := self.map AsynchronousMessageEvent2AsynchronousMessageEvent();
+	}
+	else {
+		mapped := resolved.deepclone().oclAsType(AsynchronousMessageEvent);
+	}
+	endif;
+	
+	return mapped
+	
+}
+
+helper Clock :: mapClock() : Clock {
+
+	return self.map Clock2Clock();
+	
+}
+
+helper Action :: mapAction() : Action {
+	
+	var resolved : Action = self.resolveoneIn(Action::Action2Action,Action);
+	
+	var mapped : Action;
+	
+	if(resolved = null)
+	then {
+		mapped := self.map Action2Action();
+	}
+	else {
+		mapped := resolved.deepclone().oclAsType(Action);
+	}
+	endif;
+	
+	return mapped
+	
+}
+
+helper TransitionEvent :: mapTransitionEvent() : TransitionEvent{
+	var resolved : TransitionEvent = self.resolveoneIn(TransitionEvent::TransitionEvent2TransitionEvent,TransitionEvent);
+	
+	var mapped : TransitionEvent;
+	
+	if(resolved = null)
+	then {
+		mapped := self.map TransitionEvent2TransitionEvent();
+	}
+	else {
+		mapped := resolved.deepclone().oclAsType(TransitionEvent);
+	}
+	endif;
+	
+	return mapped
+}
+
+
+helper AbsoluteDeadline :: mapAbsoluteDeadline() : AbsoluteDeadline {
+	
+	var resolved : AbsoluteDeadline = self.resolveoneIn(AbsoluteDeadline::AbsoluteDeadline2AbsoluteDeadline, AbsoluteDeadline);
+	
+	var mapped : AbsoluteDeadline;
+	
+	if(resolved = null)
+	then {
+		mapped := self.map AbsoluteDeadline2AbsoluteDeadline();
+	}
+	else {
+		mapped := resolved.deepclone().oclAsType(AbsoluteDeadline);
+	}
+	endif;
+	
+	return mapped
+	
+}
+
+helper RelativeDeadline :: mapRelativeDeadline() : RelativeDeadline {
+	
+	var resolved : RelativeDeadline = self.resolveoneIn(RelativeDeadline::RelativeDeadline2RelativeDeadline, RelativeDeadline);
+	
+	var mapped : RelativeDeadline;
+	
+	if(resolved = null)
+	then {
+		mapped := self.map RelativeDeadline2RelativeDeadline();
+	}
+	else {
+		mapped := resolved.deepclone().oclAsType(RelativeDeadline);
+	}
+	endif;
+	
+	return mapped
+	
+}

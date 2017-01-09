@@ -1,0 +1,1560 @@
+import transforms.lib.MUML2UPPAAL.Types;
+import transforms.lib.MUML2UPPAAL.IDs;
+import transforms.lib.MUML2UPPAAL.Util;
+import transforms.lib.MUML2UPPAAL.Expressions;
+
+import transforms.lib.MUML2UPPAAL.Async.Variables;
+import transforms.lib.MUML2UPPAAL.Async.Types;
+import transforms.lib.MUML2UPPAAL.Async.Functions;
+
+import transforms.lib.MUML2MUML;
+ 
+library Async;
+ 
+modeltype uppaal uses 'http://www.muml.org/uppaal/1.0.0';
+modeltype uppaal_expressions uses uppaal::expressions('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_statements uses uppaal::statements('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_types uses uppaal::types('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_templates uses uppaal::templates('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_declarations uses uppaal::declarations('http://www.muml.org/uppaal/1.0.0');
+modeltype msgtype uses pim::msgtype('http://www.muml.org/pim/1.0.0');
+modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype component uses pim::component('http://www.muml.org/pim/1.0.0');
+modeltype protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype instance uses pim::instance('http://www.muml.org/pim/1.0.0');
+modeltype storydriven_expressions uses core::expressions('http://www.muml.org/core/1.0.0');
+modeltype muml_actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
+modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
+
+	
+	mapping createNumberOfMessagesInTransitDeclaration() : DataVariableDeclaration {
+		
+		prefix := DataVariablePrefix::CONST;
+		
+		typeDefinition := object TypeReference {
+			referredType := INT;
+		};
+
+		variable += map createNumberOfMessagesInTransitConstant();
+
+	}
+		
+	mapping createMessageIdTypeDeclaration() : TypeDeclaration {
+		
+		typeDefinition := map createMessageIdTypeSpec();
+		
+		type += map createMessageIdType();
+		
+	}
+	
+	mapping createMessageIdTypeSpec() : RangeTypeSpecification {
+		
+		bounds := object IntegerBounds {
+			
+			lowerBound := new LiteralExpression(0);
+				
+			upperBound := object IdentifierExpression {
+					identifier := map createNumberOfMessagesInTransitConstant();	
+			};
+			
+		}
+		
+	}
+	
+	abstract query getMaximalNumberOfMessagesInTransit() : Integer {
+		return assert fatal (false) with log('Should be overridden');
+	}
+	
+	mapping createMessageIdNullConstantDeclaration() : DataVariableDeclaration {
+		
+		prefix := DataVariablePrefix::CONST;
+		
+		typeDefinition := object TypeReference {
+			referredType := map createMessageIdType();
+		};
+		
+		variable += map createMessageIdNullConstant();
+	}
+	
+
+	mapping createFreeIDsFieldDeclaration() : DataVariableDeclaration {
+	
+		prefix := DataVariablePrefix::NONE;
+		
+		typeDefinition := object TypeReference {
+			referredType := map createMessageIdType();
+		};
+		
+		variable += map createFreeIDsFieldVariable();
+	}
+ 
+	
+	mapping MessageType :: createParameterTypeDeclaration() : TypeDeclaration { 
+		
+		typeDefinition := self.map createParameterTypeSpec();
+		
+		type += self.map createParameterType();
+		
+	}
+
+	
+	mapping MessageType :: createParameterTypeSpec() : StructTypeSpecification {
+		
+		declaration += object DataVariableDeclaration {
+		
+			typeDefinition := object TypeReference {
+				referredType := map createMessageIdType();
+			};
+		
+			variable += self.map createParameterTypeMessageIdVariable();
+		
+		};
+				
+		declaration += self.parameters->map Parameter2DataVariableDeclaration(); 
+	}
+
+		
+	mapping createBufferTypeSpec() : StructTypeSpecification {
+	
+		declaration += map createTailFieldDeclaration();
+		
+		declaration += map createMessagesFieldDeclaration();
+		
+		declaration += map createMessageDiscardedFieldDeclaration();
+			
+	}
+
+	mapping MessageType :: createParameterTypeTailDeclaration() : DataVariableDeclaration {
+		
+		typeDefinition := object RangeTypeSpecification {
+			
+			bounds := object IntegerBounds {
+				
+				lowerBound := new LiteralExpression(0);
+				
+				upperBound := object IdentifierExpression {
+					identifier := map createNumberOfMessagesInTransitConstant();	
+				};
+				
+			}
+			
+		};
+		
+		variable += self.map createParameterTypeTailVariable();
+		
+	}
+
+	
+	mapping MessageType :: createParameterTypeBufferFieldDeclaration() : DataVariableDeclaration {
+		
+		typeDefinition := object TypeReference {
+			referredType := self.map createParameterType();
+		};
+		
+		variable += self.map createParameterTypeBufferFieldVariable();
+		
+	}
+	
+	
+	mapping MessageType :: createParameterTypeNullConstantDeclaration() : DataVariableDeclaration {
+
+		typeDefinition := object TypeReference {
+			referredType := self.map createParameterType();
+		};
+		
+		variable += self.map createParameterTypeNullConstantVariable();
+		
+	}
+	
+	
+	query createParameterDefaultValueExpression(in p : behavior::Parameter) : Expression {
+		// TODO return default exp w.r.t. the parameter's data type
+		return new LiteralExpression(0);
+	}
+	
+	
+	
+	
+	
+	mapping createMessageNullConstantDeclaration() : DataVariableDeclaration {
+		
+		prefix := DataVariablePrefix::CONST;
+		
+		typeDefinition := object TypeReference {
+			referredType := map createMessageType();
+		};
+		
+		variable += map createMessageNullConstantVariable();
+		
+	}
+	
+	
+	mapping createMessageTypeDeclaration() : TypeDeclaration {
+		
+		typeDefinition := map createMessageTypeSpec();
+		
+		type := map createMessageType();
+		
+	}
+	
+	
+	mapping createMessageTypeSpec() : StructTypeSpecification {
+		
+		declaration += map createMessageTypeMessageIdDeclaration();
+		
+		declaration += map createMessageKindVariableDeclaration();
+		
+		declaration += map createMessageArgumentsPositionVariableDeclaration();
+		
+	}
+	
+	mapping createMessageTypeMessageIdDeclaration() : DataVariableDeclaration {
+		
+		typeDefinition := object TypeReference {
+			referredType := map createMessageIdType();
+		};
+		
+		variable += map createMessageTypeMessageIdVariable();
+		
+	}
+	
+	
+	mapping createMessageArgumentsPositionVariableDeclaration() : DataVariableDeclaration {
+		
+		typeDefinition := object TypeReference {
+			referredType := INT;
+		};
+		
+		variable += map createMessageArgumentsPositionVariable();
+		
+	};
+	
+	
+	mapping createRequestIdFunctionDeclaration() : FunctionDeclaration {
+		
+		function := map createRequestIdFunction();
+		
+	}
+	
+	
+	mapping createReleaseIdFunctionDeclaration() : FunctionDeclaration {
+		
+		function := map createReleaseIdFunction();
+		
+	}
+	
+		
+	mapping MessageType :: createAddFunctionForMessageTypeDeclaration() : FunctionDeclaration {
+		
+		function := self.map createAddForMessageTypeFunction();	
+	
+	}
+	
+	mapping MessageType :: createRemoveFunctionForMessageTypeDeclaration() : FunctionDeclaration {
+	
+		function := self.map createRemoveForMessageTypeFunction();
+	
+	}
+	
+		
+	mapping createNumberOfMessageKindsDeclaration() : DataVariableDeclaration {
+					
+		prefix := DataVariablePrefix::CONST;
+		
+		typeDefinition := object TypeReference {
+			referredType := INT;
+		};
+		
+		variable += map createNumberOfMessageKindsConstant();
+		
+	}
+	
+	
+	mapping createMessageKindTypeDeclaration() : TypeDeclaration {
+		
+		typeDefinition := map createMessageKindTypeSpec();
+		
+		type += map createMessageKindType();
+		
+	}
+	
+
+	mapping createMessageKindTypeSpec() : RangeTypeSpecification {
+			
+		bounds := object IntegerBounds {
+			
+			lowerBound := object LiteralExpression {
+				text := 0.repr();
+			};
+			
+			upperBound := object IdentifierExpression {
+				identifier := map createNumberOfMessageKindsConstant();
+			}
+						
+		}
+	
+	}
+	
+	
+	mapping createMessageKindVariableDeclaration() : DataVariableDeclaration {
+		
+		typeDefinition := object TypeReference {
+			referredType := map createMessageKindType();
+		};
+		
+		variable += map createMessageKindVariable();
+		
+	}
+	
+	
+	mapping createMessageKindConstantsDeclaration() : DataVariableDeclaration {
+		
+		prefix := DataVariablePrefix::CONST;
+		
+		typeDefinition := object TypeReference {
+			referredType := map createMessageKindType();
+		};
+		
+		variable += map createMessageKindNullConstant();
+				
+		variable += messageTypes()->map createMessageKindConstant()
+		
+	}
+		
+	
+	mapping createMaxBufferAndConnectorSizeVariableDeclaration() : DataVariableDeclaration {
+		
+		prefix := DataVariablePrefix::CONST;
+		
+		typeDefinition := object TypeReference {
+			
+			referredType :=  INT;
+			
+		};
+		
+		variable += map createMaxOfBufferAndConnectorSizeVariable();
+		
+	}
+
+	mapping createConnectorSizeVariableDeclaration() : DataVariableDeclaration {
+		
+		prefix := DataVariablePrefix::CONST;
+		
+		typeDefinition := object TypeReference {
+			
+			referredType :=  INT;
+			
+		};
+		
+		variable += map createConnectorSizeVariable();
+		
+	}
+	
+	mapping createBufferTypeDeclaration() : TypeDeclaration {
+		
+		typeDefinition := map createBufferTypeSpec();
+		
+		type += map createBufferType();
+		
+	}
+	
+	
+	mapping createTailFieldDeclaration() : DataVariableDeclaration {
+		
+		typeDefinition := object RangeTypeSpecification {
+						
+			bounds := object IntegerBounds {
+				
+				lowerBound := object LiteralExpression {
+					text := 0.repr()
+				};
+				
+				upperBound := object IdentifierExpression {
+					identifier := map createMaxOfBufferAndConnectorSizeVariable();
+				}
+				
+			}
+			
+		};
+		
+		variable += map createTailFieldVariable()
+			
+	}
+
+	
+	mapping createMessagesFieldDeclaration() : DataVariableDeclaration {
+		
+		typeDefinition := object TypeReference {
+			referredType := map createMessageType();
+		};
+		
+		variable += map createMessagesFieldVariable()
+		
+	}
+	
+	mapping createMessageDiscardedFieldDeclaration() : DataVariableDeclaration{
+		typeDefinition := object TypeReference{
+			referredType := BOOL;
+		};
+		
+		variable += map createMessageDiscardedFieldVariable();
+	}
+	
+	
+	mapping createOverflowVariableDeclaration() : DataVariableDeclaration {
+		
+		typeDefinition := object TypeReference {
+			referredType := BOOL;
+		};
+		
+		variable += map createConnectorOverflowVariable()
+		
+		
+	}
+
+	
+	mapping createBuffersVariableDeclaration() : DataVariableDeclaration {
+		
+		typeDefinition := object TypeReference {
+			referredType := map createBufferType()
+		};
+		
+		variable += map createBuffersVariable()
+		
+	}
+
+	
+	mapping createConnectorsVariableDeclaration() : DataVariableDeclaration {
+		
+		typeDefinition := object TypeReference {
+			referredType := map createBufferType()
+		};
+		
+		variable += map createConnectorsVariable()
+		
+	}
+
+	
+	mapping createEarliestVariableDeclaration() : DataVariableDeclaration {
+		
+		typeDefinition := object TypeReference {
+			referredType := INT
+		};
+		
+		variable += map createEarliestVariable()
+		
+	}
+
+	
+	mapping createLatestVariableDeclaration() : DataVariableDeclaration {
+		
+		typeDefinition := object TypeReference {
+			referredType := INT
+		};
+		
+		variable += map createLatestVariable()
+		
+	}
+
+	
+	mapping createTransmissionTimesVariableDeclaration() : ClockVariableDeclaration {
+		
+		typeDefinition := object TypeReference {
+			referredType := CLOCK
+		};
+		
+		variable += map createTransmissionTimesVariable()
+		
+	}
+	
+	
+	mapping createCheckFunctionDeclaration() : FunctionDeclaration {
+		function := map createCheckFunction()
+	}
+	
+	
+	mapping createCheckMessageInBufferFunctionDeclaration() : FunctionDeclaration {
+		function := map createCheckMessageInBufferFunction()
+	}
+	
+	
+	mapping createRemoveFunctionDeclaration() : FunctionDeclaration {
+		function := map createRemoveFunction()
+	}
+	
+	
+	
+	mapping createAddFunctionDeclaration() : FunctionDeclaration {
+		function := map createAddFunction()
+	}
+	
+	mapping createDiscardFunctionDeclaration() : FunctionDeclaration {
+		function := map createDiscardFunction()
+	}
+	
+	mapping createClearConnectorFunctionDeclaration() : FunctionDeclaration {
+		function := map createClearConnectorFunction();
+	}
+	
+	mapping createGetNumElementsInBufferFunctionDeclaration() : FunctionDeclaration {
+		function := map createGetNumElementsInBufferFunction();
+	}
+	
+	
+	mapping MessageType :: createSendFunctionDeclaration() : FunctionDeclaration {
+		
+		function := self.map createSendFunction()
+	}
+	
+		
+	mapping OrderedSet(DiscretePortInstance) :: createReceiveFunctionDeclaration() : FunctionDeclaration {
+		
+		function := map createReceiveFunction(self)
+		
+	}
+	
+
+	mapping OrderedSet(DiscretePortInstance) :: createConsumeFunctionDeclaration() : FunctionDeclaration {
+		
+		function := map createConsumeFunction(self)
+		
+	}
+
+
+	mapping createConnectorTemplate(portInstances : OrderedSet(DiscretePortInstance)) : Template {
+		
+		name := 'Connector';
+		
+		parameter += object Parameter {
+		
+			variableDeclaration := object DataVariableDeclaration {
+			
+				prefix := DataVariablePrefix::CONST;
+				
+				typeDefinition := object TypeReference {
+					
+					referredType := map DiscretePortInstanceType();
+					
+				};
+							
+				variable += map createSenderParameter()
+			
+			}	
+			
+		};
+		
+		parameter += object Parameter {
+		
+			variableDeclaration := object DataVariableDeclaration {
+			
+				prefix := DataVariablePrefix::CONST;
+				
+				typeDefinition := object TypeReference {
+					
+					referredType := map DiscretePortInstanceType();
+					
+				};
+							
+				variable += map createReceiverParameter()
+			
+			}	
+			
+		};
+		
+		parameter += object Parameter {
+		
+			variableDeclaration := object DataVariableDeclaration {
+			
+				prefix := DataVariablePrefix::CONST;
+				
+				typeDefinition := object TypeReference {
+					
+					referredType := INT
+					
+				};
+							
+				variable += map createMinDelayParameter() 
+			
+			}
+			
+		};
+		
+		parameter += object Parameter {
+		
+			variableDeclaration := object DataVariableDeclaration {
+			
+				prefix := DataVariablePrefix::CONST;
+				
+				typeDefinition := object TypeReference {
+					
+					referredType := INT
+					
+				};
+							
+				variable += map createMaxDelayParameter()
+			
+			}	 
+			
+			
+		};
+		
+		parameter += object Parameter {
+			
+			variableDeclaration := object DataVariableDeclaration {
+			
+				prefix := DataVariablePrefix::CONST;
+							
+				typeDefinition := object TypeReference {
+					
+					referredType := BOOL
+					
+				};
+							
+				variable += map createLossParameter()
+			
+			}	
+			
+		};
+
+		declarations := map createLocalDeclarations();
+		
+		
+		var i : Location = map createIdleLocation();
+		
+		_init := i;
+		
+		location += i;
+				
+				
+		location += map createTransferLocation();
+		
+				
+		edge += map createTransferEdge();
+		
+		edge += map createBufferAcceptEdge(portInstances);
+		
+		edge += map createBufferRejectEdge(portInstances);
+		
+		edge += map createLossEdge();		
+		
+	}
+
+
+	mapping createLocalDeclarations() : LocalDeclarations {
+			
+		declaration += map createTmpVariableDeclaration();
+
+	}
+				
+	mapping createTmpVariableDeclaration() : DataVariableDeclaration {
+		
+		typeDefinition := object TypeReference {
+			referredType := map createMessageType();
+		};
+		
+		variable += map createTmpVariable()
+		
+	}
+	
+	
+	mapping RealtimeStatechart :: createMsgVariableDeclaration() : DataVariableDeclaration {
+		
+		typeDefinition := object TypeReference {
+			referredType := map createMessageType();
+		};
+		
+		variable += self.map createMsgVariable()
+		
+	}
+
+	
+	mapping createIdleLocation() : Location {
+		
+		name := 'Idle';
+				
+		invariant := object LogicalExpression {
+			
+			-- (connectors[sender].tail > 0) imply (transmissionTimes[sender][earliest[sender]] <= max)
+			
+			firstExpr := object CompareExpression {
+			
+				-- connector.tail > 0
+				
+				firstExpr := object ScopedIdentifierExpression {
+					
+					scope := object IdentifierExpression {
+						
+						identifier := map createConnectorsVariable();
+						
+						index += object IdentifierExpression {
+							identifier := map createSenderParameter()
+						};
+						
+					};
+					
+					identifier := object IdentifierExpression {
+						
+						identifier := map createTailFieldVariable()
+						
+					}
+					
+				};
+				
+				operator := CompareOperator::GREATER;
+				
+				secondExpr := object LiteralExpression {
+					
+					text := 0.repr()
+					
+				}
+				
+			};
+			
+			operator := LogicalOperator::IMPLY;
+						
+			secondExpr := object CompareExpression {
+			
+				-- transmission[earliest] <= max
+				
+				firstExpr := object IdentifierExpression {
+					
+					identifier := map createTransmissionTimesVariable();
+					
+					index += object IdentifierExpression {
+						identifier := map createSenderParameter()
+					};
+					
+					index += object IdentifierExpression {
+						
+						identifier := map createEarliestVariable();
+						
+						index += object IdentifierExpression {
+							identifier := map createSenderParameter()
+						};
+						
+					}
+					
+				};
+				
+				operator := CompareOperator::LESS_OR_EQUAL;
+				
+				secondExpr := object IdentifierExpression {
+					
+					identifier := map createMaxDelayParameter()
+					
+				}
+				
+			}
+			
+		}
+				
+	}
+		
+	mapping createTransferLocation() : Location {
+		
+		locationTimeKind := LocationKind::COMMITED;
+		
+		name := 'transfer_loc'
+		
+	}
+		
+	mapping createTransferEdge() : Edge {
+		
+		source := resolveoneIn(createIdleLocation, Location);
+		target := resolveoneIn(createTransferLocation, Location);
+		
+		var i : Variable = object Variable {
+			name := 'i';
+		};
+		
+		selection += object Selection {
+			
+			-- i : message kind
+			
+			variable += i;
+			typeDefinition := object TypeReference {
+				referredType := map createMessageKindType();
+			}
+		};
+		
+		guard := object LogicalExpression {
+			
+			-- check(connectors[sender],i) and transmissionTimes[sender][earliest[sender]] >= min and transmissionTimes[sender][earliest[sender]] <= max
+						
+			firstExpr := object FunctionCallExpression {
+			
+				-- check(connectors[sender],i)
+				
+				function := map createCheckFunction();
+				
+				argument += object IdentifierExpression {
+					identifier := map createConnectorsVariable();
+					
+					index += object IdentifierExpression {
+						identifier := map createSenderParameter()
+					}
+				};
+				
+				argument += object IdentifierExpression {
+					identifier := i
+				}
+				
+			};
+			
+			operator := LogicalOperator::AND;
+			
+			secondExpr := object LogicalExpression {
+			
+				-- transmissionTimes[sender][earliest[sender]] >= min and transmissionTimes[sender][earliest[sender]] <= max
+				
+				firstExpr := object CompareExpression {
+			
+					-- transmissionTimes[sender][earliest[sender]] >= min
+					
+					firstExpr := object IdentifierExpression {
+						
+						identifier := map createTransmissionTimesVariable();
+						
+						index += object IdentifierExpression {
+							identifier := map createSenderParameter()
+						};
+						
+						index += object IdentifierExpression {
+							identifier := map createEarliestVariable();
+							
+							index += object IdentifierExpression {
+								identifier := map createSenderParameter()
+							}
+						}
+						
+					};
+					
+					operator := CompareOperator::GREATER_OR_EQUAL;
+					
+					secondExpr := object IdentifierExpression {
+						identifier := map createMinDelayParameter();
+					}
+				
+				};
+				
+				operator := LogicalOperator::AND;
+			
+				secondExpr := object CompareExpression {
+			
+					-- transmissionTimes[sender][earliest[sender]] <= max
+					
+					firstExpr := object IdentifierExpression {
+						
+						identifier := map createTransmissionTimesVariable();
+						
+						index += object IdentifierExpression {
+							identifier := map createSenderParameter()
+						};
+						
+						index += object IdentifierExpression {
+							identifier := map createEarliestVariable();
+							
+							index += object IdentifierExpression {
+								identifier := map createSenderParameter()
+							};
+						}
+						
+					};
+				
+					operator := CompareOperator::LESS_OR_EQUAL;
+					
+					secondExpr := object IdentifierExpression {
+						identifier := map createMaxDelayParameter();
+					}
+				
+				}
+				
+			};
+				
+		};
+							
+		update += object AssignmentExpression {
+		
+			-- tmp = connectors[sender].messages[0]
+			
+			firstExpr := object IdentifierExpression {
+				
+				identifier := map createTmpVariable()
+				
+			};
+			
+			operator := AssignmentOperator::EQUAL;
+			
+			secondExpr := object ScopedIdentifierExpression {
+				
+				scope := object IdentifierExpression {
+					
+					identifier := map createConnectorsVariable();
+					
+					index += object IdentifierExpression {
+						identifier := map createSenderParameter()
+					};
+					
+				};
+				
+				identifier := object IdentifierExpression {
+					
+					identifier := map createMessagesFieldVariable();
+					
+					index += object LiteralExpression {
+						text := 0.repr();
+					}
+					
+				};
+				
+			}
+			
+		};
+		
+		update += object FunctionCallExpression {
+		
+			-- remove(connectors[sender],i)
+			
+			function := map createRemoveFunction();
+			
+			argument += object IdentifierExpression {
+				
+				identifier := map createConnectorsVariable();
+				
+				index += object IdentifierExpression {
+					identifier := map createSenderParameter()
+				};
+				
+			};
+			
+			argument += object IdentifierExpression {
+				
+				identifier := i
+				
+			}
+			
+		};
+		
+		update += object ConditionExpression {
+			
+			-- earliest[sender] == CAPACITY-1 ? earliest[sender]=0 : earliest[sender]++
+			
+			ifExpression := object CompareExpression {
+			
+				-- earliest[sender] == CAPACITY-1
+				
+				firstExpr := object IdentifierExpression {
+					identifier := map createEarliestVariable();
+					
+					index += object IdentifierExpression {
+						identifier := map createSenderParameter()
+					};
+				};
+				
+				operator := CompareOperator::EQUAL;
+				
+				secondExpr := object ArithmeticExpression {
+					
+					firstExpr := object IdentifierExpression {
+						identifier := map createConnectorSizeVariable()						
+					};
+					
+					operator := ArithmeticOperator::SUBTRACT;
+					
+					secondExpr := object LiteralExpression {
+						text := 1.repr()
+					}
+					
+				}
+				
+			};
+			
+			thenExpression := object AssignmentExpression {
+			
+				-- earliest[sender]=0
+				
+				firstExpr := object IdentifierExpression {
+					identifier := map createEarliestVariable();
+					
+					index += object IdentifierExpression {
+						identifier := map createSenderParameter()
+					};
+				};
+				
+				operator := AssignmentOperator::EQUAL;
+				
+				secondExpr := object LiteralExpression {
+					text := 0.repr()
+				}
+				
+			};
+			
+			elseExpression := object IncrementDecrementExpression {
+				
+				-- earliest[sender]++
+				
+				expression := object IdentifierExpression {
+					identifier := map createEarliestVariable();
+					
+					index += object IdentifierExpression {
+						identifier := map createSenderParameter()
+					};
+				};
+				
+				position := IncrementDecrementPosition::POST;
+				
+				operator := IncrementDecrementOperator::INCREMENT;
+				
+			}
+			
+		}
+		
+	}
+	
+	mapping createBufferRejectEdge(portInstances : OrderedSet(DiscretePortInstance)) : Edge {
+		
+		source := resolveoneIn(createTransferLocation, Location);
+		target := resolveoneIn(createIdleLocation, Location);
+				
+		guard := object CompareExpression {
+			
+			-- buffers[receiver].tail >= bufferSize[receiver][tmp.mType]
+			
+			firstExpr := object ScopedIdentifierExpression {
+				
+				scope := object IdentifierExpression {
+					identifier := map createBuffersVariable();
+					
+					index += object IdentifierExpression {
+						identifier := map createReceiverParameter()
+					};
+
+					index += object IdentifierExpression {
+						identifier := portInstances->map createBufferAssignmentArrayVariable();
+
+						index += object IdentifierExpression {
+							identifier := map createReceiverParameter()
+						};
+
+						index += object ScopedIdentifierExpression {
+							identifier := object IdentifierExpression {
+								identifier := map createMessageKindVariable();
+							};
+
+							scope := object IdentifierExpression {
+								identifier := map createTmpVariable();
+							}
+						};
+
+					}
+				};
+				
+				identifier := object IdentifierExpression {
+					identifier := map createTailFieldVariable();						
+				}
+				
+			};
+			
+			operator := CompareOperator::GREATER_OR_EQUAL;
+			
+			secondExpr := object IdentifierExpression {
+				
+				identifier := portInstances->map createBufferSizeArrayVariable();
+
+				index += object IdentifierExpression {
+					identifier := map createReceiverParameter();
+				};
+
+				index += object ScopedIdentifierExpression {
+					identifier := object IdentifierExpression {
+						identifier := map createMessageKindVariable();
+					};
+
+					scope := object IdentifierExpression {
+						identifier := map createTmpVariable();
+					}
+				};
+
+			};
+				
+		};
+			
+		// discard(buffers[receiver][buffer_assignment[receiver][tmp.mType]], bufferOverflowStrategies[receiver][tmp.mType], tmp)	
+		update += object FunctionCallExpression{
+			function := map createDiscardFunction();
+			
+			//buffers[receiver][buffer_assignment[receiver][tmp.mType]]	
+			argument += object IdentifierExpression {
+				
+				identifier := map createBuffersVariable();
+				
+				index += object IdentifierExpression {
+					identifier := map createReceiverParameter()
+				};
+
+				index += object IdentifierExpression {
+					identifier := portInstances->map createBufferAssignmentArrayVariable();
+
+					index += object IdentifierExpression {
+						identifier := map createReceiverParameter()
+					};
+
+					index += object ScopedIdentifierExpression {
+						identifier := object IdentifierExpression {
+							identifier := map createMessageKindVariable();
+						};
+
+						scope := object IdentifierExpression {
+							identifier := map createTmpVariable();
+						}
+					};
+
+				}
+				
+			};
+			
+			//bufferOverflowStrategies[receiver][tmp.mType]
+			argument += object IdentifierExpression {
+				
+				identifier := portInstances->map createBufferOverflowStrategyArrayVariable();
+				
+				index += object IdentifierExpression {
+					identifier := map createReceiverParameter()
+				};
+
+				index += object ScopedIdentifierExpression {
+					identifier := object IdentifierExpression {
+						identifier := map createMessageKindVariable();
+					};
+
+					scope := object IdentifierExpression {
+						identifier := map createTmpVariable();
+					}
+				};
+
+			};
+			
+			
+			//tmp
+			argument += object IdentifierExpression{
+				identifier := map createTmpVariable();
+			};
+		};								
+			
+		
+	}
+	
+	mapping createLossEdge() : Edge {
+		
+		source := resolveoneIn(createTransferLocation, Location);
+		target := resolveoneIn(createIdleLocation, Location);
+				
+		guard := object CompareExpression {
+			
+			-- loss == true
+			
+			firstExpr := object IdentifierExpression {
+				identifier := map createLossParameter()
+			};
+			
+			operator := CompareOperator::EQUAL;
+			
+			secondExpr := object LiteralExpression {
+				text := true.repr()
+			}
+				
+		};	
+		
+	 		 									
+	 	//releaseId(tmp.mId);
+		update += object FunctionCallExpression{
+			function := map createReleaseIdFunction();
+			argument += object ScopedIdentifierExpression {
+				identifier := object IdentifierExpression {
+					identifier := map createMessageKindVariable();
+				};
+
+				scope := object IdentifierExpression {
+					identifier := map createTmpVariable();
+				}
+			};
+		};
+	 		
+	 	-- clearConnector(tmp.mId, tmp.mType, tmp.mArgsPosition);
+		update += object FunctionCallExpression {
+			function := map createClearConnectorFunction();
+			argument +=  object ScopedIdentifierExpression {
+				identifier := object IdentifierExpression {
+					identifier := map createMessageTypeMessageIdVariable();
+				};
+
+				scope := object IdentifierExpression {
+					identifier := map createTmpVariable();
+				}
+			};
+			
+			argument +=  object ScopedIdentifierExpression {
+				identifier := object IdentifierExpression {
+					identifier := map createMessageKindVariable();
+				};
+
+				scope := object IdentifierExpression {
+					identifier := map createTmpVariable();
+				}
+			};
+			
+			argument +=  object ScopedIdentifierExpression {
+				identifier := object IdentifierExpression {
+					identifier := map createMessageArgumentsPositionVariable();
+				};
+
+				scope := object IdentifierExpression {
+					identifier := map createTmpVariable();
+				}
+			};
+		};
+		
+			
+	}
+	
+	mapping createBufferAcceptEdge(portInstances : OrderedSet(DiscretePortInstance)) : Edge {
+		
+		source := resolveoneIn(createTransferLocation, Location);
+		target := resolveoneIn(createIdleLocation, Location);
+				
+		guard := object CompareExpression {
+			
+			-- buffers[receiver].tail < bufferSize[receiver][tmp.mType]
+			
+			firstExpr := object ScopedIdentifierExpression {
+				
+				scope := object IdentifierExpression {
+					identifier := map createBuffersVariable();
+					
+					index += object IdentifierExpression {
+						identifier := map createReceiverParameter()
+					};
+
+					index += object IdentifierExpression {
+						identifier := portInstances->map createBufferAssignmentArrayVariable();
+
+						index += object IdentifierExpression {
+							identifier := map createReceiverParameter()
+						};
+
+						index += object ScopedIdentifierExpression {
+							identifier := object IdentifierExpression {
+								identifier := map createMessageKindVariable();
+							};
+
+							scope := object IdentifierExpression {
+								identifier := map createTmpVariable();
+							}
+						};
+
+					}
+				};
+				
+				identifier := object IdentifierExpression {
+					identifier := map createTailFieldVariable();						
+				}
+				
+			};
+			
+			operator := CompareOperator::LESS;
+			
+			secondExpr := object IdentifierExpression {
+				
+				identifier := portInstances->map createBufferSizeArrayVariable();
+
+				index += object IdentifierExpression {
+					identifier := map createReceiverParameter();
+				};
+
+				index += object ScopedIdentifierExpression {
+					identifier := object IdentifierExpression {
+						identifier := map createMessageKindVariable();
+					};
+
+					scope := object IdentifierExpression {
+						identifier := map createTmpVariable();
+					}
+				};
+
+			};
+				
+		};
+		 
+		update += object FunctionCallExpression {
+		
+			-- add(buffers[receiver],tmp)
+			
+			function := map createAddFunction();
+			
+			argument += object IdentifierExpression {
+				
+				identifier := map createBuffersVariable();
+				
+				index += object IdentifierExpression {
+					identifier := map createReceiverParameter()
+				};
+
+				index += object IdentifierExpression {
+					identifier := portInstances->map createBufferAssignmentArrayVariable();
+
+					index += object IdentifierExpression {
+						identifier := map createReceiverParameter()
+					};
+
+					index += object ScopedIdentifierExpression {
+						identifier := object IdentifierExpression {
+							identifier := map createMessageKindVariable();
+						};
+
+						scope := object IdentifierExpression {
+							identifier := map createTmpVariable();
+						}
+					};
+
+				}
+				
+			};
+			
+			argument += object IdentifierExpression {
+				
+				identifier := map createTmpVariable();
+				
+			}
+			
+		}
+			
+	}
+	
+	
+	mapping createMaximalNumberOfBuffersPerRoleConstantDeclaration() : DataVariableDeclaration {
+		
+		prefix := DataVariablePrefix::CONST;
+		
+		typeDefinition := object TypeReference {
+			referredType := INT
+		};
+	
+		variable := map createMaximalNumberOfBuffersPerRoleConstant();
+
+	}
+
+
+	mapping OrderedSet(DiscretePortInstance) :: createBufferAssignmentArrayDeclaration() : DataVariableDeclaration {
+
+		prefix := DataVariablePrefix::CONST;
+
+		typeDefinition := object RangeTypeSpecification {
+			
+			bounds := object IntegerBounds {
+				
+				lowerBound := object LiteralExpression {
+					text := (-1).repr();
+				};
+	
+				upperBound := object ArithmeticExpression {
+	
+					operator := ArithmeticOperator::SUBTRACT;
+	
+					firstExpr := object IdentifierExpression {
+						identifier := map createMaximalNumberOfBuffersPerRoleConstant();
+					};
+	
+					secondExpr := object LiteralExpression {
+						text := 1.repr();
+					}
+	
+				};
+				
+			}
+
+		};
+
+		variable := self->map createBufferAssignmentArrayVariable();
+
+	}
+
+	mapping OrderedSet(DiscretePortInstance) :: createBufferSizeArrayDeclaration() : DataVariableDeclaration {
+
+		prefix := DataVariablePrefix::CONST;
+
+		typeDefinition := object RangeTypeSpecification {
+			
+			bounds := object IntegerBounds {
+				
+				lowerBound := object LiteralExpression {
+					text := (-1).repr();
+				};
+	
+				upperBound := object IdentifierExpression {
+					identifier := map createMaxOfBufferAndConnectorSizeVariable();
+				};
+				
+			}
+
+		};
+
+		variable := self->map createBufferSizeArrayVariable();
+
+	}
+	
+	mapping OrderedSet(DiscretePortInstance) :: createBufferOverflowStrategyArrayDeclaration() : DataVariableDeclaration {
+
+		prefix := DataVariablePrefix::CONST;
+
+		typeDefinition := object RangeTypeSpecification {
+			
+			bounds := object IntegerBounds {
+				
+				lowerBound := object LiteralExpression {
+					text := (-1).repr();
+				};
+	
+				upperBound := object LiteralExpression {
+					text := 1.repr();
+				};
+				
+			}
+
+		};
+
+		variable := self->map createBufferOverflowStrategyArrayVariable();
+
+	}
+	
+	mapping BufferOverflowAvoidanceStrategy::createBufferOverflowConstantDeclaration() : DataVariableDeclaration {
+		
+		prefix := DataVariablePrefix::CONST;
+		
+		typeDefinition := object TypeReference {
+			referredType := INT;
+		};
+		
+		variable := self.xmap createBufferOverflowVariable();		
+	}
+	
+	
+	mapping OrderedSet(DiscretePortInstance) :: createNextArrayDeclaration() : DataVariableDeclaration {
+		
+		prefix := DataVariablePrefix::CONST;
+		
+		typeDefinition := object RangeTypeSpecification {
+			
+			bounds := object IntegerBounds {
+				
+				lowerBound := object LiteralExpression {
+					text := (-1).repr();
+				};
+	
+				upperBound := object IdentifierExpression {
+					identifier := map NumberOfDiscretePortInstancesConstant()
+				};
+				
+			}
+
+		};
+
+		variable := self->map DiscretePortInstances2NextArray();
+		
+	}
+
+	mapping OrderedSet(DiscretePortInstance) :: createPreviousArrayDeclaration() : DataVariableDeclaration {
+		
+		prefix := DataVariablePrefix::CONST;
+		
+		typeDefinition := object RangeTypeSpecification {
+			
+			bounds := object IntegerBounds {
+				
+				lowerBound := object LiteralExpression {
+					text := (-1).repr();
+				};
+	
+				upperBound := object IdentifierExpression {
+					identifier := map NumberOfDiscretePortInstancesConstant()
+				};
+				
+			}
+
+		};
+
+		variable := self->map DiscretePortInstances2PreviousArray();
+		
+	}
+	
+	mapping OrderedSet(DiscretePortInstance) :: createFirstArrayDeclaration() : DataVariableDeclaration {
+		
+		prefix := DataVariablePrefix::CONST;
+		
+		typeDefinition := object RangeTypeSpecification {
+			
+			bounds := object IntegerBounds {
+				
+				lowerBound := object LiteralExpression {
+					text := (-1).repr();
+				};
+	
+				upperBound := object IdentifierExpression {
+					identifier := map NumberOfDiscretePortInstancesConstant()
+				};
+				
+			}
+
+		};
+
+		variable := self->map DiscretePortInstances2FirstArray();
+		
+	}
+	
+	mapping OrderedSet(DiscretePortInstance) :: createLastArrayDeclaration() : DataVariableDeclaration {
+		
+		prefix := DataVariablePrefix::CONST;
+		
+		typeDefinition := object RangeTypeSpecification {
+			
+			bounds := object IntegerBounds {
+				
+				lowerBound := object LiteralExpression {
+					text := (-1).repr();
+				};
+	
+				upperBound := object IdentifierExpression {
+					identifier := map NumberOfDiscretePortInstancesConstant()
+				};
+				
+			}
+
+		};
+
+		variable := self->map DiscretePortInstances2LastArray();
+		
+	}
+	
+	mapping OrderedSet(DiscretePortInstance) :: createSelfArrayDeclaration() : DataVariableDeclaration {
+		
+		prefix := DataVariablePrefix::CONST;
+		
+		typeDefinition := object RangeTypeSpecification {
+			
+			bounds := object IntegerBounds {
+				
+				lowerBound := object LiteralExpression {
+					text := (-1).repr();
+				};
+	
+				upperBound := object IdentifierExpression {
+					identifier := map NumberOfDiscretePortInstancesConstant()
+				};
+				
+			}
+
+		};
+
+		variable := self->map DiscretePortInstances2SelfArray();
+		
+	}

@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.muml.uppaal.adapter.transformation;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
+ %providerName
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.core.runtime,
+ org.muml.uppaal,
+ org.muml.pim,
+ org.muml.pim.actionlanguage,
+ org.muml.uppaal.adapter.blackbox,
+ org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc,
+ org.eclipse.m2m.qvt.oml;bundle-version="3.4.0.v20140506-0739",
+ org.eclipse.m2m.qvt.oml.project;bundle-version="3.2.0",
+ org.muml.uppaal.adapter.extension,
+ org.muml.uppaal.adapter.mtctl,
+ org.muml.verification.core.reachanalysis.reachabilitygraph.cic
