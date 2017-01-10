@@ -41,7 +41,7 @@ public class ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5008 
 
 	protected String getExpressionBody() {
 		return MumlOCLFactory
-				.getExpression(18, ProtocolPackage.eINSTANCE.getConnectorQualityOfServiceAssumptions(), null).body();
+				.getExpression(17, ProtocolPackage.eINSTANCE.getConnectorQualityOfServiceAssumptions(), null).body();
 	}
 
 	/**

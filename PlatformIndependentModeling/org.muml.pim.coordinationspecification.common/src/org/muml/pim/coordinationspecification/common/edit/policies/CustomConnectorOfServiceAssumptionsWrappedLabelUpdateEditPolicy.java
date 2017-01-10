@@ -19,10 +19,7 @@ public class CustomConnectorOfServiceAssumptionsWrappedLabelUpdateEditPolicy ext
 				addNotificationListener(quosa);
 				TimeValue tMax = quosa.getMaxMessageDelay();
 				if(tMax!=null)
-					addNotificationListener(quosa.getMaxMessageDelay());
-				TimeValue tMin = quosa.getMinMessageDelay();
-				if(tMin!=null)				
-					addNotificationListener(tMin);				
+					addNotificationListener(quosa.getMaxMessageDelay());			
 			}
 	}
 

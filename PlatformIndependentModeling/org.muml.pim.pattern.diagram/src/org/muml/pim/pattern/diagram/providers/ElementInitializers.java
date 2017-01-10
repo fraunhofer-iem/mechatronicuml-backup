@@ -60,21 +60,9 @@ public class ElementInitializers {
 
 			newInstance_0_0_0_0_1_0.setUnit(TimeUnit.MILLISECONDS);
 
-			TimeValue newInstance_0_0_0_0_2_0 = ValuetypeFactory.eINSTANCE.createTimeValue();
-			newInstance_0_0_0_0.setMinMessageDelay(newInstance_0_0_0_0_2_0);
-			LiteralExpression newInstance_0_0_0_0_2_0_0_0 = CommonExpressionsFactory.eINSTANCE
-					.createLiteralExpression();
-			newInstance_0_0_0_0_2_0.setValue(newInstance_0_0_0_0_2_0_0_0);
-			Object value_0_0_0_0_2_0_0_0_0 = MumlOCLFactory
-					.getExpression(2, CommonExpressionsPackage.eINSTANCE.getLiteralExpression(), null)
-					.evaluate(newInstance_0_0_0_0_2_0_0_0);
-			newInstance_0_0_0_0_2_0_0_0.setValue((String) value_0_0_0_0_2_0_0_0_0);
-
-			newInstance_0_0_0_0_2_0.setUnit(TimeUnit.MILLISECONDS);
-
 			Role newInstance_1_0 = ProtocolFactory.eINSTANCE.createRole();
 			instance.getRoles().add(newInstance_1_0);
-			Object value_1_0_0 = MumlOCLFactory.getExpression(3, ProtocolPackage.eINSTANCE.getRole(), null)
+			Object value_1_0_0 = MumlOCLFactory.getExpression(2, ProtocolPackage.eINSTANCE.getRole(), null)
 					.evaluate(newInstance_1_0);
 			newInstance_1_0.setName((String) value_1_0_0);
 			Cardinality newInstance_1_0_1_0 = ValuetypeFactory.eINSTANCE.createCardinality();
@@ -82,7 +70,7 @@ public class ElementInitializers {
 			NaturalNumber newInstance_1_0_1_0_0_0 = ValuetypeFactory.eINSTANCE.createNaturalNumber();
 			newInstance_1_0_1_0.setLowerBound(newInstance_1_0_1_0_0_0);
 			Object value_1_0_1_0_0_0_0 = MumlOCLFactory
-					.getExpression(4, ValuetypePackage.eINSTANCE.getNaturalNumber(), null)
+					.getExpression(3, ValuetypePackage.eINSTANCE.getNaturalNumber(), null)
 					.evaluate(newInstance_1_0_1_0_0_0);
 
 			value_1_0_1_0_0_0_0 = MumlAbstractExpression.performCast(value_1_0_1_0_0_0_0,
@@ -92,14 +80,14 @@ public class ElementInitializers {
 			NaturalNumber newInstance_1_0_1_0_1_0 = ValuetypeFactory.eINSTANCE.createNaturalNumber();
 			newInstance_1_0_1_0.setUpperBound(newInstance_1_0_1_0_1_0);
 			Object value_1_0_1_0_1_0_0 = MumlOCLFactory
-					.getExpression(5, ValuetypePackage.eINSTANCE.getNaturalNumber(), null)
+					.getExpression(4, ValuetypePackage.eINSTANCE.getNaturalNumber(), null)
 					.evaluate(newInstance_1_0_1_0_1_0);
 
 			value_1_0_1_0_1_0_0 = MumlAbstractExpression.performCast(value_1_0_1_0_1_0_0,
 					EcorePackage.eINSTANCE.getELong());
 			newInstance_1_0_1_0_1_0.setValue(((Long) value_1_0_1_0_1_0_0).longValue());
 
-			Object value_1_0_2 = MumlOCLFactory.getExpression(6, ProtocolPackage.eINSTANCE.getRole(), null)
+			Object value_1_0_2 = MumlOCLFactory.getExpression(5, ProtocolPackage.eINSTANCE.getRole(), null)
 					.evaluate(newInstance_1_0);
 			if (value_1_0_2 instanceof Collection) {
 				newInstance_1_0.getConnectors().clear();
@@ -110,7 +98,7 @@ public class ElementInitializers {
 
 			Role newInstance_1_1 = ProtocolFactory.eINSTANCE.createRole();
 			instance.getRoles().add(newInstance_1_1);
-			Object value_1_1_0 = MumlOCLFactory.getExpression(7, ProtocolPackage.eINSTANCE.getRole(), null)
+			Object value_1_1_0 = MumlOCLFactory.getExpression(6, ProtocolPackage.eINSTANCE.getRole(), null)
 					.evaluate(newInstance_1_1);
 			newInstance_1_1.setName((String) value_1_1_0);
 			Cardinality newInstance_1_1_1_0 = ValuetypeFactory.eINSTANCE.createCardinality();
@@ -118,7 +106,7 @@ public class ElementInitializers {
 			NaturalNumber newInstance_1_1_1_0_0_0 = ValuetypeFactory.eINSTANCE.createNaturalNumber();
 			newInstance_1_1_1_0.setLowerBound(newInstance_1_1_1_0_0_0);
 			Object value_1_1_1_0_0_0_0 = MumlOCLFactory
-					.getExpression(8, ValuetypePackage.eINSTANCE.getNaturalNumber(), null)
+					.getExpression(7, ValuetypePackage.eINSTANCE.getNaturalNumber(), null)
 					.evaluate(newInstance_1_1_1_0_0_0);
 
 			value_1_1_1_0_0_0_0 = MumlAbstractExpression.performCast(value_1_1_1_0_0_0_0,
@@ -128,14 +116,14 @@ public class ElementInitializers {
 			NaturalNumber newInstance_1_1_1_0_1_0 = ValuetypeFactory.eINSTANCE.createNaturalNumber();
 			newInstance_1_1_1_0.setUpperBound(newInstance_1_1_1_0_1_0);
 			Object value_1_1_1_0_1_0_0 = MumlOCLFactory
-					.getExpression(9, ValuetypePackage.eINSTANCE.getNaturalNumber(), null)
+					.getExpression(8, ValuetypePackage.eINSTANCE.getNaturalNumber(), null)
 					.evaluate(newInstance_1_1_1_0_1_0);
 
 			value_1_1_1_0_1_0_0 = MumlAbstractExpression.performCast(value_1_1_1_0_1_0_0,
 					EcorePackage.eINSTANCE.getELong());
 			newInstance_1_1_1_0_1_0.setValue(((Long) value_1_1_1_0_1_0_0).longValue());
 
-			Object value_1_1_2 = MumlOCLFactory.getExpression(10, ProtocolPackage.eINSTANCE.getRole(), null)
+			Object value_1_1_2 = MumlOCLFactory.getExpression(9, ProtocolPackage.eINSTANCE.getRole(), null)
 					.evaluate(newInstance_1_1);
 			if (value_1_1_2 instanceof Collection) {
 				newInstance_1_1.getConnectors().clear();
@@ -156,7 +144,7 @@ public class ElementInitializers {
 		try {
 			Role newInstance_0_0 = ProtocolFactory.eINSTANCE.createRole();
 			instance.getRoles().add(newInstance_0_0);
-			Object value_0_0_0 = MumlOCLFactory.getExpression(20, ProtocolPackage.eINSTANCE.getRole(), null)
+			Object value_0_0_0 = MumlOCLFactory.getExpression(19, ProtocolPackage.eINSTANCE.getRole(), null)
 					.evaluate(newInstance_0_0);
 			newInstance_0_0.setName((String) value_0_0_0);
 			Cardinality newInstance_0_0_1_0 = ValuetypeFactory.eINSTANCE.createCardinality();
@@ -164,7 +152,7 @@ public class ElementInitializers {
 			NaturalNumber newInstance_0_0_1_0_0_0 = ValuetypeFactory.eINSTANCE.createNaturalNumber();
 			newInstance_0_0_1_0.setLowerBound(newInstance_0_0_1_0_0_0);
 			Object value_0_0_1_0_0_0_0 = MumlOCLFactory
-					.getExpression(21, ValuetypePackage.eINSTANCE.getNaturalNumber(), null)
+					.getExpression(20, ValuetypePackage.eINSTANCE.getNaturalNumber(), null)
 					.evaluate(newInstance_0_0_1_0_0_0);
 
 			value_0_0_1_0_0_0_0 = MumlAbstractExpression.performCast(value_0_0_1_0_0_0_0,
@@ -174,7 +162,7 @@ public class ElementInitializers {
 			NaturalNumber newInstance_0_0_1_0_1_0 = ValuetypeFactory.eINSTANCE.createNaturalNumber();
 			newInstance_0_0_1_0.setUpperBound(newInstance_0_0_1_0_1_0);
 			Object value_0_0_1_0_1_0_0 = MumlOCLFactory
-					.getExpression(22, ValuetypePackage.eINSTANCE.getNaturalNumber(), null)
+					.getExpression(21, ValuetypePackage.eINSTANCE.getNaturalNumber(), null)
 					.evaluate(newInstance_0_0_1_0_1_0);
 
 			value_0_0_1_0_1_0_0 = MumlAbstractExpression.performCast(value_0_0_1_0_1_0_0,
@@ -183,7 +171,7 @@ public class ElementInitializers {
 
 			Role newInstance_0_1 = ProtocolFactory.eINSTANCE.createRole();
 			instance.getRoles().add(newInstance_0_1);
-			Object value_0_1_0 = MumlOCLFactory.getExpression(23, ProtocolPackage.eINSTANCE.getRole(), null)
+			Object value_0_1_0 = MumlOCLFactory.getExpression(22, ProtocolPackage.eINSTANCE.getRole(), null)
 					.evaluate(newInstance_0_1);
 			newInstance_0_1.setName((String) value_0_1_0);
 			Cardinality newInstance_0_1_1_0 = ValuetypeFactory.eINSTANCE.createCardinality();
@@ -191,7 +179,7 @@ public class ElementInitializers {
 			NaturalNumber newInstance_0_1_1_0_0_0 = ValuetypeFactory.eINSTANCE.createNaturalNumber();
 			newInstance_0_1_1_0.setLowerBound(newInstance_0_1_1_0_0_0);
 			Object value_0_1_1_0_0_0_0 = MumlOCLFactory
-					.getExpression(24, ValuetypePackage.eINSTANCE.getNaturalNumber(), null)
+					.getExpression(23, ValuetypePackage.eINSTANCE.getNaturalNumber(), null)
 					.evaluate(newInstance_0_1_1_0_0_0);
 
 			value_0_1_1_0_0_0_0 = MumlAbstractExpression.performCast(value_0_1_1_0_0_0_0,
@@ -201,7 +189,7 @@ public class ElementInitializers {
 			NaturalNumber newInstance_0_1_1_0_1_0 = ValuetypeFactory.eINSTANCE.createNaturalNumber();
 			newInstance_0_1_1_0.setUpperBound(newInstance_0_1_1_0_1_0);
 			Object value_0_1_1_0_1_0_0 = MumlOCLFactory
-					.getExpression(25, ValuetypePackage.eINSTANCE.getNaturalNumber(), null)
+					.getExpression(24, ValuetypePackage.eINSTANCE.getNaturalNumber(), null)
 					.evaluate(newInstance_0_1_1_0_1_0);
 
 			value_0_1_1_0_1_0_0 = MumlAbstractExpression.performCast(value_0_1_1_0_1_0_0,
@@ -210,7 +198,7 @@ public class ElementInitializers {
 
 			RoleConnector newInstance_1_0 = ProtocolFactory.eINSTANCE.createRoleConnector();
 			instance.setRoleConnector(newInstance_1_0);
-			Object value_1_0_0 = MumlOCLFactory.getExpression(26, ProtocolPackage.eINSTANCE.getRoleConnector(), null)
+			Object value_1_0_0 = MumlOCLFactory.getExpression(25, ProtocolPackage.eINSTANCE.getRoleConnector(), null)
 					.evaluate(newInstance_1_0);
 			if (value_1_0_0 instanceof Collection) {
 				newInstance_1_0.getConnectorEndpoints().clear();
@@ -222,7 +210,7 @@ public class ElementInitializers {
 					.createConnectorQualityOfServiceAssumptions();
 			newInstance_1_0.setConnectorQualityOfServiceAssumptions(newInstance_1_0_1_0);
 			Object value_1_0_1_0_0 = MumlOCLFactory
-					.getExpression(27, ProtocolPackage.eINSTANCE.getConnectorQualityOfServiceAssumptions(), null)
+					.getExpression(26, ProtocolPackage.eINSTANCE.getConnectorQualityOfServiceAssumptions(), null)
 					.evaluate(newInstance_1_0_1_0);
 			newInstance_1_0_1_0.setComment((String) value_1_0_1_0_0);
 			TimeValue newInstance_1_0_1_0_1_0 = ValuetypeFactory.eINSTANCE.createTimeValue();
@@ -231,23 +219,11 @@ public class ElementInitializers {
 					.createLiteralExpression();
 			newInstance_1_0_1_0_1_0.setValue(newInstance_1_0_1_0_1_0_0_0);
 			Object value_1_0_1_0_1_0_0_0_0 = MumlOCLFactory
-					.getExpression(28, CommonExpressionsPackage.eINSTANCE.getLiteralExpression(), null)
+					.getExpression(27, CommonExpressionsPackage.eINSTANCE.getLiteralExpression(), null)
 					.evaluate(newInstance_1_0_1_0_1_0_0_0);
 			newInstance_1_0_1_0_1_0_0_0.setValue((String) value_1_0_1_0_1_0_0_0_0);
 
 			newInstance_1_0_1_0_1_0.setUnit(TimeUnit.MILLISECONDS);
-
-			TimeValue newInstance_1_0_1_0_2_0 = ValuetypeFactory.eINSTANCE.createTimeValue();
-			newInstance_1_0_1_0.setMinMessageDelay(newInstance_1_0_1_0_2_0);
-			LiteralExpression newInstance_1_0_1_0_2_0_0_0 = CommonExpressionsFactory.eINSTANCE
-					.createLiteralExpression();
-			newInstance_1_0_1_0_2_0.setValue(newInstance_1_0_1_0_2_0_0_0);
-			Object value_1_0_1_0_2_0_0_0_0 = MumlOCLFactory
-					.getExpression(29, CommonExpressionsPackage.eINSTANCE.getLiteralExpression(), null)
-					.evaluate(newInstance_1_0_1_0_2_0_0_0);
-			newInstance_1_0_1_0_2_0_0_0.setValue((String) value_1_0_1_0_2_0_0_0_0);
-
-			newInstance_1_0_1_0_2_0.setUnit(TimeUnit.MILLISECONDS);
 
 		} catch (RuntimeException e) {
 			MumlDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
@@ -264,7 +240,7 @@ public class ElementInitializers {
 			NaturalNumber newInstance_0_0_0_0 = ValuetypeFactory.eINSTANCE.createNaturalNumber();
 			newInstance_0_0.setLowerBound(newInstance_0_0_0_0);
 			Object value_0_0_0_0_0 = MumlOCLFactory
-					.getExpression(11, ValuetypePackage.eINSTANCE.getNaturalNumber(), null)
+					.getExpression(10, ValuetypePackage.eINSTANCE.getNaturalNumber(), null)
 					.evaluate(newInstance_0_0_0_0);
 
 			value_0_0_0_0_0 = MumlAbstractExpression.performCast(value_0_0_0_0_0, EcorePackage.eINSTANCE.getELong());
@@ -273,7 +249,7 @@ public class ElementInitializers {
 			NaturalNumber newInstance_0_0_1_0 = ValuetypeFactory.eINSTANCE.createNaturalNumber();
 			newInstance_0_0.setUpperBound(newInstance_0_0_1_0);
 			Object value_0_0_1_0_0 = MumlOCLFactory
-					.getExpression(12, ValuetypePackage.eINSTANCE.getNaturalNumber(), null)
+					.getExpression(11, ValuetypePackage.eINSTANCE.getNaturalNumber(), null)
 					.evaluate(newInstance_0_0_1_0);
 
 			value_0_0_1_0_0 = MumlAbstractExpression.performCast(value_0_0_1_0_0, EcorePackage.eINSTANCE.getELong());
@@ -293,7 +269,7 @@ public class ElementInitializers {
 					.createConnectorQualityOfServiceAssumptions();
 			instance.setConnectorQualityOfServiceAssumptions(newInstance_0_0);
 			Object value_0_0_0 = MumlOCLFactory
-					.getExpression(30, ProtocolPackage.eINSTANCE.getConnectorQualityOfServiceAssumptions(), null)
+					.getExpression(28, ProtocolPackage.eINSTANCE.getConnectorQualityOfServiceAssumptions(), null)
 					.evaluate(newInstance_0_0);
 			newInstance_0_0.setComment((String) value_0_0_0);
 			TimeValue newInstance_0_0_1_0 = ValuetypeFactory.eINSTANCE.createTimeValue();
@@ -301,22 +277,11 @@ public class ElementInitializers {
 			LiteralExpression newInstance_0_0_1_0_0_0 = CommonExpressionsFactory.eINSTANCE.createLiteralExpression();
 			newInstance_0_0_1_0.setValue(newInstance_0_0_1_0_0_0);
 			Object value_0_0_1_0_0_0_0 = MumlOCLFactory
-					.getExpression(31, CommonExpressionsPackage.eINSTANCE.getLiteralExpression(), null)
+					.getExpression(29, CommonExpressionsPackage.eINSTANCE.getLiteralExpression(), null)
 					.evaluate(newInstance_0_0_1_0_0_0);
 			newInstance_0_0_1_0_0_0.setValue((String) value_0_0_1_0_0_0_0);
 
 			newInstance_0_0_1_0.setUnit(TimeUnit.MILLISECONDS);
-
-			TimeValue newInstance_0_0_2_0 = ValuetypeFactory.eINSTANCE.createTimeValue();
-			newInstance_0_0.setMinMessageDelay(newInstance_0_0_2_0);
-			LiteralExpression newInstance_0_0_2_0_0_0 = CommonExpressionsFactory.eINSTANCE.createLiteralExpression();
-			newInstance_0_0_2_0.setValue(newInstance_0_0_2_0_0_0);
-			Object value_0_0_2_0_0_0_0 = MumlOCLFactory
-					.getExpression(32, CommonExpressionsPackage.eINSTANCE.getLiteralExpression(), null)
-					.evaluate(newInstance_0_0_2_0_0_0);
-			newInstance_0_0_2_0_0_0.setValue((String) value_0_0_2_0_0_0_0);
-
-			newInstance_0_0_2_0.setUnit(TimeUnit.MILLISECONDS);
 
 		} catch (RuntimeException e) {
 			MumlDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						

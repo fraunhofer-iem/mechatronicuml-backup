@@ -69,41 +69,6 @@
                     </initializers>
                   </newElementInitializers>
                 </initializers>
-                <initializers
-                    xsi:type="gmfmap:ReferenceNewElementSpec">
-                  <feature
-                      xsi:type="ecore:EReference"
-                      href="../../org.muml.pim/model/pim.ecore#//protocol/ConnectorQualityOfServiceAssumptions/minMessageDelay"/>
-                  <newElementInitializers>
-                    <initializers
-                        xsi:type="gmfmap:ReferenceNewElementSpec">
-                      <feature
-                          xsi:type="ecore:EReference"
-                          href="../../org.muml.pim/model/pim.ecore#//valuetype/TimeValue/value"/>
-                      <newElementInitializers>
-                        <initializers
-                            xsi:type="gmfmap:FeatureValueSpec">
-                          <feature
-                              xsi:type="ecore:EAttribute"
-                              href="../../org.muml.core/model/core.ecore#//expressions/common/LiteralExpression/value"/>
-                          <value
-                              body="'0'"/>
-                        </initializers>
-                        <elementClass
-                            href="../../org.muml.core/model/core.ecore#//expressions/common/LiteralExpression"/>
-                      </newElementInitializers>
-                    </initializers>
-                    <initializers
-                        xsi:type="gmfmap:FeatureValueSpec">
-                      <feature
-                          xsi:type="ecore:EAttribute"
-                          href="../../org.muml.pim/model/pim.ecore#//valuetype/TimeValue/unit"/>
-                      <value
-                          body="java.util.concurrent.TimeUnit.MILLISECONDS"
-                          language="literal"/>
-                    </initializers>
-                  </newElementInitializers>
-                </initializers>
               </newElementInitializers>
             </initializers>
             <elementClass
@@ -476,41 +441,6 @@
             <feature
                 xsi:type="ecore:EReference"
                 href="../../org.muml.pim/model/pim.ecore#//protocol/ConnectorQualityOfServiceAssumptions/maxMessageDelay"/>
-            <newElementInitializers>
-              <initializers
-                  xsi:type="gmfmap:ReferenceNewElementSpec">
-                <feature
-                    xsi:type="ecore:EReference"
-                    href="../../org.muml.pim/model/pim.ecore#//valuetype/TimeValue/value"/>
-                <newElementInitializers>
-                  <initializers
-                      xsi:type="gmfmap:FeatureValueSpec">
-                    <feature
-                        xsi:type="ecore:EAttribute"
-                        href="../../org.muml.core/model/core.ecore#//expressions/common/LiteralExpression/value"/>
-                    <value
-                        body="'0'"/>
-                  </initializers>
-                  <elementClass
-                      href="../../org.muml.core/model/core.ecore#//expressions/common/LiteralExpression"/>
-                </newElementInitializers>
-              </initializers>
-              <initializers
-                  xsi:type="gmfmap:FeatureValueSpec">
-                <feature
-                    xsi:type="ecore:EAttribute"
-                    href="../../org.muml.pim/model/pim.ecore#//valuetype/TimeValue/unit"/>
-                <value
-                    body="java.util.concurrent.TimeUnit.MILLISECONDS"
-                    language="literal"/>
-              </initializers>
-            </newElementInitializers>
-          </initializers>
-          <initializers
-              xsi:type="gmfmap:ReferenceNewElementSpec">
-            <feature
-                xsi:type="ecore:EReference"
-                href="../../org.muml.pim/model/pim.ecore#//protocol/ConnectorQualityOfServiceAssumptions/minMessageDelay"/>
             <newElementInitializers>
               <initializers
                   xsi:type="gmfmap:ReferenceNewElementSpec">

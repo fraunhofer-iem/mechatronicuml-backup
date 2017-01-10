@@ -50,9 +50,8 @@ public class MumlOCLFactory {
 	 * @generated
 	 */
 	protected MumlOCLFactory() {
-		this.expressions = new MumlAbstractExpression[24];
+		this.expressions = new MumlAbstractExpression[28];
 		this.expressionBodies = new String[] { "\'\'", //$NON-NLS-1$
-				"\'0\'", //$NON-NLS-1$
 				"\'0\'", //$NON-NLS-1$
 				"\'role1\'", //$NON-NLS-1$
 				"1", //$NON-NLS-1$
@@ -73,8 +72,13 @@ public class MumlOCLFactory {
 				"\'\'", //$NON-NLS-1$
 				"\'\'", //$NON-NLS-1$
 				"\'0\'", //$NON-NLS-1$
-				"\'0\'", //$NON-NLS-1$
 				"true -- self.oclAsType(pim::protocol::Role).coordinationProtocol = oppositeEnd.oclAsType(pim::protocol::Role).coordinationProtocol", //$NON-NLS-1$
+				"let prefix : String = self.oclType().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclContainer().oclContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+				"let prefix : String = self.oclType().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclContainer().oclContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+				"let prefix : String = self.oclType().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclContainer().oclContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+				"let prefix : String = self.oclType().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclContainer().oclContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+				"let prefix : String = self.oclType().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclContainer().oclContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+				"let prefix : String = self.oclType().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclContainer().oclContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
 		};
 	}
 
@@ -150,7 +154,6 @@ public class MumlOCLFactory {
 		public Expression(String body, EClassifier context, Map<String, EClassifier> environment) {
 			super(body, context);
 			pivotOclInstance = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
-			
 			try {
 				OCLHelper pivotHelper = pivotOclInstance.createOCLHelper(context);
 				pivotOclExpression = pivotHelper.createQuery(body());

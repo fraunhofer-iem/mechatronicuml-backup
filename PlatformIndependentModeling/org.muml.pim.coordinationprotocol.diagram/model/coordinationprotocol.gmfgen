@@ -77,6 +77,17 @@
             href="../../org.muml.pim/model/pim.genmodel#//pim/protocol/AbstractCoordinationSpecification/gmfAbstractCoordinationSpecification"/>
         <childMetaFeature
             href="../../org.muml.pim/model/pim.genmodel#//pim/protocol/AbstractCoordinationSpecification/gmfAbstractCoordinationSpecification"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.23">
+            <feature
+                href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
+          </initializers>
+          <elementClass
+              href="../../org.muml.pim/model/pim.genmodel#//pim/protocol/CoordinationProtocol"/>
+        </modelElementInitializer>
       </modelFacet>
       <labels
           visualID="5023"
@@ -157,7 +168,7 @@
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
-                      value="//@expressionProviders/@providers.0/@expressions.11">
+                      value="//@expressionProviders/@providers.0/@expressions.10">
                     <feature
                         href="../../org.muml.pim/model/pim.genmodel#//pim/valuetype/NaturalNumber/value"/>
                   </initializers>
@@ -170,7 +181,7 @@
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
-                      value="//@expressionProviders/@providers.0/@expressions.12">
+                      value="//@expressionProviders/@providers.0/@expressions.11">
                     <feature
                         href="../../org.muml.pim/model/pim.genmodel#//pim/valuetype/NaturalNumber/value"/>
                   </initializers>
@@ -179,6 +190,12 @@
               <elementClass
                   href="../../org.muml.pim/model/pim.genmodel#//pim/valuetype/Cardinality"/>
             </newElementInitializers>
+          </initializers>
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.24">
+            <feature
+                href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
         </modelElementInitializer>
       </modelFacet>
@@ -232,6 +249,17 @@
             href="../../org.muml.pim/model/pim.genmodel#//pim/protocol/AbstractCoordinationSpecification/gmfMessageBuffers"/>
         <childMetaFeature
             href="../../org.muml.pim/model/pim.genmodel#//pim/protocol/AbstractCoordinationSpecification/gmfMessageBuffers"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.25">
+            <feature
+                href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
+          </initializers>
+          <elementClass
+              href="../../org.muml.pim/model/pim.genmodel#//pim/connector/MessageBuffer"/>
+        </modelElementInitializer>
       </modelFacet>
       <labels
           visualID="5018"
@@ -327,6 +355,17 @@
             href="../../org.muml.pim/model/pim.genmodel#//pim/connector/MessageBuffer/gmfMessageTypes"/>
         <childMetaFeature
             href="../../org.muml.pim/model/pim.genmodel#//pim/connector/MessageBuffer/gmfMessageTypes"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.26">
+            <feature
+                href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
+          </initializers>
+          <elementClass
+              href="../../org.muml.pim/model/pim.genmodel#//pim/msgtype/MessageType"/>
+        </modelElementInitializer>
       </modelFacet>
       <labels
           visualID="5010"
@@ -379,6 +418,17 @@
             href="../../org.muml.pim/model/pim.genmodel#//pim/msgtype/MessageType/parameters"/>
         <childMetaFeature
             href="../../org.muml.pim/model/pim.genmodel#//pim/msgtype/MessageType/parameters"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.27">
+            <feature
+                href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
+          </initializers>
+          <elementClass
+              href="../../org.muml.pim/model/pim.genmodel#//pim/behavior/Parameter"/>
+        </modelElementInitializer>
       </modelFacet>
       <labels
           visualID="5024"
@@ -540,34 +590,6 @@
                       </initializers>
                     </newElementInitializers>
                   </initializers>
-                  <initializers
-                      xsi:type="gmfgen:GenReferenceNewElementSpec">
-                    <feature
-                        href="../../org.muml.pim/model/pim.genmodel#//pim/protocol/ConnectorQualityOfServiceAssumptions/minMessageDelay"/>
-                    <newElementInitializers>
-                      <initializers
-                          xsi:type="gmfgen:GenReferenceNewElementSpec">
-                        <feature
-                            href="../../org.muml.pim/model/pim.genmodel#//pim/valuetype/TimeValue/value"/>
-                        <newElementInitializers>
-                          <initializers
-                              xsi:type="gmfgen:GenFeatureValueSpec"
-                              value="//@expressionProviders/@providers.0/@expressions.2">
-                            <feature
-                                href="../../org.muml.core/model/core.genmodel#//core/expressions/common/LiteralExpression/value"/>
-                          </initializers>
-                          <elementClass
-                              href="../../org.muml.core/model/core.genmodel#//core/expressions/common/LiteralExpression"/>
-                        </newElementInitializers>
-                      </initializers>
-                      <initializers
-                          xsi:type="gmfgen:GenFeatureValueSpec"
-                          value="//@expressionProviders/@providers.1/@expressions.1">
-                        <feature
-                            href="../../org.muml.pim/model/pim.genmodel#//pim/valuetype/TimeValue/unit"/>
-                      </initializers>
-                    </newElementInitializers>
-                  </initializers>
                 </newElementInitializers>
               </initializers>
               <elementClass
@@ -581,7 +603,7 @@
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.3">
+                  value="//@expressionProviders/@providers.0/@expressions.2">
                 <feature
                     href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
               </initializers>
@@ -594,6 +616,19 @@
                       xsi:type="gmfgen:GenReferenceNewElementSpec">
                     <feature
                         href="../../org.muml.pim/model/pim.genmodel#//pim/valuetype/Cardinality/lowerBound"/>
+                    <newElementInitializers>
+                      <initializers
+                          xsi:type="gmfgen:GenFeatureValueSpec"
+                          value="//@expressionProviders/@providers.0/@expressions.3">
+                        <feature
+                            href="../../org.muml.pim/model/pim.genmodel#//pim/valuetype/NaturalNumber/value"/>
+                      </initializers>
+                    </newElementInitializers>
+                  </initializers>
+                  <initializers
+                      xsi:type="gmfgen:GenReferenceNewElementSpec">
+                    <feature
+                        href="../../org.muml.pim/model/pim.genmodel#//pim/valuetype/Cardinality/upperBound"/>
                     <newElementInitializers>
                       <initializers
                           xsi:type="gmfgen:GenFeatureValueSpec"
@@ -603,26 +638,13 @@
                       </initializers>
                     </newElementInitializers>
                   </initializers>
-                  <initializers
-                      xsi:type="gmfgen:GenReferenceNewElementSpec">
-                    <feature
-                        href="../../org.muml.pim/model/pim.genmodel#//pim/valuetype/Cardinality/upperBound"/>
-                    <newElementInitializers>
-                      <initializers
-                          xsi:type="gmfgen:GenFeatureValueSpec"
-                          value="//@expressionProviders/@providers.0/@expressions.5">
-                        <feature
-                            href="../../org.muml.pim/model/pim.genmodel#//pim/valuetype/NaturalNumber/value"/>
-                      </initializers>
-                    </newElementInitializers>
-                  </initializers>
                   <elementClass
                       href="../../org.muml.pim/model/pim.genmodel#//pim/valuetype/Cardinality"/>
                 </newElementInitializers>
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.6">
+                  value="//@expressionProviders/@providers.0/@expressions.5">
                 <feature
                     href="../../org.muml.pim/model/pim.genmodel#//pim/connector/ConnectorEndpoint/connectors"/>
               </initializers>
@@ -632,7 +654,7 @@
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.7">
+                  value="//@expressionProviders/@providers.0/@expressions.6">
                 <feature
                     href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
               </initializers>
@@ -648,7 +670,7 @@
                     <newElementInitializers>
                       <initializers
                           xsi:type="gmfgen:GenFeatureValueSpec"
-                          value="//@expressionProviders/@providers.0/@expressions.8">
+                          value="//@expressionProviders/@providers.0/@expressions.7">
                         <feature
                             href="../../org.muml.pim/model/pim.genmodel#//pim/valuetype/NaturalNumber/value"/>
                       </initializers>
@@ -661,7 +683,7 @@
                     <newElementInitializers>
                       <initializers
                           xsi:type="gmfgen:GenFeatureValueSpec"
-                          value="//@expressionProviders/@providers.0/@expressions.9">
+                          value="//@expressionProviders/@providers.0/@expressions.8">
                         <feature
                             href="../../org.muml.pim/model/pim.genmodel#//pim/valuetype/NaturalNumber/value"/>
                       </initializers>
@@ -673,11 +695,17 @@
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.10">
+                  value="//@expressionProviders/@providers.0/@expressions.9">
                 <feature
                     href="../../org.muml.pim/model/pim.genmodel#//pim/connector/ConnectorEndpoint/connectors"/>
               </initializers>
             </newElementInitializers>
+          </initializers>
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.22">
+            <feature
+                href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
         </modelElementInitializer>
       </modelFacet>
@@ -735,7 +763,7 @@
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.20">
+                  value="//@expressionProviders/@providers.0/@expressions.19">
                 <feature
                     href="../../org.muml.core/model/core.genmodel#//core/CommentableElement/comment"/>
               </initializers>
@@ -751,7 +779,7 @@
                     <newElementInitializers>
                       <initializers
                           xsi:type="gmfgen:GenFeatureValueSpec"
-                          value="//@expressionProviders/@providers.0/@expressions.21">
+                          value="//@expressionProviders/@providers.0/@expressions.20">
                         <feature
                             href="../../org.muml.core/model/core.genmodel#//core/expressions/common/LiteralExpression/value"/>
                       </initializers>
@@ -761,35 +789,7 @@
                   </initializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
-                      value="//@expressionProviders/@providers.1/@expressions.2">
-                    <feature
-                        href="../../org.muml.pim/model/pim.genmodel#//pim/valuetype/TimeValue/unit"/>
-                  </initializers>
-                </newElementInitializers>
-              </initializers>
-              <initializers
-                  xsi:type="gmfgen:GenReferenceNewElementSpec">
-                <feature
-                    href="../../org.muml.pim/model/pim.genmodel#//pim/protocol/ConnectorQualityOfServiceAssumptions/minMessageDelay"/>
-                <newElementInitializers>
-                  <initializers
-                      xsi:type="gmfgen:GenReferenceNewElementSpec">
-                    <feature
-                        href="../../org.muml.pim/model/pim.genmodel#//pim/valuetype/TimeValue/value"/>
-                    <newElementInitializers>
-                      <initializers
-                          xsi:type="gmfgen:GenFeatureValueSpec"
-                          value="//@expressionProviders/@providers.0/@expressions.22">
-                        <feature
-                            href="../../org.muml.core/model/core.genmodel#//core/expressions/common/LiteralExpression/value"/>
-                      </initializers>
-                      <elementClass
-                          href="../../org.muml.core/model/core.genmodel#//core/expressions/common/LiteralExpression"/>
-                    </newElementInitializers>
-                  </initializers>
-                  <initializers
-                      xsi:type="gmfgen:GenFeatureValueSpec"
-                      value="//@expressionProviders/@providers.1/@expressions.3">
+                      value="//@expressionProviders/@providers.1/@expressions.1">
                     <feature
                         href="../../org.muml.pim/model/pim.genmodel#//pim/valuetype/TimeValue/unit"/>
                   </initializers>
@@ -804,7 +804,7 @@
             href="../../org.muml.pim/model/pim.genmodel#//pim/connector/Connector/connectorEndpoints"/>
       </modelFacet>
       <creationConstraints
-          targetEnd="//@expressionProviders/@providers.0/@expressions.23"/>
+          targetEnd="//@expressionProviders/@providers.0/@expressions.21"/>
     </links>
     <links
         visualID="4008"
@@ -1077,8 +1077,6 @@
       <expressions
           body="'0'"/>
       <expressions
-          body="'0'"/>
-      <expressions
           body="'role1'"/>
       <expressions
           body="1"/>
@@ -1117,17 +1115,23 @@
       <expressions
           body="'0'"/>
       <expressions
-          body="'0'"/>
-      <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="self.oclAsType(pim::protocol::Role).coordinationProtocol = oppositeEnd.oclAsType(pim::protocol::Role).coordinationProtocol"/>
+          body="true -- self.oclAsType(pim::protocol::Role).coordinationProtocol = oppositeEnd.oclAsType(pim::protocol::Role).coordinationProtocol"/>
+      <expressions
+          body="let prefix : String = self.oclType().name.substring(1, 1) in&#xA;let number : String = OrderedSet { 1 }->closure(e | &#xA;&#x9;let provisionalName : String = prefix.concat(e.toString()) in&#xA;&#x9;if self.oclContainer().oclContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then&#xA;&#x9;&#x9;e + 1&#xA;&#x9;else&#xA;&#x9;&#x9;e&#xA;&#x9;endif&#xA;)->sortedBy(e | e)->last().toString() in prefix.concat(number)"/>
+      <expressions
+          body="let prefix : String = self.oclType().name.substring(1, 1) in&#xA;let number : String = OrderedSet { 1 }->closure(e | &#xA;&#x9;let provisionalName : String = prefix.concat(e.toString()) in&#xA;&#x9;if self.oclContainer().oclContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then&#xA;&#x9;&#x9;e + 1&#xA;&#x9;else&#xA;&#x9;&#x9;e&#xA;&#x9;endif&#xA;)->sortedBy(e | e)->last().toString() in prefix.concat(number)"/>
+      <expressions
+          body="let prefix : String = self.oclType().name.substring(1, 1) in&#xA;let number : String = OrderedSet { 1 }->closure(e | &#xA;&#x9;let provisionalName : String = prefix.concat(e.toString()) in&#xA;&#x9;if self.oclContainer().oclContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then&#xA;&#x9;&#x9;e + 1&#xA;&#x9;else&#xA;&#x9;&#x9;e&#xA;&#x9;endif&#xA;)->sortedBy(e | e)->last().toString() in prefix.concat(number)"/>
+      <expressions
+          body="let prefix : String = self.oclType().name.substring(1, 1) in&#xA;let number : String = OrderedSet { 1 }->closure(e | &#xA;&#x9;let provisionalName : String = prefix.concat(e.toString()) in&#xA;&#x9;if self.oclContainer().oclContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then&#xA;&#x9;&#x9;e + 1&#xA;&#x9;else&#xA;&#x9;&#x9;e&#xA;&#x9;endif&#xA;)->sortedBy(e | e)->last().toString() in prefix.concat(number)"/>
+      <expressions
+          body="let prefix : String = self.oclType().name.substring(1, 1) in&#xA;let number : String = OrderedSet { 1 }->closure(e | &#xA;&#x9;let provisionalName : String = prefix.concat(e.toString()) in&#xA;&#x9;if self.oclContainer().oclContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then&#xA;&#x9;&#x9;e + 1&#xA;&#x9;else&#xA;&#x9;&#x9;e&#xA;&#x9;endif&#xA;)->sortedBy(e | e)->last().toString() in prefix.concat(number)"/>
+      <expressions
+          body="let prefix : String = self.oclType().name.substring(1, 1) in&#xA;let number : String = OrderedSet { 1 }->closure(e | &#xA;&#x9;let provisionalName : String = prefix.concat(e.toString()) in&#xA;&#x9;if self.oclContainer().oclContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then&#xA;&#x9;&#x9;e + 1&#xA;&#x9;else&#xA;&#x9;&#x9;e&#xA;&#x9;endif&#xA;)->sortedBy(e | e)->last().toString() in prefix.concat(number)"/>
     </providers>
     <providers
         xsi:type="gmfgen:GenLiteralExpressionProvider">
-      <expressions
-          body="java.util.concurrent.TimeUnit.MILLISECONDS"/>
-      <expressions
-          body="java.util.concurrent.TimeUnit.MILLISECONDS"/>
       <expressions
           body="java.util.concurrent.TimeUnit.MILLISECONDS"/>
       <expressions
@@ -1143,8 +1147,8 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.4/@labels.0/@modelFacet"
         className="ParameterLabelExpressionLabelParser5024"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.13"
-        editExpression="//@expressionProviders/@providers.0/@expressions.14">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.12"
+        editExpression="//@expressionProviders/@providers.0/@expressions.13">
       <expressionContext
           href="../../org.muml.pim/model/pim.genmodel#//pim/behavior/Parameter"/>
     </implementations>
@@ -1152,7 +1156,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.2/@labels.0/@modelFacet"
         className="MessageBufferLabelExpressionLabelParser5018"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.15">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.14">
       <expressionContext
           href="../../org.muml.pim/model/pim.genmodel#//pim/connector/MessageBuffer"/>
     </implementations>
@@ -1160,7 +1164,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.2/@labels.1/@modelFacet"
         className="MessageBufferLabelExpressionLabelParser5019"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.16">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.15">
       <expressionContext
           href="../../org.muml.pim/model/pim.genmodel#//pim/connector/MessageBuffer"/>
     </implementations>
@@ -1168,7 +1172,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.2/@labels.2/@modelFacet"
         className="MessageBufferLabelExpressionLabelParser5025"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.17">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.16">
       <expressionContext
           href="../../org.muml.pim/model/pim.genmodel#//pim/connector/MessageBuffer"/>
     </implementations>
@@ -1176,7 +1180,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.5/@labels.0/@modelFacet"
         className="ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5020"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.18">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.17">
       <expressionContext
           href="../../org.muml.pim/model/pim.genmodel#//pim/protocol/ConnectorQualityOfServiceAssumptions"/>
     </implementations>
@@ -1184,7 +1188,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.5/@labels.1/@modelFacet"
         className="ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5021"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.19">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.18">
       <expressionContext
           href="../../org.muml.pim/model/pim.genmodel#//pim/protocol/ConnectorQualityOfServiceAssumptions"/>
     </implementations>

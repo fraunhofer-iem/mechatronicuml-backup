@@ -38,9 +38,8 @@ public class MumlOCLFactory {
 	* @generated
 	*/
 	protected MumlOCLFactory() {
-		this.expressions = new MumlAbstractExpression[34];
+		this.expressions = new MumlAbstractExpression[31];
 		this.expressionBodies = new String[] { "\'\'", //$NON-NLS-1$
-				"\'0\'", //$NON-NLS-1$
 				"\'0\'", //$NON-NLS-1$
 				"\'role1\'", //$NON-NLS-1$
 				"1", //$NON-NLS-1$
@@ -68,9 +67,7 @@ public class MumlOCLFactory {
 				"OrderedSet { self.coordinationProtocol.roles->first(), self.coordinationProtocol.roles->last() }", //$NON-NLS-1$
 				"\'\'", //$NON-NLS-1$
 				"\'0\'", //$NON-NLS-1$
-				"\'0\'", //$NON-NLS-1$
 				"\'\'", //$NON-NLS-1$
-				"\'0\'", //$NON-NLS-1$
 				"\'0\'", //$NON-NLS-1$
 				"true -- self.oclAsType(pim::protocol::Role).coordinationProtocol = oppositeEnd.oclAsType(pim::protocol::Role).coordinationProtocol", //$NON-NLS-1$
 		};
@@ -148,7 +145,6 @@ public class MumlOCLFactory {
 		public Expression(String body, EClassifier context, Map<String, EClassifier> environment) {
 			super(body, context);
 			pivotOclInstance = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
-			
 			try {
 				OCLHelper pivotHelper = pivotOclInstance.createOCLHelper(context);
 				pivotOclExpression = pivotHelper.createQuery(body());

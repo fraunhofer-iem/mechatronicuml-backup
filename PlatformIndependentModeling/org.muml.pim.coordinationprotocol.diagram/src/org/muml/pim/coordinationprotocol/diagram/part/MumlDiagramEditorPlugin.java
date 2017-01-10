@@ -48,6 +48,7 @@ import org.muml.pim.pattern.provider.PatternItemProviderAdapterFactory;
 import org.muml.pim.protocol.provider.ProtocolItemProviderAdapterFactory;
 import org.muml.pim.provider.PimItemProviderAdapterFactory;
 import org.muml.pim.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory;
+import org.muml.pim.runnable.provider.RunnableItemProviderAdapterFactory;
 import org.muml.pim.types.provider.TypesItemProviderAdapterFactory;
 import org.muml.pim.valuetype.provider.ValuetypeItemProviderAdapterFactory;
 import org.osgi.framework.BundleContext;
@@ -175,6 +176,7 @@ public class MumlDiagramEditorPlugin extends AbstractUIPlugin {
 		factories.add(new BehaviorItemProviderAdapterFactory());
 		factories.add(new ComponentItemProviderAdapterFactory());
 		factories.add(new PatternItemProviderAdapterFactory());
+		factories.add(new RunnableItemProviderAdapterFactory());
 		factories.add(new CoreItemProviderAdapterFactory());
 		factories.add(new ExpressionsItemProviderAdapterFactory());
 		factories.add(new CommonExpressionsItemProviderAdapterFactory());

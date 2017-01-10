@@ -51,7 +51,7 @@ public class ParameterLabelExpressionLabelParser5024 extends ExpressionLabelPars
 	 */
 	@Override
 	protected String getExpressionBody() {
-		return MumlOCLFactory.getExpression(13, BehaviorPackage.eINSTANCE.getParameter(), null).body();
+		return MumlOCLFactory.getExpression(12, BehaviorPackage.eINSTANCE.getParameter(), null).body();
 	}
 
 	/**
@@ -59,7 +59,7 @@ public class ParameterLabelExpressionLabelParser5024 extends ExpressionLabelPars
 	 */
 	public String getEditString(IAdaptable element, int flags) {
 		EObject target = (EObject) element.getAdapter(EObject.class);
-		Object result = MumlOCLFactory.getExpression(14, BehaviorPackage.eINSTANCE.getParameter(), null)
+		Object result = MumlOCLFactory.getExpression(13, BehaviorPackage.eINSTANCE.getParameter(), null)
 				.evaluate(target);
 		return String.valueOf(result);
 	}
