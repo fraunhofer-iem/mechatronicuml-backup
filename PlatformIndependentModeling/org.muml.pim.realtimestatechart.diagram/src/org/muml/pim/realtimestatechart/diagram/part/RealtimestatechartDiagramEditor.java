@@ -55,6 +55,8 @@ import org.eclipse.ui.navigator.resources.ProjectExplorer;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.IShowInTargetList;
 import org.eclipse.ui.part.ShowInContext;
+import org.muml.common.editingdomain.EditingDomainPlugin;
+import org.muml.common.editingdomain.initialize.IEditingDomainInitializer;
 import org.muml.pim.realtimestatechart.diagram.navigator.MumlNavigatorItem;
 
 /**
@@ -301,7 +303,7 @@ public class RealtimestatechartDiagramEditor extends DiagramDocumentEditor imple
 	@Override
 	public void setInput(IEditorInput input) {
 		super.setInput(input);
-		for (org.muml.common.editingdomain.initialize.IEditingDomainInitializer init : org.muml.common.editingdomain.EditingDomainPlugin.getEditingDomainInitializers()) {
+		for (IEditingDomainInitializer init : EditingDomainPlugin.getEditingDomainInitializers()) {
 			init.initialize(getEditingDomain());
 		}
 	}

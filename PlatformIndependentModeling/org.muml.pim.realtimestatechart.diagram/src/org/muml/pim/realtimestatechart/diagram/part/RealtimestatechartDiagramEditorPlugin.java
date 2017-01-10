@@ -48,6 +48,7 @@ import org.muml.pim.realtimestatechart.diagram.edit.policies.MumlBaseItemSemanti
 import org.muml.pim.realtimestatechart.diagram.expressions.MumlOCLFactory;
 import org.muml.pim.realtimestatechart.diagram.providers.ElementInitializers;
 import org.muml.pim.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory;
+import org.muml.pim.runnable.provider.RunnableItemProviderAdapterFactory;
 import org.muml.pim.types.provider.TypesItemProviderAdapterFactory;
 import org.muml.pim.valuetype.provider.ValuetypeItemProviderAdapterFactory;
 import org.osgi.framework.BundleContext;
@@ -175,6 +176,7 @@ public class RealtimestatechartDiagramEditorPlugin extends AbstractUIPlugin {
 		factories.add(new BehaviorItemProviderAdapterFactory());
 		factories.add(new ComponentItemProviderAdapterFactory());
 		factories.add(new PatternItemProviderAdapterFactory());
+		factories.add(new RunnableItemProviderAdapterFactory());
 		factories.add(new CoreItemProviderAdapterFactory());
 		factories.add(new ExpressionsItemProviderAdapterFactory());
 		factories.add(new CommonExpressionsItemProviderAdapterFactory());

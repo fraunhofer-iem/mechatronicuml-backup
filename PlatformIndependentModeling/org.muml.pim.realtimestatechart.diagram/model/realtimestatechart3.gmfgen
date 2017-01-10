@@ -36,7 +36,6 @@
         visualID="3032"
         editPartClassName="StateEditPart"
         itemSemanticEditPolicyClassName="StateItemSemanticEditPolicy"
-        notationViewFactoryClassName="StateViewFactory"
         canonicalEditPolicyClassName="StateCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.8 //@diagram/@childNodes.9"
         compartments="//@diagram/@compartments.1 //@diagram/@compartments.2 //@diagram/@compartments.3 //@diagram/@compartments.4"
@@ -58,12 +57,12 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="org.muml.pim.common.edit.policies.EditPolicyRoles.STATE_VISUALIZATION_ROLE"
-          editPolicyQualifiedClassName="org.muml.pim.common.edit.policies.statechart.StateEditPolicy"/>
-      <behaviour
-          xsi:type="gmfgen:CustomBehaviour"
           key="org.muml.pim.common.edit.policies.EditPolicyRoles.STATE_COLOR_ROLE"
           editPolicyQualifiedClassName="org.muml.pim.realtimestatechart.diagram.edit.policies.statechart.StateColorEditPolicy"/>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="org.muml.pim.common.edit.policies.EditPolicyRoles.STATE_VISUALIZATION_ROLE"
+          editPolicyQualifiedClassName="org.muml.pim.common.edit.policies.statechart.StateEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/State"/>
@@ -75,17 +74,18 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.20">
+              value="//@expressionProviders/@providers.0/@expressions.19">
             <feature
                 href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
+          <elementClass
+              href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/State"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
           visualID="5060"
           editPartClassName="StateNameEditPart"
-          itemSemanticEditPolicyClassName="StateNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="StateNameViewFactory">
+          itemSemanticEditPolicyClassName="StateNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -108,7 +108,6 @@
         visualID="3033"
         editPartClassName="EntryEventEditPart"
         itemSemanticEditPolicyClassName="EntryEventItemSemanticEditPolicy"
-        notationViewFactoryClassName="EntryEventViewFactory"
         canonicalEditPolicyClassName="EntryEventCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="EntryEventGraphicalNodeEditPolicy"
         createCommandClassName="EntryEventCreateCommand"
@@ -139,7 +138,6 @@
           visualID="5050"
           editPartClassName="WrappingLabel2EditPart"
           itemSemanticEditPolicyClassName="WrappingLabel2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="EntryEventLabelViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -160,7 +158,6 @@
         visualID="3034"
         editPartClassName="DoEventEditPart"
         itemSemanticEditPolicyClassName="DoEventItemSemanticEditPolicy"
-        notationViewFactoryClassName="DoEventViewFactory"
         canonicalEditPolicyClassName="DoEventCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="DoEventGraphicalNodeEditPolicy"
         createCommandClassName="DoEventCreateCommand"
@@ -207,7 +204,6 @@
           visualID="5051"
           editPartClassName="WrappingLabel3EditPart"
           itemSemanticEditPolicyClassName="WrappingLabel3ItemSemanticEditPolicy"
-          notationViewFactoryClassName="DoEventLabelViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -228,7 +224,6 @@
         visualID="3035"
         editPartClassName="ExitEventEditPart"
         itemSemanticEditPolicyClassName="ExitEventItemSemanticEditPolicy"
-        notationViewFactoryClassName="ExitEventViewFactory"
         canonicalEditPolicyClassName="ExitEventCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="ExitEventGraphicalNodeEditPolicy"
         createCommandClassName="ExitEventCreateCommand"
@@ -259,7 +254,6 @@
           visualID="5052"
           editPartClassName="WrappingLabel4EditPart"
           itemSemanticEditPolicyClassName="WrappingLabel4ItemSemanticEditPolicy"
-          notationViewFactoryClassName="ExitEventLabelViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -280,7 +274,6 @@
         visualID="3036"
         editPartClassName="ClockConstraintEditPart"
         itemSemanticEditPolicyClassName="ClockConstraintItemSemanticEditPolicy"
-        notationViewFactoryClassName="ClockConstraintViewFactory"
         canonicalEditPolicyClassName="ClockConstraintCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="ClockConstraintGraphicalNodeEditPolicy"
         createCommandClassName="ClockConstraintCreateCommand"
@@ -315,7 +308,6 @@
           visualID="5053"
           editPartClassName="WrappingLabel5EditPart"
           itemSemanticEditPolicyClassName="WrappingLabel5ItemSemanticEditPolicy"
-          notationViewFactoryClassName="ClockConstraintLabelViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -336,7 +328,6 @@
         visualID="3037"
         editPartClassName="SynchronizationChannelEditPart"
         itemSemanticEditPolicyClassName="SynchronizationChannelItemSemanticEditPolicy"
-        notationViewFactoryClassName="SynchronizationChannelViewFactory"
         canonicalEditPolicyClassName="SynchronizationChannelCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="SynchronizationChannelGraphicalNodeEditPolicy"
         createCommandClassName="SynchronizationChannelCreateCommand"
@@ -370,17 +361,18 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.21">
+              value="//@expressionProviders/@providers.0/@expressions.20">
             <feature
                 href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
+          <elementClass
+              href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/SynchronizationChannel"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
           visualID="5054"
           editPartClassName="WrappingLabel6EditPart"
           itemSemanticEditPolicyClassName="WrappingLabel6ItemSemanticEditPolicy"
-          notationViewFactoryClassName="SynchronizationChannelLabelViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -401,7 +393,6 @@
         visualID="3042"
         editPartClassName="RegionEditPart"
         itemSemanticEditPolicyClassName="RegionItemSemanticEditPolicy"
-        notationViewFactoryClassName="RegionViewFactory"
         canonicalEditPolicyClassName="RegionCanonicalEditPolicy"
         compartments="//@diagram/@compartments.5"
         graphicalNodeEditPolicyClassName="RegionGraphicalNodeEditPolicy"
@@ -471,9 +462,8 @@
       </modelFacet>
       <labels
           visualID="5063"
-          editPartClassName="RegionNameEditPart"
-          itemSemanticEditPolicyClassName="RegionNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="RegionNameViewFactory">
+          editPartClassName="WrappingLabel7EditPart"
+          itemSemanticEditPolicyClassName="WrappingLabel7ItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -491,8 +481,7 @@
       <labels
           visualID="5064"
           editPartClassName="RegionPriorityEditPart"
-          itemSemanticEditPolicyClassName="RegionPriorityItemSemanticEditPolicy"
-          notationViewFactoryClassName="RegionPriorityViewFactory">
+          itemSemanticEditPolicyClassName="RegionPriorityItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -513,9 +502,8 @@
       </labels>
       <labels
           visualID="5065"
-          editPartClassName="WrappingLabel7EditPart"
-          itemSemanticEditPolicyClassName="WrappingLabel7ItemSemanticEditPolicy"
-          notationViewFactoryClassName="RegionLabelViewFactory"
+          editPartClassName="WrappingLabel8EditPart"
+          itemSemanticEditPolicyClassName="WrappingLabel8ItemSemanticEditPolicy"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -532,7 +520,6 @@
         visualID="3043"
         editPartClassName="RealtimeStatechart2EditPart"
         itemSemanticEditPolicyClassName="RealtimeStatechart2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="RealtimeStatechartViewFactory"
         canonicalEditPolicyClassName="RealtimeStatechart2CanonicalEditPolicy"
         compartments="//@diagram/@compartments.6"
         graphicalNodeEditPolicyClassName="RealtimeStatechart2GraphicalNodeEditPolicy"
@@ -577,7 +564,7 @@
           </initializers>
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.22">
+              value="//@expressionProviders/@providers.0/@expressions.21">
             <feature
                 href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -589,7 +576,6 @@
         visualID="3040"
         editPartClassName="EntryPointEditPart"
         itemSemanticEditPolicyClassName="EntryPointItemSemanticEditPolicy"
-        notationViewFactoryClassName="EntryPointViewFactory"
         canonicalEditPolicyClassName="EntryPointCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="EntryPointGraphicalNodeEditPolicy"
         createCommandClassName="EntryPointCreateCommand"
@@ -612,6 +598,7 @@
           xsi:type="gmfgen:CustomBehaviour"
           key="org.muml.pim.common.edit.policies.EditPolicyRoles.CONNECTION_POINT_VISUALIZATION_ROLE"
           editPolicyQualifiedClassName="org.muml.pim.common.edit.policies.ports.ConnectionPointEditPolicy"/>
+      
       <modelFacet>
         <metaClass
             href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/EntryPoint"/>
@@ -623,10 +610,12 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.23">
+              value="//@expressionProviders/@providers.0/@expressions.22">
             <feature
                 href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
+          <elementClass
+              href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/EntryPoint"/>
         </modelElementInitializer>
       </modelFacet>
     </childNodes>
@@ -635,7 +624,6 @@
         visualID="3041"
         editPartClassName="ExitPointEditPart"
         itemSemanticEditPolicyClassName="ExitPointItemSemanticEditPolicy"
-        notationViewFactoryClassName="ExitPointViewFactory"
         canonicalEditPolicyClassName="ExitPointCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="ExitPointGraphicalNodeEditPolicy"
         createCommandClassName="ExitPointCreateCommand"
@@ -670,10 +658,12 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.24">
+              value="//@expressionProviders/@providers.0/@expressions.23">
             <feature
                 href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
+          <elementClass
+              href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/ExitPoint"/>
         </modelElementInitializer>
       </modelFacet>
     </childNodes>
@@ -681,7 +671,6 @@
         visualID="2007"
         editPartClassName="RealtimeStatechartEditPart"
         itemSemanticEditPolicyClassName="RealtimeStatechartItemSemanticEditPolicy"
-        notationViewFactoryClassName="RealtimeStatechartViewFactory"
         canonicalEditPolicyClassName="RealtimeStatechartCanonicalEditPolicy"
         compartments="//@diagram/@compartments.0"
         graphicalNodeEditPolicyClassName="RealtimeStatechartGraphicalNodeEditPolicy"
@@ -702,17 +691,18 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.19">
+              value="//@expressionProviders/@providers.0/@expressions.18">
             <feature
                 href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
+          <elementClass
+              href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/RealtimeStatechart"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
           visualID="5061"
           editPartClassName="RealtimeStatechartNameEditPart"
-          itemSemanticEditPolicyClassName="RealtimeStatechartNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="RealtimeStatechartNameViewFactory">
+          itemSemanticEditPolicyClassName="RealtimeStatechartNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -734,7 +724,6 @@
           visualID="5062"
           editPartClassName="WrappingLabelEditPart"
           itemSemanticEditPolicyClassName="WrappingLabelItemSemanticEditPolicy"
-          notationViewFactoryClassName="RealtimeStatechartLabelViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -751,7 +740,6 @@
         visualID="4003"
         editPartClassName="TransitionEditPart"
         itemSemanticEditPolicyClassName="TransitionItemSemanticEditPolicy"
-        notationViewFactoryClassName="TransitionViewFactory"
         createCommandClassName="TransitionCreateCommand"
         reorientCommandClassName="TransitionReorientCommand">
       <diagramRunTimeClass
@@ -779,7 +767,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.15">
+              value="//@expressionProviders/@providers.0/@expressions.14">
             <feature
                 href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/PrioritizedElement/priority"/>
           </initializers>
@@ -791,9 +779,8 @@
       </modelFacet>
       <labels
           visualID="6005"
-          editPartClassName="WrappingLabel8EditPart"
-          itemSemanticEditPolicyClassName="WrappingLabel8ItemSemanticEditPolicy"
-          notationViewFactoryClassName="TransitionLabelViewFactory"
+          editPartClassName="WrappingLabel9EditPart"
+          itemSemanticEditPolicyClassName="WrappingLabel9ItemSemanticEditPolicy"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -815,9 +802,8 @@
       </labels>
       <labels
           visualID="6006"
-          editPartClassName="WrappingLabel9EditPart"
-          itemSemanticEditPolicyClassName="WrappingLabel9ItemSemanticEditPolicy"
-          notationViewFactoryClassName="TransitionLabelViewFactory"
+          editPartClassName="WrappingLabel10EditPart"
+          itemSemanticEditPolicyClassName="WrappingLabel10ItemSemanticEditPolicy"
           readOnly="true"
           alignment="SOURCE">
         <diagramRunTimeClass
@@ -836,13 +822,12 @@
             parser="//@labelParsers/@implementations.10"/>
       </labels>
       <creationConstraints
-          sourceEnd="//@expressionProviders/@providers.0/@expressions.18"/>
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.17"/>
     </links>
     <compartments
         visualID="7030"
         editPartClassName="RealtimeStatechartStatechartContentsCompartmentEditPart"
         itemSemanticEditPolicyClassName="RealtimeStatechartStatechartContentsCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="RealtimeStatechartStatechartContentsCompartmentViewFactory"
         canonicalEditPolicyClassName="RealtimeStatechartStatechartContentsCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.0"
         title="StatechartContentsCompartment"
@@ -861,7 +846,6 @@
         visualID="7031"
         editPartClassName="StateActionCompartmentEditPart"
         itemSemanticEditPolicyClassName="StateActionCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="StateActionCompartmentViewFactory"
         canonicalEditPolicyClassName="StateActionCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.1 //@diagram/@childNodes.2 //@diagram/@childNodes.3"
         title="ActionCompartment"
@@ -879,7 +863,6 @@
         visualID="7032"
         editPartClassName="StateRegionCompartmentEditPart"
         itemSemanticEditPolicyClassName="StateRegionCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="StateRegionCompartmentViewFactory"
         canonicalEditPolicyClassName="StateRegionCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.6"
         title="RegionCompartment"
@@ -901,7 +884,6 @@
         visualID="7033"
         editPartClassName="StateChannelCompartmentEditPart"
         itemSemanticEditPolicyClassName="StateChannelCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="StateChannelCompartmentViewFactory"
         canonicalEditPolicyClassName="StateChannelCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.5"
         title="ChannelCompartment"
@@ -919,7 +901,6 @@
         visualID="7034"
         editPartClassName="StateInvariantCompartmentEditPart"
         itemSemanticEditPolicyClassName="StateInvariantCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="StateInvariantCompartmentViewFactory"
         canonicalEditPolicyClassName="StateInvariantCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.4"
         title="InvariantCompartment"
@@ -937,7 +918,6 @@
         visualID="7037"
         editPartClassName="RegionRegionContentsCompartmentEditPart"
         itemSemanticEditPolicyClassName="RegionRegionContentsCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="RegionRegionContentsCompartmentViewFactory"
         canonicalEditPolicyClassName="RegionRegionContentsCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.7"
         title="RegionContentsCompartment"
@@ -955,7 +935,6 @@
         visualID="7038"
         editPartClassName="RealtimeStatechartStatechartContentsCompartment2EditPart"
         itemSemanticEditPolicyClassName="RealtimeStatechartStatechartContentsCompartment2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="RealtimeStatechartStatechartContentsCompartmentViewFactory"
         canonicalEditPolicyClassName="RealtimeStatechartStatechartContentsCompartment2CanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.0"
         title="StatechartContentsCompartment"
@@ -1084,10 +1063,10 @@
       provider="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn"
       version="0.5.0.qualifier"
       activatorClassName="RealtimestatechartDiagramEditorPlugin">
-    <requiredPlugins>org.eclipse.ocl.pivot</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.tooling.runtime</requiredPlugins>
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
+    <requiredPlugins>org.eclipse.ocl.pivot</requiredPlugins>
     <requiredPlugins>org.muml.core.common</requiredPlugins>
     <requiredPlugins>org.muml.core.modelinstance.ui</requiredPlugins>
     <requiredPlugins>org.muml.core.edit.properties</requiredPlugins>
@@ -1303,7 +1282,7 @@
       <expressions
           body="'exit /'.concat(&#xA;&#x9;(&#xA;&#x9;if self.action.oclIsUndefined() or self.action.name = '' then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;' {'.concat(self.action.name).concat('}')&#xA;&#x9;endif&#xA;&#x9;).concat(&#xA;&#x9;&#x9;if self.clockResets->isEmpty() then&#xA;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;' {reset: '.concat(self.clockResets->iterate(c : Clock; s : String = '' | if s = '' then s.concat(c.name) else s.concat(', ').concat(c.name) endif)).concat('}')&#xA;&#x9;&#x9;endif&#xA;&#x9;)&#xA;)"/>
       <expressions
-          body="(&#xD;&#xA;&#xD;&#xA;-- BEGIN: The actual name of the Invariant&#xD;&#xA;&#xD;&#xA;&#x9;if self.clock.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;'null'&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;self.clock.name&#xD;&#xA;&#x9;endif&#xD;&#xA;).concat(' ').concat(&#xD;&#xA;&#x9;if self.operator.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;'null'&#xD;&#xA;&#x9;else&#xD;&#xA;if operator = core::expressions::common::ComparingOperator::LESS then '&lt;'&#xD;&#xA;&#x9;else if operator = core::expressions::common::ComparingOperator::LESS_OR_EQUAL then '&lt;=' &#xD;&#xA;&#x9;&#x9;else if operator = core::expressions::common::ComparingOperator::EQUAL then '='&#xD;&#xA;&#x9;&#x9;&#x9;else if operator = core::expressions::common::ComparingOperator::GREATER_OR_EQUAL then '>='&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;else if operator = core::expressions::common::ComparingOperator::GREATER then '>'&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else if operator = core::expressions::common::ComparingOperator::UNEQUAL then '&lt;>'&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else if operator = core::expressions::common::ComparingOperator::REGULAR_EXPRESSION then 'regexp' &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else ''&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; &#x9;&#x9;endif &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; &#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;endif&#xD;&#xA;&#x9;&#x9;--let array : Set(Tuple(s : String, d : core::expressions::common::ComparingOperator)) = Set{&#xD;&#xA;&#x9;&#x9;--&#x9;Tuple{s = '&lt;', d = core::expressions::common::ComparingOperator::LESS },&#xD;&#xA;&#x9;&#x9;--&#x9;Tuple{s = '&lt;=', d = core::expressions::common::ComparingOperator::LESS_OR_EQUAL },&#xD;&#xA;&#x9;&#x9;--&#x9;Tuple{s = '=', d = core::expressions::common::ComparingOperator::EQUAL },&#xD;&#xA;&#x9;&#x9;--&#x9;Tuple{s = '>=', d = core::expressions::common::ComparingOperator::GREATER_OR_EQUAL },&#xD;&#xA;&#x9;&#x9;--&#x9;Tuple{s = '>', d = core::expressions::common::ComparingOperator::GREATER },&#xD;&#xA;&#x9;&#x9;--&#x9;Tuple{s = '&lt;', d = core::expressions::common::ComparingOperator::UNEQUAL },&#xD;&#xA;&#x9;&#x9;--&#x9;Tuple{s = 'regexp', d = core::expressions::common::ComparingOperator::REGULAR_EXPRESSION }&#xD;&#xA;&#x9;&#x9;--} in array->any(t | t.d = self.operator).s&#xD;&#xA;&#x9;endif&#xD;&#xA;).concat(' ').concat(&#xD;&#xA;&#x9;if self.bound.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;'null'&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;'{boundExpression}'.concat(&#xA;&#x9;&#x9;&#x9;-- the following will evaluate to an empty string and is only added so that the OCL impact analyzer recognizes&#xA;&#x9;&#x9;&#x9;-- a dependency to these attributes and updates the label in case they change.&#xA;&#x9;&#x9;&#x9;(if self.bound.unit.oclIsUndefined() then '' else '' endif).concat&#xA;&#x9;&#x9;&#x9;(if self.bound.value.oclIsUndefined() then '' else '' endif).concat&#xA;&#x9;&#x9;&#x9;(if self.bound.value.oclIsUndefined() then '' else '' endif)&#xA;&#x9;&#x9;)&#xD;&#xA;&#x9;endif&#xD;&#xA;&#xD;&#xA;-- END: The actual name of the invariant&#xD;&#xA;&#xD;&#xA;).concat(&#xD;&#xA;if self.oclAsType(ecore::EObject).eContainer().oclAsType(State).invariants-GTlast() = self then&#xD;&#xA;&#x9;';'&#xD;&#xA;else&#xD;&#xA;&#x9;','&#xD;&#xA;endif&#xD;&#xA;)&#xD;&#xA;&#xD;&#xA;"/>
+          body="(&#xD;&#xA;&#xD;&#xA;-- BEGIN: The actual name of the Invariant&#xD;&#xA;&#xD;&#xA;&#x9;if self.clock.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;'null'&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;self.clock.name&#xD;&#xA;&#x9;endif&#xD;&#xA;).concat(' ').concat(&#xD;&#xA;&#x9;if self.operator.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;'null'&#xD;&#xA;&#x9;else&#xD;&#xA;if operator = core::expressions::common::ComparingOperator::LESS then '&lt;'&#xD;&#xA;&#x9;else if operator = core::expressions::common::ComparingOperator::LESS_OR_EQUAL then '&lt;=' &#xD;&#xA;&#x9;&#x9;else if operator = core::expressions::common::ComparingOperator::EQUAL then '='&#xD;&#xA;&#x9;&#x9;&#x9;else if operator = core::expressions::common::ComparingOperator::GREATER_OR_EQUAL then '>='&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;else if operator = core::expressions::common::ComparingOperator::GREATER then '>'&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else if operator = core::expressions::common::ComparingOperator::UNEQUAL then '&lt;>'&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else if operator = core::expressions::common::ComparingOperator::REGULAR_EXPRESSION then 'regexp' &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else ''&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; &#x9;&#x9;endif &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; &#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;endif&#xD;&#xA;&#x9;&#x9;--let array : Set(Tuple(s : String, d : core::expressions::common::ComparingOperator)) = Set{&#xD;&#xA;&#x9;&#x9;--&#x9;Tuple{s = '&lt;', d = core::expressions::common::ComparingOperator::LESS },&#xD;&#xA;&#x9;&#x9;--&#x9;Tuple{s = '&lt;=', d = core::expressions::common::ComparingOperator::LESS_OR_EQUAL },&#xD;&#xA;&#x9;&#x9;--&#x9;Tuple{s = '=', d = core::expressions::common::ComparingOperator::EQUAL },&#xD;&#xA;&#x9;&#x9;--&#x9;Tuple{s = '>=', d = core::expressions::common::ComparingOperator::GREATER_OR_EQUAL },&#xD;&#xA;&#x9;&#x9;--&#x9;Tuple{s = '>', d = core::expressions::common::ComparingOperator::GREATER },&#xD;&#xA;&#x9;&#x9;--&#x9;Tuple{s = '&lt;>', d = core::expressions::common::ComparingOperator::UNEQUAL },&#xD;&#xA;&#x9;&#x9;--&#x9;Tuple{s = 'regexp', d = core::expressions::common::ComparingOperator::REGULAR_EXPRESSION }&#xD;&#xA;&#x9;&#x9;--} in array->any(t | t.d = self.operator).s&#xD;&#xA;&#x9;endif&#xD;&#xA;).concat(' ').concat(&#xD;&#xA;&#x9;if self.bound.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;'null'&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;'{boundExpression}'.concat(&#xA;&#x9;&#x9;&#x9;-- the following will evaluate to an empty string and is only added so that the OCL impact analyzer recognizes&#xA;&#x9;&#x9;&#x9;-- a dependency to these attributes and updates the label in case they change.&#xA;&#x9;&#x9;&#x9;(if self.bound.unit.oclIsUndefined() then '' else '' endif).concat&#xA;&#x9;&#x9;&#x9;(if self.bound.value.oclIsUndefined() then '' else '' endif).concat&#xA;&#x9;&#x9;&#x9;(if self.bound.value.oclIsUndefined() then '' else '' endif)&#xA;&#x9;&#x9;)&#xD;&#xA;&#x9;endif&#xD;&#xA;&#xD;&#xA;-- END: The actual name of the invariant&#xD;&#xA;&#xD;&#xA;).concat(&#xD;&#xA;if self.oclAsType(ecore::EObject).eContainer().oclAsType(State).invariants->last() = self then&#xD;&#xA;&#x9;';'&#xD;&#xA;else&#xD;&#xA;&#x9;','&#xD;&#xA;endif&#xD;&#xA;)&#xD;&#xA;&#xD;&#xA;"/>
       <expressions
           body="(&#xD;&#xA;&#x9;if self.name.oclIsUndefined() then 'null' else self.name endif&#xD;&#xA;).concat(&#xD;&#xA;&#x9;if self.selectorType.name.oclIsUndefined() then '' else '['.concat(self.selectorType.name).concat(']') endif&#xD;&#xA;).concat(&#xD;&#xA;if self.state.channels->last() = self then&#xD;&#xA;&#x9;';'&#xD;&#xA;else&#xD;&#xA;&#x9;','&#xD;&#xA;endif&#xD;&#xA;)"/>
       <expressions
@@ -1319,11 +1298,9 @@
       <expressions
           body="true"/>
       <expressions
-          body="name"/>
+          body="''"/>
       <expressions
-          body="embeddedStatechart->collect(&#xA;(&#xD;&#xA;&#xD;&#xA;-- Attributes&#xD;&#xA;&#xD;&#xA;&#x9;if variables->isEmpty() then&#xD;&#xA;&#x9;&#x9;''&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;'variable: '.concat(&#xD;&#xA;&#x9;&#x9;&#x9;variables->iterate(attribute; result : String = '' |&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (attribute.constant) then 'const ' else '' endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if attribute.dataType.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;attribute.dataType.name.concat(' ')&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if attribute.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;attribute.name&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;).concat('; ')&#xD;&#xA;&#x9;endif&#xD;&#xA;).concat(&#xD;&#xA;&#xD;&#xA;-- Operations&#xD;&#xA;&#xD;&#xA;&#x9;if operations->isEmpty() then&#xD;&#xA;&#x9;&#x9;''&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;'operation: '.concat(&#xD;&#xA;&#x9;&#x9;&#x9;operations->iterate(operation; result : String = '' |&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if operation.returnType.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;operation.returnType.name.concat(' ')&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if operation.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;operation.name&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;).concat('(').concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;-- parameters&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;operation.parameters->iterate(parameter; result2 : String = '' |&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(if result2 = '' then '' else result2.concat(', ') endif).concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if parameter.dataType.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;parameter.dataType.name.concat(' ')&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if parameter.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;parameter.name&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;).concat(')')&#xD;&#xA;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;).concat('; ')&#xD;&#xA;&#x9;endif&#xD;&#xA;).concat(&#xD;&#xA;&#xD;&#xA;-- Clocks&#xD;&#xA;&#xD;&#xA;&#x9;if clocks->isEmpty() then&#xD;&#xA;&#x9;&#x9;''&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;'clock: '.concat(&#xD;&#xA;&#x9;&#x9;&#x9;clocks->iterate(clock; result : String = '' |&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if clock.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;clock.name&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;).concat('; ')&#xD;&#xA;&#x9;endif&#xD;&#xA;).concat(&#xD;&#xA;&#xD;&#xA;-- Attributes&#xD;&#xA;&#xD;&#xA;&#x9;if subRoleSpecificVariables->isEmpty() then&#xD;&#xA;&#x9;&#x9;''&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;'subrole-specific variable: '.concat(&#xD;&#xA;&#x9;&#x9;&#x9;subRoleSpecificVariables->iterate(attribute; result : String = '' |&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (attribute.constant) then 'const ' else '' endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if attribute.dataType.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;attribute.dataType.name.concat(' ')&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if attribute.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;attribute.name&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;).concat('; ')&#xD;&#xA;&#x9;endif&#xD;&#xA;).concat(&#xD;&#xA;&#xD;&#xA;-- Operations&#xD;&#xA;&#xD;&#xA;&#x9;if subRoleSpecificOperations->isEmpty() then&#xD;&#xA;&#x9;&#x9;''&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;'subrole-specific operation: '.concat(&#xD;&#xA;&#x9;&#x9;&#x9;subRoleSpecificOperations->iterate(operation; result : String = '' |&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if operation.returnType.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;operation.returnType.name.concat(' ')&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if operation.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;operation.name&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;).concat('(').concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;-- parameters&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;operation.parameters->iterate(parameter; result2 : String = '' |&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(if result2 = '' then '' else result2.concat(', ') endif).concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if parameter.dataType.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;parameter.dataType.name.concat(' ')&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if parameter.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;parameter.name&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;).concat(')')&#xD;&#xA;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;).concat('; ')&#xD;&#xA;&#x9;endif&#xD;&#xA;).concat(&#xD;&#xA;&#xD;&#xA;-- Clocks&#xD;&#xA;&#xD;&#xA;&#x9;if subRoleSpecificClocks->isEmpty() then&#xD;&#xA;&#x9;&#x9;''&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;'subrole-specific clock: '.concat(&#xD;&#xA;&#x9;&#x9;&#x9;subRoleSpecificClocks->iterate(clock; result : String = '' |&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if clock.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;clock.name&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;).concat('; ')&#xD;&#xA;&#x9;endif&#xD;&#xA;)&#xD;&#xA;)->any(true)&#xD;&#xA;(&#xD;&#xA;&#xD;&#xA;-- Attributes&#xD;&#xA;&#xD;&#xA;&#x9;if variables->isEmpty() then&#xD;&#xA;&#x9;&#x9;''&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;'variable: '.concat(&#xD;&#xA;&#x9;&#x9;&#x9;variables->iterate(attribute; result : String = '' |&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (attribute.constant) then 'const ' else '' endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if attribute.dataType.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;attribute.dataType.name.concat(' ')&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if attribute.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;attribute.name&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;).concat('; ')&#xD;&#xA;&#x9;endif&#xD;&#xA;).concat(&#xD;&#xA;&#xD;&#xA;-- Operations&#xD;&#xA;&#xD;&#xA;&#x9;if operations->isEmpty() then&#xD;&#xA;&#x9;&#x9;''&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;'operation: '.concat(&#xD;&#xA;&#x9;&#x9;&#x9;operations->iterate(operation; result : String = '' |&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if operation.returnType.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;operation.returnType.name.concat(' ')&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if operation.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;operation.name&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;).concat('(').concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;-- parameters&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;operation.parameters->iterate(parameter; result2 : String = '' |&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(if result2 = '' then '' else result2.concat(', ') endif).concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if parameter.dataType.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;parameter.dataType.name.concat(' ')&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if parameter.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;parameter.name&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;).concat(')')&#xD;&#xA;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;).concat('; ')&#xD;&#xA;&#x9;endif&#xD;&#xA;).concat(&#xD;&#xA;&#xD;&#xA;-- Clocks&#xD;&#xA;&#xD;&#xA;&#x9;if clocks->isEmpty() then&#xD;&#xA;&#x9;&#x9;''&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;'clocks: '.concat(&#xD;&#xA;&#x9;&#x9;&#x9;clocks->iterate(clock; result : String = '' |&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if clock.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;clock.name&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;).concat('; ')&#xD;&#xA;&#x9;endif&#xD;&#xA;)&#xD;&#xA;)->any(true)"/>
-      <expressions
-          body="self->collect(&#xD;&#xA;(&#xD;&#xA;&#xD;&#xA;-- Attributes&#xD;&#xA;&#xD;&#xA;&#x9;if variables->isEmpty() then&#xD;&#xA;&#x9;&#x9;''&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;'variable: '.concat(&#xD;&#xA;&#x9;&#x9;&#x9;variables->iterate(attribute; result : String = '' |&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (attribute.constant) then 'const ' else '' endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if attribute.dataType.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;attribute.dataType.name.concat(' ')&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if attribute.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;attribute.name&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;).concat('; ')&#xD;&#xA;&#x9;endif&#xD;&#xA;).concat(&#xD;&#xA;&#xD;&#xA;-- Operations&#xD;&#xA;&#xD;&#xA;&#x9;if operations->isEmpty() then&#xD;&#xA;&#x9;&#x9;''&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;'operation: '.concat(&#xD;&#xA;&#x9;&#x9;&#x9;operations->iterate(operation; result : String = '' |&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if operation.returnType.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;operation.returnType.name.concat(' ')&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if operation.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;operation.name&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;).concat('(').concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;-- parameters&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;operation.parameters->iterate(parameter; result2 : String = '' |&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(if result2 = '' then '' else result2.concat(', ') endif).concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if parameter.dataType.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;parameter.dataType.name.concat(' ')&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if parameter.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;parameter.name&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;).concat(')')&#xD;&#xA;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;).concat('; ')&#xD;&#xA;&#x9;endif&#xD;&#xA;).concat(&#xD;&#xA;&#xD;&#xA;-- Clocks&#xD;&#xA;&#xD;&#xA;&#x9;if clocks->isEmpty() then&#xD;&#xA;&#x9;&#x9;''&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;'clock: '.concat(&#xD;&#xA;&#x9;&#x9;&#x9;clocks->iterate(clock; result : String = '' |&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if clock.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;clock.name&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;).concat('; ')&#xD;&#xA;&#x9;endif&#xD;&#xA;).concat(&#xD;&#xA;&#xD;&#xA;-- Attributes&#xD;&#xA;&#xD;&#xA;&#x9;if subRoleSpecificVariables->isEmpty() then&#xD;&#xA;&#x9;&#x9;''&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;'subrole-specific variable: '.concat(&#xD;&#xA;&#x9;&#x9;&#x9;subRoleSpecificVariables->iterate(attribute; result : String = '' |&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (attribute.constant) then 'const ' else '' endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if attribute.dataType.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;attribute.dataType.name.concat(' ')&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if attribute.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;attribute.name&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;).concat('; ')&#xD;&#xA;&#x9;endif&#xD;&#xA;).concat(&#xD;&#xA;&#xD;&#xA;-- Operations&#xD;&#xA;&#xD;&#xA;&#x9;if subRoleSpecificOperations->isEmpty() then&#xD;&#xA;&#x9;&#x9;''&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;'subrole-specific operation: '.concat(&#xD;&#xA;&#x9;&#x9;&#x9;subRoleSpecificOperations->iterate(operation; result : String = '' |&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if operation.returnType.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;operation.returnType.name.concat(' ')&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if operation.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;operation.name&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;).concat('(').concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;-- parameters&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;operation.parameters->iterate(parameter; result2 : String = '' |&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(if result2 = '' then '' else result2.concat(', ') endif).concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if parameter.dataType.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;parameter.dataType.name.concat(' ')&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if parameter.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;parameter.name&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;).concat(')')&#xD;&#xA;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;).concat('; ')&#xD;&#xA;&#x9;endif&#xD;&#xA;).concat(&#xD;&#xA;&#xD;&#xA;-- Clocks&#xD;&#xA;&#xD;&#xA;&#x9;if subRoleSpecificClocks->isEmpty() then&#xD;&#xA;&#x9;&#x9;''&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;'subrole-specific clock: '.concat(&#xD;&#xA;&#x9;&#x9;&#x9;subRoleSpecificClocks->iterate(clock; result : String = '' |&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if clock.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;clock.name&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;).concat('; ')&#xD;&#xA;&#x9;endif&#xD;&#xA;)&#xD;&#xA;)->any(true)"/>
+          body="''"/>
       <expressions
           body="self.source.getUniqueTransitionPriority(0)"/>
       <expressions
@@ -1345,6 +1322,11 @@
           body="let prefix : String = self.oclType().name.substring(1, 1) in&#xA;let number : String = OrderedSet { 1 }->closure(e | &#xA;&#x9;let provisionalName : String = prefix.concat(e.toString()) in&#xA;&#x9;if self.oclContainer().oclContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then&#xA;&#x9;&#x9;e + 1&#xA;&#x9;else&#xA;&#x9;&#x9;e&#xA;&#x9;endif&#xA;)->sortedBy(e | e)->last().toString() in prefix.concat(number)"/>
       <expressions
           body="let prefix : String = self.oclType().name.substring(1, 1) in&#xA;let number : String = OrderedSet { 1 }->closure(e | &#xA;&#x9;let provisionalName : String = prefix.concat(e.toString()) in&#xA;&#x9;if self.oclContainer().oclContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then&#xA;&#x9;&#x9;e + 1&#xA;&#x9;else&#xA;&#x9;&#x9;e&#xA;&#x9;endif&#xA;)->sortedBy(e | e)->last().toString() in prefix.concat(number)"/>
+    </providers>
+    <providers
+        xsi:type="gmfgen:GenJavaExpressionProvider">
+      <expressions
+          body="name"/>
     </providers>
   </expressionProviders>
   <labelParsers

@@ -1,6 +1,8 @@
 package org.muml.pim.realtimestatechart.diagram.custom.parsers;
 
-import org.eclipse.emf.common.util.EList;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
 import org.muml.pim.behavior.Operation;
 import org.muml.pim.behavior.Parameter;
 import org.muml.pim.behavior.Variable;
@@ -12,92 +14,116 @@ public abstract class AbstractRTSCLabelParser {
 	
 	
 
-	public static String getStringForVariablesOperationsClocks(RealtimeStatechart stateChart) {
+	public static String getStringForVariablesOperationsClocks(RealtimeStatechart statechart) {
 
-		EList<Variable> variableList = stateChart.getVariables();
-		EList<Operation> operationList = stateChart.getOperations();
-		EList<Clock> clockList = stateChart.getClocks();
-
-		StringBuilder sbVariables = new StringBuilder();
-		for (Variable var : variableList) {
-
-			if (sbVariables.length() != 0) {
-				sbVariables.append(", ");
-			}
-			
-			if (var.isConstant()) {
-				sbVariables.append("const ");
-			}
-			
-			if (var.getDataType() != null) {
-				sbVariables.append(var.getDataType().getName());
-				sbVariables.append(' ');
-			}
-			if (var.getName() != null) {
-				sbVariables.append(var.getName());
-			}
-			if (var.getInitializeExpression() != null) {
-				sbVariables.append(":=");
-				sbVariables.append(ParserUtilities.serializeExpression(
-						var.getInitializeExpression(), var));
-			}
-
-		}
-
-		StringBuilder sbOperations = new StringBuilder();
-		for (Operation op : operationList) {
-			if (sbOperations.length() != 0) {
-				sbOperations.append(", ");
-			}
-			if (op.getReturnType() != null) {
-				sbOperations.append(op.getReturnType().getName());
-				sbOperations.append(' ');
-			}
-			sbOperations.append(op.getName());
-			sbOperations.append("(");
-			EList<Parameter> parameterList = op.getParameters();
-			StringBuilder sbParameter = new StringBuilder();
-			for (Parameter par : parameterList) {
-				if (sbParameter.length() != 0) {
-					sbParameter.append(", ");
+		StringBuilder label = new StringBuilder();
+		
+		// Variables
+		if (!statechart.getVariables().isEmpty()) {
+			label.append("variable: ");
+			label.append(statechart.getVariables().stream().map(new Function<Variable, String>() {
+				public String apply(Variable v) {
+					return
+						// constant
+						(v.isConstant() ? "const " : "") +
+						// datatype
+						(v.getDataType() != null ? (v.getDataType().getName() + " ") : "") +
+						// name
+						v.getName() + 
+						// initialize expression
+						(v.getInitializeExpression() == null ? "" : (" :=" + ParserUtilities.serializeExpression(v.getInitializeExpression(), v)));
 				}
-				if (par.getDataType() != null) {
-					sbParameter.append(par.getDataType().getName());
-					sbParameter.append(' ');
+			}).collect(Collectors.joining(", ")));
+			label.append(";\n");
+		}
+		
+		// Operations
+		if (!statechart.getOperations().isEmpty()) {
+			label.append("operation: ");
+			label.append(statechart.getOperations().stream().map(new Function<Operation, String>() {
+				public String apply(Operation operation) {
+					return
+						// return type
+						(operation.getReturnType() == null ? "" : (operation.getReturnType().getName()) + " ") +
+						// name
+						operation.getName() +
+						// parameter list
+						"(" + operation.getParameters().stream().map(new Function<Parameter, String>() {
+							public String apply(Parameter parameter) {
+								return parameter.getName();
+							} }).collect(Collectors.joining(", ")) +
+						")";
 				}
-				sbParameter.append(par.getName());
-			}
-			sbOperations.append(sbParameter.toString());
-			sbOperations.append(")");
-
+				
+			}).collect(Collectors.joining(", ")));
+			label.append(";\n");
 		}
 
-		StringBuilder sbClocks = new StringBuilder();
-		for (Clock c : clockList) {
-			if (sbClocks.length() != 0) {
-				sbClocks.append(", ");
-			}
-			sbClocks.append(c.getName());
+		// Clocks
+		if (!statechart.getClocks().isEmpty()) {
+			label.append("clock: ");
+			label.append(statechart.getClocks().stream().map(new Function<Clock, String>() {
+				public String apply(Clock e) {
+					return e.getName();
+				}
+			}).collect(Collectors.joining(", ")));
+			label.append(";\n");
+		}
+		
+
+		// Subrole specific Variables
+		if (!statechart.getSubRoleSpecificVariables().isEmpty()) {
+			label.append("subrole-specific variable: ");
+			label.append(statechart.getSubRoleSpecificVariables().stream().map(new Function<Variable, String>() {
+				public String apply(Variable v) {
+					return
+						// constant
+						(v.isConstant() ? "const " : "") +
+						// datatype
+						(v.getDataType() != null ? (v.getDataType().getName() + " ") : "") +
+						// name
+						v.getName() + 
+						// initialize expression
+						" :=" + ParserUtilities.serializeExpression(v.getInitializeExpression(), v);
+				}
+			}).collect(Collectors.joining(", ")));
+			label.append(";\n");
+		}
+		
+		// Subrole specific Operations
+		if (!statechart.getSubRoleSpecificOperations().isEmpty()) {
+			label.append("subrole-specific operation: ");
+			label.append(statechart.getSubRoleSpecificOperations().stream().map(new Function<Operation, String>() {
+				public String apply(Operation operation) {
+					return
+						// return type
+						(operation.getReturnType() == null ? "" : (operation.getReturnType().getName()) + " ") +
+						// name
+						operation.getName() +
+						// parameter list
+						"(" + operation.getParameters().stream().map(new Function<Parameter, String>() {
+							public String apply(Parameter parameter) {
+								return parameter.getName();
+							} }).collect(Collectors.joining(", ")) +
+						")";
+				}
+				
+			}).collect(Collectors.joining(", ")));
+			label.append(";\n");
 		}
 
-		StringBuilder sbFinalString = new StringBuilder();
-		if (sbVariables.length() != 0) {
-			sbFinalString.append("variable: ");
-			sbFinalString.append(sbVariables.toString());
-			sbFinalString.append(";\n");
+		// Subrole specific Clocks
+		if (!statechart.getSubRoleSpecificClocks().isEmpty()) {
+			label.append("subrole-specific clock: ");
+			label.append(statechart.getSubRoleSpecificClocks().stream().map(new Function<Clock, String>() {
+				public String apply(Clock e) {
+					return e.getName();
+				}
+			}).collect(Collectors.joining(", ")));
+			label.append(";\n");
 		}
-		if (sbOperations.length() != 0) {
-			sbFinalString.append("operation: ");
-			sbFinalString.append(sbOperations.toString());
-			sbFinalString.append(";\n");
-		}
-
-		if (sbClocks.length() != 0) {
-			sbFinalString.append("clock: ");
-			sbFinalString.append(sbClocks.toString());
-			sbFinalString.append(";\n");
-		}
-		return sbFinalString.toString();
+		
+		return label.toString();
 	}
 
 }

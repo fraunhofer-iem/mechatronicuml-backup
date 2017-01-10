@@ -29,14 +29,17 @@ public class CustomRegionVariableLabelExpressionLabelParser5065 extends
 
 	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
-		// TODO Auto-generated method stub
 		if(event instanceof Notification){
 			Notification notification = (Notification) event;
-			if(notification.getFeature() == BehaviorPackage.Literals.VARIABLE__INITIALIZE_EXPRESSION)
+			if (notification.getFeature() == BehaviorPackage.Literals.VARIABLE__INITIALIZE_EXPRESSION || 
+					notification.getNotifier() instanceof RealtimeStatechart ||
+					notification.getNotifier() instanceof Region) {
 				return true;
+			}
 		}
 		return super.isAffectingEvent(event, flags);
 	}
+
 	
 	
 
