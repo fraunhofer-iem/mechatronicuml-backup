@@ -50,6 +50,7 @@ public class AssemblyConnectorInstanceItemProvider
 			super.getPropertyDescriptors(object);
 
 			addAssemblyConnectorTypePropertyDescriptor(object);
+			addConnectorQualityOfServiceAssumptionsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -70,6 +71,28 @@ public class AssemblyConnectorInstanceItemProvider
 				 getString("_UI_PropertyDescriptor_description", "_UI_AssemblyConnectorInstance_assemblyConnectorType_feature", "_UI_AssemblyConnectorInstance_type"),
 				 InstancePackage.Literals.ASSEMBLY_CONNECTOR_INSTANCE__ASSEMBLY_CONNECTOR_TYPE,
 				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Connector Quality Of Service Assumptions feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addConnectorQualityOfServiceAssumptionsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AssemblyConnectorInstance_connectorQualityOfServiceAssumptions_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AssemblyConnectorInstance_connectorQualityOfServiceAssumptions_feature", "_UI_AssemblyConnectorInstance_type"),
+				 InstancePackage.Literals.ASSEMBLY_CONNECTOR_INSTANCE__CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS,
+				 true,
 				 false,
 				 false,
 				 null,

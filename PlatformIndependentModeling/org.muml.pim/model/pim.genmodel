@@ -48,7 +48,7 @@
       </genClasses>
       <genClasses ecoreClass="pim.ecore#//instance/AssemblyConnectorInstance">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//instance/AssemblyConnectorInstance/assemblyConnectorType"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//instance/AssemblyConnectorInstance/connectorQualityOfServiceAssumptions"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//instance/AssemblyConnectorInstance/connectorQualityOfServiceAssumptions"/>
       </genClasses>
       <genClasses ecoreClass="pim.ecore#//instance/DelegationConnectorInstance">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//instance/DelegationConnectorInstance/delegationConnectorType"/>
@@ -289,7 +289,7 @@
           <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/condition"/>
           <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/asynchronousMessageEvent"/>
           <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/action"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+          <genFeatures notify="false" children="true" createChild="true" propertySortChoices="true"
               ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/retryAfter"/>
         </genClasses>
         <genClasses ecoreClass="pim.ecore#//realtimestatechart/one_to_n_schemata/Multicast"/>

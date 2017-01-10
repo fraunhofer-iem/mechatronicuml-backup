@@ -35,6 +35,7 @@ import org.muml.pim.provider.MumlEditPlugin;
 import org.muml.pim.realtimestatechart.RealtimestatechartFactory;
 import org.muml.pim.realtimestatechart.one_to_n_schemata.OneToManyCommunicationSchema;
 import org.muml.pim.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage;
+import org.muml.pim.valuetype.ValuetypeFactory;
 
 /**
  * This is the item provider adapter for a {@link org.muml.pim.realtimestatechart.one_to_n_schemata.OneToManyCommunicationSchema} object.
@@ -181,6 +182,7 @@ public class OneToManyCommunicationSchemaItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(One_to_n_schemataPackage.Literals.ONE_TO_MANY_COMMUNICATION_SCHEMA__CONDITION);
 			childrenFeatures.add(One_to_n_schemataPackage.Literals.ONE_TO_MANY_COMMUNICATION_SCHEMA__ACTION);
+			childrenFeatures.add(One_to_n_schemataPackage.Literals.ONE_TO_MANY_COMMUNICATION_SCHEMA__RETRY_AFTER);
 		}
 		return childrenFeatures;
 	}
@@ -275,6 +277,11 @@ public class OneToManyCommunicationSchemaItemProvider
 			(createChildParameter
 				(One_to_n_schemataPackage.Literals.ONE_TO_MANY_COMMUNICATION_SCHEMA__ACTION,
 				 RealtimestatechartFactory.eINSTANCE.createAction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(One_to_n_schemataPackage.Literals.ONE_TO_MANY_COMMUNICATION_SCHEMA__RETRY_AFTER,
+				 ValuetypeFactory.eINSTANCE.createTimeValue()));
 	}
 
 	/**

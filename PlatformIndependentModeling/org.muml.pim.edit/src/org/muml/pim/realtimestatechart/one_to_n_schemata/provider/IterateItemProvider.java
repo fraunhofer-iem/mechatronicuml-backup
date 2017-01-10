@@ -268,7 +268,9 @@ public class IterateItemProvider extends SendingOneToManyCommunicationSchemaItem
 
 		boolean qualify =
 			childFeature == One_to_n_schemataPackage.Literals.ONE_TO_MANY_COMMUNICATION_SCHEMA__CONDITION ||
-			childFeature == One_to_n_schemataPackage.Literals.ITERATE__TERMINATION_CONDITION;
+			childFeature == One_to_n_schemataPackage.Literals.ITERATE__TERMINATION_CONDITION ||
+			childFeature == One_to_n_schemataPackage.Literals.ONE_TO_MANY_COMMUNICATION_SCHEMA__RETRY_AFTER ||
+			childFeature == One_to_n_schemataPackage.Literals.ITERATE__DELAY;
 
 		if (qualify) {
 			return getString

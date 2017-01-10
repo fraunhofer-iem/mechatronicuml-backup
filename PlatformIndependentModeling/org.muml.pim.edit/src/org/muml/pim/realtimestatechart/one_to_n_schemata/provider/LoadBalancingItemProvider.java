@@ -237,7 +237,9 @@ public class LoadBalancingItemProvider extends SendingOneToManyCommunicationSche
 
 		boolean qualify =
 			childFeature == One_to_n_schemataPackage.Literals.ONE_TO_MANY_COMMUNICATION_SCHEMA__ACTION ||
-			childFeature == One_to_n_schemataPackage.Literals.LOAD_BALANCING__ON_RESPONSE_ACTION;
+			childFeature == One_to_n_schemataPackage.Literals.LOAD_BALANCING__ON_RESPONSE_ACTION ||
+			childFeature == One_to_n_schemataPackage.Literals.ONE_TO_MANY_COMMUNICATION_SCHEMA__RETRY_AFTER ||
+			childFeature == One_to_n_schemataPackage.Literals.LOAD_BALANCING__MAX_WORKING_TIME;
 
 		if (qualify) {
 			return getString
