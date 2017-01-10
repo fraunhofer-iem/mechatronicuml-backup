@@ -17,7 +17,7 @@ import java.util.Map;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.util.EObjectValidator;
+import org.muml.core.common.validator.MumlValidator;
 import org.muml.pim.constraint.ConstraintPackage;
 import org.muml.pim.constraint.VerifiableElement;
 
@@ -26,9 +26,9 @@ import org.muml.pim.constraint.VerifiableElement;
  * The <b>Validator</b> for the model.
  * <!-- end-user-doc -->
  * @see org.muml.pim.constraint.ConstraintPackage
- * @generated
+ * @generated not
  */
-public class ConstraintValidator extends EObjectValidator {
+public class ConstraintValidator extends MumlValidator {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->

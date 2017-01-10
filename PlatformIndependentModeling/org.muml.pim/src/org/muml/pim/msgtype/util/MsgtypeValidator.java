@@ -12,8 +12,7 @@ import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.util.EObjectValidator;
-import org.muml.pim.msgtype.*;
+import org.muml.core.common.validator.MumlValidator;
 import org.muml.pim.msgtype.MessageType;
 import org.muml.pim.msgtype.MessageTypeRepository;
 import org.muml.pim.msgtype.MsgtypePackage;
@@ -23,9 +22,9 @@ import org.muml.pim.msgtype.MsgtypePackage;
  * The <b>Validator</b> for the model.
  * <!-- end-user-doc -->
  * @see org.muml.pim.msgtype.MsgtypePackage
- * @generated
+ * @generated not
  */
-public class MsgtypeValidator extends EObjectValidator {
+public class MsgtypeValidator extends MumlValidator {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->

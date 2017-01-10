@@ -16,7 +16,6 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
-import org.muml.pim.realtimestatechart.one_to_n_schemata.*;
 import org.muml.pim.realtimestatechart.one_to_n_schemata.Iterate;
 import org.muml.pim.realtimestatechart.one_to_n_schemata.LoadBalancing;
 import org.muml.pim.realtimestatechart.one_to_n_schemata.MultiReceive;

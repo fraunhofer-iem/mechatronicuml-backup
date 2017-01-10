@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.muml.pim.*;
 import org.muml.pim.PimFactory;
 import org.muml.pim.PimPackage;
 import org.muml.pim.Test;

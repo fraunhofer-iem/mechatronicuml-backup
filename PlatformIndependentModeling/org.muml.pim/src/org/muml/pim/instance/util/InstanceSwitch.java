@@ -18,7 +18,6 @@ import org.muml.pim.connector.DiscreteInteractionEndpointInstance;
 import org.muml.pim.connector.DiscreteMultiInteractionEndpointInstance;
 import org.muml.pim.connector.DiscreteSingleInteractionEndpointInstance;
 import org.muml.pim.constraint.VerifiableElement;
-import org.muml.pim.instance.*;
 import org.muml.pim.instance.AssemblyConnectorInstance;
 import org.muml.pim.instance.AtomicComponentInstance;
 import org.muml.pim.instance.ComponentInstance;

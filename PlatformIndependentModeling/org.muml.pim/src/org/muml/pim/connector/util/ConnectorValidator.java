@@ -12,8 +12,7 @@ import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.util.EObjectValidator;
-import org.muml.pim.connector.*;
+import org.muml.core.common.validator.MumlValidator;
 import org.muml.pim.connector.BufferOverflowAvoidanceStrategy;
 import org.muml.pim.connector.Connector;
 import org.muml.pim.connector.ConnectorEndpoint;
@@ -31,9 +30,9 @@ import org.muml.pim.connector.MessageBuffer;
  * The <b>Validator</b> for the model.
  * <!-- end-user-doc -->
  * @see org.muml.pim.connector.ConnectorPackage
- * @generated
+ * @generated not
  */
-public class ConnectorValidator extends EObjectValidator {
+public class ConnectorValidator extends MumlValidator {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->

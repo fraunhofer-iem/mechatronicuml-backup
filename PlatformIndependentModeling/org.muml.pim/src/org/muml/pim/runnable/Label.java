@@ -13,9 +13,7 @@
 package org.muml.pim.runnable;
 
 import org.muml.core.NamedElement;
-
 import org.muml.pim.instance.ComponentInstance;
-
 import org.muml.pim.realtimestatechart.RealtimeStatechart;
 
 /**

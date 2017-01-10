@@ -10,7 +10,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.muml.core.CorePackage;
-import org.muml.core.modelinstance.ModelinstancePackage;
 import org.muml.pim.PimFactory;
 import org.muml.pim.PimPackage;
 import org.muml.pim.Test;

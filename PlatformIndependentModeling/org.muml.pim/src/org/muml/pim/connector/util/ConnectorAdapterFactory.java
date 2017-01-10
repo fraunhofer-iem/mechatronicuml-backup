@@ -14,7 +14,6 @@ import org.muml.core.CommentableElement;
 import org.muml.core.ExtendableElement;
 import org.muml.core.NamedElement;
 import org.muml.pim.behavior.BehavioralElement;
-import org.muml.pim.connector.*;
 import org.muml.pim.connector.Connector;
 import org.muml.pim.connector.ConnectorEndpoint;
 import org.muml.pim.connector.ConnectorEndpointInstance;

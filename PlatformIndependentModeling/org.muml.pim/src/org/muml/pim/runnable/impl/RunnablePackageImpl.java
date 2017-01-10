@@ -17,67 +17,38 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.muml.core.CorePackage;
-
 import org.muml.pim.PimPackage;
-
 import org.muml.pim.behavior.BehaviorPackage;
-
 import org.muml.pim.behavior.impl.BehaviorPackageImpl;
-
 import org.muml.pim.component.ComponentPackage;
-
 import org.muml.pim.component.impl.ComponentPackageImpl;
-
 import org.muml.pim.connector.ConnectorPackage;
-
 import org.muml.pim.connector.impl.ConnectorPackageImpl;
-
 import org.muml.pim.constraint.ConstraintPackage;
-
 import org.muml.pim.constraint.impl.ConstraintPackageImpl;
-
 import org.muml.pim.impl.PimPackageImpl;
-
 import org.muml.pim.instance.InstancePackage;
-
 import org.muml.pim.instance.impl.InstancePackageImpl;
-
 import org.muml.pim.msgtype.MsgtypePackage;
-
 import org.muml.pim.msgtype.impl.MsgtypePackageImpl;
-
 import org.muml.pim.pattern.PatternPackage;
-
 import org.muml.pim.pattern.impl.PatternPackageImpl;
-
 import org.muml.pim.protocol.ProtocolPackage;
-
 import org.muml.pim.protocol.impl.ProtocolPackageImpl;
-
 import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
-
 import org.muml.pim.realtimestatechart.impl.RealtimestatechartPackageImpl;
-
 import org.muml.pim.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage;
-
 import org.muml.pim.realtimestatechart.one_to_n_schemata.impl.One_to_n_schemataPackageImpl;
-
 import org.muml.pim.runnable.Label;
 import org.muml.pim.runnable.LabelAccess;
 import org.muml.pim.runnable.LabelAccessKind;
 import org.muml.pim.runnable.RunnableFactory;
 import org.muml.pim.runnable.RunnablePackage;
-
 import org.muml.pim.types.TypesPackage;
-
 import org.muml.pim.types.impl.TypesPackageImpl;
-
 import org.muml.pim.valuetype.ValuetypePackage;
-
 import org.muml.pim.valuetype.impl.ValuetypePackageImpl;
 
 /**

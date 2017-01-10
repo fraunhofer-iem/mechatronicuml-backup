@@ -14,7 +14,6 @@ import org.muml.core.CommentableElement;
 import org.muml.core.ExtendableElement;
 import org.muml.core.NamedElement;
 import org.muml.core.Repository;
-import org.muml.pim.behavior.*;
 import org.muml.pim.behavior.Behavior;
 import org.muml.pim.behavior.BehaviorPackage;
 import org.muml.pim.behavior.BehavioralElement;

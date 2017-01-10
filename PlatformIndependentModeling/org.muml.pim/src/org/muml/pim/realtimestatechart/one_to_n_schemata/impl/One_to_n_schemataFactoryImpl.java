@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.muml.pim.realtimestatechart.one_to_n_schemata.*;
 import org.muml.pim.realtimestatechart.one_to_n_schemata.Iterate;
 import org.muml.pim.realtimestatechart.one_to_n_schemata.LoadBalancing;
 import org.muml.pim.realtimestatechart.one_to_n_schemata.MultiReceive;

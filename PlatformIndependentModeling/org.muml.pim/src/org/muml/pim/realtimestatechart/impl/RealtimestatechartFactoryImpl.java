@@ -12,7 +12,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.muml.pim.realtimestatechart.*;
 import org.muml.pim.realtimestatechart.AbsoluteDeadline;
 import org.muml.pim.realtimestatechart.Action;
 import org.muml.pim.realtimestatechart.AsynchronousMessageEvent;

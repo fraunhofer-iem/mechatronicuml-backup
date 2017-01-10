@@ -15,7 +15,6 @@ import org.muml.core.ExtendableElement;
 import org.muml.core.NamedElement;
 import org.muml.pim.behavior.BehavioralElement;
 import org.muml.pim.behavior.TypedNamedElement;
-import org.muml.pim.component.*;
 import org.muml.pim.component.AssemblyConnector;
 import org.muml.pim.component.AtomicComponent;
 import org.muml.pim.component.Component;

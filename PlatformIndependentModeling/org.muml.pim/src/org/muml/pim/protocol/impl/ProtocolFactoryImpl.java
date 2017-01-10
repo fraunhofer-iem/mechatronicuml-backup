@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.muml.pim.protocol.*;
 import org.muml.pim.protocol.ConnectorQualityOfServiceAssumptions;
 import org.muml.pim.protocol.CoordinationProtocol;
 import org.muml.pim.protocol.ProtocolFactory;

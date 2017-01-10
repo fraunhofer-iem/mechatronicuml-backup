@@ -9,7 +9,6 @@ package org.muml.pim.util;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
-import org.muml.pim.*;
 import org.muml.pim.PimPackage;
 import org.muml.pim.Test;
 

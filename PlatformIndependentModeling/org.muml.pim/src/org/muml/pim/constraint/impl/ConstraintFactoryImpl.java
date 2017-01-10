@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.muml.pim.constraint.*;
 import org.muml.pim.constraint.ConstraintFactory;
 import org.muml.pim.constraint.ConstraintPackage;
 

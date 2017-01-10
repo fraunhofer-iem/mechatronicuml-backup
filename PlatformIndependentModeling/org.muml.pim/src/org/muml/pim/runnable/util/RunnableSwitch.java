@@ -14,12 +14,9 @@ package org.muml.pim.runnable.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
 import org.muml.core.ExtendableElement;
 import org.muml.core.NamedElement;
-
 import org.muml.pim.runnable.Label;
 import org.muml.pim.runnable.LabelAccess;
 import org.muml.pim.runnable.RunnablePackage;

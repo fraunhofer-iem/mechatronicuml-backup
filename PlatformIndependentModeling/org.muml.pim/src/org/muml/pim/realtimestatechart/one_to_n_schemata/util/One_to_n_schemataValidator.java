@@ -18,8 +18,7 @@ import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.util.EObjectValidator;
-import org.muml.pim.realtimestatechart.one_to_n_schemata.*;
+import org.muml.core.common.validator.MumlValidator;
 import org.muml.pim.realtimestatechart.one_to_n_schemata.Iterate;
 import org.muml.pim.realtimestatechart.one_to_n_schemata.LoadBalancing;
 import org.muml.pim.realtimestatechart.one_to_n_schemata.MultiReceive;
@@ -36,9 +35,9 @@ import org.muml.pim.realtimestatechart.one_to_n_schemata.Unicast;
  * The <b>Validator</b> for the model.
  * <!-- end-user-doc -->
  * @see org.muml.pim.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage
- * @generated
+ * @generated not
  */
-public class One_to_n_schemataValidator extends EObjectValidator {
+public class One_to_n_schemataValidator extends MumlValidator {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->

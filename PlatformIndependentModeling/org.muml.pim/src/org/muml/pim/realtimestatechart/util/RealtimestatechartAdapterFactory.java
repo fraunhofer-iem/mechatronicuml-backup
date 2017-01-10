@@ -14,7 +14,6 @@ import org.muml.core.CommentableElement;
 import org.muml.core.ExtendableElement;
 import org.muml.core.NamedElement;
 import org.muml.pim.behavior.Behavior;
-import org.muml.pim.realtimestatechart.*;
 import org.muml.pim.realtimestatechart.AbsoluteDeadline;
 import org.muml.pim.realtimestatechart.Action;
 import org.muml.pim.realtimestatechart.AsynchronousMessageEvent;

@@ -13,12 +13,9 @@
 package org.muml.pim.runnable;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.muml.core.NamedElement;
-
 import org.muml.pim.instance.ComponentInstance;
 import org.muml.pim.instance.PortInstance;
-
 import org.muml.pim.valuetype.TimeValue;
 
 /**

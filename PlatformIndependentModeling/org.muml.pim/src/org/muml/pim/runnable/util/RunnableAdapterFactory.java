@@ -14,14 +14,10 @@ package org.muml.pim.runnable.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.muml.core.ExtendableElement;
 import org.muml.core.NamedElement;
-
 import org.muml.pim.runnable.Label;
 import org.muml.pim.runnable.LabelAccess;
 import org.muml.pim.runnable.RunnablePackage;

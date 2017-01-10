@@ -19,7 +19,6 @@ import org.muml.core.CommentableElement;
 import org.muml.core.ExtendableElement;
 import org.muml.core.NamedElement;
 import org.muml.pim.constraint.VerifiableElement;
-import org.muml.pim.pattern.*;
 import org.muml.pim.pattern.AbstractCoordinationPattern;
 import org.muml.pim.pattern.CoordinationPattern;
 import org.muml.pim.pattern.CoordinationPatternVariant;

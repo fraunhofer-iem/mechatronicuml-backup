@@ -14,19 +14,13 @@ package org.muml.pim.runnable.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.muml.core.impl.NamedElementImpl;
-
 import org.muml.pim.instance.ComponentInstance;
 import org.muml.pim.instance.InstancePackage;
-
 import org.muml.pim.realtimestatechart.RealtimeStatechart;
-
 import org.muml.pim.runnable.Label;
 import org.muml.pim.runnable.RunnablePackage;
 
