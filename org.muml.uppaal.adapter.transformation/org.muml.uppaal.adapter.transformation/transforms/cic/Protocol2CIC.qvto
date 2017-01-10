@@ -1,0 +1,485 @@
+import transforms.lib.MUML2MUML;
+import transforms.lib.ExternalizedStrings;
+import transforms.CloneModel;
+
+modeltype muml uses 'http://www.muml.org/pim/1.0.0';
+modeltype muml_rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype muml_connector uses pim::connector('http://www.muml.org/pim/1.0.0');
+modeltype muml_constraint uses pim::constraint('http://www.muml.org/pim/1.0.0');
+modeltype muml_behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype muml_protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype muml_actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
+modeltype muml_msgtype uses pim::msgtype('http://www.muml.org/pim/1.0.0');
+modeltype muml_types uses pim::types('http://www.muml.org/pim/1.0.0');
+modeltype muml_valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype storydriven_core uses 'http://www.muml.org/core/1.0.0';
+modeltype storydriven_core_expressions_common uses core::expressions::common('http://www.muml.org/core/1.0.0');
+modeltype storydriven_core_expressions uses core::expressions('http://www.muml.org/core/1.0.0');
+modeltype extension uses 'http://www.muml.org/uppaal/adapter/extension/verificationextension/1.0.0';
+modeltype modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
+modeltype mtctlQuantifiers uses mtctl::quantifiers('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlPredicates uses mtctl::predicates('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlSets uses mtctl::sets('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlBooleanLogic uses mtctl::booleanlogic('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlComparables uses mtctl::comparables('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype instanceModel uses pim::instance('http://www.muml.org/pim/1.0.0');
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype verification_options uses 'http://www.muml.org/uppaal/options/1.0.0';
+
+
+transformation Protocol2CIC(in input:modelinstance, in options: verification_options, out output:modelinstance);
+
+main() {
+	
+	//precondition ensuring that no port is referenced from within a protocol (could lead to duplication of that port)
+	assert fatal(not portReferencedByProtocol(input.objects()[CoordinationProtocol]->select(protocol | protocol.extensions->exists(oclIsKindOf(ElementToVerifyExtension)))->any(true))) with log("There is a reference to a Port in the Protocol to verify. This is not supported by the Protocol2CIC transformation.");
+	assert fatal(roleMultiplicity() > 0) with log ("muliplicityOfMultiRole has to be > 0");
+	input.objects()[RootNode]->map RootNode2RootNode();
+	
+	//We have to "destroy" the traces here, because we used Muml2Muml mappings for copying modelelements. When the next transformation uses MUML2MUML again, the same mappings will just resolve an element created in this transformation. 
+	var clonedp2cicmodel : modelinstance := output.copy().oclAsType(modelinstance);
+	output.rootObjects()->forEach(rootObj) {
+		output.removeElement(rootObj);
+	};
+	var muml2mumlTransformation : CloneModel = new CloneModel(clonedp2cicmodel, output);
+	var retcode : Status = muml2mumlTransformation.transform();
+	assert fatal (retcode.succeeded()) with log('Destroy-Trace copying failed: ' + retcode.raisedException().repr());
+}
+
+property componentCategoryKey : String = "org.muml.pim.components.category";
+property componentCategoryName : String ="component";
+property componentInstanceCategoryKey : String = "org.muml.pim.instance.category";
+property componentInstanceCategoryName : String = "instance";
+property rtscCategoryKey : String = "org.muml.pim.realtimestatechart.category";
+property rtscCategoryName : String = "realtimestatechart";
+
+
+mapping modelinstance::RootNode :: RootNode2RootNode() : modelinstance::RootNode{
+		// changed from := operator to +=, otherwise the newly created categories are not correctly contained
+    	_categories += self._categories.map ModelElementCategory2ModelElementCategory();
+    	
+    	//Call mappings from copied CoordinationProtocol to Components/Ports and to CIC
+    	output.objects()[CoordinationProtocol]->any(ve:CoordinationProtocol | ve.extensions->exists(oclIsKindOf(ElementToVerifyExtension))).roles.map createPort();
+    	output.objects()[CoordinationProtocol]->any(ve:CoordinationProtocol | ve.extensions->exists(oclIsKindOf(ElementToVerifyExtension))).map createCIC();
+    	
+    	//Remove ElementToVerifyExtension from the CoordinationProtocol
+    	output.objects()[CoordinationProtocol]->select(ve:CoordinationProtocol | ve.extensions->exists(oclIsKindOf(ElementToVerifyExtension)))->forEach(protocol) {
+    		var deletedExtensions := protocol.extensions->selectByKind(ElementToVerifyExtension);
+    		protocol.extensions := protocol.extensions->reject(oclIsKindOf(ElementToVerifyExtension));
+    		deletedExtensions->forEach(ext) {
+    			output.removeElement(ext);
+    		}
+    	};
+}
+   		 
+mapping modelinstance::ModelElementCategory :: ModelElementCategory2ModelElementCategory() : modelinstance::ModelElementCategory{
+    	_key := self._key;
+    	_name := self._name;
+    	//changed from := operator to +=, otherwise the newly created rtscs are not correctly contained
+    	_modelElements += self._modelElements.map ExtendableElement2ExtendableElement();
+   		 }
+
+mapping pim::protocol::CoordinationProtocol :: CoordinationProtocol2CoordinationProtocol() : pim::protocol::CoordinationProtocol{
+    	_name := self._name;
+    	_comment := self._comment;
+    	_extensions := self._extensions.map Extension2Extension();
+    	
+    	_verificationConstraintRepositories := self.verificationConstraintRepositories.map VerificationConstraintRepository2VerificationConstraintRepository();
+    	_roles := self._roles.map Role2Role();
+    	_roleConnector := self._roleConnector.map RoleConnector2RoleConnector();
+
+	}
+
+
+//Overridden to make sure that selectorType of SelectorExpression is changed from Role to corresponding Port
+//This assumes that a Role is only a DataType in the context of SelectorExpressions (otherwise the dataType reference could be redirected to a port, which was created by createPort)
+//Uncommented Mappings are not supported by this transformation
+mapping pim::types::DataType :: DataType2DataType() : pim::types::DataType disjuncts
+Role::createPort,
+ pim::component::Component::Component2Component,
+  pim::types::ArrayDataType::ArrayDataType2ArrayDataType2,
+   pim::types::RangedPrimitiveDataType::RangedPrimitiveDataType2RangedPrimitiveDataType2,
+    pim::component::ComponentPart::ComponentPart2ComponentPart,
+     pim::component::Port::Port2Port,
+      pim::protocol::Role::Role2Role,
+       pim::types::PrimitiveDataType::PrimitiveDataType2PrimitiveDataType2,
+        pim::types::DataType::NonValidElementAsDataType;
+
+//Overridden to add Role::createPort to disjuncts
+mapping pim::connector::DiscreteInteractionEndpoint :: DiscreteInteractionEndpoint2DiscreteInteractionEndpoint() : pim::connector::DiscreteInteractionEndpoint disjuncts Role::createPort, Role::Role2Role, pim::component::DiscretePort::DiscretePort2DiscretePort;
+
+
+//TODO add MessageType2MessageType to disjuncts and remove case in MumlElemExpr2MumlElemExpr when QVTO support overridden mappings in disjuncts
+mapping EObject :: ProtocolElement2ComponentElement() : EObject disjuncts
+Role :: createPort,
+ State::State2State,
+  Variable::Variable2Variable,
+   Clock::Clock2Clock,
+    MessageBuffer::MessageBuffer2MessageBuffer,
+     RealtimeStatechart::RealtimeStatechart2RealtimeStatechart,
+     //ConnectorEndpoint and ConnectorEndpointInstance can be referenced by MumlElemExpr but:
+     	//ConnectorEndpoint case on Protocols are handled by createPort
+     	//ConnectorEndpointInstance should never be referenced in Protocol context
+     	Transition::Transition2Transition,
+     		BoundVariable::BoundVariable2BoundVariable,
+         		EObject::NonValidElementInMumlElemExpr;
+
+
+//The precondition ensures, that this mapping can only be executed in the context of already copied Roles
+mapping Role :: createPort() : pim::component::DiscretePort when{	
+self.invresolve()->oclAsSet()->flatten()->intersection(input.objects()->oclAsSet()->flatten())->size()>0
+	}
+{
+	name := self.name+role2PortSuffix;
+	
+	//Roles are not duplicated. To avoid overriding of Role2Role just set the refinedRole to the one that is already mapped.
+	//(This mapping is called with result of Role2Role as context)
+	refinedRole := self;
+	component := self.map createComponent();
+	cardinality := self.cardinality.map Cardinality2Cardinality();
+
+	receiverMessageBuffer := self.receiverMessageBuffer.map MessageBuffer2MessageBuffer();
+	receiverMessageTypes := self.receiverMessageTypes.map MessageType2MessageType();
+	senderMessageTypes := self.senderMessageTypes.map MessageType2MessageType();
+	
+	behavior := self.behavior.map Behavior2Behavior();
+	coordinatorBehavior := self.coordinatorBehavior.map Behavior2Behavior();
+	subroleBehavior := self.subroleBehavior.map Behavior2Behavior();
+	
+}
+
+mapping  Role :: createComponent() : pim::component::StaticAtomicComponent{
+	name := self.name+"Component";
+	getModelElementCategory(componentCategoryKey, componentCategoryName).modelElements += result;
+	
+	behavior := self.map createComponentRTSC();
+}
+
+mapping Role :: createComponentRTSC() : RealtimeStatechart{
+	name := self.name+role2ComponentSuffix;
+	
+	var parentState := object State{
+									name := "Initial";
+									initial := true;	};
+	
+	states += parentState;
+	
+	
+	assert fatal(self.behavior.oclAsType(RealtimeStatechart).parentRegion.oclIsUndefined()) with log(self.name+"\'s behavior must not be an embedded RTSC");
+	assert fatal(self.behavior.oclIsKindOf(RealtimeStatechart)) with log("behavior of "+self.toString()+" has to be defined as RTSC and must not be null");
+	
+	var parentRegion := object Region{
+										priority := parentState.getUniqueRegionPriority(1);
+										embeddedStatechart := self.behavior.oclAsType(RealtimeStatechart).map RealtimeStatechart2RealtimeStatechart();
+										};
+										
+	parentState.embeddedRegions += parentRegion;		
+	
+	//Add the newly created RTSC to the corresponding ModelElementCategory
+	getModelElementCategory(rtscCategoryKey, rtscCategoryName).modelElements += result;
+}
+
+
+
+mapping pim::msgtype::MessageType :: MessageType2MessageType() : pim::msgtype::MessageType{
+	init{
+		var invresolved : Set(OclAny) := self.invresolveIn(MessageType::MessageType2MessageType, MessageType)->oclAsSet()->flatten();
+		
+		if(invresolved->intersection(input.objects()->oclAsSet()->flatten())->size()>0){
+			//Types are only mapped once and don't have to be created anew for the Component Model
+			result := self;
+		}
+		else{
+			result := new MessageType();		
+			result._name := self._name;
+    		result._comment := self._comment;
+    		result._extensions := self._extensions.map Extension2Extension();
+    		result._parameters := self._parameters.map Parameter2Parameter();
+    		//do not set the repository to make sure not to execute the if condition again before finishing this transformation
+    	--	result._repository := self._repository.map MessageTypeRepository2MessageTypeRepository();
+		}
+	}
+}
+
+constructor MessageType :: MessageType(){
+}
+
+mapping pim::behavior::Parameter :: Parameter2Parameter() : pim::behavior::Parameter{
+    	init{
+    		//Unlike MessageTypes Parameter sometimes have to be copied anew (e.g. if they are contained in an operation)
+    		//Since MessageTypes are not copied anew, their contained Parameters don't have to be copied too. 
+    		var invresolved : Set(OclAny) := self.invresolveIn(Parameter :: Parameter2Parameter, Parameter)->oclAsSet()->flatten();
+			if(self.container().oclIsKindOf(MessageType) and invresolved->intersection(input.objects()->oclAsSet()->flatten())->size()>0){
+			//Types are only mapped once and don't have to be created anew for the Component Model
+			result := self;
+			}
+    		
+    		else{  
+    			result := new Parameter();  	
+    			result._name := self._name;
+    			result._comment := self._comment;
+    			result._extensions := self._extensions.map Extension2Extension();
+    			result._dataType := self._dataType.map DataType2DataType();
+    			}
+   		}
+   	 }
+constructor Parameter :: Parameter(){
+}
+
+//TODO can not override PrimitiveDataType2PrimitiveDataType since QVTO does not respect overriding in disjuncts at the moment.
+// Therefore, all calls of PrimitiveDataType2PrimitiveDataType had to be overridden.
+mapping pim::types::PrimitiveDataType :: PrimitiveDataType2PrimitiveDataType2() : pim::types::PrimitiveDataType{
+    	init{
+    		
+    		var invresolved : Set(OclAny) := self.invresolveIn(PrimitiveDataType :: PrimitiveDataType2PrimitiveDataType2, PrimitiveDataType)->oclAsSet()->flatten();
+    		
+			if(invresolved->intersection(input.objects()->oclAsSet()->flatten())->size()>0){
+				//Types are only mapped once and don't have to be created anew for the Component Model
+				result := self;
+				}
+			else{
+				result := new PrimitiveDataType();			
+    			result._name := self._name;
+    			result._comment := self._comment;
+    			result._primitiveType := self._primitiveType;
+    			result._extensions := self._extensions.map Extension2Extension();
+    			};
+   		 }
+   	}
+
+constructor PrimitiveDataType :: PrimitiveDataType(){
+}
+
+//Overridden to replace _dataType := self._dataType.map PrimitiveDataType2PrimitiveDataType();
+mapping actionlanguage::NondeterministicChoiceExpression :: NondeterministicChoiceExpression2NondeterministicChoiceExpression() : actionlanguage::NondeterministicChoiceExpression{
+    	_comment := self._comment;
+    	_extensions := self._extensions.map Extension2Extension();
+    	_range := self._range.map Range2Range();
+    	
+    	_dataType := self._dataType.map PrimitiveDataType2PrimitiveDataType2();
+   		 }
+   		    	
+   	
+mapping pim::types::ArrayDataType :: ArrayDataType2ArrayDataType2() : pim::types::ArrayDataType{
+    	init{
+    		
+    		var invresolved : Set(OclAny) := self.invresolveIn(ArrayDataType :: ArrayDataType2ArrayDataType2, ArrayDataType)->oclAsSet()->flatten();
+			if(invresolved->intersection(input.objects()->oclAsSet()->flatten())->size()>0){
+				//Types are only mapped once and don't have to be created anew for the Component Model
+				result := self;
+			}
+			else{
+    			result := new ArrayDataType();
+    			result._name := self._name;
+    			result._comment := self._comment;
+    			result._extensions := self._extensions.map Extension2Extension();
+    			result._type := self._type.map DataType2DataType();
+    			result._cardinality := self._cardinality.map NaturalNumber2NaturalNumber();
+    			}
+   		 	}
+   		 }
+   		 
+constructor ArrayDataType :: ArrayDataType(){
+}
+   		 
+mapping pim::types::RangedPrimitiveDataType :: RangedPrimitiveDataType2RangedPrimitiveDataType2() : pim::types::RangedPrimitiveDataType{
+    	init{
+    		var invresolved : Set(OclAny) := self.invresolveIn(RangedPrimitiveDataType :: RangedPrimitiveDataType2RangedPrimitiveDataType2, RangedPrimitiveDataType)->oclAsSet()->flatten();
+			if(invresolved->intersection(input.objects()->oclAsSet()->flatten())->size()>0){
+				//Types are only mapped once and don't have to be created anew for the Component Model
+				result := self;
+			}
+			else{
+    			result := new RangedPrimitiveDataType();
+    			result._name := self._name;
+    			result._comment := self._comment;
+    			result._extensions := self._extensions.map Extension2Extension();
+    			
+    			//Make sure to call PrimitiveDataType2PrimitiveDataType2().
+    			//Otherwise a new PrimitiveDataType could be created if its also the selectorType of a SelectorExpression
+    			result._rangedType := self._rangedType.map PrimitiveDataType2PrimitiveDataType2();
+    			
+    			result._range := self._range.map Range2Range();
+    			}
+    	}
+   }
+
+constructor RangedPrimitiveDataType :: RangedPrimitiveDataType(){
+}
+
+helper getModelElementCategory(_key : String, _name : String) : ModelElementCategory{
+	var InputRootNode := input.rootObjects()[RootNode]->any(true);
+	var OutputRootNode := input.rootObjects()[RootNode]->any(true).map RootNode2RootNode();
+	
+
+	//Search in input, because it is possible that the ModelElementCategory is not created yet
+	InputRootNode.categories->forEach(category){
+		if(category.key = _key){
+			return category.map ModelElementCategory2ModelElementCategory();
+		};
+	};
+	
+	//Search in output, because it is possible that the ModelElementCategory was created without a mapping (see below)
+	OutputRootNode.categories->forEach(category){
+		if(category.key = _key){
+			return category;
+		};
+	};
+	
+	//no fitting ModelElementCategory found, so create one
+	var newCategory := object ModelElementCategory{
+		key := _key;
+		name := _name;
+	};
+	OutputRootNode.categories += newCategory;
+	return newCategory;
+	
+}
+
+
+
+
+mapping CoordinationProtocol :: createCIC() : ComponentInstanceConfiguration{
+	//Adapt the CoordinationProtocol's VCR to component (instance) level
+	verificationConstraintRepositories := self.verificationConstraintRepositories.map VerificationConstraintRepository2VerificationConstraintRepository();
+	_extensions += object ElementToVerifyExtension {};
+	name := self.name+coordinationProtocol2CICSuffix;
+	self.roles->forEach(role){
+		if(role.multi)
+		then{
+			//create one ComponentInstance with a MultiPortInstance
+			var componentInstance = role.map createComponentInstance(0);
+			componentInstances += componentInstance;
+			var portInstance = 	role.map createMultiPortInstance(0);
+			componentInstance.portInstances += portInstance; 
+		}
+		else{
+			//create one ComponentInstance for each Subport
+			var i = 0;
+			while(not (i = roleMultiplicity())){
+				var componentInstance = role.map createComponentInstance(i);
+				componentInstances += componentInstance;				
+				var portInstance = 	role.map createSinglePortInstance(i);
+				componentInstance.portInstances += portInstance;
+				i := i+1;
+			}
+			
+		}
+		endif;	
+	};
+	
+	//create connectors
+	var i = 0;
+	while(not (i = roleMultiplicity())){
+		var endpoints : OrderedSet(DiscreteSinglePortInstance);
+		endpoints += self.roles->at(1).map createSinglePortInstance(i);
+		endpoints += self.roles->at(2).map createSinglePortInstance(i);
+		portConnectorInstances += map createAssemblyConnectorInstance(endpoints);
+		i :=i+1;
+	}; 
+	
+	getModelElementCategory(componentInstanceCategoryKey, componentInstanceCategoryName).modelElements += result;
+	
+}
+
+mapping Role :: createComponentInstance(index : Integer) : AtomicComponentInstance{
+	componentType := self.map createComponent();
+	name := self.name+"ComponentInstance"+index.toString();
+}
+
+
+mapping Role :: createMultiPortInstance(index : Integer) : DiscreteMultiPortInstance{
+	var componentInstance := self.map createComponentInstance(index);
+	var i = index;
+	while(not (i = roleMultiplicity())){
+		var singlePortInstance := self.map createSinglePortInstance(i);
+		subInteractionEndpointInstances += singlePortInstance;
+		componentInstance.portInstances += singlePortInstance;
+		
+		//set first, last and next references
+		//previous reference is set as opposite of next by model code
+		if(i = 0)
+			first := singlePortInstance;
+		if(i = roleMultiplicity()-1)
+			last := singlePortInstance;
+		if(i > 0)
+			self.map createSinglePortInstance(i-1).next := singlePortInstance;
+		
+		i := i +1;
+	};
+	type := self.map createPort();
+	name := self.name+"MultiPortInstance";
+}
+
+
+mapping Role :: createSinglePortInstance(index : Integer) : DiscreteSinglePortInstance{
+	type := self.map createPort();
+	name := self.name+"PortInstance"+index.toString();
+}
+
+mapping createAssemblyConnectorInstance(endpoints : Set(DiscreteSinglePortInstance)) : AssemblyConnectorInstance{
+	connectorEndpointInstances += endpoints;
+}
+
+
+
+mapping mtctl::comparables::MumlElemExpr :: MumlElemExpr2MumlElemExpr() : mtctl::comparables::MumlElemExpr{
+		var invresolved : Set(OclAny) := self.invresolveIn(mtctl::comparables::MumlElemExpr::MumlElemExpr2MumlElemExpr, mtctl::comparables::MumlElemExpr)->oclAsSet()->flatten();
+		
+		if(invresolved->intersection(input.objects()->oclAsSet()->flatten())->size() > 0){
+			//The Expression is to be adapted to the corresponding component model element
+			
+			
+			//TODO it's not possible to disjunct ProtocolElement2ComponentElement with overridden MessageType2MessageType at the moment, thus we need an addition case here.
+			//Remove this as soon as QVTO supports overridden mappings in disjunctions
+			if(self.elem.oclIsKindOf(MessageType)){
+					elem := self.elem.oclAsType(MessageType).map MessageType2MessageType();
+			}
+			else{
+				elem := self.elem.map ProtocolElement2ComponentElement();
+				}
+		}
+		else{
+			//The Expression is to be copied
+    		_elem := self._elem.map EObject2EObject();
+    		};
+    	
+    	instance := self.instance.map ProtocolElement2ComponentElement();
+}
+
+mapping EObject :: NonValidElementInMumlElemExpr() : EObject{
+	assert fatal (false) with log("Not supported element "+self.toString()+" in MumlElemExpression "+self.container().toString()+" in Protocol context");
+}
+
+mapping DataType :: NonValidElementAsDataType() : DataType{
+	
+init{
+	assert fatal (false) with log("Not supported element "+self.toString()+" used as DataType");
+	 }
+}
+
+helper portReferencedByProtocol(inout protocol : CoordinationProtocol) : Boolean {
+	assert fatal (not protocol.oclIsUndefined());
+	var directContents : Sequence(EObject):=protocol.oclAsType(EObject).eContents().oclAsType(EObject);
+	var indirectContents:= directContents->closure(eContents());
+	
+	var allContents := directContents;
+	allContents += indirectContents;
+	
+	var referencedPorts : Set(pim::component::Port);
+	
+	allContents->forEach(elem){
+		var directRef : Sequence(EObject):=elem.eCrossReferences().oclAsType(EObject);
+		var indirectRef:= directContents->closure(eCrossReferences());
+		
+		var allRef := directRef;
+		allRef += indirectRef;
+		referencedPorts += allRef[pim::component::Port];
+	};
+	
+	return referencedPorts->size()!=0;
+}
+
+query roleMultiplicity() : EInt {
+	return options.objects()->any(oclIsKindOf(CoordinationProtocolOptions)).oclAsType(CoordinationProtocolOptions).roleMultiplicity
+}
