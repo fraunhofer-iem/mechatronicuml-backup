@@ -154,9 +154,6 @@
       </roles>
       <roleConnector xmi:id="_lJTQlqypEeaQtL77hNy28w" connectorEndpoints="_lJSpiKypEeaQtL77hNy28w _lJTQkKypEeaQtL77hNy28w">
         <connectorQualityOfServiceAssumptions xmi:id="_lJTQl6ypEeaQtL77hNy28w" comment="">
-          <minMessageDelay xmi:id="_lJTQmKypEeaQtL77hNy28w" unit="MILLISECONDS">
-            <value xsi:type="common:LiteralExpression" xmi:id="_lJTQmaypEeaQtL77hNy28w" value="0"/>
-          </minMessageDelay>
           <maxMessageDelay xmi:id="_lJT3oKypEeaQtL77hNy28w" unit="MILLISECONDS">
             <value xsi:type="common:LiteralExpression" xmi:id="_lJT3oaypEeaQtL77hNy28w" value="0"/>
           </maxMessageDelay>
