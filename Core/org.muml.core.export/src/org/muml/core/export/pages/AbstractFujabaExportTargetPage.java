@@ -9,6 +9,7 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.URI;
@@ -49,6 +50,8 @@ import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Tree;
+import org.eclipse.ui.IWorkbenchWindow;
+import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.WizardDataTransferPage;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
@@ -444,7 +447,38 @@ public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferP
         setErrorMessage(null);	// should not initially have error message
         
         setControl(section);
+        
+        applyInitialSelection();
     }
+
+	protected void applyInitialSelection() {
+		IWorkbenchWindow window = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
+	    if (window != null) {
+	        IStructuredSelection selection = (IStructuredSelection) window.getSelectionService().getSelection();
+	        Object firstElement = selection.getFirstElement();
+	        if (firstElement instanceof IResource) {
+	        	IResource resource = (IResource)((IAdaptable)firstElement).getAdapter(IResource.class);
+	        	while (resource != null && (isFiltered(resource) || resource instanceof IFile)) {
+	        		resource = resource.getParent();
+	        	}
+	        	if (resource != null) {
+	        		treeViewer.setSelection(null);
+	        		treeViewer.setSelection(new StructuredSelection(resource));
+	        		treeViewer.setExpandedState(resource, true);
+//	        		treeViewer.get
+//	        		treeViewer.getTree().select(item);
+	        	}
+	        }
+	    }
+	}
+	private boolean isFiltered(Object object) {
+		for (ViewerFilter filter : treeViewer.getFilters()) {
+			if (!filter.select(treeViewer, null, object)) {
+				return true;
+			}
+		}
+		return false;
+	}
 
 	public void createOptions(Composite parent) {
 		buttonOverwrite = toolkit.createButton(parent, "Overwrite existing resources", SWT.CHECK);
@@ -481,7 +515,8 @@ public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferP
 	
 	@Override
 	public void activate() {
-		// default implementation: do nothing.
+	    treeViewer.getTree().setFocus();
+	    treeViewer.getTree().forceFocus();
 	}
 	
 	@Override
