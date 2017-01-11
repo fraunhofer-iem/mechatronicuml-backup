@@ -59,132 +59,134 @@ import org.eclipse.ui.model.WorkbenchContentProvider;
 import org.eclipse.ui.model.WorkbenchLabelProvider;
 import org.muml.core.export.ExportPlugin;
 
-
 public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferPage implements IActivatableWizardPage {
 	protected Button buttonOverwrite;
 	protected FormToolkit toolkit;
 	protected TreeViewer treeViewer;
 	protected Text destinationText;
-	
+
 	protected IResource destination;
-	
+
 	public static String OVERWRITE_KEY = "overwrite";
-	
-    public AbstractFujabaExportTargetPage(String name, FormToolkit toolkit) {
-    	super(name); 
-    	this.toolkit = toolkit;
-    	setTitle("Select Transformation Target");
-        setDescription("Target");
-    }
 
-    public void restoreWidgetValues() {
-        IDialogSettings settings = getDialogSettings();
-        if (settings != null && buttonOverwrite != null) {
-        	buttonOverwrite.setSelection(settings.getBoolean(OVERWRITE_KEY));
-        }
-    }
+	public AbstractFujabaExportTargetPage(String name, FormToolkit toolkit) {
+		super(name);
+		this.toolkit = toolkit;
+		setTitle("Select Transformation Target");
+		setDescription("Target");
+	}
 
-    @Override
-    public void saveWidgetValues() {
-    	IDialogSettings settings = getDialogSettings();
-        if (settings != null && buttonOverwrite != null) {
-        	settings.put(OVERWRITE_KEY, buttonOverwrite.getSelection());
-        }
-    }
-    /**
-     *	Answer a boolean indicating whether the receivers destination specification
-     *	widgets currently all contain valid values.
-     */
-    protected boolean validateDestinationGroup() {
-        String destinationValue = getDestinationValue();
-        if (destinationValue.length() == 0) {
-            setMessage(destinationEmptyMessage());
-            return false;
-        }
-        
-        setMessage(null);
-        return true;
-    }
+	public void restoreWidgetValues() {
+		IDialogSettings settings = getDialogSettings();
+		if (settings != null && buttonOverwrite != null) {
+			buttonOverwrite.setSelection(settings.getBoolean(OVERWRITE_KEY));
+		}
+	}
+
+	@Override
+	public void saveWidgetValues() {
+		IDialogSettings settings = getDialogSettings();
+		if (settings != null && buttonOverwrite != null) {
+			settings.put(OVERWRITE_KEY, buttonOverwrite.getSelection());
+		}
+	}
+
+	/**
+	 * Answer a boolean indicating whether the receivers destination
+	 * specification widgets currently all contain valid values.
+	 */
+	protected boolean validateDestinationGroup() {
+		String destinationValue = getDestinationValue();
+		if (destinationValue.length() == 0) {
+			setMessage(destinationEmptyMessage());
+			return false;
+		}
+
+		setMessage(null);
+		return true;
+	}
 
 	private String getDestinationValue() {
 		return destinationText.getText();
 	}
 
 	/**
-     * Get the message used to denote an empty destination.
-     */
-    protected String destinationEmptyMessage() {
-    	
-        return "Please enter an export destination."; // XXX NLS
-    }
-//
-//    /**
-//     * Returns the name of a container with a location that encompasses targetDirectory.
-//     * Returns null if there is no conflict.
-//     * 
-//     * @param targetDirectory the path of the directory to check.
-//     * @return the conflicting container name or <code>null</code>
-//     */
-//    protected String getConflictingContainerNameFor(String targetDirectory) {
-//
-//        IPath rootPath = ResourcesPlugin.getWorkspace().getRoot().getLocation();
-//        IPath testPath = new Path(targetDirectory);
-//        // cannot export into workspace root
-//        if(testPath.equals(rootPath))
-//        	return rootPath.lastSegment();
-//        
-//        //Are they the same?
-//        if(testPath.matchingFirstSegments(rootPath) == rootPath.segmentCount()){
-//        	String firstSegment = testPath.removeFirstSegments(rootPath.segmentCount()).segment(0);
-//        	if(!Character.isLetterOrDigit(firstSegment.charAt(0)))
-//        		return firstSegment;
-//        }
-//
-//        return null;
-//
-//    }
+	 * Get the message used to denote an empty destination.
+	 */
+	protected String destinationEmptyMessage() {
 
-    public void validatePage() {
-    	URI uri = getDestinationURI();
+		return "Please enter an export destination."; // XXX NLS
+	}
+	//
+	// /**
+	// * Returns the name of a container with a location that encompasses
+	// targetDirectory.
+	// * Returns null if there is no conflict.
+	// *
+	// * @param targetDirectory the path of the directory to check.
+	// * @return the conflicting container name or <code>null</code>
+	// */
+	// protected String getConflictingContainerNameFor(String targetDirectory) {
+	//
+	// IPath rootPath = ResourcesPlugin.getWorkspace().getRoot().getLocation();
+	// IPath testPath = new Path(targetDirectory);
+	// // cannot export into workspace root
+	// if(testPath.equals(rootPath))
+	// return rootPath.lastSegment();
+	//
+	// //Are they the same?
+	// if(testPath.matchingFirstSegments(rootPath) == rootPath.segmentCount()){
+	// String firstSegment =
+	// testPath.removeFirstSegments(rootPath.segmentCount()).segment(0);
+	// if(!Character.isLetterOrDigit(firstSegment.charAt(0)))
+	// return firstSegment;
+	// }
+	//
+	// return null;
+	//
+	// }
 
-    	// Decide if the destination is valid...
-    	// We support file system and platform URIs.
-    	boolean validDestination = false;
-    	if (uri != null && uri.isFile()) {
-    		File file = new File(uri.toFileString());
-    		if (file != null && file.exists()) {
-    			validDestination = true;
-    		}
-    	} else if (uri != null && uri.isPlatformResource()) {
-    		String platformString = uri.toPlatformString(true);
-    		IResource iResource = ResourcesPlugin.getWorkspace().getRoot().findMember(platformString);
-    		if (iResource!=null && iResource.exists()) {
-    			validDestination = true;
-    		}
-    	}
-    	
-    	// Display error in case destination is invalid.
-    	String error = null;
-    	if (!validDestination) {
-    		error = "Specified destination does not exist.";
-    	}
-    	setErrorMessage(error);
-    	setPageComplete(error == null);
-    }
-    
+	public void validatePage() {
+		URI uri = getDestinationURI();
+
+		// Decide if the destination is valid...
+		// We support file system and platform URIs.
+		boolean validDestination = false;
+		if (uri != null && uri.isFile()) {
+			File file = new File(uri.toFileString());
+			if (file != null && file.exists()) {
+				validDestination = true;
+			}
+		} else if (uri != null && uri.isPlatformResource()) {
+			String platformString = uri.toPlatformString(true);
+			IResource iResource = ResourcesPlugin.getWorkspace().getRoot().findMember(platformString);
+			if (iResource != null && iResource.exists()) {
+				validDestination = true;
+			}
+		}
+
+		// Display error in case destination is invalid.
+		String error = null;
+		if (!validDestination) {
+			error = "Specified destination does not exist.";
+		}
+		setErrorMessage(error);
+		setPageComplete(error == null);
+	}
+
 	@Override
 	public void createControl(final Composite parent) {
 
-        initializeDialogUnits(parent);
-        
-		int sectionStyle = Section.TITLE_BAR
-				| Section.CLIENT_INDENT | Section.EXPANDED;
+		initializeDialogUnits(parent);
+
+		int sectionStyle = Section.TITLE_BAR | Section.CLIENT_INDENT | Section.EXPANDED;
 		Section section = toolkit.createSection(parent, sectionStyle);
 		section.setText("Target Properties");
-		Composite composite = toolkit.createComposite(section); 
-		section.setClient(composite);	
+		Composite composite = toolkit.createComposite(section);
+		section.setClient(composite);
 		final Button createFolderButton = toolkit.createButton(section, null, SWT.PUSH);
-		createFolderButton.setImage(ExportPlugin.imageDescriptorFromPlugin(ExportPlugin.PLUGIN_ID, "images/new_folder.png").createImage());
+		createFolderButton.setImage(
+				ExportPlugin.imageDescriptorFromPlugin(ExportPlugin.PLUGIN_ID, "images/new_folder.png").createImage());
 		createFolderButton.addSelectionListener(new SelectionAdapter() {
 			public void widgetSelected(SelectionEvent event) {
 				if (treeViewer.getSelection() instanceof StructuredSelection) {
@@ -193,7 +195,7 @@ public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferP
 						IContainer container = (IContainer) firstElement;
 
 						String uniqueName = "unnamed";
-						for (int i = 1; ; i++) {
+						for (int i = 1;; i++) {
 							if (container.findMember(uniqueName) == null) {
 								break;
 							}
@@ -214,30 +216,30 @@ public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferP
 			}
 		});
 		section.setTextClient(createFolderButton);
-        composite.setLayout(new GridLayout());
-        composite.setLayoutData(new GridData(GridData.VERTICAL_ALIGN_FILL
-                | GridData.HORIZONTAL_ALIGN_FILL));
-        composite.setFont(parent.getFont());
+		composite.setLayout(new GridLayout());
+		composite.setLayoutData(new GridData(GridData.VERTICAL_ALIGN_FILL | GridData.HORIZONTAL_ALIGN_FILL));
+		composite.setFont(parent.getFont());
 
-        Tree tree = toolkit.createTree(composite, SWT.BORDER);
-        GridData gridData = new GridData(SWT.FILL, SWT.FILL, true, true);
-        tree.setLayoutData(gridData);
-        
-        final ILabelProvider labelProvider = new WorkbenchLabelProvider();
-        treeViewer = new TreeViewer(tree);
-        treeViewer.setContentProvider(new WorkbenchContentProvider());
-        treeViewer.setLabelProvider(labelProvider);
-        treeViewer.setInput(ResourcesPlugin.getWorkspace().getRoot());
-    
-       // treeViewer.expandAll();
-        treeViewer.getTree().addKeyListener(new KeyAdapter() {
+		Tree tree = toolkit.createTree(composite, SWT.BORDER);
+		GridData gridData = new GridData(SWT.FILL, SWT.FILL, true, true);
+		tree.setLayoutData(gridData);
+
+		final ILabelProvider labelProvider = new WorkbenchLabelProvider();
+		treeViewer = new TreeViewer(tree);
+		treeViewer.setContentProvider(new WorkbenchContentProvider());
+		treeViewer.setLabelProvider(labelProvider);
+		treeViewer.setInput(ResourcesPlugin.getWorkspace().getRoot());
+
+		// treeViewer.expandAll();
+		treeViewer.getTree().addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent event) {
 				if (treeViewer.getSelection() instanceof StructuredSelection) {
 					Object firstElement = ((StructuredSelection) treeViewer.getSelection()).getFirstElement();
 					if (firstElement instanceof IResource && event.keyCode == SWT.DEL) {
 						IResource resource = (IResource) firstElement;
-						String message = String.format("Are you sure you want to delete resource '%s'?", resource.getName());
+						String message = String.format("Are you sure you want to delete resource '%s'?",
+								resource.getName());
 						if (MessageDialog.openQuestion(parent.getShell(), "Delete", message)) {
 							try {
 								resource.delete(true, new NullProgressMonitor());
@@ -248,8 +250,8 @@ public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferP
 					}
 				}
 			}
-        });
-        treeViewer.addSelectionChangedListener(new ISelectionChangedListener() {
+		});
+		treeViewer.addSelectionChangedListener(new ISelectionChangedListener() {
 			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
 				if (event.getSelection() instanceof StructuredSelection) {
@@ -257,13 +259,10 @@ public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferP
 					createFolderButton.setEnabled(firstElement instanceof IContainer);
 				}
 			}
-        });
+		});
 
-
-		ColumnViewerEditorActivationStrategy actSupport = new ColumnViewerEditorActivationStrategy(
-				treeViewer) {
-			protected boolean isEditorActivationEvent(
-					ColumnViewerEditorActivationEvent event) {
+		ColumnViewerEditorActivationStrategy actSupport = new ColumnViewerEditorActivationStrategy(treeViewer) {
+			protected boolean isEditorActivationEvent(ColumnViewerEditorActivationEvent event) {
 				return event.eventType == ColumnViewerEditorActivationEvent.TRAVERSAL
 						|| event.eventType == ColumnViewerEditorActivationEvent.MOUSE_DOUBLE_CLICK_SELECTION
 						|| (event.eventType == ColumnViewerEditorActivationEvent.KEY_PRESSED && event.keyCode == SWT.F2)
@@ -272,23 +271,19 @@ public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferP
 			}
 		};
 
-		TreeViewerFocusCellManager focusCellManager = new TreeViewerFocusCellManager(
-				treeViewer, new FocusCellOwnerDrawHighlighter(treeViewer));
-		
+		TreeViewerFocusCellManager focusCellManager = new TreeViewerFocusCellManager(treeViewer,
+				new FocusCellOwnerDrawHighlighter(treeViewer));
+
 		TreeViewerEditor.create(treeViewer, focusCellManager, actSupport,
-				ColumnViewerEditor.TABBING_HORIZONTAL
-						| ColumnViewerEditor.TABBING_MOVE_TO_ROW_NEIGHBOR
-						| ColumnViewerEditor.TABBING_VERTICAL
-						| ColumnViewerEditor.KEYBOARD_ACTIVATION);
+				ColumnViewerEditor.TABBING_HORIZONTAL | ColumnViewerEditor.TABBING_MOVE_TO_ROW_NEIGHBOR
+						| ColumnViewerEditor.TABBING_VERTICAL | ColumnViewerEditor.KEYBOARD_ACTIVATION);
 
-		final TextCellEditor textCellEditor = new TextCellEditor(
-				treeViewer.getTree());
+		final TextCellEditor textCellEditor = new TextCellEditor(treeViewer.getTree());
 
-		
 		TreeViewerColumn column = new TreeViewerColumn(treeViewer, SWT.MULTI);
 		column.getColumn().setWidth(600);
 		column.getColumn().setMoveable(true);
-//		column.getColumn().setText("Name");
+		// column.getColumn().setText("Name");
 		column.setLabelProvider(new CellLabelProvider() {
 
 			@Override
@@ -296,7 +291,7 @@ public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferP
 				cell.setText(labelProvider.getText(cell.getElement()));
 				cell.setImage(labelProvider.getImage(cell.getElement()));
 			}
-			
+
 		});
 		column.setEditingSupport(new EditingSupport(treeViewer) {
 			protected boolean canEdit(Object element) {
@@ -318,9 +313,8 @@ public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferP
 				if (element instanceof IResource) {
 					try {
 						((IResource) element).move(
-							((IResource) element).getFullPath().removeLastSegments(1).append(value.toString()),
-							true, new NullProgressMonitor()
-						);
+								((IResource) element).getFullPath().removeLastSegments(1).append(value.toString()),
+								true, new NullProgressMonitor());
 					} catch (CoreException e) {
 						e.printStackTrace();
 					}
@@ -328,27 +322,21 @@ public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferP
 				treeViewer.update(element, null);
 			}
 		});
-		
-        
-        
-        
-        
-        // Hide files if destination must be a directory
-        if (wizardPageDirectoryDestination()) {
-	        treeViewer.addFilter(new ViewerFilter() {
+
+		// Hide files if destination must be a directory
+		if (wizardPageDirectoryDestination()) {
+			treeViewer.addFilter(new ViewerFilter() {
 				@Override
-				public boolean select(Viewer viewer, Object parentElement,
-						Object element) {
+				public boolean select(Viewer viewer, Object parentElement, Object element) {
 					return !(element instanceof IFile);
 				}
-	        });
-        }
-        
-        // Hide dot files and closed resources
-        treeViewer.addFilter(new ViewerFilter() {
+			});
+		}
+
+		// Hide dot files and closed resources
+		treeViewer.addFilter(new ViewerFilter() {
 			@Override
-			public boolean select(Viewer viewer, Object parentElement,
-					Object element) {
+			public boolean select(Viewer viewer, Object parentElement, Object element) {
 				if (element instanceof IProject && !((IProject) element).isOpen()) {
 					return false;
 				}
@@ -357,8 +345,8 @@ public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferP
 				}
 				return true;
 			}
-        });
-        treeViewer.addSelectionChangedListener(new ISelectionChangedListener() {
+		});
+		treeViewer.addSelectionChangedListener(new ISelectionChangedListener() {
 
 			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
@@ -372,34 +360,34 @@ public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferP
 						destinationString = uri.toString();
 					}
 				}
-				//destinationText.setText(destination);
+				// destinationText.setText(destination);
 				destinationText.setText(destinationString);
 				validatePage();
 			}
-        	
-        });
-        Composite destinationComposite = toolkit.createComposite(composite);
-        destinationComposite.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
-        GridLayout destinationLayout = new GridLayout(2, false);
-        destinationLayout.marginWidth = 0;
-        destinationLayout.marginLeft = destinationLayout.marginRight = 0;
-        destinationComposite.setLayout(destinationLayout);
-        destinationText = toolkit.createText(destinationComposite, "", SWT.BORDER);
-        destinationText.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
-        destinationText.addModifyListener(new ModifyListener() {
+
+		});
+		Composite destinationComposite = toolkit.createComposite(composite);
+		destinationComposite.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
+		GridLayout destinationLayout = new GridLayout(2, false);
+		destinationLayout.marginWidth = 0;
+		destinationLayout.marginLeft = destinationLayout.marginRight = 0;
+		destinationComposite.setLayout(destinationLayout);
+		destinationText = toolkit.createText(destinationComposite, "", SWT.BORDER);
+		destinationText.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
+		destinationText.addModifyListener(new ModifyListener() {
 
 			@Override
 			public void modifyText(ModifyEvent e) {
 				validatePage();
 			}
-        	
-        });
-        
-        if (wizardPageSupportsFilesystem()) {
-	        Button browse = toolkit.createButton(destinationComposite, "Filesystem...", SWT.FLAT);
-	        browse.setLayoutData(new GridData(SWT.FILL, SWT.FILL, false, false));
-	        browse.addSelectionListener(new SelectionAdapter() {
-	
+
+		});
+
+		if (wizardPageSupportsFilesystem()) {
+			Button browse = toolkit.createButton(destinationComposite, "Filesystem...", SWT.FLAT);
+			browse.setLayoutData(new GridData(SWT.FILL, SWT.FILL, false, false));
+			browse.addSelectionListener(new SelectionAdapter() {
+
 				@Override
 				public void widgetSelected(SelectionEvent e) {
 					FileDialog fd = new FileDialog(getShell(), SWT.OPEN);
@@ -414,63 +402,58 @@ public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferP
 					destinationText.setSelection(destinationText.getText().length());
 					validatePage();
 				}
-	        });
-        }
-        
-        if (shouldDisplayOptions()) {
-	        // Options
-			sectionStyle = Section.TITLE_BAR
-					| Section.CLIENT_INDENT | Section.EXPANDED | Section.TWISTIE;
-			Section optionsSection= toolkit.createSection(composite, sectionStyle);
-			optionsSection.setLayoutData(new GridData(GridData.VERTICAL_ALIGN_FILL
-	                | GridData.HORIZONTAL_ALIGN_FILL));
+			});
+		}
+
+		if (shouldDisplayOptions()) {
+			// Options
+			sectionStyle = Section.TITLE_BAR | Section.CLIENT_INDENT | Section.EXPANDED | Section.TWISTIE;
+			Section optionsSection = toolkit.createSection(composite, sectionStyle);
+			optionsSection.setLayoutData(new GridData(GridData.VERTICAL_ALIGN_FILL | GridData.HORIZONTAL_ALIGN_FILL));
 			optionsSection.setText("Options");
-			Composite optionsComposite = toolkit.createComposite(optionsSection); 
+			Composite optionsComposite = toolkit.createComposite(optionsSection);
 			optionsSection.setClient(optionsComposite);
-	
+
 			optionsComposite.setLayout(new GridLayout());
-			optionsComposite.setLayoutData(new GridData(GridData.VERTICAL_ALIGN_FILL
-	                | GridData.HORIZONTAL_ALIGN_FILL));
+			optionsComposite.setLayoutData(new GridData(GridData.VERTICAL_ALIGN_FILL | GridData.HORIZONTAL_ALIGN_FILL));
 			optionsComposite.setFont(parent.getFont());
 			createOptions(optionsComposite);
-        }
-        
-	        
-//        restoreResourceSpecificationWidgetValues(); // ie.- local
-        restoreWidgetValues(); // ie.- subclass hook
-//        if (initialResourceSelection != null) {
-//			setupBasedOnInitialSelections();
-//		}
+		}
 
-        updateWidgetEnablements();
-        setPageComplete(determinePageCompletion());
-        setErrorMessage(null);	// should not initially have error message
-        
-        setControl(section);
-        
-        applyInitialSelection();
-    }
+		// restoreResourceSpecificationWidgetValues(); // ie.- local
+		restoreWidgetValues(); // ie.- subclass hook
+		// if (initialResourceSelection != null) {
+		// setupBasedOnInitialSelections();
+		// }
+
+		updateWidgetEnablements();
+		setPageComplete(determinePageCompletion());
+		setErrorMessage(null); // should not initially have error message
+
+		setControl(section);
+
+		applyInitialSelection();
+	}
 
 	protected void applyInitialSelection() {
 		IWorkbenchWindow window = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
-	    if (window != null) {
-	        IStructuredSelection selection = (IStructuredSelection) window.getSelectionService().getSelection();
-	        Object firstElement = selection.getFirstElement();
-	        if (firstElement instanceof IResource) {
-	        	IResource resource = (IResource)((IAdaptable)firstElement).getAdapter(IResource.class);
-	        	while (resource != null && (isFiltered(resource) || resource instanceof IFile)) {
-	        		resource = resource.getParent();
-	        	}
-	        	if (resource != null) {
-	        		treeViewer.setSelection(null);
-	        		treeViewer.setSelection(new StructuredSelection(resource));
-	        		treeViewer.setExpandedState(resource, true);
-//	        		treeViewer.get
-//	        		treeViewer.getTree().select(item);
-	        	}
-	        }
-	    }
+		if (window != null) {
+			IStructuredSelection selection = (IStructuredSelection) window.getSelectionService().getSelection();
+			Object firstElement = selection.getFirstElement();
+			if (firstElement instanceof IResource) {
+				IResource resource = (IResource) ((IAdaptable) firstElement).getAdapter(IResource.class);
+				while (resource != null && (isFiltered(resource) || resource instanceof IFile)) {
+					resource = resource.getParent();
+				}
+				if (resource != null) {
+					treeViewer.setSelection(null);
+					treeViewer.setSelection(new StructuredSelection(resource));
+					treeViewer.setExpandedState(resource, true);
+				}
+			}
+		}
 	}
+
 	private boolean isFiltered(Object object) {
 		for (ViewerFilter filter : treeViewer.getFilters()) {
 			if (!filter.select(treeViewer, null, object)) {
@@ -483,11 +466,10 @@ public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferP
 	public void createOptions(Composite parent) {
 		buttonOverwrite = toolkit.createButton(parent, "Overwrite existing resources", SWT.CHECK);
 	}
-	
+
 	protected boolean shouldDisplayOptions() {
 		return wizardPageSupportsOverwriteOption();
 	}
-
 
 	@Override
 	protected boolean allowNewContainerName() {
@@ -499,26 +481,27 @@ public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferP
 	}
 
 	public abstract boolean wizardPageSupportsOverwriteOption();
+
 	public abstract boolean wizardPageDirectoryDestination();
-	
+
 	public boolean wizardPageSupportsFilesystem() {
 		return true;
 	}
-	
+
 	public IResource getDestinationResource() {
-		return destination; 
+		return destination;
 	}
-	
+
 	public URI getDestinationURI() {
-		return URI.createURI(getDestinationValue()); 
+		return URI.createURI(getDestinationValue());
 	}
-	
+
 	@Override
 	public void activate() {
-	    treeViewer.getTree().setFocus();
-	    treeViewer.getTree().forceFocus();
+		treeViewer.getTree().setFocus();
+		treeViewer.getTree().forceFocus();
 	}
-	
+
 	@Override
 	public void deactivate() {
 		// default implementation: do nothing.
