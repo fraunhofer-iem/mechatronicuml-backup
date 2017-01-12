@@ -19,7 +19,6 @@
             <artifactId>tycho-surefire-plugin</artifactId>
             <version>0.26.0</version>
             <configuration>
-				<useUIHarness>true</useUIHarness>
                 <testClass>org.muml.pim.tests.MumlTestSuite</testClass>
                 <product>org.eclipse.platform.ide</product>
             </configuration>

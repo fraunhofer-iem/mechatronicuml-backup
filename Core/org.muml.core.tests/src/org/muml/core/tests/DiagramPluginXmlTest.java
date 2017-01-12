@@ -8,6 +8,7 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.ecore.EPackage;
 import org.junit.Test;
 import org.muml.core.tests.resource.ProblemCollector;
+import org.osgi.framework.Bundle;
 import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -40,7 +41,11 @@ public abstract class DiagramPluginXmlTest {
 
 		XMLReader xmlReader = XMLReaderFactory.createXMLReader();
 		for (final String pluginName : pluginNames) {
-			URL url = Platform.getBundle(pluginName).getResource("plugin.xml");
+			Bundle bundle = Platform.getBundle(pluginName);
+			if (bundle == null) {
+				throw new UnsupportedOperationException("Could not find bundle " + pluginName + "! It is not loaded.");
+			}
+			URL url = bundle.getResource("plugin.xml");
 			InputSource inputSource = new InputSource(url.openStream());
 			xmlReader.setContentHandler(new DefaultHandler() {
 	
