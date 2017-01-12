@@ -31,4 +31,12 @@ Require-Bundle: org.junit;bundle-version="4.11.0";visibility:=reexport,
  org.eclipse.gmf.runtime.emf.core;bundle-version="1.7.0",
  org.eclipse.gmf.validate;bundle-version="1.2.0",
  org.apache.commons.io;bundle-version="2.0.1",
- org.muml.core.tests
+ org.muml.core.tests,
+ org.muml.pm.hardware.resource.diagram;bundle-version="1.0.0",
+ org.muml.pm.hardware.resource.diagram.custom;bundle-version="1.0.0",
+ org.muml.pm.hardware.resourceinstance.diagram;bundle-version="1.0.0",
+ org.muml.pm.hardware.resourceinstance.diagram.custom;bundle-version="1.0.0",
+ org.muml.pm.hardware.platform.diagram;bundle-version="1.0.0",
+ org.muml.pm.hardware.platform.diagram.custom;bundle-version="1.0.0",
+ org.muml.pm.hardware.platforminstance.diagram;bundle-version="1.0.0",
+ org.muml.pm.hardware.platforminstance.diagram.custom;bundle-version="1.0.0"
