@@ -1061,7 +1061,7 @@
       iD="org.muml.pim.realtimestatechart.diagram"
       name="Realtime Statechart Diagram Editor"
       provider="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn"
-      version="0.5.0.qualifier"
+      version="1.0.0.qualifier"
       activatorClassName="RealtimestatechartDiagramEditorPlugin">
     <requiredPlugins>org.eclipse.gmf.tooling.runtime</requiredPlugins>
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>

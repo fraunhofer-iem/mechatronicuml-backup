@@ -1381,7 +1381,7 @@
       iD="org.muml.pim.componentinstanceconfiguration.diagram"
       name="Component Instance Configuration Diagram Editor"
       provider="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn"
-      version="0.5.0.qualifier"
+      version="1.0.0.qualifier"
       activatorClassName="ComponentinstanceconfigurationDiagramEditorPlugin">
     <requiredPlugins>org.eclipse.gmf.tooling.runtime</requiredPlugins>
     <requiredPlugins>org.eclipse.ocl.pivot</requiredPlugins>
