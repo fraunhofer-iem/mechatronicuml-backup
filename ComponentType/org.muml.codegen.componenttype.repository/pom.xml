@@ -3,11 +3,12 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>org.muml.codegen.componenttype.repository</artifactId>
+	<groupId>org.muml.codegen.componenttype.group</groupId>
 	<packaging>eclipse-repository</packaging>
 	<parent>
 		<groupId>org.muml.codegen.componenttype.group</groupId>
 		<artifactId>ComponentType</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
     </parent>
-  <groupId>org.muml.codegen.componenttype.group</groupId>
+
 </project>
