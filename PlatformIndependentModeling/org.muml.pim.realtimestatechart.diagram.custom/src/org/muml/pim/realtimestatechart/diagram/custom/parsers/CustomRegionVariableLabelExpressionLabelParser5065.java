@@ -3,11 +3,8 @@ package org.muml.pim.realtimestatechart.diagram.custom.parsers;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
-import org.muml.pim.behavior.Behavior;
 import org.muml.pim.behavior.BehaviorPackage;
 import org.muml.pim.realtimestatechart.RealtimeStatechart;
-import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
 import org.muml.pim.realtimestatechart.Region;
 import org.muml.pim.realtimestatechart.diagram.parsers.RegionLabelExpressionLabelParser5065;
 
@@ -29,15 +26,17 @@ public class CustomRegionVariableLabelExpressionLabelParser5065 extends
 
 	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
-		if(event instanceof Notification){
+		// NOTE: This has side effects and must always be called.
+		// It does some book-keeping in the OCL-Tracker.
+		boolean isAffecting = super.isAffectingEvent(event, flags);
+		
+		if (event instanceof Notification) {
 			Notification notification = (Notification) event;
-			if (notification.getFeature() == BehaviorPackage.Literals.VARIABLE__INITIALIZE_EXPRESSION || 
-					notification.getNotifier() instanceof RealtimeStatechart ||
-					notification.getNotifier() instanceof Region) {
-				return true;
+			if (notification.getFeature() == BehaviorPackage.Literals.VARIABLE__INITIALIZE_EXPRESSION) {
+				isAffecting = true;
 			}
 		}
-		return super.isAffectingEvent(event, flags);
+		return isAffecting;
 	}
 
 	
