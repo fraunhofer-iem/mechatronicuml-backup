@@ -31,28 +31,31 @@ public class RealtimeStatechartEditor extends org.muml.ape.runtime.editors.Class
 
 			addPropertyEditor(createEditorBehavioralElement_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorUsedOperationRepositories_property_tab_generalTab_Editor(), false);
+			addSubCategory("org.muml.ape.category.RTSC Elements", "RTSC Elements", org.eclipse.swt.SWT.HORIZONTAL,
+					true);
 
-			addPropertyEditor(createEditorSubRoleSpecificVariables_property_tab_generalTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.RTSC Elements",
+					createEditorVariables_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorSubRoleSpecificClocks_property_tab_generalTab_Editor(), false);
-
-			addPropertyEditor(createEditorSubRoleSpecificOperations_property_tab_generalTab_Editor(), false);
-
-			addSubCategory("org.muml.ape.category.Embedded Elements", "Embedded Elements",
-					org.eclipse.swt.SWT.HORIZONTAL, true);
-
-			addEditorToCategory("org.muml.ape.category.Embedded Elements",
+			addEditorToCategory("org.muml.ape.category.RTSC Elements",
 					createEditorClocks_property_tab_generalTab_Editor(), false);
 
-			addEditorToCategory("org.muml.ape.category.Embedded Elements",
+			addEditorToCategory("org.muml.ape.category.RTSC Elements",
 					createEditorOperations_property_tab_generalTab_Editor(), false);
 
-			addEditorToCategory("org.muml.ape.category.Embedded Elements",
-					createEditorVariables_property_tab_generalTab_Editor(), false);
+			addSubCategory("org.muml.ape.category.Subrole-specific Elements", "Subrole-specific Elements",
+					org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory("org.muml.ape.category.Embedded Elements",
-					createEditorVariables_property_tab_generalTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Subrole-specific Elements",
+					createEditorSubRoleSpecificVariables_property_tab_generalTab_Editor(), false);
+
+			addEditorToCategory("org.muml.ape.category.Subrole-specific Elements",
+					createEditorSubRoleSpecificClocks_property_tab_generalTab_Editor(), false);
+
+			addEditorToCategory("org.muml.ape.category.Subrole-specific Elements",
+					createEditorSubRoleSpecificOperations_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorUsedOperationRepositories_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -76,28 +79,31 @@ public class RealtimeStatechartEditor extends org.muml.ape.runtime.editors.Class
 
 			addPropertyEditor(createEditorBehavioralElement_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorUsedOperationRepositories_property_tab_generalTab_Editor(), false);
+			addSubCategory("org.muml.ape.category.RTSC Elements", "RTSC Elements", org.eclipse.swt.SWT.HORIZONTAL,
+					true);
 
-			addPropertyEditor(createEditorSubRoleSpecificVariables_property_tab_generalTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.RTSC Elements",
+					createEditorVariables_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorSubRoleSpecificClocks_property_tab_generalTab_Editor(), false);
-
-			addPropertyEditor(createEditorSubRoleSpecificOperations_property_tab_generalTab_Editor(), false);
-
-			addSubCategory("org.muml.ape.category.Embedded Elements", "Embedded Elements",
-					org.eclipse.swt.SWT.HORIZONTAL, true);
-
-			addEditorToCategory("org.muml.ape.category.Embedded Elements",
+			addEditorToCategory("org.muml.ape.category.RTSC Elements",
 					createEditorClocks_property_tab_generalTab_Editor(), false);
 
-			addEditorToCategory("org.muml.ape.category.Embedded Elements",
+			addEditorToCategory("org.muml.ape.category.RTSC Elements",
 					createEditorOperations_property_tab_generalTab_Editor(), false);
 
-			addEditorToCategory("org.muml.ape.category.Embedded Elements",
-					createEditorVariables_property_tab_generalTab_Editor(), false);
+			addSubCategory("org.muml.ape.category.Subrole-specific Elements", "Subrole-specific Elements",
+					org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory("org.muml.ape.category.Embedded Elements",
-					createEditorVariables_property_tab_generalTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Subrole-specific Elements",
+					createEditorSubRoleSpecificVariables_property_tab_generalTab_Editor(), false);
+
+			addEditorToCategory("org.muml.ape.category.Subrole-specific Elements",
+					createEditorSubRoleSpecificClocks_property_tab_generalTab_Editor(), false);
+
+			addEditorToCategory("org.muml.ape.category.Subrole-specific Elements",
+					createEditorSubRoleSpecificOperations_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorUsedOperationRepositories_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -111,22 +117,6 @@ public class RealtimeStatechartEditor extends org.muml.ape.runtime.editors.Class
 
 		} else {
 		}
-	}
-
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorUsedOperationRepositories_property_tab_generalTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorUsedOperationRepositories_property_tab_generalTab_Editor() {
-		if (this.editorUsedOperationRepositories_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-					.getRealtimeStatechart_UsedOperationRepositories();
-			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
-					adapterFactory, feature);
-
-			editor.setTooltipMessage(
-					"A Real-time Statechart may use an arbitrary number of OperationRepositories. Then, the Real-Time Statechart may access all of the operations that are contained in the OperationRepository, i.e., it may invoke them whereever an Operation may be invoked.");
-
-			this.editorUsedOperationRepositories_property_tab_generalTab = editor;
-		}
-		return this.editorUsedOperationRepositories_property_tab_generalTab;
 	}
 
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorVariables_property_tab_generalTab;
@@ -233,6 +223,30 @@ public class RealtimeStatechartEditor extends org.muml.ape.runtime.editors.Class
 			}
 
 			editor.setTooltipMessage("The set of variables that is available within each subrole instance.");
+
+			{
+				final org.eclipse.ocl.ecore.OCLExpression expression = org.muml.ape.runtime.RuntimePlugin
+						.createOCLExpression("eclass.name <> 'TimeParameter'", feature, getEClass());
+				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = org.muml.ape.runtime.RuntimePlugin.OCL_ECORE
+						.createQuery(expression);
+				query.getEvaluationEnvironment().add("eclass", null);
+				org.muml.ape.runtime.filter.ICreationFilter filter = new org.muml.ape.runtime.filter.ICreationFilter() {
+
+					@Override
+					public boolean select(Object object, org.eclipse.emf.ecore.EClass eClass) {
+						query.getEvaluationEnvironment().replace("eclass", eClass);
+						try {
+							return Boolean.TRUE.equals(query.evaluate(object));
+						} catch (org.eclipse.ocl.pivot.values.InvalidValueException e) {
+							return false;
+						}
+					}
+
+				};
+				if (filter != null) {
+					editor.addCreationFilter(filter);
+				}
+			}
 
 			this.editorSubRoleSpecificVariables_property_tab_generalTab = editor;
 		}
@@ -347,6 +361,22 @@ public class RealtimeStatechartEditor extends org.muml.ape.runtime.editors.Class
 			this.editorSubRoleSpecificOperations_property_tab_generalTab = editor;
 		}
 		return this.editorSubRoleSpecificOperations_property_tab_generalTab;
+	}
+
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorUsedOperationRepositories_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorUsedOperationRepositories_property_tab_generalTab_Editor() {
+		if (this.editorUsedOperationRepositories_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+					.getRealtimeStatechart_UsedOperationRepositories();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage(
+					"A Real-time Statechart may use an arbitrary number of OperationRepositories. Then, the Real-Time Statechart may access all of the operations that are contained in the OperationRepository, i.e., it may invoke them whereever an Operation may be invoked.");
+
+			this.editorUsedOperationRepositories_property_tab_generalTab = editor;
+		}
+		return this.editorUsedOperationRepositories_property_tab_generalTab;
 	}
 
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_property_tab_generalTab;

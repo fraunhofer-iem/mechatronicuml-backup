@@ -384,10 +384,19 @@
     </classes>
     <classes xmi:id="_VZN9O8wbEeSjx7OWZCcdLw">
       <genClass href="pim.genmodel#//pim/realtimestatechart/RealtimeStatechart"/>
-      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZOkRMwbEeSjx7OWZCcdLw" tooltip="" initializeOCLExpression="">
-        <genFeature href="pim.genmodel#//pim/realtimestatechart/RealtimeStatechart/usedOperationRepositories"/>
+      <orderedElements xsi:type="org.muml:PropertyCategory" xmi:id="_VZOkRswbEeSjx7OWZCcdLw" title="RTSC Elements" properties="//@packages.1/@classes.16/@orderedElements.5 _VZOkQswbEeSjx7OWZCcdLw _VZTcyswbEeSjx7OWZCcdLw"/>
+      <orderedElements xsi:type="org.muml:PropertyCategory" title="Subrole-specific Elements" properties="//@packages.1/@classes.16/@orderedElements.7 //@packages.1/@classes.16/@orderedElements.8 //@packages.1/@classes.16/@orderedElements.9"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZN9PMwbEeSjx7OWZCcdLw" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/RealtimeStatechart/parentRegion"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="org.muml:ListPropertyEditor" xmi:id="_VZOkRcwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZOkQMwbEeSjx7OWZCcdLw" tooltip="" reconcile="false" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/RealtimeStatechart/states"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZN9PswbEeSjx7OWZCcdLw" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/RealtimeStatechart/transitions"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml:Property" initializeOCLExpression="">
         <genFeature href="pim.genmodel#//pim/behavior/Behavior/variables"/>
@@ -396,18 +405,6 @@
         <creationConstraint>
           <filters xsi:type="org.muml:OCLFilter" expression="eclass.name &lt;> 'TimeParameter'"/>
         </creationConstraint>
-      </orderedElements>
-      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZN9PMwbEeSjx7OWZCcdLw" reconcile="false">
-        <genFeature href="pim.genmodel#//pim/realtimestatechart/RealtimeStatechart/parentRegion"/>
-        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-      </orderedElements>
-      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZN9PswbEeSjx7OWZCcdLw" reconcile="false">
-        <genFeature href="pim.genmodel#//pim/realtimestatechart/RealtimeStatechart/transitions"/>
-        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-      </orderedElements>
-      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZOkQMwbEeSjx7OWZCcdLw" tooltip="" reconcile="false" initializeOCLExpression="">
-        <genFeature href="pim.genmodel#//pim/realtimestatechart/RealtimeStatechart/states"/>
-        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml:Property" xmi:id="_VZOkQswbEeSjx7OWZCcdLw">
         <genFeature href="pim.genmodel#//pim/realtimestatechart/RealtimeStatechart/clocks"/>
@@ -419,6 +416,9 @@
         <visibilityFilters xsi:type="org.muml:OCLFilter" expression="if (not self.getPortOrRoleStatechart().behavioralElement.oclIsUndefined() and self.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(pim::connector::DiscreteInteractionEndpoint)) then&#xA;&#x9;self.getPortOrRoleStatechart().behavioralElement.oclAsType(pim::connector::DiscreteInteractionEndpoint).multi and self.getPortOrRoleStatechart().behavioralElement.oclAsType(pim::connector::DiscreteInteractionEndpoint).subroleBehavior.oclIsUndefined() and self.getPortOrRoleStatechart().behavioralElement.oclAsType(pim::connector::DiscreteInteractionEndpoint).coordinatorBehavior.oclIsUndefined()&#xA;else&#xA;&#x9;true&#xA;endif"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="org.muml:ListPropertyEditor"/>
+        <creationConstraint>
+          <filters xsi:type="org.muml:OCLFilter" expression="eclass.name &lt;> 'TimeParameter'"/>
+        </creationConstraint>
       </orderedElements>
       <orderedElements xsi:type="org.muml:Property" initializeOCLExpression="">
         <genFeature href="pim.genmodel#//pim/realtimestatechart/RealtimeStatechart/subRoleSpecificClocks"/>
@@ -432,7 +432,11 @@
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="org.muml:ListPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="org.muml:PropertyCategory" xmi:id="_VZOkRswbEeSjx7OWZCcdLw" title="Embedded Elements" properties="_VZOkQswbEeSjx7OWZCcdLw _VZTcyswbEeSjx7OWZCcdLw //@packages.1/@classes.16/@orderedElements.1 _VZTczMwbEeSjx7OWZCcdLw"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZOkRMwbEeSjx7OWZCcdLw" tooltip="" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/RealtimeStatechart/usedOperationRepositories"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor" xmi:id="_VZOkRcwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
       <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
       <superClasses href="../../org.muml.core/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
       <superClasses href="#_VZTcx8wbEeSjx7OWZCcdLw"/>
