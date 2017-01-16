@@ -5,7 +5,6 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-import org.apache.log4j.Logger;
 import org.muml.udbm.ClockConstraint;
 import org.muml.udbm.ClockZone;
 import org.muml.udbm.DifferenceClockConstraint;
@@ -15,7 +14,8 @@ import org.muml.udbm.UDBMClock;
 import org.muml.udbm.clockconstraint.ComparativeClockConstraint;
 import org.muml.udbm.clockconstraint.RelationalOperator;
 import org.muml.udbm.clockconstraint.TrueClockConstraint;
-import org.muml.udbm.java.plugin.Activator;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class JavaClockZone extends ClockZone {
 
@@ -27,9 +27,8 @@ public class JavaClockZone extends ClockZone {
 	 */
 	private int[][] matrix;
 	
-	private static Logger logger = Activator.getLogManager().getLogger(
-			JavaClockZone.class.getName());
-	
+	private Logger logger = LoggerFactory.getLogger(JavaFederation.class);
+		
 	@Override
 	protected boolean setFederation(Federation value) 
 	{
@@ -498,21 +497,22 @@ public class JavaClockZone extends ClockZone {
 
 	// Used for debugging
 	private void printDBM() {
-		if (logger.isDebugEnabled()){
-			logger.debug("DBM"
-					+ System.getProperty("line.separator") + " - first columb [i][0]: upper bounds"
-					+ System.getProperty("line.separator") + " - first row [0][j]: lower bounds"
-					+ System.getProperty("line.separator") + " - entry [0][0] == -3: DBM unsatifiable, means DBM is empty"
-					+ System.getProperty("line.separator") + " - else: clock[i].value - clock[j]"
-					+ System.getProperty("line.separator"));
-			for (int i = 0; i < matrix.length; i++) {
-				for (int j = 0; j < matrix.length; j++) {
-					logger.debug(matrix[i][j] + "\t \t \t");
-				}
-				logger.debug(System.getProperty("line.separator"));
-			}
-		}
+		String output = null;
 		
+		output = System.getProperty("line.separator") + "DBM"
+				+ System.getProperty("line.separator") + " - first columb [i][0]: upper bounds"
+				+ System.getProperty("line.separator") + " - first row [0][j]: lower bounds"
+				+ System.getProperty("line.separator") + " - entry [0][0] == -3: DBM unsatifiable, means DBM is empty"
+				+ System.getProperty("line.separator") + " - else: clock[i].value - clock[j]"
+				+ System.getProperty("line.separator");
+		
+		for (int i = 0; i < matrix.length; i++) {
+			for (int j = 0; j < matrix.length; j++) {
+				output = output + matrix[i][j] + "\t \t \t";
+			}
+			output = output + System.getProperty("line.separator");
+		}
+		logger.debug(output);
 	}
 
 
