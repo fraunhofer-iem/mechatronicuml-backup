@@ -1,4 +1,5 @@
-import transforms.lib.MUML2MUML;
+//import transforms.lib.MUML2MUML;
+import ModelcopyLibrary;
 import transforms.lib.RTSCUtil;
 import transforms.lib.MultiMappingUtil;
 
@@ -20,15 +21,15 @@ transformation RTSCEntryExitEventNormalization(in input:rtsc, out output:rtsc);
 		assert fatal (input.objects()[EntryPoint]->isEmpty() and input.objects()[ExitPoint]->isEmpty());
 
 	
-		input.objects()[RootNode]->map RootNode2RootNode();
+		input.objects()[RootNode]->map transform().oclAsType(RootNode);
 		
 	}
 	
 
 		mapping Transition :: Transition2Transition() : Transition {
 		
-		source := self.source.map Vertex2Vertex();
-		target := self.target.map Vertex2Vertex();
+		source := self.source.map transform().oclAsType(Vertex);
+		target := self.target.map transform().oclAsType(Vertex);
 
 		assert fatal (source != null) with log('Source state must be specified.');
 		assert fatal (target != null) with log('Target state must be specified.');
@@ -36,35 +37,35 @@ transformation RTSCEntryExitEventNormalization(in input:rtsc, out output:rtsc);
 
 		priority := self.priority;
 		
-		synchronization := self.synchronization.map Synchronization2Synchronization();
+		synchronization := self.synchronization.map transform().oclAsType(Synchronization);
 		
-		clockResets += self.source.getDeactivatedState().exitEvent.clockResets->map Clock2Clock();				
-		clockResets += self.clockResets->map Clock2Clock();
-		clockResets += self.target.getActivatedState().entryEvent.clockResets->map Clock2Clock();
+		clockResets += self.source.getDeactivatedState().exitEvent.clockResets->map transform().oclAsType(Clock);				
+		clockResets += self.clockResets->map transform().oclAsType(Clock);
+		clockResets += self.target.getActivatedState().entryEvent.clockResets->map transform().oclAsType(Clock);
 		
-		clockConstraints := self.clockConstraints->map ClockConstraint2ClockConstraint();
+		clockConstraints := self.clockConstraints->map transform().oclAsType(ClockConstraint);
 		
-		absoluteDeadlines := self.absoluteDeadlines->map AbsoluteDeadline2AbsoluteDeadline();
+		absoluteDeadlines := self.absoluteDeadlines->map transform().oclAsType(AbsoluteDeadline);
 		
-		relativeDeadline := self.relativeDeadline.map RelativeDeadline2RelativeDeadline();
+		relativeDeadline := self.relativeDeadline.map transform().oclAsType(RelativeDeadline);
 		
 		blockable := self.blockable;
 		
-		guard := self.guard.map Expression2Expression();
+		guard := self.guard.map transform().oclAsType(core::expressions::Expression);
 		
-		events := self.events->map TransitionEvent2TransitionEvent();
+		events := self.events->map transform().oclAsType(TransitionEvent);
 		
 		action := self.source.getDeactivatedState().exitEvent.action.mapAction();
 	
 		if (action = null) 
 		then {
-			action := self.action.map Action2Action();
+			action := self.action.map transform().oclAsType(Action);
 		}
 		else {
 			if(not self.action.oclIsUndefined() and self.action!= null)
 			then{
 				action.name := action.name + " + " + self.action.name;
-				action.expressions += self.action.expressions->map Expression2Expression();
+				action.expressions += self.action.expressions->map transform().oclAsType(core::expressions::Expression);
 				}
 			endif;
 		}
@@ -95,25 +96,25 @@ transformation RTSCEntryExitEventNormalization(in input:rtsc, out output:rtsc);
 		outgoingTransitions := self.outgoingTransitions-> map Transition2Transition();
 		incomingTransitions := self.incomingTransitions -> map Transition2Transition();
 		
-		invariants := self.invariants->map ClockConstraint2ClockConstraint();
+		invariants := self.invariants->map transform().oclAsType(ClockConstraint);
 		
 		initial := self.initial;
 		final := self.final;
 		urgent := self.urgent;
 		
-		channels := self.channels-> map SynchronizationChannel2SynchronizationChannel();
-		embeddedRegions := self.embeddedRegions-> map Region2Region();
+		channels := self.channels-> map transform().oclAsType(SynchronizationChannel);
+		embeddedRegions := self.embeddedRegions-> map transform().oclAsType(Region);
 		
 		--do not create entry/exit events, these are added to the transitions in Transition2Transition
 		
-		doEvent := self.doEvent.map DoEvent2DoEvent();
+		doEvent := self.doEvent.map transform().oclAsType(DoEvent);
 		
 		--in the context of the MUML2UPPAAL transformation chain there shouldn't be any connection points in the models at this time
 		--however, we copy these if the transformation is called in a different context
-		connectionPoints := self.connectionPoints[EntryPoint]->map EntryPoint2EntryPoint();
-		connectionPoints := self.connectionPoints[ExitPoint]->map ExitPoint2ExitPoint();
+		connectionPoints := self.connectionPoints[EntryPoint]->map transform().oclAsType(EntryPoint);
+		connectionPoints := self.connectionPoints[ExitPoint]->map transform().oclAsType(ExitPoint);
 		
-		extensions := self.extensions[CommittedExtension]->map CommittedExtension2CommittedExtension();
+		extensions := self.extensions[CommittedExtension]->map transform().oclAsType(CommittedExtension);
 		
 	
 	}

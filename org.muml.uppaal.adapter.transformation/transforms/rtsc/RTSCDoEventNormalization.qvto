@@ -1,4 +1,5 @@
-import transforms.lib.MUML2MUML;
+//import transforms.lib.MUML2MUML;
+import ModelcopyLibrary;
 import transforms.lib.RTSCUtil;
 import transforms.lib.MultiMappingUtil;
 import transforms.lib.ExternalizedStrings;
@@ -17,14 +18,14 @@ transformation RTSCDoEventNormalization(in input:rtsc, out output:rtsc);
 
 main() {
 	assert fatal (input.objects()[Transition]->forAll(t | not t.source.isCompositeState() and not t.target.isCompositeState())) with log("Composite transitions unsupported here.");
-	input.objects()[RootNode]->map RootNode2RootNode();
+	input.objects()[RootNode]->map transform().oclAsType(RootNode);
 }
 
 mapping State :: State2State() : State {
 				
 		name := self.name;
 		
-		connectionPoints := self.connectionPoints->map StateConnectionPoint2StateConnectionPoint();
+		connectionPoints := self.connectionPoints->map transform().oclAsType(StateConnectionPoint);
 		
 		--only map incoming and outgoing transitions simple if the source state is already a composite state. 
 		--In this case there are no composite transitions that would have to be redirected to entry/exit points.
@@ -36,10 +37,10 @@ mapping State :: State2State() : State {
 		endif;
 		
 		
-		embeddedRegions := self.embeddedRegions->map Region2Region();
+		embeddedRegions := self.embeddedRegions->map transform().oclAsType(Region);
 		
-		entryEvent := self.entryEvent.map EntryEvent2EntryEvent();
-		exitEvent := self.exitEvent.map ExitEvent2ExitEvent();
+		entryEvent := self.entryEvent.map transform().oclAsType(EntryEvent);
+		exitEvent := self.exitEvent.map transform().oclAsType(ExitEvent);
 		
 		--Translate Do-events
 		if(not self.doEvent.oclIsUndefined() and self.doEvent != null)		
@@ -142,7 +143,7 @@ mapping State :: State2State() : State {
 				--otherwise create Transition from each entry-point to wait state
 				else{
 					self.connectionPoints[EntryPoint]->forEach(curEntryPoint){
-						curTransition := map createTransition(curEntryPoint.map StateConnectionPoint2StateConnectionPoint(), self.map createWaitState(), 1);
+						curTransition := map createTransition(curEntryPoint.map transform().oclAsType(StateConnectionPoint), self.map createWaitState(), 1);
 						self.map createDoRtsc().transitions += curTransition;
 						curTransition.urgent := true;
 					}
@@ -200,10 +201,10 @@ mapping State :: State2State() : State {
 				--otherwise create Transition from wait and done state to each exit point
 				else{
 					self.connectionPoints[ExitPoint]->forEach(curExitPoint){
-						curTransition := map createTransition(self.map createWaitState(), curExitPoint.map StateConnectionPoint2StateConnectionPoint(), 1);
+						curTransition := map createTransition(self.map createWaitState(), curExitPoint.map transform().oclAsType(StateConnectionPoint), 1);
 						self.map createDoRtsc().transitions += curTransition;
 						curTransition.urgent := true;
-						curTransition := map createTransition(self.map createDoneState(), curExitPoint.map StateConnectionPoint2StateConnectionPoint(), 1);
+						curTransition := map createTransition(self.map createDoneState(), curExitPoint.map transform().oclAsType(StateConnectionPoint), 1);
 						self.map createDoRtsc().transitions += curTransition;
 						curTransition.urgent := true;
 					}
@@ -213,13 +214,13 @@ mapping State :: State2State() : State {
 			}
 		endif;
 		
-		invariants := self.invariants->map ClockConstraint2ClockConstraint();		
+		invariants := self.invariants->map transform().oclAsType(ClockConstraint);		
 		initial := self.initial;	
 		final := self.final;	
 		urgent := self.urgent;	
-		channels := self.channels->map SynchronizationChannel2SynchronizationChannel();	
-		parentStatechart := self.parentStatechart.map RealtimeStatechart2RealtimeStatechart();
-		extensions := self.extensions.oclAsType(CommittedExtension).map CommittedExtension2CommittedExtension();	
+		channels := self.channels->map transform().oclAsType(SynchronizationChannel);	
+		parentStatechart := self.parentStatechart.map transform().oclAsType(RealtimeStatechart);
+		extensions := self.extensions.oclAsType(CommittedExtension).map transform().oclAsType(CommittedExtension);	
 }
 	
 mapping pim::realtimestatechart::Transition :: Transition2Transition() : pim::realtimestatechart::Transition disjuncts Transition::doTargetTransition2Transition, Transition::doSourceTransition2Transition, Transition::normalTransition2Transition;
@@ -229,19 +230,19 @@ mapping pim::realtimestatechart::Transition :: doTargetTransition2Transition() :
     	comment := self.comment;
     	blockable := self.blockable;
     	urgent := self.urgent;
-    	extensions := self.extensions.map Extension2Extension();
-    	synchronization := self.synchronization.map Synchronization2Synchronization();
+    	extensions := self.extensions.map transform().oclAsType(core::Extension);
+    	synchronization := self.synchronization.map transform().oclAsType(Synchronization);
     	//do not set the target state because this transition is redirected to an entry point
     	if(not self.target.oclIsKindOf(State))
-    		target := self.target.map Vertex2Vertex();
-    	source := self.source.map Vertex2Vertex();
-    	clockResets := self.clockResets.map Clock2Clock();
-    	clockConstraints := self.clockConstraints.map ClockConstraint2ClockConstraint();
-    	absoluteDeadlines := self.absoluteDeadlines.map AbsoluteDeadline2AbsoluteDeadline();
-    	relativeDeadline := self.relativeDeadline.map RelativeDeadline2RelativeDeadline();
-    	guard := self.guard.map Expression2Expression();
-    	events := self.events.map TransitionEvent2TransitionEvent();
-    	action := self.action.map Action2Action();
+    		target := self.target.map transform().oclAsType(Vertex);
+    	source := self.source.map transform().oclAsType(Vertex);
+    	clockResets := self.clockResets.map transform().oclAsType(Clock);
+    	clockConstraints := self.clockConstraints.map transform().oclAsType(ClockConstraint);
+    	absoluteDeadlines := self.absoluteDeadlines.map transform().oclAsType(AbsoluteDeadline);
+    	relativeDeadline := self.relativeDeadline.map transform().oclAsType(RelativeDeadline);
+    	guard := self.guard.map transform().oclAsType(Expression);
+    	events := self.events.map transform().oclAsType(TransitionEvent);
+    	action := self.action.map transform().oclAsType(Action);
 }
    		 
 mapping pim::realtimestatechart::Transition :: doSourceTransition2Transition() : pim::realtimestatechart::Transition when{not (self.source.oclAsType(State).doEvent = null)}{
@@ -249,25 +250,25 @@ mapping pim::realtimestatechart::Transition :: doSourceTransition2Transition() :
     	comment := self.comment;
     	blockable := self.blockable;
     	urgent := self.urgent;
-    	extensions := self.extensions.map Extension2Extension();
-    	synchronization := self.synchronization.map Synchronization2Synchronization();
-    	target := self.target.map Vertex2Vertex();
+    	extensions := self.extensions.map transform().oclAsType(core::Extension);
+    	synchronization := self.synchronization.map transform().oclAsType(Synchronization);
+    	target := self.target.map transform().oclAsType(Vertex);
     	//do not set the source state because this transition will have an exit point as source
     	if(not self.source.oclIsKindOf(State))
-    		source := self.source.map Vertex2Vertex();
-    	clockResets := self.clockResets.map Clock2Clock();
-    	clockConstraints := self.clockConstraints.map ClockConstraint2ClockConstraint();
-    	absoluteDeadlines := self.absoluteDeadlines.map AbsoluteDeadline2AbsoluteDeadline();
-    	relativeDeadline := self.relativeDeadline.map RelativeDeadline2RelativeDeadline();
-    	guard := self.guard.map Expression2Expression();
-    	events := self.events.map TransitionEvent2TransitionEvent();
-    	action := self.action.map Action2Action();
+    		source := self.source.map transform().oclAsType(Vertex);
+    	clockResets := self.clockResets.map transform().oclAsType(Clock);
+    	clockConstraints := self.clockConstraints.map transform().oclAsType(ClockConstraint);
+    	absoluteDeadlines := self.absoluteDeadlines.map transform().oclAsType(AbsoluteDeadline);
+    	relativeDeadline := self.relativeDeadline.map transform().oclAsType(RelativeDeadline);
+    	guard := self.guard.map transform().oclAsType(Expression);
+    	events := self.events.map transform().oclAsType(TransitionEvent);
+    	action := self.action.map transform().oclAsType(Action);
 }
    		 
 mapping pim::realtimestatechart::EntryPoint :: EntryPoint2EntryPoint() : pim::realtimestatechart::EntryPoint{
     	name := self.name;
     	comment := self.comment;
-    	extensions := self.extensions.map Extension2Extension();
+    	extensions := self.extensions.map transform().oclAsType(core::Extension);
     	outgoingTransitions := self.outgoingTransitions.map Transition2Transition();
     	if(self.state.doEvent != null){
     		outgoingTransitions += map createTransition(result, self.state.map createWaitState(), 1);
@@ -281,7 +282,7 @@ mapping pim::realtimestatechart::EntryPoint :: EntryPoint2EntryPoint() : pim::re
 mapping pim::realtimestatechart::ExitPoint :: ExitPoint2ExitPoint() : pim::realtimestatechart::ExitPoint{
     	name := self.name;
     	comment := self.comment;
-    	extensions := self.extensions.map Extension2Extension();
+    	extensions := self.extensions.map transform().oclAsType(core::Extension);
     	outgoingTransitions := self.outgoingTransitions.map Transition2Transition();
     	incomingTransitions := self.incomingTransitions.map Transition2Transition();
     	
@@ -298,17 +299,17 @@ mapping pim::realtimestatechart::Transition :: normalTransition2Transition() : p
     	comment := self.comment;
     	blockable := self.blockable;
     	urgent := self.urgent;
-    	extensions := self.extensions.map Extension2Extension();
-    	synchronization := self.synchronization.map Synchronization2Synchronization();
-    	target := self.target.map Vertex2Vertex();
-    	source := self.source.map Vertex2Vertex();
-    	clockResets := self.clockResets.map Clock2Clock();
-    	clockConstraints := self.clockConstraints.map ClockConstraint2ClockConstraint();
-    	absoluteDeadlines := self.absoluteDeadlines.map AbsoluteDeadline2AbsoluteDeadline();
-    	relativeDeadline := self.relativeDeadline.map RelativeDeadline2RelativeDeadline();
-    	guard := self.guard.map Expression2Expression();
-    	events := self.events.map TransitionEvent2TransitionEvent();
-    	action := self.action.map Action2Action();
+    	extensions := self.extensions.map transform().oclAsType(core::Extension);
+    	synchronization := self.synchronization.map transform().oclAsType(Synchronization);
+    	target := self.target.map transform().oclAsType(Vertex);
+    	source := self.source.map transform().oclAsType(Vertex);
+    	clockResets := self.clockResets.map transform().oclAsType(Clock);
+    	clockConstraints := self.clockConstraints.map transform().oclAsType(ClockConstraint);
+    	absoluteDeadlines := self.absoluteDeadlines.map transform().oclAsType(AbsoluteDeadline);
+    	relativeDeadline := self.relativeDeadline.map transform().oclAsType(RelativeDeadline);
+    	guard := self.guard.map transform().oclAsType(Expression);
+    	events := self.events.map transform().oclAsType(TransitionEvent);
+    	action := self.action.map transform().oclAsType(Action);
 }
    		
 mapping DoEvent :: Do2DoRegion() : Region{

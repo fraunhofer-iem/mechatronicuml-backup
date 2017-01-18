@@ -1,5 +1,6 @@
 import transforms.lib.RTSCUtil;
-import transforms.lib.MUML2MUML;
+//import transforms.lib.MUML2MUML;
+import ModelcopyLibrary;
 import transforms.lib.MultiMappingUtil;
 
 /* Normalizes transitions with deadlines by adding an intermediate state.
@@ -32,7 +33,7 @@ modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 
 main() {
 
-	input.objects()[RootNode]->map RootNode2RootNode();
+	input.objects()[RootNode]->map transform().oclAsType(RootNode);
 
 }
 
@@ -42,13 +43,13 @@ mapping RealtimeStatechart :: RealtimeStatechart2RealtimeStatechart() : Realtime
 				
 	name := self.name;
 	
-	behavioralElement := self.behavioralElement.map BehavioralElement2BehavioralElement();
+	behavioralElement := self.behavioralElement.map transform().oclAsType(BehavioralElement);
 			
-	clocks += self.clocks->map Clock2Clock();
+	clocks += self.clocks->map transform().oclAsType(Clock);
 	clocks += self.map RTSC2RelativeDeadlineClock();
 	
-	variables += self.variables->map Variable2Variable();
-	operations += self.operations->map Operation2Operation();
+	variables += self.variables->map transform().oclAsType(Variable);
+	operations += self.operations->map transform().oclAsType(Operation);
 		
 	states += self.states->map State2State();
 	states += self.transitions->map Transition2IntermediateState();
@@ -63,7 +64,7 @@ mapping RealtimeStatechart :: RealtimeStatechart2RealtimeStatechart() : Realtime
 mapping Variable :: Variable2InitializeAssignment() : Assignment when {self.initializeExpression != null} {
 	
 	lhs_typedNamedElementExpression := object TypedNamedElementExpression {
-		typedNamedElement := self.map TypedNamedElement2TypedNamedElement();
+		typedNamedElement := self.map transform().oclAsType(TypedNamedElement);
 	};
 	
 	assignOperator := AssignOperator::ASSIGN;
@@ -78,7 +79,7 @@ mapping Variable :: Variable2InitializeExpression() : Expression
 mapping Variable :: Variable2ExplicitInitializeExpression() : Expression when {self.initializeExpression != null} {
 	
 	init {
-		result := self.initializeExpression.map Expression2Expression();
+		result := self.initializeExpression.map transform().oclAsType(Expression);
 	}
 	
 }
@@ -130,13 +131,13 @@ mapping State :: State2State() : State {
 	urgent := self.urgent;
 	final := self.final;
 	
-	channels += self.channels->map SynchronizationChannel2SynchronizationChannel();	
+	channels += self.channels->map transform().oclAsType(SynchronizationChannel);	
 	
-	invariants += self.invariants->map ClockConstraint2ClockConstraint();
+	invariants += self.invariants->map transform().oclAsType(ClockConstraint);
 	
-	connectionPoints += self.connectionPoints->map StateConnectionPoint2StateConnectionPoint();
+	connectionPoints += self.connectionPoints->map transform().oclAsType(StateConnectionPoint);
 		
-	embeddedRegions += self.embeddedRegions->map Region2Region();
+	embeddedRegions += self.embeddedRegions->map transform().oclAsType(Region);
 	
 	/*
 	if (self.doEvent != null) 
@@ -146,9 +147,9 @@ mapping State :: State2State() : State {
 	endif;
 	*/
 	
-	entryEvent := self.entryEvent.map EntryEvent2EntryEvent();
-	doEvent := self.doEvent.map DoEvent2DoEvent();
-	exitEvent := self.exitEvent.map ExitEvent2ExitEvent();
+	entryEvent := self.entryEvent.map transform().oclAsType(EntryEvent);
+	doEvent := self.doEvent.map transform().oclAsType(DoEvent);
+	exitEvent := self.exitEvent.map transform().oclAsType(ExitEvent);
 			
 }
 
@@ -164,23 +165,23 @@ mapping Assignment :: Assignment2Initialzer() : Expression {
 
 mapping Transition :: Transition2Transition() : Transition when {not self.hasDeadline()} {
 		
-	source := self.source.map Vertex2Vertex();
+	source := self.source.map transform().oclAsType(Vertex);
 	
-	target := self.target.map Vertex2Vertex();
+	target := self.target.map transform().oclAsType(Vertex);
 	
-	guard := self.guard.map Expression2Expression();
+	guard := self.guard.map transform().oclAsType(Expression);
 
-	clockConstraints += self.clockConstraints->map ClockConstraint2ClockConstraint();
+	clockConstraints += self.clockConstraints->map transform().oclAsType(ClockConstraint);
 	
-	synchronization := self.synchronization.map Synchronization2Synchronization();
+	synchronization := self.synchronization.map transform().oclAsType(Synchronization);
 	
-	events += self.triggerMessageEvent.map AsynchronousMessageEvent2AsynchronousMessageEvent();
+	events += self.triggerMessageEvent.map transform().oclAsType(AsynchronousMessageEvent);
 	
-	action := self.action.map Action2Action();			
+	action := self.action.map transform().oclAsType(Action);			
 		
-	events += self.raiseMessageEvent.map AsynchronousMessageEvent2AsynchronousMessageEvent();
+	events += self.raiseMessageEvent.map transform().oclAsType(AsynchronousMessageEvent);
 	
-	clockResets += self.clockResets->map Clock2Clock();
+	clockResets += self.clockResets->map transform().oclAsType(Clock);
 		
 	priority := self.priority;
 	
@@ -197,16 +198,16 @@ mapping Transition :: Transition2Transition() : Transition when {not self.hasDea
 
 mapping AbsoluteDeadline :: AbsoluteDeadline2Invariant() : ClockConstraint when {self.hasUpperBound()} {
 	
-	bound := self.upperBound.map TimeValue2TimeValue();
+	bound := self.upperBound.map transform().oclAsType(TimeValue);
 	
 	operator := ComparingOperator::LESS_OR_EQUAL;
 	
-	clock := self.clock.map Clock2Clock();
+	clock := self.clock.map transform().oclAsType(Clock);
 }
 
 mapping RelativeDeadline :: RelativeDeadline2Invariant(rtsc : RealtimeStatechart) : ClockConstraint when {self.hasUpperBound()} {
 	
-	bound := self.upperBound.map TimeValue2TimeValue();
+	bound := self.upperBound.map transform().oclAsType(TimeValue);
 	
 	operator := ComparingOperator::LESS_OR_EQUAL;
 	
@@ -215,16 +216,16 @@ mapping RelativeDeadline :: RelativeDeadline2Invariant(rtsc : RealtimeStatechart
 
 mapping AbsoluteDeadline :: AbsoluteDeadline2TimeGuard() : ClockConstraint when {self.hasLowerBound()} {
 	
-	bound := self.lowerBound.map TimeValue2TimeValue();
+	bound := self.lowerBound.map transform().oclAsType(TimeValue);
 	
 	operator := ComparingOperator::GREATER_OR_EQUAL;
 	
-	clock := self.clock.map Clock2Clock();
+	clock := self.clock.map transform().oclAsType(Clock);
 }
 
 mapping RelativeDeadline :: RelativeDeadline2TimeGuard(rtsc : RealtimeStatechart) : ClockConstraint	when {self.hasLowerBound()} {
 	
-	bound := self.lowerBound.map TimeValue2TimeValue();
+	bound := self.lowerBound.map transform().oclAsType(TimeValue);
 	
 	operator := ComparingOperator::GREATER_OR_EQUAL;
 	
@@ -267,19 +268,19 @@ mtctl::predicates::MessageInTransitExpr::MessageInTransitExpr2MessageInTransitEx
 mapping TransitionFiringExpr :: TransitionFiringExpr2StateActiveExpr() : StateActiveExpr when {self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).hasDeadline()}{
 	state := object MumlElemExpr {
 		elem := self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).map Transition2IntermediateState().oclAsType(ecore::EObject);
-		instance := self.transition.oclAsType(MumlElemExpr).instance.map EObject2EObject();
+		instance := self.transition.oclAsType(MumlElemExpr).instance.map transform();
 	};
 }
 
 mapping Transition :: Transition2InitialTransition() : Transition when {self.hasDeadline()} {
 	
-	source := self.source.map Vertex2Vertex();
+	source := self.source.map transform().oclAsType(Vertex);
 	target := self.map Transition2IntermediateState(); 
 	
-	guard := self.guard.map Expression2Expression();
-	clockConstraints += self.clockConstraints->map ClockConstraint2ClockConstraint();
-	events += self.triggerMessageEvent.map AsynchronousMessageEvent2AsynchronousMessageEvent();
-	synchronization := self.synchronization.map Synchronization2Synchronization();
+	guard := self.guard.map transform().oclAsType(Expression);
+	clockConstraints += self.clockConstraints->map transform().oclAsType(ClockConstraint);
+	events += self.triggerMessageEvent.map transform().oclAsType(AsynchronousMessageEvent);
+	synchronization := self.synchronization.map transform().oclAsType(Synchronization);
 		
 	if (self.relativeDeadline != null)
 	then {
@@ -302,16 +303,16 @@ mapping Transition :: Transition2IntermediateState() : State when {self.hasDeadl
 mapping Transition :: Transition2FinalTransition() : Transition when {self.hasDeadline()} {
 
 	source := self.map Transition2IntermediateState();
-	target := self.target.map Vertex2Vertex();
+	target := self.target.map transform().oclAsType(Vertex);
 	
 	clockConstraints += self.absoluteDeadlines->map AbsoluteDeadline2TimeGuard();
 	clockConstraints += self.relativeDeadline.map RelativeDeadline2TimeGuard(self.getStatechart());
 	
-	events += self.raiseMessageEvent.map AsynchronousMessageEvent2AsynchronousMessageEvent();
+	events += self.raiseMessageEvent.map transform().oclAsType(AsynchronousMessageEvent);
 	
-	action := self.action.map Action2Action();
+	action := self.action.map transform().oclAsType(Action);
 		
-	clockResets += self.clockResets->map Clock2Clock();
+	clockResets += self.clockResets->map transform().oclAsType(Clock);
 	
 	priority := 1;
 	

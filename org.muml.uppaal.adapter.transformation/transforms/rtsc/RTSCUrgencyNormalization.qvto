@@ -1,4 +1,5 @@
-import transforms.lib.MUML2MUML;
+//import transforms.lib.MUML2MUML;
+import ModelcopyLibrary;
 import transforms.lib.RTSCUtil;
 import transforms.lib.MultiMappingUtil;
 
@@ -24,7 +25,7 @@ transformation RTSCUrgencyNormalization(in input:rtsc, out output:rtsc);
 
 main() {
 	assert fatal (input.objects()[SynchronizationChannel]->forAll(sc | not sc.urgentFromUrgentStateAndNonUrgentTransitionsSynchronize())) with log("Model contains a synchronization channel via which urgent transitions with an urgent state as source and non-urgent transitions synchronize.");
-	input.objects()[RootNode]->map RootNode2RootNode();
+	input.objects()[RootNode]->map transform();
 }
 
 mapping SynchronizationChannel :: SyncChannel2SyncChannel() : SynchronizationChannel when {not self.urgentAndNonUrgentTransitionsSynchronize()} {
@@ -56,13 +57,13 @@ mapping State :: State2State() : State {
 		outgoingTransitions += self.outgoingTransitions.map Transition2UrgentTransition();
 		outgoingTransitions += self.outgoingTransitions.map Transition2NonUrgentTransition();
 		
-		embeddedRegions := self.embeddedRegions->map Region2Region();
+		embeddedRegions := self.embeddedRegions->map transform().oclAsType(Region);
 		
-		entryEvent := self.entryEvent.map EntryEvent2EntryEvent();
-		doEvent := self.doEvent.map DoEvent2DoEvent();
-		exitEvent := self.exitEvent.map ExitEvent2ExitEvent();
+		entryEvent := self.entryEvent.map transform().oclAsType(EntryEvent);
+		doEvent := self.doEvent.map transform().oclAsType(DoEvent);
+		exitEvent := self.exitEvent.map transform().oclAsType(ExitEvent);
 		
-		invariants := self.invariants->map ClockConstraint2ClockConstraint();		
+		invariants := self.invariants->map transform().oclAsType(ClockConstraint);		
 		initial := self.initial;		
 		final := self.final;		
 		urgent := self.urgent;
@@ -73,39 +74,39 @@ mapping State :: State2State() : State {
 		channels += self.channels->map SyncChannel2UrgentSyncChannel();
 		channels += self.channels->map SyncChannel2NonUrgentSyncChannel();
 		
-		connectionPoints := self.connectionPoints->map StateConnectionPoint2StateConnectionPoint();
+		connectionPoints := self.connectionPoints->map transform().oclAsType(StateConnectionPoint);
 		
 		parentStatechart := self.parentStatechart.map RealtimeStatechart2RealtimeStatechart();
 		
-		extensions := self.extensions.oclAsType(CommittedExtension).map CommittedExtension2CommittedExtension();		
+		extensions := self.extensions.oclAsType(CommittedExtension).map transform().oclAsType(CommittedExtension);		
 	}
 	
 mapping Transition :: Transition2Transition() : Transition when {self.synchronization.oclIsUndefined() or self.synchronization=null or not self.synchronization.syncChannel.urgentAndNonUrgentTransitionsSynchronize()} {
 		
-		source := self.source.map Vertex2Vertex();
-		target := self.target.map Vertex2Vertex();
+		source := self.source.map transform().oclAsType(Vertex);
+		target := self.target.map transform().oclAsType(Vertex);
 				
 		priority := self.priority;	
 		synchronization := self.synchronization.map Synchronization2Synchronization();		
-		clockResets := self.clockResets->map Clock2Clock();		
-		clockConstraints := self.clockConstraints->map ClockConstraint2ClockConstraint();		
-		absoluteDeadlines := self.absoluteDeadlines->map AbsoluteDeadline2AbsoluteDeadline();		
-		relativeDeadline := self.relativeDeadline.map RelativeDeadline2RelativeDeadline();		
+		clockResets := self.clockResets->map transform().oclAsType(Clock);		
+		clockConstraints := self.clockConstraints->map transform().oclAsType(ClockConstraint);		
+		absoluteDeadlines := self.absoluteDeadlines->map transform().oclAsType(AbsoluteDeadline);		
+		relativeDeadline := self.relativeDeadline.map transform().oclAsType(RelativeDeadline);		
 		blockable := self.blockable;		
-		guard := self.guard.map Expression2Expression();		
-		events := self.events->map TransitionEvent2TransitionEvent();		
-		action := self.action.map Action2Action();
+		guard := self.guard.map transform().oclAsType(core::expressions::Expression);		
+		events := self.events->map transform().oclAsType(TransitionEvent);		
+		action := self.action.map transform().oclAsType(Action);
 		
 		urgent := self.urgent;
 }
 
 mapping Transition :: Transition2UrgentTransition() : Transition when {self.synchronization.syncChannel.urgentAndNonUrgentTransitionsSynchronize() and self.urgent}{
-		source := self.source.map Vertex2Vertex();
-		target := self.target.map Vertex2Vertex();
+		source := self.source.map transform().oclAsType(Vertex);
+		target := self.target.map transform().oclAsType(Vertex);
 			
 		priority := self.priority;		
 		synchronization := self.synchronization.map Synchronization2UrgentSynchronization();		
-		clockResets := self.clockResets->map Clock2Clock();		
+		clockResets := self.clockResets->map transform().oclAsType(Clock);		
 		clockConstraints := self.clockConstraints->mapClockConstraint();		
 		absoluteDeadlines := self.absoluteDeadlines->mapAbsoluteDeadline();		
 		relativeDeadline := self.relativeDeadline.mapRelativeDeadline();		
@@ -118,12 +119,12 @@ mapping Transition :: Transition2UrgentTransition() : Transition when {self.sync
 }
 
 mapping Transition :: Transition2NonUrgentTransition() : Transition when {self.synchronization.syncChannel.urgentAndNonUrgentTransitionsSynchronize()}{
-		source := self.source.map Vertex2Vertex();
-		target := self.target.map Vertex2Vertex();
+		source := self.source.map transform().oclAsType(Vertex);
+		target := self.target.map transform().oclAsType(Vertex);
 				
 		priority := self.priority;		
 		synchronization := self.synchronization.map Synchronization2NonUrgentSynchronization();		
-		clockResets := self.clockResets->map Clock2Clock();		
+		clockResets := self.clockResets->map transform().oclAsType(Clock);		
 		clockConstraints := self.clockConstraints->mapClockConstraint();		
 		absoluteDeadlines := self.absoluteDeadlines->mapAbsoluteDeadline();		
 		relativeDeadline := self.relativeDeadline.mapRelativeDeadline();		
@@ -173,13 +174,13 @@ mapping pim::realtimestatechart::RealtimeStatechart :: RealtimeStatechart2Realti
 			
 		name := self.name;
 		
-		behavioralElement := self.behavioralElement.map BehavioralElement2BehavioralElement();
+		behavioralElement := self.behavioralElement.map transform().oclAsType(BehavioralElement);
 		
-		operations := self.operations->map Operation2Operation();
+		operations := self.operations->map transform().oclAsType(Operation);
 		
-		variables := self.variables->map Variable2Variable();
+		variables := self.variables->map transform().oclAsType(Variable);
 		
-		parentRegion := self.parentRegion.map Region2Region();
+		parentRegion := self.parentRegion.map transform().oclAsType(Region);
 		
 		states := self.states->map State2State();
 		
@@ -190,7 +191,7 @@ mapping pim::realtimestatechart::RealtimeStatechart :: RealtimeStatechart2Realti
 		
 		transitions := transitions->sortTransitionPriorities();
 				
-		clocks := self.clocks->map Clock2Clock();				
+		clocks := self.clocks->map transform().oclAsType(Clock);				
 	}
 	
 //TODO clean this up: mappings for subtypes do not have to be called here	
@@ -243,18 +244,18 @@ mapping Expression :: Expression2Expression() : Expression disjuncts
 // Create an OrExpr to capture the cases in which two transitions are created (i.e. when urgent and non-urgent transitions synchronize and a transition is non-urgent)
 mapping TransitionFiringExpr :: TransitionFiringExpr2OrExpr() : OrExpr when {self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).synchronization.syncChannel.urgentAndNonUrgentTransitionsSynchronize() and  self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).urgent} {
 	leftOpd := object TransitionFiringExpr {transition := object MumlElemExpr {elem := self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).map Transition2UrgentTransition();
-	instance := self.transition.oclAsType(MumlElemExpr).instance.oclAsType(PortInstance).map PortInstance2PortInstance().oclAsType(EObject)
+	instance := self.transition.oclAsType(MumlElemExpr).instance.oclAsType(PortInstance).map transform()
 	
 	}};
 	rightOpd := object TransitionFiringExpr {transition := object MumlElemExpr {elem := self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).map Transition2NonUrgentTransition();
-	instance := self.transition.oclAsType(MumlElemExpr).instance.oclAsType(PortInstance).map PortInstance2PortInstance().oclAsType(EObject)
+	instance := self.transition.oclAsType(MumlElemExpr).instance.oclAsType(PortInstance).map transform()
 	}};
 }
 
 mapping TransitionFiringExpr :: TransitionFiringExpr2NonUrgentTransitionFiringExpr() : TransitionFiringExpr when {self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).synchronization.syncChannel.urgentAndNonUrgentTransitionsSynchronize()}{
 	// taking care of transitionFiringExpr with transitions that are mapped with Transition2NonUrgentTransition. Only called when TransitionFiringExpr2OrExpr does not apply
 	transition := object MumlElemExpr {elem := self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).map Transition2NonUrgentTransition();
-	instance := self.transition.oclAsType(MumlElemExpr).instance.oclAsType(PortInstance).map PortInstance2PortInstance().oclAsType(EObject)};
+	instance := self.transition.oclAsType(MumlElemExpr).instance.oclAsType(PortInstance).map transform()};
 }
 
 helper SynchronizationChannel :: urgentAndNonUrgentTransitionsSynchronize() : Boolean{
