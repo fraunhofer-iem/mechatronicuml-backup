@@ -1,4 +1,5 @@
-import transforms.lib.MUML2MUML;
+//import transforms.lib.MUML2MUML;
+import ModelcopyLibrary;
 import transforms.lib.ExternalizedStrings;
 import transforms.CloneModel;
 
@@ -76,17 +77,17 @@ mapping modelinstance::ModelElementCategory :: ModelElementCategory2ModelElement
     	_key := self._key;
     	_name := self._name;
     	//changed from := operator to +=, otherwise the newly created rtscs are not correctly contained
-    	_modelElements += self._modelElements.map ExtendableElement2ExtendableElement();
+    	_modelElements += self._modelElements.map transform().oclAsType(ExtendableElement);
    		 }
 
 mapping pim::protocol::CoordinationProtocol :: CoordinationProtocol2CoordinationProtocol() : pim::protocol::CoordinationProtocol{
     	_name := self._name;
     	_comment := self._comment;
-    	_extensions := self._extensions.map Extension2Extension();
+    	_extensions := self._extensions.map transform().oclAsType(Extension);
     	
-    	_verificationConstraintRepositories := self.verificationConstraintRepositories.map VerificationConstraintRepository2VerificationConstraintRepository();
-    	_roles := self._roles.map Role2Role();
-    	_roleConnector := self._roleConnector.map RoleConnector2RoleConnector();
+    	_verificationConstraintRepositories := self.verificationConstraintRepositories.map transform().oclAsType(VerificationConstraintRepository);
+    	_roles := self._roles.map transform().oclAsType(Role);
+    	_roleConnector := self._roleConnector.map transform().oclAsType(RoleConnector);
 
 	}
 
@@ -104,6 +105,38 @@ Role::createPort,
       pim::protocol::Role::Role2Role,
        pim::types::PrimitiveDataType::PrimitiveDataType2PrimitiveDataType2,
         pim::types::DataType::NonValidElementAsDataType;
+
+// helper mapping to avoid issues with disjuncts and OclAny::transform()
+mapping pim::component::Component :: Component2Component() : pim::component::Component {
+init {
+
+      result := self.map transform().oclAsType(pim::component::Component);
+	}
+}
+
+// helper mapping to avoid issues with disjuncts and OclAny::transform()
+mapping pim::component::ComponentPart :: ComponentPart2ComponentPart() : pim::component::ComponentPart {
+init {
+
+      result := self.map transform().oclAsType(pim::component::ComponentPart);
+	}
+}
+
+// helper mapping to avoid issues with disjuncts and OclAny::transform()
+mapping pim::component::Port :: Port2Port() : pim::component::Port {
+init {
+
+      result := self.map transform().oclAsType(pim::component::Port);
+	}
+}
+
+// helper mapping to avoid issues with disjuncts and OclAny::transform()
+mapping pim::protocol::Role :: Role2Role() : pim::protocol::Role {
+init {
+
+      result := self.map transform().oclAsType(pim::protocol::Role);
+	}
+}
 
 //Overridden to add Role::createPort to disjuncts
 mapping pim::connector::DiscreteInteractionEndpoint :: DiscreteInteractionEndpoint2DiscreteInteractionEndpoint() : pim::connector::DiscreteInteractionEndpoint disjuncts Role::createPort, Role::Role2Role, pim::component::DiscretePort::DiscretePort2DiscretePort;
@@ -124,6 +157,61 @@ Role :: createPort,
      		BoundVariable::BoundVariable2BoundVariable,
          		EObject::NonValidElementInMumlElemExpr;
 
+// helper mapping to avoid issues with disjuncts and OclAny::transform()
+mapping State :: State2State() : State {
+init {
+
+      result := self.map transform().oclAsType(State);
+	}
+}
+
+// helper mapping to avoid issues with disjuncts and OclAny::transform()
+mapping Variable :: Variable2Variable() : Variable {
+init {
+
+      result := self.map transform().oclAsType(Variable);
+	}
+}
+
+// helper mapping to avoid issues with disjuncts and OclAny::transform()
+mapping Clock :: Clock2Clock() : Clock {
+init {
+
+      result := self.map transform().oclAsType(Clock);
+	}
+}
+
+// helper mapping to avoid issues with disjuncts and OclAny::transform()
+mapping MessageBuffer :: MessageBuffer2MessageBuffer() : MessageBuffer {
+init {
+
+      result := self.map transform().oclAsType(MessageBuffer);
+	}
+}
+
+// helper mapping to avoid issues with disjuncts and OclAny::transform()
+mapping RealtimeStatechart :: RealtimeStatechart2RealtimeStatechart() : RealtimeStatechart {
+init {
+
+      result := self.map transform().oclAsType(RealtimeStatechart);
+	}
+}
+
+// helper mapping to avoid issues with disjuncts and OclAny::transform()
+mapping Transition :: Transition2Transition() : Transition {
+init {
+
+      result := self.map transform().oclAsType(Transition);
+	}
+}
+
+// helper mapping to avoid issues with disjuncts and OclAny::transform()
+mapping BoundVariable :: BoundVariable2BoundVariable() : BoundVariable {
+init {
+
+      result := self.map transform().oclAsType(BoundVariable);
+	}
+}
 
 //The precondition ensures, that this mapping can only be executed in the context of already copied Roles
 mapping Role :: createPort() : pim::component::DiscretePort when{	
@@ -136,15 +224,15 @@ self.invresolve()->oclAsSet()->flatten()->intersection(input.objects()->oclAsSet
 	//(This mapping is called with result of Role2Role as context)
 	refinedRole := self;
 	component := self.map createComponent();
-	cardinality := self.cardinality.map Cardinality2Cardinality();
+	cardinality := self.cardinality.map transform().oclAsType(Cardinality);
 
 	receiverMessageBuffer := self.receiverMessageBuffer.map MessageBuffer2MessageBuffer();
 	receiverMessageTypes := self.receiverMessageTypes.map MessageType2MessageType();
 	senderMessageTypes := self.senderMessageTypes.map MessageType2MessageType();
 	
-	behavior := self.behavior.map Behavior2Behavior();
-	coordinatorBehavior := self.coordinatorBehavior.map Behavior2Behavior();
-	subroleBehavior := self.subroleBehavior.map Behavior2Behavior();
+	behavior := self.behavior.map transform().oclAsType(Behavior);
+	coordinatorBehavior := self.coordinatorBehavior.map transform().oclAsType(Behavior);
+	subroleBehavior := self.subroleBehavior.map transform().oclAsType(Behavior);
 	
 }
 
@@ -193,7 +281,7 @@ mapping pim::msgtype::MessageType :: MessageType2MessageType() : pim::msgtype::M
 			result := new MessageType();		
 			result._name := self._name;
     		result._comment := self._comment;
-    		result._extensions := self._extensions.map Extension2Extension();
+    		result._extensions := self._extensions.map transform().oclAsType(Extension);
     		result._parameters := self._parameters.map Parameter2Parameter();
     		//do not set the repository to make sure not to execute the if condition again before finishing this transformation
     	--	result._repository := self._repository.map MessageTypeRepository2MessageTypeRepository();
@@ -218,7 +306,7 @@ mapping pim::behavior::Parameter :: Parameter2Parameter() : pim::behavior::Param
     			result := new Parameter();  	
     			result._name := self._name;
     			result._comment := self._comment;
-    			result._extensions := self._extensions.map Extension2Extension();
+    			result._extensions := self._extensions.map transform().oclAsType(Extension);
     			result._dataType := self._dataType.map DataType2DataType();
     			}
    		}
@@ -242,7 +330,7 @@ mapping pim::types::PrimitiveDataType :: PrimitiveDataType2PrimitiveDataType2() 
     			result._name := self._name;
     			result._comment := self._comment;
     			result._primitiveType := self._primitiveType;
-    			result._extensions := self._extensions.map Extension2Extension();
+    			result._extensions := self._extensions.map transform().oclAsType(Extension);
     			};
    		 }
    	}
@@ -253,8 +341,8 @@ constructor PrimitiveDataType :: PrimitiveDataType(){
 //Overridden to replace _dataType := self._dataType.map PrimitiveDataType2PrimitiveDataType();
 mapping actionlanguage::NondeterministicChoiceExpression :: NondeterministicChoiceExpression2NondeterministicChoiceExpression() : actionlanguage::NondeterministicChoiceExpression{
     	_comment := self._comment;
-    	_extensions := self._extensions.map Extension2Extension();
-    	_range := self._range.map Range2Range();
+    	_extensions := self._extensions.map transform().oclAsType(Extension);
+    	_range := self._range.map transform().oclAsType(Range);
     	
     	_dataType := self._dataType.map PrimitiveDataType2PrimitiveDataType2();
    		 }
@@ -272,9 +360,9 @@ mapping pim::types::ArrayDataType :: ArrayDataType2ArrayDataType2() : pim::types
     			result := new ArrayDataType();
     			result._name := self._name;
     			result._comment := self._comment;
-    			result._extensions := self._extensions.map Extension2Extension();
+    			result._extensions := self._extensions.map transform().oclAsType(Extension);
     			result._type := self._type.map DataType2DataType();
-    			result._cardinality := self._cardinality.map NaturalNumber2NaturalNumber();
+    			result._cardinality := self._cardinality.map transform().oclAsType(NaturalNumber);
     			}
    		 	}
    		 }
@@ -293,13 +381,13 @@ mapping pim::types::RangedPrimitiveDataType :: RangedPrimitiveDataType2RangedPri
     			result := new RangedPrimitiveDataType();
     			result._name := self._name;
     			result._comment := self._comment;
-    			result._extensions := self._extensions.map Extension2Extension();
+    			result._extensions := self._extensions.map transform().oclAsType(Extension);
     			
     			//Make sure to call PrimitiveDataType2PrimitiveDataType2().
     			//Otherwise a new PrimitiveDataType could be created if its also the selectorType of a SelectorExpression
     			result._rangedType := self._rangedType.map PrimitiveDataType2PrimitiveDataType2();
     			
-    			result._range := self._range.map Range2Range();
+    			result._range := self._range.map transform().oclAsType(Range);
     			}
     	}
    }
@@ -341,7 +429,7 @@ helper getModelElementCategory(_key : String, _name : String) : ModelElementCate
 
 mapping CoordinationProtocol :: createCIC() : ComponentInstanceConfiguration{
 	//Adapt the CoordinationProtocol's VCR to component (instance) level
-	verificationConstraintRepositories := self.verificationConstraintRepositories.map VerificationConstraintRepository2VerificationConstraintRepository();
+	verificationConstraintRepositories := self.verificationConstraintRepositories.map transform().oclAsType(VerificationConstraintRepository);
 	_extensions += object ElementToVerifyExtension {};
 	name := self.name+coordinationProtocol2CICSuffix;
 	self.roles->forEach(role){
@@ -441,7 +529,7 @@ mapping mtctl::comparables::MumlElemExpr :: MumlElemExpr2MumlElemExpr() : mtctl:
 		}
 		else{
 			//The Expression is to be copied
-    		_elem := self._elem.map EObject2EObject();
+    		_elem := self._elem.map transform();
     		};
     	
     	instance := self.instance.map ProtocolElement2ComponentElement();
