@@ -1,4 +1,5 @@
-import transforms.lib.MUML2MUML;
+//import transforms.lib.MUML2MUML;
+import ModelcopyLibrary;
 
 modeltype muml_protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
 modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
@@ -20,10 +21,10 @@ modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 
 //Splits properties into multiple properties that each are rooted in a TemporalQuantifierExpr (these sub-properties can be verified by Uppaal)
 //Afterwards, only one property repository exists for each verifiable element, including all properties from the original repositories.
-transformation MTCTLPropertySplitTransformation(in input:muml_protocol, out output:muml_protocol) extends library MUML2MUML;
+transformation MTCTLPropertySplitTransformation(in input:muml_protocol, out output:muml_protocol){ //extends library MUML2MUML;
 
 main() {
-	input.objects()[RootNode]->map RootNode2RootNode();
+	input.objects()[RootNode]->map transform();
 	output.objects()[VerifiableElement]->select(vr | vr.extensions->exists(oclIsKindOf(ElementToVerifyExtension)))->forEach(verifiableElement) {
 		var combinedRepo := object PropertyRepository {};
 		combinedRepo.properties := verifiableElement.verificationConstraintRepositories->selectByKind(PropertyRepository).properties->asOrderedSet();
@@ -34,7 +35,8 @@ main() {
 	}
 }
 
-mapping mtctl::PropertyRepository :: PropertyRepository2PropertyRepository() : mtctl::PropertyRepository {
+//PropertyRepository2PropertyRepository
+mapping mtctl::PropertyRepository :: transform() : mtctl::PropertyRepository {
 	//Go through all indirectly contained TemporalQuantifierExpressions and add them as a new Property to the target model repository
 	self.properties->forEach(_property) {
 		_property.allSubobjectsOfKind(TemporalQuantifierExpr)->forEach(_tempQuant) {
@@ -44,6 +46,7 @@ mapping mtctl::PropertyRepository :: PropertyRepository2PropertyRepository() : m
 }
 
 mapping TemporalQuantifierExpr::TemporalQuantifierExpr2Property() : mtctl::Property { //maps a TemporalQuantifierExpr onto a Property containing exactly that expression
-	expression := self.map TemporalQuantifierExpr2TemporalQuantifierExpr();
+	expression := self.map transform().oclAsType(TemporalQuantifierExpr);
 	comment := self->closure(x|if (x.oclIsKindOf(Property)) then x else x.oclAsType(EObject).eContainer() endif)->any(oclIsKindOf(Property)).oclAsType(Property).comment;
+}
 }

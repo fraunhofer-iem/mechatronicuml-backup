@@ -1,4 +1,5 @@
-import transforms.lib.MUML2MUML;
+//import transforms.lib.MUML2MUML;
+import ModelcopyLibrary;
 import org.muml.uppaal.adapter._blackbox.MtctlLibrary;
 
 modeltype muml_cic uses pim::instance('http://www.muml.org/pim/1.0.0');
@@ -22,22 +23,24 @@ modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 //Replaces all forall/exists quantifiers with equivalent and/or expressions (i.e. after this transformation, no forall/exists/BoundVariables will be present)
 //Also filters non-enabled repositories
 //the input parameter is inout - however, no persistent changes are done on input. TODO it _should_ be inout, but isn't right now to avoid pre-m7 qvt-o bug
-transformation MTCTLQuantifierNormalization(in input:muml_cic, out output:muml_cic) extends library MUML2MUML;
+transformation MTCTLQuantifierNormalization(in input:muml_cic, out output:muml_cic){ //extends library MUML2MUML;
 
 main() {
-	input.objects()[RootNode]->map RootNode2RootNode();
+	input.objects()[RootNode]->map transform();
 }
 
 //Filter not-enabled property repositories
-mapping mtctl::PropertyRepository :: PropertyRepository2PropertyRepository() : mtctl::PropertyRepository when {self.oclAsType(ecore::EObject).eContainer().oclAsType(VerifiableElement).extensions->exists(oclIsKindOf(ElementToVerifyExtension))} {
-	_extensions := self._extensions.map Extension2Extension();
-	_properties := self._properties.map Property2Property();
+//PropertyRepository2PropertyRepository
+mapping mtctl::PropertyRepository :: transform() : mtctl::PropertyRepository when {self.oclAsType(ecore::EObject).eContainer().oclAsType(VerifiableElement).extensions->exists(oclIsKindOf(ElementToVerifyExtension))} {
+	_extensions := self._extensions.map transform().oclAsType(core::Extension);
+	_properties := self._properties.map transform().oclAsType(Property);
 }
 
 
 //Overridden from MUML2MUML: check if we should apply one of our mappings here, otherwise fall back to a simple copying map
 //TODO clean this up: mappings for subtypes do not have to be called here
-mapping mtctl::Expression :: Expression2Expression() : mtctl::Expression disjuncts
+//Expression2Expression
+mapping mtctl::Expression :: transform() : mtctl::Expression disjuncts 
 	mtctl::quantifiers::QuantifierExpr::QuantifierExpr2RolledOut, 
 	 mtctl::sets::SubinstanceSetExpr::SubinstanceSetExpr2SubinstanceSetExpr,
 	  mtctl::sets::InstanceSetExpr::InstanceSetExpr2InstanceSetExpr,
@@ -215,7 +218,7 @@ mapping QuantifierExpr::QuantifierExpr2RolledOut() : Expression {
 		};
 		
 		//Map the modified formula to the target model
-		var mappedFormula := newFormula.map Expression2Expression();
+		var mappedFormula := newFormula.map transform().oclAsType(Expression);
 		
 		//Create the new AndExpr/OrExpr for this element
 		if (self.oclIsKindOf(UniversalQuantExpr)) then {
@@ -243,4 +246,5 @@ mapping QuantifierExpr::QuantifierExpr2RolledOut() : Expression {
 helper Expression::replaceWith(newExpr : Expression) {
 	var containingFeature := self.oclAsType(EObject).eContainingFeature();
 	self.oclAsType(EObject).eContainer().eSet(containingFeature, newExpr.deepclone().oclAsType(EObject));
+}
 }

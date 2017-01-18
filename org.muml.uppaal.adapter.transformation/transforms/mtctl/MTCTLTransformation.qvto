@@ -1,4 +1,5 @@
-import transforms.lib.MUML2MUML;
+//import transforms.lib.MUML2MUML;
+import ModelcopyLibrary;
 import transforms.mtctl.MTCTLQuantifierNormalization;
 import transforms.mtctl.MTCTLStaticNormalization; 
 import transforms.mtctl.MTCTLPropertySplitTransformation;

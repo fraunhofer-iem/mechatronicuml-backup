@@ -1,4 +1,5 @@
-import transforms.lib.MUML2MUML;
+//import transforms.lib.MUML2MUML;
+import ModelcopyLibrary;
 import org.muml.uppaal.adapter._blackbox.TimeLibUnit;
 
 modeltype muml_protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
@@ -20,36 +21,87 @@ modeltype mtctlComparables uses mtctl::comparables('http://www.muml.org/uppaal/a
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 
 //Replaces all statically defined Predicates/MapExpressions with their actual values and vastly simplifies logical expressions
-transformation MTCTLStaticNormalization(in input:muml_protocol, out output:muml_protocol) extends library MUML2MUML;
+transformation MTCTLStaticNormalization(in input:muml_protocol, out output:muml_protocol){ //extends library MUML2MUML;
 
 main() {
-	input.objects()[RootNode]->map RootNode2RootNode();
+	input.objects()[RootNode]->map transform();
 }
 
 //Overridden from MUML2MUML
-mapping mtctl::Property :: Property2Property() : Property {
+//Property2Property
+mapping mtctl::Property :: transform() : Property {
 	comment := self.comment;
 	
-	expression := self.expression.map Expression2Expression();
+	expression := self.expression.map transform().oclAsType(Expression);
 }
 
 //Overridden from MUML2MUML: check if we should apply one of our mappings here, otherwise fall back to a simple copying map
-mapping mtctl::Expression :: Expression2Expression() : mtctl::Expression disjuncts 
+//Expression2Expression
+mapping mtctl::Expression :: transform() : mtctl::Expression disjuncts 
 	Expression::Expression2False, //Try to reduce the expression to "false"
 	Expression::Expression2True, //Try to reduce the expression to "true"
 	AndExpr::BinaryBoolOp2SingleOpd, OrExpr::BinaryBoolOp2SingleOpd, ImplyExpr::BinaryBoolOp2SingleOpd, //Try to reduce unnecessary lhs/rhs in these boolean operators that cannot be completely reduced to true/false
 	SourceStateExpr::SourceStateExpr2MumlElemExpr, TargetStateExpr::TargetStateExpr2MumlElemExpr, //try to statically evaluate map expressions
-	mtctl::sets::SubinstanceSetExpr::SubinstanceSetExpr2SubinstanceSetExpr, mtctl::sets::InstanceSetExpr::InstanceSetExpr2InstanceSetExpr, mtctl::predicates::SubstateOfExpr::SubstateOfExpr2SubstateOfExpr, mtctl::sets::TransitionSetExpr::TransitionSetExpr2TransitionSetExpr, mtctl::quantifiers::LeadsToExpr::LeadsToExpr2LeadsToExpr, mtctl::booleanlogic::ImplyExpr::ImplyExpr2ImplyExpr, mtctl::quantifiers::EFExpr::EFExpr2EFExpr, mtctl::quantifiers::QuantifierExpr::QuantifierExpr2QuantifierExpr, mtctl::predicates::DynamicPredicateExpr::DynamicPredicateExpr2DynamicPredicateExpr, mtctl::sets::ClockSetExpr::ClockSetExpr2ClockSetExpr, mtctl::sets::StateSetExpr::StateSetExpr2StateSetExpr, mtctl::predicates::FalseExpr::FalseExpr2FalseExpr, mtctl::quantifiers::TemporalQuantifierExpr::TemporalQuantifierExpr2TemporalQuantifierExpr, mtctl::comparables::TargetStateExpr::TargetStateExpr2TargetStateExpr, mtctl::predicates::StateActiveExpr::StateActiveExpr2StateActiveExpr, mtctl::quantifiers::BoundVariable::BoundVariable2BoundVariable, mtctl::booleanlogic::NotExpr::NotExpr2NotExpr, mtctl::quantifiers::EGExpr::EGExpr2EGExpr, mtctl::predicates::ComparisonExpr::ComparisonExpr2ComparisonExpr, mtctl::sets::MessageSetExpr::MessageSetExpr2MessageSetExpr, mtctl::booleanlogic::AndExpr::AndExpr2AndExpr,  mtctl::comparables::MapExpr::MapExpr2MapExprWorkaround, mtctl::quantifiers::AGExpr::AGExpr2AGExpr, mtctl::quantifiers::UniversalQuantExpr::UniversalQuantExpr2UniversalQuantExpr, mtctl::quantifiers::AFExpr::AFExpr2AFExpr, mtctl::sets::IntervalSetExpr::IntervalSetExpr2IntervalSetExpr, mtctl::booleanlogic::OrExpr::OrExpr2OrExpr, mtctl::comparables::BufferMsgCountExpr::BufferMsgCountExpr2BufferMsgCountExpr, mtctl::comparables::SourceStateExpr::SourceStateExpr2SourceStateExpr, mtctl::comparables::TransitionMap::TransitionMap2TransitionMap, mtctl::predicates::TransitionFiringExpr::TransitionFiringExpr2TransitionFiringExpr, mtctl::predicates::TrueExpr::TrueExpr2TrueExpr, mtctl::predicates::MessageInBufferExpr::MessageInBufferExpr2MessageInBufferExpr, mtctl::comparables::MumlElemExpr::MumlElemExpr2MumlElemExpr, mtctl::sets::BufferSetExpr::BufferSetExpr2BufferSetExpr, mtctl::predicates::MessageInTransitExpr::MessageInTransitExpr2MessageInTransitExpr, mtctl::predicates::ConnectorOverflowExpr::ConnectorOverflowExpr2ConnectorOverflowExpr, mtctl::predicates::StaticPredicateExpr::StaticPredicateExpr2StaticPredicateExpr, mtctl::predicates::PredicateExpr::PredicateExpr2PredicateExpr, mtctl::predicates::DeadlockExpr::DeadlockExpr2DeadlockExpr, mtctl::quantifiers::ExistenceQuantExpr::ExistenceQuantExpr2ExistenceQuantExpr, mtctl::comparables::ConstExpr::ConstExpr2ConstExpr, mtctl::sets::SetExpr::SetExpr2SetExpr; //Fallback: copy
+	mtctl::sets::SubinstanceSetExpr::SubinstanceSetExpr2SubinstanceSetExpr,
+	mtctl::sets::InstanceSetExpr::InstanceSetExpr2InstanceSetExpr,
+	mtctl::predicates::SubstateOfExpr::SubstateOfExpr2SubstateOfExpr,
+	mtctl::sets::TransitionSetExpr::TransitionSetExpr2TransitionSetExpr,
+	mtctl::quantifiers::LeadsToExpr::LeadsToExpr2LeadsToExpr,
+	mtctl::booleanlogic::ImplyExpr::ImplyExpr2ImplyExpr,
+	mtctl::quantifiers::EFExpr::EFExpr2EFExpr,
+	mtctl::quantifiers::QuantifierExpr::QuantifierExpr2QuantifierExpr,
+	mtctl::predicates::DynamicPredicateExpr::DynamicPredicateExpr2DynamicPredicateExpr,
+	mtctl::sets::ClockSetExpr::ClockSetExpr2ClockSetExpr,
+	mtctl::sets::StateSetExpr::StateSetExpr2StateSetExpr,
+	mtctl::predicates::FalseExpr::FalseExpr2FalseExpr,
+	mtctl::quantifiers::TemporalQuantifierExpr::TemporalQuantifierExpr2TemporalQuantifierExpr,
+	mtctl::comparables::TargetStateExpr::TargetStateExpr2TargetStateExpr,
+	mtctl::predicates::StateActiveExpr::StateActiveExpr2StateActiveExpr,
+	mtctl::quantifiers::BoundVariable::BoundVariable2BoundVariable,
+	mtctl::booleanlogic::NotExpr::NotExpr2NotExpr,
+	mtctl::quantifiers::EGExpr::EGExpr2EGExpr,
+	mtctl::predicates::ComparisonExpr::ComparisonExpr2ComparisonExpr,
+	mtctl::sets::MessageSetExpr::MessageSetExpr2MessageSetExpr,
+	mtctl::booleanlogic::AndExpr::AndExpr2AndExpr, 
+	mtctl::comparables::MapExpr::MapExpr2MapExprWorkaround,
+	mtctl::quantifiers::AGExpr::AGExpr2AGExpr,
+	mtctl::quantifiers::UniversalQuantExpr::UniversalQuantExpr2UniversalQuantExpr,
+	mtctl::quantifiers::AFExpr::AFExpr2AFExpr,
+	mtctl::sets::IntervalSetExpr::IntervalSetExpr2IntervalSetExpr,
+	mtctl::booleanlogic::OrExpr::OrExpr2OrExpr,
+	mtctl::comparables::BufferMsgCountExpr::BufferMsgCountExpr2BufferMsgCountExpr,
+	mtctl::comparables::SourceStateExpr::SourceStateExpr2SourceStateExpr,
+	mtctl::comparables::TransitionMap::TransitionMap2TransitionMap,
+	mtctl::predicates::TransitionFiringExpr::TransitionFiringExpr2TransitionFiringExpr,
+	mtctl::predicates::TrueExpr::TrueExpr2TrueExpr,
+	mtctl::predicates::MessageInBufferExpr::MessageInBufferExpr2MessageInBufferExpr,
+	mtctl::comparables::MumlElemExpr::MumlElemExpr2MumlElemExpr,
+	mtctl::sets::BufferSetExpr::BufferSetExpr2BufferSetExpr,
+	mtctl::predicates::MessageInTransitExpr::MessageInTransitExpr2MessageInTransitExpr,
+	mtctl::predicates::ConnectorOverflowExpr::ConnectorOverflowExpr2ConnectorOverflowExpr,
+	mtctl::predicates::StaticPredicateExpr::StaticPredicateExpr2StaticPredicateExpr,
+	mtctl::predicates::PredicateExpr::PredicateExpr2PredicateExpr,
+	mtctl::predicates::DeadlockExpr::DeadlockExpr2DeadlockExpr,
+	mtctl::quantifiers::ExistenceQuantExpr::ExistenceQuantExpr2ExistenceQuantExpr,
+	mtctl::comparables::ConstExpr::ConstExpr2ConstExpr,
+	mtctl::sets::SetExpr::SetExpr2SetExpr; //Fallback: copy
 
-mapping mtctl::comparables::MapExpr :: MapExpr2MapExpr() : mtctl::comparables::MapExpr disjuncts
+//MapExpr2MapExpr
+mapping mtctl::comparables::MapExpr :: transform() : mtctl::comparables::MapExpr disjuncts
 	SourceStateExpr::SourceStateExpr2MumlElemExpr, TargetStateExpr::TargetStateExpr2MumlElemExpr, //try to statically evaluate map expressions
-	mtctl::comparables::ConstExpr::ConstExpr2ConstExpr, mtctl::comparables::BufferMsgCountExpr::BufferMsgCountExpr2BufferMsgCountExpr, mtctl::comparables::MumlElemExpr::MumlElemExpr2MumlElemExpr, mtctl::comparables::TransitionMap::TransitionMap2TransitionMap;
+	mtctl::comparables::ConstExpr::ConstExpr2ConstExpr,
+	mtctl::comparables::BufferMsgCountExpr::BufferMsgCountExpr2BufferMsgCountExpr,
+	mtctl::comparables::MumlElemExpr::MumlElemExpr2MumlElemExpr,
+	mtctl::comparables::TransitionMap::TransitionMap2TransitionMap;
 
 //Workaround for QVTo not allowing references to overridden MapExpr2MapExpr in the Expression2Expression disjuncts
 //See QVTo bug https://bugs.eclipse.org/bugs/show_bug.cgi?id=438038
 mapping mtctl::comparables::MapExpr::MapExpr2MapExprWorkaround() : mtctl::comparables::MapExpr disjuncts
 	SourceStateExpr::SourceStateExpr2MumlElemExpr, TargetStateExpr::TargetStateExpr2MumlElemExpr, //try to statically evaluate map expressions
-	mtctl::comparables::ConstExpr::ConstExpr2ConstExpr, mtctl::comparables::BufferMsgCountExpr::BufferMsgCountExpr2BufferMsgCountExpr, mtctl::comparables::MumlElemExpr::MumlElemExpr2MumlElemExpr, mtctl::comparables::TransitionMap::TransitionMap2TransitionMap;
+	mtctl::comparables::ConstExpr::ConstExpr2ConstExpr,
+	mtctl::comparables::BufferMsgCountExpr::BufferMsgCountExpr2BufferMsgCountExpr,
+	mtctl::comparables::MumlElemExpr::MumlElemExpr2MumlElemExpr,
+	mtctl::comparables::TransitionMap::TransitionMap2TransitionMap;
 //Try to statically evaluate logical expressions to true/false
 mapping Expression::Expression2False() : FalseExpr when {self.evaluateToBoolean()=false} {}
 mapping Expression::Expression2True() : TrueExpr when {self.evaluateToBoolean()=true} {}
@@ -59,10 +111,10 @@ mapping Expression::Expression2True() : TrueExpr when {self.evaluateToBoolean()=
 mapping AndExpr::BinaryBoolOp2SingleOpd() : Expression when {self.leftOpd.evaluateToBoolean()=true or self.rightOpd.evaluateToBoolean()=true} { 
 	init {
 		if (self.leftOpd.evaluateToBoolean()=true) then 
-			result := self.rightOpd.map Expression2Expression() 
+			result := self.rightOpd.map transform().oclAsType(Expression) 
 		endif;
 		if (self.rightOpd.evaluateToBoolean()=true) then
-			result := self.leftOpd.map Expression2Expression()
+			result := self.leftOpd.map transform().oclAsType(Expression)
 		endif;
 	}
 }
@@ -70,17 +122,17 @@ mapping AndExpr::BinaryBoolOp2SingleOpd() : Expression when {self.leftOpd.evalua
 mapping OrExpr::BinaryBoolOp2SingleOpd() : Expression when {self.leftOpd.evaluateToBoolean()=false or self.rightOpd.evaluateToBoolean()=false} { 
 	init {
 		if (self.leftOpd.evaluateToBoolean()=false) then 
-			result := self.rightOpd.map Expression2Expression() 
+			result := self.rightOpd.map transform().oclAsType(Expression) 
 		endif;
 		if (self.rightOpd.evaluateToBoolean()=false) then
-			result := self.leftOpd.map Expression2Expression()
+			result := self.leftOpd.map transform().oclAsType(Expression)
 		endif;
 	}
 }
 //Normalizes "true implies null" expressions (only called when one operand is null)
 mapping ImplyExpr::BinaryBoolOp2SingleOpd() : Expression when {self.leftOpd.evaluateToBoolean()=true} { 
 	init {
-		result:=self.rightOpd.map Expression2Expression()
+		result:=self.rightOpd.map transform().oclAsType(Expression)
 	}
 }
 
@@ -149,13 +201,13 @@ query ComparisonExpr::evaluateStaticComparison() : Boolean {
 }
 
 mapping SourceStateExpr::SourceStateExpr2MumlElemExpr() : MumlElemExpr when {self.transition.getStaticValue() != null} {
-	elem := self.transition.getStaticValue().oclAsType(Transition).source.map EObject2EObject();
-	instance := self.transition.getStaticInstance().map EObject2EObject();
+	elem := self.transition.getStaticValue().oclAsType(Transition).source.map transform();
+	instance := self.transition.getStaticInstance().map transform();
 }
 
 mapping TargetStateExpr::TargetStateExpr2MumlElemExpr() : MumlElemExpr when {self.transition.getStaticValue() != null} {
-	elem := self.transition.getStaticValue().oclAsType(Transition).target.map EObject2EObject();
-	instance := self.transition.getStaticInstance().map EObject2EObject();
+	elem := self.transition.getStaticValue().oclAsType(Transition).target.map transform();
+	instance := self.transition.getStaticInstance().map transform();
 }
 
 //returns the (static) value of the MapExpr or null if the value can only be determined at runtime(/verification time)
@@ -188,3 +240,4 @@ query getTimeUnits() : OrderedSet(String) {
 }
 
 
+}
