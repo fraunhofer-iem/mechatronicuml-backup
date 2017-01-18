@@ -141,6 +141,13 @@ init {
 //Overridden to add Role::createPort to disjuncts
 mapping pim::connector::DiscreteInteractionEndpoint :: DiscreteInteractionEndpoint2DiscreteInteractionEndpoint() : pim::connector::DiscreteInteractionEndpoint disjuncts Role::createPort, Role::Role2Role, pim::component::DiscretePort::DiscretePort2DiscretePort;
 
+// helper mapping to avoid issues with disjuncts and OclAny::transform()
+mapping pim::component::DiscretePort :: DiscretePort2DiscretePort() : pim::component::DiscretePort {
+init {
+
+      result := self.map transform().oclAsType(pim::component::DiscretePort);
+	}
+}
 
 //TODO add MessageType2MessageType to disjuncts and remove case in MumlElemExpr2MumlElemExpr when QVTO support overridden mappings in disjuncts
 mapping EObject :: ProtocolElement2ComponentElement() : EObject disjuncts

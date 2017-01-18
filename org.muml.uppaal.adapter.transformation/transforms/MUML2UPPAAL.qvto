@@ -1370,8 +1370,8 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 	mapping pim::realtimestatechart::SynchronizationChannel :: SynchronizationChannel2SynchronizationChannel() : pim::realtimestatechart::SynchronizationChannel{
     	_name := self._name;
     	_comment := self._comment;
-    	_extensions := self._extensions.map Extension2Extension();
+    	_extensions := self._extensions.map transform().oclAsType(Extension);
     --	_state := self._state.map State2State();
-    	_selectorType := self._selectorType.map DataType2DataType();
+    	_selectorType := self._selectorType.map transform().oclAsType(DataType);
    	}
    		 
