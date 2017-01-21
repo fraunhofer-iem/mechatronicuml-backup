@@ -1,6 +1,10 @@
 package org.muml.pim.realtimestatechart.diagram.custom.parsers;
 
-import java.io.UnsupportedEncodingException;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringReader;
+import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -10,8 +14,6 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser;
 import org.muml.core.CorePackage;
 import org.muml.core.expressions.Expression;
 import org.muml.core.expressions.TextualExpression;
@@ -34,10 +36,21 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 	public CustomTransitionLabelExpressionLabelParser6005() {
 	}
 	
-	//static final int MAX_LINELENGTH = 50;
+	static final int MAX_LINELENGTH = 50;
 
 	public String getPrintString(IAdaptable element, int flags) {
-		String printString = super.getPrintString(element, flags);
+		String printString = "";
+		
+		String segments[] = super.getPrintString(element, flags).split("\\{/\\}");
+		printString = segments[0];
+		if (segments.length == 2) {
+			printString += " / ";
+			if (printString.length() > MAX_LINELENGTH) {
+				printString += "\n";
+			}
+			printString += segments[1];
+		}
+		
 		Transition transition = (Transition) element.getAdapter(EObject.class);
 
 		printString = printString.replaceAll("\\{clockConstraintExpression}", getClockConstraintExpression(transition));
@@ -72,7 +85,35 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 				getSynchronizationExpression(synchronization, expression));
 		
 		// #1001: Add manual linebreaks to prevent too long lines
-		return printString;//addManualLinebreaks(printString, MAX_LINELENGTH);
+		return addManualLinebreaks(printString, MAX_LINELENGTH);
+	}
+	private String addManualLinebreaks(String printString, int maxLinelength) {
+		StringBuffer sb = new StringBuffer();
+		StringBuffer white = new StringBuffer();
+		char c;
+		int lineLength = 0;
+		for (int i = 0; i < printString.length(); i++) {
+			c = printString.charAt(i);
+			if (c == '\n' || c == '\r') {
+				lineLength = 0;
+			}
+			if (Character.isWhitespace(c)) {
+				white.append(c);
+			} else {
+				if (white.length() > 0) {
+					if (lineLength > maxLinelength) {
+						sb.append('\n');
+						lineLength = 0;
+					} else {
+						sb.append(white);
+					}
+					white.setLength(0);
+				}
+				sb.append(c);
+			}
+			lineLength++;
+		}
+		return sb.toString();
 	}
 	private String getClockConstraintExpression(Transition transition) {
 		StringBuffer buf = new StringBuffer();
