@@ -254,18 +254,34 @@ query Transition :: hasDeadline() : Boolean {
 }
 
 // override DynamicPredicate to introduce TransitionFiringExpr2StateActiveExpr
-mapping mtctl::predicates::DynamicPredicateExpr :: DynamicPredicateExpr2DynamicPredicateExpr() : mtctl::predicates::DynamicPredicateExpr
-disjuncts mtctl::predicates::TransitionFiringExpr::TransitionFiringExpr2StateActiveExpr,
-mtctl::predicates::MessageInTransitExpr::MessageInTransitExpr2MessageInTransitExpr,
- mtctl::predicates::MessageInBufferExpr::MessageInBufferExpr2MessageInBufferExpr,
-  mtctl::predicates::MessageDiscardedExpr::MessageDiscardedExpr2MessageDiscardedExpr,
-   mtctl::predicates::DeadlockExpr::DeadlockExpr2DeadlockExpr,
-    mtctl::predicates::ConnectorOverflowExpr::ConnectorOverflowExpr2ConnectorOverflowExpr,
-     mtctl::predicates::TransitionFiringExpr::TransitionFiringExpr2TransitionFiringExpr,
-      mtctl::predicates::StateActiveExpr::StateActiveExpr2StateActiveExpr;
+//mapping mtctl::predicates::DynamicPredicateExpr :: DynamicPredicateExpr2DynamicPredicateExpr() : mtctl::predicates::DynamicPredicateExpr
+//disjuncts mtctl::predicates::TransitionFiringExpr::TransitionFiringExpr2StateActiveExpr,
+//mtctl::predicates::MessageInTransitExpr::MessageInTransitExpr2MessageInTransitExpr,
+// mtctl::predicates::MessageInBufferExpr::MessageInBufferExpr2MessageInBufferExpr,
+//  mtctl::predicates::MessageDiscardedExpr::MessageDiscardedExpr2MessageDiscardedExpr,
+//   mtctl::predicates::DeadlockExpr::DeadlockExpr2DeadlockExpr,
+//    mtctl::predicates::ConnectorOverflowExpr::ConnectorOverflowExpr2ConnectorOverflowExpr,
+//     mtctl::predicates::TransitionFiringExpr::TransitionFiringExpr2TransitionFiringExpr,
+//      mtctl::predicates::StateActiveExpr::StateActiveExpr2StateActiveExpr;
+
+// replaces the disjuncts-mapping above
+mapping mtctl::predicates::TransitionFiringExpr :: transform() : mtctl::predicates::DynamicPredicateExpr{
+	init
+	{
+		if (self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).hasDeadline())
+		then {
+			result := self.map TransitionFiringExpr2StateActiveExpr();
+		}
+		else
+		{
+			result := self.map ModelcopyLibrary::transform().oclAsType(mtctl::predicates::DynamicPredicateExpr);
+		}
+		endif;
+	}
+}
 
 // a transition with a deadline is firing iff the intermediate state is active
-mapping TransitionFiringExpr :: TransitionFiringExpr2StateActiveExpr() : StateActiveExpr when {self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).hasDeadline()}{
+mapping TransitionFiringExpr :: TransitionFiringExpr2StateActiveExpr() : StateActiveExpr {
 	state := object MumlElemExpr {
 		elem := self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).map Transition2IntermediateState().oclAsType(ecore::EObject);
 		instance := self.transition.oclAsType(MumlElemExpr).instance.map transform();

@@ -195,54 +195,73 @@ mapping pim::realtimestatechart::RealtimeStatechart :: RealtimeStatechart2Realti
 	}
 	
 //TODO clean this up: mappings for subtypes do not have to be called here	
-mapping Expression :: Expression2Expression() : Expression disjuncts
-	mtctl::predicates::TransitionFiringExpr::TransitionFiringExpr2OrExpr,
-	 mtctl::predicates::TransitionFiringExpr::TransitionFiringExpr2NonUrgentTransitionFiringExpr,
-	  mtctl::quantifiers::BoundVariable::BoundVariable2BoundVariable,
-	   mtctl::booleanlogic::AndExpr::AndExpr2AndExpr,
-	    mtctl::sets::SetExpr::SetExpr2SetExpr,
-	     mtctl::comparables::ConstExpr::ConstExpr2ConstExpr,
-	      mtctl::quantifiers::AFExpr::AFExpr2AFExpr,
-	       mtctl::predicates::FalseExpr::FalseExpr2FalseExpr,
-	        mtctl::predicates::SubstateOfExpr::SubstateOfExpr2SubstateOfExpr,
-	         mtctl::predicates::StaticPredicateExpr::StaticPredicateExpr2StaticPredicateExpr,
-	          mtctl::predicates::ComparisonExpr::ComparisonExpr2ComparisonExpr,
-	           mtctl::booleanlogic::ImplyExpr::ImplyExpr2ImplyExpr,
-	            mtctl::quantifiers::QuantifierExpr::QuantifierExpr2QuantifierExpr,
-	             mtctl::comparables::MapExpr::MapExpr2MapExpr,
-	              mtctl::quantifiers::EFExpr::EFExpr2EFExpr,
-	               mtctl::predicates::PredicateExpr::PredicateExpr2PredicateExpr,
-	                mtctl::sets::IntervalSetExpr::IntervalSetExpr2IntervalSetExpr,
-	                 mtctl::booleanlogic::OrExpr::OrExpr2OrExpr,
-	                  mtctl::predicates::MessageInTransitExpr::MessageInTransitExpr2MessageInTransitExpr,
-	                   mtctl::comparables::BufferMsgCountExpr::BufferMsgCountExpr2BufferMsgCountExpr,
-	                    mtctl::comparables::SourceStateExpr::SourceStateExpr2SourceStateExpr,
-	                     mtctl::sets::MessageSetExpr::MessageSetExpr2MessageSetExpr,
-	                      mtctl::sets::ClockSetExpr::ClockSetExpr2ClockSetExpr,
-	                       mtctl::predicates::MessageInBufferExpr::MessageInBufferExpr2MessageInBufferExpr,
-	                        mtctl::predicates::MessageDiscardedExpr::MessageDiscardedExpr2MessageDiscardedExpr,
-	                         mtctl::sets::TransitionSetExpr::TransitionSetExpr2TransitionSetExpr,
-	                          mtctl::comparables::TransitionMap::TransitionMap2TransitionMap,
-	                           mtctl::predicates::DeadlockExpr::DeadlockExpr2DeadlockExpr,
-	                            mtctl::predicates::ConnectorOverflowExpr::ConnectorOverflowExpr2ConnectorOverflowExpr,
-	                             mtctl::quantifiers::LeadsToExpr::LeadsToExpr2LeadsToExpr,
-	                              mtctl::predicates::DynamicPredicateExpr::DynamicPredicateExpr2DynamicPredicateExpr,
-	                               mtctl::comparables::MumlElemExpr::MumlElemExpr2MumlElemExpr,
-	                                mtctl::comparables::TargetStateExpr::TargetStateExpr2TargetStateExpr,
-	                                 mtctl::sets::BufferSetExpr::BufferSetExpr2BufferSetExpr,
-	                                  mtctl::quantifiers::EGExpr::EGExpr2EGExpr,
-	                                   mtctl::booleanlogic::NotExpr::NotExpr2NotExpr,
-	                                    mtctl::quantifiers::ExistenceQuantExpr::ExistenceQuantExpr2ExistenceQuantExpr,
-	                                     mtctl::quantifiers::AGExpr::AGExpr2AGExpr,
-	                                      mtctl::sets::StateSetExpr::StateSetExpr2StateSetExpr,
-	                                       mtctl::quantifiers::UniversalQuantExpr::UniversalQuantExpr2UniversalQuantExpr,
-	                                        mtctl::quantifiers::TemporalQuantifierExpr::TemporalQuantifierExpr2TemporalQuantifierExpr,
-	                                         mtctl::predicates::TransitionFiringExpr ::TransitionFiringExpr2TransitionFiringExpr,
-	                                          mtctl::predicates::TrueExpr::TrueExpr2TrueExpr,
-	                                           mtctl::predicates::StateActiveExpr::StateActiveExpr2StateActiveExpr;
+//mapping Expression :: Expression2Expression() : Expression disjuncts
+//	mtctl::predicates::TransitionFiringExpr::TransitionFiringExpr2OrExpr,
+//	 mtctl::predicates::TransitionFiringExpr::TransitionFiringExpr2NonUrgentTransitionFiringExpr,
+//	  mtctl::quantifiers::BoundVariable::BoundVariable2BoundVariable,
+//	   mtctl::booleanlogic::AndExpr::AndExpr2AndExpr,
+//	    mtctl::sets::SetExpr::SetExpr2SetExpr,
+//	     mtctl::comparables::ConstExpr::ConstExpr2ConstExpr,
+//	      mtctl::quantifiers::AFExpr::AFExpr2AFExpr,
+//	       mtctl::predicates::FalseExpr::FalseExpr2FalseExpr,
+//	        mtctl::predicates::SubstateOfExpr::SubstateOfExpr2SubstateOfExpr,
+//	         mtctl::predicates::StaticPredicateExpr::StaticPredicateExpr2StaticPredicateExpr,
+//	          mtctl::predicates::ComparisonExpr::ComparisonExpr2ComparisonExpr,
+//	           mtctl::booleanlogic::ImplyExpr::ImplyExpr2ImplyExpr,
+//	            mtctl::quantifiers::QuantifierExpr::QuantifierExpr2QuantifierExpr,
+//	             mtctl::comparables::MapExpr::MapExpr2MapExpr,
+//	              mtctl::quantifiers::EFExpr::EFExpr2EFExpr,
+//	               mtctl::predicates::PredicateExpr::PredicateExpr2PredicateExpr,
+//	                mtctl::sets::IntervalSetExpr::IntervalSetExpr2IntervalSetExpr,
+//	                 mtctl::booleanlogic::OrExpr::OrExpr2OrExpr,
+//	                  mtctl::predicates::MessageInTransitExpr::MessageInTransitExpr2MessageInTransitExpr,
+//	                   mtctl::comparables::BufferMsgCountExpr::BufferMsgCountExpr2BufferMsgCountExpr,
+//	                    mtctl::comparables::SourceStateExpr::SourceStateExpr2SourceStateExpr,
+//	                     mtctl::sets::MessageSetExpr::MessageSetExpr2MessageSetExpr,
+//	                      mtctl::sets::ClockSetExpr::ClockSetExpr2ClockSetExpr,
+//	                       mtctl::predicates::MessageInBufferExpr::MessageInBufferExpr2MessageInBufferExpr,
+//	                        mtctl::predicates::MessageDiscardedExpr::MessageDiscardedExpr2MessageDiscardedExpr,
+//	                         mtctl::sets::TransitionSetExpr::TransitionSetExpr2TransitionSetExpr,
+//	                          mtctl::comparables::TransitionMap::TransitionMap2TransitionMap,
+//	                           mtctl::predicates::DeadlockExpr::DeadlockExpr2DeadlockExpr,
+//	                            mtctl::predicates::ConnectorOverflowExpr::ConnectorOverflowExpr2ConnectorOverflowExpr,
+//	                             mtctl::quantifiers::LeadsToExpr::LeadsToExpr2LeadsToExpr,
+//	                              mtctl::predicates::DynamicPredicateExpr::DynamicPredicateExpr2DynamicPredicateExpr,
+//	                               mtctl::comparables::MumlElemExpr::MumlElemExpr2MumlElemExpr,
+//	                                mtctl::comparables::TargetStateExpr::TargetStateExpr2TargetStateExpr,
+//	                                 mtctl::sets::BufferSetExpr::BufferSetExpr2BufferSetExpr,
+//	                                  mtctl::quantifiers::EGExpr::EGExpr2EGExpr,
+//	                                   mtctl::booleanlogic::NotExpr::NotExpr2NotExpr,
+//	                                    mtctl::quantifiers::ExistenceQuantExpr::ExistenceQuantExpr2ExistenceQuantExpr,
+//	                                     mtctl::quantifiers::AGExpr::AGExpr2AGExpr,
+//	                                      mtctl::sets::StateSetExpr::StateSetExpr2StateSetExpr,
+//	                                       mtctl::quantifiers::UniversalQuantExpr::UniversalQuantExpr2UniversalQuantExpr,
+//	                                        mtctl::quantifiers::TemporalQuantifierExpr::TemporalQuantifierExpr2TemporalQuantifierExpr,
+//	                                         mtctl::predicates::TransitionFiringExpr ::TransitionFiringExpr2TransitionFiringExpr,
+//	                                          mtctl::predicates::TrueExpr::TrueExpr2TrueExpr,
+//	                                           mtctl::predicates::StateActiveExpr::StateActiveExpr2StateActiveExpr;
+
+// replaces the disjuncts-mapping above
+mapping mtctl::predicates::TransitionFiringExpr :: transform() : Expression {
+	init {
+		if (self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).synchronization.syncChannel.urgentAndNonUrgentTransitionsSynchronize() and  self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).urgent)
+		then {
+			result := self.map TransitionFiringExpr2OrExpr();
+		}
+		else if(self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).synchronization.syncChannel.urgentAndNonUrgentTransitionsSynchronize())
+		then {
+			result := self.map TransitionFiringExpr2NonUrgentTransitionFiringExpr();
+		}
+		else {
+			result := self.map ModelcopyLibrary::transform().oclAsType(Expression);
+		}
+		endif
+		endif;
+	}
+}
 
 // Create an OrExpr to capture the cases in which two transitions are created (i.e. when urgent and non-urgent transitions synchronize and a transition is non-urgent)
-mapping TransitionFiringExpr :: TransitionFiringExpr2OrExpr() : OrExpr when {self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).synchronization.syncChannel.urgentAndNonUrgentTransitionsSynchronize() and  self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).urgent} {
+mapping TransitionFiringExpr :: TransitionFiringExpr2OrExpr() : OrExpr {
 	leftOpd := object TransitionFiringExpr {transition := object MumlElemExpr {elem := self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).map Transition2UrgentTransition();
 	instance := self.transition.oclAsType(MumlElemExpr).instance.oclAsType(PortInstance).map transform()
 	
@@ -252,7 +271,7 @@ mapping TransitionFiringExpr :: TransitionFiringExpr2OrExpr() : OrExpr when {sel
 	}};
 }
 
-mapping TransitionFiringExpr :: TransitionFiringExpr2NonUrgentTransitionFiringExpr() : TransitionFiringExpr when {self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).synchronization.syncChannel.urgentAndNonUrgentTransitionsSynchronize()}{
+mapping TransitionFiringExpr :: TransitionFiringExpr2NonUrgentTransitionFiringExpr() : TransitionFiringExpr {
 	// taking care of transitionFiringExpr with transitions that are mapped with Transition2NonUrgentTransition. Only called when TransitionFiringExpr2OrExpr does not apply
 	transition := object MumlElemExpr {elem := self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).map Transition2NonUrgentTransition();
 	instance := self.transition.oclAsType(MumlElemExpr).instance.oclAsType(PortInstance).map transform()};
