@@ -264,55 +264,6 @@ mtctl::predicates::MessageInTransitExpr::MessageInTransitExpr2MessageInTransitEx
      mtctl::predicates::TransitionFiringExpr::TransitionFiringExpr2TransitionFiringExpr,
       mtctl::predicates::StateActiveExpr::StateActiveExpr2StateActiveExpr;
 
-// helper mapping to circumvent the problems with transform() and disjuncts
-mapping mtctl::predicates::MessageInTransitExpr :: MessageInTransitExpr2MessageInTransitExpr() : mtctl::predicates::MessageInTransitExpr{
-	init {
-		result := self.map transform().oclAsType(mtctl::predicates::MessageInTransitExpr);
-	}
-}
-
-// helper mapping to circumvent the problems with transform() and disjuncts
-mapping mtctl::predicates::MessageInBufferExpr :: MessageInBufferExpr2MessageInBufferExpr() : mtctl::predicates::MessageInBufferExpr{
-	init {
-		result := self.map transform().oclAsType(mtctl::predicates::MessageInBufferExpr);
-	}
-}
-
-// helper mapping to circumvent the problems with transform() and disjuncts
-mapping mtctl::predicates::MessageDiscardedExpr :: MessageDiscardedExpr2MessageDiscardedExpr() : mtctl::predicates::MessageDiscardedExpr{
-	init {
-		result := self.map transform().oclAsType(mtctl::predicates::MessageDiscardedExpr);
-	}
-}
-
-// helper mapping to circumvent the problems with transform() and disjuncts
-mapping mtctl::predicates::DeadlockExpr :: DeadlockExpr2DeadlockExpr() : mtctl::predicates::DeadlockExpr{
-	init {
-		result := self.map transform().oclAsType(mtctl::predicates::DeadlockExpr);
-	}
-}
-
-// helper mapping to circumvent the problems with transform() and disjuncts
-mapping mtctl::predicates::ConnectorOverflowExpr :: ConnectorOverflowExpr2ConnectorOverflowExpr() : mtctl::predicates::ConnectorOverflowExpr{
-	init {
-		result := self.map transform().oclAsType(mtctl::predicates::ConnectorOverflowExpr);
-	}
-}
-
-// helper mapping to circumvent the problems with transform() and disjuncts
-mapping mtctl::predicates::TransitionFiringExpr :: TransitionFiringExpr2TransitionFiringExpr() : mtctl::predicates::TransitionFiringExpr{
-	init {
-		result := self.map transform().oclAsType(mtctl::predicates::TransitionFiringExpr);
-	}
-}
-
-// helper mapping to circumvent the problems with transform() and disjuncts
-mapping mtctl::predicates::StateActiveExpr :: StateActiveExpr2StateActiveExpr() : mtctl::predicates::StateActiveExpr{
-	init {
-		result := self.map transform().oclAsType(mtctl::predicates::StateActiveExpr);
-	}
-}
-
 // a transition with a deadline is firing iff the intermediate state is active
 mapping TransitionFiringExpr :: TransitionFiringExpr2StateActiveExpr() : StateActiveExpr when {self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).hasDeadline()}{
 	state := object MumlElemExpr {

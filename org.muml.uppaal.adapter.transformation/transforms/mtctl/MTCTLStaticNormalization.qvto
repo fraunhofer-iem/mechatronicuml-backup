@@ -103,34 +103,6 @@ mapping mtctl::comparables::MapExpr::MapExpr2MapExprWorkaround() : mtctl::compar
 	mtctl::comparables::MumlElemExpr::MumlElemExpr2MumlElemExpr,
 	mtctl::comparables::TransitionMap::TransitionMap2TransitionMap;
 
-// helper mapping to circumvent the problems with transform() and disjuncts
-mapping mtctl::comparables::ConstExpr :: ConstExpr2ConstExpr() : mtctl::comparables::ConstExpr{
-	init {
-		result := self.map transform().oclAsType(mtctl::comparables::ConstExpr);
-	}
-}
-
-// helper mapping to circumvent the problems with transform() and disjuncts
-mapping mtctl::comparables::BufferMsgCountExpr :: BufferMsgCountExpr2BufferMsgCountExpr() : mtctl::comparables::BufferMsgCountExpr{
-	init {
-		result := self.map transform().oclAsType(mtctl::comparables::BufferMsgCountExpr);
-	}
-}
-
-// helper mapping to circumvent the problems with transform() and disjuncts
-mapping mtctl::comparables::MumlElemExpr :: MumlElemExpr2MumlElemExpr() : mtctl::comparables::MumlElemExpr{
-	init {
-		result := self.map transform().oclAsType(mtctl::comparables::MumlElemExpr);
-	}
-}
-
-// helper mapping to circumvent the problems with transform() and disjuncts
-mapping mtctl::comparables::TransitionMap :: TransitionMap2TransitionMap() : mtctl::comparables::TransitionMap{
-	init {
-		result := self.map transform().oclAsType(mtctl::comparables::TransitionMap);
-	}
-}
-
 //Try to statically evaluate logical expressions to true/false
 mapping Expression::Expression2False() : FalseExpr when {self.evaluateToBoolean()=false} {}
 mapping Expression::Expression2True() : TrueExpr when {self.evaluateToBoolean()=true} {}
