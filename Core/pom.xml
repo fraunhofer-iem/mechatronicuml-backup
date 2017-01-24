@@ -74,7 +74,57 @@
               </environments>
             </configuration>
         </plugin>
-    </plugins>
+		<!-- enable source feature generation -->
+   <plugin>
+    <groupId>org.eclipse.tycho.extras</groupId>
+    <artifactId>tycho-source-feature-plugin</artifactId>
+    <version>${tycho-version}</version>
+    <executions>
+     <execution>
+      <id>source-feature</id>
+      <phase>package</phase>
+      <goals>
+       <goal>source-feature</goal>
+      </goals>
+     </execution>
+    </executions>
+    <configuration>
+     <excludes>
+       <!--provide plug-ins not containing any source code -->
+	  <plugin id="org.muml.core.repository" />
+	  <plugin id="org.muml.core.feature" />
+	  <plugin id="org.muml.core.migrator" />
+     </excludes>
+    </configuration>
+   </plugin>
+   <plugin>
+    <groupId>org.eclipse.tycho</groupId>
+    <artifactId>tycho-source-plugin</artifactId>
+    <version>${tycho-version}</version>
+    <executions>
+     <execution>
+      <id>plugin-source</id>
+      <goals>
+       <goal>plugin-source</goal>
+      </goals>
+     </execution>
+    </executions>
+   </plugin>
+   <plugin>
+    <groupId>org.eclipse.tycho</groupId>
+    <artifactId>tycho-p2-plugin</artifactId>
+    <version>${tycho-version}</version>
+    <executions>
+     <execution>
+      <id>attached-p2-metadata</id>
+      <phase>package</phase>
+      <goals>
+       <goal>p2-metadata</goal>
+      </goals>
+     </execution>
+    </executions>
+   </plugin>
+   </plugins>
   </build>
   
       <profiles>
@@ -120,18 +170,20 @@
   </profiles>
   
     <repositories>
-        <!-- basic eclipse dependencies -->
 		<repository>
 			<id>eclipse-neon</id>
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/releases/neon</url>
         </repository>
-        
-        <!-- Model Migration dependencies -->
 		<repository>
-			<id>model-migration</id>
+			<id>ModelMigration</id>
 			<layout>p2</layout>
 			<url>${repobase}/ModelMigration-Maven/${repopath}org.muml.emm.repository/target/repository</url>
+		</repository>
+		<repository>
+			<id>APE</id>
+			<layout>p2</layout>
+			<url>${repobase}/APE-Maven/${repopath}org.muml.ape.repository/target/repository</url>
 		</repository>
     </repositories>
 </project>
