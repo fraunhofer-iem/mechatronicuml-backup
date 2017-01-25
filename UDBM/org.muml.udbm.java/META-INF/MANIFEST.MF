@@ -13,10 +13,8 @@ Require-Bundle: org.muml.udbm,
  org.eclipse.uml2.types;visibility:=reexport,
  org.eclipse.ocl.ecore;bundle-version="3.2.0",
  org.eclipse.osgi,
- org.muml.logging
+ org.apache.log4j;bundle-version="1.2.15",
+ org.slf4j.api;bundle-version="1.7.2"
 Export-Package: org.muml.udbm.java
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
 Bundle-ActivationPolicy: lazy
-Import-Package: org.apache.log4j,
- org.apache.log4j.spi,
- org.slf4j
