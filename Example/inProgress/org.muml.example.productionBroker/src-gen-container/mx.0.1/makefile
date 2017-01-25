@@ -20,7 +20,7 @@ COMP = productionStationComponent.o
 OPERATIONREPOSITORIES = 	 iDManagementOpRep.o		
 LIB =   Debug.o
 CC = gcc
-CFLAGS = -ggdb -Wall -c  $(DEFINES) -I types -I lib -I $(NDDSHOME)/include -I $(NDDSHOME)/include/ndds 
+CFLAGS = -DC99 -DDEBUG -ggdb -Wall -c  $(DEFINES) -I types -I lib -I $(NDDSHOME)/include -I $(NDDSHOME)/include/ndds 
 all: app
 
 app : main.o $(RTSC) $(COMP) $(LIB) $(CONT_LIB) $(HYB) $(CONT) $(OPERATIONREPOSITORIES)  $(DDSSOURCES)
