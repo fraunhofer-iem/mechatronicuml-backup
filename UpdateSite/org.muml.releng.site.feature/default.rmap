@@ -33,6 +33,13 @@
       </rm:uri>
     </rm:provider>
   </rm:searchPath>
+  
+  
+  <rm:searchPath name="eclipse_neon_orbit">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="false">
+      <rm:uri format="http://download.eclipse.org/tools/orbit/downloads/drops/R20160520211859/repository?importType=binary" />
+    </rm:provider>
+</rm:searchPath>
 
 <rm:searchPath name="eclipse_neon">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="false">
