@@ -28,7 +28,7 @@
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EOwRwxWxEea4t_vvK_A9tw" x="120" y="107"/>
             </children>
             <element xmi:type="instance:AtomicComponentInstance" href="../productionBroker.muml#_ClUooeVHEeWTk8L1nP577g"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EDW6ERWxEea4t_vvK_A9tw" x="465" y="135" width="361" height="119"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EDW6ERWxEea4t_vvK_A9tw" x="477" y="111" width="361" height="119"/>
           </children>
           <children xmi:type="notation:Shape" xmi:id="_EDXhIBWxEea4t_vvK_A9tw" type="3024" fontName="Segoe UI" lineColor="0">
             <children xmi:type="notation:DecorationNode" xmi:id="_EDXhIhWxEea4t_vvK_A9tw" type="5028"/>
@@ -40,7 +40,7 @@
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_EcektBWxEea4t_vvK_A9tw" y="5"/>
               </children>
               <element xmi:type="instance:DiscreteSinglePortInstance" href="../productionBroker.muml#_ClUopOVHEeWTk8L1nP577g"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EceksBWxEea4t_vvK_A9tw" x="316" y="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EceksBWxEea4t_vvK_A9tw" x="352" y="12"/>
             </children>
             <element xmi:type="instance:AtomicComponentInstance" href="../productionBroker.muml#_ClUoo-VHEeWTk8L1nP577g"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EDXhIRWxEea4t_vvK_A9tw" x="9" y="183" width="364"/>

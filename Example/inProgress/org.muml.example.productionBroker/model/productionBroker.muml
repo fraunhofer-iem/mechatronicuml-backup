@@ -4,22 +4,22 @@
   <categories xmi:id="_soLPQNxbEeW-N_z6XJQq2w" key="org.muml.pim.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_ytRK8NxrEeW-N_z6XJQq2w" name="ReciepeGenerator" behavioralElement="_QVSL8NxcEeW-N_z6XJQq2w">
       <variables xmi:id="_NJMasNxtEeW-N_z6XJQq2w" name="produceIngredientID">
-        <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         <initializeExpression xsi:type="common:LiteralExpression" xmi:id="_PbIBENxtEeW-N_z6XJQq2w" value="1"/>
       </variables>
       <variables xmi:id="_CY5c4NyZEeW-N_z6XJQq2w" name="amount">
-        <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         <initializeExpression xsi:type="common:LiteralExpression" xmi:id="_HafugNyZEeW-N_z6XJQq2w" value="1"/>
       </variables>
       <states xmi:id="_ytRK8dxrEeW-N_z6XJQq2w" name="init" initial="true">
         <embeddedRegions xmi:id="_VOaq0NxsEeW-N_z6XJQq2w" priority="1">
           <embeddedStatechart xmi:id="_VObR4NxsEeW-N_z6XJQq2w" name="reciepeSender" behavioralElement="_blyP0NxcEeW-N_z6XJQq2w">
             <variables xmi:id="_yIKdUNxsEeW-N_z6XJQq2w" name="currentOrderID">
-              <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
               <initializeExpression xsi:type="common:LiteralExpression" xmi:id="_YTSGoOYHEeWZloxZLJnVmA" value="0"/>
             </variables>
             <variables xmi:id="_ScbSENxxEeW-N_z6XJQq2w" name="speed">
-              <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
               <initializeExpression xsi:type="common:LiteralExpression" xmi:id="_VdEYkNxxEeW-N_z6XJQq2w" value="2"/>
             </variables>
             <transitions xmi:id="_YIhEcNxsEeW-N_z6XJQq2w" priority="1" target="_VOb48NxsEeW-N_z6XJQq2w" source="_VOb48NxsEeW-N_z6XJQq2w" clockResets="_FdYowNxxEeW-N_z6XJQq2w">
@@ -98,7 +98,7 @@
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_TDt-8NyaEeW-N_z6XJQq2w" name="broker" behavioralElement="_Ozg3MNxcEeW-N_z6XJQq2w" usedOperationRepositories="_JTILAORjEeW6HsQsL2ADFA">
       <variables xmi:id="_v3QPkOa9EeWyd6JHVas6Kw" name="testLatestOrderIDGlobal">
-        <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         <initializeExpression xsi:type="common:UnaryExpression" xmi:id="_x8xxoOa9EeWyd6JHVas6Kw" operator="MINUS">
           <enclosedExpression xsi:type="common:LiteralExpression" xmi:id="_x8xxoea9EeWyd6JHVas6Kw" value="1"/>
         </initializeExpression>
@@ -107,7 +107,7 @@
         <embeddedRegions xmi:id="_pHIy0NyaEeW-N_z6XJQq2w" priority="1">
           <embeddedStatechart xmi:id="_pHVnINyaEeW-N_z6XJQq2w" name="getOrderStatechart" behavioralElement="_i6J4gNxgEeW-N_z6XJQq2w">
             <variables xmi:id="_oIgBAOVFEeWTk8L1nP577g" name="testLatestOrderID">
-              <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
               <initializeExpression xsi:type="common:UnaryExpression" xmi:id="_q2l-8OVFEeWTk8L1nP577g" operator="MINUS">
                 <enclosedExpression xsi:type="common:LiteralExpression" xmi:id="_q2l-8eVFEeWTk8L1nP577g" value="1"/>
               </initializeExpression>
@@ -150,25 +150,25 @@
         <embeddedRegions xmi:id="_QFkRgOa7EeWyd6JHVas6Kw" priority="2">
           <embeddedStatechart xmi:id="_QFnU0Oa7EeWyd6JHVas6Kw" name="orderBrokerforPsRTSC" behavioralElement="_njyPcOa7EeWyd6JHVas6Kw">
             <variables xmi:id="_sw_esOa8EeWyd6JHVas6Kw" name="currentPsID">
-              <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
               <initializeExpression xsi:type="common:UnaryExpression" xmi:id="_vCPIkOa8EeWyd6JHVas6Kw" operator="MINUS">
                 <enclosedExpression xsi:type="common:LiteralExpression" xmi:id="_vCPIkea8EeWyd6JHVas6Kw" value="1"/>
               </initializeExpression>
             </variables>
             <variables xmi:id="_djx4MOa9EeWyd6JHVas6Kw" name="provideOrderID">
-              <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
               <initializeExpression xsi:type="common:UnaryExpression" xmi:id="_gm98YOa9EeWyd6JHVas6Kw" operator="MINUS">
                 <enclosedExpression xsi:type="common:LiteralExpression" xmi:id="_gm98Yea9EeWyd6JHVas6Kw" value="1"/>
               </initializeExpression>
             </variables>
             <variables xmi:id="_T1QvAOa-EeWyd6JHVas6Kw" name="provideAmount">
-              <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
               <initializeExpression xsi:type="common:UnaryExpression" xmi:id="_VusV0Oa-EeWyd6JHVas6Kw" operator="MINUS">
                 <enclosedExpression xsi:type="common:LiteralExpression" xmi:id="_VusV0ea-EeWyd6JHVas6Kw" value="1"/>
               </initializeExpression>
             </variables>
             <variables xmi:id="_V-9mcOa-EeWyd6JHVas6Kw" name="provideIncredientID">
-              <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
               <initializeExpression xsi:type="common:UnaryExpression" xmi:id="_YFvswOa-EeWyd6JHVas6Kw" operator="MINUS">
                 <enclosedExpression xsi:type="common:LiteralExpression" xmi:id="_YFvswea-EeWyd6JHVas6Kw" value="1"/>
               </initializeExpression>
@@ -182,18 +182,18 @@
                 <message xmi:id="_pBKW8Oa8EeWyd6JHVas6Kw" instanceOf="_UTgXMNxrEeW-N_z6XJQq2w"/>
               </events>
               <action xmi:id="_wosJAOa8EeWyd6JHVas6Kw" name="processGetOrderRequest">
-                <expressions xsi:type="actionlanguage:Block">
-                  <expressions xsi:type="actionlanguage:Assignment" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" messageType="_UTgXMNxrEeW-N_z6XJQq2w" parameter="_t8T0kOa3EeWyd6JHVas6Kw"/>
-                    <lhs_typedNamedElementExpression typedNamedElement="_sw_esOa8EeWyd6JHVas6Kw"/>
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_nEOF4OLzEeavws0rsQ9stg">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_nEOF4eLzEeavws0rsQ9stg" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_nEOF4uLzEeavws0rsQ9stg" messageType="_UTgXMNxrEeW-N_z6XJQq2w" parameter="_t8T0kOa3EeWyd6JHVas6Kw"/>
+                    <lhs_typedNamedElementExpression xmi:id="_nEOF4-LzEeavws0rsQ9stg" typedNamedElement="_sw_esOa8EeWyd6JHVas6Kw"/>
                   </expressions>
-                  <expressions xsi:type="actionlanguage:Assignment" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="actionlanguage:OperationCall" operation="_m40ygOrPEeWdNs1s2t99bw">
-                      <parameterBinding parameter="_o7ueYOrPEeWdNs1s2t99bw">
-                        <value xsi:type="actionlanguage:TypedNamedElementExpression" typedNamedElement="_v3QPkOa9EeWyd6JHVas6Kw"/>
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_nEOF5OLzEeavws0rsQ9stg" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="actionlanguage:OperationCall" xmi:id="_nEOF5eLzEeavws0rsQ9stg" operation="_m40ygOrPEeWdNs1s2t99bw">
+                      <parameterBinding xmi:id="_nEOF5uLzEeavws0rsQ9stg" parameter="_o7ueYOrPEeWdNs1s2t99bw">
+                        <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_nEOF5-LzEeavws0rsQ9stg" typedNamedElement="_v3QPkOa9EeWyd6JHVas6Kw"/>
                       </parameterBinding>
                     </rhs_assignExpression>
-                    <lhs_typedNamedElementExpression typedNamedElement="_djx4MOa9EeWyd6JHVas6Kw"/>
+                    <lhs_typedNamedElementExpression xmi:id="_nEOF6OLzEeavws0rsQ9stg" typedNamedElement="_djx4MOa9EeWyd6JHVas6Kw"/>
                   </expressions>
                 </expressions>
               </action>
@@ -323,7 +323,7 @@
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_6Dss4OamEeWyd6JHVas6Kw" name="porductionStationRTSC" behavioralElement="_vwAi4NxbEeW-N_z6XJQq2w" usedOperationRepositories="_BoCNwOa3EeWyd6JHVas6Kw">
       <variables xmi:id="_UXWMkOa3EeWyd6JHVas6Kw" name="ID" comment="IdentificationNumber. ">
-        <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         <initializeExpression xsi:type="common:UnaryExpression" xmi:id="_YnS-0Oa3EeWyd6JHVas6Kw" operator="MINUS">
           <enclosedExpression xsi:type="common:LiteralExpression" xmi:id="_YnS-0ea3EeWyd6JHVas6Kw" value="1"/>
         </initializeExpression>
@@ -332,28 +332,28 @@
         <embeddedRegions xmi:id="_spzeIOanEeWyd6JHVas6Kw" priority="1">
           <embeddedStatechart xmi:id="_sp5kwOanEeWyd6JHVas6Kw" name="parameterizedGetOrderRTSC" behavioralElement="_Y-2CwNxcEeW-N_z6XJQq2w">
             <variables xmi:id="_W6zLUOa4EeWyd6JHVas6Kw" name="amount">
-              <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
               <initializeExpression xsi:type="common:UnaryExpression" xmi:id="_YvFzcOa4EeWyd6JHVas6Kw" operator="MINUS">
                 <enclosedExpression xsi:type="common:LiteralExpression" xmi:id="_YvFzcea4EeWyd6JHVas6Kw" value="1"/>
               </initializeExpression>
             </variables>
             <variables xmi:id="_6rrNsOa4EeWyd6JHVas6Kw" name="processedOrderID">
-              <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
               <initializeExpression xsi:type="common:UnaryExpression" xmi:id="_-tGbwOa4EeWyd6JHVas6Kw" operator="MINUS">
                 <enclosedExpression xsi:type="common:LiteralExpression" xmi:id="_-tGbwea4EeWyd6JHVas6Kw" value="1"/>
               </initializeExpression>
             </variables>
             <variables xmi:id="__StDMOa4EeWyd6JHVas6Kw" name="incomingOrderPsID">
-              <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
             </variables>
             <variables xmi:id="_H8twgOa6EeWyd6JHVas6Kw" name="incredientID">
-              <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
               <initializeExpression xsi:type="common:UnaryExpression" xmi:id="_JfM28Oa6EeWyd6JHVas6Kw" operator="MINUS">
                 <enclosedExpression xsi:type="common:LiteralExpression" xmi:id="_JfM28ea6EeWyd6JHVas6Kw" value="1"/>
               </initializeExpression>
             </variables>
             <variables xmi:id="_41wGMOqPEeWdNs1s2t99bw" name="evaluateOrderFailed">
-              <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
               <initializeExpression xsi:type="common:LiteralExpression" xmi:id="_8zfuIOqPEeWdNs1s2t99bw" value="false"/>
             </variables>
             <transitions xmi:id="_0qTw4OanEeWyd6JHVas6Kw" priority="1" target="_LXECYOa4EeWyd6JHVas6Kw" source="_JvqcMOa3EeWyd6JHVas6Kw">
@@ -528,23 +528,23 @@
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_qixPAOwfEeWTKqLnMSJAUw" name="brokerRole" behavioralElement="_lPTxUOwfEeWTKqLnMSJAUw">
       <variables xmi:id="_daxBgOwgEeWTKqLnMSJAUw" name="provideOrderID">
-        <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         <initializeExpression xsi:type="common:UnaryExpression" xmi:id="_f42NgOwgEeWTKqLnMSJAUw" operator="MINUS">
           <enclosedExpression xsi:type="common:LiteralExpression" xmi:id="_f42NgewgEeWTKqLnMSJAUw" value="1"/>
         </initializeExpression>
       </variables>
       <variables xmi:id="_heTIYOwgEeWTKqLnMSJAUw" name="provideAmount" constant="true">
-        <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         <initializeExpression xsi:type="common:LiteralExpression" xmi:id="_bNWLEOxJEeWTKqLnMSJAUw" value="2"/>
       </variables>
       <variables xmi:id="_kmnkMOwgEeWTKqLnMSJAUw" name="provideIncredientID">
-        <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         <initializeExpression xsi:type="common:UnaryExpression" xmi:id="_mU1ZgOwgEeWTKqLnMSJAUw" operator="MINUS">
           <enclosedExpression xsi:type="common:LiteralExpression" xmi:id="_mU1ZgewgEeWTKqLnMSJAUw" value="1"/>
         </initializeExpression>
       </variables>
       <variables xmi:id="_qMoxgOwgEeWTKqLnMSJAUw" name="currentPsID">
-        <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         <initializeExpression xsi:type="common:UnaryExpression" xmi:id="_rwDFAOwgEeWTKqLnMSJAUw" operator="MINUS">
           <enclosedExpression xsi:type="common:LiteralExpression" xmi:id="_rwDFAewgEeWTKqLnMSJAUw" value="1"/>
         </initializeExpression>
@@ -605,32 +605,32 @@
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_p1yiUOwhEeWTKqLnMSJAUw" name="productionStationRole" behavioralElement="_lPVmgewfEeWTKqLnMSJAUw">
       <variables xmi:id="_UV0fIOw0EeWTKqLnMSJAUw" name="amount">
-        <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         <initializeExpression xsi:type="common:UnaryExpression" xmi:id="_UV0fIew0EeWTKqLnMSJAUw" operator="MINUS">
           <enclosedExpression xsi:type="common:LiteralExpression" xmi:id="_UV0fIuw0EeWTKqLnMSJAUw" value="1"/>
         </initializeExpression>
       </variables>
       <variables xmi:id="_UV0fI-w0EeWTKqLnMSJAUw" name="processedOrderID">
-        <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         <initializeExpression xsi:type="common:UnaryExpression" xmi:id="_UV0fJOw0EeWTKqLnMSJAUw" operator="MINUS">
           <enclosedExpression xsi:type="common:LiteralExpression" xmi:id="_UV0fJew0EeWTKqLnMSJAUw" value="1"/>
         </initializeExpression>
       </variables>
       <variables xmi:id="_UV0fJuw0EeWTKqLnMSJAUw" name="incomingOrderPsID">
-        <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
       </variables>
       <variables xmi:id="_UV0fJ-w0EeWTKqLnMSJAUw" name="incredientID">
-        <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         <initializeExpression xsi:type="common:UnaryExpression" xmi:id="_UV0fKOw0EeWTKqLnMSJAUw" operator="MINUS">
           <enclosedExpression xsi:type="common:LiteralExpression" xmi:id="_UV0fKew0EeWTKqLnMSJAUw" value="1"/>
         </initializeExpression>
       </variables>
       <variables xmi:id="_UV0fKuw0EeWTKqLnMSJAUw" name="evaluateOrderFailed">
-        <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
         <initializeExpression xsi:type="common:LiteralExpression" xmi:id="_UV0fK-w0EeWTKqLnMSJAUw" value="false"/>
       </variables>
       <variables xmi:id="_ZhkyUOw0EeWTKqLnMSJAUw" name="ID">
-        <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         <initializeExpression xsi:type="common:LiteralExpression" xmi:id="_bYZKAOw0EeWTKqLnMSJAUw" value="5"/>
       </variables>
       <transitions xmi:id="_vDNpcOwhEeWTKqLnMSJAUw" priority="1" target="_umwW8OwhEeWTKqLnMSJAUw" source="_p1yiUewhEeWTKqLnMSJAUw"/>
@@ -855,8 +855,8 @@
       </roles>
       <roles xmi:id="_lPVmgewfEeWTKqLnMSJAUw" connectors="_lPWNkewfEeWTKqLnMSJAUw" behavior="_p1yiUOwhEeWTKqLnMSJAUw" name="productionStation" senderMessageTypes="_wsJowNxgEeW-N_z6XJQq2w _UTgXMNxrEeW-N_z6XJQq2w" receiverMessageTypes="_dtJysNxhEeW-N_z6XJQq2w _P-BxAOa5EeWyd6JHVas6Kw">
         <cardinality xmi:id="_lPVmguwfEeWTKqLnMSJAUw">
-          <lowerBound/>
-          <upperBound/>
+          <lowerBound xmi:id="_nEfLoOLzEeavws0rsQ9stg"/>
+          <upperBound xmi:id="_nEfLoeLzEeavws0rsQ9stg"/>
         </cardinality>
         <receiverMessageBuffer xmi:id="_IwiOIOwgEeWTKqLnMSJAUw" name="buffer_for_noOrder" messageType="_dtJysNxhEeW-N_z6XJQq2w">
           <bufferSize xmi:id="_IwiOIewgEeWTKqLnMSJAUw"/>
@@ -867,9 +867,6 @@
       </roles>
       <roleConnector xmi:id="_lPWNkewfEeWTKqLnMSJAUw" connectorEndpoints="_lPTxUOwfEeWTKqLnMSJAUw _lPVmgewfEeWTKqLnMSJAUw">
         <connectorQualityOfServiceAssumptions xmi:id="_lPYCwOwfEeWTKqLnMSJAUw" comment="">
-          <minMessageDelay xmi:id="_lPZ38OwfEeWTKqLnMSJAUw" unit="MILLISECONDS">
-            <value xsi:type="common:LiteralExpression" xmi:id="_lPZ38ewfEeWTKqLnMSJAUw" value="0"/>
-          </minMessageDelay>
           <maxMessageDelay xmi:id="_lPYp0OwfEeWTKqLnMSJAUw" unit="MILLISECONDS">
             <value xsi:type="common:LiteralExpression" xmi:id="_lPZQ4OwfEeWTKqLnMSJAUw" value="0"/>
           </maxMessageDelay>
@@ -885,8 +882,8 @@
       </roles>
       <roles xmi:id="_KUakROw3EeWTKqLnMSJAUw" connectors="_KUakSOw3EeWTKqLnMSJAUw" behavior="_gcw7cOw3EeWTKqLnMSJAUw" name="receiverRole" receiverMessageTypes="_fAYHYNxcEeW-N_z6XJQq2w">
         <cardinality xmi:id="_KUakRew3EeWTKqLnMSJAUw">
-          <lowerBound/>
-          <upperBound/>
+          <lowerBound xmi:id="_nEhA0OLzEeavws0rsQ9stg"/>
+          <upperBound xmi:id="_nEhA0eLzEeavws0rsQ9stg"/>
         </cardinality>
         <receiverMessageBuffer xmi:id="_Rp_qsOw3EeWTKqLnMSJAUw" name="buffer_for_simpleOrder" messageType="_fAYHYNxcEeW-N_z6XJQq2w">
           <bufferSize xmi:id="_Rp_qsew3EeWTKqLnMSJAUw"/>
@@ -894,9 +891,6 @@
       </roles>
       <roleConnector xmi:id="_KUakSOw3EeWTKqLnMSJAUw" connectorEndpoints="_KUakQOw3EeWTKqLnMSJAUw _KUakROw3EeWTKqLnMSJAUw">
         <connectorQualityOfServiceAssumptions xmi:id="_KUbyYOw3EeWTKqLnMSJAUw" comment="">
-          <minMessageDelay xmi:id="_KUbyY-w3EeWTKqLnMSJAUw" unit="MILLISECONDS">
-            <value xsi:type="common:LiteralExpression" xmi:id="_KUbyZOw3EeWTKqLnMSJAUw" value="0"/>
-          </minMessageDelay>
           <maxMessageDelay xmi:id="_KUbyYew3EeWTKqLnMSJAUw" unit="MILLISECONDS">
             <value xsi:type="common:LiteralExpression" xmi:id="_KUbyYuw3EeWTKqLnMSJAUw" value="0"/>
           </maxMessageDelay>
@@ -908,54 +902,54 @@
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_ev5bYNxcEeW-N_z6XJQq2w" name="Messages">
       <messageTypes xmi:id="_fAYHYNxcEeW-N_z6XJQq2w" name="simpleOrder">
         <parameters xmi:id="_YGhW0NxgEeW-N_z6XJQq2w" name="orderID">
-          <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         </parameters>
         <parameters xmi:id="_Zoh8INxgEeW-N_z6XJQq2w" name="ingredientID">
-          <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         </parameters>
         <parameters xmi:id="_b0doMNxgEeW-N_z6XJQq2w" name="amount">
-          <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         </parameters>
       </messageTypes>
       <messageTypes xmi:id="_wsJowNxgEeW-N_z6XJQq2w" name="doneOrder">
         <parameters xmi:id="_yhpx0NxgEeW-N_z6XJQq2w" name="orderID">
-          <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         </parameters>
       </messageTypes>
       <messageTypes xmi:id="_4KzLoNxgEeW-N_z6XJQq2w" name="cancelOrder">
         <parameters xmi:id="_5ELDoNxgEeW-N_z6XJQq2w" name="orderID">
-          <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         </parameters>
       </messageTypes>
       <messageTypes xmi:id="_dtJysNxhEeW-N_z6XJQq2w" name="noOrder">
         <parameters xmi:id="_eflVMNxhEeW-N_z6XJQq2w" name="receiverPsID">
-          <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         </parameters>
       </messageTypes>
       <messageTypes xmi:id="_UTgXMNxrEeW-N_z6XJQq2w" name="getOrder">
         <parameters xmi:id="_t8T0kOa3EeWyd6JHVas6Kw" name="psID">
-          <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         </parameters>
       </messageTypes>
       <messageTypes xmi:id="_P-BxAOa5EeWyd6JHVas6Kw" name="orderForPS">
         <parameters xmi:id="_SUaZkOa5EeWyd6JHVas6Kw" name="receiverPsID">
-          <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         </parameters>
         <parameters xmi:id="_UMyQcOa5EeWyd6JHVas6Kw" name="orderID">
-          <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         </parameters>
         <parameters xmi:id="_X-qmoOa5EeWyd6JHVas6Kw" name="incredientID">
-          <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         </parameters>
         <parameters xmi:id="_ZW9PQOa5EeWyd6JHVas6Kw" name="amount">
-          <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         </parameters>
       </messageTypes>
     </modelElements>
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_niLXENxhEeW-N_z6XJQq2w" name="Register">
       <messageTypes xmi:id="_qkDzsNxhEeW-N_z6XJQq2w" name="register">
         <parameters xmi:id="_sILR0NxhEeW-N_z6XJQq2w" name="clientID">
-          <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         </parameters>
       </messageTypes>
       <messageTypes xmi:id="_wPSRINxhEeW-N_z6XJQq2w" name="alive"/>
@@ -1041,15 +1035,15 @@
       </embeddedComponentParts>
       <embeddedComponentParts xmi:id="_4isGFuVGEeWTk8L1nP577g" name="RecipeGenerator" componentType="_QVSL8NxcEeW-N_z6XJQq2w">
         <cardinality xmi:id="_4isGF-VGEeWTk8L1nP577g">
-          <lowerBound/>
-          <upperBound/>
+          <lowerBound xmi:id="_nEmgYOLzEeavws0rsQ9stg"/>
+          <upperBound xmi:id="_nEmgYeLzEeavws0rsQ9stg"/>
         </cardinality>
         <portParts xmi:id="_4isGGuVGEeWTk8L1nP577g" connectors="_7Jr9gOVGEeWTk8L1nP577g" portType="_blyP0NxcEeW-N_z6XJQq2w" coordinationProtocolPart="_4f-c0Ow3EeWTKqLnMSJAUw"/>
       </embeddedComponentParts>
       <embeddedComponentParts xmi:id="_Xa7asOapEeWyd6JHVas6Kw" name="ProductionStation" componentType="_vwAi4NxbEeW-N_z6XJQq2w">
         <cardinality xmi:id="_XbA6QOapEeWyd6JHVas6Kw">
-          <lowerBound/>
-          <upperBound/>
+          <lowerBound xmi:id="_nEnHcOLzEeavws0rsQ9stg"/>
+          <upperBound xmi:id="_nEnHceLzEeavws0rsQ9stg"/>
         </cardinality>
         <portParts xmi:id="_X8E_8OapEeWyd6JHVas6Kw" connectors="_OpjKAOa8EeWyd6JHVas6Kw" portType="_Y-2CwNxcEeW-N_z6XJQq2w" coordinationProtocolPart="_T3DNkOw2EeWTKqLnMSJAUw"/>
       </embeddedComponentParts>
@@ -1063,56 +1057,56 @@
     <modelElements xsi:type="behavior:OperationRepository" xmi:id="_JTILAORjEeW6HsQsL2ADFA" name="noSQLDatabase">
       <operations xmi:id="_KkrScORjEeW6HsQsL2ADFA" name="insertOrder">
         <parameters xmi:id="_WB_qUORjEeW6HsQsL2ADFA" name="orderID">
-          <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         </parameters>
         <parameters xmi:id="_YnVU4ORjEeW6HsQsL2ADFA" name="incredientID">
-          <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         </parameters>
         <parameters xmi:id="_aSJQ4ORjEeW6HsQsL2ADFA" name="amount">
-          <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         </parameters>
-        <returnType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+        <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
       </operations>
       <operations xmi:id="_MsPb4ORjEeW6HsQsL2ADFA" name="deleteOrder">
         <parameters xmi:id="_dcOnQORjEeW6HsQsL2ADFA" name="orderID">
-          <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         </parameters>
-        <returnType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+        <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
       </operations>
       <operations xmi:id="_P9nGAORjEeW6HsQsL2ADFA" name="getOrderIncredientID">
         <parameters xmi:id="_ivtTEORjEeW6HsQsL2ADFA" name="orderID">
-          <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         </parameters>
-        <returnType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+        <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
       </operations>
       <operations xmi:id="_Rf8bcORjEeW6HsQsL2ADFA" name="getOrderAmount">
         <parameters xmi:id="_lEXdUORjEeW6HsQsL2ADFA" name="orderID">
-          <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         </parameters>
-        <returnType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+        <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
       </operations>
       <operations xmi:id="_oqnyUORjEeW6HsQsL2ADFA" name="createDatabase">
-        <returnType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+        <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
       </operations>
       <operations xmi:id="_5o24cOb9EeWyd6JHVas6Kw" name="defineProductionStationForOrder">
         <parameters xmi:id="_9RcvwOb9EeWyd6JHVas6Kw" name="orderID">
-          <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         </parameters>
         <parameters xmi:id="_A3cmEOb-EeWyd6JHVas6Kw" name="productionStationID">
-          <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         </parameters>
-        <returnType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+        <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
       </operations>
       <operations xmi:id="_m40ygOrPEeWdNs1s2t99bw" name="searchOrder">
         <parameters xmi:id="_o7ueYOrPEeWdNs1s2t99bw" name="orderID">
-          <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         </parameters>
-        <returnType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+        <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
       </operations>
     </modelElements>
     <modelElements xsi:type="behavior:OperationRepository" xmi:id="_BoCNwOa3EeWyd6JHVas6Kw" name="IDManagement">
       <operations xmi:id="_ExXWMOa3EeWyd6JHVas6Kw" name="getID">
-        <returnType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+        <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
       </operations>
     </modelElements>
   </categories>
@@ -1165,7 +1159,7 @@
       <hwplatformInstances xmi:id="_5xZ7YOwqEeWTKqLnMSJAUw" name="Platform.0" hwplatformType="_ozx8oOwqEeWTKqLnMSJAUw">
         <embeddedHPIC xmi:id="_6TU8sOwqEeWTKqLnMSJAUw">
           <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_6Tq68OwqEeWTKqLnMSJAUw" name="cx.0.1" resourceType="_2uYWu-wnEeWTKqLnMSJAUw">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_6Tq68ewqEeWTKqLnMSJAUw" name="ethernet" connectorInstances="//@categories.7/@modelElements.1/@hwplatformInstances.0/@embeddedHPIC/@networkConnectorInstances.0" type="_xG6QcOwqEeWTKqLnMSJAUw" communicationResource="_2uYWvOwnEeWTKqLnMSJAUw"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_6Tq68ewqEeWTKqLnMSJAUw" name="ethernet" connectorInstances="_nE9swOLzEeavws0rsQ9stg" type="_xG6QcOwqEeWTKqLnMSJAUw" communicationResource="_2uYWvOwnEeWTKqLnMSJAUw"/>
             <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_6Tq68uwqEeWTKqLnMSJAUw" name="Intel Core i7" resourceType="_2uYWyOwnEeWTKqLnMSJAUw">
               <frequency xmi:id="_6Tq68-wqEeWTKqLnMSJAUw" value="1.7" unit="GHz"/>
             </embeddedAtomicResourceInstances>
@@ -1177,7 +1171,7 @@
             </embeddedAtomicResourceInstances>
           </resources>
           <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_6TriAOwqEeWTKqLnMSJAUw" name="rpi.0.1" resourceType="_2uXvsOwnEeWTKqLnMSJAUw">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_6TriAewqEeWTKqLnMSJAUw" name="ethernet" connectorInstances="//@categories.7/@modelElements.1/@hwplatformInstances.0/@embeddedHPIC/@networkConnectorInstances.2" type="_qcm7oOwqEeWTKqLnMSJAUw" communicationResource="_2uXvuewnEeWTKqLnMSJAUw"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_6TriAewqEeWTKqLnMSJAUw" name="ethernet" connectorInstances="_nE9swuLzEeavws0rsQ9stg" type="_qcm7oOwqEeWTKqLnMSJAUw" communicationResource="_2uXvuewnEeWTKqLnMSJAUw"/>
             <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_6TriAuwqEeWTKqLnMSJAUw" name="DDR2" resourceType="_2uXvw-wnEeWTKqLnMSJAUw">
               <memorySize xmi:id="_6TriA-wqEeWTKqLnMSJAUw" value="1.0" unit="GByte"/>
             </embeddedAtomicResourceInstances>
@@ -1186,7 +1180,7 @@
             </embeddedAtomicResourceInstances>
           </resources>
           <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_6TriBuwqEeWTKqLnMSJAUw" name="mx.0.1" resourceType="_2uXv4-wnEeWTKqLnMSJAUw">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_6TriB-wqEeWTKqLnMSJAUw" name="ethernet" connectorInstances="//@categories.7/@modelElements.1/@hwplatformInstances.0/@embeddedHPIC/@networkConnectorInstances.1" type="_vI_LMOwqEeWTKqLnMSJAUw" communicationResource="_2uXv5OwnEeWTKqLnMSJAUw"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_6TriB-wqEeWTKqLnMSJAUw" name="ethernet" connectorInstances="_nE9sweLzEeavws0rsQ9stg" type="_vI_LMOwqEeWTKqLnMSJAUw" communicationResource="_2uXv5OwnEeWTKqLnMSJAUw"/>
             <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_6TriCOwqEeWTKqLnMSJAUw" name="Freescale i.MX6" resourceType="_2uXv9OwnEeWTKqLnMSJAUw">
               <frequency xmi:id="_6TriCewqEeWTKqLnMSJAUw" value="800.0"/>
             </embeddedAtomicResourceInstances>
@@ -1198,16 +1192,16 @@
             </embeddedAtomicResourceInstances>
           </resources>
           <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_6TriDuwqEeWTKqLnMSJAUw" name="router.0.1" resourceType="_eBU8IOwpEeWTKqLnMSJAUw">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_6TriD-wqEeWTKqLnMSJAUw" name="et4" connectorInstances="//@categories.7/@modelElements.1/@hwplatformInstances.0/@embeddedHPIC/@networkConnectorInstances.1" type="_sVrWEOwqEeWTKqLnMSJAUw" communicationResource="_sS91wOwpEeWTKqLnMSJAUw"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_6TriEOwqEeWTKqLnMSJAUw" name="et2" connectorInstances="//@categories.7/@modelElements.1/@hwplatformInstances.0/@embeddedHPIC/@networkConnectorInstances.0" type="_sVkoYOwqEeWTKqLnMSJAUw" communicationResource="_our2sOwpEeWTKqLnMSJAUw"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_6TriEewqEeWTKqLnMSJAUw" name="et1" connectorInstances="//@categories.7/@modelElements.1/@hwplatformInstances.0/@embeddedHPIC/@networkConnectorInstances.2" type="_sVskMOwqEeWTKqLnMSJAUw" communicationResource="_hmiIQOwpEeWTKqLnMSJAUw"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_6TriD-wqEeWTKqLnMSJAUw" name="et4" connectorInstances="_nE9sweLzEeavws0rsQ9stg" type="_sVrWEOwqEeWTKqLnMSJAUw" communicationResource="_sS91wOwpEeWTKqLnMSJAUw"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_6TriEOwqEeWTKqLnMSJAUw" name="et2" connectorInstances="_nE9swOLzEeavws0rsQ9stg" type="_sVkoYOwqEeWTKqLnMSJAUw" communicationResource="_our2sOwpEeWTKqLnMSJAUw"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_6TriEewqEeWTKqLnMSJAUw" name="et1" connectorInstances="_nE9swuLzEeavws0rsQ9stg" type="_sVskMOwqEeWTKqLnMSJAUw" communicationResource="_hmiIQOwpEeWTKqLnMSJAUw"/>
             <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_6TriEuwqEeWTKqLnMSJAUw" name="cpu" resourceType="_la2ucOwpEeWTKqLnMSJAUw">
               <frequency xmi:id="_6TriE-wqEeWTKqLnMSJAUw"/>
             </embeddedAtomicResourceInstances>
           </resources>
-          <networkConnectorInstances connectorEndpointInstances="_6Tq68ewqEeWTKqLnMSJAUw _6TriEOwqEeWTKqLnMSJAUw"/>
-          <networkConnectorInstances connectorEndpointInstances="_6TriD-wqEeWTKqLnMSJAUw _6TriB-wqEeWTKqLnMSJAUw"/>
-          <networkConnectorInstances connectorEndpointInstances="_6TriEewqEeWTKqLnMSJAUw _6TriAewqEeWTKqLnMSJAUw"/>
+          <networkConnectorInstances xmi:id="_nE9swOLzEeavws0rsQ9stg" connectorEndpointInstances="_6Tq68ewqEeWTKqLnMSJAUw _6TriEOwqEeWTKqLnMSJAUw"/>
+          <networkConnectorInstances xmi:id="_nE9sweLzEeavws0rsQ9stg" connectorEndpointInstances="_6TriD-wqEeWTKqLnMSJAUw _6TriB-wqEeWTKqLnMSJAUw"/>
+          <networkConnectorInstances xmi:id="_nE9swuLzEeavws0rsQ9stg" connectorEndpointInstances="_6TriEewqEeWTKqLnMSJAUw _6TriAewqEeWTKqLnMSJAUw"/>
         </embeddedHPIC>
       </hwplatformInstances>
     </modelElements>
