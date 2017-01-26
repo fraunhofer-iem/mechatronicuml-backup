@@ -7,7 +7,9 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.Map;
 
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
@@ -193,8 +195,8 @@ public class TransformationImpl extends NodeSpecificationImpl implements Transfo
 
 		status = BasicDiagnostic.toIStatus(executor.loadTransformation());
 
-		if (!status.isOK()) {
-			throw new ExecutionException(status.getMessage());
+		if (status.getSeverity() == Status.ERROR) {
+			throw new ExecutionException(new CoreException(status));
 		}
 
 		context = new ExecutionContextImpl();
