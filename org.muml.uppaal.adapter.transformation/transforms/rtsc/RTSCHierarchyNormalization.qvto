@@ -1,4 +1,3 @@
-//import transforms.lib.MUML2MUML;
 import ModelcopyLibrary;
 import transforms.lib.RTSCUtil;
 import transforms.lib.MultiMappingUtil;
@@ -104,7 +103,8 @@ transformation RTSCHierarchyNormalization(in input:rtsc, out output:rtsc);
 		self.oclAsType(EObject).eContainer().eSet(containingFeature, newExpr.deepclone().oclAsType(EObject));
 	}
 	
-	mapping MumlElemExpr :: MumlElemExpr2MumlElemExpr() : MumlElemExpr {
+	//MumlElemExpr2MumlElemExpr
+	mapping MumlElemExpr :: transform() : MumlElemExpr {
 		if (self.elem.oclIsKindOf(Vertex)) {
 			elem := self.elem.late resolveone(State);
 		}
@@ -120,7 +120,8 @@ transformation RTSCHierarchyNormalization(in input:rtsc, out output:rtsc);
 		instance := self.instance.map transform();
 	}
 	
-	mapping RealtimeStatechart :: RealtimeStatechart2RealtimeStatechart() : RealtimeStatechart
+	//RealtimeStatechart2RealtimeStatechart
+	mapping RealtimeStatechart :: transform() : RealtimeStatechart
 		disjuncts RealtimeStatechart::RTSC2OrthogonalRTSC, RealtimeStatechart::RTSC2EmbeddedRTSC;
 			
 	mapping RealtimeStatechart :: RTSC2OrthogonalRTSC() : RealtimeStatechart when {self.embedded = false} {
@@ -230,7 +231,7 @@ transformation RTSCHierarchyNormalization(in input:rtsc, out output:rtsc);
 		joinTrees->forEach(jointTree) {
 
 		
-			jointTree.exit.state.parentStatechart.map RealtimeStatechart2RealtimeStatechart().variables += jointTree.map createTriggerVariable()
+			jointTree.exit.state.parentStatechart.map transform().oclAsType(RealtimeStatechart).variables += jointTree.map createTriggerVariable()
 		
 		
 		};
@@ -298,7 +299,7 @@ transformation RTSCHierarchyNormalization(in input:rtsc, out output:rtsc);
 		
 			-- increase trigger variable on incoming edges
 			
-			var mapped : State = l.map State2State();
+			var mapped : State = l.map transform().oclAsType(State);
 			
 			mapped.incomingTransitions->forEach(t) {
 				
@@ -373,7 +374,7 @@ transformation RTSCHierarchyNormalization(in input:rtsc, out output:rtsc);
 			-- create first edge of the chain
 			-- map trigger message event, trigger variable comparison, clock constraints, and guards
 			
-			var src : State = root.state.resolveoneIn(State::State2State, State);
+			var src : State = root.state.resolveoneIn(OclAny::transform, State);
 			var trg : State = self.map createExitAuxState();
 			
 			assert fatal (src != null) with log('Source state must be specified.');
@@ -938,7 +939,7 @@ transformation RTSCHierarchyNormalization(in input:rtsc, out output:rtsc);
 		
 						
 		-- map each state to a corresponding "active" state						
-		states += self.states->map State2State();
+		states += self.states->map transform().oclAsType(State);
 						
 		self.states->select(not simple)->forEach(composite) {
 						
@@ -956,14 +957,14 @@ transformation RTSCHierarchyNormalization(in input:rtsc, out output:rtsc);
 				target.getStatechart() = self				
 			)->asOrderedSet();
 			
-			transitions += entryTransitions->map Transition2Transition();
+			transitions += entryTransitions->map transform().oclAsType(Transition);
 			
 		}
 		endif;
 				
 		
 		-- map transitions originating from ordinary states		
-		transitions += self.states.outgoingTransitions->map Transition2Transition();
+		transitions += self.states.outgoingTransitions->map transform().oclAsType(Transition);
 		// TODO replace OCL collect shorthand ('.' notation) by QVTo xcollect shorthand ('->' notation) once it flattens: https://bugs.eclipse.org/bugs/show_bug.cgi?id=425536
 	
 		
@@ -1103,7 +1104,8 @@ transformation RTSCHierarchyNormalization(in input:rtsc, out output:rtsc);
 			
 	}
 	
-	mapping State :: State2State() : State {
+	//State2State
+	mapping State :: transform() : State {
 		
 		name := self.name + "_ACTIVE_IN_" + self.parentStatechart.name;
 				
@@ -1134,7 +1136,7 @@ transformation RTSCHierarchyNormalization(in input:rtsc, out output:rtsc);
 	mapping EntryPoint :: createAuxTransition() : Transition {
 	
 		source := self.resolveoneIn(EntryPoint::createAuxState, State);
-		target := self.state.resolveoneIn(State::State2State, State);
+		target := self.state.resolveoneIn(OclAny::transform, State);
 		
 		assert fatal (source != null) with log('Source state must be specified.');
 		assert fatal (target != null) with log('Target state must be specified.');
@@ -1147,7 +1149,8 @@ transformation RTSCHierarchyNormalization(in input:rtsc, out output:rtsc);
 		
 	};
 		
-	mapping Transition :: Transition2Transition() : Transition when {self.source.oclIsKindOf(ExitPoint) implies self.target.oclIsKindOf(ExitPoint)} {
+	//Transition2Transition
+	mapping Transition :: transform() : Transition when {self.source.oclIsKindOf(ExitPoint) implies self.target.oclIsKindOf(ExitPoint)} {
 		-- the precondition excludes the final transitions of exit chains, since they are handled in phase 2 (computation of global joins)
 											
 		source := self.source.getVertexForSourceState(self.target.getStatechart());
@@ -1230,8 +1233,8 @@ transformation RTSCHierarchyNormalization(in input:rtsc, out output:rtsc);
 		return switch {
 						
 			case (self.oclIsKindOf(EntryPoint)) targetStatechart.resolveoneIn(RealtimeStatechart::createIdleState, State);
-			case (self.oclIsKindOf(State) and self.oclAsType(State).simple) self.resolveoneIn(State::State2State, State);
-			case (self.oclIsKindOf(ExitPoint)) self.oclAsType(ExitPoint).state.resolveoneIn(State::State2State, State);
+			case (self.oclIsKindOf(State) and self.oclAsType(State).simple) self.resolveoneIn(OclAny::transform, State);
+			case (self.oclIsKindOf(ExitPoint)) self.oclAsType(ExitPoint).state.resolveoneIn(OclAny::transform, State);
 			else assert fatal (false) with log("Unsupported source state type.");
 				
 		}
@@ -1244,7 +1247,7 @@ transformation RTSCHierarchyNormalization(in input:rtsc, out output:rtsc);
 		return switch {
 		
 			case (self.oclIsKindOf(EntryPoint)) self.resolveoneIn(EntryPoint::createAuxState, State);
-			case (self.oclIsKindOf(State) and self.oclAsType(State).simple) self.resolveoneIn(State::State2State, State);
+			case (self.oclIsKindOf(State) and self.oclAsType(State).simple) self.resolveoneIn(OclAny::transform, State);
 			case (self.oclIsKindOf(ExitPoint)) sourceStatechart.resolveoneIn(RealtimeStatechart::createIdleState, State);
 			else assert fatal (false) with log("Unsupported target state type.");
 			

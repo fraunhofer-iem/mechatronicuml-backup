@@ -1,4 +1,3 @@
-//import transforms.lib.MUML2MUML;
 import ModelcopyLibrary;
 import transforms.lib.RTSCUtil;
 import transforms.lib.MultiMappingUtil;
@@ -43,17 +42,17 @@ mapping SynchronizationChannel :: SyncChannel2NonUrgentSyncChannel() : Synchroni
 	selectorType := self.selectorType;
 } 
 
-
-mapping State :: State2State() : State {
+//State2State
+mapping State :: transform() : State {
 				
 		name := self.name;
 		
 		-- correct transformation is chosen by preconditions
-		incomingTransitions := self.incomingTransitions.map Transition2Transition();
+		incomingTransitions := self.incomingTransitions.map transform().oclAsType(Transition);
 		incomingTransitions += self.incomingTransitions.map Transition2UrgentTransition();
 		incomingTransitions += self.incomingTransitions.map Transition2NonUrgentTransition();
 		
-		outgoingTransitions := self.outgoingTransitions.map Transition2Transition();
+		outgoingTransitions := self.outgoingTransitions.map transform().oclAsType(Transition);
 		outgoingTransitions += self.outgoingTransitions.map Transition2UrgentTransition();
 		outgoingTransitions += self.outgoingTransitions.map Transition2NonUrgentTransition();
 		
@@ -76,18 +75,19 @@ mapping State :: State2State() : State {
 		
 		connectionPoints := self.connectionPoints->map transform().oclAsType(StateConnectionPoint);
 		
-		parentStatechart := self.parentStatechart.map RealtimeStatechart2RealtimeStatechart();
+		parentStatechart := self.parentStatechart.map transform().oclAsType(RealtimeStatechart);
 		
 		extensions := self.extensions.oclAsType(CommittedExtension).map transform().oclAsType(CommittedExtension);		
 	}
 	
-mapping Transition :: Transition2Transition() : Transition when {self.synchronization.oclIsUndefined() or self.synchronization=null or not self.synchronization.syncChannel.urgentAndNonUrgentTransitionsSynchronize()} {
+//Transition2Transition
+mapping Transition :: transform() : Transition when {self.synchronization.oclIsUndefined() or self.synchronization=null or not self.synchronization.syncChannel.urgentAndNonUrgentTransitionsSynchronize()} {
 		
 		source := self.source.map transform().oclAsType(Vertex);
 		target := self.target.map transform().oclAsType(Vertex);
 				
 		priority := self.priority;	
-		synchronization := self.synchronization.map Synchronization2Synchronization();		
+		synchronization := self.synchronization.map transform().oclAsType(Synchronization);
 		clockResets := self.clockResets->map transform().oclAsType(Clock);		
 		clockConstraints := self.clockConstraints->map transform().oclAsType(ClockConstraint);		
 		absoluteDeadlines := self.absoluteDeadlines->map transform().oclAsType(AbsoluteDeadline);		
@@ -143,7 +143,8 @@ constructor Synchronization :: Synchronization(channel : SynchronizationChannel,
 		selectorExpression := selectorExp.mapExpression();
 }
 
-mapping Synchronization :: Synchronization2Synchronization() : Synchronization {
+//Synchronization2Synchronization
+mapping Synchronization :: transform() : Synchronization {
 		
 	init {			
 		var c : SynchronizationChannel = self.syncChannel.map SyncChannel2SyncChannel();
@@ -170,7 +171,8 @@ mapping Synchronization :: Synchronization2NonUrgentSynchronization() : Synchron
 		}	
 }
 
-mapping pim::realtimestatechart::RealtimeStatechart :: RealtimeStatechart2RealtimeStatechart() : pim::realtimestatechart::RealtimeStatechart {
+//RealtimeStatechart2RealtimeStatechart
+mapping pim::realtimestatechart::RealtimeStatechart :: transform() : pim::realtimestatechart::RealtimeStatechart {
 			
 		name := self.name;
 		
@@ -182,10 +184,10 @@ mapping pim::realtimestatechart::RealtimeStatechart :: RealtimeStatechart2Realti
 		
 		parentRegion := self.parentRegion.map transform().oclAsType(Region);
 		
-		states := self.states->map State2State();
+		states := self.states->map transform().oclAsType(State);
 		
 		--correct one is chose due to preconditions of transformations
-		transitions := self.transitions.map Transition2Transition();
+		transitions := self.transitions.map transform().oclAsType(Transition);
 		transitions += self.transitions.map Transition2UrgentTransition();
 		transitions += self.transitions.map Transition2NonUrgentTransition();
 		

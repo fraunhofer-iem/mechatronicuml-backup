@@ -4,7 +4,6 @@ import transforms.lib.MUML2UPPAAL.Async.Variables;
 import transforms.lib.MUML2UPPAAL.Async;
 import transforms.lib.MUML2UPPAAL.Expressions;
 import transforms.MUML2UPPAAL;
-//import transforms.lib.MUML2MUML;
 import ModelcopyLibrary;
 import transforms.rtsc.RTSCHierarchyNormalization;
 

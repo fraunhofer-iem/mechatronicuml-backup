@@ -1,5 +1,4 @@
 import transforms.lib.MUML2UPPAAL.Types;
-//import transforms.lib.MUML2MUML;
 import ModelcopyLibrary;
 import transforms.lib.MUML2UPPAAL.Expressions;
 

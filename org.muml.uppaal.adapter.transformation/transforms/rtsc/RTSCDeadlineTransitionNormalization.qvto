@@ -1,5 +1,4 @@
 import transforms.lib.RTSCUtil;
-//import transforms.lib.MUML2MUML;
 import ModelcopyLibrary;
 import transforms.lib.MultiMappingUtil;
 
@@ -39,7 +38,8 @@ main() {
 
 property intermediateStateNamePrefix : String = 'INTERMEDIATE';
 
-mapping RealtimeStatechart :: RealtimeStatechart2RealtimeStatechart() : RealtimeStatechart {
+//RealtimeStatechart2RealtimeStatechart
+mapping RealtimeStatechart :: transform() : RealtimeStatechart {
 				
 	name := self.name;
 	
@@ -51,11 +51,11 @@ mapping RealtimeStatechart :: RealtimeStatechart2RealtimeStatechart() : Realtime
 	variables += self.variables->map transform().oclAsType(Variable);
 	operations += self.operations->map transform().oclAsType(Operation);
 		
-	states += self.states->map State2State();
+	states += self.states->map transform().oclAsType(State);
 	states += self.transitions->map Transition2IntermediateState();
 	
 	-- map all transitions between vertices of this statechart	
-	transitions += self.getTransitions()->map Transition2Transition();
+	transitions += self.getTransitions()->map transform().oclAsType(Transition);
 	transitions += self.getTransitions()->map Transition2InitialTransition();
 	transitions += self.getTransitions()->map Transition2FinalTransition();
 							
@@ -123,7 +123,8 @@ query PrimitiveTypes :: getDefaultValue() : String {
 	
 }
 
-mapping State :: State2State() : State {
+//State2State
+mapping State :: transform() : State {
 		
 	name := self.name;
 	
@@ -163,7 +164,8 @@ mapping Assignment :: Assignment2Initialzer() : Expression {
 }
 */
 
-mapping Transition :: Transition2Transition() : Transition when {not self.hasDeadline()} {
+//Transition2Transition
+mapping Transition :: transform() : Transition when {not self.hasDeadline()} {
 		
 	source := self.source.map transform().oclAsType(Vertex);
 	

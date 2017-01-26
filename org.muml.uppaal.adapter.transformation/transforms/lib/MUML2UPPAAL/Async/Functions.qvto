@@ -4,7 +4,6 @@ import transforms.lib.MUML2UPPAAL.Expressions;
 import transforms.lib.MUML2UPPAAL.Async.Types;
 import transforms.lib.MUML2UPPAAL.Async.Variables;
 
-//import transforms.lib.MUML2MUML;
 import ModelcopyLibrary;
 
 import transforms.lib.ExternalizedStrings;

@@ -1,4 +1,3 @@
-//import transforms.lib.MUML2MUML;
 import ModelcopyLibrary;
 import transforms.lib.RTSCUtil;
 import transforms.lib.MultiMappingUtil;
@@ -21,7 +20,8 @@ main() {
 	input.objects()[RootNode]->map transform().oclAsType(RootNode);
 }
 
-mapping State :: State2State() : State {
+//State2State
+mapping State :: transform() : State {
 				
 		name := self.name;
 		
@@ -31,8 +31,8 @@ mapping State :: State2State() : State {
 		--In this case there are no composite transitions that would have to be redirected to entry/exit points.
 		if(self.embeddedRegions->size()>0)
 		then{
-			incomingTransitions := self.incomingTransitions->map Transition2Transition();
-			outgoingTransitions := self.outgoingTransitions->map Transition2Transition();
+			incomingTransitions := self.incomingTransitions->map transform().oclAsType(Transition);
+			outgoingTransitions := self.outgoingTransitions->map transform().oclAsType(Transition);
 		}
 		endif;
 		
@@ -118,11 +118,11 @@ mapping State :: State2State() : State {
 							connectionPoints += entryPoint;
 							
 							-- redirect the transition to entry point
-							entryPoint.incomingTransitions := transition.map Transition2Transition();
-							transition.map Transition2Transition().target := entryPoint;
+							entryPoint.incomingTransitions := transition.map transform().oclAsType(Transition);
+							transition.map transform().oclAsType(Transition).target := entryPoint;
 							
 							-- set it to urgent
-							transition.map Transition2Transition().urgent := true;
+							transition.map transform().oclAsType(Transition).urgent := true;
 							
 							-- create transition to wait
 								-- Entry -> Wait
@@ -131,10 +131,10 @@ mapping State :: State2State() : State {
 							curTransition.urgent := true;
 							
 							-- steal the action :)
-							curTransition.action := transition.map Transition2Transition().action;
+							curTransition.action := transition.map transform().oclAsType(Transition).action;
 							
 							-- steal the send message event
-							curTransition.events := transition.map Transition2Transition().raiseMessageEvent; 
+							curTransition.events := transition.map transform().oclAsType(Transition).raiseMessageEvent; 
 							}
 					}
 					endif;
@@ -163,11 +163,11 @@ mapping State :: State2State() : State {
 								connectionPoints += exitPoint;
 							
 								-- redirect the transition to entry point
-								exitPoint.outgoingTransitions := transition.map Transition2Transition();
-								transition.map Transition2Transition().source := exitPoint;
+								exitPoint.outgoingTransitions := transition.map transform().oclAsType(Transition);
+								transition.map transform().oclAsType(Transition).source := exitPoint;
 							
 								-- set it to urgent
-								transition.map Transition2Transition().urgent := true;
+								transition.map transform().oclAsType(Transition).urgent := true;
 							
 								-- create transitions from wait to exit point
 								curTransition := map createTransition(self.map createWaitState(), exitPoint, 1);
@@ -187,11 +187,11 @@ mapping State :: State2State() : State {
 								curTransition.urgent := transition.urgent;
 							
 								-- steel the guard :) 
-								curTransition.guard := transition.map Transition2Transition().guard;
+								curTransition.guard := transition.map transform().oclAsType(Transition).guard;
 								-- steal the synchronization
-								curTransition.synchronization := transition.map Transition2Transition().synchronization;
+								curTransition.synchronization := transition.map transform().oclAsType(Transition).synchronization;
 								-- steal the trigger message event
-								curTransition.events := transition.map Transition2Transition().triggerMessageEvent;
+								curTransition.events := transition.map transform().oclAsType(Transition).triggerMessageEvent;
 								
 							}
 					}
@@ -223,7 +223,8 @@ mapping State :: State2State() : State {
 		extensions := self.extensions.oclAsType(CommittedExtension).map transform().oclAsType(CommittedExtension);	
 }
 	
-mapping pim::realtimestatechart::Transition :: Transition2Transition() : pim::realtimestatechart::Transition disjuncts Transition::doTargetTransition2Transition, Transition::doSourceTransition2Transition, Transition::normalTransition2Transition;
+//Transition2Transition
+mapping pim::realtimestatechart::Transition :: transform() : pim::realtimestatechart::Transition disjuncts Transition::doTargetTransition2Transition, Transition::doSourceTransition2Transition, Transition::normalTransition2Transition;
 
 mapping pim::realtimestatechart::Transition :: doTargetTransition2Transition() : pim::realtimestatechart::Transition when{not (self.target.oclAsType(State).doEvent = null)}{
     	priority := self.priority;
@@ -265,33 +266,35 @@ mapping pim::realtimestatechart::Transition :: doSourceTransition2Transition() :
     	action := self.action.map transform().oclAsType(Action);
 }
    		 
-mapping pim::realtimestatechart::EntryPoint :: EntryPoint2EntryPoint() : pim::realtimestatechart::EntryPoint{
+//EntryPoint2EntryPoint
+mapping pim::realtimestatechart::EntryPoint :: transform() : pim::realtimestatechart::EntryPoint{
     	name := self.name;
     	comment := self.comment;
     	extensions := self.extensions.map transform().oclAsType(core::Extension);
-    	outgoingTransitions := self.outgoingTransitions.map Transition2Transition();
+    	outgoingTransitions := self.outgoingTransitions.map transform().oclAsType(Transition);
     	if(self.state.doEvent != null){
     		outgoingTransitions += map createTransition(result, self.state.map createWaitState(), 1);
     		map createTransition(result, self.state.map createWaitState(), 1).urgent := true;
-    		incomingTransitions := self.incomingTransitions.map Transition2Transition();
+    		incomingTransitions := self.incomingTransitions.map transform().oclAsType(Transition);
     	};
     	
-    	state := self.state.map State2State();
+    	state := self.state.map transform().oclAsType(State);
 }
    		 
-mapping pim::realtimestatechart::ExitPoint :: ExitPoint2ExitPoint() : pim::realtimestatechart::ExitPoint{
+//ExitPoint2ExitPoint
+mapping pim::realtimestatechart::ExitPoint :: transform() : pim::realtimestatechart::ExitPoint{
     	name := self.name;
     	comment := self.comment;
     	extensions := self.extensions.map transform().oclAsType(core::Extension);
-    	outgoingTransitions := self.outgoingTransitions.map Transition2Transition();
-    	incomingTransitions := self.incomingTransitions.map Transition2Transition();
+    	outgoingTransitions := self.outgoingTransitions.map transform().oclAsType(Transition);
+    	incomingTransitions := self.incomingTransitions.map transform().oclAsType(Transition);
     	
     	if(self.state.doEvent != null){
     		incomingTransitions += map createTransition(self.state.map createWaitState(), result, 1);
     		incomingTransitions += map createTransition(self.state.map createDoneState(), result, 1);
     	};
     	
-    	state := self.state.map State2State();
+    	state := self.state.map transform().oclAsType(State);
 }
 
 mapping pim::realtimestatechart::Transition :: normalTransition2Transition() : pim::realtimestatechart::Transition{

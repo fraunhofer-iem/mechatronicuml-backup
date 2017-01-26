@@ -1,5 +1,4 @@
 import transforms.lib.RTSCUtil;
-//import transforms.lib.MUML2MUML;
 import ModelcopyLibrary;
 import transforms.lib.MultiMappingUtil;
 
@@ -72,7 +71,8 @@ helper mtctl::Expression::replaceWith(newExpr : mtctl::Expression) {
     self.oclAsType(EObject).eContainer().eSet(containingFeature, newExpr.deepclone().oclAsType(EObject));
 }
     
-mapping MumlElemExpr :: MumlElemExpr2MumlElemExpr() : MumlElemExpr {
+//MumlElemExpr2MumlElemExpr
+mapping MumlElemExpr :: transform() : MumlElemExpr {
 	if (self.elem.oclIsKindOf(Transition)) {
 		// NOTE: POTENTIALLY HARMFUL FIX AHEAD
 		
@@ -86,18 +86,19 @@ mapping MumlElemExpr :: MumlElemExpr2MumlElemExpr() : MumlElemExpr {
 		-- elem := self.elem.late resolveoneIn(pim::realtimestatechart::Transition::Transition2Transition).oclAsType(ecore::EObject)
 		
 		// ADDED:
-		elem := self.elem.oclAsType(Transition).map Transition2Transition();
+		elem := self.elem.oclAsType(Transition).map transform().oclAsType(Transition);
 		
 		
 	} else if (self.elem.oclIsKindOf(State)) {
-		elem := self.elem.oclAsType(State).map State2State().oclAsType(ecore::EObject); // SDz: will be corrected in main() after the transformation
+		elem := self.elem.oclAsType(State).map transform(); // SDz: will be corrected in main() after the transformation
 		mumlElemsToFix += result;
 	} else
 		elem := self.elem.late resolveone(EObject);
 	instance := self.instance.map transform();
 }
- 
-mapping RealtimeStatechart :: RealtimeStatechart2RealtimeStatechart() : RealtimeStatechart {
+
+//RealtimeStatechart2RealtimeStatechart
+mapping RealtimeStatechart :: transform() : RealtimeStatechart {
 			
 	name := self.name;
 	
@@ -108,9 +109,9 @@ mapping RealtimeStatechart :: RealtimeStatechart2RealtimeStatechart() : Realtime
 	operations += self.operations->map transform().oclAsType(Operation);
 	
 	-- in-depth normalization first (ensure highest-level transitions to be mapped last)
-	states += self.states->map State2State();
+	states += self.states->map transform().oclAsType(State);
 	
-	transitions += self.getTransitions()->map Transition2Transition();
+	transitions += self.getTransitions()->map transform().oclAsType(Transition);
 		
 	-- expand high-level transitions
 	self.getTransitions()[isHighLevel()]->sortedBy(priority)->forEach(highLevelTransition) {
@@ -181,7 +182,8 @@ mapping RealtimeStatechart :: RealtimeStatechart2RealtimeStatechart() : Realtime
 	}
 }
 
-mapping State :: State2State() : State {
+//State2State
+mapping State :: transform() : State {
 		
 	-- this mapping overrides the default behavior such that it does not reproduce incoming/outgoing transitions 
 	-- the default behavior connects every reproduced state to its incoming/outgoing transitions (this is exactly what we want to avoid for composite states)
@@ -206,26 +208,28 @@ mapping State :: State2State() : State {
 	
 	connectionPoints := self.connectionPoints->map transform().oclAsType(StateConnectionPoint);
 	
-	parentStatechart := self.parentStatechart.map RealtimeStatechart2RealtimeStatechart();
+	parentStatechart := self.parentStatechart.map transform().oclAsType(RealtimeStatechart);
 	
 }
 
-mapping pim::realtimestatechart::EntryPoint :: EntryPoint2EntryPoint() : pim::realtimestatechart::EntryPoint{
+//EntryPoint2EntryPoint
+mapping pim::realtimestatechart::EntryPoint :: transform() : pim::realtimestatechart::EntryPoint{
     	_name := self._name;
     	_comment := self._comment;
     	_extensions := self._extensions.map transform().oclAsType(core::Extension);
 //    	_outgoingTransitions := self._outgoingTransitions.map Transition2Transition();
 //    	_incomingTransitions := self._incomingTransitions.map Transition2Transition();
-    	_state := self._state.map State2State();
+    	_state := self._state.map transform().oclAsType(State);
    		 }
-   		 
-mapping pim::realtimestatechart::ExitPoint :: ExitPoint2ExitPoint() : pim::realtimestatechart::ExitPoint{
+
+//ExitPoint2ExitPoint
+mapping pim::realtimestatechart::ExitPoint :: transform() : pim::realtimestatechart::ExitPoint{
     	_name := self._name;
     	_comment := self._comment;
     	_extensions := self._extensions.map transform().oclAsType(core::Extension);
 //    	_outgoingTransitions := self._outgoingTransitions.map Transition2Transition();
 //    	_incomingTransitions := self._incomingTransitions.map Transition2Transition();
-    	_state := self._state.map State2State();
+    	_state := self._state.map transform().oclAsType(State);
    		 }
 
 query Vertex :: getHighestTransitionPriority() : Integer {
@@ -262,7 +266,8 @@ query State :: allStatesInHighestPriorityRegions() : OrderedSet(State) {
 	
 }
 
-mapping Transition :: Transition2Transition() : Transition {
+//Transition2Transition
+mapping Transition :: transform() : Transition {
 	
 	init {
 		result := self.map Transition2TransitionParam(self.source,self.target,self.priority,true);
@@ -361,12 +366,12 @@ property auxEntryNamePrefix : String = 'ENTRY';
 
 mapping State :: CompositeState2DefaultEntry(highLevelTransition : Transition) : EntryPoint when {self.isCompositeState()} {	
 	name := self.name + '_' + auxEntryNamePrefix.addSuffixNumberUnderline();
-	state := self.map State2State();
+	state := self.map transform().oclAsType(State);
 }
 
 property auxExitNamePrefix : String = 'EXIT';
 
 mapping State :: CompositeState2AuxExit(highLevelTransition : Transition) : ExitPoint when {self.isCompositeState()} {	
 	name := self.name + '_' + auxExitNamePrefix.addSuffixNumberUnderline();
-	state := self.map State2State();
+	state := self.map transform().oclAsType(State);
 }
