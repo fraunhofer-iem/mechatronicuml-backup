@@ -2,9 +2,7 @@ package org.muml.pim.realtimestatechart.diagram.custom.parsers;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.io.StringReader;
-import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -36,7 +34,9 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 	public CustomTransitionLabelExpressionLabelParser6005() {
 	}
 	
-	static final int MAX_LINELENGTH = 50;
+	private static final int MAX_LINELENGTH = 50;
+
+	private static final int MIN_LINELENGTH = 10;
 
 	public String getPrintString(IAdaptable element, int flags) {
 		String printString = "";
@@ -85,9 +85,29 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 				getSynchronizationExpression(synchronization, expression));
 		
 		// #1001: Add manual linebreaks to prevent too long lines
-		return addManualLinebreaks(printString, MAX_LINELENGTH);
+		printString = ensureMaxLineLength(printString, MAX_LINELENGTH);
+		printString = ensureMinLineLength(printString, MIN_LINELENGTH);
+		return printString;
 	}
-	private String addManualLinebreaks(String printString, int maxLinelength) {
+	private String ensureMinLineLength(String printString, int minLinelength) {
+		StringBuffer sb = new StringBuffer();
+		BufferedReader br = new BufferedReader(new StringReader(printString));
+		String line;
+		try {
+			if (null != (line = br.readLine())) { // unrolled the first loop iteration: without \n at front
+				sb.append(line);
+			}
+			while (null != (line = br.readLine())) {
+				if (line.length() >= minLinelength) {
+					sb.append("\n");
+				}
+				sb.append(line);
+			}
+		} catch (IOException e) {
+		}
+		return sb.toString();
+	}
+	private String ensureMaxLineLength(String printString, int maxLinelength) {
 		StringBuffer sb = new StringBuffer();
 		StringBuffer white = new StringBuffer();
 		char c;
