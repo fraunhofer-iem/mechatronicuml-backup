@@ -84,7 +84,7 @@ public abstract class AbstractRTSCLabelParser {
 						// name
 						v.getName() + 
 						// initialize expression
-						" :=" + ParserUtilities.serializeExpression(v.getInitializeExpression(), v);
+						(v.getInitializeExpression() == null ? "" : (" :=" + ParserUtilities.serializeExpression(v.getInitializeExpression(), v)));
 				}
 			}).collect(Collectors.joining(", ")));
 			label.append(";\n");
