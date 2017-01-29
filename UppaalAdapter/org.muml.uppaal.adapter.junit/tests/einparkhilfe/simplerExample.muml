@@ -40,9 +40,6 @@
       </roles>
       <roleConnector xmi:id="_OstxRFUwEeSdNYT_jBi02Q" connectorEndpoints="_OsVWwFUwEeSdNYT_jBi02Q _OstxQFUwEeSdNYT_jBi02Q">
         <connectorQualityOfServiceAssumptions xmi:id="_Osu_YFUwEeSdNYT_jBi02Q" comment="">
-          <minMessageDelay xmi:id="_Os27MlUwEeSdNYT_jBi02Q" unit="MILLISECONDS">
-            <value xsi:type="common:LiteralExpression" xmi:id="_Os27M1UwEeSdNYT_jBi02Q" value="0"/>
-          </minMessageDelay>
           <maxMessageDelay xmi:id="_Os27MFUwEeSdNYT_jBi02Q" unit="MILLISECONDS">
             <value xsi:type="common:LiteralExpression" xmi:id="_Os27MVUwEeSdNYT_jBi02Q" value="0"/>
           </maxMessageDelay>

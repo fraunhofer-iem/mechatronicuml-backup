@@ -49,9 +49,6 @@
       </roles>
       <roleConnector xmi:id="_5mw0VgUkEeSJTqo7jlVMjA" comment="Verbindung der Rollen der Einparkhilfe." connectorEndpoints="_5mnqYAUkEeSJTqo7jlVMjA _5mw0UgUkEeSJTqo7jlVMjA">
         <connectorQualityOfServiceAssumptions xmi:id="_Q3XIMCyREeSbJbCGKgJWEw">
-          <minMessageDelay xmi:id="_RHvGgCyREeSbJbCGKgJWEw">
-            <value xsi:type="sdcec:LiteralExpression" xmi:id="_Ro554CyREeSbJbCGKgJWEw" value="0"/>
-          </minMessageDelay>
           <maxMessageDelay xmi:id="_RUeiACyREeSbJbCGKgJWEw">
             <value xsi:type="sdcec:LiteralExpression" xmi:id="_SYDe4CyREeSbJbCGKgJWEw" value="0"/>
           </maxMessageDelay>

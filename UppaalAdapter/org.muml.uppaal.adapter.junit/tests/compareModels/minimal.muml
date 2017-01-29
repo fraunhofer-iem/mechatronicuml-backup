@@ -74,9 +74,6 @@
       </roles>
       <roleConnector xmi:id="_fsx-ty0dEeSdD6pzOQz4oQ" connectorEndpoints="_fsfDwC0dEeSdD6pzOQz4oQ _fsx-sy0dEeSdD6pzOQz4oQ">
         <connectorQualityOfServiceAssumptions xmi:id="_fsx-uC0dEeSdD6pzOQz4oQ" comment="">
-          <minMessageDelay xmi:id="_fs7vsi0dEeSdD6pzOQz4oQ" unit="MILLISECONDS">
-            <value xsi:type="sdcec:LiteralExpression" xmi:id="_fs7vsy0dEeSdD6pzOQz4oQ" value="0"/>
-          </minMessageDelay>
           <maxMessageDelay xmi:id="_fs7vsC0dEeSdD6pzOQz4oQ" unit="MILLISECONDS">
             <value xsi:type="sdcec:LiteralExpression" xmi:id="_fs7vsS0dEeSdD6pzOQz4oQ" value="0"/>
           </maxMessageDelay>
