@@ -191,8 +191,8 @@
         <repository>
 			<id>UDBM</id>
 			<layout>p2</layout>
-			<!--<url>file:///data/jenkins/jobs/UDBM/lastSuccessful/archive/targetPlatform/</url> -->
-			<url>http://muml-build.cs.upb.de/job/UDBM/lastSuccessfulBuild/artifact/targetPlatform/</url>
+			<url>file:///data/jenkins/jobs/UDBM/lastSuccessful/archive/targetPlatform/</url> 
+			<!--<url>http://muml-build.cs.upb.de/job/UDBM/lastSuccessfulBuild/artifact/targetPlatform/</url>-->
 		</repository>
 	</repositories>	
 </project>
