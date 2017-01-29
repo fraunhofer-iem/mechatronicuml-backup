@@ -3,5 +3,8 @@
    <feature url="features/org.muml.verification.core.feature_1.0.0.qualifier.jar" id="org.muml.verification.core.feature" version="1.0.0.qualifier">
       <category name="org.muml.verification.core.repository.category"/>
    </feature>
+   <feature url="features/org.muml.verification.core.feature_1.0.0.qualifier.jar" id="org.muml.verification.core.feature.source" version="1.0.0.qualifier">
+      <category name="org.muml.verification.core.repository.category"/>
+   </feature>
    <category-def name="org.muml.verification.core.repository.category" label="Verification Core"/>
 </site>
