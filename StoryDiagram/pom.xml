@@ -112,6 +112,7 @@
 		 <excludes>
 		   <!--provide plug-ins not containing any source code -->
 		  <plugin id="org.muml.storydiagram.repository" />
+		  <plugin id="org.muml.storydiagram.reachanalysis.sdm.transform" />
 		 </excludes>
 		</configuration>
 	   </plugin>
