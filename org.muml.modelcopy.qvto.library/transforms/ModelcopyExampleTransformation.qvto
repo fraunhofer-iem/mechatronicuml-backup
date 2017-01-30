@@ -10,7 +10,7 @@ main() {
 }
 
 
-mapping EClass::transform() : EObject {
+mapping EClass::transform() : Element {
 	init {
 		result := self.map ModelcopyLibrary::transform();
 	}
