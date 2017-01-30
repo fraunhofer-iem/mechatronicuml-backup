@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+	<extension point="org.eclipse.m2m.qvt.oml.javaBlackboxUnits">
+   		<unit name="ModelcopyBlackbox" namespace="org.muml.modelcopy.qvto._library">
+    		<library name="ModelcopyBlackboxLib" class="org.muml.modelcopy.qvto.library.ModelcopyBlackbox">
+    			<metamodel nsURI="http://www.eclipse.org/emf/2002/Ecore"/>
+    		</library>
+		</unit>
+	</extension>
+ <extension
+       point="org.eclipse.m2m.qvt.oml.runtime.qvtTransformationContainer">
+    <sourceContainer
+          path="transforms/">
+    </sourceContainer>
+ </extension>
+ <extension
+       point="org.eclipse.m2m.qvt.oml.runtime.qvtTransformation">
+    <library
+          file="transforms/ModelcopyLibrary.qvto"
+          id="ModelcopyLibrary">
+    </library>
+ </extension>
+</plugin>

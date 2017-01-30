@@ -1,0 +1,60 @@
+library ModelcopyLibrary;
+
+import org.muml.modelcopy.qvto._library.ModelcopyBlackbox;
+
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+mapping OclAny::create() : EObject {
+	init {
+	if(self.oclAsType(EObject).eResource().toString().matches("platform:/plugin")) then{
+		result:=self.oclAsType(EObject);
+	}else{
+		var eclass : ecore::EClass := self.oclAsType(EObject).eClass();
+		var factory : ecore::EFactory := eclass.ePackage.eFactoryInstance;
+		result := factory.create(self.oclAsType(EObject).eClass());
+		}endif;
+	}
+}
+
+mapping OclAny::create(containter : OclAny) : EObject {
+	init {
+	if(self.oclAsType(EObject).eResource().toString().matches("platform:/plugin")) then{
+		result:=self.oclAsType(EObject);
+	}else{
+		var eclass : ecore::EClass := self.oclAsType(EObject).eClass();
+		var factory : ecore::EFactory := eclass.ePackage.eFactoryInstance;
+		result := factory.create(self.oclAsType(EObject).eClass());
+		}endif;
+	}
+}
+
+mapping OclAny::transform() : Element {
+	init {
+		result := self.map create();
+	}
+	var element := self.oclAsType(EObject);
+	element.eClass().eAllReferences->select(f | f.isValidFeature())->forEach(f) {
+		setValues(result.oclAsType(EObject), f, getValues(element, f).map transform());
+	};
+	element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+		setValues(result.oclAsType(EObject), f, getValues(element, f));
+	};
+}
+
+
+mapping OclAny::transformWithContext(container : OclAny) : EObject {
+	init {
+		result := self.map create(container);
+	}
+	var element := self.oclAsType(EObject);
+	element.eClass().eAllReferences->select(f | f.isValidFeature())->forEach(f) {
+		setValues(result, f, getValues(element, f).map transformWithContext(container));
+	};
+	element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+		setValues(result, f, getValues(element, f));
+	};
+}
+
+query EStructuralFeature::isValidFeature() : Boolean {
+	return self.changeable and not self._derived;
+}
