@@ -27,10 +27,10 @@ main() {
 
 //MumlElemExpr2MumlElemExpr
 mapping MumlElemExpr :: transform() : MumlElemExpr {
-	elem := self.elem.map transform();
+	elem := self.elem.map transform().oclAsType(EObject);
 	if (self.instance != null) {
-		instance := self.instance.map transform();
+		instance := self.instance.map transform().oclAsType(EObject);
 	} else
-		instance := inferInstanceFor(self).map transform();
+		instance := inferInstanceFor(self).map transform().oclAsType(EObject);
 }
 }

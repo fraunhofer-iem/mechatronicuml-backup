@@ -27,7 +27,7 @@ main() {
 	input.objects()[RootNode]->map transform();
 }
 
-mapping SynchronizationChannel :: SyncChannel2SyncChannel() : SynchronizationChannel when {not self.urgentAndNonUrgentTransitionsSynchronize()} {
+mapping SynchronizationChannel :: transform() : SynchronizationChannel when {not self.urgentAndNonUrgentTransitionsSynchronize()} {
 		name := self.name;						
 		selectorType := self.selectorType;
 }
@@ -69,7 +69,7 @@ mapping State :: transform() : State {
 		
 		--Due to precondition of mappings the correct ones are chosen
 				
-		channels := self.channels->map SyncChannel2SyncChannel();
+		channels := self.channels->map transform();
 		channels += self.channels->map SyncChannel2UrgentSyncChannel();
 		channels += self.channels->map SyncChannel2NonUrgentSyncChannel();
 		
@@ -147,7 +147,7 @@ constructor Synchronization :: Synchronization(channel : SynchronizationChannel,
 mapping Synchronization :: transform() : Synchronization {
 		
 	init {			
-		var c : SynchronizationChannel = self.syncChannel.map SyncChannel2SyncChannel();
+		var c : SynchronizationChannel = self.syncChannel.map transform();
 		result := new Synchronization(c, self.kind, self.selectorExpression)							
 	}	
 }
@@ -246,37 +246,37 @@ mapping pim::realtimestatechart::RealtimeStatechart :: transform() : pim::realti
 // replaces the disjuncts-mapping above
 mapping mtctl::predicates::TransitionFiringExpr :: transform() : Expression {
 	init {
-		if (self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).synchronization.syncChannel.urgentAndNonUrgentTransitionsSynchronize() and  self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).urgent)
-		then {
+		if (self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).synchronization != null and self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).synchronization.syncChannel.urgentAndNonUrgentTransitionsSynchronize() and  self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).urgent)
+		{
 			result := self.map TransitionFiringExpr2OrExpr();
 		}
-		else if(self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).synchronization.syncChannel.urgentAndNonUrgentTransitionsSynchronize())
-		then {
+		elif(self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).synchronization != null and self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).synchronization.syncChannel.urgentAndNonUrgentTransitionsSynchronize())
+		{
 			result := self.map TransitionFiringExpr2NonUrgentTransitionFiringExpr();
 		}
 		else {
-			result := self.map ModelcopyLibrary::transform().oclAsType(Expression);
-		}
-		endif
-		endif;
+			result := object TransitionFiringExpr {
+				transition := self.transition.map transform().oclAsType(MapExpr);
+			}
+		};
 	}
 }
 
 // Create an OrExpr to capture the cases in which two transitions are created (i.e. when urgent and non-urgent transitions synchronize and a transition is non-urgent)
 mapping TransitionFiringExpr :: TransitionFiringExpr2OrExpr() : OrExpr {
 	leftOpd := object TransitionFiringExpr {transition := object MumlElemExpr {elem := self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).map Transition2UrgentTransition();
-	instance := self.transition.oclAsType(MumlElemExpr).instance.oclAsType(PortInstance).map transform()
+	instance := self.transition.oclAsType(MumlElemExpr).instance.oclAsType(PortInstance).map transform().oclAsType(EObject)
 	
 	}};
 	rightOpd := object TransitionFiringExpr {transition := object MumlElemExpr {elem := self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).map Transition2NonUrgentTransition();
-	instance := self.transition.oclAsType(MumlElemExpr).instance.oclAsType(PortInstance).map transform()
+	instance := self.transition.oclAsType(MumlElemExpr).instance.oclAsType(PortInstance).map transform().oclAsType(EObject)
 	}};
 }
 
 mapping TransitionFiringExpr :: TransitionFiringExpr2NonUrgentTransitionFiringExpr() : TransitionFiringExpr {
 	// taking care of transitionFiringExpr with transitions that are mapped with Transition2NonUrgentTransition. Only called when TransitionFiringExpr2OrExpr does not apply
 	transition := object MumlElemExpr {elem := self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).map Transition2NonUrgentTransition();
-	instance := self.transition.oclAsType(MumlElemExpr).instance.oclAsType(PortInstance).map transform()};
+	instance := self.transition.oclAsType(MumlElemExpr).instance.oclAsType(PortInstance).map transform().oclAsType(EObject)};
 }
 
 helper SynchronizationChannel :: urgentAndNonUrgentTransitionsSynchronize() : Boolean{

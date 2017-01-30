@@ -94,7 +94,7 @@ mapping MumlElemExpr :: transform() : MumlElemExpr {
 		mumlElemsToFix += result;
 	} else
 		elem := self.elem.late resolveone(EObject);
-	instance := self.instance.map transform();
+	instance := self.instance.map transform().oclAsType(EObject);
 }
 
 //RealtimeStatechart2RealtimeStatechart

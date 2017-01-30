@@ -1,6 +1,0 @@
-library Decls;
-
-modeltype uppaal uses 'http://www.muml.org/uppaal/1.0.0';
-modeltype uppaal_declarations uses uppaal::declarations('http://www.muml.org/uppaal/1.0.0');
-
-property globalDeclarations : Declarations = null;

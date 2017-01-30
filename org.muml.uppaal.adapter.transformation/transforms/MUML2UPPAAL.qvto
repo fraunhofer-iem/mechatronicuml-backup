@@ -142,6 +142,10 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 	}
 	
 	query OclAny :: searchResolveTreeRecursively(set : Sequence(OclAny)) : Boolean {
+		
+		if (set->isEmpty()) {
+			return false;
+		};
 		if(set->includes(self)) {
 			return true;
 		};
@@ -158,7 +162,7 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		else if(self.oclIsKindOf(muml_behavior::Operation)) {
 			resolvingSequence := self.invresolve(muml_behavior::Operation);
 		};
-		if(resolvingSequence->size() > 0) {
+		if(resolvingSequence->notEmpty()) {
 			var returnValue : Boolean := false;
 			resolvingSequence->forEach(variable) {				
 				returnValue := returnValue or variable.searchResolveTreeRecursively(set);
@@ -507,6 +511,16 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 	
 	main() {
 		
+		var test = cicToVerify().discretePortInstances()->collect(receiverMessageBuffer);
+		
+		assert fatal(not cicToVerify().oclIsUndefined());
+		
+		assert fatal (not cicToVerify().discretePortInstances()->isEmpty());
+				
+		assert fatal (not cicToVerify().discretePortInstances()->collect(receiverMessageBuffer)->isEmpty());
+		
+		assert fatal (not cicToVerify().discretePortInstances()->collect(receiverMessageBuffer)->exists(mb : MessageBuffer | mb.bufferSize.infinity or mb.bufferSize.value >= 5000));
+				
 		assert fatal (cicToVerify().discretePortInstances()->collect(receiverMessageBuffer)->forAll(mb : MessageBuffer | not mb.bufferSize.infinity and mb.bufferSize.value < 5000)) 
 		with log('Only finite buffer sizes <5000 are supported');
 		
@@ -1365,13 +1379,4 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		declaration += map createDiscardFunctionDeclaration();
 		
 	}
-	
-	
-	mapping pim::realtimestatechart::SynchronizationChannel :: SynchronizationChannel2SynchronizationChannel() : pim::realtimestatechart::SynchronizationChannel{
-    	_name := self._name;
-    	_comment := self._comment;
-    	_extensions := self._extensions.map transform().oclAsType(Extension);
-    --	_state := self._state.map State2State();
-    	_selectorType := self._selectorType.map transform().oclAsType(DataType);
-   	}
-   		 
+	   		 

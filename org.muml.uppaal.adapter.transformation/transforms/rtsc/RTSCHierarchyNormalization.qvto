@@ -117,7 +117,7 @@ transformation RTSCHierarchyNormalization(in input:rtsc, out output:rtsc);
 		} else
 			elem := self.elem.late resolveone(EObject);
 		
-		instance := self.instance.map transform();
+		instance := self.instance.map transform().oclAsType(EObject);
 	}
 	
 	//RealtimeStatechart2RealtimeStatechart
@@ -1233,8 +1233,8 @@ transformation RTSCHierarchyNormalization(in input:rtsc, out output:rtsc);
 		return switch {
 						
 			case (self.oclIsKindOf(EntryPoint)) targetStatechart.resolveoneIn(RealtimeStatechart::createIdleState, State);
-			case (self.oclIsKindOf(State) and self.oclAsType(State).simple) self.resolveoneIn(OclAny::transform, State);
-			case (self.oclIsKindOf(ExitPoint)) self.oclAsType(ExitPoint).state.resolveoneIn(OclAny::transform, State);
+			case (self.oclIsKindOf(State) and self.oclAsType(State).simple) self.resolveoneIn(State::transform);
+			case (self.oclIsKindOf(ExitPoint)) self.oclAsType(ExitPoint).state.resolveoneIn(State::transform);
 			else assert fatal (false) with log("Unsupported source state type.");
 				
 		}
@@ -1247,7 +1247,7 @@ transformation RTSCHierarchyNormalization(in input:rtsc, out output:rtsc);
 		return switch {
 		
 			case (self.oclIsKindOf(EntryPoint)) self.resolveoneIn(EntryPoint::createAuxState, State);
-			case (self.oclIsKindOf(State) and self.oclAsType(State).simple) self.resolveoneIn(OclAny::transform, State);
+			case (self.oclIsKindOf(State) and self.oclAsType(State).simple) self.resolveoneIn(State::transform);
 			case (self.oclIsKindOf(ExitPoint)) sourceStatechart.resolveoneIn(RealtimeStatechart::createIdleState, State);
 			else assert fatal (false) with log("Unsupported target state type.");
 			

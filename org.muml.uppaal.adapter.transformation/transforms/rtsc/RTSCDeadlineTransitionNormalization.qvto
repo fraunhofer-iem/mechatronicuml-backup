@@ -276,7 +276,9 @@ mapping mtctl::predicates::TransitionFiringExpr :: transform() : mtctl::predicat
 		}
 		else
 		{
-			result := self.map ModelcopyLibrary::transform().oclAsType(mtctl::predicates::DynamicPredicateExpr);
+			result := object TransitionFiringExpr {
+				transition := self.transition.map transform().oclAsType(MapExpr);
+			}
 		}
 		endif;
 	}
@@ -286,7 +288,7 @@ mapping mtctl::predicates::TransitionFiringExpr :: transform() : mtctl::predicat
 mapping TransitionFiringExpr :: TransitionFiringExpr2StateActiveExpr() : StateActiveExpr {
 	state := object MumlElemExpr {
 		elem := self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).map Transition2IntermediateState().oclAsType(ecore::EObject);
-		instance := self.transition.oclAsType(MumlElemExpr).instance.map transform();
+		instance := self.transition.oclAsType(MumlElemExpr).instance.map transform().oclAsType(EObject);
 	};
 }
 

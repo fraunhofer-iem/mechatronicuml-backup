@@ -28,11 +28,11 @@ main() {
 
 //Overridden from MUML2MUML
 //Property2Property
-mapping mtctl::Property :: transform() : Property {
-	comment := self.comment;
-	
-	expression := self.expression.map transform().oclAsType(Expression);
-}
+//mapping mtctl::Property :: transform() : Property {
+//	comment := self.comment;
+//	
+//	expression := self.expression.map transform().oclAsType(Expression);
+//}
 
 //Overridden from MUML2MUML: check if we should apply one of our mappings here, otherwise fall back to a simple copying map
 //mapping mtctl::Expression :: Expression2Expression() : mtctl::Expression disjuncts 
@@ -87,63 +87,184 @@ mapping mtctl::Property :: transform() : Property {
 //	mtctl::comparables::ConstExpr::ConstExpr2ConstExpr,
 //	mtctl::sets::SetExpr::SetExpr2SetExpr; //Fallback: copy
 
-// one of the mappings that replace the big disjuncts-mapping above
-mapping Expression :: transform() : mtctl::Expression {
+helper Expression :: toLiteral() : Expression {
+	if (self.evaluateToBoolean() = true) {
+			return object TrueExpr {}; 
+	}
+	elif (self.evaluateToBoolean() = false) {
+		return object FalseExpr {};
+	};
+	
+	return null;	
+}
+
+mapping AGExpr :: transform() : Expression {
 	init {
-		if(self.evaluateToBoolean()=false)
-		then {
-			result := self.map Expression2False();
+		result := self.toLiteral();
+		
+		if (result.oclIsUndefined()) {
+			result := object AGExpr {
+				expr := self.expr.map transform().oclAsType(Expression);
+			}	
 		}
-		else {
-			result := self.map Expression2True();
-		}
-		endif;
 	}
 }
 
-// one of the mappings that replace the big disjuncts-mapping above
-mapping AndExpr :: transform() : mtctl::Expression {
+mapping AFExpr :: transform() : Expression {
 	init {
-		if(self.leftOpd.evaluateToBoolean()=true or self.rightOpd.evaluateToBoolean()=true)
-		then {
-			result := self.map BinaryBoolOp2SingleOpd();
+		result := self.toLiteral();
+		
+		if (result.oclIsUndefined()) {
+			result := object AFExpr {
+				expr := self.expr.map transform().oclAsType(Expression);
+			}	
 		}
-		else {
-			result := self.map ModelcopyLibrary::transform().oclAsType(mtctl::Expression);
-		}
-		endif;
 	}
 }
 
-// one of the mappings that replace the big disjuncts-mapping above
-mapping OrExpr :: transform() : mtctl::Expression {
+mapping EGExpr :: transform() : Expression {
 	init {
-		if(self.leftOpd.evaluateToBoolean()=false or self.rightOpd.evaluateToBoolean()=false)
-		then {
-			result := self.map BinaryBoolOp2SingleOpd();
+		result := self.toLiteral();
+		
+		if (result.oclIsUndefined()) {
+			result := object EGExpr {
+				expr := self.expr.map transform().oclAsType(Expression);
+			}	
 		}
-		else {
-			result := self.map ModelcopyLibrary::transform().oclAsType(mtctl::Expression);
-		}
-		endif;
 	}
 }
 
-// one of the mappings that replace the big disjuncts-mapping above
-mapping ImplyExpr :: transform() : mtctl::Expression {
+mapping EFExpr :: transform() : Expression {
 	init {
-		if(self.leftOpd.evaluateToBoolean()=true)
-		then {
-			result := self.map BinaryBoolOp2SingleOpd();
+		result := self.toLiteral();
+		
+		if (result.oclIsUndefined()) {
+			result := object EFExpr {
+				expr := self.expr.map transform().oclAsType(Expression);
+			}	
 		}
-		else {
-			result := self.map ModelcopyLibrary::transform().oclAsType(mtctl::Expression);
-		}
-		endif;
 	}
 }
 
-// one of the mappings that replace the big disjuncts-mapping above
+mapping LeadsToExpr :: transform() : Expression {
+	init {
+		result := self.toLiteral();
+		
+		if (result.oclIsUndefined()) {
+			result := object LeadsToExpr {
+				leftOpd := self.leftOpd.map transform().oclAsType(Expression);
+				rightOpd := self.rightOpd.map transform().oclAsType(Expression);
+			}	
+		}
+	}
+}
+
+mapping NotExpr :: transform() : Expression {
+	init {
+		result := self.toLiteral();
+		
+		if (result.oclIsUndefined()) {
+			result := object NotExpr {
+				opd := self.opd.map transform().oclAsType(Expression);
+			}	
+		}
+	}
+}
+
+mapping AndExpr :: transform() : Expression {
+	init {
+		result := self.toLiteral();
+		
+		if (result.oclIsUndefined()) {
+			if(self.leftOpd.evaluateToBoolean()=true or self.rightOpd.evaluateToBoolean()=true) {
+				result := self.map BinaryBoolOp2SingleOpd();
+			};
+			
+			
+			result := object AndExpr {
+				leftOpd := self.leftOpd.map transform().oclAsType(Expression);
+				rightOpd := self.rightOpd.map transform().oclAsType(Expression);
+			}	
+		}
+	}
+}
+
+mapping ImplyExpr :: transform() : Expression {
+	init {
+		result := self.toLiteral();
+		
+		if (result.oclIsUndefined()) {
+		
+			if(self.leftOpd.evaluateToBoolean()=true) {
+				self.map BinaryBoolOp2SingleOpd();
+			};
+		
+			result := object ImplyExpr {
+				leftOpd := self.leftOpd.map transform().oclAsType(Expression);
+				rightOpd := self.rightOpd.map transform().oclAsType(Expression);
+			}	
+		}
+	}
+}
+
+mapping OrExpr :: transform() : Expression {
+	init {
+		result := self.toLiteral();
+		
+		if (result.oclIsUndefined()) {
+		
+			if (self.leftOpd.evaluateToBoolean()=false or self.rightOpd.evaluateToBoolean()=false) {
+				result := self.map BinaryBoolOp2SingleOpd();
+			};
+					
+			result := object OrExpr {
+				leftOpd := self.leftOpd.map transform().oclAsType(Expression);
+				rightOpd := self.rightOpd.map transform().oclAsType(Expression);
+			}	
+		}
+	}
+}
+
+mapping SubstateOfExpr :: transform() : Expression {
+	init {
+		result := self.toLiteral();
+		
+		if (result.oclIsUndefined()) {
+			result := object SubstateOfExpr {
+				superstate := self.superstate.map transform().oclAsType(MapExpr);
+				state := self.state.map transform().oclAsType(MapExpr);
+			}	
+		}
+	}
+}
+
+mapping StateInStatechartExpr :: transform() : Expression {
+	init {
+		result := self.toLiteral();
+		
+		if (result.oclIsUndefined()) {
+			result := object StateInStatechartExpr {
+				state := self.state.map transform().oclAsType(MapExpr);
+				statechart := self.statechart.map transform().oclAsType(MapExpr);
+			}	
+		}
+	}
+}
+
+mapping ComparisonExpr :: transform() : Expression {
+	init {
+		result := self.toLiteral();
+		
+		if (result.oclIsUndefined()) {
+			result := object ComparisonExpr {
+				lhs := self.lhs.map transform().oclAsType(MapExpr);
+				op := self.op;
+				rhs := self.rhs.map transform().oclAsType(MapExpr);
+			}	
+		}
+	}
+}
+
 mapping SourceStateExpr :: transform() : mtctl::Expression {
 	init {
 		if(self.transition.getStaticValue() != null)
@@ -151,13 +272,14 @@ mapping SourceStateExpr :: transform() : mtctl::Expression {
 			result := self.map SourceStateExpr2MumlElemExpr();
 		}
 		else {
-			result := self.map ModelcopyLibrary::transform().oclAsType(mtctl::Expression);
+			result := object SourceStateExpr {
+				transition := self.transition.map transform().oclAsType(MapExpr);
+			};
 		}
 		endif;
 	}
 }
 
-// one of the mappings that replace the big disjuncts-mapping above
 mapping TargetStateExpr :: transform() : mtctl::Expression {
 	init {
 		if(self.transition.getStaticValue() != null)
@@ -165,7 +287,9 @@ mapping TargetStateExpr :: transform() : mtctl::Expression {
 			result := self.map TargetStateExpr2MumlElemExpr();
 		}
 		else {
-			result := self.map ModelcopyLibrary::transform().oclAsType(mtctl::Expression);
+			result := object TargetStateExpr {
+				transition := self.transition.map transform().oclAsType(MapExpr);
+			}
 		}
 		endif;
 	}
@@ -190,12 +314,13 @@ mapping TargetStateExpr :: transform() : mtctl::Expression {
 //	mtctl::comparables::TransitionMap::TransitionMap2TransitionMap;
 
 //Try to statically evaluate logical expressions to true/false
-mapping Expression::Expression2False() : FalseExpr when {self.evaluateToBoolean()=false} {}
-mapping Expression::Expression2True() : TrueExpr when {self.evaluateToBoolean()=true} {}
+//mapping Expression::Expression22False() : FalseExpr when {self.evaluateToBoolean()=false} {}
+//mapping Expression::Expression22True() : TrueExpr when {self.evaluateToBoolean()=true} {}
 
 
 //Normalizes "true and null" expressions (only called when one operand is null)
-mapping AndExpr::BinaryBoolOp2SingleOpd() : Expression { 
+mapping AndExpr::BinaryBoolOp2SingleOpd() : Expression 
+when {self.leftOpd.evaluateToBoolean()=true or self.rightOpd.evaluateToBoolean()=true} { 
 	init {
 		if (self.leftOpd.evaluateToBoolean()=true) then 
 			result := self.rightOpd.map transform().oclAsType(Expression) 
@@ -206,7 +331,8 @@ mapping AndExpr::BinaryBoolOp2SingleOpd() : Expression {
 	}
 }
 //Normalizes "false or null" expressions (only called when one operand is null)
-mapping OrExpr::BinaryBoolOp2SingleOpd() : Expression { 
+mapping OrExpr::BinaryBoolOp2SingleOpd() : Expression 
+when {self.leftOpd.evaluateToBoolean()=false or self.rightOpd.evaluateToBoolean()=false}{ 
 	init {
 		if (self.leftOpd.evaluateToBoolean()=false) then 
 			result := self.rightOpd.map transform().oclAsType(Expression) 
@@ -288,13 +414,13 @@ query ComparisonExpr::evaluateStaticComparison() : Boolean {
 }
 
 mapping SourceStateExpr::SourceStateExpr2MumlElemExpr() : MumlElemExpr {
-	elem := self.transition.getStaticValue().oclAsType(Transition).source.map transform();
-	instance := self.transition.getStaticInstance().map transform();
+	elem := self.transition.getStaticValue().oclAsType(Transition).source.map transform().oclAsType(EObject);
+	instance := self.transition.getStaticInstance().map transform().oclAsType(EObject);
 }
 
 mapping TargetStateExpr::TargetStateExpr2MumlElemExpr() : MumlElemExpr {
-	elem := self.transition.getStaticValue().oclAsType(Transition).target.map transform();
-	instance := self.transition.getStaticInstance().map transform();
+	elem := self.transition.getStaticValue().oclAsType(Transition).target.map transform().oclAsType(EObject);
+	instance := self.transition.getStaticInstance().map transform().oclAsType(EObject);
 }
 
 //returns the (static) value of the MapExpr or null if the value can only be determined at runtime(/verification time)
