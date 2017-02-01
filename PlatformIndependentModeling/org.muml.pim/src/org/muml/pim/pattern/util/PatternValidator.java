@@ -140,7 +140,6 @@ public class PatternValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(abstractCoordinationPattern, diagnostics, context);
 		if (result || diagnostics != null) result &= protocolValidator.validateAbstractCoordinationSpecification_UniqueRoleNames(abstractCoordinationPattern, diagnostics, context);
 		if (result || diagnostics != null) result &= protocolValidator.validateAbstractCoordinationSpecification_RoleMessageTypesMustBeCompatible(abstractCoordinationPattern, diagnostics, context);
-		if (result || diagnostics != null) result &= protocolValidator.validateAbstractCoordinationSpecification_SingleRoleImpliesMultiRole(abstractCoordinationPattern, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAbstractCoordinationPattern_UniquePatternNames(abstractCoordinationPattern, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAbstractCoordinationPattern_PatternWithParametersNeedsVerifiedConfiguration(abstractCoordinationPattern, diagnostics, context);
 		return result;
@@ -224,7 +223,6 @@ public class PatternValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(coordinationPattern, diagnostics, context);
 		if (result || diagnostics != null) result &= protocolValidator.validateAbstractCoordinationSpecification_UniqueRoleNames(coordinationPattern, diagnostics, context);
 		if (result || diagnostics != null) result &= protocolValidator.validateAbstractCoordinationSpecification_RoleMessageTypesMustBeCompatible(coordinationPattern, diagnostics, context);
-		if (result || diagnostics != null) result &= protocolValidator.validateAbstractCoordinationSpecification_SingleRoleImpliesMultiRole(coordinationPattern, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAbstractCoordinationPattern_UniquePatternNames(coordinationPattern, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAbstractCoordinationPattern_PatternWithParametersNeedsVerifiedConfiguration(coordinationPattern, diagnostics, context);
 		return result;
@@ -305,7 +303,6 @@ public class PatternValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(coordinationPatternVariant, diagnostics, context);
 		if (result || diagnostics != null) result &= protocolValidator.validateAbstractCoordinationSpecification_UniqueRoleNames(coordinationPatternVariant, diagnostics, context);
 		if (result || diagnostics != null) result &= protocolValidator.validateAbstractCoordinationSpecification_RoleMessageTypesMustBeCompatible(coordinationPatternVariant, diagnostics, context);
-		if (result || diagnostics != null) result &= protocolValidator.validateAbstractCoordinationSpecification_SingleRoleImpliesMultiRole(coordinationPatternVariant, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAbstractCoordinationPattern_UniquePatternNames(coordinationPatternVariant, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAbstractCoordinationPattern_PatternWithParametersNeedsVerifiedConfiguration(coordinationPatternVariant, diagnostics, context);
 		return result;

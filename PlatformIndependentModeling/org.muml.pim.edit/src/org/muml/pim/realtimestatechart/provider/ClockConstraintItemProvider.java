@@ -22,7 +22,6 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.core.common.descriptor.DefaultChainedPropertyDescriptor;
 import org.muml.core.common.descriptor.IChainedPropertyDescriptor;
-import org.muml.core.expressions.common.ComparingOperator;
 import org.muml.core.provider.ExtendableElementItemProvider;
 import org.muml.pim.provider.MumlEditPlugin;
 import org.muml.pim.realtimestatechart.ClockConstraint;

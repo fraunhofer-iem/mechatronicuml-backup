@@ -358,8 +358,8 @@ public class ConnectorValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE__TYPE_IS_MULTI_DISCRETE_INTERACTION_ENDPOINT__EEXPRESSION = "-- For a DiscreteMultiInteractionEndpointInstance the type has to be a multi DiscreteInteractionEndpoint, too.\n" +
-		"(not self.type.oclIsUndefined() and self.type.oclIsKindOf(connector::DiscreteInteractionEndpoint)) implies (self.type.oclAsType(connector::DiscreteInteractionEndpoint).multi)\n" +
+	protected static final String DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE__TYPE_IS_MULTI_DISCRETE_INTERACTION_ENDPOINT__EEXPRESSION = "-- For a DiscreteMultiInteractionEndpointInstance the type has to be a multi DiscreteInteractionEndpoint, too.\r\n" +
+		"(not self.type.oclIsUndefined() and self.type.oclIsKindOf(connector::DiscreteInteractionEndpoint)) implies (self.type.oclAsType(connector::DiscreteInteractionEndpoint).multi)\r\n" +
 		"-- adann";
 
 	/**
@@ -389,10 +389,10 @@ public class ConnectorValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE__NUMBER_OFSUB_ENDPOINTS_CORRESPONDS_TO_LOWER_BOUND__EEXPRESSION = "-- The number of subInteractionEndpointInstances is too low with respect to the cardinality\n" +
-		"let discreteEndpoint : connector::DiscreteInteractionEndpoint= if (self.type.oclIsUndefined() or (not self.type.oclIsKindOf(connector::DiscreteInteractionEndpoint))) then null else self.type.oclAsType(connector::DiscreteInteractionEndpoint) endif in\n" +
-		"let lowerBoundOfsubInteractionEndpointInstance : Integer = if ( discreteEndpoint.oclIsUndefined() or discreteEndpoint.cardinality.lowerBound.infinity) then -1 else discreteEndpoint.cardinality.lowerBound.value endif in\n" +
-		"if (lowerBoundOfsubInteractionEndpointInstance <>-1) then self.subInteractionEndpointInstances->size()>=lowerBoundOfsubInteractionEndpointInstance else true endif\n" +
+	protected static final String DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE__NUMBER_OFSUB_ENDPOINTS_CORRESPONDS_TO_LOWER_BOUND__EEXPRESSION = "-- The number of subInteractionEndpointInstances is too low with respect to the cardinality\r\n" +
+		"let discreteEndpoint : connector::DiscreteInteractionEndpoint= if (self.type.oclIsUndefined() or (not self.type.oclIsKindOf(connector::DiscreteInteractionEndpoint))) then null else self.type.oclAsType(connector::DiscreteInteractionEndpoint) endif in\r\n" +
+		"let lowerBoundOfsubInteractionEndpointInstance : Integer = if ( discreteEndpoint.oclIsUndefined() or discreteEndpoint.cardinality.lowerBound.infinity) then -1 else discreteEndpoint.cardinality.lowerBound.value endif in\r\n" +
+		"if (lowerBoundOfsubInteractionEndpointInstance <>-1) then self.subInteractionEndpointInstances->size()>=lowerBoundOfsubInteractionEndpointInstance else true endif\r\n" +
 		"-- adann ticket:937";
 
 	/**
@@ -422,10 +422,10 @@ public class ConnectorValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE__NUMBER_OFSUB_ENDPOINTS_CORRESPONDS_TO_UPPER_BOUND__EEXPRESSION = "-- The number of subInteractionEndpointInstances is too high with respect to the cardinality\n" +
-		"let discreteEndpoint : connector::DiscreteInteractionEndpoint= if (self.type.oclIsUndefined() or (not self.type.oclIsKindOf(connector::DiscreteInteractionEndpoint))) then null else self.type.oclAsType(connector::DiscreteInteractionEndpoint) endif in\n" +
-		"let upperBoundOfsubInteractionEndpointInstance : Integer = if ( discreteEndpoint.oclIsUndefined() or discreteEndpoint.cardinality.upperBound.infinity) then -1 else discreteEndpoint.cardinality.upperBound.value endif in\n" +
-		"if (upperBoundOfsubInteractionEndpointInstance <>-1) then self.subInteractionEndpointInstances->size()<=upperBoundOfsubInteractionEndpointInstance else true endif\n" +
+	protected static final String DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE__NUMBER_OFSUB_ENDPOINTS_CORRESPONDS_TO_UPPER_BOUND__EEXPRESSION = "-- The number of subInteractionEndpointInstances is too high with respect to the cardinality\r\n" +
+		"let discreteEndpoint : connector::DiscreteInteractionEndpoint= if (self.type.oclIsUndefined() or (not self.type.oclIsKindOf(connector::DiscreteInteractionEndpoint))) then null else self.type.oclAsType(connector::DiscreteInteractionEndpoint) endif in\r\n" +
+		"let upperBoundOfsubInteractionEndpointInstance : Integer = if ( discreteEndpoint.oclIsUndefined() or discreteEndpoint.cardinality.upperBound.infinity) then -1 else discreteEndpoint.cardinality.upperBound.value endif in\r\n" +
+		"if (upperBoundOfsubInteractionEndpointInstance <>-1) then self.subInteractionEndpointInstances->size()<=upperBoundOfsubInteractionEndpointInstance else true endif\r\n" +
 		"-- adann  ticket:937";
 
 	/**

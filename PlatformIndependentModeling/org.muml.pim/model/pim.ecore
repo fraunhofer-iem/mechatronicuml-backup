@@ -430,17 +430,16 @@
     <eClassifiers xsi:type="ecore:EClass" name="AbstractCoordinationSpecification"
         abstract="true" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement ../../org.muml.core/model/core.ecore#//CommentableElement #//constraint/VerifiableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="UniqueRoleNames RoleMessageTypesMustBeCompatible SingleRoleImpliesMultiRole"/>
+        <details key="constraints" value="UniqueRoleNames RoleMessageTypesMustBeCompatible"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="UniqueRoleNames" value="-- Names of roles must be unique&#xA;self.roles->isUnique(name)"/>
+        <details key="UniqueRoleNames" value="-- Names of roles must be unique&#xD;&#xA;self.roles->isUnique(name)"/>
         <details key="RoleMessageTypesMustBeCompatible" value="-- Every Role must have the senderMessageTypes of all other Roles set as receiverMessageTypes&#xD;&#xA;self.roles->forAll(role1 : Role, role2 : Role |&#xD;&#xA;   role1 &lt;> role2&#xD;&#xA;   implies&#xD;&#xA;   role1.senderMessageTypes->asSet() = role2.receiverMessageTypes->asSet()&#xD;&#xA;)"/>
-        <details key="SingleRoleImpliesMultiRole" value="-- Only one role exists, so it must be a Multi Role.&#xD;&#xA;self.roles->size() = 1 implies self.roles->any(true).multiRole"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Abstract base class for coordination protocols."/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="roles" lowerBound="1"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="roles" lowerBound="2"
           upperBound="2" eType="#//protocol/Role" containment="true" eOpposite="#//protocol/Role/coordinationProtocol">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The roles belonging to this coordination protocol."/>
@@ -1529,7 +1528,7 @@
           <details key="constraints" value="ConditionAttributeRequiresRetryAfterAttribute"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="ConditionAttributeRequiresRetryAfterAttribute" value="-- When you define the attribute condition for a communication schemata, you also have to state the attribute retryAfter.&#xD;&#xA;not self.condition.oclIsUndefined() implies not self.retryAfter.oclIsUndefined()"/>
+          <details key="ConditionAttributeRequiresRetryAfterAttribute" value="-- If and only if you define the attribute condition for a communication schemata, then you also have to state the attribute retryAfter.&#xD;&#xA;(not self.condition.oclIsUndefined() implies not self.retryAfter.oclIsUndefined()) and (self.condition.oclIsUndefined() implies self.retryAfter.oclIsUndefined())"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="condition" eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
             containment="true">
@@ -2016,9 +2015,9 @@
         <details key="documentation" value="A discrete interaction endpoint instance that comprises multiple single sub-instances."/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="TypeIsMultiDiscreteInteractionEndpoint" value="-- For a DiscreteMultiInteractionEndpointInstance the type has to be a multi DiscreteInteractionEndpoint, too.&#xA;(not self.type.oclIsUndefined() and self.type.oclIsKindOf(connector::DiscreteInteractionEndpoint)) implies (self.type.oclAsType(connector::DiscreteInteractionEndpoint).multi)&#xA;-- adann"/>
-        <details key="NumberOfsubEndpointsCorrespondsToLowerBound" value="-- The number of subInteractionEndpointInstances is too low with respect to the cardinality&#xA;let discreteEndpoint : connector::DiscreteInteractionEndpoint= if (self.type.oclIsUndefined() or (not self.type.oclIsKindOf(connector::DiscreteInteractionEndpoint))) then null else self.type.oclAsType(connector::DiscreteInteractionEndpoint) endif in&#xA;let lowerBoundOfsubInteractionEndpointInstance : Integer = if ( discreteEndpoint.oclIsUndefined() or discreteEndpoint.cardinality.lowerBound.infinity) then -1 else discreteEndpoint.cardinality.lowerBound.value endif in&#xA;if (lowerBoundOfsubInteractionEndpointInstance &lt;>-1) then self.subInteractionEndpointInstances->size()>=lowerBoundOfsubInteractionEndpointInstance else true endif&#xA;-- adann ticket:937"/>
-        <details key="NumberOfsubEndpointsCorrespondsToUpperBound" value="-- The number of subInteractionEndpointInstances is too high with respect to the cardinality&#xA;let discreteEndpoint : connector::DiscreteInteractionEndpoint= if (self.type.oclIsUndefined() or (not self.type.oclIsKindOf(connector::DiscreteInteractionEndpoint))) then null else self.type.oclAsType(connector::DiscreteInteractionEndpoint) endif in&#xA;let upperBoundOfsubInteractionEndpointInstance : Integer = if ( discreteEndpoint.oclIsUndefined() or discreteEndpoint.cardinality.upperBound.infinity) then -1 else discreteEndpoint.cardinality.upperBound.value endif in&#xA;if (upperBoundOfsubInteractionEndpointInstance &lt;>-1) then self.subInteractionEndpointInstances->size()&lt;=upperBoundOfsubInteractionEndpointInstance else true endif&#xA;-- adann  ticket:937"/>
+        <details key="TypeIsMultiDiscreteInteractionEndpoint" value="-- For a DiscreteMultiInteractionEndpointInstance the type has to be a multi DiscreteInteractionEndpoint, too.&#xD;&#xA;(not self.type.oclIsUndefined() and self.type.oclIsKindOf(connector::DiscreteInteractionEndpoint)) implies (self.type.oclAsType(connector::DiscreteInteractionEndpoint).multi)&#xD;&#xA;-- adann"/>
+        <details key="NumberOfsubEndpointsCorrespondsToLowerBound" value="-- The number of subInteractionEndpointInstances is too low with respect to the cardinality&#xD;&#xA;let discreteEndpoint : connector::DiscreteInteractionEndpoint= if (self.type.oclIsUndefined() or (not self.type.oclIsKindOf(connector::DiscreteInteractionEndpoint))) then null else self.type.oclAsType(connector::DiscreteInteractionEndpoint) endif in&#xD;&#xA;let lowerBoundOfsubInteractionEndpointInstance : Integer = if ( discreteEndpoint.oclIsUndefined() or discreteEndpoint.cardinality.lowerBound.infinity) then -1 else discreteEndpoint.cardinality.lowerBound.value endif in&#xD;&#xA;if (lowerBoundOfsubInteractionEndpointInstance &lt;>-1) then self.subInteractionEndpointInstances->size()>=lowerBoundOfsubInteractionEndpointInstance else true endif&#xD;&#xA;-- adann ticket:937"/>
+        <details key="NumberOfsubEndpointsCorrespondsToUpperBound" value="-- The number of subInteractionEndpointInstances is too high with respect to the cardinality&#xD;&#xA;let discreteEndpoint : connector::DiscreteInteractionEndpoint= if (self.type.oclIsUndefined() or (not self.type.oclIsKindOf(connector::DiscreteInteractionEndpoint))) then null else self.type.oclAsType(connector::DiscreteInteractionEndpoint) endif in&#xD;&#xA;let upperBoundOfsubInteractionEndpointInstance : Integer = if ( discreteEndpoint.oclIsUndefined() or discreteEndpoint.cardinality.upperBound.infinity) then -1 else discreteEndpoint.cardinality.upperBound.value endif in&#xD;&#xA;if (upperBoundOfsubInteractionEndpointInstance &lt;>-1) then self.subInteractionEndpointInstances->size()&lt;=upperBoundOfsubInteractionEndpointInstance else true endif&#xD;&#xA;-- adann  ticket:937"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="constraints" value="TypeIsMultiDiscreteInteractionEndpoint NumberOfsubEndpointsCorrespondsToLowerBound NumberOfsubEndpointsCorrespondsToUpperBound"/>

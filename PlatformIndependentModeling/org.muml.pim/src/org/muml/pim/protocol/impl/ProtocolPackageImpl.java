@@ -485,7 +485,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(abstractCoordinationSpecificationEClass, AbstractCoordinationSpecification.class, "AbstractCoordinationSpecification", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAbstractCoordinationSpecification_Roles(), this.getRole(), this.getRole_CoordinationProtocol(), "roles", null, 1, 2, AbstractCoordinationSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAbstractCoordinationSpecification_Roles(), this.getRole(), this.getRole_CoordinationProtocol(), "roles", null, 2, 2, AbstractCoordinationSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAbstractCoordinationSpecification_RoleConnector(), this.getRoleConnector(), this.getRoleConnector_CoordinationProtocol(), "roleConnector", null, 1, 1, AbstractCoordinationSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAbstractCoordinationSpecification_GmfAbstractCoordinationSpecification(), this.getAbstractCoordinationSpecification(), null, "gmfAbstractCoordinationSpecification", null, 0, 1, AbstractCoordinationSpecification.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getAbstractCoordinationSpecification_GmfMessageBuffers(), theConnectorPackage.getMessageBuffer(), null, "gmfMessageBuffers", null, 0, -1, AbstractCoordinationSpecification.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
@@ -538,7 +538,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		  (abstractCoordinationSpecificationEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "UniqueRoleNames RoleMessageTypesMustBeCompatible SingleRoleImpliesMultiRole"
+			 "constraints", "UniqueRoleNames RoleMessageTypesMustBeCompatible"
 		   });	
 		addAnnotation
 		  (coordinationProtocolEClass, 
@@ -578,9 +578,8 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		  (abstractCoordinationSpecificationEClass, 
 		   source, 
 		   new String[] {
-			 "UniqueRoleNames", "-- Names of roles must be unique\nself.roles->isUnique(name)",
-			 "RoleMessageTypesMustBeCompatible", "-- Every Role must have the senderMessageTypes of all other Roles set as receiverMessageTypes\r\nself.roles->forAll(role1 : Role, role2 : Role |\r\n   role1 <> role2\r\n   implies\r\n   role1.senderMessageTypes->asSet() = role2.receiverMessageTypes->asSet()\r\n)",
-			 "SingleRoleImpliesMultiRole", "-- Only one role exists, so it must be a Multi Role.\r\nself.roles->size() = 1 implies self.roles->any(true).multiRole"
+			 "UniqueRoleNames", "-- Names of roles must be unique\r\nself.roles->isUnique(name)",
+			 "RoleMessageTypesMustBeCompatible", "-- Every Role must have the senderMessageTypes of all other Roles set as receiverMessageTypes\r\nself.roles->forAll(role1 : Role, role2 : Role |\r\n   role1 <> role2\r\n   implies\r\n   role1.senderMessageTypes->asSet() = role2.receiverMessageTypes->asSet()\r\n)"
 		   });	
 		addAnnotation
 		  (getAbstractCoordinationSpecification_GmfAbstractCoordinationSpecification(), 

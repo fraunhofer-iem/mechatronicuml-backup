@@ -133,7 +133,6 @@ public class ProtocolValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(abstractCoordinationSpecification, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAbstractCoordinationSpecification_UniqueRoleNames(abstractCoordinationSpecification, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAbstractCoordinationSpecification_RoleMessageTypesMustBeCompatible(abstractCoordinationSpecification, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAbstractCoordinationSpecification_SingleRoleImpliesMultiRole(abstractCoordinationSpecification, diagnostics, context);
 		return result;
 	}
 
@@ -143,7 +142,7 @@ public class ProtocolValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ABSTRACT_COORDINATION_SPECIFICATION__UNIQUE_ROLE_NAMES__EEXPRESSION = "-- Names of roles must be unique\n" +
+	protected static final String ABSTRACT_COORDINATION_SPECIFICATION__UNIQUE_ROLE_NAMES__EEXPRESSION = "-- Names of roles must be unique\r\n" +
 		"self.roles->isUnique(name)";
 
 	/**
@@ -196,36 +195,6 @@ public class ProtocolValidator extends MumlValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "RoleMessageTypesMustBeCompatible",
 				 ABSTRACT_COORDINATION_SPECIFICATION__ROLE_MESSAGE_TYPES_MUST_BE_COMPATIBLE__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the SingleRoleImpliesMultiRole constraint of '<em>Abstract Coordination Specification</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String ABSTRACT_COORDINATION_SPECIFICATION__SINGLE_ROLE_IMPLIES_MULTI_ROLE__EEXPRESSION = "-- Only one role exists, so it must be a Multi Role.\r\n" +
-		"self.roles->size() = 1 implies self.roles->any(true).multiRole";
-
-	/**
-	 * Validates the SingleRoleImpliesMultiRole constraint of '<em>Abstract Coordination Specification</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateAbstractCoordinationSpecification_SingleRoleImpliesMultiRole(AbstractCoordinationSpecification abstractCoordinationSpecification, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ProtocolPackage.Literals.ABSTRACT_COORDINATION_SPECIFICATION,
-				 abstractCoordinationSpecification,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "SingleRoleImpliesMultiRole",
-				 ABSTRACT_COORDINATION_SPECIFICATION__SINGLE_ROLE_IMPLIES_MULTI_ROLE__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -301,7 +270,6 @@ public class ProtocolValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(coordinationProtocol, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAbstractCoordinationSpecification_UniqueRoleNames(coordinationProtocol, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAbstractCoordinationSpecification_RoleMessageTypesMustBeCompatible(coordinationProtocol, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAbstractCoordinationSpecification_SingleRoleImpliesMultiRole(coordinationProtocol, diagnostics, context);
 		if (result || diagnostics != null) result &= validateCoordinationProtocol_CoordinationProtocolNamesMustBeUnique(coordinationProtocol, diagnostics, context);
 		return result;
 	}

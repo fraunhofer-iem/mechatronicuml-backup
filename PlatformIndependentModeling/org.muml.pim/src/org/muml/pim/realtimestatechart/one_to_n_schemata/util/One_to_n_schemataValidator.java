@@ -150,8 +150,8 @@ public class One_to_n_schemataValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ONE_TO_MANY_COMMUNICATION_SCHEMA__CONDITION_ATTRIBUTE_REQUIRES_RETRY_AFTER_ATTRIBUTE__EEXPRESSION = "-- When you define the attribute condition for a communication schemata, you also have to state the attribute retryAfter.\r\n" +
-		"not self.condition.oclIsUndefined() implies not self.retryAfter.oclIsUndefined()";
+	protected static final String ONE_TO_MANY_COMMUNICATION_SCHEMA__CONDITION_ATTRIBUTE_REQUIRES_RETRY_AFTER_ATTRIBUTE__EEXPRESSION = "-- If and only if you define the attribute condition for a communication schemata, then you also have to state the attribute retryAfter.\r\n" +
+		"(not self.condition.oclIsUndefined() implies not self.retryAfter.oclIsUndefined()) and (self.condition.oclIsUndefined() implies self.retryAfter.oclIsUndefined())";
 
 	/**
 	 * Validates the ConditionAttributeRequiresRetryAfterAttribute constraint of '<em>One To Many Communication Schema</em>'.

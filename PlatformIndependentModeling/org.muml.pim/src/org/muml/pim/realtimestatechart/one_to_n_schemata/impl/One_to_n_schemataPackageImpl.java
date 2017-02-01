@@ -609,7 +609,7 @@ public class One_to_n_schemataPackageImpl extends EPackageImpl implements One_to
 		  (oneToManyCommunicationSchemaEClass, 
 		   source, 
 		   new String[] {
-			 "ConditionAttributeRequiresRetryAfterAttribute", "-- When you define the attribute condition for a communication schemata, you also have to state the attribute retryAfter.\r\nnot self.condition.oclIsUndefined() implies not self.retryAfter.oclIsUndefined()"
+			 "ConditionAttributeRequiresRetryAfterAttribute", "-- If and only if you define the attribute condition for a communication schemata, then you also have to state the attribute retryAfter.\r\n(not self.condition.oclIsUndefined() implies not self.retryAfter.oclIsUndefined()) and (self.condition.oclIsUndefined() implies self.retryAfter.oclIsUndefined())"
 		   });	
 		addAnnotation
 		  (unicastEClass, 

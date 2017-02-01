@@ -5,7 +5,7 @@
     testsDirectory="/org.muml.pim.modeltests/src" importerID="org.eclipse.emf.importer.ecore"
     complianceLevel="6.0" copyrightFields="false" testsPluginID="org.muml.pim.modeltests"
     language="" usedGenPackages="../../org.muml.core/model/core.genmodel#//core platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
-    operationReflection="true">
+    operationReflection="true" importOrganizing="true">
   <foreignModel>pim.ecore</foreignModel>
   <genPackages prefix="Pim" basePackage="org.muml" disposableProviderFactory="true"
       ecorePackage="pim.ecore#/">
