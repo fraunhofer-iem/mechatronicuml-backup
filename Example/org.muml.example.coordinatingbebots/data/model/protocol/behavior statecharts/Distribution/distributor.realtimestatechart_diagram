@@ -237,7 +237,7 @@
                                   <styles xmi:type="notation:FilteringStyle" xmi:id="_GDEQ0GmREeOlIqc8khLIew"/>
                                 </children>
                                 <element xmi:type="realtimestatechart:State" href="../../../coordinatingBebots.muml#_GDDCsGmREeOlIqc8khLIew"/>
-                                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GDDpwWmREeOlIqc8khLIew" x="378" y="75" width="84" height="57"/>
+                                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GDDpwWmREeOlIqc8khLIew" x="369" y="75" width="84" height="57"/>
                               </children>
                             </children>
                             <element xmi:type="realtimestatechart:RealtimeStatechart" href="../../../coordinatingBebots.muml#_A5KXwGmREeOlIqc8khLIew"/>
@@ -305,11 +305,11 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_VFDDS2mGEeOlIqc8khLIew"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../../../coordinatingBebots.muml#_U9V4wWmGEeOlIqc8khLIew"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VFCcMWmGEeOlIqc8khLIew" x="2" y="10" width="817" height="1195"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VFCcMWmGEeOlIqc8khLIew" x="2" y="10" width="817" height="1148"/>
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../../../coordinatingBebots.muml#_U9V4wGmGEeOlIqc8khLIew"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VEx9gWmGEeOlIqc8khLIew" x="36" y="36" width="955" height="1285"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VEx9gWmGEeOlIqc8khLIew" x="36" y="36" width="853" height="1237"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_U9V4w2mGEeOlIqc8khLIew"/>
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../../../coordinatingBebots.muml#_U9V4wGmGEeOlIqc8khLIew"/>
@@ -400,14 +400,14 @@
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_IV5gAGmaEeOU79FQup_1NQ" type="4003" source="_A5ZoUGmREeOlIqc8khLIew" target="_GDDpwGmREeOlIqc8khLIew" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_IV5gA2maEeOU79FQup_1NQ" type="6005">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_IV6HEGmaEeOU79FQup_1NQ" x="278" y="-28"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_IV6HEGmaEeOU79FQup_1NQ" x="290" y="-8"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_IV6HEWmaEeOU79FQup_1NQ" type="6006">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_IV6HEmmaEeOU79FQup_1NQ" x="-10" y="20"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_IV5gAWmaEeOU79FQup_1NQ" fontName="Segoe UI"/>
     <element xmi:type="realtimestatechart:Transition" href="../../../coordinatingBebots.muml#_IV1OkGmaEeOU79FQup_1NQ"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_IV5gAmmaEeOU79FQup_1NQ" points="[0, -26, -321, -29]$[0, -55, -321, -58]$[327, -55, 6, -58]$[327, -7, 6, -10]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_IV5gAmmaEeOU79FQup_1NQ" points="[-4, -26, -316, -27]$[-4, -56, -316, -57]$[246, -56, -66, -57]$[299, -9, -13, -10]"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_IWMa8GmaEeOU79FQup_1NQ" id="(0.35714285714285715,0.18461538461538463)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_Js1dwGmaEeOU79FQup_1NQ" type="4003" source="_GDDpwGmREeOlIqc8khLIew" target="_A5ZoUGmREeOlIqc8khLIew" lineColor="0">
