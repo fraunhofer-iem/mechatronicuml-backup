@@ -25,6 +25,13 @@ public class DependencyCollectingExplicitNavigationProperty extends ExplicitNavi
 		 * executing the subsequent statements...)) - atm the order
 		 * does not matter
 		 */
+		
+		// BEGIN MUML FIX #1545 (Exception "org.eclipse.ocl.pivot.values.InvalidValueException: Null source for ...")
+		if (sourceValue == null) {
+			return null;
+		}
+		// END FIX
+		
 		Object evaluationResult = super.evaluate(executor, returnTypeId, sourceValue);
 		EObject source = asNavigableObject(sourceValue, propertyId, executor);
 		EStructuralFeature feature = source.eClass()
