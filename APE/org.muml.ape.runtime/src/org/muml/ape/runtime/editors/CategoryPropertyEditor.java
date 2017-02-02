@@ -404,7 +404,6 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor implements IV
 	public void visibilityChanged(IPropertyEditor editor) {
 		if (editor.isVisible() != isVisible()) {
 			updateVisibility(true, true);
-			System.out.println("test");
 		}
 		
 	}
