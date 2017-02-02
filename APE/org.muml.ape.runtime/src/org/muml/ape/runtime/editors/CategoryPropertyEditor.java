@@ -22,8 +22,9 @@ import org.eclipse.ui.forms.events.IExpansionListener;
 import org.eclipse.ui.forms.widgets.ExpandableComposite;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
+import org.muml.ape.runtime.editors.listener.IVisibilityListener;
 
-public class CategoryPropertyEditor extends AbstractPropertyEditor  {
+public class CategoryPropertyEditor extends AbstractPropertyEditor implements IVisibilityListener {
 	protected boolean childrenCreated = false;
 	
 	protected boolean initiallyExpanded = false;
@@ -69,7 +70,13 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 
 			@Override
 			public boolean select(Object toTest) {
-				return !propertyEditors.isEmpty() || !hideIfEmpty;
+				boolean empty = true;
+				for (IPropertyEditor editors : propertyEditors) {
+					if (editors.isVisible()) {
+						empty = false;
+					}
+				}
+				return !empty || !hideIfEmpty;
 			}
 			
 		});
@@ -90,6 +97,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 		}
 		
 		if (!propertyEditors.contains(editor) && !keys.containsKey(key)) {
+			editor.addVisibilityListener(this);
 			if (childrenCreated) {
 				editor.createControls(childrenComposite, toolkit);
 				childrenComposite.layout();
@@ -110,6 +118,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 
 	public void removePropertyEditor(IPropertyEditor editor) {
 		if (propertyEditors.contains(editor)) {
+			editor.removeVisibilityListener(this);
 			editor.dispose();
 			propertyEditors.remove(editor);
 			String key = getEditorKey(editor);
@@ -389,6 +398,15 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 				first.setFocus();
 			}
 		}
+	}
+
+	@Override
+	public void visibilityChanged(IPropertyEditor editor) {
+		if (editor.isVisible() != isVisible()) {
+			updateVisibility(true, true);
+			System.out.println("test");
+		}
+		
 	}
 	
 }

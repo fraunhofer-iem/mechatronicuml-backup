@@ -13,6 +13,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.muml.ape.runtime.RuntimePlugin;
+import org.muml.ape.runtime.editors.listener.IVisibilityListener;
 
 public abstract class AbstractPropertyEditor implements IPropertyEditor {
 
@@ -23,6 +24,21 @@ public abstract class AbstractPropertyEditor implements IPropertyEditor {
 	protected AdapterFactory adapterFactory = null;
 	protected String tooltipMessage = "";
 
+	protected List<IVisibilityListener> visibilityListeners = new ArrayList<IVisibilityListener>();
+	
+	public void addVisibilityListener(IVisibilityListener listener) {
+		visibilityListeners.add(listener);
+	}	
+	public void removeVisibilityListener(IVisibilityListener listener) {
+		visibilityListeners.remove(listener);
+	}
+	protected void visibilityChanged() {
+		for (IVisibilityListener listener : visibilityListeners) {
+			listener.visibilityChanged(this);
+		}
+	}
+
+	
 	// Visibility
 	protected List<IFilter> visibilityFilters = new ArrayList<IFilter>();
 	private boolean visible = true;
@@ -139,6 +155,8 @@ public abstract class AbstractPropertyEditor implements IPropertyEditor {
 		if (relayout && parentComposite != null) {
 			layout();
 		}
+		
+		visibilityChanged();
 	}
 
 	protected void doSetVisible(boolean visible) {

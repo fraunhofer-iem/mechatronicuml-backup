@@ -4,8 +4,13 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.jface.viewers.IFilter;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.forms.widgets.FormToolkit;
+import org.muml.ape.runtime.editors.listener.IVisibilityListener;
 
 public interface IPropertyEditor {
+	
+	void addVisibilityListener(IVisibilityListener listener);
+	
+	void removeVisibilityListener(IVisibilityListener listener);
 
 	void createControls(Composite parent, FormToolkit toolkit);
 
@@ -26,6 +31,7 @@ public interface IPropertyEditor {
 	void removeVisibilityFilter(IFilter filter);
 	void setVisible(boolean visible, boolean relayout, boolean force);
 	void updateVisibility(boolean relayout);
+	boolean isVisible();
 
 	// Enablement
 	void addReadOnlyFilter(IFilter filter);
