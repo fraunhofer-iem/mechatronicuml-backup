@@ -495,13 +495,13 @@ public interface PatternPackage extends EPackage {
 	int DESCRIPTION_ASPECTS__VARIANTS = 9;
 
 	/**
-	 * The feature id for the '<em><b>Alternatives</b></em>' attribute.
+	 * The feature id for the '<em><b>Also Known As</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_ASPECTS__ALTERNATIVES = 10;
+	int DESCRIPTION_ASPECTS__ALSO_KNOWN_AS = 10;
 
 	/**
 	 * The feature id for the '<em><b>Verification properties</b></em>' attribute.
@@ -513,13 +513,31 @@ public interface PatternPackage extends EPackage {
 	int DESCRIPTION_ASPECTS__VERIFICATION_PROPERTIES = 11;
 
 	/**
+	 * The feature id for the '<em><b>Search Terms</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_ASPECTS__SEARCH_TERMS = 12;
+
+	/**
+	 * The feature id for the '<em><b>Alternatives</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_ASPECTS__ALTERNATIVES = 13;
+
+	/**
 	 * The number of structural features of the '<em>Description Aspects</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_ASPECTS_FEATURE_COUNT = 12;
+	int DESCRIPTION_ASPECTS_FEATURE_COUNT = 14;
 
 	/**
 	 * The number of operations of the '<em>Description Aspects</em>' class.
@@ -1517,6 +1535,17 @@ public interface PatternPackage extends EPackage {
 	EAttribute getDescriptionAspects_Variants();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.muml.pim.pattern.DescriptionAspects#getAlsoKnownAs <em>Also Known As</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Also Known As</em>'.
+	 * @see org.muml.pim.pattern.DescriptionAspects#getAlsoKnownAs()
+	 * @see #getDescriptionAspects()
+	 * @generated
+	 */
+	EAttribute getDescriptionAspects_AlsoKnownAs();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.muml.pim.pattern.DescriptionAspects#getAlternatives <em>Alternatives</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1537,6 +1566,17 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDescriptionAspects_Verification_properties();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.muml.pim.pattern.DescriptionAspects#getSearchTerms <em>Search Terms</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Search Terms</em>'.
+	 * @see org.muml.pim.pattern.DescriptionAspects#getSearchTerms()
+	 * @see #getDescriptionAspects()
+	 * @generated
+	 */
+	EAttribute getDescriptionAspects_SearchTerms();
 
 	/**
 	 * Returns the meta object for class '{@link org.muml.pim.pattern.VerifiedConfiguration <em>Verified Configuration</em>}'.
@@ -1773,6 +1813,14 @@ public interface PatternPackage extends EPackage {
 		EAttribute DESCRIPTION_ASPECTS__VARIANTS = eINSTANCE.getDescriptionAspects_Variants();
 
 		/**
+		 * The meta object literal for the '<em><b>Also Known As</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DESCRIPTION_ASPECTS__ALSO_KNOWN_AS = eINSTANCE.getDescriptionAspects_AlsoKnownAs();
+
+		/**
 		 * The meta object literal for the '<em><b>Alternatives</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1787,6 +1835,14 @@ public interface PatternPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DESCRIPTION_ASPECTS__VERIFICATION_PROPERTIES = eINSTANCE.getDescriptionAspects_Verification_properties();
+
+		/**
+		 * The meta object literal for the '<em><b>Search Terms</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DESCRIPTION_ASPECTS__SEARCH_TERMS = eINSTANCE.getDescriptionAspects_SearchTerms();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.pim.pattern.impl.VerifiedConfigurationImpl <em>Verified Configuration</em>}' class.

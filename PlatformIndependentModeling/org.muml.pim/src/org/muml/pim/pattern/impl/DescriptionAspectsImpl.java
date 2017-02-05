@@ -37,8 +37,10 @@ import org.muml.pim.pattern.PatternPackage;
  *   <li>{@link org.muml.pim.pattern.impl.DescriptionAspectsImpl#getConsequences <em>Consequences</em>}</li>
  *   <li>{@link org.muml.pim.pattern.impl.DescriptionAspectsImpl#getCombineability <em>Combineability</em>}</li>
  *   <li>{@link org.muml.pim.pattern.impl.DescriptionAspectsImpl#getVariants <em>Variants</em>}</li>
- *   <li>{@link org.muml.pim.pattern.impl.DescriptionAspectsImpl#getAlternatives <em>Alternatives</em>}</li>
+ *   <li>{@link org.muml.pim.pattern.impl.DescriptionAspectsImpl#getAlsoKnownAs <em>Also Known As</em>}</li>
  *   <li>{@link org.muml.pim.pattern.impl.DescriptionAspectsImpl#getVerification_properties <em>Verification properties</em>}</li>
+ *   <li>{@link org.muml.pim.pattern.impl.DescriptionAspectsImpl#getSearchTerms <em>Search Terms</em>}</li>
+ *   <li>{@link org.muml.pim.pattern.impl.DescriptionAspectsImpl#getAlternatives <em>Alternatives</em>}</li>
  * </ul>
  *
  * @generated
@@ -245,24 +247,24 @@ public class DescriptionAspectsImpl extends EObjectImpl implements DescriptionAs
 	protected String variants = VARIANTS_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getAlternatives() <em>Alternatives</em>}' attribute.
+	 * The default value of the '{@link #getAlsoKnownAs() <em>Also Known As</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAlternatives()
+	 * @see #getAlsoKnownAs()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ALTERNATIVES_EDEFAULT = null;
+	protected static final String ALSO_KNOWN_AS_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getAlternatives() <em>Alternatives</em>}' attribute.
+	 * The cached value of the '{@link #getAlsoKnownAs() <em>Also Known As</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAlternatives()
+	 * @see #getAlsoKnownAs()
 	 * @generated
 	 * @ordered
 	 */
-	protected String alternatives = ALTERNATIVES_EDEFAULT;
+	protected String alsoKnownAs = ALSO_KNOWN_AS_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getVerification_properties() <em>Verification properties</em>}' attribute.
@@ -283,6 +285,46 @@ public class DescriptionAspectsImpl extends EObjectImpl implements DescriptionAs
 	 * @ordered
 	 */
 	protected String verification_properties = VERIFICATION_PROPERTIES_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getSearchTerms() <em>Search Terms</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSearchTerms()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SEARCH_TERMS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getSearchTerms() <em>Search Terms</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSearchTerms()
+	 * @generated
+	 * @ordered
+	 */
+	protected String searchTerms = SEARCH_TERMS_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getAlternatives() <em>Alternatives</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAlternatives()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ALTERNATIVES_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAlternatives() <em>Alternatives</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAlternatives()
+	 * @generated
+	 * @ordered
+	 */
+	protected String alternatives = ALTERNATIVES_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -518,6 +560,27 @@ public class DescriptionAspectsImpl extends EObjectImpl implements DescriptionAs
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getAlsoKnownAs() {
+		return alsoKnownAs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAlsoKnownAs(String newAlsoKnownAs) {
+		String oldAlsoKnownAs = alsoKnownAs;
+		alsoKnownAs = newAlsoKnownAs;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.DESCRIPTION_ASPECTS__ALSO_KNOWN_AS, oldAlsoKnownAs, alsoKnownAs));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getAlternatives() {
 		return alternatives;
 	}
@@ -560,6 +623,27 @@ public class DescriptionAspectsImpl extends EObjectImpl implements DescriptionAs
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getSearchTerms() {
+		return searchTerms;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSearchTerms(String newSearchTerms) {
+		String oldSearchTerms = searchTerms;
+		searchTerms = newSearchTerms;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.DESCRIPTION_ASPECTS__SEARCH_TERMS, oldSearchTerms, searchTerms));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -583,10 +667,14 @@ public class DescriptionAspectsImpl extends EObjectImpl implements DescriptionAs
 				return getCombineability();
 			case PatternPackage.DESCRIPTION_ASPECTS__VARIANTS:
 				return getVariants();
-			case PatternPackage.DESCRIPTION_ASPECTS__ALTERNATIVES:
-				return getAlternatives();
+			case PatternPackage.DESCRIPTION_ASPECTS__ALSO_KNOWN_AS:
+				return getAlsoKnownAs();
 			case PatternPackage.DESCRIPTION_ASPECTS__VERIFICATION_PROPERTIES:
 				return getVerification_properties();
+			case PatternPackage.DESCRIPTION_ASPECTS__SEARCH_TERMS:
+				return getSearchTerms();
+			case PatternPackage.DESCRIPTION_ASPECTS__ALTERNATIVES:
+				return getAlternatives();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -629,11 +717,17 @@ public class DescriptionAspectsImpl extends EObjectImpl implements DescriptionAs
 			case PatternPackage.DESCRIPTION_ASPECTS__VARIANTS:
 				setVariants((String)newValue);
 				return;
-			case PatternPackage.DESCRIPTION_ASPECTS__ALTERNATIVES:
-				setAlternatives((String)newValue);
+			case PatternPackage.DESCRIPTION_ASPECTS__ALSO_KNOWN_AS:
+				setAlsoKnownAs((String)newValue);
 				return;
 			case PatternPackage.DESCRIPTION_ASPECTS__VERIFICATION_PROPERTIES:
 				setVerification_properties((String)newValue);
+				return;
+			case PatternPackage.DESCRIPTION_ASPECTS__SEARCH_TERMS:
+				setSearchTerms((String)newValue);
+				return;
+			case PatternPackage.DESCRIPTION_ASPECTS__ALTERNATIVES:
+				setAlternatives((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -677,11 +771,17 @@ public class DescriptionAspectsImpl extends EObjectImpl implements DescriptionAs
 			case PatternPackage.DESCRIPTION_ASPECTS__VARIANTS:
 				setVariants(VARIANTS_EDEFAULT);
 				return;
-			case PatternPackage.DESCRIPTION_ASPECTS__ALTERNATIVES:
-				setAlternatives(ALTERNATIVES_EDEFAULT);
+			case PatternPackage.DESCRIPTION_ASPECTS__ALSO_KNOWN_AS:
+				setAlsoKnownAs(ALSO_KNOWN_AS_EDEFAULT);
 				return;
 			case PatternPackage.DESCRIPTION_ASPECTS__VERIFICATION_PROPERTIES:
 				setVerification_properties(VERIFICATION_PROPERTIES_EDEFAULT);
+				return;
+			case PatternPackage.DESCRIPTION_ASPECTS__SEARCH_TERMS:
+				setSearchTerms(SEARCH_TERMS_EDEFAULT);
+				return;
+			case PatternPackage.DESCRIPTION_ASPECTS__ALTERNATIVES:
+				setAlternatives(ALTERNATIVES_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -715,10 +815,14 @@ public class DescriptionAspectsImpl extends EObjectImpl implements DescriptionAs
 				return COMBINEABILITY_EDEFAULT == null ? combineability != null : !COMBINEABILITY_EDEFAULT.equals(combineability);
 			case PatternPackage.DESCRIPTION_ASPECTS__VARIANTS:
 				return VARIANTS_EDEFAULT == null ? variants != null : !VARIANTS_EDEFAULT.equals(variants);
-			case PatternPackage.DESCRIPTION_ASPECTS__ALTERNATIVES:
-				return ALTERNATIVES_EDEFAULT == null ? alternatives != null : !ALTERNATIVES_EDEFAULT.equals(alternatives);
+			case PatternPackage.DESCRIPTION_ASPECTS__ALSO_KNOWN_AS:
+				return ALSO_KNOWN_AS_EDEFAULT == null ? alsoKnownAs != null : !ALSO_KNOWN_AS_EDEFAULT.equals(alsoKnownAs);
 			case PatternPackage.DESCRIPTION_ASPECTS__VERIFICATION_PROPERTIES:
 				return VERIFICATION_PROPERTIES_EDEFAULT == null ? verification_properties != null : !VERIFICATION_PROPERTIES_EDEFAULT.equals(verification_properties);
+			case PatternPackage.DESCRIPTION_ASPECTS__SEARCH_TERMS:
+				return SEARCH_TERMS_EDEFAULT == null ? searchTerms != null : !SEARCH_TERMS_EDEFAULT.equals(searchTerms);
+			case PatternPackage.DESCRIPTION_ASPECTS__ALTERNATIVES:
+				return ALTERNATIVES_EDEFAULT == null ? alternatives != null : !ALTERNATIVES_EDEFAULT.equals(alternatives);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -753,10 +857,14 @@ public class DescriptionAspectsImpl extends EObjectImpl implements DescriptionAs
 		result.append(combineability);
 		result.append(", variants: ");
 		result.append(variants);
-		result.append(", alternatives: ");
-		result.append(alternatives);
+		result.append(", alsoKnownAs: ");
+		result.append(alsoKnownAs);
 		result.append(", verification_properties: ");
 		result.append(verification_properties);
+		result.append(", searchTerms: ");
+		result.append(searchTerms);
+		result.append(", alternatives: ");
+		result.append(alternatives);
 		result.append(')');
 		return result.toString();
 	}

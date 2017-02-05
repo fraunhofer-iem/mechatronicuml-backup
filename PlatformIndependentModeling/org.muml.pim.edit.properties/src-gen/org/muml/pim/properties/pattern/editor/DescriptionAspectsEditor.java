@@ -21,6 +21,8 @@ public class DescriptionAspectsEditor extends org.muml.ape.runtime.editors.Class
 	protected void createProperties() {
 		if (tab == null) {
 
+			addPropertyEditor(createEditorAlsoKnownAs_property_tab_generalTab_Editor(), false);
+
 			addPropertyEditor(createEditorOverview_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorContext_property_tab_generalTab_Editor(), false);
@@ -33,17 +35,19 @@ public class DescriptionAspectsEditor extends org.muml.ape.runtime.editors.Class
 
 			addPropertyEditor(createEditorBehavior_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorExamples_property_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorVerification_properties_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorConsequences_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorCombineability_property_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorExamples_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorVariants_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorAlternatives_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorVerification_properties_property_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorCombineability_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorSearchTerms_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -63,6 +67,8 @@ public class DescriptionAspectsEditor extends org.muml.ape.runtime.editors.Class
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
+			addPropertyEditor(createEditorAlsoKnownAs_property_tab_generalTab_Editor(), false);
+
 			addPropertyEditor(createEditorOverview_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorContext_property_tab_generalTab_Editor(), false);
@@ -75,17 +81,19 @@ public class DescriptionAspectsEditor extends org.muml.ape.runtime.editors.Class
 
 			addPropertyEditor(createEditorBehavior_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorExamples_property_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorVerification_properties_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorConsequences_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorCombineability_property_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorExamples_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorVariants_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorAlternatives_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorVerification_properties_property_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorCombineability_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorSearchTerms_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -93,6 +101,21 @@ public class DescriptionAspectsEditor extends org.muml.ape.runtime.editors.Class
 
 		} else {
 		}
+	}
+
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorAlsoKnownAs_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorAlsoKnownAs_property_tab_generalTab_Editor() {
+		if (this.editorAlsoKnownAs_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.pattern.PatternPackage.eINSTANCE
+					.getDescriptionAspects_AlsoKnownAs();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.TextPropertyEditor(
+					adapterFactory, feature, true);
+
+			editor.setTooltipMessage("Describes the alternatives of the pattern.");
+
+			this.editorAlsoKnownAs_property_tab_generalTab = editor;
+		}
+		return this.editorAlsoKnownAs_property_tab_generalTab;
 	}
 
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorOverview_property_tab_generalTab;
@@ -185,6 +208,36 @@ public class DescriptionAspectsEditor extends org.muml.ape.runtime.editors.Class
 		return this.editorBehavior_property_tab_generalTab;
 	}
 
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorVerification_properties_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorVerification_properties_property_tab_generalTab_Editor() {
+		if (this.editorVerification_properties_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.pattern.PatternPackage.eINSTANCE
+					.getDescriptionAspects_Verification_properties();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.TextPropertyEditor(
+					adapterFactory, feature, true);
+
+			editor.setTooltipMessage("Describes the verification properties of the pattern.");
+
+			this.editorVerification_properties_property_tab_generalTab = editor;
+		}
+		return this.editorVerification_properties_property_tab_generalTab;
+	}
+
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorConsequences_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorConsequences_property_tab_generalTab_Editor() {
+		if (this.editorConsequences_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.pattern.PatternPackage.eINSTANCE
+					.getDescriptionAspects_Consequences();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.TextPropertyEditor(
+					adapterFactory, feature, true);
+
+			editor.setTooltipMessage("Describes the consequences of the pattern.");
+
+			this.editorConsequences_property_tab_generalTab = editor;
+		}
+		return this.editorConsequences_property_tab_generalTab;
+	}
+
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExamples_property_tab_generalTab;
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExamples_property_tab_generalTab_Editor() {
 		if (this.editorExamples_property_tab_generalTab == null) {
@@ -198,36 +251,6 @@ public class DescriptionAspectsEditor extends org.muml.ape.runtime.editors.Class
 			this.editorExamples_property_tab_generalTab = editor;
 		}
 		return this.editorExamples_property_tab_generalTab;
-	}
-
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorConsequences_property_tab_generalTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorConsequences_property_tab_generalTab_Editor() {
-		if (this.editorConsequences_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.pattern.PatternPackage.eINSTANCE
-					.getDescriptionAspects_Consequences();
-			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.TextPropertyEditor(
-					adapterFactory, feature, false);
-
-			editor.setTooltipMessage("Describes the consequences of the pattern.");
-
-			this.editorConsequences_property_tab_generalTab = editor;
-		}
-		return this.editorConsequences_property_tab_generalTab;
-	}
-
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCombineability_property_tab_generalTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorCombineability_property_tab_generalTab_Editor() {
-		if (this.editorCombineability_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.pattern.PatternPackage.eINSTANCE
-					.getDescriptionAspects_Combineability();
-			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.TextPropertyEditor(
-					adapterFactory, feature, true);
-
-			editor.setTooltipMessage("Describes the combineability of the pattern.");
-
-			this.editorCombineability_property_tab_generalTab = editor;
-		}
-		return this.editorCombineability_property_tab_generalTab;
 	}
 
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorVariants_property_tab_generalTab;
@@ -260,19 +283,34 @@ public class DescriptionAspectsEditor extends org.muml.ape.runtime.editors.Class
 		return this.editorAlternatives_property_tab_generalTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorVerification_properties_property_tab_generalTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorVerification_properties_property_tab_generalTab_Editor() {
-		if (this.editorVerification_properties_property_tab_generalTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCombineability_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorCombineability_property_tab_generalTab_Editor() {
+		if (this.editorCombineability_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.pattern.PatternPackage.eINSTANCE
-					.getDescriptionAspects_Verification_properties();
+					.getDescriptionAspects_Combineability();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, true);
 
-			editor.setTooltipMessage("Describes the verification properties of the pattern.");
+			editor.setTooltipMessage("Describes the combineability of the pattern.");
 
-			this.editorVerification_properties_property_tab_generalTab = editor;
+			this.editorCombineability_property_tab_generalTab = editor;
 		}
-		return this.editorVerification_properties_property_tab_generalTab;
+		return this.editorCombineability_property_tab_generalTab;
+	}
+
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorSearchTerms_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorSearchTerms_property_tab_generalTab_Editor() {
+		if (this.editorSearchTerms_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.pattern.PatternPackage.eINSTANCE
+					.getDescriptionAspects_SearchTerms();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.TextPropertyEditor(
+					adapterFactory, feature, true);
+
+			editor.setTooltipMessage("Describes the alternatives of the pattern.");
+
+			this.editorSearchTerms_property_tab_generalTab = editor;
+		}
+		return this.editorSearchTerms_property_tab_generalTab;
 	}
 
 	//
@@ -301,7 +339,8 @@ public class DescriptionAspectsEditor extends org.muml.ape.runtime.editors.Class
 			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
 					"property.tab.general", "property.tab.general", "property.tab.general", "property.tab.general",
 					"property.tab.general", "property.tab.general", "property.tab.general", "property.tab.general",
-					"property.tab.general", "property.tab.general"}).contains(tab);
+					"property.tab.general", "property.tab.general", "property.tab.general", "property.tab.general"})
+					.contains(tab);
 		}
 	}
 

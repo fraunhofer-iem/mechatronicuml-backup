@@ -37,8 +37,10 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.muml.pim.pattern.DescriptionAspects#getConsequences <em>Consequences</em>}</li>
  *   <li>{@link org.muml.pim.pattern.DescriptionAspects#getCombineability <em>Combineability</em>}</li>
  *   <li>{@link org.muml.pim.pattern.DescriptionAspects#getVariants <em>Variants</em>}</li>
- *   <li>{@link org.muml.pim.pattern.DescriptionAspects#getAlternatives <em>Alternatives</em>}</li>
+ *   <li>{@link org.muml.pim.pattern.DescriptionAspects#getAlsoKnownAs <em>Also Known As</em>}</li>
  *   <li>{@link org.muml.pim.pattern.DescriptionAspects#getVerification_properties <em>Verification properties</em>}</li>
+ *   <li>{@link org.muml.pim.pattern.DescriptionAspects#getSearchTerms <em>Search Terms</em>}</li>
+ *   <li>{@link org.muml.pim.pattern.DescriptionAspects#getAlternatives <em>Alternatives</em>}</li>
  * </ul>
  *
  * @see org.muml.pim.pattern.PatternPackage#getDescriptionAspects()
@@ -297,6 +299,31 @@ public interface DescriptionAspects extends EObject {
 	void setVariants(String value);
 
 	/**
+	 * Returns the value of the '<em><b>Also Known As</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Describes the alternatives of the pattern.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Also Known As</em>' attribute.
+	 * @see #setAlsoKnownAs(String)
+	 * @see org.muml.pim.pattern.PatternPackage#getDescriptionAspects_AlsoKnownAs()
+	 * @model required="true"
+	 * @generated
+	 */
+	String getAlsoKnownAs();
+
+	/**
+	 * Sets the value of the '{@link org.muml.pim.pattern.DescriptionAspects#getAlsoKnownAs <em>Also Known As</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Also Known As</em>' attribute.
+	 * @see #getAlsoKnownAs()
+	 * @generated
+	 */
+	void setAlsoKnownAs(String value);
+
+	/**
 	 * Returns the value of the '<em><b>Alternatives</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -349,5 +376,30 @@ public interface DescriptionAspects extends EObject {
 	 * @generated
 	 */
 	void setVerification_properties(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Search Terms</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Describes the alternatives of the pattern.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Search Terms</em>' attribute.
+	 * @see #setSearchTerms(String)
+	 * @see org.muml.pim.pattern.PatternPackage#getDescriptionAspects_SearchTerms()
+	 * @model required="true"
+	 * @generated
+	 */
+	String getSearchTerms();
+
+	/**
+	 * Sets the value of the '{@link org.muml.pim.pattern.DescriptionAspects#getSearchTerms <em>Search Terms</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Search Terms</em>' attribute.
+	 * @see #getSearchTerms()
+	 * @generated
+	 */
+	void setSearchTerms(String value);
 
 } // DescriptionAspects

@@ -78,8 +78,10 @@ public class DescriptionAspectsItemProvider
 			addConsequencesPropertyDescriptor(object);
 			addCombineabilityPropertyDescriptor(object);
 			addVariantsPropertyDescriptor(object);
-			addAlternativesPropertyDescriptor(object);
+			addAlsoKnownAsPropertyDescriptor(object);
 			addVerification_propertiesPropertyDescriptor(object);
+			addSearchTermsPropertyDescriptor(object);
+			addAlternativesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -305,6 +307,28 @@ public class DescriptionAspectsItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Also Known As feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAlsoKnownAsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DescriptionAspects_alsoKnownAs_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DescriptionAspects_alsoKnownAs_feature", "_UI_DescriptionAspects_type"),
+				 PatternPackage.Literals.DESCRIPTION_ASPECTS__ALSO_KNOWN_AS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Alternatives feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -340,6 +364,28 @@ public class DescriptionAspectsItemProvider
 				 getString("_UI_DescriptionAspects_verification_properties_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DescriptionAspects_verification_properties_feature", "_UI_DescriptionAspects_type"),
 				 PatternPackage.Literals.DESCRIPTION_ASPECTS__VERIFICATION_PROPERTIES,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Search Terms feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSearchTermsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DescriptionAspects_searchTerms_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DescriptionAspects_searchTerms_feature", "_UI_DescriptionAspects_type"),
+				 PatternPackage.Literals.DESCRIPTION_ASPECTS__SEARCH_TERMS,
 				 true,
 				 false,
 				 false,
@@ -396,8 +442,10 @@ public class DescriptionAspectsItemProvider
 			case PatternPackage.DESCRIPTION_ASPECTS__CONSEQUENCES:
 			case PatternPackage.DESCRIPTION_ASPECTS__COMBINEABILITY:
 			case PatternPackage.DESCRIPTION_ASPECTS__VARIANTS:
-			case PatternPackage.DESCRIPTION_ASPECTS__ALTERNATIVES:
+			case PatternPackage.DESCRIPTION_ASPECTS__ALSO_KNOWN_AS:
 			case PatternPackage.DESCRIPTION_ASPECTS__VERIFICATION_PROPERTIES:
+			case PatternPackage.DESCRIPTION_ASPECTS__SEARCH_TERMS:
+			case PatternPackage.DESCRIPTION_ASPECTS__ALTERNATIVES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

@@ -609,8 +609,10 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//pattern/DescriptionAspects/consequences"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//pattern/DescriptionAspects/combineability"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//pattern/DescriptionAspects/variants"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//pattern/DescriptionAspects/alternatives"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//pattern/DescriptionAspects/alsoKnownAs"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//pattern/DescriptionAspects/verification_properties"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//pattern/DescriptionAspects/searchTerms"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//pattern/DescriptionAspects/alternatives"/>
       </genClasses>
       <genClasses ecoreClass="pim.ecore#//pattern/VerifiedConfiguration">
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//pattern/VerifiedConfiguration/parameterBindings"/>

@@ -386,8 +386,17 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDescriptionAspects_Alternatives() {
+	public EAttribute getDescriptionAspects_AlsoKnownAs() {
 		return (EAttribute)descriptionAspectsEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDescriptionAspects_Alternatives() {
+		return (EAttribute)descriptionAspectsEClass.getEStructuralFeatures().get(13);
 	}
 
 	/**
@@ -397,6 +406,15 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 */
 	public EAttribute getDescriptionAspects_Verification_properties() {
 		return (EAttribute)descriptionAspectsEClass.getEStructuralFeatures().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDescriptionAspects_SearchTerms() {
+		return (EAttribute)descriptionAspectsEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -487,8 +505,10 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		createEAttribute(descriptionAspectsEClass, DESCRIPTION_ASPECTS__CONSEQUENCES);
 		createEAttribute(descriptionAspectsEClass, DESCRIPTION_ASPECTS__COMBINEABILITY);
 		createEAttribute(descriptionAspectsEClass, DESCRIPTION_ASPECTS__VARIANTS);
-		createEAttribute(descriptionAspectsEClass, DESCRIPTION_ASPECTS__ALTERNATIVES);
+		createEAttribute(descriptionAspectsEClass, DESCRIPTION_ASPECTS__ALSO_KNOWN_AS);
 		createEAttribute(descriptionAspectsEClass, DESCRIPTION_ASPECTS__VERIFICATION_PROPERTIES);
+		createEAttribute(descriptionAspectsEClass, DESCRIPTION_ASPECTS__SEARCH_TERMS);
+		createEAttribute(descriptionAspectsEClass, DESCRIPTION_ASPECTS__ALTERNATIVES);
 
 		verifiedConfigurationEClass = createEClass(VERIFIED_CONFIGURATION);
 		createEReference(verifiedConfigurationEClass, VERIFIED_CONFIGURATION__PARAMETER_BINDINGS);
@@ -559,8 +579,10 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		initEAttribute(getDescriptionAspects_Consequences(), ecorePackage.getEString(), "consequences", null, 1, 1, DescriptionAspects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDescriptionAspects_Combineability(), ecorePackage.getEString(), "combineability", null, 1, 1, DescriptionAspects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDescriptionAspects_Variants(), ecorePackage.getEString(), "variants", null, 1, 1, DescriptionAspects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDescriptionAspects_Alternatives(), ecorePackage.getEString(), "alternatives", null, 1, 1, DescriptionAspects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDescriptionAspects_AlsoKnownAs(), ecorePackage.getEString(), "alsoKnownAs", null, 1, 1, DescriptionAspects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDescriptionAspects_Verification_properties(), ecorePackage.getEString(), "verification_properties", null, 1, 1, DescriptionAspects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDescriptionAspects_SearchTerms(), ecorePackage.getEString(), "searchTerms", null, 1, 1, DescriptionAspects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDescriptionAspects_Alternatives(), ecorePackage.getEString(), "alternatives", null, 1, 1, DescriptionAspects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(verifiedConfigurationEClass, VerifiedConfiguration.class, "VerifiedConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getVerifiedConfiguration_ParameterBindings(), theBehaviorPackage.getParameterBinding(), null, "parameterBindings", null, 0, -1, VerifiedConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

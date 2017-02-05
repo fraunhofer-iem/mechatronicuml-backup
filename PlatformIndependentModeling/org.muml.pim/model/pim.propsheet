@@ -1224,6 +1224,11 @@
     </classes>
     <classes>
       <genClass href="pim.genmodel#//pim/pattern/DescriptionAspects"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/pattern/DescriptionAspects/alsoKnownAs"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:TextPropertyEditor" multiLine="true"/>
+      </orderedElements>
       <orderedElements xsi:type="org.muml:Property" reconcile="false" initializeOCLExpression="">
         <genFeature href="pim.genmodel#//pim/pattern/DescriptionAspects/overview"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
@@ -1255,17 +1260,17 @@
         <editor xsi:type="org.muml:TextPropertyEditor" multiLine="true"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml:Property" reconcile="false" initializeOCLExpression="">
-        <genFeature href="pim.genmodel#//pim/pattern/DescriptionAspects/examples"/>
+        <genFeature href="pim.genmodel#//pim/pattern/DescriptionAspects/verification_properties"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="org.muml:TextPropertyEditor" multiLine="true"/>
       </orderedElements>
-      <orderedElements xsi:type="org.muml:Property" initializeOCLExpression="">
+      <orderedElements xsi:type="org.muml:Property" reconcile="false" initializeOCLExpression="">
         <genFeature href="pim.genmodel#//pim/pattern/DescriptionAspects/consequences"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="org.muml:TextPropertyEditor"/>
+        <editor xsi:type="org.muml:TextPropertyEditor" multiLine="true"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml:Property" reconcile="false" initializeOCLExpression="">
-        <genFeature href="pim.genmodel#//pim/pattern/DescriptionAspects/combineability"/>
+        <genFeature href="pim.genmodel#//pim/pattern/DescriptionAspects/examples"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="org.muml:TextPropertyEditor" multiLine="true"/>
       </orderedElements>
@@ -1280,7 +1285,12 @@
         <editor xsi:type="org.muml:TextPropertyEditor" multiLine="true"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml:Property" reconcile="false" initializeOCLExpression="">
-        <genFeature href="pim.genmodel#//pim/pattern/DescriptionAspects/verification_properties"/>
+        <genFeature href="pim.genmodel#//pim/pattern/DescriptionAspects/combineability"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:TextPropertyEditor" multiLine="true"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/pattern/DescriptionAspects/searchTerms"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="org.muml:TextPropertyEditor" multiLine="true"/>
       </orderedElements>
