@@ -34,7 +34,7 @@ modeltype muml_runnable uses pim::runnable('http://www.muml.org/pim/1.0.0');
 
 //modeltype muml_actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
 
-modeltype app4mc uses model('http://app4mc.eclipse.org/amalthea/0.7.0');
+modeltype app4mc uses model('http://app4mc.eclipse.org/amalthea/0.7.2');
 
 transformation MUML2Amalthea(in startCIC : muml_instance, inout amal : app4mc);
 
