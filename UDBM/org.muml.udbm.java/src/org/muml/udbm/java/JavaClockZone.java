@@ -27,6 +27,8 @@ public class JavaClockZone extends ClockZone {
 	 */
 	private int[][] matrix;
 	
+	private String dbmValueString = "";
+	
 	private Logger logger = LoggerFactory.getLogger(JavaFederation.class);
 		
 	@Override
@@ -512,7 +514,17 @@ public class JavaClockZone extends ClockZone {
 			}
 			output = output + System.getProperty("line.separator");
 		}
-		logger.debug(output);
+		
+		if (output.equals(dbmValueString)){
+			System.out.println("DBM unchanged");
+		}
+		else{
+			dbmValueString = output;
+			logger.debug(output);
+//			System.out.println(output);
+		}
+		
+
 	}
 
 
