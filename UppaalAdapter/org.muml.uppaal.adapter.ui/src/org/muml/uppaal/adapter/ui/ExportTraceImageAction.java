@@ -31,9 +31,10 @@ public class ExportTraceImageAction extends AbstractUppaalAction {
 			if (containerDialog.getReturnCode() == Window.CANCEL) {
 				return CommandResult.newCancelledCommandResult();
 			}
-
-			IPath targetPath = (IPath) result[0];
-			resource = ResourcesPlugin.getWorkspace().getRoot().findMember(targetPath);
+			if (result != null) {
+				IPath targetPath = (IPath) result[0];
+				resource = ResourcesPlugin.getWorkspace().getRoot().findMember(targetPath);
+			}
 			containerDialog.open();
 		}
 
