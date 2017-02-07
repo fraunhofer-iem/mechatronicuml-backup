@@ -17,9 +17,6 @@
 			stateChart->currentStateOfRecipeGeneratorProvideOrderReciepeSender =
 					STATE_RECIPEGENERATORPROVIDEORDERINIT;
 		
-			// execute entry actions
-			// nothing to do
-		
 			stateChart->RecipeGeneratorProvideOrderReciepeSender_isExecutable = true;
 		
 		}
@@ -30,10 +27,6 @@
 		
 			stateChart->currentStateOfRecipeGeneratorInitInternalBehavior =
 					STATE_RECIPEGENERATORINITINTERNALBEHAVIORSMALLAMOUNT;
-		
-			// execute entry actions
-		
-			// nothing to do
 		
 			stateChart->RecipeGeneratorInitInternalBehavior_isExecutable = true;
 		
@@ -48,13 +41,11 @@
 		
 			stateChart->amount = 1;
 		
+			//initialize port variables of the root statechart
+		
 			//initialize init state
 			stateChart->currentStateOfRecipeGeneratorReciepeGenerator =
 					STATE_RECIPEGENERATORINIT;
-		
-			// execute entry actions
-		
-			// nothing to do
 		
 			initializeRecipeGeneratorProvideOrderReciepeSenderRegion(stateChart);
 			initializeRecipeGeneratorInitInternalBehaviorRegion(stateChart);
@@ -106,60 +97,42 @@
 						) {
 		
 					// execute exit actions
-		
 					// nothing to do
 		
 					// Transition Effects (incl. clock resets)
 		
 					stateChart->currentOrderID = stateChart->currentOrderID + 1;
-		
 					;
 		
 					Clock_reset(
 							stateChart->recipeGeneratorProvideOrderTimeSpanRecipeGeneratorProvideOrderReciepeSenderClock);
 		
 					//create new Parameter struct for MessagesSimpleOrder_Messages_Message
-		
 					MessagesSimpleOrder_Messages_Message msg_MessagesSimpleOrder;
-		
 					msg_MessagesSimpleOrder.amount = stateChart->amount;
-		
 					msg_MessagesSimpleOrder.ingredientID =
 							stateChart->produceIngredientID;
-		
 					msg_MessagesSimpleOrder.orderID = stateChart->currentOrderID;
 		
 					//send Message
-		
 					MCC_RecipeGeneratorComponent_provideOrder_send_MessagesSimpleOrder_Messages_Message(
 							&(stateChart->parentComponent->provideOrderPort),
 							&msg_MessagesSimpleOrder);
-		
 		#ifdef DEBUG
-		
 					printDebugInformation("RecipeGenerator sent message of type MessagesSimpleOrder");
-		
 		#endif		
 		
 					//release all created received events
-		
 					//release all created sent events
-		
 					//free(msg);
-		
 					// change the state
-		
 					stateChart->currentStateOfRecipeGeneratorProvideOrderReciepeSender =
 							STATE_RECIPEGENERATORPROVIDEORDERINIT;
-		
 		#ifdef DEBUG
-		
 					printDebugInformation("currentStateOfRecipeGeneratorProvideOrderReciepeSender switched state to STATE_RECIPEGENERATORPROVIDEORDERINIT" );
-		
 		#endif		
 		
 					// execute entry actions
-		
 					// nothing to do
 		
 				} else {
@@ -173,125 +146,84 @@
 		}
 		
 		void RecipeGeneratorInitInternalBehaviorStateChart_processStep(
-		
-		RecipeGeneratorReciepeGeneratorStateChart* stateChart) {
-		
+				RecipeGeneratorReciepeGeneratorStateChart* stateChart) {
 			switch (stateChart->currentStateOfRecipeGeneratorInitInternalBehavior) {
-		
 			case STATE_RECIPEGENERATORINITINTERNALBEHAVIORSMALLAMOUNT:
-		
 				if (Clock_getTime(
-		
 						stateChart->recipeGeneratorInitInternalBehaviorLoadClockRecipeGeneratorInitInternalBehaviorClock)
+						>= 5 * 1000.0
 		
-				>= 5 * 1.0
-		
-				) {
+						) {
 		
 					// execute exit actions
-		
 					// nothing to do
 		
 					// Transition Effects (incl. clock resets)
 		
 					stateChart->amount = 2;
-		
 					;
 		
 					Clock_reset(
-		
 							stateChart->recipeGeneratorInitInternalBehaviorLoadClockRecipeGeneratorInitInternalBehaviorClock);
 		
 					// nothing to do			
 		
 					//release all created received events
-		
 					//release all created sent events
-		
 					// change the state
-		
 					stateChart->currentStateOfRecipeGeneratorInitInternalBehavior =
-		
-					STATE_RECIPEGENERATORINITINTERNALBEHAVIORHIGHAMOUNT;
-		
+							STATE_RECIPEGENERATORINITINTERNALBEHAVIORHIGHAMOUNT;
 		#ifdef DEBUG
-		
 					printDebugInformation("currentStateOfRecipeGeneratorInitInternalBehavior switched state to STATE_RECIPEGENERATORINITINTERNALBEHAVIORHIGHAMOUNT" );
-		
 		#endif		
 		
 					// execute entry actions
-		
 					// nothing to do
 		
 				} else {
 		
 				}
-		
 				break;
-		
 			case STATE_RECIPEGENERATORINITINTERNALBEHAVIORHIGHAMOUNT:
-		
-				if (
-		
-				Clock_getTime(
-		
+				if (Clock_getTime(
 						stateChart->recipeGeneratorInitInternalBehaviorLoadClockRecipeGeneratorInitInternalBehaviorClock)
+						>= 2 * 1000.0
 		
-				>= 2 * 1.0
-		
-				) {
+						) {
 		
 					// execute exit actions
-		
 					// nothing to do
 		
 					// Transition Effects (incl. clock resets)
 		
 					stateChart->amount = 1;
-		
 					;
 		
 					Clock_reset(
-		
 							stateChart->recipeGeneratorInitInternalBehaviorLoadClockRecipeGeneratorInitInternalBehaviorClock);
 		
 					// nothing to do			
 		
 					//release all created received events
-		
 					//release all created sent events
-		
 					// change the state
-		
 					stateChart->currentStateOfRecipeGeneratorInitInternalBehavior =
-		
-					STATE_RECIPEGENERATORINITINTERNALBEHAVIORSMALLAMOUNT;
-		
+							STATE_RECIPEGENERATORINITINTERNALBEHAVIORSMALLAMOUNT;
 		#ifdef DEBUG
-		
 					printDebugInformation("currentStateOfRecipeGeneratorInitInternalBehavior switched state to STATE_RECIPEGENERATORINITINTERNALBEHAVIORSMALLAMOUNT" );
-		
 		#endif		
 		
 					// execute entry actions
-		
 					// nothing to do
 		
 				} else {
 		
 				}
-		
 				break;
-		
 			default:
-		
 				break;
-		
 			}
-		
 			stateChart->RecipeGeneratorInitInternalBehavior_isExecutable = false;
-		
 		}
 		
 		void RecipeGeneratorReciepeGeneratorStateChart_processStep(
@@ -314,6 +246,19 @@
 		}
 		
 		
+		void RecipeGeneratorProvideOrderReciepeSenderStateChart_exit(
+				RecipeGeneratorReciepeGeneratorStateChart* stateChart) {
+			switch (stateChart->currentStateOfRecipeGeneratorProvideOrderReciepeSender) {
+			case STATE_RECIPEGENERATORPROVIDEORDERINIT:
+				// nothing to do
+		
+				break;
+			default:
+				break;
+			}
+			stateChart->currentStateOfRecipeGeneratorProvideOrderReciepeSender =
+					RECIPEGENERATORRECIEPEGENERATOR_INACTIVE;
+		}
 		void RecipeGeneratorInitInternalBehaviorStateChart_exit(
 				RecipeGeneratorReciepeGeneratorStateChart* stateChart) {
 			switch (stateChart->currentStateOfRecipeGeneratorInitInternalBehavior) {
@@ -331,27 +276,14 @@
 			stateChart->currentStateOfRecipeGeneratorInitInternalBehavior =
 					RECIPEGENERATORRECIEPEGENERATOR_INACTIVE;
 		}
-		void RecipeGeneratorProvideOrderReciepeSenderStateChart_exit(
-				RecipeGeneratorReciepeGeneratorStateChart* stateChart) {
-			switch (stateChart->currentStateOfRecipeGeneratorProvideOrderReciepeSender) {
-			case STATE_RECIPEGENERATORPROVIDEORDERINIT:
-				// nothing to do
-		
-				break;
-			default:
-				break;
-			}
-			stateChart->currentStateOfRecipeGeneratorProvideOrderReciepeSender =
-					RECIPEGENERATORRECIEPEGENERATOR_INACTIVE;
-		}
 				
 			
 		bool_t RecipeGeneratorReciepeGeneratorStateChart_isInState(
 				RecipeGeneratorReciepeGeneratorStateChart* stateChart,
 				RecipeGeneratorReciepeGeneratorState state) {
-			return (stateChart->currentStateOfRecipeGeneratorInitInternalBehavior
+			return (stateChart->currentStateOfRecipeGeneratorProvideOrderReciepeSender
 					== state
-					|| stateChart->currentStateOfRecipeGeneratorProvideOrderReciepeSender
+					|| stateChart->currentStateOfRecipeGeneratorInitInternalBehavior
 							== state);
 		
 		}

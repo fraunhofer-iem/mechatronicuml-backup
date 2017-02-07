@@ -61,30 +61,30 @@
           <embeddedStatechart xmi:id="_FWX-oNxtEeW-N_z6XJQq2w" name="internalBehavior">
             <transitions xmi:id="_NrmgMNyZEeW-N_z6XJQq2w" priority="1" target="_L4XoANyZEeW-N_z6XJQq2w" source="_FWX-odxtEeW-N_z6XJQq2w" clockResets="_fslZYNyZEeW-N_z6XJQq2w">
               <clockConstraints xmi:id="_opCXANyZEeW-N_z6XJQq2w" clock="_fslZYNyZEeW-N_z6XJQq2w" operator="GREATER_OR_EQUAL">
-                <bound xmi:id="_piZn8NyZEeW-N_z6XJQq2w">
+                <bound xmi:id="_piZn8NyZEeW-N_z6XJQq2w" unit="SECONDS">
                   <value xsi:type="common:LiteralExpression" xmi:id="_qvXxYNyZEeW-N_z6XJQq2w" value="5"/>
                 </bound>
               </clockConstraints>
-              <action xmi:id="_YM7J4NyZEeW-N_z6XJQq2w" name="setHighAmount">
-                <expressions xsi:type="actionlanguage:Block" xmi:id="_bxGbQNyZEeW-N_z6XJQq2w">
-                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_bxGbQdyZEeW-N_z6XJQq2w" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="common:LiteralExpression" xmi:id="_bxGbQtyZEeW-N_z6XJQq2w" value="2"/>
-                    <lhs_typedNamedElementExpression xmi:id="_bxGbQ9yZEeW-N_z6XJQq2w" typedNamedElement="_CY5c4NyZEeW-N_z6XJQq2w"/>
+              <action xmi:id="_YM7J4NyZEeW-N_z6XJQq2w" name="amount := 2 ;">
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_qzmr0O0yEeaKUeHUkq3RGQ">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_qzmr0e0yEeaKUeHUkq3RGQ" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="common:LiteralExpression" xmi:id="_qzmr0u0yEeaKUeHUkq3RGQ" value="2"/>
+                    <lhs_typedNamedElementExpression xmi:id="_qzmr0-0yEeaKUeHUkq3RGQ" typedNamedElement="_CY5c4NyZEeW-N_z6XJQq2w"/>
                   </expressions>
                 </expressions>
               </action>
             </transitions>
             <transitions xmi:id="_QbktcNyZEeW-N_z6XJQq2w" priority="1" target="_FWX-odxtEeW-N_z6XJQq2w" source="_L4XoANyZEeW-N_z6XJQq2w" clockResets="_fslZYNyZEeW-N_z6XJQq2w">
               <clockConstraints xmi:id="_sOYtENyZEeW-N_z6XJQq2w" clock="_fslZYNyZEeW-N_z6XJQq2w" operator="GREATER_OR_EQUAL">
-                <bound xmi:id="_tDoTANyZEeW-N_z6XJQq2w">
+                <bound xmi:id="_tDoTANyZEeW-N_z6XJQq2w" unit="SECONDS">
                   <value xsi:type="common:LiteralExpression" xmi:id="_tokzINyZEeW-N_z6XJQq2w" value="2"/>
                 </bound>
               </clockConstraints>
-              <action xmi:id="_ROL2INyZEeW-N_z6XJQq2w" name="setSmallAmount">
-                <expressions xsi:type="actionlanguage:Block" xmi:id="_Xlc6MNyZEeW-N_z6XJQq2w">
-                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_Xlc6MdyZEeW-N_z6XJQq2w" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="common:LiteralExpression" xmi:id="_Xlc6MtyZEeW-N_z6XJQq2w" value="1"/>
-                    <lhs_typedNamedElementExpression xmi:id="_Xlc6M9yZEeW-N_z6XJQq2w" typedNamedElement="_CY5c4NyZEeW-N_z6XJQq2w"/>
+              <action xmi:id="_ROL2INyZEeW-N_z6XJQq2w" name="amount := 1 ;">
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_o33X4O0yEeaKUeHUkq3RGQ">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_o33X4e0yEeaKUeHUkq3RGQ" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="common:LiteralExpression" xmi:id="_o33X4u0yEeaKUeHUkq3RGQ" value="1"/>
+                    <lhs_typedNamedElementExpression xmi:id="_o33X4-0yEeaKUeHUkq3RGQ" typedNamedElement="_CY5c4NyZEeW-N_z6XJQq2w"/>
                   </expressions>
                 </expressions>
               </action>
@@ -138,8 +138,8 @@
             </transitions>
             <transitions xmi:id="_1BN1UOVEEeWTk8L1nP577g" priority="1" target="_-B_HsOVDEeWIXPb_21drrw" source="_pHVnIdyaEeW-N_z6XJQq2w">
               <action xmi:id="_DGIhkOVFEeWTk8L1nP577g" name="createDatabase">
-                <expressions xsi:type="actionlanguage:Block" xmi:id="_GG1ScOVFEeWTk8L1nP577g">
-                  <expressions xsi:type="actionlanguage:OperationCall" xmi:id="_GG1SceVFEeWTk8L1nP577g" operation="_oqnyUORjEeW6HsQsL2ADFA"/>
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_F61X0O0zEeaKUeHUkq3RGQ">
+                  <expressions xsi:type="actionlanguage:OperationCall" xmi:id="_F61X0e0zEeaKUeHUkq3RGQ" operation="_oqnyUORjEeW6HsQsL2ADFA"/>
                 </expressions>
               </action>
             </transitions>
@@ -380,10 +380,10 @@
             </transitions>
             <transitions xmi:id="_MpP4cOa3EeWyd6JHVas6Kw" priority="1" target="_JvqcMOa3EeWyd6JHVas6Kw" source="_sp6L0OanEeWyd6JHVas6Kw">
               <action xmi:id="_alz58Oa3EeWyd6JHVas6Kw" name="getID">
-                <expressions xsi:type="actionlanguage:Block" xmi:id="_kZWZEOeSEeWyd6JHVas6Kw">
-                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_kZWZEeeSEeWyd6JHVas6Kw" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="actionlanguage:OperationCall" xmi:id="_kZWZEueSEeWyd6JHVas6Kw" operation="_ExXWMOa3EeWyd6JHVas6Kw"/>
-                    <lhs_typedNamedElementExpression xmi:id="_kZWZE-eSEeWyd6JHVas6Kw" typedNamedElement="_UXWMkOa3EeWyd6JHVas6Kw"/>
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_zWnuYO01EeaKUeHUkq3RGQ">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_zWnuYe01EeaKUeHUkq3RGQ" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="actionlanguage:OperationCall" xmi:id="_zWnuYu01EeaKUeHUkq3RGQ" operation="_ExXWMOa3EeWyd6JHVas6Kw"/>
+                    <lhs_typedNamedElementExpression xmi:id="_zWnuY-01EeaKUeHUkq3RGQ" typedNamedElement="_UXWMkOa3EeWyd6JHVas6Kw"/>
                   </expressions>
                 </expressions>
               </action>
@@ -422,14 +422,14 @@
               </action>
             </transitions>
             <transitions xmi:id="_3Z8-QOa4EeWyd6JHVas6Kw" priority="2" target="_1KakkOa4EeWyd6JHVas6Kw" source="_LXECYOa4EeWyd6JHVas6Kw" clockResets="_d3m6gOa6EeWyd6JHVas6Kw">
-              <guard xsi:type="common:LogicalExpression" xmi:id="_MwRccOqnEeWdNs1s2t99bw">
-                <leftExpression xsi:type="common:ComparisonExpression" xmi:id="_MwRcceqnEeWdNs1s2t99bw" operator="EQUAL">
-                  <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_MwRccuqnEeWdNs1s2t99bw" typedNamedElement="__StDMOa4EeWyd6JHVas6Kw"/>
-                  <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_MwRcc-qnEeWdNs1s2t99bw" typedNamedElement="_UXWMkOa3EeWyd6JHVas6Kw"/>
+              <guard xsi:type="common:LogicalExpression" xmi:id="_sCoG4O02EeaKUeHUkq3RGQ">
+                <leftExpression xsi:type="common:ComparisonExpression" xmi:id="_sCoG4e02EeaKUeHUkq3RGQ" operator="EQUAL">
+                  <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_sCoG4u02EeaKUeHUkq3RGQ" typedNamedElement="__StDMOa4EeWyd6JHVas6Kw"/>
+                  <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_sCoG4-02EeaKUeHUkq3RGQ" typedNamedElement="_UXWMkOa3EeWyd6JHVas6Kw"/>
                 </leftExpression>
-                <rightExpression xsi:type="common:ComparisonExpression" xmi:id="_MwRcdOqnEeWdNs1s2t99bw" operator="GREATER">
-                  <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_MwRcdeqnEeWdNs1s2t99bw" typedNamedElement="_W6zLUOa4EeWyd6JHVas6Kw"/>
-                  <rightExpression xsi:type="common:LiteralExpression" xmi:id="_MwRcduqnEeWdNs1s2t99bw" value="0"/>
+                <rightExpression xsi:type="common:ComparisonExpression" xmi:id="_sCoG5O02EeaKUeHUkq3RGQ" operator="GREATER_OR_EQUAL">
+                  <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_sCoG5e02EeaKUeHUkq3RGQ" typedNamedElement="_W6zLUOa4EeWyd6JHVas6Kw"/>
+                  <rightExpression xsi:type="common:LiteralExpression" xmi:id="_sCoG5u02EeaKUeHUkq3RGQ" value="0"/>
                 </rightExpression>
               </guard>
             </transitions>
