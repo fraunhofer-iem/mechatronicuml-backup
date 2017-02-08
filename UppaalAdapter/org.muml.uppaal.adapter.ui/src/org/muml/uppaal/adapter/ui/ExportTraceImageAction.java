@@ -27,6 +27,7 @@ public class ExportTraceImageAction extends AbstractUppaalAction {
 		if (!UppaalAdapterLogPlugin.getDefault().shouldDoStatisticalEvaluation()) {
 			ContainerSelectionDialog containerDialog = new ContainerSelectionDialog(shell, null, true,
 					"Select the container for the trace image file.");
+			containerDialog.open();
 			Object[] result = containerDialog.getResult();
 			if (containerDialog.getReturnCode() == Window.CANCEL) {
 				return CommandResult.newCancelledCommandResult();
@@ -35,7 +36,6 @@ public class ExportTraceImageAction extends AbstractUppaalAction {
 				IPath targetPath = (IPath) result[0];
 				resource = ResourcesPlugin.getWorkspace().getRoot().findMember(targetPath);
 			}
-			containerDialog.open();
 		}
 
 		UppaalVerifyForTraceProvider provider = new UppaalVerifyForTraceProvider();
