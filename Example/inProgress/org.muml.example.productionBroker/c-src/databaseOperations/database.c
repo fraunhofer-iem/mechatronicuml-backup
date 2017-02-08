@@ -43,11 +43,14 @@
 #include "unqlite.h"
 
 /* function declaration */
-int insertOrder(unqlite *pDb, int orderID, int incredientID, int amount);
-int deleteOrder(unqlite *pDb, int orderID);
-int getOrderIncredientID(unqlite *pDb, int orderID);
-int getOrderAmount(unqlite *pDb, int orderID);
+int createDatabase();
+int insertOrder(int orderID, int incredientID, int amount);
+int deleteOrder(int orderID);
+int getOrderIncredientID(int orderID);
+int getOrderAmount(int orderID);
 
+/* Pointer to data base file */
+unqlite *pDb;
 
 
 /*
@@ -80,12 +83,69 @@ static void Fatal(unqlite *pDb, const char *zMsg)
 	/* Exit immediately */
 	exit(0);
 }
+
+int main() {
+
+   printf("Trying to create database... \n");
+   createDatabase();
+
+   printf("Trying to store an order...\n");
+   int rc= insertOrder(0, 42, 1);
+   if (rc!=0){
+	   unqlite_rollback(pDb);
+	   printf("Rolling back. Return code:%d \n", rc);
+   }
+   else{
+	   unqlite_commit(pDb);
+	   printf("Committed. \n");
+   }
+
+   printf("Trying to get the order Incredient ID...\n");
+   int id = getOrderIncredientID(0);
+   printf("Order incredientID should be 42, and is %d\n",id);
+
+   printf("Trying to get the order Incredient ID...\n");
+   int amount = getOrderAmount(0);
+   printf("Order amount should be 1, and is %d\n",amount);
+
+   printf("Trying to delete an order...\n");
+   rc = deleteOrder(0);
+   if (rc!=0){
+	   unqlite_rollback(pDb);
+	   printf("Rolling back. Return code:%d \n", rc);
+   }
+   else{
+	   unqlite_commit(pDb);
+	   printf("Committed. \n");
+   }
+
+   printf("Closing database...\n");
+   return 0;
+}
+
 /* Forward declaration: Data consumer callback */
 static int DataConsumerCallback(const void *pData, unsigned int nDatalen,
 		void *pUserData /* Unused */);
 
 
-int insertOrder(unqlite *pDb, int orderID, int incredientID, int amount)
+/**
+ *  Opens a database and creates an new one, if no 'test.db' file is existent
+ **/
+int createDatabase()
+{
+	int rc;
+
+	 rc = unqlite_open(&pDb,"test.db",UNQLITE_OPEN_CREATE);
+	 if( rc != UNQLITE_OK )
+	 {
+		 printf("Database could not be created. Return code: %d\n",rc);
+		 return rc;
+	 }
+	 printf("Database successfully created. \n");
+	 return 0;
+}
+
+int insertOrder(int orderID, int incredientID, int amount)
 {
 	int rc;
 
@@ -101,12 +161,12 @@ int insertOrder(unqlite *pDb, int orderID, int incredientID, int amount)
 	sprintf(orderIDamountBuffer, "orderID:%d:amount", orderID);
 	sprintf(amountBuffer, "amount:%d", amount);
 
-	/*Store some records*/
+
 	rc = unqlite_kv_store(pDb, orderIDincredientBuffer, -1, incredientBuffer,
-			sizeof(incredientBuffer));  // test => 'Hello World'
+			sizeof(incredientBuffer));
 	if (rc != UNQLITE_OK)
 	{
-		// Insertion fail, extract database error log and exit
+
 		return rc;
 	}
 	else
@@ -114,16 +174,16 @@ int insertOrder(unqlite *pDb, int orderID, int incredientID, int amount)
 		printf("Insert Successful IncredientBuffer:%s\n",orderIDincredientBuffer);
 	}
 	rc = unqlite_kv_store(pDb, orderIDamountBuffer, -1, amountBuffer,
-			sizeof(amountBuffer));  // test => 'Hello World'
+			sizeof(amountBuffer));
 	if (rc != UNQLITE_OK)
 	{
-		// Insertion fail, extract database error log and exit
+
 		return rc;
 	}
 	return rc;
 }
 
-int defineProductionStationForOrder(unqlite *pDb, int orderID, int productionStationID)
+int defineProductionStationForOrder(int orderID, int productionStationID)
 {
 	int rc;
 
@@ -150,7 +210,7 @@ int defineProductionStationForOrder(unqlite *pDb, int orderID, int productionSta
 	return rc;
 }
 
-int deleteOrder(unqlite *pDb, int orderID)
+int deleteOrder(int orderID)
 {
 	//TODO ABfangen, wenn es die ORDERID NICHT GIBT
 	int rc;
@@ -166,12 +226,13 @@ int deleteOrder(unqlite *pDb, int orderID)
 	sprintf(orderIDamountBuffer, "orderID:%d:amount", orderID);
 	sprintf(orderIDProductionStationBuffer, "orderID:%d:productionStation", orderID);
 
-	/*Delete some records*/
+
 	rc = unqlite_kv_delete(pDb, orderIDincredientBuffer, -1);
 	if (rc != UNQLITE_OK)
 	{
 		// Insertion fail, extract database error log and exit
 		printf("Delete Error for %s\n",orderIDincredientBuffer);
+		printf("Return code: %d\n",rc);
 		return rc;
 	}
 
@@ -179,8 +240,7 @@ int deleteOrder(unqlite *pDb, int orderID)
 	if (rc != UNQLITE_OK)
 	{
 		printf("Delete Error for %s\n",orderIDamountBuffer);
-
-		// Insertion fail, extract database error log and exit
+		printf("Return code: %d\n",rc);
 		return rc;
 	}
 
@@ -188,15 +248,21 @@ int deleteOrder(unqlite *pDb, int orderID)
 	if (rc != UNQLITE_OK)
 	{
 		printf("Delete Error for %s\n",orderIDProductionStationBuffer);
-
-		// Insertion fail, extract database error log and exit
-		return rc;
+		if (rc == -6)
+		{
+			printf("No production station for Order %d \n", orderID);
+		}
+		else
+		{
+			printf("Return code: %d\n",rc);
+			//return rc;
+		}
 	}
-	return rc;
+	return UNQLITE_OK;
 
 }
 
-int getOrderIncredientID(unqlite *pDb, int orderID)
+int getOrderIncredientID(int orderID)
 {
 	//TODO ABfangen, wenn es die ORDERID NICHT GIBT
 
@@ -206,29 +272,28 @@ int getOrderIncredientID(unqlite *pDb, int orderID)
 
 	char orderIDincredientBuffer[sizeof("orderID:") + sizeof(int)
 			+ sizeof(":incredient")];
-	//char orderIDamountBuffer[sizeof("orderID:")+sizeof(int)+sizeof(":amount")];
 
 	sprintf(orderIDincredientBuffer, "orderID:%d:incredient", orderID);
-//	sprintf(orderIDamountBuffer, "orderID:%d:amount", orderID);
 
-	/*Get some records*/
+
 	rc = unqlite_kv_fetch(pDb, orderIDincredientBuffer, -1, NULL, &nBytes);
 	if (rc != UNQLITE_OK)
 	{
-		// Insertion fail, extract database error log and exit
-		printf("Fehlerhaftes Lesen");
+		// Insertion failed
+		printf("Reading failed. \n");
+		printf("Return code: %d\n",rc);
 		return rc;
 	}
 	else
 	{
-		printf("Lesen sollte geklappt haben");
+		printf("Successfully read from database. \n");
 	}
 
 	//Allocate a buffer big enough to hold the record content
 	zBuf = (char *) malloc(nBytes);
 	if (zBuf == NULL)
 	{
-		printf("Fehlerhaftes Lesen");
+		printf("Reading failed, because buffer for records could not be allocated. \n");
 	}
 	//Read Database and Copy record content in our buffer
 	rc = unqlite_kv_fetch(pDb, orderIDincredientBuffer, -1, zBuf, &nBytes);
@@ -246,7 +311,7 @@ int getOrderIncredientID(unqlite *pDb, int orderID)
 }
 
 
-int getOrderAmount(unqlite *pDb, int orderID)
+int getOrderAmount(int orderID)
 {
 	//TODO ABfangen, wenn es die ORDERID NICHT GIBT
 	int rc;
