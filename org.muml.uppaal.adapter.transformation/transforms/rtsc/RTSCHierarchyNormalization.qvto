@@ -374,7 +374,7 @@ transformation RTSCHierarchyNormalization(in input:rtsc, out output:rtsc);
 			-- create first edge of the chain
 			-- map trigger message event, trigger variable comparison, clock constraints, and guards
 			
-			var src : State = root.state.resolveoneIn(OclAny::transform, State);
+			var src : State = root.state.resolveoneIn(State::transform, State);
 			var trg : State = self.map createExitAuxState();
 			
 			assert fatal (src != null) with log('Source state must be specified.');
@@ -1136,7 +1136,7 @@ transformation RTSCHierarchyNormalization(in input:rtsc, out output:rtsc);
 	mapping EntryPoint :: createAuxTransition() : Transition {
 	
 		source := self.resolveoneIn(EntryPoint::createAuxState, State);
-		target := self.state.resolveoneIn(OclAny::transform, State);
+		target := self.state.resolveoneIn(State::transform, State);
 		
 		assert fatal (source != null) with log('Source state must be specified.');
 		assert fatal (target != null) with log('Target state must be specified.');

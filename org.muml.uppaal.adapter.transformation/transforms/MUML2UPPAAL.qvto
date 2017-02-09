@@ -343,10 +343,12 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		return new LiteralExpression(false);
 	}
 	
-//	query RoleConnector :: getMinDelay() : Expression {
-//		// TODO: if we support variables for protocols, replace the 'null' values below by appropriate IDs
+	query RoleConnector :: getMinDelay() : Expression {
+		// TODO: if we support variables for protocols, replace the 'null' values below by appropriate IDs
 //		return self.connectorQualityOfServiceAssumptions.minMessageDelay.mapTimeValue2Expression(null,null,null);
-//	}	
+
+		return self.getMaxDelay();
+	}	
 	
 	query RoleConnector :: getMaxDelay() : Expression {
 		// TODO: if we support variables for protocols, replace the 'null' values below by appropriate IDs

@@ -3,6 +3,7 @@ import ModelcopyLibrary;
 import transforms.lib.ExternalizedStrings;
 import transforms.CloneModel;
 
+
 modeltype muml uses 'http://www.muml.org/pim/1.0.0';
 modeltype muml_rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
 modeltype muml_connector uses pim::connector('http://www.muml.org/pim/1.0.0');
