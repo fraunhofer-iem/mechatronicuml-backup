@@ -39,6 +39,7 @@
  */
 #include <stdio.h>  /* puts() */
 #include <stdlib.h> /* exit() */
+#include <string.h> /* strchr(), strlen(), .. */
 /* Make sure this header file is available.*/
 #include "unqlite.h"
 
@@ -56,7 +57,7 @@ unqlite *pDb;
 /*
  * Extract the database error log and exit.
  */
-static void Fatal(unqlite *pDb, const char *zMsg)
+static void extractLogsAndExit()
 {
 	if (pDb)
 	{
@@ -71,13 +72,6 @@ static void Fatal(unqlite *pDb, const char *zMsg)
 			puts(zErr); /* Always null termniated */
 		}
 	}
-	else
-	{
-		if (zMsg)
-		{
-			puts(zMsg);
-		}
-	}
 	/* Manually shutdown the library */
 	unqlite_lib_shutdown();
 	/* Exit immediately */
@@ -90,15 +84,7 @@ int main() {
    createDatabase();
 
    printf("Trying to store an order...\n");
-   int rc= insertOrder(0, 42, 1);
-   if (rc!=0){
-	   unqlite_rollback(pDb);
-	   printf("Rolling back. Return code:%d \n", rc);
-   }
-   else{
-	   unqlite_commit(pDb);
-	   printf("Committed. \n");
-   }
+   insertOrder(0, 42, 1);
 
    printf("Trying to get the order Incredient ID...\n");
    int id = getOrderIncredientID(0);
@@ -109,15 +95,7 @@ int main() {
    printf("Order amount should be 1, and is %d\n",amount);
 
    printf("Trying to delete an order...\n");
-   rc = deleteOrder(0);
-   if (rc!=0){
-	   unqlite_rollback(pDb);
-	   printf("Rolling back. Return code:%d \n", rc);
-   }
-   else{
-	   unqlite_commit(pDb);
-	   printf("Committed. \n");
-   }
+   deleteOrder(0);
 
    printf("Closing database...\n");
    return 0;
@@ -135,7 +113,7 @@ int createDatabase()
 {
 	int rc;
 
-	 rc = unqlite_open(&pDb,"test.db",UNQLITE_OPEN_CREATE);
+	 rc = unqlite_open(&pDb,"test.db",UNQLITE_OPEN_TEMP_DB);
 	 if( rc != UNQLITE_OK )
 	 {
 		 printf("Database could not be created. Return code: %d\n",rc);
@@ -145,9 +123,18 @@ int createDatabase()
 	 return 0;
 }
 
+/**
+ * Inserts and order with its ID, ingredient and amount.
+ * If any insertion fails, the entire transaction is
+ * rolled back.
+ * If all insertions are successful, the transaction is automatically
+ * committed.
+ * Keys are in the format "orderID:42:incredient", respectively logic
+ * for logic.
+ */
 int insertOrder(int orderID, int incredientID, int amount)
 {
-	int rc;
+	int rc; //return code
 
 	char orderIDincredientBuffer[sizeof("orderID:") + sizeof(int)
 			+ sizeof(":incredient")];
@@ -161,25 +148,30 @@ int insertOrder(int orderID, int incredientID, int amount)
 	sprintf(orderIDamountBuffer, "orderID:%d:amount", orderID);
 	sprintf(amountBuffer, "amount:%d", amount);
 
-
+	//Insert order with incredient
 	rc = unqlite_kv_store(pDb, orderIDincredientBuffer, -1, incredientBuffer,
 			sizeof(incredientBuffer));
 	if (rc != UNQLITE_OK)
 	{
-
+		unqlite_rollback(pDb);
+		printf("Error while inserting IncredientBuffer:%s\n",orderIDincredientBuffer);
 		return rc;
 	}
 	else
 	{
-		printf("Insert Successful IncredientBuffer:%s\n",orderIDincredientBuffer);
+		printf("Successfully inserted IncredientBuffer:%s\n",orderIDincredientBuffer);
 	}
+	//Insert order with amount
 	rc = unqlite_kv_store(pDb, orderIDamountBuffer, -1, amountBuffer,
 			sizeof(amountBuffer));
 	if (rc != UNQLITE_OK)
 	{
-
+		unqlite_rollback(pDb);
+		printf("Error while inserting AmountBuffer:%s\n",orderIDamountBuffer);
 		return rc;
 	}
+	unqlite_commit(pDb);
+	printf("Successfully inserted AmountBuffer:%s\n",orderIDamountBuffer);
 	return rc;
 }
 
