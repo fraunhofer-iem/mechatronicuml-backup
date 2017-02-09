@@ -9,7 +9,7 @@ modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 modeltype muml_protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
 modeltype storydriven uses 'http://www.muml.org/core/1.0.0';
 
-transformation NameNormalization(in input:muml_protocol, out output:muml_protocol){ //extends MUML2MUML;
+transformation NameNormalization(in input:muml_protocol, out output:muml_protocol) extends ModelcopyLibrary;
 
 
 main() {
@@ -30,4 +30,4 @@ helper addPrefix(inout theNamedElement : NamedElement){
 helper addSuffix(inout theNamedElement : NamedElement) {
 	theNamedElement.name := theNamedElement.name.addSuffixNumberUnderline();
 }
-}
+

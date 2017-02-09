@@ -22,7 +22,7 @@ modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 //Replaces all forall/exists quantifiers with equivalent and/or expressions (i.e. after this transformation, no forall/exists/BoundVariables will be present)
 //Also filters non-enabled repositories
 //the input parameter is inout - however, no persistent changes are done on input. TODO it _should_ be inout, but isn't right now to avoid pre-m7 qvt-o bug
-transformation MTCTLQuantifierNormalization(in input:muml_cic, out output:muml_cic){ //extends library MUML2MUML;
+transformation MTCTLQuantifierNormalization(in input:muml_cic, out output:muml_cic) extends library ModelcopyLibrary;
 
 main() {
 	input.objects()[RootNode]->map transform();
@@ -252,5 +252,4 @@ mapping QuantifierExpr::QuantifierExpr2RolledOut() : Expression {
 helper Expression::replaceWith(newExpr : Expression) {
 	var containingFeature := self.oclAsType(EObject).eContainingFeature();
 	self.oclAsType(EObject).eContainer().eSet(containingFeature, newExpr.deepclone().oclAsType(EObject));
-}
 }

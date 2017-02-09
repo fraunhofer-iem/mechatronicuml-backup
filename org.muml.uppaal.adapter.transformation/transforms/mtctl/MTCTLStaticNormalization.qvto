@@ -28,11 +28,11 @@ main() {
 
 //Overridden from MUML2MUML
 //Property2Property
-//mapping mtctl::Property :: transform() : Property {
-//	comment := self.comment;
-//	
-//	expression := self.expression.map transform().oclAsType(Expression);
-//}
+mapping mtctl::Property :: transform() : Property {
+	comment := self.comment;
+	
+	expression := self.expression.map transform().oclAsType(Expression);
+}
 
 //Overridden from MUML2MUML: check if we should apply one of our mappings here, otherwise fall back to a simple copying map
 //mapping mtctl::Expression :: Expression2Expression() : mtctl::Expression disjuncts 
@@ -319,8 +319,7 @@ mapping TargetStateExpr :: transform() : mtctl::Expression {
 
 
 //Normalizes "true and null" expressions (only called when one operand is null)
-mapping AndExpr::BinaryBoolOp2SingleOpd() : Expression 
-when {self.leftOpd.evaluateToBoolean()=true or self.rightOpd.evaluateToBoolean()=true} { 
+mapping AndExpr::BinaryBoolOp2SingleOpd() : Expression when {self.leftOpd.evaluateToBoolean()=true or self.rightOpd.evaluateToBoolean()=true} { 
 	init {
 		if (self.leftOpd.evaluateToBoolean()=true) then 
 			result := self.rightOpd.map transform().oclAsType(Expression) 
@@ -331,8 +330,7 @@ when {self.leftOpd.evaluateToBoolean()=true or self.rightOpd.evaluateToBoolean()
 	}
 }
 //Normalizes "false or null" expressions (only called when one operand is null)
-mapping OrExpr::BinaryBoolOp2SingleOpd() : Expression 
-when {self.leftOpd.evaluateToBoolean()=false or self.rightOpd.evaluateToBoolean()=false}{ 
+mapping OrExpr::BinaryBoolOp2SingleOpd() : Expression when {self.leftOpd.evaluateToBoolean()=false or self.rightOpd.evaluateToBoolean()=false}{ 
 	init {
 		if (self.leftOpd.evaluateToBoolean()=false) then 
 			result := self.rightOpd.map transform().oclAsType(Expression) 
@@ -343,7 +341,7 @@ when {self.leftOpd.evaluateToBoolean()=false or self.rightOpd.evaluateToBoolean(
 	}
 }
 //Normalizes "true implies null" expressions (only called when one operand is null)
-mapping ImplyExpr::BinaryBoolOp2SingleOpd() : Expression { 
+mapping ImplyExpr::BinaryBoolOp2SingleOpd() : Expression when {self.leftOpd.evaluateToBoolean()=true} { 
 	init {
 		result:=self.rightOpd.map transform().oclAsType(Expression)
 	}
@@ -413,12 +411,12 @@ query ComparisonExpr::evaluateStaticComparison() : Boolean {
 	return null;
 }
 
-mapping SourceStateExpr::SourceStateExpr2MumlElemExpr() : MumlElemExpr {
+mapping SourceStateExpr::SourceStateExpr2MumlElemExpr() : MumlElemExpr when {self.transition.getStaticValue() != null} {
 	elem := self.transition.getStaticValue().oclAsType(Transition).source.map transform().oclAsType(EObject);
 	instance := self.transition.getStaticInstance().map transform().oclAsType(EObject);
 }
 
-mapping TargetStateExpr::TargetStateExpr2MumlElemExpr() : MumlElemExpr {
+mapping TargetStateExpr::TargetStateExpr2MumlElemExpr() : MumlElemExpr when {self.transition.getStaticValue() != null} {
 	elem := self.transition.getStaticValue().oclAsType(Transition).target.map transform().oclAsType(EObject);
 	instance := self.transition.getStaticInstance().map transform().oclAsType(EObject);
 }

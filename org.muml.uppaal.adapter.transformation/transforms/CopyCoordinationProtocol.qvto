@@ -5,9 +5,8 @@ modeltype modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 modeltype muml_protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
 
-transformation CopyCoordinationProtocol(in input:muml_protocol, out output:muml_protocol){ //extends MUML2MUML;
+transformation CopyCoordinationProtocol(in input:muml_protocol, out output:muml_protocol) extends ModelcopyLibrary;
 
 main() {
 	input.objects()[RootNode]->map transform().oclAsType(RootNode);
-}
 }
