@@ -167,7 +167,7 @@
                 <enclosedExpression xsi:type="common:LiteralExpression" xmi:id="_VusV0ea-EeWyd6JHVas6Kw" value="1"/>
               </initializeExpression>
             </variables>
-            <variables xmi:id="_V-9mcOa-EeWyd6JHVas6Kw" name="provideIncredientID">
+            <variables xmi:id="_V-9mcOa-EeWyd6JHVas6Kw" name="provideIngredientID">
               <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
               <initializeExpression xsi:type="common:UnaryExpression" xmi:id="_YFvswOa-EeWyd6JHVas6Kw" operator="MINUS">
                 <enclosedExpression xsi:type="common:LiteralExpression" xmi:id="_YFvswea-EeWyd6JHVas6Kw" value="1"/>
@@ -346,7 +346,7 @@
             <variables xmi:id="__StDMOa4EeWyd6JHVas6Kw" name="incomingOrderPsID">
               <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
             </variables>
-            <variables xmi:id="_H8twgOa6EeWyd6JHVas6Kw" name="incredientID">
+            <variables xmi:id="_H8twgOa6EeWyd6JHVas6Kw" name="ingredientID">
               <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
               <initializeExpression xsi:type="common:UnaryExpression" xmi:id="_JfM28Oa6EeWyd6JHVas6Kw" operator="MINUS">
                 <enclosedExpression xsi:type="common:LiteralExpression" xmi:id="_JfM28ea6EeWyd6JHVas6Kw" value="1"/>
@@ -537,7 +537,7 @@
         <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         <initializeExpression xsi:type="common:LiteralExpression" xmi:id="_bNWLEOxJEeWTKqLnMSJAUw" value="2"/>
       </variables>
-      <variables xmi:id="_kmnkMOwgEeWTKqLnMSJAUw" name="provideIncredientID">
+      <variables xmi:id="_kmnkMOwgEeWTKqLnMSJAUw" name="provideIngredientID">
         <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         <initializeExpression xsi:type="common:UnaryExpression" xmi:id="_mU1ZgOwgEeWTKqLnMSJAUw" operator="MINUS">
           <enclosedExpression xsi:type="common:LiteralExpression" xmi:id="_mU1ZgewgEeWTKqLnMSJAUw" value="1"/>
@@ -619,7 +619,7 @@
       <variables xmi:id="_UV0fJuw0EeWTKqLnMSJAUw" name="incomingOrderPsID">
         <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
       </variables>
-      <variables xmi:id="_UV0fJ-w0EeWTKqLnMSJAUw" name="incredientID">
+      <variables xmi:id="_UV0fJ-w0EeWTKqLnMSJAUw" name="ingredientID">
         <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         <initializeExpression xsi:type="common:UnaryExpression" xmi:id="_UV0fKOw0EeWTKqLnMSJAUw" operator="MINUS">
           <enclosedExpression xsi:type="common:LiteralExpression" xmi:id="_UV0fKew0EeWTKqLnMSJAUw" value="1"/>
@@ -938,7 +938,7 @@
         <parameters xmi:id="_UMyQcOa5EeWyd6JHVas6Kw" name="orderID">
           <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         </parameters>
-        <parameters xmi:id="_X-qmoOa5EeWyd6JHVas6Kw" name="incredientID">
+        <parameters xmi:id="_X-qmoOa5EeWyd6JHVas6Kw" name="ingredientID">
           <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         </parameters>
         <parameters xmi:id="_ZW9PQOa5EeWyd6JHVas6Kw" name="amount">
@@ -1059,7 +1059,7 @@
         <parameters xmi:id="_WB_qUORjEeW6HsQsL2ADFA" name="orderID">
           <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         </parameters>
-        <parameters xmi:id="_YnVU4ORjEeW6HsQsL2ADFA" name="incredientID">
+        <parameters xmi:id="_YnVU4ORjEeW6HsQsL2ADFA" name=" ingredientID : int32,">
           <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         </parameters>
         <parameters xmi:id="_aSJQ4ORjEeW6HsQsL2ADFA" name="amount">
@@ -1073,7 +1073,7 @@
         </parameters>
         <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
       </operations>
-      <operations xmi:id="_P9nGAORjEeW6HsQsL2ADFA" name="getOrderIncredientID">
+      <operations xmi:id="_P9nGAORjEeW6HsQsL2ADFA" name="getOrderIngredientID">
         <parameters xmi:id="_ivtTEORjEeW6HsQsL2ADFA" name="orderID">
           <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         </parameters>

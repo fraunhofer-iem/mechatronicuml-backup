@@ -45,9 +45,9 @@
 
 /* function declaration */
 int createDatabase();
-int insertOrder(int orderID, int incredientID, int amount);
+int insertOrder(int orderID, int ingredientID, int amount);
 int deleteOrder(int orderID);
-int getOrderIncredientID(int orderID);
+int getOrderIngredientID(int orderID);
 int getOrderAmount(int orderID);
 
 /* Pointer to data base file */
@@ -86,11 +86,11 @@ int main() {
    printf("Trying to store an order...\n");
    insertOrder(0, 42, 1);
 
-   printf("Trying to get the order Incredient ID...\n");
-   int id = getOrderIncredientID(0);
-   printf("Order incredientID should be 42, and is %d\n",id);
+   printf("Trying to get the order Ingredient ID...\n");
+   int id = getOrderIngredientID(0);
+   printf("Order ingredientID should be 42, and is %d\n",id);
 
-   printf("Trying to get the order Incredient ID...\n");
+   printf("Trying to get the order Ingredient ID...\n");
    int amount = getOrderAmount(0);
    printf("Order amount should be 1, and is %d\n",amount);
 
@@ -129,37 +129,37 @@ int createDatabase()
  * rolled back.
  * If all insertions are successful, the transaction is automatically
  * committed.
- * Keys are in the format "orderID:42:incredient", respectively logic
+ * Keys are in the format "orderID:42:ingredient", respectively logic
  * for logic.
  */
-int insertOrder(int orderID, int incredientID, int amount)
+int insertOrder(int orderID, int ingredientID, int amount)
 {
 	int rc; //return code
 
-	char orderIDincredientBuffer[sizeof("orderID:") + sizeof(int)
-			+ sizeof(":incredient")];
-	char incredientBuffer[sizeof("incredientID:") + sizeof(int)];
+	char orderIDingredientBuffer[sizeof("orderID:") + sizeof(int)
+			+ sizeof(":ingredient")];
+	char ingredientBuffer[sizeof("ingredientID:") + sizeof(int)];
 	char orderIDamountBuffer[sizeof("orderID:") + sizeof(int)
 			+ sizeof(":amount")];
 	char amountBuffer[sizeof("amount:") + sizeof(int)];
 
-	sprintf(orderIDincredientBuffer, "orderID:%d:incredient", orderID);
-	sprintf(incredientBuffer, "incredientID:%d", incredientID);
+	sprintf(orderIDingredientBuffer, "orderID:%d:ingredient", orderID);
+	sprintf(ingredientBuffer, "ingredientID:%d", ingredientID);
 	sprintf(orderIDamountBuffer, "orderID:%d:amount", orderID);
 	sprintf(amountBuffer, "amount:%d", amount);
 
-	//Insert order with incredient
-	rc = unqlite_kv_store(pDb, orderIDincredientBuffer, -1, incredientBuffer,
-			sizeof(incredientBuffer));
+	//Insert order with ingredient
+	rc = unqlite_kv_store(pDb, orderIDingredientBuffer, -1, ingredientBuffer,
+			sizeof(ingredientBuffer));
 	if (rc != UNQLITE_OK)
 	{
 		unqlite_rollback(pDb);
-		printf("Error while inserting IncredientBuffer:%s\n",orderIDincredientBuffer);
+		printf("Error while inserting ingredient: %s\n",orderIDingredientBuffer);
 		return rc;
 	}
 	else
 	{
-		printf("Successfully inserted IncredientBuffer:%s\n",orderIDincredientBuffer);
+		printf("Successfully inserted ingredient: %s\n",orderIDingredientBuffer);
 	}
 	//Insert order with amount
 	rc = unqlite_kv_store(pDb, orderIDamountBuffer, -1, amountBuffer,
@@ -167,14 +167,19 @@ int insertOrder(int orderID, int incredientID, int amount)
 	if (rc != UNQLITE_OK)
 	{
 		unqlite_rollback(pDb);
-		printf("Error while inserting AmountBuffer:%s\n",orderIDamountBuffer);
+		printf("Error while inserting amount: %s\n",orderIDamountBuffer);
 		return rc;
 	}
 	unqlite_commit(pDb);
-	printf("Successfully inserted AmountBuffer:%s\n",orderIDamountBuffer);
+	printf("Successfully inserted amount: %s\n",orderIDamountBuffer);
 	return rc;
 }
 
+
+/**
+ * Inserts key-value pair for orderId and productionStation.
+ * Rolls back transaction when insert fails.
+ */
 int defineProductionStationForOrder(int orderID, int productionStationID)
 {
 	int rc;
@@ -186,92 +191,102 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 	sprintf(orderIDProductionStationBuffer, "orderID:%d:productionStation", orderID);
 	sprintf(productionStationBuffer, "productionStationID:%d", productionStationID);
 
-	/*Store some records*/
 	rc = unqlite_kv_store(pDb, orderIDProductionStationBuffer, -1, productionStationBuffer,
-			sizeof(productionStationBuffer));  // test => 'Hello World'
+			sizeof(productionStationBuffer));
 	if (rc != UNQLITE_OK)
 	{
-		// Insertion fail, extract database error log and exit
+		unqlite_rollback(pDb);
+		printf("Error while inserting production station: %s\n",orderIDProductionStationBuffer);
 		return rc;
 	}
-	else
-	{
-		printf("Insert Successful %s\n",orderIDProductionStationBuffer);
-
-	}
+	unqlite_commit(pDb);
+	printf("Successfully inserted production station: %s\n",orderIDProductionStationBuffer);
 	return rc;
 }
 
+
+/**
+ * Deletes order including ingredient, amount and production station
+ */
 int deleteOrder(int orderID)
 {
-	//TODO ABfangen, wenn es die ORDERID NICHT GIBT
 	int rc;
 
-	char orderIDincredientBuffer[sizeof("orderID:") + sizeof(int)
-			+ sizeof(":incredient")];
-	char orderIDamountBuffer[sizeof("orderID:") + sizeof(int)
-			+ sizeof(":amount")];
-	char orderIDProductionStationBuffer[sizeof("orderID:") + sizeof(int)
-				+ sizeof(":productionStation")];
+	//Delete order and ingredient combination
+	char orderIDingredientBuffer[sizeof("orderID:") + sizeof(int)
+			+ sizeof(":ingredient")];
 
-	sprintf(orderIDincredientBuffer, "orderID:%d:incredient", orderID);
-	sprintf(orderIDamountBuffer, "orderID:%d:amount", orderID);
-	sprintf(orderIDProductionStationBuffer, "orderID:%d:productionStation", orderID);
+	sprintf(orderIDingredientBuffer, "orderID:%d:ingredient", orderID);
 
-
-	rc = unqlite_kv_delete(pDb, orderIDincredientBuffer, -1);
+	rc = unqlite_kv_delete(pDb, orderIDingredientBuffer, -1);
 	if (rc != UNQLITE_OK)
 	{
-		// Insertion fail, extract database error log and exit
-		printf("Delete Error for %s\n",orderIDincredientBuffer);
-		printf("Return code: %d\n",rc);
+		// Deletion failed, roll back and output error
+		unqlite_rollback(pDb);
+		printf("Error while deleting order with ingredient: %s\n",orderIDingredientBuffer);
 		return rc;
 	}
+
+
+	//Delete order and amount combination
+	char orderIDamountBuffer[sizeof("orderID:") + sizeof(int)
+				+ sizeof(":amount")];
+	sprintf(orderIDamountBuffer, "orderID:%d:amount", orderID);
 
 	rc = unqlite_kv_delete(pDb, orderIDamountBuffer, -1);
 	if (rc != UNQLITE_OK)
 	{
-		printf("Delete Error for %s\n",orderIDamountBuffer);
-		printf("Return code: %d\n",rc);
+		// Deletion failed, roll back and output error
+		unqlite_rollback(pDb);
+		printf("Error while deleting order with amount: %s\n",orderIDamountBuffer);
 		return rc;
 	}
+
+	//Delete order and production station combination
+	char orderIDProductionStationBuffer[sizeof("orderID:") + sizeof(int)
+				+ sizeof(":productionStation")];
+	sprintf(orderIDProductionStationBuffer, "orderID:%d:productionStation", orderID);
 
 	rc = unqlite_kv_delete(pDb, orderIDProductionStationBuffer, -1);
 	if (rc != UNQLITE_OK)
 	{
 		printf("Delete Error for %s\n",orderIDProductionStationBuffer);
-		if (rc == -6)
+		if (rc == UNQLITE_NOTFOUND)
 		{
+			//Deletion needs to be possible if there was no production station
 			printf("No production station for Order %d \n", orderID);
 		}
 		else
 		{
-			printf("Return code: %d\n",rc);
-			//return rc;
+			// Deletion failed, roll back and output error
+			unqlite_rollback(pDb);
+			printf("Error while deleting order with production station: %s\n",orderIDProductionStationBuffer);
+			return rc;
 		}
 	}
+	unqlite_commit(pDb);
+	printf("Order %d successfully deleted. \n", orderID);
 	return UNQLITE_OK;
 
 }
-
-int getOrderIncredientID(int orderID)
+/**
+ * Retrieve the ingredientID for the order with the given id.
+ */
+int getOrderIngredientID(int orderID)
 {
-	//TODO ABfangen, wenn es die ORDERID NICHT GIBT
-
 	int rc;
 	size_t nBytes;  //Data length
 	char *zBuf;     //Dynamically allocated buffer
 
-	char orderIDincredientBuffer[sizeof("orderID:") + sizeof(int)
-			+ sizeof(":incredient")];
+	char orderIDingredientBuffer[sizeof("orderID:") + sizeof(int)
+			+ sizeof(":ingredient")];
 
-	sprintf(orderIDincredientBuffer, "orderID:%d:incredient", orderID);
+	sprintf(orderIDingredientBuffer, "orderID:%d:ingredient", orderID);
 
 
-	rc = unqlite_kv_fetch(pDb, orderIDincredientBuffer, -1, NULL, &nBytes);
+	rc = unqlite_kv_fetch(pDb, orderIDingredientBuffer, -1, NULL, &nBytes);
 	if (rc != UNQLITE_OK)
 	{
-		// Insertion failed
 		printf("Reading failed. \n");
 		printf("Return code: %d\n",rc);
 		return rc;
@@ -288,24 +303,23 @@ int getOrderIncredientID(int orderID)
 		printf("Reading failed, because buffer for records could not be allocated. \n");
 	}
 	//Read Database and Copy record content in our buffer
-	rc = unqlite_kv_fetch(pDb, orderIDincredientBuffer, -1, zBuf, &nBytes);
+	rc = unqlite_kv_fetch(pDb, orderIDingredientBuffer, -1, zBuf, &nBytes);
 	const char ch = ':';
 	char *ret;
 	ret = strchr(zBuf, ch);
 	memmove(ret, ret + 1, strlen(ret));
-	int incredientID = atoi(ret);
-	printf("IncredientID:%d\n", incredientID);
+	int ingredientID = atoi(ret);
+	printf("IngredientID:%d\n", ingredientID);
 
 	free(zBuf);
 
-	return incredientID;
+	return ingredientID;
 
 }
 
 
 int getOrderAmount(int orderID)
 {
-	//TODO ABfangen, wenn es die ORDERID NICHT GIBT
 	int rc;
 	size_t nBytes;  //Data length
 	char *zBuf;     //Dynamically allocated buffer
@@ -324,7 +338,7 @@ int getOrderAmount(int orderID)
 	}
 	else
 	{
-		printf("Record Found for OrderID:%d\n",orderID);
+		printf("Record Found for OrderID: %d\n",orderID);
 	}
 
 	//Allocate a buffer big enough to hold the record content
@@ -342,7 +356,7 @@ int getOrderAmount(int orderID)
 	ret = strchr(zBuf, ch);
 	//remove first character which should be ":"
 	memmove(ret, ret + 1, strlen(ret));
-	// convert character that reprents the amount for  the orderID into int
+	// convert character that represents the amount for  the orderID into int
 	int amount = atoi(ret);
 	printf("Amount:%d\n", amount);
 
@@ -350,52 +364,4 @@ int getOrderAmount(int orderID)
 
 	return amount;
 
-}
-
-
-#ifdef __WINNT__
-#include <Windows.h>
-#else
-/* Assume UNIX */
-#include <unistd.h>
-#endif
-/*
- * The following define is used by the UNIX build process and have
- * no particular meaning on windows.
- */
-#ifndef STDOUT_FILENO
-#define STDOUT_FILENO	1
-#endif
-/*
- * Data consumer callback [unqlite_kv_fetch_callback(), unqlite_kv_cursor_key_callback(), etc.).
- *
- * Rather than allocating a static or dynamic buffer (Inefficient scenario for large data).
- * The caller simply need to supply a consumer callback which is responsible of consuming
- * the record data perhaps redirecting it (i.e. Record data) to its standard output (STDOUT),
- * disk file, connected peer and so forth.
- * Depending on how large the extracted data, the callback may be invoked more than once.
- */
-static int DataConsumerCallback(const void *pData, unsigned int nDatalen,
-		void *pUserData /* Unused */)
-{
-#ifdef __WINNT__
-	BOOL rc;
-	rc = WriteFile(GetStdHandle(STD_OUTPUT_HANDLE),pData,(DWORD)nDatalen,0,0);
-	if( !rc )
-	{
-		/* Abort processing */
-		return UNQLITE_ABORT;
-	}
-#else
-	ssize_t nWr;
-	nWr = write(STDOUT_FILENO, pData, nDatalen);
-	if (nWr < 0)
-	{
-		/* Abort processing */
-		return UNQLITE_ABORT;
-	}
-#endif /* __WINT__ */
-
-	/* All done, data was redirected to STDOUT */
-	return UNQLITE_OK;
 }
