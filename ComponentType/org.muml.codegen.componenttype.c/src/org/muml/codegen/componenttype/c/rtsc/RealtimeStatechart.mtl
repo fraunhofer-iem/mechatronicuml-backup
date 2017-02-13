@@ -417,6 +417,7 @@ printDebugInformation("[getVariableName(targetRTSC)/] switched state to [getName
 		[transition(component, target.outgoingTransitions->first())/]
 	[/if]
 
+//
 [/template]
 
 
@@ -552,6 +553,7 @@ if (0){
 	[generateExpression(expression, '')/]
 [/if]
 
+//
 [/template]
 
 
