@@ -97,7 +97,7 @@
       </states>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_TDt-8NyaEeW-N_z6XJQq2w" name="broker" behavioralElement="_Ozg3MNxcEeW-N_z6XJQq2w" usedOperationRepositories="_JTILAORjEeW6HsQsL2ADFA">
-      <variables xmi:id="_v3QPkOa9EeWyd6JHVas6Kw" name="testLatestOrderIDGlobal">
+      <variables xmi:id="_v3QPkOa9EeWyd6JHVas6Kw" name="latestOrderID" comment="Latest orderID received from the messages">
         <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         <initializeExpression xsi:type="common:UnaryExpression" xmi:id="_x8xxoOa9EeWyd6JHVas6Kw" operator="MINUS">
           <enclosedExpression xsi:type="common:LiteralExpression" xmi:id="_x8xxoea9EeWyd6JHVas6Kw" value="1"/>
@@ -106,17 +106,11 @@
       <states xmi:id="_TDt-8dyaEeW-N_z6XJQq2w" name="init" initial="true">
         <embeddedRegions xmi:id="_pHIy0NyaEeW-N_z6XJQq2w" priority="1">
           <embeddedStatechart xmi:id="_pHVnINyaEeW-N_z6XJQq2w" name="getOrderStatechart" behavioralElement="_i6J4gNxgEeW-N_z6XJQq2w">
-            <variables xmi:id="_oIgBAOVFEeWTk8L1nP577g" name="testLatestOrderID">
-              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
-              <initializeExpression xsi:type="common:UnaryExpression" xmi:id="_q2l-8OVFEeWTk8L1nP577g" operator="MINUS">
-                <enclosedExpression xsi:type="common:LiteralExpression" xmi:id="_q2l-8eVFEeWTk8L1nP577g" value="1"/>
-              </initializeExpression>
-            </variables>
             <transitions xmi:id="_yovr8NyaEeW-N_z6XJQq2w" priority="1" target="_-B_HsOVDEeWIXPb_21drrw" source="_-B_HsOVDEeWIXPb_21drrw">
               <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="__L1ZENyaEeW-N_z6XJQq2w" kind="TRIGGER">
                 <message xmi:id="__hA-4NyaEeW-N_z6XJQq2w" instanceOf="_fAYHYNxcEeW-N_z6XJQq2w"/>
               </events>
-              <action xmi:id="_uTOQIOVAEeWIXPb_21drrw" name="inserOrderIntoDatabase">
+              <action xmi:id="_uTOQIOVAEeWIXPb_21drrw" name="insertOrderIntoDatabase">
                 <expressions xsi:type="actionlanguage:Block" xmi:id="_CzOP8PLAEeaONNcQtAtCmw">
                   <expressions xsi:type="actionlanguage:OperationCall" xmi:id="_CzO3APLAEeaONNcQtAtCmw" operation="_KkrScORjEeW6HsQsL2ADFA">
                     <parameterBinding xmi:id="_CzO3AfLAEeaONNcQtAtCmw" parameter="_WB_qUORjEeW6HsQsL2ADFA">
@@ -182,18 +176,18 @@
                 <message xmi:id="_pBKW8Oa8EeWyd6JHVas6Kw" instanceOf="_UTgXMNxrEeW-N_z6XJQq2w"/>
               </events>
               <action xmi:id="_wosJAOa8EeWyd6JHVas6Kw" name="processGetOrderRequest">
-                <expressions xsi:type="actionlanguage:Block" xmi:id="_nEOF4OLzEeavws0rsQ9stg">
-                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_nEOF4eLzEeavws0rsQ9stg" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_nEOF4uLzEeavws0rsQ9stg" messageType="_UTgXMNxrEeW-N_z6XJQq2w" parameter="_t8T0kOa3EeWyd6JHVas6Kw"/>
-                    <lhs_typedNamedElementExpression xmi:id="_nEOF4-LzEeavws0rsQ9stg" typedNamedElement="_sw_esOa8EeWyd6JHVas6Kw"/>
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_9OrvsPLHEeadDqyrCP4wAA">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_9OrvsfLHEeadDqyrCP4wAA" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_9OrvsvLHEeadDqyrCP4wAA" messageType="_UTgXMNxrEeW-N_z6XJQq2w" parameter="_t8T0kOa3EeWyd6JHVas6Kw"/>
+                    <lhs_typedNamedElementExpression xmi:id="_9Orvs_LHEeadDqyrCP4wAA" typedNamedElement="_sw_esOa8EeWyd6JHVas6Kw"/>
                   </expressions>
-                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_nEOF5OLzEeavws0rsQ9stg" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="actionlanguage:OperationCall" xmi:id="_nEOF5eLzEeavws0rsQ9stg" operation="_m40ygOrPEeWdNs1s2t99bw">
-                      <parameterBinding xmi:id="_nEOF5uLzEeavws0rsQ9stg" parameter="_o7ueYOrPEeWdNs1s2t99bw">
-                        <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_nEOF5-LzEeavws0rsQ9stg" typedNamedElement="_v3QPkOa9EeWyd6JHVas6Kw"/>
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_9OrvtPLHEeadDqyrCP4wAA" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="actionlanguage:OperationCall" xmi:id="_9OrvtfLHEeadDqyrCP4wAA" operation="_m40ygOrPEeWdNs1s2t99bw">
+                      <parameterBinding xmi:id="_9OrvtvLHEeadDqyrCP4wAA" parameter="_o7ueYOrPEeWdNs1s2t99bw">
+                        <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_9Orvt_LHEeadDqyrCP4wAA" typedNamedElement="_v3QPkOa9EeWyd6JHVas6Kw"/>
                       </parameterBinding>
                     </rhs_assignExpression>
-                    <lhs_typedNamedElementExpression xmi:id="_nEOF6OLzEeavws0rsQ9stg" typedNamedElement="_djx4MOa9EeWyd6JHVas6Kw"/>
+                    <lhs_typedNamedElementExpression xmi:id="_9OrvuPLHEeadDqyrCP4wAA" typedNamedElement="_djx4MOa9EeWyd6JHVas6Kw"/>
                   </expressions>
                 </expressions>
               </action>

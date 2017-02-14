@@ -10,7 +10,6 @@ int32_T noSQLDatabase_noSQLDatabaseInsertOrder(int32_T orderID, int32_T ingredie
 
 
 /** Start of user code noSQLDatabase_noSQLDatabaseInsertOrder **/ 
-//@TODO: add your implementation here
 	int32_T ret = insertOrder(orderID, ingredientID, amount);
 	if (ret != 0){
 		extractLogsAndExit();
@@ -95,10 +94,12 @@ int32_T noSQLDatabase_noSQLDatabaseDefineProductionStationForOrder(int32_T order
 int32_T noSQLDatabase_noSQLDatabaseSearchOrder(int32_T orderID){
 
 /** Start of user code noSQLDatabase_noSQLDatabaseSearchOrder **/ 
-//@TODO: add your implementation here
-#warning Missing implemenation of repository operation 'noSQLDatabase_noSQLDatabaseSearchOrder'
-	//default return value
-	int32_T ret = 0;
+	int32_T ret = searchOrder(orderID);
+	//Normally everything below zero is an error code.
+	//Here it's possible we don't find an order to assign and it's not an error
+	if (ret < 0 && ret != -6){
+		extractLogsAndExit();
+	}
 	return ret;
 /**End of user code**/
 

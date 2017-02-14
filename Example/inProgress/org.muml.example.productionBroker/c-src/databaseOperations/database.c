@@ -29,15 +29,10 @@
 /* Make sure this header file is available.*/
 #include "unqlite.h"
 
-/* function declaration */
-int createDatabase();
-int insertOrder(int orderID, int ingredientID, int amount);
-int deleteOrder(int orderID);
-int getOrderIngredientID(int orderID);
-int getOrderAmount(int orderID);
 
 /* Pointer to data base file */
 unqlite *pDb;
+int startSearch=0;
 
 
 
@@ -202,6 +197,7 @@ int deleteOrder(int orderID)
 	}
 	unqlite_commit(pDb);
 	printf("Order %d successfully deleted. \n", orderID);
+
 	return UNQLITE_OK;
 
 }
@@ -300,6 +296,62 @@ int getOrderAmount(int orderID)
 	return amount;
 
 }
+/**
+ * Searches an order without a production station assigned
+ */
+int searchOrder(int latestOrderID)
+{
+	int rc;
+	size_t nBytes;
+
+	printf("Searching for an unassigned order with ID up to %d\n",latestOrderID);
+
+	for (int i=startSearch; i<latestOrderID; i++){
+
+		//Check amount if that order even still exists
+		char orderIDamountBuffer[sizeof("orderID:")+sizeof(int)+sizeof(":amount")];
+		sprintf(orderIDamountBuffer, "orderID:%d:amount", i);
+
+		rc = unqlite_kv_fetch(pDb, orderIDamountBuffer, -1, NULL, &nBytes);
+		if (rc == UNQLITE_NOTFOUND)
+		{
+			// That order does not exist anymore. Next time we can start searching
+			// from the next index on
+			startSearch=i+1;
+			break;
+		}
+		else if (rc < 0){
+			//There is some other problem, stop searching
+			printf("Error during search for unassigned order, return code:%d\n", rc);
+			return rc;
+		}
+		if (rc == 0){
+			//We found an existent order
+
+			char orderIDProductionStationBuffer[sizeof("orderID:") + sizeof(int)
+						+ sizeof(":productionStation")];
+			sprintf(orderIDProductionStationBuffer, "orderID:%d:productionStation", i);
+
+			rc = unqlite_kv_fetch(pDb, orderIDProductionStationBuffer, -1, NULL, &nBytes);
+			if (rc == UNQLITE_NOTFOUND)
+			{
+				//Jackpot. This is an order which exists, but does not have a production station.
+				return i;
+			}
+			else if (rc < 0){
+				//There is some other problem, stop searching
+				printf("Error during search for unassigned order, return code:%d\n", rc);
+				return rc;
+			}
+		}
+
+	}
+	//So we tried all possible orders, but everything has a production station already
+	return UNQLITE_NOTFOUND;
+
+}
+
+
 
 /*
  * Extract the database error log and exit.
