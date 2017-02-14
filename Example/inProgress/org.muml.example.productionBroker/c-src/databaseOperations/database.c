@@ -14,9 +14,6 @@
  * But, with a rich feature set including support for transactions (ACID), concurrent reader, etc.
  * Under the KV store, both keys and values are treated as simple arrays of bytes, so content
  * can be anything from ASCII strings, binary blob and even disk files.
- * The KV store layer is presented to host applications via a set of interfaces, these includes:
- * unqlite_kv_store(), unqlite_kv_append(), unqlite_kv_fetch_callback(), unqlite_kv_append_fmt(),
- * unqlite_kv_delete(), unqlite_kv_fetch(), etc.
  *
  * For an introduction to the UnQLite C/C++ interface, please refer to:
  *        http://unqlite.org/api_intro.html
@@ -24,18 +21,7 @@
  *        http://unqlite.org/c_api.html
  * UnQLite in 5 Minutes or Less:
  *        http://unqlite.org/intro.html
- * The Architecture of the UnQLite Database Engine:
- *        http://unqlite.org/arch.html
- * For an introduction to the UnQLite cursor interface, please refer to:
- *        http://unqlite.org/c_api/unqlite_kv_cursor.html
- * For an introduction to Jx9 which is the scripting language which power
- * the Document-Store interface to UnQLite, please refer to:
- *        http://unqlite.org/jx9.html
- */
-/* $SymiscID: unqlite_kv_intro.c v1.0 FreeBSD 2013-05-14 10:17 stable <chm@symisc.net> $ */
-/*
- * Make sure you have the latest release of UnQLite from:
- *  http://unqlite.org/downloads.html
+ *
  */
 #include <stdio.h>  /* puts() */
 #include <stdlib.h> /* exit() */
@@ -53,57 +39,6 @@ int getOrderAmount(int orderID);
 /* Pointer to data base file */
 unqlite *pDb;
 
-
-/*
- * Extract the database error log and exit.
- */
-static void extractLogsAndExit()
-{
-	if (pDb)
-	{
-		const char *zErr;
-		int iLen = 0; /* Stupid cc warning */
-
-		/* Extract the database error log */
-		unqlite_config(pDb, UNQLITE_CONFIG_ERR_LOG, &zErr, &iLen);
-		if (iLen > 0)
-		{
-			/* Output the DB error log */
-			puts(zErr); /* Always null termniated */
-		}
-	}
-	/* Manually shutdown the library */
-	unqlite_lib_shutdown();
-	/* Exit immediately */
-	exit(0);
-}
-
-int main() {
-
-   printf("Trying to create database... \n");
-   createDatabase();
-
-   printf("Trying to store an order...\n");
-   insertOrder(0, 42, 1);
-
-   printf("Trying to get the order Ingredient ID...\n");
-   int id = getOrderIngredientID(0);
-   printf("Order ingredientID should be 42, and is %d\n",id);
-
-   printf("Trying to get the order Ingredient ID...\n");
-   int amount = getOrderAmount(0);
-   printf("Order amount should be 1, and is %d\n",amount);
-
-   printf("Trying to delete an order...\n");
-   deleteOrder(0);
-
-   printf("Closing database...\n");
-   return 0;
-}
-
-/* Forward declaration: Data consumer callback */
-static int DataConsumerCallback(const void *pData, unsigned int nDatalen,
-		void *pUserData /* Unused */);
 
 
 /**
@@ -364,4 +299,28 @@ int getOrderAmount(int orderID)
 
 	return amount;
 
+}
+
+/*
+ * Extract the database error log and exit.
+ */
+static void extractLogsAndExit()
+{
+	if (pDb)
+	{
+		const char *zErr;
+		int iLen = 0; /* Stupid cc warning */
+
+		/* Extract the database error log */
+		unqlite_config(pDb, UNQLITE_CONFIG_ERR_LOG, &zErr, &iLen);
+		if (iLen > 0)
+		{
+			/* Output the DB error log */
+			puts(zErr); /* Always null termniated */
+		}
+	}
+	/* Manually shutdown the library */
+	unqlite_lib_shutdown();
+	/* Exit immediately */
+	exit(0);
 }
