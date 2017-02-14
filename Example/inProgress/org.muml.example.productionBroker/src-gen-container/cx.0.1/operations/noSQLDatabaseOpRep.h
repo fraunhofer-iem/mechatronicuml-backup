@@ -12,9 +12,9 @@
 		/**
 		 * @brief Implementation stub of operation insertOrder
  		 * @details This function shall contain the implementation of the operation insertOrder.
-		 * @param orderID @param incredientID @param amount 
+		 * @param orderID @param ingredientID:Int32, @param amount 
 		 */
-		int32_T noSQLDatabase_noSQLDatabaseInsertOrder(int32_T orderID, int32_T incredientID, int32_T amount);
+		int32_T noSQLDatabase_noSQLDatabaseInsertOrder(int32_T orderID, int32_T ingredientID, int32_T amount);
 		/**
 		 * @brief Implementation stub of operation deleteOrder
  		 * @details This function shall contain the implementation of the operation deleteOrder.
@@ -22,11 +22,11 @@
 		 */
 		int32_T noSQLDatabase_noSQLDatabaseDeleteOrder(int32_T orderID);
 		/**
-		 * @brief Implementation stub of operation getOrderIncredientID
- 		 * @details This function shall contain the implementation of the operation getOrderIncredientID.
+		 * @brief Implementation stub of operation getOrderIngredientID
+ 		 * @details This function shall contain the implementation of the operation getOrderIngredientID.
 		 * @param orderID 
 		 */
-		int32_T noSQLDatabase_noSQLDatabaseGetOrderIncredientID(int32_T orderID);
+		int32_T noSQLDatabase_noSQLDatabaseGetOrderIngredientID(int32_T orderID);
 		/**
 		 * @brief Implementation stub of operation getOrderAmount
  		 * @details This function shall contain the implementation of the operation getOrderAmount.

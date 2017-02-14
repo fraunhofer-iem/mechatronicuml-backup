@@ -295,7 +295,7 @@
 															//make message transformation
 																	instance->receiverPsID = msg->receiverPsID;
 																	instance->orderID = msg->orderID;
-																	instance->incredientID = msg->incredientID;
+																	instance->ingredientID = msg->ingredientID;
 																	instance->amount = msg->amount;
 															
 															//write the actual data
@@ -421,7 +421,7 @@
 								    return NULL;
 								 }
 								 	DDS_StringSeq_ensure_length(&subQoS.partition.name, 1, 1);
-									*DDS_StringSeq_get_reference(&subQoS.partition.name, 0) =  DDS_String_dup("4300");
+									*DDS_StringSeq_get_reference(&subQoS.partition.name, 0) =  DDS_String_dup("24978");
 							
 								//create Subscriber
 								hndl->subscriber = DDS_DomainParticipant_create_subscriber(
@@ -451,7 +451,7 @@
 										return NULL;
 									}
 									//register the topic
-									topic=DDS_DomainParticipant_create_topic(hndl->participant, "DDS_MessagessimpleOrder_MessagesprovideOrderRecipeGenerator_TopicprovideOrder", type_name,
+									topic = DDS_DomainParticipant_create_topic(hndl->participant, "DDS_MessagessimpleOrder_MessagesprovideOrderRecipeGenerator_TopicprovideOrder", type_name,
 										&DDS_TOPIC_QOS_DEFAULT, NULL /* listener */,
 										DDS_STATUS_MASK_NONE);
 									if (topic == NULL) {
@@ -530,7 +530,7 @@
 								    return NULL;
 								 }
 								 	DDS_StringSeq_ensure_length(&pubQoS.partition.name, 1, 1);
-									*DDS_StringSeq_get_reference(&pubQoS.partition.name, 0) =  DDS_String_dup("-22818");
+									*DDS_StringSeq_get_reference(&pubQoS.partition.name, 0) =  DDS_String_dup("12336");
 								
 								//create Publisher
 								hndl->publisher = DDS_DomainParticipant_create_publisher(hndl->participant,
@@ -560,7 +560,7 @@
 										return NULL;
 									}
 									//register the topic
-									topic=DDS_DomainParticipant_create_topic(hndl->participant, "DDS_MessagesorderForPS_MessagesbrokerForPSPortBroker_TopicbrokerForPSPort", type_name,
+									topic = DDS_DomainParticipant_create_topic(hndl->participant, "DDS_MessagesorderForPS_MessagesbrokerForPSPortBroker_TopicbrokerForPSPort", type_name,
 										&DDS_TOPIC_QOS_DEFAULT, NULL /* listener */,
 										DDS_STATUS_MASK_NONE);
 									if (topic == NULL) {
@@ -593,7 +593,7 @@
 										return NULL;
 									}
 									//register the topic
-									topic=DDS_DomainParticipant_create_topic(hndl->participant, "DDS_MessagesnoOrder_MessagesbrokerForPSPortBroker_TopicbrokerForPSPort", type_name,
+									topic = DDS_DomainParticipant_create_topic(hndl->participant, "DDS_MessagesnoOrder_MessagesbrokerForPSPortBroker_TopicbrokerForPSPort", type_name,
 										&DDS_TOPIC_QOS_DEFAULT, NULL /* listener */,
 										DDS_STATUS_MASK_NONE);
 									if (topic == NULL) {
@@ -638,7 +638,7 @@
 								    return NULL;
 								 }
 								 	DDS_StringSeq_ensure_length(&subQoS.partition.name, 1, 1);
-									*DDS_StringSeq_get_reference(&subQoS.partition.name, 0) =  DDS_String_dup("-22818");
+									*DDS_StringSeq_get_reference(&subQoS.partition.name, 0) =  DDS_String_dup("12336");
 							
 								//create Subscriber
 								hndl->subscriber = DDS_DomainParticipant_create_subscriber(
@@ -668,7 +668,7 @@
 										return NULL;
 									}
 									//register the topic
-									topic=DDS_DomainParticipant_create_topic(hndl->participant, "DDS_MessagesdoneOrder_MessagesgetOrderProductionStation_TopicgetOrder", type_name,
+									topic = DDS_DomainParticipant_create_topic(hndl->participant, "DDS_MessagesdoneOrder_MessagesgetOrderProductionStation_TopicgetOrder", type_name,
 										&DDS_TOPIC_QOS_DEFAULT, NULL /* listener */,
 										DDS_STATUS_MASK_NONE);
 									if (topic == NULL) {
@@ -704,7 +704,7 @@
 										return NULL;
 									}
 									//register the topic
-									topic=DDS_DomainParticipant_create_topic(hndl->participant, "DDS_MessagesgetOrder_MessagesgetOrderProductionStation_TopicgetOrder", type_name,
+									topic = DDS_DomainParticipant_create_topic(hndl->participant, "DDS_MessagesgetOrder_MessagesgetOrderProductionStation_TopicgetOrder", type_name,
 										&DDS_TOPIC_QOS_DEFAULT, NULL /* listener */,
 										DDS_STATUS_MASK_NONE);
 									if (topic == NULL) {
@@ -737,6 +737,9 @@
 								}	
 		
 
+		
+		
+
 			BrokerComponent* MCC_create_BrokerComponent(uint8_T ID){
 			struct brokerComponent_Builder b = INIT_BUILDER;
 			switch(ID){
@@ -745,11 +748,11 @@
 							b.BROKERFORPSPORT = PORT_UNCONNECTED;
 							b.createBROKERFORPSPORTHandle = &create_BROKERFORPSPORTDDSHandle;
 							b.BROKERFORPSPORT_op.dds_option.domainID = 0;
-							b.BROKERFORPSPORT_op.dds_option.partition = -22818;
+							b.BROKERFORPSPORT_op.dds_option.partition = 12336;
 							b.GETORDER = PORT_UNCONNECTED;
 							b.createGETORDERHandle = &create_GETORDERDDSHandle;
 							b.GETORDER_op.dds_option.domainID = 0;
-							b.GETORDER_op.dds_option.partition = 4300;
+							b.GETORDER_op.dds_option.partition = 24978;
 				break;
 			default:
 				break;

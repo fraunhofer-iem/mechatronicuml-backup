@@ -17,7 +17,7 @@
 			stateChart->incomingOrderPsID = stateChart->incomingOrderPsID = 0;
 			;
 		
-			stateChart->incredientID = -1;
+			stateChart->ingredientID = -1;
 		
 			stateChart->evaluateOrderFailed = false;
 		
@@ -112,7 +112,7 @@
 		
 					// execute entry actions
 					stateChart->amount = -1;
-					stateChart->incredientID = -1;
+					stateChart->ingredientID = -1;
 					stateChart->processedOrderID = -1;
 					stateChart->incomingOrderPsID = -1;
 					;
@@ -239,7 +239,7 @@
 		
 					// execute entry actions
 					stateChart->amount = -1;
-					stateChart->incredientID = -1;
+					stateChart->ingredientID = -1;
 					stateChart->processedOrderID = -1;
 					stateChart->incomingOrderPsID = -1;
 					;
@@ -298,7 +298,7 @@
 					stateChart->incomingOrderPsID = msg_MessagesOrderForPS.receiverPsID;
 					if (stateChart->incomingOrderPsID == stateChart->ID) {
 						stateChart->amount = msg_MessagesOrderForPS.amount;
-						stateChart->incredientID = msg_MessagesOrderForPS.incredientID;
+						stateChart->ingredientID = msg_MessagesOrderForPS.ingredientID;
 						stateChart->processedOrderID = msg_MessagesOrderForPS.orderID;
 		
 					}
@@ -392,7 +392,7 @@
 		
 					// execute entry actions
 					stateChart->amount = -1;
-					stateChart->incredientID = -1;
+					stateChart->ingredientID = -1;
 					stateChart->processedOrderID = -1;
 					stateChart->incomingOrderPsID = -1;
 					;

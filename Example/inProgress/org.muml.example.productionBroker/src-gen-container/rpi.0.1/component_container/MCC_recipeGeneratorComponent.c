@@ -156,7 +156,7 @@
 								    return NULL;
 								 }
 								 	DDS_StringSeq_ensure_length(&pubQoS.partition.name, 1, 1);
-									*DDS_StringSeq_get_reference(&pubQoS.partition.name, 0) =  DDS_String_dup("4300");
+									*DDS_StringSeq_get_reference(&pubQoS.partition.name, 0) =  DDS_String_dup("24978");
 								
 								//create Publisher
 								hndl->publisher = DDS_DomainParticipant_create_publisher(hndl->participant,
@@ -186,7 +186,7 @@
 										return NULL;
 									}
 									//register the topic
-									topic=DDS_DomainParticipant_create_topic(hndl->participant, "DDS_MessagessimpleOrder_MessagesprovideOrderRecipeGenerator_TopicprovideOrder", type_name,
+									topic = DDS_DomainParticipant_create_topic(hndl->participant, "DDS_MessagessimpleOrder_MessagesprovideOrderRecipeGenerator_TopicprovideOrder", type_name,
 										&DDS_TOPIC_QOS_DEFAULT, NULL /* listener */,
 										DDS_STATUS_MASK_NONE);
 									if (topic == NULL) {
@@ -217,6 +217,9 @@
 								}	
 		
 
+		
+		
+
 			RecipeGeneratorComponent* MCC_create_RecipeGeneratorComponent(uint8_T ID){
 			struct recipeGeneratorComponent_Builder b = INIT_BUILDER;
 			switch(ID){
@@ -225,7 +228,7 @@
 							b.PROVIDEORDER = PORT_UNCONNECTED;
 							b.createPROVIDEORDERHandle = &create_PROVIDEORDERDDSHandle;
 							b.PROVIDEORDER_op.dds_option.domainID = 0;
-							b.PROVIDEORDER_op.dds_option.partition = 4300;
+							b.PROVIDEORDER_op.dds_option.partition = 24978;
 				break;
 			default:
 				break;

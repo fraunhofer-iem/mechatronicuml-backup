@@ -20,6 +20,8 @@
 				#include "ndds/ndds_c.h"
 				//include the component_interfache header
 				#include "../components/recipeGeneratorComponent_Interface.h"
+				//include api mapping headers
+			
 					
 			/**
 			 * @file 

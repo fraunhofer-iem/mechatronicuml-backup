@@ -12,11 +12,8 @@ int main(){
 	#endif
 	while (1) {
 
-		BrokerComponent_processStep(atomic_c1);
-	 		
-
+			BrokerComponent_processStep(atomic_c1);
 	}
-
 }	
 
 

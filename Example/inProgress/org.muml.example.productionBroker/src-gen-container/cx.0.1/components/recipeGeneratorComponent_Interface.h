@@ -13,9 +13,8 @@
 #endif		// Library
 	#include "../types/standardTypes.h"
 	#include "../types/customTypes.h"
-		#include "../lib/port.h"
+	#include "../lib/port.h"
 		#include "../messages/messages_types.h"
-
 	#include "../lib/clock.h"
 	#include "../lib/Debug.h"
 
@@ -74,8 +73,8 @@
 									RecipeGeneratorReciepeGeneratorStateChart* stateChart;	/**< The RecipeGeneratorReciepeGeneratorStateChart of the Component RecipeGenerator */
 							
 										Port provideOrderPort; /**< A  Component's Port: provideOrder */
+								
 						
-									
 								
 								
 						
@@ -105,7 +104,6 @@
 						* @param component The specific RecipeGeneratorComponent to be destroyed
 						 */
 							void RecipeGeneratorComponent_destroy(RecipeGeneratorComponent* component);
-					
 						
 						/**
 						* @brief Executes the next Step of the behavior an Instance of the Component: RecipeGenerator
@@ -114,6 +112,14 @@
 						* @param component The RecipeGeneratorComponent whose behavior shall be checked
 						*/
 							void RecipeGeneratorComponent_processStep(RecipeGeneratorComponent* component);
+				
+			
+			
+			
+			
+						/*Getter and Setter for Sending Values of Hybrid/Continuous ports*/
+								RecipeGeneratorReciepeGeneratorStateChart* RecipeGeneratorComponent_getStateMachine(RecipeGeneratorComponent* component);
+						
 						/**
 								 * @brief Get the Port: provideOrder of an Instance of the Component: RecipeGenerator
 								 * @details The Pointer RecipeGeneratorComponent::provideOrderPort is returned

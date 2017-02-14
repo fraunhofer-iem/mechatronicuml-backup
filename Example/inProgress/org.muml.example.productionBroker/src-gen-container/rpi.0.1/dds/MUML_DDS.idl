@@ -3,9 +3,9 @@
 
   struct DDS_MessagessimpleOrder_Messages;
   struct DDS_MessagesgetOrder_Messages;
-  struct DDS_MessagesdoneOrder_Messages;
   struct DDS_MessagesnoOrder_Messages;
   struct DDS_MessagesorderForPS_Messages;
+  struct DDS_MessagesdoneOrder_Messages;
 
 #pragma DCPS_DATA_TYPE "DDS_MessagessimpleOrder_Messages"
   struct DDS_MessagessimpleOrder_Messages {
@@ -19,11 +19,6 @@
     long psID;
   };
 
-#pragma DCPS_DATA_TYPE "DDS_MessagesdoneOrder_Messages"
-  struct DDS_MessagesdoneOrder_Messages {
-    long orderID;
-  };
-
 #pragma DCPS_DATA_TYPE "DDS_MessagesnoOrder_Messages"
   struct DDS_MessagesnoOrder_Messages {
     long receiverPsID;
@@ -33,7 +28,12 @@
   struct DDS_MessagesorderForPS_Messages {
     long receiverPsID;
     long orderID;
-    long incredientID;
+    long ingredientID;
     long amount;
+  };
+
+#pragma DCPS_DATA_TYPE "DDS_MessagesdoneOrder_Messages"
+  struct DDS_MessagesdoneOrder_Messages {
+    long orderID;
   };
 #endif 

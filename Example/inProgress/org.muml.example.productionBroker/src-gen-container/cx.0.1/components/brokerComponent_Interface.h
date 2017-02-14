@@ -13,9 +13,8 @@
 #endif		// Library
 	#include "../types/standardTypes.h"
 	#include "../types/customTypes.h"
-		#include "../lib/port.h"
+	#include "../lib/port.h"
 		#include "../messages/messages_types.h"
-
 	#include "../lib/clock.h"
 	#include "../lib/Debug.h"
 
@@ -35,14 +34,14 @@
  			 *  Forward Delcaration of Container Functions
  			 *
  			 */		
-					bool_t MCC_BrokerComponent_getOrder_recv_MessagesSimpleOrder_Messages_Message(Port* p, MessagesSimpleOrder_Messages_Message* msg);
-					bool_t MCC_BrokerComponent_getOrder_exists_MessagesSimpleOrder_Messages_Message(Port* p);
+					bool_T MCC_BrokerComponent_getOrder_recv_MessagesSimpleOrder_Messages_Message(Port* p, MessagesSimpleOrder_Messages_Message* msg);
+					bool_T MCC_BrokerComponent_getOrder_exists_MessagesSimpleOrder_Messages_Message(Port* p);
 					void MCC_BrokerComponent_brokerForPSPort_send_MessagesOrderForPS_Messages_Message(Port* p, MessagesOrderForPS_Messages_Message* msg);
 					void MCC_BrokerComponent_brokerForPSPort_send_MessagesNoOrder_Messages_Message(Port* p, MessagesNoOrder_Messages_Message* msg);
-					bool_t MCC_BrokerComponent_brokerForPSPort_recv_MessagesDoneOrder_Messages_Message(Port* p, MessagesDoneOrder_Messages_Message* msg);
-					bool_t MCC_BrokerComponent_brokerForPSPort_exists_MessagesDoneOrder_Messages_Message(Port* p);
-					bool_t MCC_BrokerComponent_brokerForPSPort_recv_MessagesGetOrder_Messages_Message(Port* p, MessagesGetOrder_Messages_Message* msg);
-					bool_t MCC_BrokerComponent_brokerForPSPort_exists_MessagesGetOrder_Messages_Message(Port* p);
+					bool_T MCC_BrokerComponent_brokerForPSPort_recv_MessagesDoneOrder_Messages_Message(Port* p, MessagesDoneOrder_Messages_Message* msg);
+					bool_T MCC_BrokerComponent_brokerForPSPort_exists_MessagesDoneOrder_Messages_Message(Port* p);
+					bool_T MCC_BrokerComponent_brokerForPSPort_recv_MessagesGetOrder_Messages_Message(Port* p, MessagesGetOrder_Messages_Message* msg);
+					bool_T MCC_BrokerComponent_brokerForPSPort_exists_MessagesGetOrder_Messages_Message(Port* p);
 			
 			
 			
@@ -84,8 +83,8 @@
 							
 										Port getOrderPort; /**< A  Component's Port: getOrder */
 										Port brokerForPSPortPort; /**< A  Component's Port: brokerForPSPort */
+								
 						
-									
 								
 								
 						
@@ -115,7 +114,6 @@
 						* @param component The specific BrokerComponent to be destroyed
 						 */
 							void BrokerComponent_destroy(BrokerComponent* component);
-					
 						
 						/**
 						* @brief Executes the next Step of the behavior an Instance of the Component: Broker
@@ -124,6 +122,14 @@
 						* @param component The BrokerComponent whose behavior shall be checked
 						*/
 							void BrokerComponent_processStep(BrokerComponent* component);
+				
+			
+			
+			
+			
+						/*Getter and Setter for Sending Values of Hybrid/Continuous ports*/
+								BrokerBrokerStateChart* BrokerComponent_getStateMachine(BrokerComponent* component);
+						
 						/**
 								 * @brief Get the Port: getOrder of an Instance of the Component: Broker
 								 * @details The Pointer BrokerComponent::getOrderPort is returned
@@ -201,7 +207,7 @@
 							int32_T currentPsID; /**< The Realtime-StateChart Variable: currentPsID of Type: int32; */
 							int32_T provideOrderID; /**< The Realtime-StateChart Variable: provideOrderID of Type: int32; */
 							int32_T provideAmount; /**< The Realtime-StateChart Variable: provideAmount of Type: int32; */
-							int32_T provideIncredientID; /**< The Realtime-StateChart Variable: provideIncredientID of Type: int32; */
+							int32_T provideIngredientID; /**< The Realtime-StateChart Variable: provideIngredientID of Type: int32; */
 				
 				
 				

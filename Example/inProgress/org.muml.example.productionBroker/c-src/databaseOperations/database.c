@@ -74,14 +74,10 @@ int insertOrder(int orderID, int ingredientID, int amount)
 	char orderIDingredientBuffer[sizeof("orderID:") + sizeof(int)
 			+ sizeof(":ingredient")];
 	char ingredientBuffer[sizeof("ingredientID:") + sizeof(int)];
-	char orderIDamountBuffer[sizeof("orderID:") + sizeof(int)
-			+ sizeof(":amount")];
-	char amountBuffer[sizeof("amount:") + sizeof(int)];
 
 	sprintf(orderIDingredientBuffer, "orderID:%d:ingredient", orderID);
 	sprintf(ingredientBuffer, "ingredientID:%d", ingredientID);
-	sprintf(orderIDamountBuffer, "orderID:%d:amount", orderID);
-	sprintf(amountBuffer, "amount:%d", amount);
+
 
 	//Insert order with ingredient
 	rc = unqlite_kv_store(pDb, orderIDingredientBuffer, -1, ingredientBuffer,
@@ -97,6 +93,11 @@ int insertOrder(int orderID, int ingredientID, int amount)
 		printf("Successfully inserted ingredient: %s\n",orderIDingredientBuffer);
 	}
 	//Insert order with amount
+	char orderIDamountBuffer[sizeof("orderID:") + sizeof(int)
+			+ sizeof(":amount")];
+	char amountBuffer[sizeof("amount:") + sizeof(int)];
+	sprintf(orderIDamountBuffer, "orderID:%d:amount", orderID);
+	sprintf(amountBuffer, "amount:%d", amount);
 	rc = unqlite_kv_store(pDb, orderIDamountBuffer, -1, amountBuffer,
 			sizeof(amountBuffer));
 	if (rc != UNQLITE_OK)
@@ -226,10 +227,9 @@ int getOrderIngredientID(int orderID)
 		printf("Return code: %d\n",rc);
 		return rc;
 	}
-	else
-	{
-		printf("Successfully read from database. \n");
-	}
+
+	printf("Successfully read from database. \n");
+
 
 	//Allocate a buffer big enough to hold the record content
 	zBuf = (char *) malloc(nBytes);
@@ -264,29 +264,29 @@ int getOrderAmount(int orderID)
 	sprintf(orderIDamountBuffer, "orderID:%d:amount", orderID);
 
 	/*Get amount for the orderID record*/
+	printf("Trying to retrieve amount for %s \n",orderIDamountBuffer);
 	rc = unqlite_kv_fetch(pDb, orderIDamountBuffer, -1, NULL, &nBytes);
-	if (rc != UNQLITE_OK)
+	if (rc < UNQLITE_OK)
 	{
-		// Insertion fail, extract database error log and exit
-		printf("No Record Found\n");
+		// Fetch failed
+		printf("Reading failed. Return code: %d\n",rc);
 		return rc;
 	}
-	else
-	{
-		printf("Record Found for OrderID: %d\n",orderID);
-	}
+
+	printf("Record Found for OrderID: %d\n",orderID);
 
 	//Allocate a buffer big enough to hold the record content
 	zBuf = (char *) malloc(nBytes);
 	if (zBuf == NULL)
 	{
-		printf("No Record Found\n");
+		printf("Error: Buffer was empty.\n");
 	}
 	//Copy record content in our buffer
 	rc = unqlite_kv_fetch(pDb, orderIDamountBuffer, -1, zBuf, &nBytes);
 	//Find Position of ":"
 	const char ch = ':';
 	char *ret;
+	printf("zBuf=%s\n", zBuf);
 	//remove all characters before ":"
 	ret = strchr(zBuf, ch);
 	//remove first character which should be ":"

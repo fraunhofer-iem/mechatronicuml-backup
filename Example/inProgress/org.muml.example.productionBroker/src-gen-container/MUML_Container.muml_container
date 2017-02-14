@@ -7,11 +7,11 @@
       <componentType xsi:type="component:StaticAtomicComponent" href="../model/productionBroker.muml#_QVSL8NxcEeW-N_z6XJQq2w"/>
       <componentInstanceConfigurations>
         <componentInstance xsi:type="instance:AtomicComponentInstance" href="../model/productionBroker.muml#_ClUoo-VHEeWTk8L1nP577g"/>
-        <portInstanceConfigurations xsi:type="muml_container:PortInstanceConfiguration_DDS" partitionID="4300">
+        <portInstanceConfigurations xsi:type="muml_container:PortInstanceConfiguration_DDS" partitionID="24978">
           <portInstance xsi:type="instance:DiscreteSinglePortInstance" href="../model/productionBroker.muml#_ClUopOVHEeWTk8L1nP577g"/>
           <hwportInstance href="../model/productionBroker.muml#_6TriAewqEeWTKqLnMSJAUw"/>
-          <publisher href="MUML_DDS.opendds#_EMP-C17PEeaNcvW989QGZw"/>
-          <domainParticipant href="MUML_DDS.opendds#_EMP-Cl7PEeaNcvW989QGZw"/>
+          <publisher href="MUML_DDS.opendds#_cALzhu7iEeaTfLwKFgnkBw"/>
+          <domainParticipant href="MUML_DDS.opendds#_cALzhe7iEeaTfLwKFgnkBw"/>
         </portInstanceConfigurations>
       </componentInstanceConfigurations>
       <componentInstances xsi:type="instance:AtomicComponentInstance" href="../model/productionBroker.muml#_ClUoo-VHEeWTk8L1nP577g"/>
@@ -23,12 +23,12 @@
       <componentType xsi:type="component:StaticAtomicComponent" href="../model/productionBroker.muml#_vwAi4NxbEeW-N_z6XJQq2w"/>
       <componentInstanceConfigurations>
         <componentInstance xsi:type="instance:AtomicComponentInstance" href="../model/productionBroker.muml#_ZCvGAOapEeWyd6JHVas6Kw"/>
-        <portInstanceConfigurations xsi:type="muml_container:PortInstanceConfiguration_DDS" partitionID="-22818">
+        <portInstanceConfigurations xsi:type="muml_container:PortInstanceConfiguration_DDS" partitionID="12336">
           <portInstance xsi:type="instance:DiscreteSinglePortInstance" href="../model/productionBroker.muml#_ZCvGAeapEeWyd6JHVas6Kw"/>
           <hwportInstance href="../model/productionBroker.muml#_6TriB-wqEeWTKqLnMSJAUw"/>
-          <publisher href="MUML_DDS.opendds#_EMP-Dl7PEeaNcvW989QGZw"/>
-          <subscriber href="MUML_DDS.opendds#_EMP-EV7PEeaNcvW989QGZw"/>
-          <domainParticipant href="MUML_DDS.opendds#_EMP-DV7PEeaNcvW989QGZw"/>
+          <publisher href="MUML_DDS.opendds#_cALzjO7iEeaTfLwKFgnkBw"/>
+          <subscriber href="MUML_DDS.opendds#_cALzj-7iEeaTfLwKFgnkBw"/>
+          <domainParticipant href="MUML_DDS.opendds#_cALzi-7iEeaTfLwKFgnkBw"/>
         </portInstanceConfigurations>
       </componentInstanceConfigurations>
       <componentInstances xsi:type="instance:AtomicComponentInstance" href="../model/productionBroker.muml#_ZCvGAOapEeWyd6JHVas6Kw"/>
@@ -40,18 +40,18 @@
       <componentType xsi:type="component:StaticAtomicComponent" href="../model/productionBroker.muml#_Ozg3MNxcEeW-N_z6XJQq2w"/>
       <componentInstanceConfigurations>
         <componentInstance xsi:type="instance:AtomicComponentInstance" href="../model/productionBroker.muml#_ClUooeVHEeWTk8L1nP577g"/>
-        <portInstanceConfigurations xsi:type="muml_container:PortInstanceConfiguration_DDS" partitionID="4300">
+        <portInstanceConfigurations xsi:type="muml_container:PortInstanceConfiguration_DDS" partitionID="24978">
           <portInstance xsi:type="instance:DiscreteSinglePortInstance" href="../model/productionBroker.muml#_ClUoouVHEeWTk8L1nP577g"/>
           <hwportInstance href="../model/productionBroker.muml#_6Tq68ewqEeWTKqLnMSJAUw"/>
-          <subscriber href="MUML_DDS.opendds#_EMP-FV7PEeaNcvW989QGZw"/>
-          <domainParticipant href="MUML_DDS.opendds#_EMP-FF7PEeaNcvW989QGZw"/>
+          <subscriber href="MUML_DDS.opendds#_cALzie7iEeaTfLwKFgnkBw"/>
+          <domainParticipant href="MUML_DDS.opendds#_cALziO7iEeaTfLwKFgnkBw"/>
         </portInstanceConfigurations>
-        <portInstanceConfigurations xsi:type="muml_container:PortInstanceConfiguration_DDS" partitionID="-22818">
+        <portInstanceConfigurations xsi:type="muml_container:PortInstanceConfiguration_DDS" partitionID="12336">
           <portInstance xsi:type="instance:DiscreteSinglePortInstance" href="../model/productionBroker.muml#_9JlTMOa7EeWyd6JHVas6Kw"/>
           <hwportInstance href="../model/productionBroker.muml#_6Tq68ewqEeWTKqLnMSJAUw"/>
-          <publisher href="MUML_DDS.opendds#_EMP-BF7PEeaNcvW989QGZw"/>
-          <subscriber href="MUML_DDS.opendds#_EMP-B17PEeaNcvW989QGZw"/>
-          <domainParticipant href="MUML_DDS.opendds#_EMP-A17PEeaNcvW989QGZw"/>
+          <publisher href="MUML_DDS.opendds#_cALzk-7iEeaTfLwKFgnkBw"/>
+          <subscriber href="MUML_DDS.opendds#_cALzlu7iEeaTfLwKFgnkBw"/>
+          <domainParticipant href="MUML_DDS.opendds#_cALzku7iEeaTfLwKFgnkBw"/>
         </portInstanceConfigurations>
       </componentInstanceConfigurations>
       <componentInstances xsi:type="instance:AtomicComponentInstance" href="../model/productionBroker.muml#_ClUooeVHEeWTk8L1nP577g"/>

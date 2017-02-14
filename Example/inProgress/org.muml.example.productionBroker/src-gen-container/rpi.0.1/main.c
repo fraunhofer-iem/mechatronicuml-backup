@@ -12,11 +12,8 @@ int main(){
 	#endif
 	while (1) {
 
-		RecipeGeneratorComponent_processStep(atomic_c1);
-	 		
-
+			RecipeGeneratorComponent_processStep(atomic_c1);
 	}
-
 }	
 
 

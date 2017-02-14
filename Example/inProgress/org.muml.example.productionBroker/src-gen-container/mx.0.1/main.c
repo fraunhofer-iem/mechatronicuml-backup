@@ -12,11 +12,8 @@ int main(){
 	#endif
 	while (1) {
 
-		ProductionStationComponent_processStep(atomic_c1);
-	 		
-
+			ProductionStationComponent_processStep(atomic_c1);
 	}
-
 }	
 
 

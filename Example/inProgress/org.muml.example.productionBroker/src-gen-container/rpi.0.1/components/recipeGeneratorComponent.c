@@ -8,7 +8,7 @@
 		void RecipeGeneratorComponent_initialize(RecipeGeneratorComponent* component) {
 		
 			RecipeGeneratorReciepeGeneratorStateChart_initialize(component->stateChart);
-		
+			/*Initialize all DirectedTypedPorts*/
 		}
 		
 
@@ -24,6 +24,8 @@
 
 		void RecipeGeneratorComponent_destroy(RecipeGeneratorComponent* component) {
 			if (component != NULL) {
+				RecipeGeneratorReciepeGeneratorStateChart_destroy(
+						component->stateChart);
 		
 				//temporarly deactivated
 				//	Port_destroy(component->provideOrderPort);
@@ -37,20 +39,22 @@
 		void RecipeGeneratorComponent_processStep(RecipeGeneratorComponent* component) {
 				
 		
-		
 					component->stateChart->RecipeGeneratorReciepeGenerator_isExecutable = true;
 					component->stateChart->RecipeGeneratorProvideOrderReciepeSender_isExecutable = true;
 					component->stateChart->RecipeGeneratorInitInternalBehavior_isExecutable = true;
 				RecipeGeneratorReciepeGeneratorStateChart_processStep(component->stateChart);
+					
+				
+			
 		}
-	
+
+		
 		RecipeGeneratorReciepeGeneratorStateChart* RecipeGeneratorComponent_getStateMachine(RecipeGeneratorComponent* component) {
 					return component->stateChart;
 				} 
-		
-				Port* RecipeGeneratorComponent_getprovideOrder(RecipeGeneratorComponent* component) {
-					return &(component->provideOrderPort);
-				}
+			Port* RecipeGeneratorComponent_getprovideOrder(RecipeGeneratorComponent* component) {
+			return &(component->provideOrderPort);
+		}
 
 		
 

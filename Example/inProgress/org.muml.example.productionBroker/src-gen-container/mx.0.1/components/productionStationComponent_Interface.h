@@ -13,9 +13,8 @@
 #endif		// Library
 	#include "../types/standardTypes.h"
 	#include "../types/customTypes.h"
-		#include "../lib/port.h"
+	#include "../lib/port.h"
 		#include "../messages/messages_types.h"
-
 	#include "../lib/clock.h"
 	#include "../lib/Debug.h"
 
@@ -37,10 +36,10 @@
  			 */		
 					void MCC_ProductionStationComponent_getOrder_send_MessagesDoneOrder_Messages_Message(Port* p, MessagesDoneOrder_Messages_Message* msg);
 					void MCC_ProductionStationComponent_getOrder_send_MessagesGetOrder_Messages_Message(Port* p, MessagesGetOrder_Messages_Message* msg);
-					bool_t MCC_ProductionStationComponent_getOrder_recv_MessagesOrderForPS_Messages_Message(Port* p, MessagesOrderForPS_Messages_Message* msg);
-					bool_t MCC_ProductionStationComponent_getOrder_exists_MessagesOrderForPS_Messages_Message(Port* p);
-					bool_t MCC_ProductionStationComponent_getOrder_recv_MessagesNoOrder_Messages_Message(Port* p, MessagesNoOrder_Messages_Message* msg);
-					bool_t MCC_ProductionStationComponent_getOrder_exists_MessagesNoOrder_Messages_Message(Port* p);
+					bool_T MCC_ProductionStationComponent_getOrder_recv_MessagesOrderForPS_Messages_Message(Port* p, MessagesOrderForPS_Messages_Message* msg);
+					bool_T MCC_ProductionStationComponent_getOrder_exists_MessagesOrderForPS_Messages_Message(Port* p);
+					bool_T MCC_ProductionStationComponent_getOrder_recv_MessagesNoOrder_Messages_Message(Port* p, MessagesNoOrder_Messages_Message* msg);
+					bool_T MCC_ProductionStationComponent_getOrder_exists_MessagesNoOrder_Messages_Message(Port* p);
 			
 			
 			
@@ -81,8 +80,8 @@
 									ProductionStationPorductionStationRTSCStateChart* stateChart;	/**< The ProductionStationPorductionStationRTSCStateChart of the Component ProductionStation */
 							
 										Port getOrderPort; /**< A  Component's Port: getOrder */
+								
 						
-									
 								
 								
 						
@@ -112,7 +111,6 @@
 						* @param component The specific ProductionStationComponent to be destroyed
 						 */
 							void ProductionStationComponent_destroy(ProductionStationComponent* component);
-					
 						
 						/**
 						* @brief Executes the next Step of the behavior an Instance of the Component: ProductionStation
@@ -121,6 +119,14 @@
 						* @param component The ProductionStationComponent whose behavior shall be checked
 						*/
 							void ProductionStationComponent_processStep(ProductionStationComponent* component);
+				
+			
+			
+			
+			
+						/*Getter and Setter for Sending Values of Hybrid/Continuous ports*/
+								ProductionStationPorductionStationRTSCStateChart* ProductionStationComponent_getStateMachine(ProductionStationComponent* component);
+						
 						/**
 								 * @brief Get the Port: getOrder of an Instance of the Component: ProductionStation
 								 * @details The Pointer ProductionStationComponent::getOrderPort is returned
@@ -188,7 +194,7 @@
 							int32_T amount; /**< The Realtime-StateChart Variable: amount of Type: int32; */
 							int32_T processedOrderID; /**< The Realtime-StateChart Variable: processedOrderID of Type: int32; */
 							int32_T incomingOrderPsID; /**< The Realtime-StateChart Variable: incomingOrderPsID of Type: int32; */
-							int32_T incredientID; /**< The Realtime-StateChart Variable: incredientID of Type: int32; */
+							int32_T ingredientID; /**< The Realtime-StateChart Variable: ingredientID of Type: int32; */
 							bool_T evaluateOrderFailed; /**< The Realtime-StateChart Variable: evaluateOrderFailed of Type: boolean; */
 				
 				

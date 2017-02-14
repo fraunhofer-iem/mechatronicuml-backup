@@ -7,7 +7,7 @@ endif
 
 SYSLIBS = -ldl -lnsl -lm -lpthread -lrt
 DEFINES = -DRTI_UNIX -DRTI_LINUX -DRTI_64BIT 
-LIBS = -L$(NDDSHOME)/lib/x64Linux3.xgcc4.6.3 \
+LIBS = -L$(NDDSHOME)/lib/x64Linux3gcc4.8.2/ \
         -lnddscz -lnddscorez $(SYSLIBS)
 DDSSOURCES = MUML_DDSSupport.o MUML_DDSPlugin.o MUML_DDS.o 
 
