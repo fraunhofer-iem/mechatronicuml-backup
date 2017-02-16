@@ -15,10 +15,6 @@
 typedef struct MessagesDoneOrder_Messages_Message{
 	 int32_T orderID;
 }MessagesDoneOrder_Messages_Message;
-//definition for message type MessagesGetOrder
-typedef struct MessagesGetOrder_Messages_Message{
-	 int32_T psID;
-}MessagesGetOrder_Messages_Message;
 //definition for message type MessagesNoOrder
 typedef struct MessagesNoOrder_Messages_Message{
 	 int32_T receiverPsID;
@@ -36,4 +32,8 @@ typedef struct MessagesOrderForPS_Messages_Message{
 	 int32_T ingredientID;
 	 int32_T amount;
 }MessagesOrderForPS_Messages_Message;
+//definition for message type MessagesGetOrder
+typedef struct MessagesGetOrder_Messages_Message{
+	 int32_T psID;
+}MessagesGetOrder_Messages_Message;
 #endif /* MESSAGE_TYPES_H */

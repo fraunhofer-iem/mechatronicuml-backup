@@ -1,12 +1,14 @@
 
 
 ifndef NDDSHOME
-NDDSHOME := "/home/ralle/rti_connext_dds-5.2.0"
+#EXPORT THE VARIABLE NDDSHOME AND MAKE SHURE YOU HAVE A VALID RTI LICENCE. OTHERWISE PROGRAMS DO NOT RUN
+NDDSHOME := "NOT SET"
 endif
 #TARGET_ARCH = x64Linux3.xgcc4.6.3
 
 SYSLIBS = -ldl -lnsl -lm -lpthread -lrt
 DEFINES = -DRTI_UNIX -DRTI_LINUX -DRTI_64BIT 
+#FIXME CHANGE LIB PATH IF DDS PROVIDES ANOTHER PATH
 LIBS = -L$(NDDSHOME)/lib/x64Linux3gcc4.8.2/ \
         -lnddscz -lnddscorez $(SYSLIBS)
 DDSSOURCES = MUML_DDSSupport.o MUML_DDSPlugin.o MUML_DDS.o 
@@ -17,18 +19,20 @@ CONT_LIB =  MessageBuffer.o LocalBufferManager.o DDS_Custom_Lib.o
 
 RTSC = productionStationPorductionStationRTSCStateChart.o 
 COMP = productionStationComponent.o  
+CONTMAPPING = 
 OPERATIONREPOSITORIES = 	 iDManagementOpRep.o		
 LIB =   Debug.o
 CC = gcc
 CFLAGS = -DC99 -DDEBUG -ggdb -Wall -c  $(DEFINES) -I types -I lib -I $(NDDSHOME)/include -I $(NDDSHOME)/include/ndds 
 all: app
 
-app : main.o $(RTSC) $(COMP) $(LIB) $(CONT_LIB) $(HYB) $(CONT) $(OPERATIONREPOSITORIES)  $(DDSSOURCES)
-	$(CC) main.o $(RTSC) $(COMP) $(LIB) $(CONT_LIB) $(HYB) $(CONT) $(OPERATIONREPOSITORIES) $(DDSSOURCES) $(LIBS) -o app
+app : main.o $(RTSC) $(COMP) $(LIB) $(CONT_LIB) $(HYB) $(CONT) $(CONTMAPPING) $(OPERATIONREPOSITORIES)  $(DDSSOURCES)
+	$(CC) main.o $(RTSC) $(COMP) $(LIB) $(CONT_LIB) $(HYB) $(CONT) $(CONTMAPPING)$(OPERATIONREPOSITORIES) $(DDSSOURCES) $(LIBS) -o app
 productionStationPorductionStationRTSCStateChart.o: RTSCs/productionStationPorductionStationRTSCStateChart.c
 	$(CC) $(CFLAGS) RTSCs/productionStationPorductionStationRTSCStateChart.c
 productionStationComponent.o: components/productionStationComponent.c
 	$(CC) $(CFLAGS) components/productionStationComponent.c
+
 
 MUML_DDSSupport.o: dds/MUML_DDSSupport.c
 	$(CC) $(CFLAGS) dds/MUML_DDSSupport.c
@@ -36,6 +40,8 @@ MUML_DDSPlugin.o: dds/MUML_DDSPlugin.c
 	$(CC) $(CFLAGS) dds/MUML_DDSPlugin.c
 MUML_DDS.o: dds/MUML_DDS.c
 	$(CC) $(CFLAGS) dds/MUML_DDS.c
+
+
 
 
 MessageBuffer.o: container_lib/MessageBuffer.c

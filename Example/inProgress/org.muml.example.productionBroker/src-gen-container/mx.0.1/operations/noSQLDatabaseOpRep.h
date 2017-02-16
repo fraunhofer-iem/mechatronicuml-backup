@@ -12,7 +12,7 @@
 		/**
 		 * @brief Implementation stub of operation insertOrder
  		 * @details This function shall contain the implementation of the operation insertOrder.
-		 * @param orderID @param ingredientID:Int32, @param amount 
+		 * @param orderID @param ingredientID @param amount 
 		 */
 		int32_T noSQLDatabase_noSQLDatabaseInsertOrder(int32_T orderID, int32_T ingredientID, int32_T amount);
 		/**

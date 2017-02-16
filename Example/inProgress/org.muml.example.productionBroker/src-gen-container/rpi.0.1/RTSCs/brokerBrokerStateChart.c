@@ -8,8 +8,6 @@
 		void initializeBrokerGetOrderGetOrderStatechartRegion(
 				BrokerBrokerStateChart* stateChart) {
 		
-			stateChart->testLatestOrderID = -1;
-		
 			stateChart->currentStateOfBrokerGetOrderGetOrderStatechart =
 					STATE_BROKERGETORDERINIT;
 		
@@ -38,7 +36,7 @@
 			//initialize clocks
 		
 			//initialize variables of the root statechart
-			stateChart->testLatestOrderIDGlobal = -1;
+			stateChart->latestOrderID = -1;
 		
 			//initialize port variables of the root statechart
 		
@@ -140,8 +138,7 @@
 							msg_MessagesSimpleOrder.orderID,
 							msg_MessagesSimpleOrder.ingredientID,
 							msg_MessagesSimpleOrder.amount);
-					stateChart->testLatestOrderIDGlobal =
-							msg_MessagesSimpleOrder.orderID;
+					stateChart->latestOrderID = msg_MessagesSimpleOrder.orderID;
 					;
 		
 					// nothing to do			
@@ -218,7 +215,7 @@
 				} else if (MCC_BrokerComponent_brokerForPSPort_exists_MessagesGetOrder_Messages_Message(
 						BrokerComponent_getbrokerForPSPort(stateChart->parentComponent))
 		
-				&& stateChart->testLatestOrderIDGlobal > 0
+				&& stateChart->latestOrderID > 0
 		
 				) {
 					MessagesGetOrder_Messages_Message msg_MessagesGetOrder;
@@ -238,7 +235,7 @@
 		
 					stateChart->currentPsID = msg_MessagesGetOrder.psID;
 					stateChart->provideOrderID = noSQLDatabase_noSQLDatabaseSearchOrder(
-							stateChart->testLatestOrderIDGlobal);
+							stateChart->latestOrderID);
 					;;
 		
 					// nothing to do			

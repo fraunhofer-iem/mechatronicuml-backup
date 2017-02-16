@@ -20,10 +20,10 @@ CONT_LIB =  MessageBuffer.o LocalBufferManager.o DDS_Custom_Lib.o
 RTSC = brokerBrokerStateChart.o 
 COMP = brokerComponent.o  
 CONTMAPPING = 
-OPERATIONREPOSITORIES = 	 noSQLDatabaseOpRep.o
+OPERATIONREPOSITORIES = 	 noSQLDatabaseOpRep.o		
 LIB =   Debug.o unqlite.o
 CC = gcc
-CFLAGS = -DC99 -DDEBUG -ggdb -Wall -c  $(DEFINES) -I types -I lib -I $(NDDSHOME)/include -I $(NDDSHOME)/include/ndds
+CFLAGS = -DC99 -DDEBUG -ggdb -Wall -c  $(DEFINES) -I types -I lib -I $(NDDSHOME)/include -I $(NDDSHOME)/include/ndds 
 all: app
 
 app : main.o $(RTSC) $(COMP) $(LIB) $(CONT_LIB) $(HYB) $(CONT) $(CONTMAPPING) $(OPERATIONREPOSITORIES)  $(DDSSOURCES)
@@ -57,12 +57,13 @@ MCC_brokerComponent.o: component_container/MCC_brokerComponent.c
 
 Debug.o: lib/Debug.c
 	$(CC) $(CFLAGS) lib/Debug.c
-	
+
 unqlite.o: lib/unqlite.c
 	$(CC) $(CFLAGS) lib/unqlite.c
 
-noSQLDatabaseOpRep.o: operations/noSQLDatabaseOpRep.c 
+noSQLDatabaseOpRep.o: operations/noSQLDatabaseOpRep.c
 	$(CC) $(CFLAGS) operations/noSQLDatabaseOpRep.c
-		
+
+
 clean:
 	rm -rf *o app

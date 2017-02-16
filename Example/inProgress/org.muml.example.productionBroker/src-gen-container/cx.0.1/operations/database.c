@@ -306,7 +306,7 @@ int searchOrder(int latestOrderID)
 
 	printf("Searching for an unassigned order with ID up to %d\n",latestOrderID);
 
-	for (int i=startSearch; i<latestOrderID; i++){
+	for (int i=startSearch; i<=latestOrderID; i++){
 
 		//Check amount if that order even still exists
 		char orderIDamountBuffer[sizeof("orderID:")+sizeof(int)+sizeof(":amount")];
@@ -315,10 +315,13 @@ int searchOrder(int latestOrderID)
 		rc = unqlite_kv_fetch(pDb, orderIDamountBuffer, -1, NULL, &nBytes);
 		if (rc == UNQLITE_NOTFOUND)
 		{
-			// That order does not exist anymore. Next time we can start searching
-			// from the next index on
-			startSearch=i+1;
-			break;
+			// That order does not exist anymore.
+			// If this is where we would start searching, we could search from the next index on
+			if (i==startSearch){
+				printf("Increasing startSearch to %d \n",i+1);
+				startSearch=i+1;
+			}
+			continue;
 		}
 		else if (rc < 0){
 			//There is some other problem, stop searching
@@ -336,6 +339,7 @@ int searchOrder(int latestOrderID)
 			if (rc == UNQLITE_NOTFOUND)
 			{
 				//Jackpot. This is an order which exists, but does not have a production station.
+				printf("Found existent order without production station. OrderId=%d\n",i);
 				return i;
 			}
 			else if (rc < 0){
@@ -347,6 +351,7 @@ int searchOrder(int latestOrderID)
 
 	}
 	//So we tried all possible orders, but everything has a production station already
+	printf("No unassigned order found.\n");
 	return UNQLITE_NOTFOUND;
 
 }

@@ -202,8 +202,7 @@
 				
 					
 				
-							int32_T testLatestOrderIDGlobal; /**< The Realtime-StateChart Variable: testLatestOrderIDGlobal of Type: int32; */
-							int32_T testLatestOrderID; /**< The Realtime-StateChart Variable: testLatestOrderID of Type: int32; */
+							int32_T latestOrderID; /**< The Realtime-StateChart Variable: latestOrderID of Type: int32; */
 							int32_T currentPsID; /**< The Realtime-StateChart Variable: currentPsID of Type: int32; */
 							int32_T provideOrderID; /**< The Realtime-StateChart Variable: provideOrderID of Type: int32; */
 							int32_T provideAmount; /**< The Realtime-StateChart Variable: provideAmount of Type: int32; */
