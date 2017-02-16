@@ -10,7 +10,7 @@ mapping Element::create() : Element {
 	}
 }
 
-mapping Element::create(containter : OclAny) : Element {
+mapping Element::create(context : OclAny) : Element {
 	init {
 	if(self.oclAsType(EObject).eResource().toString().matches("platform:/plugin")) then{
 		result:=self.oclAsType(EObject);
