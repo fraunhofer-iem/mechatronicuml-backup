@@ -60,8 +60,8 @@ Debug.o: lib/Debug.c
 
 unqlite.o: lib/unqlite.c
 	$(CC) $(CFLAGS) lib/unqlite.c
-
-noSQLDatabaseOpRep.o: operations/noSQLDatabaseOpRep.c
+	
+ noSQLDatabaseOpRep.o: operations/noSQLDatabaseOpRep.c
 	$(CC) $(CFLAGS) operations/noSQLDatabaseOpRep.c
 
 

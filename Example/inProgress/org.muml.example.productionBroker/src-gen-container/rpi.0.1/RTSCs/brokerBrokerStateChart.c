@@ -215,9 +215,7 @@
 				} else if (MCC_BrokerComponent_brokerForPSPort_exists_MessagesGetOrder_Messages_Message(
 						BrokerComponent_getbrokerForPSPort(stateChart->parentComponent))
 		
-				&& stateChart->latestOrderID > 0
-		
-				) {
+						) {
 					MessagesGetOrder_Messages_Message msg_MessagesGetOrder;
 					MCC_BrokerComponent_brokerForPSPort_recv_MessagesGetOrder_Messages_Message(
 							BrokerComponent_getbrokerForPSPort(
@@ -253,14 +251,25 @@
 		#endif		
 		
 					// execute entry actions
-					stateChart->provideAmount =
-							noSQLDatabase_noSQLDatabaseGetOrderAmount(
-									stateChart->provideOrderID);
+					if (stateChart->provideOrderID >= 0) {
+						stateChart->provideAmount =
+								noSQLDatabase_noSQLDatabaseGetOrderAmount(
+										stateChart->provideOrderID);
+						;
+						stateChart->provideIngredientID =
+								noSQLDatabase_noSQLDatabaseGetOrderIngredientID(
+										stateChart->provideOrderID);
+						;
+		
+					}
+		
+					else {
+						stateChart->provideAmount = -1;
+						stateChart->provideIngredientID = -1;
+		
+					}
+		
 					;
-					stateChart->provideIngredientID =
-							noSQLDatabase_noSQLDatabaseGetOrderIngredientID(
-									stateChart->provideOrderID);
-					;;
 		
 				} else {
 		
@@ -269,7 +278,7 @@
 			case STATE_BROKERBROKERFORPSPORTPROCESSORDERREQUEST:
 				if (
 		
-				stateChart->provideAmount < 0 || stateChart->provideIngredientID < 0
+				stateChart->provideOrderID < 0
 		
 				) {
 		
@@ -304,7 +313,9 @@
 					// execute entry actions
 					// nothing to do
 		
-				} else if (1
+				} else if (
+		
+				stateChart->provideOrderID >= 0
 		
 				) {
 		
@@ -408,23 +419,6 @@
 		}
 		
 		
-		void BrokerGetOrderGetOrderStatechartStateChart_exit(
-				BrokerBrokerStateChart* stateChart) {
-			switch (stateChart->currentStateOfBrokerGetOrderGetOrderStatechart) {
-			case STATE_BROKERGETORDERINIT:
-				// nothing to do
-		
-				break;
-			case STATE_BROKERGETORDERMANAGEORDERS:
-				// nothing to do
-		
-				break;
-			default:
-				break;
-			}
-			stateChart->currentStateOfBrokerGetOrderGetOrderStatechart =
-					BROKERBROKER_INACTIVE;
-		}
 		void BrokerBrokerForPSPortOrderBrokerforPsRTSCStateChart_exit(
 				BrokerBrokerStateChart* stateChart) {
 			switch (stateChart->currentStateOfBrokerBrokerForPSPortOrderBrokerforPsRTSC) {
@@ -446,12 +440,30 @@
 			stateChart->currentStateOfBrokerBrokerForPSPortOrderBrokerforPsRTSC =
 					BROKERBROKER_INACTIVE;
 		}
+		void BrokerGetOrderGetOrderStatechartStateChart_exit(
+				BrokerBrokerStateChart* stateChart) {
+			switch (stateChart->currentStateOfBrokerGetOrderGetOrderStatechart) {
+			case STATE_BROKERGETORDERINIT:
+				// nothing to do
+		
+				break;
+			case STATE_BROKERGETORDERMANAGEORDERS:
+				// nothing to do
+		
+				break;
+			default:
+				break;
+			}
+			stateChart->currentStateOfBrokerGetOrderGetOrderStatechart =
+					BROKERBROKER_INACTIVE;
+		}
 				
 			
 		bool_t BrokerBrokerStateChart_isInState(BrokerBrokerStateChart* stateChart,
 				BrokerBrokerState state) {
-			return (stateChart->currentStateOfBrokerGetOrderGetOrderStatechart == state
-					|| stateChart->currentStateOfBrokerBrokerForPSPortOrderBrokerforPsRTSC
+			return (stateChart->currentStateOfBrokerBrokerForPSPortOrderBrokerforPsRTSC
+					== state
+					|| stateChart->currentStateOfBrokerGetOrderGetOrderStatechart
 							== state);
 		
 		}

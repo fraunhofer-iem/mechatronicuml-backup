@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<generator:CodeGen xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:generator="http://www.opendds.org/modeling/schemas/Generator/1.0" xmi:id="_NrjIQPQcEea_wqi8c1BSWg">
-  <source xmi:id="_NrkWYPQcEea_wqi8c1BSWg" name="/org.muml.example.productionBroker/src-gen-new/MUML_DDS.opendds"/>
-  <target xmi:id="_NrkWYfQcEea_wqi8c1BSWg" name="/org.muml.example.productionBroker/src-gen-new/dds"/>
-  <instances xmi:id="_NrkWYvQcEea_wqi8c1BSWg">
-    <instance xmi:id="_NrkWY_QcEea_wqi8c1BSWg" name="default"/>
+<generator:CodeGen xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:generator="http://www.opendds.org/modeling/schemas/Generator/1.0" xmi:id="_eVRhgPRGEeaPvMZN2eZM1g">
+  <source xmi:id="_eVRhgfRGEeaPvMZN2eZM1g" name="/org.muml.example.productionBroker/src-gen-container/MUML_DDS.opendds"/>
+  <target xmi:id="_eVRhgvRGEeaPvMZN2eZM1g" name="/org.muml.example.productionBroker/src-gen-container/root-cic/dds"/>
+  <instances xmi:id="_eVRhg_RGEeaPvMZN2eZM1g">
+    <instance xmi:id="_eVRhhPRGEeaPvMZN2eZM1g" name="default"/>
   </instances>
-  <searchPaths xmi:id="_Nrk9cPQcEea_wqi8c1BSWg"/>
-  <transports xmi:id="_Nrk9cfQcEea_wqi8c1BSWg"/>
+  <searchPaths xmi:id="_eVRhhfRGEeaPvMZN2eZM1g"/>
+  <transports xmi:id="_eVRhhvRGEeaPvMZN2eZM1g"/>
 </generator:CodeGen>
