@@ -6,24 +6,14 @@ modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 
 
 main() {
-	i.rootObjects()[EClass].map transform();
+	i.objects()[EPackage].map transform();
 }
 
 
-mapping EClass::transform() : Element {
-	init {
-		result := self.map ModelcopyLibrary::transform();
-	}
+mapping EClass::transform() : EClass inherits Element::transform {
 	
 	-- Here you can do your custom, transformation specific work.
 	
 	-- In case you do not want the default copying behavior, you need to
 	-- remove the "inherits" statement above.
-}
-
-
-mapping EClass::create() : EObject {
-	init {
-		result := new EClass().oclAsType(EObject);
-	}
 }
