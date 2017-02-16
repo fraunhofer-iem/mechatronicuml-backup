@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.ComboViewer;
-import org.eclipse.jface.viewers.IFilter;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.LabelProvider;
@@ -58,6 +57,14 @@ public class NavigationFeaturePropertyEditor extends
 		this(adapterFactory, feature, false);
 	}
 
+	public NavigationFeaturePropertyEditor(AdapterFactory adapterFactory,
+			EStructuralFeature feature, boolean initiallyOpen, EObject currentValue) {
+		this(adapterFactory, feature, initiallyOpen);
+		Assert.isLegal(feature.isMany());
+		manyValue = currentValue;
+		createMode = currentValue == null;
+	}
+	
 	public void setCreationFilters(List<ICreationFilter> filters) {
 		this.creationFilters.clear();
 		this.creationFilters.addAll(filters);
@@ -69,13 +76,6 @@ public class NavigationFeaturePropertyEditor extends
 		super.updateVisibility(relayout);
 	}
 	
-	public NavigationFeaturePropertyEditor(AdapterFactory adapterFactory,
-			EStructuralFeature feature, boolean initiallyOpen, EObject currentValue) {
-		this(adapterFactory, feature, initiallyOpen);
-		Assert.isLegal(feature.isMany());
-		manyValue = currentValue;
-		createMode = currentValue == null;
-	}
 
 	protected ObjectPropertyEditor createNavigatedEditor() {
 		ObjectPropertyEditor editor = new ObjectPropertyEditor(null, adapterFactory, "null", initiallyOpen);
@@ -247,6 +247,10 @@ public class NavigationFeaturePropertyEditor extends
 			create();
 		}
 		updateTitle();
+		
+		if (value != null) {
+			navigatedEditor.getSection().setExpanded(true);
+		}
 	}
 
 	@Override
