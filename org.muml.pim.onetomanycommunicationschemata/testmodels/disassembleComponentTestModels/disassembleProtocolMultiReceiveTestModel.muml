@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--muml metamodel version 0.3.2 (r15221)-->
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:msgtype="http://www.muml.org/pim/msgtype/1.0.0" xmlns:one_to_n_schemata="http://www.muml.org/pim/one_to_n_schemata/1.0.0" xmlns:protocol="http://www.muml.org/pim/protocol/1.0.0" xmlns:realtimestatechart="http://www.muml.org/pim/realtimestatechart/1.0.0" xmlns:sdcec="http://www.muml.org/core/expressions/common/1.0.0" xmlns:types="http://www.muml.org/pim/types/1.0.0" xmi:id="_Jm5hoBi6EeWsFZ_Un4dxHg">
+  <categories xmi:id="_Jm5hoRi6EeWsFZ_Un4dxHg" key="org.muml.types.category" name="types">
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Jm5hohi6EeWsFZ_Un4dxHg" name="void"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Jm5hoxi6EeWsFZ_Un4dxHg" name="boolean" primitiveType="BOOLEAN"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Jm5hpBi6EeWsFZ_Un4dxHg" name="int8" primitiveType="INT8"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Jm5hpRi6EeWsFZ_Un4dxHg" name="int16" primitiveType="INT16"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Jm5hphi6EeWsFZ_Un4dxHg" name="int32" primitiveType="INT32"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Jm5hpxi6EeWsFZ_Un4dxHg" name="int64" primitiveType="INT64"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Jm5hqBi6EeWsFZ_Un4dxHg" name="double" primitiveType="DOUBLE"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Jm5hqRi6EeWsFZ_Un4dxHg" name="uint8" primitiveType="UINT8"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Jm5hqhi6EeWsFZ_Un4dxHg" name="uint16" primitiveType="UINT16"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Jm5hqxi6EeWsFZ_Un4dxHg" name="uint32" primitiveType="UINT32"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Jm5hrBi6EeWsFZ_Un4dxHg" name="uint64" primitiveType="UINT64"/>
+  </categories>
+  <categories xmi:id="_Jm5hrRi6EeWsFZ_Un4dxHg" key="org.muml.pim.instance.category" name="instance"/>
+  <categories xmi:id="_Jm5hrhi6EeWsFZ_Un4dxHg" key="org.muml.pim.components.category" name="component"/>
+  <categories xmi:id="_Jm5hrxi6EeWsFZ_Un4dxHg" key="org.muml.pim.protocol.category" name="protocol">
+    <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_iKJN8Bi6EeWsFZ_Un4dxHg" name="C1">
+      <roles xmi:id="_iKJN8Ri6EeWsFZ_Un4dxHg" connectors="_iKSX5Bi6EeWsFZ_Un4dxHg" behavior="_tQ-CcGVbEeWh3MOfW79Z2A" name="role1" receiverMessageTypes="_hGTLUBi6EeWsFZ_Un4dxHg">
+        <cardinality xmi:id="_iKJN8hi6EeWsFZ_Un4dxHg">
+          <lowerBound xmi:id="_N8myMGVcEeWh3MOfW79Z2A"/>
+          <upperBound xmi:id="_N8myMWVcEeWh3MOfW79Z2A" value="4"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_L_I50EnaEeWLQtFxL0-UyA" name="b1" messageType="_hGTLUBi6EeWsFZ_Un4dxHg">
+          <bufferSize xmi:id="_NP1FoEnaEeWLQtFxL0-UyA"/>
+        </receiverMessageBuffer>
+      </roles>
+      <roles xmi:id="_iKSX4Bi6EeWsFZ_Un4dxHg" connectors="_iKSX5Bi6EeWsFZ_Un4dxHg" behavior="_psdZ4GVbEeWh3MOfW79Z2A" name="role2" senderMessageTypes="_hGTLUBi6EeWsFZ_Un4dxHg">
+        <cardinality xmi:id="_iKSX4Ri6EeWsFZ_Un4dxHg">
+          <lowerBound xmi:id="_iKSX4hi6EeWsFZ_Un4dxHg"/>
+          <upperBound xmi:id="_iKSX4xi6EeWsFZ_Un4dxHg"/>
+        </cardinality>
+      </roles>
+      <roleConnector xmi:id="_iKSX5Bi6EeWsFZ_Un4dxHg" connectorEndpoints="_iKJN8Ri6EeWsFZ_Un4dxHg _iKSX4Bi6EeWsFZ_Un4dxHg">
+        <connectorQualityOfServiceAssumptions xmi:id="_iKSX5Ri6EeWsFZ_Un4dxHg" comment="">
+          <minMessageDelay xmi:id="_iKSX6Bi6EeWsFZ_Un4dxHg" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_iKSX6Ri6EeWsFZ_Un4dxHg" value="0"/>
+          </minMessageDelay>
+          <maxMessageDelay xmi:id="_iKSX5hi6EeWsFZ_Un4dxHg" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_iKSX5xi6EeWsFZ_Un4dxHg" value="0"/>
+          </maxMessageDelay>
+        </connectorQualityOfServiceAssumptions>
+      </roleConnector>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_Jm5hsBi6EeWsFZ_Un4dxHg" key="org.muml.pim.messagetype.category" name="msgtype">
+    <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_g05SQBi6EeWsFZ_Un4dxHg" name="M1">
+      <messageTypes xmi:id="_hGTLUBi6EeWsFZ_Un4dxHg" name="mi"/>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_Jm5hsRi6EeWsFZ_Un4dxHg" key="org.muml.pim.realtimestatechart.category" name="realtimestatechart">
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_psdZ4GVbEeWh3MOfW79Z2A" name="role2" behavioralElement="_iKSX4Bi6EeWsFZ_Un4dxHg">
+      <transitions xmi:id="_81rtgGVbEeWh3MOfW79Z2A" priority="1" target="_8e8ogGVbEeWh3MOfW79Z2A" source="_psdZ4WVbEeWh3MOfW79Z2A">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_A3y4EGVcEeWh3MOfW79Z2A">
+          <message xmi:id="_BB7rgGVcEeWh3MOfW79Z2A" instanceOf="_hGTLUBi6EeWsFZ_Un4dxHg"/>
+        </events>
+      </transitions>
+      <states xmi:id="_psdZ4WVbEeWh3MOfW79Z2A" name="init" outgoingTransitions="_81rtgGVbEeWh3MOfW79Z2A" initial="true"/>
+      <states xmi:id="_8e8ogGVbEeWh3MOfW79Z2A" name="s2" incomingTransitions="_81rtgGVbEeWh3MOfW79Z2A"/>
+    </modelElements>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_tQ-CcGVbEeWh3MOfW79Z2A" name="role1" behavioralElement="_iKJN8Ri6EeWsFZ_Un4dxHg">
+      <transitions xmi:id="_ztCuAGVbEeWh3MOfW79Z2A" priority="1" target="_uq2mgGVbEeWh3MOfW79Z2A" source="_tQ-CcWVbEeWh3MOfW79Z2A">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_K5qloGVcEeWh3MOfW79Z2A" kind="TRIGGER">
+          <message xmi:id="_LFy9IGVcEeWh3MOfW79Z2A" instanceOf="_hGTLUBi6EeWsFZ_Un4dxHg"/>
+          <oneToManyCommunicationSchema xsi:type="one_to_n_schemata:MultiReceive" xmi:id="_Mg6QQGVcEeWh3MOfW79Z2A"/>
+        </events>
+      </transitions>
+      <states xmi:id="_tQ-CcWVbEeWh3MOfW79Z2A" name="init" outgoingTransitions="_ztCuAGVbEeWh3MOfW79Z2A" initial="true"/>
+      <states xmi:id="_uq2mgGVbEeWh3MOfW79Z2A" name="s2" incomingTransitions="_ztCuAGVbEeWh3MOfW79Z2A"/>
+    </modelElements>
+  </categories>
+</modelinstance:RootNode>

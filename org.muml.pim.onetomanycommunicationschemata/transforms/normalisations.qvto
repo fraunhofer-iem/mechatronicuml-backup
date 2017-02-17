@@ -1,0 +1,109 @@
+library normalisations;
+
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype rtsc2 uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype common uses core::expressions::common('http://www.muml.org/core/1.0.0');
+modeltype expressions uses core::expressions('http://www.muml.org/core/1.0.0');
+modeltype behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
+modeltype valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype storydriven uses 'http://www.muml.org/core/1.0.0';
+modeltype schemata uses pim::realtimestatechart::one_to_n_schemata('http://www.muml.org/pim/1.0.0');
+modeltype types uses pim::types('http://www.muml.org/pim/1.0.0');
+
+
+helper normalize(inout rtsc : RealtimeStatechart) {
+	// normalize the statechart rtsc and all of its children statecharts	
+	var allRTSC : Set(RealtimeStatechart) := 
+	rtsc->closure(rtsc.states.oclAsType(State).embeddedRegions.oclAsType(Region).embeddedStatechart)->append(rtsc);
+	
+	allRTSC->forEach(statechart) {
+		normalizeTransformationThatUseTwoSchemata(statechart);
+		normalizeTransitionsWithStateConnectionPoint(statechart);
+	};	
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+// normalize transitions that use two synchronization schemata
+helper normalizeTransformationThatUseTwoSchemata(inout rtsc : RealtimeStatechart) {	
+	// normalize transitions that use two synchronization schemata	
+	rtsc.transitions->select(t|t.usesTwoSchemata())->forEach(t){
+		rtsc.states += t.map Transition2NormalizationIntermediateState();
+		rtsc.transitions += t.map Transition2NormalizationTransition1();
+		rtsc.transitions += t.map Transition2NormalizationTransition2();
+		rtsc.transitions := rtsc.transitions->excluding(t);
+	};	
+}
+
+mapping Transition :: Transition2NormalizationIntermediateState(): State {
+	name:= "SynchronizationNormalizationIntermediate_"+ self.source.name + "_"+self.target.name;
+	result.parentStatechart := self.statechart;	
+}
+
+mapping Transition :: Transition2NormalizationTransition1() : Transition{
+	priority := self.priority;
+	source:= self.source;
+	target := self.map Transition2NormalizationIntermediateState();
+	// take the <conditions> of the input Transition
+	guard := self.guard;
+	clockConstraints := self.clockConstraints;
+	synchronization := self.synchronization;
+	if(not self.relativeDeadline.oclIsUndefined()){
+		result.relativeDeadline:= self.relativeDeadline.deepclone().oclAsType(RelativeDeadline); 
+	};	
+	urgent := self.urgent;
+	events += self.triggerMessageEvent;
+}
+
+mapping Transition :: Transition2NormalizationTransition2() : Transition{
+	priority := 1;
+	source := self.map Transition2NormalizationIntermediateState();
+	// take the <effects> of the input transition
+	target := self.target;
+	clockResets := self.clockResets;
+	action := self.action;	
+	if(not self.relativeDeadline.oclIsUndefined()){
+		result.relativeDeadline:= self.relativeDeadline.deepclone().oclAsType(RelativeDeadline); 
+		var lit : LiteralExpression := new LiteralExpression();
+		lit.value := "0";
+		result.relativeDeadline.lowerBound.value := lit;
+		
+	};
+	urgent := self.urgent;
+	events += self.raiseMessageEvent;
+}
+
+query Transition :: usesTwoSchemata() : Boolean{
+	return not self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined() and not self.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined();	
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+// normalize transitions that use Schemata and that source vertex is a StateConnectionPoint
+
+helper normalizeTransitionsWithStateConnectionPoint(inout rtsc : RealtimeStatechart) {
+	rtsc.transitions->select(t|t.usesSchemataAndHasStateConnectionPointAsSource())-> forEach(transition) {
+		rtsc.transitions += transition.createNewTransitionFromStateExitPointToIntermediateState();
+		transition.source := transition.map StateExitPointIntermediateState();
+		rtsc.states += transition.map StateExitPointIntermediateState();
+	};
+}
+
+helper Transition:: createNewTransitionFromStateExitPointToIntermediateState() : Transition {
+	var transition : Transition := new Transition();
+	transition.source := self.source;
+	transition.target := self.map StateExitPointIntermediateState();
+	transition.priority := self.priority;
+	return transition;
+}
+
+mapping Transition :: StateExitPointIntermediateState() : State {
+	result.name := "Intermediate_Node_for_StateConnectionPoint_" + self.source.name;
+	result.urgent := true;
+	result.parentStatechart := self.statechart;
+}
+
+query Transition :: usesSchemataAndHasStateConnectionPointAsSource() : Boolean {
+	// check only raise event, since trigger is not allowed anyway!	
+	return  not self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined() and self.source.oclIsKindOf(pim::realtimestatechart::StateConnectionPoint);
+}

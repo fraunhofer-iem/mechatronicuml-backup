@@ -1,0 +1,356 @@
+library UniReceive;
+import common.AllSchemataMappings;
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype common uses core::expressions::common('http://www.muml.org/core/1.0.0');
+modeltype expressions uses core::expressions('http://www.muml.org/core/1.0.0');
+modeltype behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
+modeltype valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype storydriven uses 'http://www.muml.org/core/1.0.0';
+modeltype schemata uses pim::realtimestatechart::one_to_n_schemata('http://www.muml.org/pim/1.0.0');
+modeltype types uses pim::types('http://www.muml.org/pim/1.0.0');
+
+----------------------------------------------------------XXXXXXXXXXXXXXXXX--SINGLE-RECEIVE--XXXXXXXXXXXXXXXXX-------------------------------------------------------------------------
+property singleReceiveDone : String = "singleReceiveDone";
+property singleReceiveCheck: String = "singleReceiveCheck";
+property singleReceive : String = "singleReceive";
+property singleReceiveCheckDone : String = "singleReceiveCheckDone";
+property singleReceivePossibleName : String = "singleReceivePossible";
+property consumeSingleReceiveName : String = "consumeSingleReceive";
+--------------------------------------------------------------Transfer Schema SingleReceive of Coordinator------------------------------------------------------------------
+	
+mapping Transition :: SingleReceive2TransitionFromIntermediate2ToTarget(context:OclAny, region:RealtimeStatechart) : Transition
+	when {self.usesUniReceiveSchema()} {
+		// creates in the coordinator region the transition from the intermediate state 2 to the (mapped) target state of the schema transition
+		priority := 1;
+		
+		source := self.map Schema2CoordinatorIntermediateState(context,2,singleReceiveDLCName );
+		
+		target := self.target.map Vertex2VertexCoordinator(context);
+		
+		clockResets += self.clockResets->select(c|not isClockSubRoleSpecific(c)).map transform().oclAsType(Clock);
+		
+		action := self.action.map transformWithContext(result).oclAsType(Action);
+		
+		synchronization := self. createSynchronization( singleReceiveDone,SynchronizationKind::RECEIVE);
+			
+	}
+
+mapping Transition :: SingleReceive2SourceRegionCoordinator(context:OclAny) : Region
+	when {self.usesUniReceiveSchema()}  {
+		
+		priority := self.priority;
+		
+		parentState := self.source.map Vertex2VertexCoordinator(context).oclAsType(State);
+		
+		embeddedStatechart := self.map SingleReceive2SourceEmbeddedRTSCCoordinator(context);
+					
+	}
+	
+mapping Transition :: SingleReceive2SourceEmbeddedRTSCCoordinator(context:OclAny) : RealtimeStatechart 
+	when {self.usesUniReceiveSchema()} {
+		
+		name:= "singleReceiveCheck" + "_" + self.source.name + "_" + self.target.name + "_" + self.priority.toString();
+		
+		states += self.map RegionState(context,  "Idle", true);
+		states += self.map RegionState(context,  "Requesting", false);
+		
+		transitions += self.map SingleReceive2TransCheckEmbeddedCoordinator(context);
+		transitions += self.map SingleReceive2TransCheckDoneEmbeddedCoordinator(context);
+					
+	}
+	
+mapping Transition :: SingleReceive2TransCheckEmbeddedCoordinator(context:OclAny) : Transition 
+	when {self.usesUniReceiveSchema()} {
+
+		priority := 1;
+		
+		source := self.map RegionState(context,  "Idle", true);
+		
+		target := self.map RegionState(context,  "Requesting", false);
+		
+		if(not self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->isEmpty()) {
+			urgent := false;
+		}
+		else {
+			urgent := self.urgent;
+		};		
+		clockConstraints += self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map transformWithContext(result).oclAsType(ClockConstraint);	
+	
+		guard := self.guard.map transformWithContext(result).oclAsType(Expression);
+		
+		synchronization := self. createSynchronization(singleReceiveCheck, SynchronizationKind::SEND,PositionSelectorKind::FIRST);
+			
+	}
+	
+mapping Transition :: SingleReceive2TransCheckDoneEmbeddedCoordinator(context:OclAny) : Transition 
+	when {self.usesUniReceiveSchema()} {
+
+		priority := 1;
+		
+		target := self.map RegionState(context,  "Idle", true);
+		
+		source := self.map RegionState(context,  "Requesting", false);
+		
+		synchronization := self. createSynchronization( singleReceiveCheckDone, SynchronizationKind::RECEIVE);
+			
+	}
+//mapping  Transition :: RelativeDeadline2ClockConstraint(context:OclAny, region:RealtimeStatechart, mapLowerBound : Boolean, operator :ComparingOperator, clockName : String) : ClockConstraint
+	
+	
+mapping Transition :: SingleReceive2TransitionFromIntermediate1ToIntermediate2(context : OclAny, region:RealtimeStatechart): Transition
+	when {self.usesUniReceiveSchema()} {
+		priority := 1;
+		
+		target := self.map Schema2CoordinatorIntermediateState(context, 2, singleReceiveDLCName);
+		
+		source := self.map Schema2CoordinatorIntermediateState(context, 1, singleReceiveDLCName);
+		//invariants += self.map RelativeDeadline2ClockConstraint(intermediateStateNumber,region, false, ComparingOperator::LESS_OR_EQUAL, clockName);
+		if(not self.relativeDeadline.oclIsUndefined()) {
+			clockConstraints += self. RelativeDeadline2ClockConstraint( false, ComparingOperator::GREATER_OR_EQUAL, singleReceiveDLCName);
+			urgent := false;
+		};
+		
+		synchronization := self.createSynchronization(singleReceive, SynchronizationKind::SEND, PositionSelectorKind::FIRST);
+}
+	
+mapping Transition :: SingleReceive2TransitionFromSourceToIntermediate1(context:OclAny, region:RealtimeStatechart) : Transition
+	when {self.usesUniReceiveSchema()}  {
+	
+		priority := self.priority;
+		
+		target := self.map Schema2CoordinatorIntermediateState(context,1,singleReceiveDLCName);
+		
+		source := self.source.map Vertex2VertexCoordinator(context);		
+		
+		synchronization := self. createSynchronization( singleReceivePossibleName, SynchronizationKind::RECEIVE);
+		
+		if(not self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->isEmpty()) 
+			urgent := false;		
+		clockConstraints += self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map transformWithContext(result).oclAsType(ClockConstraint);	
+}
+	
+--------------------------------------------------------------- Transfer Schema SingleReceive of Subrole------------------------------------------------------------------
+	
+// @author: sthiele2 -- this mapping generates the transition from the source of the schema-transition to an intermediate state
+mapping Transition :: SingleReceive2TransitionFromSourceToIntermediate(parentStatechart:RealtimeStatechart, region:RealtimeStatechart) : Transition
+	when {self.usesUniReceiveSchema()}  {
+
+		priority := (self.priority);
+		
+		source := self.map Transition2SourceStateSubrole(region);		
+		
+		target := self.map Schema2SubroleIntermediateState(parentStatechart,1);
+	
+		guard := createTypedNamedElementExpression(self.map Schema2BooleanVariable(consumeSingleReceiveName));
+		
+	}
+	
+
+ 
+// @author sthiele2 -- one of the transitions from target state to source state in the subrole-region
+mapping Transition :: SingleReceive2Transition1TargetToSourceSubrole(parentStatechart:RealtimeStatechart, region:RealtimeStatechart) : Transition 
+	when {self.usesUniReceiveSchema()} {
+	
+		priority := 2;
+		
+		target := self.map Transition2SourceStateSubrole(region);
+		
+		source := self.map Transition2TargetStateSubrole(region);
+		
+		synchronization := self. createSynchronization( singleReceive, SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
+		
+		guard := createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
+		
+		action := self. createActionWithVariableAssignmentBlock("consumeSingleReceive:=false", consumeSingleReceiveName, "false");			
+	}
+	
+// @author sthiele2 -- one of the transitions from target state to source state in the subrole-region			
+mapping Transition :: SingleReceive2Transition2TargetToSourceSubrole(context:OclAny, region:RealtimeStatechart) : Transition 
+	when {self.usesUniReceiveSchema()} {
+	
+		priority := 1;
+		
+		target := self.map Transition2SourceStateSubrole(region);
+		
+		source := self.map Transition2TargetStateSubrole(region);
+		
+		guard := createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
+				
+		action := self. createActionWithVariableAssignmentBlock("consumeSingleReceive:=false", consumeSingleReceiveName, "false");
+			
+		synchronization := self. createSynchronization(singleReceiveDone, SynchronizationKind::SEND );			
+	}
+	
+// @author sthiele2 -- one of the transitions from intermediate state to target state in the subrole-region			
+mapping Transition :: SingleReceive2Transition1FromIntermediateToReceivedSubrole(context:OclAny, region:RealtimeStatechart) : Transition 
+	when {self.usesUniReceiveSchema()} {
+	
+		priority := 1;
+		
+		target := self.map Transition2TargetStateSubrole(region);
+		
+		source := self.map Schema2SubroleIntermediateState(context,1);	
+	
+		synchronization := self. createSynchronization(singleReceive, SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);			
+	}
+	
+mapping Transition :: SingleReceive2SourceRegionSubrole(context:OclAny, region:RealtimeStatechart) : Region 
+	when {self.usesUniReceiveSchema()} {
+		
+		priority := self.priority;
+		
+		parentState := self.map Transition2SourceStateSubrole(region);
+		
+		embeddedStatechart := self.map SingleReceive2SourceEmbeddedRTSCSubrole(context, region);					
+	}
+
+// @author: sthiele2 -- creates the embedded rtsc of the schema transition's source node in the subrole region	
+mapping Transition :: SingleReceive2SourceEmbeddedRTSCSubrole(context:OclAny, region:RealtimeStatechart) : RealtimeStatechart 
+	when {self.usesUniReceiveSchema()} {
+		
+		name:= "singleReceiveCheck" + "_" + self.source.name + "_" + self.target.name + "_" + self.priority.toString();
+		
+		states += self.map RegionState(context,  "Idle", true);
+	
+		states += self.map RegionState(context,  "Requested", false);	
+	
+		transitions += self.map SingleReceive2Transition1FromRequestedToIdle(context,region);
+	
+		transitions += self.map SingleReceive2Transition2FromRequestedToIdle(context,region);
+	
+		transitions += self.map SingleReceive2TransitionFromIdleToRequested(context,region);					
+		
+		transitions += self.map SingleReceive2TransitionFromEmbeddedStateToStateExitPoint(context,region);		
+		
+	}
+
+// @author: sthiele2 -- creates a transition from the exit point of the schema-transition's source to the intermediate state in the subrole region
+mapping Transition :: SingleReceive2TransitionFromStateExitPointToIntermediateStateOfSubRole(context : OclAny, region:RealtimeStatechart) : Transition
+	when {self.usesUniReceiveSchema()} {
+		priority := 1;
+		
+		source := self.map SingleReceive2StateExitPoint();
+		
+		target := self.map Schema2SubroleIntermediateState(context,1);
+		
+		action := self.createActionWithVariableAssignmentBlock("consumeSingleReceive := true",consumeSingleReceiveName, "true");
+		
+		if(not self.triggerMessageEvent.oneToManyCommunicationSchema.action.oclIsUndefined())
+			{
+				action.expressions += self.triggerMessageEvent.oneToManyCommunicationSchema.action.expressions.map transformWithContext(result).oclAsType(Expression);
+			};
+}
+
+
+mapping Transition :: SingleReceive2TransitionFromEmbeddedStateToStateExitPoint(context : OclAny, region:RealtimeStatechart) : Transition 
+	when {self.usesUniReceiveSchema()} {
+		priority := 3;
+		
+		source := self.map RegionState(context,  "Requested", false);	
+		
+		target := self.map SingleReceive2StateExitPoint();
+		
+		self.map SingleReceive2StateExitPoint().state := self.map Transition2SourceStateSubrole(region);	
+		
+		if(not self.guard.oclIsUndefined() and not self.triggerMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())
+		{
+			guard := self.map TransferSchemaGuardAndLocalConditions(context);
+		}
+		else if(not self.guard.oclIsUndefined())
+		{
+			guard := self.guard.map transformWithContext(result).oclAsType(Expression);
+		}
+		else
+		{
+			guard := self.triggerMessageEvent.oneToManyCommunicationSchema.condition.map transformWithContext(result).oclAsType(Expression);
+		}
+		endif;
+		
+		synchronization := self. createSynchronization( singleReceivePossibleName, SynchronizationKind::SEND);
+		
+		events += self.triggerMessageEvent.map transformWithContext(result).oclAsType(AsynchronousMessageEvent);
+		
+		if(not self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->isEmpty()) 
+			urgent := false;		
+		clockConstraints += self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map transformWithContext(result).oclAsType(ClockConstraint);	
+}
+		
+
+mapping Transition :: TransferSchemaGuardAndLocalConditions(context : OclAny) : expressions::common::LogicalExpression
+	when {self.usesUniReceiveSchema()} {
+		leftExpression := self.guard.map transformWithContext(result).oclAsType(Expression);
+		rightExpression := self.triggerMessageEvent.oneToManyCommunicationSchema.condition.map transformWithContext(result).oclAsType(Expression);
+		operator := LogicOperator::AND;	
+}
+	
+mapping Transition :: SingleReceive2StateExitPoint() : ExitPoint 
+	when {self.usesUniReceiveSchema()} {
+		result.name := self.source.name + "_Requested_ExitPoint";		
+		}
+		
+
+	
+mapping Transition :: SingleReceive2Transition1FromRequestedToIdle(context:OclAny, region:RealtimeStatechart) : Transition 
+	when {self.usesUniReceiveSchema()} {
+	
+		priority := 1;
+				
+		source := self.map RegionState(context,  "Requested", false);
+		
+		target := self.map RegionState(context,  "Idle", true);
+		
+		guard := self.createPositionSelektorCheckAndVariableCheckGuardExpression(ComparingOperator::EQUAL,consumeSingleReceiveName,true);
+		
+		synchronization := self. createSynchronization( singleReceiveCheckDone, SynchronizationKind::SEND);
+					
+	}
+	
+mapping Transition :: SingleReceive2Transition2FromRequestedToIdle(context:OclAny, region:RealtimeStatechart) : Transition
+	when {self.usesUniReceiveSchema()}  {
+	
+		priority := 2;
+				
+		source := self.map RegionState(context,  "Requested", false);
+		
+		target := self.map RegionState(context,  "Idle", true);
+		
+		guard := self.createPositionSelektorCheckAndVariableCheckGuardExpression(ComparingOperator::UNEQUAL,consumeSingleReceiveName,true);
+		
+		synchronization := self. createSynchronization( singleReceiveCheck, SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
+					
+	}
+	
+mapping Transition :: SingleReceive2RequestedIdleCheckDonePossibleSubrole(context:OclAny, region:RealtimeStatechart) : Transition
+	when {self.usesUniReceiveSchema()}  {
+	
+		priority := 3;
+				
+		source := self.map RegionState(context,  "Requested", false);
+		
+		target := self.map RegionState(context,  "Idle", true);
+		
+		guard := self.createPositionSelektorCheckAndVariableCheckGuardExpression(ComparingOperator::UNEQUAL, singleReceivePossibleName, false);
+		
+		synchronization := self. createSynchronization( singleReceiveCheckDone, SynchronizationKind::SEND);
+		
+	}
+	
+mapping Transition :: SingleReceive2TransitionFromIdleToRequested(context:OclAny, region:RealtimeStatechart) : Transition 
+	when {self.usesUniReceiveSchema()} {
+	
+		priority := 1;
+				
+		target := self.map RegionState(context,  "Requested", false);
+		
+		source := self.map RegionState(context,  "Idle", true);
+		
+		synchronization := self. createSynchronization(singleReceiveCheck, SynchronizationKind::RECEIVE,PositionSelectorKind::SELF);
+					
+	}
+	
+
+
+

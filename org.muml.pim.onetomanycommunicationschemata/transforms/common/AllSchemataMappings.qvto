@@ -1,0 +1,692 @@
+import SchemaSpecificMUML2MUML;
+import PredefinedTypesLibrary;
+
+library AllSchemataMappings;
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype realtimestatechart uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype common uses core::expressions::common('http://www.muml.org/core/1.0.0');
+modeltype expressions uses core::expressions('http://www.muml.org/core/1.0.0');
+modeltype behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
+modeltype valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype storydriven uses 'http://www.muml.org/core/1.0.0';
+modeltype core uses core('http://www.muml.org/core/1.0.0');
+modeltype modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
+modeltype schemata uses pim::realtimestatechart::one_to_n_schemata('http://www.muml.org/pim/1.0.0');
+modeltype types uses pim::types('http://www.muml.org/pim/1.0.0');
+modeltype ocl uses 'http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore';
+
+property rootNode : RootNode;
+
+property loadBalancingDLCName : String = "DLC_LoadBalancing";
+property unicastDLCName : String = "DLC_unicast";
+property multicastDLCName : String = "DLC_multicast";
+property singleReceiveDLCName : String = "DLC_singleReceive";
+property multiReceiveDLCName : String = "DLC_multiReceive";
+
+property variableNamesDict : Dict(String, Integer);	
+property usedClockNames : Dict(String,Integer);
+
+property intermediateStateCount : Integer = 0;
+
+mapping Transition::Schema2BooleanVariable(varName : String): Variable
+{
+	var namePrefix : String = "";
+		if(variableNamesDict->hasKey(varName)) {
+			var nr : Integer := variableNamesDict->get(varName);			
+			namePrefix := (nr + 1).toString();
+			variableNamesDict->put(varName, nr+1);
+		}
+		else {
+			variableNamesDict ->put(varName, 1);
+			namePrefix := 1.toString();
+		};
+	result.name := varName + "_"+ namePrefix;
+//	result.initializeExpression := new LiteralExpression();
+//	result.initializeExpression.oclAsType(LiteralExpression).value := "false";
+	result.dataType := getBooleanPrimitiveDataType(rootNode);
+}
+
+query getBooleanPrimitiveDataType(theRootNode : RootNode) : PrimitiveDataType {
+	var types2 : ModelElementCategory := theRootNode.categories -> select(c : ModelElementCategory | c.key = 'org.muml.types.category') -> any(true);
+	if(types2.oclIsUndefined()) {
+		return BOOLEAN;
+	};	
+	var data : PrimitiveDataType := types2.oclAsType(modelinstance::ModelElementCategory).modelElements
+	->select(element | element.oclIsTypeOf(pim::types::PrimitiveDataType) and (element.oclAsType(pim::types::PrimitiveDataType).primitiveType = PrimitiveTypes::BOOLEAN))
+	->any(true).oclAsType(pim::types::PrimitiveDataType);	
+	if(data.oclIsUndefined()) {
+		return BOOLEAN;
+	};
+	return data;
+	}
+
+// @author: sthiele2 -- creates an intermediate state in the subrole region
+mapping  Transition :: Schema2SubroleIntermediateState(context:OclAny, stateID : Integer) : State {
+	
+		name := self.source.name + "_Intermediate_"+ stateID.toString()+ "_" + self.target.name  ;
+				
+		parentStatechart := self.map RTSC2SubroleSchemaRTSC(context.oclAsType(RealtimeStatechart));		
+					
+		result.urgent := true;
+		
+	}
+
+//@author: sthiele2 -- creates a clock for in order to disassamble a deadline at a schema-specifying-transition
+mapping Transition :: Schema2Clock(clockName : String) : Clock
+{	
+	var nameSuffix : String := "";
+	if(usedClockNames->hasKey(clockName))
+	{
+		var nr : Integer := usedClockNames->get(clockName);
+		usedClockNames->put(clockName,nr+1);
+		nameSuffix := (nr+1).toString();
+	}
+	else
+	{
+		nameSuffix :=  1.toString();
+		usedChannelNames->put(clockName,1);	
+	};
+	result.name := clockName +"_".concat(nameSuffix);
+}	
+
+//@author: sthiele2 -- creates a clock constraint in order to disassamble a deadline at a schema-specifying-transition
+helper  Transition :: RelativeDeadline2ClockConstraint(mapLowerBound : Boolean, operator :ComparingOperator, clockName : String) : ClockConstraint
+{
+		var cc : ClockConstraint;		
+		if(mapLowerBound)
+		{
+			cc := new ClockConstraint(self.map Schema2Clock(clockName), self.relativeDeadline.lowerBound.map transform().deepclone().oclAsType(TimeValue), operator);
+			
+		
+		}
+		else
+		{
+			cc := new ClockConstraint(self.map Schema2Clock(clockName), self.relativeDeadline.upperBound.map transform().deepclone().oclAsType(TimeValue), operator);
+		};
+	
+		return cc;
+}
+
+helper Transition :: createClockConstraint(clockName : String, _timeValue : TimeValue, compareOperator : ComparingOperator): ClockConstraint{
+		return new ClockConstraint(self.map Schema2Clock(clockName), _timeValue, compareOperator);
+}
+	
+	--Transfer Schemata Guards, Clock Constraints, CLock Resets
+
+helper createComparisonExpressionForSelectorKind( position:PositionSelectorKind, compOperator : ComparingOperator) : ComparisonExpression {
+		
+		var comp : ComparisonExpression := new ComparisonExpression();
+			
+		comp.rightExpression := new DiscreteInteractionEndpointReference(position);
+		
+		comp.leftExpression := new DiscreteInteractionEndpointReference( PositionSelectorKind::SELF);
+				
+		comp.operator := compOperator;
+		return comp;
+				
+	}
+
+
+----------------------------------------------------XXXXXXXXXXXXXXXX--MAPPINGS FOR ALL TRANSFER SCHEMATA--XXXXXXXXXXXXXXXXXX--------------------------------------------
+	
+--Transfer Schemata State
+mapping Transition :: RegionState(context:OclAny, StateName:String, ini:Boolean) : State {
+		
+		name := StateName;
+		
+		initial := ini;
+		
+	}
+	
+helper Transition :: TransferSchemaNotCondition() : UnaryExpression {
+var un : UnaryExpression := new UnaryExpression();
+		if(not self.raiseMessageEvent.oclIsUndefined()){
+			un.enclosedExpression := self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map transform().deepclone().oclAsType(Expression);
+		}else{
+			un.enclosedExpression := self.triggerMessageEvent.oneToManyCommunicationSchema.condition.map transform().deepclone().oclAsType(Expression);
+		};	
+
+		un.operator := UnaryOperator::NOT;
+		
+		return un;
+	
+	}
+	
+helper Transition :: createUnaryExpressionEnclosingTypedNamedElementExpression(varName:String, operator:UnaryOperator) : UnaryExpression {
+
+		var unex : UnaryExpression := new UnaryExpression();
+		unex.enclosedExpression := createTypedNamedElementExpression(self.map Schema2BooleanVariable(varName));
+	
+		assert fatal (not operator.oclIsUndefined()) with log ("unaryOperator must exist!");
+		
+		return unex;
+	
+	}
+
+helper createUnaryExpressionEnclosingTypedNamedElementExpression(variable : Variable, operator:UnaryOperator) : UnaryExpression {
+
+		var unex : UnaryExpression := new UnaryExpression();
+		unex.enclosedExpression := createTypedNamedElementExpression(variable);
+		if(not operator.oclIsUndefined()){
+			unex.operator := _operator;
+		}endif;
+		return unex;
+	
+	}	
+	
+// @author: sthiele2
+mapping Transition :: Schema2CoordinatorIntermediateState(context:OclAny, intermediateStateNumber : Integer, clockName : String) : State
+{
+	// use a counter for unique intermediate state names
+	intermediateStateCount := intermediateStateCount + 1;
+	
+	// creates an intermediate state in the coordinator region
+	if(not self.relativeDeadline.oclIsUndefined())
+	{
+		invariants += self. RelativeDeadline2ClockConstraint(false, ComparingOperator::LESS_OR_EQUAL, clockName);
+	}endif;
+	result.parentStatechart := self.statechart.map RTSC2CoordinatorRTSC(context);	
+	result.name := self.source.name + "_Intermediate_"+ intermediateStateNumber.toString()+ "_" + self.target.name + "_" + intermediateStateCount.toString();
+}
+
+
+
+
+--Transfer Schemata Action
+
+helper  Transition :: createActionWithVariableAssignmentBlock(actionName:String, varName:String, assignValue:String) : Action {
+	
+		var act : Action := new Action();
+		
+		act.name := actionName;		
+		
+		act.expressions +=self.createBlockWithVariableAssignment( varName ,	assignValue);
+		
+		return act;
+	}
+	
+helper Transition :: createBlockWithVariableAssignment(varName:String, assignValue:String ) : Block {
+		
+
+		return new Block(Set{self.createAssignment( varName, assignValue)});
+		
+		
+	}
+	
+helper Transition :: createActionWithTwoVariableAssignments(actionName:String, varName1:String, varName2:String, assignValue:String) : Action {
+	
+		var act : Action := new Action();
+		
+		act.name := actionName;
+		
+		act.expressions += self. createBlockWithTwoVariableAssignments( varName1, varName2, assignValue);
+		
+		return act;
+		
+	}
+	
+helper Transition :: createBlockWithTwoVariableAssignments(varName1:String, varName2:String, assignValue:String) : Block {
+		
+		var block : Block := new Block();
+		
+		block.expressions += self. createAssignment( varName1, assignValue);
+		
+		block.expressions += self. createAssignment( varName2, assignValue);
+		
+		return block;
+		
+	}
+	
+helper Transition :: createActionWithVariableAssignmentAndCloneAllExpressionsOfAction(actionName:String, varName:String, assignValue:String) : Action {
+	
+		var act : Action := new Action(actionName + ', ' + self.action.name,  self. createBlockWithAssignmentAndCloneAllActionExpressions( varName, assignValue).oclAsSet());		
+		return act;
+	}
+	
+helper Transition :: createBlockWithAssignmentAndCloneAllActionExpressions(varName1:String, assignValue:String) : Block {
+		
+		var exprSet : Set(Expression):= Set{};
+		
+		exprSet += self. createAssignment(varName1, assignValue); 
+		exprSet += self.action.expressions.map transform().deepclone().oclAsType(Expression);
+		
+		var block : Block := new Block(exprSet);
+		
+		return block;
+	}
+
+
+	
+helper Transition :: createAssignment(varName:String, assignValue:String) : Assignment {		
+		
+		return createTypedNamedElementAssignmentExpression(AssignOperator::ASSIGN,self.map Schema2BooleanVariable(varName),new LiteralExpression(assignValue));
+	
+	}
+	
+
+
+--Transfer Schemata Synchronization
+
+
+
+helper Transition :: createSynchronization(channelName : String, syncKind : SynchronizationKind) : Synchronization{
+
+	var sync : Synchronization := new Synchronization();
+	sync.kind := syncKind;
+	sync.syncChannel :=self.map Schema2Channel( channelName, false,self);
+	return sync;
+}
+
+helper Transition :: createSynchronization( channelName : String,   syncKind : SynchronizationKind, selectorKind : PositionSelectorKind) : Synchronization{
+	var sync : Synchronization := new Synchronization();
+	sync.kind := syncKind;
+	sync.syncChannel := self.map Schema2Channel(channelName,true, self);
+	sync.selectorExpression := new DiscreteInteractionEndpointReference(selectorKind);
+	return sync;
+}
+helper Transition :: createSynchronization( channelName : String,   syncKind : SynchronizationKind, selectorKind : PositionSelectorKind, successorKind : PositionSelectorKind) : Synchronization{
+	var sync : Synchronization := new Synchronization();
+	sync.kind := syncKind;
+	sync.syncChannel := self.map Schema2Channel(channelName,true, self);
+	sync.selectorExpression := new DiscreteInteractionEndpointReference(selectorKind, successorKind);
+	return sync;
+}
+	//dict->hasKey(transition);
+	//dict->get(transition);
+	//dict->put(transition,1);
+	//if(dict->hasKey(transition))
+	// dict-> 
+property usedChannelNames : Dict(String,Integer); // stores how often a channel with a certain name exists. Used for enumerating the channel names in case of multiple occurences of the same schema
+mapping Transition :: Schema2Channel(channelName: String, selector: Boolean, schemaTransition : Transition ) : SynchronizationChannel {
+		
+		if(usedChannelNames->hasKey(channelName))
+		{
+			var nr : Integer := usedChannelNames->get(channelName);
+			usedChannelNames->put(channelName,nr +1);
+			name := channelName + (nr+1).toString();
+			
+		}
+		else
+		{
+			name := channelName + 1.toString();
+			usedChannelNames->put(channelName,1);	
+		};		
+		var portOrRoleStatechart : RealtimeStatechart := self.statechart.getPortOrRoleStatechart();
+		state := portOrRoleStatechart.map Rtsc2InitialState();
+		if(state.oclIsUndefined()) {
+			assert fatal (false) with log ("state of the channel must be specified");
+		};
+		
+		if(selector){
+			assert fatal (portOrRoleStatechart.behavioralElement.oclIsKindOf(Role) or portOrRoleStatechart.behavioralElement.oclIsKindOf(pim::component::DiscretePort)) with log ("behavorial Element must be DiscretePort or Role!");
+			selectorType := portOrRoleStatechart.behavioralElement.oclAsType(DataType);			
+		}endif;		
+						
+	}
+
+
+mapping Vertex :: Vertex2VertexCoordinator(context:OclAny) : Vertex
+		disjuncts State::States2StatesCoordinator, StateConnectionPoint::StateConnectionPoint2StateConnectionPointCoordinator;
+		
+
+
+-- Entry/Exit Points and States
+
+
+mapping StateConnectionPoint :: StateConnectionPoint2StateConnectionPointCoordinator(context:OclAny) : StateConnectionPoint
+		disjuncts EntryPoint::EntryPoint2EntryPointCoordinator, ExitPoint::ExitPoint2ExitPointCoordinator;
+		
+
+	mapping EntryPoint :: EntryPoint2EntryPointCoordinator(context:OclAny) : EntryPoint {
+		
+		name := self.name;
+		
+		self.state.map States2StatesCoordinator(context).connectionPoints += result;
+		
+		
+		//state := self.state.map States2StatesCoordinator(context,region);
+		
+	}
+	
+	mapping ExitPoint :: ExitPoint2ExitPointCoordinator(context:OclAny) : ExitPoint {
+		
+		name := self.name;
+		self.state.map States2StatesCoordinator(context).connectionPoints += result;
+		//state := self.state.map States2StatesCoordinator(context,region);
+	}
+
+mapping RealtimeStatechart :: Rtsc2InitialState() : State {
+		
+		name := "Main";
+		
+		initial := true;
+		
+		embeddedRegions += self.map State2CoordinatorRegion(self);
+		
+		embeddedRegions += self.map State2SubroleRegion(self);
+					
+	}
+	
+mapping Transition :: RTSC2SubroleSchemaRTSC(sourceRealtimeStatechart:RealtimeStatechart) : RealtimeStatechart {
+		assert fatal (false) with log ("Do not go here!");	
+}
+
+
+mapping RealtimeStatechart :: State2CoordinatorRegion(context:RealtimeStatechart) : Region {
+		
+		priority := 2;
+		
+		//parentState := context.oclAsType(State);
+		
+		embeddedStatechart := self.map RTSC2CoordinatorRTSC(context); 
+}
+	
+mapping RealtimeStatechart :: State2SubroleRegion(context:OclAny) : Region {
+		
+		priority := 1;
+		
+	//	parentState := context.oclAsType(State);
+		
+		embeddedStatechart := self.map RTSC2SubroleRTSC();					
+	}	
+	
+mapping RealtimeStatechart :: RTSC2SubroleRTSC() : RealtimeStatechart {
+
+		assert fatal (false) with log ("Do not go here!");	
+}	
+
+mapping State :: States2StatesCoordinator(context:OclAny) : State{
+	
+	assert fatal (false) with log ("Do not go here!");
+}
+	
+mapping RealtimeStatechart :: RTSC2CoordinatorRTSC(context:OclAny) : RealtimeStatechart {
+
+		assert fatal (false) with log ("Do not go here!");
+}
+
+mapping RealtimeStatechart :: RTSC2CoordinatorRTSC(context:OclAny, region:RealtimeStatechart) : RealtimeStatechart {
+
+		assert fatal (false) with log ("Do not go here!");
+}
+
+
+helper Transition :: Vertex2VertexCoordinator(context:OclAny, region:RealtimeStatechart, vertex: Vertex) : Vertex{
+		// helper that distinguishes between StateConnectionPoints and states as source or target of the transition
+		// depending on the kind of StateConnectionPoint, the region argument of the mapping Vertex2VertexCoordinator has to be modified.
+		assert fatal (self.source = vertex or self.target = vertex) with log ("Given vertex must be the source or the target of the given Transition!");		
+		
+		if(vertex.oclIsTypeOf(ExitPoint)) {
+			if(self.source = vertex){
+				// case source
+				return vertex.map Vertex2VertexCoordinator(context);
+			} else {
+				// case target 	
+				return vertex.map Vertex2VertexCoordinator(context);
+			}endif;
+		} else if (vertex.oclIsTypeOf(EntryPoint)) {
+			if(self.source = vertex){
+				// case source
+				return vertex.map Vertex2VertexCoordinator(context);
+			} else {
+				// case target
+				return vertex.map Vertex2VertexCoordinator(context);
+			}endif;
+		} else {
+			return vertex.map Vertex2VertexCoordinator(context);
+		}endif;
+		
+		
+		
+}
+-- to coordinator
+mapping Transition :: Transition2TransitionCoordinator(context:OclAny, region:RealtimeStatechart) : Transition {		
+			
+		source := self. Vertex2VertexCoordinator(context, region, self.source);		
+		
+		target := self. Vertex2VertexCoordinator(context, region, self.target);
+		
+		priority := self.priority;
+		
+		clockResets := self.clockResets->select(c|not isClockSubRoleSpecific(c))->map transform().oclAsType(Clock);
+		
+		clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map transform().deepclone().oclAsType(ClockConstraint);
+		
+		guard := self.guard.map transform().deepclone().oclAsType(Expression);
+		
+		action := self.action.map transform().deepclone().oclAsType(Action);
+		
+		synchronization := self.synchronization.map transform().deepclone().oclAsType(Synchronization);
+		
+		absoluteDeadlines := self.absoluteDeadlines->map transform().deepclone().oclAsType(AbsoluteDeadline);
+		
+		relativeDeadline := self.relativeDeadline.map transform().deepclone().oclAsType(RelativeDeadline);
+		
+		blockable := self.blockable;
+		
+		urgent := self.urgent;
+						
+	}
+	
+
+	
+mapping Transition :: Transition2SourceStateSubrole(inout containerRegion : RealtimeStatechart): State{
+		
+		name := self.source.name;
+		
+		result.initial := true;
+		
+		containerRegion.states += result;		
+}
+
+
+mapping Transition :: Transition2TargetStateSubrole(inout containerRegion : RealtimeStatechart): State when {self.usesUniReceiveSchema()}{
+		// only used in SingleReceive schema
+		name := self.target.name;
+		
+		result.initial := false;
+		
+		containerRegion.states += result;		
+}
+
+	
+mapping Transition :: TransitionNoMessage2TransitionRecSyncSubrole(context:OclAny, region:RealtimeStatechart,toplevel : Boolean) : State {
+		
+		name := self.source.name + "_" + self.target.name + "_" + self.priority.toString() +"_SwitchState";
+	
+		parentStatechart := self.map RTSC2SubroleSchemaRTSC(context.oclAsType(RealtimeStatechart));
+		
+	}
+	
+mapping Expression :: Expression2UnaryExpression(context : OclAny, _operator : UnaryOperator) : UnaryExpression{
+		
+		result.operator := _operator;
+		
+		result.enclosedExpression := self.map transform().deepclone().oclAsType(Expression);
+}	
+
+
+
+
+
+helper Transition:: Transition2ComparisonExpression(comparingoperator : ComparingOperator,lhs:Expression, rhs:Expression): core::expressions::common::ComparisonExpression{
+	var cex : ComparisonExpression := new ComparisonExpression();
+	cex.leftExpression := lhs;
+	cex.rightExpression :=rhs;
+	cex.operator := comparingoperator;	
+	return cex;
+}
+
+helper Transition:: Transition2LogicalExpression( logicoperator : LogicOperator, lhs:Expression, rhs:Expression): core::expressions::common::LogicalExpression{
+	var lex : LogicalExpression := new LogicalExpression();
+	lex.leftExpression := lhs;
+	lex.rightExpression :=rhs;
+	lex.operator := logicoperator;
+	return lex;
+}
+
+
+
+----------------------------------------------** new transformations that should replace the old ones ** 
+
+constructor DiscreteInteractionEndpointReference :: DiscreteInteractionEndpointReference(positionSelectorKind: PositionSelectorKind)  {
+	position := new PositionSelector( positionSelectorKind);
+}
+
+constructor DiscreteInteractionEndpointReference :: DiscreteInteractionEndpointReference(positionSelectorKind: PositionSelectorKind,successorSelectorKind: PositionSelectorKind) {	
+	position := new PositionSelector( positionSelectorKind,successorSelectorKind);	
+}
+
+helper createTypedNamedElementAssignmentExpression(operator : AssignOperator, referencedElement : TypedNamedElement, assignedExpression : Expression) : actionlanguage::Assignment{
+	var ass : Assignment := new Assignment();
+	
+	ass.lhs_typedNamedElementExpression := createTypedNamedElementExpression(referencedElement);
+	
+	ass.rhs_assignExpression := assignedExpression;
+	
+	ass.assignOperator := operator;
+	
+	return ass;
+}
+
+helper createTypedNamedElementExpression(referencedElement : TypedNamedElement) : TypedNamedElementExpression{
+	
+	var ex : TypedNamedElementExpression := new TypedNamedElementExpression();
+	
+	ex.typedNamedElement := referencedElement;
+	
+	return ex;
+}
+
+
+helper Transition :: createPositionSelektorCheckAndVariableCheckGuardExpression(comparingOperator : ComparingOperator, varName:String, notOp: Boolean) : LogicalExpression {
+		var logical : LogicalExpression := new LogicalExpression();
+
+		logical.leftExpression := createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, comparingOperator);
+		
+		if(notOp){
+			logical.rightExpression := self.createUnaryExpressionEnclosingTypedNamedElementExpression( varName, UnaryOperator::NOT);
+		}else{
+			logical.rightExpression :=  createTypedNamedElementExpression(self.map Schema2BooleanVariable(varName));
+		}endif;
+		
+		logical.operator := LogicOperator::AND;
+		
+		return logical;
+}
+helper Transition :: createLogicalExpressionWithTwoConcatenatedVariables(varName1:String, varName2:String, notOp:Boolean) : LogicalExpression {
+		var logical : LogicalExpression := new LogicalExpression();
+		if(notOp){
+			logical.leftExpression := self. createUnaryExpressionEnclosingTypedNamedElementExpression( varName1, UnaryOperator::NOT);
+		}else{
+			logical.leftExpression := createTypedNamedElementExpression(self.map Schema2BooleanVariable(varName1));
+		}endif;
+		
+		logical.rightExpression := createTypedNamedElementExpression(self.map Schema2BooleanVariable(varName2));
+		
+		logical.operator := LogicOperator::AND;
+		return logical;
+}
+helper Transition :: usesAnySchema () : Boolean {	
+	assert fatal(self.raiseMessageEvent.oclIsUndefined() or self.triggerMessageEvent.oclIsUndefined() ) with log ("A transition cannot define a triggerMessageEvent and a raiseMessageEvent at the same time");
+	return (not self.raiseMessageEvent.oclIsUndefined()) and (not self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined())
+	or
+	(not self.triggerMessageEvent.oclIsUndefined()) and (not self.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined());
+}	
+
+helper Transition :: usesLoadBalancingSchema() : Boolean {		
+		return self.usesAnySchema() and
+		self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(realtimestatechart::one_to_n_schemata::LoadBalancing); 
+		self.usesSchema(LoadBalancing.oclAsType(EClass));
+	}
+
+
+helper Transition :: usesSchema(cl : EClass) : Boolean {		
+		return self.usesAnySchema() and
+		self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(EObject).eClass() = cl;
+	}
+	
+helper Transition :: usesUniReceiveSchema() : Boolean {
+		return self.usesAnySchema() and 
+		self.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(realtimestatechart::one_to_n_schemata::SingleReceive);
+	}
+
+helper Transition :: usesIterateSchema() : Boolean {
+		return self.usesAnySchema() and 
+		self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(realtimestatechart::one_to_n_schemata::Iterate);
+	}
+	
+helper Transition :: usesMulticastSchema() : Boolean {
+		return self.usesAnySchema() and 
+		self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(realtimestatechart::one_to_n_schemata::Multicast);
+	}
+	
+helper Transition :: usesUnicastSchema() : Boolean {
+		return self.usesAnySchema() and 
+		self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(realtimestatechart::one_to_n_schemata::Unicast);
+	}
+	
+helper Transition :: usesMultiReceiveSchema() : Boolean {
+		return self.usesAnySchema() and 
+		self.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(realtimestatechart::one_to_n_schemata::MultiReceive);
+	}
+
+helper createEntryEventWithVariableAssignment(_assignedVariable : Variable, _assignedValue : String) {
+		var expr := new LiteralExpression(_assignedValue);				
+		var tnee : TypedNamedElementExpression := new TypedNamedElementExpression(_assignedVariable);
+		var ass : Assignment := new Assignment(tnee,expr, AssignOperator::ASSIGN);
+		var block : Block := new Block(ass.oclAsSet());		
+		var action : Action := new Action(_assignedVariable.name + ':=' + _assignedValue.toString(),block.oclAsSet());		
+}
+
+constructor Assignment :: Assignment(_lhs : TypedNamedElementExpression, _rhs : Expression, _operator : AssignOperator) {
+		lhs_typedNamedElementExpression := _lhs;
+		rhs_assignExpression := _rhs;
+		assignOperator := _operator;
+}
+
+constructor TypedNamedElementExpression :: TypedNamedElementExpression (_typedNamedElement : TypedNamedElement) {
+		result.typedNamedElement := _typedNamedElement;	
+}
+
+constructor Block :: Block(_expressions : Set(Expression)) {
+		result.expressions += _expressions;		
+}
+
+constructor LiteralExpression :: LiteralExpression(_value : String) {
+		result.value := _value;
+}
+
+constructor pim::realtimestatechart::Action :: Action(_name : String, _expressions : Set(Expression)) {
+		result.name := _name;
+		result.expressions += _expressions;
+}
+
+constructor EntryEvent :: EntryEvent(_action : Action, _clockResets : Set(Clock)) {
+		action := _action;
+		clockResets += _clockResets;
+}
+
+constructor ClockConstraint :: ClockConstraint(_clock : Clock, _timeValue : TimeValue, _operator : ComparingOperator) {
+		clock := _clock;
+		bound := _timeValue;
+		operator:= _operator;	
+}
+
+constructor PositionSelector :: PositionSelector(_kind : PositionSelectorKind, _successor : PositionSelectorKind){		
+		kind := _kind;		
+		successor := new PositionSelector(_successor);		
+}
+
+constructor PositionSelector :: PositionSelector (_kind : PositionSelectorKind){
+		kind := _kind;
+}
+
+
+constructor LogicalExpression :: LogicalExpression(_leftExpression : Expression, _rightExpression : Expression, _operator:LogicOperator) {		
+		leftExpression := _leftExpression;		
+		rightExpression := _rightExpression;		
+		operator := _operator;
+}

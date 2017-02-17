@@ -1,0 +1,360 @@
+library Iterate;
+import common.AllSchemataMappings;
+import CoordinatorBehaviorTemplate;
+
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype common uses core::expressions::common('http://www.muml.org/core/1.0.0');
+modeltype expressions uses core::expressions('http://www.muml.org/core/1.0.0');
+modeltype behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
+modeltype valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype storydriven uses 'http://www.muml.org/core/1.0.0';
+modeltype schemata uses pim::realtimestatechart::one_to_n_schemata('http://www.muml.org/pim/1.0.0');
+modeltype types uses pim::types('http://www.muml.org/pim/1.0.0');
+
+----------------------------------------------------------XXXXXXXXXXXXXXXXX--ITERATE--XXXXXXXXXXXXXXXXX-------------------------------------------------------------------------	
+property iterateCheckDone : String = "iterateCheckDone";
+property iterate : String = "iterate";
+property iterateDone : String = "iterateDone";
+property iterateCheck : String = "iterateCheck";
+property iterateDLCName : String = "DLC_Iterate";
+property iteratePossibleName : String = "iteratePossible";
+property terminateIterationName : String = "terminate";
+property iterateDelayVariableName : String = "iterateDelay";
+property sendIterateName : String = "sendIterate";
+property iterateDelayClockName : String = "Delay_Clock";
+
+----------------------------------------------------------------Transfer Schema Iterate of Coordinator------------------------------------------------------------------
+
+// @author: sthiele2
+mapping Transition :: Iterate2CoordinatorStartTransition(context:OclAny, region:RealtimeStatechart) : Transition 
+	// this mapping creates an outgoing transition from the (mapped) source of the schema transition to a first intermediate state
+	when {self.usesIterateSchema()} {
+		init {
+			result := self.map Schema2CoordinatorStartTransition(context, region, iterateCheckDone, iterateDLCName, iteratePossibleName);
+		}
+}
+
+// @author: sthiele2
+mapping Transition :: Iterate2CoordinatorIntermediateTransition(context:OclAny, region:RealtimeStatechart): Transition
+	// creates the transition from intermediate state 1 to intermediate state 2
+	when {self.usesIterateSchema()} {
+		init {
+			result := self.map Schema2CoordinatorIntermediateTransition(context, region, iterate, iterateDLCName);
+		}
+}
+
+// @author: sthiele2
+mapping Transition :: Iterate2CoordinatorEndTransition(context:OclAny, region:RealtimeStatechart): Transition
+	when {self.usesIterateSchema()} {
+		init {
+			result := self.map Schema2CoordinatorEndTransition(context, region, iterateDone, iterateDLCName);
+			if(result.action.oclIsUndefined()) {
+				result.action := self.createActionWithVariableAssignmentBlock(terminateIterationName +  " := false;",terminateIterationName,"false");	
+			}
+			else {
+				result.action.expressions += self.createAssignment(terminateIterationName, "false");	
+			}			
+		}	
+}
+
+---------------- Coordinator Mappings for Embedded State
+
+mapping Transition :: Iterate2SourceRegionCoordinator(context:OclAny, region:RealtimeStatechart) : Region 
+	when {self.usesIterateSchema() }
+	{
+		init {
+			result := self.map Schema2SourceRegionCoordinator(context,iterateCheck, iterateCheckDone, iteratePossibleName); 
+		}
+	}
+
+	
+----------------------------------------------------------------- Transfer Schema Iterate of Subrole-------------------------------------------------------------------
+	
+mapping Transition :: Iterate2TransSendSyncSubrole(context:OclAny, region:RealtimeStatechart, toplevel:Boolean) : Transition {
+		
+		priority := 1; 
+		
+		source := self.map Transition2SourceStateSubrole(region);
+		
+		target := self.map Schema2SubroleIntermediateState(context,1);
+		
+		synchronization := self.createSynchronization( iterate,SynchronizationKind::RECEIVE  ,PositionSelectorKind::SELF);
+		
+		if(not self.clockConstraints->select(c|isClockSubRoleSpecific(c.clock))->isEmpty())
+			urgent := false;
+				
+		clockConstraints += self.clockConstraints->select(c|isClockSubRoleSpecific(c.clock))->map transformWithContext(result).oclAsType(ClockConstraint);
+	
+		clockResets += self.clockResets->select(c|isClockSubRoleSpecific(c)).map transform().oclAsType(Clock);
+		
+		action := new Action();
+		
+		action.name :="";
+		
+		if(not self.raiseMessageEvent.oneToManyCommunicationSchema.action.oclIsUndefined()) {
+			action.expressions += self.raiseMessageEvent.oneToManyCommunicationSchema.action.expressions.map transformWithContext(result).oclAsType(Expression);
+			action.name :=  action.name + self.raiseMessageEvent.oneToManyCommunicationSchema.action.name;
+		};
+		
+		action.expressions+= self.createBlockWithVariableAssignment(iterateDelayVariableName,"true");
+		
+		action.name := action.name + " " + iterateDelayVariableName + " := true";
+		
+		events += self.raiseMessageEvent.map transformWithContext(result).oclAsType(TransitionEvent);
+		
+		var leftExpression : Expression := 	self.createUnaryExpressionEnclosingTypedNamedElementExpression(terminateIterationName, UnaryOperator::NOT);
+		var rightExpression : Expression := createTypedNamedElementExpression(self.map Schema2BooleanVariable(sendIterateName));
+		
+		guard := new LogicalExpression(leftExpression, rightExpression, LogicOperator::AND);
+				
+	}
+	
+	
+	
+	
+mapping Transition :: Iterate2TransSendSyncNotConditionSubrole(context:OclAny, region:RealtimeStatechart, toplevel:Boolean) : Transition {
+		
+		source := self.map Transition2SourceStateSubrole(region);
+		
+		target := self.map Schema2SubroleIntermediateState(context,1);
+		
+		synchronization := self.createSynchronization(iterate,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
+		
+		action := self.createActionWithVariableAssignmentBlock(iterateDelayVariableName + " := false;",iterateDelayVariableName,"false");			
+		
+		var leftExpression : Expression := 	self.createUnaryExpressionEnclosingTypedNamedElementExpression(terminateIterationName, UnaryOperator::NOT);
+		var rightExpression : Expression := self.createUnaryExpressionEnclosingTypedNamedElementExpression(sendIterateName, UnaryOperator::NOT);
+		guard :=  new LogicalExpression(leftExpression, rightExpression, LogicOperator::AND);
+				
+		priority :=2;
+		
+	}
+	
+
+mapping Transition :: Iterate2IdleToIntermediate2SubroleRegion(context: OclAny, region: RealtimeStatechart, toplevel:Boolean) : Transition {
+	
+	priority := 3;
+	
+	source := self.map Transition2SourceStateSubrole(region);
+		
+	target := self.map Schema2SubroleIntermediateState(context,2);
+	
+	guard := createTypedNamedElementExpression(self.map Schema2BooleanVariable(terminateIterationName));
+		
+}
+
+
+mapping Transition :: Iterate2Transition1Intermediate1ToIntermedediate2SubroleRegion(context:OclAny, region: RealtimeStatechart, toplevel: Boolean) : Transition {
+	
+	priority := 1;
+	
+	source := self.map Schema2SubroleIntermediateState(context, 1);
+	
+	target := self.map Schema2SubroleIntermediateState(context, 2);
+	
+	var expr1 :=  self.createUnaryExpressionEnclosingTypedNamedElementExpression(terminateIterationName, UnaryOperator::NOT);
+	var expr2 := createTypedNamedElementExpression(self.map Schema2BooleanVariable(iterateDelayVariableName));
+		
+	var logic := new LogicalExpression(expr1,expr2,LogicOperator::AND);
+	
+	var logic2 : Expression;
+	if(not self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(pim::realtimestatechart::one_to_n_schemata::Iterate).terminationCondition.oclIsUndefined()) {
+		var expr3 := self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(pim::realtimestatechart::one_to_n_schemata::Iterate)
+		.terminationCondition.map transformWithContext(result).oclAsType(Expression);
+		var expr4 := new UnaryExpression();
+		expr4.enclosedExpression := expr3;
+		expr4.operator := UnaryOperator::NOT;
+		logic2 := new LogicalExpression(logic,expr4, LogicOperator::AND);
+	}
+	else {
+		logic2 := logic;
+	};
+	
+	guard := logic2;
+	
+	if(not self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(pim::realtimestatechart::one_to_n_schemata::Iterate).delay.oclIsUndefined()) {	
+		urgent := false;
+		clockConstraints += self.createClockConstraint(iterateDelayClockName, self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(pim::realtimestatechart::one_to_n_schemata::Iterate).delay.map transformWithContext(result).oclAsType(TimeValue), ComparingOperator:: GREATER_OR_EQUAL);
+	};
+	
+}
+
+mapping Transition :: Iterate2Transition2Intermediate1ToIntermedediate2SubroleRegion(context:OclAny, region: RealtimeStatechart, toplevel: Boolean) : Transition {
+	
+	priority := 2;
+	
+	source := self.map Schema2SubroleIntermediateState(context, 1);
+	
+	target := self.map Schema2SubroleIntermediateState(context, 2);
+	
+	var expr1 :=  self.createUnaryExpressionEnclosingTypedNamedElementExpression(terminateIterationName, UnaryOperator::NOT);
+	var expr2 := self.createUnaryExpressionEnclosingTypedNamedElementExpression(iterateDelayVariableName, UnaryOperator::NOT);
+	var logic := new LogicalExpression(expr1,expr2,LogicOperator::AND);
+	
+	var logic2 : Expression;
+	if(not self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(pim::realtimestatechart::one_to_n_schemata::Iterate).terminationCondition.oclIsUndefined()) {
+		var expr3 := self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(pim::realtimestatechart::one_to_n_schemata::Iterate)
+		.terminationCondition.map transformWithContext(result).oclAsType(Expression);
+		var expr4 := new UnaryExpression();
+		expr4.enclosedExpression := expr3;
+		expr4.operator := UnaryOperator::NOT;
+		logic2 := new LogicalExpression(logic,expr4, LogicOperator::AND);
+	}
+	else {
+		logic2 := logic;
+	};
+	
+	guard := logic2;
+	
+}
+
+mapping Transition :: Iterate2Transition3Intermediate1ToIntermedediate2SubroleRegion(context:OclAny, region: RealtimeStatechart, toplevel: Boolean) : Transition {
+	
+	priority := 3;
+	
+	source := self.map Schema2SubroleIntermediateState(context, 1);
+	
+	target := self.map Schema2SubroleIntermediateState(context, 2);
+	
+	var expr1 :=  createTypedNamedElementExpression(self.map Schema2BooleanVariable(terminateIterationName));
+		
+	var expr2 := self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(pim::realtimestatechart::one_to_n_schemata::Iterate).terminationCondition.map transformWithContext(result).oclAsType(Expression);
+	
+	guard := new LogicalExpression(expr1,expr2,LogicOperator::OR);
+	
+	action := self.createActionWithVariableAssignmentBlock(terminateIterationName + ":= true;",terminateIterationName,"true");
+	
+}
+
+mapping Transition :: Iterate2TransReceiveSyncNotLastSubrole(context:OclAny, region:RealtimeStatechart, toplevel:Boolean) : Transition {
+	
+		priority := 2;
+		
+		target := self.map Transition2SourceStateSubrole(region);
+		
+		source := self.map Schema2SubroleIntermediateState(context,2);	
+		
+		if(self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(pim::realtimestatechart::one_to_n_schemata::Iterate).startFromFirst) {
+			synchronization := self. createSynchronization( iterate,SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
+			guard := createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
+		}
+		else {
+			synchronization := self. createSynchronization( iterate,SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::PREV);
+			guard :=  createComparisonExpressionForSelectorKind(PositionSelectorKind::FIRST, ComparingOperator::UNEQUAL);
+		}endif;		
+	}
+			
+mapping Transition :: Iterate2TransReceiveSyncLastSubrole(context:OclAny, region:RealtimeStatechart, toplevel:Boolean) : Transition {
+	
+		priority := 1;
+		
+		target := self.map Transition2SourceStateSubrole(region);
+		
+		source := self.map Schema2SubroleIntermediateState(context,2);		
+		
+		if(self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(pim::realtimestatechart::one_to_n_schemata::Iterate).startFromFirst) {
+			guard := createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, ComparingOperator::EQUAL);			
+		}		
+		else {
+			guard := createComparisonExpressionForSelectorKind(PositionSelectorKind::FIRST, ComparingOperator::EQUAL);	
+		}endif;	
+		
+		
+		if((not self.raiseMessageEvent.oclIsUndefined()) and (not self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
+				and self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(pim::realtimestatechart::one_to_n_schemata::Iterate) 
+				and (not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())){
+				
+			action := self. createActionWithVariableAssignmentBlock("iteratePossible:=false", iteratePossibleName, "false");
+			
+		}endif;
+		synchronization := self. createSynchronization( iterateDone,SynchronizationKind::SEND);
+	}
+	
+
+	
+mapping Transition :: Iterate2SourceRegionSubrole(context:OclAny, region:RealtimeStatechart) : Region {
+		
+		priority := self.priority;
+		
+		parentState := self.map Transition2SourceStateSubrole(region).oclAsType(State);
+		
+		embeddedStatechart := self.map Iterate2SourceEmbeddedRTSCSubrole(context, region);
+					
+	}
+	
+mapping Transition :: Iterate2SourceEmbeddedRTSCSubrole(context:OclAny, region:RealtimeStatechart) : RealtimeStatechart {
+		
+		name:= "iterateCheck" + "_" + self.source.name + "_" + self.target.name + "_" + self.priority.toString();
+		
+		states += self.map RegionState(context,  "Idle", true);
+		states += self.map RegionState(context,  "Requested", false);
+		
+		transitions += self.map Iterate2RequestedIdleCheckSubrole(context, region);
+		transitions += self.map Iterate2RequestedIdleCheckDoneSubrole(context, region);
+		transitions += self.map Iterate2IdleRequestedFulfilledSubrole(context, region);
+		transitions += self.map Iterate2IdleRequestedNotFulfilledSubrole(context, region);
+					
+	}
+	
+mapping Transition :: Iterate2RequestedIdleCheckSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
+	
+		priority := 2;
+				
+		source := self.map RegionState(context,  "Requested", false);
+		
+		target := self.map RegionState(context,  "Idle", true);
+		
+		guard := createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
+		
+		synchronization := self.createSynchronization( "iterateCheck", SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
+					
+	}
+	
+mapping Transition :: Iterate2RequestedIdleCheckDoneSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
+	
+		priority := 1;
+				
+		source := self.map RegionState(context,  "Requested", false);
+		
+		target := self.map RegionState(context,  "Idle", true);
+		
+		guard := createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
+		
+		synchronization := self.createSynchronization(iterateCheckDone,SynchronizationKind::SEND);
+					
+	}
+	
+mapping Transition :: Iterate2IdleRequestedFulfilledSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
+	
+		priority := 2;
+				
+		target := self.map RegionState(context,  "Requested", false);
+		
+		source := self.map RegionState(context,  "Idle", true);
+		
+		guard := self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map transformWithContext(result).oclAsType(Expression);
+	
+		synchronization := 	self.createSynchronization(iterateCheck,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
+		
+		action := self.createActionWithTwoVariableAssignments(iteratePossibleName + " :=true; " + sendIterateName + ":= true;",iteratePossibleName, sendIterateName,"true");
+					
+	}
+
+mapping Transition :: Iterate2IdleRequestedNotFulfilledSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
+	
+		priority := 1;
+				
+		target := self.map RegionState(context,  "Requested", false);
+		
+		source := self.map RegionState(context,  "Idle", true);
+		
+		guard := self. TransferSchemaNotCondition();
+
+		synchronization := self.createSynchronization(iterateCheck,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
+					
+	}
+
+	
