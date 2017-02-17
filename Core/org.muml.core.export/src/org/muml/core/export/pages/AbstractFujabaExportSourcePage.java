@@ -68,9 +68,6 @@ public abstract class AbstractFujabaExportSourcePage extends ExtensibleModelSele
 		setDescription("Select the MechatronicUML domain element that should be transformed.");
 
 		String fileExtension = wizardPageGetSourceFileExtension();
-		Assert.isNotNull(
-				fileExtension,
-				"Please implement 'wizardPageGetSourceFileExtension()' to provide a non-null file extension that the MechatronicUML-export-wizard supports.");
 		setModelFileExtension(fileExtension);
 	}
 
