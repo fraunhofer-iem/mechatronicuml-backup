@@ -25,6 +25,8 @@ package org.muml.pim.realtimestatechart.one_to_n_schemata;
  *
  * @see org.muml.pim.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage#getSendingOneToManyCommunicationSchema()
  * @model abstract="true"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ConditionAttributeRequiresRetryAfterAttribute'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ConditionAttributeRequiresRetryAfterAttribute='-- If and only if you define the attribute condition for this communication schemata, then you also have to state the attribute retryAfter.\r\n(not self.condition.oclIsUndefined() implies not self.retryAfter.oclIsUndefined()) and (self.condition.oclIsUndefined() implies self.retryAfter.oclIsUndefined())'"
  * @generated
  */
 public interface SendingOneToManyCommunicationSchema extends OneToManyCommunicationSchema {

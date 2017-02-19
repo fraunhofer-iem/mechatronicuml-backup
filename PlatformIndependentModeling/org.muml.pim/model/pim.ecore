@@ -1524,12 +1524,6 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="An abstract class all communication schemata inherit from (at least indirectly)."/>
         </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="ConditionAttributeRequiresRetryAfterAttribute"/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="ConditionAttributeRequiresRetryAfterAttribute" value="-- If and only if you define the attribute condition for a communication schemata, then you also have to state the attribute retryAfter.&#xD;&#xA;(not self.condition.oclIsUndefined() implies not self.retryAfter.oclIsUndefined()) and (self.condition.oclIsUndefined() implies self.retryAfter.oclIsUndefined())"/>
-        </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="condition" eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
             containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1629,13 +1623,24 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="SingleReceive" eSuperTypes="#//realtimestatechart/one_to_n_schemata/ReceivingOneToManyCommunicationSchema">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentaion" value="Using this communication schema, only one subrole is allowed to receive a message."/>
           <details key="documentation" value="This communication schema enables to receive a single message by one subrole."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="SingleReceiveRequiresRetryAfterAttribute"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="SingleReceiveRequiresRetryAfterAttribute" value="-- When you use the communication schemata singlereceive, then you have to define the attribute retryAfter.&#xD;&#xA;not self.retryAfter.oclIsUndefined()"/>
         </eAnnotations>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="MultiReceive" eSuperTypes="#//realtimestatechart/one_to_n_schemata/ReceivingOneToManyCommunicationSchema">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The communication schema MultiReceive allows for receiving a message by each subrole."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="ConditionAttributeRequiresRetryAfterAttribute"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="ConditionAttributeRequiresRetryAfterAttribute" value="-- If and only if you define the attribute condition for this communication schemata, then you also have to state the attribute retryAfter.&#xD;&#xA;(not self.condition.oclIsUndefined() implies not self.retryAfter.oclIsUndefined()) and (self.condition.oclIsUndefined() implies self.retryAfter.oclIsUndefined())"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="failureAction" eType="#//realtimestatechart/Action"
             containment="true">
@@ -1654,6 +1659,12 @@
           abstract="true" eSuperTypes="#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="An abstract class that all communication schemata have to inherit from if they shall send messages."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="ConditionAttributeRequiresRetryAfterAttribute"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="ConditionAttributeRequiresRetryAfterAttribute" value="-- If and only if you define the attribute condition for this communication schemata, then you also have to state the attribute retryAfter.&#xD;&#xA;(not self.condition.oclIsUndefined() implies not self.retryAfter.oclIsUndefined()) and (self.condition.oclIsUndefined() implies self.retryAfter.oclIsUndefined())"/>
         </eAnnotations>
       </eClassifiers>
     </eSubpackages>

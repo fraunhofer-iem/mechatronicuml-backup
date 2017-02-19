@@ -131,47 +131,7 @@ public class One_to_n_schemataValidator extends MumlValidator {
 	 * @generated
 	 */
 	public boolean validateOneToManyCommunicationSchema(OneToManyCommunicationSchema oneToManyCommunicationSchema, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(oneToManyCommunicationSchema, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(oneToManyCommunicationSchema, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(oneToManyCommunicationSchema, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(oneToManyCommunicationSchema, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(oneToManyCommunicationSchema, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(oneToManyCommunicationSchema, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(oneToManyCommunicationSchema, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(oneToManyCommunicationSchema, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(oneToManyCommunicationSchema, diagnostics, context);
-		if (result || diagnostics != null) result &= validateOneToManyCommunicationSchema_ConditionAttributeRequiresRetryAfterAttribute(oneToManyCommunicationSchema, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * The cached validation expression for the ConditionAttributeRequiresRetryAfterAttribute constraint of '<em>One To Many Communication Schema</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String ONE_TO_MANY_COMMUNICATION_SCHEMA__CONDITION_ATTRIBUTE_REQUIRES_RETRY_AFTER_ATTRIBUTE__EEXPRESSION = "-- If and only if you define the attribute condition for a communication schemata, then you also have to state the attribute retryAfter.\r\n" +
-		"(not self.condition.oclIsUndefined() implies not self.retryAfter.oclIsUndefined()) and (self.condition.oclIsUndefined() implies self.retryAfter.oclIsUndefined())";
-
-	/**
-	 * Validates the ConditionAttributeRequiresRetryAfterAttribute constraint of '<em>One To Many Communication Schema</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateOneToManyCommunicationSchema_ConditionAttributeRequiresRetryAfterAttribute(OneToManyCommunicationSchema oneToManyCommunicationSchema, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(One_to_n_schemataPackage.Literals.ONE_TO_MANY_COMMUNICATION_SCHEMA,
-				 oneToManyCommunicationSchema,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "ConditionAttributeRequiresRetryAfterAttribute",
-				 ONE_TO_MANY_COMMUNICATION_SCHEMA__CONDITION_ATTRIBUTE_REQUIRES_RETRY_AFTER_ATTRIBUTE__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return validate_EveryDefaultConstraint(oneToManyCommunicationSchema, diagnostics, context);
 	}
 
 	/**
@@ -189,7 +149,7 @@ public class One_to_n_schemataValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(multicast, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(multicast, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(multicast, diagnostics, context);
-		if (result || diagnostics != null) result &= validateOneToManyCommunicationSchema_ConditionAttributeRequiresRetryAfterAttribute(multicast, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSendingOneToManyCommunicationSchema_ConditionAttributeRequiresRetryAfterAttribute(multicast, diagnostics, context);
 		return result;
 	}
 
@@ -208,7 +168,7 @@ public class One_to_n_schemataValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(unicast, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(unicast, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(unicast, diagnostics, context);
-		if (result || diagnostics != null) result &= validateOneToManyCommunicationSchema_ConditionAttributeRequiresRetryAfterAttribute(unicast, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSendingOneToManyCommunicationSchema_ConditionAttributeRequiresRetryAfterAttribute(unicast, diagnostics, context);
 		if (result || diagnostics != null) result &= validateUnicast_UnicastRequiresConditionAndRetryAfterAttribute(unicast, diagnostics, context);
 		return result;
 	}
@@ -258,7 +218,7 @@ public class One_to_n_schemataValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(iterate, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(iterate, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(iterate, diagnostics, context);
-		if (result || diagnostics != null) result &= validateOneToManyCommunicationSchema_ConditionAttributeRequiresRetryAfterAttribute(iterate, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSendingOneToManyCommunicationSchema_ConditionAttributeRequiresRetryAfterAttribute(iterate, diagnostics, context);
 		return result;
 	}
 
@@ -277,7 +237,7 @@ public class One_to_n_schemataValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(loadBalancing, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(loadBalancing, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(loadBalancing, diagnostics, context);
-		if (result || diagnostics != null) result &= validateOneToManyCommunicationSchema_ConditionAttributeRequiresRetryAfterAttribute(loadBalancing, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSendingOneToManyCommunicationSchema_ConditionAttributeRequiresRetryAfterAttribute(loadBalancing, diagnostics, context);
 		if (result || diagnostics != null) result &= validateLoadBalancing_LoadbalancingEitherHasResponseMessageOrWcet(loadBalancing, diagnostics, context);
 		if (result || diagnostics != null) result &= validateLoadBalancing_ResponseMessageOrWcetOfCommunicationSchemaLoadbalancingMustBeSet(loadBalancing, diagnostics, context);
 		if (result || diagnostics != null) result &= validateLoadBalancing_ResponseActionCanOnlyBeSetIfResponseMessageIsUsed(loadBalancing, diagnostics, context);
@@ -393,8 +353,38 @@ public class One_to_n_schemataValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(singleReceive, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(singleReceive, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(singleReceive, diagnostics, context);
-		if (result || diagnostics != null) result &= validateOneToManyCommunicationSchema_ConditionAttributeRequiresRetryAfterAttribute(singleReceive, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSingleReceive_SingleReceiveRequiresRetryAfterAttribute(singleReceive, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the SingleReceiveRequiresRetryAfterAttribute constraint of '<em>Single Receive</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String SINGLE_RECEIVE__SINGLE_RECEIVE_REQUIRES_RETRY_AFTER_ATTRIBUTE__EEXPRESSION = "-- When you use the communication schemata singlereceive, then you have to define the attribute retryAfter.\r\n" +
+		"not self.retryAfter.oclIsUndefined()";
+
+	/**
+	 * Validates the SingleReceiveRequiresRetryAfterAttribute constraint of '<em>Single Receive</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSingleReceive_SingleReceiveRequiresRetryAfterAttribute(SingleReceive singleReceive, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(One_to_n_schemataPackage.Literals.SINGLE_RECEIVE,
+				 singleReceive,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "SingleReceiveRequiresRetryAfterAttribute",
+				 SINGLE_RECEIVE__SINGLE_RECEIVE_REQUIRES_RETRY_AFTER_ATTRIBUTE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -412,8 +402,38 @@ public class One_to_n_schemataValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(multiReceive, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(multiReceive, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(multiReceive, diagnostics, context);
-		if (result || diagnostics != null) result &= validateOneToManyCommunicationSchema_ConditionAttributeRequiresRetryAfterAttribute(multiReceive, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMultiReceive_ConditionAttributeRequiresRetryAfterAttribute(multiReceive, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the ConditionAttributeRequiresRetryAfterAttribute constraint of '<em>Multi Receive</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String MULTI_RECEIVE__CONDITION_ATTRIBUTE_REQUIRES_RETRY_AFTER_ATTRIBUTE__EEXPRESSION = "-- If and only if you define the attribute condition for this communication schemata, then you also have to state the attribute retryAfter.\r\n" +
+		"(not self.condition.oclIsUndefined() implies not self.retryAfter.oclIsUndefined()) and (self.condition.oclIsUndefined() implies self.retryAfter.oclIsUndefined())";
+
+	/**
+	 * Validates the ConditionAttributeRequiresRetryAfterAttribute constraint of '<em>Multi Receive</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMultiReceive_ConditionAttributeRequiresRetryAfterAttribute(MultiReceive multiReceive, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(One_to_n_schemataPackage.Literals.MULTI_RECEIVE,
+				 multiReceive,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ConditionAttributeRequiresRetryAfterAttribute",
+				 MULTI_RECEIVE__CONDITION_ATTRIBUTE_REQUIRES_RETRY_AFTER_ATTRIBUTE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -422,17 +442,7 @@ public class One_to_n_schemataValidator extends MumlValidator {
 	 * @generated
 	 */
 	public boolean validateReceivingOneToManyCommunicationSchema(ReceivingOneToManyCommunicationSchema receivingOneToManyCommunicationSchema, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(receivingOneToManyCommunicationSchema, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(receivingOneToManyCommunicationSchema, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(receivingOneToManyCommunicationSchema, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(receivingOneToManyCommunicationSchema, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(receivingOneToManyCommunicationSchema, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(receivingOneToManyCommunicationSchema, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(receivingOneToManyCommunicationSchema, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(receivingOneToManyCommunicationSchema, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(receivingOneToManyCommunicationSchema, diagnostics, context);
-		if (result || diagnostics != null) result &= validateOneToManyCommunicationSchema_ConditionAttributeRequiresRetryAfterAttribute(receivingOneToManyCommunicationSchema, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint(receivingOneToManyCommunicationSchema, diagnostics, context);
 	}
 
 	/**
@@ -450,8 +460,38 @@ public class One_to_n_schemataValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(sendingOneToManyCommunicationSchema, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(sendingOneToManyCommunicationSchema, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(sendingOneToManyCommunicationSchema, diagnostics, context);
-		if (result || diagnostics != null) result &= validateOneToManyCommunicationSchema_ConditionAttributeRequiresRetryAfterAttribute(sendingOneToManyCommunicationSchema, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSendingOneToManyCommunicationSchema_ConditionAttributeRequiresRetryAfterAttribute(sendingOneToManyCommunicationSchema, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the ConditionAttributeRequiresRetryAfterAttribute constraint of '<em>Sending One To Many Communication Schema</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA__CONDITION_ATTRIBUTE_REQUIRES_RETRY_AFTER_ATTRIBUTE__EEXPRESSION = "-- If and only if you define the attribute condition for this communication schemata, then you also have to state the attribute retryAfter.\r\n" +
+		"(not self.condition.oclIsUndefined() implies not self.retryAfter.oclIsUndefined()) and (self.condition.oclIsUndefined() implies self.retryAfter.oclIsUndefined())";
+
+	/**
+	 * Validates the ConditionAttributeRequiresRetryAfterAttribute constraint of '<em>Sending One To Many Communication Schema</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSendingOneToManyCommunicationSchema_ConditionAttributeRequiresRetryAfterAttribute(SendingOneToManyCommunicationSchema sendingOneToManyCommunicationSchema, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(One_to_n_schemataPackage.Literals.SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA,
+				 sendingOneToManyCommunicationSchema,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ConditionAttributeRequiresRetryAfterAttribute",
+				 SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA__CONDITION_ATTRIBUTE_REQUIRES_RETRY_AFTER_ATTRIBUTE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

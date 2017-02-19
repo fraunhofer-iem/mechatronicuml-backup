@@ -24,7 +24,8 @@ package org.muml.pim.realtimestatechart.one_to_n_schemata;
  *
  *
  * @see org.muml.pim.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage#getSingleReceive()
- * @model annotation="http://www.eclipse.org/emf/2002/GenModel documentaion='Using this communication schema, only one subrole is allowed to receive a message.'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='SingleReceiveRequiresRetryAfterAttribute'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL SingleReceiveRequiresRetryAfterAttribute='-- When you use the communication schemata singlereceive, then you have to define the attribute retryAfter.\r\nnot self.retryAfter.oclIsUndefined()'"
  * @generated
  */
 public interface SingleReceive extends ReceivingOneToManyCommunicationSchema {

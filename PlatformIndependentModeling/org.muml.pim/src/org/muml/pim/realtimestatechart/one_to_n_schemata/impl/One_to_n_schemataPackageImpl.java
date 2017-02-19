@@ -578,12 +578,6 @@ public class One_to_n_schemataPackageImpl extends EPackageImpl implements One_to
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
 		   });	
 		addAnnotation
-		  (oneToManyCommunicationSchemaEClass, 
-		   source, 
-		   new String[] {
-			 "constraints", "ConditionAttributeRequiresRetryAfterAttribute"
-		   });	
-		addAnnotation
 		  (unicastEClass, 
 		   source, 
 		   new String[] {
@@ -594,6 +588,24 @@ public class One_to_n_schemataPackageImpl extends EPackageImpl implements One_to
 		   source, 
 		   new String[] {
 			 "constraints", "LoadbalancingEitherHasResponseMessageOrWcet ResponseMessageOrWcetOfCommunicationSchemaLoadbalancingMustBeSet ResponseActionCanOnlyBeSetIfResponseMessageIsUsed"
+		   });	
+		addAnnotation
+		  (singleReceiveEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "SingleReceiveRequiresRetryAfterAttribute"
+		   });	
+		addAnnotation
+		  (multiReceiveEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "ConditionAttributeRequiresRetryAfterAttribute"
+		   });	
+		addAnnotation
+		  (sendingOneToManyCommunicationSchemaEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "ConditionAttributeRequiresRetryAfterAttribute"
 		   });
 	}
 
@@ -605,12 +617,6 @@ public class One_to_n_schemataPackageImpl extends EPackageImpl implements One_to
 	 */
 	protected void createOCLAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
-		addAnnotation
-		  (oneToManyCommunicationSchemaEClass, 
-		   source, 
-		   new String[] {
-			 "ConditionAttributeRequiresRetryAfterAttribute", "-- If and only if you define the attribute condition for a communication schemata, then you also have to state the attribute retryAfter.\r\n(not self.condition.oclIsUndefined() implies not self.retryAfter.oclIsUndefined()) and (self.condition.oclIsUndefined() implies self.retryAfter.oclIsUndefined())"
-		   });	
 		addAnnotation
 		  (unicastEClass, 
 		   source, 
@@ -624,6 +630,24 @@ public class One_to_n_schemataPackageImpl extends EPackageImpl implements One_to
 			 "ResponseMessageOrWcetOfCommunicationSchemaLoadbalancingMustBeSet", "-- LoadBalancing must define the responseMessage or the maxWorkingTime\r\nnot self.responseMessage.oclIsUndefined() or not self.maxWorkingTime.oclIsUndefined()",
 			 "LoadbalancingEitherHasResponseMessageOrWcet", "-- responseMessage and maxWorkingTime exclude each other\r\nif not self.responseMessage.oclIsUndefined() and not self.maxWorkingTime.oclIsUndefined() then\r\n\tfalse\r\nelse\r\n\ttrue\r\nendif",
 			 "ResponseActionCanOnlyBeSetIfResponseMessageIsUsed", "-- if onResponseAction is set, the responseMessage must be set, too.\r\n(not onResponseAction.oclIsUndefined()) implies (not responseMessage.oclIsUndefined())"
+		   });	
+		addAnnotation
+		  (singleReceiveEClass, 
+		   source, 
+		   new String[] {
+			 "SingleReceiveRequiresRetryAfterAttribute", "-- When you use the communication schemata singlereceive, then you have to define the attribute retryAfter.\r\nnot self.retryAfter.oclIsUndefined()"
+		   });	
+		addAnnotation
+		  (multiReceiveEClass, 
+		   source, 
+		   new String[] {
+			 "ConditionAttributeRequiresRetryAfterAttribute", "-- If and only if you define the attribute condition for this communication schemata, then you also have to state the attribute retryAfter.\r\n(not self.condition.oclIsUndefined() implies not self.retryAfter.oclIsUndefined()) and (self.condition.oclIsUndefined() implies self.retryAfter.oclIsUndefined())"
+		   });	
+		addAnnotation
+		  (sendingOneToManyCommunicationSchemaEClass, 
+		   source, 
+		   new String[] {
+			 "ConditionAttributeRequiresRetryAfterAttribute", "-- If and only if you define the attribute condition for this communication schemata, then you also have to state the attribute retryAfter.\r\n(not self.condition.oclIsUndefined() implies not self.retryAfter.oclIsUndefined()) and (self.condition.oclIsUndefined() implies self.retryAfter.oclIsUndefined())"
 		   });
 	}
 
