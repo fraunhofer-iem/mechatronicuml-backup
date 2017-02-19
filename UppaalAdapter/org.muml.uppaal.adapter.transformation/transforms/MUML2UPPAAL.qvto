@@ -983,11 +983,6 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		}
 		endif;
 		
-			
-		self.clockResets->forEach(clock) {
-			update += new AssignmentExpression(clock, componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
-		};
-	
 		-- store message from buffer to a variable before its accessed via the action language
 		update += self.triggerMessageEvent.map TriggerMessageEvent2StoreMessageExpression(rtsc, portOrRoleInstanceID, subPortOrRoleInstanceID, discretePortInstances);
 	
@@ -996,16 +991,18 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		
 			update += self.action.expressions.map Expression2Expressions(componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
 
-		}
+		} 
 		endif;
 
-		update += self.triggerMessageEvent.map TriggerMessageEvent2ConsumeFunctionCall(portOrRoleInstanceID, subPortOrRoleInstanceID, discretePortInstances);
-		
 		-- if sending an array expression, first assign this array to a variable. This is because UPPAAL does not support arrays that are not assigned to a variable
 		update += self.raiseMessageEvent.map RaiseMessageEvent2InitializerFunctionCalls(componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
-		
 		update += self.raiseMessageEvent.map RaiseMessageEvent2SendFunctionCall(componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
+		
+		update += self.triggerMessageEvent.map TriggerMessageEvent2ConsumeFunctionCall(portOrRoleInstanceID, subPortOrRoleInstanceID, discretePortInstances);
 							
+		self.clockResets->forEach(clock) {
+            update += new AssignmentExpression(clock, componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
+        };
 	}
 	
 	mapping Transition :: Transition2IntermediateLocation() : Location when {self.shouldCreateIntermediateLocation()} {
@@ -1037,11 +1034,6 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		}
 		endif;
 		
-			
-		self.clockResets->forEach(clock) {
-			update += new AssignmentExpression(clock, componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
-		};
-	
 		-- store message from buffer to a variable before its accessed via the action language
 		update += self.triggerMessageEvent.map TriggerMessageEvent2StoreMessageExpression(rtsc, portOrRoleInstanceID, subPortOrRoleInstanceID, discretePortInstances);
 	
@@ -1049,19 +1041,19 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		then {
 		
 			update += self.action.expressions.map Expression2Expressions(componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
-
 		}
 		endif;
-		
 
-		update += self.triggerMessageEvent.map TriggerMessageEvent2ConsumeFunctionCall(portOrRoleInstanceID, subPortOrRoleInstanceID, discretePortInstances);
-		
 		-- if sending an array expression, first assign this array to a variable. This is because UPPAAL does not support arrays that are not assigned to a variable
 		update += self.raiseMessageEvent.map RaiseMessageEvent2InitializerFunctionCalls(componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
-		
 		update += self.raiseMessageEvent.map RaiseMessageEvent2SendFunctionCall(componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
 		
-		
+		update += self.triggerMessageEvent.map TriggerMessageEvent2ConsumeFunctionCall(portOrRoleInstanceID, subPortOrRoleInstanceID, discretePortInstances);
+        
+	    self.clockResets->forEach(clock) {
+            update += new AssignmentExpression(clock, componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
+        };
+        
 		-- increment intermediate location semaphore (because we're entering an intermediate location)
 		update += object IncrementDecrementExpression { // intermediateLocationSemaphore++;
 			expression := object IdentifierExpression { identifier := map createIntermediateLocationSemaphoreVariable() };
