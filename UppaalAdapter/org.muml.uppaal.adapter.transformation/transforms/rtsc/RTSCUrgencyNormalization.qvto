@@ -1,4 +1,4 @@
-import transforms.lib.MUML2MUML;
+import ImplicitCopy;
 import transforms.lib.RTSCUtil;
 import transforms.lib.MultiMappingUtil;
 
@@ -24,10 +24,10 @@ transformation RTSCUrgencyNormalization(in input:rtsc, out output:rtsc);
 
 main() {
 	assert fatal (input.objects()[SynchronizationChannel]->forAll(sc | not sc.urgentFromUrgentStateAndNonUrgentTransitionsSynchronize())) with log("Model contains a synchronization channel via which urgent transitions with an urgent state as source and non-urgent transitions synchronize.");
-	input.objects()[RootNode]->map RootNode2RootNode();
+	input.objects()[RootNode]->map transform();
 }
 
-mapping SynchronizationChannel :: SyncChannel2SyncChannel() : SynchronizationChannel when {not self.urgentAndNonUrgentTransitionsSynchronize()} {
+mapping SynchronizationChannel :: transform() : SynchronizationChannel when {not self.urgentAndNonUrgentTransitionsSynchronize()} {
 		name := self.name;						
 		selectorType := self.selectorType;
 }
@@ -42,70 +42,71 @@ mapping SynchronizationChannel :: SyncChannel2NonUrgentSyncChannel() : Synchroni
 	selectorType := self.selectorType;
 } 
 
-
-mapping State :: State2State() : State {
+//State2State
+mapping State :: transform() : State {
 				
 		name := self.name;
 		
 		-- correct transformation is chosen by preconditions
-		incomingTransitions := self.incomingTransitions.map Transition2Transition();
+		incomingTransitions := self.incomingTransitions.map transform().oclAsType(Transition);
 		incomingTransitions += self.incomingTransitions.map Transition2UrgentTransition();
 		incomingTransitions += self.incomingTransitions.map Transition2NonUrgentTransition();
 		
-		outgoingTransitions := self.outgoingTransitions.map Transition2Transition();
+		outgoingTransitions := self.outgoingTransitions.map transform().oclAsType(Transition);
 		outgoingTransitions += self.outgoingTransitions.map Transition2UrgentTransition();
 		outgoingTransitions += self.outgoingTransitions.map Transition2NonUrgentTransition();
 		
-		embeddedRegions := self.embeddedRegions->map Region2Region();
+		embeddedRegions := self.embeddedRegions->map transform().oclAsType(Region);
 		
-		entryEvent := self.entryEvent.map EntryEvent2EntryEvent();
-		doEvent := self.doEvent.map DoEvent2DoEvent();
-		exitEvent := self.exitEvent.map ExitEvent2ExitEvent();
+		entryEvent := self.entryEvent.map transform().oclAsType(EntryEvent);
+		doEvent := self.doEvent.map transform().oclAsType(DoEvent);
+		exitEvent := self.exitEvent.map transform().oclAsType(ExitEvent);
 		
-		invariants := self.invariants->map ClockConstraint2ClockConstraint();		
+		invariants := self.invariants->map transform().oclAsType(ClockConstraint);		
 		initial := self.initial;		
 		final := self.final;		
 		urgent := self.urgent;
 		
 		--Due to precondition of mappings the correct ones are chosen
 				
-		channels := self.channels->map SyncChannel2SyncChannel();
+		channels := self.channels->map transform();
 		channels += self.channels->map SyncChannel2UrgentSyncChannel();
 		channels += self.channels->map SyncChannel2NonUrgentSyncChannel();
 		
-		connectionPoints := self.connectionPoints->map StateConnectionPoint2StateConnectionPoint();
+		connectionPoints := self.connectionPoints->map transform().oclAsType(StateConnectionPoint);
 		
-		parentStatechart := self.parentStatechart.map RealtimeStatechart2RealtimeStatechart();
+		parentStatechart := self.parentStatechart.map transform().oclAsType(RealtimeStatechart);
 		
-		extensions := self.extensions.oclAsType(CommittedExtension).map CommittedExtension2CommittedExtension();		
+		extensions := self.extensions.oclAsType(CommittedExtension).map transform().oclAsType(CommittedExtension);		
 	}
 	
-mapping Transition :: Transition2Transition() : Transition when {self.synchronization.oclIsUndefined() or self.synchronization=null or not self.synchronization.syncChannel.urgentAndNonUrgentTransitionsSynchronize()} {
+//Transition2Transition
+mapping Transition :: transform() : Transition when {self.synchronization.oclIsUndefined() or self.synchronization=null or not self.synchronization.syncChannel.urgentAndNonUrgentTransitionsSynchronize()} {
 		
-		source := self.source.map Vertex2Vertex();
-		target := self.target.map Vertex2Vertex();
+		source := self.source.map transform().oclAsType(Vertex);
+		target := self.target.map transform().oclAsType(Vertex);
 				
 		priority := self.priority;	
-		synchronization := self.synchronization.map Synchronization2Synchronization();		
-		clockResets := self.clockResets->map Clock2Clock();		
-		clockConstraints := self.clockConstraints->map ClockConstraint2ClockConstraint();		
-		absoluteDeadlines := self.absoluteDeadlines->map AbsoluteDeadline2AbsoluteDeadline();		
-		relativeDeadline := self.relativeDeadline.map RelativeDeadline2RelativeDeadline();		
+		synchronization := self.synchronization.map transform().oclAsType(Synchronization);
+		clockResets := self.clockResets->map transform().oclAsType(Clock);		
+		clockConstraints := self.clockConstraints->map transform().oclAsType(ClockConstraint);		
+		absoluteDeadlines := self.absoluteDeadlines->map transform().oclAsType(AbsoluteDeadline);		
+		relativeDeadline := self.relativeDeadline.map transform().oclAsType(RelativeDeadline);		
 		blockable := self.blockable;		
-		guard := self.guard.map Expression2Expression();		
-		events := self.events->map TransitionEvent2TransitionEvent();		
-		action := self.action.map Action2Action();
+		guard := self.guard.map transform().oclAsType(core::expressions::Expression);		
+		events := self.events->map transform().oclAsType(TransitionEvent);		
+		action := self.action.map transform().oclAsType(Action);
 		
 		urgent := self.urgent;
 }
 
 mapping Transition :: Transition2UrgentTransition() : Transition when {self.synchronization.syncChannel.urgentAndNonUrgentTransitionsSynchronize() and self.urgent}{
-		source := self.source.map Vertex2Vertex();
-		target := self.target.map Vertex2Vertex();
+		source := self.source.map transform().oclAsType(Vertex);
+		target := self.target.map transform().oclAsType(Vertex);
 			
 		priority := self.priority;		
 		synchronization := self.synchronization.map Synchronization2UrgentSynchronization();		
-		clockResets := self.clockResets->map Clock2Clock();		
+		clockResets := self.clockResets->map transform().oclAsType(Clock);		
 		clockConstraints := self.clockConstraints->mapClockConstraint();		
 		absoluteDeadlines := self.absoluteDeadlines->mapAbsoluteDeadline();		
 		relativeDeadline := self.relativeDeadline.mapRelativeDeadline();		
@@ -118,12 +119,12 @@ mapping Transition :: Transition2UrgentTransition() : Transition when {self.sync
 }
 
 mapping Transition :: Transition2NonUrgentTransition() : Transition when {self.synchronization.syncChannel.urgentAndNonUrgentTransitionsSynchronize()}{
-		source := self.source.map Vertex2Vertex();
-		target := self.target.map Vertex2Vertex();
+		source := self.source.map transform().oclAsType(Vertex);
+		target := self.target.map transform().oclAsType(Vertex);
 				
 		priority := self.priority;		
 		synchronization := self.synchronization.map Synchronization2NonUrgentSynchronization();		
-		clockResets := self.clockResets->map Clock2Clock();		
+		clockResets := self.clockResets->map transform().oclAsType(Clock);		
 		clockConstraints := self.clockConstraints->mapClockConstraint();		
 		absoluteDeadlines := self.absoluteDeadlines->mapAbsoluteDeadline();		
 		relativeDeadline := self.relativeDeadline.mapRelativeDeadline();		
@@ -142,10 +143,11 @@ constructor Synchronization :: Synchronization(channel : SynchronizationChannel,
 		selectorExpression := selectorExp.mapExpression();
 }
 
-mapping Synchronization :: Synchronization2Synchronization() : Synchronization {
+//Synchronization2Synchronization
+mapping Synchronization :: transform() : Synchronization {
 		
 	init {			
-		var c : SynchronizationChannel = self.syncChannel.map SyncChannel2SyncChannel();
+		var c : SynchronizationChannel = self.syncChannel.map transform();
 		result := new Synchronization(c, self.kind, self.selectorExpression)							
 	}	
 }
@@ -169,92 +171,112 @@ mapping Synchronization :: Synchronization2NonUrgentSynchronization() : Synchron
 		}	
 }
 
-mapping pim::realtimestatechart::RealtimeStatechart :: RealtimeStatechart2RealtimeStatechart() : pim::realtimestatechart::RealtimeStatechart {
+//RealtimeStatechart2RealtimeStatechart
+mapping pim::realtimestatechart::RealtimeStatechart :: transform() : pim::realtimestatechart::RealtimeStatechart {
 			
 		name := self.name;
 		
-		behavioralElement := self.behavioralElement.map BehavioralElement2BehavioralElement();
+		behavioralElement := self.behavioralElement.map transform().oclAsType(BehavioralElement);
 		
-		operations := self.operations->map Operation2Operation();
+		operations := self.operations->map transform().oclAsType(Operation);
 		
-		variables := self.variables->map Variable2Variable();
+		variables := self.variables->map transform().oclAsType(Variable);
 		
-		parentRegion := self.parentRegion.map Region2Region();
+		parentRegion := self.parentRegion.map transform().oclAsType(Region);
 		
-		states := self.states->map State2State();
+		states := self.states->map transform().oclAsType(State);
 		
 		--correct one is chose due to preconditions of transformations
-		transitions := self.transitions.map Transition2Transition();
+		transitions := self.transitions.map transform().oclAsType(Transition);
 		transitions += self.transitions.map Transition2UrgentTransition();
 		transitions += self.transitions.map Transition2NonUrgentTransition();
 		
 		transitions := transitions->sortTransitionPriorities();
 				
-		clocks := self.clocks->map Clock2Clock();				
+		clocks := self.clocks->map transform().oclAsType(Clock);				
 	}
 	
 //TODO clean this up: mappings for subtypes do not have to be called here	
-mapping Expression :: Expression2Expression() : Expression disjuncts
-	mtctl::predicates::TransitionFiringExpr::TransitionFiringExpr2OrExpr,
-	 mtctl::predicates::TransitionFiringExpr::TransitionFiringExpr2NonUrgentTransitionFiringExpr,
-	  mtctl::quantifiers::BoundVariable::BoundVariable2BoundVariable,
-	   mtctl::booleanlogic::AndExpr::AndExpr2AndExpr,
-	    mtctl::sets::SetExpr::SetExpr2SetExpr,
-	     mtctl::comparables::ConstExpr::ConstExpr2ConstExpr,
-	      mtctl::quantifiers::AFExpr::AFExpr2AFExpr,
-	       mtctl::predicates::FalseExpr::FalseExpr2FalseExpr,
-	        mtctl::predicates::SubstateOfExpr::SubstateOfExpr2SubstateOfExpr,
-	         mtctl::predicates::StaticPredicateExpr::StaticPredicateExpr2StaticPredicateExpr,
-	          mtctl::predicates::ComparisonExpr::ComparisonExpr2ComparisonExpr,
-	           mtctl::booleanlogic::ImplyExpr::ImplyExpr2ImplyExpr,
-	            mtctl::quantifiers::QuantifierExpr::QuantifierExpr2QuantifierExpr,
-	             mtctl::comparables::MapExpr::MapExpr2MapExpr,
-	              mtctl::quantifiers::EFExpr::EFExpr2EFExpr,
-	               mtctl::predicates::PredicateExpr::PredicateExpr2PredicateExpr,
-	                mtctl::sets::IntervalSetExpr::IntervalSetExpr2IntervalSetExpr,
-	                 mtctl::booleanlogic::OrExpr::OrExpr2OrExpr,
-	                  mtctl::predicates::MessageInTransitExpr::MessageInTransitExpr2MessageInTransitExpr,
-	                   mtctl::comparables::BufferMsgCountExpr::BufferMsgCountExpr2BufferMsgCountExpr,
-	                    mtctl::comparables::SourceStateExpr::SourceStateExpr2SourceStateExpr,
-	                     mtctl::sets::MessageSetExpr::MessageSetExpr2MessageSetExpr,
-	                      mtctl::sets::ClockSetExpr::ClockSetExpr2ClockSetExpr,
-	                       mtctl::predicates::MessageInBufferExpr::MessageInBufferExpr2MessageInBufferExpr,
-	                        mtctl::predicates::MessageDiscardedExpr::MessageDiscardedExpr2MessageDiscardedExpr,
-	                         mtctl::sets::TransitionSetExpr::TransitionSetExpr2TransitionSetExpr,
-	                          mtctl::comparables::TransitionMap::TransitionMap2TransitionMap,
-	                           mtctl::predicates::DeadlockExpr::DeadlockExpr2DeadlockExpr,
-	                            mtctl::predicates::ConnectorOverflowExpr::ConnectorOverflowExpr2ConnectorOverflowExpr,
-	                             mtctl::quantifiers::LeadsToExpr::LeadsToExpr2LeadsToExpr,
-	                              mtctl::predicates::DynamicPredicateExpr::DynamicPredicateExpr2DynamicPredicateExpr,
-	                               mtctl::comparables::MumlElemExpr::MumlElemExpr2MumlElemExpr,
-	                                mtctl::comparables::TargetStateExpr::TargetStateExpr2TargetStateExpr,
-	                                 mtctl::sets::BufferSetExpr::BufferSetExpr2BufferSetExpr,
-	                                  mtctl::quantifiers::EGExpr::EGExpr2EGExpr,
-	                                   mtctl::booleanlogic::NotExpr::NotExpr2NotExpr,
-	                                    mtctl::quantifiers::ExistenceQuantExpr::ExistenceQuantExpr2ExistenceQuantExpr,
-	                                     mtctl::quantifiers::AGExpr::AGExpr2AGExpr,
-	                                      mtctl::sets::StateSetExpr::StateSetExpr2StateSetExpr,
-	                                       mtctl::quantifiers::UniversalQuantExpr::UniversalQuantExpr2UniversalQuantExpr,
-	                                        mtctl::quantifiers::TemporalQuantifierExpr::TemporalQuantifierExpr2TemporalQuantifierExpr,
-	                                         mtctl::predicates::TransitionFiringExpr ::TransitionFiringExpr2TransitionFiringExpr,
-	                                          mtctl::predicates::TrueExpr::TrueExpr2TrueExpr,
-	                                           mtctl::predicates::StateActiveExpr::StateActiveExpr2StateActiveExpr;
+//mapping Expression :: Expression2Expression() : Expression disjuncts
+//	mtctl::predicates::TransitionFiringExpr::TransitionFiringExpr2OrExpr,
+//	 mtctl::predicates::TransitionFiringExpr::TransitionFiringExpr2NonUrgentTransitionFiringExpr,
+//	  mtctl::quantifiers::BoundVariable::BoundVariable2BoundVariable,
+//	   mtctl::booleanlogic::AndExpr::AndExpr2AndExpr,
+//	    mtctl::sets::SetExpr::SetExpr2SetExpr,
+//	     mtctl::comparables::ConstExpr::ConstExpr2ConstExpr,
+//	      mtctl::quantifiers::AFExpr::AFExpr2AFExpr,
+//	       mtctl::predicates::FalseExpr::FalseExpr2FalseExpr,
+//	        mtctl::predicates::SubstateOfExpr::SubstateOfExpr2SubstateOfExpr,
+//	         mtctl::predicates::StaticPredicateExpr::StaticPredicateExpr2StaticPredicateExpr,
+//	          mtctl::predicates::ComparisonExpr::ComparisonExpr2ComparisonExpr,
+//	           mtctl::booleanlogic::ImplyExpr::ImplyExpr2ImplyExpr,
+//	            mtctl::quantifiers::QuantifierExpr::QuantifierExpr2QuantifierExpr,
+//	             mtctl::comparables::MapExpr::MapExpr2MapExpr,
+//	              mtctl::quantifiers::EFExpr::EFExpr2EFExpr,
+//	               mtctl::predicates::PredicateExpr::PredicateExpr2PredicateExpr,
+//	                mtctl::sets::IntervalSetExpr::IntervalSetExpr2IntervalSetExpr,
+//	                 mtctl::booleanlogic::OrExpr::OrExpr2OrExpr,
+//	                  mtctl::predicates::MessageInTransitExpr::MessageInTransitExpr2MessageInTransitExpr,
+//	                   mtctl::comparables::BufferMsgCountExpr::BufferMsgCountExpr2BufferMsgCountExpr,
+//	                    mtctl::comparables::SourceStateExpr::SourceStateExpr2SourceStateExpr,
+//	                     mtctl::sets::MessageSetExpr::MessageSetExpr2MessageSetExpr,
+//	                      mtctl::sets::ClockSetExpr::ClockSetExpr2ClockSetExpr,
+//	                       mtctl::predicates::MessageInBufferExpr::MessageInBufferExpr2MessageInBufferExpr,
+//	                        mtctl::predicates::MessageDiscardedExpr::MessageDiscardedExpr2MessageDiscardedExpr,
+//	                         mtctl::sets::TransitionSetExpr::TransitionSetExpr2TransitionSetExpr,
+//	                          mtctl::comparables::TransitionMap::TransitionMap2TransitionMap,
+//	                           mtctl::predicates::DeadlockExpr::DeadlockExpr2DeadlockExpr,
+//	                            mtctl::predicates::ConnectorOverflowExpr::ConnectorOverflowExpr2ConnectorOverflowExpr,
+//	                             mtctl::quantifiers::LeadsToExpr::LeadsToExpr2LeadsToExpr,
+//	                              mtctl::predicates::DynamicPredicateExpr::DynamicPredicateExpr2DynamicPredicateExpr,
+//	                               mtctl::comparables::MumlElemExpr::MumlElemExpr2MumlElemExpr,
+//	                                mtctl::comparables::TargetStateExpr::TargetStateExpr2TargetStateExpr,
+//	                                 mtctl::sets::BufferSetExpr::BufferSetExpr2BufferSetExpr,
+//	                                  mtctl::quantifiers::EGExpr::EGExpr2EGExpr,
+//	                                   mtctl::booleanlogic::NotExpr::NotExpr2NotExpr,
+//	                                    mtctl::quantifiers::ExistenceQuantExpr::ExistenceQuantExpr2ExistenceQuantExpr,
+//	                                     mtctl::quantifiers::AGExpr::AGExpr2AGExpr,
+//	                                      mtctl::sets::StateSetExpr::StateSetExpr2StateSetExpr,
+//	                                       mtctl::quantifiers::UniversalQuantExpr::UniversalQuantExpr2UniversalQuantExpr,
+//	                                        mtctl::quantifiers::TemporalQuantifierExpr::TemporalQuantifierExpr2TemporalQuantifierExpr,
+//	                                         mtctl::predicates::TransitionFiringExpr ::TransitionFiringExpr2TransitionFiringExpr,
+//	                                          mtctl::predicates::TrueExpr::TrueExpr2TrueExpr,
+//	                                           mtctl::predicates::StateActiveExpr::StateActiveExpr2StateActiveExpr;
+
+// replaces the disjuncts-mapping above
+mapping mtctl::predicates::TransitionFiringExpr :: transform() : Expression {
+	init {
+		if (self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).synchronization != null and self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).synchronization.syncChannel.urgentAndNonUrgentTransitionsSynchronize() and  self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).urgent)
+		{
+			result := self.map TransitionFiringExpr2OrExpr();
+		}
+		elif(self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).synchronization != null and self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).synchronization.syncChannel.urgentAndNonUrgentTransitionsSynchronize())
+		{
+			result := self.map TransitionFiringExpr2NonUrgentTransitionFiringExpr();
+		}
+		else {
+			result := object TransitionFiringExpr {
+				transition := self.transition.map transform().oclAsType(MapExpr);
+			}
+		};
+	}
+}
 
 // Create an OrExpr to capture the cases in which two transitions are created (i.e. when urgent and non-urgent transitions synchronize and a transition is non-urgent)
-mapping TransitionFiringExpr :: TransitionFiringExpr2OrExpr() : OrExpr when {self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).synchronization.syncChannel.urgentAndNonUrgentTransitionsSynchronize() and  self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).urgent} {
+mapping TransitionFiringExpr :: TransitionFiringExpr2OrExpr() : OrExpr {
 	leftOpd := object TransitionFiringExpr {transition := object MumlElemExpr {elem := self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).map Transition2UrgentTransition();
-	instance := self.transition.oclAsType(MumlElemExpr).instance.oclAsType(PortInstance).map PortInstance2PortInstance().oclAsType(EObject)
+	instance := self.transition.oclAsType(MumlElemExpr).instance.oclAsType(PortInstance).map transform().oclAsType(EObject)
 	
 	}};
 	rightOpd := object TransitionFiringExpr {transition := object MumlElemExpr {elem := self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).map Transition2NonUrgentTransition();
-	instance := self.transition.oclAsType(MumlElemExpr).instance.oclAsType(PortInstance).map PortInstance2PortInstance().oclAsType(EObject)
+	instance := self.transition.oclAsType(MumlElemExpr).instance.oclAsType(PortInstance).map transform().oclAsType(EObject)
 	}};
 }
 
-mapping TransitionFiringExpr :: TransitionFiringExpr2NonUrgentTransitionFiringExpr() : TransitionFiringExpr when {self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).synchronization.syncChannel.urgentAndNonUrgentTransitionsSynchronize()}{
+mapping TransitionFiringExpr :: TransitionFiringExpr2NonUrgentTransitionFiringExpr() : TransitionFiringExpr {
 	// taking care of transitionFiringExpr with transitions that are mapped with Transition2NonUrgentTransition. Only called when TransitionFiringExpr2OrExpr does not apply
 	transition := object MumlElemExpr {elem := self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).map Transition2NonUrgentTransition();
-	instance := self.transition.oclAsType(MumlElemExpr).instance.oclAsType(PortInstance).map PortInstance2PortInstance().oclAsType(EObject)};
+	instance := self.transition.oclAsType(MumlElemExpr).instance.oclAsType(PortInstance).map transform().oclAsType(EObject)};
 }
 
 helper SynchronizationChannel :: urgentAndNonUrgentTransitionsSynchronize() : Boolean{

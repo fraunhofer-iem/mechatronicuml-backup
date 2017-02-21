@@ -31,7 +31,7 @@ mapping Transition :: Schema2CoordinatorStartTransition(context:OclAny, region:R
 		guard := new TypedNamedElementExpression(self.map Schema2BooleanVariable(schemaPossibleVariableName));	
 	}
 	else {
-		guard := new LogicalExpression(new TypedNamedElementExpression(self.map Schema2BooleanVariable(schemaPossibleVariableName)), self.guard.map transform(result).oclAsType(Expression), LogicOperator::AND );
+		guard := new LogicalExpression(new TypedNamedElementExpression(self.map Schema2BooleanVariable(schemaPossibleVariableName)), self.guard.map transformWithContext(result).oclAsType(Expression), LogicOperator::AND );
 	};
 			
 	if(not self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->isEmpty()) {
@@ -40,7 +40,7 @@ mapping Transition :: Schema2CoordinatorStartTransition(context:OclAny, region:R
 	else {
 		urgent := self.urgent;
 	};
-	clockConstraints += self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map transform(result).oclAsType(ClockConstraint);	
+	clockConstraints += self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map transformWithContext(result).oclAsType(ClockConstraint);	
 	
 	synchronization := self. createSynchronization( schemaCheckDoneChannelName, SynchronizationKind::RECEIVE);
 }
@@ -68,7 +68,7 @@ mapping Transition :: Schema2CoordinatorEndTransition(context:OclAny, region:Rea
 	target := self.target.map Vertex2VertexCoordinator(context);
 	priority := 1;
 	result.clockResets :=  self.clockResets->select(c| not isClockSubRoleSpecific(c)).map transform().oclAsType(Clock);
-	result.action := self.action.map transform(result).oclAsType(Action);
+	result.action := self.action.map transformWithContext(result).oclAsType(Action);
 	synchronization :=self.createSynchronization(schemaDoneChannelName,SynchronizationKind::RECEIVE);	
 }
 
@@ -105,11 +105,11 @@ mapping Transition :: Schema2TransCheckEmbeddedCoordinator(context:OclAny, schem
 		
 		if(not self.clockConstraints->isEmpty())
 			urgent := false;	
-		clockConstraints += self.clockConstraints->map transform(result).oclAsType(ClockConstraint);	
+		clockConstraints += self.clockConstraints->map transformWithContext(result).oclAsType(ClockConstraint);	
 	
-		clockConstraints := self.clockConstraints.map transform(result).oclAsType(ClockConstraint);
+		clockConstraints := self.clockConstraints.map transformWithContext(result).oclAsType(ClockConstraint);
 		
-		guard := self.guard.map transform(result).oclAsType(Expression);
+		guard := self.guard.map transformWithContext(result).oclAsType(Expression);
 		
 		synchronization :=	self. createSynchronization(  schemaCheckChannelName,SynchronizationKind::SEND, PositionSelectorKind::FIRST);
 			

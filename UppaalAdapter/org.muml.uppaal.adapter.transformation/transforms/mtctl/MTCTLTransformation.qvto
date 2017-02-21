@@ -1,4 +1,4 @@
-import transforms.lib.MUML2MUML;
+import ImplicitCopy;
 import transforms.mtctl.MTCTLQuantifierNormalization;
 import transforms.mtctl.MTCTLStaticNormalization; 
 import transforms.mtctl.MTCTLPropertySplitTransformation;

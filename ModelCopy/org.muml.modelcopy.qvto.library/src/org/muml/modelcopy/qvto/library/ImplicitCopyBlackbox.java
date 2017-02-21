@@ -1,8 +1,5 @@
 package org.muml.modelcopy.qvto.library;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
@@ -11,9 +8,9 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 
-public class ModelcopyBlackbox {
+public class ImplicitCopyBlackbox {
 	
-	public ModelcopyBlackbox() {
+	public ImplicitCopyBlackbox() {
 		super();
 	}
 
@@ -49,23 +46,6 @@ public class ModelcopyBlackbox {
 		return false;
 	}
 
-	@SuppressWarnings({ "rawtypes", "unchecked" })
-	public static List<Object> getValues(EObject element, EStructuralFeature feature) {
-		Object value = element.eGet(feature);
-		if (feature.isMany()) {
-			return new ArrayList<Object>((Collection) value);
-		} else if (value != null) {
-			return Collections.singletonList(value);
-		}
-		return Collections.emptyList();
-	}
-	
-	
-//	@Operation(contextual=true)
-//	public static boolean before(Date self, Date when) {
-//		return self.before(when);
-//	}
-//	
 }
 
 

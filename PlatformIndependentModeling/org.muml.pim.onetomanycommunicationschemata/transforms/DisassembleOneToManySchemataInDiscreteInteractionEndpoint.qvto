@@ -503,7 +503,7 @@ mapping State :: States2StatesCoordinator(context:OclAny) : State {
 		
 		urgent := self.urgent;				
 	
-		entryEvent := self.entryEvent.map transform(result).oclAsType(EntryEvent);			
+		entryEvent := self.entryEvent.map transformWithContext((result).oclAsType(EntryEvent);			
 		
 		// @author: sthiele2 -- add clock resets for the source states of schema transitions 
 		self.outgoingTransitions->select(t|((not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined())
@@ -584,11 +584,11 @@ mapping State :: States2StatesCoordinator(context:OclAny) : State {
 		};
 		
 		
-		exitEvent := self.exitEvent.map transform(result).oclAsType(ExitEvent);
+		exitEvent := self.exitEvent.map transformWithContext(result).oclAsType(ExitEvent);
 		
-		doEvent := self.doEvent.map transform(result).oclAsType(DoEvent);
+		doEvent := self.doEvent.map transformWithContext(result).oclAsType(DoEvent);
 		
-		invariants := self.invariants->select(c|not isClockSubRoleSpecific(c.clock)).map transform(result).oclAsType(ClockConstraint);
+		invariants := self.invariants->select(c|not isClockSubRoleSpecific(c.clock)).map transformWithContext(result).oclAsType(ClockConstraint);
 	
 	
 		-- copy the embedded regions of the state:

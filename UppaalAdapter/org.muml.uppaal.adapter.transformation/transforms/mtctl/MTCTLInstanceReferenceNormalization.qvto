@@ -1,4 +1,4 @@
-import transforms.lib.MUML2MUML;
+import ImplicitCopy;
 import org.muml.uppaal.adapter._blackbox.MtctlLibrary;
 
 modeltype muml_cic uses pim::instance('http://www.muml.org/pim/1.0.0');
@@ -18,17 +18,19 @@ modeltype mtctlComparables uses mtctl::comparables('http://www.muml.org/uppaal/a
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 
 //Sets the 'instance' features in all MumlElemExpr
-transformation MTCTLInstanceReferenceNormalization(in input:muml_cic, out output:muml_cic) extends library MUML2MUML;
+transformation MTCTLInstanceReferenceNormalization(in input:muml_cic, out output:muml_cic){ //extends library MUML2MUML;
 
 main() {
-	input.objects()[RootNode]->map RootNode2RootNode();
+	input.objects()[RootNode]->map transform();
 	assert(output.objects()[MumlElemExpr]->forAll(e : MumlElemExpr | e.instance.oclIsUndefined() implies e.elem.oclIsKindOf(BoundVariable) or e.elem.oclIsKindOf(MessageType) or e.eContainer().oclIsKindOf(InstanceSetExpr) or e.eContainer().oclIsKindOf(SubinstanceSetExpr))) with log("MTCTLInstanceReferenceNormalization failed");
 }
 
-mapping MumlElemExpr :: MumlElemExpr2MumlElemExpr() : MumlElemExpr {
-	elem := self.elem.map EObject2EObject();
+//MumlElemExpr2MumlElemExpr
+mapping MumlElemExpr :: transform() : MumlElemExpr {
+	elem := self.elem.map transform().oclAsType(EObject);
 	if (self.instance != null) {
-		instance := self.instance.map EObject2EObject();
+		instance := self.instance.map transform().oclAsType(EObject);
 	} else
-		instance := inferInstanceFor(self).map EObject2EObject();
+		instance := inferInstanceFor(self).map transform().oclAsType(EObject);
+}
 }

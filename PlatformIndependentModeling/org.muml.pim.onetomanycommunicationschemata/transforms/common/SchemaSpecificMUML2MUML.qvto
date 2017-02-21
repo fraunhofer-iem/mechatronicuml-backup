@@ -1,5 +1,5 @@
 library SchemaSpecificMUML2MUML;
-import ModelcopyLibrary;
+import ImplicitCopy;
 
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
@@ -54,7 +54,7 @@ property internalSynchronizations	: Set(SynchronizationChannel);
 		};
 	}
 
-	mapping actionlanguage::TriggerMessageExpression :: transform(container : OclAny) : EObject {
+	mapping actionlanguage::TriggerMessageExpression :: transformWithContext(container : OclAny) : EObject {
 		init {
 			result := self.map create(container);
 		}
@@ -63,7 +63,7 @@ property internalSynchronizations	: Set(SynchronizationChannel);
 		resultingElement.messageType := self.messageType;
 		resultingElement.parameter := self.parameter;
 		
-	    resultingElement._extensions := self._extensions.map transform(container).oclAsType(Extension);
+	    resultingElement._extensions := self._extensions.map transformWithContext(container).oclAsType(Extension);
 	    	
 		element.oclAsType(EObject).eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
 			setValues(result, f, getValues(element.oclAsType(EObject), f));
@@ -86,16 +86,16 @@ property internalSynchronizations	: Set(SynchronizationChannel);
 		};	
 	}
 	
-	mapping actionLanguage::NondeterministicChoiceExpression ::transform(container : OclAny) : EObject {
+	mapping actionLanguage::NondeterministicChoiceExpression ::transformWithContext(container : OclAny) : EObject {
 		init {
 			result := self.map create(container);
 		}
 		var element := self.oclAsType(actionLanguage::NondeterministicChoiceExpression);
 		var resultingElement : actionLanguage::NondeterministicChoiceExpression := result.oclAsType(actionLanguage::NondeterministicChoiceExpression);
-		resultingElement.range := self.range.map transform(container).oclAsType(Range);
+		resultingElement.range := self.range.map transformWithContext(container).oclAsType(Range);
 		resultingElement.dataType := self.dataType;
 		
-	    resultingElement._extensions := self._extensions.map transform(container).oclAsType(Extension);
+	    resultingElement._extensions := self._extensions.map transformWithContext(container).oclAsType(Extension);
 	    	
 		element.oclAsType(EObject).eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
 			setValues(result, f, getValues(element.oclAsType(EObject), f));
@@ -113,7 +113,7 @@ property internalSynchronizations	: Set(SynchronizationChannel);
 				var resultingElement : behavior::Variable := result.oclAsType(behavior::Variable);
 		
 				resultingElement.dataType := self.dataType;
-				resultingElement.initializeExpression := self.initializeExpression.map transform(result).oclAsType(Expression);
+				resultingElement.initializeExpression := self.initializeExpression.map transformWithContext(result).oclAsType(Expression);
 			    resultingElement._extensions := self._extensions.map transform().oclAsType(Extension);
 				
 				var element := self.oclAsType(behavior::Variable);	    	
@@ -127,7 +127,7 @@ property internalSynchronizations	: Set(SynchronizationChannel);
 		}			
 	}	
 
- 	mapping Variable :: transform(container : OclAny) : EObject {
+ 	mapping Variable :: transformWithContext(container : OclAny) : EObject {
  		init {
  			result := self.map transform();
  		}
@@ -157,7 +157,7 @@ property internalSynchronizations	: Set(SynchronizationChannel);
 		}			
 	}
 	
-	mapping Operation :: transform(container : OclAny) : EObject {
+	mapping Operation :: transformWithContext(container : OclAny) : EObject {
  		init {
  			result := self.map transform();
  		}
@@ -178,7 +178,7 @@ property internalSynchronizations	: Set(SynchronizationChannel);
 		
 	}
 
-	mapping Parameter :: transform(container : OclAny) : EObject {
+	mapping Parameter :: transformWithContext(container : OclAny) : EObject {
  		init {
  			result := self.map transform();
  		}
@@ -207,7 +207,7 @@ property internalSynchronizations	: Set(SynchronizationChannel);
 	}
 	
 	
-	mapping SynchronizationChannel :: transform(container : OclAny) : EObject {
+	mapping SynchronizationChannel :: transformWithContext(container : OclAny) : EObject {
  		init {
  			result := self.map transform();
  		}
@@ -237,7 +237,7 @@ property internalSynchronizations	: Set(SynchronizationChannel);
 	}
 
 
-	mapping Clock :: transform(container : OclAny) : EObject {
+	mapping Clock :: transformWithContext(container : OclAny) : EObject {
  		init {
  			result := self.map transform();
  		}
@@ -253,7 +253,7 @@ property internalSynchronizations	: Set(SynchronizationChannel);
 				
 	}
 	
-	mapping pim::realtimestatechart::AsynchronousMessageEvent :: transform(container : OclAny) : EObject {
+	mapping pim::realtimestatechart::AsynchronousMessageEvent :: transformWithContext(container : OclAny) : EObject {
 		init {
 			result := self.map create(container);
 		}		

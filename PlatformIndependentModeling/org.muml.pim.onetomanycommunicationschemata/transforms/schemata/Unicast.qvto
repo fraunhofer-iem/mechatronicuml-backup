@@ -73,7 +73,7 @@ mapping Transition :: Unicast2TransSendSyncFirstSubrole(context:OclAny, region:R
 		
 		clockResets += self.clockResets->select(c|isClockSubRoleSpecific(c)).map transform().oclAsType(Clock);
 		
-		events += self.raiseMessageEvent.map transform(result).oclAsType(AsynchronousMessageEvent);
+		events += self.raiseMessageEvent.map transformWithContext(result).oclAsType(AsynchronousMessageEvent);
 		
 		if((not self.raiseMessageEvent.oclIsUndefined()) and (not self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
 				and self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(pim::realtimestatechart::one_to_n_schemata::Unicast) 
@@ -90,10 +90,10 @@ mapping Transition :: Unicast2TransSendSyncFirstSubrole(context:OclAny, region:R
 			
 		}else{	
 			guard := createComparisonExpressionForSelectorKind(PositionSelectorKind::FIRST, ComparingOperator::EQUAL);
-			action := self.raiseMessageEvent.oneToManyCommunicationSchema.action.map transform(result).oclAsType(Action);
+			action := self.raiseMessageEvent.oneToManyCommunicationSchema.action.map transformWithContext(result).oclAsType(Action);
 		}endif;
 		if(not self.raiseMessageEvent.oneToManyCommunicationSchema.action.oclIsUndefined()) {
-			action.expressions += self.raiseMessageEvent.oneToManyCommunicationSchema.action.expressions.map transform(result).oclAsType(Expression);
+			action.expressions += self.raiseMessageEvent.oneToManyCommunicationSchema.action.expressions.map transformWithContext(result).oclAsType(Expression);
 		}
 	}
 	
@@ -207,7 +207,7 @@ mapping Transition :: Unicast2IdleRequestedFulfilledSubrole(context:OclAny, regi
 		
 		source := self.map RegionState(context,  "Idle", true);
 		
-		guard := self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map transform(result).oclAsType(Expression);
+		guard := self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map transformWithContext(result).oclAsType(Expression);
 		
 		synchronization := self. createSynchronization( unicastCheck,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
 		

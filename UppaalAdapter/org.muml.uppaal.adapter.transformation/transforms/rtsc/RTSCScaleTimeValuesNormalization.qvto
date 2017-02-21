@@ -1,4 +1,4 @@
-import transforms.lib.MUML2MUML;
+import ImplicitCopy;
 import org.muml.uppaal.adapter._blackbox.TimeLibUnit;
 
 
@@ -23,7 +23,7 @@ transformation RTSCScaleTimeValuesNormalization(in input:muml_rtsc, out output:m
 
 	main() {
 		
-		input.objects()[RootNode]->map RootNode2RootNode();
+		input.objects()[RootNode]->map transform();
 	}
 
 	-- TODO move this to ExpressionUtils
@@ -43,22 +43,24 @@ transformation RTSCScaleTimeValuesNormalization(in input:muml_rtsc, out output:m
 		return usedTimeUnits->sortedBy(u | getTimeUnits()->indexOf(u.repr()))->last();
 	}
 	
-	mapping TimeValue :: TimeValue2TimeValue() : TimeValue {
+	//TimeValue2TimeValue
+	mapping TimeValue :: transform() : TimeValue {
 		var shortest : TimeUnit = getShortestTimeUnit();
 		var upscale : Integer = getUpscaleFactor(self.unit, shortest);
 		unit := shortest;
 		if(upscale = 1) {
-			value := self.value.map Expression2Expression();
+			value := self.value.map transform().oclAsType(Expression);
 		} else {
 			value := object ArithmeticExpression {
-				leftExpression := self.value.map Expression2Expression();
+				leftExpression := self.value.map transform().oclAsType(Expression);
 				operator :=  ArithmeticOperator::TIMES;
 				rightExpression := new LiteralExpression(upscale);
 			}	
 		}
 	}
 	
-	mapping ConstExpr :: ConstExpr2ConstExpr() : ConstExpr {
+	//ConstExpr2ConstExpr
+	mapping ConstExpr :: transform() : ConstExpr {
 		if (self.timeUnit = null) {
 			val := self.val;
 		}

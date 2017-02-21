@@ -1,5 +1,5 @@
 import transforms.lib.MUML2UPPAAL.Types;
-import transforms.lib.MUML2MUML;
+import ImplicitCopy;
 import transforms.lib.MUML2UPPAAL.Expressions;
 
 library Binding;
@@ -64,7 +64,7 @@ modeltype muml_actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0
 			referredType := VOID;
 		};
 				
-		var arrayIdVar := self.parameter.map MUML2MUML::Parameter2Parameter().map TypedNamedElement2Variable();
+		var arrayIdVar := self.parameter.map transform().oclAsType(pim::behavior::Parameter).map TypedNamedElement2Variable();
 		
 		var iterVars : Set(Variable) := Set{};
 		

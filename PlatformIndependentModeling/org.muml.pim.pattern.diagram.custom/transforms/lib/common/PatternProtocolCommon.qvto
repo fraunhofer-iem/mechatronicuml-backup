@@ -1,5 +1,5 @@
 library PatternProtocolCommon;
-import ModelcopyLibrary;
+import ImplicitCopy;
 modeltype common uses core::expressions::common('http://www.muml.org/core/1.0.0');
 modeltype PimPackage uses pim('http://www.muml.org/pim/1.0.0');
 modeltype ComponentPackage uses pim::component('http://www.muml.org/pim/1.0.0');

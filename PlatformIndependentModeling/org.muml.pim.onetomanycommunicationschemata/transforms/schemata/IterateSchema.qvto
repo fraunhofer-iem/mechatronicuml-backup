@@ -86,7 +86,7 @@ mapping Transition :: Iterate2TransSendSyncSubrole(context:OclAny, region:Realti
 		if(not self.clockConstraints->select(c|isClockSubRoleSpecific(c.clock))->isEmpty())
 			urgent := false;
 				
-		clockConstraints += self.clockConstraints->select(c|isClockSubRoleSpecific(c.clock))->map transform(result).oclAsType(ClockConstraint);
+		clockConstraints += self.clockConstraints->select(c|isClockSubRoleSpecific(c.clock))->map transformWithContext(result).oclAsType(ClockConstraint);
 	
 		clockResets += self.clockResets->select(c|isClockSubRoleSpecific(c)).map transform().oclAsType(Clock);
 		
@@ -95,7 +95,7 @@ mapping Transition :: Iterate2TransSendSyncSubrole(context:OclAny, region:Realti
 		action.name :="";
 		
 		if(not self.raiseMessageEvent.oneToManyCommunicationSchema.action.oclIsUndefined()) {
-			action.expressions += self.raiseMessageEvent.oneToManyCommunicationSchema.action.expressions.map transform(result).oclAsType(Expression);
+			action.expressions += self.raiseMessageEvent.oneToManyCommunicationSchema.action.expressions.map transformWithContext(result).oclAsType(Expression);
 			action.name :=  action.name + self.raiseMessageEvent.oneToManyCommunicationSchema.action.name;
 		};
 		
@@ -103,7 +103,7 @@ mapping Transition :: Iterate2TransSendSyncSubrole(context:OclAny, region:Realti
 		
 		action.name := action.name + " " + iterateDelayVariableName + " := true";
 		
-		events += self.raiseMessageEvent.map transform(result).oclAsType(TransitionEvent);
+		events += self.raiseMessageEvent.map transformWithContext(result).oclAsType(TransitionEvent);
 		
 		var leftExpression : Expression := 	self.createUnaryExpressionEnclosingTypedNamedElementExpression(terminateIterationName, UnaryOperator::NOT);
 		var rightExpression : Expression := createTypedNamedElementExpression(self.map Schema2BooleanVariable(sendIterateName));
@@ -163,7 +163,7 @@ mapping Transition :: Iterate2Transition1Intermediate1ToIntermedediate2SubroleRe
 	var logic2 : Expression;
 	if(not self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(pim::realtimestatechart::one_to_n_schemata::Iterate).terminationCondition.oclIsUndefined()) {
 		var expr3 := self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(pim::realtimestatechart::one_to_n_schemata::Iterate)
-		.terminationCondition.map transform(result).oclAsType(Expression);
+		.terminationCondition.map transformWithContext(result).oclAsType(Expression);
 		var expr4 := new UnaryExpression();
 		expr4.enclosedExpression := expr3;
 		expr4.operator := UnaryOperator::NOT;
@@ -177,7 +177,7 @@ mapping Transition :: Iterate2Transition1Intermediate1ToIntermedediate2SubroleRe
 	
 	if(not self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(pim::realtimestatechart::one_to_n_schemata::Iterate).delay.oclIsUndefined()) {	
 		urgent := false;
-		clockConstraints += self.createClockConstraint(iterateDelayClockName, self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(pim::realtimestatechart::one_to_n_schemata::Iterate).delay.map transform(result).oclAsType(TimeValue), ComparingOperator:: GREATER_OR_EQUAL);
+		clockConstraints += self.createClockConstraint(iterateDelayClockName, self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(pim::realtimestatechart::one_to_n_schemata::Iterate).delay.map transformWithContext(result).oclAsType(TimeValue), ComparingOperator:: GREATER_OR_EQUAL);
 	};
 	
 }
@@ -197,7 +197,7 @@ mapping Transition :: Iterate2Transition2Intermediate1ToIntermedediate2SubroleRe
 	var logic2 : Expression;
 	if(not self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(pim::realtimestatechart::one_to_n_schemata::Iterate).terminationCondition.oclIsUndefined()) {
 		var expr3 := self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(pim::realtimestatechart::one_to_n_schemata::Iterate)
-		.terminationCondition.map transform(result).oclAsType(Expression);
+		.terminationCondition.map transformWithContext(result).oclAsType(Expression);
 		var expr4 := new UnaryExpression();
 		expr4.enclosedExpression := expr3;
 		expr4.operator := UnaryOperator::NOT;
@@ -221,7 +221,7 @@ mapping Transition :: Iterate2Transition3Intermediate1ToIntermedediate2SubroleRe
 	
 	var expr1 :=  createTypedNamedElementExpression(self.map Schema2BooleanVariable(terminateIterationName));
 		
-	var expr2 := self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(pim::realtimestatechart::one_to_n_schemata::Iterate).terminationCondition.map transform(result).oclAsType(Expression);
+	var expr2 := self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(pim::realtimestatechart::one_to_n_schemata::Iterate).terminationCondition.map transformWithContext(result).oclAsType(Expression);
 	
 	guard := new LogicalExpression(expr1,expr2,LogicOperator::OR);
 	
@@ -335,7 +335,7 @@ mapping Transition :: Iterate2IdleRequestedFulfilledSubrole(context:OclAny, regi
 		
 		source := self.map RegionState(context,  "Idle", true);
 		
-		guard := self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map transform(result).oclAsType(Expression);
+		guard := self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map transformWithContext(result).oclAsType(Expression);
 	
 		synchronization := 	self.createSynchronization(iterateCheck,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
 		

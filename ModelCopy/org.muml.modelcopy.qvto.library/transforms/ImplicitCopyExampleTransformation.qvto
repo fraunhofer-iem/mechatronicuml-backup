@@ -1,0 +1,19 @@
+transformation ImplicitCopyExampleTransformation(in i : ecore, out o : ecore);
+
+import ImplicitCopy;
+
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+
+main() {
+	i.objects()[EPackage].map transform();
+}
+
+
+mapping EClass::transform() : EClass inherits Element::transform {
+	
+	-- Here you can do your custom, transformation specific work.
+	
+	-- In case you do not want the default copying behavior, you need to
+	-- remove the "inherits" statement above.
+}

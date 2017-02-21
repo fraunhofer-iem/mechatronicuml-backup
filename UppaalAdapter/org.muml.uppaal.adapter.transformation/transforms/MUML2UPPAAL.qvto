@@ -326,6 +326,10 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		return self.connectorEndpointInstances->first().oclAsType(DiscretePortInstance).refinedRole.roleConnector;		
 	}	
 	// QoS assumptions	
+			
+	query Connector :: getMinDelay() : Expression {
+		return new LiteralExpression(0);
+	}	
 	
 	query Connector :: getMaxDelay() : Expression {
 		return new LiteralExpression(0);
@@ -334,6 +338,11 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 	query Connector :: getMessageLoss() : Expression {
 		return new LiteralExpression(false);
 	}
+	
+	query RoleConnector :: getMinDelay() : Expression {
+		// TODO: if we support variables for protocols, replace the 'null' values below by appropriate IDs
+		return self.connectorQualityOfServiceAssumptions.minMessageDelay.mapTimeValue2Expression(null,null,null);
+	}	
 	
 	query RoleConnector :: getMaxDelay() : Expression {
 		// TODO: if we support variables for protocols, replace the 'null' values below by appropriate IDs
@@ -497,7 +506,7 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 	
 	
 	main() {
-		
+				
 		assert fatal (cicToVerify().discretePortInstances()->collect(receiverMessageBuffer)->forAll(mb : MessageBuffer | not mb.bufferSize.infinity and mb.bufferSize.value < 5000)) 
 		with log('Only finite buffer sizes <5000 are supported');
 		
@@ -774,6 +783,8 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 					argument += new LiteralExpression(sourceID);
 				
 					argument += new LiteralExpression(targetID);
+									
+					argument += self.getRoleConnector().getMinDelay();
 					
 					argument += self.getRoleConnector().getMaxDelay();
 					
@@ -791,6 +802,8 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 					argument += new LiteralExpression(targetID);
 				
 					argument += new LiteralExpression(sourceID);
+									
+					argument += self.getRoleConnector().getMinDelay();
 					
 					argument += self.getRoleConnector().getMaxDelay();
 					
@@ -983,6 +996,11 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		}
 		endif;
 		
+			
+		self.clockResets->forEach(clock) {
+			update += new AssignmentExpression(clock, componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
+		};
+	
 		-- store message from buffer to a variable before its accessed via the action language
 		update += self.triggerMessageEvent.map TriggerMessageEvent2StoreMessageExpression(rtsc, portOrRoleInstanceID, subPortOrRoleInstanceID, discretePortInstances);
 	
@@ -991,18 +1009,16 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		
 			update += self.action.expressions.map Expression2Expressions(componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
 
-		} 
+		}
 		endif;
 
+		update += self.triggerMessageEvent.map TriggerMessageEvent2ConsumeFunctionCall(portOrRoleInstanceID, subPortOrRoleInstanceID, discretePortInstances);
+		
 		-- if sending an array expression, first assign this array to a variable. This is because UPPAAL does not support arrays that are not assigned to a variable
 		update += self.raiseMessageEvent.map RaiseMessageEvent2InitializerFunctionCalls(componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
-		update += self.raiseMessageEvent.map RaiseMessageEvent2SendFunctionCall(componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
 		
-		update += self.triggerMessageEvent.map TriggerMessageEvent2ConsumeFunctionCall(portOrRoleInstanceID, subPortOrRoleInstanceID, discretePortInstances);
+		update += self.raiseMessageEvent.map RaiseMessageEvent2SendFunctionCall(componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
 							
-		self.clockResets->forEach(clock) {
-            update += new AssignmentExpression(clock, componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
-        };
 	}
 	
 	mapping Transition :: Transition2IntermediateLocation() : Location when {self.shouldCreateIntermediateLocation()} {
@@ -1034,6 +1050,11 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		}
 		endif;
 		
+			
+		self.clockResets->forEach(clock) {
+			update += new AssignmentExpression(clock, componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
+		};
+	
 		-- store message from buffer to a variable before its accessed via the action language
 		update += self.triggerMessageEvent.map TriggerMessageEvent2StoreMessageExpression(rtsc, portOrRoleInstanceID, subPortOrRoleInstanceID, discretePortInstances);
 	
@@ -1041,19 +1062,19 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		then {
 		
 			update += self.action.expressions.map Expression2Expressions(componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
+
 		}
 		endif;
+		
 
+		update += self.triggerMessageEvent.map TriggerMessageEvent2ConsumeFunctionCall(portOrRoleInstanceID, subPortOrRoleInstanceID, discretePortInstances);
+		
 		-- if sending an array expression, first assign this array to a variable. This is because UPPAAL does not support arrays that are not assigned to a variable
 		update += self.raiseMessageEvent.map RaiseMessageEvent2InitializerFunctionCalls(componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
+		
 		update += self.raiseMessageEvent.map RaiseMessageEvent2SendFunctionCall(componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
 		
-		update += self.triggerMessageEvent.map TriggerMessageEvent2ConsumeFunctionCall(portOrRoleInstanceID, subPortOrRoleInstanceID, discretePortInstances);
-        
-	    self.clockResets->forEach(clock) {
-            update += new AssignmentExpression(clock, componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
-        };
-        
+		
 		-- increment intermediate location semaphore (because we're entering an intermediate location)
 		update += object IncrementDecrementExpression { // intermediateLocationSemaphore++;
 			expression := object IdentifierExpression { identifier := map createIntermediateLocationSemaphoreVariable() };
@@ -1346,11 +1367,11 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 	}
 	
 	
-	mapping pim::realtimestatechart::SynchronizationChannel :: SynchronizationChannel2SynchronizationChannel() : pim::realtimestatechart::SynchronizationChannel{
+	mapping pim::realtimestatechart::SynchronizationChannel :: transform() : pim::realtimestatechart::SynchronizationChannel {
     	_name := self._name;
     	_comment := self._comment;
-    	_extensions := self._extensions.map Extension2Extension();
+    	_extensions := self._extensions.map transform().oclAsType(Extension);
     --	_state := self._state.map State2State();
-    	_selectorType := self._selectorType.map DataType2DataType();
+    	_selectorType := self._selectorType.map transform().oclAsType(DataType);
    	}
-   		 
+   	

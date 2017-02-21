@@ -80,9 +80,9 @@ mapping Transition :: NonConditionalMulticast2TranssitionFromSourceToIntermediat
 			urgent := self.urgent;
 		};
 		
-		clockConstraints += self.clockConstraints->map transform(result).oclAsType(ClockConstraint);
+		clockConstraints += self.clockConstraints->map transformWithContext(result).oclAsType(ClockConstraint);
 		
-		guard := self.guard.map transform(result).oclAsType(Expression);
+		guard := self.guard.map transformWithContext(result).oclAsType(Expression);
 }
 
 mapping Transition :: NonConditionalMulticast2TransitionFromIntermediateToTarget(context:OclAny, region:RealtimeStatechart) : Transition
@@ -94,7 +94,7 @@ when {self.usesMulticastSchema() and self.raiseMessageEvent.oneToManyCommunicati
 	
 		target := self.target.map Vertex2VertexCoordinator(context);
 		
-		action := self.action.map transform(result).oclAsType(Action);
+		action := self.action.map transformWithContext(result).oclAsType(Action);
 		
 		clockResets += self.clockResets->select(c|not isClockSubRoleSpecific(c)).map transform().oclAsType(Clock);
 	
@@ -117,9 +117,9 @@ mapping Transition :: Multicast2TransSendSyncSubrole(context:OclAny, region:Real
 		
 		clockResets += self.clockResets->select(c|isClockSubRoleSpecific(c)).map transform().oclAsType(Clock);
 		
-		action := self.raiseMessageEvent.oneToManyCommunicationSchema.action.map transform(result).oclAsType(Action);
+		action := self.raiseMessageEvent.oneToManyCommunicationSchema.action.map transformWithContext(result).oclAsType(Action);
 		
-		events += self.raiseMessageEvent.map transform(result).oclAsType(AsynchronousMessageEvent);
+		events += self.raiseMessageEvent.map transformWithContext(result).oclAsType(AsynchronousMessageEvent);
 		
 		if(not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())
 			guard := createTypedNamedElementExpression(self.map Schema2BooleanVariable(sendMulticastName));
@@ -242,7 +242,7 @@ mapping Transition :: Multicast2IdleRequestedFulfilledSubrole(context:OclAny, re
 		
 		source := self.map RegionState(context,  "Idle", true);
 		
-		guard := self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map transform(result).oclAsType(Expression);
+		guard := self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map transformWithContext(result).oclAsType(Expression);
 		
 		synchronization := 	self.createSynchronization(multicastCheck,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
 		

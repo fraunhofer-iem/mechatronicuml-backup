@@ -1,4 +1,5 @@
-import transforms.lib.MUML2MUML;
+//import transforms.lib.MUML2MUML;
+import ImplicitCopy;
 import transforms.lib.ExternalizedStrings;
 import transforms.lib.RTSCUtil;
 import org.muml.uppaal.adapter._blackbox.CharSubstitutionUnit;
@@ -8,11 +9,11 @@ modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 modeltype muml_protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
 modeltype storydriven uses 'http://www.muml.org/core/1.0.0';
 
-transformation NameNormalization(in input:muml_protocol, out output:muml_protocol) extends MUML2MUML;
+transformation NameNormalization(in input:muml_protocol, out output:muml_protocol) extends ImplicitCopy;
 
 
 main() {
-	input.objects()[RootNode]->map RootNode2RootNode();
+	input.objects()[RootNode]->map transform().oclAsType(RootNode);
 	output.objects()[NamedElement]->forEach(nE){substituteUnsupportedStrings(nE)};
 	output.objects()[NamedElement]->forEach(nE){addPrefix(nE)};
 	output.objects()[NamedElement]->forEach(nE){addSuffix(nE)};
