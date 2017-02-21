@@ -575,24 +575,6 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 					
 				};
 							
-				variable += map createMinDelayParameter() 
-			
-			}
-			
-		};
-		
-		parameter += object Parameter {
-		
-			variableDeclaration := object DataVariableDeclaration {
-			
-				prefix := DataVariablePrefix::CONST;
-				
-				typeDefinition := object TypeReference {
-					
-					referredType := INT
-					
-				};
-							
 				variable += map createMaxDelayParameter()
 			
 			}	 
@@ -805,70 +787,32 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 			
 			operator := LogicalOperator::AND;
 			
-			secondExpr := object LogicalExpression {
-			
-				-- transmissionTimes[sender][earliest[sender]] >= min and transmissionTimes[sender][earliest[sender]] <= max
+			secondExpr := object CompareExpression {
+		
+				-- transmissionTimes[sender][earliest[sender]] <= max
 				
-				firstExpr := object CompareExpression {
-			
-					-- transmissionTimes[sender][earliest[sender]] >= min
+				firstExpr := object IdentifierExpression {
 					
-					firstExpr := object IdentifierExpression {
-						
-						identifier := map createTransmissionTimesVariable();
+					identifier := map createTransmissionTimesVariable();
+					
+					index += object IdentifierExpression {
+						identifier := map createSenderParameter()
+					};
+					
+					index += object IdentifierExpression {
+						identifier := map createEarliestVariable();
 						
 						index += object IdentifierExpression {
 							identifier := map createSenderParameter()
 						};
-						
-						index += object IdentifierExpression {
-							identifier := map createEarliestVariable();
-							
-							index += object IdentifierExpression {
-								identifier := map createSenderParameter()
-							}
-						}
-						
-					};
-					
-					operator := CompareOperator::GREATER_OR_EQUAL;
-					
-					secondExpr := object IdentifierExpression {
-						identifier := map createMinDelayParameter();
 					}
-				
+					
 				};
-				
-				operator := LogicalOperator::AND;
 			
-				secondExpr := object CompareExpression {
-			
-					-- transmissionTimes[sender][earliest[sender]] <= max
-					
-					firstExpr := object IdentifierExpression {
-						
-						identifier := map createTransmissionTimesVariable();
-						
-						index += object IdentifierExpression {
-							identifier := map createSenderParameter()
-						};
-						
-						index += object IdentifierExpression {
-							identifier := map createEarliestVariable();
-							
-							index += object IdentifierExpression {
-								identifier := map createSenderParameter()
-							};
-						}
-						
-					};
+				operator := CompareOperator::LESS_OR_EQUAL;
 				
-					operator := CompareOperator::LESS_OR_EQUAL;
-					
-					secondExpr := object IdentifierExpression {
-						identifier := map createMaxDelayParameter();
-					}
-				
+				secondExpr := object IdentifierExpression {
+					identifier := map createMaxDelayParameter();
 				}
 				
 			};
