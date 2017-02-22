@@ -16,7 +16,7 @@ modeltype storydriven_core_expressions uses core::expressions('http://www.muml.o
 
 helper Expression :: mapExpression() : Expression {
 	
-	var resolved : Expression = self.resolveoneIn(OclAny::transform,Expression);
+	var resolved : Expression = self.resolveoneIn(Element::transform,Expression);
 	
 	var mapped : Expression;
 	
@@ -35,7 +35,7 @@ helper Expression :: mapExpression() : Expression {
 
 helper TimeValue :: mapTimeValue() : TimeValue {
 	
-	var resolved : TimeValue = self.resolveoneIn(OclAny::transform, TimeValue);
+	var resolved : TimeValue = self.resolveoneIn(Element::transform, TimeValue);
 	
 	var mapped : TimeValue;
 	 
@@ -54,7 +54,7 @@ helper TimeValue :: mapTimeValue() : TimeValue {
 
 helper ClockConstraint :: mapClockConstraint() : ClockConstraint {
 	
-	var resolved : ClockConstraint = self.resolveoneIn(OclAny::transform, ClockConstraint);
+	var resolved : ClockConstraint = self.resolveoneIn(Element::transform, ClockConstraint);
 	
 	var mapped : ClockConstraint;
 	 
@@ -73,7 +73,7 @@ helper ClockConstraint :: mapClockConstraint() : ClockConstraint {
 
 helper Synchronization :: mapSynchronization() : Synchronization {
 	
-	var resolved : Synchronization = self.resolveoneIn(OclAny::transform, Synchronization);
+	var resolved : Synchronization = self.resolveoneIn(Element::transform, Synchronization);
 	
 	var mapped : Synchronization;
 	 
@@ -92,7 +92,7 @@ helper Synchronization :: mapSynchronization() : Synchronization {
 
 helper AsynchronousMessageEvent :: mapAsynchronousMessageEvent() : AsynchronousMessageEvent {
 	
-	var resolved : AsynchronousMessageEvent = self.resolveoneIn(OclAny::transform,AsynchronousMessageEvent);
+	var resolved : AsynchronousMessageEvent = self.resolveoneIn(Element::transform,AsynchronousMessageEvent);
 	
 	var mapped : AsynchronousMessageEvent;
 	 
@@ -117,7 +117,7 @@ helper Clock :: mapClock() : Clock {
 
 helper Action :: mapAction() : Action {
 	
-	var resolved : Action = self.resolveoneIn(OclAny::transform,Action);
+	var resolved : Action = self.resolveoneIn(Element::transform,Action);
 	
 	var mapped : Action;
 	
@@ -135,7 +135,7 @@ helper Action :: mapAction() : Action {
 }
 
 helper TransitionEvent :: mapTransitionEvent() : TransitionEvent{
-	var resolved : TransitionEvent = self.resolveoneIn(OclAny::transform,TransitionEvent);
+	var resolved : TransitionEvent = self.resolveoneIn(Element::transform,TransitionEvent);
 	
 	var mapped : TransitionEvent;
 	
@@ -154,7 +154,7 @@ helper TransitionEvent :: mapTransitionEvent() : TransitionEvent{
 
 helper AbsoluteDeadline :: mapAbsoluteDeadline() : AbsoluteDeadline {
 	
-	var resolved : AbsoluteDeadline = self.resolveoneIn(OclAny::transform, AbsoluteDeadline);
+	var resolved : AbsoluteDeadline = self.resolveoneIn(Element::transform, AbsoluteDeadline);
 	
 	var mapped : AbsoluteDeadline;
 	
@@ -173,7 +173,7 @@ helper AbsoluteDeadline :: mapAbsoluteDeadline() : AbsoluteDeadline {
 
 helper RelativeDeadline :: mapRelativeDeadline() : RelativeDeadline {
 	
-	var resolved : RelativeDeadline = self.resolveoneIn(OclAny::transform, RelativeDeadline);
+	var resolved : RelativeDeadline = self.resolveoneIn(Element::transform, RelativeDeadline);
 	
 	var mapped : RelativeDeadline;
 	
