@@ -142,6 +142,9 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 	}
 	
 	query OclAny :: searchResolveTreeRecursively(set : Sequence(OclAny)) : Boolean {
+		if(set->isEmpty()) {
+			return false;
+		};
 		if(set->includes(self)) {
 			return true;
 		};
