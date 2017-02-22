@@ -2,8 +2,8 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.muml.modelcopy.group</groupId>
-  <artifactId>ModelCopy</artifactId>
+  <groupId>org.muml.implicitcopy.group</groupId>
+  <artifactId>ImplicitCopy</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   
@@ -17,11 +17,11 @@
    </properties>
     
   <modules>
-    <!-- <module>org.muml.modelcopy.buckminster</module> -->
-    <module>org.muml.modelcopy.feature</module>
-    <module>org.muml.modelcopy.qvto.library</module>
-    <!-- <module>org.muml.modelcopy.qvto.library.test</module> -->
-    <module>org.muml.modelcopy.repository</module>
+    <!-- <module>org.muml.implicitcopy.buckminster</module> -->
+    <module>org.muml.implicitcopy.feature</module>
+    <module>org.muml.implicitcopy.qvto.library</module>
+    <!-- <module>org.muml.implicitcopy.qvto.library.test</module> -->
+    <module>org.muml.implicitcopy.repository</module>
   </modules>
   
   <build>
@@ -73,7 +73,7 @@
 		<configuration>
 		 <excludes>
 		   <!--provide plug-ins not containing any source code -->
-		  <plugin id="org.muml.modelcopy.repository" />
+		  <plugin id="org.muml.implicitcopy.repository" />
 		 </excludes>
 		</configuration>
 	   </plugin>
