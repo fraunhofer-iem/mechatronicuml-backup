@@ -2,6 +2,9 @@ package org.muml.modelcopy.qvto.library;
 
 import java.util.List;
 
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.ECollections;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -17,6 +20,9 @@ public class ModelcopyBlackbox {
 	@SuppressWarnings("unchecked")
 	public static void setValues(EObject element, EStructuralFeature feature, List<Object> values) {
 		if (feature.isMany()) {
+			
+			ECollections.setEList((EList<Object>) element.eGet(feature), new BasicEList<Object>(values));
+			
 			if (isBidirectional(feature)) {
 				InternalEList<Object> target = ((InternalEList<Object>) element.eGet(feature));
 				int index = 0;

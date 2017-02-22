@@ -1,0 +1,27 @@
+modeltype ecore uses "http://www.eclipse.org/emf/2002/Ecore";
+modeltype change uses "http://www.eclipse.org/emf/2003/Change";
+
+transformation CreateChangeDescription(out c:change)
+{
+main()
+{
+	var listChange:change::ListChange := object /*$temp_1*/change::ListChange@c {
+		}
+	;
+	var featureChange:change::FeatureChange := object /*$temp_2*/change::FeatureChange@c {
+			/* $temp_2*/listChanges := listChange;
+		}
+	;
+	var objectChange:change::EObjectToChangesMapEntry := object /*$temp_3*/change::EObjectToChangesMapEntry@c {
+			/* $temp_3*/value := featureChange;
+		}
+	;
+	var desc:change::ChangeDescription := object /*$temp_4*/change::ChangeDescription@c {
+			/* $temp_4*/objectChanges := objectChange;
+		}
+	;
+}
+
+
+}
+

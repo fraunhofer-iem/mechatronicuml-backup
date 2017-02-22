@@ -2,7 +2,7 @@ transformation ModelcopyExampleTransformation(in i : ecore, out o : ecore);
 
 import ModelcopyLibrary;
 
-modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype ecore "strict" uses 'http://www.eclipse.org/emf/2002/Ecore';
 
 
 main() {

@@ -1,8 +1,10 @@
-library ModelcopyLibrary;
-
-import org.muml.modelcopy.qvto._library.ModelcopyBlackbox;
+//import org.muml.modelcopy.qvto._library.ModelcopyBlackbox;
+import CreateChangeDescription;
 
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype change uses 'http://www.eclipse.org/emf/2003/Change';
+
+library ModelcopyLibrary;
 
 mapping Element::create() : Element {
 	init {
@@ -20,6 +22,37 @@ mapping Element::create(context : OclAny) : Element {
 		result := factory.create(self.oclAsType(EObject).eClass());
 		}endif;
 	}
+}
+
+helper Element :: setValues(f : EStructuralFeature, values : Sequence(OclAny)) {
+	
+	var tmp = change.createEmptyModel();
+	new CreateChangeDescription(tmp).transform();
+	
+	var desc = tmp.rootObjects()[ChangeDescription]->any(true);
+	var objectChange = desc.objectChanges->first();
+	var featureChange = objectChange.value->first();
+	var listChange = featureChange.listChanges->first();
+		
+	featureChange.feature := f;
+	objectChange.key := self.oclAsType(EObject);
+	
+	if (f.many) {
+		listChange.referenceValues := values.oclAsType(EObject);
+		featureChange.listChanges := listChange;
+	}
+	else {
+		if (values->notEmpty()) {
+			if (f.oclIsKindOf(EReference)) {
+				featureChange.referenceValue := values->first().oclAsType(EObject);
+			}
+			elif (f.oclIsKindOf(EAttribute)) {
+				featureChange.dataValue := values->first().toString();
+			}
+		}
+	};
+	
+	desc.apply();
 }
 
 query Element :: getValues(feature : EStructuralFeature) : Sequence(OclAny) {
@@ -44,10 +77,10 @@ mapping Element::transform() : Element {
 	}
 	var element := self.oclAsType(EObject);
 	element.eClass().eAllReferences->select(f | f.isValidFeature())->forEach(f) {
-		setValues(result.oclAsType(EObject), f, element.getValues(f)[Element].map transform());
+		result.setValues(f, element.getValues(f)[Element].map transform());
 	};
 	element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
-		setValues(result.oclAsType(EObject), f, element.getValues(f));
+		result.setValues(f, element.getValues(f));
 	};
 }
 
@@ -60,10 +93,10 @@ mapping Element::transformWithContext(context : OclAny) : Element {
 	}
 	var element := self.oclAsType(EObject);
 	element.eClass().eAllReferences->select(f | f.isValidFeature())->forEach(f) {
-		setValues(result.oclAsType(EObject), f, element.getValues(f)[Element].map transformWithContext(context));
+		result.setValues(f, element.getValues(f)[Element].map transformWithContext(context));
 	};
 	element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
-		setValues(result.oclAsType(EObject), f, element.getValues(f));
+		result.setValues(f, element.getValues(f));
 	};
 }
 
