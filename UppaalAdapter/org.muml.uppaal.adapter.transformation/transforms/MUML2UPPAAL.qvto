@@ -1048,17 +1048,17 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		update += self.raiseMessageEvent.map RaiseMessageEvent2InitializerFunctionCalls(componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
 		update += self.raiseMessageEvent.map RaiseMessageEvent2SendFunctionCall(componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
 		
-		-- increment intermediate location semaphore (because we're entering an intermediate location)
-		update += object IncrementDecrementExpression { // intermediateLocationSemaphore++;
-			expression := object IdentifierExpression { identifier := map createIntermediateLocationSemaphoreVariable() };
-			position := IncrementDecrementPosition::POST;
-			operator := IncrementDecrementOperator::INCREMENT;
-		};
-		
 		update += self.triggerMessageEvent.map TriggerMessageEvent2ConsumeFunctionCall(portOrRoleInstanceID, subPortOrRoleInstanceID, discretePortInstances);
       
 		self.clockResets->forEach(clock) {
             update += new AssignmentExpression(clock, componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
+        };
+        
+        -- increment intermediate location semaphore (because we're entering an intermediate location)
+        update += object IncrementDecrementExpression { // intermediateLocationSemaphore++;
+            expression := object IdentifierExpression { identifier := map createIntermediateLocationSemaphoreVariable() };
+            position := IncrementDecrementPosition::POST;
+            operator := IncrementDecrementOperator::INCREMENT;
         };
 	}
 	

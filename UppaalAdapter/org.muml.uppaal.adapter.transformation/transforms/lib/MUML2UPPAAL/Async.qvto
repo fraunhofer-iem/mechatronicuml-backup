@@ -763,7 +763,7 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 		
 		guard := object LogicalExpression {
 			
-			-- check(connectors[sender],i) and transmissionTimes[sender][earliest[sender]] >= min and transmissionTimes[sender][earliest[sender]] <= max
+			-- check(connectors[sender],i) and transmissionTimes[sender][earliest[sender]] <= max
 						
 			firstExpr := object FunctionCallExpression {
 			
