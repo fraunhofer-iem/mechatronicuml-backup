@@ -6,16 +6,12 @@ import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser;
 import org.muml.core.CorePackage;
-import org.muml.core.expressions.Expression;
-import org.muml.pim.actionlanguage.xtext.common.LanguageResource;
-import org.muml.pim.behavior.BehaviorPackage;
 import org.muml.pim.realtimestatechart.AbsoluteDeadline;
 import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
 import org.muml.pim.realtimestatechart.RelativeDeadline;
@@ -23,7 +19,6 @@ import org.muml.pim.realtimestatechart.Transition;
 import org.muml.pim.realtimestatechart.diagram.parsers.TransitionLabelExpressionLabelParser6006;
 import org.muml.pim.valuetype.TimeValue;
 import org.muml.pim.valuetype.ValuetypePackage;
-import org.muml.pim.valuetype.impl.TimeValueImpl;
 
 public class CustomTransitionLabelExpressionLabelParser6006 extends
 		TransitionLabelExpressionLabelParser6006 implements ISemanticParser {

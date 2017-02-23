@@ -214,11 +214,7 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 	private String getSynchronizationExpression(Synchronization context, Expression expression) {
 		String serialization = null;
 		if (context != null && expression != null) {
-			if (expression instanceof TextualExpression) {
-				serialization = ((TextualExpression) expression).getExpressionText();
-			} else {
-				serialization = LanguageResource.serializeEObjectSafe(expression, context);
-			}
+			serialization = getExpressionText(expression, context);
 		}
 		if (serialization != null) {
 			return "[" + serialization + "]";
@@ -226,27 +222,29 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 		return "";
 	}
 
+	private String getExpressionText(Expression expression, EObject context) {
+		String text = "";
+		if (expression instanceof TextualExpression) {
+			text = ((TextualExpression) expression).getExpressionText();
+		} else {
+			text = LanguageResource.serializeEObjectSafe(expression, context);
+		}
+
+		if (text != null && text.length() > 0) {
+			// remove some from the beginning...
+			char c = text.charAt(0);
+			while (c == '{' || c == '\t' || c == ' ' || c == '\n') {
+				text = text.substring(1);
+				c = text.charAt(0);
+			}
+		}
+		return text;
+	}
 	private String getGuardExpression(Transition transition) {
 		Expression guard = transition.getGuard();
 		if (guard != null) {
-			String text = null;
-			if (guard instanceof TextualExpression) {
-				// Textual Expressions are not part of the Action Language,
-				// so we process them separately here.
-				text = ((TextualExpression) guard).getExpressionText();
-			} else {
-				text = LanguageResource.serializeEObjectSafe(guard, transition);
-			}
-		
-			if (text != null && text.length() > 0) {
-				// remove some from the beginning...
-				char c = text.charAt(0);
-				while (c == '{' || c == '\t' || c == ' ' || c == '\n') {
-					text = text.substring(1);
-					c = text.charAt(0);
-				}
-				return "[" + text + "] ";
-			}
+			String text = getExpressionText(guard, transition);
+			return "[" + text + "]";
 		}
 		return "";
 	}
@@ -340,22 +338,8 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 		}
 		
 		if (condition != null) {
-			String text = null;
-			if (condition instanceof TextualExpression) {
-				// Textual Expressions are not part of the Action Language,
-				// so we process them separately here.
-				text = ((TextualExpression) condition).getExpressionText();
-			} else {
-				text = LanguageResource.serializeEObjectSafe(condition, transition);
-			}
-		
-			if (text != null && text.length() > 0) {
-				// remove some from the beginning...
-				char c = text.charAt(0);
-				while (c == '{' || c == '\t' || c == ' ' || c == '\n') {
-					text = text.substring(1);
-					c = text.charAt(0);
-				}
+			String text = getExpressionText(condition, transition);
+			if (text != null) {
 				return text;
 			}
 		}
@@ -370,22 +354,8 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 		}
 		
 		if (condition != null) {
-			String text = null;
-			if (condition instanceof TextualExpression) {
-				// Textual Expressions are not part of the Action Language,
-				// so we process them separately here.
-				text = ((TextualExpression) condition).getExpressionText();
-			} else {
-				text = LanguageResource.serializeEObjectSafe(condition, transition);
-			}
-		
-			if (text != null && text.length() > 0) {
-				// remove some from the beginning...
-				char c = text.charAt(0);
-				while (c == '{' || c == '\t' || c == ' ' || c == '\n') {
-					text = text.substring(1);
-					c = text.charAt(0);
-				}
+			String text = getExpressionText(condition, transition);
+			if (text != null) {
 				return text;
 			}
 		}
@@ -400,22 +370,8 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 		}
 		
 		if (condition != null) {
-			String text = null;
-			if (condition instanceof TextualExpression) {
-				// Textual Expressions are not part of the Action Language,
-				// so we process them separately here.
-				text = ((TextualExpression) condition).getExpressionText();
-			} else {
-				text = LanguageResource.serializeEObjectSafe(condition, transition);
-			}
-		
-			if (text != null && text.length() > 0) {
-				// remove some from the beginning...
-				char c = text.charAt(0);
-				while (c == '{' || c == '\t' || c == ' ' || c == '\n') {
-					text = text.substring(1);
-					c = text.charAt(0);
-				}
+			String text = getExpressionText(condition, transition);
+			if (text != null) {
 				return text;
 			}
 		}
