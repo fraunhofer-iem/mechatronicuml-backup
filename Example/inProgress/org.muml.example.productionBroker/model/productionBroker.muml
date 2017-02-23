@@ -172,18 +172,18 @@
                 <message xmi:id="_pBKW8Oa8EeWyd6JHVas6Kw" instanceOf="_UTgXMNxrEeW-N_z6XJQq2w"/>
               </events>
               <action xmi:id="_wosJAOa8EeWyd6JHVas6Kw" name="processGetOrderRequest">
-                <expressions xsi:type="actionlanguage:Block" xmi:id="_gaNDIPRFEeaPvMZN2eZM1g">
-                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_gaNDIfRFEeaPvMZN2eZM1g" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_gaNDIvRFEeaPvMZN2eZM1g" messageType="_UTgXMNxrEeW-N_z6XJQq2w" parameter="_t8T0kOa3EeWyd6JHVas6Kw"/>
-                    <lhs_typedNamedElementExpression xmi:id="_gaNDI_RFEeaPvMZN2eZM1g" typedNamedElement="_sw_esOa8EeWyd6JHVas6Kw"/>
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_LnXywPRYEeaiLKoHKFuA8Q">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_LnXywfRYEeaiLKoHKFuA8Q" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_LnXywvRYEeaiLKoHKFuA8Q" messageType="_UTgXMNxrEeW-N_z6XJQq2w" parameter="_t8T0kOa3EeWyd6JHVas6Kw"/>
+                    <lhs_typedNamedElementExpression xmi:id="_LnXyw_RYEeaiLKoHKFuA8Q" typedNamedElement="_sw_esOa8EeWyd6JHVas6Kw"/>
                   </expressions>
-                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_gaNDJPRFEeaPvMZN2eZM1g" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="actionlanguage:OperationCall" xmi:id="_gaNDJfRFEeaPvMZN2eZM1g" operation="_m40ygOrPEeWdNs1s2t99bw">
-                      <parameterBinding xmi:id="_gaNDJvRFEeaPvMZN2eZM1g" parameter="_o7ueYOrPEeWdNs1s2t99bw">
-                        <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_gaNDJ_RFEeaPvMZN2eZM1g" typedNamedElement="_v3QPkOa9EeWyd6JHVas6Kw"/>
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_LnXyxPRYEeaiLKoHKFuA8Q" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="actionlanguage:OperationCall" xmi:id="_LnXyxfRYEeaiLKoHKFuA8Q" operation="_m40ygOrPEeWdNs1s2t99bw">
+                      <parameterBinding xmi:id="_LnXyxvRYEeaiLKoHKFuA8Q" parameter="_o7ueYOrPEeWdNs1s2t99bw">
+                        <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_LnXyx_RYEeaiLKoHKFuA8Q" typedNamedElement="_v3QPkOa9EeWyd6JHVas6Kw"/>
                       </parameterBinding>
                     </rhs_assignExpression>
-                    <lhs_typedNamedElementExpression xmi:id="_gaNDKPRFEeaPvMZN2eZM1g" typedNamedElement="_djx4MOa9EeWyd6JHVas6Kw"/>
+                    <lhs_typedNamedElementExpression xmi:id="_LnXyyPRYEeaiLKoHKFuA8Q" typedNamedElement="_djx4MOa9EeWyd6JHVas6Kw"/>
                   </expressions>
                 </expressions>
               </action>
@@ -543,9 +543,11 @@
           <enclosedExpression xsi:type="common:LiteralExpression" xmi:id="_f42NgewgEeWTKqLnMSJAUw" value="1"/>
         </initializeExpression>
       </variables>
-      <variables xmi:id="_heTIYOwgEeWTKqLnMSJAUw" name="provideAmount" constant="true">
+      <variables xmi:id="_heTIYOwgEeWTKqLnMSJAUw" name="provideAmount">
         <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
-        <initializeExpression xsi:type="common:LiteralExpression" xmi:id="_bNWLEOxJEeWTKqLnMSJAUw" value="2"/>
+        <initializeExpression xsi:type="common:UnaryExpression" xmi:id="_zzPI0PRPEeaPvMZN2eZM1g" operator="MINUS">
+          <enclosedExpression xsi:type="common:LiteralExpression" xmi:id="_zzPI0fRPEeaPvMZN2eZM1g" value="1"/>
+        </initializeExpression>
       </variables>
       <variables xmi:id="_kmnkMOwgEeWTKqLnMSJAUw" name="provideIngredientID">
         <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
@@ -597,14 +599,22 @@
           <message xmi:id="_SvvpQOwgEeWTKqLnMSJAUw" instanceOf="_UTgXMNxrEeW-N_z6XJQq2w"/>
         </events>
         <action xmi:id="_AF0EQOwhEeWTKqLnMSJAUw" name="bindValues">
-          <expressions xsi:type="actionlanguage:Block" xmi:id="_WSb3cOwhEeWTKqLnMSJAUw">
-            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_WSb3cewhEeWTKqLnMSJAUw" assignOperator=":=">
-              <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_WSb3cuwhEeWTKqLnMSJAUw" messageType="_UTgXMNxrEeW-N_z6XJQq2w" parameter="_t8T0kOa3EeWyd6JHVas6Kw"/>
-              <lhs_typedNamedElementExpression xmi:id="_WSb3c-whEeWTKqLnMSJAUw" typedNamedElement="_qMoxgOwgEeWTKqLnMSJAUw"/>
+          <expressions xsi:type="actionlanguage:Block" xmi:id="_X5j3gPnGEeamHsCuK8L8oA">
+            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_X5j3gfnGEeamHsCuK8L8oA" assignOperator=":=">
+              <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_X5j3gvnGEeamHsCuK8L8oA" messageType="_UTgXMNxrEeW-N_z6XJQq2w" parameter="_t8T0kOa3EeWyd6JHVas6Kw"/>
+              <lhs_typedNamedElementExpression xmi:id="_X5j3g_nGEeamHsCuK8L8oA" typedNamedElement="_qMoxgOwgEeWTKqLnMSJAUw"/>
             </expressions>
-            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_WSb3dOwhEeWTKqLnMSJAUw" assignOperator=":=">
-              <rhs_assignExpression xsi:type="common:LiteralExpression" xmi:id="_WSb3dewhEeWTKqLnMSJAUw" value="1"/>
-              <lhs_typedNamedElementExpression xmi:id="_WSb3duwhEeWTKqLnMSJAUw" typedNamedElement="_daxBgOwgEeWTKqLnMSJAUw"/>
+            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_X5j3hPnGEeamHsCuK8L8oA" assignOperator=":=">
+              <rhs_assignExpression xsi:type="common:LiteralExpression" xmi:id="_X5j3hfnGEeamHsCuK8L8oA" value="1"/>
+              <lhs_typedNamedElementExpression xmi:id="_X5j3hvnGEeamHsCuK8L8oA" typedNamedElement="_daxBgOwgEeWTKqLnMSJAUw"/>
+            </expressions>
+            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_X5j3h_nGEeamHsCuK8L8oA" assignOperator=":=">
+              <rhs_assignExpression xsi:type="common:LiteralExpression" xmi:id="_X5j3iPnGEeamHsCuK8L8oA" value="2"/>
+              <lhs_typedNamedElementExpression xmi:id="_X5j3ifnGEeamHsCuK8L8oA" typedNamedElement="_heTIYOwgEeWTKqLnMSJAUw"/>
+            </expressions>
+            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_X5j3ivnGEeamHsCuK8L8oA" assignOperator=":=">
+              <rhs_assignExpression xsi:type="common:LiteralExpression" xmi:id="_X5j3i_nGEeamHsCuK8L8oA" value="1"/>
+              <lhs_typedNamedElementExpression xmi:id="_X5j3jPnGEeamHsCuK8L8oA" typedNamedElement="_kmnkMOwgEeWTKqLnMSJAUw"/>
             </expressions>
           </expressions>
         </action>
@@ -702,22 +712,30 @@
           <message xmi:id="_Kd3nwOwiEeWTKqLnMSJAUw" instanceOf="_P-BxAOa5EeWyd6JHVas6Kw"/>
         </events>
         <action xmi:id="_B2r_cOw2EeWTKqLnMSJAUw" name="evaluateOrder">
-          <expressions xsi:type="actionlanguage:Block" xmi:id="_sQW88OxFEeWTKqLnMSJAUw">
-            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_sQW88exFEeWTKqLnMSJAUw" assignOperator=":=">
-              <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_sQW88uxFEeWTKqLnMSJAUw" messageType="_P-BxAOa5EeWyd6JHVas6Kw" parameter="_SUaZkOa5EeWyd6JHVas6Kw"/>
-              <lhs_typedNamedElementExpression xmi:id="_sQW88-xFEeWTKqLnMSJAUw" typedNamedElement="_UV0fJuw0EeWTKqLnMSJAUw"/>
+          <expressions xsi:type="actionlanguage:Block" xmi:id="_-VOXEPnEEeamHsCuK8L8oA">
+            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_-VOXEfnEEeamHsCuK8L8oA" assignOperator=":=">
+              <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_-VOXEvnEEeamHsCuK8L8oA" messageType="_P-BxAOa5EeWyd6JHVas6Kw" parameter="_SUaZkOa5EeWyd6JHVas6Kw"/>
+              <lhs_typedNamedElementExpression xmi:id="_-VOXE_nEEeamHsCuK8L8oA" typedNamedElement="_UV0fJuw0EeWTKqLnMSJAUw"/>
             </expressions>
-            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_sQW89OxFEeWTKqLnMSJAUw" assignOperator=":=">
-              <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_sQW89exFEeWTKqLnMSJAUw" messageType="_P-BxAOa5EeWyd6JHVas6Kw" parameter="_ZW9PQOa5EeWyd6JHVas6Kw"/>
-              <lhs_typedNamedElementExpression xmi:id="_sQW89uxFEeWTKqLnMSJAUw" typedNamedElement="_UV0fIOw0EeWTKqLnMSJAUw"/>
-            </expressions>
-            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_sQW89-xFEeWTKqLnMSJAUw" assignOperator=":=">
-              <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_sQW8-OxFEeWTKqLnMSJAUw" messageType="_P-BxAOa5EeWyd6JHVas6Kw" parameter="_X-qmoOa5EeWyd6JHVas6Kw"/>
-              <lhs_typedNamedElementExpression xmi:id="_sQW8-exFEeWTKqLnMSJAUw" typedNamedElement="_UV0fJ-w0EeWTKqLnMSJAUw"/>
-            </expressions>
-            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_sQW8-uxFEeWTKqLnMSJAUw" assignOperator=":=">
-              <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_sQW8--xFEeWTKqLnMSJAUw" messageType="_P-BxAOa5EeWyd6JHVas6Kw" parameter="_UMyQcOa5EeWyd6JHVas6Kw"/>
-              <lhs_typedNamedElementExpression xmi:id="_sQW8_OxFEeWTKqLnMSJAUw" typedNamedElement="_UV0fI-w0EeWTKqLnMSJAUw"/>
+            <expressions xsi:type="actionlanguage:IfStatement" xmi:id="_-VOXFPnEEeamHsCuK8L8oA">
+              <ifCondition xsi:type="common:ComparisonExpression" xmi:id="_-VOXFfnEEeamHsCuK8L8oA" operator="EQUAL">
+                <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_-VOXFvnEEeamHsCuK8L8oA" typedNamedElement="_UV0fJuw0EeWTKqLnMSJAUw"/>
+                <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_-VOXF_nEEeamHsCuK8L8oA" typedNamedElement="_ZhkyUOw0EeWTKqLnMSJAUw"/>
+              </ifCondition>
+              <ifBlock xmi:id="_-VOXGPnEEeamHsCuK8L8oA">
+                <expressions xsi:type="actionlanguage:Assignment" xmi:id="_-VOXGfnEEeamHsCuK8L8oA" assignOperator=":=">
+                  <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_-VOXGvnEEeamHsCuK8L8oA" messageType="_P-BxAOa5EeWyd6JHVas6Kw" parameter="_ZW9PQOa5EeWyd6JHVas6Kw"/>
+                  <lhs_typedNamedElementExpression xmi:id="_-VOXG_nEEeamHsCuK8L8oA" typedNamedElement="_UV0fIOw0EeWTKqLnMSJAUw"/>
+                </expressions>
+                <expressions xsi:type="actionlanguage:Assignment" xmi:id="_-VOXHPnEEeamHsCuK8L8oA" assignOperator=":=">
+                  <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_-VOXHfnEEeamHsCuK8L8oA" messageType="_P-BxAOa5EeWyd6JHVas6Kw" parameter="_X-qmoOa5EeWyd6JHVas6Kw"/>
+                  <lhs_typedNamedElementExpression xmi:id="_-VOXHvnEEeamHsCuK8L8oA" typedNamedElement="_UV0fJ-w0EeWTKqLnMSJAUw"/>
+                </expressions>
+                <expressions xsi:type="actionlanguage:Assignment" xmi:id="_-VOXH_nEEeamHsCuK8L8oA" assignOperator=":=">
+                  <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_-VOXIPnEEeamHsCuK8L8oA" messageType="_P-BxAOa5EeWyd6JHVas6Kw" parameter="_UMyQcOa5EeWyd6JHVas6Kw"/>
+                  <lhs_typedNamedElementExpression xmi:id="_-VOXIfnEEeamHsCuK8L8oA" typedNamedElement="_UV0fI-w0EeWTKqLnMSJAUw"/>
+                </expressions>
+              </ifBlock>
             </expressions>
           </expressions>
         </action>
@@ -749,7 +767,36 @@
       </transitions>
       <states xmi:id="_p1yiUewhEeWTKqLnMSJAUw" name="init" outgoingTransitions="_vDNpcOwhEeWTKqLnMSJAUw" initial="true"/>
       <states xmi:id="_umwW8OwhEeWTKqLnMSJAUw" name="Idle" outgoingTransitions="_y4uicOwhEeWTKqLnMSJAUw" incomingTransitions="_vDNpcOwhEeWTKqLnMSJAUw _7lvV4OwhEeWTKqLnMSJAUw _9xmJcOwhEeWTKqLnMSJAUw">
-        <entryEvent xmi:id="_0jMJEOw1EeWTKqLnMSJAUw" clockResets="_O2-bYOw1EeWTKqLnMSJAUw"/>
+        <entryEvent xmi:id="_0jMJEOw1EeWTKqLnMSJAUw" clockResets="_O2-bYOw1EeWTKqLnMSJAUw">
+          <action xmi:id="_3s4_4Pm-EeamHsCuK8L8oA" name="resetValues">
+            <expressions xsi:type="actionlanguage:Block" xmi:id="_8pSocPm-EeamHsCuK8L8oA">
+              <expressions xsi:type="actionlanguage:Assignment" xmi:id="_8pSocfm-EeamHsCuK8L8oA" assignOperator=":=">
+                <rhs_assignExpression xsi:type="common:UnaryExpression" xmi:id="_8pSocvm-EeamHsCuK8L8oA" operator="MINUS">
+                  <enclosedExpression xsi:type="common:LiteralExpression" xmi:id="_8pSoc_m-EeamHsCuK8L8oA" value="1"/>
+                </rhs_assignExpression>
+                <lhs_typedNamedElementExpression xmi:id="_8pSodPm-EeamHsCuK8L8oA" typedNamedElement="_UV0fIOw0EeWTKqLnMSJAUw"/>
+              </expressions>
+              <expressions xsi:type="actionlanguage:Assignment" xmi:id="_8pSodfm-EeamHsCuK8L8oA" assignOperator=":=">
+                <rhs_assignExpression xsi:type="common:UnaryExpression" xmi:id="_8pSodvm-EeamHsCuK8L8oA" operator="MINUS">
+                  <enclosedExpression xsi:type="common:LiteralExpression" xmi:id="_8pSod_m-EeamHsCuK8L8oA" value="1"/>
+                </rhs_assignExpression>
+                <lhs_typedNamedElementExpression xmi:id="_8pSoePm-EeamHsCuK8L8oA" typedNamedElement="_UV0fJ-w0EeWTKqLnMSJAUw"/>
+              </expressions>
+              <expressions xsi:type="actionlanguage:Assignment" xmi:id="_8pSoefm-EeamHsCuK8L8oA" assignOperator=":=">
+                <rhs_assignExpression xsi:type="common:UnaryExpression" xmi:id="_8pSoevm-EeamHsCuK8L8oA" operator="MINUS">
+                  <enclosedExpression xsi:type="common:LiteralExpression" xmi:id="_8pSoe_m-EeamHsCuK8L8oA" value="1"/>
+                </rhs_assignExpression>
+                <lhs_typedNamedElementExpression xmi:id="_8pSofPm-EeamHsCuK8L8oA" typedNamedElement="_UV0fI-w0EeWTKqLnMSJAUw"/>
+              </expressions>
+              <expressions xsi:type="actionlanguage:Assignment" xmi:id="_8pSoffm-EeamHsCuK8L8oA" assignOperator=":=">
+                <rhs_assignExpression xsi:type="common:UnaryExpression" xmi:id="_8pSofvm-EeamHsCuK8L8oA" operator="MINUS">
+                  <enclosedExpression xsi:type="common:LiteralExpression" xmi:id="_8pSof_m-EeamHsCuK8L8oA" value="1"/>
+                </rhs_assignExpression>
+                <lhs_typedNamedElementExpression xmi:id="_8pSogPm-EeamHsCuK8L8oA" typedNamedElement="_UV0fJuw0EeWTKqLnMSJAUw"/>
+              </expressions>
+            </expressions>
+          </action>
+        </entryEvent>
       </states>
       <states xmi:id="_xAtQ4OwhEeWTKqLnMSJAUw" name="EvaluateOrder" outgoingTransitions="_5DeNcOwhEeWTKqLnMSJAUw _9xmJcOwhEeWTKqLnMSJAUw _-btdcOwhEeWTKqLnMSJAUw _L6IxcOwiEeWTKqLnMSJAUw" incomingTransitions="_y4uicOwhEeWTKqLnMSJAUw _-btdcOwhEeWTKqLnMSJAUw _L6IxcOwiEeWTKqLnMSJAUw"/>
       <states xmi:id="_2iL8cOwhEeWTKqLnMSJAUw" name="ProcessOrder" outgoingTransitions="_7Ojk8OwhEeWTKqLnMSJAUw" incomingTransitions="_5DeNcOwhEeWTKqLnMSJAUw"/>
@@ -851,10 +898,10 @@
           </expression>
         </properties>
       </verificationConstraintRepositories>
-      <roles xmi:id="_lPTxUOwfEeWTKqLnMSJAUw" connectors="_lPWNkewfEeWTKqLnMSJAUw" behavior="_qixPAOwfEeWTKqLnMSJAUw" name="broaker" senderMessageTypes="_dtJysNxhEeW-N_z6XJQq2w _P-BxAOa5EeWyd6JHVas6Kw" receiverMessageTypes="_wsJowNxgEeW-N_z6XJQq2w _UTgXMNxrEeW-N_z6XJQq2w">
+      <roles xmi:id="_lPTxUOwfEeWTKqLnMSJAUw" connectors="_lPWNkewfEeWTKqLnMSJAUw" behavior="_qixPAOwfEeWTKqLnMSJAUw" name="broker" senderMessageTypes="_dtJysNxhEeW-N_z6XJQq2w _P-BxAOa5EeWyd6JHVas6Kw" receiverMessageTypes="_wsJowNxgEeW-N_z6XJQq2w _UTgXMNxrEeW-N_z6XJQq2w">
         <cardinality xmi:id="_lPU_cOwfEeWTKqLnMSJAUw">
-          <lowerBound xmi:id="_lPU_cewfEeWTKqLnMSJAUw"/>
-          <upperBound xmi:id="_lPVmgOwfEeWTKqLnMSJAUw"/>
+          <lowerBound xmi:id="_EEyH4PRUEeaPvMZN2eZM1g"/>
+          <upperBound xmi:id="_EE5coPRUEeaPvMZN2eZM1g"/>
         </cardinality>
         <receiverMessageBuffer xmi:id="_-h86QOwfEeWTKqLnMSJAUw" name="buffer_for_doneOrder" messageType="_wsJowNxgEeW-N_z6XJQq2w">
           <bufferSize xmi:id="_-h86QewfEeWTKqLnMSJAUw"/>

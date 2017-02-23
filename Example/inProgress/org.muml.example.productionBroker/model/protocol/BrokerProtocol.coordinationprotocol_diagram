@@ -14,6 +14,9 @@
         <children xmi:type="notation:DecorationNode" xmi:id="_CvelchWzEea4t_vvK_A9tw" type="5006">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_CvelcxWzEea4t_vvK_A9tw" y="5"/>
         </children>
+        <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_e0QmwPRKEeaPvMZN2eZM1g">
+          <diagramLink xmi:type="notation:Diagram" href="../realtimestatechart/brokerRole.realtimestatechart_diagram#_BTR_IBWxEea4t_vvK_A9tw"/>
+        </styles>
         <element xmi:type="protocol:Role" href="../productionBroker.muml#_lPTxUOwfEeWTKqLnMSJAUw"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CvelcRWzEea4t_vvK_A9tw" x="139" y="150"/>
       </children>
@@ -21,6 +24,9 @@
         <children xmi:type="notation:DecorationNode" xmi:id="_CveldhWzEea4t_vvK_A9tw" type="5006">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_CvfMgBWzEea4t_vvK_A9tw" y="5"/>
         </children>
+        <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_hVYbgPRREeaPvMZN2eZM1g">
+          <diagramLink xmi:type="notation:Diagram" href="../realtimestatechart/productionStationRole.realtimestatechart_diagram#_BPedMBWxEea4t_vvK_A9tw"/>
+        </styles>
         <element xmi:type="protocol:Role" href="../productionBroker.muml#_lPVmgewfEeWTKqLnMSJAUw"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CveldRWzEea4t_vvK_A9tw" x="1027" y="138"/>
       </children>

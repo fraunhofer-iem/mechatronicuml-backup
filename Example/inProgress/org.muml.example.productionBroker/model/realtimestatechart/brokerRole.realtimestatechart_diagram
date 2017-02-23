@@ -1,5 +1,131 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:realtimestatechart="http://www.muml.org/pim/realtimestatechart/1.0.0" xsi:schemaLocation="http://www.muml.org/pim/realtimestatechart/1.0.0 http://www.muml.org/pim/1.0.0#//realtimestatechart" xmi:id="_BTR_IBWxEea4t_vvK_A9tw" type="Real-Time Statechart" name="brokerRole.realtimestatechart_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_e265MPRKEeaPvMZN2eZM1g" type="2007" fontName="Sans" fontHeight="10" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_e265MvRKEeaPvMZN2eZM1g" type="5061"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_e265M_RKEeaPvMZN2eZM1g" type="5062"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_e265NPRKEeaPvMZN2eZM1g" type="7030">
+      <children xmi:type="notation:Shape" xmi:id="_fBmfMPRKEeaPvMZN2eZM1g" type="3032" fontName="Sans" fontHeight="10" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_fBmfMvRKEeaPvMZN2eZM1g" type="5060"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_fBmfM_RKEeaPvMZN2eZM1g" type="7031">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_fBmfNPRKEeaPvMZN2eZM1g" sorting="Automatic" sortingKeys="default_sorting_key:Ascending"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_fBmfNfRKEeaPvMZN2eZM1g"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_fBmfNvRKEeaPvMZN2eZM1g" type="7032">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_fBmfN_RKEeaPvMZN2eZM1g"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_fBmfOPRKEeaPvMZN2eZM1g"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_fBmfOfRKEeaPvMZN2eZM1g" type="7033">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_fBmfOvRKEeaPvMZN2eZM1g"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_fBmfO_RKEeaPvMZN2eZM1g"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_fBmfPPRKEeaPvMZN2eZM1g" type="7034">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_fBmfPfRKEeaPvMZN2eZM1g"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_fBmfPvRKEeaPvMZN2eZM1g"/>
+        </children>
+        <element xmi:type="realtimestatechart:State" href="../productionBroker.muml#_qixPAewfEeWTKqLnMSJAUw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fBmfMfRKEeaPvMZN2eZM1g"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_fBnGQPRKEeaPvMZN2eZM1g" type="3032" fontName="Sans" fontHeight="10" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_fBntUPRKEeaPvMZN2eZM1g" type="5060"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_fBntUfRKEeaPvMZN2eZM1g" type="7031">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_fBntUvRKEeaPvMZN2eZM1g" sorting="Automatic" sortingKeys="default_sorting_key:Ascending"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_fBntU_RKEeaPvMZN2eZM1g"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_fBntVPRKEeaPvMZN2eZM1g" type="7032">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_fBntVfRKEeaPvMZN2eZM1g"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_fBntVvRKEeaPvMZN2eZM1g"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_fBntV_RKEeaPvMZN2eZM1g" type="7033">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_fBntWPRKEeaPvMZN2eZM1g"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_fBntWfRKEeaPvMZN2eZM1g"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_fBntWvRKEeaPvMZN2eZM1g" type="7034">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_fBntW_RKEeaPvMZN2eZM1g"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_fBntXPRKEeaPvMZN2eZM1g"/>
+        </children>
+        <element xmi:type="realtimestatechart:State" href="../productionBroker.muml#_zRq40OwfEeWTKqLnMSJAUw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fBnGQfRKEeaPvMZN2eZM1g" x="374" y="221"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_fBntXfRKEeaPvMZN2eZM1g" type="3032" fontName="Sans" fontHeight="10" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_fBntX_RKEeaPvMZN2eZM1g" type="5060"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_fBntYPRKEeaPvMZN2eZM1g" type="7031">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_fBntYfRKEeaPvMZN2eZM1g" sorting="Automatic" sortingKeys="default_sorting_key:Ascending"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_fBntYvRKEeaPvMZN2eZM1g"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_fBntY_RKEeaPvMZN2eZM1g" type="7032">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_fBntZPRKEeaPvMZN2eZM1g"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_fBntZfRKEeaPvMZN2eZM1g"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_fBntZvRKEeaPvMZN2eZM1g" type="7033">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_fBntZ_RKEeaPvMZN2eZM1g"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_fBntaPRKEeaPvMZN2eZM1g"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_fBntafRKEeaPvMZN2eZM1g" type="7034">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_fBntavRKEeaPvMZN2eZM1g"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_fBnta_RKEeaPvMZN2eZM1g"/>
+        </children>
+        <element xmi:type="realtimestatechart:State" href="../productionBroker.muml#_1Ht0cOwfEeWTKqLnMSJAUw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fBntXvRKEeaPvMZN2eZM1g" x="854" y="5"/>
+      </children>
+    </children>
+    <element xmi:type="realtimestatechart:RealtimeStatechart" href="../productionBroker.muml#_qixPAOwfEeWTKqLnMSJAUw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_e265MfRKEeaPvMZN2eZM1g" width="1129" height="421"/>
+  </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_BTR_IRWxEea4t_vvK_A9tw"/>
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../productionBroker.muml#_qixPAOwfEeWTKqLnMSJAUw"/>
+  <edges xmi:type="notation:Connector" xmi:id="_fCSbsPRKEeaPvMZN2eZM1g" type="4003" source="_fBmfMPRKEeaPvMZN2eZM1g" target="_fBmfMPRKEeaPvMZN2eZM1g" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_fCTCwPRKEeaPvMZN2eZM1g" type="6005">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_fCTCwfRKEeaPvMZN2eZM1g" x="27" y="42"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_fCTCwvRKEeaPvMZN2eZM1g" type="6006">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_fCTCw_RKEeaPvMZN2eZM1g" x="-10" y="20"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_fCSbsfRKEeaPvMZN2eZM1g" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="realtimestatechart:Transition" href="../productionBroker.muml#_xZ7UEOwfEeWTKqLnMSJAUw"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_fCSbsvRKEeaPvMZN2eZM1g" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_fGJoAPRKEeaPvMZN2eZM1g" type="4003" source="_fBnGQPRKEeaPvMZN2eZM1g" target="_fBntXfRKEeaPvMZN2eZM1g" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_fGJoA_RKEeaPvMZN2eZM1g" type="6005">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_fGJoBPRKEeaPvMZN2eZM1g" y="-20"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_fGJoBfRKEeaPvMZN2eZM1g" type="6006">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_fGJoBvRKEeaPvMZN2eZM1g" x="-10" y="20"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_fGJoAfRKEeaPvMZN2eZM1g" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="realtimestatechart:Transition" href="../productionBroker.muml#_2EipEOwfEeWTKqLnMSJAUw"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_fGJoAvRKEeaPvMZN2eZM1g" points="[85, 8, -349, 128]$[396, 38, -38, 158]$[428, -97, -6, 23]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_fQR0YPRKEeaPvMZN2eZM1g" type="4003" source="_fBnGQPRKEeaPvMZN2eZM1g" target="_fBntXfRKEeaPvMZN2eZM1g" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_fQR0Y_RKEeaPvMZN2eZM1g" type="6005">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_fQR0ZPRKEeaPvMZN2eZM1g" y="-20"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_fQR0ZfRKEeaPvMZN2eZM1g" type="6006">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_fQR0ZvRKEeaPvMZN2eZM1g" x="-10" y="20"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_fQR0YfRKEeaPvMZN2eZM1g" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="realtimestatechart:Transition" href="../productionBroker.muml#_2wskcOwfEeWTKqLnMSJAUw"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_fQR0YvRKEeaPvMZN2eZM1g" points="[-84, 17, -36, 7]$[-22, 5, 26, -5]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_fWJy4PRKEeaPvMZN2eZM1g" type="4003" source="_fBntXfRKEeaPvMZN2eZM1g" target="_fBmfMPRKEeaPvMZN2eZM1g" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_fWM2MPRKEeaPvMZN2eZM1g" type="6005">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_fWM2MfRKEeaPvMZN2eZM1g" y="-20"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_fWM2MvRKEeaPvMZN2eZM1g" type="6006">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_fWM2M_RKEeaPvMZN2eZM1g" x="-10" y="20"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_fWJy4fRKEeaPvMZN2eZM1g" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="realtimestatechart:Transition" href="../productionBroker.muml#_4Gw_gOwfEeWTKqLnMSJAUw"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_fWJy4vRKEeaPvMZN2eZM1g" points="[-26, -13, 0, 0]$[-6, -3, 20, 10]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_fZh3APRKEeaPvMZN2eZM1g" type="4003" source="_fBmfMPRKEeaPvMZN2eZM1g" target="_fBnGQPRKEeaPvMZN2eZM1g" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_fZieEPRKEeaPvMZN2eZM1g" type="6005">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_fZieEfRKEeaPvMZN2eZM1g" y="-20"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_fZieEvRKEeaPvMZN2eZM1g" type="6006">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_fZieE_RKEeaPvMZN2eZM1g" x="-10" y="20"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_fZh3AfRKEeaPvMZN2eZM1g" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="realtimestatechart:Transition" href="../productionBroker.muml#_4lMn8OwfEeWTKqLnMSJAUw"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_fZh3AvRKEeaPvMZN2eZM1g" points="[20, 3, -54, 0]$[-10, 0, -84, -3]"/>
+  </edges>
 </notation:Diagram>

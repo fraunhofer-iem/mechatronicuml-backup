@@ -1,0 +1,3943 @@
+digraph "ReachabilityGraph"{
+ratio=auto;
+splines=true;
+fontsize=10.0;
+node [shape=rectangle, style="rounded, filled", penwidth=1]
+	"0"[fillcolor=lightgrey,label=<
+<TABLE BGCOLOR="bisque" CELLBORDER="0" >
+<TR>
+<TD COLSPAN="2" >BrokerProtocolCIC</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="grey" CELLBORDER="0" >
+<TR>
+<TD>brokerComponentInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>brokerCompRTSC</TD>
+</TR>
+
+<TR>
+<TD>Active State: Initial</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="orange" CELLBORDER="0" >
+<TR>
+<TD>brokerPortInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>brokerRole</TD>
+</TR>
+
+<TR>
+<TD>Active State: init</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="seagreen1" CELLBORDER="0" >
+<TR>
+<TD>Variable Bindings:</TD>
+</TR>
+
+<TR>
+<TD>provideOrderID=-1</TD>
+
+<TD>provideAmount=-1</TD>
+</TR>
+
+<TR>
+<TD>provideIngredientID=-1</TD>
+
+<TD>currentPsID=-1</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_doneOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_getOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+
+<TD>
+<TABLE BGCOLOR="grey" CELLBORDER="0" >
+<TR>
+<TD>productionStationComponentInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>productionStationCompRTSC</TD>
+</TR>
+
+<TR>
+<TD>Active State: Initial</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="orange" CELLBORDER="0" >
+<TR>
+<TD>productionStationPortInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>productionStationRole</TD>
+</TR>
+
+<TR>
+<TD>Active State: init</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="seagreen1" CELLBORDER="0" >
+<TR>
+<TD>Variable Bindings:</TD>
+</TR>
+
+<TR>
+<TD>amount=-1</TD>
+
+<TD>processedOrderID=-1</TD>
+</TR>
+
+<TR>
+<TD>incomingOrderPsID=0</TD>
+
+<TD>ingredientID=-1</TD>
+</TR>
+
+<TR>
+<TD>evaluateOrderFailed=0</TD>
+
+<TD>ID=5</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="khaki2" CELLBORDER="0" >
+<TR>
+<TD>Clock Bindings:</TD>
+</TR>
+
+<TR>
+<TD>processingTime=0</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_noOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_orderForPS</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD COLSPAN="2" >
+<TABLE BGCOLOR="cornsilk1" CELLBORDER="0" >
+<TR>
+<TD>Connector between brokerPortInstance0 and productionStationPortInstance0</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+>
+];
+	"1"[fillcolor=lightgrey,label=<
+<TABLE BGCOLOR="bisque" CELLBORDER="0" >
+<TR>
+<TD COLSPAN="2" >BrokerProtocolCIC</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="grey" CELLBORDER="0" >
+<TR>
+<TD>brokerComponentInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>brokerCompRTSC</TD>
+</TR>
+
+<TR>
+<TD>Active State: Initial</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="orange" CELLBORDER="0" >
+<TR>
+<TD>brokerPortInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>brokerRole</TD>
+</TR>
+
+<TR>
+<TD>Active State: init</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="seagreen1" CELLBORDER="0" >
+<TR>
+<TD>Variable Bindings:</TD>
+</TR>
+
+<TR>
+<TD>provideOrderID=-1</TD>
+
+<TD>provideAmount=-1</TD>
+</TR>
+
+<TR>
+<TD>provideIngredientID=-1</TD>
+
+<TD>currentPsID=-1</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_doneOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_getOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+
+<TD>
+<TABLE BGCOLOR="grey" CELLBORDER="0" >
+<TR>
+<TD>productionStationComponentInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>productionStationCompRTSC</TD>
+</TR>
+
+<TR>
+<TD>Active State: Initial</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="orange" CELLBORDER="0" >
+<TR>
+<TD>productionStationPortInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>productionStationRole</TD>
+</TR>
+
+<TR>
+<TD><FONT COLOR = "red">Active Transition: init &#8594;Idle</FONT></TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="seagreen1" CELLBORDER="0" >
+<TR>
+<TD>Variable Bindings:</TD>
+</TR>
+
+<TR>
+<TD>amount=-1</TD>
+
+<TD>processedOrderID=-1</TD>
+</TR>
+
+<TR>
+<TD>incomingOrderPsID=0</TD>
+
+<TD>ingredientID=-1</TD>
+</TR>
+
+<TR>
+<TD>evaluateOrderFailed=0</TD>
+
+<TD>ID=5</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="khaki2" CELLBORDER="0" >
+<TR>
+<TD>Clock Bindings:</TD>
+</TR>
+
+<TR>
+<TD>processingTime=0</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_noOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_orderForPS</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD COLSPAN="2" >
+<TABLE BGCOLOR="cornsilk1" CELLBORDER="0" >
+<TR>
+<TD>Connector between brokerPortInstance0 and productionStationPortInstance0</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+>
+];
+	"2"[fillcolor=lightgrey,label=<
+<TABLE BGCOLOR="bisque" CELLBORDER="0" >
+<TR>
+<TD COLSPAN="2" >BrokerProtocolCIC</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="grey" CELLBORDER="0" >
+<TR>
+<TD>brokerComponentInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>brokerCompRTSC</TD>
+</TR>
+
+<TR>
+<TD>Active State: Initial</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="orange" CELLBORDER="0" >
+<TR>
+<TD>brokerPortInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>brokerRole</TD>
+</TR>
+
+<TR>
+<TD>Active State: init</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="seagreen1" CELLBORDER="0" >
+<TR>
+<TD>Variable Bindings:</TD>
+</TR>
+
+<TR>
+<TD>provideOrderID=-1</TD>
+
+<TD>provideAmount=-1</TD>
+</TR>
+
+<TR>
+<TD>provideIngredientID=-1</TD>
+
+<TD>currentPsID=-1</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_doneOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_getOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+
+<TD>
+<TABLE BGCOLOR="grey" CELLBORDER="0" >
+<TR>
+<TD>productionStationComponentInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>productionStationCompRTSC</TD>
+</TR>
+
+<TR>
+<TD>Active State: Initial</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="orange" CELLBORDER="0" >
+<TR>
+<TD>productionStationPortInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>productionStationRole</TD>
+</TR>
+
+<TR>
+<TD><FONT COLOR = "red">Active State: Idle</FONT></TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="seagreen1" CELLBORDER="0" >
+<TR>
+<TD>Variable Bindings:</TD>
+</TR>
+
+<TR>
+<TD>amount=-1</TD>
+
+<TD>processedOrderID=-1</TD>
+</TR>
+
+<TR>
+<TD>incomingOrderPsID=0</TD>
+
+<TD>ingredientID=-1</TD>
+</TR>
+
+<TR>
+<TD>evaluateOrderFailed=0</TD>
+
+<TD>ID=5</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="khaki2" CELLBORDER="0" >
+<TR>
+<TD>Clock Bindings:</TD>
+</TR>
+
+<TR>
+<TD>processingTime=0</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_noOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_orderForPS</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD COLSPAN="2" >
+<TABLE BGCOLOR="cornsilk1" CELLBORDER="0" >
+<TR>
+<TD>Connector between brokerPortInstance0 and productionStationPortInstance0</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+>
+];
+	"3"[fillcolor=lightgrey,label=<
+<TABLE BGCOLOR="bisque" CELLBORDER="0" >
+<TR>
+<TD COLSPAN="2" >BrokerProtocolCIC</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="grey" CELLBORDER="0" >
+<TR>
+<TD>brokerComponentInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>brokerCompRTSC</TD>
+</TR>
+
+<TR>
+<TD>Active State: Initial</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="orange" CELLBORDER="0" >
+<TR>
+<TD>brokerPortInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>brokerRole</TD>
+</TR>
+
+<TR>
+<TD>Active State: init</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="seagreen1" CELLBORDER="0" >
+<TR>
+<TD>Variable Bindings:</TD>
+</TR>
+
+<TR>
+<TD>provideOrderID=-1</TD>
+
+<TD>provideAmount=-1</TD>
+</TR>
+
+<TR>
+<TD>provideIngredientID=-1</TD>
+
+<TD>currentPsID=-1</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_doneOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_getOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+
+<TD>
+<TABLE BGCOLOR="grey" CELLBORDER="0" >
+<TR>
+<TD>productionStationComponentInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>productionStationCompRTSC</TD>
+</TR>
+
+<TR>
+<TD>Active State: Initial</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="orange" CELLBORDER="0" >
+<TR>
+<TD>productionStationPortInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>productionStationRole</TD>
+</TR>
+
+<TR>
+<TD>Active State: Idle</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="seagreen1" CELLBORDER="0" >
+<TR>
+<TD>Variable Bindings:</TD>
+</TR>
+
+<TR>
+<TD>amount=-1</TD>
+
+<TD>processedOrderID=-1</TD>
+</TR>
+
+<TR>
+<TD>incomingOrderPsID=0</TD>
+
+<TD>ingredientID=-1</TD>
+</TR>
+
+<TR>
+<TD>evaluateOrderFailed=0</TD>
+
+<TD>ID=5</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="khaki2" CELLBORDER="0" >
+<TR>
+<TD>Clock Bindings:</TD>
+</TR>
+
+<TR>
+<TD><FONT COLOR = "red">processingTime=500</FONT></TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_noOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_orderForPS</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD COLSPAN="2" >
+<TABLE BGCOLOR="cornsilk1" CELLBORDER="0" >
+<TR>
+<TD>Connector between brokerPortInstance0 and productionStationPortInstance0</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+>
+];
+	"4"[fillcolor=lightgrey,label=<
+<TABLE BGCOLOR="bisque" CELLBORDER="0" >
+<TR>
+<TD COLSPAN="2" >BrokerProtocolCIC</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="grey" CELLBORDER="0" >
+<TR>
+<TD>brokerComponentInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>brokerCompRTSC</TD>
+</TR>
+
+<TR>
+<TD>Active State: Initial</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="orange" CELLBORDER="0" >
+<TR>
+<TD>brokerPortInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>brokerRole</TD>
+</TR>
+
+<TR>
+<TD>Active State: init</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="seagreen1" CELLBORDER="0" >
+<TR>
+<TD>Variable Bindings:</TD>
+</TR>
+
+<TR>
+<TD>provideOrderID=-1</TD>
+
+<TD>provideAmount=-1</TD>
+</TR>
+
+<TR>
+<TD>provideIngredientID=-1</TD>
+
+<TD>currentPsID=-1</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_doneOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_getOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+
+<TD>
+<TABLE BGCOLOR="grey" CELLBORDER="0" >
+<TR>
+<TD>productionStationComponentInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>productionStationCompRTSC</TD>
+</TR>
+
+<TR>
+<TD>Active State: Initial</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="orange" CELLBORDER="0" >
+<TR>
+<TD>productionStationPortInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>productionStationRole</TD>
+</TR>
+
+<TR>
+<TD><FONT COLOR = "red">Active Transition: Idle &#8594;EvaluateOrder</FONT></TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="seagreen1" CELLBORDER="0" >
+<TR>
+<TD>Variable Bindings:</TD>
+</TR>
+
+<TR>
+<TD>amount=-1</TD>
+
+<TD>processedOrderID=-1</TD>
+</TR>
+
+<TR>
+<TD>incomingOrderPsID=0</TD>
+
+<TD>ingredientID=-1</TD>
+</TR>
+
+<TR>
+<TD>evaluateOrderFailed=0</TD>
+
+<TD>ID=5</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="khaki2" CELLBORDER="0" >
+<TR>
+<TD>Clock Bindings:</TD>
+</TR>
+
+<TR>
+<TD>processingTime=500</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_noOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_orderForPS</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD COLSPAN="2" >
+<TABLE BGCOLOR="cornsilk1" CELLBORDER="0" >
+<TR>
+<TD>Connector between brokerPortInstance0 and productionStationPortInstance0</TD>
+</TR>
+
+<TR>
+<TD><FONT COLOR = "red"><FONT COLOR = "red">getOrder(5)</FONT> to brokerPortInstance0</FONT></TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+>
+];
+	"5"[fillcolor=lightgrey,label=<
+<TABLE BGCOLOR="bisque" CELLBORDER="0" >
+<TR>
+<TD COLSPAN="2" >BrokerProtocolCIC</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="grey" CELLBORDER="0" >
+<TR>
+<TD>brokerComponentInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>brokerCompRTSC</TD>
+</TR>
+
+<TR>
+<TD>Active State: Initial</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="orange" CELLBORDER="0" >
+<TR>
+<TD>brokerPortInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>brokerRole</TD>
+</TR>
+
+<TR>
+<TD>Active State: init</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="seagreen1" CELLBORDER="0" >
+<TR>
+<TD>Variable Bindings:</TD>
+</TR>
+
+<TR>
+<TD>provideOrderID=-1</TD>
+
+<TD>provideAmount=-1</TD>
+</TR>
+
+<TR>
+<TD>provideIngredientID=-1</TD>
+
+<TD>currentPsID=-1</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_doneOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_getOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+
+<TD>
+<TABLE BGCOLOR="grey" CELLBORDER="0" >
+<TR>
+<TD>productionStationComponentInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>productionStationCompRTSC</TD>
+</TR>
+
+<TR>
+<TD>Active State: Initial</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="orange" CELLBORDER="0" >
+<TR>
+<TD>productionStationPortInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>productionStationRole</TD>
+</TR>
+
+<TR>
+<TD><FONT COLOR = "red">Active State: EvaluateOrder</FONT></TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="seagreen1" CELLBORDER="0" >
+<TR>
+<TD>Variable Bindings:</TD>
+</TR>
+
+<TR>
+<TD>amount=-1</TD>
+
+<TD>processedOrderID=-1</TD>
+</TR>
+
+<TR>
+<TD>incomingOrderPsID=0</TD>
+
+<TD>ingredientID=-1</TD>
+</TR>
+
+<TR>
+<TD>evaluateOrderFailed=0</TD>
+
+<TD>ID=5</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="khaki2" CELLBORDER="0" >
+<TR>
+<TD>Clock Bindings:</TD>
+</TR>
+
+<TR>
+<TD>processingTime=500</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_noOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_orderForPS</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD COLSPAN="2" >
+<TABLE BGCOLOR="cornsilk1" CELLBORDER="0" >
+<TR>
+<TD>Connector between brokerPortInstance0 and productionStationPortInstance0</TD>
+</TR>
+
+<TR>
+<TD>getOrder(5) to brokerPortInstance0</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+>
+];
+	"6"[fillcolor=lightgrey,label=<
+<TABLE BGCOLOR="bisque" CELLBORDER="0" >
+<TR>
+<TD COLSPAN="2" >BrokerProtocolCIC</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="grey" CELLBORDER="0" >
+<TR>
+<TD>brokerComponentInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>brokerCompRTSC</TD>
+</TR>
+
+<TR>
+<TD>Active State: Initial</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="orange" CELLBORDER="0" >
+<TR>
+<TD>brokerPortInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>brokerRole</TD>
+</TR>
+
+<TR>
+<TD>Active State: init</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="seagreen1" CELLBORDER="0" >
+<TR>
+<TD>Variable Bindings:</TD>
+</TR>
+
+<TR>
+<TD>provideOrderID=-1</TD>
+
+<TD>provideAmount=-1</TD>
+</TR>
+
+<TR>
+<TD>provideIngredientID=-1</TD>
+
+<TD>currentPsID=-1</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_doneOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_getOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+
+<TD>
+<TABLE BGCOLOR="grey" CELLBORDER="0" >
+<TR>
+<TD>productionStationComponentInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>productionStationCompRTSC</TD>
+</TR>
+
+<TR>
+<TD>Active State: Initial</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="orange" CELLBORDER="0" >
+<TR>
+<TD>productionStationPortInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>productionStationRole</TD>
+</TR>
+
+<TR>
+<TD>Active State: EvaluateOrder</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="seagreen1" CELLBORDER="0" >
+<TR>
+<TD>Variable Bindings:</TD>
+</TR>
+
+<TR>
+<TD>amount=-1</TD>
+
+<TD>processedOrderID=-1</TD>
+</TR>
+
+<TR>
+<TD>incomingOrderPsID=0</TD>
+
+<TD>ingredientID=-1</TD>
+</TR>
+
+<TR>
+<TD>evaluateOrderFailed=0</TD>
+
+<TD>ID=5</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="khaki2" CELLBORDER="0" >
+<TR>
+<TD>Clock Bindings:</TD>
+</TR>
+
+<TR>
+<TD>processingTime=500</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_noOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_orderForPS</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD COLSPAN="2" >
+<TABLE BGCOLOR="cornsilk1" CELLBORDER="0" >
+<TR>
+<TD>Connector between brokerPortInstance0 and productionStationPortInstance0</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+>
+];
+	"7"[fillcolor=lightgrey,label=<
+<TABLE BGCOLOR="bisque" CELLBORDER="0" >
+<TR>
+<TD COLSPAN="2" >BrokerProtocolCIC</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="grey" CELLBORDER="0" >
+<TR>
+<TD>brokerComponentInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>brokerCompRTSC</TD>
+</TR>
+
+<TR>
+<TD>Active State: Initial</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="orange" CELLBORDER="0" >
+<TR>
+<TD>brokerPortInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>brokerRole</TD>
+</TR>
+
+<TR>
+<TD>Active State: init</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="seagreen1" CELLBORDER="0" >
+<TR>
+<TD>Variable Bindings:</TD>
+</TR>
+
+<TR>
+<TD>provideOrderID=-1</TD>
+
+<TD>provideAmount=-1</TD>
+</TR>
+
+<TR>
+<TD>provideIngredientID=-1</TD>
+
+<TD>currentPsID=-1</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_doneOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_getOrder</TD>
+</TR>
+
+<TR>
+<TD><FONT COLOR = "red">getOrder(5)</FONT></TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+
+<TD>
+<TABLE BGCOLOR="grey" CELLBORDER="0" >
+<TR>
+<TD>productionStationComponentInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>productionStationCompRTSC</TD>
+</TR>
+
+<TR>
+<TD>Active State: Initial</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="orange" CELLBORDER="0" >
+<TR>
+<TD>productionStationPortInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>productionStationRole</TD>
+</TR>
+
+<TR>
+<TD>Active State: EvaluateOrder</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="seagreen1" CELLBORDER="0" >
+<TR>
+<TD>Variable Bindings:</TD>
+</TR>
+
+<TR>
+<TD>amount=-1</TD>
+
+<TD>processedOrderID=-1</TD>
+</TR>
+
+<TR>
+<TD>incomingOrderPsID=0</TD>
+
+<TD>ingredientID=-1</TD>
+</TR>
+
+<TR>
+<TD>evaluateOrderFailed=0</TD>
+
+<TD>ID=5</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="khaki2" CELLBORDER="0" >
+<TR>
+<TD>Clock Bindings:</TD>
+</TR>
+
+<TR>
+<TD>processingTime=500</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_noOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_orderForPS</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD COLSPAN="2" >
+<TABLE BGCOLOR="cornsilk1" CELLBORDER="0" >
+<TR>
+<TD>Connector between brokerPortInstance0 and productionStationPortInstance0</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+>
+];
+	"8"[fillcolor=lightgrey,label=<
+<TABLE BGCOLOR="bisque" CELLBORDER="0" >
+<TR>
+<TD COLSPAN="2" >BrokerProtocolCIC</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="grey" CELLBORDER="0" >
+<TR>
+<TD>brokerComponentInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>brokerCompRTSC</TD>
+</TR>
+
+<TR>
+<TD>Active State: Initial</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="orange" CELLBORDER="0" >
+<TR>
+<TD>brokerPortInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>brokerRole</TD>
+</TR>
+
+<TR>
+<TD><FONT COLOR = "red">Active Transition: init &#8594;ProcessOrderRequest</FONT></TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="seagreen1" CELLBORDER="0" >
+<TR>
+<TD>Variable Bindings:</TD>
+</TR>
+
+<TR>
+<TD><FONT COLOR = "red">provideOrderID=1</FONT></TD>
+
+<TD>provideAmount=-1</TD>
+</TR>
+
+<TR>
+<TD>provideIngredientID=-1</TD>
+
+<TD><FONT COLOR = "red">currentPsID=5</FONT></TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_doneOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_getOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+
+<TD>
+<TABLE BGCOLOR="grey" CELLBORDER="0" >
+<TR>
+<TD>productionStationComponentInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>productionStationCompRTSC</TD>
+</TR>
+
+<TR>
+<TD>Active State: Initial</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="orange" CELLBORDER="0" >
+<TR>
+<TD>productionStationPortInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>productionStationRole</TD>
+</TR>
+
+<TR>
+<TD>Active State: EvaluateOrder</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="seagreen1" CELLBORDER="0" >
+<TR>
+<TD>Variable Bindings:</TD>
+</TR>
+
+<TR>
+<TD>amount=-1</TD>
+
+<TD>processedOrderID=-1</TD>
+</TR>
+
+<TR>
+<TD>incomingOrderPsID=0</TD>
+
+<TD>ingredientID=-1</TD>
+</TR>
+
+<TR>
+<TD>evaluateOrderFailed=0</TD>
+
+<TD>ID=5</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="khaki2" CELLBORDER="0" >
+<TR>
+<TD>Clock Bindings:</TD>
+</TR>
+
+<TR>
+<TD>processingTime=500</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_noOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_orderForPS</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD COLSPAN="2" >
+<TABLE BGCOLOR="cornsilk1" CELLBORDER="0" >
+<TR>
+<TD>Connector between brokerPortInstance0 and productionStationPortInstance0</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+>
+];
+	"9"[fillcolor=lightgrey,label=<
+<TABLE BGCOLOR="bisque" CELLBORDER="0" >
+<TR>
+<TD COLSPAN="2" >BrokerProtocolCIC</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="grey" CELLBORDER="0" >
+<TR>
+<TD>brokerComponentInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>brokerCompRTSC</TD>
+</TR>
+
+<TR>
+<TD>Active State: Initial</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="orange" CELLBORDER="0" >
+<TR>
+<TD>brokerPortInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>brokerRole</TD>
+</TR>
+
+<TR>
+<TD><FONT COLOR = "red">Active State: ProcessOrderRequest</FONT></TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="seagreen1" CELLBORDER="0" >
+<TR>
+<TD>Variable Bindings:</TD>
+</TR>
+
+<TR>
+<TD>provideOrderID=1</TD>
+
+<TD>provideAmount=-1</TD>
+</TR>
+
+<TR>
+<TD>provideIngredientID=-1</TD>
+
+<TD>currentPsID=5</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_doneOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_getOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+
+<TD>
+<TABLE BGCOLOR="grey" CELLBORDER="0" >
+<TR>
+<TD>productionStationComponentInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>productionStationCompRTSC</TD>
+</TR>
+
+<TR>
+<TD>Active State: Initial</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="orange" CELLBORDER="0" >
+<TR>
+<TD>productionStationPortInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>productionStationRole</TD>
+</TR>
+
+<TR>
+<TD>Active State: EvaluateOrder</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="seagreen1" CELLBORDER="0" >
+<TR>
+<TD>Variable Bindings:</TD>
+</TR>
+
+<TR>
+<TD>amount=-1</TD>
+
+<TD>processedOrderID=-1</TD>
+</TR>
+
+<TR>
+<TD>incomingOrderPsID=0</TD>
+
+<TD>ingredientID=-1</TD>
+</TR>
+
+<TR>
+<TD>evaluateOrderFailed=0</TD>
+
+<TD>ID=5</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="khaki2" CELLBORDER="0" >
+<TR>
+<TD>Clock Bindings:</TD>
+</TR>
+
+<TR>
+<TD>processingTime=500</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_noOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_orderForPS</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD COLSPAN="2" >
+<TABLE BGCOLOR="cornsilk1" CELLBORDER="0" >
+<TR>
+<TD>Connector between brokerPortInstance0 and productionStationPortInstance0</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+>
+];
+	"10"[fillcolor=lightgrey,label=<
+<TABLE BGCOLOR="bisque" CELLBORDER="0" >
+<TR>
+<TD COLSPAN="2" >BrokerProtocolCIC</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="grey" CELLBORDER="0" >
+<TR>
+<TD>brokerComponentInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>brokerCompRTSC</TD>
+</TR>
+
+<TR>
+<TD>Active State: Initial</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="orange" CELLBORDER="0" >
+<TR>
+<TD>brokerPortInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>brokerRole</TD>
+</TR>
+
+<TR>
+<TD><FONT COLOR = "red">Active Transition: ProcessOrderRequest &#8594;Reset</FONT></TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="seagreen1" CELLBORDER="0" >
+<TR>
+<TD>Variable Bindings:</TD>
+</TR>
+
+<TR>
+<TD>provideOrderID=1</TD>
+
+<TD>provideAmount=-1</TD>
+</TR>
+
+<TR>
+<TD>provideIngredientID=-1</TD>
+
+<TD>currentPsID=5</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_doneOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_getOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+
+<TD>
+<TABLE BGCOLOR="grey" CELLBORDER="0" >
+<TR>
+<TD>productionStationComponentInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>productionStationCompRTSC</TD>
+</TR>
+
+<TR>
+<TD>Active State: Initial</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="orange" CELLBORDER="0" >
+<TR>
+<TD>productionStationPortInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>productionStationRole</TD>
+</TR>
+
+<TR>
+<TD>Active State: EvaluateOrder</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="seagreen1" CELLBORDER="0" >
+<TR>
+<TD>Variable Bindings:</TD>
+</TR>
+
+<TR>
+<TD>amount=-1</TD>
+
+<TD>processedOrderID=-1</TD>
+</TR>
+
+<TR>
+<TD>incomingOrderPsID=0</TD>
+
+<TD>ingredientID=-1</TD>
+</TR>
+
+<TR>
+<TD>evaluateOrderFailed=0</TD>
+
+<TD>ID=5</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="khaki2" CELLBORDER="0" >
+<TR>
+<TD>Clock Bindings:</TD>
+</TR>
+
+<TR>
+<TD>processingTime=500</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_noOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_orderForPS</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD COLSPAN="2" >
+<TABLE BGCOLOR="cornsilk1" CELLBORDER="0" >
+<TR>
+<TD>Connector between brokerPortInstance0 and productionStationPortInstance0</TD>
+</TR>
+
+<TR>
+<TD><FONT COLOR = "red"><FONT COLOR = "red">orderForPS(5, 1, -1, -1)</FONT> to productionStationPortInstance0</FONT></TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+>
+];
+	"11"[fillcolor=lightgrey,label=<
+<TABLE BGCOLOR="bisque" CELLBORDER="0" >
+<TR>
+<TD COLSPAN="2" >BrokerProtocolCIC</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="grey" CELLBORDER="0" >
+<TR>
+<TD>brokerComponentInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>brokerCompRTSC</TD>
+</TR>
+
+<TR>
+<TD>Active State: Initial</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="orange" CELLBORDER="0" >
+<TR>
+<TD>brokerPortInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>brokerRole</TD>
+</TR>
+
+<TR>
+<TD><FONT COLOR = "red">Active State: Reset</FONT></TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="seagreen1" CELLBORDER="0" >
+<TR>
+<TD>Variable Bindings:</TD>
+</TR>
+
+<TR>
+<TD>provideOrderID=1</TD>
+
+<TD>provideAmount=-1</TD>
+</TR>
+
+<TR>
+<TD>provideIngredientID=-1</TD>
+
+<TD>currentPsID=5</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_doneOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_getOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+
+<TD>
+<TABLE BGCOLOR="grey" CELLBORDER="0" >
+<TR>
+<TD>productionStationComponentInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>productionStationCompRTSC</TD>
+</TR>
+
+<TR>
+<TD>Active State: Initial</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="orange" CELLBORDER="0" >
+<TR>
+<TD>productionStationPortInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>productionStationRole</TD>
+</TR>
+
+<TR>
+<TD>Active State: EvaluateOrder</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="seagreen1" CELLBORDER="0" >
+<TR>
+<TD>Variable Bindings:</TD>
+</TR>
+
+<TR>
+<TD>amount=-1</TD>
+
+<TD>processedOrderID=-1</TD>
+</TR>
+
+<TR>
+<TD>incomingOrderPsID=0</TD>
+
+<TD>ingredientID=-1</TD>
+</TR>
+
+<TR>
+<TD>evaluateOrderFailed=0</TD>
+
+<TD>ID=5</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="khaki2" CELLBORDER="0" >
+<TR>
+<TD>Clock Bindings:</TD>
+</TR>
+
+<TR>
+<TD>processingTime=500</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_noOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_orderForPS</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD COLSPAN="2" >
+<TABLE BGCOLOR="cornsilk1" CELLBORDER="0" >
+<TR>
+<TD>Connector between brokerPortInstance0 and productionStationPortInstance0</TD>
+</TR>
+
+<TR>
+<TD>orderForPS(5, 1, -1, -1) to productionStationPortInstance0</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+>
+];
+	"12"[fillcolor=lightgrey,label=<
+<TABLE BGCOLOR="bisque" CELLBORDER="0" >
+<TR>
+<TD COLSPAN="2" >BrokerProtocolCIC</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="grey" CELLBORDER="0" >
+<TR>
+<TD>brokerComponentInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>brokerCompRTSC</TD>
+</TR>
+
+<TR>
+<TD>Active State: Initial</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="orange" CELLBORDER="0" >
+<TR>
+<TD>brokerPortInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>brokerRole</TD>
+</TR>
+
+<TR>
+<TD>Active State: Reset</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="seagreen1" CELLBORDER="0" >
+<TR>
+<TD>Variable Bindings:</TD>
+</TR>
+
+<TR>
+<TD>provideOrderID=1</TD>
+
+<TD>provideAmount=-1</TD>
+</TR>
+
+<TR>
+<TD>provideIngredientID=-1</TD>
+
+<TD>currentPsID=5</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_doneOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_getOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+
+<TD>
+<TABLE BGCOLOR="grey" CELLBORDER="0" >
+<TR>
+<TD>productionStationComponentInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>productionStationCompRTSC</TD>
+</TR>
+
+<TR>
+<TD>Active State: Initial</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="orange" CELLBORDER="0" >
+<TR>
+<TD>productionStationPortInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>productionStationRole</TD>
+</TR>
+
+<TR>
+<TD>Active State: EvaluateOrder</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="seagreen1" CELLBORDER="0" >
+<TR>
+<TD>Variable Bindings:</TD>
+</TR>
+
+<TR>
+<TD>amount=-1</TD>
+
+<TD>processedOrderID=-1</TD>
+</TR>
+
+<TR>
+<TD>incomingOrderPsID=0</TD>
+
+<TD>ingredientID=-1</TD>
+</TR>
+
+<TR>
+<TD>evaluateOrderFailed=0</TD>
+
+<TD>ID=5</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="khaki2" CELLBORDER="0" >
+<TR>
+<TD>Clock Bindings:</TD>
+</TR>
+
+<TR>
+<TD>processingTime=500</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_noOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_orderForPS</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD COLSPAN="2" >
+<TABLE BGCOLOR="cornsilk1" CELLBORDER="0" >
+<TR>
+<TD>Connector between brokerPortInstance0 and productionStationPortInstance0</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+>
+];
+	"13"[fillcolor=lightgrey,label=<
+<TABLE BGCOLOR="bisque" CELLBORDER="0" >
+<TR>
+<TD COLSPAN="2" >BrokerProtocolCIC</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="grey" CELLBORDER="0" >
+<TR>
+<TD>brokerComponentInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>brokerCompRTSC</TD>
+</TR>
+
+<TR>
+<TD>Active State: Initial</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="orange" CELLBORDER="0" >
+<TR>
+<TD>brokerPortInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>brokerRole</TD>
+</TR>
+
+<TR>
+<TD>Active State: Reset</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="seagreen1" CELLBORDER="0" >
+<TR>
+<TD>Variable Bindings:</TD>
+</TR>
+
+<TR>
+<TD>provideOrderID=1</TD>
+
+<TD>provideAmount=-1</TD>
+</TR>
+
+<TR>
+<TD>provideIngredientID=-1</TD>
+
+<TD>currentPsID=5</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_doneOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_getOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+
+<TD>
+<TABLE BGCOLOR="grey" CELLBORDER="0" >
+<TR>
+<TD>productionStationComponentInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>productionStationCompRTSC</TD>
+</TR>
+
+<TR>
+<TD>Active State: Initial</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="orange" CELLBORDER="0" >
+<TR>
+<TD>productionStationPortInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>productionStationRole</TD>
+</TR>
+
+<TR>
+<TD>Active State: EvaluateOrder</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="seagreen1" CELLBORDER="0" >
+<TR>
+<TD>Variable Bindings:</TD>
+</TR>
+
+<TR>
+<TD>amount=-1</TD>
+
+<TD>processedOrderID=-1</TD>
+</TR>
+
+<TR>
+<TD>incomingOrderPsID=0</TD>
+
+<TD>ingredientID=-1</TD>
+</TR>
+
+<TR>
+<TD>evaluateOrderFailed=0</TD>
+
+<TD>ID=5</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="khaki2" CELLBORDER="0" >
+<TR>
+<TD>Clock Bindings:</TD>
+</TR>
+
+<TR>
+<TD>processingTime=500</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_noOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_orderForPS</TD>
+</TR>
+
+<TR>
+<TD><FONT COLOR = "red">orderForPS(5, 1, -1, -1)</FONT></TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD COLSPAN="2" >
+<TABLE BGCOLOR="cornsilk1" CELLBORDER="0" >
+<TR>
+<TD>Connector between brokerPortInstance0 and productionStationPortInstance0</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+>
+];
+	"14"[fillcolor=lightgrey,label=<
+<TABLE BGCOLOR="bisque" CELLBORDER="0" >
+<TR>
+<TD COLSPAN="2" >BrokerProtocolCIC</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="grey" CELLBORDER="0" >
+<TR>
+<TD>brokerComponentInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>brokerCompRTSC</TD>
+</TR>
+
+<TR>
+<TD>Active State: Initial</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="orange" CELLBORDER="0" >
+<TR>
+<TD>brokerPortInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>brokerRole</TD>
+</TR>
+
+<TR>
+<TD><FONT COLOR = "red">Active Transition: Reset &#8594;init</FONT></TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="seagreen1" CELLBORDER="0" >
+<TR>
+<TD>Variable Bindings:</TD>
+</TR>
+
+<TR>
+<TD>provideOrderID=1</TD>
+
+<TD>provideAmount=-1</TD>
+</TR>
+
+<TR>
+<TD>provideIngredientID=-1</TD>
+
+<TD>currentPsID=5</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_doneOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_getOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+
+<TD>
+<TABLE BGCOLOR="grey" CELLBORDER="0" >
+<TR>
+<TD>productionStationComponentInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>productionStationCompRTSC</TD>
+</TR>
+
+<TR>
+<TD>Active State: Initial</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="orange" CELLBORDER="0" >
+<TR>
+<TD>productionStationPortInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>productionStationRole</TD>
+</TR>
+
+<TR>
+<TD>Active State: EvaluateOrder</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="seagreen1" CELLBORDER="0" >
+<TR>
+<TD>Variable Bindings:</TD>
+</TR>
+
+<TR>
+<TD>amount=-1</TD>
+
+<TD>processedOrderID=-1</TD>
+</TR>
+
+<TR>
+<TD>incomingOrderPsID=0</TD>
+
+<TD>ingredientID=-1</TD>
+</TR>
+
+<TR>
+<TD>evaluateOrderFailed=0</TD>
+
+<TD>ID=5</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="khaki2" CELLBORDER="0" >
+<TR>
+<TD>Clock Bindings:</TD>
+</TR>
+
+<TR>
+<TD>processingTime=500</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_noOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_orderForPS</TD>
+</TR>
+
+<TR>
+<TD>orderForPS(5, 1, -1, -1)</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD COLSPAN="2" >
+<TABLE BGCOLOR="cornsilk1" CELLBORDER="0" >
+<TR>
+<TD>Connector between brokerPortInstance0 and productionStationPortInstance0</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+>
+];
+	"15"[fillcolor=lightgrey,label=<
+<TABLE BGCOLOR="bisque" CELLBORDER="0" >
+<TR>
+<TD COLSPAN="2" >BrokerProtocolCIC</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="grey" CELLBORDER="0" >
+<TR>
+<TD>brokerComponentInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>brokerCompRTSC</TD>
+</TR>
+
+<TR>
+<TD>Active State: Initial</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="orange" CELLBORDER="0" >
+<TR>
+<TD>brokerPortInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>brokerRole</TD>
+</TR>
+
+<TR>
+<TD><FONT COLOR = "red">Active State: init</FONT></TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="seagreen1" CELLBORDER="0" >
+<TR>
+<TD>Variable Bindings:</TD>
+</TR>
+
+<TR>
+<TD>provideOrderID=1</TD>
+
+<TD>provideAmount=-1</TD>
+</TR>
+
+<TR>
+<TD>provideIngredientID=-1</TD>
+
+<TD>currentPsID=5</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_doneOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_getOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+
+<TD>
+<TABLE BGCOLOR="grey" CELLBORDER="0" >
+<TR>
+<TD>productionStationComponentInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>productionStationCompRTSC</TD>
+</TR>
+
+<TR>
+<TD>Active State: Initial</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="orange" CELLBORDER="0" >
+<TR>
+<TD>productionStationPortInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>productionStationRole</TD>
+</TR>
+
+<TR>
+<TD>Active State: EvaluateOrder</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="seagreen1" CELLBORDER="0" >
+<TR>
+<TD>Variable Bindings:</TD>
+</TR>
+
+<TR>
+<TD>amount=-1</TD>
+
+<TD>processedOrderID=-1</TD>
+</TR>
+
+<TR>
+<TD>incomingOrderPsID=0</TD>
+
+<TD>ingredientID=-1</TD>
+</TR>
+
+<TR>
+<TD>evaluateOrderFailed=0</TD>
+
+<TD>ID=5</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="khaki2" CELLBORDER="0" >
+<TR>
+<TD>Clock Bindings:</TD>
+</TR>
+
+<TR>
+<TD>processingTime=500</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_noOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_orderForPS</TD>
+</TR>
+
+<TR>
+<TD>orderForPS(5, 1, -1, -1)</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD COLSPAN="2" >
+<TABLE BGCOLOR="cornsilk1" CELLBORDER="0" >
+<TR>
+<TD>Connector between brokerPortInstance0 and productionStationPortInstance0</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+>
+];
+	"16"[fillcolor=lightgrey,label=<
+<TABLE BGCOLOR="bisque" CELLBORDER="0" >
+<TR>
+<TD COLSPAN="2" >BrokerProtocolCIC</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="grey" CELLBORDER="0" >
+<TR>
+<TD>brokerComponentInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>brokerCompRTSC</TD>
+</TR>
+
+<TR>
+<TD>Active State: Initial</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="orange" CELLBORDER="0" >
+<TR>
+<TD>brokerPortInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>brokerRole</TD>
+</TR>
+
+<TR>
+<TD>Active State: init</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="seagreen1" CELLBORDER="0" >
+<TR>
+<TD>Variable Bindings:</TD>
+</TR>
+
+<TR>
+<TD>provideOrderID=1</TD>
+
+<TD>provideAmount=-1</TD>
+</TR>
+
+<TR>
+<TD>provideIngredientID=-1</TD>
+
+<TD>currentPsID=5</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_doneOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_getOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+
+<TD>
+<TABLE BGCOLOR="grey" CELLBORDER="0" >
+<TR>
+<TD>productionStationComponentInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>productionStationCompRTSC</TD>
+</TR>
+
+<TR>
+<TD>Active State: Initial</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="orange" CELLBORDER="0" >
+<TR>
+<TD>productionStationPortInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>productionStationRole</TD>
+</TR>
+
+<TR>
+<TD><FONT COLOR = "red">Active Transition: EvaluateOrder &#8594;EvaluateOrder</FONT></TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="seagreen1" CELLBORDER="0" >
+<TR>
+<TD>Variable Bindings:</TD>
+</TR>
+
+<TR>
+<TD>amount=-1</TD>
+
+<TD><FONT COLOR = "red">processedOrderID=1</FONT></TD>
+</TR>
+
+<TR>
+<TD><FONT COLOR = "red">incomingOrderPsID=5</FONT></TD>
+
+<TD>ingredientID=-1</TD>
+</TR>
+
+<TR>
+<TD>evaluateOrderFailed=0</TD>
+
+<TD>ID=5</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="khaki2" CELLBORDER="0" >
+<TR>
+<TD>Clock Bindings:</TD>
+</TR>
+
+<TR>
+<TD>processingTime=500</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_noOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_orderForPS</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD COLSPAN="2" >
+<TABLE BGCOLOR="cornsilk1" CELLBORDER="0" >
+<TR>
+<TD>Connector between brokerPortInstance0 and productionStationPortInstance0</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+>
+];
+	"17"[fillcolor=lightgrey,label=<
+<TABLE BGCOLOR="bisque" CELLBORDER="0" >
+<TR>
+<TD COLSPAN="2" >BrokerProtocolCIC</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="grey" CELLBORDER="0" >
+<TR>
+<TD>brokerComponentInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>brokerCompRTSC</TD>
+</TR>
+
+<TR>
+<TD>Active State: Initial</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="orange" CELLBORDER="0" >
+<TR>
+<TD>brokerPortInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>brokerRole</TD>
+</TR>
+
+<TR>
+<TD>Active State: init</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="seagreen1" CELLBORDER="0" >
+<TR>
+<TD>Variable Bindings:</TD>
+</TR>
+
+<TR>
+<TD>provideOrderID=1</TD>
+
+<TD>provideAmount=-1</TD>
+</TR>
+
+<TR>
+<TD>provideIngredientID=-1</TD>
+
+<TD>currentPsID=5</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_doneOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_getOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+
+<TD>
+<TABLE BGCOLOR="grey" CELLBORDER="0" >
+<TR>
+<TD>productionStationComponentInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>productionStationCompRTSC</TD>
+</TR>
+
+<TR>
+<TD>Active State: Initial</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="orange" CELLBORDER="0" >
+<TR>
+<TD>productionStationPortInstance0</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="lightblue" CELLBORDER="0" >
+<TR>
+<TD>productionStationRole</TD>
+</TR>
+
+<TR>
+<TD><FONT COLOR = "red">Active State: EvaluateOrder</FONT></TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="seagreen1" CELLBORDER="0" >
+<TR>
+<TD>Variable Bindings:</TD>
+</TR>
+
+<TR>
+<TD>amount=-1</TD>
+
+<TD>processedOrderID=1</TD>
+</TR>
+
+<TR>
+<TD>incomingOrderPsID=5</TD>
+
+<TD>ingredientID=-1</TD>
+</TR>
+
+<TR>
+<TD>evaluateOrderFailed=0</TD>
+
+<TD>ID=5</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="khaki2" CELLBORDER="0" >
+<TR>
+<TD>Clock Bindings:</TD>
+</TR>
+
+<TR>
+<TD>processingTime=500</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_noOrder</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<TABLE BGCOLOR="palegoldenrod" CELLBORDER="0" >
+<TR>
+<TD>buffer_for_orderForPS</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD COLSPAN="2" >
+<TABLE BGCOLOR="cornsilk1" CELLBORDER="0" >
+<TR>
+<TD>Connector between brokerPortInstance0 and productionStationPortInstance0</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+>
+];
+"0"->"1"[label="action"]
+"1"->"2"[label="action"]
+"2"->"3"[label="delay"]
+"3"->"4"[label="action"]
+"4"->"5"[label="action"]
+"5"->"6"[label="action"]
+"6"->"7"[label="action"]
+"7"->"8"[label="action"]
+"8"->"9"[label="action"]
+"9"->"10"[label="action"]
+"10"->"11"[label="action"]
+"11"->"12"[label="action"]
+"12"->"13"[label="action"]
+"13"->"14"[label="action"]
+"14"->"15"[label="action"]
+"15"->"16"[label="action"]
+"16"->"17"[label="action"]
+}
