@@ -316,7 +316,7 @@
             <diagramLabel
                 href="../../org.muml.pim.coordinationspecification.common/model/coordinationspecification.gmfgraph#MessageBufferOverflowAvoidanceStrategyLabel"/>
             <viewExpression
-                body="'Discard: '.concat(if (self.bufferOverflowAvoidanceStrategy = BufferOverflowAvoidanceStrategy::DISCARD_INCOMING_MESSAGE)&#xD;&#xA;then 'Incoming Msgs' else 'Oldest Msgs' endif)"/>
+                body="'Discard: '.concat(&#xA;&#x9;if (self.bufferOverflowAvoidanceStrategy = BufferOverflowAvoidanceStrategy::DISCARD_INCOMING_MESSAGE) then&#xA;&#x9;&#x9;'Incoming Msgs'&#xA;&#x9;else&#xA;&#x9;&#x9;if (self.bufferOverflowAvoidanceStrategy = BufferOverflowAvoidanceStrategy::DISCARD_OLDEST_MESSAGE_IN_BUFFER) then&#xA;&#x9;&#x9;&#x9;'Oldest Msgs'&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;if (self.bufferOverflowAvoidanceStrategy = BufferOverflowAvoidanceStrategy::NEVER_HAPPENS) then&#xA;&#x9;&#x9;&#x9;&#x9;'Never Happens'&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;'&lt;Unknown>'&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;endif&#xA;&#x9;endif&#xA;)"/>
           </labelMappings>
           <labelMappings
               xsi:type="gmfmap:ExpressionLabelMapping">
