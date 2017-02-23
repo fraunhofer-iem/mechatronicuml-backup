@@ -84,7 +84,7 @@ transformation RTSCScaleTimeValuesNormalization(in input:muml_rtsc, out output:m
 	        	};
 	        }
 	        else {
-	        	result := self.timeValue.value.map transform()/*.deepclone()*/.oclAsType(core::expressions::Expression);	
+	        	result := self.timeValue.value.map transform().deepclone().oclAsType(core::expressions::Expression);	
 	        }endif;
 		}
 	        
