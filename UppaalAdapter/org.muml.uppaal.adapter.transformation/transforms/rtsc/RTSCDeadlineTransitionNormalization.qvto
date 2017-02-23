@@ -1,5 +1,5 @@
 import transforms.lib.RTSCUtil;
-import ImplicitCopy;
+import org.muml.ImplicitCopy;
 import transforms.lib.MultiMappingUtil;
 
 /* Normalizes transitions with deadlines by adding an intermediate state.

@@ -8,7 +8,7 @@ import transforms.lib.MUML2UPPAAL.Async.Types;
 import transforms.lib.MUML2UPPAAL.Async.Functions;
 
 //import transforms.lib.MUML2MUML;
-import ImplicitCopy;
+import org.muml.ImplicitCopy;
  
 library Async;
  

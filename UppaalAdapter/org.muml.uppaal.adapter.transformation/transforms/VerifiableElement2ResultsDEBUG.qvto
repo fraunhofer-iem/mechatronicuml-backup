@@ -3,7 +3,7 @@ import transforms.UPPAAL2Trace;
 import transforms.UPPAALTrace2MUMLTrace;
 import transforms.lib.ExternalizedStrings;
 import transforms.mtctl.MTCTLEvaluateResultTransformation;
-import ImplicitCopy;
+import org.muml.ImplicitCopy;
 
 modeltype storydriven uses 'http://www.muml.org/core/1.0.0';
 

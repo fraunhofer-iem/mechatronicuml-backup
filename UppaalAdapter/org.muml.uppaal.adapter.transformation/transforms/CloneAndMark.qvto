@@ -1,5 +1,5 @@
 //import transforms.lib.MUML2MUML;
-import ImplicitCopy;
+import org.muml.ImplicitCopy;
 
 modeltype modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';

@@ -1,4 +1,4 @@
-import ImplicitCopy;
+import org.muml.ImplicitCopy;
 import org.muml.uppaal.adapter._blackbox.TimeLibUnit;
 
 modeltype muml_protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');

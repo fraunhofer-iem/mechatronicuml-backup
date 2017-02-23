@@ -1,4 +1,4 @@
-import ImplicitCopy;
+import org.muml.ImplicitCopy;
 import transforms.lib.RTSCUtil;
 import transforms.lib.MultiMappingUtil;
 import transforms.lib.ExpressionUtil;

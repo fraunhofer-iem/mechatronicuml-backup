@@ -1,5 +1,5 @@
 //import transforms.lib.MUML2MUML;
-import ImplicitCopy;
+import org.muml.ImplicitCopy;
 import transforms.lib.ExternalizedStrings;
 import transforms.lib.RTSCUtil;
 import org.muml.uppaal.adapter._blackbox.CharSubstitutionUnit;

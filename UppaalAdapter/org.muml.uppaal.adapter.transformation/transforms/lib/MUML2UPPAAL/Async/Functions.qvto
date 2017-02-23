@@ -4,7 +4,7 @@ import transforms.lib.MUML2UPPAAL.Expressions;
 import transforms.lib.MUML2UPPAAL.Async.Types;
 import transforms.lib.MUML2UPPAAL.Async.Variables;
 
-import ImplicitCopy;
+import org.muml.ImplicitCopy;
 
 import transforms.lib.ExternalizedStrings;
 

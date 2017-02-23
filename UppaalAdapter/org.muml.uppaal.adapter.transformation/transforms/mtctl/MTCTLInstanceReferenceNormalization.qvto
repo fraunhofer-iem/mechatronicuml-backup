@@ -1,4 +1,4 @@
-import ImplicitCopy;
+import org.muml.ImplicitCopy;
 import org.muml.uppaal.adapter._blackbox.MtctlLibrary;
 
 modeltype muml_cic uses pim::instance('http://www.muml.org/pim/1.0.0');

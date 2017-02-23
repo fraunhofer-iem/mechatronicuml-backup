@@ -1,4 +1,4 @@
-import ImplicitCopy;
+import org.muml.ImplicitCopy;
 
 /* Enables 1:n mappings for specific MUML model elements */
 library MultiMappingUtil;

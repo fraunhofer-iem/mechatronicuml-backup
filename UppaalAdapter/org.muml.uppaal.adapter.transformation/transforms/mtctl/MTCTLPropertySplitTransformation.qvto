@@ -1,4 +1,4 @@
-import ImplicitCopy;
+import org.muml.ImplicitCopy;
 
 modeltype muml_protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
 modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');

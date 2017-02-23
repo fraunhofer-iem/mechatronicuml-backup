@@ -1,5 +1,5 @@
 import transforms.lib.MUML2UPPAAL.Types;
-import ImplicitCopy;
+import org.muml.ImplicitCopy;
 import transforms.lib.MUML2UPPAAL.Expressions;
 
 library Binding;
