@@ -52,42 +52,41 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 		}
 		
 		Transition transition = (Transition) element.getAdapter(EObject.class);
+		Synchronization synchronization = transition.getSynchronization();
+		Expression synchronizationExpression = null;
+		if (synchronization != null) {
+			synchronizationExpression = synchronization.getSelectorExpression();
+		}
+		Message message = transition.getRaiseMessageEvent() == null ? null : transition.getRaiseMessageEvent().getMessage();
 
 		printString = printString.replaceAll("\\{clockConstraintExpression}", getClockConstraintExpression(transition));
-		
-		printString = printString.replaceAll("\\{guardExpression\\}",
-				getGuardExpression(transition));
-
-		printString = printString.replaceAll("\\{receivingTransSchemaCondition\\}",
-				getReceivingCommunicationSchemaConstraint(transition));
-		
-		printString = printString.replaceAll("\\{sendingTransSchemaCondition\\}",
-				getSendingCommunicationSchemaConstraint(transition));
-		
-		printString = printString.replaceAll("\\{transSchemaTermCondition\\}",
-				getTransferCommunicationTermConstraint(transition));
-
-		Message message = transition.getRaiseMessageEvent() == null ? null
-				: transition.getRaiseMessageEvent().getMessage();
-
-		printString = printString.replaceAll(
-				"\\{raiseMessageEventParameterBinding\\}",
-				getMessageParameterBindingExpression(transition, message));
-		
-		Synchronization synchronization = transition.getSynchronization();
-		Expression expression = null;
-		if (synchronization != null) {
-			expression = synchronization.getSelectorExpression();
-		}
-		
-		printString = printString.replaceAll(
-				"\\{synchronizationExpression\\}",
-				getSynchronizationExpression(synchronization, expression));
+		printString = printString.replaceAll("\\{guardExpression\\}", getGuardExpression(transition));
+		printString = printString.replaceAll("\\{receivingTransSchemaCondition\\}", getReceivingCommunicationSchemaConstraint(transition));
+		printString = printString.replaceAll("\\{sendingTransSchemaCondition\\}", getSendingCommunicationSchemaConstraint(transition));
+		printString = printString.replaceAll("\\{transSchemaTermCondition\\}", getTransferCommunicationTermConstraint(transition));
+		printString = printString.replaceAll("\\{raiseMessageEventParameterBinding\\}", getMessageParameterBindingExpression(transition, message));
+		printString = printString.replaceAll("\\{synchronizationExpression\\}", getSynchronizationExpression(synchronization, synchronizationExpression));
+		printString = printString.replaceAll("\\{receivingRetryAfterExpression}", getReceivingRetryAfterExpression(transition));
+		printString = printString.replaceAll("\\{sendingRetryAfterExpression}", getSendingRetryAfterExpression(transition));
 		
 		// #1001: Add manual linebreaks to prevent too long lines
 		printString = ensureMaxLineLength(printString, MAX_LINELENGTH);
 		printString = ensureMinLineLength(printString, MIN_LINELENGTH);
 		return printString;
+	}
+	private String getSendingRetryAfterExpression(Transition transition) {
+		AsynchronousMessageEvent raiseMsg = transition.getRaiseMessageEvent();
+		if (raiseMsg != null && raiseMsg.getOneToManyCommunicationSchema() != null && raiseMsg.getOneToManyCommunicationSchema().getRetryAfter() != null) {
+			return ParserUtilities.serializeTimeValue(raiseMsg.getOneToManyCommunicationSchema().getRetryAfter(), transition);
+		}
+		return "";
+	}
+	private String getReceivingRetryAfterExpression(Transition transition) {
+		AsynchronousMessageEvent triggerMsg = transition.getTriggerMessageEvent();
+		if (triggerMsg != null && triggerMsg.getOneToManyCommunicationSchema() != null && triggerMsg.getOneToManyCommunicationSchema().getRetryAfter() != null) {
+			return ParserUtilities.serializeTimeValue(triggerMsg.getOneToManyCommunicationSchema().getRetryAfter(), transition);
+		}
+		return "";
 	}
 	private String ensureMinLineLength(String printString, int minLinelength) {
 		StringBuffer sb = new StringBuffer();
