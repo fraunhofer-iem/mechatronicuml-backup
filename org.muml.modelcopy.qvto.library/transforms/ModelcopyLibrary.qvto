@@ -1,27 +1,19 @@
-//import org.muml.modelcopy.qvto._library.ModelcopyBlackbox;
+import org.muml.modelcopy.qvto._library.ModelcopyBlackbox;
 import CreateChangeDescription;
 
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 modeltype change uses 'http://www.eclipse.org/emf/2003/Change';
 
-library ModelcopyLibrary;
+library ModelcopyLibrary access CreateChangeDescription;
 
-mapping Element::create() : Element {
-	init {
-		result := self.map create(null);
-	}
-}
-
-mapping Element::create(context : OclAny) : Element {
-	init {
-	if(self.oclAsType(EObject).eResource().toString().matches("platform:/plugin")) then{
-		result:=self.oclAsType(EObject);
-	}else{
-		var eclass : ecore::EClass := self.oclAsType(EObject).eClass();
-		var factory : ecore::EFactory := eclass.ePackage.eFactoryInstance;
-		result := factory.create(self.oclAsType(EObject).eClass());
-		}endif;
-	}
+helper Element::create(context : OclAny) : Element {
+	if(self.oclAsType(EObject).eResource().toString().matches("platform:/plugin")) {
+		return self.oclAsType(EObject);
+	};
+	
+	var eclass : ecore::EClass := self.oclAsType(EObject).eClass();
+	var factory : ecore::EFactory := eclass.ePackage.eFactoryInstance;
+	return factory.create(self.oclAsType(EObject).eClass());
 }
 
 helper Element :: setValues(f : EStructuralFeature, values : Sequence(OclAny)) {
@@ -33,10 +25,11 @@ helper Element :: setValues(f : EStructuralFeature, values : Sequence(OclAny)) {
 	var objectChange = desc.objectChanges->first();
 	var featureChange = objectChange.value->first();
 	var listChange = featureChange.listChanges->first();
-		
+	
+	listChange.index := 0;
 	featureChange.feature := f;
 	objectChange.key := self.oclAsType(EObject);
-	
+		
 	if (f.many) {
 		listChange.referenceValues := values.oclAsType(EObject);
 		featureChange.listChanges := listChange;
@@ -72,9 +65,10 @@ query Element :: getValues(feature : EStructuralFeature) : Sequence(OclAny) {
 mapping Element::transform() : Element {
 	init {
 		if (result.oclIsUndefined()) {
-			result := self.map create();
+			result := self.create(null);
 		}
 	}
+	
 	var element := self.oclAsType(EObject);
 	element.eClass().eAllReferences->select(f | f.isValidFeature())->forEach(f) {
 		result.setValues(f, element.getValues(f)[Element].map transform());
@@ -88,7 +82,7 @@ mapping Element::transform() : Element {
 mapping Element::transformWithContext(context : OclAny) : Element {
 	init {
 		if (result.oclIsUndefined()) {
-			result := self.map create(context);
+			result := self.create(context);
 		}
 	}
 	var element := self.oclAsType(EObject);
