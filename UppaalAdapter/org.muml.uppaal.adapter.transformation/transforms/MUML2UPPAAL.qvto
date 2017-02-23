@@ -242,7 +242,7 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 			.discretePortInstances()
 			->receiverMessageBuffer.size()
 			->max();
-		log("getMaximalNumberOfBuffersPerDiscretePort: " + maximum.toString());
+		--log("getMaximalNumberOfBuffersPerDiscretePort: " + maximum.toString());
 		return maximum;
 	}	
 	
