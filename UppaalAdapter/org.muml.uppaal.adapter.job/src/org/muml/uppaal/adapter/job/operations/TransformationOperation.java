@@ -114,7 +114,7 @@ public class TransformationOperation implements IWorkspaceRunnable {
 				IProgressMonitor loadMonitor = subMonitor.newChild(20);
 				status = loadTransformation(uri, loadMonitor); //(statically) load appropriate transformation
 								
-				if(!status.isOK()) {
+				if(status.getSeverity() == IStatus.ERROR) {
 					// re-initialize the transformation executor when the compilation fails
 					// this ensures a new compilation and allows bugfixes to be considered
 					forgetTransformation(uri);
