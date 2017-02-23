@@ -248,7 +248,7 @@ public class NavigationFeaturePropertyEditor extends
 		}
 		updateTitle();
 		
-		if (value != null) {
+		if (value != null && navigatedEditor != null && navigatedEditor.getSection() != null) {
 			navigatedEditor.getSection().setExpanded(true);
 		}
 	}
