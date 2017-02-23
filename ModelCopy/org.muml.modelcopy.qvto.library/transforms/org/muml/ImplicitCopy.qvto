@@ -4,22 +4,14 @@ import org.muml.modelcopy.qvto._library.ImplicitCopyBlackbox;
 
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 
-mapping Element::create() : Element {
-	init {
-		result := self.map create(null);
-	}
-}
-
-mapping Element::create(context : OclAny) : Element {
-	init {
-	if(self.oclAsType(EObject).eResource().toString().matches("platform:/plugin")) then{
-		result:=self.oclAsType(EObject);
-	}else{
-		var eclass : ecore::EClass := self.oclAsType(EObject).eClass();
-		var factory : ecore::EFactory := eclass.ePackage.eFactoryInstance;
-		result := factory.create(self.oclAsType(EObject).eClass());
-		}endif;
-	}
+helper Element::create(context : OclAny) : Element {
+	if(self.oclAsType(EObject).eResource().toString().matches("platform:/plugin")) {
+		return self.oclAsType(EObject);
+	};
+	
+	var eclass : ecore::EClass := self.oclAsType(EObject).eClass();
+	var factory : ecore::EFactory := eclass.ePackage.eFactoryInstance;
+	return factory.create(self.oclAsType(EObject).eClass());
 }
 
 query Element :: getValues(feature : EStructuralFeature) : Sequence(OclAny) {
@@ -39,7 +31,7 @@ query Element :: getValues(feature : EStructuralFeature) : Sequence(OclAny) {
 mapping Element::transform() : Element {
 	init {
 		if (result.oclIsUndefined()) {
-			result := self.map create();
+			result := self.create(null);
 		}
 	}
 	var element := self.oclAsType(EObject);
@@ -55,7 +47,7 @@ mapping Element::transform() : Element {
 mapping Element::transformWithContext(context : OclAny) : Element {
 	init {
 		if (result.oclIsUndefined()) {
-			result := self.map create(context);
+			result := self.create(context);
 		}
 	}
 	var element := self.oclAsType(EObject);

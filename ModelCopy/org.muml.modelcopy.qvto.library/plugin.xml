@@ -18,7 +18,7 @@
        point="org.eclipse.m2m.qvt.oml.runtime.qvtTransformation">
     <library
           file="transforms/org/muml/ImplicitCopy.qvto"
-          id="ImplicitCopy">
+          id="org.muml.ImplicitCopy">
     </library>
  </extension>
 </plugin>
