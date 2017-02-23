@@ -161,6 +161,10 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		else if(self.oclIsKindOf(muml_behavior::Operation)) {
 			resolvingSequence := self.invresolve(muml_behavior::Operation);
 		};
+		
+		-- remove 'self' and duplicates
+		resolvingSequence := resolvingSequence->excluding(self)->asSet()->asSequence();
+		
 		if(resolvingSequence->size() > 0) {
 			var returnValue : Boolean := false;
 			resolvingSequence->forEach(variable) {				
@@ -210,8 +214,11 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		var allRoleStatechartsBeforHierarchyNormalization := getAllDiscretePortOrRoleRTSCsBeforHierarchyNormalization();		
 		
 		return allRoleStatechartsBeforHierarchyNormalization
-			->select(rtsc : RealtimeStatechart | not rtsc.behavioralElement.oclIsUndefined() and rtsc.behavioralElement.oclIsKindOf(DiscreteInteractionEndpoint))
-				.behavioralElement.oclAsType(DiscreteInteractionEndpoint).subroleBehavior.oclAsType(RealtimeStatechart);
+			->select(rtsc : RealtimeStatechart | 
+				not rtsc.behavioralElement.oclIsUndefined() 
+				and rtsc.behavioralElement.oclIsKindOf(DiscreteInteractionEndpoint)
+				and not rtsc.behavioralElement.oclAsType(DiscreteInteractionEndpoint).subroleBehavior.oclIsUndefined()
+			).behavioralElement.oclAsType(DiscreteInteractionEndpoint).subroleBehavior.oclAsType(RealtimeStatechart);
 	}
 	
 	query cicToVerify() : ComponentInstanceConfiguration {
