@@ -1,5 +1,5 @@
 library PatternProtocolCommon;
-import ImplicitCopy;
+import org.muml.ImplicitCopy;
 modeltype common uses core::expressions::common('http://www.muml.org/core/1.0.0');
 modeltype PimPackage uses pim('http://www.muml.org/pim/1.0.0');
 modeltype ComponentPackage uses pim::component('http://www.muml.org/pim/1.0.0');
@@ -37,38 +37,28 @@ query getTypesCategory(theRootNode : RootNode) : ModelElementCategory {
 }
 
 
-mapping Role :: transform() : EObject {
-	init {
-		result := self.map create();
-	}
+mapping Role :: transform() : Role {
 	
-	var resultingRole : Role := result.oclAsType(Role);
-	resultingRole.behavior := self.behavior.map transform().oclAsType(Behavior);
-	resultingRole.senderMessageTypes := self.senderMessageTypes.map transform().oclAsType(MessageType);
-	resultingRole.receiverMessageTypes := self.receiverMessageTypes.map transform().oclAsType(MessageType);
-	resultingRole.coordinatorBehavior := self.coordinatorBehavior.map transform().oclAsType(Behavior);
-	resultingRole.subroleBehavior := self.subroleBehavior.map transform().oclAsType(Behavior);
-	resultingRole.receiverMessageBuffer := self.receiverMessageBuffer.map transform().oclAsType(MessageBuffer);
-	resultingRole.cardinality := self.cardinality.map transform().oclAsType(Cardinality);
+	behavior := self.behavior.map transform().oclAsType(Behavior);
+	senderMessageTypes := self.senderMessageTypes.map transform().oclAsType(MessageType);
+	receiverMessageTypes := self.receiverMessageTypes.map transform().oclAsType(MessageType);
+	coordinatorBehavior := self.coordinatorBehavior.map transform().oclAsType(Behavior);
+	subroleBehavior := self.subroleBehavior.map transform().oclAsType(Behavior);
+	receiverMessageBuffer := self.receiverMessageBuffer.map transform().oclAsType(MessageBuffer);
+	cardinality := self.cardinality.map transform().oclAsType(Cardinality);
 
-	var element := self.oclAsType(EObject);
-	element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
-		setValues(result, f, getValues(element, f));
+	self.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+		setValues(result, f, self.getValues(f));
 	};
 }
 
-mapping RoleConnector :: transform() : EObject {
-	init {
-		result := self.map create();
-	}
+mapping RoleConnector :: transform() : RoleConnector {
 	
-	var resultingConnector : RoleConnector := result.oclAsType(RoleConnector);
-	resultingConnector.connectorEndpoints := self.connectorEndpoints.map transform().oclAsType(ConnectorEndpoint);
-	resultingConnector.connectorQualityOfServiceAssumptions := self.connectorQualityOfServiceAssumptions.map transform().oclAsType(ConnectorQualityOfServiceAssumptions);
+	connectorEndpoints := self.connectorEndpoints.map transform().oclAsType(ConnectorEndpoint);
+	connectorQualityOfServiceAssumptions := self.connectorQualityOfServiceAssumptions.map transform().oclAsType(ConnectorQualityOfServiceAssumptions);
 	
-	var element := self.oclAsType(EObject);
-	element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
-		setValues(result, f, getValues(element, f));
+	self.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+		setValues(result, f, self.getValues(f));
 	};
 }
 
@@ -80,33 +70,13 @@ init{
 
 
 // override lib because of timestamp naming
-mapping MessageTypeRepository::transform(): EObject  {
-	init {
-		result := self.map create();
-	}
-	
-	var element := self.oclAsType(EObject);
-	element.eClass().eAllReferences->select(f | f.isValidFeature())->forEach(f) {
-		setValues(result, f, getValues(element, f).map transform());
-	};
-	element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
-		setValues(result, f, getValues(element, f));
-	};
-	result.oclAsType(core::NamedElement).name := result.oclAsType(core::NamedElement).name + timeStamp;
+mapping MessageTypeRepository::transform(): MessageTypeRepository inherits Element::transform  {
+
+	name := name + timeStamp;
 }
 // override lib because of timestamp naming
-mapping MessageType::transform(): EObject  {
-	init {
-		result := self.map create();
-	}
+mapping MessageType::transform(): MessageType inherits Element::transform  {
 	
-	var element := self.oclAsType(EObject);
-	element.eClass().eAllReferences->select(f | f.isValidFeature())->forEach(f) {
-		setValues(result, f, getValues(element, f).map transform());
-	};
-	element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
-		setValues(result, f, getValues(element, f));
-	};
-	result.oclAsType(core::NamedElement).name := result.oclAsType(core::NamedElement).name + timeStamp;
+	name := name + timeStamp;
 }
 

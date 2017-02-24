@@ -59,9 +59,10 @@ main()
 	 	rootOfNewModel.categories += cat.map transform().oclAsType(ModelElementCategory);
 	 	}
 	 	else {
-	 		var category : ModelElementCategory := cat.map create().oclAsType(ModelElementCategory);
-	 		category.name := cat.name;
-	 		category.key := cat.key;
+	 		var category : ModelElementCategory := object ModelElementCategory {
+	 			name := cat.name;
+	 			key := cat.key;
+	 		};
 	 		rootOfNewModel.categories += category;
 	 	};
 	 	
@@ -117,21 +118,22 @@ mapping RealtimeStatechart::create():EObject{
 	}
 	
 
+mapping PrimitiveDataType::transform(): PrimitiveDataType
+	disjuncts PrimitiveDataType::PrimitiveDataType2Self, PrimitiveDataType::DefaultPrimitiveDataType2PrimitiveDataType;
 
+mapping PrimitiveDataType :: PrimitiveDataType2Self() : PrimitiveDataType 
+when {not self.oclAsType(EObject).eContainer().oclIsTypeOf(ModelElementCategory)} {
+	init {
+		result := self;
+	}
+}
 
-mapping PrimitiveDataType::transform(): EObject {
-	init{
-		if(self.oclAsType(EObject).eContainer().oclIsTypeOf(ModelElementCategory)){
-			result := self.map create().oclAsType(EObject);
-			var element := self.oclAsType(EObject);	
-			element.oclAsType(EObject).eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
-				setValues(result, f, getValues(element, f));
-			};
-		}	
-		else {
-			result := self.oclAsType(EObject);
-		}
-	}		
+mapping PrimitiveDataType :: DefaultPrimitiveDataType2PrimitiveDataType() : PrimitiveDataType
+when {self.oclAsType(EObject).eContainer().oclIsTypeOf(ModelElementCategory)} {
+	
+	self.oclAsType(EObject).eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+		setValues(result, f, self.getValues(f));
+	};
 }
 
 mapping AbstractCoordinationSpecification:: transform() : EObject {

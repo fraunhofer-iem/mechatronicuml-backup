@@ -1,5 +1,5 @@
 library PatternProtocolSameRootTransformationLibrary;
-import ImplicitCopy;
+import org.muml.ImplicitCopy;
 
 modeltype common uses core::expressions::common('http://www.muml.org/core/1.0.0');
 modeltype PimPackage uses pim('http://www.muml.org/pim/1.0.0');
@@ -17,53 +17,23 @@ modeltype PatternPackage uses pim::pattern('http://www.muml.org/pim/1.0.0');
 modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 modeltype actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
 
-mapping DiscreteInteractionEndpoint :: transform() : EObject {
-	init {
-		result := self.map create();
-	}
-	var element := self.oclAsType(EObject);
-	element.eClass().eAllReferences->select(f | f.isValidFeature())->forEach(f) {
-		setValues(result, f, getValues(element, f).map transform());
-	};
-	element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
-		setValues(result, f, getValues(element, f));
-	}
-}
+abstract mapping DiscreteInteractionEndpoint :: transform() : DiscreteInteractionEndpoint inherits Element::transform;
 
-mapping ParameterBinding :: transform() : EObject {
+mapping ParameterBinding :: transform() : ParameterBinding {
 	
+	parameter := self.parameter.map transform().oclAsType(Parameter);
+	value := self.value.map transform().oclAsType(core::expressions::Expression);
+	extensions := self.extensions.map transform().oclAsType(core::Extension);		
+}
+
+mapping DataType :: transform() : DataType disjuncts DataType::DefaultDataType2DataType, DataType::DataType2Self;
+
+mapping DataType :: DataType2Self() : DataType
+when {not self.oclIsKindOf(DiscreteInteractionEndpoint) and not self.oclIsKindOf(Component) and not self.oclIsKindOf(ComponentPart)} {
 	init {
-		result := self.map create();
-		
-		var resultingBinding := result.oclAsType(ParameterBinding);
-		resultingBinding.parameter := self.parameter.map transform().oclAsType(Parameter);
-		resultingBinding.value := self.value.map transform().oclAsType(core::expressions::Expression);
-		resultingBinding.extensions := self.extensions.map transform().oclAsType(core::Extension);		
+		result := self;
 	}
 }
 
-mapping DataType :: transform() : EObject {
-	init{
-		if(not self.oclIsKindOf(DiscreteInteractionEndpoint) and not self.oclIsKindOf(Component) and not self.oclIsKindOf(ComponentPart)){
-			result :=  self.oclAsType(EObject);	
-		}
-		else {
-			if(self.oclIsKindOf(pim::protocol::Role)) {
-				result := self.oclAsType(pim::protocol::Role).map transform();
-			}
-			else if(self.oclIsKindOf(pim::connector::DiscreteInteractionEndpoint)) {
-				result := self.oclAsType(pim::connector::DiscreteInteractionEndpoint).map transform();
-			}
-			else if(self.oclIsKindOf(pim::component::Component)){
-				result := self.oclAsType(pim::component::Component).map transform();
-			}
-			else if(self.oclIsKindOf(pim::component::ComponentPart)){
-				result := self.oclAsType(pim::component::ComponentPart).map transform();
-			}
-			else assert fatal (false) with log ("Error: transformation for DataType not yet created");
-		}		
-	}
-}
-
-
-
+abstract mapping DataType :: DefaultDataType2DataType() : DataType inherits Element::transform
+when {self.oclIsKindOf(DiscreteInteractionEndpoint) or self.oclIsKindOf(Component) or self.oclIsKindOf(ComponentPart)};

@@ -91,14 +91,11 @@ mapping Variable::Variable2Parameter(): Parameter
 		_dataType := self.dataType;
 		extensions := self.extensions.map transform().oclAsType(core::Extension);
 }
-mapping pim::realtimestatechart::RealtimeStatechart :: transform() : EObject{
-    	init {
-    		result := self.map create();
-    	}
-    	var element := self.oclAsType(EObject);
-			element.oclAsType(EObject).eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
-			setValues(result, f, getValues(element, f));
-			};
+mapping pim::realtimestatechart::RealtimeStatechart :: transform() : RealtimeStatechart {
+
+		self.oclAsType(EObject).eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+			setValues(result, f, self.getValues(f));
+		};
 			
     	var resultingRTSC : RealtimeStatechart := result.oclAsType(pim::realtimestatechart::RealtimeStatechart);
     	
@@ -116,28 +113,16 @@ mapping pim::realtimestatechart::RealtimeStatechart :: transform() : EObject{
     	resultingRTSC._states := self._states.map transform().oclAsType(State);
     	resultingRTSC._clocks := self._clocks.map transform().oclAsType(Clock);
    		 }
-   		 
-mapping Variable :: transform() : EObject {
-		init{
-			if(variablesToParameter->includes(self)) {
-				result := self.map Variable2Parameter().oclAsType(EObject);
-			}
-			else {
-				result := self.map create();
-				result.oclAsType(Variable).initializeExpression := self.initializeExpression.map transform().oclAsType(core::expressions::Expression);
-				result.oclAsType(Variable).dataType := self.dataType;
-				var element := self.oclAsType(EObject);	
-				element.oclAsType(EObject).eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
-					setValues(result, f, getValues(element, f));
-				};
-			}
-			
-		}	
+
+mapping Variable :: DefaultVariable2Variable() : Variable
+when {not variablesToParameter->includes(self)} {
+	initializeExpression := self.initializeExpression.map transform().oclAsType(core::expressions::Expression);
+	dataType := self.dataType;
+	self.oclAsType(EObject).eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+		setValues(result, f, self.getValues(f));
+	};
 }
 
-mapping RealtimeStatechart::create():EObject{
-	init{
-		result:=new RealtimeStatechart().oclAsType(EObject);
-		}
-	}
-
+  		 
+mapping Variable :: transform() : EObject
+	disjuncts Variable::DefaultVariable2Variable, Variable::Variable2Parameter;
