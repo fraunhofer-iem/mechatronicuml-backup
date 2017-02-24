@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.Writer;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
@@ -126,20 +127,15 @@ public class VerifyTAOperation implements IWorkspaceRunnable {
 		try {
 			
 			SubMonitor subMonitor = SubMonitor.convert(monitor, this.getName(), 100);
-			
+						
 			String containerName = System.getProperty("java.io.tmpdir");
 			
 		    IPath targetPath = Path.fromOSString(containerName);
 			
 			IWorkspaceRunnable xmlSynthesis = new UppaalXMLSynthesisOperation(nta, properties, targetPath, false);
-			xmlSynthesis.run(subMonitor.newChild(10));
+			xmlSynthesis.run(subMonitor.split(10));
 						
-			if (subMonitor.isCanceled()) {
-				throw new OperationCanceledException();
-			};
-			
-			subMonitor.subTask("Running UPPAAL");
-		    
+					    
 			// append the name of the NTA to the target path since the XML synthesis uses this as target file name
 			IPath modelPath = targetPath.append(nta.getName()).addFileExtension("xml");
 			IPath queryPath = targetPath.append(nta.getName()).addFileExtension("q");
@@ -147,16 +143,12 @@ public class VerifyTAOperation implements IWorkspaceRunnable {
 			Command cmd = createCommand();
 			cmd.addParameter(new PathArgument<VerifyTACommand>(modelPath));
 			cmd.addParameter(new PathArgument<VerifyTACommand>(queryPath));
-		    
-			if (monitor.isCanceled()) {
-				throw new OperationCanceledException();
-			};
-			
-			final IProgressMonitor uppaalMonitor = subMonitor.newChild(80);
+		    			
+			final IProgressMonitor uppaalMonitor = subMonitor.split(80);
 			Writer progressWriter = new ProgressWriter(uppaalMonitor, properties.getProperties().size());
 		    Writer stringWriter = new StringWriter();
 		    Writer printWriter = new PrintWriter(System.out, true);
-		    			
+		    		    
 		    try {
 		    			    	
 		    	Process proc = new Process(cmd, printWriter, stringWriter, progressWriter) {
@@ -169,9 +161,9 @@ public class VerifyTAOperation implements IWorkspaceRunnable {
 		    		    
 		    	int exitCode = proc.waitForExitValue();
 		    	
-		    	monitor.done();
+		    	uppaalMonitor.done();
 		    	
-		    	if (monitor.isCanceled()) {
+		    	if (subMonitor.isCanceled()) {
 		    		throw new OperationCanceledException();
 		    	}
 		    	else {							
@@ -200,9 +192,6 @@ public class VerifyTAOperation implements IWorkspaceRunnable {
 						resource.load(new StringInputStream(result), options);					
 					}
 					
-					subMonitor.worked(10);
-					
-					
 					Diagnostic resourceDiagnostic = EcoreUtil.computeDiagnostic(resource, false);
 									
 					if (!BasicDiagnostic.toIStatus(resourceDiagnostic).isOK()) {
@@ -216,18 +205,17 @@ public class VerifyTAOperation implements IWorkspaceRunnable {
 					assert !resource.getContents().isEmpty() && resource.getContents().get(0) instanceof TraceRepository;
 							
 					traceRepository = (TraceRepository) resource.getContents().get(0);
+					
+					subMonitor.worked(10);
 		    	}
 			
 		    }
-		    catch (IOException e) {
-		    	throw new CoreException(BasicDiagnostic.toIStatus(BasicDiagnostic.toDiagnostic(e)));
-		    }
-		    catch(InterruptedException e) {
+		    catch (IOException | InterruptedException e) {
 		    	throw new CoreException(BasicDiagnostic.toIStatus(BasicDiagnostic.toDiagnostic(e)));
 		    }
 		    catch(ExecutionException e) {
 		    	throw new CoreException(BasicDiagnostic.toIStatus(BasicDiagnostic.toDiagnostic(e.getCause())));
-		    }		
+		    }
 		}
 		finally {
 			monitor.done();
@@ -244,41 +232,42 @@ public class VerifyTAOperation implements IWorkspaceRunnable {
 	 * Simply Writer class that parses the incoming stream for Uppaal progress measures
 	 */
 	public static class ProgressWriter extends Writer {
-		StringBuilder currentLine = new StringBuilder();
+		
 		IProgressMonitor monitor;
-		Pattern pattern = Pattern.compile("Verifying (property|formula) ([0-9]+) at line .*", Pattern.DOTALL);
+		Pattern property = Pattern.compile("Verifying (property|formula) ([0-9]+) at line.*", Pattern.DOTALL);
+		Pattern result = Pattern.compile(" -- (Property|Formula) is (NOT )?satisfied\\.", Pattern.DOTALL);
 		int totalProperties;
 		
 		public ProgressWriter(IProgressMonitor monitor, int totalNumberOfProperties) {
-			this.monitor = SubMonitor.convert(monitor, totalNumberOfProperties);
+			this.monitor = SubMonitor.convert(monitor, "Running UPPAAL", totalNumberOfProperties);
 			this.totalProperties = totalNumberOfProperties;
 		}
 		
 		@Override
 		public void close() throws IOException {
-			//Nothing to do
+			monitor.done();
 		}
-
+		
 		@Override
 		public void flush() throws IOException {
 			//Nothing to do
 		}
-
+		
 		@Override
 		public void write(char[] cbuf, int off, int len) throws IOException {
-			for (int i=0;i<len;i++) {
-				currentLine.append(cbuf[off+i]);
-				if (cbuf[off+i] == '\n') {
-					//Try to parse the line
-					Matcher matcher = pattern.matcher(currentLine.toString());
-					if (matcher.matches()) {
-						int currentProperty = Integer.parseInt(matcher.group(2));
-						monitor.worked(currentProperty-1);
-						monitor.subTask("Verifying Uppaal Property "+currentProperty+" of "+totalProperties);
-					}
-					
-					//Reset
-					currentLine = new StringBuilder();
+			
+			String line = new String(Arrays.copyOfRange(cbuf, off, off+len));
+			
+			//Try to parse the line
+			Matcher matcher = property.matcher(line);
+			if (matcher.matches()) {
+				int currentProperty = Integer.parseInt(matcher.group(2));
+				monitor.subTask("Verifying Uppaal Property "+currentProperty+" of "+totalProperties);
+			}
+			else {
+				matcher = result.matcher(line);
+				if (matcher.matches()) {
+					monitor.worked(1);
 				}
 			}
 		}
