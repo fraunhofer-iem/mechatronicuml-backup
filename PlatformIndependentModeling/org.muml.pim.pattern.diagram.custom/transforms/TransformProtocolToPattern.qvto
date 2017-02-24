@@ -93,26 +93,22 @@ mapping Variable::Variable2Parameter(): Parameter
 }
 mapping pim::realtimestatechart::RealtimeStatechart :: transform() : RealtimeStatechart {
 
-		self.oclAsType(EObject).eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
-			setValues(result, f, self.getValues(f));
-		};
+	self.oclAsType(EObject).eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+		setValues(result, f, self.getValues(f));
+	};
 			
-    	var resultingRTSC : RealtimeStatechart := result.oclAsType(pim::realtimestatechart::RealtimeStatechart);
-    	
-    	
-    	
-    	resultingRTSC._name := self._name + timeStamp;
-    	resultingRTSC._comment := self._comment;
-    	resultingRTSC._extensions := self._extensions.map transform().oclAsType(core::Extension);
+    name := self._name + timeStamp;
+    comment := self._comment;
+    extensions := self._extensions.map transform().oclAsType(core::Extension);
    
-    	resultingRTSC._operations := self._operations.map transform().oclAsType(Operation);
-    	// only transform variables that are not converted into parameter
-    	resultingRTSC._variables := (self._variables-(variablesToParameter)).map transform().oclAsType(Variable);
-    	resultingRTSC._parentRegion := self._parentRegion.map transform().oclAsType(Region);
-    	resultingRTSC._transitions := self._transitions.map transform().oclAsType(Transition);
-    	resultingRTSC._states := self._states.map transform().oclAsType(State);
-    	resultingRTSC._clocks := self._clocks.map transform().oclAsType(Clock);
-   		 }
+    operations := self._operations.map transform().oclAsType(Operation);
+    // only transform variables that are not converted into parameter
+	variables := (self._variables-(variablesToParameter)).map transform().oclAsType(Variable);
+    parentRegion := self._parentRegion.map transform().oclAsType(Region);
+    transitions := self._transitions.map transform().oclAsType(Transition);
+   	states := self._states.map transform().oclAsType(State);
+    clocks := self._clocks.map transform().oclAsType(Clock);
+}
 
 mapping Variable :: DefaultVariable2Variable() : Variable
 when {not variablesToParameter->includes(self)} {
