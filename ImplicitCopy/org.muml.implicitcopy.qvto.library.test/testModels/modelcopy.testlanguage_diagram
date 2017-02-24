@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.muml.testlanguage="http://www.muml.org/testlanguage/1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_QxqAoDRwEeWfxodaa53aWw" type="TestLanguage" name="ImplicitCopy.testlanguage_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_S4JzEDRwEeWfxodaa53aWw" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_S4JzFTRwEeWfxodaa53aWw" type="5003"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_S4JzFjRwEeWfxodaa53aWw" type="7001">
+      <children xmi:type="notation:Shape" xmi:id="_S5MU4DRwEeWfxodaa53aWw" type="3002" fontName="Segoe UI">
+        <children xmi:type="notation:DecorationNode" xmi:id="_S5MU4jRwEeWfxodaa53aWw" type="5002"/>
+        <element xmi:type="org.muml.testlanguage:Output" href="ImplicitCopy.testlanguage#//@nodes.0/@outputs[name='model']"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_S5MU4TRwEeWfxodaa53aWw"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_S4JzFzRwEeWfxodaa53aWw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_S4JzGDRwEeWfxodaa53aWw"/>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_S4JzETRwEeWfxodaa53aWw"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_S4JzEjRwEeWfxodaa53aWw" fontName="Segoe UI"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_S4JzEzRwEeWfxodaa53aWw"/>
+    <element xmi:type="org.muml.testlanguage:Node" href="ImplicitCopy.testlanguage#//@nodes.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_S4JzFDRwEeWfxodaa53aWw" x="198" y="232"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_cfruADRwEeWfxodaa53aWw" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_cfruBTRwEeWfxodaa53aWw" type="5003"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_cfruBjRwEeWfxodaa53aWw" type="7001">
+      <children xmi:type="notation:Shape" xmi:id="_-r7U4DRwEeWfxodaa53aWw" type="3001" fontName="Segoe UI">
+        <children xmi:type="notation:DecorationNode" xmi:id="_-r7U4jRwEeWfxodaa53aWw" type="5001"/>
+        <element xmi:type="org.muml.testlanguage:Input" href="ImplicitCopy.testlanguage#//@nodes.1/@inputs[name='i']"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-r7U4TRwEeWfxodaa53aWw"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_-r7U4zRwEeWfxodaa53aWw" type="3002" fontName="Segoe UI">
+        <children xmi:type="notation:DecorationNode" xmi:id="_-r7U5TRwEeWfxodaa53aWw" type="5002"/>
+        <element xmi:type="org.muml.testlanguage:Output" href="ImplicitCopy.testlanguage#//@nodes.1/@outputs[name='o']"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-r7U5DRwEeWfxodaa53aWw"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_cfruBzRwEeWfxodaa53aWw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_cfruCDRwEeWfxodaa53aWw"/>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_cfruATRwEeWfxodaa53aWw"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_cfruAjRwEeWfxodaa53aWw" fontName="Segoe UI"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_cfruAzRwEeWfxodaa53aWw"/>
+    <element xmi:type="org.muml.testlanguage:Node" href="ImplicitCopy.testlanguage#//@nodes.1"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cfruBDRwEeWfxodaa53aWw" x="461" y="137"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="__kTuYDRwEeWfxodaa53aWw" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="__kTuZTRwEeWfxodaa53aWw" type="5003"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="__kTuZjRwEeWfxodaa53aWw" type="7001">
+      <children xmi:type="notation:Shape" xmi:id="__kdfYDRwEeWfxodaa53aWw" type="3001" fontName="Segoe UI">
+        <children xmi:type="notation:DecorationNode" xmi:id="__kdfYjRwEeWfxodaa53aWw" type="5001"/>
+        <element xmi:type="org.muml.testlanguage:Input" href="ImplicitCopy.testlanguage#//@nodes.2/@inputs[name='model_1']"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="__kdfYTRwEeWfxodaa53aWw"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="__kdfYzRwEeWfxodaa53aWw" type="3001" fontName="Segoe UI">
+        <children xmi:type="notation:DecorationNode" xmi:id="__kdfZTRwEeWfxodaa53aWw" type="5001"/>
+        <element xmi:type="org.muml.testlanguage:Input" href="ImplicitCopy.testlanguage#//@nodes.2/@inputs[name='model_2']"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="__kdfZDRwEeWfxodaa53aWw"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="__kdfZjRwEeWfxodaa53aWw" type="3002" fontName="Segoe UI">
+        <children xmi:type="notation:DecorationNode" xmi:id="__kdfaDRwEeWfxodaa53aWw" type="5002"/>
+        <element xmi:type="org.muml.testlanguage:Output" href="ImplicitCopy.testlanguage#//@nodes.2/@outputs[name='bool']"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="__kdfZzRwEeWfxodaa53aWw"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="__kTuZzRwEeWfxodaa53aWw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="__kTuaDRwEeWfxodaa53aWw"/>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="__kTuYTRwEeWfxodaa53aWw"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="__kTuYjRwEeWfxodaa53aWw" fontName="Segoe UI"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="__kTuYzRwEeWfxodaa53aWw"/>
+    <element xmi:type="org.muml.testlanguage:Node" href="ImplicitCopy.testlanguage#//@nodes.2"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="__kTuZDRwEeWfxodaa53aWw" x="719" y="255"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_VyBGsDRxEeWfxodaa53aWw" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_VyBGtTRxEeWfxodaa53aWw" type="5003"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_VyBGtjRxEeWfxodaa53aWw" type="7001">
+      <children xmi:type="notation:Shape" xmi:id="_VyK3sDRxEeWfxodaa53aWw" type="3001" fontName="Segoe UI">
+        <children xmi:type="notation:DecorationNode" xmi:id="_VyK3sjRxEeWfxodaa53aWw" type="5001"/>
+        <element xmi:type="org.muml.testlanguage:Input" href="ImplicitCopy.testlanguage#//@nodes.3/@inputs[name='bool']"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VyK3sTRxEeWfxodaa53aWw"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_VyBGtzRxEeWfxodaa53aWw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_VyBGuDRxEeWfxodaa53aWw"/>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_VyBGsTRxEeWfxodaa53aWw"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_VyBGsjRxEeWfxodaa53aWw" fontName="Segoe UI"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_VyBGszRxEeWfxodaa53aWw"/>
+    <element xmi:type="org.muml.testlanguage:Node" href="ImplicitCopy.testlanguage#//@nodes.3"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VyBGtDRxEeWfxodaa53aWw" x="994" y="380"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_QxqAoTRwEeWfxodaa53aWw"/>
+  <element xmi:type="org.muml.testlanguage:TestCase" href="ImplicitCopy.testlanguage#/"/>
+  <edges xmi:type="notation:Connector" xmi:id="_ARY20DRxEeWfxodaa53aWw" type="4001" source="_S5MU4DRwEeWfxodaa53aWw" target="_-r7U4DRwEeWfxodaa53aWw">
+    <styles xmi:type="notation:FontStyle" xmi:id="_ARY20TRxEeWfxodaa53aWw" fontName="Segoe UI"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ARY20jRxEeWfxodaa53aWw" points="[50, 0, -188, 95]$[213, -95, -25, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_AR_TwDRxEeWfxodaa53aWw"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_AR_TwTRxEeWfxodaa53aWw"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_BZGFwDRxEeWfxodaa53aWw" type="4001" source="_S5MU4DRwEeWfxodaa53aWw" target="__kdfYzRwEeWfxodaa53aWw">
+    <styles xmi:type="notation:FontStyle" xmi:id="_BZGFwTRxEeWfxodaa53aWw" fontName="Segoe UI"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_BZGFwjRxEeWfxodaa53aWw" points="[50, 0, -446, -43]$[471, 43, -25, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_BZGFwzRxEeWfxodaa53aWw"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_BZGFxDRxEeWfxodaa53aWw"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_B1g8ADRxEeWfxodaa53aWw" type="4001" source="_-r7U4zRwEeWfxodaa53aWw" target="__kdfYDRwEeWfxodaa53aWw">
+    <styles xmi:type="notation:FontStyle" xmi:id="_B1g8ATRxEeWfxodaa53aWw" fontName="Segoe UI"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_B1g8AjRxEeWfxodaa53aWw" points="[25, 0, -183, -118]$[183, 118, -25, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_B1qtADRxEeWfxodaa53aWw"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_B1qtATRxEeWfxodaa53aWw"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_ENangDRxEeWfxodaa53aWw" type="4001" source="__kdfZjRwEeWfxodaa53aWw" target="_VyK3sDRxEeWfxodaa53aWw">
+    <styles xmi:type="notation:FontStyle" xmi:id="_ENangTRxEeWfxodaa53aWw" fontName="Segoe UI"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ENangjRxEeWfxodaa53aWw" points="[25, 0, -202, -5]$[152, 5, -75, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ENangzRxEeWfxodaa53aWw"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ENanhDRxEeWfxodaa53aWw"/>
+  </edges>
+</notation:Diagram>

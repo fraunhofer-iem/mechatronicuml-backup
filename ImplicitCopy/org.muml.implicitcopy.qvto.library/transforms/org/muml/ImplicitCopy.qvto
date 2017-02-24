@@ -1,0 +1,64 @@
+library ImplicitCopy;
+
+import org.muml.ImplicitCopy.qvto._library.ImplicitCopyBlackbox;
+
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+helper Element::create(context : OclAny) : Element {
+	if(self.oclAsType(EObject).eResource().toString().matches("platform:/plugin")) {
+		return self.oclAsType(EObject);
+	};
+	
+	var eclass : ecore::EClass := self.oclAsType(EObject).eClass();
+	var factory : ecore::EFactory := eclass.ePackage.eFactoryInstance;
+	return factory.create(self.oclAsType(EObject).eClass());
+}
+
+query Element :: getValues(feature : EStructuralFeature) : Sequence(OclAny) {
+	
+	var value = self.oclAsType(EObject).eGet(feature);
+	
+	if (feature.many) {
+		return value.oclAsType(Sequence(OclAny));
+	}
+	elif (not value.oclIsUndefined()) {
+		return Sequence{value};
+	};
+	
+	return Sequence{};
+}
+
+mapping Element::transform() : Element {
+	init {
+		if (result.oclIsUndefined()) {
+			result := self.create(null);
+		}
+	}
+	var element := self.oclAsType(EObject);
+	element.eClass().eAllReferences->select(f | f.isValidFeature())->forEach(f) {
+		setValues(result.oclAsType(EObject), f, element.getValues(f)[Element].map transform());
+	};
+	element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+		setValues(result.oclAsType(EObject), f, element.getValues(f));
+	};
+}
+
+
+mapping Element::transformWithContext(context : OclAny) : Element {
+	init {
+		if (result.oclIsUndefined()) {
+			result := self.create(context);
+		}
+	}
+	var element := self.oclAsType(EObject);
+	element.eClass().eAllReferences->select(f | f.isValidFeature())->forEach(f) {
+		setValues(result.oclAsType(EObject), f, element.getValues(f)[Element].map transformWithContext(context));
+	};
+	element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+		setValues(result.oclAsType(EObject), f, element.getValues(f));
+	};
+}
+
+query EStructuralFeature::isValidFeature() : Boolean {
+	return self.changeable and not self._derived;
+}
