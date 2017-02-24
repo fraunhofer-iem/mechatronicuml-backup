@@ -207,7 +207,7 @@ mapping RealtimeStatechart :: RTSC2CoordinatorRTSC(context:OclAny) : RealtimeSta
 		}
 		else {
 			parentRegion := self.parentRegion.map EmbeddedRegion2EmbeddedCoordinatorRegion(context );
-		} endif;	
+		};	
 		
 		states += self.states.map States2StatesCoordinator(context);
 		
@@ -503,7 +503,7 @@ mapping State :: States2StatesCoordinator(context:OclAny) : State {
 		
 		urgent := self.urgent;				
 	
-		entryEvent := self.entryEvent.map transformWithContext((result).oclAsType(EntryEvent);			
+		entryEvent := self.entryEvent.map transformWithContext(result).oclAsType(EntryEvent);			
 		
 		// @author: sthiele2 -- add clock resets for the source states of schema transitions 
 		self.outgoingTransitions->select(t|((not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined())
