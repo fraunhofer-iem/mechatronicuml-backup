@@ -68,8 +68,7 @@ public class UppaalXMLSynthesisOperation implements IWorkspaceRunnable {
 					
 			subMonitor.setWorkRemaining(workRemaining -= 10);
 			
-			
-			subMonitor.subTask("Execute Model-to-Text Transformation");
+			subMonitor.subTask("Uppaal XML Synthesis");
 			
 			//generate Uppaal .q (queries) file
 			if (properties != null)
