@@ -11,10 +11,17 @@
         <initializeExpression xsi:type="common:LiteralExpression" xmi:id="_ewkcIN5REeWffpOzzKuOVw" value="4"/>
       </variables>
       <transitions xmi:id="_yXwJQITBEeKO9r0VL65xcg" priority="3" target="_p05XYITBEeKO9r0VL65xcg" source="_YbeQgCngEeOLOOFBfu_IMg"/>
-      <transitions xmi:id="_Lwt7UCnDEeOtyOUSDkuf3A" priority="1" target="_TTDlcKy-EeKcdYkvlDMjkw" source="_X-REACnIEeOtyOUSDkuf3A">
+      <transitions xmi:id="_Lwt7UCnDEeOtyOUSDkuf3A" priority="1" target="_NEq3EPrCEeafzvA93FxWIQ" source="_X-REACnIEeOtyOUSDkuf3A">
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_XU_ssKzFEeKcdYkvlDMjkw">
           <message xmi:id="_XVATwKzFEeKcdYkvlDMjkw" instanceOf="_fSrzEJ2-EeKCPPYajybjTw"/>
         </events>
+      </transitions>
+      <transitions xmi:id="_SrWLsPrCEeafzvA93FxWIQ" priority="1" target="_TTDlcKy-EeKcdYkvlDMjkw" source="_NEq3EPrCEeafzvA93FxWIQ" urgent="false">
+        <clockConstraints xmi:id="_U45BUPrCEeafzvA93FxWIQ" clock="_HMl0sITDEeKO9r0VL65xcg" operator="GREATER_OR_EQUAL">
+          <bound xmi:id="_Ve2OEPrCEeafzvA93FxWIQ" unit="SECONDS">
+            <value xsi:type="common:LiteralExpression" xmi:id="_WEFCEPrCEeafzvA93FxWIQ" value="5"/>
+          </bound>
+        </clockConstraints>
       </transitions>
       <states xmi:id="_p05XYITBEeKO9r0VL65xcg" name="Overtaking" incomingTransitions="_yXwJQITBEeKO9r0VL65xcg">
         <embeddedRegions xmi:id="_LuCogCnIEeOtyOUSDkuf3A" priority="1">
@@ -45,7 +52,7 @@
         </invariants>
         <connectionPoints xsi:type="realtimestatechart:ExitPoint" xmi:id="_X-REACnIEeOtyOUSDkuf3A" name="exit3" outgoingTransitions="_Lwt7UCnDEeOtyOUSDkuf3A" incomingTransitions="_Y4aYECnIEeOtyOUSDkuf3A"/>
       </states>
-      <states xmi:id="_TTDlcKy-EeKcdYkvlDMjkw" name="NoOvertaking" incomingTransitions="_Lwt7UCnDEeOtyOUSDkuf3A" initial="true">
+      <states xmi:id="_TTDlcKy-EeKcdYkvlDMjkw" name="NoOvertaking" incomingTransitions="_SrWLsPrCEeafzvA93FxWIQ" initial="true">
         <embeddedRegions xmi:id="_VV_GgKy-EeKcdYkvlDMjkw" priority="1">
           <embeddedStatechart xmi:id="_VWA7sKy-EeKcdYkvlDMjkw" name="overtaker_noOvertaking">
             <transitions xmi:id="_aU5QQCngEeOLOOFBfu_IMg" priority="3" target="_YbeQgCngEeOLOOFBfu_IMg" source="_oZZpwITBEeKO9r0VL65xcg">
@@ -98,6 +105,14 @@
           </embeddedStatechart>
         </embeddedRegions>
         <connectionPoints xsi:type="realtimestatechart:ExitPoint" xmi:id="_YbeQgCngEeOLOOFBfu_IMg" name="exit2" outgoingTransitions="_yXwJQITBEeKO9r0VL65xcg" incomingTransitions="_aU5QQCngEeOLOOFBfu_IMg"/>
+      </states>
+      <states xmi:id="_NEq3EPrCEeafzvA93FxWIQ" name="Wait" outgoingTransitions="_SrWLsPrCEeafzvA93FxWIQ" incomingTransitions="_Lwt7UCnDEeOtyOUSDkuf3A">
+        <entryEvent xmi:id="_azsy4PrCEeafzvA93FxWIQ" clockResets="_HMl0sITDEeKO9r0VL65xcg"/>
+        <invariants xmi:id="_cIKEYPrCEeafzvA93FxWIQ" clock="_HMl0sITDEeKO9r0VL65xcg">
+          <bound xmi:id="_cdVDIPrCEeafzvA93FxWIQ" unit="SECONDS">
+            <value xsi:type="common:LiteralExpression" xmi:id="_dMa9wPrCEeafzvA93FxWIQ" value="5"/>
+          </bound>
+        </invariants>
       </states>
       <clocks xmi:id="_HMl0sITDEeKO9r0VL65xcg" name="c"/>
     </modelElements>
