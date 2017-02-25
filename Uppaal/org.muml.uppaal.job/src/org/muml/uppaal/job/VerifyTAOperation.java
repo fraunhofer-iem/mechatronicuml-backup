@@ -1,5 +1,7 @@
 package org.muml.uppaal.job;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -54,6 +56,8 @@ import com.google.inject.Key;
 import com.google.inject.name.Names;
 
 public class VerifyTAOperation implements IWorkspaceRunnable {
+	
+	private static final boolean activateStatisticsLog = false;
 	
 	private NTA nta;
 	private PropertyRepository properties;
@@ -123,7 +127,9 @@ public class VerifyTAOperation implements IWorkspaceRunnable {
 	
 	@Override
 	public void run(final IProgressMonitor monitor) throws CoreException {
-				
+			
+		logStatisticsStart();
+		logStatistics("Start of Uppaal Job");
 		try {
 			
 			SubMonitor subMonitor = SubMonitor.convert(monitor, this.getName(), 100);
@@ -132,10 +138,11 @@ public class VerifyTAOperation implements IWorkspaceRunnable {
 			
 		    IPath targetPath = Path.fromOSString(containerName);
 			
+		    logStatistics("Start of Uppaal XML Synthesis");
 			IWorkspaceRunnable xmlSynthesis = new UppaalXMLSynthesisOperation(nta, properties, targetPath, false);
 			xmlSynthesis.run(subMonitor.split(10));
 						
-					    
+			logStatistics("Start of Running Uppaal");
 			// append the name of the NTA to the target path since the XML synthesis uses this as target file name
 			IPath modelPath = targetPath.append(nta.getName()).addFileExtension("xml");
 			IPath queryPath = targetPath.append(nta.getName()).addFileExtension("q");
@@ -173,6 +180,7 @@ public class VerifyTAOperation implements IWorkspaceRunnable {
 						throw new CoreException(new Status(IStatus.ERROR, "org.muml.uppaal.job", result));
 					}
 					
+					logStatistics("Start of Parsing Results");
 					subMonitor.subTask("Parsing Results");
 					
 				    if (injector == null) {
@@ -220,8 +228,33 @@ public class VerifyTAOperation implements IWorkspaceRunnable {
 		finally {
 			monitor.done();
 		}
-			
+		logStatistics("End of Uppaal Job");
 	};
+	
+	private static long startTime = 0; 
+	
+	private static void logStatisticsStart() {
+		if (activateStatisticsLog) {
+				startTime = System.currentTimeMillis();
+		}
+	}
+			
+	private static void logStatistics(String task){
+		if (activateStatisticsLog) {
+			final String msg = (System.currentTimeMillis() - startTime) + "; " + task;
+			writeToStatisticsFile(msg);
+		}
+	}
+
+	private static void writeToStatisticsFile(final String msg) {
+		try {
+		    PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("C:\\temp\\uppaal-log.csv", true)));
+		    out.println(msg);
+		    out.close();
+		} catch (IOException e) {
+		    //exception handling left as an exercise for the reader
+		}
+	}
 	
 	
 	public TraceRepository getTraceRepository() {		
