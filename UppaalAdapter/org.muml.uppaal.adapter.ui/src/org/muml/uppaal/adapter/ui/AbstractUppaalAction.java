@@ -31,7 +31,7 @@ public abstract class AbstractUppaalAction extends AbstractHandler {
 	public Object execute(final ExecutionEvent event) throws ExecutionException {
 		if (org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().shouldDoStatisticalEvaluation()) {
 			org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().startEvaluationIteration();
-			org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().logInfo("Started Uppaal Action.");
+			org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().logInfo("Started Uppaal Adapter");
 			org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().setRestartRunnable(new Runnable() {
 				@Override
 				public void run() {
