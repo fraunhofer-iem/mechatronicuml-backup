@@ -49,11 +49,11 @@ public class UppaalAdapterLogPlugin extends AbstractUIPlugin {
 		public String getCSV(String propertyName) {
 			StringBuilder buf = new StringBuilder();
 			buf.append(iteration);
-			buf.append(",");
+			buf.append(";");
 			buf.append(propertyName);
-			buf.append(",");
+			buf.append(";");
 			buf.append(task);
-			buf.append(",");
+			buf.append(";");
 			buf.append(millis);
 			return buf.toString();
 		}
@@ -150,7 +150,7 @@ public class UppaalAdapterLogPlugin extends AbstractUIPlugin {
 			startNewEvaluation();
 			SimpleDateFormat sdfDate = new SimpleDateFormat("yyyyMMdd_HH:mm:ss");
 			Date now = new Date();
-			String filename = sdfDate.format(now) + "_UppaalAdapterTiming_" + verifiableElementName + "_"
+			String filename = sdfDate.format(now).replace(':', '-') + "_UppaalAdapterTiming_" + verifiableElementName + "_"
 					+ (trace ? "Trace" : "NoTrace") + ".csv";
 			Display.getDefault().asyncExec(new Runnable() {
 				@Override
@@ -170,7 +170,7 @@ public class UppaalAdapterLogPlugin extends AbstractUIPlugin {
 	}
 
 	private String getCSV(String propertyName) {
-		String csv = "iteration,property,task,milliseconds\n";
+		String csv = "iteration;property;task;milliseconds\n";
 		for (LogEntry entry : entries) {
 			csv += entry.getCSV(propertyName) + "\n";
 		}
