@@ -4,6 +4,7 @@ import transforms.mtctl.MTCTLStaticNormalization;
 import transforms.mtctl.MTCTLPropertySplitTransformation;
 import transforms.mtctl.MTCTLInstanceReferenceNormalization;
 import transforms.CloneModel;
+import org.muml.uppaal.adapter._blackbox.ProgressUnit;
 
 modeltype muml uses 'http://www.muml.org/pim/1.0.0';
 
@@ -43,17 +44,20 @@ main() {
 	assert fatal (retcode.succeeded()) with log('Setting MumlElemExpr::instance normalization failed: ' + retcode.raisedException().repr());
 	
 	//Quantifier normalization (needs write access to its input model. However, the InstanceReferenceNormalization already creates a copy)
+	reportProgress("Normalization: MTCTL Set Quantifier");
 	var intermediateModel := muml.createEmptyModel().oclAsType(muml);
 	var quantifierNormalization := new MTCTLQuantifierNormalization(instanceRefNormalizedModel, intermediateModel);	
 	retcode := quantifierNormalization.transform();
 	assert fatal (retcode.succeeded()) with log('MTCTL Quantifier Normalization failed: ' + retcode.raisedException().repr());
 	
 	//Static normalization
+	reportProgress("Normalization: MTCTL Static Evaluation");
 	var staticNormalization := new MTCTLStaticNormalization(intermediateModel, staticallyNormalizedOutput);
 	retcode := staticNormalization.transform();
 	assert fatal (retcode.succeeded()) with log('Static MTCTL Normalization failed: ' + retcode.raisedException().repr());
 	
 	//PropertySplitNormalization
+	reportProgress("Normalization: MTCTL Split Properties");
 	var propertySplitTransformation := new MTCTLPropertySplitTransformation(staticallyNormalizedOutput, propertySplitOutput);
 	retcode := propertySplitTransformation.transform();
 	assert fatal (retcode.succeeded()) with log('MTCTL Property Split Transformation failed: ' + retcode.raisedException().repr());

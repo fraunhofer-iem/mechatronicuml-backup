@@ -35,7 +35,7 @@ mapping NTA :: NTA2Trace(properties : PropertyRepository, options : Options) : T
 			clonedOptions.traceOptions := TraceOptions::SOME;
 		
 		// TODO clone trace only to make it part of the out extent
-		reportProgress("Running Uppaaal");
+		reportProgress("Running Uppaal");
 		result := verifyta(self, properties, clonedOptions).deepclone().oclAsType(TraceRepository);
 		
 		assert fatal (not result.oclIsUndefined()) with log('Could not obtain a valid UPPAAL verification result.');

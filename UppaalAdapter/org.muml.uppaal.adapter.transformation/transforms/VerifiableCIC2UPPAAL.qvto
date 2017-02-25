@@ -45,7 +45,7 @@ main() {
 	assert fatal (retcode.succeeded()) with log('Scale-Time-Values normalization failed: ' + retcode.raisedException().repr());
 	
 	//add muml prefix to all named elements and substitute unsupported substrings of the named elements' names
-	reportProgress("Normalization: Set Qualifier");
+	reportProgress("Normalization: Names");
 	var prefixedModel : muml = muml.createEmptyModel().oclAsType(muml);
 	var nameNormalization : NameNormalization = new NameNormalization(scaleClockValuesNormalizedModel, prefixedModel);
 	retcode := nameNormalization.transform();
