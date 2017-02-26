@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.muml.ImplicitCopy.buckminster"
+      id="org.muml.implicitcopy.buckminster"
       label="Buckminster"
       version="1.0.0.qualifier">
 
@@ -17,7 +17,7 @@
    </license>
 
    <includes
-         id="org.muml.ImplicitCopy.feature"
+         id="org.muml.implicitcopy.feature"
          version="0.0.0"/>
 
 </feature>
