@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.muml.testlanguage.feature_1.0.0.qualifier.jar" id="org.muml.testlanguage.feature" version="1.0.0.qualifier">
+      <category name="org.muml.testlanguage.repository.category"/>
+   </feature>
+  <!-- <feature url="features/org.muml.ape.feature_1.0.0.qualifier-source-feature.jar" id="org.muml.ape.feature.source" version="1.0.0.qualifier">
+      <category name="org.muml.ape.repository.category"/>
+   </feature> -->
+
+   <category-def name="org.muml.ape.repository.category" label="APE"/>
+</site>
