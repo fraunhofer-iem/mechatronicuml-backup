@@ -117,6 +117,7 @@
 		<configuration>
 		 <excludes>
 		   <!--provide plug-ins not containing any source code -->
+		  <plugin id="org.muml.psm.feature" />
 		  <plugin id="org.muml.psm.repository" />
 		  <plugin id="org.muml.psm.sdk.feature" />
 		 </excludes>
@@ -244,9 +245,9 @@
 			<url>http://download.eclipse.org/modeling/gmp/gmf-tooling/updates/releases/</url>
 		</repository>
 		<repository>
-			<id>ModelCopy</id>
+			<id>ImplicitCopy</id>
 			<layout>p2</layout>
-			<url>${repobase}/ModelCopy-Maven/${repopath}org.muml.modelcopy.repository/target/repository</url>
+			<url>${repobase}/ImplicitCopy-Maven/${repopath}org.muml.implicitcopy.repository/target/repository</url>
 		</repository>
 		<repository>
 			<id>ModelMigration</id>

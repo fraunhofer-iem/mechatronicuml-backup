@@ -50,10 +50,8 @@ public class TypesUtil {
   public static TupleType createTupleTypeHelper(final EnvironmentFactoryInternal envFactory, final Map<String, EClass> namedParts) {
     TupleType _xblockexpression = null;
     {
-      final Function1<EClass, Type> _function = new Function1<EClass, Type>() {
-        public Type apply(final EClass eClass) {
-          return TypesUtil.getType(envFactory, eClass);
-        }
+      final Function1<EClass, Type> _function = (EClass eClass) -> {
+        return TypesUtil.getType(envFactory, eClass);
       };
       final Map<String, Type> newNamedParts = MapExtensions.<String, EClass, Type>mapValues(namedParts, _function);
       _xblockexpression = TypesUtil.createTupleType(envFactory, newNamedParts);
@@ -183,15 +181,13 @@ public class TypesUtil {
     HashMap<String, EClass> _xblockexpression = null;
     {
       final HashMap<String, EClass> namedParts = CollectionLiterals.<String, EClass>newHashMap();
-      final Consumer<ComponentResourceTupleDescriptorCS> _function = new Consumer<ComponentResourceTupleDescriptorCS>() {
-        public void accept(final ComponentResourceTupleDescriptorCS t) {
-          String _instance = t.getInstance();
-          Pair<String, EClass> _mappedTo = Pair.<String, EClass>of(_instance, InstancePackage.Literals.COMPONENT_INSTANCE);
-          String _hwresinstance = t.getHwresinstance();
-          Pair<String, EClass> _mappedTo_1 = Pair.<String, EClass>of(_hwresinstance, HwresourceinstancePackage.Literals.RESOURCE_INSTANCE);
-          namedParts.putAll(
-            Collections.<String, EClass>unmodifiableMap(CollectionLiterals.<String, EClass>newHashMap(_mappedTo, _mappedTo_1)));
-        }
+      final Consumer<ComponentResourceTupleDescriptorCS> _function = (ComponentResourceTupleDescriptorCS t) -> {
+        String _instance = t.getInstance();
+        Pair<String, EClass> _mappedTo = Pair.<String, EClass>of(_instance, InstancePackage.Literals.COMPONENT_INSTANCE);
+        String _hwresinstance = t.getHwresinstance();
+        Pair<String, EClass> _mappedTo_1 = Pair.<String, EClass>of(_hwresinstance, HwresourceinstancePackage.Literals.RESOURCE_INSTANCE);
+        namedParts.putAll(
+          Collections.<String, EClass>unmodifiableMap(CollectionLiterals.<String, EClass>newHashMap(_mappedTo, _mappedTo_1)));
       };
       tupleDescriptorList.forEach(_function);
       _xblockexpression = namedParts;
@@ -317,10 +313,8 @@ public class TypesUtil {
       Map<String, Type> namedParts = CollectionLiterals.<String, Type>newHashMap();
       EList<ComponentResourceTupleDescriptorCS> _tupleDescriptors = elementCS.getTupleDescriptors();
       Map<String, EClass> _createNamedPartsFromComponentResourceTupleDescriptors = TypesUtil.createNamedPartsFromComponentResourceTupleDescriptors(_tupleDescriptors);
-      final Function1<EClass, Type> _function = new Function1<EClass, Type>() {
-        public Type apply(final EClass eClass) {
-          return TypesUtil.getType(envFactory, eClass);
-        }
+      final Function1<EClass, Type> _function = (EClass eClass) -> {
+        return TypesUtil.getType(envFactory, eClass);
       };
       Map<String, Type> _mapValues = MapExtensions.<String, EClass, Type>mapValues(_createNamedPartsFromComponentResourceTupleDescriptors, _function);
       namedParts.putAll(_mapValues);
