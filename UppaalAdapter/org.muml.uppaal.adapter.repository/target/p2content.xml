@@ -1,15 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <units size='1'>
-  <unit id='201702261951.org.muml.uppaal.adapter.repository.category' version='1.0.0.2--cKNYI67735G377E5KC5'>
+  <unit id='201702262045.org.muml.uppaal.adapter.repository.category' version='1.0.0.4--cKNYI67E7AY7EEUE7MQ'>
     <properties size='2'>
       <property name='org.eclipse.equinox.p2.name' value='Uppaal Adapter'/>
       <property name='org.eclipse.equinox.p2.type.category' value='true'/>
     </properties>
     <provides size='1'>
-      <provided namespace='org.eclipse.equinox.p2.iu' name='201702261951.org.muml.uppaal.adapter.repository.category' version='1.0.0.2--cKNYI67735G377E5KC5'/>
+      <provided namespace='org.eclipse.equinox.p2.iu' name='201702262045.org.muml.uppaal.adapter.repository.category' version='1.0.0.4--cKNYI67E7AY7EEUE7MQ'/>
     </provides>
-    <requires size='1'>
-      <required namespace='org.eclipse.equinox.p2.iu' name='org.muml.uppaal.adapter.feature.feature.group' range='[1.0.0.201702261951,1.0.0.201702261951]'/>
+    <requires size='2'>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.muml.uppaal.adapter.feature.source.feature.group' range='[1.0.0.201702262045,1.0.0.201702262045]'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.muml.uppaal.adapter.feature.feature.group' range='[1.0.0.201702262045,1.0.0.201702262045]'/>
     </requires>
     <touchpoint id='null' version='0.0.0'/>
   </unit>
