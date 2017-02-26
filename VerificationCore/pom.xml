@@ -19,7 +19,6 @@
   <modules>
     <module>org.muml.verification.core.actionlanguage.interpreter</module>
     <module>org.muml.verification.core.actionlanguage.interpreter.test</module>
-    <!-- <module>org.muml.verification.core.buckminster</module> -->
     <module>org.muml.verification.core.feature</module>
     <module>org.muml.verification.core.reachanalysis.reachabilitygraph.cic</module>
     <module>org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc</module>
@@ -29,7 +28,6 @@
     <module>org.muml.verification.core.repository</module>
     <module>org.muml.verification.core.runtime</module>
     <module>org.muml.verification.core.runtime.edit</module>
-    <!-- <module>org.muml.verification.core.sdk.feature</module> -->
   </modules>
   
   <build>
@@ -184,15 +182,14 @@
 			<url>${repobase}/ModelMigration-Maven/${repopath}org.muml.emm.repository/target/repository</url>
 		</repository>
         <repository>
-			<id>ModelCopy</id>
+			<id>ImplicitCopy</id>
 			<layout>p2</layout>
-			<url>${repobase}/ModelCopy-Maven/${repopath}org.muml.modelcopy.repository/target/repository</url>
+			<url>${repobase}/ImplicitCopy-Maven/${repopath}org.muml.implicitcopy.repository/target/repository</url>
 		</repository>
         <repository>
 			<id>UDBM</id>
 			<layout>p2</layout>
-			<url>file:///data/jenkins/jobs/UDBM/lastSuccessful/archive/targetPlatform/</url> 
-			<!--<url>http://muml-build.cs.upb.de/job/UDBM/lastSuccessfulBuild/artifact/targetPlatform/</url>-->
+			<url>${repobase}/UDBM-Maven/${repopath}org.muml.udbm.repository/target/repository</url>
 		</repository>
 	</repositories>	
 </project>
