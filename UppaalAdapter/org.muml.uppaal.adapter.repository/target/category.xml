@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.muml.uppaal.adapter.feature_1.0.0.qualifier.jar" id="org.muml.uppaal.adapter.feature" version="1.0.0.qualifier">
+      <category name="org.muml.uppaal.adapter.repository.category"/>
+   </feature>
+  <!--<feature url="features/org.muml.uppaal.adapter.feature_1.0.0.qualifier-source-feature.jar" id="org.muml.uppaal.adapter.feature.source" version="1.0.0.qualifier">
+      <category name="org.muml.uppaal.adapter.repository.category"/>
+   </feature> -->
+
+   
+   <category-def name="org.muml.uppaal.adapter.repository.category" label="Uppaal Adapter"/>
+</site>

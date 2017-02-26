@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<units size='1'>
+  <unit id='201702261951.org.muml.uppaal.adapter.repository.category' version='1.0.0.2--cKNYI67735G377E5KC5'>
+    <properties size='2'>
+      <property name='org.eclipse.equinox.p2.name' value='Uppaal Adapter'/>
+      <property name='org.eclipse.equinox.p2.type.category' value='true'/>
+    </properties>
+    <provides size='1'>
+      <provided namespace='org.eclipse.equinox.p2.iu' name='201702261951.org.muml.uppaal.adapter.repository.category' version='1.0.0.2--cKNYI67735G377E5KC5'/>
+    </provides>
+    <requires size='1'>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.muml.uppaal.adapter.feature.feature.group' range='[1.0.0.201702261951,1.0.0.201702261951]'/>
+    </requires>
+    <touchpoint id='null' version='0.0.0'/>
+  </unit>
+</units>
