@@ -11,5 +11,5 @@ Require-Bundle: org.muml.pim,
  org.eclipse.m2m.qvt.oml.project;bundle-version="3.3.0",
  org.eclipse.m2m.qvt.oml.runtime;bundle-version="3.5.0",
  org.muml.pim.types,
- org.muml.modelcopy.qvto.library
+ org.muml.implicitcopy.qvto.library
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
