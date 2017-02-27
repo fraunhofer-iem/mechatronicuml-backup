@@ -99,7 +99,7 @@
       <import feature="org.muml.storydiagram.feature"/>
       <import plugin="org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.wrapper"/>
       <import feature="org.muml.core.feature"/>
-      <import feature="org.muml.modelcopy.feature"/>
+      <import feature="org.muml.implicitcopy.feature"/>
       <import feature="org.muml.ape.feature"/>
    </requires>
 

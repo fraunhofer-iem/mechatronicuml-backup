@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.muml.reconfiguration.feature_1.0.0.qualifier.jar" id="org.muml.reconfiguration.feature" version="1.0.0.qualifier">
+      <category name="org.muml.reconfiguration.repository.category"/>
+   </feature>
+  <!--<feature url="features/org.muml.reconfiguration.feature_1.0.0.qualifier-source-feature.jar" id="org.muml.reconfiguration.feature.source" version="1.0.0.qualifier">
+      <category name="org.muml.reconfiguration.repository.category"/>
+   </feature> -->
+   
+   <category-def name="org.muml.reconfiguration.repository.category" label="ReconfigurationModeling"/>
+</site>
