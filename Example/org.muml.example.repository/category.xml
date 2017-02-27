@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.muml.example.arduinocarhwplatform.feature_1.0.0.qualifier.jar" id="org.muml.example.arduinocarhwplatform.feature" version="1.0.0.qualifier">
+      <category name="org.muml.example.repository.category"/>
+   </feature>
+  <feature url="features/org.muml.example.arduinocarhwplatform.feature_1.0.0.qualifier-source-feature.jar" id="org.muml.example.arduinocarhwplatform.feature.source" version="1.0.0.qualifier">
+      <category name="org.muml.example.repository.category"/>
+   </feature> 
+
+   <category-def name="org.muml.example.repository.category" label="Example"/>
+</site>
