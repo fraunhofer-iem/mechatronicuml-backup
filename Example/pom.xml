@@ -12,8 +12,6 @@
   </properties>
 	
   <modules>
-    <module>deprecated/CoordinationProtocols/de.uni_paderborn.fujaba.muml.example.distanceTransmission</module>
-    <module>deprecated/CoordinationProtocols/de.uni_paderborn.fujaba.muml.examples.convoyCoordinationProtocol</module>
     <module>inProgress/org.muml.example.productionBroker</module>
     <module>org.muml.example.arduinocarhwplatform</module>
     <module>org.muml.example.arduinocarhwplatform.feature</module>
@@ -145,14 +143,34 @@
 			<url>${repobase}/Core-Maven/${repopath}org.muml.core.repository/target/repository</url>
 		</repository>
 		<repository>
-			<id>ModelMigration</id>
+			<id>APE</id>
 			<layout>p2</layout>
-			<url>${repobase}/ModelMigration-Maven/${repopath}org.muml.emm.repository/target/repository</url>
+			<url>${repobase}/APE-Maven/${repopath}org.muml.ape.repository/target/repository</url>
 		</repository>
 		<repository>
 			<id>PlatformIndependentModeling</id>
 			<layout>p2</layout>
 			<url>${repobase}/PlatformIndependentModeling-Maven/${repopath}org.muml.pim.repository/target/repository</url>
+		</repository>
+		<repository>
+			<id>PlatformSpecificModeling</id>
+			<layout>p2</layout>
+			<url>${repobase}/PlatformSpecificModeling-Maven/${repopath}org.muml.psm.repository/target/repository</url>
+		</repository>
+		<repository>
+			<id>PlatformModeling</id>
+			<layout>p2</layout>
+			<url>${repobase}/PlatformModeling-Maven/${repopath}org.muml.pm.repository/target/repository</url>
+		</repository>
+	    <repository>
+			<id>ImplicitCopy</id>
+			<layout>p2</layout>
+			<url>${repobase}/ImplicitCopy-Maven/${repopath}org.muml.implicitcopy.repository/target/repository</url>
+		</repository>
+		<repository>
+			<id>ModelMigration</id>
+			<layout>p2</layout>
+			<url>${repobase}/ModelMigration-Maven/${repopath}org.muml.emm.repository/target/repository</url>
 		</repository>
 		<repository>
 			<id>VerificationCore</id>
@@ -169,6 +187,30 @@
 			<layout>p2</layout>
 			<url>${repobase}/UppaalAdapter-Maven/${repopath}org.muml.uppaal.adapter.repository/target/repository</url>
 		</repository>
-		<!-- reconfiguration -->
+		<repository>
+			<id>UDBM</id>
+			<layout>p2</layout>
+			<url>${repobase}/UDBM-Maven/${repopath}org.muml.udbm.repository/target/repository</url>
+		</repository>
+		<repository>
+			<id>GraphvizAdapter</id>
+			<layout>p2</layout>
+			<url>${repobase}/GraphvizAdapter-Maven/${repopath}org.muml.graphviz.repository/target/repository</url>
+		</repository>
+		<repository>
+			<id>Uppaal</id>
+			<layout>p2</layout>
+			<url>${repobase}/Uppaal-Maven/${repopath}org.muml.uppaal.repository/target/repository</url>
+		</repository>
+		<repository>
+			<id>ReconfigurationModeling</id>
+			<layout>p2</layout>
+			<url>${repobase}/ReconfigurationModeling-Maven/${repopath}org.muml.reconfiguration.repository/target/repository</url>
+		</repository>
+		<repository>
+			<id>Codegen_C</id>
+			<layout>p2</layout>
+			<url>${repobase}/Codegen_C-Maven/${repopath}org.muml.codegen.c.repository/target/repository</url>
+		</repository>
 	</repositories>
 </project>
