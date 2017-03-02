@@ -146,10 +146,65 @@
 			<layout>p2</layout>
 			<url>${repobase}/PlatformModeling-Maven/${repopath}org.muml.pm.repository/target/repository</url>
 		</repository>
+	    <repository>
+			<id>PSM</id>
+			<layout>p2</layout>
+			<url>${repobase}/PlatformSpecificModeling-Maven/${repopath}org.muml.psm.repository/target/repository</url>
+		</repository>
 		<repository>
 			<id>ExternalDependencies</id>
 			<layout>p2</layout>
 			<url>${repobase}/ExternalDependencies-Maven/${repopath}org.muml.external.repository/target/repository</url>
+		</repository>
+	  		<repository>
+			<id>Example</id>
+			<layout>p2</layout>
+			<url>${repobase}/Example-Maven/${repopath}org.muml.example.repository/target/repository</url>
+		</repository>
+	  	<repository>
+			<id>Modelica</id>
+			<layout>p2</layout>
+			<url>${repobase}/ModelicaAdapterFeature-Maven/${repopath}org.muml.modelica.repository/target/repository</url>
+		</repository>
+	  	<repository>
+			<id>Uppaal</id>
+			<layout>p2</layout>
+			<url>${repobase}/Uppaal-Maven/${repopath}org.muml.uppaal.repository/target/repository</url>
+		</repository>
+	  	<repository>
+			<id>UppaalAdapter</id>
+			<layout>p2</layout>
+			<url>${repobase}/UppaalAdapter-Maven/${repopath}org.muml.uppaal.adapter.repository/target/repository</url>
+		</repository>
+	  	<repository>
+			<id>Codegen_C</id>
+			<layout>p2</layout>
+			<url>${repobase}/Codegen_C-Maven/${repopath}org.muml.codegen.c.repository/target/repository</url>
+		</repository>
+	  	 <repository>
+			<id>VerificationCore</id>
+			<layout>p2</layout>
+			<url>${repobase}/VerificationCore-Maven/${repopath}org.muml.verification.core.repository/target/repository</url>
+		</repository>
+	  	<repository>
+			<id>UDBM</id>
+			<layout>p2</layout>
+			<url>${repobase}/UDBM-Maven/${repopath}org.muml.udbm.repository/target/repository</url>
+		</repository>
+	  	<repository>
+			<id>GraphvizAdapter</id>
+			<layout>p2</layout>
+			<url>${repobase}/GraphvizAdapter-Maven/${repopath}org.muml.graphviz.repository/target/repository</url>
+		</repository>
+	  	<repository>
+			<id>ReconfigurationModeling</id>
+			<layout>p2</layout>
+			<url>${repobase}/ReconfigurationModeling-Maven/${repopath}org.muml.reconfiguration.repository/target/repository</url>
+		</repository>	
+	  	<repository>
+			<id>StoryDiagram</id>
+			<layout>p2</layout>
+			<url>${repobase}/StoryDiagram-Maven/${repopath}org.muml.storydiagram.repository/target/repository</url>
 		</repository>
 	</repositories>
 </project>
