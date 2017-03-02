@@ -16,6 +16,7 @@
   <modules>
     <!--<module>org.eclipse.acceleo.engine</module> -->
     <module>org.muml.releng.site.feature</module>
+	  <module>org.muml.releng.site.repository</module>
   </modules>
   
   <build>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.muml.releng.site.feature_1.0.0.qualifier.jar" id="org.muml.releng.site.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.category"/>
+   </feature>
+  <!--<feature url="features/org.muml.releng.site.feature_1.0.0.qualifier-source-feature.jar" id="org.muml.releng.site.feature.source" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.category"/> 
+   </feature>-->
+   <category-def name="org.muml.releng.site.repository.category" label="releng.site"/>
+</site>
