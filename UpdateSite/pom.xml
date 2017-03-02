@@ -117,9 +117,9 @@
 			<url>http://download.eclipse.org/eclipse/updates/4.6</url>
 		</repository>
 		<repository>
-			<id>ModelCopy</id>
+			<id>ImplicitCopy</id>
 			<layout>p2</layout>
-			<url>${repobase}/ModelCopy-Maven/${repopath}org.muml.modelcopy.repository/target/repository</url>
+			<url>${repobase}/ImplicitCopy-Maven/${repopath}org.muml.implicitcopy.repository/target/repository</url>
 		</repository>
 		<repository>
 			<id>ModelMigration</id>

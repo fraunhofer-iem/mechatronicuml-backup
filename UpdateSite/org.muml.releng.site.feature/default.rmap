@@ -4,7 +4,7 @@
 <rm:locator searchPathRef="APE" failOnError="false"/>
 <rm:locator searchPathRef="ModelMigration" failOnError="false"/>
 <rm:locator searchPathRef="Core" failOnError="false"/>
-<rm:locator searchPathRef="ModelCopy" failOnError="false"/>
+<rm:locator searchPathRef="ImplicitCopy" failOnError="false"/>
 <rm:locator searchPathRef="PlatformIndependentModeling" failOnError="false"/>
 <rm:locator searchPathRef="VerificationCore" failOnError="false"/>
 <rm:locator searchPathRef="Uppaal" failOnError="false"/>
