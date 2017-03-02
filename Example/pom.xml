@@ -49,7 +49,7 @@
     <module>org.muml.example.sectionentry.feature</module>
     <module>org.muml.example.sectionentrywithdependencies</module>
     <!--<module>org.muml.example.tests</module> -->
-    <module>org.muml.example.ttccarplatooning</module>
+    <!--<module>org.muml.example.ttccarplatooning</module> -->
 	<module>org.muml.example.repository</module>
   </modules>
   <build>

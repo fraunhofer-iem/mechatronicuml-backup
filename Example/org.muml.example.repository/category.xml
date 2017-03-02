@@ -6,6 +6,111 @@
   <feature url="features/org.muml.example.arduinocarhwplatform.feature_1.0.0.qualifier-source-feature.jar" id="org.muml.example.arduinocarhwplatform.feature.source" version="1.0.0.qualifier">
       <category name="org.muml.example.repository.category"/>
    </feature> 
+	
+   <feature url="features/org.muml.example.blindovertaking.feature_1.0.0.qualifier.jar" id="org.muml.example.blindovertaking.feature" version="1.0.0.qualifier">
+      <category name="org.muml.example.repository.category"/>
+   </feature>
+  <feature url="features/org.muml.example.blindovertaking.feature_1.0.0.qualifier-source-feature.jar" id="org.muml.example.blindovertaking.feature.source" version="1.0.0.qualifier">
+      <category name="org.muml.example.repository.category"/>
+   </feature> 
+	
+   <feature url="features/org.muml.example.blinkingled.feature_1.0.0.qualifier.jar" id="org.muml.example.blinkingled.feature" version="1.0.0.qualifier">
+      <category name="org.muml.example.repository.category"/>
+   </feature>
+  <feature url="features/org.muml.example.blinkingled.feature_1.0.0.qualifier-source-feature.jar" id="org.muml.example.blinkingled.feature.source" version="1.0.0.qualifier">
+      <category name="org.muml.example.repository.category"/>
+   </feature> 	
+	
+   <feature url="features/org.muml.example.brakebywire.feature_1.0.0.qualifier.jar" id="org.muml.example.brakebywire.feature" version="1.0.0.qualifier">
+      <category name="org.muml.example.repository.category"/>
+   </feature>
+  <feature url="features/org.muml.example.brakebywire.feature_1.0.0.qualifier-source-feature.jar" id="org.muml.example.brakebywire.feature.source" version="1.0.0.qualifier">
+      <category name="org.muml.example.repository.category"/>
+   </feature> 	
+	
+   <feature url="features/org.muml.example.cooperatingballplayingrobots.feature_1.0.0.qualifier.jar" id="org.muml.example.cooperatingballplayingrobots.feature" version="1.0.0.qualifier">
+      <category name="org.muml.example.repository.category"/>
+   </feature>
+  <feature url="features/org.muml.example.cooperatingballplayingrobots.feature_1.0.0.qualifier-source-feature.jar" id="org.muml.example.cooperatingballplayingrobots.feature.source" version="1.0.0.qualifier">
+      <category name="org.muml.example.repository.category"/>
+   </feature> 		
+	
+   <feature url="features/org.muml.example.coordinatingbebots.feature_1.0.0.qualifier.jar" id="org.muml.example.coordinatingbebots.feature" version="1.0.0.qualifier">
+      <category name="org.muml.example.repository.category"/>
+   </feature>
+  <feature url="features/org.muml.example.coordinatingbebots.feature_1.0.0.qualifier-source-feature.jar" id="org.muml.example.coordinatingbebots.feature.source" version="1.0.0.qualifier">
+      <category name="org.muml.example.repository.category"/>
+   </feature> 	
+	
+   <feature url="features/org.muml.example.coordinationpatternlib.feature_1.0.0.qualifier.jar" id="org.muml.example.coordinationpatternlib.feature" version="1.0.0.qualifier">
+      <category name="org.muml.example.repository.category"/>
+   </feature>
+  <feature url="features/org.muml.example.coordinationpatternlib.feature_1.0.0.qualifier-source-feature.jar" id="org.muml.example.coordinationpatternlib.feature.source" version="1.0.0.qualifier">
+      <category name="org.muml.example.repository.category"/>
+   </feature> 	
 
+   <feature url="features/org.muml.example.mini.entryexit.feature_1.0.0.qualifier.jar" id="org.muml.example.mini.entryexit.feature" version="1.0.0.qualifier">
+      <category name="org.muml.example.repository.category"/>
+   </feature>
+  <feature url="features/org.muml.example.mini.entryexit.feature_1.0.0.qualifier-source-feature.jar" id="org.muml.example.mini.entryexit.feature.source" version="1.0.0.qualifier">
+      <category name="org.muml.example.repository.category"/>
+   </feature> 
+	
+   <feature url="features/org.muml.example.mini.messages.feature_1.0.0.qualifier.jar" id="org.muml.example.mini.messages.feature" version="1.0.0.qualifier">
+      <category name="org.muml.example.repository.category"/>
+   </feature>
+  <feature url="features/org.muml.example.mini.messages.feature_1.0.0.qualifier-source-feature.jar" id="org.muml.example.mini.messages.feature.source" version="1.0.0.qualifier">
+      <category name="org.muml.example.repository.category"/>
+   </feature> 
+	
+   <feature url="features/org.muml.example.mini.operations.feature_1.0.0.qualifier.jar" id="org.muml.example.mini.operations.feature" version="1.0.0.qualifier">
+      <category name="org.muml.example.repository.category"/>
+   </feature>
+  <feature url="features/org.muml.example.mini.operations.feature_1.0.0.qualifier-source-feature.jar" id="org.muml.example.mini.operations.feature.source" version="1.0.0.qualifier">
+      <category name="org.muml.example.repository.category"/>
+   </feature> 	
+	
+   <feature url="features/org.muml.example.mini.simplertsc.feature_1.0.0.qualifier.jar" id="org.muml.example.mini.simplertsc.feature" version="1.0.0.qualifier">
+      <category name="org.muml.example.repository.category"/>
+   </feature>
+  <feature url="features/org.muml.example.mini.simplertsc.feature_1.0.0.qualifier-source-feature.jar" id="org.muml.example.mini.simplertsc.feature.source" version="1.0.0.qualifier">
+      <category name="org.muml.example.repository.category"/>
+   </feature> 	
+	
+   <feature url="features/org.muml.example.mini.syncchannel.feature_1.0.0.qualifier.jar" id="org.muml.example.mini.syncchannel.feature" version="1.0.0.qualifier">
+      <category name="org.muml.example.repository.category"/>
+   </feature>
+  <feature url="features/org.muml.example.mini.syncchannel.feature_1.0.0.qualifier-source-feature.jar" id="org.muml.example.mini.syncchannel.feature.source" version="1.0.0.qualifier">
+      <category name="org.muml.example.repository.category"/>
+   </feature> 			
+	
+   <feature url="features/org.muml.example.mini.syncselectorchannel.feature_1.0.0.qualifier.jar" id="org.muml.example.mini.syncselectorchannel.feature" version="1.0.0.qualifier">
+      <category name="org.muml.example.repository.category"/>
+   </feature>
+  <feature url="features/org.muml.example.mini.syncselectorchannel.feature_1.0.0.qualifier-source-feature.jar" id="org.muml.example.mini.syncselectorchannel.feature.source" version="1.0.0.qualifier">
+      <category name="org.muml.example.repository.category"/>
+   </feature> 		
+	
+   <feature url="features/org.muml.example.railcab.feature_1.0.0.qualifier.jar" id="org.muml.example.railcab.feature" version="1.0.0.qualifier">
+      <category name="org.muml.example.repository.category"/>
+   </feature>
+  <feature url="features/org.muml.example.railcab.feature_1.0.0.qualifier-source-feature.jar" id="org.muml.example.railcab.feature.source" version="1.0.0.qualifier">
+      <category name="org.muml.example.repository.category"/>
+   </feature> 		
+
+   <feature url="features/org.muml.example.rocketlauncher.feature_1.0.0.qualifier.jar" id="org.muml.example.rocketlauncher.feature" version="1.0.0.qualifier">
+      <category name="org.muml.example.repository.category"/>
+   </feature>
+  <feature url="features/org.muml.example.rocketlauncher.feature_1.0.0.qualifier-source-feature.jar" id="org.muml.example.rocketlauncher.feature.source" version="1.0.0.qualifier">
+      <category name="org.muml.example.repository.category"/>
+   </feature> 
+	
+   <feature url="features/org.muml.example.sectionentry.feature_1.0.0.qualifier.jar" id="org.muml.example.sectionentry.feature" version="1.0.0.qualifier">
+      <category name="org.muml.example.repository.category"/>
+   </feature>
+  <feature url="features/org.muml.example.sectionentry.feature_1.0.0.qualifier-source-feature.jar" id="org.muml.example.sectionentry.feature.source" version="1.0.0.qualifier">
+      <category name="org.muml.example.repository.category"/>
+   </feature> 	
+	
    <category-def name="org.muml.example.repository.category" label="Example"/>
 </site>
