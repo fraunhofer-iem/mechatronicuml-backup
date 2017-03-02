@@ -39,7 +39,7 @@
     <module>org.muml.example.mini.syncchannel.feature</module>
     <module>org.muml.example.mini.syncselectorchannel</module>
     <module>org.muml.example.mini.syncselectorchannel.feature</module>
-    <module>org.muml.example.overtakingwithtrackInfo</module>
+    <!--<module>org.muml.example.overtakingwithtrackInfo</module> -->
     <module>org.muml.example.railcab</module>
     <module>org.muml.example.railcab.feature</module>
     <module>org.muml.example.railcab.profiletypes</module>
@@ -48,7 +48,7 @@
     <module>org.muml.example.sectionentry</module>
     <module>org.muml.example.sectionentry.feature</module>
     <module>org.muml.example.sectionentrywithdependencies</module>
-    <module>org.muml.example.tests</module>
+    <!--<module>org.muml.example.tests</module> -->
     <module>org.muml.example.ttccarplatooning</module>
 	<module>org.muml.example.repository</module>
   </modules>
@@ -57,7 +57,7 @@
       <plugin>
         <groupId>org.eclipse.tycho</groupId>
         <artifactId>tycho-maven-plugin</artifactId>
-        <version>1.0.0</version>
+        <version>${tycho-version}</version>
         <extensions>true</extensions>
       </plugin>
 	  <plugin>
@@ -85,7 +85,55 @@
 			</environment>
 		  </environments>
 		</configuration> 
-      </plugin>	    
+      </plugin>
+	 <!-- enable source feature generation -->
+	   <plugin>
+		<groupId>org.eclipse.tycho.extras</groupId>
+		<artifactId>tycho-source-feature-plugin</artifactId>
+		<version>${tycho-version}</version>
+		<executions>
+		 <execution>
+		  <id>source-feature</id>
+		  <phase>package</phase>
+		  <goals>
+		   <goal>source-feature</goal>
+		  </goals>
+		 </execution>
+		</executions>
+		<configuration>
+		 <excludes>
+		   <!--provide plug-ins not containing any source code -->
+		  <plugin id="org.muml.example.repository" />
+		 </excludes>
+		</configuration>
+	   </plugin>
+	   <plugin>
+		<groupId>org.eclipse.tycho</groupId>
+		<artifactId>tycho-source-plugin</artifactId>
+		<version>${tycho-version}</version>
+		<executions>
+		 <execution>
+		  <id>plugin-source</id>
+		  <goals>
+		   <goal>plugin-source</goal>
+		  </goals>
+		 </execution>
+		</executions>
+	   </plugin>
+	   <plugin>
+		<groupId>org.eclipse.tycho</groupId>
+		<artifactId>tycho-p2-plugin</artifactId>
+		<version>${tycho-version}</version>
+		<executions>
+		 <execution>
+		  <id>attached-p2-metadata</id>
+		  <phase>package</phase>
+		  <goals>
+		   <goal>p2-metadata</goal>
+		  </goals>
+		 </execution>
+		</executions>
+	   </plugin>	
     </plugins>
   </build>
 	
