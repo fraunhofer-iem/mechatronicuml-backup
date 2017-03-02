@@ -212,5 +212,10 @@
 			<layout>p2</layout>
 			<url>${repobase}/Codegen_C-Maven/${repopath}org.muml.codegen.c.repository/target/repository</url>
 		</repository>
+		<repository>
+			<id>Modelica</id>
+			<layout>p2</layout>
+			<url>${repobase}/ModelicaAdapterFeature-Maven/${repopath}org.muml.modelica.repository/target/repository</url>
+		</repository>
 	</repositories>
 </project>
