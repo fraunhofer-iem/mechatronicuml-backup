@@ -22,6 +22,44 @@
     <module>org.muml.modelica.transform.repository</module>
   </modules>
 	
+ <dependencies>
+    <dependency>
+      <groupId>org.eclipse.acceleo</groupId>
+      <artifactId>org.eclipse.acceleo.maven</artifactId>
+      <version>3.6.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.acceleo</groupId>
+      <artifactId>org.eclipse.acceleo.engine</artifactId>
+      <version>3.6.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.uml2</groupId>
+      <artifactId>org.eclipse.uml2.uml</artifactId>
+      <version>4.1.1.v20130902-0826</version>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.uml2</groupId>
+      <artifactId>org.eclipse.uml2.types</artifactId>
+      <version>1.1.0.v20130902-0826</version>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.uml2</groupId>
+      <artifactId>org.eclipse.uml2.common</artifactId>
+      <version>1.8.1.v20130902-0826</version>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.core</groupId>
+      <artifactId>org.eclipse.core.runtime</artifactId>
+      <version>3.6.0.v20100505</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-simple</artifactId>
+      <version>1.6.4</version>
+    </dependency>
+  </dependencies>	
+	
   <build>
     <plugins>
       <plugin>
@@ -102,7 +140,33 @@
 		 </execution>
 		</executions>
 	   </plugin>
+		 <plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-antrun-plugin</artifactId>
+			<version>1.3</version>
+		  </plugin>
     </plugins>
+	  
+	 <pluginManagement>
+		<plugins>
+			<plugin>
+			   <groupId>org.eclipse.acceleo</groupId>
+			   <artifactId>org.eclipse.acceleo.maven</artifactId>
+			   <version>3.6.0-SNAPSHOT</version>
+			   <executions>
+				  <execution>
+					<goals>
+						<goal>acceleo-compile</goal>
+					</goals>
+				  </execution>
+				</executions>
+				<configuration>
+				  <useBinaryResources>false</useBinaryResources>
+				  <usePlatformResourcePath>true</usePlatformResourcePath>
+				</configuration>  
+			</plugin>
+		</plugins>
+	</pluginManagement> 
   </build>
 	
     <profiles>
@@ -183,6 +247,30 @@
 			<layout>p2</layout>
 			<url>${repobase}/GraphvizAdapter-Maven/${repopath}org.muml.graphviz.repository/target/repository</url>
 		</repository>
+	  	<repository>
+		  <id>uml-to-java</id>
+		  <layout>p2</layout>
+		  <url>http://marketplace.obeonetwork.com/updates/od5/</url>
+		</repository>
+		<repository>
+		  <id>Eclipse - Acceleo Snapshots</id>
+		  <url>https://repo.eclipse.org/content/repositories/acceleo-snapshots</url>
+		</repository>
+		<repository>
+		  <id>Eclipse - Acceleo Release</id>
+		  <url>https://repo.eclipse.org/content/repositories/acceleo-releases</url>
+		</repository>
 	</repositories>		
+	
+	<pluginRepositories>
+		<pluginRepository>
+		  <id>Eclipse - Acceleo Snapshots</id>
+		  <url>https://repo.eclipse.org/content/repositories/acceleo-snapshots</url>
+		</pluginRepository>
+		<pluginRepository>
+		  <id>Eclipse - Acceleo Release</id>
+		  <url>https://repo.eclipse.org/content/repositories/acceleo-releases</url>
+		</pluginRepository>
+	</pluginRepositories>
 	
 </project>
