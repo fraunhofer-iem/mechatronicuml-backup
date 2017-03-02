@@ -23,7 +23,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.m2m.qvt.oml.runtime,
  org.eclipse.m2m.qvt.oml.project,
  org.muml.graphviz.blackbox,
- org.eclipse.m2m.qvt.oml;bundle-version="3.3.0"
+ org.eclipse.m2m.qvt.oml;bundle-version="3.3.0",
+ org.muml.pim.types
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
