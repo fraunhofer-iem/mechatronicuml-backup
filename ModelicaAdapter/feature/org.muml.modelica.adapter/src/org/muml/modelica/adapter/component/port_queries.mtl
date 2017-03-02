@@ -1,0 +1,108 @@
+[module port_queries('http://www.muml.org/pim/behavior/1.0.0',
+				'http://www.muml.org/core/1.0.0',
+				'http://www.muml.org/pim/actionlanguage/1.0.0',
+				'http://www.muml.org/pim/msgtype/1.0.0',
+				'http://www.muml.org/pim/types/1.0.0',
+				'http://www.muml.org/modelinstance/1.0.0',
+				'http://www.muml.org/pim/component/1.0.0',
+				'http://www.muml.org/pim/instance/1.0.0',
+				'http://www.muml.de/modelica/transform/1.0.0',
+				'http://www.muml.org/pim/realtimestatechart/1.0.0')/]
+
+[import org::muml::modelica::adapter::component::naming]
+[import org::muml::modelica::adapter::rtsc::async::queries]
+[import org::muml::modelica::adapter::rtsc::async::helper::queries]
+[import org::muml::modelica::adapter::rtsc::util::query::reporter]
+[import org::muml::modelica::adapter::rtsc::util::query::annotation]
+
+[**
+ * Creates an annotation for a port instance declaration.
+ * @TODO: implement me and do not return a hardcoded annotation
+ * @param portInstance the port instance
+*/]
+[query public createPortDeclAnnotation(portInstance : DiscretePortInstance, messageType : MessageType, inPort : Boolean) : String =
+	--let i : Integer = portInstance.componentInstance.portInstances->indexOf(portInstance)
+	--in
+	--let j : Integer = portInstance.receiverMessageTypes->union(portInstance.senderMessageTypes)->asOrderedSet()->indexOf(messageType)
+	--in
+	--'annotation(Placement(transformation(extent={{' + ((i-1)*35) + ',' + (j*20) + '},{' + ((i-1)*35 + 30) + ',' + ((j+1)*20) + '}})))'
+	portInstance.createNodeDeclAnnotation(messageType.name + '_' + if inPort then 'inputDelegationPort' else 'outputDelegationPort' endif)
+/]
+
+[query public createPortDeclAnnotation(portInstance : ContinuousPortInstance) : String =
+	-- XXX: are we going to layout hybrid ports, too?
+	portInstance.createNodeDeclAnnotation('')
+/]
+
+[**
+ * Returns the of the rtsc input port for the passed message type.
+ * @param messageType the MessageType
+*/]
+[query public getRTSCInputPortName(portInstance : PortInstance, messageType : MessageType) : String =
+	portInstance.getBehaviorVariableName() + '.' + portInstance.getInputPortName(messageType)
+/]
+
+[**
+ * Returns the name of the rtsc output port for the passed message type.
+ * @param messageType the MessageType
+*/]
+[query public getRTSCOutputPortName(portInstance : PortInstance, messageType : MessageType) : String =
+	portInstance.getBehaviorVariableName() + '.' + portInstance.getOutputPortName(messageType)
+/]
+
+[**
+ * Create port connect annotation.
+ * @TODO: implement me!
+ * @param portInstance a portInstance
+]
+[query public createPortConnectAnnotation(portInstance : PortInstance) : String =
+	'annotation(Line(points={{0,0},{2,2}}, color={0,0,0},smooth=Smooth.None))'
+/]
+
+[**
+ * Check if datatypes of the message type's parameters are valid.
+ * For instance array data types cannot be transformed because
+ * the RealtimeCoordinationLibrary does not support them.
+ * @param portInstance the discrete port instance
+*/]
+[query public checkMessageTypesValidParameterDataTypes(messageTypeSet : OrderedSet(MessageType)) : Boolean =
+	messageTypeSet->collect(parameters)->select(dataType.oclIsKindOf(ArrayDataType))->collect(
+		'message type parameter "' + name + '" must not have an array datatype (type: '
+		+ dataType.name + ')' 
+	)->asSequence()->displayErrors()
+/]
+
+[**
+ * Return list of message types that have to be considered, when generating connect statements
+ * for the component's <-> rtsc delegation ports.
+ * @param messageTypeSet set of message types sent or received by a discrete port
+ * @param actualMessageEventSet set of asynchronous message events that are actually sent/received by the discrete port's rtsc
+*/]
+[query private getMessageTypesToConsider(messageTypeSet : Set(MessageType), actualMessageEventSet : Set(AsynchronousMessageEvent)) : Set(MessageType) =
+	messageTypeSet->select(messageType : MessageType |
+		actualMessageEventSet->getAsyncMessageEventRepr()
+			->collect(message.instanceOf)->includes(messageType)
+	)	
+/]
+
+[**
+ * Return the set of message types, which are actually received by the port instance's rtsc
+ * @param portInstance the discrete port instance
+*/]
+[query public getReceivedTriggerMessageTypes(portInstance : DiscretePortInstance) : Set(MessageType) =
+	portInstance.receiverMessageTypes->asSet()->getMessageTypesToConsider(
+		portInstance.portType.oclAsType(DiscretePort).behavior.oclAsType(RealtimeStatechart)
+			.getAllTriggerMessageEvents()
+	)
+/]
+
+[**
+ * Return the set of message types, which are actually sent by the port instance's rtsc
+ * @param portInstance the discrete port instance
+*/]
+[query public getSentRaiseMessageTypes(portInstance : DiscretePortInstance) : Set(MessageType) =
+	portInstance.senderMessageTypes->asSet()->getMessageTypesToConsider(
+		portInstance.portType.oclAsType(DiscretePort).behavior.oclAsType(RealtimeStatechart)
+			.getAllRaiseMessageEvents()
+	)
+/]

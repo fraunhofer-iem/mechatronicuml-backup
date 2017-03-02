@@ -1,0 +1,120 @@
+[module component_queries('http://www.muml.org/pim/behavior/1.0.0',
+				'http://www.muml.org/core/1.0.0',
+				'http://www.muml.org/pim/actionlanguage/1.0.0',
+				'http://www.muml.org/pim/msgtype/1.0.0',
+				'http://www.muml.org/pim/types/1.0.0',
+				'http://www.muml.org/modelinstance/1.0.0',
+				'http://www.muml.org/pim/component/1.0.0',
+				'http://www.muml.org/pim/instance/1.0.0',
+				'http://www.muml.de/modelica/transform/1.0.0',
+				'http://www.muml.org/pim/realtimestatechart/1.0.0')/]
+
+[import org::muml::modelica::adapter::component::naming]
+[import org::muml::modelica::adapter::rtsc::util::query::naming]
+[import org::muml::modelica::adapter::rtsc::util::query::annotation]
+
+[**
+ * Creates an annotation for a component instance declaration.
+ * @TODO: implement me and do not return a hardcoded annotation
+ * @param componentInstance the component instance
+*/]
+[query public createComponentDeclAnnotation(componentInstance : ComponentInstance) : String =
+	--if componentInstance.oclIsKindOf(AtomicComponentInstance) then
+		componentInstance.createNodeDeclAnnotation()
+	--else
+	--	'annotation(Placement(transformation(extent={{0,0},{30,30}})))'
+	--endif	
+/]
+
+[query public createComponentIconDeclAnnotation(componentInstance : ComponentInstance) : String =
+	'annotation (Icon(coordinateSystem(extent = {{' +
+		componentInstance.getAnnotationDetail('MODELICA_CODEGEN', 'icon_xleft') + ', ' +
+		componentInstance.getAnnotationDetail('MODELICA_CODEGEN', 'icon_yleft') + '},{' +
+		componentInstance.getAnnotationDetail('MODELICA_CODEGEN', 'icon_xright') + ', ' +
+		componentInstance.getAnnotationDetail('MODELICA_CODEGEN', 'icon_yright') + '}})))'
+/]
+
+[query public createCICDeclAnnotation(cic : ComponentInstanceConfiguration) : String =
+	let width : String = cic.getAnnotationDetail('MODELICA_CODEGEN', 'width')
+	in
+	let height : String = cic.getAnnotationDetail('MODELICA_CODEGEN', 'height')
+	in
+	'annotation (Diagram(coordinateSystem(extent = {{-' + width + ', -' + height + '}, {' + width + ', ' + height + '}})))'
+/]
+
+[**
+ * Creates an annotation for a behavior declaration.
+ * @TODO: implement me and do not return a hardcoded annotation
+ * @param behavior the behavior
+*/]
+[query public createBehaviorDeclAnnotation(behavior : RealtimeStatechart) : String =
+	'annotation(Placement(transformation(extent={{0,0},{40,30}})))'
+/]
+
+[**
+ * Returns the model name of a component instance.
+ * @param componentInstance the ComponentInstance
+*/]
+[query public getModelName(componentInstance : ComponentInstance) : String =
+	componentInstance.getName().toUpperFirst()
+/]
+
+[**
+ * Returns the model name of a component instance.
+ * @param componentInstance the ComponentInstance
+*/]
+[query public getModelName(componentInstanceConfiguration : ComponentInstanceConfiguration) : String =
+	componentInstanceConfiguration.getName().toUpperFirst()
+/]
+
+[**
+ * Returns the path of the component instance model file.
+ * @param componentInstance the component instance
+ * @param modelName the name of the model element
+*/]
+[query public getPath(componentInstance : ComponentInstance, parentPackage : String) : String =
+	componentInstance.getModelName().getPath(parentPackage)
+/]
+
+[**
+ * Returns the path of the component instance configuration model file.
+ * @param componentInstanceConfiguration the component instance configuration
+ * @param modelName the name of the model element
+*/]
+[query public getPath(componentInstanceConfiguration : ComponentInstanceConfiguration, parentPackage : String) : String =
+	componentInstanceConfiguration.getModelName().getPath(parentPackage)
+/]
+
+[**
+ * Returns the path of the model file.
+ * @param modelName the name of the model element
+ * @param parentPackage the name of the parent package
+*/]
+[query private getPath(modelName : String, parentPackage : String) : String =
+	if parentPackage <> '' then
+		parentPackage.replaceAll('\\.', '/') + '/'
+	else
+		''
+	endif + modelName + '/' + modelName + '.mo'
+/]
+
+[**
+ * Returns the behavior of the atomic component instance
+ * @param map the map which maps a atomic component instance to a behavior (see m2t.transform meta-model)
+ * @param instance the atomic component instance
+*/]
+[query public getBehavior(map : Map, instance : AtomicComponentInstance) : RealtimeStatechart =
+	let res : OrderedSet(RealtimeStatechart) = entries->select(key = instance)->collect(value.oclAsType(RealtimeStatechart))->asOrderedSet()
+	in
+	if res->isEmpty() then
+		null
+	else
+		res->first()
+	endif
+/]
+
+[query public createLayoutAnnotations(cic : ComponentInstanceConfiguration) : OclAny =
+	invoke('org.muml.modelica.adapter.component.transformation.CICLayouter',
+		'layout(org.muml.pim.instance.ComponentInstanceConfiguration)',
+		Sequence{cic})
+/]

@@ -1,0 +1,71 @@
+[module variable('http://www.muml.org/pim/behavior/1.0.0',
+				 'http://www.muml.org/pim/actionlanguage/1.0.0',
+				 'http://www.muml.org/pim/types/1.0.0',
+				 'http://www.muml.org/pim/realtimestatechart/1.0.0')/]
+
+[import org::muml::modelica::adapter::rtsc::actionlanguage::expression]
+
+[import org::muml::modelica::adapter::rtsc::actionlanguage::variable_queries]
+[import org::muml::modelica::adapter::rtsc::util::query::naming]
+[import org::muml::modelica::adapter::rtsc::util::query::type]
+
+[**
+ * Create variable declarations
+ * @param attributeSet the set of attributes
+*/]
+[template public createVariableDeclarations(rtsc : RealtimeStatechart)]
+	// attribute declarations
+[for (variable : Variable | rtsc.allAvailableVariables)]
+	[if rtsc.variables->includes(variable)]
+	inner [if variable.constant]constant[/if] [variable.dataType.getType() /][createArraySizeDeclaration(variable.dataType)/] [variable.getName()/][createVariableInitializer(variable)/];
+	[else]
+	outer [if variable.constant]constant[/if] [variable.dataType.getType() /][createArraySizeDeclaration(variable.dataType)/] [variable.getName()/];
+	[/if]
+[/for]
+	// end attribute declarations
+[/template]
+
+[**
+ * Create a variable initializer for a non-constant variable
+ * @param variable the variable
+*/]
+[template private createVariableInitializer(variable : Variable)
+	? (not variable.constant and not variable.initializeExpression.oclIsUndefined())
+]
+(start=[generateExpression(variable.initializeExpression, false, '')/])
+[/template]
+
+[**
+ * Create a variable initializer for a constant variable
+ * @param variable the variable
+*/]
+[template private createVariableInitializer(variable : Variable)
+	? (variable.constant and not variable.initializeExpression.oclIsUndefined())
+]
+ = [generateExpression(variable.initializeExpression, false, '')/]
+[/template]
+
+[**
+ * Creates a size declaration for the given data type.
+ * @param dataType the data type
+*/]
+[template public createArraySizeDeclaration(dataType : DataType) ? (dataType.oclIsKindOf(ArrayDataType)) {
+	types : OrderedSet(ArrayDataType) = dataType.oclAsType(ArrayDataType).getIntermediateArrayDataTypes();
+}]
+['['/][for (interType : ArrayDataType | types) separator(', ')][interType.cardinality.value/][/for][']'/]
+[/template]
+
+[**
+ * Create local variable declarations
+ * @param rtsc the rtsc
+*/]
+[template public createLocalVariableDeclarations(rtsc : RealtimeStatechart) {
+	lVarDecls : Set(LocalVariableDeclarationStatement) = rtsc.getAllLocalVariableDeclarationStatements()->getLocalVariableDeclarationStatementRepr(); 
+}]
+	// local variable declarations
+[for (lVarDecl : LocalVariableDeclarationStatement | lVarDecls)]
+	[comment ignore initialize expression (the variable is "initialized" in the action where it is used)/]
+	[lVarDecl.variable.dataType.getType()/][createArraySizeDeclaration(variable.dataType)/] [lVarDecl.variable.getTypedNamedElementName()/];
+[/for]
+	// end local variable declarations
+[/template]

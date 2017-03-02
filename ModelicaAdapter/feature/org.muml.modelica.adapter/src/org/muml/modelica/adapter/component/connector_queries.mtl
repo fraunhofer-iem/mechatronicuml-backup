@@ -1,0 +1,61 @@
+[module connector_queries('http://www.muml.org/pim/behavior/1.0.0',
+				'http://www.muml.org/core/1.0.0',
+				'http://www.muml.org/pim/actionlanguage/1.0.0',
+				'http://www.muml.org/pim/msgtype/1.0.0',
+				'http://www.muml.org/pim/types/1.0.0',
+				'http://www.muml.org/modelinstance/1.0.0',
+				'http://www.muml.org/pim/component/1.0.0',
+				'http://www.muml.org/pim/instance/1.0.0',
+				'http://www.muml.de/modelica/transform/1.0.0',
+				'http://www.muml.org/pim/realtimestatechart/1.0.0')/]
+
+[import org::muml::modelica::adapter::component::naming]
+[import org::muml::modelica::adapter::rtsc::hybrid::queries]
+[import org::muml::modelica::adapter::rtsc::util::query::annotation]
+
+[**
+ * Returns true if the assembly/delegation connector instance connects discrete ports
+ * @param portConnectorInstance the PortConnectorInstance
+*/]
+[query public isDiscretePortConnectorInstance(portConnectorInstance : PortConnectorInstance) : Boolean =
+	portConnectorInstance.portInstances->at(1).oclIsKindOf(DiscretePortInstance)
+	and portConnectorInstance.portInstances->at(2).oclIsKindOf(DiscretePortInstance)
+/]
+
+[**
+ * Returns the fully qualified name of the continuous or hybrid port instance
+ * (do not use this query for a discrete port instance)..
+ * @param portInstance the PortInstance
+ * @param messageType the MessageType
+ * @param ref the structured component instance
+*/]
+[query public getFullyQualifiedPortName(portInstance : PortInstance, ref : StructuredComponentInstance) : String =
+	if portInstance.componentInstance = ref then 
+		''
+	else
+		portInstance.componentInstance.getName() + '.'
+	endif + portInstance.getPortName()
+/]
+
+[query private getKey(outputPort : PortInstance, inputPort : PortInstance, messageType : MessageType) : String =
+	if messageType.oclIsUndefined() then
+		''
+	else
+		outputPort.componentInstance.name + '_' + outputPort.getOutputPortName(messageType) + '_' + inputPort.componentInstance.name + '_' + inputPort.getInputPortName(messageType)
+	endif
+/]
+
+[**
+ * Create assembly connect annotation.
+ * @TODO: implement me!
+ * @param portInstance a portInstance
+]
+[query public createAssemblyConnectAnnotation(portConnectorInstance : PortConnectorInstance, outputPort : PortInstance, inputPort : PortInstance, messageType : MessageType) : String =
+	if portConnectorInstance.oclIsUndefined() then
+		'annotation(Line(points={{0,0},{2,2}}, color={0,0,0},smooth=Smooth.None))'
+	else
+		let key : String = getKey(outputPort, inputPort, messageType)
+		in
+		'annotation (Line(points={' + portConnectorInstance.getAnnotationDetail('MODELICA_CODEGEN', key) + '}, color={0,0,0}, smooth=Smooth.None))'
+	endif
+/]

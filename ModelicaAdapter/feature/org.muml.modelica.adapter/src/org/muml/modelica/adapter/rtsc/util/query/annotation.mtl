@@ -1,0 +1,63 @@
+[module annotation('http://www.muml.org/pim/behavior/1.0.0',
+				'http://www.muml.org/core/1.0.0',
+				'http://www.muml.org/pim/actionlanguage/1.0.0',
+				'http://www.muml.org/pim/msgtype/1.0.0',
+				'http://www.muml.org/pim/types/1.0.0',
+				'http://www.muml.org/pim/component/1.0.0',
+				'http://www.muml.org/pim/instance/1.0.0',
+				'http://www.muml.de/modelica/transform/1.0.0',
+				'http://www.muml.org/pim/realtimestatechart/1.0.0',
+				'http://www.muml.de/modelica/transform/1.0.0')/]
+
+[import org::muml::modelica::adapter::rtsc::util::query::reporter]
+
+[**
+ * Returns the value of the key mkey in the annotation called source.
+ * If no such value exists an error string is returned.
+ * @param element the annotated model element
+ * @param source the name of the annotation
+ * @param mkey the name of the annotation entry
+ * @TODO source as a paramter is not required any more, since we have an explicit PositionExtension --> we can filter by Type (source: shall be removed in the future)
+*/]
+[query public getAnnotationDetail(element : ExtendableElement, source : String, mkey : String) : String =
+	let l : OrderedSet(String) = element.extensions->filter(PositionExtension).details->select(key = mkey)->collect(value)->asOrderedSet()
+	in
+	if l->isEmpty() then
+		-- was: ERROR (empty list)
+		-- XXX: this is just a temporary workaround until the transformation
+		-- works with luna(insert apostrophe here)s qvto version (this way the video
+		-- can be created) 
+		if Sequence{'cannot found ' + mkey + ' annotation for the element ' + element}->displayWarnings() then
+			if mkey.endsWith('left') then
+				'0'
+			else if mkey.endsWith('right') then
+				'30'
+			else
+				'{30,30}, {50,50}'
+			endif
+			endif
+		else
+			'error reporting failed...'
+		endif
+	else
+		l->at(1)
+	endif
+/]
+
+[**
+ * Creates a modelica annotation for a "node" declaration. A node is most
+ * likely a state or a transition.
+ * @param element the "node" for which an annotation should be created.
+*/]
+[query public createNodeDeclAnnotation(element : ExtendableElement) : String =
+	element.createNodeDeclAnnotation('')
+/]
+
+[query public createNodeDeclAnnotation(element : ExtendableElement, prefix : String) : String =
+    'annotation (Placement(transformation(extent={{' +
+	element.getAnnotationDetail('MODELICA_CODEGEN', prefix + 'xleft') + ', ' +
+	element.getAnnotationDetail('MODELICA_CODEGEN', prefix + 'yleft') + '},{' +
+	element.getAnnotationDetail('MODELICA_CODEGEN', prefix + 'xright') + ', ' +
+	element.getAnnotationDetail('MODELICA_CODEGEN', prefix + 'yright') + '}})))'
+ /]
+

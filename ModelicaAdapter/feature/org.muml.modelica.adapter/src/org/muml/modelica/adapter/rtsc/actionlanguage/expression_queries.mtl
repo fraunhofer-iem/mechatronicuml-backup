@@ -1,0 +1,140 @@
+[module expression_queries('http://www.muml.org/pim/behavior/1.0.0',
+				'http://www.muml.org/core/1.0.0',
+				'http://www.muml.org/pim/actionlanguage/1.0.0',
+				'http://www.muml.org/pim/msgtype/1.0.0',
+				'http://www.muml.org/pim/types/1.0.0',
+				'http://www.muml.org/pim/component/1.0.0',
+				'http://www.muml.org/pim/instance/1.0.0',
+				'http://www.muml.de/modelica/transform/1.0.0',
+				'http://www.muml.org/pim/realtimestatechart/1.0.0')/]
+
+[import org::muml::modelica::adapter::rtsc::util::query::naming]
+[import org::muml::modelica::adapter::rtsc::util::query::rtsc]
+
+[**
+ * Returns the operator of a comparing operator
+ * @param comparingOperator the comparing operator
+*/]
+[query public getComparingOperator(comparingOperator : ComparingOperator) : String =
+	if comparingOperator = ComparingOperator::LESS then
+		'<'
+	else if comparingOperator = ComparingOperator::LESS_OR_EQUAL then
+		'<='
+	else if comparingOperator = ComparingOperator::GREATER then
+		'>'
+	else if comparingOperator = ComparingOperator::GREATER_OR_EQUAL then
+		'>='
+	else if comparingOperator = ComparingOperator::EQUAL then
+		'=='
+	else
+		'<>'
+	endif
+	endif
+	endif
+	endif
+	endif
+/]
+
+[**
+ * Returns a corresponding modelica logic operator
+ * @param logicOperator the logic operator
+*/]
+[query public getLogicOperator(logicOperator : LogicOperator) : String =
+	if logicOperator = LogicOperator::AND then
+		'and'
+	else if logicOperator = LogicOperator::OR then
+		'or'
+	else
+		'unsupported op'
+	endif
+	endif
+/]
+
+[**
+ * Returns a corresponding modelica arithmetic operator
+ * @param arithmeticOperator the arithmetic operator
+*/]
+[query public getArithmeticOperator(arithmeticOperator : ArithmeticOperator) : String =
+	if arithmeticOperator = ArithmeticOperator::PLUS then
+		'+'
+	else if arithmeticOperator = ArithmeticOperator::MINUS then
+		'-'
+	else if arithmeticOperator = ArithmeticOperator::TIMES then
+		'*'
+	else if arithmeticOperator = ArithmeticOperator::DIVIDE then
+		'/'
+	else
+		'unsupported'
+	endif
+	endif
+	endif
+	endif
+/]
+
+[**
+ * Returns a corresponding modelica unary operator
+ * @param unaryOperator the unary operator
+*/]
+[query public getUnaryOperator(unaryOperator : UnaryOperator) : String =
+	if unaryOperator = UnaryOperator::MINUS then
+		'-'
+	else if unaryOperator = UnaryOperator::INCREMENT then
+		'++'
+	else if unaryOperator = UnaryOperator::DECREMENT then
+		'--'
+	else if unaryOperator = UnaryOperator::NOT then
+		'not '
+	else
+		'unsupported'
+	endif
+	endif
+	endif
+	endif
+/]
+
+[**
+ * Returns the assign operator.
+ * @param expression the assignment expression
+*/]
+[query public getIncrementDecrementOperator(expression : Assignment) : String =
+	if expression.incrementDecrementOperator = IncrementDecrementOperator::INCREMENT then
+		'+'
+	else if expression.incrementDecrementOperator = IncrementDecrementOperator::DECREMENT then
+		'-'
+	else
+		'unsupported'
+	endif
+	endif
+/]
+
+[**
+ * Returns the rtsc which contains the trigger message expression's
+ * transition (that is the transition which contains the expression).
+ * @param expression the trigger message expression 
+*/]
+[query private getStatechart(expression : TriggerMessageExpression) : RealtimeStatechart =
+	expression.oclAsType(ecore::EObject)->asSet()->closure(e : ecore::EObject |
+		if not e.oclIsKindOf(Transition) then
+			e.eContainer()
+		else
+			e
+		endif
+	)->any(oclIsKindOf(Transition)).oclAsType(Transition).statechart
+/]
+
+[**
+ * If fqname is True, it returns the fully qualified name of the
+ * trigger message expression's parameter variable. Otherwise, the
+ * unqualified name of the trigger message expression's parameter variable
+ * is returned.
+ * The variable is located in the port statechart.
+ * @param expression the trigger message expression
+ * @param fqname indicates whether a fully qualified name should be returned
+*/]
+[query public getTriggerMessageEventParameterVariableFullyQualifiedName(expression : TriggerMessageExpression, fqname : Boolean) : String =
+	if fqname then
+		expression.getStatechart().getParentPortStatechart().getFullyQualifiedName() + '.'
+	else
+		''
+	endif + getTriggerMessageEventParameterVariableName(expression.parameter, expression.messageType)
+/]

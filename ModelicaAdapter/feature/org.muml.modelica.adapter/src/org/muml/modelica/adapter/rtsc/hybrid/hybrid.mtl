@@ -1,0 +1,110 @@
+[module hybrid('http://www.muml.org/core/1.0.0',
+			   'http://www.muml.org/pim/component/1.0.0',
+			   'http://www.muml.org/pim/instance/1.0.0',
+'http://www.muml.org/pim/valuetype/1.0.0')/]
+
+[import org::muml::modelica::adapter::rtsc::actionlanguage::expression]
+[import org::muml::modelica::adapter::rtsc::actionlanguage::variable]
+
+[import org::muml::modelica::adapter::rtsc::hybrid::queries]
+[import org::muml::modelica::adapter::rtsc::util::query::type]
+[import org::muml::modelica::adapter::rtsc::util::query::time]
+[import org::muml::modelica::adapter::rtsc::util::query::naming]
+[import org::muml::modelica::adapter::rtsc::util::query::annotation]
+
+[**
+ * Creates variable declarations for hybrid ports.
+ * @param hybridPortInstanceSet set of hybrid port instances
+ * @param isRoot specifies whether the current statechart represents the root/toplevel statechart
+*/]
+[template public createHybridPortDeclarations(hybridPortInstanceSet : Set(HybridPortInstance), isRoot : Boolean)]
+	// hybrid port declarations
+[for (hybridPortInstance : HybridPortInstance | hybridPortInstanceSet)]
+[if isRoot][createHybridPortConnector(hybridPortInstance, true)/][/if]
+[createHybridPortVariableDeclaration(hybridPortInstance, isRoot)/]
+[/for]
+	// end hybrid port declarations
+[/template]
+
+[**
+ * Creates a connector a hybrid port instance.
+ * @param hybridPortInstance the hybrid port instance
+ * @param dummyAnnotation in case of a rtsc a dummy annotation is created, because we have no layout data yet
+*/]
+[template public createHybridPortConnector(hybridPortInstance : HybridPortInstance, dummyAnnotation : Boolean)]
+[hybridPortInstance.getModelicaConnectorType()/][createArraySizeDeclaration(hybridPortInstance.portType.oclAsType(HybridPort).dataType)/] [hybridPortInstance.getPortName()/]
+	[if dummyAnnotation]annotation(Placement(transformation(extent={{0, 0},{35, 20}})))[else][hybridPortInstance.createNodeDeclAnnotation()/][/if];
+[/template]
+
+[**
+ * Creates the necessary variable declarations for a hybrid port.
+ * @param hybridPortInstance the hybrid port instance
+ * @param isRoot specifies whether the current statechart represents the root/toplevel statechart
+*/]
+[template private createHybridPortVariableDeclaration(hybridPortInstance : HybridPortInstance, isRoot : Boolean) {
+	hybridPort : HybridPort = hybridPortInstance.portType.oclAsType(HybridPort);
+}]
+[if isRoot]inner[else]outer[/if] [hybridPort.dataType.getType() /][createArraySizeDeclaration(hybridPort.dataType)/] [hybridPortInstance.portType.getName()/];
+[if isRoot][hybridPort.dataType.getType() /][createArraySizeDeclaration(hybridPort.dataType)/] [hybridPortInstance.getSampledValueVariableName()/][hybridPortInstance.createInitializeExpression()/];[/if]
+[/template]
+
+[**
+ * Creates a Modelica initialize expression for a hybrid port instance
+ * @param hybridPortInstance the hybrid port instance
+*/]
+[template private createInitializeExpression(hybridPortInstance : HybridPortInstance) ? (
+	not hybridPortInstance.portType.oclAsType(HybridPort).initializeExpression.oclIsUndefined()
+)]
+(start=[generateExpression(hybridPortInstance.portType.oclAsType(HybridPort).initializeExpression, false, '')/])
+[/template]
+
+[**
+ * Creates equations for hybrid port connectors.
+ * @param hybridPortInstanceSet the set of hybrid port instances
+*/]
+[template public createHybridPortEquations(hybridPortInstanceSet : Set(HybridPortInstance))]
+	// connect hybrid ports
+[for (hybridPortInstance : HybridPortInstance | hybridPortInstanceSet)]
+[createHybridPortEquation(hybridPortInstance)/]
+[/for]
+	// end connect hybrid ports
+[/template]
+
+[**
+ * Creates an equation for hybrid port connector.
+ * @param hybridPortInstance the hybrid port instance
+*/]
+[template private createHybridPortEquation(hybridPortInstance : HybridPortInstance)]
+	[hybridPortInstance.getPortName()/] = [hybridPortInstance.getSampledValueVariableName()/];
+[/template]
+
+[**
+ * Reads or writes the value of a hybrid port instance's sampled
+ * value variable.
+ * @param hybridPortInstanceSet the set of hybrid ports
+*/]
+[template public rwHybridPortSampledValueVariable(hybridPortInstanceSet : Set(HybridPortInstance))]
+	// hybrid port sample value variable equations
+[for (hybridPortInstance : HybridPortInstance | hybridPortInstanceSet)]
+[rwHybridPortSampledValueVariable(hybridPortInstance)/]
+[/for]
+	// end hybrid port sample value variable equations
+[/template]
+
+[**
+ * Reads or writes the value of a hybrid port instance's sampled
+ * value variable.
+ * @param hybridPort the hybrid port
+*/]
+[template private rwHybridPortSampledValueVariable(hybridPortInstance : HybridPortInstance) {
+	hybridPort : HybridPort = hybridPortInstance.portType.oclAsType(HybridPort);
+}]
+algorithm
+	when sample(0, ([generateExpression(hybridPort.samplingInterval.value, false, '')/]) * [hybridPort.samplingInterval.getTimeUnitFactor()/]) then
+	[if hybridPort.inPort]
+		[hybridPortInstance.getName()/] := [hybridPortInstance.getSampledValueVariableName()/];
+	[else]
+		[hybridPortInstance.getSampledValueVariableName()/] := [hybridPortInstance.getName()/];
+	[/if]
+	end when;
+[/template]

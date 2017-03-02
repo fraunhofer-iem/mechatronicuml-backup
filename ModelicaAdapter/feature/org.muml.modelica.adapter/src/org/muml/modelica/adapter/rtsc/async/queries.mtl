@@ -1,0 +1,384 @@
+[module queries('http://www.muml.org/pim/behavior/1.0.0',
+				'http://www.muml.org/core/1.0.0',
+				'http://www.muml.org/pim/actionlanguage/1.0.0',
+				'http://www.muml.org/pim/msgtype/1.0.0',
+				'http://www.muml.org/pim/types/1.0.0',
+				'http://www.muml.org/pim/component/1.0.0',
+				'http://www.muml.org/pim/instance/1.0.0',
+				'http://www.muml.de/modelica/transform/1.0.0',
+				'http://www.muml.org/pim/realtimestatechart/1.0.0')]
+
+[import org::muml::modelica::adapter::rtsc::async::helper::queries]
+[import org::muml::modelica::adapter::rtsc::util::query::annotation]
+[import org::muml::modelica::adapter::rtsc::util::query::naming]
+[import org::muml::modelica::adapter::rtsc::util::query::type]
+[import org::muml::modelica::adapter::rtsc::util::query::rtsc]
+
+[**
+ * Returns an OrderedSet of parameter bindings of type typeName
+ * @param ev the AsynchronousMessageEvent
+ * @param typeName the type of the returned parameter bindings
+*/]
+[query private getTypeParameterBindings(ev : AsynchronousMessageEvent, typeName : String) : OrderedSet(ParameterBinding) =
+	ev.message.parameterBinding->select(parameter.dataType.name.toString().contains(typeName) )->sortedBy(parameter.dataType.name)
+/]
+
+[**
+ * Returns an OrderedSet of Integer parameter bindings of an AsynchronousMessageEvent
+ * @param ev the AsynchronousMessageEvent
+*/]
+[query public getIntegerParameterBindings(ev : AsynchronousMessageEvent) : OrderedSet(ParameterBinding) =
+	ev.getTypeParameterBindings('int')
+/]
+
+[**
+ * Returns an OrderedSet of Real parameter bindings of an AsynchronousMessageEvent
+ * @param ev the AsynchronousMessageEvent
+*/]
+[query public getRealParameterBindings(ev : AsynchronousMessageEvent) : OrderedSet(ParameterBinding) =
+	ev.getTypeParameterBindings('double')
+/]
+
+[**
+ * Returns an OrderedSet of Boolean parameter bindings of an AsynchronousMessageEvent
+ * @param ev the AsynchronousMessageEvent
+*/]
+[query public getBooleanParameterBindings(ev : AsynchronousMessageEvent) : OrderedSet(ParameterBinding) =
+	ev.getTypeParameterBindings('boolean')
+/]
+
+[**
+ * Get Set of transitions which raise the asynchronous message event ev.
+ * @param ev the AsynchronousMessageEvent
+ * @param transitionSet the set of transitions
+*/]
+[query public getRaiseTransitions(ev : AsynchronousMessageEvent, transitionSet : Set(Transition)) : Set(Transition) =
+	transitionSet->select(raiseMessageEvent = ev)
+/]
+
+[**
+ * Returns the transition which "owns" the passed AsynchronousMessageEvent
+ * @param ev the AsynchronousMessageEvent
+*/]
+[query public getTransition(ev : AsynchronousMessageEvent) : Transition =
+	ev.eContainer().oclAsType(Transition)
+/]
+
+[**
+ * Get the name of a raise message message.
+ * @param ev the AsynchronousMessageEvent
+*/]
+[query public getMessageName(ev : AsynchronousMessageEvent) : String =
+	'message_' + ev.message.instanceOf.getName()	
+/]
+
+[**
+ * Get the name of a raise message event parameterbinding variable.
+ * @param pb the parameterbinding
+ * @param ev the asynchronous message event which owns the pb
+*/]
+[query public getRaiseMessageEventPBVariableName(pb : ParameterBinding, ev : AsynchronousMessageEvent) : String =
+	ev.getMessageName() + '_' + pb.parameter.getName()
+/]
+
+[**
+ * Creates an annotation for a asynchronous message event
+ * @param evname the name of the asynchronous message event
+ * @param rtsc the (root) realtime statechart (which provides the annotations)
+*/]
+[query private createAsyncMessageEventDeclAnnotation(evname : String, rtsc : RealtimeStatechart) : String =
+	'annotation (Placement(transformation(extent={{' +
+       rtsc.getAnnotationDetail('MODELICA_CODEGEN', evname + '_xleft') + ', '
+	   + rtsc.getAnnotationDetail('MODELICA_CODEGEN', evname + '_yleft') + '},{'
+       + rtsc.getAnnotationDetail('MODELICA_CODEGEN', evname + '_xright') + ', '
+       + rtsc.getAnnotationDetail('MODELICA_CODEGEN', evname + '_yright') + '}})))'
+/]
+
+[**
+ * Creates an annotation for a raise message event's message declaration
+ * @param ev the AsynchronousMessageEvent
+ * @param rtsc the (root) realtime statechart (which provides the annotations)
+*/]
+[query public createMessageDeclAnnotation(ev : AsynchronousMessageEvent, rtsc : RealtimeStatechart) : String =
+	createAsyncMessageEventDeclAnnotation(ev.getMessageName(), rtsc)
+/]
+
+[**
+ * Creates an annotation for a delegation port declaration
+ * @param portname the name of the delegation port
+ * @param rtsc the (root) realtime statechart (which provides the annotations)
+*/]
+[query private createDelegationPortDeclAnnotation(portname : String, rtsc : RealtimeStatechart) : String =
+	'annotation (Placement(transformation(extent={{' +
+       rtsc.getAnnotationDetail('MODELICA_CODEGEN', portname + '_xleft') + ', '
+       + rtsc.getAnnotationDetail('MODELICA_CODEGEN', portname + '_yleft') + '},{'
+       + rtsc.getAnnotationDetail('MODELICA_CODEGEN', portname + '_xright') + ', '
+       + rtsc.getAnnotationDetail('MODELICA_CODEGEN', portname + '_yright') + '}})))'
+/]
+
+[**
+ * Creates an annotation for a port instance declaration.
+ * @TODO: implement me and do not return a hardcoded annotation
+ * @param ev the asynchronous message event
+*/]
+[query public createPortDeclMultiCompAnnotation(ev : AsynchronousMessageEvent) : String =
+	'annotation(Placement(transformation(extent={{0,0},{18,18}})))'
+/]
+
+[**
+ * Creates an annotation for a raise message event's output delegation port declaration
+ * @param ev the AsynchronousMessageEvent
+ * @param rtsc the (root) realtime statechart (which provides the annotations)
+*/]
+[query public createRaiseMessageEventOutputDelegationPortDeclAnnotation(ev : AsynchronousMessageEvent, rtsc : RealtimeStatechart) : String =
+	createDelegationPortDeclAnnotation(ev.getOutputDelegationPortName(), rtsc)
+/]
+
+[**
+ * Returns the name of an output delegation port
+ * @param ev the AsynchronousMessageEvent
+*/]
+[query public getOutputDelegationPortName(ev : AsynchronousMessageEvent) : String =
+	ev.message.instanceOf.getOutputDelegationPortName()
+/]
+
+[**
+ * Creates an annotation for the connection of the message and the output delegation port
+ * @param ev the AsynchronousMessageEvent
+ * @param rtsc the (root) realtime statechart (which provides the annotations)
+*/]
+[query public createRaiseMessageEventOutputDelegationPortConnectAnnotation(ev : AsynchronousMessageEvent, rtsc : RealtimeStatechart) : String =
+	'annotation (Line(points={' + rtsc.getAnnotationDetail('MODELICA_CODEGEN', ev.getMessageName() + '_' + 'message_delegation_points') + '}, color={0,0,0}, smooth=Smooth.None))'
+/]
+
+[**
+ * Returns a set of AsynchronousMessageEvents
+ * @param transitionSet the set of transitions
+*/]
+[query public getRaiseMessageEvents(transitionSet : Set(Transition)) : Set(AsynchronousMessageEvent) =
+	transitionSet->select(not raiseMessageEvent.oclIsUndefined())->collect(raiseMessageEvent)->asSet()
+/]
+
+[**
+ * Returns a set containing a representative for each asynchronous message event
+ * @param events the set of asynchronous message events (either raise or trigger events)
+*/]
+[query public getAsyncMessageEventRepr(events : Set(AsynchronousMessageEvent)) : Set(AsynchronousMessageEvent) =
+	events->iterate(ev : AsynchronousMessageEvent; r : Set(AsynchronousMessageEvent) = Set(AsynchronousMessageEvent){} |
+		if not r->select(not oclIsUndefined())->collect(message.instanceOf.name)->includes(ev.message.instanceOf.name) then
+			r->including(ev)
+		else
+			r
+		endif
+	)
+/]
+
+[**
+ * Returns the "equivalence class" of the passed asynchronous message event
+ * @param ev the asynchronous message event
+ * @param events a set of (all) asynchronous message events (either raise or trigger events)
+*/]
+[query public getAsyncMessageEventEquivalenceClass(ev : AsynchronousMessageEvent, events : Set(AsynchronousMessageEvent)) : Set(AsynchronousMessageEvent) =
+	events->select(message.instanceOf.name = ev.message.instanceOf.name)
+/]
+
+[**
+ * Returns a set containing all raise message events
+ * @param rtsc the (root) realtime statechart
+*/]
+[query public getAllRaiseMessageEvents(rtsc : RealtimeStatechart) : Set(AsynchronousMessageEvent) =
+	rtsc.transitions->asSet()->getRaiseMessageEvents()->union(
+		rtsc.allSubstatecharts()->collect(transitions)->asSet()->getRaiseMessageEvents()
+	)
+/]
+
+[**
+ * Get the name of a trigger message event's mailbox
+ * @param ev the AsynchronousMessageEvent
+*/]
+[query public getMailboxName(ev : AsynchronousMessageEvent) : String =
+	ev.message.instanceOf.getMailboxName()
+/]
+
+[**
+ * Returns a set containing all trigger message events
+ * @param rtsc the (root) realtime statechart
+*/]
+[query public getAllTriggerMessageEvents(rtsc : RealtimeStatechart) : Set(AsynchronousMessageEvent) =
+	rtsc.getTriggerMessageEvents()->union(
+		rtsc.allSubstatecharts()->collect(transitions)->asSet()->getTriggerMessageEvents()
+	)
+/]
+
+[**
+ * Returns a set containing all trigger message events, which are used
+ * by a rtsc's transition.
+ * @param rtsc the realtime statechart
+*/]
+[query public getTriggerMessageEvents(rtsc : RealtimeStatechart) : Set(AsynchronousMessageEvent) =
+	rtsc.transitions->asSet()->getTriggerMessageEvents()
+/]
+
+[**
+ * Creates an annotation for a trigger message event's mailbox
+ * @param ev the trigger message event
+ * @param rtsc the (root) realtime statechart (which provides the annotation)
+*/]
+[query public createMailboxDeclAnnotation(ev : AsynchronousMessageEvent, rtsc : RealtimeStatechart) : String =
+	createAsyncMessageEventDeclAnnotation(ev.getMailboxName(), rtsc)
+/]
+
+[**
+ * Returns a set of AsynchronousMessageEvents
+ * @param transitionSet the set of transitions
+*/]
+[query public getTriggerMessageEvents(transitionSet : Set(Transition)) : Set(AsynchronousMessageEvent) =
+	transitionSet->select(not triggerMessageEvent.oclIsUndefined())->collect(triggerMessageEvent)->asSet()
+/]
+
+[**
+ * Returns the name of an input delegation port
+ * @param ev the AsynchronousMessageEvent
+*/]
+[query public getInputDelegationPortName(ev : AsynchronousMessageEvent) : String =
+	ev.message.instanceOf.getInputDelegationPortName()
+/]
+
+[**
+ * Creates an annotation for a trigger message event's input delegation port declaration
+ * @param ev the AsynchronousMessageEvent
+ * @param rtsc the (root) realtime statechart (which provides the annotations)
+*/]
+[query public createInputDelegationPortDeclAnnotation(ev : AsynchronousMessageEvent, rtsc : RealtimeStatechart) : String =
+	createDelegationPortDeclAnnotation(ev.getInputDelegationPortName(), rtsc)
+/]
+
+[**
+ * Creates an annotation for the connection of the mailbox and input delegation port
+ * @param ev the AsynchronousMessageEvent
+ * @param rtsc the (root) realtime statechart (which provides the annotations)
+*/]
+[query public createInputDelegationPortConnectAnnotation(ev : AsynchronousMessageEvent, rtsc : RealtimeStatechart) : String =
+	'annotation (Line(points={' + rtsc.getAnnotationDetail('MODELICA_CODEGEN', ev.getMailboxName() + '_' + 'mailbox_delegation_points') + '}, color={0,0,0}, smooth=Smooth.None))'
+/]
+
+[**
+ * Returns the type of the parameter
+ * @param param the parameter
+*/]
+[query public getType(param : Parameter) : String =
+	param.dataType.getType()
+/]
+
+[**
+ * Returns the type of the parameter binding's parameter
+ * @param pb the parameter binding
+*/]
+[query public getType(pb : ParameterBinding) : String =
+	pb.parameter.getType()
+/]
+
+[**
+ * Returns the name of the expression instance for this parameter binding
+ * @param pb the parameter binding
+ * @param ev the asynchronous message event
+*/]
+[query public getExpressionTypeInstanceName(pb : ParameterBinding, ev : AsynchronousMessageEvent) : String =
+ 	ev.getMessageName() + '_' + pb.parameter.getName() +
+	if pb.parameter.dataType.name.contains('int') then
+		'integerExpression'
+	else if pb.parameter.dataType.name = 'double' then
+		'realExpression'
+	else if pb.parameter.dataType.name = 'boolean' then
+		'booleanExpression'
+	else
+		'unsupported parameterbinding type'
+	endif
+	endif
+	endif
+/]
+
+[**
+ * Returns the name of the expression type for this parameter binding
+ * @param pb the parameter binding
+*/]
+[query public getExpressionTypeName(pb : ParameterBinding) : String =
+	if pb.parameter.dataType.name.contains('int') then
+		'Modelica.Blocks.Sources.IntegerExpression'
+	else if pb.parameter.dataType.name = 'double' then
+		'Modelica.Blocks.Sources.RealExpression'
+	else if pb.parameter.dataType.name = 'boolean' then
+		'Modelica.Blocks.Sources.BooleanExpression'
+	else
+		'unsupported parameterbinding type'
+	endif
+	endif
+	endif
+/]
+
+[**
+ * Returns the name for an output delegation port which is used in a component
+ * or multiport rtsc.
+ * @param ev the asynchronous message event
+ * @param regionInstance the RegionInstance
+*/]
+[query public getOutputDelegationPortName(ev : AsynchronousMessageEvent, regionInstance : RegionInstance) : String =
+	regionInstance.name + '_' + ev.getOutputDelegationPortName()
+/]
+
+[**
+ * Returns the name for an input delegation port which is used in a component
+ * or multiport rtsc.
+ * @param ev the asynchronous message event
+ * @param regionInstance the RegionInstance
+*/]
+[query public getInputDelegationPortName(ev : AsynchronousMessageEvent, regionInstance : RegionInstance) : String =
+	regionInstance.name + '_' + ev.getInputDelegationPortName()
+/]
+
+[**
+ * Returns the port statechart which indirectly embeds the
+ * statechart which embeds the event's transition (that is the
+ * transition which contains the event).
+ * @param ev the asynchronous message event 
+*/]
+[query public getParentPortStatechart(ev : AsynchronousMessageEvent) : RealtimeStatechart =
+	ev.getTransition().statechart.getParentPortStatechart()
+/]
+
+[**
+ * Returns the fully qualified transition name. If the transition belongs
+ * to the root statechart the plain transition name is returned.
+ * @param transition the transition
+*/]
+[query public getRelativelyQualifiedName(transition : Transition, ref : RealtimeStatechart) : String =
+	let name : String = transition.statechart.getRelativelyQualifiedName(ref)
+	in
+	if name <> '' then
+		name + '.' + transition.getName()
+	else
+		transition.getName()
+	endif
+/]
+
+[**
+ * Returns the relatively fully qualified name of the parameter binding variable.
+ * The parameter binding variable is located in the port statechart.
+ * @param pb the parameter binding
+ * @param ev the asynchronous message event
+*/]
+[query public getRaiseMessageEventPBVariableFullyQualifiedName(pb : ParameterBinding, ev : AsynchronousMessageEvent) : String =
+	ev.getParentPortStatechart().getFullyQualifiedName()
+		+ '.' + pb.getRaiseMessageEventPBVariableName(ev)
+/]
+
+[**
+ * Returns the fully qualified name of a trigger message event's parameter
+ * variable. The parameter variable is located in the port statechart.
+ * @param param the parameter of the parameter
+ * @param ev the asynchronous message event
+*/]
+[query public getTriggerMessageEventParameterVariableFullyQualifiedName(param : Parameter, ev : AsynchronousMessageEvent) : String =
+	ev.getParentPortStatechart().getFullyQualifiedName()
+		+ '.' + param.getTriggerMessageEventParameterVariableName(ev.message.instanceOf)
+/]

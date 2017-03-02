@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.muml.modelica.adapter.feature_1.0.0.qualifier.jar" id="org.muml.modelica.adapter.feature" version="1.0.0.qualifier">
+      <category name="org.muml.modelica.repository.category"/>
+   </feature>
+  <!--<feature url="features/org.muml.modelica.adapter.feature_1.0.0.qualifier-source-feature.jar" id="org.muml.modelica.adapter.feature.source" version="1.0.0.qualifier">
+      <category name="org.muml.modelica.repository.category"/>
+   </feature> -->
+
+   
+   <category-def name="org.muml.modelica.repository.category" label="Modelica Adapter"/>
+</site>

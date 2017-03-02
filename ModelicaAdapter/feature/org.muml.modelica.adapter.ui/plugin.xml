@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="org.muml"
+            defaultHandler="org.muml.modelica.adapter.ui.handler.GenerateModelicaCodeHandler"
+            id="org.muml.modelica.adapter.ui.GenerateModelicaCodeCommand"
+            name="Generate Modelica Code">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.muml?before=beforeMumlUtilities">
+         <separator
+               name="beforeMUMLCodegen"
+               visible="true">
+         </separator>
+         <command
+               commandId="org.muml.modelica.adapter.ui.GenerateModelicaCodeCommand"
+               label="Generate Modelica Code"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+               <reference
+                     definitionId="org.muml.expression.mumlfile">
+               </reference>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.exportWizards">
+      <wizard
+            category="org.muml.core.export"
+            class="org.muml.modelica.adapter.ui.export.ModelicaExportWizard"
+            id="org.muml.modelica.adapter.ui.export.ModelicaExportWizard"
+            name="Modelica">
+      </wizard>
+   </extension>
+</plugin>

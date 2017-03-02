@@ -1,0 +1,288 @@
+import transforms.naming;
+import transforms.AnnotationBase;
+import transforms.GraphvizBase;
+
+modeltype DOT uses dot("http://www.muml.org/graphviz/dot/1.0.0");
+//modeltype PLAIN uses plain("http://www.muml.org/graphviz/plain/1.0.0");
+modeltype COMMON uses common("http://www.muml.org/graphviz/common/1.0.0");
+modeltype UTIL uses util("http://www.muml.org/graphviz/util/1.0.0");
+modeltype INSTANCE uses pim::instance("http://www.muml.org/pim/1.0.0");
+modeltype CORE uses core("http://www.muml.org/core/1.0.0");
+modeltype ECORE uses ecore("http://www.eclipse.org/emf/2002/Ecore");
+
+transformation dot2cicAnnotation(inout instanceModel : INSTANCE, in dotInModel : DOT, in dotOutModel : DOT)
+	access Naming extends AnnotationBase;
+
+//property WIDTH : Real = 0;
+//property HEIGHT : Real = 0;
+
+property DIAGRAM_SCALE : String = "scale";
+property ICON : String = "icon";
+property ICON_X_LEFT : String = ICON + '_' + NODE_X_LEFT;
+property ICON_X_RIGHT : String = ICON + '_' + NODE_X_RIGHT;
+property ICON_Y_LEFT : String = ICON + '_' + NODE_Y_LEFT;
+property ICON_Y_RIGHT : String = ICON + '_' + NODE_Y_RIGHT;
+property ICON_XRIGHT : String = "icon_height";
+
+property CONNECTOR_POINTS : String = "points";
+
+main() {
+    log("transformation " + this.toString() + " started");
+   // log(rtscModel.objects()[RealtimeStatechart]->any(true).resolve()->size().toString());
+ //   rtscModel.objects()[RealtimeStatechart]->map createContainer();
+ 	assert fatal (dotOutModel.objects()[DotGraph]->select(parentGraph.oclIsUndefined())->size() = 1) with log("ERR");
+ 	dotOutModel.rootObjects()[DotGraph]->any(parentGraph.oclIsUndefined()).layout();
+ 	//dotOutModel.objects()[DotNode]->layout();
+ 	//plainModel.objects()[PlainEdge]->layout();
+ 	//plainModel.objects()[PlainNode]->layout();
+ 	//log("edges: " + plainModel.objects()[PlainEdge]->size().toString());
+    log("transformation " + this.toString() + " finished");
+}
+
+helper DotGraph::layout() {
+	//graphvizModel.objects()[Graph]->select(parentGraph.oclIsUndefined())->any(true).invresolveone(RealtimeStatechart).annotate(self);
+	this.WIDTH := self.getWidth();
+	this.HEIGHT := self.getHeight();
+	var cic : ComponentInstanceConfiguration := getGraphSet()->any(container().oclIsUndefined()).invresolveone(ComponentInstanceConfiguration);
+	var ann : EAnnotation := cic.getOrCreateAnnotation(ANNOTATION_SOURCE);
+	ann.map addDetail('width', (this.WIDTH / 2).toString());
+	ann.map addDetail('height', (this.HEIGHT / 2).toString());
+	log("WIDTH: " + this.WIDTH.toString() + ", HEIGHT: " + this.HEIGHT.toString());
+	self.edges->layout();
+	self.subgraphs->layoutSubgraph();
+	return null;
+}
+
+query DotGraph::getComponentInstance() : ComponentInstance {
+	var componentInstance : ComponentInstance := getGraphSet()->any(id = self.id).invresolveone(ComponentInstance);
+	assert fatal (not componentInstance.oclIsUndefined()) with log("error: cannot invresolveone " + self.toString());
+	return componentInstance;
+}
+
+helper DotGraph::layoutSubgraph() {
+	var componentInstance : ComponentInstance := self.getComponentInstance();
+	componentInstance.map annotate(self);
+	// layout subnodes here, because this.WIDTH and this.HEIGTH are required
+	self.nodes->layout();
+	return null;
+}
+
+helper Set(Setting)::getSetting(name : String) : Setting {
+	return self->any(attribute = name);
+}
+
+helper Set(Setting)::getOrCreateBBSetting() : Setting {
+	-- a subgraph without nodes has no bounding box setting
+	-- (hence, we create a dummy bounding box setting)
+	return let bb : Setting = self->getSetting('bb')
+	in
+	if bb.oclIsUndefined() then
+		new Setting('bb', '0,0,0,0')
+	else
+		bb
+	endif
+}
+
+/* helper RealtimeStatechart::annotate(pGraph : PLAIN::Graph) {
+	this.ROOT_RTSC := self;
+	log("rtsc annotate: " + self.name);
+	var ann : EAnnotation := self.getOrCreateAnnotation(ANNOTATION_SOURCE);
+	this.WIDTH := pGraph.width;
+	this.HEIGHT := pGraph.height;
+	ann.map addDetail(RTSC_SCALE, inchToMM(pGraph.scale));
+	ann.map addDetail(RTSC_WIDTH, inchToMM(xTrans(pGraph.width)));
+	ann.map addDetail(RTSC_HEIGHT, inchToMM(yTrans(pGraph.height)));
+}*/
+
+helper DotEdge::layout() {
+	var gSource : Node := self.source.getGNode();
+	var gTarget : Node := self.target.getGNode();
+	assert fatal (gSource != null) with log("source graphviz node not found");
+	assert fatal (gTarget != null) with log("target graphviz node not found");
+	var gSourceInv : OclAny := gSource.invresolveone();
+	var gTargetInv : OclAny := gTarget.invresolveone();
+	var gEdge : Edge := getGEdge(gSource, gTarget);
+	assert fatal (gEdge != null) with log("graphviz edge not found: " + gSourceInv.toString() + " -> " + gTargetInv.toString());
+	var gEdgeInv : PortConnectorInstance := gEdge.invresolveone(PortConnectorInstance);
+	log("layout edge: " + gEdgeInv.toString());
+	gEdgeInv.map annotate(self);
+	//var ann : EAnnotation := gEdgeInv.annotate(self, getTransitionAnnotationKind(gSourceInv, gTargetInv));
+	if (gTargetInv.oclIsKindOf(PortConnectorInstance)) then {
+		//ann.addNodeDetails(self.target);
+	} endif;
+	assert fatal (gEdgeInv != null) with log("no rtsc transition for graphviz edge")
+	//return graphvizModel.objects()[Edge]->select()
+}
+
+/*query getTransitionAnnotationKind(source : OclAny, target : OclAny) : String {
+	return TRANSITION_POLY_SOURCE
+}
+
+helper PortConnectorInstance::annotate(pEdge : PlainEdge, kind : String) : EAnnotation {
+	var ann : EAnnotation := self.getOrCreateAnnotation(ANNOTATION_SOURCE);
+	ann.addTransitionDetails(pEdge, kind);
+	return ann;
+}*/
+
+// this mapping is also called for a transition but ignored
+mapping inout ComponentInstance::annotate(outGraph : DotGraph) {
+	var ann : EAnnotation := self.getOrCreateAnnotation(ANNOTATION_SOURCE);
+	this.WIDTH := outGraph.getWidth();
+	this.HEIGHT := outGraph.getHeight();
+	//ann.map addDetail(ICON_WIDTH, this.WIDTH.toString());
+	//ann.map addDetail(ICON_HEIGHT, this.HEIGHT.toString());
+	ann.map addDetail(ICON_X_LEFT, (-this.WIDTH * 0.5).toString());
+	ann.map addDetail(ICON_X_RIGHT, (this.WIDTH * 0.5).toString());
+	ann.map addDetail(ICON_Y_LEFT, (-this.HEIGHT * 0.5).toString());
+	ann.map addDetail(ICON_Y_RIGHT, (this.HEIGHT * 0.5).toString());
+	var containerGraph : DotGraph := outGraph.container().oclAsType(DotGraph);
+	ann.map addDetail(NODE_X_LEFT, (outGraph.getLowerPosition().x - containerGraph.getWidth() * 0.5).toString());
+	ann.map addDetail(NODE_X_RIGHT, (outGraph.getUpperPosition().x - containerGraph.getWidth() * 0.5).toString());
+	ann.map addDetail(NODE_Y_LEFT, (outGraph.getLowerPosition().y - containerGraph.getHeight() * 0.5).toString());
+	ann.map addDetail(NODE_Y_RIGHT, (outGraph.getUpperPosition().y - containerGraph.getHeight() * 0.5).toString());
+	//log("width: " + outGraph.graphSettings->getSetting('bb').value.split(',')->at(2));
+}
+
+query Setting::getBBValue() : String {
+	log('value: ' + (self.value = '').toString());
+	return if self.value.oclIsUndefined() or self.value = '' or self.value = '0,0,0,0' then '0,0,1,1' else self.value endif;
+}
+
+query DotGraph::getWidth() : Real {
+	var bbSplit : Sequence(String) := self.graphSettings->getOrCreateBBSetting().getBBValue().split(',', 4);
+	var x_u : Real := bbSplit->at(3).toReal() * (1.0 / 72.0) * INCH_MM;
+	var x_l : Real := bbSplit->at(1).toReal() * (1.0 / 72.0) * INCH_MM;
+	return x_u - x_l;
+}
+
+query DotGraph::getHeight() : Real {
+	var bbSplit : Sequence(String) := self.graphSettings->getOrCreateBBSetting().getBBValue().split(',', 4);
+	var y_u : Real := bbSplit->at(4).toReal() * (1.0 / 72.0) * INCH_MM;
+	var y_l : Real := bbSplit->at(2).toReal() * (1.0 / 72.0) * INCH_MM;
+	return y_u - y_l;
+}
+
+query DotGraph::getLowerPosition() : Point {
+	return self.getPosition(1, 2);
+}
+
+query DotGraph::getUpperPosition() : Point {
+	return self.getPosition(3, 4);
+}
+
+query DotGraph::getPosition(xIdx : Integer, yIdx : Integer) : Point {
+	var bbSplit : Sequence(String) := self.graphSettings->getOrCreateBBSetting().getBBValue().split(',', 4);
+	return new Point(bbSplit->at(xIdx).toReal(), bbSplit->at(yIdx).toReal());
+}
+
+constructor Point::Point(x : Real, y : Real) {
+	result.x := x * (1.0 / 72.0) * INCH_MM;
+	result.y := y * (1.0 / 72.0) * INCH_MM;
+}
+
+// quite lazy implementation
+query String::split(delim : String) : Sequence(String) {
+	return Sequence{1 .. self.size()}->collect(i | self.at(i))
+	->iterate(c; acc : Sequence(String) = Sequence{''} |
+	if c <> delim then
+		if acc->size() <> 1 then
+			acc->subSequence(1, acc->size() - 1)->append(acc->last().concat(c))
+		else
+			Sequence { acc->first().concat(c) }
+		endif
+	else
+		acc->append('')
+	endif);
+}
+
+query String::split(delim : String, splitSize : Integer) : Sequence(String) {
+	var mySplit : Sequence(String) := self.split(delim);
+	assert fatal (mySplit->size() = splitSize)
+		with log("unexpected split size: " + mySplit->size().toString() + " (expected: " + splitSize.toString() + ")");
+	return mySplit;
+}
+
+mapping inout OclAny::annotate(Node : Node)
+	disjuncts DiscretePortInstance::annotate, PortInstance::annotate;
+	
+//mapping inout OclAny::annotate(edge : Edge)
+//	disjuncts PortConnectorInstance::annotate;
+	
+mapping inout PortInstance::annotate(dNode : DotNode) {
+	log("annotate: " + dNode.name);
+	var ann : EAnnotation := self.getOrCreateAnnotation(ANNOTATION_SOURCE);
+	ann.addNodeDetails(dNode);
+}
+
+mapping inout DiscretePortInstance::annotate(dNode : DotNode) {
+	var ann : EAnnotation := self.getOrCreateAnnotation(ANNOTATION_SOURCE);
+	var prefix : String = dNode.name.replaceFirst(self.getName() + '_', '');
+	ann.addNodeDetails(dNode, prefix);
+}
+
+mapping inout PortConnectorInstance::annotate(dEdge : DotEdge) {
+	var ann : EAnnotation := self.getOrCreateAnnotation(ANNOTATION_SOURCE);
+	//ann.addTransitionDetails(dEdge, dEdge.source.getName() + '_' + dEdge.target.getName());
+	var points : String := '';
+	dEdge.getPoints()->forEach(p) {
+		log(p.toString());
+		points := points + ', ' + '{' + (p.x - this.WIDTH * 0.5).toString() + ',' + (p.y - this.HEIGHT * 0.5).toString() + '}';
+	};
+	log("points: " + points);
+	ann.map addDetail(dEdge.source.getName() + '_' + dEdge.target.getName(), points.substring(2, points.length()));
+}
+
+helper EAnnotation::addNodeDetails(pNode : Node, prefix : String) {
+	self.map addDetail(prefix + NODE_X_LEFT, xTrans(pNode.getPosition().x - pNode.getWidth() * 0.5).toString());
+	self.map addDetail(prefix + NODE_X_RIGHT, xTrans(pNode.getPosition().x + pNode.getWidth() * 0.5).toString());
+	self.map addDetail(prefix + NODE_Y_LEFT, yTrans(pNode.getPosition().y - pNode.getHeight() * 0.5).toString());
+	self.map addDetail(prefix + NODE_Y_RIGHT, yTrans(pNode.getPosition().y + pNode.getHeight() * 0.5).toString());
+}
+
+query getNodeSet() : Set(Node) {
+	return dotInModel.objects()[Node];
+}
+
+query getEdgeSet() : Set(Edge) {
+	return dotInModel.objects()[Edge];
+}
+
+query getGraphSet() : Set(DotGraph) {
+	return dotInModel.objects()[DotGraph];
+}
+
+helper DotNode::getPosition() : Point {
+	// relative position to my graph's bounding box
+	var graph : DotGraph := self.container().oclAsType(DotGraph);
+	log("getPosition: " + self.name);
+	var lowerPosition : Point := graph.getLowerPosition();
+	log("lowerPosition: (" + lowerPosition.x.toString() + "; " + lowerPosition.y.toString() + ")");
+	var posSplit : Sequence(String) := self.settings->getSetting('pos').value.split(',', 2);
+	var x : Real := posSplit->at(1).toReal() - lowerPosition.x * 72 / INCH_MM;
+	var y : Real := posSplit->at(2).toReal() - lowerPosition.y * 72 / INCH_MM; 
+	return new Point(x, y);
+}
+
+helper DotNode::getWidth() : Real {
+	return self.settings->getSetting('width').value.toReal() * INCH_MM;
+}
+
+helper DotNode::getHeight() : Real {
+	return self.settings->getSetting('height').value.toReal() * INCH_MM;
+}
+
+helper DotEdge::getPoints() : OrderedSet(Point) {
+	log("getpoints called");
+	var res : OrderedSet(Point) := OrderedSet{};
+	log(self.settings->getSetting('pos').value);
+	/* self.settings->getSetting('pos').value.split(' ')->forEach(pair) {
+		log(pair);
+		var pos : Sequence(String) = pair.split(',', 2);
+		res := res->including(new Point(pos->at(1).toReal(), pos->at(2).toReal()))->asOrderedSet();
+	}; */
+	return self.settings->getSetting('pos').value.split(' ')->collect(pair |
+		let pos : Sequence(String) = pair.split(',', 2)
+		in
+		new Point(pos->at(1).toReal(), pos->at(2).toReal())
+	)->asOrderedSet();
+}

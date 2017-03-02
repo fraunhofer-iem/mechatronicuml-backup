@@ -1,0 +1,48 @@
+[module operation('http://www.muml.org/pim/actionlanguage/1.0.0',
+				  'http://www.muml.org/pim/behavior/1.0.0',
+				  'http://www.muml.org/pim/types/1.0.0',
+				  'http://www.muml.org/pim/realtimestatechart/1.0.0')/]
+
+[import org::muml::modelica::adapter::rtsc::actionlanguage::expression]
+[import org::muml::modelica::adapter::rtsc::util::pkg]
+
+[import org::muml::modelica::adapter::rtsc::actionlanguage::operation_queries]
+[import org::muml::modelica::adapter::rtsc::actionlanguage::variable_queries]
+[import org::muml::modelica::adapter::rtsc::util::query::naming]
+[import org::muml::modelica::adapter::rtsc::util::query::type]
+
+[**
+ * Generates the operations for a realtimestatechart
+ * @param rtsc the rtsc
+ * @param parentPackage the name of the parent package
+*/]
+[template public generateOperations(rtsc : RealtimeStatechart, parentPackage : String) ? (rtsc.operations->notEmpty())]
+[file (rtsc.getPath(parentPackage), false, 'UTF-8')]
+[within(parentPackage)/]
+[packageHeader(rtsc.getOperationsPackageName())/]
+[for (operation : Operation | rtsc.operations)]
+	[generateOperation(operation)/]
+[/for]
+[packageTrailer(rtsc.getOperationsPackageName())/];
+[/file]
+[/template]
+
+[**
+ * Generates an operation
+ * @param operation the operation
+*/]
+[template public generateOperation(operation : Operation)]
+function [operation.getName()/]
+[for (parameter : Parameter | operation.parameters)]
+	input [parameter.dataType.getType() /] [parameter.getName()/];
+[/for]
+	[comment assume that we have no void operations /]
+	output [operation.returnType.getType() /] [operation.getOperationOutputVariableName() /];
+protected
+[for (varDecl : LocalVariableDeclarationStatement | operation.implementations->at(1).getAllLocalVariableDeclarationStatements())]
+	[varDecl.variable.dataType.getType() /] [varDecl.variable.getName()/];
+[/for]
+algorithm
+	[generateExpression(operation.implementations->at(1), false, '')/]
+end [operation.getName()/];
+[/template]

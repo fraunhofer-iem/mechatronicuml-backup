@@ -1,0 +1,190 @@
+[module port('http://www.muml.org/pim/behavior/1.0.0',
+				'http://www.muml.org/core/1.0.0',
+				'http://www.muml.org/pim/actionlanguage/1.0.0',
+				'http://www.muml.org/pim/msgtype/1.0.0',
+				'http://www.muml.org/pim/types/1.0.0',
+				'http://www.muml.org/modelinstance/1.0.0',
+				'http://www.muml.org/pim/component/1.0.0',
+				'http://www.muml.org/pim/instance/1.0.0',
+				'http://www.muml.de/modelica/transform/1.0.0',
+				'http://www.muml.org/pim/realtimestatechart/1.0.0')/]
+
+[import org::muml::modelica::adapter::rtsc::actionlanguage::expression]
+[import org::muml::modelica::adapter::rtsc::async::helper::port]
+[import org::muml::modelica::adapter::rtsc::hybrid::hybrid]
+
+[import org::muml::modelica::adapter::component::naming]
+[import org::muml::modelica::adapter::component::port_queries]
+[import org::muml::modelica::adapter::rtsc::hybrid::queries]
+
+[**
+ * Generate the ports for an atomic component.
+ * @param portInstanceSet the set of port instances of the atomic component
+*/]
+[template public generatePorts(portInstanceSet : Set(PortInstance))]
+	// port declarations
+[for (port : PortInstance | portInstanceSet->select(not oclIsKindOf(DiscreteMultiPortInstance)))]
+	[createPortDeclaration(port)/]
+[/for]
+	// end port declarations
+[/template]
+
+
+[template private createPortDeclaration(portInstance : PortInstance)]
+	ERROR unexpected port instance [portInstance/]
+[/template]
+
+[**
+ * Creates a declaration for a discrete input port
+ * @param portInstance the discrete input port instance
+*/]
+[template private createPortDeclaration(portInstance : DiscreteSinglePortInstance) ? (
+	portInstance.portType.oclAsType(DiscretePort).isDiscreteInPort
+)]
+[createInputPortDeclaration(portInstance)/]
+[/template]
+
+[**
+ * Creates a declaration for a discrete output port
+ * @param portInstance the discrete output port instance
+*/]
+[template private createPortDeclaration(portInstance : DiscreteSinglePortInstance) ? (
+	portInstance.portType.oclAsType(DiscretePort).isDiscreteOutPort
+)]
+[createOutputPortDeclaration(portInstance)/]
+[/template]
+
+[**
+ * Creates a declaration for a discrete inout port
+ * @param portInstance the discrete inout port instance
+*/]
+[template private createPortDeclaration(portInstance : DiscreteSinglePortInstance) ? (
+	portInstance.portType.oclAsType(DiscretePort).isDiscreteInOutPort
+)]
+[createInputPortDeclaration(portInstance)/]
+[createOutputPortDeclaration(portInstance)/]
+[/template]
+
+[**
+ * Creates declaration for a discrete input or inout port
+ * @param portInstance the discrete input or inout port instance
+*/]
+[template private createInputPortDeclaration(portInstance : DiscreteSinglePortInstance) {
+	dummy : Boolean = portInstance.portType.oclAsType(DiscretePort)
+		.receiverMessageTypes->checkMessageTypesValidParameterDataTypes();
+}]
+[for (messageType : MessageType | portInstance.portType.oclAsType(DiscretePort).receiverMessageTypes)]
+[createInputDelegationPortDecl(messageType, portInstance.getInputPortName(messageType))/]
+	[createPortDeclAnnotation(portInstance, messageType, true)/];
+[/for]
+[/template]
+
+[**
+ * Creates a declaration for a discrete output or inout port
+ * @param portInstance the discrete output or inout port instance
+*/]
+[template private createOutputPortDeclaration(portInstance : DiscreteSinglePortInstance) {
+	dummy : Boolean = portInstance.portType.oclAsType(DiscretePort)
+		.senderMessageTypes->checkMessageTypesValidParameterDataTypes();
+}]
+[for (messageType : MessageType | portInstance.portType.oclAsType(DiscretePort).senderMessageTypes)]
+[createOutputDelegationPortDecl(messageType, portInstance.getOutputPortName(messageType))/]
+	[createPortDeclAnnotation(portInstance, messageType, false)/];
+[/for]
+[/template]
+
+[**
+ * Creates a declaration for a hybrid input or output port.
+ * @param portInstance the hybrid input or output port instance
+*/]
+[template private createPortDeclaration(portInstance : HybridPortInstance)]
+[createHybridPortConnector(portInstance, false)/]
+[/template]
+
+[**
+ * Creates a declaration for a continuous input or output port.
+ * @param portInstance the continuous input or output port instance
+*/]
+[template private createPortDeclaration(portInstance : ContinuousPortInstance)]
+[portInstance.getModelicaConnectorType()/] [portInstance.getPortName()/][portInstance.createInitializeExpression()/]
+	[createPortDeclAnnotation(portInstance)/];
+[/template]
+
+[template private createInitializeExpression(portInstance : ContinuousPortInstance) ? (
+	portInstance.portType.oclAsType(ContinuousPort).outPort and not portInstance.portType.oclAsType(ContinuousPort).initializeExpression.oclIsUndefined() 
+)]
+(start=[generateExpression(portInstance.portType.oclAsType(ContinuousPort).initializeExpression, false, '')/])
+[/template]
+
+[**
+ * Connect the atomic component instance ports with their corresponding rtsc ports
+ * @param componentInstance the atomic component instance
+*/]
+[template public connectPorts(componentInstance : AtomicComponentInstance) {
+	discretePortInstanceSet : Set(DiscretePortInstance) = componentInstance.portInstances
+		->select(oclIsKindOf(DiscretePortInstance))
+		->collect(oclAsType(DiscretePortInstance))->asSet();
+	hybridPortInstanceSet : Set(HybridPortInstance) = componentInstance.portInstances->select(portType.oclIsKindOf(HybridPort))
+		->collect(oclAsType(HybridPortInstance))->asSet();
+	rtsc : RealtimeStatechart = componentInstance.componentType.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart);
+}]
+[connectDiscretePorts(discretePortInstanceSet, rtsc)/]
+[connectHybridPorts(hybridPortInstanceSet)/]
+[/template]
+
+[**
+ * Connect the atomic component instance discrete ports with their corresponding rtsc ports
+ * (A connect statement is only generated, if the actual message type is sent or received by the rtsc)
+ * @param discretePortInstanceSet the set of discrete port instances
+ * @param rtsc the atomic component's rtsc (we don't care if this is the original or "transformed" rtsc)
+*/]
+[template private connectDiscretePorts(discretePortInstanceSet : Set(DiscretePortInstance), rtsc : RealtimeStatechart)]
+	// connect discrete component ports with the corresponding rtsc ports (only for received or sent messages)
+[for (discretePortInstance : DiscretePortInstance | discretePortInstanceSet->select(not oclIsKindOf(DiscreteMultiPortInstance)))]
+[for (messageType : MessageType | discretePortInstance.getReceivedTriggerMessageTypes())]
+	connect([discretePortInstance.getRTSCInputPortName(messageType)/],
+		[discretePortInstance.getInputPortName(messageType)/])
+		[createPortConnectAnnotation(discretePortInstance)/];
+[/for]
+[for (messageType : MessageType | discretePortInstance.getSentRaiseMessageTypes())]
+	connect([discretePortInstance.getRTSCOutputPortName(messageType)/],
+		[discretePortInstance.getOutputPortName(messageType)/])
+		[createPortConnectAnnotation(discretePortInstance)/];
+[/for]
+[/for]
+	// connect discrete component ports with the corresponding rtsc ports  (only for received or sent messages)
+[/template]
+
+[**
+ * Connect the atomic component instance hybrid ports with their corresponding rtsc
+ * connector.
+ * @param hybridPortInstanceSet the set of hybrid port instances
+*/]
+[template private connectHybridPorts(hybridPortInstanceSet : Set(HybridPortInstance))]
+	// connect hybrid component ports with the corresponding rtsc ports
+[for (hybridPortInstance : HybridPortInstance | hybridPortInstanceSet)]
+	connect([hybridPortInstance.getPortName()/],
+		[hybridPortInstance.getBehaviorVariableName()/].[hybridPortInstance.getPortName()/])
+		annotation(Line(points={{0,0},{2,2}}, color={0,0,0},smooth=Smooth.None));
+[/for]
+	// end connect hybrid component ports with the corresponding rtsc ports
+[/template]
+
+[**
+ * Generate initial port equations for continuous output ports.
+ * @param continuousPortInstanceSet the set of continuous (output) port instances
+*/]
+[template public generateInitialContinuousPortEquations(continuousPortInstanceSet : Set(ContinuousPortInstance)) {
+	portSet : Set(ContinuousPortInstance) = continuousPortInstanceSet->select(
+		portType.oclAsType(ContinuousPort).outPort and not portType.oclAsType(ContinuousPort).initializeExpression.oclIsUndefined()
+	);
+}]
+/* TODO Uncomment if initialization is required
+equation
+	// initial continuous output port equations
+[for (continuousPortInstance : ContinuousPortInstance | portSet)]
+	[continuousPortInstance.getPortName()/] = [generateExpression(continuousPortInstance.portType.oclAsType(ContinuousPort).initializeExpression, false, '')/];
+[/for]
+*/	
+// end initial continuous output port equations
+[/template]

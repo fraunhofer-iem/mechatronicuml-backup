@@ -1,0 +1,236 @@
+[module transition('http://www.muml.org/pim/realtimestatechart/1.0.0',
+				   'http://www.muml.org/core/1.0.0',
+				   'http://www.muml.org/pim/actionlanguage/1.0.0')/]
+
+[import org::muml::modelica::adapter::rtsc::actionlanguage::expression]
+
+[import org::muml::modelica::adapter::rtsc::async::helper::queries]
+[import org::muml::modelica::adapter::rtsc::transition::queries]
+[import org::muml::modelica::adapter::rtsc::util::query::naming]
+[import org::muml::modelica::adapter::rtsc::util::query::rtsc]
+
+[**
+* @TODO We need a genmodel where the user can decide, if every transition has micro second aftertime. Further, also the option loop check can be set in the genmodel.
+ * Create transition declarations.
+ * @param transitionSet set of transitions
+*/]
+[template public createTransitionDeclarations(transitionSet : Set(Transition))]
+	// transition declarations
+[for (transition : Transition | transitionSet->select(not source.oclIsKindOf(EntryPoint)))]
+	[createTransitionDeclaration(transition)/]
+[/for]
+	// end transition declarations
+[/template]
+
+[**
+ * Create a transition declaration.
+ * @param transition the transition
+*/]
+[template private createTransitionDeclaration(transition : Transition) {
+	isSourceExitPoint : Boolean = transition.source.oclIsKindOf(ExitPoint);
+	isTargetExitPoint : Boolean = transition.target.oclIsKindOf(ExitPoint);
+	firstComma : Boolean = transition.clockConstraints->notEmpty() or not transition.guard.oclIsUndefined() or isSourceExitPoint
+		or not transition.raiseMessageEvent.oclIsUndefined() or transition.clockResets->notEmpty() or not transition.triggerMessageEvent.oclIsUndefined()
+		or not transition.synchronization.oclIsUndefined();
+	secondComma : Boolean = not transition.guard.oclIsUndefined() or isSourceExitPoint
+		or not transition.raiseMessageEvent.oclIsUndefined() or transition.clockResets->notEmpty() or not transition.triggerMessageEvent.oclIsUndefined()
+		or not transition.synchronization.oclIsUndefined();
+	thirdComma : Boolean = not transition.guard.oclIsUndefined() or isSourceExitPoint
+		or not transition.triggerMessageEvent.oclIsUndefined()
+		or not transition.synchronization.oclIsUndefined();
+	fourthComma : Boolean = not transition.guard.oclIsUndefined() or isSourceExitPoint
+		or not transition.synchronization.oclIsUndefined();
+	fifthComma : Boolean = not transition.synchronization.oclIsUndefined();
+}]
+[transition.getModelicaTransitionTypeDecl()/] [transition.getName()/](
+		use_after=true,
+    	afterTime=10^(-6),
+		loopCheck=false[if firstComma],[/if]
+		[if transition.clockConstraints->notEmpty()]
+		use_conditionPort=true[if secondComma],[/if]
+		[/if]
+		[if not transition.raiseMessageEvent.oclIsUndefined() or transition.clockResets->notEmpty()]
+		use_firePort=true[if thirdComma],[/if]
+		[/if]
+		[if not transition.triggerMessageEvent.oclIsUndefined()]
+		use_messageReceive=true,
+		numberOfMessageReceive=1,
+		numberOfMessageIntegers=[transition.triggerMessageEvent.getIntegerParameters()->size()/],
+		numberOfMessageReals=[transition.triggerMessageEvent.getRealParameters()->size()/],
+		numberOfMessageBooleans=[transition.triggerMessageEvent.getBooleanParameters()->size()/][if fourthComma],[/if]
+		[/if]
+		[if not transition.guard.oclIsUndefined()]
+		condition = [transition.guard.getGuardExpression()/][if fifthComma],[/if]
+		[elseif isSourceExitPoint]
+		[let s : OrderedSet(Set(Transition)) = getTransitionConditions(transition.source.oclAsType(ExitPoint).incomingTransitions)->asOrderedSet()]
+		condition = ([for (ts : Set(Transition) | s)][for (t : Transition | ts)][t.statechart.getRelativelyQualifiedName(transition.statechart)/].[t.target.getName()/].active[if t <> ts->asOrderedSet()->last()] and [/if][/for][if ts <> s->last()] or [/if][/for])[/let][if fifthComma],[/if]
+		[/if]
+		[if not transition.synchronization.oclIsUndefined()]
+		[if not transition.synchronization.selectorExpression.oclIsUndefined()]
+		selectorExpression=[generateExpression(transition.synchronization.selectorExpression, true, '')/],
+		[/if]
+		[if transition.synchronization.kind = SynchronizationKind::SEND]
+		use_syncSend=true,
+		numberOfSyncSend=[transition.synchronization.syncChannel.getSyncReceivingTransitions(transition)->size()/],
+		syncChannelName="[transition.synchronization.syncChannel.getName()/]"
+		[else]
+		use_syncReceive=true,
+		numberOfSyncReceive=[transition.synchronization.syncChannel.getSyncSendingTransitions(transition)->size()/],
+		syncChannelName="[transition.synchronization.syncChannel.getName()/]"
+		[/if]
+		[/if]
+	)
+	[if not isTargetExitPoint and not isSourceExitPoint][transition.createTransitionDeclAnnotation()/][else]annotation(Placement(transformation(extent={{0,0},{30,30}})))[/if];
+[/template]
+
+[**
+ * Create delegation transition declarations. The source of delegation
+ * transition is an entry point's delegation state and the target is the
+ * "original" target.
+ * @param rtsc the (enterable) rtsc
+*/]
+[template public createDelegationTransitionDeclarations(rtsc : RealtimeStatechart) ? (rtsc.isEnterable()) {
+	initial : realtimestatechart::State = rtsc.states->select(initial)->any(true);
+}]
+	// delegation transition declarations
+[for (entryPoint : EntryPoint | rtsc.getEntryPoints())]
+[for (transition : Transition | entryPoint.getRelevantEntryPointTransitions(rtsc))]
+	RealTimeCoordinationLibrary.RealTimeCoordination.Transition [transition.getName()/](
+			condition = pre([entryPoint.getName()/])
+		)
+		annotation(Placement(transformation(extent={{0,0},{30,30}})));
+[/for]
+[if not entryPoint.getRelevantEntryPointTransitions(rtsc)->collect(target)->includes(initial)]
+	RealTimeCoordinationLibrary.RealTimeCoordination.Transition transition_[rtsc.getEntryPointDelegationStateName()/]_[initial.getName()/]()
+		annotation(Placement(transformation(extent={{0,0},{30,30}})));
+[/if]
+[/for]
+	// delegation transition declarations
+[/template]
+
+[**
+ * Connects the entry point inputs (of the passed rtsc) with the "outer"
+ * transitions.
+ * @param rtsc the rtsc which directly contains states with entry points
+*/]
+[template public connectEntryPointInputs(rtsc : RealtimeStatechart)]
+	// connect entry point inputs
+[for (entryPoint : EntryPoint | rtsc.states->collect(getEntryPoints()))]
+	[entryPoint.state.getName()/].[entryPoint.getName()/] = [for (transition : Transition | entryPoint.incomingTransitions)][transition.getName()/].fire[if entryPoint.incomingTransitions->indexOf(transition) <> entryPoint.incomingTransitions->size()] or [/if][/for];
+[/for]
+	// end connect entry point inputs
+[/template]
+
+[**
+ * Connects the steps/states via connect statements
+ * @param transitionSet set of transitions
+*/]
+[template public connectSteps(transitionSet : Set(Transition))]
+	// connect transition
+[for (transition : Transition | transitionSet->sortedBy(source.name))]
+[connectStep(transition)/][/for]
+	// end connect transition
+[/template]
+
+[**
+ * Connect two steps.
+ * @param transition the transition
+*/]
+[template public connectStep(transition : Transition) ? (
+	not transition.source.oclIsKindOf(EntryPoint)
+)
+{
+	source : Vertex = transition.source;
+}]
+	// connect [transition.getSourceName()/] -> [transition.getTargetName()/][if target.getName() <> transition.getTargetName()] (orig source: [transition.source.getName()/])[/if][if source.getName() <> transition.getSourceName()] (orig target: [transition.target.getName()/])[/if]
+	connect([transition.getSourceName()/].[source.getOutPort() /]['[' + transition.getOutPortIndex() + ']'/],
+			[transition.getName()/].inPort)
+		[if not transition.target.oclIsKindOf(ExitPoint) and not transition.source.oclIsKindOf(ExitPoint)][transition.createTransitionConnectAnnotation(true)/][else]annotation(Line(points={{0,0},{2,2}}, color={0,0,0},smooth=Smooth.None))[/if];
+	connect([transition.getName()/].outPort,
+			[transition.getTargetName()/].inPort['[' + transition.getInPortIndex() + ']' /])
+		[if not transition.target.oclIsKindOf(ExitPoint) and not transition.source.oclIsKindOf(ExitPoint)][transition.createTransitionConnectAnnotation(false)/][else]annotation(Line(points={{0,0},{2,2}}, color={0,0,0},smooth=Smooth.None))[/if];
+		[comment transition.getGuardExpression()/]
+[/template]
+
+[**
+ * Connect delegation transitions.
+ * @param rtsc the (enterable) rtsc
+*/]
+[template public connectDelegationTransitions(rtsc : RealtimeStatechart) ? (rtsc.isEnterable()) {
+	delegationName : String = rtsc.getEntryPointDelegationStateName();
+	initial : realtimestatechart::State = rtsc.states->select(initial)->any(true);
+	initialTransitionName : String = 'transition_' + rtsc.getEntryPointDelegationStateName() + '_' + initial.getName();
+}]
+	// connect delegation transitions
+[for (transition : Transition | rtsc.getRelevantEntryPointTransitions())]
+	connect([delegationName/].outPort['[' + transition.getOutPortIndex() + ']'/],
+			[transition.getName()/].inPort)
+			annotation(Line(points={{0,0},{2,2}}, color={0,0,0},smooth=Smooth.None));
+	connect([transition.getName()/].outPort,
+			[if transition.target.oclIsKindOf(EntryPoint)][transition.target.oclAsType(EntryPoint).state.getName()/][else][transition.target.getName()/][/if].inPort['[' + transition.getInPortIndex() + ']' /])
+			annotation(Line(points={{0,0},{2,2}}, color={0,0,0},smooth=Smooth.None));
+[/for]
+[if not rtsc.getRelevantEntryPointTransitions()->collect(target)->includes(initial)]
+	connect([delegationName/].outPort['[' + (rtsc.getRelevantEntryPointTransitions()->size() + 1) + ']'/],
+			[initialTransitionName/].inPort)
+			annotation(Line(points={{0,0},{2,2}}, color={0,0,0},smooth=Smooth.None));
+	connect([initialTransitionName/].outPort,
+			[initial.getName()/].inPort['[' + (initial.incomingTransitions->size() + 1) + ']' /])
+			annotation(Line(points={{0,0},{2,2}}, color={0,0,0},smooth=Smooth.None));
+[/if]
+	// end connect delegation transition
+[/template]
+
+[**
+ * Generates a guard expression
+ * @param expression the expression
+*/]
+[template public getGuardExpression(expression : Expression)]
+[if expression.oclIsKindOf(Block)]
+[expression.oclAsType(Block).expressions->at(1).getGuardExpression()/]
+[else]
+[generateExpression(expression, true, '')/]
+[/if]
+[/template]
+
+[**
+ * Connect synchronization channels
+ * @param rtsc the (root) rtsc
+*/]
+[template public connectSynchronizationChannels(rtsc : RealtimeStatechart)]
+	// connect synchronization channels
+[for (state : realtimestatechart::State | rtsc.allStatesWithSynchronizationChannels())]
+	[for (ch : SynchronizationChannel | state.channels)]
+		[let sendingTransitionSet : OrderedSet(Transition) = ch.getSyncSendingTransitions(null)]
+		[for (trans_send : Transition | sendingTransitionSet)]
+			[let receivingTransitionSet : OrderedSet(Transition) = ch.getSyncReceivingTransitions(trans_send)]
+			[for (trans_recv : Transition | receivingTransitionSet)]
+	connect([trans_send.getFullyQualifiedName()/].sender['[' + receivingTransitionSet->indexOf(trans_recv) + ']'/],
+		[trans_recv.getFullyQualifiedName()/].receiver['[' + ch.getSyncSendingTransitions(trans_recv)->indexOf(trans_send) + ']'/]);
+			[/for][/let]
+		[/for][/let]
+	[/for]
+[/for]
+	// end connect synchronization channels
+[/template]
+
+[**
+ * Generates transition actions for rtsc and all substatecharts
+ * @param rtsc the (root) realtimestatechart
+*/]
+[template public generateTransitionAction(rtsc : RealtimeStatechart) {
+	rtscSet : OrderedSet(OrderedSet(RealtimeStatechart)) = rtsc.allSubstatechartsPostOrder()->append(OrderedSet{rtsc});
+}]
+	// transition actions
+[for (level : OrderedSet(RealtimeStatechart) | rtscSet)]
+[for (r : RealtimeStatechart | level)]
+[for (transition : Transition | r.transitions->select(t : Transition | not t.action.oclIsUndefined() and t.action.expressions->notEmpty() and t.checkValidTransitionAction(t.action.expressions->at(1)))->sortedBy(priority))]
+	[comment generate first expression for now /]
+	when pre([transition.getFullyQualifiedName() /].fire) then
+		[generateExpression(transition.action.expressions->at(1), false, r.getFullyQualifiedName()) /]
+	end when;
+[/for]
+[/for]
+[/for]
+	// end transition actions
+[/template]
