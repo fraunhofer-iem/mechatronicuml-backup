@@ -38,6 +38,7 @@
 				<packagesToRegister>
 				 <packageToRegister>org.muml.core.CorePackage</packageToRegister> 
 				 <packageToRegister>org.muml.core.modelinstance.ModelinstancePackage</packageToRegister> 
+				<packageToRegister>org.muml.modelica.transform.TransformPackage</packageToRegister> 
 			  </packagesToRegister>
 			</configuration>
 		 </plugin>
