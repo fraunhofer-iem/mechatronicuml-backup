@@ -3,7 +3,7 @@
 <plugin>
 	<extension point="org.eclipse.m2m.qvt.oml.javaBlackboxUnits">
    		<unit name="ImplicitCopyBlackbox" namespace="org.muml.implicitcopy.qvto._library">
-    		<library name="ImplicitCopyBlackboxLib" class="org.muml.implicitcopy.qvto.library.ImplicitCopyBlackbox">
+    		<library name="ImplicitCopyBlackboxLib" class="org.muml.ImplicitCopy.qvto.library.ImplicitCopyBlackbox">
     			<metamodel nsURI="http://www.eclipse.org/emf/2002/Ecore"/>
     		</library>
 		</unit>

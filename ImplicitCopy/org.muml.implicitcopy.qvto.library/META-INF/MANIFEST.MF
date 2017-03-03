@@ -1,10 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: New Plug-in
+Bundle-Name: QVTo Implicit Copy Library
 Bundle-SymbolicName: org.muml.implicitcopy.qvto.library;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.m2m.qvt.oml,
- org.eclipse.m2m.qvt.oml.runtime;bundle-version="3.5.0"
-Export-Package: org.muml.implicitcopy.qvto.library
+ org.eclipse.m2m.qvt.oml;bundle-version="3.6.0",
+ org.eclipse.m2m.qvt.oml.runtime
