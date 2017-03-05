@@ -1,6 +1,6 @@
 library ImplicitCopy;
 
-import org.muml.ImplicitCopy.qvto._library.ImplicitCopyBlackbox;
+import org.muml.implicitcopy.qvto._library.ImplicitCopyBlackbox;
 
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 
