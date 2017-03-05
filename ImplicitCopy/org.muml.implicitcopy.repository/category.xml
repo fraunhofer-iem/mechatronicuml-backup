@@ -6,5 +6,5 @@
    <feature url="features/org.muml.implicitcopy.feature_1.0.0.qualifier.jar" id="org.muml.implicitcopy.feature.source" version="1.0.0.qualifier">
       <category name="org.muml.implicitcopy.category"/>
    </feature>
-   <category-def name="org.muml.implicitcopy.category" label="ImplicitCopy"/>
+   <category-def name="org.muml.implicitcopy.category" label="Implicit Copy"/>
 </site>
