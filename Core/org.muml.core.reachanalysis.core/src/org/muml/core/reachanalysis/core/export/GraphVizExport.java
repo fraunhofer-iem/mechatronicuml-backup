@@ -98,7 +98,7 @@ public abstract class GraphVizExport implements ReachabilityGraphExporter {
 			writer.close();	 
 			
 			//create output file
-			String out = targetPath.toString() + ("/reachabilityGraph" + getDateSuffixString() + "." + type.toString());
+			String out = targetPath.toString() + ("/reachabilityGraph_" + getDateSuffixString() + "." + type.toString());
 			generateGraphFile(dotFile, out);
 
 		} 
@@ -203,17 +203,23 @@ public abstract class GraphVizExport implements ReachabilityGraphExporter {
 	
 	/**
 	 * Helper function that assembles the current time stamp for suffixing the filename with it.
-	 * The format is YYYYMMDD_HHMM
+	 * The format is YYYYMMDD_HHMMSS
 	 * @return
 	 */
 	private String getDateSuffixString(){
 		//initialize
 		StringBuffer result = new StringBuffer();
-		GregorianCalendar cal = new GregorianCalendar();
+		GregorianCalendar cal = new GregorianCalendar();		
 		
 		//date part
 		result.append(cal.get(Calendar.YEAR));
-		result.append(cal.get(Calendar.MONTH) + 1);
+		
+		int month = cal.get(Calendar.MONTH) + 1;
+		if(month < 10){
+			result.append('0');
+		}
+		result.append(month);
+		
 		if(cal.get(Calendar.DAY_OF_MONTH) < 10){
 			result.append('0');
 		}
@@ -232,6 +238,11 @@ public abstract class GraphVizExport implements ReachabilityGraphExporter {
 			result.append('0');
 		}
 		result.append(cal.get(Calendar.MINUTE));
+		
+		if(cal.get(Calendar.SECOND) < 10){
+			result.append('0');
+		}
+		result.append(cal.get(Calendar.SECOND));
 		
 		return result.toString();
 	}
