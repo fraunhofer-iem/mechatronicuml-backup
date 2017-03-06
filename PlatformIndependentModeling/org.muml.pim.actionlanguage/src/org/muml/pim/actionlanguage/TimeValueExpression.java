@@ -37,25 +37,25 @@ import org.muml.pim.valuetype.TimeValue;
  */
 public interface TimeValueExpression extends Expression {
 	/**
-	 * Returns the value of the '<em><b>Time Value</b></em>' reference.
+	 * Returns the value of the '<em><b>Time Value</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The TimeValue which is referenced by the TimeValueExpression.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Time Value</em>' reference.
+	 * @return the value of the '<em>Time Value</em>' containment reference.
 	 * @see #setTimeValue(TimeValue)
 	 * @see org.muml.pim.actionlanguage.ActionlanguagePackage#getTimeValueExpression_TimeValue()
-	 * @model required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	TimeValue getTimeValue();
 
 	/**
-	 * Sets the value of the '{@link org.muml.pim.actionlanguage.TimeValueExpression#getTimeValue <em>Time Value</em>}' reference.
+	 * Sets the value of the '{@link org.muml.pim.actionlanguage.TimeValueExpression#getTimeValue <em>Time Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Time Value</em>' reference.
+	 * @param value the new value of the '<em>Time Value</em>' containment reference.
 	 * @see #getTimeValue()
 	 * @generated
 	 */

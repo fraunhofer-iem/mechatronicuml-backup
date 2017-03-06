@@ -3,7 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="&lt;copyright>&#xD;&#xA;Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.&#xD;&#xA;All rights reserved. This program and the accompanying materials&#xD;&#xA;are made available under the terms of the Eclipse Public License v1.0&#xD;&#xA;which accompanies this distribution, and is available at&#xD;&#xA;http://www.eclipse.org/legal/epl-v10.html&#xD;&#xA;&#xD;&#xA;Contributors:&#xD;&#xA;    Software Engineering Group - initial API and implementation&#xD;&#xA;&lt;/copyright>"
     modelDirectory="/org.muml.pim.actionlanguage/src" modelPluginID="org.muml.pim.actionlanguage"
     modelName="Actionlanguage" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
-    copyrightFields="false" usedGenPackages="../../org.muml.pim/model/pim.genmodel#//pim ../../org.muml.core/model/core.genmodel#//core"
+    copyrightFields="false" usedGenPackages="../../org.muml.pim/model/pim.genmodel#//pim ../../org.muml.core/model/core.genmodel#//core platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
     operationReflection="true">
   <foreignModel>actionlanguage.ecore</foreignModel>
   <genPackages prefix="Actionlanguage" basePackage="org.muml.pim" disposableProviderFactory="true"

@@ -56,7 +56,7 @@ public class TimeValueExpressionEditor extends org.muml.ape.runtime.editors.Clas
 		if (this.editorTimeValue_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.actionlanguage.ActionlanguagePackage.eINSTANCE
 					.getTimeValueExpression_TimeValue();
-			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ComboPropertyEditor(
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.NavigationFeaturePropertyEditor(
 					adapterFactory, feature);
 
 			editor.setTooltipMessage("The TimeValue which is referenced by the TimeValueExpression.");

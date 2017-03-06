@@ -13,6 +13,7 @@
 package org.muml.pim.actionlanguage.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -36,7 +37,7 @@ import org.muml.pim.valuetype.TimeValue;
  */
 public class TimeValueExpressionImpl extends ExpressionImpl implements TimeValueExpression {
 	/**
-	 * The cached value of the '{@link #getTimeValue() <em>Time Value</em>}' reference.
+	 * The cached value of the '{@link #getTimeValue() <em>Time Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTimeValue()
@@ -70,14 +71,6 @@ public class TimeValueExpressionImpl extends ExpressionImpl implements TimeValue
 	 * @generated
 	 */
 	public TimeValue getTimeValue() {
-		if (timeValue != null && timeValue.eIsProxy()) {
-			InternalEObject oldTimeValue = (InternalEObject)timeValue;
-			timeValue = (TimeValue)eResolveProxy(oldTimeValue);
-			if (timeValue != oldTimeValue) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionlanguagePackage.TIME_VALUE_EXPRESSION__TIME_VALUE, oldTimeValue, timeValue));
-			}
-		}
 		return timeValue;
 	}
 
@@ -86,8 +79,14 @@ public class TimeValueExpressionImpl extends ExpressionImpl implements TimeValue
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TimeValue basicGetTimeValue() {
-		return timeValue;
+	public NotificationChain basicSetTimeValue(TimeValue newTimeValue, NotificationChain msgs) {
+		TimeValue oldTimeValue = timeValue;
+		timeValue = newTimeValue;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionlanguagePackage.TIME_VALUE_EXPRESSION__TIME_VALUE, oldTimeValue, newTimeValue);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -96,10 +95,31 @@ public class TimeValueExpressionImpl extends ExpressionImpl implements TimeValue
 	 * @generated
 	 */
 	public void setTimeValue(TimeValue newTimeValue) {
-		TimeValue oldTimeValue = timeValue;
-		timeValue = newTimeValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActionlanguagePackage.TIME_VALUE_EXPRESSION__TIME_VALUE, oldTimeValue, timeValue));
+		if (newTimeValue != timeValue) {
+			NotificationChain msgs = null;
+			if (timeValue != null)
+				msgs = ((InternalEObject)timeValue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionlanguagePackage.TIME_VALUE_EXPRESSION__TIME_VALUE, null, msgs);
+			if (newTimeValue != null)
+				msgs = ((InternalEObject)newTimeValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionlanguagePackage.TIME_VALUE_EXPRESSION__TIME_VALUE, null, msgs);
+			msgs = basicSetTimeValue(newTimeValue, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionlanguagePackage.TIME_VALUE_EXPRESSION__TIME_VALUE, newTimeValue, newTimeValue));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ActionlanguagePackage.TIME_VALUE_EXPRESSION__TIME_VALUE:
+				return basicSetTimeValue(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -111,8 +131,7 @@ public class TimeValueExpressionImpl extends ExpressionImpl implements TimeValue
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ActionlanguagePackage.TIME_VALUE_EXPRESSION__TIME_VALUE:
-				if (resolve) return getTimeValue();
-				return basicGetTimeValue();
+				return getTimeValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

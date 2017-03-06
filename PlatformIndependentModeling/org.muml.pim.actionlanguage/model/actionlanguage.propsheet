@@ -216,7 +216,7 @@
       <orderedElements xsi:type="org.muml:Property" xmi:id="_VaFf68wbEeSjx7OWZCcdLw">
         <genFeature href="actionlanguage.genmodel#//actionlanguage/TimeValueExpression/timeValue"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_VaFf7MwbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes xmi:id="_VaFf7cwbEeSjx7OWZCcdLw">

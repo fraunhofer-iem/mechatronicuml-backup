@@ -1096,7 +1096,7 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		initEReference(getNondeterministicChoiceExpression_DataType(), theTypesPackage.getPrimitiveDataType(), null, "dataType", null, 1, 1, NondeterministicChoiceExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(timeValueExpressionEClass, TimeValueExpression.class, "TimeValueExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTimeValueExpression_TimeValue(), theValuetypePackage.getTimeValue(), null, "timeValue", null, 1, 1, TimeValueExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTimeValueExpression_TimeValue(), theValuetypePackage.getTimeValue(), null, "timeValue", null, 1, 1, TimeValueExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(typeCastExpressionEClass, TypeCastExpression.class, "TypeCastExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTypeCastExpression_DataType(), theTypesPackage.getDataType(), null, "dataType", null, 0, 1, TypeCastExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
