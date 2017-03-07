@@ -3,8 +3,12 @@
    <feature url="features/org.muml.releng.site.feature_1.0.0.qualifier.jar" id="org.muml.releng.site.feature" version="1.0.0.qualifier">
       <category name="org.muml.releng.site.repository.category"/>
    </feature>
-  <!--<feature url="features/org.muml.releng.site.feature_1.0.0.qualifier-source-feature.jar" id="org.muml.releng.site.feature.source" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.category"/> 
-   </feature>-->
-   <category-def name="org.muml.releng.site.repository.category" label="releng.site"/>
+  <feature url="features/org.muml.pim.feature_1.0.0.qualifier.jar" id="org.muml.pim.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.muml"/> 
+   </feature>
+	<category-def name="org.muml.releng.site.repository.muml" label="MechatronicUML Features"/>
+	<category-def name="org.muml.releng.site.repository.examples" label="MechatronicUML Model Examples"/>
+	<category-def name="org.muml.releng.site.repository.sdks" label="MechatronicUML Model SDKs"/>
+	<category-def name="org.muml.releng.site.repository.utility" label="Utility Features"/>
+	<category-def name="org.muml.releng.site.repository.utility" label="Third Party Dependencies"/>
 </site>
