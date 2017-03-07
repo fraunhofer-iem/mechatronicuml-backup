@@ -33,7 +33,55 @@
    </feature>		
 	
 	<category-def name="org.muml.releng.site.repository.examples" label="MechatronicUML Model Examples"/>
-	<!-- org.muml.example.blindovertaking.feature,org.muml.example.coordinatingbebots.feature,org.muml.example.mini.entryexit.feature,org.muml.example.mini.messages.feature,org.muml.example.mini.operations.feature,org.muml.example.mini.simplertsc.feature,org.muml.example.mini.syncchannel.feature,org.muml.example.railcab.feature,org.muml.example.sectionentry.feature,org.muml.example.brakebywire.feature,org.muml.example.arduinocarhwplatform.feature,org.muml.example.mini.syncselectorchannel.feature,org.muml.example.coordinationpatternlib.feature,org.muml.example.rocketlauncher.feature,org.muml.example.cooperatingballplayingrobots.feature,org.muml.example.blinkingled.feature -->
+  	<feature url="features/org.muml.example.blindovertaking.feature_1.0.0.qualifier.jar" id="org.muml.example.blindovertaking.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.examples"/> 
+   </feature>	
+  	<feature url="features/org.muml.example.coordinatingbebots.feature_1.0.0.qualifier.jar" id="org.muml.example.coordinatingbebots.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.examples"/> 
+   </feature>
+  	<feature url="features/org.muml.example.mini.entryexit.feature_1.0.0.qualifier.jar" id="org.muml.example.mini.entryexit.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.examples"/> 
+   </feature>
+  	<feature url="features/org.muml.example.mini.messages.feature_1.0.0.qualifier.jar" id="org.muml.example.mini.messages.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.examples"/> 
+   </feature>	
+  	<feature url="features/org.muml.example.mini.operations.feature_1.0.0.qualifier.jar" id="org.muml.example.mini.operations.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.examples"/> 
+   </feature>
+  	<feature url="features/org.muml.example.mini.simplertsc.feature_1.0.0.qualifier.jar" id="org.muml.example.mini.simplertsc.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.examples"/> 
+   </feature>		
+  	<feature url="features/org.muml.example.mini.syncchannel.feature_1.0.0.qualifier.jar" id="org.muml.example.mini.syncchannel.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.examples"/> 
+   </feature>	
+  	<feature url="features/org.muml.example.railcab.feature_1.0.0.qualifier.jar" id="org.muml.example.railcab.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.examples"/> 
+   </feature>
+  	<feature url="features/org.muml.example.sectionentry.feature_1.0.0.qualifier.jar" id="org.muml.example.sectionentry.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.examples"/> 
+   </feature>
+  	<feature url="features/org.muml.example.brakebywire.feature_1.0.0.qualifier.jar" id="org.muml.example.brakebywire.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.examples"/> 
+   </feature>	
+  	<feature url="features/org.muml.example.arduinocarhwplatform.feature_1.0.0.qualifier.jar" id="org.muml.example.arduinocarhwplatform.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.examples"/> 
+   </feature>
+  	<feature url="features/org.muml.example.mini.syncselectorchannel.feature_1.0.0.qualifier.jar" id="org.muml.example.mini.syncselectorchannel.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.examples"/> 
+   </feature>	
+  	<feature url="features/org.muml.example.coordinationpatternlib.feature_1.0.0.qualifier.jar" id="org.muml.example.coordinationpatternlib.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.examples"/> 
+   </feature>
+  	<feature url="features/org.muml.example.rocketlauncher.feature_1.0.0.qualifier.jar" id="org.muml.example.rocketlauncher.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.examples"/> 
+   </feature>	
+  	<feature url="features/org.muml.example.cooperatingballplayingrobots.feature_1.0.0.qualifier.jar" id="org.muml.example.cooperatingballplayingrobots.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.examples"/> 
+   </feature>
+  	<feature url="features/org.muml.example.blinkingled.feature_1.0.0.qualifier.jar" id="org.muml.example.blinkingled.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.examples"/> 
+   </feature>		
+	
 	<category-def name="org.muml.releng.site.repository.sdks" label="MechatronicUML Model SDKs"/>
 	<!-- org.muml.core.sdk.feature,org.muml.pim.sdk.feature,org.muml.uppaal.sdk.feature,org.muml.verification.core.sdk.feature,org.muml.uppaal.adapter.sdk.feature,org.muml.pm.sdk.feature,org.muml.modelica.adapter.sdk.feature,org.muml.codegen.c.source.feature,org.muml.psm.sdk.feature,org.muml.reconfiguration.source.feature,org.muml.ontology.source.feature\t\t\t\t\t\t-->
 	<category-def name="org.muml.releng.site.repository.utility" label="Utility Features"/>
