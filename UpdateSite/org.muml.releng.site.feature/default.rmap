@@ -62,9 +62,9 @@
 </rm:searchPath>
 
 
-<rm:searchPath name="ModelCopy">
+<rm:searchPath name="ImplicitCopy">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="false">
-      <rm:uri format="file:///data/jenkins/jobs/ModelCopy/lastSuccessful/archive/targetPlatform/">
+      <rm:uri format="file:///data/jenkins/jobs/ImplicitCopy/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
 </rm:searchPath>
