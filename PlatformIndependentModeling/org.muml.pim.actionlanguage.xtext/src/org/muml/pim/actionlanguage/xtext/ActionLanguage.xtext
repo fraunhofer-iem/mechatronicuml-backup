@@ -159,7 +159,7 @@ Range returns valuetype::Range:
 ;
 
 LONG returns ecore::ELong:
-	INT
+	('-')?INT
 ;
 
 // end of nondeterministic choice expression

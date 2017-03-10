@@ -255,9 +255,7 @@ protected class Entry_ArrayInitializeExpressionParserRuleCall_2 extends RuleCall
 /************ begin Rule Block ****************
  *
  * Block actionlanguage::Block hidden(WS, ML_COMMENT, SL_COMMENT):
- * 	{actionlanguage::Block}
- * 	'{'
- * 	expressions+=ExpressionStartRule* '}'
+ * 	{actionlanguage::Block} '{' expressions+=ExpressionStartRule* '}'
  *
  **/
 
@@ -415,8 +413,9 @@ protected class Block_RightCurlyBracketKeyword_3 extends KeywordToken  {
 /************ begin Rule ForLoop ****************
  *
  * // TODO: clarify if it makes sense to allow arbitrary expressions for
+ * 
  * // the initializeExpression and countingExpression
- * ForLoop actionlanguage::ForLoop:
+ *  ForLoop actionlanguage::ForLoop:
  * 	'for' '(' initializeExpression=Assignment loopTest=Expression ';' countingExpression=ForLoopCountingExpression ')'
  * 	block=Block
  *
@@ -731,8 +730,8 @@ protected class ForLoop_BlockAssignment_7 extends AssignmentToken  {
  *
  * ForLoopCountingExpression actionlanguage::Assignment:
  * 	lhs_typedNamedElementExpression=TypedNamedElementExpression
- * 	(incrementDecrementOperator=UnaryPostIncrementDecrementOperator
- * 	| assignOperator=AssignOperator rhs_assignExpression=Expression)
+ * 	(incrementDecrementOperator=UnaryPostIncrementDecrementOperator | assignOperator=AssignOperator
+ * 	rhs_assignExpression=Expression)
  *
  **/
 
@@ -981,8 +980,7 @@ protected class ForLoopCountingExpression_Rhs_assignExpressionAssignment_1_1_1 e
 /************ begin Rule WhileLoop ****************
  *
  * WhileLoop actionlanguage::WhileLoop:
- * 	'while' '(' loopTest=Expression ')'
- * 	block=Block
+ * 	'while' '(' loopTest=Expression ')' block=Block
  *
  **/
 
@@ -1179,9 +1177,7 @@ protected class WhileLoop_BlockAssignment_4 extends AssignmentToken  {
 /************ begin Rule DoWhileLoop ****************
  *
  * DoWhileLoop actionlanguage::DoWhileLoop:
- * 	'do'
- * 	block=Block
- * 	'while' '(' loopTest=Expression ');'
+ * 	'do' block=Block 'while' '(' loopTest=Expression ');'
  *
  **/
 
@@ -1400,9 +1396,7 @@ protected class DoWhileLoop_RightParenthesisSemicolonKeyword_5 extends KeywordTo
 /************ begin Rule IfStatement ****************
  *
  * IfStatement actionlanguage::IfStatement:
- * 	'if' '(' ifCondition=Expression ')'
- * 	ifBlock=Block
- * 	elseIfStatements+=ElseIfStatement* ('else' elseBlock=Block)?
+ * 	'if' '(' ifCondition=Expression ')' ifBlock=Block elseIfStatements+=ElseIfStatement* ('else' elseBlock=Block)?
  *
  **/
 
@@ -1740,8 +1734,7 @@ protected class IfStatement_ElseBlockAssignment_6_1 extends AssignmentToken  {
 /************ begin Rule ElseIfStatement ****************
  *
  * ElseIfStatement actionlanguage::ElseIfStatement:
- * 	'elseif' '(' elseIfCondition=Expression ')'
- * 	elseIfBlock=Block
+ * 	'elseif' '(' elseIfCondition=Expression ')' elseIfBlock=Block
  *
  **/
 
@@ -1938,8 +1931,7 @@ protected class ElseIfStatement_ElseIfBlockAssignment_4 extends AssignmentToken 
 /************ begin Rule ReturnStatement ****************
  *
  * ReturnStatement actionlanguage::ReturnStatement:
- * 	{actionlanguage::ReturnStatement}
- * 	'return' expression=Expression ';'
+ * 	{actionlanguage::ReturnStatement} 'return' expression=Expression ';'
  *
  **/
 
@@ -2535,10 +2527,9 @@ protected class ExpressionStartRule_OperationCallStatementParserRuleCall_7 exten
 /************ begin Rule Assignment ****************
  *
  * // Assignment
- * Assignment actionlanguage::Assignment:
+ *  Assignment actionlanguage::Assignment:
  * 	lhs_typedNamedElementExpression=TypedNamedElementExpression (assignOperator=AssignOperator
- * 	rhs_assignExpression=InitializeExpression
- * 	| incrementDecrementOperator=UnaryPostIncrementDecrementOperator) ';'
+ * 	rhs_assignExpression=InitializeExpression | incrementDecrementOperator=UnaryPostIncrementDecrementOperator) ';'
  *
  **/
 
@@ -2808,8 +2799,8 @@ protected class Assignment_SemicolonKeyword_2 extends KeywordToken  {
 /************ begin Rule InitializeExpression ****************
  *
  * // end of assignment
- * // initialize expression
- * InitializeExpression expressions::Expression:
+ *  // initialize expression
+ *  InitializeExpression expressions::Expression:
  * 	ArrayInitializeExpression | NondeterministicChoiceExpression | Expression
  *
  **/
@@ -2984,10 +2975,10 @@ protected class InitializeExpression_ExpressionParserRuleCall_2 extends RuleCall
 /************ begin Rule ArrayInitializeExpression ****************
  *
  * // end of initialize expression
- * // array initialization
- * ArrayInitializeExpression actionlanguage::ArrayInitializeExpression:
- * 	'[' expressions+=InitializeExpression (',' expressions+=InitializeExpression)*
- * 	']'
+ *  // array initialization
+ *  ArrayInitializeExpression
+ * actionlanguage::ArrayInitializeExpression:
+ * 	'[' expressions+=InitializeExpression (',' expressions+=InitializeExpression)* ']'
  *
  **/
 
@@ -3209,8 +3200,9 @@ protected class ArrayInitializeExpression_RightSquareBracketKeyword_3 extends Ke
 /************ begin Rule LocalVariableOrConstantDeclarationStatement ****************
  *
  * // end of array initialization
- * // local variable declaration
- * LocalVariableOrConstantDeclarationStatement actionlanguage::LocalVariableDeclarationStatement:
+ *  // local variable declaration
+ *  LocalVariableOrConstantDeclarationStatement
+ * actionlanguage::LocalVariableDeclarationStatement:
  * 	variable=(LocalVariableDeclaration | LocalConstantDeclaration)
  *
  **/
@@ -3736,8 +3728,9 @@ protected class LocalConstantDeclaration_SemicolonKeyword_5 extends KeywordToken
 /************ begin Rule NondeterministicChoiceExpression ****************
  *
  * // end of local variable declaration
- * // nondeterministic choice expression
- * NondeterministicChoiceExpression actionlanguage::NondeterministicChoiceExpression:
+ *  // nondeterministic choice expression
+ *  NondeterministicChoiceExpression
+ * actionlanguage::NondeterministicChoiceExpression:
  * 	dataType=[types::PrimitiveDataType] range=Range
  *
  **/
@@ -4034,7 +4027,7 @@ protected class Range_GreaterThanSignKeyword_4 extends KeywordToken  {
 /************ begin Rule Expression ****************
  *
  * // end of nondeterministic choice expression
- * Expression expressions::Expression:
+ *  Expression expressions::Expression:
  * 	LogicalExpression
  *
  **/
@@ -4092,7 +4085,7 @@ protected class Expression_LogicalExpressionParserRuleCall extends RuleCallToken
 /************ begin Rule LogicalExpression ****************
  *
  * // LogicalExpression
- * LogicalExpression expressions::Expression:
+ *  LogicalExpression expressions::Expression:
  * 	LogicalOrExpression
  *
  **/
@@ -4608,11 +4601,10 @@ protected class LogicalAndExpression_RightExpressionAssignment_1_2 extends Assig
 /************ begin Rule ComparisonExpression ****************
  *
  * // end of LogicalExpression
- * // ComparisonExpression
- * ComparisonExpression expressions::Expression:
+ *  // ComparisonExpression
+ *  ComparisonExpression expressions::Expression:
  * 	ComparisonHigherOpExpression ({commonExpressions::ComparisonExpression.leftExpression=current}
- * 	operator=ComparingEQNEQOperator
- * 	rightExpression=ComparisonHigherOpExpression)?
+ * 	operator=ComparingEQNEQOperator rightExpression=ComparisonHigherOpExpression)?
  *
  **/
 
@@ -5067,8 +5059,8 @@ protected class ComparisonHigherOpExpression_RightExpressionAssignment_1_2 exten
 /************ begin Rule ArithmeticExpression ****************
  *
  * // end of ComparisonExpression
- * // ArithmeticExpression	
- * ArithmeticExpression expressions::Expression:
+ *  // ArithmeticExpression	
+ *  ArithmeticExpression expressions::Expression:
  * 	AdditionExpression
  *
  **/
@@ -5655,8 +5647,8 @@ protected class MultiplicationExpression_RightExpressionAssignment_1_1_2 extends
 /************ begin Rule UnaryPreExpression ****************
  *
  * // end of ArithmeticExpression
- * // UnaryPreExpression
- * UnaryPreExpression expressions::Expression:
+ *  // UnaryPreExpression
+ *  UnaryPreExpression expressions::Expression:
  * 	{commonExpressions::UnaryExpression} operator=UnaryPreOperator enclosedExpression=TypeCastExpression
  *
  **/
@@ -5803,9 +5795,8 @@ protected class UnaryPreExpression_EnclosedExpressionAssignment_2 extends Assign
 /************ begin Rule TypeCastExpression ****************
  *
  * // end of UnaryPreExpression
- * TypeCastExpression expressions::Expression:
- * 	Operand | {actionlanguage::TypeCastExpression}
- * 	'(' dataType=[types::DataType|DATATYPE] ')' enclosedExpression=Operand
+ *  TypeCastExpression expressions::Expression:
+ * 	Operand | {actionlanguage::TypeCastExpression} '(' dataType=[types::DataType|DATATYPE] ')' enclosedExpression=Operand
  *
  **/
 
@@ -6074,9 +6065,9 @@ protected class TypeCastExpression_EnclosedExpressionAssignment_1_4 extends Assi
 /************ begin Rule Operand ****************
  *
  * // Operand
- * Operand expressions::Expression:
- * 	'(' Expression ')' | LiteralExpression | ExtendedTypedNamedElementExpression | TimeValueExpression
- * 	| OperationCall | TriggerMessageExpression | NoAttributeSelectorExpression
+ *  Operand expressions::Expression:
+ * 	'(' Expression ')' | LiteralExpression | ExtendedTypedNamedElementExpression | TimeValueExpression | OperationCall |
+ * 	TriggerMessageExpression | NoAttributeSelectorExpression
  *
  **/
 
@@ -6453,7 +6444,7 @@ protected class Operand_NoAttributeSelectorExpressionParserRuleCall_6 extends Ru
 /************ begin Rule LiteralExpression ****************
  *
  * // end of Operand
- * LiteralExpression commonExpressions::LiteralExpression:
+ *  LiteralExpression commonExpressions::LiteralExpression:
  * 	{commonExpressions::LiteralExpression} value=Literal
  *
  **/
@@ -6604,9 +6595,8 @@ protected class TimeValueExpression_TimeValueAssignment extends AssignmentToken 
  *
  * ExtendedTypedNamedElementExpression expressions::Expression:
  * 	TypedNamedElementExpression
- * 	({actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current}
- * 	'->' position=PositionSelectorExpression
- * 	| {actionlanguage::Assignment.lhs_typedNamedElementExpression=current}
+ * 	({actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current} '->'
+ * 	position=PositionSelectorExpression | {actionlanguage::Assignment.lhs_typedNamedElementExpression=current}
  * 	incrementDecrementOperator=IncrementDecrementOperatorExpression)?
  *
  **/
@@ -7983,7 +7973,7 @@ protected class ParamaterBinding_ValueAssignment_3 extends AssignmentToken  {
 /************ begin Rule TriggerMessageExpression ****************
  *
  * // TriggerMessageExpression
- * TriggerMessageExpression actionlanguage::TriggerMessageExpression:
+ *  TriggerMessageExpression actionlanguage::TriggerMessageExpression:
  * 	messageType=[msgtype::MessageType] '->' parameter=[behavior::Parameter]
  *
  **/

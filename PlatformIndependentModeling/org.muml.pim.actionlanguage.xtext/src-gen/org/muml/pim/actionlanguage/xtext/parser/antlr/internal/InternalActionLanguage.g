@@ -1471,14 +1471,20 @@ ruleLONG returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-    this_INT_0=RULE_INT    {
-		$current.merge(this_INT_0);
+((
+	kw='-' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getLONGAccess().getHyphenMinusKeyword_0()); 
+    }
+)?    this_INT_1=RULE_INT    {
+		$current.merge(this_INT_1);
     }
 
     { 
-    newLeafNode(this_INT_0, grammarAccess.getLONGAccess().getINTTerminalRuleCall()); 
+    newLeafNode(this_INT_1, grammarAccess.getLONGAccess().getINTTerminalRuleCall_1()); 
     }
-
+)
     ;
 
 

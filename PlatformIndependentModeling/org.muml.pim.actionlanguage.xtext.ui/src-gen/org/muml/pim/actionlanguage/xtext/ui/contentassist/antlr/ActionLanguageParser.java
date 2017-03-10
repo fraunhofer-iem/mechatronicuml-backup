@@ -79,6 +79,7 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getLocalConstantDeclarationAccess().getGroup(), "rule__LocalConstantDeclaration__Group__0");
 					put(grammarAccess.getNondeterministicChoiceExpressionAccess().getGroup(), "rule__NondeterministicChoiceExpression__Group__0");
 					put(grammarAccess.getRangeAccess().getGroup(), "rule__Range__Group__0");
+					put(grammarAccess.getLONGAccess().getGroup(), "rule__LONG__Group__0");
 					put(grammarAccess.getLogicalOrExpressionAccess().getGroup(), "rule__LogicalOrExpression__Group__0");
 					put(grammarAccess.getLogicalOrExpressionAccess().getGroup_1(), "rule__LogicalOrExpression__Group_1__0");
 					put(grammarAccess.getLogicalAndExpressionAccess().getGroup(), "rule__LogicalAndExpression__Group__0");

@@ -8,10 +8,10 @@ import org.eclipse.xtext.junit4.IInjectorProvider;
 import com.google.inject.Injector;
 
 public class ActionLanguageUiInjectorProvider implements IInjectorProvider {
-	
+
 	@Override
 	public Injector getInjector() {
 		return org.muml.pim.actionlanguage.xtext.ui.internal.ActionLanguageActivator.getInstance().getInjector("org.muml.pim.actionlanguage.xtext.ActionLanguage");
 	}
-	
+
 }
