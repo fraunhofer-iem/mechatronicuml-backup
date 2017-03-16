@@ -29,7 +29,7 @@ import org.muml.pim.valuetype.TimeValue;
  *
  * @see org.muml.pim.protocol.ProtocolPackage#getConnectorQualityOfServiceAssumptions()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='PreserveMessageOrderIsTrueWhenConnectorIsReliable'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL PreserveMessageOrderIsTrueWhenConnectorIsReliable='-- Attribute preserveMessageOrder must be true of the connector is reliable (i.e., if no message may be lost).\r\nself.messageLossPossible implies self.preserveMessageOrder'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL PreserveMessageOrderIsTrueWhenConnectorIsReliable='-- Attribute preserveMessageOrder must be true if the connector is reliable (i.e., if no message may be lost).\r\nself.messageLossPossible implies self.preserveMessageOrder'"
  * @generated
  */
 public interface ConnectorQualityOfServiceAssumptions extends CommentableElement {
