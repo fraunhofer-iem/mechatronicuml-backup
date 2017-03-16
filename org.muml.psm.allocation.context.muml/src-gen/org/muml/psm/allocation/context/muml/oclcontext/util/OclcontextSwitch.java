@@ -1,6 +1,6 @@
 /**
  */
-package org.muml.psm.allocation.language.oclcontext.util;
+package org.muml.psm.allocation.context.muml.oclcontext.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -8,8 +8,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 
 import org.eclipse.jdt.annotation.Nullable;
-
-import org.muml.psm.allocation.language.oclcontext.*;
+import org.muml.psm.allocation.context.muml.oclcontext.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +20,7 @@ import org.muml.psm.allocation.language.oclcontext.*;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * @see org.muml.psm.allocation.language.oclcontext.OclcontextPackage
+ * @see org.muml.psm.allocation.context.muml.oclcontext.OclcontextPackage
  * @generated
  */
 public class OclcontextSwitch<@Nullable T> extends Switch<T> {

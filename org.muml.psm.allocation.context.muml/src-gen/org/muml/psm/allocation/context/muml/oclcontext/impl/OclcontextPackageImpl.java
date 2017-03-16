@@ -1,6 +1,6 @@
 /**
  */
-package org.muml.psm.allocation.language.oclcontext.impl;
+package org.muml.psm.allocation.context.muml.oclcontext.impl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -14,9 +14,9 @@ import org.muml.pm.hardware.HardwarePackage;
 
 import org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage;
 
-import org.muml.psm.allocation.language.oclcontext.OCLContext;
-import org.muml.psm.allocation.language.oclcontext.OclcontextFactory;
-import org.muml.psm.allocation.language.oclcontext.OclcontextPackage;
+import org.muml.psm.allocation.context.muml.oclcontext.OCLContext;
+import org.muml.psm.allocation.context.muml.oclcontext.OclcontextFactory;
+import org.muml.psm.allocation.context.muml.oclcontext.OclcontextPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,7 +43,7 @@ public class OclcontextPackageImpl extends EPackageImpl implements OclcontextPac
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see org.muml.psm.allocation.language.oclcontext.OclcontextPackage#eNS_URI
+	 * @see org.muml.psm.allocation.context.muml.oclcontext.OclcontextPackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */

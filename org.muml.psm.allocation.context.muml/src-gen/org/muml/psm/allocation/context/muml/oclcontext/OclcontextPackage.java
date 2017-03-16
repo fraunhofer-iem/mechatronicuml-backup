@@ -1,6 +1,6 @@
 /**
  */
-package org.muml.psm.allocation.language.oclcontext;
+package org.muml.psm.allocation.context.muml.oclcontext;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- begin-model-doc -->
  * This package provides the OCL context class.
  * <!-- end-model-doc -->
- * @see org.muml.psm.allocation.language.oclcontext.OclcontextFactory
+ * @see org.muml.psm.allocation.context.muml.oclcontext.OclcontextFactory
  * @model kind="package"
  * @generated
  */
@@ -40,7 +40,7 @@ public interface OclcontextPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.muml.org/psm/allocation/language/oclcontext/1.0.0";
+	String eNS_URI = "http://www.muml.org/psm/allocation/context/muml/oclcontext/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -56,14 +56,14 @@ public interface OclcontextPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	OclcontextPackage eINSTANCE = org.muml.psm.allocation.language.oclcontext.impl.OclcontextPackageImpl.init();
+	OclcontextPackage eINSTANCE = org.muml.psm.allocation.context.muml.oclcontext.impl.OclcontextPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link org.muml.psm.allocation.language.oclcontext.impl.OCLContextImpl <em>OCL Context</em>}' class.
+	 * The meta object id for the '{@link org.muml.psm.allocation.context.muml.oclcontext.impl.OCLContextImpl <em>OCL Context</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.muml.psm.allocation.language.oclcontext.impl.OCLContextImpl
-	 * @see org.muml.psm.allocation.language.oclcontext.impl.OclcontextPackageImpl#getOCLContext()
+	 * @see org.muml.psm.allocation.context.muml.oclcontext.impl.OCLContextImpl
+	 * @see org.muml.psm.allocation.context.muml.oclcontext.impl.OclcontextPackageImpl#getOCLContext()
 	 * @generated
 	 */
 	int OCL_CONTEXT = 0;
@@ -106,32 +106,32 @@ public interface OclcontextPackage extends EPackage {
 
 
 	/**
-	 * Returns the meta object for class '{@link org.muml.psm.allocation.language.oclcontext.OCLContext <em>OCL Context</em>}'.
+	 * Returns the meta object for class '{@link org.muml.psm.allocation.context.muml.oclcontext.OCLContext <em>OCL Context</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>OCL Context</em>'.
-	 * @see org.muml.psm.allocation.language.oclcontext.OCLContext
+	 * @see org.muml.psm.allocation.context.muml.oclcontext.OCLContext
 	 * @generated
 	 */
 	EClass getOCLContext();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.muml.psm.allocation.language.oclcontext.OCLContext#getComponentInstanceConfiguration <em>Component Instance Configuration</em>}'.
+	 * Returns the meta object for the reference '{@link org.muml.psm.allocation.context.muml.oclcontext.OCLContext#getComponentInstanceConfiguration <em>Component Instance Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Component Instance Configuration</em>'.
-	 * @see org.muml.psm.allocation.language.oclcontext.OCLContext#getComponentInstanceConfiguration()
+	 * @see org.muml.psm.allocation.context.muml.oclcontext.OCLContext#getComponentInstanceConfiguration()
 	 * @see #getOCLContext()
 	 * @generated
 	 */
 	EReference getOCLContext_ComponentInstanceConfiguration();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.muml.psm.allocation.language.oclcontext.OCLContext#getHardwarePlatformInstanceConfiguration <em>Hardware Platform Instance Configuration</em>}'.
+	 * Returns the meta object for the reference '{@link org.muml.psm.allocation.context.muml.oclcontext.OCLContext#getHardwarePlatformInstanceConfiguration <em>Hardware Platform Instance Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Hardware Platform Instance Configuration</em>'.
-	 * @see org.muml.psm.allocation.language.oclcontext.OCLContext#getHardwarePlatformInstanceConfiguration()
+	 * @see org.muml.psm.allocation.context.muml.oclcontext.OCLContext#getHardwarePlatformInstanceConfiguration()
 	 * @see #getOCLContext()
 	 * @generated
 	 */
@@ -161,11 +161,11 @@ public interface OclcontextPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link org.muml.psm.allocation.language.oclcontext.impl.OCLContextImpl <em>OCL Context</em>}' class.
+		 * The meta object literal for the '{@link org.muml.psm.allocation.context.muml.oclcontext.impl.OCLContextImpl <em>OCL Context</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.muml.psm.allocation.language.oclcontext.impl.OCLContextImpl
-		 * @see org.muml.psm.allocation.language.oclcontext.impl.OclcontextPackageImpl#getOCLContext()
+		 * @see org.muml.psm.allocation.context.muml.oclcontext.impl.OCLContextImpl
+		 * @see org.muml.psm.allocation.context.muml.oclcontext.impl.OclcontextPackageImpl#getOCLContext()
 		 * @generated
 		 */
 		EClass OCL_CONTEXT = eINSTANCE.getOCLContext();

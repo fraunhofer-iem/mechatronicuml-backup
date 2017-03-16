@@ -1,6 +1,6 @@
 /**
  */
-package org.muml.psm.allocation.language.oclcontext;
+package org.muml.psm.allocation.context.muml.oclcontext;
 
 import org.eclipse.emf.ecore.EFactory;
 
@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * @see org.muml.psm.allocation.language.oclcontext.OclcontextPackage
+ * @see org.muml.psm.allocation.context.muml.oclcontext.OclcontextPackage
  * @generated
  */
 public interface OclcontextFactory extends EFactory {
@@ -19,7 +19,7 @@ public interface OclcontextFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	OclcontextFactory eINSTANCE = org.muml.psm.allocation.language.oclcontext.impl.OclcontextFactoryImpl.init();
+	OclcontextFactory eINSTANCE = org.muml.psm.allocation.context.muml.oclcontext.impl.OclcontextFactoryImpl.init();
 
 	/**
 	 * Returns a new object of class '<em>OCL Context</em>'.

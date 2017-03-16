@@ -1,6 +1,6 @@
 /**
  */
-package org.muml.psm.allocation.language.oclcontext.util;
+package org.muml.psm.allocation.context.muml.oclcontext.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -10,15 +10,14 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.jdt.annotation.Nullable;
-
-import org.muml.psm.allocation.language.oclcontext.*;
+import org.muml.psm.allocation.context.muml.oclcontext.*;
 
 /**
  * <!-- begin-user-doc -->
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * @see org.muml.psm.allocation.language.oclcontext.OclcontextPackage
+ * @see org.muml.psm.allocation.context.muml.oclcontext.OclcontextPackage
  * @generated
  */
 public class OclcontextAdapterFactory extends AdapterFactoryImpl {
@@ -94,13 +93,13 @@ public class OclcontextAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.muml.psm.allocation.language.oclcontext.OCLContext <em>OCL Context</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.psm.allocation.context.muml.oclcontext.OCLContext <em>OCL Context</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.muml.psm.allocation.language.oclcontext.OCLContext
+	 * @see org.muml.psm.allocation.context.muml.oclcontext.OCLContext
 	 * @generated
 	 */
 	public Adapter createOCLContextAdapter() {

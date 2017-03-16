@@ -1,6 +1,6 @@
 /**
  */
-package org.muml.psm.allocation.language.oclcontext.impl;
+package org.muml.psm.allocation.context.muml.oclcontext.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -14,8 +14,8 @@ import org.muml.pim.instance.ComponentInstanceConfiguration;
 
 import org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration;
 
-import org.muml.psm.allocation.language.oclcontext.OCLContext;
-import org.muml.psm.allocation.language.oclcontext.OclcontextPackage;
+import org.muml.psm.allocation.context.muml.oclcontext.OCLContext;
+import org.muml.psm.allocation.context.muml.oclcontext.OclcontextPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,8 +25,8 @@ import org.muml.psm.allocation.language.oclcontext.OclcontextPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.muml.psm.allocation.language.oclcontext.impl.OCLContextImpl#getComponentInstanceConfiguration <em>Component Instance Configuration</em>}</li>
- *   <li>{@link org.muml.psm.allocation.language.oclcontext.impl.OCLContextImpl#getHardwarePlatformInstanceConfiguration <em>Hardware Platform Instance Configuration</em>}</li>
+ *   <li>{@link org.muml.psm.allocation.context.muml.oclcontext.impl.OCLContextImpl#getComponentInstanceConfiguration <em>Component Instance Configuration</em>}</li>
+ *   <li>{@link org.muml.psm.allocation.context.muml.oclcontext.impl.OCLContextImpl#getHardwarePlatformInstanceConfiguration <em>Hardware Platform Instance Configuration</em>}</li>
  * </ul>
  *
  * @generated
@@ -216,6 +216,5 @@ public class OCLContextImpl extends MinimalEObjectImpl.Container implements OCLC
 		}
 		return super.eIsSet(featureID);
 	}
-
 
 } //OCLContextImpl

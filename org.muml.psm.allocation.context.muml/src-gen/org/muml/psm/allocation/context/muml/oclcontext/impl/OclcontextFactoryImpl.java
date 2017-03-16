@@ -1,6 +1,6 @@
 /**
  */
-package org.muml.psm.allocation.language.oclcontext.impl;
+package org.muml.psm.allocation.context.muml.oclcontext.impl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import org.muml.psm.allocation.language.oclcontext.*;
+import org.muml.psm.allocation.context.muml.oclcontext.*;
 
 /**
  * <!-- begin-user-doc -->

@@ -1,4 +1,4 @@
-package org.muml.psm.allocation.language.xtext.provider
+package org.muml.psm.allocation.context.muml.provider
 
 import org.eclipse.emf.ecore.impl.EObjectImpl
 import org.muml.pim.instance.AssemblyConnectorInstance
@@ -8,8 +8,8 @@ import org.muml.pm.hardware.hwresourceinstance.StructuredResourceInstance
 import org.muml.psm.allocation.Allocation
 import org.muml.psm.allocation.AllocationFactory
 import org.muml.psm.allocation.SystemAllocation
+import org.muml.psm.allocation.context.muml.oclcontext.OCLContext
 import org.muml.psm.allocation.language.^as.StorageProvider
-import org.muml.psm.allocation.language.oclcontext.OCLContext
 
 /**
  * MUML-specific StorageProvider. Currently, only ComponentInstances

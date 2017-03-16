@@ -1,4 +1,4 @@
-package org.muml.psm.allocation.language.xtext.provider
+package org.muml.psm.allocation.context.muml.provider
 
 import java.util.Map
 import org.eclipse.emf.ecore.EObject
