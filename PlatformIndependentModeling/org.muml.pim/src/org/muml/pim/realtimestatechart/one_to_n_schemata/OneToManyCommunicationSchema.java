@@ -124,7 +124,7 @@ public interface OneToManyCommunicationSchema extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * If the transition uses a communication schemata with the condition attribute, then it may be that no subrole may send or receiver a message. Before the RTSC may retry again to execute the communication schemata, it has to wait a specific time. This time is encoded within the attribute retryAfter.
+	 * If the transition uses a communication schemata with the condition attribute, then it may happen that no subrole may send or receive a message. Before the RTSC may retry to execute the communication schemata, it has to wait a specific time. This time is encoded within the attribute retryAfter.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Retry After</em>' containment reference.
 	 * @see #setRetryAfter(TimeValue)
