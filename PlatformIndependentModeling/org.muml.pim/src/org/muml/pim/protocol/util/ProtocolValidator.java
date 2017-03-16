@@ -445,7 +445,7 @@ public class ProtocolValidator extends MumlValidator {
 	 * @generated
 	 */
 	protected static final String CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__PRESERVE_MESSAGE_ORDER_IS_TRUE_WHEN_CONNECTOR_IS_RELIABLE__EEXPRESSION = "-- Attribute preserveMessageOrder must be true if the connector is reliable (i.e., if no message may be lost).\r\n" +
-		"self.messageLossPossible implies self.preserveMessageOrder";
+		"not self.messageLossPossible implies self.preserveMessageOrder";
 
 	/**
 	 * Validates the PreserveMessageOrderIsTrueWhenConnectorIsReliable constraint of '<em>Connector Quality Of Service Assumptions</em>'.

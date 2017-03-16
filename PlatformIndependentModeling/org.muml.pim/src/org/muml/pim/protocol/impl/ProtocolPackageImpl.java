@@ -648,7 +648,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		  (connectorQualityOfServiceAssumptionsEClass, 
 		   source, 
 		   new String[] {
-			 "PreserveMessageOrderIsTrueWhenConnectorIsReliable", "-- Attribute preserveMessageOrder must be true if the connector is reliable (i.e., if no message may be lost).\r\nself.messageLossPossible implies self.preserveMessageOrder"
+			 "PreserveMessageOrderIsTrueWhenConnectorIsReliable", "-- Attribute preserveMessageOrder must be true if the connector is reliable (i.e., if no message may be lost).\r\nnot self.messageLossPossible implies self.preserveMessageOrder"
 		   });
 		addAnnotation
 		  (connectorQualityOfServiceAssumptionsEClass, 
