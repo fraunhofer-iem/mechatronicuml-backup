@@ -64,7 +64,7 @@ public interface ConnectorQualityOfServiceAssumptions extends CommentableElement
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Defines if messages that are send using this connector may be lost during transport.
+	 * Defines whether messages that are sent using this connector may be lost during transport.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Message Loss Possible</em>' attribute.
 	 * @see #setMessageLossPossible(boolean)
@@ -93,6 +93,9 @@ public interface ConnectorQualityOfServiceAssumptions extends CommentableElement
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Defines whether the message order is preserved. This is achieved by dropping overtaken messages. The message order is always preserved if the connector is reliable.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Preserve Message Order</em>' attribute.
 	 * @see #setPreserveMessageOrder(boolean)
 	 * @see org.muml.pim.protocol.ProtocolPackage#getConnectorQualityOfServiceAssumptions_PreserveMessageOrder()

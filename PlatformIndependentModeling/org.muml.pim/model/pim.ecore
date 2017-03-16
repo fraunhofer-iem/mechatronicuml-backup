@@ -634,12 +634,16 @@
           lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
           defaultValueLiteral="false">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Defines if messages that are send using this connector may be lost during transport."/>
+          <details key="documentation" value="Defines whether messages that are sent using this connector may be lost during transport."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="preserveMessageOrder"
           lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-          defaultValueLiteral="true"/>
+          defaultValueLiteral="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Defines whether the message order is preserved. This is achieved by dropping overtaken messages. The message order is always preserved if the connector is reliable."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="realtimestatechart" nsURI="http://www.muml.org/pim/realtimestatechart/1.0.0"
