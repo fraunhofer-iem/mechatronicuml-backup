@@ -3,6 +3,7 @@ package org.muml.uppaal.adapter.blackbox;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.OperationCanceledException;
 import org.eclipse.m2m.qvt.oml.blackbox.java.Operation;
 import org.eclipse.m2m.qvt.oml.util.IContext;
 import org.muml.uppaal.NTA;
@@ -26,10 +27,16 @@ public class TraceLibrary {
 		if (monitor == null)
 			monitor = new NullProgressMonitor();
 		
-		verifyta.run(monitor);
+		try {
+			verifyta.run(monitor);
 				
-		return verifyta.getTraceRepository();
-		
+			return verifyta.getTraceRepository();
+		}
+		catch(OperationCanceledException e) {
+			// avoid error propagation by QVTo, just cancel execution
+			monitor.setCanceled(true);
+			
+			return null;
+		}
 	}
-	
 }
