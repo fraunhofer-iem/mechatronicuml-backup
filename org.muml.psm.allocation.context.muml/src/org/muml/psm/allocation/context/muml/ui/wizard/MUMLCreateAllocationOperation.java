@@ -1,4 +1,4 @@
-package org.muml.psm.allocation.algorithm.ui.wizard;
+package org.muml.psm.allocation.context.muml.ui.wizard;
 
 import java.io.IOException;
 import java.util.Collections;
@@ -14,6 +14,7 @@ import org.muml.core.modelinstance.categories.ModelElementCategoryRegistry;
 import org.muml.psm.allocation.SystemAllocation;
 import org.muml.psm.allocation.algorithm.main.AllocationAlgorithm;
 import org.muml.psm.allocation.algorithm.main.IAllocationComputationStrategy;
+import org.muml.psm.allocation.algorithm.ui.wizard.CreateAllocationOperation;
 import org.muml.psm.allocation.language.cs.SpecificationCS;
 
 public class MUMLCreateAllocationOperation extends CreateAllocationOperation<SystemAllocation> {

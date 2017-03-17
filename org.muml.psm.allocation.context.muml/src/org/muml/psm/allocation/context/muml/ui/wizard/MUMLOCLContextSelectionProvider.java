@@ -1,4 +1,4 @@
-package org.muml.psm.allocation.algorithm.ui.wizard;
+package org.muml.psm.allocation.context.muml.ui.wizard;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +21,7 @@ import org.muml.pim.instance.ComponentInstanceConfiguration;
 import org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration;
 import org.muml.psm.allocation.SystemAllocation;
 import org.muml.psm.allocation.algorithm.main.IAllocationComputationStrategy;
+import org.muml.psm.allocation.algorithm.ui.wizard.IAllocationWizardExtensionProvider;
 import org.muml.psm.allocation.context.muml.oclcontext.OCLContext;
 import org.muml.psm.allocation.context.muml.oclcontext.OclcontextFactory;
 import org.muml.psm.allocation.language.cs.SpecificationCS;
