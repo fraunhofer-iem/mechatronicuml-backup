@@ -1,8 +1,8 @@
 testSpecificationName {
 
-	nameProvider 'org.muml.psm.allocation.context.muml.provider.MUMLNameProvider';
-	storageProvider 'org.muml.psm.allocation.context.muml.provider.MUMLStorageProvider';
-	oclContext oclcontext::OCLContext;
+	nameProvider 'org.muml.psm.allocation.context.muml.provider.MUMLNameProvider'
+	storageProvider 'org.muml.psm.allocation.context.muml.provider.MUMLStorageProvider'
+	oclContext oclcontext::OCLContext
 	import 'http://www.muml.org/psm/allocation/context/muml/oclcontext/1.0.0'
 	
 	relation {
