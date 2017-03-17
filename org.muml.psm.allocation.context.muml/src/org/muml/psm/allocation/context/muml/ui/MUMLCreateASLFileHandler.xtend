@@ -10,10 +10,10 @@ class MUMLCreateASLFileHandler extends AbstractCreateASLFileHandler {
 			import 'http://www.muml.org/psm/allocation/context/muml/oclcontext/1.0.0'
 			include 'platform:/plugin/org.muml.psm.allocation.context.muml/operations/OCLContext.ocl'
 			
-			oclContext oclcontext::OCLContext;
+			oclContext oclcontext::OCLContext
 			
-			nameProvider 'org.muml.psm.allocation.context.muml.provider.MUMLNameProvider';
-			storageProvider 'org.muml.psm.allocation.context.muml.provider.MUMLStorageProvider';
+			nameProvider 'org.muml.psm.allocation.context.muml.provider.MUMLNameProvider'
+			storageProvider 'org.muml.psm.allocation.context.muml.provider.MUMLStorageProvider'
 			
 			relation allocate {
 				descriptors (first : pim::instance::ComponentInstance, second : hardware::hwresourceinstance::ResourceInstance);
