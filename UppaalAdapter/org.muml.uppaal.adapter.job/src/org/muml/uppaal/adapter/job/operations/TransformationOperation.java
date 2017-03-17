@@ -8,7 +8,6 @@ import org.eclipse.core.resources.IWorkspaceRunnable;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.OperationCanceledException;
 import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
@@ -61,6 +60,8 @@ public class TransformationOperation implements IWorkspaceRunnable {
 	 */
 	protected static IStatus loadTransformation(URI uri, IProgressMonitor monitor) {
 		
+		monitor.setTaskName("Load " + uri.trimFileExtension().lastSegment());
+		
 		TransformationExecutor executor = getTransformationExecutor(uri);
 		
 		try {			
@@ -110,26 +111,24 @@ public class TransformationOperation implements IWorkspaceRunnable {
 			SubMonitor subMonitor = SubMonitor.convert(monitor, title, 120);
 						
 			if (executors.get(uri) == null) {
-				subMonitor.subTask("Load Model-to-Model Transformation");
-				IProgressMonitor loadMonitor = subMonitor.newChild(20);
+				IProgressMonitor loadMonitor = subMonitor.split(20, SubMonitor.SUPPRESS_NONE);
 				status = loadTransformation(uri, loadMonitor); //(statically) load appropriate transformation
-								
+				
+				// clear subtask label set by QVTo: https://bugs.eclipse.org/bugs/show_bug.cgi?id=513813
+				subMonitor.subTask("");
+				
 				if(status.getSeverity() == IStatus.ERROR) {
 					// re-initialize the transformation executor when the compilation fails
 					// this ensures a new compilation and allows bugfixes to be considered
 					forgetTransformation(uri);
 					throw new CoreException(status);
 				}
-				
-				if (monitor.isCanceled()) {
-					throw new OperationCanceledException();
-				}
-			};
-			
+			}
+					
 			subMonitor.setWorkRemaining(100);
-			subMonitor.subTask("Execute Model-to-Model Transformation");
-			
-			IProgressMonitor executeMonitor = subMonitor.newChild(90);
+						
+			IProgressMonitor executeMonitor = subMonitor.split(90, SubMonitor.SUPPRESS_NONE);
+			executeMonitor.setTaskName("Execute " + uri.trimFileExtension().lastSegment());
 			
 			//Set up
 			context = new ExecutionContextImpl();
@@ -142,39 +141,46 @@ public class TransformationOperation implements IWorkspaceRunnable {
 			
 			//Execute
 			diagnostic = getTransformationExecutor(uri).execute(context, params);
-			
+						
 			//Validate
 			status = BasicDiagnostic.toIStatus(diagnostic);
 			if(!status.isOK())
 				throw new CoreException(status);
-			
-			if (monitor.isCanceled()) {
-				throw new OperationCanceledException();
-			};
-			
-			
+						
 			//Validate models
-			subMonitor.subTask("Validate Models");
-			int i=0;
-			if (params != null)
-				for (ModelExtent extent : params) {
-					i++;
-					for (EObject obj : extent.getContents()) {
-						diagnostic = Diagnostician.INSTANCE.validate(obj);
-						status = BasicDiagnostic.toIStatus(diagnostic);
-						if(!(status.isOK() || status.getSeverity() ==  IStatus.WARNING)) {
-							System.err.println("Validation failed for parameter model #"+i+" in "+uri.toString());
-							throw new CoreException(status);
-						}
-					}
-				}
-					
-			subMonitor.worked(10);
-					
+			validateModels(subMonitor.split(10, SubMonitor.SUPPRESS_NONE));		
 		}
 		finally {
 			monitor.done();
 		}
 			
-	};	
+	};
+	
+	private void validateModels(IProgressMonitor monitor) throws CoreException {
+		
+		try {
+			if (params != null) {
+				
+				monitor.beginTask("Validate Models", params.length);
+				int i=0;
+				
+				for (ModelExtent extent : params) {
+					i++;
+					for (EObject obj : extent.getContents()) {
+						IStatus status = BasicDiagnostic.toIStatus(Diagnostician.INSTANCE.validate(obj));
+						if(!(status.isOK() || status.getSeverity() ==  IStatus.WARNING)) {
+							System.err.println("Validation failed for parameter model #"+i+" in "+uri.toString());
+							throw new CoreException(status);
+						}
+						
+						monitor.worked(1);
+					}
+				}
+			}
+		}
+		finally {
+			monitor.done();
+		}
+	}
+	
 }

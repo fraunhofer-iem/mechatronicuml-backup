@@ -30,7 +30,7 @@ public class Muml2TraceImageJob extends Job {
 	
 	private Muml2TraceOperation m2m;
 	
-	public Muml2TraceImageJob(VerifiableElement verifiableElement, IPath targetPath, VerificationOptionsProvider optionsProvider, VerificationPropertyChoiceProvider propertyChoiceProvider) {
+	public Muml2TraceImageJob(final VerifiableElement verifiableElement, IPath targetPath, VerificationOptionsProvider optionsProvider, VerificationPropertyChoiceProvider propertyChoiceProvider) {
 		super("Trace Image Export");
 		
 		setUser(true);

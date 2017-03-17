@@ -53,7 +53,7 @@ public class PrepareModelOperation implements IWorkspaceRunnable {
 	public void run(IProgressMonitor monitor) throws CoreException {
 		
 		try {
-			SubMonitor subMonitor = SubMonitor.convert(monitor, "Preparing verification", 100);
+			SubMonitor subMonitor = SubMonitor.convert(monitor, "Preparing Verification", 100);
 			
 			//Clone the model and mark the VerifiableElement that we're interested in
 			TransformationOperation cloneOperation = new TransformationOperation("Cloning model", URI.createPlatformPluginURI("/org.muml.uppaal.adapter.transformation/transforms/CloneAndMark.qvto", true));
@@ -63,19 +63,19 @@ public class PrepareModelOperation implements IWorkspaceRunnable {
 			
 			cloneOperation.setTransformationParameters(inputExtent, verifiableElementExtent, resultExtent);
 			cloneOperation.setTransformationConfigProperties(configProperties);
-			cloneOperation.run(subMonitor.newChild(90));
+			cloneOperation.run(subMonitor.split(90, SubMonitor.SUPPRESS_NONE));
 			
 			
 
-//			role.behavior lï¿½schen
-//			structured components alle lï¿½schen
-//			atomic continuous components lï¿½schen
-//			atomic software component referenziert statechart, statechart lï¿½schen, dann komponente lï¿½schen
+//			role.behavior löschen
+//			structured components alle löschen
+//			atomic continuous components löschen
+//			atomic software component referenziert statechart, statechart löschen, dann komponente löschen
 			
-			// Component Type referenziert statechart -> st lï¿½schen (komponenten
-			// komponent types lï¿½schen
-			// alle protokolle lï¿½schen auï¿½er mit clonedVerifiableElement lï¿½schen, und alle referenzierten Statecharts lï¿½schen (rollen statecharts)
-			// alle cics lï¿½schen
+			// Component Type referenziert statechart -> st löschen (komponenten
+			// komponent types löschen
+			// alle protokolle löschen auöer mit clonedVerifiableElement löschen, und alle referenzierten Statecharts löschen (rollen statecharts)
+			// alle cics löschen
 
 			List<EObject> delete = new ArrayList<EObject>();
 			

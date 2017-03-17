@@ -74,7 +74,7 @@ public class VerifyForResultsJob extends Job {
 			//Clone model, mark verifiable element, etc.
 			PrepareModelOperation prepareOperation = new PrepareModelOperation(verifiableElement);
 			try {
-				prepareOperation.run(subMonitor.newChild(10));
+				prepareOperation.run(subMonitor.split(10, SubMonitor.SUPPRESS_NONE));
 			}
 			catch(CoreException e) {
 				return e.getStatus();
@@ -115,7 +115,7 @@ public class VerifyForResultsJob extends Job {
 			
 			// Run verification job
 			try {
-				verifyOperation.run(subMonitor.newChild(90));
+				verifyOperation.run(subMonitor.split(90, SubMonitor.SUPPRESS_NONE));
 			}
 			catch(CoreException e) {
 				return e.getStatus();
