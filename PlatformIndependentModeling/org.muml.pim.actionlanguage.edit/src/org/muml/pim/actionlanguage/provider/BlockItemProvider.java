@@ -270,6 +270,11 @@ public class BlockItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionlanguagePackage.Literals.BLOCK__EXPRESSIONS,
+				 ActionlanguageFactory.eINSTANCE.createMaxMessageDelayReferenceExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionlanguagePackage.Literals.BLOCK__EXPRESSIONS,
 				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
 		newChildDescriptors.add

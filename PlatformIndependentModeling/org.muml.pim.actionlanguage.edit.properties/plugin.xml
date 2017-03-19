@@ -132,6 +132,11 @@
              type="http://www.muml.org/pim/actionlanguage/1.0.0#ElseIfStatement">
        </propertyEditor>
     
+       <propertyEditor
+             factory="org.muml.pim.actionlanguage.properties.actionlanguage.editor.MaxMessageDelayReferenceExpressionEditor$Factory"
+             type="http://www.muml.org/pim/actionlanguage/1.0.0#MaxMessageDelayReferenceExpression">
+       </propertyEditor>
+    
     </propertyEditors>
  </extension>
 

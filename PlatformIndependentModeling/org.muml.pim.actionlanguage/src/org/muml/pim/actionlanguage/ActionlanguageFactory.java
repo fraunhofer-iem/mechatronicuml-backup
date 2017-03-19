@@ -206,6 +206,15 @@ public interface ActionlanguageFactory extends EFactory {
 	ElseIfStatement createElseIfStatement();
 
 	/**
+	 * Returns a new object of class '<em>Max Message Delay Reference Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Max Message Delay Reference Expression</em>'.
+	 * @generated
+	 */
+	MaxMessageDelayReferenceExpression createMaxMessageDelayReferenceExpression();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

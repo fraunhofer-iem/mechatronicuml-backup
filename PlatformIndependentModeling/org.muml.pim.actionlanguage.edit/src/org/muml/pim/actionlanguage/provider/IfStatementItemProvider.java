@@ -342,6 +342,11 @@ public class IfStatementItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionlanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
+				 ActionlanguageFactory.eINSTANCE.createMaxMessageDelayReferenceExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionlanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
 				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
 		newChildDescriptors.add

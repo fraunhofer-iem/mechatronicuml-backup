@@ -160,6 +160,10 @@ public class ActionlanguageAdapterFactory extends AdapterFactoryImpl {
 				return createElseIfStatementAdapter();
 			}
 			@Override
+			public Adapter caseMaxMessageDelayReferenceExpression(MaxMessageDelayReferenceExpression object) {
+				return createMaxMessageDelayReferenceExpressionAdapter();
+			}
+			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -496,6 +500,20 @@ public class ActionlanguageAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createElseIfStatementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.actionlanguage.MaxMessageDelayReferenceExpression <em>Max Message Delay Reference Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.muml.pim.actionlanguage.MaxMessageDelayReferenceExpression
+	 * @generated
+	 */
+	public Adapter createMaxMessageDelayReferenceExpressionAdapter() {
 		return null;
 	}
 

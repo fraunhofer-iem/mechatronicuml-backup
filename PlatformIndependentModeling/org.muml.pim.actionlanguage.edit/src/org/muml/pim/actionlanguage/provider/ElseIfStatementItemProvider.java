@@ -250,6 +250,11 @@ public class ElseIfStatementItemProvider extends CommentableElementItemProvider 
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionlanguagePackage.Literals.ELSE_IF_STATEMENT__ELSE_IF_CONDITION,
+				 ActionlanguageFactory.eINSTANCE.createMaxMessageDelayReferenceExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionlanguagePackage.Literals.ELSE_IF_STATEMENT__ELSE_IF_CONDITION,
 				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
 		newChildDescriptors.add

@@ -285,7 +285,7 @@ TypeCastExpression returns expressions::Expression:
 // Operand
 
 Operand returns expressions::Expression:
-	'(' Expression ')' | LiteralExpression | ExtendedTypedNamedElementExpression | TimeValueExpression
+	'(' Expression ')' | LiteralExpression | TimeValueExpression | ExtendedTypedNamedElementExpression | MaxMessageDelayReferenceExpression
 	| OperationCall | TriggerMessageExpression | NoAttributeSelectorExpression
 ;
 
@@ -300,10 +300,25 @@ Literal returns ecore::EString:
 ;
 
 TimeValueExpression returns actionlanguage::TimeValueExpression:
-	timeValue=[valuetype::TimeValue|MINORMAXKEYWORD]
+	timeValue=TimeValue
 ;
 
-terminal MINORMAXKEYWORD:
+
+TimeValue returns valuetype::TimeValue:
+	value=LiteralExpression unit=TimeUnitExpr
+;
+
+
+TimeUnitExpr returns valuetype::TimeUnit:
+	'DAYS' | 'HOURS' | 'MILLISECONDS' | 'MINUTES' |'SECONDS' | 'MICROSECONDS' | 'NANOSECONDS'
+;
+
+
+MaxMessageDelayReferenceExpression returns actionlanguage::MaxMessageDelayReferenceExpression:
+	timeValue=[valuetype::TimeValue|MAXKEYWORD]
+;
+
+terminal MAXKEYWORD:
 	'maxMsgDelay'
 ;
 

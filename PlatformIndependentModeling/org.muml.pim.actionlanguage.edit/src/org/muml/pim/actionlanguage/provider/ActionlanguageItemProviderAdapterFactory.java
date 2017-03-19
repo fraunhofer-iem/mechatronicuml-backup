@@ -534,6 +534,29 @@ public class ActionlanguageItemProviderAdapterFactory extends ActionlanguageAdap
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.muml.pim.actionlanguage.MaxMessageDelayReferenceExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MaxMessageDelayReferenceExpressionItemProvider maxMessageDelayReferenceExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.muml.pim.actionlanguage.MaxMessageDelayReferenceExpression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMaxMessageDelayReferenceExpressionAdapter() {
+		if (maxMessageDelayReferenceExpressionItemProvider == null) {
+			maxMessageDelayReferenceExpressionItemProvider = new MaxMessageDelayReferenceExpressionItemProvider(this);
+		}
+
+		return maxMessageDelayReferenceExpressionItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -652,6 +675,7 @@ public class ActionlanguageItemProviderAdapterFactory extends ActionlanguageAdap
 		if (arrayIndexExpressionItemProvider != null) arrayIndexExpressionItemProvider.dispose();
 		if (attributeAccessorExpressionItemProvider != null) attributeAccessorExpressionItemProvider.dispose();
 		if (elseIfStatementItemProvider != null) elseIfStatementItemProvider.dispose();
+		if (maxMessageDelayReferenceExpressionItemProvider != null) maxMessageDelayReferenceExpressionItemProvider.dispose();
 	}
 
 }

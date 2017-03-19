@@ -78,6 +78,7 @@ public class ActionlanguageFactoryImpl extends EFactoryImpl implements Actionlan
 			case ActionlanguagePackage.ARRAY_INDEX_EXPRESSION: return createArrayIndexExpression();
 			case ActionlanguagePackage.ATTRIBUTE_ACCESSOR_EXPRESSION: return createAttributeAccessorExpression();
 			case ActionlanguagePackage.ELSE_IF_STATEMENT: return createElseIfStatement();
+			case ActionlanguagePackage.MAX_MESSAGE_DELAY_REFERENCE_EXPRESSION: return createMaxMessageDelayReferenceExpression();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -319,6 +320,16 @@ public class ActionlanguageFactoryImpl extends EFactoryImpl implements Actionlan
 	public ElseIfStatement createElseIfStatement() {
 		ElseIfStatementImpl elseIfStatement = new ElseIfStatementImpl();
 		return elseIfStatement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MaxMessageDelayReferenceExpression createMaxMessageDelayReferenceExpression() {
+		MaxMessageDelayReferenceExpressionImpl maxMessageDelayReferenceExpression = new MaxMessageDelayReferenceExpressionImpl();
+		return maxMessageDelayReferenceExpression;
 	}
 
 	/**

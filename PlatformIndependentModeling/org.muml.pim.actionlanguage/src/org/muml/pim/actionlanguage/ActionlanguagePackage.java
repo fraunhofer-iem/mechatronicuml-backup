@@ -4633,6 +4633,205 @@ public interface ActionlanguagePackage extends EPackage {
 	int ELSE_IF_STATEMENT_OPERATION_COUNT = CorePackage.COMMENTABLE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.muml.pim.actionlanguage.impl.MaxMessageDelayReferenceExpressionImpl <em>Max Message Delay Reference Expression</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.muml.pim.actionlanguage.impl.MaxMessageDelayReferenceExpressionImpl
+	 * @see org.muml.pim.actionlanguage.impl.ActionlanguagePackageImpl#getMaxMessageDelayReferenceExpression()
+	 * @generated
+	 */
+	int MAX_MESSAGE_DELAY_REFERENCE_EXPRESSION = 22;
+
+	/**
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAX_MESSAGE_DELAY_REFERENCE_EXPRESSION__EXTENSIONS = ExpressionsPackage.EXPRESSION__EXTENSIONS;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAX_MESSAGE_DELAY_REFERENCE_EXPRESSION__COMMENT = ExpressionsPackage.EXPRESSION__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Time Value</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAX_MESSAGE_DELAY_REFERENCE_EXPRESSION__TIME_VALUE = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Max Message Delay Reference Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAX_MESSAGE_DELAY_REFERENCE_EXPRESSION_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAX_MESSAGE_DELAY_REFERENCE_EXPRESSION___ECLASS = ExpressionsPackage.EXPRESSION___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAX_MESSAGE_DELAY_REFERENCE_EXPRESSION___EIS_PROXY = ExpressionsPackage.EXPRESSION___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAX_MESSAGE_DELAY_REFERENCE_EXPRESSION___ERESOURCE = ExpressionsPackage.EXPRESSION___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAX_MESSAGE_DELAY_REFERENCE_EXPRESSION___ECONTAINER = ExpressionsPackage.EXPRESSION___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAX_MESSAGE_DELAY_REFERENCE_EXPRESSION___ECONTAINING_FEATURE = ExpressionsPackage.EXPRESSION___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAX_MESSAGE_DELAY_REFERENCE_EXPRESSION___ECONTAINMENT_FEATURE = ExpressionsPackage.EXPRESSION___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAX_MESSAGE_DELAY_REFERENCE_EXPRESSION___ECONTENTS = ExpressionsPackage.EXPRESSION___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAX_MESSAGE_DELAY_REFERENCE_EXPRESSION___EALL_CONTENTS = ExpressionsPackage.EXPRESSION___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAX_MESSAGE_DELAY_REFERENCE_EXPRESSION___ECROSS_REFERENCES = ExpressionsPackage.EXPRESSION___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAX_MESSAGE_DELAY_REFERENCE_EXPRESSION___EGET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAX_MESSAGE_DELAY_REFERENCE_EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAX_MESSAGE_DELAY_REFERENCE_EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT = ExpressionsPackage.EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAX_MESSAGE_DELAY_REFERENCE_EXPRESSION___EIS_SET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAX_MESSAGE_DELAY_REFERENCE_EXPRESSION___EUNSET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAX_MESSAGE_DELAY_REFERENCE_EXPRESSION___EINVOKE__EOPERATION_ELIST = ExpressionsPackage.EXPRESSION___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAX_MESSAGE_DELAY_REFERENCE_EXPRESSION___GET_EXTENSION__ECLASS = ExpressionsPackage.EXPRESSION___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The number of operations of the '<em>Max Message Delay Reference Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAX_MESSAGE_DELAY_REFERENCE_EXPRESSION_OPERATION_COUNT = ExpressionsPackage.EXPRESSION_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.muml.pim.actionlanguage.AssignOperator <em>Assign Operator</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4640,7 +4839,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @see org.muml.pim.actionlanguage.impl.ActionlanguagePackageImpl#getAssignOperator()
 	 * @generated
 	 */
-	int ASSIGN_OPERATOR = 22;
+	int ASSIGN_OPERATOR = 23;
 
 	/**
 	 * The meta object id for the '{@link org.muml.pim.actionlanguage.IncrementDecrementOperator <em>Increment Decrement Operator</em>}' enum.
@@ -4650,7 +4849,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @see org.muml.pim.actionlanguage.impl.ActionlanguagePackageImpl#getIncrementDecrementOperator()
 	 * @generated
 	 */
-	int INCREMENT_DECREMENT_OPERATOR = 23;
+	int INCREMENT_DECREMENT_OPERATOR = 24;
 
 	/**
 	 * The meta object id for the '{@link org.muml.pim.actionlanguage.PositionSelectorKind <em>Position Selector Kind</em>}' enum.
@@ -4660,7 +4859,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @see org.muml.pim.actionlanguage.impl.ActionlanguagePackageImpl#getPositionSelectorKind()
 	 * @generated
 	 */
-	int POSITION_SELECTOR_KIND = 24;
+	int POSITION_SELECTOR_KIND = 25;
 
 
 	/**
@@ -5280,6 +5479,27 @@ public interface ActionlanguagePackage extends EPackage {
 	EReference getElseIfStatement_ElseIfBlock();
 
 	/**
+	 * Returns the meta object for class '{@link org.muml.pim.actionlanguage.MaxMessageDelayReferenceExpression <em>Max Message Delay Reference Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Max Message Delay Reference Expression</em>'.
+	 * @see org.muml.pim.actionlanguage.MaxMessageDelayReferenceExpression
+	 * @generated
+	 */
+	EClass getMaxMessageDelayReferenceExpression();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.muml.pim.actionlanguage.MaxMessageDelayReferenceExpression#getTimeValue <em>Time Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Time Value</em>'.
+	 * @see org.muml.pim.actionlanguage.MaxMessageDelayReferenceExpression#getTimeValue()
+	 * @see #getMaxMessageDelayReferenceExpression()
+	 * @generated
+	 */
+	EReference getMaxMessageDelayReferenceExpression_TimeValue();
+
+	/**
 	 * Returns the meta object for enum '{@link org.muml.pim.actionlanguage.AssignOperator <em>Assign Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5839,6 +6059,24 @@ public interface ActionlanguagePackage extends EPackage {
 		 * @generated
 		 */
 		EReference ELSE_IF_STATEMENT__ELSE_IF_BLOCK = eINSTANCE.getElseIfStatement_ElseIfBlock();
+
+		/**
+		 * The meta object literal for the '{@link org.muml.pim.actionlanguage.impl.MaxMessageDelayReferenceExpressionImpl <em>Max Message Delay Reference Expression</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.muml.pim.actionlanguage.impl.MaxMessageDelayReferenceExpressionImpl
+		 * @see org.muml.pim.actionlanguage.impl.ActionlanguagePackageImpl#getMaxMessageDelayReferenceExpression()
+		 * @generated
+		 */
+		EClass MAX_MESSAGE_DELAY_REFERENCE_EXPRESSION = eINSTANCE.getMaxMessageDelayReferenceExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Time Value</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MAX_MESSAGE_DELAY_REFERENCE_EXPRESSION__TIME_VALUE = eINSTANCE.getMaxMessageDelayReferenceExpression_TimeValue();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.pim.actionlanguage.AssignOperator <em>Assign Operator</em>}' enum.

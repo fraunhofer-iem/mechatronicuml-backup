@@ -2226,51 +2226,61 @@ ruleOperand returns [EObject current=null]
 
     |
     { 
-        newCompositeNode(grammarAccess.getOperandAccess().getExtendedTypedNamedElementExpressionParserRuleCall_2()); 
+        newCompositeNode(grammarAccess.getOperandAccess().getTimeValueExpressionParserRuleCall_2()); 
     }
-    this_ExtendedTypedNamedElementExpression_4=ruleExtendedTypedNamedElementExpression
+    this_TimeValueExpression_4=ruleTimeValueExpression
     { 
-        $current = $this_ExtendedTypedNamedElementExpression_4.current; 
+        $current = $this_TimeValueExpression_4.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getOperandAccess().getTimeValueExpressionParserRuleCall_3()); 
+        newCompositeNode(grammarAccess.getOperandAccess().getExtendedTypedNamedElementExpressionParserRuleCall_3()); 
     }
-    this_TimeValueExpression_5=ruleTimeValueExpression
+    this_ExtendedTypedNamedElementExpression_5=ruleExtendedTypedNamedElementExpression
     { 
-        $current = $this_TimeValueExpression_5.current; 
+        $current = $this_ExtendedTypedNamedElementExpression_5.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getOperandAccess().getOperationCallParserRuleCall_4()); 
+        newCompositeNode(grammarAccess.getOperandAccess().getMaxMessageDelayReferenceExpressionParserRuleCall_4()); 
     }
-    this_OperationCall_6=ruleOperationCall
+    this_MaxMessageDelayReferenceExpression_6=ruleMaxMessageDelayReferenceExpression
     { 
-        $current = $this_OperationCall_6.current; 
+        $current = $this_MaxMessageDelayReferenceExpression_6.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getOperandAccess().getTriggerMessageExpressionParserRuleCall_5()); 
+        newCompositeNode(grammarAccess.getOperandAccess().getOperationCallParserRuleCall_5()); 
     }
-    this_TriggerMessageExpression_7=ruleTriggerMessageExpression
+    this_OperationCall_7=ruleOperationCall
     { 
-        $current = $this_TriggerMessageExpression_7.current; 
+        $current = $this_OperationCall_7.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getOperandAccess().getNoAttributeSelectorExpressionParserRuleCall_6()); 
+        newCompositeNode(grammarAccess.getOperandAccess().getTriggerMessageExpressionParserRuleCall_6()); 
     }
-    this_NoAttributeSelectorExpression_8=ruleNoAttributeSelectorExpression
+    this_TriggerMessageExpression_8=ruleTriggerMessageExpression
     { 
-        $current = $this_NoAttributeSelectorExpression_8.current; 
+        $current = $this_TriggerMessageExpression_8.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getOperandAccess().getNoAttributeSelectorExpressionParserRuleCall_7()); 
+    }
+    this_NoAttributeSelectorExpression_9=ruleNoAttributeSelectorExpression
+    { 
+        $current = $this_NoAttributeSelectorExpression_9.current; 
         afterParserOrEnumRuleCall();
     }
 )
@@ -2392,14 +2402,179 @@ ruleTimeValueExpression returns [EObject current=null]
     @after { leaveRule(); }:
 (
 (
+		{ 
+	        newCompositeNode(grammarAccess.getTimeValueExpressionAccess().getTimeValueTimeValueParserRuleCall_0()); 
+	    }
+		lv_timeValue_0_0=ruleTimeValue		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getTimeValueExpressionRule());
+	        }
+       		set(
+       			$current, 
+       			"timeValue",
+        		lv_timeValue_0_0, 
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.TimeValue");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)
+;
+
+
+
+
+
+// Entry rule entryRuleTimeValue
+entryRuleTimeValue returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getTimeValueRule()); }
+	 iv_ruleTimeValue=ruleTimeValue 
+	 { $current=$iv_ruleTimeValue.current; } 
+	 EOF 
+;
+
+// Rule TimeValue
+ruleTimeValue returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
+		{ 
+	        newCompositeNode(grammarAccess.getTimeValueAccess().getValueLiteralExpressionParserRuleCall_0_0()); 
+	    }
+		lv_value_0_0=ruleLiteralExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getTimeValueRule());
+	        }
+       		set(
+       			$current, 
+       			"value",
+        		lv_value_0_0, 
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.LiteralExpression");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getTimeValueAccess().getUnitTimeUnitExprParserRuleCall_1_0()); 
+	    }
+		lv_unit_1_0=ruleTimeUnitExpr		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getTimeValueRule());
+	        }
+       		set(
+       			$current, 
+       			"unit",
+        		lv_unit_1_0, 
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.TimeUnitExpr");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
+;
+
+
+
+
+
+// Entry rule entryRuleTimeUnitExpr
+entryRuleTimeUnitExpr returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getTimeUnitExprRule()); } 
+	 iv_ruleTimeUnitExpr=ruleTimeUnitExpr 
+	 { $current=$iv_ruleTimeUnitExpr.current.getText(); }  
+	 EOF 
+;
+
+// Rule TimeUnitExpr
+ruleTimeUnitExpr returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+	kw='DAYS' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getDAYSKeyword_0()); 
+    }
+
+    |
+	kw='HOURS' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getHOURSKeyword_1()); 
+    }
+
+    |
+	kw='MILLISECONDS' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getMILLISECONDSKeyword_2()); 
+    }
+
+    |
+	kw='MINUTES' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getMINUTESKeyword_3()); 
+    }
+
+    |
+	kw='SECONDS' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getSECONDSKeyword_4()); 
+    }
+
+    |
+	kw='MICROSECONDS' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getMICROSECONDSKeyword_5()); 
+    }
+
+    |
+	kw='NANOSECONDS' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getNANOSECONDSKeyword_6()); 
+    }
+)
+    ;
+
+
+
+
+
+// Entry rule entryRuleMaxMessageDelayReferenceExpression
+entryRuleMaxMessageDelayReferenceExpression returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getMaxMessageDelayReferenceExpressionRule()); }
+	 iv_ruleMaxMessageDelayReferenceExpression=ruleMaxMessageDelayReferenceExpression 
+	 { $current=$iv_ruleMaxMessageDelayReferenceExpression.current; } 
+	 EOF 
+;
+
+// Rule MaxMessageDelayReferenceExpression
+ruleMaxMessageDelayReferenceExpression returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+(
 		{
 			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getTimeValueExpressionRule());
+	            $current = createModelElement(grammarAccess.getMaxMessageDelayReferenceExpressionRule());
 	        }
         }
-	otherlv_0=RULE_MINORMAXKEYWORD
+	otherlv_0=RULE_MAXKEYWORD
 	{
-		newLeafNode(otherlv_0, grammarAccess.getTimeValueExpressionAccess().getTimeValueTimeValueCrossReference_0()); 
+		newLeafNode(otherlv_0, grammarAccess.getMaxMessageDelayReferenceExpressionAccess().getTimeValueTimeValueCrossReference_0()); 
 	}
 
 )
@@ -3229,7 +3404,7 @@ rulePositionSelectorKind returns [Enumerator current=null]
 
 
 
-RULE_MINORMAXKEYWORD : 'maxMsgDelay';
+RULE_MAXKEYWORD : 'maxMsgDelay';
 
 RULE_NUMBER : RULE_INT '.' RULE_INT;
 

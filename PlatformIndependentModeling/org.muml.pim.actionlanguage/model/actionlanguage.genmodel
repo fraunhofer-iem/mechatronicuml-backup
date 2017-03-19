@@ -103,5 +103,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//ElseIfStatement/elseIfCondition"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//ElseIfStatement/elseIfBlock"/>
     </genClasses>
+    <genClasses ecoreClass="actionlanguage.ecore#//MaxMessageDelayReferenceExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//MaxMessageDelayReferenceExpression/timeValue"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

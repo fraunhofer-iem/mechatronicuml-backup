@@ -429,4 +429,16 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MaxMessageDelayReferenceExpression"
+      eSuperTypes="../../org.muml.core/model/core.ecore#//expressions/Expression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This class is used to reference a TimeValue."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timeValue" lowerBound="1"
+        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/TimeValue">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The TimeValue which is referenced by the TimeValueExpression."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
 </ecore:EPackage>

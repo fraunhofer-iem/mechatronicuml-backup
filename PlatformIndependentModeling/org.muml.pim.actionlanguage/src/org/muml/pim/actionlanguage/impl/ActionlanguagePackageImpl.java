@@ -33,6 +33,7 @@ import org.muml.pim.actionlanguage.IfStatement;
 import org.muml.pim.actionlanguage.IncrementDecrementOperator;
 import org.muml.pim.actionlanguage.LocalVariableDeclarationStatement;
 import org.muml.pim.actionlanguage.Loop;
+import org.muml.pim.actionlanguage.MaxMessageDelayReferenceExpression;
 import org.muml.pim.actionlanguage.NondeterministicChoiceExpression;
 import org.muml.pim.actionlanguage.OperationCall;
 import org.muml.pim.actionlanguage.PositionSelector;
@@ -216,6 +217,13 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 	 * @generated
 	 */
 	private EClass elseIfStatementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass maxMessageDelayReferenceExpressionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -838,6 +846,24 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getMaxMessageDelayReferenceExpression() {
+		return maxMessageDelayReferenceExpressionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMaxMessageDelayReferenceExpression_TimeValue() {
+		return (EReference)maxMessageDelayReferenceExpressionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getAssignOperator() {
 		return assignOperatorEEnum;
 	}
@@ -968,6 +994,9 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		createEReference(elseIfStatementEClass, ELSE_IF_STATEMENT__ELSE_IF_CONDITION);
 		createEReference(elseIfStatementEClass, ELSE_IF_STATEMENT__ELSE_IF_BLOCK);
 
+		maxMessageDelayReferenceExpressionEClass = createEClass(MAX_MESSAGE_DELAY_REFERENCE_EXPRESSION);
+		createEReference(maxMessageDelayReferenceExpressionEClass, MAX_MESSAGE_DELAY_REFERENCE_EXPRESSION__TIME_VALUE);
+
 		// Create enums
 		assignOperatorEEnum = createEEnum(ASSIGN_OPERATOR);
 		incrementDecrementOperatorEEnum = createEEnum(INCREMENT_DECREMENT_OPERATOR);
@@ -1032,6 +1061,7 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		arrayIndexExpressionEClass.getESuperTypes().add(this.getElementAccessorExpression());
 		attributeAccessorExpressionEClass.getESuperTypes().add(this.getElementAccessorExpression());
 		elseIfStatementEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
+		maxMessageDelayReferenceExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(blockEClass, Block.class, "Block", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1113,6 +1143,9 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		initEClass(elseIfStatementEClass, ElseIfStatement.class, "ElseIfStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getElseIfStatement_ElseIfCondition(), theExpressionsPackage.getExpression(), null, "elseIfCondition", null, 1, 1, ElseIfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getElseIfStatement_ElseIfBlock(), this.getBlock(), null, "elseIfBlock", null, 1, 1, ElseIfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(maxMessageDelayReferenceExpressionEClass, MaxMessageDelayReferenceExpression.class, "MaxMessageDelayReferenceExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMaxMessageDelayReferenceExpression_TimeValue(), theValuetypePackage.getTimeValue(), null, "timeValue", null, 1, 1, MaxMessageDelayReferenceExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(assignOperatorEEnum, AssignOperator.class, "AssignOperator");

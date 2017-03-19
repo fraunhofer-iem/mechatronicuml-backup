@@ -260,5 +260,13 @@
         <editor xsi:type="org.muml:ObjectPropertyEditor"/>
       </orderedElements>
     </classes>
+    <classes>
+      <genClass href="actionlanguage.genmodel#//actionlanguage/MaxMessageDelayReferenceExpression"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/MaxMessageDelayReferenceExpression/timeValue"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+    </classes>
   </packages>
 </org.muml:PropertyGenerator>
