@@ -52,9 +52,7 @@ public class UppaalXMLSynthesisOperation implements IWorkspaceRunnable {
 
 		try {
 
-			int workRemaining = (resource == null) ? 90 : 100;
-			
-			SubMonitor subMonitor = SubMonitor.convert(monitor, this.getName(), workRemaining);
+			SubMonitor subMonitor = SubMonitor.convert(monitor, this.getName(), resource == null ? 90 : 100);
 												
 			if (layout) {
 				Layouter layouter = new Layouter();
@@ -66,7 +64,7 @@ public class UppaalXMLSynthesisOperation implements IWorkspaceRunnable {
 				subMonitor.worked(10);
 			}
 					
-			subMonitor.setWorkRemaining(workRemaining -= 10);
+			subMonitor.setWorkRemaining(resource == null ? 80 : 90);
 			
 			subMonitor.subTask("Uppaal XML Synthesis");
 			
@@ -96,7 +94,7 @@ public class UppaalXMLSynthesisOperation implements IWorkspaceRunnable {
 				subMonitor.worked(40);
 			}
 			
-			subMonitor.setWorkRemaining(workRemaining -= 40);
+			subMonitor.setWorkRemaining(resource == null ? 40 : 50);
 			
 			
 			
