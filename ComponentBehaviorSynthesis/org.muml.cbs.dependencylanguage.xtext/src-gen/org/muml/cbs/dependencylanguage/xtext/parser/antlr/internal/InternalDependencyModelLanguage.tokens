@@ -2,7 +2,7 @@
 '&&'=95
 '('=43
 ')'=44
-');'=65
+');'=58
 '*'=97
 '+'=96
 '++'=90
@@ -14,19 +14,24 @@
 '->'=73
 '.'=40
 '/'=98
-':='=69
+':='=62
 ';'=14
-'<'=71
+'<'=64
 '<='=77
 '<>'=76
 '=='=75
-'>'=72
+'>'=65
 '>='=78
-'D'=61
+'DAYS'=66
+'HOURS'=67
 'INFINITE'=51
 'INIT'=50
+'MICROSECONDS'=71
+'MILLISECONDS'=68
+'MINUTES'=69
+'NANOSECONDS'=72
+'SECONDS'=70
 '['=19
-'\u00B5s'=56
 ']'=20
 'and'=33
 'assign'=31
@@ -35,19 +40,18 @@
 'by'=24
 'clock'=52
 'combination'=42
-'const'=70
+'const'=63
 'consuming'=88
 'delayed by'=47
 'disable'=30
-'do'=64
-'else'=66
-'elseif'=67
+'do'=57
+'else'=59
+'elseif'=60
 'enable'=29
 'entering state'=84
 'first'=102
-'for'=62
+'for'=55
 'forbid state combination'=22
-'h'=60
 'if'=28
 'into hybridport'=37
 'into variable'=35
@@ -60,19 +64,15 @@
 'merge clocks'=38
 'merge variable'=34
 'merge variables'=36
-'min'=59
-'ms'=57
 'next'=105
 'not'=100
-'ns'=55
 'null'=54
 'of type'=21
 'on'=25
 'or'=74
 'prev'=104
 'reset clocks'=32
-'return'=68
-'s'=58
+'return'=61
 'self'=101
 'sending'=89
 'shorter than'=81
@@ -85,7 +85,7 @@
 'transition'=41
 'using'=18
 'when counted'=45
-'while'=63
+'while'=56
 'with'=17
 '{'=26
 '||'=94
@@ -94,7 +94,7 @@ RULE_ANY_OTHER=13
 RULE_BOOLEAN=10
 RULE_ID=6
 RULE_INT=7
-RULE_MINORMAXKEYWORD=11
+RULE_MAXKEYWORD=11
 RULE_ML_COMMENT=4
 RULE_NUMBER=9
 RULE_SL_COMMENT=5

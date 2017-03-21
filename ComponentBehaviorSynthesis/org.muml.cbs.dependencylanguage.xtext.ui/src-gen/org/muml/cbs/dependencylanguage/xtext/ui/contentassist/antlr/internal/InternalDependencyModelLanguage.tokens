@@ -22,11 +22,16 @@
 '=='=27
 '>'=32
 '>='=31
-'D'=26
+'DAYS'=20
+'HOURS'=21
 'INFINITE'=104
 'INIT'=103
+'MICROSECONDS'=25
+'MILLISECONDS'=22
+'MINUTES'=23
+'NANOSECONDS'=26
+'SECONDS'=24
 '['=65
-'\u00B5s'=21
 ']'=66
 'and'=15
 'assign'=75
@@ -47,7 +52,6 @@
 'first'=56
 'for'=94
 'forbid state combination'=68
-'h'=25
 'if'=74
 'into hybridport'=80
 'into variable'=78
@@ -60,11 +64,8 @@
 'merge clocks'=81
 'merge variable'=77
 'merge variables'=79
-'min'=24
-'ms'=22
 'next'=59
 'not'=54
-'ns'=20
 'null'=19
 'of type'=67
 'on'=71
@@ -72,7 +73,6 @@
 'prev'=58
 'reset clocks'=76
 'return'=100
-'s'=23
 'self'=55
 'sending'=43
 'shorter than'=35
@@ -94,7 +94,7 @@ RULE_ANY_OTHER=13
 RULE_BOOLEAN=10
 RULE_ID=8
 RULE_INT=4
-RULE_MINORMAXKEYWORD=11
+RULE_MAXKEYWORD=11
 RULE_ML_COMMENT=5
 RULE_NUMBER=9
 RULE_SL_COMMENT=6

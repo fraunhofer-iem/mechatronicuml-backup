@@ -58,7 +58,6 @@ public class DependencyModelLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTypedNamedElementExpressionAccess().getElementAccessorsAlternatives_1_0(), "rule__TypedNamedElementExpression__ElementAccessorsAlternatives_1_0");
 					put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
 					put(grammarAccess.getLiteralAccess().getAlternatives(), "rule__Literal__Alternatives");
-					put(grammarAccess.getTimeUnitAccess().getAlternatives(), "rule__TimeUnit__Alternatives");
 					put(grammarAccess.getEntryAccess().getAlternatives(), "rule__Entry__Alternatives");
 					put(grammarAccess.getForLoopCountingExpressionAccess().getAlternatives_1(), "rule__ForLoopCountingExpression__Alternatives_1");
 					put(grammarAccess.getExpressionStartRuleAccess().getAlternatives(), "rule__ExpressionStartRule__Alternatives");
@@ -69,6 +68,7 @@ public class DependencyModelLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMultiplicationExpressionAccess().getRightExpressionAlternatives_1_1_2_0(), "rule__MultiplicationExpression__RightExpressionAlternatives_1_1_2_0");
 					put(grammarAccess.getTypeCastExpressionAccess().getAlternatives(), "rule__TypeCastExpression__Alternatives");
 					put(grammarAccess.getOperandAccess().getAlternatives(), "rule__Operand__Alternatives");
+					put(grammarAccess.getTimeUnitExprAccess().getAlternatives(), "rule__TimeUnitExpr__Alternatives");
 					put(grammarAccess.getExtendedTypedNamedElementExpressionAccess().getAlternatives_1(), "rule__ExtendedTypedNamedElementExpression__Alternatives_1");
 					put(grammarAccess.getLogicOperatorAccess().getAlternatives(), "rule__LogicOperator__Alternatives");
 					put(grammarAccess.getComparingOperatorAccess().getAlternatives(), "rule__ComparingOperator__Alternatives");
@@ -158,7 +158,6 @@ public class DependencyModelLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getOperationCallAccess().getGroup(), "rule__OperationCall__Group__0");
 					put(grammarAccess.getOperationCallAccess().getGroup_2(), "rule__OperationCall__Group_2__0");
 					put(grammarAccess.getOperationCallAccess().getGroup_2_1(), "rule__OperationCall__Group_2_1__0");
-					put(grammarAccess.getTimeValueAccess().getGroup(), "rule__TimeValue__Group__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
 					put(grammarAccess.getEIntAccess().getGroup(), "rule__EInt__Group__0");
@@ -198,6 +197,7 @@ public class DependencyModelLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTypeCastExpressionAccess().getGroup_1(), "rule__TypeCastExpression__Group_1__0");
 					put(grammarAccess.getOperandAccess().getGroup_0(), "rule__Operand__Group_0__0");
 					put(grammarAccess.getLiteralExpressionAccess().getGroup(), "rule__LiteralExpression__Group__0");
+					put(grammarAccess.getTimeValueAccess().getGroup(), "rule__TimeValue__Group__0");
 					put(grammarAccess.getExtendedTypedNamedElementExpressionAccess().getGroup(), "rule__ExtendedTypedNamedElementExpression__Group__0");
 					put(grammarAccess.getExtendedTypedNamedElementExpressionAccess().getGroup_1_0(), "rule__ExtendedTypedNamedElementExpression__Group_1_0__0");
 					put(grammarAccess.getExtendedTypedNamedElementExpressionAccess().getGroup_1_1(), "rule__ExtendedTypedNamedElementExpression__Group_1_1__0");
@@ -307,8 +307,6 @@ public class DependencyModelLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getOperationCallAccess().getOperationAssignment_0(), "rule__OperationCall__OperationAssignment_0");
 					put(grammarAccess.getOperationCallAccess().getParameterBindingAssignment_2_0(), "rule__OperationCall__ParameterBindingAssignment_2_0");
 					put(grammarAccess.getOperationCallAccess().getParameterBindingAssignment_2_1_1(), "rule__OperationCall__ParameterBindingAssignment_2_1_1");
-					put(grammarAccess.getTimeValueAccess().getValueAssignment_0(), "rule__TimeValue__ValueAssignment_0");
-					put(grammarAccess.getTimeValueAccess().getUnitAssignment_1(), "rule__TimeValue__UnitAssignment_1");
 					put(grammarAccess.getBlockAccess().getExpressionsAssignment_2(), "rule__Block__ExpressionsAssignment_2");
 					put(grammarAccess.getForLoopAccess().getInitializeExpressionAssignment_2(), "rule__ForLoop__InitializeExpressionAssignment_2");
 					put(grammarAccess.getForLoopAccess().getLoopTestAssignment_3(), "rule__ForLoop__LoopTestAssignment_3");
@@ -365,6 +363,9 @@ public class DependencyModelLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTypeCastExpressionAccess().getEnclosedExpressionAssignment_1_4(), "rule__TypeCastExpression__EnclosedExpressionAssignment_1_4");
 					put(grammarAccess.getLiteralExpressionAccess().getValueAssignment_1(), "rule__LiteralExpression__ValueAssignment_1");
 					put(grammarAccess.getTimeValueExpressionAccess().getTimeValueAssignment(), "rule__TimeValueExpression__TimeValueAssignment");
+					put(grammarAccess.getTimeValueAccess().getValueAssignment_0(), "rule__TimeValue__ValueAssignment_0");
+					put(grammarAccess.getTimeValueAccess().getUnitAssignment_1(), "rule__TimeValue__UnitAssignment_1");
+					put(grammarAccess.getMaxMessageDelayReferenceExpressionAccess().getTimeValueAssignment(), "rule__MaxMessageDelayReferenceExpression__TimeValueAssignment");
 					put(grammarAccess.getExtendedTypedNamedElementExpressionAccess().getPositionAssignment_1_0_2(), "rule__ExtendedTypedNamedElementExpression__PositionAssignment_1_0_2");
 					put(grammarAccess.getExtendedTypedNamedElementExpressionAccess().getIncrementDecrementOperatorAssignment_1_1_1(), "rule__ExtendedTypedNamedElementExpression__IncrementDecrementOperatorAssignment_1_1_1");
 					put(grammarAccess.getArrayIndexExpressionAccess().getIndexAssignment_1(), "rule__ArrayIndexExpression__IndexAssignment_1");

@@ -77,6 +77,7 @@ EnableDisableEffect returns EnableDisableEffect:
 ;
 
 
+
 DataAssignmentEffect returns DataAssignmentEffect:
 	'assign' lhs_typedNamedElementExpression=TypedNamedElementExpression
 	(
@@ -241,10 +242,10 @@ OperationCall returns actionlanguage::OperationCall:
 ///////////////////////////////////////
 // Other Rules
 ///////////////////////////////////////
-TimeValue returns valuetype::TimeValue:
-	value=Expression
-	unit=TimeUnit
-;
+//TimeValue returns valuetype::TimeValue:
+//	value=LogicalExpression
+//	unit=TimeUnit
+//;
 
 ///////////////////////////////////////
 // Terminals
@@ -282,9 +283,9 @@ Literal returns ecore::EString:
 ;
 
 //TODO Check if microseconds works under linux.
-TimeUnit returns valuetype::TimeUnit:
-	'ns' | 'µs' | 'ms' | 's' | 'min' | 'h' | 'D'
-;
+//TimeUnit returns valuetype::TimeUnit:
+//	'ns' | 'µs' | 'ms' | 's' | 'min' | 'h' | 'D'
+//;
 	
 ///////////////////////////////////////
 // Enumerations
