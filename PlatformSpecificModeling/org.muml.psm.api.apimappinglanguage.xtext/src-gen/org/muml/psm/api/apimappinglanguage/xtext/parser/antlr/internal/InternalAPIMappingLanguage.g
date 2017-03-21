@@ -2029,14 +2029,20 @@ ruleLONG returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-    this_INT_0=RULE_INT    {
-		$current.merge(this_INT_0);
+((
+	kw='-' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getLONGAccess().getHyphenMinusKeyword_0()); 
+    }
+)?    this_INT_1=RULE_INT    {
+		$current.merge(this_INT_1);
     }
 
     { 
-    newLeafNode(this_INT_0, grammarAccess.getLONGAccess().getINTTerminalRuleCall()); 
+    newLeafNode(this_INT_1, grammarAccess.getLONGAccess().getINTTerminalRuleCall_1()); 
     }
-
+)
     ;
 
 
@@ -2832,6 +2838,134 @@ ruleLiteral returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
 
 
 
+// Entry rule entryRuleTimeValue
+entryRuleTimeValue returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getTimeValueRule()); }
+	 iv_ruleTimeValue=ruleTimeValue 
+	 { $current=$iv_ruleTimeValue.current; } 
+	 EOF 
+;
+
+// Rule TimeValue
+ruleTimeValue returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
+		{ 
+	        newCompositeNode(grammarAccess.getTimeValueAccess().getValueLiteralExpressionParserRuleCall_0_0()); 
+	    }
+		lv_value_0_0=ruleLiteralExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getTimeValueRule());
+	        }
+       		set(
+       			$current, 
+       			"value",
+        		lv_value_0_0, 
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.LiteralExpression");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getTimeValueAccess().getUnitTimeUnitExprParserRuleCall_1_0()); 
+	    }
+		lv_unit_1_0=ruleTimeUnitExpr		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getTimeValueRule());
+	        }
+       		set(
+       			$current, 
+       			"unit",
+        		lv_unit_1_0, 
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.TimeUnitExpr");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
+;
+
+
+
+
+
+// Entry rule entryRuleTimeUnitExpr
+entryRuleTimeUnitExpr returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getTimeUnitExprRule()); } 
+	 iv_ruleTimeUnitExpr=ruleTimeUnitExpr 
+	 { $current=$iv_ruleTimeUnitExpr.current.getText(); }  
+	 EOF 
+;
+
+// Rule TimeUnitExpr
+ruleTimeUnitExpr returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+	kw='DAYS' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getDAYSKeyword_0()); 
+    }
+
+    |
+	kw='HOURS' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getHOURSKeyword_1()); 
+    }
+
+    |
+	kw='MILLISECONDS' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getMILLISECONDSKeyword_2()); 
+    }
+
+    |
+	kw='MINUTES' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getMINUTESKeyword_3()); 
+    }
+
+    |
+	kw='SECONDS' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getSECONDSKeyword_4()); 
+    }
+
+    |
+	kw='MICROSECONDS' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getMICROSECONDSKeyword_5()); 
+    }
+
+    |
+	kw='NANOSECONDS' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getNANOSECONDSKeyword_6()); 
+    }
+)
+    ;
+
+
+
+
+
+
+
 // Entry rule entryRuleExtendedTypedNamedElementExpression
 entryRuleExtendedTypedNamedElementExpression returns [EObject current=null] 
 	:
@@ -3503,7 +3637,7 @@ rulePositionSelectorKind returns [Enumerator current=null]
 
 
 
-RULE_MINORMAXKEYWORD : 'maxMsgDelay';
+RULE_MAXKEYWORD : 'maxMsgDelay';
 
 RULE_NUMBER : RULE_INT '.' RULE_INT;
 
