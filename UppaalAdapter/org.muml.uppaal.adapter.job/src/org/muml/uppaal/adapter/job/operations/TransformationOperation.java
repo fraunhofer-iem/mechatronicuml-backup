@@ -126,10 +126,11 @@ public class TransformationOperation implements IWorkspaceRunnable {
 			}
 					
 			subMonitor.setWorkRemaining(100);
-						
-			IProgressMonitor executeMonitor = subMonitor.split(90, SubMonitor.SUPPRESS_NONE);
-			executeMonitor.setTaskName("Execute " + uri.trimFileExtension().lastSegment());
 			
+			subMonitor.setTaskName("Execute " + uri.trimFileExtension().lastSegment());
+			// suppress main task labels set by the QVTo compiler
+			IProgressMonitor executeMonitor = subMonitor.split(90, SubMonitor.SUPPRESS_SETTASKNAME | SubMonitor.SUPPRESS_BEGINTASK);
+						
 			//Set up
 			context = new ExecutionContextImpl();
 			context.setLog(new WriterLog(new OutputStreamWriter(System.out)));
@@ -141,7 +142,10 @@ public class TransformationOperation implements IWorkspaceRunnable {
 			
 			//Execute
 			diagnostic = getTransformationExecutor(uri).execute(context, params);
-						
+			
+			// clear subtask label set by QVTo: https://bugs.eclipse.org/bugs/show_bug.cgi?id=513813
+			subMonitor.subTask("");
+									
 			//Validate
 			status = BasicDiagnostic.toIStatus(diagnostic);
 			if(!status.isOK())
@@ -172,9 +176,9 @@ public class TransformationOperation implements IWorkspaceRunnable {
 							System.err.println("Validation failed for parameter model #"+i+" in "+uri.toString());
 							throw new CoreException(status);
 						}
-						
-						monitor.worked(1);
 					}
+					
+					monitor.worked(1);
 				}
 			}
 		}
