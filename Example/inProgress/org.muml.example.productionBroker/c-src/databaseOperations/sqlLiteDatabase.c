@@ -18,6 +18,8 @@ int insertOrder(int orderId, int ingredientID, int amount);
 int defineProductionStationForOrder(int orderID, int productionStationID);
 int getOrderIngredientID(int orderID);
 int getOrderAmount(int orderID);
+int searchOrder();
+int deleteOrder(int orderID);
 
 int main()
 {
@@ -28,6 +30,12 @@ int main()
 	int amount = getOrderAmount(1);
 	printf("3=%d \n",amount);
 	defineProductionStationForOrder(1,1);
+	int foundOrder = searchOrder();
+	printf("FoundOrder=%d \n",foundOrder);
+	insertOrder(4,5,6);
+	foundOrder = searchOrder();
+	printf("FoundOrder=%d \n",foundOrder);
+	deleteOrder(1);
 	sqlite3_close(db);
 	return 0;
 }
@@ -134,13 +142,39 @@ int insertOrder(int orderID, int ingredientID, int amount)
 
 
 /**
- * Inserts pair orderId and productionStation.
+ * Inserts pair orderId and productionStation into the table ProductionStations
+ * Sets status of the order in table Orders to 'InProduction'
  */
 int defineProductionStationForOrder(int orderID, int productionStationID)
 {
 	int rc=0;
+	sqlite3_stmt *orderStatusStmt;
 	sqlite3_stmt *prodStationStmt;
 
+	//Set status of the order
+	const char *orderStatus = "Update Orders Set OrderStatus='InProduction' WHERE OrderID=?";
+
+	rc = sqlite3_prepare_v2(db, orderStatus,-1, &orderStatusStmt,0);
+	if( rc ){
+		fprintf(stderr, "Could not prepare statement for order status update: %s\n", sqlite3_errmsg(db));
+		return rc;
+	}
+	//Bind parameters
+	rc= sqlite3_bind_int(orderStatusStmt, 1, orderID);
+	if( rc ){
+		fprintf(stderr, "Error for orderID: %s\n", sqlite3_errmsg(db));
+		return rc;
+	}
+	//Execute statement, once step is sufficient for insertions
+	rc = sqlite3_step(orderStatusStmt);
+	if( rc!=SQLITE_DONE ){
+		fprintf(stderr, "Could not execute statement for order status update: %s\n", sqlite3_errmsg(db));
+		return rc;
+	}
+	sqlite3_finalize(orderStatusStmt);
+
+
+	//Insert the production station into the Production Station Table
 	//Prepare statement
 	const char *prodStation = "INSERT INTO ProductionStations (ProductionStationID, OrderID) "
 					"VALUES (?, ?);";
@@ -177,68 +211,62 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 
 
 /**
- * Deletes order including ingredient, amount and production station
+ * Deletes order from table Order and from table ProductionStations
  */
 int deleteOrder(int orderID)
 {
 	int rc=0;
+	sqlite3_stmt *deleteOrderPSStmt;
+	sqlite3_stmt *deleteOrderStmt;
 
-	//Delete order and ingredient combination
-	/*char orderIDingredientBuffer[sizeof("orderID:") + sizeof(int)
-			+ sizeof(":ingredient")];
+	//Prepare statement
+	const char *deleteOrderPS = "Update Orders Set OrderID=-1 Where OrderID = ?;";
 
-	sprintf(orderIDingredientBuffer, "orderID:%d:ingredient", orderID);
-
-	rc = unqlite_kv_delete(pDb, orderIDingredientBuffer, -1);
-	if (rc != UNQLITE_OK)
-	{
-		// Deletion failed, roll back and output error
-		unqlite_rollback(pDb);
-		printf("Error while deleting order with ingredient: %s\n",orderIDingredientBuffer);
+	rc = sqlite3_prepare_v2(db, deleteOrderPS,-1, &deleteOrderPSStmt,0);
+	if( rc ){
+		fprintf(stderr, "Could not prepare statement for order deletion: %s\n", sqlite3_errmsg(db));
 		return rc;
 	}
 
+	//Bind parameters
+	rc =sqlite3_bind_int(deleteOrderPSStmt, 1, orderID);
+	if( rc ){
+		fprintf(stderr, "Error for orderID: %s\n", sqlite3_errmsg(db));
+		return rc;
+	}
+	//Execute statement, once step is sufficient for deletions
+	rc = sqlite3_step(deleteOrderPSStmt);
+	if( rc!=SQLITE_DONE ){
+		fprintf(stderr, "Could not execute statement for order deletion: %s\n", sqlite3_errmsg(db));
+		return -1;
+	}
+	sqlite3_finalize(deleteOrderPSStmt);
 
-	//Delete order and amount combination
-	char orderIDamountBuffer[sizeof("orderID:") + sizeof(int)
-				+ sizeof(":amount")];
-	sprintf(orderIDamountBuffer, "orderID:%d:amount", orderID);
+	//Prepare statement
+	const char *deleteOrder = "Delete from Orders Where OrderID = ?;";
 
-	rc = unqlite_kv_delete(pDb, orderIDamountBuffer, -1);
-	if (rc != UNQLITE_OK)
-	{
-		// Deletion failed, roll back and output error
-		unqlite_rollback(pDb);
-		printf("Error while deleting order with amount: %s\n",orderIDamountBuffer);
+	rc = sqlite3_prepare_v2(db, deleteOrder,-1, &deleteOrderStmt,0);
+	if( rc ){
+		fprintf(stderr, "Could not prepare statement for order deletion: %s\n", sqlite3_errmsg(db));
 		return rc;
 	}
 
-	//Delete order and production station combination
-	char orderIDProductionStationBuffer[sizeof("orderID:") + sizeof(int)
-				+ sizeof(":productionStation")];
-	sprintf(orderIDProductionStationBuffer, "orderID:%d:productionStation", orderID);
-
-	rc = unqlite_kv_delete(pDb, orderIDProductionStationBuffer, -1);
-	if (rc != UNQLITE_OK)
-	{
-		printf("Delete Error for %s\n",orderIDProductionStationBuffer);
-		if (rc == UNQLITE_NOTFOUND)
-		{
-			//Deletion needs to be possible if there was no production station
-			printf("No production station for Order %d \n", orderID);
-		}
-		else
-		{
-			// Deletion failed, roll back and output error
-			unqlite_rollback(pDb);
-			printf("Error while deleting order with production station: %s\n",orderIDProductionStationBuffer);
-			return rc;
-		}
+	//Bind parameters
+	rc =sqlite3_bind_int(deleteOrderStmt, 1, orderID);
+	if( rc ){
+		fprintf(stderr, "Error for orderID: %s\n", sqlite3_errmsg(db));
+		return rc;
 	}
-	unqlite_commit(pDb);
-	printf("Order %d successfully deleted. \n", orderID); */
+	//Execute statement, once step is sufficient for deletions
+	rc = sqlite3_step(deleteOrderStmt);
+	if( rc!=SQLITE_DONE ){
+		fprintf(stderr, "Could not execute statement for order deletion: %s\n", sqlite3_errmsg(db));
+		return -1;
+	}
 
-	return rc;
+	sqlite3_finalize(deleteOrderStmt);
+	printf("Successfully deleted order %d.\n", orderID);
+	return 0;
 
 }
 /**
@@ -276,9 +304,7 @@ int getOrderIngredientID(int orderID)
 	int ingredientID = sqlite3_column_int(getIngredientStmt, 0);
 
 	sqlite3_finalize(getIngredientStmt);
-
 	printf("Successfully retrieved ingredientID %d for order %d.\n", ingredientID, orderID);
-
 	return ingredientID;
 }
 
@@ -320,65 +346,37 @@ int getOrderAmount(int orderID)
 
 	return amount;
 }
+
 /**
  * Searches an order without a production station assigned
  */
-int searchOrder(int latestOrderID)
+int searchOrder()
 {
-	int rc; /*
-	size_t nBytes;
+	int rc=0;
+	sqlite3_stmt *searchOrderStmt;
 
-	printf("Searching for an unassigned order with ID up to %d\n",latestOrderID);
+	//Prepare statement
+	const char *searchOrder = "Select OrderID from Orders Where OrderStatus = 'IDLE';";
 
-	for (int i=startSearch; i<=latestOrderID; i++){
-
-		//Check amount if that order even still exists
-		char orderIDamountBuffer[sizeof("orderID:")+sizeof(int)+sizeof(":amount")];
-		sprintf(orderIDamountBuffer, "orderID:%d:amount", i);
-
-		rc = unqlite_kv_fetch(pDb, orderIDamountBuffer, -1, NULL, &nBytes);
-		if (rc == UNQLITE_NOTFOUND)
-		{
-			// That order does not exist anymore.
-			// If this is where we would start searching, we could search from the next index on
-			if (i==startSearch){
-				printf("Increasing startSearch to %d \n",i+1);
-				startSearch=i+1;
-			}
-			continue;
-		}
-		else if (rc < 0){
-			//There is some other problem, stop searching
-			printf("Error during search for unassigned order, return code:%d\n", rc);
-			return rc;
-		}
-		if (rc == 0){
-			//We found an existent order
-
-			char orderIDProductionStationBuffer[sizeof("orderID:") + sizeof(int)
-						+ sizeof(":productionStation")];
-			sprintf(orderIDProductionStationBuffer, "orderID:%d:productionStation", i);
-
-			rc = unqlite_kv_fetch(pDb, orderIDProductionStationBuffer, -1, NULL, &nBytes);
-			if (rc == UNQLITE_NOTFOUND)
-			{
-				//Jackpot. This is an order which exists, but does not have a production station.
-				printf("Found existent order without production station. OrderId=%d\n",i);
-				return i;
-			}
-			else if (rc < 0){
-				//There is some other problem, stop searching
-				printf("Error during search for unassigned order, return code:%d\n", rc);
-				return rc;
-			}
-		}
-
+	rc = sqlite3_prepare_v2(db, searchOrder,-1, &searchOrderStmt,0);
+	if( rc ){
+		fprintf(stderr, "Could not prepare statement for order retrieval: %s\n", sqlite3_errmsg(db));
+		return -1;
 	}
-	//So we tried all possible orders, but everything has a production station already
-	printf("No unassigned order found.\n");
-	return UNQLITE_NOTFOUND; */
 
-	return 0;
+	//Execute statement
+	rc = sqlite3_step(searchOrderStmt);
+	//There should be a row of results
+	if( rc!=SQLITE_ROW ){
+		fprintf(stderr, "Could not execute statement for order retrieval: %s\n", sqlite3_errmsg(db));
+		return -1;
+	}
+
+	int orderID = sqlite3_column_int(searchOrderStmt, 0);
+
+	sqlite3_finalize(searchOrderStmt);
+	printf("Successfully retrieved order %d with status IDLE.\n", orderID);
+	return orderID;
 
 }
 
