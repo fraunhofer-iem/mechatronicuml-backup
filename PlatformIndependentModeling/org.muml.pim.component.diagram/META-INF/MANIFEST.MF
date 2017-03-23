@@ -5,7 +5,12 @@ Bundle-SymbolicName: org.muml.pim.component.diagram; singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: org.muml.pim.component.diagram.part.ComponentDiagramEditorPlugin
-Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
+Bundle-Vendor: Software Engineering Group,
+ Heinz Nixdorf Institute,
+ Paderborn University,
+ and Fraunhofer Research Institution for Mechatronic Systems Design IEM,
+ Germany,
+ %providerName
 Bundle-Localization: plugin
 Export-Package: org.muml.pim.component.diagram.edit.commands,
  org.muml.pim.component.diagram.edit.helpers,
