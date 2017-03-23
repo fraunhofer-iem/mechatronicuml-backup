@@ -30,7 +30,7 @@ public class MUML2UppaalExportWizard extends AbstractFujabaExportWizard {
 	@Override
 	public void init(IWorkbench workbench, IStructuredSelection currentSelection) {
 		super.init(workbench, currentSelection);
-		setWindowTitle("MUML 2 Uppaal Export (Not Working Yet)");
+		setWindowTitle("MUML 2 Uppaal Export");
 		setDefaultPageImageDescriptor(IDEWorkbenchPlugin
 				.getIDEImageDescriptor("wizban/exportzip_wiz.png"));//$NON-NLS-1$
 	}
