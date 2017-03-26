@@ -1,0 +1,31 @@
+library Types;
+
+modeltype uppaal_types uses uppaal::types('http://www.muml.org/uppaal/1.0.0');
+modeltype msgtype uses pim::msgtype('http://www.muml.org/pim/1.0.0');
+
+
+	mapping createMessageIdType() : DeclaredType {
+		name := 'MessageId';
+	}
+
+
+	mapping MessageType :: createParameterType() : DeclaredType {
+		name := self.name + 'Parameters';
+	}
+	
+	
+	mapping createMessageType() : DeclaredType {
+		name := 'Message';
+	}
+
+	
+	mapping createMessageKindType() : DeclaredType {
+		name := 'MessageKind';
+	}
+
+	
+	mapping createBufferType() : DeclaredType {
+		name := 'Buffer';
+	}
+	
+	

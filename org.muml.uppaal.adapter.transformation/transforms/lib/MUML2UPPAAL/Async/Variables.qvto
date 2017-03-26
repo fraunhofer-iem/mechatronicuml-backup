@@ -1,0 +1,867 @@
+import transforms.lib.MUML2UPPAAL.IDs;
+import transforms.lib.MUML2UPPAAL.Types;
+import transforms.lib.MUML2UPPAAL.Util;
+import transforms.lib.ExternalizedStrings;
+
+library Variables;
+
+modeltype uppaal_declarations uses uppaal::declarations('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_expressions uses uppaal::expressions('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_types uses uppaal::types('http://www.muml.org/uppaal/1.0.0');
+modeltype msgtype uses pim::msgtype('http://www.muml.org/pim/1.0.0');
+modeltype protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
+modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype component uses pim::component('http://www.muml.org/pim/1.0.0');
+modeltype instance uses pim::instance('http://www.muml.org/pim/1.0.0');
+modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+
+	abstract query getMaximalNumberOfMessagesInTransit() : Integer {
+		return assert fatal (false) with log('Should be overridden');
+	}
+
+
+	abstract query getMaximalNumberOfBuffersPerDiscretePort() : Integer {
+		return assert fatal (false) with log('Should be overridden');
+	}
+	
+	
+	query messageTypes() : OrderedSet(MessageType) {
+		
+		return assert fatal (false) with log('Should be overridden according to the relevant message types.');
+		
+	}
+	
+	abstract query getMaxOfBufferAndConnectorSize() : Integer {
+		
+		return assert fatal (false) with log('Should be overridden');
+		
+	}
+	
+	abstract query getConnectorSize() : Integer {
+		
+		return assert fatal (false) with log('Should be overridden');
+		
+	}
+	mapping OrderedSet(DiscretePortInstance) :: DiscretePortInstances2NextArray() : Variable {
+		
+		name := 'next';
+
+		index += object IdentifierExpression {
+				identifier := map DiscretePortInstanceType();
+		};
+	
+	
+		initializer := object ArrayInitializer {
+				
+			self->forEach(inst) {
+			
+				initializer += object ExpressionInitializer {
+			
+					if(inst.oclIsKindOf(DiscreteSinglePortInstance) and not inst.oclAsType(DiscreteSinglePortInstance).next.oclIsUndefined())
+					then {
+					
+						var singlePortInst := inst.oclAsType(DiscreteSinglePortInstance);
+						
+						assert fatal (singlePortInst.next.oclIsKindOf(DiscretePortInstance)) with log("Unsupported next reference");
+					
+						expression := object LiteralExpression {
+							text := singlePortInst.next.oclAsType(DiscretePortInstance).getID().repr()
+						}
+
+					}
+					else {
+						
+						expression := object LiteralExpression {
+							text := (-1).repr()
+						}
+						
+					} endif;
+
+				}
+			
+			}
+
+		}
+		
+	}
+	
+	
+	mapping OrderedSet(DiscretePortInstance) :: DiscretePortInstances2PreviousArray() : Variable {
+		
+		name := 'previous';
+
+		index += object IdentifierExpression {
+				identifier := map DiscretePortInstanceType();
+		};
+	
+	
+		initializer := object ArrayInitializer {
+				
+			self->forEach(inst) {
+			
+				initializer += object ExpressionInitializer {
+			
+					if(inst.oclIsKindOf(DiscreteSinglePortInstance) and not inst.oclAsType(DiscreteSinglePortInstance).previous.oclIsUndefined())
+					then {
+					
+						var singlePortInst := inst.oclAsType(DiscreteSinglePortInstance);
+						
+						assert fatal (singlePortInst.previous.oclIsKindOf(DiscretePortInstance)) with log("Unsupported previous reference");
+					
+						expression := object LiteralExpression {
+						
+							text := singlePortInst.previous.oclAsType(DiscretePortInstance).getID().repr();
+							
+						}
+
+					}
+					else {
+						
+						expression := object LiteralExpression {
+							text := (-1).repr()
+						}
+						
+					} endif;
+
+				}
+
+			}
+
+		};
+
+	}
+	
+	
+	mapping OrderedSet(DiscretePortInstance) :: DiscretePortInstances2FirstArray() : Variable {
+		
+		name := 'first';
+
+		index += object IdentifierExpression {
+				identifier := map DiscretePortInstanceType();
+		};
+	
+	
+		initializer := object ArrayInitializer {
+				
+			self->forEach(inst) {
+			
+				initializer += object ExpressionInitializer {
+			
+					if(inst.oclIsKindOf(DiscreteMultiPortInstance) and not inst.oclAsType(DiscreteMultiPortInstance).first.oclIsUndefined())
+					then {
+					
+						var multiPortInst := inst.oclAsType(DiscreteMultiPortInstance);
+						
+						assert fatal (multiPortInst.first.oclIsKindOf(DiscretePortInstance)) with log("Unsupported first reference");
+					
+						expression := object LiteralExpression {
+						
+							text := multiPortInst.first.oclAsType(DiscretePortInstance).getID().repr();
+							
+						}
+
+					}
+					elif(inst.oclIsKindOf(DiscreteSinglePortInstance) and not inst.oclAsType(DiscreteSinglePortInstance).first.oclIsUndefined())
+					then {
+					
+						var singlePortInst := inst.oclAsType(DiscreteSinglePortInstance);
+						
+						assert fatal (singlePortInst.first.oclIsKindOf(DiscretePortInstance)) with log("Unsupported first reference");
+					
+						expression := object LiteralExpression {
+						
+							text := singlePortInst.first.oclAsType(DiscretePortInstance).getID().repr();
+							
+						}
+
+					}
+					else {
+						
+						expression := object LiteralExpression {
+							text := (-1).repr()
+						}
+						
+					} endif;
+
+				}
+
+			}
+
+		};
+
+	}
+	
+	
+	mapping OrderedSet(DiscretePortInstance) :: DiscretePortInstances2LastArray() : Variable {
+		
+		name := 'last';
+
+		index += object IdentifierExpression {
+				identifier := map DiscretePortInstanceType();
+		};
+	
+	
+		initializer := object ArrayInitializer {
+				
+			self->forEach(inst) {
+			
+				initializer += object ExpressionInitializer {
+			
+					if(inst.oclIsKindOf(DiscreteMultiPortInstance) and not inst.oclAsType(DiscreteMultiPortInstance).last.oclIsUndefined())
+					then {
+					
+						var multiPortInst := inst.oclAsType(DiscreteMultiPortInstance);
+						
+						assert fatal (multiPortInst.last.oclIsKindOf(DiscretePortInstance)) with log("Unsupported last reference");
+					
+						expression := object LiteralExpression {
+						
+							text := multiPortInst.last.oclAsType(DiscretePortInstance).getID().repr();
+							
+						}
+
+					}
+					elif(inst.oclIsKindOf(DiscreteSinglePortInstance) and not inst.oclAsType(DiscreteSinglePortInstance).last.oclIsUndefined())
+					then {
+					
+						var singlePortInst := inst.oclAsType(DiscreteSinglePortInstance);
+						
+						assert fatal (singlePortInst.last.oclIsKindOf(DiscretePortInstance)) with log("Unsupported first reference");
+					
+						expression := object LiteralExpression {
+						
+							text := singlePortInst.last.oclAsType(DiscretePortInstance).getID().repr();
+							
+						}
+
+					}
+					else {
+						
+						expression := object LiteralExpression {
+							text := (-1).repr()
+						}
+						
+					} endif;
+
+				}
+
+			}
+
+		};
+
+	}
+	
+	mapping OrderedSet(DiscretePortInstance) :: DiscretePortInstances2SelfArray() : Variable {
+		
+		name := 'self';
+
+		index += object IdentifierExpression {
+				identifier := map DiscretePortInstanceType();
+		};
+	
+	
+		initializer := object ArrayInitializer {
+				
+			self->forEach(inst) {
+			
+				initializer += object ExpressionInitializer {
+				
+					expression := object LiteralExpression {
+					
+						text := inst.getID().repr();
+						
+					}
+
+				}
+
+			}
+
+		};
+
+	}
+	
+
+	mapping createNumberOfMessagesInTransitConstant() : Variable {
+	
+		name := 'NUM_MAX_MESSAGES_IN_TRANSIT';
+		
+		initializer := object ExpressionInitializer {
+		
+			expression := object LiteralExpression {
+				text := getMaximalNumberOfMessagesInTransit().repr();
+			}
+			
+		}
+		
+	}
+
+	mapping createMaximalNumberOfBuffersPerRoleConstant() : Variable {
+
+		name := 'MAX_NUM_OF_MESSAGE_BUFFERS_PER_ROLE';
+
+		initializer := object ExpressionInitializer {
+		
+			expression := object LiteralExpression {
+				text := getMaximalNumberOfBuffersPerDiscretePort().repr();
+			}
+			
+		}
+
+	}
+	
+
+	mapping BufferOverflowAvoidanceStrategy::createBufferOverflowVariable() : Variable 
+	when {self = BufferOverflowAvoidanceStrategy::DISCARD_INCOMING_MESSAGE or self = BufferOverflowAvoidanceStrategy::DISCARD_OLDEST_MESSAGE_IN_BUFFER}
+	{
+		if(self = BufferOverflowAvoidanceStrategy::DISCARD_INCOMING_MESSAGE) then
+			name := bufferOverflowDiscardIncomingVariableID 
+		else
+			name := bufferOverflowDiscardOldestVariableID
+		endif;	
+
+		initializer := object ExpressionInitializer {
+		
+			expression := object LiteralExpression {
+				text := self.getValue().toString();
+			}
+			
+		}
+
+	}
+	
+	
+	helper BufferOverflowAvoidanceStrategy::getValue(): Integer{
+		if(self = BufferOverflowAvoidanceStrategy::DISCARD_INCOMING_MESSAGE)
+		then return 0
+		else
+			if (self = BufferOverflowAvoidanceStrategy::DISCARD_OLDEST_MESSAGE_IN_BUFFER)
+			then return 1
+			endif
+		endif;
+		return null;
+	}
+
+	
+	
+	mapping OrderedSet(DiscretePortInstance) :: createBufferAssignmentArrayVariable() : Variable {
+
+		name := 'buffer_assignment';
+
+		index += object IdentifierExpression {
+				identifier := map DiscretePortInstanceType();
+		};
+		
+		index += object ArithmeticExpression {
+
+				operator := ArithmeticOperator::ADD;
+
+				firstExpr := object IdentifierExpression {
+					identifier := map createNumberOfMessageKindsConstant();
+				};
+
+				secondExpr := object LiteralExpression {
+					text := 1.repr();
+				};
+
+		};
+	
+		initializer := object ArrayInitializer {
+			initializer += self->map DiscretePort2BufferAssignmentArray();
+		}
+
+	}
+	
+	query getBufferId(port : DiscretePortInstance, mType : MessageType) : LiteralExpression {
+		var buffersForType := port.receiverMessageBuffer
+			->select(b : MessageBuffer | b.messageType->includes(mType));
+		if (buffersForType->isEmpty()) then {
+			-- there is no buffer assigned for mType. Hence, we return the null-id
+			return object LiteralExpression {
+				text := (-1).repr()
+			}
+		} endif;
+		-- the MUML spec forces each message type to be assigned to only one buffer.
+		-- Hence, we expect only one element in buffersForType and use its index as unique ID
+		var buffer := buffersForType->any(true);
+		return object LiteralExpression {
+			text := buffer.getBufferIndex().repr()
+		}
+	}
+	
+	mapping DiscretePortInstance :: DiscretePort2BufferAssignmentArray() : ArrayInitializer {
+	
+		-- add null-id for nullMessageKind
+		initializer += object ExpressionInitializer {
+			expression := object LiteralExpression {
+				text := (-1).repr();
+			}
+		};
+
+		messageTypes()->forEach(mType) {
+			initializer += object ExpressionInitializer {
+				expression := getBufferId(self, mType)
+			}
+		}
+		
+	}
+	
+	mapping OrderedSet(DiscretePortInstance) :: createBufferSizeArrayVariable() : Variable {
+		
+		name := 'bufferSize';
+
+		index += object IdentifierExpression {
+				identifier := map DiscretePortInstanceType();
+		};
+		
+		index += object ArithmeticExpression {
+
+				operator := ArithmeticOperator::ADD;
+
+				firstExpr := object IdentifierExpression {
+					identifier := map createNumberOfMessageKindsConstant();
+				};
+
+				secondExpr := object LiteralExpression {
+					text := 1.repr();
+				};
+		};
+
+		initializer := object ArrayInitializer {
+			initializer += self->map DiscretePortInstance2BufferSizeArrayInitializer();
+		}
+
+	}
+	
+
+	mapping DiscretePortInstance :: DiscretePortInstance2BufferSizeArrayInitializer() : ArrayInitializer {
+
+		-- add null-id for nullMessageKind
+		initializer += object ExpressionInitializer {
+			expression := object LiteralExpression {
+				text := (-1).repr();
+			}
+		};
+
+		messageTypes()->forEach(mType) {
+			initializer += object ExpressionInitializer {
+				expression := object LiteralExpression {
+					text := getBufferSize(self, mType).repr()
+				}
+			}
+		}
+
+	}
+	
+
+	query getBufferSize(portInstance : DiscretePortInstance, mType : MessageType) : Integer {
+		var buffersForType := portInstance.receiverMessageBuffer
+			->select(b : MessageBuffer | b.messageType->includes(mType));
+		if (buffersForType->isEmpty()) then {
+			-- there is no buffer assigned for mType. Hence, we return the null-id
+			return -1
+		} endif;
+		var buffer := buffersForType->any(true);
+		return buffer.bufferSize.value;
+	}
+	
+	
+	mapping OrderedSet(DiscretePortInstance) :: createBufferOverflowStrategyArrayVariable() : Variable {
+		name := bufferOverflowStrategyArrayID;
+
+		index += object IdentifierExpression {
+				identifier := map DiscretePortInstanceType();
+		};
+		
+		index += object ArithmeticExpression {
+
+				operator := ArithmeticOperator::ADD;
+
+				firstExpr := object IdentifierExpression {
+					identifier := map createNumberOfMessageKindsConstant();
+				};
+
+				secondExpr := object LiteralExpression {
+					text := 1.repr();
+				};
+		};
+
+		initializer := object ArrayInitializer {
+			initializer += self->map DiscretePortInstance2BufferOverflowArrayInitializer();
+		}
+
+	}
+	
+	mapping DiscretePortInstance :: DiscretePortInstance2BufferOverflowArrayInitializer() : ArrayInitializer {
+		-- add null-id for nullMessageKind
+		initializer += object ExpressionInitializer {
+			expression := object LiteralExpression {
+				text := (-1).repr();
+			}
+		};
+		
+		messageTypes()->forEach(mType) {
+		var overflowStrategy := getBufferOverflowStrategy(self, mType);
+			
+			if (overflowStrategy = null)
+				initializer += object ExpressionInitializer {
+				expression := object LiteralExpression {
+					text := (-1).repr();
+				}
+			}
+			
+			else
+				initializer += object ExpressionInitializer {
+					expression := object IdentifierExpression {
+						identifier := overflowStrategy;
+					}
+				}
+		}
+
+	}
+
+
+	query getBufferOverflowStrategy(portInstance : DiscretePortInstance, mType : MessageType) : Variable {
+		var buffersForType := portInstance.receiverMessageBuffer
+			->select(b : MessageBuffer | b.messageType->includes(mType));
+		if (buffersForType->isEmpty()) then {
+			-- there is no buffer assigned for mType. Hence, we return the null-id
+			return null
+		} endif;
+		var buffer := buffersForType->any(true);
+		return buffer.bufferOverflowAvoidanceStrategy.map createBufferOverflowVariable();
+	}
+
+	mapping createMessageIdNullConstant() : Variable {
+	
+		name := 'nullMessageId';
+		
+		initializer := object ExpressionInitializer {
+			
+			expression := object LiteralExpression {
+				text := 0.repr();	
+			}
+			
+		}
+		
+	}
+	
+	mapping createFreeIDsFieldVariable() : Variable {
+		
+		name := 'freeIds';
+		
+		index += object IdentifierExpression {
+				
+				identifier := map createNumberOfMessagesInTransitConstant();
+				
+		};
+		
+		initializer := object ArrayInitializer {
+			Set{1..getMaximalNumberOfMessagesInTransit()}->forEach(id) {
+				initializer += object ExpressionInitializer {
+				
+					expression := object LiteralExpression {
+						text := id.repr();
+					}
+					
+				}
+			};
+		}
+	}
+	
+	
+	mapping MessageType :: createParameterTypeMessageIdVariable() : Variable {
+	
+		name := self.name+'MessageID';
+		
+	}
+	
+	
+	mapping MessageType :: createParameterTypeTailVariable() : Variable {
+	
+		name := self.name + 'Tail';
+		
+	}
+	
+	
+	mapping MessageType :: createParameterTypeBufferFieldVariable() : Variable {
+		
+		name := self.name + 'MessageArguments'; // TODO ensure uniqueness
+	
+		index += object ArithmeticExpression {
+				firstExpr := object IdentifierExpression {
+					identifier := map createNumberOfMessagesInTransitConstant();
+				};
+				secondExpr := object LiteralExpression {
+					text := 1.repr();
+				};
+		};
+		
+	}
+	
+	
+	mapping MessageType ::  createParameterTypeNullConstantVariable() : Variable {
+
+		name := self.name + 'NullMessage';
+		
+	}
+	
+	
+	mapping createMessageNullConstantVariable() : Variable {
+		
+		name := 'nullMessage';
+		
+		initializer := object ArrayInitializer {
+			
+			initializer += object ExpressionInitializer {
+				expression := object IdentifierExpression {
+					identifier := resolveoneIn(createMessageIdNullConstant, Variable);
+				};
+			};
+			
+			initializer += object ExpressionInitializer {
+				expression := object IdentifierExpression {
+					identifier := resolveoneIn(createMessageKindNullConstant, Variable);
+				}
+			};
+			
+			initializer += object ExpressionInitializer {
+				expression := object LiteralExpression {
+					text := (0).repr();
+				}
+			};
+			
+		}
+		
+	}
+	
+	
+	mapping createMessageTypeMessageIdVariable() : Variable {
+		name := 'mId';
+	}
+	
+	
+	mapping createMessageArgumentsPositionVariable() : Variable {
+		name := 'mArgsPosition'
+	};
+	
+	
+	mapping createNumberOfMessageKindsConstant() : Variable {
+				
+		name := 'NUM_OF_MESSAGE_KINDS';
+		
+		initializer := object ExpressionInitializer {
+			expression := object LiteralExpression {
+				text := messageTypes()->size().repr()
+			}
+		}	
+		
+	}
+	
+	
+	mapping createMessageKindVariable() : Variable {
+	
+		name := 'mType';
+		
+	}
+	
+	
+	mapping createMessageKindNullConstant() : Variable {
+		
+		name := 'nullMessageKind';
+		
+		initializer := object ExpressionInitializer {
+			expression := object LiteralExpression {
+				text := 0.repr()
+			}
+		}		
+		
+	}
+	
+	property messageTypeNumber : Integer = 1;
+	
+	mapping MessageType :: createMessageKindConstant() : Variable {
+				
+		name := self.name;
+		
+		initializer := object ExpressionInitializer {
+			expression := object LiteralExpression {
+				text := messageTypeNumber.repr()
+			}
+		};	
+		
+		messageTypeNumber := messageTypeNumber + 1
+		
+	}
+	
+	
+	mapping createMaxOfBufferAndConnectorSizeVariable() : Variable {
+		
+		name := 'MAX_OF_BUFFER_AND_CONNECTOR_SIZE';
+		
+		initializer := object ExpressionInitializer {
+			expression := object LiteralExpression {
+				text := getMaxOfBufferAndConnectorSize().repr();
+			}
+		}
+		
+	}
+	
+	mapping createConnectorSizeVariable() : Variable {
+		
+		name := 'CONNECTOR_SIZE';
+		
+		initializer := object ExpressionInitializer {
+			expression := object LiteralExpression {
+				text := getConnectorSize().repr();
+			}
+		}
+		
+	}
+	
+	mapping createTailFieldVariable() : Variable {
+		
+		name := 'tail'
+		
+	}
+	
+	
+	mapping createMessagesFieldVariable() : Variable {
+		
+		name := 'messages';
+		
+		index += object IdentifierExpression {
+				
+				identifier := resolveoneIn(createMaxOfBufferAndConnectorSizeVariable, Variable)
+				
+		}
+		
+	}
+	
+	mapping createMessageDiscardedFieldVariable() : Variable {
+		name := 'messageDiscarded';
+	}
+	
+	
+	mapping createConnectorOverflowVariable() : Variable {
+		
+		name := 'connectorOverflow'
+		
+	}
+	
+	
+	mapping createBuffersVariable() : Variable {
+		
+		name := 'buffers';
+		
+		index += object IdentifierExpression {
+				identifier := map DiscretePortInstanceType();
+		};
+
+		index += object IdentifierExpression {
+				identifier := map createMaximalNumberOfBuffersPerRoleConstant();
+		};
+		
+	}
+	
+	
+	mapping createConnectorsVariable() : Variable {
+		
+		name := 'connectors';
+		
+		index += object IdentifierExpression {
+				identifier := map DiscretePortInstanceType();
+			}
+	}
+	
+	
+	mapping createEarliestVariable() : Variable {
+		
+		name := 'earliest';
+		
+		index += object IdentifierExpression {
+				identifier := map DiscretePortInstanceType();
+			}
+	}
+	
+	mapping createLatestVariable() : Variable {
+		
+		name := 'latest';
+		
+		index += object IdentifierExpression {
+				identifier := map DiscretePortInstanceType();
+			}
+	}
+	
+	
+	mapping createTransmissionTimesVariable() : Variable {
+		
+		name := 'transmissionTimes';
+		
+		index += object IdentifierExpression {
+				identifier := map DiscretePortInstanceType()
+		};
+		
+		index += object IdentifierExpression {
+				identifier := map createConnectorSizeVariable()
+		}
+		
+	}
+	
+	
+	mapping createSenderParameter() : Variable {
+		
+		name := 'sender'
+		
+	}
+	
+	
+	mapping createReceiverParameter() : Variable {
+		
+		name := 'receiver'
+		
+	}
+	
+	
+	mapping createLossParameter() : Variable {
+		
+		name := 'loss'
+		
+	}	
+	
+	
+	mapping createMinDelayParameter() : Variable {
+		
+		name := 'min'
+		
+	}
+	
+	
+	mapping createMaxDelayParameter() : Variable {
+		
+		name := 'max'
+		
+	}
+	
+	
+	mapping createBufferSizeParameter() : Variable {
+		
+		name := 'bufferSize'
+		
+	}
+	
+	
+	mapping createTmpVariable() : Variable {
+		
+		name := 'tmp'
+		
+	}
+	
+	
+	mapping RealtimeStatechart :: createMsgVariable() : Variable {
+		
+		name := 'msg'
+		
+	}
+	

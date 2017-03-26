@@ -1,0 +1,377 @@
+import transforms.lib.RTSCUtil;
+import org.muml.ImplicitCopy;
+import transforms.lib.MultiMappingUtil;
+
+
+/**
+* Normalize composite transitions, adding the implied transitions towards an exit point / from an entry point to initial states  
+*/
+transformation RTSCCompositeTransitionNormalization(in input:muml_rtsc, out output:muml_rtsc);
+
+modeltype muml uses 'http://www.muml.org/pim/1.0.0';
+modeltype muml_rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype muml_behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype muml_protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype muml_actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
+modeltype muml_msgtype uses pim::msgtype('http://www.muml.org/pim/1.0.0');
+modeltype muml_types uses pim::types('http://www.muml.org/pim/1.0.0');
+modeltype muml_valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype storydriven_core_expressions_common uses core::expressions::common('http://www.muml.org/core/1.0.0');
+modeltype storydriven_core_expressions uses core::expressions('http://www.muml.org/core/1.0.0');
+modeltype extension uses 'http://www.muml.org/uppaal/adapter/extension/verificationextension/1.0.0';
+modeltype modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
+
+modeltype mtctl uses 'http://www.muml.org/uppaal/adapter/mtctl/1.0.0';
+modeltype mtctlQuantifiers uses mtctl::quantifiers('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlPredicates uses mtctl::predicates('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlSets uses mtctl::sets('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlBooleanLogic uses mtctl::booleanlogic('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlComparables uses mtctl::comparables('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+property mumlElemsToFix : Set(MumlElemExpr) = Set{}; --set of mapped MumlElemExpr where the original was referencing a State
+
+
+main() {
+
+	--input.objects()[BehavioralElement].behavior->sortedByName().oclAsType(RealtimeStatechart)->map RTSC2RTSC();
+	input.objects()[RootNode]->map transform();
+	
+    -- fix stateActiveExpr(MumlElemExpr) for states that contain EntryPoints and/or ExitPoints. 
+    mumlElemsToFix->forEach(mumlElemExpr) {
+        // var debugProp := mumlElemExpr.oclAsType(EObject)->closure(x : EObject | if not x.oclIsUndefined() and x.oclIsKindOf(Property) then x else x.oclAsType(EObject).eContainer() endif)->any(oclIsKindOf(Property));
+        var resultingExpr : mtctl::Expression = null;
+        var stateActiveExpr := mumlElemExpr.oclAsType(ecore::EObject).eContainer().oclAsType(StateActiveExpr);    
+        assert fatal (not stateActiveExpr.oclIsUndefined()) with log("unexpected non-StateActiveExpr in composite transition normalization \"mtctl repair\"");       
+        var mystate : State = mumlElemExpr.elem.oclAsType(State);
+        mumlElemExpr.elem := mystate.oclAsType(EObject);
+        resultingExpr := object StateActiveExpr {state := mumlElemExpr }; //reuse the original MumlElemExpr here
+        
+        mystate.connectionPoints->forEach(cp) {
+            // log("connection point " + cp.name + " found for state " + mystate.name);
+            var nextMumlElemExpr := mumlElemExpr.deepclone().oclAsType(MumlElemExpr);
+            nextMumlElemExpr.elem := cp.oclAsType(EObject);
+            
+            //add to resultingExpr: "... or activeState(cp)"
+            resultingExpr := object OrExpr {rightOpd := resultingExpr; leftOpd := object StateActiveExpr {state := nextMumlElemExpr}}
+        };
+        assert fatal (not resultingExpr.oclIsUndefined()) with log ("Failed to repair mtctl query after composite transition normalization");
+        
+        //Replace the original expression with resultingExpr in the query
+        stateActiveExpr.replaceWith(resultingExpr);
+        output.removeElement(stateActiveExpr);
+        output.removeElement(resultingExpr);
+    };
+    
+}
+
+//Modifies the model containing self such that self is replaced with a deep clone of newExpr //TODO put this into some shared file between MTCTLNormalization and MTCTLQuantifierNormalization (and others)
+helper mtctl::Expression::replaceWith(newExpr : mtctl::Expression) {
+    var containingFeature := self.oclAsType(EObject).eContainingFeature();
+    self.oclAsType(EObject).eContainer().eSet(containingFeature, newExpr.deepclone().oclAsType(EObject));
+}
+    
+//MumlElemExpr2MumlElemExpr
+mapping MumlElemExpr :: transform() : MumlElemExpr {
+	if (self.elem.oclIsKindOf(Transition)) {
+		// NOTE: POTENTIALLY HARMFUL FIX AHEAD
+		
+		// FIX for MUML BUG #1519.
+		// This used Late Resolve and apparently the semantics of late resolved changed from QVTO MARS to QVTO NEON. 
+		// The old code shows a warning in Eclipse NEON, which it did not before in MARS (The result of "late resolve" must be assigned to a property or non-local variable to execute as deferred assignment).
+		// I replaced the late resolve by a mapping call, but unfortunately I DO NOT KNOW why this was a late resolve before.
+		// So this change might be harmful, since it changes the order of mapping calls.
+		
+		// REMOVED:
+		-- elem := self.elem.late resolveoneIn(pim::realtimestatechart::Transition::Transition2Transition).oclAsType(ecore::EObject)
+		
+		// ADDED:
+		elem := self.elem.oclAsType(Transition).map transform().oclAsType(Transition);
+		
+		
+	} else if (self.elem.oclIsKindOf(State)) {
+		elem := self.elem.oclAsType(State).map transform(); // SDz: will be corrected in main() after the transformation
+		mumlElemsToFix += result;
+	} else
+		elem := self.elem.late resolveone(EObject);
+	instance := self.instance.map transform().oclAsType(EObject);
+}
+
+//RealtimeStatechart2RealtimeStatechart
+mapping RealtimeStatechart :: transform() : RealtimeStatechart {
+			
+	name := self.name;
+	
+	behavioralElement := self.behavioralElement.map transform().oclAsType(BehavioralElement);
+		
+	clocks += self.clocks->map transform().oclAsType(Clock);
+	variables += self.variables->map transform().oclAsType(Variable);
+	operations += self.operations->map transform().oclAsType(Operation);
+	
+	-- in-depth normalization first (ensure highest-level transitions to be mapped last)
+	states += self.states->map transform().oclAsType(State);
+	
+	transitions += self.getTransitions()->map transform().oclAsType(Transition);
+		
+	-- expand high-level transitions
+	self.getTransitions()[isHighLevel()]->sortedBy(priority)->forEach(highLevelTransition) {
+		
+		-- expand outgoing high-level transitions (source state is composite)					
+		if(highLevelTransition.source.isCompositeState())
+		then {
+		
+			var sourceComposite : State = highLevelTransition.source.oclAsType(State);
+			
+			-- add exiting transition for all sub-states of the source composite state
+			sourceComposite.getAllStatesPrefix()->excluding(sourceComposite)->forEach(subState) {
+				
+				-- new exiting transition connects the sub-state to its parent
+				var source : Vertex = subState;
+				var target : Vertex = subState.getParentState();
+				
+				var priority : Integer;
+				
+				if (source.isSimpleState())
+				then {
+					-- set highest priority (ensures highest priority for topmost transitions since we are mapping the lowest level transitions first)
+					priority := source.map transform().oclAsType(Vertex).getHighestTransitionPriority();
+				}
+				else {
+					-- set 1 since 'source' is a composite state, i.e. the new transition will originate from an exit-point with only 1 outgoing transition
+					priority := 1;
+				}
+				endif;
+				
+				-- map transition properties only for the highest priority region of the parent state
+				var mapProperties : Boolean = subState.isContainedInHighestPriorityRegion(sourceComposite);
+				
+				-- create the transition and add it to the set of transitions
+				transitions += highLevelTransition.map Transition2TransitionParam(source,target,priority,mapProperties);
+			}
+		}
+		endif;
+		
+		-- expand incoming high-level transitions (target state is composite)		
+		if(highLevelTransition.target.isCompositeState())
+		then {
+		
+			var targetComposite : State = highLevelTransition.target.oclAsType(State);
+			
+			-- add entering transition for all initially active sub-states of the target composite state
+			targetComposite.getAllInitiallyActiveStates()->excluding(targetComposite)->forEach(subState) {
+				
+				-- new entering transition connects the parent to its sub-state
+				var source : Vertex = subState.getParentState();
+				var target : Vertex = subState;
+				
+				-- apply region priority of target state
+				var priority : Integer = subState.parentStatechart.parentRegion.priority;
+				
+				-- map transition properties only for the highest priority region of the parent state
+				var mapProperties : Boolean = subState.isContainedInHighestPriorityRegion(targetComposite);
+				
+				transitions += highLevelTransition.map Transition2TransitionParam(source,target,priority,mapProperties);
+			}
+		}
+		endif;		
+	}
+	end {
+		assert fatal (
+			result.getTransitions()->forAll(t | not t.isHighLevel())
+		) with log('No highlevel transitions after normalization.');
+	}
+}
+
+//State2State
+mapping State :: transform() : State {
+		
+	-- this mapping overrides the default behavior such that it does not reproduce incoming/outgoing transitions 
+	-- the default behavior connects every reproduced state to its incoming/outgoing transitions (this is exactly what we want to avoid for composite states)
+			
+	name := self.name;
+					
+	embeddedRegions += self.embeddedRegions->map transform().oclAsType(Region);
+	
+	entryEvent := self.entryEvent.map transform().oclAsType(EntryEvent);
+	doEvent := self.doEvent.map transform().oclAsType(DoEvent);
+	exitEvent := self.exitEvent.map transform().oclAsType(ExitEvent);
+	
+	invariants += self.invariants->map transform().oclAsType(ClockConstraint);
+	
+	initial := self.initial;
+	
+	final := self.final;
+	
+	urgent := self.urgent;
+	
+	channels := self.channels->map transform().oclAsType(SynchronizationChannel);
+	
+	connectionPoints := self.connectionPoints->map transform().oclAsType(StateConnectionPoint);
+	
+	parentStatechart := self.parentStatechart.map transform().oclAsType(RealtimeStatechart);
+	
+}
+
+//EntryPoint2EntryPoint
+mapping pim::realtimestatechart::EntryPoint :: transform() : pim::realtimestatechart::EntryPoint{
+    	_name := self._name;
+    	_comment := self._comment;
+    	_extensions := self._extensions.map transform().oclAsType(core::Extension);
+//    	_outgoingTransitions := self._outgoingTransitions.map Transition2Transition();
+//    	_incomingTransitions := self._incomingTransitions.map Transition2Transition();
+    	_state := self._state.map transform().oclAsType(State);
+   		 }
+
+//ExitPoint2ExitPoint
+mapping pim::realtimestatechart::ExitPoint :: transform() : pim::realtimestatechart::ExitPoint{
+    	_name := self._name;
+    	_comment := self._comment;
+    	_extensions := self._extensions.map transform().oclAsType(core::Extension);
+//    	_outgoingTransitions := self._outgoingTransitions.map Transition2Transition();
+//    	_incomingTransitions := self._incomingTransitions.map Transition2Transition();
+    	_state := self._state.map transform().oclAsType(State);
+   		 }
+
+query Vertex :: getHighestTransitionPriority() : Integer {
+	var max : Integer = 0;
+	
+	if(self.outgoingTransitions->notEmpty())
+	then max := self.outgoingTransitions->sortedBy(priority)->last().priority
+	endif;
+	
+	return max + 1
+}
+
+query State :: isContainedInHighestPriorityRegion(composite : State) : Boolean {
+		
+	var allStatesInHighestPriorityRegion : OrderedSet(State) = composite.allStatesInHighestPriorityRegions();
+	
+	return allStatesInHighestPriorityRegion->includes(self)
+}
+
+query State :: allStatesInHighestPriorityRegions() : OrderedSet(State) {
+	
+	var highestPriorityRegionStates : OrderedSet(State);
+	
+	if (self.simple)
+	then {
+		highestPriorityRegionStates := object OrderedSet(State) {};
+	}
+	else {
+		highestPriorityRegionStates := self.embeddedRegions->sortedBy(priority)->last().embeddedStatechart.states;
+	}
+	endif;
+	
+	return highestPriorityRegionStates->union(highestPriorityRegionStates->allStatesInHighestPriorityRegions()->flatten()->asOrderedSet())->asOrderedSet();
+	
+}
+
+//Transition2Transition
+mapping Transition :: transform() : Transition {
+	
+	init {
+		result := self.map Transition2TransitionParam(self.source,self.target,self.priority,true);
+	}
+	
+	end {
+		assert fatal (not result.source.isCompositeState() and not result.target.isCompositeState()) with log('No high-level transition expected.');
+	}
+	
+}
+
+mapping Transition :: Transition2TransitionParam(sourceVertex : Vertex, targetVertex : Vertex, p : Integer, mapProperties : Boolean) : Transition {
+		 
+	if sourceVertex != targetVertex and sourceVertex.oclIsKindOf(State) and targetVertex.oclIsKindOf(State) and sourceVertex.isSuperVertexOf(targetVertex)
+	then {
+	    // transition that connects two different states and source contains vertices 
+		source := sourceVertex.oclAsType(State).map CompositeState2DefaultEntry(self);
+	}
+	else {
+		if sourceVertex.isCompositeState()
+		then {
+			source := sourceVertex.oclAsType(State).map CompositeState2AuxExit(self);
+		}
+		else {
+			source := sourceVertex.map transform().oclAsType(Vertex);
+		}
+		endif	
+	}
+	endif;
+	
+		
+	if sourceVertex != targetVertex and sourceVertex.oclIsKindOf(State) and targetVertex.oclIsKindOf(State) and targetVertex.isSuperVertexOf(sourceVertex)
+	then {
+	// transition that connects two different states and target contains vertices
+		target := targetVertex.oclAsType(State).map CompositeState2AuxExit(self);
+	}
+	else {
+		if (targetVertex.isCompositeState())
+		then {
+			target := targetVertex.oclAsType(State).map CompositeState2DefaultEntry(self);
+		}
+		else {
+			target := targetVertex.map transform().oclAsType(Vertex);
+		}
+		endif
+	}
+	endif;
+		
+	priority := p;
+	
+	-- set urgent if a) original transition is also urgent, or b) if source is connection point
+	urgent := self.urgent or source.oclIsKindOf(StateConnectionPoint);
+		
+	if(mapProperties and sourceVertex.isSimpleState()) 
+	then {
+	
+		-- map conditions to lowest-level transition at the beginning of the tree
+	
+		guard := self.guard.mapExpression();
+	
+		clockConstraints += self.clockConstraints->mapClockConstraint();
+		
+		synchronization := self.synchronization.mapSynchronization();
+		
+		events += self.triggerMessageEvent.mapAsynchronousMessageEvent();				
+	}
+	endif;
+	
+	if(mapProperties and targetVertex.isSimpleState()) 
+	then {
+	
+		-- map effects and deadlines to a lowest-level transition at the end of the tree
+					
+		clockResets += self.clockResets->mapClock();
+		
+		action := self.action.mapAction();
+	
+		events += self.raiseMessageEvent.mapAsynchronousMessageEvent();
+		
+		absoluteDeadlines += self.absoluteDeadlines->mapAbsoluteDeadline();
+		
+		relativeDeadline := self.relativeDeadline.mapRelativeDeadline();
+			
+	}
+	endif;
+	
+	end {
+		assert fatal (not result.source.oclIsUndefined()) with log('Source state must be specified.');
+		assert fatal (not result.target.oclIsUndefined()) with log('Target state must be specified.');
+		
+		assert fatal (not result.source.isCompositeState() and not result.target.isCompositeState()) with log('No high-level transition expected.');
+	}						
+}
+
+property auxEntryNamePrefix : String = 'ENTRY';
+
+mapping State :: CompositeState2DefaultEntry(highLevelTransition : Transition) : EntryPoint when {self.isCompositeState()} {	
+	name := self.name + '_' + auxEntryNamePrefix.addSuffixNumberUnderline();
+	state := self.map transform().oclAsType(State);
+}
+
+property auxExitNamePrefix : String = 'EXIT';
+
+mapping State :: CompositeState2AuxExit(highLevelTransition : Transition) : ExitPoint when {self.isCompositeState()} {	
+	name := self.name + '_' + auxExitNamePrefix.addSuffixNumberUnderline();
+	state := self.map transform().oclAsType(State);
+}

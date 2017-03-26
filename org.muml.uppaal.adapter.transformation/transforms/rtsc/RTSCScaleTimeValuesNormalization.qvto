@@ -1,0 +1,106 @@
+import org.muml.ImplicitCopy;
+import org.muml.uppaal.adapter._blackbox.TimeLibUnit;
+
+
+modeltype muml_rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype actionlanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
+
+modeltype muml_valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype storydriven_common uses core::expressions::common('http://www.muml.org/core/1.0.0');
+modeltype storydriven_expressions uses core::expressions('http://www.muml.org/core/1.0.0');
+modeltype modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
+modeltype mtctlQuantifiers uses mtctl::quantifiers('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlPredicates uses mtctl::predicates('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlSets uses mtctl::sets('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlBooleanLogic uses mtctl::booleanlogic('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlComparables uses mtctl::comparables('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+
+
+/**
+* Normalize time units used in the model (to one common time unit)
+*/
+transformation RTSCScaleTimeValuesNormalization(in input:muml_rtsc, out output:muml_rtsc);
+
+	main() {
+		
+		input.objects()[RootNode]->map transform();
+	}
+
+	-- TODO move this to ExpressionUtils
+	constructor storydriven_common::LiteralExpression :: LiteralExpression(i : Integer) {
+		value := i.repr()
+	}
+
+	query getTimeUnits() : OrderedSet(String) {
+		
+		return OrderedSet {'DAYS', 'HOURS', 'MINUTES', 'SECONDS', 'MILLISECONDS', 'MICROSECONDS', 'NANOSECONDS'}
+	}
+
+	query getShortestTimeUnit() : TimeUnit {
+			
+		var usedTimeUnits : OrderedSet(TimeUnit) = input.objects()[TimeValue]->collect(unit)
+			->union(input.objects()[ConstExpr]->collect(timeUnit))->select(not oclIsUndefined())->asOrderedSet();
+		return usedTimeUnits->sortedBy(u | getTimeUnits()->indexOf(u.repr()))->last();
+	}
+	
+	//TimeValue2TimeValue
+	mapping TimeValue :: transform() : TimeValue {
+		var shortest : TimeUnit = getShortestTimeUnit();
+		var upscale : Integer = getUpscaleFactor(self.unit, shortest);
+		unit := shortest;
+		if(upscale = 1) {
+			value := self.value.map transform().oclAsType(Expression);
+		} else {
+			value := object ArithmeticExpression {
+				leftExpression := self.value.map transform().oclAsType(Expression);
+				operator :=  ArithmeticOperator::TIMES;
+				rightExpression := new LiteralExpression(upscale);
+			}	
+		}
+	}
+	
+	//ConstExpr2ConstExpr
+	mapping ConstExpr :: transform() : ConstExpr {
+		if (self.timeUnit = null) {
+			val := self.val;
+		}
+		else {
+			var shortest: TimeUnit = getShortestTimeUnit();
+			var upscale : Integer = getUpscaleFactor(self.timeUnit, shortest);
+		
+			val := self.val * upscale;
+			timeUnit := shortest;
+		}
+	}
+	
+	mapping TimeValueExpression :: transform() : Expression{
+        init {
+	        // check whether the TimeValueExpression is nested in another TimeValueExpression. If so, the nesting is 
+	        // removed by replacing the TimeValueExpression by the value of the TimeValueExpression.
+	        if(not self.isNestedInOtherTimeValue()) {
+	        	result := object TimeValueExpression{
+	        		timeValue := self._timeValue.map transform();
+	        	};
+	        }
+	        else {
+	        	result := self.timeValue.value.map transform().deepclone().oclAsType(core::expressions::Expression);	
+	        }endif;
+		}
+	        
+	    result._extensions := self._extensions.map transform().oclAsType(core::Extension);
+	    result._comment := self._comment;       
+	}
+	
+	helper core::expressions::Expression :: isNestedInOtherTimeValue() : Boolean {
+		var eContainer := self.eContainer();
+		if(eContainer.oclIsTypeOf(TimeValue)) {
+			return true;
+		}else if(eContainer.oclIsKindOf(core::expressions::Expression) and not eContainer.oclIsUndefined()) {
+			return eContainer.oclAsType(core::expressions::Expression).isNestedInOtherTimeValue();
+		} 
+		else {
+			return false;
+		}
+		endif;			
+	}

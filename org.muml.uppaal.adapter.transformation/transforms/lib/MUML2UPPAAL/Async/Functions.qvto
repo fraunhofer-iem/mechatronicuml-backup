@@ -1,0 +1,2371 @@
+import transforms.lib.MUML2UPPAAL.Types;
+import transforms.lib.MUML2UPPAAL.Expressions;
+
+import transforms.lib.MUML2UPPAAL.Async.Types;
+import transforms.lib.MUML2UPPAAL.Async.Variables;
+
+import org.muml.ImplicitCopy;
+
+import transforms.lib.ExternalizedStrings;
+
+library Functions;
+
+modeltype uppaal_types uses uppaal::types('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_statements uses uppaal::statements('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_declarations uses uppaal::declarations('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_expressions uses uppaal::expressions('http://www.muml.org/uppaal/1.0.0');
+modeltype protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype msgtype uses pim::msgtype('http://www.muml.org/pim/1.0.0');
+modeltype component uses pim::component('http://www.muml.org/pim/1.0.0');
+modeltype muml_instance uses pim::instance('http://www.muml.org/pim/1.0.0');
+modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
+
+	mapping createClearConnectorFunction() : Function {
+		
+		// create function parameters	
+		name := clearConnectorFunctionID;
+		
+		var id : Variable := object Variable {
+			name := 'id';
+		};
+		
+		
+		parameter += object ParameterContainer{
+				typeDefinition := object IdentifierExpression{
+				
+					identifier := map createMessageIdType();
+				};
+				elements += id;
+		};
+		
+		var messageTypeToDiscard := object Variable {
+			name := 'messageTypeToDiscard';	
+		};
+		
+		parameter += object ParameterContainer{
+				typeDefinition := object IdentifierExpression{
+				
+					identifier := map createMessageKindType();
+				};
+				elements += messageTypeToDiscard;
+		};
+		
+		// third paramter argsPosition - the position where the arguments of the lay
+		
+		var argsPosition : Variable := object Variable {
+			name := 'argsPosition';
+		};
+		
+		
+		parameter += object ParameterContainer {
+				typeDefinition := object IdentifierExpression{
+				
+					identifier := INT ;
+				};
+				elements += argsPosition;
+		};
+		
+		
+		block := object Block {
+				
+		
+			//releaseId(id);
+			statement += object ExpressionStatement{
+				expression := object FunctionCallExpression{
+					function := map createReleaseIdFunction();
+					argument += object IdentifierExpression{
+						identifier := id;
+					};
+				};
+			};				
+			
+			--if(message.mType == muml_m){
+			--	removemuml_mArguments(argsPosition); 
+	 		--	}
+	 		-- ..	
+			messageTypes()->forEach(mType) {
+						
+						statement += object IfStatement {
+							ifExpression := object CompareExpression {
+								firstExpr := object IdentifierExpression {
+									identifier := messageTypeToDiscard
+								};
+								
+								secondExpr := object IdentifierExpression {
+									identifier := mType.resolveoneIn(MessageType::createMessageKindConstant, Variable);
+								};
+								operator := CompareOperator::EQUAL;
+							};
+							
+							thenStatement := object ExpressionStatement {
+								expression := object FunctionCallExpression {
+									function := mType.map createRemoveForMessageTypeFunction();
+									argument += object IdentifierExpression {
+											identifier := argsPosition;
+									};									
+								};	
+							};
+						};
+					};
+		
+		};
+	}
+
+
+	mapping createRequestIdFunction() : Function {
+		
+		name := 'requestId';
+		
+		var i : Variable = object Variable {
+			name := 'i';
+		};
+		
+		block := object Block {
+		
+			declarations := object LocalDeclarations {
+			
+				declaration += object TypedDeclaration {
+					
+					typeDefinition := object IdentifierExpression {
+						identifier := INT;
+					};
+					
+					elements += i;
+					
+				};
+				
+			};
+			
+			statement += object ForLoop {
+			
+				initialization := object AssignmentExpression {
+					
+					firstExpr := object IdentifierExpression {
+						identifier := i;
+					};
+					
+					
+					operator := AssignmentOperator::EQUAL;
+							
+					secondExpr := object LiteralExpression {
+						text := 0.repr()	
+					}
+					
+				};
+				
+				condition := object CompareExpression {
+				
+					firstExpr := object IdentifierExpression {
+						identifier := i;
+					};
+					
+					operator := CompareOperator::LESS;
+					
+					secondExpr := object IdentifierExpression {
+						identifier := map createNumberOfMessagesInTransitConstant();
+					}
+				};
+				
+				iteration := object PostIncrementDecrementExpression {
+							
+					expression := object IdentifierExpression {
+						identifier := i
+					};
+					
+					operator := IncrementDecrementOperator::INCREMENT;
+
+				}; 
+				
+				statement := object IfStatement {
+					
+					ifExpression := object CompareExpression {
+						
+						firstExpr := object IdentifierExpression {
+						
+							identifier := map createFreeIDsFieldVariable();
+							
+							index += object IdentifierExpression {
+								identifier := i;
+							};
+							
+						};
+						
+						secondExpr := object IdentifierExpression {
+							identifier := map createMessageIdNullConstant();
+						};
+						
+						operator := CompareOperator::UNEQUAL;
+					
+					};
+					
+					thenStatement := object Block {
+					
+						var r : Variable := object Variable {
+							name := 'result';
+						};
+						
+						declarations := object LocalDeclarations {
+						
+							declaration += object TypedDeclaration {
+								
+								typeDefinition := object IdentifierExpression {
+									identifier := map createMessageIdType();
+								};
+								
+								elements += r;
+								
+							};
+							
+						};
+						
+						statement += object ExpressionStatement {
+
+							expression := object AssignmentExpression {
+								
+								firstExpr := object IdentifierExpression {
+									identifier := r;
+								};
+								
+								secondExpr := object IdentifierExpression {
+									
+									identifier := map createFreeIDsFieldVariable();
+									
+									index += object IdentifierExpression {
+										identifier := i;
+									}
+									
+								};
+							
+								operator := AssignmentOperator::EQUAL;
+							
+							};
+							
+						};
+						
+						statement += object ExpressionStatement {
+
+							expression := object AssignmentExpression {
+								
+								firstExpr := object IdentifierExpression {
+								
+									identifier := map createFreeIDsFieldVariable();
+									
+									index += object IdentifierExpression {
+										identifier := i;
+									}
+									
+								};
+								
+								secondExpr := object IdentifierExpression {
+									identifier := map createMessageIdNullConstant();
+								};
+							
+								operator := AssignmentOperator::EQUAL;
+							
+							};
+							
+						};
+						
+						statement += object ReturnStatement {
+							
+							returnExpression := object IdentifierExpression {	
+								identifier := r;
+							};
+							
+						};
+						
+					};
+					
+				};
+				
+				
+			};
+			
+			
+			statement += object ReturnStatement {
+				
+				returnExpression := object IdentifierExpression {
+					identifier := map createMessageIdNullConstant();
+				};
+				
+			};
+			
+		}
+		
+		
+		
+	}
+	
+	
+	mapping createReleaseIdFunction() : Function {
+		
+		name := 'releaseId';
+		
+		var i : Variable := object Variable {
+			name := 'i';
+		};
+		
+		var id : Variable := object Variable {
+			name := 'id';
+		};
+		
+		parameter += object ParameterContainer {
+			
+				typeDefinition := object IdentifierExpression {
+					identifier := map createMessageIdType();
+				};
+				
+				elements += id;
+			
+		};
+		
+		block := object Block {	
+		
+			declarations := object LocalDeclarations {
+				
+				declaration += object TypedDeclaration {
+					
+					typeDefinition := object IdentifierExpression {
+					
+						identifier := INT;
+						
+					};
+					
+					elements += i;
+					
+				};
+				
+			};
+			
+			statement += object ForLoop {
+				
+				initialization := object AssignmentExpression {
+					
+					firstExpr := object IdentifierExpression {
+						identifier := i;
+					};
+					
+					
+					operator := AssignmentOperator::EQUAL;
+							
+					secondExpr := object LiteralExpression {
+						text := 0.repr()	
+					}
+					
+				};
+				
+				condition := object CompareExpression {
+				
+					firstExpr := object IdentifierExpression {
+						identifier := i;
+					};
+					
+					operator := CompareOperator::LESS;
+					
+					secondExpr := object IdentifierExpression {
+						identifier := map createNumberOfMessagesInTransitConstant();
+					}
+				};
+				
+				iteration := object PostIncrementDecrementExpression {
+							
+					expression := object IdentifierExpression {
+						identifier := i
+					};
+					
+					operator := IncrementDecrementOperator::INCREMENT;
+	
+				}; 
+				
+				statement := object IfStatement {
+					
+					ifExpression := object CompareExpression {
+						
+						firstExpr := object IdentifierExpression {
+						
+							identifier := map createFreeIDsFieldVariable();
+							
+							index += object IdentifierExpression {
+								identifier := i;
+							};
+							
+						};
+						
+						secondExpr := object IdentifierExpression {
+							identifier := id;
+						};
+						
+						operator := CompareOperator::EQUAL;
+					
+					};
+					
+					thenStatement := object ReturnStatement {
+						
+						returnExpression := object LiteralExpression {
+							text := false.repr();	
+						};
+						
+					};
+					
+				};
+				
+				
+			};
+			
+			statement += object ForLoop {
+				
+				initialization := object AssignmentExpression {
+					
+					firstExpr := object IdentifierExpression {
+						identifier := i;
+					};
+					
+					
+					operator := AssignmentOperator::EQUAL;
+							
+					secondExpr := object LiteralExpression {
+						text := 0.repr()	
+					}
+					
+				};
+				
+				condition := object CompareExpression {
+				
+					firstExpr := object IdentifierExpression {
+						identifier := i;
+					};
+					
+					operator := CompareOperator::LESS;
+					
+					secondExpr := object IdentifierExpression {
+						identifier := map createNumberOfMessagesInTransitConstant();
+					}
+				};
+				
+				iteration := object PostIncrementDecrementExpression {
+							
+					expression := object IdentifierExpression {
+						identifier := i
+					};
+					
+					operator := IncrementDecrementOperator::INCREMENT;
+	
+				}; 
+				
+				statement := object IfStatement {
+					
+					ifExpression := object CompareExpression {
+						
+						firstExpr := object IdentifierExpression {
+						
+							identifier := map createFreeIDsFieldVariable();
+							
+							index += object IdentifierExpression {
+								identifier := i;
+							};
+							
+						};
+						
+						secondExpr := object IdentifierExpression {
+							identifier := map createMessageIdNullConstant();
+						};
+						
+						operator := CompareOperator::EQUAL;
+					
+					};
+					
+					thenStatement := object Block {
+						
+						statement += object ExpressionStatement {
+							
+							expression := object AssignmentExpression {
+							
+								firstExpr := object IdentifierExpression {
+								
+									identifier := map createFreeIDsFieldVariable();
+									
+									index += object IdentifierExpression {
+										identifier := i;
+									};
+									
+								};
+								
+								secondExpr := object IdentifierExpression {
+									
+									identifier := id;
+									
+								};
+								
+							};
+							
+							
+							
+						};
+						
+						statement += object ReturnStatement {
+							
+							returnExpression := object LiteralExpression {
+								text := true.repr();	
+							};
+							
+						};
+						
+					};
+					
+				};
+				
+				
+			};
+		
+			statement += object ReturnStatement {
+				returnExpression := object LiteralExpression {
+					text := false.repr();	
+				};
+			};
+		
+		};
+		
+		
+	}
+	
+	
+	mapping MessageType :: createAddForMessageTypeFunction() : Function {
+		
+		name := 'add' + self.name + 'Arguments';
+		
+		var m : Variable := object Variable {
+			name := 'm';
+		};
+		
+		parameter += object ParameterContainer {
+		
+				typeDefinition := object IdentifierExpression {
+					identifier := self.map createParameterType();
+				};
+				
+				elements += m;
+		
+		};
+		
+		var i : Variable := object Variable{
+			name := "i";
+			
+		};
+		block := object Block {
+			// int i;
+			declarations := object LocalDeclarations {
+				declaration +=object TypedDeclaration {
+					typeDefinition := object IdentifierExpression {
+						identifier := INT;
+					};
+					elements := i;	
+				};				
+			};
+			
+			statement += object ForLoop {
+				initialization := object AssignmentExpression {
+					firstExpr := object IdentifierExpression {
+						identifier := i;
+					};
+					secondExpr := object LiteralExpression {
+						text := 0.repr();
+					};
+					operator := AssignmentOperator::EQUAL;
+				};
+				condition := object CompareExpression {
+					firstExpr := object IdentifierExpression {
+						identifier := i;
+					};
+					secondExpr := object ArithmeticExpression {
+						firstExpr := object IdentifierExpression {
+							identifier := map createNumberOfMessagesInTransitConstant();
+						};
+						secondExpr := object LiteralExpression {
+							text := 1.repr();
+						};
+						operator := ArithmeticOperator::ADD;
+					};
+					operator := CompareOperator::LESS
+				};
+				iteration := object PostIncrementDecrementExpression {
+					expression := object IdentifierExpression {
+						identifier := i;
+					};
+					operator := IncrementDecrementOperator::INCREMENT;
+				};
+				statement := object IfStatement {
+					ifExpression := object CompareExpression {
+						firstExpr := object ScopedIdentifierExpression {
+							scope := object IdentifierExpression {
+								identifier := self.map createParameterTypeBufferFieldVariable();
+								index := object IdentifierExpression {
+									identifier := i;
+								};
+							};
+							identifier := object IdentifierExpression {
+								identifier := self.map createParameterTypeMessageIdVariable();
+							};
+						};
+						secondExpr := object LiteralExpression {
+							text := 0.repr();
+						};
+						operator := CompareOperator::EQUAL;
+					};
+					thenStatement := object Block {
+						statement += object ExpressionStatement {
+							expression := object AssignmentExpression {
+								firstExpr := object IdentifierExpression {
+									identifier := self.map createParameterTypeBufferFieldVariable();
+									index := object IdentifierExpression {
+										identifier := i;
+									};
+								};
+								secondExpr := object IdentifierExpression {
+									identifier := m;
+								};
+								operator := AssignmentOperator::EQUAL;
+							};
+						};
+						statement += object ReturnStatement {
+							returnExpression := object IdentifierExpression{
+								identifier := i;
+							};
+						};					
+					}
+				}
+			};
+			
+			statement += object ReturnStatement {
+				returnExpression := object LiteralExpression {
+					text := "-1";
+				}
+			};
+			
+		}
+		
+	}
+	
+	mapping MessageType :: createRemoveForMessageTypeFunction() : Function {
+		
+		name := 'remove' + self.name + 'Arguments';
+			
+		var mArgsPosition : Variable := object Variable {
+			name := 'mArgsPosition';
+		};
+		
+		parameter += object ParameterContainer {
+				typeDefinition := object IdentifierExpression {
+					identifier := INT;
+				};
+				
+				elements += mArgsPosition;
+		};
+		
+		block := object Block {
+			
+			statement += object ExpressionStatement {
+				expression := object AssignmentExpression {
+					firstExpr := object IdentifierExpression {
+						identifier := self.map createParameterTypeBufferFieldVariable();	
+						index += object IdentifierExpression {
+							identifier := mArgsPosition;
+						}
+					};
+					
+					secondExpr := object IdentifierExpression {
+						identifier := self.map createParameterTypeNullConstantVariable();
+					};
+					
+					operator := AssignmentOperator::EQUAL;
+				}
+			};
+			statement += object ReturnStatement {
+				returnExpression := object LiteralExpression {
+					text := true.repr();
+				}
+			}
+		}
+		
+		
+	}
+	
+	
+	mapping createCheckFunction() : Function {
+		
+		name := 'check';
+		
+		var buffer : Variable = object Variable { 
+				
+				name := 'buffer';
+								
+		};
+		
+		var mKind : Variable = object Variable { 
+				
+				name := 'mKind';
+								
+		};
+		
+		parameter += object ParameterContainer {
+		
+				typeDefinition := object IdentifierExpression {
+				
+					identifier := map createBufferType();
+				
+				};
+							
+				elements += buffer;
+			
+		};
+		
+		parameter += object ParameterContainer {
+		
+				typeDefinition := object IdentifierExpression {
+				
+					identifier := map createMessageKindType();
+				
+				};
+							
+				elements += mKind;
+				
+		};
+		
+		block := object Block {
+		
+			var nextMessage : Variable := object Variable {
+				
+				name := 'nextMessage';
+				
+				initializer := object ExpressionInitializer {
+					
+					expression := object ScopedIdentifierExpression {
+						
+						scope := object IdentifierExpression {
+							identifier := buffer;
+						};
+						
+						identifier := object IdentifierExpression {
+						
+							identifier := map createMessagesFieldVariable();
+							
+							index += object LiteralExpression {
+								text := 0.repr();
+							};
+							
+						};
+						
+					};
+					
+				};
+				
+			};
+		
+			declarations := object LocalDeclarations {
+				
+				declaration += object TypedDeclaration {
+					
+					typeDefinition := object IdentifierExpression {
+						identifier := map createMessageType();
+					};
+					
+					elements += nextMessage;
+					
+				};
+				
+			};
+			
+			statement += object ReturnStatement {
+			
+				returnExpression := object LogicalExpression {
+					
+					-- m != null
+					firstExpr := object CompareExpression {
+						
+						firstExpr := object IdentifierExpression {
+							identifier := mKind;
+						};
+						
+						operator := CompareOperator::UNEQUAL;
+						
+						secondExpr := object IdentifierExpression {
+							identifier := map createMessageKindNullConstant()
+						}
+						
+					};
+					
+					operator := LogicalOperator::AND;
+					
+					secondExpr := object CompareExpression {
+						
+						operator := CompareOperator::EQUAL;
+						
+						firstExpr := object ScopedIdentifierExpression {
+							
+							scope := object IdentifierExpression {
+								identifier := nextMessage;
+							};
+							
+							identifier := object IdentifierExpression {
+								identifier := map createMessageKindVariable();
+							};
+							
+						};
+						
+						secondExpr := object IdentifierExpression {
+							
+							identifier := mKind;
+							
+						}
+						
+					}
+				
+				}	
+								
+			}
+			
+		}
+			
+	}
+	
+	
+	mapping createRemoveFunction() : Function {
+		
+		name := 'remove';
+		
+		var buffer : Parameter = object Parameter { 
+				
+				name := 'buffer';
+				callType := CallType::CALL_BY_REFERENCE
+												
+		};
+		
+		var m : Parameter = object Parameter { 
+				
+				name := 'm';
+								
+		};
+		
+		parameter += object ParameterContainer {
+		
+				typeDefinition := object IdentifierExpression {
+				
+					identifier := map createBufferType();
+								
+				};
+							
+				elements += buffer;
+			
+		};
+		
+		parameter += object ParameterContainer {
+		
+				typeDefinition := object IdentifierExpression {
+				
+					identifier := map createMessageKindType();
+				
+				};
+							
+				elements += m;
+				
+		};
+		
+		
+		block := object Block {
+				
+			statement += object IfStatement {
+				
+				ifExpression := object FunctionCallExpression {
+					
+					function := resolveoneIn(createCheckFunction, Function);
+					
+					argument += object IdentifierExpression {
+						
+						identifier := buffer;
+						
+					};
+					
+					argument += object IdentifierExpression {
+						
+						identifier := m;
+						
+					}
+					
+				};
+				
+				thenStatement := object Block {
+					
+					var i : Variable = object Variable {
+				
+						name := 'i';
+				
+					};
+		
+					declarations := object LocalDeclarations {
+						
+						declaration += object TypedDeclaration {
+							
+							typeDefinition := object IdentifierExpression {
+								
+								identifier := INT;
+								
+							};
+							
+							elements += i
+							
+						}
+						
+					};
+					
+					statement += object ForLoop {
+												
+						initialization := object AssignmentExpression {
+							
+							firstExpr := object IdentifierExpression {
+								
+								identifier := i
+								
+							};
+							
+							operator := AssignmentOperator::EQUAL;
+							
+							secondExpr := object LiteralExpression {
+								
+								text := 0.repr()
+								
+							}
+							
+						};
+						
+						condition := object CompareExpression {
+							
+							firstExpr := object IdentifierExpression {
+								
+								identifier := i;
+								
+							};
+							
+							operator := CompareOperator::LESS;
+							
+							secondExpr := object ArithmeticExpression {
+								
+								firstExpr := object IdentifierExpression {
+									
+									identifier := map createMaxOfBufferAndConnectorSizeVariable();
+									
+								};
+								
+								operator := ArithmeticOperator::SUBTRACT;
+								
+								secondExpr := object LiteralExpression {
+									
+									text := '1'
+									
+								}
+								
+							}
+							
+						};
+						
+						iteration := object PostIncrementDecrementExpression {
+							
+							expression := object IdentifierExpression {
+								
+								identifier := i
+								
+							};
+							
+							operator := IncrementDecrementOperator::INCREMENT;
+							
+							
+							
+						};
+						
+						statement := object ExpressionStatement {
+							
+							expression := object AssignmentExpression {
+								
+								firstExpr := object ScopedIdentifierExpression {
+					
+									scope := object IdentifierExpression {
+										
+										identifier := buffer;
+										
+									};
+									
+									identifier := object IdentifierExpression {
+										
+										identifier := map createMessagesFieldVariable();
+										
+										index += object IdentifierExpression {
+											
+											identifier := i
+											
+										}
+										
+									}
+					
+								};
+								
+								
+								operator := AssignmentOperator::EQUAL;
+								
+								
+								secondExpr := object ScopedIdentifierExpression {
+					
+									scope := object IdentifierExpression {
+										
+										identifier := buffer;
+										
+									};
+									
+									identifier := object IdentifierExpression {
+										
+										identifier := map createMessagesFieldVariable();
+										
+										index += object ArithmeticExpression {
+											
+											firstExpr := object IdentifierExpression {
+												
+												identifier := i
+												
+											};
+											
+											operator := ArithmeticOperator::ADD;
+											
+											secondExpr := object LiteralExpression {
+												
+												text := 1.repr()
+												
+											}
+											
+										}
+										
+									}
+					
+								}
+								
+								
+							}
+							
+						}
+						
+					};
+					
+					
+					statement += object ExpressionStatement {
+							
+						expression := object AssignmentExpression {
+							
+							firstExpr := object ScopedIdentifierExpression {
+				
+								scope := object IdentifierExpression {
+									
+									identifier := buffer;
+									
+								};
+								
+								identifier := object IdentifierExpression {
+									
+									identifier := map createMessagesFieldVariable();
+									
+									index += object ArithmeticExpression {
+										
+										firstExpr := object IdentifierExpression {
+											
+											identifier := map createMaxOfBufferAndConnectorSizeVariable()
+											
+										};
+										
+										operator := ArithmeticOperator::SUBTRACT;
+										
+										secondExpr := object LiteralExpression {
+											
+											text := 1.repr()
+											
+										}
+										
+									}
+									
+								}
+				
+							};
+														
+							operator := AssignmentOperator::EQUAL;
+														
+							secondExpr := object IdentifierExpression {
+								
+								identifier := map createMessageNullConstantVariable();
+								
+							}
+															
+						}
+						
+					};
+					
+					statement += object ExpressionStatement {
+						
+						expression := object PostIncrementDecrementExpression {
+							
+							expression := object ScopedIdentifierExpression {
+								
+								scope := object IdentifierExpression {
+									
+									identifier := buffer
+									
+								};
+								
+								identifier := object IdentifierExpression {
+									
+									identifier := map createTailFieldVariable()
+									
+								}
+								
+							};
+							
+							operator := IncrementDecrementOperator::DECREMENT
+							
+						}
+						
+					}
+						
+				}
+					
+			}
+						
+		}
+			
+	}
+	
+	mapping createCheckMessageInBufferFunction() : Function {
+		name := 'checkMessageInBuffer';
+		
+		var buffer : Variable = object Variable {name := 'buffer'};
+		var mKind : Variable = object Variable {name := 'mKind'};
+		
+		parameter += object ParameterContainer {
+				typeDefinition := object IdentifierExpression {
+					identifier := map createBufferType();
+				};
+				elements += buffer;
+		};
+		parameter += object ParameterContainer {
+				typeDefinition := object IdentifierExpression {
+					identifier := map createMessageKindType();
+				};
+				elements += mKind;
+		};
+		
+		block := object Block {
+			var i : Variable = object Variable { name := 'i';};
+			declarations := object LocalDeclarations {		
+				declaration += object TypedDeclaration {
+					typeDefinition := object IdentifierExpression { identifier := INT; };
+					elements += i;
+				}
+			};
+					
+			statement += object ForLoop {
+				initialization := object AssignmentExpression {
+					firstExpr := object IdentifierExpression { identifier := i; };	
+					operator := AssignmentOperator::EQUAL;
+					secondExpr := object LiteralExpression { text := 0.repr() };
+				};
+				condition := object CompareExpression {
+					firstExpr := object IdentifierExpression {identifier := i; };
+					operator := CompareOperator::LESS;
+					secondExpr := object IdentifierExpression {identifier := map createMaxOfBufferAndConnectorSizeVariable();};
+				};
+				iteration := object PostIncrementDecrementExpression {
+					expression := object IdentifierExpression {	identifier := i };
+					operator := IncrementDecrementOperator::INCREMENT;
+				}; 
+				
+				statement := object IfStatement {
+						ifExpression := object CompareExpression {						
+							firstExpr := object ScopedIdentifierExpression {					
+									scope := object ScopedIdentifierExpression {
+										scope := object IdentifierExpression { identifier := buffer;};
+										identifier := object IdentifierExpression {
+											identifier := map createMessagesFieldVariable();
+											index += object IdentifierExpression { identifier := i };
+										};										
+									};									
+									identifier := object IdentifierExpression { identifier := map createMessageKindVariable();};
+							};
+							operator := CompareOperator::EQUAL;
+							secondExpr := object IdentifierExpression { identifier := mKind };
+						};
+						thenStatement := object ReturnStatement {
+							returnExpression := object LiteralExpression { text := 'true' };
+						};
+				 };
+			};
+			statement += object ReturnStatement { returnExpression := object LiteralExpression {text := 'false'}};		
+		}	
+	}
+	
+	mapping createGetNumElementsInBufferFunction() : Function {
+		
+		//Signature
+		name := 'getNumberOfElementsInBuffer';
+		
+		
+		var b : Variable = object Variable {name := 'b'};
+		parameter += object ParameterContainer {
+				typeDefinition := object IdentifierExpression {
+					identifier := map createBufferType();
+				};
+				
+				elements += b;
+		};
+		
+		//Behavior
+		block := object Block { //return b.tail;
+			statement += object ReturnStatement {
+				returnExpression := object ScopedIdentifierExpression {
+					scope := object IdentifierExpression {
+						identifier := b;
+					};
+					
+					identifier := object IdentifierExpression {
+						identifier := map createTailFieldVariable();
+					};
+				};
+			}
+		}
+	}
+	
+	mapping createAddFunction() : Function {
+		
+		name := 'add';
+		
+		var b : Parameter = object Parameter { 
+				
+				name := bufferParameterID;
+				callType := CallType::CALL_BY_REFERENCE
+												
+		};
+		
+		var e : Parameter = object Parameter { 
+				
+				name := messageParameterID;
+								
+		};
+		
+		parameter += object ParameterContainer {
+		
+				typeDefinition := object IdentifierExpression {
+				
+					identifier := map createBufferType();
+								
+				};
+							
+				elements += b
+						
+		};
+		
+		parameter += object ParameterContainer {
+		
+				typeDefinition := object IdentifierExpression {
+				
+					identifier := map createMessageType();
+				
+				};
+							
+				elements += e;
+			
+		};
+				
+		block := object Block {
+				
+			statement += object ExpressionStatement {
+			
+				expression := object AssignmentExpression {
+								
+					firstExpr := object ScopedIdentifierExpression {
+		
+						scope := object IdentifierExpression {
+							
+							identifier := b;
+							
+						};
+						
+						identifier := object IdentifierExpression {
+							
+							identifier := map createMessagesFieldVariable();
+							
+							index += object ScopedIdentifierExpression {
+		
+								scope := object IdentifierExpression {
+									
+									identifier := b;
+									
+								};
+								
+								identifier := object IdentifierExpression {
+									
+									identifier := map createTailFieldVariable();
+																		
+								}
+		
+							}
+							
+						}
+		
+					};
+								
+								
+					operator := AssignmentOperator::EQUAL;
+					
+					secondExpr := object IdentifierExpression {
+						
+						identifier := e
+						
+					}
+								
+				}	
+			};
+			
+			statement += object ExpressionStatement {
+							
+				expression := object PostIncrementDecrementExpression {
+					
+					expression := object ScopedIdentifierExpression {
+						
+						scope := object IdentifierExpression {
+							
+							identifier := b
+							
+						};
+						
+						identifier := object IdentifierExpression {
+							
+							identifier := map createTailFieldVariable()
+							
+						}
+						
+					};
+					
+					operator := IncrementDecrementOperator::INCREMENT
+					
+				}
+							
+			}
+		}
+			
+	}
+
+	
+	
+	mapping MessageType :: createSendFunction() : Function {
+		
+		name := 'send' + self.name;
+		
+		var sender : Parameter = object Parameter {
+			name := 'sender'
+		};
+		
+		parameter += object ParameterContainer {
+		
+				typeDefinition := object IdentifierExpression {
+					identifier := map DiscretePortInstanceType()
+				};
+				
+				elements += sender
+				
+		
+		};
+		
+		parameter += self.parameters->map Expressions::Parameter2Parameter(); 
+		
+		
+		block := object Block {
+			
+			statement += object IfStatement {
+				
+				-- if (connectors[sender].tail < CAPACITY)
+				ifExpression := object CompareExpression {
+					
+					-- connectors[sender].tail
+					firstExpr := object ScopedIdentifierExpression {
+						
+						-- connectors[sender]
+						scope := object IdentifierExpression {
+							identifier := map createConnectorsVariable();
+							
+							index += object IdentifierExpression {
+								identifier := sender
+							}
+						};
+						
+						identifier := object IdentifierExpression {
+							identifier := map createTailFieldVariable()
+						}
+					};
+					
+					operator := CompareOperator::LESS;
+					
+					secondExpr := object IdentifierExpression {
+						identifier := map createConnectorSizeVariable()
+					}
+					
+				};
+				
+				thenStatement := object Block {
+					
+					var instance := object Variable {
+						name := self.name + 'Instance';
+						
+						initializer := object ArrayInitializer {
+							
+							initializer += object ExpressionInitializer {
+							
+								expression := object IdentifierExpression {
+									identifier := map createMessageIdNullConstant();
+								};
+								
+							};
+							
+							self.parameters->forEach(param) {
+							
+								initializer += object ExpressionInitializer {
+									expression := object IdentifierExpression {
+										identifier := param.map Parameter2ParameterVariable()
+									};
+								};
+							
+							};
+						
+						};
+					};
+					
+					var message := object Variable {
+						name := 'message';
+						
+						initializer := object ExpressionInitializer {
+							expression := object IdentifierExpression {
+								identifier := map createMessageNullConstantVariable();
+							}
+						}
+					};
+					
+					var mId := object Variable {
+						name := 'mId';
+						
+						initializer := object ExpressionInitializer {
+							expression := object IdentifierExpression {
+								identifier := map createMessageIdNullConstant();
+							};
+						};
+						
+					};
+					
+					declarations := object LocalDeclarations {
+						
+						declaration += object TypedDeclaration {
+							
+							typeDefinition := object IdentifierExpression {
+								identifier := self.map createParameterType(); // resolve here?
+							};
+							
+							elements += instance;
+							
+						};
+						
+						declaration += object TypedDeclaration {
+							
+							typeDefinition := object IdentifierExpression {
+								identifier := map createMessageType();
+							};
+							
+							elements += message;
+							
+						};
+						
+						declaration += object TypedDeclaration {
+							
+							typeDefinition := object IdentifierExpression {
+								identifier := map createMessageIdType();
+							};
+							
+							elements += mId;
+							
+						};
+						
+					};
+					
+					statement += object ExpressionStatement {
+						
+						expression := object AssignmentExpression {
+							
+							firstExpr := object IdentifierExpression {
+								identifier := mId;
+							};
+							
+							secondExpr := object FunctionCallExpression {
+								function := resolveoneIn(createRequestIdFunction, Function);
+							};
+							
+						};
+						
+					};
+					
+					statement += object ExpressionStatement {
+						
+						expression := object AssignmentExpression {
+							
+							firstExpr := object ScopedIdentifierExpression {
+							
+								scope := object IdentifierExpression {
+									identifier := instance;
+								};
+								
+								identifier := object IdentifierExpression {
+									identifier := self.map createParameterTypeMessageIdVariable(); // resolve here?
+								};
+								
+							};
+							
+							secondExpr := object IdentifierExpression {
+								identifier := mId;
+							};
+							
+						};
+						
+					};
+					
+					statement += object ExpressionStatement {
+						
+						expression := object AssignmentExpression {
+							
+							firstExpr := object ScopedIdentifierExpression {
+								
+								scope := object IdentifierExpression {
+									identifier := message;
+								};
+								
+								identifier := object IdentifierExpression {
+									identifier := map createMessageTypeMessageIdVariable();
+								}; 
+								
+							};
+							
+							secondExpr := object IdentifierExpression {
+								identifier := mId;
+							};
+							
+						}
+						
+					};
+					
+					statement += object ExpressionStatement {
+						
+						expression := object AssignmentExpression {
+							
+							firstExpr := object ScopedIdentifierExpression {
+								
+								scope := object IdentifierExpression {
+									identifier := message;
+								};
+								
+								identifier := object IdentifierExpression {
+									identifier := map createMessageKindVariable();
+								}; 
+								
+							};
+							
+							secondExpr := object IdentifierExpression {
+								identifier := self.map createMessageKindConstant();
+							};
+							
+						}
+						
+					};
+					
+					
+					statement += object ExpressionStatement {
+						
+						expression := object AssignmentExpression {
+							
+							firstExpr := object ScopedIdentifierExpression {
+								
+								scope := object IdentifierExpression {
+									identifier := message;
+								};
+								
+								identifier := object IdentifierExpression {
+									identifier := map createMessageArgumentsPositionVariable();
+								}; 
+								
+							};
+							
+							secondExpr := object FunctionCallExpression {
+								
+								function := self.map createAddForMessageTypeFunction();
+								
+								argument += object IdentifierExpression {
+									identifier := instance;
+								};
+								
+							};
+							
+						};
+						
+					};
+			
+					-- add(connectors[sender],message)
+					statement += object ExpressionStatement {
+						
+						expression := object FunctionCallExpression {
+						
+							function := map createAddFunction();
+							
+							argument += object IdentifierExpression {
+								identifier := map createConnectorsVariable();
+								
+								index += object IdentifierExpression {
+									identifier := sender
+								}
+							};
+							
+							argument += object IdentifierExpression {
+								identifier := message
+							};
+						
+						}	 
+						
+					};
+					
+					-- transmissionTimes[sender][latest[sender]] = 0;
+					statement += object ExpressionStatement {
+						
+						expression := object AssignmentExpression {
+							
+							--transmissionTimes[sender][latest[sender]]
+							firstExpr := object IdentifierExpression {
+								
+								identifier := map createTransmissionTimesVariable();
+								
+								index += object IdentifierExpression {
+									identifier := sender
+								};
+								
+								index += object IdentifierExpression {
+									identifier := map createLatestVariable();
+									
+									index += object IdentifierExpression {
+										identifier := sender
+									}
+								}
+								
+							};
+							
+							operator := AssignmentOperator::EQUAL;
+							
+							secondExpr := object LiteralExpression {
+								text := 0.repr()
+							}
+						
+						}	 
+						
+					};
+					
+					-- latest[sender] == CAPACITY - 1 ? latest[sender] = 0 : latest[sender]++;
+					statement += object ExpressionStatement {
+						
+						expression := object ConditionExpression {
+										
+							ifExpression := object CompareExpression {
+							
+								-- latest == CAPACITY-1
+								
+								firstExpr := object IdentifierExpression {
+									identifier := map createLatestVariable();
+									
+									index += object IdentifierExpression {
+										identifier := sender
+									}
+								};
+								
+								operator := CompareOperator::EQUAL;
+								
+								secondExpr := object ArithmeticExpression {
+									
+									firstExpr := object IdentifierExpression {
+										identifier := map createConnectorSizeVariable()						
+									};
+									
+									operator := ArithmeticOperator::SUBTRACT;
+									
+									secondExpr := object LiteralExpression {
+										text := 1.repr()
+									}
+									
+								}
+								
+							};
+							
+							thenExpression := object AssignmentExpression {
+							
+								-- latest[sender]=0
+								
+								firstExpr := object IdentifierExpression {
+									identifier := map createLatestVariable();
+									
+									index += object IdentifierExpression {
+										identifier := sender
+									}
+								};
+								
+								operator := AssignmentOperator::EQUAL;
+								
+								secondExpr := object LiteralExpression {
+									text := 0.repr()
+								}
+								
+							};
+							
+							elseExpression := object PostIncrementDecrementExpression {
+								
+								-- latest[sender]++
+								
+								expression := object IdentifierExpression {
+									identifier := map createLatestVariable();
+									
+									index += object IdentifierExpression {
+										identifier := sender
+									}
+								};
+								
+								operator := IncrementDecrementOperator::INCREMENT;
+								
+							}
+						
+						}
+					
+					}
+
+				};
+			
+				elseStatement := object ExpressionStatement {
+					
+					expression := object AssignmentExpression {
+						firstExpr := object IdentifierExpression {
+							identifier := map createConnectorOverflowVariable()
+						};
+						
+						operator := AssignmentOperator::EQUAL;
+						
+						secondExpr := object LiteralExpression {
+							text := true.repr()
+						}
+					}
+				}
+		
+			}
+			
+		}	
+			
+	}
+	
+	
+	mapping createReceiveFunction(portInstances : OrderedSet(DiscretePortInstance)) : Function {
+		
+		name := 'receive';
+		
+		var receiver : Variable = object Variable {
+			name := 'receiver'
+		};
+		
+		parameter += object ParameterContainer {
+		
+				typeDefinition := object IdentifierExpression {
+					identifier := map DiscretePortInstanceType()
+				};
+				
+				elements += receiver
+				
+		
+		};
+		
+		var mKind : Variable = object Variable {
+			name := 'mKind'
+		};
+		
+		parameter += object ParameterContainer {
+			
+				typeDefinition := object IdentifierExpression {
+					identifier := map createMessageKindType()
+				};
+			
+				elements += mKind
+			
+			
+		};
+		
+		block := object Block {
+			
+			statement += object ReturnStatement {
+				
+				-- check(buffers[receiver],m)
+				--  return check(buffers[receiver][buffer_assignment[receiver][mKind]],mKind);
+
+				returnExpression := object FunctionCallExpression {
+				
+					function := map createCheckFunction();
+					
+					argument += object IdentifierExpression {
+						
+						identifier := map createBuffersVariable();
+						
+						index += object IdentifierExpression {
+							identifier := receiver
+						};
+
+						index += object IdentifierExpression {
+							identifier := portInstances->map createBufferAssignmentArrayVariable();
+
+							index += object IdentifierExpression {
+								identifier := receiver
+							};
+
+							index += object IdentifierExpression {
+								identifier := mKind
+							};
+
+						}
+						
+					};
+					
+					argument += object IdentifierExpression {
+						identifier := mKind
+					}
+				}
+			}
+				
+		}
+	
+	}
+	
+
+	mapping createConsumeFunction(portInstances : OrderedSet(DiscretePortInstance)) : Function {
+		
+		name := 'consume';
+		
+		var receiver : Parameter = object Parameter {
+			name := 'receiver'
+		};
+		
+		parameter += object ParameterContainer {
+		
+				typeDefinition := object IdentifierExpression {
+					identifier := map DiscretePortInstanceType()
+				};
+				
+				elements += receiver
+		
+		};
+		
+		var mKind : Variable = object Variable {
+			name := 'mKind'
+		};
+		
+		parameter += object ParameterContainer {
+			
+				typeDefinition := object IdentifierExpression {
+					identifier := map createMessageKindType()
+				};
+			
+				elements += mKind
+			
+			
+		};
+		
+		block := object Block {
+			
+			statement += object IfStatement {
+				
+				-- if(receive(receiver,mKind))
+				ifExpression := object FunctionCallExpression {
+					
+					function := map createReceiveFunction(portInstances);
+					
+					argument += object IdentifierExpression {
+						identifier := receiver
+					};
+					
+					argument += object IdentifierExpression {
+						identifier := mKind
+					}
+					
+				};
+
+				thenStatement := object Block {
+				
+					var nextMessage : Variable := object Variable {
+							
+							name := 'nextMessage';
+							
+							initializer := object ExpressionInitializer {
+								
+								expression := object ScopedIdentifierExpression {
+										
+									scope := object IdentifierExpression {
+									
+										identifier := map createBuffersVariable();
+									
+										index += object IdentifierExpression {
+											identifier := receiver;
+										};
+										
+										index += object IdentifierExpression {
+
+											identifier := portInstances->map createBufferAssignmentArrayVariable();
+
+											index += object IdentifierExpression {
+												identifier := receiver
+											};
+
+											index += object IdentifierExpression {
+												identifier := mKind
+											};
+
+										}
+									
+									};
+									
+									identifier := object IdentifierExpression {
+										
+										identifier := map createMessagesFieldVariable();
+										
+										index += object LiteralExpression {
+											text := 0.repr();
+										};
+										
+									};
+										
+								};
+									 
+						};
+								
+					};
+				
+					declarations := object LocalDeclarations {
+						
+						declaration += object TypedDeclaration {
+						
+							typeDefinition := object IdentifierExpression {
+								identifier := map createMessageType();
+							};
+							
+							elements += nextMessage;
+						
+						};
+						
+					};
+					
+					statement += object ExpressionStatement {
+						
+						expression := object FunctionCallExpression {
+							
+							function := map createReleaseIdFunction();
+							
+							argument += object ScopedIdentifierExpression {
+								
+								scope := object IdentifierExpression {
+									identifier := nextMessage;
+								};
+								
+								identifier := object IdentifierExpression {
+									identifier := map createMessageTypeMessageIdVariable();
+								};
+								
+							};
+							
+						};
+						
+					};
+					
+					-- remove(buffers[receiver],mKind)
+					statement += object ExpressionStatement {
+					
+						expression := object FunctionCallExpression {
+							
+							function := map createRemoveFunction();
+							
+							argument += object IdentifierExpression {
+								identifier := map createBuffersVariable();
+							
+								index += object IdentifierExpression {
+									identifier := receiver
+								};
+
+								index += object IdentifierExpression {
+
+									identifier := portInstances->map createBufferAssignmentArrayVariable();
+
+									index += object IdentifierExpression {
+										identifier := receiver
+									};
+
+									index += object IdentifierExpression {
+										identifier := mKind
+									};
+
+								}
+
+							};	
+						
+							argument += object IdentifierExpression {
+								identifier := mKind
+							}
+							
+						}
+						
+					};
+					
+					messageTypes()->forEach(mType) {
+						
+						statement += object IfStatement {
+						
+							ifExpression := object CompareExpression {
+								
+								firstExpr := object IdentifierExpression {
+									identifier := mKind
+								};
+								
+								secondExpr := object IdentifierExpression {
+									identifier := mType.resolveoneIn(MessageType::createMessageKindConstant, Variable);
+								};
+								
+								operator := CompareOperator::EQUAL;
+								
+							};
+							
+							thenStatement := object ExpressionStatement {
+								
+								expression := object FunctionCallExpression {
+									
+									function := mType.map createRemoveForMessageTypeFunction();
+									
+									argument += object ScopedIdentifierExpression {
+										
+										scope := object IdentifierExpression {
+											identifier := nextMessage;
+										};
+										
+										identifier := object IdentifierExpression {
+											identifier := map createMessageArgumentsPositionVariable();
+										};
+										
+									};
+									
+								};
+								
+							};
+						
+						};
+						
+					};
+					
+				};
+				
+			}
+			
+		}
+		
+	}	
+	
+	mapping createDiscardFunction() : Function {
+		
+		name := discardFunctionID;
+		
+		
+		var b : Parameter = object Parameter { 
+				
+				name := bufferParameterID;
+				callType := CallType::CALL_BY_REFERENCE
+												
+		};
+		
+		var bufferOverflowStrategy : Parameter = object Parameter { 
+				
+				name := bufferOverflowStrategyParameterID;
+								
+		};
+		
+		var e : Parameter = object Parameter { 
+				
+				name := messageParameterID;
+												
+		};
+		
+		parameter += object ParameterContainer {
+		
+			
+				typeDefinition := object IdentifierExpression {
+				
+					identifier := map createBufferType();
+								
+				};
+							
+				elements += b
+						
+		};
+		
+		parameter += object ParameterContainer {
+		
+				typeDefinition := object IdentifierExpression {
+				
+					identifier := INT;
+				
+							
+				elements += bufferOverflowStrategy;
+				
+			}	
+			
+		};
+		
+		parameter += object ParameterContainer {
+		
+			
+				typeDefinition := object IdentifierExpression {
+				
+					identifier := map createMessageType();
+				
+				};
+							
+				elements += e;
+				
+			
+		};
+				
+		block := object Block {
+		
+		var messageToDiscard := object Parameter{
+			name := 'messageToDiscard';
+			initializer := object ExpressionInitializer{
+				expression := object ScopedIdentifierExpression{
+					scope := object IdentifierExpression{
+						identifier := e;
+					};
+					identifier := object IdentifierExpression{
+						identifier := map createMessageTypeMessageIdVariable();
+					};
+				};
+			};
+		};
+							
+		var messageTypeToDiscard := object Parameter{
+			name := 'messageTypeToDiscard';
+			initializer := object ExpressionInitializer{
+				expression := object ScopedIdentifierExpression{
+					scope := object IdentifierExpression{
+						identifier := e;
+					};
+					identifier := object IdentifierExpression{
+						identifier := map createMessageKindVariable();
+					};
+				};
+			};
+		};
+		
+		declarations := object LocalDeclarations {
+		
+			--MessageId messageToDiscard = message.mId;
+			declaration += object TypedDeclaration {
+			
+				typeDefinition := object IdentifierExpression {
+					identifier := map createMessageIdType();
+				};
+				
+				elements := messageToDiscard;
+			
+			};
+			
+			
+			--MessageKind messageTypeToDiscard = message.mType;						
+			declaration += object TypedDeclaration {
+			
+				typeDefinition := object IdentifierExpression {
+					identifier := map createMessageKindType();
+				};
+				
+				elements := messageTypeToDiscard;
+			
+			};
+			
+		};
+		
+		
+		
+			
+			//if(bufferOverflowStrategy == DISCARD_OLDEST)
+			statement += object IfStatement{
+				ifExpression := object CompareExpression{
+					
+					firstExpr := object IdentifierExpression{
+						identifier := bufferOverflowStrategy;
+						};
+					
+					secondExpr := object IdentifierExpression{
+							identifier := BufferOverflowAvoidanceStrategy::DISCARD_OLDEST_MESSAGE_IN_BUFFER.map createBufferOverflowVariable();
+						};
+				};
+				
+				
+				thenStatement := object Block{				
+					//messageToDiscard = buffer.messages[0].mId;
+					statement += object ExpressionStatement{
+						expression := object AssignmentExpression{
+							firstExpr := object IdentifierExpression{
+								identifier := messageToDiscard;
+							};
+							secondExpr := object ScopedIdentifierExpression{
+								scope := object ScopedIdentifierExpression{
+									scope := object IdentifierExpression{
+										identifier := b;
+									};
+									identifier := object IdentifierExpression{
+										identifier := map createMessagesFieldVariable();
+										index += object LiteralExpression{
+											text := 0.repr();
+										};
+									};
+								};
+								identifier := object IdentifierExpression{
+									identifier := map createMessageTypeMessageIdVariable();
+								};
+							};
+						};
+					};
+					
+					//messageTypeToDiscard = buffer.messages[0].mType;
+					statement += object ExpressionStatement{
+						expression := object AssignmentExpression{
+							firstExpr := object IdentifierExpression{
+								identifier := messageTypeToDiscard;
+							};
+							secondExpr := object ScopedIdentifierExpression{
+								scope := object ScopedIdentifierExpression{
+									scope := object IdentifierExpression{
+										identifier := b;
+									};
+									identifier := object IdentifierExpression{
+										identifier := map createMessagesFieldVariable();
+										index += object LiteralExpression{
+											text := 0.repr();
+										};
+									};
+								};
+								identifier := object IdentifierExpression{
+									identifier := map createMessageKindVariable();
+								};
+							};
+						};
+					};
+					
+					//remove(buffer, messageTypeToDiscard);
+					statement += object ExpressionStatement{
+						expression:= object FunctionCallExpression{
+							function := map createRemoveFunction();
+							argument += object IdentifierExpression{
+								identifier := b;
+							};
+							argument += object IdentifierExpression{
+								identifier := messageTypeToDiscard;
+							};
+						};
+					};
+					//buffer.messages[buffer.tail] = message;
+					statement += object ExpressionStatement{
+						expression := object AssignmentExpression{
+							firstExpr := object ScopedIdentifierExpression{
+								scope := object IdentifierExpression{
+								 	identifier:=b;
+									};
+								identifier := object IdentifierExpression{
+									identifier := map createMessagesFieldVariable();
+									index += object ScopedIdentifierExpression{
+										scope := object IdentifierExpression{
+											identifier := b;
+										};
+										identifier := object IdentifierExpression{
+											identifier := map createTailFieldVariable();
+										};
+									};
+								};
+							};
+							secondExpr := object IdentifierExpression{
+								identifier := e;
+							};	
+						};
+					};
+					
+					//buffer.tail++;
+					statement += object ExpressionStatement{
+						expression := object PostIncrementDecrementExpression{
+							expression := object ScopedIdentifierExpression{
+								scope := object IdentifierExpression{
+									identifier := b;
+								};
+								identifier := object IdentifierExpression{
+									identifier := map createTailFieldVariable();
+								};
+							};
+							operator := IncrementDecrementOperator::INCREMENT;
+						};
+					};
+				};
+			};
+			
+			//releaseId(messageToDiscard);
+			statement += object ExpressionStatement{
+				expression := object FunctionCallExpression{
+					function := map createReleaseIdFunction();
+					argument += object IdentifierExpression{
+						identifier := messageToDiscard;
+					};
+				};
+			};
+			
+			//buffer.messageDiscarded = true
+			statement += object ExpressionStatement{
+				expression := object AssignmentExpression{
+					operator := AssignmentOperator::EQUAL;
+					firstExpr := object ScopedIdentifierExpression{
+						scope := object IdentifierExpression{
+							identifier := b;
+						};
+						identifier := object IdentifierExpression{
+							identifier := map createMessageDiscardedFieldVariable();
+						};
+					};
+					secondExpr := object LiteralExpression{
+						text := 'true'
+					};
+				};
+			};
+			
+			-- clearConnector(messageToDiscard, messageTypeToDiscard);
+	 		statement += object ExpressionStatement {
+		 		expression := object FunctionCallExpression {
+						function := map createClearConnectorFunction();
+						argument += object IdentifierExpression {
+							identifier := messageToDiscard;
+						};
+						argument += object IdentifierExpression {
+							identifier := messageTypeToDiscard;
+						argument += object ScopedIdentifierExpression{
+							scope := object IdentifierExpression{
+								identifier := e;
+							};
+							identifier := object IdentifierExpression {
+								identifier := map createMessageArgumentsPositionVariable();
+							}
+						};
+					};
+				};									
+	 		};		
+		};
+	};

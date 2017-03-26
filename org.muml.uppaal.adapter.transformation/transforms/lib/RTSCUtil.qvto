@@ -1,0 +1,305 @@
+library RTSCUtil;
+
+modeltype muml_behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype muml_rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+
+query State :: isInitiallyActive() : Boolean {
+			
+	return self.initial and self.parentStatechart.isInitiallyActive();
+}
+
+query Region :: isInitiallyActive() : Boolean {
+	return self.parentState.isInitiallyActive()
+}
+
+query RealtimeStatechart :: isInitiallyActive() : Boolean {
+	
+	var initial : Boolean = true;
+	
+	if (self.embedded)
+	then {
+		initial := self.parentRegion.isInitiallyActive()
+	}
+	endif;
+	
+	return initial;
+	
+}
+
+query RealtimeStatechart :: getAllStatesPrefix() : OrderedSet(State) {
+		
+	-- return prefix arrangement of all included states (i.e. super-state before its sub-states)
+	
+	return self.states.getAllStatesPrefix()->asOrderedSet();
+			
+}
+	
+query State :: getAllStatesPrefix() : OrderedSet(State) {
+	
+	-- return prefix arrangement of all included states (i.e. super-state before its sub-states)
+	
+	var states : OrderedSet(State) = object OrderedSet(State) {};
+	states += self;
+	
+	if (not self.simple)
+	then {
+		-- high priority regions first
+		states += self.embeddedRegions->sortedBy(-priority)->embeddedStatechart.getAllStatesPrefix();
+		// TODO replace OCL collect shorthand ('.' notation) by QVTo xcollect shorthand ('->' notation) once it flattens: https://bugs.eclipse.org/bugs/show_bug.cgi?id=425536
+	}
+	endif;
+	
+	return states
+	
+}
+
+query Behavior :: getAllBehaviorsPrefix() : OrderedSet(Behavior) {
+	
+	return assert fatal (false) with log('Should never be reached.');
+	
+}
+
+query RealtimeStatechart :: getAllBehaviorsPrefix() : OrderedSet(Behavior) {
+	
+	return self.getAllStatechartsPrefix();
+	
+}
+
+query RealtimeStatechart :: getAllStatechartsPrefix() : OrderedSet(RealtimeStatechart) {
+	
+	-- return prefix arrangement of all included statecharts (i.e. super-statechart before its sub-statecharts)
+	
+	var rtscs : OrderedSet(RealtimeStatechart) = object OrderedSet(RealtimeStatechart) {};
+	rtscs += self;
+	
+	if (not self.flat)
+	then { 
+		self.states->forEach(state) {
+			-- high priority regions first
+			rtscs += state.embeddedRegions->sortedBy(-priority)->embeddedStatechart.getAllStatechartsPrefix();
+		}
+	}
+	endif;
+	
+	return rtscs
+	
+}
+
+query RealtimeStatechart :: getAllStatesPostfix() : OrderedSet(State) {
+		
+	-- return postfix arrangement of all included states (i.e. sub-states before its super-state)
+	
+	return self.states.getAllStatesPostfix()->asOrderedSet();
+			
+}
+
+query State :: getAllStatesPostfix() : OrderedSet(State) {
+	
+	-- return postfix arrangement of all included states (i.e. sub-states before its super-state)
+	
+	var states : OrderedSet(State) = object OrderedSet(State) {};
+		
+	if (not self.simple)
+	then {
+		-- low priority regions first
+		states += self.embeddedRegions->sortedBy(priority)->embeddedStatechart.getAllStatesPostfix();
+		// TODO replace OCL collect shorthand ('.' notation) by QVTo xcollect shorthand ('->' notation) once it flattens: https://bugs.eclipse.org/bugs/show_bug.cgi?id=425536
+	}
+	endif;
+	
+	states += self;
+	
+	return states
+	
+}
+
+query State :: getAllInitiallyActiveStates() : OrderedSet(State) {
+		
+	var res : OrderedSet(State) = object OrderedSet(State) {};
+	
+	-- high priority regions first
+	self.embeddedRegions->sortedBy(-priority)->forEach(region) {
+		
+		res += region.embeddedStatechart.getAllInitiallyActiveStates();
+		
+	};
+	
+	return res
+		
+}
+	
+query RealtimeStatechart :: getAllInitiallyActiveStates() : OrderedSet(State) {
+	
+	var res : OrderedSet(State) = object OrderedSet(State) {};
+	
+	var initialStates : OrderedSet(State) = self.states->select(initial);
+	
+	res += initialStates;
+		
+	initialStates->forEach(s) {
+		res += s.getAllInitiallyActiveStates();
+	};
+	
+	return res;	
+	
+}
+
+query Vertex :: isCompositeState() : Boolean {
+	return self.oclIsKindOf(State) and self.oclAsType(State).composite();
+}
+
+query Vertex :: isSimpleState() : Boolean {
+	return self.oclIsKindOf(State) and self.oclAsType(State).simple;
+}
+
+query State :: composite() : Boolean {
+	return not self.simple
+}
+
+query State :: getParentState() : State {
+	
+	var parent : State;
+	
+	if(self.parentStatechart.embedded)
+	then {
+		parent := self.parentStatechart.parentRegion.parentState
+	}
+	endif;
+	
+	return parent
+	
+}
+
+query Vertex :: getTransitions() : OrderedSet(Transition) {
+	
+	var transitions : OrderedSet(Transition) = object OrderedSet(Transition) {};
+	
+	transitions += self.incomingTransitions;
+	transitions += self.outgoingTransitions;
+	
+	return transitions
+	
+}
+
+query RealtimeStatechart :: getTransitions() : OrderedSet(Transition) {
+	
+	var transitions : OrderedSet(Transition) = object OrderedSet(Transition) {};
+	
+	transitions += self.states.getTransitions();
+		
+	transitions += self.states->connectionPoints[EntryPoint].incomingTransitions;
+	transitions += self.states->connectionPoints[ExitPoint].outgoingTransitions;
+	// TODO replace OCL collect shorthand ('.' notation) by QVTo xcollect shorthand ('->' notation) once it flattens: https://bugs.eclipse.org/bugs/show_bug.cgi?id=425536
+	
+	return transitions;
+	
+}
+
+query Transition :: getStatechart() : RealtimeStatechart {
+	
+	var rtsc : RealtimeStatechart;
+	
+	if(self.source.oclIsKindOf(State))
+	then rtsc := self.source.oclAsType(State).parentStatechart
+	else {
+		if(self.target.oclIsKindOf(State))
+		then rtsc := self.target.oclAsType(State).parentStatechart
+		else {
+			if(self.source.oclIsKindOf(ExitPoint))
+			then rtsc := self.source.oclAsType(ExitPoint).state.parentStatechart
+			else {
+				if(self.target.oclIsKindOf(EntryPoint))
+				then rtsc := self.target.oclAsType(EntryPoint).state.parentStatechart
+				else assert fatal (false) with log('Cannot assign a statechart to this transition.')
+				endif
+			}
+			endif
+		}
+		endif
+	}
+	endif;
+	
+	return rtsc;
+	
+}
+
+query Transition :: isHighLevel() : Boolean {
+	
+	return 
+		(self.source.oclIsKindOf(State) and not self.source.oclAsType(State).simple) or
+		(self.target.oclIsKindOf(State) and not self.target.oclAsType(State).simple)
+}
+
+query Vertex :: getState() : State {
+	return assert fatal (false) with log("Should be overridden.");
+}
+
+query State :: getState() : State {
+	return self;
+}
+
+query StateConnectionPoint :: getState() : State {
+	return self.state;
+}
+
+
+-- the following queries yield the deactivated state represented by the passed vertex
+-- i) for states, this is always the state itself
+-- ii) for exit points, this is the parent state
+-- iii) for entry points, this is 'null', because an entry point does not represent a state deactivation 
+
+query Vertex :: getDeactivatedState() : State {
+	return assert fatal (false) with log("Should be overridden.");
+}
+
+query State :: getDeactivatedState() : State {
+	return self.getState();
+}
+
+query StateConnectionPoint :: getDeactivatedState() : State {
+	return assert fatal (false) with log("Should be overridden.");
+}
+
+query EntryPoint :: getDeactivatedState() : State {
+	return null;
+}
+
+query ExitPoint :: getDeactivatedState() : State {
+	return self.getState();
+}
+
+
+-- the following queries yield the activated state represented by the passed vertex
+-- i) for states, this is always the state itself
+-- ii) for entry points, this is the parent state
+-- iii) for exit points, this is 'null', because an exit point does not represent a state activation 
+
+query Vertex :: getActivatedState() : State {
+	return assert fatal (false) with log("Should be overridden.");
+}
+
+query State :: getActivatedState() : State {
+	return self.getState();
+}
+
+query StateConnectionPoint :: getActivatedState() : State {
+	return assert fatal (false) with log("Should be overridden.");
+}
+
+query EntryPoint :: getActivatedState() : State {
+	return self.getState();
+}
+
+query ExitPoint :: getActivatedState() : State {
+	return null;
+}
+
+// a helper that guarantees unique names by adding a suffix
+
+helper String :: addSuffixNumberUnderline() : String {
+	return self + "_".addSuffixNumber();
+}
+
+
+
+

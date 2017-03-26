@@ -1,0 +1,66 @@
+import org.muml.ImplicitCopy;
+import transforms.mtctl.MTCTLQuantifierNormalization;
+import transforms.mtctl.MTCTLStaticNormalization; 
+import transforms.mtctl.MTCTLPropertySplitTransformation;
+import transforms.mtctl.MTCTLInstanceReferenceNormalization;
+import transforms.CloneModel;
+import org.muml.uppaal.adapter._blackbox.ProgressUnit;
+
+modeltype muml uses 'http://www.muml.org/pim/1.0.0';
+
+modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype mumlConstraint uses pim::constraint('http://www.muml.org/pim/1.0.0');
+modeltype mumlBehavior uses pim::behavior('http://www.muml.org/pim/behavior/1.0.0');
+modeltype modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
+modeltype verification_extension uses 'http://www.muml.org/uppaal/adapter/extension/verificationextension/1.0.0';
+
+modeltype mtctl uses 'http://www.muml.org/uppaal/adapter/mtctl/1.0.0';
+modeltype mtctlQuantifiers uses mtctl::quantifiers('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlPredicates uses mtctl::predicates('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlSets uses mtctl::sets('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlBooleanLogic uses mtctl::booleanlogic('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlComparables uses mtctl::comparables('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+transformation MTCTLTransformation(in input:muml, out staticallyNormalizedOutput:muml, out propertySplitOutput:muml) access MTCTLInstanceReferenceNormalization, MTCTLQuantifierNormalization, MTCTLStaticNormalization, MTCTLPropertySplitTransformation;
+
+main() {
+	//Clone input model and delete all verification property repositories that do not belong to a VerifiableElement with an ElementToVerifyExtension
+	var clonedModel := muml.createEmptyModel().oclAsType(muml);
+	var cloneTransformation := new CloneModel(input, clonedModel);
+	var retcode := cloneTransformation.transform();
+	assert fatal (retcode.succeeded()) with log ('Clone Transformation failed: ' + retcode.raisedException().repr());
+	clonedModel.objects()[VerifiableElement]->select(ve | not ve.extensions->exists(oclIsKindOf(ElementToVerifyExtension)))->forEach(verifiableElement) {
+		verifiableElement.verificationConstraintRepositories->forEach(repository) {
+			clonedModel.removeElement(repository);
+		};
+		verifiableElement.verificationConstraintRepositories := OrderedSet {};
+	};
+
+	//Normalize MumlElemExpr::instance references
+	var instanceRefNormalizedModel := muml.createEmptyModel().oclAsType(muml);
+	var refNormalization := new MTCTLInstanceReferenceNormalization(clonedModel, instanceRefNormalizedModel);	
+	retcode := refNormalization.transform();
+	assert fatal (retcode.succeeded()) with log('Setting MumlElemExpr::instance normalization failed: ' + retcode.raisedException().repr());
+	
+	//Quantifier normalization (needs write access to its input model. However, the InstanceReferenceNormalization already creates a copy)
+	reportProgress("Normalization: MTCTL Set Quantifier");
+	var intermediateModel := muml.createEmptyModel().oclAsType(muml);
+	var quantifierNormalization := new MTCTLQuantifierNormalization(instanceRefNormalizedModel, intermediateModel);	
+	retcode := quantifierNormalization.transform();
+	assert fatal (retcode.succeeded()) with log('MTCTL Quantifier Normalization failed: ' + retcode.raisedException().repr());
+	
+	//Static normalization
+	reportProgress("Normalization: MTCTL Static Evaluation");
+	var staticNormalization := new MTCTLStaticNormalization(intermediateModel, staticallyNormalizedOutput);
+	retcode := staticNormalization.transform();
+	assert fatal (retcode.succeeded()) with log('Static MTCTL Normalization failed: ' + retcode.raisedException().repr());
+	
+	//PropertySplitNormalization
+	reportProgress("Normalization: MTCTL Split Properties");
+	var propertySplitTransformation := new MTCTLPropertySplitTransformation(staticallyNormalizedOutput, propertySplitOutput);
+	retcode := propertySplitTransformation.transform();
+	assert fatal (retcode.succeeded()) with log('MTCTL Property Split Transformation failed: ' + retcode.raisedException().repr());
+
+	
+}
