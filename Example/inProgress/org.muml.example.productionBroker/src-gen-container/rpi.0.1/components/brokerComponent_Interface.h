@@ -22,7 +22,7 @@
 		
 
 	//include Operation Repositories
-			#include "../operations/noSQLDatabaseOpRep.h"
+			#include "../operations/databaseOperationsOpRep.h"
 
 
 
@@ -262,14 +262,6 @@
 					void BrokerBrokerStateChart_processStep(BrokerBrokerStateChart* rtsc);
 			
 				/**
-				 * @brief Leaves the Region: orderBrokerforPsRTSC of the Realtime-StateChart: BrokerBroker
-				 * @details This method is called, whenever a the Region: orderBrokerforPsRTSC is left.
-				 * 			The correct State is set and all Exit-Events are executed.
-				 *
-				 * @param rtsc The specific BrokerBrokerStateChart whose Region: orderBrokerforPsRTSC shall be exit
-				 */
-					void BrokerBrokerForPSPortOrderBrokerforPsRTSCStateChart_exit(BrokerBrokerStateChart* rtsc);
-				/**
 				 * @brief Leaves the Region: getOrderStatechart of the Realtime-StateChart: BrokerBroker
 				 * @details This method is called, whenever a the Region: getOrderStatechart is left.
 				 * 			The correct State is set and all Exit-Events are executed.
@@ -277,6 +269,14 @@
 				 * @param rtsc The specific BrokerBrokerStateChart whose Region: getOrderStatechart shall be exit
 				 */
 					void BrokerGetOrderGetOrderStatechartStateChart_exit(BrokerBrokerStateChart* rtsc);
+				/**
+				 * @brief Leaves the Region: orderBrokerforPsRTSC of the Realtime-StateChart: BrokerBroker
+				 * @details This method is called, whenever a the Region: orderBrokerforPsRTSC is left.
+				 * 			The correct State is set and all Exit-Events are executed.
+				 *
+				 * @param rtsc The specific BrokerBrokerStateChart whose Region: orderBrokerforPsRTSC shall be exit
+				 */
+					void BrokerBrokerForPSPortOrderBrokerforPsRTSCStateChart_exit(BrokerBrokerStateChart* rtsc);
 						
 				/**
 				 * @brief Returns wether the Realtime-StateChart: BrokerBroker is in a specific State

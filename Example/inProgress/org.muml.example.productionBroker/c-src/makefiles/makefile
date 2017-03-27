@@ -20,8 +20,8 @@ CONT_LIB =  MessageBuffer.o LocalBufferManager.o DDS_Custom_Lib.o
 RTSC = brokerBrokerStateChart.o 
 COMP = brokerComponent.o  
 CONTMAPPING = 
-OPERATIONREPOSITORIES = sqliteDatabaseOpRep.o		
-LIB =   Debug.o sqlite.o
+OPERATIONREPOSITORIES = databaseOperationsOpRep.o		
+LIB =   Debug.o sqlite3.o
 CC = gcc
 CFLAGS = -DC99 -DDEBUG -ggdb -Wall -c  $(DEFINES) -I types -I lib -I $(NDDSHOME)/include -I $(NDDSHOME)/include/ndds -ldl -lpthread
 all: app
@@ -42,8 +42,6 @@ MUML_DDS.o: dds/MUML_DDS.c
 	$(CC) $(CFLAGS) dds/MUML_DDS.c
 
 
-
-
 MessageBuffer.o: container_lib/MessageBuffer.c
 	$(CC) $(CFLAGS) container_lib/MessageBuffer.c
 LocalBufferManager.o: container_lib/LocalBufferManager.c
@@ -58,11 +56,11 @@ MCC_brokerComponent.o: component_container/MCC_brokerComponent.c
 Debug.o: lib/Debug.c
 	$(CC) $(CFLAGS) lib/Debug.c
 
-sqlite.o: lib/sqlite3.c
+sqlite3.o: lib/sqlite3.c
 	$(CC) $(CFLAGS) lib/sqlite3.c
 	
- sqliteDatabaseOpRep.o: operations/sqliteDatabaseOpRep.c
-	$(CC) $(CFLAGS) operations/sqliteDatabaseOpRep.c
+databaseOperationsOpRep.o: operations/databaseOperationsOpRep.c
+	$(CC) $(CFLAGS) operations/databaseOperationsOpRep.c
 
 
 clean:

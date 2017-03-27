@@ -11,6 +11,10 @@
 
 //the following message types are not generated, because they have no parameters
 
+//definition for message type MessagesDoneOrder
+typedef struct MessagesDoneOrder_Messages_Message{
+	 int32_T orderID;
+}MessagesDoneOrder_Messages_Message;
 //definition for message type MessagesGetOrder
 typedef struct MessagesGetOrder_Messages_Message{
 	 int32_T psID;
@@ -22,10 +26,6 @@ typedef struct MessagesOrderForPS_Messages_Message{
 	 int32_T ingredientID;
 	 int32_T amount;
 }MessagesOrderForPS_Messages_Message;
-//definition for message type MessagesDoneOrder
-typedef struct MessagesDoneOrder_Messages_Message{
-	 int32_T orderID;
-}MessagesDoneOrder_Messages_Message;
 //definition for message type MessagesSimpleOrder
 typedef struct MessagesSimpleOrder_Messages_Message{
 	 int32_T orderID;

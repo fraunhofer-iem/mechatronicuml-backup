@@ -20,10 +20,10 @@ CONT_LIB =  MessageBuffer.o LocalBufferManager.o DDS_Custom_Lib.o
 RTSC = brokerBrokerStateChart.o 
 COMP = brokerComponent.o  
 CONTMAPPING = 
-OPERATIONREPOSITORIES = 	 noSQLDatabaseOpRep.o		
-LIB =   Debug.o unqlite.o
+OPERATIONREPOSITORIES = databaseOperationsOpRep.o		
+LIB =   Debug.o sqlite3.o
 CC = gcc
-CFLAGS = -DC99 -DDEBUG -ggdb -Wall -c  $(DEFINES) -I types -I lib -I $(NDDSHOME)/include -I $(NDDSHOME)/include/ndds 
+CFLAGS = -DC99 -DDEBUG -ggdb -Wall -c  $(DEFINES) -I types -I lib -I $(NDDSHOME)/include -I $(NDDSHOME)/include/ndds -ldl -lpthread
 all: app
 
 app : main.o $(RTSC) $(COMP) $(LIB) $(CONT_LIB) $(HYB) $(CONT) $(CONTMAPPING) $(OPERATIONREPOSITORIES)  $(DDSSOURCES)
@@ -42,8 +42,6 @@ MUML_DDS.o: dds/MUML_DDS.c
 	$(CC) $(CFLAGS) dds/MUML_DDS.c
 
 
-
-
 MessageBuffer.o: container_lib/MessageBuffer.c
 	$(CC) $(CFLAGS) container_lib/MessageBuffer.c
 LocalBufferManager.o: container_lib/LocalBufferManager.c
@@ -58,11 +56,11 @@ MCC_brokerComponent.o: component_container/MCC_brokerComponent.c
 Debug.o: lib/Debug.c
 	$(CC) $(CFLAGS) lib/Debug.c
 
-unqlite.o: lib/unqlite.c
-	$(CC) $(CFLAGS) lib/unqlite.c
+sqlite3.o: lib/sqlite3.c
+	$(CC) $(CFLAGS) lib/sqlite3.c
 	
- noSQLDatabaseOpRep.o: operations/noSQLDatabaseOpRep.c
-	$(CC) $(CFLAGS) operations/noSQLDatabaseOpRep.c
+databaseOperationsOpRep.o: operations/databaseOperationsOpRep.c
+	$(CC) $(CFLAGS) operations/databaseOperationsOpRep.c
 
 
 clean:
