@@ -1,4 +1,4 @@
-package featuredependencygraph.dot;
+package org.muml.featuredependencygraph.dot;
 
 
 

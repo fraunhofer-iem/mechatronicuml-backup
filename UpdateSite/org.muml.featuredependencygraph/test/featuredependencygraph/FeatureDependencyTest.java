@@ -1,4 +1,4 @@
-package featuredependencygraph;
+package org.muml.featuredependencygraph;
 
 import static org.junit.Assert.fail;
 
@@ -33,10 +33,10 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import featuredependencygraph.dot.Layouter;
+import org.muml.featuredependencygraph.dot.Layouter;
 
 // run me as JUnit Plugin Test
-public class FeatureDependencyGraph {
+public class FeatureDependencyTest {
 
 	public static final String WORKSPACE_LOC = "."; // This requires that the launch configuration
 													// sets ${workspace_loc} as working directory!
@@ -50,7 +50,7 @@ public class FeatureDependencyGraph {
 
 	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
 
-		new FeatureDependencyGraph().run();
+		new FeatureDependencyTest().run();
 
 	}
 

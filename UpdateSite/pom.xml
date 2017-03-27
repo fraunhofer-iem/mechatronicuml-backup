@@ -8,7 +8,7 @@
   <packaging>pom</packaging>
   
   <properties>
-	  <tycho.version>0.26.0</tycho.version>
+	  <tycho-version>0.26.0</tycho-version>
 	  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	  <mars-repo.url>http://download.eclipse.org/releases/mars</mars-repo.url>
   </properties>
@@ -16,7 +16,8 @@
   <modules>
     <!--<module>org.eclipse.acceleo.engine</module> -->
     <module>org.muml.releng.site.feature</module>
-	  <module>org.muml.releng.site.repository</module>
+	<module>org.muml.releng.site.repository</module>
+    <module>org.muml.featuredependencygraph</module>
   </modules>
   
   <build>
@@ -24,13 +25,13 @@
       <plugin>
         <groupId>org.eclipse.tycho</groupId>
         <artifactId>tycho-maven-plugin</artifactId>
-        <version>${tycho.version}</version>
+        <version>${tycho-version}</version>
         <extensions>true</extensions>
       </plugin>
 	  <plugin>
 		<groupId>org.eclipse.tycho</groupId>
 		<artifactId>target-platform-configuration</artifactId>
-		<version>${tycho.version}</version>
+		<version>${tycho-version}</version>
 		<configuration>
 		 <environments>
 		  <environment>
