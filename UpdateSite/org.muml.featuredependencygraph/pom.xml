@@ -19,10 +19,9 @@
             <artifactId>tycho-surefire-plugin</artifactId>
             <version>${tycho-version}</version>
             <configuration>
-			   <!--testClass>org.muml.featuredependencygraph.FeatureDependencyTest</testClass-->
                <product>org.eclipse.platform.ide</product>
-			   <!--osgiDataDirectory>${project.build.directory}/</osgiDataDirectory>
-				<deleteOsgiDataDirectory>false</deleteOsgiDataDirectory-->
+			   <osgiDataDirectory>WORKSPACE_LOC</osgiDataDirectory>
+			   <deleteOsgiDataDirectory>false</deleteOsgiDataDirectory>
             </configuration>
     	</plugin>
   	</plugins>
