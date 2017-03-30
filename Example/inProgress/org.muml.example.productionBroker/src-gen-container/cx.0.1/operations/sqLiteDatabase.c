@@ -59,9 +59,20 @@ int createDatabase()
     }
     //Create table productionStations
     const char *sqlProdStation = "DROP TABLE IF EXISTS ProductionStations;"
-    		 	 	 	 	 	 "CREATE TABLE ProductionStations (ProductionStationID INT, OrderID INT);";
+    		 	 	 	 	 	 "CREATE TABLE ProductionStations (ProductionStationID INT, ProducibleIngredients TEXT);";
 
     rc = sqlite3_exec(db, sqlProdStation, callback, 0, &errMsg);
+    if( rc ){
+    	fprintf(stderr, "SQL error: %s\n", errMsg);
+    	sqlite3_free(errMsg);
+    	return(1);
+    }
+
+    //Create table OrderAllocation
+    const char *sqlOrderAllocation = "DROP TABLE IF EXISTS OrderAllocation;"
+    		 	 	 	 	 	 "CREATE TABLE OrderAllocation (ProductionStationID INT, OrderID INT);";
+
+    rc = sqlite3_exec(db, sqlOrderAllocation, callback, 0, &errMsg);
     if( rc ){
     	fprintf(stderr, "SQL error: %s\n", errMsg);
     	sqlite3_free(errMsg);
@@ -79,7 +90,6 @@ int createDatabase()
 int insertOrder(int orderID, int ingredientID, int amount)
 {
 	int rc=0;
-	char *errMsg=0;
 	sqlite3_stmt *orderInsertionStmt;
 
 	//Prepare statement
@@ -123,14 +133,13 @@ int insertOrder(int orderID, int ingredientID, int amount)
 
 
 /**
- * Inserts pair orderId and productionStation into the table ProductionStations
+ * Inserts pair orderId and productionStation into the table OrderAllocation
  * Sets status of the order in table Orders to 'InProduction'
  */
 int defineProductionStationForOrder(int orderID, int productionStationID)
 {
 	int rc=0;
 	sqlite3_stmt *orderStatusStmt;
-	sqlite3_stmt *prodStationStmt;
 
 	//Set status of the order
 	const char *orderStatus = "Update Orders Set OrderStatus='InProduction' WHERE OrderID=?";
@@ -155,98 +164,74 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 	sqlite3_finalize(orderStatusStmt);
 
 
-	//Insert the production station into the Production Station Table
+	//Insert the allocation into the OrderAllocation Table
 	//Prepare statement
-	const char *prodStation = "INSERT INTO ProductionStations (ProductionStationID, OrderID) "
+	const char *orderAllocation = "INSERT INTO OrderAllocation (ProductionStationID, OrderID) "
 					"VALUES (?, ?);";
-
-	rc = sqlite3_prepare_v2(db, prodStation,-1, &prodStationStmt,0);
+	sqlite3_stmt *orderAllocStmt;
+	rc = sqlite3_prepare_v2(db, orderAllocation,-1, &orderAllocStmt,0);
 	if( rc ){
-		fprintf(stderr, "Could not prepare statement for order insertion: %s\n", sqlite3_errmsg(db));
+		fprintf(stderr, "Could not prepare statement for order allocation: %s\n", sqlite3_errmsg(db));
 		return rc;
 	}
 
 	//Bind parameters
-	rc =sqlite3_bind_int(prodStationStmt, 1, productionStationID);
+	rc =sqlite3_bind_int(orderAllocStmt, 1, productionStationID);
 	if( rc ){
 		fprintf(stderr, "Error for productionStationID: %s\n", sqlite3_errmsg(db));
 		return rc;
 	}
-	rc= sqlite3_bind_int(prodStationStmt, 2, orderID);
+	rc= sqlite3_bind_int(orderAllocStmt, 2, orderID);
 	if( rc ){
 		fprintf(stderr, "Error for orderID: %s\n", sqlite3_errmsg(db));
 		return rc;
 	}
 
 	//Execute statement, once step is sufficient for insertions
-	rc = sqlite3_step(prodStationStmt);
+	rc = sqlite3_step(orderAllocStmt);
 
 	if( rc!=SQLITE_DONE ){
-		fprintf(stderr, "Could not execute statement for order insertion: %s\n", sqlite3_errmsg(db));
+		fprintf(stderr, "Could not execute statement for order allocation: %s\n", sqlite3_errmsg(db));
 		return rc;
 	}
-	sqlite3_finalize(prodStationStmt);
-	printf("Successfully defined ProductionStation %d for order %d.\n", productionStationID, orderID);
+	sqlite3_finalize(orderAllocStmt);
+	printf("Successfully defined production station %d for order %d.\n", productionStationID, orderID);
 	return 0;
 }
 
 
 /**
- * Deletes order from table Order and from table ProductionStations
+ * Sets orderStatus to finished
  */
 int deleteOrder(int orderID)
 {
 	int rc=0;
-	sqlite3_stmt *deleteOrderPSStmt;
-	sqlite3_stmt *deleteOrderStmt;
 
-	//Prepare statement
-	const char *deleteOrderPS = "Update Orders Set OrderID=-1 Where OrderID = ?;";
+	sqlite3_stmt *orderStatusStmt;
 
-	rc = sqlite3_prepare_v2(db, deleteOrderPS,-1, &deleteOrderPSStmt,0);
+	//Set status of the order
+	const char *orderStatus = "Update Orders Set OrderStatus='Finished' WHERE OrderID=?";
+
+	rc = sqlite3_prepare_v2(db, orderStatus,-1, &orderStatusStmt,0);
 	if( rc ){
-		fprintf(stderr, "Could not prepare statement for order deletion: %s\n", sqlite3_errmsg(db));
+		fprintf(stderr, "Could not prepare statement for order status update: %s\n", sqlite3_errmsg(db));
 		return rc;
 	}
-
 	//Bind parameters
-	rc =sqlite3_bind_int(deleteOrderPSStmt, 1, orderID);
+	rc= sqlite3_bind_int(orderStatusStmt, 1, orderID);
 	if( rc ){
 		fprintf(stderr, "Error for orderID: %s\n", sqlite3_errmsg(db));
 		return rc;
 	}
-	//Execute statement, once step is sufficient for deletions
-	rc = sqlite3_step(deleteOrderPSStmt);
+	//Execute statement, once step is sufficient for insertions
+	rc = sqlite3_step(orderStatusStmt);
 	if( rc!=SQLITE_DONE ){
-		fprintf(stderr, "Could not execute statement for order deletion: %s\n", sqlite3_errmsg(db));
-		return -1;
-	}
-	sqlite3_finalize(deleteOrderPSStmt);
-
-	//Prepare statement
-	const char *deleteOrder = "Delete from Orders Where OrderID = ?;";
-
-	rc = sqlite3_prepare_v2(db, deleteOrder,-1, &deleteOrderStmt,0);
-	if( rc ){
-		fprintf(stderr, "Could not prepare statement for order deletion: %s\n", sqlite3_errmsg(db));
+		fprintf(stderr, "Could not execute statement for order status update: %s\n", sqlite3_errmsg(db));
 		return rc;
 	}
+	sqlite3_finalize(orderStatusStmt);
 
-	//Bind parameters
-	rc =sqlite3_bind_int(deleteOrderStmt, 1, orderID);
-	if( rc ){
-		fprintf(stderr, "Error for orderID: %s\n", sqlite3_errmsg(db));
-		return rc;
-	}
-	//Execute statement, once step is sufficient for deletions
-	rc = sqlite3_step(deleteOrderStmt);
-	if( rc!=SQLITE_DONE ){
-		fprintf(stderr, "Could not execute statement for order deletion: %s\n", sqlite3_errmsg(db));
-		return -1;
-	}
-
-	sqlite3_finalize(deleteOrderStmt);
-	printf("Successfully deleted order %d.\n", orderID);
+	printf("Successfully marked order %d as finished.\n", orderID);
 	return 0;
 
 }
