@@ -9,8 +9,8 @@ For more information, type 'rtiddsgen -help' at a command shell
 or consult the RTI Connext manual.
 */
 
-#ifndef MUML_DDS_1362043625_h
-#define MUML_DDS_1362043625_h
+#ifndef MUML_DDS_1362043657_h
+#define MUML_DDS_1362043657_h
 
 #ifndef NDDS_STANDALONE_TYPE
 #ifndef ndds_c_h
@@ -20,11 +20,71 @@ or consult the RTI Connext manual.
 #include "ndds_standalone_type.h"
 #endif
 
+struct DDS_MessagesdoneOrder_Messages;
 struct DDS_MessagesnoOrder_Messages;
 struct DDS_MessagessimpleOrder_Messages;
 struct DDS_MessagesgetOrder_Messages;
 struct DDS_MessagesorderForPS_Messages;
-struct DDS_MessagesdoneOrder_Messages;
+
+extern const char *DDS_MessagesdoneOrder_MessagesTYPENAME;
+
+typedef struct DDS_MessagesdoneOrder_Messages {
+
+    DDS_Long   orderID ;
+
+} DDS_MessagesdoneOrder_Messages ;
+#if (defined(RTI_WIN32) || defined (RTI_WINCE)) && defined(NDDS_USER_DLL_EXPORT)
+/* If the code is building on Windows, start exporting symbols.
+*/
+#undef NDDSUSERDllExport
+#define NDDSUSERDllExport __declspec(dllexport)
+#endif
+
+NDDSUSERDllExport DDS_TypeCode* DDS_MessagesdoneOrder_Messages_get_typecode(void); /* Type code */
+
+DDS_SEQUENCE(DDS_MessagesdoneOrder_MessagesSeq, DDS_MessagesdoneOrder_Messages);                                        
+
+NDDSUSERDllExport
+RTIBool DDS_MessagesdoneOrder_Messages_initialize(
+    DDS_MessagesdoneOrder_Messages* self);
+
+NDDSUSERDllExport
+RTIBool DDS_MessagesdoneOrder_Messages_initialize_ex(
+    DDS_MessagesdoneOrder_Messages* self,RTIBool allocatePointers,RTIBool allocateMemory);
+
+NDDSUSERDllExport
+RTIBool DDS_MessagesdoneOrder_Messages_initialize_w_params(
+    DDS_MessagesdoneOrder_Messages* self,
+    const struct DDS_TypeAllocationParams_t * allocParams);        
+
+NDDSUSERDllExport
+void DDS_MessagesdoneOrder_Messages_finalize(
+    DDS_MessagesdoneOrder_Messages* self);
+
+NDDSUSERDllExport
+void DDS_MessagesdoneOrder_Messages_finalize_ex(
+    DDS_MessagesdoneOrder_Messages* self,RTIBool deletePointers);
+
+NDDSUSERDllExport
+void DDS_MessagesdoneOrder_Messages_finalize_w_params(
+    DDS_MessagesdoneOrder_Messages* self,
+    const struct DDS_TypeDeallocationParams_t * deallocParams);
+
+NDDSUSERDllExport
+void DDS_MessagesdoneOrder_Messages_finalize_optional_members(
+    DDS_MessagesdoneOrder_Messages* self, RTIBool deletePointers);  
+
+NDDSUSERDllExport
+RTIBool DDS_MessagesdoneOrder_Messages_copy(
+    DDS_MessagesdoneOrder_Messages* dst,
+    const DDS_MessagesdoneOrder_Messages* src);
+
+#if (defined(RTI_WIN32) || defined (RTI_WINCE)) && defined(NDDS_USER_DLL_EXPORT)
+/* If the code is building on Windows, stop exporting symbols.
+*/
+#undef NDDSUSERDllExport
+#define NDDSUSERDllExport
+#endif
 
 extern const char *DDS_MessagesnoOrder_MessagesTYPENAME;
 
@@ -153,6 +213,7 @@ extern const char *DDS_MessagesgetOrder_MessagesTYPENAME;
 typedef struct DDS_MessagesgetOrder_Messages {
 
     DDS_Long   psID ;
+    DDS_Long   producibleIngredients ;
 
 } DDS_MessagesgetOrder_Messages ;
 #if (defined(RTI_WIN32) || defined (RTI_WINCE)) && defined(NDDS_USER_DLL_EXPORT)
@@ -263,66 +324,6 @@ NDDSUSERDllExport
 RTIBool DDS_MessagesorderForPS_Messages_copy(
     DDS_MessagesorderForPS_Messages* dst,
     const DDS_MessagesorderForPS_Messages* src);
-
-#if (defined(RTI_WIN32) || defined (RTI_WINCE)) && defined(NDDS_USER_DLL_EXPORT)
-/* If the code is building on Windows, stop exporting symbols.
-*/
-#undef NDDSUSERDllExport
-#define NDDSUSERDllExport
-#endif
-
-extern const char *DDS_MessagesdoneOrder_MessagesTYPENAME;
-
-typedef struct DDS_MessagesdoneOrder_Messages {
-
-    DDS_Long   orderID ;
-
-} DDS_MessagesdoneOrder_Messages ;
-#if (defined(RTI_WIN32) || defined (RTI_WINCE)) && defined(NDDS_USER_DLL_EXPORT)
-/* If the code is building on Windows, start exporting symbols.
-*/
-#undef NDDSUSERDllExport
-#define NDDSUSERDllExport __declspec(dllexport)
-#endif
-
-NDDSUSERDllExport DDS_TypeCode* DDS_MessagesdoneOrder_Messages_get_typecode(void); /* Type code */
-
-DDS_SEQUENCE(DDS_MessagesdoneOrder_MessagesSeq, DDS_MessagesdoneOrder_Messages);                                        
-
-NDDSUSERDllExport
-RTIBool DDS_MessagesdoneOrder_Messages_initialize(
-    DDS_MessagesdoneOrder_Messages* self);
-
-NDDSUSERDllExport
-RTIBool DDS_MessagesdoneOrder_Messages_initialize_ex(
-    DDS_MessagesdoneOrder_Messages* self,RTIBool allocatePointers,RTIBool allocateMemory);
-
-NDDSUSERDllExport
-RTIBool DDS_MessagesdoneOrder_Messages_initialize_w_params(
-    DDS_MessagesdoneOrder_Messages* self,
-    const struct DDS_TypeAllocationParams_t * allocParams);        
-
-NDDSUSERDllExport
-void DDS_MessagesdoneOrder_Messages_finalize(
-    DDS_MessagesdoneOrder_Messages* self);
-
-NDDSUSERDllExport
-void DDS_MessagesdoneOrder_Messages_finalize_ex(
-    DDS_MessagesdoneOrder_Messages* self,RTIBool deletePointers);
-
-NDDSUSERDllExport
-void DDS_MessagesdoneOrder_Messages_finalize_w_params(
-    DDS_MessagesdoneOrder_Messages* self,
-    const struct DDS_TypeDeallocationParams_t * deallocParams);
-
-NDDSUSERDllExport
-void DDS_MessagesdoneOrder_Messages_finalize_optional_members(
-    DDS_MessagesdoneOrder_Messages* self, RTIBool deletePointers);  
-
-NDDSUSERDllExport
-RTIBool DDS_MessagesdoneOrder_Messages_copy(
-    DDS_MessagesdoneOrder_Messages* dst,
-    const DDS_MessagesdoneOrder_Messages* src);
 
 #if (defined(RTI_WIN32) || defined (RTI_WINCE)) && defined(NDDS_USER_DLL_EXPORT)
 /* If the code is building on Windows, stop exporting symbols.

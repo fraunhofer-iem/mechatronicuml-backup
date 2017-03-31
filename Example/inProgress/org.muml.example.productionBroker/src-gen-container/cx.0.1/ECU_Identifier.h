@@ -9,8 +9,8 @@
 */
 			//Identifier for Messages used on this ECU
 					#define MESSAGE_MESSAGESDONEORDERMESSAGESMESSAGE 1 /**< ECU Identifier: For the Message-Type: doneOrder */
-					#define MESSAGE_MESSAGESORDERFORPSMESSAGESMESSAGE 2 /**< ECU Identifier: For the Message-Type: orderForPS */
-					#define MESSAGE_MESSAGESSIMPLEORDERMESSAGESMESSAGE 3 /**< ECU Identifier: For the Message-Type: simpleOrder */
+					#define MESSAGE_MESSAGESSIMPLEORDERMESSAGESMESSAGE 2 /**< ECU Identifier: For the Message-Type: simpleOrder */
+					#define MESSAGE_MESSAGESORDERFORPSMESSAGESMESSAGE 3 /**< ECU Identifier: For the Message-Type: orderForPS */
 					#define MESSAGE_MESSAGESGETORDERMESSAGESMESSAGE 4 /**< ECU Identifier: For the Message-Type: getOrder */
 					#define MESSAGE_MESSAGESNOORDERMESSAGESMESSAGE 5 /**< ECU Identifier: For the Message-Type: noOrder */
 

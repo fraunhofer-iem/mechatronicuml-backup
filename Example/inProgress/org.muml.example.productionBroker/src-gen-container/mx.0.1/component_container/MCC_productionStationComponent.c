@@ -249,6 +249,7 @@
 															DDS_MessagesgetOrder_Messages *instance = DDS_MessagesgetOrder_MessagesTypeSupport_create_data_ex(DDS_BOOLEAN_TRUE);
 															//make message transformation
 																	instance->psID = msg->psID;
+																	instance->producibleIngredients = msg->producibleIngredients;
 															
 															//write the actual data
 															DDS_MessagesgetOrder_MessagesDataWriter_write(concrete_writer, instance, &DDS_HANDLE_NIL);
@@ -270,7 +271,7 @@
 		*/
 			static ProductionStationComponent* MCC_ProductionStationComponent_Builder(productionStationComponent_Builder* b){
 				instancePool[pool_index].ID = b->ID;
-				instancePool[pool_index].stateChart = ProductionStationPorductionStationRTSCStateChart_create(
+				instancePool[pool_index].stateChart = ProductionStationProductionStationRTSCStateChart_create(
 					&instancePool[pool_index]);
 				//call init after RTSC was created
 				ProductionStationComponent_initialize(&instancePool[pool_index]);

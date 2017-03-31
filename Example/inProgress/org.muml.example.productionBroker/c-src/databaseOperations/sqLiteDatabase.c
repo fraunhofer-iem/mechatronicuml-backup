@@ -18,7 +18,7 @@ int insertOrder(int orderId, int ingredientID, int amount);
 int defineProductionStationForOrder(int orderID, int productionStationID);
 int getOrderIngredientID(int orderID);
 int getOrderAmount(int orderID);
-int searchOrder(int orderID);
+int searchOrder(int orderID, int producibleIngredients);
 int deleteOrder(int orderID);
 void extractLogsAndExit();
 
@@ -316,18 +316,24 @@ int getOrderAmount(int orderID)
 /**
  * Searches an order without a production station assigned
  */
-int searchOrder(int orderId)
+int searchOrder(int orderId, int producibleIngredients)
 {
 	int rc=0;
 	sqlite3_stmt *searchOrderStmt;
 
 	//Prepare statement
-	const char *searchOrder = "Select OrderID from Orders Where OrderStatus = 'IDLE';";
+	const char *searchOrder = "Select OrderID from Orders Where OrderStatus = 'IDLE' and Ingredient=?;";
 
 	rc = sqlite3_prepare_v2(db, searchOrder,-1, &searchOrderStmt,0);
 	if( rc ){
 		fprintf(stderr, "Could not prepare statement for order retrieval: %s\n", sqlite3_errmsg(db));
 		return -1;
+	}
+	//Bind parameters
+	rc =sqlite3_bind_int(searchOrderStmt, 1, producibleIngredients);
+	if( rc ){
+		fprintf(stderr, "Could not prepare statement for order retrieval: %s\n", sqlite3_errmsg(db));
+		return rc;
 	}
 
 	//Execute statement

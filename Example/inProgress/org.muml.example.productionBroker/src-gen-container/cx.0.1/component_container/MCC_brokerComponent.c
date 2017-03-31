@@ -263,6 +263,7 @@
 																}
 																//make message transformation
 																		msg->psID = instance->psID;
+																		msg->producibleIngredients = instance->producibleIngredients;
 																
 																DDS_MessagesgetOrder_MessagesTypeSupport_delete_data_ex(instance,DDS_BOOLEAN_TRUE);
 																return true;

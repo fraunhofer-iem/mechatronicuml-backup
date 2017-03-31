@@ -8,7 +8,7 @@
 		void ProductionStationComponent_initialize(
 				ProductionStationComponent* component) {
 		
-			ProductionStationPorductionStationRTSCStateChart_initialize(
+			ProductionStationProductionStationRTSCStateChart_initialize(
 					component->stateChart);
 			/*Initialize all DirectedTypedPorts*/
 		}
@@ -26,7 +26,7 @@
 
 		void ProductionStationComponent_destroy(ProductionStationComponent* component) {
 			if (component != NULL) {
-				ProductionStationPorductionStationRTSCStateChart_destroy(
+				ProductionStationProductionStationRTSCStateChart_destroy(
 						component->stateChart);
 		
 				//temporarly deactivated
@@ -41,16 +41,16 @@
 		void ProductionStationComponent_processStep(ProductionStationComponent* component) {
 				
 		
-					component->stateChart->ProductionStationPorductionStationRTSC_isExecutable = true;
+					component->stateChart->ProductionStationProductionStationRTSC_isExecutable = true;
 					component->stateChart->ProductionStationGetOrderParameterizedGetOrderRTSC_isExecutable = true;
-				ProductionStationPorductionStationRTSCStateChart_processStep(component->stateChart);
+				ProductionStationProductionStationRTSCStateChart_processStep(component->stateChart);
 					
 				
 			
 		}
 
 		
-		ProductionStationPorductionStationRTSCStateChart* ProductionStationComponent_getStateMachine(ProductionStationComponent* component) {
+		ProductionStationProductionStationRTSCStateChart* ProductionStationComponent_getStateMachine(ProductionStationComponent* component) {
 					return component->stateChart;
 				} 
 			Port* ProductionStationComponent_getgetOrder(ProductionStationComponent* component) {

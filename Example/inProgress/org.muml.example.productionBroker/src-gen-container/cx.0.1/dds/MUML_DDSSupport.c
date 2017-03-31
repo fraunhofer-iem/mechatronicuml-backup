@@ -20,6 +20,106 @@ TDataWriter,
 TDataReader,
 TTypeSupport
 
+Configure and implement 'DDS_MessagesdoneOrder_Messages' support classes.
+
+Note: Only the #defined classes get defined
+*/
+
+/* ----------------------------------------------------------------- */
+/* DDSDataWriter
+*/
+
+/**
+<<IMPLEMENTATION >>
+
+Defines:   TDataWriter, TData
+*/
+
+/* Requires */
+#define TTYPENAME   DDS_MessagesdoneOrder_MessagesTYPENAME
+
+/* Defines */
+#define TDataWriter DDS_MessagesdoneOrder_MessagesDataWriter
+#define TData       DDS_MessagesdoneOrder_Messages
+
+#include "dds_c/generic/dds_c_data_TDataWriter.gen"
+
+#undef TDataWriter
+#undef TData
+
+#undef TTYPENAME
+
+/* ----------------------------------------------------------------- */
+/* DDSDataReader
+*/
+
+/**
+<<IMPLEMENTATION >>
+
+Defines:   TDataReader, TDataSeq, TData
+*/
+
+/* Requires */
+#define TTYPENAME   DDS_MessagesdoneOrder_MessagesTYPENAME
+
+/* Defines */
+#define TDataReader DDS_MessagesdoneOrder_MessagesDataReader
+#define TDataSeq    DDS_MessagesdoneOrder_MessagesSeq
+#define TData       DDS_MessagesdoneOrder_Messages
+
+#include "dds_c/generic/dds_c_data_TDataReader.gen"
+
+#undef TDataReader
+#undef TDataSeq
+#undef TData
+
+#undef TTYPENAME
+
+/* ----------------------------------------------------------------- */
+/* TypeSupport
+
+<<IMPLEMENTATION >>
+
+Requires:  TTYPENAME,
+TPlugin_new
+TPlugin_delete
+Defines:   TTypeSupport, TData, TDataReader, TDataWriter
+*/
+
+/* Requires */
+#define TTYPENAME    DDS_MessagesdoneOrder_MessagesTYPENAME
+#define TPlugin_new  DDS_MessagesdoneOrder_MessagesPlugin_new
+#define TPlugin_delete  DDS_MessagesdoneOrder_MessagesPlugin_delete
+
+/* Defines */
+#define TTypeSupport DDS_MessagesdoneOrder_MessagesTypeSupport
+#define TData        DDS_MessagesdoneOrder_Messages
+#define TDataReader  DDS_MessagesdoneOrder_MessagesDataReader
+#define TDataWriter  DDS_MessagesdoneOrder_MessagesDataWriter
+#define TGENERATE_SER_CODE
+#define TGENERATE_TYPECODE
+
+#include "dds_c/generic/dds_c_data_TTypeSupport.gen"
+
+#undef TTypeSupport
+#undef TData
+#undef TDataReader
+#undef TDataWriter
+#undef TGENERATE_TYPECODE
+#undef TGENERATE_SER_CODE
+#undef TTYPENAME
+#undef TPlugin_new
+#undef TPlugin_delete
+
+/* ========================================================================= */
+/**
+<<IMPLEMENTATION>>
+
+Defines:   TData,
+TDataWriter,
+TDataReader,
+TTypeSupport
+
 Configure and implement 'DDS_MessagesnoOrder_Messages' support classes.
 
 Note: Only the #defined classes get defined
@@ -396,106 +496,6 @@ Defines:   TTypeSupport, TData, TDataReader, TDataWriter
 #define TData        DDS_MessagesorderForPS_Messages
 #define TDataReader  DDS_MessagesorderForPS_MessagesDataReader
 #define TDataWriter  DDS_MessagesorderForPS_MessagesDataWriter
-#define TGENERATE_SER_CODE
-#define TGENERATE_TYPECODE
-
-#include "dds_c/generic/dds_c_data_TTypeSupport.gen"
-
-#undef TTypeSupport
-#undef TData
-#undef TDataReader
-#undef TDataWriter
-#undef TGENERATE_TYPECODE
-#undef TGENERATE_SER_CODE
-#undef TTYPENAME
-#undef TPlugin_new
-#undef TPlugin_delete
-
-/* ========================================================================= */
-/**
-<<IMPLEMENTATION>>
-
-Defines:   TData,
-TDataWriter,
-TDataReader,
-TTypeSupport
-
-Configure and implement 'DDS_MessagesdoneOrder_Messages' support classes.
-
-Note: Only the #defined classes get defined
-*/
-
-/* ----------------------------------------------------------------- */
-/* DDSDataWriter
-*/
-
-/**
-<<IMPLEMENTATION >>
-
-Defines:   TDataWriter, TData
-*/
-
-/* Requires */
-#define TTYPENAME   DDS_MessagesdoneOrder_MessagesTYPENAME
-
-/* Defines */
-#define TDataWriter DDS_MessagesdoneOrder_MessagesDataWriter
-#define TData       DDS_MessagesdoneOrder_Messages
-
-#include "dds_c/generic/dds_c_data_TDataWriter.gen"
-
-#undef TDataWriter
-#undef TData
-
-#undef TTYPENAME
-
-/* ----------------------------------------------------------------- */
-/* DDSDataReader
-*/
-
-/**
-<<IMPLEMENTATION >>
-
-Defines:   TDataReader, TDataSeq, TData
-*/
-
-/* Requires */
-#define TTYPENAME   DDS_MessagesdoneOrder_MessagesTYPENAME
-
-/* Defines */
-#define TDataReader DDS_MessagesdoneOrder_MessagesDataReader
-#define TDataSeq    DDS_MessagesdoneOrder_MessagesSeq
-#define TData       DDS_MessagesdoneOrder_Messages
-
-#include "dds_c/generic/dds_c_data_TDataReader.gen"
-
-#undef TDataReader
-#undef TDataSeq
-#undef TData
-
-#undef TTYPENAME
-
-/* ----------------------------------------------------------------- */
-/* TypeSupport
-
-<<IMPLEMENTATION >>
-
-Requires:  TTYPENAME,
-TPlugin_new
-TPlugin_delete
-Defines:   TTypeSupport, TData, TDataReader, TDataWriter
-*/
-
-/* Requires */
-#define TTYPENAME    DDS_MessagesdoneOrder_MessagesTYPENAME
-#define TPlugin_new  DDS_MessagesdoneOrder_MessagesPlugin_new
-#define TPlugin_delete  DDS_MessagesdoneOrder_MessagesPlugin_delete
-
-/* Defines */
-#define TTypeSupport DDS_MessagesdoneOrder_MessagesTypeSupport
-#define TData        DDS_MessagesdoneOrder_Messages
-#define TDataReader  DDS_MessagesdoneOrder_MessagesDataReader
-#define TDataWriter  DDS_MessagesdoneOrder_MessagesDataWriter
 #define TGENERATE_SER_CODE
 #define TGENERATE_TYPECODE
 

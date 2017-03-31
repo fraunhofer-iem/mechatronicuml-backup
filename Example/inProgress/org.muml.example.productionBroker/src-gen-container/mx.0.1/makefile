@@ -17,10 +17,10 @@ DDSSOURCES = MUML_DDSSupport.o MUML_DDSPlugin.o MUML_DDS.o
 CONT =  MCC_productionStationComponent.o
 CONT_LIB =  MessageBuffer.o LocalBufferManager.o DDS_Custom_Lib.o
 
-RTSC = productionStationPorductionStationRTSCStateChart.o 
+RTSC = productionStationProductionStationRTSCStateChart.o 
 COMP = productionStationComponent.o  
 CONTMAPPING = 
-OPERATIONREPOSITORIES = 	 iDManagementOpRep.o		
+OPERATIONREPOSITORIES = 	 productionManagementOpRep.o	 iDManagementOpRep.o		
 LIB =   Debug.o
 CC = gcc
 CFLAGS = -DC99 -DDEBUG -ggdb -Wall -c  $(DEFINES) -I types -I lib -I $(NDDSHOME)/include -I $(NDDSHOME)/include/ndds 
@@ -28,8 +28,8 @@ all: app
 
 app : main.o $(RTSC) $(COMP) $(LIB) $(CONT_LIB) $(HYB) $(CONT) $(CONTMAPPING) $(OPERATIONREPOSITORIES)  $(DDSSOURCES)
 	$(CC) main.o $(RTSC) $(COMP) $(LIB) $(CONT_LIB) $(HYB) $(CONT) $(CONTMAPPING)$(OPERATIONREPOSITORIES) $(DDSSOURCES) $(LIBS) -o app
-productionStationPorductionStationRTSCStateChart.o: RTSCs/productionStationPorductionStationRTSCStateChart.c
-	$(CC) $(CFLAGS) RTSCs/productionStationPorductionStationRTSCStateChart.c
+productionStationProductionStationRTSCStateChart.o: RTSCs/productionStationProductionStationRTSCStateChart.c
+	$(CC) $(CFLAGS) RTSCs/productionStationProductionStationRTSCStateChart.c
 productionStationComponent.o: components/productionStationComponent.c
 	$(CC) $(CFLAGS) components/productionStationComponent.c
 
@@ -59,6 +59,8 @@ Debug.o: lib/Debug.c
 	$(CC) $(CFLAGS) lib/Debug.c
 
 
+ productionManagementOpRep.o: operations/productionManagementOpRep.c
+	$(CC) $(CFLAGS) operations/productionManagementOpRep.c
  iDManagementOpRep.o: operations/iDManagementOpRep.c
 	$(CC) $(CFLAGS) operations/iDManagementOpRep.c
 
