@@ -72,7 +72,7 @@
                     <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_jIVGkd5REeWffpOzzKuOVw" typedNamedElement="_aOAP4N5REeWffpOzzKuOVw"/>
                     <rightExpression xsi:type="common:ArithmeticExpression" xmi:id="_jIVGkt5REeWffpOzzKuOVw" operator="TIMES">
                       <leftExpression xsi:type="common:LiteralExpression" xmi:id="_jIVGk95REeWffpOzzKuOVw" value="2"/>
-                      <rightExpression xsi:type="actionlanguage:TimeValueExpression" xmi:id="_jIVGlN5REeWffpOzzKuOVw" timeValue="_eXEMsITCEeKO9r0VL65xcg"/>
+                      <rightExpression xsi:type="actionlanguage:MaxMessageDelayReferenceExpression" xmi:id="_jIVGlN5REeWffpOzzKuOVw" timeValue="_eXEMsITCEeKO9r0VL65xcg"/>
                     </rightExpression>
                   </value>
                 </bound>
@@ -96,7 +96,7 @@
                     <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_hK8M0d5REeWffpOzzKuOVw" typedNamedElement="_aOAP4N5REeWffpOzzKuOVw"/>
                     <rightExpression xsi:type="common:ArithmeticExpression" xmi:id="_hK8M0t5REeWffpOzzKuOVw" operator="TIMES">
                       <leftExpression xsi:type="common:LiteralExpression" xmi:id="_hK8M095REeWffpOzzKuOVw" value="2"/>
-                      <rightExpression xsi:type="actionlanguage:TimeValueExpression" xmi:id="_hK8M1N5REeWffpOzzKuOVw" timeValue="_eXEMsITCEeKO9r0VL65xcg"/>
+                      <rightExpression xsi:type="actionlanguage:MaxMessageDelayReferenceExpression" xmi:id="_hK8M1N5REeWffpOzzKuOVw" timeValue="_eXEMsITCEeKO9r0VL65xcg"/>
                     </rightExpression>
                   </value>
                 </bound>
@@ -139,7 +139,7 @@
               <leftExpression xsi:type="common:LiteralExpression" xmi:id="_JD_58fgwEeaNl76fSbnhvA" value="21"/>
               <rightExpression xsi:type="common:ArithmeticExpression" xmi:id="_JD_58vgwEeaNl76fSbnhvA" operator="TIMES">
                 <leftExpression xsi:type="common:LiteralExpression" xmi:id="_JD_58_gwEeaNl76fSbnhvA" value="2"/>
-                <rightExpression xsi:type="actionlanguage:TimeValueExpression" xmi:id="_JD_59PgwEeaNl76fSbnhvA" timeValue="_eXEMsITCEeKO9r0VL65xcg"/>
+                <rightExpression xsi:type="actionlanguage:MaxMessageDelayReferenceExpression" xmi:id="_JD_59PgwEeaNl76fSbnhvA" timeValue="_eXEMsITCEeKO9r0VL65xcg"/>
               </rightExpression>
             </value>
           </bound>
@@ -164,7 +164,7 @@
               <leftExpression xsi:type="common:LiteralExpression" xmi:id="_ALwG4fgwEeaNl76fSbnhvA" value="21"/>
               <rightExpression xsi:type="common:ArithmeticExpression" xmi:id="_ALwG4vgwEeaNl76fSbnhvA" operator="TIMES">
                 <leftExpression xsi:type="common:LiteralExpression" xmi:id="_ALwG4_gwEeaNl76fSbnhvA" value="2"/>
-                <rightExpression xsi:type="actionlanguage:TimeValueExpression" xmi:id="_ALwG5PgwEeaNl76fSbnhvA" timeValue="_eXEMsITCEeKO9r0VL65xcg"/>
+                <rightExpression xsi:type="actionlanguage:MaxMessageDelayReferenceExpression" xmi:id="_ALwG5PgwEeaNl76fSbnhvA" timeValue="_eXEMsITCEeKO9r0VL65xcg"/>
               </rightExpression>
             </value>
           </bound>
