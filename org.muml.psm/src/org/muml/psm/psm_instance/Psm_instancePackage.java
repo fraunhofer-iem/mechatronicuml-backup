@@ -152,6 +152,15 @@ public interface Psm_instancePackage extends EPackage {
 	int PARAMETERISABLE_DISCRETE_SINGLE_PORT_INSTANCE__PORT_PART = InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__PORT_PART;
 
 	/**
+	 * The feature id for the '<em><b>Runnable</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETERISABLE_DISCRETE_SINGLE_PORT_INSTANCE__RUNNABLE = InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__RUNNABLE;
+
+	/**
 	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -249,6 +258,141 @@ public interface Psm_instancePackage extends EPackage {
 	 * @ordered
 	 */
 	int PARAMETERISABLE_DISCRETE_SINGLE_PORT_INSTANCE_FEATURE_COUNT = InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETERISABLE_DISCRETE_SINGLE_PORT_INSTANCE___ECLASS = InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETERISABLE_DISCRETE_SINGLE_PORT_INSTANCE___EIS_PROXY = InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETERISABLE_DISCRETE_SINGLE_PORT_INSTANCE___ERESOURCE = InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETERISABLE_DISCRETE_SINGLE_PORT_INSTANCE___ECONTAINER = InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETERISABLE_DISCRETE_SINGLE_PORT_INSTANCE___ECONTAINING_FEATURE = InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETERISABLE_DISCRETE_SINGLE_PORT_INSTANCE___ECONTAINMENT_FEATURE = InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETERISABLE_DISCRETE_SINGLE_PORT_INSTANCE___ECONTENTS = InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETERISABLE_DISCRETE_SINGLE_PORT_INSTANCE___EALL_CONTENTS = InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETERISABLE_DISCRETE_SINGLE_PORT_INSTANCE___ECROSS_REFERENCES = InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETERISABLE_DISCRETE_SINGLE_PORT_INSTANCE___EGET__ESTRUCTURALFEATURE = InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETERISABLE_DISCRETE_SINGLE_PORT_INSTANCE___EGET__ESTRUCTURALFEATURE_BOOLEAN = InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETERISABLE_DISCRETE_SINGLE_PORT_INSTANCE___ESET__ESTRUCTURALFEATURE_OBJECT = InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETERISABLE_DISCRETE_SINGLE_PORT_INSTANCE___EIS_SET__ESTRUCTURALFEATURE = InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETERISABLE_DISCRETE_SINGLE_PORT_INSTANCE___EUNSET__ESTRUCTURALFEATURE = InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETERISABLE_DISCRETE_SINGLE_PORT_INSTANCE___EINVOKE__EOPERATION_ELIST = InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.

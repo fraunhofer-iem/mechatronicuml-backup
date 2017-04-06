@@ -37,9 +37,9 @@ public class APIMappingLanguageParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getExpressionAccess().getAlternatives(), "rule__Expression__Alternatives");
 					put(grammarAccess.getParamaterBindingAccess().getValueAlternatives_3_0(), "rule__ParamaterBinding__ValueAlternatives_3_0");
 					put(grammarAccess.getExpressionStartRuleAccess().getAlternatives(), "rule__ExpressionStartRule__Alternatives");
+					put(grammarAccess.getOperandAccess().getAlternatives(), "rule__Operand__Alternatives");
 					put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
 					put(grammarAccess.getEntryAccess().getAlternatives(), "rule__Entry__Alternatives");
 					put(grammarAccess.getForLoopCountingExpressionAccess().getAlternatives_1(), "rule__ForLoopCountingExpression__Alternatives_1");
@@ -49,8 +49,8 @@ public class APIMappingLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMultiplicationExpressionAccess().getAlternatives(), "rule__MultiplicationExpression__Alternatives");
 					put(grammarAccess.getMultiplicationExpressionAccess().getRightExpressionAlternatives_1_1_2_0(), "rule__MultiplicationExpression__RightExpressionAlternatives_1_1_2_0");
 					put(grammarAccess.getTypeCastExpressionAccess().getAlternatives(), "rule__TypeCastExpression__Alternatives");
-					put(grammarAccess.getOperandAccess().getAlternatives(), "rule__Operand__Alternatives");
 					put(grammarAccess.getLiteralAccess().getAlternatives(), "rule__Literal__Alternatives");
+					put(grammarAccess.getTimeUnitExprAccess().getAlternatives(), "rule__TimeUnitExpr__Alternatives");
 					put(grammarAccess.getExtendedTypedNamedElementExpressionAccess().getAlternatives_1(), "rule__ExtendedTypedNamedElementExpression__Alternatives_1");
 					put(grammarAccess.getTypedNamedElementExpressionAccess().getElementAccessorsAlternatives_1_0(), "rule__TypedNamedElementExpression__ElementAccessorsAlternatives_1_0");
 					put(grammarAccess.getUnaryPostIncrementDecrementOperatorAccess().getAlternatives(), "rule__UnaryPostIncrementDecrementOperator__Alternatives");
@@ -71,10 +71,12 @@ public class APIMappingLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPortApiMappingAccess().getGroup_5(), "rule__PortApiMapping__Group_5__0");
 					put(grammarAccess.getEnumerationValueExpressionAccess().getGroup(), "rule__EnumerationValueExpression__Group__0");
 					put(grammarAccess.getAPICallExpressionAccess().getGroup(), "rule__APICallExpression__Group__0");
-					put(grammarAccess.getAPICallExpressionAccess().getGroup_3(), "rule__APICallExpression__Group_3__0");
-					put(grammarAccess.getAPICallExpressionAccess().getGroup_3_1(), "rule__APICallExpression__Group_3_1__0");
+					put(grammarAccess.getAPICallExpressionAccess().getGroup_2(), "rule__APICallExpression__Group_2__0");
+					put(grammarAccess.getAPICallExpressionAccess().getGroup_2_1(), "rule__APICallExpression__Group_2_1__0");
 					put(grammarAccess.getParamaterBindingAccess().getGroup(), "rule__ParamaterBinding__Group__0");
 					put(grammarAccess.getContiniousPortExpressionsAccess().getGroup(), "rule__ContiniousPortExpressions__Group__0");
+					put(grammarAccess.getOperandAccess().getGroup_0(), "rule__Operand__Group_0__0");
+					put(grammarAccess.getAPICallStatementAccess().getGroup(), "rule__APICallStatement__Group__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
 					put(grammarAccess.getBlockAccess().getGroup(), "rule__Block__Group__0");
@@ -97,6 +99,7 @@ public class APIMappingLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getLocalConstantDeclarationAccess().getGroup(), "rule__LocalConstantDeclaration__Group__0");
 					put(grammarAccess.getNondeterministicChoiceExpressionAccess().getGroup(), "rule__NondeterministicChoiceExpression__Group__0");
 					put(grammarAccess.getRangeAccess().getGroup(), "rule__Range__Group__0");
+					put(grammarAccess.getLONGAccess().getGroup(), "rule__LONG__Group__0");
 					put(grammarAccess.getLogicalOrExpressionAccess().getGroup(), "rule__LogicalOrExpression__Group__0");
 					put(grammarAccess.getLogicalOrExpressionAccess().getGroup_1(), "rule__LogicalOrExpression__Group_1__0");
 					put(grammarAccess.getLogicalAndExpressionAccess().getGroup(), "rule__LogicalAndExpression__Group__0");
@@ -111,8 +114,8 @@ public class APIMappingLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMultiplicationExpressionAccess().getGroup_1_1(), "rule__MultiplicationExpression__Group_1_1__0");
 					put(grammarAccess.getUnaryPreExpressionAccess().getGroup(), "rule__UnaryPreExpression__Group__0");
 					put(grammarAccess.getTypeCastExpressionAccess().getGroup_1(), "rule__TypeCastExpression__Group_1__0");
-					put(grammarAccess.getOperandAccess().getGroup_0(), "rule__Operand__Group_0__0");
 					put(grammarAccess.getLiteralExpressionAccess().getGroup(), "rule__LiteralExpression__Group__0");
+					put(grammarAccess.getTimeValueAccess().getGroup(), "rule__TimeValue__Group__0");
 					put(grammarAccess.getExtendedTypedNamedElementExpressionAccess().getGroup(), "rule__ExtendedTypedNamedElementExpression__Group__0");
 					put(grammarAccess.getExtendedTypedNamedElementExpressionAccess().getGroup_1_0(), "rule__ExtendedTypedNamedElementExpression__Group_1_0__0");
 					put(grammarAccess.getExtendedTypedNamedElementExpressionAccess().getGroup_1_1(), "rule__ExtendedTypedNamedElementExpression__Group_1_1__0");
@@ -137,9 +140,9 @@ public class APIMappingLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPortApiMappingAccess().getExecCommandAssignment_4(), "rule__PortApiMapping__ExecCommandAssignment_4");
 					put(grammarAccess.getPortApiMappingAccess().getInitCommandAssignment_5_1(), "rule__PortApiMapping__InitCommandAssignment_5_1");
 					put(grammarAccess.getEnumerationValueExpressionAccess().getEnumValueAssignment_1(), "rule__EnumerationValueExpression__EnumValueAssignment_1");
-					put(grammarAccess.getAPICallExpressionAccess().getApiCommandAssignment_1(), "rule__APICallExpression__ApiCommandAssignment_1");
-					put(grammarAccess.getAPICallExpressionAccess().getParameterBindingsAssignment_3_0(), "rule__APICallExpression__ParameterBindingsAssignment_3_0");
-					put(grammarAccess.getAPICallExpressionAccess().getParameterBindingsAssignment_3_1_1(), "rule__APICallExpression__ParameterBindingsAssignment_3_1_1");
+					put(grammarAccess.getAPICallExpressionAccess().getApiCommandAssignment_0(), "rule__APICallExpression__ApiCommandAssignment_0");
+					put(grammarAccess.getAPICallExpressionAccess().getParameterBindingsAssignment_2_0(), "rule__APICallExpression__ParameterBindingsAssignment_2_0");
+					put(grammarAccess.getAPICallExpressionAccess().getParameterBindingsAssignment_2_1_1(), "rule__APICallExpression__ParameterBindingsAssignment_2_1_1");
 					put(grammarAccess.getParamaterBindingAccess().getParameterAssignment_1(), "rule__ParamaterBinding__ParameterAssignment_1");
 					put(grammarAccess.getParamaterBindingAccess().getValueAssignment_3(), "rule__ParamaterBinding__ValueAssignment_3");
 					put(grammarAccess.getContiniousPortExpressionsAccess().getContinuousPortAssignment_1(), "rule__ContiniousPortExpressions__ContinuousPortAssignment_1");
@@ -199,6 +202,9 @@ public class APIMappingLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTypeCastExpressionAccess().getEnclosedExpressionAssignment_1_4(), "rule__TypeCastExpression__EnclosedExpressionAssignment_1_4");
 					put(grammarAccess.getLiteralExpressionAccess().getValueAssignment_1(), "rule__LiteralExpression__ValueAssignment_1");
 					put(grammarAccess.getTimeValueExpressionAccess().getTimeValueAssignment(), "rule__TimeValueExpression__TimeValueAssignment");
+					put(grammarAccess.getTimeValueAccess().getValueAssignment_0(), "rule__TimeValue__ValueAssignment_0");
+					put(grammarAccess.getTimeValueAccess().getUnitAssignment_1(), "rule__TimeValue__UnitAssignment_1");
+					put(grammarAccess.getMaxMessageDelayReferenceExpressionAccess().getTimeValueAssignment(), "rule__MaxMessageDelayReferenceExpression__TimeValueAssignment");
 					put(grammarAccess.getExtendedTypedNamedElementExpressionAccess().getPositionAssignment_1_0_2(), "rule__ExtendedTypedNamedElementExpression__PositionAssignment_1_0_2");
 					put(grammarAccess.getExtendedTypedNamedElementExpressionAccess().getIncrementDecrementOperatorAssignment_1_1_1(), "rule__ExtendedTypedNamedElementExpression__IncrementDecrementOperatorAssignment_1_1_1");
 					put(grammarAccess.getTypedNamedElementExpressionAccess().getTypedNamedElementAssignment_0(), "rule__TypedNamedElementExpression__TypedNamedElementAssignment_0");

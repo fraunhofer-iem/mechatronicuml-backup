@@ -5,7 +5,11 @@ Bundle-SymbolicName: org.muml.psm.edit;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: org.muml.psm.provider.PsmEditPlugin$Implementation
-Bundle-Vendor: %providerName
+Bundle-Vendor: Software Engineering Group,
+ Heinz Nixdorf Institute,
+ Paderborn University,
+ and Fraunhofer Research Institution for Mechatronic Systems Design IEM,
+ Germany
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.muml.psm.allocation.provider;
@@ -22,7 +26,6 @@ Export-Package: org.muml.psm.allocation.provider;
    org.eclipse.emf.edit.provider,
    org.muml.core.expressions.provider,
    org.eclipse.emf.common.notify",
- org.muml.psm.codegen.provider,
  org.muml.psm.portapimapping.provider;
   uses:="org.eclipse.emf.ecore,
    org.muml.core.provider,
@@ -60,6 +63,8 @@ Require-Bundle: org.eclipse.ocl.ecore,
  org.muml.pim.edit;visibility:=reexport,
  org.muml.pm.software;visibility:=reexport,
  org.muml.pm.software.edit;visibility:=reexport,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.emf.ecore.edit;visibility:=reexport,
  org.muml.pm.software;visibility:=reexport,
  org.muml.pm.software.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

@@ -4,10 +4,11 @@ package org.muml.psm.provider;
 
 import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
 import org.muml.core.provider.CoreEditPlugin;
 import org.muml.pim.actionlanguage.provider.ActionlanguageEditPlugin;
 import org.muml.pim.provider.MumlEditPlugin;
-import org.muml.pm.hardware.hwplatform.provider.HardwareEditPlugin;
+import org.muml.pm.hardware.provider.HardwareEditPlugin;
 import org.muml.pm.software.provider.SoftwareEditPlugin;
 
 /**
@@ -47,6 +48,7 @@ public final class PsmEditPlugin extends EMFPlugin {
 		     HardwareEditPlugin.INSTANCE,
 		     MumlEditPlugin.INSTANCE,
 		     SoftwareEditPlugin.INSTANCE,
+		     EcoreEditPlugin.INSTANCE,
 		   });
 	}
 

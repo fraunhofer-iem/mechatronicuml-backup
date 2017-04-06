@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: %Bundle-Name
-Bundle-Vendor: %Bundle-Vendor
-Bundle-Version: 0.4.0.qualifier
+Bundle-Name: %pluginName
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
+Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: org.muml.psm.api.apimappinglanguage.xtext;singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.xtext;visibility:=reexport,
@@ -16,12 +16,14 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.muml.core,
  org.muml.psm,
  org.muml.pim.actionlanguage,
- org.muml.pim.actionlanguage.xtext;bundle-version="0.4.0",
+ org.muml.pim.actionlanguage.xtext,
  org.eclipse.xtext.util,
  org.antlr.runtime,
  org.eclipse.xtext.common.types,
  org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional,
- org.eclipse.xtext.xbase.lib
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.equinox.common;bundle-version="3.8.0",
+ org.muml.pim.types
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: J2SE-1.5

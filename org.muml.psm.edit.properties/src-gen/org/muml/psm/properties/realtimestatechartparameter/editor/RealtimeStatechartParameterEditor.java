@@ -23,11 +23,11 @@ public abstract class RealtimeStatechartParameterEditor extends org.muml.ape.run
 
 			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
 
 			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
+			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorStatechart_property_tab_psmTab_Editor(), false);
 
@@ -86,32 +86,20 @@ public abstract class RealtimeStatechartParameterEditor extends org.muml.ape.run
 		return this.editorStatechart_property_tab_psmTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_property_tab_generalTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorName_property_tab_generalTab_Editor() {
-		if (this.editorName_property_tab_generalTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComment_property_tab_documentationTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorComment_property_tab_documentationTab_Editor() {
+		if (this.editorComment_property_tab_documentationTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.core.CorePackage.eINSTANCE
-					.getNamedElement_Name();
+					.getCommentableElement_Comment();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.TextPropertyEditor(
-					adapterFactory, feature, false);
+					adapterFactory, feature, true);
 
-			{
-				final org.eclipse.ocl.pivot.utilities.OCL ocl = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
-				org.eclipse.ocl.pivot.utilities.OCLHelper helper = ocl.createOCLHelper(feature);
+			editor.setTooltipMessage(
+					"The comment string that can be used to attach arbitrary information to CommentableElements.");
 
-				try {
-					final org.eclipse.ocl.pivot.ExpressionInOCL oclExpression = helper.createQuery(
-							"let prefix : String = self.oclType().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n	let provisionalName : String = prefix.concat(e.toString()) in\n	if self.oclContainer().oclContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n		e + 1\n	else\n		e\n	endif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)");
-					editor.setInitializeExpression(oclExpression);
-				} catch (org.eclipse.ocl.pivot.utilities.ParserException e) {
-					e.printStackTrace();
-				}
-			}
-
-			editor.setTooltipMessage("The name attribute of a meta-model element.");
-
-			this.editorName_property_tab_generalTab = editor;
+			this.editorComment_property_tab_documentationTab = editor;
 		}
-		return this.editorName_property_tab_generalTab;
+		return this.editorComment_property_tab_documentationTab;
 	}
 
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtensions_property_tab_extensionsTab;
@@ -129,20 +117,32 @@ public abstract class RealtimeStatechartParameterEditor extends org.muml.ape.run
 		return this.editorExtensions_property_tab_extensionsTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComment_property_tab_documentationTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorComment_property_tab_documentationTab_Editor() {
-		if (this.editorComment_property_tab_documentationTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorName_property_tab_generalTab_Editor() {
+		if (this.editorName_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.core.CorePackage.eINSTANCE
-					.getCommentableElement_Comment();
+					.getNamedElement_Name();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.TextPropertyEditor(
-					adapterFactory, feature, true);
+					adapterFactory, feature, false);
 
-			editor.setTooltipMessage(
-					"The comment string that can be used to attach arbitrary information to CommentableElements.");
+			{
 
-			this.editorComment_property_tab_documentationTab = editor;
+				try {
+					final org.eclipse.ocl.pivot.utilities.OCL ocl = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
+					org.eclipse.ocl.pivot.utilities.OCLHelper helper = ocl.createOCLHelper(feature);
+					final org.eclipse.ocl.pivot.ExpressionInOCL oclExpression = helper.createQuery(
+							"let prefix : String = self.oclType().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n	let provisionalName : String = prefix.concat(e.toString()) in\n	if self.oclContainer().oclContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n		e + 1\n	else\n		e\n	endif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)");
+					editor.setInitializeExpression(oclExpression);
+				} catch (org.eclipse.ocl.pivot.utilities.ParserException e) {
+					e.printStackTrace();
+				}
+			}
+
+			editor.setTooltipMessage("The name attribute of a meta-model element.");
+
+			this.editorName_property_tab_generalTab = editor;
 		}
-		return this.editorComment_property_tab_documentationTab;
+		return this.editorName_property_tab_generalTab;
 	}
 
 }

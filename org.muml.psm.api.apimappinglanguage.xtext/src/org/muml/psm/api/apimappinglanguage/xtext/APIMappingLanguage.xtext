@@ -54,9 +54,7 @@ PortApiMapping returns portapimapping::PortApiMapping:
 
 
 
-Expression returns expressions::Expression:
-	( APICallExpression | LogicalExpression)
-;
+
 
 
 EnumerationValueExpression returns apiexpressions::EnumerationValueExpression:
@@ -64,14 +62,17 @@ EnumerationValueExpression returns apiexpressions::EnumerationValueExpression:
 ;
 
 APICallExpression returns apiexpressions::APICallExpression:
-	'API_Call:'apiCommand=[swplatform::APICommand]
+	apiCommand=[swplatform::APICommand]
 	'('
 	(parameterBindings+=ParamaterBinding (',' parameterBindings+=ParamaterBinding)* )?
 	')'
 ;
 
+
+
+
 ParamaterBinding returns behavior::ParameterBinding:
-		{behavior::ParameterBinding}parameter=[behavior::Parameter] ':=' value=(Expression | EnumerationValueExpression | ContiniousPortExpressions)
+		{behavior::ParameterBinding}parameter=[behavior::Parameter] ':=' value=(Expression | EnumerationValueExpression )
 ;
 
 
@@ -82,9 +83,21 @@ ContiniousPortExpressions returns apiexpressions::ContinuousPortExpression:
 ExpressionStartRule returns expressions::Expression:
 	Assignment |  ForLoop | 
 	WhileLoop | DoWhileLoop | 
-	IfStatement | ReturnStatement | LocalVariableOrConstantDeclarationStatement |
-	OperationCallStatement | APICallExpression
+	IfStatement | LocalVariableOrConstantDeclarationStatement  | APICallStatement
 ;
+
+
+
+
+Operand returns expressions::Expression:
+	'(' Expression ')' | LiteralExpression | ExtendedTypedNamedElementExpression 
+	| APICallExpression 
+;
+
+
+APICallStatement  returns apiexpressions::APICallExpression:
+	APICallExpression';'
+; 
 
 EString returns ecore::EString:
 	 ID | QualifiedName;

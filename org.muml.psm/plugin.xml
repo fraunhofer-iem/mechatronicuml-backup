@@ -5,6 +5,13 @@
 -->
 
 <plugin>
+<extension
+          point="org.eclipse.xtext.extension_resourceServiceProvider">
+        <resourceServiceProvider
+              class="org.muml.psm.MUMLResourceServiceProvider"
+              uriExtension="muml">
+        </resourceServiceProvider>
+    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated psm -->
@@ -75,14 +82,6 @@
       <package
             uri="http://www.muml.org/psm/apiexpressions/1.0.0"
             class="org.muml.psm.apiexpressions.ApiexpressionsPackage"
-            genModel="model/psm.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated psm -->
-      <package
-            uri="http://www.muml.org/psm/codegen/1.0.0"
-            class="org.muml.psm.codegen.CodegenPackage"
             genModel="model/psm.genmodel"/>
    </extension>
 

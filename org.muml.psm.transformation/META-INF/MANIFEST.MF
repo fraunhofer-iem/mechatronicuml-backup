@@ -2,12 +2,12 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: PSM API Transformation
 Bundle-SymbolicName: org.muml.psm.transformation;singleton:=true
-Bundle-Version: 0.4.0.qualifier
-Bundle-Vendor: 
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
  Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT, Germany and Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany
-Require-Bundle: org.muml.psm.api.transformation.blackbox;bundle-version="0.4.0",
- org.muml.pim.actionlanguage;bundle-version="0.4.0",
- org.muml.psm;bundle-version="0.4.0",
+Require-Bundle: org.muml.psm.api.transformation.blackbox,
+ org.muml.pim.actionlanguage,
+ org.muml.psm,
  org.eclipse.m2m.qvt.oml,
  org.eclipse.ui.workbench,
  org.eclipse.jface,
@@ -16,8 +16,8 @@ Require-Bundle: org.muml.psm.api.transformation.blackbox;bundle-version="0.4.0",
  org.muml.core.export,
  org.eclipse.core.resources,
  org.eclipse.core.jobs,
- org.muml.modelcopy.qvto.library;bundle-version="1.0.0",
- org.muml.pim.types;bundle-version="0.5.0",
+ org.muml.implicitcopy.qvto.library,
+ org.muml.pim.types,
  org.eclipse.core.runtime;bundle-version="3.11.1",
  org.muml.psm.api.apimappinglanguage.xtext.ui
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

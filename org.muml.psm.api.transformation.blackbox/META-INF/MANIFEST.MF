@@ -2,11 +2,11 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: org.muml.psm.api.transformation.blackbox
 Bundle-SymbolicName: org.muml.psm.api.transformation.blackbox;singleton:=true
-Bundle-Version: 0.4.0.qualifier
+Bundle-Version: 1.0.0.qualifier
 Export-Package: org.muml.psm.api.transformation.blackbox
-Bundle-Vendor: Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT, Germany and Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.m2m.qvt.oml;bundle-version="3.3.0",
  org.eclipse.core.resources;bundle-version="3.8.0",
  org.eclipse.core.runtime;bundle-version="3.8.0",
- org.muml.pim;bundle-version="0.4.0"
+ org.muml.pim

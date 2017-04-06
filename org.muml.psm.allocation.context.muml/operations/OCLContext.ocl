@@ -142,12 +142,12 @@
 			in
 			self.getHWInstancesWithMaxMemory()->collect(ecu |
 				Tuple{
-					maxMemory = ecu.getMemoryResourceInstances()->any(true).memorySize._'value',
+					maxMemory = ecu.getMemoryResourceInstances()->any(true).memorySize.convertToByte(),
 					requiredMemory = swInstances->product(ecu->asSet())->collect(t |
 						Tuple {
 							componentInstance = t.first,
 							resourceInstance = t.second,
-							requiredMemory = t.first.getMemoryExtensions()->any(true).requiredMemory._'value'
+							requiredMemory = t.first.getMemoryExtensions()->any(true).requiredMemory.convertToByte()
 						}
 					)->asSet()
 				}
@@ -302,11 +302,36 @@
 			else
 				wcet
 			endif
-				
+	
+	--normalized to milliseconds			
 	context valuetype::TimeValue
 		def: getLiteralVal() : Real =
 			if self._'value'.oclIsKindOf(common::LiteralExpression) then
-				self._'value'.oclAsType(common::LiteralExpression)._'value'.toReal()
+				if self._'unit'.toString() = 'SECONDS' then
+					self._'value'.oclAsType(common::LiteralExpression)._'value'.toReal()*1000
+				else
+					if self._'unit'.toString() = 'MICROSECONDS' then
+						self._'value'.oclAsType(common::LiteralExpression)._'value'.toReal()/1000
+					else
+						 if self._'unit'.toString() = 'HOURS' then
+							self._'value'.oclAsType(common::LiteralExpression)._'value'.toReal()*3600000
+						 else
+							if self._'unit'.toString() = 'DAYS' then 
+								self._'value'.oclAsType(common::LiteralExpression)._'value'.toReal()*86400000	
+							else
+								if self._'unit'.toString() = 'MINUTES' then 
+									self._'value'.oclAsType(common::LiteralExpression)._'value'.toReal()*60000
+								else
+									if self._'unit'.toString() = 'NANOSECONDS' then 
+										self._'value'.oclAsType(common::LiteralExpression)._'value'.toReal()/1000000
+									else
+										self._'value'.oclAsType(common::LiteralExpression)._'value'.toReal()
+									endif
+								endif
+							endif
+						endif
+					endif
+				endif
 			else
 				42
 			endif
@@ -473,15 +498,64 @@ context oclcontext::OCLContext
 				
 		def: getTransmissionTime(message : properties::CANMessageFrame) : Real =
 			-- TODO: can we use this? message.size.getInByte() / self.bandwidth.getInBpS()
-			message.size._'value' / self.bandwidth._'value'
+			message.size.convertToByte() / self.bandwidth.convertToBytePerSecond()
+			
 			
 		def: getBlockingTime(lmessages : Set(properties::CANMessageFrame)) : Real =
 			lmessages->collect(msg | self.getTransmissionTime(msg))
 				->union(Set{0})->_'max'()
 				
 		def: getBitTransmissionTime() : Real =
-			1 / self.bandwidth._'value'
-			
+			1 / self.bandwidth.convertToBytePerSecond()
+
+		context hwvaluetype::DataSize
+		def: convertToByte() : Real = 
+		if self._'value'.oclIsKindOf(Real) then
+			if self._'unit' = DataSizeUnit::Byte then
+					self._'value'
+			else 
+				if self._'unit' = DataSizeUnit::KByte then
+					self._'value'*1024
+				else
+					if self._'unit' = DataSizeUnit::MByte then
+						self._'value'*1024*1024
+					else
+						if self._'unit' = DataSizeUnit::GByte then
+							self._'value'*1024*1024*1024
+						else
+							if self._'unit' = DataSizeUnit::Bit then
+								self._'value'/8
+							else
+							0
+							endif
+						endif
+					endif
+				endif
+			endif
+		else 
+			0
+		endif
+		
+	context hwvaluetype::DataRate
+		def: convertToBytePerSecond() : Real =
+		if self._'value'.oclIsKindOf(Real) then
+			if self._'unit' = DataRateUnit::bs then
+				self._'value'/8
+			else 
+				if self._'unit' = DataRateUnit::Kbs then
+					self._'value'*1024/8
+				else 
+					if self._'unit' = DataRateUnit::Mbs then
+						self._'value'*1024*1024/8
+					else 
+						0
+					endif
+				endif
+			endif
+		else
+		0 
+		endif
+				
 	context instance::ComponentInstance
 		def: getSendingPortInstances() : Set(instance::PortInstance) =
 			self.portInstances->select(

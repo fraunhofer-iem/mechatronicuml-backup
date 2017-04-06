@@ -9,6 +9,8 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -495,6 +497,11 @@ public class APICallParameterBindingImpl extends RealtimeStatechartParameterBind
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == EObject.class) {
+			switch (derivedFeatureID) {
+				default: return -1;
+			}
+		}
 		if (baseClass == ExtendableElement.class) {
 			switch (derivedFeatureID) {
 				case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__EXTENSIONS: return CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS;
@@ -531,6 +538,11 @@ public class APICallParameterBindingImpl extends RealtimeStatechartParameterBind
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == EObject.class) {
+			switch (baseFeatureID) {
+				default: return -1;
+			}
+		}
 		if (baseClass == ExtendableElement.class) {
 			switch (baseFeatureID) {
 				case CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS: return RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__EXTENSIONS;
@@ -567,6 +579,26 @@ public class APICallParameterBindingImpl extends RealtimeStatechartParameterBind
 	 */
 	@Override
 	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == EObject.class) {
+			switch (baseOperationID) {
+				case EcorePackage.EOBJECT___ECLASS: return RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING___ECLASS;
+				case EcorePackage.EOBJECT___EIS_PROXY: return RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING___EIS_PROXY;
+				case EcorePackage.EOBJECT___ERESOURCE: return RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING___ERESOURCE;
+				case EcorePackage.EOBJECT___ECONTAINER: return RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING___ECONTAINER;
+				case EcorePackage.EOBJECT___ECONTAINING_FEATURE: return RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING___ECONTAINING_FEATURE;
+				case EcorePackage.EOBJECT___ECONTAINMENT_FEATURE: return RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING___ECONTAINMENT_FEATURE;
+				case EcorePackage.EOBJECT___ECONTENTS: return RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING___ECONTENTS;
+				case EcorePackage.EOBJECT___EALL_CONTENTS: return RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING___EALL_CONTENTS;
+				case EcorePackage.EOBJECT___ECROSS_REFERENCES: return RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING___ECROSS_REFERENCES;
+				case EcorePackage.EOBJECT___EGET__ESTRUCTURALFEATURE: return RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING___EGET__ESTRUCTURALFEATURE;
+				case EcorePackage.EOBJECT___EGET__ESTRUCTURALFEATURE_BOOLEAN: return RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+				case EcorePackage.EOBJECT___ESET__ESTRUCTURALFEATURE_OBJECT: return RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING___ESET__ESTRUCTURALFEATURE_OBJECT;
+				case EcorePackage.EOBJECT___EIS_SET__ESTRUCTURALFEATURE: return RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING___EIS_SET__ESTRUCTURALFEATURE;
+				case EcorePackage.EOBJECT___EUNSET__ESTRUCTURALFEATURE: return RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING___EUNSET__ESTRUCTURALFEATURE;
+				case EcorePackage.EOBJECT___EINVOKE__EOPERATION_ELIST: return RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING___EINVOKE__EOPERATION_ELIST;
+				default: return -1;
+			}
+		}
 		if (baseClass == ExtendableElement.class) {
 			switch (baseOperationID) {
 				case CorePackage.EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS: return RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING___GET_EXTENSION__ECLASS;

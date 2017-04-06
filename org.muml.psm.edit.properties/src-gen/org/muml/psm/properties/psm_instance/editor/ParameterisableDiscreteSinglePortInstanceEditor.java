@@ -31,6 +31,8 @@ public class ParameterisableDiscreteSinglePortInstanceEditor extends org.muml.ap
 
 			addPropertyEditor(createEditorType_property_tab_generalTab_Editor(), false);
 
+			addPropertyEditor(createEditorRunnable_property_tab_generalTab_Editor(), false);
+
 			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
@@ -66,6 +68,8 @@ public class ParameterisableDiscreteSinglePortInstanceEditor extends org.muml.ap
 			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorType_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorRunnable_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
@@ -138,6 +142,19 @@ public class ParameterisableDiscreteSinglePortInstanceEditor extends org.muml.ap
 		return this.editorBindings_property_tab_psmTab;
 	}
 
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorRunnable_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorRunnable_property_tab_generalTab_Editor() {
+		if (this.editorRunnable_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.instance.InstancePackage.eINSTANCE
+					.getPortInstance_Runnable();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			this.editorRunnable_property_tab_generalTab = editor;
+		}
+		return this.editorRunnable_property_tab_generalTab;
+	}
+
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorType_property_tab_generalTab;
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorType_property_tab_generalTab_Editor() {
 		if (this.editorType_property_tab_generalTab == null) {
@@ -193,10 +210,10 @@ public class ParameterisableDiscreteSinglePortInstanceEditor extends org.muml.ap
 					adapterFactory, feature, false);
 
 			{
-				final org.eclipse.ocl.pivot.utilities.OCL ocl = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
-				org.eclipse.ocl.pivot.utilities.OCLHelper helper = ocl.createOCLHelper(feature);
 
 				try {
+					final org.eclipse.ocl.pivot.utilities.OCL ocl = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
+					org.eclipse.ocl.pivot.utilities.OCLHelper helper = ocl.createOCLHelper(feature);
 					final org.eclipse.ocl.pivot.ExpressionInOCL oclExpression = helper.createQuery(
 							"let prefix : String = self.oclType().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n	let provisionalName : String = prefix.concat(e.toString()) in\n	if self.oclContainer().oclContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n		e + 1\n	else\n		e\n	endif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)");
 					editor.setInitializeExpression(oclExpression);
@@ -268,9 +285,9 @@ public class ParameterisableDiscreteSinglePortInstanceEditor extends org.muml.ap
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.psm", "property.tab.general",
-					"property.tab.general", "property.tab.general", "property.tab.documentation",
-					"property.tab.extensions", "property.tab.general", "property.tab.general", "property.tab.general",
-					"property.tab.general"}).contains(tab);
+					"property.tab.general", "property.tab.general", "property.tab.general",
+					"property.tab.documentation", "property.tab.extensions", "property.tab.general",
+					"property.tab.general", "property.tab.general", "property.tab.general"}).contains(tab);
 		}
 	}
 

@@ -31,6 +31,7 @@ public class Psm_realtimestatechartTests extends TestSuite {
 	public static Test suite() {
 		TestSuite suite = new Psm_realtimestatechartTests("psm_realtimestatechart Tests");
 		suite.addTestSuite(ParameterizedRealtimeStatechartTest.class);
+		suite.addTestSuite(APICallTest.class);
 		return suite;
 	}
 

@@ -93,46 +93,6 @@
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.psm.properties.codegen.editor.RefinedAtomicComponentInstanceEditor$Factory"
-             type="http://www.muml.org/psm/codegen/1.0.0#RefinedAtomicComponentInstance">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="org.muml.psm.properties.codegen.editor.RefinedStructuredResourceInstanceEditor$Factory"
-             type="http://www.muml.org/psm/codegen/1.0.0#RefinedStructuredResourceInstance">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="org.muml.psm.properties.codegen.editor.CodeGenAllocationEditor$Factory"
-             type="http://www.muml.org/psm/codegen/1.0.0#CodeGenAllocation">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="org.muml.psm.properties.codegen.editor.GenComponentInstanceEditor$Factory"
-             type="http://www.muml.org/psm/codegen/1.0.0#GenComponentInstance">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="org.muml.psm.properties.codegen.editor.GenPortInstanceEditor$Factory"
-             type="http://www.muml.org/psm/codegen/1.0.0#GenPortInstance">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="org.muml.psm.properties.codegen.editor.GenECUEditor$Factory"
-             type="http://www.muml.org/psm/codegen/1.0.0#GenECU">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="org.muml.psm.properties.codegen.editor.GenTaskEditor$Factory"
-             type="http://www.muml.org/psm/codegen/1.0.0#GenTask">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="org.muml.psm.properties.codegen.editor.GenSystemEditor$Factory"
-             type="http://www.muml.org/psm/codegen/1.0.0#GenSystem">
-       </propertyEditor>
-    
-       <propertyEditor
              factory="org.muml.psm.properties.psm.editor.ImportEditor$Factory"
              type="http://www.muml.org/psm/1.0.0#Import">
        </propertyEditor>

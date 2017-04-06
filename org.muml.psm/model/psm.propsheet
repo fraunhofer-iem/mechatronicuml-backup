@@ -61,7 +61,7 @@
     <genPackage href="psm.genmodel#//psm/properties"/>
     <classes>
       <genClass href="psm.genmodel#//psm/properties/WCET"/>
-      <orderedElements xsi:type="org.muml:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="org.muml:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw" initializeOCLExpression="">
         <genFeature href="psm.genmodel#//psm/properties/WCET/wcet"/>
         <editor xsi:type="org.muml:ObjectPropertyEditor"/>
       </orderedElements>
@@ -74,7 +74,7 @@
         <tab href="../../org.muml.core/model/core.propsheet#_i_OYIeHNEeS5Putgio2lkg"/>
         <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
         <creationOppositeConstraint>
-          <filters xsi:type="org.muml:OCLFilter" expression="self.oclIsKindOf(pim::instance::ComponentInstance)"/>
+          <filters xsi:type="org.muml:OCLFilter" expression="self.oclIsKindOf(pim::instance::ComponentInstance) or self.oclIsKindOf(pim::runnable::Runnable)"/>
         </creationOppositeConstraint>
       </orderedElements>
       <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNUeHNEeS5Putgio2lkg"/>
@@ -152,100 +152,6 @@
         <creationOppositeConstraint>
           <filters xsi:type="org.muml:OCLFilter" expression="self.oclIsKindOf(pim::instance::PortInstance)"/>
         </creationOppositeConstraint>
-      </orderedElements>
-    </classes>
-  </packages>
-  <packages>
-    <genPackage href="psm.genmodel#//psm/codegen"/>
-    <classes>
-      <genClass href="psm.genmodel#//psm/codegen/RefinedAtomicComponentInstance"/>
-      <orderedElements xsi:type="org.muml:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw">
-        <genFeature href="psm.genmodel#//psm/codegen/RefinedAtomicComponentInstance/allocatedResourceInstance"/>
-        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
-      </orderedElements>
-      <superClasses href="../../org.muml.pim/model/pim.propsheet#_VZQZe8wbEeSjx7OWZCcdLw"/>
-      <superClasses href="#//@packages.2/@classes.3"/>
-    </classes>
-    <classes>
-      <genClass href="psm.genmodel#//psm/codegen/RefinedStructuredResourceInstance"/>
-      <orderedElements xsi:type="org.muml:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw">
-        <genFeature href="psm.genmodel#//psm/codegen/RefinedStructuredResourceInstance/allocatedAtomicComponentInstances"/>
-        <editor xsi:type="org.muml:ListPropertyEditor"/>
-      </orderedElements>
-      <superClasses href="../../org.muml.pm.hardware/model/hardware.propsheet#_RltxsM1gEeSIgPDefa6ZBw"/>
-    </classes>
-    <classes>
-      <genClass href="psm.genmodel#//psm/codegen/CodeGenAllocation"/>
-      <orderedElements xsi:type="org.muml:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw">
-        <genFeature href="psm.genmodel#//psm/codegen/CodeGenAllocation/hpic"/>
-        <editor xsi:type="org.muml:ObjectPropertyEditor"/>
-      </orderedElements>
-      <orderedElements xsi:type="org.muml:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw">
-        <genFeature href="psm.genmodel#//psm/codegen/CodeGenAllocation/cic"/>
-        <editor xsi:type="org.muml:ObjectPropertyEditor"/>
-      </orderedElements>
-    </classes>
-    <classes>
-      <genClass href="psm.genmodel#//psm/codegen/GenComponentInstance"/>
-      <orderedElements xsi:type="org.muml:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw">
-        <genFeature href="psm.genmodel#//psm/codegen/GenComponentInstance/componentInstance"/>
-        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
-      </orderedElements>
-      <orderedElements xsi:type="org.muml:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw">
-        <genFeature href="psm.genmodel#//psm/codegen/GenComponentInstance/initCommands"/>
-        <editor xsi:type="org.muml:ListPropertyEditor"/>
-      </orderedElements>
-      <orderedElements xsi:type="org.muml:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw">
-        <genFeature href="psm.genmodel#//psm/codegen/GenComponentInstance/genPortInstances"/>
-        <editor xsi:type="org.muml:ListPropertyEditor"/>
-      </orderedElements>
-    </classes>
-    <classes>
-      <genClass href="psm.genmodel#//psm/codegen/GenPortInstance"/>
-      <orderedElements xsi:type="org.muml:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw">
-        <genFeature href="psm.genmodel#//psm/codegen/GenPortInstance/portInstance"/>
-        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
-      </orderedElements>
-      <orderedElements xsi:type="org.muml:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw">
-        <genFeature href="psm.genmodel#//psm/codegen/GenPortInstance/samplingTime"/>
-        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
-      </orderedElements>
-      <orderedElements xsi:type="org.muml:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw">
-        <genFeature href="psm.genmodel#//psm/codegen/GenPortInstance/execCommand"/>
-        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
-      </orderedElements>
-    </classes>
-    <classes>
-      <genClass href="psm.genmodel#//psm/codegen/GenECU"/>
-      <orderedElements xsi:type="org.muml:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw">
-        <genFeature href="psm.genmodel#//psm/codegen/GenECU/ecu"/>
-        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
-      </orderedElements>
-      <orderedElements xsi:type="org.muml:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw">
-        <genFeature href="psm.genmodel#//psm/codegen/GenECU/allocatedGenTasks"/>
-        <editor xsi:type="org.muml:ListPropertyEditor"/>
-      </orderedElements>
-    </classes>
-    <classes>
-      <genClass href="psm.genmodel#//psm/codegen/GenTask"/>
-      <orderedElements xsi:type="org.muml:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw">
-        <genFeature href="psm.genmodel#//psm/codegen/GenTask/genComponentInstances"/>
-        <editor xsi:type="org.muml:ListPropertyEditor"/>
-      </orderedElements>
-    </classes>
-    <classes>
-      <genClass href="psm.genmodel#//psm/codegen/GenSystem"/>
-      <orderedElements xsi:type="org.muml:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw">
-        <genFeature href="psm.genmodel#//psm/codegen/GenSystem/genECUs"/>
-        <editor xsi:type="org.muml:ListPropertyEditor"/>
-      </orderedElements>
-      <orderedElements xsi:type="org.muml:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw">
-        <genFeature href="psm.genmodel#//psm/codegen/GenSystem/cic"/>
-        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
-      </orderedElements>
-      <orderedElements xsi:type="org.muml:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw">
-        <genFeature href="psm.genmodel#//psm/codegen/GenSystem/hpic"/>
-        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
       </orderedElements>
     </classes>
   </packages>
@@ -355,8 +261,8 @@
         <genFeature href="psm.genmodel#//psm/portapimapping/MappingRepository/imports"/>
         <editor xsi:type="org.muml:ListPropertyEditor"/>
       </orderedElements>
-      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
       <superClasses href="../../org.muml.core/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
     </classes>
   </packages>
   <packages>
@@ -364,12 +270,12 @@
     <classes>
       <genClass href="psm.genmodel#//psm/psm_realtimestatechart/realtimestatechartparameter/APICallParameter"/>
       <superClasses href="../../org.muml.pim/model/pim.propsheet#_VZUD1cwbEeSjx7OWZCcdLw"/>
-      <superClasses href="#//@packages.7/@classes.2"/>
+      <superClasses href="#//@packages.6/@classes.2"/>
     </classes>
     <classes>
       <genClass href="psm.genmodel#//psm/psm_realtimestatechart/realtimestatechartparameter/TimeParameter"/>
+      <superClasses href="#//@packages.6/@classes.2"/>
       <superClasses href="../../org.muml.pim/model/pim.propsheet#_VZTcz8wbEeSjx7OWZCcdLw"/>
-      <superClasses href="#//@packages.7/@classes.2"/>
     </classes>
     <classes>
       <genClass href="psm.genmodel#//psm/psm_realtimestatechart/realtimestatechartparameter/RealtimeStatechartParameter"/>
@@ -377,8 +283,8 @@
         <genFeature href="psm.genmodel#//psm/psm_realtimestatechart/realtimestatechartparameter/RealtimeStatechartParameter/statechart"/>
         <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
       </orderedElements>
-      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
       <superClasses href="../../org.muml.core/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
     </classes>
   </packages>
   <packages>

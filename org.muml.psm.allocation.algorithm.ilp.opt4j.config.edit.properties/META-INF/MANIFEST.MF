@@ -15,4 +15,4 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.muml.psm.allocation.algorithm.ilp.opt4j.config.properties.metamodel, org.muml.psm.allocation.algorithm.ilp.opt4j.config.properties.constraint,
  org.muml.psm.allocation.algorithm.ilp.opt4j.config.properties.config.editor,
  org.muml.psm.allocation.algorithm.ilp.opt4j.config.properties.tabs
-Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

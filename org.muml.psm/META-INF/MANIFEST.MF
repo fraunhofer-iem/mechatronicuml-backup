@@ -4,7 +4,11 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: org.muml.psm;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Vendor: %providerName
+Bundle-Vendor: Software Engineering Group,
+ Heinz Nixdorf Institute,
+ Paderborn University,
+ and Fraunhofer Research Institution for Mechatronic Systems Design IEM,
+ Germany
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.muml.psm,
@@ -14,9 +18,6 @@ Export-Package: org.muml.psm,
  org.muml.psm.apiexpressions,
  org.muml.psm.apiexpressions.impl,
  org.muml.psm.apiexpressions.util,
- org.muml.psm.codegen,
- org.muml.psm.codegen.impl,
- org.muml.psm.codegen.util,
  org.muml.psm.impl,
  org.muml.psm.portapimapping,
  org.muml.psm.portapimapping.impl,
@@ -43,5 +44,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.muml.core;visibility:=reexport,
  org.muml.pm.hardware;visibility:=reexport,
  org.muml.pim;visibility:=reexport,
- org.muml.pm.software;visibility:=reexport
+ org.muml.pm.software;visibility:=reexport,
+ org.eclipse.xtext;bundle-version="2.10.0"
 Bundle-ActivationPolicy: lazy

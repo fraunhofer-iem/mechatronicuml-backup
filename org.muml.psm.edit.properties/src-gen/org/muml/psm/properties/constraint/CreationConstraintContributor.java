@@ -14,7 +14,9 @@ public class CreationConstraintContributor
 			final org.eclipse.emf.ecore.EClass oppositeClass = org.muml.core.CorePackage.eINSTANCE
 					.getExtendableElement();
 			final org.eclipse.ocl.ecore.OCLExpression expression = org.muml.ape.runtime.RuntimePlugin
-					.createOCLExpression("self.oclIsKindOf(pim::instance::ComponentInstance)", opposite, oppositeClass);
+					.createOCLExpression(
+							"self.oclIsKindOf(pim::instance::ComponentInstance) or self.oclIsKindOf(pim::runnable::Runnable)",
+							opposite, oppositeClass);
 			if (expression != null) {
 				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = org.muml.ape.runtime.RuntimePlugin.OCL_ECORE
 						.createQuery(expression);

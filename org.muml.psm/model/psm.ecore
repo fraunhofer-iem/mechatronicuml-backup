@@ -110,8 +110,7 @@
           <details key="documentation" value="The amount of the WCET."/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="resourceInstance" lowerBound="1"
-          eType="ecore:EClass ../../org.muml.pm.hardware/model/hardware.ecore#//hwresourceinstance/StructuredResourceInstance">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resourceInstance" eType="ecore:EClass ../../org.muml.pm.hardware/model/hardware.ecore#//hwresourceinstance/StructuredResourceInstance">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The used Resource Instance."/>
         </eAnnotations>
@@ -128,8 +127,7 @@
           <details key="documentation" value="The required amount of memory."/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="resourceInstance" lowerBound="1"
-          eType="ecore:EClass ../../org.muml.pm.hardware/model/hardware.ecore#//hwresourceinstance/StructuredResourceInstance">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resourceInstance" eType="ecore:EClass ../../org.muml.pm.hardware/model/hardware.ecore#//hwresourceinstance/StructuredResourceInstance">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The used Resource Instance."/>
         </eAnnotations>
@@ -401,95 +399,6 @@
           eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//instance/ContinuousPortInstance">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The continuous port instance that belongs to the expression."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-    </eClassifiers>
-  </eSubpackages>
-  <eSubpackages name="codegen" nsURI="http://www.muml.org/psm/codegen/1.0.0" nsPrefix="codegen">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
-      <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
-      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
-    </eAnnotations>
-    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This package contains all classes which are necessary for a CodeGeneration Model"/>
-    </eAnnotations>
-    <eClassifiers xsi:type="ecore:EClass" name="RefinedAtomicComponentInstance" eSuperTypes="../../org.muml.pim/model/pim.ecore#//instance/AtomicComponentInstance #//codegen/GenComponentInstance">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This class represents an AtomicComponentInstance on PSM level, which references the ECU to which is allocated."/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="allocatedResourceInstance"
-          lowerBound="1" eType="#//codegen/RefinedStructuredResourceInstance" eOpposite="#//codegen/RefinedStructuredResourceInstance/allocatedAtomicComponentInstances">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The StructuredComponentInstance to which this AtomicComponentInstance is allocated."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="RefinedStructuredResourceInstance"
-        eSuperTypes="../../org.muml.pm.hardware/model/hardware.ecore#//hwresourceinstance/StructuredResourceInstance">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This class represents a StructuredResourceInstance which knows all it's ComponentInstances."/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="allocatedAtomicComponentInstances"
-          upperBound="-1" eType="#//codegen/RefinedAtomicComponentInstance" eOpposite="#//codegen/RefinedAtomicComponentInstance/allocatedResourceInstance">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The ComponentInstances which are allocated to this StructuredResourceInstance."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="CodeGenAllocation">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This class represents an allocation of a ComponentInstanceConfigratuion to a specific HardwarePlatformInstanceConfiguration on PSM-level."/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="hpic" lowerBound="1"
-          eType="ecore:EClass ../../org.muml.pm.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration"
-          containment="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The used HardwarePlatformInstanceConfiguration on PSM-level."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="cic" lowerBound="1" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//instance/ComponentInstanceConfiguration"
-          containment="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The allocated ComponentInstanceConfiguration on PSM-level."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="GenComponentInstance">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstance" lowerBound="1"
-          eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//instance/ComponentInstance"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="initCommands" upperBound="-1"
-          eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="genPortInstances" upperBound="-1"
-          eType="#//codegen/GenPortInstance" containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="GenPortInstance">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="portInstance" lowerBound="1"
-          eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//instance/PortInstance"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="samplingTime" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/TimeValue"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="execCommand" eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="GenECU">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="ecu" lowerBound="1" eType="ecore:EClass ../../org.muml.pm.hardware/model/hardware.ecore#//hwresourceinstance/StructuredResourceInstance"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="allocatedGenTasks" upperBound="-1"
-          eType="#//codegen/GenTask" containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="GenTask">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="genComponentInstances"
-          upperBound="-1" eType="#//codegen/GenComponentInstance" containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="GenSystem">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="genECUs" upperBound="-1"
-          eType="#//codegen/GenECU" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="cic" lowerBound="1" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//instance/ComponentInstanceConfiguration">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The allocated ComponentInstanceConfiguration on PSM-level."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="hpic" lowerBound="1"
-          eType="ecore:EClass ../../org.muml.pm.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The used HardwarePlatformInstanceConfiguration on PSM-level."/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>

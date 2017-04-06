@@ -25,7 +25,6 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.muml.psm.properties.metamodel, org.muml.psm.properties.constraint,
  org.muml.psm.properties.realtimestatechartparameterbinding.editor,
  org.muml.psm.properties.properties.editor,
- org.muml.psm.properties.codegen.editor,
  org.muml.psm.properties.psm.editor,
  org.muml.psm.properties.psm_realtimestatechart.editor,
  org.muml.psm.properties.allocation.editor,

@@ -7,11 +7,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.muml.pim.actionlanguage.ActionlanguagePackage;
-import org.muml.pm.hardware.hwplatform.HwplatformPackage;
-import org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage;
-import org.muml.pm.hardware.hwresource.HwresourcePackage;
-import org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage;
-import org.muml.pm.hardware.hwvaluetype.HwvaluetypePackage;
+import org.muml.pm.hardware.HardwarePackage;
 import org.muml.pm.software.SoftwarePackage;
 import org.muml.psm.Import;
 import org.muml.psm.PsmFactory;
@@ -20,8 +16,6 @@ import org.muml.psm.allocation.AllocationPackage;
 import org.muml.psm.allocation.impl.AllocationPackageImpl;
 import org.muml.psm.apiexpressions.ApiexpressionsPackage;
 import org.muml.psm.apiexpressions.impl.ApiexpressionsPackageImpl;
-import org.muml.psm.codegen.CodegenPackage;
-import org.muml.psm.codegen.impl.CodegenPackageImpl;
 import org.muml.psm.portapimapping.PortapimappingPackage;
 import org.muml.psm.portapimapping.impl.PortapimappingPackageImpl;
 import org.muml.psm.properties.PropertiesPackage;
@@ -97,11 +91,7 @@ public class PsmPackageImpl extends EPackageImpl implements PsmPackage {
 
 		// Initialize simple dependencies
 		ActionlanguagePackage.eINSTANCE.eClass();
-		HwplatformPackage.eINSTANCE.eClass();
-		HwvaluetypePackage.eINSTANCE.eClass();
-		HwplatforminstancePackage.eINSTANCE.eClass();
-		HwresourcePackage.eINSTANCE.eClass();
-		HwresourceinstancePackage.eINSTANCE.eClass();
+		HardwarePackage.eINSTANCE.eClass();
 		SoftwarePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
@@ -113,7 +103,6 @@ public class PsmPackageImpl extends EPackageImpl implements PsmPackage {
 		Psm_instancePackageImpl thePsm_instancePackage = (Psm_instancePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Psm_instancePackage.eNS_URI) instanceof Psm_instancePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Psm_instancePackage.eNS_URI) : Psm_instancePackage.eINSTANCE);
 		PortapimappingPackageImpl thePortapimappingPackage = (PortapimappingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PortapimappingPackage.eNS_URI) instanceof PortapimappingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PortapimappingPackage.eNS_URI) : PortapimappingPackage.eINSTANCE);
 		ApiexpressionsPackageImpl theApiexpressionsPackage = (ApiexpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ApiexpressionsPackage.eNS_URI) instanceof ApiexpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ApiexpressionsPackage.eNS_URI) : ApiexpressionsPackage.eINSTANCE);
-		CodegenPackageImpl theCodegenPackage = (CodegenPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CodegenPackage.eNS_URI) instanceof CodegenPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CodegenPackage.eNS_URI) : CodegenPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		thePsmPackage.createPackageContents();
@@ -125,7 +114,6 @@ public class PsmPackageImpl extends EPackageImpl implements PsmPackage {
 		thePsm_instancePackage.createPackageContents();
 		thePortapimappingPackage.createPackageContents();
 		theApiexpressionsPackage.createPackageContents();
-		theCodegenPackage.createPackageContents();
 
 		// Initialize created meta-data
 		thePsmPackage.initializePackageContents();
@@ -137,7 +125,6 @@ public class PsmPackageImpl extends EPackageImpl implements PsmPackage {
 		thePsm_instancePackage.initializePackageContents();
 		thePortapimappingPackage.initializePackageContents();
 		theApiexpressionsPackage.initializePackageContents();
-		theCodegenPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		thePsmPackage.freeze();
@@ -228,7 +215,6 @@ public class PsmPackageImpl extends EPackageImpl implements PsmPackage {
 		Psm_instancePackage thePsm_instancePackage = (Psm_instancePackage)EPackage.Registry.INSTANCE.getEPackage(Psm_instancePackage.eNS_URI);
 		PortapimappingPackage thePortapimappingPackage = (PortapimappingPackage)EPackage.Registry.INSTANCE.getEPackage(PortapimappingPackage.eNS_URI);
 		ApiexpressionsPackage theApiexpressionsPackage = (ApiexpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ApiexpressionsPackage.eNS_URI);
-		CodegenPackage theCodegenPackage = (CodegenPackage)EPackage.Registry.INSTANCE.getEPackage(CodegenPackage.eNS_URI);
 
 		// Add subpackages
 		getESubpackages().add(theAllocationPackage);
@@ -237,7 +223,6 @@ public class PsmPackageImpl extends EPackageImpl implements PsmPackage {
 		getESubpackages().add(thePsm_instancePackage);
 		getESubpackages().add(thePortapimappingPackage);
 		getESubpackages().add(theApiexpressionsPackage);
-		getESubpackages().add(theCodegenPackage);
 
 		// Create type parameters
 

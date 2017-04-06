@@ -202,13 +202,148 @@ public interface RealtimestatechartparameterbindingPackage extends EPackage {
 	int API_CALL_PARAMETER_BINDING_FEATURE_COUNT = REALTIME_STATECHART_PARAMETER_BINDING_FEATURE_COUNT + 7;
 
 	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int API_CALL_PARAMETER_BINDING___ECLASS = REALTIME_STATECHART_PARAMETER_BINDING_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int API_CALL_PARAMETER_BINDING___EIS_PROXY = REALTIME_STATECHART_PARAMETER_BINDING_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int API_CALL_PARAMETER_BINDING___ERESOURCE = REALTIME_STATECHART_PARAMETER_BINDING_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int API_CALL_PARAMETER_BINDING___ECONTAINER = REALTIME_STATECHART_PARAMETER_BINDING_OPERATION_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int API_CALL_PARAMETER_BINDING___ECONTAINING_FEATURE = REALTIME_STATECHART_PARAMETER_BINDING_OPERATION_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int API_CALL_PARAMETER_BINDING___ECONTAINMENT_FEATURE = REALTIME_STATECHART_PARAMETER_BINDING_OPERATION_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int API_CALL_PARAMETER_BINDING___ECONTENTS = REALTIME_STATECHART_PARAMETER_BINDING_OPERATION_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int API_CALL_PARAMETER_BINDING___EALL_CONTENTS = REALTIME_STATECHART_PARAMETER_BINDING_OPERATION_COUNT + 7;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int API_CALL_PARAMETER_BINDING___ECROSS_REFERENCES = REALTIME_STATECHART_PARAMETER_BINDING_OPERATION_COUNT + 8;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int API_CALL_PARAMETER_BINDING___EGET__ESTRUCTURALFEATURE = REALTIME_STATECHART_PARAMETER_BINDING_OPERATION_COUNT + 9;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int API_CALL_PARAMETER_BINDING___EGET__ESTRUCTURALFEATURE_BOOLEAN = REALTIME_STATECHART_PARAMETER_BINDING_OPERATION_COUNT + 10;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int API_CALL_PARAMETER_BINDING___ESET__ESTRUCTURALFEATURE_OBJECT = REALTIME_STATECHART_PARAMETER_BINDING_OPERATION_COUNT + 11;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int API_CALL_PARAMETER_BINDING___EIS_SET__ESTRUCTURALFEATURE = REALTIME_STATECHART_PARAMETER_BINDING_OPERATION_COUNT + 12;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int API_CALL_PARAMETER_BINDING___EUNSET__ESTRUCTURALFEATURE = REALTIME_STATECHART_PARAMETER_BINDING_OPERATION_COUNT + 13;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int API_CALL_PARAMETER_BINDING___EINVOKE__EOPERATION_ELIST = REALTIME_STATECHART_PARAMETER_BINDING_OPERATION_COUNT + 14;
+
+	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int API_CALL_PARAMETER_BINDING___GET_EXTENSION__ECLASS = REALTIME_STATECHART_PARAMETER_BINDING_OPERATION_COUNT + 0;
+	int API_CALL_PARAMETER_BINDING___GET_EXTENSION__ECLASS = REALTIME_STATECHART_PARAMETER_BINDING_OPERATION_COUNT + 15;
 
 	/**
 	 * The number of operations of the '<em>API Call Parameter Binding</em>' class.
@@ -217,7 +352,7 @@ public interface RealtimestatechartparameterbindingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int API_CALL_PARAMETER_BINDING_OPERATION_COUNT = REALTIME_STATECHART_PARAMETER_BINDING_OPERATION_COUNT + 1;
+	int API_CALL_PARAMETER_BINDING_OPERATION_COUNT = REALTIME_STATECHART_PARAMETER_BINDING_OPERATION_COUNT + 16;
 
 	/**
 	 * The meta object id for the '{@link org.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.impl.TimeParameterBindingImpl <em>Time Parameter Binding</em>}' class.
