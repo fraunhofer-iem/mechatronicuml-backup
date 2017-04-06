@@ -1,4 +1,4 @@
-package org.muml.psm.allocation.algorithm;
+package org.muml.psm.allocation.context.muml;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
@@ -10,7 +10,7 @@ public class Activator extends AbstractUIPlugin {
 	/**
 	 * The plug-in ID.
 	 */
-	public static final String PLUGIN_ID = "org.muml.psm.allocation.algorithm";
+	public static final String PLUGIN_ID = "org.muml.psm.allocation.context.muml";
 	
 	public Activator() {
 		// TODO Auto-generated constructor stub

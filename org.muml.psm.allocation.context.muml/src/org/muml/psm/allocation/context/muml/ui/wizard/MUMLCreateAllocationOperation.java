@@ -1,8 +1,15 @@
 package org.muml.psm.allocation.context.muml.ui.wizard;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.command.ChangeCommand;
@@ -14,7 +21,9 @@ import org.muml.core.modelinstance.categories.ModelElementCategoryRegistry;
 import org.muml.psm.allocation.SystemAllocation;
 import org.muml.psm.allocation.algorithm.main.AllocationAlgorithm;
 import org.muml.psm.allocation.algorithm.main.IAllocationComputationStrategy;
+import org.muml.psm.allocation.algorithm.qvto.QVToTransformationRunner;
 import org.muml.psm.allocation.algorithm.ui.wizard.CreateAllocationOperation;
+import org.muml.psm.allocation.context.muml.Activator;
 import org.muml.psm.allocation.language.cs.SpecificationCS;
 
 public class MUMLCreateAllocationOperation extends CreateAllocationOperation<SystemAllocation> {
@@ -35,8 +44,10 @@ public class MUMLCreateAllocationOperation extends CreateAllocationOperation<Sys
 	}
 	
 	@Override
-	protected void postProcess(@NonNull AllocationAlgorithm<SystemAllocation> algorithm) {
+	protected void postProcess(@NonNull AllocationAlgorithm<SystemAllocation> algorithm,
+			@NonNull Diagnostic diagnostic) {
 		addSystemAllocationToTarget(algorithm.getStorageObject());
+		logTransformationTimes(diagnostic);
 	}
 	
 	private void addSystemAllocationToTarget(SystemAllocation systemAllocation) {
@@ -109,6 +120,32 @@ public class MUMLCreateAllocationOperation extends CreateAllocationOperation<Sys
 			throw new IllegalArgumentException(String.format(inconsistentContainmentHierarchy, orig));
 		}
 		return (RootNode) eObject;
+	}
+	
+	private void logTransformationTimes(Diagnostic diagnostic) {
+		// log times...
+		Diagnostic logDiagnostic = null;
+		List<Diagnostic> todo = new ArrayList<Diagnostic>(diagnostic.getChildren());
+		while (!todo.isEmpty()) {
+			Diagnostic child = todo.remove(0);
+			if (QVToTransformationRunner.LOG_SOURCE.equals(child.getSource())) {
+				logDiagnostic = child;
+				break;
+			}
+			todo.addAll(child.getChildren());
+		}
+		if (logDiagnostic == null) {
+			// hrm log error?
+			return;
+		}
+		Pattern pattern = Pattern.compile("^(Time for create [^:]*:.*seconds)$",
+				Pattern.MULTILINE);
+		Matcher matcher = pattern.matcher(logDiagnostic.getMessage());
+		while (matcher.find()) {
+			Status timeStatus = new Status(IStatus.INFO, Activator.PLUGIN_ID,
+					matcher.group(1));
+			Activator.getDefault().getLog().log(timeStatus);
+		}
 	}
 
 }

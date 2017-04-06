@@ -7,7 +7,8 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: org.muml.psm.allocation.context.muml.oclcontext,
+Export-Package: org.muml.psm.allocation.context.muml,
+ org.muml.psm.allocation.context.muml.oclcontext,
  org.muml.psm.allocation.context.muml.oclcontext.impl,
  org.muml.psm.allocation.context.muml.oclcontext.util,
  org.muml.psm.allocation.context.muml.provider,
@@ -28,3 +29,4 @@ Require-Bundle: org.eclipse.xtend.lib;bundle-version="2.10.0",
  org.muml.psm.allocation.algorithm;bundle-version="1.0.0",
  org.muml.psm.allocation.algorithm.ui;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
+Bundle-Activator: org.muml.psm.allocation.context.muml.Activator
