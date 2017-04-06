@@ -27,6 +27,7 @@ public class Muml2TraceImageJob extends Job {
 	private IResource resource;
 	private VerificationOptionsProvider optionsProvider;
 	private VerificationPropertyChoiceProvider propertyChoiceProvider;
+	boolean storeIntermediateModels;
 	
 	private Muml2TraceOperation m2m;
 	
@@ -72,7 +73,7 @@ public class Muml2TraceImageJob extends Job {
 				subMonitor.setWorkRemaining(90);
 			}
 			
-			m2m = new Muml2TraceOperation(verifiableElement, optionsProvider, propertyChoiceProvider);
+			m2m = new Muml2TraceOperation(verifiableElement, optionsProvider, propertyChoiceProvider, storeIntermediateModels);
 			try {
 				m2m.run(subMonitor.newChild(70));
 			}
@@ -109,6 +110,10 @@ public class Muml2TraceImageJob extends Job {
 			monitor.done();
 		}
 			
+	}
+
+	public void setStoreIntermediateModels(boolean storeIntermediateModels) {
+		this.storeIntermediateModels = storeIntermediateModels;
 	};
 	
 }

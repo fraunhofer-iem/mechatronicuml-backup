@@ -12,11 +12,20 @@
    
    <extension point="org.eclipse.ui.commands" id="menu-commands">
       <category id="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID" name="UPPAAL Verification Command" description="Run UPPAAL model checking"/>
-      <command id="org.muml.uppaal.adapter.GenerateIntermediateModelsAction"
-         name="Generate Intermediate Models"
+      <command id="org.muml.uppaal.adapter.VerifyMultiplePropertiesWithIntermediateModelsAction"
+         name="Verify Multiple Properties With Intermediate Models"
          categoryId="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"
-         defaultHandler="org.muml.uppaal.adapter.ui.UppaalGenerateIntermediateModelsAction"/>
+         defaultHandler="org.muml.uppaal.adapter.ui.UppaalVerifyMultiplePropertiesWithIntermediateModelsAction"/>
    </extension>
+
+   <extension point="org.eclipse.ui.commands" id="menu-commands">
+      <category id="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID" name="Export UPPAAL Model Command" description="Export UPPAAL model"/>
+      <command id="org.muml.uppaal.adapter.VerifySinglePropertyWithIntermediateModelsAction"
+         name="Export UPPAAL Model"
+         categoryId="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"
+         defaultHandler="org.muml.uppaal.adapter.ui.UppaalVerifySinglePropertyWithIntermediateModelsAction"/>
+   </extension>
+
 
    <extension point="org.eclipse.ui.commands" id="menu-commands">
       <category id="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID" name="UPPAAL XML Export Command" description="Export UPPAAL XML file"/>
@@ -26,15 +35,6 @@
          defaultHandler="org.muml.uppaal.adapter.ui.ExportUppaalXMLAction"/>
    </extension>
    
-   <extension point="org.eclipse.ui.commands" id="menu-commands">
-      <category id="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID" name="Export UPPAAL Model Command" description="Export UPPAAL model"/>
-      <command id="org.muml.uppaal.adapter.ExportUppaalModelAction"
-         name="Export UPPAAL Model"
-         categoryId="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"
-         defaultHandler="org.muml.uppaal.adapter.ui.ExportUppaalModelAction"/>
-   </extension>
-
-
 
    <extension point="org.eclipse.ui.commands" id="menu-commands">
       <category id="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID" name="Export UPPAAL Model Command" description="Export UPPAAL model (Wizard)..."/>
@@ -126,8 +126,8 @@
                
          
          <command
-               commandId="org.muml.uppaal.adapter.GenerateIntermediateModelsAction"
-               label="Generate Intermediate Models">
+               commandId="org.muml.uppaal.adapter.VerifyMultiplePropertiesWithIntermediateModelsAction"
+               label="Verify Multiple Properties (Store Intermediate Models)">
              <visibleWhen>
                <and>
                   <with
@@ -144,8 +144,8 @@
                
                
          <command
-               commandId="org.muml.uppaal.adapter.ExportUppaalModelAction"
-               label="Generate Uppaal Model">
+               commandId="org.muml.uppaal.adapter.VerifySinglePropertyWithIntermediateModelsAction"
+               label="Verify Single Property for a Trace (Store Intermediate Models">
             <visibleWhen>
                <and>
                   <with

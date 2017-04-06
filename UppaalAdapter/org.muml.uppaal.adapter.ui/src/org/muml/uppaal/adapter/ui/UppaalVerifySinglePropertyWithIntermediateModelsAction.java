@@ -14,7 +14,7 @@ import org.muml.pim.pattern.AbstractCoordinationPattern;
 import org.muml.uppaal.adapter.job.Muml2TraceImageJob;
 import org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin;
 
-public class ExportTraceImageAction extends AbstractUppaalAction {
+public class UppaalVerifySinglePropertyWithIntermediateModelsAction extends AbstractUppaalAction {
 
 	@Override
 	public Object executeJobSpecific(ExecutionEvent event, Shell shell, ISelection selection,
@@ -41,7 +41,7 @@ public class ExportTraceImageAction extends AbstractUppaalAction {
 
 		Muml2TraceImageJob job = new Muml2TraceImageJob(verifiableElement, resource, provider, provider);
 		job.addJobChangeListener(new ExportJobChangeAdapter());
-		job.setStoreIntermediateModels(false);
+		job.setStoreIntermediateModels(true);
 		job.schedule();
 
 		return CommandResult.newOKCommandResult();
