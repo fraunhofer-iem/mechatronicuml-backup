@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+
+  <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+    <propertyContributor
+          contributorId="org.muml.ape.contributor">
+       <propertyCategory
+             category="domain">
+       </propertyCategory>
+       <propertyCategory
+             category="default">
+       </propertyCategory>
+       <propertyCategory
+             category="extended">
+       </propertyCategory>
+       <propertyCategory
+             category="advanced">
+       </propertyCategory>
+    </propertyContributor>
+  </extension>
+
+
+
+
+
+
+
+
+ <extension point="org.muml.ape.runtime.propertyEditors">
+    <propertyEditors>
+    
+       <propertyEditor
+             factory="org.muml.verification.core.runtime.properties.runtime.editor.RuntimeComponentInstanceEditor$Factory"
+             type="http://www.muml.org/verification/core/runtime/1.0.0#RuntimeComponentInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.verification.core.runtime.properties.runtime.editor.RuntimeMessageBufferEditor$Factory"
+             type="http://www.muml.org/verification/core/runtime/1.0.0#RuntimeMessageBuffer">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.verification.core.runtime.properties.runtime.editor.RealtimeStatechartInstanceEditor$Factory"
+             type="http://www.muml.org/verification/core/runtime/1.0.0#RealtimeStatechartInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.verification.core.runtime.properties.runtime.editor.RuntimeMessageEditor$Factory"
+             type="http://www.muml.org/verification/core/runtime/1.0.0#RuntimeMessage">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.verification.core.runtime.properties.runtime.editor.RuntimeParameterEditor$Factory"
+             type="http://www.muml.org/verification/core/runtime/1.0.0#RuntimeParameter">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.verification.core.runtime.properties.runtime.editor.VariableBindingEditor$Factory"
+             type="http://www.muml.org/verification/core/runtime/1.0.0#VariableBinding">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.verification.core.runtime.properties.runtime.editor.SingleRoleInstanceEditor$Factory"
+             type="http://www.muml.org/verification/core/runtime/1.0.0#SingleRoleInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.verification.core.runtime.properties.runtime.editor.MultiRoleInstanceEditor$Factory"
+             type="http://www.muml.org/verification/core/runtime/1.0.0#MultiRoleInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.verification.core.runtime.properties.runtime.editor.RuntimeRoleConnectorInstanceEditor$Factory"
+             type="http://www.muml.org/verification/core/runtime/1.0.0#RuntimeRoleConnectorInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.verification.core.runtime.properties.runtime.editor.RuntimeAssemblyConnectorInstanceEditor$Factory"
+             type="http://www.muml.org/verification/core/runtime/1.0.0#RuntimeAssemblyConnectorInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.verification.core.runtime.properties.runtime.editor.MessageOnConnectorEditor$Factory"
+             type="http://www.muml.org/verification/core/runtime/1.0.0#MessageOnConnector">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.verification.core.runtime.properties.runtime.editor.RuntimeDiscreteSinglePortInstanceEditor$Factory"
+             type="http://www.muml.org/verification/core/runtime/1.0.0#RuntimeDiscreteSinglePortInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.verification.core.runtime.properties.runtime.editor.RuntimeDiscreteMultiPortInstanceEditor$Factory"
+             type="http://www.muml.org/verification/core/runtime/1.0.0#RuntimeDiscreteMultiPortInstance">
+       </propertyEditor>
+    
+    </propertyEditors>
+ </extension>
+
+
+ <extension
+       point="org.muml.ape.runtime.metamodelContributor">
+    <metamodel
+          contributor="org.muml.verification.core.runtime.properties.metamodel.MetamodelContributor">
+    </metamodel>
+ </extension>
+
+
+ <extension
+       point="org.muml.ape.runtime.creationConstraintContributor">
+    <constraint
+          contributor="org.muml.verification.core.runtime.properties.constraint.CreationConstraintContributor">
+    </constraint>
+ </extension>
+
+</plugin>

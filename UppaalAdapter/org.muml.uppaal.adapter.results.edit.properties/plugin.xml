@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+
+  <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+    <propertyContributor
+          contributorId="org.muml.ape.contributor">
+       <propertyCategory
+             category="domain">
+       </propertyCategory>
+       <propertyCategory
+             category="default">
+       </propertyCategory>
+       <propertyCategory
+             category="extended">
+       </propertyCategory>
+       <propertyCategory
+             category="advanced">
+       </propertyCategory>
+    </propertyContributor>
+  </extension>
+
+
+
+
+
+
+
+
+ <extension point="org.muml.ape.runtime.propertyEditors">
+    <propertyEditors>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.results.properties.results.editor.PropertyResultRepositoryEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/results/1.0.0#PropertyResultRepository">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.adapter.results.properties.results.editor.PropertyResultEditor$Factory"
+             type="http://www.muml.org/uppaal/adapter/results/1.0.0#PropertyResult">
+       </propertyEditor>
+    
+    </propertyEditors>
+ </extension>
+
+
+ <extension
+       point="org.muml.ape.runtime.metamodelContributor">
+    <metamodel
+          contributor="org.muml.uppaal.adapter.results.properties.metamodel.MetamodelContributor">
+    </metamodel>
+ </extension>
+
+
+ <extension
+       point="org.muml.ape.runtime.creationConstraintContributor">
+    <constraint
+          contributor="org.muml.uppaal.adapter.results.properties.constraint.CreationConstraintContributor">
+    </constraint>
+ </extension>
+
+</plugin>

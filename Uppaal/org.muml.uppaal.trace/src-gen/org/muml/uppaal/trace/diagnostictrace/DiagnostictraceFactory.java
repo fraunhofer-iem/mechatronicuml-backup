@@ -15,155 +15,155 @@ import org.eclipse.emf.ecore.EFactory;
 public interface DiagnostictraceFactory extends EFactory
 {
   /**
-   * The singleton instance of the factory.
-   * <!-- begin-user-doc -->
+	 * The singleton instance of the factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   DiagnostictraceFactory eINSTANCE = org.muml.uppaal.trace.diagnostictrace.impl.DiagnostictraceFactoryImpl.init();
 
   /**
-   * Returns a new object of class '<em>Trace Repository</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Trace Repository</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Trace Repository</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Trace Repository</em>'.
+	 * @generated
+	 */
   TraceRepository createTraceRepository();
 
   /**
-   * Returns a new object of class '<em>Trace</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Trace</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Trace</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Trace</em>'.
+	 * @generated
+	 */
   Trace createTrace();
 
   /**
-   * Returns a new object of class '<em>Process Identifier</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Process Identifier</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Process Identifier</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Process Identifier</em>'.
+	 * @generated
+	 */
   ProcessIdentifier createProcessIdentifier();
 
   /**
-   * Returns a new object of class '<em>Location Activity</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Location Activity</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Location Activity</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Location Activity</em>'.
+	 * @generated
+	 */
   LocationActivity createLocationActivity();
 
   /**
-   * Returns a new object of class '<em>Variable Value</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Variable Value</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Variable Value</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Variable Value</em>'.
+	 * @generated
+	 */
   VariableValue createVariableValue();
 
   /**
-   * Returns a new object of class '<em>Single Named Element Reference</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Single Named Element Reference</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Single Named Element Reference</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Single Named Element Reference</em>'.
+	 * @generated
+	 */
   SingleNamedElementReference createSingleNamedElementReference();
 
   /**
-   * Returns a new object of class '<em>Named Element Reference</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Named Element Reference</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Named Element Reference</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Named Element Reference</em>'.
+	 * @generated
+	 */
   NamedElementReference createNamedElementReference();
 
   /**
-   * Returns a new object of class '<em>Trace Item</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Trace Item</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Trace Item</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Trace Item</em>'.
+	 * @generated
+	 */
   TraceItem createTraceItem();
 
   /**
-   * Returns a new object of class '<em>State</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>State</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>State</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>State</em>'.
+	 * @generated
+	 */
   State createState();
 
   /**
-   * Returns a new object of class '<em>Edge Activity</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Edge Activity</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Edge Activity</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Edge Activity</em>'.
+	 * @generated
+	 */
   EdgeActivity createEdgeActivity();
 
   /**
-   * Returns a new object of class '<em>Synchronization</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Synchronization</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Synchronization</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Synchronization</em>'.
+	 * @generated
+	 */
   Synchronization createSynchronization();
 
   /**
-   * Returns a new object of class '<em>Channel Synchronization</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Channel Synchronization</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Channel Synchronization</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Channel Synchronization</em>'.
+	 * @generated
+	 */
   ChannelSynchronization createChannelSynchronization();
 
   /**
-   * Returns a new object of class '<em>Delay Transition</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Delay Transition</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Delay Transition</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Delay Transition</em>'.
+	 * @generated
+	 */
   DelayTransition createDelayTransition();
 
   /**
-   * Returns a new object of class '<em>Action Transition</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Action Transition</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Action Transition</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Action Transition</em>'.
+	 * @generated
+	 */
   ActionTransition createActionTransition();
 
   /**
-   * Returns a new object of class '<em>Transition</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Transition</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Transition</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Transition</em>'.
+	 * @generated
+	 */
   Transition createTransition();
 
   /**
-   * Returns the package supported by this factory.
-   * <!-- begin-user-doc -->
+	 * Returns the package supported by this factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the package supported by this factory.
-   * @generated
-   */
+	 * @return the package supported by this factory.
+	 * @generated
+	 */
   DiagnostictracePackage getDiagnostictracePackage();
 
 } //DiagnostictraceFactory

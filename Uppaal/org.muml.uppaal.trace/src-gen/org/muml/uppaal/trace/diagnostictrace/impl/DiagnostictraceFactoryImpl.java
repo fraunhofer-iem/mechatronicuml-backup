@@ -22,336 +22,330 @@ import org.muml.uppaal.trace.diagnostictrace.*;
 public class DiagnostictraceFactoryImpl extends EFactoryImpl implements DiagnostictraceFactory
 {
   /**
-   * Creates the default factory implementation.
-   * <!-- begin-user-doc -->
+	 * Creates the default factory implementation.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public static DiagnostictraceFactory init()
   {
-    try
-    {
-      DiagnostictraceFactory theDiagnostictraceFactory = (DiagnostictraceFactory)EPackage.Registry.INSTANCE.getEFactory(DiagnostictracePackage.eNS_URI);
-      if (theDiagnostictraceFactory != null)
-      {
-        return theDiagnostictraceFactory;
-      }
-    }
-    catch (Exception exception)
-    {
-      EcorePlugin.INSTANCE.log(exception);
-    }
-    return new DiagnostictraceFactoryImpl();
-  }
+		try {
+			DiagnostictraceFactory theDiagnostictraceFactory = (DiagnostictraceFactory)EPackage.Registry.INSTANCE.getEFactory(DiagnostictracePackage.eNS_URI);
+			if (theDiagnostictraceFactory != null) {
+				return theDiagnostictraceFactory;
+			}
+		}
+		catch (Exception exception) {
+			EcorePlugin.INSTANCE.log(exception);
+		}
+		return new DiagnostictraceFactoryImpl();
+	}
 
   /**
-   * Creates an instance of the factory.
-   * <!-- begin-user-doc -->
+	 * Creates an instance of the factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DiagnostictraceFactoryImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public EObject create(EClass eClass)
   {
-    switch (eClass.getClassifierID())
-    {
-      case DiagnostictracePackage.TRACE_REPOSITORY: return createTraceRepository();
-      case DiagnostictracePackage.TRACE: return createTrace();
-      case DiagnostictracePackage.PROCESS_IDENTIFIER: return createProcessIdentifier();
-      case DiagnostictracePackage.LOCATION_ACTIVITY: return createLocationActivity();
-      case DiagnostictracePackage.VARIABLE_VALUE: return createVariableValue();
-      case DiagnostictracePackage.SINGLE_NAMED_ELEMENT_REFERENCE: return createSingleNamedElementReference();
-      case DiagnostictracePackage.NAMED_ELEMENT_REFERENCE: return createNamedElementReference();
-      case DiagnostictracePackage.TRACE_ITEM: return createTraceItem();
-      case DiagnostictracePackage.STATE: return createState();
-      case DiagnostictracePackage.EDGE_ACTIVITY: return createEdgeActivity();
-      case DiagnostictracePackage.SYNCHRONIZATION: return createSynchronization();
-      case DiagnostictracePackage.CHANNEL_SYNCHRONIZATION: return createChannelSynchronization();
-      case DiagnostictracePackage.DELAY_TRANSITION: return createDelayTransition();
-      case DiagnostictracePackage.ACTION_TRANSITION: return createActionTransition();
-      case DiagnostictracePackage.TRANSITION: return createTransition();
-      default:
-        throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-    }
-  }
+		switch (eClass.getClassifierID()) {
+			case DiagnostictracePackage.TRACE_REPOSITORY: return createTraceRepository();
+			case DiagnostictracePackage.TRACE: return createTrace();
+			case DiagnostictracePackage.PROCESS_IDENTIFIER: return createProcessIdentifier();
+			case DiagnostictracePackage.LOCATION_ACTIVITY: return createLocationActivity();
+			case DiagnostictracePackage.VARIABLE_VALUE: return createVariableValue();
+			case DiagnostictracePackage.SINGLE_NAMED_ELEMENT_REFERENCE: return createSingleNamedElementReference();
+			case DiagnostictracePackage.NAMED_ELEMENT_REFERENCE: return createNamedElementReference();
+			case DiagnostictracePackage.TRACE_ITEM: return createTraceItem();
+			case DiagnostictracePackage.STATE: return createState();
+			case DiagnostictracePackage.EDGE_ACTIVITY: return createEdgeActivity();
+			case DiagnostictracePackage.SYNCHRONIZATION: return createSynchronization();
+			case DiagnostictracePackage.CHANNEL_SYNCHRONIZATION: return createChannelSynchronization();
+			case DiagnostictracePackage.DELAY_TRANSITION: return createDelayTransition();
+			case DiagnostictracePackage.ACTION_TRANSITION: return createActionTransition();
+			case DiagnostictracePackage.TRANSITION: return createTransition();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object createFromString(EDataType eDataType, String initialValue)
   {
-    switch (eDataType.getClassifierID())
-    {
-      case DiagnostictracePackage.RESULT:
-        return createResultFromString(eDataType, initialValue);
-      case DiagnostictracePackage.COMPARE_OPERATOR:
-        return createCompareOperatorFromString(eDataType, initialValue);
-      default:
-        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-    }
-  }
+		switch (eDataType.getClassifierID()) {
+			case DiagnostictracePackage.RESULT:
+				return createResultFromString(eDataType, initialValue);
+			case DiagnostictracePackage.COMPARE_OPERATOR:
+				return createCompareOperatorFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String convertToString(EDataType eDataType, Object instanceValue)
   {
-    switch (eDataType.getClassifierID())
-    {
-      case DiagnostictracePackage.RESULT:
-        return convertResultToString(eDataType, instanceValue);
-      case DiagnostictracePackage.COMPARE_OPERATOR:
-        return convertCompareOperatorToString(eDataType, instanceValue);
-      default:
-        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-    }
-  }
+		switch (eDataType.getClassifierID()) {
+			case DiagnostictracePackage.RESULT:
+				return convertResultToString(eDataType, instanceValue);
+			case DiagnostictracePackage.COMPARE_OPERATOR:
+				return convertCompareOperatorToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public TraceRepository createTraceRepository()
   {
-    TraceRepositoryImpl traceRepository = new TraceRepositoryImpl();
-    return traceRepository;
-  }
+		TraceRepositoryImpl traceRepository = new TraceRepositoryImpl();
+		return traceRepository;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Trace createTrace()
   {
-    TraceImpl trace = new TraceImpl();
-    return trace;
-  }
+		TraceImpl trace = new TraceImpl();
+		return trace;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ProcessIdentifier createProcessIdentifier()
   {
-    ProcessIdentifierImpl processIdentifier = new ProcessIdentifierImpl();
-    return processIdentifier;
-  }
+		ProcessIdentifierImpl processIdentifier = new ProcessIdentifierImpl();
+		return processIdentifier;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public LocationActivity createLocationActivity()
   {
-    LocationActivityImpl locationActivity = new LocationActivityImpl();
-    return locationActivity;
-  }
+		LocationActivityImpl locationActivity = new LocationActivityImpl();
+		return locationActivity;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public VariableValue createVariableValue()
   {
-    VariableValueImpl variableValue = new VariableValueImpl();
-    return variableValue;
-  }
+		VariableValueImpl variableValue = new VariableValueImpl();
+		return variableValue;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public SingleNamedElementReference createSingleNamedElementReference()
   {
-    SingleNamedElementReferenceImpl singleNamedElementReference = new SingleNamedElementReferenceImpl();
-    return singleNamedElementReference;
-  }
+		SingleNamedElementReferenceImpl singleNamedElementReference = new SingleNamedElementReferenceImpl();
+		return singleNamedElementReference;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NamedElementReference createNamedElementReference()
   {
-    NamedElementReferenceImpl namedElementReference = new NamedElementReferenceImpl();
-    return namedElementReference;
-  }
+		NamedElementReferenceImpl namedElementReference = new NamedElementReferenceImpl();
+		return namedElementReference;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public TraceItem createTraceItem()
   {
-    TraceItemImpl traceItem = new TraceItemImpl();
-    return traceItem;
-  }
+		TraceItemImpl traceItem = new TraceItemImpl();
+		return traceItem;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public State createState()
   {
-    StateImpl state = new StateImpl();
-    return state;
-  }
+		StateImpl state = new StateImpl();
+		return state;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EdgeActivity createEdgeActivity()
   {
-    EdgeActivityImpl edgeActivity = new EdgeActivityImpl();
-    return edgeActivity;
-  }
+		EdgeActivityImpl edgeActivity = new EdgeActivityImpl();
+		return edgeActivity;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Synchronization createSynchronization()
   {
-    SynchronizationImpl synchronization = new SynchronizationImpl();
-    return synchronization;
-  }
+		SynchronizationImpl synchronization = new SynchronizationImpl();
+		return synchronization;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ChannelSynchronization createChannelSynchronization()
   {
-    ChannelSynchronizationImpl channelSynchronization = new ChannelSynchronizationImpl();
-    return channelSynchronization;
-  }
+		ChannelSynchronizationImpl channelSynchronization = new ChannelSynchronizationImpl();
+		return channelSynchronization;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DelayTransition createDelayTransition()
   {
-    DelayTransitionImpl delayTransition = new DelayTransitionImpl();
-    return delayTransition;
-  }
+		DelayTransitionImpl delayTransition = new DelayTransitionImpl();
+		return delayTransition;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ActionTransition createActionTransition()
   {
-    ActionTransitionImpl actionTransition = new ActionTransitionImpl();
-    return actionTransition;
-  }
+		ActionTransitionImpl actionTransition = new ActionTransitionImpl();
+		return actionTransition;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Transition createTransition()
   {
-    TransitionImpl transition = new TransitionImpl();
-    return transition;
-  }
+		TransitionImpl transition = new TransitionImpl();
+		return transition;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Result createResultFromString(EDataType eDataType, String initialValue)
   {
-    Result result = Result.get(initialValue);
-    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-    return result;
-  }
+		Result result = Result.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String convertResultToString(EDataType eDataType, Object instanceValue)
   {
-    return instanceValue == null ? null : instanceValue.toString();
-  }
+		return instanceValue == null ? null : instanceValue.toString();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public CompareOperator createCompareOperatorFromString(EDataType eDataType, String initialValue)
   {
-    CompareOperator result = CompareOperator.get(initialValue);
-    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-    return result;
-  }
+		CompareOperator result = CompareOperator.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String convertCompareOperatorToString(EDataType eDataType, Object instanceValue)
   {
-    return instanceValue == null ? null : instanceValue.toString();
-  }
+		return instanceValue == null ? null : instanceValue.toString();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DiagnostictracePackage getDiagnostictracePackage()
   {
-    return (DiagnostictracePackage)getEPackage();
-  }
+		return (DiagnostictracePackage)getEPackage();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @deprecated
-   * @generated
-   */
+	 * @deprecated
+	 * @generated
+	 */
   @Deprecated
   public static DiagnostictracePackage getPackage()
   {
-    return DiagnostictracePackage.eINSTANCE;
-  }
+		return DiagnostictracePackage.eINSTANCE;
+	}
 
 } //DiagnostictraceFactoryImpl

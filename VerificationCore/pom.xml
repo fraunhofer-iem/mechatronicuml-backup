@@ -21,13 +21,18 @@
     <module>org.muml.verification.core.actionlanguage.interpreter.test</module>
     <module>org.muml.verification.core.feature</module>
     <module>org.muml.verification.core.reachanalysis.reachabilitygraph.cic</module>
+    <module>org.muml.verification.core.reachanalysis.reachabilitygraph.cic.edit</module>
+    <module>org.muml.verification.core.reachanalysis.reachabilitygraph.cic.edit.properties</module>
     <module>org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc</module>
+    <module>org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.edit</module>
+    <module>org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.edit.properties</module>
     <module>org.muml.verification.core.reachanalysis.rtsc</module>
     <module>org.muml.verification.core.reachanalysis.rtsc.test</module>
     <module>org.muml.verification.core.refinement.testautomata</module>
     <module>org.muml.verification.core.repository</module>
     <module>org.muml.verification.core.runtime</module>
     <module>org.muml.verification.core.runtime.edit</module>
+    <module>org.muml.verification.core.runtime.edit.properties</module>
   </modules>
   
   <build>

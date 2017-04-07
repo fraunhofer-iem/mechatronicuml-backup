@@ -23,19 +23,19 @@ import org.eclipse.emf.common.util.EList;
 public interface ActionTransition extends Transition
 {
   /**
-   * Returns the value of the '<em><b>Edge Activities</b></em>' containment reference list.
-   * The list contents are of type {@link org.muml.uppaal.trace.diagnostictrace.EdgeActivity}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Edge Activities</b></em>' containment reference list.
+	 * The list contents are of type {@link org.muml.uppaal.trace.diagnostictrace.EdgeActivity}.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Edge Activities</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Edge Activities</em>' containment reference list.
-   * @see org.muml.uppaal.trace.diagnostictrace.DiagnostictracePackage#getActionTransition_EdgeActivities()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Edge Activities</em>' containment reference list.
+	 * @see org.muml.uppaal.trace.diagnostictrace.DiagnostictracePackage#getActionTransition_EdgeActivities()
+	 * @model containment="true"
+	 * @generated
+	 */
   EList<EdgeActivity> getEdgeActivities();
 
 } // ActionTransition

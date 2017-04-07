@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.muml:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.muml="http://www.muml.org/ape/1.0.0" contributorId="org.muml.ape.contributor">
+  <reconciler/>
+  <genModel href="RuntimeModel.genmodel#/"/>
+  <referencedGenerators href="../../org.muml.core/model/core.propsheet#_i_I4kOHNEeS5Putgio2lkg"/>
+  <referencedGenerators href="../../org.muml.pim/model/pim.propsheet#_VZIdoMwbEeSjx7OWZCcdLw"/>
+  <plugin id="org.muml.verification.core.runtime.edit.properties" name="Properties" vendor="Fraunhofer, HNI" version="0.1.0.qualifier">
+    <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
+    <requiredBundles>org.eclipse.ui</requiredBundles>
+    <requiredBundles>org.eclipse.core.runtime</requiredBundles>
+    <requiredBundles>org.muml.verification.core.runtime</requiredBundles>
+    <requiredBundles>org.muml.verification.core.runtime.edit</requiredBundles>
+    <requiredBundles>org.muml.ape.runtime</requiredBundles>
+    <requiredBundles>org.eclipse.emf.edit</requiredBundles>
+    <requiredBundles>org.muml.core.edit</requiredBundles>
+    <requiredBundles>org.muml.core.edit.properties</requiredBundles>
+    <requiredBundles>org.muml.pim.edit</requiredBundles>
+    <requiredBundles>org.muml.pim.edit.properties</requiredBundles>
+  </plugin>
+  <defaultTab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+  <packages>
+    <genPackage href="RuntimeModel.genmodel#//runtime"/>
+    <classes>
+      <genClass href="RuntimeModel.genmodel#//runtime/RuntimeComponentInstance"/>
+      <superClasses href="../../org.muml.pim/model/pim.propsheet#_VZPLW8wbEeSjx7OWZCcdLw"/>
+      <superClasses href="#//@packages.0/@classes.8"/>
+    </classes>
+    <classes>
+      <genClass href="RuntimeModel.genmodel#//runtime/RuntimeDiscretePortInstance"/>
+      <superClasses href="#//@packages.0/@classes.15"/>
+      <superClasses href="../../org.muml.pim/model/pim.propsheet#_VZQZdcwbEeSjx7OWZCcdLw"/>
+    </classes>
+    <classes superClasses="//@packages.0/@classes.15">
+      <genClass href="RuntimeModel.genmodel#//runtime/RoleInstance"/>
+    </classes>
+    <classes>
+      <genClass href="RuntimeModel.genmodel#//runtime/RuntimeMessageBuffer"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="RuntimeModel.genmodel#//runtime/RuntimeMessageBuffer/messageBuffer"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_PmQuHNEeS5Putgio2lkg"/>
+    </classes>
+    <classes>
+      <genClass href="RuntimeModel.genmodel#//runtime/RealtimeStatechartInstance"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="RuntimeModel.genmodel#//runtime/RealtimeStatechartInstance/instanceOf"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="RuntimeModel.genmodel#//runtime/RealtimeStatechartInstance/activeVertex"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="RuntimeModel.genmodel#//runtime/RealtimeStatechartInstance/activeTransition"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_PmQuHNEeS5Putgio2lkg"/>
+    </classes>
+    <classes>
+      <genClass href="RuntimeModel.genmodel#//runtime/RuntimeMessage"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="RuntimeModel.genmodel#//runtime/RuntimeMessage/type"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
+    </classes>
+    <classes>
+      <genClass href="RuntimeModel.genmodel#//runtime/RuntimeParameter"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="RuntimeModel.genmodel#//runtime/RuntimeParameter/value"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="RuntimeModel.genmodel#//runtime/RuntimeParameter/parameter"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
+    </classes>
+    <classes>
+      <genClass href="RuntimeModel.genmodel#//runtime/VariableBinding"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="RuntimeModel.genmodel#//runtime/VariableBinding/variable"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="RuntimeModel.genmodel#//runtime/VariableBinding/value"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_PmQuHNEeS5Putgio2lkg"/>
+    </classes>
+    <classes>
+      <genClass href="RuntimeModel.genmodel#//runtime/RuntimeBehavioralElement"/>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
+    </classes>
+    <classes>
+      <genClass href="RuntimeModel.genmodel#//runtime/SingleRoleInstance"/>
+      <superClasses href="../../org.muml.pim/model/pim.propsheet#_VZY8UMwbEeSjx7OWZCcdLw"/>
+      <superClasses href="#//@packages.0/@classes.2"/>
+    </classes>
+    <classes>
+      <genClass href="RuntimeModel.genmodel#//runtime/MultiRoleInstance"/>
+      <superClasses href="../../org.muml.pim/model/pim.propsheet#_VZY8V8wbEeSjx7OWZCcdLw"/>
+      <superClasses href="#//@packages.0/@classes.2"/>
+    </classes>
+    <classes superClasses="//@packages.0/@classes.12">
+      <genClass href="RuntimeModel.genmodel#//runtime/RuntimeRoleConnectorInstance"/>
+    </classes>
+    <classes>
+      <genClass href="RuntimeModel.genmodel#//runtime/RuntimeConnectorInstance"/>
+      <superClasses href="../../org.muml.pim/model/pim.propsheet#_VZXuOMwbEeSjx7OWZCcdLw"/>
+    </classes>
+    <classes>
+      <genClass href="RuntimeModel.genmodel#//runtime/RuntimeAssemblyConnectorInstance"/>
+      <superClasses href="#//@packages.0/@classes.12"/>
+      <superClasses href="../../org.muml.pim/model/pim.propsheet#//@packages.2/@classes.11"/>
+    </classes>
+    <classes>
+      <genClass href="RuntimeModel.genmodel#//runtime/MessageOnConnector"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="RuntimeModel.genmodel#//runtime/MessageOnConnector/receiver"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_PmQuHNEeS5Putgio2lkg"/>
+    </classes>
+    <classes>
+      <genClass href="RuntimeModel.genmodel#//runtime/RuntimeDiscreteInteractionEndpointInstance"/>
+      <superClasses href="../../org.muml.pim/model/pim.propsheet#_VZRnm8wbEeSjx7OWZCcdLw"/>
+      <superClasses href="../../org.muml.pim/model/pim.propsheet#_VZYVTswbEeSjx7OWZCcdLw"/>
+      <superClasses href="#//@packages.0/@classes.8"/>
+    </classes>
+    <classes>
+      <genClass href="RuntimeModel.genmodel#//runtime/RuntimeDiscreteSinglePortInstance"/>
+      <superClasses href="#//@packages.0/@classes.1"/>
+      <superClasses href="../../org.muml.pim/model/pim.propsheet#_VZQZdswbEeSjx7OWZCcdLw"/>
+    </classes>
+    <classes>
+      <genClass href="RuntimeModel.genmodel#//runtime/RuntimeDiscreteMultiPortInstance"/>
+      <superClasses href="../../org.muml.pim/model/pim.propsheet#_VZQZd8wbEeSjx7OWZCcdLw"/>
+      <superClasses href="#//@packages.0/@classes.1"/>
+    </classes>
+  </packages>
+</org.muml:PropertyGenerator>

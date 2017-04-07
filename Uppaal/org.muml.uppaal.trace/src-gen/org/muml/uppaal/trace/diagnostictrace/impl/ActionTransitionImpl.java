@@ -34,132 +34,126 @@ import org.muml.uppaal.trace.diagnostictrace.EdgeActivity;
 public class ActionTransitionImpl extends TransitionImpl implements ActionTransition
 {
   /**
-   * The cached value of the '{@link #getEdgeActivities() <em>Edge Activities</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getEdgeActivities() <em>Edge Activities</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEdgeActivities()
-   * @generated
-   * @ordered
-   */
+	 * @see #getEdgeActivities()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<EdgeActivity> edgeActivities;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected ActionTransitionImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DiagnostictracePackage.Literals.ACTION_TRANSITION;
-  }
+		return DiagnostictracePackage.Literals.ACTION_TRANSITION;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<EdgeActivity> getEdgeActivities()
   {
-    if (edgeActivities == null)
-    {
-      edgeActivities = new EObjectContainmentEList<EdgeActivity>(EdgeActivity.class, this, DiagnostictracePackage.ACTION_TRANSITION__EDGE_ACTIVITIES);
-    }
-    return edgeActivities;
-  }
+		if (edgeActivities == null) {
+			edgeActivities = new EObjectContainmentEList<EdgeActivity>(EdgeActivity.class, this, DiagnostictracePackage.ACTION_TRANSITION__EDGE_ACTIVITIES);
+		}
+		return edgeActivities;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case DiagnostictracePackage.ACTION_TRANSITION__EDGE_ACTIVITIES:
-        return ((InternalEList<?>)getEdgeActivities()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case DiagnostictracePackage.ACTION_TRANSITION__EDGE_ACTIVITIES:
+				return ((InternalEList<?>)getEdgeActivities()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case DiagnostictracePackage.ACTION_TRANSITION__EDGE_ACTIVITIES:
-        return getEdgeActivities();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case DiagnostictracePackage.ACTION_TRANSITION__EDGE_ACTIVITIES:
+				return getEdgeActivities();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case DiagnostictracePackage.ACTION_TRANSITION__EDGE_ACTIVITIES:
-        getEdgeActivities().clear();
-        getEdgeActivities().addAll((Collection<? extends EdgeActivity>)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case DiagnostictracePackage.ACTION_TRANSITION__EDGE_ACTIVITIES:
+				getEdgeActivities().clear();
+				getEdgeActivities().addAll((Collection<? extends EdgeActivity>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case DiagnostictracePackage.ACTION_TRANSITION__EDGE_ACTIVITIES:
-        getEdgeActivities().clear();
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case DiagnostictracePackage.ACTION_TRANSITION__EDGE_ACTIVITIES:
+				getEdgeActivities().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case DiagnostictracePackage.ACTION_TRANSITION__EDGE_ACTIVITIES:
-        return edgeActivities != null && !edgeActivities.isEmpty();
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case DiagnostictracePackage.ACTION_TRANSITION__EDGE_ACTIVITIES:
+				return edgeActivities != null && !edgeActivities.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //ActionTransitionImpl

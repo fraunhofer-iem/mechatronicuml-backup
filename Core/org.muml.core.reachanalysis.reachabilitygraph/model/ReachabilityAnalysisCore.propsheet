@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.muml:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.muml="http://www.muml.org/ape/1.0.0" contributorId="org.muml.ape.contributor">
+  <reconciler/>
+  <genModel href="ReachabilityAnalysisCore.genmodel#/"/>
+  <referencedGenerators href="../../org.muml.core/model/core.propsheet#_i_I4kOHNEeS5Putgio2lkg"/>
+  <plugin id="org.muml.core.reachanalysis.reachabilitygraph.edit.properties" name="Properties" vendor="Fraunhofer, HNI" version="0.1.0.qualifier">
+    <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
+    <requiredBundles>org.eclipse.ui</requiredBundles>
+    <requiredBundles>org.eclipse.core.runtime</requiredBundles>
+    <requiredBundles>org.muml.core.reachanalysis.reachabilitygraph.edit</requiredBundles>
+    <requiredBundles>org.muml.core.reachanalysis.reachabilitygraph</requiredBundles>
+    <requiredBundles>org.muml.ape.runtime</requiredBundles>
+    <requiredBundles>org.eclipse.emf.edit</requiredBundles>
+    <requiredBundles>org.muml.core.edit</requiredBundles>
+    <requiredBundles>org.muml.core.edit.properties</requiredBundles>
+  </plugin>
+  <defaultTab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+  <packages>
+    <genPackage href="ReachabilityAnalysisCore.genmodel#//reachabilitygraph"/>
+    <classes>
+      <genClass href="ReachabilityAnalysisCore.genmodel#//reachabilitygraph/HashToStateList"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="ReachabilityAnalysisCore.genmodel#//reachabilitygraph/HashToStateList/hash"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:SpinnerPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="ReachabilityAnalysisCore.genmodel#//reachabilitygraph/HashToStateList/states"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes>
+      <genClass href="ReachabilityAnalysisCore.genmodel#//reachabilitygraph/HashToStateListMapEntry"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="ReachabilityAnalysisCore.genmodel#//reachabilitygraph/HashToStateListMapEntry/key"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="ReachabilityAnalysisCore.genmodel#//reachabilitygraph/HashToStateListMapEntry/value"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes>
+      <genClass href="ReachabilityAnalysisCore.genmodel#//reachabilitygraph/ReachabilityGraph"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="ReachabilityAnalysisCore.genmodel#//reachabilitygraph/ReachabilityGraph/startState"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_PmQuHNEeS5Putgio2lkg"/>
+    </classes>
+    <classes>
+      <genClass href="ReachabilityAnalysisCore.genmodel#//reachabilitygraph/ReachabilityGraphTransition"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="ReachabilityAnalysisCore.genmodel#//reachabilitygraph/ReachabilityGraphTransition/source"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="ReachabilityAnalysisCore.genmodel#//reachabilitygraph/ReachabilityGraphTransition/target"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_PmQuHNEeS5Putgio2lkg"/>
+    </classes>
+    <classes superClasses="//@packages.0/@classes.3">
+      <genClass href="ReachabilityAnalysisCore.genmodel#//reachabilitygraph/ActionTransition"/>
+    </classes>
+    <classes>
+      <genClass href="ReachabilityAnalysisCore.genmodel#//reachabilitygraph/ReachabilityGraphState"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="ReachabilityAnalysisCore.genmodel#//reachabilitygraph/ReachabilityGraphState/hash"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:SpinnerPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="ReachabilityAnalysisCore.genmodel#//reachabilitygraph/ReachabilityGraphState/incomingTransitions"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="ReachabilityAnalysisCore.genmodel#//reachabilitygraph/ReachabilityGraphState/outgoingTransitions"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="ReachabilityAnalysisCore.genmodel#//reachabilitygraph/ReachabilityGraphState/pathDepth"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:SpinnerPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:PropertyCategory" title="Lists" properties="//@packages.0/@classes.5/@orderedElements.1 //@packages.0/@classes.5/@orderedElements.2"/>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_PmQuHNEeS5Putgio2lkg"/>
+    </classes>
+  </packages>
+</org.muml:PropertyGenerator>

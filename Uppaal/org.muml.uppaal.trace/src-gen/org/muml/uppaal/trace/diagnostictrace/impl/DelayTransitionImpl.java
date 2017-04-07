@@ -27,150 +27,146 @@ import org.muml.uppaal.trace.diagnostictrace.DiagnostictracePackage;
 public class DelayTransitionImpl extends TransitionImpl implements DelayTransition
 {
   /**
-   * The default value of the '{@link #getDuration() <em>Duration</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getDuration() <em>Duration</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDuration()
-   * @generated
-   * @ordered
-   */
+	 * @see #getDuration()
+	 * @generated
+	 * @ordered
+	 */
   protected static final int DURATION_EDEFAULT = 0;
 
   /**
-   * The cached value of the '{@link #getDuration() <em>Duration</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getDuration() <em>Duration</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDuration()
-   * @generated
-   * @ordered
-   */
+	 * @see #getDuration()
+	 * @generated
+	 * @ordered
+	 */
   protected int duration = DURATION_EDEFAULT;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected DelayTransitionImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DiagnostictracePackage.Literals.DELAY_TRANSITION;
-  }
+		return DiagnostictracePackage.Literals.DELAY_TRANSITION;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public int getDuration()
   {
-    return duration;
-  }
+		return duration;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setDuration(int newDuration)
   {
-    int oldDuration = duration;
-    duration = newDuration;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DiagnostictracePackage.DELAY_TRANSITION__DURATION, oldDuration, duration));
-  }
+		int oldDuration = duration;
+		duration = newDuration;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DiagnostictracePackage.DELAY_TRANSITION__DURATION, oldDuration, duration));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case DiagnostictracePackage.DELAY_TRANSITION__DURATION:
-        return getDuration();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case DiagnostictracePackage.DELAY_TRANSITION__DURATION:
+				return getDuration();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case DiagnostictracePackage.DELAY_TRANSITION__DURATION:
-        setDuration((Integer)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case DiagnostictracePackage.DELAY_TRANSITION__DURATION:
+				setDuration((Integer)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case DiagnostictracePackage.DELAY_TRANSITION__DURATION:
-        setDuration(DURATION_EDEFAULT);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case DiagnostictracePackage.DELAY_TRANSITION__DURATION:
+				setDuration(DURATION_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case DiagnostictracePackage.DELAY_TRANSITION__DURATION:
-        return duration != DURATION_EDEFAULT;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case DiagnostictracePackage.DELAY_TRANSITION__DURATION:
+				return duration != DURATION_EDEFAULT;
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (duration: ");
-    result.append(duration);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (duration: ");
+		result.append(duration);
+		result.append(')');
+		return result.toString();
+	}
 
 } //DelayTransitionImpl

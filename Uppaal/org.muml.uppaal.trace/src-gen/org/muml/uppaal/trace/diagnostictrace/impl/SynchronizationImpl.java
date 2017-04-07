@@ -19,24 +19,24 @@ import org.muml.uppaal.trace.diagnostictrace.Synchronization;
 public class SynchronizationImpl extends MinimalEObjectImpl.Container implements Synchronization
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected SynchronizationImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DiagnostictracePackage.Literals.SYNCHRONIZATION;
-  }
+		return DiagnostictracePackage.Literals.SYNCHRONIZATION;
+	}
 
 } //SynchronizationImpl

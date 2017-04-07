@@ -21,6 +21,7 @@
     <!-- <module>org.muml.uppaal.buckminster</module> -->
     <module>org.muml.uppaal.cmd</module>
     <module>org.muml.uppaal.edit</module>
+    <module>org.muml.uppaal.edit.properties</module>
     <module>org.muml.uppaal.editor</module>
     <module>org.muml.uppaal.feature</module>
     <module>org.muml.uppaal.job</module>
@@ -32,10 +33,13 @@
     <module>org.muml.uppaal.requirements</module>
     <module>org.muml.uppaal.repository</module>
     <module>org.muml.uppaal.requirements.edit</module>
+    <module>org.muml.uppaal.requirements.edit.properties</module>
     <module>org.muml.uppaal.requirements.editor</module>
     <!-- <module>org.muml.uppaal.sdk.feature</module> -->
     <module>org.muml.uppaal.serialization</module>
     <module>org.muml.uppaal.trace</module>
+    <module>org.muml.uppaal.trace.edit</module>
+    <module>org.muml.uppaal.trace.edit.properties</module>
     <module>org.muml.uppaal.trace.ui</module>
     <module>org.muml.uppaal.ui</module>
   </modules>

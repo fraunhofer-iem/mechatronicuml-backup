@@ -19,24 +19,24 @@ import org.muml.uppaal.trace.diagnostictrace.TraceItem;
 public class TraceItemImpl extends MinimalEObjectImpl.Container implements TraceItem
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected TraceItemImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DiagnostictracePackage.Literals.TRACE_ITEM;
-  }
+		return DiagnostictracePackage.Literals.TRACE_ITEM;
+	}
 
 } //TraceItemImpl

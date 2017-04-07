@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Properties
+Bundle-SymbolicName: org.muml.verification.core.reachanalysis.reachabilitygraph.cic.edit.properties; singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Require-Bundle: org.eclipse.emf.ecore,
+ org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.muml.verification.core.reachanalysis.reachabilitygraph.cic,
+ org.muml.verification.core.reachanalysis.reachabilitygraph.cic.edit,
+ org.muml.ape.runtime,
+ org.eclipse.emf.edit,
+ org.muml.core.reachanalysis.reachabilitygraph.edit,
+ org.muml.core.reachanalysis.reachabilitygraph.edit.properties,
+ org.muml.core.edit,
+ org.muml.core.edit.properties
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.muml.verification.core.reachanalysis.reachabilitygraph.cic.properties.metamodel, org.muml.verification.core.reachanalysis.reachabilitygraph.cic.properties.constraint,
+ org.muml.verification.core.reachanalysis.reachabilitygraph.cic.properties.cic.editor
+Bundle-Vendor: Fraunhofer, HNI

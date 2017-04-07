@@ -89,8 +89,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eSubpackages name="core" nsURI="http://www.muml.org/uppaal/core/1.0.0"
-      nsPrefix="core">
+  <eSubpackages name="core" nsURI="http://www.muml.org/uppaal/core/1.0.0" nsPrefix="core">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -128,8 +127,7 @@
       </eStructuralFeatures>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="types" nsURI="http://www.muml.org/uppaal/types/1.0.0"
-      nsPrefix="types">
+  <eSubpackages name="types" nsURI="http://www.muml.org/uppaal/types/1.0.0" nsPrefix="types">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -1614,8 +1612,7 @@
       <eLiterals name="OR" value="2" literal="|"/>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="visuals" nsURI="http://www.muml.org/uppaal/visuals/1.0.0"
-      nsPrefix="visuals">
+  <eSubpackages name="visuals" nsURI="http://www.muml.org/uppaal/visuals/1.0.0" nsPrefix="visuals">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>

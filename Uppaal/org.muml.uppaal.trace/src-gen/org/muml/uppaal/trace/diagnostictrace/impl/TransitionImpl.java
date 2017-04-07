@@ -17,24 +17,24 @@ import org.muml.uppaal.trace.diagnostictrace.Transition;
 public class TransitionImpl extends TraceItemImpl implements Transition
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected TransitionImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DiagnostictracePackage.Literals.TRANSITION;
-  }
+		return DiagnostictracePackage.Literals.TRANSITION;
+	}
 
 } //TransitionImpl

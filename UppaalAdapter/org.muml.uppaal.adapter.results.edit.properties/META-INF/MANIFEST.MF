@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Properties
+Bundle-SymbolicName: org.muml.uppaal.adapter.results.edit.properties; singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Require-Bundle: org.eclipse.emf.ecore,
+ org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.muml.uppaal.adapter.results.edit,
+ org.muml.uppaal.adapter.results,
+ org.muml.ape.runtime,
+ org.eclipse.emf.edit
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.muml.uppaal.adapter.results.properties.metamodel, org.muml.uppaal.adapter.results.properties.constraint,
+ org.muml.uppaal.adapter.results.properties.results.editor
+Bundle-Vendor: Fraunhofer, HNI

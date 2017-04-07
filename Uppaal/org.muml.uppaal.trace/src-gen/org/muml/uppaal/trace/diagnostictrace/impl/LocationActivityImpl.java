@@ -34,228 +34,219 @@ import org.muml.uppaal.trace.diagnostictrace.ProcessIdentifier;
 public class LocationActivityImpl extends MinimalEObjectImpl.Container implements LocationActivity
 {
   /**
-   * The cached value of the '{@link #getProcess() <em>Process</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getProcess() <em>Process</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getProcess()
-   * @generated
-   * @ordered
-   */
+	 * @see #getProcess()
+	 * @generated
+	 * @ordered
+	 */
   protected ProcessIdentifier process;
 
   /**
-   * The cached value of the '{@link #getLocation() <em>Location</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getLocation() <em>Location</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLocation()
-   * @generated
-   * @ordered
-   */
+	 * @see #getLocation()
+	 * @generated
+	 * @ordered
+	 */
   protected Location location;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected LocationActivityImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DiagnostictracePackage.Literals.LOCATION_ACTIVITY;
-  }
+		return DiagnostictracePackage.Literals.LOCATION_ACTIVITY;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ProcessIdentifier getProcess()
   {
-    return process;
-  }
+		return process;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetProcess(ProcessIdentifier newProcess, NotificationChain msgs)
   {
-    ProcessIdentifier oldProcess = process;
-    process = newProcess;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DiagnostictracePackage.LOCATION_ACTIVITY__PROCESS, oldProcess, newProcess);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		ProcessIdentifier oldProcess = process;
+		process = newProcess;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DiagnostictracePackage.LOCATION_ACTIVITY__PROCESS, oldProcess, newProcess);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setProcess(ProcessIdentifier newProcess)
   {
-    if (newProcess != process)
-    {
-      NotificationChain msgs = null;
-      if (process != null)
-        msgs = ((InternalEObject)process).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DiagnostictracePackage.LOCATION_ACTIVITY__PROCESS, null, msgs);
-      if (newProcess != null)
-        msgs = ((InternalEObject)newProcess).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DiagnostictracePackage.LOCATION_ACTIVITY__PROCESS, null, msgs);
-      msgs = basicSetProcess(newProcess, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DiagnostictracePackage.LOCATION_ACTIVITY__PROCESS, newProcess, newProcess));
-  }
+		if (newProcess != process) {
+			NotificationChain msgs = null;
+			if (process != null)
+				msgs = ((InternalEObject)process).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DiagnostictracePackage.LOCATION_ACTIVITY__PROCESS, null, msgs);
+			if (newProcess != null)
+				msgs = ((InternalEObject)newProcess).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DiagnostictracePackage.LOCATION_ACTIVITY__PROCESS, null, msgs);
+			msgs = basicSetProcess(newProcess, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DiagnostictracePackage.LOCATION_ACTIVITY__PROCESS, newProcess, newProcess));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Location getLocation()
   {
-    if (location != null && location.eIsProxy())
-    {
-      InternalEObject oldLocation = (InternalEObject)location;
-      location = (Location)eResolveProxy(oldLocation);
-      if (location != oldLocation)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, DiagnostictracePackage.LOCATION_ACTIVITY__LOCATION, oldLocation, location));
-      }
-    }
-    return location;
-  }
+		if (location != null && location.eIsProxy()) {
+			InternalEObject oldLocation = (InternalEObject)location;
+			location = (Location)eResolveProxy(oldLocation);
+			if (location != oldLocation) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DiagnostictracePackage.LOCATION_ACTIVITY__LOCATION, oldLocation, location));
+			}
+		}
+		return location;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Location basicGetLocation()
   {
-    return location;
-  }
+		return location;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setLocation(Location newLocation)
   {
-    Location oldLocation = location;
-    location = newLocation;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DiagnostictracePackage.LOCATION_ACTIVITY__LOCATION, oldLocation, location));
-  }
+		Location oldLocation = location;
+		location = newLocation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DiagnostictracePackage.LOCATION_ACTIVITY__LOCATION, oldLocation, location));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case DiagnostictracePackage.LOCATION_ACTIVITY__PROCESS:
-        return basicSetProcess(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case DiagnostictracePackage.LOCATION_ACTIVITY__PROCESS:
+				return basicSetProcess(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case DiagnostictracePackage.LOCATION_ACTIVITY__PROCESS:
-        return getProcess();
-      case DiagnostictracePackage.LOCATION_ACTIVITY__LOCATION:
-        if (resolve) return getLocation();
-        return basicGetLocation();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case DiagnostictracePackage.LOCATION_ACTIVITY__PROCESS:
+				return getProcess();
+			case DiagnostictracePackage.LOCATION_ACTIVITY__LOCATION:
+				if (resolve) return getLocation();
+				return basicGetLocation();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case DiagnostictracePackage.LOCATION_ACTIVITY__PROCESS:
-        setProcess((ProcessIdentifier)newValue);
-        return;
-      case DiagnostictracePackage.LOCATION_ACTIVITY__LOCATION:
-        setLocation((Location)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case DiagnostictracePackage.LOCATION_ACTIVITY__PROCESS:
+				setProcess((ProcessIdentifier)newValue);
+				return;
+			case DiagnostictracePackage.LOCATION_ACTIVITY__LOCATION:
+				setLocation((Location)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case DiagnostictracePackage.LOCATION_ACTIVITY__PROCESS:
-        setProcess((ProcessIdentifier)null);
-        return;
-      case DiagnostictracePackage.LOCATION_ACTIVITY__LOCATION:
-        setLocation((Location)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case DiagnostictracePackage.LOCATION_ACTIVITY__PROCESS:
+				setProcess((ProcessIdentifier)null);
+				return;
+			case DiagnostictracePackage.LOCATION_ACTIVITY__LOCATION:
+				setLocation((Location)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case DiagnostictracePackage.LOCATION_ACTIVITY__PROCESS:
-        return process != null;
-      case DiagnostictracePackage.LOCATION_ACTIVITY__LOCATION:
-        return location != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case DiagnostictracePackage.LOCATION_ACTIVITY__PROCESS:
+				return process != null;
+			case DiagnostictracePackage.LOCATION_ACTIVITY__LOCATION:
+				return location != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //LocationActivityImpl

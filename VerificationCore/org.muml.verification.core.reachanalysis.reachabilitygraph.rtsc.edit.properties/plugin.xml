@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+
+  <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+    <propertyContributor
+          contributorId="org.muml.ape.contributor">
+       <propertyCategory
+             category="domain">
+       </propertyCategory>
+       <propertyCategory
+             category="default">
+       </propertyCategory>
+       <propertyCategory
+             category="extended">
+       </propertyCategory>
+       <propertyCategory
+             category="advanced">
+       </propertyCategory>
+    </propertyContributor>
+  </extension>
+
+
+
+
+
+
+
+
+ <extension point="org.muml.ape.runtime.propertyEditors">
+    <propertyEditors>
+    
+       <propertyEditor
+             factory="org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.properties.rtsc.editor.ZoneGraphEditor$Factory"
+             type="http://www.muml.org/verification/core/reachanalysis/reachabilitygraph/rtsc/1.0.0#ZoneGraph">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.properties.rtsc.editor.ZoneGraphStateEditor$Factory"
+             type="http://www.muml.org/verification/core/reachanalysis/reachabilitygraph/rtsc/1.0.0#ZoneGraphState">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.properties.rtsc.editor.ZoneGraphTransitionEditor$Factory"
+             type="http://www.muml.org/verification/core/reachanalysis/reachabilitygraph/rtsc/1.0.0#ZoneGraphTransition">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.properties.rtsc.editor.DelayTransitionEditor$Factory"
+             type="http://www.muml.org/verification/core/reachanalysis/reachabilitygraph/rtsc/1.0.0#DelayTransition">
+       </propertyEditor>
+    
+    </propertyEditors>
+ </extension>
+
+
+ <extension
+       point="org.muml.ape.runtime.metamodelContributor">
+    <metamodel
+          contributor="org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.properties.metamodel.MetamodelContributor">
+    </metamodel>
+ </extension>
+
+
+ <extension
+       point="org.muml.ape.runtime.creationConstraintContributor">
+    <constraint
+          contributor="org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.properties.constraint.CreationConstraintContributor">
+    </constraint>
+ </extension>
+
+</plugin>

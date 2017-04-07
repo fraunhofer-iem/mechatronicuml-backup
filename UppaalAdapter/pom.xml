@@ -32,6 +32,7 @@
     <module>org.muml.uppaal.adapter.mtctl.xtext.ui</module>
     <module>org.muml.uppaal.adapter.results</module>
     <module>org.muml.uppaal.adapter.results.edit</module>
+    <module>org.muml.uppaal.adapter.results.edit.properties</module>
     <module>org.muml.uppaal.adapter.tests</module>
     <module>org.muml.uppaal.adapter.transformation</module>
     <module>org.muml.uppaal.adapter.ui</module>

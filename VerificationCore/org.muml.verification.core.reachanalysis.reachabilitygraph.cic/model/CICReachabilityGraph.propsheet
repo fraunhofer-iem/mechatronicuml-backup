@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.muml:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.muml="http://www.muml.org/ape/1.0.0" contributorId="org.muml.ape.contributor">
+  <reconciler/>
+  <genModel href="CICReachabilityGraph.genmodel#/"/>
+  <referencedGenerators href="../../org.muml.core.reachanalysis.reachabilitygraph/model/ReachabilityAnalysisCore.propsheet#/"/>
+  <referencedGenerators href="../../org.muml.core/model/core.propsheet#_i_I4kOHNEeS5Putgio2lkg"/>
+  <plugin id="org.muml.verification.core.reachanalysis.reachabilitygraph.cic.edit.properties" name="Properties" vendor="Fraunhofer, HNI" version="0.1.0.qualifier">
+    <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
+    <requiredBundles>org.eclipse.ui</requiredBundles>
+    <requiredBundles>org.eclipse.core.runtime</requiredBundles>
+    <requiredBundles>org.muml.verification.core.reachanalysis.reachabilitygraph.cic</requiredBundles>
+    <requiredBundles>org.muml.verification.core.reachanalysis.reachabilitygraph.cic.edit</requiredBundles>
+    <requiredBundles>org.muml.ape.runtime</requiredBundles>
+    <requiredBundles>org.eclipse.emf.edit</requiredBundles>
+    <requiredBundles>org.muml.core.reachanalysis.reachabilitygraph.edit</requiredBundles>
+    <requiredBundles>org.muml.core.reachanalysis.reachabilitygraph.edit.properties</requiredBundles>
+    <requiredBundles>org.muml.core.edit</requiredBundles>
+    <requiredBundles>org.muml.core.edit.properties</requiredBundles>
+  </plugin>
+  <defaultTab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+  <packages>
+    <genPackage href="CICReachabilityGraph.genmodel#//cic"/>
+    <classes>
+      <genClass href="CICReachabilityGraph.genmodel#//cic/CICZoneGraphState"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="CICReachabilityGraph.genmodel#//cic/CICZoneGraphState/cic"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor"/>
+      </orderedElements>
+    </classes>
+  </packages>
+</org.muml:PropertyGenerator>

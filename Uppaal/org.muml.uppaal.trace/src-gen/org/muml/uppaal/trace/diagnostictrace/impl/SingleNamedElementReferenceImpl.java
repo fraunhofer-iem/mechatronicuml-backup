@@ -38,197 +38,190 @@ import org.muml.uppaal.trace.diagnostictrace.SingleNamedElementReference;
 public class SingleNamedElementReferenceImpl extends MinimalEObjectImpl.Container implements SingleNamedElementReference
 {
   /**
-   * The cached value of the '{@link #getNamedElement() <em>Named Element</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getNamedElement() <em>Named Element</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getNamedElement()
-   * @generated
-   * @ordered
-   */
+	 * @see #getNamedElement()
+	 * @generated
+	 * @ordered
+	 */
   protected NamedElement namedElement;
 
   /**
-   * The cached value of the '{@link #getIndexes() <em>Indexes</em>}' attribute list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getIndexes() <em>Indexes</em>}' attribute list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getIndexes()
-   * @generated
-   * @ordered
-   */
+	 * @see #getIndexes()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<Integer> indexes;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected SingleNamedElementReferenceImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DiagnostictracePackage.Literals.SINGLE_NAMED_ELEMENT_REFERENCE;
-  }
+		return DiagnostictracePackage.Literals.SINGLE_NAMED_ELEMENT_REFERENCE;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NamedElement getNamedElement()
   {
-    if (namedElement != null && namedElement.eIsProxy())
-    {
-      InternalEObject oldNamedElement = (InternalEObject)namedElement;
-      namedElement = (NamedElement)eResolveProxy(oldNamedElement);
-      if (namedElement != oldNamedElement)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, DiagnostictracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__NAMED_ELEMENT, oldNamedElement, namedElement));
-      }
-    }
-    return namedElement;
-  }
+		if (namedElement != null && namedElement.eIsProxy()) {
+			InternalEObject oldNamedElement = (InternalEObject)namedElement;
+			namedElement = (NamedElement)eResolveProxy(oldNamedElement);
+			if (namedElement != oldNamedElement) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DiagnostictracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__NAMED_ELEMENT, oldNamedElement, namedElement));
+			}
+		}
+		return namedElement;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NamedElement basicGetNamedElement()
   {
-    return namedElement;
-  }
+		return namedElement;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setNamedElement(NamedElement newNamedElement)
   {
-    NamedElement oldNamedElement = namedElement;
-    namedElement = newNamedElement;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DiagnostictracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__NAMED_ELEMENT, oldNamedElement, namedElement));
-  }
+		NamedElement oldNamedElement = namedElement;
+		namedElement = newNamedElement;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DiagnostictracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__NAMED_ELEMENT, oldNamedElement, namedElement));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<Integer> getIndexes()
   {
-    if (indexes == null)
-    {
-      indexes = new EDataTypeEList<Integer>(Integer.class, this, DiagnostictracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__INDEXES);
-    }
-    return indexes;
-  }
+		if (indexes == null) {
+			indexes = new EDataTypeEList<Integer>(Integer.class, this, DiagnostictracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__INDEXES);
+		}
+		return indexes;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case DiagnostictracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__NAMED_ELEMENT:
-        if (resolve) return getNamedElement();
-        return basicGetNamedElement();
-      case DiagnostictracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__INDEXES:
-        return getIndexes();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case DiagnostictracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__NAMED_ELEMENT:
+				if (resolve) return getNamedElement();
+				return basicGetNamedElement();
+			case DiagnostictracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__INDEXES:
+				return getIndexes();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case DiagnostictracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__NAMED_ELEMENT:
-        setNamedElement((NamedElement)newValue);
-        return;
-      case DiagnostictracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__INDEXES:
-        getIndexes().clear();
-        getIndexes().addAll((Collection<? extends Integer>)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case DiagnostictracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__NAMED_ELEMENT:
+				setNamedElement((NamedElement)newValue);
+				return;
+			case DiagnostictracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__INDEXES:
+				getIndexes().clear();
+				getIndexes().addAll((Collection<? extends Integer>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case DiagnostictracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__NAMED_ELEMENT:
-        setNamedElement((NamedElement)null);
-        return;
-      case DiagnostictracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__INDEXES:
-        getIndexes().clear();
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case DiagnostictracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__NAMED_ELEMENT:
+				setNamedElement((NamedElement)null);
+				return;
+			case DiagnostictracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__INDEXES:
+				getIndexes().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case DiagnostictracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__NAMED_ELEMENT:
-        return namedElement != null;
-      case DiagnostictracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__INDEXES:
-        return indexes != null && !indexes.isEmpty();
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case DiagnostictracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__NAMED_ELEMENT:
+				return namedElement != null;
+			case DiagnostictracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__INDEXES:
+				return indexes != null && !indexes.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (indexes: ");
-    result.append(indexes);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (indexes: ");
+		result.append(indexes);
+		result.append(')');
+		return result.toString();
+	}
 
 } //SingleNamedElementReferenceImpl
