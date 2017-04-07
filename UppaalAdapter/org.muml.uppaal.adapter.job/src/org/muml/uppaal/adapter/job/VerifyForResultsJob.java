@@ -24,6 +24,7 @@ import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.core.runtime.jobs.JobChangeAdapter;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -97,9 +98,45 @@ public class VerifyForResultsJob extends Job {
 			catch(CoreException e) {
 				return e.getStatus();
 			}
-			
 			verifiableElement = prepareOperation.getClonedVerifiableElement();
 			ModelExtent mainInputExtent = prepareOperation.getClonedExtent();
+			
+			IPath intermediateModelsPath = null;
+			
+			// store model
+			if (storeIntermediateModels) {
+				IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject("intermediate_models");
+				try {
+					if (!project.exists()) {
+						project.create(new NullProgressMonitor());
+					}
+					if (!project.isOpen()) {
+						project.open(new NullProgressMonitor());
+					}
+				} catch (CoreException e) {
+				}
+				IPath targetPath = project.getFullPath();
+				URI uri = URI.createPlatformResourceURI(targetPath.append("00").addFileExtension("muml").toPortableString(), true);
+				ResourceSet resSet = new ResourceSetImpl();
+				Resource resource = resSet.createResource(uri);
+				
+				// move from extent to resource
+				resource.getContents().addAll(mainInputExtent.getContents());
+
+				// save resource
+				try {
+					resource.save(Collections.EMPTY_MAP);
+				} catch (IOException e) {
+					return BasicDiagnostic.toIStatus(BasicDiagnostic.toDiagnostic(e));
+				}
+
+				// move from resource back to extent
+				mainInputExtent = new BasicModelExtent(resource.getContents());
+
+				// store path for later
+				intermediateModelsPath = targetPath;
+			}
+			
 			
 			//Prepare other necessary information (typically: show verification wizard)
 			if (!propertyChoiceProvider.preparePropertyChoiceProvider(verifiableElement))
@@ -152,6 +189,7 @@ public class VerifyForResultsJob extends Job {
 			// Store uppaal models if requested
 			//
 			if (storeIntermediateModels) {
+				IPath targetPath = intermediateModelsPath;
 				NTA nta = null;
 				PropertyRepository propertyRepository;
 				if (uppaalModelExtent.getContents().size() != 0)
@@ -161,19 +199,9 @@ public class VerifyForResultsJob extends Job {
 				else
 					propertyRepository = RequirementsFactoryImpl.eINSTANCE.createPropertyRepository();		
 				
-				IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject("intermediate_models");
-				try {
-					if (!project.exists()) {
-						project.create(new NullProgressMonitor());
-					}
-					if (!project.isOpen()) {
-						project.open(new NullProgressMonitor());
-					}
-				} catch (CoreException e) {
-				}
-				IPath targetPath = project.getFullPath();
 				URI uri = URI.createPlatformResourceURI(targetPath.append(((NamedElement) verifiableElement).getName())
 						.addFileExtension("uppaal").toPortableString(), true);
+
 				URI propertyUri = URI
 						.createPlatformResourceURI(targetPath.append(((NamedElement) verifiableElement).getName())
 								.addFileExtension("requirements").toPortableString(), true);
