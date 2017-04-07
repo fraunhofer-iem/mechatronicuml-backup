@@ -123,15 +123,15 @@ public class AllocationValidator extends EObjectValidator {
 	 * @generated
 	 */
 	protected static final String SYSTEM_ALLOCATION__ALL_COMPONENT_INSTANCES_ALLOCATED__EEXPRESSION = "-- All component instances must be allocated\n" +
-		"let componentInstances : Bag(instance::ComponentInstance)\n" +
+		"let componentInstances : Bag(pim::instance::ComponentInstance)\n" +
 		"=\n" +
 		"self.cic->union(\n" +
 		"\t-- XXX: is the union really needed (pivot ocl)?\n" +
 		"\tself.cic->closure(\n" +
 		"\t\tcomponentInstances->select(\n" +
-		"\t\t\toclIsKindOf(instance::StructuredComponentInstance)\n" +
+		"\t\t\toclIsKindOf(pim::instance::StructuredComponentInstance)\n" +
 		"\t\t)->collect(\n" +
-		"\t\t\toclAsType(instance::StructuredComponentInstance).embeddedCIC\n" +
+		"\t\t\toclAsType(pim::instance::StructuredComponentInstance).embeddedCIC\n" +
 		"\t\t)\n" +
 		"\t)->asSet()\n" +
 		")->collect(\n" +
