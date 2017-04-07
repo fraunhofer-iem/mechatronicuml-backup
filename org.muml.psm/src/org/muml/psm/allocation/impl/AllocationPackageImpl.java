@@ -403,7 +403,7 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 		  (systemAllocationEClass, 
 		   source, 
 		   new String[] {
-			 "AllComponentInstancesAllocated", "-- All component instances must be allocated\nlet componentInstances : Bag(pim::instance::ComponentInstance)\n=\nself.cic->union(\n\t-- XXX: is the union really needed (pivot ocl)?\n\tself.cic->closure(\n\t\tcomponentInstances->select(\n\t\t\toclIsKindOf(pim::instance::StructuredComponentInstance)\n\t\t)->collect(\n\t\t\toclAsType(pim::instance::StructuredComponentInstance).embeddedCIC\n\t\t)\n\t)->asSet()\n)->collect(\n\tcomponentInstances\n)->asBag()\nin\ncomponentInstances = self.allocations->collect(componentInstance)->asBag()"
+			 "AllComponentInstancesAllocated", "-- All component instances must be allocated\nlet componentInstances : Bag(pim::instance::ComponentInstance)\n=\nself.cic->asSet()->union(\n\t-- XXX: is the union really needed (pivot ocl)?\n\tself.cic->closure(\n\t\tcomponentInstances->select(\n\t\t\toclIsKindOf(pim::instance::StructuredComponentInstance)\n\t\t)->collect(\n\t\t\toclAsType(pim::instance::StructuredComponentInstance).embeddedCIC\n\t\t)\n\t)->asSet()\n)->collect(\n\tcomponentInstances\n)->asBag()\nin\ncomponentInstances = self.allocations->collect(componentInstance)->asBag()"
 		   });
 	}
 

@@ -28,7 +28,7 @@ import org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration;
  *
  * @see org.muml.psm.allocation.AllocationPackage#getSystemAllocation()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='AllComponentInstancesAllocated'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL AllComponentInstancesAllocated='-- All component instances must be allocated\nlet componentInstances : Bag(pim::instance::ComponentInstance)\n=\nself.cic->union(\n\t-- XXX: is the union really needed (pivot ocl)?\n\tself.cic->closure(\n\t\tcomponentInstances->select(\n\t\t\toclIsKindOf(pim::instance::StructuredComponentInstance)\n\t\t)->collect(\n\t\t\toclAsType(pim::instance::StructuredComponentInstance).embeddedCIC\n\t\t)\n\t)->asSet()\n)->collect(\n\tcomponentInstances\n)->asBag()\nin\ncomponentInstances = self.allocations->collect(componentInstance)->asBag()'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL AllComponentInstancesAllocated='-- All component instances must be allocated\nlet componentInstances : Bag(pim::instance::ComponentInstance)\n=\nself.cic->asSet()->union(\n\t-- XXX: is the union really needed (pivot ocl)?\n\tself.cic->closure(\n\t\tcomponentInstances->select(\n\t\t\toclIsKindOf(pim::instance::StructuredComponentInstance)\n\t\t)->collect(\n\t\t\toclAsType(pim::instance::StructuredComponentInstance).embeddedCIC\n\t\t)\n\t)->asSet()\n)->collect(\n\tcomponentInstances\n)->asBag()\nin\ncomponentInstances = self.allocations->collect(componentInstance)->asBag()'"
  * @generated
  */
 public interface SystemAllocation extends ExtendableElement {

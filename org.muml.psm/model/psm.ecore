@@ -32,7 +32,7 @@
         <details key="constraints" value="AllComponentInstancesAllocated"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="AllComponentInstancesAllocated" value="-- All component instances must be allocated&#xA;let componentInstances : Bag(pim::instance::ComponentInstance)&#xA;=&#xA;self.cic->union(&#xA;&#x9;-- XXX: is the union really needed (pivot ocl)?&#xA;&#x9;self.cic->closure(&#xA;&#x9;&#x9;componentInstances->select(&#xA;&#x9;&#x9;&#x9;oclIsKindOf(pim::instance::StructuredComponentInstance)&#xA;&#x9;&#x9;)->collect(&#xA;&#x9;&#x9;&#x9;oclAsType(pim::instance::StructuredComponentInstance).embeddedCIC&#xA;&#x9;&#x9;)&#xA;&#x9;)->asSet()&#xA;)->collect(&#xA;&#x9;componentInstances&#xA;)->asBag()&#xA;in&#xA;componentInstances = self.allocations->collect(componentInstance)->asBag()"/>
+        <details key="AllComponentInstancesAllocated" value="-- All component instances must be allocated&#xA;let componentInstances : Bag(pim::instance::ComponentInstance)&#xA;=&#xA;self.cic->asSet()->union(&#xA;&#x9;-- XXX: is the union really needed (pivot ocl)?&#xA;&#x9;self.cic->closure(&#xA;&#x9;&#x9;componentInstances->select(&#xA;&#x9;&#x9;&#x9;oclIsKindOf(pim::instance::StructuredComponentInstance)&#xA;&#x9;&#x9;)->collect(&#xA;&#x9;&#x9;&#x9;oclAsType(pim::instance::StructuredComponentInstance).embeddedCIC&#xA;&#x9;&#x9;)&#xA;&#x9;)->asSet()&#xA;)->collect(&#xA;&#x9;componentInstances&#xA;)->asBag()&#xA;in&#xA;componentInstances = self.allocations->collect(componentInstance)->asBag()"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="allocations" lowerBound="1"
           upperBound="-1" eType="#//allocation/Allocation" containment="true">
