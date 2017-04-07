@@ -125,20 +125,23 @@ public class AllocationValidator extends EObjectValidator {
 	protected static final String SYSTEM_ALLOCATION__ALL_COMPONENT_INSTANCES_ALLOCATED__EEXPRESSION = "-- All component instances must be allocated\n" +
 		"let componentInstances : Bag(pim::instance::ComponentInstance)\n" +
 		"=\n" +
-		"self.cic->asSet()->union(\n" +
-		"\t-- XXX: is the union really needed (pivot ocl)?\n" +
-		"\tself.cic->closure(\n" +
-		"\t\tcomponentInstances->select(\n" +
-		"\t\t\toclIsKindOf(pim::instance::StructuredComponentInstance)\n" +
-		"\t\t)->collect(\n" +
-		"\t\t\toclAsType(pim::instance::StructuredComponentInstance).embeddedCIC\n" +
-		"\t\t)\n" +
-		"\t)->asSet()\n" +
-		")->collect(\n" +
-		"\tcomponentInstances\n" +
-		")->asBag()\n" +
+		"Bag{}\n" +
 		"in\n" +
-		"componentInstances = self.allocations->collect(componentInstance)->asBag()";
+		"true\n" +
+		"--self.cic->asSet()->union(\n" +
+		"--\t-- XXX: is the union really needed (pivot ocl)?\n" +
+		"--\tself.cic->closure(\n" +
+		"--\t\tcomponentInstances->select(\n" +
+		"--\t\t\toclIsKindOf(pim::instance::StructuredComponentInstance)\n" +
+		"--\t\t)->collect(\n" +
+		"--\t\t\toclAsType(pim::instance::StructuredComponentInstance).embeddedCIC\n" +
+		"--\t\t)\n" +
+		"--\t)->asSet()\n" +
+		"--)->collect(\n" +
+		"--\tcomponentInstances\n" +
+		"--)->asBag()\n" +
+		"--in\n" +
+		"--componentInstances = self.allocations->collect(componentInstance)->asBag()";
 
 	/**
 	 * Validates the AllComponentInstancesAllocated constraint of '<em>System Allocation</em>'.
