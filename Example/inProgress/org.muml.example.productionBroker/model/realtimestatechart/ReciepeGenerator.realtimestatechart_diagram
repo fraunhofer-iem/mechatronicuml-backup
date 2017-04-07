@@ -78,7 +78,7 @@
                       <styles xmi:type="notation:FilteringStyle" xmi:id="_QFENGOL0Eeavws0rsQ9stg"/>
                     </children>
                     <element xmi:type="realtimestatechart:State" href="../productionBroker.muml#_FWX-odxtEeW-N_z6XJQq2w"/>
-                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QFDmAeL0Eeavws0rsQ9stg" x="128" y="6" height="84"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QFDmAeL0Eeavws0rsQ9stg" x="8" y="5" height="84"/>
                   </children>
                   <children xmi:type="notation:Shape" xmi:id="_QFENGeL0Eeavws0rsQ9stg" type="3032" fontName="Segoe UI" lineColor="0">
                     <children xmi:type="notation:DecorationNode" xmi:id="_QFENG-L0Eeavws0rsQ9stg" type="5060"/>
@@ -99,7 +99,7 @@
                       <styles xmi:type="notation:FilteringStyle" xmi:id="_QFENJ-L0Eeavws0rsQ9stg"/>
                     </children>
                     <element xmi:type="realtimestatechart:State" href="../productionBroker.muml#_L4XoANyZEeW-N_z6XJQq2w"/>
-                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QFENGuL0Eeavws0rsQ9stg" x="536" y="12" height="81"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QFENGuL0Eeavws0rsQ9stg" x="596" y="17" height="81"/>
                   </children>
                 </children>
                 <element xmi:type="realtimestatechart:RealtimeStatechart" href="../productionBroker.muml#_FWX-oNxtEeW-N_z6XJQq2w"/>

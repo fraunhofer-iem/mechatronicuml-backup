@@ -201,7 +201,7 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 
 
 /**
- * Sets orderStatus to finished
+ * Sets orderStatus to DONE
  */
 int deleteOrder(int orderID)
 {
@@ -210,7 +210,7 @@ int deleteOrder(int orderID)
 	sqlite3_stmt *orderStatusStmt;
 
 	//Set status of the order
-	const char *orderStatus = "Update Orders Set OrderStatus='Finished' WHERE OrderID=?";
+	const char *orderStatus = "Update Orders Set OrderStatus='DONE' WHERE OrderID=?";
 
 	rc = sqlite3_prepare_v2(db, orderStatus,-1, &orderStatusStmt,0);
 	if( rc ){
@@ -319,6 +319,43 @@ int getOrderAmount(int orderID)
 int searchOrder(int orderId, int producibleIngredients)
 {
 	int rc=0;
+//	char prodIngrChar[16];
+//	sprintf(prodIngrChar, "%d", producibleIngredients);
+//
+//	//Insert the Productionstation into the ProductionStation Table
+//	//Prepare statement
+//	const char *productionStation = "INSERT INTO ProductionStations (ProductionStationID, ProducibleIngredients) "
+//					"VALUES (?, ?);";
+//	sqlite3_stmt *prodStatStmt;
+//	rc = sqlite3_prepare_v2(db, productionStation,-1, &prodStatStmt,0);
+//	if( rc ){
+//		fprintf(stderr, "Could not prepare statement for production station insertion: %s\n", sqlite3_errmsg(db));
+//		return rc;
+//	}
+//
+//	//Bind parameters
+//	rc =sqlite3_bind_int(prodStatStmt, 1, productionStationID);
+//	if( rc ){
+//		fprintf(stderr, "Error for productionStationID: %s\n", sqlite3_errmsg(db));
+//		return rc;
+//	}
+//	rc= sqlite3_bind_text(prodStatStmt,2,prodIngrChar,16, SQLITE_STATIC);
+//	if( rc ){
+//		fprintf(stderr, "Error for producibleIngredients: %s\n", sqlite3_errmsg(db));
+//		return rc;
+//	}
+//
+//	//Execute statement, once step is sufficient for insertions
+//	rc = sqlite3_step(prodStatStmt);
+//
+//	if( rc!=SQLITE_DONE ){
+//		fprintf(stderr, "Could not execute statement for production station insertion: %s\n", sqlite3_errmsg(db));
+//		return rc;
+//	}
+//	sqlite3_finalize(prodStatStmt);
+//	printf("Successfully inserted production station %d.\n", productionStationID);
+//
+
 	sqlite3_stmt *searchOrderStmt;
 
 	//Prepare statement
