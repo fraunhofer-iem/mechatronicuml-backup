@@ -129,7 +129,7 @@ public class AllocationValidator extends EObjectValidator {
 		"in\n" +
 		"let foo : Set(pim::instance::ComponentInstance) = Set{}\n" +
 		"in\n" +
-		"foo->union(self.cic.componentInstances->asSet())->notEmpty()\n" +
+		"foo->notEmpty()\n" +
 		"\n" +
 		"\n" +
 		"--self.cic->asSet()->union(\n" +
