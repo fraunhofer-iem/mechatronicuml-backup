@@ -403,7 +403,7 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 		  (systemAllocationEClass, 
 		   source, 
 		   new String[] {
-			 "AllComponentInstancesAllocated", "-- All component instances must be allocated\nlet componentInstances : Bag(pim::instance::ComponentInstance)\n=\nBag{}\nin\nlet foo : Set(Integer) = Set{2}->union(Set{3})\nin\ntrue\n\n\n--self.cic->asSet()->union(\n--\t-- XXX: is the union really needed (pivot ocl)?\n--\tself.cic->closure(\n--\t\tcomponentInstances->select(\n--\t\t\toclIsKindOf(pim::instance::StructuredComponentInstance)\n--\t\t)->collect(\n--\t\t\toclAsType(pim::instance::StructuredComponentInstance).embeddedCIC\n--\t\t)\n--\t)->asSet()\n--)->collect(\n--\tcomponentInstances\n--)->asBag()\n--in\n--componentInstances = self.allocations->collect(componentInstance)->asBag()"
+			 "AllComponentInstancesAllocated", "-- All component instances must be allocated\nlet componentInstances : Bag(pim::instance::ComponentInstance)\n=\nBag{}\nin\nlet foo : Set(pim::instance::ComponentInstance) = Set{}\nin\nfoo->union(self.cic.componentInstances->asSet())->notEmpty()\n\n\n--self.cic->asSet()->union(\n--\t-- XXX: is the union really needed (pivot ocl)?\n--\tself.cic->closure(\n--\t\tcomponentInstances->select(\n--\t\t\toclIsKindOf(pim::instance::StructuredComponentInstance)\n--\t\t)->collect(\n--\t\t\toclAsType(pim::instance::StructuredComponentInstance).embeddedCIC\n--\t\t)\n--\t)->asSet()\n--)->collect(\n--\tcomponentInstances\n--)->asBag()\n--in\n--componentInstances = self.allocations->collect(componentInstance)->asBag()"
 		   });
 	}
 
