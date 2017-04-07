@@ -5,7 +5,6 @@ package org.muml.psm.allocation.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.muml.core.CorePackage;
 import org.muml.pim.actionlanguage.ActionlanguagePackage;
@@ -20,7 +19,6 @@ import org.muml.psm.allocation.AllocationFactory;
 import org.muml.psm.allocation.AllocationPackage;
 import org.muml.psm.allocation.AssemblyConnectorInstanceAllocation;
 import org.muml.psm.allocation.SystemAllocation;
-import org.muml.psm.allocation.util.AllocationValidator;
 import org.muml.psm.apiexpressions.ApiexpressionsPackage;
 import org.muml.psm.apiexpressions.impl.ApiexpressionsPackageImpl;
 import org.muml.psm.impl.PsmPackageImpl;
@@ -147,15 +145,6 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 		thePsm_instancePackage.initializePackageContents();
 		thePortapimappingPackage.initializePackageContents();
 		theApiexpressionsPackage.initializePackageContents();
-
-		// Register package validator
-		EValidator.Registry.INSTANCE.put
-			(theAllocationPackage, 
-			 new EValidator.Descriptor() {
-				 public EValidator getEValidator() {
-					 return AllocationValidator.INSTANCE;
-				 }
-			 });
 
 		// Mark meta-data to indicate it can't be changed
 		theAllocationPackage.freeze();
@@ -363,8 +352,6 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
-		// http://www.eclipse.org/emf/2002/Ecore/OCL
-		createOCLAnnotations();
 	}
 
 	/**
@@ -382,28 +369,6 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });	
-		addAnnotation
-		  (systemAllocationEClass, 
-		   source, 
-		   new String[] {
-			 "constraints", "AllComponentInstancesAllocated"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
-		addAnnotation
-		  (systemAllocationEClass, 
-		   source, 
-		   new String[] {
-			 "AllComponentInstancesAllocated", "-- All component instances must be allocated\nlet componentInstances : Bag(pim::instance::ComponentInstance)\n=\nBag{}\nin\nlet foo : Set(pim::instance::ComponentInstance) = self.cic.componentInstances->asSet()\nin\nSet{foo}->flatten()->notEmpty()\n\n\n--self.cic->asSet()->union(\n--\t-- XXX: is the union really needed (pivot ocl)?\n--\tself.cic->closure(\n--\t\tcomponentInstances->select(\n--\t\t\toclIsKindOf(pim::instance::StructuredComponentInstance)\n--\t\t)->collect(\n--\t\t\toclAsType(pim::instance::StructuredComponentInstance).embeddedCIC\n--\t\t)\n--\t)->asSet()\n--)->collect(\n--\tcomponentInstances\n--)->asBag()\n--in\n--componentInstances = self.allocations->collect(componentInstance)->asBag()"
 		   });
 	}
 
