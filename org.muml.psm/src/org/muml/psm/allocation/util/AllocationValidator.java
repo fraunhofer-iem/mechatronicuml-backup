@@ -127,7 +127,11 @@ public class AllocationValidator extends EObjectValidator {
 		"=\n" +
 		"Bag{}\n" +
 		"in\n" +
+		"let foo : Set(Integer) = Set{2}->union(Set{3})\n" +
+		"in\n" +
 		"true\n" +
+		"\n" +
+		"\n" +
 		"--self.cic->asSet()->union(\n" +
 		"--\t-- XXX: is the union really needed (pivot ocl)?\n" +
 		"--\tself.cic->closure(\n" +
