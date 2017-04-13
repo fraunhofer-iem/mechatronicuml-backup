@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Properties
+Bundle-Name: %pluginName
 Bundle-SymbolicName: org.muml.core.reachanalysis.reachabilitygraph.edit.properties; singleton:=true
-Bundle-Version: 0.1.0.qualifier
+Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.ui,
  org.eclipse.core.runtime,
@@ -16,4 +16,4 @@ Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.muml.core.reachanalysis.reachabilitygraph.properties.metamodel, org.muml.core.reachanalysis.reachabilitygraph.properties.constraint,
  org.muml.core.reachanalysis.reachabilitygraph.properties.reachabilitygraph.editor
-Bundle-Vendor: Fraunhofer, HNI
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
