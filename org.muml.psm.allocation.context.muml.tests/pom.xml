@@ -8,48 +8,45 @@
     <version>1.0.0-SNAPSHOT</version>
   </parent>
   <groupId>org.muml.psm</groupId>
-  <artifactId>org.muml.psm.allocation.algorithm.ilp.tests</artifactId>
+  <artifactId>org.muml.psm.allocation.context.muml.tests</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>eclipse-test-plugin</packaging>
   
-  <build>
-		<plugins>
-
-
-	 <plugin>
-          <groupId>org.eclipse.xtend</groupId>
-          <artifactId>xtend-maven-plugin</artifactId>
-    </plugin>
-    <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-clean-plugin</artifactId>
-            <version>2.5</version>
-            <executions>
-                <execution>
-                    <id>gen-clean</id>
-                    <goals>
-                        <goal>clean</goal>
-                    </goals>
-                    <configuration>
-                        <filesets>
-                            <fileset>
-                                <directory>${basedir}/xtend-gen</directory>
-                            </fileset>
-                        </filesets>
-                    </configuration>
-                </execution>
-            </executions>
-      </plugin>
-			<plugin>
-				<groupId>org.eclipse.tycho</groupId>
-				<artifactId>tycho-surefire-plugin</artifactId>
-				<version>${tycho-version}</version>
-				<configuration>
-					<testClass>org.muml.psm.allocation.algorithm.ilp.tests.AllTestsSuite</testClass>
-					<product>org.eclipse.platform.ide</product>
-				</configuration>
-			</plugin>
-		</plugins>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.eclipse.xtend</groupId>
+                <artifactId>xtend-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>2.5</version>
+                <executions>
+                    <execution>
+                        <id>gen-clean</id>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                        <configuration>
+                            <filesets>
+                                <fileset>
+                                    <directory>${basedir}/xtend-gen</directory>
+                                </fileset>
+                            </filesets>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.eclipse.tycho</groupId>
+                <artifactId>tycho-surefire-plugin</artifactId>
+                <version>${tycho-version}</version>
+                <configuration>
+                    <testClass>org.muml.psm.allocation.context.muml.AllTestsSuite</testClass>
+                    <product>org.eclipse.platform.ide</product>
+                </configuration>
+            </plugin>
+        </plugins>
 	</build>
-
 </project>
