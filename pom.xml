@@ -229,11 +229,14 @@
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/eclipse/updates/4.6</url>
 		</repository>
+        <!-- hmm this pulls in xtend2 2.11(?), which results in
+             xtend2 runtime errors (when trying to execute the code with
+             xtend2 2.10 (which is shipped with neon3))
         <repository>
             <id>xtext</id>
             <layout>p2</layout>
             <url>http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases</url>
-        </repository>
+        </repository>-->
 		<repository>
 			<id>emf</id>
 			<layout>p2</layout>
