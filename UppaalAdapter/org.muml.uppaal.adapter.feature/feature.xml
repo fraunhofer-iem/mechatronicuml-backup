@@ -88,7 +88,7 @@
       <import plugin="org.muml.core.edit.properties"/>
       <import feature="org.muml.pim.feature" version="0.5.0.qualifier"/>
       <import feature="org.muml.core.feature" version="0.5.0.qualifier"/>
-      <import feature="org.muml.emm.feature" version="0.1.0.qualifier"/>
+      <import feature="org.muml.emm.feature" version="1.0.0.qualifier"/>
       <import plugin="org.muml.uppaal.options"/>
       <import plugin="org.muml.uppaal.options.edit.properties"/>
       <import feature="org.muml.verification.core.feature" version="0.5.0"/>

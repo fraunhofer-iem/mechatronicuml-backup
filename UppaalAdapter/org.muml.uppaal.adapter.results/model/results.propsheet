@@ -2,7 +2,7 @@
 <org.muml:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.muml="http://www.muml.org/ape/1.0.0" contributorId="org.muml.ape.contributor">
   <reconciler/>
   <genModel href="results.genmodel#/"/>
-  <plugin id="org.muml.uppaal.adapter.results.edit.properties" name="Properties" vendor="Fraunhofer, HNI" version="0.1.0.qualifier">
+  <plugin id="org.muml.uppaal.adapter.results.edit.properties" name="Properties" vendor="Fraunhofer, HNI" version="1.0.0.qualifier">
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
     <requiredBundles>org.eclipse.ui</requiredBundles>
     <requiredBundles>org.eclipse.core.runtime</requiredBundles>

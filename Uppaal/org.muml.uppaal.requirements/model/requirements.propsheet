@@ -3,7 +3,7 @@
   <reconciler/>
   <genModel href="requirements.genmodel#/"/>
   <referencedGenerators href="../../org.muml.uppaal/model/uppaal.propsheet#/"/>
-  <plugin id="org.muml.uppaal.requirements.edit.properties" name="Properties" vendor="Fraunhofer, HNI" version="0.1.0.qualifier">
+  <plugin id="org.muml.uppaal.requirements.edit.properties" name="Properties" vendor="Fraunhofer, HNI" version="1.0.0.qualifier">
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
     <requiredBundles>org.eclipse.ui</requiredBundles>
     <requiredBundles>org.eclipse.core.runtime</requiredBundles>
