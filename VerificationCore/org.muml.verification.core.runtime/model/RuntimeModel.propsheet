@@ -4,7 +4,7 @@
   <genModel href="RuntimeModel.genmodel#/"/>
   <referencedGenerators href="../../org.muml.core/model/core.propsheet#_i_I4kOHNEeS5Putgio2lkg"/>
   <referencedGenerators href="../../org.muml.pim/model/pim.propsheet#_VZIdoMwbEeSjx7OWZCcdLw"/>
-  <plugin id="org.muml.verification.core.runtime.edit.properties" name="Properties" vendor="Fraunhofer, HNI" version="0.1.0.qualifier">
+  <plugin id="org.muml.verification.core.runtime.edit.properties" name="Properties" vendor="Fraunhofer, HNI" version="1.0.0.qualifier">
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
     <requiredBundles>org.eclipse.ui</requiredBundles>
     <requiredBundles>org.eclipse.core.runtime</requiredBundles>
