@@ -525,6 +525,7 @@ helper portReferencedByProtocol(inout protocol : CoordinationProtocol) : Boolean
 
 query roleMultiplicity() : EInt {
 	return options.objects()->any(oclIsKindOf(CoordinationProtocolOptions)).oclAsType(CoordinationProtocolOptions).roleMultiplicity
+	//return 2; //object EInt(); // TODO revert me
 }
 
 -- get rid of nested TimeValueExpressions
