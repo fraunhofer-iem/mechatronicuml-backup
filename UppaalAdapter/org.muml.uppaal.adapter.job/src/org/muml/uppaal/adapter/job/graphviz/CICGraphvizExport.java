@@ -160,26 +160,26 @@ public class CICGraphvizExport extends GraphVizExport {
 		ciTable.addTableRow(nameRow);
 
 		// Behavior
-		RealtimeStatechartInstance rtscI = getRealtimeStatechartInstance(ci,
-				cicState);
-		if (rtscI != null) {
-			GraphvizHTMLTableRow behaviorRow = new GraphvizHTMLTableRow();
-			ciTable.addTableRow(behaviorRow);
-			GraphvizHTMLTableCell behaviorCell = new GraphvizHTMLTableCell();
-			behaviorRow.addTableCell(behaviorCell);
-
-			// get predecessor
-			RealtimeStatechartInstance rtscIPre = null;
-			if (predecessor != null)
-				rtscIPre = (RealtimeStatechartInstance) getPredecessor(
-						rtscI,
-						getRealtimeStatechartInstance(predecessor,
-								predecessorCicState));
-
-			behaviorCell.addTable(createRealtimeStatechartInstanceTable(rtscI,
-					rtscIPre));
-
-		}
+//		RealtimeStatechartInstance rtscI = getRealtimeStatechartInstance(ci,
+//				cicState);
+//		if (rtscI != null) {
+//			GraphvizHTMLTableRow behaviorRow = new GraphvizHTMLTableRow();
+//			ciTable.addTableRow(behaviorRow);
+//			GraphvizHTMLTableCell behaviorCell = new GraphvizHTMLTableCell();
+//			behaviorRow.addTableCell(behaviorCell);
+//
+//			// get predecessor
+//			RealtimeStatechartInstance rtscIPre = null;
+//			if (predecessor != null)
+//				rtscIPre = (RealtimeStatechartInstance) getPredecessor(
+//						rtscI,
+//						getRealtimeStatechartInstance(predecessor,
+//								predecessorCicState));
+//
+//			behaviorCell.addTable(createRealtimeStatechartInstanceTable(rtscI,
+//					rtscIPre));
+//
+//		}
 
 		for (PortInstance pi : ci.getPortInstances()) {
 			GraphvizHTMLTableRow piRow = new GraphvizHTMLTableRow();
@@ -240,19 +240,27 @@ public class CICGraphvizExport extends GraphVizExport {
 		nameRow.addTableCell(nameCell);
 		rACTable.addTableRow(nameRow);
 
-		for (MessageOnConnector mOC : rAC.getTransientMessages()) {
+		if (rAC.getTransientMessages().isEmpty()) {
+			GraphvizHTMLTableCell mOCCell = new GraphvizHTMLTableCell();
+			mOCCell.addLabel("<i>no messages in transit</i>");
 			GraphvizHTMLTableRow mOCRow = new GraphvizHTMLTableRow();
 			rACTable.addTableRow(mOCRow);
-
-			// get predecessor
-			MessageOnConnector mOCPre = null;
-			if (predecessor != null)
-				mOCPre = (MessageOnConnector) getPredecessor(mOC,
-						predecessor.getTransientMessages());
-
-			GraphvizHTMLTableCell mOCCell = createMessageOnConnectorCell(mOC,
-					mOCPre);
 			mOCRow.addTableCell(mOCCell);
+		} else {
+			for (MessageOnConnector mOC : rAC.getTransientMessages()) {
+				GraphvizHTMLTableRow mOCRow = new GraphvizHTMLTableRow();
+				rACTable.addTableRow(mOCRow);
+	
+				// get predecessor
+				MessageOnConnector mOCPre = null;
+				if (predecessor != null)
+					mOCPre = (MessageOnConnector) getPredecessor(mOC,
+							predecessor.getTransientMessages());
+	
+				GraphvizHTMLTableCell mOCCell = createMessageOnConnectorCell(mOC,
+						mOCPre);
+				mOCRow.addTableCell(mOCCell);
+			}
 		}
 
 		if (predecessor == null && predecessorCicState != null)
@@ -270,7 +278,7 @@ public class CICGraphvizExport extends GraphVizExport {
 
 		GraphvizHTMLTableCell mOCCell = createRuntimeMessageCell(
 				theMessage.getMessage(), rMPre);
-		mOCCell.addLabel(mOCCell.getLabel() + " to "
+		mOCCell.addLabel(mOCCell.getLabel() + "&nbsp;to "
 				+ theMessage.getReceiver().getName());
 
 		if (predecessor == null && predecessorCicState != null)
@@ -399,22 +407,30 @@ public class CICGraphvizExport extends GraphVizExport {
 		mBTable.addCellBorder("0");
 		GraphvizHTMLTableRow nameRow = new GraphvizHTMLTableRow();
 		GraphvizHTMLTableCell nameCell = new GraphvizHTMLTableCell();
-		nameCell.addLabel(mB.getMessageBuffer().getName());
+		nameCell.addLabel("Incoming Buffer: " + mB.getMessageBuffer().getName());
 		nameRow.addTableCell(nameCell);
 		mBTable.addTableRow(nameRow);
 
 		// RuntimeMessages
-		for (RuntimeMessage rM : mB.getMessages()) {
+		if (mB.getMessages().isEmpty()) {
+			GraphvizHTMLTableCell rMCell = new GraphvizHTMLTableCell();
+			rMCell.addLabel("<i>empty</i>");
 			GraphvizHTMLTableRow rMRow = new GraphvizHTMLTableRow();
 			mBTable.addTableRow(rMRow);
-
-			// get predecessor
-			RuntimeMessage rMPre = null;
-			if (predecessor != null)
-				rMPre = getPredecessor(rM, predecessor.getMessages(), predecessor);
-
-			GraphvizHTMLTableCell rMCell = createRuntimeMessageCell(rM, rMPre);
 			rMRow.addTableCell(rMCell);
+		} else {
+			for (RuntimeMessage rM : mB.getMessages()) {
+				GraphvizHTMLTableRow rMRow = new GraphvizHTMLTableRow();
+				mBTable.addTableRow(rMRow);
+
+				// get predecessor
+				RuntimeMessage rMPre = null;
+				if (predecessor != null)
+					rMPre = getPredecessor(rM, predecessor.getMessages(), predecessor);
+
+				GraphvizHTMLTableCell rMCell = createRuntimeMessageCell(rM, rMPre);
+				rMRow.addTableCell(rMCell);
+			}
 		}
 
 		return mBTable;
