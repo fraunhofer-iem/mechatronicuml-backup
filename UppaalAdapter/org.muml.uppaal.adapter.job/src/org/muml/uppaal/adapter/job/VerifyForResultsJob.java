@@ -48,19 +48,20 @@ import org.muml.uppaal.requirements.PropertyRepository;
 import org.muml.uppaal.requirements.impl.RequirementsFactoryImpl;
 
 public class VerifyForResultsJob extends Job {
-	
+
 	protected VerificationOptionsProvider optionsProvider;
 	protected VerificationPropertyChoiceProvider propertyChoiceProvider;
 	protected VerificationPropertyResultAcceptor propertyResultAcceptor;
 	protected VerifiableElement verifiableElement;
 	private boolean storeIntermediateModels;
 
-	public VerifyForResultsJob(final VerifiableElement verifiableElement, VerificationOptionsProvider optionsProvider, VerificationPropertyChoiceProvider propertyChoiceProvider, VerificationPropertyResultAcceptor propertyResultAcceptor) {
-		super("Verifying "+((NamedElement) verifiableElement).getName());
+	public VerifyForResultsJob(final VerifiableElement verifiableElement, VerificationOptionsProvider optionsProvider,
+			VerificationPropertyChoiceProvider propertyChoiceProvider,
+			VerificationPropertyResultAcceptor propertyResultAcceptor) {
+		super("Verifying " + ((NamedElement) verifiableElement).getName());
 		this.verifiableElement = verifiableElement;
 		this.optionsProvider = optionsProvider;
-		
-	
+
 		this.propertyChoiceProvider = propertyChoiceProvider;
 		this.propertyResultAcceptor = propertyResultAcceptor;
 		if (org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().shouldDoStatisticalEvaluation()) {
@@ -70,8 +71,10 @@ public class VerifyForResultsJob extends Job {
 					if (!event.getResult().isOK()) {
 						org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().setRestartRunnable(null);
 					}
-					String elementName = (verifiableElement instanceof NamedElement) ? ((NamedElement) verifiableElement).getName() : "";
-					org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().evaluationDone(elementName, null, false);
+					String elementName = (verifiableElement instanceof NamedElement)
+							? ((NamedElement) verifiableElement).getName() : "";
+					org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().evaluationDone(elementName, null,
+							false);
 				}
 			});
 		}
@@ -84,25 +87,30 @@ public class VerifyForResultsJob extends Job {
 	public void setStoreIntermediateModels(boolean storeIntermediateModels) {
 		this.storeIntermediateModels = storeIntermediateModels;
 	}
-	
+
 	@Override
 	protected IStatus run(IProgressMonitor monitor) {
 		try {
 			SubMonitor subMonitor = SubMonitor.convert(monitor, this.getName(), 100);
-			
-			//Clone model, mark verifiable element, etc.
+
+			// Clone model, mark verifiable element, etc.
+			// if
+			// (org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().shouldDoStatisticalEvaluation())
+			// {
+			// org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().logInfo("Startup:
+			// Clone model, mark verifiable element, etc.");
+			// }
 			PrepareModelOperation prepareOperation = new PrepareModelOperation(verifiableElement);
 			try {
 				prepareOperation.run(subMonitor.split(10, SubMonitor.SUPPRESS_NONE));
-			}
-			catch(CoreException e) {
+			} catch (CoreException e) {
 				return e.getStatus();
 			}
 			verifiableElement = prepareOperation.getClonedVerifiableElement();
 			ModelExtent mainInputExtent = prepareOperation.getClonedExtent();
-			
+
 			IPath intermediateModelsPath = null;
-			
+
 			// store model
 			if (storeIntermediateModels) {
 				IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject("intermediate_models");
@@ -116,10 +124,11 @@ public class VerifyForResultsJob extends Job {
 				} catch (CoreException e) {
 				}
 				IPath targetPath = project.getFullPath();
-				URI uri = URI.createPlatformResourceURI(targetPath.append("00").addFileExtension("muml").toPortableString(), true);
+				URI uri = URI.createPlatformResourceURI(
+						targetPath.append("00").addFileExtension("muml").toPortableString(), true);
 				ResourceSet resSet = new ResourceSetImpl();
 				Resource resource = resSet.createResource(uri);
-				
+
 				// move from extent to resource
 				resource.getContents().addAll(mainInputExtent.getContents());
 
@@ -136,19 +145,34 @@ public class VerifyForResultsJob extends Job {
 				// store path for later
 				intermediateModelsPath = targetPath;
 			}
-			
-			
-			//Prepare other necessary information (typically: show verification wizard)
+
+			// Prepare other necessary information (typically: show verification
+			// wizard)
+			// if
+			// (org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().shouldDoStatisticalEvaluation())
+			// {
+			// org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().logInfo("Startup:
+			// Prepare other necessary information (typically: show verification
+			// wizard)");
+			// }
 			if (!propertyChoiceProvider.preparePropertyChoiceProvider(verifiableElement))
 				return Status.CANCEL_STATUS;
 			if (!optionsProvider.prepareOptionsProvider(verifiableElement))
 				return Status.CANCEL_STATUS;
-			
-			//Remove the properties that are not supposed to be verified
-			Iterator<VerificationConstraintRepository> repoIt = verifiableElement.getVerificationConstraintRepositories().iterator();
+
+			// Remove the properties that are not supposed to be verified
+			// if
+			// (org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().shouldDoStatisticalEvaluation())
+			// {
+			// org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().logInfo("Startup:
+			// Remove the properties that are not supposed to be verified");
+			// }
+			Iterator<VerificationConstraintRepository> repoIt = verifiableElement
+					.getVerificationConstraintRepositories().iterator();
 			while (repoIt.hasNext()) {
-				//Remove constraints not chosen
-				org.muml.uppaal.adapter.mtctl.PropertyRepository repo = (org.muml.uppaal.adapter.mtctl.PropertyRepository) repoIt.next();
+				// Remove constraints not chosen
+				org.muml.uppaal.adapter.mtctl.PropertyRepository repo = (org.muml.uppaal.adapter.mtctl.PropertyRepository) repoIt
+						.next();
 				Iterator<Property> it = repo.getProperties().iterator();
 				while (it.hasNext()) {
 					Property property = it.next();
@@ -156,36 +180,54 @@ public class VerifyForResultsJob extends Job {
 						it.remove();
 				}
 			}
-			
+
+			// if
+			// (org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().shouldDoStatisticalEvaluation())
+			// {
+			// org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().logInfo("Startup:
+			// set input and output extents for verification job");
+			// }
 			// set input and output extents for verification job
-			TransformationOperation verifyOperation = new TransformationOperation("Running verification process", URI.createPlatformPluginURI("/org.muml.uppaal.adapter.transformation/transforms/VerifiableElement2Results.qvto", true));
+			TransformationOperation verifyOperation = new TransformationOperation("Running verification process",
+					URI.createPlatformPluginURI(
+							"/org.muml.uppaal.adapter.transformation/transforms/VerifiableElement2Results.qvto", true));
 			ModelExtent resultExtent = new BasicModelExtent();
 			ModelExtent uppaalModelExtent = new BasicModelExtent();
 			ModelExtent uppaalReqModelExtent = new BasicModelExtent();
-			ModelExtent optionsExtent = new BasicModelExtent(Arrays.asList(new Options[] {optionsProvider.getOptions()}));
-			verifyOperation.setTransformationParameters(mainInputExtent, optionsExtent, resultExtent, uppaalModelExtent, uppaalReqModelExtent);
-			
+			ModelExtent optionsExtent = new BasicModelExtent(
+					Arrays.asList(new Options[] { optionsProvider.getOptions() }));
+			verifyOperation.setTransformationParameters(mainInputExtent, optionsExtent, resultExtent, uppaalModelExtent,
+					uppaalReqModelExtent);
+
+			// if
+			// (org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().shouldDoStatisticalEvaluation())
+			// {
+			// org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().logInfo("Startup:
+			// Set config properties");
+			// }
 			// Set config properties
 			Map<String, Object> configProperties = new HashMap<String, Object>();
 			configProperties.put(TransformationOperation.CONFIG_STORE_INTERMEDIATE_MODELS, storeIntermediateModels);
 			verifyOperation.setTransformationConfigProperties(configProperties);
-			
+
 			// Run verification job
 			try {
 				verifyOperation.run(subMonitor.split(90, SubMonitor.SUPPRESS_NONE));
-			}
-			catch(CoreException e) {
+			} catch (CoreException e) {
 				return e.getStatus();
 			}
-						
-			//Show results
+
+			if (org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().shouldDoStatisticalEvaluation()) {
+				org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().logInfo("Results Presentation");
+			}
+
+			// Show results
 			subMonitor.subTask("Showing Results");
 			if (!org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().shouldDoStatisticalEvaluation()) {
 				propertyResultAcceptor.acceptResult((PropertyResultRepository) resultExtent.getContents().get(0));
 			}
-			
-			
-			// 
+
+			//
 			// Store uppaal models if requested
 			//
 			if (storeIntermediateModels) {
@@ -197,94 +239,96 @@ public class VerifyForResultsJob extends Job {
 				if (uppaalReqModelExtent.getContents().size() != 0)
 					propertyRepository = (PropertyRepository) uppaalReqModelExtent.getContents().get(0);
 				else
-					propertyRepository = RequirementsFactoryImpl.eINSTANCE.createPropertyRepository();		
-				
+					propertyRepository = RequirementsFactoryImpl.eINSTANCE.createPropertyRepository();
+
 				URI uri = URI.createPlatformResourceURI(targetPath.append(((NamedElement) verifiableElement).getName())
 						.addFileExtension("uppaal").toPortableString(), true);
 
 				URI propertyUri = URI
 						.createPlatformResourceURI(targetPath.append(((NamedElement) verifiableElement).getName())
 								.addFileExtension("requirements").toPortableString(), true);
-	
+
 				{
 					subMonitor.subTask("Save NTA");
-	
+
 					Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
 					Map<String, Object> m = reg.getExtensionToFactoryMap();
 					m.put("uppaal", new XMIResourceFactoryImpl());
-	
+
 					// Obtain a new resource set
 					ResourceSet resSet = new ResourceSetImpl();
-	
+
 					// Create a resource
 					Resource resource = resSet.createResource(uri);
-					// Get the first model element and cast it to the right type, in
+					// Get the first model element and cast it to the right
+					// type, in
 					// my
 					// example everything is hierarchical included in this first
 					// node
 					resource.getContents().add(nta);
-	
+
 					// Now save the content.
 					try {
 						resource.save(Collections.EMPTY_MAP);
 					} catch (IOException e) {
 						return BasicDiagnostic.toIStatus(BasicDiagnostic.toDiagnostic(e));
 					}
-	
+
 					subMonitor.worked(15);
 				}
-	
+
 				{
 					subMonitor.subTask("Save Properties");
-	
+
 					Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
 					Map<String, Object> m = reg.getExtensionToFactoryMap();
 					m.put("requirements", new XMIResourceFactoryImpl());
-	
+
 					// Obtain a new resource set
 					ResourceSet resSet = new ResourceSetImpl();
-	
+
 					// Create a resource
 					Resource resource = resSet.createResource(propertyUri);
-					// Get the first model element and cast it to the right type, in
+					// Get the first model element and cast it to the right
+					// type, in
 					// my
 					// example everything is hierarchical included in this first
 					// node
 					resource.getContents().add(propertyRepository);
-	
+
 					// Now save the content.
 					try {
 						resource.save(Collections.EMPTY_MAP);
 					} catch (IOException e) {
 						return BasicDiagnostic.toIStatus(BasicDiagnostic.toDiagnostic(e));
 					}
-	
+
 					subMonitor.worked(15);
 				}
-				
-				String fullPath = ResourcesPlugin.getWorkspace().getRoot().getLocation().toString() + "/intermediate_models";
+
+				String fullPath = ResourcesPlugin.getWorkspace().getRoot().getLocation().toString()
+						+ "/intermediate_models";
 				final IPath path = new Path(fullPath);
 				IWorkspaceRunnable xmlSynthesis = new UppaalXMLSynthesisOperation(nta, propertyRepository, path, true);
-	
+
 				try {
 					xmlSynthesis.run(subMonitor.newChild(30));
 				} catch (CoreException e) {
 					return e.getStatus();
 				}
-				
+
 				try {
-					ResourcesPlugin.getWorkspace().getRoot().refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
-		    	} catch (CoreException e) {
-		    		return e.getStatus();
-		    	}
-	
+					ResourcesPlugin.getWorkspace().getRoot().refreshLocal(IResource.DEPTH_INFINITE,
+							new NullProgressMonitor());
+				} catch (CoreException e) {
+					return e.getStatus();
+				}
+
 			}
-			
+
 			return Status.OK_STATUS;
-		}
-		finally {
+		} finally {
 			monitor.done();
 		}
 	}
 }
-
