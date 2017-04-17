@@ -87,6 +87,11 @@ public class Muml2TraceImageJob extends Job {
 			};
 
 			subMonitor.subTask("GraphViz Export");
+			
+			if (org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().shouldDoStatisticalEvaluation()) {
+				org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().logInfo("GraphViz Export");
+			}
+			
 			ReachabilityGraphExporter exporter = new CICGraphvizExport(null); //TODO param ?
 			if (targetPath != null) {
 				exporter.export(trace, targetPath);
