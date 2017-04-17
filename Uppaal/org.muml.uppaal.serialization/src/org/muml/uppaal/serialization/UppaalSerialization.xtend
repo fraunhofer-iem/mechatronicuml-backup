@@ -442,7 +442,7 @@ class UppaalSerialization {
 			
 			case it instanceof NegationExpression: return 190
 			case it instanceof LogicalExpression && (it as LogicalExpression).operator == LogicalOperator::AND: return 180
-			case it instanceof LogicalExpression && (it as LogicalExpression).operator == LogicalOperator::OR: return 170
+			case it instanceof LogicalExpression && (it as LogicalExpression).operator == LogicalOperator::OR: return 160
 			case it instanceof LogicalExpression && (it as LogicalExpression).operator == LogicalOperator::IMPLY: return 170
 			case it instanceof QuantificationExpression: return 160
 		}
