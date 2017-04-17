@@ -540,15 +540,22 @@ public class CICGraphvizExport extends GraphVizExport {
 		vBCell.addLabel("Variable Bindings:");
 
 		GraphvizHTMLTableRow curVarBindingRow = null;
+		int numberOfCells = 0;
 		for (int i = 0; i < rtscI.getVariableBindings().size(); i++) {
 			VariableBinding curVariableBinding = rtscI.getVariableBindings()
 					.get(i);
 
+			if (curVariableBinding.getVariable().isConstant()) {
+				continue;
+				// we do not show the value of constant variables
+			}
+			
 			// create new row
-			if (i % 2 == 0) {
+			if (numberOfCells % 2 == 0) {
 				curVarBindingRow = new GraphvizHTMLTableRow();
 				vBTable.addTableRow(curVarBindingRow);
 			}
+			numberOfCells++;
 
 			// get predecessor
 			VariableBinding vBPre = null;
@@ -567,8 +574,14 @@ public class CICGraphvizExport extends GraphVizExport {
 	protected GraphvizHTMLTableCell createVariableBindingCell(
 			VariableBinding vB, VariableBinding predecessor) {
 		GraphvizHTMLTableCell vBCell = new GraphvizHTMLTableCell();
-		vBCell.addLabel(vB.getVariable().getName() + "="
-				+ vB.getValue().toString());
+		
+		if (vB.getVariable().isConstant()) {
+			// TODO print the variable's initialize expression
+		} else {
+			vBCell.addLabel(vB.getVariable().getName() + "="
+					+ vB.getValue().toString());
+		}
+		
 		if (predecessor == null && predecessorCicState != null)
 			vBCell.markChanged();
 		return vBCell;
