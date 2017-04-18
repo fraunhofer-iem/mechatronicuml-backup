@@ -49,7 +49,8 @@ int createDatabase()
 
     //Create table Orders
     const char *sqlOrders = "DROP TABLE IF EXISTS Orders;"
-    				   "CREATE TABLE Orders (OrderID INT, Ingredient INT, Amount INT, OrderStatus TEXT, OrderTime INT, ProductionTime INT);";
+    				   "CREATE TABLE Orders (OrderID INT PRIMARY KEY, Ingredient INT, Amount INT, OrderStatus TEXT, "
+    				   "OrderTime INT, ProductionStartTime INT, ProductionEndTime INT);";
 
     rc = sqlite3_exec(db, sqlOrders, callback, 0, &errMsg);
     if( rc ){
@@ -59,7 +60,7 @@ int createDatabase()
     }
     //Create table productionStations
     const char *sqlProdStation = "DROP TABLE IF EXISTS ProductionStations;"
-    		 	 	 	 	 	 "CREATE TABLE ProductionStations (ProductionStationID INT, ProducibleIngredients TEXT);";
+    		 	 	 	 	 	 "CREATE TABLE ProductionStations (ProductionStationID INT PRIMARY KEY, ProducibleIngredients TEXT, LastSeen INT);";
 
     rc = sqlite3_exec(db, sqlProdStation, callback, 0, &errMsg);
     if( rc ){
@@ -134,7 +135,7 @@ int insertOrder(int orderID, int ingredientID, int amount)
 
 /**
  * Inserts pair orderId and productionStation into the table OrderAllocation
- * Sets status of the order in table Orders to 'InProduction'
+ * Sets status of the order in table Orders to 'IN_PRODUCTION'
  */
 int defineProductionStationForOrder(int orderID, int productionStationID)
 {
@@ -142,7 +143,7 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 	sqlite3_stmt *orderStatusStmt;
 
 	//Set status of the order
-	const char *orderStatus = "Update Orders Set OrderStatus='InProduction' WHERE OrderID=?";
+	const char *orderStatus = "Update Orders Set OrderStatus='IN_PRODUCTION' AND ProductionStartTime=datetime('now') WHERE OrderID=?";
 
 	rc = sqlite3_prepare_v2(db, orderStatus,-1, &orderStatusStmt,0);
 	if( rc ){
@@ -210,7 +211,7 @@ int deleteOrder(int orderID)
 	sqlite3_stmt *orderStatusStmt;
 
 	//Set status of the order
-	const char *orderStatus = "Update Orders Set OrderStatus='DONE' WHERE OrderID=?";
+	const char *orderStatus = "Update Orders Set OrderStatus='DONE' AND ProductionEndTime=datetime('now') WHERE OrderID=?";
 
 	rc = sqlite3_prepare_v2(db, orderStatus,-1, &orderStatusStmt,0);
 	if( rc ){
@@ -320,12 +321,11 @@ int searchOrder(int searchingPS, int latestOrderID, int producibleIngredients)
 {
 	int rc=0;
 	char prodIngrChar[16];
-	sprintf(prodIngrChar, "%d", producibleIngredients);
+	sprintf(prodIngrChar, "%16d", producibleIngredients);
 
 	//Insert the Productionstation into the ProductionStation Table
 	//Prepare statement
-	const char *productionStation = "INSERT INTO ProductionStations (ProductionStationID, ProducibleIngredients) "
-					"VALUES (?, ?);";
+	const char *productionStation = "INSERT OR REPLACE into ProductionStations (ProductionStationID, ProducibleIngredients, LastSeen) VALUES (?, ?, datetime('now'))";
 	sqlite3_stmt *prodStatStmt;
 	rc = sqlite3_prepare_v2(db, productionStation,-1, &prodStatStmt,0);
 	if( rc ){
@@ -339,7 +339,8 @@ int searchOrder(int searchingPS, int latestOrderID, int producibleIngredients)
 		fprintf(stderr, "Error for productionStationID: %s\n", sqlite3_errmsg(db));
 		return rc;
 	}
-	rc= sqlite3_bind_text(prodStatStmt,2,prodIngrChar,16, SQLITE_STATIC);
+
+	rc= sqlite3_bind_text(prodStatStmt, 2, prodIngrChar, 16, SQLITE_STATIC);
 	if( rc ){
 		fprintf(stderr, "Error for producibleIngredients: %s\n", sqlite3_errmsg(db));
 		return rc;
@@ -377,7 +378,7 @@ int searchOrder(int searchingPS, int latestOrderID, int producibleIngredients)
 	rc = sqlite3_step(searchOrderStmt);
 	//No order found
 	if (rc==SQLITE_DONE){
-		printf("No order with status IDLE found.\n");
+		printf("No order with status IDLE and producible ingredients found.\n");
 		sqlite3_finalize(searchOrderStmt);
 		return -6; //Keep result code from unqlite so database implementations can be used interchangeably
 	}
@@ -390,7 +391,7 @@ int searchOrder(int searchingPS, int latestOrderID, int producibleIngredients)
 	//There are results
 	int orderID = sqlite3_column_int(searchOrderStmt, 0);
 	sqlite3_finalize(searchOrderStmt);
-	printf("Successfully retrieved order %d with status IDLE.\n", orderID);
+	printf("Successfully retrieved order %d with status IDLE and producible ingredients.\n", orderID);
 	return orderID;
 }
 

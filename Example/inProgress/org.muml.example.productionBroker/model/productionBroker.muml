@@ -66,29 +66,29 @@
                 </bound>
               </clockConstraints>
               <action xmi:id="_YM7J4NyZEeW-N_z6XJQq2w" name="amount := 2 ; changeIngredient;">
-                <expressions xsi:type="actionlanguage:Block" xmi:id="_vFiE0Bq1EeebgevYP6vQpQ">
-                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_vFiE0Rq1EeebgevYP6vQpQ" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="common:LiteralExpression" xmi:id="_vFiE0hq1EeebgevYP6vQpQ" value="2"/>
-                    <lhs_typedNamedElementExpression xmi:id="_vFiE0xq1EeebgevYP6vQpQ" typedNamedElement="_CY5c4NyZEeW-N_z6XJQq2w"/>
+                <expressions xsi:type="actionlanguage:Block" xmi:id="__kh0MCQ0Eee7HckZZ6wCAQ">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="__kh0MSQ0Eee7HckZZ6wCAQ" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="common:LiteralExpression" xmi:id="__kh0MiQ0Eee7HckZZ6wCAQ" value="2"/>
+                    <lhs_typedNamedElementExpression xmi:id="__kh0MyQ0Eee7HckZZ6wCAQ" typedNamedElement="_CY5c4NyZEeW-N_z6XJQq2w"/>
                   </expressions>
-                  <expressions xsi:type="actionlanguage:IfStatement" xmi:id="_vFiE1Bq1EeebgevYP6vQpQ">
-                    <ifCondition xsi:type="common:ComparisonExpression" xmi:id="_vFiE1Rq1EeebgevYP6vQpQ">
-                      <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_vFiE1hq1EeebgevYP6vQpQ" typedNamedElement="_NJMasNxtEeW-N_z6XJQq2w"/>
-                      <rightExpression xsi:type="common:LiteralExpression" xmi:id="_vFiE1xq1EeebgevYP6vQpQ" value="5"/>
+                  <expressions xsi:type="actionlanguage:IfStatement" xmi:id="__kh0NCQ0Eee7HckZZ6wCAQ">
+                    <ifCondition xsi:type="common:ComparisonExpression" xmi:id="__kh0NSQ0Eee7HckZZ6wCAQ">
+                      <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="__kh0NiQ0Eee7HckZZ6wCAQ" typedNamedElement="_NJMasNxtEeW-N_z6XJQq2w"/>
+                      <rightExpression xsi:type="common:LiteralExpression" xmi:id="__kh0NyQ0Eee7HckZZ6wCAQ" value="5"/>
                     </ifCondition>
-                    <ifBlock xmi:id="_vFiE2Bq1EeebgevYP6vQpQ">
-                      <expressions xsi:type="actionlanguage:Assignment" xmi:id="_vFiE2Rq1EeebgevYP6vQpQ" assignOperator=":=">
-                        <rhs_assignExpression xsi:type="common:ArithmeticExpression" xmi:id="_vFiE2hq1EeebgevYP6vQpQ">
-                          <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_vFiE2xq1EeebgevYP6vQpQ" typedNamedElement="_NJMasNxtEeW-N_z6XJQq2w"/>
-                          <rightExpression xsi:type="common:LiteralExpression" xmi:id="_vFiE3Bq1EeebgevYP6vQpQ" value="1"/>
+                    <ifBlock xmi:id="__kh0OCQ0Eee7HckZZ6wCAQ">
+                      <expressions xsi:type="actionlanguage:Assignment" xmi:id="__kh0OSQ0Eee7HckZZ6wCAQ" assignOperator=":=">
+                        <rhs_assignExpression xsi:type="common:ArithmeticExpression" xmi:id="__kh0OiQ0Eee7HckZZ6wCAQ">
+                          <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="__kh0OyQ0Eee7HckZZ6wCAQ" typedNamedElement="_NJMasNxtEeW-N_z6XJQq2w"/>
+                          <rightExpression xsi:type="common:LiteralExpression" xmi:id="__kh0PCQ0Eee7HckZZ6wCAQ" value="1"/>
                         </rhs_assignExpression>
-                        <lhs_typedNamedElementExpression xmi:id="_vFiE3Rq1EeebgevYP6vQpQ" typedNamedElement="_NJMasNxtEeW-N_z6XJQq2w"/>
+                        <lhs_typedNamedElementExpression xmi:id="__kh0PSQ0Eee7HckZZ6wCAQ" typedNamedElement="_NJMasNxtEeW-N_z6XJQq2w"/>
                       </expressions>
                     </ifBlock>
-                    <elseBlock xmi:id="_vFiE3hq1EeebgevYP6vQpQ">
-                      <expressions xsi:type="actionlanguage:Assignment" xmi:id="_vFiE3xq1EeebgevYP6vQpQ" assignOperator=":=">
-                        <rhs_assignExpression xsi:type="common:LiteralExpression" xmi:id="_vFiE4Bq1EeebgevYP6vQpQ" value="1"/>
-                        <lhs_typedNamedElementExpression xmi:id="_vFiE4Rq1EeebgevYP6vQpQ" typedNamedElement="_NJMasNxtEeW-N_z6XJQq2w"/>
+                    <elseBlock xmi:id="__kh0PiQ0Eee7HckZZ6wCAQ">
+                      <expressions xsi:type="actionlanguage:Assignment" xmi:id="__kh0PyQ0Eee7HckZZ6wCAQ" assignOperator=":=">
+                        <rhs_assignExpression xsi:type="common:LiteralExpression" xmi:id="__kh0QCQ0Eee7HckZZ6wCAQ" value="0"/>
+                        <lhs_typedNamedElementExpression xmi:id="__kh0QSQ0Eee7HckZZ6wCAQ" typedNamedElement="_NJMasNxtEeW-N_z6XJQq2w"/>
                       </expressions>
                     </elseBlock>
                   </expressions>
@@ -102,29 +102,29 @@
                 </bound>
               </clockConstraints>
               <action xmi:id="_ROL2INyZEeW-N_z6XJQq2w" name="amount := 1 ; changeIngredient;">
-                <expressions xsi:type="actionlanguage:Block" xmi:id="_xg1poBq1EeebgevYP6vQpQ">
-                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_xg1poRq1EeebgevYP6vQpQ" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="common:LiteralExpression" xmi:id="_xg1pohq1EeebgevYP6vQpQ" value="1"/>
-                    <lhs_typedNamedElementExpression xmi:id="_xg1poxq1EeebgevYP6vQpQ" typedNamedElement="_CY5c4NyZEeW-N_z6XJQq2w"/>
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_AJvaECQ1Eee7HckZZ6wCAQ">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_AJvaESQ1Eee7HckZZ6wCAQ" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="common:LiteralExpression" xmi:id="_AJvaEiQ1Eee7HckZZ6wCAQ" value="1"/>
+                    <lhs_typedNamedElementExpression xmi:id="_AJvaEyQ1Eee7HckZZ6wCAQ" typedNamedElement="_CY5c4NyZEeW-N_z6XJQq2w"/>
                   </expressions>
-                  <expressions xsi:type="actionlanguage:IfStatement" xmi:id="_xg1ppBq1EeebgevYP6vQpQ">
-                    <ifCondition xsi:type="common:ComparisonExpression" xmi:id="_xg1ppRq1EeebgevYP6vQpQ">
-                      <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_xg1pphq1EeebgevYP6vQpQ" typedNamedElement="_NJMasNxtEeW-N_z6XJQq2w"/>
-                      <rightExpression xsi:type="common:LiteralExpression" xmi:id="_xg1ppxq1EeebgevYP6vQpQ" value="5"/>
+                  <expressions xsi:type="actionlanguage:IfStatement" xmi:id="_AJvaFCQ1Eee7HckZZ6wCAQ">
+                    <ifCondition xsi:type="common:ComparisonExpression" xmi:id="_AJvaFSQ1Eee7HckZZ6wCAQ">
+                      <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_AJvaFiQ1Eee7HckZZ6wCAQ" typedNamedElement="_NJMasNxtEeW-N_z6XJQq2w"/>
+                      <rightExpression xsi:type="common:LiteralExpression" xmi:id="_AJvaFyQ1Eee7HckZZ6wCAQ" value="5"/>
                     </ifCondition>
-                    <ifBlock xmi:id="_xg1pqBq1EeebgevYP6vQpQ">
-                      <expressions xsi:type="actionlanguage:Assignment" xmi:id="_xg1pqRq1EeebgevYP6vQpQ" assignOperator=":=">
-                        <rhs_assignExpression xsi:type="common:ArithmeticExpression" xmi:id="_xg1pqhq1EeebgevYP6vQpQ">
-                          <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_xg1pqxq1EeebgevYP6vQpQ" typedNamedElement="_NJMasNxtEeW-N_z6XJQq2w"/>
-                          <rightExpression xsi:type="common:LiteralExpression" xmi:id="_xg1prBq1EeebgevYP6vQpQ" value="1"/>
+                    <ifBlock xmi:id="_AJvaGCQ1Eee7HckZZ6wCAQ">
+                      <expressions xsi:type="actionlanguage:Assignment" xmi:id="_AJvaGSQ1Eee7HckZZ6wCAQ" assignOperator=":=">
+                        <rhs_assignExpression xsi:type="common:ArithmeticExpression" xmi:id="_AJvaGiQ1Eee7HckZZ6wCAQ">
+                          <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_AJvaGyQ1Eee7HckZZ6wCAQ" typedNamedElement="_NJMasNxtEeW-N_z6XJQq2w"/>
+                          <rightExpression xsi:type="common:LiteralExpression" xmi:id="_AJvaHCQ1Eee7HckZZ6wCAQ" value="1"/>
                         </rhs_assignExpression>
-                        <lhs_typedNamedElementExpression xmi:id="_xg1prRq1EeebgevYP6vQpQ" typedNamedElement="_NJMasNxtEeW-N_z6XJQq2w"/>
+                        <lhs_typedNamedElementExpression xmi:id="_AJvaHSQ1Eee7HckZZ6wCAQ" typedNamedElement="_NJMasNxtEeW-N_z6XJQq2w"/>
                       </expressions>
                     </ifBlock>
-                    <elseBlock xmi:id="_xg1prhq1EeebgevYP6vQpQ">
-                      <expressions xsi:type="actionlanguage:Assignment" xmi:id="_xg1prxq1EeebgevYP6vQpQ" assignOperator=":=">
-                        <rhs_assignExpression xsi:type="common:LiteralExpression" xmi:id="_xg1psBq1EeebgevYP6vQpQ" value="1"/>
-                        <lhs_typedNamedElementExpression xmi:id="_xg1psRq1EeebgevYP6vQpQ" typedNamedElement="_NJMasNxtEeW-N_z6XJQq2w"/>
+                    <elseBlock xmi:id="_AJvaHiQ1Eee7HckZZ6wCAQ">
+                      <expressions xsi:type="actionlanguage:Assignment" xmi:id="_AJvaHyQ1Eee7HckZZ6wCAQ" assignOperator=":=">
+                        <rhs_assignExpression xsi:type="common:LiteralExpression" xmi:id="_AJvaICQ1Eee7HckZZ6wCAQ" value="0"/>
+                        <lhs_typedNamedElementExpression xmi:id="_AJvaISQ1Eee7HckZZ6wCAQ" typedNamedElement="_NJMasNxtEeW-N_z6XJQq2w"/>
                       </expressions>
                     </elseBlock>
                   </expressions>

@@ -8,10 +8,8 @@
 int32_T ProductionManagement_productionManagementGetProducibleIngredients(){
 
 /** Start of user code ProductionManagement_productionManagementGetProducibleIngredients **/ 
-//@TODO: add your implementation here
-#warning Missing implemenation of repository operation 'ProductionManagement_productionManagementGetProducibleIngredients'
 	//default return value
-	int32_T ret = 0;
+	int32_T ret = 1;
 	return ret;
 /**End of user code**/
 
