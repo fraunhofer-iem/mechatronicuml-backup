@@ -299,7 +299,8 @@ int getOrderAmount(int orderID)
 /**
  * Searches an order without a production station assigned
  */
-int searchOrder(int latestOrderID)
+int searchOrder(int searchingPS, int latestOrderID, int producibleIngredients)
+//TODO use searchingPS and producibleIngredients
 {
 	int rc;
 	size_t nBytes;

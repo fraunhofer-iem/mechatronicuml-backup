@@ -89,10 +89,10 @@ int32_T databaseOperations_databaseOperationsDefineProductionStationForOrder(int
 
 
 
-int32_T databaseOperations_databaseOperationsSearchOrder(int32_T orderID, int32_T producibleIngredients){
+int32_T databaseOperations_databaseOperationsSearchOrder(int32_T searchingPS, int32_T latestOrderID, int32_T producibleIngredients){
 
 /** Start of user code databaseOperations_databaseOperationsSearchOrder **/ 
-	int32_T ret = searchOrder(orderID, producibleIngredients);
+	int32_T ret = searchOrder(searchingPS, latestOrderID, producibleIngredients);
 	//Normally everything below zero is an error code.
 	//Here it's possible we don't find an order to assign and it's not an error
 	if (ret < 0 && ret != -6){

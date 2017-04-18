@@ -1,9 +1,0 @@
-CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
-PROJECT(root-cic)
-
-file(GLOB_RECURSE SRCS *.c)
-file(GLOB_RECURSE HDRS *.h)
-include_directories(${CMAKE_SOURCE_DIR})
-
-ADD_EXECUTABLE(root-cic  ${SRCS} ${HDRS})
-TARGET_LINK_LIBRARIES(root-cic) 

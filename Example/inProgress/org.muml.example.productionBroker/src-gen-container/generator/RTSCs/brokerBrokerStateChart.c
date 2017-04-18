@@ -234,7 +234,7 @@
 					stateChart->currentPsID = msg_MessagesGetOrder.psID;
 					stateChart->provideOrderID =
 							databaseOperations_databaseOperationsSearchOrder(
-									stateChart->latestOrderID,
+									stateChart->currentPsID, stateChart->latestOrderID,
 									msg_MessagesGetOrder.producibleIngredients);
 					;;
 		

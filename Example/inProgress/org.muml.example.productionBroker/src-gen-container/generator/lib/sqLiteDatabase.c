@@ -18,7 +18,7 @@ int insertOrder(int orderId, int ingredientID, int amount);
 int defineProductionStationForOrder(int orderID, int productionStationID);
 int getOrderIngredientID(int orderID);
 int getOrderAmount(int orderID);
-int searchOrder(int orderID, int producibleIngredients);
+int searchOrder(int searchingPS, int latestOrderID, int producibleIngredients);
 int deleteOrder(int orderID);
 void extractLogsAndExit();
 
@@ -316,9 +316,11 @@ int getOrderAmount(int orderID)
 /**
  * Searches an order without a production station assigned
  */
-int searchOrder(int orderId, int producibleIngredients)
+int searchOrder(int searchingPS, int latestOrderID, int producibleIngredients)
 {
 	int rc=0;
+	char prodIngrChar[16];
+	sprintf(prodIngrChar, "%d", producibleIngredients);
 
 	//Insert the Productionstation into the ProductionStation Table
 	//Prepare statement
@@ -332,12 +334,12 @@ int searchOrder(int orderId, int producibleIngredients)
 	}
 
 	//Bind parameters
-	rc =sqlite3_bind_int(prodStatStmt, 1, productionStationID);
+	rc =sqlite3_bind_int(prodStatStmt, 1, searchingPS);
 	if( rc ){
 		fprintf(stderr, "Error for productionStationID: %s\n", sqlite3_errmsg(db));
 		return rc;
 	}
-	rc= sqlite3_bind_text(prodStatStmt, 2, producibleIngredients);
+	rc= sqlite3_bind_text(prodStatStmt,2,prodIngrChar,16, SQLITE_STATIC);
 	if( rc ){
 		fprintf(stderr, "Error for producibleIngredients: %s\n", sqlite3_errmsg(db));
 		return rc;
@@ -351,7 +353,7 @@ int searchOrder(int orderId, int producibleIngredients)
 		return rc;
 	}
 	sqlite3_finalize(prodStatStmt);
-	printf("Successfully inserted production station %d.\n", productionStationID);
+	printf("Successfully inserted production station %d.\n", searchingPS);
 
 
 	sqlite3_stmt *searchOrderStmt;
