@@ -143,7 +143,7 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 	sqlite3_stmt *orderStatusStmt;
 
 	//Set status of the order
-	const char *orderStatus = "Update Orders Set OrderStatus='IN_PRODUCTION' AND ProductionStartTime=datetime('now') WHERE OrderID=?";
+	const char *orderStatus = "Update Orders Set OrderStatus='IN_PRODUCTION', ProductionStartTime=datetime('now') WHERE OrderID=?";
 
 	rc = sqlite3_prepare_v2(db, orderStatus,-1, &orderStatusStmt,0);
 	if( rc ){
@@ -211,7 +211,7 @@ int deleteOrder(int orderID)
 	sqlite3_stmt *orderStatusStmt;
 
 	//Set status of the order
-	const char *orderStatus = "Update Orders Set OrderStatus='DONE' AND ProductionEndTime=datetime('now') WHERE OrderID=?";
+	const char *orderStatus = "Update Orders Set OrderStatus='DONE', ProductionEndTime=datetime('now') WHERE OrderID=?";
 
 	rc = sqlite3_prepare_v2(db, orderStatus,-1, &orderStatusStmt,0);
 	if( rc ){

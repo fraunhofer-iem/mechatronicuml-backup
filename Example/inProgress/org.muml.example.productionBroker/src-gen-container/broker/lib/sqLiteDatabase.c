@@ -135,7 +135,7 @@ int insertOrder(int orderID, int ingredientID, int amount)
 
 /**
  * Inserts pair orderId and productionStation into the table OrderAllocation
- * Sets status of the order in table Orders to 'InProduction'
+ * Sets status of the order in table Orders to 'IN_PRODUCTION'
  */
 int defineProductionStationForOrder(int orderID, int productionStationID)
 {
@@ -143,7 +143,7 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 	sqlite3_stmt *orderStatusStmt;
 
 	//Set status of the order
-	const char *orderStatus = "Update Orders Set OrderStatus='InProduction' AND ProductionStartTime=datetime('now') WHERE OrderID=?";
+	const char *orderStatus = "Update Orders Set OrderStatus='IN_PRODUCTION', ProductionStartTime=datetime('now') WHERE OrderID=?";
 
 	rc = sqlite3_prepare_v2(db, orderStatus,-1, &orderStatusStmt,0);
 	if( rc ){
@@ -211,7 +211,7 @@ int deleteOrder(int orderID)
 	sqlite3_stmt *orderStatusStmt;
 
 	//Set status of the order
-	const char *orderStatus = "Update Orders Set OrderStatus='DONE' AND ProductionEndTime=datetime('now') WHERE OrderID=?";
+	const char *orderStatus = "Update Orders Set OrderStatus='DONE', ProductionEndTime=datetime('now') WHERE OrderID=?";
 
 	rc = sqlite3_prepare_v2(db, orderStatus,-1, &orderStatusStmt,0);
 	if( rc ){
