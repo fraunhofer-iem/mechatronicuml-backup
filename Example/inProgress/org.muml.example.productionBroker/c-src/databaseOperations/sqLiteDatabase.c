@@ -8,10 +8,16 @@
 #include <stdio.h>  /* puts() */
 #include <stdlib.h> /* exit() */
 #include <string.h> /* strchr(), strlen(), .. */
+#include <sys/types.h> /* For updating the vizualiation via socket */
+#include <sys/socket.h> /* For updating the vizualiation via socket */
+#include <netinet/in.h> /* For sockaddr_in */
 #include "sqlite3.h"
 
 /* Pointer to database */
 sqlite3 *db;
+int sock;
+const char *ip="127.0.0.1";
+int port=80;
 
 int createDatabase();
 int insertOrder(int orderId, int ingredientID, int amount);
@@ -81,6 +87,27 @@ int createDatabase()
     }
 
 	printf("Database successfully created. \n");
+
+    sock = socket( AF_INET, SOCK_STREAM, 0 );
+    if (sock < 0) {
+
+    	printf("Could not create socket.");
+    }
+    struct sockaddr_in server;
+
+    memset( &server, 0, sizeof (server));
+
+    inet_aton(ip, &server.sin_addr);
+    server.sin_family = AF_INET;
+    server.sin_port = htons(port);
+
+    // Connect to server
+    if (connect(sock,(struct sockaddr*)&server, sizeof(server)) < 0){
+    	printf("Could not connect.");
+    }
+
+    printf("Connection successful.");
+
 	return 0;
 }
 
@@ -129,6 +156,17 @@ int insertOrder(int orderID, int ingredientID, int amount)
 	}
 	sqlite3_finalize(orderInsertionStmt);
 	printf("Successfully inserted order: %d\n",orderID);
+
+	//If we have a socket to the visualization server, send notification about new order
+	if (sock >= 0){
+		char dataToSend[32];
+		sprintf(dataToSend, "New order, ID = %16d", orderID);
+		rc = send(sock, dataToSend, sizeof(dataToSend), 0);
+		if (rc <0 ){
+			printf("Sending failed with return code %d\n", rc);
+		}
+	}
+
 	return 0;
 }
 
@@ -197,6 +235,17 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 	}
 	sqlite3_finalize(orderAllocStmt);
 	printf("Successfully defined production station %d for order %d.\n", productionStationID, orderID);
+
+	//If we have a socket to the visualization server, send notification about order assignment
+	if (sock >= 0){
+		char dataToSend[32];
+		sprintf(dataToSend, "Order Assigned  %16d", orderID);
+		rc = send(sock, dataToSend, sizeof(dataToSend), 0);
+		if (rc <0 ){
+			printf("Sending failed with return code %d\n", rc);
+		}
+	}
+
 	return 0;
 }
 
@@ -233,6 +282,17 @@ int deleteOrder(int orderID)
 	sqlite3_finalize(orderStatusStmt);
 
 	printf("Successfully marked order %d as finished.\n", orderID);
+
+	//If we have a socket to the visualization server, send notification about finished order
+	if (sock >= 0){
+		char dataToSend[32];
+		sprintf(dataToSend, "Order Finished  %16d", orderID);
+		rc = send(sock, dataToSend, sizeof(dataToSend), 0);
+		if (rc <0 ){
+			printf("Sending failed with return code %d\n", rc);
+		}
+	}
+
 	return 0;
 
 }
@@ -392,6 +452,17 @@ int searchOrder(int searchingPS, int latestOrderID, int producibleIngredients)
 	int orderID = sqlite3_column_int(searchOrderStmt, 0);
 	sqlite3_finalize(searchOrderStmt);
 	printf("Successfully retrieved order %d with status IDLE and producible ingredients.\n", orderID);
+
+	//If we have a socket to the visualization server, send notification about order assignment
+	if (sock >= 0){
+		char dataToSend[32];
+		sprintf(dataToSend, "PS searched,ID= %16d", searchingPS);
+		rc = send(sock, dataToSend, sizeof(dataToSend), 0);
+		if (rc <0 ){
+			printf("Sending failed with return code %d\n", rc);
+		}
+	}
+
 	return orderID;
 }
 
@@ -402,5 +473,6 @@ void extractLogsAndExit()
 {
 	//Sqlite3 will print error logs to stderr by default, no need for extra operation
 	// Exit immediately
+	close(socket);
 	exit(0);
 }
