@@ -67,7 +67,5 @@ main() {
 	var evalResultTransformation := new MTCTLEvaluateResultTransformation(originalCIC, staticallyNormalizedModel, verifiableCIC, uppaalTrace, output);
 	retcode := evalResultTransformation.transform();
 	assert fatal (retcode.succeeded()) with log('Evaluation of verification results failed in VerifiableElement2Results.qvto: ' + retcode.raisedException().repr());
-
-	storeModel(output.rootObjects()->asBag(), "11_output.muml");
 	
 }

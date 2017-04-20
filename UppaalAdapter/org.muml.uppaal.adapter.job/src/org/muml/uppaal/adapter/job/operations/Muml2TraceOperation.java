@@ -1,35 +1,13 @@
 package org.muml.uppaal.adapter.job.operations;
 
-import java.util.Arrays;
-import java.util.Iterator;
-
-import org.eclipse.core.resources.IWorkspaceRunnable;
-import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.OperationCanceledException;
-import org.eclipse.core.runtime.Status;
-import org.eclipse.core.runtime.SubMonitor;
-import org.eclipse.emf.common.util.TreeIterator;
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.m2m.qvt.oml.BasicModelExtent;
-import org.eclipse.m2m.qvt.oml.ModelExtent;
-import org.muml.pim.constraint.VerifiableElement;
-import org.muml.pim.constraint.VerificationConstraintRepository;
-import org.muml.pim.instance.ComponentInstanceConfiguration;
-import org.muml.uppaal.adapter.extension.verificationextension.VerificationExtensionPackage;
-import org.muml.uppaal.adapter.job.interfaces.VerificationOptionsProvider;
-import org.muml.uppaal.adapter.job.interfaces.VerificationPropertyChoiceProvider;
-import org.muml.uppaal.adapter.mtctl.Property;
-import org.muml.uppaal.adapter.mtctl.quantifiers.TemporalQuantifierExpr;
-import org.muml.uppaal.options.Options;
-import org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.ZoneGraph;
-
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 import org.eclipse.core.resources.IProject;
@@ -39,37 +17,37 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.OperationCanceledException;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.SubMonitor;
-import org.eclipse.core.runtime.jobs.IJobChangeEvent;
-import org.eclipse.core.runtime.jobs.Job;
-import org.eclipse.core.runtime.jobs.JobChangeAdapter;
-import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.m2m.qvt.oml.BasicModelExtent;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.muml.core.NamedElement;
 import org.muml.pim.constraint.VerifiableElement;
 import org.muml.pim.constraint.VerificationConstraintRepository;
+import org.muml.pim.instance.ComponentInstanceConfiguration;
 import org.muml.uppaal.NTA;
+import org.muml.uppaal.adapter.extension.verificationextension.VerificationExtensionPackage;
 import org.muml.uppaal.adapter.job.interfaces.VerificationOptionsProvider;
 import org.muml.uppaal.adapter.job.interfaces.VerificationPropertyChoiceProvider;
-import org.muml.uppaal.adapter.job.interfaces.VerificationPropertyResultAcceptor;
-import org.muml.uppaal.adapter.job.operations.PrepareModelOperation;
-import org.muml.uppaal.adapter.job.operations.TransformationOperation;
 import org.muml.uppaal.adapter.mtctl.Property;
-import org.muml.uppaal.adapter.results.PropertyResultRepository;
+import org.muml.uppaal.adapter.mtctl.quantifiers.TemporalQuantifierExpr;
 import org.muml.uppaal.job.UppaalXMLSynthesisOperation;
 import org.muml.uppaal.options.Options;
 import org.muml.uppaal.requirements.PropertyRepository;
 import org.muml.uppaal.requirements.impl.RequirementsFactoryImpl;
+import org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.ZoneGraph;
 
 public class Muml2TraceOperation implements IWorkspaceRunnable {
 	
@@ -177,105 +155,14 @@ public class Muml2TraceOperation implements IWorkspaceRunnable {
 			//Finished
 			trace = (ZoneGraph) reachabilityResultExtent.getContents().get(0);
 						
-
+			
 			
 			// 
-			// Store uppaal models if requested
+			// Store intermediate models if requested
 			//
 			if (storeIntermediateModels) {
-				NTA nta = null;
-				PropertyRepository propertyRepository;
-				if (uppaalModelExtent.getContents().size() != 0)
-					nta = (NTA) uppaalModelExtent.getContents().get(0);
-				if (uppaalReqModelExtent.getContents().size() != 0)
-					propertyRepository = (PropertyRepository) uppaalReqModelExtent.getContents().get(0);
-				else
-					propertyRepository = RequirementsFactoryImpl.eINSTANCE.createPropertyRepository();		
-				
-				IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject("intermediate_models");
-				try {
-					if (!project.exists()) {
-						project.create(new NullProgressMonitor());
-					}
-					if (!project.isOpen()) {
-						project.open(new NullProgressMonitor());
-					}
-				} catch (CoreException e) {
-				}
-				IPath targetPath = project.getFullPath();
-				URI uri = URI.createPlatformResourceURI(targetPath.append(((NamedElement) verifiableElement).getName())
-						.addFileExtension("uppaal").toPortableString(), true);
-				URI propertyUri = URI
-						.createPlatformResourceURI(targetPath.append(((NamedElement) verifiableElement).getName())
-								.addFileExtension("requirements").toPortableString(), true);
-	
-				{
-					subMonitor.subTask("Save NTA");
-	
-					Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
-					Map<String, Object> m = reg.getExtensionToFactoryMap();
-					m.put("uppaal", new XMIResourceFactoryImpl());
-	
-					// Obtain a new resource set
-					ResourceSet resSet = new ResourceSetImpl();
-	
-					// Create a resource
-					Resource resource = resSet.createResource(uri);
-					// Get the first model element and cast it to the right type, in
-					// my
-					// example everything is hierarchical included in this first
-					// node
-					resource.getContents().add(nta);
-	
-					// Now save the content.
-					try {
-						resource.save(Collections.EMPTY_MAP);
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
-					
-	
-					subMonitor.worked(15);
-				}
-	
-				{
-					subMonitor.subTask("Save Properties");
-	
-					Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
-					Map<String, Object> m = reg.getExtensionToFactoryMap();
-					m.put("requirements", new XMIResourceFactoryImpl());
-	
-					// Obtain a new resource set
-					ResourceSet resSet = new ResourceSetImpl();
-	
-					// Create a resource
-					Resource resource = resSet.createResource(propertyUri);
-					// Get the first model element and cast it to the right type, in
-					// my
-					// example everything is hierarchical included in this first
-					// node
-					resource.getContents().add(propertyRepository);
-	
-					// Now save the content.
-					try {
-						resource.save(Collections.EMPTY_MAP);
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
-					
-					subMonitor.worked(15);
-				}
-				
-				String fullPath = ResourcesPlugin.getWorkspace().getRoot().getLocation().toString() + "/intermediate_models";
-				final IPath path = new Path(fullPath);
-				IWorkspaceRunnable xmlSynthesis = new UppaalXMLSynthesisOperation(nta, propertyRepository, path, true);
-	
-				xmlSynthesis.run(subMonitor.newChild(30));
-				
-				ResourcesPlugin.getWorkspace().getRoot().refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
-
+				storeIntermediateModels(reachabilityResultExtent, subMonitor, uppaalModelExtent, uppaalReqModelExtent);
 			}
-		
 			
 			if (monitor.isCanceled()) {
 				throw new OperationCanceledException();
@@ -285,6 +172,147 @@ public class Muml2TraceOperation implements IWorkspaceRunnable {
 			monitor.done();
 		}
 			
+	}
+
+	private void storeIntermediateModels(ModelExtent reachabilityResultExtent, SubMonitor subMonitor,
+			ModelExtent uppaalModelExtent, ModelExtent uppaalReqModelExtent) throws CoreException {
+		ResourceSet resSet = new ResourceSetImpl();
+
+		NTA nta = null;
+		PropertyRepository propertyRepository;
+		if (uppaalModelExtent.getContents().size() != 0)
+			nta = (NTA) uppaalModelExtent.getContents().get(0);
+		if (uppaalReqModelExtent.getContents().size() != 0)
+			propertyRepository = (PropertyRepository) uppaalReqModelExtent.getContents().get(0);
+		else
+			propertyRepository = RequirementsFactoryImpl.eINSTANCE.createPropertyRepository();		
+		
+		IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject("intermediate_models");
+		try {
+			if (!project.exists()) {
+				project.create(new NullProgressMonitor());
+			}
+			if (!project.isOpen()) {
+				project.open(new NullProgressMonitor());
+			}
+		} catch (CoreException e) {
+		}
+		IPath targetPath = project.getFullPath();
+		
+		{
+			subMonitor.subTask("Save NTA");
+			URI uri = URI.createPlatformResourceURI(targetPath.append(((NamedElement) verifiableElement).getName())
+					.addFileExtension("uppaal").toPortableString(), true);
+			
+			Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
+			Map<String, Object> m = reg.getExtensionToFactoryMap();
+			m.put("uppaal", new XMIResourceFactoryImpl());
+
+			Resource resource = resSet.createResource(uri);
+			resource.getContents().add(nta);
+
+			subMonitor.worked(15);
+		}
+
+		{
+			subMonitor.subTask("Save Properties");
+			URI propertyUri = URI
+					.createPlatformResourceURI(targetPath.append(((NamedElement) verifiableElement).getName())
+							.addFileExtension("requirements").toPortableString(), true);
+
+			Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
+			Map<String, Object> m = reg.getExtensionToFactoryMap();
+			m.put("requirements", new XMIResourceFactoryImpl());
+
+
+			Resource resource = resSet.createResource(propertyUri);
+			resource.getContents().add(propertyRepository);
+
+			subMonitor.worked(15);
+		}
+		
+		
+		{
+			List<Resource> problematicResources = new ArrayList<Resource>();
+			subMonitor.subTask("Save Proxies");
+			for (EObject e : reachabilityResultExtent.getContents()) {	
+				Iterator<?> it = EcoreUtil.getAllContents(e, false);
+				while (it.hasNext()) {
+					EObject e2 = (EObject) it.next();
+					for (EReference ref : e2.eClass().getEAllReferences()) {
+						// Safely get reference value
+						Object values = null;
+						try {
+							values = e2.eGet(ref);
+						} catch (Exception x) {
+						}
+						if (values != null) {
+							if (!ref.isMany()) {
+								values = Collections.singletonList(values); 
+							}
+						
+							for (Object value : (Collection<?>) values) {
+								if (value instanceof EObject) {
+									EObject eValue = (EObject) value;
+									Resource eResource = eValue.eResource();
+									if (eResource != null) {
+										URI uri = eResource.getURI();
+										if (uri != null && !uri.isPlatform()) {
+											if (!problematicResources.contains(eResource)) {
+												problematicResources.add(eResource);
+											}
+										}
+									}
+								}							
+							}
+						}
+					}
+				}						
+			}
+			
+			int i = 1;
+			for (Resource problematicResource : problematicResources) {
+				Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
+				Map<String, Object> m = reg.getExtensionToFactoryMap();
+				m.put("muml", new XMIResourceFactoryImpl());
+
+				// Create a resource
+				Resource resource = resSet.createResource(URI.createPlatformResourceURI(targetPath.append("11_externals" + i + ".muml").toPortableString(), true));						resource.getContents().addAll(reachabilityResultExtent.getContents());
+				resource.getContents().addAll(problematicResource.getContents());
+
+				i++;
+			}
+		}
+		
+		{
+			subMonitor.subTask("Save Output");
+
+			Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
+			Map<String, Object> m = reg.getExtensionToFactoryMap();
+			m.put("muml", new XMIResourceFactoryImpl());
+
+			// Create a resource
+			Resource resource = resSet.createResource(URI.createPlatformResourceURI(targetPath.append("12_output.muml").toPortableString(), true));
+			resource.getContents().addAll(reachabilityResultExtent.getContents());
+			subMonitor.worked(15);
+		
+		}
+		
+		for (Resource resource : resSet.getResources()) {
+			try {
+				resource.save(Collections.EMPTY_MAP);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		String fullPath = ResourcesPlugin.getWorkspace().getRoot().getLocation().toString() + "/intermediate_models";
+		final IPath path = new Path(fullPath);
+		IWorkspaceRunnable xmlSynthesis = new UppaalXMLSynthesisOperation(nta, propertyRepository, path, true);
+
+		xmlSynthesis.run(subMonitor.newChild(30));
+		
+		ResourcesPlugin.getWorkspace().getRoot().refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
 	};
 	
 	

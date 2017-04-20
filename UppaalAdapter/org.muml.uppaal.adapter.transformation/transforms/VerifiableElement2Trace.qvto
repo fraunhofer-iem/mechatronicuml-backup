@@ -80,7 +80,6 @@ main() {
 	// transform the uppaal trace model into the muml trace model
 	var traceTransformation : UPPAALTrace2MUMLTrace = new UPPAALTrace2MUMLTrace(mumlCic, uppaalModel, uppaalTrace, output);
 	retcode := traceTransformation.transform();
-	storeModel(output.rootObjects()->asBag(), "11_output.muml");
 	assert fatal (retcode.succeeded()) with log('Trace reverse transformation failed: ' + retcode.raisedException().repr());
 	
 }
