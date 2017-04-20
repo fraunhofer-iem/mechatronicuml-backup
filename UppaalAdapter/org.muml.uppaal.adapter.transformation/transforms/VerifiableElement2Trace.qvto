@@ -37,7 +37,7 @@ main() {
 	var verifyta : UPPAAL2Trace = new UPPAAL2Trace(uppaalModel,uppaalReq,options,uppaalTrace);
 	verifyta.generateTrace := true;
 	retcode := verifyta.transform();
-	storeModel(uppaalTrace.rootObjects()->asBag(), "10_UppaalTrace.muml");
+	storeModel(uppaalTrace.rootObjects()->asBag(), "10_UppaalTrace.uppaal");
 	assert fatal (retcode.succeeded()) with log('UPPAAL model checking + trace parsing failed: ' + retcode.raisedException().repr());
 
 	
