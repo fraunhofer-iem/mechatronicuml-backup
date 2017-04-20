@@ -182,11 +182,6 @@
 			<url>http://download.eclipse.org/releases/neon</url>
 		</repository>
         <repository>
-            <id>xtext</id>
-            <layout>p2</layout>
-            <url>http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases</url>
-        </repository>   
-        <repository>
 			<id>Core</id>
 			<layout>p2</layout>
 			<url>${repobase}/Core-Maven/${repopath}org.muml.core.repository/target/repository</url>
