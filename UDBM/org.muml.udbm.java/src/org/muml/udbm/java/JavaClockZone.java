@@ -422,18 +422,26 @@ public class JavaClockZone extends ClockZone {
 		// compute indices of the UDBMClocks of the constraint in the matrix
 		int minuendClockId = 0;
 		int subtrahendClockId = 0;
+		JavaFederation jf = (JavaFederation) this.getFederation();
 		if(adjustedClockConstraint instanceof SimpleClockConstraint)
 		{
-			minuendClockId = ((JavaFederation)this.getFederation()).clockNamesToIndices.get(((SimpleClockConstraint) adjustedClockConstraint).getClock());
+			UDBMClock acClock = ((SimpleClockConstraint) adjustedClockConstraint).getClock();
+			if (acClock != null && jf.clockNamesToIndices.get(acClock) != null){
+				minuendClockId = jf.clockNamesToIndices.get(acClock);
+			}
 
 		}
 		else if(adjustedClockConstraint instanceof DifferenceClockConstraint)
 		{
-			if(((DifferenceClockConstraint) adjustedClockConstraint).getClockMinuend() == null)
-				minuendClockId = 0;
-			else
-				minuendClockId = ((JavaFederation)this.getFederation()).clockNamesToIndices.get(((DifferenceClockConstraint) adjustedClockConstraint).getClockMinuend());
-			subtrahendClockId = ((JavaFederation)this.getFederation()).clockNamesToIndices.get(((DifferenceClockConstraint) adjustedClockConstraint).getClockSubtrahend());
+			UDBMClock dcClock = ((DifferenceClockConstraint) adjustedClockConstraint).getClockMinuend();
+			if(dcClock != null && jf.clockNamesToIndices.get(dcClock) != null){
+				minuendClockId = jf.clockNamesToIndices.get(dcClock);
+			}
+			
+			if (((DifferenceClockConstraint) adjustedClockConstraint).getClockSubtrahend() != null){
+				UDBMClock clockSubtrahend= ((DifferenceClockConstraint) adjustedClockConstraint).getClockSubtrahend();
+				subtrahendClockId = jf.clockNamesToIndices.get(clockSubtrahend);
+			}
 		}
 		
 		// check if ClockZone is empty after adding new constraint 
@@ -521,7 +529,7 @@ public class JavaClockZone extends ClockZone {
 		else{
 			dbmValueString = output;
 			logger.debug(output);
-//			System.out.println(output);
+			//System.out.println(output);
 		}
 		
 
