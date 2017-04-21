@@ -373,9 +373,24 @@ public class JavaFederation extends Federation {
 	@Override
 	public boolean isEmpty() {
 		Iterator<?> it = (Iterator<?>) this.iteratorOfClockZone();
+		JavaClockZone cz;
 		while (it.hasNext()) {
-			if (!(((JavaClockZone)it.next()).isEmpty()))
+			cz = (JavaClockZone)it.next();
+			if (!cz.isEmpty()){
 				return false;
+			}
+		}
+		return true;
+	}
+	
+	public boolean isBooleanFederation() {
+		Iterator<?> it = (Iterator<?>) this.iteratorOfClockZone();
+		JavaClockZone cz;
+		while (it.hasNext()) {
+			cz = (JavaClockZone)it.next();
+			if (cz.sizeOfClockConstraint()>1){
+				return false;
+			}
 		}
 		return true;
 	}
