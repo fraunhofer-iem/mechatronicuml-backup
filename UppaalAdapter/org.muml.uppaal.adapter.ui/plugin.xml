@@ -145,7 +145,7 @@
                
          <command
                commandId="org.muml.uppaal.adapter.VerifySinglePropertyWithIntermediateModelsAction"
-               label="Verify Single Property for a Trace (Store Intermediate Models">
+               label="Verify Single Property for a Trace (Store Intermediate Models)">
             <visibleWhen>
                <and>
                   <with

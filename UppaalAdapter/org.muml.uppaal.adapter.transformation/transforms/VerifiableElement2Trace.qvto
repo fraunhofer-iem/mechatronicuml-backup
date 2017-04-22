@@ -18,7 +18,7 @@ transformation VerifiableElement2Trace(in verifiableElementModel:muml, in option
 configuration property STORE_INTERMEDIATE_MODELS : Boolean;
 
 helper storeModel(model : Bag(Element), filename : String) {
-	if (STORE_INTERMEDIATE_MODELS) then {
+	if (STORE_INTERMEDIATE_MODELS and model != null) then {
 		save(model, "intermediate_models", filename);
 	} endif;
 }

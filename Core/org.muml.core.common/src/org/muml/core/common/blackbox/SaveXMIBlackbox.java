@@ -14,9 +14,18 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
-// This can be used for debugging purposes to save intermediate models etc.
+/**
+ * 
+ * This can be used for debugging purposes to save intermediate models etc.
+ * 
+ * For configuration options, see class SaveXMIConfiguration which can be
+ * accessed and configured by java code.
+ * 
+ * @author ingo
+ *
+ */
 public class SaveXMIBlackbox {
-
+	
 	public SaveXMIBlackbox() {}
 
 	public void save(Collection<Object> objects, String projectName, String filename) {
@@ -32,7 +41,20 @@ public class SaveXMIBlackbox {
 			} catch (CoreException e) {
 			}
 		}
-		ResourceSet resourceSet = new ResourceSetImpl();
+		
+		// Get options
+		SaveXMIConfiguration.Options options = SaveXMIConfiguration.getCurrentOptions();
+		ResourceSet resourceSet = null;
+		boolean saveDirectly = true;
+		if (options != null) {
+			resourceSet = options.resourceSet;
+			saveDirectly = options.saveDirectly;
+		}
+		if (resourceSet == null) {
+			resourceSet = new ResourceSetImpl();
+		}
+		
+		// Create resource
 		Resource resource = resourceSet.createResource(URI.createURI("platform:/resource/" + projectName + "/" + filename));
 		if (resource != null) {
 			for (Object object : objects) {
@@ -47,14 +69,15 @@ public class SaveXMIBlackbox {
 					resource.getContents().add(element);
 				}
 			}
-			try {
-				resource.save(Collections.emptyMap());
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
 			
-			// Use this code to prevent cross references between intermediate models.
-			//resource.getContents().clear();
+			// Save directly if requested
+			if (saveDirectly) {
+				try {
+					resource.save(Collections.emptyMap());
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
 		}
 	}
 

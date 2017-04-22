@@ -25,6 +25,7 @@ Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn Un
 Export-Package: org.muml.core.common,
  org.muml.core.common.adapter,
  org.muml.core.common.algorithm,
+ org.muml.core.common.blackbox,
  org.muml.core.common.cmd,
  org.muml.core.common.descriptor,
  org.muml.core.common.edit.commands,

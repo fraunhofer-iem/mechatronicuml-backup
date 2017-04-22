@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.m2m.qvt.oml.BasicModelExtent;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.muml.core.NamedElement;
+import org.muml.core.common.blackbox.SaveXMIConfiguration;
 import org.muml.pim.constraint.VerifiableElement;
 import org.muml.pim.constraint.VerificationConstraintRepository;
 import org.muml.pim.instance.ComponentInstanceConfiguration;
@@ -56,7 +57,8 @@ public class Muml2TraceOperation implements IWorkspaceRunnable {
 	protected VerificationOptionsProvider optionsProvider;
 	protected VerificationPropertyChoiceProvider propertyChoiceProvider;
 	private Property property;
-	boolean storeIntermediateModels;
+	private boolean storeIntermediateModels;
+
 	
 	public Muml2TraceOperation(VerifiableElement verifiableElement, VerificationOptionsProvider optionsProvider, VerificationPropertyChoiceProvider propertyChoiceProvider, boolean storeIntermediateModels) {
 		this.verifiableElement = verifiableElement;
@@ -64,12 +66,18 @@ public class Muml2TraceOperation implements IWorkspaceRunnable {
 		this.propertyChoiceProvider = propertyChoiceProvider;
 		this.storeIntermediateModels = storeIntermediateModels;
 	}
-	
+
 	public void run(IProgressMonitor monitor) throws CoreException {
+		ResourceSet storeIntermediateModelsResourceSet = null;
+		if (storeIntermediateModels) {
+			storeIntermediateModelsResourceSet = new ResourceSetImpl();
+		}
 		ModelExtent reachabilityResultExtent;
-				
+		SaveXMIConfiguration.Options options = new SaveXMIConfiguration.Options();
+		options.saveDirectly = false;
+		options.resourceSet = storeIntermediateModelsResourceSet;
+		SaveXMIConfiguration.pushOptions(options);
 		try {
-			
 			SubMonitor subMonitor = SubMonitor.convert(monitor, "MUML to Trace Transformation", 100);
 			
 			//Clone model, mark verifiable element, etc.
@@ -161,7 +169,7 @@ public class Muml2TraceOperation implements IWorkspaceRunnable {
 			// Store intermediate models if requested
 			//
 			if (storeIntermediateModels) {
-				storeIntermediateModels(reachabilityResultExtent, subMonitor, uppaalModelExtent, uppaalReqModelExtent);
+				storeIntermediateModels(storeIntermediateModelsResourceSet, reachabilityResultExtent, subMonitor, uppaalModelExtent, uppaalReqModelExtent, verifiableElement);
 			}
 			
 			if (monitor.isCanceled()) {
@@ -169,14 +177,15 @@ public class Muml2TraceOperation implements IWorkspaceRunnable {
 			}
 		}
 		finally {
+			SaveXMIConfiguration.popOptions();
 			monitor.done();
 		}
 			
 	}
 
-	private void storeIntermediateModels(ModelExtent reachabilityResultExtent, SubMonitor subMonitor,
-			ModelExtent uppaalModelExtent, ModelExtent uppaalReqModelExtent) throws CoreException {
-		ResourceSet resSet = new ResourceSetImpl();
+	public static void storeIntermediateModels(ResourceSet resSet, ModelExtent reachabilityResultExtent, SubMonitor subMonitor,
+			ModelExtent uppaalModelExtent, ModelExtent uppaalReqModelExtent, VerifiableElement verifiableElement) throws CoreException {
+		
 
 		NTA nta = null;
 		PropertyRepository propertyRepository;
@@ -231,7 +240,7 @@ public class Muml2TraceOperation implements IWorkspaceRunnable {
 			subMonitor.worked(15);
 		}
 		
-		
+		if (reachabilityResultExtent != null)
 		{
 			List<Resource> problematicResources = new ArrayList<Resource>();
 			subMonitor.subTask("Save Proxies");
@@ -284,6 +293,7 @@ public class Muml2TraceOperation implements IWorkspaceRunnable {
 			}
 		}
 		
+		if (reachabilityResultExtent != null)
 		{
 			subMonitor.subTask("Save Output");
 
