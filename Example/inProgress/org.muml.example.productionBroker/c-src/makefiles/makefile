@@ -23,7 +23,7 @@ CONTMAPPING =
 OPERATIONREPOSITORIES = databaseOperationsOpRep.o		
 LIB =   Debug.o sqlite3.o
 CC = gcc
-CFLAGS = -DC99 -DDEBUG -ggdb -Wall -c  $(DEFINES) -I types -I lib -I $(NDDSHOME)/include -I $(NDDSHOME)/include/ndds -ldl -lpthread
+CFLAGS = -DC99 -DDEBUG -ggdb -Wall -c  $(DEFINES) -I types -I lib -I $(NDDSHOME)/include -I $(NDDSHOME)/include/ndds -ldl -lpthread -lcurl -LLIBDIR
 all: app
 
 app : main.o $(RTSC) $(COMP) $(LIB) $(CONT_LIB) $(HYB) $(CONT) $(CONTMAPPING) $(OPERATIONREPOSITORIES)  $(DDSSOURCES)
