@@ -468,7 +468,6 @@ int searchOrder(int searchingPS, int latestOrderID, int producibleIngredients)
 	cJSON *productionStations;
 	cJSON_AddItemToObject(changedTables, "ProductionStations", productionStations = cJSON_CreateObject());
 	cJSON_AddNumberToObject(productionStations, "ProductionStationID", searchingPS);
-	cJSON_AddStringToObject(productionStations, "lastSeen", "30-04-...");
 
 	sendToVirtualizationServer(cJSON_Print(update));
 
