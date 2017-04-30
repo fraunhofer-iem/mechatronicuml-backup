@@ -6,7 +6,7 @@ NDDSHOME := "NOT SET"
 endif
 #TARGET_ARCH = x64Linux3.xgcc4.6.3
 
-SYSLIBS = -ldl -lnsl -lm -lpthread -lrt
+SYSLIBS = -ldl -lnsl -lm -lpthread -lrt -lcurl
 DEFINES = -DRTI_UNIX -DRTI_LINUX -DRTI_64BIT 
 #FIXME CHANGE LIB PATH IF DDS PROVIDES ANOTHER PATH
 LIBS = -L$(NDDSHOME)/lib/x64Linux3gcc4.8.2/ \
@@ -23,7 +23,7 @@ CONTMAPPING =
 OPERATIONREPOSITORIES = databaseOperationsOpRep.o		
 LIB =   Debug.o sqlite3.o
 CC = gcc
-CFLAGS = -DC99 -DDEBUG -ggdb -Wall -c  $(DEFINES) -I types -I lib -I $(NDDSHOME)/include -I $(NDDSHOME)/include/ndds -ldl -lpthread -lcurl -LLIBDIR
+CFLAGS = -DC99 -DDEBUG -ggdb -Wall -c  $(DEFINES) -I types -I lib -I $(NDDSHOME)/include -I $(NDDSHOME)/include/ndds -ldl -lpthread -LLIBDIR
 all: app
 
 app : main.o $(RTSC) $(COMP) $(LIB) $(CONT_LIB) $(HYB) $(CONT) $(CONTMAPPING) $(OPERATIONREPOSITORIES)  $(DDSSOURCES)

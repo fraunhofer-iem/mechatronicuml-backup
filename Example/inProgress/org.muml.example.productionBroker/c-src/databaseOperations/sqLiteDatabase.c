@@ -8,16 +8,12 @@
 #include <stdio.h>  /* puts() */
 #include <stdlib.h> /* exit() */
 #include <string.h> /* strchr(), strlen(), .. */
-#include <sys/types.h> /* For updating the vizualiation via socket */
-#include <sys/socket.h> /* For updating the vizualiation via socket */
-#include <netinet/in.h> /* For sockaddr_in */
+#include <curl/curl.h>
 #include "sqlite3.h"
 
 /* Pointer to database */
 sqlite3 *db;
-int sock;
-const char *ip="127.0.0.1";
-int port=80;
+CURL *curl;
 
 int createDatabase();
 int insertOrder(int orderId, int ingredientID, int amount);
@@ -88,25 +84,22 @@ int createDatabase()
 
 	printf("Database successfully created. \n");
 
-    sock = socket( AF_INET, SOCK_STREAM, 0 );
-    if (sock < 0) {
-
-    	printf("Could not create socket.");
-    }
-    struct sockaddr_in server;
-
-    memset( &server, 0, sizeof (server));
-
-    inet_aton(ip, &server.sin_addr);
-    server.sin_family = AF_INET;
-    server.sin_port = htons(port);
-
-    // Connect to server
-    if (connect(sock,(struct sockaddr*)&server, sizeof(server)) < 0){
-    	printf("Could not connect.");
-    }
-
-    printf("Connection successful.");
+	//Virtulization server stuff
+	/* In windows, this will init the winsock stuff */
+	curl_global_init(CURL_GLOBAL_ALL);
+	/* get a curl handle */
+	curl = curl_easy_init();
+	if(curl) {
+		/* First set the URL that is about to receive our POST. This URL can
+		   just as well be a https:// URL if that is what should receive the data. */
+		/* TODO insert URL here */
+		curl_easy_setopt(curl, CURLOPT_URL, "http://requestb.in/1nzsnoc1");
+		/* Only allow HTTP traffic */
+		curl_easy_setopt(curl, CURLOPT_PROTOCOLS, CURLPROTO_HTTP);
+	}
+	//TODO make real message for hello
+	const char* dbExists = "database exists";
+	sendToVirtualizationServer(&dbExists);
 
 	return 0;
 }
@@ -157,15 +150,10 @@ int insertOrder(int orderID, int ingredientID, int amount)
 	sqlite3_finalize(orderInsertionStmt);
 	printf("Successfully inserted order: %d\n",orderID);
 
-	//If we have a socket to the visualization server, send notification about new order
-	if (sock >= 0){
-		char dataToSend[32];
-		sprintf(dataToSend, "New order, ID = %16d", orderID);
-		rc = send(sock, dataToSend, sizeof(dataToSend), 0);
-		if (rc <0 ){
-			printf("Sending failed with return code %d\n", rc);
-		}
-	}
+	//Send notification about new order to the visualization server
+	//TODO make json string
+	const char* newOrder = "new order";
+	sendToVirtualizationServer(newOrder);
 
 	return 0;
 }
@@ -236,15 +224,10 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 	sqlite3_finalize(orderAllocStmt);
 	printf("Successfully defined production station %d for order %d.\n", productionStationID, orderID);
 
-	//If we have a socket to the visualization server, send notification about order assignment
-	if (sock >= 0){
-		char dataToSend[32];
-		sprintf(dataToSend, "Order Assigned  %16d", orderID);
-		rc = send(sock, dataToSend, sizeof(dataToSend), 0);
-		if (rc <0 ){
-			printf("Sending failed with return code %d\n", rc);
-		}
-	}
+	//Send notification about order assignment to the visualization server,
+	//TODO make json string
+	const char* orderAssigned = "orderAssigned";
+	sendToVirtualizationServer(orderAssigned);
 
 	return 0;
 }
@@ -283,15 +266,10 @@ int deleteOrder(int orderID)
 
 	printf("Successfully marked order %d as finished.\n", orderID);
 
-	//If we have a socket to the visualization server, send notification about finished order
-	if (sock >= 0){
-		char dataToSend[32];
-		sprintf(dataToSend, "Order Finished  %16d", orderID);
-		rc = send(sock, dataToSend, sizeof(dataToSend), 0);
-		if (rc <0 ){
-			printf("Sending failed with return code %d\n", rc);
-		}
-	}
+	//Send notification about finished order to the visualization server
+	//TODO make json string
+	const char* orderDone = "orderDone";
+	sendToVirtualizationServer(orderDone);
 
 	return 0;
 
@@ -453,17 +431,32 @@ int searchOrder(int searchingPS, int latestOrderID, int producibleIngredients)
 	sqlite3_finalize(searchOrderStmt);
 	printf("Successfully retrieved order %d with status IDLE and producible ingredients.\n", orderID);
 
-	//If we have a socket to the visualization server, send notification about order assignment
-	if (sock >= 0){
-		char dataToSend[32];
-		sprintf(dataToSend, "PS searched,ID= %16d", searchingPS);
-		rc = send(sock, dataToSend, sizeof(dataToSend), 0);
-		if (rc <0 ){
-			printf("Sending failed with return code %d\n", rc);
-		}
-	}
+	//Send notification about seen production station to the visualization server
+	//TODO make json string
+	const char* seenPS = "seenPS";
+	sendToVirtualizationServer(seenPS);
 
 	return orderID;
+}
+
+
+/**
+ * Takes a json string and sends it to the server via post request
+ *
+ */
+void sendToVirtualizationServer(char *jsonString){
+	if(curl) {
+			/* pass in a pointer to the data - libcurl will not copy */
+			curl_easy_setopt(curl, CURLOPT_POSTFIELDS, jsonString);
+
+			/* Perform the request, res will get the return code */
+			CURLcode res = curl_easy_perform(curl);
+			/* Check for errors */
+			if(res != CURLE_OK){
+				fprintf(stderr, "curl_easy_perform() failed: %s\n",
+				 curl_easy_strerror(res));
+			}
+		}
 }
 
 /*
@@ -473,6 +466,11 @@ void extractLogsAndExit()
 {
 	//Sqlite3 will print error logs to stderr by default, no need for extra operation
 	// Exit immediately
-	close(socket);
+	if (curl){
+		  curl_easy_cleanup(curl);
+	}
 	exit(0);
 }
+
+
+
