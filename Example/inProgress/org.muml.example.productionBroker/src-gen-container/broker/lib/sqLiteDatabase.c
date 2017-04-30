@@ -10,6 +10,7 @@
 #include <string.h> /* strchr(), strlen(), .. */
 #include <curl/curl.h>
 #include "sqlite3.h"
+#include "cJSON.h"
 
 /* Pointer to database */
 sqlite3 *db;
@@ -23,6 +24,7 @@ int getOrderAmount(int orderID);
 int searchOrder(int searchingPS, int latestOrderID, int producibleIngredients);
 int deleteOrder(int orderID);
 void extractLogsAndExit();
+void sendToVirtualizationServer(char *jsonString);
 
 static int callback(void *NotUsed, int argc, char **argv, char **azColName)
 {
@@ -98,8 +100,8 @@ int createDatabase()
 		curl_easy_setopt(curl, CURLOPT_PROTOCOLS, CURLPROTO_HTTP);
 	}
 	//TODO make real message for hello
-	const char* dbExists = "database exists";
-	sendToVirtualizationServer(&dbExists);
+	char* dbExists = "database exists";
+	sendToVirtualizationServer(dbExists);
 
 	return 0;
 }
@@ -152,7 +154,7 @@ int insertOrder(int orderID, int ingredientID, int amount)
 
 	//Send notification about new order to the visualization server
 	//TODO make json string
-	const char* newOrder = "new order";
+	char* newOrder = "new order";
 	sendToVirtualizationServer(newOrder);
 
 	return 0;
@@ -226,7 +228,7 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 
 	//Send notification about order assignment to the visualization server,
 	//TODO make json string
-	const char* orderAssigned = "orderAssigned";
+	char* orderAssigned = "orderAssigned";
 	sendToVirtualizationServer(orderAssigned);
 
 	return 0;
@@ -268,7 +270,7 @@ int deleteOrder(int orderID)
 
 	//Send notification about finished order to the visualization server
 	//TODO make json string
-	const char* orderDone = "orderDone";
+	char* orderDone = "orderDone";
 	sendToVirtualizationServer(orderDone);
 
 	return 0;
@@ -432,9 +434,17 @@ int searchOrder(int searchingPS, int latestOrderID, int producibleIngredients)
 	printf("Successfully retrieved order %d with status IDLE and producible ingredients.\n", orderID);
 
 	//Send notification about seen production station to the visualization server
-	//TODO make json string
-	const char* seenPS = "seenPS";
-	sendToVirtualizationServer(seenPS);
+	cJSON *update;
+	update = cJSON_CreateObject();
+	cJSON_AddItemToObject(update, "update", cJSON_CreateString("searchOrder"));
+	cJSON *changedTables;
+	cJSON_AddItemToObject(update, "changedTables", changedTables = cJSON_CreateObject());
+	cJSON *productionStations;
+	cJSON_AddItemToObject(changedTables, "ProductionStations", productionStations = cJSON_CreateObject());
+	cJSON_AddNumberToObject(productionStations, "ProductionStationID", searchingPS);
+	cJSON_AddStringToObject(productionStations, "lastSeen", "30-04-...");
+
+	sendToVirtualizationServer(cJSON_Print(update));
 
 	return orderID;
 }
