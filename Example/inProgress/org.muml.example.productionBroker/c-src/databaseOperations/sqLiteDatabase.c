@@ -15,6 +15,8 @@
 /* Pointer to database */
 sqlite3 *db;
 CURL *curl;
+char* url ="http://requestb.in/1nzsnoc1";
+
 
 int createDatabase();
 int insertOrder(int orderId, int ingredientID, int amount);
@@ -94,14 +96,14 @@ int createDatabase()
 	if(curl) {
 		/* First set the URL that is about to receive our POST. This URL can
 		   just as well be a https:// URL if that is what should receive the data. */
-		/* TODO insert URL here */
-		curl_easy_setopt(curl, CURLOPT_URL, "http://requestb.in/1nzsnoc1");
+		curl_easy_setopt(curl, CURLOPT_URL, url);
 		/* Only allow HTTP traffic */
 		curl_easy_setopt(curl, CURLOPT_PROTOCOLS, CURLPROTO_HTTP);
 	}
-	//TODO make real message for hello
-	char* dbExists = "database exists";
-	sendToVirtualizationServer(dbExists);
+	//Send notification about new order to the visualization server
+	cJSON *update = cJSON_CreateObject();
+	cJSON_AddItemToObject(update, "update", cJSON_CreateString("databaseCreated"));
+	sendToVirtualizationServer(cJSON_Print(update));
 
 	return 0;
 }
@@ -153,9 +155,15 @@ int insertOrder(int orderID, int ingredientID, int amount)
 	printf("Successfully inserted order: %d\n",orderID);
 
 	//Send notification about new order to the visualization server
-	//TODO make json string
-	char* newOrder = "new order";
-	sendToVirtualizationServer(newOrder);
+	cJSON *update;
+	update = cJSON_CreateObject();
+	cJSON_AddItemToObject(update, "update", cJSON_CreateString("newOrder"));
+	cJSON *changedTables;
+	cJSON_AddItemToObject(update, "changedTables", changedTables = cJSON_CreateObject());
+	cJSON *orders;
+	cJSON_AddItemToObject(changedTables, "Orders", orders = cJSON_CreateObject());
+	cJSON_AddNumberToObject(orders, "OrderID", orderID);
+	sendToVirtualizationServer(cJSON_Print(update));
 
 	return 0;
 }
@@ -227,9 +235,20 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 	printf("Successfully defined production station %d for order %d.\n", productionStationID, orderID);
 
 	//Send notification about order assignment to the visualization server,
-	//TODO make json string
-	char* orderAssigned = "orderAssigned";
-	sendToVirtualizationServer(orderAssigned);
+	cJSON *update;
+	update = cJSON_CreateObject();
+	cJSON_AddItemToObject(update, "update", cJSON_CreateString("orderAssigned"));
+	cJSON *changedTables;
+	cJSON_AddItemToObject(update, "changedTables", changedTables = cJSON_CreateObject());
+	cJSON *orders;
+	cJSON_AddItemToObject(changedTables, "Orders", orders = cJSON_CreateObject());
+	cJSON_AddNumberToObject(orders, "OrderID", orderID);
+	cJSON_AddStringToObject(orders, "OrderStatus", "IN_PRODUCTION");
+	cJSON *orderAllocationJSON;
+	cJSON_AddItemToObject(changedTables, "OrderAllocation", orderAllocationJSON = cJSON_CreateObject());
+	cJSON_AddNumberToObject(orderAllocationJSON, "OrderID", orderID);
+	cJSON_AddNumberToObject(orderAllocationJSON, "ProductionStationID", productionStationID);
+	sendToVirtualizationServer(cJSON_Print(update));
 
 	return 0;
 }
@@ -269,9 +288,16 @@ int deleteOrder(int orderID)
 	printf("Successfully marked order %d as finished.\n", orderID);
 
 	//Send notification about finished order to the visualization server
-	//TODO make json string
-	char* orderDone = "orderDone";
-	sendToVirtualizationServer(orderDone);
+	cJSON *update;
+	update = cJSON_CreateObject();
+	cJSON_AddItemToObject(update, "update", cJSON_CreateString("orderDone"));
+	cJSON *changedTables;
+	cJSON_AddItemToObject(update, "changedTables", changedTables = cJSON_CreateObject());
+	cJSON *orders;
+	cJSON_AddItemToObject(changedTables, "Orders", orders = cJSON_CreateObject());
+	cJSON_AddNumberToObject(orders, "OrderID", orderID);
+	cJSON_AddStringToObject(orders, "OrderStatus", "DONE");
+	sendToVirtualizationServer(cJSON_Print(update));
 
 	return 0;
 
