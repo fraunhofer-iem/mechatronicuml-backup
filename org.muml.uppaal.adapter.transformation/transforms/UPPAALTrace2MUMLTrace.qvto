@@ -1,4 +1,4 @@
-import transforms.lib.UPPAAL2MUML.TraceQueriesAndHelpers;
+import lib.UPPAAL2MUML.TraceQueriesAndHelpers;
 import org.muml.uppaal.adapter._blackbox.ProgressUnit;
 
 transformation UPPAALTrace2MUMLTrace(in cicModel:muml, in uppaalModel:uppaal, in input:uppaal_trace, out output:reachability_rtsc);

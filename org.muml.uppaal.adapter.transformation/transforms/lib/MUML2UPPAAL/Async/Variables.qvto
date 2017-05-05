@@ -1,7 +1,7 @@
-import transforms.lib.MUML2UPPAAL.IDs;
-import transforms.lib.MUML2UPPAAL.Types;
-import transforms.lib.MUML2UPPAAL.Util;
-import transforms.lib.ExternalizedStrings;
+import lib.MUML2UPPAAL.IDs;
+import lib.MUML2UPPAAL.Types;
+import lib.MUML2UPPAAL.Util;
+import lib.ExternalizedStrings;
 
 library Variables;
 
@@ -48,8 +48,10 @@ modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 		
 		name := 'next';
 
-		index += object IdentifierExpression {
-				identifier := map DiscretePortInstanceType();
+		index += object TypeIndex {
+			typeDefinition := object TypeReference {
+				referredType := map DiscretePortInstanceType();
+			}
 		};
 	
 	
@@ -92,8 +94,10 @@ modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 		
 		name := 'previous';
 
-		index += object IdentifierExpression {
-				identifier := map DiscretePortInstanceType();
+		index += object TypeIndex {
+			typeDefinition := object TypeReference {
+				referredType := map DiscretePortInstanceType();
+			}
 		};
 	
 	
@@ -138,8 +142,10 @@ modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 		
 		name := 'first';
 
-		index += object IdentifierExpression {
-				identifier := map DiscretePortInstanceType();
+		index += object TypeIndex {
+			typeDefinition := object TypeReference {
+				referredType := map DiscretePortInstanceType();
+			}
 		};
 	
 	
@@ -198,8 +204,10 @@ modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 		
 		name := 'last';
 
-		index += object IdentifierExpression {
-				identifier := map DiscretePortInstanceType();
+		index += object TypeIndex {
+			typeDefinition := object TypeReference {
+				referredType := map DiscretePortInstanceType();
+			}
 		};
 	
 	
@@ -257,8 +265,10 @@ modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 		
 		name := 'self';
 
-		index += object IdentifierExpression {
-				identifier := map DiscretePortInstanceType();
+		index += object TypeIndex {
+			typeDefinition := object TypeReference {
+				referredType := map DiscretePortInstanceType();
+			}
 		};
 	
 	
@@ -349,11 +359,14 @@ modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 
 		name := 'buffer_assignment';
 
-		index += object IdentifierExpression {
-				identifier := map DiscretePortInstanceType();
+		index += object TypeIndex {
+			typeDefinition := object TypeReference {
+				referredType := map DiscretePortInstanceType();
+			}
 		};
 		
-		index += object ArithmeticExpression {
+		index += object ValueIndex {
+			sizeExpression := object ArithmeticExpression {
 
 				operator := ArithmeticOperator::ADD;
 
@@ -365,6 +378,7 @@ modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 					text := 1.repr();
 				};
 
+			}
 		};
 	
 		initializer := object ArrayInitializer {
@@ -411,11 +425,14 @@ modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 		
 		name := 'bufferSize';
 
-		index += object IdentifierExpression {
-				identifier := map DiscretePortInstanceType();
+		index += object TypeIndex {
+			typeDefinition := object TypeReference {
+				referredType := map DiscretePortInstanceType();
+			}
 		};
 		
-		index += object ArithmeticExpression {
+		index += object ValueIndex {
+			sizeExpression := object ArithmeticExpression {
 
 				operator := ArithmeticOperator::ADD;
 
@@ -426,6 +443,8 @@ modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 				secondExpr := object LiteralExpression {
 					text := 1.repr();
 				};
+
+			}
 		};
 
 		initializer := object ArrayInitializer {
@@ -470,11 +489,14 @@ modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 	mapping OrderedSet(DiscretePortInstance) :: createBufferOverflowStrategyArrayVariable() : Variable {
 		name := bufferOverflowStrategyArrayID;
 
-		index += object IdentifierExpression {
-				identifier := map DiscretePortInstanceType();
+		index += object TypeIndex {
+			typeDefinition := object TypeReference {
+				referredType := map DiscretePortInstanceType();
+			}
 		};
 		
-		index += object ArithmeticExpression {
+		index += object ValueIndex {
+			sizeExpression := object ArithmeticExpression {
 
 				operator := ArithmeticOperator::ADD;
 
@@ -485,6 +507,8 @@ modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 				secondExpr := object LiteralExpression {
 					text := 1.repr();
 				};
+
+			}
 		};
 
 		initializer := object ArrayInitializer {
@@ -551,10 +575,14 @@ modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 		
 		name := 'freeIds';
 		
-		index += object IdentifierExpression {
+		index += object ValueIndex {
+		
+			sizeExpression := object IdentifierExpression {
 				
 				identifier := map createNumberOfMessagesInTransitConstant();
 				
+			}
+		
 		};
 		
 		initializer := object ArrayInitializer {
@@ -589,13 +617,16 @@ modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 		
 		name := self.name + 'MessageArguments'; // TODO ensure uniqueness
 	
-		index += object ArithmeticExpression {
+		index += object ValueIndex {
+		
+			sizeExpression := object ArithmeticExpression {
 				firstExpr := object IdentifierExpression {
 					identifier := map createNumberOfMessagesInTransitConstant();
 				};
 				secondExpr := object LiteralExpression {
 					text := 1.repr();
 				};
+			}
 		};
 		
 	}
@@ -731,10 +762,14 @@ modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 		
 		name := 'messages';
 		
-		index += object IdentifierExpression {
+		index += object ValueIndex {
+			
+			sizeExpression := object IdentifierExpression {
 				
 				identifier := resolveoneIn(createMaxOfBufferAndConnectorSizeVariable, Variable)
 				
+			}
+			
 		}
 		
 	}
@@ -755,12 +790,16 @@ modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 		
 		name := 'buffers';
 		
-		index += object IdentifierExpression {
-				identifier := map DiscretePortInstanceType();
+		index += object TypeIndex {
+			typeDefinition := object TypeReference {
+				referredType := map DiscretePortInstanceType();
+			}
 		};
 
-		index += object IdentifierExpression {
+		index += object ValueIndex {
+			sizeExpression := object IdentifierExpression {
 				identifier := map createMaximalNumberOfBuffersPerRoleConstant();
+			}
 		};
 		
 	}
@@ -770,9 +809,12 @@ modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 		
 		name := 'connectors';
 		
-		index += object IdentifierExpression {
-				identifier := map DiscretePortInstanceType();
+		index += object TypeIndex {
+			typeDefinition := object TypeReference {
+				referredType := map DiscretePortInstanceType();
 			}
+		}
+		
 	}
 	
 	
@@ -780,18 +822,24 @@ modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 		
 		name := 'earliest';
 		
-		index += object IdentifierExpression {
-				identifier := map DiscretePortInstanceType();
+		index += object TypeIndex {
+			typeDefinition := object TypeReference {
+				referredType := map DiscretePortInstanceType();
 			}
+		}
+		
 	}
 	
 	mapping createLatestVariable() : Variable {
 		
 		name := 'latest';
 		
-		index += object IdentifierExpression {
-				identifier := map DiscretePortInstanceType();
+		index += object TypeIndex {
+			typeDefinition := object TypeReference {
+				referredType := map DiscretePortInstanceType();
 			}
+		}
+		
 	}
 	
 	
@@ -799,12 +847,16 @@ modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 		
 		name := 'transmissionTimes';
 		
-		index += object IdentifierExpression {
-				identifier := map DiscretePortInstanceType()
+		index += object TypeIndex {
+			typeDefinition := object TypeReference {
+				referredType := map DiscretePortInstanceType()
+			}
 		};
 		
-		index += object IdentifierExpression {
+		index += object ValueIndex {
+			sizeExpression := object IdentifierExpression {
 				identifier := map createConnectorSizeVariable()
+			}
 		}
 		
 	}

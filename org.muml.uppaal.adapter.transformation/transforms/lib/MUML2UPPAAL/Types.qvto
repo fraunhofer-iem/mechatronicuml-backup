@@ -139,10 +139,10 @@ modeltype component uses pim::component('http://www.muml.org/pim/1.0.0');
 	}
 	
 			
-	mapping DataType :: createTypeSpec() : TypeExpression disjuncts
+	mapping DataType :: createTypeSpec() : TypeSpecification disjuncts
 		DataType::failOnUnsupportedTypeSpec;
 	
-	mapping DataType :: failOnUnsupportedTypeSpec() : TypeExpression {
+	mapping DataType :: failOnUnsupportedTypeSpec() : TypeSpecification {
 		
 		init {
 			assert fatal (false) with log("Mapping this type spec is unsupported.")

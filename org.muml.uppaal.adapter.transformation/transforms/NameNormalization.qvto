@@ -1,7 +1,7 @@
 //import transforms.lib.MUML2MUML;
 import org.muml.ImplicitCopy;
-import transforms.lib.ExternalizedStrings;
-import transforms.lib.RTSCUtil;
+import lib.ExternalizedStrings;
+import lib.RTSCUtil;
 import org.muml.uppaal.adapter._blackbox.CharSubstitutionUnit;
 
 modeltype modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0');

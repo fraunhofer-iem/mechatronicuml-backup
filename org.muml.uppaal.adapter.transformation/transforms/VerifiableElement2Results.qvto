@@ -1,8 +1,8 @@
-import transforms.VerifiableElement2UPPAAL;
-import transforms.UPPAAL2Trace;
-import transforms.UPPAALTrace2MUMLTrace;
-import transforms.lib.ExternalizedStrings;
-import transforms.mtctl.MTCTLEvaluateResultTransformation;
+import VerifiableElement2UPPAAL;
+import UPPAAL2Trace;
+import UPPAALTrace2MUMLTrace;
+import lib.ExternalizedStrings;
+import mtctl.MTCTLEvaluateResultTransformation;
 
 modeltype storydriven uses 'http://www.muml.org/core/1.0.0';
 

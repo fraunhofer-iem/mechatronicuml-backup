@@ -1,7 +1,7 @@
-import transforms.UPPAAL2Trace;
-import transforms.UPPAALTrace2MUMLTrace;
-import transforms.lib.ExternalizedStrings;
-import transforms.VerifiableElement2UPPAAL;
+import UPPAAL2Trace;
+import UPPAALTrace2MUMLTrace;
+import lib.ExternalizedStrings;
+import VerifiableElement2UPPAAL;
 
 modeltype muml uses 'http://www.muml.org/pim/1.0.0';
 modeltype uppaal uses 'http://www.muml.org/uppaal/1.0.0';

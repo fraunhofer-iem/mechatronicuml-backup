@@ -1,5 +1,5 @@
-import transforms.VerifiableElement2VerifiableCIC;
-import transforms.VerifiableCIC2UPPAAL;
+import VerifiableElement2VerifiableCIC;
+import VerifiableCIC2UPPAAL;
 
 modeltype verification_options uses 'http://www.muml.org/uppaal/options/1.0.0';
 modeltype muml uses 'http://www.muml.org/pim/1.0.0';

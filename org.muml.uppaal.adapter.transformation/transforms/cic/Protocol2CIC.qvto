@@ -1,7 +1,7 @@
 //import transforms.lib.MUML2MUML;
 import org.muml.ImplicitCopy;
-import transforms.lib.ExternalizedStrings;
-import transforms.CloneModel;
+import lib.ExternalizedStrings;
+import CloneModel;
 
 
 modeltype muml uses 'http://www.muml.org/pim/1.0.0';
@@ -525,4 +525,54 @@ helper portReferencedByProtocol(inout protocol : CoordinationProtocol) : Boolean
 
 query roleMultiplicity() : EInt {
 	return options.objects()->any(oclIsKindOf(CoordinationProtocolOptions)).oclAsType(CoordinationProtocolOptions).roleMultiplicity
+}
+
+-- get rid of nested TimeValueExpressions
+mapping TimeValueExpression :: transform() : Expression{
+        init {
+	        // check whether the TimeValueExpression is nested in another TimeValueExpression. If so, the nesting is 
+	        // removed by replacing the TimeValueExpression by the value of the TimeValueExpression.
+	        if(not self.isNestedInOtherTimeValue()) {
+	        	result := object TimeValueExpression{
+	        		timeValue := self._timeValue.map transform().oclAsType(TimeValue);
+	        	};
+	        }
+	        else {
+	        	result := self.timeValue.value.map transform().deepclone().oclAsType(core::expressions::Expression);	
+	        }endif;
+		}
+	        
+	    result._extensions := self._extensions.map transform().oclAsType(core::Extension);
+	    result._comment := self._comment;       
+	}
+	
+mapping MaxMessageDelayReferenceExpression :: transform() : Expression{
+        init {
+	        // check whether the TimeValueExpression is nested in another TimeValueExpression. If so, the nesting is 
+	        // removed by replacing the TimeValueExpression by the value of the TimeValueExpression.
+	        if(not self.isNestedInOtherTimeValue()) {
+	        	result := object TimeValueExpression{
+	        		timeValue := self._timeValue.map transform().oclAsType(TimeValue);
+	        	};
+	        }
+	        else {
+	        	result := self.timeValue.value.map transform().deepclone().oclAsType(core::expressions::Expression);	
+	        }endif;
+		}
+	        
+	    result._extensions := self._extensions.map transform().oclAsType(core::Extension);
+	    result._comment := self._comment;       
+	}
+	
+helper core::expressions::Expression :: isNestedInOtherTimeValue() : Boolean {
+	var eContainer := self.eContainer();
+	if(eContainer.oclIsTypeOf(TimeValue)) {
+		return true;
+	}else if(eContainer.oclIsKindOf(core::expressions::Expression) and not eContainer.oclIsUndefined()) {
+		return eContainer.oclAsType(core::expressions::Expression).isNestedInOtherTimeValue();
+	} 
+	else {
+		return false;
+	}
+	endif;			
 }

@@ -1,7 +1,7 @@
-import transforms.lib.MUML2UPPAAL.Types;
-import transforms.lib.MUML2UPPAAL.Enums;
-import transforms.lib.MUML2UPPAAL.Decls;
-import transforms.lib.MUML2UPPAAL.Expressions;
+import lib.MUML2UPPAAL.Types;
+import lib.MUML2UPPAAL.Enums;
+import lib.MUML2UPPAAL.Decls;
+import lib.MUML2UPPAAL.Expressions;
 
 library Sync;
 
@@ -15,19 +15,19 @@ modeltype component uses pim::component('http://www.muml.org/pim/1.0.0');
 modeltype storydriven_expressions uses core::expressions('http://www.muml.org/core/1.0.0');
 
 
-	mapping SynchronizationChannel :: SyncChannel2VariableDeclaration() : TypedDeclaration {
+	mapping SynchronizationChannel :: SyncChannel2VariableDeclaration() : ChannelVariableDeclaration {
 	
 		// TODO prefix channel names according to their parent state (prevent name clashes between 'globalized' channels)
 						
-		typeDefinition := object ChannelPrefixExpression {
+		typeDefinition := object TypeReference {
 		
-			channelType := CHAN;
-		
-			urgent := self.isUrgent();
+			referredType := CHAN;
 			
 		};			
 	
-		elements += self.map SyncChannel2Variable();
+		variable += self.map SyncChannel2Variable();
+		
+		urgent := self.isUrgent();
 				
 	}
 	
@@ -51,9 +51,13 @@ modeltype storydriven_expressions uses core::expressions('http://www.muml.org/co
 
 		var idRange : DeclaredType = self.map SyncChannel2IDRange();
 		
-		index += object IdentifierExpression {
+		index += object TypeIndex {
 			
-				identifier := idRange
+			typeDefinition := object TypeReference {
+			
+				referredType := idRange
+	
+			}
 			
 		};
 
@@ -61,9 +65,11 @@ modeltype storydriven_expressions uses core::expressions('http://www.muml.org/co
 		then {
 			// TODO support selector types with reference to all possible types (e.g. integer)
 			assert fatal (self.selectorType.oclIsKindOf(Port)) with log("Selector types must be ports");
-			index += object IdentifierExpression {
+			index += object TypeIndex {
 				
-					identifier := map DiscretePortInstanceType()
+				typeDefinition := object TypeReference {
+					referredType := map DiscretePortInstanceType()
+				}
 				
 			};	
 		} endif;

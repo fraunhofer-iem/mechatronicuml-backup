@@ -1,4 +1,4 @@
-import transforms.mtctl.MTCTLStaticNormalization; 
+import mtctl.MTCTLStaticNormalization; 
 import org.muml.uppaal.adapter._blackbox.ProgressUnit;
 
 modeltype muml_model uses 'http://www.muml.org/pim/1.0.0';

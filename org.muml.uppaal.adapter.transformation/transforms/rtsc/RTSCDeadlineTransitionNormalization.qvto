@@ -1,6 +1,6 @@
-import transforms.lib.RTSCUtil;
+import lib.RTSCUtil;
 import org.muml.ImplicitCopy;
-import transforms.lib.MultiMappingUtil;
+import lib.MultiMappingUtil;
 
 /* Normalizes transitions with deadlines by adding an intermediate state.
 *  MTCTL properties with transitionFiring expressions (with transitions with deadlines) 

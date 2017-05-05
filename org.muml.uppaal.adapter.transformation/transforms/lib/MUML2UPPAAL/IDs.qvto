@@ -1,6 +1,6 @@
-import transforms.lib.MUML2UPPAAL.Queries;
-import transforms.lib.MUML2UPPAAL.Types;
-import transforms.lib.MUML2UPPAAL.Decls;
+import lib.MUML2UPPAAL.Queries;
+import lib.MUML2UPPAAL.Types;
+import lib.MUML2UPPAAL.Decls;
 
 library IDs;
 
@@ -195,37 +195,35 @@ modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 		
 	}
 
-	mapping RealtimeStatechart :: RTSC2DiscretePortInstanceID() : uppaal_declarations::Parameter {
+	mapping RealtimeStatechart :: RTSC2DiscretePortInstanceID() : uppaal_declarations::Variable {
 		
 		name := 'discretePortInstanceID';
 		
 	}
 	
-	mapping RealtimeStatechart :: RTSC2DiscreteSubPortInstanceID() : uppaal_declarations::Parameter {
+	mapping RealtimeStatechart :: RTSC2DiscreteSubPortInstanceID() : uppaal_declarations::Variable {
 		
 		name := 'discreteSubPortInstanceID';
 		
 	}
 	
-	mapping RealtimeStatechart :: RTSC2ComponentInstanceID() : uppaal_declarations::Parameter {
+	mapping RealtimeStatechart :: RTSC2ComponentInstanceID() : uppaal_declarations::Variable {
 		
 		name := 'componentInstanceID';
 		
 	}
 	
-	mapping NumberOfPortInstancesDeclaration() : TypedDeclaration {
+	mapping NumberOfPortInstancesDeclaration() : DataVariableDeclaration {
 					
-		
-		typeDefinition := object DataPrefixExpression {
-			
 		prefix := DataVariablePrefix::CONST;
-		dataTypeExpression := object IdentifierExpression{
-			identifier := INT;
-			}
+		
+		typeDefinition := object TypeReference {
+			
+			referredType := INT;
 			
 		};
 		
-		elements += map NumberOfDiscretePortInstancesConstant();
+		variable += map NumberOfDiscretePortInstancesConstant();
 		
 	}
 	
@@ -250,19 +248,17 @@ modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 				
 	}
 	
-	mapping NumberOfComponentInstancesDeclaration() : TypedDeclaration {
+	mapping NumberOfComponentInstancesDeclaration() : DataVariableDeclaration {
 					
-		
-		typeDefinition := object DataPrefixExpression {
-			
 		prefix := DataVariablePrefix::CONST;
-		dataTypeExpression := object IdentifierExpression{
-			identifier := INT;
-			}
+		
+		typeDefinition := object TypeReference {
+			
+			referredType := INT;
 			
 		};
 		
-		elements += map NumberOfComponentInstancesConstant();
+		variable += map NumberOfComponentInstancesConstant();
 		
 	}
 	

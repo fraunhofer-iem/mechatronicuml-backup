@@ -1,6 +1,6 @@
-import transforms.mtctl.MTCTLTransformation;
-import transforms.cic.Protocol2CIC;
-import transforms.CloneModel;
+import mtctl.MTCTLTransformation;
+import cic.Protocol2CIC;
+import CloneModel;
 import org.muml.uppaal.adapter._blackbox.ProgressUnit;
 
 modeltype muml_constraint uses pim::constraint('http://www.muml.org/pim/1.0.0');

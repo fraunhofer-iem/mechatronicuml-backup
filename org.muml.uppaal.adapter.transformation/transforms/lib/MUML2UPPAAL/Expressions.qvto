@@ -1,12 +1,12 @@
-import transforms.lib.MUML2UPPAAL.Queries;
-import transforms.lib.MUML2UPPAAL.IDs;
-import transforms.lib.MUML2UPPAAL.Types;
-import transforms.lib.MUML2UPPAAL.Enums;
-import transforms.lib.MUML2UPPAAL.Decls;
+import lib.MUML2UPPAAL.Queries;
+import lib.MUML2UPPAAL.IDs;
+import lib.MUML2UPPAAL.Types;
+import lib.MUML2UPPAAL.Enums;
+import lib.MUML2UPPAAL.Decls;
 
-import transforms.lib.RTSCUtil;
+import lib.RTSCUtil;
 
-import transforms.lib.MUML2UPPAAL.Async.Variables;
+import lib.MUML2UPPAAL.Async.Variables;
 
 library Expressions;
 
@@ -59,9 +59,13 @@ modeltype uppaal_declarations uses uppaal::declarations('http://www.muml.org/upp
 						
 			-- prepend to ensure correct index order (changed to append TODO is this correct?)
 			
-			index += object uppaal_expressions::LiteralExpression {
+			index += object ValueIndex {
+			
+				sizeExpression := object uppaal_expressions::LiteralExpression {
 					
 					text := t.oclAsType(ArrayDataType).cardinality.value.repr();
+				}
+				
 			};
 			
 			t := t.oclAsType(ArrayDataType).type;
@@ -74,18 +78,20 @@ modeltype uppaal_declarations uses uppaal::declarations('http://www.muml.org/upp
 	
 	-- operations
 	
-	mapping Operation :: Operation2FunctionDeclaration() : TypedDeclaration {
-		elements := self.map Operation2Function();
-		
-		typeDefinition := object IdentifierExpression {
-			identifier := self.returnType.map DataType2Type();
-		}
+	mapping Operation :: Operation2FunctionDeclaration() : FunctionDeclaration {
+		function := self.map Operation2Function()
 	}
 	
 	mapping Operation :: Operation2Function() : Function {
 	
 		name := self.name;
 		
+				
+		returnType := object TypeReference {
+		
+			referredType := self.returnType.map DataType2Type();
+			
+		};
 	
 					
 		-- add additional parameter declarations 
@@ -93,19 +99,19 @@ modeltype uppaal_declarations uses uppaal::declarations('http://www.muml.org/upp
 		
 		var componentInstanceID : uppaal_declarations::Variable := self.map Operation2ComponentInstanceID(); 
 		
-		parameter += object ParameterContainer {
+		parameter += object uppaal_declarations::Parameter {
 		
-				typeDefinition := object DataPrefixExpression {
-				
-					prefix := DataVariablePrefix::CONST;
-					
-					dataTypeExpression := object IdentifierExpression {
-						identifier := map ComponentInstanceType();
-					}
-				
+			variableDeclaration := object DataVariableDeclaration {
+			
+				typeDefinition := object TypeReference {
+					referredType := map ComponentInstanceType();
 				};
 				
-				elements += componentInstanceID;
+				variable += componentInstanceID;
+				
+				prefix := DataVariablePrefix::CONST
+				
+			}	 
 			
 		};
 		
@@ -113,18 +119,19 @@ modeltype uppaal_declarations uses uppaal::declarations('http://www.muml.org/upp
 		if(self.isPortOrRoleOperation()){
 			portOrRoleInstanceID := self.map Operation2PortOrRoleInstanceID(); 
 			
-			parameter += object ParameterContainer {
-
-				typeDefinition := object DataPrefixExpression {
+			parameter += object uppaal_declarations::Parameter {
+			
+				variableDeclaration := object DataVariableDeclaration {
 				
-					prefix := DataVariablePrefix::CONST;
-							
-					dataTypeExpression := object IdentifierExpression {
-						identifier := map DiscretePortInstanceType();
-					}
-				};
+					typeDefinition := object TypeReference {
+						referredType := map DiscretePortInstanceType();
+					};
 					
-				elements += portOrRoleInstanceID;
+					variable += portOrRoleInstanceID;
+					
+					prefix := DataVariablePrefix::CONST
+					
+				}							
 			};
 		};
 		
@@ -134,18 +141,19 @@ modeltype uppaal_declarations uses uppaal::declarations('http://www.muml.org/upp
 		then {
 			subPortOrRoleInstanceID := self.map Operation2SubPortOrRoleInstanceID(); 
 			
-			parameter += object ParameterContainer {
+			parameter += object uppaal_declarations::Parameter {
 			
-					typeDefinition := object DataPrefixExpression {
-					
-					prefix := DataVariablePrefix::CONST;
-					
-					dataTypeExpression := object IdentifierExpression {
-							identifier := map DiscretePortInstanceType();
-						}
+				variableDeclaration := object DataVariableDeclaration {
+				
+					typeDefinition := object TypeReference {
+						referredType := map DiscretePortInstanceType();
 					};
 					
-					elements += subPortOrRoleInstanceID;
+					variable += subPortOrRoleInstanceID;
+					
+					prefix := DataVariablePrefix::CONST
+					
+				}
 							
 			};
 		} endif;
@@ -168,13 +176,13 @@ modeltype uppaal_declarations uses uppaal::declarations('http://www.muml.org/upp
 		
 	}
 	
-	mapping LocalVariableDeclarationStatement :: DeclarationStatement2VariableDeclaration(componentInstanceID : uppaal_declarations::Variable, portOrRoleInstanceID : uppaal_declarations::Variable,  subPortOrRoleInstanceID : uppaal_declarations::Variable) : TypedDeclaration {
+	mapping LocalVariableDeclarationStatement :: DeclarationStatement2VariableDeclaration(componentInstanceID : uppaal_declarations::Variable, portOrRoleInstanceID : uppaal_declarations::Variable,  subPortOrRoleInstanceID : uppaal_declarations::Variable) : DataVariableDeclaration {
 		
-		typeDefinition := object IdentifierExpression {
-			identifier := self.variable.dataType.map DataType2Type();
+		typeDefinition := object TypeReference {
+			referredType := self.variable.dataType.map DataType2Type();
 		};
 		
-		elements := self.map DeclarationStatement2Variable(componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
+		variable := self.map DeclarationStatement2Variable(componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
 		
 	}
 	
@@ -203,16 +211,20 @@ modeltype uppaal_declarations uses uppaal::declarations('http://www.muml.org/upp
 		
 	}
 			
-	mapping muml_behavior::Parameter :: Parameter2Parameter() : uppaal_declarations::ParameterContainer {
+	mapping muml_behavior::Parameter :: Parameter2Parameter() : uppaal_declarations::Parameter {
 				
-			elements += self.map Parameter2ParameterVariable();
+		variableDeclaration := object DataVariableDeclaration {
+		
+			variable += self.map Parameter2ParameterVariable();
 					
-			typeDefinition := object IdentifierExpression {
+			typeDefinition := object TypeReference {
 			
-				identifier := self.dataType.map DataType2Type();
+				referredType := self.dataType.map DataType2Type();
 				
 			}
 			
+		}	
+		
 	}
 
 	mapping Parameter :: Parameter2Variable() : uppaal_declarations::Variable
@@ -228,16 +240,16 @@ modeltype uppaal_declarations uses uppaal::declarations('http://www.muml.org/upp
 		
 	}
 	
-	mapping muml_behavior::Parameter :: Parameter2DataVariableDeclaration() : uppaal_declarations::TypedDeclaration {
+	mapping muml_behavior::Parameter :: Parameter2DataVariableDeclaration() : uppaal_declarations::DataVariableDeclaration {
 				
 		init {
-			result := object TypedDeclaration {
+			result := object DataVariableDeclaration {
 			
-				elements += self.map Parameter2Variable();
+				variable += self.map Parameter2Variable();
 						
-				typeDefinition := object IdentifierExpression {
+				typeDefinition := object TypeReference {
 				
-					identifier := self.dataType.map DataType2Type();
+					referredType := self.dataType.map DataType2Type();
 					
 				}
 				
@@ -261,20 +273,21 @@ modeltype uppaal_declarations uses uppaal::declarations('http://www.muml.org/upp
 	
 	-- variables and parameters
 	
-	mapping muml_behavior::Variable :: Variable2VariableDeclaration() : TypedDeclaration {
+	mapping muml_behavior::Variable :: Variable2VariableDeclaration() : DataVariableDeclaration {
 					
-		typeDefinition := object DataPrefixExpression {
+		typeDefinition := object TypeReference {
+		
+			referredType := self.dataType.map DataType2Type();
 			
-			if(self.constant) {
-				prefix := DataVariablePrefix::CONST;
-			};
-						 
-			dataTypeExpression := object IdentifierExpression {
-				identifier := self.dataType.map DataType2Type();
-			}
 		};			
 	
-		elements += self.map Variable2Variable();
+		variable += self.map Variable2Variable();
+		
+		if (self.constant)
+		then {
+			result.prefix := DataVariablePrefix::CONST
+		}
+		endif;
 		
 	}
 	
@@ -287,8 +300,12 @@ modeltype uppaal_declarations uses uppaal::declarations('http://www.muml.org/upp
 		if (not idRange.oclIsUndefined())
 		then {
 		
-			index += object IdentifierExpression {
-					identifier := idRange
+			index += object TypeIndex {
+				
+				typeDefinition := object TypeReference {
+					referredType := idRange
+				}
+				
 			};
 		}
 		endif;
@@ -873,8 +890,10 @@ modeltype uppaal_declarations uses uppaal::declarations('http://www.muml.org/upp
 	
 	mapping muml_actionLanguage::Assignment :: createIncrementDecrement(componentInstanceID : uppaal_declarations::Variable, portOrRoleInstanceID : uppaal_declarations::Variable,  subPortOrRoleInstanceID : uppaal_declarations::Variable) : ExpressionStatement when {self.assignOperator = AssignOperator::UNSET} {
 		
-		expression := object PostIncrementDecrementExpression {
+		expression := object IncrementDecrementExpression {
 		
+			position := IncrementDecrementPosition::POST;
+			
 			operator := self.incrementDecrementOperator.mapOperator();
 			
 			expression := self.lhs_typedNamedElementExpression.map createExpression(componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);

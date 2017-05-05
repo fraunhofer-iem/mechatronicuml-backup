@@ -1,6 +1,6 @@
 import org.muml.ImplicitCopy;
-import transforms.lib.RTSCUtil;
-import transforms.lib.MultiMappingUtil;
+import lib.RTSCUtil;
+import lib.MultiMappingUtil;
 
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');

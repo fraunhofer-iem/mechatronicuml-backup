@@ -1,6 +1,6 @@
 import org.muml.ImplicitCopy;
-import transforms.lib.RTSCUtil;
-import transforms.lib.MultiMappingUtil;
+import lib.RTSCUtil;
+import lib.MultiMappingUtil;
 
 modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
 modeltype behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');

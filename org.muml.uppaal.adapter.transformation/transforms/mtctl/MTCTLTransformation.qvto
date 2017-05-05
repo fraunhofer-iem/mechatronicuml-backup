@@ -1,9 +1,9 @@
 import org.muml.ImplicitCopy;
-import transforms.mtctl.MTCTLQuantifierNormalization;
-import transforms.mtctl.MTCTLStaticNormalization; 
-import transforms.mtctl.MTCTLPropertySplitTransformation;
-import transforms.mtctl.MTCTLInstanceReferenceNormalization;
-import transforms.CloneModel;
+import mtctl.MTCTLQuantifierNormalization;
+import mtctl.MTCTLStaticNormalization; 
+import mtctl.MTCTLPropertySplitTransformation;
+import mtctl.MTCTLInstanceReferenceNormalization;
+import CloneModel;
 import org.muml.uppaal.adapter._blackbox.ProgressUnit;
 
 modeltype muml uses 'http://www.muml.org/pim/1.0.0';

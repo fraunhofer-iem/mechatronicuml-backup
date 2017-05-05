@@ -1,13 +1,13 @@
-import transforms.rtsc.RTSCHierarchyNormalization;
-import transforms.rtsc.RTSCDeadlineTransitionNormalization;
-import transforms.rtsc.RTSCCompositeTransitionNormalization;
-import transforms.rtsc.RTSCEntryExitEventNormalization;
-import transforms.rtsc.RTSCScaleTimeValuesNormalization;
-import transforms.rtsc.RTSCDoEventNormalization;
-import transforms.rtsc.RTSCUrgencyNormalization;
-import transforms.NameNormalization;
-import transforms.cic.Protocol2CIC;
-import transforms.MUML2UPPAAL;
+import rtsc.RTSCHierarchyNormalization;
+import rtsc.RTSCDeadlineTransitionNormalization;
+import rtsc.RTSCCompositeTransitionNormalization;
+import rtsc.RTSCEntryExitEventNormalization;
+import rtsc.RTSCScaleTimeValuesNormalization;
+import rtsc.RTSCDoEventNormalization;
+import rtsc.RTSCUrgencyNormalization;
+import NameNormalization;
+import cic.Protocol2CIC;
+import MUML2UPPAAL;
 
 import org.muml.uppaal.adapter._blackbox.ProgressUnit;
 import org.muml.common._blackbox.SaveXMIBlackbox;

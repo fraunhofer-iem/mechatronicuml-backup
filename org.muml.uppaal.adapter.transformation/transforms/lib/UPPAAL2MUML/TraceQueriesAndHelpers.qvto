@@ -1,11 +1,11 @@
 import org.muml.uppaal.adapter._blackbox.ValueUnit;
-import transforms.lib.ExternalizedStrings;
-import transforms.lib.MUML2UPPAAL.Async.Variables;
-import transforms.lib.MUML2UPPAAL.Async;
-import transforms.lib.MUML2UPPAAL.Expressions;
-import transforms.MUML2UPPAAL;
+import lib.ExternalizedStrings;
+import lib.MUML2UPPAAL.Async.Variables;
+import lib.MUML2UPPAAL.Async;
+import lib.MUML2UPPAAL.Expressions;
+import MUML2UPPAAL;
 import org.muml.ImplicitCopy;
-import transforms.rtsc.RTSCHierarchyNormalization;
+import rtsc.RTSCHierarchyNormalization;
 
 library TraceQueriesAndHelpers;
 
@@ -61,7 +61,7 @@ query getConcreteTemplateAndArguments(t : AbstractTemplate) : template : Templat
 		
 		arguments := tmp.oclAsType(RedefinedTemplate).declaration.argument.toInteger();
 		tmp := tmp.oclAsType(RedefinedTemplate).referredTemplate;
-		parameters := tmp.parameter->collect(p | p.elements)->selectByKind(uppaal::declarations::Parameter)->asSequence();
+		parameters := tmp.parameter->asSequence();
 		
 	};
 	
@@ -74,15 +74,15 @@ query TemplateDeclaration :: getInstanceID() : Integer{
 	var templateTuple : Tuple(template : Template, arguments : Sequence(Integer), parameters : Sequence(uppaal::declarations::Parameter)) := getConcreteTemplateAndArguments(self.declaredTemplate);
 	
 	//Get the Parameter expressing the instance id
-	var idParameter : uppaal::declarations::Parameter := templateTuple.parameters->select(p | p.container.elements[uppaal::core::NamedElement]->first().name = discreteSubPortInstanceID)->first();
+	var idParameter : uppaal::declarations::Parameter := templateTuple.parameters->select(p | p.variableDeclaration.variable->first().name = discreteSubPortInstanceID)->first();
 	if(idParameter.oclIsUndefined())
-		idParameter := templateTuple.parameters->select(p | p.container.elements[uppaal::core::NamedElement]->first().name = discretePortInstanceID)->first();
+		idParameter := templateTuple.parameters->select(p | p.variableDeclaration.variable->first().name = discretePortInstanceID)->first();
 	if(idParameter.oclIsUndefined())
-		idParameter := templateTuple.parameters->select(p | p.container.elements[uppaal::core::NamedElement]->first().name = componentInstanceID)->first();
+		idParameter := templateTuple.parameters->select(p | p.variableDeclaration.variable->first().name = componentInstanceID)->first();
 	assert (not idParameter.oclIsUndefined()) with log ("Could not find discretePortInstanceID or componentInstanceID Parameter in Template "+self.declaredTemplate.toString());
 	
 	//Get the index of the paramter in the parameter list
-	var indexOfParameter : Integer :=self.declaredTemplate.oclAsType(RedefinedTemplate).referredTemplate.parameter->indexOf(idParameter.container.oclAsType(uppaal::declarations::ParameterContainer));
+	var indexOfParameter : Integer :=self.declaredTemplate.oclAsType(RedefinedTemplate).referredTemplate.parameter->indexOf(idParameter);
 	
 	//Get the argument passed as instance parameter in the template declaration
 	var argument : Integer := templateTuple.arguments->at(indexOfParameter);
@@ -516,9 +516,8 @@ helper Variable :: setVariableValue(inout varBinding : VariableBinding , diagSta
 	var variableIsConstant : Boolean := false;
 	
 	// check if variable is a constant 
-	var variableContainer : uppaal::declarations::TypedElementContainer := self.getUppaalVariable().container;
-	if (variableContainer.oclIsKindOf(uppaal::declarations::TypedDeclaration) and variableContainer.typeDefinition.oclIsKindOf(DataPrefixExpression)) {
-        var dataVariableDec := variableContainer.oclAsType(uppaal::declarations::TypedDeclaration).typeDefinition.oclAsType(DataPrefixExpression);
+	if (self.getUppaalVariable().container.oclIsKindOf(uppaal::declarations::DataVariableDeclaration)) {
+        var dataVariableDec := self.getUppaalVariable().container.oclAsType(uppaal::declarations::DataVariableDeclaration);
         if (dataVariableDec.prefix = uppaal::declarations::DataVariablePrefix::CONST) {
             variableIsConstant := true;
             assert(false) with log ('Found constant variable : '+self.name.toString() + '. We will not find a value for this variable in the trace as Uppaal does not write them into it.');

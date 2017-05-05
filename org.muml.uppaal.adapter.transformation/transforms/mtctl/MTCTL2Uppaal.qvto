@@ -1,9 +1,9 @@
-import transforms.lib.MUML2UPPAAL.Async.Variables;
-import transforms.lib.MUML2UPPAAL.Async.Functions;
-import transforms.lib.MUML2UPPAAL.Util;
-import transforms.lib.MUML2UPPAAL.Clocks;
-import transforms.lib.MUML2UPPAAL.Expressions;
-import transforms.lib.MUML2UPPAAL.IDs;
+import lib.MUML2UPPAAL.Async.Variables;
+import lib.MUML2UPPAAL.Async.Functions;
+import lib.MUML2UPPAAL.Util;
+import lib.MUML2UPPAAL.Clocks;
+import lib.MUML2UPPAAL.Expressions;
+import lib.MUML2UPPAAL.IDs;
 
 modeltype muml_protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
 modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
@@ -224,13 +224,13 @@ mapping MessageDiscardedExpr::MessageDiscardedExpr2Expression() : ScopedIdentifi
 
 mapping MessageInTransitExpr::MessageInTransitExpr2Expression() : QuantificationExpression { //exists(i:instances) checkMessageInBuffer(connectors[i], messageType)
 	quantifier := Quantifier::EXISTENTIAL;
-	typeDefinition := object IdentifierExpression {identifier := resolveoneIn(IDs::DiscretePortInstanceType).oclAsType(Type)};
-	var i = object uppaal_declarations::Variable {name := 'i'; container := result};
+	typeDefinition := object TypeReference {referredType := resolveoneIn(IDs::DiscretePortInstanceType).oclAsType(Type)};
+	variable := object uppaal_declarations::Variable {name := 'i'; container := result};
 	expression := object FunctionCallExpression {
 		function := resolveoneIn(Functions::createCheckMessageInBufferFunction).oclAsType(Function);
 		argument += object IdentifierExpression {
 			identifier := resolveoneIn(Variables::createConnectorsVariable).oclAsType(uppaal_core::NamedElement);
-			index += object IdentifierExpression {identifier := i };
+			index += object IdentifierExpression {identifier := result.variable->any(true); };
 		};
 		argument += object IdentifierExpression { // Uppaal message kind constant
 			identifier := self.message.oclAsType(MumlElemExpr).elem.resolveoneIn(MessageType::createMessageKindConstant).oclAsType(uppaal_core::NamedElement);

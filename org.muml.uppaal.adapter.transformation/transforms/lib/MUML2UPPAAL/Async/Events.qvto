@@ -1,6 +1,6 @@
-import transforms.lib.MUML2UPPAAL.Async.Binding;
-import transforms.lib.MUML2UPPAAL.Async.Functions;
-import transforms.lib.MUML2UPPAAL.Async.Variables;
+import lib.MUML2UPPAAL.Async.Binding;
+import lib.MUML2UPPAAL.Async.Functions;
+import lib.MUML2UPPAAL.Async.Variables;
 
 
 library Events;

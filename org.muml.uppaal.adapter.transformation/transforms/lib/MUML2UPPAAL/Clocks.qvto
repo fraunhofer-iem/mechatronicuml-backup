@@ -1,10 +1,10 @@
-import transforms.lib.MUML2UPPAAL.Queries;
-import transforms.lib.MUML2UPPAAL.Enums;
-import transforms.lib.MUML2UPPAAL.Types;
-import transforms.lib.MUML2UPPAAL.IDs;
-import transforms.lib.MUML2UPPAAL.Util;
-import transforms.lib.MUML2UPPAAL.Expressions;
-import transforms.lib.RTSCUtil;
+import lib.MUML2UPPAAL.Queries;
+import lib.MUML2UPPAAL.Enums;
+import lib.MUML2UPPAAL.Types;
+import lib.MUML2UPPAAL.IDs;
+import lib.MUML2UPPAAL.Util;
+import lib.MUML2UPPAAL.Expressions;
+import lib.RTSCUtil;
 
 library Clocks;
 
@@ -69,15 +69,15 @@ modeltype uppaal_templates uses uppaal::templates('http://www.muml.org/uppaal/1.
 		
 	}
 	
-	mapping Clock :: Clock2VariableDeclaration() : TypedDeclaration {
+	mapping Clock :: Clock2VariableDeclaration() : ClockVariableDeclaration {
 		
-		typeDefinition := object IdentifierExpression {
+		typeDefinition := object TypeReference {
 		
-			identifier := CLOCK
+			referredType := CLOCK
 			
 		};
 		
-		elements += self.map Clock2Variable()
+		variable += self.map Clock2Variable()
 		
 	}			
 					
@@ -85,9 +85,11 @@ modeltype uppaal_templates uses uppaal::templates('http://www.muml.org/uppaal/1.
 		
 		name := self.name.addSuffixNumberUnderline();
 		
-		index += object IdentifierExpression {
+		index += object TypeIndex {
 			
-				identifier := self.map Clock2IDRange();
+			typeDefinition := object TypeReference {
+				referredType := self.map Clock2IDRange();
+			}			
 		}
 				
 	}
