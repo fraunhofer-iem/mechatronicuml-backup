@@ -30,6 +30,13 @@
         </rm:provider>
     </rm:searchPath>
     
+     <rm:searchPath name="ocl-updates">
+        <rm:provider componentTypes="osgi.bundle,eclipse.feature"
+            readerType="p2" source="false" mutable="false">
+            <rm:uri format="http://download.eclipse.org/modeling/mdt/ocl/updates/interim/6.3.0" />
+        </rm:provider>
+    </rm:searchPath>
+    
      <rm:searchPath name="emf-compare">
         <rm:provider componentTypes="osgi.bundle,eclipse.feature"
             readerType="p2" source="false" mutable="false">
@@ -49,6 +56,7 @@
 
     <rm:locator searchPathRef="local" failOnError="false" />
     <rm:locator searchPathRef="epp" failOnError="false" />
+     <rm:locator searchPathRef="ocl-updates" failOnError="false" />
     <rm:locator searchPathRef="neon-releases" failOnError="false" />
     <rm:locator searchPathRef="neon-updates" failOnError="false" />
      <rm:locator searchPathRef="emf-compare" failOnError="false" />
