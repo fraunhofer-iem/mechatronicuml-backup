@@ -63,7 +63,7 @@
  <!--   <module>org.muml.eloquent.sdk.feature</module> -->
     <!--  <module>org.muml.psm.tests</module>-->
     <!-- <module>org.muml.psm.transformation</module>-->
-    <module>org.muml.psm.repository</module>
+    <module>org.muml.eloquent.repository</module>
   </modules>
   
   <build>
@@ -120,10 +120,10 @@
 		<configuration>
 		 <excludes>
 		   <!--provide plug-ins not containing any source code -->
-		  <plugin id="org.muml.psm.feature" />
+		  <plugin id="org.muml.eloquent.feature" />
 		  <plugin id="org.muml.psm.allocation.context.muml.feature" />
-		  <plugin id="org.muml.psm.repository" />
-		  <plugin id="org.muml.psm.sdk.feature" />
+		  <plugin id="org.muml.eloquent.repository" />
+		  <plugin id="org.muml.eloquent.sdk.feature" />
 		 </excludes>
 		</configuration>
 	   </plugin>
