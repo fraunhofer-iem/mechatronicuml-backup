@@ -29,7 +29,7 @@
       <import plugin="org.muml.core.modelinstance.ui" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.muml.core.export" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.resources" version="3.11.0" match="greaterOrEqual"/>
-      <import feature="org.muml.psm.feature" version="1.0.0.qualifier"/>
+      <import feature="org.muml.eloquent.feature" version="1.0.0.qualifier"/>
    </requires>
 
    <plugin
