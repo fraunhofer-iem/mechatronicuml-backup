@@ -2,8 +2,8 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.muml.psm</groupId>
-  <artifactId>PlatformSpecificModeling</artifactId>
+  <groupId>org.muml.eloquent</groupId>
+  <artifactId>Eloquent</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
   
@@ -27,7 +27,7 @@
   
   <modules>
     <module>mm/org.muml.psm.allocation.language</module>  
-    <module>org.muml.psm</module>
+  <!--<module>org.muml.psm</module>-->
     <module>org.muml.psm.allocation.algorithm</module>
     <module>org.muml.psm.allocation.algorithm.ilp</module>
     <module>org.muml.psm.allocation.algorithm.ilp.lpsolve</module>
@@ -56,12 +56,12 @@
     <module>org.muml.psm.api.apimappinglanguage.xtext.ui</module>
     <module>org.muml.psm.api.transformation.blackbox</module>
     <!--<module>org.muml.psm.buckminster</module>-->
-    <module>org.muml.psm.edit</module>
-    <module>org.muml.psm.edit.properties</module>
-    <module>org.muml.psm.feature</module>
+      <!--<module>org.muml.psm.edit</module>-->
+      <!--<module>org.muml.psm.edit.properties</module>-->
+    <module>org.muml.eloquent.feature</module>
     <module>org.muml.psm.allocation.context.muml.feature</module>
- <!--   <module>org.muml.psm.sdk.feature</module> -->
-    <module>org.muml.psm.tests</module>
+ <!--   <module>org.muml.eloquent.sdk.feature</module> -->
+    <!--  <module>org.muml.psm.tests</module>-->
     <!-- <module>org.muml.psm.transformation</module>-->
     <module>org.muml.psm.repository</module>
   </modules>
