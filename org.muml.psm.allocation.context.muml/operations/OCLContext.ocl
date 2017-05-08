@@ -1,3 +1,4 @@
+	import 'http://www.muml.org/pm/hardware/hwvaluetype/1.0.0'
 	import 'http://www.muml.org/pm/hardware/hwresource/1.0.0'
 	import 'http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0'
 	import 'http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0'
