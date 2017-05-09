@@ -297,7 +297,7 @@ public class Muml2TraceOperation implements IWorkspaceRunnable {
 				m.put("muml", new XMIResourceFactoryImpl());
 
 				// Create a resource
-				Resource resource = resSet.createResource(URI.createPlatformResourceURI(targetPath.append("11_externals" + i + ".muml").toPortableString(), true));						resource.getContents().addAll(reachabilityResultExtent.getContents());
+				Resource resource = resSet.createResource(URI.createPlatformResourceURI(targetPath.append("11_externals" + i + ".muml").toPortableString(), true));
 				resource.getContents().addAll(problematicResource.getContents());
 
 				i++;
