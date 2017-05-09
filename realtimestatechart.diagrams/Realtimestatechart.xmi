@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<realtimestatechart:Realtimestatechart xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:realtimestatechart="http://rtsc" xsi:schemaLocation="http://rtsc ../realtimestatechart.model/model/realtimestatechart.ecore" name="test">
+  <transitions source="//@states.0" target="//@states.1"/>
+  <states name="init"/>
+  <states name="next"/>
+  <states name="newstate"/>
+  <states name="newstate"/>
+</realtimestatechart:Realtimestatechart>
