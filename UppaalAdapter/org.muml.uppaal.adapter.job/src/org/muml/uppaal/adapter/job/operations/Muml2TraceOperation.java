@@ -177,6 +177,17 @@ public class Muml2TraceOperation implements IWorkspaceRunnable {
 			}
 		}
 		finally {
+
+			for (Resource resource : storeIntermediateModelsResourceSet.getResources()) {
+				try {
+					resource.save(Collections.EMPTY_MAP);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+			
+			ResourcesPlugin.getWorkspace().getRoot().refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
+			
 			SaveXMIConfiguration.popOptions();
 			monitor.done();
 		}
@@ -308,21 +319,12 @@ public class Muml2TraceOperation implements IWorkspaceRunnable {
 		
 		}
 		
-		for (Resource resource : resSet.getResources()) {
-			try {
-				resource.save(Collections.EMPTY_MAP);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
-		
+
 		String fullPath = ResourcesPlugin.getWorkspace().getRoot().getLocation().toString() + "/intermediate_models";
 		final IPath path = new Path(fullPath);
 		IWorkspaceRunnable xmlSynthesis = new UppaalXMLSynthesisOperation(nta, propertyRepository, path, true);
 
 		xmlSynthesis.run(subMonitor.newChild(30));
-		
-		ResourcesPlugin.getWorkspace().getRoot().refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
 	};
 	
 	

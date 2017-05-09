@@ -1,19 +1,25 @@
 package org.muml.uppaal.adapter.job;
 
+import java.io.IOException;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.core.runtime.jobs.IJobChangeEvent;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.core.runtime.jobs.JobChangeAdapter;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.m2m.qvt.oml.BasicModelExtent;
@@ -194,7 +200,26 @@ public class VerifyForResultsJob extends Job {
 
 		} catch (CoreException e) {
 			e.printStackTrace();
+			
 		} finally {
+			
+			if (storeIntermediateModels) {
+		
+				for (Resource resource : storeIntermediateModelsResourceSet.getResources()) {
+					try {
+						resource.save(Collections.EMPTY_MAP);
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				}
+				
+				try {
+					ResourcesPlugin.getWorkspace().getRoot().refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
+				} catch (CoreException e) {
+					e.printStackTrace();
+				}
+			}
+			
 			SaveXMIConfiguration.popOptions();
 			monitor.done();
 		}
