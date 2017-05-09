@@ -1,19 +1,29 @@
 package org.muml.uppaal.adapter.job.operations;
 
+import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IWorkspaceRunnable;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.Diagnostician;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.m2m.qvt.oml.ExecutionContextImpl;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
@@ -173,6 +183,7 @@ public class TransformationOperation implements IWorkspaceRunnable {
 					for (EObject obj : extent.getContents()) {
 						IStatus status = BasicDiagnostic.toIStatus(Diagnostician.INSTANCE.validate(obj));
 						if(!(status.isOK() || status.getSeverity() ==  IStatus.WARNING)) {
+							storeError(obj.eResource());
 							System.err.println("Validation failed for parameter model #"+i+" in "+uri.toString());
 							throw new CoreException(status);
 						}
@@ -186,5 +197,42 @@ public class TransformationOperation implements IWorkspaceRunnable {
 			monitor.done();
 		}
 	}
-	
+
+	private void storeError(Resource problematicResource) {
+
+		IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject("UppaalAdapter_ERROR");
+		try {
+			if (!project.exists()) {
+				project.create(new NullProgressMonitor());
+			}
+			if (!project.isOpen()) {
+				project.open(new NullProgressMonitor());
+			}
+		} catch (CoreException e) {
+			e.printStackTrace();
+		}
+		IPath targetPath = project.getFullPath();
+		
+		{
+			URI uri = URI.createPlatformResourceURI(targetPath.append("UppaalAdapter_ERROR")
+					.addFileExtension("muml").toPortableString(), true);
+			
+			
+			ResourceSet resourceSet = new ResourceSetImpl();
+			
+			Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
+			Map<String, Object> m = reg.getExtensionToFactoryMap();
+			m.put("muml", new XMIResourceFactoryImpl());
+
+			// Create a resource
+			Resource resource = resourceSet.createResource(uri);
+			resource.getContents().addAll(problematicResource.getContents());
+			try {
+				resource.save(Collections.EMPTY_MAP);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
+		}
+	}	
 }
