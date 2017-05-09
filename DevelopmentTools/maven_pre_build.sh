@@ -21,5 +21,6 @@ done
 
 find $PWD -name "feature.xml" |while read fname
 do
+	echo $fname
     java -cp . PropertiesCheck $fname
 done
