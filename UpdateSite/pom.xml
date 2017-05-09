@@ -152,6 +152,11 @@
 			<url>${repobase}/PlatformSpecificModeling-Maven/${repopath}org.muml.psm.repository/target/repository</url>
 		</repository>
 		<repository>
+			<id>ELOQUENT</id>
+			<layout>p2</layout>
+			<url>${repobase}/ELOQUENT-Maven/${repopath}org.muml.eloquent.repository/target/repository</url>
+		</repository>
+		<repository>
 			<id>ExternalDependencies</id>
 			<layout>p2</layout>
 			<url>${repobase}/ExternalDependencies-Maven/${repopath}org.muml.external.repository/target/repository</url>

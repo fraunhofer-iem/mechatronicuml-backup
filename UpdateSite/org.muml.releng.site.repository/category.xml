@@ -1,196 +1,195 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-	<category-def name="org.muml.releng.site.repository.muml" label="MechatronicUML Features"/>
-  	<feature url="features/org.muml.pim.feature_1.0.0.qualifier.jar" id="org.muml.pim.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.muml"/> 
+   <feature url="features/org.muml.pim.feature_1.0.0.qualifier.jar" id="org.muml.pim.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.muml"/>
    </feature>
-	<feature url="features/org.muml.core.feature_1.0.0.qualifier.jar" id="org.muml.core.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.muml"/> 
+   <feature url="features/org.muml.core.feature_1.0.0.qualifier.jar" id="org.muml.core.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.muml"/>
    </feature>
-	<feature url="features/org.muml.verification.core.feature_1.0.0.qualifier.jar" id="org.muml.verification.core.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.muml"/> 
-   </feature>	
-	<feature url="features/org.muml.uppaal.adapter.feature_1.0.0.qualifier.jar" id="org.muml.uppaal.adapter.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.muml"/> 
+   <feature url="features/org.muml.verification.core.feature_1.0.0.qualifier.jar" id="org.muml.verification.core.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.muml"/>
    </feature>
-	<feature url="features/org.muml.modelica.adapter_1.0.0.qualifier.jar" id="org.muml.modelica.adapter.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.muml"/> 
-   </feature>	
-	<feature url="features/org.muml.codegen.c.feature_1.0.0.qualifier.jar" id="org.muml.codegen.c.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.muml"/> 
-   </feature>		
-	<feature url="features/org.muml.pm.feature_1.0.0.qualifier.jar" id="org.muml.pm.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.muml"/> 
-   </feature>		
-	<feature url="features/org.muml.psm.feature_1.0.0.qualifier.jar" id="org.muml.psm.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.muml"/> 
-   </feature>	
-	<feature url="features/org.muml.reconfiguration.feature_1.0.0.qualifier.jar" id="org.muml.reconfiguration.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.muml"/> 
-   </feature>		
-	
-	<category-def name="org.muml.releng.site.repository.muml.sdks" label="MechatronicUML Feature SDKs"/>
-  	<feature url="features/org.muml.pim.feature.source_1.0.0.qualifier.jar" id="org.muml.pim.feature.source" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.muml.sdks"/> 
+   <feature url="features/org.muml.uppaal.adapter.feature_1.0.0.qualifier.jar" id="org.muml.uppaal.adapter.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.muml"/>
    </feature>
-	<feature url="features/org.muml.core.feature.source_1.0.0.qualifier.jar" id="org.muml.core.feature.source" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.muml.sdks"/> 
+   <feature url="features/org.muml.modelica.adapter_1.0.0.qualifier.jar" id="org.muml.modelica.adapter.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.muml"/>
    </feature>
-	<feature url="features/org.muml.verification.core.feature.source_1.0.0.qualifier.jar" id="org.muml.verification.core.feature.source" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.muml.sdks"/> 
-   </feature>	
-	<feature url="features/org.muml.uppaal.adapter.feature.source_1.0.0.qualifier.jar" id="org.muml.uppaal.adapter.feature.source" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.muml.sdks"/> 
+   <feature url="features/org.muml.codegen.c.feature_1.0.0.qualifier.jar" id="org.muml.codegen.c.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.muml"/>
    </feature>
-	<feature url="features/org.muml.modelica.adapter.feature.source_1.0.0.qualifier.jar" id="org.muml.modelica.adapter.feature.source" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.muml.sdks"/> 
-   </feature>	
-	<feature url="features/org.muml.codegen.c.feature.source_1.0.0.qualifier.jar" id="org.muml.codegen.c.feature.source" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.muml.sdks"/> 
-   </feature>		
-	<feature url="features/org.muml.pm.feature.source_1.0.0.qualifier.jar" id="org.muml.pm.feature.source" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.muml.sdks"/> 
-   </feature>		
-	<feature url="features/org.muml.psm.feature.source_1.0.0.qualifier.jar" id="org.muml.psm.feature.source" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.muml.sdks"/> 
-   </feature>	
-	<feature url="features/org.muml.reconfiguration.feature.source_1.0.0.qualifier.jar" id="org.muml.reconfiguration.feature.source" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.muml.sdks"/> 
-   </feature>		
-
-	
-	<category-def name="org.muml.releng.site.repository.examples" label="MechatronicUML Model Examples"/>
-  	<feature url="features/org.muml.example.blindovertaking.feature_1.0.0.qualifier.jar" id="org.muml.example.blindovertaking.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.examples"/> 
-   </feature>	
-  	<feature url="features/org.muml.example.coordinatingbebots.feature_1.0.0.qualifier.jar" id="org.muml.example.coordinatingbebots.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.examples"/> 
+   <feature url="features/org.muml.pm.feature_1.0.0.qualifier.jar" id="org.muml.pm.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.muml"/>
    </feature>
-  	<feature url="features/org.muml.example.mini.entryexit.feature_1.0.0.qualifier.jar" id="org.muml.example.mini.entryexit.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.examples"/> 
+   <feature url="features/org.muml.psm.feature_1.0.0.qualifier.jar" id="org.muml.psm.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.muml"/>
    </feature>
-  	<feature url="features/org.muml.example.mini.messages.feature_1.0.0.qualifier.jar" id="org.muml.example.mini.messages.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.examples"/> 
-   </feature>	
-  	<feature url="features/org.muml.example.mini.operations.feature_1.0.0.qualifier.jar" id="org.muml.example.mini.operations.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.examples"/> 
+   <feature url="features/org.muml.reconfiguration.feature_1.0.0.qualifier.jar" id="org.muml.reconfiguration.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.muml"/>
    </feature>
-  	<feature url="features/org.muml.example.mini.simplertsc.feature_1.0.0.qualifier.jar" id="org.muml.example.mini.simplertsc.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.examples"/> 
-   </feature>		
-  	<feature url="features/org.muml.example.mini.syncchannel.feature_1.0.0.qualifier.jar" id="org.muml.example.mini.syncchannel.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.examples"/> 
-   </feature>	
-  	<feature url="features/org.muml.example.railcab.feature_1.0.0.qualifier.jar" id="org.muml.example.railcab.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.examples"/> 
+   <feature url="features/org.muml.pim.feature.source_1.0.0.qualifier.jar" id="org.muml.pim.feature.source" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.muml.sdks"/>
    </feature>
-  	<feature url="features/org.muml.example.sectionentry.feature_1.0.0.qualifier.jar" id="org.muml.example.sectionentry.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.examples"/> 
+   <feature url="features/org.muml.core.feature.source_1.0.0.qualifier.jar" id="org.muml.core.feature.source" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.muml.sdks"/>
    </feature>
-  	<feature url="features/org.muml.example.brakebywire.feature_1.0.0.qualifier.jar" id="org.muml.example.brakebywire.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.examples"/> 
-   </feature>	
-  	<feature url="features/org.muml.example.arduinocarhwplatform.feature_1.0.0.qualifier.jar" id="org.muml.example.arduinocarhwplatform.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.examples"/> 
+   <feature url="features/org.muml.verification.core.feature.source_1.0.0.qualifier.jar" id="org.muml.verification.core.feature.source" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.muml.sdks"/>
    </feature>
-  	<feature url="features/org.muml.example.mini.syncselectorchannel.feature_1.0.0.qualifier.jar" id="org.muml.example.mini.syncselectorchannel.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.examples"/> 
-   </feature>	
-  	<feature url="features/org.muml.example.coordinationpatternlib.feature_1.0.0.qualifier.jar" id="org.muml.example.coordinationpatternlib.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.examples"/> 
+   <feature url="features/org.muml.uppaal.adapter.feature.source_1.0.0.qualifier.jar" id="org.muml.uppaal.adapter.feature.source" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.muml.sdks"/>
    </feature>
-  	<feature url="features/org.muml.example.rocketlauncher.feature_1.0.0.qualifier.jar" id="org.muml.example.rocketlauncher.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.examples"/> 
-   </feature>	
-  	<feature url="features/org.muml.example.cooperatingballplayingrobots.feature_1.0.0.qualifier.jar" id="org.muml.example.cooperatingballplayingrobots.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.examples"/> 
+   <feature url="features/org.muml.modelica.adapter.feature.source_1.0.0.qualifier.jar" id="org.muml.modelica.adapter.feature.source" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.muml.sdks"/>
    </feature>
-  	<feature url="features/org.muml.example.blinkingled.feature_1.0.0.qualifier.jar" id="org.muml.example.blinkingled.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.examples"/> 
-   </feature>		
-	
-	<category-def name="org.muml.releng.site.repository.utility" label="Utility Features"/>
-  	<feature url="features/org.muml.uppaal.feature_1.0.0.qualifier.jar" id="org.muml.uppaal.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.utility"/> 
-   </feature>		
-  	<feature url="features/org.muml.ape.ecore.feature_1.0.0.qualifier.jar" id="org.muml.ape.ecore.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.utility"/> 
+   <feature url="features/org.muml.codegen.c.feature.source_1.0.0.qualifier.jar" id="org.muml.codegen.c.feature.source" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.muml.sdks"/>
    </feature>
-  	<feature url="features/org.muml.ape.feature_1.0.0.qualifier.jar" id="org.muml.ape.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.utility"/> 
-   </feature>		
-  	<feature url="features/org.muml.ape.migrator.feature_1.0.0.qualifier.jar" id="org.muml.ape.migrator.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.utility"/> 
+   <feature url="features/org.muml.pm.feature.source_1.0.0.qualifier.jar" id="org.muml.pm.feature.source" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.muml.sdks"/>
    </feature>
-  	<feature url="features/org.muml.emm.feature_1.0.0.qualifier.jar" id="org.muml.emm.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.utility"/> 
-   </feature>		
-  	<feature url="features/org.muml.udbm.feature_1.0.0.qualifier.jar" id="org.muml.udbm.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.utility"/> 
-   </feature>		
-  	<feature url="features/org.muml.graphviz.feature_1.0.0.qualifier.jar" id="org.muml.graphviz.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.utility"/> 
+   <feature url="features/org.muml.psm.feature.source_1.0.0.qualifier.jar" id="org.muml.psm.feature.source" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.muml.sdks"/>
    </feature>
-  	<feature url="features/org.muml.implicitcopy.feature_1.0.0.qualifier.jar" id="org.muml.implicitcopy.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.utility"/> 
-   </feature>	
-	
-	<category-def name="org.muml.releng.site.repository.utility.sdks" label="Utility Feature SDKs"/>
-	 <feature url="features/org.muml.uppaal.feature.source_1.0.0.qualifier.jar" id="org.muml.uppaal.feature.source" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.utility.sdks"/> 
-   </feature>	
-  	<feature url="features/org.muml.ape.feature.source_1.0.0.qualifier.jar" id="org.muml.ape.feature.source" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.utility.sdks"/> 
-   </feature>		
+   <feature url="features/org.muml.reconfiguration.feature.source_1.0.0.qualifier.jar" id="org.muml.reconfiguration.feature.source" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.muml.sdks"/>
+   </feature>
+   <feature url="features/org.muml.example.blindovertaking.feature_1.0.0.qualifier.jar" id="org.muml.example.blindovertaking.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.examples"/>
+   </feature>
+   <feature url="features/org.muml.example.coordinatingbebots.feature_1.0.0.qualifier.jar" id="org.muml.example.coordinatingbebots.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.examples"/>
+   </feature>
+   <feature url="features/org.muml.example.mini.entryexit.feature_1.0.0.qualifier.jar" id="org.muml.example.mini.entryexit.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.examples"/>
+   </feature>
+   <feature url="features/org.muml.example.mini.messages.feature_1.0.0.qualifier.jar" id="org.muml.example.mini.messages.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.examples"/>
+   </feature>
+   <feature url="features/org.muml.example.mini.operations.feature_1.0.0.qualifier.jar" id="org.muml.example.mini.operations.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.examples"/>
+   </feature>
+   <feature url="features/org.muml.example.mini.simplertsc.feature_1.0.0.qualifier.jar" id="org.muml.example.mini.simplertsc.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.examples"/>
+   </feature>
+   <feature url="features/org.muml.example.mini.syncchannel.feature_1.0.0.qualifier.jar" id="org.muml.example.mini.syncchannel.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.examples"/>
+   </feature>
+   <feature url="features/org.muml.example.railcab.feature_1.0.0.qualifier.jar" id="org.muml.example.railcab.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.examples"/>
+   </feature>
+   <feature url="features/org.muml.example.sectionentry.feature_1.0.0.qualifier.jar" id="org.muml.example.sectionentry.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.examples"/>
+   </feature>
+   <feature url="features/org.muml.example.brakebywire.feature_1.0.0.qualifier.jar" id="org.muml.example.brakebywire.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.examples"/>
+   </feature>
+   <feature url="features/org.muml.example.arduinocarhwplatform.feature_1.0.0.qualifier.jar" id="org.muml.example.arduinocarhwplatform.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.examples"/>
+   </feature>
+   <feature url="features/org.muml.example.mini.syncselectorchannel.feature_1.0.0.qualifier.jar" id="org.muml.example.mini.syncselectorchannel.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.examples"/>
+   </feature>
+   <feature url="features/org.muml.example.coordinationpatternlib.feature_1.0.0.qualifier.jar" id="org.muml.example.coordinationpatternlib.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.examples"/>
+   </feature>
+   <feature url="features/org.muml.example.rocketlauncher.feature_1.0.0.qualifier.jar" id="org.muml.example.rocketlauncher.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.examples"/>
+   </feature>
+   <feature url="features/org.muml.example.cooperatingballplayingrobots.feature_1.0.0.qualifier.jar" id="org.muml.example.cooperatingballplayingrobots.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.examples"/>
+   </feature>
+   <feature url="features/org.muml.example.blinkingled.feature_1.0.0.qualifier.jar" id="org.muml.example.blinkingled.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.examples"/>
+   </feature>
+   <feature url="features/org.muml.uppaal.feature_1.0.0.qualifier.jar" id="org.muml.uppaal.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.utility"/>
+   </feature>
+   <feature url="features/org.muml.ape.ecore.feature_1.0.0.qualifier.jar" id="org.muml.ape.ecore.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.utility"/>
+   </feature>
+   <feature url="features/org.muml.ape.feature_1.0.0.qualifier.jar" id="org.muml.ape.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.utility"/>
+   </feature>
+   <feature url="features/org.muml.ape.migrator.feature_1.0.0.qualifier.jar" id="org.muml.ape.migrator.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.utility"/>
+   </feature>
+   <feature url="features/org.muml.emm.feature_1.0.0.qualifier.jar" id="org.muml.emm.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.utility"/>
+   </feature>
+   <feature url="features/org.muml.udbm.feature_1.0.0.qualifier.jar" id="org.muml.udbm.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.utility"/>
+   </feature>
+   <feature url="features/org.muml.graphviz.feature_1.0.0.qualifier.jar" id="org.muml.graphviz.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.utility"/>
+   </feature>
+   <feature url="features/org.muml.implicitcopy.feature_1.0.0.qualifier.jar" id="org.muml.implicitcopy.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.utility"/>
+   </feature>
+   <feature url="features/org.muml.uppaal.feature.source_1.0.0.qualifier.jar" id="org.muml.uppaal.feature.source" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.utility.sdks"/>
+   </feature>
+   <feature url="features/org.muml.ape.feature.source_1.0.0.qualifier.jar" id="org.muml.ape.feature.source" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.utility.sdks"/>
+   </feature>
    <feature url="features/org.muml.emm.feature.source_1.0.0.qualifier.jar" id="org.muml.emm.feature.source" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.utility.sdks"/> 
-   </feature>		
-  	<feature url="features/org.muml.udbm.feature.source_1.0.0.qualifier.jar" id="org.muml.udbm.feature.source" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.utility.sdks"/> 
-   </feature>	
-  	<feature url="features/org.muml.graphviz.feature.source_1.0.0.qualifier.jar" id="org.muml.graphviz.feature.source" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.utility.sdks"/> 
-   </feature>	
-  	<feature url="features/org.muml.implicitcopy.feature.source_1.0.0.qualifier.jar" id="org.muml.implicitcopy.feature.source" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.utility.sdks"/> 
-   </feature>		
-	
-	
-	<category-def name="org.muml.releng.site.repository.thirdparty" label="Third Party Dependencies"/>
-	 <feature url="features/org.muml.storydiagram.feature_1.0.0.qualifier.jar" id="org.muml.storydiagram.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.thirdparty"/> 
+      <category name="org.muml.releng.site.repository.utility.sdks"/>
    </feature>
-  	<feature url="features/org.muml.storydiagram.feature.source_1.0.0.qualifier.jar" id="org.muml.storydiagram.feature.source" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.thirdparty"/> 
-   </feature>	
-	 <feature url="features/org.muml.external.aopalliance.feature_1.0.0.qualifier.jar" id="org.muml.external.aopalliance.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.thirdparty"/> 
+   <feature url="features/org.muml.udbm.feature.source_1.0.0.qualifier.jar" id="org.muml.udbm.feature.source" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.utility.sdks"/>
    </feature>
-  	<feature url="features/org.muml.external.guava.feature_1.0.0.qualifier.jar" id="org.muml.external.guava.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.thirdparty"/> 
-   </feature>		
-  	<feature url="features/org.muml.external.guice.feature_1.0.0.qualifier.jar" id="org.muml.external.guice.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.thirdparty"/> 
-   </feature>	
-	 <feature url="features/org.muml.external.guice.multibindings.feature_1.0.0.qualifier.jar" id="org.muml.external.guice.multibindings.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.thirdparty"/> 
+   <feature url="features/org.muml.graphviz.feature.source_1.0.0.qualifier.jar" id="org.muml.graphviz.feature.source" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.utility.sdks"/>
    </feature>
-  	<feature url="features/org.muml.external.javax.inject.feature_1.0.0.qualifier.jar" id="org.muml.external.javax.inject.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.thirdparty"/> 
-   </feature>	
-	 <feature url="features/org.muml.external.opt4j.feature_1.0.0.qualifier.jar" id="org.muml.external.opt4j.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.thirdparty"/> 
-   </feature>	
-	 <feature url="features/org.muml.external.sat4j.core.feature_1.0.0.qualifier.jar" id="org.muml.external.sat4j.core.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.thirdparty"/> 
+   <feature url="features/org.muml.implicitcopy.feature.source_1.0.0.qualifier.jar" id="org.muml.implicitcopy.feature.source" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.utility.sdks"/>
    </feature>
-  	<feature url="features/org.muml.external.sat4j.pb.feature_1.0.0.qualifier.jar" id="org.muml.external.sat4j.pb.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.thirdparty"/> 
-   </feature>		
-	 <feature url="features/org.muml.external.owlapi.feature_1.0.0.qualifier.jar" id="org.muml.external.owlapi.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.thirdparty"/> 
+   <feature url="features/org.muml.storydiagram.feature_1.0.0.qualifier.jar" id="org.muml.storydiagram.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.thirdparty"/>
    </feature>
-  	<feature url="features/org.muml.external.unitontology.feature_1.0.0.qualifier.jar" id="org.muml.external.unitontology.feature" version="1.0.0.qualifier">
-      <category name="org.muml.releng.site.repository.thirdparty"/> 
-   </feature>	
+   <feature url="features/org.muml.storydiagram.feature.source_1.0.0.qualifier.jar" id="org.muml.storydiagram.feature.source" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.thirdparty"/>
+   </feature>
+   <feature url="features/org.muml.external.aopalliance.feature_1.0.0.qualifier.jar" id="org.muml.external.aopalliance.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.thirdparty"/>
+   </feature>
+   <feature url="features/org.muml.external.guava.feature_1.0.0.qualifier.jar" id="org.muml.external.guava.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.thirdparty"/>
+   </feature>
+   <feature url="features/org.muml.external.guice.feature_1.0.0.qualifier.jar" id="org.muml.external.guice.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.thirdparty"/>
+   </feature>
+   <feature url="features/org.muml.external.guice.multibindings.feature_1.0.0.qualifier.jar" id="org.muml.external.guice.multibindings.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.thirdparty"/>
+   </feature>
+   <feature url="features/org.muml.external.javax.inject.feature_1.0.0.qualifier.jar" id="org.muml.external.javax.inject.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.thirdparty"/>
+   </feature>
+   <feature url="features/org.muml.external.opt4j.feature_1.0.0.qualifier.jar" id="org.muml.external.opt4j.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.thirdparty"/>
+   </feature>
+   <feature url="features/org.muml.external.sat4j.core.feature_1.0.0.qualifier.jar" id="org.muml.external.sat4j.core.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.thirdparty"/>
+   </feature>
+   <feature url="features/org.muml.external.sat4j.pb.feature_1.0.0.qualifier.jar" id="org.muml.external.sat4j.pb.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.thirdparty"/>
+   </feature>
+   <feature url="features/org.muml.external.owlapi.feature_1.0.0.qualifier.jar" id="org.muml.external.owlapi.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.thirdparty"/>
+   </feature>
+   <feature url="features/org.muml.external.unitontology.feature_1.0.0.qualifier.jar" id="org.muml.external.unitontology.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.thirdparty"/>
+   </feature>
+   <feature url="features/org.muml.eloquent.feature_1.0.0.qualifier.jar" id="org.muml.eloquent.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.utility"/>
+   </feature>
+   <feature url="features/org.muml.eloquent.sdk.feature_1.0.0.qualifier.jar" id="org.muml.eloquent.sdk.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.utility.sdks"/>
+   </feature>
+   <category-def name="org.muml.releng.site.repository.muml" label="MechatronicUML Features"/>
+   <category-def name="org.muml.releng.site.repository.muml.sdks" label="MechatronicUML Feature SDKs"/>
+   <category-def name="org.muml.releng.site.repository.examples" label="MechatronicUML Model Examples"/>
+   <category-def name="org.muml.releng.site.repository.utility" label="Utility Features"/>
+   <category-def name="org.muml.releng.site.repository.utility.sdks" label="Utility Feature SDKs"/>
+   <category-def name="org.muml.releng.site.repository.thirdparty" label="Third Party Dependencies"/>
 </site>
