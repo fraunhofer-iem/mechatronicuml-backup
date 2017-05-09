@@ -1,20 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<feature
-      id="org.muml.ape.sdk.feature"
-      label="APE SDK"
-      version="0.5.0.qualifier"
-      provider-name="%providerName">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.muml.ape.sdk.feature" label="APE SDK" provider-name="%providerName" version="0.5.0.qualifier">
 
    <description>
       %description
    </description>
 
-   <includes
-         id="org.muml.ape.feature"
-         version="0.0.0"/>
+   <copyright url="%copyrightURL">
+      %copyright
+   </copyright>
 
-   <includes
-         id="org.muml.ape.source.feature"
-         version="0.0.0"/>
+   <license url="%licenseURL">
+      %license
+   </license>	
+
+   <includes id="org.muml.ape.feature" version="0.0.0"/>
+
+   <includes id="org.muml.ape.source.feature" version="0.0.0"/>
 
 </feature>
