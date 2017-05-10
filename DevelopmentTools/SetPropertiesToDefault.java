@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.Properties;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -39,8 +40,6 @@ import org.xml.sax.SAXException;
  *
  */
 public class SetPropertiesToDefault {
-
-	
 	public static void main(String[] args) throws ParserConfigurationException, FileNotFoundException, TransformerException{
     	SetPropertiesToDefault propCheck = new SetPropertiesToDefault();
        
@@ -49,7 +48,7 @@ public class SetPropertiesToDefault {
     	if(filename.endsWith("feature.xml")){
     		propCheck.checkFeatureXML(filename);
     		//propCheck.checkFeatureProperties(filename.replace("feature.xml", "feature.properties"));
-    		//propCheck.checkBuildProperties(filename.replace("feature.xml", "build.properties"));
+    		propCheck.checkBuildProperties(filename.replace("feature.xml", "build.properties"));
     	}
     }
 	
@@ -122,27 +121,29 @@ public class SetPropertiesToDefault {
 	
 	/**
 	 * 
-	 * Checks the build.properties file whether it includes bin.includes, and whether
-	 * bin.includes contains feature.properties
+	 * Makes sure the build.properties file contains bin.includes and bin.includes contains feature.properties
 	 * @param filename The path where the build.properties file should be
 	 */
 	public void checkBuildProperties(String filename){
 		Properties properties = new Properties();
 		String currentBinIncludes="";
+		File file = new File(filename);
 		try {
-			properties.load(new InputStreamReader(new FileInputStream(new File(filename))));
-			currentBinIncludes = properties.getProperty("bin.includes");
-
+			properties.load(new InputStreamReader(new FileInputStream(file)));
 		} catch (IOException e) {
-			throw new IllegalArgumentException("Build.properties do not include 'bin.includes' for " + filename);
+			//No need to do anything, we'll just add bin.includes as a property and try to store the file
 		}
-		if(currentBinIncludes.isEmpty() || !currentBinIncludes.contains("feature.properties")){
-			throw new IllegalArgumentException("'bin.includes' does not contain feature.properties for " + filename);
+		if(!currentBinIncludes.isEmpty()){
+			currentBinIncludes+=", ";
+		}
+		properties.setProperty("bin.includes", currentBinIncludes+"feature.properties");
+		try {
+			properties.store(new OutputStreamWriter(new FileOutputStream(file)), "");
+		} catch (IOException e) {
+			throw new IllegalArgumentException("Could not write build.properties file: "+ filename);
 		}
 	}
 
-
-	
 	/**
 	 * Return the node for the last tag in the document
 	 * @param tags A hierarchical series of tags 
@@ -166,22 +167,6 @@ public class SetPropertiesToDefault {
 			node = nextNode;	
 		}
 		return node;
-	}
-
-	/**
-	 * Checks whether an attribute with name=attributeName exists for the node and whether it has 
-	 * a non-empty value.
-	 * @param node
-	 * @param attributeName
-	 * @param document
-	 * @return True if the node has an attribute with that name, else false 
-	 */
-	private boolean hasAttribute(Node node, String attributeName,  Document document) {
-		Node attribute = node.getAttributes().getNamedItem(attributeName);
-		if (attribute == null) {
-			return false;
-		}
-		return true;
 	}
 	
 	/**
@@ -218,6 +203,13 @@ public class SetPropertiesToDefault {
 		node.appendChild(document.createTextNode(text));
 	}
 	
+	/**
+	 * If the element does not exist yet as a child node of the
+	 * node in the file, it is created
+	 * @param node
+	 * @param elementName
+	 * @param document
+	 */
 	private void createChildNodeIfNecessary(Node node, String elementName, Document document){
 		NodeList elements = node.getChildNodes();
 		for (int i=0; i<elements.getLength(); i++){
