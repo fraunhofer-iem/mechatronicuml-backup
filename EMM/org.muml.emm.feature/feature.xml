@@ -1,9 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<feature
-      id="org.muml.emm.feature"
-      label="%featureName"
-      version="1.0.0.qualifier"
-      provider-name="%providerName">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.muml.emm.feature" label="%featureName" provider-name="%providerName" version="1.0.0.qualifier">
 
    <description>
       %description
@@ -23,74 +18,28 @@
       <import feature="org.eclipse.emf.compare"/>
    </requires>
 
-   <plugin
-         id="org.muml.emm"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.emm" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.emm.compare"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.emm.compare" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.emm.edit"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.emm.edit" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.emm.editor"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.emm.editor" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.emm.execute"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.emm.execute" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.emm.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.emm.ui" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.emm.release"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.emm.release" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.emm.release.edit"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.emm.release.edit" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.emm.release.editor"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.emm.release.editor" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.emm.migrator"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.emm.migrator" install-size="0" unpack="false" version="0.0.0"/>
 
-</feature>
+<license url="%licenseURL">
+      %license
+   </license><copyright url="%copyrightURL">
+      %copyright
+   </copyright></feature>
