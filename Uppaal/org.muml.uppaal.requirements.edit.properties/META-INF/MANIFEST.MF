@@ -14,4 +14,4 @@ Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.muml.uppaal.requirements.properties.metamodel, org.muml.uppaal.requirements.properties.constraint,
  org.muml.uppaal.requirements.properties.requirements.editor
-Bundle-Vendor: Fraunhofer, HNI
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

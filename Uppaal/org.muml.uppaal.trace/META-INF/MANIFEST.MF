@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-Vendor: Software Engineering Group,
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
  Heinz Nixdorf Institute,
  Paderborn University,
  and Fraunhofer Research Institution for Mechatronic Systems Design IEM,

@@ -24,4 +24,4 @@ Export-Package: org.muml.uppaal.properties.metamodel, org.muml.uppaal.properties
  org.muml.uppaal.properties.visuals.editor,
  org.muml.uppaal.properties.declarations.editor,
  org.muml.uppaal.properties.tabs
-Bundle-Vendor: Fraunhofer, HNI
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
