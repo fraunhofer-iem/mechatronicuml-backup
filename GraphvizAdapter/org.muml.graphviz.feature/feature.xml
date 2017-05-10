@@ -1,9 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<feature
-      id="org.muml.graphviz.feature"
-      label="%featureName"
-      version="1.0.0.qualifier"
-      provider-name="%providerName">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.muml.graphviz.feature" label="%featureName" provider-name="%providerName" version="1.0.0.qualifier">
 
    <description>
       %description
@@ -11,63 +6,27 @@
 
    <requires>
       <import feature="org.muml.core.feature"/>
-      <import feature="org.eclipse.xtext.sdk" version="2.10.0.v201605250459" match="compatible"/>
+      <import feature="org.eclipse.xtext.sdk" match="compatible" version="2.10.0.v201605250459"/>
    </requires>
 
-   <plugin
-         id="org.muml.graphviz"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.graphviz" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.graphviz.blackbox"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.graphviz.blackbox" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.graphviz.edit"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.graphviz.edit" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.graphviz.plain.xtext"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.graphviz.plain.xtext" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.graphviz.plain.xtext.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.graphviz.plain.xtext.ui" install-size="0" unpack="false" version="0.0.0"/>
 	
-<plugin
-         id="org.muml.graphviz.plain.xtext.tests"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+<plugin download-size="0" id="org.muml.graphviz.plain.xtext.tests" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.graphviz.dot.xtext"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.graphviz.dot.xtext" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.graphviz.dot.xtext.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.graphviz.dot.xtext.ui" install-size="0" unpack="false" version="0.0.0"/>
 
-</feature>
+<license url="%licenseURL">
+      %license
+   </license><copyright url="%copyrightURL">
+      %copyright
+   </copyright></feature>
