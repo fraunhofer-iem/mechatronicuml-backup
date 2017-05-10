@@ -120,10 +120,15 @@ public class SetPropertiesToDefault {
 			//No need to do anything, we'll just add bin.includes as a property and try to store the file
 		}
 		currentBinIncludes = properties.getProperty("bin.includes");
-		if(!currentBinIncludes.isEmpty()){
+		if(currentBinIncludes.isEmpty()){
+			currentBinIncludes="feature.xml, ";
+		}
+		else{
 			currentBinIncludes+=", ";
 		}
-		properties.setProperty("bin.includes", currentBinIncludes+"feature.properties");
+		if (!currentBinIncludes.contains("feature.properties")){
+			properties.setProperty("bin.includes", currentBinIncludes+"feature.properties");
+		}
 		try {
 			properties.store(new OutputStreamWriter(new FileOutputStream(file)), "");
 		} catch (IOException e) {
