@@ -5,7 +5,7 @@ Bundle-SymbolicName: org.muml.pim.actionlanguage.edit;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: org.muml.pim.actionlanguage.provider.ActionlanguageEditPlugin$Implementation
-Bundle-Vendor: Software Engineering Group,
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
  Heinz Nixdorf Institute,
  Paderborn University,
  and Fraunhofer Research Institution for Mechatronic Systems Design IEM,

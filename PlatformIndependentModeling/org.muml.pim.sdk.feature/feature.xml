@@ -19,4 +19,4 @@
       <import feature="org.muml.core.sdk.feature" version="0.5.0.qualifier"/>
    </requires>
 
-</feature>
+<license/></feature>

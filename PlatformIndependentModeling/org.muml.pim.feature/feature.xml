@@ -71,4 +71,6 @@
 
    <plugin download-size="0" id="org.muml.pim.types" install-size="0" unpack="false" version="0.0.0"/>
 
-</feature>
+<copyright url="%copyrightURL">
+      %copyright
+   </copyright></feature>
