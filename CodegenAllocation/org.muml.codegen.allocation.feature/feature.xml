@@ -1,9 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<feature
-      id="org.muml.codegen.allocation.feature"
-      label="Codegen Allocation"
-      version="1.0.0.qualifier"
-      provider-name="%providerName">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.muml.codegen.allocation.feature" label="Codegen Allocation" provider-name="%providerName" version="1.0.0.qualifier">
 
    <description>
       %description
@@ -29,18 +24,8 @@
       <import feature="org.muml.pm.software.feature" version="1.0.0.qualifier"/>
    </requires>
 
-   <plugin
-         id="org.muml.codegen.allocation.latex"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.codegen.allocation.latex" install-size="0" unpack="false" version="0.0.0"/>
 		 
-	<plugin
-         id="org.muml.codegen.allocation.latex.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+	<plugin download-size="0" id="org.muml.codegen.allocation.latex.ui" install-size="0" unpack="false" version="0.0.0"/>
 
 </feature>

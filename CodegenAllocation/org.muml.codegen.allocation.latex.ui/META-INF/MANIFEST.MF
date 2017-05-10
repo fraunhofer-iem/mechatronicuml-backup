@@ -26,4 +26,4 @@ Bundle-ActivationPolicy: lazy
 Export-Package: org.muml.codegen.allocation.latex.ui,
  org.muml.codegen.allocation.latex.ui.common
 Import-Package: org.muml.codegen.allocation.latex.main
-Bundle-Vendor: %providerName
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
