@@ -119,6 +119,7 @@ public class SetPropertiesToDefault {
 		} catch (IOException e) {
 			//No need to do anything, we'll just add bin.includes as a property and try to store the file
 		}
+		currentBinIncludes = properties.getProperty("bin.includes");
 		if(!currentBinIncludes.isEmpty()){
 			currentBinIncludes+=", ";
 		}
