@@ -1,44 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<feature
-      id="org.muml.cbs.buckminster"
-      label="Buckminster"
-      version="1.0.0.qualifier">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.muml.cbs.buckminster" label="Buckminster" provider-name="%providerName" version="1.0.0.qualifier">
 
    <description>
       [Enter Feature Description here.]
    </description>
 
-   <copyright url="http://www.example.com/copyright">
-      [Enter Copyright Description here.]
+   <copyright url="%copyrightURL">
+      %copyright
    </copyright>
 
-   <license url="http://www.example.com/license">
-      [Enter License Description here.]
+   <license url="%licenseURL">
+      %license
    </license>
 
-   <includes
-         id="org.muml.cbs.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.cbs.feature" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.cbs.dependencylanguage.tests"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.cbs.dependencylanguage.tests" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.cbs.dependencylanguage.xtext.tests"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.cbs.dependencylanguage.xtext.tests" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="build.execution"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="build.execution" install-size="0" unpack="false" version="0.0.0"/>
 
 </feature>
