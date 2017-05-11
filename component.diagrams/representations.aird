@@ -192,7 +192,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.StructuredComponent']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.StructuredComponent']"/>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_BzXAYDZWEeebUM4UnIaaQw" name="Invalid feature as name" width="10" height="10" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_BzXAYDZWEeebUM4UnIaaQw" name="component" width="10" height="10" resizeKind="NSEW">
         <target xmi:type="component:ComponentPart" href="ComponentPackage.xmi#//@components.2/@componentParts.0"/>
         <semanticElements xmi:type="component:ComponentPart" href="ComponentPackage.xmi#//@components.2/@componentParts.0"/>
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_EgNoMDZWEeebUM4UnIaaQw" name="port" width="2" height="2">
@@ -208,7 +208,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.StructuredComponent']/@subNodeMappings[name='org.muml.pim.component.AtomicComponentPart']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_GlpqsDZWEeebUM4UnIaaQw" name="Invalid feature as name">
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_GlpqsDZWEeebUM4UnIaaQw" name="component">
         <target xmi:type="component:ComponentPart" href="ComponentPackage.xmi#//@components.2/@componentParts.1"/>
         <semanticElements xmi:type="component:ComponentPart" href="ComponentPackage.xmi#//@components.2/@componentParts.1"/>
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_GlqRwTZWEeebUM4UnIaaQw" name="port" width="2" height="2">
