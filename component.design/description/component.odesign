@@ -1,31 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="component" version="11.1.1.201610211630">
   <ownedViewpoints name="component" modelFileExtension="component">
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="org.muml.pim.component.diagram" label="MechatronicUML Component Diagram" domainClass="component.Component" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="org.muml.pim.component.diagram" label="Component Diagram" domainClass="component.ComponentPackage" enablePopupBars="true">
       <metamodel href="../../component.model/model/component.ecore#/"/>
       <defaultLayer name="Default">
-        <nodeMappings name="org.muml.pim.component.Component" label="Component" domainClass="component.Component">
-          <borderedNodeMappings name="org.muml.pim.component.Port" label="Port" semanticCandidatesExpression="feature:ports" domainClass="component.Port">
-            <style xsi:type="style:SquareDescription" labelPosition="node" resizeKind="NSEW">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-            </style>
-          </borderedNodeMappings>
-          <style xsi:type="style:EllipseNodeDescription" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW">
+        <nodeMappings name="org.muml.pim.component.AtomicComponent" label="Atomic Component" domainClass="component.AtomicComponent" reusedBorderedNodeMappings="//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.StructuredComponent']/@borderedNodeMappings[name='org.muml.pim.component.Port']">
+          <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
         </nodeMappings>
+        <containerMappings name="org.muml.pim.component.StructuredComponent" label="Structured Component" domainClass="component.StructuredComponent">
+          <borderedNodeMappings name="org.muml.pim.component.Port" label="Port" semanticCandidatesExpression="feature:ports" domainClass="component.Port">
+            <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" showIcon="false" sizeComputationExpression="2">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </borderedNodeMappings>
+          <subNodeMappings name="org.muml.pim.component.AtomicComponentPart" label="Component Part" semanticCandidatesExpression="aql:self.componentParts->reject(p | p.type.oclIsKindOf(component::StructuredComponent))" domainClass="component.ComponentPart">
+            <borderedNodeMappings name="org.muml.pim.component.derivedPort" label="Port" semanticCandidatesExpression="aql:self.type.ports" domainClass="component.Port">
+              <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" showIcon="false" sizeComputationExpression="2">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </borderedNodeMappings>
+            <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subContainerMappings name="org.muml.pim.component.StructuredComponentPart" label="Component Part" semanticCandidatesExpression="aql:self.componentParts->select(p | p.type.oclIsKindOf(component::StructuredComponent))" domainClass="component.ComponentPart">
+            <borderedNodeMappings name="org.muml.pim.component.derivedPort" label="Port" semanticCandidatesExpression="aql:self.type.ports" domainClass="component.Port">
+              <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" showIcon="false" sizeComputationExpression="2">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </borderedNodeMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
         <toolSections name="org.muml.pim.component.createSection" label="Create">
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="org.muml.pim.component.createState" label="Create Component" nodeMappings="//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.component.Component']">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="org.muml.pim.component.createAtomicComponent" label="Create Atomic Component" nodeMappings="//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.component.AtomicComponent']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="component.State" referenceName="states">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="newstate"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="component.AtomicComponent" referenceName="components">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="component"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="org.muml.pim.component.createStructuredComponent" label="Create Structured Component" containerMappings="//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.StructuredComponent']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="component.StructuredComponent" referenceName="components">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="component"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="org.muml.pim.component.createPort" label="Create Port" nodeMappings="//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.StructuredComponent']/@borderedNodeMappings[name='org.muml.pim.component.Port']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="component.Port" referenceName="ports">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="port"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="org.muml.pim.component.createComponentPart" label="Create Component Part" containerMappings="//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.StructuredComponent']/@subContainerMappings[name='org.muml.pim.component.StructuredComponentPart']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="component.ComponentPart" referenceName="componentParts">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="port"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>

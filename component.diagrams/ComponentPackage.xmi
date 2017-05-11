@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component:ComponentPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:component="http://component" xsi:schemaLocation="http://component ../component.model/model/component.ecore" name="port">
+  <components xsi:type="component:StructuredComponent" name="component">
+    <ports name="port"/>
+    <ports name="port"/>
+  </components>
+  <components xsi:type="component:AtomicComponent" name="component">
+    <ports name="port"/>
+  </components>
+  <components xsi:type="component:StructuredComponent" name="component">
+    <componentParts type="//@components.1"/>
+    <componentParts type="//@components.0"/>
+  </components>
+</component:ComponentPackage>
