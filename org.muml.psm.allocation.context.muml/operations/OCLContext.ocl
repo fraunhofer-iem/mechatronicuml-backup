@@ -22,9 +22,15 @@
 			
 		def: getAllSWInstances() : Set(instance::ComponentInstance) =
 			self.componentInstanceConfiguration.getAllEmbeddedInstances()
+			
+		def: getAllSWInstancesOfSCI(instanceName:String) : Set(instance::ComponentInstance) =
+			self.componentInstanceConfiguration.getAllEmbeddedInstancesOfSCI(instanceName)	
 		
 		def: getSWInstance(instanceName : String) : instance::ComponentInstance =
 			self.getAllSWInstances()->any(name = instanceName)
+			
+		def: getSWInstanceOfSCI(instanceName : String, of : String) : instance::ComponentInstance =
+			self.getAllSWInstancesOfSCI(of)->any(name = instanceName)	
 		
 		def: getAllHWInstances() : Set(hwresourceinstance::ResourceInstance) =
 			self.getAllHWPlatformInstances()->collect(embeddedHPIC.resources)->asSet()
@@ -67,10 +73,20 @@
 			=
 			Set{Tuple{first = self.getSWInstance(instance1), second = self.getSWInstance(instance2)}}
 			
+		def: allocateCompontentsOfSCIToDifferentECUs(instance1 : String, instance2 : String, of:String)
+			: Set(Tuple(first : instance::ComponentInstance, second : instance::ComponentInstance))
+			=
+			Set{Tuple{first = self.getSWInstanceOfSCI(instance1,of), second = self.getSWInstanceOfSCI(instance2,of)}}	
+			
 		def: allocateToSameECUs(instance1 : String, instance2 : String)
 			: Set(Tuple(first : instance::ComponentInstance, second : instance::ComponentInstance))
 			=
 			self.allocateToDifferentECUs(instance1, instance2)
+			
+		def: allocateCompontentsOfSCIToSameECU(instance1 : String, instance2 : String, of:String)
+			: Set(Tuple(first : instance::ComponentInstance, second : instance::ComponentInstance))
+			=
+			self.allocateCompontentsOfSCIToDifferentECUs(instance1, instance2,of)	
 			
 		def: allocateCommunicatingComponentsToConnectedECUs() : Set(Tuple(
 			c1 : instance::ComponentInstance,
@@ -248,6 +264,15 @@
 					c->asSet()
 				endif
 			)->asSet()
+			
+		def: getAllEmbeddedInstancesOfSCI(instanceName:String) : Set(instance::ComponentInstance) =
+			self.componentInstances->select(name=instanceName)->closure(c |
+				if c.oclIsKindOf(instance::StructuredComponentInstance) then
+					c->asSet()->union(c.oclAsType(instance::StructuredComponentInstance).embeddedCIC.componentInstances)
+				else
+					c->asSet()
+				endif
+			)->asSet()		
 			
 		def: getCICs() : Set(instance::ComponentInstanceConfiguration) =
 			self->asSet()->closure(
