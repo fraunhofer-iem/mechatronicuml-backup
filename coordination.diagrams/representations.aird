@@ -54,25 +54,18 @@
           <styles xmi:type="notation:ShapeStyle" xmi:id="_d5d28Tc8EeeTdKVyDTJvSA" fontName=".SF NS Text" fontHeight="12"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_d5d28jc8EeeTdKVyDTJvSA" x="1228" y="348" width="20" height="20"/>
         </children>
-        <children xmi:type="notation:Node" xmi:id="_ejIfADc8EeeTdKVyDTJvSA" type="2002" element="_ei_8IDc8EeeTdKVyDTJvSA">
-          <children xmi:type="notation:Node" xmi:id="_ejJGEDc8EeeTdKVyDTJvSA" type="5006"/>
-          <children xmi:type="notation:Node" xmi:id="_ejKUMDc8EeeTdKVyDTJvSA" type="7001">
-            <children xmi:type="notation:Node" xmi:id="_ejK7QDc8EeeTdKVyDTJvSA" type="3007" element="_ejC_cDc8EeeTdKVyDTJvSA">
-              <children xmi:type="notation:Node" xmi:id="_ejLiUDc8EeeTdKVyDTJvSA" type="5003">
-                <layoutConstraint xmi:type="notation:Location" xmi:id="_ejLiUTc8EeeTdKVyDTJvSA" y="5"/>
-              </children>
-              <children xmi:type="notation:Node" xmi:id="_ejLiUjc8EeeTdKVyDTJvSA" type="3003" element="_ejE0oDc8EeeTdKVyDTJvSA">
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_ejLiUzc8EeeTdKVyDTJvSA" fontName=".SF NS Text"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ejLiVDc8EeeTdKVyDTJvSA"/>
-              </children>
-              <styles xmi:type="notation:ShapeStyle" xmi:id="_ejK7QTc8EeeTdKVyDTJvSA" fontName=".SF NS Text" fontHeight="12"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ejK7Qjc8EeeTdKVyDTJvSA" x="31" y="30" width="117" height="62"/>
+        <children xmi:type="notation:Node" xmi:id="_ejIfADc8EeeTdKVyDTJvSA" type="2003" element="_YoxmIDdMEee_Dv8bdE5Mww">
+          <children xmi:type="notation:Node" xmi:id="_ejJGEDc8EeeTdKVyDTJvSA" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_ejKUMDc8EeeTdKVyDTJvSA" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_YqJfIDdMEee_Dv8bdE5Mww" type="3010" element="_YpbGYDdMEee_Dv8bdE5Mww">
+              <styles xmi:type="notation:FontStyle" xmi:id="_YqJfITdMEee_Dv8bdE5Mww" fontName="Adobe Helvetica" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_YqJfIjdMEee_Dv8bdE5Mww"/>
             </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_ejKUMTc8EeeTdKVyDTJvSA"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_ejKUMjc8EeeTdKVyDTJvSA"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_ejIfATc8EeeTdKVyDTJvSA" fontName=".SF NS Text" fontHeight="8" bold="true"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ejIfAjc8EeeTdKVyDTJvSA" x="868" y="323"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ejIfAjc8EeeTdKVyDTJvSA" x="865" y="345"/>
         </children>
         <styles xmi:type="notation:DiagramStyle" xmi:id="_dNBnsjc8EeeTdKVyDTJvSA"/>
         <edges xmi:type="notation:Edge" xmi:id="_dtpogDc8EeeTdKVyDTJvSA" type="4001" element="_dqOhEDc8EeeTdKVyDTJvSA" source="_dqQ9UDc8EeeTdKVyDTJvSA" target="_dNPDEDc8EeeTdKVyDTJvSA">
@@ -125,17 +118,17 @@
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_ejMwdjc8EeeTdKVyDTJvSA" type="4001" element="_ejGp0Dc8EeeTdKVyDTJvSA" source="_ejMJYDc8EeeTdKVyDTJvSA" target="_ejIfADc8EeeTdKVyDTJvSA">
           <children xmi:type="notation:Node" xmi:id="_ejMwejc8EeeTdKVyDTJvSA" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ejMwezc8EeeTdKVyDTJvSA" y="-10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ejMwezc8EeeTdKVyDTJvSA" y="-9"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_ejMwfDc8EeeTdKVyDTJvSA" type="6002">
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ejMwfTc8EeeTdKVyDTJvSA" y="10"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_ejMwfjc8EeeTdKVyDTJvSA" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ejMwfzc8EeeTdKVyDTJvSA" y="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ejMwfzc8EeeTdKVyDTJvSA" x="-4" y="11"/>
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_ejMwdzc8EeeTdKVyDTJvSA"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_ejMweDc8EeeTdKVyDTJvSA" fontName=".SF NS Text" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ejMweTc8EeeTdKVyDTJvSA" points="[-20, -8, -484, -92]$[-765, -273, -1229, -357]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ejMweTc8EeeTdKVyDTJvSA" points="[0, 0, 37, -71]$[-17, 31, 20, -40]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ejOloDc8EeeTdKVyDTJvSA" id="(0.5,0.5)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ejOloTc8EeeTdKVyDTJvSA" id="(0.5,0.5)"/>
         </edges>
@@ -191,30 +184,33 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@edgeMappings[name='org.muml.pim.coordination.Role%20Connector']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_ei_8IDc8EeeTdKVyDTJvSA" name="QoS Assumptions:" incomingEdges="_ejGp0Dc8EeeTdKVyDTJvSA">
-      <target xmi:type="coordination:ConnectorQualityOfServiceAssumptions" href="CoordinationSpecification.xmi#//@roleConnectors.0/@connectorQOSAssumptions"/>
-      <semanticElements xmi:type="coordination:ConnectorQualityOfServiceAssumptions" href="CoordinationSpecification.xmi#//@roleConnectors.0/@connectorQOSAssumptions"/>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_ejBKQDc8EeeTdKVyDTJvSA" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundColor="255,245,181" foregroundColor="252,233,79">
-        <labelFormat>bold</labelFormat>
-        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@containerMappings[name='ConnectorQualityOfServiceAssumptions']/@style"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@containerMappings[name='ConnectorQualityOfServiceAssumptions']"/>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_ejC_cDc8EeeTdKVyDTJvSA" name="Reliable: true&#xA;MaxDelay: 0ms&#xA;PreserveMsgOrder: false" width="3" height="3" resizeKind="NSEW">
-        <target xmi:type="coordination:ConnectorQualityOfServiceAssumptions" href="CoordinationSpecification.xmi#//@roleConnectors.0/@connectorQOSAssumptions"/>
-        <semanticElements xmi:type="coordination:ConnectorQualityOfServiceAssumptions" href="CoordinationSpecification.xmi#//@roleConnectors.0/@connectorQOSAssumptions"/>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_ejE0oDc8EeeTdKVyDTJvSA" labelSize="12" showIcon="false" labelPosition="node" color="255,245,181">
-          <description xmi:type="style:SquareDescription" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@containerMappings[name='ConnectorQualityOfServiceAssumptions']/@subNodeMappings[name='ConnectorQualityOfServiceAssumptions']/@style"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@containerMappings[name='ConnectorQualityOfServiceAssumptions']/@subNodeMappings[name='ConnectorQualityOfServiceAssumptions']"/>
-      </ownedDiagramElements>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_ejGp0Dc8EeeTdKVyDTJvSA" sourceNode="_ei6ckDc8EeeTdKVyDTJvSA" targetNode="_ei_8IDc8EeeTdKVyDTJvSA">
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_ejGp0Dc8EeeTdKVyDTJvSA" sourceNode="_ei6ckDc8EeeTdKVyDTJvSA" targetNode="_YoxmIDdMEee_Dv8bdE5Mww">
       <target xmi:type="coordination:RoleConnector" href="CoordinationSpecification.xmi#//@roleConnectors.0"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_ejGp0Tc8EeeTdKVyDTJvSA" lineStyle="dot" targetArrow="NoDecoration" size="0">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@edgeMappings[name='org.muml.pim.coordination.AssumptionsEdge']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_ejGp0jc8EeeTdKVyDTJvSA"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@edgeMappings[name='org.muml.pim.coordination.AssumptionsEdge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_YoxmIDdMEee_Dv8bdE5Mww" name="QoS Assumptions:" incomingEdges="_ejGp0Dc8EeeTdKVyDTJvSA">
+      <target xmi:type="coordination:ConnectorQualityOfServiceAssumptions" href="CoordinationSpecification.xmi#//@roleConnectors.0/@connectorQOSAssumptions"/>
+      <semanticElements xmi:type="coordination:ConnectorQualityOfServiceAssumptions" href="CoordinationSpecification.xmi#//@roleConnectors.0/@connectorQOSAssumptions"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_Yo9zYDdMEee_Dv8bdE5Mww" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundColor="255,245,181" foregroundColor="252,233,79">
+        <labelFormat>bold</labelFormat>
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@containerMappings[name='ConnectorQualityOfServiceAssumptions']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@containerMappings[name='ConnectorQualityOfServiceAssumptions']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_YpbGYDdMEee_Dv8bdE5Mww" name="Reliable: true&#xA;MaxDelay: 0ms&#xA;PreserveMsgOrder: false">
+        <target xmi:type="coordination:ConnectorQualityOfServiceAssumptions" href="CoordinationSpecification.xmi#//@roleConnectors.0/@connectorQOSAssumptions"/>
+        <semanticElements xmi:type="coordination:ConnectorQualityOfServiceAssumptions" href="CoordinationSpecification.xmi#//@roleConnectors.0/@connectorQOSAssumptions"/>
+        <ownedStyle xmi:type="diagram:Square" xmi:id="_YpcUgDdMEee_Dv8bdE5Mww" labelSize="12" showIcon="false" labelPosition="node" color="255,245,181">
+          <description xmi:type="style:SquareDescription" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@containerMappings[name='ConnectorQualityOfServiceAssumptions']/@subNodeMappings[name='ConnectorQualityOfServiceAssumptions']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@containerMappings[name='ConnectorQualityOfServiceAssumptions']/@subNodeMappings[name='ConnectorQualityOfServiceAssumptions']"/>
+      </ownedElements>
     </ownedDiagramElements>
     <description xmi:type="description_1:DiagramDescription" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']"/>
     <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_dML6NDc8EeeTdKVyDTJvSA"/>
