@@ -4,6 +4,7 @@
     <semanticResources>platform:/resource/component.model/model/component.ecore</semanticResources>
     <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
     <semanticResources>ComponentPackage.xmi</semanticResources>
+    <semanticResources>platform:/resource/component.model/model/instance.ecore</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_4TUcMDSiEeeD94cwctLTsg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_fUZ1sDZREeebUM4UnIaaQw" name="new Component Diagram" representation="_fUcR8DZREeebUM4UnIaaQw">
