@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<realtimestatechart:Realtimestatechart
-    xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:realtimestatechart="http://rtsc"
-    xsi:schemaLocation="http://rtsc ../realtimestatechart.model/model/realtimestatechart.ecore"
-    name="test"/>
+<realtimestatechart:Realtimestatechart xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:realtimestatechart="http://rtsc" xsi:schemaLocation="http://rtsc ../realtimestatechart.model/model/realtimestatechart.ecore" name="test">
+  <transitions/>
+  <states name="newstate">
+    <subStatecharts name="substatechart">
+      <states name="newstate"/>
+    </subStatecharts>
+    <subStatecharts name="substatechart"/>
+  </states>
+  <states name="newstate"/>
+</realtimestatechart:Realtimestatechart>
