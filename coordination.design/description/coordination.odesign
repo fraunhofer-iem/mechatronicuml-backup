@@ -44,7 +44,7 @@
         </edgeMappings>
         <containerMappings name="ConnectorQualityOfServiceAssumptions" label="QOS Assumptions" domainClass="ConnectorQualityOfServiceAssumptions">
           <subNodeMappings name="ConnectorQualityOfServiceAssumptions" label="Reliable" semanticCandidatesExpression="aql:self" domainClass="ConnectorQualityOfServiceAssumptions">
-            <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:'Reliable: '.concat((not self.messageLossPossible).toString()).concat('\nMaxDelay: 0ms').concat('\nPreserveMsgOrder: '.concat(self.preserveMessageOrder.toString())" labelPosition="node" resizeKind="NSEW">
+            <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:'Reliable: '.concat((not self.messageLossPossible).toString()).concat('\nMaxDelay: 0ms').concat('\nPreserveMsgOrder: ').concat(self.preserveMessageOrder.toString())" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
