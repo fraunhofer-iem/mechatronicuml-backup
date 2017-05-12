@@ -18,101 +18,136 @@
     </ownedAnnotationEntries>
     <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_gyT74DcGEeevmreGYDCamA" source="GMF_DIAGRAMS">
       <data xmi:type="notation:Diagram" xmi:id="_gyT74TcGEeevmreGYDCamA" type="Sirius" element="_gw-fIDcGEeevmreGYDCamA" measurementUnit="Pixel">
-        <children xmi:type="notation:Node" xmi:id="_mi5acDcGEeevmreGYDCamA" type="2002" element="_migY4DcGEeevmreGYDCamA">
-          <children xmi:type="notation:Node" xmi:id="_mjFnsDcGEeevmreGYDCamA" type="5006"/>
-          <children xmi:type="notation:Node" xmi:id="_mjHc4DcGEeevmreGYDCamA" type="7001">
-            <children xmi:type="notation:Node" xmi:id="_qV7nMDcGEeevmreGYDCamA" type="3008" element="_qV2usDcGEeevmreGYDCamA">
-              <children xmi:type="notation:Node" xmi:id="_qV8OQDcGEeevmreGYDCamA" type="5005"/>
-              <children xmi:type="notation:Node" xmi:id="_qV81UDcGEeevmreGYDCamA" type="7002">
-                <children xmi:type="notation:Node" xmi:id="_rcveQDcGEeevmreGYDCamA" type="3008" element="_rcp-sDcGEeevmreGYDCamA">
-                  <children xmi:type="notation:Node" xmi:id="_rcveQzcGEeevmreGYDCamA" type="5005"/>
-                  <children xmi:type="notation:Node" xmi:id="_rcveRDcGEeevmreGYDCamA" type="7002">
-                    <styles xmi:type="notation:SortingStyle" xmi:id="_rcveRTcGEeevmreGYDCamA"/>
-                    <styles xmi:type="notation:FilteringStyle" xmi:id="_rcveRjcGEeevmreGYDCamA"/>
-                  </children>
-                  <styles xmi:type="notation:ShapeStyle" xmi:id="_rcveQTcGEeevmreGYDCamA" fontName="Liberation Sans" fontHeight="8"/>
-                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rcveQjcGEeevmreGYDCamA" x="84" y="43" width="100" height="100"/>
-                </children>
-                <styles xmi:type="notation:SortingStyle" xmi:id="_qV81UTcGEeevmreGYDCamA"/>
-                <styles xmi:type="notation:FilteringStyle" xmi:id="_qV81UjcGEeevmreGYDCamA"/>
-                <styles xmi:type="notation:DrawerStyle" xmi:id="_qV9cYDcGEeevmreGYDCamA"/>
-              </children>
-              <styles xmi:type="notation:ShapeStyle" xmi:id="_qV7nMTcGEeevmreGYDCamA" fontName="Liberation Sans" fontHeight="8"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qV7nMjcGEeevmreGYDCamA" width="397" height="222"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_q8TqsDcGEeevmreGYDCamA" type="3008" element="_q8OyMDcGEeevmreGYDCamA">
-              <children xmi:type="notation:Node" xmi:id="_q8TqszcGEeevmreGYDCamA" type="5005"/>
-              <children xmi:type="notation:Node" xmi:id="_q8TqtDcGEeevmreGYDCamA" type="7002">
-                <styles xmi:type="notation:SortingStyle" xmi:id="_q8TqtTcGEeevmreGYDCamA"/>
-                <styles xmi:type="notation:FilteringStyle" xmi:id="_q8TqtjcGEeevmreGYDCamA"/>
-                <styles xmi:type="notation:DrawerStyle" xmi:id="_q8TqtzcGEeevmreGYDCamA"/>
-              </children>
-              <styles xmi:type="notation:ShapeStyle" xmi:id="_q8TqsTcGEeevmreGYDCamA" fontName="Liberation Sans" fontHeight="8"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_q8TqsjcGEeevmreGYDCamA" y="222" width="397" height="100"/>
-            </children>
-            <styles xmi:type="notation:SortingStyle" xmi:id="_mjHc4TcGEeevmreGYDCamA"/>
-            <styles xmi:type="notation:FilteringStyle" xmi:id="_mjHc4jcGEeevmreGYDCamA"/>
+        <children xmi:type="notation:Node" xmi:id="_cmG7ADcjEee3l_OgsO5uNg" type="2002" element="_cmD3sDcjEee3l_OgsO5uNg">
+          <children xmi:type="notation:Node" xmi:id="_cmHiEDcjEee3l_OgsO5uNg" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_cmHiETcjEee3l_OgsO5uNg" type="7001">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_cmHiEjcjEee3l_OgsO5uNg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_cmHiEzcjEee3l_OgsO5uNg"/>
           </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_mi5acTcGEeevmreGYDCamA" fontName="Liberation Sans" fontHeight="8"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mi5acjcGEeevmreGYDCamA" x="690" y="195"/>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_cmG7ATcjEee3l_OgsO5uNg" fontName=".SF NS Text" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cmG7AjcjEee3l_OgsO5uNg" x="20" y="100" width="221" height="217"/>
         </children>
-        <children xmi:type="notation:Node" xmi:id="_vZoxoDcGEeevmreGYDCamA" type="2002" element="_vZjSEDcGEeevmreGYDCamA">
-          <children xmi:type="notation:Node" xmi:id="_vZpYsDcGEeevmreGYDCamA" type="5006"/>
-          <children xmi:type="notation:Node" xmi:id="_vZpYsTcGEeevmreGYDCamA" type="7001">
-            <styles xmi:type="notation:SortingStyle" xmi:id="_vZpYsjcGEeevmreGYDCamA"/>
-            <styles xmi:type="notation:FilteringStyle" xmi:id="_vZpYszcGEeevmreGYDCamA"/>
+        <children xmi:type="notation:Node" xmi:id="_czTCcDcjEee3l_OgsO5uNg" type="2002" element="_czP_IDcjEee3l_OgsO5uNg">
+          <children xmi:type="notation:Node" xmi:id="_czTCczcjEee3l_OgsO5uNg" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_czTCdDcjEee3l_OgsO5uNg" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_vJxqgDcjEee3l_OgsO5uNg" type="3008" element="_vJunMDcjEee3l_OgsO5uNg">
+              <children xmi:type="notation:Node" xmi:id="_vJyRkDcjEee3l_OgsO5uNg" type="5005"/>
+              <children xmi:type="notation:Node" xmi:id="_vJyRkTcjEee3l_OgsO5uNg" type="7002">
+                <children xmi:type="notation:Node" xmi:id="_vf_LEDcjEee3l_OgsO5uNg" type="3008" element="_vf7gsDcjEee3l_OgsO5uNg">
+                  <children xmi:type="notation:Node" xmi:id="_vf_LEzcjEee3l_OgsO5uNg" type="5005"/>
+                  <children xmi:type="notation:Node" xmi:id="_vf_LFDcjEee3l_OgsO5uNg" type="7002">
+                    <styles xmi:type="notation:SortingStyle" xmi:id="_vf_LFTcjEee3l_OgsO5uNg"/>
+                    <styles xmi:type="notation:FilteringStyle" xmi:id="_vf_LFjcjEee3l_OgsO5uNg"/>
+                  </children>
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_vf_LETcjEee3l_OgsO5uNg" fontName=".SF NS Text" fontHeight="8"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vf_LEjcjEee3l_OgsO5uNg" x="62" y="29" width="100" height="100"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_vJyRkjcjEee3l_OgsO5uNg"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_vJyRkzcjEee3l_OgsO5uNg"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_vJyRlDcjEee3l_OgsO5uNg"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_vJxqgTcjEee3l_OgsO5uNg" fontName=".SF NS Text" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vJxqgjcjEee3l_OgsO5uNg" width="285" height="161"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_czTCdTcjEee3l_OgsO5uNg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_czTCdjcjEee3l_OgsO5uNg"/>
           </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_vZoxoTcGEeevmreGYDCamA" fontName="Liberation Sans" fontHeight="8"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vZoxojcGEeevmreGYDCamA" x="1305" y="85" width="206" height="166"/>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_czTCcTcjEee3l_OgsO5uNg" fontName=".SF NS Text" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_czTCcjcjEee3l_OgsO5uNg" x="468" y="160"/>
         </children>
         <styles xmi:type="notation:DiagramStyle" xmi:id="_gyT74jcGEeevmreGYDCamA"/>
+        <edges xmi:type="notation:Edge" xmi:id="_t3-rcDcjEee3l_OgsO5uNg" type="4001" element="_t3zFQDcjEee3l_OgsO5uNg" source="_cmG7ADcjEee3l_OgsO5uNg" target="_czTCcDcjEee3l_OgsO5uNg">
+          <children xmi:type="notation:Node" xmi:id="_t3_5kDcjEee3l_OgsO5uNg" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_t3_5kTcjEee3l_OgsO5uNg" x="-5" y="-9"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_t4AgoDcjEee3l_OgsO5uNg" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_t4AgoTcjEee3l_OgsO5uNg" x="3" y="8"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_t4AgojcjEee3l_OgsO5uNg" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_t4AgozcjEee3l_OgsO5uNg" x="5" y="9"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_t3-rcTcjEee3l_OgsO5uNg"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_t3-rcjcjEee3l_OgsO5uNg" fontName=".SF NS Text" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_t3-rczcjEee3l_OgsO5uNg" points="[0, 0, -229, -84]$[229, 84, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_t4BuwDcjEee3l_OgsO5uNg" id="(1.0,0.05581395348837209)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_t4BuwTcjEee3l_OgsO5uNg" id="(0.0,0.19672131147540983)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_v-P0YDcjEee3l_OgsO5uNg" type="4001" element="_v-MKADcjEee3l_OgsO5uNg" source="_vf_LEDcjEee3l_OgsO5uNg" target="_cmG7ADcjEee3l_OgsO5uNg">
+          <children xmi:type="notation:Node" xmi:id="_v-P0ZDcjEee3l_OgsO5uNg" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_v-P0ZTcjEee3l_OgsO5uNg" x="2" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_v-P0ZjcjEee3l_OgsO5uNg" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_v-P0ZzcjEee3l_OgsO5uNg" x="1" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_v-P0aDcjEee3l_OgsO5uNg" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_v-P0aTcjEee3l_OgsO5uNg" y="11"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_v-P0YTcjEee3l_OgsO5uNg"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_v-P0YjcjEee3l_OgsO5uNg" fontName=".SF NS Text" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_v-P0YzcjEee3l_OgsO5uNg" points="[0, 0, 297, 80]$[-297, -80, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_v-P0ajcjEee3l_OgsO5uNg" id="(0.0,0.4489795918367347)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_v-P0azcjEee3l_OgsO5uNg" id="(1.0,0.37209302325581395)"/>
+        </edges>
       </data>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_migY4DcGEeevmreGYDCamA" name="newstate" width="10" height="10" childrenPresentation="VerticalStack">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_cmD3sDcjEee3l_OgsO5uNg" name="newstate" outgoingEdges="_t3zFQDcjEee3l_OgsO5uNg" incomingEdges="_v-MKADcjEee3l_OgsO5uNg" width="10" height="10" childrenPresentation="VerticalStack">
       <target xmi:type="realtimestatechart:State" href="Realtimestatechart.xmi#//@states.0"/>
       <semanticElements xmi:type="realtimestatechart:State" href="Realtimestatechart.xmi#//@states.0"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_mintoDcGEeevmreGYDCamA" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,255,255">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_cmD3sTcjEee3l_OgsO5uNg" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,255,255">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State']"/>
-      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_qV2usDcGEeevmreGYDCamA" name="substatechart" width="10" height="10">
-        <target xmi:type="realtimestatechart:Realtimestatechart" href="Realtimestatechart.xmi#//@states.0/@subStatecharts.0"/>
-        <semanticElements xmi:type="realtimestatechart:Realtimestatechart" href="Realtimestatechart.xmi#//@states.0/@subStatecharts.0"/>
-        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_qV2usTcGEeevmreGYDCamA" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,255,255">
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_czP_IDcjEee3l_OgsO5uNg" name="newstate" incomingEdges="_t3zFQDcjEee3l_OgsO5uNg" width="10" height="10" childrenPresentation="VerticalStack">
+      <target xmi:type="realtimestatechart:State" href="Realtimestatechart.xmi#//@states.1"/>
+      <semanticElements xmi:type="realtimestatechart:State" href="Realtimestatechart.xmi#//@states.1"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_czQmMDcjEee3l_OgsO5uNg" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,255,255">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State']"/>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_vJunMDcjEee3l_OgsO5uNg" name="substatechart" width="10" height="10">
+        <target xmi:type="realtimestatechart:Realtimestatechart" href="Realtimestatechart.xmi#//@states.1/@subStatecharts.0"/>
+        <semanticElements xmi:type="realtimestatechart:Realtimestatechart" href="Realtimestatechart.xmi#//@states.1/@subStatecharts.0"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_vJvOQDcjEee3l_OgsO5uNg" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,255,255">
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State']/@subContainerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State']/@subContainerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']"/>
-        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_rcp-sDcGEeevmreGYDCamA" name="newstate" width="10" height="10" childrenPresentation="VerticalStack">
-          <target xmi:type="realtimestatechart:State" href="Realtimestatechart.xmi#//@states.0/@subStatecharts.0/@states.0"/>
-          <semanticElements xmi:type="realtimestatechart:State" href="Realtimestatechart.xmi#//@states.0/@subStatecharts.0/@states.0"/>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_vf7gsDcjEee3l_OgsO5uNg" name="newstate" outgoingEdges="_v-MKADcjEee3l_OgsO5uNg" width="10" height="10" childrenPresentation="VerticalStack">
+          <target xmi:type="realtimestatechart:State" href="Realtimestatechart.xmi#//@states.1/@subStatecharts.0/@states.0"/>
+          <semanticElements xmi:type="realtimestatechart:State" href="Realtimestatechart.xmi#//@states.1/@subStatecharts.0/@states.0"/>
           <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
           <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
           <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_rcp-sTcGEeevmreGYDCamA" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,255,255">
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_vf7gsTcjEee3l_OgsO5uNg" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,255,255">
             <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State']/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State']"/>
         </ownedDiagramElements>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_q8OyMDcGEeevmreGYDCamA" name="substatechart" width="10" height="10">
-        <target xmi:type="realtimestatechart:Realtimestatechart" href="Realtimestatechart.xmi#//@states.0/@subStatecharts.1"/>
-        <semanticElements xmi:type="realtimestatechart:Realtimestatechart" href="Realtimestatechart.xmi#//@states.0/@subStatecharts.1"/>
-        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_q8OyMTcGEeevmreGYDCamA" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,255,255">
-          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State']/@subContainerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@style"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State']/@subContainerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']"/>
-      </ownedDiagramElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_vZjSEDcGEeevmreGYDCamA" name="newstate" width="10" height="10" childrenPresentation="VerticalStack">
-      <target xmi:type="realtimestatechart:State" href="Realtimestatechart.xmi#//@states.1"/>
-      <semanticElements xmi:type="realtimestatechart:State" href="Realtimestatechart.xmi#//@states.1"/>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_vZj5IDcGEeevmreGYDCamA" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,255,255">
-        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State']/@style"/>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_t3zFQDcjEee3l_OgsO5uNg" sourceNode="_cmD3sDcjEee3l_OgsO5uNg" targetNode="_czP_IDcjEee3l_OgsO5uNg">
+      <target xmi:type="realtimestatechart:Transition" href="Realtimestatechart.xmi#//@transitions.2"/>
+      <semanticElements xmi:type="realtimestatechart:Transition" href="Realtimestatechart.xmi#//@transitions.2"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_t32voDcjEee3l_OgsO5uNg" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@edgeMappings[name='org.muml.pim.realtimestatechart.Transition']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_t32voTcjEee3l_OgsO5uNg"/>
       </ownedStyle>
-      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State']"/>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@edgeMappings[name='org.muml.pim.realtimestatechart.Transition']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_v-MKADcjEee3l_OgsO5uNg" sourceNode="_vf7gsDcjEee3l_OgsO5uNg" targetNode="_cmD3sDcjEee3l_OgsO5uNg">
+      <target xmi:type="realtimestatechart:Transition" href="Realtimestatechart.xmi#//@states.1/@subStatecharts.0/@transitions.0"/>
+      <semanticElements xmi:type="realtimestatechart:Transition" href="Realtimestatechart.xmi#//@states.1/@subStatecharts.0/@transitions.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_v-MKATcjEee3l_OgsO5uNg" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@edgeMappings[name='org.muml.pim.realtimestatechart.Transition']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_v-MKAjcjEee3l_OgsO5uNg"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@edgeMappings[name='org.muml.pim.realtimestatechart.Transition']"/>
     </ownedDiagramElements>
     <description xmi:type="description_1:DiagramDescription" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']"/>
     <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_gw_tQjcGEeevmreGYDCamA"/>
