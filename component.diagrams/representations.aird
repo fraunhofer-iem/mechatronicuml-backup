@@ -18,222 +18,267 @@
     </ownedAnnotationEntries>
     <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_fWgHcDZREeebUM4UnIaaQw" source="GMF_DIAGRAMS">
       <data xmi:type="notation:Diagram" xmi:id="_fWgHcTZREeebUM4UnIaaQw" type="Sirius" element="_fUcR8DZREeebUM4UnIaaQw" measurementUnit="Pixel">
-        <children xmi:type="notation:Node" xmi:id="_nxTMsDZVEeebUM4UnIaaQw" type="2002" element="_nxNGEDZVEeebUM4UnIaaQw">
-          <children xmi:type="notation:Node" xmi:id="_nxTMszZVEeebUM4UnIaaQw" type="5006"/>
-          <children xmi:type="notation:Node" xmi:id="_nxTMtDZVEeebUM4UnIaaQw" type="7001">
-            <styles xmi:type="notation:SortingStyle" xmi:id="_nxTMtTZVEeebUM4UnIaaQw"/>
-            <styles xmi:type="notation:FilteringStyle" xmi:id="_nxTMtjZVEeebUM4UnIaaQw"/>
+        <children xmi:type="notation:Node" xmi:id="_LEZlUDcDEeeST5g7Zmf7yg" type="2002" element="_LDtBwDcDEeeST5g7Zmf7yg">
+          <children xmi:type="notation:Node" xmi:id="_LGVfADcDEeeST5g7Zmf7yg" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_LGWGEDcDEeeST5g7Zmf7yg" type="7001">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_LGWGETcDEeeST5g7Zmf7yg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_LGWGEjcDEeeST5g7Zmf7yg"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_FWizQDZWEeebUM4UnIaaQw" type="3012" element="_FWbegDZWEeebUM4UnIaaQw">
-            <children xmi:type="notation:Node" xmi:id="_FWizQzZWEeebUM4UnIaaQw" type="5010">
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_FWizRDZWEeebUM4UnIaaQw" x="21"/>
+          <children xmi:type="notation:Node" xmi:id="_LGczwDcDEeeST5g7Zmf7yg" type="3012" element="_LD2LsDcDEeeST5g7Zmf7yg">
+            <children xmi:type="notation:Node" xmi:id="_LGeo8DcDEeeST5g7Zmf7yg" type="5010">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_LGeo8TcDEeeST5g7Zmf7yg" x="21"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_FWizRTZWEeebUM4UnIaaQw" type="3003" element="_FWbegTZWEeebUM4UnIaaQw">
-              <styles xmi:type="notation:ShapeStyle" xmi:id="_FWizRjZWEeebUM4UnIaaQw" fontName="Liberation Sans"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FWizRzZWEeebUM4UnIaaQw"/>
+            <children xmi:type="notation:Node" xmi:id="_LGlWoDcDEeeST5g7Zmf7yg" type="3003" element="_LD2ywDcDEeeST5g7Zmf7yg">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_LGlWoTcDEeeST5g7Zmf7yg" fontName="Liberation Sans"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LGlWojcDEeeST5g7Zmf7yg"/>
             </children>
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_FWizQTZWEeebUM4UnIaaQw" fontName="Liberation Sans" fontHeight="8"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FWizQjZWEeebUM4UnIaaQw" x="65" y="60" width="20" height="20"/>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_LGda0DcDEeeST5g7Zmf7yg" fontName="Liberation Sans" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LGda0TcDEeeST5g7Zmf7yg" x="-12" width="20" height="20"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_Fiin4DZWEeebUM4UnIaaQw" type="3012" element="_FiaFADZWEeebUM4UnIaaQw">
-            <children xmi:type="notation:Node" xmi:id="_FijO8DZWEeebUM4UnIaaQw" type="5010">
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_FijO8TZWEeebUM4UnIaaQw" x="21"/>
+          <children xmi:type="notation:Node" xmi:id="_LGkIgDcDEeeST5g7Zmf7yg" type="3012" element="_LD3Z0DcDEeeST5g7Zmf7yg">
+            <children xmi:type="notation:Node" xmi:id="_LGkvkDcDEeeST5g7Zmf7yg" type="5010">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_LGkvkTcDEeeST5g7Zmf7yg" x="21"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_FijO8jZWEeebUM4UnIaaQw" type="3003" element="_FiasEDZWEeebUM4UnIaaQw">
-              <styles xmi:type="notation:ShapeStyle" xmi:id="_FijO8zZWEeebUM4UnIaaQw" fontName="Liberation Sans"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FijO9DZWEeebUM4UnIaaQw"/>
+            <children xmi:type="notation:Node" xmi:id="_LGl9sDcDEeeST5g7Zmf7yg" type="3003" element="_LD3Z0TcDEeeST5g7Zmf7yg">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_LGl9sTcDEeeST5g7Zmf7yg" fontName="Liberation Sans"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LGl9sjcDEeeST5g7Zmf7yg"/>
             </children>
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_Fiin4TZWEeebUM4UnIaaQw" fontName="Liberation Sans" fontHeight="8"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Fiin4jZWEeebUM4UnIaaQw" x="140" y="25" width="20" height="20"/>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_LGkIgTcDEeeST5g7Zmf7yg" fontName="Liberation Sans" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LGkIgjcDEeeST5g7Zmf7yg" x="-12" y="21" width="20" height="20"/>
           </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_nxTMsTZVEeebUM4UnIaaQw" fontName="Liberation Sans" fontHeight="8"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nxTMsjZVEeebUM4UnIaaQw" x="1540" y="245"/>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_LEZlUTcDEeeST5g7Zmf7yg" fontName="Liberation Sans" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LEZlUjcDEeeST5g7Zmf7yg"/>
         </children>
-        <children xmi:type="notation:Node" xmi:id="_AtF74DZWEeebUM4UnIaaQw" type="2001" element="_AtCRgDZWEeebUM4UnIaaQw">
-          <children xmi:type="notation:Node" xmi:id="_AtF74zZWEeebUM4UnIaaQw" type="5002">
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_AtF75DZWEeebUM4UnIaaQw" y="5"/>
+        <children xmi:type="notation:Node" xmi:id="_LGa-kDcDEeeST5g7Zmf7yg" type="2002" element="_LD09kDcDEeeST5g7Zmf7yg">
+          <children xmi:type="notation:Node" xmi:id="_LGbloDcDEeeST5g7Zmf7yg" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_LGbloTcDEeeST5g7Zmf7yg" type="7001">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_LGblojcDEeeST5g7Zmf7yg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_LGblozcDEeeST5g7Zmf7yg"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_AtF75TZWEeebUM4UnIaaQw" type="3003" element="_AtC4kDZWEeebUM4UnIaaQw">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_AtF75jZWEeebUM4UnIaaQw" fontName="Liberation Sans"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AtF75zZWEeebUM4UnIaaQw"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_DsPNkDZWEeebUM4UnIaaQw" type="3001" element="_DsJuADZWEeebUM4UnIaaQw">
-            <children xmi:type="notation:Node" xmi:id="_DsPNkzZWEeebUM4UnIaaQw" type="5001">
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_DsPNlDZWEeebUM4UnIaaQw" x="21"/>
+          <children xmi:type="notation:Node" xmi:id="_LGmkwDcDEeeST5g7Zmf7yg" type="3012" element="_LEE1MDcDEeeST5g7Zmf7yg">
+            <children xmi:type="notation:Node" xmi:id="_LGmkwzcDEeeST5g7Zmf7yg" type="5010">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_LGmkxDcDEeeST5g7Zmf7yg" x="21"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_DsPNlTZWEeebUM4UnIaaQw" type="3003" element="_DsKVEDZWEeebUM4UnIaaQw">
-              <styles xmi:type="notation:ShapeStyle" xmi:id="_DsP0oDZWEeebUM4UnIaaQw" fontName="Liberation Sans"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DsP0oTZWEeebUM4UnIaaQw"/>
+            <children xmi:type="notation:Node" xmi:id="_LGnL0DcDEeeST5g7Zmf7yg" type="3003" element="_LEE1MTcDEeeST5g7Zmf7yg">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_LGnL0TcDEeeST5g7Zmf7yg" fontName="Liberation Sans"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LGnL0jcDEeeST5g7Zmf7yg"/>
             </children>
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_DsPNkTZWEeebUM4UnIaaQw" fontName="Liberation Sans" fontHeight="8"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DsPNkjZWEeebUM4UnIaaQw" x="165" y="-12" width="20" height="20"/>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_LGmkwTcDEeeST5g7Zmf7yg" fontName="Liberation Sans" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LGmkwjcDEeeST5g7Zmf7yg" x="-12" width="20" height="20"/>
           </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_AtF74TZWEeebUM4UnIaaQw" fontName="Liberation Sans" fontHeight="8"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AtF74jZWEeebUM4UnIaaQw" x="95" y="95" width="306" height="236"/>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_LGa-kTcDEeeST5g7Zmf7yg" fontName="Liberation Sans" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LGa-kjcDEeeST5g7Zmf7yg" x="210"/>
         </children>
-        <children xmi:type="notation:Node" xmi:id="_A9LmUDZWEeebUM4UnIaaQw" type="2002" element="_A9IjADZWEeebUM4UnIaaQw">
-          <children xmi:type="notation:Node" xmi:id="_A9MNYDZWEeebUM4UnIaaQw" type="5006"/>
-          <children xmi:type="notation:Node" xmi:id="_A9MNYTZWEeebUM4UnIaaQw" type="7001">
-            <children xmi:type="notation:Node" xmi:id="_BzZcoDZWEeebUM4UnIaaQw" type="3007" element="_BzXAYDZWEeebUM4UnIaaQw">
-              <children xmi:type="notation:Node" xmi:id="_BzZcozZWEeebUM4UnIaaQw" type="5003">
-                <layoutConstraint xmi:type="notation:Location" xmi:id="_BzZcpDZWEeebUM4UnIaaQw" y="5"/>
+        <children xmi:type="notation:Node" xmi:id="_LGblpDcDEeeST5g7Zmf7yg" type="2002" element="_LD1koDcDEeeST5g7Zmf7yg">
+          <children xmi:type="notation:Node" xmi:id="_LGcMsDcDEeeST5g7Zmf7yg" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_LGcMsTcDEeeST5g7Zmf7yg" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_LGny4DcDEeeST5g7Zmf7yg" type="3008" element="_LEIfkDcDEeeST5g7Zmf7yg">
+              <children xmi:type="notation:Node" xmi:id="_LGoZ8DcDEeeST5g7Zmf7yg" type="5005"/>
+              <children xmi:type="notation:Node" xmi:id="_LGpBADcDEeeST5g7Zmf7yg" type="7002">
+                <styles xmi:type="notation:SortingStyle" xmi:id="_LGpBATcDEeeST5g7Zmf7yg"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_LGpBAjcDEeeST5g7Zmf7yg"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_BzZcpTZWEeebUM4UnIaaQw" type="3003" element="_BzYOgDZWEeebUM4UnIaaQw">
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_BzZcpjZWEeebUM4UnIaaQw" fontName="Liberation Sans"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BzZcpzZWEeebUM4UnIaaQw"/>
-              </children>
-              <children xmi:type="notation:Node" xmi:id="_EgO2UDZWEeebUM4UnIaaQw" type="3001" element="_EgNoMDZWEeebUM4UnIaaQw">
-                <children xmi:type="notation:Node" xmi:id="_EgO2UzZWEeebUM4UnIaaQw" type="5001">
-                  <layoutConstraint xmi:type="notation:Location" xmi:id="_EgO2VDZWEeebUM4UnIaaQw" x="21"/>
+              <children xmi:type="notation:Node" xmi:id="_LGq2MDcDEeeST5g7Zmf7yg" type="3012" element="_LEKUwDcDEeeST5g7Zmf7yg">
+                <children xmi:type="notation:Node" xmi:id="_LGq2MzcDEeeST5g7Zmf7yg" type="5010">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_LGq2NDcDEeeST5g7Zmf7yg" x="21"/>
                 </children>
-                <children xmi:type="notation:Node" xmi:id="_EgPdYDZWEeebUM4UnIaaQw" type="3003" element="_EgNoMTZWEeebUM4UnIaaQw">
-                  <styles xmi:type="notation:ShapeStyle" xmi:id="_EgPdYTZWEeebUM4UnIaaQw" fontName="Liberation Sans"/>
-                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EgPdYjZWEeebUM4UnIaaQw"/>
+                <children xmi:type="notation:Node" xmi:id="_LGrdQDcDEeeST5g7Zmf7yg" type="3003" element="_LEKUwTcDEeeST5g7Zmf7yg">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_LGrdQTcDEeeST5g7Zmf7yg" fontName="Liberation Sans"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LGrdQjcDEeeST5g7Zmf7yg"/>
                 </children>
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_EgO2UTZWEeebUM4UnIaaQw" fontName="Liberation Sans" fontHeight="8"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EgO2UjZWEeebUM4UnIaaQw" x="-12" width="20" height="20"/>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_LGq2MTcDEeeST5g7Zmf7yg" fontName="Liberation Sans" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LGq2MjcDEeeST5g7Zmf7yg" x="-12" width="20" height="20"/>
               </children>
-              <styles xmi:type="notation:ShapeStyle" xmi:id="_BzZcoTZWEeebUM4UnIaaQw" fontName="Liberation Sans" fontHeight="8"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BzZcojZWEeebUM4UnIaaQw" x="45" y="29" width="100" height="100"/>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_LGny4TcDEeeST5g7Zmf7yg" fontName="Liberation Sans" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LGny4jcDEeeST5g7Zmf7yg" x="30" y="74"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_GlsuADZWEeebUM4UnIaaQw" type="3008" element="_GlpqsDZWEeebUM4UnIaaQw">
-              <children xmi:type="notation:Node" xmi:id="_GltVEDZWEeebUM4UnIaaQw" type="5005"/>
-              <children xmi:type="notation:Node" xmi:id="_GltVETZWEeebUM4UnIaaQw" type="7002">
-                <styles xmi:type="notation:SortingStyle" xmi:id="_GltVEjZWEeebUM4UnIaaQw"/>
-                <styles xmi:type="notation:FilteringStyle" xmi:id="_GltVEzZWEeebUM4UnIaaQw"/>
+            <children xmi:type="notation:Node" xmi:id="_LGpoEDcDEeeST5g7Zmf7yg" type="3008" element="_LEJtsDcDEeeST5g7Zmf7yg">
+              <children xmi:type="notation:Node" xmi:id="_LGpoEzcDEeeST5g7Zmf7yg" type="5005"/>
+              <children xmi:type="notation:Node" xmi:id="_LGqPIDcDEeeST5g7Zmf7yg" type="7002">
+                <styles xmi:type="notation:SortingStyle" xmi:id="_LGqPITcDEeeST5g7Zmf7yg"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_LGqPIjcDEeeST5g7Zmf7yg"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_GltVFDZWEeebUM4UnIaaQw" type="3012" element="_GlqRwTZWEeebUM4UnIaaQw">
-                <children xmi:type="notation:Node" xmi:id="_GltVFzZWEeebUM4UnIaaQw" type="5010">
-                  <layoutConstraint xmi:type="notation:Location" xmi:id="_GltVGDZWEeebUM4UnIaaQw" x="21"/>
+              <children xmi:type="notation:Node" xmi:id="_LGsEUDcDEeeST5g7Zmf7yg" type="3012" element="_LELi4DcDEeeST5g7Zmf7yg">
+                <children xmi:type="notation:Node" xmi:id="_LGsEUzcDEeeST5g7Zmf7yg" type="5010">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_LGsEVDcDEeeST5g7Zmf7yg" x="21"/>
                 </children>
-                <children xmi:type="notation:Node" xmi:id="_Glt8JTZWEeebUM4UnIaaQw" type="3003" element="_GlqRwjZWEeebUM4UnIaaQw">
-                  <styles xmi:type="notation:ShapeStyle" xmi:id="_Glt8JjZWEeebUM4UnIaaQw" fontName="Liberation Sans"/>
-                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Glt8JzZWEeebUM4UnIaaQw"/>
+                <children xmi:type="notation:Node" xmi:id="_LGtScjcDEeeST5g7Zmf7yg" type="3003" element="_LELi4TcDEeeST5g7Zmf7yg">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_LGtSczcDEeeST5g7Zmf7yg" fontName="Liberation Sans"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LGtSdDcDEeeST5g7Zmf7yg"/>
                 </children>
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_GltVFTZWEeebUM4UnIaaQw" fontName="Liberation Sans" fontHeight="8"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GltVFjZWEeebUM4UnIaaQw" x="-12" width="20" height="20"/>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_LGsEUTcDEeeST5g7Zmf7yg" fontName="Liberation Sans" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LGsEUjcDEeeST5g7Zmf7yg" x="-12" width="20" height="20"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_Glt8IDZWEeebUM4UnIaaQw" type="3012" element="_Glq40DZWEeebUM4UnIaaQw">
-                <children xmi:type="notation:Node" xmi:id="_Glt8IzZWEeebUM4UnIaaQw" type="5010">
-                  <layoutConstraint xmi:type="notation:Location" xmi:id="_Glt8JDZWEeebUM4UnIaaQw" x="21"/>
+              <children xmi:type="notation:Node" xmi:id="_LGsrYDcDEeeST5g7Zmf7yg" type="3012" element="_LEMJ8DcDEeeST5g7Zmf7yg">
+                <children xmi:type="notation:Node" xmi:id="_LGtScDcDEeeST5g7Zmf7yg" type="5010">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_LGtScTcDEeeST5g7Zmf7yg" x="21"/>
                 </children>
-                <children xmi:type="notation:Node" xmi:id="_GlujMDZWEeebUM4UnIaaQw" type="3003" element="_Glq40TZWEeebUM4UnIaaQw">
-                  <styles xmi:type="notation:ShapeStyle" xmi:id="_GlujMTZWEeebUM4UnIaaQw" fontName="Liberation Sans"/>
-                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GlujMjZWEeebUM4UnIaaQw"/>
+                <children xmi:type="notation:Node" xmi:id="_LGt5gDcDEeeST5g7Zmf7yg" type="3003" element="_LEMJ8TcDEeeST5g7Zmf7yg">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_LGt5gTcDEeeST5g7Zmf7yg" fontName="Liberation Sans"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LGt5gjcDEeeST5g7Zmf7yg"/>
                 </children>
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_Glt8ITZWEeebUM4UnIaaQw" fontName="Liberation Sans" fontHeight="8"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Glt8IjZWEeebUM4UnIaaQw" x="-12" y="21" width="20" height="20"/>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_LGsrYTcDEeeST5g7Zmf7yg" fontName="Liberation Sans" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LGsrYjcDEeeST5g7Zmf7yg" x="-12" y="21" width="20" height="20"/>
               </children>
-              <styles xmi:type="notation:ShapeStyle" xmi:id="_GlsuATZWEeebUM4UnIaaQw" fontName="Liberation Sans" fontHeight="8"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GlsuAjZWEeebUM4UnIaaQw" x="335" y="99"/>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_LGpoETcDEeeST5g7Zmf7yg" fontName="Liberation Sans" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LGpoEjcDEeeST5g7Zmf7yg" x="253" y="74"/>
             </children>
-            <styles xmi:type="notation:SortingStyle" xmi:id="_A9MNYjZWEeebUM4UnIaaQw"/>
-            <styles xmi:type="notation:FilteringStyle" xmi:id="_A9MNYzZWEeebUM4UnIaaQw"/>
+            <children xmi:type="notation:Node" xmi:id="_NOihoDcDEeeST5g7Zmf7yg" type="3008" element="_NOSqADcDEeeST5g7Zmf7yg">
+              <children xmi:type="notation:Node" xmi:id="_NOihozcDEeeST5g7Zmf7yg" type="5005"/>
+              <children xmi:type="notation:Node" xmi:id="_NOihpDcDEeeST5g7Zmf7yg" type="7002">
+                <styles xmi:type="notation:SortingStyle" xmi:id="_NOihpTcDEeeST5g7Zmf7yg"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_NOihpjcDEeeST5g7Zmf7yg"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_PuOQIDcDEeeST5g7Zmf7yg" type="3012" element="_PuLM0DcDEeeST5g7Zmf7yg">
+                <children xmi:type="notation:Node" xmi:id="_PuOQIzcDEeeST5g7Zmf7yg" type="5010">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_PuOQJDcDEeeST5g7Zmf7yg" x="21"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_PuO3MDcDEeeST5g7Zmf7yg" type="3003" element="_PuLM0TcDEeeST5g7Zmf7yg">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_PuO3MTcDEeeST5g7Zmf7yg" fontName="Liberation Sans"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PuO3MjcDEeeST5g7Zmf7yg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_PuOQITcDEeeST5g7Zmf7yg" fontName="Liberation Sans" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PuOQIjcDEeeST5g7Zmf7yg" x="-12" width="20" height="20"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_NOihoTcDEeeST5g7Zmf7yg" fontName="Liberation Sans" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NOihojcDEeeST5g7Zmf7yg" x="510" y="119"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_LGcMsjcDEeeST5g7Zmf7yg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_LGcMszcDEeeST5g7Zmf7yg"/>
           </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_A9LmUTZWEeebUM4UnIaaQw" fontName="Liberation Sans" fontHeight="8"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_A9LmUjZWEeebUM4UnIaaQw" x="675" y="120" width="583" height="333"/>
+          <children xmi:type="notation:Node" xmi:id="_S4BSoDcDEeeST5g7Zmf7yg" type="3012" element="_S32TgDcDEeeST5g7Zmf7yg">
+            <children xmi:type="notation:Node" xmi:id="_S4BSozcDEeeST5g7Zmf7yg" type="5010">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_S4BSpDcDEeeST5g7Zmf7yg" x="21"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_S4B5sDcDEeeST5g7Zmf7yg" type="3003" element="_S326kDcDEeeST5g7Zmf7yg">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_S4B5sTcDEeeST5g7Zmf7yg" fontName="Liberation Sans"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_S4B5sjcDEeeST5g7Zmf7yg"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_S4BSoTcDEeeST5g7Zmf7yg" fontName="Liberation Sans" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_S4BSojcDEeeST5g7Zmf7yg" x="580" y="-12" width="20" height="20"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_LGblpTcDEeeST5g7Zmf7yg" fontName="Liberation Sans" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LGblpjcDEeeST5g7Zmf7yg" x="420" width="673" height="323"/>
         </children>
         <styles xmi:type="notation:DiagramStyle" xmi:id="_fWgHcjZREeebUM4UnIaaQw"/>
       </data>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_nxNGEDZVEeebUM4UnIaaQw" name="component">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_LDtBwDcDEeeST5g7Zmf7yg" name="component">
       <target xmi:type="component:StructuredComponent" href="ComponentPackage.xmi#//@components.0"/>
       <semanticElements xmi:type="component:StructuredComponent" href="ComponentPackage.xmi#//@components.0"/>
-      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_FWbegDZWEeebUM4UnIaaQw" name="port" width="2" height="2">
+      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_LD2LsDcDEeeST5g7Zmf7yg" name="port" width="2" height="2">
         <target xmi:type="component:Port" href="ComponentPackage.xmi#//@components.0/@ports.0"/>
         <semanticElements xmi:type="component:Port" href="ComponentPackage.xmi#//@components.0/@ports.0"/>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_FWbegTZWEeebUM4UnIaaQw" showIcon="false" borderSize="1" borderSizeComputationExpression="1" color="255,255,255">
-          <description xmi:type="style:SquareDescription" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.StructuredComponent']/@borderedNodeMappings[name='org.muml.pim.component.Port']/@style"/>
+        <ownedStyle xmi:type="diagram:Square" xmi:id="_LD2ywDcDEeeST5g7Zmf7yg" showIcon="false" borderSize="1" borderSizeComputationExpression="1" color="255,255,255">
+          <description xmi:type="style:SquareDescription" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.Component']/@borderedNodeMappings[name='org.muml.pim.component.Port']/@style"/>
         </ownedStyle>
-        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.StructuredComponent']/@borderedNodeMappings[name='org.muml.pim.component.Port']"/>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.Component']/@borderedNodeMappings[name='org.muml.pim.component.Port']"/>
       </ownedBorderedNodes>
-      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_FiaFADZWEeebUM4UnIaaQw" name="port" width="2" height="2">
+      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_LD3Z0DcDEeeST5g7Zmf7yg" name="port" width="2" height="2">
         <target xmi:type="component:Port" href="ComponentPackage.xmi#//@components.0/@ports.1"/>
         <semanticElements xmi:type="component:Port" href="ComponentPackage.xmi#//@components.0/@ports.1"/>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_FiasEDZWEeebUM4UnIaaQw" showIcon="false" borderSize="1" borderSizeComputationExpression="1" color="255,255,255">
-          <description xmi:type="style:SquareDescription" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.StructuredComponent']/@borderedNodeMappings[name='org.muml.pim.component.Port']/@style"/>
+        <ownedStyle xmi:type="diagram:Square" xmi:id="_LD3Z0TcDEeeST5g7Zmf7yg" showIcon="false" borderSize="1" borderSizeComputationExpression="1" color="255,255,255">
+          <description xmi:type="style:SquareDescription" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.Component']/@borderedNodeMappings[name='org.muml.pim.component.Port']/@style"/>
         </ownedStyle>
-        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.StructuredComponent']/@borderedNodeMappings[name='org.muml.pim.component.Port']"/>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.Component']/@borderedNodeMappings[name='org.muml.pim.component.Port']"/>
       </ownedBorderedNodes>
-      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
-      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
-      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_nxNGETZVEeebUM4UnIaaQw" borderSize="1" borderSizeComputationExpression="1">
-        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.StructuredComponent']/@style"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_LDzvcDcDEeeST5g7Zmf7yg" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,255,255">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.Component']/@style"/>
       </ownedStyle>
-      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.StructuredComponent']"/>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.Component']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_AtCRgDZWEeebUM4UnIaaQw" name="component" width="10" height="10" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_LD09kDcDEeeST5g7Zmf7yg" name="component">
       <target xmi:type="component:AtomicComponent" href="ComponentPackage.xmi#//@components.1"/>
       <semanticElements xmi:type="component:AtomicComponent" href="ComponentPackage.xmi#//@components.1"/>
-      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_DsJuADZWEeebUM4UnIaaQw" name="port" width="2" height="2">
+      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_LEE1MDcDEeeST5g7Zmf7yg" name="port" width="2" height="2">
         <target xmi:type="component:Port" href="ComponentPackage.xmi#//@components.1/@ports.0"/>
         <semanticElements xmi:type="component:Port" href="ComponentPackage.xmi#//@components.1/@ports.0"/>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_DsKVEDZWEeebUM4UnIaaQw" showIcon="false" borderSize="1" borderSizeComputationExpression="1" color="255,255,255">
-          <description xmi:type="style:SquareDescription" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.StructuredComponent']/@borderedNodeMappings[name='org.muml.pim.component.Port']/@style"/>
+        <ownedStyle xmi:type="diagram:Square" xmi:id="_LEE1MTcDEeeST5g7Zmf7yg" showIcon="false" borderSize="1" borderSizeComputationExpression="1" color="255,255,255">
+          <description xmi:type="style:SquareDescription" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.Component']/@borderedNodeMappings[name='org.muml.pim.component.Port']/@style"/>
         </ownedStyle>
-        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.StructuredComponent']/@borderedNodeMappings[name='org.muml.pim.component.Port']"/>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.Component']/@borderedNodeMappings[name='org.muml.pim.component.Port']"/>
       </ownedBorderedNodes>
-      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
-      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
-      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:Square" xmi:id="_AtC4kDZWEeebUM4UnIaaQw" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" color="255,255,255">
-        <description xmi:type="style:SquareDescription" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.component.AtomicComponent']/@style"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_LD09kTcDEeeST5g7Zmf7yg" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,255,255">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.Component']/@style"/>
       </ownedStyle>
-      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.component.AtomicComponent']"/>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.Component']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_A9IjADZWEeebUM4UnIaaQw" name="component">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_LD1koDcDEeeST5g7Zmf7yg" name="component">
       <target xmi:type="component:StructuredComponent" href="ComponentPackage.xmi#//@components.2"/>
       <semanticElements xmi:type="component:StructuredComponent" href="ComponentPackage.xmi#//@components.2"/>
-      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
-      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
-      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_A9IjATZWEeebUM4UnIaaQw" borderSize="1" borderSizeComputationExpression="1">
-        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.StructuredComponent']/@style"/>
+      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_S32TgDcDEeeST5g7Zmf7yg" name="port" width="2" height="2">
+        <target xmi:type="component:Port" href="ComponentPackage.xmi#//@components.2/@ports.0"/>
+        <semanticElements xmi:type="component:Port" href="ComponentPackage.xmi#//@components.2/@ports.0"/>
+        <ownedStyle xmi:type="diagram:Square" xmi:id="_S326kDcDEeeST5g7Zmf7yg" showIcon="false" borderSize="1" borderSizeComputationExpression="1" color="255,255,255">
+          <description xmi:type="style:SquareDescription" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.Component']/@borderedNodeMappings[name='org.muml.pim.component.Port']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.Component']/@borderedNodeMappings[name='org.muml.pim.component.Port']"/>
+      </ownedBorderedNodes>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_LD1koTcDEeeST5g7Zmf7yg" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,255,255">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.Component']/@style"/>
       </ownedStyle>
-      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.StructuredComponent']"/>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_BzXAYDZWEeebUM4UnIaaQw" name="component" width="10" height="10" resizeKind="NSEW">
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.Component']"/>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_LEIfkDcDEeeST5g7Zmf7yg" name="component">
         <target xmi:type="component:ComponentPart" href="ComponentPackage.xmi#//@components.2/@componentParts.0"/>
         <semanticElements xmi:type="component:ComponentPart" href="ComponentPackage.xmi#//@components.2/@componentParts.0"/>
-        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_EgNoMDZWEeebUM4UnIaaQw" name="port" width="2" height="2">
+        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_LEKUwDcDEeeST5g7Zmf7yg" name="port" width="2" height="2">
           <target xmi:type="component:Port" href="ComponentPackage.xmi#//@components.1/@ports.0"/>
           <semanticElements xmi:type="component:Port" href="ComponentPackage.xmi#//@components.1/@ports.0"/>
-          <ownedStyle xmi:type="diagram:Square" xmi:id="_EgNoMTZWEeebUM4UnIaaQw" showIcon="false" borderSize="1" borderSizeComputationExpression="1" color="255,255,255">
-            <description xmi:type="style:SquareDescription" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.StructuredComponent']/@subNodeMappings[name='org.muml.pim.component.AtomicComponentPart']/@borderedNodeMappings[name='org.muml.pim.component.derivedPort']/@style"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_LEKUwTcDEeeST5g7Zmf7yg" showIcon="false" borderSize="1" borderSizeComputationExpression="1" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.Component']/@subContainerMappings[name='org.muml.pim.component.StructuredComponentPart']/@borderedNodeMappings[name='org.muml.pim.component.derivedPort']/@style"/>
           </ownedStyle>
-          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.StructuredComponent']/@subNodeMappings[name='org.muml.pim.component.AtomicComponentPart']/@borderedNodeMappings[name='org.muml.pim.component.derivedPort']"/>
-        </ownedBorderedNodes>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_BzYOgDZWEeebUM4UnIaaQw" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" color="255,255,255">
-          <description xmi:type="style:SquareDescription" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.StructuredComponent']/@subNodeMappings[name='org.muml.pim.component.AtomicComponentPart']/@style"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.StructuredComponent']/@subNodeMappings[name='org.muml.pim.component.AtomicComponentPart']"/>
-      </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_GlpqsDZWEeebUM4UnIaaQw" name="component">
-        <target xmi:type="component:ComponentPart" href="ComponentPackage.xmi#//@components.2/@componentParts.1"/>
-        <semanticElements xmi:type="component:ComponentPart" href="ComponentPackage.xmi#//@components.2/@componentParts.1"/>
-        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_GlqRwTZWEeebUM4UnIaaQw" name="port" width="2" height="2">
-          <target xmi:type="component:Port" href="ComponentPackage.xmi#//@components.0/@ports.0"/>
-          <semanticElements xmi:type="component:Port" href="ComponentPackage.xmi#//@components.0/@ports.0"/>
-          <ownedStyle xmi:type="diagram:Square" xmi:id="_GlqRwjZWEeebUM4UnIaaQw" showIcon="false" borderSize="1" borderSizeComputationExpression="1" color="255,255,255">
-            <description xmi:type="style:SquareDescription" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.StructuredComponent']/@subContainerMappings[name='org.muml.pim.component.StructuredComponentPart']/@borderedNodeMappings[name='org.muml.pim.component.derivedPort']/@style"/>
-          </ownedStyle>
-          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.StructuredComponent']/@subContainerMappings[name='org.muml.pim.component.StructuredComponentPart']/@borderedNodeMappings[name='org.muml.pim.component.derivedPort']"/>
-        </ownedBorderedNodes>
-        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_Glq40DZWEeebUM4UnIaaQw" name="port" width="2" height="2">
-          <target xmi:type="component:Port" href="ComponentPackage.xmi#//@components.0/@ports.1"/>
-          <semanticElements xmi:type="component:Port" href="ComponentPackage.xmi#//@components.0/@ports.1"/>
-          <ownedStyle xmi:type="diagram:Square" xmi:id="_Glq40TZWEeebUM4UnIaaQw" showIcon="false" borderSize="1" borderSizeComputationExpression="1" color="255,255,255">
-            <description xmi:type="style:SquareDescription" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.StructuredComponent']/@subContainerMappings[name='org.muml.pim.component.StructuredComponentPart']/@borderedNodeMappings[name='org.muml.pim.component.derivedPort']/@style"/>
-          </ownedStyle>
-          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.StructuredComponent']/@subContainerMappings[name='org.muml.pim.component.StructuredComponentPart']/@borderedNodeMappings[name='org.muml.pim.component.derivedPort']"/>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.Component']/@subContainerMappings[name='org.muml.pim.component.StructuredComponentPart']/@borderedNodeMappings[name='org.muml.pim.component.derivedPort']"/>
         </ownedBorderedNodes>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_GlqRwDZWEeebUM4UnIaaQw" borderSize="1" borderSizeComputationExpression="1">
-          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.StructuredComponent']/@subContainerMappings[name='org.muml.pim.component.StructuredComponentPart']/@style"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_LEJGoDcDEeeST5g7Zmf7yg" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,255,255">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.Component']/@subContainerMappings[name='org.muml.pim.component.StructuredComponentPart']/@style"/>
         </ownedStyle>
-        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.StructuredComponent']/@subContainerMappings[name='org.muml.pim.component.StructuredComponentPart']"/>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.Component']/@subContainerMappings[name='org.muml.pim.component.StructuredComponentPart']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_LEJtsDcDEeeST5g7Zmf7yg" name="component">
+        <target xmi:type="component:ComponentPart" href="ComponentPackage.xmi#//@components.2/@componentParts.1"/>
+        <semanticElements xmi:type="component:ComponentPart" href="ComponentPackage.xmi#//@components.2/@componentParts.1"/>
+        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_LELi4DcDEeeST5g7Zmf7yg" name="port" width="2" height="2">
+          <target xmi:type="component:Port" href="ComponentPackage.xmi#//@components.0/@ports.0"/>
+          <semanticElements xmi:type="component:Port" href="ComponentPackage.xmi#//@components.0/@ports.0"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_LELi4TcDEeeST5g7Zmf7yg" showIcon="false" borderSize="1" borderSizeComputationExpression="1" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.Component']/@subContainerMappings[name='org.muml.pim.component.StructuredComponentPart']/@borderedNodeMappings[name='org.muml.pim.component.derivedPort']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.Component']/@subContainerMappings[name='org.muml.pim.component.StructuredComponentPart']/@borderedNodeMappings[name='org.muml.pim.component.derivedPort']"/>
+        </ownedBorderedNodes>
+        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_LEMJ8DcDEeeST5g7Zmf7yg" name="port" width="2" height="2">
+          <target xmi:type="component:Port" href="ComponentPackage.xmi#//@components.0/@ports.1"/>
+          <semanticElements xmi:type="component:Port" href="ComponentPackage.xmi#//@components.0/@ports.1"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_LEMJ8TcDEeeST5g7Zmf7yg" showIcon="false" borderSize="1" borderSizeComputationExpression="1" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.Component']/@subContainerMappings[name='org.muml.pim.component.StructuredComponentPart']/@borderedNodeMappings[name='org.muml.pim.component.derivedPort']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.Component']/@subContainerMappings[name='org.muml.pim.component.StructuredComponentPart']/@borderedNodeMappings[name='org.muml.pim.component.derivedPort']"/>
+        </ownedBorderedNodes>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_LEJtsTcDEeeST5g7Zmf7yg" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,255,255">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.Component']/@subContainerMappings[name='org.muml.pim.component.StructuredComponentPart']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.Component']/@subContainerMappings[name='org.muml.pim.component.StructuredComponentPart']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_NOSqADcDEeeST5g7Zmf7yg" name="component">
+        <target xmi:type="component:ComponentPart" href="ComponentPackage.xmi#//@components.2/@componentParts.2"/>
+        <semanticElements xmi:type="component:ComponentPart" href="ComponentPackage.xmi#//@components.2/@componentParts.2"/>
+        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_PuLM0DcDEeeST5g7Zmf7yg" name="port" width="2" height="2">
+          <target xmi:type="component:Port" href="ComponentPackage.xmi#//@components.1/@ports.0"/>
+          <semanticElements xmi:type="component:Port" href="ComponentPackage.xmi#//@components.1/@ports.0"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_PuLM0TcDEeeST5g7Zmf7yg" showIcon="false" borderSize="1" borderSizeComputationExpression="1" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.Component']/@subContainerMappings[name='org.muml.pim.component.StructuredComponentPart']/@borderedNodeMappings[name='org.muml.pim.component.derivedPort']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.Component']/@subContainerMappings[name='org.muml.pim.component.StructuredComponentPart']/@borderedNodeMappings[name='org.muml.pim.component.derivedPort']"/>
+        </ownedBorderedNodes>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_NOTREDcDEeeST5g7Zmf7yg" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,255,255">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.Component']/@subContainerMappings[name='org.muml.pim.component.StructuredComponentPart']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.Component']/@subContainerMappings[name='org.muml.pim.component.StructuredComponentPart']"/>
       </ownedDiagramElements>
     </ownedDiagramElements>
     <description xmi:type="description_1:DiagramDescription" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']"/>

@@ -8,7 +8,9 @@
     <ports name="port"/>
   </components>
   <components xsi:type="component:StructuredComponent" name="component">
+    <ports name="port"/>
     <componentParts type="//@components.1"/>
     <componentParts type="//@components.0"/>
+    <componentParts type="//@components.1"/>
   </components>
 </component:ComponentPackage>
