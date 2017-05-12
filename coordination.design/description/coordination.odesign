@@ -11,6 +11,13 @@
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
           </style>
+          <conditionnalStyles predicateExpression="aql:self.oclIsKindOf(coordination::CoordinationPattern)">
+            <style xsi:type="style:LozengeNodeDescription" borderSizeComputationExpression="2" borderLineStyle="dash" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+            </style>
+          </conditionnalStyles>
         </nodeMappings>
         <nodeMappings name="org.muml.pim.coordination.Role" label="Role" semanticCandidatesExpression="aql:self.roles" domainClass="Role">
           <style xsi:type="style:WorkspaceImageDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" sizeComputationExpression="2" workspacePath="/coordination.design/images/right-arrow-black.svg">

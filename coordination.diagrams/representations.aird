@@ -4,216 +4,452 @@
     <semanticResources>platform:/resource/coordination.model/model/coordination.ecore</semanticResources>
     <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
     <semanticResources>CoordinationSpecification.xmi</semanticResources>
+    <semanticResources>CoordinationSpecification2.xmi</semanticResources>
+    <semanticResources>CoordinationPattern.xmi</semanticResources>
+    <semanticResources>CoordinationProtocol.xmi</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_4TUcMDSiEeeD94cwctLTsg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_0EWC4DcqEeeYpZa8cVYNJg" name="new CoordinationSpecification Diagram">
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_dMI24Dc8EeeTdKVyDTJvSA" name="new CoordinationSpecification Diagram" representation="_dMLTIDc8EeeTdKVyDTJvSA">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_jTMPgDdOEeeyMol718YyBw" name="new CoordinationSpecification Diagram" representation="_jTOEsDdOEeeyMol718YyBw">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']"/>
+        <target xmi:type="coordination:CoordinationProtocol" href="CoordinationProtocol.xmi#/"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_1PhSMDdOEeeyMol718YyBw" name="new CoordinationSpecification Diagram" representation="_1PhSMTdOEeeyMol718YyBw">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']"/>
+        <target xmi:type="coordination:CoordinationPattern" href="CoordinationPattern.xmi#/"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_d9L-sDdPEeePgKt_9dwJJw" name="new CoordinationSpecification Diagram" representation="_d9Nz4DdPEeePgKt_9dwJJw">
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']"/>
         <target xmi:type="coordination:CoordinationSpecification" href="CoordinationSpecification.xmi#/"/>
       </ownedRepresentationDescriptors>
     </ownedViews>
   </viewpoint:DAnalysis>
-  <diagram:DSemanticDiagram xmi:id="_dMLTIDc8EeeTdKVyDTJvSA" name="new CoordinationSpecification Diagram">
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_dML6MDc8EeeTdKVyDTJvSA" source="DANNOTATION_CUSTOMIZATION_KEY">
-      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_dML6MTc8EeeTdKVyDTJvSA"/>
+  <diagram:DSemanticDiagram xmi:id="_jTOEsDdOEeeyMol718YyBw" name="new CoordinationSpecification Diagram">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_jTOEsTdOEeeyMol718YyBw" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_jTOEsjdOEeeyMol718YyBw"/>
     </ownedAnnotationEntries>
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_dNBnsDc8EeeTdKVyDTJvSA" source="GMF_DIAGRAMS">
-      <data xmi:type="notation:Diagram" xmi:id="_dNBnsTc8EeeTdKVyDTJvSA" type="Sirius" element="_dMLTIDc8EeeTdKVyDTJvSA" measurementUnit="Pixel">
-        <children xmi:type="notation:Node" xmi:id="_dNPDEDc8EeeTdKVyDTJvSA" type="2001" element="_dML6Mjc8EeeTdKVyDTJvSA">
-          <children xmi:type="notation:Node" xmi:id="_dNlBUDc8EeeTdKVyDTJvSA" type="5002">
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_dNlBUTc8EeeTdKVyDTJvSA" y="5"/>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_jTOrwDdOEeeyMol718YyBw" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_jTOrwTdOEeeyMol718YyBw" type="Sirius" element="_jTOEsDdOEeeyMol718YyBw" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_jTOrwzdOEeeyMol718YyBw" type="2001" element="_jTOEszdOEeeyMol718YyBw">
+          <children xmi:type="notation:Node" xmi:id="_jTPS0DdOEeeyMol718YyBw" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_jTPS0TdOEeeyMol718YyBw" y="5"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_dNs9IDc8EeeTdKVyDTJvSA" type="3016" element="_dML6Mzc8EeeTdKVyDTJvSA">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_dNs9ITc8EeeTdKVyDTJvSA" fontName=".SF NS Text"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dNs9Ijc8EeeTdKVyDTJvSA"/>
+          <children xmi:type="notation:Node" xmi:id="_jTTkQDdOEeeyMol718YyBw" type="3016" element="_jTOEtDdOEeeyMol718YyBw">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_jTTkQTdOEeeyMol718YyBw" fontName="Adobe Helvetica"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jTTkQjdOEeeyMol718YyBw"/>
           </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_dNPDETc8EeeTdKVyDTJvSA" fontName=".SF NS Text" fontHeight="12" bold="true"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dNPDEjc8EeeTdKVyDTJvSA" width="100" height="100"/>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_jTOrxDdOEeeyMol718YyBw" fontName="Adobe Helvetica" fontHeight="12" bold="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jTOrxTdOEeeyMol718YyBw" x="30" y="30" width="100" height="100"/>
         </children>
-        <children xmi:type="notation:Node" xmi:id="_dqQ9UDc8EeeTdKVyDTJvSA" type="2001" element="_dqEwEDc8EeeTdKVyDTJvSA">
-          <children xmi:type="notation:Node" xmi:id="_dqRkYDc8EeeTdKVyDTJvSA" type="5002">
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_dqRkYTc8EeeTdKVyDTJvSA" x="21"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_dtc0MDc8EeeTdKVyDTJvSA" type="3005" element="_dqFXIDc8EeeTdKVyDTJvSA">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_dtc0MTc8EeeTdKVyDTJvSA" fontName=".SF NS Text"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dtc0Mjc8EeeTdKVyDTJvSA"/>
-          </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_dqQ9UTc8EeeTdKVyDTJvSA" fontName=".SF NS Text" fontHeight="12"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dqQ9Ujc8EeeTdKVyDTJvSA" x="744" y="264" width="20" height="20"/>
-        </children>
-        <children xmi:type="notation:Node" xmi:id="_d5d28Dc8EeeTdKVyDTJvSA" type="2001" element="_d5WiMDc8EeeTdKVyDTJvSA">
-          <children xmi:type="notation:Node" xmi:id="_d5eeADc8EeeTdKVyDTJvSA" type="5002">
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_d5eeATc8EeeTdKVyDTJvSA" x="21"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_d5gTMDc8EeeTdKVyDTJvSA" type="3005" element="_d5WiMTc8EeeTdKVyDTJvSA">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_d5gTMTc8EeeTdKVyDTJvSA" fontName=".SF NS Text"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_d5gTMjc8EeeTdKVyDTJvSA"/>
-          </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_d5d28Tc8EeeTdKVyDTJvSA" fontName=".SF NS Text" fontHeight="12"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_d5d28jc8EeeTdKVyDTJvSA" x="1228" y="348" width="20" height="20"/>
-        </children>
-        <children xmi:type="notation:Node" xmi:id="_ejIfADc8EeeTdKVyDTJvSA" type="2003" element="_YoxmIDdMEee_Dv8bdE5Mww">
-          <children xmi:type="notation:Node" xmi:id="_ejJGEDc8EeeTdKVyDTJvSA" type="5007"/>
-          <children xmi:type="notation:Node" xmi:id="_ejKUMDc8EeeTdKVyDTJvSA" type="7004">
-            <children xmi:type="notation:Node" xmi:id="_YqJfIDdMEee_Dv8bdE5Mww" type="3010" element="_YpbGYDdMEee_Dv8bdE5Mww">
-              <styles xmi:type="notation:FontStyle" xmi:id="_YqJfITdMEee_Dv8bdE5Mww" fontName="Adobe Helvetica" fontHeight="12"/>
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_YqJfIjdMEee_Dv8bdE5Mww"/>
+        <children xmi:type="notation:Node" xmi:id="_jTP54DdOEeeyMol718YyBw" type="2003" element="_jTOEtTdOEeeyMol718YyBw">
+          <children xmi:type="notation:Node" xmi:id="_jTRIADdOEeeyMol718YyBw" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_jTS9MDdOEeeyMol718YyBw" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_jTTkQzdOEeeyMol718YyBw" type="3010" element="_jTOEtzdOEeeyMol718YyBw">
+              <styles xmi:type="notation:FontStyle" xmi:id="_jTULUDdOEeeyMol718YyBw" fontName="Adobe Helvetica" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_jTULUTdOEeeyMol718YyBw"/>
             </children>
-            <styles xmi:type="notation:SortingStyle" xmi:id="_ejKUMTc8EeeTdKVyDTJvSA"/>
-            <styles xmi:type="notation:FilteringStyle" xmi:id="_ejKUMjc8EeeTdKVyDTJvSA"/>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_jTS9MTdOEeeyMol718YyBw"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_jTS9MjdOEeeyMol718YyBw"/>
           </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_ejIfATc8EeeTdKVyDTJvSA" fontName=".SF NS Text" fontHeight="8" bold="true"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ejIfAjc8EeeTdKVyDTJvSA" x="865" y="345"/>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_jTP54TdOEeeyMol718YyBw" fontName="Adobe Helvetica" fontHeight="8" bold="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jTP54jdOEeeyMol718YyBw" x="190" y="30"/>
         </children>
-        <styles xmi:type="notation:DiagramStyle" xmi:id="_dNBnsjc8EeeTdKVyDTJvSA"/>
-        <edges xmi:type="notation:Edge" xmi:id="_dtpogDc8EeeTdKVyDTJvSA" type="4001" element="_dqOhEDc8EeeTdKVyDTJvSA" source="_dqQ9UDc8EeeTdKVyDTJvSA" target="_dNPDEDc8EeeTdKVyDTJvSA">
-          <children xmi:type="notation:Node" xmi:id="_dtq2oDc8EeeTdKVyDTJvSA" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dtq2oTc8EeeTdKVyDTJvSA" y="-10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_dtrdsDc8EeeTdKVyDTJvSA" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dtrdsTc8EeeTdKVyDTJvSA" y="10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_dtsEwDc8EeeTdKVyDTJvSA" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dtsEwTc8EeeTdKVyDTJvSA" y="10"/>
-          </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_dtpogTc8EeeTdKVyDTJvSA"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_dtpogjc8EeeTdKVyDTJvSA" fontName=".SF NS Text" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_dtpogzc8EeeTdKVyDTJvSA" points="[744, 264, 744, 264]$[0, 0, 0, 0]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_dtxkUDc8EeeTdKVyDTJvSA" id="(0.5,0.5)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_dtyLYDc8EeeTdKVyDTJvSA" id="(0.5,0.5)"/>
-        </edges>
-        <edges xmi:type="notation:Edge" xmi:id="_d5g6QDc8EeeTdKVyDTJvSA" type="4001" element="_d5co0Dc8EeeTdKVyDTJvSA" source="_d5d28Dc8EeeTdKVyDTJvSA" target="_dNPDEDc8EeeTdKVyDTJvSA">
-          <children xmi:type="notation:Node" xmi:id="_d5g6RDc8EeeTdKVyDTJvSA" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_d5g6RTc8EeeTdKVyDTJvSA" y="-10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_d5g6Rjc8EeeTdKVyDTJvSA" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_d5g6Rzc8EeeTdKVyDTJvSA" y="10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_d5g6SDc8EeeTdKVyDTJvSA" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_d5g6STc8EeeTdKVyDTJvSA" y="10"/>
-          </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_d5g6QTc8EeeTdKVyDTJvSA"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_d5g6Qjc8EeeTdKVyDTJvSA" fontName=".SF NS Text" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_d5g6Qzc8EeeTdKVyDTJvSA" points="[1228, 348, 1228, 348]$[0, 0, 0, 0]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_d5hhUDc8EeeTdKVyDTJvSA" id="(0.5,0.5)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_d5hhUTc8EeeTdKVyDTJvSA" id="(0.5,0.5)"/>
-        </edges>
-        <edges xmi:type="notation:Edge" xmi:id="_ejMJYDc8EeeTdKVyDTJvSA" type="4001" element="_ei6ckDc8EeeTdKVyDTJvSA" source="_dqQ9UDc8EeeTdKVyDTJvSA" target="_d5d28Dc8EeeTdKVyDTJvSA">
-          <children xmi:type="notation:Node" xmi:id="_ejMJZDc8EeeTdKVyDTJvSA" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ejMJZTc8EeeTdKVyDTJvSA" y="-10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_ejMwcDc8EeeTdKVyDTJvSA" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ejMwcTc8EeeTdKVyDTJvSA" y="10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_ejMwcjc8EeeTdKVyDTJvSA" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ejMwczc8EeeTdKVyDTJvSA" y="10"/>
-          </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_ejMJYTc8EeeTdKVyDTJvSA"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_ejMJYjc8EeeTdKVyDTJvSA" fontName=".SF NS Text" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ejMJYzc8EeeTdKVyDTJvSA" points="[0, 0, -464, -84]$[464, 84, 0, 0]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ejMwdDc8EeeTdKVyDTJvSA" id="(1.0,0.4)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ejMwdTc8EeeTdKVyDTJvSA" id="(0.0,0.4)"/>
-        </edges>
-        <edges xmi:type="notation:Edge" xmi:id="_ejMwdjc8EeeTdKVyDTJvSA" type="4001" element="_ejGp0Dc8EeeTdKVyDTJvSA" source="_ejMJYDc8EeeTdKVyDTJvSA" target="_ejIfADc8EeeTdKVyDTJvSA">
-          <children xmi:type="notation:Node" xmi:id="_ejMwejc8EeeTdKVyDTJvSA" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ejMwezc8EeeTdKVyDTJvSA" y="-9"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_ejMwfDc8EeeTdKVyDTJvSA" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ejMwfTc8EeeTdKVyDTJvSA" y="10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_ejMwfjc8EeeTdKVyDTJvSA" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ejMwfzc8EeeTdKVyDTJvSA" x="-4" y="11"/>
-          </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_ejMwdzc8EeeTdKVyDTJvSA"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_ejMweDc8EeeTdKVyDTJvSA" fontName=".SF NS Text" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ejMweTc8EeeTdKVyDTJvSA" points="[0, 0, 37, -71]$[-17, 31, 20, -40]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ejOloDc8EeeTdKVyDTJvSA" id="(0.5,0.5)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ejOloTc8EeeTdKVyDTJvSA" id="(0.5,0.5)"/>
-        </edges>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_jTOrwjdOEeeyMol718YyBw"/>
       </data>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_dML6Mjc8EeeTdKVyDTJvSA" incomingEdges="_dqOhEDc8EeeTdKVyDTJvSA _d5co0Dc8EeeTdKVyDTJvSA" width="10" height="10" resizeKind="NSEW">
-      <target xmi:type="coordination:CoordinationSpecification" href="CoordinationSpecification.xmi#/"/>
-      <semanticElements xmi:type="coordination:CoordinationSpecification" href="CoordinationSpecification.xmi#/"/>
-      <ownedStyle xmi:type="diagram:Ellipse" xmi:id="_dML6Mzc8EeeTdKVyDTJvSA" labelSize="12" showIcon="false" borderSize="2" borderSizeComputationExpression="2" borderLineStyle="dash" labelPosition="node" color="194,239,255">
+    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_jTOEszdOEeeyMol718YyBw" width="10" height="10" resizeKind="NSEW">
+      <target xmi:type="coordination:CoordinationProtocol" href="CoordinationProtocol.xmi#/"/>
+      <semanticElements xmi:type="coordination:CoordinationProtocol" href="CoordinationProtocol.xmi#/"/>
+      <ownedStyle xmi:type="diagram:Ellipse" xmi:id="_jTOEtDdOEeeyMol718YyBw" labelSize="12" showIcon="false" borderSize="2" borderSizeComputationExpression="2" borderLineStyle="dash" labelPosition="node" color="194,239,255">
         <labelFormat>bold</labelFormat>
         <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.coordination.CoordinationSpecification']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.coordination.CoordinationSpecification']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_dqEwEDc8EeeTdKVyDTJvSA" name="role" outgoingEdges="_dqOhEDc8EeeTdKVyDTJvSA _ei6ckDc8EeeTdKVyDTJvSA" width="2" height="2">
-      <target xmi:type="coordination:Role" href="CoordinationSpecification.xmi#//@roles.0"/>
-      <semanticElements xmi:type="coordination:Role" href="CoordinationSpecification.xmi#//@roles.0"/>
-      <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_dqFXIDc8EeeTdKVyDTJvSA" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" workspacePath="/coordination.design/images/right-arrow-black.svg">
-        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.coordination.Role']/@style"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.coordination.Role']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_d5WiMDc8EeeTdKVyDTJvSA" name="role" outgoingEdges="_d5co0Dc8EeeTdKVyDTJvSA" incomingEdges="_ei6ckDc8EeeTdKVyDTJvSA" width="2" height="2">
-      <target xmi:type="coordination:Role" href="CoordinationSpecification.xmi#//@roles.1"/>
-      <semanticElements xmi:type="coordination:Role" href="CoordinationSpecification.xmi#//@roles.1"/>
-      <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_d5WiMTc8EeeTdKVyDTJvSA" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" workspacePath="/coordination.design/images/right-arrow-black.svg">
-        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.coordination.Role']/@style"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.coordination.Role']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_dqOhEDc8EeeTdKVyDTJvSA" sourceNode="_dqEwEDc8EeeTdKVyDTJvSA" targetNode="_dML6Mjc8EeeTdKVyDTJvSA">
-      <target xmi:type="coordination:Role" href="CoordinationSpecification.xmi#//@roles.0"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_dqQWQDc8EeeTdKVyDTJvSA" lineStyle="dash" targetArrow="NoDecoration" size="2" strokeColor="0,0,0">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@edgeMappings[name='org.muml.pim.coordination.CoordinationToRoleEdge']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_dqQWQTc8EeeTdKVyDTJvSA"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@edgeMappings[name='org.muml.pim.coordination.CoordinationToRoleEdge']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_d5co0Dc8EeeTdKVyDTJvSA" sourceNode="_d5WiMDc8EeeTdKVyDTJvSA" targetNode="_dML6Mjc8EeeTdKVyDTJvSA">
-      <target xmi:type="coordination:Role" href="CoordinationSpecification.xmi#//@roles.1"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_d5dP4Dc8EeeTdKVyDTJvSA" lineStyle="dash" targetArrow="NoDecoration" size="2" strokeColor="0,0,0">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@edgeMappings[name='org.muml.pim.coordination.CoordinationToRoleEdge']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_d5dP4Tc8EeeTdKVyDTJvSA"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@edgeMappings[name='org.muml.pim.coordination.CoordinationToRoleEdge']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_ei6ckDc8EeeTdKVyDTJvSA" outgoingEdges="_ejGp0Dc8EeeTdKVyDTJvSA" sourceNode="_dqEwEDc8EeeTdKVyDTJvSA" targetNode="_d5WiMDc8EeeTdKVyDTJvSA">
-      <target xmi:type="coordination:RoleConnector" href="CoordinationSpecification.xmi#//@roleConnectors.0"/>
-      <semanticElements xmi:type="coordination:RoleConnector" href="CoordinationSpecification.xmi#//@roleConnectors.0"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_ei6ckTc8EeeTdKVyDTJvSA" targetArrow="NoDecoration" size="2" strokeColor="0,0,0">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@edgeMappings[name='org.muml.pim.coordination.Role%20Connector']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_ei6ckjc8EeeTdKVyDTJvSA"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@edgeMappings[name='org.muml.pim.coordination.Role%20Connector']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_ejGp0Dc8EeeTdKVyDTJvSA" sourceNode="_ei6ckDc8EeeTdKVyDTJvSA" targetNode="_YoxmIDdMEee_Dv8bdE5Mww">
-      <target xmi:type="coordination:RoleConnector" href="CoordinationSpecification.xmi#//@roleConnectors.0"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_ejGp0Tc8EeeTdKVyDTJvSA" lineStyle="dot" targetArrow="NoDecoration" size="0">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@edgeMappings[name='org.muml.pim.coordination.AssumptionsEdge']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_ejGp0jc8EeeTdKVyDTJvSA"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@edgeMappings[name='org.muml.pim.coordination.AssumptionsEdge']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_YoxmIDdMEee_Dv8bdE5Mww" name="QoS Assumptions:" incomingEdges="_ejGp0Dc8EeeTdKVyDTJvSA">
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_jTOEtTdOEeeyMol718YyBw" name="QoS Assumptions:">
       <target xmi:type="coordination:ConnectorQualityOfServiceAssumptions" href="CoordinationSpecification.xmi#//@roleConnectors.0/@connectorQOSAssumptions"/>
       <semanticElements xmi:type="coordination:ConnectorQualityOfServiceAssumptions" href="CoordinationSpecification.xmi#//@roleConnectors.0/@connectorQOSAssumptions"/>
-      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
-      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
-      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_Yo9zYDdMEee_Dv8bdE5Mww" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundColor="255,245,181" foregroundColor="252,233,79">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_jTOEtjdOEeeyMol718YyBw" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundColor="255,245,181" foregroundColor="252,233,79">
         <labelFormat>bold</labelFormat>
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@containerMappings[name='ConnectorQualityOfServiceAssumptions']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@containerMappings[name='ConnectorQualityOfServiceAssumptions']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_YpbGYDdMEee_Dv8bdE5Mww" name="Reliable: true&#xA;MaxDelay: 0ms&#xA;PreserveMsgOrder: false">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_jTOEtzdOEeeyMol718YyBw" name="Reliable: true&#xA;MaxDelay: 0ms&#xA;PreserveMsgOrder: false">
         <target xmi:type="coordination:ConnectorQualityOfServiceAssumptions" href="CoordinationSpecification.xmi#//@roleConnectors.0/@connectorQOSAssumptions"/>
         <semanticElements xmi:type="coordination:ConnectorQualityOfServiceAssumptions" href="CoordinationSpecification.xmi#//@roleConnectors.0/@connectorQOSAssumptions"/>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_YpcUgDdMEee_Dv8bdE5Mww" labelSize="12" showIcon="false" labelPosition="node" color="255,245,181">
+        <ownedStyle xmi:type="diagram:Square" xmi:id="_jTOEuDdOEeeyMol718YyBw" labelSize="12" showIcon="false" labelPosition="node" color="255,245,181">
           <description xmi:type="style:SquareDescription" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@containerMappings[name='ConnectorQualityOfServiceAssumptions']/@subNodeMappings[name='ConnectorQualityOfServiceAssumptions']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@containerMappings[name='ConnectorQualityOfServiceAssumptions']/@subNodeMappings[name='ConnectorQualityOfServiceAssumptions']"/>
       </ownedElements>
     </ownedDiagramElements>
     <description xmi:type="description_1:DiagramDescription" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']"/>
-    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_dML6NDc8EeeTdKVyDTJvSA"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_jTOEuTdOEeeyMol718YyBw"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer"/>
+    <target xmi:type="coordination:CoordinationProtocol" href="CoordinationProtocol.xmi#/"/>
+  </diagram:DSemanticDiagram>
+  <diagram:DSemanticDiagram xmi:id="_1PhSMTdOEeeyMol718YyBw" name="new CoordinationSpecification Diagram">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_1PhSMjdOEeeyMol718YyBw" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_1PhSMzdOEeeyMol718YyBw"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_1Ph5QDdOEeeyMol718YyBw" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_1Ph5QTdOEeeyMol718YyBw" type="Sirius" element="_1PhSMTdOEeeyMol718YyBw" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_1PigUDdOEeeyMol718YyBw" type="2001" element="_1PhSNDdOEeeyMol718YyBw">
+          <children xmi:type="notation:Node" xmi:id="_1PjucDdOEeeyMol718YyBw" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_1PjucTdOEeeyMol718YyBw" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_aJ0awDdPEeePgKt_9dwJJw" type="3017" element="_aJrQ0DdPEeePgKt_9dwJJw">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_aJ0awTdPEeePgKt_9dwJJw" fontName="Adobe Helvetica"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aJ0awjdPEeePgKt_9dwJJw"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_1PigUTdOEeeyMol718YyBw" fontName="Adobe Helvetica" fontHeight="12" bold="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1PigUjdOEeeyMol718YyBw" x="30" y="30" width="301" height="100"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_1PjucjdOEeeyMol718YyBw" type="2003" element="_1PhSNjdOEeeyMol718YyBw">
+          <children xmi:type="notation:Node" xmi:id="_1PkVgDdOEeeyMol718YyBw" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_1Pk8kDdOEeeyMol718YyBw" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_1PljoDdOEeeyMol718YyBw" type="3010" element="_1PhSODdOEeeyMol718YyBw">
+              <styles xmi:type="notation:FontStyle" xmi:id="_1PljoTdOEeeyMol718YyBw" fontName="Adobe Helvetica" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_1PljojdOEeeyMol718YyBw"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_1Pk8kTdOEeeyMol718YyBw"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_1Pk8kjdOEeeyMol718YyBw"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_1PjuczdOEeeyMol718YyBw" fontName="Adobe Helvetica" fontHeight="8" bold="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1PjudDdOEeeyMol718YyBw" x="435" y="-30"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_2DMx4DdOEeeyMol718YyBw" type="2001" element="_2CwF8DdOEeeyMol718YyBw">
+          <children xmi:type="notation:Node" xmi:id="_2DOAADdOEeeyMol718YyBw" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_2DOAATdOEeeyMol718YyBw" x="21"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_2JhcUDdOEeeyMol718YyBw" type="3005" element="_2CwtADdOEeeyMol718YyBw">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_2JhcUTdOEeeyMol718YyBw" fontName="Adobe Helvetica"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2JhcUjdOEeeyMol718YyBw"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_2DMx4TdOEeeyMol718YyBw" fontName="Adobe Helvetica" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2DMx4jdOEeeyMol718YyBw" x="275" y="260" width="20" height="20"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_2llGMDdOEeeyMol718YyBw" type="2001" element="_2lIaQDdOEeeyMol718YyBw">
+          <children xmi:type="notation:Node" xmi:id="_2lltQDdOEeeyMol718YyBw" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_2lltQTdOEeeyMol718YyBw" x="21"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_2lm7YDdOEeeyMol718YyBw" type="3005" element="_2lJBUDdOEeeyMol718YyBw">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_2lm7YTdOEeeyMol718YyBw" fontName="Adobe Helvetica"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2lm7YjdOEeeyMol718YyBw"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_2llGMTdOEeeyMol718YyBw" fontName="Adobe Helvetica" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2llGMjdOEeeyMol718YyBw" x="575" y="160" width="20" height="20"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_1Ph5QjdOEeeyMol718YyBw"/>
+        <edges xmi:type="notation:Edge" xmi:id="_2JqmQDdOEeeyMol718YyBw" type="4001" element="_2DJukDdOEeeyMol718YyBw" source="_2DMx4DdOEeeyMol718YyBw" target="_1PigUDdOEeeyMol718YyBw">
+          <children xmi:type="notation:Node" xmi:id="_2JtCgDdOEeeyMol718YyBw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2JtCgTdOEeeyMol718YyBw" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_2JtpkDdOEeeyMol718YyBw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2JtpkTdOEeeyMol718YyBw" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_2Ju3sDdOEeeyMol718YyBw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2Ju3sTdOEeeyMol718YyBw" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_2JqmQTdOEeeyMol718YyBw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_2JqmQjdOEeeyMol718YyBw" fontName="Adobe Helvetica" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_2JqmQzdOEeeyMol718YyBw" points="[275, 260, 275, 260]$[30, 30, 30, 30]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_2J520DdOEeeyMol718YyBw" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_2J520TdOEeeyMol718YyBw" id="(0.16611295681063123,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_2lnicDdOEeeyMol718YyBw" type="4001" element="_2lip8DdOEeeyMol718YyBw" source="_2llGMDdOEeeyMol718YyBw" target="_1PigUDdOEeeyMol718YyBw">
+          <children xmi:type="notation:Node" xmi:id="_2loJgDdOEeeyMol718YyBw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2loJgTdOEeeyMol718YyBw" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_2lowkDdOEeeyMol718YyBw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2lowkTdOEeeyMol718YyBw" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_2lowkjdOEeeyMol718YyBw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2lowkzdOEeeyMol718YyBw" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_2lnicTdOEeeyMol718YyBw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_2lnicjdOEeeyMol718YyBw" fontName="Adobe Helvetica" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_2lniczdOEeeyMol718YyBw" points="[575, 160, 575, 160]$[30, 30, 30, 30]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_2lpXoDdOEeeyMol718YyBw" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_2lpXoTdOEeeyMol718YyBw" id="(0.16611295681063123,0.5)"/>
+        </edges>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_1PhSNDdOEeeyMol718YyBw" incomingEdges="_2DJukDdOEeeyMol718YyBw _2lip8DdOEeeyMol718YyBw" width="10" height="10" resizeKind="NSEW">
+      <target xmi:type="coordination:CoordinationPattern" href="CoordinationPattern.xmi#/"/>
+      <semanticElements xmi:type="coordination:CoordinationPattern" href="CoordinationPattern.xmi#/"/>
+      <ownedStyle xmi:type="diagram:Lozenge" xmi:id="_aJrQ0DdPEeePgKt_9dwJJw" borderSize="2" borderSizeComputationExpression="2" borderLineStyle="dash" labelPosition="node" color="255,245,181">
+        <description xmi:type="style:LozengeNodeDescription" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.coordination.CoordinationSpecification']/@conditionnalStyles.0/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.coordination.CoordinationSpecification']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_1PhSNjdOEeeyMol718YyBw" name="QoS Assumptions:">
+      <target xmi:type="coordination:ConnectorQualityOfServiceAssumptions" href="CoordinationSpecification.xmi#//@roleConnectors.0/@connectorQOSAssumptions"/>
+      <semanticElements xmi:type="coordination:ConnectorQualityOfServiceAssumptions" href="CoordinationSpecification.xmi#//@roleConnectors.0/@connectorQOSAssumptions"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_1PhSNzdOEeeyMol718YyBw" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundColor="255,245,181" foregroundColor="252,233,79">
+        <labelFormat>bold</labelFormat>
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@containerMappings[name='ConnectorQualityOfServiceAssumptions']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@containerMappings[name='ConnectorQualityOfServiceAssumptions']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_1PhSODdOEeeyMol718YyBw" name="Reliable: true&#xA;MaxDelay: 0ms&#xA;PreserveMsgOrder: false">
+        <target xmi:type="coordination:ConnectorQualityOfServiceAssumptions" href="CoordinationSpecification.xmi#//@roleConnectors.0/@connectorQOSAssumptions"/>
+        <semanticElements xmi:type="coordination:ConnectorQualityOfServiceAssumptions" href="CoordinationSpecification.xmi#//@roleConnectors.0/@connectorQOSAssumptions"/>
+        <ownedStyle xmi:type="diagram:Square" xmi:id="_1PhSOTdOEeeyMol718YyBw" labelSize="12" showIcon="false" labelPosition="node" color="255,245,181">
+          <description xmi:type="style:SquareDescription" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@containerMappings[name='ConnectorQualityOfServiceAssumptions']/@subNodeMappings[name='ConnectorQualityOfServiceAssumptions']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@containerMappings[name='ConnectorQualityOfServiceAssumptions']/@subNodeMappings[name='ConnectorQualityOfServiceAssumptions']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_2CwF8DdOEeeyMol718YyBw" name="role" outgoingEdges="_2DJukDdOEeeyMol718YyBw" width="2" height="2">
+      <target xmi:type="coordination:Role" href="CoordinationPattern.xmi#//@roles.0"/>
+      <semanticElements xmi:type="coordination:Role" href="CoordinationPattern.xmi#//@roles.0"/>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_2CwtADdOEeeyMol718YyBw" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" workspacePath="/coordination.design/images/right-arrow-black.svg">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.coordination.Role']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.coordination.Role']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_2lIaQDdOEeeyMol718YyBw" name="role" outgoingEdges="_2lip8DdOEeeyMol718YyBw" width="2" height="2">
+      <target xmi:type="coordination:Role" href="CoordinationPattern.xmi#//@roles.1"/>
+      <semanticElements xmi:type="coordination:Role" href="CoordinationPattern.xmi#//@roles.1"/>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_2lJBUDdOEeeyMol718YyBw" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" workspacePath="/coordination.design/images/right-arrow-black.svg">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.coordination.Role']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.coordination.Role']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_2DJukDdOEeeyMol718YyBw" sourceNode="_2CwF8DdOEeeyMol718YyBw" targetNode="_1PhSNDdOEeeyMol718YyBw">
+      <target xmi:type="coordination:Role" href="CoordinationPattern.xmi#//@roles.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_2DK8sDdOEeeyMol718YyBw" lineStyle="dash" targetArrow="NoDecoration" size="2" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@edgeMappings[name='org.muml.pim.coordination.CoordinationToRoleEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_2DK8sTdOEeeyMol718YyBw"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@edgeMappings[name='org.muml.pim.coordination.CoordinationToRoleEdge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_2lip8DdOEeeyMol718YyBw" sourceNode="_2lIaQDdOEeeyMol718YyBw" targetNode="_1PhSNDdOEeeyMol718YyBw">
+      <target xmi:type="coordination:Role" href="CoordinationPattern.xmi#//@roles.1"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_2ljRADdOEeeyMol718YyBw" lineStyle="dash" targetArrow="NoDecoration" size="2" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@edgeMappings[name='org.muml.pim.coordination.CoordinationToRoleEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_2ljRATdOEeeyMol718YyBw"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@edgeMappings[name='org.muml.pim.coordination.CoordinationToRoleEdge']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_1PhSOjdOEeeyMol718YyBw"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer"/>
+    <target xmi:type="coordination:CoordinationPattern" href="CoordinationPattern.xmi#/"/>
+  </diagram:DSemanticDiagram>
+  <diagram:DSemanticDiagram xmi:id="_d9Nz4DdPEeePgKt_9dwJJw" name="new CoordinationSpecification Diagram">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_d9Nz4TdPEeePgKt_9dwJJw" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_d9Nz4jdPEeePgKt_9dwJJw"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_d-C6UDdPEeePgKt_9dwJJw" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_d-C6UTdPEeePgKt_9dwJJw" type="Sirius" element="_d9Nz4DdPEeePgKt_9dwJJw" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_d-Hy0DdPEeePgKt_9dwJJw" type="2001" element="_d9Nz4zdPEeePgKt_9dwJJw">
+          <children xmi:type="notation:Node" xmi:id="_d-x6IDdPEeePgKt_9dwJJw" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_d-x6ITdPEeePgKt_9dwJJw" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_d_azUDdPEeePgKt_9dwJJw" type="3016" element="_d9Nz5DdPEeePgKt_9dwJJw">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_d_azUTdPEeePgKt_9dwJJw" fontName="Adobe Helvetica"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_d_azUjdPEeePgKt_9dwJJw"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_d-Hy0TdPEeePgKt_9dwJJw" fontName="Adobe Helvetica" fontHeight="12" bold="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_d-Hy0jdPEeePgKt_9dwJJw" x="210" y="220" width="100" height="100"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_d-1kgDdPEeePgKt_9dwJJw" type="2001" element="_d9Nz5TdPEeePgKt_9dwJJw">
+          <children xmi:type="notation:Node" xmi:id="_d-4AwDdPEeePgKt_9dwJJw" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_d-4AwTdPEeePgKt_9dwJJw" x="21"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_d_cBcDdPEeePgKt_9dwJJw" type="3005" element="_d9Nz5jdPEeePgKt_9dwJJw">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_d_cBcTdPEeePgKt_9dwJJw" fontName="Adobe Helvetica"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_d_cBcjdPEeePgKt_9dwJJw"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_d-1kgTdPEeePgKt_9dwJJw" fontName="Adobe Helvetica" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_d-1kgjdPEeePgKt_9dwJJw" x="350" y="451" width="20" height="20"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_d_N_ADdPEeePgKt_9dwJJw" type="2001" element="_d9Nz5zdPEeePgKt_9dwJJw">
+          <children xmi:type="notation:Node" xmi:id="_d_OmEDdPEeePgKt_9dwJJw" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_d_OmETdPEeePgKt_9dwJJw" x="21"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_d_cogDdPEeePgKt_9dwJJw" type="3005" element="_d9Nz6DdPEeePgKt_9dwJJw">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_d_cogTdPEeePgKt_9dwJJw" fontName="Adobe Helvetica"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_d_cogjdPEeePgKt_9dwJJw"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_d_N_ATdPEeePgKt_9dwJJw" fontName="Adobe Helvetica" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_d_N_AjdPEeePgKt_9dwJJw" x="60" y="470" width="20" height="20"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_d_QbQDdPEeePgKt_9dwJJw" type="2003" element="_d9Nz6TdPEeePgKt_9dwJJw">
+          <children xmi:type="notation:Node" xmi:id="_d_ZlMDdPEeePgKt_9dwJJw" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_d_aMQDdPEeePgKt_9dwJJw" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_d_d2oDdPEeePgKt_9dwJJw" type="3010" element="_d9Nz6zdPEeePgKt_9dwJJw">
+              <styles xmi:type="notation:FontStyle" xmi:id="_d_d2oTdPEeePgKt_9dwJJw" fontName="Adobe Helvetica" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_d_d2ojdPEeePgKt_9dwJJw"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_d_aMQTdPEeePgKt_9dwJJw"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_d_aMQjdPEeePgKt_9dwJJw"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_d_QbQTdPEeePgKt_9dwJJw" fontName="Adobe Helvetica" fontHeight="8" bold="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_d_QbQjdPEeePgKt_9dwJJw" x="145" y="590"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_d-C6UjdPEeePgKt_9dwJJw"/>
+        <edges xmi:type="notation:Edge" xmi:id="_d_nAkDdPEeePgKt_9dwJJw" type="4001" element="_d9Nz7TdPEeePgKt_9dwJJw" source="_d-1kgDdPEeePgKt_9dwJJw" target="_d_N_ADdPEeePgKt_9dwJJw">
+          <children xmi:type="notation:Node" xmi:id="_d_pc0DdPEeePgKt_9dwJJw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_d_pc0TdPEeePgKt_9dwJJw" x="-8" y="2"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_d_qq8DdPEeePgKt_9dwJJw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_d_qq8TdPEeePgKt_9dwJJw" x="15" y="-3"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_d_r5EDdPEeePgKt_9dwJJw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_d_r5ETdPEeePgKt_9dwJJw" x="20" y="-3"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_d_nAkTdPEeePgKt_9dwJJw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_d_nAkjdPEeePgKt_9dwJJw" fontName="Adobe Helvetica" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_d_nAkzdPEeePgKt_9dwJJw" points="[-5, -1, 280, 0]$[-285, -1, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_d_z04DdPEeePgKt_9dwJJw" id="(0.25,1.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_d_z04TdPEeePgKt_9dwJJw" id="(0.5,0.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_d_0b8DdPEeePgKt_9dwJJw" type="4001" element="_d9Nz8DdPEeePgKt_9dwJJw" source="_d-1kgDdPEeePgKt_9dwJJw" target="_d-Hy0DdPEeePgKt_9dwJJw">
+          <children xmi:type="notation:Node" xmi:id="_d_1DADdPEeePgKt_9dwJJw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_d_1DATdPEeePgKt_9dwJJw" x="-1" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_d_1DAjdPEeePgKt_9dwJJw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_d_1DAzdPEeePgKt_9dwJJw" x="3" y="-6"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_d_1DBDdPEeePgKt_9dwJJw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_d_1DBTdPEeePgKt_9dwJJw" x="1" y="-6"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_d_0b8TdPEeePgKt_9dwJJw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_d_0b8jdPEeePgKt_9dwJJw" fontName="Adobe Helvetica" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_d_0b8zdPEeePgKt_9dwJJw" points="[-10, -19, 90, 232]$[-81, -151, 19, 100]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_d_1qEDdPEeePgKt_9dwJJw" id="(0.5,1.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_d_1qETdPEeePgKt_9dwJJw" id="(0.5,0.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_d_1qEjdPEeePgKt_9dwJJw" type="4001" element="_d9Nz8zdPEeePgKt_9dwJJw" source="_d_N_ADdPEeePgKt_9dwJJw" target="_d-Hy0DdPEeePgKt_9dwJJw">
+          <children xmi:type="notation:Node" xmi:id="_d_1qFjdPEeePgKt_9dwJJw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_d_2RIDdPEeePgKt_9dwJJw" x="10" y="4"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_d_2RITdPEeePgKt_9dwJJw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_d_2RIjdPEeePgKt_9dwJJw" x="-10" y="-7"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_d_2RIzdPEeePgKt_9dwJJw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_d_2RJDdPEeePgKt_9dwJJw" x="-9" y="-7"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_d_1qEzdPEeePgKt_9dwJJw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_d_1qFDdPEeePgKt_9dwJJw" fontName="Adobe Helvetica" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_d_1qFTdPEeePgKt_9dwJJw" points="[10, -13, -155, 257]$[141, -170, -24, 100]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_d_2RJTdPEeePgKt_9dwJJw" id="(0.5,1.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_d_2RJjdPEeePgKt_9dwJJw" id="(0.25,0.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_eADsgDdPEeePgKt_9dwJJw" type="4001" element="_d9Nz9jdPEeePgKt_9dwJJw" source="_d_nAkDdPEeePgKt_9dwJJw" target="_d_QbQDdPEeePgKt_9dwJJw">
+          <children xmi:type="notation:Node" xmi:id="_eAFhsDdPEeePgKt_9dwJJw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eAFhsTdPEeePgKt_9dwJJw" x="-1" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_eAIlADdPEeePgKt_9dwJJw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eAIlATdPEeePgKt_9dwJJw" x="-1" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_eAIlAjdPEeePgKt_9dwJJw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eAIlAzdPEeePgKt_9dwJJw" y="-9"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_eADsgTdPEeePgKt_9dwJJw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_eADsgjdPEeePgKt_9dwJJw" fontName="Adobe Helvetica" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_eADsgzdPEeePgKt_9dwJJw" points="[0, 0, 4, -184]$[-4, 145, 0, -39]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_eAJzIDdPEeePgKt_9dwJJw" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_eAJzITdPEeePgKt_9dwJJw" id="(0.5,0.5)"/>
+        </edges>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_d9Nz4zdPEeePgKt_9dwJJw" incomingEdges="_d9Nz8DdPEeePgKt_9dwJJw _d9Nz8zdPEeePgKt_9dwJJw" width="10" height="10" resizeKind="NSEW">
+      <target xmi:type="coordination:CoordinationSpecification" href="CoordinationSpecification.xmi#/"/>
+      <semanticElements xmi:type="coordination:CoordinationSpecification" href="CoordinationSpecification.xmi#/"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Ellipse" xmi:id="_d9Nz5DdPEeePgKt_9dwJJw" labelSize="12" showIcon="false" borderSize="2" borderSizeComputationExpression="2" borderLineStyle="dash" labelPosition="node" color="194,239,255">
+        <labelFormat>bold</labelFormat>
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.coordination.CoordinationSpecification']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.coordination.CoordinationSpecification']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_d9Nz5TdPEeePgKt_9dwJJw" name="role" outgoingEdges="_d9Nz7TdPEeePgKt_9dwJJw _d9Nz8DdPEeePgKt_9dwJJw" width="2" height="2">
+      <target xmi:type="coordination:Role" href="CoordinationSpecification.xmi#//@roles.0"/>
+      <semanticElements xmi:type="coordination:Role" href="CoordinationSpecification.xmi#//@roles.0"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_d9Nz5jdPEeePgKt_9dwJJw" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" workspacePath="/coordination.design/images/right-arrow-black.svg">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.coordination.Role']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.coordination.Role']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_d9Nz5zdPEeePgKt_9dwJJw" name="role" outgoingEdges="_d9Nz8zdPEeePgKt_9dwJJw" incomingEdges="_d9Nz7TdPEeePgKt_9dwJJw" width="2" height="2">
+      <target xmi:type="coordination:Role" href="CoordinationSpecification.xmi#//@roles.1"/>
+      <semanticElements xmi:type="coordination:Role" href="CoordinationSpecification.xmi#//@roles.1"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_d9Nz6DdPEeePgKt_9dwJJw" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" workspacePath="/coordination.design/images/right-arrow-black.svg">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.coordination.Role']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.coordination.Role']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_d9Nz6TdPEeePgKt_9dwJJw" name="QoS Assumptions:" incomingEdges="_d9Nz9jdPEeePgKt_9dwJJw">
+      <target xmi:type="coordination:ConnectorQualityOfServiceAssumptions" href="CoordinationSpecification.xmi#//@roleConnectors.0/@connectorQOSAssumptions"/>
+      <semanticElements xmi:type="coordination:ConnectorQualityOfServiceAssumptions" href="CoordinationSpecification.xmi#//@roleConnectors.0/@connectorQOSAssumptions"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_d9Nz6jdPEeePgKt_9dwJJw" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundColor="255,245,181" foregroundColor="252,233,79">
+        <labelFormat>bold</labelFormat>
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@containerMappings[name='ConnectorQualityOfServiceAssumptions']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@containerMappings[name='ConnectorQualityOfServiceAssumptions']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_d9Nz6zdPEeePgKt_9dwJJw" name="Reliable: true&#xA;MaxDelay: 0ms&#xA;PreserveMsgOrder: false">
+        <target xmi:type="coordination:ConnectorQualityOfServiceAssumptions" href="CoordinationSpecification.xmi#//@roleConnectors.0/@connectorQOSAssumptions"/>
+        <semanticElements xmi:type="coordination:ConnectorQualityOfServiceAssumptions" href="CoordinationSpecification.xmi#//@roleConnectors.0/@connectorQOSAssumptions"/>
+        <ownedStyle xmi:type="diagram:Square" xmi:id="_d9Nz7DdPEeePgKt_9dwJJw" labelSize="12" showIcon="false" labelPosition="node" color="255,245,181">
+          <description xmi:type="style:SquareDescription" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@containerMappings[name='ConnectorQualityOfServiceAssumptions']/@subNodeMappings[name='ConnectorQualityOfServiceAssumptions']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@containerMappings[name='ConnectorQualityOfServiceAssumptions']/@subNodeMappings[name='ConnectorQualityOfServiceAssumptions']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_d9Nz7TdPEeePgKt_9dwJJw" outgoingEdges="_d9Nz9jdPEeePgKt_9dwJJw" sourceNode="_d9Nz5TdPEeePgKt_9dwJJw" targetNode="_d9Nz5zdPEeePgKt_9dwJJw">
+      <target xmi:type="coordination:RoleConnector" href="CoordinationSpecification.xmi#//@roleConnectors.0"/>
+      <semanticElements xmi:type="coordination:RoleConnector" href="CoordinationSpecification.xmi#//@roleConnectors.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_d9Nz7jdPEeePgKt_9dwJJw" targetArrow="NoDecoration" size="2" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@edgeMappings[name='org.muml.pim.coordination.Role%20Connector']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_d9Nz7zdPEeePgKt_9dwJJw"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@edgeMappings[name='org.muml.pim.coordination.Role%20Connector']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_d9Nz8DdPEeePgKt_9dwJJw" sourceNode="_d9Nz5TdPEeePgKt_9dwJJw" targetNode="_d9Nz4zdPEeePgKt_9dwJJw">
+      <target xmi:type="coordination:Role" href="CoordinationSpecification.xmi#//@roles.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_d9Nz8TdPEeePgKt_9dwJJw" lineStyle="dash" targetArrow="NoDecoration" size="2" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@edgeMappings[name='org.muml.pim.coordination.CoordinationToRoleEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_d9Nz8jdPEeePgKt_9dwJJw"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@edgeMappings[name='org.muml.pim.coordination.CoordinationToRoleEdge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_d9Nz8zdPEeePgKt_9dwJJw" sourceNode="_d9Nz5zdPEeePgKt_9dwJJw" targetNode="_d9Nz4zdPEeePgKt_9dwJJw">
+      <target xmi:type="coordination:Role" href="CoordinationSpecification.xmi#//@roles.1"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_d9Nz9DdPEeePgKt_9dwJJw" lineStyle="dash" targetArrow="NoDecoration" size="2" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@edgeMappings[name='org.muml.pim.coordination.CoordinationToRoleEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_d9Nz9TdPEeePgKt_9dwJJw"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@edgeMappings[name='org.muml.pim.coordination.CoordinationToRoleEdge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_d9Nz9jdPEeePgKt_9dwJJw" sourceNode="_d9Nz7TdPEeePgKt_9dwJJw" targetNode="_d9Nz6TdPEeePgKt_9dwJJw">
+      <target xmi:type="coordination:RoleConnector" href="CoordinationSpecification.xmi#//@roleConnectors.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_d9Nz9zdPEeePgKt_9dwJJw" lineStyle="dot" targetArrow="NoDecoration" size="0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@edgeMappings[name='org.muml.pim.coordination.AssumptionsEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_d9Nz-DdPEeePgKt_9dwJJw"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@edgeMappings[name='org.muml.pim.coordination.AssumptionsEdge']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_d9Nz-TdPEeePgKt_9dwJJw"/>
     <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/coordination.design/description/coordination.odesign#//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer"/>
     <target xmi:type="coordination:CoordinationSpecification" href="CoordinationSpecification.xmi#/"/>
   </diagram:DSemanticDiagram>
