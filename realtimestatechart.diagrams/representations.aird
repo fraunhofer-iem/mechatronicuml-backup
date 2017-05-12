@@ -1,257 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:realtimestatechart="http://rtsc" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://rtsc platform:/resource/realtimestatechart.model/model/realtimestatechart.ecore http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:realtimestatechart="http://rtsc" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://rtsc platform:/resource/realtimestatechart.model/model/realtimestatechart.ecore">
   <viewpoint:DAnalysis xmi:id="_gVRusDSiEeeD94cwctLTsg" selectedViews="_4TUcMDSiEeeD94cwctLTsg" version="11.1.0.201608251200">
     <semanticResources>platform:/resource/realtimestatechart.model/model/realtimestatechart.ecore</semanticResources>
     <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
     <semanticResources>Realtimestatechart.xmi</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_4TUcMDSiEeeD94cwctLTsg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_GHQtMDSjEeeD94cwctLTsg" name="My Diagram 1" representation="_GHQtMTSjEeeD94cwctLTsg">
-        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']"/>
-        <target xmi:type="realtimestatechart:Realtimestatechart" href="Realtimestatechart.xmi#/"/>
-      </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_cmx4IDSsEeePC_whYXyl-g" name="My Diagram 2" representation="_cm2woDSsEeePC_whYXyl-g">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_gw8p8DcGEeevmreGYDCamA" name="new Realtimestatechart Diagram" representation="_gw-fIDcGEeevmreGYDCamA">
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']"/>
         <target xmi:type="realtimestatechart:Realtimestatechart" href="Realtimestatechart.xmi#/"/>
       </ownedRepresentationDescriptors>
     </ownedViews>
   </viewpoint:DAnalysis>
-  <diagram:DSemanticDiagram xmi:id="_GHQtMTSjEeeD94cwctLTsg" name="My Diagram 1">
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_GHQtMjSjEeeD94cwctLTsg" source="DANNOTATION_CUSTOMIZATION_KEY">
-      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_GHQtMzSjEeeD94cwctLTsg"/>
+  <diagram:DSemanticDiagram xmi:id="_gw-fIDcGEeevmreGYDCamA" name="new Realtimestatechart Diagram">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_gw_tQDcGEeevmreGYDCamA" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_gw_tQTcGEeevmreGYDCamA"/>
     </ownedAnnotationEntries>
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_GLfF4DSjEeeD94cwctLTsg" source="GMF_DIAGRAMS">
-      <data xmi:type="notation:Diagram" xmi:id="_GLfs8DSjEeeD94cwctLTsg" type="Sirius" element="_GHQtMTSjEeeD94cwctLTsg" measurementUnit="Pixel">
-        <children xmi:type="notation:Node" xmi:id="_bxRGEDSkEeeD94cwctLTsg" type="2001" element="_bxNbsDSkEeeD94cwctLTsg">
-          <children xmi:type="notation:Node" xmi:id="_bxSUMDSkEeeD94cwctLTsg" type="5002">
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_bxSUMTSkEeeD94cwctLTsg" y="5"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_bxUJYDSkEeeD94cwctLTsg" type="3016" element="_bxOCwDSkEeeD94cwctLTsg">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_bxUJYTSkEeeD94cwctLTsg" fontName="Adobe Helvetica"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bxUJYjSkEeeD94cwctLTsg"/>
-          </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_bxRGETSkEeeD94cwctLTsg" fontName="Adobe Helvetica" fontHeight="8"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bxRGEjSkEeeD94cwctLTsg" x="-5" y="78" width="100" height="100"/>
-        </children>
-        <children xmi:type="notation:Node" xmi:id="_bxS7QDSkEeeD94cwctLTsg" type="2001" element="_bxOCwTSkEeeD94cwctLTsg">
-          <children xmi:type="notation:Node" xmi:id="_bxTiUDSkEeeD94cwctLTsg" type="5002">
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_bxTiUTSkEeeD94cwctLTsg" y="5"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_bxUJYzSkEeeD94cwctLTsg" type="3016" element="_bxOCwjSkEeeD94cwctLTsg">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_bxUJZDSkEeeD94cwctLTsg" fontName="Adobe Helvetica"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bxUJZTSkEeeD94cwctLTsg"/>
-          </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_bxS7QTSkEeeD94cwctLTsg" fontName="Adobe Helvetica" fontHeight="8"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bxS7QjSkEeeD94cwctLTsg" x="205" y="25" width="220" height="206"/>
-        </children>
-        <children xmi:type="notation:Node" xmi:id="_QKxSIDSmEeeD94cwctLTsg" type="2001" element="_QKYQkDSmEeeD94cwctLTsg">
-          <children xmi:type="notation:Node" xmi:id="_QK3_0DSmEeeD94cwctLTsg" type="5002">
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_QK3_0TSmEeeD94cwctLTsg" y="5"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_QK_UkDSmEeeD94cwctLTsg" type="3016" element="_QKaFwDSmEeeD94cwctLTsg">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_QK_UkTSmEeeD94cwctLTsg" fontName="Adobe Helvetica"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QK_UkjSmEeeD94cwctLTsg"/>
-          </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_QKxSITSmEeeD94cwctLTsg" fontName="Adobe Helvetica" fontHeight="8"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QKxSIjSmEeeD94cwctLTsg" x="45" y="250" width="100" height="100"/>
-        </children>
-        <children xmi:type="notation:Node" xmi:id="_ZFejUDSmEeeD94cwctLTsg" type="2001" element="_ZFXOkDSmEeeD94cwctLTsg">
-          <children xmi:type="notation:Node" xmi:id="_ZFfKYDSmEeeD94cwctLTsg" type="5002">
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_ZFfKYTSmEeeD94cwctLTsg" y="5"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_ZFgYgDSmEeeD94cwctLTsg" type="3016" element="_ZFXOkTSmEeeD94cwctLTsg">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_ZFgYgTSmEeeD94cwctLTsg" fontName="Adobe Helvetica"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZFgYgjSmEeeD94cwctLTsg"/>
-          </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_ZFejUTSmEeeD94cwctLTsg" fontName="Adobe Helvetica" fontHeight="8"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZFejUjSmEeeD94cwctLTsg" x="315" y="240" width="100" height="100"/>
-        </children>
-        <styles xmi:type="notation:DiagramStyle" xmi:id="_GLfs8TSjEeeD94cwctLTsg"/>
-        <edges xmi:type="notation:Edge" xmi:id="_sqVfgDSlEeeD94cwctLTsg" type="4001" element="_sqTDQDSlEeeD94cwctLTsg" source="_bxRGEDSkEeeD94cwctLTsg" target="_bxS7QDSkEeeD94cwctLTsg">
-          <children xmi:type="notation:Node" xmi:id="_sqVfhDSlEeeD94cwctLTsg" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sqVfhTSlEeeD94cwctLTsg" x="8" y="-6"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_sqWGkDSlEeeD94cwctLTsg" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sqWGkTSlEeeD94cwctLTsg" x="-8" y="6"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_sqWGkjSlEeeD94cwctLTsg" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sqWGkzSlEeeD94cwctLTsg" x="4" y="9"/>
-          </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_sqVfgTSlEeeD94cwctLTsg"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_sqVfgjSlEeeD94cwctLTsg" fontName="Adobe Helvetica" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_sqVfgzSlEeeD94cwctLTsg" points="[38, -50, -292, 3]$[111, -145, -219, -92]$[210, -103, -120, -50]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_sqWGlDSlEeeD94cwctLTsg" id="(0.5,0.5)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_sqWGlTSlEeeD94cwctLTsg" id="(0.7727272727272727,0.24271844660194175)"/>
-        </edges>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_gyT74DcGEeevmreGYDCamA" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_gyT74TcGEeevmreGYDCamA" type="Sirius" element="_gw-fIDcGEeevmreGYDCamA" measurementUnit="Pixel">
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_gyT74jcGEeevmreGYDCamA"/>
       </data>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_bxNbsDSkEeeD94cwctLTsg" name="init" outgoingEdges="_sqTDQDSlEeeD94cwctLTsg" width="10" height="10" resizeKind="NSEW">
-      <target xmi:type="realtimestatechart:State" href="Realtimestatechart.xmi#//@states.0"/>
-      <semanticElements xmi:type="realtimestatechart:State" href="Realtimestatechart.xmi#//@states.0"/>
-      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
-      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
-      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:Ellipse" xmi:id="_bxOCwDSkEeeD94cwctLTsg" labelPosition="node" color="255,255,255">
-        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.realtimestatechart.State']/@style"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.realtimestatechart.State']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_bxOCwTSkEeeD94cwctLTsg" name="next" incomingEdges="_sqTDQDSlEeeD94cwctLTsg" width="10" height="10" resizeKind="NSEW">
-      <target xmi:type="realtimestatechart:State" href="Realtimestatechart.xmi#//@states.1"/>
-      <semanticElements xmi:type="realtimestatechart:State" href="Realtimestatechart.xmi#//@states.1"/>
-      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
-      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
-      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:Ellipse" xmi:id="_bxOCwjSkEeeD94cwctLTsg" labelPosition="node" color="255,255,255">
-        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.realtimestatechart.State']/@style"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.realtimestatechart.State']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_QKYQkDSmEeeD94cwctLTsg" name="newstate" width="10" height="10" resizeKind="NSEW">
-      <target xmi:type="realtimestatechart:State" href="Realtimestatechart.xmi#//@states.2"/>
-      <semanticElements xmi:type="realtimestatechart:State" href="Realtimestatechart.xmi#//@states.2"/>
-      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
-      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
-      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:Ellipse" xmi:id="_QKaFwDSmEeeD94cwctLTsg" labelPosition="node" color="255,255,255">
-        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.realtimestatechart.State']/@style"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.realtimestatechart.State']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_ZFXOkDSmEeeD94cwctLTsg" name="newstate" width="10" height="10" resizeKind="NSEW">
-      <target xmi:type="realtimestatechart:State" href="Realtimestatechart.xmi#//@states.3"/>
-      <semanticElements xmi:type="realtimestatechart:State" href="Realtimestatechart.xmi#//@states.3"/>
-      <ownedStyle xmi:type="diagram:Ellipse" xmi:id="_ZFXOkTSmEeeD94cwctLTsg" labelPosition="node" color="255,255,255">
-        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.realtimestatechart.State']/@style"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.realtimestatechart.State']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_sqTDQDSlEeeD94cwctLTsg" sourceNode="_bxNbsDSkEeeD94cwctLTsg" targetNode="_bxOCwTSkEeeD94cwctLTsg">
-      <target xmi:type="realtimestatechart:Transition" href="Realtimestatechart.xmi#//@transitions.0"/>
-      <semanticElements xmi:type="realtimestatechart:Transition" href="Realtimestatechart.xmi#//@transitions.0"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_sqURYDSlEeeD94cwctLTsg" size="2">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@edgeMappings[name='org.muml.pim.realtimestatechart.Transition']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_sqURYTSlEeeD94cwctLTsg"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@edgeMappings[name='org.muml.pim.realtimestatechart.Transition']"/>
-    </ownedDiagramElements>
     <description xmi:type="description_1:DiagramDescription" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']"/>
-    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_GHQtNjSjEeeD94cwctLTsg"/>
-    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer"/>
-    <target xmi:type="realtimestatechart:Realtimestatechart" href="Realtimestatechart.xmi#/"/>
-  </diagram:DSemanticDiagram>
-  <diagram:DSemanticDiagram xmi:id="_cm2woDSsEeePC_whYXyl-g" name="My Diagram 2">
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_cm2woTSsEeePC_whYXyl-g" source="DANNOTATION_CUSTOMIZATION_KEY">
-      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_cm2wojSsEeePC_whYXyl-g"/>
-    </ownedAnnotationEntries>
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_cnUqsDSsEeePC_whYXyl-g" source="GMF_DIAGRAMS">
-      <data xmi:type="notation:Diagram" xmi:id="_cnVRwDSsEeePC_whYXyl-g" type="Sirius" element="_cm2woDSsEeePC_whYXyl-g" measurementUnit="Pixel">
-        <children xmi:type="notation:Node" xmi:id="_cnYVEDSsEeePC_whYXyl-g" type="2001" element="_cm2wozSsEeePC_whYXyl-g">
-          <children xmi:type="notation:Node" xmi:id="_cnY8IDSsEeePC_whYXyl-g" type="5002">
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_cnY8ITSsEeePC_whYXyl-g" y="5"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_cnb_cjSsEeePC_whYXyl-g" type="3016" element="_cm2wpDSsEeePC_whYXyl-g">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_cnb_czSsEeePC_whYXyl-g" fontName="Adobe Helvetica"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cnb_dDSsEeePC_whYXyl-g"/>
-          </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_cnYVETSsEeePC_whYXyl-g" fontName="Adobe Helvetica" fontHeight="8"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cnYVEjSsEeePC_whYXyl-g" x="30" y="30" width="100" height="100"/>
-        </children>
-        <children xmi:type="notation:Node" xmi:id="_cnZjMDSsEeePC_whYXyl-g" type="2001" element="_cm2wpTSsEeePC_whYXyl-g">
-          <children xmi:type="notation:Node" xmi:id="_cnaKQDSsEeePC_whYXyl-g" type="5002">
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_cnaKQTSsEeePC_whYXyl-g" y="5"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_cncmgDSsEeePC_whYXyl-g" type="3016" element="_cm2wpjSsEeePC_whYXyl-g">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_cncmgTSsEeePC_whYXyl-g" fontName="Adobe Helvetica"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cncmgjSsEeePC_whYXyl-g"/>
-          </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_cnZjMTSsEeePC_whYXyl-g" fontName="Adobe Helvetica" fontHeight="8"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cnZjMjSsEeePC_whYXyl-g" x="30" y="190" width="100" height="100"/>
-        </children>
-        <children xmi:type="notation:Node" xmi:id="_cnaKQjSsEeePC_whYXyl-g" type="2001" element="_cm2wpzSsEeePC_whYXyl-g">
-          <children xmi:type="notation:Node" xmi:id="_cnaxUDSsEeePC_whYXyl-g" type="5002">
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_cnaxUTSsEeePC_whYXyl-g" y="5"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_cnhfADSsEeePC_whYXyl-g" type="3016" element="_cm2wqDSsEeePC_whYXyl-g">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_cnhfATSsEeePC_whYXyl-g" fontName="Adobe Helvetica"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cnhfAjSsEeePC_whYXyl-g"/>
-          </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_cnaKQzSsEeePC_whYXyl-g" fontName="Adobe Helvetica" fontHeight="8"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cnaKRDSsEeePC_whYXyl-g" x="190" y="30" width="100" height="100"/>
-        </children>
-        <children xmi:type="notation:Node" xmi:id="_cnbYYDSsEeePC_whYXyl-g" type="2001" element="_cm2wqTSsEeePC_whYXyl-g">
-          <children xmi:type="notation:Node" xmi:id="_cnb_cDSsEeePC_whYXyl-g" type="5002">
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_cnb_cTSsEeePC_whYXyl-g" y="5"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_cnitIDSsEeePC_whYXyl-g" type="3016" element="_cm2wqjSsEeePC_whYXyl-g">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_cnitITSsEeePC_whYXyl-g" fontName="Adobe Helvetica"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cnitIjSsEeePC_whYXyl-g"/>
-          </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_cnbYYTSsEeePC_whYXyl-g" fontName="Adobe Helvetica" fontHeight="8"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cnbYYjSsEeePC_whYXyl-g" x="350" y="30" width="100" height="100"/>
-        </children>
-        <styles xmi:type="notation:DiagramStyle" xmi:id="_cnVRwTSsEeePC_whYXyl-g"/>
-        <edges xmi:type="notation:Edge" xmi:id="_cnozwDSsEeePC_whYXyl-g" type="4001" element="_cm2wqzSsEeePC_whYXyl-g" source="_cnYVEDSsEeePC_whYXyl-g" target="_cnZjMDSsEeePC_whYXyl-g">
-          <children xmi:type="notation:Node" xmi:id="_cnr3EDSsEeePC_whYXyl-g" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cnr3ETSsEeePC_whYXyl-g" y="-10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_cntFMDSsEeePC_whYXyl-g" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cntFMTSsEeePC_whYXyl-g" y="10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_cnuTUDSsEeePC_whYXyl-g" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cnuTUTSsEeePC_whYXyl-g" y="10"/>
-          </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_cnozwTSsEeePC_whYXyl-g"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_cnozwjSsEeePC_whYXyl-g" fontName="Adobe Helvetica" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cnozwzSsEeePC_whYXyl-g" points="[0, 0, 0, -60]$[0, 60, 0, 0]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cn0Z8DSsEeePC_whYXyl-g" id="(0.5,1.0)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cn0Z8TSsEeePC_whYXyl-g" id="(0.5,0.0)"/>
-        </edges>
-      </data>
-    </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_cm2wozSsEeePC_whYXyl-g" name="init" outgoingEdges="_cm2wqzSsEeePC_whYXyl-g" width="10" height="10" resizeKind="NSEW">
-      <target xmi:type="realtimestatechart:State" href="Realtimestatechart.xmi#//@states.0"/>
-      <semanticElements xmi:type="realtimestatechart:State" href="Realtimestatechart.xmi#//@states.0"/>
-      <ownedStyle xmi:type="diagram:Ellipse" xmi:id="_cm2wpDSsEeePC_whYXyl-g" labelPosition="node" color="255,255,255">
-        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.realtimestatechart.State']/@style"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.realtimestatechart.State']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_cm2wpTSsEeePC_whYXyl-g" name="next" incomingEdges="_cm2wqzSsEeePC_whYXyl-g" width="10" height="10" resizeKind="NSEW">
-      <target xmi:type="realtimestatechart:State" href="Realtimestatechart.xmi#//@states.1"/>
-      <semanticElements xmi:type="realtimestatechart:State" href="Realtimestatechart.xmi#//@states.1"/>
-      <ownedStyle xmi:type="diagram:Ellipse" xmi:id="_cm2wpjSsEeePC_whYXyl-g" labelPosition="node" color="255,255,255">
-        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.realtimestatechart.State']/@style"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.realtimestatechart.State']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_cm2wpzSsEeePC_whYXyl-g" name="newstate" width="10" height="10" resizeKind="NSEW">
-      <target xmi:type="realtimestatechart:State" href="Realtimestatechart.xmi#//@states.2"/>
-      <semanticElements xmi:type="realtimestatechart:State" href="Realtimestatechart.xmi#//@states.2"/>
-      <ownedStyle xmi:type="diagram:Ellipse" xmi:id="_cm2wqDSsEeePC_whYXyl-g" labelPosition="node" color="255,255,255">
-        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.realtimestatechart.State']/@style"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.realtimestatechart.State']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_cm2wqTSsEeePC_whYXyl-g" name="newstate" width="10" height="10" resizeKind="NSEW">
-      <target xmi:type="realtimestatechart:State" href="Realtimestatechart.xmi#//@states.3"/>
-      <semanticElements xmi:type="realtimestatechart:State" href="Realtimestatechart.xmi#//@states.3"/>
-      <ownedStyle xmi:type="diagram:Ellipse" xmi:id="_cm2wqjSsEeePC_whYXyl-g" labelPosition="node" color="255,255,255">
-        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.realtimestatechart.State']/@style"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.realtimestatechart.State']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_cm2wqzSsEeePC_whYXyl-g" sourceNode="_cm2wozSsEeePC_whYXyl-g" targetNode="_cm2wpTSsEeePC_whYXyl-g">
-      <target xmi:type="realtimestatechart:Transition" href="Realtimestatechart.xmi#//@transitions.0"/>
-      <semanticElements xmi:type="realtimestatechart:Transition" href="Realtimestatechart.xmi#//@transitions.0"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_cm2wrDSsEeePC_whYXyl-g" size="2">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@edgeMappings[name='org.muml.pim.realtimestatechart.Transition']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_cm2wrTSsEeePC_whYXyl-g"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@edgeMappings[name='org.muml.pim.realtimestatechart.Transition']"/>
-    </ownedDiagramElements>
-    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']"/>
-    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_cm2wrjSsEeePC_whYXyl-g"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_gw_tQjcGEeevmreGYDCamA"/>
     <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer"/>
     <target xmi:type="realtimestatechart:Realtimestatechart" href="Realtimestatechart.xmi#/"/>
   </diagram:DSemanticDiagram>
