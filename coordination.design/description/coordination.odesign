@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="coordination" version="11.1.1.201610211630">
+  <ownedViewpoints name="coordination" modelFileExtension="coordination">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="org.muml.pim.coordination.diagram" label="CoordinationSpecification Diagram" domainClass="coordination.CoordinationSpecification" enablePopupBars="true">
+      <metamodel href="../../coordination.model/model/coordination.ecore#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="org.muml.pim.coordination.CoordinationSpecification" label="Coordination Specification" semanticCandidatesExpression="aql:self" domainClass="CoordinationSpecification">
+          <style xsi:type="style:EllipseNodeDescription" borderSizeComputationExpression="2" borderLineStyle="dash" labelSize="12" showIcon="false" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="org.muml.pim.coordination.Role" label="Role" semanticCandidatesExpression="aql:self.roles" domainClass="Role">
+          <style xsi:type="style:WorkspaceImageDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" sizeComputationExpression="2" workspacePath="/coordination.design/images/right-arrow-black.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="org.muml.pim.coordination.AssumptionsEdge" label="Assumptions Edge" sourceMapping="//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@edgeMappings[name='org.muml.pim.coordination.Role%20Connector']" targetMapping="//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@containerMappings[name='ConnectorQualityOfServiceAssumptions']" targetFinderExpression="aql:self.connectorQOSAssumptions">
+          <style lineStyle="dot" targetArrow="NoDecoration" sizeComputationExpression="0">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="org.muml.pim.coordination.Role Connector" label="Role Connector" semanticCandidatesExpression="aql:self.roleConnectors" sourceMapping="//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.coordination.Role']" targetMapping="//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.coordination.Role']" targetFinderExpression="aql:self.target" sourceFinderExpression="aql:self.source" domainClass="RoleConnector" useDomainElement="true">
+          <style targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="org.muml.pim.coordination.CoordinationToRoleEdge" label="Coordination To Role Edge" sourceMapping="//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.coordination.Role']" targetMapping="//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.coordination.CoordinationSpecification']" targetFinderExpression="aql:self.eContainer()">
+          <style lineStyle="dash" targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="ConnectorQualityOfServiceAssumptions" label="QOS Assumptions" domainClass="ConnectorQualityOfServiceAssumptions">
+          <subNodeMappings name="ConnectorQualityOfServiceAssumptions" label="Reliable" semanticCandidatesExpression="aql:self" domainClass="ConnectorQualityOfServiceAssumptions">
+            <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:'Reliable: '.concat((not self.messageLossPossible).toString()).concat('\nMaxDelay: 0ms').concat('\nPreserveMsgOrder: '.concat(self.preserveMessageOrder.toString())" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="QoS Assumptions:" roundedCorner="true">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
+          </style>
+        </containerMappings>
+        <toolSections name="org.muml.pim.coordination.createSection" label="Create">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="org.muml.pim.coordination.createRole" label="Create Role" nodeMappings="//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.coordination.Role']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Role" referenceName="roles">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="role"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="org.muml.pim.coordination.RoleConnector" label="Create Role Connector" edgeMappings="//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@edgeMappings[name='org.muml.pim.coordination.Role%20Connector']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source.eContainer()">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="RoleConnector" referenceName="roleConnectors" variableName="roleConnector">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="aql:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="aql:target"/>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ConnectorQualityOfServiceAssumptions" referenceName="connectorQOSAssumptions" variableName="qos"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="coordination.design.Services"/>
+  </ownedViewpoints>
+</description:Group>
