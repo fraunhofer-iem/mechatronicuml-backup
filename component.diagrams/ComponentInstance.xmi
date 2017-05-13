@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <instance:ComponentInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:instance="http://instance" xsi:schemaLocation="http://instance ../component.model/model/instance.ecore" name="test">
-  <subComponentInstances/>
-  <subComponentInstances name="port"/>
+  <subComponentInstances>
+    <portInstances name="pi"/>
+    <subComponentInstances name="oiokok"/>
+    <subComponentInstances name="ci"/>
+  </subComponentInstances>
+  <subComponentInstances name="port">
+    <portInstances name="pi"/>
+  </subComponentInstances>
 </instance:ComponentInstance>
