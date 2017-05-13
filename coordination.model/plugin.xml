@@ -6,4 +6,12 @@
 
 <plugin>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated coordination -->
+      <package
+            uri="http://coordination"
+            class="coordination.CoordinationPackage"
+            genModel="model/coordination.genmodel"/>
+   </extension>
+
 </plugin>

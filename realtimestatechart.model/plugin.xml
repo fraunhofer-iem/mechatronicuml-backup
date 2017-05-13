@@ -6,4 +6,12 @@
 
 <plugin>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated realtimestatechart -->
+      <package
+            uri="http://rtsc"
+            class="realtimestatechart.RealtimestatechartPackage"
+            genModel="model/realtimestatechart.genmodel"/>
+   </extension>
+
 </plugin>
