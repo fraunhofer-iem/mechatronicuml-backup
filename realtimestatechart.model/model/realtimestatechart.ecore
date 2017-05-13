@@ -7,17 +7,24 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="states" upperBound="-1"
         eType="#//State" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="State" eSuperTypes="#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="State" eSuperTypes="#//Vertex #//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="subStatecharts" upperBound="-1"
         eType="#//Realtimestatechart" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entryPoints" upperBound="-1"
+        eType="#//StateEntryPoint" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exitPoints" upperBound="-1"
+        eType="#//StateExitPoint" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Transition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
-        eType="#//State"/>
+        eType="#//Vertex"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
-        eType="#//State"/>
+        eType="#//Vertex"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NamedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StateEntryPoint" eSuperTypes="#//Vertex"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StateExitPoint" eSuperTypes="#//Vertex"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Vertex" abstract="true"/>
 </ecore:EPackage>

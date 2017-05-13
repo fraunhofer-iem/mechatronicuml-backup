@@ -1,2 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coordination:CoordinationPattern xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:coordination="http://coordination" xsi:schemaLocation="http://coordination ../coordination.model/model/coordination.ecore"/>
+<coordination:CoordinationPattern xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:coordination="http://coordination" xsi:schemaLocation="http://coordination ../coordination.model/model/coordination.ecore">
+  <roles name="role1"/>
+  <roles name="role2"/>
+  <roleConnectors source="//@roles.0" target="//@roles.1">
+    <connectorQOSAssumptions/>
+  </roleConnectors>
+</coordination:CoordinationPattern>

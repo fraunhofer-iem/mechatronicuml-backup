@@ -3,6 +3,7 @@
   <ownedViewpoints name="coordination" modelFileExtension="coordination">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="org.muml.pim.coordination.diagram" label="CoordinationSpecification Diagram" initialisation="true" domainClass="coordination.CoordinationSpecification" enablePopupBars="true">
       <metamodel href="../../coordination.model/model/coordination.ecore#/"/>
+      <layout xsi:type="description_1:OrderedTreeLayout" childrenExpression="aql:self.roles" nodeMapping="//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.coordination.CoordinationSpecification']"/>
       <diagramInitialisation>
         <firstModelOperations xsi:type="tool:If" conditionExpression="aql:self.roles->isEmpty() and self.roleConnectors->isEmpty()">
           <subModelOperations xsi:type="tool:CreateInstance" typeName="Role" referenceName="roles" variableName="role1">
