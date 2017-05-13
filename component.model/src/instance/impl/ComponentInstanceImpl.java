@@ -2,12 +2,14 @@
  */
 package instance.impl;
 
+import component.Component;
 import instance.ComponentInstance;
 import instance.InstancePackage;
 import instance.PortInstance;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -15,6 +17,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -28,6 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link instance.impl.ComponentInstanceImpl#getPortInstances <em>Port Instances</em>}</li>
  *   <li>{@link instance.impl.ComponentInstanceImpl#getSubComponentInstances <em>Sub Component Instances</em>}</li>
+ *   <li>{@link instance.impl.ComponentInstanceImpl#getType <em>Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -52,6 +56,16 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 	 * @ordered
 	 */
 	protected EList<ComponentInstance> subComponentInstances;
+
+	/**
+	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
+	protected Component type;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -101,6 +115,44 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Component getType() {
+		if (type != null && type.eIsProxy()) {
+			InternalEObject oldType = (InternalEObject)type;
+			type = (Component)eResolveProxy(oldType);
+			if (type != oldType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InstancePackage.COMPONENT_INSTANCE__TYPE, oldType, type));
+			}
+		}
+		return type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Component basicGetType() {
+		return type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setType(Component newType) {
+		Component oldType = type;
+		type = newType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InstancePackage.COMPONENT_INSTANCE__TYPE, oldType, type));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -124,6 +176,9 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 				return getPortInstances();
 			case InstancePackage.COMPONENT_INSTANCE__SUB_COMPONENT_INSTANCES:
 				return getSubComponentInstances();
+			case InstancePackage.COMPONENT_INSTANCE__TYPE:
+				if (resolve) return getType();
+				return basicGetType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -145,6 +200,9 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 				getSubComponentInstances().clear();
 				getSubComponentInstances().addAll((Collection<? extends ComponentInstance>)newValue);
 				return;
+			case InstancePackage.COMPONENT_INSTANCE__TYPE:
+				setType((Component)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -163,6 +221,9 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 			case InstancePackage.COMPONENT_INSTANCE__SUB_COMPONENT_INSTANCES:
 				getSubComponentInstances().clear();
 				return;
+			case InstancePackage.COMPONENT_INSTANCE__TYPE:
+				setType((Component)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -179,6 +240,8 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 				return portInstances != null && !portInstances.isEmpty();
 			case InstancePackage.COMPONENT_INSTANCE__SUB_COMPONENT_INSTANCES:
 				return subComponentInstances != null && !subComponentInstances.isEmpty();
+			case InstancePackage.COMPONENT_INSTANCE__TYPE:
+				return type != null;
 		}
 		return super.eIsSet(featureID);
 	}

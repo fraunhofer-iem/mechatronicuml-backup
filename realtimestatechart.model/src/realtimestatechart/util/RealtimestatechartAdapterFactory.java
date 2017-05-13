@@ -84,12 +84,8 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 				return createNamedElementAdapter();
 			}
 			@Override
-			public Adapter caseStateEntryPoint(StateEntryPoint object) {
-				return createStateEntryPointAdapter();
-			}
-			@Override
-			public Adapter caseStateExitPoint(StateExitPoint object) {
-				return createStateExitPointAdapter();
+			public Adapter caseStatePoint(StatePoint object) {
+				return createStatePointAdapter();
 			}
 			@Override
 			public Adapter caseVertex(Vertex object) {
@@ -172,30 +168,16 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link realtimestatechart.StateEntryPoint <em>State Entry Point</em>}'.
+	 * Creates a new adapter for an object of class '{@link realtimestatechart.StatePoint <em>State Point</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see realtimestatechart.StateEntryPoint
+	 * @see realtimestatechart.StatePoint
 	 * @generated
 	 */
-	public Adapter createStateEntryPointAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link realtimestatechart.StateExitPoint <em>State Exit Point</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see realtimestatechart.StateExitPoint
-	 * @generated
-	 */
-	public Adapter createStateExitPointAdapter() {
+	public Adapter createStatePointAdapter() {
 		return null;
 	}
 

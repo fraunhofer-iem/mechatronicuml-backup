@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="component" version="11.1.1.201610211630">
   <ownedViewpoints name="component" modelFileExtension="component">
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="org.muml.pim.component.diagram" label="Component Diagram" domainClass="component.ComponentContainer" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="org.muml.pim.component.diagram" label="Component Diagram" initialisation="true" domainClass="component.ComponentContainer" enablePopupBars="true">
       <metamodel href="../../component.model/model/component.ecore#/"/>
       <metamodel href="../../component.model/model/instance.ecore#/"/>
       <defaultLayer name="Default">
@@ -85,19 +85,20 @@
     </ownedRepresentations>
   </ownedViewpoints>
   <ownedViewpoints name="instance" label="instance" modelFileExtension="instance">
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="org.muml.pim.instance.diagram" label="Instance Diagram" domainClass="instance.ComponentInstance" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="org.muml.pim.instance.diagram" label="Instance Diagram" initialisation="true" domainClass="instance.ComponentInstance" enablePopupBars="true">
       <metamodel href="../../component.model/model/component.ecore#/"/>
       <metamodel href="../../component.model/model/instance.ecore#/"/>
       <defaultLayer name="DefaultInstance" label="Default">
         <containerMappings name="org.muml.pim.instance.ComponentInstance" label="Component Instance" semanticCandidatesExpression="aql:self.subComponentInstances" domainClass="instance.ComponentInstance" reusedContainerMappings="//@ownedViewpoints[name='instance']/@ownedRepresentations[name='org.muml.pim.instance.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.instance.ComponentInstance']">
           <borderedNodeMappings name="org.muml.pim.component.PortInstance" label="Port Instance" semanticCandidatesExpression="aql:self.portInstances" domainClass="instance.PortInstance">
-            <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" showIcon="false" sizeComputationExpression="2">
+            <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="aql:self.name.concat(' : ').concat(if (self.type.name = null) then '' else self.type.name.toString() endif)" sizeComputationExpression="2">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>underline</labelFormat>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             </style>
           </borderedNodeMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" backgroundStyle="Liquid">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="aql:self.name.concat(' : ').concat(if (self.type.name = null) then '' else self.type.name.toString() endif)" backgroundStyle="Liquid">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>underline</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>

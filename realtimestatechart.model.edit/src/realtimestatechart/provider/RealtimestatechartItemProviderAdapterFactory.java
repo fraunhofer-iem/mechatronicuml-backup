@@ -164,49 +164,26 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link realtimestatechart.StateEntryPoint} instances.
+	 * This keeps track of the one adapter used for all {@link realtimestatechart.StatePoint} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected StateEntryPointItemProvider stateEntryPointItemProvider;
+	protected StatePointItemProvider statePointItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link realtimestatechart.StateEntryPoint}.
+	 * This creates an adapter for a {@link realtimestatechart.StatePoint}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createStateEntryPointAdapter() {
-		if (stateEntryPointItemProvider == null) {
-			stateEntryPointItemProvider = new StateEntryPointItemProvider(this);
+	public Adapter createStatePointAdapter() {
+		if (statePointItemProvider == null) {
+			statePointItemProvider = new StatePointItemProvider(this);
 		}
 
-		return stateEntryPointItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link realtimestatechart.StateExitPoint} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected StateExitPointItemProvider stateExitPointItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link realtimestatechart.StateExitPoint}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createStateExitPointAdapter() {
-		if (stateExitPointItemProvider == null) {
-			stateExitPointItemProvider = new StateExitPointItemProvider(this);
-		}
-
-		return stateExitPointItemProvider;
+		return statePointItemProvider;
 	}
 
 	/**
@@ -312,8 +289,7 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 		if (stateItemProvider != null) stateItemProvider.dispose();
 		if (transitionItemProvider != null) transitionItemProvider.dispose();
 		if (namedElementItemProvider != null) namedElementItemProvider.dispose();
-		if (stateEntryPointItemProvider != null) stateEntryPointItemProvider.dispose();
-		if (stateExitPointItemProvider != null) stateExitPointItemProvider.dispose();
+		if (statePointItemProvider != null) statePointItemProvider.dispose();
 	}
 
 }

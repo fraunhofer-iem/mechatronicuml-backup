@@ -49,6 +49,8 @@ public class StateItemProvider extends VertexItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addInitialPropertyDescriptor(object);
+			addFinalPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -76,6 +78,50 @@ public class StateItemProvider extends VertexItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Initial feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInitialPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_State_initial_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_State_initial_feature", "_UI_State_type"),
+				 RealtimestatechartPackage.Literals.STATE__INITIAL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Final feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFinalPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_State_final_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_State_final_feature", "_UI_State_type"),
+				 RealtimestatechartPackage.Literals.STATE__FINAL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -88,8 +134,7 @@ public class StateItemProvider extends VertexItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__SUB_STATECHARTS);
-			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__ENTRY_POINTS);
-			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__EXIT_POINTS);
+			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__STATE_POINTS);
 		}
 		return childrenFeatures;
 	}
@@ -146,11 +191,12 @@ public class StateItemProvider extends VertexItemProvider {
 
 		switch (notification.getFeatureID(State.class)) {
 			case RealtimestatechartPackage.STATE__NAME:
+			case RealtimestatechartPackage.STATE__INITIAL:
+			case RealtimestatechartPackage.STATE__FINAL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case RealtimestatechartPackage.STATE__SUB_STATECHARTS:
-			case RealtimestatechartPackage.STATE__ENTRY_POINTS:
-			case RealtimestatechartPackage.STATE__EXIT_POINTS:
+			case RealtimestatechartPackage.STATE__STATE_POINTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -175,13 +221,8 @@ public class StateItemProvider extends VertexItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RealtimestatechartPackage.Literals.STATE__ENTRY_POINTS,
-				 RealtimestatechartFactory.eINSTANCE.createStateEntryPoint()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.STATE__EXIT_POINTS,
-				 RealtimestatechartFactory.eINSTANCE.createStateExitPoint()));
+				(RealtimestatechartPackage.Literals.STATE__STATE_POINTS,
+				 RealtimestatechartFactory.eINSTANCE.createStatePoint()));
 	}
 
 }

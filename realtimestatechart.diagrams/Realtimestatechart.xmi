@@ -3,7 +3,15 @@
   <transitions/>
   <transitions/>
   <transitions source="//@states.0" target="//@states.1"/>
-  <states name="newstate"/>
+  <transitions/>
+  <transitions/>
+  <transitions target="//@states.0"/>
+  <transitions/>
+  <transitions source="//@states.0/@statePoints.0" target="//@states.1"/>
+  <states name="ingox" initial="true">
+    <statePoints entry="true"/>
+    <statePoints/>
+  </states>
   <states name="newstate">
     <subStatecharts name="substatechart">
       <transitions source="//@states.1/@subStatecharts.0/@states.0" target="//@states.0"/>

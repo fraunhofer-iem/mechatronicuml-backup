@@ -10,7 +10,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="roleConnectors" upperBound="-1"
         eType="#//RoleConnector" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Role" eSuperTypes="#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Role" eSuperTypes="../../realtimestatechart.model/model/realtimestatechart.ecore#//BehavioralElement #//NamedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="RoleConnector">
     <eStructuralFeatures xsi:type="ecore:EReference" name="connectorQOSAssumptions"
         eType="#//ConnectorQualityOfServiceAssumptions" containment="true"/>

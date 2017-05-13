@@ -14,8 +14,7 @@ import realtimestatechart.Realtimestatechart;
 import realtimestatechart.RealtimestatechartFactory;
 import realtimestatechart.RealtimestatechartPackage;
 import realtimestatechart.State;
-import realtimestatechart.StateEntryPoint;
-import realtimestatechart.StateExitPoint;
+import realtimestatechart.StatePoint;
 import realtimestatechart.Transition;
 import realtimestatechart.Vertex;
 
@@ -59,14 +58,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass stateEntryPointEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass stateExitPointEClass = null;
+	private EClass statePointEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -186,7 +178,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getState_EntryPoints() {
+	public EReference getState_StatePoints() {
 		return (EReference)stateEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -195,8 +187,17 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getState_ExitPoints() {
-		return (EReference)stateEClass.getEStructuralFeatures().get(2);
+	public EAttribute getState_Initial() {
+		return (EAttribute)stateEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getState_Final() {
+		return (EAttribute)stateEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -249,8 +250,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getStateEntryPoint() {
-		return stateEntryPointEClass;
+	public EClass getStatePoint() {
+		return statePointEClass;
 	}
 
 	/**
@@ -258,8 +259,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getStateExitPoint() {
-		return stateExitPointEClass;
+	public EAttribute getStatePoint_Entry() {
+		return (EAttribute)statePointEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -305,8 +306,9 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 
 		stateEClass = createEClass(STATE);
 		createEReference(stateEClass, STATE__SUB_STATECHARTS);
-		createEReference(stateEClass, STATE__ENTRY_POINTS);
-		createEReference(stateEClass, STATE__EXIT_POINTS);
+		createEReference(stateEClass, STATE__STATE_POINTS);
+		createEAttribute(stateEClass, STATE__INITIAL);
+		createEAttribute(stateEClass, STATE__FINAL);
 
 		transitionEClass = createEClass(TRANSITION);
 		createEReference(transitionEClass, TRANSITION__SOURCE);
@@ -315,9 +317,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		namedElementEClass = createEClass(NAMED_ELEMENT);
 		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
 
-		stateEntryPointEClass = createEClass(STATE_ENTRY_POINT);
-
-		stateExitPointEClass = createEClass(STATE_EXIT_POINT);
+		statePointEClass = createEClass(STATE_POINT);
+		createEAttribute(statePointEClass, STATE_POINT__ENTRY);
 
 		vertexEClass = createEClass(VERTEX);
 	}
@@ -353,8 +354,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		realtimestatechartEClass.getESuperTypes().add(this.getNamedElement());
 		stateEClass.getESuperTypes().add(this.getVertex());
 		stateEClass.getESuperTypes().add(this.getNamedElement());
-		stateEntryPointEClass.getESuperTypes().add(this.getVertex());
-		stateExitPointEClass.getESuperTypes().add(this.getVertex());
+		statePointEClass.getESuperTypes().add(this.getVertex());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(realtimestatechartEClass, Realtimestatechart.class, "Realtimestatechart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -363,8 +363,9 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 
 		initEClass(stateEClass, State.class, "State", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getState_SubStatecharts(), this.getRealtimestatechart(), null, "subStatecharts", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getState_EntryPoints(), this.getStateEntryPoint(), null, "entryPoints", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getState_ExitPoints(), this.getStateExitPoint(), null, "exitPoints", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getState_StatePoints(), this.getStatePoint(), null, "statePoints", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getState_Initial(), ecorePackage.getEBoolean(), "initial", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getState_Final(), ecorePackage.getEBoolean(), "final", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(transitionEClass, Transition.class, "Transition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTransition_Source(), this.getVertex(), null, "source", null, 1, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -373,9 +374,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(stateEntryPointEClass, StateEntryPoint.class, "StateEntryPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(stateExitPointEClass, StateExitPoint.class, "StateExitPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(statePointEClass, StatePoint.class, "StatePoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getStatePoint_Entry(), ecorePackage.getEBoolean(), "entry", null, 0, 1, StatePoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(vertexEClass, Vertex.class, "Vertex", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

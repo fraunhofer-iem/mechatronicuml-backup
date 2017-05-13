@@ -9,22 +9,28 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import realtimestatechart.RealtimestatechartPackage;
+import realtimestatechart.StatePoint;
 
 /**
- * This is the item provider adapter for a {@link realtimestatechart.StateEntryPoint} object.
+ * This is the item provider adapter for a {@link realtimestatechart.StatePoint} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class StateEntryPointItemProvider extends VertexItemProvider {
+public class StatePointItemProvider extends VertexItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public StateEntryPointItemProvider(AdapterFactory adapterFactory) {
+	public StatePointItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -39,19 +45,42 @@ public class StateEntryPointItemProvider extends VertexItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addEntryPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This returns StateEntryPoint.gif.
+	 * This adds a property descriptor for the Entry feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEntryPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_StatePoint_entry_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_StatePoint_entry_feature", "_UI_StatePoint_type"),
+				 RealtimestatechartPackage.Literals.STATE_POINT__ENTRY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This returns StatePoint.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/StateEntryPoint"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/StatePoint"));
 	}
 
 	/**
@@ -62,7 +91,8 @@ public class StateEntryPointItemProvider extends VertexItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_StateEntryPoint_type");
+		StatePoint statePoint = (StatePoint)object;
+		return getString("_UI_StatePoint_type") + " " + statePoint.isEntry();
 	}
 	
 
@@ -76,6 +106,12 @@ public class StateEntryPointItemProvider extends VertexItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(StatePoint.class)) {
+			case RealtimestatechartPackage.STATE_POINT__ENTRY:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

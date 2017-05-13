@@ -58,22 +58,13 @@ public interface RealtimestatechartFactory extends EFactory {
 	NamedElement createNamedElement();
 
 	/**
-	 * Returns a new object of class '<em>State Entry Point</em>'.
+	 * Returns a new object of class '<em>State Point</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>State Entry Point</em>'.
+	 * @return a new object of class '<em>State Point</em>'.
 	 * @generated
 	 */
-	StateEntryPoint createStateEntryPoint();
-
-	/**
-	 * Returns a new object of class '<em>State Exit Point</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>State Exit Point</em>'.
-	 * @generated
-	 */
-	StateExitPoint createStateExitPoint();
+	StatePoint createStatePoint();
 
 	/**
 	 * Returns the package supported by this factory.

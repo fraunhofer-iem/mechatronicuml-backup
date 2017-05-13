@@ -9,12 +9,10 @@
     <genClasses ecoreClass="instance.ecore#//NamedElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute instance.ecore#//NamedElement/name"/>
     </genClasses>
-    <genClasses ecoreClass="instance.ecore#//InstancePackage">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference instance.ecore#//InstancePackage/components"/>
-    </genClasses>
     <genClasses ecoreClass="instance.ecore#//ComponentInstance">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference instance.ecore#//ComponentInstance/portInstances"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference instance.ecore#//ComponentInstance/subComponentInstances"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference instance.ecore#//ComponentInstance/type"/>
     </genClasses>
     <genClasses ecoreClass="instance.ecore#//PortInstance">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference instance.ecore#//PortInstance/type"/>

@@ -60,8 +60,7 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 			case RealtimestatechartPackage.STATE: return createState();
 			case RealtimestatechartPackage.TRANSITION: return createTransition();
 			case RealtimestatechartPackage.NAMED_ELEMENT: return createNamedElement();
-			case RealtimestatechartPackage.STATE_ENTRY_POINT: return createStateEntryPoint();
-			case RealtimestatechartPackage.STATE_EXIT_POINT: return createStateExitPoint();
+			case RealtimestatechartPackage.STATE_POINT: return createStatePoint();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -112,19 +111,9 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public StateEntryPoint createStateEntryPoint() {
-		StateEntryPointImpl stateEntryPoint = new StateEntryPointImpl();
-		return stateEntryPoint;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public StateExitPoint createStateExitPoint() {
-		StateExitPointImpl stateExitPoint = new StateExitPointImpl();
-		return stateExitPoint;
+	public StatePoint createStatePoint() {
+		StatePointImpl statePoint = new StatePointImpl();
+		return statePoint;
 	}
 
 	/**

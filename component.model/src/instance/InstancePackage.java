@@ -119,13 +119,21 @@ public interface InstancePackage extends EPackage {
 	 */
 	int COMPONENT_INSTANCE__SUB_COMPONENT_INSTANCES = NAMED_ELEMENT_FEATURE_COUNT + 1;
 	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_INSTANCE__TYPE = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	/**
 	 * The number of structural features of the '<em>Component Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int COMPONENT_INSTANCE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
 	/**
 	 * The number of operations of the '<em>Component Instance</em>' class.
 	 * <!-- begin-user-doc -->
@@ -230,6 +238,17 @@ public interface InstancePackage extends EPackage {
 	EReference getComponentInstance_SubComponentInstances();
 
 	/**
+	 * Returns the meta object for the reference '{@link instance.ComponentInstance#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Type</em>'.
+	 * @see instance.ComponentInstance#getType()
+	 * @see #getComponentInstance()
+	 * @generated
+	 */
+	EReference getComponentInstance_Type();
+
+	/**
 	 * Returns the meta object for class '{@link instance.PortInstance <em>Port Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -316,6 +335,14 @@ public interface InstancePackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMPONENT_INSTANCE__SUB_COMPONENT_INSTANCES = eINSTANCE.getComponentInstance_SubComponentInstances();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT_INSTANCE__TYPE = eINSTANCE.getComponentInstance_Type();
 
 		/**
 		 * The meta object literal for the '{@link instance.impl.PortInstanceImpl <em>Port Instance</em>}' class.

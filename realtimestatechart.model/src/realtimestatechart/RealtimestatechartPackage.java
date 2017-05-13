@@ -156,7 +156,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see realtimestatechart.impl.RealtimestatechartPackageImpl#getVertex()
 	 * @generated
 	 */
-	int VERTEX = 6;
+	int VERTEX = 5;
 
 	/**
 	 * The number of structural features of the '<em>Vertex</em>' class.
@@ -205,22 +205,31 @@ public interface RealtimestatechartPackage extends EPackage {
 	int STATE__SUB_STATECHARTS = VERTEX_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Entry Points</b></em>' containment reference list.
+	 * The feature id for the '<em><b>State Points</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__ENTRY_POINTS = VERTEX_FEATURE_COUNT + 2;
+	int STATE__STATE_POINTS = VERTEX_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Exit Points</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Initial</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__EXIT_POINTS = VERTEX_FEATURE_COUNT + 3;
+	int STATE__INITIAL = VERTEX_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Final</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE__FINAL = VERTEX_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>State</em>' class.
@@ -229,7 +238,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_FEATURE_COUNT = VERTEX_FEATURE_COUNT + 4;
+	int STATE_FEATURE_COUNT = VERTEX_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>State</em>' class.
@@ -287,61 +296,41 @@ public interface RealtimestatechartPackage extends EPackage {
 	int TRANSITION_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link realtimestatechart.impl.StateEntryPointImpl <em>State Entry Point</em>}' class.
+	 * The meta object id for the '{@link realtimestatechart.impl.StatePointImpl <em>State Point</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see realtimestatechart.impl.StateEntryPointImpl
-	 * @see realtimestatechart.impl.RealtimestatechartPackageImpl#getStateEntryPoint()
+	 * @see realtimestatechart.impl.StatePointImpl
+	 * @see realtimestatechart.impl.RealtimestatechartPackageImpl#getStatePoint()
 	 * @generated
 	 */
-	int STATE_ENTRY_POINT = 4;
+	int STATE_POINT = 4;
 
 	/**
-	 * The number of structural features of the '<em>State Entry Point</em>' class.
+	 * The feature id for the '<em><b>Entry</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_ENTRY_POINT_FEATURE_COUNT = VERTEX_FEATURE_COUNT + 0;
+	int STATE_POINT__ENTRY = VERTEX_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>State Entry Point</em>' class.
+	 * The number of structural features of the '<em>State Point</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_ENTRY_POINT_OPERATION_COUNT = VERTEX_OPERATION_COUNT + 0;
+	int STATE_POINT_FEATURE_COUNT = VERTEX_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link realtimestatechart.impl.StateExitPointImpl <em>State Exit Point</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see realtimestatechart.impl.StateExitPointImpl
-	 * @see realtimestatechart.impl.RealtimestatechartPackageImpl#getStateExitPoint()
-	 * @generated
-	 */
-	int STATE_EXIT_POINT = 5;
-
-	/**
-	 * The number of structural features of the '<em>State Exit Point</em>' class.
+	 * The number of operations of the '<em>State Point</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_EXIT_POINT_FEATURE_COUNT = VERTEX_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>State Exit Point</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE_EXIT_POINT_OPERATION_COUNT = VERTEX_OPERATION_COUNT + 0;
-
+	int STATE_POINT_OPERATION_COUNT = VERTEX_OPERATION_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link realtimestatechart.Realtimestatechart <em>Realtimestatechart</em>}'.
@@ -397,26 +386,37 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getState_SubStatecharts();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link realtimestatechart.State#getEntryPoints <em>Entry Points</em>}'.
+	 * Returns the meta object for the containment reference list '{@link realtimestatechart.State#getStatePoints <em>State Points</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Entry Points</em>'.
-	 * @see realtimestatechart.State#getEntryPoints()
+	 * @return the meta object for the containment reference list '<em>State Points</em>'.
+	 * @see realtimestatechart.State#getStatePoints()
 	 * @see #getState()
 	 * @generated
 	 */
-	EReference getState_EntryPoints();
+	EReference getState_StatePoints();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link realtimestatechart.State#getExitPoints <em>Exit Points</em>}'.
+	 * Returns the meta object for the attribute '{@link realtimestatechart.State#isInitial <em>Initial</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Exit Points</em>'.
-	 * @see realtimestatechart.State#getExitPoints()
+	 * @return the meta object for the attribute '<em>Initial</em>'.
+	 * @see realtimestatechart.State#isInitial()
 	 * @see #getState()
 	 * @generated
 	 */
-	EReference getState_ExitPoints();
+	EAttribute getState_Initial();
+
+	/**
+	 * Returns the meta object for the attribute '{@link realtimestatechart.State#isFinal <em>Final</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Final</em>'.
+	 * @see realtimestatechart.State#isFinal()
+	 * @see #getState()
+	 * @generated
+	 */
+	EAttribute getState_Final();
 
 	/**
 	 * Returns the meta object for class '{@link realtimestatechart.Transition <em>Transition</em>}'.
@@ -472,24 +472,25 @@ public interface RealtimestatechartPackage extends EPackage {
 	EAttribute getNamedElement_Name();
 
 	/**
-	 * Returns the meta object for class '{@link realtimestatechart.StateEntryPoint <em>State Entry Point</em>}'.
+	 * Returns the meta object for class '{@link realtimestatechart.StatePoint <em>State Point</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>State Entry Point</em>'.
-	 * @see realtimestatechart.StateEntryPoint
+	 * @return the meta object for class '<em>State Point</em>'.
+	 * @see realtimestatechart.StatePoint
 	 * @generated
 	 */
-	EClass getStateEntryPoint();
+	EClass getStatePoint();
 
 	/**
-	 * Returns the meta object for class '{@link realtimestatechart.StateExitPoint <em>State Exit Point</em>}'.
+	 * Returns the meta object for the attribute '{@link realtimestatechart.StatePoint#isEntry <em>Entry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>State Exit Point</em>'.
-	 * @see realtimestatechart.StateExitPoint
+	 * @return the meta object for the attribute '<em>Entry</em>'.
+	 * @see realtimestatechart.StatePoint#isEntry()
+	 * @see #getStatePoint()
 	 * @generated
 	 */
-	EClass getStateExitPoint();
+	EAttribute getStatePoint_Entry();
 
 	/**
 	 * Returns the meta object for class '{@link realtimestatechart.Vertex <em>Vertex</em>}'.
@@ -569,20 +570,28 @@ public interface RealtimestatechartPackage extends EPackage {
 		EReference STATE__SUB_STATECHARTS = eINSTANCE.getState_SubStatecharts();
 
 		/**
-		 * The meta object literal for the '<em><b>Entry Points</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>State Points</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STATE__ENTRY_POINTS = eINSTANCE.getState_EntryPoints();
+		EReference STATE__STATE_POINTS = eINSTANCE.getState_StatePoints();
 
 		/**
-		 * The meta object literal for the '<em><b>Exit Points</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Initial</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STATE__EXIT_POINTS = eINSTANCE.getState_ExitPoints();
+		EAttribute STATE__INITIAL = eINSTANCE.getState_Initial();
+
+		/**
+		 * The meta object literal for the '<em><b>Final</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STATE__FINAL = eINSTANCE.getState_Final();
 
 		/**
 		 * The meta object literal for the '{@link realtimestatechart.impl.TransitionImpl <em>Transition</em>}' class.
@@ -629,24 +638,22 @@ public interface RealtimestatechartPackage extends EPackage {
 		EAttribute NAMED_ELEMENT__NAME = eINSTANCE.getNamedElement_Name();
 
 		/**
-		 * The meta object literal for the '{@link realtimestatechart.impl.StateEntryPointImpl <em>State Entry Point</em>}' class.
+		 * The meta object literal for the '{@link realtimestatechart.impl.StatePointImpl <em>State Point</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see realtimestatechart.impl.StateEntryPointImpl
-		 * @see realtimestatechart.impl.RealtimestatechartPackageImpl#getStateEntryPoint()
+		 * @see realtimestatechart.impl.StatePointImpl
+		 * @see realtimestatechart.impl.RealtimestatechartPackageImpl#getStatePoint()
 		 * @generated
 		 */
-		EClass STATE_ENTRY_POINT = eINSTANCE.getStateEntryPoint();
+		EClass STATE_POINT = eINSTANCE.getStatePoint();
 
 		/**
-		 * The meta object literal for the '{@link realtimestatechart.impl.StateExitPointImpl <em>State Exit Point</em>}' class.
+		 * The meta object literal for the '<em><b>Entry</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see realtimestatechart.impl.StateExitPointImpl
-		 * @see realtimestatechart.impl.RealtimestatechartPackageImpl#getStateExitPoint()
 		 * @generated
 		 */
-		EClass STATE_EXIT_POINT = eINSTANCE.getStateExitPoint();
+		EAttribute STATE_POINT__ENTRY = eINSTANCE.getStatePoint_Entry();
 
 		/**
 		 * The meta object literal for the '{@link realtimestatechart.impl.VertexImpl <em>Vertex</em>}' class.

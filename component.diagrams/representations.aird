@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:instance="http://instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://instance platform:/resource/component.model/model/instance.ecore http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
-  <viewpoint:DAnalysis xmi:id="_gVRusDSiEeeD94cwctLTsg" selectedViews="_4TUcMDSiEeeD94cwctLTsg" version="11.1.0.201608251200">
-    <semanticResources>platform:/resource/component.model/model/component.ecore</semanticResources>
-    <semanticResources>platform:/resource/component.model/model/instance.ecore</semanticResources>
-    <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
-    <semanticResources>ComponentPackage.xmi</semanticResources>
-    <semanticResources>ComponentInstance.xmi</semanticResources>
-    <semanticResources>platform:/resource/component.model/model/instance.ecore</semanticResources>
-    <ownedViews xmi:type="viewpoint:DView" xmi:id="_4TUcMDSiEeeD94cwctLTsg">
-      <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='instance']"/>
-      <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']"/>
-    </ownedViews>
-  </viewpoint:DAnalysis>
- </xmi:XMI>
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description" xmi:id="_gVRusDSiEeeD94cwctLTsg" selectedViews="_4TUcMDSiEeeD94cwctLTsg" version="11.1.0.201608251200">
+  <semanticResources>platform:/resource/component.model/model/component.ecore</semanticResources>
+  <semanticResources>platform:/resource/component.model/model/instance.ecore</semanticResources>
+  <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
+  <semanticResources>ComponentPackage.xmi</semanticResources>
+  <semanticResources>ComponentInstance.xmi</semanticResources>
+  <semanticResources>platform:/resource/component.model/model/instance.ecore</semanticResources>
+  <semanticResources>platform:/resource/realtimestatechart.model/model/realtimestatechart.ecore</semanticResources>
+  <ownedViews xmi:type="viewpoint:DView" xmi:id="_4TUcMDSiEeeD94cwctLTsg">
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/component.design/description/component.odesign#//@ownedViewpoints[name='component']"/>
+  </ownedViews>
+</viewpoint:DAnalysis>

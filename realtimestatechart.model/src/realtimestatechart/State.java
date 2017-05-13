@@ -14,8 +14,9 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link realtimestatechart.State#getSubStatecharts <em>Sub Statecharts</em>}</li>
- *   <li>{@link realtimestatechart.State#getEntryPoints <em>Entry Points</em>}</li>
- *   <li>{@link realtimestatechart.State#getExitPoints <em>Exit Points</em>}</li>
+ *   <li>{@link realtimestatechart.State#getStatePoints <em>State Points</em>}</li>
+ *   <li>{@link realtimestatechart.State#isInitial <em>Initial</em>}</li>
+ *   <li>{@link realtimestatechart.State#isFinal <em>Final</em>}</li>
  * </ul>
  *
  * @see realtimestatechart.RealtimestatechartPackage#getState()
@@ -40,35 +41,71 @@ public interface State extends Vertex, NamedElement {
 	EList<Realtimestatechart> getSubStatecharts();
 
 	/**
-	 * Returns the value of the '<em><b>Entry Points</b></em>' containment reference list.
-	 * The list contents are of type {@link realtimestatechart.StateEntryPoint}.
+	 * Returns the value of the '<em><b>State Points</b></em>' containment reference list.
+	 * The list contents are of type {@link realtimestatechart.StatePoint}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Entry Points</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>State Points</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Entry Points</em>' containment reference list.
-	 * @see realtimestatechart.RealtimestatechartPackage#getState_EntryPoints()
+	 * @return the value of the '<em>State Points</em>' containment reference list.
+	 * @see realtimestatechart.RealtimestatechartPackage#getState_StatePoints()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<StateEntryPoint> getEntryPoints();
+	EList<StatePoint> getStatePoints();
 
 	/**
-	 * Returns the value of the '<em><b>Exit Points</b></em>' containment reference list.
-	 * The list contents are of type {@link realtimestatechart.StateExitPoint}.
+	 * Returns the value of the '<em><b>Initial</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Exit Points</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Initial</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Exit Points</em>' containment reference list.
-	 * @see realtimestatechart.RealtimestatechartPackage#getState_ExitPoints()
-	 * @model containment="true"
+	 * @return the value of the '<em>Initial</em>' attribute.
+	 * @see #setInitial(boolean)
+	 * @see realtimestatechart.RealtimestatechartPackage#getState_Initial()
+	 * @model
 	 * @generated
 	 */
-	EList<StateExitPoint> getExitPoints();
+	boolean isInitial();
+
+	/**
+	 * Sets the value of the '{@link realtimestatechart.State#isInitial <em>Initial</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Initial</em>' attribute.
+	 * @see #isInitial()
+	 * @generated
+	 */
+	void setInitial(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Final</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Final</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Final</em>' attribute.
+	 * @see #setFinal(boolean)
+	 * @see realtimestatechart.RealtimestatechartPackage#getState_Final()
+	 * @model
+	 * @generated
+	 */
+	boolean isFinal();
+
+	/**
+	 * Sets the value of the '{@link realtimestatechart.State#isFinal <em>Final</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Final</em>' attribute.
+	 * @see #isFinal()
+	 * @generated
+	 */
+	void setFinal(boolean value);
 
 } // State

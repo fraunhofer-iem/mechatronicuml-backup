@@ -9,6 +9,7 @@
         eType="#//PortInstance" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="subComponentInstances"
         upperBound="-1" eType="#//ComponentInstance" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass component.ecore#//Component"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PortInstance" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass component.ecore#//Port"/>
