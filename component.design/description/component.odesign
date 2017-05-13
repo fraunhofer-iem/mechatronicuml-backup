@@ -3,6 +3,7 @@
   <ownedViewpoints name="component" modelFileExtension="component">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="org.muml.pim.component.diagram" label="Component Diagram" domainClass="component.ComponentPackage" enablePopupBars="true">
       <metamodel href="../../component.model/model/component.ecore#/"/>
+      <metamodel href="../../component.model/model/instance.ecore#/"/>
       <defaultLayer name="Default">
         <containerMappings name="org.muml.pim.component.Component" label="Structured Component" domainClass="component.Component">
           <borderedNodeMappings name="org.muml.pim.component.Port" label="Port" semanticCandidatesExpression="feature:ports" domainClass="component.Port">
@@ -82,6 +83,8 @@
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>
+  </ownedViewpoints>
+  <ownedViewpoints name="instance" label="instance" modelFileExtension="instance">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="org.muml.pim.instance.diagram" label="Instance Diagram" domainClass="instance.ComponentInstance" enablePopupBars="true">
       <metamodel href="../../component.model/model/component.ecore#/"/>
       <metamodel href="../../component.model/model/instance.ecore#/"/>
@@ -102,7 +105,7 @@
           </style>
         </containerMappings>
         <toolSections name="org.muml.pim.component.createSection" label="Create">
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="org.muml.pim.instance.createComponentInstance" label="Create Component Instance" containerMappings="//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.instance.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.instance.ComponentInstance']">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="org.muml.pim.instance.createComponentInstance" label="Create Component Instance" containerMappings="//@ownedViewpoints[name='instance']/@ownedRepresentations[name='org.muml.pim.instance.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.instance.ComponentInstance']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -113,7 +116,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="org.muml.pim.instance.createPortInstance" label="Create Port Instance" nodeMappings="//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.instance.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.instance.ComponentInstance']/@borderedNodeMappings[name='org.muml.pim.component.PortInstance']">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="org.muml.pim.instance.createPortInstance" label="Create Port Instance" nodeMappings="//@ownedViewpoints[name='instance']/@ownedRepresentations[name='org.muml.pim.instance.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.instance.ComponentInstance']/@borderedNodeMappings[name='org.muml.pim.component.PortInstance']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
