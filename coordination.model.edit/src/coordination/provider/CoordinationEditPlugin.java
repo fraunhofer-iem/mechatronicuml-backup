@@ -5,6 +5,7 @@ package coordination.provider;
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+import realtimestatechart.provider.RealtimestatechartEditPlugin;
 
 /**
  * This is the central singleton for the Coordination edit plugin.
@@ -38,6 +39,7 @@ public final class CoordinationEditPlugin extends EMFPlugin {
 	public CoordinationEditPlugin() {
 		super
 		  (new ResourceLocator [] {
+		     RealtimestatechartEditPlugin.INSTANCE,
 		   });
 	}
 

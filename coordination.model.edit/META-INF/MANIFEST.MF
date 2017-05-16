@@ -12,5 +12,7 @@ Export-Package: coordination.provider,
  realtimestatechart.provider
 Require-Bundle: org.eclipse.core.runtime,
  coordination.model;visibility:=reexport,
- org.eclipse.emf.edit;visibility:=reexport
+ org.eclipse.emf.edit;visibility:=reexport,
+ realtimestatechart.model;visibility:=reexport,
+ realtimestatechart.model.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

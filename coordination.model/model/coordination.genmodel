@@ -3,6 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/coordination.model/src" modelPluginID="coordination.model"
     modelName="Coordination" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    usedGenPackages="../../realtimestatechart.model/model/realtimestatechart.genmodel#//realtimestatechart"
     operationReflection="true" importOrganizing="true">
   <foreignModel>coordination.ecore</foreignModel>
   <genPackages prefix="Coordination" disposableProviderFactory="true" ecorePackage="coordination.ecore#/">

@@ -6,7 +6,7 @@
       <metamodel href="../../component.model/model/instance.ecore#/"/>
       <defaultLayer name="Default">
         <containerMappings name="org.muml.pim.component.Component" label="Component" domainClass="component.Component">
-          <borderedNodeMappings name="org.muml.pim.component.Port" label="Port" semanticCandidatesExpression="feature:ports" domainClass="component.Port">
+          <borderedNodeMappings name="org.muml.pim.component.Port" label="Port" semanticCandidatesExpression="feature:ports" doubleClickDescription="//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='portDoubleClick']" domainClass="component.Port">
             <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" showIcon="false" sizeComputationExpression="2">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -14,7 +14,7 @@
             </style>
           </borderedNodeMappings>
           <subContainerMappings name="org.muml.pim.component.StructuredComponentPart" label="Component Part" semanticCandidatesExpression="aql:self.oclAsType(component::StructuredComponent).componentParts" domainClass="component.ComponentPart">
-            <borderedNodeMappings name="org.muml.pim.component.derivedPort" label="Port" semanticCandidatesExpression="aql:self.type.ports" domainClass="component.Port">
+            <borderedNodeMappings name="org.muml.pim.component.derivedPort" label="Port" semanticCandidatesExpression="aql:self.type.ports" doubleClickDescription="//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='portDoubleClick']" domainClass="component.Port">
               <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" showIcon="false" sizeComputationExpression="2">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -76,6 +76,22 @@
               <firstModelOperations xsi:type="tool_1:ChangeContext">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="component.ComponentPart" referenceName="componentParts">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="port"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="portDoubleClick" mappings="//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.Component']/@subContainerMappings[name='org.muml.pim.component.StructuredComponentPart']/@borderedNodeMappings[name='org.muml.pim.component.derivedPort'] //@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.component.Component']/@borderedNodeMappings[name='org.muml.pim.component.Port']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:element">
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.behavior = null">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Realtimestatechart" referenceName="behavior"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.behavior">
+                  <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true">
+                    <diagramDescription href="../../realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']"/>
+                  </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>

@@ -36,7 +36,7 @@
             </style>
           </conditionnalStyles>
         </nodeMappings>
-        <nodeMappings name="org.muml.pim.coordination.Role" label="Role" semanticCandidatesExpression="aql:self.roles" domainClass="Role">
+        <nodeMappings name="org.muml.pim.coordination.Role" label="Role" semanticCandidatesExpression="aql:self.roles" doubleClickDescription="//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='roleDoubleClick']" domainClass="Role">
           <style xsi:type="style:WorkspaceImageDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" sizeComputationExpression="2" workspacePath="/coordination.design/images/right-arrow-black.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -105,6 +105,22 @@
                   <subModelOperations xsi:type="tool:SetValue" featureName="source" valueExpression="aql:source"/>
                   <subModelOperations xsi:type="tool:SetValue" featureName="target" valueExpression="aql:target"/>
                   <subModelOperations xsi:type="tool:CreateInstance" typeName="ConnectorQualityOfServiceAssumptions" referenceName="connectorQOSAssumptions" variableName="qos"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:DoubleClickDescription" name="roleDoubleClick" mappings="//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.coordination.Role']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:element">
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.behavior = null">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="Realtimestatechart" referenceName="behavior"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.behavior">
+                  <subModelOperations xsi:type="tool_1:Navigation" createIfNotExistent="true">
+                    <diagramDescription href="../../realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']"/>
+                  </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>

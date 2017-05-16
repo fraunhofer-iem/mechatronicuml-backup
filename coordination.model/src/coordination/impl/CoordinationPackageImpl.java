@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import realtimestatechart.RealtimestatechartPackage;
-import realtimestatechart.impl.RealtimestatechartPackageImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -123,16 +122,14 @@ public class CoordinationPackageImpl extends EPackageImpl implements Coordinatio
 
 		isInited = true;
 
-		// Obtain or create and register interdependencies
-		RealtimestatechartPackageImpl theRealtimestatechartPackage = (RealtimestatechartPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) instanceof RealtimestatechartPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) : RealtimestatechartPackage.eINSTANCE);
+		// Initialize simple dependencies
+		RealtimestatechartPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theCoordinationPackage.createPackageContents();
-		theRealtimestatechartPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theCoordinationPackage.initializePackageContents();
-		theRealtimestatechartPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theCoordinationPackage.freeze();
