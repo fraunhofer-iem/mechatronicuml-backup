@@ -8,7 +8,8 @@ Bundle-Activator: coordination.provider.CoordinationEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: coordination.provider
+Export-Package: coordination.provider,
+ realtimestatechart.provider
 Require-Bundle: org.eclipse.core.runtime,
  coordination.model;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport

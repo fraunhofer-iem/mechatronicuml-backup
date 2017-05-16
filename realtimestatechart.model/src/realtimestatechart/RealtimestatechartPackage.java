@@ -57,6 +57,71 @@ public interface RealtimestatechartPackage extends EPackage {
 	RealtimestatechartPackage eINSTANCE = realtimestatechart.impl.RealtimestatechartPackageImpl.init();
 
 	/**
+	 * The meta object id for the '{@link realtimestatechart.impl.BehaviorImpl <em>Behavior</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see realtimestatechart.impl.BehaviorImpl
+	 * @see realtimestatechart.impl.RealtimestatechartPackageImpl#getBehavior()
+	 * @generated
+	 */
+	int BEHAVIOR = 0;
+
+	/**
+	 * The number of structural features of the '<em>Behavior</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIOR_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Behavior</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIOR_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link realtimestatechart.impl.BehavioralElementImpl <em>Behavioral Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see realtimestatechart.impl.BehavioralElementImpl
+	 * @see realtimestatechart.impl.RealtimestatechartPackageImpl#getBehavioralElement()
+	 * @generated
+	 */
+	int BEHAVIORAL_ELEMENT = 1;
+
+	/**
+	 * The feature id for the '<em><b>Behavior</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIORAL_ELEMENT__BEHAVIOR = 0;
+
+	/**
+	 * The number of structural features of the '<em>Behavioral Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIORAL_ELEMENT_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Behavioral Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIORAL_ELEMENT_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link realtimestatechart.impl.NamedElementImpl <em>Named Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -64,34 +129,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see realtimestatechart.impl.RealtimestatechartPackageImpl#getNamedElement()
 	 * @generated
 	 */
-	int NAMED_ELEMENT = 3;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMED_ELEMENT__NAME = 0;
-
-	/**
-	 * The number of structural features of the '<em>Named Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMED_ELEMENT_FEATURE_COUNT = 1;
-
-	/**
-	 * The number of operations of the '<em>Named Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMED_ELEMENT_OPERATION_COUNT = 0;
+	int NAMED_ELEMENT = 5;
 
 	/**
 	 * The meta object id for the '{@link realtimestatechart.impl.RealtimestatechartImpl <em>Realtimestatechart</em>}' class.
@@ -101,7 +139,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see realtimestatechart.impl.RealtimestatechartPackageImpl#getRealtimestatechart()
 	 * @generated
 	 */
-	int REALTIMESTATECHART = 0;
+	int REALTIMESTATECHART = 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -110,7 +148,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIMESTATECHART__NAME = NAMED_ELEMENT__NAME;
+	int REALTIMESTATECHART__NAME = BEHAVIOR_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Transitions</b></em>' containment reference list.
@@ -119,7 +157,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIMESTATECHART__TRANSITIONS = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int REALTIMESTATECHART__TRANSITIONS = BEHAVIOR_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>States</b></em>' containment reference list.
@@ -128,7 +166,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIMESTATECHART__STATES = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int REALTIMESTATECHART__STATES = BEHAVIOR_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Realtimestatechart</em>' class.
@@ -137,7 +175,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIMESTATECHART_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int REALTIMESTATECHART_FEATURE_COUNT = BEHAVIOR_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Realtimestatechart</em>' class.
@@ -146,7 +184,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIMESTATECHART_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int REALTIMESTATECHART_OPERATION_COUNT = BEHAVIOR_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link realtimestatechart.impl.VertexImpl <em>Vertex</em>}' class.
@@ -156,7 +194,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see realtimestatechart.impl.RealtimestatechartPackageImpl#getVertex()
 	 * @generated
 	 */
-	int VERTEX = 5;
+	int VERTEX = 7;
 
 	/**
 	 * The number of structural features of the '<em>Vertex</em>' class.
@@ -184,7 +222,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see realtimestatechart.impl.RealtimestatechartPackageImpl#getState()
 	 * @generated
 	 */
-	int STATE = 1;
+	int STATE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -257,7 +295,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see realtimestatechart.impl.RealtimestatechartPackageImpl#getTransition()
 	 * @generated
 	 */
-	int TRANSITION = 2;
+	int TRANSITION = 4;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -296,6 +334,33 @@ public interface RealtimestatechartPackage extends EPackage {
 	int TRANSITION_OPERATION_COUNT = 0;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMED_ELEMENT__NAME = 0;
+
+	/**
+	 * The number of structural features of the '<em>Named Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMED_ELEMENT_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Named Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMED_ELEMENT_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link realtimestatechart.impl.StatePointImpl <em>State Point</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -303,7 +368,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see realtimestatechart.impl.RealtimestatechartPackageImpl#getStatePoint()
 	 * @generated
 	 */
-	int STATE_POINT = 4;
+	int STATE_POINT = 6;
 
 	/**
 	 * The feature id for the '<em><b>Entry</b></em>' attribute.
@@ -331,6 +396,37 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @ordered
 	 */
 	int STATE_POINT_OPERATION_COUNT = VERTEX_OPERATION_COUNT + 0;
+
+	/**
+	 * Returns the meta object for class '{@link realtimestatechart.Behavior <em>Behavior</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Behavior</em>'.
+	 * @see realtimestatechart.Behavior
+	 * @generated
+	 */
+	EClass getBehavior();
+
+	/**
+	 * Returns the meta object for class '{@link realtimestatechart.BehavioralElement <em>Behavioral Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Behavioral Element</em>'.
+	 * @see realtimestatechart.BehavioralElement
+	 * @generated
+	 */
+	EClass getBehavioralElement();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link realtimestatechart.BehavioralElement#getBehavior <em>Behavior</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Behavior</em>'.
+	 * @see realtimestatechart.BehavioralElement#getBehavior()
+	 * @see #getBehavioralElement()
+	 * @generated
+	 */
+	EReference getBehavioralElement_Behavior();
 
 	/**
 	 * Returns the meta object for class '{@link realtimestatechart.Realtimestatechart <em>Realtimestatechart</em>}'.
@@ -525,6 +621,34 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 */
 	interface Literals {
+		/**
+		 * The meta object literal for the '{@link realtimestatechart.impl.BehaviorImpl <em>Behavior</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see realtimestatechart.impl.BehaviorImpl
+		 * @see realtimestatechart.impl.RealtimestatechartPackageImpl#getBehavior()
+		 * @generated
+		 */
+		EClass BEHAVIOR = eINSTANCE.getBehavior();
+
+		/**
+		 * The meta object literal for the '{@link realtimestatechart.impl.BehavioralElementImpl <em>Behavioral Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see realtimestatechart.impl.BehavioralElementImpl
+		 * @see realtimestatechart.impl.RealtimestatechartPackageImpl#getBehavioralElement()
+		 * @generated
+		 */
+		EClass BEHAVIORAL_ELEMENT = eINSTANCE.getBehavioralElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Behavior</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BEHAVIORAL_ELEMENT__BEHAVIOR = eINSTANCE.getBehavioralElement_Behavior();
+
 		/**
 		 * The meta object literal for the '{@link realtimestatechart.impl.RealtimestatechartImpl <em>Realtimestatechart</em>}' class.
 		 * <!-- begin-user-doc -->

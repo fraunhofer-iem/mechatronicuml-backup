@@ -2,6 +2,8 @@
  */
 package coordination;
 
+import realtimestatechart.BehavioralElement;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -13,5 +15,5 @@ package coordination;
  * @model
  * @generated
  */
-public interface Role extends NamedElement {
+public interface Role extends BehavioralElement, NamedElement {
 } // Role

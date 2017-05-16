@@ -185,13 +185,21 @@ public interface ComponentPackage extends EPackage {
 	 */
 	int PORT__NAME = NAMED_ELEMENT__NAME;
 	/**
+	 * The feature id for the '<em><b>Behavior</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT__BEHAVIOR = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	/**
 	 * The number of structural features of the '<em>Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int PORT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
 	/**
 	 * The number of operations of the '<em>Port</em>' class.
 	 * <!-- begin-user-doc -->

@@ -18,6 +18,8 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import realtimestatechart.RealtimestatechartPackage;
+import realtimestatechart.impl.RealtimestatechartPackageImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -121,11 +123,16 @@ public class CoordinationPackageImpl extends EPackageImpl implements Coordinatio
 
 		isInited = true;
 
+		// Obtain or create and register interdependencies
+		RealtimestatechartPackageImpl theRealtimestatechartPackage = (RealtimestatechartPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) instanceof RealtimestatechartPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) : RealtimestatechartPackage.eINSTANCE);
+
 		// Create package meta-data objects
 		theCoordinationPackage.createPackageContents();
+		theRealtimestatechartPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theCoordinationPackage.initializePackageContents();
+		theRealtimestatechartPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theCoordinationPackage.freeze();
@@ -345,12 +352,16 @@ public class CoordinationPackageImpl extends EPackageImpl implements Coordinatio
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		RealtimestatechartPackage theRealtimestatechartPackage = (RealtimestatechartPackage)EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
 		coordinationSpecificationEClass.getESuperTypes().add(this.getNamedElement());
+		roleEClass.getESuperTypes().add(theRealtimestatechartPackage.getBehavioralElement());
 		roleEClass.getESuperTypes().add(this.getNamedElement());
 		coordinationPatternEClass.getESuperTypes().add(this.getCoordinationSpecification());
 		coordinationProtocolEClass.getESuperTypes().add(this.getCoordinationSpecification());

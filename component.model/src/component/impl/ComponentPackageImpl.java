@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import realtimestatechart.RealtimestatechartPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -120,6 +121,9 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		ComponentPackageImpl theComponentPackage = (ComponentPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ComponentPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ComponentPackageImpl());
 
 		isInited = true;
+
+		// Initialize simple dependencies
+		RealtimestatechartPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theComponentPackage.createPackageContents();
@@ -315,6 +319,9 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		RealtimestatechartPackage theRealtimestatechartPackage = (RealtimestatechartPackage)EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
@@ -323,6 +330,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		componentContainerEClass.getESuperTypes().add(this.getNamedElement());
 		componentEClass.getESuperTypes().add(this.getNamedElement());
 		portEClass.getESuperTypes().add(this.getNamedElement());
+		portEClass.getESuperTypes().add(theRealtimestatechartPackage.getBehavioralElement());
 		atomicComponentEClass.getESuperTypes().add(this.getComponent());
 		structuredComponentEClass.getESuperTypes().add(this.getComponent());
 

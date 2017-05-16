@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
+import realtimestatechart.BehavioralElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -82,6 +83,7 @@ public class CoordinationSwitch<T> extends Switch<T> {
 			case CoordinationPackage.ROLE: {
 				Role role = (Role)theEObject;
 				T result = caseRole(role);
+				if (result == null) result = caseBehavioralElement(role);
 				if (result == null) result = caseNamedElement(role);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -220,6 +222,21 @@ public class CoordinationSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCoordinationProtocol(CoordinationProtocol object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Behavioral Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Behavioral Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBehavioralElement(BehavioralElement object) {
 		return null;
 	}
 

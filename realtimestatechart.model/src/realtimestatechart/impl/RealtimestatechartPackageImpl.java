@@ -9,6 +9,8 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import realtimestatechart.Behavior;
+import realtimestatechart.BehavioralElement;
 import realtimestatechart.NamedElement;
 import realtimestatechart.Realtimestatechart;
 import realtimestatechart.RealtimestatechartFactory;
@@ -25,6 +27,20 @@ import realtimestatechart.Vertex;
  * @generated
  */
 public class RealtimestatechartPackageImpl extends EPackageImpl implements RealtimestatechartPackage {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass behaviorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass behavioralElementEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -126,6 +142,33 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(RealtimestatechartPackage.eNS_URI, theRealtimestatechartPackage);
 		return theRealtimestatechartPackage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBehavior() {
+		return behaviorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBehavioralElement() {
+		return behavioralElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBehavioralElement_Behavior() {
+		return (EReference)behavioralElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -300,6 +343,11 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		isCreated = true;
 
 		// Create classes and their features
+		behaviorEClass = createEClass(BEHAVIOR);
+
+		behavioralElementEClass = createEClass(BEHAVIORAL_ELEMENT);
+		createEReference(behavioralElementEClass, BEHAVIORAL_ELEMENT__BEHAVIOR);
+
 		realtimestatechartEClass = createEClass(REALTIMESTATECHART);
 		createEReference(realtimestatechartEClass, REALTIMESTATECHART__TRANSITIONS);
 		createEReference(realtimestatechartEClass, REALTIMESTATECHART__STATES);
@@ -351,12 +399,18 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		realtimestatechartEClass.getESuperTypes().add(this.getBehavior());
 		realtimestatechartEClass.getESuperTypes().add(this.getNamedElement());
 		stateEClass.getESuperTypes().add(this.getVertex());
 		stateEClass.getESuperTypes().add(this.getNamedElement());
 		statePointEClass.getESuperTypes().add(this.getVertex());
 
 		// Initialize classes, features, and operations; add parameters
+		initEClass(behaviorEClass, Behavior.class, "Behavior", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(behavioralElementEClass, BehavioralElement.class, "BehavioralElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBehavioralElement_Behavior(), this.getBehavior(), null, "behavior", null, 0, 1, BehavioralElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(realtimestatechartEClass, Realtimestatechart.class, "Realtimestatechart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRealtimestatechart_Transitions(), this.getTransition(), null, "transitions", null, 0, -1, Realtimestatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRealtimestatechart_States(), this.getState(), null, "states", null, 0, -1, Realtimestatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

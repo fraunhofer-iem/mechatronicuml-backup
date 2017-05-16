@@ -6,6 +6,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import realtimestatechart.RealtimestatechartPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -159,13 +160,22 @@ public interface CoordinationPackage extends EPackage {
 	int ROLE = 2;
 
 	/**
+	 * The feature id for the '<em><b>Behavior</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE__BEHAVIOR = RealtimestatechartPackage.BEHAVIORAL_ELEMENT__BEHAVIOR;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__NAME = NAMED_ELEMENT__NAME;
+	int ROLE__NAME = RealtimestatechartPackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Role</em>' class.
@@ -174,7 +184,7 @@ public interface CoordinationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int ROLE_FEATURE_COUNT = RealtimestatechartPackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Role</em>' class.
@@ -183,7 +193,7 @@ public interface CoordinationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int ROLE_OPERATION_COUNT = RealtimestatechartPackage.BEHAVIORAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link coordination.impl.RoleConnectorImpl <em>Role Connector</em>}' class.

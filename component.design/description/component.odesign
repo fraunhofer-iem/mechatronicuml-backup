@@ -5,7 +5,7 @@
       <metamodel href="../../component.model/model/component.ecore#/"/>
       <metamodel href="../../component.model/model/instance.ecore#/"/>
       <defaultLayer name="Default">
-        <containerMappings name="org.muml.pim.component.Component" label="Structured Component" domainClass="component.Component">
+        <containerMappings name="org.muml.pim.component.Component" label="Component" domainClass="component.Component">
           <borderedNodeMappings name="org.muml.pim.component.Port" label="Port" semanticCandidatesExpression="feature:ports" domainClass="component.Port">
             <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" showIcon="false" sizeComputationExpression="2">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>

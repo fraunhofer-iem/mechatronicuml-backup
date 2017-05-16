@@ -15,5 +15,6 @@ Export-Package: component,
  instance.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
+ realtimestatechart.model;visibility:=reexport,
  component.model;visibility:=reexport
 Bundle-ActivationPolicy: lazy

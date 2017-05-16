@@ -5,6 +5,7 @@ package component.provider;
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+import realtimestatechart.provider.RealtimestatechartEditPlugin;
 
 /**
  * This is the central singleton for the Component edit plugin.
@@ -38,6 +39,7 @@ public final class ComponentEditPlugin extends EMFPlugin {
 	public ComponentEditPlugin() {
 		super
 		  (new ResourceLocator [] {
+		     RealtimestatechartEditPlugin.INSTANCE,
 		   });
 	}
 

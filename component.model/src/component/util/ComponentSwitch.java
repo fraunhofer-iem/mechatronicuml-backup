@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
+import realtimestatechart.BehavioralElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -90,6 +91,7 @@ public class ComponentSwitch<T> extends Switch<T> {
 				Port port = (Port)theEObject;
 				T result = casePort(port);
 				if (result == null) result = caseNamedElement(port);
+				if (result == null) result = caseBehavioralElement(port);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -221,6 +223,21 @@ public class ComponentSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseComponentPart(ComponentPart object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Behavioral Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Behavioral Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBehavioralElement(BehavioralElement object) {
 		return null;
 	}
 

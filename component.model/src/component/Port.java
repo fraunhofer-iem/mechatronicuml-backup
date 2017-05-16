@@ -2,6 +2,8 @@
  */
 package component;
 
+import realtimestatechart.BehavioralElement;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -13,5 +15,5 @@ package component;
  * @model
  * @generated
  */
-public interface Port extends NamedElement {
+public interface Port extends NamedElement, BehavioralElement {
 } // Port

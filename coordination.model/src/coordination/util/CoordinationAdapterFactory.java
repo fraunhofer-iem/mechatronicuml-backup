@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
+import realtimestatechart.BehavioralElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -94,6 +95,10 @@ public class CoordinationAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseCoordinationProtocol(CoordinationProtocol object) {
 				return createCoordinationProtocolAdapter();
+			}
+			@Override
+			public Adapter caseBehavioralElement(BehavioralElement object) {
+				return createBehavioralElementAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -210,6 +215,20 @@ public class CoordinationAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCoordinationProtocolAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link realtimestatechart.BehavioralElement <em>Behavioral Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see realtimestatechart.BehavioralElement
+	 * @generated
+	 */
+	public Adapter createBehavioralElementAdapter() {
 		return null;
 	}
 
