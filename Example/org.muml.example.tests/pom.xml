@@ -22,6 +22,7 @@
                 <testClass>org.example.tests.ExamplesTestSuite</testClass>
                 <product>org.eclipse.platform.ide</product>
 				<failIfNoTests>false</failIfNoTests>
+                <workingDirectory>${workspace_loc}</workingDirectory>
             </configuration>
 		</plugin>
 	  </plugins>
