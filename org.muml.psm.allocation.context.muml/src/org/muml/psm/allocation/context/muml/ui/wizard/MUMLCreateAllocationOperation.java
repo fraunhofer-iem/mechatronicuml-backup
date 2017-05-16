@@ -130,7 +130,10 @@ public class MUMLCreateAllocationOperation extends CreateAllocationOperation<Sys
 			Diagnostic child = todo.remove(0);
 			if (QVToTransformationRunner.LOG_SOURCE.equals(child.getSource())) {
 				logDiagnostic = child;
-				break;
+				//XXX
+				//FIXME diagnostic getChildren grows with each execution ... to many diagnostics
+//				System.out.println("XXXX");
+				//break;
 			}
 			todo.addAll(child.getChildren());
 		}
