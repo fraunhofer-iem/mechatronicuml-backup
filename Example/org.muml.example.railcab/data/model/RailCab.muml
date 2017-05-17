@@ -342,9 +342,6 @@
       </roles>
       <roleConnector xmi:id="_jk3pWHasEeOh__JNCv2_1A" connectorEndpoints="_jk3pUHasEeOh__JNCv2_1A _jk3pVHasEeOh__JNCv2_1A">
         <connectorQualityOfServiceAssumptions xmi:id="_jlAzQHasEeOh__JNCv2_1A" comment="">
-          <minMessageDelay xmi:id="_A7D1UHavEeOh__JNCv2_1A" unit="MILLISECONDS">
-            <value xsi:type="common:LiteralExpression" xmi:id="_ClbscHavEeOh__JNCv2_1A" value="10"/>
-          </minMessageDelay>
           <maxMessageDelay xmi:id="_EZoN8HavEeOh__JNCv2_1A" unit="MILLISECONDS">
             <value xsi:type="common:LiteralExpression" xmi:id="_E9B18HavEeOh__JNCv2_1A" value="10"/>
           </maxMessageDelay>
@@ -372,9 +369,6 @@
       </roles>
       <roleConnector xmi:id="_UQABOI9PEeOh26Tom612Wg" connectorEndpoints="_UQABMI9PEeOh26Tom612Wg _UQABNI9PEeOh26Tom612Wg">
         <connectorQualityOfServiceAssumptions xmi:id="_UQABOY9PEeOh26Tom612Wg" comment="">
-          <minMessageDelay xmi:id="_jWPyII9QEeOh26Tom612Wg" unit="MILLISECONDS">
-            <value xsi:type="common:LiteralExpression" xmi:id="_kTsR0I9QEeOh26Tom612Wg" value="0"/>
-          </minMessageDelay>
           <maxMessageDelay xmi:id="_k_bWcI9QEeOh26Tom612Wg" unit="MILLISECONDS">
             <value xsi:type="common:LiteralExpression" xmi:id="_9ONs4I_YEeOlIYoL3yr3nQ" value="25"/>
           </maxMessageDelay>
@@ -402,9 +396,6 @@
       </roles>
       <roleConnector xmi:id="_qwc3feo1EeO-8csd75FEHw" connectorEndpoints="_qwc3ceo1EeO-8csd75FEHw _qwc3d-o1EeO-8csd75FEHw">
         <connectorQualityOfServiceAssumptions xmi:id="_qwc3fuo1EeO-8csd75FEHw" comment="">
-          <minMessageDelay xmi:id="_qwc3f-o1EeO-8csd75FEHw" unit="MILLISECONDS">
-            <value xsi:type="common:LiteralExpression" xmi:id="_qwc3gOo1EeO-8csd75FEHw" value="2"/>
-          </minMessageDelay>
           <maxMessageDelay xmi:id="_qwc3geo1EeO-8csd75FEHw" unit="MILLISECONDS">
             <value xsi:type="common:LiteralExpression" xmi:id="_qwc3guo1EeO-8csd75FEHw" value="2"/>
           </maxMessageDelay>
@@ -432,9 +423,6 @@
       </roles>
       <roleConnector xmi:id="_EDhPfeo8EeO-8csd75FEHw" connectorEndpoints="_EDhPceo8EeO-8csd75FEHw _EDhPd-o8EeO-8csd75FEHw">
         <connectorQualityOfServiceAssumptions xmi:id="_EDhPfuo8EeO-8csd75FEHw" comment="">
-          <minMessageDelay xmi:id="_EDhPf-o8EeO-8csd75FEHw" unit="MILLISECONDS">
-            <value xsi:type="common:LiteralExpression" xmi:id="_0ovfYHI2EeSKmYbKH6xlmA" value="10"/>
-          </minMessageDelay>
           <maxMessageDelay xmi:id="_EDhPgeo8EeO-8csd75FEHw" unit="MILLISECONDS">
             <value xsi:type="common:LiteralExpression" xmi:id="_EDhPguo8EeO-8csd75FEHw" value="20"/>
           </maxMessageDelay>
@@ -462,9 +450,6 @@
       </roles>
       <roleConnector xmi:id="_uz92LfR7EeOKmIQk3FL8KA" connectorEndpoints="_uz92IfR7EeOKmIQk3FL8KA _uz92J_R7EeOKmIQk3FL8KA">
         <connectorQualityOfServiceAssumptions xmi:id="_uz92LvR7EeOKmIQk3FL8KA" comment="">
-          <minMessageDelay xmi:id="_uz92L_R7EeOKmIQk3FL8KA">
-            <value xsi:type="common:LiteralExpression" xmi:id="_uz92MPR7EeOKmIQk3FL8KA" value="0"/>
-          </minMessageDelay>
           <maxMessageDelay xmi:id="_uz92MfR7EeOKmIQk3FL8KA">
             <value xsi:type="common:LiteralExpression" xmi:id="_uz92MvR7EeOKmIQk3FL8KA" value="0"/>
           </maxMessageDelay>
@@ -489,9 +474,6 @@
       </roles>
       <roleConnector xmi:id="_ndCmh1OfEeSaVK1gfdE5pA" connectorEndpoints="_ncvrkFOfEeSaVK1gfdE5pA _ndCmg1OfEeSaVK1gfdE5pA">
         <connectorQualityOfServiceAssumptions xmi:id="_ndCmiFOfEeSaVK1gfdE5pA" comment="">
-          <minMessageDelay xmi:id="_ndLwclOfEeSaVK1gfdE5pA" unit="MILLISECONDS">
-            <value xsi:type="common:LiteralExpression" xmi:id="_ndLwc1OfEeSaVK1gfdE5pA" value="0"/>
-          </minMessageDelay>
           <maxMessageDelay xmi:id="_ndLwcFOfEeSaVK1gfdE5pA" unit="MILLISECONDS">
             <value xsi:type="common:LiteralExpression" xmi:id="_ndLwcVOfEeSaVK1gfdE5pA" value="0"/>
           </maxMessageDelay>
@@ -519,9 +501,6 @@
       </roles>
       <roleConnector xmi:id="_BdVtaVOlEeSaVK1gfdE5pA" connectorEndpoints="_BdVtYVOlEeSaVK1gfdE5pA _BdVtZVOlEeSaVK1gfdE5pA">
         <connectorQualityOfServiceAssumptions xmi:id="_BdVtalOlEeSaVK1gfdE5pA" comment="">
-          <minMessageDelay xmi:id="_BdVtbVOlEeSaVK1gfdE5pA" unit="MILLISECONDS">
-            <value xsi:type="common:LiteralExpression" xmi:id="_BdVtblOlEeSaVK1gfdE5pA" value="0"/>
-          </minMessageDelay>
           <maxMessageDelay xmi:id="_BdVta1OlEeSaVK1gfdE5pA" unit="MILLISECONDS">
             <value xsi:type="common:LiteralExpression" xmi:id="_BdVtbFOlEeSaVK1gfdE5pA" value="0"/>
           </maxMessageDelay>
@@ -549,9 +528,6 @@
       </roles>
       <roleConnector xmi:id="_TNJFE1OnEeSDPNki4Dv8rg" connectorEndpoints="_TM_7IFOnEeSDPNki4Dv8rg _TM_7JFOnEeSDPNki4Dv8rg">
         <connectorQualityOfServiceAssumptions xmi:id="_TNJFFFOnEeSDPNki4Dv8rg" comment="">
-          <minMessageDelay xmi:id="_TNJFF1OnEeSDPNki4Dv8rg" unit="MILLISECONDS">
-            <value xsi:type="common:LiteralExpression" xmi:id="_TNJFGFOnEeSDPNki4Dv8rg" value="0"/>
-          </minMessageDelay>
           <maxMessageDelay xmi:id="_TNJFFVOnEeSDPNki4Dv8rg" unit="MILLISECONDS">
             <value xsi:type="common:LiteralExpression" xmi:id="_TNJFFlOnEeSDPNki4Dv8rg" value="0"/>
           </maxMessageDelay>
@@ -576,9 +552,6 @@
       </roles>
       <roleConnector xmi:id="_abCkSVOpEeSDPNki4Dv8rg" connectorEndpoints="_abCkQVOpEeSDPNki4Dv8rg _abCkRVOpEeSDPNki4Dv8rg">
         <connectorQualityOfServiceAssumptions xmi:id="_abCkSlOpEeSDPNki4Dv8rg" comment="">
-          <minMessageDelay xmi:id="_abLuMlOpEeSDPNki4Dv8rg" unit="MILLISECONDS">
-            <value xsi:type="common:LiteralExpression" xmi:id="_abLuM1OpEeSDPNki4Dv8rg" value="0"/>
-          </minMessageDelay>
           <maxMessageDelay xmi:id="_abLuMFOpEeSDPNki4Dv8rg" unit="MILLISECONDS">
             <value xsi:type="common:LiteralExpression" xmi:id="_abLuMVOpEeSDPNki4Dv8rg" value="0"/>
           </maxMessageDelay>
