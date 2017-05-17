@@ -154,7 +154,7 @@ public class ModelicaTest {
 	 * @return The workspace location.
 	 */
 	private static File findWorkspaceLocation() {
-		return new File("."); // This requires that the launch configuration
+		return new File(".."); // This requires that the launch configuration
 								// sets ${workspace_loc} as working directory!
 	}
 

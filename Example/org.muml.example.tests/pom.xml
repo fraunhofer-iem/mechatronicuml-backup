@@ -23,6 +23,7 @@
                 <product>org.eclipse.platform.ide</product>
 				<failIfNoTests>false</failIfNoTests>
                 <workingDirectory>${workspace_loc}</workingDirectory>
+				<osgiDataDirectory>${workspace_loc}</osgiDataDirectory>
             </configuration>
 		</plugin>
 	  </plugins>

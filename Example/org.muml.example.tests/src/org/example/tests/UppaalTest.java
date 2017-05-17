@@ -270,38 +270,10 @@ public class UppaalTest {
 				}
 			});
 					
-//					new Muml2UppaalModelJob(verifiableElement, targetURI, targetURIRequirements,
-//					new VerificationOptionsProvider() {
-//						@Override
-//						public boolean prepareOptionsProvider(VerifiableElement element) {
-//							return true;
-//						}
-//
-//						@Override
-//						public org.muml.uppaal.options.Options getOptions() {
-//							return uppaalOptions;
-//						}
-//					});
 			job.schedule();
 			job.join();
 			System.err.println(job.getResult());
 			Assert.assertTrue(job.getResult().isOK());
-			/*
-			 * IFolder sourceFolder =
-			 * project.getFolder(configuration.getName()); Process myProcess =
-			 * new ProcessBuilder("make", "all") .directory(new
-			 * File(sourceFolder.getRawLocation().makeAbsolute().toOSString())).
-			 * start(); myProcess.waitFor(60, TimeUnit.SECONDS);
-			 * 
-			 * if (myProcess.exitValue() != 0) { StringBuffer buffer = new
-			 * StringBuffer(); buffer.append('[');
-			 * buffer.append(configuration.getName()); buffer.append(
-			 * "]: Code generation failed. ERROR:\n"); BufferedReader br = new
-			 * BufferedReader(new
-			 * InputStreamReader(myProcess.getErrorStream())); String line;
-			 * while (null != (line = br.readLine())) { buffer.append(line); }
-			 * throw new Exception(buffer.toString()); }
-			 */
 		} finally {
 			project.delete(true, new NullProgressMonitor());
 		}
@@ -313,7 +285,9 @@ public class UppaalTest {
 	 * @return The workspace location.
 	 */
 	private static File findWorkspaceLocation() {
-		return new File("."); // This requires that the launch configuration
+		File workspace = new File("..");
+		System.out.println(workspace.getAbsolutePath());
+		return workspace; // This requires that the launch configuration
 								// sets ${workspace_loc} as working directory!
 	}
 
