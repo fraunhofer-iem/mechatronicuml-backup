@@ -17,8 +17,9 @@
 		def: getECUs(ecuNames : Set(String)) : Sequence(hwresourceinstance::ResourceInstance) =
 			self.hardwarePlatformInstanceConfiguration.resources->select(ecuNames->includes(name))->asSequence()
 		
-		def: getECU(ecuName : String) : hwresourceinstance::ResourceInstance =
-			self.getAllHWInstances()->any(name = ecuName)
+		
+		def: getECU(ecuName : String) : Set(hwresourceinstance::ResourceInstance) =
+			self.getAllHWInstances()->select(name = ecuName)	
 			
 		def: getAllSWInstances() : Set(instance::ComponentInstance) =
 			self.componentInstanceConfiguration.getAllEmbeddedInstances()
@@ -26,14 +27,17 @@
 		def: getAllSWInstancesOfSCI(instanceName:String) : Set(instance::ComponentInstance) =
 			self.componentInstanceConfiguration.getAllEmbeddedInstancesOfSCI(instanceName)	
 		
-		def: getSWInstance(instanceName : String) : instance::ComponentInstance =
-			self.getAllSWInstances()->any(name = instanceName)
+		def: getSWInstance(instanceName : String) : Set(instance::ComponentInstance) =
+			self.getAllSWInstances()->select(name = instanceName)
 			
 		def: getSWInstanceOfSCI(instanceName : String, of : String) : instance::ComponentInstance =
 			self.getAllSWInstancesOfSCI(of)->any(name = instanceName)	
 		
 		def: getAllHWInstances() : Set(hwresourceinstance::ResourceInstance) =
 			self.getAllHWPlatformInstances()->collect(embeddedHPIC.resources)->asSet()
+			
+		def: getAllHWInstancesOfPlatformInstance(platformInstance:String) : Set(hwresourceinstance::ResourceInstance) =
+			self.hardwarePlatformInstanceConfiguration.getAllEmbeddedPlatformInstancesOfPlatformInstance(platformInstance)->collect(embeddedHPIC.resources)->asSet()
 			
 		def: getAllStructuredHWInstances() : Set(hwresourceinstance::StructuredResourceInstance) =
 			self.getAllHWInstances()->select(
@@ -45,33 +49,40 @@
 		def: getAllHWPlatformInstances() : Set(hwplatforminstance::HWPlatformInstance) =
 			self.hardwarePlatformInstanceConfiguration.getAllEmbeddedPlatformInstances()
 			
-		def: getHWPlatformInstance(platformInstanceName : String) : hwplatforminstance::HWPlatformInstance =
-			self.getAllHWPlatformInstances()->any(name = platformInstanceName)
+		def: getHWPlatformInstance(platformInstanceName : String) : Set(hwplatforminstance::HWPlatformInstance) =
+			self.getAllHWPlatformInstances()->select(name = platformInstanceName)
 			
 		def: allocateToECU(instanceName : String, ecuName : String)
 			: Set(Tuple(first : instance::ComponentInstance, second : hwresourceinstance::ResourceInstance))
 			=
-			self.allocateToECU(self.getSWInstance(instanceName), ecuName)
+			self.getSWInstance(instanceName)->collect(ci |
+				self.allocateToECU(ci, ecuName)
+			)->asSet()
 			
 		def: allocateToECU(componentInstance : instance::ComponentInstance, ecuName : String)
 			: Set(Tuple(first : instance::ComponentInstance, second : hwresourceinstance::ResourceInstance))
 			=
-			componentInstance->asSet()->product(self.getECU(ecuName).resolveToStructuredResourceInstances())->asSet()
+			componentInstance->asSet()->product(self.getECU(ecuName)->collect(ecu|ecu.resolveToStructuredResourceInstances()))->asSet()
+			
+		def: allocateToECU(componentInstance : Set(instance::ComponentInstance), ecuName : String)
+			: Set(Tuple(first : instance::ComponentInstance, second : hwresourceinstance::ResourceInstance))
+			=
+			componentInstance->product(self.getECU(ecuName)->collect(ecu|ecu.resolveToStructuredResourceInstances()))->asSet()	
 			
 		def: allocateEmbeddedToPlatformInstance(swInstanceName : String, platformInstanceName : String)
 			: Set(Tuple(first : instance::ComponentInstance, second : hwresourceinstance::ResourceInstance
 			))
 			=
-			self.getSWInstance(swInstanceName).getAllEmbeddedInstances()->product(
+			self.getSWInstance(swInstanceName)->collect(ci|ci.getAllEmbeddedInstances())->product(
 				-- only to direct embedded StructuredResourceInstances
-				self.getHWPlatformInstance(platformInstanceName).embeddedHPIC.resources
+				self.getHWPlatformInstance(platformInstanceName)->collect(pI|pI.embeddedHPIC.resources)
 					->select(oclIsKindOf(hwresourceinstance::StructuredResourceInstance))
 			)
 		
 		def: allocateToDifferentECUs(instance1 : String, instance2 : String)
 			: Set(Tuple(first : instance::ComponentInstance, second : instance::ComponentInstance))
 			=
-			Set{Tuple{first = self.getSWInstance(instance1), second = self.getSWInstance(instance2)}}
+			self.getSWInstance(instance1)->product(self.getSWInstance(instance2))->reject(first=second)
 			
 		def: allocateCompontentsOfSCIToDifferentECUs(instance1 : String, instance2 : String, of:String)
 			: Set(Tuple(first : instance::ComponentInstance, second : instance::ComponentInstance))
@@ -124,9 +135,9 @@
 			)->asSet()
 			
 		def: colocateSCIAndEmbeddedParts(componentName : String) : Set(Tuple(first : instance::ComponentInstance, second : instance::ComponentInstance)) =
-			let ci : instance::ComponentInstance = self.getSWInstance(componentName)
+			let ci : Set(instance::ComponentInstance) = self.getSWInstance(componentName)
 			in
-			ci->asSet()->product(ci.getAllEmbeddedInstances()->reject(c | c = ci))
+			ci->collect(c| c->product(c.getAllEmbeddedInstances()->reject(cs | c = cs)))->asSet()
 			
 		def: getSWInstancesWithRequiredMemory() : Set(instance::ComponentInstance) =
 			self.getAllSWInstances()->select(ci |
@@ -200,6 +211,11 @@
 			self.hwplatformInstances->closure(h |
 				h->asSet()->union(h.embeddedHPIC.hwplatformInstances)
 			)->asSet()
+			
+		def: getAllEmbeddedPlatformInstancesOfPlatformInstance(platformInstanceName:String) : Set(hwplatforminstance::HWPlatformInstance) =
+			self.hwplatformInstances->select(name=platformInstanceName)->closure(h |
+				h->asSet()->union(h.embeddedHPIC.hwplatformInstances)
+			)->asSet()	
 	
 	-- XXX: hacky
 	context hwresourceinstance::ResourceInstance
@@ -334,24 +350,24 @@
 		def: getLiteralVal() : Real =
 			if self._'value'.oclIsKindOf(common::LiteralExpression) then
 				if self._'unit'.toString() = 'SECONDS' then
-					self._'value'.oclAsType(common::LiteralExpression)._'value'.toReal()*1000
+					self._'value'.oclAsType(common::LiteralExpression).value.toReal()*1000
 				else
 					if self._'unit'.toString() = 'MICROSECONDS' then
-						self._'value'.oclAsType(common::LiteralExpression)._'value'.toReal()/1000
+						self._'value'.oclAsType(common::LiteralExpression).value.toReal()/1000
 					else
 						 if self._'unit'.toString() = 'HOURS' then
-							self._'value'.oclAsType(common::LiteralExpression)._'value'.toReal()*3600000
+							self._'value'.oclAsType(common::LiteralExpression).value.toReal()*3600000
 						 else
 							if self._'unit'.toString() = 'DAYS' then 
-								self._'value'.oclAsType(common::LiteralExpression)._'value'.toReal()*86400000	
+								self._'value'.oclAsType(common::LiteralExpression).value.toReal()*86400000	
 							else
 								if self._'unit'.toString() = 'MINUTES' then 
-									self._'value'.oclAsType(common::LiteralExpression)._'value'.toReal()*60000
+									self._'value'.oclAsType(common::LiteralExpression).value.toReal()*60000
 								else
 									if self._'unit'.toString() = 'NANOSECONDS' then 
-										self._'value'.oclAsType(common::LiteralExpression)._'value'.toReal()/1000000
+										self._'value'.oclAsType(common::LiteralExpression).value.toReal()/1000000
 									else
-										self._'value'.oclAsType(common::LiteralExpression)._'value'.toReal()
+										self._'value'.oclAsType(common::LiteralExpression).value.toReal()
 									endif
 								endif
 							endif
