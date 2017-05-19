@@ -412,7 +412,7 @@ public class JavaClockZone extends ClockZone {
 	
 	public void and(ClockConstraint value) {
 		
-		printDBM();
+//		printDBM();
 				
 		hashCacheValid = false;
 		this.matrix [0][0] = 1;
@@ -512,7 +512,7 @@ public class JavaClockZone extends ClockZone {
 			}
 		}
 		
-		printDBM();
+//		printDBM();
 	}
 
 	// Used for debugging
