@@ -104,7 +104,6 @@ Require-Bundle: org.junit,
  org.muml.example.mini.simplertsc;bundle-version="1.0.0",
  org.muml.example.mini.syncchannel;bundle-version="1.0.0",
  org.muml.example.mini.syncselectorchannel;bundle-version="1.0.0",
- org.muml.example.overtakingandtrackinfo;bundle-version="1.0.0",
  org.muml.example.rocketlauncher;bundle-version="1.0.0",
  org.muml.example.sectionentrywithdependencies;bundle-version="1.0.0",
  org.muml.example.ttccarplatooning;bundle-version="1.0.0"
