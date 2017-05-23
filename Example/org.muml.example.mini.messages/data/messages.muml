@@ -41,7 +41,7 @@
         </receiverMessageBuffer>
       </ports>
       <ports xsi:type="component:HybridPort" xmi:id="__E-xwGZ7EeWMif2ccgn7Yw" name="LED" kind="OUT">
-        <dataType xsi:type="types:PrimitiveDataType" href="../../org.muml.pim.types/model/predefined.mumltypes#int8"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int8"/>
         <initializeExpression xsi:type="common:LiteralExpression" xmi:id="_G3kkUGZ8EeWMif2ccgn7Yw" value="0"/>
         <samplingInterval xmi:id="_HOEYwGZ8EeWMif2ccgn7Yw">
           <value xsi:type="common:LiteralExpression" xmi:id="_IzmzMGZ8EeWMif2ccgn7Yw" value="1"/>
@@ -77,7 +77,7 @@
     </modelElements>
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_L-s2MGZ8EeWMif2ccgn7Yw" name="LED" componentKind="continuous component">
       <ports xsi:type="component:ContinuousPort" xmi:id="_Ms8cQGZ8EeWMif2ccgn7Yw" name="LED">
-        <dataType xsi:type="types:PrimitiveDataType" href="../../org.muml.pim.types/model/predefined.mumltypes#int8"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int8"/>
       </ports>
     </modelElements>
   </categories>
@@ -196,7 +196,7 @@
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_hfgDoByBEeSKP_lLzmbIVg" name="M1">
       <messageTypes xmi:id="_iSJokByBEeSKP_lLzmbIVg" name="myMessage">
         <parameters xmi:id="_jE5UIByBEeSKP_lLzmbIVg" name="lightValue">
-          <dataType xsi:type="types:PrimitiveDataType" href="../../org.muml.pim.types/model/predefined.mumltypes#int8"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int8"/>
         </parameters>
       </messageTypes>
     </modelElements>
