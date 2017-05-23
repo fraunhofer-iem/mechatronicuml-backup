@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BooleanLogic="http://www.muml.org/uppaal/adapter/mtctl/booleanlogic/1.0.0" xmlns:Comparables="http://www.muml.org/uppaal/adapter/mtctl/comparables/1.0.0" xmlns:Predicates="http://www.muml.org/uppaal/adapter/mtctl/predicates/1.0.0" xmlns:Quantifiers="http://www.muml.org/uppaal/adapter/mtctl/quantifiers/1.0.0" xmlns:Sets="http://www.muml.org/uppaal/adapter/mtctl/sets/1.0.0" xmlns:actionlanguage="http://www.muml.org/pim/actionlanguage/1.0.0" xmlns:common="http://www.muml.org/core/expressions/common/1.0.0" xmlns:component="http://www.muml.org/pim/component/1.0.0" xmlns:instance="http://www.muml.org/pim/instance/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:msgtype="http://www.muml.org/pim/msgtype/1.0.0" xmlns:mtctl="http://www.muml.org/uppaal/adapter/mtctl/1.0.0" xmlns:protocol="http://www.muml.org/pim/protocol/1.0.0" xmlns:realtimestatechart="http://www.muml.org/pim/realtimestatechart/1.0.0" xmlns:types="http://www.muml.org/pim/types/1.0.0" xmi:id="_onxjUByAEeSKP_lLzmbIVg">
-  <categories xmi:id="_onxjURyAEeSKP_lLzmbIVg" key="org.muml.types.category" name="types">
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_onxjUhyAEeSKP_lLzmbIVg" name="void"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_onxjUxyAEeSKP_lLzmbIVg" name="boolean" primitiveType="BOOLEAN"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_onxjVByAEeSKP_lLzmbIVg" name="int8" primitiveType="INT8"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_onxjVRyAEeSKP_lLzmbIVg" name="int16" primitiveType="INT16"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_onxjVhyAEeSKP_lLzmbIVg" name="int32" primitiveType="INT32"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_onxjVxyAEeSKP_lLzmbIVg" name="int64" primitiveType="INT64"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_onxjWByAEeSKP_lLzmbIVg" name="double" primitiveType="DOUBLE"/>
-  </categories>
   <categories xmi:id="_onxjWRyAEeSKP_lLzmbIVg" key="org.muml.pim.instance.category" name="instance">
     <modelElements xsi:type="instance:ComponentInstanceConfiguration" xmi:id="_r5ncoByCEeSKP_lLzmbIVg" name="root-cic">
       <componentInstances xsi:type="instance:StructuredComponentInstance" xmi:id="_sVZZsByCEeSKP_lLzmbIVg" name="S1" componentType="_ueDIQByCEeSKP_lLzmbIVg">
@@ -49,7 +40,8 @@
           <bufferSize xmi:id="_Of4uoWZ-EeWMif2ccgn7Yw" value="5"/>
         </receiverMessageBuffer>
       </ports>
-      <ports xsi:type="component:HybridPort" xmi:id="__E-xwGZ7EeWMif2ccgn7Yw" name="LED" dataType="_onxjVByAEeSKP_lLzmbIVg" kind="OUT">
+      <ports xsi:type="component:HybridPort" xmi:id="__E-xwGZ7EeWMif2ccgn7Yw" name="LED" kind="OUT">
+        <dataType xsi:type="types:PrimitiveDataType" href="../../org.muml.pim.types/model/predefined.mumltypes#int8"/>
         <initializeExpression xsi:type="common:LiteralExpression" xmi:id="_G3kkUGZ8EeWMif2ccgn7Yw" value="0"/>
         <samplingInterval xmi:id="_HOEYwGZ8EeWMif2ccgn7Yw">
           <value xsi:type="common:LiteralExpression" xmi:id="_IzmzMGZ8EeWMif2ccgn7Yw" value="1"/>
@@ -84,7 +76,9 @@
       <coordinationProtocolParts xmi:id="_1Mbr0ByCEeSKP_lLzmbIVg" coordinationProtocol="_Q7gs4ByBEeSKP_lLzmbIVg" portParts="_y1axIByCEeSKP_lLzmbIVg _0OqcAByCEeSKP_lLzmbIVg"/>
     </modelElements>
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_L-s2MGZ8EeWMif2ccgn7Yw" name="LED" componentKind="continuous component">
-      <ports xsi:type="component:ContinuousPort" xmi:id="_Ms8cQGZ8EeWMif2ccgn7Yw" name="LED" dataType="_onxjVByAEeSKP_lLzmbIVg"/>
+      <ports xsi:type="component:ContinuousPort" xmi:id="_Ms8cQGZ8EeWMif2ccgn7Yw" name="LED">
+        <dataType xsi:type="types:PrimitiveDataType" href="../../org.muml.pim.types/model/predefined.mumltypes#int8"/>
+      </ports>
     </modelElements>
   </categories>
   <categories xmi:id="_onxjWxyAEeSKP_lLzmbIVg" key="org.muml.pim.protocol.category" name="protocol">
@@ -201,7 +195,9 @@
   <categories xmi:id="_onxjXByAEeSKP_lLzmbIVg" key="org.muml.pim.messagetype.category" name="msgtype">
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_hfgDoByBEeSKP_lLzmbIVg" name="M1">
       <messageTypes xmi:id="_iSJokByBEeSKP_lLzmbIVg" name="myMessage">
-        <parameters xmi:id="_jE5UIByBEeSKP_lLzmbIVg" name="lightValue" dataType="_onxjVByAEeSKP_lLzmbIVg"/>
+        <parameters xmi:id="_jE5UIByBEeSKP_lLzmbIVg" name="lightValue">
+          <dataType xsi:type="types:PrimitiveDataType" href="../../org.muml.pim.types/model/predefined.mumltypes#int8"/>
+        </parameters>
       </messageTypes>
     </modelElements>
   </categories>
