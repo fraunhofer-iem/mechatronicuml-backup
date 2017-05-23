@@ -1,14 +1,15 @@
-
 RTSC = mainRootRTSCStateChart.o 
 COMP = mainComponent.o  
+OPR = 
 LIB = contImplementations.o port.o MessageBuffer.o NetworkMessageBuffer.o NetworkInterface.o Messages.o Debug.o
 MW = MiddlewareCore.o MiddlewareInternalLogic.o NetworkInterfaceImplementation.o
 CC = gcc
 CFLAGS = -c
-all: app
-
-app : main.o $(RTSC) $(COMP) $(LIB) $(HYB) $(MW)  
-	$(CC) main.o $(RTSC) $(COMP) $(LIB) $(HYB) $(MW)  -o app
+all: protobuf app
+protobuf: messages/Messages.proto
+	java -jar messages/protoc-1.0M4.jar -I=messages --c_out=messages Messages.proto
+app : main.o $(RTSC) $(COMP) $(LIB) $(HYB) $(MW) $(OPR) 
+	$(CC) main.o $(RTSC) $(COMP) $(LIB) $(HYB) $(MW) $(OPR) -o app
 mainRootRTSCStateChart.o: RTSCs/mainRootRTSCStateChart.c
 	$(CC) $(CFLAGS) RTSCs/mainRootRTSCStateChart.c
 mainComponent.o: components/mainComponent.c

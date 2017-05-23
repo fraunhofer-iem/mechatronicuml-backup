@@ -10,12 +10,6 @@
 		
 			stateChart->currentStateOfMainInit = STATE_MAININITLED_OFF;
 		
-			// execute entry actions
-			stateChart->LED_voltage = 0;
-			;
-		
-			Clock_reset(stateChart->mainInitChangingClockMainInitClock);
-		
 			stateChart->MainInit_isExecutable = true;
 		
 		}
@@ -29,10 +23,6 @@
 		
 			//initialize init state
 			stateChart->currentStateOfMainRootRTSC = STATE_MAININIT;
-		
-			// execute entry actions
-		
-			// nothing to do
 		
 			initializeMainInitRegion(stateChart);
 		}
@@ -109,6 +99,7 @@
 		
 					Clock_reset(stateChart->mainInitChangingClockMainInitClock);
 		
+					//
 				} else {
 		
 				}
@@ -153,6 +144,7 @@
 		
 					Clock_reset(stateChart->mainInitChangingClockMainInitClock);
 		
+					//
 				} else {
 		
 				}
@@ -200,5 +192,9 @@
 			return (stateChart->currentStateOfMainInit == state);
 		
 		}
+		
+
+		//implementations for RTSC internal operations
+		
 		
 

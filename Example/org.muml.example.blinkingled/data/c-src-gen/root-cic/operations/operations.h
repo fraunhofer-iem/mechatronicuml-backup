@@ -4,16 +4,6 @@
   extern "C" {
 #endif
 
-	#include "../types/standardTypes.h"
-	#include "../types/customTypes.h"
-	typedef struct MainRootRTSCStateChart MainRootRTSCStateChart;
-
-
-
-
-// Operations of RTSC of component Main
-			
-
 #ifdef __cplusplus
   }
 #endif

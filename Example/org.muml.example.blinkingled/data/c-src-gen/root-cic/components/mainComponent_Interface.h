@@ -199,6 +199,14 @@
 	 * @return True, If the Realtime-StateChart is in the specific State, otherwise False
 	 */	
 		bool_t MainRootRTSCStateChart_isInState(MainRootRTSCStateChart* rtsc, MainRootRTSCState state);
+	
+
+//RTSC internal operations
+
+
+
+
+
 
 
 

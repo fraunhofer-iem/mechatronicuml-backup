@@ -4,6 +4,7 @@ Bundle-Name: MechatronicUML Blinking LED Example
 Bundle-SymbolicName: org.muml.example.blinkingled;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.muml.core.example.ui,
- org.muml.pim.actionlanguage
+ org.muml.pim.actionlanguage,
+ org.muml.pim.types;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
