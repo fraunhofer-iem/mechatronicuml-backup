@@ -63,7 +63,8 @@ int createDatabase(){
     }
     //Create table productionStations
     const char *sqlProdStation = "DROP TABLE IF EXISTS ProductionStations;"
-    		 	 	 	 	 	 "CREATE TABLE ProductionStations (ProductionStationID INT PRIMARY KEY, ProducibleIngredients TEXT, LastSeen INT);";
+    		 	 	 	 	 	 "CREATE TABLE ProductionStations (ProductionStationID INT PRIMARY KEY, "
+    		 	 	 	 	 	 "ProducibleIngredients TEXT, LastSeen INT, LastProduced INT);";
 
     rc = sqlite3_exec(db, sqlProdStation, callback, 0, &errMsg);
     if( rc ){
@@ -175,10 +176,11 @@ int insertOrder(int orderID, int ingredientID, int amount)
 int defineProductionStationForOrder(int orderID, int productionStationID)
 {
 	int rc = 0;
-	sqlite3_stmt *orderStatusStmt;
 
 	//Set status of the order
-	const char *orderStatus = "Update Orders Set OrderStatus='IN_PRODUCTION', ProductionStartTime=datetime('now') WHERE OrderID=?";
+	sqlite3_stmt *orderStatusStmt;
+	const char *orderStatus = "Update Orders Set OrderStatus='IN_PRODUCTION', ProductionStartTime=datetime('now') "
+			"WHERE OrderID=?;";
 
 	rc = sqlite3_prepare_v2(db, orderStatus,-1, &orderStatusStmt,0);
 	if( rc ){
@@ -199,8 +201,38 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 	}
 	sqlite3_finalize(orderStatusStmt);
 
+	//Set LastProduced of the ProductionStation
+	sqlite3_stmt *psLastProducedStmt;
+	const char *psLastProduced = "Update ProductionStations Set LastProduced=? WHERE ProductionStationID=?;";
+
+	rc = sqlite3_prepare_v2(db, psLastProduced, -1, &psLastProducedStmt, 0);
+	if( rc ){
+		fprintf(stderr, "Could not prepare statement for order status update: %s\n", sqlite3_errmsg(db));
+		return rc;
+	}
+	//Bind parameters
+	rc= sqlite3_bind_int(psLastProducedStmt, 1, orderID);
+	if( rc ){
+		fprintf(stderr, "Error for orderID: %s\n", sqlite3_errmsg(db));
+		return rc;
+	}
+	rc= sqlite3_bind_int(psLastProducedStmt, 2, productionStationID);
+	if( rc ){
+		fprintf(stderr, "Error for productionStationID: %s\n", sqlite3_errmsg(db));
+		return rc;
+	}
+	//Execute statement
+	printf("Trying to update production station last produced.\n");
+	rc = sqlite3_step(psLastProducedStmt);
+	if( rc!=SQLITE_DONE ){
+		fprintf(stderr, "Could not execute statement for production station update: %s\n", sqlite3_errmsg(db));
+		return rc;
+	}
+	sqlite3_finalize(psLastProducedStmt);
+	printf("Updated production station last produced.\n");
+
+
 	//Insert the allocation into the OrderAllocation Table
-	//Prepare statement
 	const char *orderAllocation = "INSERT INTO OrderAllocation (ProductionStationID, OrderID) "
 								  "VALUES (?, ?);";
 	sqlite3_stmt *orderAllocStmt;
@@ -262,7 +294,8 @@ int deleteOrder(int orderID)
 	sqlite3_stmt *orderStatusStmt;
 
 	//Set status of the order
-	const char *orderStatus = "Update Orders Set OrderStatus='DONE', ProductionEndTime=datetime('now') WHERE OrderID=?";
+	const char *orderStatus = "Update Orders Set OrderStatus='DONE', "
+			"ProductionEndTime=datetime('now') WHERE OrderID=?;";
 
 	rc = sqlite3_prepare_v2(db, orderStatus,-1, &orderStatusStmt,0);
 	if( rc ){
@@ -388,7 +421,8 @@ int searchOrder(int searchingPS, int latestOrderID, int producibleIngredients)
 
 	//Insert the production station into the ProductionStation Table
 	//Prepare statement
-	const char *productionStation = "INSERT OR REPLACE into ProductionStations (ProductionStationID, ProducibleIngredients, LastSeen) VALUES (?, ?, datetime('now'))";
+	const char *productionStation = "INSERT OR REPLACE into ProductionStations (ProductionStationID, ProducibleIngredients, "
+			"LastSeen, LastProduced) VALUES (?, ?, datetime('now'), (SELECT  LastProduced FROM ProductionStations WHERE ProductionStationID =?));";
 	sqlite3_stmt *prodStatStmt;
 	rc = sqlite3_prepare_v2(db, productionStation,-1, &prodStatStmt,0);
 	if( rc ){
@@ -402,10 +436,14 @@ int searchOrder(int searchingPS, int latestOrderID, int producibleIngredients)
 		fprintf(stderr, "Error for productionStationID: %s\n", sqlite3_errmsg(db));
 		return rc;
 	}
-
 	rc= sqlite3_bind_text(prodStatStmt, 2, prodIngrChar, 16, SQLITE_STATIC);
 	if( rc ){
 		fprintf(stderr, "Error for producibleIngredients: %s\n", sqlite3_errmsg(db));
+		return rc;
+	}
+	rc =sqlite3_bind_int(prodStatStmt, 3, searchingPS);
+	if( rc ){
+		fprintf(stderr, "Error for productionStationID: %s\n", sqlite3_errmsg(db));
 		return rc;
 	}
 
