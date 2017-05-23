@@ -21,7 +21,7 @@ RTSC = brokerBrokerStateChart.o
 COMP = brokerComponent.o  
 CONTMAPPING = 
 OPERATIONREPOSITORIES = databaseOperationsOpRep.o		
-LIB =   Debug.o sqlite3.o
+LIB =   Debug.o sqlite3.o cJSON.o
 CC = gcc
 CFLAGS = -DC99 -DDEBUG -ggdb -Wall -c  $(DEFINES) -I types -I lib -I $(NDDSHOME)/include -I $(NDDSHOME)/include/ndds -ldl -lpthread -LLIBDIR
 all: app
@@ -58,6 +58,9 @@ Debug.o: lib/Debug.c
 
 sqlite3.o: lib/sqlite3.c
 	$(CC) $(CFLAGS) lib/sqlite3.c
+	
+cJSON.o: lib/cJSON.c
+	$(CC) $(CFLAGS) lib/cJSON.c	
 	
 databaseOperationsOpRep.o: operations/databaseOperationsOpRep.c
 	$(CC) $(CFLAGS) operations/databaseOperationsOpRep.c

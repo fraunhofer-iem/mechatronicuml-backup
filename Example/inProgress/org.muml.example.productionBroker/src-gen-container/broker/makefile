@@ -60,7 +60,7 @@ sqlite3.o: lib/sqlite3.c
 	$(CC) $(CFLAGS) lib/sqlite3.c
 	
 cJSON.o: lib/cJSON.c
-	$(CC) $(CFLAGS) lib/cJSON.c
+	$(CC) $(CFLAGS) lib/cJSON.c	
 	
 databaseOperationsOpRep.o: operations/databaseOperationsOpRep.c
 	$(CC) $(CFLAGS) operations/databaseOperationsOpRep.c

@@ -420,7 +420,7 @@
                 <enclosedExpression xsi:type="common:LiteralExpression" xmi:id="_20g2ERVMEeeshe9pZ_FOow" value="1"/>
               </initializeExpression>
             </variables>
-            <transitions xmi:id="_0qTw4OanEeWyd6JHVas6Kw" priority="1" target="_LXECYOa4EeWyd6JHVas6Kw" source="_JvqcMOa3EeWyd6JHVas6Kw">
+            <transitions xmi:id="_0qTw4OanEeWyd6JHVas6Kw" priority="1" target="_LXECYOa4EeWyd6JHVas6Kw" source="_JvqcMOa3EeWyd6JHVas6Kw" clockResets="_d3m6gOa6EeWyd6JHVas6Kw">
               <clockConstraints xmi:id="_behRAOqQEeWdNs1s2t99bw" clock="_d3m6gOa6EeWyd6JHVas6Kw" operator="GREATER_OR_EQUAL">
                 <bound xmi:id="_cf09AOqQEeWdNs1s2t99bw" unit="MILLISECONDS">
                   <value xsi:type="common:LiteralExpression" xmi:id="_iTTXgOqQEeWdNs1s2t99bw" value="500"/>
@@ -556,8 +556,15 @@
               </action>
             </transitions>
             <transitions xmi:id="_ykzH4OrDEeWdNs1s2t99bw" priority="1" target="_JvqcMOa3EeWyd6JHVas6Kw" source="_w5Yu8OrDEeWdNs1s2t99bw"/>
+            <transitions xmi:id="_jKg08D-vEeeYkJuSFNogTw" priority="5" target="_JvqcMOa3EeWyd6JHVas6Kw" source="_LXECYOa4EeWyd6JHVas6Kw">
+              <clockConstraints xmi:id="_kQ4nID-vEeeYkJuSFNogTw" clock="_d3m6gOa6EeWyd6JHVas6Kw" operator="GREATER_OR_EQUAL">
+                <bound xmi:id="_l_3RcD-vEeeYkJuSFNogTw">
+                  <value xsi:type="common:LiteralExpression" xmi:id="_uxbNsD-vEeeYkJuSFNogTw" value="500"/>
+                </bound>
+              </clockConstraints>
+            </transitions>
             <states xmi:id="_sp6L0OanEeWyd6JHVas6Kw" name="Init" outgoingTransitions="_MpP4cOa3EeWyd6JHVas6Kw" initial="true"/>
-            <states xmi:id="_JvqcMOa3EeWyd6JHVas6Kw" name="Idle" outgoingTransitions="_0qTw4OanEeWyd6JHVas6Kw" incomingTransitions="_MpP4cOa3EeWyd6JHVas6Kw _znJasOqMEeWBDM2lagzQHQ _ykzH4OrDEeWdNs1s2t99bw">
+            <states xmi:id="_JvqcMOa3EeWyd6JHVas6Kw" name="Idle" outgoingTransitions="_0qTw4OanEeWyd6JHVas6Kw" incomingTransitions="_MpP4cOa3EeWyd6JHVas6Kw _znJasOqMEeWBDM2lagzQHQ _ykzH4OrDEeWdNs1s2t99bw _jKg08D-vEeeYkJuSFNogTw">
               <entryEvent xmi:id="_mgRZcOa6EeWyd6JHVas6Kw" clockResets="_d3m6gOa6EeWyd6JHVas6Kw">
                 <action xmi:id="_nDcX8Oa6EeWyd6JHVas6Kw" name="resetValues">
                   <expressions xsi:type="actionlanguage:Block" xmi:id="_Pwco4OqnEeWdNs1s2t99bw">
@@ -589,7 +596,7 @@
                 </action>
               </entryEvent>
             </states>
-            <states xmi:id="_LXECYOa4EeWyd6JHVas6Kw" name="EvaluateOrder" outgoingTransitions="_RbaKcOa4EeWyd6JHVas6Kw _3Z8-QOa4EeWyd6JHVas6Kw _znJasOqMEeWBDM2lagzQHQ _3pbu8OqNEeWBDM2lagzQHQ" incomingTransitions="_RbaKcOa4EeWyd6JHVas6Kw _0qTw4OanEeWyd6JHVas6Kw _3pbu8OqNEeWBDM2lagzQHQ"/>
+            <states xmi:id="_LXECYOa4EeWyd6JHVas6Kw" name="EvaluateOrder" outgoingTransitions="_RbaKcOa4EeWyd6JHVas6Kw _3Z8-QOa4EeWyd6JHVas6Kw _znJasOqMEeWBDM2lagzQHQ _3pbu8OqNEeWBDM2lagzQHQ _jKg08D-vEeeYkJuSFNogTw" incomingTransitions="_RbaKcOa4EeWyd6JHVas6Kw _0qTw4OanEeWyd6JHVas6Kw _3pbu8OqNEeWBDM2lagzQHQ"/>
             <states xmi:id="_1KakkOa4EeWyd6JHVas6Kw" name="ProcessOrder" outgoingTransitions="_bpWTMOa6EeWyd6JHVas6Kw" incomingTransitions="_3Z8-QOa4EeWyd6JHVas6Kw"/>
             <states xmi:id="_w5Yu8OrDEeWdNs1s2t99bw" name="semanticBreak" outgoingTransitions="_ykzH4OrDEeWdNs1s2t99bw" incomingTransitions="_bpWTMOa6EeWyd6JHVas6Kw"/>
             <clocks xmi:id="_d3m6gOa6EeWyd6JHVas6Kw" name="processingTime"/>
@@ -814,8 +821,15 @@
           </expressions>
         </action>
       </transitions>
+      <transitions xmi:id="_JWkgUD-wEeeYkJuSFNogTw" priority="5" target="_umwW8OwhEeWTKqLnMSJAUw" source="_xAtQ4OwhEeWTKqLnMSJAUw" clockResets="_O2-bYOw1EeWTKqLnMSJAUw">
+        <clockConstraints xmi:id="_KqF9sD-wEeeYkJuSFNogTw" clock="_O2-bYOw1EeWTKqLnMSJAUw" operator="GREATER_OR_EQUAL">
+          <bound xmi:id="_LgDVUD-wEeeYkJuSFNogTw">
+            <value xsi:type="common:LiteralExpression" xmi:id="_MIw7ID-wEeeYkJuSFNogTw" value="500"/>
+          </bound>
+        </clockConstraints>
+      </transitions>
       <states xmi:id="_p1yiUewhEeWTKqLnMSJAUw" name="init" outgoingTransitions="_vDNpcOwhEeWTKqLnMSJAUw" initial="true"/>
-      <states xmi:id="_umwW8OwhEeWTKqLnMSJAUw" name="Idle" outgoingTransitions="_y4uicOwhEeWTKqLnMSJAUw" incomingTransitions="_vDNpcOwhEeWTKqLnMSJAUw _7lvV4OwhEeWTKqLnMSJAUw _9xmJcOwhEeWTKqLnMSJAUw">
+      <states xmi:id="_umwW8OwhEeWTKqLnMSJAUw" name="Idle" outgoingTransitions="_y4uicOwhEeWTKqLnMSJAUw" incomingTransitions="_vDNpcOwhEeWTKqLnMSJAUw _7lvV4OwhEeWTKqLnMSJAUw _9xmJcOwhEeWTKqLnMSJAUw _JWkgUD-wEeeYkJuSFNogTw">
         <entryEvent xmi:id="_0jMJEOw1EeWTKqLnMSJAUw" clockResets="_O2-bYOw1EeWTKqLnMSJAUw">
           <action xmi:id="_3s4_4Pm-EeamHsCuK8L8oA" name="resetValues">
             <expressions xsi:type="actionlanguage:Block" xmi:id="_7qfDkPnOEeaClvcDobbQdQ">
@@ -851,7 +865,7 @@
           </action>
         </entryEvent>
       </states>
-      <states xmi:id="_xAtQ4OwhEeWTKqLnMSJAUw" name="EvaluateOrder" outgoingTransitions="_5DeNcOwhEeWTKqLnMSJAUw _9xmJcOwhEeWTKqLnMSJAUw _-btdcOwhEeWTKqLnMSJAUw _L6IxcOwiEeWTKqLnMSJAUw" incomingTransitions="_y4uicOwhEeWTKqLnMSJAUw _-btdcOwhEeWTKqLnMSJAUw _L6IxcOwiEeWTKqLnMSJAUw"/>
+      <states xmi:id="_xAtQ4OwhEeWTKqLnMSJAUw" name="EvaluateOrder" outgoingTransitions="_5DeNcOwhEeWTKqLnMSJAUw _9xmJcOwhEeWTKqLnMSJAUw _-btdcOwhEeWTKqLnMSJAUw _L6IxcOwiEeWTKqLnMSJAUw _JWkgUD-wEeeYkJuSFNogTw" incomingTransitions="_y4uicOwhEeWTKqLnMSJAUw _-btdcOwhEeWTKqLnMSJAUw _L6IxcOwiEeWTKqLnMSJAUw"/>
       <states xmi:id="_2iL8cOwhEeWTKqLnMSJAUw" name="ProcessOrder" outgoingTransitions="_7Ojk8OwhEeWTKqLnMSJAUw" incomingTransitions="_5DeNcOwhEeWTKqLnMSJAUw"/>
       <states xmi:id="_51XkcOwhEeWTKqLnMSJAUw" name="semanticBreak" outgoingTransitions="_7lvV4OwhEeWTKqLnMSJAUw" incomingTransitions="_7Ojk8OwhEeWTKqLnMSJAUw"/>
       <clocks xmi:id="_O2-bYOw1EeWTKqLnMSJAUw" name="processingTime"/>
@@ -967,8 +981,8 @@
       </verificationConstraintRepositories>
       <roles xmi:id="_lPTxUOwfEeWTKqLnMSJAUw" connectors="_lPWNkewfEeWTKqLnMSJAUw" behavior="_qixPAOwfEeWTKqLnMSJAUw" name="broker" senderMessageTypes="_dtJysNxhEeW-N_z6XJQq2w _P-BxAOa5EeWyd6JHVas6Kw" receiverMessageTypes="_wsJowNxgEeW-N_z6XJQq2w _UTgXMNxrEeW-N_z6XJQq2w">
         <cardinality xmi:id="_lPU_cOwfEeWTKqLnMSJAUw">
-          <lowerBound xmi:id="_EEyH4PRUEeaPvMZN2eZM1g"/>
-          <upperBound xmi:id="_EE5coPRUEeaPvMZN2eZM1g"/>
+          <lowerBound xmi:id="_4OeycD-5EeeumMKPPaKgzQ"/>
+          <upperBound xmi:id="_4OfZgD-5EeeumMKPPaKgzQ"/>
         </cardinality>
         <receiverMessageBuffer xmi:id="_-h86QOwfEeWTKqLnMSJAUw" name="buffer_for_doneOrder" messageType="_wsJowNxgEeW-N_z6XJQq2w">
           <bufferSize xmi:id="_-h86QewfEeWTKqLnMSJAUw"/>
@@ -979,8 +993,8 @@
       </roles>
       <roles xmi:id="_lPVmgewfEeWTKqLnMSJAUw" connectors="_lPWNkewfEeWTKqLnMSJAUw" behavior="_p1yiUOwhEeWTKqLnMSJAUw" name="productionStation" senderMessageTypes="_wsJowNxgEeW-N_z6XJQq2w _UTgXMNxrEeW-N_z6XJQq2w" receiverMessageTypes="_dtJysNxhEeW-N_z6XJQq2w _P-BxAOa5EeWyd6JHVas6Kw">
         <cardinality xmi:id="_lPVmguwfEeWTKqLnMSJAUw">
-          <lowerBound xmi:id="_RsmMoA4XEee7_v9LZBj-KQ"/>
-          <upperBound xmi:id="_RsnawA4XEee7_v9LZBj-KQ"/>
+          <lowerBound xmi:id="_5n1LAD-5EeeumMKPPaKgzQ"/>
+          <upperBound xmi:id="_5n1LAT-5EeeumMKPPaKgzQ"/>
         </cardinality>
         <receiverMessageBuffer xmi:id="_IwiOIOwgEeWTKqLnMSJAUw" name="buffer_for_noOrder" messageType="_dtJysNxhEeW-N_z6XJQq2w">
           <bufferSize xmi:id="_IwiOIewgEeWTKqLnMSJAUw"/>

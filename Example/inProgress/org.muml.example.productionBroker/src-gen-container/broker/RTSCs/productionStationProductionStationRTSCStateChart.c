@@ -144,6 +144,9 @@
 					stateChart->evaluateOrderFailed = false;
 					;
 		
+					Clock_reset(
+							stateChart->productionStationGetOrderProcessingTimeProductionStationGetOrderParameterizedGetOrderRTSCClock);
+		
 					//create new Parameter struct for MessagesGetOrder_Messages_Message
 					MessagesGetOrder_Messages_Message msg_MessagesGetOrder;
 					msg_MessagesGetOrder.psID = stateChart->ID;
@@ -176,7 +179,40 @@
 				}
 				break;
 			case STATE_PRODUCTIONSTATIONGETORDEREVALUATEORDER:
-				if (MCC_ProductionStationComponent_getOrder_exists_MessagesNoOrder_Messages_Message(
+				if (Clock_getTime(
+						stateChart->productionStationGetOrderProcessingTimeProductionStationGetOrderParameterizedGetOrderRTSCClock)
+						>= 500 * 1.0
+		
+						) {
+		
+					// execute exit actions
+					// nothing to do
+		
+					// Transition Effects (incl. clock resets)
+					// nothing to do
+		
+					// nothing to do			
+		
+					//release all created received events
+					//release all created sent events
+					// change the state
+					stateChart->currentStateOfProductionStationGetOrderParameterizedGetOrderRTSC =
+							STATE_PRODUCTIONSTATIONGETORDERIDLE;
+		#ifdef DEBUG
+					printDebugInformation("currentStateOfProductionStationGetOrderParameterizedGetOrderRTSC switched state to STATE_PRODUCTIONSTATIONGETORDERIDLE" );
+		#endif		
+		
+					// execute entry actions
+					stateChart->amount = -1;
+					stateChart->ingredientID = -1;
+					stateChart->processedOrderID = -1;
+					stateChart->incomingOrderPsID = -1;
+					;
+		
+					Clock_reset(
+							stateChart->productionStationGetOrderProcessingTimeProductionStationGetOrderParameterizedGetOrderRTSCClock);
+		
+				} else if (MCC_ProductionStationComponent_getOrder_exists_MessagesNoOrder_Messages_Message(
 						ProductionStationComponent_getgetOrder(
 								stateChart->parentComponent))
 		

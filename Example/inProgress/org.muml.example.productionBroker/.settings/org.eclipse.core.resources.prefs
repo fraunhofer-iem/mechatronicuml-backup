@@ -15,7 +15,6 @@ encoding//model/msgtype/Messages.messagetype_diagram=UTF-8
 encoding//model/msgtype/Register.messagetype_diagram=UTF-8
 encoding//model/productionBroker.muml=UTF-8
 encoding//model/protocol/BrokerProtocol.coordinationprotocol_diagram=UTF-8
-encoding//model/protocol/BrokerProtocol2.coordinationprotocol_diagram=UTF-8
 encoding//model/protocol/PeriodTransmission.coordinationprotocol_diagram=UTF-8
 encoding//model/realtimestatechart/ReciepeGenerator.realtimestatechart_diagram=UTF-8
 encoding//model/realtimestatechart/broker.realtimestatechart_diagram=UTF-8
