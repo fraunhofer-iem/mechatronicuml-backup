@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BooleanLogic="http://www.muml.org/uppaal/adapter/mtctl/booleanlogic/1.0.0" xmlns:Comparables="http://www.muml.org/uppaal/adapter/mtctl/comparables/1.0.0" xmlns:Predicates="http://www.muml.org/uppaal/adapter/mtctl/predicates/1.0.0" xmlns:Quantifiers="http://www.muml.org/uppaal/adapter/mtctl/quantifiers/1.0.0" xmlns:Sets="http://www.muml.org/uppaal/adapter/mtctl/sets/1.0.0" xmlns:actionlanguage="http://www.muml.org/pim/actionlanguage/1.0.0" xmlns:common="http://www.muml.org/core/expressions/common/1.0.0" xmlns:component="http://www.muml.org/pim/component/1.0.0" xmlns:instance="http://www.muml.org/pim/instance/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:msgtype="http://www.muml.org/pim/msgtype/1.0.0" xmlns:mtctl="http://www.muml.org/uppaal/adapter/mtctl/1.0.0" xmlns:protocol="http://www.muml.org/pim/protocol/1.0.0" xmlns:realtimestatechart="http://www.muml.org/pim/realtimestatechart/1.0.0" xmlns:types="http://www.muml.org/pim/types/1.0.0" xmi:id="_fKvPIJe3EeKIIefjcfllxA">
-  <categories xmi:id="_fLD_QJe3EeKIIefjcfllxA" key="org.muml.types.category" name="types">
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_fLFNYJe3EeKIIefjcfllxA" name="void"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_fLFNYZe3EeKIIefjcfllxA" name="boolean" primitiveType="BOOLEAN"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_fLFNYpe3EeKIIefjcfllxA" name="int8" primitiveType="INT8"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_fLFNY5e3EeKIIefjcfllxA" name="int16" primitiveType="INT16"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_fLFNZJe3EeKIIefjcfllxA" name="int32" primitiveType="INT32"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_fLF0cZe3EeKIIefjcfllxA" name="double" primitiveType="DOUBLE"/>
-  </categories>
   <categories xmi:id="_rwtbsJe4EeKIIefjcfllxA" key="org.muml.pim.components.category" name="component">
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_MOsUgZe6EeKVX6r_GEFobQ" name="StrikeProcessing" behavior="_servUJvGEeKe1dmyo6HznA">
       <ports xsi:type="component:DiscretePort" xmi:id="_9wPRcJe6EeKVX6r_GEFobQ" name="BAT_Info" behavior="_1E6mAJ0eEeKe1dmyo6HznA" receiverMessageTypes="_HP9hgJ0cEeKe1dmyo6HznA">
@@ -48,12 +40,14 @@
           <bufferSize xmi:id="_KxkVcGvyEeWg8pm-i8KXGA"/>
         </receiverMessageBuffer>
       </ports>
-      <ports xsi:type="component:HybridPort" xmi:id="_5foZoJ0lEeKe1dmyo6HznA" name="isMaster" dataType="_fLFNYZe3EeKIIefjcfllxA">
+      <ports xsi:type="component:HybridPort" xmi:id="_5foZoJ0lEeKe1dmyo6HznA" name="isMaster">
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
         <samplingInterval xmi:id="_7HiLkJ0lEeKe1dmyo6HznA" unit="MILLISECONDS">
           <value xsi:type="common:LiteralExpression" xmi:id="_Ab9XgGt5EeWbqKMK2So3OQ" value="10"/>
         </samplingInterval>
       </ports>
-      <ports xsi:type="component:HybridPort" xmi:id="_zik1AKK6EeKHT8i8WqTL9g" name="stopPlaying" dataType="_fLFNYZe3EeKIIefjcfllxA">
+      <ports xsi:type="component:HybridPort" xmi:id="_zik1AKK6EeKHT8i8WqTL9g" name="stopPlaying" >
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
         <samplingInterval xmi:id="_3tSh8KK6EeKHT8i8WqTL9g" unit="MILLISECONDS">
           <value xsi:type="common:LiteralExpression" xmi:id="_DvasUGt5EeWbqKMK2So3OQ" value="10"/>
         </samplingInterval>
@@ -66,43 +60,59 @@
           <upperBound xmi:id="_aPUxsJ0gEeKe1dmyo6HznA"/>
         </cardinality>
       </ports>
-      <ports xsi:type="component:HybridPort" xmi:id="_f9XnsJ0iEeKe1dmyo6HznA" name="posX" dataType="_fLF0cZe3EeKIIefjcfllxA">
+      <ports xsi:type="component:HybridPort" xmi:id="_f9XnsJ0iEeKe1dmyo6HznA" name="posX">
+      <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/>
         <samplingInterval xmi:id="_jgr9cJ0iEeKe1dmyo6HznA" unit="MILLISECONDS">
           <value xsi:type="common:LiteralExpression" xmi:id="_GVIxYGt5EeWbqKMK2So3OQ" value="10"/>
         </samplingInterval>
       </ports>
-      <ports xsi:type="component:HybridPort" xmi:id="_pWJ8AJ0iEeKe1dmyo6HznA" name="posY" dataType="_fLF0cZe3EeKIIefjcfllxA">
+      <ports xsi:type="component:HybridPort" xmi:id="_pWJ8AJ0iEeKe1dmyo6HznA" name="posY">
+            <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/>
         <samplingInterval xmi:id="_q0MAQJ0iEeKe1dmyo6HznA" unit="MILLISECONDS">
           <value xsi:type="common:LiteralExpression" xmi:id="_I8ZHgGt5EeWbqKMK2So3OQ" value="10"/>
         </samplingInterval>
       </ports>
-      <ports xsi:type="component:HybridPort" xmi:id="_u80CgJ0iEeKe1dmyo6HznA" name="posZ" dataType="_fLF0cZe3EeKIIefjcfllxA">
+      <ports xsi:type="component:HybridPort" xmi:id="_u80CgJ0iEeKe1dmyo6HznA" name="posZ">
+      <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/>
         <samplingInterval xmi:id="_wV58YJ0iEeKe1dmyo6HznA" unit="MILLISECONDS">
           <value xsi:type="common:LiteralExpression" xmi:id="_MC6zkGt5EeWbqKMK2So3OQ" value="10"/>
         </samplingInterval>
       </ports>
-      <ports xsi:type="component:HybridPort" xmi:id="_8ITMYJ0iEeKe1dmyo6HznA" name="timeOfArrival" dataType="_fLF0cZe3EeKIIefjcfllxA">
+      <ports xsi:type="component:HybridPort" xmi:id="_8ITMYJ0iEeKe1dmyo6HznA" name="timeOfArrival">
+      <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/>
         <samplingInterval xmi:id="_-mWjMJ0iEeKe1dmyo6HznA" unit="MILLISECONDS">
           <value xsi:type="common:LiteralExpression" xmi:id="_OflDQGt5EeWbqKMK2So3OQ" value="10"/>
         </samplingInterval>
       </ports>
-      <ports xsi:type="component:HybridPort" xmi:id="_BxK5YJ0jEeKe1dmyo6HznA" name="velocity" dataType="_fLF0cZe3EeKIIefjcfllxA">
+      <ports xsi:type="component:HybridPort" xmi:id="_BxK5YJ0jEeKe1dmyo6HznA" name="velocity">
+      <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/>
         <samplingInterval xmi:id="_Di7K4J0jEeKe1dmyo6HznA" unit="MILLISECONDS">
           <value xsi:type="common:LiteralExpression" xmi:id="_QaOyEGt5EeWbqKMK2So3OQ" value="10"/>
         </samplingInterval>
       </ports>
-      <ports xsi:type="component:HybridPort" xmi:id="_AZjvwJ0vEeKe1dmyo6HznA" name="ballRecognized" dataType="_fLFNYZe3EeKIIefjcfllxA">
+      <ports xsi:type="component:HybridPort" xmi:id="_AZjvwJ0vEeKe1dmyo6HznA" name="ballRecognized" >
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
         <samplingInterval xmi:id="_FLX48J0vEeKe1dmyo6HznA" unit="MILLISECONDS">
           <value xsi:type="common:LiteralExpression" xmi:id="_SVb6gGt5EeWbqKMK2So3OQ" value="10"/>
         </samplingInterval>
       </ports>
     </modelElements>
     <modelElements xsi:type="component:StaticStructuredComponent" xmi:id="_nx81MJe6EeKVX6r_GEFobQ" name="InformationProcessing" componentKind="hybrid component">
-      <ports xsi:type="component:ContinuousPort" xmi:id="_bifF4J0kEeKe1dmyo6HznA" connectors="_yvNqMJ0vEeKe1dmyo6HznA" name="velocity" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
-      <ports xsi:type="component:ContinuousPort" xmi:id="_h25qQJ0kEeKe1dmyo6HznA" connectors="_xzPKIJ0vEeKe1dmyo6HznA" name="timeOfArrival" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
-      <ports xsi:type="component:ContinuousPort" xmi:id="_kvzKAJ0kEeKe1dmyo6HznA" connectors="_xVA9EJ0vEeKe1dmyo6HznA" name="posX" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
-      <ports xsi:type="component:ContinuousPort" xmi:id="_m3VeQJ0kEeKe1dmyo6HznA" connectors="_w5v9YJ0vEeKe1dmyo6HznA" name="posY" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
-      <ports xsi:type="component:ContinuousPort" xmi:id="_pSEbUJ0kEeKe1dmyo6HznA" connectors="_wgYbIJ0vEeKe1dmyo6HznA" name="posZ" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
+      <ports xsi:type="component:ContinuousPort" xmi:id="_bifF4J0kEeKe1dmyo6HznA" connectors="_yvNqMJ0vEeKe1dmyo6HznA" name="velocity">
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/>
+      </ports>
+      <ports xsi:type="component:ContinuousPort" xmi:id="_h25qQJ0kEeKe1dmyo6HznA" connectors="_xzPKIJ0vEeKe1dmyo6HznA" name="timeOfArrival">
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/>
+      </ports>
+      <ports xsi:type="component:ContinuousPort" xmi:id="_kvzKAJ0kEeKe1dmyo6HznA" connectors="_xVA9EJ0vEeKe1dmyo6HznA" name="posX">
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/>
+      </ports>
+      <ports xsi:type="component:ContinuousPort" xmi:id="_m3VeQJ0kEeKe1dmyo6HznA" connectors="_w5v9YJ0vEeKe1dmyo6HznA" name="posY">
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/>
+      </ports>
+      <ports xsi:type="component:ContinuousPort" xmi:id="_pSEbUJ0kEeKe1dmyo6HznA" connectors="_wgYbIJ0vEeKe1dmyo6HznA" name="posZ">
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/>
+      </ports>
       <ports xsi:type="component:DiscretePort" xmi:id="_2tKugJ0kEeKe1dmyo6HznA" connectors="_qZUVAKK7EeKHT8i8WqTL9g" name="BAT_Information_To_OtherRobot" senderMessageTypes="_uofcgJ0bEeKe1dmyo6HznA _Y3bBAKK6EeKHT8i8WqTL9g" receiverMessageTypes="_uofcgJ0bEeKe1dmyo6HznA _Y3bBAKK6EeKHT8i8WqTL9g">
         <cardinality xmi:id="_2tL8oJ0kEeKe1dmyo6HznA">
           <lowerBound xmi:id="_ggb0oGv9EeW66qqCAwhr8A"/>
@@ -115,9 +125,15 @@
           <bufferSize xmi:id="_qH-zIGv8EeW66qqCAwhr8A"/>
         </receiverMessageBuffer>
       </ports>
-      <ports xsi:type="component:ContinuousPort" xmi:id="__LKZEJ0lEeKe1dmyo6HznA" connectors="_pZw8gKK7EeKHT8i8WqTL9g" name="isMaster" dataType="_fLFNYZe3EeKIIefjcfllxA"/>
-      <ports xsi:type="component:ContinuousPort" xmi:id="_ot-10J0vEeKe1dmyo6HznA" connectors="_wGbqEJ0vEeKe1dmyo6HznA" name="ballRecognized" dataType="_fLFNYZe3EeKIIefjcfllxA"/>
-      <ports xsi:type="component:ContinuousPort" xmi:id="_TAYfsKK7EeKHT8i8WqTL9g" connectors="_pzNXQKK7EeKHT8i8WqTL9g" name="stopPlaying" dataType="_fLFNYZe3EeKIIefjcfllxA"/>
+      <ports xsi:type="component:ContinuousPort" xmi:id="__LKZEJ0lEeKe1dmyo6HznA" connectors="_pZw8gKK7EeKHT8i8WqTL9g" name="isMaster" >
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
+        </ports>
+      <ports xsi:type="component:ContinuousPort" xmi:id="_ot-10J0vEeKe1dmyo6HznA" connectors="_wGbqEJ0vEeKe1dmyo6HznA" name="ballRecognized" >
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
+        </ports>
+      <ports xsi:type="component:ContinuousPort" xmi:id="_TAYfsKK7EeKHT8i8WqTL9g" connectors="_pzNXQKK7EeKHT8i8WqTL9g" name="stopPlaying">>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
+        </ports>
       <embeddedComponentParts xmi:id="_5C1a0J0jEeKe1dmyo6HznA" name="strike" componentType="_MOsUgZe6EeKVX6r_GEFobQ">
         <cardinality xmi:id="_5C5FMJ0jEeKe1dmyo6HznA">
           <lowerBound xmi:id="_9exGQGt7EeWbqKMK2So3OQ"/>
@@ -162,38 +178,70 @@
       <connectors xsi:type="component:DelegationConnector" xmi:id="_qZUVAKK7EeKHT8i8WqTL9g" connectorEndpoints="_i5Qc5KK7EeKHT8i8WqTL9g _2tKugJ0kEeKe1dmyo6HznA"/>
     </modelElements>
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_sKsXEJe6EeKVX6r_GEFobQ" name="Environment" componentKind="continuous component">
-      <ports xsi:type="component:ContinuousPort" xmi:id="_IumToJ0lEeKe1dmyo6HznA" name="posXR1" dataType="_fLF0cZe3EeKIIefjcfllxA" kind="OUT"/>
-      <ports xsi:type="component:ContinuousPort" xmi:id="_LDNakJ0lEeKe1dmyo6HznA" name="posXR2" dataType="_fLF0cZe3EeKIIefjcfllxA" kind="OUT"/>
-      <ports xsi:type="component:ContinuousPort" xmi:id="_M2cSwJ0lEeKe1dmyo6HznA" name="posYR1" dataType="_fLF0cZe3EeKIIefjcfllxA" kind="OUT"/>
-      <ports xsi:type="component:ContinuousPort" xmi:id="_OQvGgJ0lEeKe1dmyo6HznA" name="posYR2" dataType="_fLF0cZe3EeKIIefjcfllxA" kind="OUT"/>
-      <ports xsi:type="component:ContinuousPort" xmi:id="_PHjZwJ0lEeKe1dmyo6HznA" name="posZR1" dataType="_fLF0cZe3EeKIIefjcfllxA" kind="OUT"/>
-      <ports xsi:type="component:ContinuousPort" xmi:id="_QCEhQJ0lEeKe1dmyo6HznA" name="posZR2" dataType="_fLF0cZe3EeKIIefjcfllxA" kind="OUT"/>
-      <ports xsi:type="component:ContinuousPort" xmi:id="_Q-fGMJ0lEeKe1dmyo6HznA" name="timeOfArrivalR1" dataType="_fLF0cZe3EeKIIefjcfllxA" kind="OUT"/>
-      <ports xsi:type="component:ContinuousPort" xmi:id="_TuYa8J0lEeKe1dmyo6HznA" name="timeOfArrivalR2" dataType="_fLF0cZe3EeKIIefjcfllxA" kind="OUT"/>
-      <ports xsi:type="component:ContinuousPort" xmi:id="_Wis8sJ0lEeKe1dmyo6HznA" name="velocityR1" dataType="_fLF0cZe3EeKIIefjcfllxA" kind="OUT"/>
-      <ports xsi:type="component:ContinuousPort" xmi:id="_ZIQCoJ0lEeKe1dmyo6HznA" name="velocityR2" dataType="_fLF0cZe3EeKIIefjcfllxA" kind="OUT"/>
-      <ports xsi:type="component:ContinuousPort" xmi:id="_qyeMMJ0mEeKe1dmyo6HznA" name="isMasterR1" dataType="_fLFNYZe3EeKIIefjcfllxA" kind="OUT"/>
-      <ports xsi:type="component:ContinuousPort" xmi:id="_sfPQAJ0mEeKe1dmyo6HznA" name="isMasterR2" dataType="_fLFNYZe3EeKIIefjcfllxA" kind="OUT"/>
-      <ports xsi:type="component:ContinuousPort" xmi:id="_IBbgEJ0vEeKe1dmyo6HznA" name="ballRecognizedR1" dataType="_fLFNYZe3EeKIIefjcfllxA" kind="OUT"/>
-      <ports xsi:type="component:ContinuousPort" xmi:id="_LKBBoJ0vEeKe1dmyo6HznA" name="ballRecognizedR2" dataType="_fLFNYZe3EeKIIefjcfllxA" kind="OUT"/>
-      <ports xsi:type="component:ContinuousPort" xmi:id="_-uRRYKK6EeKHT8i8WqTL9g" name="stopPlayingR1" dataType="_fLFNYZe3EeKIIefjcfllxA" kind="OUT"/>
-      <ports xsi:type="component:ContinuousPort" xmi:id="_ER3c0KK7EeKHT8i8WqTL9g" name="stopPlayingR2" dataType="_fLFNYZe3EeKIIefjcfllxA" kind="OUT"/>
+      <ports xsi:type="component:ContinuousPort" xmi:id="_IumToJ0lEeKe1dmyo6HznA" name="posXR1" kind="OUT">
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/>
+      </ports>
+      <ports xsi:type="component:ContinuousPort" xmi:id="_LDNakJ0lEeKe1dmyo6HznA" name="posXR2"  kind="OUT">
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/>
+      </ports>
+      <ports xsi:type="component:ContinuousPort" xmi:id="_M2cSwJ0lEeKe1dmyo6HznA" name="posYR1"  kind="OUT">
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/>
+      </ports>
+      <ports xsi:type="component:ContinuousPort" xmi:id="_OQvGgJ0lEeKe1dmyo6HznA" name="posYR2"  kind="OUT">
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/>
+      </ports>
+      <ports xsi:type="component:ContinuousPort" xmi:id="_PHjZwJ0lEeKe1dmyo6HznA" name="posZR1" kind="OUT">
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/>
+      </ports>
+      <ports xsi:type="component:ContinuousPort" xmi:id="_QCEhQJ0lEeKe1dmyo6HznA" name="posZR2"  kind="OUT">
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/>
+      </ports>
+      <ports xsi:type="component:ContinuousPort" xmi:id="_Q-fGMJ0lEeKe1dmyo6HznA" name="timeOfArrivalR1"  kind="OUT">
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/>
+      </ports>
+      <ports xsi:type="component:ContinuousPort" xmi:id="_TuYa8J0lEeKe1dmyo6HznA" name="timeOfArrivalR2"  kind="OUT">
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/>
+      </ports>
+      <ports xsi:type="component:ContinuousPort" xmi:id="_Wis8sJ0lEeKe1dmyo6HznA" name="velocityR1" kind="OUT">
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/>
+      </ports>
+      <ports xsi:type="component:ContinuousPort" xmi:id="_ZIQCoJ0lEeKe1dmyo6HznA" name="velocityR2" kind="OUT">
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/>
+      </ports>
+      <ports xsi:type="component:ContinuousPort" xmi:id="_qyeMMJ0mEeKe1dmyo6HznA" name="isMasterR1"  kind="OUT">
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
+      </ports>
+      <ports xsi:type="component:ContinuousPort" xmi:id="_sfPQAJ0mEeKe1dmyo6HznA" name="isMasterR2"  kind="OUT">
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
+      </ports>
+      <ports xsi:type="component:ContinuousPort" xmi:id="_IBbgEJ0vEeKe1dmyo6HznA" name="ballRecognizedR1"  kind="OUT">
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
+      </ports>
+      <ports xsi:type="component:ContinuousPort" xmi:id="_LKBBoJ0vEeKe1dmyo6HznA" name="ballRecognizedR2"  kind="OUT">
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
+      </ports>
+      <ports xsi:type="component:ContinuousPort" xmi:id="_-uRRYKK6EeKHT8i8WqTL9g" name="stopPlayingR1" kind="OUT">
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
+      </ports>
+      <ports xsi:type="component:ContinuousPort" xmi:id="_ER3c0KK7EeKHT8i8WqTL9g" name="stopPlayingR2" kind="OUT">
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
+      </ports>
     </modelElements>
   </categories>
   <categories xmi:id="_Dj8iEZvEEeKe1dmyo6HznA" key="org.muml.pim.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_ObmBEJvEEeKe1dmyo6HznA" name="MainProcessing" behavioralElement="_S4NmMJe6EeKVX6r_GEFobQ">
-      <variables xmi:id="_0cF8YJ0nEeKe1dmyo6HznA" name="posXReceivedBySP" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
-      <variables xmi:id="_7B06QJ0nEeKe1dmyo6HznA" name="posXReceivedByRobot" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
-      <variables xmi:id="_-dehwJ0nEeKe1dmyo6HznA" name="posYReceivedBySP" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
-      <variables xmi:id="_B6yWIJ0oEeKe1dmyo6HznA" name="posYReceivedByRobot" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
-      <variables xmi:id="_EpvPsJ0oEeKe1dmyo6HznA" name="posZReceivedBySP" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
-      <variables xmi:id="_I3wIQJ0oEeKe1dmyo6HznA" name="posZReceivedByRobot" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
-      <variables xmi:id="_LKJosJ0oEeKe1dmyo6HznA" name="timeOfArrivalReceivedBySP" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
-      <variables xmi:id="_OspfEJ0oEeKe1dmyo6HznA" name="timeOfArrivalReceivedByRobot" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
-      <variables xmi:id="_R4SUoJ0oEeKe1dmyo6HznA" name="velocityReceivedBySP" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
-      <variables xmi:id="_VkNz0J0oEeKe1dmyo6HznA" name="velocityReceivedByRobot" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
-      <variables xmi:id="_UOYTMJ0xEeKe1dmyo6HznA" name="BAT_Info_ReceivedBySP" dataType="_fLFNYZe3EeKIIefjcfllxA"/>
-      <variables xmi:id="_bTSgYJ0xEeKe1dmyo6HznA" name="BAT_Info_ReceivedByRobot" dataType="_fLFNYZe3EeKIIefjcfllxA"/>
+      <variables xmi:id="_0cF8YJ0nEeKe1dmyo6HznA" name="posXReceivedBySP"><dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/></variables>
+      <variables xmi:id="_7B06QJ0nEeKe1dmyo6HznA" name="posXReceivedByRobot" ><dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/></variables>
+      <variables xmi:id="_-dehwJ0nEeKe1dmyo6HznA" name="posYReceivedBySP" ><dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/></variables>
+      <variables xmi:id="_B6yWIJ0oEeKe1dmyo6HznA" name="posYReceivedByRobot" ><dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/></variables>
+      <variables xmi:id="_EpvPsJ0oEeKe1dmyo6HznA" name="posZReceivedBySP" ><dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/></variables>
+      <variables xmi:id="_I3wIQJ0oEeKe1dmyo6HznA" name="posZReceivedByRobot" ><dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/></variables>
+      <variables xmi:id="_LKJosJ0oEeKe1dmyo6HznA" name="timeOfArrivalReceivedBySP" ><dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/></variables>
+      <variables xmi:id="_OspfEJ0oEeKe1dmyo6HznA" name="timeOfArrivalReceivedByRobot" ><dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/></variables>
+      <variables xmi:id="_R4SUoJ0oEeKe1dmyo6HznA" name="velocityReceivedBySP" ><dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/></variables>
+      <variables xmi:id="_VkNz0J0oEeKe1dmyo6HznA" name="velocityReceivedByRobot" ><dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/></variables>
+      <variables xmi:id="_UOYTMJ0xEeKe1dmyo6HznA" name="BAT_Info_ReceivedBySP"> <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/></variables>
+      <variables xmi:id="_bTSgYJ0xEeKe1dmyo6HznA" name="BAT_Info_ReceivedByRobot"> <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/></variables>
       <states xmi:id="_ObmBEZvEEeKe1dmyo6HznA" name="init" initial="true">
         <embeddedRegions xmi:id="_RPN_QJvEEeKe1dmyo6HznA" priority="1">
           <embeddedStatechart xmi:id="_RPg6MJvEEeKe1dmyo6HznA" name="MainProcessingPort_BAT_Info_To_Other_Robot" behavioralElement="_iwyccJ0gEeKe1dmyo6HznA">
@@ -520,11 +568,11 @@
       <clocks xmi:id="_RLPzUJvGEeKe1dmyo6HznA" name="c0"/>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_servUJvGEeKe1dmyo6HznA" name="StrikeProcessing" behavioralElement="_MOsUgZe6EeKVX6r_GEFobQ">
-      <variables xmi:id="_8h5bUJ0mEeKe1dmyo6HznA" name="posX" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
-      <variables xmi:id="__w9_YJ0mEeKe1dmyo6HznA" name="posY" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
-      <variables xmi:id="_BZte0J0nEeKe1dmyo6HznA" name="posZ" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
-      <variables xmi:id="_DQrngJ0nEeKe1dmyo6HznA" name="timeOfArrival" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
-      <variables xmi:id="_FRvgUJ0nEeKe1dmyo6HznA" name="velocity" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
+      <variables xmi:id="_8h5bUJ0mEeKe1dmyo6HznA" name="posX" ><dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/></variables>
+      <variables xmi:id="__w9_YJ0mEeKe1dmyo6HznA" name="posY" ><dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/></variables>
+      <variables xmi:id="_BZte0J0nEeKe1dmyo6HznA" name="posZ" ><dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/></variables>
+      <variables xmi:id="_DQrngJ0nEeKe1dmyo6HznA" name="timeOfArrival" ><dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/></variables>
+      <variables xmi:id="_FRvgUJ0nEeKe1dmyo6HznA" name="velocity" ><dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/></variables>
       <states xmi:id="_sesWYJvGEeKe1dmyo6HznA" name="Init" initial="true">
         <embeddedRegions xmi:id="_1E5-8J0eEeKe1dmyo6HznA" priority="1">
           <embeddedStatechart xmi:id="_1E6mAJ0eEeKe1dmyo6HznA" name="StrikeProcessing_Port_BATInfoToMP" behavioralElement="_9wPRcJe6EeKVX6r_GEFobQ">
@@ -605,7 +653,8 @@
           <action xmi:id="_OEdD0KzIEeaweYI1oTA-bQ" name="stopPlaying := int8&lt;0,1>;">
             <expressions xsi:type="actionlanguage:Block" xmi:id="_Zo7MkKzIEeaweYI1oTA-bQ">
               <expressions xsi:type="actionlanguage:Assignment" xmi:id="_Zo7MkazIEeaweYI1oTA-bQ" assignOperator=":=">
-                <rhs_assignExpression xsi:type="actionlanguage:NondeterministicChoiceExpression" xmi:id="_Zo7MkqzIEeaweYI1oTA-bQ" dataType="_fLFNYpe3EeKIIefjcfllxA">
+                <rhs_assignExpression xsi:type="actionlanguage:NondeterministicChoiceExpression" xmi:id="_Zo7MkqzIEeaweYI1oTA-bQ" >
+                 <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int8"/>
                   <range xmi:id="_Zo7Mk6zIEeaweYI1oTA-bQ"/>
                 </rhs_assignExpression>
                 <lhs_typedNamedElementExpression xmi:id="_Zo7MlKzIEeaweYI1oTA-bQ" typedNamedElement="_JczjQKzIEeaweYI1oTA-bQ"/>
@@ -654,20 +703,20 @@
   <categories xmi:id="_rIvYIJ0bEeKe1dmyo6HznA" key="org.muml.pim.messagetype.category" name="msgtype">
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_sSeAUJ0bEeKe1dmyo6HznA" name="TurnTransmission_Partner_BAT_Info">
       <messageTypes xmi:id="_uofcgJ0bEeKe1dmyo6HznA" name="turn">
-        <parameters xmi:id="_ve3q4J0bEeKe1dmyo6HznA" name="posX" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
-        <parameters xmi:id="_2j4lwJ0bEeKe1dmyo6HznA" name="posY" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
-        <parameters xmi:id="_5J1UUJ0bEeKe1dmyo6HznA" name="posZ" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
-        <parameters xmi:id="_8obiIJ0bEeKe1dmyo6HznA" name="timeOfArrival" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
-        <parameters xmi:id="__h9UAJ0bEeKe1dmyo6HznA" name="velocity" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
+        <parameters xmi:id="_ve3q4J0bEeKe1dmyo6HznA" name="posX" ><dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/></parameters>
+        <parameters xmi:id="_2j4lwJ0bEeKe1dmyo6HznA" name="posY" ><dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/></parameters>
+        <parameters xmi:id="_5J1UUJ0bEeKe1dmyo6HznA" name="posZ" ><dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/></parameters>
+        <parameters xmi:id="_8obiIJ0bEeKe1dmyo6HznA" name="timeOfArrival" ><dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/></parameters>
+        <parameters xmi:id="__h9UAJ0bEeKe1dmyo6HznA" name="velocity" ><dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/></parameters>
       </messageTypes>
     </modelElements>
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_ENX6QJ0cEeKe1dmyo6HznA" name="EventListener_Slave_BAT_Info">
       <messageTypes xmi:id="_HP9hgJ0cEeKe1dmyo6HznA" name="transferBATInfo">
-        <parameters xmi:id="_rGJhsJ0cEeKe1dmyo6HznA" name="posX" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
-        <parameters xmi:id="_usG7wJ0cEeKe1dmyo6HznA" name="posY" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
-        <parameters xmi:id="_wc5j8J0cEeKe1dmyo6HznA" name="posZ" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
-        <parameters xmi:id="_yiySYJ0cEeKe1dmyo6HznA" name="timeOfArrival" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
-        <parameters xmi:id="_1bGjUJ0cEeKe1dmyo6HznA" name="velocity" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
+        <parameters xmi:id="_rGJhsJ0cEeKe1dmyo6HznA" name="posX" ><dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/></parameters>
+        <parameters xmi:id="_usG7wJ0cEeKe1dmyo6HznA" name="posY" ><dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/></parameters>
+        <parameters xmi:id="_wc5j8J0cEeKe1dmyo6HznA" name="posZ" ><dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/></parameters>
+        <parameters xmi:id="_yiySYJ0cEeKe1dmyo6HznA" name="timeOfArrival" ><dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/></parameters>
+        <parameters xmi:id="_1bGjUJ0cEeKe1dmyo6HznA" name="velocity" ><dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/></parameters>
       </messageTypes>
     </modelElements>
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_ovrtoJ3tEeKiuKmEjvlIFQ" name="TurnTransmission_Protocol">
@@ -880,9 +929,6 @@
       </roles>
       <roleConnector xmi:id="_Oft2QZ3sEeKiuKmEjvlIFQ" connectorEndpoints="_OfsBEJ3sEeKiuKmEjvlIFQ _OftPMZ3sEeKiuKmEjvlIFQ">
         <connectorQualityOfServiceAssumptions xmi:id="_Of0j8J3sEeKiuKmEjvlIFQ" comment="">
-          <minMessageDelay xmi:id="_fQ21cKcyEeKFNPHtfiMz7g" unit="MILLISECONDS">
-            <value xsi:type="common:LiteralExpression" xmi:id="_EN3GYGt6EeWbqKMK2So3OQ" value="0"/>
-          </minMessageDelay>
           <maxMessageDelay xmi:id="_fSzWMKcyEeKFNPHtfiMz7g" unit="MILLISECONDS">
             <value xsi:type="common:LiteralExpression" xmi:id="_FdT8EGt6EeWbqKMK2So3OQ" value="1000"/>
           </maxMessageDelay>
