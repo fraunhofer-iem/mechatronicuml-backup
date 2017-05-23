@@ -3,20 +3,13 @@
  * to generate the executable. 
  *
  */
- 
- 
+
 #include <stdio.h>  /* puts() */
 #include <stdlib.h> /* exit() */
 #include <string.h> /* strchr(), strlen(), .. */
 #include <curl/curl.h>
 #include "sqlite3.h"
 #include "cJSON.h"
-
-/* Pointer to database */
-sqlite3 *db;
-CURL *curl;
-char* url ="http://requestb.in/1nzsnoc1";
-
 
 int createDatabase();
 int insertOrder(int orderId, int ingredientID, int amount);
@@ -28,24 +21,28 @@ int deleteOrder(int orderID);
 void extractLogsAndExit();
 void sendToVirtualizationServer(char *jsonString);
 
-static int callback(void *NotUsed, int argc, char **argv, char **azColName)
-{
-    int i;
-    for(i=0; i<argc; i++){
-      printf("%s = %s\n", azColName[i], argv[i] ? argv[i] : "NULL");
-    }
-    printf("\n");
-    return 0;
+/* Pointer to database */
+sqlite3 *db;
+CURL *curl;
+char *url = "http://localhost:8081/api/post-broker";
+
+static int callback(void *NotUsed, int argc, char **argv, char **azColName){
+	int i;
+	for (i = 0; i < argc; i++)
+	{
+		printf("%s = %s\n", azColName[i], argv[i] ? argv[i] : "NULL");
+	}
+	printf("\n");
+	return 0;
 }
 
 /**
  *  Opens a database and creates an new one, if no 'test.db' file is existent
  **/
-int createDatabase()
-{
+int createDatabase(){
 	int rc;
-	char *errMsg=0;
-	
+	char *errMsg = 0;
+
 	rc = sqlite3_open("test", &db);
     if( rc ){
       fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
@@ -88,12 +85,13 @@ int createDatabase()
 
 	printf("Database successfully created. \n");
 
-	//Virtulization server stuff
+	//Virtualization server stuff
 	/* In windows, this will init the winsock stuff */
 	curl_global_init(CURL_GLOBAL_ALL);
 	/* get a curl handle */
 	curl = curl_easy_init();
-	if(curl) {
+	if (curl) {
+		printf("Curl init successful. \n");
 		/* First set the URL that is about to receive our POST. This URL can
 		   just as well be a https:// URL if that is what should receive the data. */
 		curl_easy_setopt(curl, CURLOPT_URL, url);
@@ -103,7 +101,7 @@ int createDatabase()
 	//Send notification about new order to the visualization server
 	cJSON *update = cJSON_CreateObject();
 	cJSON_AddItemToObject(update, "update", cJSON_CreateString("databaseCreated"));
-	sendToVirtualizationServer(cJSON_Print(update));
+	sendToVirtualizationServer(cJSON_PrintUnformatted(update));
 
 	return 0;
 }
@@ -114,15 +112,16 @@ int createDatabase()
  */
 int insertOrder(int orderID, int ingredientID, int amount)
 {
-	int rc=0;
+	printf("Inserting order. \n");
+	int rc = 0;
 	sqlite3_stmt *orderInsertionStmt;
 
 	//Prepare statement
 	const char *orderInsertion = "INSERT INTO Orders (OrderID, Ingredient, Amount, OrderStatus, OrderTime) "
 					"VALUES (?, ?, ?, 'IDLE', datetime('now'));";
 
-	rc = sqlite3_prepare_v2(db,orderInsertion,-1, &orderInsertionStmt,0);
-	if( rc ){
+	rc = sqlite3_prepare_v2(db, orderInsertion, -1, &orderInsertionStmt, 0);
+	if (rc){
 		fprintf(stderr, "Could not prepare statement for order insertion: %s\n", sqlite3_errmsg(db));
 		return rc;
 	}
@@ -151,6 +150,7 @@ int insertOrder(int orderID, int ingredientID, int amount)
 		fprintf(stderr, "Could not execute statement for order insertion: %s\n", sqlite3_errmsg(db));
 		return rc;
 	}
+
 	sqlite3_finalize(orderInsertionStmt);
 	printf("Successfully inserted order: %d\n",orderID);
 
@@ -168,14 +168,13 @@ int insertOrder(int orderID, int ingredientID, int amount)
 	return 0;
 }
 
-
 /**
  * Inserts pair orderId and productionStation into the table OrderAllocation
  * Sets status of the order in table Orders to 'IN_PRODUCTION'
  */
 int defineProductionStationForOrder(int orderID, int productionStationID)
 {
-	int rc=0;
+	int rc = 0;
 	sqlite3_stmt *orderStatusStmt;
 
 	//Set status of the order
@@ -200,14 +199,14 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 	}
 	sqlite3_finalize(orderStatusStmt);
 
-
 	//Insert the allocation into the OrderAllocation Table
 	//Prepare statement
 	const char *orderAllocation = "INSERT INTO OrderAllocation (ProductionStationID, OrderID) "
-					"VALUES (?, ?);";
+								  "VALUES (?, ?);";
 	sqlite3_stmt *orderAllocStmt;
-	rc = sqlite3_prepare_v2(db, orderAllocation,-1, &orderAllocStmt,0);
-	if( rc ){
+	rc = sqlite3_prepare_v2(db, orderAllocation, -1, &orderAllocStmt, 0);
+	if (rc)
+	{
 		fprintf(stderr, "Could not prepare statement for order allocation: %s\n", sqlite3_errmsg(db));
 		return rc;
 	}
@@ -253,13 +252,12 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 	return 0;
 }
 
-
 /**
  * Sets orderStatus to DONE
  */
 int deleteOrder(int orderID)
 {
-	int rc=0;
+	int rc = 0;
 
 	sqlite3_stmt *orderStatusStmt;
 
@@ -300,14 +298,14 @@ int deleteOrder(int orderID)
 	sendToVirtualizationServer(cJSON_Print(update));
 
 	return 0;
-
 }
+
 /**
  * Retrieve the ingredientID for the order with the given id.
  */
 int getOrderIngredientID(int orderID)
 {
-	int rc=0;
+	int rc = 0;
 	sqlite3_stmt *getIngredientStmt;
 
 	//Prepare statement
@@ -341,10 +339,9 @@ int getOrderIngredientID(int orderID)
 	return ingredientID;
 }
 
-
 int getOrderAmount(int orderID)
 {
-	int rc=0;
+	int rc = 0;
 	sqlite3_stmt *getAmountStmt;
 
 	//Prepare statement
@@ -385,11 +382,11 @@ int getOrderAmount(int orderID)
  */
 int searchOrder(int searchingPS, int latestOrderID, int producibleIngredients)
 {
-	int rc=0;
+	int rc = 0;
 	char prodIngrChar[16];
 	sprintf(prodIngrChar, "%16d", producibleIngredients);
 
-	//Insert the Productionstation into the ProductionStation Table
+	//Insert the production station into the ProductionStation Table
 	//Prepare statement
 	const char *productionStation = "INSERT OR REPLACE into ProductionStations (ProductionStationID, ProducibleIngredients, LastSeen) VALUES (?, ?, datetime('now'))";
 	sqlite3_stmt *prodStatStmt;
@@ -421,7 +418,6 @@ int searchOrder(int searchingPS, int latestOrderID, int producibleIngredients)
 	}
 	sqlite3_finalize(prodStatStmt);
 	printf("Successfully inserted production station %d.\n", searchingPS);
-
 
 	sqlite3_stmt *searchOrderStmt;
 
@@ -460,6 +456,7 @@ int searchOrder(int searchingPS, int latestOrderID, int producibleIngredients)
 	printf("Successfully retrieved order %d with status IDLE and producible ingredients.\n", orderID);
 
 	//Send notification about seen production station to the visualization server
+	//json format: {update: {searchOrder, changedTables: {ProductionStations: {ProductionStationID: id}}}}
 	cJSON *update;
 	update = cJSON_CreateObject();
 	cJSON_AddItemToObject(update, "update", cJSON_CreateString("searchOrder"));
@@ -474,24 +471,31 @@ int searchOrder(int searchingPS, int latestOrderID, int producibleIngredients)
 	return orderID;
 }
 
-
 /**
  * Takes a json string and sends it to the server via post request
  *
  */
-void sendToVirtualizationServer(char *jsonString){
-	if(curl) {
-			/* pass in a pointer to the data - libcurl will not copy */
-			curl_easy_setopt(curl, CURLOPT_POSTFIELDS, jsonString);
-
-			/* Perform the request, res will get the return code */
-			CURLcode res = curl_easy_perform(curl);
-			/* Check for errors */
-			if(res != CURLE_OK){
-				fprintf(stderr, "curl_easy_perform() failed: %s\n",
-				 curl_easy_strerror(res));
-			}
+void sendToVirtualizationServer(char *jsonString)
+{
+	if (curl){
+		printf("Json String: %s \n", jsonString);
+		//setting correct headers so that the server will interpret
+		//the post body as json
+		struct curl_slist *headers = NULL;
+		headers = curl_slist_append(headers, "Accept: application/json");
+		headers = curl_slist_append(headers, "Content-Type: application/json");
+		headers = curl_slist_append(headers, "charsets: utf-8");
+		curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+		/* pass in a pointer to the data - libcurl will not copy */
+		curl_easy_setopt(curl, CURLOPT_POSTFIELDS, jsonString);
+		/* Perform the request, res will get the return code */
+		CURLcode res = curl_easy_perform(curl);
+		/* Check for errors */
+		if (res != CURLE_OK){
+			fprintf(stderr, "curl_easy_perform() failed: %s\n",
+					curl_easy_strerror(res));
 		}
+	}
 }
 
 /*
@@ -506,6 +510,3 @@ void extractLogsAndExit()
 	}
 	exit(0);
 }
-
-
-
