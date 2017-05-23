@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--muml metamodel version 0.3.2 (r15221)-->
 <modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:allocation="http://www.muml.org/psm/allocation/1.0.0" xmlns:component="http://www.muml.org/pim/component/1.0.0" xmlns:connector="http://www.muml.org/pim/connector/1.0.0" xmlns:hwplatform="http://www.muml.org/pm/hardware/hwplatform/1.0.0" xmlns:hwplatforminstance="http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0" xmlns:hwresource="http://www.muml.org/pm/hardware/hwresource/1.0.0" xmlns:hwresourceinstance="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0" xmlns:instance="http://www.muml.org/pim/instance/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:msgtype="http://www.muml.org/pim/msgtype/1.0.0" xmlns:properties="http://www.muml.org/psm/properties/1.0.0" xmlns:protocol="http://www.muml.org/pim/protocol/1.0.0" xmlns:sdcec="http://www.muml.org/core/expressions/common/1.0.0" xmlns:types="http://www.muml.org/pim/types/1.0.0" xmi:id="_P_fLIMvpEeSqLp1EdST_nQ">
-  <categories xmi:id="_P_fLIcvpEeSqLp1EdST_nQ" key="org.muml.types.category" name="types">
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_P_fLIsvpEeSqLp1EdST_nQ" name="VOID"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_P_fLI8vpEeSqLp1EdST_nQ" name="BOOLEAN" primitiveType="BOOLEAN"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_P_fLJMvpEeSqLp1EdST_nQ" name="BYTE"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_P_fLJcvpEeSqLp1EdST_nQ" name="SHORT"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_P_fLJsvpEeSqLp1EdST_nQ" name="INT"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_P_fLJ8vpEeSqLp1EdST_nQ" name="LONG"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_P_fLKMvpEeSqLp1EdST_nQ" name="DOUBLE" primitiveType="DOUBLE"/>
-  </categories>
   <categories xmi:id="_P_fLKcvpEeSqLp1EdST_nQ" key="org.muml.pim.realtimestatechart.category" name="realtimestatechart"/>
   <categories xmi:id="_P_fLKsvpEeSqLp1EdST_nQ" key="org.muml.pim.protocol.category" name="protocol"/>
   <categories xmi:id="_P_fLK8vpEeSqLp1EdST_nQ" key="org.muml.pim.messagetype.category" name="msgtype">
@@ -150,29 +141,40 @@
   </categories>
   <categories xmi:id="_P_fLLcvpEeSqLp1EdST_nQ" key="org.muml.pim.components.category" name="component">
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_LO8bkOmpEeSsPdK-DtuwOA" name="ParkingBrakeActuator" componentKind="continuous component">
-      <ports xsi:type="component:ContinuousPort" xmi:id="_-G_RYOmpEeSsPdK-DtuwOA" name="C1" dataType="_P_fLKMvpEeSqLp1EdST_nQ"/>
+      <ports xsi:type="component:ContinuousPort" xmi:id="_-G_RYOmpEeSsPdK-DtuwOA" name="C1" >
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/>
+      </ports>
     </modelElements>
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_OcCpsOmpEeSsPdK-DtuwOA" name="TemperatureSensor" componentKind="continuous component">
-      <ports xsi:type="component:ContinuousPort" xmi:id="_9Est8OmpEeSsPdK-DtuwOA" name="C1" dataType="_P_fLKMvpEeSqLp1EdST_nQ" kind="OUT"/>
+      <ports xsi:type="component:ContinuousPort" xmi:id="_9Est8OmpEeSsPdK-DtuwOA" name="C1" kind="OUT" >
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/>
+      </ports>
     </modelElements>
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_QUA38OmpEeSsPdK-DtuwOA" name="CalliperPositionSensor" componentKind="continuous component">
-      <ports xsi:type="component:ContinuousPort" xmi:id="_6i11MOmpEeSsPdK-DtuwOA" name="C1" dataType="_P_fLKMvpEeSqLp1EdST_nQ" kind="OUT"/>
+      <ports xsi:type="component:ContinuousPort" xmi:id="_6i11MOmpEeSsPdK-DtuwOA" name="C1" kind="OUT" >
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/>
+      </ports>
     </modelElements>
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_Sun5MOmpEeSsPdK-DtuwOA" name="CalliperClampActuator" componentKind="continuous component">
-      <ports xsi:type="component:ContinuousPort" xmi:id="_8BMpkOmpEeSsPdK-DtuwOA" name="C1" dataType="_P_fLKMvpEeSqLp1EdST_nQ"/>
+      <ports xsi:type="component:ContinuousPort" xmi:id="_8BMpkOmpEeSsPdK-DtuwOA" name="C1"  >
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/>
+      </ports>
     </modelElements>
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_ViMNAOmpEeSsPdK-DtuwOA" name="CalliperControl">
-      <ports xsi:type="component:HybridPort" xmi:id="_S9m68OmqEeSsPdK-DtuwOA" name="c1" dataType="_P_fLKMvpEeSqLp1EdST_nQ">
+      <ports xsi:type="component:HybridPort" xmi:id="_S9m68OmqEeSsPdK-DtuwOA" name="c1"  >
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/>
         <samplingInterval xmi:id="_F2kzcOnPEeSyWM-b9FAU_g">
           <value xsi:type="sdcec:LiteralExpression" xmi:id="_HRggYOnPEeSyWM-b9FAU_g" value="10"/>
         </samplingInterval>
       </ports>
-      <ports xsi:type="component:HybridPort" xmi:id="_TngzkOmqEeSsPdK-DtuwOA" name="c2" dataType="_P_fLKMvpEeSqLp1EdST_nQ">
+      <ports xsi:type="component:HybridPort" xmi:id="_TngzkOmqEeSsPdK-DtuwOA" name="c2" >
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/>
         <samplingInterval xmi:id="_IqtvAOnPEeSyWM-b9FAU_g">
           <value xsi:type="sdcec:LiteralExpression" xmi:id="_JNBK0OnPEeSyWM-b9FAU_g" value="10"/>
         </samplingInterval>
       </ports>
-      <ports xsi:type="component:HybridPort" xmi:id="_ULIeAOmqEeSsPdK-DtuwOA" name="c3" dataType="_P_fLKMvpEeSqLp1EdST_nQ" kind="OUT">
+      <ports xsi:type="component:HybridPort" xmi:id="_ULIeAOmqEeSsPdK-DtuwOA" name="c3" kind="OUT" >
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/>
         <samplingInterval xmi:id="_KoDlcOnPEeSyWM-b9FAU_g">
           <value xsi:type="sdcec:LiteralExpression" xmi:id="_LRKz4OnPEeSyWM-b9FAU_g" value="10"/>
         </samplingInterval>
@@ -183,7 +185,8 @@
           <upperBound xmi:id="_G8WukOm1EeSE4Zrj1GnMCg"/>
         </cardinality>
       </ports>
-      <ports xsi:type="component:HybridPort" xmi:id="_WmBzIOmqEeSsPdK-DtuwOA" name="c4" dataType="_P_fLKMvpEeSqLp1EdST_nQ" kind="OUT">
+      <ports xsi:type="component:HybridPort" xmi:id="_WmBzIOmqEeSsPdK-DtuwOA" name="c4" kind="OUT" >
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/>
         <samplingInterval xmi:id="_Mb6vwOnPEeSyWM-b9FAU_g">
           <value xsi:type="sdcec:LiteralExpression" xmi:id="_OH5JYOnPEeSyWM-b9FAU_g" value="10"/>
         </samplingInterval>
@@ -210,23 +213,30 @@
       </ports>
     </modelElements>
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_cQep8OmpEeSsPdK-DtuwOA" name="ParkingBrakeSensor" componentKind="continuous component">
-      <ports xsi:type="component:ContinuousPort" xmi:id="_5MOnkOmpEeSsPdK-DtuwOA" name="C1" dataType="_P_fLKMvpEeSqLp1EdST_nQ" kind="OUT"/>
+      <ports xsi:type="component:ContinuousPort" xmi:id="_5MOnkOmpEeSsPdK-DtuwOA" name="C1" kind="OUT">
+      <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/>
+      </ports>
     </modelElements>
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_eEj2sOmpEeSsPdK-DtuwOA" name="PedalPositionSensor" componentKind="continuous component">
-      <ports xsi:type="component:ContinuousPort" xmi:id="_3QBZkOmpEeSsPdK-DtuwOA" name="C1" dataType="_P_fLKMvpEeSqLp1EdST_nQ" kind="OUT"/>
+      <ports xsi:type="component:ContinuousPort" xmi:id="_3QBZkOmpEeSsPdK-DtuwOA" name="C1" kind="OUT">
+      <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/>
+      </ports>
     </modelElements>
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_f1qn8OmpEeSsPdK-DtuwOA" name="BrakePedalControl">
-      <ports xsi:type="component:HybridPort" xmi:id="_Atm44OmrEeSE4Zrj1GnMCg" name="H1" dataType="_P_fLKMvpEeSqLp1EdST_nQ">
+      <ports xsi:type="component:HybridPort" xmi:id="_Atm44OmrEeSE4Zrj1GnMCg" name="H1">
+      <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/>
         <samplingInterval xmi:id="_pxh-4OnPEeSyWM-b9FAU_g">
           <value xsi:type="sdcec:LiteralExpression" xmi:id="_qYLIIOnPEeSyWM-b9FAU_g" value="10"/>
         </samplingInterval>
       </ports>
-      <ports xsi:type="component:HybridPort" xmi:id="_BmWewOmrEeSE4Zrj1GnMCg" name="H2" dataType="_P_fLKMvpEeSqLp1EdST_nQ">
+      <ports xsi:type="component:HybridPort" xmi:id="_BmWewOmrEeSE4Zrj1GnMCg" name="H2">
+      <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/>
         <samplingInterval xmi:id="_rTjLQOnPEeSyWM-b9FAU_g">
           <value xsi:type="sdcec:LiteralExpression" xmi:id="_r9A_AOnPEeSyWM-b9FAU_g" value="10"/>
         </samplingInterval>
       </ports>
-      <ports xsi:type="component:HybridPort" xmi:id="_CykaQOmrEeSE4Zrj1GnMCg" name="H3" dataType="_P_fLKMvpEeSqLp1EdST_nQ" kind="OUT">
+      <ports xsi:type="component:HybridPort" xmi:id="_CykaQOmrEeSE4Zrj1GnMCg" name="H3" kind="OUT">
+   <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/>
         <samplingInterval xmi:id="_twIicOnPEeSyWM-b9FAU_g">
           <value xsi:type="sdcec:LiteralExpression" xmi:id="_u01gsOnPEeSyWM-b9FAU_g" value="10"/>
         </samplingInterval>
@@ -239,12 +249,14 @@
       </ports>
     </modelElements>
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_heYSMOmpEeSsPdK-DtuwOA" name="WheelSpinDetector">
-      <ports xsi:type="component:HybridPort" xmi:id="_Iy9PYOmrEeSE4Zrj1GnMCg" name="H1" dataType="_P_fLKMvpEeSqLp1EdST_nQ">
+      <ports xsi:type="component:HybridPort" xmi:id="_Iy9PYOmrEeSE4Zrj1GnMCg" name="H1">
+      <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/>
         <samplingInterval xmi:id="_yn-bIOnPEeSyWM-b9FAU_g">
           <value xsi:type="sdcec:LiteralExpression" xmi:id="_zQB5oOnPEeSyWM-b9FAU_g" value="10"/>
         </samplingInterval>
       </ports>
-      <ports xsi:type="component:HybridPort" xmi:id="_JKgMsOmrEeSE4Zrj1GnMCg" name="H2" dataType="_P_fLKMvpEeSqLp1EdST_nQ">
+      <ports xsi:type="component:HybridPort" xmi:id="_JKgMsOmrEeSE4Zrj1GnMCg" name="H2">
+      <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/>
         <samplingInterval xmi:id="_0ZKr8OnPEeSyWM-b9FAU_g">
           <value xsi:type="sdcec:LiteralExpression" xmi:id="_1YbJgOnPEeSyWM-b9FAU_g" value="10"/>
         </samplingInterval>
@@ -257,13 +269,19 @@
       </ports>
     </modelElements>
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_jzWlgOmpEeSsPdK-DtuwOA" name="BrakeForceSensor" componentKind="continuous component">
-      <ports xsi:type="component:ContinuousPort" xmi:id="_8VN8UOmqEeSE4Zrj1GnMCg" name="C1" dataType="_P_fLKMvpEeSqLp1EdST_nQ" kind="OUT"/>
+      <ports xsi:type="component:ContinuousPort" xmi:id="_8VN8UOmqEeSE4Zrj1GnMCg" name="C1" kind="OUT">
+      <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/>
+      </ports>
     </modelElements>
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_mV1wYOmpEeSsPdK-DtuwOA" name="BrakeFeedbackActuator" componentKind="continuous component">
-      <ports xsi:type="component:ContinuousPort" xmi:id="_1caG4OmpEeSsPdK-DtuwOA" name="C1" dataType="_P_fLKMvpEeSqLp1EdST_nQ"/>
+      <ports xsi:type="component:ContinuousPort" xmi:id="_1caG4OmpEeSsPdK-DtuwOA" name="C1">
+      <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/>
+      </ports>
     </modelElements>
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_rrXDkOmpEeSsPdK-DtuwOA" name="WheelSpeedSensor" componentKind="continuous component">
-      <ports xsi:type="component:ContinuousPort" xmi:id="_uNawoOmpEeSsPdK-DtuwOA" name="C1" dataType="_P_fLKMvpEeSqLp1EdST_nQ" kind="OUT"/>
+      <ports xsi:type="component:ContinuousPort" xmi:id="_uNawoOmpEeSsPdK-DtuwOA" name="C1" kind="OUT">
+      <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/>
+      </ports>
     </modelElements>
     <modelElements xsi:type="component:StaticStructuredComponent" xmi:id="_KyLJkOm1EeSE4Zrj1GnMCg" name="Calliper" componentKind="hybrid component">
       <ports xsi:type="component:DiscretePort" xmi:id="_4HjBAOm1EeSE4Zrj1GnMCg" connectors="_4uV7QOm1EeSE4Zrj1GnMCg" name="D1" receiverMessageTypes="_XlxjcOmrEeSE4Zrj1GnMCg">
@@ -367,7 +385,9 @@
           <upperBound xmi:id="_iR2OIem3EeSE4Zrj1GnMCg"/>
         </cardinality>
       </ports>
-      <ports xsi:type="component:ContinuousPort" xmi:id="_023BcOm3EeSE4Zrj1GnMCg" connectors="_21eDMOm3EeSE4Zrj1GnMCg" name="C1" dataType="_P_fLKMvpEeSqLp1EdST_nQ"/>
+      <ports xsi:type="component:ContinuousPort" xmi:id="_023BcOm3EeSE4Zrj1GnMCg" connectors="_21eDMOm3EeSE4Zrj1GnMCg" name="C1">
+      <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#double"/>
+      </ports>
       <embeddedComponentParts xmi:id="_W8bOBem3EeSE4Zrj1GnMCg" name="sc8" componentType="_heYSMOmpEeSsPdK-DtuwOA">
         <cardinality xmi:id="_W8bOBum3EeSE4Zrj1GnMCg">
           <lowerBound xmi:id="_xqyuEOm3EeSE4Zrj1GnMCg"/>
