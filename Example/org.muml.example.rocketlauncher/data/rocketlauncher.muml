@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--muml metamodel version 0.3.2 (r15221)-->
-<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BooleanLogic="http://www.muml.org/uppaal/adapter/mtctl/booleanlogic/1.0.0" xmlns:Comparables="http://www.muml.org/uppaal/adapter/mtctl/comparables/1.0.0" xmlns:Predicates="http://www.muml.org/uppaal/adapter/mtctl/predicates/1.0.0" xmlns:Quantifiers="http://www.muml.org/uppaal/adapter/mtctl/quantifiers/1.0.0" xmlns:Sets="http://www.muml.org/uppaal/adapter/mtctl/sets/1.0.0" xmlns:actionlanguage="http://www.muml.org/pim/actionlanguage/1.0.0" xmlns:component="http://www.muml.org/pim/component/1.0.0" xmlns:instance="http://www.muml.org/pim/instance/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:msgtype="http://www.muml.org/pim/msgtype/1.0.0" xmlns:mtctl="http://www.muml.org/uppaal/adapter/mtctl/1.0.0" xmlns:protocol="http://www.muml.org/pim/protocol/1.0.0" xmlns:realtimestatechart="http://www.muml.org/pim/realtimestatechart/1.0.0" xmlns:sdcec="http://www.muml.org/core/expressions/common/1.0.0" xmlns:types="http://www.muml.org/pim/types/1.0.0" xmi:id="_IaAgAMjrEeW0gpRI-mS_yA">
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BooleanLogic="http://www.muml.org/uppaal/adapter/mtctl/booleanlogic/1.0.0" xmlns:Comparables="http://www.muml.org/uppaal/adapter/mtctl/comparables/1.0.0" xmlns:Predicates="http://www.muml.org/uppaal/adapter/mtctl/predicates/1.0.0" xmlns:Quantifiers="http://www.muml.org/uppaal/adapter/mtctl/quantifiers/1.0.0" xmlns:Sets="http://www.muml.org/uppaal/adapter/mtctl/sets/1.0.0" xmlns:actionlanguage="http://www.muml.org/pim/actionlanguage/1.0.0" xmlns:common="http://www.muml.org/core/expressions/common/1.0.0" xmlns:component="http://www.muml.org/pim/component/1.0.0" xmlns:instance="http://www.muml.org/pim/instance/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:msgtype="http://www.muml.org/pim/msgtype/1.0.0" xmlns:mtctl="http://www.muml.org/uppaal/adapter/mtctl/1.0.0" xmlns:protocol="http://www.muml.org/pim/protocol/1.0.0" xmlns:realtimestatechart="http://www.muml.org/pim/realtimestatechart/1.0.0" xmlns:types="http://www.muml.org/pim/types/1.0.0" xmi:id="_IaAgAMjrEeW0gpRI-mS_yA">
   <categories xmi:id="_IaAgAcjrEeW0gpRI-mS_yA" key="org.muml.types.category" name="types"/>
   <categories xmi:id="_IaAgAsjrEeW0gpRI-mS_yA" key="org.muml.pim.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_LkK5cMjsEeW0gpRI-mS_yA" name="peer" behavioralElement="_4UmGMMjrEeW0gpRI-mS_yA">
@@ -10,7 +9,7 @@
       <transitions xmi:id="_QayDEMjsEeW0gpRI-mS_yA" priority="1" target="_LkK5ccjsEeW0gpRI-mS_yA" source="_LkK5ccjsEeW0gpRI-mS_yA" urgent="false">
         <clockConstraints xmi:id="_CUEXAOLKEeWXyfL4NpxXow" clock="_39m5gOLJEeWXyfL4NpxXow" operator="GREATER_OR_EQUAL">
           <bound xmi:id="_C25XQOLKEeWXyfL4NpxXow">
-            <value xsi:type="sdcec:LiteralExpression" xmi:id="_E_s20OLKEeWXyfL4NpxXow" value="1"/>
+            <value xsi:type="common:LiteralExpression" xmi:id="_E_s20OLKEeWXyfL4NpxXow" value="1"/>
           </bound>
         </clockConstraints>
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_fUGnwMjsEeW0gpRI-mS_yA">
@@ -37,14 +36,14 @@
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_Yqrx0MjuEeW0gpRI-mS_yA" name="LaunchVerifier" behavioralElement="_curTEMjrEeW0gpRI-mS_yA">
       <variables xmi:id="_3wE8gMjuEeW0gpRI-mS_yA" name="peer1">
         <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
-        <initializeExpression xsi:type="sdcec:UnaryExpression" xmi:id="_8vXhAMjuEeW0gpRI-mS_yA" operator="MINUS">
-          <enclosedExpression xsi:type="sdcec:LiteralExpression" xmi:id="_8vXhAcjuEeW0gpRI-mS_yA" value="32"/>
+        <initializeExpression xsi:type="common:UnaryExpression" xmi:id="_8vXhAMjuEeW0gpRI-mS_yA" operator="MINUS">
+          <enclosedExpression xsi:type="common:LiteralExpression" xmi:id="_8vXhAcjuEeW0gpRI-mS_yA" value="32"/>
         </initializeExpression>
       </variables>
       <variables xmi:id="_9SLTIMjuEeW0gpRI-mS_yA" name="peer2">
         <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
-        <initializeExpression xsi:type="sdcec:UnaryExpression" xmi:id="_Je4EIMqdEeWg8I9CxdQyWw" operator="MINUS">
-          <enclosedExpression xsi:type="sdcec:LiteralExpression" xmi:id="_Je4EIcqdEeWg8I9CxdQyWw" value="42"/>
+        <initializeExpression xsi:type="common:UnaryExpression" xmi:id="_Je4EIMqdEeWg8I9CxdQyWw" operator="MINUS">
+          <enclosedExpression xsi:type="common:LiteralExpression" xmi:id="_Je4EIcqdEeWg8I9CxdQyWw" value="42"/>
         </initializeExpression>
       </variables>
       <states xmi:id="_Yqrx0cjuEeW0gpRI-mS_yA" name="LaunchVerifier_main" initial="true">
@@ -87,38 +86,38 @@
         <embeddedRegions xmi:id="_19UlcMjuEeW0gpRI-mS_yA" priority="3">
           <embeddedStatechart xmi:id="_19ougMjuEeW0gpRI-mS_yA" name="statechart">
             <transitions xmi:id="_iXrXYMj1EeWzrcBaL-cniQ" priority="1" target="_VWvp4Mm0EeWQPJzmExyJCA" source="_19p8oMjuEeW0gpRI-mS_yA">
-              <guard xsi:type="sdcec:LogicalExpression" xmi:id="_wvaEQMqdEeWg8I9CxdQyWw">
-                <leftExpression xsi:type="sdcec:LogicalExpression" xmi:id="_wvaEQcqdEeWg8I9CxdQyWw">
-                  <leftExpression xsi:type="sdcec:ComparisonExpression" xmi:id="_wvaEQsqdEeWg8I9CxdQyWw" operator="EQUAL">
+              <guard xsi:type="common:LogicalExpression" xmi:id="_wvaEQMqdEeWg8I9CxdQyWw">
+                <leftExpression xsi:type="common:LogicalExpression" xmi:id="_wvaEQcqdEeWg8I9CxdQyWw">
+                  <leftExpression xsi:type="common:ComparisonExpression" xmi:id="_wvaEQsqdEeWg8I9CxdQyWw" operator="EQUAL">
                     <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_wvaEQ8qdEeWg8I9CxdQyWw" typedNamedElement="_3wE8gMjuEeW0gpRI-mS_yA"/>
                     <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_wvaERMqdEeWg8I9CxdQyWw" typedNamedElement="_9SLTIMjuEeW0gpRI-mS_yA"/>
                   </leftExpression>
-                  <rightExpression xsi:type="sdcec:ComparisonExpression" xmi:id="_wvaERcqdEeWg8I9CxdQyWw" operator="GREATER">
+                  <rightExpression xsi:type="common:ComparisonExpression" xmi:id="_wvaERcqdEeWg8I9CxdQyWw" operator="GREATER">
                     <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_wvaERsqdEeWg8I9CxdQyWw" typedNamedElement="_3wE8gMjuEeW0gpRI-mS_yA"/>
-                    <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_wvaER8qdEeWg8I9CxdQyWw" value="0"/>
+                    <rightExpression xsi:type="common:LiteralExpression" xmi:id="_wvaER8qdEeWg8I9CxdQyWw" value="0"/>
                   </rightExpression>
                 </leftExpression>
-                <rightExpression xsi:type="sdcec:ComparisonExpression" xmi:id="_wvaESMqdEeWg8I9CxdQyWw" operator="GREATER">
+                <rightExpression xsi:type="common:ComparisonExpression" xmi:id="_wvaESMqdEeWg8I9CxdQyWw" operator="GREATER">
                   <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_wvaEScqdEeWg8I9CxdQyWw" typedNamedElement="_9SLTIMjuEeW0gpRI-mS_yA"/>
-                  <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_wvaESsqdEeWg8I9CxdQyWw" value="0"/>
+                  <rightExpression xsi:type="common:LiteralExpression" xmi:id="_wvaESsqdEeWg8I9CxdQyWw" value="0"/>
                 </rightExpression>
               </guard>
               <action xmi:id="_l_fLkMj1EeWzrcBaL-cniQ" name="setVerifiedLaunch">
                 <expressions xsi:type="actionlanguage:Block" xmi:id="_kEUr4MmkEeWgH-bGO8AU1w">
                   <expressions xsi:type="actionlanguage:IfStatement" xmi:id="_kEUr4cmkEeWgH-bGO8AU1w">
-                    <ifCondition xsi:type="sdcec:ComparisonExpression" xmi:id="_kEUr4smkEeWgH-bGO8AU1w" operator="EQUAL">
+                    <ifCondition xsi:type="common:ComparisonExpression" xmi:id="_kEUr4smkEeWgH-bGO8AU1w" operator="EQUAL">
                       <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_kEUr48mkEeWgH-bGO8AU1w" typedNamedElement="_3wE8gMjuEeW0gpRI-mS_yA"/>
                       <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_kEUr5MmkEeWgH-bGO8AU1w" typedNamedElement="_9SLTIMjuEeW0gpRI-mS_yA"/>
                     </ifCondition>
                     <ifBlock xmi:id="_kEUr5cmkEeWgH-bGO8AU1w">
                       <expressions xsi:type="actionlanguage:Assignment" xmi:id="_kEUr5smkEeWgH-bGO8AU1w" assignOperator=":=">
-                        <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_kEUr58mkEeWgH-bGO8AU1w" value="true"/>
+                        <rhs_assignExpression xsi:type="common:LiteralExpression" xmi:id="_kEUr58mkEeWgH-bGO8AU1w" value="true"/>
                         <lhs_typedNamedElementExpression xmi:id="_kEUr6MmkEeWgH-bGO8AU1w" typedNamedElement="_M0m3gMj1EeWzrcBaL-cniQ"/>
                       </expressions>
                     </ifBlock>
                     <elseBlock xmi:id="_kEUr6cmkEeWgH-bGO8AU1w">
                       <expressions xsi:type="actionlanguage:Assignment" xmi:id="_kEUr6smkEeWgH-bGO8AU1w" assignOperator=":=">
-                        <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_kEUr68mkEeWgH-bGO8AU1w" value="false"/>
+                        <rhs_assignExpression xsi:type="common:LiteralExpression" xmi:id="_kEUr68mkEeWgH-bGO8AU1w" value="false"/>
                         <lhs_typedNamedElementExpression xmi:id="_kEUr7MmkEeWgH-bGO8AU1w" typedNamedElement="_M0m3gMj1EeWzrcBaL-cniQ"/>
                       </expressions>
                     </elseBlock>
@@ -127,14 +126,14 @@
               </action>
             </transitions>
             <transitions xmi:id="_WleG0Mm0EeWQPJzmExyJCA" priority="1" target="_19p8oMjuEeW0gpRI-mS_yA" source="_VWvp4Mm0EeWQPJzmExyJCA">
-              <guard xsi:type="sdcec:ComparisonExpression" xmi:id="_ATHCkMm1EeWQPJzmExyJCA" operator="UNEQUAL">
+              <guard xsi:type="common:ComparisonExpression" xmi:id="_ATHCkMm1EeWQPJzmExyJCA" operator="UNEQUAL">
                 <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_ATHCkcm1EeWQPJzmExyJCA" typedNamedElement="_3wE8gMjuEeW0gpRI-mS_yA"/>
                 <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_ATHCksm1EeWQPJzmExyJCA" typedNamedElement="_9SLTIMjuEeW0gpRI-mS_yA"/>
               </guard>
               <action xmi:id="_AUDdwMm1EeWQPJzmExyJCA" name="setVerifiedLaunchFalse">
                 <expressions xsi:type="actionlanguage:Block" xmi:id="_GEo8UMm1EeWQPJzmExyJCA">
                   <expressions xsi:type="actionlanguage:Assignment" xmi:id="_GEo8Ucm1EeWQPJzmExyJCA" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_GEo8Usm1EeWQPJzmExyJCA" value="false"/>
+                    <rhs_assignExpression xsi:type="common:LiteralExpression" xmi:id="_GEo8Usm1EeWQPJzmExyJCA" value="false"/>
                     <lhs_typedNamedElementExpression xmi:id="_GEo8U8m1EeWQPJzmExyJCA" typedNamedElement="_M0m3gMj1EeWzrcBaL-cniQ"/>
                   </expressions>
                 </expressions>
@@ -146,7 +145,7 @@
                 <action xmi:id="_X8mR0Mm0EeWQPJzmExyJCA" name="reset">
                   <expressions xsi:type="actionlanguage:Block" xmi:id="_24GgsMm0EeWQPJzmExyJCA">
                     <expressions xsi:type="actionlanguage:Assignment" xmi:id="_24Ggscm0EeWQPJzmExyJCA" assignOperator=":=">
-                      <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_24Ggssm0EeWQPJzmExyJCA" value="true"/>
+                      <rhs_assignExpression xsi:type="common:LiteralExpression" xmi:id="_24Ggssm0EeWQPJzmExyJCA" value="true"/>
                       <lhs_typedNamedElementExpression xmi:id="_24Ggs8m0EeWQPJzmExyJCA" typedNamedElement="_M0m3gMj1EeWzrcBaL-cniQ"/>
                     </expressions>
                   </expressions>
@@ -280,11 +279,8 @@
       </roles>
       <roleConnector xmi:id="_4UyTccjrEeW0gpRI-mS_yA" connectorEndpoints="_4UmGMMjrEeW0gpRI-mS_yA _4UxFUcjrEeW0gpRI-mS_yA">
         <connectorQualityOfServiceAssumptions xmi:id="_4U1WwMjrEeW0gpRI-mS_yA" comment="">
-          <minMessageDelay xmi:id="_4U3L8MjrEeW0gpRI-mS_yA" unit="MILLISECONDS">
-            <value xsi:type="sdcec:LiteralExpression" xmi:id="_4U3L8cjrEeW0gpRI-mS_yA" value="0"/>
-          </minMessageDelay>
           <maxMessageDelay xmi:id="_4U190MjrEeW0gpRI-mS_yA" unit="MILLISECONDS">
-            <value xsi:type="sdcec:LiteralExpression" xmi:id="_4U2k4MjrEeW0gpRI-mS_yA" value="0"/>
+            <value xsi:type="common:LiteralExpression" xmi:id="_4U2k4MjrEeW0gpRI-mS_yA" value="0"/>
           </maxMessageDelay>
         </connectorQualityOfServiceAssumptions>
       </roleConnector>
@@ -346,7 +342,7 @@
       <ports xsi:type="component:HybridPort" xmi:id="_W1YkcMjrEeW0gpRI-mS_yA" name="code">
         <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         <samplingInterval xmi:id="_Zg15kMj1EeWzrcBaL-cniQ">
-          <value xsi:type="sdcec:LiteralExpression" xmi:id="_bIz88Mj1EeWzrcBaL-cniQ" value="100"/>
+          <value xsi:type="common:LiteralExpression" xmi:id="_bIz88Mj1EeWzrcBaL-cniQ" value="100"/>
         </samplingInterval>
       </ports>
       <ports xsi:type="component:DiscretePort" xmi:id="_gPXyoMjrEeW0gpRI-mS_yA" name="verifier" behavior="_bWFoI8juEeW0gpRI-mS_yA" senderMessageTypes="_jxLsgMjrEeW0gpRI-mS_yA" refinedRole="_4UmGMMjrEeW0gpRI-mS_yA">
@@ -377,9 +373,9 @@
       </ports>
       <ports xsi:type="component:HybridPort" xmi:id="_M0m3gMj1EeWzrcBaL-cniQ" name="verifiedLaunch" kind="OUT">
         <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
-        <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_yzfPAMmkEeWgH-bGO8AU1w" value="false"/>
+        <initializeExpression xsi:type="common:LiteralExpression" xmi:id="_yzfPAMmkEeWgH-bGO8AU1w" value="false"/>
         <samplingInterval xmi:id="_Vz6U0Mj1EeWzrcBaL-cniQ" unit="MILLISECONDS">
-          <value xsi:type="sdcec:LiteralExpression" xmi:id="_cYp0MMj1EeWzrcBaL-cniQ" value="100"/>
+          <value xsi:type="common:LiteralExpression" xmi:id="_cYp0MMj1EeWzrcBaL-cniQ" value="100"/>
         </samplingInterval>
       </ports>
     </modelElements>
