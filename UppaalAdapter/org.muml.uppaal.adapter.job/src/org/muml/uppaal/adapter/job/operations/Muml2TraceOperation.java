@@ -178,15 +178,17 @@ public class Muml2TraceOperation implements IWorkspaceRunnable {
 		}
 		finally {
 
-			for (Resource resource : storeIntermediateModelsResourceSet.getResources()) {
-				try {
-					resource.save(Collections.EMPTY_MAP);
-				} catch (IOException e) {
-					e.printStackTrace();
+			if (storeIntermediateModels) {
+				for (Resource resource : storeIntermediateModelsResourceSet.getResources()) {
+					try {
+						resource.save(Collections.EMPTY_MAP);
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
 				}
-			}
 			
-			ResourcesPlugin.getWorkspace().getRoot().refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
+				ResourcesPlugin.getWorkspace().getRoot().refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
+			}
 			
 			SaveXMIConfiguration.popOptions();
 			monitor.done();
