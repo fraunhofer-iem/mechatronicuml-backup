@@ -30,48 +30,50 @@ mapping pim::behavior::Parameter:: Parameter2Variable(rtsc : RealtimeStatechart)
 	_comment := self.comment;
 }
 
-
-mapping actionlanguage::TypedNamedElementExpression :: transform() : TypedNamedElementExpression disjuncts actionlanguage::TypedNamedElementExpression::ParameterExpression2Expression, actionlanguage::TypedNamedElementExpression::DefaultTypedNamedElementExpression2Expression;
-
-mapping actionlanguage::TypedNamedElementExpression :: ParameterExpression2Expression() : TypedNamedElementExpression 
-when {self.typedNamedElement.oclIsKindOf(Parameter)} {
+mapping actionlanguage::TypedNamedElementExpression :: transform() : Element {
+	
 	init {
-		var refParameter : Parameter := self.typedNamedElement.oclAsType(Parameter);
-		var rtsc : RealtimeStatechart := getHighestParentStatechart(self);
-		var myExp : core::expressions::Expression =  getBoundExpressionToGivenParameter(refParameter);
-		assert fatal (myExp != null) with log ("There is no parameter binding for the parameter"+ refParameter.name);
-		if(rtsc = null or rtsc.oclIsInvalid()){
-			// in case the rtsc is invalid means that the TypedNamedElementExpression referencing the Parameter is not contained in a rtsc but in a ConnectorQualityOfServiceAssumptions
-			// therefore, just replace the TypedNamedElementExpression by the bounded expression defined in the ParameterBinding
-			result:= myExp.copyParameterExpression().oclAsType(TypedNamedElementExpression)
-		}
-		else {
-			
-			result := object TypedNamedElementExpression {
-				var boundedExpression : core::expressions::Expression =  getBoundExpressionToGivenParameter(refParameter);
-				assert fatal (boundedExpression != null) with log ("There is no parameter binding for the parameter"+ refParameter.name);
-				var mappedVariable : Variable :=refParameter.map Parameter2Variable(rtsc);
-				var mappedrtsc: RealtimeStatechart := rtsc.resolveone(RealtimeStatechart);
-				if(not mappedrtsc.variables->includes(mappedVariable)){
-					mappedrtsc.variables+=mappedVariable;
-					mappedVariable.initializeExpression := boundedExpression.copyParameterExpression();
-				};
-				typedNamedElement := mappedVariable;
+		
+		
+		if(self.typedNamedElement.oclIsKindOf(Parameter)) {
+			var refParameter : Parameter := self.typedNamedElement.oclAsType(Parameter);
+			var rtsc : RealtimeStatechart := getHighestParentStatechart(self);
+			var myExp : core::expressions::Expression =  getBoundExpressionToGivenParameter(refParameter);
+			assert fatal (myExp != null) with log ("There is no parameter binding for the parameter"+ refParameter.name);
+			if(rtsc = null or rtsc.oclIsInvalid()){
+				// in case the rtsc is invalid means that the TypedNamedElementExpression referencing the Parameter is not contained in a rtsc but in a ConnectorQualityOfServiceAssumptions
+				// therefore, just replace the TypedNamedElementExpression by the bounded expression defined in the ParameterBinding
+				result:= myExp.copyParameterExpression().oclAsType(EObject)
+			}
+			else {
+				
+			result := self.create(null);	
+			var resultingExpression : TypedNamedElementExpression := result.oclAsType(TypedNamedElementExpression);		
+			var boundedExpression : core::expressions::Expression =  getBoundExpressionToGivenParameter(refParameter);
+			assert fatal (boundedExpression != null) with log ("There is no parameter binding for the parameter"+ refParameter.name);
+			var mappedVariable : Variable :=refParameter.map Parameter2Variable(rtsc);
+			var mappedrtsc: RealtimeStatechart := rtsc.resolveone(RealtimeStatechart);
+			if(not mappedrtsc.variables->includes(mappedVariable)){
+				mappedrtsc.variables+=mappedVariable;
+				mappedVariable.initializeExpression := boundedExpression.copyParameterExpression();
+			};
+			resultingExpression.typedNamedElement := mappedVariable;
 			};
 		}
-	}
-}
-
-mapping actionlanguage::TypedNamedElementExpression :: DefaultTypedNamedElementExpression2Expression() : TypedNamedElementExpression 
-when {not self.typedNamedElement.oclIsKindOf(Parameter)} {
-	extensions := self._extensions.map transform().oclAsType(core::Extension);
-	typedNamedElement := self.typedNamedElement.map transform().oclAsType(TypedNamedElement);
+		else {
+			result := self.create(null);	
 			
-	self.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
-		setValues(result, f, self.getValues(f));
-	};
-} 
-
+			var resultingExpression : TypedNamedElementExpression := result.oclAsType(TypedNamedElementExpression);
+			resultingExpression._extensions := self._extensions.map transform().oclAsType(core::Extension);
+			resultingExpression.typedNamedElement := self.typedNamedElement.map transform().oclAsType(TypedNamedElement);
+			
+			var element := self.oclAsType(EObject);
+			element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+				setValues(result.oclAsType(EObject), f, element.getValues(f));
+			};
+		};	
+	}	
+}
 
 query getHighestParentStatechart(in expr : TypedNamedElementExpression) : RealtimeStatechart
 {
