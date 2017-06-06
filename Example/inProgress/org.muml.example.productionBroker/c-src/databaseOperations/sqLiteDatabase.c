@@ -20,11 +20,11 @@ int searchOrder(int searchingPS, int latestOrderID, int producibleIngredients);
 int deleteOrder(int orderID);
 void extractLogsAndExit();
 void sendToVirtualizationServer(char *jsonString);
+char* readConfigFile();
 
 /* Pointer to database */
 sqlite3 *db;
 CURL *curl;
-char *url = "http://localhost:8081/api/post-broker";
 
 static int callback(void *NotUsed, int argc, char **argv, char **azColName){
 	int i;
@@ -95,6 +95,7 @@ int createDatabase(){
 		printf("Curl init successful. \n");
 		/* First set the URL that is about to receive our POST. This URL can
 		   just as well be a https:// URL if that is what should receive the data. */
+		char* url = readConfigFile();
 		curl_easy_setopt(curl, CURLOPT_URL, url);
 		/* Only allow HTTP traffic */
 		curl_easy_setopt(curl, CURLOPT_PROTOCOLS, CURLPROTO_HTTP);
@@ -105,6 +106,34 @@ int createDatabase(){
 	sendToVirtualizationServer(cJSON_PrintUnformatted(update));
 
 	return 0;
+}
+
+char* readConfigFile(){
+	char * buffer = 0;
+	long length;
+	char *url ="";
+
+	FILE *fp = fopen("config.json", "r");
+	if (fp){
+	  fseek (fp, 0, SEEK_END);
+	  length = ftell(fp);
+	  fseek(fp, 0, SEEK_SET);
+	  buffer = malloc(length);
+	  if (buffer){
+	    fread (buffer, 1, length, fp);
+	  }
+	  fclose(fp);
+	}
+	if (buffer){
+		cJSON *root = cJSON_Parse(buffer);
+		if (root){
+			url =  malloc(strlen(cJSON_GetObjectItem(root, "url")->valuestring));
+			sprintf(url, "%s", cJSON_GetObjectItem(root, "url")->valuestring);
+			cJSON_Delete(root);
+		}
+	}
+
+	return url;
 }
 
 /**
@@ -417,7 +446,7 @@ int searchOrder(int searchingPS, int latestOrderID, int producibleIngredients)
 {
 	int rc = 0;
 	char prodIngrChar[16];
-	sprintf(prodIngrChar, "%16d", producibleIngredients);
+	sprintf(prodIngrChar, "%15d", producibleIngredients);
 
 	//Insert the production station into the ProductionStation Table
 	//Prepare statement
