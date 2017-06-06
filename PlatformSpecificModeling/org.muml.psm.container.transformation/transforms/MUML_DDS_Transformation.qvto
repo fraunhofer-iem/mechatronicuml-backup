@@ -1,0 +1,330 @@
+transformation MUML_DDS_Transformation(inout containerModel:MumlContainer, out ddsModel:OpenDDS );
+
+import Naming_Library;
+import DDS_Library;
+/*
+ MUML- IMPORTS
+*/
+modeltype MumlPackage uses pim('http://www.muml.org/pim/1.0.0');
+modeltype Typespackage uses pim::types('http://www.muml.org/pim/1.0.0');
+modeltype ConnectorPackage uses pim::connector('http://www.muml.org/pim/1.0.0');
+modeltype ValuetypePackage uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype ComponentPackage uses pim::component('http://www.muml.org/pim/1.0.0');
+modeltype MessagePackage uses pim::msgtype('http://www.muml.org/pim/1.0.0');
+modeltype RTSCPackage uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype ProtocolPackage uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype InstancePackage uses pim::instance('http://www.muml.org/pim/1.0.0');
+modeltype core uses core('http://www.muml.org/core/1.0.0');
+modeltype ModelInstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
+modeltype Actionlanguage uses actionlanguage('http://www.muml.org/pim/actionlanguage/1.0.0');
+modeltype BehaviorPackage uses pim::behavior('http://www.muml.org/pim/1.0.0');
+
+
+modeltype Hardware uses hardware('http://www.muml.org/pm/hardware/1.0.0');
+modeltype Platform uses hardware::hwplatform('http://www.muml.org/pm/hardware/1.0.0');
+modeltype hwpinstance uses hardware::hwplatforminstance('http://www.muml.org/pm/hardware/1.0.0');
+modeltype hwrinstance uses hardware::hwresourceinstance('http://www.muml.org/pm/hardware/1.0.0');
+modeltype Resource uses hardware::hwresource('http://www.muml.org/pm/hardware/1.0.0');
+
+
+modeltype PSM uses psm('http://www.muml.org/psm/1.0.0');
+modeltype Allocation uses psm::allocation('http://www.muml.org/psm/1.0.0');
+
+
+modeltype MumlContainer uses muml_container('http://www.muml.org/psm/muml_container/0.5.0');
+modeltype ECore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+
+/*
+  DDS-Imports
+*/
+modeltype DDSCore uses core('http://www.opendds.org/modeling/schemas/Core/1.0');
+modeltype DDSDCPS uses dcps('http://www.opendds.org/modeling/schemas/DCPS/1.0');
+modeltype DDSDomain uses domain('http://www.opendds.org/modeling/schemas/Domain/1.0');
+modeltype OpenDDS uses opendds('http://www.opendds.org/modeling/schemas/OpenDDS/1.0');
+modeltype DDSApplication uses application('http://www.opendds.org/modeling/schemas/Application/1.0');
+modeltype DDSEnumeration uses enumerations('http://www.opendds.org/modeling/schemas/Enumerations/1.0');
+modeltype DDSQoS uses qos('http://www.opendds.org/modeling/schemas/QoS/1.0');
+modeltype DDSTopics uses topics('http://www.opendds.org/modeling/schemas/Topics/1.0');
+modeltype DDSTypes uses types('http://www.opendds.org/modeling/schemas/Types/1.0');
+
+//in fact the domain is independent for each portInstance, however a valid OpenDDS Model requires a domain, thus we use a dummyDomain here
+property dummyDomain : domain  = object domain{
+	domainId:=-42;
+	name:="dummyDomain";
+};
+
+main() {
+	var startTime : Integer;
+	var endTime : Integer;
+	startTime := getCurrentTime();
+	containerModel.rootObjects()[DeploymentConfiguration]->map mapSystemConfiguration2DDSModel();
+	endTime := getCurrentTime();
+	log("Time for create DDS Model of MUML:"+((endTime-startTime)/1000).toString()+" seconds");
+	
+}
+
+mapping DeploymentConfiguration::mapSystemConfiguration2DDSModel():OpenDDSModel@ddsModel{
+	name:="MUML_DDS";
+	
+
+	//set properties
+	systemAllocation:=self.systemAllocation;
+	 dataLib:= object DataLib{
+		name:="MUML_DataLib";
+		//map muml messages to structs
+		types+=self.systemAllocation.getAllUsedMessages()->map mapMumlMessage2DDSStruct();
+		
+		//map all Continous/Hybrid-Ourt Ports to DDSStructs
+		types+=self.systemAllocation.getAllDirectedTypedPort()->map mapMumlDirectedTypedPort2DDSStruct();
+		
+		//contain allcreated datatypes here also
+		types+=dummyType;
+	};
+	
+	
+	dcpsLib := object DcpsLib{
+		//map all Messages to DDSTopics
+		//topicDescriptions+=self.systemAllocation.getAllUsedMessages()->map mapMumlMessage2DDSTopic();
+		
+		//map all Continous/Hybrid-Ourt Ports to DDSTopics
+		topicDescriptions+=self.systemAllocation.getAllDirectedTypedPort()->map mapMumlDirectedTypedPort2DDSTopic();
+		
+		//map PortInstanceConfigurations to DDS-Publisher-Subscriber // DataReader // DataWriter via 
+		//get all DDSPortInstanceConfigurations
+		PortInstanceConfiguration_DDS.allInstances()->asOrderedSet()->forEach(pic){
+			participants+=createDDSPortInstanceConfigurations(pic);
+		};
+	};
+	dcpsLib.domains+=dummyDomain;
+	
+	policyLib:= object PolicyLib{
+		
+		
+	};
+	//add all mapped dataTypes to the DataLib
+	dataLib.types+=Type.allInstances();
+	dcpsLib.topicDescriptions+=Topic.allInstances();
+	policyLib.policies+=QosPolicy.allInstances();
+	//add all Libs to the OpenDDS model
+	libs+=dataLib;
+	libs+=policyLib;
+	libs+=dcpsLib;
+}
+
+/*
+* Creating/Modified the PortInstanceConfigurations
+*
+*/
+helper createDDSPortInstanceConfigurations(inout portInstanceConfig: PortInstanceConfiguration_DDS):domainParticipant@ddsModel{
+	//var vardomainParticipant: domainParticipant;
+	portInstanceConfig.domainParticipant:=portInstanceConfig.portInstance.portType.map mapMumlPort2DomainParticipant(portInstanceConfig);
+ 	portInstanceConfig.publisher:=portInstanceConfig.domainParticipant.publishers->first();
+ 	portInstanceConfig.subscriber:=portInstanceConfig.domainParticipant.subscribers->first();
+ 	portInstanceConfig.domainID:=portInstanceConfig.getDomainID();
+ 	portInstanceConfig.partitionID:=portInstanceConfig.getPartitionID();
+ 	return portInstanceConfig.domainParticipant.oclAsType(domainParticipant);
+}
+
+/*
+ Map Muml Ports to DDS Domain participants and subsriber publisher
+*/
+
+mapping Port::mapMumlPort2DomainParticipant(portInstanceConfig: PortInstanceConfiguration_DDS):domainParticipant@ddsModel disjuncts
+DirectedTypedPort::mapMumlDirectedTypedPort2DomainParticipant, DiscretePort::mapMumlDiscretePort2DomainParticpant;
+
+mapping DiscretePort::mapMumlDiscretePort2DomainParticpant(portInstanceConfig: PortInstanceConfiguration_DDS):domainParticipant@ddsModel{
+	name:=self.getDomainParticipantName();
+	publishers+=self.map createPublisher(portInstanceConfig);
+	subscribers+=self.map createSubscriber(portInstanceConfig);	
+	
+	//in fact the domain is independent for each portInstance, however a valid OpenDDS Model requires a domain, thus we use a dummyDomain here
+	result.domain:=dummyDomain;
+
+}
+
+//FIXME: set QoS attributes here
+mapping DiscretePort::createPublisher(portInstanceConfig: PortInstanceConfiguration_DDS):Publisher when {self.senderMessageTypes->size()>0}{
+		name:=self.getPublischerName();
+		self.senderMessageTypes->forEach(msg){
+			var writer: DataWriter := object DataWriter{};
+			writer.reliability:=self.map mapPort2ReliableQos();
+			log("Mess:"+msg.name);
+			writer.name:=self.getDataWriterName(msg);
+			writer.topic:=msg.map mapMumlMessage2DDSTopic(self);
+			writers+=writer;
+		};	
+}
+
+
+//Create a Subscriber of a DiscretePort
+mapping DiscretePort::createSubscriber(portInstanceConfig: PortInstanceConfiguration_DDS):Subscriber when {self.receiverMessageTypes->size()>0}{
+		name:=self.getSubscriberName();
+		self.receiverMessageTypes->forEach(msg){
+			var reader: DataReader := object DataReader{};
+			reader.name:=self.getDataReaderName(msg);
+			//get the messagebuffer for this message
+			var buffer:MessageBuffer := self.receiverMessageBuffer->select(b|b.messageType->includes(msg))->any(true);
+			reader.history:=self.map mapPort2HistoryQos(buffer);
+			reader.reliability:=self.map mapPort2ReliableQos();
+			var outport:DiscretePort :=portInstanceConfig.portInstance.getConnectedPortInstances().portType->selectByKind(DiscretePort)->select(p|p.senderMessageTypes->includes(msg))->any(true);
+			reader.topic:=msg.map mapMumlMessage2DDSTopic(outport);
+			readers+=reader;
+		};	
+
+}
+
+
+mapping DirectedTypedPort::mapMumlDirectedTypedPort2DomainParticipant(portInstanceConfig: PortInstanceConfiguration_DDS):domainParticipant@ddsModel{
+	name:=self.getDomainParticipantName();
+	if(self.outPort) then{
+		publishers+=self.map createPublisher();
+	}endif;
+	if(self.inPort) then{
+		subscribers+=self.map createSubscriber(portInstanceConfig);
+	}endif;
+	
+		
+	//in fact the domain is independent for each portInstance, however a valid OpenDDS Model requires a domain, thus we use a dummyDomain here
+	result.domain:=dummyDomain;
+}
+
+
+//Create Writer for DirectedTypedPort and set default QoS  attributes here
+mapping  DirectedTypedPort::createPublisher():Publisher when {self.outPort}{
+			name:=self.getPublischerName();
+			var writer: DataWriter := object DataWriter{};
+			writer.name:=self.getWriterName();
+			writer.topic:=self.map mapMumlDirectedTypedPort2DDSTopic();
+			//set QoS Policy
+			//writer.history:=self.map mapPort2HistoryQos();
+			writer.reliability:=self.map mapPort2ReliableQoS();
+			writers+=writer;
+}
+
+
+//Create Reader for DirectedTypedPort and set default QoS  attributes here
+//A DDSTopic and DDSStruct is only generated for a DirectedTyped-Out-Port
+//Thus we need here the PortInstance to which this In-Port is connected and get from there the correct Out-Port
+mapping DirectedTypedPort::createSubscriber(portInstanceConfig: PortInstanceConfiguration_DDS):Subscriber when {self.inPort}{
+			name:=self.getSubscriberName();
+			var reader: DataReader := object DataReader{};
+			//get the corresponding out-port Instance, to which this portinstance is connected;
+			var outport:DirectedTypedPort :=portInstanceConfig.portInstance.getConnectedPortInstances().portType->selectByKind(DirectedTypedPort)->select(p|p.outPort)->any(true);
+			reader.name:=outport.getReaderName();
+			reader.topic:=outport.map mapMumlDirectedTypedPort2DDSTopic();
+			//set QoS Policy
+			reader.history:=self.map mapPort2HistoryQos();
+			reader.reliability:=self.map mapPort2ReliableQoS();
+			readers+=reader;
+
+}
+
+
+
+/*
+* Mapping for DirectedTypedPorts
+*/
+mapping DirectedTypedPort::mapMumlDirectedTypedPort2DDSStruct():Struct when{self.outPort}{
+	name:=self.getDDSStructName();
+	fields+=object Field{
+		//FIXME: fixed name "value" for hybird/cont ports
+		name:='value';
+		type:=self.dataType.map mapMumlDataType2DDSType();
+	}
+}
+
+mapping DirectedTypedPort::mapMumlDirectedTypedPort2DDSTopic():Topic when{self.outPort}{
+	name:=self.getTopicName();
+	_datatype:=self.map mapMumlDirectedTypedPort2DDSStruct()
+}
+
+
+/*
+	Mapping for Muml-Messages
+
+*/
+
+mapping MessageType::mapMumlMessage2DDSTopic(senderport:DiscretePort):Topic{
+	name:=self.getDDSTopicName(senderport)+senderport.name;
+	_datatype:=self.map mapMumlMessage2DDSStruct();
+}
+
+
+
+mapping MessageType::mapMumlMessage2DDSStruct():Struct{
+	name:=self.getDDSStructName();
+	if(self.parameters->size()=0) then{
+		//create a dummy parameter of type char
+		fields+= object Field{
+			name:="dummy";
+			type:=dummyType;
+		}
+	}endif;
+	//for each parameter create a appropriate struct field
+	fields+=self.parameters->map mapMessageParamter2DDSField();		
+
+}
+
+mapping Parameter::mapMessageParamter2DDSField():Field{
+	name:=self.name;
+	type:=self.dataType.map mapMumlDataType2DDSType();
+}
+
+/*
+* QoS for DDS
+* - ReliabiltyQos applies to each DataWriter and Reader individually
+* - History QoS applies to each DataWriter and Reader individually
+*/
+
+
+mapping DirectedTypedPort::mapPort2ReliableQoS():ReliabilityQosPolicy{
+	result.name:=self.name+"ReliabilityQos";
+	result.kind:=ReliabilityQosPolicyKind::BEST_EFFORT;
+	max_blocking_time:=object Period{
+ 	second:=1;
+ }
+}
+
+
+mapping DirectedTypedPort::mapPort2HistoryQos():HistoryQosPolicy{
+	result.name:=self.name+"HistoryQos";
+	result.kind:=HistoryQosPolicyKind::KEEP_LAST;
+	result.depth:=1;
+	
+}
+
+
+mapping DiscretePort::mapPort2ReliableQos():ReliabilityQosPolicy{
+	result.name:=self.name+"ReliabilityQos";
+	if(self.refinedRole.oclIsUndefined()) then{
+		result.kind:=ReliabilityQosPolicyKind::BEST_EFFORT;
+	}
+	else{
+		if(self.refinedRole.roleConnector.connectorQualityOfServiceAssumptions.messageLossPossible) then{
+					result.kind:=ReliabilityQosPolicyKind::BEST_EFFORT;
+		}else{
+					result.kind:=ReliabilityQosPolicyKind::BEST_EFFORT;
+		}endif;
+	}endif;
+	max_blocking_time:=object Period{
+ 	second:=1;
+ }
+}
+
+mapping DiscretePort::mapPort2HistoryQos(buffer:MessageBuffer):HistoryQosPolicy{
+	result.name:=self.name+"HistoryQos";
+	if(self.refinedRole.oclIsUndefined()) then{
+		result.kind:=HistoryQosPolicyKind::KEEP_LAST;
+		result.depth:=buffer.bufferSize.value;
+	}
+	else{
+		if(self.refinedRole.roleConnector.connectorQualityOfServiceAssumptions.messageLossPossible) then{
+					result.kind:=HistoryQosPolicyKind::KEEP_LAST;
+					result.depth:=buffer.bufferSize.value;
+		}else{
+					result.kind:=HistoryQosPolicyKind::KEEP_ALL;
+					result.depth:=buffer.bufferSize.value;
+		}endif;
+	}endif;
+}
