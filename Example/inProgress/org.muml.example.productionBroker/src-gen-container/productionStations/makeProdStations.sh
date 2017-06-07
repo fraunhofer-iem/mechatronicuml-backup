@@ -1,8 +1,7 @@
 #!/bin/sh
 noOfProd=$1
-maxID=$(($noOfProd -1))
 
-for prodID in `seq 1 $maxID`;
+for prodID in `seq 1 $noOfProd`;
 do
    	#Make a new folder on the basis of the folder called 'productionStation'
 	cp -rf productionStation/ productionStation$prodID/
@@ -11,5 +10,6 @@ do
 	#Compile the code
 	cd productionStation$prodID
 	make
+	./app > out.txt &
 	cd ..
 done
