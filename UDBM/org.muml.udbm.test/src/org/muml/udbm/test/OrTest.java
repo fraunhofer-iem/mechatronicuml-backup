@@ -264,7 +264,7 @@ public class OrTest extends AbstractUDBMTest{
 		
 		fed.or(clockConstraints2);
 		
-		assertTrue(fed.sizeOfClockZone() == 2);
+		assertTrue(fed.sizeOfClockZone() == 1);
 		assertTrue(fed.getUpperBound(c1) instanceof TrueClockConstraint);
 		assertTrue(fed.getUpperBound(c2) instanceof SimpleClockConstraint);
 		assertTrue(((SimpleClockConstraint)fed.getUpperBound(c2)).getValue() == 40);
@@ -278,13 +278,13 @@ public class OrTest extends AbstractUDBMTest{
 		clocks.add(c1);
 		clocks.add(c2);
 		
-		//c1 <= 10
-		SimpleClockConstraint scc1 = new SimpleClockConstraint(c1, RelationalOperator.LessOrEqualOperator, 10);
-		SimpleClockConstraint scc2 = new SimpleClockConstraint(c2, RelationalOperator.LessOrEqualOperator, 10);
+		//c1 <= 5
+		SimpleClockConstraint scc1 = new SimpleClockConstraint(c1, RelationalOperator.LessOrEqualOperator, 5);
+		SimpleClockConstraint scc2 = new SimpleClockConstraint(c2, RelationalOperator.LessOrEqualOperator, 5);
 		
-		//c2 <= 5
-		SimpleClockConstraint scc3 = new SimpleClockConstraint(c1, RelationalOperator.LessOrEqualOperator, 5);
-		SimpleClockConstraint scc4 = new SimpleClockConstraint(c2, RelationalOperator.LessOrEqualOperator, 5);
+		//c2 <= 10
+		SimpleClockConstraint scc3 = new SimpleClockConstraint(c1, RelationalOperator.LessOrEqualOperator, 10);
+		SimpleClockConstraint scc4 = new SimpleClockConstraint(c2, RelationalOperator.LessOrEqualOperator, 10);
 		
 		HashSet<ClockConstraint> clockConstraints = new HashSet<ClockConstraint>();
 		clockConstraints.add(scc1);
