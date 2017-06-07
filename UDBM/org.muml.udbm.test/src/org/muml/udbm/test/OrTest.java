@@ -204,7 +204,7 @@ public class OrTest extends AbstractUDBMTest{
 		fed.or(scc2);
 		
 		assertTrue(fed.sizeOfClockZone() == 2);
-		assertTrue(fed.getUpperBound(c1) instanceof TrueClockConstraint);
+		assertTrue(((SimpleClockConstraint)fed.getUpperBound(c1)).getValue() == 10);
 		assertTrue(fed.getUpperBound(c2) instanceof TrueClockConstraint); 
 	}
 	
