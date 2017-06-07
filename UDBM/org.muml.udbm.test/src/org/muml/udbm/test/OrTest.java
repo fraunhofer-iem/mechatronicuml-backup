@@ -112,11 +112,11 @@ public class OrTest extends AbstractUDBMTest{
 		HashSet<UDBMClock> clocks = new HashSet<UDBMClock>();
 		clocks.add(c1);
 		
-		//c1 <= 10
-		SimpleClockConstraint scc1 = new SimpleClockConstraint(c1, RelationalOperator.LessOrEqualOperator, 10);
-		
 		//c1 <= 5
-		SimpleClockConstraint scc2 = new SimpleClockConstraint(c1, RelationalOperator.LessOrEqualOperator, 5);
+		SimpleClockConstraint scc1 = new SimpleClockConstraint(c1, RelationalOperator.LessOrEqualOperator, 5);
+		
+		//c1 <= 10
+		SimpleClockConstraint scc2 = new SimpleClockConstraint(c1, RelationalOperator.LessOrEqualOperator, 10);
 		
 		HashSet<ClockConstraint> clockConstraints = new HashSet<ClockConstraint>();
 		clockConstraints.add(scc1);
