@@ -105,29 +105,7 @@ public class OrTest extends AbstractUDBMTest{
 		assertTrue(((SimpleClockConstraint)fed.getUpperBound(c2)).getValue() == 40);
 	}
 	
-	@Test
-	public void testOrOneClockWithSubInterval(){
-		
-		//setup clock set
-		HashSet<UDBMClock> clocks = new HashSet<UDBMClock>();
-		clocks.add(c1);
-		
-		//c1 <= 5
-		SimpleClockConstraint scc1 = new SimpleClockConstraint(c1, RelationalOperator.LessOrEqualOperator, 5);
-		
-		//c1 <= 10
-		SimpleClockConstraint scc2 = new SimpleClockConstraint(c1, RelationalOperator.LessOrEqualOperator, 10);
-		
-		HashSet<ClockConstraint> clockConstraints = new HashSet<ClockConstraint>();
-		clockConstraints.add(scc1);
-		
-		Federation fed = fedFactory.createFederation(clocks, clockConstraints);
-		fed.or(scc2);
-		
-		assertTrue(fed.sizeOfClockZone() == 1);
-		assertTrue(fed.getUpperBound(c1) instanceof SimpleClockConstraint);
-		assertTrue(((SimpleClockConstraint)fed.getUpperBound(c1)).getValue() == 10);
-	}
+
 	
 	@Test
 	public void testOrOneClockWithTrueClockConstraint(){
@@ -210,6 +188,30 @@ public class OrTest extends AbstractUDBMTest{
 	}
 	
 	@Test
+	public void testOrOneClockWithSubInterval(){
+		
+		//setup clock set
+		HashSet<UDBMClock> clocks = new HashSet<UDBMClock>();
+		clocks.add(c1);
+		
+		//c1 <= 5
+		SimpleClockConstraint scc1 = new SimpleClockConstraint(c1, RelationalOperator.LessOrEqualOperator, 5);
+		
+		//c1 <= 10
+		SimpleClockConstraint scc2 = new SimpleClockConstraint(c1, RelationalOperator.LessOrEqualOperator, 10);
+		
+		HashSet<ClockConstraint> clockConstraints = new HashSet<ClockConstraint>();
+		clockConstraints.add(scc1);
+		
+		Federation fed = fedFactory.createFederation(clocks, clockConstraints);
+		fed.or(scc2);
+		
+		assertTrue(fed.sizeOfClockZone() == 1);
+		assertTrue(fed.getUpperBound(c1) instanceof SimpleClockConstraint);
+		assertTrue(((SimpleClockConstraint)fed.getUpperBound(c1)).getValue() == 10);
+	}
+	
+	@Test
 	public void testOrTwoClocksWithFederation(){
 		
 		//setup clock set
@@ -238,6 +240,51 @@ public class OrTest extends AbstractUDBMTest{
 		assertTrue(((SimpleClockConstraint)fed.getLowerBound(c1)).getValue() == 0);
 		assertTrue(((SimpleClockConstraint)fed.getUpperBound(c1)).getValue() == 10);
 		assertTrue(((SimpleClockConstraint)fed.getLowerBound(c2)).getValue() == 20);
+	}
+	
+	@Test
+	public void testOrOverlappingFederation(){
+		
+		//setup clock set
+		HashSet<UDBMClock> clocks = new HashSet<UDBMClock>();
+		clocks.add(c1);
+		clocks.add(c2);
+		
+		//10 <= c1 <= 20
+		SimpleClockConstraint scc11 = new SimpleClockConstraint(c1, RelationalOperator.GreaterOrEqualOperator, 10);
+		SimpleClockConstraint scc12 = new SimpleClockConstraint(c1, RelationalOperator.LessOrEqualOperator, 20);
+		//10 <= c2 <= 20
+		SimpleClockConstraint scc21 = new SimpleClockConstraint(c2, RelationalOperator.GreaterOrEqualOperator, 10);
+		SimpleClockConstraint scc22 = new SimpleClockConstraint(c2, RelationalOperator.LessOrEqualOperator, 20);
+		
+		//15 <= c1 <= 30
+		SimpleClockConstraint scc13 = new SimpleClockConstraint(c1, RelationalOperator.GreaterOrEqualOperator, 10);
+		SimpleClockConstraint scc14 = new SimpleClockConstraint(c1, RelationalOperator.LessOrEqualOperator, 20);
+		//15 <= c2 <= 30
+		SimpleClockConstraint scc23 = new SimpleClockConstraint(c2, RelationalOperator.GreaterOrEqualOperator, 10);
+		SimpleClockConstraint scc24 = new SimpleClockConstraint(c2, RelationalOperator.LessOrEqualOperator, 20);
+		
+		HashSet<ClockConstraint> clockConstraints = new HashSet<ClockConstraint>();
+		clockConstraints.add(scc11);
+		clockConstraints.add(scc12);
+		clockConstraints.add(scc21);
+		clockConstraints.add(scc22);
+		Federation fed = fedFactory.createFederation(clocks, clockConstraints);
+		
+		HashSet<ClockConstraint> clockConstraints2 = new HashSet<ClockConstraint>();
+		clockConstraints2.add(scc13);
+		clockConstraints2.add(scc14);
+		clockConstraints2.add(scc23);
+		clockConstraints2.add(scc24);
+		Federation fed2 = fedFactory.createFederation(clocks, clockConstraints2);
+		
+		fed.or(fed2);
+		
+		assertTrue(fed.sizeOfClockZone() == 2);
+		assertTrue(((SimpleClockConstraint)fed.getLowerBound(c1)).getValue() == 10);
+		assertTrue(((SimpleClockConstraint)fed.getUpperBound(c1)).getValue() == 30);
+		assertTrue(((SimpleClockConstraint)fed.getLowerBound(c2)).getValue() == 10);
+		assertTrue(((SimpleClockConstraint)fed.getUpperBound(c2)).getValue() == 30);
 	}
 	
 	@Test
