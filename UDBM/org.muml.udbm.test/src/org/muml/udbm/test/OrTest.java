@@ -73,6 +73,7 @@ public class OrTest extends AbstractUDBMTest{
 		
 		assertTrue(fed.sizeOfClockZone() == 2);
 		assertTrue(fed.getUpperBound(c1) instanceof TrueClockConstraint);
+		assertTrue(((SimpleClockConstraint)fed.getLowerBound(c1)).getValue() == 20);
 	}
 	
 	@Test
@@ -321,8 +322,7 @@ public class OrTest extends AbstractUDBMTest{
 		ClockConstraint falseConstraint = new FalseClockConstraint();
 		HashSet<ClockConstraint> constraints = new HashSet<ClockConstraint>();
 		constraints.add(falseConstraint);
-		
-		
+				
 		Federation fed = fedFactory.createFederation(clocks, constraints);
 		
 		fed.or(scc1);
