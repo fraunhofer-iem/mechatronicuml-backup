@@ -22,29 +22,31 @@ import org.muml.psm.allocation.SystemAllocation;
 import org.muml.psm.allocation.algorithm.main.AllocationAlgorithm;
 import org.muml.psm.allocation.algorithm.main.IAllocationComputationStrategy;
 import org.muml.psm.allocation.algorithm.qvto.QVToTransformationRunner;
-import org.muml.psm.allocation.algorithm.ui.wizard.CreateAllocationOperation;
+import org.muml.psm.allocation.algorithm.ui.wizard.AllocationComputationOperation;
 import org.muml.psm.allocation.context.muml.Activator;
 import org.muml.psm.allocation.language.cs.SpecificationCS;
 
-public class MUMLCreateAllocationOperation extends CreateAllocationOperation<SystemAllocation> {
+/* urgs - needs more love... do we really need this editingDomain dance etc.? */
+public class MUMLAllocationComputationOperation extends AllocationComputationOperation<SystemAllocation> {
 	private static final String allocationModelElementCategoryKey = "org.muml.psm.allocation.category";
 	private static final String allocationModelElementCategoryName = "allocation";
 	private static final String inconsistentContainmentHierarchy = "Containment hierarchy of %s is inconsistent (expected RootNode (at top))";
 	
 	private EObject target;
+	private EditingDomain editingDomain;
 
-	public MUMLCreateAllocationOperation(@NonNull EditingDomain editingDomain,
+	public MUMLAllocationComputationOperation(@NonNull EditingDomain editingDomain,
 			@NonNull SpecificationCS allocationSpecification, @NonNull EObject oclContext,
 			@NonNull EObject target,
-			@NonNull IAllocationComputationStrategy<?, ?> allocationComputationStrategy,
-			@NonNull boolean storeILPModel) {
-		super(editingDomain, allocationSpecification, oclContext,
-				allocationComputationStrategy, storeILPModel);
+			@NonNull IAllocationComputationStrategy<?, ?> allocationComputationStrategy) {
+		super(allocationSpecification, oclContext,
+				allocationComputationStrategy);
+		this.editingDomain = editingDomain;
 		this.target = target;
 	}
 	
 	@Override
-	protected void postProcess(@NonNull AllocationAlgorithm<SystemAllocation> algorithm,
+	public void postProcess(@NonNull AllocationAlgorithm<SystemAllocation> algorithm,
 			@NonNull Diagnostic diagnostic) {
 		addSystemAllocationToTarget(algorithm.getStorageObject());
 		logTransformationTimes(diagnostic);

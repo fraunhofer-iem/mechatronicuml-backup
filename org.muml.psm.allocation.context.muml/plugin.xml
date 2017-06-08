@@ -72,9 +72,9 @@
       </handler>
    </extension>
    <extension
-         point="org.muml.psm.allocation.algorithm.ui.oclContextSelectionProvider">
-      <oclContextSelectionProvider
-            class="org.muml.psm.allocation.context.muml.ui.wizard.MUMLOCLContextSelectionProvider">
-      </oclContextSelectionProvider>
+         point="org.muml.psm.allocation.algorithm.ui.wizardPageProvider">
+      <wizardPageProvider
+            class="org.muml.psm.allocation.context.muml.ui.wizard.MUMLAllocationWizardPageProvider">
+      </wizardPageProvider>
    </extension>
 </plugin>
