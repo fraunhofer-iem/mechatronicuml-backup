@@ -24,13 +24,7 @@
       <import feature="org.muml.pm.hardware.feature"/>
 	  <import feature="org.muml.pm.software.feature"/>
 	  <import feature="org.muml.ape.feature"/>
-	  <import feature="org.muml.implicitcopy.feature"/>
-      <!--import feature="org.muml.external.aopalliance.feature"/-->
-      <!--import feature="org.muml.external.guice.multibindings.feature" version="4.0.0"/-->
-      <!--import feature="org.muml.external.guava.feature" version="16.0.1"/-->
-      <!--import feature="org.muml.external.guice.feature" version="4.0.0"/-->
-      <!--import feature="org.muml.external.javax.inject.feature"/-->
-      
+	  <import feature="org.muml.implicitcopy.feature"/>      
    </requires>
 
    <plugin
