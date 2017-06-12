@@ -1,7 +1,7 @@
 
 
 ifndef NDDSHOME
-#EXPORT THE VARIABLE NDDSHOME AND MAKE SHURE YOU HAVE A VALID RTI LICENCE. OTHERWISE PROGRAMS DO NOT RUN
+#EXPORT THE VARIABLE NDDSHOME AND MAKE SURE YOU HAVE A VALID RTI LICENCE. OTHERWISE PROGRAMS DO NOT RUN
 NDDSHOME := "NOT SET"
 endif
 #TARGET_ARCH = x64Linux3.xgcc4.6.3
@@ -24,7 +24,9 @@ OPERATIONREPOSITORIES = databaseOperationsOpRep.o
 LIB =   Debug.o sqlite3.o cJSON.o
 CC = gcc
 CFLAGS = -DC99 -DDEBUG -ggdb -Wall -c  $(DEFINES) -I types -I lib -I $(NDDSHOME)/include -I $(NDDSHOME)/include/ndds -ldl -lpthread -LLIBDIR
+SQLITEFLAGS = -DSQLITE_ENABLE_UNLOCK_NOTIFY
 all: app
+
 
 app : main.o $(RTSC) $(COMP) $(LIB) $(CONT_LIB) $(HYB) $(CONT) $(CONTMAPPING) $(OPERATIONREPOSITORIES)  $(DDSSOURCES)
 	$(CC) main.o $(RTSC) $(COMP) $(LIB) $(CONT_LIB) $(HYB) $(CONT) $(CONTMAPPING)$(OPERATIONREPOSITORIES) $(DDSSOURCES) $(LIBS) -o app
@@ -57,7 +59,7 @@ Debug.o: lib/Debug.c
 	$(CC) $(CFLAGS) lib/Debug.c
 
 sqlite3.o: lib/sqlite3.c
-	$(CC) $(CFLAGS) lib/sqlite3.c
+	$(CC) $(CFLAGS) lib/sqlite3.c $(SQLITEFLAGS)
 	
 cJSON.o: lib/cJSON.c
 	$(CC) $(CFLAGS) lib/cJSON.c	
