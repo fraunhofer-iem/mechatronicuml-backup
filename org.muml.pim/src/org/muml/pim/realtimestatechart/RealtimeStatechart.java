@@ -27,7 +27,7 @@ import org.muml.pim.behavior.Variable;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.muml.pim.realtimestatechart.RealtimeStatechart#getParentRegion <em>Parent Region</em>}</li>
+ *   <li>{@link org.muml.pim.realtimestatechart.RealtimeStatechart#getParentState <em>Parent State</em>}</li>
  *   <li>{@link org.muml.pim.realtimestatechart.RealtimeStatechart#getTransitions <em>Transitions</em>}</li>
  *   <li>{@link org.muml.pim.realtimestatechart.RealtimeStatechart#getStates <em>States</em>}</li>
  *   <li>{@link org.muml.pim.realtimestatechart.RealtimeStatechart#getClocks <em>Clocks</em>}</li>
@@ -44,14 +44,14 @@ import org.muml.pim.behavior.Variable;
  * </ul>
  *
  * @see org.muml.pim.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueNameOfStates='-- State names must be unique.\nself.states->isUnique(name)' NoCycles='-- An RTSC may not be the parent of the RTSC that it contains, i.e., cycles are not allowed.\r\n(not self.parentRegion.parentState.parentStatechart.oclIsUndefined())\r\nimplies\r\n(not self.isSuperStatechartOf(self.parentRegion.parentState.parentStatechart))' OneInitialState='-- An RTSC requires an initial state.\r\nself.states->select(s |  s.initial)->size() = 1' CommunicationSchemaOnlyUsedInMultiRoleOrMultiPort='-- An RTSC may only use one-to-many communication schema if its behavioral element is a multi role or multi port.\r\n(not (self.getPortOrRoleStatechart().behavioralElement.oclIsUndefined()) and  self.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(component::AtomicComponent))\r\nor\r\n(\r\nself.usesOneToManyCommunicationSchemata implies (\r\nnot (self.getPortOrRoleStatechart().behavioralElement.oclIsUndefined()) and  self.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(connector::DiscreteInteractionEndpoint)\r\nand self.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).multi)\r\n)' OnlyDefineSchemataBeforeDisassembling='-- One-to-many communication schemata may only be used if the RTSC of the multi role or multi port does not distinguish between coordinator and subrole RTSC.\r\nself.usesOneToManyCommunicationSchemata implies self.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).subroleBehavior.oclIsUndefined() and  self.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).coordinatorBehavior.oclIsUndefined() ' ComponentBehaviorStatechartMustBeWellFormed='-- The component behavior RTSC must contain at the top-level exactly one state and no transitions.\r\n\r\nlet behavioralElement : behavior::BehavioralElement = self.behavioralElement in \r\n(not behavioralElement.oclIsUndefined() and behavioralElement.oclIsKindOf(component::Component)) implies ( self.states->size() = 1 and self.transitions->size() = 0)' MultiDiscreteInteractionEndpointBehaviorStatechartMustBeWellFormed='-- If a multi port or multi role RTSC does not use one-to-many communication schemata, then it must contain exactly one state and no transitions on top-level. Furthermore, the top level state defines exactly two regions: one region defines the DiscreteInteractionEndpoint.coordinatorBehavior, the other one defines the DiscreteInteractionEndpoint.subRoleBehavior.\r\nlet behavioralElement : behavior::BehavioralElement = self.behavioralElement in \r\n(not behavioralElement.oclIsUndefined() and behavioralElement.oclIsKindOf(connector::DiscreteInteractionEndpoint) and behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).multi and not self.usesOneToManyCommunicationSchemata) implies ( self.states->size() = 1 \r\nand self.transitions->size() = 0 and self.states->at(1).embeddedRegions->size() = 2 and \r\nself.states->at(1).embeddedRegions.embeddedStatechart->includes(behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).subroleBehavior) and self.states->at(1).embeddedRegions.embeddedStatechart->includes(behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).coordinatorBehavior) \r\n)\r\n\r\n\r\n\r\n\r\n\r\n\r\n' NoMessageSendInCoordinatorRegion='-- It is not allowed to specify AsynchronousMessageEvents in the coordinator region.\r\nif(self.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).coordinatorBehavior.oclIsInvalid())\r\nthen true else \r\n(self.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).coordinatorBehavior = self )implies (\r\nlet allChildrenStatecharts: Set(realtimestatechart::RealtimeStatechart) = self->closure(t|t.oclAsType(realtimestatechart::RealtimeStatechart).states.embeddedRegions.embeddedStatechart) in \r\nlet allTransitions : Bag(realtimestatechart::Transition) = allChildrenStatecharts.transitions->union(self.transitions) in\r\nallTransitions->select(t| not t.triggerMessageEvent.oclIsUndefined() or not t.raiseMessageEvent.oclIsUndefined())->isEmpty()\r\n)\r\nendif' HybridPortNamesAndVariableNamesMustDiffer='-- The names of hybrid ports and variable names of the RTSC must differ.\r\nlet com:component::AtomicComponent = if(self.getHighestParentStatechart().behavioralElement.oclIsKindOf(component::AtomicComponent)) \r\nthen self.getHighestParentStatechart().behavioralElement.oclAsType(component::AtomicComponent) else null endif\r\n in  let allSubRoleSpecificVariables:Set(behavior::Variable) = self -> closure(if parentRegion.oclIsUndefined() then self else parentRegion.parentState.parentStatechart endif).subRoleSpecificVariables->asSet() in\r\n not com.oclIsUndefined() implies  com.ports->select(port|port.oclIsKindOf(component::HybridPort)).name->forAll(portName| self.allAvailableVariables.name->excludes(portName) and allSubRoleSpecificVariables.name->excludes(portName))\r\n'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueNameOfStates='-- State names must be unique.\nself.states->isUnique(name)' NoCycles='-- An RTSC may not be the parent of the RTSC that it contains, i.e., cycles are not allowed.\r\n(not self.parentRegion.parentState.parentStatechart.oclIsUndefined())\r\nimplies\r\n(not self.isSuperStatechartOf(self.parentRegion.parentState.parentStatechart))' OneInitialState='-- An RTSC requires an initial state.\r\nself.states->select(s |  s.initial)->size() = 1' CommunicationSchemaOnlyUsedInMultiRoleOrMultiPort='-- An RTSC may only use one-to-many communication schema if its behavioral element is a multi role or multi port.\r\n(not (self.getPortOrRoleStatechart().behavioralElement.oclIsUndefined()) and  self.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(component::AtomicComponent))\r\nor\r\n(\r\nself.usesOneToManyCommunicationSchemata implies (\r\nnot (self.getPortOrRoleStatechart().behavioralElement.oclIsUndefined()) and  self.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(connector::DiscreteInteractionEndpoint)\r\nand self.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).multi)\r\n)' OnlyDefineSchemataBeforeDisassembling='-- One-to-many communication schemata may only be used if the RTSC of the multi role or multi port does not distinguish between coordinator and subrole RTSC.\r\nself.usesOneToManyCommunicationSchemata implies self.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).subroleBehavior.oclIsUndefined() and  self.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).coordinatorBehavior.oclIsUndefined() ' ComponentBehaviorStatechartMustBeWellFormed='-- The component behavior RTSC must contain at the top-level exactly one state and no transitions.\r\n\r\nlet behavioralElement : behavior::BehavioralElement = self.behavioralElement in \r\n(not behavioralElement.oclIsUndefined() and behavioralElement.oclIsKindOf(component::Component)) implies ( self.states->size() = 1 and self.transitions->size() = 0)' MultiDiscreteInteractionEndpointBehaviorStatechartMustBeWellFormed='-- If a multi port or multi role RTSC does not use one-to-many communication schemata, then it must contain exactly one state and no transitions on top-level. Furthermore, the top level state defines exactly two regions: one region defines the DiscreteInteractionEndpoint.coordinatorBehavior, the other one defines the DiscreteInteractionEndpoint.subRoleBehavior.\r\nlet behavioralElement : behavior::BehavioralElement = self.behavioralElement in \r\n(not behavioralElement.oclIsUndefined() and behavioralElement.oclIsKindOf(connector::DiscreteInteractionEndpoint) and behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).multi and not self.usesOneToManyCommunicationSchemata) implies ( self.states->size() = 1 \r\nand self.transitions->size() = 0 and self.states->at(1).embeddedStatecharts->size() = 2 and \r\nself.states->at(1).embeddedStatecharts->includes(behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).subroleBehavior) and self.states->at(1).embeddedStatecharts->includes(behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).coordinatorBehavior) \r\n)\r\n\r\n\r\n\r\n\r\n\r\n\r\n' NoMessageSendInCoordinatorRegion='-- It is not allowed to specify AsynchronousMessageEvents in the coordinator region.\r\nif(self.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).coordinatorBehavior.oclIsInvalid())\r\nthen true else \r\n(self.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).coordinatorBehavior = self )implies (\r\nlet allChildrenStatecharts: Set(realtimestatechart::RealtimeStatechart) = self->closure(t|t.oclAsType(realtimestatechart::RealtimeStatechart).states.embeddedStatecharts) in \r\nlet allTransitions : Bag(realtimestatechart::Transition) = allChildrenStatecharts.transitions->union(self.transitions) in\r\nallTransitions->select(t| not t.triggerMessageEvent.oclIsUndefined() or not t.raiseMessageEvent.oclIsUndefined())->isEmpty()\r\n)\r\nendif' HybridPortNamesAndVariableNamesMustDiffer='-- The names of hybrid ports and variable names of the RTSC must differ.\r\nlet com:component::AtomicComponent = if(self.getHighestParentStatechart().behavioralElement.oclIsKindOf(component::AtomicComponent)) \r\nthen self.getHighestParentStatechart().behavioralElement.oclAsType(component::AtomicComponent) else null endif\r\n in  let allSubRoleSpecificVariables:Set(behavior::Variable) = self -> closure(if parentRegion.oclIsUndefined() then self else parentRegion.parentState.parentStatechart endif).subRoleSpecificVariables->asSet() in\r\n not com.oclIsUndefined() implies  com.ports->select(port|port.oclIsKindOf(component::HybridPort)).name->forAll(portName| self.allAvailableVariables.name->excludes(portName) and allSubRoleSpecificVariables.name->excludes(portName))\r\n'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='HybridPortNamesAndVariableNamesMustDiffer CommunicationSchemaOnlyUsedInMultiRoleOrMultiPort UniqueNameOfStates NoCycles OneInitialState OnlyDefineSchemataBeforeDisassembling ComponentBehaviorStatechartMustBeWellFormed NoMessageSendInCoordinatorRegion MultiDiscreteInteractionEndpointBehaviorStatechartMustBeWellFormed'"
  * @generated
  */
 public interface RealtimeStatechart extends NamedElement, CommentableElement, Behavior {
 	/**
-	 * Returns the value of the '<em><b>Parent Region</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.muml.pim.realtimestatechart.Region#getEmbeddedStatechart <em>Embedded Statechart</em>}'.
+	 * Returns the value of the '<em><b>Parent State</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link org.muml.pim.realtimestatechart.State#getEmbeddedStatecharts <em>Embedded Statecharts</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -59,24 +59,24 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	 * than this reference returns the region of this state. If the real-time statechart
 	 * is not embedded, this reference will be undefined.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Parent Region</em>' container reference.
-	 * @see #setParentRegion(Region)
-	 * @see org.muml.pim.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart_ParentRegion()
-	 * @see org.muml.pim.realtimestatechart.Region#getEmbeddedStatechart
-	 * @model opposite="embeddedStatechart" transient="false"
+	 * @return the value of the '<em>Parent State</em>' container reference.
+	 * @see #setParentState(State)
+	 * @see org.muml.pim.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart_ParentState()
+	 * @see org.muml.pim.realtimestatechart.State#getEmbeddedStatecharts
+	 * @model opposite="embeddedStatecharts" transient="false"
 	 * @generated
 	 */
-	Region getParentRegion();
+	State getParentState();
 
 	/**
-	 * Sets the value of the '{@link org.muml.pim.realtimestatechart.RealtimeStatechart#getParentRegion <em>Parent Region</em>}' container reference.
+	 * Sets the value of the '{@link org.muml.pim.realtimestatechart.RealtimeStatechart#getParentState <em>Parent State</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Region</em>' container reference.
-	 * @see #getParentRegion()
+	 * @param value the new value of the '<em>Parent State</em>' container reference.
+	 * @see #getParentState()
 	 * @generated
 	 */
-	void setParentRegion(Region value);
+	void setParentState(State value);
 
 	/**
 	 * Returns the value of the '<em><b>Transitions</b></em>' containment reference list.
@@ -172,7 +172,7 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	 * @return the value of the '<em>Embedded</em>' attribute.
 	 * @see org.muml.pim.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart_Embedded()
 	 * @model default="false" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='not self.parentRegion.oclIsUndefined()'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='not self.parentStatechart.oclIsUndefined()'"
 	 * @generated
 	 */
 	boolean isEmbedded();
@@ -192,7 +192,7 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	 * @return the value of the '<em>All Available Variables</em>' reference list.
 	 * @see org.muml.pim.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart_AllAvailableVariables()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self -> closure(if parentRegion.oclIsUndefined() then self else parentRegion.parentState.parentStatechart endif).variables->asOrderedSet()'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self -> closure(if parentStatechart.oclIsUndefined() then self else parentState.parentStatechart endif).variables->asOrderedSet()'"
 	 * @generated
 	 */
 	EList<Variable> getAllAvailableVariables();
@@ -352,5 +352,14 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	 * @generated
 	 */
 	RealtimeStatechart getPortOrRoleStatechart();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='if (getParentState() != null) {\n\treturn getParentState().getEmbeddedStatecharts().indexOf(this) + 1;\n}\nreturn 1;'"
+	 * @generated
+	 */
+	int getPriority();
 
 } // RealtimeStatechart

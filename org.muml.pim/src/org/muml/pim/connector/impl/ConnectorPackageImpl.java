@@ -886,13 +886,13 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 		  (getDiscreteInteractionEndpoint_CoordinatorBehavior(), 
 		   source, 
 		   new String[] {
-			 "filter", "if(self.behavior.oclIsTypeOf(realtimestatechart::RealtimeStatechart)) then self.behavior.oclAsType(realtimestatechart::RealtimeStatechart)->closure(rtsc| rtsc.states->select(s: realtimestatechart::State|  not s.simple).embeddedRegions.embeddedStatechart ) else behavior::Behavior.allInstances() endif"
+			 "filter", "if(self.behavior.oclIsTypeOf(realtimestatechart::RealtimeStatechart)) then self.behavior.oclAsType(realtimestatechart::RealtimeStatechart)->closure(rtsc| rtsc.states->select(s: realtimestatechart::State|  not s.simple).embeddedStatecharts) else behavior::Behavior.allInstances() endif"
 		   });	
 		addAnnotation
 		  (getDiscreteInteractionEndpoint_SubroleBehavior(), 
 		   source, 
 		   new String[] {
-			 "filter", "if(self.behavior.oclIsTypeOf(realtimestatechart::RealtimeStatechart)) then self.behavior.oclAsType(realtimestatechart::RealtimeStatechart)->closure(rtsc| rtsc.states->select(s: realtimestatechart::State|  not s.simple).embeddedRegions.embeddedStatechart ) else behavior::Behavior.allInstances() endif"
+			 "filter", "if(self.behavior.oclIsTypeOf(realtimestatechart::RealtimeStatechart)) then self.behavior.oclAsType(realtimestatechart::RealtimeStatechart)->closure(rtsc| rtsc.states->select(s: realtimestatechart::State|  not s.simple).embeddedStatecharts ) else behavior::Behavior.allInstances() endif"
 		   });
 	}
 

@@ -54,7 +54,6 @@ public class StateItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addEmbeddedRegionsPropertyDescriptor(object);
 			addDoEventPropertyDescriptor(object);
 			addExitEventPropertyDescriptor(object);
 			addEntryEventPropertyDescriptor(object);
@@ -369,7 +368,7 @@ public class StateItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__EMBEDDED_REGIONS);
+			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__EMBEDDED_STATECHARTS);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__DO_EVENT);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__EXIT_EVENT);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__ENTRY_EVENT);
@@ -439,7 +438,7 @@ public class StateItemProvider
 			case RealtimestatechartPackage.STATE__ALL_AVAILABLE_CHANNELS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case RealtimestatechartPackage.STATE__EMBEDDED_REGIONS:
+			case RealtimestatechartPackage.STATE__EMBEDDED_STATECHARTS:
 			case RealtimestatechartPackage.STATE__DO_EVENT:
 			case RealtimestatechartPackage.STATE__EXIT_EVENT:
 			case RealtimestatechartPackage.STATE__ENTRY_EVENT:
@@ -465,8 +464,8 @@ public class StateItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RealtimestatechartPackage.Literals.STATE__EMBEDDED_REGIONS,
-				 RealtimestatechartFactory.eINSTANCE.createRegion()));
+				(RealtimestatechartPackage.Literals.STATE__EMBEDDED_STATECHARTS,
+				 RealtimestatechartFactory.eINSTANCE.createRealtimeStatechart()));
 
 		newChildDescriptors.add
 			(createChildParameter

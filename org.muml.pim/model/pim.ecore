@@ -703,32 +703,6 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Region" eSuperTypes="../../org.muml.core/model/core.ecore#//CommentableElement">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Regions enables hierarchy and parallelism. Each state can have zero, one or more regions."/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="embeddedStatechart" lowerBound="1"
-          eType="#//realtimestatechart/RealtimeStatechart" containment="true" eOpposite="#//realtimestatechart/RealtimeStatechart/parentRegion">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The realtime statechart this region embeds."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="parentState" lowerBound="1"
-          eType="#//realtimestatechart/State" eOpposite="#//realtimestatechart/State/embeddedRegions">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The state this region is embedded."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-          changeable="false" volatile="true" transient="true" derived="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="if not self.embeddedStatechart.oclIsUndefined() then&#xD;&#xA;&#x9;self.embeddedStatechart.oclAsType(realtimestatechart::RealtimeStatechart).name&#xD;&#xA;else&#xD;&#xA;&#x9;null&#xD;&#xA;endif"/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The name of a region is derived by its conaining Real-Time Statechart"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="State" eSuperTypes="#//realtimestatechart/Vertex">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents a composite state of a realtime statechart. Composite states may again contain realtime statecharts hence enabling the creation of hierarchical statecharts. Further more composite states have do, entry and exit actions. Also composite states define which synchronization channels are allowed to be used by embedded statecharts."/>
@@ -738,11 +712,10 @@
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="NoOutgoingTransitionOfFinalState" value="-- Final states must not have outgoing transitions&#xA;self.final implies self.outgoingTransitions->isEmpty()"/>
-        <details key="NoRegionsOfFinalState" value="-- Final states must not have regions&#xA;self.final implies self.embeddedRegions->isEmpty()"/>
+        <details key="NoRegionsOfFinalState" value="-- Final states must not have regions&#xA;self.final implies self.embeddedStatecharts->isEmpty()"/>
         <details key="UniquePrioritiesOfOutgoingTransitions" value="-- Outgoing transitions must have a unique priority&#xA;self.outgoingTransitions->isUnique(priority) "/>
-        <details key="UniquePrioritiesOfRegions" value="-- Regions must have a unique priority&#xA;self.embeddedRegions->isUnique(priority)"/>
         <details key="UniqueChannelNames" value="-- Synchronization channels must have a unique name&#xA;self.channels->isUnique(name)"/>
-        <details key="UniqueRegionNames" value="-- Regions must have a unique name&#xA;self.embeddedRegions->isUnique(name)"/>
+        <details key="UniqueRegionNames" value="-- Regions must have a unique name&#xA;self.embeddedStatecharts->isUnique(name)"/>
         <details key="InvalidClockConstraintOperator" value="-- Clock Constraints must only use operators LESS and LESS_OR_EQUAL&#xA;self.invariants->forAll(invariant | Set{core::expressions::common::ComparingOperator::LESS, core::expressions::common::ComparingOperator::LESS_OR_EQUAL }->includes(invariant.operator))"/>
         <details key="UniqueStateConnectionPointNames" value="-- State Connection Points of a composite state must have unique names.&#xD;&#xA;self.connectionPoints->isUnique(name)"/>
         <details key="EntryEventAtInitialState" value="-- @warning&#xA;-- Attention: An initial state only executes its entry event if it is activated via a firing transition. Consequently, if the RTSC starts, its initial states do not execute their entry events (their entry actions and their clock resets). Noteworthy, this only affects initial states that have no parent states and initial states where all their parents are initial states.&#xA;let allParentStates : Set(State) = self -> closure(if parentStatechart.parentRegion.oclIsUndefined() then self else parentStatechart.parentRegion.parentState endif) in&#xA;not (self.initial and allParentStates->forAll(x | x.initial) and not self.entryEvent.oclIsUndefined())"/>
@@ -761,7 +734,7 @@
       <eOperations name="hasRegionOfPriority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Returns true, if this state contains a region of the given priority."/>
-          <details key="body" value="for (Region region : getEmbeddedRegions()) {&#xD;&#xA;&#x9;if (region.getPriority() == priority) {&#xD;&#xA;&#x9;&#x9;return true;&#xD;&#xA;&#x9;}&#xD;&#xA;}&#xD;&#xA;return false;"/>
+          <details key="body" value="for (RealtimeStatechart statechart : getEmbeddedStatecharts()) {&#xD;&#xA;&#x9;if (statechart.getPriority() == priority) {&#xD;&#xA;&#x9;&#x9;return true;&#xD;&#xA;&#x9;}&#xD;&#xA;}&#xD;&#xA;return false;"/>
         </eAnnotations>
         <eParameters name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -769,10 +742,11 @@
           </eAnnotations>
         </eParameters>
       </eOperations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="embeddedRegions" upperBound="-1"
-          eType="#//realtimestatechart/Region" containment="true" eOpposite="#//realtimestatechart/Region/parentState">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="embeddedStatecharts"
+          upperBound="-1" eType="#//realtimestatechart/RealtimeStatechart" containment="true"
+          eOpposite="#//realtimestatechart/RealtimeStatechart/parentState">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The regions of this state. Regions are used to model composite states.&#xA;In case of one region, we have an xor superstate, in case of multiple regions, &#xA;we have an AND-superstate."/>
+          <details key="documentation" value="The embedded statecharts of this state. They are used to model composite states.&#xA;In case of one region, we have an xor superstate, in case of multiple statecharts, &#xA;we have an AND-superstate."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="doEvent" eType="#//realtimestatechart/DoEvent"
@@ -844,7 +818,7 @@
           changeable="false" volatile="true" transient="true" defaultValueLiteral="true"
           unsettable="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="-- a state is simple if it contains no regions&#xD;&#xA;embeddedRegions->isEmpty()&#xD;&#xA;"/>
+          <details key="derivation" value="-- a state is simple if it contains no regions&#xD;&#xA;embeddedStatecharts->isEmpty()&#xD;&#xA;"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="A state is simple if it does not contain a region with an embedded substatechart."/>
@@ -860,7 +834,7 @@
           upperBound="-1" eType="#//realtimestatechart/SynchronizationChannel" changeable="false"
           volatile="true" transient="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="self -> closure(if parentStatechart.parentRegion.oclIsUndefined() then self else parentStatechart.parentRegion.parentState endif).channels ->asOrderedSet()"/>
+          <details key="derivation" value="self -> closure(if parentStatechart.parentState.oclIsUndefined() then self else parentStatechart.parentState endif).channels ->asOrderedSet()"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="All synchronization channels accessible within this state."/>
@@ -1235,8 +1209,8 @@
         <details key="OnlyDefineSchemataBeforeDisassembling" value="-- One-to-many communication schemata may only be used if the RTSC of the multi role or multi port does not distinguish between coordinator and subrole RTSC.&#xD;&#xA;self.usesOneToManyCommunicationSchemata implies self.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).subroleBehavior.oclIsUndefined() and  self.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).coordinatorBehavior.oclIsUndefined() "/>
         <details key="ComponentBehaviorStatechartMustBeWellFormed" value="-- The component behavior RTSC must contain at the top-level exactly one state and no transitions.&#xD;&#xA;&#xD;&#xA;let behavioralElement : behavior::BehavioralElement = self.behavioralElement in &#xD;&#xA;(not behavioralElement.oclIsUndefined() and behavioralElement.oclIsKindOf(component::Component)) implies ( self.states->size() = 1 and self.transitions->size() = 0)"/>
         <details key="MultiDiscreteInteractionEndpointBehaviorStatechartMustBeWellFormed"
-            value="-- If a multi port or multi role RTSC does not use one-to-many communication schemata, then it must contain exactly one state and no transitions on top-level. Furthermore, the top level state defines exactly two regions: one region defines the DiscreteInteractionEndpoint.coordinatorBehavior, the other one defines the DiscreteInteractionEndpoint.subRoleBehavior.&#xD;&#xA;let behavioralElement : behavior::BehavioralElement = self.behavioralElement in &#xD;&#xA;(not behavioralElement.oclIsUndefined() and behavioralElement.oclIsKindOf(connector::DiscreteInteractionEndpoint) and behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).multi and not self.usesOneToManyCommunicationSchemata) implies ( self.states->size() = 1 &#xD;&#xA;and self.transitions->size() = 0 and self.states->at(1).embeddedRegions->size() = 2 and &#xD;&#xA;self.states->at(1).embeddedRegions.embeddedStatechart->includes(behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).subroleBehavior) and self.states->at(1).embeddedRegions.embeddedStatechart->includes(behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).coordinatorBehavior) &#xD;&#xA;)&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;"/>
-        <details key="NoMessageSendInCoordinatorRegion" value="-- It is not allowed to specify AsynchronousMessageEvents in the coordinator region.&#xD;&#xA;if(self.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).coordinatorBehavior.oclIsInvalid())&#xD;&#xA;then true else &#xD;&#xA;(self.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).coordinatorBehavior = self )implies (&#xD;&#xA;let allChildrenStatecharts: Set(realtimestatechart::RealtimeStatechart) = self->closure(t|t.oclAsType(realtimestatechart::RealtimeStatechart).states.embeddedRegions.embeddedStatechart) in &#xD;&#xA;let allTransitions : Bag(realtimestatechart::Transition) = allChildrenStatecharts.transitions->union(self.transitions) in&#xD;&#xA;allTransitions->select(t| not t.triggerMessageEvent.oclIsUndefined() or not t.raiseMessageEvent.oclIsUndefined())->isEmpty()&#xD;&#xA;)&#xD;&#xA;endif"/>
+            value="-- If a multi port or multi role RTSC does not use one-to-many communication schemata, then it must contain exactly one state and no transitions on top-level. Furthermore, the top level state defines exactly two regions: one region defines the DiscreteInteractionEndpoint.coordinatorBehavior, the other one defines the DiscreteInteractionEndpoint.subRoleBehavior.&#xD;&#xA;let behavioralElement : behavior::BehavioralElement = self.behavioralElement in &#xD;&#xA;(not behavioralElement.oclIsUndefined() and behavioralElement.oclIsKindOf(connector::DiscreteInteractionEndpoint) and behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).multi and not self.usesOneToManyCommunicationSchemata) implies ( self.states->size() = 1 &#xD;&#xA;and self.transitions->size() = 0 and self.states->at(1).embeddedStatecharts->size() = 2 and &#xD;&#xA;self.states->at(1).embeddedStatecharts->includes(behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).subroleBehavior) and self.states->at(1).embeddedStatecharts->includes(behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).coordinatorBehavior) &#xD;&#xA;)&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;"/>
+        <details key="NoMessageSendInCoordinatorRegion" value="-- It is not allowed to specify AsynchronousMessageEvents in the coordinator region.&#xD;&#xA;if(self.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).coordinatorBehavior.oclIsInvalid())&#xD;&#xA;then true else &#xD;&#xA;(self.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).coordinatorBehavior = self )implies (&#xD;&#xA;let allChildrenStatecharts: Set(realtimestatechart::RealtimeStatechart) = self->closure(t|t.oclAsType(realtimestatechart::RealtimeStatechart).states.embeddedStatecharts) in &#xD;&#xA;let allTransitions : Bag(realtimestatechart::Transition) = allChildrenStatecharts.transitions->union(self.transitions) in&#xD;&#xA;allTransitions->select(t| not t.triggerMessageEvent.oclIsUndefined() or not t.raiseMessageEvent.oclIsUndefined())->isEmpty()&#xD;&#xA;)&#xD;&#xA;endif"/>
         <details key="HybridPortNamesAndVariableNamesMustDiffer" value="-- The names of hybrid ports and variable names of the RTSC must differ.&#xD;&#xA;let com:component::AtomicComponent = if(self.getHighestParentStatechart().behavioralElement.oclIsKindOf(component::AtomicComponent)) &#xD;&#xA;then self.getHighestParentStatechart().behavioralElement.oclAsType(component::AtomicComponent) else null endif&#xD;&#xA; in  let allSubRoleSpecificVariables:Set(behavior::Variable) = self -> closure(if parentRegion.oclIsUndefined() then self else parentRegion.parentState.parentStatechart endif).subRoleSpecificVariables->asSet() in&#xD;&#xA; not com.oclIsUndefined() implies  com.ports->select(port|port.oclIsKindOf(component::HybridPort)).name->forAll(portName| self.allAvailableVariables.name->excludes(portName) and allSubRoleSpecificVariables.name->excludes(portName))&#xD;&#xA;"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -1265,8 +1239,13 @@
           <details key="body" value="// check if this rtsc has a behavioral element&#xD;&#xA;RealtimeStatechart rtsc = this;&#xD;&#xA;if (rtsc.getBehavioralElement()!=null &amp;&amp; ((rtsc.getBehavioralElement() instanceof Port) || (rtsc.getBehavioralElement() instanceof Role))) return rtsc;&#xD;&#xA;&#xD;&#xA;// search for ancestor with behavioral element&#xD;&#xA;while (rtsc.isEmbedded()==true)&#xD;&#xA;{&#xD;&#xA;rtsc = rtsc.getParentRegion().getParentState().getParentStatechart();&#xD;&#xA;if (rtsc.getBehavioralElement()!=null &amp;&amp; ((rtsc.getBehavioralElement() instanceof Port) || (rtsc.getBehavioralElement() instanceof Role))) return rtsc;&#xD;&#xA;} &#xD;&#xA;&#xD;&#xA;// no rtsc found with behavioral element&#xD;&#xA;return this;"/>
         </eAnnotations>
       </eOperations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="parentRegion" eType="#//realtimestatechart/Region"
-          eOpposite="#//realtimestatechart/Region/embeddedStatechart">
+      <eOperations name="getPriority" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="if (getParentState() != null) {&#xA;&#x9;return getParentState().getEmbeddedStatecharts().indexOf(this) + 1;&#xA;}&#xA;return 1;"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parentState" eType="#//realtimestatechart/State"
+          eOpposite="#//realtimestatechart/State/embeddedStatecharts">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="If the real-time statechart is embedded into a region of a composite state,&#xD;&#xA;than this reference returns the region of this state. If the real-time statechart&#xD;&#xA;is not embedded, this reference will be undefined."/>
         </eAnnotations>
@@ -1316,14 +1295,14 @@
           <details key="documentation" value="This attribute specifies whether this realtime statechart is embedded into a region or not."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="not self.parentRegion.oclIsUndefined()"/>
+          <details key="derivation" value="not self.parentStatechart.oclIsUndefined()"/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="allAvailableVariables"
           upperBound="-1" eType="#//behavior/Variable" changeable="false" volatile="true"
           transient="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="self -> closure(if parentRegion.oclIsUndefined() then self else parentRegion.parentState.parentStatechart endif).variables->asOrderedSet()"/>
+          <details key="derivation" value="self -> closure(if parentStatechart.oclIsUndefined() then self else parentState.parentStatechart endif).variables->asOrderedSet()"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="All variables accessible within this statechart."/>
@@ -1481,7 +1460,7 @@
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="AtLeastOneIncomingTransition" value="-- Entry point needs at least one incoming transition&#xA;self.incomingTransitions ->notEmpty()"/>
-        <details key="OneOutgoingTransitionPerRegion" value="-- all regions of the parent state must have exactly one vertex that the EntryPoint connects to&#xD;&#xA;(not self.state.oclIsUndefined()) implies self.state.embeddedRegions->forAll(r |&#xD;&#xA;&#x9;self.outgoingTransitions->one(t |&#xD;&#xA;&#x9;&#x9;(t.target.oclIsKindOf(State) and t.target.oclAsType(State).parentStatechart.parentRegion = r)&#xD;&#xA;&#x9;&#x9;or&#xD;&#xA;&#x9;&#x9;(t.target.oclIsKindOf(EntryPoint) and t.target.oclAsType(EntryPoint).state.parentStatechart.parentRegion = r)&#xD;&#xA;&#x9;)&#xD;&#xA;)"/>
+        <details key="OneOutgoingTransitionPerRegion" value="-- all regions of the parent state must have exactly one vertex that the EntryPoint connects to&#xD;&#xA;(not self.state.oclIsUndefined()) implies self.state.embeddedStatecharts->forAll(r |&#xD;&#xA;&#x9;self.outgoingTransitions->one(t |&#xD;&#xA;&#x9;&#x9;(t.target.oclIsKindOf(State) and t.target.oclAsType(State).parentStatechart = r)&#xD;&#xA;&#x9;&#x9;or&#xD;&#xA;&#x9;&#x9;(t.target.oclIsKindOf(EntryPoint) and t.target.oclAsType(EntryPoint).state.parentStatechart = r)&#xD;&#xA;&#x9;)&#xD;&#xA;)"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ExitPoint" eSuperTypes="#//realtimestatechart/StateConnectionPoint">
@@ -1492,7 +1471,7 @@
         <details key="documentation" value="An ExitPoint is an intermediate pseudostate which makes it possible to chain transitions between different hierarchy levels. The ExitPoint is assigned to a state. An ExitPoint is used to jointly deactivate dedicated inner states of embedded statecharts."/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="AtLeastOneIncomingTransitionPerRegion" value="-- all regions of the parent state must have at least one vertex that connects to the ExitPoint&#xD;&#xA;(not self.state.oclIsUndefined()) implies self.state.embeddedRegions->forAll(r |&#xD;&#xA;&#x9;self.incomingTransitions->exists(t |&#xD;&#xA;&#x9;&#x9;(t.source.oclIsKindOf(State) and t.source.oclAsType(State).parentStatechart.parentRegion = r)&#xD;&#xA;&#x9;&#x9;or&#xD;&#xA;&#x9;&#x9;(t.source.oclIsKindOf(ExitPoint) and t.source.oclAsType(ExitPoint).state.parentStatechart.parentRegion = r)&#xD;&#xA;&#x9;)&#xD;&#xA;)"/>
+        <details key="AtLeastOneIncomingTransitionPerRegion" value="-- all regions of the parent state must have at least one vertex that connects to the ExitPoint&#xD;&#xA;(not self.state.oclIsUndefined()) implies self.state.embeddedStatecharts->forAll(r |&#xD;&#xA;&#x9;self.incomingTransitions->exists(t |&#xD;&#xA;&#x9;&#x9;(t.source.oclIsKindOf(State) and t.source.oclAsType(State).parentStatechart = r)&#xD;&#xA;&#x9;&#x9;or&#xD;&#xA;&#x9;&#x9;(t.source.oclIsKindOf(ExitPoint) and t.source.oclAsType(ExitPoint).state.parentStatechart = r)&#xD;&#xA;&#x9;)&#xD;&#xA;)"/>
         <details key="OneOutgoingTransition" value="-- Exit point must have exactly one outgoing transition&#xA;self.outgoingTransitions->size() = 1"/>
         <details key="AtMostOneConnectingRegionWithSynchronizations" value="-- There must be at most one region with synchronizing transitions that connect (directly or indirectly) to the exit point&#xD;&#xA;&#xD;&#xA;let exitTransitions : Collection(Transition) = &#xD;&#xA;&#xD;&#xA;self.incomingTransitions->union(&#xD;&#xA;   self.incomingTransitions->closure(t | &#xD;&#xA;&#x9;if t.source.oclIsKindOf(ExitPoint)&#xD;&#xA;&#x9;then t.source.incomingTransitions&#xD;&#xA;&#x9;else Sequence{}&#xD;&#xA;&#x9;endif&#xD;&#xA;   )&#xD;&#xA;)&#xD;&#xA;&#xD;&#xA;in exitTransitions->forAll(t1 : Transition, t2: Transition | (t1 &lt;> t2 and (not t1.synchronization.oclIsUndefined()) and (not t2.synchronization.oclIsUndefined())) implies (t1.statechart = t2.statechart))"/>
         <details key="AtMostOneConnectingRegionWithTriggerMessageEvents" value="-- There must be at most one region with transitions that have a trigger message event and connect (directly or indirectly) to the exit point&#xD;&#xA;&#xD;&#xA;let exitTransitions : Collection(Transition) = &#xD;&#xA;&#xD;&#xA;self.incomingTransitions->union(&#xD;&#xA;   self.incomingTransitions->closure(t | &#xD;&#xA;&#x9;if t.source.oclIsKindOf(ExitPoint)&#xD;&#xA;&#x9;then t.source.incomingTransitions&#xD;&#xA;&#x9;else Sequence{}&#xD;&#xA;&#x9;endif&#xD;&#xA;   )&#xD;&#xA;)&#xD;&#xA;&#xD;&#xA;in exitTransitions->forAll(t1 : Transition, t2: Transition | (t1 &lt;> t2 and (not t1.triggerMessageEvent.oclIsUndefined()) and (not t2.triggerMessageEvent.oclIsUndefined())) implies (t1.statechart = t2.statechart))"/>
@@ -1918,7 +1897,7 @@
           <details key="documentation" value="If this port is a multi-port, this reference points to the real-time statechart that&#xD;&#xA;contains the adaptation behavior of the multi-port.  Then, this real-time statechart &#xD;&#xA;is contained in the only state of the real-time statechart obtained by the&#xD;&#xA;behavior reference.&#xD;&#xA;If this port is a single-port, this reference will be undefined."/>
         </eAnnotations>
         <eAnnotations source="http://www.muml.org/emf/OCLFilter">
-          <details key="filter" value="if(self.behavior.oclIsTypeOf(realtimestatechart::RealtimeStatechart)) then self.behavior.oclAsType(realtimestatechart::RealtimeStatechart)->closure(rtsc| rtsc.states->select(s: realtimestatechart::State|  not s.simple).embeddedRegions.embeddedStatechart ) else behavior::Behavior.allInstances() endif"/>
+          <details key="filter" value="if(self.behavior.oclIsTypeOf(realtimestatechart::RealtimeStatechart)) then self.behavior.oclAsType(realtimestatechart::RealtimeStatechart)->closure(rtsc| rtsc.states->select(s: realtimestatechart::State|  not s.simple).embeddedStatecharts) else behavior::Behavior.allInstances() endif"/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="subroleBehavior" eType="#//behavior/Behavior">
@@ -1926,7 +1905,7 @@
           <details key="documentation" value="If this port is a multi-port, this reference points to the real-time statechart that&#xD;&#xA;contains the subrole behavior of the multi-port.  Then, this real-time statechart &#xD;&#xA;is contained in the only state of the real-time statechart obtained by the&#xD;&#xA;behavior reference.&#xD;&#xA;If this port is a single-port, this reference will be undefined."/>
         </eAnnotations>
         <eAnnotations source="http://www.muml.org/emf/OCLFilter">
-          <details key="filter" value="if(self.behavior.oclIsTypeOf(realtimestatechart::RealtimeStatechart)) then self.behavior.oclAsType(realtimestatechart::RealtimeStatechart)->closure(rtsc| rtsc.states->select(s: realtimestatechart::State|  not s.simple).embeddedRegions.embeddedStatechart ) else behavior::Behavior.allInstances() endif"/>
+          <details key="filter" value="if(self.behavior.oclIsTypeOf(realtimestatechart::RealtimeStatechart)) then self.behavior.oclAsType(realtimestatechart::RealtimeStatechart)->closure(rtsc| rtsc.states->select(s: realtimestatechart::State|  not s.simple).embeddedStatecharts ) else behavior::Behavior.allInstances() endif"/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" lowerBound="1"

@@ -26,7 +26,6 @@ import org.muml.pim.realtimestatechart.EntryEvent;
 import org.muml.pim.realtimestatechart.ExitEvent;
 import org.muml.pim.realtimestatechart.RealtimeStatechart;
 import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
-import org.muml.pim.realtimestatechart.Region;
 import org.muml.pim.realtimestatechart.State;
 import org.muml.pim.realtimestatechart.StateConnectionPoint;
 import org.muml.pim.realtimestatechart.StateEvent;
@@ -40,7 +39,7 @@ import org.muml.pim.realtimestatechart.SynchronizationChannel;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.muml.pim.realtimestatechart.impl.StateImpl#getEmbeddedRegions <em>Embedded Regions</em>}</li>
+ *   <li>{@link org.muml.pim.realtimestatechart.impl.StateImpl#getEmbeddedStatecharts <em>Embedded Statecharts</em>}</li>
  *   <li>{@link org.muml.pim.realtimestatechart.impl.StateImpl#getDoEvent <em>Do Event</em>}</li>
  *   <li>{@link org.muml.pim.realtimestatechart.impl.StateImpl#getExitEvent <em>Exit Event</em>}</li>
  *   <li>{@link org.muml.pim.realtimestatechart.impl.StateImpl#getEntryEvent <em>Entry Event</em>}</li>
@@ -60,14 +59,14 @@ import org.muml.pim.realtimestatechart.SynchronizationChannel;
  */
 public class StateImpl extends VertexImpl implements State {
 	/**
-	 * The cached value of the '{@link #getEmbeddedRegions() <em>Embedded Regions</em>}' containment reference list.
+	 * The cached value of the '{@link #getEmbeddedStatecharts() <em>Embedded Statecharts</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEmbeddedRegions()
+	 * @see #getEmbeddedStatecharts()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Region> embeddedRegions;
+	protected EList<RealtimeStatechart> embeddedStatecharts;
 
 	/**
 	 * The cached value of the '{@link #getDoEvent() <em>Do Event</em>}' containment reference.
@@ -243,11 +242,11 @@ public class StateImpl extends VertexImpl implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Region> getEmbeddedRegions() {
-		if (embeddedRegions == null) {
-			embeddedRegions = new EObjectContainmentWithInverseEList<Region>(Region.class, this, RealtimestatechartPackage.STATE__EMBEDDED_REGIONS, RealtimestatechartPackage.REGION__PARENT_STATE);
+	public EList<RealtimeStatechart> getEmbeddedStatecharts() {
+		if (embeddedStatecharts == null) {
+			embeddedStatecharts = new EObjectContainmentWithInverseEList<RealtimeStatechart>(RealtimeStatechart.class, this, RealtimestatechartPackage.STATE__EMBEDDED_STATECHARTS, RealtimestatechartPackage.REALTIME_STATECHART__PARENT_STATE);
 		}
-		return embeddedRegions;
+		return embeddedStatecharts;
 	}
 
 	/**
@@ -511,8 +510,8 @@ public class StateImpl extends VertexImpl implements State {
 	 * @generated
 	 */
 	public boolean hasRegionOfPriority(final int priority) {
-		for (Region region : getEmbeddedRegions()) {
-			if (region.getPriority() == priority) {
+		for (RealtimeStatechart statechart : getEmbeddedStatecharts()) {
+			if (statechart.getPriority() == priority) {
 				return true;
 			}
 		}
@@ -591,8 +590,8 @@ public class StateImpl extends VertexImpl implements State {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RealtimestatechartPackage.STATE__EMBEDDED_REGIONS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getEmbeddedRegions()).basicAdd(otherEnd, msgs);
+			case RealtimestatechartPackage.STATE__EMBEDDED_STATECHARTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getEmbeddedStatecharts()).basicAdd(otherEnd, msgs);
 			case RealtimestatechartPackage.STATE__CHANNELS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getChannels()).basicAdd(otherEnd, msgs);
 			case RealtimestatechartPackage.STATE__CONNECTION_POINTS:
@@ -613,8 +612,8 @@ public class StateImpl extends VertexImpl implements State {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RealtimestatechartPackage.STATE__EMBEDDED_REGIONS:
-				return ((InternalEList<?>)getEmbeddedRegions()).basicRemove(otherEnd, msgs);
+			case RealtimestatechartPackage.STATE__EMBEDDED_STATECHARTS:
+				return ((InternalEList<?>)getEmbeddedStatecharts()).basicRemove(otherEnd, msgs);
 			case RealtimestatechartPackage.STATE__DO_EVENT:
 				return basicSetDoEvent(null, msgs);
 			case RealtimestatechartPackage.STATE__EXIT_EVENT:
@@ -655,8 +654,8 @@ public class StateImpl extends VertexImpl implements State {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RealtimestatechartPackage.STATE__EMBEDDED_REGIONS:
-				return getEmbeddedRegions();
+			case RealtimestatechartPackage.STATE__EMBEDDED_STATECHARTS:
+				return getEmbeddedStatecharts();
 			case RealtimestatechartPackage.STATE__DO_EVENT:
 				return getDoEvent();
 			case RealtimestatechartPackage.STATE__EXIT_EVENT:
@@ -696,9 +695,9 @@ public class StateImpl extends VertexImpl implements State {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RealtimestatechartPackage.STATE__EMBEDDED_REGIONS:
-				getEmbeddedRegions().clear();
-				getEmbeddedRegions().addAll((Collection<? extends Region>)newValue);
+			case RealtimestatechartPackage.STATE__EMBEDDED_STATECHARTS:
+				getEmbeddedStatecharts().clear();
+				getEmbeddedStatecharts().addAll((Collection<? extends RealtimeStatechart>)newValue);
 				return;
 			case RealtimestatechartPackage.STATE__DO_EVENT:
 				setDoEvent((DoEvent)newValue);
@@ -745,8 +744,8 @@ public class StateImpl extends VertexImpl implements State {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RealtimestatechartPackage.STATE__EMBEDDED_REGIONS:
-				getEmbeddedRegions().clear();
+			case RealtimestatechartPackage.STATE__EMBEDDED_STATECHARTS:
+				getEmbeddedStatecharts().clear();
 				return;
 			case RealtimestatechartPackage.STATE__DO_EVENT:
 				setDoEvent((DoEvent)null);
@@ -790,8 +789,8 @@ public class StateImpl extends VertexImpl implements State {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RealtimestatechartPackage.STATE__EMBEDDED_REGIONS:
-				return embeddedRegions != null && !embeddedRegions.isEmpty();
+			case RealtimestatechartPackage.STATE__EMBEDDED_STATECHARTS:
+				return embeddedStatecharts != null && !embeddedStatecharts.isEmpty();
 			case RealtimestatechartPackage.STATE__DO_EVENT:
 				return doEvent != null;
 			case RealtimestatechartPackage.STATE__EXIT_EVENT:

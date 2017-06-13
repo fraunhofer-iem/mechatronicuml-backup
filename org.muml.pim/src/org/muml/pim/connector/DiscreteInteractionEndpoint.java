@@ -86,7 +86,7 @@ public interface DiscreteInteractionEndpoint extends ConnectorEndpoint, Behavior
 	 * @return the value of the '<em>Coordinator Behavior</em>' reference.
 	 * @see #setCoordinatorBehavior(Behavior)
 	 * @see org.muml.pim.connector.ConnectorPackage#getDiscreteInteractionEndpoint_CoordinatorBehavior()
-	 * @model annotation="http://www.muml.org/emf/OCLFilter filter='if(self.behavior.oclIsTypeOf(realtimestatechart::RealtimeStatechart)) then self.behavior.oclAsType(realtimestatechart::RealtimeStatechart)->closure(rtsc| rtsc.states->select(s: realtimestatechart::State|  not s.simple).embeddedRegions.embeddedStatechart ) else behavior::Behavior.allInstances() endif'"
+	 * @model annotation="http://www.muml.org/emf/OCLFilter filter='if(self.behavior.oclIsTypeOf(realtimestatechart::RealtimeStatechart)) then self.behavior.oclAsType(realtimestatechart::RealtimeStatechart)->closure(rtsc| rtsc.states->select(s: realtimestatechart::State|  not s.simple).embeddedStatecharts) else behavior::Behavior.allInstances() endif'"
 	 * @generated
 	 */
 	Behavior getCoordinatorBehavior();
@@ -115,7 +115,7 @@ public interface DiscreteInteractionEndpoint extends ConnectorEndpoint, Behavior
 	 * @return the value of the '<em>Subrole Behavior</em>' reference.
 	 * @see #setSubroleBehavior(Behavior)
 	 * @see org.muml.pim.connector.ConnectorPackage#getDiscreteInteractionEndpoint_SubroleBehavior()
-	 * @model annotation="http://www.muml.org/emf/OCLFilter filter='if(self.behavior.oclIsTypeOf(realtimestatechart::RealtimeStatechart)) then self.behavior.oclAsType(realtimestatechart::RealtimeStatechart)->closure(rtsc| rtsc.states->select(s: realtimestatechart::State|  not s.simple).embeddedRegions.embeddedStatechart ) else behavior::Behavior.allInstances() endif'"
+	 * @model annotation="http://www.muml.org/emf/OCLFilter filter='if(self.behavior.oclIsTypeOf(realtimestatechart::RealtimeStatechart)) then self.behavior.oclAsType(realtimestatechart::RealtimeStatechart)->closure(rtsc| rtsc.states->select(s: realtimestatechart::State|  not s.simple).embeddedStatecharts ) else behavior::Behavior.allInstances() endif'"
 	 * @generated
 	 */
 	Behavior getSubroleBehavior();

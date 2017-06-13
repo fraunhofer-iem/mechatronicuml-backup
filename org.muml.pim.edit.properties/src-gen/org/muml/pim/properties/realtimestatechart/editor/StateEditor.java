@@ -29,8 +29,6 @@ public class StateEditor extends org.muml.ape.runtime.editors.ClassPropertyEdito
 
 			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorEmbeddedRegions_property_tab_generalTab_Editor(), false);
-
 			addPropertyEditor(createEditorEntryEvent_property_tab_effectTab_Editor(), false);
 
 			addPropertyEditor(createEditorDoEvent_property_tab_effectTab_Editor(), false);
@@ -90,8 +88,6 @@ public class StateEditor extends org.muml.ape.runtime.editors.ClassPropertyEdito
 
 			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorEmbeddedRegions_property_tab_generalTab_Editor(), false);
-
 			addSubCategory("org.muml.ape.category.Booleans", "Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 			addEditorToCategory("org.muml.ape.category.Booleans", createEditorInitial_property_tab_generalTab_Editor(),
@@ -123,22 +119,6 @@ public class StateEditor extends org.muml.ape.runtime.editors.ClassPropertyEdito
 
 		} else {
 		}
-	}
-
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEmbeddedRegions_property_tab_generalTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorEmbeddedRegions_property_tab_generalTab_Editor() {
-		if (this.editorEmbeddedRegions_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-					.getState_EmbeddedRegions();
-			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
-					adapterFactory, feature);
-
-			editor.setTooltipMessage(
-					"The regions of this state. Regions are used to model composite states.\nIn case of one region, we have an xor superstate, in case of multiple regions, \nwe have an AND-superstate.");
-
-			this.editorEmbeddedRegions_property_tab_generalTab = editor;
-		}
-		return this.editorEmbeddedRegions_property_tab_generalTab;
 	}
 
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEntryEvent_property_tab_effectTab;
@@ -377,11 +357,13 @@ public class StateEditor extends org.muml.ape.runtime.editors.ClassPropertyEdito
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.effect",
-					"property.tab.effect", "property.tab.effect", "property.tab.condition", "property.tab.general",
-					"property.tab.general", "property.tab.general", "property.tab.condition", "property.tab.general",
-					"property.tab.general", "property.tab.general", "property.tab.general",
-					"property.tab.documentation", "property.tab.extensions", "property.tab.general"}).contains(tab);
+			return java.util.Arrays
+					.asList(new java.lang.String[]{"property.tab.effect", "property.tab.effect", "property.tab.effect",
+							"property.tab.condition", "property.tab.general", "property.tab.general",
+							"property.tab.general", "property.tab.condition", "property.tab.general",
+							"property.tab.general", "property.tab.general", "property.tab.general",
+							"property.tab.documentation", "property.tab.extensions", "property.tab.general"})
+					.contains(tab);
 		}
 	}
 

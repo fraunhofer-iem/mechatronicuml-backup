@@ -56,7 +56,7 @@ import org.muml.pim.realtimestatechart.Transition;
  *   <li>{@link org.muml.pim.realtimestatechart.impl.RealtimeStatechartImpl#getBehavioralElement <em>Behavioral Element</em>}</li>
  *   <li>{@link org.muml.pim.realtimestatechart.impl.RealtimeStatechartImpl#getOperations <em>Operations</em>}</li>
  *   <li>{@link org.muml.pim.realtimestatechart.impl.RealtimeStatechartImpl#getVariables <em>Variables</em>}</li>
- *   <li>{@link org.muml.pim.realtimestatechart.impl.RealtimeStatechartImpl#getParentRegion <em>Parent Region</em>}</li>
+ *   <li>{@link org.muml.pim.realtimestatechart.impl.RealtimeStatechartImpl#getParentState <em>Parent State</em>}</li>
  *   <li>{@link org.muml.pim.realtimestatechart.impl.RealtimeStatechartImpl#getTransitions <em>Transitions</em>}</li>
  *   <li>{@link org.muml.pim.realtimestatechart.impl.RealtimeStatechartImpl#getStates <em>States</em>}</li>
  *   <li>{@link org.muml.pim.realtimestatechart.impl.RealtimeStatechartImpl#getClocks <em>Clocks</em>}</li>
@@ -384,9 +384,9 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Region getParentRegion() {
-		if (eContainerFeatureID() != RealtimestatechartPackage.REALTIME_STATECHART__PARENT_REGION) return null;
-		return (Region)eInternalContainer();
+	public State getParentState() {
+		if (eContainerFeatureID() != RealtimestatechartPackage.REALTIME_STATECHART__PARENT_STATE) return null;
+		return (State)eInternalContainer();
 	}
 
 	/**
@@ -394,8 +394,8 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetParentRegion(Region newParentRegion, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newParentRegion, RealtimestatechartPackage.REALTIME_STATECHART__PARENT_REGION, msgs);
+	public NotificationChain basicSetParentState(State newParentState, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newParentState, RealtimestatechartPackage.REALTIME_STATECHART__PARENT_STATE, msgs);
 		return msgs;
 	}
 
@@ -404,20 +404,20 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setParentRegion(Region newParentRegion) {
-		if (newParentRegion != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.REALTIME_STATECHART__PARENT_REGION && newParentRegion != null)) {
-			if (EcoreUtil.isAncestor(this, newParentRegion))
+	public void setParentState(State newParentState) {
+		if (newParentState != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.REALTIME_STATECHART__PARENT_STATE && newParentState != null)) {
+			if (EcoreUtil.isAncestor(this, newParentState))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newParentRegion != null)
-				msgs = ((InternalEObject)newParentRegion).eInverseAdd(this, RealtimestatechartPackage.REGION__EMBEDDED_STATECHART, Region.class, msgs);
-			msgs = basicSetParentRegion(newParentRegion, msgs);
+			if (newParentState != null)
+				msgs = ((InternalEObject)newParentState).eInverseAdd(this, RealtimestatechartPackage.STATE__EMBEDDED_STATECHARTS, State.class, msgs);
+			msgs = basicSetParentState(newParentState, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.REALTIME_STATECHART__PARENT_REGION, newParentRegion, newParentRegion));
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.REALTIME_STATECHART__PARENT_STATE, newParentState, newParentState));
 	}
 
 	/**
@@ -649,6 +649,18 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getPriority() {
+		if (getParentState() != null) {
+			return getParentState().getEmbeddedStatecharts().indexOf(this) + 1;
+		}
+		return 1;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -657,10 +669,10 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 				if (behavioralElement != null)
 					msgs = ((InternalEObject)behavioralElement).eInverseRemove(this, BehaviorPackage.BEHAVIORAL_ELEMENT__BEHAVIOR, BehavioralElement.class, msgs);
 				return basicSetBehavioralElement((BehavioralElement)otherEnd, msgs);
-			case RealtimestatechartPackage.REALTIME_STATECHART__PARENT_REGION:
+			case RealtimestatechartPackage.REALTIME_STATECHART__PARENT_STATE:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetParentRegion((Region)otherEnd, msgs);
+				return basicSetParentState((State)otherEnd, msgs);
 			case RealtimestatechartPackage.REALTIME_STATECHART__STATES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getStates()).basicAdd(otherEnd, msgs);
 			case RealtimestatechartPackage.REALTIME_STATECHART__CLOCKS:
@@ -683,8 +695,8 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 				return ((InternalEList<?>)getOperations()).basicRemove(otherEnd, msgs);
 			case RealtimestatechartPackage.REALTIME_STATECHART__VARIABLES:
 				return ((InternalEList<?>)getVariables()).basicRemove(otherEnd, msgs);
-			case RealtimestatechartPackage.REALTIME_STATECHART__PARENT_REGION:
-				return basicSetParentRegion(null, msgs);
+			case RealtimestatechartPackage.REALTIME_STATECHART__PARENT_STATE:
+				return basicSetParentState(null, msgs);
 			case RealtimestatechartPackage.REALTIME_STATECHART__TRANSITIONS:
 				return ((InternalEList<?>)getTransitions()).basicRemove(otherEnd, msgs);
 			case RealtimestatechartPackage.REALTIME_STATECHART__STATES:
@@ -709,8 +721,8 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case RealtimestatechartPackage.REALTIME_STATECHART__PARENT_REGION:
-				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.REGION__EMBEDDED_STATECHART, Region.class, msgs);
+			case RealtimestatechartPackage.REALTIME_STATECHART__PARENT_STATE:
+				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.STATE__EMBEDDED_STATECHARTS, State.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -732,8 +744,8 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 				return getOperations();
 			case RealtimestatechartPackage.REALTIME_STATECHART__VARIABLES:
 				return getVariables();
-			case RealtimestatechartPackage.REALTIME_STATECHART__PARENT_REGION:
-				return getParentRegion();
+			case RealtimestatechartPackage.REALTIME_STATECHART__PARENT_STATE:
+				return getParentState();
 			case RealtimestatechartPackage.REALTIME_STATECHART__TRANSITIONS:
 				return getTransitions();
 			case RealtimestatechartPackage.REALTIME_STATECHART__STATES:
@@ -787,8 +799,8 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 				getVariables().clear();
 				getVariables().addAll((Collection<? extends Variable>)newValue);
 				return;
-			case RealtimestatechartPackage.REALTIME_STATECHART__PARENT_REGION:
-				setParentRegion((Region)newValue);
+			case RealtimestatechartPackage.REALTIME_STATECHART__PARENT_STATE:
+				setParentState((State)newValue);
 				return;
 			case RealtimestatechartPackage.REALTIME_STATECHART__TRANSITIONS:
 				getTransitions().clear();
@@ -845,8 +857,8 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 			case RealtimestatechartPackage.REALTIME_STATECHART__VARIABLES:
 				getVariables().clear();
 				return;
-			case RealtimestatechartPackage.REALTIME_STATECHART__PARENT_REGION:
-				setParentRegion((Region)null);
+			case RealtimestatechartPackage.REALTIME_STATECHART__PARENT_STATE:
+				setParentState((State)null);
 				return;
 			case RealtimestatechartPackage.REALTIME_STATECHART__TRANSITIONS:
 				getTransitions().clear();
@@ -892,8 +904,8 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 				return operations != null && !operations.isEmpty();
 			case RealtimestatechartPackage.REALTIME_STATECHART__VARIABLES:
 				return variables != null && !variables.isEmpty();
-			case RealtimestatechartPackage.REALTIME_STATECHART__PARENT_REGION:
-				return getParentRegion() != null;
+			case RealtimestatechartPackage.REALTIME_STATECHART__PARENT_STATE:
+				return getParentState() != null;
 			case RealtimestatechartPackage.REALTIME_STATECHART__TRANSITIONS:
 				return transitions != null && !transitions.isEmpty();
 			case RealtimestatechartPackage.REALTIME_STATECHART__STATES:
@@ -986,6 +998,8 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 				return getHighestParentStatechart();
 			case RealtimestatechartPackage.REALTIME_STATECHART___GET_PORT_OR_ROLE_STATECHART:
 				return getPortOrRoleStatechart();
+			case RealtimestatechartPackage.REALTIME_STATECHART___GET_PRIORITY:
+				return getPriority();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

@@ -413,25 +413,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	int CLOCK_OPERATION_COUNT = CorePackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.muml.pim.realtimestatechart.impl.RegionImpl <em>Region</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.muml.pim.realtimestatechart.impl.RegionImpl
-	 * @see org.muml.pim.realtimestatechart.impl.RealtimestatechartPackageImpl#getRegion()
-	 * @generated
-	 */
-	int REGION = 4;
-
-	/**
-	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION__EXTENSIONS = CorePackage.COMMENTABLE_ELEMENT__EXTENSIONS;
-
-	/**
 	 * The meta object id for the '{@link org.muml.pim.realtimestatechart.impl.VertexImpl <em>Vertex</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -439,7 +420,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see org.muml.pim.realtimestatechart.impl.RealtimestatechartPackageImpl#getVertex()
 	 * @generated
 	 */
-	int VERTEX = 6;
+	int VERTEX = 5;
 
 	/**
 	 * The meta object id for the '{@link org.muml.pim.realtimestatechart.impl.StateImpl <em>State</em>}' class.
@@ -449,7 +430,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see org.muml.pim.realtimestatechart.impl.RealtimestatechartPackageImpl#getState()
 	 * @generated
 	 */
-	int STATE = 5;
+	int STATE = 4;
 
 	/**
 	 * The meta object id for the '{@link org.muml.pim.realtimestatechart.impl.TransitionImpl <em>Transition</em>}' class.
@@ -459,7 +440,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see org.muml.pim.realtimestatechart.impl.RealtimestatechartPackageImpl#getTransition()
 	 * @generated
 	 */
-	int TRANSITION = 7;
+	int TRANSITION = 6;
 
 	/**
 	 * The meta object id for the '{@link org.muml.pim.realtimestatechart.impl.ClockConstraintImpl <em>Clock Constraint</em>}' class.
@@ -469,7 +450,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see org.muml.pim.realtimestatechart.impl.RealtimestatechartPackageImpl#getClockConstraint()
 	 * @generated
 	 */
-	int CLOCK_CONSTRAINT = 8;
+	int CLOCK_CONSTRAINT = 7;
 
 	/**
 	 * The meta object id for the '{@link org.muml.pim.realtimestatechart.impl.ActionImpl <em>Action</em>}' class.
@@ -479,7 +460,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see org.muml.pim.realtimestatechart.impl.RealtimestatechartPackageImpl#getAction()
 	 * @generated
 	 */
-	int ACTION = 9;
+	int ACTION = 8;
 
 	/**
 	 * The meta object id for the '{@link org.muml.pim.realtimestatechart.impl.AsynchronousMessageEventImpl <em>Asynchronous Message Event</em>}' class.
@@ -489,7 +470,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see org.muml.pim.realtimestatechart.impl.RealtimestatechartPackageImpl#getAsynchronousMessageEvent()
 	 * @generated
 	 */
-	int ASYNCHRONOUS_MESSAGE_EVENT = 10;
+	int ASYNCHRONOUS_MESSAGE_EVENT = 9;
 
 	/**
 	 * The meta object id for the '{@link org.muml.pim.realtimestatechart.impl.EventImpl <em>Event</em>}' class.
@@ -499,7 +480,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see org.muml.pim.realtimestatechart.impl.RealtimestatechartPackageImpl#getEvent()
 	 * @generated
 	 */
-	int EVENT = 16;
+	int EVENT = 15;
 
 	/**
 	 * The meta object id for the '{@link org.muml.pim.realtimestatechart.impl.StateEventImpl <em>State Event</em>}' class.
@@ -509,7 +490,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see org.muml.pim.realtimestatechart.impl.RealtimestatechartPackageImpl#getStateEvent()
 	 * @generated
 	 */
-	int STATE_EVENT = 18;
+	int STATE_EVENT = 17;
 
 	/**
 	 * The meta object id for the '{@link org.muml.pim.realtimestatechart.impl.DoEventImpl <em>Do Event</em>}' class.
@@ -519,7 +500,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see org.muml.pim.realtimestatechart.impl.RealtimestatechartPackageImpl#getDoEvent()
 	 * @generated
 	 */
-	int DO_EVENT = 11;
+	int DO_EVENT = 10;
 
 	/**
 	 * The meta object id for the '{@link org.muml.pim.realtimestatechart.impl.EntryOrExitEventImpl <em>Entry Or Exit Event</em>}' class.
@@ -529,7 +510,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see org.muml.pim.realtimestatechart.impl.RealtimestatechartPackageImpl#getEntryOrExitEvent()
 	 * @generated
 	 */
-	int ENTRY_OR_EXIT_EVENT = 12;
+	int ENTRY_OR_EXIT_EVENT = 11;
 
 	/**
 	 * The meta object id for the '{@link org.muml.pim.realtimestatechart.impl.SynchronizationChannelImpl <em>Synchronization Channel</em>}' class.
@@ -539,7 +520,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see org.muml.pim.realtimestatechart.impl.RealtimestatechartPackageImpl#getSynchronizationChannel()
 	 * @generated
 	 */
-	int SYNCHRONIZATION_CHANNEL = 13;
+	int SYNCHRONIZATION_CHANNEL = 12;
 
 	/**
 	 * The meta object id for the '{@link org.muml.pim.realtimestatechart.impl.SynchronizationImpl <em>Synchronization</em>}' class.
@@ -549,7 +530,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see org.muml.pim.realtimestatechart.impl.RealtimestatechartPackageImpl#getSynchronization()
 	 * @generated
 	 */
-	int SYNCHRONIZATION = 14;
+	int SYNCHRONIZATION = 13;
 
 	/**
 	 * The meta object id for the '{@link org.muml.pim.realtimestatechart.impl.TransitionEventImpl <em>Transition Event</em>}' class.
@@ -559,205 +540,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see org.muml.pim.realtimestatechart.impl.RealtimestatechartPackageImpl#getTransitionEvent()
 	 * @generated
 	 */
-	int TRANSITION_EVENT = 17;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION__COMMENT = CorePackage.COMMENTABLE_ELEMENT__COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Embedded Statechart</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION__EMBEDDED_STATECHART = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Parent State</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION__PARENT_STATE = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION__NAME = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Region</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>EClass</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION___ECLASS = CorePackage.COMMENTABLE_ELEMENT___ECLASS;
-
-	/**
-	 * The operation id for the '<em>EIs Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION___EIS_PROXY = CorePackage.COMMENTABLE_ELEMENT___EIS_PROXY;
-
-	/**
-	 * The operation id for the '<em>EResource</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION___ERESOURCE = CorePackage.COMMENTABLE_ELEMENT___ERESOURCE;
-
-	/**
-	 * The operation id for the '<em>EContainer</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION___ECONTAINER = CorePackage.COMMENTABLE_ELEMENT___ECONTAINER;
-
-	/**
-	 * The operation id for the '<em>EContaining Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION___ECONTAINING_FEATURE = CorePackage.COMMENTABLE_ELEMENT___ECONTAINING_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContainment Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION___ECONTAINMENT_FEATURE = CorePackage.COMMENTABLE_ELEMENT___ECONTAINMENT_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION___ECONTENTS = CorePackage.COMMENTABLE_ELEMENT___ECONTENTS;
-
-	/**
-	 * The operation id for the '<em>EAll Contents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION___EALL_CONTENTS = CorePackage.COMMENTABLE_ELEMENT___EALL_CONTENTS;
-
-	/**
-	 * The operation id for the '<em>ECross References</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION___ECROSS_REFERENCES = CorePackage.COMMENTABLE_ELEMENT___ECROSS_REFERENCES;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION___EGET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
-
-	/**
-	 * The operation id for the '<em>ESet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.COMMENTABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
-
-	/**
-	 * The operation id for the '<em>EIs Set</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION___EIS_SET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EUnset</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION___EUNSET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EInvoke</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION___EINVOKE__EOPERATION_ELIST = CorePackage.COMMENTABLE_ELEMENT___EINVOKE__EOPERATION_ELIST;
-
-	/**
-	 * The operation id for the '<em>Get Extension</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION___GET_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___GET_EXTENSION__ECLASS;
-
-	/**
-	 * The number of operations of the '<em>Region</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION_OPERATION_COUNT = CorePackage.COMMENTABLE_ELEMENT_OPERATION_COUNT + 0;
+	int TRANSITION_EVENT = 16;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -1057,13 +840,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int STATE__ALL_SUPER_VERTICES = VERTEX__ALL_SUPER_VERTICES;
 
 	/**
-	 * The feature id for the '<em><b>Embedded Regions</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Embedded Statecharts</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__EMBEDDED_REGIONS = VERTEX_FEATURE_COUNT + 0;
+	int STATE__EMBEDDED_STATECHARTS = VERTEX_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Do Event</b></em>' containment reference.
@@ -2738,7 +2521,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see org.muml.pim.realtimestatechart.impl.RealtimestatechartPackageImpl#getRealtimeStatechart()
 	 * @generated
 	 */
-	int REALTIME_STATECHART = 15;
+	int REALTIME_STATECHART = 14;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -2795,13 +2578,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int REALTIME_STATECHART__VARIABLES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Parent Region</b></em>' container reference.
+	 * The feature id for the '<em><b>Parent State</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART__PARENT_REGION = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int REALTIME_STATECHART__PARENT_STATE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Transitions</b></em>' containment reference list.
@@ -3101,13 +2884,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int REALTIME_STATECHART___GET_PORT_OR_ROLE_STATECHART = CorePackage.NAMED_ELEMENT_OPERATION_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Get Priority</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REALTIME_STATECHART___GET_PRIORITY = CorePackage.NAMED_ELEMENT_OPERATION_COUNT + 3;
+
+	/**
 	 * The number of operations of the '<em>Realtime Statechart</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART_OPERATION_COUNT = CorePackage.NAMED_ELEMENT_OPERATION_COUNT + 3;
+	int REALTIME_STATECHART_OPERATION_COUNT = CorePackage.NAMED_ELEMENT_OPERATION_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.muml.pim.realtimestatechart.impl.MessageImpl <em>Message</em>}' class.
@@ -3117,7 +2909,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see org.muml.pim.realtimestatechart.impl.RealtimestatechartPackageImpl#getMessage()
 	 * @generated
 	 */
-	int MESSAGE = 19;
+	int MESSAGE = 18;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -3316,7 +3108,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see org.muml.pim.realtimestatechart.impl.RealtimestatechartPackageImpl#getEntryEvent()
 	 * @generated
 	 */
-	int ENTRY_EVENT = 20;
+	int ENTRY_EVENT = 19;
 
 	/**
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
@@ -3371,7 +3163,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see org.muml.pim.realtimestatechart.impl.RealtimestatechartPackageImpl#getExitEvent()
 	 * @generated
 	 */
-	int EXIT_EVENT = 21;
+	int EXIT_EVENT = 20;
 
 	/**
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
@@ -3426,7 +3218,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see org.muml.pim.realtimestatechart.impl.RealtimestatechartPackageImpl#getStateConnectionPoint()
 	 * @generated
 	 */
-	int STATE_CONNECTION_POINT = 22;
+	int STATE_CONNECTION_POINT = 21;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -3688,7 +3480,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see org.muml.pim.realtimestatechart.impl.RealtimestatechartPackageImpl#getEntryPoint()
 	 * @generated
 	 */
-	int ENTRY_POINT = 23;
+	int ENTRY_POINT = 22;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -3950,7 +3742,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see org.muml.pim.realtimestatechart.impl.RealtimestatechartPackageImpl#getExitPoint()
 	 * @generated
 	 */
-	int EXIT_POINT = 24;
+	int EXIT_POINT = 23;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -4212,7 +4004,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see org.muml.pim.realtimestatechart.impl.RealtimestatechartPackageImpl#getSynchronizationKind()
 	 * @generated
 	 */
-	int SYNCHRONIZATION_KIND = 25;
+	int SYNCHRONIZATION_KIND = 24;
 
 	/**
 	 * The meta object id for the '{@link org.muml.pim.realtimestatechart.EventKind <em>Event Kind</em>}' enum.
@@ -4222,7 +4014,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see org.muml.pim.realtimestatechart.impl.RealtimestatechartPackageImpl#getEventKind()
 	 * @generated
 	 */
-	int EVENT_KIND = 26;
+	int EVENT_KIND = 25;
 
 	/**
 	 * Returns the meta object for class '{@link org.muml.pim.realtimestatechart.Deadline <em>Deadline</em>}'.
@@ -4309,49 +4101,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getClock_Statechart();
 
 	/**
-	 * Returns the meta object for class '{@link org.muml.pim.realtimestatechart.Region <em>Region</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Region</em>'.
-	 * @see org.muml.pim.realtimestatechart.Region
-	 * @generated
-	 */
-	EClass getRegion();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.muml.pim.realtimestatechart.Region#getEmbeddedStatechart <em>Embedded Statechart</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Embedded Statechart</em>'.
-	 * @see org.muml.pim.realtimestatechart.Region#getEmbeddedStatechart()
-	 * @see #getRegion()
-	 * @generated
-	 */
-	EReference getRegion_EmbeddedStatechart();
-
-	/**
-	 * Returns the meta object for the container reference '{@link org.muml.pim.realtimestatechart.Region#getParentState <em>Parent State</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Parent State</em>'.
-	 * @see org.muml.pim.realtimestatechart.Region#getParentState()
-	 * @see #getRegion()
-	 * @generated
-	 */
-	EReference getRegion_ParentState();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.muml.pim.realtimestatechart.Region#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see org.muml.pim.realtimestatechart.Region#getName()
-	 * @see #getRegion()
-	 * @generated
-	 */
-	EAttribute getRegion_Name();
-
-	/**
 	 * Returns the meta object for class '{@link org.muml.pim.realtimestatechart.State <em>State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4362,15 +4111,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	EClass getState();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.muml.pim.realtimestatechart.State#getEmbeddedRegions <em>Embedded Regions</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.muml.pim.realtimestatechart.State#getEmbeddedStatecharts <em>Embedded Statecharts</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Embedded Regions</em>'.
-	 * @see org.muml.pim.realtimestatechart.State#getEmbeddedRegions()
+	 * @return the meta object for the containment reference list '<em>Embedded Statecharts</em>'.
+	 * @see org.muml.pim.realtimestatechart.State#getEmbeddedStatecharts()
 	 * @see #getState()
 	 * @generated
 	 */
-	EReference getState_EmbeddedRegions();
+	EReference getState_EmbeddedStatecharts();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.muml.pim.realtimestatechart.State#getDoEvent <em>Do Event</em>}'.
@@ -5051,15 +4800,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	EClass getRealtimeStatechart();
 
 	/**
-	 * Returns the meta object for the container reference '{@link org.muml.pim.realtimestatechart.RealtimeStatechart#getParentRegion <em>Parent Region</em>}'.
+	 * Returns the meta object for the container reference '{@link org.muml.pim.realtimestatechart.RealtimeStatechart#getParentState <em>Parent State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Parent Region</em>'.
-	 * @see org.muml.pim.realtimestatechart.RealtimeStatechart#getParentRegion()
+	 * @return the meta object for the container reference '<em>Parent State</em>'.
+	 * @see org.muml.pim.realtimestatechart.RealtimeStatechart#getParentState()
 	 * @see #getRealtimeStatechart()
 	 * @generated
 	 */
-	EReference getRealtimeStatechart_ParentRegion();
+	EReference getRealtimeStatechart_ParentState();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link org.muml.pim.realtimestatechart.RealtimeStatechart#getTransitions <em>Transitions</em>}'.
@@ -5233,6 +4982,16 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getRealtimeStatechart__GetPortOrRoleStatechart();
+
+	/**
+	 * Returns the meta object for the '{@link org.muml.pim.realtimestatechart.RealtimeStatechart#getPriority() <em>Get Priority</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Priority</em>' operation.
+	 * @see org.muml.pim.realtimestatechart.RealtimeStatechart#getPriority()
+	 * @generated
+	 */
+	EOperation getRealtimeStatechart__GetPriority();
 
 	/**
 	 * Returns the meta object for class '{@link org.muml.pim.realtimestatechart.Event <em>Event</em>}'.
@@ -5483,40 +5242,6 @@ public interface RealtimestatechartPackage extends EPackage {
 		EReference CLOCK__STATECHART = eINSTANCE.getClock_Statechart();
 
 		/**
-		 * The meta object literal for the '{@link org.muml.pim.realtimestatechart.impl.RegionImpl <em>Region</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.muml.pim.realtimestatechart.impl.RegionImpl
-		 * @see org.muml.pim.realtimestatechart.impl.RealtimestatechartPackageImpl#getRegion()
-		 * @generated
-		 */
-		EClass REGION = eINSTANCE.getRegion();
-
-		/**
-		 * The meta object literal for the '<em><b>Embedded Statechart</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference REGION__EMBEDDED_STATECHART = eINSTANCE.getRegion_EmbeddedStatechart();
-
-		/**
-		 * The meta object literal for the '<em><b>Parent State</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference REGION__PARENT_STATE = eINSTANCE.getRegion_ParentState();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute REGION__NAME = eINSTANCE.getRegion_Name();
-
-		/**
 		 * The meta object literal for the '{@link org.muml.pim.realtimestatechart.impl.StateImpl <em>State</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5527,12 +5252,12 @@ public interface RealtimestatechartPackage extends EPackage {
 		EClass STATE = eINSTANCE.getState();
 
 		/**
-		 * The meta object literal for the '<em><b>Embedded Regions</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Embedded Statecharts</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STATE__EMBEDDED_REGIONS = eINSTANCE.getState_EmbeddedRegions();
+		EReference STATE__EMBEDDED_STATECHARTS = eINSTANCE.getState_EmbeddedStatecharts();
 
 		/**
 		 * The meta object literal for the '<em><b>Do Event</b></em>' containment reference feature.
@@ -6059,12 +5784,12 @@ public interface RealtimestatechartPackage extends EPackage {
 		EClass REALTIME_STATECHART = eINSTANCE.getRealtimeStatechart();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent Region</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Parent State</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REALTIME_STATECHART__PARENT_REGION = eINSTANCE.getRealtimeStatechart_ParentRegion();
+		EReference REALTIME_STATECHART__PARENT_STATE = eINSTANCE.getRealtimeStatechart_ParentState();
 
 		/**
 		 * The meta object literal for the '<em><b>Transitions</b></em>' containment reference list feature.
@@ -6193,6 +5918,14 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation REALTIME_STATECHART___GET_PORT_OR_ROLE_STATECHART = eINSTANCE.getRealtimeStatechart__GetPortOrRoleStatechart();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Priority</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation REALTIME_STATECHART___GET_PRIORITY = eINSTANCE.getRealtimeStatechart__GetPriority();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.pim.realtimestatechart.impl.EventImpl <em>Event</em>}' class.

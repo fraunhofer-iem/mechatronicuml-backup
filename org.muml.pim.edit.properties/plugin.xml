@@ -192,11 +192,6 @@
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.pim.properties.realtimestatechart.editor.RegionEditor$Factory"
-             type="http://www.muml.org/pim/realtimestatechart/1.0.0#Region">
-       </propertyEditor>
-    
-       <propertyEditor
              factory="org.muml.pim.properties.realtimestatechart.editor.StateEditor$Factory"
              type="http://www.muml.org/pim/realtimestatechart/1.0.0#State">
        </propertyEditor>

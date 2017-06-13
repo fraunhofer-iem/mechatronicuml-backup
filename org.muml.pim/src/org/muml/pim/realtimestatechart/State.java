@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.muml.pim.realtimestatechart.State#getEmbeddedRegions <em>Embedded Regions</em>}</li>
+ *   <li>{@link org.muml.pim.realtimestatechart.State#getEmbeddedStatecharts <em>Embedded Statecharts</em>}</li>
  *   <li>{@link org.muml.pim.realtimestatechart.State#getDoEvent <em>Do Event</em>}</li>
  *   <li>{@link org.muml.pim.realtimestatechart.State#getExitEvent <em>Exit Event</em>}</li>
  *   <li>{@link org.muml.pim.realtimestatechart.State#getEntryEvent <em>Entry Event</em>}</li>
@@ -39,28 +39,28 @@ import org.eclipse.emf.common.util.EList;
  *
  * @see org.muml.pim.realtimestatechart.RealtimestatechartPackage#getState()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='NoOutgoingTransitionOfFinalState NoRegionsOfFinalState UniquePrioritiesOfOutgoingTransitions UniquePrioritiesOfRegions UniqueChannelNames UniqueRegionNames InvalidClockConstraintOperator UniqueStateConnectionPointNames EntryEventAtInitialState'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL NoOutgoingTransitionOfFinalState='-- Final states must not have outgoing transitions\nself.final implies self.outgoingTransitions->isEmpty()' NoRegionsOfFinalState='-- Final states must not have regions\nself.final implies self.embeddedRegions->isEmpty()' UniquePrioritiesOfOutgoingTransitions='-- Outgoing transitions must have a unique priority\nself.outgoingTransitions->isUnique(priority) ' UniquePrioritiesOfRegions='-- Regions must have a unique priority\nself.embeddedRegions->isUnique(priority)' UniqueChannelNames='-- Synchronization channels must have a unique name\nself.channels->isUnique(name)' UniqueRegionNames='-- Regions must have a unique name\nself.embeddedRegions->isUnique(name)' InvalidClockConstraintOperator='-- Clock Constraints must only use operators LESS and LESS_OR_EQUAL\nself.invariants->forAll(invariant | Set{core::expressions::common::ComparingOperator::LESS, core::expressions::common::ComparingOperator::LESS_OR_EQUAL }->includes(invariant.operator))' UniqueStateConnectionPointNames='-- State Connection Points of a composite state must have unique names.\r\nself.connectionPoints->isUnique(name)' EntryEventAtInitialState='-- @warning\n-- Attention: An initial state only executes its entry event if it is activated via a firing transition. Consequently, if the RTSC starts, its initial states do not execute their entry events (their entry actions and their clock resets). Noteworthy, this only affects initial states that have no parent states and initial states where all their parents are initial states.\nlet allParentStates : Set(State) = self -> closure(if parentStatechart.parentRegion.oclIsUndefined() then self else parentStatechart.parentRegion.parentState endif) in\nnot (self.initial and allParentStates->forAll(x | x.initial) and not self.entryEvent.oclIsUndefined())'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL NoOutgoingTransitionOfFinalState='-- Final states must not have outgoing transitions\nself.final implies self.outgoingTransitions->isEmpty()' NoRegionsOfFinalState='-- Final states must not have regions\nself.final implies self.embeddedStatecharts->isEmpty()' UniquePrioritiesOfOutgoingTransitions='-- Outgoing transitions must have a unique priority\nself.outgoingTransitions->isUnique(priority) ' UniqueChannelNames='-- Synchronization channels must have a unique name\nself.channels->isUnique(name)' UniqueRegionNames='-- Regions must have a unique name\nself.embeddedStatecharts->isUnique(name)' InvalidClockConstraintOperator='-- Clock Constraints must only use operators LESS and LESS_OR_EQUAL\nself.invariants->forAll(invariant | Set{core::expressions::common::ComparingOperator::LESS, core::expressions::common::ComparingOperator::LESS_OR_EQUAL }->includes(invariant.operator))' UniqueStateConnectionPointNames='-- State Connection Points of a composite state must have unique names.\r\nself.connectionPoints->isUnique(name)' EntryEventAtInitialState='-- @warning\n-- Attention: An initial state only executes its entry event if it is activated via a firing transition. Consequently, if the RTSC starts, its initial states do not execute their entry events (their entry actions and their clock resets). Noteworthy, this only affects initial states that have no parent states and initial states where all their parents are initial states.\nlet allParentStates : Set(State) = self -> closure(if parentStatechart.parentRegion.oclIsUndefined() then self else parentStatechart.parentRegion.parentState endif) in\nnot (self.initial and allParentStates->forAll(x | x.initial) and not self.entryEvent.oclIsUndefined())'"
  * @generated
  */
 public interface State extends Vertex {
 	/**
-	 * Returns the value of the '<em><b>Embedded Regions</b></em>' containment reference list.
-	 * The list contents are of type {@link org.muml.pim.realtimestatechart.Region}.
-	 * It is bidirectional and its opposite is '{@link org.muml.pim.realtimestatechart.Region#getParentState <em>Parent State</em>}'.
+	 * Returns the value of the '<em><b>Embedded Statecharts</b></em>' containment reference list.
+	 * The list contents are of type {@link org.muml.pim.realtimestatechart.RealtimeStatechart}.
+	 * It is bidirectional and its opposite is '{@link org.muml.pim.realtimestatechart.RealtimeStatechart#getParentState <em>Parent State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The regions of this state. Regions are used to model composite states.
-	 * In case of one region, we have an xor superstate, in case of multiple regions, 
+	 * The embedded statecharts of this state. They are used to model composite states.
+	 * In case of one region, we have an xor superstate, in case of multiple statecharts, 
 	 * we have an AND-superstate.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Embedded Regions</em>' containment reference list.
-	 * @see org.muml.pim.realtimestatechart.RealtimestatechartPackage#getState_EmbeddedRegions()
-	 * @see org.muml.pim.realtimestatechart.Region#getParentState
+	 * @return the value of the '<em>Embedded Statecharts</em>' containment reference list.
+	 * @see org.muml.pim.realtimestatechart.RealtimestatechartPackage#getState_EmbeddedStatecharts()
+	 * @see org.muml.pim.realtimestatechart.RealtimeStatechart#getParentState
 	 * @model opposite="parentState" containment="true"
 	 * @generated
 	 */
-	EList<Region> getEmbeddedRegions();
+	EList<RealtimeStatechart> getEmbeddedStatecharts();
 
 	/**
 	 * Returns the value of the '<em><b>Do Event</b></em>' containment reference.
@@ -219,7 +219,7 @@ public interface State extends Vertex {
 	 * @see #isSetSimple()
 	 * @see org.muml.pim.realtimestatechart.RealtimestatechartPackage#getState_Simple()
 	 * @model default="true" unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='-- a state is simple if it contains no regions\r\nembeddedRegions->isEmpty()\r\n'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='-- a state is simple if it contains no regions\r\nembeddedStatecharts->isEmpty()\r\n'"
 	 * @generated
 	 */
 	boolean isSimple();
@@ -277,7 +277,7 @@ public interface State extends Vertex {
 	 * @return the value of the '<em>All Available Channels</em>' reference list.
 	 * @see org.muml.pim.realtimestatechart.RealtimestatechartPackage#getState_AllAvailableChannels()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self -> closure(if parentStatechart.parentRegion.oclIsUndefined() then self else parentStatechart.parentRegion.parentState endif).channels ->asOrderedSet()'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self -> closure(if parentStatechart.parentState.oclIsUndefined() then self else parentStatechart.parentState endif).channels ->asOrderedSet()'"
 	 * @generated
 	 */
 	EList<SynchronizationChannel> getAllAvailableChannels();
@@ -301,7 +301,7 @@ public interface State extends Vertex {
 	 * Returns true, if this state contains a region of the given priority.
 	 * @param priority The priority value to be checked.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for (Region region : getEmbeddedRegions()) {\r\n\tif (region.getPriority() == priority) {\r\n\t\treturn true;\r\n\t}\r\n}\r\nreturn false;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for (RealtimeStatechart statechart : getEmbeddedStatecharts()) {\r\n\tif (statechart.getPriority() == priority) {\r\n\t\treturn true;\r\n\t}\r\n}\r\nreturn false;'"
 	 * @generated
 	 */
 	boolean hasRegionOfPriority(int priority);

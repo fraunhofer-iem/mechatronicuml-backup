@@ -30,7 +30,6 @@ import org.muml.pim.realtimestatechart.ExitPoint;
 import org.muml.pim.realtimestatechart.Message;
 import org.muml.pim.realtimestatechart.RealtimeStatechart;
 import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
-import org.muml.pim.realtimestatechart.Region;
 import org.muml.pim.realtimestatechart.RelativeDeadline;
 import org.muml.pim.realtimestatechart.State;
 import org.muml.pim.realtimestatechart.StateConnectionPoint;
@@ -112,10 +111,6 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseClock(Clock object) {
 				return createClockAdapter();
-			}
-			@Override
-			public Adapter caseRegion(Region object) {
-				return createRegionAdapter();
 			}
 			@Override
 			public Adapter caseState(State object) {
@@ -286,20 +281,6 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createClockAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.muml.pim.realtimestatechart.Region <em>Region</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.muml.pim.realtimestatechart.Region
-	 * @generated
-	 */
-	public Adapter createRegionAdapter() {
 		return null;
 	}
 

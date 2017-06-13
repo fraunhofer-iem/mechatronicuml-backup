@@ -135,13 +135,8 @@
       <genClasses ecoreClass="pim.ecore#//realtimestatechart/Clock">
         <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/Clock/statechart"/>
       </genClasses>
-      <genClasses ecoreClass="pim.ecore#//realtimestatechart/Region">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/Region/embeddedStatechart"/>
-        <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/Region/parentState"/>
-        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//realtimestatechart/Region/name"/>
-      </genClasses>
       <genClasses ecoreClass="pim.ecore#//realtimestatechart/State">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/State/embeddedRegions"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/State/embeddedStatecharts"/>
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/State/doEvent"/>
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/State/exitEvent"/>
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/State/entryEvent"/>
@@ -242,7 +237,7 @@
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/Synchronization/selectorExpression"/>
       </genClasses>
       <genClasses ecoreClass="pim.ecore#//realtimestatechart/RealtimeStatechart">
-        <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/RealtimeStatechart/parentRegion"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/RealtimeStatechart/parentState"/>
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/RealtimeStatechart/transitions"/>
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/RealtimeStatechart/states"/>
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/RealtimeStatechart/clocks"/>
@@ -262,6 +257,7 @@
         </genOperations>
         <genOperations ecoreOperation="pim.ecore#//realtimestatechart/RealtimeStatechart/getHighestParentStatechart"/>
         <genOperations ecoreOperation="pim.ecore#//realtimestatechart/RealtimeStatechart/getPortOrRoleStatechart"/>
+        <genOperations ecoreOperation="pim.ecore#//realtimestatechart/RealtimeStatechart/getPriority"/>
       </genClasses>
       <genClasses image="false" ecoreClass="pim.ecore#//realtimestatechart/Event">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//realtimestatechart/Event/kind"/>

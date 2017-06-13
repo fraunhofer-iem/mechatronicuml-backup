@@ -30,7 +30,6 @@ import org.muml.pim.realtimestatechart.ExitPoint;
 import org.muml.pim.realtimestatechart.Message;
 import org.muml.pim.realtimestatechart.RealtimeStatechart;
 import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
-import org.muml.pim.realtimestatechart.Region;
 import org.muml.pim.realtimestatechart.RelativeDeadline;
 import org.muml.pim.realtimestatechart.State;
 import org.muml.pim.realtimestatechart.StateConnectionPoint;
@@ -122,8 +121,6 @@ public class RealtimestatechartValidator extends MumlValidator {
 				return validateRelativeDeadline((RelativeDeadline)value, diagnostics, context);
 			case RealtimestatechartPackage.CLOCK:
 				return validateClock((Clock)value, diagnostics, context);
-			case RealtimestatechartPackage.REGION:
-				return validateRegion((Region)value, diagnostics, context);
 			case RealtimestatechartPackage.STATE:
 				return validateState((State)value, diagnostics, context);
 			case RealtimestatechartPackage.VERTEX:
@@ -214,15 +211,6 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateRegion(Region region, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(region, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateState(State state, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (!validate_NoCircularContainment(state, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(state, diagnostics, context);
@@ -282,7 +270,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * @generated
 	 */
 	protected static final String STATE__NO_REGIONS_OF_FINAL_STATE__EEXPRESSION = "-- Final states must not have regions\n" +
-		"self.final implies self.embeddedRegions->isEmpty()";
+		"self.final implies self.embeddedStatecharts->isEmpty()";
 
 	/**
 	 * Validates the NoRegionsOfFinalState constraint of '<em>State</em>'.
@@ -336,33 +324,31 @@ public class RealtimestatechartValidator extends MumlValidator {
 	}
 
 	/**
-	 * The cached validation expression for the UniquePrioritiesOfRegions constraint of '<em>State</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String STATE__UNIQUE_PRIORITIES_OF_REGIONS__EEXPRESSION = "-- Regions must have a unique priority\n" +
-		"self.embeddedRegions->isUnique(priority)";
-
-	/**
 	 * Validates the UniquePrioritiesOfRegions constraint of '<em>State</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateState_UniquePrioritiesOfRegions(State state, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(RealtimestatechartPackage.Literals.STATE,
-				 state,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "UniquePrioritiesOfRegions",
-				 STATE__UNIQUE_PRIORITIES_OF_REGIONS__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		// TODO implement the constraint
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "UniquePrioritiesOfRegions", getObjectLabel(state, context) },
+						 new Object[] { state },
+						 context));
+			}
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -402,7 +388,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * @generated
 	 */
 	protected static final String STATE__UNIQUE_REGION_NAMES__EEXPRESSION = "-- Regions must have a unique name\n" +
-		"self.embeddedRegions->isUnique(name)";
+		"self.embeddedStatecharts->isUnique(name)";
 
 	/**
 	 * Validates the UniqueRegionNames constraint of '<em>State</em>'.
@@ -1579,7 +1565,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 		"if(self.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).coordinatorBehavior.oclIsInvalid())\r\n" +
 		"then true else \r\n" +
 		"(self.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).coordinatorBehavior = self )implies (\r\n" +
-		"let allChildrenStatecharts: Set(realtimestatechart::RealtimeStatechart) = self->closure(t|t.oclAsType(realtimestatechart::RealtimeStatechart).states.embeddedRegions.embeddedStatechart) in \r\n" +
+		"let allChildrenStatecharts: Set(realtimestatechart::RealtimeStatechart) = self->closure(t|t.oclAsType(realtimestatechart::RealtimeStatechart).states.embeddedStatecharts) in \r\n" +
 		"let allTransitions : Bag(realtimestatechart::Transition) = allChildrenStatecharts.transitions->union(self.transitions) in\r\n" +
 		"allTransitions->select(t| not t.triggerMessageEvent.oclIsUndefined() or not t.raiseMessageEvent.oclIsUndefined())->isEmpty()\r\n" +
 		")\r\n" +
@@ -1615,8 +1601,8 @@ public class RealtimestatechartValidator extends MumlValidator {
 	protected static final String REALTIME_STATECHART__MULTI_DISCRETE_INTERACTION_ENDPOINT_BEHAVIOR_STATECHART_MUST_BE_WELL_FORMED__EEXPRESSION = "-- If a multi port or multi role RTSC does not use one-to-many communication schemata, then it must contain exactly one state and no transitions on top-level. Furthermore, the top level state defines exactly two regions: one region defines the DiscreteInteractionEndpoint.coordinatorBehavior, the other one defines the DiscreteInteractionEndpoint.subRoleBehavior.\r\n" +
 		"let behavioralElement : behavior::BehavioralElement = self.behavioralElement in \r\n" +
 		"(not behavioralElement.oclIsUndefined() and behavioralElement.oclIsKindOf(connector::DiscreteInteractionEndpoint) and behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).multi and not self.usesOneToManyCommunicationSchemata) implies ( self.states->size() = 1 \r\n" +
-		"and self.transitions->size() = 0 and self.states->at(1).embeddedRegions->size() = 2 and \r\n" +
-		"self.states->at(1).embeddedRegions.embeddedStatechart->includes(behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).subroleBehavior) and self.states->at(1).embeddedRegions.embeddedStatechart->includes(behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).coordinatorBehavior) \r\n" +
+		"and self.transitions->size() = 0 and self.states->at(1).embeddedStatecharts->size() = 2 and \r\n" +
+		"self.states->at(1).embeddedStatecharts->includes(behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).subroleBehavior) and self.states->at(1).embeddedStatecharts->includes(behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).coordinatorBehavior) \r\n" +
 		")\r\n" +
 		"\r\n" +
 		"\r\n" +
@@ -1808,11 +1794,11 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * @generated
 	 */
 	protected static final String ENTRY_POINT__ONE_OUTGOING_TRANSITION_PER_REGION__EEXPRESSION = "-- all regions of the parent state must have exactly one vertex that the EntryPoint connects to\r\n" +
-		"(not self.state.oclIsUndefined()) implies self.state.embeddedRegions->forAll(r |\r\n" +
+		"(not self.state.oclIsUndefined()) implies self.state.embeddedStatecharts->forAll(r |\r\n" +
 		"\tself.outgoingTransitions->one(t |\r\n" +
-		"\t\t(t.target.oclIsKindOf(State) and t.target.oclAsType(State).parentStatechart.parentRegion = r)\r\n" +
+		"\t\t(t.target.oclIsKindOf(State) and t.target.oclAsType(State).parentStatechart = r)\r\n" +
 		"\t\tor\r\n" +
-		"\t\t(t.target.oclIsKindOf(EntryPoint) and t.target.oclAsType(EntryPoint).state.parentStatechart.parentRegion = r)\r\n" +
+		"\t\t(t.target.oclIsKindOf(EntryPoint) and t.target.oclAsType(EntryPoint).state.parentStatechart = r)\r\n" +
 		"\t)\r\n" +
 		")";
 
@@ -1867,11 +1853,11 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * @generated
 	 */
 	protected static final String EXIT_POINT__AT_LEAST_ONE_INCOMING_TRANSITION_PER_REGION__EEXPRESSION = "-- all regions of the parent state must have at least one vertex that connects to the ExitPoint\r\n" +
-		"(not self.state.oclIsUndefined()) implies self.state.embeddedRegions->forAll(r |\r\n" +
+		"(not self.state.oclIsUndefined()) implies self.state.embeddedStatecharts->forAll(r |\r\n" +
 		"\tself.incomingTransitions->exists(t |\r\n" +
-		"\t\t(t.source.oclIsKindOf(State) and t.source.oclAsType(State).parentStatechart.parentRegion = r)\r\n" +
+		"\t\t(t.source.oclIsKindOf(State) and t.source.oclAsType(State).parentStatechart = r)\r\n" +
 		"\t\tor\r\n" +
-		"\t\t(t.source.oclIsKindOf(ExitPoint) and t.source.oclAsType(ExitPoint).state.parentStatechart.parentRegion = r)\r\n" +
+		"\t\t(t.source.oclIsKindOf(ExitPoint) and t.source.oclAsType(ExitPoint).state.parentStatechart = r)\r\n" +
 		"\t)\r\n" +
 		")";
 

@@ -143,29 +143,6 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.muml.pim.realtimestatechart.Region} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RegionItemProvider regionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.muml.pim.realtimestatechart.Region}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createRegionAdapter() {
-		if (regionItemProvider == null) {
-			regionItemProvider = new RegionItemProvider(this);
-		}
-
-		return regionItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link org.muml.pim.realtimestatechart.State} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -589,7 +566,6 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 		if (absoluteDeadlineItemProvider != null) absoluteDeadlineItemProvider.dispose();
 		if (relativeDeadlineItemProvider != null) relativeDeadlineItemProvider.dispose();
 		if (clockItemProvider != null) clockItemProvider.dispose();
-		if (regionItemProvider != null) regionItemProvider.dispose();
 		if (stateItemProvider != null) stateItemProvider.dispose();
 		if (transitionItemProvider != null) transitionItemProvider.dispose();
 		if (clockConstraintItemProvider != null) clockConstraintItemProvider.dispose();

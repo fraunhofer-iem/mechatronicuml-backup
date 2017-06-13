@@ -27,7 +27,6 @@ import org.muml.pim.realtimestatechart.Message;
 import org.muml.pim.realtimestatechart.RealtimeStatechart;
 import org.muml.pim.realtimestatechart.RealtimestatechartFactory;
 import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
-import org.muml.pim.realtimestatechart.Region;
 import org.muml.pim.realtimestatechart.RelativeDeadline;
 import org.muml.pim.realtimestatechart.State;
 import org.muml.pim.realtimestatechart.Synchronization;
@@ -82,7 +81,6 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 			case RealtimestatechartPackage.ABSOLUTE_DEADLINE: return createAbsoluteDeadline();
 			case RealtimestatechartPackage.RELATIVE_DEADLINE: return createRelativeDeadline();
 			case RealtimestatechartPackage.CLOCK: return createClock();
-			case RealtimestatechartPackage.REGION: return createRegion();
 			case RealtimestatechartPackage.STATE: return createState();
 			case RealtimestatechartPackage.TRANSITION: return createTransition();
 			case RealtimestatechartPackage.CLOCK_CONSTRAINT: return createClockConstraint();
@@ -164,16 +162,6 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	public Clock createClock() {
 		ClockImpl clock = new ClockImpl();
 		return clock;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Region createRegion() {
-		RegionImpl region = new RegionImpl();
-		return region;
 	}
 
 	/**
