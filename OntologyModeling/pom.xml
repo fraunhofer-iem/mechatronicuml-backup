@@ -18,7 +18,6 @@
     
   <modules>
     <module>org.muml.ontology</module>
-    <!--<module>org.muml.ontology.buckminster</module> -->
     <module>org.muml.ontology.edit</module>
     <module>org.muml.ontology.edit.properties</module>
     <module>org.muml.ontology.feature</module>
@@ -132,6 +131,11 @@
 			<id>PIM</id>
 			<layout>p2</layout>
 			<url>${repobase}/PlatformIndependentModeling-Maven/${repopath}org.muml.pim.repository/target/repository</url>
+		</repository>
+	  	<repository>
+			<id>ImplicitCopy</id>
+			<layout>p2</layout>
+			<url>${repobase}/ImplicitCopy-Maven/${repopath}org.muml.implicitcopy.repository/target/repository</url>
 		</repository>
 		<repository>
 			<id>ExternalDependencies</id>

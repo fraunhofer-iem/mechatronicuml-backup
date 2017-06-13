@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.muml.ontology.feature" label="%featureName" provider-name="%providerName" version="1.0.0.qualifier">
 
-   <description url="http://www.example.com/description">
-      [Enter Feature Description here.]
+   <description>
+      Ontology Modeling
    </description>
 
    <copyright url="%copyrightURL">
@@ -15,8 +15,6 @@
    <requires>
       <import feature="org.muml.pim.feature" version="0.5.0.qualifier"/>
       <import feature="org.muml.core.feature" version="0.5.0.qualifier"/>
-      <import feature="org.muml.external.owlapi.feature" version="4.0.0.qualifier"/>
-      <import feature="org.muml.external.unitontology.feature" version="4.0.0.qualifier"/>
       <import feature="org.muml.ape.feature" version="0.5.0.qualifier"/>
       <import feature="org.muml.emm.feature" version="0.1.0.qualifier"/>
    </requires>
