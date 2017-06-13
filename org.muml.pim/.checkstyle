@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<fileset-config file-format-version="1.2.0" simple-config="true" sync-formatter="false">
+  <fileset name="all" enabled="true" check-config-name="Fujaba Common Checkstyle Config" local="false">
+    <file-match-pattern match-pattern="." include-pattern="true"/>
+  </fileset>
+  <filter name="FilesFromPackage" enabled="true">
+    <filter-data value="src/de/uni_paderborn/fujaba/muml/model/component"/>
+    <filter-data value="src/de/uni_paderborn/fujaba/muml/model/component/util"/>
+    <filter-data value="src/de/uni_paderborn/fujaba/muml/model/constraint"/>
+    <filter-data value="src/de/uni_paderborn/fujaba/muml/model/constraint/util"/>
+    <filter-data value="src/de/uni_paderborn/fujaba/muml/model/core"/>
+    <filter-data value="src/de/uni_paderborn/fujaba/muml/model/core/util"/>
+    <filter-data value="src/de/uni_paderborn/fujaba/muml/model/instance"/>
+    <filter-data value="src/de/uni_paderborn/fujaba/muml/model/instance/util"/>
+    <filter-data value="src/de/uni_paderborn/fujaba/muml/model/msgiface"/>
+    <filter-data value="src/de/uni_paderborn/fujaba/muml/model/msgiface/util"/>
+    <filter-data value="src/de/uni_paderborn/fujaba/muml/model/pattern"/>
+    <filter-data value="src/de/uni_paderborn/fujaba/muml/model/pattern/util"/>
+    <filter-data value="src/de/uni_paderborn/fujaba/muml/model/realtimestatechart"/>
+    <filter-data value="src/de/uni_paderborn/fujaba/muml/model/realtimestatechart/helper"/>
+    <filter-data value="src/de/uni_paderborn/fujaba/muml/model/realtimestatechart/util"/>
+    <filter-data value="&lt;recurse=false&gt;"/>
+  </filter>
+</fileset-config>

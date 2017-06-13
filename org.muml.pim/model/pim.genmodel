@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="&lt;copyright>&#xD;&#xA;Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.&#xD;&#xA;All rights reserved. This program and the accompanying materials&#xD;&#xA;are made available under the terms of the Eclipse Public License v1.0&#xD;&#xA;which accompanies this distribution, and is available at&#xD;&#xA;http://www.eclipse.org/legal/epl-v10.html&#xD;&#xA;&#xD;&#xA;Contributors:&#xD;&#xA;    Software Engineering Group - initial API and implementation&#xD;&#xA;&lt;/copyright>"
+    modelDirectory="/org.muml.pim/src" modelPluginID="org.muml.pim" modelName="Muml"
+    testsDirectory="/org.muml.pim.modeltests/src" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false" testsPluginID="org.muml.pim.modeltests"
+    language="" usedGenPackages="../../org.muml.core/model/core.genmodel#//core platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>pim.ecore</foreignModel>
+  <genPackages prefix="Pim" basePackage="org.muml" disposableProviderFactory="true"
+      ecorePackage="pim.ecore#/">
+    <genClasses ecoreClass="pim.ecore#//Test"/>
+    <nestedGenPackages prefix="Constraint" basePackage="org.muml.pim" disposableProviderFactory="true"
+        ecorePackage="pim.ecore#//constraint">
+      <genClasses image="false" ecoreClass="pim.ecore#//constraint/VerificationConstraintRepository"/>
+      <genClasses image="false" ecoreClass="pim.ecore#//constraint/VerifiableElement">
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//constraint/VerifiableElement/verificationConstraintRepositories"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Instance" basePackage="org.muml.pim" disposableProviderFactory="true"
+        ecorePackage="pim.ecore#//instance">
+      <genClasses ecoreClass="pim.ecore#//instance/ComponentInstance">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//instance/ComponentInstance/componentType"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//instance/ComponentInstance/portInstances"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//instance/ComponentInstance/componentPart"/>
+        <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//instance/ComponentInstance/parentCIC"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//instance/ComponentInstance/topLevel"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//instance/ComponentInstance/runnables"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//instance/ComponentInstance/labels"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="pim.ecore#//instance/PortConnectorInstance">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//instance/PortConnectorInstance/portConnectorType"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//instance/PortConnectorInstance/portInstances"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//instance/PortInstance">
+        <genFeatures property="None" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//instance/PortInstance/portType"/>
+        <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//instance/PortInstance/componentInstance"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//instance/PortInstance/portConnectorInstances"/>
+        <genFeatures property="Readonly" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//instance/PortInstance/portPart"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//instance/PortInstance/runnable"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//instance/AssemblyConnectorInstance">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//instance/AssemblyConnectorInstance/assemblyConnectorType"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//instance/AssemblyConnectorInstance/connectorQualityOfServiceAssumptions"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//instance/DelegationConnectorInstance">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//instance/DelegationConnectorInstance/delegationConnectorType"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//instance/ComponentInstanceConfiguration">
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//instance/ComponentInstanceConfiguration/componentInstances"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//instance/ComponentInstanceConfiguration/portConnectorInstances"/>
+        <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//instance/ComponentInstanceConfiguration/parentPortInstances"/>
+        <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//instance/ComponentInstanceConfiguration/parentStructuredComponentInstance"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//instance/ComponentInstanceConfiguration/coordinationProtocolInstances"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//instance/ContinuousPortInstance"/>
+      <genClasses ecoreClass="pim.ecore#//instance/HybridPortInstance"/>
+      <genClasses image="false" ecoreClass="pim.ecore#//instance/DiscretePortInstance">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//instance/DiscretePortInstance/receiverMessageTypes"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//instance/DiscretePortInstance/senderMessageTypes"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//instance/DiscretePortInstance/receiverMessageBuffer"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//instance/DiscretePortInstance/refinedRole"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//instance/DiscreteSinglePortInstance"/>
+      <genClasses ecoreClass="pim.ecore#//instance/DiscreteMultiPortInstance">
+        <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//instance/DiscreteMultiPortInstance/gmfSubPortInstances"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//instance/CoordinationProtocolInstance">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//instance/CoordinationProtocolInstance/portInstances"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//instance/CoordinationProtocolInstance/coordinationProtocolPart"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//instance/CoordinationProtocolInstance/coordinationProtocol"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//instance/StructuredComponentInstance">
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//instance/StructuredComponentInstance/embeddedCIC"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//instance/AtomicComponentInstance"/>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Protocol" basePackage="org.muml.pim" disposableProviderFactory="true"
+        ecorePackage="pim.ecore#//protocol">
+      <genClasses image="false" ecoreClass="pim.ecore#//protocol/AbstractCoordinationSpecification">
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//protocol/AbstractCoordinationSpecification/roles"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//protocol/AbstractCoordinationSpecification/roleConnector"/>
+        <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//protocol/AbstractCoordinationSpecification/gmfAbstractCoordinationSpecification"/>
+        <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//protocol/AbstractCoordinationSpecification/gmfMessageBuffers"/>
+        <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//protocol/AbstractCoordinationSpecification/gmfConnectorQualityOfServiceAssumptions"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//protocol/AbstractCoordinationSpecification/adaptedFromPattern"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//protocol/CoordinationProtocol"/>
+      <genClasses ecoreClass="pim.ecore#//protocol/Role">
+        <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//protocol/Role/coordinationProtocol"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//protocol/Role/roleConnector"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//protocol/Role/multiRole"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//protocol/RoleConnector">
+        <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//protocol/RoleConnector/coordinationProtocol"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//protocol/RoleConnector/connectorQualityOfServiceAssumptions"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//protocol/RoleConnector/roles"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//protocol/ConnectorQualityOfServiceAssumptions">
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//protocol/ConnectorQualityOfServiceAssumptions/maxMessageDelay"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//protocol/ConnectorQualityOfServiceAssumptions/messageLossPossible"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//protocol/ConnectorQualityOfServiceAssumptions/preserveMessageOrder"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Realtimestatechart" basePackage="org.muml.pim" disposableProviderFactory="true"
+        ecorePackage="pim.ecore#//realtimestatechart">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="pim.ecore#//realtimestatechart/SynchronizationKind">
+        <genEnumLiterals ecoreEnumLiteral="pim.ecore#//realtimestatechart/SynchronizationKind/SEND"/>
+        <genEnumLiterals ecoreEnumLiteral="pim.ecore#//realtimestatechart/SynchronizationKind/RECEIVE"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="pim.ecore#//realtimestatechart/EventKind">
+        <genEnumLiterals ecoreEnumLiteral="pim.ecore#//realtimestatechart/EventKind/RAISE"/>
+        <genEnumLiterals ecoreEnumLiteral="pim.ecore#//realtimestatechart/EventKind/TRIGGER"/>
+      </genEnums>
+      <genClasses image="false" ecoreClass="pim.ecore#//realtimestatechart/Deadline">
+        <genFeatures children="true" createChild="true" propertyCategory="" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/Deadline/upperBound"/>
+        <genFeatures children="true" createChild="true" propertyCategory="" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/Deadline/lowerBound"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//realtimestatechart/AbsoluteDeadline">
+        <genFeatures notify="false" createChild="false" propertyCategory="" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/AbsoluteDeadline/clock"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//realtimestatechart/RelativeDeadline"/>
+      <genClasses ecoreClass="pim.ecore#//realtimestatechart/Clock">
+        <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/Clock/statechart"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//realtimestatechart/Region">
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/Region/embeddedStatechart"/>
+        <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/Region/parentState"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//realtimestatechart/Region/name"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//realtimestatechart/State">
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/State/embeddedRegions"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/State/doEvent"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/State/exitEvent"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/State/entryEvent"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/State/invariants"/>
+        <genFeatures createChild="false" propertyCategory="General" ecoreFeature="ecore:EAttribute pim.ecore#//realtimestatechart/State/initial"/>
+        <genFeatures createChild="false" propertyCategory="General" ecoreFeature="ecore:EAttribute pim.ecore#//realtimestatechart/State/final"/>
+        <genFeatures createChild="false" propertyCategory="" ecoreFeature="ecore:EAttribute pim.ecore#//realtimestatechart/State/urgent"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/State/channels"/>
+        <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/State/events"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/State/connectionPoints"/>
+        <genFeatures property="Readonly" createChild="false" propertyCategory="" ecoreFeature="ecore:EAttribute pim.ecore#//realtimestatechart/State/simple"/>
+        <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/State/parentStatechart"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/State/allAvailableChannels"/>
+        <genOperations ecoreOperation="pim.ecore#//realtimestatechart/State/getUniqueRegionPriority">
+          <genParameters ecoreParameter="pim.ecore#//realtimestatechart/State/getUniqueRegionPriority/hint"/>
+        </genOperations>
+        <genOperations ecoreOperation="pim.ecore#//realtimestatechart/State/hasRegionOfPriority">
+          <genParameters ecoreParameter="pim.ecore#//realtimestatechart/State/hasRegionOfPriority/priority"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="pim.ecore#//realtimestatechart/Vertex">
+        <genFeatures notify="false" createChild="false" propertyCategory="Transitions"
+            propertySortChoices="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/Vertex/outgoingTransitions"/>
+        <genFeatures notify="false" createChild="false" propertyCategory="Transitions"
+            propertySortChoices="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/Vertex/incomingTransitions"/>
+        <genFeatures property="Readonly" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/Vertex/allSuperVertices"/>
+        <genOperations ecoreOperation="pim.ecore#//realtimestatechart/Vertex/isSuperVertexOf">
+          <genParameters ecoreParameter="pim.ecore#//realtimestatechart/Vertex/isSuperVertexOf/vertex"/>
+        </genOperations>
+        <genOperations ecoreOperation="pim.ecore#//realtimestatechart/Vertex/getUniqueTransitionPriority">
+          <genParameters ecoreParameter="pim.ecore#//realtimestatechart/Vertex/getUniqueTransitionPriority/hint"/>
+        </genOperations>
+        <genOperations ecoreOperation="pim.ecore#//realtimestatechart/Vertex/hasOutgoingTransitionOfPriority">
+          <genParameters ecoreParameter="pim.ecore#//realtimestatechart/Vertex/hasOutgoingTransitionOfPriority/priority"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//realtimestatechart/Transition">
+        <genFeatures children="true" createChild="true" propertyCategory="Synchronization"
+            ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/Transition/synchronization"/>
+        <genFeatures notify="false" createChild="false" propertyCategory="" propertyDescription=""
+            propertySortChoices="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/Transition/target"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/Transition/source"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/Transition/statechart"/>
+        <genFeatures notify="false" createChild="false" propertyCategory="Clock" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/Transition/clockResets"/>
+        <genFeatures property="Readonly" createChild="false" propertyCategory="" propertyDescription=""
+            propertySortChoices="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/Transition/triggerMessageEvent"/>
+        <genFeatures property="Readonly" createChild="false" propertyCategory="" propertyDescription=""
+            propertySortChoices="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/Transition/raiseMessageEvent"/>
+        <genFeatures children="true" createChild="true" propertyCategory="Clock" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/Transition/clockConstraints"/>
+        <genFeatures children="true" createChild="true" propertyCategory="Absolute Deadline"
+            ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/Transition/absoluteDeadlines"/>
+        <genFeatures children="true" createChild="true" propertyCategory="" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/Transition/relativeDeadline"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//realtimestatechart/Transition/blockable"/>
+        <genFeatures children="true" createChild="true" propertyCategory="Guard" propertyDescription=""
+            ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/Transition/guard"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/Transition/events"/>
+        <genFeatures children="true" createChild="true" propertyCategory="Action"
+            propertyDescription="" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/Transition/action"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//realtimestatechart/Transition/urgent"/>
+        <genFeatures property="Readonly" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/Transition/receiverMessageTypes"/>
+        <genFeatures property="Readonly" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/Transition/senderMessageTypes"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//realtimestatechart/ClockConstraint">
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/ClockConstraint/bound"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/ClockConstraint/clock"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//realtimestatechart/ClockConstraint/operator"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//realtimestatechart/Action">
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/Action/expressions"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//realtimestatechart/AsynchronousMessageEvent">
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/AsynchronousMessageEvent/message"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/AsynchronousMessageEvent/oneToManyCommunicationSchema"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//realtimestatechart/DoEvent">
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/DoEvent/action"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/DoEvent/period"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="pim.ecore#//realtimestatechart/EntryOrExitEvent">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/EntryOrExitEvent/clockResets"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/EntryOrExitEvent/action"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//realtimestatechart/SynchronizationChannel">
+        <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/SynchronizationChannel/state"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/SynchronizationChannel/selectorType"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//realtimestatechart/Synchronization">
+        <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/Synchronization/syncChannel"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//realtimestatechart/Synchronization/kind"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/Synchronization/selectorExpression"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="pim.ecore#//realtimestatechart/PrioritizedElement">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EAttribute pim.ecore#//realtimestatechart/PrioritizedElement/priority"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//realtimestatechart/RealtimeStatechart">
+        <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/RealtimeStatechart/parentRegion"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/RealtimeStatechart/transitions"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/RealtimeStatechart/states"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/RealtimeStatechart/clocks"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//realtimestatechart/RealtimeStatechart/flat"/>
+        <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/RealtimeStatechart/availableClocks"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//realtimestatechart/RealtimeStatechart/embedded"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/RealtimeStatechart/allAvailableVariables"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/RealtimeStatechart/allAvailableOperations"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/RealtimeStatechart/usedOperationRepositories"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//realtimestatechart/RealtimeStatechart/usesOneToManyCommunicationSchemata"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/RealtimeStatechart/subRoleSpecificVariables"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/RealtimeStatechart/subRoleSpecificClocks"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/RealtimeStatechart/subRoleSpecificOperations"/>
+        <genOperations ecoreOperation="pim.ecore#//realtimestatechart/RealtimeStatechart/isSuperStatechartOf">
+          <genParameters ecoreParameter="pim.ecore#//realtimestatechart/RealtimeStatechart/isSuperStatechartOf/statechart"/>
+        </genOperations>
+        <genOperations ecoreOperation="pim.ecore#//realtimestatechart/RealtimeStatechart/getHighestParentStatechart"/>
+        <genOperations ecoreOperation="pim.ecore#//realtimestatechart/RealtimeStatechart/getPortOrRoleStatechart"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="pim.ecore#//realtimestatechart/Event">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//realtimestatechart/Event/kind"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="pim.ecore#//realtimestatechart/TransitionEvent"/>
+      <genClasses image="false" ecoreClass="pim.ecore#//realtimestatechart/StateEvent"/>
+      <genClasses ecoreClass="pim.ecore#//realtimestatechart/Message">
+        <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/Message/instanceOf"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/Message/parameterBinding"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//realtimestatechart/EntryEvent"/>
+      <genClasses ecoreClass="pim.ecore#//realtimestatechart/ExitEvent"/>
+      <genClasses image="false" ecoreClass="pim.ecore#//realtimestatechart/StateConnectionPoint">
+        <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/StateConnectionPoint/state"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//realtimestatechart/EntryPoint"/>
+      <genClasses ecoreClass="pim.ecore#//realtimestatechart/ExitPoint"/>
+      <nestedGenPackages prefix="One_to_n_schemata" basePackage="org.muml.pim.realtimestatechart"
+          disposableProviderFactory="true" ecorePackage="pim.ecore#//realtimestatechart/one_to_n_schemata">
+        <genClasses image="false" ecoreClass="pim.ecore#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema">
+          <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/condition"/>
+          <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/asynchronousMessageEvent"/>
+          <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/action"/>
+          <genFeatures notify="false" children="true" createChild="true" propertySortChoices="true"
+              ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/retryAfter"/>
+        </genClasses>
+        <genClasses ecoreClass="pim.ecore#//realtimestatechart/one_to_n_schemata/Multicast"/>
+        <genClasses ecoreClass="pim.ecore#//realtimestatechart/one_to_n_schemata/Unicast"/>
+        <genClasses ecoreClass="pim.ecore#//realtimestatechart/one_to_n_schemata/Iterate">
+          <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/one_to_n_schemata/Iterate/terminationCondition"/>
+          <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/one_to_n_schemata/Iterate/delay"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//realtimestatechart/one_to_n_schemata/Iterate/startFromFirst"/>
+        </genClasses>
+        <genClasses ecoreClass="pim.ecore#//realtimestatechart/one_to_n_schemata/LoadBalancing">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/one_to_n_schemata/LoadBalancing/responseMessage"/>
+          <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/one_to_n_schemata/LoadBalancing/maxWorkingTime"/>
+          <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/one_to_n_schemata/LoadBalancing/onResponseAction"/>
+        </genClasses>
+        <genClasses ecoreClass="pim.ecore#//realtimestatechart/one_to_n_schemata/SingleReceive"/>
+        <genClasses ecoreClass="pim.ecore#//realtimestatechart/one_to_n_schemata/MultiReceive">
+          <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/one_to_n_schemata/MultiReceive/failureAction"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="pim.ecore#//realtimestatechart/one_to_n_schemata/ReceivingOneToManyCommunicationSchema"/>
+        <genClasses image="false" ecoreClass="pim.ecore#//realtimestatechart/one_to_n_schemata/SendingOneToManyCommunicationSchema"/>
+      </nestedGenPackages>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Msgtype" basePackage="org.muml.pim" disposableProviderFactory="true"
+        ecorePackage="pim.ecore#//msgtype">
+      <genClasses ecoreClass="pim.ecore#//msgtype/MessageType">
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//msgtype/MessageType/parameters"/>
+        <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//msgtype/MessageType/repository"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//msgtype/MessageTypeRepository">
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//msgtype/MessageTypeRepository/messageTypes"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Types" basePackage="org.muml.pim" disposableProviderFactory="true"
+        ecorePackage="pim.ecore#//types">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="pim.ecore#//types/PrimitiveTypes">
+        <genEnumLiterals ecoreEnumLiteral="pim.ecore#//types/PrimitiveTypes/VOID"/>
+        <genEnumLiterals ecoreEnumLiteral="pim.ecore#//types/PrimitiveTypes/BOOLEAN"/>
+        <genEnumLiterals ecoreEnumLiteral="pim.ecore#//types/PrimitiveTypes/INT8"/>
+        <genEnumLiterals ecoreEnumLiteral="pim.ecore#//types/PrimitiveTypes/INT16"/>
+        <genEnumLiterals ecoreEnumLiteral="pim.ecore#//types/PrimitiveTypes/INT32"/>
+        <genEnumLiterals ecoreEnumLiteral="pim.ecore#//types/PrimitiveTypes/INT64"/>
+        <genEnumLiterals ecoreEnumLiteral="pim.ecore#//types/PrimitiveTypes/DOUBLE"/>
+        <genEnumLiterals ecoreEnumLiteral="pim.ecore#//types/PrimitiveTypes/UINT8"/>
+        <genEnumLiterals ecoreEnumLiteral="pim.ecore#//types/PrimitiveTypes/UINT16"/>
+        <genEnumLiterals ecoreEnumLiteral="pim.ecore#//types/PrimitiveTypes/UINT32"/>
+        <genEnumLiterals ecoreEnumLiteral="pim.ecore#//types/PrimitiveTypes/UINT64"/>
+      </genEnums>
+      <genClasses ecoreClass="pim.ecore#//types/ArrayDataType">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//types/ArrayDataType/type"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//types/ArrayDataType/cardinality"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//types/PrimitiveDataType">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//types/PrimitiveDataType/primitiveType"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="pim.ecore#//types/DataType"/>
+      <genClasses ecoreClass="pim.ecore#//types/RangedPrimitiveDataType">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//types/RangedPrimitiveDataType/rangedType"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//types/RangedPrimitiveDataType/range"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//types/StructureDataType">
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//types/StructureDataType/attributes"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//types/Attribute"/>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Connector" basePackage="org.muml.pim" disposableProviderFactory="true"
+        ecorePackage="pim.ecore#//connector">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="pim.ecore#//connector/BufferOverflowAvoidanceStrategy">
+        <genEnumLiterals ecoreEnumLiteral="pim.ecore#//connector/BufferOverflowAvoidanceStrategy/DISCARD_INCOMING_MESSAGE"/>
+        <genEnumLiterals ecoreEnumLiteral="pim.ecore#//connector/BufferOverflowAvoidanceStrategy/DISCARD_OLDEST_MESSAGE_IN_BUFFER"/>
+        <genEnumLiterals ecoreEnumLiteral="pim.ecore#//connector/BufferOverflowAvoidanceStrategy/NEVER_HAPPENS"/>
+      </genEnums>
+      <genClasses image="false" ecoreClass="pim.ecore#//connector/ConnectorEndpoint">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//connector/ConnectorEndpoint/connectors"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="pim.ecore#//connector/Connector">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//connector/Connector/connectorEndpoints"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//connector/Connector/selfConnector"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="pim.ecore#//connector/ConnectorEndpointInstance">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//connector/ConnectorEndpointInstance/connectorInstances"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//connector/ConnectorEndpointInstance/type"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="pim.ecore#//connector/ConnectorInstance">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//connector/ConnectorInstance/type"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="pim.ecore#//connector/DiscreteInteractionEndpoint">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//connector/DiscreteInteractionEndpoint/senderMessageTypes"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//connector/DiscreteInteractionEndpoint/receiverMessageTypes"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//connector/DiscreteInteractionEndpoint/coordinatorBehavior"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//connector/DiscreteInteractionEndpoint/subroleBehavior"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//connector/DiscreteInteractionEndpoint/cardinality"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//connector/DiscreteInteractionEndpoint/receiverMessageBuffer"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//connector/DiscreteInteractionEndpoint/multi"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="pim.ecore#//connector/DiscreteInteractionEndpointInstance"/>
+      <genClasses ecoreClass="pim.ecore#//connector/DiscreteSingleInteractionEndpointInstance">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//connector/DiscreteSingleInteractionEndpointInstance/multiInteractionEndpointInstance"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//connector/DiscreteSingleInteractionEndpointInstance/next"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//connector/DiscreteSingleInteractionEndpointInstance/previous"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//connector/DiscreteSingleInteractionEndpointInstance/first"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//connector/DiscreteSingleInteractionEndpointInstance/last"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//connector/DiscreteMultiInteractionEndpointInstance">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//connector/DiscreteMultiInteractionEndpointInstance/subInteractionEndpointInstances"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//connector/DiscreteMultiInteractionEndpointInstance/first"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//connector/DiscreteMultiInteractionEndpointInstance/last"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//connector/MessageBuffer">
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//connector/MessageBuffer/bufferSize"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//connector/MessageBuffer/messageType"/>
+        <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//connector/MessageBuffer/discreteInteractionEndpoint"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//connector/MessageBuffer/bufferOverflowAvoidanceStrategy"/>
+        <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//connector/MessageBuffer/gmfMessageTypes"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Valuetype" basePackage="org.muml.pim" disposableProviderFactory="true"
+        ecorePackage="pim.ecore#//valuetype">
+      <genDataTypes ecoreDataType="pim.ecore#//valuetype/TimeUnit"/>
+      <genClasses ecoreClass="pim.ecore#//valuetype/Cardinality">
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//valuetype/Cardinality/lowerBound"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//valuetype/Cardinality/upperBound"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//valuetype/TimeValue">
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//valuetype/TimeValue/value"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//valuetype/TimeValue/unit"/>
+        <genOperations ecoreOperation="pim.ecore#//valuetype/TimeValue/toString"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//valuetype/NaturalNumber">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//valuetype/NaturalNumber/value"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//valuetype/NaturalNumber/infinity"/>
+        <genOperations ecoreOperation="pim.ecore#//valuetype/NaturalNumber/setValue">
+          <genParameters ecoreParameter="pim.ecore#//valuetype/NaturalNumber/setValue/value"/>
+        </genOperations>
+        <genOperations ecoreOperation="pim.ecore#//valuetype/NaturalNumber/toString"/>
+        <genOperations ecoreOperation="pim.ecore#//valuetype/NaturalNumber/equals">
+          <genParameters ecoreParameter="pim.ecore#//valuetype/NaturalNumber/equals/o"/>
+        </genOperations>
+        <genOperations ecoreOperation="pim.ecore#//valuetype/NaturalNumber/lessOrEqual">
+          <genParameters ecoreParameter="pim.ecore#//valuetype/NaturalNumber/lessOrEqual/n"/>
+        </genOperations>
+        <genOperations ecoreOperation="pim.ecore#//valuetype/NaturalNumber/greaterOrEqual">
+          <genParameters ecoreParameter="pim.ecore#//valuetype/NaturalNumber/greaterOrEqual/n"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//valuetype/Range">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//valuetype/Range/lowerBound"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//valuetype/Range/upperBound"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Behavior" basePackage="org.muml.pim" disposableProviderFactory="true"
+        ecorePackage="pim.ecore#//behavior">
+      <genClasses image="false" ecoreClass="pim.ecore#//behavior/Behavior">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//behavior/Behavior/behavioralElement"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//behavior/Behavior/operations"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//behavior/Behavior/variables"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="pim.ecore#//behavior/BehavioralElement">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//behavior/BehavioralElement/behavior"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//behavior/Operation">
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//behavior/Operation/implementations"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//behavior/Operation/parameters"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//behavior/Operation/returnType"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//behavior/Parameter"/>
+      <genClasses ecoreClass="pim.ecore#//behavior/ParameterBinding">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//behavior/ParameterBinding/parameter"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//behavior/ParameterBinding/value"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="pim.ecore#//behavior/TypedNamedElement">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//behavior/TypedNamedElement/dataType"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//behavior/Variable">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//behavior/Variable/constant"/>
+        <genFeatures notify="false" children="true" createChild="true" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//behavior/Variable/initializeExpression"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//behavior/OperationRepository">
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//behavior/OperationRepository/operations"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Component" basePackage="org.muml.pim" disposableProviderFactory="true"
+        ecorePackage="pim.ecore#//component">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="pim.ecore#//component/ComponentKind">
+        <genEnumLiterals ecoreEnumLiteral="pim.ecore#//component/ComponentKind/SOFTWARE_COMPONENT"/>
+        <genEnumLiterals ecoreEnumLiteral="pim.ecore#//component/ComponentKind/CONTINUOUS_COMPONENT"/>
+        <genEnumLiterals ecoreEnumLiteral="pim.ecore#//component/ComponentKind/HYBRID_COMPONENT"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="pim.ecore#//component/PortDirectionKind">
+        <genEnumLiterals ecoreEnumLiteral="pim.ecore#//component/PortDirectionKind/IN"/>
+        <genEnumLiterals ecoreEnumLiteral="pim.ecore#//component/PortDirectionKind/OUT"/>
+      </genEnums>
+      <genClasses image="false" ecoreClass="pim.ecore#//component/Component">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//component/Component/componentKind"/>
+        <genFeatures children="true" createChild="true" propertyCategory="General"
+            ecoreFeature="ecore:EReference pim.ecore#//component/Component/ports"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//component/Port">
+        <genFeatures notify="false" createChild="false" propertyCategory="General"
+            ecoreFeature="ecore:EReference pim.ecore#//component/Port/component"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//component/Port/portConnectors"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//component/ContinuousPort"/>
+      <genClasses ecoreClass="pim.ecore#//component/DiscretePort">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//component/DiscretePort/refinedRole"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//component/DiscretePort/isDiscreteInPort"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//component/DiscretePort/isDiscreteOutPort"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//component/DiscretePort/isDiscreteInOutPort"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//component/DiscretePort/multiPort"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//component/DiscretePort/coordinationProtocol"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//component/ComponentPart">
+        <genFeatures notify="false" createChild="false" propertyCategory="General"
+            propertySortChoices="true" ecoreFeature="ecore:EReference pim.ecore#//component/ComponentPart/componentType"/>
+        <genFeatures notify="false" createChild="false" propertyCategory="General"
+            ecoreFeature="ecore:EReference pim.ecore#//component/ComponentPart/parentComponent"/>
+        <genFeatures children="true" createChild="true" propertyCategory="Cardinality"
+            ecoreFeature="ecore:EReference pim.ecore#//component/ComponentPart/cardinality"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//component/ComponentPart/portParts"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//component/ComponentPart/multiPart"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//component/StaticStructuredComponent"/>
+      <genClasses ecoreClass="pim.ecore#//component/AtomicComponent">
+        <genOperations ecoreOperation="pim.ecore#//component/AtomicComponent/toString"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//component/AssemblyConnector">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//component/AssemblyConnector/coordinationProtocolPart"/>
+        <genFeatures property="Readonly" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//component/AssemblyConnector/portParts"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//component/DelegationConnector">
+        <genFeatures property="Readonly" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//component/DelegationConnector/portPart"/>
+        <genFeatures property="Readonly" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//component/DelegationConnector/port"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="pim.ecore#//component/PortConnector">
+        <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//component/PortConnector/parentComponent"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//component/HybridPort">
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//component/HybridPort/samplingInterval"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//component/StructuredComponent">
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//component/StructuredComponent/embeddedComponentParts"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//component/StructuredComponent/connectors"/>
+        <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//component/StructuredComponent/allStructuredComponents"/>
+        <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//component/StructuredComponent/allAtomicComponents"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//component/StructuredComponent/coordinationProtocolParts"/>
+        <genOperations ecoreOperation="pim.ecore#//component/StructuredComponent/toString"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//component/CoordinationProtocolPart">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//component/CoordinationProtocolPart/coordinationProtocol"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//component/CoordinationProtocolPart/portParts"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="pim.ecore#//component/DirectedTypedPort">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//component/DirectedTypedPort/kind"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//component/DirectedTypedPort/optional"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//component/DirectedTypedPort/outPort"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//component/DirectedTypedPort/inPort"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//component/DirectedTypedPort/initializeExpression"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//component/PortPart">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//component/PortPart/portType"/>
+        <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//component/PortPart/componentPart"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//component/PortPart/coordinationProtocolPart"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//component/PortPart/refinedRole"/>
+        <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//component/PortPart/name"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//component/StaticAtomicComponent"/>
+      <genClasses ecoreClass="pim.ecore#//component/StaticComponent"/>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Pattern" basePackage="org.muml.pim" disposableProviderFactory="true"
+        ecorePackage="pim.ecore#//pattern">
+      <genClasses image="false" ecoreClass="pim.ecore#//pattern/AbstractCoordinationPattern">
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//pattern/AbstractCoordinationPattern/verifiedConfigurations"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//pattern/AbstractCoordinationPattern/patternParameters"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//pattern/DescriptionAspects">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//pattern/DescriptionAspects/overview"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//pattern/DescriptionAspects/context"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//pattern/DescriptionAspects/problem"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//pattern/DescriptionAspects/solution"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//pattern/DescriptionAspects/structure"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//pattern/DescriptionAspects/behavior"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//pattern/DescriptionAspects/examples"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//pattern/DescriptionAspects/consequences"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//pattern/DescriptionAspects/combineability"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//pattern/DescriptionAspects/variants"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//pattern/DescriptionAspects/alsoKnownAs"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//pattern/DescriptionAspects/verification_properties"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//pattern/DescriptionAspects/searchTerms"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//pattern/DescriptionAspects/alternatives"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//pattern/VerifiedConfiguration">
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//pattern/VerifiedConfiguration/parameterBindings"/>
+        <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//pattern/VerifiedConfiguration/coordinationPattern"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//pattern/CoordinationPatternVariant">
+        <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//pattern/CoordinationPatternVariant/originalPattern"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//pattern/CoordinationPattern">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//pattern/CoordinationPattern/combineablePatterns"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//pattern/CoordinationPattern/alternativePatterns"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//pattern/CoordinationPattern/descriptionAspects"/>
+        <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//pattern/CoordinationPattern/patternVariants"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Runnable" basePackage="org.muml.pim" disposableProviderFactory="true"
+        ecorePackage="pim.ecore#//runnable">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="pim.ecore#//runnable/LabelAccessKind">
+        <genEnumLiterals ecoreEnumLiteral="pim.ecore#//runnable/LabelAccessKind/READACCESS"/>
+        <genEnumLiterals ecoreEnumLiteral="pim.ecore#//runnable/LabelAccessKind/WRITEACCESS"/>
+      </genEnums>
+      <genClasses ecoreClass="pim.ecore#//runnable/Runnable">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//runnable/Runnable/componentInstance"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//runnable/Runnable/portInstance"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//runnable/Runnable/period"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//runnable/Runnable/labelAccesses"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//runnable/Runnable/deadline"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//runnable/Label">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//runnable/Label/componentInstance"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//runnable/Label/componentStatechart"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//runnable/Label/isConstant"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//runnable/LabelAccess">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//runnable/LabelAccess/accessKind"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//runnable/LabelAccess/accessLabel"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//runnable/LabelAccess/accessingRunnable"/>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

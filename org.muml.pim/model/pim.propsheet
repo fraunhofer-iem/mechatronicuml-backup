@@ -1,0 +1,1496 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.muml:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.muml="http://www.muml.org/ape/1.0.0" xmi:id="_VZIdoMwbEeSjx7OWZCcdLw" contributorId="org.muml.ape.contributor">
+  <reconciler xmi:id="_VZIdocwbEeSjx7OWZCcdLw">
+    <customTransformations xmi:id="_VZIdoswbEeSjx7OWZCcdLw" uri="platform:/plugin/org.muml.pim.common/transformations/muml-propsheet.qvto"/>
+    <customTransformations xmi:id="_VZIdo8wbEeSjx7OWZCcdLw" uri="platform:/plugin/org.muml.pim.actionlanguage.xtext.ui/transformations/xtext-propsheet.qvto"/>
+  </reconciler>
+  <genModel href="pim.genmodel#/"/>
+  <referencedGenerators href="../../org.muml.core/model/core.propsheet#_i_I4kOHNEeS5Putgio2lkg"/>
+  <plugin xmi:id="_VZIdpMwbEeSjx7OWZCcdLw" id="org.muml.pim.edit.properties" name="MechatronicUML Tabbed Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="1.0.0.qualifier">
+    <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
+    <requiredBundles>org.eclipse.core.runtime</requiredBundles>
+    <requiredBundles>org.eclipse.emf.edit</requiredBundles>
+    <requiredBundles>org.eclipse.ui</requiredBundles>
+    <requiredBundles>org.muml.pim.edit</requiredBundles>
+    <requiredBundles>org.muml.ape.runtime</requiredBundles>
+    <requiredBundles>org.muml.pim</requiredBundles>
+    <requiredBundles>org.muml.core.edit</requiredBundles>
+    <requiredBundles>org.muml.pim.actionlanguage.xtext.ui</requiredBundles>
+    <requiredBundles>org.muml.core.edit.properties</requiredBundles>
+    <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
+    <requiredBundles>org.eclipse.ui</requiredBundles>
+    <requiredBundles>org.eclipse.core.runtime</requiredBundles>
+    <requiredBundles>org.eclipse.emf.edit</requiredBundles>
+  </plugin>
+  <defaultTab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+  <tabs xmi:id="_VZJEsMwbEeSjx7OWZCcdLw" id="property.tab.constraint" name="Constraint" afterTab="property.tab.comment"/>
+  <tabs id="property.tab.descriptionAspects" name="Description Aspects" afterTab="property.tab.constraint"/>
+  <tabs id="property.tab.condition" name="Condition" afterTab="property.tab.general"/>
+  <tabs id="property.tab.effect" name="Effect" afterTab="property.tab.condition"/>
+  <tabs id="property.tab.deadline" name="Deadline" afterTab="property.tab.effect"/>
+  <tabs id="property.tab.sampling" name="Sampling" afterTab="property.tab.deadline"/>
+  <tabs id="property.tab.message" name="Message" afterTab="property.tab.sampling"/>
+  <tabs id="property.tab.behavior" name="Behavior" afterTab="property.tab.behavior"/>
+  <packages xmi:id="_VZJEscwbEeSjx7OWZCcdLw">
+    <genPackage href="pim.genmodel#//pim/valuetype"/>
+    <classes xmi:id="_VZJEsswbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/valuetype/Cardinality"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZJEs8wbEeSjx7OWZCcdLw" tooltip="" reconcile="false" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/valuetype/Cardinality/lowerBound"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:TextPropertyEditor" xmi:id="_VZJEtMwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZJEtcwbEeSjx7OWZCcdLw" tooltip="" reconcile="false" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/valuetype/Cardinality/upperBound"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:TextPropertyEditor" xmi:id="_VZJEtswbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_VZJEt8wbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/valuetype/NaturalNumber"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZJEuMwbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/valuetype/NaturalNumber/value"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:SpinnerPropertyEditor" xmi:id="_VZJEucwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZJEuswbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/valuetype/NaturalNumber/infinity"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:CheckboxPropertyEditor" xmi:id="_VZJEu8wbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:PropertyCategory" xmi:id="_VZJrwMwbEeSjx7OWZCcdLw" title="Natural Number" properties="_VZJEuMwbEeSjx7OWZCcdLw _VZJEuswbEeSjx7OWZCcdLw"/>
+    </classes>
+    <classes xmi:id="_VZJrwcwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/valuetype/Range"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZJrwswbEeSjx7OWZCcdLw" tooltip="" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/valuetype/Range/lowerBound"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:SpinnerPropertyEditor" xmi:id="_VZJrw8wbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZJrxMwbEeSjx7OWZCcdLw" tooltip="" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/valuetype/Range/upperBound"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:SpinnerPropertyEditor" xmi:id="_VZJrxcwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_VZJrxswbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/valuetype/TimeValue"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZJrx8wbEeSjx7OWZCcdLw" tooltip="" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/valuetype/TimeValue/value"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:CustomPropertyEditor" xmi:id="_VZJryMwbEeSjx7OWZCcdLw" fullyQualifiedClassName="org.muml.pim.actionlanguage.xtext.ui.properties.XtextPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZJrycwbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/valuetype/TimeValue/unit"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_VZJryswbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_PmQuHNEeS5Putgio2lkg"/>
+    </classes>
+  </packages>
+  <packages xmi:id="_VZJry8wbEeSjx7OWZCcdLw">
+    <genPackage href="pim.genmodel#//pim/realtimestatechart"/>
+    <classes xmi:id="_VZJrzMwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/realtimestatechart/Deadline"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZKS0MwbEeSjx7OWZCcdLw" tooltip="">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/Deadline/lowerBound"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor" xmi:id="_VZKS0cwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZJrzcwbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/Deadline/upperBound"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor" xmi:id="_VZJrzswbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_VZKS0swbEeSjx7OWZCcdLw" superClasses="_VZJrzMwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/realtimestatechart/AbsoluteDeadline"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZKS08wbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/AbsoluteDeadline/clock"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_VZKS1MwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:BaseInsertPoint" baseClass="_VZJrzMwbEeSjx7OWZCcdLw"/>
+    </classes>
+    <classes xmi:id="_VZKS1cwbEeSjx7OWZCcdLw" superClasses="_VZJrzMwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/realtimestatechart/RelativeDeadline"/>
+    </classes>
+    <classes xmi:id="_VZKS1swbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/realtimestatechart/Clock"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZKS18wbEeSjx7OWZCcdLw" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/Clock/statechart"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
+    </classes>
+    <classes xmi:id="_VZKS2cwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/realtimestatechart/Region"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZKS2swbEeSjx7OWZCcdLw" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/Region/parentState"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/Region/embeddedStatechart"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
+      <superClasses href="#_VZN9OMwbEeSjx7OWZCcdLw"/>
+    </classes>
+    <classes xmi:id="_VZKS3MwbEeSjx7OWZCcdLw" superClasses="_VZLg88wbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/realtimestatechart/State"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZKS3cwbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/State/embeddedRegions"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor" xmi:id="_VZKS3swbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZK548wbEeSjx7OWZCcdLw" tab="//@tabs.3">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/State/entryEvent"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor" xmi:id="_VZK55MwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZKS38wbEeSjx7OWZCcdLw" tab="//@tabs.3">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/State/doEvent"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor" xmi:id="_VZK54MwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZK54cwbEeSjx7OWZCcdLw" tab="//@tabs.3">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/State/exitEvent"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor" xmi:id="_VZK54swbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZK55cwbEeSjx7OWZCcdLw" tab="//@tabs.2">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/State/invariants"/>
+        <editor xsi:type="org.muml:ListPropertyEditor" xmi:id="_VZK55swbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZK558wbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/State/initial"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:CheckboxPropertyEditor" xmi:id="_VZK56MwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZK56cwbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/State/final"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:CheckboxPropertyEditor" xmi:id="_VZK56swbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZK568wbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/State/urgent"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:CheckboxPropertyEditor" xmi:id="_VZK57MwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZK57cwbEeSjx7OWZCcdLw" tab="//@tabs.2" tooltip="" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/State/channels"/>
+        <editor xsi:type="org.muml:ListPropertyEditor" xmi:id="_VZK57swbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZK578wbEeSjx7OWZCcdLw" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/State/connectionPoints"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZK58cwbEeSjx7OWZCcdLw" tooltip="" reconcile="false" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/State/parentStatechart"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:PropertyCategory" xmi:id="_VZLg8cwbEeSjx7OWZCcdLw" title="Booleans" properties="_VZK558wbEeSjx7OWZCcdLw _VZK56cwbEeSjx7OWZCcdLw _VZK568wbEeSjx7OWZCcdLw"/>
+      <orderedElements xsi:type="org.muml:PropertyCategory" title="Transitions" properties="_VZLg9MwbEeSjx7OWZCcdLw _VZLg9swbEeSjx7OWZCcdLw"/>
+    </classes>
+    <classes xmi:id="_VZLg88wbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/realtimestatechart/Vertex"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZLg9MwbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/Vertex/outgoingTransitions"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor" xmi:id="_VZLg9cwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZLg9swbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/Vertex/incomingTransitions"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor" xmi:id="_VZLg98wbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
+    </classes>
+    <classes xmi:id="_VZLg-cwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/realtimestatechart/Transition"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZMIBcwbEeSjx7OWZCcdLw" tab="//@tabs.2" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/Transition/clockConstraints"/>
+        <editor xsi:type="org.muml:ListPropertyEditor" xmi:id="_VZMIBswbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZMIDcwbEeSjx7OWZCcdLw" tab="//@tabs.2" reconcile="false" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/Transition/guard"/>
+        <editor xsi:type="org.muml:CustomPropertyEditor" xmi:id="_VZMIDswbEeSjx7OWZCcdLw" fullyQualifiedClassName="org.muml.pim.actionlanguage.xtext.ui.properties.XtextPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" tab="//@tabs.2" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/Transition/events"/>
+        <visibilityFilters xsi:type="org.muml:OCLFilter" expression="if(self.statechart.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(pim::connector::DiscreteInteractionEndpoint) and not self.statechart.getPortOrRoleStatechart().behavioralElement.oclAsType(pim::connector::DiscreteInteractionEndpoint).coordinatorBehavior.oclIsUndefined() )then&#xD;&#xA;&#x9;not  self.statechart->closure(s:RealtimeStatechart|   let parent : RealtimeStatechart = s.parentRegion.parentState.parentStatechart in &#xD;&#xA;&#x9;&#x9;if(parent.oclIsInvalid()) &#xD;&#xA;&#x9;&#x9;&#x9;then self.statechart &#xD;&#xA;&#x9;&#x9;else parent &#xD;&#xA;&#x9;&#x9; endif )->includes(self.statechart.getPortOrRoleStatechart().behavioralElement.oclAsType(pim::connector::DiscreteInteractionEndpoint).coordinatorBehavior) &#xD;&#xA;else &#xD;&#xA;&#x9; &#x9;true &#xD;&#xA;endif"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZMID8wbEeSjx7OWZCcdLw" tab="//@tabs.3" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/Transition/events"/>
+        <visibilityFilters xsi:type="org.muml:OCLFilter" expression="if(self.statechart.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(pim::connector::DiscreteInteractionEndpoint) and not self.statechart.getPortOrRoleStatechart().behavioralElement.oclAsType(pim::connector::DiscreteInteractionEndpoint).coordinatorBehavior.oclIsUndefined() )then&#xD;&#xA;&#x9;not  self.statechart->closure(s:RealtimeStatechart|   let parent : RealtimeStatechart = s.parentRegion.parentState.parentStatechart in &#xD;&#xA;&#x9;&#x9;if(parent.oclIsInvalid()) &#xD;&#xA;&#x9;&#x9;&#x9;then self.statechart &#xD;&#xA;&#x9;&#x9;else parent &#xD;&#xA;&#x9;&#x9; endif )->includes(self.statechart.getPortOrRoleStatechart().behavioralElement.oclAsType(pim::connector::DiscreteInteractionEndpoint).coordinatorBehavior) &#xD;&#xA;else &#xD;&#xA;&#x9; &#x9;true &#xD;&#xA;endif"/>
+        <editor xsi:type="org.muml:ListPropertyEditor" xmi:id="_VZMIEMwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZLg-swbEeSjx7OWZCcdLw" tab="//@tabs.2">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/Transition/synchronization"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor" xmi:id="_VZLg-8wbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZLg_MwbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/Transition/target"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_VZLg_cwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZLg_swbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/Transition/source"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_VZMIAMwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZMIAcwbEeSjx7OWZCcdLw" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/Transition/statechart"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZMIA8wbEeSjx7OWZCcdLw" tab="//@tabs.3">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/Transition/clockResets"/>
+        <editor xsi:type="org.muml:ListPropertyEditor" xmi:id="_VZMIBMwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZMIB8wbEeSjx7OWZCcdLw" tab="//@tabs.4">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/Transition/absoluteDeadlines"/>
+        <editor xsi:type="org.muml:ListPropertyEditor" xmi:id="_VZMICMwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZMICcwbEeSjx7OWZCcdLw" tab="//@tabs.4">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/Transition/relativeDeadline"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor" xmi:id="_VZMICswbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZMIC8wbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/Transition/blockable"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:CheckboxPropertyEditor" xmi:id="_VZMIDMwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZMIEcwbEeSjx7OWZCcdLw" tab="//@tabs.3">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/Transition/action"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor" xmi:id="_VZMIEswbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZMvEMwbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/Transition/urgent"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:CheckboxPropertyEditor" xmi:id="_VZMvEcwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:PropertyCategory" xmi:id="_VZMvEswbEeSjx7OWZCcdLw" title="Booleans" properties="_VZMIC8wbEeSjx7OWZCcdLw _VZMvEMwbEeSjx7OWZCcdLw"/>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
+      <superClasses href="#_VZN9OMwbEeSjx7OWZCcdLw"/>
+    </classes>
+    <classes xmi:id="_VZMvFMwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/realtimestatechart/ClockConstraint"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZMvF8wbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/ClockConstraint/clock"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_VZMvGMwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZMvGcwbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/ClockConstraint/operator"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor" xmi:id="_VZMvGswbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZMvFcwbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/ClockConstraint/bound"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor" xmi:id="_VZMvFswbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_PmQuHNEeS5Putgio2lkg"/>
+    </classes>
+    <classes xmi:id="_VZMvG8wbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/realtimestatechart/Action"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZMvHMwbEeSjx7OWZCcdLw" tooltip="" reconcile="false" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/Action/expressions"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:CustomPropertyEditor" xmi:id="_VZMvHcwbEeSjx7OWZCcdLw" fullyQualifiedClassName="org.muml.pim.actionlanguage.xtext.ui.properties.XtextPropertyEditor"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
+    </classes>
+    <classes xmi:id="_VZNWIMwbEeSjx7OWZCcdLw" superClasses="_VZOkSswbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/realtimestatechart/AsynchronousMessageEvent"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZNWIcwbEeSjx7OWZCcdLw" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/AsynchronousMessageEvent/message"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor" xmi:id="_VZNWIswbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/AsynchronousMessageEvent/oneToManyCommunicationSchema"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor"/>
+        <creationConstraint>
+          <filters xsi:type="org.muml:OCLFilter" expression="if(self.kind = EventKind::RAISE) then one_to_n_schemata::SendingOneToManyCommunicationSchema.oclAsType(ecore::EClass).isSuperTypeOf(eclass) else one_to_n_schemata::ReceivingOneToManyCommunicationSchema.oclAsType(ecore::EClass).isSuperTypeOf(eclass) endif"/>
+        </creationConstraint>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_VZNWI8wbEeSjx7OWZCcdLw" superClasses="_VZOkS8wbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/realtimestatechart/DoEvent"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZNWJMwbEeSjx7OWZCcdLw" tooltip="">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/DoEvent/action"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor" xmi:id="_VZNWJcwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZNWJswbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/DoEvent/period"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor" xmi:id="_VZNWJ8wbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_VZNWKMwbEeSjx7OWZCcdLw" superClasses="_VZOkS8wbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/realtimestatechart/EntryOrExitEvent"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZNWKcwbEeSjx7OWZCcdLw" tab="//@tabs.3">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/EntryOrExitEvent/clockResets"/>
+        <editor xsi:type="org.muml:ListPropertyEditor" xmi:id="_VZNWKswbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZNWK8wbEeSjx7OWZCcdLw" tab="//@tabs.3">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/EntryOrExitEvent/action"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor" xmi:id="_VZNWLMwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_VZNWLswbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/realtimestatechart/SynchronizationChannel"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZNWL8wbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/SynchronizationChannel/state"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_VZNWMMwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZNWMcwbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/SynchronizationChannel/selectorType"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_VZN9MMwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
+    </classes>
+    <classes xmi:id="_VZN9McwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/realtimestatechart/Synchronization"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZN9MswbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/Synchronization/syncChannel"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_VZN9M8wbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZN9NMwbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/Synchronization/kind"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor" xmi:id="_VZN9NcwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZN9NswbEeSjx7OWZCcdLw" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/Synchronization/selectorExpression"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:CustomPropertyEditor" xmi:id="_VZN9N8wbEeSjx7OWZCcdLw" fullyQualifiedClassName="org.muml.pim.actionlanguage.xtext.ui.properties.XtextPropertyEditor"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_PmQuHNEeS5Putgio2lkg"/>
+    </classes>
+    <classes xmi:id="_VZN9OMwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/realtimestatechart/PrioritizedElement"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZN9OcwbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/PrioritizedElement/priority"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:SpinnerPropertyEditor" xmi:id="_VZN9OswbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_VZN9O8wbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/realtimestatechart/RealtimeStatechart"/>
+      <orderedElements xsi:type="org.muml:PropertyCategory" xmi:id="_VZOkRswbEeSjx7OWZCcdLw" title="RTSC Elements" properties="//@packages.1/@classes.16/@orderedElements.5 _VZOkQswbEeSjx7OWZCcdLw _VZTcyswbEeSjx7OWZCcdLw"/>
+      <orderedElements xsi:type="org.muml:PropertyCategory" title="Subrole-specific Elements" properties="//@packages.1/@classes.16/@orderedElements.7 //@packages.1/@classes.16/@orderedElements.8 //@packages.1/@classes.16/@orderedElements.9"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZN9PMwbEeSjx7OWZCcdLw" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/RealtimeStatechart/parentRegion"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZOkQMwbEeSjx7OWZCcdLw" tooltip="" reconcile="false" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/RealtimeStatechart/states"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZN9PswbEeSjx7OWZCcdLw" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/RealtimeStatechart/transitions"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/behavior/Behavior/variables"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+        <creationConstraint>
+          <filters xsi:type="org.muml:OCLFilter" expression="eclass.name &lt;> 'TimeParameter'"/>
+        </creationConstraint>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZOkQswbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/RealtimeStatechart/clocks"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor" xmi:id="_VZOkQ8wbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/RealtimeStatechart/subRoleSpecificVariables"/>
+        <visibilityFilters xsi:type="org.muml:OCLFilter" expression="if (not self.getPortOrRoleStatechart().behavioralElement.oclIsUndefined() and self.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(pim::connector::DiscreteInteractionEndpoint)) then&#xA;&#x9;self.getPortOrRoleStatechart().behavioralElement.oclAsType(pim::connector::DiscreteInteractionEndpoint).multi and self.getPortOrRoleStatechart().behavioralElement.oclAsType(pim::connector::DiscreteInteractionEndpoint).subroleBehavior.oclIsUndefined() and self.getPortOrRoleStatechart().behavioralElement.oclAsType(pim::connector::DiscreteInteractionEndpoint).coordinatorBehavior.oclIsUndefined()&#xA;else&#xA;&#x9;true&#xA;endif"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+        <creationConstraint>
+          <filters xsi:type="org.muml:OCLFilter" expression="eclass.name &lt;> 'TimeParameter'"/>
+        </creationConstraint>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/RealtimeStatechart/subRoleSpecificClocks"/>
+        <visibilityFilters xsi:type="org.muml:OCLFilter" expression="if (not self.getPortOrRoleStatechart().behavioralElement.oclIsUndefined() and self.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(pim::connector::DiscreteInteractionEndpoint)) then&#xD;&#xA;&#x9;self.getPortOrRoleStatechart().behavioralElement.oclAsType(pim::connector::DiscreteInteractionEndpoint).multi and self.getPortOrRoleStatechart().behavioralElement.oclAsType(pim::connector::DiscreteInteractionEndpoint).subroleBehavior.oclIsUndefined() and self.getPortOrRoleStatechart().behavioralElement.oclAsType(pim::connector::DiscreteInteractionEndpoint).coordinatorBehavior.oclIsUndefined()&#xD;&#xA;else&#xD;&#xA;&#x9;true&#xD;&#xA;endif"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/RealtimeStatechart/subRoleSpecificOperations"/>
+        <visibilityFilters xsi:type="org.muml:OCLFilter" expression="if (not self.getPortOrRoleStatechart().behavioralElement.oclIsUndefined() and self.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(pim::connector::DiscreteInteractionEndpoint)) then&#xD;&#xA;&#x9;self.getPortOrRoleStatechart().behavioralElement.oclAsType(pim::connector::DiscreteInteractionEndpoint).multi and self.getPortOrRoleStatechart().behavioralElement.oclAsType(pim::connector::DiscreteInteractionEndpoint).subroleBehavior.oclIsUndefined() and self.getPortOrRoleStatechart().behavioralElement.oclAsType(pim::connector::DiscreteInteractionEndpoint).coordinatorBehavior.oclIsUndefined()&#xD;&#xA;else&#xD;&#xA;&#x9;true&#xD;&#xA;endif"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZOkRMwbEeSjx7OWZCcdLw" tooltip="" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/RealtimeStatechart/usedOperationRepositories"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor" xmi:id="_VZOkRcwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
+      <superClasses href="#_VZTcx8wbEeSjx7OWZCcdLw"/>
+    </classes>
+    <classes xmi:id="_VZOkR8wbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/realtimestatechart/Event"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZOkSMwbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/Event/kind"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor" xmi:id="_VZOkScwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_VZOkSswbEeSjx7OWZCcdLw" superClasses="_VZOkR8wbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/realtimestatechart/TransitionEvent"/>
+    </classes>
+    <classes xmi:id="_VZOkS8wbEeSjx7OWZCcdLw" superClasses="_VZOkR8wbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/realtimestatechart/StateEvent"/>
+    </classes>
+    <classes xmi:id="_VZOkTMwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/realtimestatechart/Message"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZOkTcwbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/Message/instanceOf"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_VZOkTswbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZPLUMwbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/Message/parameterBinding"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor" xmi:id="_VZPLUcwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_PmQuHNEeS5Putgio2lkg"/>
+    </classes>
+    <classes xmi:id="_VZPLU8wbEeSjx7OWZCcdLw" superClasses="_VZNWKMwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/realtimestatechart/EntryEvent"/>
+    </classes>
+    <classes xmi:id="_VZPLVMwbEeSjx7OWZCcdLw" superClasses="_VZNWKMwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/realtimestatechart/ExitEvent"/>
+    </classes>
+    <classes xmi:id="_VZPLVcwbEeSjx7OWZCcdLw" superClasses="_VZLg88wbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/realtimestatechart/StateConnectionPoint"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZPLVswbEeSjx7OWZCcdLw" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/StateConnectionPoint/state"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/Vertex/outgoingTransitions"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/Vertex/incomingTransitions"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_VZPLWMwbEeSjx7OWZCcdLw" superClasses="_VZPLVcwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/realtimestatechart/EntryPoint"/>
+    </classes>
+    <classes xmi:id="_VZPLWcwbEeSjx7OWZCcdLw" superClasses="_VZPLVcwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/realtimestatechart/ExitPoint"/>
+    </classes>
+  </packages>
+  <packages xmi:id="_VZPLWswbEeSjx7OWZCcdLw">
+    <genPackage href="pim.genmodel#//pim/instance"/>
+    <classes xmi:id="_VZPLW8wbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/instance/ComponentInstance"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZPLXMwbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/instance/ComponentInstance/componentType"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_VZPLXcwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZPyYMwbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/instance/ComponentInstance/componentPart"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_VZPyYcwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZPyYswbEeSjx7OWZCcdLw" reconcile="false" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/instance/ComponentInstance/parentCIC"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZPLXswbEeSjx7OWZCcdLw" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/instance/ComponentInstance/portInstances"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/instance/ComponentInstance/runnables"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/instance/ComponentInstance/labels"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:PropertyCategory" title="Lists" properties="_VZPLXswbEeSjx7OWZCcdLw //@packages.2/@classes.0/@orderedElements.4 //@packages.2/@classes.0/@orderedElements.5"/>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
+    </classes>
+    <classes xmi:id="_VZPyZcwbEeSjx7OWZCcdLw" superClasses="_VZXuOMwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/instance/PortConnectorInstance"/>
+    </classes>
+    <classes xmi:id="_VZPyZswbEeSjx7OWZCcdLw" superClasses="_VZXuMswbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/instance/PortInstance"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZPyZ8wbEeSjx7OWZCcdLw" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/instance/PortInstance/componentInstance"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/instance/PortInstance/runnable"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_VZPyaswbEeSjx7OWZCcdLw" superClasses="_VZPyZcwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/instance/DelegationConnectorInstance"/>
+    </classes>
+    <classes xmi:id="_VZPya8wbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/instance/ComponentInstanceConfiguration"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZQZcMwbEeSjx7OWZCcdLw" tooltip="" reconcile="false" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/instance/ComponentInstanceConfiguration/parentStructuredComponentInstance"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZPybMwbEeSjx7OWZCcdLw" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/instance/ComponentInstanceConfiguration/componentInstances"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZPybswbEeSjx7OWZCcdLw" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/instance/ComponentInstanceConfiguration/portConnectorInstances"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" reconcile="false" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/instance/ComponentInstanceConfiguration/coordinationProtocolInstances"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:PropertyCategory" title="Lists" properties="_VZPybMwbEeSjx7OWZCcdLw _VZPybswbEeSjx7OWZCcdLw //@packages.2/@classes.4/@orderedElements.3"/>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
+      <superClasses href="#_VZTcwMwbEeSjx7OWZCcdLw"/>
+    </classes>
+    <classes xmi:id="_VZQZc8wbEeSjx7OWZCcdLw" superClasses="_VZPyZswbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/instance/ContinuousPortInstance"/>
+    </classes>
+    <classes xmi:id="_VZQZdMwbEeSjx7OWZCcdLw" superClasses="_VZPyZswbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/instance/HybridPortInstance"/>
+    </classes>
+    <classes xmi:id="_VZQZdcwbEeSjx7OWZCcdLw" superClasses="_VZPyZswbEeSjx7OWZCcdLw _VZYVTswbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/instance/DiscretePortInstance"/>
+    </classes>
+    <classes xmi:id="_VZQZdswbEeSjx7OWZCcdLw" superClasses="_VZQZdcwbEeSjx7OWZCcdLw _VZY8UMwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/instance/DiscreteSinglePortInstance"/>
+    </classes>
+    <classes xmi:id="_VZQZd8wbEeSjx7OWZCcdLw" superClasses="_VZY8V8wbEeSjx7OWZCcdLw _VZQZdcwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/instance/DiscreteMultiPortInstance"/>
+    </classes>
+    <classes xmi:id="_VZRAgMwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/instance/CoordinationProtocolInstance"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZRAgcwbEeSjx7OWZCcdLw" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/instance/CoordinationProtocolInstance/portInstances"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZRAg8wbEeSjx7OWZCcdLw" tooltip="" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/instance/CoordinationProtocolInstance/coordinationProtocolPart"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZRAhcwbEeSjx7OWZCcdLw" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/instance/CoordinationProtocolInstance/coordinationProtocol"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
+    </classes>
+    <classes superClasses="_VZPyZcwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/instance/AssemblyConnectorInstance"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/instance/AssemblyConnectorInstance/connectorQualityOfServiceAssumptions"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes superClasses="_VZPLW8wbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/instance/StructuredComponentInstance"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/instance/StructuredComponentInstance/embeddedCIC"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes superClasses="_VZPLW8wbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/instance/AtomicComponentInstance"/>
+    </classes>
+  </packages>
+  <packages xmi:id="_VZRAiMwbEeSjx7OWZCcdLw">
+    <genPackage href="pim.genmodel#//pim/msgtype"/>
+    <classes xmi:id="_VZRAicwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/msgtype/MessageType"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZRAiswbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/msgtype/MessageType/parameters"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor" xmi:id="_VZRAi8wbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZRAjMwbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/msgtype/MessageType/repository"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_VZRAjcwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:PropertyCategory" xmi:id="_VZRAjswbEeSjx7OWZCcdLw" title="Lists" properties="_VZRAiswbEeSjx7OWZCcdLw"/>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
+    </classes>
+    <classes xmi:id="_VZRAj8wbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/msgtype/MessageTypeRepository"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZRAkMwbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/msgtype/MessageTypeRepository/messageTypes"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor" xmi:id="_VZRnkMwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:PropertyCategory" xmi:id="_VZRnkcwbEeSjx7OWZCcdLw" title="Lists" properties="_VZRAkMwbEeSjx7OWZCcdLw"/>
+      <superClasses href="../../org.muml.core/model/core.propsheet#//@packages.0/@classes.5"/>
+    </classes>
+  </packages>
+  <packages xmi:id="_VZRnkswbEeSjx7OWZCcdLw">
+    <genPackage href="pim.genmodel#//pim/types"/>
+    <classes xmi:id="_VZRnk8wbEeSjx7OWZCcdLw" superClasses="_VZRnm8wbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/types/ArrayDataType"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZRnlMwbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/types/ArrayDataType/type"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_VZRnlcwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZRnlswbEeSjx7OWZCcdLw" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/types/ArrayDataType/cardinality"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:TextPropertyEditor" xmi:id="_VZRnl8wbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_VZRnmMwbEeSjx7OWZCcdLw" superClasses="_VZRnm8wbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/types/PrimitiveDataType"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZRnmcwbEeSjx7OWZCcdLw" tooltip="" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/types/PrimitiveDataType/primitiveType"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor" xmi:id="_VZRnmswbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_VZRnm8wbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/types/DataType"/>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
+    </classes>
+    <classes xmi:id="_VZRnnMwbEeSjx7OWZCcdLw" superClasses="_VZRnm8wbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/types/RangedPrimitiveDataType"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZRnncwbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/types/RangedPrimitiveDataType/rangedType"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_VZRnnswbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZRnn8wbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/types/RangedPrimitiveDataType/range"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor" xmi:id="_VZSOoMwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_VZSOocwbEeSjx7OWZCcdLw" superClasses="_VZRnm8wbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/types/StructureDataType"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZSOoswbEeSjx7OWZCcdLw" tooltip="" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/types/StructureDataType/attributes"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor" xmi:id="_VZSOo8wbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:PropertyCategory" xmi:id="_VZSOpMwbEeSjx7OWZCcdLw" title="Lists" properties="_VZSOoswbEeSjx7OWZCcdLw"/>
+    </classes>
+    <classes xmi:id="_VZSOpcwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/types/Attribute"/>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
+      <superClasses href="#_VZUq5cwbEeSjx7OWZCcdLw"/>
+    </classes>
+  </packages>
+  <packages xmi:id="_VZSOpswbEeSjx7OWZCcdLw">
+    <genPackage href="pim.genmodel#//pim/protocol"/>
+    <classes xmi:id="_VZSOp8wbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/protocol/AbstractCoordinationSpecification"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZSOqMwbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/protocol/AbstractCoordinationSpecification/adaptedFromPattern"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor" xmi:id="_VZSOqcwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/protocol/AbstractCoordinationSpecification/roles"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/protocol/AbstractCoordinationSpecification/roleConnector"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
+      <superClasses href="#_VZTcwMwbEeSjx7OWZCcdLw"/>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
+    </classes>
+    <classes xmi:id="_VZSOqswbEeSjx7OWZCcdLw" superClasses="_VZSOp8wbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/protocol/CoordinationProtocol"/>
+    </classes>
+    <classes xmi:id="_VZSOq8wbEeSjx7OWZCcdLw" superClasses="_VZRnm8wbEeSjx7OWZCcdLw _VZYVQMwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/protocol/Role"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZSOrMwbEeSjx7OWZCcdLw" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/protocol/Role/coordinationProtocol"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" tab="//@tabs.6">
+        <genFeature href="pim.genmodel#//pim/connector/DiscreteInteractionEndpoint/receiverMessageBuffer"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_VZS1sMwbEeSjx7OWZCcdLw" superClasses="_VZXHMMwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/protocol/RoleConnector"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZS1scwbEeSjx7OWZCcdLw" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/protocol/RoleConnector/coordinationProtocol"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZS1s8wbEeSjx7OWZCcdLw" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/protocol/RoleConnector/connectorQualityOfServiceAssumptions"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor" xmi:id="_VZS1tMwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_VZS1tcwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/protocol/ConnectorQualityOfServiceAssumptions"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/protocol/ConnectorQualityOfServiceAssumptions/maxMessageDelay"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/protocol/ConnectorQualityOfServiceAssumptions/messageLossPossible"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:CheckboxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/protocol/ConnectorQualityOfServiceAssumptions/preserveMessageOrder"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:CheckboxPropertyEditor"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
+    </classes>
+  </packages>
+  <packages xmi:id="_VZS1vswbEeSjx7OWZCcdLw">
+    <genPackage href="pim.genmodel#//pim/constraint"/>
+    <classes xmi:id="_VZS1v8wbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/constraint/VerificationConstraintRepository"/>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_PmQuHNEeS5Putgio2lkg"/>
+    </classes>
+    <classes xmi:id="_VZTcwMwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/constraint/VerifiableElement"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZTcwcwbEeSjx7OWZCcdLw" tooltip="" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/constraint/VerifiableElement/verificationConstraintRepositories"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:FlattenedListPropertyEditor" xmi:id="_VZTcwswbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_PmQuHNEeS5Putgio2lkg"/>
+    </classes>
+  </packages>
+  <packages xmi:id="_VZTcw8wbEeSjx7OWZCcdLw">
+    <genPackage href="pim.genmodel#//pim/behavior"/>
+    <classes xmi:id="_VZTcxMwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/behavior/BehavioralElement"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZTcxcwbEeSjx7OWZCcdLw" tab="//@tabs.7">
+        <genFeature href="pim.genmodel#//pim/behavior/BehavioralElement/behavior"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_VZTcxswbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_VZTcx8wbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/behavior/Behavior"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZTcyMwbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/behavior/Behavior/behavioralElement"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_VZTcycwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZTcyswbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/behavior/Behavior/operations"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor" xmi:id="_VZTcy8wbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZTczMwbEeSjx7OWZCcdLw" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/behavior/Behavior/variables"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor" xmi:id="_VZTczcwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_VZTcz8wbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/behavior/Variable"/>
+      <orderedElements xsi:type="org.muml:BaseInsertPoint">
+        <baseClass href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:BaseInsertPoint">
+        <baseClass href="../../org.muml.core/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:BaseInsertPoint" baseClass="_VZUq5cwbEeSjx7OWZCcdLw"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZUD0MwbEeSjx7OWZCcdLw" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/behavior/Variable/initializeExpression"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:CustomPropertyEditor" xmi:id="_VZUD0cwbEeSjx7OWZCcdLw" fullyQualifiedClassName="org.muml.pim.actionlanguage.xtext.ui.properties.XtextPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZUD0swbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/behavior/Variable/constant"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:CheckboxPropertyEditor" xmi:id="_VZUD08wbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <superClasses href="#_VZUq5cwbEeSjx7OWZCcdLw"/>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
+    </classes>
+    <classes xmi:id="_VZUD1cwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/behavior/Operation"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZUD1swbEeSjx7OWZCcdLw" tooltip="">
+        <genFeature href="pim.genmodel#//pim/behavior/Operation/returnType"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_VZUD18wbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZUD2swbEeSjx7OWZCcdLw" tooltip="">
+        <genFeature href="pim.genmodel#//pim/behavior/Operation/parameters"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor" xmi:id="_VZUD28wbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZUD2MwbEeSjx7OWZCcdLw" tooltip="" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/behavior/Operation/implementations"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:CustomPropertyEditor" xmi:id="_VZUD2cwbEeSjx7OWZCcdLw" fullyQualifiedClassName="org.muml.pim.actionlanguage.xtext.ui.properties.XtextPropertyEditor"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
+    </classes>
+    <classes xmi:id="_VZUD3cwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/behavior/Parameter"/>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
+      <superClasses href="#_VZUq5cwbEeSjx7OWZCcdLw"/>
+    </classes>
+    <classes xmi:id="_VZUq4MwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/behavior/ParameterBinding"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZUq4cwbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/behavior/ParameterBinding/parameter"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_VZUq4swbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZUq48wbEeSjx7OWZCcdLw" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/behavior/ParameterBinding/value"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:CustomPropertyEditor" xmi:id="_VZUq5MwbEeSjx7OWZCcdLw" fullyQualifiedClassName="org.muml.pim.actionlanguage.xtext.ui.properties.XtextPropertyEditor"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_PmQuHNEeS5Putgio2lkg"/>
+    </classes>
+    <classes xmi:id="_VZUq5cwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/behavior/TypedNamedElement"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZUq5swbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/behavior/TypedNamedElement/dataType"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_VZUq58wbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
+    </classes>
+    <classes xmi:id="_VZUq6MwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/behavior/OperationRepository"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZUq6cwbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/behavior/OperationRepository/operations"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor" xmi:id="_VZUq6swbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#//@packages.0/@classes.5"/>
+    </classes>
+  </packages>
+  <packages xmi:id="_VZUq7MwbEeSjx7OWZCcdLw">
+    <genPackage href="pim.genmodel#//pim/component"/>
+    <classes xmi:id="_VZUq7cwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/component/Component"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZUq7swbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/component/Component/ports"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZVR8cwbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/component/Component/componentKind"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor" xmi:id="_VZVR8swbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
+      <superClasses href="#_VZRnm8wbEeSjx7OWZCcdLw"/>
+    </classes>
+    <classes xmi:id="_VZVR9MwbEeSjx7OWZCcdLw" superClasses="_VZXHLMwbEeSjx7OWZCcdLw _VZRnm8wbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/component/Port"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZVR9cwbEeSjx7OWZCcdLw" tooltip="" reconcile="false" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/component/Port/component"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_VZVR-MwbEeSjx7OWZCcdLw" superClasses="_VZWgG8wbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/component/ContinuousPort"/>
+    </classes>
+    <classes xmi:id="_VZVR-cwbEeSjx7OWZCcdLw" superClasses="_VZVR9MwbEeSjx7OWZCcdLw _VZYVQMwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/component/DiscretePort"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZVR-swbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/component/DiscretePort/refinedRole"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_VZVR-8wbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_VZVR_MwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/component/ComponentPart"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZVR_cwbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/component/ComponentPart/componentType"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_VZVR_swbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZVR_8wbEeSjx7OWZCcdLw" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/component/ComponentPart/parentComponent"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZV5AcwbEeSjx7OWZCcdLw" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/component/ComponentPart/cardinality"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:CustomPropertyEditor" xmi:id="_VZV5AswbEeSjx7OWZCcdLw" fullyQualifiedClassName="org.muml.pim.properties.valuetype.editor.CustomCardinalityPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/component/ComponentPart/portParts"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
+      <superClasses href="#_VZRnm8wbEeSjx7OWZCcdLw"/>
+    </classes>
+    <classes xmi:id="_VZV5A8wbEeSjx7OWZCcdLw" superClasses="_VZWgFMwbEeSjx7OWZCcdLw _VZV5DcwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/component/StaticStructuredComponent"/>
+    </classes>
+    <classes xmi:id="_VZV5BMwbEeSjx7OWZCcdLw" superClasses="_VZUq7cwbEeSjx7OWZCcdLw _VZTcxMwbEeSjx7OWZCcdLw _VZTcwMwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/component/AtomicComponent"/>
+    </classes>
+    <classes xmi:id="_VZV5BcwbEeSjx7OWZCcdLw" superClasses="_VZV5B8wbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/component/AssemblyConnector"/>
+    </classes>
+    <classes xmi:id="_VZV5BswbEeSjx7OWZCcdLw" superClasses="_VZV5B8wbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/component/DelegationConnector"/>
+    </classes>
+    <classes xmi:id="_VZV5B8wbEeSjx7OWZCcdLw" superClasses="_VZXHMMwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/component/PortConnector"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZV5CMwbEeSjx7OWZCcdLw" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/component/PortConnector/parentComponent"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_VZV5CswbEeSjx7OWZCcdLw" superClasses="_VZWgG8wbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/component/HybridPort"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZV5C8wbEeSjx7OWZCcdLw" tab="//@tabs.5">
+        <genFeature href="pim.genmodel#//pim/component/HybridPort/samplingInterval"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor" xmi:id="_VZV5DMwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_VZV5DcwbEeSjx7OWZCcdLw" superClasses="_VZUq7cwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/component/StructuredComponent"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZWgEMwbEeSjx7OWZCcdLw" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/component/StructuredComponent/connectors"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/component/StructuredComponent/embeddedComponentParts"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/component/StructuredComponent/coordinationProtocolParts"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_VZWgE8wbEeSjx7OWZCcdLw" superClasses="_VZV5BMwbEeSjx7OWZCcdLw _VZWgFMwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/component/StaticAtomicComponent"/>
+    </classes>
+    <classes xmi:id="_VZWgFMwbEeSjx7OWZCcdLw" superClasses="_VZUq7cwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/component/StaticComponent"/>
+    </classes>
+    <classes xmi:id="_VZWgFcwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/component/CoordinationProtocolPart"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZWgFswbEeSjx7OWZCcdLw" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/component/CoordinationProtocolPart/coordinationProtocol"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZWgGMwbEeSjx7OWZCcdLw" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/component/CoordinationProtocolPart/portParts"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
+    </classes>
+    <classes xmi:id="_VZWgG8wbEeSjx7OWZCcdLw" superClasses="_VZVR9MwbEeSjx7OWZCcdLw _VZUq5cwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/component/DirectedTypedPort"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZXHIcwbEeSjx7OWZCcdLw" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/component/DirectedTypedPort/initializeExpression"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:CustomPropertyEditor" xmi:id="_VZXHIswbEeSjx7OWZCcdLw" fullyQualifiedClassName="org.muml.pim.actionlanguage.xtext.ui.properties.XtextPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZWgHMwbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/component/DirectedTypedPort/kind"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor" xmi:id="_VZWgHcwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZWgHswbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/component/DirectedTypedPort/optional"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:CheckboxPropertyEditor" xmi:id="_VZXHIMwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:PropertyCategory" title="Kind" properties="_VZWgHMwbEeSjx7OWZCcdLw _VZWgHswbEeSjx7OWZCcdLw"/>
+    </classes>
+    <classes xmi:id="_VZXHJMwbEeSjx7OWZCcdLw" superClasses="_VZXHLMwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/component/PortPart"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZXHJcwbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/component/PortPart/portType"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_VZXHJswbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZXHJ8wbEeSjx7OWZCcdLw" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/component/PortPart/componentPart"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZXHKcwbEeSjx7OWZCcdLw" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/component/PortPart/coordinationProtocolPart"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+    </classes>
+  </packages>
+  <packages xmi:id="_VZXHK8wbEeSjx7OWZCcdLw">
+    <genPackage href="pim.genmodel#//pim/connector"/>
+    <classes xmi:id="_VZXHLMwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/connector/ConnectorEndpoint"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZXHLcwbEeSjx7OWZCcdLw" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/connector/ConnectorEndpoint/connectors"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
+    </classes>
+    <classes xmi:id="_VZXHMMwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/connector/Connector"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZXHMcwbEeSjx7OWZCcdLw" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/connector/Connector/connectorEndpoints"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
+    </classes>
+    <classes xmi:id="_VZXuMswbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/connector/ConnectorEndpointInstance"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZXuM8wbEeSjx7OWZCcdLw" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/connector/ConnectorEndpointInstance/connectorInstances"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZXuNcwbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/connector/ConnectorEndpointInstance/type"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_VZXuNswbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
+    </classes>
+    <classes xmi:id="_VZXuOMwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/connector/ConnectorInstance"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZXuOcwbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/connector/ConnectorInstance/type"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_VZXuOswbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZXuO8wbEeSjx7OWZCcdLw" reconcile="false" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/connector/ConnectorInstance/connectorEndpointInstances"/>
+        <readOnlyFilters xsi:type="org.muml:OCLFilter" expression="true"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
+    </classes>
+    <classes xmi:id="_VZYVQMwbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/connector/DiscreteInteractionEndpoint"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZYVQcwbEeSjx7OWZCcdLw" tab="//@tabs.6" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/connector/DiscreteInteractionEndpoint/senderMessageTypes"/>
+        <editor xsi:type="org.muml:ListPropertyEditor" xmi:id="_VZYVQswbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZYVQ8wbEeSjx7OWZCcdLw" tab="//@tabs.6">
+        <genFeature href="pim.genmodel#//pim/connector/DiscreteInteractionEndpoint/receiverMessageTypes"/>
+        <editor xsi:type="org.muml:ListPropertyEditor" xmi:id="_VZYVRMwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZYVR8wbEeSjx7OWZCcdLw" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/connector/DiscreteInteractionEndpoint/cardinality"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:CustomPropertyEditor" xmi:id="_VZYVSMwbEeSjx7OWZCcdLw" fullyQualifiedClassName="org.muml.pim.properties.valuetype.editor.CustomCardinalityPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZYVScwbEeSjx7OWZCcdLw" tab="//@tabs.6">
+        <genFeature href="pim.genmodel#//pim/connector/DiscreteInteractionEndpoint/receiverMessageBuffer"/>
+        <editor xsi:type="org.muml:ListPropertyEditor" xmi:id="_VZYVSswbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZYVS8wbEeSjx7OWZCcdLw" tab="//@tabs.7">
+        <genFeature href="pim.genmodel#//pim/connector/DiscreteInteractionEndpoint/subroleBehavior"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_VZYVTMwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" tab="//@tabs.7">
+        <genFeature href="pim.genmodel#//pim/connector/DiscreteInteractionEndpoint/coordinatorBehavior"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <superClasses href="#_VZTcxMwbEeSjx7OWZCcdLw"/>
+      <superClasses href="#_VZXHLMwbEeSjx7OWZCcdLw"/>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
+    </classes>
+    <classes xmi:id="_VZYVTswbEeSjx7OWZCcdLw" superClasses="_VZXuMswbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/connector/DiscreteInteractionEndpointInstance"/>
+    </classes>
+    <classes xmi:id="_VZY8UMwbEeSjx7OWZCcdLw" superClasses="_VZYVTswbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/connector/DiscreteSingleInteractionEndpointInstance"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZY8UcwbEeSjx7OWZCcdLw" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/connector/DiscreteSingleInteractionEndpointInstance/multiInteractionEndpointInstance"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZY8U8wbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/connector/DiscreteSingleInteractionEndpointInstance/next"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_VZY8VMwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZY8VcwbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/connector/DiscreteSingleInteractionEndpointInstance/previous"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_VZY8VswbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_VZY8V8wbEeSjx7OWZCcdLw" superClasses="_VZYVTswbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/connector/DiscreteMultiInteractionEndpointInstance"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZY8WMwbEeSjx7OWZCcdLw" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/connector/DiscreteMultiInteractionEndpointInstance/subInteractionEndpointInstances"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZY8WswbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/connector/DiscreteMultiInteractionEndpointInstance/first"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_VZY8W8wbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZY8XMwbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/connector/DiscreteMultiInteractionEndpointInstance/last"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_VZY8XcwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_VZY8X8wbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/connector/MessageBuffer"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZY8YMwbEeSjx7OWZCcdLw" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/connector/MessageBuffer/bufferSize"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:TextPropertyEditor" xmi:id="_VZZjYMwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZZjYcwbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/connector/MessageBuffer/messageType"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor" xmi:id="_VZZjYswbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZZjY8wbEeSjx7OWZCcdLw" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/connector/MessageBuffer/discreteInteractionEndpoint"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZZjZcwbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/connector/MessageBuffer/bufferOverflowAvoidanceStrategy"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor" xmi:id="_VZZjZswbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
+    </classes>
+  </packages>
+  <packages xmi:id="_VZZjaMwbEeSjx7OWZCcdLw">
+    <genPackage href="pim.genmodel#//pim/pattern"/>
+    <classes xmi:id="_VZZjacwbEeSjx7OWZCcdLw" superClasses="//@packages.10/@classes.2">
+      <genClass href="pim.genmodel#//pim/pattern/CoordinationPattern"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZZjaswbEeSjx7OWZCcdLw" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/pattern/CoordinationPattern/combineablePatterns"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor" xmi:id="_VZZja8wbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZZjbMwbEeSjx7OWZCcdLw">
+        <genFeature href="pim.genmodel#//pim/pattern/CoordinationPattern/alternativePatterns"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor" xmi:id="_VZZjbcwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" tab="//@tabs.1" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/pattern/CoordinationPattern/descriptionAspects"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/pattern/CoordinationPattern/patternVariants"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes>
+      <genClass href="pim.genmodel#//pim/pattern/DescriptionAspects"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/pattern/DescriptionAspects/alsoKnownAs"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:TextPropertyEditor" multiLine="true"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" reconcile="false" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/pattern/DescriptionAspects/overview"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:TextPropertyEditor" multiLine="true"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" reconcile="false" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/pattern/DescriptionAspects/context"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:TextPropertyEditor" multiLine="true"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" reconcile="false" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/pattern/DescriptionAspects/problem"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:TextPropertyEditor" multiLine="true"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" reconcile="false" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/pattern/DescriptionAspects/solution"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:TextPropertyEditor" multiLine="true"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" reconcile="false" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/pattern/DescriptionAspects/structure"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:TextPropertyEditor" multiLine="true"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/pattern/DescriptionAspects/behavior"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:TextPropertyEditor" multiLine="true"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" reconcile="false" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/pattern/DescriptionAspects/verification_properties"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:TextPropertyEditor" multiLine="true"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" reconcile="false" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/pattern/DescriptionAspects/consequences"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:TextPropertyEditor" multiLine="true"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" reconcile="false" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/pattern/DescriptionAspects/examples"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:TextPropertyEditor" multiLine="true"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" reconcile="false" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/pattern/DescriptionAspects/variants"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:TextPropertyEditor" multiLine="true"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" reconcile="false" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/pattern/DescriptionAspects/alternatives"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:TextPropertyEditor" multiLine="true"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" reconcile="false" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/pattern/DescriptionAspects/combineability"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:TextPropertyEditor" multiLine="true"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/pattern/DescriptionAspects/searchTerms"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:TextPropertyEditor" multiLine="true"/>
+      </orderedElements>
+    </classes>
+    <classes superClasses="_VZSOp8wbEeSjx7OWZCcdLw">
+      <genClass href="pim.genmodel#//pim/pattern/AbstractCoordinationPattern"/>
+      <orderedElements xsi:type="org.muml:Property" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/pattern/AbstractCoordinationPattern/patternParameters"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/pattern/AbstractCoordinationPattern/verifiedConfigurations"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes>
+      <genClass href="pim.genmodel#//pim/pattern/VerifiedConfiguration"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/pattern/VerifiedConfiguration/parameterBindings"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" reconcile="false">
+        <genFeature href="pim.genmodel#//pim/pattern/VerifiedConfiguration/coordinationPattern"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
+    </classes>
+    <classes superClasses="//@packages.10/@classes.2">
+      <genClass href="pim.genmodel#//pim/pattern/CoordinationPatternVariant"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/pattern/CoordinationPatternVariant/originalPattern"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+    </classes>
+  </packages>
+  <packages>
+    <genPackage href="pim.genmodel#//pim/realtimestatechart/one_to_n_schemata"/>
+    <classes>
+      <genClass href="pim.genmodel#//pim/realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema"/>
+      <orderedElements xsi:type="org.muml:Property" tab="//@tabs.2" reconcile="false" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/condition"/>
+        <editor xsi:type="org.muml:CustomPropertyEditor" fullyQualifiedClassName="org.muml.pim.actionlanguage.xtext.ui.properties.XtextPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" tab="//@tabs.3">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/action"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" reconcile="false" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/asynchronousMessageEvent"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/retryAfter"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes superClasses="//@packages.11/@classes.8">
+      <genClass href="pim.genmodel#//pim/realtimestatechart/one_to_n_schemata/Multicast"/>
+    </classes>
+    <classes superClasses="//@packages.11/@classes.8">
+      <genClass href="pim.genmodel#//pim/realtimestatechart/one_to_n_schemata/Unicast"/>
+    </classes>
+    <classes superClasses="//@packages.11/@classes.8">
+      <genClass href="pim.genmodel#//pim/realtimestatechart/one_to_n_schemata/Iterate"/>
+      <orderedElements xsi:type="org.muml:Property" tab="//@tabs.2" reconcile="false" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/one_to_n_schemata/Iterate/terminationCondition"/>
+        <editor xsi:type="org.muml:CustomPropertyEditor" fullyQualifiedClassName="org.muml.pim.actionlanguage.xtext.ui.properties.XtextPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" tab="//@tabs.3">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/action"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/one_to_n_schemata/Iterate/delay"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/one_to_n_schemata/Iterate/startFromFirst"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:CheckboxPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes superClasses="//@packages.11/@classes.8">
+      <genClass href="pim.genmodel#//pim/realtimestatechart/one_to_n_schemata/LoadBalancing"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/one_to_n_schemata/LoadBalancing/onResponseAction"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/one_to_n_schemata/LoadBalancing/maxWorkingTime"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/one_to_n_schemata/LoadBalancing/responseMessage"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes superClasses="//@packages.11/@classes.7">
+      <genClass href="pim.genmodel#//pim/realtimestatechart/one_to_n_schemata/SingleReceive"/>
+    </classes>
+    <classes superClasses="//@packages.11/@classes.7">
+      <genClass href="pim.genmodel#//pim/realtimestatechart/one_to_n_schemata/MultiReceive"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/realtimestatechart/one_to_n_schemata/MultiReceive/failureAction"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes superClasses="//@packages.11/@classes.0">
+      <genClass href="pim.genmodel#//pim/realtimestatechart/one_to_n_schemata/ReceivingOneToManyCommunicationSchema"/>
+    </classes>
+    <classes superClasses="//@packages.11/@classes.0">
+      <genClass href="pim.genmodel#//pim/realtimestatechart/one_to_n_schemata/SendingOneToManyCommunicationSchema"/>
+    </classes>
+  </packages>
+  <packages>
+    <genPackage href="pim.genmodel#//pim"/>
+    <classes>
+      <genClass href="pim.genmodel#//pim/Test"/>
+    </classes>
+  </packages>
+  <packages>
+    <genPackage href="pim.genmodel#//pim/runnable"/>
+    <classes>
+      <genClass href="pim.genmodel#//pim/runnable/Runnable"/>
+      <orderedElements xsi:type="org.muml:Property" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/runnable/Runnable/componentInstance"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/runnable/Runnable/portInstance"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/runnable/Runnable/labelAccesses"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/runnable/Runnable/period"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/runnable/Runnable/deadline"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:PropertyCategory" title="Lists" properties="//@packages.13/@classes.0/@orderedElements.1 //@packages.13/@classes.0/@orderedElements.2"/>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
+    </classes>
+    <classes>
+      <genClass href="pim.genmodel#//pim/runnable/Label"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/runnable/Label/componentInstance"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/runnable/Label/componentStatechart"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/runnable/Label/isConstant"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:CheckboxPropertyEditor"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
+    </classes>
+    <classes>
+      <genClass href="pim.genmodel#//pim/runnable/LabelAccess"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/runnable/LabelAccess/accessKind"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/runnable/LabelAccess/accessLabel"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/runnable/LabelAccess/accessingRunnable"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
+    </classes>
+  </packages>
+</org.muml:PropertyGenerator>
