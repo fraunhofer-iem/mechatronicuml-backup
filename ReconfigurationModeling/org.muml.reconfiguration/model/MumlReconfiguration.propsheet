@@ -7,7 +7,7 @@
   <genModel href="MumlReconfiguration.genmodel#/"/>
   <referencedGenerators href="../../org.muml.pim/model/pim.propsheet#_VZIdoMwbEeSjx7OWZCcdLw"/>
   <referencedGenerators href="../../org.muml.storydiagram/model/storydiagrams.propsheet#_RnsusM1gEeSIgPDefa6ZBw"/>
-  <plugin xmi:id="_RmGMMs1gEeSIgPDefa6ZBw" id="org.muml.reconfiguration.edit.properties" name="Reconfiguration Tabbed Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="1.0.0.qualifier">
+  <plugin xmi:id="_RmGMMs1gEeSIgPDefa6ZBw" id="org.muml.reconfiguration.edit.properties" name="Reconfiguration Tabbed Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany" version="1.0.0.qualifier">
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
     <requiredBundles>org.eclipse.core.runtime</requiredBundles>
     <requiredBundles>org.eclipse.emf.edit</requiredBundles>
@@ -406,7 +406,7 @@
     </classes>
     <classes>
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/reconfInstance/ReconfigurableAtomicComponentInstance"/>
-      <superClasses href="../../org.muml.pim/model/pim.propsheet#_VZQZe8wbEeSjx7OWZCcdLw"/>
+      <superClasses href="../../org.muml.pim/model/pim.propsheet#//@packages.2/@classes.13"/>
     </classes>
     <classes>
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/reconfInstance/ReconfigurableStructuredComponentInstance"/>
@@ -415,7 +415,7 @@
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
       </orderedElements>
-      <superClasses href="../../org.muml.pim/model/pim.propsheet#_VZQZeMwbEeSjx7OWZCcdLw"/>
+      <superClasses href="../../org.muml.pim/model/pim.propsheet#//@packages.2/@classes.12"/>
     </classes>
   </packages>
 </org.muml:PropertyGenerator>

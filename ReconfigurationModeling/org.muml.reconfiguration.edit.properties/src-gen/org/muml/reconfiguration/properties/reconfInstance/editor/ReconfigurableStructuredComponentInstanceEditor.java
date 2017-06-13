@@ -29,6 +29,19 @@ public class ReconfigurableStructuredComponentInstanceEditor extends org.muml.ap
 
 			addPropertyEditor(createEditorComponentPart_property_tab_generalTab_Editor(), false);
 
+			addSubCategory("org.muml.ape.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+			addEditorToCategory("org.muml.ape.category.Lists",
+					createEditorPortInstances_property_tab_generalTab_Editor(), false);
+
+			addEditorToCategory("org.muml.ape.category.Lists", createEditorRunnables_property_tab_generalTab_Editor(),
+					false);
+
+			addEditorToCategory("org.muml.ape.category.Lists", createEditorLabels_property_tab_generalTab_Editor(),
+					false);
+
+			addPropertyEditor(createEditorEmbeddedCIC_property_tab_generalTab_Editor(), false);
+
 			addPropertyEditor(createEditorControllerInstance_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
@@ -57,6 +70,19 @@ public class ReconfigurableStructuredComponentInstanceEditor extends org.muml.ap
 
 			addPropertyEditor(createEditorComponentPart_property_tab_generalTab_Editor(), false);
 
+			addSubCategory("org.muml.ape.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+			addEditorToCategory("org.muml.ape.category.Lists",
+					createEditorPortInstances_property_tab_generalTab_Editor(), false);
+
+			addEditorToCategory("org.muml.ape.category.Lists", createEditorRunnables_property_tab_generalTab_Editor(),
+					false);
+
+			addEditorToCategory("org.muml.ape.category.Lists", createEditorLabels_property_tab_generalTab_Editor(),
+					false);
+
+			addPropertyEditor(createEditorEmbeddedCIC_property_tab_generalTab_Editor(), false);
+
 			addPropertyEditor(createEditorControllerInstance_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
@@ -80,6 +106,22 @@ public class ReconfigurableStructuredComponentInstanceEditor extends org.muml.ap
 			this.editorControllerInstance_property_tab_generalTab = editor;
 		}
 		return this.editorControllerInstance_property_tab_generalTab;
+	}
+
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEmbeddedCIC_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorEmbeddedCIC_property_tab_generalTab_Editor() {
+		if (this.editorEmbeddedCIC_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.instance.InstancePackage.eINSTANCE
+					.getStructuredComponentInstance_EmbeddedCIC();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.NavigationFeaturePropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage(
+					"The component instances and connector instances that are embedded in this component instance\nare contained by the component instance configuration.");
+
+			this.editorEmbeddedCIC_property_tab_generalTab = editor;
+		}
+		return this.editorEmbeddedCIC_property_tab_generalTab;
 	}
 
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComponentType_property_tab_generalTab;
@@ -111,6 +153,48 @@ public class ReconfigurableStructuredComponentInstanceEditor extends org.muml.ap
 			this.editorComponentPart_property_tab_generalTab = editor;
 		}
 		return this.editorComponentPart_property_tab_generalTab;
+	}
+
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorPortInstances_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorPortInstances_property_tab_generalTab_Editor() {
+		if (this.editorPortInstances_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.instance.InstancePackage.eINSTANCE
+					.getComponentInstance_PortInstances();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage(
+					"The port instances that belong to this component instance. \\todosd{Why are also DiscreteSinglePortInstances of DiscreteMultiPortInstances contained here and not in the DiscreteMultiPortInstance?}");
+
+			this.editorPortInstances_property_tab_generalTab = editor;
+		}
+		return this.editorPortInstances_property_tab_generalTab;
+	}
+
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorRunnables_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorRunnables_property_tab_generalTab_Editor() {
+		if (this.editorRunnables_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.instance.InstancePackage.eINSTANCE
+					.getComponentInstance_Runnables();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			this.editorRunnables_property_tab_generalTab = editor;
+		}
+		return this.editorRunnables_property_tab_generalTab;
+	}
+
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorLabels_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorLabels_property_tab_generalTab_Editor() {
+		if (this.editorLabels_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.instance.InstancePackage.eINSTANCE
+					.getComponentInstance_Labels();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			this.editorLabels_property_tab_generalTab = editor;
+		}
+		return this.editorLabels_property_tab_generalTab;
 	}
 
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_property_tab_generalTab;
@@ -182,7 +266,8 @@ public class ReconfigurableStructuredComponentInstanceEditor extends org.muml.ap
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
 					"property.tab.general", "property.tab.general", "property.tab.general", "property.tab.general",
-					"property.tab.general", "property.tab.extensions"}).contains(tab);
+					"property.tab.general", "property.tab.general", "property.tab.general", "property.tab.extensions"})
+					.contains(tab);
 		}
 	}
 
