@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <org.muml:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.muml="http://www.muml.org/ape/1.0.0" xmi:id="_RmFlIM1gEeSIgPDefa6ZBw" contributorId="org.muml.ape.contributor">
   <reconciler xmi:id="_RmFlIc1gEeSIgPDefa6ZBw">
-    <customTransformations xmi:id="_RmGMMM1gEeSIgPDefa6ZBw" uri="platform:/plugin/org.muml.pim.common.common/transformations/muml-propsheet.qvto"/>
+    <customTransformations xmi:id="_RmGMMM1gEeSIgPDefa6ZBw" uri="platform:/plugin/org.muml.pim.common/transformations/muml-propsheet.qvto"/>
     <customTransformations xmi:id="_RmGMMc1gEeSIgPDefa6ZBw" uri="platform:/plugin/org.muml.pim.actionlanguage.xtext.ui/transformations/xtext-propsheet.qvto"/>
   </reconciler>
   <genModel href="MumlReconfiguration.genmodel#/"/>
