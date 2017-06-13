@@ -17,9 +17,23 @@
 	</properties>
   
   <modules>
+	<module>com.ociweb.emf.util</module>
+	<module>com.ociweb.gmf</module>  
+	<module>org.opendds.modeling.common</module>  
+	<module>org.opendds.modeling.diagram.datalib</module>  
+	<module>org.opendds.modeling.diagram.dcpslib</module>  
+	<module>org.opendds.modeling.diagram.main</module>  
+	<module>org.opendds.modeling.diagram.policylib</module>  
+	<module>org.opendds.modeling.help</module>  
+	<module>org.opendds.modeling.model</module>
+	<module>org.opendds.modeling.model.editor</module> 
+	<module>org.opendds.modeling.model.edit</module> 
+	<module>org.opendds.modeling.sdk.model</module>   
+	<module>org.opendds.modeling.sdk.model.edit</module>   
+	<module>org.opendds.modeling.sdk.model.editor</module>   
+	<module>org.opendds.modeling.validation</module>     
     <module>org.muml.external.aopalliance</module>
     <module>org.muml.external.aopalliance.feature</module>
-    <!-- <module>org.muml.external.buckminster</module> -->
     <module>org.muml.external.guava</module>
     <module>org.muml.external.guava.feature</module>
     <module>org.muml.external.guice</module>
@@ -50,6 +64,48 @@
         <version>0.26.0</version>
         <extensions>true</extensions>
       </plugin>
+	  <plugin>
+            <groupId>org.eclipse.tycho</groupId>
+            <artifactId>target-platform-configuration</artifactId>
+            <version>${tycho-version}</version>
+            <configuration>
+              <environments>
+                <environment>
+                  <os>win32</os>
+                  <ws>win32</ws>
+                  <arch>x86</arch>
+                </environment>
+                <environment>
+                  <os>linux</os>
+                  <ws>gtk</ws>
+                  <arch>x86_64</arch>
+                </environment>
+                <environment>
+                  <os>macosx</os>
+                  <ws>cocoa</ws>
+                  <arch>x86_64</arch>
+                </environment>
+              </environments>
+            </configuration>
+        </plugin>  
     </plugins>
   </build>
+	
+  <repositories>
+		<repository>
+			<id>eclipse-neon</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/releases/neon</url>
+		</repository>
+		<repository>
+			<id>eclipse-updates</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/eclipse/updates/4.6</url>
+		</repository>
+		<repository>
+			<id>emf</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/modeling/emf/updates/releases/</url>
+		</repository>
+	</repositories>  
 </project>
