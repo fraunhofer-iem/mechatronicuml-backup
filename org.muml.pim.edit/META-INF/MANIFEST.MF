@@ -1,0 +1,44 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MechatronicUML Edit-Support
+Bundle-SymbolicName: org.muml.pim.edit;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Activator: org.muml.pim.provider.MumlEditPlugin$Implementation
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
+ Heinz Nixdorf Institute,
+ Paderborn University,
+ and Fraunhofer Research Institution for Mechatronic Systems Design IEM,
+ GermanyHeinz Nixdorf Institute,
+ University of Paderborn
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.muml.pim.behavior.provider,
+ org.muml.pim.component.provider,
+ org.muml.pim.connector.provider,
+ org.muml.pim.constraint.provider,
+ org.muml.pim.instance.provider,
+ org.muml.pim.msgtype.provider,
+ org.muml.pim.pattern.provider,
+ org.muml.pim.protocol.provider,
+ org.muml.pim.provider,
+ org.muml.pim.realtimestatechart.descriptor,
+ org.muml.pim.realtimestatechart.one_to_n_schemata.provider,
+ org.muml.pim.realtimestatechart.provider,
+ org.muml.pim.runnable.provider,
+ org.muml.pim.types.descriptor,
+ org.muml.pim.types.provider,
+ org.muml.pim.valuetype.descriptor,
+ org.muml.pim.valuetype.provider
+Require-Bundle: org.eclipse.ocl.ecore,
+ org.muml.core.common,
+ org.eclipse.core.runtime,
+ org.muml.pim;visibility:=reexport,
+ org.eclipse.emf.edit;visibility:=reexport,
+ org.muml.core;visibility:=reexport,
+ org.muml.core.edit;visibility:=reexport,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.emf.ecore.edit;visibility:=reexport,
+ org.eclipse.ui
+Bundle-ActivationPolicy: lazy
+Import-Package: org.muml.pim.component.provider
