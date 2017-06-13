@@ -56,34 +56,11 @@ public class RegionItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addPriorityPropertyDescriptor(object);
 			addEmbeddedStatechartPropertyDescriptor(object);
 			addParentStatePropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Priority feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPriorityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_PrioritizedElement_priority_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PrioritizedElement_priority_feature", "_UI_PrioritizedElement_type"),
-				 RealtimestatechartPackage.Literals.PRIORITIZED_ELEMENT__PRIORITY,
-				 true,
-				 false,
-				 true,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**

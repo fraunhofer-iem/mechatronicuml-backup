@@ -28,7 +28,6 @@ import org.muml.pim.realtimestatechart.EventKind;
 import org.muml.pim.realtimestatechart.ExitEvent;
 import org.muml.pim.realtimestatechart.ExitPoint;
 import org.muml.pim.realtimestatechart.Message;
-import org.muml.pim.realtimestatechart.PrioritizedElement;
 import org.muml.pim.realtimestatechart.RealtimeStatechart;
 import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
 import org.muml.pim.realtimestatechart.Region;
@@ -145,8 +144,6 @@ public class RealtimestatechartValidator extends MumlValidator {
 				return validateSynchronizationChannel((SynchronizationChannel)value, diagnostics, context);
 			case RealtimestatechartPackage.SYNCHRONIZATION:
 				return validateSynchronization((Synchronization)value, diagnostics, context);
-			case RealtimestatechartPackage.PRIORITIZED_ELEMENT:
-				return validatePrioritizedElement((PrioritizedElement)value, diagnostics, context);
 			case RealtimestatechartPackage.REALTIME_STATECHART:
 				return validateRealtimeStatechart((RealtimeStatechart)value, diagnostics, context);
 			case RealtimestatechartPackage.EVENT:
@@ -218,17 +215,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * @generated
 	 */
 	public boolean validateRegion(Region region, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(region, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(region, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(region, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(region, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(region, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(region, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(region, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(region, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(region, diagnostics, context);
-		if (result || diagnostics != null) result &= validatePrioritizedElement_PriorityGreaterOrEqualOne(region, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint(region, diagnostics, context);
 	}
 
 	/**
@@ -554,7 +541,6 @@ public class RealtimestatechartValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(transition, diagnostics, context);
-		if (result || diagnostics != null) result &= validatePrioritizedElement_PriorityGreaterOrEqualOne(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTransition_UsingAOneToManySchemaAtOneTransitionImpliesUsingSchemaAtAllTransitions(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTransition_LegalTransitionsOnly(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTransition_TriggerMessageEventsMustNotHaveAnOwnedParameterBinding(transition, diagnostics, context);
@@ -1327,55 +1313,6 @@ public class RealtimestatechartValidator extends MumlValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "SelectorExpressionForbidden",
 				 SYNCHRONIZATION__SELECTOR_EXPRESSION_FORBIDDEN__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validatePrioritizedElement(PrioritizedElement prioritizedElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(prioritizedElement, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(prioritizedElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(prioritizedElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(prioritizedElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(prioritizedElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(prioritizedElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(prioritizedElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(prioritizedElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(prioritizedElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validatePrioritizedElement_PriorityGreaterOrEqualOne(prioritizedElement, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * The cached validation expression for the PriorityGreaterOrEqualOne constraint of '<em>Prioritized Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String PRIORITIZED_ELEMENT__PRIORITY_GREATER_OR_EQUAL_ONE__EEXPRESSION = "-- Priority must be >= 1\n" +
-		"self.priority >= 1";
-
-	/**
-	 * Validates the PriorityGreaterOrEqualOne constraint of '<em>Prioritized Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validatePrioritizedElement_PriorityGreaterOrEqualOne(PrioritizedElement prioritizedElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(RealtimestatechartPackage.Literals.PRIORITIZED_ELEMENT,
-				 prioritizedElement,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "PriorityGreaterOrEqualOne",
-				 PRIORITIZED_ELEMENT__PRIORITY_GREATER_OR_EQUAL_ONE__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

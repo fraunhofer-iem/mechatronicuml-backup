@@ -101,7 +101,7 @@ public abstract class SendingOneToManyCommunicationSchemaEditor
 					adapterFactory, feature);
 
 			editor.setTooltipMessage(
-					"If the transition uses a communication schemata with the condition attribute, then it may be that no subrole may send or receiver a message. Before the RTSC may retry again to execute the communication schemata, it has to wait a specific time. This time is encoded within the attribute retryAfter.");
+					"If the transition uses a communication schemata with the condition attribute, then it may happen that no subrole may send or receive a message. Before the RTSC may retry to execute the communication schemata, it has to wait a specific time. This time is encoded within the attribute retryAfter.");
 
 			this.editorRetryAfter_property_tab_generalTab = editor;
 		}

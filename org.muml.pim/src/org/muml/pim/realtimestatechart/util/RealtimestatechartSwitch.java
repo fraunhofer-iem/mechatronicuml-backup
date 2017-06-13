@@ -27,7 +27,6 @@ import org.muml.pim.realtimestatechart.Event;
 import org.muml.pim.realtimestatechart.ExitEvent;
 import org.muml.pim.realtimestatechart.ExitPoint;
 import org.muml.pim.realtimestatechart.Message;
-import org.muml.pim.realtimestatechart.PrioritizedElement;
 import org.muml.pim.realtimestatechart.RealtimeStatechart;
 import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
 import org.muml.pim.realtimestatechart.Region;
@@ -130,7 +129,6 @@ public class RealtimestatechartSwitch<T> extends Switch<T> {
 				Region region = (Region)theEObject;
 				T result = caseRegion(region);
 				if (result == null) result = caseCommentableElement(region);
-				if (result == null) result = casePrioritizedElement(region);
 				if (result == null) result = caseExtendableElement(region);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -157,7 +155,6 @@ public class RealtimestatechartSwitch<T> extends Switch<T> {
 			case RealtimestatechartPackage.TRANSITION: {
 				Transition transition = (Transition)theEObject;
 				T result = caseTransition(transition);
-				if (result == null) result = casePrioritizedElement(transition);
 				if (result == null) result = caseCommentableElement(transition);
 				if (result == null) result = caseExtendableElement(transition);
 				if (result == null) result = defaultCase(theEObject);
@@ -215,12 +212,6 @@ public class RealtimestatechartSwitch<T> extends Switch<T> {
 				Synchronization synchronization = (Synchronization)theEObject;
 				T result = caseSynchronization(synchronization);
 				if (result == null) result = caseExtendableElement(synchronization);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case RealtimestatechartPackage.PRIORITIZED_ELEMENT: {
-				PrioritizedElement prioritizedElement = (PrioritizedElement)theEObject;
-				T result = casePrioritizedElement(prioritizedElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -537,21 +528,6 @@ public class RealtimestatechartSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSynchronization(Synchronization object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Prioritized Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Prioritized Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePrioritizedElement(PrioritizedElement object) {
 		return null;
 	}
 

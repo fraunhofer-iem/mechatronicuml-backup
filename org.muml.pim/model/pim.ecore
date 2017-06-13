@@ -703,7 +703,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Region" eSuperTypes="../../org.muml.core/model/core.ecore#//CommentableElement #//realtimestatechart/PrioritizedElement">
+    <eClassifiers xsi:type="ecore:EClass" name="Region" eSuperTypes="../../org.muml.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Regions enables hierarchy and parallelism. Each state can have zero, one or more regions."/>
       </eAnnotations>
@@ -929,7 +929,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Transition" eSuperTypes="#//realtimestatechart/PrioritizedElement ../../org.muml.core/model/core.ecore#//CommentableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="Transition" eSuperTypes="../../org.muml.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="constraints" value="UsingAOneToManySchemaAtOneTransitionImpliesUsingSchemaAtAllTransitions LegalTransitionsOnly TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents StateConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines StateConnectionPointOutgoingTransitionsNoConditions StateConnectionPointOutgoingTransitionsMustBeUrgent NoCombinationOfRelativeAndAbsoluteDeadlines NoCombinationOfReceivedSynchronizationAndTriggerMessage TransitionMustBeContainedByCorrectStatechart OutgoingTransitionOfUrgentStateMustBeUrgent NotMoreThanOneTriggerAndOneRaiseMessageEvent"/>
       </eAnnotations>
@@ -1220,22 +1220,6 @@
           containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="An expression that evaluates to a value which is used to select a particular counterpart for the synchronization."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PrioritizedElement" abstract="true">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Enables the priorization of elements. The minimum priority is 1."/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="PriorityGreaterOrEqualOne"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="PriorityGreaterOrEqualOne" value="-- Priority must be >= 1&#xA;self.priority >= 1"/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The integer value that represents the priority."/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>

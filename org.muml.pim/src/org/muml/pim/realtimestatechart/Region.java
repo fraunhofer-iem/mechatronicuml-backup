@@ -30,7 +30,7 @@ import org.muml.core.CommentableElement;
  * @model
  * @generated
  */
-public interface Region extends CommentableElement, PrioritizedElement {
+public interface Region extends CommentableElement {
 	/**
 	 * Returns the value of the '<em><b>Embedded Statechart</b></em>' containment reference.
 	 * It is bidirectional and its opposite is '{@link org.muml.pim.realtimestatechart.RealtimeStatechart#getParentRegion <em>Parent Region</em>}'.

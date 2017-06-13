@@ -4,8 +4,11 @@ Bundle-Name: MechatronicUML PIM Core Meta Model
 Bundle-SymbolicName: org.muml.pim;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
+Bundle-Vendor: Software Engineering Group,
  Heinz Nixdorf Institute,
+ Paderborn University,
+ and Fraunhofer Research Institution for Mechatronic Systems Design IEM,
+ GermanyHeinz Nixdorf Institute,
  Paderborn University,
  and Fraunhofer Research Institution for Mechatronic Systems Design IEM,
  GermanyHeinz Nixdorf Institute,

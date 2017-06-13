@@ -13,23 +13,25 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.muml.core.CorePackage;
 import org.muml.core.common.descriptor.DefaultChainedPropertyDescriptor;
 import org.muml.core.common.descriptor.IChainedPropertyDescriptor;
 import org.muml.core.common.utils.FujabaEcoreUtil;
 import org.muml.core.expressions.ExpressionsFactory;
 import org.muml.core.expressions.ExpressionsPackage;
 import org.muml.core.expressions.common.CommonExpressionsFactory;
+import org.muml.core.provider.CommentableElementItemProvider;
 import org.muml.pim.behavior.BehavioralElement;
 import org.muml.pim.component.DiscretePort;
 import org.muml.pim.msgtype.MessageType;
 import org.muml.pim.protocol.Role;
+import org.muml.pim.provider.MumlEditPlugin;
 import org.muml.pim.realtimestatechart.EventKind;
 import org.muml.pim.realtimestatechart.RealtimeStatechart;
 import org.muml.pim.realtimestatechart.RealtimestatechartFactory;
@@ -46,7 +48,7 @@ import org.muml.pim.realtimestatechart.descriptor.TransitionMessageEventProperty
  * <!-- begin-user-doc --> <!-- end-user-doc -->
  * @generated
  */
-public class TransitionItemProvider extends PrioritizedElementItemProvider {
+public class TransitionItemProvider extends CommentableElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
@@ -68,7 +70,6 @@ public class TransitionItemProvider extends PrioritizedElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCommentPropertyDescriptor(object);
 			addSynchronizationPropertyDescriptor(object);
 			addTargetPropertyDescriptor(object);
 			addSourcePropertyDescriptor(object);
@@ -91,28 +92,6 @@ public class TransitionItemProvider extends PrioritizedElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Comment feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCommentPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CommentableElement_comment_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature", "_UI_CommentableElement_type"),
-				 CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-		/**
 	 * This adds a property descriptor for the Synchronization feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -844,7 +823,6 @@ public class TransitionItemProvider extends PrioritizedElementItemProvider {
 			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__SYNCHRONIZATION);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__CLOCK_CONSTRAINTS);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__ABSOLUTE_DEADLINES);
@@ -919,7 +897,6 @@ public class TransitionItemProvider extends PrioritizedElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Transition.class)) {
-			case RealtimestatechartPackage.TRANSITION__COMMENT:
 			case RealtimestatechartPackage.TRANSITION__STATECHART:
 			case RealtimestatechartPackage.TRANSITION__TRIGGER_MESSAGE_EVENT:
 			case RealtimestatechartPackage.TRANSITION__RAISE_MESSAGE_EVENT:
@@ -929,7 +906,6 @@ public class TransitionItemProvider extends PrioritizedElementItemProvider {
 			case RealtimestatechartPackage.TRANSITION__SENDER_MESSAGE_TYPES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case RealtimestatechartPackage.TRANSITION__EXTENSIONS:
 			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION:
 			case RealtimestatechartPackage.TRANSITION__CLOCK_CONSTRAINTS:
 			case RealtimestatechartPackage.TRANSITION__ABSOLUTE_DEADLINES:
@@ -1014,6 +990,17 @@ public class TransitionItemProvider extends PrioritizedElementItemProvider {
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.TRANSITION__ACTION,
 				 RealtimestatechartFactory.eINSTANCE.createAction()));
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return MumlEditPlugin.INSTANCE;
 	}
 
 }

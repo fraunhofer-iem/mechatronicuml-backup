@@ -25,8 +25,6 @@ public class TransitionEditor extends org.muml.ape.runtime.editors.ClassProperty
 
 			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
 
-			addPropertyEditor(createEditorPriority_property_tab_generalTab_Editor(), false);
-
 			addPropertyEditor(createEditorClockConstraints_property_tab_conditionTab_Editor(), false);
 
 			addPropertyEditor(createEditorGuard_property_tab_conditionTab_Editor(), false);
@@ -92,8 +90,6 @@ public class TransitionEditor extends org.muml.ape.runtime.editors.ClassProperty
 		} else if ("property.tab.behavior".equals(tab)) { // Tab Behavior
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
-
-			addPropertyEditor(createEditorPriority_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorTarget_property_tab_generalTab_Editor(), false);
 
@@ -428,21 +424,6 @@ public class TransitionEditor extends org.muml.ape.runtime.editors.ClassProperty
 		return this.editorExtensions_property_tab_extensionsTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorPriority_property_tab_generalTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorPriority_property_tab_generalTab_Editor() {
-		if (this.editorPriority_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-					.getPrioritizedElement_Priority();
-			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.SpinnerPropertyEditor(
-					adapterFactory, feature, 0);
-
-			editor.setTooltipMessage("The integer value that represents the priority.");
-
-			this.editorPriority_property_tab_generalTab = editor;
-		}
-		return this.editorPriority_property_tab_generalTab;
-	}
-
 	//
 	// instantiation
 	//
@@ -470,7 +451,7 @@ public class TransitionEditor extends org.muml.ape.runtime.editors.ClassProperty
 					"property.tab.condition", "property.tab.effect", "property.tab.condition", "property.tab.general",
 					"property.tab.general", "property.tab.general", "property.tab.effect", "property.tab.deadline",
 					"property.tab.deadline", "property.tab.general", "property.tab.effect", "property.tab.general",
-					"property.tab.documentation", "property.tab.extensions", "property.tab.general"}).contains(tab);
+					"property.tab.documentation", "property.tab.extensions"}).contains(tab);
 		}
 	}
 

@@ -28,7 +28,6 @@ import org.muml.pim.realtimestatechart.Event;
 import org.muml.pim.realtimestatechart.ExitEvent;
 import org.muml.pim.realtimestatechart.ExitPoint;
 import org.muml.pim.realtimestatechart.Message;
-import org.muml.pim.realtimestatechart.PrioritizedElement;
 import org.muml.pim.realtimestatechart.RealtimeStatechart;
 import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
 import org.muml.pim.realtimestatechart.Region;
@@ -157,10 +156,6 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseSynchronization(Synchronization object) {
 				return createSynchronizationAdapter();
-			}
-			@Override
-			public Adapter casePrioritizedElement(PrioritizedElement object) {
-				return createPrioritizedElementAdapter();
 			}
 			@Override
 			public Adapter caseRealtimeStatechart(RealtimeStatechart object) {
@@ -445,20 +440,6 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSynchronizationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.muml.pim.realtimestatechart.PrioritizedElement <em>Prioritized Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.muml.pim.realtimestatechart.PrioritizedElement
-	 * @generated
-	 */
-	public Adapter createPrioritizedElementAdapter() {
 		return null;
 	}
 

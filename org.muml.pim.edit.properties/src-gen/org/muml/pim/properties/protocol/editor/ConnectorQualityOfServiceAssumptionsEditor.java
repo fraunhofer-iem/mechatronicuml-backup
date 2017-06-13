@@ -92,7 +92,7 @@ public class ConnectorQualityOfServiceAssumptionsEditor extends org.muml.ape.run
 					adapterFactory, feature);
 
 			editor.setTooltipMessage(
-					"Defines if messages that are send using this connector may be lost during transport.");
+					"Defines whether messages that are sent using this connector may be lost during transport.");
 
 			this.editorMessageLossPossible_property_tab_generalTab = editor;
 		}
@@ -106,6 +106,9 @@ public class ConnectorQualityOfServiceAssumptionsEditor extends org.muml.ape.run
 					.getConnectorQualityOfServiceAssumptions_PreserveMessageOrder();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.CheckboxPropertyEditor(
 					adapterFactory, feature);
+
+			editor.setTooltipMessage(
+					"Defines whether the message order is preserved. This is achieved by dropping overtaken messages. The message order is always preserved if the connector is reliable.");
 
 			this.editorPreserveMessageOrder_property_tab_generalTab = editor;
 		}

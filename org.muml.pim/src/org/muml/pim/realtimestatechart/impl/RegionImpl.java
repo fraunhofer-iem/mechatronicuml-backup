@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.muml.core.impl.CommentableElementImpl;
-import org.muml.pim.realtimestatechart.PrioritizedElement;
 import org.muml.pim.realtimestatechart.RealtimeStatechart;
 import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
 import org.muml.pim.realtimestatechart.Region;
@@ -28,7 +27,6 @@ import org.muml.pim.realtimestatechart.State;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.muml.pim.realtimestatechart.impl.RegionImpl#getPriority <em>Priority</em>}</li>
  *   <li>{@link org.muml.pim.realtimestatechart.impl.RegionImpl#getEmbeddedStatechart <em>Embedded Statechart</em>}</li>
  *   <li>{@link org.muml.pim.realtimestatechart.impl.RegionImpl#getParentState <em>Parent State</em>}</li>
  *   <li>{@link org.muml.pim.realtimestatechart.impl.RegionImpl#getName <em>Name</em>}</li>
@@ -37,26 +35,6 @@ import org.muml.pim.realtimestatechart.State;
  * @generated
  */
 public class RegionImpl extends CommentableElementImpl implements Region {
-	/**
-	 * The default value of the '{@link #getPriority() <em>Priority</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPriority()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int PRIORITY_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getPriority() <em>Priority</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPriority()
-	 * @generated
-	 * @ordered
-	 */
-	protected int priority = PRIORITY_EDEFAULT;
-
 	/**
 	 * The cached value of the '{@link #getEmbeddedStatechart() <em>Embedded Statechart</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -94,27 +72,6 @@ public class RegionImpl extends CommentableElementImpl implements Region {
 	@Override
 	protected EClass eStaticClass() {
 		return RealtimestatechartPackage.Literals.REGION;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public int getPriority() {
-		return priority;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPriority(int newPriority) {
-		int oldPriority = priority;
-		priority = newPriority;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.REGION__PRIORITY, oldPriority, priority));
 	}
 
 	/**
@@ -269,8 +226,6 @@ public class RegionImpl extends CommentableElementImpl implements Region {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RealtimestatechartPackage.REGION__PRIORITY:
-				return getPriority();
 			case RealtimestatechartPackage.REGION__EMBEDDED_STATECHART:
 				return getEmbeddedStatechart();
 			case RealtimestatechartPackage.REGION__PARENT_STATE:
@@ -290,9 +245,6 @@ public class RegionImpl extends CommentableElementImpl implements Region {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RealtimestatechartPackage.REGION__PRIORITY:
-				setPriority((Integer)newValue);
-				return;
 			case RealtimestatechartPackage.REGION__EMBEDDED_STATECHART:
 				setEmbeddedStatechart((RealtimeStatechart)newValue);
 				return;
@@ -311,9 +263,6 @@ public class RegionImpl extends CommentableElementImpl implements Region {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RealtimestatechartPackage.REGION__PRIORITY:
-				setPriority(PRIORITY_EDEFAULT);
-				return;
 			case RealtimestatechartPackage.REGION__EMBEDDED_STATECHART:
 				setEmbeddedStatechart((RealtimeStatechart)null);
 				return;
@@ -332,8 +281,6 @@ public class RegionImpl extends CommentableElementImpl implements Region {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RealtimestatechartPackage.REGION__PRIORITY:
-				return priority != PRIORITY_EDEFAULT;
 			case RealtimestatechartPackage.REGION__EMBEDDED_STATECHART:
 				return embeddedStatechart != null;
 			case RealtimestatechartPackage.REGION__PARENT_STATE:
@@ -342,54 +289,6 @@ public class RegionImpl extends CommentableElementImpl implements Region {
 				return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == PrioritizedElement.class) {
-			switch (derivedFeatureID) {
-				case RealtimestatechartPackage.REGION__PRIORITY: return RealtimestatechartPackage.PRIORITIZED_ELEMENT__PRIORITY;
-				default: return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == PrioritizedElement.class) {
-			switch (baseFeatureID) {
-				case RealtimestatechartPackage.PRIORITIZED_ELEMENT__PRIORITY: return RealtimestatechartPackage.REGION__PRIORITY;
-				default: return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (priority: ");
-		result.append(priority);
-		result.append(')');
-		return result.toString();
 	}
 
 } //RegionImpl

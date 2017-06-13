@@ -134,7 +134,6 @@
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
       </orderedElements>
       <superClasses href="../../org.muml.core/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
-      <superClasses href="#_VZN9OMwbEeSjx7OWZCcdLw"/>
     </classes>
     <classes xmi:id="_VZKS3MwbEeSjx7OWZCcdLw" superClasses="_VZLg88wbEeSjx7OWZCcdLw">
       <genClass href="pim.genmodel#//pim/realtimestatechart/State"/>
@@ -270,7 +269,6 @@
       </orderedElements>
       <orderedElements xsi:type="org.muml:PropertyCategory" xmi:id="_VZMvEswbEeSjx7OWZCcdLw" title="Booleans" properties="_VZMIC8wbEeSjx7OWZCcdLw _VZMvEMwbEeSjx7OWZCcdLw"/>
       <superClasses href="../../org.muml.core/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
-      <superClasses href="#_VZN9OMwbEeSjx7OWZCcdLw"/>
     </classes>
     <classes xmi:id="_VZMvFMwbEeSjx7OWZCcdLw">
       <genClass href="pim.genmodel#//pim/realtimestatechart/ClockConstraint"/>
@@ -374,18 +372,10 @@
       </orderedElements>
       <superClasses href="../../org.muml.core/model/core.propsheet#_i_PmQuHNEeS5Putgio2lkg"/>
     </classes>
-    <classes xmi:id="_VZN9OMwbEeSjx7OWZCcdLw">
-      <genClass href="pim.genmodel#//pim/realtimestatechart/PrioritizedElement"/>
-      <orderedElements xsi:type="org.muml:Property" xmi:id="_VZN9OcwbEeSjx7OWZCcdLw">
-        <genFeature href="pim.genmodel#//pim/realtimestatechart/PrioritizedElement/priority"/>
-        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="org.muml:SpinnerPropertyEditor" xmi:id="_VZN9OswbEeSjx7OWZCcdLw"/>
-      </orderedElements>
-    </classes>
     <classes xmi:id="_VZN9O8wbEeSjx7OWZCcdLw">
       <genClass href="pim.genmodel#//pim/realtimestatechart/RealtimeStatechart"/>
-      <orderedElements xsi:type="org.muml:PropertyCategory" xmi:id="_VZOkRswbEeSjx7OWZCcdLw" title="RTSC Elements" properties="//@packages.1/@classes.16/@orderedElements.5 _VZOkQswbEeSjx7OWZCcdLw _VZTcyswbEeSjx7OWZCcdLw"/>
-      <orderedElements xsi:type="org.muml:PropertyCategory" title="Subrole-specific Elements" properties="//@packages.1/@classes.16/@orderedElements.7 //@packages.1/@classes.16/@orderedElements.8 //@packages.1/@classes.16/@orderedElements.9"/>
+      <orderedElements xsi:type="org.muml:PropertyCategory" xmi:id="_VZOkRswbEeSjx7OWZCcdLw" title="RTSC Elements" properties="//@packages.1/@classes.15/@orderedElements.5 _VZOkQswbEeSjx7OWZCcdLw _VZTcyswbEeSjx7OWZCcdLw"/>
+      <orderedElements xsi:type="org.muml:PropertyCategory" title="Subrole-specific Elements" properties="//@packages.1/@classes.15/@orderedElements.7 //@packages.1/@classes.15/@orderedElements.8 //@packages.1/@classes.15/@orderedElements.9"/>
       <orderedElements xsi:type="org.muml:Property" xmi:id="_VZN9PMwbEeSjx7OWZCcdLw" reconcile="false">
         <genFeature href="pim.genmodel#//pim/realtimestatechart/RealtimeStatechart/parentRegion"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>

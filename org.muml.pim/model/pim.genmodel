@@ -241,10 +241,6 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//realtimestatechart/Synchronization/kind"/>
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/Synchronization/selectorExpression"/>
       </genClasses>
-      <genClasses image="false" ecoreClass="pim.ecore#//realtimestatechart/PrioritizedElement">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EAttribute pim.ecore#//realtimestatechart/PrioritizedElement/priority"/>
-      </genClasses>
       <genClasses ecoreClass="pim.ecore#//realtimestatechart/RealtimeStatechart">
         <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/RealtimeStatechart/parentRegion"/>
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/RealtimeStatechart/transitions"/>
