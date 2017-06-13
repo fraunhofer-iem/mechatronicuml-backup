@@ -31,7 +31,8 @@
 	<module>org.opendds.modeling.sdk.model</module>   
 	<module>org.opendds.modeling.sdk.model.edit</module>   
 	<module>org.opendds.modeling.sdk.model.editor</module>   
-	<module>org.opendds.modeling.validation</module>     
+	<module>org.opendds.modeling.validation</module>    
+	<module>org.opendds.modeling.feature</module>    	  
     <module>org.muml.external.aopalliance</module>
     <module>org.muml.external.aopalliance.feature</module>
     <module>org.muml.external.guava</module>
