@@ -1,0 +1,7 @@
+# Tracing options for the org.opendds.modeling.diagram.dcpslib plug-in
+
+# Common issues
+org.opendds.modeling.diagram.dcpslib/debug=false
+
+# Visual IDs
+org.opendds.modeling.diagram.dcpslib/debug/visualID=false

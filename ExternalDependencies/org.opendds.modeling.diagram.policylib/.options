@@ -1,0 +1,7 @@
+# Tracing options for the org.opendds.modeling.diagram.policylib plug-in
+
+# Common issues
+org.opendds.modeling.diagram.policylib/debug=false
+
+# Visual IDs
+org.opendds.modeling.diagram.policylib/debug/visualID=false

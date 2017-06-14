@@ -1,0 +1,7 @@
+# Tracing options for the org.opendds.modeling.diagram.main plug-in
+
+# Common issues
+org.opendds.modeling.diagram.main/debug=false
+
+# Visual IDs
+org.opendds.modeling.diagram.main/debug/visualID=false
