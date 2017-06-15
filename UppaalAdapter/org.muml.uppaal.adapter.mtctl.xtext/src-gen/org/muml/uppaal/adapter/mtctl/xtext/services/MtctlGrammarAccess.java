@@ -118,24 +118,24 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	public class ImplyExprElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.uppaal.adapter.mtctl.xtext.Mtctl.ImplyExpr");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cAndExprParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final RuleCall cOrExprParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Action cImplyExprLeftOpdAction_1_0 = (Action)cGroup_1.eContents().get(0);
 		private final Keyword cImpliesKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		private final Assignment cRightOpdAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cRightOpdAndExprParserRuleCall_1_2_0 = (RuleCall)cRightOpdAssignment_1_2.eContents().get(0);
+		private final RuleCall cRightOpdOrExprParserRuleCall_1_2_0 = (RuleCall)cRightOpdAssignment_1_2.eContents().get(0);
 		
 		//ImplyExpr mtctl::Expression:
-		//	AndExpr ({mtctl::ImplyExpr.leftOpd=current} 'implies' rightOpd=AndExpr)*
+		//	OrExpr ({mtctl::ImplyExpr.leftOpd=current} 'implies' rightOpd=OrExpr)*
 		@Override public ParserRule getRule() { return rule; }
 
-		//AndExpr ({mtctl::ImplyExpr.leftOpd=current} 'implies' rightOpd=AndExpr)*
+		//OrExpr ({mtctl::ImplyExpr.leftOpd=current} 'implies' rightOpd=OrExpr)*
 		public Group getGroup() { return cGroup; }
 
-		//AndExpr
-		public RuleCall getAndExprParserRuleCall_0() { return cAndExprParserRuleCall_0; }
+		//OrExpr
+		public RuleCall getOrExprParserRuleCall_0() { return cOrExprParserRuleCall_0; }
 
-		//({mtctl::ImplyExpr.leftOpd=current} 'implies' rightOpd=AndExpr)*
+		//({mtctl::ImplyExpr.leftOpd=current} 'implies' rightOpd=OrExpr)*
 		public Group getGroup_1() { return cGroup_1; }
 
 		//{mtctl::ImplyExpr.leftOpd=current}
@@ -143,42 +143,6 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 
 		//'implies'
 		public Keyword getImpliesKeyword_1_1() { return cImpliesKeyword_1_1; }
-
-		//rightOpd=AndExpr
-		public Assignment getRightOpdAssignment_1_2() { return cRightOpdAssignment_1_2; }
-
-		//AndExpr
-		public RuleCall getRightOpdAndExprParserRuleCall_1_2_0() { return cRightOpdAndExprParserRuleCall_1_2_0; }
-	}
-
-	public class AndExprElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.uppaal.adapter.mtctl.xtext.Mtctl.AndExpr");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cOrExprParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Action cAndExprLeftOpdAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Keyword cAndKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
-		private final Assignment cRightOpdAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cRightOpdOrExprParserRuleCall_1_2_0 = (RuleCall)cRightOpdAssignment_1_2.eContents().get(0);
-		
-		//AndExpr mtctl::Expression:
-		//	OrExpr ({mtctl::AndExpr.leftOpd=current} 'and' rightOpd=OrExpr)*
-		@Override public ParserRule getRule() { return rule; }
-
-		//OrExpr ({mtctl::AndExpr.leftOpd=current} 'and' rightOpd=OrExpr)*
-		public Group getGroup() { return cGroup; }
-
-		//OrExpr
-		public RuleCall getOrExprParserRuleCall_0() { return cOrExprParserRuleCall_0; }
-
-		//({mtctl::AndExpr.leftOpd=current} 'and' rightOpd=OrExpr)*
-		public Group getGroup_1() { return cGroup_1; }
-
-		//{mtctl::AndExpr.leftOpd=current}
-		public Action getAndExprLeftOpdAction_1_0() { return cAndExprLeftOpdAction_1_0; }
-
-		//'and'
-		public Keyword getAndKeyword_1_1() { return cAndKeyword_1_1; }
 
 		//rightOpd=OrExpr
 		public Assignment getRightOpdAssignment_1_2() { return cRightOpdAssignment_1_2; }
@@ -190,24 +154,24 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	public class OrExprElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.uppaal.adapter.mtctl.xtext.Mtctl.OrExpr");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cNotExprParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final RuleCall cAndExprParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Action cOrExprLeftOpdAction_1_0 = (Action)cGroup_1.eContents().get(0);
 		private final Keyword cOrKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		private final Assignment cRightOpdAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cRightOpdNotExprParserRuleCall_1_2_0 = (RuleCall)cRightOpdAssignment_1_2.eContents().get(0);
+		private final RuleCall cRightOpdAndExprParserRuleCall_1_2_0 = (RuleCall)cRightOpdAssignment_1_2.eContents().get(0);
 		
 		//OrExpr mtctl::Expression:
-		//	NotExpr ({mtctl::OrExpr.leftOpd=current} 'or' rightOpd=NotExpr)*
+		//	AndExpr ({mtctl::OrExpr.leftOpd=current} 'or' rightOpd=AndExpr)*
 		@Override public ParserRule getRule() { return rule; }
 
-		//NotExpr ({mtctl::OrExpr.leftOpd=current} 'or' rightOpd=NotExpr)*
+		//AndExpr ({mtctl::OrExpr.leftOpd=current} 'or' rightOpd=AndExpr)*
 		public Group getGroup() { return cGroup; }
 
-		//NotExpr
-		public RuleCall getNotExprParserRuleCall_0() { return cNotExprParserRuleCall_0; }
+		//AndExpr
+		public RuleCall getAndExprParserRuleCall_0() { return cAndExprParserRuleCall_0; }
 
-		//({mtctl::OrExpr.leftOpd=current} 'or' rightOpd=NotExpr)*
+		//({mtctl::OrExpr.leftOpd=current} 'or' rightOpd=AndExpr)*
 		public Group getGroup_1() { return cGroup_1; }
 
 		//{mtctl::OrExpr.leftOpd=current}
@@ -215,6 +179,42 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 
 		//'or'
 		public Keyword getOrKeyword_1_1() { return cOrKeyword_1_1; }
+
+		//rightOpd=AndExpr
+		public Assignment getRightOpdAssignment_1_2() { return cRightOpdAssignment_1_2; }
+
+		//AndExpr
+		public RuleCall getRightOpdAndExprParserRuleCall_1_2_0() { return cRightOpdAndExprParserRuleCall_1_2_0; }
+	}
+
+	public class AndExprElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.uppaal.adapter.mtctl.xtext.Mtctl.AndExpr");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cNotExprParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Action cAndExprLeftOpdAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Keyword cAndKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Assignment cRightOpdAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cRightOpdNotExprParserRuleCall_1_2_0 = (RuleCall)cRightOpdAssignment_1_2.eContents().get(0);
+		
+		//AndExpr mtctl::Expression:
+		//	NotExpr ({mtctl::AndExpr.leftOpd=current} 'and' rightOpd=NotExpr)*
+		@Override public ParserRule getRule() { return rule; }
+
+		//NotExpr ({mtctl::AndExpr.leftOpd=current} 'and' rightOpd=NotExpr)*
+		public Group getGroup() { return cGroup; }
+
+		//NotExpr
+		public RuleCall getNotExprParserRuleCall_0() { return cNotExprParserRuleCall_0; }
+
+		//({mtctl::AndExpr.leftOpd=current} 'and' rightOpd=NotExpr)*
+		public Group getGroup_1() { return cGroup_1; }
+
+		//{mtctl::AndExpr.leftOpd=current}
+		public Action getAndExprLeftOpdAction_1_0() { return cAndExprLeftOpdAction_1_0; }
+
+		//'and'
+		public Keyword getAndKeyword_1_1() { return cAndKeyword_1_1; }
 
 		//rightOpd=NotExpr
 		public Assignment getRightOpdAssignment_1_2() { return cRightOpdAssignment_1_2; }
@@ -1752,8 +1752,8 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	private final ExpressionElements pExpression;
 	private final LeadsToExprElements pLeadsToExpr;
 	private final ImplyExprElements pImplyExpr;
-	private final AndExprElements pAndExpr;
 	private final OrExprElements pOrExpr;
+	private final AndExprElements pAndExpr;
 	private final NotExprElements pNotExpr;
 	private final QuantifierExprElements pQuantifierExpr;
 	private final UniversalQuantExprElements pUniversalQuantExpr;
@@ -1817,8 +1817,8 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		this.pExpression = new ExpressionElements();
 		this.pLeadsToExpr = new LeadsToExprElements();
 		this.pImplyExpr = new ImplyExprElements();
-		this.pAndExpr = new AndExprElements();
 		this.pOrExpr = new OrExprElements();
+		this.pAndExpr = new AndExprElements();
 		this.pNotExpr = new NotExprElements();
 		this.pQuantifierExpr = new QuantifierExprElements();
 		this.pUniversalQuantExpr = new UniversalQuantExprElements();
@@ -1938,7 +1938,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ImplyExpr mtctl::Expression:
-	//	AndExpr ({mtctl::ImplyExpr.leftOpd=current} 'implies' rightOpd=AndExpr)*
+	//	OrExpr ({mtctl::ImplyExpr.leftOpd=current} 'implies' rightOpd=OrExpr)*
 	public ImplyExprElements getImplyExprAccess() {
 		return pImplyExpr;
 	}
@@ -1947,24 +1947,24 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getImplyExprAccess().getRule();
 	}
 
-	//AndExpr mtctl::Expression:
-	//	OrExpr ({mtctl::AndExpr.leftOpd=current} 'and' rightOpd=OrExpr)*
-	public AndExprElements getAndExprAccess() {
-		return pAndExpr;
-	}
-	
-	public ParserRule getAndExprRule() {
-		return getAndExprAccess().getRule();
-	}
-
 	//OrExpr mtctl::Expression:
-	//	NotExpr ({mtctl::OrExpr.leftOpd=current} 'or' rightOpd=NotExpr)*
+	//	AndExpr ({mtctl::OrExpr.leftOpd=current} 'or' rightOpd=AndExpr)*
 	public OrExprElements getOrExprAccess() {
 		return pOrExpr;
 	}
 	
 	public ParserRule getOrExprRule() {
 		return getOrExprAccess().getRule();
+	}
+
+	//AndExpr mtctl::Expression:
+	//	NotExpr ({mtctl::AndExpr.leftOpd=current} 'and' rightOpd=NotExpr)*
+	public AndExprElements getAndExprAccess() {
+		return pAndExpr;
+	}
+	
+	public ParserRule getAndExprRule() {
+		return getAndExprAccess().getRule();
 	}
 
 	////Unary operators
@@ -2465,8 +2465,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	} 
 
 	//terminal STRING:
-	//	'"' ('\\' . | !('\\' | '"'))* '"' |
-	//	"'" ('\\' . | !('\\' | "'"))* "'";
+	//	'"' ('\\' . | !('\\' | '"'))* '"' | "'" ('\\' . | !('\\' | "'"))* "'";
 	public TerminalRule getSTRINGRule() {
 		return gaTerminals.getSTRINGRule();
 	} 

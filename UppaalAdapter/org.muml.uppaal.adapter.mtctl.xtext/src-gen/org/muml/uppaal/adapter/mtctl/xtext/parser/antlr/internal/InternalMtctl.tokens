@@ -26,9 +26,9 @@
 'Subinstances'=63
 'Transitions'=56
 '['=46
-'\u00B5secs'=53
+'\u00C2\u00B5secs'=53
 ']'=47
-'and'=15
+'and'=16
 'bufferMessageCount'=43
 'connectorOverflow'=32
 'days'=48
@@ -46,7 +46,7 @@
 'msecs'=52
 'not'=17
 'nsecs'=54
-'or'=16
+'or'=15
 'secs'=51
 'sourceState'=44
 'stateActive'=35

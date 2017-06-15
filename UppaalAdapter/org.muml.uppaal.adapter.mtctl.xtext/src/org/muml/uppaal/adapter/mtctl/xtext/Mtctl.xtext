@@ -28,15 +28,15 @@ LeadsToExpr returns mtctl::Expression:
 ;
 
 ImplyExpr returns mtctl::Expression:
-	AndExpr ({mtctl::ImplyExpr.leftOpd=current} 'implies' rightOpd=AndExpr)*
-;
-
-AndExpr returns mtctl::Expression:
-	OrExpr ({mtctl::AndExpr.leftOpd=current} 'and' rightOpd=OrExpr)*
+	OrExpr ({mtctl::ImplyExpr.leftOpd=current} 'implies' rightOpd=OrExpr)*
 ;
 
 OrExpr returns mtctl::Expression:
-	NotExpr ({mtctl::OrExpr.leftOpd=current} 'or' rightOpd=NotExpr)*
+    AndExpr ({mtctl::OrExpr.leftOpd=current} 'or' rightOpd=AndExpr)*
+;
+
+AndExpr returns mtctl::Expression:
+    NotExpr ({mtctl::AndExpr.leftOpd=current} 'and' rightOpd=NotExpr)*
 ;
 
 //Unary operators

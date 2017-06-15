@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalMtctlParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_SL_COMMENT", "RULE_ID", "RULE_INT", "RULE_QNAME", "RULE_STRING", "RULE_ML_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "';'", "'leadsTo'", "'implies'", "'and'", "'or'", "'not'", "'forall'", "'('", "')'", "'exists'", "':'", "'EF'", "'E<>'", "'AF'", "'A<>'", "'EG'", "'E[]'", "'AG'", "'A[]'", "'deadlock'", "'connectorOverflow'", "'true'", "'false'", "'stateActive'", "'substateOf'", "','", "'stateInStatechart'", "'messageInTransit'", "'messageInBuffer'", "'messageDiscarded'", "'transitionFiring'", "'bufferMessageCount'", "'sourceState'", "'targetState'", "'['", "']'", "'days'", "'hrs'", "'mins'", "'secs'", "'msecs'", "'\\u00B5secs'", "'nsecs'", "'States'", "'Transitions'", "'MessageTypes'", "'Clocks'", "'Buffers'", "'Instances'", "'<'", "'>'", "'Subinstances'", "'-'", "'=='", "'>='", "'<='", "'!='"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_SL_COMMENT", "RULE_ID", "RULE_INT", "RULE_QNAME", "RULE_STRING", "RULE_ML_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "';'", "'leadsTo'", "'implies'", "'or'", "'and'", "'not'", "'forall'", "'('", "')'", "'exists'", "':'", "'EF'", "'E<>'", "'AF'", "'A<>'", "'EG'", "'E[]'", "'AG'", "'A[]'", "'deadlock'", "'connectorOverflow'", "'true'", "'false'", "'stateActive'", "'substateOf'", "','", "'stateInStatechart'", "'messageInTransit'", "'messageInBuffer'", "'messageDiscarded'", "'transitionFiring'", "'bufferMessageCount'", "'sourceState'", "'targetState'", "'['", "']'", "'days'", "'hrs'", "'mins'", "'secs'", "'msecs'", "'\\u00C2\\u00B5secs'", "'nsecs'", "'States'", "'Transitions'", "'MessageTypes'", "'Clocks'", "'Buffers'", "'Instances'", "'<'", "'>'", "'Subinstances'", "'-'", "'=='", "'>='", "'<='", "'!='"
     };
     public static final int T__50=50;
     public static final int RULE_QNAME=7;
@@ -676,12 +676,12 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleImplyExpr"
-    // InternalMtctl.g:275:1: ruleImplyExpr returns [EObject current=null] : (this_AndExpr_0= ruleAndExpr ( () otherlv_2= 'implies' ( (lv_rightOpd_3_0= ruleAndExpr ) ) )* ) ;
+    // InternalMtctl.g:275:1: ruleImplyExpr returns [EObject current=null] : (this_OrExpr_0= ruleOrExpr ( () otherlv_2= 'implies' ( (lv_rightOpd_3_0= ruleOrExpr ) ) )* ) ;
     public final EObject ruleImplyExpr() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_2=null;
-        EObject this_AndExpr_0 = null;
+        EObject this_OrExpr_0 = null;
 
         EObject lv_rightOpd_3_0 = null;
 
@@ -689,25 +689,25 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // InternalMtctl.g:278:28: ( (this_AndExpr_0= ruleAndExpr ( () otherlv_2= 'implies' ( (lv_rightOpd_3_0= ruleAndExpr ) ) )* ) )
-            // InternalMtctl.g:279:1: (this_AndExpr_0= ruleAndExpr ( () otherlv_2= 'implies' ( (lv_rightOpd_3_0= ruleAndExpr ) ) )* )
+            // InternalMtctl.g:278:28: ( (this_OrExpr_0= ruleOrExpr ( () otherlv_2= 'implies' ( (lv_rightOpd_3_0= ruleOrExpr ) ) )* ) )
+            // InternalMtctl.g:279:1: (this_OrExpr_0= ruleOrExpr ( () otherlv_2= 'implies' ( (lv_rightOpd_3_0= ruleOrExpr ) ) )* )
             {
-            // InternalMtctl.g:279:1: (this_AndExpr_0= ruleAndExpr ( () otherlv_2= 'implies' ( (lv_rightOpd_3_0= ruleAndExpr ) ) )* )
-            // InternalMtctl.g:280:5: this_AndExpr_0= ruleAndExpr ( () otherlv_2= 'implies' ( (lv_rightOpd_3_0= ruleAndExpr ) ) )*
+            // InternalMtctl.g:279:1: (this_OrExpr_0= ruleOrExpr ( () otherlv_2= 'implies' ( (lv_rightOpd_3_0= ruleOrExpr ) ) )* )
+            // InternalMtctl.g:280:5: this_OrExpr_0= ruleOrExpr ( () otherlv_2= 'implies' ( (lv_rightOpd_3_0= ruleOrExpr ) ) )*
             {
              
-                    newCompositeNode(grammarAccess.getImplyExprAccess().getAndExprParserRuleCall_0()); 
+                    newCompositeNode(grammarAccess.getImplyExprAccess().getOrExprParserRuleCall_0()); 
                 
             pushFollow(FollowSets000.FOLLOW_8);
-            this_AndExpr_0=ruleAndExpr();
+            this_OrExpr_0=ruleOrExpr();
 
             state._fsp--;
 
              
-                    current = this_AndExpr_0; 
+                    current = this_OrExpr_0; 
                     afterParserOrEnumRuleCall();
                 
-            // InternalMtctl.g:288:1: ( () otherlv_2= 'implies' ( (lv_rightOpd_3_0= ruleAndExpr ) ) )*
+            // InternalMtctl.g:288:1: ( () otherlv_2= 'implies' ( (lv_rightOpd_3_0= ruleOrExpr ) ) )*
             loop4:
             do {
                 int alt4=2;
@@ -720,7 +720,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
                 switch (alt4) {
             	case 1 :
-            	    // InternalMtctl.g:288:2: () otherlv_2= 'implies' ( (lv_rightOpd_3_0= ruleAndExpr ) )
+            	    // InternalMtctl.g:288:2: () otherlv_2= 'implies' ( (lv_rightOpd_3_0= ruleOrExpr ) )
             	    {
             	    // InternalMtctl.g:288:2: ()
             	    // InternalMtctl.g:289:5: 
@@ -737,17 +737,17 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
             	        	newLeafNode(otherlv_2, grammarAccess.getImplyExprAccess().getImpliesKeyword_1_1());
             	        
-            	    // InternalMtctl.g:298:1: ( (lv_rightOpd_3_0= ruleAndExpr ) )
-            	    // InternalMtctl.g:299:1: (lv_rightOpd_3_0= ruleAndExpr )
+            	    // InternalMtctl.g:298:1: ( (lv_rightOpd_3_0= ruleOrExpr ) )
+            	    // InternalMtctl.g:299:1: (lv_rightOpd_3_0= ruleOrExpr )
             	    {
-            	    // InternalMtctl.g:299:1: (lv_rightOpd_3_0= ruleAndExpr )
-            	    // InternalMtctl.g:300:3: lv_rightOpd_3_0= ruleAndExpr
+            	    // InternalMtctl.g:299:1: (lv_rightOpd_3_0= ruleOrExpr )
+            	    // InternalMtctl.g:300:3: lv_rightOpd_3_0= ruleOrExpr
             	    {
             	     
-            	    	        newCompositeNode(grammarAccess.getImplyExprAccess().getRightOpdAndExprParserRuleCall_1_2_0()); 
+            	    	        newCompositeNode(grammarAccess.getImplyExprAccess().getRightOpdOrExprParserRuleCall_1_2_0()); 
             	    	    
             	    pushFollow(FollowSets000.FOLLOW_8);
-            	    lv_rightOpd_3_0=ruleAndExpr();
+            	    lv_rightOpd_3_0=ruleOrExpr();
 
             	    state._fsp--;
 
@@ -759,7 +759,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
             	           			current, 
             	           			"rightOpd",
             	            		lv_rightOpd_3_0, 
-            	            		"org.muml.uppaal.adapter.mtctl.xtext.Mtctl.AndExpr");
+            	            		"org.muml.uppaal.adapter.mtctl.xtext.Mtctl.OrExpr");
             	    	        afterParserOrEnumRuleCall();
             	    	    
 
@@ -797,25 +797,25 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleImplyExpr"
 
 
-    // $ANTLR start "entryRuleAndExpr"
-    // InternalMtctl.g:324:1: entryRuleAndExpr returns [EObject current=null] : iv_ruleAndExpr= ruleAndExpr EOF ;
-    public final EObject entryRuleAndExpr() throws RecognitionException {
+    // $ANTLR start "entryRuleOrExpr"
+    // InternalMtctl.g:324:1: entryRuleOrExpr returns [EObject current=null] : iv_ruleOrExpr= ruleOrExpr EOF ;
+    public final EObject entryRuleOrExpr() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleAndExpr = null;
+        EObject iv_ruleOrExpr = null;
 
 
         try {
-            // InternalMtctl.g:325:2: (iv_ruleAndExpr= ruleAndExpr EOF )
-            // InternalMtctl.g:326:2: iv_ruleAndExpr= ruleAndExpr EOF
+            // InternalMtctl.g:325:2: (iv_ruleOrExpr= ruleOrExpr EOF )
+            // InternalMtctl.g:326:2: iv_ruleOrExpr= ruleOrExpr EOF
             {
-             newCompositeNode(grammarAccess.getAndExprRule()); 
+             newCompositeNode(grammarAccess.getOrExprRule()); 
             pushFollow(FollowSets000.FOLLOW_1);
-            iv_ruleAndExpr=ruleAndExpr();
+            iv_ruleOrExpr=ruleOrExpr();
 
             state._fsp--;
 
-             current =iv_ruleAndExpr; 
+             current =iv_ruleOrExpr; 
             match(input,EOF,FollowSets000.FOLLOW_2); 
 
             }
@@ -830,16 +830,16 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleAndExpr"
+    // $ANTLR end "entryRuleOrExpr"
 
 
-    // $ANTLR start "ruleAndExpr"
-    // InternalMtctl.g:333:1: ruleAndExpr returns [EObject current=null] : (this_OrExpr_0= ruleOrExpr ( () otherlv_2= 'and' ( (lv_rightOpd_3_0= ruleOrExpr ) ) )* ) ;
-    public final EObject ruleAndExpr() throws RecognitionException {
+    // $ANTLR start "ruleOrExpr"
+    // InternalMtctl.g:333:1: ruleOrExpr returns [EObject current=null] : (this_AndExpr_0= ruleAndExpr ( () otherlv_2= 'or' ( (lv_rightOpd_3_0= ruleAndExpr ) ) )* ) ;
+    public final EObject ruleOrExpr() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_2=null;
-        EObject this_OrExpr_0 = null;
+        EObject this_AndExpr_0 = null;
 
         EObject lv_rightOpd_3_0 = null;
 
@@ -847,25 +847,25 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // InternalMtctl.g:336:28: ( (this_OrExpr_0= ruleOrExpr ( () otherlv_2= 'and' ( (lv_rightOpd_3_0= ruleOrExpr ) ) )* ) )
-            // InternalMtctl.g:337:1: (this_OrExpr_0= ruleOrExpr ( () otherlv_2= 'and' ( (lv_rightOpd_3_0= ruleOrExpr ) ) )* )
+            // InternalMtctl.g:336:28: ( (this_AndExpr_0= ruleAndExpr ( () otherlv_2= 'or' ( (lv_rightOpd_3_0= ruleAndExpr ) ) )* ) )
+            // InternalMtctl.g:337:1: (this_AndExpr_0= ruleAndExpr ( () otherlv_2= 'or' ( (lv_rightOpd_3_0= ruleAndExpr ) ) )* )
             {
-            // InternalMtctl.g:337:1: (this_OrExpr_0= ruleOrExpr ( () otherlv_2= 'and' ( (lv_rightOpd_3_0= ruleOrExpr ) ) )* )
-            // InternalMtctl.g:338:5: this_OrExpr_0= ruleOrExpr ( () otherlv_2= 'and' ( (lv_rightOpd_3_0= ruleOrExpr ) ) )*
+            // InternalMtctl.g:337:1: (this_AndExpr_0= ruleAndExpr ( () otherlv_2= 'or' ( (lv_rightOpd_3_0= ruleAndExpr ) ) )* )
+            // InternalMtctl.g:338:5: this_AndExpr_0= ruleAndExpr ( () otherlv_2= 'or' ( (lv_rightOpd_3_0= ruleAndExpr ) ) )*
             {
              
-                    newCompositeNode(grammarAccess.getAndExprAccess().getOrExprParserRuleCall_0()); 
+                    newCompositeNode(grammarAccess.getOrExprAccess().getAndExprParserRuleCall_0()); 
                 
             pushFollow(FollowSets000.FOLLOW_10);
-            this_OrExpr_0=ruleOrExpr();
+            this_AndExpr_0=ruleAndExpr();
 
             state._fsp--;
 
              
-                    current = this_OrExpr_0; 
+                    current = this_AndExpr_0; 
                     afterParserOrEnumRuleCall();
                 
-            // InternalMtctl.g:346:1: ( () otherlv_2= 'and' ( (lv_rightOpd_3_0= ruleOrExpr ) ) )*
+            // InternalMtctl.g:346:1: ( () otherlv_2= 'or' ( (lv_rightOpd_3_0= ruleAndExpr ) ) )*
             loop5:
             do {
                 int alt5=2;
@@ -878,14 +878,14 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
                 switch (alt5) {
             	case 1 :
-            	    // InternalMtctl.g:346:2: () otherlv_2= 'and' ( (lv_rightOpd_3_0= ruleOrExpr ) )
+            	    // InternalMtctl.g:346:2: () otherlv_2= 'or' ( (lv_rightOpd_3_0= ruleAndExpr ) )
             	    {
             	    // InternalMtctl.g:346:2: ()
             	    // InternalMtctl.g:347:5: 
             	    {
 
             	            current = forceCreateModelElementAndSet(
-            	                grammarAccess.getAndExprAccess().getAndExprLeftOpdAction_1_0(),
+            	                grammarAccess.getOrExprAccess().getOrExprLeftOpdAction_1_0(),
             	                current);
             	        
 
@@ -893,31 +893,31 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
             	    otherlv_2=(Token)match(input,15,FollowSets000.FOLLOW_11); 
 
-            	        	newLeafNode(otherlv_2, grammarAccess.getAndExprAccess().getAndKeyword_1_1());
+            	        	newLeafNode(otherlv_2, grammarAccess.getOrExprAccess().getOrKeyword_1_1());
             	        
-            	    // InternalMtctl.g:356:1: ( (lv_rightOpd_3_0= ruleOrExpr ) )
-            	    // InternalMtctl.g:357:1: (lv_rightOpd_3_0= ruleOrExpr )
+            	    // InternalMtctl.g:356:1: ( (lv_rightOpd_3_0= ruleAndExpr ) )
+            	    // InternalMtctl.g:357:1: (lv_rightOpd_3_0= ruleAndExpr )
             	    {
-            	    // InternalMtctl.g:357:1: (lv_rightOpd_3_0= ruleOrExpr )
-            	    // InternalMtctl.g:358:3: lv_rightOpd_3_0= ruleOrExpr
+            	    // InternalMtctl.g:357:1: (lv_rightOpd_3_0= ruleAndExpr )
+            	    // InternalMtctl.g:358:3: lv_rightOpd_3_0= ruleAndExpr
             	    {
             	     
-            	    	        newCompositeNode(grammarAccess.getAndExprAccess().getRightOpdOrExprParserRuleCall_1_2_0()); 
+            	    	        newCompositeNode(grammarAccess.getOrExprAccess().getRightOpdAndExprParserRuleCall_1_2_0()); 
             	    	    
             	    pushFollow(FollowSets000.FOLLOW_10);
-            	    lv_rightOpd_3_0=ruleOrExpr();
+            	    lv_rightOpd_3_0=ruleAndExpr();
 
             	    state._fsp--;
 
 
             	    	        if (current==null) {
-            	    	            current = createModelElementForParent(grammarAccess.getAndExprRule());
+            	    	            current = createModelElementForParent(grammarAccess.getOrExprRule());
             	    	        }
             	           		set(
             	           			current, 
             	           			"rightOpd",
             	            		lv_rightOpd_3_0, 
-            	            		"org.muml.uppaal.adapter.mtctl.xtext.Mtctl.OrExpr");
+            	            		"org.muml.uppaal.adapter.mtctl.xtext.Mtctl.AndExpr");
             	    	        afterParserOrEnumRuleCall();
             	    	    
 
@@ -952,28 +952,28 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleAndExpr"
+    // $ANTLR end "ruleOrExpr"
 
 
-    // $ANTLR start "entryRuleOrExpr"
-    // InternalMtctl.g:382:1: entryRuleOrExpr returns [EObject current=null] : iv_ruleOrExpr= ruleOrExpr EOF ;
-    public final EObject entryRuleOrExpr() throws RecognitionException {
+    // $ANTLR start "entryRuleAndExpr"
+    // InternalMtctl.g:382:1: entryRuleAndExpr returns [EObject current=null] : iv_ruleAndExpr= ruleAndExpr EOF ;
+    public final EObject entryRuleAndExpr() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleOrExpr = null;
+        EObject iv_ruleAndExpr = null;
 
 
         try {
-            // InternalMtctl.g:383:2: (iv_ruleOrExpr= ruleOrExpr EOF )
-            // InternalMtctl.g:384:2: iv_ruleOrExpr= ruleOrExpr EOF
+            // InternalMtctl.g:383:2: (iv_ruleAndExpr= ruleAndExpr EOF )
+            // InternalMtctl.g:384:2: iv_ruleAndExpr= ruleAndExpr EOF
             {
-             newCompositeNode(grammarAccess.getOrExprRule()); 
+             newCompositeNode(grammarAccess.getAndExprRule()); 
             pushFollow(FollowSets000.FOLLOW_1);
-            iv_ruleOrExpr=ruleOrExpr();
+            iv_ruleAndExpr=ruleAndExpr();
 
             state._fsp--;
 
-             current =iv_ruleOrExpr; 
+             current =iv_ruleAndExpr; 
             match(input,EOF,FollowSets000.FOLLOW_2); 
 
             }
@@ -988,12 +988,12 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleOrExpr"
+    // $ANTLR end "entryRuleAndExpr"
 
 
-    // $ANTLR start "ruleOrExpr"
-    // InternalMtctl.g:391:1: ruleOrExpr returns [EObject current=null] : (this_NotExpr_0= ruleNotExpr ( () otherlv_2= 'or' ( (lv_rightOpd_3_0= ruleNotExpr ) ) )* ) ;
-    public final EObject ruleOrExpr() throws RecognitionException {
+    // $ANTLR start "ruleAndExpr"
+    // InternalMtctl.g:391:1: ruleAndExpr returns [EObject current=null] : (this_NotExpr_0= ruleNotExpr ( () otherlv_2= 'and' ( (lv_rightOpd_3_0= ruleNotExpr ) ) )* ) ;
+    public final EObject ruleAndExpr() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_2=null;
@@ -1005,14 +1005,14 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // InternalMtctl.g:394:28: ( (this_NotExpr_0= ruleNotExpr ( () otherlv_2= 'or' ( (lv_rightOpd_3_0= ruleNotExpr ) ) )* ) )
-            // InternalMtctl.g:395:1: (this_NotExpr_0= ruleNotExpr ( () otherlv_2= 'or' ( (lv_rightOpd_3_0= ruleNotExpr ) ) )* )
+            // InternalMtctl.g:394:28: ( (this_NotExpr_0= ruleNotExpr ( () otherlv_2= 'and' ( (lv_rightOpd_3_0= ruleNotExpr ) ) )* ) )
+            // InternalMtctl.g:395:1: (this_NotExpr_0= ruleNotExpr ( () otherlv_2= 'and' ( (lv_rightOpd_3_0= ruleNotExpr ) ) )* )
             {
-            // InternalMtctl.g:395:1: (this_NotExpr_0= ruleNotExpr ( () otherlv_2= 'or' ( (lv_rightOpd_3_0= ruleNotExpr ) ) )* )
-            // InternalMtctl.g:396:5: this_NotExpr_0= ruleNotExpr ( () otherlv_2= 'or' ( (lv_rightOpd_3_0= ruleNotExpr ) ) )*
+            // InternalMtctl.g:395:1: (this_NotExpr_0= ruleNotExpr ( () otherlv_2= 'and' ( (lv_rightOpd_3_0= ruleNotExpr ) ) )* )
+            // InternalMtctl.g:396:5: this_NotExpr_0= ruleNotExpr ( () otherlv_2= 'and' ( (lv_rightOpd_3_0= ruleNotExpr ) ) )*
             {
              
-                    newCompositeNode(grammarAccess.getOrExprAccess().getNotExprParserRuleCall_0()); 
+                    newCompositeNode(grammarAccess.getAndExprAccess().getNotExprParserRuleCall_0()); 
                 
             pushFollow(FollowSets000.FOLLOW_12);
             this_NotExpr_0=ruleNotExpr();
@@ -1023,7 +1023,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
                     current = this_NotExpr_0; 
                     afterParserOrEnumRuleCall();
                 
-            // InternalMtctl.g:404:1: ( () otherlv_2= 'or' ( (lv_rightOpd_3_0= ruleNotExpr ) ) )*
+            // InternalMtctl.g:404:1: ( () otherlv_2= 'and' ( (lv_rightOpd_3_0= ruleNotExpr ) ) )*
             loop6:
             do {
                 int alt6=2;
@@ -1036,14 +1036,14 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
                 switch (alt6) {
             	case 1 :
-            	    // InternalMtctl.g:404:2: () otherlv_2= 'or' ( (lv_rightOpd_3_0= ruleNotExpr ) )
+            	    // InternalMtctl.g:404:2: () otherlv_2= 'and' ( (lv_rightOpd_3_0= ruleNotExpr ) )
             	    {
             	    // InternalMtctl.g:404:2: ()
             	    // InternalMtctl.g:405:5: 
             	    {
 
             	            current = forceCreateModelElementAndSet(
-            	                grammarAccess.getOrExprAccess().getOrExprLeftOpdAction_1_0(),
+            	                grammarAccess.getAndExprAccess().getAndExprLeftOpdAction_1_0(),
             	                current);
             	        
 
@@ -1051,7 +1051,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
             	    otherlv_2=(Token)match(input,16,FollowSets000.FOLLOW_13); 
 
-            	        	newLeafNode(otherlv_2, grammarAccess.getOrExprAccess().getOrKeyword_1_1());
+            	        	newLeafNode(otherlv_2, grammarAccess.getAndExprAccess().getAndKeyword_1_1());
             	        
             	    // InternalMtctl.g:414:1: ( (lv_rightOpd_3_0= ruleNotExpr ) )
             	    // InternalMtctl.g:415:1: (lv_rightOpd_3_0= ruleNotExpr )
@@ -1060,7 +1060,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
             	    // InternalMtctl.g:416:3: lv_rightOpd_3_0= ruleNotExpr
             	    {
             	     
-            	    	        newCompositeNode(grammarAccess.getOrExprAccess().getRightOpdNotExprParserRuleCall_1_2_0()); 
+            	    	        newCompositeNode(grammarAccess.getAndExprAccess().getRightOpdNotExprParserRuleCall_1_2_0()); 
             	    	    
             	    pushFollow(FollowSets000.FOLLOW_12);
             	    lv_rightOpd_3_0=ruleNotExpr();
@@ -1069,7 +1069,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
 
             	    	        if (current==null) {
-            	    	            current = createModelElementForParent(grammarAccess.getOrExprRule());
+            	    	            current = createModelElementForParent(grammarAccess.getAndExprRule());
             	    	        }
             	           		set(
             	           			current, 
@@ -1110,7 +1110,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleOrExpr"
+    // $ANTLR end "ruleAndExpr"
 
 
     // $ANTLR start "entryRuleNotExpr"
@@ -6436,7 +6436,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTimeUnitExpr"
-    // InternalMtctl.g:2472:1: ruleTimeUnitExpr returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'days' | kw= 'hrs' | kw= 'mins' | kw= 'secs' | kw= 'msecs' | kw= '\\u00B5secs' | kw= 'nsecs' ) ;
+    // InternalMtctl.g:2472:1: ruleTimeUnitExpr returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'days' | kw= 'hrs' | kw= 'mins' | kw= 'secs' | kw= 'msecs' | kw= '\\u00C2\\u00B5secs' | kw= 'nsecs' ) ;
     public final AntlrDatatypeRuleToken ruleTimeUnitExpr() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -6445,10 +6445,10 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // InternalMtctl.g:2475:28: ( (kw= 'days' | kw= 'hrs' | kw= 'mins' | kw= 'secs' | kw= 'msecs' | kw= '\\u00B5secs' | kw= 'nsecs' ) )
-            // InternalMtctl.g:2476:1: (kw= 'days' | kw= 'hrs' | kw= 'mins' | kw= 'secs' | kw= 'msecs' | kw= '\\u00B5secs' | kw= 'nsecs' )
+            // InternalMtctl.g:2475:28: ( (kw= 'days' | kw= 'hrs' | kw= 'mins' | kw= 'secs' | kw= 'msecs' | kw= '\\u00C2\\u00B5secs' | kw= 'nsecs' ) )
+            // InternalMtctl.g:2476:1: (kw= 'days' | kw= 'hrs' | kw= 'mins' | kw= 'secs' | kw= 'msecs' | kw= '\\u00C2\\u00B5secs' | kw= 'nsecs' )
             {
-            // InternalMtctl.g:2476:1: (kw= 'days' | kw= 'hrs' | kw= 'mins' | kw= 'secs' | kw= 'msecs' | kw= '\\u00B5secs' | kw= 'nsecs' )
+            // InternalMtctl.g:2476:1: (kw= 'days' | kw= 'hrs' | kw= 'mins' | kw= 'secs' | kw= 'msecs' | kw= '\\u00C2\\u00B5secs' | kw= 'nsecs' )
             int alt22=7;
             switch ( input.LA(1) ) {
             case 48:
@@ -6550,7 +6550,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalMtctl.g:2512:2: kw= '\\u00B5secs'
+                    // InternalMtctl.g:2512:2: kw= '\\u00C2\\u00B5secs'
                     {
                     kw=(Token)match(input,53,FollowSets000.FOLLOW_2); 
 
