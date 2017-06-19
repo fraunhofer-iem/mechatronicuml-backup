@@ -327,7 +327,19 @@
                 </expressions>
               </action>
             </transitions>
-            <states xmi:id="_QFnU0ea7EeWyd6JHVas6Kw" name="init" outgoingTransitions="_TfQKIOa7EeWyd6JHVas6Kw _2gxAcOq-EeWdNs1s2t99bw" incomingTransitions="_J9HvwOa_EeWyd6JHVas6Kw _2gxAcOq-EeWdNs1s2t99bw" initial="true"/>
+            <transitions xmi:id="_pTZmYFUGEeeDc5GcOuOuvA" priority="3" target="_QFnU0ea7EeWyd6JHVas6Kw" source="_QFnU0ea7EeWyd6JHVas6Kw" clockResets="_3XkrwFUGEeeDc5GcOuOuvA">
+              <clockConstraints xmi:id="_AihYYFUHEeeDc5GcOuOuvA" clock="_3XkrwFUGEeeDc5GcOuOuvA" operator="GREATER">
+                <bound xmi:id="_BXUSYFUHEeeDc5GcOuOuvA" unit="SECONDS">
+                  <value xsi:type="common:LiteralExpression" xmi:id="_EA2gcFUHEeeDc5GcOuOuvA" value="20"/>
+                </bound>
+              </clockConstraints>
+              <action xmi:id="_q32bsFUGEeeDc5GcOuOuvA" name="removeObsoleteProductionStations()">
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_1NUasFUGEeeDc5GcOuOuvA">
+                  <expressions xsi:type="actionlanguage:OperationCall" xmi:id="_1NUasVUGEeeDc5GcOuOuvA" operation="_hW30sFUGEeeDc5GcOuOuvA"/>
+                </expressions>
+              </action>
+            </transitions>
+            <states xmi:id="_QFnU0ea7EeWyd6JHVas6Kw" name="init" outgoingTransitions="_TfQKIOa7EeWyd6JHVas6Kw _2gxAcOq-EeWdNs1s2t99bw _pTZmYFUGEeeDc5GcOuOuvA" incomingTransitions="_J9HvwOa_EeWyd6JHVas6Kw _2gxAcOq-EeWdNs1s2t99bw _pTZmYFUGEeeDc5GcOuOuvA" initial="true"/>
             <states xmi:id="_SwPvEOa7EeWyd6JHVas6Kw" name="ProcessOrderRequest" outgoingTransitions="__DyrMOa9EeWyd6JHVas6Kw _SrG3cOqMEeWBDM2lagzQHQ" incomingTransitions="_TfQKIOa7EeWyd6JHVas6Kw">
               <entryEvent xmi:id="_m-fpsOa-EeWyd6JHVas6Kw">
                 <action xmi:id="_n42ZIOa-EeWyd6JHVas6Kw" name="processDatabase">
@@ -375,6 +387,7 @@
               </entryEvent>
             </states>
             <states xmi:id="_GB-v4Oa_EeWyd6JHVas6Kw" name="Reset" outgoingTransitions="_J9HvwOa_EeWyd6JHVas6Kw" incomingTransitions="__DyrMOa9EeWyd6JHVas6Kw _SrG3cOqMEeWBDM2lagzQHQ"/>
+            <clocks xmi:id="_3XkrwFUGEeeDc5GcOuOuvA" name="garbageCollectorSchedule"/>
           </embeddedStatechart>
         </embeddedRegions>
       </states>
@@ -1245,6 +1258,9 @@
         <parameters xmi:id="_7lFQ0BVGEeeshe9pZ_FOow" name="producibleIngredients">
           <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         </parameters>
+        <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+      </operations>
+      <operations xmi:id="_hW30sFUGEeeDc5GcOuOuvA" name="removeObsoleteProductionStations">
         <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
       </operations>
     </modelElements>

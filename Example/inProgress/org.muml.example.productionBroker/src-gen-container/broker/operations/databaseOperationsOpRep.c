@@ -32,6 +32,19 @@ int32_T databaseOperations_databaseOperationsDeleteOrder(int32_T orderID){
 }
 
 
+int32_T databaseOperations_databaseOperationsRemoveObsoleteProductionStations(){
+
+/** Start of user code databaseOperations_databaseOperationsRemoveObsoleteProductionStations **/
+	int32_T ret = removeObsoleteProductionStations();
+	if (ret != 0){
+		extractLogsAndExit();
+	}
+	return ret;
+/**End of user code**/
+
+}
+
+
 
 int32_T databaseOperations_databaseOperationsGetOrderIngredientID(int32_T orderID){
 
