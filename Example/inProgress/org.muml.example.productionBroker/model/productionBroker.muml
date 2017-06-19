@@ -1120,14 +1120,14 @@
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_vwAi4NxbEeW-N_z6XJQq2w" name="ProductionStation" behavior="_6Dss4OamEeWyd6JHVas6Kw">
       <ports xsi:type="component:DiscretePort" xmi:id="_Y-2CwNxcEeW-N_z6XJQq2w" name="getOrder" behavior="_sp5kwOanEeWyd6JHVas6Kw" senderMessageTypes="_wsJowNxgEeW-N_z6XJQq2w _UTgXMNxrEeW-N_z6XJQq2w" receiverMessageTypes="_P-BxAOa5EeWyd6JHVas6Kw _dtJysNxhEeW-N_z6XJQq2w" refinedRole="_lPVmgewfEeWTKqLnMSJAUw">
         <cardinality xmi:id="_Y-8JYNxcEeW-N_z6XJQq2w">
-          <lowerBound xmi:id="_Y-8wcNxcEeW-N_z6XJQq2w"/>
-          <upperBound xmi:id="_Y_Bo8NxcEeW-N_z6XJQq2w"/>
+          <lowerBound xmi:id="_Kl-CAFUBEeeDc5GcOuOuvA"/>
+          <upperBound xmi:id="_Kl_3MFUBEeeDc5GcOuOuvA"/>
         </cardinality>
         <receiverMessageBuffer xmi:id="_FGdnAOa4EeWyd6JHVas6Kw" name="OrderForPSBuffer" messageType="_P-BxAOa5EeWyd6JHVas6Kw" bufferOverflowAvoidanceStrategy="discard oldest message in buffer">
-          <bufferSize xmi:id="_7mVmYOquEeWdNs1s2t99bw" value="2"/>
+          <bufferSize xmi:id="_JuzJcFUBEeeDc5GcOuOuvA" value="100"/>
         </receiverMessageBuffer>
         <receiverMessageBuffer xmi:id="_0EzHkOquEeWdNs1s2t99bw" name="noOrderBuffer" messageType="_dtJysNxhEeW-N_z6XJQq2w">
-          <bufferSize xmi:id="_32URYOquEeWdNs1s2t99bw" value="2"/>
+          <bufferSize xmi:id="_Kes8YFUBEeeDc5GcOuOuvA" value="100"/>
         </receiverMessageBuffer>
       </ports>
     </modelElements>
@@ -1143,17 +1143,14 @@
       </ports>
       <ports xsi:type="component:DiscretePort" xmi:id="_njyPcOa7EeWyd6JHVas6Kw" name="brokerForPSPort" behavior="_QFnU0Oa7EeWyd6JHVas6Kw" senderMessageTypes="_P-BxAOa5EeWyd6JHVas6Kw _dtJysNxhEeW-N_z6XJQq2w" receiverMessageTypes="_wsJowNxgEeW-N_z6XJQq2w _UTgXMNxrEeW-N_z6XJQq2w" refinedRole="_lPTxUOwfEeWTKqLnMSJAUw">
         <cardinality xmi:id="_njzdkOa7EeWyd6JHVas6Kw">
-          <lowerBound xmi:id="_njzdkea7EeWyd6JHVas6Kw"/>
-          <upperBound xmi:id="_nj0EoOa7EeWyd6JHVas6Kw"/>
+          <lowerBound xmi:id="_HDh2AFUBEeeDc5GcOuOuvA"/>
+          <upperBound xmi:id="_HDkSQFUBEeeDc5GcOuOuvA"/>
         </cardinality>
         <receiverMessageBuffer xmi:id="_tOsj0Oa7EeWyd6JHVas6Kw" name="doneOrderBuffer" messageType="_wsJowNxgEeW-N_z6XJQq2w">
-          <bufferSize xmi:id="_sInUIOquEeWdNs1s2t99bw" value="5"/>
-        </receiverMessageBuffer>
-        <receiverMessageBuffer xmi:id="_nuaZsOquEeWdNs1s2t99bw" name="noOrderBuffer" messageType="_dtJysNxhEeW-N_z6XJQq2w">
-          <bufferSize xmi:id="_pIgZIOquEeWdNs1s2t99bw"/>
+          <bufferSize xmi:id="_FyCY8FUBEeeDc5GcOuOuvA" value="100"/>
         </receiverMessageBuffer>
         <receiverMessageBuffer xmi:id="_siMRwOquEeWdNs1s2t99bw" name="getOrderBuffer" messageType="_UTgXMNxrEeW-N_z6XJQq2w">
-          <bufferSize xmi:id="_uAUcoOquEeWdNs1s2t99bw" value="5"/>
+          <bufferSize xmi:id="_CpabIFUBEeeDc5GcOuOuvA" value="100"/>
         </receiverMessageBuffer>
       </ports>
     </modelElements>

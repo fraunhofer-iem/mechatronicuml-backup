@@ -2,8 +2,28 @@
 <notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:component="http://www.muml.org/pim/component/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xsi:schemaLocation="http://www.muml.org/pim/component/1.0.0 http://www.muml.org/pim/1.0.0#//component http://www.muml.org/modelinstance/1.0.0 http://www.muml.org/core/1.0.0#//modelinstance" xmi:id="_BWFbgBWxEea4t_vvK_A9tw" type="Component" name="Broker.component_diagram" measurementUnit="Pixel">
   <children xmi:type="notation:Shape" xmi:id="_BWHQsBWxEea4t_vvK_A9tw" type="2006" fontName="Segoe UI" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_BWHQshWxEea4t_vvK_A9tw" type="5028"/>
+    <children xmi:type="notation:Shape" xmi:id="_ZeGC8FT4EeeDc5GcOuOuvA" type="3010" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_ZeGqAFT4EeeDc5GcOuOuvA" type="5012">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_ZeGqAVT4EeeDc5GcOuOuvA" y="5"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_ZeGqAlT4EeeDc5GcOuOuvA" type="5025">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_ZeGqA1T4EeeDc5GcOuOuvA" y="5"/>
+      </children>
+      <element xmi:type="component:DiscretePort" href="../productionBroker.muml#_i6J4gNxgEeW-N_z6XJQq2w"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZeGC8VT4EeeDc5GcOuOuvA" x="313" y="144"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_ZeGqBFT4EeeDc5GcOuOuvA" type="3010" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_ZeHREFT4EeeDc5GcOuOuvA" type="5012">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_ZeHREVT4EeeDc5GcOuOuvA" x="12" y="84"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_ZeHRElT4EeeDc5GcOuOuvA" type="5025">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_ZeHRE1T4EeeDc5GcOuOuvA" x="-252" y="71"/>
+      </children>
+      <element xmi:type="component:DiscretePort" href="../productionBroker.muml#_njyPcOa7EeWyd6JHVas6Kw"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZeGqBVT4EeeDc5GcOuOuvA" x="72" y="205"/>
+    </children>
     <element xmi:type="component:StaticAtomicComponent" href="../productionBroker.muml#_Ozg3MNxcEeW-N_z6XJQq2w"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BWHQsRWxEea4t_vvK_A9tw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BWHQsRWxEea4t_vvK_A9tw" x="396" y="216" width="325" height="217"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_BWGCkBWxEea4t_vvK_A9tw"/>
   <element xmi:type="modelinstance:ModelElementCategory" href="../productionBroker.muml#_soLPRNxbEeW-N_z6XJQq2w"/>
