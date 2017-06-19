@@ -985,10 +985,10 @@
           <upperBound xmi:id="_4OfZgD-5EeeumMKPPaKgzQ"/>
         </cardinality>
         <receiverMessageBuffer xmi:id="_-h86QOwfEeWTKqLnMSJAUw" name="buffer_for_doneOrder" messageType="_wsJowNxgEeW-N_z6XJQq2w">
-          <bufferSize xmi:id="_-h86QewfEeWTKqLnMSJAUw"/>
+          <bufferSize xmi:id="_N6S4UFTnEeeiyvaQZ-h8jw" value="100"/>
         </receiverMessageBuffer>
         <receiverMessageBuffer xmi:id="_-iH5YOwfEeWTKqLnMSJAUw" name="buffer_for_getOrder" messageType="_UTgXMNxrEeW-N_z6XJQq2w">
-          <bufferSize xmi:id="_-iH5YewfEeWTKqLnMSJAUw"/>
+          <bufferSize xmi:id="_NQMycFTnEeeiyvaQZ-h8jw" value="100"/>
         </receiverMessageBuffer>
       </roles>
       <roles xmi:id="_lPVmgewfEeWTKqLnMSJAUw" connectors="_lPWNkewfEeWTKqLnMSJAUw" behavior="_p1yiUOwhEeWTKqLnMSJAUw" name="productionStation" senderMessageTypes="_wsJowNxgEeW-N_z6XJQq2w _UTgXMNxrEeW-N_z6XJQq2w" receiverMessageTypes="_dtJysNxhEeW-N_z6XJQq2w _P-BxAOa5EeWyd6JHVas6Kw">
@@ -997,10 +997,10 @@
           <upperBound xmi:id="_5n1LAT-5EeeumMKPPaKgzQ"/>
         </cardinality>
         <receiverMessageBuffer xmi:id="_IwiOIOwgEeWTKqLnMSJAUw" name="buffer_for_noOrder" messageType="_dtJysNxhEeW-N_z6XJQq2w">
-          <bufferSize xmi:id="_IwiOIewgEeWTKqLnMSJAUw"/>
+          <bufferSize xmi:id="_OvRYgFTnEeeiyvaQZ-h8jw" value="100"/>
         </receiverMessageBuffer>
         <receiverMessageBuffer xmi:id="_IwnGoOwgEeWTKqLnMSJAUw" name="buffer_for_orderForPS" messageType="_P-BxAOa5EeWyd6JHVas6Kw">
-          <bufferSize xmi:id="_IwnGoewgEeWTKqLnMSJAUw"/>
+          <bufferSize xmi:id="_PRnQkFTnEeeiyvaQZ-h8jw" value="100"/>
         </receiverMessageBuffer>
       </roles>
       <roleConnector xmi:id="_lPWNkewfEeWTKqLnMSJAUw" connectorEndpoints="_lPTxUOwfEeWTKqLnMSJAUw _lPVmgewfEeWTKqLnMSJAUw">
