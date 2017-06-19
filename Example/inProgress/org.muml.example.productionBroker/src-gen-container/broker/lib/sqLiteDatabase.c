@@ -391,7 +391,7 @@ int deleteOrder(int orderID)
 
 
 /**
- * Sets orderStatus to DONE
+ * Removes Production Stations that are not seen for 60 seconds
  */
 int removeObsoleteProductionStations()
 {
