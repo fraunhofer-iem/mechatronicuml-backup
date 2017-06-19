@@ -423,7 +423,7 @@
             <transitions xmi:id="_0qTw4OanEeWyd6JHVas6Kw" priority="1" target="_LXECYOa4EeWyd6JHVas6Kw" source="_JvqcMOa3EeWyd6JHVas6Kw" clockResets="_d3m6gOa6EeWyd6JHVas6Kw">
               <clockConstraints xmi:id="_behRAOqQEeWdNs1s2t99bw" clock="_d3m6gOa6EeWyd6JHVas6Kw" operator="GREATER_OR_EQUAL">
                 <bound xmi:id="_cf09AOqQEeWdNs1s2t99bw" unit="MILLISECONDS">
-                  <value xsi:type="common:LiteralExpression" xmi:id="_iTTXgOqQEeWdNs1s2t99bw" value="500"/>
+                  <value xsi:type="common:LiteralExpression" xmi:id="_KCayYFToEeeiyvaQZ-h8jw" value="100"/>
                 </bound>
               </clockConstraints>
               <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_2qRdgOanEeWyd6JHVas6Kw">
@@ -559,7 +559,7 @@
             <transitions xmi:id="_jKg08D-vEeeYkJuSFNogTw" priority="5" target="_JvqcMOa3EeWyd6JHVas6Kw" source="_LXECYOa4EeWyd6JHVas6Kw">
               <clockConstraints xmi:id="_kQ4nID-vEeeYkJuSFNogTw" clock="_d3m6gOa6EeWyd6JHVas6Kw" operator="GREATER_OR_EQUAL">
                 <bound xmi:id="_l_3RcD-vEeeYkJuSFNogTw">
-                  <value xsi:type="common:LiteralExpression" xmi:id="_uxbNsD-vEeeYkJuSFNogTw" value="500"/>
+                  <value xsi:type="common:LiteralExpression" xmi:id="_EagusFToEeeiyvaQZ-h8jw" value="250"/>
                 </bound>
               </clockConstraints>
             </transitions>
@@ -734,7 +734,7 @@
       <transitions xmi:id="_y4uicOwhEeWTKqLnMSJAUw" priority="1" target="_xAtQ4OwhEeWTKqLnMSJAUw" source="_umwW8OwhEeWTKqLnMSJAUw" urgent="false">
         <clockConstraints xmi:id="_Rp85UOw1EeWTKqLnMSJAUw" clock="_O2-bYOw1EeWTKqLnMSJAUw" operator="GREATER_OR_EQUAL">
           <bound xmi:id="_SdwU0Ow1EeWTKqLnMSJAUw">
-            <value xsi:type="common:LiteralExpression" xmi:id="_TBQqgOw1EeWTKqLnMSJAUw" value="500"/>
+            <value xsi:type="common:LiteralExpression" xmi:id="_9SkboFTnEeeiyvaQZ-h8jw" value="100"/>
           </bound>
         </clockConstraints>
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_Z_r1MOw1EeWTKqLnMSJAUw">
@@ -824,7 +824,7 @@
       <transitions xmi:id="_JWkgUD-wEeeYkJuSFNogTw" priority="5" target="_umwW8OwhEeWTKqLnMSJAUw" source="_xAtQ4OwhEeWTKqLnMSJAUw" clockResets="_O2-bYOw1EeWTKqLnMSJAUw">
         <clockConstraints xmi:id="_KqF9sD-wEeeYkJuSFNogTw" clock="_O2-bYOw1EeWTKqLnMSJAUw" operator="GREATER_OR_EQUAL">
           <bound xmi:id="_LgDVUD-wEeeYkJuSFNogTw">
-            <value xsi:type="common:LiteralExpression" xmi:id="_MIw7ID-wEeeYkJuSFNogTw" value="500"/>
+            <value xsi:type="common:LiteralExpression" xmi:id="_QnwusFToEeeiyvaQZ-h8jw" value="250"/>
           </bound>
         </clockConstraints>
       </transitions>
