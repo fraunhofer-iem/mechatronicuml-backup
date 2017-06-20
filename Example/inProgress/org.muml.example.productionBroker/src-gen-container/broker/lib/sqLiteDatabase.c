@@ -459,6 +459,7 @@ int removeObsoleteProductionStations()
 	for (int i =0; i<noOfProdToRemove; i++){
 		rc =sqlite3_bind_int(removeObsoleteProductionStationsStmt, 1, prodToRemove[i]);
 		if( rc ){
+			fprintf(stderr, "rc=%d, i=%d \n", rc, i);
 			fprintf(stderr, "Error for removing production station: %s\n", sqlite3_errmsg(db));
 			return rc;
 		}
