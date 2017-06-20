@@ -402,7 +402,7 @@ int removeObsoleteProductionStations()
 	sqlite3_stmt *removeObsoleteProductionStationsStmt;
 
 	//Find out how many PS to remove we have
-	const char *sqlStmCount = "COUNT(SELECT FROM ProductionStations WHERE LastSeen<=datetime('now','-60.0 seconds'));";
+	const char *sqlStmCount = "SELECT count(*) FROM ProductionStations WHERE LastSeen<=datetime('now','-60.0 seconds');";
 
 	rc = sqlite3_blocking_prepare_v2(db, sqlStmCount,-1, &countObsoleteProductionStationsStmt,0);
 	if( rc ){
@@ -412,6 +412,7 @@ int removeObsoleteProductionStations()
 	//Execute statement
 	rc = sqlite3_blocking_step(countObsoleteProductionStationsStmt);
 	if( rc!=SQLITE_DONE ){
+		fprintf(stderr, "rc=%d\n", rc);
 		fprintf(stderr, "Could not execute statement for counting obsolete production stations: %s\n", sqlite3_errmsg(db));
 		return rc;
 	}
