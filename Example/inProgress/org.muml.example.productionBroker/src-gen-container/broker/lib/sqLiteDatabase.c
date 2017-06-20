@@ -473,6 +473,7 @@ int removeObsoleteProductionStations()
 			fprintf(stderr, "Could not execute statement for removing obsolete production stations: %s\n", sqlite3_errmsg(db));
 			return rc;
 		}
+		sqlite3_reset(removeObsoleteProductionStationsStmt);
 	}
 
 	sqlite3_finalize(removeObsoleteProductionStationsStmt);
