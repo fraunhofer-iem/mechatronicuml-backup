@@ -489,8 +489,8 @@ int removeObsoleteProductionStations()
     cJSON_AddItemToObject(update, "changedTables", changedTables = cJSON_CreateObject());
     cJSON *productionStations;
     cJSON_AddItemToObject(changedTables, "ProductionStations", productionStations = cJSON_CreateObject());
-    /* cJSON *iDArray;     */
-    /* cJSON_AddItemToObject(productionStations, "ProductionStationIDs", iDArray=cJSON_CreateIntArray(prodToRemove, noOfProdToRemove)); */
+    cJSON *iDArray;
+    cJSON_AddItemToObject(productionStations, "ProductionStationIDs", iDArray=cJSON_CreateIntArray(prodToRemove, noOfProdToRemove));
 
 	sendToVirtualizationServer(cJSON_Print(update));
 
