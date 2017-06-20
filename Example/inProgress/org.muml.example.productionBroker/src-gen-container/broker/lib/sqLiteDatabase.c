@@ -402,7 +402,7 @@ int removeObsoleteProductionStations()
 	sqlite3_stmt *removeObsoleteProductionStationsStmt;
 
 	//Find out how many PS to remove we have
-	const char *sqlStmCount = "SELECT count(*) FROM ProductionStations WHERE LastSeen<=datetime('now','-60.0 seconds');";
+	const char *sqlStmCount = "SELECT (SELECT count(*) FROM ProductionStations) as noOfProd FROM ProductionStations WHERE LastSeen<=datetime('now','-60.0 seconds');";
 
 	rc = sqlite3_blocking_prepare_v2(db, sqlStmCount,-1, &countObsoleteProductionStationsStmt,0);
 	if( rc ){
@@ -411,13 +411,20 @@ int removeObsoleteProductionStations()
 	}
 	//Execute statement
 	rc = sqlite3_blocking_step(countObsoleteProductionStationsStmt);
-	if( rc!=SQLITE_DONE ){
+	if( rc!=SQLITE_DONE && rc!=SQLITE_ROW){
 		fprintf(stderr, "rc=%d\n", rc);
 		fprintf(stderr, "Could not execute statement for counting obsolete production stations: %s\n", sqlite3_errmsg(db));
 		return rc;
 	}
+	fprintf(stderr, "Number of columns = %d\n", sqlite3_column_count( countObsoleteProductionStationsStmt ));
 	int noOfProdToRemove=sqlite3_column_int(countObsoleteProductionStationsStmt, 0);
+	fprintf(stderr, "noOfProdToRemove=%d\n", noOfProdToRemove);
 	sqlite3_finalize(countObsoleteProductionStationsStmt);
+	
+	//If there are no production stations to remove, exit without doing anything
+	if (noOfProdToRemove<1){
+		return 0;
+	}
 
 	int prodToRemove[noOfProdToRemove];
 
@@ -433,10 +440,12 @@ int removeObsoleteProductionStations()
 	for (int i =0; i<noOfProdToRemove; i++){
 		rc = sqlite3_blocking_step(retrieveObsoleteProductionStationsStmt);
 		if( rc!=SQLITE_ROW && !(rc==SQLITE_DONE && i==(noOfProdToRemove-1))){
+			fprintf(stderr, "rc=%d\n", rc);
 			fprintf(stderr, "Could not execute statement for retrieving obsolete production stations: %s\n", sqlite3_errmsg(db));
 			return rc;
 		}
 		prodToRemove[i]=sqlite3_column_int(retrieveObsoleteProductionStationsStmt, 0);
+		fprintf(stderr, "ID of production station to remove = %d\n", prodToRemove[i]);
 	}
 	sqlite3_finalize(retrieveObsoleteProductionStationsStmt);
 
@@ -450,17 +459,21 @@ int removeObsoleteProductionStations()
 		sprintf(sqlStm, "%d", prodToRemove[i]);
 		strcat(sqlStm, ",");
 	}
-	sprintf(sqlStm, "%d", prodToRemove[noOfProdToRemove-1]);
+	char temp[11];
+	sprintf(temp, "%d", prodToRemove[noOfProdToRemove-1]);
+	strcat(sqlStm, temp);
 	strcat(sqlStm, ");");
+	
+	fprintf(stderr, sqlStm);
 
 	rc = sqlite3_blocking_prepare_v2(db, sqlStm,-1, &removeObsoleteProductionStationsStmt,0);
 	if( rc ){
-		fprintf(stderr, "Could not prepare statement for remove obsolete production stations: %s\n", sqlite3_errmsg(db));
+		fprintf(stderr, "Could not prepare statement for removing obsolete production stations: %s\n", sqlite3_errmsg(db));
 		return rc;
 	}
 	rc = sqlite3_blocking_step(removeObsoleteProductionStationsStmt);
 	if( rc!=SQLITE_DONE ){
-		fprintf(stderr, "Could not execute statement for  remove obsolete production stations: %s\n", sqlite3_errmsg(db));
+		fprintf(stderr, "Could not execute statement for removing obsolete production stations: %s\n", sqlite3_errmsg(db));
 		
 		return rc;
 	}
