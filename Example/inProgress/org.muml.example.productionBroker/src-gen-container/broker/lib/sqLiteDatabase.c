@@ -402,7 +402,7 @@ int removeObsoleteProductionStations()
 	sqlite3_stmt *removeObsoleteProductionStationsStmt;
 
 	//Find out how many PS to remove we have
-	const char *sqlStmCount = " SELECT count(*) From ProductionStations WHERE LastSeen<=datetime('now','-10.0 seconds');";
+	const char *sqlStmCount = " SELECT count(*) From ProductionStations WHERE LastSeen<=datetime('now','-60.0 seconds');";
 
 	rc = sqlite3_blocking_prepare_v2(db, sqlStmCount,-1, &countObsoleteProductionStationsStmt,0);
 	if( rc ){
@@ -429,7 +429,7 @@ int removeObsoleteProductionStations()
 	int prodToRemove[noOfProdToRemove];
 
 	//Now find out which ones need to be removed
-	const char *sqlStmRetrieve = "SELECT ProductionStationID FROM ProductionStations WHERE LastSeen<=datetime('now','-10.0 seconds');";
+	const char *sqlStmRetrieve = "SELECT ProductionStationID FROM ProductionStations WHERE LastSeen<=datetime('now','-60.0 seconds');";
 
 	rc = sqlite3_blocking_prepare_v2(db, sqlStmRetrieve,-1, &retrieveObsoleteProductionStationsStmt,0);
 	if( rc ){
