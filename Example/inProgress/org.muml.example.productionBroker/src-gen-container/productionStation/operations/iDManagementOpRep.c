@@ -14,8 +14,8 @@ int32_T IDManagement_iDManagementGetID(){
 	srand(clock());
 	int32_T ret = rand();
 	printf("RandNr:%d",ret);
+	return ret;
 /**End of user code**/
-
 }
 
 
