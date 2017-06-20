@@ -16,6 +16,8 @@
 		}
 		void initializeBrokerBrokerForPSPortOrderBrokerforPsRTSCRegion(
 				BrokerBrokerStateChart* stateChart) {
+			Clock_reset(
+					stateChart->brokerBrokerForPSPortGarbageCollectorScheduleBrokerBrokerForPSPortOrderBrokerforPsRTSCClock);
 		
 			stateChart->currentPsID = -1;
 		
@@ -172,7 +174,38 @@
 				BrokerBrokerStateChart* stateChart) {
 			switch (stateChart->currentStateOfBrokerBrokerForPSPortOrderBrokerforPsRTSC) {
 			case STATE_BROKERBROKERFORPSPORTINIT:
-				if (MCC_BrokerComponent_brokerForPSPort_exists_MessagesDoneOrder_Messages_Message(
+				if (Clock_getTime(
+						stateChart->brokerBrokerForPSPortGarbageCollectorScheduleBrokerBrokerForPSPortOrderBrokerforPsRTSCClock)
+						> 20 * 1000.0
+		
+						) {
+		
+					// execute exit actions
+					// nothing to do
+		
+					// Transition Effects (incl. clock resets)
+		
+					databaseOperations_databaseOperationsRemoveObsoleteProductionStations();
+					;
+		
+					Clock_reset(
+							stateChart->brokerBrokerForPSPortGarbageCollectorScheduleBrokerBrokerForPSPortOrderBrokerforPsRTSCClock);
+		
+					// nothing to do			
+		
+					//release all created received events
+					//release all created sent events
+					// change the state
+					stateChart->currentStateOfBrokerBrokerForPSPortOrderBrokerforPsRTSC =
+							STATE_BROKERBROKERFORPSPORTINIT;
+		#ifdef DEBUG
+					printDebugInformation("currentStateOfBrokerBrokerForPSPortOrderBrokerforPsRTSC switched state to STATE_BROKERBROKERFORPSPORTINIT" );
+		#endif		
+		
+					// execute entry actions
+					// nothing to do
+		
+				} else if (MCC_BrokerComponent_brokerForPSPort_exists_MessagesDoneOrder_Messages_Message(
 						BrokerComponent_getbrokerForPSPort(stateChart->parentComponent))
 		
 						) {

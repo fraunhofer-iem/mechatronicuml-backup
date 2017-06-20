@@ -51,6 +51,12 @@
 		 * @param searchingPS @param latestOrderID @param producibleIngredients 
 		 */
 		int32_T databaseOperations_databaseOperationsSearchOrder(int32_T searchingPS, int32_T latestOrderID, int32_T producibleIngredients);
+		/**
+		 * @brief Implementation stub of operation removeObsoleteProductionStations
+ 		 * @details This function shall contain the implementation of the operation removeObsoleteProductionStations.
+		 * 
+		 */
+		int32_T databaseOperations_databaseOperationsRemoveObsoleteProductionStations();
 
 
 #ifdef __cplusplus

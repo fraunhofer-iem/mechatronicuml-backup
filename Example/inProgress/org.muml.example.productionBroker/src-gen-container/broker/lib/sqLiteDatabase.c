@@ -26,6 +26,7 @@ static void unlock_notify_cb(void **apArg, int nArg);
 static int wait_for_unlock_notify(sqlite3 *db);
 int sqlite3_blocking_step(sqlite3_stmt *pStmt);
 int sqlite3_blocking_prepare_v2( sqlite3 *db, const char *zSql, int nSql, sqlite3_stmt **ppStmt, const char **pz);
+int removeObsoleteProductionStations();
 
 /* Pointer to database */
 sqlite3 *db;
@@ -417,7 +418,7 @@ int removeObsoleteProductionStations()
 	}
 	sqlite3_finalize(removeObsoleteProductionStationsStmt);
 
-	printf("Successfully marked order %d as finished.\n", orderID);
+	printf("Successfully removed obsolete production stations");
 
 	//Send notification about seen production station to the visualization server
 	//json format: {update: {searchOrder, changedTables: {ProductionStations: {ProductionStationID: id}}}}

@@ -680,7 +680,7 @@
 									
 											readerQoS.reliability.kind=DDS_BEST_EFFORT_RELIABILITY_QOS;
 									
-										readerQoS.history.depth=5;
+										readerQoS.history.depth=100;
 											readerQoS.history.kind=DDS_KEEP_ALL_HISTORY_QOS;
 										
 									
@@ -716,7 +716,7 @@
 									
 											readerQoS.reliability.kind=DDS_BEST_EFFORT_RELIABILITY_QOS;
 									
-										readerQoS.history.depth=5;
+										readerQoS.history.depth=100;
 											readerQoS.history.kind=DDS_KEEP_ALL_HISTORY_QOS;
 										
 									
@@ -746,14 +746,14 @@
 			switch(ID){
 				case CI_BROKERBROKER:
 					b.ID = ID;
-							b.GETORDER = PORT_UNCONNECTED;
-							b.createGETORDERHandle = &create_GETORDERDDSHandle;
-							b.GETORDER_op.dds_option.domainID = 0;
-							b.GETORDER_op.dds_option.partition = 24978;
 							b.BROKERFORPSPORT = PORT_UNCONNECTED;
 							b.createBROKERFORPSPORTHandle = &create_BROKERFORPSPORTDDSHandle;
 							b.BROKERFORPSPORT_op.dds_option.domainID = 0;
 							b.BROKERFORPSPORT_op.dds_option.partition = 12336;
+							b.GETORDER = PORT_UNCONNECTED;
+							b.createGETORDERHandle = &create_GETORDERDDSHandle;
+							b.GETORDER_op.dds_option.domainID = 0;
+							b.GETORDER_op.dds_option.partition = 24978;
 				break;
 			default:
 				break;

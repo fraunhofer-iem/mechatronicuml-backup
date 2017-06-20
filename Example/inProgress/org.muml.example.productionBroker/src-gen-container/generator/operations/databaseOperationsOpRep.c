@@ -103,4 +103,18 @@ int32_T databaseOperations_databaseOperationsSearchOrder(int32_T searchingPS, in
 
 
 
+int32_T databaseOperations_databaseOperationsRemoveObsoleteProductionStations(){
+
+/** Start of user code databaseOperations_databaseOperationsRemoveObsoleteProductionStations **/ 
+//@TODO: add your implementation here
+#warning Missing implemenation of repository operation 'databaseOperations_databaseOperationsRemoveObsoleteProductionStations'
+	//default return value
+	int32_T ret = 0;
+	return ret;
+/**End of user code**/
+
+}
+
+
+
 

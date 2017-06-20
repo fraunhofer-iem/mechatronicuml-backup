@@ -128,4 +128,17 @@
     <element xmi:type="realtimestatechart:Transition" href="../productionBroker.muml#_4lMn8OwfEeWTKqLnMSJAUw"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_fZh3AvRKEeaPvMZN2eZM1g" points="[20, 3, -54, 0]$[-10, 0, -84, -3]"/>
   </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_6EyGMFWFEeeKg_Qxv9q8Lw" type="4003" source="_fBmfMPRKEeaPvMZN2eZM1g" target="_fBmfMPRKEeaPvMZN2eZM1g" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_6EytQFWFEeeKg_Qxv9q8Lw" type="6005">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_6EytQVWFEeeKg_Qxv9q8Lw" x="-36" y="118"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_6EytQlWFEeeKg_Qxv9q8Lw" type="6006">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_6EzUUFWFEeeKg_Qxv9q8Lw" x="-10" y="20"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_6EyGMVWFEeeKg_Qxv9q8Lw" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="realtimestatechart:Transition" href="../productionBroker.muml#_6D1D8FWFEeeKg_Qxv9q8Lw"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6EyGMlWFEeeKg_Qxv9q8Lw" points="[-22, -4, -10, 0]$[-20, 9, -8, 13]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6HbxkFWFEeeKg_Qxv9q8Lw" id="(0.55,0.85)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6HbxkVWFEeeKg_Qxv9q8Lw" id="(0.25,0.7833333333333333)"/>
+  </edges>
 </notation:Diagram>

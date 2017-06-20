@@ -198,6 +198,7 @@
 							bool_t BrokerGetOrderGetOrderStatechart_isExecutable;/**< Execution Verifier of RTSC: BrokerGetOrderGetOrderStatechart. This variable is used to ensure that a RTSC is executed only once per execution cycle */
 							bool_t BrokerBrokerForPSPortOrderBrokerforPsRTSC_isExecutable;/**< Execution Verifier of RTSC: BrokerBrokerForPSPortOrderBrokerforPsRTSC. This variable is used to ensure that a RTSC is executed only once per execution cycle */
 					
+							Clock brokerBrokerForPSPortGarbageCollectorScheduleBrokerBrokerForPSPortOrderBrokerforPsRTSCClock;/**< The Clock: BrokerBrokerForPSPortGarbageCollectorScheduleBrokerBrokerForPSPortOrderBrokerforPsRTSC */
 				
 				
 					

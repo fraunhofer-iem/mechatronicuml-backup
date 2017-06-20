@@ -26,6 +26,7 @@ static void unlock_notify_cb(void **apArg, int nArg);
 static int wait_for_unlock_notify(sqlite3 *db);
 int sqlite3_blocking_step(sqlite3_stmt *pStmt);
 int sqlite3_blocking_prepare_v2( sqlite3 *db, const char *zSql, int nSql, sqlite3_stmt **ppStmt, const char **pz);
+int removeObsoleteProductionStations();
 
 /* Pointer to database */
 sqlite3 *db;
@@ -52,6 +53,7 @@ int createDatabase(){
     if( rc ){
       fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
       sqlite3_close(db);
+	
       return(1);
     }
 
@@ -64,6 +66,7 @@ int createDatabase(){
     if( rc ){
     	fprintf(stderr, "SQL error: %s\n", errMsg);
     	sqlite3_free(errMsg);
+	
     	return(1);
     }
     //Create table productionStations
@@ -86,6 +89,7 @@ int createDatabase(){
     if( rc ){
     	fprintf(stderr, "SQL error: %s\n", errMsg);
     	sqlite3_free(errMsg);
+	
     	return(1);
     }
 
@@ -158,6 +162,7 @@ int insertOrder(int orderID, int ingredientID, int amount)
 	rc = sqlite3_blocking_prepare_v2(db, orderInsertion, -1, &orderInsertionStmt, 0);
 	if (rc){
 		fprintf(stderr, "Could not prepare statement for order insertion: %s\n", sqlite3_errmsg(db));
+		
 		return rc;
 	}
 
@@ -165,16 +170,19 @@ int insertOrder(int orderID, int ingredientID, int amount)
 	rc= sqlite3_bind_int(orderInsertionStmt, 1, orderID);
 	if( rc ){
 		fprintf(stderr, "Error for orderID: %s\n", sqlite3_errmsg(db));
+		
 		return rc;
 	}
 	rc =sqlite3_bind_int(orderInsertionStmt, 2, ingredientID);
 	if( rc ){
 		fprintf(stderr, "Error for ingredientID: %s\n", sqlite3_errmsg(db));
+		
 		return rc;
 	}
 	rc = sqlite3_bind_int(orderInsertionStmt, 3, amount);
 	if( rc ){
 		fprintf(stderr, "Error for amount: %s\n", sqlite3_errmsg(db));
+		
 		return rc;
 	}
 
@@ -183,6 +191,7 @@ int insertOrder(int orderID, int ingredientID, int amount)
 
 	if( rc!=SQLITE_DONE ){
 		fprintf(stderr, "Could not execute statement for order insertion: %s\n", sqlite3_errmsg(db));
+		
 		return rc;
 	}
 
@@ -219,18 +228,21 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 	rc = sqlite3_blocking_prepare_v2(db, orderStatus,-1, &orderStatusStmt,0);
 	if( rc ){
 		fprintf(stderr, "Could not prepare statement for order status update: %s\n", sqlite3_errmsg(db));
+		
 		return rc;
 	}
 	//Bind parameters
 	rc= sqlite3_bind_int(orderStatusStmt, 1, orderID);
 	if( rc ){
 		fprintf(stderr, "Error for orderID: %s\n", sqlite3_errmsg(db));
+		
 		return rc;
 	}
 	//Execute statement, once step is sufficient for insertions
 	rc = sqlite3_blocking_step(orderStatusStmt);
 	if( rc!=SQLITE_DONE ){
 		fprintf(stderr, "Could not execute statement for order status update: %s\n", sqlite3_errmsg(db));
+		
 		return rc;
 	}
 	sqlite3_finalize(orderStatusStmt);
@@ -242,17 +254,20 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 	rc = sqlite3_blocking_prepare_v2(db, psLastProduced, -1, &psLastProducedStmt, 0);
 	if( rc ){
 		fprintf(stderr, "Could not prepare statement for order status update: %s\n", sqlite3_errmsg(db));
+		
 		return rc;
 	}
 	//Bind parameters
 	rc= sqlite3_bind_int(psLastProducedStmt, 1, orderID);
 	if( rc ){
 		fprintf(stderr, "Error for orderID: %s\n", sqlite3_errmsg(db));
+		
 		return rc;
 	}
 	rc= sqlite3_bind_int(psLastProducedStmt, 2, productionStationID);
 	if( rc ){
 		fprintf(stderr, "Error for productionStationID: %s\n", sqlite3_errmsg(db));
+		
 		return rc;
 	}
 	//Execute statement
@@ -260,6 +275,7 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 	rc = sqlite3_blocking_step(psLastProducedStmt);
 	if( rc!=SQLITE_DONE ){
 		fprintf(stderr, "Could not execute statement for production station update: %s\n", sqlite3_errmsg(db));
+		
 		return rc;
 	}
 	sqlite3_finalize(psLastProducedStmt);
@@ -274,6 +290,7 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 	if (rc)
 	{
 		fprintf(stderr, "Could not prepare statement for order allocation: %s\n", sqlite3_errmsg(db));
+		
 		return rc;
 	}
 
@@ -281,11 +298,13 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 	rc =sqlite3_bind_int(orderAllocStmt, 1, productionStationID);
 	if( rc ){
 		fprintf(stderr, "Error for productionStationID: %s\n", sqlite3_errmsg(db));
+		
 		return rc;
 	}
 	rc= sqlite3_bind_int(orderAllocStmt, 2, orderID);
 	if( rc ){
 		fprintf(stderr, "Error for orderID: %s\n", sqlite3_errmsg(db));
+		
 		return rc;
 	}
 
@@ -294,6 +313,7 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 
 	if( rc!=SQLITE_DONE ){
 		fprintf(stderr, "Could not execute statement for order allocation: %s\n", sqlite3_errmsg(db));
+		
 		return rc;
 	}
 	sqlite3_finalize(orderAllocStmt);
@@ -334,18 +354,21 @@ int deleteOrder(int orderID)
 	rc = sqlite3_blocking_prepare_v2(db, orderStatus,-1, &orderStatusStmt,0);
 	if( rc ){
 		fprintf(stderr, "Could not prepare statement for order status update: %s\n", sqlite3_errmsg(db));
+		
 		return rc;
 	}
 	//Bind parameters
 	rc= sqlite3_bind_int(orderStatusStmt, 1, orderID);
 	if( rc ){
 		fprintf(stderr, "Error for orderID: %s\n", sqlite3_errmsg(db));
+		
 		return rc;
 	}
 	//Execute statement, once step is sufficient for insertions
 	rc = sqlite3_blocking_step(orderStatusStmt);
 	if( rc!=SQLITE_DONE ){
 		fprintf(stderr, "Could not execute statement for order status update: %s\n", sqlite3_errmsg(db));
+		
 		return rc;
 	}
 	sqlite3_finalize(orderStatusStmt);
@@ -367,6 +390,54 @@ int deleteOrder(int orderID)
 	return 0;
 }
 
+
+/**
+ * Removes Production Stations that are not seen for 60 seconds
+ */
+int removeObsoleteProductionStations()
+{
+	int rc = 0;
+
+	sqlite3_stmt *removeObsoleteProductionStationsStmt;
+
+	//Set status of the order
+	const char *sqlStm = "DELETE FROM ProductionStations WHERE LastSeen<=datetime('now','-60.0 seconds');";
+
+	rc = sqlite3_blocking_prepare_v2(db, sqlStm,-1, &removeObsoleteProductionStationsStmt,0);
+	if( rc ){
+		fprintf(stderr, "Could not prepare statement for remove obsolete production stations: %s\n", sqlite3_errmsg(db));
+		
+		return rc;
+	}
+	//Execute statement, once step is sufficient for insertions
+	rc = sqlite3_blocking_step(removeObsoleteProductionStationsStmt);
+	if( rc!=SQLITE_DONE ){
+		fprintf(stderr, "Could not execute statement for  remove obsolete production stations: %s\n", sqlite3_errmsg(db));
+		
+		return rc;
+	}
+	sqlite3_finalize(removeObsoleteProductionStationsStmt);
+
+	printf("Successfully marked order %d as finished.\n", orderID);
+
+	//Send notification about seen production station to the visualization server
+	//json format: {update: {searchOrder, changedTables: {ProductionStations: {ProductionStationID: id}}}}
+	cJSON *update;
+	update = cJSON_CreateObject();
+// TODO edit the json stuff to inform the webbrowser
+//	cJSON_AddItemToObject(update, "update", cJSON_CreateString("changedTables"));
+//	cJSON *changedTables;
+//	cJSON_AddItemToObject(update, "changedTables", changedTables = cJSON_CreateObject());
+//	cJSON *productionStations;
+//	cJSON_AddItemToObject(changedTables, "ProductionStations", productionStations = cJSON_CreateObject());
+//	cJSON_AddNumberToObject(productionStations, "ProductionStationID", searchingPS);
+
+	sendToVirtualizationServer(cJSON_Print(update));
+
+
+	return 0;
+}
+
 /**
  * Retrieve the ingredientID for the order with the given id.
  */
@@ -381,6 +452,7 @@ int getOrderIngredientID(int orderID)
 	rc = sqlite3_blocking_prepare_v2(db, getIngredient,-1, &getIngredientStmt,0);
 	if( rc ){
 		fprintf(stderr, "Could not prepare statement for order retrieval: %s\n", sqlite3_errmsg(db));
+		
 		return rc;
 	}
 
@@ -388,6 +460,7 @@ int getOrderIngredientID(int orderID)
 	rc =sqlite3_bind_int(getIngredientStmt, 1, orderID);
 	if( rc ){
 		fprintf(stderr, "Error for orderID: %s\n", sqlite3_errmsg(db));
+		
 		return rc;
 	}
 	//Execute statement, once step is sufficient for insertions
@@ -396,6 +469,7 @@ int getOrderIngredientID(int orderID)
 	//There should be a row of results
 	if( rc!=SQLITE_ROW ){
 		fprintf(stderr, "Could not execute statement for order retrieval: %s\n", sqlite3_errmsg(db));
+		
 		return -1;
 	}
 
@@ -417,6 +491,7 @@ int getOrderAmount(int orderID)
 	rc = sqlite3_blocking_prepare_v2(db, getAmount,-1, &getAmountStmt,0);
 	if( rc ){
 		fprintf(stderr, "Could not prepare statement for order retrieval: %s\n", sqlite3_errmsg(db));
+		
 		return rc;
 	}
 
@@ -424,6 +499,7 @@ int getOrderAmount(int orderID)
 	rc =sqlite3_bind_int(getAmountStmt, 1, orderID);
 	if( rc ){
 		fprintf(stderr, "Error for orderID: %s\n", sqlite3_errmsg(db));
+		
 		return rc;
 	}
 	//Execute statement, once step is sufficient for insertions
@@ -432,6 +508,7 @@ int getOrderAmount(int orderID)
 	//There should be a row of results
 	if( rc!=SQLITE_ROW ){
 		fprintf(stderr, "Could not execute statement for order retrieval: %s\n", sqlite3_errmsg(db));
+		
 		return -1;
 	}
 
@@ -461,6 +538,7 @@ int searchOrder(int searchingPS, int latestOrderID, int producibleIngredients)
 	rc = sqlite3_blocking_prepare_v2(db, productionStation,-1, &prodStatStmt,0);
 	if( rc ){
 		fprintf(stderr, "Could not prepare statement for production station insertion: %s\n", sqlite3_errmsg(db));
+		
 		return rc;
 	}
 
@@ -468,11 +546,13 @@ int searchOrder(int searchingPS, int latestOrderID, int producibleIngredients)
 	rc =sqlite3_bind_int(prodStatStmt, 1, searchingPS);
 	if( rc ){
 		fprintf(stderr, "Error for productionStationID: %s\n", sqlite3_errmsg(db));
+		
 		return rc;
 	}
 	rc= sqlite3_bind_text(prodStatStmt, 2, prodIngrChar, 16, SQLITE_STATIC);
 	if( rc ){
 		fprintf(stderr, "Error for producibleIngredients: %s\n", sqlite3_errmsg(db));
+		
 		return rc;
 	}
 	rc =sqlite3_bind_int(prodStatStmt, 3, searchingPS);
@@ -486,6 +566,7 @@ int searchOrder(int searchingPS, int latestOrderID, int producibleIngredients)
 
 	if( rc!=SQLITE_DONE ){
 		fprintf(stderr, "Could not execute statement for production station insertion: %s\n", sqlite3_errmsg(db));
+		
 		return rc;
 	}
 	sqlite3_finalize(prodStatStmt);
@@ -499,12 +580,14 @@ int searchOrder(int searchingPS, int latestOrderID, int producibleIngredients)
 	rc = sqlite3_blocking_prepare_v2(db, searchOrder,-1, &searchOrderStmt,0);
 	if( rc ){
 		fprintf(stderr, "Could not prepare statement for order retrieval: %s\n", sqlite3_errmsg(db));
+		
 		return -1;
 	}
 	//Bind parameters
 	rc =sqlite3_bind_int(searchOrderStmt, 1, producibleIngredients);
 	if( rc ){
 		fprintf(stderr, "Could not prepare statement for order retrieval: %s\n", sqlite3_errmsg(db));
+		
 		return rc;
 	}
 
@@ -520,6 +603,7 @@ int searchOrder(int searchingPS, int latestOrderID, int producibleIngredients)
 	if( rc!=SQLITE_ROW ){
 		fprintf(stderr, "Could not execute statement for order retrieval: %s\n", sqlite3_errmsg(db));
 		sqlite3_finalize(searchOrderStmt);
+		
 		return -1;
 	}
 	//There are results

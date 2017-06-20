@@ -8,9 +8,9 @@
 *@details Identifier to Identy Local Messages
 */
 			//Identifier for Messages used on this ECU
-					#define MESSAGE_MESSAGESGETORDERMESSAGESMESSAGE 1 /**< ECU Identifier: For the Message-Type: getOrder */
-					#define MESSAGE_MESSAGESNOORDERMESSAGESMESSAGE 2 /**< ECU Identifier: For the Message-Type: noOrder */
-					#define MESSAGE_MESSAGESDONEORDERMESSAGESMESSAGE 3 /**< ECU Identifier: For the Message-Type: doneOrder */
+					#define MESSAGE_MESSAGESDONEORDERMESSAGESMESSAGE 1 /**< ECU Identifier: For the Message-Type: doneOrder */
+					#define MESSAGE_MESSAGESGETORDERMESSAGESMESSAGE 2 /**< ECU Identifier: For the Message-Type: getOrder */
+					#define MESSAGE_MESSAGESNOORDERMESSAGESMESSAGE 3 /**< ECU Identifier: For the Message-Type: noOrder */
 					#define MESSAGE_MESSAGESORDERFORPSMESSAGESMESSAGE 4 /**< ECU Identifier: For the Message-Type: orderForPS */
 
 			//Identifier for ComponentInstances

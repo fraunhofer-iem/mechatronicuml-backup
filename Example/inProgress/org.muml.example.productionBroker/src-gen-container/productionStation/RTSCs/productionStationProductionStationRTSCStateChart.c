@@ -132,7 +132,7 @@
 			case STATE_PRODUCTIONSTATIONGETORDERIDLE:
 				if (Clock_getTime(
 						stateChart->productionStationGetOrderProcessingTimeProductionStationGetOrderParameterizedGetOrderRTSCClock)
-						>= 500 * 1.0
+						>= 100 * 1.0
 		
 						) {
 		
@@ -181,7 +181,7 @@
 			case STATE_PRODUCTIONSTATIONGETORDEREVALUATEORDER:
 				if (Clock_getTime(
 						stateChart->productionStationGetOrderProcessingTimeProductionStationGetOrderParameterizedGetOrderRTSCClock)
-						>= 500 * 1.0
+						>= 250 * 1.0
 		
 						) {
 		
