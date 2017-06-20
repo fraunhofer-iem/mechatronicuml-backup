@@ -176,7 +176,7 @@
 			case STATE_BROKERBROKERFORPSPORTINIT:
 				if (Clock_getTime(
 						stateChart->brokerBrokerForPSPortGarbageCollectorScheduleBrokerBrokerForPSPortOrderBrokerforPsRTSCClock)
-						> 20 * 1000.0
+						> 5 * 1000.0
 		
 						) {
 		
