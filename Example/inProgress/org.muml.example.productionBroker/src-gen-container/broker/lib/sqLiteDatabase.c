@@ -479,17 +479,17 @@ int removeObsoleteProductionStations()
 	printf("Successfully removed obsolete production stations.\n");
 
 	//Send notification about removed production stations to the visualization server
-	//json format: {update: {removeObsoletePS, changedTables: {ProductionStations: {ProductionStationIDs: [id1, id2, .]}}}}
-//	cJSON *update;
-//	update = cJSON_CreateObject();
-//	cJSON_AddItemToObject(update, "removeObsoletePS", cJSON_CreateString("changedTables"));
-//    cJSON *changedTables;
-//    cJSON_AddItemToObject(update, "changedTables", changedTables = cJSON_CreateObject());
-//    cJSON *productionStations;
-//    cJSON_AddItemToObject(changedTables, "ProductionStations", productionStations = cJSON_CreateObject());
-//    cJSON_AddNumberToObject(productionStations, "ProductionStationID", searchingPS);
-//
-//	sendToVirtualizationServer(cJSON_Print(update));
+	//json format: {update: {removeObsoletePS, changedTables: {ProductionStationIDs: {ProductionStationIDs: [id1, id2, .]}}}}
+	cJSON *update;
+	update = cJSON_CreateObject();
+	cJSON_AddItemToObject(update, "removeObsoletePS", cJSON_CreateString("changedTables"));
+    cJSON *changedTables;
+    cJSON_AddItemToObject(update, "changedTables", changedTables = cJSON_CreateObject());
+    cJSON *productionStations;
+    cJSON_AddItemToObject(changedTables, "ProductionStations", productionStations = cJSON_CreateObject());
+    cJSON_AddItemToObject(productionStations, "ProductionStationIDs", cJSON_CreateIntArray(prodToRemove, noOfProdToRemove);
+
+	sendToVirtualizationServer(cJSON_Print(update));
 
 
 	return 0;
