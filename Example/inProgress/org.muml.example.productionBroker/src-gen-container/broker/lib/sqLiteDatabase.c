@@ -725,7 +725,7 @@ void extractLogsAndExit()
 	if (curl){
 		  curl_easy_cleanup(curl);
 	}
-	exit(1);
+	//exit(1);
 }
 
 /** Code from the offical sqlite site on how to avoid SQLITE_LOCKED, which can happen when the webserver reads from the database */
