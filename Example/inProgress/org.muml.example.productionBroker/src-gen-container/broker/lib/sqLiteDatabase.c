@@ -1149,7 +1149,7 @@ int heartBeatProductionStation(int productionStationID)
 	rc = sqlite3_blocking_step(hartBeatStmt);
 
 	if( rc!=SQLITE_DONE ){
-		fprintf(stderr, "Could not execute statement for heartbeat update if productionstation%d: %s\n", productionStationID,sqlite3_errmsg(db));
+		fprintf(stderr, "Could not execute statement for heartbeat update if productionstation %s\n", sqlite3_errmsg(db));
 		
 		return rc;
 	}
