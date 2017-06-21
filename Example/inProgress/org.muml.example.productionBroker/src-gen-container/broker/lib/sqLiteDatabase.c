@@ -307,7 +307,7 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 	//Execute statement
 	printf("Trying to update production station last produced.\n");
 	
-	int tries=0;
+	tries=0;
 	do {
 	rc = sqlite3_blocking_step(psLastProducedStmt);
 	if( rc!=SQLITE_DONE ){
@@ -363,7 +363,7 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 	}
 
 	//Execute statement, once step is sufficient for insertions
-	int tries=0;
+	tries=0;
 	do {
 	rc = sqlite3_blocking_step(orderAllocStmt);
 	if( rc!=SQLITE_DONE ){
