@@ -1122,7 +1122,7 @@ int sqlite3_blocking_prepare_v2(
  */
 int heartBeatProductionStation(int productionStationID)
 {
-	fprintf(stderr,"heartBeatProductionStation:%d \n",productionStationID);
+	printf("heartBeatProductionStation:%d \n",productionStationID);
 	int rc = 0;
 	sqlite3_stmt *hartBeatStmt;
 
@@ -1135,6 +1135,8 @@ int heartBeatProductionStation(int productionStationID)
 		
 		return rc;
 	}
+	printf("prepared heardbeat");
+	
 
 	//Bind parameters
 	rc= sqlite3_bind_int(hartBeatStmt, 1, productionStationID);
@@ -1143,7 +1145,7 @@ int heartBeatProductionStation(int productionStationID)
 		
 		return rc;
 	}
-	
+	printf("bind heardbeat");
 
 	//Execute statement, once step is sufficient for update
 	rc = sqlite3_blocking_step(hartBeatStmt);
@@ -1153,6 +1155,7 @@ int heartBeatProductionStation(int productionStationID)
 		
 		return rc;
 	}
+	printf("step heardbeat");
 
 	sqlite3_finalize(hartBeatStmt);
 
