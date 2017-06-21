@@ -11,7 +11,6 @@ int32_T ProductionManagement_productionManagementGetProducibleIngredients(){
 //@TODO: add your implementation here
 #warning Missing implemenation of repository operation 'ProductionManagement_productionManagementGetProducibleIngredients'
 	//default return value
-	int32_T ret = 0;
 	
 	srand(clock());
 	int32_T ret = rand()%6;
