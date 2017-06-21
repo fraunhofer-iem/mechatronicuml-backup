@@ -32,7 +32,7 @@
 				//	Port_destroy(component->brokerForPSPortPort);
 		
 				//suicide
-				fprintf("free component\n");
+				printDebugInformation("free component");
 				free(component);
 			}
 		}

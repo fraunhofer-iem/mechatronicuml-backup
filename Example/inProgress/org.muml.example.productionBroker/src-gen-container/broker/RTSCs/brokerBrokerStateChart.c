@@ -74,7 +74,7 @@
 			void BrokerBrokerStateChart_destroy(BrokerBrokerStateChart* stateChart) {
 				if(stateChart != NULL) {
 		
-		
+					printDebugInformation("free stateChart");
 					free(stateChart);
 				}
 			}

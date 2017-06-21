@@ -190,6 +190,10 @@ int insertOrder(int orderID, int ingredientID, int amount)
 	//Execute statement, once step is sufficient for insertions
 	int tries=0;
 	do {
+			if(tries>0)
+		{
+			fprintf(stderr, "another try to get access to locked database");
+		}
 	rc = sqlite3_blocking_step(orderInsertionStmt);
 	if( rc!=SQLITE_DONE ){
 		fprintf(stderr, "Could not execute statement for order insertion: %s\n", sqlite3_errmsg(db));
@@ -257,6 +261,10 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 	//Execute statement, once step is sufficient for insertions
 	int tries=0;
 	do {
+		if(tries>0)
+		{
+			fprintf(stderr, "another try to get access to locked database");
+		}	
 	rc = sqlite3_blocking_step(orderStatusStmt);
 	if( rc!=SQLITE_DONE ){
 		fprintf(stderr, "Could not execute statement for order status update: %s\n", sqlite3_errmsg(db));
@@ -309,6 +317,10 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 	
 	tries=0;
 	do {
+		if(tries>0)
+		{
+			fprintf(stderr, "another try to get access to locked database");
+		}	
 	rc = sqlite3_blocking_step(psLastProducedStmt);
 	if( rc!=SQLITE_DONE ){
 		fprintf(stderr, "Could not execute statement for production station update: %s\n", sqlite3_errmsg(db));
@@ -365,6 +377,10 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 	//Execute statement, once step is sufficient for insertions
 	tries=0;
 	do {
+		if(tries>0)
+		{
+			fprintf(stderr, "another try to get access to locked database");
+		}	
 	rc = sqlite3_blocking_step(orderAllocStmt);
 	if( rc!=SQLITE_DONE ){
 		fprintf(stderr, "Could not execute statement for order allocation: %s\n", sqlite3_errmsg(db));
@@ -438,6 +454,10 @@ int deleteOrder(int orderID)
 	//Execute statement, once step is sufficient for insertions
 	int tries=0;
 	do {
+		if(tries>0)
+		{
+			fprintf(stderr, "another try to get access to locked database");
+		}	
 	rc = sqlite3_blocking_step(orderStatusStmt);
 	if( rc!=SQLITE_DONE ){
 		fprintf(stderr, "Could not execute statement for order status update: %s\n", sqlite3_errmsg(db));
@@ -504,6 +524,10 @@ int removeObsoleteProductionStations()
 	//Execute statement
 	int tries=0;
 	do {
+		if(tries>0)
+		{
+			fprintf(stderr, "another try to get access to locked database");
+		}	
 	rc = sqlite3_blocking_step(countObsoleteProductionStationsStmt);
 	if( rc!=SQLITE_DONE && rc!=SQLITE_ROW){
 		fprintf(stderr, "rc=%d\n", rc);
@@ -553,6 +577,10 @@ int removeObsoleteProductionStations()
 	
 		int tries=0;
 		do {
+		if(tries>0)
+		{
+			fprintf(stderr, "another try to get access to locked database");
+		}		
 		rc = sqlite3_blocking_step(countObsoleteProductionStationsStmt);
 		if( rc!=SQLITE_ROW && !(rc==SQLITE_DONE && i==(noOfProdToRemove-1))){
 			fprintf(stderr, "rc=%d\n", rc);
@@ -605,6 +633,10 @@ int removeObsoleteProductionStations()
 		
 		int tries=0;
 		do {
+		if(tries>0)
+		{
+			fprintf(stderr, "another try to get access to locked database");
+		}		
 		rc = sqlite3_blocking_step(removeObsoleteProductionStationsStmt);
 		if( rc!=SQLITE_DONE ){
 			fprintf(stderr, "Could not execute statement for removing obsolete production stations: %s\n", sqlite3_errmsg(db));
@@ -682,6 +714,10 @@ int getOrderIngredientID(int orderID)
 	
 	int tries=0;
 		do {
+		if(tries>0)
+		{
+			fprintf(stderr, "another try to get access to locked database");
+		}		
 		rc = sqlite3_blocking_step(getIngredientStmt);
 		if( rc!=SQLITE_DONE || rc!=SQLITE_ROW  ){
 			fprintf(stderr, "Could not execute statement for removing obsolete production stations: %s\n", sqlite3_errmsg(db));
@@ -742,6 +778,10 @@ int getOrderAmount(int orderID)
 	
 		int tries=0;
 		do {
+		if(tries>0)
+		{
+			fprintf(stderr, "another try to get access to locked database");
+		}
 		rc = sqlite3_blocking_step(getAmountStmt);
 		if( rc!=SQLITE_DONE || rc!=SQLITE_ROW  ){
 			fprintf(stderr, "Could not execute statement for order retrieval: %s\n", sqlite3_errmsg(db));
@@ -823,6 +863,10 @@ int searchOrder(int searchingPS, int latestOrderID, int producibleIngredients)
 	//Execute statement, once step is sufficient for insertions
 	int tries=0;
 	do {
+	if(tries>0)
+	{
+		fprintf(stderr, "another try to get access to locked database");
+	}
 	rc = sqlite3_blocking_step(prodStatStmt);
 	if( rc!=SQLITE_DONE ){
 		fprintf(stderr, "Could not execute statement for production station insertion: %s\n", sqlite3_errmsg(db));
