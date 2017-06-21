@@ -1122,7 +1122,7 @@ int sqlite3_blocking_prepare_v2(
  */
 int heartBeatProductionStation(int productionStationID)
 {
-	printf("heartBeatProductionStation:%d \n",heartBeatProductionStation);
+	fprintf(stderr,"heartBeatProductionStation:%d \n",productionStationID);
 	int rc = 0;
 	sqlite3_stmt *hartBeatStmt;
 
