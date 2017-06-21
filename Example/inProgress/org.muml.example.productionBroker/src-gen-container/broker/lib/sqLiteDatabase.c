@@ -581,14 +581,14 @@ int removeObsoleteProductionStations()
 		{
 			fprintf(stderr, "another try to get access to locked database");
 		}		
-		rc = sqlite3_blocking_step(countObsoleteProductionStationsStmt);
+		rc = sqlite3_blocking_step(retrieveObsoleteProductionStationsStmt);
 		if( rc!=SQLITE_ROW && !(rc==SQLITE_DONE && i==(noOfProdToRemove-1))){
 			fprintf(stderr, "rc=%d\n", rc);
 			fprintf(stderr, "Could not execute statement for retrieving obsolete production stations: %s\n", sqlite3_errmsg(db));
 			if( rc == SQLITE_LOCKED )
 	        {
 	            /** Note: This will return SQLITE_LOCKED as well... **/
-	            rc = sqlite3_reset(countObsoleteProductionStationsStmt);
+	            rc = sqlite3_reset(retrieveObsoleteProductionStationsStmt);
 	       		int milisec = 1; // length of time to sleep, in miliseconds
 				struct timespec req = {0};
 				req.tv_sec = 0;
