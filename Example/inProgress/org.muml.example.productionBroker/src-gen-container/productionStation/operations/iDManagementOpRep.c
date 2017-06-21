@@ -10,7 +10,6 @@
 int32_T IDManagement_iDManagementGetID(){
 
 /** Start of user code IDManagement_iDManagementGetID **/ 
-//@TODO: add your implementation here
 	srand(clock());
 	int32_T ret = rand();
 	printf("RandNr:%d",ret);
