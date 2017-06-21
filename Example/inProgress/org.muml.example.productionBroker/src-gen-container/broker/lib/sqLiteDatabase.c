@@ -188,13 +188,28 @@ int insertOrder(int orderID, int ingredientID, int amount)
 	}
 
 	//Execute statement, once step is sufficient for insertions
+	int tries=0;
+	do {
 	rc = sqlite3_blocking_step(orderInsertionStmt);
-
 	if( rc!=SQLITE_DONE ){
 		fprintf(stderr, "Could not execute statement for order insertion: %s\n", sqlite3_errmsg(db));
-		
-		return rc;
+		if( rc == SQLITE_LOCKED )
+        {
+            /** Note: This will return SQLITE_LOCKED as well... **/
+            rc = sqlite3_reset(orderInsertionStmt);
+       		int milisec = 1; // length of time to sleep, in miliseconds
+			struct timespec req = {0};
+			req.tv_sec = 0;
+			req.tv_nsec = milisec * 1000000L;
+			nanosleep(&req, (struct timespec *)NULL);
+			tries++;
+            
+        }
+		else{
+    	    return rc;
+        }
 	}
+	}while((tries < 20) && (rc == SQLITE_LOCKED));
 
 	sqlite3_finalize(orderInsertionStmt);
 	printf("Successfully inserted order: %d\n",orderID);
@@ -240,12 +255,30 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 		return rc;
 	}
 	//Execute statement, once step is sufficient for insertions
+	int tries=0;
+	do {
 	rc = sqlite3_blocking_step(orderStatusStmt);
 	if( rc!=SQLITE_DONE ){
 		fprintf(stderr, "Could not execute statement for order status update: %s\n", sqlite3_errmsg(db));
-		
-		return rc;
+		if( rc == SQLITE_LOCKED )
+        {
+            /** Note: This will return SQLITE_LOCKED as well... **/
+            rc = sqlite3_reset(orderStatusStmt);
+       		int milisec = 1; // length of time to sleep, in miliseconds
+			struct timespec req = {0};
+			req.tv_sec = 0;
+			req.tv_nsec = milisec * 1000000L;
+			nanosleep(&req, (struct timespec *)NULL);
+			tries++;
+            
+        }
+		else{
+    	    return rc;
+        }
 	}
+	}while((tries < 20) && (rc == SQLITE_LOCKED));
+	
+
 	sqlite3_finalize(orderStatusStmt);
 
 	//Set LastProduced of the ProductionStation
@@ -273,12 +306,32 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 	}
 	//Execute statement
 	printf("Trying to update production station last produced.\n");
+	
+	int tries=0;
+	do {
 	rc = sqlite3_blocking_step(psLastProducedStmt);
 	if( rc!=SQLITE_DONE ){
 		fprintf(stderr, "Could not execute statement for production station update: %s\n", sqlite3_errmsg(db));
-		
-		return rc;
+		if( rc == SQLITE_LOCKED )
+        {
+            /** Note: This will return SQLITE_LOCKED as well... **/
+            rc = sqlite3_reset(psLastProducedStmt);
+       		int milisec = 1; // length of time to sleep, in miliseconds
+			struct timespec req = {0};
+			req.tv_sec = 0;
+			req.tv_nsec = milisec * 1000000L;
+			nanosleep(&req, (struct timespec *)NULL);
+			tries++;
+            
+        }
+		else{
+    	    return rc;
+        }
 	}
+	}while((tries < 20) && (rc == SQLITE_LOCKED));
+	
+	
+
 	sqlite3_finalize(psLastProducedStmt);
 	printf("Updated production station last produced.\n");
 
@@ -310,13 +363,30 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 	}
 
 	//Execute statement, once step is sufficient for insertions
+	int tries=0;
+	do {
 	rc = sqlite3_blocking_step(orderAllocStmt);
-
 	if( rc!=SQLITE_DONE ){
 		fprintf(stderr, "Could not execute statement for order allocation: %s\n", sqlite3_errmsg(db));
-		
-		return rc;
+		if( rc == SQLITE_LOCKED )
+        {
+            /** Note: This will return SQLITE_LOCKED as well... **/
+            rc = sqlite3_reset(orderAllocStmt);
+       		int milisec = 1; // length of time to sleep, in miliseconds
+			struct timespec req = {0};
+			req.tv_sec = 0;
+			req.tv_nsec = milisec * 1000000L;
+			nanosleep(&req, (struct timespec *)NULL);
+			tries++;
+            
+        }
+		else{
+    	    return rc;
+        }
 	}
+	}while((tries < 20) && (rc == SQLITE_LOCKED));
+	
+	
 	sqlite3_finalize(orderAllocStmt);
 	printf("Successfully defined production station %d for order %d.\n", productionStationID, orderID);
 
@@ -366,12 +436,33 @@ int deleteOrder(int orderID)
 		return rc;
 	}
 	//Execute statement, once step is sufficient for insertions
+	int tries=0;
+	do {
 	rc = sqlite3_blocking_step(orderStatusStmt);
 	if( rc!=SQLITE_DONE ){
 		fprintf(stderr, "Could not execute statement for order status update: %s\n", sqlite3_errmsg(db));
+		if( rc == SQLITE_LOCKED )
+        {
+            /** Note: This will return SQLITE_LOCKED as well... **/
+            rc = sqlite3_reset(orderStatusStmt);
+       		int milisec = 1; // length of time to sleep, in miliseconds
+			struct timespec req = {0};
+			req.tv_sec = 0;
+			req.tv_nsec = milisec * 1000000L;
+			nanosleep(&req, (struct timespec *)NULL);
+			tries++;
+            
+        }
+        else{
+    	    return rc;
+        }
 		
-		return rc;
 	}
+	}while((tries < 20) && (rc == SQLITE_LOCKED));
+	
+	
+	
+
 	sqlite3_finalize(orderStatusStmt);
 
 	printf("Successfully marked order %d as finished.\n", orderID);
@@ -411,12 +502,32 @@ int removeObsoleteProductionStations()
 		return rc;
 	}
 	//Execute statement
+	int tries=0;
+	do {
 	rc = sqlite3_blocking_step(countObsoleteProductionStationsStmt);
 	if( rc!=SQLITE_DONE && rc!=SQLITE_ROW){
 		fprintf(stderr, "rc=%d\n", rc);
 		fprintf(stderr, "Could not execute statement for counting obsolete production stations: %s\n", sqlite3_errmsg(db));
-		return rc;
+		if( rc == SQLITE_LOCKED )
+        {
+            /** Note: This will return SQLITE_LOCKED as well... **/
+            rc = sqlite3_reset(countObsoleteProductionStationsStmt);
+       		int milisec = 1; // length of time to sleep, in miliseconds
+			struct timespec req = {0};
+			req.tv_sec = 0;
+			req.tv_nsec = milisec * 1000000L;
+			nanosleep(&req, (struct timespec *)NULL);
+			tries++;
+            
+        }
+        else{
+    	    return rc;
+        }
+		
 	}
+	}while((tries < 20) && (rc == SQLITE_LOCKED));
+
+
 	fprintf(stderr, "Number of columns = %d\n", sqlite3_column_count( countObsoleteProductionStationsStmt ));
 	int noOfProdToRemove=sqlite3_column_int(countObsoleteProductionStationsStmt, 0);
 	fprintf(stderr, "noOfProdToRemove=%d\n", noOfProdToRemove);
@@ -439,12 +550,33 @@ int removeObsoleteProductionStations()
 	}
 
 	for (int i =0; i<noOfProdToRemove; i++){
-		rc = sqlite3_blocking_step(retrieveObsoleteProductionStationsStmt);
+	
+		int tries=0;
+		do {
+		rc = sqlite3_blocking_step(countObsoleteProductionStationsStmt);
 		if( rc!=SQLITE_ROW && !(rc==SQLITE_DONE && i==(noOfProdToRemove-1))){
 			fprintf(stderr, "rc=%d\n", rc);
 			fprintf(stderr, "Could not execute statement for retrieving obsolete production stations: %s\n", sqlite3_errmsg(db));
-			return rc;
-		}
+			if( rc == SQLITE_LOCKED )
+	        {
+	            /** Note: This will return SQLITE_LOCKED as well... **/
+	            rc = sqlite3_reset(countObsoleteProductionStationsStmt);
+	       		int milisec = 1; // length of time to sleep, in miliseconds
+				struct timespec req = {0};
+				req.tv_sec = 0;
+				req.tv_nsec = milisec * 1000000L;
+				nanosleep(&req, (struct timespec *)NULL);
+				tries++;
+	            
+	        }
+	        else{
+	    	    return rc;
+	        }
+		
+	}
+	}while((tries < 20) && (rc == SQLITE_LOCKED));
+	
+
 		prodToRemove[i]=sqlite3_column_int(retrieveObsoleteProductionStationsStmt, 0);
 		fprintf(stderr, "ID of production station to remove = %d\n", prodToRemove[i]);
 	}
@@ -469,11 +601,33 @@ int removeObsoleteProductionStations()
 			fprintf(stderr, "Error for removing production station: %s\n", sqlite3_errmsg(db));
 			return rc;
 		}
+		
+		
+		int tries=0;
+		do {
 		rc = sqlite3_blocking_step(removeObsoleteProductionStationsStmt);
 		if( rc!=SQLITE_DONE ){
 			fprintf(stderr, "Could not execute statement for removing obsolete production stations: %s\n", sqlite3_errmsg(db));
-			return rc;
+			if( rc == SQLITE_LOCKED )
+	        {
+	            /** Note: This will return SQLITE_LOCKED as well... **/
+	            rc = sqlite3_reset(removeObsoleteProductionStationsStmt);
+	       		int milisec = 1; // length of time to sleep, in miliseconds
+				struct timespec req = {0};
+				req.tv_sec = 0;
+				req.tv_nsec = milisec * 1000000L;
+				nanosleep(&req, (struct timespec *)NULL);
+				tries++;
+	            
+	        }
+	        else{
+	    	    return rc;
+	        }
+			
 		}
+		}while((tries < 20) && (rc == SQLITE_LOCKED));
+
+
 		// sqlite3_reset(removeObsoleteProductionStationsStmt);
     sqlite3_finalize(removeObsoleteProductionStationsStmt);
 	}
@@ -525,14 +679,34 @@ int getOrderIngredientID(int orderID)
 		return rc;
 	}
 	//Execute statement, once step is sufficient for insertions
-
-	rc = sqlite3_blocking_step(getIngredientStmt);
-	//There should be a row of results
-	if( rc!=SQLITE_ROW ){
-		fprintf(stderr, "Could not execute statement for order retrieval: %s\n", sqlite3_errmsg(db));
-		
-		return -1;
-	}
+	
+	int tries=0;
+		do {
+		rc = sqlite3_blocking_step(getIngredientStmt);
+		if( rc!=SQLITE_DONE || rc!=SQLITE_ROW  ){
+			fprintf(stderr, "Could not execute statement for removing obsolete production stations: %s\n", sqlite3_errmsg(db));
+			if( rc == SQLITE_LOCKED )
+	        {
+	            /** Note: This will return SQLITE_LOCKED as well... **/
+	            rc = sqlite3_reset(getIngredientStmt);
+	       		int milisec = 1; // length of time to sleep, in miliseconds
+				struct timespec req = {0};
+				req.tv_sec = 0;
+				req.tv_nsec = milisec * 1000000L;
+				nanosleep(&req, (struct timespec *)NULL);
+				tries++;
+	            
+	        }
+	        else{
+	       	 if(rc!=SQLITE_ROW) 	 {
+	      				return -1;
+	       	 }
+	    	    return rc;
+	        }
+			
+		}
+		}while((tries < 20) && (rc == SQLITE_LOCKED));
+	
 
 	int ingredientID = sqlite3_column_int(getIngredientStmt, 0);
 
@@ -564,14 +738,38 @@ int getOrderAmount(int orderID)
 		return rc;
 	}
 	//Execute statement, once step is sufficient for insertions
+	
+	
+		int tries=0;
+		do {
+		rc = sqlite3_blocking_step(getAmountStmt);
+		if( rc!=SQLITE_DONE || rc!=SQLITE_ROW  ){
+			fprintf(stderr, "Could not execute statement for order retrieval: %s\n", sqlite3_errmsg(db));
+			if( rc == SQLITE_LOCKED )
+	        {
+	            /** Note: This will return SQLITE_LOCKED as well... **/
+	            rc = sqlite3_reset(getAmountStmt);
+	       		int milisec = 1; // length of time to sleep, in miliseconds
+				struct timespec req = {0};
+				req.tv_sec = 0;
+				req.tv_nsec = milisec * 1000000L;
+				nanosleep(&req, (struct timespec *)NULL);
+				tries++;
+	            
+	        }
+	        else{
+	       	 if(rc!=SQLITE_ROW) 	 {
+	      				return -1;
+	       	 }
+	    	    return rc;
+	        }
+			
+		}
+		}while((tries < 20) && (rc == SQLITE_LOCKED));
+	
+	
 
-	rc = sqlite3_blocking_step(getAmountStmt);
-	//There should be a row of results
-	if( rc!=SQLITE_ROW ){
-		fprintf(stderr, "Could not execute statement for order retrieval: %s\n", sqlite3_errmsg(db));
-		
-		return -1;
-	}
+
 
 	int amount = sqlite3_column_int(getAmountStmt, 0);
 
@@ -623,13 +821,29 @@ int searchOrder(int searchingPS, int latestOrderID, int producibleIngredients)
 	}
 
 	//Execute statement, once step is sufficient for insertions
+	int tries=0;
+	do {
 	rc = sqlite3_blocking_step(prodStatStmt);
-
 	if( rc!=SQLITE_DONE ){
 		fprintf(stderr, "Could not execute statement for production station insertion: %s\n", sqlite3_errmsg(db));
-		
-		return rc;
+		if( rc == SQLITE_LOCKED )
+        {
+            /** Note: This will return SQLITE_LOCKED as well... **/
+            rc = sqlite3_reset(prodStatStmt);
+       		int milisec = 1; // length of time to sleep, in miliseconds
+			struct timespec req = {0};
+			req.tv_sec = 0;
+			req.tv_nsec = milisec * 1000000L;
+			nanosleep(&req, (struct timespec *)NULL);
+			tries++;
+            
+        }
+		else{
+    	    return rc;
+        }
 	}
+	}while((tries < 20) && (rc == SQLITE_LOCKED));
+	
 	sqlite3_finalize(prodStatStmt);
 	printf("Successfully inserted production station %d.\n", searchingPS);
 
@@ -655,6 +869,8 @@ int searchOrder(int searchingPS, int latestOrderID, int producibleIngredients)
 	//Execute statement
 	rc = sqlite3_blocking_step(searchOrderStmt);
 	//No order found
+	//TODO Why to check for SQLITE_DONE?  
+	//TODO Add another try if something went wrong
 	if (rc==SQLITE_DONE){
 		printf("No order with status IDLE and producible ingredients found.\n");
 		sqlite3_finalize(searchOrderStmt);
