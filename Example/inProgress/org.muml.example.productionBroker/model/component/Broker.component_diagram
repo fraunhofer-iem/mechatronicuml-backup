@@ -20,10 +20,10 @@
         <layoutConstraint xmi:type="notation:Location" xmi:id="_ZeHRE1T4EeeDc5GcOuOuvA" x="-252" y="71"/>
       </children>
       <element xmi:type="component:DiscretePort" href="../productionBroker.muml#_njyPcOa7EeWyd6JHVas6Kw"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZeGqBVT4EeeDc5GcOuOuvA" x="72" y="205"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZeGqBVT4EeeDc5GcOuOuvA" x="96" y="205"/>
     </children>
     <element xmi:type="component:StaticAtomicComponent" href="../productionBroker.muml#_Ozg3MNxcEeW-N_z6XJQq2w"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BWHQsRWxEea4t_vvK_A9tw" x="396" y="216" width="325" height="217"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BWHQsRWxEea4t_vvK_A9tw" x="360" y="192" width="325" height="217"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_BWGCkBWxEea4t_vvK_A9tw"/>
   <element xmi:type="modelinstance:ModelElementCategory" href="../productionBroker.muml#_soLPRNxbEeW-N_z6XJQq2w"/>

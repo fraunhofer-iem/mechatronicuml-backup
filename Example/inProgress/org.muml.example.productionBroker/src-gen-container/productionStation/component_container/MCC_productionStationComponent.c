@@ -261,6 +261,37 @@
 											break;	
 										}
 									}
+								/**
+								*
+								*@brief The Send method for DiscretePort getOrder  and message MessagesHeartbeat
+								*@details Send  a message of type MessagesHeartbeat  
+								*
+								*/	
+									void MCC_ProductionStationComponent_getOrder_send_MessagesHeartbeat_Messages_Message(Port* port, MessagesHeartbeat_Messages_Message* msg){
+												DDS_Publisher* publisher;
+												DDS_DataWriter* writer;
+										switch(port->handle->type) {
+														case PORT_HANDLE_TYPE_DDS:
+															// Find correct dataWriter
+															publisher = ((DDSHandle *) port->handle->concreteHandle)->publisher;
+															writer = DDS_Publisher_lookup_datawriter(publisher, "DDS_Messagesheartbeat_MessagesgetOrderProductionStation_TopicgetOrder");
+												
+															DDS_Messagesheartbeat_MessagesDataWriter* concrete_writer = DDS_Messagesheartbeat_MessagesDataWriter_narrow(writer);
+															//create DDS_Instance to write
+															DDS_Messagesheartbeat_Messages *instance = DDS_Messagesheartbeat_MessagesTypeSupport_create_data_ex(DDS_BOOLEAN_TRUE);
+															//make message transformation
+																	instance->psID = msg->psID;
+															
+															//write the actual data
+															DDS_Messagesheartbeat_MessagesDataWriter_write(concrete_writer, instance, &DDS_HANDLE_NIL);
+															//delete DDS instance
+															DDS_Messagesheartbeat_MessagesTypeSupport_delete_data_ex(instance,DDS_BOOLEAN_TRUE);
+														break;
+												
+										default:
+											break;	
+										}
+									}
 			
 			
 		
@@ -303,7 +334,7 @@
 							
 									//set variables for listeners
 									hndl->numOfReaderToMatch= 2 ;
-									hndl->numOfWriterToMatch= 2  ;
+									hndl->numOfWriterToMatch= 3  ;
 							
 								//create domain participant
 								hndl->participant = DDS_DomainParticipantFactory_create_participant(
@@ -399,6 +430,39 @@
 									}
 									//register the topic
 									topic = DDS_DomainParticipant_create_topic(hndl->participant, "DDS_MessagesgetOrder_MessagesgetOrderProductionStation_TopicgetOrder", type_name,
+										&DDS_TOPIC_QOS_DEFAULT, NULL /* listener */,
+										DDS_STATUS_MASK_NONE);
+									if (topic == NULL) {
+										printf("create_topic error\n");
+										publisher_shutdown(hndl->participant);
+										return NULL;
+									}
+							
+									
+							
+											writerQoS.reliability.kind=DDS_BEST_EFFORT_RELIABILITY_QOS;
+									
+									//create writer for Topic
+									writer = DDS_Publisher_create_datawriter(hndl->publisher, topic,
+											&writerQoS, NULL /* listener */,
+											DDS_STATUS_MASK_NONE);
+							
+							
+									if (writer == NULL) {
+										printf("create_datawriter error\n");
+										publisher_shutdown(hndl->participant);
+										return NULL;
+									}
+									//register the dataType
+									type_name = DDS_Messagesheartbeat_MessagesTypeSupport_get_type_name();
+									retcode = DDS_Messagesheartbeat_MessagesTypeSupport_register_type(hndl->participant, type_name);
+									if (retcode != DDS_RETCODE_OK) {
+										printf("register_type error %d\n", retcode);
+										publisher_shutdown(hndl->participant);
+										return NULL;
+									}
+									//register the topic
+									topic = DDS_DomainParticipant_create_topic(hndl->participant, "DDS_Messagesheartbeat_MessagesgetOrderProductionStation_TopicgetOrder", type_name,
 										&DDS_TOPIC_QOS_DEFAULT, NULL /* listener */,
 										DDS_STATUS_MASK_NONE);
 									if (topic == NULL) {

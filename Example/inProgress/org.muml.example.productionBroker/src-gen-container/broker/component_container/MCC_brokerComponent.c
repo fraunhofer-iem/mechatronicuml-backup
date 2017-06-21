@@ -274,6 +274,79 @@
 											}
 											return false;
 										}
+									/**
+									*
+									*@brief The Check method for DiscretePort brokerForPSPort  and message MessagesHeartbeat 
+									*@details Checks if  buffer contains a message of type MessagesHeartbeat  
+									*
+									*/	
+										bool_t MCC_BrokerComponent_brokerForPSPort_exists_MessagesHeartbeat_Messages_Message(Port* port){
+													DDS_Subscriber* subscriber;
+													DDS_DataReader* reader;
+													struct DDS_SampleInfo sample_info;
+													DDS_ReturnCode_t retcode;
+											switch(port->handle->type) {
+															case PORT_HANDLE_TYPE_DDS:
+																//find correct dataReader
+																//transform DDS Message to MUML Message
+																subscriber = ((DDSHandle *) port->handle->concreteHandle)->subscriber;
+																reader = DDS_Subscriber_lookup_datareader(subscriber, "DDS_Messagesheartbeat_MessagesgetOrderProductionStation_TopicgetOrder");
+															//	DDS_MessagesHeartbeat_MessagesDataReader* concrete_reader = DDS_MessagesHeartbeat_MessagesDataReader_narrow(reader);
+																int availableSamples = 0;
+																struct DDS_DataReaderCacheStatus myStatus = DDS_DataReaderCacheStatus_INITIALIZER; 
+																retcode = DDS_DataReader_get_datareader_cache_status(reader, &myStatus); 
+																if(retcode != DDS_RETCODE_OK)
+																	return false;
+																availableSamples = myStatus.sample_count;
+																DDS_DataReaderCacheStatus_finalize(&myStatus);   
+																if(availableSamples>0)
+																	return true;
+																else
+																	return false;
+															break;
+													
+											default:
+												break;	
+											}
+											return false;
+										}
+									/**
+									*
+									*@brief The Receiv method for DiscretePort brokerForPSPort  and message MessagesHeartbeat
+									*@details Receives  a message of type MessagesHeartbeat  
+									*
+									*/	
+											bool_t MCC_BrokerComponent_brokerForPSPort_recv_MessagesHeartbeat_Messages_Message(Port* port, MessagesHeartbeat_Messages_Message* msg){
+													DDS_Subscriber* subscriber;
+													DDS_DataReader* reader;
+													struct DDS_SampleInfo sample_info;
+													DDS_ReturnCode_t retcode;
+											switch(port->handle->type) {
+															case PORT_HANDLE_TYPE_DDS:
+																//find correct dataReader
+																//transform DDS Message to MUML Message
+																subscriber = ((DDSHandle *) port->handle->concreteHandle)->subscriber;
+																reader = DDS_Subscriber_lookup_datareader(subscriber, "DDS_Messagesheartbeat_MessagesgetOrderProductionStation_TopicgetOrder");
+																DDS_Messagesheartbeat_MessagesDataReader* concrete_reader = DDS_Messagesheartbeat_MessagesDataReader_narrow(reader);
+																//create DDS_Instance to read
+																DDS_Messagesheartbeat_Messages *instance = DDS_Messagesheartbeat_MessagesTypeSupport_create_data_ex(DDS_BOOLEAN_TRUE);
+																retcode = DDS_Messagesheartbeat_MessagesDataReader_take_next_sample(concrete_reader, instance,
+																		&sample_info);
+																if (retcode == DDS_RETCODE_NO_DATA) {
+																	return false;
+																}
+																//make message transformation
+																		msg->psID = instance->psID;
+																
+																DDS_Messagesheartbeat_MessagesTypeSupport_delete_data_ex(instance,DDS_BOOLEAN_TRUE);
+																return true;
+															break;
+													
+											default:
+												break;	
+											}
+											return false;
+										}
 							
 								/**
 								*
@@ -464,7 +537,7 @@
 											readerQoS.reliability.kind=DDS_BEST_EFFORT_RELIABILITY_QOS;
 									
 										readerQoS.history.depth=5;
-											readerQoS.history.kind=DDS_KEEP_LAST_HISTORY_QOS;
+											readerQoS.history.kind=DDS_KEEP_ALL_HISTORY_QOS;
 										
 									
 							
@@ -498,7 +571,7 @@
 								ptr->concreteHandle = hndl;
 							
 									//set variables for listeners
-									hndl->numOfReaderToMatch= 2 ;
+									hndl->numOfReaderToMatch= 3 ;
 									hndl->numOfWriterToMatch= 2  ;
 							
 								//create domain participant
@@ -706,6 +779,42 @@
 									}
 									//register the topic
 									topic = DDS_DomainParticipant_create_topic(hndl->participant, "DDS_MessagesgetOrder_MessagesgetOrderProductionStation_TopicgetOrder", type_name,
+										&DDS_TOPIC_QOS_DEFAULT, NULL /* listener */,
+										DDS_STATUS_MASK_NONE);
+									if (topic == NULL) {
+										printf("create_topic error\n");
+										publisher_shutdown(hndl->participant);
+										return NULL;
+									}
+									
+											readerQoS.reliability.kind=DDS_BEST_EFFORT_RELIABILITY_QOS;
+									
+										readerQoS.history.depth=100;
+											readerQoS.history.kind=DDS_KEEP_LAST_HISTORY_QOS;
+										
+									
+							
+							
+									//create reader for Topic
+									reader = DDS_Subscriber_create_datareader(hndl->subscriber,
+										DDS_Topic_as_topicdescription(topic), &readerQoS,
+										NULL, DDS_STATUS_MASK_ALL);
+							
+									if (reader == NULL) {
+										printf("create_datareader error\n");
+										subscriber_shutdown(hndl->participant);
+										return NULL;
+									}
+									//register the dataType
+									type_name = DDS_Messagesheartbeat_MessagesTypeSupport_get_type_name();
+									retcode = DDS_Messagesheartbeat_MessagesTypeSupport_register_type(hndl->participant, type_name);
+									if (retcode != DDS_RETCODE_OK) {
+										printf("register_type error %d\n", retcode);
+										publisher_shutdown(hndl->participant);
+										return NULL;
+									}
+									//register the topic
+									topic = DDS_DomainParticipant_create_topic(hndl->participant, "DDS_Messagesheartbeat_MessagesgetOrderProductionStation_TopicgetOrder", type_name,
 										&DDS_TOPIC_QOS_DEFAULT, NULL /* listener */,
 										DDS_STATUS_MASK_NONE);
 									if (topic == NULL) {

@@ -256,4 +256,15 @@
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_jMGJUj-vEeeYkJuSFNogTw" points="[-57, -10, 208, 38]$[-236, -50, 29, -2]"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_jPFL4D-vEeeYkJuSFNogTw" id="(0.9036544850498339,0.4225352112676056)"/>
   </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_ROHwgFZbEeej24096dMoCw" type="4003" source="_nA-Abu01EeaKUeHUkq3RGQ" target="_nA-Abu01EeaKUeHUkq3RGQ" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_ROKz0FZbEeej24096dMoCw" type="6005">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_ROKz0VZbEeej24096dMoCw" y="-20"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_ROKz0lZbEeej24096dMoCw" type="6006">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_ROKz01ZbEeej24096dMoCw" x="-10" y="20"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_ROHwgVZbEeej24096dMoCw" fontName="Segoe UI"/>
+    <element xmi:type="realtimestatechart:Transition" href="../productionBroker.muml#_RL4U0FZbEeej24096dMoCw"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ROHwglZbEeej24096dMoCw" points="[8, 24, 8, 24]$[8, 24, 8, 24]"/>
+  </edges>
 </notation:Diagram>

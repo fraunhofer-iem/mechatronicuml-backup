@@ -27,6 +27,7 @@ static int wait_for_unlock_notify(sqlite3 *db);
 int sqlite3_blocking_step(sqlite3_stmt *pStmt);
 int sqlite3_blocking_prepare_v2( sqlite3 *db, const char *zSql, int nSql, sqlite3_stmt **ppStmt, const char **pz);
 int removeObsoleteProductionStations();
+int heartBeatProductionStation(int productionStationID);
 
 /* Pointer to database */
 sqlite3 *db;
@@ -402,7 +403,7 @@ int removeObsoleteProductionStations()
 	sqlite3_stmt *removeObsoleteProductionStationsStmt;
 
 	//Find out how many PS to remove we have
-	const char *sqlStmCount = "SELECT count(*) FROM ProductionStations WHERE LastSeen<=datetime('now','-60.0 seconds');";
+	const char *sqlStmCount = " SELECT count(*) From ProductionStations WHERE LastSeen<=datetime('now','-10.0 seconds');";
 
 	rc = sqlite3_blocking_prepare_v2(db, sqlStmCount,-1, &countObsoleteProductionStationsStmt,0);
 	if( rc ){
@@ -411,18 +412,25 @@ int removeObsoleteProductionStations()
 	}
 	//Execute statement
 	rc = sqlite3_blocking_step(countObsoleteProductionStationsStmt);
-	if( rc!=SQLITE_DONE ){
+	if( rc!=SQLITE_DONE && rc!=SQLITE_ROW){
 		fprintf(stderr, "rc=%d\n", rc);
 		fprintf(stderr, "Could not execute statement for counting obsolete production stations: %s\n", sqlite3_errmsg(db));
 		return rc;
 	}
+	fprintf(stderr, "Number of columns = %d\n", sqlite3_column_count( countObsoleteProductionStationsStmt ));
 	int noOfProdToRemove=sqlite3_column_int(countObsoleteProductionStationsStmt, 0);
+	fprintf(stderr, "noOfProdToRemove=%d\n", noOfProdToRemove);
 	sqlite3_finalize(countObsoleteProductionStationsStmt);
+	
+	//If there are no production stations to remove, exit without doing anything
+	if (noOfProdToRemove<1){
+		return 0;
+	}
 
 	int prodToRemove[noOfProdToRemove];
 
 	//Now find out which ones need to be removed
-	const char *sqlStmRetrieve = "SELECT ProductionStationID FROM ProductionStations WHERE LastSeen<=datetime('now','-60.0 seconds');";
+	const char *sqlStmRetrieve = "SELECT ProductionStationID FROM ProductionStations WHERE LastSeen<=datetime('now','-10.0 seconds');";
 
 	rc = sqlite3_blocking_prepare_v2(db, sqlStmRetrieve,-1, &retrieveObsoleteProductionStationsStmt,0);
 	if( rc ){
@@ -433,10 +441,12 @@ int removeObsoleteProductionStations()
 	for (int i =0; i<noOfProdToRemove; i++){
 		rc = sqlite3_blocking_step(retrieveObsoleteProductionStationsStmt);
 		if( rc!=SQLITE_ROW && !(rc==SQLITE_DONE && i==(noOfProdToRemove-1))){
+			fprintf(stderr, "rc=%d\n", rc);
 			fprintf(stderr, "Could not execute statement for retrieving obsolete production stations: %s\n", sqlite3_errmsg(db));
 			return rc;
 		}
 		prodToRemove[i]=sqlite3_column_int(retrieveObsoleteProductionStationsStmt, 0);
+		fprintf(stderr, "ID of production station to remove = %d\n", prodToRemove[i]);
 	}
 	sqlite3_finalize(retrieveObsoleteProductionStationsStmt);
 
@@ -444,42 +454,46 @@ int removeObsoleteProductionStations()
 	//Now delete all the IDs marked for removal
 	//Do not just delete everything that has not been seen for 60 seconds, since that might include a productionStation
 	//the web server will not be informed about. That would be removed next time.
-	char sqlStm[50+noOfProdToRemove*11];
-	strcpy(sqlStm, "DELETE FROM ProductionStations WHERE ID IN (");
-	for (int i =0; i<(noOfProdToRemove-1); i++){
-		sprintf(sqlStm, "%d", prodToRemove[i]);
-		strcat(sqlStm, ",");
-	}
-	sprintf(sqlStm, "%d", prodToRemove[noOfProdToRemove-1]);
-	strcat(sqlStm, ");");
+	
 
-	rc = sqlite3_blocking_prepare_v2(db, sqlStm,-1, &removeObsoleteProductionStationsStmt,0);
-	if( rc ){
-		fprintf(stderr, "Could not prepare statement for remove obsolete production stations: %s\n", sqlite3_errmsg(db));
-		return rc;
+	const char *sqlStmDelete = "DELETE FROM ProductionStations WHERE ProductionStationID=?";
+	for (int i =0; i<noOfProdToRemove; i++){
+		rc = sqlite3_blocking_prepare_v2(db, sqlStmDelete,-1, &removeObsoleteProductionStationsStmt,0);
+		if( rc ){
+			fprintf(stderr, "Could not prepare statement for removing obsolete production stations: %s\n", sqlite3_errmsg(db));
+			return rc;
+		}
+		rc =sqlite3_bind_int(removeObsoleteProductionStationsStmt, 1, prodToRemove[i]);
+		if( rc ){
+			fprintf(stderr, "rc=%d, i=%d \n", rc, i);
+			fprintf(stderr, "Error for removing production station: %s\n", sqlite3_errmsg(db));
+			return rc;
+		}
+		rc = sqlite3_blocking_step(removeObsoleteProductionStationsStmt);
+		if( rc!=SQLITE_DONE ){
+			fprintf(stderr, "Could not execute statement for removing obsolete production stations: %s\n", sqlite3_errmsg(db));
+			return rc;
+		}
+		// sqlite3_reset(removeObsoleteProductionStationsStmt);
+    sqlite3_finalize(removeObsoleteProductionStationsStmt);
 	}
-	rc = sqlite3_blocking_step(removeObsoleteProductionStationsStmt);
-	if( rc!=SQLITE_DONE ){
-		fprintf(stderr, "Could not execute statement for  remove obsolete production stations: %s\n", sqlite3_errmsg(db));
-		
-		return rc;
-	}
-	sqlite3_finalize(removeObsoleteProductionStationsStmt);
+
 
 	printf("Successfully removed obsolete production stations.\n");
 
 	//Send notification about removed production stations to the visualization server
-	//json format: {update: {removeObsoletePS, changedTables: {ProductionStations: {ProductionStationIDs: [id1, id2, .]}}}}
-//	cJSON *update;
-//	update = cJSON_CreateObject();
-//	cJSON_AddItemToObject(update, "removeObsoletePS", cJSON_CreateString("changedTables"));
-//    cJSON *changedTables;
-//    cJSON_AddItemToObject(update, "changedTables", changedTables = cJSON_CreateObject());
-//    cJSON *productionStations;
-//    cJSON_AddItemToObject(changedTables, "ProductionStations", productionStations = cJSON_CreateObject());
-//    cJSON_AddNumberToObject(productionStations, "ProductionStationID", searchingPS);
-//
-//	sendToVirtualizationServer(cJSON_Print(update));
+	//json format: {update: {removeObsoletePS, changedTables: {ProductionStationIDs: {ProductionStationIDs: [id1, id2, .]}}}}
+	cJSON *update;
+	update = cJSON_CreateObject();
+	cJSON_AddItemToObject(update, "removeObsoletePS", cJSON_CreateString("changedTables"));
+    cJSON *changedTables;
+    cJSON_AddItemToObject(update, "changedTables", changedTables = cJSON_CreateObject());
+    cJSON *productionStations;
+    cJSON_AddItemToObject(changedTables, "ProductionStations", productionStations = cJSON_CreateObject());
+    cJSON *iDArray;
+    cJSON_AddItemToObject(productionStations, "ProductionStationIDs", iDArray=cJSON_CreateIntArray(prodToRemove, noOfProdToRemove));
+
+	sendToVirtualizationServer(cJSON_Print(update));
 
 
 	return 0;
@@ -839,3 +853,50 @@ int sqlite3_blocking_prepare_v2(
   }
   return rc;
 }
+
+
+
+/**
+ * Inserts and order with its ID, ingredient and amount and initial status "IDLE"
+ * and the current time as orderTime
+ */
+int heartBeatProductionStation(int productionStationID)
+{
+	printf("heartBeatProductionStation:%d \n",heartBeatProductionStation);
+	int rc = 0;
+	sqlite3_stmt *hartBeatStmt;
+
+	//Prepare statement
+	const char *heartBeatUpdate = "UPDATE ProductionStations SET LastSeen = datetime('now') WHERE  ProductionStationID=?;";
+
+	rc = sqlite3_blocking_prepare_v2(db, heartBeatUpdate, -1, &hartBeatStmt, 0);
+	if (rc){
+		fprintf(stderr, "Could not prepare statement for heartbeat update: %s\n", sqlite3_errmsg(db));
+		
+		return rc;
+	}
+
+	//Bind parameters
+	rc= sqlite3_bind_int(hartBeatStmt, 1, productionStationID);
+	if( rc ){
+		fprintf(stderr, "Error for productionStationID: %s\n", sqlite3_errmsg(db));
+		
+		return rc;
+	}
+	
+
+	//Execute statement, once step is sufficient for update
+	rc = sqlite3_blocking_step(hartBeatStmt);
+
+	if( rc!=SQLITE_DONE ){
+		fprintf(stderr, "Could not execute statement for heartbeat update if productionstation%d: %s\n", productionStationID,sqlite3_errmsg(db));
+		
+		return rc;
+	}
+
+	sqlite3_finalize(hartBeatStmt);
+
+
+	return rc;
+}
+s

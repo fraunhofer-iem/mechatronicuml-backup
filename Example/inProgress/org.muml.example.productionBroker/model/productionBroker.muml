@@ -330,7 +330,7 @@
             <transitions xmi:id="_pTZmYFUGEeeDc5GcOuOuvA" priority="3" target="_QFnU0ea7EeWyd6JHVas6Kw" source="_QFnU0ea7EeWyd6JHVas6Kw" clockResets="_3XkrwFUGEeeDc5GcOuOuvA">
               <clockConstraints xmi:id="_AihYYFUHEeeDc5GcOuOuvA" clock="_3XkrwFUGEeeDc5GcOuOuvA" operator="GREATER">
                 <bound xmi:id="_BXUSYFUHEeeDc5GcOuOuvA" unit="SECONDS">
-                  <value xsi:type="common:LiteralExpression" xmi:id="_EA2gcFUHEeeDc5GcOuOuvA" value="20"/>
+                  <value xsi:type="common:LiteralExpression" xmi:id="_UPDXcFZGEeeZBen8pz_l3w" value="3"/>
                 </bound>
               </clockConstraints>
               <action xmi:id="_q32bsFUGEeeDc5GcOuOuvA" name="removeObsoleteProductionStations()">
@@ -339,7 +339,21 @@
                 </expressions>
               </action>
             </transitions>
-            <states xmi:id="_QFnU0ea7EeWyd6JHVas6Kw" name="init" outgoingTransitions="_TfQKIOa7EeWyd6JHVas6Kw _2gxAcOq-EeWdNs1s2t99bw _pTZmYFUGEeeDc5GcOuOuvA" incomingTransitions="_J9HvwOa_EeWyd6JHVas6Kw _2gxAcOq-EeWdNs1s2t99bw _pTZmYFUGEeeDc5GcOuOuvA" initial="true"/>
+            <transitions xmi:id="_R6gf8FZcEeej24096dMoCw" priority="4" target="_QFnU0ea7EeWyd6JHVas6Kw" source="_QFnU0ea7EeWyd6JHVas6Kw">
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_SuBAgFZcEeej24096dMoCw" kind="TRIGGER">
+                <message xmi:id="_TA6HUFZcEeej24096dMoCw" instanceOf="_oHi_UFZbEeej24096dMoCw"/>
+              </events>
+              <action xmi:id="_mQQREFZcEeej24096dMoCw" name="heartbeatUpdate ( psID := heartbeat -> psID ) ">
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_zhCxsFZcEeej24096dMoCw">
+                  <expressions xsi:type="actionlanguage:OperationCall" xmi:id="_zhCxsVZcEeej24096dMoCw" operation="_Z7hwEFZcEeej24096dMoCw">
+                    <parameterBinding xmi:id="_zhCxslZcEeej24096dMoCw" parameter="_cjTDkFZcEeej24096dMoCw">
+                      <value xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_zhCxs1ZcEeej24096dMoCw" messageType="_oHi_UFZbEeej24096dMoCw" parameter="_qUYDQFZbEeej24096dMoCw"/>
+                    </parameterBinding>
+                  </expressions>
+                </expressions>
+              </action>
+            </transitions>
+            <states xmi:id="_QFnU0ea7EeWyd6JHVas6Kw" name="init" outgoingTransitions="_TfQKIOa7EeWyd6JHVas6Kw _2gxAcOq-EeWdNs1s2t99bw _pTZmYFUGEeeDc5GcOuOuvA _R6gf8FZcEeej24096dMoCw" incomingTransitions="_J9HvwOa_EeWyd6JHVas6Kw _2gxAcOq-EeWdNs1s2t99bw _pTZmYFUGEeeDc5GcOuOuvA _R6gf8FZcEeej24096dMoCw" initial="true"/>
             <states xmi:id="_SwPvEOa7EeWyd6JHVas6Kw" name="ProcessOrderRequest" outgoingTransitions="__DyrMOa9EeWyd6JHVas6Kw _SrG3cOqMEeWBDM2lagzQHQ" incomingTransitions="_TfQKIOa7EeWyd6JHVas6Kw">
               <entryEvent xmi:id="_m-fpsOa-EeWyd6JHVas6Kw">
                 <action xmi:id="_n42ZIOa-EeWyd6JHVas6Kw" name="processDatabase">
@@ -576,6 +590,20 @@
                 </bound>
               </clockConstraints>
             </transitions>
+            <transitions xmi:id="_RL4U0FZbEeej24096dMoCw" priority="2" target="_1KakkOa4EeWyd6JHVas6Kw" source="_1KakkOa4EeWyd6JHVas6Kw">
+              <clockConstraints xmi:id="_eyJWMFZbEeej24096dMoCw" clock="_YArCYFZbEeej24096dMoCw" operator="GREATER_OR_EQUAL">
+                <bound xmi:id="_fiM6IFZbEeej24096dMoCw">
+                  <value xsi:type="common:LiteralExpression" xmi:id="_gfoywFZbEeej24096dMoCw" value="500"/>
+                </bound>
+              </clockConstraints>
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_JAYdkFZcEeej24096dMoCw">
+                <message xmi:id="_Jf6SMFZcEeej24096dMoCw" instanceOf="_oHi_UFZbEeej24096dMoCw">
+                  <parameterBinding xmi:id="_K6PiMFZcEeej24096dMoCw" parameter="_qUYDQFZbEeej24096dMoCw">
+                    <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_L_ViAFZcEeej24096dMoCw" typedNamedElement="_UXWMkOa3EeWyd6JHVas6Kw"/>
+                  </parameterBinding>
+                </message>
+              </events>
+            </transitions>
             <states xmi:id="_sp6L0OanEeWyd6JHVas6Kw" name="Init" outgoingTransitions="_MpP4cOa3EeWyd6JHVas6Kw" initial="true"/>
             <states xmi:id="_JvqcMOa3EeWyd6JHVas6Kw" name="Idle" outgoingTransitions="_0qTw4OanEeWyd6JHVas6Kw" incomingTransitions="_MpP4cOa3EeWyd6JHVas6Kw _znJasOqMEeWBDM2lagzQHQ _ykzH4OrDEeWdNs1s2t99bw _jKg08D-vEeeYkJuSFNogTw">
               <entryEvent xmi:id="_mgRZcOa6EeWyd6JHVas6Kw" clockResets="_d3m6gOa6EeWyd6JHVas6Kw">
@@ -610,9 +638,12 @@
               </entryEvent>
             </states>
             <states xmi:id="_LXECYOa4EeWyd6JHVas6Kw" name="EvaluateOrder" outgoingTransitions="_RbaKcOa4EeWyd6JHVas6Kw _3Z8-QOa4EeWyd6JHVas6Kw _znJasOqMEeWBDM2lagzQHQ _3pbu8OqNEeWBDM2lagzQHQ _jKg08D-vEeeYkJuSFNogTw" incomingTransitions="_RbaKcOa4EeWyd6JHVas6Kw _0qTw4OanEeWyd6JHVas6Kw _3pbu8OqNEeWBDM2lagzQHQ"/>
-            <states xmi:id="_1KakkOa4EeWyd6JHVas6Kw" name="ProcessOrder" outgoingTransitions="_bpWTMOa6EeWyd6JHVas6Kw" incomingTransitions="_3Z8-QOa4EeWyd6JHVas6Kw"/>
+            <states xmi:id="_1KakkOa4EeWyd6JHVas6Kw" name="ProcessOrder" outgoingTransitions="_bpWTMOa6EeWyd6JHVas6Kw _RL4U0FZbEeej24096dMoCw" incomingTransitions="_3Z8-QOa4EeWyd6JHVas6Kw _RL4U0FZbEeej24096dMoCw">
+              <entryEvent xmi:id="_cIXQgFZbEeej24096dMoCw" clockResets="_YArCYFZbEeej24096dMoCw"/>
+            </states>
             <states xmi:id="_w5Yu8OrDEeWdNs1s2t99bw" name="semanticBreak" outgoingTransitions="_ykzH4OrDEeWdNs1s2t99bw" incomingTransitions="_bpWTMOa6EeWyd6JHVas6Kw"/>
             <clocks xmi:id="_d3m6gOa6EeWyd6JHVas6Kw" name="processingTime"/>
+            <clocks xmi:id="_YArCYFZbEeej24096dMoCw" name="productionHeartbeat"/>
           </embeddedStatechart>
         </embeddedRegions>
       </states>
@@ -906,10 +937,10 @@
   </categories>
   <categories xmi:id="_soLPQdxbEeW-N_z6XJQq2w" key="org.muml.pim.protocol.category" name="protocol">
     <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_lPHkEOwfEeWTKqLnMSJAUw" name="BrokerProtocol">
-      <roles xmi:id="_lPTxUOwfEeWTKqLnMSJAUw" connectors="_lPWNkewfEeWTKqLnMSJAUw" behavior="_qixPAOwfEeWTKqLnMSJAUw" name="broker" senderMessageTypes="_dtJysNxhEeW-N_z6XJQq2w _P-BxAOa5EeWyd6JHVas6Kw" receiverMessageTypes="_wsJowNxgEeW-N_z6XJQq2w _UTgXMNxrEeW-N_z6XJQq2w">
+      <roles xmi:id="_lPTxUOwfEeWTKqLnMSJAUw" connectors="_lPWNkewfEeWTKqLnMSJAUw" behavior="_qixPAOwfEeWTKqLnMSJAUw" name="broker" senderMessageTypes="_dtJysNxhEeW-N_z6XJQq2w _P-BxAOa5EeWyd6JHVas6Kw" receiverMessageTypes="_wsJowNxgEeW-N_z6XJQq2w _UTgXMNxrEeW-N_z6XJQq2w _oHi_UFZbEeej24096dMoCw">
         <cardinality xmi:id="_lPU_cOwfEeWTKqLnMSJAUw">
-          <lowerBound xmi:id="_4OeycD-5EeeumMKPPaKgzQ"/>
-          <upperBound xmi:id="_4OfZgD-5EeeumMKPPaKgzQ"/>
+          <lowerBound xmi:id="_8L-W8FZbEeej24096dMoCw"/>
+          <upperBound xmi:id="_8MDPcFZbEeej24096dMoCw"/>
         </cardinality>
         <receiverMessageBuffer xmi:id="_-h86QOwfEeWTKqLnMSJAUw" name="buffer_for_doneOrder" messageType="_wsJowNxgEeW-N_z6XJQq2w">
           <bufferSize xmi:id="_N6S4UFTnEeeiyvaQZ-h8jw" value="100"/>
@@ -917,8 +948,11 @@
         <receiverMessageBuffer xmi:id="_-iH5YOwfEeWTKqLnMSJAUw" name="buffer_for_getOrder" messageType="_UTgXMNxrEeW-N_z6XJQq2w">
           <bufferSize xmi:id="_NQMycFTnEeeiyvaQZ-h8jw" value="100"/>
         </receiverMessageBuffer>
+        <receiverMessageBuffer xmi:id="_9x-rcFZbEeej24096dMoCw" name="heartbeatBuffer" messageType="_oHi_UFZbEeej24096dMoCw" bufferOverflowAvoidanceStrategy="discard oldest message in buffer">
+          <bufferSize xmi:id="__QQnUFZbEeej24096dMoCw" value="100"/>
+        </receiverMessageBuffer>
       </roles>
-      <roles xmi:id="_lPVmgewfEeWTKqLnMSJAUw" connectors="_lPWNkewfEeWTKqLnMSJAUw" behavior="_p1yiUOwhEeWTKqLnMSJAUw" name="productionStation" senderMessageTypes="_wsJowNxgEeW-N_z6XJQq2w _UTgXMNxrEeW-N_z6XJQq2w" receiverMessageTypes="_dtJysNxhEeW-N_z6XJQq2w _P-BxAOa5EeWyd6JHVas6Kw">
+      <roles xmi:id="_lPVmgewfEeWTKqLnMSJAUw" connectors="_lPWNkewfEeWTKqLnMSJAUw" behavior="_p1yiUOwhEeWTKqLnMSJAUw" name="productionStation" senderMessageTypes="_wsJowNxgEeW-N_z6XJQq2w _UTgXMNxrEeW-N_z6XJQq2w _oHi_UFZbEeej24096dMoCw" receiverMessageTypes="_dtJysNxhEeW-N_z6XJQq2w _P-BxAOa5EeWyd6JHVas6Kw">
         <cardinality xmi:id="_lPVmguwfEeWTKqLnMSJAUw">
           <lowerBound xmi:id="_5n1LAD-5EeeumMKPPaKgzQ"/>
           <upperBound xmi:id="_5n1LAT-5EeeumMKPPaKgzQ"/>
@@ -931,9 +965,9 @@
         </receiverMessageBuffer>
       </roles>
       <roleConnector xmi:id="_lPWNkewfEeWTKqLnMSJAUw" connectorEndpoints="_lPTxUOwfEeWTKqLnMSJAUw _lPVmgewfEeWTKqLnMSJAUw">
-        <connectorQualityOfServiceAssumptions xmi:id="_lPYCwOwfEeWTKqLnMSJAUw" comment="">
+        <connectorQualityOfServiceAssumptions xmi:id="_lPYCwOwfEeWTKqLnMSJAUw" comment="the protocol is model checked only with reliability true. " messageLossPossible="true">
           <maxMessageDelay xmi:id="_lPYp0OwfEeWTKqLnMSJAUw" unit="MILLISECONDS">
-            <value xsi:type="common:LiteralExpression" xmi:id="_bJbxcApcEeetKbXUu8Bz_g" value="20"/>
+            <value xsi:type="common:LiteralExpression" xmi:id="_4GNA8FZGEeeZBen8pz_l3w" value="300"/>
           </maxMessageDelay>
         </connectorQualityOfServiceAssumptions>
       </roleConnector>
@@ -1013,6 +1047,11 @@
           <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         </parameters>
       </messageTypes>
+      <messageTypes xmi:id="_oHi_UFZbEeej24096dMoCw" name="heartbeat">
+        <parameters xmi:id="_qUYDQFZbEeej24096dMoCw" name="psID">
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+        </parameters>
+      </messageTypes>
     </modelElements>
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_niLXENxhEeW-N_z6XJQq2w" name="Register">
       <messageTypes xmi:id="_qkDzsNxhEeW-N_z6XJQq2w" name="register">
@@ -1045,7 +1084,7 @@
   </categories>
   <categories xmi:id="_soLPRNxbEeW-N_z6XJQq2w" key="org.muml.pim.components.category" name="component">
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_vwAi4NxbEeW-N_z6XJQq2w" name="ProductionStation" behavior="_6Dss4OamEeWyd6JHVas6Kw">
-      <ports xsi:type="component:DiscretePort" xmi:id="_Y-2CwNxcEeW-N_z6XJQq2w" name="getOrder" behavior="_sp5kwOanEeWyd6JHVas6Kw" senderMessageTypes="_wsJowNxgEeW-N_z6XJQq2w _UTgXMNxrEeW-N_z6XJQq2w" receiverMessageTypes="_P-BxAOa5EeWyd6JHVas6Kw _dtJysNxhEeW-N_z6XJQq2w" refinedRole="_lPVmgewfEeWTKqLnMSJAUw">
+      <ports xsi:type="component:DiscretePort" xmi:id="_Y-2CwNxcEeW-N_z6XJQq2w" name="getOrder" behavior="_sp5kwOanEeWyd6JHVas6Kw" senderMessageTypes="_wsJowNxgEeW-N_z6XJQq2w _UTgXMNxrEeW-N_z6XJQq2w _oHi_UFZbEeej24096dMoCw" receiverMessageTypes="_P-BxAOa5EeWyd6JHVas6Kw _dtJysNxhEeW-N_z6XJQq2w" refinedRole="_lPVmgewfEeWTKqLnMSJAUw">
         <cardinality xmi:id="_Y-8JYNxcEeW-N_z6XJQq2w">
           <lowerBound xmi:id="_Kl-CAFUBEeeDc5GcOuOuvA"/>
           <upperBound xmi:id="_Kl_3MFUBEeeDc5GcOuOuvA"/>
@@ -1068,7 +1107,7 @@
           <bufferSize xmi:id="_zI5W4OVGEeWTk8L1nP577g" value="5"/>
         </receiverMessageBuffer>
       </ports>
-      <ports xsi:type="component:DiscretePort" xmi:id="_njyPcOa7EeWyd6JHVas6Kw" name="brokerForPSPort" behavior="_QFnU0Oa7EeWyd6JHVas6Kw" senderMessageTypes="_P-BxAOa5EeWyd6JHVas6Kw _dtJysNxhEeW-N_z6XJQq2w" receiverMessageTypes="_wsJowNxgEeW-N_z6XJQq2w _UTgXMNxrEeW-N_z6XJQq2w" refinedRole="_lPTxUOwfEeWTKqLnMSJAUw">
+      <ports xsi:type="component:DiscretePort" xmi:id="_njyPcOa7EeWyd6JHVas6Kw" name="brokerForPSPort" behavior="_QFnU0Oa7EeWyd6JHVas6Kw" senderMessageTypes="_P-BxAOa5EeWyd6JHVas6Kw _dtJysNxhEeW-N_z6XJQq2w" receiverMessageTypes="_wsJowNxgEeW-N_z6XJQq2w _UTgXMNxrEeW-N_z6XJQq2w _oHi_UFZbEeej24096dMoCw" refinedRole="_lPTxUOwfEeWTKqLnMSJAUw">
         <cardinality xmi:id="_njzdkOa7EeWyd6JHVas6Kw">
           <lowerBound xmi:id="_HDh2AFUBEeeDc5GcOuOuvA"/>
           <upperBound xmi:id="_HDkSQFUBEeeDc5GcOuOuvA"/>
@@ -1078,6 +1117,9 @@
         </receiverMessageBuffer>
         <receiverMessageBuffer xmi:id="_siMRwOquEeWdNs1s2t99bw" name="getOrderBuffer" messageType="_UTgXMNxrEeW-N_z6XJQq2w">
           <bufferSize xmi:id="_CpabIFUBEeeDc5GcOuOuvA" value="100"/>
+        </receiverMessageBuffer>
+        <receiverMessageBuffer xmi:id="_ycL34FZbEeej24096dMoCw" name="heartbeatBuffer" messageType="_oHi_UFZbEeej24096dMoCw" bufferOverflowAvoidanceStrategy="discard oldest message in buffer">
+          <bufferSize xmi:id="_1F6TMFZbEeej24096dMoCw" value="100"/>
         </receiverMessageBuffer>
       </ports>
     </modelElements>
@@ -1175,6 +1217,12 @@
         <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
       </operations>
       <operations xmi:id="_hW30sFUGEeeDc5GcOuOuvA" name="removeObsoleteProductionStations">
+        <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+      </operations>
+      <operations xmi:id="_Z7hwEFZcEeej24096dMoCw" name="heartbeatUpdate">
+        <parameters xmi:id="_cjTDkFZcEeej24096dMoCw" name="psID">
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+        </parameters>
         <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
       </operations>
     </modelElements>

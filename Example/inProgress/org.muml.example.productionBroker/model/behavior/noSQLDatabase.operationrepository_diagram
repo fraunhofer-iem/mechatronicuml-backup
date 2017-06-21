@@ -83,6 +83,16 @@
         <element xmi:type="behavior:Operation" href="../productionBroker.muml#_hW30sFUGEeeDc5GcOuOuvA"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hZMI4VUGEeeDc5GcOuOuvA"/>
       </children>
+      <children xmi:type="notation:Shape" xmi:id="_Z8hOkFZcEeej24096dMoCw" type="3001" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_Z8hOklZcEeej24096dMoCw" type="5002"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_Z8hOk1ZcEeej24096dMoCw" type="5005"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_Z8hOlFZcEeej24096dMoCw" type="7002">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_Z8hOlVZcEeej24096dMoCw"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_Z8hOllZcEeej24096dMoCw"/>
+        </children>
+        <element xmi:type="behavior:Operation" href="../productionBroker.muml#_Z7hwEFZcEeej24096dMoCw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Z8hOkVZcEeej24096dMoCw"/>
+      </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_BT97ohWxEea4t_vvK_A9tw"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_BT97oxWxEea4t_vvK_A9tw"/>
     </children>

@@ -113,6 +113,18 @@ int32_T databaseOperations_databaseOperationsRemoveObsoleteProductionStations(){
 	return ret;
 /**End of user code**/
 
+
+
+int32_T databaseOperations_databaseOperationsHeartbeatUpdate(int32_T psID){
+
+/** Start of user code databaseOperations_databaseOperationsHeartbeatUpdate **/
+	int32_T ret = heartBeatProductionStation(psID);
+	if (ret != 0){
+		extractLogsAndExit();
+	}
+	return ret;
+/**End of user code**/
+
 }
 
 
