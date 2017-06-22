@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl
 import org.eclipse.emf.ecore.util.EcoreUtil
 import org.muml.psm.allocation.language.^as.NameProvider
 
+
 /**
  * MUML-specific NameProvider. Currently, it only ComponentInstances
  * and ResourceInstances are supported.
