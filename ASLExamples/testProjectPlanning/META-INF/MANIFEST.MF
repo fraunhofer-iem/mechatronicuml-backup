@@ -4,4 +4,5 @@ Bundle-Name: TestProjectPlanning
 Bundle-SymbolicName: testProjectPlanning
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Require-Bundle: org.muml.psm.allocation.language.xtext;bundle-version="1.0.0"
+Require-Bundle: org.muml.psm.allocation.language.xtext;bundle-version="1.0.0",
+ de.fraunhofer.iem.projectPlanning;bundle-version="1.0.0"
