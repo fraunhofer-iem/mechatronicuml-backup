@@ -258,9 +258,13 @@ the Eclipse framework.
    <includes
          id="org.muml.eloquent.feature"
          version="0.0.0"/>
-   
-      <includes
+
+   <includes
          id="org.muml.eloquent.feature.source"
+         version="0.0.0"/>
+
+   <includes
+         id="org.muml.eloquent.adapter.muml.feature"
          version="0.0.0"/>
 
    <requires>
