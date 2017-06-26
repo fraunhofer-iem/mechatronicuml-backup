@@ -40,7 +40,7 @@ public interface OclcontextPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.muml.org/adapter/muml/oclcontext/1.0.0";
+	String eNS_URI = "http://www.muml.org/eloquent/adapter/muml/oclcontext/1.0.0";
 
 	/**
 	 * The package namespace name.

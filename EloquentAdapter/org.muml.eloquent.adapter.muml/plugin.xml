@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated OCLContext -->
       <package
-            uri="http://www.muml.org/adapter/muml/oclcontext/1.0.0"
+            uri="http://www.muml.org/eloquent/adapter/muml/oclcontext/1.0.0"
             class="org.muml.eloquent.adapter.muml.oclcontext.OclcontextPackage"
             genModel="model/OCLContext.genmodel"/>
    </extension>
