@@ -4,11 +4,11 @@
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>org.muml.eloquent</groupId>
-		<artifactId>Eloquent</artifactId>
+		<groupId>org.muml.eloquent.adapter</groupId>
+		<artifactId>Eloquent Adapter</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
-	<groupId>org.muml.eloquent</groupId>
+	<groupId>org.muml.eloquent.adapter</groupId>
 	<artifactId>org.muml.eloquent.adapter.muml</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>eclipse-plugin</packaging>

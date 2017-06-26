@@ -3,12 +3,12 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.muml.eloquent</groupId>
+    <groupId>org.muml.eloquent.adapter</groupId>
     <artifactId>Eloquent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
   <groupId>org.muml.eloquent</groupId>
-  <artifactId>org.muml.psm.allocation.context.muml.tests</artifactId>
+  <artifactId>org.muml.eloquent.adapter.muml.tests</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>eclipse-test-plugin</packaging>
   
@@ -43,7 +43,7 @@
                 <artifactId>tycho-surefire-plugin</artifactId>
                 <version>${tycho-version}</version>
                 <configuration>
-                    <testClass>org.muml.psm.allocation.context.muml.AllTestsSuite</testClass>
+                    <testClass>org.muml.eloquent.adapter.muml.AllTestsSuite</testClass>
                     <product>org.eclipse.platform.ide</product>
                 </configuration>
             </plugin>
