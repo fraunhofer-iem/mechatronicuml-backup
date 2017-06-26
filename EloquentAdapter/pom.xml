@@ -29,7 +29,7 @@
  
     <module>org.muml.eloquent.adapter.muml</module>
     <module>org.muml.eloquent.adapter.muml.feature</module>
- <!--   <module>org.muml.eloquent.sdk.feature</module> -->
+    <module>org.muml.eloquent.adapter.sdk.feature</module> 
     <module>org.muml.eloquent.adapter.repository</module>
   </modules>
   
