@@ -87,10 +87,8 @@
 		<configuration>
 		 <excludes>
 		   <!--provide plug-ins not containing any source code -->
-		  <plugin id="org.muml.eloquent.adapter.feature" />
-		  <plugin id="org.muml.eloquent.adapter.muml.feature" />
-		  <plugin id="org.muml.eloquent.adapter.repository" />
-		  <plugin id="org.muml.eloquent.adapter.sdk.feature" />
+			  <plugin id="org.muml.eloquent.adapter.repository" />
+			   <plugin id="org.muml.eloquent.adapter.muml.feature" />
 		 </excludes>
 		</configuration>
 	   </plugin>

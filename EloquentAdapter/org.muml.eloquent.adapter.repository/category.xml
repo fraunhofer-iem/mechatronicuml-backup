@@ -3,7 +3,7 @@
    <feature url="features/org.muml.eloquent.adapter.muml.feature_1.0.0.qualifier.jar" id="org.muml.eloquent.adapter.muml.feature" version="1.0.0.qualifier">
       <category name="org.muml.eloquent.adapter.repository.category"/>
    </feature>
-   <feature url="features/org.muml.eloquent.adapter.sdk.feature_1.0.0.qualifier.jar" id="org.muml.eloquent.adapter.sdk.feature" version="1.0.0.qualifier">
+      <feature url="features/org.muml.eloquent.adapter.muml.feature_1.0.0.qualifier-source-feature.jar" id="org.muml.eloquent.adapter.muml.feature.source" version="1.0.0.qualifier">
       <category name="org.muml.eloquent.adapter.repository.category"/>
    </feature>
    <category-def name="org.muml.eloquent.adapter.repository.category" label="Eloquent Adapter"/>
