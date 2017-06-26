@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/org.muml.eloquent.feature_1.0.0.qualifier.jar" id="org.muml.eloquent.feature" version="1.0.0.qualifier">
-      <category name="org.muml.eloquent.repository.category"/>
+   <feature url="features/org.muml.eloquent.adapter.muml.feature_1.0.0.qualifier.jar" id="org.muml.eloquent.adapter.muml.feature" version="1.0.0.qualifier">
+      <category name="org.muml.eloquent.adapter.repository.category"/>
    </feature>
-  <feature url="features/org.muml.eloquent.feature_1.0.0.qualifier-source-feature.jar" id="org.muml.eloquent.feature.source" version="1.0.0.qualifier">
-      <category name="org.muml.eloquent.repository.category"/>
-   </feature>
-   <feature url="features/org.muml.psm.allocation.context.muml.feature_1.0.0.qualifier.jar" id="org.muml.psm.allocation.context.muml.feature" version="1.0.0.qualifier">
-      <category name="org.muml.eloquent.repository.category"/>
-   </feature>
-   <category-def name="org.muml.eloquent.repository.category" label="Eloquent"/>
+   <category-def name="org.muml.eloquent.adapter.repository.category" label="Eloquent Adapter"/>
 </site>
