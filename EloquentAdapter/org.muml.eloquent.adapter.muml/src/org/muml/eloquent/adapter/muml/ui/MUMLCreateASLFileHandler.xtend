@@ -7,7 +7,7 @@ class MUMLCreateASLFileHandler extends AbstractCreateASLFileHandler {
 	override getTemplate(String name) {
 		'''
 		«name» {
-			import 'http://www.muml.org/psm/allocation/context/muml/oclcontext/1.0.0'
+			import 'http://www.muml.org/eloquent/adapter/muml/oclcontext/1.0.0'
 			include 'platform:/plugin/org.muml.eloquent.adapter.muml/operations/OCLContext.ocl'
 			
 			oclContext oclcontext::OCLContext
