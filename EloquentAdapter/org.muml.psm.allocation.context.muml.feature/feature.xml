@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.muml.psm.allocation.context.muml.feature" label="%featureName" provider-name="%providerName" version="1.0.0.qualifier">
+
+   <description url="http://www.example.com/description">
+      [Enter Feature Description here.]
+   </description>
+
+   <copyright url="%copyrightURL">
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <requires>
+      <import match="greaterOrEqual" plugin="org.eclipse.xtend.lib" version="2.10.0"/>
+      <import match="greaterOrEqual" plugin="org.muml.pim" version="1.0.0"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.emf.ecore"/>
+      <import plugin="org.muml.core"/>
+      <import match="greaterOrEqual" plugin="org.muml.pm.hardware" version="1.0.0"/>
+      <import match="greaterOrEqual" plugin="org.muml.psm" version="1.0.0"/>
+      <import match="greaterOrEqual" plugin="org.eclipse.ui" version="3.108.0"/>
+      <import match="greaterOrEqual" plugin="org.muml.core.modelinstance.ui" version="1.0.0"/>
+      <import match="greaterOrEqual" plugin="org.muml.core.export" version="1.0.0"/>
+      <import match="greaterOrEqual" plugin="org.eclipse.core.resources" version="3.11.0"/>
+      <import feature="org.muml.eloquent.feature" version="1.0.0.qualifier"/>
+   </requires>
+
+   <plugin download-size="0" id="org.muml.psm.allocation.context.muml" install-size="0" unpack="false" version="0.0.0"/>
+
+</feature>

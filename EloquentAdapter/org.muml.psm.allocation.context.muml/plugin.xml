@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated OCLContext -->
+      <package
+            uri="http://www.muml.org/psm/allocation/context/muml/oclcontext/1.0.0"
+            class="org.muml.psm.allocation.context.muml.oclcontext.OclcontextPackage"
+            genModel="model/OCLContext.genmodel"/>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.muml">
+         <command
+               commandId="org.muml.psm.allocation.algorithm.ui.OpenAllocationWizardCommand"
+               label="Plan System Allocation"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+               <or>
+                  <reference
+                        definitionId="org.muml.expression.mumlfile">
+                  </reference>
+                  <iterate
+                        ifEmpty="false"
+                        operator="and">
+                     <adapt
+                           type="org.eclipse.core.resources.IResource">
+                        <test
+                              property="org.eclipse.core.resources.name"
+                              value="*.allocation_specification">
+                        </test>
+                     </adapt>
+                  </iterate>
+               </or>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.muml">
+         <command
+               commandId="org.muml.psm.allocation.algorithm.ui.CreateASLFileCommand"
+               label="Create Allocation Constraint and Optimization Specification"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+               <reference
+                     definitionId="org.muml.expression.mumlfile">
+               </reference>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="org.muml.psm.allocation.context.muml.ui.MUMLCreateASLFileHandler"
+            commandId="org.muml.psm.allocation.algorithm.ui.CreateASLFileCommand">
+         <activeWhen>
+            <reference
+                  definitionId="org.muml.expression.mumlfile">
+            </reference>
+         </activeWhen>
+      </handler>
+   </extension>
+   <extension
+         point="org.muml.psm.allocation.algorithm.ui.wizardPageProvider">
+      <wizardPageProvider
+            class="org.muml.psm.allocation.context.muml.ui.wizard.MUMLAllocationWizardPageProvider">
+      </wizardPageProvider>
+   </extension>
+</plugin>

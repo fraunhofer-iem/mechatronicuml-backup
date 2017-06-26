@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.muml.psm.allocation.context.muml.tests/fixtures/ilp/metamodelImport/emf-gen"
+    editDirectory="/org.muml.psm.allocation.context.muml.tests.edit/src" editorDirectory="/org.muml.psm.allocation.context.muml.tests.editor/src"
+    modelPluginID="org.muml.psm.allocation.context.muml.tests" modelName="Extension"
+    modelPluginClass="" editPluginClass="org.muml.psm.allocation.context.muml.tests.extension.provider.ExtensionEditPlugin"
+    editorPluginClass="org.muml.psm.allocation.context.muml.tests.extension.presentation.ExtensionEditorPlugin"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false" editPluginID="org.muml.psm.allocation.context.muml.tests.edit"
+    editorPluginID="org.muml.psm.allocation.context.muml.tests.editor" usedGenPackages="../../../../../org.muml.core/model/core.genmodel#//core"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>extension.ecore</foreignModel>
+  <genPackages prefix="Extension" basePackage="org.muml.psm.allocation.algorithm.ilp.tests"
+      disposableProviderFactory="true" ecorePackage="extension.ecore#/">
+    <genClasses ecoreClass="extension.ecore#//MemoryExtension">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute extension.ecore#//MemoryExtension/amountNeeded"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
