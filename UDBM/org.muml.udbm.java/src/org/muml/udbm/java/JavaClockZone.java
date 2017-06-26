@@ -864,4 +864,9 @@ public class JavaClockZone extends ClockZone {
 			}
 		}
 	}
+
+
+	public void or(JavaClockZone innerZone) {
+		this.getFederation().addToClockZone(innerZone);		
+	}
 }
