@@ -154,8 +154,14 @@
 		<repository>
 			<id>ELOQUENT</id>
 			<layout>p2</layout>
-			<url>${repobase}/ELOQUENT-Maven/${repopath}org.muml.eloquent.repository/target/repository</url>
+			<url>${repobase}/ELOQUENT-Github-Test/${repopath}org.muml.eloquent.repository/target/repository</url>
 		</repository>
+				<repository>
+			<id>ELOQUENTADAPTER</id>
+			<layout>p2</layout>
+			<url>${repobase}/ELOQUENT-Adapter-Maven/${repopath}org.muml.eloquent.adapter.repository/target/repository</url>
+		</repository>
+	
 		<repository>
 			<id>ExternalDependencies</id>
 			<layout>p2</layout>
