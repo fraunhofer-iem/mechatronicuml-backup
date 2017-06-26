@@ -8,6 +8,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.util.TreeSet;
 
 import org.muml.udbm.ClockConstraint;
 import org.muml.udbm.ClockZone;
@@ -578,8 +579,23 @@ public class JavaFederation extends Federation {
 
 	@Override
 	public void or(Federation federation) {
-		// TODO Auto-generated method stub
+		// intersect all zones with each other
+		Iterator<?> outerIter = (Iterator<?>) this.iteratorOfClockZone();
+		while (outerIter.hasNext()) {
+			JavaClockZone outerZone = (JavaClockZone) outerIter.next();
+			Iterator<?> innerIter = (Iterator<?>) federation.iteratorOfClockZone();
+			while (innerIter.hasNext()) {
+				JavaClockZone innerZone = (JavaClockZone) innerIter.next();
+				outerZone.or(innerZone);
+			}
+		}
 
+		// remove empty zones
+		outerIter = (Iterator<?>) this.iteratorOfClockZone();
+		while (outerIter.hasNext()) {
+			if (((JavaClockZone) outerIter.next()).isEmpty())
+				outerIter.remove();
+		}
 	}
 
 	@Override
@@ -604,5 +620,14 @@ public class JavaFederation extends Federation {
 		}
 
 		return result;
+	}
+
+	public void or(TreeSet<JavaFederation> javaFederationSet) {
+		Iterator<JavaFederation> javaFederationIterator = javaFederationSet.iterator();
+		
+		while (javaFederationIterator.hasNext()){
+			JavaFederation currentJavaFederation = javaFederationIterator.next();
+			this.or(currentJavaFederation);
+		}
 	}
 }
