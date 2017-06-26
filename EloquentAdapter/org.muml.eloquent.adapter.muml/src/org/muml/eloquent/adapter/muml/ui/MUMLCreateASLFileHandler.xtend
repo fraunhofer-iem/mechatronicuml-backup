@@ -1,4 +1,4 @@
-package org.muml.psm.allocation.context.muml.ui;
+package org.muml.eloquent.adapter.muml.ui;
 
 import org.muml.psm.allocation.algorithm.ui.AbstractCreateASLFileHandler
 
@@ -8,12 +8,12 @@ class MUMLCreateASLFileHandler extends AbstractCreateASLFileHandler {
 		'''
 		«name» {
 			import 'http://www.muml.org/psm/allocation/context/muml/oclcontext/1.0.0'
-			include 'platform:/plugin/org.muml.psm.allocation.context.muml/operations/OCLContext.ocl'
+			include 'platform:/plugin/org.muml.eloquent.adapter.muml/operations/OCLContext.ocl'
 			
 			oclContext oclcontext::OCLContext
 			
-			nameProvider 'org.muml.psm.allocation.context.muml.provider.MUMLNameProvider'
-			storageProvider 'org.muml.psm.allocation.context.muml.provider.MUMLStorageProvider'
+			nameProvider 'org.muml.eloquent.adapter.muml.provider.MUMLNameProvider'
+			storageProvider 'org.muml.eloquent.adapter.muml.provider.MUMLStorageProvider'
 			
 			relation allocate {
 				descriptors (first : pim::instance::ComponentInstance, second : hardware::hwresourceinstance::ResourceInstance);

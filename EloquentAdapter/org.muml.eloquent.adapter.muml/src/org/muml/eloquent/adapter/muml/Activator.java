@@ -1,4 +1,4 @@
-package org.muml.psm.allocation.context.muml;
+package org.muml.eloquent.adapter.muml;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
@@ -10,7 +10,7 @@ public class Activator extends AbstractUIPlugin {
 	/**
 	 * The plug-in ID.
 	 */
-	public static final String PLUGIN_ID = "org.muml.psm.allocation.context.muml";
+	public static final String PLUGIN_ID = "org.muml.eloquent.adapter.muml";
 	
 	public Activator() {
 		// TODO Auto-generated constructor stub

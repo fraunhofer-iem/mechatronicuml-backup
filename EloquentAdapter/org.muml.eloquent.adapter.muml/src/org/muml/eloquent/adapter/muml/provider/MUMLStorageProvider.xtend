@@ -1,4 +1,4 @@
-package org.muml.psm.allocation.context.muml.provider
+package org.muml.eloquent.adapter.muml.provider
 
 import org.eclipse.emf.ecore.impl.EObjectImpl
 import org.muml.pim.instance.AssemblyConnectorInstance
@@ -8,7 +8,7 @@ import org.muml.pm.hardware.hwresourceinstance.StructuredResourceInstance
 import org.muml.psm.allocation.Allocation
 import org.muml.psm.allocation.AllocationFactory
 import org.muml.psm.allocation.SystemAllocation
-import org.muml.psm.allocation.context.muml.oclcontext.OCLContext
+import org.muml.eloquent.adapter.muml.oclcontext.OCLContext
 import org.muml.psm.allocation.language.^as.StorageProvider
 
 /**

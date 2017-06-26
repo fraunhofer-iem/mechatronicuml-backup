@@ -1,4 +1,4 @@
-package org.muml.psm.allocation.context.muml.ui.wizard;
+package org.muml.eloquent.adapter.muml.ui.wizard;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,8 +26,8 @@ import org.muml.psm.allocation.algorithm.ui.wizard.AllocationComputationOperatio
 import org.muml.psm.allocation.algorithm.ui.wizard.AllocationComputationStrategyConfigurationWizardPage;
 import org.muml.psm.allocation.algorithm.ui.wizard.AllocationComputationStrategyWizardPage;
 import org.muml.psm.allocation.algorithm.ui.wizard.PageContext;
-import org.muml.psm.allocation.context.muml.oclcontext.OCLContext;
-import org.muml.psm.allocation.context.muml.oclcontext.OclcontextFactory;
+import org.muml.eloquent.adapter.muml.oclcontext.OCLContext;
+import org.muml.eloquent.adapter.muml.oclcontext.OclcontextFactory;
 import org.muml.psm.allocation.language.cs.SpecificationCS;
 
 /* needs more love... */

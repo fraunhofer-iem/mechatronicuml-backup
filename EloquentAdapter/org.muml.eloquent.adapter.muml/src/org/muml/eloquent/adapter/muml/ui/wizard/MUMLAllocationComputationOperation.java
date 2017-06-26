@@ -1,4 +1,4 @@
-package org.muml.psm.allocation.context.muml.ui.wizard;
+package org.muml.eloquent.adapter.muml.ui.wizard;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -23,7 +23,7 @@ import org.muml.psm.allocation.algorithm.main.AllocationAlgorithm;
 import org.muml.psm.allocation.algorithm.main.IAllocationComputationStrategy;
 import org.muml.psm.allocation.algorithm.qvto.QVToTransformationRunner;
 import org.muml.psm.allocation.algorithm.ui.wizard.AllocationComputationOperation;
-import org.muml.psm.allocation.context.muml.Activator;
+import org.muml.eloquent.adapter.muml.Activator;
 import org.muml.psm.allocation.language.cs.SpecificationCS;
 
 /* urgs - needs more love... do we really need this editingDomain dance etc.? */

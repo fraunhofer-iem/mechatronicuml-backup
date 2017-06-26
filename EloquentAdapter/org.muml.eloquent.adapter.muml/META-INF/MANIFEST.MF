@@ -1,19 +1,23 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: org.muml.psm.allocation.context.muml;singleton:=true
+Bundle-SymbolicName: org.muml.eloquent.adapter.muml;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
+Bundle-Vendor: Software Engineering Group,
+ Heinz Nixdorf Institute,
+ Paderborn University,
+ and Fraunhofer Research Institution for Mechatronic Systems Design IEM,
+ Germany
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: org.muml.psm.allocation.context.muml,
- org.muml.psm.allocation.context.muml.oclcontext,
- org.muml.psm.allocation.context.muml.oclcontext.impl,
- org.muml.psm.allocation.context.muml.oclcontext.util,
- org.muml.psm.allocation.context.muml.provider,
- org.muml.psm.allocation.context.muml.ui,
- org.muml.psm.allocation.context.muml.ui.wizard
+Export-Package: org.muml.eloquent.adapter.muml,
+ org.muml.eloquent.adapter.muml.oclcontext,
+ org.muml.eloquent.adapter.muml.oclcontext.impl,
+ org.muml.eloquent.adapter.muml.oclcontext.util,
+ org.muml.eloquent.adapter.muml.provider,
+ org.muml.eloquent.adapter.muml.ui,
+ org.muml.eloquent.adapter.muml.ui.wizard
 Require-Bundle: org.eclipse.xtend.lib;bundle-version="2.10.0",
  org.muml.psm.allocation.language;bundle-version="0.1.0",
  org.muml.pim;bundle-version="1.0.0";visibility:=reexport,
@@ -30,4 +34,4 @@ Require-Bundle: org.eclipse.xtend.lib;bundle-version="2.10.0",
  org.muml.psm.allocation.algorithm.ui;bundle-version="1.0.0",
  org.eclipse.emf.workspace
 Bundle-ActivationPolicy: lazy
-Bundle-Activator: org.muml.psm.allocation.context.muml.Activator
+Bundle-Activator: org.muml.eloquent.adapter.muml.Activator
