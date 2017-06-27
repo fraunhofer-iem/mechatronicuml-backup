@@ -18,7 +18,6 @@
    
   <modules>
     <module>org.muml.ape</module>
-  <!--  <module>org.muml.ape.buckminster</module> -->
     <module>org.muml.ape.codegen</module>
     <module>org.muml.ape.ecore.edit.properties</module>
     <module>org.muml.ape.ecore.editor</module>
@@ -31,7 +30,6 @@
     <module>org.muml.ape.migrator.feature</module>
     <module>org.muml.ape.reconcile</module>
     <module>org.muml.ape.runtime</module>
-  <!--  <module>org.muml.ape.sdk.feature</module> -->
     <module>org.muml.oclfilter</module>
     <module>org.muml.oclfilter.feature</module>
     <module>org.muml.ape.repository</module>
