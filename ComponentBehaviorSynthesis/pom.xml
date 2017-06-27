@@ -18,7 +18,6 @@
     
   <modules>
     <module>org.muml.cbs</module>
-    <!-- <module>org.muml.cbs.buckminster</module> -->
     <module>org.muml.cbs.dependencylanguage</module>
     <module>org.muml.cbs.dependencylanguage.edit</module>
     <module>org.muml.cbs.dependencylanguage.edit.properties</module>
@@ -26,7 +25,6 @@
     <module>org.muml.cbs.dependencylanguage.tests</module>
     <module>org.muml.cbs.dependencylanguage.ui</module>
     <module>org.muml.cbs.dependencylanguage.xtext</module>
-    <module>org.muml.cbs.dependencylanguage.xtext.sdk</module>
     <module>org.muml.cbs.dependencylanguage.xtext.ui</module>
     <module>org.muml.cbs.dependencylanguage.xtext.ui.xtfo</module>
     <module>org.muml.cbs.feature</module>
@@ -197,5 +195,11 @@
 			<layout>p2</layout>
 			<url>${repobase}/PlatformIndependentModeling-Maven/${repopath}org.muml.pim.repository/target/repository</url>
 		</repository>
+        <repository>
+                        <id>ImplicitCopy</id>
+                        <layout>p2</layout>
+                        <url>${repobase}/ImplicitCopy-Maven/${repopath}org.muml.implicitcopy.repository/target/repository</url>
+                </repository>
+
    </repositories>
 </project>
