@@ -18,7 +18,6 @@
   
   <modules>
     <module>org.muml.emm</module>
-    <!-- <module>org.muml.emm.buckminster</module> -->
     <module>org.muml.emm.compare</module>
     <module>org.muml.emm.edit</module>
     <module>org.muml.emm.editor</module>
