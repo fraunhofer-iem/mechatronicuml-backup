@@ -250,6 +250,11 @@
 			<layout>p2</layout>
 			<url>${repobase}/PlatformModeling-Maven/${repopath}org.muml.pm.repository/target/repository</url>
 		</repository>
+		<repository>
+			<id>ELOQUENT</id>
+			<layout>p2</layout>
+			<url>${repobase}/ELOQUENT-Github-Test/${repopath}/plugins/org.muml.eloquent.repository/target/repository</url>
+		</repository>
 				<repository>
 			<id>PSM</id>
 			<layout>p2</layout>
