@@ -19,7 +19,7 @@ Export-Package: org.muml.eloquent.adapter.muml,
  org.muml.eloquent.adapter.muml.ui,
  org.muml.eloquent.adapter.muml.ui.wizard
 Require-Bundle: org.eclipse.xtend.lib;bundle-version="2.10.0",
- org.muml.psm.allocation.language;bundle-version="0.1.0",
+ org.muml.psm.allocation.language;bundle-version="1.0.0",
  org.muml.pim;bundle-version="1.0.0";visibility:=reexport,
  org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
