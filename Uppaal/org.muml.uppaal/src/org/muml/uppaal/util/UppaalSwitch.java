@@ -5,7 +5,6 @@ package org.muml.uppaal.util;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
-import org.muml.uppaal.*;
 import org.muml.uppaal.NTA;
 import org.muml.uppaal.UppaalPackage;
 import org.muml.uppaal.core.CommentableElement;

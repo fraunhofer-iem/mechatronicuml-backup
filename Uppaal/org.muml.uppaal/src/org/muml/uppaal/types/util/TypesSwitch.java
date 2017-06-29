@@ -7,7 +7,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.muml.uppaal.core.NamedElement;
 import org.muml.uppaal.expressions.Expression;
-import org.muml.uppaal.types.*;
 import org.muml.uppaal.types.DeclaredType;
 import org.muml.uppaal.types.IntegerBounds;
 import org.muml.uppaal.types.Library;

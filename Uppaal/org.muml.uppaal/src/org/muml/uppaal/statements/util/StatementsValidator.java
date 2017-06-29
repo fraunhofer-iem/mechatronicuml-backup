@@ -10,7 +10,6 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.muml.uppaal.declarations.util.DeclarationsValidator;
-import org.muml.uppaal.statements.*;
 import org.muml.uppaal.statements.Block;
 import org.muml.uppaal.statements.DoWhileLoop;
 import org.muml.uppaal.statements.EmptyStatement;

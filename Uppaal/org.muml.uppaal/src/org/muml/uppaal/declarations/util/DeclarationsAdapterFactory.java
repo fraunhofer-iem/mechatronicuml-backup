@@ -8,7 +8,6 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.muml.uppaal.core.NamedElement;
 import org.muml.uppaal.core.TypedElement;
-import org.muml.uppaal.declarations.*;
 import org.muml.uppaal.declarations.ArrayInitializer;
 import org.muml.uppaal.declarations.Declaration;
 import org.muml.uppaal.declarations.Declarations;

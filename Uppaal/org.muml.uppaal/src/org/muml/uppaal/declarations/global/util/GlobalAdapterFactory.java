@@ -7,7 +7,6 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.muml.uppaal.declarations.Declaration;
-import org.muml.uppaal.declarations.global.*;
 import org.muml.uppaal.declarations.global.ChannelItem;
 import org.muml.uppaal.declarations.global.ChannelPriorityDeclaration;
 import org.muml.uppaal.declarations.global.ChannelPriorityGroup;
