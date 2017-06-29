@@ -35,17 +35,13 @@
          defaultHandler="org.muml.uppaal.adapter.ui.ExportUppaalXMLAction"/>
    </extension>
    
-
    <extension point="org.eclipse.ui.commands" id="menu-commands">
-      <category id="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID" name="Export UPPAAL Model Command" description="Export UPPAAL model (Wizard)..."/>
-      <command id="org.muml.uppaal.adapter.ExportUppaalWizardModelAction"
-         name="Export UPPAAL Model (Wizard)..."
+      <category id="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID" name="Export UPPAAL Model Command" description="Export UPPAAL model"/>
+      <command id="org.muml.uppaal.adapter.ExportUppaalModelAction"
+         name="Export UPPAAL Model"
          categoryId="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"
-         defaultHandler="org.muml.uppaal.adapter.ui.wizard.MUML2ExportUppaalWizardDialogAction"/>
+         defaultHandler="org.muml.uppaal.adapter.ui.ExportUppaalModelAction"/>
    </extension>
-
-
-
 
    <extension point="org.eclipse.ui.commands" id="menu-commands">
       <category id="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID" name="Trace Image Export Command" description="Export trace image"/>
@@ -163,6 +159,23 @@
          <command
                commandId="org.muml.uppaal.adapter.ExportUppaalXMLAction"
                label="Generate Uppaal XML File">
+             <visibleWhen>
+               <and>
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false">
+                        <adapt
+                              type="org.muml.pim.protocol.AbstractCoordinationSpecification">
+                        </adapt>
+                     </iterate>
+                  </with></and>
+            </visibleWhen>
+         </command>
+         
+         <command
+               commandId="org.muml.uppaal.adapter.ExportUppaalModelAction"
+               label="Generate Uppaal Model">
              <visibleWhen>
                <and>
                   <with
