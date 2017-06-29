@@ -1,0 +1,46 @@
+//transformation UPPAAL2Trace(in input:uppaal, in inputReq:uppaal_requirements, out output:uppaal_trace);
+transformation UPPAAL2Trace(in input:uppaal, in inputReq:uppaal_requirements, in optionsExtent:verification_options, out output:uppaal_trace);
+
+import org.muml.uppaal.adapter._blackbox.TraceLibUnit;
+import org.muml.uppaal.adapter._blackbox.ProgressUnit;
+
+modeltype verification_options uses 'http://www.muml.org/uppaal/options/1.0.0';
+
+modeltype uppaal uses 'http://www.muml.org/uppaal/1.0.0';
+modeltype uppaal_requirements uses 'http://www.muml.org/uppaal/requirements/1.0.0';
+modeltype uppaal_expressions uses uppaal::expressions('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_types uses uppaal::types('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_templates uses uppaal::templates('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_declarations_system uses uppaal::declarations::system('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_declarations uses uppaal::declarations('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_trace uses 'http://www.muml.org/uppaal/trace/1.0.0';
+
+configuration property generateTrace : Boolean;
+
+main() {
+	var properties = inputReq.objects()->any(oclIsKindOf(PropertyRepository)).oclAsType(PropertyRepository);
+	assert fatal (properties.properties->notEmpty()) with log ("There are no properties to verify");
+	
+	var options = optionsExtent.objects()->any(oclIsKindOf(Options)).oclAsType(Options);
+	input.objects()[NTA]->map NTA2Trace(properties, options);
+}
+
+mapping NTA :: NTA2Trace(properties : PropertyRepository, options : Options) : TraceRepository {
+		
+	init {
+		var clonedOptions = options.deepclone().oclAsType(Options);
+		if (not generateTrace)
+			clonedOptions.traceOptions := TraceOptions::NONE;
+		if (generateTrace and clonedOptions.traceOptions = TraceOptions::NONE)
+			clonedOptions.traceOptions := TraceOptions::SOME;
+		
+		// TODO clone trace only to make it part of the out extent
+		reportProgress("Running Uppaal");
+		result := verifyta(self, properties, clonedOptions).deepclone().oclAsType(TraceRepository);
+		
+		assert fatal (not result.oclIsUndefined()) with log('Could not obtain a valid UPPAAL verification result.');
+		
+	}
+	
+}
+

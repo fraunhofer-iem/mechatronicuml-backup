@@ -1,0 +1,85 @@
+import transforms.UPPAAL2Trace;
+import transforms.UPPAALTrace2MUMLTrace;
+import transforms.lib.ExternalizedStrings;
+import transforms.VerifiableElement2UPPAAL;
+import org.muml.common._blackbox.SaveXMIBlackbox;
+
+modeltype muml uses 'http://www.muml.org/pim/1.0.0';
+modeltype uppaal uses 'http://www.muml.org/uppaal/1.0.0';
+modeltype uppaal_requirements uses 'http://www.muml.org/uppaal/requirements/1.0.0';
+modeltype uppaal_trace uses 'http://www.muml.org/uppaal/trace/1.0.0';
+modeltype reachability_rtsc uses 'http://www.muml.org/verification/core/reachanalysis/reachabilitygraph/rtsc/1.0.0';
+modeltype verification_options uses 'http://www.muml.org/uppaal/options/1.0.0';
+
+/*
+* Transforms a model with a VerifiableElement into a MUML Trace
+*/
+transformation VerifiableElement2Trace(in verifiableElementModel:muml, in options: verification_options, out output:reachability_rtsc, out uppaalModel:uppaal, out uppaalReq:uppaal_requirements) access VerifiableElement2UPPAAL, UPPAALTrace2MUMLTrace, UPPAAL2Trace;
+configuration property STORE_INTERMEDIATE_MODELS : Boolean;
+
+helper storeModel(model : Bag(Element), filename : String) {
+	if (STORE_INTERMEDIATE_MODELS and model != null) then {
+		save(model, "intermediate_models", filename);
+	} endif;
+}
+	
+main() {
+
+	var mumlCic : muml = muml.createEmptyModel().oclAsType(muml);		
+	var staticallyNormalizedModel : muml = muml.createEmptyModel().oclAsType(muml);
+	var verifiableCIC : muml = muml.createEmptyModel().oclAsType(muml);				
+	var uppaalTransformation : VerifiableElement2UPPAAL = new VerifiableElement2UPPAAL(verifiableElementModel, options, uppaalModel, uppaalReq, mumlCic, staticallyNormalizedModel, verifiableCIC);
+	var retcode : Status = uppaalTransformation.transform();
+	assert fatal (retcode.succeeded()) with log('Translation to UPPAAL failed: ' + retcode.raisedException().repr());
+	
+	// transform uppaal model to text, start verifyta for executing the model checking, parse the uppaal trace and store it into the uppaal trace model.
+	var uppaalTrace : uppaal_trace = uppaal_trace.createEmptyModel().oclAsType(uppaal_trace);
+	var verifyta : UPPAAL2Trace = new UPPAAL2Trace(uppaalModel,uppaalReq,options,uppaalTrace);
+	verifyta.generateTrace := true;
+	retcode := verifyta.transform();
+	storeModel(uppaalTrace.rootObjects()->asBag(), "10_UppaalTrace.uppaal");
+	assert fatal (retcode.succeeded()) with log('UPPAAL model checking + trace parsing failed: ' + retcode.raisedException().repr());
+
+	
+
+    // var utraces := uppaalTrace.objects->(uppaal_trace::Trace);
+    var utraces := uppaalTrace.objects()[uppaal_trace::Trace];
+    var unaryProperty := uppaalReq.objects()[uppaal_requirements::UnaryProperty];
+    var binaryProperty := uppaalReq.objects()[uppaal_requirements::BinaryProperty];
+    
+    var quantifier_exists : Boolean := false;
+    var quantifier_forall : Boolean := false;
+    
+    if (unaryProperty->size() = 1) {
+        // log("unary property");
+        if (unaryProperty->any(true).quantifier=uppaal_requirements::PathQuantifier::EXISTS) {
+            // log("exists");
+            quantifier_exists := true;
+        };
+        if (unaryProperty->any(true).quantifier=uppaal_requirements::PathQuantifier::FORALL) {
+            // log("forall");
+            quantifier_forall := true;
+        };
+    };
+    
+    if (binaryProperty->size() = 1) {
+        // log("binary property");
+        quantifier_forall := true;
+    };
+    
+    if (utraces->size() = 1) {
+        var utrace : uppaal_trace::Trace := utraces->any(true);
+        if (utrace._result = uppaal_trace::Result::SUCCESS and quantifier_forall) {
+            assert fatal (false) with log("The selected safety property is fulfilled. Thus, Uppaal cannot produce a trace for a counterexample.");
+        };
+        if (utrace._result = uppaal_trace::Result::FAILURE and quantifier_exists) {
+            assert fatal (false) with log("The selected existential property is NOT fulfilled. Thus, Uppaal cannot produce a trace for reaching this property.");
+        };
+    };
+	
+	// transform the uppaal trace model into the muml trace model
+	var traceTransformation : UPPAALTrace2MUMLTrace = new UPPAALTrace2MUMLTrace(mumlCic, uppaalModel, uppaalTrace, output);
+	retcode := traceTransformation.transform();
+	assert fatal (retcode.succeeded()) with log('Trace reverse transformation failed: ' + retcode.raisedException().repr());
+	
+}

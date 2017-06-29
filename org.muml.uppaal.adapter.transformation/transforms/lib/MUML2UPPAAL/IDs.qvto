@@ -1,0 +1,345 @@
+import transforms.lib.MUML2UPPAAL.Queries;
+import transforms.lib.MUML2UPPAAL.Types;
+import transforms.lib.MUML2UPPAAL.Decls;
+
+library IDs;
+
+modeltype uppaal uses 'http://www.muml.org/uppaal/1.0.0';
+modeltype uppaal_expressions uses uppaal::expressions('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_statements uses uppaal::statements('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_types uses uppaal::types('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_declarations uses uppaal::declarations('http://www.muml.org/uppaal/1.0.0');
+modeltype muml_behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype muml_rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype muml_instance uses pim::instance('http://www.muml.org/pim/1.0.0');
+modeltype actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
+modeltype common uses core::expressions::common('http://www.muml.org/core/1.0.0');
+modeltype expressions uses core::expressions('http://www.muml.org/core/1.0.0');
+modeltype types uses pim::types('http://www.muml.org/pim/1.0.0');
+modeltype storydriven uses 'http://www.muml.org/core/1.0.0';
+modeltype component uses pim::component('http://www.muml.org/pim/1.0.0');
+modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+	/** 
+	 *
+	 * Queries 
+	 *
+	 **/
+	
+
+	query overallNumberOfDiscretePortInstances() : Integer {
+		
+		return assert fatal (false) with log('Should be overridden.')
+	}
+	
+	query overallNumberOfComponentInstances() : Integer {
+	
+		return assert fatal (false) with log('Should be overridden.')
+	}
+	
+	query cicToVerify() : ComponentInstanceConfiguration {
+		return assert fatal (false) with log('Should be overridden.')
+	}
+	
+	query RealtimeStatechart :: belongsToRole() : Boolean {
+		return assert fatal (false) with log('Should never be reached.');
+	}
+	
+	
+	query ComponentInstanceConfiguration :: components() : OrderedSet(Component) {
+		
+		return self.componentInstances->collect(componentType)->asOrderedSet()
+		
+	}
+
+	
+	query ComponentInstanceConfiguration :: discretePorts() : OrderedSet(DiscretePort) {
+		
+		return self.discretePortInstances()
+				->collect(portType.oclAsType(DiscretePort))
+				->asOrderedSet()
+	}
+	
+	
+	query DiscretePortInstance :: getID() : Integer {
+		
+		// the id of a port instance is defined by its unique index
+		var id := cicToVerify().discretePortInstances()->indexOf(self) - 1;
+		
+		assert fatal (not id.oclIsInvalid()) with log("Couldn't determine the ID of the given port instance. Maybe the given instance is part of a multiport?");
+		
+		return id;
+	}
+	
+	
+	query ComponentInstance :: getID() : Integer {
+		
+		// the id of a component instance is defined by its unique index
+		var id := cicToVerify().componentInstances->indexOf(self) - 1;
+		
+		assert fatal (not id.oclIsInvalid()) with log("Couldn't determine the ID of the given component instance.");
+		
+		return id;
+	}
+	
+	
+	query ComponentInstanceConfiguration :: discretePortInstances() : OrderedSet(DiscretePortInstance) {
+		
+		
+		// TODO cache this
+		var pInstances := self.componentInstances
+			->collect(portInstances)
+			->flatten()
+			->select(pi | pi.oclIsKindOf(DiscretePortInstance))
+			->collect(oclAsType(DiscretePortInstance));
+		
+		// sort by name to ensure a reproducible order	
+		return pInstances->asOrderedSet(); 
+	}
+	
+	
+	// returns the index of the buffer to use with the "buffers" array
+	query MessageBuffer :: getBufferIndex() : Integer {
+	
+		return self.discreteInteractionEndpoint.receiverMessageBuffer->indexOf(self) - 1
+		
+	}
+	
+	
+	//Shortcut to "polymorphically" get the instance ID for a discrete port instance or Component instance
+	query EObject :: getInstanceID() : Integer {
+		if (self.oclIsKindOf(DiscretePortInstance)) {
+			return self.oclAsType(DiscretePortInstance).getID();
+		};
+		if (self.oclIsKindOf(ComponentInstance)) {
+			return self.oclAsType(ComponentInstance).getID();
+		};
+		assert fatal (false) with log("Cannot compute instance id for "+self.toString());
+		return null;
+	}
+	
+	
+	/** 
+	 *
+	 * End Queries 
+	 *
+	 **/
+
+	mapping muml_behavior::Variable :: Variable2IDRange() : DeclaredType when {not self.getOwningStatechart().oclIsUndefined()} {
+		
+		init {
+			if(self.isPortOrRoleVariable()) {
+				result := map DiscretePortInstanceType();
+			}
+			else if (self.isComponentVariable()) {
+				result := map ComponentInstanceType();
+			}
+			else 
+				assert fatal (false) with log ("A variable must either be a component or a role variable");
+			
+			
+		}
+		
+	}
+	
+	mapping Clock :: Clock2IDRange() : DeclaredType {
+		
+		init {
+			if(self.isPortOrRoleClock()) {
+				result := map DiscretePortInstanceType();
+			}
+			else {
+				result := map ComponentInstanceType();
+			}			
+		}		
+	}
+	
+	mapping SynchronizationChannel :: SyncChannel2IDRange() : DeclaredType {
+		
+		init {
+			// due to the hierarchy normalization, the distinction between the id range must 
+			// depend on the channel and not its realtimestatechart. So do not use the 
+			// mapping RTSC2IDRange for channels!
+			if(self.isPortOrRoleSyncChannel()) {
+				result := map DiscretePortInstanceType();
+			}
+			else {
+				result := map ComponentInstanceType();
+			};			
+		}
+		
+	}
+	
+	mapping RealtimeStatechart :: RTSC2IDRange() : DeclaredType disjuncts 
+		RealtimeStatechart::RTSC2PortOrRoleIDRange, 
+		RealtimeStatechart::RTSC2ComponentIDRange;
+	
+	mapping RealtimeStatechart :: RTSC2ComponentIDRange() : DeclaredType when {(not self.belongsToRole()) and (self.isComponentStatechart())} {
+		
+		init {
+			
+			result := map ComponentInstanceType()
+			
+		}
+		
+	}
+	
+	mapping RealtimeStatechart :: RTSC2PortOrRoleIDRange() : DeclaredType when {self.belongsToRole()} {
+		
+		init {
+				
+			result := map DiscretePortInstanceType()
+			
+		}
+		
+	}
+
+	mapping RealtimeStatechart :: RTSC2DiscretePortInstanceID() : uppaal_declarations::Parameter {
+		
+		name := 'discretePortInstanceID';
+		
+	}
+	
+	mapping RealtimeStatechart :: RTSC2DiscreteSubPortInstanceID() : uppaal_declarations::Parameter {
+		
+		name := 'discreteSubPortInstanceID';
+		
+	}
+	
+	mapping RealtimeStatechart :: RTSC2ComponentInstanceID() : uppaal_declarations::Parameter {
+		
+		name := 'componentInstanceID';
+		
+	}
+	
+	mapping NumberOfPortInstancesDeclaration() : TypedDeclaration {
+					
+		typeDefinition := object DataPrefixExpression {
+			
+			 prefix := DataVariablePrefix::CONST;
+			 
+			 dataTypeExpression := object IdentifierExpression {
+			 	identifier := INT;
+			 };
+			
+		};
+		
+		elements += map NumberOfDiscretePortInstancesConstant();
+		
+	}
+	
+	mapping NumberOfDiscretePortInstancesConstant() : Variable {
+		
+		name := 'NUM_OF_DISCRETE_PORT_INSTANCES';
+		
+		initializer := object ExpressionInitializer {
+			expression := object LiteralExpression {
+				text := overallNumberOfDiscretePortInstances().repr()
+			}
+		}	
+		
+	}
+	
+	
+	mapping DiscretePortInstanceTypeDeclaration() : TypeDeclaration {
+		
+		typeDefinition := map DiscretePortInstanceRangeSpec();
+		
+		type += map DiscretePortInstanceType();
+				
+	}
+	
+	mapping NumberOfComponentInstancesDeclaration() : TypedDeclaration {
+					
+		typeDefinition := object DataPrefixExpression {
+			
+			 prefix := DataVariablePrefix::CONST;
+			 
+			 dataTypeExpression := object IdentifierExpression {
+			 	identifier := INT;
+			 };
+			
+		};
+		
+		elements += map NumberOfComponentInstancesConstant();
+		
+	}
+	
+	mapping NumberOfComponentInstancesConstant() : Variable {
+		
+		name := 'NUM_OF_COMPONENT_INSTANCES';
+		
+		initializer := object ExpressionInitializer {
+			expression := object LiteralExpression {
+				text := overallNumberOfDiscretePortInstances().repr()
+			}
+		}	
+		
+	}
+	
+	
+	mapping ComponentInstanceTypeDeclaration() : TypeDeclaration {
+		
+		typeDefinition := map ComponentInstanceRangeSpec();
+		
+		type += map ComponentInstanceType();
+				
+	}
+		
+	mapping DiscretePortInstanceType() : DeclaredType {
+					
+		name := "discretePortInstance"
+				
+	}
+	
+	mapping ComponentInstanceType() : DeclaredType {
+					
+		name := "componentInstance"
+
+	}
+	
+	mapping DiscretePortInstanceRangeSpec() : RangeTypeSpecification {
+		
+		bounds := object IntegerBounds {
+			
+			lowerBound := object uppaal_expressions::LiteralExpression {
+				text := 0.repr()
+			};
+			
+			upperBound := object uppaal_expressions::ArithmeticExpression {
+				firstExpr := object uppaal_expressions::IdentifierExpression {
+					identifier := resolveoneIn(NumberOfDiscretePortInstancesConstant, Variable);
+				};
+				operator := ArithmeticOperator::SUBTRACT;
+				secondExpr := object uppaal_expressions::LiteralExpression {
+					text := 1.repr();
+				};
+			}
+			
+		}
+		
+	}
+	
+	mapping ComponentInstanceRangeSpec() : RangeTypeSpecification {
+		
+		bounds := object IntegerBounds {
+			
+			lowerBound := object uppaal_expressions::LiteralExpression {
+				text := 0.repr()
+			};
+			
+			upperBound := object uppaal_expressions::ArithmeticExpression {
+				firstExpr := object uppaal_expressions::IdentifierExpression {
+					identifier := resolveoneIn(NumberOfComponentInstancesConstant, Variable);
+				};
+				operator := ArithmeticOperator::SUBTRACT;
+				secondExpr := object uppaal_expressions::LiteralExpression {
+					text := 1.repr();
+				};
+			}
+			
+		}
+		
+	}
+	

@@ -1,0 +1,315 @@
+import transforms.lib.UPPAAL2MUML.TraceQueriesAndHelpers;
+import org.muml.uppaal.adapter._blackbox.ProgressUnit;
+
+transformation UPPAALTrace2MUMLTrace(in cicModel:muml, in uppaalModel:uppaal, in input:uppaal_trace, out output:reachability_rtsc);
+
+modeltype uppaal_trace uses 'http://www.muml.org/uppaal/trace/1.0.0';
+modeltype reachability uses 'http://www.muml.org/core/reachabilitygraph/1.0.0';
+modeltype reachability_rtsc uses 'http://www.muml.org/verification/core/reachanalysis/reachabilitygraph/rtsc/1.0.0';
+modeltype muml_runtime uses 'http://www.muml.org/verification/core/runtime/1.0.0';
+modeltype uppaal_templates uses uppaal::templates('http://www.muml.org/uppaal/1.0.0');
+modeltype muml_rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype muml_proto uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype muml_behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype muml_types uses pim::types('http://www.muml.org/pim/1.0.0');
+modeltype muml_instance uses pim::instance('http://www.muml.org/pim/1.0.0');
+modeltype muml_connector uses pim::connector('http://www.muml.org/pim/1.0.0');
+modeltype muml_component uses pim::component('http://www.muml.org/pim/1.0.0');
+modeltype muml uses 'http://www.muml.org/pim/1.0.0';
+modeltype uppaal uses 'http://www.muml.org/uppaal/1.0.0';
+modeltype uppaal_expressions uses uppaal::expressions('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_declarations_system uses uppaal::declarations::system('http://www.muml.org/uppaal/1.0.0');
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
+modeltype uppaal_types uses uppaal::types('http://www.muml.org/uppaal/1.0.0');
+modeltype reachability_cic uses 'http://www.muml.org/verification/core/reachanalysis/reachabilitygraph/cic/1.0.0';
+modeltype verification_extension uses 'http://www.muml.org/uppaal/adapter/extension/verificationextension/1.0.0';
+
+
+main() {
+	reportProgress("Translating Uppaal Trace to MechatronicUML Trace");
+
+	inputVertices := cicModel.objects()[muml_rtsc::Vertex];
+	inputTransitions := cicModel.objects()[muml_rtsc::Transition];
+	uppaalVariables := uppaalModel.objects()[uppaal::declarations::Variable];
+	inputPortInstances := cicModel.objects()[pim::instance::DiscretePortInstance];
+	inputComponentInstances := cicModel.objects()[pim::instance::ComponentInstance];
+	
+	input.objects()[Trace]->map Trace2ReachabilityGraph();
+}
+
+mapping Trace :: Trace2ReachabilityGraph() : ZoneGraph {
+	
+	states += self.traceItems->map TraceItem2ReachabilityGraphState();
+	
+	transitions += 
+		self.traceItems->collect(t | 
+			t.map TraceItem2ReachabilityGraphTransition(
+				self.traceItems->at(self.traceItems->indexOf(t)-1).oclAsType(uppaal_trace::State),
+				self.traceItems->at(self.traceItems->indexOf(t)+1).oclAsType(uppaal_trace::State)
+			)
+		);
+}
+
+////////////////////////////////////
+///// Create Trace States
+////////////////////////////////////
+
+mapping TraceItem :: TraceItem2ReachabilityGraphState() : ReachabilityGraphState disjuncts State::State2CICZoneGraphState;
+
+mapping uppaal_trace::State :: State2CICZoneGraphState() : CICZoneGraphState {
+
+	locations += self.locationActivities->map LocationActivity2RTSCInstance(self)->asOrderedSet();
+	
+	locations->forEach(rtscInstance) {
+		
+		rtscInstance.subRealtimeStatechartInstances += locations->select(candidate | rtscInstance.isParentInstanceOf(candidate));
+	};
+
+	
+	containedToplevelStatechartInstances += locations->select(parentRealtimeStatechartInstance = null);
+	
+	cic := cicModel.objects()[pim::instance::ComponentInstanceConfiguration]->select(cic | cic.extensions->exists(oclIsKindOf(ElementToVerifyExtension)))->any(true).map CIC2RuntimeCIC(self);
+	
+	var runtimePortInstances := cic.oclAsType(ComponentInstanceConfiguration)->closure(oclAsType(ecore::EObject).eContents())[RuntimeDiscretePortInstance]->asOrderedSet();
+	var runtimeComponentInstances := cic.oclAsType(ComponentInstanceConfiguration)->closure(oclAsType(ecore::EObject).eContents())[RuntimeComponentInstance]->asOrderedSet();
+	
+	locations.setBehavioralElement(runtimePortInstances, runtimeComponentInstances);
+}
+
+////////////////////////////////////
+///// Create Trace State
+///// 	Create RTSCInstances
+////////////////////////////////////
+
+mapping LocationActivity :: LocationActivity2RTSCInstance(diagState : uppaal_trace::State) : RealtimeStatechartInstance
+when {not self.location.getRTSCVertex().oclIsUndefined() or not self.location.getRTSCTransition().oclIsUndefined()}
+{	
+	assert (self.location.getRTSCVertex().oclIsUndefined() or self.location.getRTSCTransition().oclIsUndefined()) with log ('Location '+self.toString()+' is mapped to State and to Transition');
+	
+	if(not self.location.getRTSCVertex().oclIsUndefined()){
+		activeVertex := self.location.getRTSCVertex();
+		if(activeVertex.oclIsKindOf(muml_rtsc::State))
+			instanceOf := activeVertex.oclAsType(muml_rtsc::State).parentStatechart;
+		if(activeVertex.oclIsKindOf(muml_rtsc::StateConnectionPoint))
+			instanceOf := activeVertex.oclAsType(Vertex).oclAsType(ecore::EObject).eContainer().oclAsType(muml_rtsc::State).parentStatechart;
+	};
+	
+	if(not self.location.getRTSCTransition().oclIsUndefined()){
+		activeTransition := self.location.getRTSCTransition();
+		instanceOf := activeTransition.statechart;
+	}; 
+	
+	// only map non-constant variables as constant variables are not in uppaals trace
+	// TODO maybe add constant variables to the list of variable bindings to inform the user about the values.	
+	var RtscVars : OrderedSet(pim::behavior::Variable) := instanceOf.oclAsType(RealtimeStatechart).variables;
+
+	variableBindings := RtscVars.map createVariableBinding(diagState, self.process.template.oclAsType(RedefinedTemplate).declaration.getInstanceID());
+	
+	//Create extension representing the current values of the Rtsc's clocks, if there are any clocks
+	if(instanceOf.oclAsType(RealtimeStatechart).clocks->size()>0)
+		extensions := object ClockBindingsExtension{
+			instanceOf.clocks->forEach(clock){
+				clockBindings += clock.map createClockBinding(diagState, self.process.template.oclAsType(RedefinedTemplate).declaration.getInstanceID());
+			};
+		};
+}
+
+
+	
+mapping Variable:: createVariableBinding(diagState : uppaal_trace::State, instanceID : Integer) : VariableBinding{
+	variable := self;
+	//Looks odd to use a setter but has to be done due to the blackbox implementation setting array values
+	self.setVariableValue(result, diagState, instanceID);
+}
+
+
+mapping Clock :: createClockBinding(diagState : uppaal_trace::State, instanceID: Integer) : ClockBinding{
+	
+	clock := self;
+	
+	var parentIndexes : Sequence(Integer);
+	parentIndexes += instanceID;
+	
+	var fittingValues : OrderedSet(VariableValue) := self.getUppaalVariable().getVariableValue(diagState, parentIndexes, null);
+	
+	assert fatal (fittingValues->size() > 0) with log("Could not find a clock value for clock "+self.toString()+" in trace");
+	
+	if(fittingValues ->size() > 1)
+			assert warning (false) with log("Found more than one clock value ("+fittingValues->size().toString()+ ") for clock "+self.toString()+" in trace");
+	
+	//TODO see https://trac.cs.upb.de/mechatronicuml/ticket/1135
+	value :=  fittingValues->first().value;
+	//value :=  fittingValues->select(value >= 0)->sortedBy(value)->last().value;
+}
+
+////////////////////////////////////
+///// Create Trace State
+///// 	Create CIC
+////////////////////////////////////
+//use the diagState as parameter to create one CIC per CIC-state
+mapping ComponentInstanceConfiguration :: CIC2RuntimeCIC(diagState :uppaal_trace::State) : ComponentInstanceConfiguration{
+	name := self.name;
+	
+	componentInstances := self.componentInstances.map ComponentInstance2RuntimeComponentInstance(diagState);
+
+	portConnectorInstances := self.portConnectorInstances.map PortConnectorInstance2RuntimePortConnectorInstance(diagState);
+}
+
+mapping ComponentInstance :: ComponentInstance2RuntimeComponentInstance(diagState :uppaal_trace::State) : RuntimeComponentInstance disjuncts 
+AtomicComponentInstance::AtomicComponentInstance2RuntimeAtomicComponentInstance,
+ StructuredComponentInstance::StructuredComponentInstance2RuntimeStructuredComponentInstance;
+
+mapping AtomicComponentInstance :: AtomicComponentInstance2RuntimeAtomicComponentInstance(diagState :uppaal_trace::State) : RuntimeComponentInstance{
+	_name := self._name;
+    _componentType := self._componentType;
+    _portInstances := self._portInstances->select(oclIsKindOf(DiscretePortInstance)).oclAsType(DiscretePortInstance).map DiscretePortInstance2RuntimeDiscretePortInstance(diagState);
+    _componentPart := self._componentPart;
+    _parentCIC := self._parentCIC.map CIC2RuntimeCIC(diagState);
+}
+
+mapping StructuredComponentInstance :: StructuredComponentInstance2RuntimeStructuredComponentInstance(diagState :uppaal_trace::State) : RuntimeComponentInstance{
+	assert fatal(false) with log ('UppaalTrace2MumlTrace does not support StructuredComponentInstance\'s at the moment');
+}
+
+mapping DiscreteInteractionEndpointInstance :: DiscreteInteractionEndpointInstance2RuntimeDiscreteInteractionEndpointInstance(diagState :uppaal_trace::State) : RuntimeDiscreteInteractionEndpointInstance disjuncts
+DiscretePortInstance :: DiscretePortInstance2RuntimeDiscretePortInstance,
+ DiscreteInteractionEndpointInstance :: failOnUnsupportedExpressionDiscreteInteractionEndpointInstance;
+
+mapping DiscreteInteractionEndpointInstance :: failOnUnsupportedExpressionDiscreteInteractionEndpointInstance(diagState :uppaal_trace::State) : RuntimeDiscreteInteractionEndpointInstance{
+	init{
+		assert fatal (false) with log(self.oclAsType(ecore::EObject).eClass().toString()+" is not supported by UPPAALTrace2MUMLTrace transformation");
+	}
+	
+}
+
+mapping DiscreteSingleInteractionEndpointInstance :: DiscreteSingleInteractionEndpointInstance2RuntimeDiscreteSingleInteractionEndpointInstance(diagState :uppaal_trace::State) : DiscreteSingleInteractionEndpointInstance disjuncts
+DiscreteSinglePortInstance::DiscreteSinglePortInstance2RuntimeDiscreteSinglePortInstance,
+ DiscreteSingleInteractionEndpointInstance :: failOnUnsupportedDiscreteSingleInteractionEndpointInstance;
+
+
+mapping DiscreteSingleInteractionEndpointInstance :: failOnUnsupportedDiscreteSingleInteractionEndpointInstance(diagState :uppaal_trace::State) : DiscreteSingleInteractionEndpointInstance{
+	init{
+		assert fatal (false) with log(self.oclAsType(ecore::EObject).eClass().toString()+" is not supported by UPPAALTrace2MUMLTrace transformation");
+	}
+	
+}
+
+mapping DiscreteMultiInteractionEndpointInstance :: DiscreteMultiInteractionEndpointInstance2RuntimeDiscreteMultiInteractionEndpointInstance(diagState :uppaal_trace::State) : DiscreteMultiInteractionEndpointInstance disjuncts
+DiscreteMultiPortInstance::DiscreteMultiPortInstance2RuntimeMultiPortInstance,
+ DiscreteMultiInteractionEndpointInstance :: failOnUnsupportedDiscreteMultiInteractionEndpointInstance;
+
+
+mapping DiscreteMultiInteractionEndpointInstance :: failOnUnsupportedDiscreteMultiInteractionEndpointInstance(diagState :uppaal_trace::State) : DiscreteMultiInteractionEndpointInstance{
+	init{
+		assert fatal (false) with log(self.oclAsType(ecore::EObject).eClass().toString()+" is not supported by UPPAALTrace2MUMLTrace transformation");
+	}
+	
+}
+
+mapping DiscretePortInstance :: DiscretePortInstance2RuntimeDiscretePortInstance(diagState :uppaal_trace::State) : RuntimeDiscretePortInstance disjuncts 
+DiscreteMultiPortInstance::DiscreteMultiPortInstance2RuntimeMultiPortInstance,
+ DiscreteSinglePortInstance::DiscreteSinglePortInstance2RuntimeDiscreteSinglePortInstance;
+
+mapping DiscreteMultiPortInstance :: DiscreteMultiPortInstance2RuntimeMultiPortInstance(diagState :uppaal_trace::State) : RuntimeDiscreteMultiPortInstance{
+	_name := self._name;
+   	_comment := self._comment;
+   	connectorInstances += self.connectorInstances.map ConnectorInstance2RuntimeConnectorInstance(diagState);	    			
+   	_type := self._type;
+    _componentInstance := self._componentInstance.map ComponentInstance2RuntimeComponentInstance(diagState);
+    _subInteractionEndpointInstances := self._subInteractionEndpointInstances.map DiscreteSingleInteractionEndpointInstance2RuntimeDiscreteSingleInteractionEndpointInstance(diagState);
+    _first := self._first.map DiscreteSingleInteractionEndpointInstance2RuntimeDiscreteSingleInteractionEndpointInstance(diagState);
+    _last := self._last.map DiscreteSingleInteractionEndpointInstance2RuntimeDiscreteSingleInteractionEndpointInstance(diagState);
+}
+
+mapping DiscreteSinglePortInstance :: DiscreteSinglePortInstance2RuntimeDiscreteSinglePortInstance(diagState :uppaal_trace::State) : RuntimeDiscreteSinglePortInstance{
+	_name := self._name;
+    _comment := self._comment;
+
+   	_type := self._type;
+   //	_componentInstance := self._componentInstance.map ComponentInstance2RuntimeComponentInstance(diagState);
+   	_multiInteractionEndpointInstance := self._multiInteractionEndpointInstance.map DiscreteMultiInteractionEndpointInstance2RuntimeDiscreteMultiInteractionEndpointInstance(diagState);
+   	_next := self._next.map DiscreteSingleInteractionEndpointInstance2RuntimeDiscreteSingleInteractionEndpointInstance(diagState);
+   	_previous := self._previous.map DiscreteSingleInteractionEndpointInstance2RuntimeDiscreteSingleInteractionEndpointInstance(diagState);
+   	
+   	assert fatal (self.portType.oclIsKindOf(DiscretePort)) with log ("DiscreteSinglePortInstance "+self.toString()+" has no DiscretePort as portType");
+    messageBuffer := self.portType.oclAsType(pim::component::DiscretePort).receiverMessageBuffer.map MessageBuffer2RuntimeMessageBuffer(diagState, self);
+}
+
+mapping ConnectorInstance :: ConnectorInstance2RuntimeConnectorInstance(diagState :uppaal_trace::State) : ConnectorInstance disjuncts
+PortConnectorInstance::PortConnectorInstance2RuntimePortConnectorInstance,
+ ConnectorInstance :: failOnUnsupportedConnectorInstance;
+	
+mapping ConnectorInstance :: failOnUnsupportedConnectorInstance(diagState :uppaal_trace::State) : ConnectorInstance{
+	init{
+		assert fatal (false) with log(self.oclAsType(ecore::EObject).eClass().toString()+" is not supported by UPPAALTrace2MUMLTrace transformation");
+	}
+	
+}
+ 
+mapping PortConnectorInstance :: PortConnectorInstance2RuntimePortConnectorInstance(diagState :uppaal_trace::State) : PortConnectorInstance disjuncts
+AssemblyConnectorInstance::AssemblyConnectorInstance2RuntimeAssemblyConnectorInstance,
+ DelegationConnectorInstance::DelegationConnectorInstance2RuntimeDelegationConnectorInstance;
+
+mapping AssemblyConnectorInstance :: AssemblyConnectorInstance2RuntimeAssemblyConnectorInstance(diagState :uppaal_trace::State) : RuntimeAssemblyConnectorInstance{
+	_comment := self._comment;
+    _type := self._type;
+    _connectorEndpointInstances := self._connectorEndpointInstances->select(oclIsKindOf(DiscreteInteractionEndpointInstance))
+    									.oclAsType(DiscreteInteractionEndpointInstance)
+    									 .map DiscreteInteractionEndpointInstance2RuntimeDiscreteInteractionEndpointInstance(diagState);
+	
+	var firstRuntimePort := self._connectorEndpointInstances->first().oclAsType(DiscreteInteractionEndpointInstance)
+    									 .map DiscreteInteractionEndpointInstance2RuntimeDiscreteInteractionEndpointInstance(diagState)
+    									  .oclAsType(RuntimeDiscretePortInstance);
+	var secondRuntimePort := self._connectorEndpointInstances->last().oclAsType(DiscreteInteractionEndpointInstance)
+    									 .map DiscreteInteractionEndpointInstance2RuntimeDiscreteInteractionEndpointInstance(diagState)
+    									   .oclAsType(RuntimeDiscretePortInstance);
+	
+   	transientMessages +=  firstRuntimePort.createMessagesOnConnectorForSender(diagState, self._connectorEndpointInstances->first().oclAsType(DiscretePortInstance), secondRuntimePort);
+   		
+    transientMessages +=  secondRuntimePort.createMessagesOnConnectorForSender(diagState, self._connectorEndpointInstances->last().oclAsType(DiscretePortInstance), firstRuntimePort);
+    
+}
+
+mapping DelegationConnectorInstance :: DelegationConnectorInstance2RuntimeDelegationConnectorInstance(diagState :uppaal_trace::State) : AssemblyConnectorInstance{
+	assert fatal(false) with log('UppaalTrace2MumlTrace does not support DelegationConnectorInstance\'s at the moment');
+}
+
+////////////////////////////////////
+///// Create Trace State
+/////	Create CIC
+///// 		Message(Buffer) Specifics
+////////////////////////////////////
+mapping MessageBuffer :: MessageBuffer2RuntimeMessageBuffer(diagState : uppaal_trace::State, instance : DiscretePortInstance) : RuntimeMessageBuffer{
+	messages := self.createRuntimeMessages(diagState, instance);
+	runtimeBehavioralElement := instance.map DiscretePortInstance2RuntimeDiscretePortInstance(diagState);
+	messageBuffer := self;
+}
+
+////////////////////////////////////
+///// Create Trace Transitions
+////////////////////////////////////
+mapping TraceItem :: TraceItem2ReachabilityGraphTransition(src : uppaal_trace::State, trg : uppaal_trace::State) : ReachabilityGraphTransition disjuncts
+uppaal_trace::ActionTransition::ActionTransition2ZoneGraphTransition,
+ uppaal_trace::DelayTransition::DelayTransition2DelayTransition;
+
+mapping uppaal_trace::ActionTransition :: ActionTransition2ZoneGraphTransition(src : uppaal_trace::State, trg : uppaal_trace::State) : ZoneGraphTransition {
+	
+	//TODO in Muml2Uppaal Transitions are currently mapped to intermediate states, this enables to correctly identify 
+	//which Transition fired for a certain state change. For Edges this is not that easy,
+	// because they have no names and therefore can not be parsed to a corresponding Transiton by XText.
+	//This is why we currently not set the firedRTSCTransitions reference
+	--firedRTSCTransitions += self.edgeActivities.getRTSCTransition(inputStates);
+	
+	source := src.map State2CICZoneGraphState();
+	target := trg.map State2CICZoneGraphState();
+		
+}
+
+
+mapping uppaal_trace::DelayTransition :: DelayTransition2DelayTransition(src : uppaal_trace::State, trg : uppaal_trace::State) : reachability_rtsc::DelayTransition {
+
+	source := src.map State2CICZoneGraphState();
+	target := trg.map State2CICZoneGraphState();
+
+}

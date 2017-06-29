@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MtctlEnglish
+Bundle-SymbolicName: org.muml.uppaal.adapter.mtctl.english
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.xtend.lib,
+ com.google.guava,
+ org.eclipse.xtext.xbase.lib,
+ org.muml.uppaal.adapter.mtctl,
+ org.muml.uppaal.adapter.mtctl.xtext,
+ org.muml.pim.common
+Export-Package: org.muml.uppaal.adapter.mtctl.english
+

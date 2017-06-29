@@ -1,0 +1,121 @@
+import org.muml.ImplicitCopy;
+import transforms.lib.RTSCUtil;
+import transforms.lib.MultiMappingUtil;
+
+modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype verificationExtension uses 'http://www.muml.org/uppaal/adapter/extension/verificationextension/1.0.0';
+modeltype modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
+
+-- we assume the absence of entry/exit points
+-- TODO add explicit precondition
+/**
+* Move entry/exit events of a state to incoming/outgoing transitions
+*/
+transformation RTSCEntryExitEventNormalization(in input:rtsc, out output:rtsc);
+
+
+	main() {
+		assert fatal (input.objects()[Transition]->forAll(t | not t.source.isCompositeState() and not t.target.isCompositeState())) with log("Composite transitions unsupported here.");
+		assert fatal (input.objects()[EntryPoint]->isEmpty() and input.objects()[ExitPoint]->isEmpty());
+
+	
+		input.objects()[RootNode]->map transform().oclAsType(RootNode);
+		
+	}
+
+		//Transition2Transition
+		mapping Transition :: transform() : Transition {
+		
+		source := self.source.map transform().oclAsType(Vertex);
+		target := self.target.map transform().oclAsType(Vertex);
+
+		assert fatal (source != null) with log('Source state must be specified.');
+		assert fatal (target != null) with log('Target state must be specified.');
+
+
+		priority := self.priority;
+		
+		synchronization := self.synchronization.map transform().oclAsType(Synchronization);
+		
+		clockResets += self.source.getDeactivatedState().exitEvent.clockResets->map transform().oclAsType(Clock);				
+		clockResets += self.clockResets->map transform().oclAsType(Clock);
+		clockResets += self.target.getActivatedState().entryEvent.clockResets->map transform().oclAsType(Clock);
+		
+		clockConstraints := self.clockConstraints->map transform().oclAsType(ClockConstraint);
+		
+		absoluteDeadlines := self.absoluteDeadlines->map transform().oclAsType(AbsoluteDeadline);
+		
+		relativeDeadline := self.relativeDeadline.map transform().oclAsType(RelativeDeadline);
+		
+		blockable := self.blockable;
+		
+		guard := self.guard.map transform().oclAsType(core::expressions::Expression);
+		
+		events := self.events->map transform().oclAsType(TransitionEvent);
+		
+		action := self.source.getDeactivatedState().exitEvent.action.mapAction();
+	
+		if (action = null) 
+		then {
+			action := self.action.map transform().oclAsType(Action);
+		}
+		else {
+			if(not self.action.oclIsUndefined() and self.action!= null)
+			then{
+				action.name := action.name + " + " + self.action.name;
+				action.expressions += self.action.expressions->map transform().oclAsType(core::expressions::Expression);
+				}
+			endif;
+		}
+		endif;
+		
+		if (action = null) 
+		then {
+			action := self.target.getActivatedState().entryEvent.action.mapAction();	
+		}
+		else {
+			if(not self.target.getActivatedState().entryEvent.action.oclIsUndefined() and self.target.getActivatedState().entryEvent.action.oclIsUndefined()!=null)
+			then{
+				action.name := action.name + " + " + self.target.getActivatedState().entryEvent.action.name;
+				action.expressions += self.target.getActivatedState().entryEvent.action.expressions->mapExpression();
+			}
+			endif;
+		}
+		endif;
+		
+		urgent := self.urgent;
+	}
+	
+	
+	//State2State
+	mapping State :: transform() : State {
+		name := self.name;
+		
+		outgoingTransitions := self.outgoingTransitions-> map transform().oclAsType(Transition);
+		incomingTransitions := self.incomingTransitions -> map transform().oclAsType(Transition);
+		
+		invariants := self.invariants->map transform().oclAsType(ClockConstraint);
+		
+		initial := self.initial;
+		final := self.final;
+		urgent := self.urgent;
+		
+		channels := self.channels-> map transform().oclAsType(SynchronizationChannel);
+		embeddedRegions := self.embeddedRegions-> map transform().oclAsType(Region);
+		
+		--do not create entry/exit events, these are added to the transitions in Transition2Transition
+		
+		doEvent := self.doEvent.map transform().oclAsType(DoEvent);
+		
+		--in the context of the MUML2UPPAAL transformation chain there shouldn't be any connection points in the models at this time
+		--however, we copy these if the transformation is called in a different context
+		connectionPoints := self.connectionPoints[EntryPoint]->map transform().oclAsType(EntryPoint);
+		connectionPoints := self.connectionPoints[ExitPoint]->map transform().oclAsType(ExitPoint);
+		
+		extensions := self.extensions[CommittedExtension]->map transform().oclAsType(CommittedExtension);
+		
+	
+	}
+	
+	

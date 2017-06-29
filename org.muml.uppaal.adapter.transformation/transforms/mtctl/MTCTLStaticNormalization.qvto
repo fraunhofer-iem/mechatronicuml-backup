@@ -1,0 +1,454 @@
+import org.muml.ImplicitCopy;
+import org.muml.uppaal.adapter._blackbox.TimeLibUnit;
+
+modeltype muml_protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype mumlConstraint uses pim::constraint('http://www.muml.org/pim/1.0.0');
+modeltype behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
+modeltype msgtype uses pim::msgtype('http://www.muml.org/pim/1.0.0');
+modeltype mumlinstance uses pim::instance('http://www.muml.org/pim/1.0.0');
+modeltype mumlvaluetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
+
+modeltype mtctl uses 'http://www.muml.org/uppaal/adapter/mtctl/1.0.0';
+modeltype mtctlQuantifiers uses mtctl::quantifiers('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlPredicates uses mtctl::predicates('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlSets uses mtctl::sets('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlBooleanLogic uses mtctl::booleanlogic('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlComparables uses mtctl::comparables('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+//Replaces all statically defined Predicates/MapExpressions with their actual values and vastly simplifies logical expressions
+transformation MTCTLStaticNormalization(in input:muml_protocol, out output:muml_protocol){ //extends library MUML2MUML;
+
+main() {
+	input.objects()[RootNode]->map transform();
+}
+
+//Overridden from MUML2MUML
+//Property2Property
+mapping mtctl::Property :: transform() : Property {
+	comment := self.comment;
+	
+	expression := self.expression.map transform().oclAsType(Expression);
+}
+
+//Overridden from MUML2MUML: check if we should apply one of our mappings here, otherwise fall back to a simple copying map
+//mapping mtctl::Expression :: Expression2Expression() : mtctl::Expression disjuncts 
+//	Expression::Expression2False, //Try to reduce the expression to "false"
+//	Expression::Expression2True, //Try to reduce the expression to "true"
+//	AndExpr::BinaryBoolOp2SingleOpd,
+//	OrExpr::BinaryBoolOp2SingleOpd,
+//	ImplyExpr::BinaryBoolOp2SingleOpd, //Try to reduce unnecessary lhs/rhs in these boolean operators that cannot be completely reduced to true/false
+//	SourceStateExpr::SourceStateExpr2MumlElemExpr,
+//	TargetStateExpr::TargetStateExpr2MumlElemExpr, //try to statically evaluate map expressions
+//	mtctl::sets::SubinstanceSetExpr::SubinstanceSetExpr2SubinstanceSetExpr,
+//	mtctl::sets::InstanceSetExpr::InstanceSetExpr2InstanceSetExpr,
+//	mtctl::predicates::SubstateOfExpr::SubstateOfExpr2SubstateOfExpr,
+//	mtctl::sets::TransitionSetExpr::TransitionSetExpr2TransitionSetExpr,
+//	mtctl::quantifiers::LeadsToExpr::LeadsToExpr2LeadsToExpr,
+//	mtctl::booleanlogic::ImplyExpr::ImplyExpr2ImplyExpr,
+//	mtctl::quantifiers::EFExpr::EFExpr2EFExpr,
+//	mtctl::quantifiers::QuantifierExpr::QuantifierExpr2QuantifierExpr,
+//	mtctl::predicates::DynamicPredicateExpr::DynamicPredicateExpr2DynamicPredicateExpr,
+//	mtctl::sets::ClockSetExpr::ClockSetExpr2ClockSetExpr,
+//	mtctl::sets::StateSetExpr::StateSetExpr2StateSetExpr,
+//	mtctl::predicates::FalseExpr::FalseExpr2FalseExpr,
+//	mtctl::quantifiers::TemporalQuantifierExpr::TemporalQuantifierExpr2TemporalQuantifierExpr,
+//	mtctl::comparables::TargetStateExpr::TargetStateExpr2TargetStateExpr,
+//	mtctl::predicates::StateActiveExpr::StateActiveExpr2StateActiveExpr,
+//	mtctl::quantifiers::BoundVariable::BoundVariable2BoundVariable,
+//	mtctl::booleanlogic::NotExpr::NotExpr2NotExpr,
+//	mtctl::quantifiers::EGExpr::EGExpr2EGExpr,
+//	mtctl::predicates::ComparisonExpr::ComparisonExpr2ComparisonExpr,
+//	mtctl::sets::MessageSetExpr::MessageSetExpr2MessageSetExpr,
+//	mtctl::booleanlogic::AndExpr::AndExpr2AndExpr, 
+//	mtctl::comparables::MapExpr::MapExpr2MapExprWorkaround,
+//	mtctl::quantifiers::AGExpr::AGExpr2AGExpr,
+//	mtctl::quantifiers::UniversalQuantExpr::UniversalQuantExpr2UniversalQuantExpr,
+//	mtctl::quantifiers::AFExpr::AFExpr2AFExpr,
+//	mtctl::sets::IntervalSetExpr::IntervalSetExpr2IntervalSetExpr,
+//	mtctl::booleanlogic::OrExpr::OrExpr2OrExpr,
+//	mtctl::comparables::BufferMsgCountExpr::BufferMsgCountExpr2BufferMsgCountExpr,
+//	mtctl::comparables::SourceStateExpr::SourceStateExpr2SourceStateExpr,
+//	mtctl::comparables::TransitionMap::TransitionMap2TransitionMap,
+//	mtctl::predicates::TransitionFiringExpr::TransitionFiringExpr2TransitionFiringExpr,
+//	mtctl::predicates::TrueExpr::TrueExpr2TrueExpr,
+//	mtctl::predicates::MessageInBufferExpr::MessageInBufferExpr2MessageInBufferExpr,
+//	mtctl::comparables::MumlElemExpr::MumlElemExpr2MumlElemExpr,
+//	mtctl::sets::BufferSetExpr::BufferSetExpr2BufferSetExpr,
+//	mtctl::predicates::MessageInTransitExpr::MessageInTransitExpr2MessageInTransitExpr,
+//	mtctl::predicates::ConnectorOverflowExpr::ConnectorOverflowExpr2ConnectorOverflowExpr,
+//	mtctl::predicates::StaticPredicateExpr::StaticPredicateExpr2StaticPredicateExpr,
+//	mtctl::predicates::PredicateExpr::PredicateExpr2PredicateExpr,
+//	mtctl::predicates::DeadlockExpr::DeadlockExpr2DeadlockExpr,
+//	mtctl::quantifiers::ExistenceQuantExpr::ExistenceQuantExpr2ExistenceQuantExpr,
+//	mtctl::comparables::ConstExpr::ConstExpr2ConstExpr,
+//	mtctl::sets::SetExpr::SetExpr2SetExpr; //Fallback: copy
+
+helper Expression :: toLiteral() : Expression {
+	if (self.evaluateToBoolean() = true) {
+			return object TrueExpr {}; 
+	}
+	elif (self.evaluateToBoolean() = false) {
+		return object FalseExpr {};
+	};
+	
+	return null;	
+}
+
+mapping AGExpr :: transform() : Expression {
+	init {
+		result := self.toLiteral();
+		
+		if (result.oclIsUndefined()) {
+			result := object AGExpr {
+				expr := self.expr.map transform().oclAsType(Expression);
+			}	
+		}
+	}
+}
+
+mapping AFExpr :: transform() : Expression {
+	init {
+		result := self.toLiteral();
+		
+		if (result.oclIsUndefined()) {
+			result := object AFExpr {
+				expr := self.expr.map transform().oclAsType(Expression);
+			}	
+		}
+	}
+}
+
+mapping EGExpr :: transform() : Expression {
+	init {
+		result := self.toLiteral();
+		
+		if (result.oclIsUndefined()) {
+			result := object EGExpr {
+				expr := self.expr.map transform().oclAsType(Expression);
+			}	
+		}
+	}
+}
+
+mapping EFExpr :: transform() : Expression {
+	init {
+		result := self.toLiteral();
+		
+		if (result.oclIsUndefined()) {
+			result := object EFExpr {
+				expr := self.expr.map transform().oclAsType(Expression);
+			}	
+		}
+	}
+}
+
+mapping LeadsToExpr :: transform() : Expression {
+	init {
+		result := self.toLiteral();
+		
+		if (result.oclIsUndefined()) {
+			result := object LeadsToExpr {
+				leftOpd := self.leftOpd.map transform().oclAsType(Expression);
+				rightOpd := self.rightOpd.map transform().oclAsType(Expression);
+			}	
+		}
+	}
+}
+
+mapping NotExpr :: transform() : Expression {
+	init {
+		result := self.toLiteral();
+		
+		if (result.oclIsUndefined()) {
+			result := object NotExpr {
+				opd := self.opd.map transform().oclAsType(Expression);
+			}	
+		}
+	}
+}
+
+mapping AndExpr :: transform() : Expression {
+	init {
+		result := self.toLiteral();
+		
+		if (result.oclIsUndefined()) {
+			if(self.leftOpd.evaluateToBoolean()=true or self.rightOpd.evaluateToBoolean()=true) {
+				result := self.map BinaryBoolOp2SingleOpd();
+			};
+			
+			
+			result := object AndExpr {
+				leftOpd := self.leftOpd.map transform().oclAsType(Expression);
+				rightOpd := self.rightOpd.map transform().oclAsType(Expression);
+			}	
+		}
+	}
+}
+
+mapping ImplyExpr :: transform() : Expression {
+	init {
+		result := self.toLiteral();
+		
+		if (result.oclIsUndefined()) {
+		
+			if(self.leftOpd.evaluateToBoolean()=true) {
+				self.map BinaryBoolOp2SingleOpd();
+			};
+		
+			result := object ImplyExpr {
+				leftOpd := self.leftOpd.map transform().oclAsType(Expression);
+				rightOpd := self.rightOpd.map transform().oclAsType(Expression);
+			}	
+		}
+	}
+}
+
+mapping OrExpr :: transform() : Expression {
+	init {
+		result := self.toLiteral();
+		
+		if (result.oclIsUndefined()) {
+		
+			if (self.leftOpd.evaluateToBoolean()=false or self.rightOpd.evaluateToBoolean()=false) {
+				result := self.map BinaryBoolOp2SingleOpd();
+			};
+					
+			result := object OrExpr {
+				leftOpd := self.leftOpd.map transform().oclAsType(Expression);
+				rightOpd := self.rightOpd.map transform().oclAsType(Expression);
+			}	
+		}
+	}
+}
+
+mapping SubstateOfExpr :: transform() : Expression {
+	init {
+		result := self.toLiteral();
+		
+		if (result.oclIsUndefined()) {
+			result := object SubstateOfExpr {
+				superstate := self.superstate.map transform().oclAsType(MapExpr);
+				state := self.state.map transform().oclAsType(MapExpr);
+			}	
+		}
+	}
+}
+
+mapping StateInStatechartExpr :: transform() : Expression {
+	init {
+		result := self.toLiteral();
+		
+		if (result.oclIsUndefined()) {
+			result := object StateInStatechartExpr {
+				state := self.state.map transform().oclAsType(MapExpr);
+				statechart := self.statechart.map transform().oclAsType(MapExpr);
+			}	
+		}
+	}
+}
+
+mapping ComparisonExpr :: transform() : Expression {
+	init {
+		result := self.toLiteral();
+		
+		if (result.oclIsUndefined()) {
+			result := object ComparisonExpr {
+				lhs := self.lhs.map transform().oclAsType(MapExpr);
+				op := self.op;
+				rhs := self.rhs.map transform().oclAsType(MapExpr);
+			}	
+		}
+	}
+}
+
+mapping SourceStateExpr :: transform() : mtctl::Expression {
+	init {
+		if(self.transition.getStaticValue() != null)
+		then {
+			result := self.map SourceStateExpr2MumlElemExpr();
+		}
+		else {
+			result := object SourceStateExpr {
+				transition := self.transition.map transform().oclAsType(MapExpr);
+			};
+		}
+		endif;
+	}
+}
+
+mapping TargetStateExpr :: transform() : mtctl::Expression {
+	init {
+		if(self.transition.getStaticValue() != null)
+		then {
+			result := self.map TargetStateExpr2MumlElemExpr();
+		}
+		else {
+			result := object TargetStateExpr {
+				transition := self.transition.map transform().oclAsType(MapExpr);
+			}
+		}
+		endif;
+	}
+}
+
+//mapping mtctl::comparables::MapExpr :: MapExpr2MapExpr() : mtctl::comparables::MapExpr disjuncts
+//	SourceStateExpr::SourceStateExpr2MumlElemExpr,
+//	TargetStateExpr::TargetStateExpr2MumlElemExpr, //try to statically evaluate map expressions
+//	mtctl::comparables::ConstExpr::ConstExpr2ConstExpr,
+//	mtctl::comparables::BufferMsgCountExpr::BufferMsgCountExpr2BufferMsgCountExpr,
+//	mtctl::comparables::MumlElemExpr::MumlElemExpr2MumlElemExpr,
+//	mtctl::comparables::TransitionMap::TransitionMap2TransitionMap;
+
+//Workaround for QVTo not allowing references to overridden MapExpr2MapExpr in the Expression2Expression disjuncts
+//See QVTo bug https://bugs.eclipse.org/bugs/show_bug.cgi?id=438038
+//mapping mtctl::comparables::MapExpr::MapExpr2MapExprWorkaround() : mtctl::comparables::MapExpr disjuncts
+//	SourceStateExpr::SourceStateExpr2MumlElemExpr,
+//	TargetStateExpr::TargetStateExpr2MumlElemExpr, //try to statically evaluate map expressions
+//	mtctl::comparables::ConstExpr::ConstExpr2ConstExpr,
+//	mtctl::comparables::BufferMsgCountExpr::BufferMsgCountExpr2BufferMsgCountExpr,
+//	mtctl::comparables::MumlElemExpr::MumlElemExpr2MumlElemExpr,
+//	mtctl::comparables::TransitionMap::TransitionMap2TransitionMap;
+
+//Try to statically evaluate logical expressions to true/false
+//mapping Expression::Expression22False() : FalseExpr when {self.evaluateToBoolean()=false} {}
+//mapping Expression::Expression22True() : TrueExpr when {self.evaluateToBoolean()=true} {}
+
+
+//Normalizes "true and null" expressions (only called when one operand is null)
+mapping AndExpr::BinaryBoolOp2SingleOpd() : Expression when {self.leftOpd.evaluateToBoolean()=true or self.rightOpd.evaluateToBoolean()=true} { 
+	init {
+		if (self.leftOpd.evaluateToBoolean()=true) then 
+			result := self.rightOpd.map transform().oclAsType(Expression) 
+		endif;
+		if (self.rightOpd.evaluateToBoolean()=true) then
+			result := self.leftOpd.map transform().oclAsType(Expression)
+		endif;
+	}
+}
+//Normalizes "false or null" expressions (only called when one operand is null)
+mapping OrExpr::BinaryBoolOp2SingleOpd() : Expression when {self.leftOpd.evaluateToBoolean()=false or self.rightOpd.evaluateToBoolean()=false}{ 
+	init {
+		if (self.leftOpd.evaluateToBoolean()=false) then 
+			result := self.rightOpd.map transform().oclAsType(Expression) 
+		endif;
+		if (self.rightOpd.evaluateToBoolean()=false) then
+			result := self.leftOpd.map transform().oclAsType(Expression)
+		endif;
+	}
+}
+//Normalizes "true implies null" expressions (only called when one operand is null)
+mapping ImplyExpr::BinaryBoolOp2SingleOpd() : Expression when {self.leftOpd.evaluateToBoolean()=true} { 
+	init {
+		result:=self.rightOpd.map transform().oclAsType(Expression)
+	}
+}
+
+
+//returns true or false if the expression can be simplified to true/false respectively; returns null otherwise
+query Expression::evaluateToBoolean() : Boolean { 
+	if (self.oclIsKindOf(TrueExpr)) return true endif;
+	if (self.oclIsKindOf(FalseExpr)) return false endif;
+	
+	if (self.oclIsKindOf(AGExpr)) return self.oclAsType(AGExpr).expr.evaluateToBoolean() endif;
+	if (self.oclIsKindOf(AFExpr)) return self.oclAsType(AFExpr).expr.evaluateToBoolean() endif;
+	if (self.oclIsKindOf(EGExpr)) return self.oclAsType(EGExpr).expr.evaluateToBoolean() endif;
+	if (self.oclIsKindOf(EFExpr)) return self.oclAsType(EFExpr).expr.evaluateToBoolean() endif;
+	if (self.oclIsKindOf(LeadsToExpr)) {
+		return not self.oclAsType(LeadsToExpr).leftOpd.evaluateToBoolean() or self.oclAsType(LeadsToExpr).rightOpd.evaluateToBoolean(); // a leadsTo b === AG (a implies EG b)
+	};
+
+	if (self.oclIsKindOf(NotExpr)) return not self.oclAsType(NotExpr).opd.evaluateToBoolean() endif;
+	if (self.oclIsKindOf(AndExpr)) return self.oclAsType(AndExpr).leftOpd.evaluateToBoolean() and self.oclAsType(AndExpr).rightOpd.evaluateToBoolean() endif;
+	if (self.oclIsKindOf(ImplyExpr)) return not self.oclAsType(ImplyExpr).leftOpd.evaluateToBoolean() or self.oclAsType(ImplyExpr).rightOpd.evaluateToBoolean() endif;
+	if (self.oclIsKindOf(OrExpr)) return self.oclAsType(OrExpr).leftOpd.evaluateToBoolean() or self.oclAsType(OrExpr).rightOpd.evaluateToBoolean() endif;
+	
+	if (self.oclIsKindOf(SubstateOfExpr)) return self.oclAsType(SubstateOfExpr).state.oclAsType(MapExpr).getStaticValue().oclAsType(Vertex).allSuperVertices->includes(
+						self.oclAsType(SubstateOfExpr).superstate.oclAsType(MapExpr).getStaticValue().oclAsType(Vertex))
+						and (self.oclAsType(SubstateOfExpr).state.oclAsType(MapExpr).getStaticInstance() = self.oclAsType(SubstateOfExpr).superstate.oclAsType(MapExpr).getStaticInstance()
+						or if self.oclAsType(SubstateOfExpr).superstate.oclAsType(MapExpr).getStaticInstance().oclIsKindOf(ComponentInstance) then
+								self.oclAsType(SubstateOfExpr).superstate.oclAsType(MapExpr).getStaticInstance().oclAsType(ComponentInstance).portInstances.oclAsType(EObject)->includes(self.oclAsType(SubstateOfExpr).state.oclAsType(MapExpr).getStaticInstance())
+							else
+								false
+							endif
+						)
+		endif;
+	if (self.oclIsKindOf(StateInStatechartExpr)) return self.oclAsType(StateInStatechartExpr).statechart.getStaticValue().oclAsType(RealtimeStatechart).
+						allSubobjectsOfKind(State).oclAsType(Vertex)->includes(self.oclAsType(StateInStatechartExpr).state.getStaticValue().oclAsType(Vertex))
+						and (self.oclAsType(StateInStatechartExpr).statechart.oclAsType(MapExpr).getStaticInstance() = self.oclAsType(StateInStatechartExpr).state.oclAsType(MapExpr).getStaticInstance()
+						or if self.oclAsType(StateInStatechartExpr).statechart.oclAsType(MapExpr).getStaticInstance().oclIsKindOf(ComponentInstance) then
+								self.oclAsType(StateInStatechartExpr).statechart.oclAsType(MapExpr).getStaticInstance().oclAsType(ComponentInstance).portInstances.oclAsType(EObject)->includes(self.oclAsType(StateInStatechartExpr).state.oclAsType(MapExpr).getStaticInstance())
+							else
+								false
+							endif
+						)
+		endif;
+	if (self.oclIsKindOf(ComparisonExpr)) return self.oclAsType(ComparisonExpr).evaluateStaticComparison();
+	return null;
+}
+
+//tries to statically evaluate a comparison. Returns true/false on success, null if the value cannot be statically decided
+query ComparisonExpr::evaluateStaticComparison() : Boolean {
+	var l_value = self.lhs.getStaticValue();
+	var l_instance = self.lhs.getStaticInstance();
+	var r_value = self.rhs.getStaticValue();
+	var r_instance = self.rhs.getStaticInstance();
+
+	if (l_value.oclIsUndefined() or r_value.oclIsUndefined()) return null endif;
+	
+	//Return compared value
+	switch {
+		case (self.op = ComparisonOp::EQUALS) { return l_value = r_value and l_instance = r_instance; }
+		case (self.op = ComparisonOp::NOT_EQUAL) { return l_value <> r_value or l_instance <> r_instance;}
+		case (self.op = ComparisonOp::GREATER) { return l_value.oclAsType(Integer) > r_value.oclAsType(Integer); }
+		case (self.op = ComparisonOp::GREATER_OR_EQUAL) { return l_value.oclAsType(Integer) >= r_value.oclAsType(Integer); }
+		case (self.op = ComparisonOp::LESS) { return l_value.oclAsType(Integer) < r_value.oclAsType(Integer); }
+		case (self.op = ComparisonOp::LESS_OR_EQUAL) { return l_value.oclAsType(Integer) <= r_value.oclAsType(Integer); }
+	};
+	return null;
+}
+
+mapping SourceStateExpr::SourceStateExpr2MumlElemExpr() : MumlElemExpr when {self.transition.getStaticValue() != null} {
+	elem := self.transition.getStaticValue().oclAsType(Transition).source.map transform().oclAsType(EObject);
+	instance := self.transition.getStaticInstance().map transform().oclAsType(EObject);
+}
+
+mapping TargetStateExpr::TargetStateExpr2MumlElemExpr() : MumlElemExpr when {self.transition.getStaticValue() != null} {
+	elem := self.transition.getStaticValue().oclAsType(Transition).target.map transform().oclAsType(EObject);
+	instance := self.transition.getStaticInstance().map transform().oclAsType(EObject);
+}
+
+//returns the (static) value of the MapExpr or null if the value can only be determined at runtime(/verification time)
+query MapExpr::getStaticValue() : OclAny { 
+	if (self.oclIsKindOf(MumlElemExpr) and self.oclAsType(MumlElemExpr).elem.oclIsKindOf(Clock)) return null endif; //clocks have a dynamic value
+	if (self.oclIsKindOf(MumlElemExpr) and self.oclAsType(MumlElemExpr).elem.oclIsKindOf(Variable)) return null endif; //variables have a dynamic value
+	if (self.oclIsKindOf(ConstExpr)) return self.oclAsType(ConstExpr).val endif;
+	if (self.oclIsKindOf(MumlElemExpr)) return self.oclAsType(MumlElemExpr).elem endif; //MumlElemExpr (except clocks and variables) are simply compared statically
+	if (self.oclIsKindOf(SourceStateExpr)) return self.oclAsType(SourceStateExpr).transition.getStaticValue().oclAsType(Transition).source endif;
+	if (self.oclIsKindOf(TargetStateExpr)) return self.oclAsType(TargetStateExpr).transition.getStaticValue().oclAsType(Transition).target endif;
+	
+	return null;
+}
+
+query MapExpr::getStaticInstance() : EObject {
+	if (self.oclIsKindOf(MumlElemExpr)) return self.oclAsType(MumlElemExpr).instance endif;
+	if (self.oclIsKindOf(SourceStateExpr)) return self.oclAsType(SourceStateExpr).transition.getStaticInstance() endif;
+	if (self.oclIsKindOf(TargetStateExpr)) return self.oclAsType(TargetStateExpr).transition.getStaticInstance() endif;
+	
+	return null;
+}
+
+query MapExpr::getStaticTimeUnit() : TimeUnit {
+	if (self.oclIsKindOf(ConstExpr)) return self.oclAsType(ConstExpr).timeUnit;
+	return null;
+}
+
+query getTimeUnits() : OrderedSet(String) {
+	return OrderedSet {'DAYS', 'HOURS', 'MINUTES', 'SECONDS', 'MILLISECONDS', 'MICROSECONDS', 'NANOSECONDS'}
+}
+
+
+}

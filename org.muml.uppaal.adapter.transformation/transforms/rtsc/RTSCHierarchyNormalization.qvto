@@ -1,0 +1,1421 @@
+import org.muml.ImplicitCopy;
+import transforms.lib.RTSCUtil;
+import transforms.lib.MultiMappingUtil;
+import transforms.lib.ExpressionUtil;
+
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
+modeltype component uses pim::component('http://www.muml.org/pim/1.0.0');
+modeltype behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype msgtype uses pim::msgtype('http://www.muml.org/pim/1.0.0');
+modeltype types uses pim::types('http://www.muml.org/pim/1.0.0');
+modeltype valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
+modeltype storydriven_common uses core::expressions::common('http://www.muml.org/core/1.0.0');
+modeltype storydriven_expressions uses core::expressions('http://www.muml.org/core/1.0.0');
+modeltype verificationExtension uses 'http://www.muml.org/uppaal/adapter/extension/verificationextension/1.0.0';
+modeltype modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
+modeltype muml_protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype mtctl uses 'http://www.muml.org/uppaal/adapter/mtctl/1.0.0';
+modeltype mtctl_comparables uses mtctl::comparables('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctl_predicates uses mtctl::predicates('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctl_bool uses mtctl::booleanlogic('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+
+/**
+* Flatten the RTSCs into one equivalent flat RTSC with multiple regions without hierarchical states.
+* Details are in the master thesis of Christopher Gerking
+*/
+transformation RTSCHierarchyNormalization(in input:rtsc, out output:rtsc);
+		
+	intermediate class JoinTreeNode {};
+	
+	intermediate class JoinTreeInnerNode extends JoinTreeNode {
+		
+		references exit : ExitPoint;
+		composes children : JoinTreeNode [*] ordered;
+		
+	}
+	
+	intermediate class JoinTreeStateNode extends JoinTreeInnerNode {
+		
+		references state : State;
+		
+	}
+	
+	intermediate class JoinTreeRegionNode extends JoinTreeInnerNode {
+		
+		references region : Region;
+		
+	}
+	
+	intermediate class JoinTreeLeafNode extends JoinTreeNode {
+		
+		references transition : Transition;
+		
+	};
+		
+	property triggerVariablePrefix : String = 'trigger';
+	
+	property finalTransitions : Dict(Transition, Set(Transition)) = Dict{}; --maps a final transition in a chain to the set of transitions originating from it (for mtctl workaround)
+	
+	property mumlElemsToFixTransFiringExpr : Set(MumlElemExpr) = Set{}; --set of mapped MumlElemExpr where the original was referencing a Transition from Exit Point to non-Exit point   
+	
+	main() {
+	
+		assert fatal (input.objects()[Transition]->forAll(t | not t.source.isCompositeState() and not t.target.isCompositeState())) with log("Composite transitions unsupported here.");
+	
+		input.objects()[RootNode]->map transform();
+		
+		-- fix TransitionFiringExpr(MumlElemExpr) for transitions from an ExitPoint to a non-Exit point. This is not a good approach. Remove as soon as the hierarchy normalization is fixed with Christopher's new approach to state deactivation
+		mumlElemsToFixTransFiringExpr->forEach(mumlElemExpr) {
+			var debugProp := mumlElemExpr.oclAsType(EObject)->closure(x : EObject | if not x.oclIsUndefined() and x.oclIsKindOf(Property) then x else x.oclAsType(EObject).eContainer() endif)->any(oclIsKindOf(Property));
+			var resultingExpr : mtctl::Expression = null;
+			var transitionFiringExpr := mumlElemExpr.eContainer().oclAsType(TransitionFiringExpr);
+			assert fatal (not transitionFiringExpr.oclIsUndefined()) with log("unexpected non-TransitionFiringExpr in hierarchy normalization \"mtctl repair\"");
+			// log("---");
+			// log("Fixing mtctl: reference of "+mumlElemExpr.elem.oclAsType(Transition).source.name+"->"+mumlElemExpr.elem.oclAsType(Transition).target.name+" becomes:");
+			//Create Or-Expression of 
+			finalTransitions->get(mumlElemExpr.elem.oclAsType(Transition))->forEach(t) {
+				assert(output.objects()->includes(t)) with log ("huh?");
+				// log(t.source.name+"->"+t.target.name);
+				if (resultingExpr.oclIsUndefined()) {
+					mumlElemExpr.elem := t;
+					resultingExpr := object TransitionFiringExpr {transition := mumlElemExpr }; //reuse the original MumlElemExpr here
+				} else {
+					var nextMumlElemExpr := mumlElemExpr.deepclone().oclAsType(MumlElemExpr);
+					nextMumlElemExpr.elem := t;
+					resultingExpr := object OrExpr {rightOpd := resultingExpr; leftOpd := object TransitionFiringExpr {transition := nextMumlElemExpr}} //add to resultingExpr: "... or transitionFiring(t)"
+				}
+			};
+			assert fatal (not resultingExpr.oclIsUndefined()) with log ("Failed to repair mtctl query after Hierarchy normalization");
+			
+			//Replace the original expression with resultingExpr in the query
+			transitionFiringExpr.replaceWith(resultingExpr);
+			output.removeElement(transitionFiringExpr);
+			output.removeElement(resultingExpr);
+		};
+	}
+	
+	//Modifies the model containing self such that self is replaced with a deep clone of newExpr //TODO put this into some shared file between MTCTLNormalization and MTCTLQuantifierNormalization (and others)
+	helper mtctl::Expression::replaceWith(newExpr : mtctl::Expression) {
+		var containingFeature := self.oclAsType(EObject).eContainingFeature();
+		self.oclAsType(EObject).eContainer().eSet(containingFeature, newExpr.deepclone().oclAsType(EObject));
+	}
+	
+	//MumlElemExpr2MumlElemExpr
+	mapping MumlElemExpr :: transform() : MumlElemExpr {
+		if (self.elem.oclIsKindOf(Vertex)) {
+			elem := self.elem.late resolveone(State);
+		}
+		else if (self.elem.oclIsKindOf(Transition) 
+		  and self.eContainer().oclIsKindOf(TransitionFiringExpr) 
+		  and not (self.elem.oclAsType(Transition).source.oclIsKindOf(ExitPoint) 
+		  implies self.elem.oclAsType(Transition).target.oclIsKindOf(ExitPoint))) {
+			elem := self.elem; //will be corrected in main() after the transformation
+			mumlElemsToFixTransFiringExpr += result;
+		} else
+			elem := self.elem.late resolveone(EObject);
+		
+		instance := self.instance.map transform().oclAsType(EObject);
+	}
+	
+	//RealtimeStatechart2RealtimeStatechart
+	mapping RealtimeStatechart :: transform() : RealtimeStatechart
+		disjuncts RealtimeStatechart::RTSC2OrthogonalRTSC, RealtimeStatechart::RTSC2EmbeddedRTSC;
+			
+	mapping RealtimeStatechart :: RTSC2OrthogonalRTSC() : RealtimeStatechart when {self.embedded = false} {
+				
+		name := self.name + '_root';
+			
+		-- map all variables, operations, clocks		
+		variables += self.getAllStatechartsPrefix().variables->map transform().oclAsType(Variable);
+		operations += self.getAllStatechartsPrefix().operations->map transform().oclAsType(Operation);
+		clocks += self.getAllStatechartsPrefix().clocks->map transform().oclAsType(Clock);
+		// TODO replace OCL collect shorthand ('.' notation) by QVTo xcollect shorthand ('->' notation) once it flattens: https://bugs.eclipse.org/bugs/show_bug.cgi?id=425536
+								
+		states += self.map RTSC2OrthogonalState();
+			
+		-- map reference to behavioral element
+		behavioralElement := self.behavioralElement.map transform().oclAsType(BehavioralElement);
+		
+	}
+					
+	mapping RealtimeStatechart :: RTSC2OrthogonalState() : State {
+	
+		init {
+			
+			-- transitions must not connect to composite states
+			assert fatal (self.transitions->forAll(
+				(source.oclIsKindOf(State) implies source.oclAsType(State).simple) and
+				(target.oclIsKindOf(State) implies target.oclAsType(State).simple)
+			)) with log('No high-level transitions supported.')
+			
+		}
+					
+		name := self.name + '_state';
+		
+		initial := true;
+		
+		
+		channels += self.getAllStatesPrefix().channels->map transform().oclAsType(SynchronizationChannel);
+		// TODO replace OCL collect shorthand ('.' notation) by QVTo xcollect shorthand ('->' notation) once it flattens: https://bugs.eclipse.org/bugs/show_bug.cgi?id=425536
+	
+		
+		-- create auxiliary sync channels
+		self.getAllStatesPrefix()->forEach(state) {
+			
+			channels += state.map createExitSyncChannel();
+					
+			state.connectionPoints[EntryPoint]->forEach(entryPoint) {
+				
+				channels += entryPoint.map createEnterSyncChannel();
+				
+				state.embeddedRegions->forEach(region) {
+					channels += entryPoint.map createEnterSyncChannel(region)
+				}
+				
+			};
+			
+			state.embeddedRegions->forEach(region) {
+											
+				channels += state.map createExitSyncChannel(region);
+			}			
+			
+		};
+		
+												
+		// log('Phase one: Traverse hierarchy tree and create timed automata skeletons.');
+		
+		var allStatecharts : OrderedSet(RealtimeStatechart) = self.getAllStatechartsPrefix();
+		
+		var allAndStates : OrderedSet(State) = self.getAllStatesPrefix()[embeddedRegions->size() > 1];
+		
+		var numberOfResultingRegions : Integer = allStatecharts->size() + allAndStates->size();
+		
+		var nextPrio : Integer = numberOfResultingRegions;
+					
+		allStatecharts->forEach(statechart) {
+			
+			assert fatal (nextPrio >= 1);
+						
+			embeddedRegions += statechart.map RTSC2Region(nextPrio);
+			
+			nextPrio := nextPrio-1
+			
+		};
+		
+		allAndStates->forEach(andState) {
+			
+			assert fatal (nextPrio >= 1);
+						
+			embeddedRegions += andState.map AndState2Region(nextPrio);
+			
+			nextPrio := nextPrio-1
+			
+		};
+				
+				
+		// log('Phase two: Traverse exit trees to create global joins.');
+		
+		-- create set G of global join starting points (i.e. all composite states) arranged from low-level to high-level states
+				
+		var G : OrderedSet(State) = self.getAllStatesPostfix()->select(not simple);
+		
+		-- compute all join trees
+		
+		var joinTrees : OrderedSet(JoinTreeInnerNode) = createJoinTrees(G);
+		
+		-- introduce a trigger variable for each join tree
+			
+		joinTrees->forEach(jointTree) {
+
+		
+			jointTree.exit.state.parentStatechart.map transform().oclAsType(RealtimeStatechart).variables += jointTree.map createTriggerVariable()
+		
+		
+		};
+				
+		-- Phase three: Postprocess sync channels.
+		
+		// TODO: implement phase 3: post-processing of sync channels to avoid unintended synchronizations between one transition inside a composite state, and a second transition leaving that composite state
+		// log('Phase three: Not implemented yet.');
+		
+		end {
+			-- finally, all embedded regions must contain flat statecharts
+			assert fatal (result.embeddedRegions->embeddedStatechart->forAll(sc | sc.flat)) with log('Only flat statecharts expected.')
+		}	
+				
+	}
+							
+	helper createCommittedState() : State {
+		
+		return object State {
+			urgent := true;
+			extensions += object CommittedExtension {}
+		}
+				
+	}
+	
+	helper createJoinTrees(G : OrderedSet(State)) : OrderedSet(JoinTreeInnerNode) {
+		
+		-- G contains all global join starting points, i.e. all composite states
+		
+		var joinTrees : OrderedSet(JoinTreeInnerNode) = object OrderedSet(JoinTreeInnerNode) {};
+										
+		G->forEach(g) {
+			
+			-- create join trees for all 'root' exits (i.e. exits connecting to some state that is not an exit itself)
+			var rootExits : OrderedSet(ExitPoint) = g.connectionPoints[ExitPoint]->select(e | e.outgoingTransitions->exists(t | not t.target.oclIsKindOf(ExitPoint)));
+				
+			joinTrees += rootExits.map createJoinTrees();
+				
+		};
+		
+		return joinTrees
+		
+	}
+	
+
+	
+	mapping JoinTreeInnerNode :: createTriggerVariable() : Variable {
+	
+		name := triggerVariablePrefix.addSuffixNumberUnderline();
+				
+		dataType := getPrimitiveDataTypeInt();
+		
+		-- store all basic transitions that initiate the exit
+		var basicTransitions : OrderedSet(Transition) = self.getBasicTransitions();
+				
+		-- L contains all simple states l inside the join tree
+		var L : OrderedSet(State) = basicTransitions->source.oclAsType(State)->asOrderedSet();
+		
+		-- set initial variable value to the number of initially active states in L
+		initializeExpression := object LiteralExpression {
+			value := L->select(isInitiallyActive())->size().repr();
+		};
+				
+		L->forEach(l) {
+		
+			-- increase trigger variable on incoming edges
+			
+			var mapped : State = l.map transform().oclAsType(State);
+			
+			mapped.incomingTransitions->forEach(t) {
+				
+				if (t.action = null)
+				then {
+					t.action := object Action {
+						name := 'increase_' + result.name;
+					}
+				}
+				endif;		
+										
+				t.action.expressions += object Assignment {
+					
+					lhs_typedNamedElementExpression := object TypedNamedElementExpression {
+						typedNamedElement := result
+					};
+					assignOperator := AssignOperator::PLUS_EQUAL;
+					rhs_assignExpression := object LiteralExpression {
+						value := '1';
+					}					
+				}	
+				
+			};
+			
+			-- decrease trigger variable on outgoing edges
+			
+			mapped.outgoingTransitions->forEach(t) {
+			
+				if (t.action = null)
+				then {
+					t.action := object Action {
+						name := 'decrease_' + result.name;
+					}
+				}
+				endif;
+											
+				t.action.expressions += object Assignment {
+					
+					lhs_typedNamedElementExpression := object TypedNamedElementExpression {
+						typedNamedElement := result
+					};	
+					assignOperator := AssignOperator::MINUS_EQUAL;
+					rhs_assignExpression := object LiteralExpression {
+						value := '1';
+					}
+											
+				}	
+				
+			}
+															
+		};
+		
+		-- store number of leaves of the join tree
+		
+		var N : Integer = self.getNumberOfLeaves();
+		
+				
+		-- store all inner nodes of the join tree (corresponding to all composite states / regions to be exited)
+		
+		var S_t : OrderedSet(JoinTreeInnerNode) = self.getInnerNodes();
+		
+		
+		-- the root exit is the last exit within the cascade (i.e. it does not connect to another exit)
+			
+		var root : ExitPoint = self.exit;
+		
+				
+		-- for each outgoing transition from the root exit, create a chain of edges corresponding to exiting all affected composite states and regions
+				
+		root.outgoingTransitions->forEach(t) {
+							
+			-- create first edge of the chain
+			-- map trigger message event, trigger variable comparison, clock constraints, and guards
+			
+			var src : State = root.state.resolveoneIn(State::transform, State);
+			var trg : State = self.map createExitAuxState();
+			
+			assert fatal (src != null) with log('Source state must be specified.');
+			assert fatal (trg != null) with log('Target state must be specified.');
+			
+							
+			var template : RealtimeStatechart = src.parentStatechart;
+						
+			template.states += trg;
+									
+			template.transitions += object Transition {
+							
+				source := src;
+				target := trg;
+				
+				priority := src.getUniqueTransitionPriority(t.priority);
+				
+				urgent := basicTransitions->forAll(urgent);				
+				
+				-- map clock constraints of all basic transitions that initiate the exit
+				clockConstraints += basicTransitions.clockConstraints->mapClockConstraint();
+				// TODO replace OCL collect shorthand ('.' notation) by QVTo xcollect shorthand ('->' notation) once it flattens: https://bugs.eclipse.org/bugs/show_bug.cgi?id=425536
+	
+				
+				-- map at most one synchronization of one of the basic transition
+				assert fatal (basicTransitions->select(synchronization != null)->size() <= 1) with log('At most one synchronization expected for every joint exit.');
+				synchronization := basicTransitions->any(not synchronization.oclIsUndefined()).synchronization.mapSynchronization();
+								
+				-- map at most one trigger message event of one of the basic transitions
+				
+				assert fatal (basicTransitions->select(triggerMessageEvent != null)->size() <= 1) with log('At most one trigger message event expected for every joint exit.');
+				events += basicTransitions->any(not triggerMessageEvent.oclIsUndefined()).triggerMessageEvent.mapAsynchronousMessageEvent();
+															
+				-- create comparison with trigger variable
+																
+				var triggerComparison : ComparisonExpression = object ComparisonExpression {
+					
+					leftExpression := object TypedNamedElementExpression {
+						typedNamedElement := result;
+					};
+					
+					operator := ComparingOperator::EQUAL;
+					
+					rightExpression := object LiteralExpression {
+						value := N.repr();
+					}
+					
+				};
+								
+															
+				-- map guards of all basic transitions, include trigger variable comparison
+				
+				var guards : OrderedSet(Expression) = triggerComparison->asOrderedSet();				
+				guards += basicTransitions->guard->mapExpression();
+								
+				guard := guards->constructConjunction();
+																
+			};
+			
+			
+			-- complete the chain with edges to exit every affected composite state / region
+									
+			S_t->forEach(innerNode) {
+							
+				src := trg;
+				
+				-- activate target state on the last edge of the chain
+				-- otherwise, create a committed state as intermediate part of the chain
+				
+				if (innerNode = S_t->last()) then {
+					trg := t.target.getVertexForTargetState(t.source.getStatechart());					
+				}
+				else {
+					trg := innerNode.map createExitAuxState();
+					template.states += trg;
+				}
+				endif;
+				
+				assert fatal (src != null) with log('Source state must be specified.');
+				assert fatal (trg != null) with log('Target state must be specified.');
+				assert fatal (src != trg) with log('No loops inside an exit chain.');
+																
+				if (innerNode != S_t->last()) { //create simple intermediate transition
+					template.transitions += object Transition {
+											
+						source := src;
+						target := trg;
+						
+						priority := src.getUniqueTransitionPriority(1);
+						
+						-- add a sending synchronization over the exit channel for the respective composite state or region									
+						synchronization := innerNode.map createExitSyncChannel().getSendSynchronization();
+					};
+				} else { //for the last node: create transition with all side-effects and dealines
+					template.transitions += t.map Transition2FinalTransition(src, trg, innerNode);
+					
+					-- remember this transition for repairing mtctl later
+					var tmp := finalTransitions->get(t);
+					if (tmp.oclIsUndefined())
+						tmp := Set{};
+					
+					tmp += template.transitions->last();
+					finalTransitions->put(t, tmp);
+				};
+			}
+		}
+	}
+	
+	mapping Transition :: Transition2FinalTransition(src : State, trg : State, innerNode : JoinTreeInnerNode) : Transition {
+		source := src;
+		target := trg;
+		
+		priority := src.getUniqueTransitionPriority(1);
+		
+		-- add a sending synchronization over the exit channel for the respective composite state or region									
+		synchronization := innerNode.map createExitSyncChannel().getSendSynchronization();
+		
+		-- map clock resets of the final transition
+		clockResets += self.clockResets->map transform().oclAsType(Clock);
+		
+		-- map the action of the final transition
+		if (action = null) 
+		then {
+			action := self.action.mapAction();	
+		}
+		else {
+			action.expressions += self.action.expressions->mapExpression();
+		}
+		endif;
+		
+		-- map raise message event and deadlines of the final transition
+		events += self.raiseMessageEvent.mapAsynchronousMessageEvent();
+		absoluteDeadlines += self.absoluteDeadlines->mapAbsoluteDeadline();
+		relativeDeadline := self.relativeDeadline.mapRelativeDeadline();
+	}
+		
+	-- maps an inner join tree node to a sync channel that triggers the exit from the respective state or region
+	mapping JoinTreeInnerNode :: createExitSyncChannel() : SynchronizationChannel
+		disjuncts JoinTreeStateNode::createExitSyncChannel, JoinTreeRegionNode::createExitSyncChannel;
+	
+	-- maps an inner join tree node to a sync channel to trigger exiting the respective state or region
+	mapping JoinTreeStateNode :: createExitSyncChannel() : SynchronizationChannel {
+		
+		init {
+			result := self.state.map createExitSyncChannel();
+		}
+		
+	}
+	
+	-- maps an inner join tree node to a sync channel that represents exiting the respective region
+	mapping JoinTreeRegionNode :: createExitSyncChannel() : SynchronizationChannel {
+		
+		init {
+			result := self.region.parentState.map createExitSyncChannel(self.region);
+		}
+		
+	}
+	
+		
+	-- maps an inner join tree node to a committed state inside an exit chain
+	mapping JoinTreeInnerNode :: createExitAuxState() : State {
+		
+		init {
+			result := self.exit.map createExitAuxState(self);
+		}
+		
+	}
+	
+	property EMPTY : String = '';
+	
+	query getUniqueSuffixNumber() : String {
+		return EMPTY.addSuffixNumberUnderline();	
+	}
+	
+	query String :: appendUniqueSuffixNumber() : String {
+		return self + getUniqueSuffixNumber();
+	}
+	
+	-- maps an exit point to a committed state inside an exit chain
+	mapping ExitPoint :: createExitAuxState(joinTree : JoinTreeInnerNode) : State {
+		
+		init {
+			result := createCommittedState()
+		}
+				
+		name := self.name.appendUniqueSuffixNumber();
+		
+	}
+	
+	
+			
+	query JoinTreeNode::getBasicTransitions() : OrderedSet(Transition) {
+	
+		return switch {
+			case (self.oclIsKindOf(JoinTreeLeafNode)) self.oclAsType(JoinTreeLeafNode).getBasicTransitions();
+			case (self.oclIsKindOf(JoinTreeInnerNode)) self.oclAsType(JoinTreeInnerNode).getBasicTransitions();
+			else assert fatal (false) with log("Unsupported subclass");
+		};
+				
+	}
+	
+	query JoinTreeInnerNode::getBasicTransitions() : OrderedSet(Transition) {
+			
+		return self.children.getBasicTransitions()->asOrderedSet()		
+	}
+	
+	query JoinTreeLeafNode::getBasicTransitions() : OrderedSet(Transition) {
+		
+		assert fatal (self.transition.source.isSimpleState());
+			
+		return self.transition->asOrderedSet();
+				
+	}
+	
+	query JoinTreeNode::getInnerNodes() : OrderedSet(JoinTreeInnerNode) {
+	
+		return switch {
+			case (self.oclIsKindOf(JoinTreeLeafNode)) self.oclAsType(JoinTreeLeafNode).getInnerNodes();
+			case (self.oclIsKindOf(JoinTreeInnerNode)) self.oclAsType(JoinTreeInnerNode).getInnerNodes();
+			else assert fatal (false) with log("Unsupported subclass");
+		};
+		
+	}
+		
+	query JoinTreeInnerNode::getInnerNodes() : OrderedSet(JoinTreeInnerNode) {
+							
+		var res : OrderedSet(JoinTreeInnerNode) = object OrderedSet(JoinTreeInnerNode) {};
+												
+		res += self.children.getInnerNodes();
+		
+		res += self;
+							
+		return res
+		
+	}
+	
+	query JoinTreeLeafNode::getInnerNodes() : OrderedSet(JoinTreeInnerNode) {
+	
+		return object OrderedSet(JoinTreeInnerNode) {};
+				
+	}
+	
+	query JoinTreeNode::getNumberOfLeaves() : Integer {
+		
+		var res : Integer;
+		
+		if (self.oclIsKindOf(JoinTreeInnerNode)) then {
+			
+			res := 0;		
+					
+			self.oclAsType(JoinTreeInnerNode).children->forEach(child) {
+				res := res + child.getNumberOfLeaves();
+			}
+			
+		}
+		endif;
+		
+		if (self.oclIsKindOf(JoinTreeLeafNode)) then {
+		
+			res := 1
+			
+		}
+		endif;
+		
+		return res
+		
+	}
+	
+		
+	mapping ExitPoint::createJoinTrees() : List(JoinTreeInnerNode)
+		disjuncts ExitPoint::createXORJoinTrees, ExitPoint::createANDJoinTrees;
+		
+	mapping ExitPoint::createXORJoinTrees() : List(JoinTreeInnerNode) when {self.state.embeddedRegions->size() = 1} {
+		
+		init {
+			result := self.map createJoinTrees(self.state.embeddedRegions->first())
+		}
+		
+	}	
+	
+	mapping ExitPoint::createJoinTrees(r : Region) : List(JoinTreeRegionNode) {
+				
+		-- obtain vertices that connect to the input exit from the lower level region	
+			
+		var allTransitionsConnectingFromLowerLevel : OrderedSet(Transition) = self.incomingTransitions[source.getStatechart() = r.embeddedStatechart];
+		
+		
+		-- filter basic states
+								
+		var basicStateTransitionsConnectingFromLowerLevel : OrderedSet(Transition) = allTransitionsConnectingFromLowerLevel->select(source.isSimpleState());
+		
+		
+		-- for each basic state that connects to the input exit from the lower level region, create a leaf node
+		-- we deviate from the BRICS approach here, that would group all basic states inside a single leaf node
+		-- this is not possible in our case, since the transitions from the basic states to the exit point may have different conditions in MUML and must be handled separately
+		
+		basicStateTransitionsConnectingFromLowerLevel->forEach(t) {
+			
+			var leaf : JoinTreeRegionNode = object JoinTreeRegionNode {
+									
+				exit := self;
+				
+				region := r;
+				
+				children += object JoinTreeLeafNode {
+				
+					transition := t;
+					
+				};
+				
+			};
+			
+			result += leaf;
+			
+		};
+					
+		
+		-- filter 'cascading' exits on the lower level that connect to the input exit
+					
+		var exitsOnLowerLevel : OrderedSet(ExitPoint) = allTransitionsConnectingFromLowerLevel.source[ExitPoint]->asOrderedSet();
+		
+								
+		-- create an extended node for each cascading exit on the previous level
+		
+		exitsOnLowerLevel->forEach(e) {
+									
+			e.map createJoinTrees()->forEach(lowerLevelJoinTree) {
+			
+				var extension : JoinTreeRegionNode = object JoinTreeRegionNode {
+					exit := self;
+					region := r;
+					children += lowerLevelJoinTree;
+				};	
+									
+				result += extension;
+				
+			}	
+							
+		}
+												
+	}
+		
+	mapping ExitPoint::createANDJoinTrees() : List(JoinTreeStateNode) when {self.state.embeddedRegions->size() > 1} {
+	
+		init {
+		
+			-- use init section due to QVTo's inability to remove an element from the result list 
+			
+			result := object List(JoinTreeStateNode) {};
+						
+			
+			-- manage lower level regions
+						
+			var lowerLevelRegions : OrderedSet(Region) = self.state.embeddedRegions;
+			
+			// TODO process regions based on a specific order
+			// this order will affect the deactivation order for regions inside exit chains, which is important w.r.t. the exit-events of the states that are deactivated
+			// either encode the order into the join tree, or obtain it accordingly inside the getInnerNodes() operation
+			
+									
+			-- add a single inner node containing the input exit point
+			-- this node is to be copied and extended by all combinations of trees from the lower level regions
+			
+			result += object JoinTreeStateNode {
+				
+				exit := self;
+				
+				state := self.state;
+									
+			};
+						
+			
+			lowerLevelRegions->forEach(lowerLevelRegion) {
+			
+				-- auxiliary sets to store deferred replacements of join tree nodes							
+				var add : OrderedSet(JoinTreeStateNode) = object OrderedSet(JoinTreeStateNode) {}; 
+				var remove : OrderedSet(JoinTreeStateNode) = object OrderedSet(JoinTreeStateNode) {};
+				
+				self.map createJoinTrees(lowerLevelRegion)->forEach(lowerLevelJoinTree) {
+												
+					result->forEach(resultJoinTree) {
+					
+						-- create a copy of the previous result join tree node
+						-- add the lower level join tree node as a child
+						
+						var copy : JoinTreeStateNode = resultJoinTree.deepclone().oclAsType(JoinTreeStateNode);
+												
+						copy.children += lowerLevelJoinTree.deepclone().oclAsType(JoinTreeNode);
+						
+						
+						-- mark the copied node to replace the previous result node after the current lower level exit has been processed
+												
+						add += copy;
+						remove += resultJoinTree;
+						
+					};
+														
+				};
+				
+				
+				-- perform replacements when all join tree nodes of the current lower level exit point have been processed
+				
+				// TODO the call to oclAsSet establishes legacy support for https://bugs.eclipse.org/bugs/show_bug.cgi?id=424338  
+				result := result->reject(node | remove->includes(node)).oclAsSet()->asList();	
+				result += add;
+								
+			}
+		
+		}
+		
+	};
+	
+	
+	mapping State :: AndState2Region(prio : Integer) : Region when {self.embeddedRegions->size() > 1} {
+				
+		embeddedStatechart := self.map AndState2RTSC();
+		
+		priority := prio;
+		
+	}
+	
+	mapping RealtimeStatechart :: RTSC2Region(prio : Integer) : Region {
+			
+		priority := prio;
+		
+		embeddedStatechart := self.map RTSC2EmbeddedRTSC();	
+			
+	}										
+							
+	mapping State :: AndState2RTSC() : RealtimeStatechart when {self.embeddedRegions->size() > 1} {
+		
+		name := self.name;
+		
+						
+		-- 1. Create IDLE state. Represents state when non-basic state is not active.
+		
+		var idleState : State = map createANDIdleState(self);			
+		states += idleState;
+				
+		
+		-- create active state
+		
+		var activeState : State = self.map createANDActiveState();						
+		states += activeState;
+		
+		
+		-- set 'idle' or 'active' as initial state
+		
+		if (self.isInitiallyActive())
+		then {
+			activeState.initial := true;
+		}
+		else {
+			idleState.initial := true;
+		}
+		endif;
+		
+		
+		-- create a chain of transitions for every entry point
+			
+		self.connectionPoints[EntryPoint]->forEach(entry) {
+			
+			var src : State;
+			var trg : State;
+			
+			// TODO decide about a particular activation order for parallel regions (currently relying on the transition priorities)
+			var outgoingTransitions : OrderedSet(Transition) = entry.outgoingTransitions->sortedBy(-priority);
+			
+			assert fatal (outgoingTransitions->notEmpty());
+					
+			outgoingTransitions->forEach(transition) {
+											
+				var sync : Synchronization;
+								
+				if (transition = outgoingTransitions->first()) then {
+				
+					-- the first transition of the chain is equipped with a received synchronization that corresponds to entering the AND state via the entry point
+				
+					src := idleState;
+					
+					sync := entry.map createEnterSyncChannel().getReceiveSynchronization();
+				}
+				else {
+				
+					-- subsequent transitions of the chain are equipped with a sent synchronization that corresponds to entering every region
+					
+					src := trg;
+					
+					var previouslyActivatedRegion : Region = outgoingTransitions->at(outgoingTransitions->indexOf(transition)-1).target.getStatechart().parentRegion;
+					
+					sync := entry.map createEnterSyncChannel(previouslyActivatedRegion).getSendSynchronization();
+					
+				}
+				endif;
+																			
+				trg := transition.target.getStatechart().parentRegion.map createANDAuxState(entry);
+							
+				states += trg;
+												
+				transitions += object Transition {
+					
+					source := src;
+					target := trg;
+										
+					priority := src.getUniqueTransitionPriority(1);				
+					
+					synchronization := sync;
+				}
+								
+			};
+			
+			-- the last transition of the chain represents the final activation of the AND state			
+			
+			transitions += object Transition {
+			
+				source := trg;
+				target := activeState;
+				
+				priority := src.getUniqueTransitionPriority(1);
+				
+				var previouslyActivatedRegion : Region = outgoingTransitions->last().target.getStatechart().parentRegion;
+												
+				synchronization := entry.map createEnterSyncChannel(previouslyActivatedRegion).getSendSynchronization(); 
+			
+			}
+			
+		};
+		
+		-- create additional transition to exit the AND state
+		
+		transitions += object Transition {
+			
+			source := self.resolveoneIn(State::createANDActiveState, State);
+			target := idleState;
+			
+			assert fatal (source != null) with log('Source state must be specified.');
+			assert fatal (target != null) with log('Target state must be specified.');
+			
+			priority := source.getUniqueTransitionPriority(1);
+							
+			synchronization := self.map createExitSyncChannel().getReceiveSynchronization();
+							
+		};
+						
+	}
+	
+	
+								
+	mapping RealtimeStatechart :: RTSC2EmbeddedRTSC() : RealtimeStatechart {
+	
+		name := self.name.addSuffixNumberUnderline();
+		
+		
+		-- map reference to behavioral element
+		behavioralElement := self.behavioralElement.map transform().oclAsType(BehavioralElement);
+		
+							
+		-- create idle state
+		var idleState : State = self.map createIdleState();
+		idleState.initial := not self.isInitiallyActive();				
+		states += idleState;
+		
+						
+		-- map each state to a corresponding "active" state						
+		states += self.states->map transform().oclAsType(State);
+						
+		self.states->select(not simple)->forEach(composite) {
+						
+			-- map each entry point of a composite state to a committed auxiliary state
+			states += composite.connectionPoints[EntryPoint]->map createAuxState();
+					
+		};
+		
+				
+		-- map "entry" transitions originating from entry points of the parent state
+		if (self.embedded)
+		then {
+		
+			var entryTransitions : OrderedSet(Transition) = self.parentRegion.parentState.connectionPoints[EntryPoint].outgoingTransitions->select(
+				target.getStatechart() = self				
+			)->asOrderedSet();
+			
+			transitions += entryTransitions->map transform().oclAsType(Transition);
+			
+		}
+		endif;
+				
+		
+		-- map transitions originating from ordinary states		
+		transitions += self.states.outgoingTransitions->map transform().oclAsType(Transition);
+		// TODO replace OCL collect shorthand ('.' notation) by QVTo xcollect shorthand ('->' notation) once it flattens: https://bugs.eclipse.org/bugs/show_bug.cgi?id=425536
+	
+		
+		self.states->select(not simple)->forEach(composite) {
+									
+			-- map each entry point of a composite state to an auxiliar transition that connects its auxiliar state to its parent's "active" state			
+			transitions += composite.connectionPoints[EntryPoint]->map createAuxTransition();
+		
+		};
+					
+		
+		-- reset all local clocks on activation (attach clock resets to the outgoing transitions of the 'idle' state)
+						
+		idleState.outgoingTransitions->forEach(activatingTransition) {
+			activatingTransition.clockResets += self.clocks->map transform().oclAsType(Clock);
+		}
+											
+	}
+	
+	
+	query Vertex :: getStatechart() : RealtimeStatechart {
+		
+		var statechart : RealtimeStatechart;
+		
+		if (self.oclIsKindOf(State)) then
+			statechart := self.oclAsType(State).parentStatechart
+		else {
+			if (self.oclIsKindOf(StateConnectionPoint)) 
+			then statechart := self.oclAsType(StateConnectionPoint).state.parentStatechart
+			endif
+		}
+		endif;
+		
+		return statechart
+		
+	}
+	
+	
+	// TODO enable implicit initialization by means of the operations below
+	
+	mapping Variable :: Variable2InitializeAssignment() : Assignment {
+	
+		lhs_typedNamedElementExpression := object TypedNamedElementExpression {
+			typedNamedElement := self.map transform().oclAsType(TypedNamedElement);
+		};
+		
+		assignOperator := AssignOperator::ASSIGN;
+		
+		rhs_assignExpression := self.map Variable2InitializeExpression();
+	
+	}
+	
+	mapping Variable :: Variable2InitializeExpression() : Expression
+		disjuncts Variable::Variable2ExplicitInitializeExpression, Variable::Variable2ImplicitInitializeExpression;
+	
+	mapping Variable :: Variable2ExplicitInitializeExpression() : Expression when {self.initializeExpression != null} {
+		
+		init {
+			result := self.initializeExpression.mapExpression();
+		}
+		
+	}
+	
+	mapping Variable :: Variable2ImplicitInitializeExpression() : Expression when {self.initializeExpression = null} {
+		
+		init {
+			result := self.dataType.getInitializer();
+		}
+	
+	}
+		
+	helper DataType :: getInitializer() : Expression {
+		return assert fatal (false) with log ('Should never be reached.');
+	}
+	
+	helper PrimitiveDataType :: getInitializer() : Expression {
+		
+		return object LiteralExpression {
+			value := self.primitiveType.getDefaultValue();
+		}
+		
+	}
+	
+	helper ArrayDataType :: getInitializer() : Expression {
+		
+		return object ArrayInitializeExpression {
+			Set{0..self.cardinality.value}->forEach(index) {
+				expressions += self.type.getInitializer();
+			}
+		}
+		
+	}
+	
+	query PrimitiveTypes :: getDefaultValue() : String {
+		
+		return switch {
+			case (self = PrimitiveTypes::BOOLEAN) 'false';
+			case (self = PrimitiveTypes::INT8) '';
+			case (self = PrimitiveTypes::INT16) '0';
+			case (self = PrimitiveTypes::INT32) '0';
+			case (self = PrimitiveTypes::INT64) '0L';
+			case (self = PrimitiveTypes::DOUBLE) '0.0d';
+			else assert fatal (false) with log("Illegal enum value");
+		}
+		
+	}
+	
+	-- maps a parallel region to a committed auxiliary state (per entry point)
+	mapping Region :: createANDAuxState(entry : EntryPoint) : State {
+	
+		init {
+			result := createCommittedState();
+		}
+		
+		// TODO improve naming - [SDz]: How?			
+					
+		name := entry.name + '_' + self.name;
+			
+	}
+				
+	mapping createANDIdleState(state : State) : State when {state.embeddedRegions->size() > 1} {
+		
+		-- do not use the state as a context parameter to exclude traceability (idle state should not indicate the given state as active)
+			
+		name := state.name + "_IDLE";
+					
+	}
+	
+	mapping RealtimeStatechart :: createIdleState() : State {
+			
+		name := self.name + "_IDLE";
+			
+	}	
+	
+	mapping State :: createANDActiveState() : State when {self.embeddedRegions->size() > 1} {
+		name := self.name + "_ACTIVE";
+			
+	}
+	
+	//State2State
+	mapping State :: transform() : State {
+		
+		name := self.name + "_ACTIVE_IN_" + self.parentStatechart.name;
+				
+		invariants += self.invariants->map transform().oclAsType(ClockConstraint);
+		
+		entryEvent := self.entryEvent.map transform().oclAsType(EntryEvent);
+		doEvent := self.doEvent.map transform().oclAsType(DoEvent);
+		exitEvent := self.exitEvent.map transform().oclAsType(ExitEvent);
+		
+		urgent := self.urgent;
+		
+		initial := self.isInitiallyActive()
+					
+	};
+		
+	-- maps an entry point to a committed auxiliary state
+	mapping EntryPoint :: createAuxState() : State {
+		
+		init {
+			result := createCommittedState();
+		}
+		
+		name := self.state.parentStatechart.name + "_AUX_" + self.state.name + "_" + self.name;
+			
+	};
+	
+	-- maps an entry point to a transition that connects its corresponding auxiliar state to its parent's "active" state
+	mapping EntryPoint :: createAuxTransition() : Transition {
+	
+		source := self.resolveoneIn(EntryPoint::createAuxState, State);
+		target := self.state.resolveoneIn(State::transform, State);
+		
+		assert fatal (source != null) with log('Source state must be specified.');
+		assert fatal (target != null) with log('Target state must be specified.');
+		
+		priority := source.getUniqueTransitionPriority(1);
+		
+		var enterChannel : SynchronizationChannel = self.map createEnterSyncChannel();
+								
+		synchronization := enterChannel.getSendSynchronization();
+		
+	};
+		
+	//Transition2Transition
+	mapping Transition :: transform() : Transition when {self.source.oclIsKindOf(ExitPoint) implies self.target.oclIsKindOf(ExitPoint)} {
+		-- the precondition excludes the final transitions of exit chains, since they are handled in phase 2 (computation of global joins)
+											
+		source := self.source.getVertexForSourceState(self.target.getStatechart());
+		target := self.target.getVertexForTargetState(self.source.getStatechart());
+		
+		assert fatal (source != null) with log('Source state must be specified.');
+		assert fatal (target != null) with log('Target state must be specified.');
+		
+		priority := source.getUniqueTransitionPriority(self.priority);
+		
+		urgent := 
+			if self.target.oclIsKindOf(ExitPoint)
+			then true  -- consider exiting transition as urgent (avoid non-urgent synchronization inside exit chains)
+			else self.urgent
+			endif;
+		
+			
+		-- map guard, clock constraints, and trigger message only if the target is not an exit point
+		-- in case of an exit point, these conditions will be represented inside the corresponding exit chain instead
+		
+		if (not self.target.oclIsKindOf(ExitPoint))
+		then {
+		
+			guard := self.guard.mapExpression();
+		
+			clockConstraints += self.clockConstraints->mapClockConstraint();
+			
+			events += self.triggerMessageEvent.mapAsynchronousMessageEvent();
+			
+		}
+		endif;
+		
+		
+		-- synchronization
+					
+		if (self.source.oclIsKindOf(EntryPoint)) then {
+		
+			-- attach auxiliary enter synchronization
+			-- no user-defined synchronization expected here according to the meta-model
+																				
+			synchronization := self.source.oclAsType(EntryPoint).map createEnterSyncChannel(self.target.getStatechart().parentRegion).getReceiveSynchronization();				
+		}
+		
+		else {
+		
+			if (self.target.oclIsKindOf(ExitPoint)) then {
+				
+				-- attach auxiliary exit synchronization
+				-- a possible user-defined synchronization will be represented inside the corresponding exit chain				
+			
+				synchronization := self.target.oclAsType(ExitPoint).state.map createExitSyncChannel(self.source.getStatechart().parentRegion).getReceiveSynchronization();
+				
+			}
+			else {
+				-- map user-defined synchronization			
+				synchronization := self.synchronization.map transform().oclAsType(Synchronization);
+			}
+			endif
+		
+		}			
+		endif;
+		
+		clockResets += self.clockResets->map transform().oclAsType(Clock);
+		
+		action := self.action.map transform().oclAsType(Action);
+		
+		
+		-- map raised message event and deadlines
+				
+		events += self.raiseMessageEvent.map transform().oclAsType(TransitionEvent);
+		
+		absoluteDeadlines += self.absoluteDeadlines->map transform().oclAsType(AbsoluteDeadline);
+		relativeDeadline := self.relativeDeadline.map transform().oclAsType(RelativeDeadline);
+					
+	}
+	
+	-- obtain the mapping result for the given source vertex of a transition leading to a vertex in a specific target statechart 		
+	query Vertex :: getVertexForSourceState(targetStatechart : RealtimeStatechart) : State {
+				
+		return switch {
+						
+			case (self.oclIsKindOf(EntryPoint)) targetStatechart.resolveoneIn(RealtimeStatechart::createIdleState, State);
+			case (self.oclIsKindOf(State) and self.oclAsType(State).simple) self.resolveoneIn(State::transform);
+			case (self.oclIsKindOf(ExitPoint)) self.oclAsType(ExitPoint).state.resolveoneIn(State::transform);
+			else assert fatal (false) with log("Unsupported source state type.");
+				
+		}
+		
+	}
+		
+	-- obtain the mapping result for the given target vertex of a transition originating from a vertex in a specific source statechart	
+	query Vertex :: getVertexForTargetState(sourceStatechart : RealtimeStatechart) : State {
+				
+		return switch {
+		
+			case (self.oclIsKindOf(EntryPoint)) self.resolveoneIn(EntryPoint::createAuxState, State);
+			case (self.oclIsKindOf(State) and self.oclAsType(State).simple) self.resolveoneIn(State::transform);
+			case (self.oclIsKindOf(ExitPoint)) sourceStatechart.resolveoneIn(RealtimeStatechart::createIdleState, State);
+			else assert fatal (false) with log("Unsupported target state type.");
+			
+		}
+		
+	}
+	
+	constructor Synchronization :: Synchronization(channel : SynchronizationChannel, syncKind : SynchronizationKind) {
+		
+		syncChannel := channel;
+		
+		kind := syncKind; 
+		
+		if(not channel.selectorType.oclIsUndefined())
+		then {
+			selectorExpression := object DiscreteInteractionEndpointReference {
+				position := object PositionSelector {
+					kind := PositionSelectorKind::SELF
+				}
+			}
+		} endif;
+				
+	}				
+						
+	helper SynchronizationChannel :: getReceiveSynchronization() : Synchronization {
+		
+		return new Synchronization(self, SynchronizationKind::RECEIVE);
+				
+	}
+	
+	helper SynchronizationChannel :: getSendSynchronization() : Synchronization {
+		
+		return new Synchronization(self, SynchronizationKind::SEND);
+				
+	}
+	
+
+	query EntryPoint :: getSubRoleOrPort() : DataType {
+		
+		var allDiscreteInteractionEndpoints := input.objects()[DiscreteInteractionEndpoint]->select(multi);
+		
+		// take this, humans!
+		return allDiscreteInteractionEndpoints
+			->any(endpoint | endpoint.subroleBehavior.oclAsType(EObject)->asOrderedSet()->closure(eContents())[EntryPoint]
+				->includes(self))
+			.oclAsType(DataType);
+		
+	}
+
+	
+							
+	mapping EntryPoint :: createEnterSyncChannel() : SynchronizationChannel {		
+		
+		name := ('enter_' + self.state.name + '_in_' + self.state.parentStatechart.name + '_via_' + self.name).addSuffixNumberUnderline();
+		
+		var subRoleOrPort := self.getSubRoleOrPort();
+		if(not subRoleOrPort.oclIsUndefined())
+		then {
+			selectorType := subRoleOrPort
+		} endif;
+		
+	}
+	
+	mapping EntryPoint :: createEnterSyncChannel(region : Region) : SynchronizationChannel
+		disjuncts EntryPoint::createXOREnterSyncChannel, EntryPoint::createANDEnterSyncChannel;			
+	
+	mapping EntryPoint :: createXOREnterSyncChannel(region : Region) : SynchronizationChannel when {self.state.embeddedRegions->size() = 1} {
+	
+		init {
+			result := self.map createEnterSyncChannel()
+		}
+		
+	}
+	
+	mapping EntryPoint :: createANDEnterSyncChannel(region : Region) : SynchronizationChannel when {self.state.embeddedRegions->size() > 1} {
+			
+		name := ('enter_' + region.name + '_in_' + self.state.name + '_via_' + self.name).addSuffixNumberUnderline();
+		
+		var subRoleOrPort := self.getSubRoleOrPort();
+		if(not subRoleOrPort.oclIsUndefined())
+		then {
+			selectorType := subRoleOrPort
+		} endif;
+		
+	}
+	
+	query State :: getSubRoleOrPort() : DataType {
+		
+		var allDiscreteInteractionEndpoints := input.objects()[DiscreteInteractionEndpoint]->select(multi);
+		
+		// take this, humans!
+		return allDiscreteInteractionEndpoints
+			->any(endpoint | endpoint.subroleBehavior.oclAsType(EObject)->asOrderedSet()->closure(eContents())[State]
+				->includes(self))
+			.oclAsType(DataType);
+		
+	}
+				
+	mapping State :: createExitSyncChannel() : SynchronizationChannel when {not self.simple} {
+		
+		name := ('exit_' + self.name).addSuffixNumberUnderline();
+		
+		var subRoleOrPort := self.getSubRoleOrPort();
+		if(not subRoleOrPort.oclIsUndefined())
+		then {
+			selectorType := subRoleOrPort
+		} endif;
+						
+	}
+	
+	mapping State :: createExitSyncChannel(region : Region) : SynchronizationChannel 
+		disjuncts State::createXORExitSyncChannel, State::createANDExitSyncChannel;
+	
+	mapping State :: createXORExitSyncChannel(region : Region) : SynchronizationChannel when {self.embeddedRegions->size() = 1} {
+		
+		init {
+			result := self.map createExitSyncChannel();
+		}
+						
+	}
+	
+	mapping State :: createANDExitSyncChannel(region : Region) : SynchronizationChannel when {self.embeddedRegions->size() > 1} {
+		
+		name := ('exit_' + region.name).addSuffixNumberUnderline();
+		
+		var subRoleOrPort := self.getSubRoleOrPort();
+		if(not subRoleOrPort.oclIsUndefined())
+		then {
+			selectorType := subRoleOrPort
+		} endif;
+						
+	}
+
+	helper getPrimitiveDataTypeInt(): PrimitiveDataType{
+	//search in input and return mapped type if type exists in input
+		var inputInt := input.objects()[PrimitiveDataType]->select(dT | dT.primitiveType = PrimitiveTypes::INT32);
+		if(inputInt->size() > 0)
+			return inputInt->any(true).map transform().oclAsType(PrimitiveDataType);
+	//search in output, because type could be explicitly created (see below)
+		var outputInt := output.objects()[PrimitiveDataType]->select(dT | dT.primitiveType = PrimitiveTypes::INT32);
+		if(outputInt->size() > 0)
+			return outputInt->any(true);
+	
+	//no int type found so create one
+		var newInt := object PrimitiveDataType{
+			name := "INT";
+			primitiveType := PrimitiveTypes::INT32
+		};
+		
+	//search types category
+		var typesCategory := input.objects()[ModelElementCategory]->select(mEC | mEC.key = "org.muml.types.category");
+		if(typesCategory->size() > 0){
+			typesCategory->any(true).map transform().oclAsType(ModelElementCategory).modelElements += newInt;
+			return newInt;
+		};
+	
+	//create types category
+		var newTypesCategory := object ModelElementCategory{
+			key := "org.muml.types.category";
+			name := "types";
+		};		
+	//add int type
+		newTypesCategory.modelElements += newInt;
+	
+	//add to root node
+		input.rootObjects()[RootNode]->any(true).map transform().oclAsType(RootNode).categories += newTypesCategory;
+	
+		return newInt;
+	
+	}
+	
