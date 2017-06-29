@@ -7,6 +7,11 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.muml.uppaal.visuals.*;
+import org.muml.uppaal.visuals.ColoredElement;
+import org.muml.uppaal.visuals.LinearElement;
+import org.muml.uppaal.visuals.PlanarElement;
+import org.muml.uppaal.visuals.Point;
+import org.muml.uppaal.visuals.VisualsPackage;
 
 /**
  * <!-- begin-user-doc -->

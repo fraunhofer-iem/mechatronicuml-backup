@@ -8,6 +8,17 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.muml.uppaal.statements.*;
+import org.muml.uppaal.statements.Block;
+import org.muml.uppaal.statements.DoWhileLoop;
+import org.muml.uppaal.statements.EmptyStatement;
+import org.muml.uppaal.statements.ExpressionStatement;
+import org.muml.uppaal.statements.ForLoop;
+import org.muml.uppaal.statements.IfStatement;
+import org.muml.uppaal.statements.Iteration;
+import org.muml.uppaal.statements.ReturnStatement;
+import org.muml.uppaal.statements.StatementsFactory;
+import org.muml.uppaal.statements.StatementsPackage;
+import org.muml.uppaal.statements.WhileLoop;
 
 /**
  * <!-- begin-user-doc -->

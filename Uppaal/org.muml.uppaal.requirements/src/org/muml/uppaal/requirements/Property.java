@@ -2,7 +2,6 @@
  */
 package org.muml.uppaal.requirements;
 
-import org.eclipse.emf.ecore.EObject;
 import org.muml.uppaal.core.CommentableElement;
 
 /**

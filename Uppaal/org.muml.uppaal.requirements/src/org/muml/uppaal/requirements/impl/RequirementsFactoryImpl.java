@@ -8,7 +8,14 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.muml.uppaal.requirements.*;
+import org.muml.uppaal.requirements.DeadlockExpression;
+import org.muml.uppaal.requirements.LeadsToProperty;
+import org.muml.uppaal.requirements.PathQuantifier;
+import org.muml.uppaal.requirements.PropertyRepository;
+import org.muml.uppaal.requirements.RequirementsFactory;
+import org.muml.uppaal.requirements.RequirementsPackage;
+import org.muml.uppaal.requirements.TemporalOperator;
+import org.muml.uppaal.requirements.UnaryProperty;
 
 /**
  * <!-- begin-user-doc -->

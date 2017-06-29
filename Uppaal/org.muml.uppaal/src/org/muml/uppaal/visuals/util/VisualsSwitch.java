@@ -6,6 +6,11 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.muml.uppaal.visuals.*;
+import org.muml.uppaal.visuals.ColoredElement;
+import org.muml.uppaal.visuals.LinearElement;
+import org.muml.uppaal.visuals.PlanarElement;
+import org.muml.uppaal.visuals.Point;
+import org.muml.uppaal.visuals.VisualsPackage;
 
 /**
  * <!-- begin-user-doc -->

@@ -31,7 +31,7 @@ public class DiagnosticTraceStandaloneSetupGenerated implements ISetup {
 	
 	public void register(Injector injector) {
 	if (!EPackage.Registry.INSTANCE.containsKey("http://www.muml.org/uppaal/trace/1.0.0")) {
-		EPackage.Registry.INSTANCE.put("http://www.muml.org/uppaal/trace/1.0.0", org.muml.uppaal.trace.diagnostictrace.DiagnostictracePackage.eINSTANCE);
+		EPackage.Registry.INSTANCE.put("http://www.muml.org/uppaal/trace/1.0.0", org.muml.uppaal.trace.TracePackage.eINSTANCE);
 	}
 
 		org.eclipse.xtext.resource.IResourceFactory resourceFactory = injector.getInstance(org.eclipse.xtext.resource.IResourceFactory.class);

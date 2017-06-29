@@ -6,8 +6,19 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
-import org.muml.uppaal.declarations.VariableContainer;
+import org.muml.uppaal.declarations.TypedElementContainer;
 import org.muml.uppaal.statements.*;
+import org.muml.uppaal.statements.Block;
+import org.muml.uppaal.statements.DoWhileLoop;
+import org.muml.uppaal.statements.EmptyStatement;
+import org.muml.uppaal.statements.ExpressionStatement;
+import org.muml.uppaal.statements.ForLoop;
+import org.muml.uppaal.statements.IfStatement;
+import org.muml.uppaal.statements.Iteration;
+import org.muml.uppaal.statements.ReturnStatement;
+import org.muml.uppaal.statements.Statement;
+import org.muml.uppaal.statements.StatementsPackage;
+import org.muml.uppaal.statements.WhileLoop;
 
 /**
  * <!-- begin-user-doc -->
@@ -106,8 +117,8 @@ public class StatementsAdapterFactory extends AdapterFactoryImpl {
 				return createExpressionStatementAdapter();
 			}
 			@Override
-			public Adapter caseVariableContainer(VariableContainer object) {
-				return createVariableContainerAdapter();
+			public Adapter caseTypedElementContainer(TypedElementContainer object) {
+				return createTypedElementContainerAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -270,16 +281,16 @@ public class StatementsAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.muml.uppaal.declarations.VariableContainer <em>Variable Container</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.uppaal.declarations.TypedElementContainer <em>Typed Element Container</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.muml.uppaal.declarations.VariableContainer
+	 * @see org.muml.uppaal.declarations.TypedElementContainer
 	 * @generated
 	 */
-	public Adapter createVariableContainerAdapter() {
+	public Adapter createTypedElementContainerAdapter() {
 		return null;
 	}
 

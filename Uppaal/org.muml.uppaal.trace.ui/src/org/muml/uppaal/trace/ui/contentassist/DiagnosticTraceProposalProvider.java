@@ -3,8 +3,6 @@
 */
 package org.muml.uppaal.trace.ui.contentassist;
 
-import org.muml.uppaal.trace.ui.contentassist.AbstractDiagnosticTraceProposalProvider;
-
 /**
  * see http://www.eclipse.org/Xtext/documentation/latest/xtext.html#contentAssist on how to customize content assistant
  */

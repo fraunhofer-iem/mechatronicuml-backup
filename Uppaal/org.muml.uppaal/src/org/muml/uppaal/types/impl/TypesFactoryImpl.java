@@ -9,6 +9,16 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.muml.uppaal.types.*;
+import org.muml.uppaal.types.BuiltInType;
+import org.muml.uppaal.types.DeclaredType;
+import org.muml.uppaal.types.IntegerBounds;
+import org.muml.uppaal.types.Library;
+import org.muml.uppaal.types.PredefinedType;
+import org.muml.uppaal.types.RangeTypeSpecification;
+import org.muml.uppaal.types.ScalarTypeSpecification;
+import org.muml.uppaal.types.StructTypeSpecification;
+import org.muml.uppaal.types.TypesFactory;
+import org.muml.uppaal.types.TypesPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -56,7 +66,6 @@ public class TypesFactoryImpl extends EFactoryImpl implements TypesFactory {
 		switch (eClass.getClassifierID()) {
 			case TypesPackage.PREDEFINED_TYPE: return createPredefinedType();
 			case TypesPackage.DECLARED_TYPE: return createDeclaredType();
-			case TypesPackage.TYPE_REFERENCE: return createTypeReference();
 			case TypesPackage.SCALAR_TYPE_SPECIFICATION: return createScalarTypeSpecification();
 			case TypesPackage.STRUCT_TYPE_SPECIFICATION: return createStructTypeSpecification();
 			case TypesPackage.RANGE_TYPE_SPECIFICATION: return createRangeTypeSpecification();
@@ -115,16 +124,6 @@ public class TypesFactoryImpl extends EFactoryImpl implements TypesFactory {
 	public DeclaredType createDeclaredType() {
 		DeclaredTypeImpl declaredType = new DeclaredTypeImpl();
 		return declaredType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TypeReference createTypeReference() {
-		TypeReferenceImpl typeReference = new TypeReferenceImpl();
-		return typeReference;
 	}
 
 	/**

@@ -2,14 +2,22 @@
  */
 package org.muml.uppaal.types.util;
 
-import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EModelElement;
-import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.muml.uppaal.core.NamedElement;
+import org.muml.uppaal.expressions.Expression;
 import org.muml.uppaal.types.*;
+import org.muml.uppaal.types.DeclaredType;
+import org.muml.uppaal.types.IntegerBounds;
+import org.muml.uppaal.types.Library;
+import org.muml.uppaal.types.PredefinedType;
+import org.muml.uppaal.types.RangeTypeSpecification;
+import org.muml.uppaal.types.ScalarTypeSpecification;
+import org.muml.uppaal.types.StructTypeSpecification;
+import org.muml.uppaal.types.Type;
+import org.muml.uppaal.types.TypeExpression;
+import org.muml.uppaal.types.TypesPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -91,47 +99,34 @@ public class TypesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TypesPackage.TYPE_DEFINITION: {
-				TypeDefinition typeDefinition = (TypeDefinition)theEObject;
-				T result = caseTypeDefinition(typeDefinition);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case TypesPackage.TYPE_REFERENCE: {
-				TypeReference typeReference = (TypeReference)theEObject;
-				T result = caseTypeReference(typeReference);
-				if (result == null) result = caseTypeDefinition(typeReference);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case TypesPackage.TYPE_SPECIFICATION: {
-				TypeSpecification typeSpecification = (TypeSpecification)theEObject;
-				T result = caseTypeSpecification(typeSpecification);
-				if (result == null) result = caseTypeDefinition(typeSpecification);
+			case TypesPackage.TYPE_EXPRESSION: {
+				TypeExpression typeExpression = (TypeExpression)theEObject;
+				T result = caseTypeExpression(typeExpression);
+				if (result == null) result = caseExpression(typeExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case TypesPackage.SCALAR_TYPE_SPECIFICATION: {
 				ScalarTypeSpecification scalarTypeSpecification = (ScalarTypeSpecification)theEObject;
 				T result = caseScalarTypeSpecification(scalarTypeSpecification);
-				if (result == null) result = caseTypeSpecification(scalarTypeSpecification);
-				if (result == null) result = caseTypeDefinition(scalarTypeSpecification);
+				if (result == null) result = caseTypeExpression(scalarTypeSpecification);
+				if (result == null) result = caseExpression(scalarTypeSpecification);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case TypesPackage.STRUCT_TYPE_SPECIFICATION: {
 				StructTypeSpecification structTypeSpecification = (StructTypeSpecification)theEObject;
 				T result = caseStructTypeSpecification(structTypeSpecification);
-				if (result == null) result = caseTypeSpecification(structTypeSpecification);
-				if (result == null) result = caseTypeDefinition(structTypeSpecification);
+				if (result == null) result = caseTypeExpression(structTypeSpecification);
+				if (result == null) result = caseExpression(structTypeSpecification);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case TypesPackage.RANGE_TYPE_SPECIFICATION: {
 				RangeTypeSpecification rangeTypeSpecification = (RangeTypeSpecification)theEObject;
 				T result = caseRangeTypeSpecification(rangeTypeSpecification);
-				if (result == null) result = caseTypeSpecification(rangeTypeSpecification);
-				if (result == null) result = caseTypeDefinition(rangeTypeSpecification);
+				if (result == null) result = caseTypeExpression(rangeTypeSpecification);
+				if (result == null) result = caseExpression(rangeTypeSpecification);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -197,47 +192,17 @@ public class TypesSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Type Definition</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Type Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Type Definition</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Type Expression</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseTypeDefinition(TypeDefinition object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Type Reference</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Type Reference</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseTypeReference(TypeReference object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Type Specification</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Type Specification</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseTypeSpecification(TypeSpecification object) {
+	public T caseTypeExpression(TypeExpression object) {
 		return null;
 	}
 
@@ -328,6 +293,21 @@ public class TypesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseNamedElement(NamedElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Expression</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExpression(Expression object) {
 		return null;
 	}
 

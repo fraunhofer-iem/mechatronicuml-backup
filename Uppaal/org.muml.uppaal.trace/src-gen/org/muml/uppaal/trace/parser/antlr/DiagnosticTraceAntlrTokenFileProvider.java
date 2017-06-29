@@ -4,6 +4,7 @@
 package org.muml.uppaal.trace.parser.antlr;
 
 import java.io.InputStream;
+
 import org.eclipse.xtext.parser.antlr.IAntlrTokenFileProvider;
 
 public class DiagnosticTraceAntlrTokenFileProvider implements IAntlrTokenFileProvider {

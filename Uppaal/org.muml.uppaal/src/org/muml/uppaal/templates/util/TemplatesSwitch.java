@@ -7,8 +7,16 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.muml.uppaal.core.CommentableElement;
 import org.muml.uppaal.core.NamedElement;
-import org.muml.uppaal.declarations.VariableContainer;
+import org.muml.uppaal.declarations.TypedElementContainer;
 import org.muml.uppaal.templates.*;
+import org.muml.uppaal.templates.AbstractTemplate;
+import org.muml.uppaal.templates.Edge;
+import org.muml.uppaal.templates.Location;
+import org.muml.uppaal.templates.RedefinedTemplate;
+import org.muml.uppaal.templates.Selection;
+import org.muml.uppaal.templates.Synchronization;
+import org.muml.uppaal.templates.Template;
+import org.muml.uppaal.templates.TemplatesPackage;
 import org.muml.uppaal.visuals.ColoredElement;
 import org.muml.uppaal.visuals.LinearElement;
 import org.muml.uppaal.visuals.PlanarElement;
@@ -74,7 +82,6 @@ public class TemplatesSwitch<T> extends Switch<T> {
 				AbstractTemplate abstractTemplate = (AbstractTemplate)theEObject;
 				T result = caseAbstractTemplate(abstractTemplate);
 				if (result == null) result = caseNamedElement(abstractTemplate);
-				if (result == null) result = caseCommentableElement(abstractTemplate);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -83,7 +90,6 @@ public class TemplatesSwitch<T> extends Switch<T> {
 				T result = caseTemplate(template);
 				if (result == null) result = caseAbstractTemplate(template);
 				if (result == null) result = caseNamedElement(template);
-				if (result == null) result = caseCommentableElement(template);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -92,7 +98,6 @@ public class TemplatesSwitch<T> extends Switch<T> {
 				T result = caseRedefinedTemplate(redefinedTemplate);
 				if (result == null) result = caseAbstractTemplate(redefinedTemplate);
 				if (result == null) result = caseNamedElement(redefinedTemplate);
-				if (result == null) result = caseCommentableElement(redefinedTemplate);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -124,7 +129,7 @@ public class TemplatesSwitch<T> extends Switch<T> {
 			case TemplatesPackage.SELECTION: {
 				Selection selection = (Selection)theEObject;
 				T result = caseSelection(selection);
-				if (result == null) result = caseVariableContainer(selection);
+				if (result == null) result = caseTypedElementContainer(selection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -313,17 +318,17 @@ public class TemplatesSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Variable Container</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Typed Element Container</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Variable Container</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Typed Element Container</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseVariableContainer(VariableContainer object) {
+	public T caseTypedElementContainer(TypedElementContainer object) {
 		return null;
 	}
 

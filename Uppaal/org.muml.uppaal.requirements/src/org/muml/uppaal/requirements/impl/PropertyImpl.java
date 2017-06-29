@@ -3,7 +3,6 @@
 package org.muml.uppaal.requirements.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.muml.uppaal.core.impl.CommentableElementImpl;
 import org.muml.uppaal.requirements.Property;
 import org.muml.uppaal.requirements.RequirementsPackage;

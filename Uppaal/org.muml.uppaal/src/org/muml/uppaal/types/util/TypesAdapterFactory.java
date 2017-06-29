@@ -5,13 +5,20 @@ package org.muml.uppaal.types.util;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EModelElement;
-import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EPackage;
 import org.muml.uppaal.core.NamedElement;
+import org.muml.uppaal.expressions.Expression;
 import org.muml.uppaal.types.*;
+import org.muml.uppaal.types.DeclaredType;
+import org.muml.uppaal.types.IntegerBounds;
+import org.muml.uppaal.types.Library;
+import org.muml.uppaal.types.PredefinedType;
+import org.muml.uppaal.types.RangeTypeSpecification;
+import org.muml.uppaal.types.ScalarTypeSpecification;
+import org.muml.uppaal.types.StructTypeSpecification;
+import org.muml.uppaal.types.Type;
+import org.muml.uppaal.types.TypeExpression;
+import org.muml.uppaal.types.TypesPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -82,16 +89,8 @@ public class TypesAdapterFactory extends AdapterFactoryImpl {
 				return createDeclaredTypeAdapter();
 			}
 			@Override
-			public Adapter caseTypeDefinition(TypeDefinition object) {
-				return createTypeDefinitionAdapter();
-			}
-			@Override
-			public Adapter caseTypeReference(TypeReference object) {
-				return createTypeReferenceAdapter();
-			}
-			@Override
-			public Adapter caseTypeSpecification(TypeSpecification object) {
-				return createTypeSpecificationAdapter();
+			public Adapter caseTypeExpression(TypeExpression object) {
+				return createTypeExpressionAdapter();
 			}
 			@Override
 			public Adapter caseScalarTypeSpecification(ScalarTypeSpecification object) {
@@ -116,6 +115,10 @@ public class TypesAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseNamedElement(NamedElement object) {
 				return createNamedElementAdapter();
+			}
+			@Override
+			public Adapter caseExpression(Expression object) {
+				return createExpressionAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -180,44 +183,16 @@ public class TypesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.muml.uppaal.types.TypeDefinition <em>Type Definition</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.uppaal.types.TypeExpression <em>Type Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.muml.uppaal.types.TypeDefinition
+	 * @see org.muml.uppaal.types.TypeExpression
 	 * @generated
 	 */
-	public Adapter createTypeDefinitionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.muml.uppaal.types.TypeReference <em>Type Reference</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.muml.uppaal.types.TypeReference
-	 * @generated
-	 */
-	public Adapter createTypeReferenceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.muml.uppaal.types.TypeSpecification <em>Type Specification</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.muml.uppaal.types.TypeSpecification
-	 * @generated
-	 */
-	public Adapter createTypeSpecificationAdapter() {
+	public Adapter createTypeExpressionAdapter() {
 		return null;
 	}
 
@@ -302,6 +277,20 @@ public class TypesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createNamedElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.muml.uppaal.expressions.Expression <em>Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.muml.uppaal.expressions.Expression
+	 * @generated
+	 */
+	public Adapter createExpressionAdapter() {
 		return null;
 	}
 

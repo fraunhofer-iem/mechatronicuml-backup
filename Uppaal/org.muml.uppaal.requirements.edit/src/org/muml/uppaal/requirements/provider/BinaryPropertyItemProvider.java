@@ -9,17 +9,13 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.uppaal.expressions.ExpressionsFactory;
 import org.muml.uppaal.requirements.BinaryProperty;
 import org.muml.uppaal.requirements.RequirementsFactory;
 import org.muml.uppaal.requirements.RequirementsPackage;
+import org.muml.uppaal.types.TypesFactory;
 
 /**
  * This is the item provider adapter for a {@link org.muml.uppaal.requirements.BinaryProperty} object.
@@ -138,6 +134,21 @@ public class BinaryPropertyItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(RequirementsPackage.Literals.BINARY_PROPERTY__LEFT_EXPRESSION,
+				 TypesFactory.eINSTANCE.createScalarTypeSpecification()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RequirementsPackage.Literals.BINARY_PROPERTY__LEFT_EXPRESSION,
+				 TypesFactory.eINSTANCE.createStructTypeSpecification()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RequirementsPackage.Literals.BINARY_PROPERTY__LEFT_EXPRESSION,
+				 TypesFactory.eINSTANCE.createRangeTypeSpecification()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RequirementsPackage.Literals.BINARY_PROPERTY__LEFT_EXPRESSION,
 				 ExpressionsFactory.eINSTANCE.createNegationExpression()));
 
 		newChildDescriptors.add
@@ -159,6 +170,11 @@ public class BinaryPropertyItemProvider
 			(createChildParameter
 				(RequirementsPackage.Literals.BINARY_PROPERTY__LEFT_EXPRESSION,
 				 ExpressionsFactory.eINSTANCE.createIdentifierExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RequirementsPackage.Literals.BINARY_PROPERTY__LEFT_EXPRESSION,
+				 ExpressionsFactory.eINSTANCE.createScopedIdentifierExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -193,17 +209,17 @@ public class BinaryPropertyItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(RequirementsPackage.Literals.BINARY_PROPERTY__LEFT_EXPRESSION,
-				 ExpressionsFactory.eINSTANCE.createScopedIdentifierExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RequirementsPackage.Literals.BINARY_PROPERTY__LEFT_EXPRESSION,
 				 ExpressionsFactory.eINSTANCE.createQuantificationExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(RequirementsPackage.Literals.BINARY_PROPERTY__LEFT_EXPRESSION,
-				 ExpressionsFactory.eINSTANCE.createIncrementDecrementExpression()));
+				 ExpressionsFactory.eINSTANCE.createPreIncrementDecrementExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RequirementsPackage.Literals.BINARY_PROPERTY__LEFT_EXPRESSION,
+				 ExpressionsFactory.eINSTANCE.createPostIncrementDecrementExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -219,6 +235,16 @@ public class BinaryPropertyItemProvider
 			(createChildParameter
 				(RequirementsPackage.Literals.BINARY_PROPERTY__LEFT_EXPRESSION,
 				 ExpressionsFactory.eINSTANCE.createBitwiseExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RequirementsPackage.Literals.BINARY_PROPERTY__LEFT_EXPRESSION,
+				 ExpressionsFactory.eINSTANCE.createChannelPrefixExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RequirementsPackage.Literals.BINARY_PROPERTY__LEFT_EXPRESSION,
+				 ExpressionsFactory.eINSTANCE.createDataPrefixExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -228,6 +254,21 @@ public class BinaryPropertyItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(RequirementsPackage.Literals.BINARY_PROPERTY__RIGHT_EXPRESSION,
+				 TypesFactory.eINSTANCE.createScalarTypeSpecification()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RequirementsPackage.Literals.BINARY_PROPERTY__RIGHT_EXPRESSION,
+				 TypesFactory.eINSTANCE.createStructTypeSpecification()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RequirementsPackage.Literals.BINARY_PROPERTY__RIGHT_EXPRESSION,
+				 TypesFactory.eINSTANCE.createRangeTypeSpecification()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RequirementsPackage.Literals.BINARY_PROPERTY__RIGHT_EXPRESSION,
 				 ExpressionsFactory.eINSTANCE.createNegationExpression()));
 
 		newChildDescriptors.add
@@ -249,6 +290,11 @@ public class BinaryPropertyItemProvider
 			(createChildParameter
 				(RequirementsPackage.Literals.BINARY_PROPERTY__RIGHT_EXPRESSION,
 				 ExpressionsFactory.eINSTANCE.createIdentifierExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RequirementsPackage.Literals.BINARY_PROPERTY__RIGHT_EXPRESSION,
+				 ExpressionsFactory.eINSTANCE.createScopedIdentifierExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -283,17 +329,17 @@ public class BinaryPropertyItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(RequirementsPackage.Literals.BINARY_PROPERTY__RIGHT_EXPRESSION,
-				 ExpressionsFactory.eINSTANCE.createScopedIdentifierExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RequirementsPackage.Literals.BINARY_PROPERTY__RIGHT_EXPRESSION,
 				 ExpressionsFactory.eINSTANCE.createQuantificationExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(RequirementsPackage.Literals.BINARY_PROPERTY__RIGHT_EXPRESSION,
-				 ExpressionsFactory.eINSTANCE.createIncrementDecrementExpression()));
+				 ExpressionsFactory.eINSTANCE.createPreIncrementDecrementExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RequirementsPackage.Literals.BINARY_PROPERTY__RIGHT_EXPRESSION,
+				 ExpressionsFactory.eINSTANCE.createPostIncrementDecrementExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -309,6 +355,16 @@ public class BinaryPropertyItemProvider
 			(createChildParameter
 				(RequirementsPackage.Literals.BINARY_PROPERTY__RIGHT_EXPRESSION,
 				 ExpressionsFactory.eINSTANCE.createBitwiseExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RequirementsPackage.Literals.BINARY_PROPERTY__RIGHT_EXPRESSION,
+				 ExpressionsFactory.eINSTANCE.createChannelPrefixExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RequirementsPackage.Literals.BINARY_PROPERTY__RIGHT_EXPRESSION,
+				 ExpressionsFactory.eINSTANCE.createDataPrefixExpression()));
 	}
 
 	/**

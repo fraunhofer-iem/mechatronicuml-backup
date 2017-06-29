@@ -9,6 +9,16 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.muml.uppaal.templates.*;
+import org.muml.uppaal.templates.Edge;
+import org.muml.uppaal.templates.Location;
+import org.muml.uppaal.templates.LocationKind;
+import org.muml.uppaal.templates.RedefinedTemplate;
+import org.muml.uppaal.templates.Selection;
+import org.muml.uppaal.templates.Synchronization;
+import org.muml.uppaal.templates.SynchronizationKind;
+import org.muml.uppaal.templates.Template;
+import org.muml.uppaal.templates.TemplatesFactory;
+import org.muml.uppaal.templates.TemplatesPackage;
 
 /**
  * <!-- begin-user-doc -->

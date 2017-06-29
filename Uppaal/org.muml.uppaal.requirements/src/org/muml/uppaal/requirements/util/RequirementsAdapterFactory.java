@@ -8,7 +8,13 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.muml.uppaal.core.CommentableElement;
 import org.muml.uppaal.expressions.Expression;
-import org.muml.uppaal.requirements.*;
+import org.muml.uppaal.requirements.BinaryProperty;
+import org.muml.uppaal.requirements.DeadlockExpression;
+import org.muml.uppaal.requirements.LeadsToProperty;
+import org.muml.uppaal.requirements.Property;
+import org.muml.uppaal.requirements.PropertyRepository;
+import org.muml.uppaal.requirements.RequirementsPackage;
+import org.muml.uppaal.requirements.UnaryProperty;
 
 /**
  * <!-- begin-user-doc -->

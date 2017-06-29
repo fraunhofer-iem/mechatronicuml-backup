@@ -6,7 +6,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
-import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.muml.uppaal.UppaalPackage;
 import org.muml.uppaal.core.CorePackage;
@@ -375,12 +374,6 @@ public class SystemPackageImpl extends EPackageImpl implements SystemPackage {
 		   source, 
 		   new String[] {
 			 "constraints", "EachTemplateReferencedAtMostOnce"
-		   });	
-		addAnnotation
-		  (instantiationListEClass, 
-		   source, 
-		   new String[] {
-			 "constraints", "OnlyLegalParamsForPartialInstantiation"
 		   });
 	}
 
@@ -403,12 +396,6 @@ public class SystemPackageImpl extends EPackageImpl implements SystemPackage {
 		   source, 
 		   new String[] {
 			 "EachTemplateReferencedAtMostOnce", "self.instantiationList->collect(template)->isUnique(t : templates::AbstractTemplate | t)"
-		   });	
-		addAnnotation
-		  (instantiationListEClass, 
-		   source, 
-		   new String[] {
-			 "OnlyLegalParamsForPartialInstantiation", "self.template->forAll(\r\n\tparameter->forAll(\r\n\t\tcallType = declarations::CallType::CALL_BY_VALUE\r\n\t\tand\r\n\t\t((not variableDeclaration.oclIsUndefined())\r\n\t\t\timplies\r\n\t\t (variableDeclaration.typeDefinition.typeSpecification.oclIsKindOf(types::RangeTypeSpecification) or\r\n\t\t  variableDeclaration.typeDefinition.typeSpecification.oclIsKindOf(types::ScalarTypeSpecification)))\r\n\t)\r\n)"
 		   });
 	}
 

@@ -9,9 +9,19 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
-import org.eclipse.emf.ecore.util.EcoreValidator;
 import org.muml.uppaal.core.util.CoreValidator;
 import org.muml.uppaal.types.*;
+import org.muml.uppaal.types.BuiltInType;
+import org.muml.uppaal.types.DeclaredType;
+import org.muml.uppaal.types.IntegerBounds;
+import org.muml.uppaal.types.Library;
+import org.muml.uppaal.types.PredefinedType;
+import org.muml.uppaal.types.RangeTypeSpecification;
+import org.muml.uppaal.types.ScalarTypeSpecification;
+import org.muml.uppaal.types.StructTypeSpecification;
+import org.muml.uppaal.types.Type;
+import org.muml.uppaal.types.TypeExpression;
+import org.muml.uppaal.types.TypesPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -100,12 +110,8 @@ public class TypesValidator extends EObjectValidator {
 				return validatePredefinedType((PredefinedType)value, diagnostics, context);
 			case TypesPackage.DECLARED_TYPE:
 				return validateDeclaredType((DeclaredType)value, diagnostics, context);
-			case TypesPackage.TYPE_DEFINITION:
-				return validateTypeDefinition((TypeDefinition)value, diagnostics, context);
-			case TypesPackage.TYPE_REFERENCE:
-				return validateTypeReference((TypeReference)value, diagnostics, context);
-			case TypesPackage.TYPE_SPECIFICATION:
-				return validateTypeSpecification((TypeSpecification)value, diagnostics, context);
+			case TypesPackage.TYPE_EXPRESSION:
+				return validateTypeExpression((TypeExpression)value, diagnostics, context);
 			case TypesPackage.SCALAR_TYPE_SPECIFICATION:
 				return validateScalarTypeSpecification((ScalarTypeSpecification)value, diagnostics, context);
 			case TypesPackage.STRUCT_TYPE_SPECIFICATION:
@@ -188,26 +194,8 @@ public class TypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateTypeDefinition(TypeDefinition typeDefinition, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(typeDefinition, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateTypeReference(TypeReference typeReference, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(typeReference, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateTypeSpecification(TypeSpecification typeSpecification, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(typeSpecification, diagnostics, context);
+	public boolean validateTypeExpression(TypeExpression typeExpression, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(typeExpression, diagnostics, context);
 	}
 
 	/**
@@ -244,7 +232,7 @@ public class TypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STRUCT_TYPE_SPECIFICATION__UNIQUE_FIELD_NAMES__EEXPRESSION = "self.declaration->collect(variable)->isUnique(name)";
+	protected static final String STRUCT_TYPE_SPECIFICATION__UNIQUE_FIELD_NAMES__EEXPRESSION = "self.declaration->collect(elements)->collect(oclAsType(core::NamedElement))->isUnique(name)";
 
 	/**
 	 * Validates the UniqueFieldNames constraint of '<em>Struct Type Specification</em>'.

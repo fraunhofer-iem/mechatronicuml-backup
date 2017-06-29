@@ -10,19 +10,14 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.uppaal.expressions.ExpressionsFactory;
-import org.muml.uppaal.requirements.PathQuantifier;
 import org.muml.uppaal.requirements.RequirementsFactory;
 import org.muml.uppaal.requirements.RequirementsPackage;
 import org.muml.uppaal.requirements.UnaryProperty;
+import org.muml.uppaal.types.TypesFactory;
 
 /**
  * This is the item provider adapter for a {@link org.muml.uppaal.requirements.UnaryProperty} object.
@@ -200,6 +195,21 @@ public class UnaryPropertyItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(RequirementsPackage.Literals.UNARY_PROPERTY__EXPRESSION,
+				 TypesFactory.eINSTANCE.createScalarTypeSpecification()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RequirementsPackage.Literals.UNARY_PROPERTY__EXPRESSION,
+				 TypesFactory.eINSTANCE.createStructTypeSpecification()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RequirementsPackage.Literals.UNARY_PROPERTY__EXPRESSION,
+				 TypesFactory.eINSTANCE.createRangeTypeSpecification()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RequirementsPackage.Literals.UNARY_PROPERTY__EXPRESSION,
 				 ExpressionsFactory.eINSTANCE.createNegationExpression()));
 
 		newChildDescriptors.add
@@ -221,6 +231,11 @@ public class UnaryPropertyItemProvider
 			(createChildParameter
 				(RequirementsPackage.Literals.UNARY_PROPERTY__EXPRESSION,
 				 ExpressionsFactory.eINSTANCE.createIdentifierExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RequirementsPackage.Literals.UNARY_PROPERTY__EXPRESSION,
+				 ExpressionsFactory.eINSTANCE.createScopedIdentifierExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -255,17 +270,17 @@ public class UnaryPropertyItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(RequirementsPackage.Literals.UNARY_PROPERTY__EXPRESSION,
-				 ExpressionsFactory.eINSTANCE.createScopedIdentifierExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RequirementsPackage.Literals.UNARY_PROPERTY__EXPRESSION,
 				 ExpressionsFactory.eINSTANCE.createQuantificationExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(RequirementsPackage.Literals.UNARY_PROPERTY__EXPRESSION,
-				 ExpressionsFactory.eINSTANCE.createIncrementDecrementExpression()));
+				 ExpressionsFactory.eINSTANCE.createPreIncrementDecrementExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RequirementsPackage.Literals.UNARY_PROPERTY__EXPRESSION,
+				 ExpressionsFactory.eINSTANCE.createPostIncrementDecrementExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -281,6 +296,16 @@ public class UnaryPropertyItemProvider
 			(createChildParameter
 				(RequirementsPackage.Literals.UNARY_PROPERTY__EXPRESSION,
 				 ExpressionsFactory.eINSTANCE.createBitwiseExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RequirementsPackage.Literals.UNARY_PROPERTY__EXPRESSION,
+				 ExpressionsFactory.eINSTANCE.createChannelPrefixExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RequirementsPackage.Literals.UNARY_PROPERTY__EXPRESSION,
+				 ExpressionsFactory.eINSTANCE.createDataPrefixExpression()));
 	}
 
 }

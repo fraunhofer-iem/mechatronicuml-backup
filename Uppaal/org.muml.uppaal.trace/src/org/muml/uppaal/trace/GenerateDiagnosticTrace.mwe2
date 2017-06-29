@@ -6,7 +6,8 @@ import org.eclipse.xtext.ui.generator.*
 
 var grammarURI = "classpath:/org/muml/uppaal/trace/DiagnosticTrace.xtext"
 var file.extensions = "trace"
-var projectName = "org.muml.uppaal.trace"
+var basePackage = "org.muml.uppaal"
+var projectName = "${basePackage}.trace"
 var runtimeProject = "../${projectName}"
 
 Workflow {
@@ -17,8 +18,8 @@ Workflow {
             registerGeneratedEPackage = "org.eclipse.xtext.xbase.XbasePackage"
             registerGenModelFile = "platform:/resource/org.eclipse.xtext.xbase/model/Xbase.genmodel"
                    
-            registerGeneratedEPackage = "org.muml.uppaal.UppaalPackage"
-			registerGenModelFile = "platform:/resource/org.muml.uppaal/model/uppaal.genmodel"
+            registerGeneratedEPackage = "${basePackage}.UppaalPackage"
+			registerGenModelFile = "platform:/resource/${basePackage}/model/uppaal.genmodel"
 			
         }
     
@@ -35,22 +36,17 @@ Workflow {
             pathUiProject = "${runtimeProject}.ui"
             //pathTestProject = "${runtimeProject}.tests"
             projectNameRt = projectName
-            projectNameUi = "${projectName}.ui"
+            projectNameUi = "${projectName}.ui" 
             language = {
                 uri = grammarURI
                 fileExtensions = file.extensions
-    
                 // Java API to access grammar elements (required by several other fragments)
                 fragment = grammarAccess.GrammarAccessFragment {}
-        
-        		// generates Java API for the generated EPackages
-                fragment = ecore.EcoreGeneratorFragment {
-                // referencedGenModels = "
-                //  platform:/resource/org.eclipse.xtext.xbase/model/Xbase.genmodel,
-                //  platform:/resource/org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel
-                // "
-                }
-                
+        		
+        		fragment = ecore.EMFGeneratorFragment {
+        			basePackage = "${basePackage}"
+        		}
+        		                
                 // Serializer 2.0
                 fragment = serializer.SerializerFragment {
                 	generateStub = false
@@ -73,6 +69,7 @@ Workflow {
     
                 // java-based API for validation
                 fragment = validation.JavaValidatorFragment {
+                	basePackage = "${basePackage}"
                 //    composedCheck = "org.eclipse.xtext.validation.ImportUriValidator"
                 //    composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
                 }

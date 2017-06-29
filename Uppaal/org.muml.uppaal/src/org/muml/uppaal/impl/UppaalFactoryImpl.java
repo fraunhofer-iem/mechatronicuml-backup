@@ -8,6 +8,9 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.muml.uppaal.*;
+import org.muml.uppaal.NTA;
+import org.muml.uppaal.UppaalFactory;
+import org.muml.uppaal.UppaalPackage;
 
 /**
  * <!-- begin-user-doc -->
