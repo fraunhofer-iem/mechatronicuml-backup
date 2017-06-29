@@ -9,7 +9,7 @@ import transforms.lib.MUML2UPPAAL.Async.Functions;
 
 //import transforms.lib.MUML2MUML;
 import org.muml.ImplicitCopy;
- 
+
 library Async;
  
 modeltype uppaal uses 'http://www.muml.org/uppaal/1.0.0';
@@ -29,15 +29,16 @@ modeltype muml_actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0
 modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 
 	
-	mapping createNumberOfMessagesInTransitDeclaration() : DataVariableDeclaration {
-		
-		prefix := DataVariablePrefix::CONST;
-		
-		typeDefinition := object TypeReference {
-			referredType := INT;
+	mapping createNumberOfMessagesInTransitDeclaration() : TypedDeclaration {
+						
+		typeDefinition := object DataPrefixExpression {
+			prefix := DataVariablePrefix::CONST;
+			dataTypeExpression := object IdentifierExpression {
+				identifier := INT
+			}
 		};
 
-		variable += map createNumberOfMessagesInTransitConstant();
+		elements += map createNumberOfMessagesInTransitConstant();
 
 	}
 		
@@ -67,27 +68,27 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 		return assert fatal (false) with log('Should be overridden');
 	}
 	
-	mapping createMessageIdNullConstantDeclaration() : DataVariableDeclaration {
+	mapping createMessageIdNullConstantDeclaration() : TypedDeclaration {
 		
-		prefix := DataVariablePrefix::CONST;
-		
-		typeDefinition := object TypeReference {
-			referredType := map createMessageIdType();
+		typeDefinition := object DataPrefixExpression {
+			prefix := DataVariablePrefix::CONST;
+			
+			dataTypeExpression := object IdentifierExpression {
+				identifier := map createMessageIdType();
+			};
 		};
 		
-		variable += map createMessageIdNullConstant();
+		elements += map createMessageIdNullConstant();
 	}
 	
 
-	mapping createFreeIDsFieldDeclaration() : DataVariableDeclaration {
+	mapping createFreeIDsFieldDeclaration() : TypedDeclaration {
 	
-		prefix := DataVariablePrefix::NONE;
-		
-		typeDefinition := object TypeReference {
-			referredType := map createMessageIdType();
+		typeDefinition := object IdentifierExpression {
+			identifier := map createMessageIdType();
 		};
 		
-		variable += map createFreeIDsFieldVariable();
+		elements += map createFreeIDsFieldVariable();
 	}
  
 	
@@ -102,20 +103,27 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 	
 	mapping MessageType :: createParameterTypeSpec() : StructTypeSpecification {
 		
-		declaration += object DataVariableDeclaration {
+		declaration += object TypedDeclaration {
 		
-			typeDefinition := object TypeReference {
-				referredType := map createMessageIdType();
+			typeDefinition := object IdentifierExpression {
+				identifier := map createMessageIdType();
 			};
 		
-			variable += self.map createParameterTypeMessageIdVariable();
+			elements += self.map createParameterTypeMessageIdVariable();
 		
 		};
 				
 		declaration += self.parameters->map Parameter2DataVariableDeclaration(); 
 	}
-
+	
+	mapping behavior::Parameter :: Parameter2DataVariableDeclaration() : TypedDeclaration 
+		inherits behavior::Parameter::Parameter2TypedElementContainer {
 		
+		elements += self.map Parameter2Variable();		
+	}
+	
+	mapping behavior::Parameter :: Parameter2Variable() : Variable inherits TypedNamedElement::TypedNamedElement2Variable;
+			
 	mapping createBufferTypeSpec() : StructTypeSpecification {
 	
 		declaration += map createTailFieldDeclaration();
@@ -126,7 +134,7 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 			
 	}
 
-	mapping MessageType :: createParameterTypeTailDeclaration() : DataVariableDeclaration {
+	mapping MessageType :: createParameterTypeTailDeclaration() : TypedDeclaration {
 		
 		typeDefinition := object RangeTypeSpecification {
 			
@@ -142,29 +150,29 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 			
 		};
 		
-		variable += self.map createParameterTypeTailVariable();
+		elements += self.map createParameterTypeTailVariable();
 		
 	}
 
 	
-	mapping MessageType :: createParameterTypeBufferFieldDeclaration() : DataVariableDeclaration {
+	mapping MessageType :: createParameterTypeBufferFieldDeclaration() : TypedDeclaration {
 		
-		typeDefinition := object TypeReference {
-			referredType := self.map createParameterType();
+		typeDefinition := object IdentifierExpression {
+			identifier := self.map createParameterType();
 		};
 		
-		variable += self.map createParameterTypeBufferFieldVariable();
+		elements += self.map createParameterTypeBufferFieldVariable();
 		
 	}
 	
 	
-	mapping MessageType :: createParameterTypeNullConstantDeclaration() : DataVariableDeclaration {
+	mapping MessageType :: createParameterTypeNullConstantDeclaration() : TypedDeclaration {
 
-		typeDefinition := object TypeReference {
-			referredType := self.map createParameterType();
+		typeDefinition := object IdentifierExpression {
+			identifier := self.map createParameterType();
 		};
 		
-		variable += self.map createParameterTypeNullConstantVariable();
+		elements += self.map createParameterTypeNullConstantVariable();
 		
 	}
 	
@@ -178,15 +186,18 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 	
 	
 	
-	mapping createMessageNullConstantDeclaration() : DataVariableDeclaration {
+	mapping createMessageNullConstantDeclaration() : TypedDeclaration {
 		
-		prefix := DataVariablePrefix::CONST;
-		
-		typeDefinition := object TypeReference {
-			referredType := map createMessageType();
+		typeDefinition := object DataPrefixExpression {
+			
+			prefix := DataVariablePrefix::CONST;
+			
+			dataTypeExpression := object IdentifierExpression {
+				identifier := map createMessageType();
+			};
 		};
 		
-		variable += map createMessageNullConstantVariable();
+		elements += map createMessageNullConstantVariable();
 		
 	}
 	
@@ -210,64 +221,80 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 		
 	}
 	
-	mapping createMessageTypeMessageIdDeclaration() : DataVariableDeclaration {
+	mapping createMessageTypeMessageIdDeclaration() : TypedDeclaration {
 		
-		typeDefinition := object TypeReference {
-			referredType := map createMessageIdType();
+		typeDefinition := object IdentifierExpression {
+			identifier := map createMessageIdType();
 		};
 		
-		variable += map createMessageTypeMessageIdVariable();
+		elements += map createMessageTypeMessageIdVariable();
 		
 	}
 	
 	
-	mapping createMessageArgumentsPositionVariableDeclaration() : DataVariableDeclaration {
+	mapping createMessageArgumentsPositionVariableDeclaration() : TypedDeclaration {
 		
-		typeDefinition := object TypeReference {
-			referredType := INT;
+		typeDefinition := object IdentifierExpression {
+			identifier := INT;
 		};
 		
-		variable += map createMessageArgumentsPositionVariable();
+		elements += map createMessageArgumentsPositionVariable();
 		
 	};
 	
 	
-	mapping createRequestIdFunctionDeclaration() : FunctionDeclaration {
+	mapping createRequestIdFunctionDeclaration() : TypedDeclaration {
 		
-		function := map createRequestIdFunction();
+		elements := map createRequestIdFunction();
 		
+		typeDefinition := object IdentifierExpression {
+			identifier := map createMessageIdType();
+		};		
 	}
 	
 	
-	mapping createReleaseIdFunctionDeclaration() : FunctionDeclaration {
+	mapping createReleaseIdFunctionDeclaration() : TypedDeclaration {
 		
-		function := map createReleaseIdFunction();
+		elements := map createReleaseIdFunction();
 		
+		typeDefinition := object IdentifierExpression {
+			identifier := BOOL;
+		}		
 	}
 	
 		
-	mapping MessageType :: createAddFunctionForMessageTypeDeclaration() : FunctionDeclaration {
+	mapping MessageType :: createAddFunctionForMessageTypeDeclaration() : TypedDeclaration {
 		
-		function := self.map createAddForMessageTypeFunction();	
-	
+		elements := self.map createAddForMessageTypeFunction();
+		
+		typeDefinition := object IdentifierExpression {
+			identifier := INT;
+		}	
 	}
 	
-	mapping MessageType :: createRemoveFunctionForMessageTypeDeclaration() : FunctionDeclaration {
+	mapping MessageType :: createRemoveFunctionForMessageTypeDeclaration() : TypedDeclaration {
 	
-		function := self.map createRemoveForMessageTypeFunction();
-	
+		elements := self.map createRemoveForMessageTypeFunction();
+		
+		typeDefinition := object IdentifierExpression {
+			identifier := BOOL;
+		};	
 	}
 	
 		
-	mapping createNumberOfMessageKindsDeclaration() : DataVariableDeclaration {
+	mapping createNumberOfMessageKindsDeclaration() : TypedDeclaration {
 					
-		prefix := DataVariablePrefix::CONST;
+		typeDefinition := object DataPrefixExpression {
 		
-		typeDefinition := object TypeReference {
-			referredType := INT;
+			prefix := DataVariablePrefix::CONST;
+		
+			dataTypeExpression := object IdentifierExpression {
+				identifier := INT;
+			};
+		
 		};
 		
-		variable += map createNumberOfMessageKindsConstant();
+		elements += map createNumberOfMessageKindsConstant();
 		
 	}
 	
@@ -298,57 +325,63 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 	}
 	
 	
-	mapping createMessageKindVariableDeclaration() : DataVariableDeclaration {
+	mapping createMessageKindVariableDeclaration() : TypedDeclaration {
 		
-		typeDefinition := object TypeReference {
-			referredType := map createMessageKindType();
+		typeDefinition := object IdentifierExpression {
+			identifier := map createMessageKindType();
 		};
 		
-		variable += map createMessageKindVariable();
+		elements += map createMessageKindVariable();
 		
 	}
 	
 	
-	mapping createMessageKindConstantsDeclaration() : DataVariableDeclaration {
+	mapping createMessageKindConstantsDeclaration() : TypedDeclaration {
 		
-		prefix := DataVariablePrefix::CONST;
+		typeDefinition := object DataPrefixExpression {
+			
+			prefix := DataVariablePrefix::CONST;
+
+			dataTypeExpression := object IdentifierExpression {
+				identifier := map createMessageKindType();
+			};
 		
-		typeDefinition := object TypeReference {
-			referredType := map createMessageKindType();
 		};
 		
-		variable += map createMessageKindNullConstant();
+		elements += map createMessageKindNullConstant();
 				
-		variable += messageTypes()->map createMessageKindConstant()
+		elements += messageTypes()->map createMessageKindConstant()
 		
 	}
 		
 	
-	mapping createMaxBufferAndConnectorSizeVariableDeclaration() : DataVariableDeclaration {
+	mapping createMaxBufferAndConnectorSizeVariableDeclaration() : TypedDeclaration {
 		
-		prefix := DataVariablePrefix::CONST;
-		
-		typeDefinition := object TypeReference {
+		typeDefinition := object DataPrefixExpression {
 			
-			referredType :=  INT;
+			prefix := DataVariablePrefix::CONST;
 			
+			dataTypeExpression := object IdentifierExpression {
+				identifier :=  INT;
+			}
 		};
 		
-		variable += map createMaxOfBufferAndConnectorSizeVariable();
+		elements += map createMaxOfBufferAndConnectorSizeVariable();
 		
 	}
 
-	mapping createConnectorSizeVariableDeclaration() : DataVariableDeclaration {
+	mapping createConnectorSizeVariableDeclaration() : TypedDeclaration {
 		
-		prefix := DataVariablePrefix::CONST;
+		typeDefinition := object DataPrefixExpression {
+			
+			prefix := DataVariablePrefix::CONST;
 		
-		typeDefinition := object TypeReference {
-			
-			referredType :=  INT;
-			
+			dataTypeExpression := object IdentifierExpression {
+				identifier :=  INT;
+			};
 		};
 		
-		variable += map createConnectorSizeVariable();
+		elements += map createConnectorSizeVariable();
 		
 	}
 	
@@ -361,7 +394,7 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 	}
 	
 	
-	mapping createTailFieldDeclaration() : DataVariableDeclaration {
+	mapping createTailFieldDeclaration() : TypedDeclaration {
 		
 		typeDefinition := object RangeTypeSpecification {
 						
@@ -379,147 +412,186 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 			
 		};
 		
-		variable += map createTailFieldVariable()
+		elements += map createTailFieldVariable()
 			
 	}
 
 	
-	mapping createMessagesFieldDeclaration() : DataVariableDeclaration {
+	mapping createMessagesFieldDeclaration() : TypedDeclaration {
 		
-		typeDefinition := object TypeReference {
-			referredType := map createMessageType();
+		typeDefinition := object IdentifierExpression {
+			identifier := map createMessageType();
 		};
 		
-		variable += map createMessagesFieldVariable()
+		elements += map createMessagesFieldVariable()
 		
 	}
 	
-	mapping createMessageDiscardedFieldDeclaration() : DataVariableDeclaration{
-		typeDefinition := object TypeReference{
-			referredType := BOOL;
+	mapping createMessageDiscardedFieldDeclaration() : TypedDeclaration{
+		typeDefinition := object IdentifierExpression{
+			identifier := BOOL;
 		};
 		
-		variable += map createMessageDiscardedFieldVariable();
+		elements += map createMessageDiscardedFieldVariable();
 	}
 	
 	
-	mapping createOverflowVariableDeclaration() : DataVariableDeclaration {
+	mapping createOverflowVariableDeclaration() : TypedDeclaration {
 		
-		typeDefinition := object TypeReference {
-			referredType := BOOL;
+		typeDefinition := object IdentifierExpression {
+			identifier := BOOL;
 		};
 		
-		variable += map createConnectorOverflowVariable()
+		elements += map createConnectorOverflowVariable()
 		
 		
 	}
 
 	
-	mapping createBuffersVariableDeclaration() : DataVariableDeclaration {
+	mapping createBuffersVariableDeclaration() : TypedDeclaration {
 		
-		typeDefinition := object TypeReference {
-			referredType := map createBufferType()
+		typeDefinition := object IdentifierExpression {
+			identifier := map createBufferType()
 		};
 		
-		variable += map createBuffersVariable()
+		elements += map createBuffersVariable()
 		
 	}
 
 	
-	mapping createConnectorsVariableDeclaration() : DataVariableDeclaration {
+	mapping createConnectorsVariableDeclaration() : TypedDeclaration {
 		
-		typeDefinition := object TypeReference {
-			referredType := map createBufferType()
+		typeDefinition := object IdentifierExpression {
+			identifier := map createBufferType()
 		};
 		
-		variable += map createConnectorsVariable()
+		elements += map createConnectorsVariable()
 		
 	}
 
 	
-	mapping createEarliestVariableDeclaration() : DataVariableDeclaration {
+	mapping createEarliestVariableDeclaration() : TypedDeclaration {
 		
-		typeDefinition := object TypeReference {
-			referredType := INT
+		typeDefinition := object IdentifierExpression {
+			identifier := INT
 		};
 		
-		variable += map createEarliestVariable()
+		elements += map createEarliestVariable()
 		
 	}
 
 	
-	mapping createLatestVariableDeclaration() : DataVariableDeclaration {
+	mapping createLatestVariableDeclaration() : TypedDeclaration {
 		
-		typeDefinition := object TypeReference {
-			referredType := INT
+		typeDefinition := object IdentifierExpression {
+			identifier := INT
 		};
 		
-		variable += map createLatestVariable()
+		elements += map createLatestVariable()
 		
 	}
 
 	
-	mapping createTransmissionTimesVariableDeclaration() : ClockVariableDeclaration {
+	mapping createTransmissionTimesVariableDeclaration() : TypedDeclaration {
 		
-		typeDefinition := object TypeReference {
-			referredType := CLOCK
+		typeDefinition := object IdentifierExpression {
+			identifier := CLOCK
 		};
 		
-		variable += map createTransmissionTimesVariable()
+		elements += map createTransmissionTimesVariable()
 		
 	}
 	
 	
-	mapping createCheckFunctionDeclaration() : FunctionDeclaration {
-		function := map createCheckFunction()
-	}
-	
-	
-	mapping createCheckMessageInBufferFunctionDeclaration() : FunctionDeclaration {
-		function := map createCheckMessageInBufferFunction()
-	}
-	
-	
-	mapping createRemoveFunctionDeclaration() : FunctionDeclaration {
-		function := map createRemoveFunction()
-	}
-	
-	
-	
-	mapping createAddFunctionDeclaration() : FunctionDeclaration {
-		function := map createAddFunction()
-	}
-	
-	mapping createDiscardFunctionDeclaration() : FunctionDeclaration {
-		function := map createDiscardFunction()
-	}
-	
-	mapping createClearConnectorFunctionDeclaration() : FunctionDeclaration {
-		function := map createClearConnectorFunction();
-	}
-	
-	mapping createGetNumElementsInBufferFunctionDeclaration() : FunctionDeclaration {
-		function := map createGetNumElementsInBufferFunction();
-	}
-	
-	
-	mapping MessageType :: createSendFunctionDeclaration() : FunctionDeclaration {
+	mapping createCheckFunctionDeclaration() : TypedDeclaration {
+		elements := map createCheckFunction();
 		
-		function := self.map createSendFunction()
+		typeDefinition := object IdentifierExpression {
+			identifier := BOOL;
+		}
+	}
+	
+	
+	mapping createCheckMessageInBufferFunctionDeclaration() : TypedDeclaration {
+		elements := map createCheckMessageInBufferFunction();
+		
+		typeDefinition := object IdentifierExpression {
+			identifier := BOOL
+		}
+	}
+	
+	
+	mapping createRemoveFunctionDeclaration() : TypedDeclaration {
+		elements := map createRemoveFunction();
+		
+		typeDefinition := object IdentifierExpression {
+			identifier := VOID;	
+		}
+	}
+	
+	
+	
+	mapping createAddFunctionDeclaration() : TypedDeclaration {
+		elements := map createAddFunction();
+		
+		typeDefinition := object IdentifierExpression {
+			identifier := VOID	
+		}
+	}
+	
+	mapping createDiscardFunctionDeclaration() : TypedDeclaration {
+		elements := map createDiscardFunction();
+		
+		typeDefinition := object IdentifierExpression {
+			identifier := VOID	
+		}
+	}
+	
+	mapping createClearConnectorFunctionDeclaration() : TypedDeclaration {
+		elements := map createClearConnectorFunction();
+		
+		// create return type
+		typeDefinition := object IdentifierExpression {
+			identifier := VOID
+		}; 
+	}
+	
+	mapping createGetNumElementsInBufferFunctionDeclaration() : TypedDeclaration {
+		elements := map createGetNumElementsInBufferFunction();
+		
+		typeDefinition := object IdentifierExpression {
+			identifier := INT
+		}
+	}
+	
+	
+	mapping MessageType :: createSendFunctionDeclaration() : TypedDeclaration {
+		
+		elements := self.map createSendFunction();
+		
+		typeDefinition := object IdentifierExpression {
+			identifier := VOID
+		}
 	}
 	
 		
-	mapping OrderedSet(DiscretePortInstance) :: createReceiveFunctionDeclaration() : FunctionDeclaration {
+	mapping OrderedSet(DiscretePortInstance) :: createReceiveFunctionDeclaration() : TypedDeclaration {
 		
-		function := map createReceiveFunction(self)
+		elements := map createReceiveFunction(self);
 		
+		typeDefinition := object IdentifierExpression {
+			identifier := BOOL
+		}		
 	}
 	
 
-	mapping OrderedSet(DiscretePortInstance) :: createConsumeFunctionDeclaration() : FunctionDeclaration {
+	mapping OrderedSet(DiscretePortInstance) :: createConsumeFunctionDeclaration() : TypedDeclaration {
 		
-		function := map createConsumeFunction(self)
+		elements := map createConsumeFunction(self);
 		
+		typeDefinition := object IdentifierExpression {
+			identifier := VOID
+		}		
 	}
 
 
@@ -527,76 +599,73 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 		
 		name := 'Connector';
 		
-		parameter += object Parameter {
+		parameter += object ParameterContainer {
 		
-			variableDeclaration := object DataVariableDeclaration {
+			typeDefinition := object DataPrefixExpression {
 			
 				prefix := DataVariablePrefix::CONST;
 				
-				typeDefinition := object TypeReference {
+				dataTypeExpression := object IdentifierExpression {
 					
-					referredType := map DiscretePortInstanceType();
+					identifier := map DiscretePortInstanceType();
 					
 				};
+			};
 							
-				variable += map createSenderParameter()
-			
-			}	
-			
+			elements += map createSenderParameter()			
 		};
 		
-		parameter += object Parameter {
+		parameter += object ParameterContainer {
 		
-			variableDeclaration := object DataVariableDeclaration {
+			typeDefinition := object DataPrefixExpression {
 			
 				prefix := DataVariablePrefix::CONST;
 				
-				typeDefinition := object TypeReference {
+				dataTypeExpression := object IdentifierExpression {
 					
-					referredType := map DiscretePortInstanceType();
+					identifier := map DiscretePortInstanceType();
 					
 				};
+				
+			};
 							
-				variable += map createReceiverParameter()
-			
-			}	
+			elements += map createReceiverParameter()
 			
 		};
 		
-		parameter += object Parameter {
+		parameter += object ParameterContainer {
 		
-			variableDeclaration := object DataVariableDeclaration {
+			typeDefinition := object DataPrefixExpression {
 			
 				prefix := DataVariablePrefix::CONST;
 				
-				typeDefinition := object TypeReference {
+				dataTypeExpression := object IdentifierExpression {
 					
-					referredType := INT
+					identifier := INT
 					
 				};
+				
+			};
 							
-				variable += map createMaxDelayParameter()
-			
-			}	 
-			
+			elements += map createMaxDelayParameter()
 			
 		};
 		
-		parameter += object Parameter {
+		parameter += object ParameterContainer {
 			
-			variableDeclaration := object DataVariableDeclaration {
+			typeDefinition := object DataPrefixExpression {
 			
 				prefix := DataVariablePrefix::CONST;
 							
-				typeDefinition := object TypeReference {
+				dataTypeExpression := object IdentifierExpression {
 					
-					referredType := BOOL
+					identifier := BOOL
 					
 				};
+				
+			};
 							
-				variable += map createLossParameter()
-			
-			}	
+			elements += map createLossParameter()
 			
 		};
 
@@ -630,24 +699,24 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 
 	}
 				
-	mapping createTmpVariableDeclaration() : DataVariableDeclaration {
+	mapping createTmpVariableDeclaration() : TypedDeclaration {
 		
-		typeDefinition := object TypeReference {
-			referredType := map createMessageType();
+		typeDefinition := object IdentifierExpression {
+			identifier := map createMessageType();
 		};
 		
-		variable += map createTmpVariable()
+		elements += map createTmpVariable()
 		
 	}
 	
 	
-	mapping RealtimeStatechart :: createMsgVariableDeclaration() : DataVariableDeclaration {
+	mapping RealtimeStatechart :: createMsgVariableDeclaration() : TypedDeclaration {
 		
-		typeDefinition := object TypeReference {
-			referredType := map createMessageType();
+		typeDefinition := object IdentifierExpression {
+			identifier := map createMessageType();
 		};
 		
-		variable += self.map createMsgVariable()
+		elements += self.map createMsgVariable()
 		
 	}
 
@@ -755,9 +824,9 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 			
 			-- i : message kind
 			
-			variable += i;
-			typeDefinition := object TypeReference {
-				referredType := map createMessageKindType();
+			elements += i;
+			typeDefinition := object IdentifierExpression {
+				identifier := map createMessageKindType();
 			}
 		};
 		
@@ -935,7 +1004,7 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 				
 			};
 			
-			elseExpression := object IncrementDecrementExpression {
+			elseExpression := object PostIncrementDecrementExpression {
 				
 				-- earliest[sender]++
 				
@@ -946,9 +1015,7 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 						identifier := map createSenderParameter()
 					};
 				};
-				
-				position := IncrementDecrementPosition::POST;
-				
+								
 				operator := IncrementDecrementOperator::INCREMENT;
 				
 			}
@@ -1277,229 +1344,258 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 	}
 	
 	
-	mapping createMaximalNumberOfBuffersPerRoleConstantDeclaration() : DataVariableDeclaration {
+	mapping createMaximalNumberOfBuffersPerRoleConstantDeclaration() : TypedDeclaration {
 		
-		prefix := DataVariablePrefix::CONST;
+		typeDefinition := object DataPrefixExpression {
 		
-		typeDefinition := object TypeReference {
-			referredType := INT
+			prefix := DataVariablePrefix::CONST;
+			
+			dataTypeExpression := object IdentifierExpression {
+				identifier := INT
+			};
+		
 		};
 	
-		variable := map createMaximalNumberOfBuffersPerRoleConstant();
+		elements := map createMaximalNumberOfBuffersPerRoleConstant();
 
 	}
 
 
-	mapping OrderedSet(DiscretePortInstance) :: createBufferAssignmentArrayDeclaration() : DataVariableDeclaration {
+	mapping OrderedSet(DiscretePortInstance) :: createBufferAssignmentArrayDeclaration() : TypedDeclaration {
 
-		prefix := DataVariablePrefix::CONST;
+		typeDefinition := object DataPrefixExpression {
 
-		typeDefinition := object RangeTypeSpecification {
-			
-			bounds := object IntegerBounds {
+			prefix := DataVariablePrefix::CONST;
+	
+			dataTypeExpression := object RangeTypeSpecification {
 				
-				lowerBound := object LiteralExpression {
-					text := (-1).repr();
-				};
-	
-				upperBound := object ArithmeticExpression {
-	
-					operator := ArithmeticOperator::SUBTRACT;
-	
-					firstExpr := object IdentifierExpression {
-						identifier := map createMaximalNumberOfBuffersPerRoleConstant();
+				bounds := object IntegerBounds {
+					
+					lowerBound := object LiteralExpression {
+						text := (-1).repr();
 					};
+		
+					upperBound := object ArithmeticExpression {
+		
+						operator := ArithmeticOperator::SUBTRACT;
+		
+						firstExpr := object IdentifierExpression {
+							identifier := map createMaximalNumberOfBuffersPerRoleConstant();
+						};
+		
+						secondExpr := object LiteralExpression {
+							text := 1.repr();
+						}
+		
+					};
+					
+				}
 	
-					secondExpr := object LiteralExpression {
+			};
+		
+		};
+
+		elements := self->map createBufferAssignmentArrayVariable();
+
+	}
+
+	mapping OrderedSet(DiscretePortInstance) :: createBufferSizeArrayDeclaration() : TypedDeclaration {
+
+		typeDefinition := object DataPrefixExpression {
+
+			prefix := DataVariablePrefix::CONST;
+	
+			dataTypeExpression := object RangeTypeSpecification {
+			
+				bounds := object IntegerBounds {
+					
+					lowerBound := object LiteralExpression {
+						text := (-1).repr();
+					};
+		
+					upperBound := object IdentifierExpression {
+						identifier := map createMaxOfBufferAndConnectorSizeVariable();
+					};
+					
+				}
+			}	
+		};
+
+		elements := self->map createBufferSizeArrayVariable();
+
+	}
+	
+	mapping OrderedSet(DiscretePortInstance) :: createBufferOverflowStrategyArrayDeclaration() : TypedDeclaration {
+
+		typeDefinition := object DataPrefixExpression {
+
+			prefix := DataVariablePrefix::CONST;
+	
+			dataTypeExpression := object RangeTypeSpecification {
+			
+				bounds := object IntegerBounds {
+					
+					lowerBound := object LiteralExpression {
+						text := (-1).repr();
+					};
+		
+					upperBound := object LiteralExpression {
 						text := 1.repr();
-					}
-	
-				};
-				
+					};
+					
+				}
 			}
-
 		};
 
-		variable := self->map createBufferAssignmentArrayVariable();
-
+		elements := self->map createBufferOverflowStrategyArrayVariable();
 	}
+	
+	mapping BufferOverflowAvoidanceStrategy::createBufferOverflowConstantDeclaration() : TypedDeclaration {
+		
+		typeDefinition := object DataPrefixExpression {
 
-	mapping OrderedSet(DiscretePortInstance) :: createBufferSizeArrayDeclaration() : DataVariableDeclaration {
-
-		prefix := DataVariablePrefix::CONST;
-
-		typeDefinition := object RangeTypeSpecification {
+			prefix := DataVariablePrefix::CONST;
+	
+			dataTypeExpression := object IdentifierExpression {
+				identifier := INT;
+			};
+		};
+		
+		elements := self.xmap createBufferOverflowVariable();		
+	}
+	
+	
+	mapping OrderedSet(DiscretePortInstance) :: createNextArrayDeclaration() : TypedDeclaration {
+		
+		typeDefinition := object DataPrefixExpression {
+		
+			prefix := DataVariablePrefix::CONST;
 			
-			bounds := object IntegerBounds {
+			dataTypeExpression := object RangeTypeSpecification {
 				
-				lowerBound := object LiteralExpression {
-					text := (-1).repr();
-				};
+				bounds := object IntegerBounds {
+					
+					lowerBound := object LiteralExpression {
+						text := (-1).repr();
+					};
+		
+					upperBound := object IdentifierExpression {
+						identifier := map NumberOfDiscretePortInstancesConstant()
+					};
+					
+				}
 	
-				upperBound := object IdentifierExpression {
-					identifier := map createMaxOfBufferAndConnectorSizeVariable();
-				};
-				
-			}
-
+			};
+		
 		};
 
-		variable := self->map createBufferSizeArrayVariable();
-
+		elements := self->map DiscretePortInstances2NextArray();
 	}
-	
-	mapping OrderedSet(DiscretePortInstance) :: createBufferOverflowStrategyArrayDeclaration() : DataVariableDeclaration {
 
-		prefix := DataVariablePrefix::CONST;
-
-		typeDefinition := object RangeTypeSpecification {
+	mapping OrderedSet(DiscretePortInstance) :: createPreviousArrayDeclaration() : TypedDeclaration {
+		
+		typeDefinition := object DataPrefixExpression {
+		
+			prefix := DataVariablePrefix::CONST;
 			
-			bounds := object IntegerBounds {
+			dataTypeExpression := object RangeTypeSpecification {
 				
-				lowerBound := object LiteralExpression {
-					text := (-1).repr();
-				};
+				bounds := object IntegerBounds {
+					
+					lowerBound := object LiteralExpression {
+						text := (-1).repr();
+					};
+		
+					upperBound := object IdentifierExpression {
+						identifier := map NumberOfDiscretePortInstancesConstant()
+					};
+					
+				}
 	
-				upperBound := object LiteralExpression {
-					text := 1.repr();
-				};
-				
-			}
-
+			};
+		
 		};
 
-		variable := self->map createBufferOverflowStrategyArrayVariable();
-
+		elements := self->map DiscretePortInstances2PreviousArray();
 	}
 	
-	mapping BufferOverflowAvoidanceStrategy::createBufferOverflowConstantDeclaration() : DataVariableDeclaration {
+	mapping OrderedSet(DiscretePortInstance) :: createFirstArrayDeclaration() : TypedDeclaration {
 		
-		prefix := DataVariablePrefix::CONST;
+		typeDefinition := object DataPrefixExpression {
 		
-		typeDefinition := object TypeReference {
-			referredType := INT;
-		};
-		
-		variable := self.xmap createBufferOverflowVariable();		
-	}
-	
-	
-	mapping OrderedSet(DiscretePortInstance) :: createNextArrayDeclaration() : DataVariableDeclaration {
-		
-		prefix := DataVariablePrefix::CONST;
-		
-		typeDefinition := object RangeTypeSpecification {
+			prefix := DataVariablePrefix::CONST;
 			
-			bounds := object IntegerBounds {
+			dataTypeExpression := object RangeTypeSpecification {
 				
-				lowerBound := object LiteralExpression {
-					text := (-1).repr();
-				};
+				bounds := object IntegerBounds {
+					
+					lowerBound := object LiteralExpression {
+						text := (-1).repr();
+					};
+		
+					upperBound := object IdentifierExpression {
+						identifier := map NumberOfDiscretePortInstancesConstant()
+					};
+					
+				}
 	
-				upperBound := object IdentifierExpression {
-					identifier := map NumberOfDiscretePortInstancesConstant()
-				};
-				
-			}
-
+			};
+		
 		};
 
-		variable := self->map DiscretePortInstances2NextArray();
-		
-	}
-
-	mapping OrderedSet(DiscretePortInstance) :: createPreviousArrayDeclaration() : DataVariableDeclaration {
-		
-		prefix := DataVariablePrefix::CONST;
-		
-		typeDefinition := object RangeTypeSpecification {
-			
-			bounds := object IntegerBounds {
-				
-				lowerBound := object LiteralExpression {
-					text := (-1).repr();
-				};
-	
-				upperBound := object IdentifierExpression {
-					identifier := map NumberOfDiscretePortInstancesConstant()
-				};
-				
-			}
-
-		};
-
-		variable := self->map DiscretePortInstances2PreviousArray();
+		elements := self->map DiscretePortInstances2FirstArray();
 		
 	}
 	
-	mapping OrderedSet(DiscretePortInstance) :: createFirstArrayDeclaration() : DataVariableDeclaration {
+	mapping OrderedSet(DiscretePortInstance) :: createLastArrayDeclaration() : TypedDeclaration {
 		
-		prefix := DataVariablePrefix::CONST;
+		typeDefinition := object DataPrefixExpression {
 		
-		typeDefinition := object RangeTypeSpecification {
+			prefix := DataVariablePrefix::CONST;
 			
-			bounds := object IntegerBounds {
+			dataTypeExpression := object RangeTypeSpecification {
 				
-				lowerBound := object LiteralExpression {
-					text := (-1).repr();
-				};
+				bounds := object IntegerBounds {
+					
+					lowerBound := object LiteralExpression {
+						text := (-1).repr();
+					};
+		
+					upperBound := object IdentifierExpression {
+						identifier := map NumberOfDiscretePortInstancesConstant()
+					};
+					
+				}
 	
-				upperBound := object IdentifierExpression {
-					identifier := map NumberOfDiscretePortInstancesConstant()
-				};
-				
-			}
-
+			};
+		
 		};
 
-		variable := self->map DiscretePortInstances2FirstArray();
+		elements := self->map DiscretePortInstances2LastArray();
 		
 	}
 	
-	mapping OrderedSet(DiscretePortInstance) :: createLastArrayDeclaration() : DataVariableDeclaration {
+	mapping OrderedSet(DiscretePortInstance) :: createSelfArrayDeclaration() : TypedDeclaration {
 		
-		prefix := DataVariablePrefix::CONST;
+		typeDefinition := object DataPrefixExpression {
 		
-		typeDefinition := object RangeTypeSpecification {
+			prefix := DataVariablePrefix::CONST;
 			
-			bounds := object IntegerBounds {
+			dataTypeExpression := object RangeTypeSpecification {
 				
-				lowerBound := object LiteralExpression {
-					text := (-1).repr();
-				};
-	
-				upperBound := object IdentifierExpression {
-					identifier := map NumberOfDiscretePortInstancesConstant()
-				};
-				
+				bounds := object IntegerBounds {
+					
+					lowerBound := object LiteralExpression {
+						text := (-1).repr();
+					};
+		
+					upperBound := object IdentifierExpression {
+						identifier := map NumberOfDiscretePortInstancesConstant()
+					}	
+				}
 			}
-
 		};
 
-		variable := self->map DiscretePortInstances2LastArray();
-		
-	}
-	
-	mapping OrderedSet(DiscretePortInstance) :: createSelfArrayDeclaration() : DataVariableDeclaration {
-		
-		prefix := DataVariablePrefix::CONST;
-		
-		typeDefinition := object RangeTypeSpecification {
-			
-			bounds := object IntegerBounds {
-				
-				lowerBound := object LiteralExpression {
-					text := (-1).repr();
-				};
-	
-				upperBound := object IdentifierExpression {
-					identifier := map NumberOfDiscretePortInstancesConstant()
-				};
-				
-			}
-
-		};
-
-		variable := self->map DiscretePortInstances2SelfArray();
+		elements := self->map DiscretePortInstances2SelfArray();
 		
 	}

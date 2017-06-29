@@ -545,11 +545,11 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 	
 		Types::initialize();
 		
-		int := INT;		
-		bool := BOOL;
-		clock := CLOCK;
-		chan := CHAN;
-		void := VOID;
+//		int := INT;		
+//		bool := BOOL;
+//		clock := CLOCK;
+//		chan := CHAN;
+//		void := VOID;
 	
 		-- create global declarations
 		globalDeclarations := self.map CIC2GlobalDeclarations();
@@ -859,30 +859,27 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		-- declare ID parameters 
 		-- parameters are to be used as an index for variable access inside the template
 		
-		var componentInstanceID : Variable = null;
-		var portOrRoleInstanceID : Variable = null;
-		var subPortOrRoleInstanceID : Variable = null;
+		var componentInstanceID : Parameter = null;
+		var portOrRoleInstanceID : Parameter = null;
+		var subPortOrRoleInstanceID : Parameter = null;
 		
 		
 		if (self.isComponentStatechart())
 		then {
 		
-			parameter += object Parameter {
-			
-				variableDeclaration := object DataVariableDeclaration {
-				
-					typeDefinition := object TypeReference {
-						referredType := map ComponentInstanceType()
+			parameter += object ParameterContainer {
+
+				typeDefinition := object DataPrefixExpression {
+					prefix := DataVariablePrefix::CONST;
+					
+					dataTypeExpression := object IdentifierExpression {
+						identifier := map ComponentInstanceType()
 					};
-								
+							
 					componentInstanceID := self.map RTSC2ComponentInstanceID();
 					
-					variable += componentInstanceID;
-					
-					prefix := DataVariablePrefix::CONST
-					
+					elements += componentInstanceID;
 				}	
-			
 			}
 		}
 		endif;
@@ -890,42 +887,36 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		if (self.belongsToRole())
 		then {
 		
-			parameter += object Parameter {
-			
-				variableDeclaration := object DataVariableDeclaration {
-			
-					typeDefinition := object TypeReference {
-						referredType := map DiscretePortInstanceType();
-					};
-					
-					portOrRoleInstanceID := self.map RTSC2DiscretePortInstanceID();
-				
-					variable += portOrRoleInstanceID;
-					
+			parameter += object ParameterContainer {
+
+				typeDefinition := object DataPrefixExpression {
 					prefix := DataVariablePrefix::CONST;
+					
+					dataTypeExpression := object IdentifierExpression {
+						identifier := map DiscretePortInstanceType();
+					};
+				};
 				
-				}	
-							
+				portOrRoleInstanceID := self.map RTSC2DiscretePortInstanceID();
+			
+				elements += portOrRoleInstanceID;							
 			};
 			
 			if(self.belongsToSubrole())
 			then {
-				parameter += object Parameter {
+				parameter += object ParameterContainer {
 				
-					variableDeclaration := object DataVariableDeclaration {
-				
-						typeDefinition := object TypeReference {
-							referredType := map DiscretePortInstanceType();
-						};
-						
-						subPortOrRoleInstanceID := self.map RTSC2DiscreteSubPortInstanceID();
-					
-						variable += subPortOrRoleInstanceID;
-						
+					typeDefinition := object DataPrefixExpression {
 						prefix := DataVariablePrefix::CONST;
+						
+						dataTypeExpression := object IdentifierExpression {
+							identifier := map DiscretePortInstanceType();
+						};
+					};
 					
-					}	
-								
+					subPortOrRoleInstanceID := self.map RTSC2DiscreteSubPortInstanceID();
+				
+					elements += subPortOrRoleInstanceID;							
 				}
 			} endif;
 			
@@ -1017,7 +1008,8 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 	mapping Transition :: Transition2IntermediateLocation() : Location when {self.shouldCreateIntermediateLocation()} {
 		name := intermediateLocationName.addSuffixNumberUnderline();
 		locationTimeKind := LocationKind::COMMITED;
-		color := ColorKind::WHITE;
+		colorCode := "#ffffff";
+		//color := ColorKind::WHITE;
 	}
 	
 	mapping Transition :: Transition2InitialEdge(rtsc : RealtimeStatechart, componentInstanceID : Variable, portOrRoleInstanceID : Variable, subPortOrRoleInstanceID : Variable) : Edge when {self.shouldCreateIntermediateLocation()} {
@@ -1065,9 +1057,8 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
         };
         
         -- increment intermediate location semaphore (because we're entering an intermediate location)
-        update += object IncrementDecrementExpression { // intermediateLocationSemaphore++;
+        update += object PostIncrementDecrementExpression { // intermediateLocationSemaphore++;
             expression := object IdentifierExpression { identifier := map createIntermediateLocationSemaphoreVariable() };
-            position := IncrementDecrementPosition::POST;
             operator := IncrementDecrementOperator::INCREMENT;
         };
 	}
@@ -1075,14 +1066,13 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 	mapping Transition :: Transition2FinalEdge() : Edge when {self.shouldCreateIntermediateLocation()} {
 		source := self.map Transition2IntermediateLocation();
 		target := self.target.resolveoneIn(State::State2Location, Location);
-		update := object IncrementDecrementExpression { // intermediateLocationSemaphore--;
+		update := object PostIncrementDecrementExpression { // intermediateLocationSemaphore--;
 			expression := object IdentifierExpression { identifier := map createIntermediateLocationSemaphoreVariable() };
-			position := IncrementDecrementPosition::POST;
 			operator := IncrementDecrementOperator::DECREMENT;
 		};
 	}
 	
-	mapping createIntermediateLocationSemaphoreVariableDeclaration() : DataVariableDeclaration {
+	mapping createIntermediateLocationSemaphoreVariableDeclaration() : TypedDeclaration {
 		typeDefinition := object RangeTypeSpecification {
 			bounds := object IntegerBounds {
 				lowerBound := object LiteralExpression {
@@ -1094,7 +1084,7 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 			};
 		};
 		
-		variable += map createIntermediateLocationSemaphoreVariable();
+		elements += map createIntermediateLocationSemaphoreVariable();
 	}
 	
 	//The variable that is incremented whenever an intermediate location (~> Transition2IntermediateLocation) is entered and decremented whenever it is left.
@@ -1117,7 +1107,7 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 			result := self.rhs_assignExpression.oclAsType(NondeterministicChoiceExpression).map Choice2Selection();
 		}
 		
-		variable += self.rhs_assignExpression.oclAsType(NondeterministicChoiceExpression).map Choice2AuxVariable();	
+		elements += self.rhs_assignExpression.oclAsType(NondeterministicChoiceExpression).map Choice2AuxVariable();	
 		
 	}
 		
@@ -1172,15 +1162,14 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 					
 	}
 		
-	mapping UrgentSyncChannelDeclaration() : ChannelVariableDeclaration {
+	mapping UrgentSyncChannelDeclaration() : TypedDeclaration {
 		
-		typeDefinition := object TypeReference {
-			referredType := CHAN;
+		typeDefinition := object ChannelPrefixExpression {
+			urgent := true;
+			channelType := CHAN;
 		};
 		
-		urgent := true;
-		
-		variable += map UrgentSyncChannel();
+		elements += map UrgentSyncChannel();
 		
 	}
 	

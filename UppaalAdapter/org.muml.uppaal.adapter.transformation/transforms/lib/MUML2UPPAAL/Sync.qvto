@@ -15,20 +15,17 @@ modeltype component uses pim::component('http://www.muml.org/pim/1.0.0');
 modeltype storydriven_expressions uses core::expressions('http://www.muml.org/core/1.0.0');
 
 
-	mapping SynchronizationChannel :: SyncChannel2VariableDeclaration() : ChannelVariableDeclaration {
+	mapping SynchronizationChannel :: SyncChannel2VariableDeclaration() : TypedDeclaration {
 	
 		// TODO prefix channel names according to their parent state (prevent name clashes between 'globalized' channels)
 						
-		typeDefinition := object TypeReference {
-		
-			referredType := CHAN;
+		typeDefinition := object ChannelPrefixExpression {
+			urgent := self.isUrgent();
 			
+			channelType := CHAN;
 		};			
 	
-		variable += self.map SyncChannel2Variable();
-		
-		urgent := self.isUrgent();
-				
+		elements += self.map SyncChannel2Variable();				
 	}
 	
 	query SynchronizationChannel :: isUrgent() : Boolean {
@@ -51,26 +48,17 @@ modeltype storydriven_expressions uses core::expressions('http://www.muml.org/co
 
 		var idRange : DeclaredType = self.map SyncChannel2IDRange();
 		
-		index += object TypeIndex {
-			
-			typeDefinition := object TypeReference {
-			
-				referredType := idRange
-	
-			}
-			
+		index += object IdentifierExpression {
+			identifier := idRange	
 		};
 
 		if(not self.selectorType.oclIsUndefined())
 		then {
 			// TODO support selector types with reference to all possible types (e.g. integer)
 			assert fatal (self.selectorType.oclIsKindOf(Port)) with log("Selector types must be ports");
-			index += object TypeIndex {
-				
-				typeDefinition := object TypeReference {
-					referredType := map DiscretePortInstanceType()
-				}
-				
+			
+			index += object IdentifierExpression {
+				identifier := map DiscretePortInstanceType()				
 			};	
 		} endif;
 		

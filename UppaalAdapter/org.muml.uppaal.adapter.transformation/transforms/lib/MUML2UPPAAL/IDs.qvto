@@ -195,35 +195,37 @@ modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 		
 	}
 
-	mapping RealtimeStatechart :: RTSC2DiscretePortInstanceID() : uppaal_declarations::Variable {
+	mapping RealtimeStatechart :: RTSC2DiscretePortInstanceID() : uppaal_declarations::Parameter {
 		
 		name := 'discretePortInstanceID';
 		
 	}
 	
-	mapping RealtimeStatechart :: RTSC2DiscreteSubPortInstanceID() : uppaal_declarations::Variable {
+	mapping RealtimeStatechart :: RTSC2DiscreteSubPortInstanceID() : uppaal_declarations::Parameter {
 		
 		name := 'discreteSubPortInstanceID';
 		
 	}
 	
-	mapping RealtimeStatechart :: RTSC2ComponentInstanceID() : uppaal_declarations::Variable {
+	mapping RealtimeStatechart :: RTSC2ComponentInstanceID() : uppaal_declarations::Parameter {
 		
 		name := 'componentInstanceID';
 		
 	}
 	
-	mapping NumberOfPortInstancesDeclaration() : DataVariableDeclaration {
+	mapping NumberOfPortInstancesDeclaration() : TypedDeclaration {
 					
-		prefix := DataVariablePrefix::CONST;
-		
-		typeDefinition := object TypeReference {
+		typeDefinition := object DataPrefixExpression {
 			
-			referredType := INT;
+			 prefix := DataVariablePrefix::CONST;
+			 
+			 dataTypeExpression := object IdentifierExpression {
+			 	identifier := INT;
+			 };
 			
 		};
 		
-		variable += map NumberOfDiscretePortInstancesConstant();
+		elements += map NumberOfDiscretePortInstancesConstant();
 		
 	}
 	
@@ -248,17 +250,19 @@ modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 				
 	}
 	
-	mapping NumberOfComponentInstancesDeclaration() : DataVariableDeclaration {
+	mapping NumberOfComponentInstancesDeclaration() : TypedDeclaration {
 					
-		prefix := DataVariablePrefix::CONST;
-		
-		typeDefinition := object TypeReference {
+		typeDefinition := object DataPrefixExpression {
 			
-			referredType := INT;
+			 prefix := DataVariablePrefix::CONST;
+			 
+			 dataTypeExpression := object IdentifierExpression {
+			 	identifier := INT;
+			 };
 			
 		};
 		
-		variable += map NumberOfComponentInstancesConstant();
+		elements += map NumberOfComponentInstancesConstant();
 		
 	}
 	

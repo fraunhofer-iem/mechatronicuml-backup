@@ -20,16 +20,14 @@ modeltype component uses pim::component('http://www.muml.org/pim/1.0.0');
 modeltype muml_instance uses pim::instance('http://www.muml.org/pim/1.0.0');
 modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 
-mapping createClearConnectorFunction() : Function {
+	mapping createClearConnectorFunction() : Function {
 		
 		name := 'clearConnector';
-		parameter += object Parameter{
-			variableDeclaration := object DataVariableDeclaration {
-				typeDefinition := object TypeReference{
-				
-					referredType := map createMessageIdType();
-				};
-			}
+		parameter += object ParameterContainer {
+			
+			typeDefinition := object IdentifierExpression {
+				identifier := map createMessageIdType();
+			};
 		}
 	}
 
@@ -37,11 +35,7 @@ mapping createClearConnectorFunction() : Function {
 	mapping createRequestIdFunction() : Function {
 		
 		name := 'requestId';
-		
-		returnType := object TypeReference {
-			referredType := map createMessageIdType();
-		};
-		
+				
 		var i : Variable = object Variable {
 			name := 'i';
 		};
@@ -50,13 +44,13 @@ mapping createClearConnectorFunction() : Function {
 		
 			declarations := object LocalDeclarations {
 			
-				declaration += object DataVariableDeclaration {
+				declaration += object TypedDeclaration {
 					
-					typeDefinition := object TypeReference {
-						referredType := INT;
+					typeDefinition := object IdentifierExpression {
+						identifier := INT;
 					};
 					
-					variable += i;
+					elements += i;
 					
 				};
 				
@@ -92,16 +86,13 @@ mapping createClearConnectorFunction() : Function {
 					}
 				};
 				
-				iteration := object IncrementDecrementExpression {
+				iteration := object PostIncrementDecrementExpression {
 							
 					expression := object IdentifierExpression {
 						identifier := i
 					};
-					
-					position := IncrementDecrementPosition::POST;
-					
+										
 					operator := IncrementDecrementOperator::INCREMENT;
-
 				}; 
 				
 				statement := object IfStatement {
@@ -134,13 +125,13 @@ mapping createClearConnectorFunction() : Function {
 						
 						declarations := object LocalDeclarations {
 						
-							declaration += object DataVariableDeclaration {
+							declaration += object TypedDeclaration {
 								
-								typeDefinition := object TypeReference {
-									referredType := map createMessageIdType();
+								typeDefinition := object IdentifierExpression {
+									identifier := map createMessageIdType();
 								};
 								
-								variable += r;
+								elements += r;
 								
 							};
 							
@@ -233,40 +224,32 @@ mapping createClearConnectorFunction() : Function {
 			name := 'i';
 		};
 		
-		var id : Variable := object Variable {
+		var id : Parameter := object Parameter {
 			name := 'id';
 		};
 		
-		parameter += object Parameter {
+		parameter += object ParameterContainer {
 			
-			variableDeclaration := object DataVariableDeclaration {
-				
-				typeDefinition := object TypeReference {
-					referredType := map createMessageIdType();
-				};
-				
-				variable += id;
+			typeDefinition := object IdentifierExpression {
+				identifier := map createMessageIdType();
 			};
 			
+			elements += id;
 		};
-		
-		returnType := object TypeReference {
-			referredType := BOOL;
-		};
-		
+				
 		block := object Block {	
 		
 			declarations := object LocalDeclarations {
 				
-				declaration += object DataVariableDeclaration {
+				declaration += object TypedDeclaration {
 					
-					typeDefinition := object TypeReference {
+					typeDefinition := object IdentifierExpression {
 					
-						referredType := INT;
+						identifier := INT;
 						
 					};
 					
-					variable += i;
+					elements += i;
 					
 				};
 				
@@ -302,14 +285,12 @@ mapping createClearConnectorFunction() : Function {
 					}
 				};
 				
-				iteration := object IncrementDecrementExpression {
+				iteration := object PostIncrementDecrementExpression {
 							
 					expression := object IdentifierExpression {
 						identifier := i
 					};
-					
-					position := IncrementDecrementPosition::POST;
-					
+										
 					operator := IncrementDecrementOperator::INCREMENT;
 	
 				}; 
@@ -379,14 +360,12 @@ mapping createClearConnectorFunction() : Function {
 					}
 				};
 				
-				iteration := object IncrementDecrementExpression {
+				iteration := object PostIncrementDecrementExpression {
 							
 					expression := object IdentifierExpression {
 						identifier := i
 					};
-					
-					position := IncrementDecrementPosition::POST;
-					
+										
 					operator := IncrementDecrementOperator::INCREMENT;
 	
 				}; 
@@ -475,26 +454,17 @@ mapping createClearConnectorFunction() : Function {
 		
 		name := 'add' + self.name + 'Arguments';
 		
-		var m : Variable := object Variable {
+		var m : Parameter := object Parameter {
 			name := 'm';
 		};
-		
-		returnType := object TypeReference {
-			referredType := INT;
-		};
-		
-		parameter += object Parameter {
-		
-			variableDeclaration := object DataVariableDeclaration {
 				
-				typeDefinition := object TypeReference {
-					referredType := self.map createParameterType();
-				};
-				
-				variable += m;
-				
+		parameter += object ParameterContainer {
+						
+			typeDefinition := object IdentifierExpression {
+				identifier := self.map createParameterType();
 			};
-		
+			
+			elements += m;		
 		};
 		
 		block := object Block {
@@ -525,14 +495,12 @@ mapping createClearConnectorFunction() : Function {
 			
 			statement += object ExpressionStatement {
 				
-				expression := object IncrementDecrementExpression {
+				expression := object PostIncrementDecrementExpression {
 				
 					expression := object IdentifierExpression {
 						identifier := self.map createParameterTypeTailVariable();
 					};
-					
-					position := IncrementDecrementPosition::POST;
-					
+										
 					operator := IncrementDecrementOperator::INCREMENT;
 				
 				};
@@ -563,24 +531,17 @@ mapping createClearConnectorFunction() : Function {
 	mapping MessageType :: createRemoveForMessageTypeFunction() : Function {
 		
 		name := 'remove' + self.name + 'Arguments';
-		
-		returnType := object TypeReference {
-			referredType := BOOL;
-		};
-			
-		var mId : Variable := object Variable {
+					
+		var mId : Parameter := object Parameter {
 			name := 'mId';
 		};
 		
-		parameter += object Parameter {
-			variableDeclaration := object DataVariableDeclaration {
-			
-				typeDefinition := object TypeReference {
-					referredType := map createMessageIdType();
-				};
-				
-				variable += mId;
+		parameter += object ParameterContainer {
+			typeDefinition := object IdentifierExpression {
+				identifier := map createMessageIdType();
 			};
+			
+			elements += mId;
 		};
 		
 		block := object Block {
@@ -591,13 +552,13 @@ mapping createClearConnectorFunction() : Function {
 			
 			declarations := object LocalDeclarations {
 			
-				declaration += object DataVariableDeclaration {
+				declaration += object TypedDeclaration {
 					
-					typeDefinition := object TypeReference {
-						referredType := INT;
+					typeDefinition := object IdentifierExpression {
+						identifier := INT;
 					};
 					
-					variable += i;
+					elements += i;
 					
 				};
 				
@@ -633,14 +594,12 @@ mapping createClearConnectorFunction() : Function {
 				
 				};
 				
-				iteration := object IncrementDecrementExpression {
+				iteration := object PostIncrementDecrementExpression {
 					
 					expression := object IdentifierExpression {
 						identifier := i;
 					};
-					
-					position := IncrementDecrementPosition::POST;
-					
+										
 					operator := IncrementDecrementOperator::INCREMENT;
 					
 				};
@@ -686,13 +645,13 @@ mapping createClearConnectorFunction() : Function {
 							
 							declarations := object LocalDeclarations {
 								
-								declaration += object DataVariableDeclaration {
+								declaration += object TypedDeclaration {
 									
-									typeDefinition := object TypeReference {
-										referredType := INT;	
+									typeDefinition := object IdentifierExpression {
+										identifier := INT;	
 									};
 									
-									variable += j;
+									elements += j;
 								}
 								
 							};
@@ -736,14 +695,12 @@ mapping createClearConnectorFunction() : Function {
 								
 								};
 								
-								iteration := object IncrementDecrementExpression {
+								iteration := object PostIncrementDecrementExpression {
 									
 									expression := object IdentifierExpression {
 										identifier := j;
 									};
-									
-									position := IncrementDecrementPosition::POST;
-									
+																		
 									operator := IncrementDecrementOperator::INCREMENT;
 									
 								};
@@ -823,13 +780,11 @@ mapping createClearConnectorFunction() : Function {
 							
 							statement += object ExpressionStatement {
 								
-								expression := object IncrementDecrementExpression {
+								expression := object PostIncrementDecrementExpression {
 								
 									expression := object IdentifierExpression {
 										identifier := self.map createParameterTypeTailVariable();
 									};
-									
-									position := IncrementDecrementPosition::POST;
 									
 									operator := IncrementDecrementOperator::DECREMENT;
 								
@@ -866,54 +821,38 @@ mapping createClearConnectorFunction() : Function {
 		
 		name := 'check';
 		
-		returnType := object TypeReference {
-			
-			referredType := BOOL;
-			
-		}; 
-		
-		var buffer : Variable = object Variable { 
+		var buffer : Parameter = object Parameter { 
 				
 				name := 'buffer';
 								
 		};
 		
-		var mKind : Variable = object Variable { 
+		var mKind : Parameter = object Parameter { 
 				
 				name := 'mKind';
 								
 		};
 		
-		parameter += object Parameter {
+		parameter += object ParameterContainer {
 		
-			variableDeclaration := object DataVariableDeclaration {
+			typeDefinition := object IdentifierExpression {
 			
-				typeDefinition := object TypeReference {
-				
-					referredType := map createBufferType();
-				
-				};
-							
-				variable += buffer;
-				
-			}	
+				identifier := map createBufferType();
 			
+			};
+						
+			elements += buffer;			
 		};
 		
-		parameter += object Parameter {
+		parameter += object ParameterContainer {
 		
-			variableDeclaration := object DataVariableDeclaration {
+			typeDefinition := object IdentifierExpression {
 			
-				typeDefinition := object TypeReference {
-				
-					referredType := map createMessageKindType();
-				
-				};
-							
-				variable += mKind;
-				
-			}	
+				identifier := map createMessageKindType();
 			
+			};
+						
+			elements += mKind			
 		};
 		
 		block := object Block {
@@ -948,13 +887,13 @@ mapping createClearConnectorFunction() : Function {
 		
 			declarations := object LocalDeclarations {
 				
-				declaration += object DataVariableDeclaration {
+				declaration += object TypedDeclaration {
 					
-					typeDefinition := object TypeReference {
-						referredType := map createMessageType();
+					typeDefinition := object IdentifierExpression {
+						identifier := map createMessageType();
 					};
 					
-					variable += nextMessage;
+					elements += nextMessage;
 					
 				};
 				
@@ -1017,63 +956,47 @@ mapping createClearConnectorFunction() : Function {
 	mapping createRemoveFunction() : Function {
 		
 		name := 'remove';
-		
-		returnType := object TypeReference {
-			
-			referredType := VOID;
-			
-		}; 
-		
-		var buffer : Variable = object Variable { 
+				
+		var buffer : Parameter = object Parameter { 
 				
 				name := 'buffer';
-												
+				
+				callType := CallType::CALL_BY_REFERENCE												
 		};
 		
-		var m : Variable = object Variable { 
+		var m : Parameter = object Parameter { 
 				
 				name := 'm';
 								
 		};
 		
-		parameter += object Parameter {
-		
-			variableDeclaration := object DataVariableDeclaration {
+		parameter += object ParameterContainer {
+					
+			typeDefinition := object IdentifierExpression {
 			
-				typeDefinition := object TypeReference {
-				
-					referredType := map createBufferType();
-								
-				};
+				identifier := map createBufferType();
 							
-				variable += buffer;
-				
-			};	
-			
-			callType := CallType::CALL_BY_REFERENCE
-			
+			};
+						
+			elements += buffer;			
 		};
 		
-		parameter += object Parameter {
+		parameter += object ParameterContainer {
 		
-			variableDeclaration := object DataVariableDeclaration {
+			typeDefinition := object IdentifierExpression {
 			
-				typeDefinition := object TypeReference {
-				
-					referredType := map createMessageKindType();
-				
-				};
-							
-				variable += m;
-				
-			}	
+				identifier := map createMessageKindType();
 			
+			};
+						
+			elements += m;			
 		};
 		
 		
 		block := object Block {
 				
 			statement += object IfStatement {
+			
 				
 				ifExpression := object FunctionCallExpression {
 					
@@ -1103,15 +1026,15 @@ mapping createClearConnectorFunction() : Function {
 		
 					declarations := object LocalDeclarations {
 						
-						declaration += object DataVariableDeclaration {
+						declaration += object TypedDeclaration {
 							
-							typeDefinition := object TypeReference {
+							typeDefinition := object IdentifierExpression {
 								
-								referredType := INT;
+								identifier := INT;
 								
 							};
 							
-							variable += i
+							elements += i
 							
 						}
 						
@@ -1167,20 +1090,15 @@ mapping createClearConnectorFunction() : Function {
 							
 						};
 						
-						iteration := object IncrementDecrementExpression {
+						iteration := object PostIncrementDecrementExpression {
 							
 							expression := object IdentifierExpression {
 								
 								identifier := i
 								
 							};
-							
-							position := IncrementDecrementPosition::POST;
-							
+														
 							operator := IncrementDecrementOperator::INCREMENT;
-							
-							
-							
 						};
 						
 						statement := object ExpressionStatement {
@@ -1307,7 +1225,7 @@ mapping createClearConnectorFunction() : Function {
 					
 					statement += object ExpressionStatement {
 						
-						expression := object IncrementDecrementExpression {
+						expression := object PostIncrementDecrementExpression {
 							
 							expression := object ScopedIdentifierExpression {
 								
@@ -1324,8 +1242,6 @@ mapping createClearConnectorFunction() : Function {
 								}
 								
 							};
-							
-							position := IncrementDecrementPosition::POST;
 							
 							operator := IncrementDecrementOperator::DECREMENT
 							
@@ -1344,34 +1260,33 @@ mapping createClearConnectorFunction() : Function {
 	mapping createCheckMessageInBufferFunction() : Function {
 		name := 'checkMessageInBuffer';
 		
-		returnType := object TypeReference {referredType := BOOL};
+		var buffer : Parameter = object Parameter {name := 'buffer'};
+		var mKind : Parameter = object Parameter {name := 'mKind'};
 		
-		var buffer : Variable = object Variable {name := 'buffer'};
-		var mKind : Variable = object Variable {name := 'mKind'};
-		
-		parameter += object Parameter {
-			variableDeclaration := object DataVariableDeclaration  {
-				typeDefinition := object TypeReference {
-					referredType := map createBufferType();
-				};
-				variable += buffer;
-			}	
+		parameter += object ParameterContainer {
+			
+			typeDefinition := object IdentifierExpression {
+				identifier := map createBufferType();
+			};
+			
+			elements += buffer;	
 		};
-		parameter += object Parameter {
-			variableDeclaration := object DataVariableDeclaration {
-				typeDefinition := object TypeReference {
-					referredType := map createMessageKindType();
-				};
-				variable += mKind;
-			}		
+		
+		parameter += object ParameterContainer {
+			
+			typeDefinition := object IdentifierExpression {
+				identifier := map createMessageKindType();
+			};
+			
+			elements += mKind;		
 		};
 		
 		block := object Block {
 			var i : Variable = object Variable { name := 'i';};
 			declarations := object LocalDeclarations {		
-				declaration += object DataVariableDeclaration {
-					typeDefinition := object TypeReference { referredType := INT; };
-					variable += i;
+				declaration += object TypedDeclaration {
+					typeDefinition := object IdentifierExpression { identifier := INT; };
+					elements += i;
 				}
 			};
 					
@@ -1386,9 +1301,8 @@ mapping createClearConnectorFunction() : Function {
 					operator := CompareOperator::LESS;
 					secondExpr := object IdentifierExpression {identifier := map createMaxOfBufferAndConnectorSizeVariable();};
 				};
-				iteration := object IncrementDecrementExpression {
+				iteration := object PostIncrementDecrementExpression {
 					expression := object IdentifierExpression {	identifier := i };
-					position := IncrementDecrementPosition::POST;
 					operator := IncrementDecrementOperator::INCREMENT;
 				}; 
 				
@@ -1421,19 +1335,15 @@ mapping createClearConnectorFunction() : Function {
 		//Signature
 		name := 'getNumberOfElementsInBuffer';
 		
-		returnType := object TypeReference {
-			referredType := INT
-		};
-		
-		var b : Variable = object Variable {name := 'b'};
-		parameter += object Parameter {
-			variableDeclaration := object DataVariableDeclaration {
-				typeDefinition := object TypeReference {
-					referredType := map createBufferType();
-				};
-				
-				variable += b;
-			}
+		var b : Parameter = object Parameter {name := 'b'};
+		parameter += object ParameterContainer {
+			
+			typeDefinition := object IdentifierExpression {
+				identifier := map createBufferType();
+			};
+			
+			elements += b;
+			
 		};
 		
 		//Behavior
@@ -1455,57 +1365,40 @@ mapping createClearConnectorFunction() : Function {
 	mapping createAddFunction() : Function {
 		
 		name := 'add';
-		
-		returnType := object TypeReference {
-			
-			referredType := VOID
-			
-		}; 
-		
-		var b : Variable = object Variable { 
+				
+		var b : Parameter = object Parameter { 
 				
 				name := bufferParameterID;
-												
+				
+				callType := CallType::CALL_BY_REFERENCE								
 		};
 		
-		var e : Variable = object Variable { 
+		var e : Parameter = object Parameter { 
 				
 				name := messageParameterID;
 								
 		};
 		
-		parameter += object Parameter {
-		
-			variableDeclaration := object DataVariableDeclaration {
+		parameter += object ParameterContainer {
+					
+			typeDefinition := object IdentifierExpression {
 			
-				typeDefinition := object TypeReference {
-				
-					referredType := map createBufferType();
-								
-				};
+				identifier := map createBufferType();
 							
-				variable += b
-			
-			};	
-			
-			callType := CallType::CALL_BY_REFERENCE
+			};
 						
+			elements += b						
 		};
 		
-		parameter += object Parameter {
+		parameter += object ParameterContainer {
 		
-			variableDeclaration := object DataVariableDeclaration {
+			typeDefinition := object IdentifierExpression {
 			
-				typeDefinition := object TypeReference {
-				
-					referredType := map createMessageType();
-				
-				};
-							
-				variable += e;
-				
-			}	
+				identifier := map createMessageType();
 			
+			};
+						
+			elements += e;
 		};
 				
 		block := object Block {
@@ -1560,7 +1453,7 @@ mapping createClearConnectorFunction() : Function {
 			
 			statement += object ExpressionStatement {
 							
-				expression := object IncrementDecrementExpression {
+				expression := object PostIncrementDecrementExpression {
 					
 					expression := object ScopedIdentifierExpression {
 						
@@ -1578,8 +1471,6 @@ mapping createClearConnectorFunction() : Function {
 						
 					};
 					
-					position := IncrementDecrementPosition::POST;
-					
 					operator := IncrementDecrementOperator::INCREMENT
 					
 				}
@@ -1595,29 +1486,22 @@ mapping createClearConnectorFunction() : Function {
 		
 		name := 'send' + self.name;
 		
-		var sender : Variable = object Variable {
+		var sender : Parameter = object Parameter {
 			name := 'sender'
 		};
 		
-		parameter += object Parameter {
+		parameter += object ParameterContainer {
 		
-			variableDeclaration := object DataVariableDeclaration {
-				typeDefinition := object TypeReference {
-					referredType := map DiscretePortInstanceType()
-				};
-				
-				variable += sender
-				
-			}
-		
+			
+			typeDefinition := object IdentifierExpression {
+				identifier := map DiscretePortInstanceType()
+			};
+			
+			elements += sender		
 		};
 		
-		parameter += self.parameters->map Expressions::Parameter2Parameter();
-		
-		returnType := object TypeReference {
-			referredType := VOID
-		};
-		
+		parameter += self.parameters->map Expressions::Parameter2ParameterContainer();
+				
 		block := object Block {
 			
 			statement += object IfStatement {
@@ -1669,7 +1553,7 @@ mapping createClearConnectorFunction() : Function {
 							
 								initializer += object ExpressionInitializer {
 									expression := object IdentifierExpression {
-										identifier := param.map Parameter2ParameterVariable()
+										identifier := param.map Parameter2Parameter()
 									};
 								};
 							
@@ -1701,33 +1585,33 @@ mapping createClearConnectorFunction() : Function {
 					
 					declarations := object LocalDeclarations {
 						
-						declaration += object DataVariableDeclaration {
+						declaration += object TypedDeclaration {
 							
-							typeDefinition := object TypeReference {
-								referredType := self.map createParameterType(); // resolve here?
+							typeDefinition := object IdentifierExpression {
+								identifier := self.map createParameterType(); // resolve here?
 							};
 							
-							variable += instance;
+							elements += instance;
 							
 						};
 						
-						declaration += object DataVariableDeclaration {
+						declaration += object TypedDeclaration {
 							
-							typeDefinition := object TypeReference {
-								referredType := map createMessageType();
+							typeDefinition := object IdentifierExpression {
+								identifier := map createMessageType();
 							};
 							
-							variable += message;
+							elements += message;
 							
 						};
 						
-						declaration += object DataVariableDeclaration {
+						declaration += object TypedDeclaration {
 							
-							typeDefinition := object TypeReference {
-								referredType := map createMessageIdType();
+							typeDefinition := object IdentifierExpression {
+								identifier := map createMessageIdType();
 							};
 							
-							variable += mId;
+							elements += mId;
 							
 						};
 						
@@ -1964,7 +1848,7 @@ mapping createClearConnectorFunction() : Function {
 								
 							};
 							
-							elseExpression := object IncrementDecrementExpression {
+							elseExpression := object PostIncrementDecrementExpression {
 								
 								-- latest[sender]++
 								
@@ -1975,8 +1859,6 @@ mapping createClearConnectorFunction() : Function {
 										identifier := sender
 									}
 								};
-								
-								position := IncrementDecrementPosition::POST;
 								
 								operator := IncrementDecrementOperator::INCREMENT;
 								
@@ -2014,44 +1896,32 @@ mapping createClearConnectorFunction() : Function {
 		
 		name := 'receive';
 		
-		var receiver : Variable = object Variable {
+		var receiver : Parameter = object Parameter {
 			name := 'receiver'
 		};
 		
-		parameter += object Parameter {
+		parameter += object ParameterContainer {
 		
-			variableDeclaration := object DataVariableDeclaration {
-				typeDefinition := object TypeReference {
-					referredType := map DiscretePortInstanceType()
-				};
-				
-				variable += receiver
-				
-			}
-		
+			typeDefinition := object IdentifierExpression {
+				identifier := map DiscretePortInstanceType()
+			};
+			
+			elements += receiver	
 		};
 		
-		var mKind : Variable = object Variable {
+		var mKind : Parameter = object Parameter {
 			name := 'mKind'
 		};
 		
-		parameter += object Parameter {
+		parameter += object ParameterContainer {
 			
-			variableDeclaration := object DataVariableDeclaration {
-				typeDefinition := object TypeReference {
-					referredType := map createMessageKindType()
-				};
-			
-				variable += mKind
-			
-			}
-			
-		};
+			typeDefinition := object IdentifierExpression {
+				identifier := map createMessageKindType()
+			};
 		
-		returnType := object TypeReference {
-			referredType := BOOL
+			elements += mKind			
 		};
-		
+				
 		block := object Block {
 			
 			statement += object ReturnStatement {
@@ -2101,44 +1971,32 @@ mapping createClearConnectorFunction() : Function {
 		
 		name := 'consume';
 		
-		var receiver : Variable = object Variable {
+		var receiver : Parameter = object Parameter {
 			name := 'receiver'
 		};
 		
-		parameter += object Parameter {
+		parameter += object ParameterContainer {
 		
-			variableDeclaration := object DataVariableDeclaration {
-				typeDefinition := object TypeReference {
-					referredType := map DiscretePortInstanceType()
-				};
-				
-				variable += receiver
-				
-			}
-		
+			typeDefinition := object IdentifierExpression {
+				identifier := map DiscretePortInstanceType()
+			};
+			
+			elements += receiver		
 		};
 		
-		var mKind : Variable = object Variable {
+		var mKind : Parameter = object Parameter {
 			name := 'mKind'
 		};
 		
-		parameter += object Parameter {
+		parameter += object ParameterContainer {
 			
-			variableDeclaration := object DataVariableDeclaration {
-				typeDefinition := object TypeReference {
-					referredType := map createMessageKindType()
-				};
-			
-				variable += mKind
-			
-			}
-			
-		};
+			typeDefinition := object IdentifierExpression {
+				identifier := map createMessageKindType()
+			};
 		
-		returnType := object TypeReference {
-			referredType := VOID
+			elements += mKind			
 		};
-		
+				
 		block := object Block {
 			
 			statement += object IfStatement {
@@ -2210,13 +2068,13 @@ mapping createClearConnectorFunction() : Function {
 				
 					declarations := object LocalDeclarations {
 						
-						declaration += object DataVariableDeclaration {
+						declaration += object TypedDeclaration {
 						
-							typeDefinition := object TypeReference {
-								referredType := map createMessageType();
+							typeDefinition := object IdentifierExpression {
+								identifier := map createMessageType();
 							};
 							
-							variable += nextMessage;
+							elements += nextMessage;
 						
 						};
 						
@@ -2337,79 +2195,57 @@ mapping createClearConnectorFunction() : Function {
 	mapping createDiscardFunction() : Function {
 		
 		name := discardFunctionID;
-		
-		returnType := object TypeReference {
-			
-			referredType := VOID
-			
-		}; 
-		
-		var b : Variable = object Variable { 
+				
+		var b : Parameter = object Parameter { 
 				
 				name := bufferParameterID;
-												
+				
+				callType := CallType::CALL_BY_REFERENCE												
 		};
 		
-		var bufferOverflowStrategy : Variable = object Variable { 
+		var bufferOverflowStrategy : Parameter = object Parameter { 
 				
 				name := bufferOverflowStrategyParameterID;
 								
 		};
 		
-		var e : Variable = object Variable { 
+		var e : Parameter = object Parameter { 
 				
 				name := messageParameterID;
 												
 		};
 		
-		parameter += object Parameter {
+		parameter += object ParameterContainer {
 		
-			variableDeclaration := object DataVariableDeclaration {
+			typeDefinition := object IdentifierExpression {
 			
-				typeDefinition := object TypeReference {
-				
-					referredType := map createBufferType();
-								
-				};
+				identifier := map createBufferType();
 							
-				variable += b
-			
-			};	
-			
-			callType := CallType::CALL_BY_REFERENCE
+			};
 						
+			elements += b						
 		};
 		
-		parameter += object Parameter {
+		parameter += object ParameterContainer {
 		
-			variableDeclaration := object DataVariableDeclaration {
+			typeDefinition := object IdentifierExpression {
 			
-				typeDefinition := object TypeReference {
-				
-					referredType := INT;
-				
-				};
+				identifier := INT;
+			
+			};
 							
-				variable += bufferOverflowStrategy;
-				
-			}	
-			
+			elements += bufferOverflowStrategy;			
 		};
 		
-		parameter += object Parameter {
+		parameter += object ParameterContainer {
 		
-			variableDeclaration := object DataVariableDeclaration {
+			typeDefinition := object IdentifierExpression {
 			
-				typeDefinition := object TypeReference {
-				
-					referredType := map createMessageType();
-				
-				};
-							
-				variable += e;
-				
-			}	
+				identifier := map createMessageType();
 			
+			};
+						
+			elements += e;
 		};
 				
 		block := object Block {
@@ -2445,25 +2281,25 @@ mapping createClearConnectorFunction() : Function {
 		declarations := object LocalDeclarations {
 		
 			--MessageId messageToDiscard = message.mId;
-			declaration += object DataVariableDeclaration {
+			declaration += object TypedDeclaration {
 			
-				typeDefinition := object TypeReference {
-					referredType := map createMessageIdType();
+				typeDefinition := object IdentifierExpression {
+					identifier := map createMessageIdType();
 				};
 				
-				variable := messageToDiscard;
+				elements := messageToDiscard;
 			
 			};
 			
 			
 			--MessageKind messageTypeToDiscard = message.mType;						
-			declaration += object DataVariableDeclaration {
+			declaration += object TypedDeclaration {
 			
-				typeDefinition := object TypeReference {
-					referredType := map createMessageKindType();
+				typeDefinition := object IdentifierExpression {
+					identifier := map createMessageKindType();
 				};
 				
-				variable := messageTypeToDiscard;
+				elements := messageTypeToDiscard;
 			
 			};
 			
@@ -2576,7 +2412,7 @@ mapping createClearConnectorFunction() : Function {
 					
 					//buffer.tail++;
 					statement += object ExpressionStatement{
-						expression := object IncrementDecrementExpression{
+						expression := object PostIncrementDecrementExpression{
 							expression := object ScopedIdentifierExpression{
 								scope := object IdentifierExpression{
 									identifier := b;
@@ -2585,7 +2421,7 @@ mapping createClearConnectorFunction() : Function {
 									identifier := map createTailFieldVariable();
 								};
 							};
-							position := IncrementDecrementPosition::POST;
+							
 							operator := IncrementDecrementOperator::INCREMENT;
 						};
 					};

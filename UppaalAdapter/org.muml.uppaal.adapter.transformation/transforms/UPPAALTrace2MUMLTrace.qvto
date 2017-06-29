@@ -82,7 +82,7 @@ mapping uppaal_trace::State :: State2CICZoneGraphState() : CICZoneGraphState {
 ///// 	Create RTSCInstances
 ////////////////////////////////////
 
-mapping LocationActivity :: LocationActivity2RTSCInstance(diagState : diagnostictrace::State) : RealtimeStatechartInstance
+mapping LocationActivity :: LocationActivity2RTSCInstance(diagState : uppaal_trace::State) : RealtimeStatechartInstance
 when {not self.location.getRTSCVertex().oclIsUndefined() or not self.location.getRTSCTransition().oclIsUndefined()}
 {	
 	assert (self.location.getRTSCVertex().oclIsUndefined() or self.location.getRTSCTransition().oclIsUndefined()) with log ('Location '+self.toString()+' is mapped to State and to Transition');
@@ -117,14 +117,14 @@ when {not self.location.getRTSCVertex().oclIsUndefined() or not self.location.ge
 
 
 	
-mapping Variable:: createVariableBinding(diagState : diagnostictrace::State, instanceID : Integer) : VariableBinding{
+mapping Variable:: createVariableBinding(diagState : uppaal_trace::State, instanceID : Integer) : VariableBinding{
 	variable := self;
 	//Looks odd to use a setter but has to be done due to the blackbox implementation setting array values
 	self.setVariableValue(result, diagState, instanceID);
 }
 
 
-mapping Clock :: createClockBinding(diagState : diagnostictrace::State, instanceID: Integer) : ClockBinding{
+mapping Clock :: createClockBinding(diagState : uppaal_trace::State, instanceID: Integer) : ClockBinding{
 	
 	clock := self;
 	
@@ -280,7 +280,7 @@ mapping DelegationConnectorInstance :: DelegationConnectorInstance2RuntimeDelega
 /////	Create CIC
 ///// 		Message(Buffer) Specifics
 ////////////////////////////////////
-mapping MessageBuffer :: MessageBuffer2RuntimeMessageBuffer(diagState : diagnostictrace::State, instance : DiscretePortInstance) : RuntimeMessageBuffer{
+mapping MessageBuffer :: MessageBuffer2RuntimeMessageBuffer(diagState : uppaal_trace::State, instance : DiscretePortInstance) : RuntimeMessageBuffer{
 	messages := self.createRuntimeMessages(diagState, instance);
 	runtimeBehavioralElement := instance.map DiscretePortInstance2RuntimeDiscretePortInstance(diagState);
 	messageBuffer := self;

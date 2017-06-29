@@ -1,7 +1,9 @@
 library Types;
 
+import org.muml.uppaal.types.qvto.PredefinedTypeLibrary;
+
 modeltype uppaal uses 'http://www.muml.org/uppaal/1.0.0';
-modeltype uppaal_types uses uppaal::types('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_types uses uppaal::types('http://www.muml.org/uppaal/types/1.0.0');
 modeltype uppaal_declarations uses uppaal::declarations('http://www.muml.org/uppaal/1.0.0');
 modeltype uppaal_expressions uses uppaal::expressions('http://www.muml.org/uppaal/1.0.0');
 modeltype core uses pim::behavior('http://www.muml.org/pim/1.0.0');
@@ -9,11 +11,18 @@ modeltype types uses pim::types('http://www.muml.org/pim/1.0.0');
 modeltype proto uses pim::protocol('http://www.muml.org/pim/1.0.0');
 modeltype component uses pim::component('http://www.muml.org/pim/1.0.0');
 
-	property INT : PredefinedType = null;
-	property BOOL : PredefinedType = null;
-	property CLOCK : PredefinedType = null;
-	property CHAN : PredefinedType = null;
-	property VOID : PredefinedType = null;
+--Uncomment as soon as the new QVTo version is used.
+--blackbox helper getInt() : PredefinedType;
+--blackbox helper getBool() : PredefinedType;
+--blackbox helper getVoid() : PredefinedType;
+--blackbox helper getChan() : PredefinedType;
+--blackbox helper getClock() : PredefinedType;
+
+	property INT : PredefinedType = getInt();
+	property BOOL : PredefinedType = getBool();
+	property CLOCK : PredefinedType = getClock();
+	property CHAN : PredefinedType = getChan();
+	property VOID : PredefinedType = getVoid();
 	
 	property MUMLINT : DeclaredType = null;
 	property MUMLSHORT : DeclaredType = null;
@@ -24,13 +33,7 @@ modeltype component uses pim::component('http://www.muml.org/pim/1.0.0');
 		
 		-- workaround for https://bugs.eclipse.org/bugs/show_bug.cgi?id=392080
 		-- initialize constants only after module initialization (avoid missing out extent)
-		
-		INT := new PredefinedType(BuiltInType::INT);
-		BOOL := new PredefinedType(BuiltInType::BOOL);
-		CLOCK := new PredefinedType(BuiltInType::CLOCK);
-		CHAN := new PredefinedType(BuiltInType::CHAN);
-		VOID := new PredefinedType(BuiltInType::VOID);
-		
+				
 		MUMLINT := new DeclaredType("MUMLInt");
 		MUMLSHORT := new DeclaredType("MUMLShort");
 		MUMLBYTE := new DeclaredType("MUMLByte");
@@ -139,10 +142,10 @@ modeltype component uses pim::component('http://www.muml.org/pim/1.0.0');
 	}
 	
 			
-	mapping DataType :: createTypeSpec() : TypeSpecification disjuncts
+	mapping DataType :: createTypeSpec() : TypeExpression disjuncts
 		DataType::failOnUnsupportedTypeSpec;
 	
-	mapping DataType :: failOnUnsupportedTypeSpec() : TypeSpecification {
+	mapping DataType :: failOnUnsupportedTypeSpec() : TypeExpression {
 		
 		init {
 			assert fatal (false) with log("Mapping this type spec is unsupported.")

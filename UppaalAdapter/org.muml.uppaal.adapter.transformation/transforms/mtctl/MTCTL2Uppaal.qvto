@@ -224,13 +224,13 @@ mapping MessageDiscardedExpr::MessageDiscardedExpr2Expression() : ScopedIdentifi
 
 mapping MessageInTransitExpr::MessageInTransitExpr2Expression() : QuantificationExpression { //exists(i:instances) checkMessageInBuffer(connectors[i], messageType)
 	quantifier := Quantifier::EXISTENTIAL;
-	typeDefinition := object TypeReference {referredType := resolveoneIn(IDs::DiscretePortInstanceType).oclAsType(Type)};
-	variable := object uppaal_declarations::Variable {name := 'i'; container := result};
+	typeDefinition := object IdentifierExpression {identifier := resolveoneIn(IDs::DiscretePortInstanceType).oclAsType(Type)};
+	elements := object uppaal_declarations::Variable {name := 'i'; container := result};
 	expression := object FunctionCallExpression {
 		function := resolveoneIn(Functions::createCheckMessageInBufferFunction).oclAsType(Function);
 		argument += object IdentifierExpression {
 			identifier := resolveoneIn(Variables::createConnectorsVariable).oclAsType(uppaal_core::NamedElement);
-			index += object IdentifierExpression {identifier := result.variable->any(true); };
+			index += object IdentifierExpression {identifier := result.elements[uppaal_core::NamedElement]->any(true); };
 		};
 		argument += object IdentifierExpression { // Uppaal message kind constant
 			identifier := self.message.oclAsType(MumlElemExpr).elem.resolveoneIn(MessageType::createMessageKindConstant).oclAsType(uppaal_core::NamedElement);

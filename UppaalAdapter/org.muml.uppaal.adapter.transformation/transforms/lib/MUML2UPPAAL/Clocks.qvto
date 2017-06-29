@@ -69,15 +69,15 @@ modeltype uppaal_templates uses uppaal::templates('http://www.muml.org/uppaal/1.
 		
 	}
 	
-	mapping Clock :: Clock2VariableDeclaration() : ClockVariableDeclaration {
+	mapping Clock :: Clock2VariableDeclaration() : TypedDeclaration {
 		
-		typeDefinition := object TypeReference {
+		typeDefinition := object IdentifierExpression {
 		
-			referredType := CLOCK
+			identifier := CLOCK
 			
 		};
 		
-		variable += self.map Clock2Variable()
+		elements += self.map Clock2Variable()
 		
 	}			
 					
@@ -85,13 +85,9 @@ modeltype uppaal_templates uses uppaal::templates('http://www.muml.org/uppaal/1.
 		
 		name := self.name.addSuffixNumberUnderline();
 		
-		index += object TypeIndex {
-			
-			typeDefinition := object TypeReference {
-				referredType := self.map Clock2IDRange();
-			}			
-		}
-				
+		index += object IdentifierExpression {
+			identifier := self.map Clock2IDRange();	
+		}		
 	}
 	
 	constructor uppaal_expressions::IdentifierExpression :: IdentifierExpression(clock : Clock, componentInstanceID : uppaal_declarations::Variable, portOrRoleInstanceID : uppaal_declarations::Variable, subPortOrRoleInstanceID : uppaal_declarations::Variable) {

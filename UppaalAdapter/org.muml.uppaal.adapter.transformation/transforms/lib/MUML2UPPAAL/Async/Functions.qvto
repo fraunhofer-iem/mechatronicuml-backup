@@ -21,61 +21,54 @@ modeltype muml_instance uses pim::instance('http://www.muml.org/pim/1.0.0');
 modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 
 	mapping createClearConnectorFunction() : Function {
-		
-		// create return type
-		returnType := object TypeReference {
-			
-			referredType := VOID
-			
-		}; 
-		
+				
 		// create function parameters	
 		name := clearConnectorFunctionID;
 		
-		var id : Variable := object Variable {
+		var id : Parameter := object Parameter {
 			name := 'id';
 		};
 		
 		
-		parameter += object Parameter{
-			variableDeclaration := object DataVariableDeclaration {
-				typeDefinition := object TypeReference{
-				
-					referredType := map createMessageIdType();
-				};
-				variable += id;
-			};			
+		parameter += object ParameterContainer {
+		
+			typeDefinition := object IdentifierExpression {
+			
+				identifier := map createMessageIdType();
+			};
+			
+			elements += id;			
 		};
 		
-		var messageTypeToDiscard := object Variable {
+		var messageTypeToDiscard := object Parameter {
 			name := 'messageTypeToDiscard';	
 		};
 		
-		parameter += object Parameter{
-			variableDeclaration := object DataVariableDeclaration {
-				typeDefinition := object TypeReference{
-				
-					referredType := map createMessageKindType();
-				};
-				variable += messageTypeToDiscard;
-			};			
+		parameter += object ParameterContainer {
+			
+			typeDefinition := object IdentifierExpression {
+			
+				identifier := map createMessageKindType();
+			};
+			
+			elements += messageTypeToDiscard;			
 		};
 		
 		// third paramter argsPosition - the position where the arguments of the lay
 		
-		var argsPosition : Variable := object Variable {
+		var argsPosition : Parameter := object Parameter {
 			name := 'argsPosition';
 		};
 		
 		
-		parameter += object Parameter{
-			variableDeclaration := object DataVariableDeclaration {
-				typeDefinition := object TypeReference{
-				
-					referredType := INT ;
-				};
-				variable += argsPosition;
-			};			
+		parameter += object ParameterContainer {
+			
+			typeDefinition := object IdentifierExpression {
+			
+				identifier := INT ;
+			};
+			
+			elements += argsPosition;			
 		};
 		
 		
@@ -128,11 +121,7 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 	mapping createRequestIdFunction() : Function {
 		
 		name := 'requestId';
-		
-		returnType := object TypeReference {
-			referredType := map createMessageIdType();
-		};
-		
+				
 		var i : Variable = object Variable {
 			name := 'i';
 		};
@@ -141,13 +130,13 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 		
 			declarations := object LocalDeclarations {
 			
-				declaration += object DataVariableDeclaration {
+				declaration += object TypedDeclaration {
 					
-					typeDefinition := object TypeReference {
-						referredType := INT;
+					typeDefinition := object IdentifierExpression {
+						identifier := INT;
 					};
 					
-					variable += i;
+					elements += i;
 					
 				};
 				
@@ -183,14 +172,12 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 					}
 				};
 				
-				iteration := object IncrementDecrementExpression {
+				iteration := object PostIncrementDecrementExpression {
 							
 					expression := object IdentifierExpression {
 						identifier := i
 					};
-					
-					position := IncrementDecrementPosition::POST;
-					
+										
 					operator := IncrementDecrementOperator::INCREMENT;
 
 				}; 
@@ -225,13 +212,13 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 						
 						declarations := object LocalDeclarations {
 						
-							declaration += object DataVariableDeclaration {
+							declaration += object TypedDeclaration {
 								
-								typeDefinition := object TypeReference {
-									referredType := map createMessageIdType();
+								typeDefinition := object IdentifierExpression {
+									identifier := map createMessageIdType();
 								};
 								
-								variable += r;
+								elements += r;
 								
 							};
 							
@@ -324,40 +311,33 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 			name := 'i';
 		};
 		
-		var id : Variable := object Variable {
+		var id : Parameter := object Parameter {
 			name := 'id';
 		};
 		
-		parameter += object Parameter {
-			
-			variableDeclaration := object DataVariableDeclaration {
-				
-				typeDefinition := object TypeReference {
-					referredType := map createMessageIdType();
-				};
-				
-				variable += id;
+		parameter += object ParameterContainer {
+							
+			typeDefinition := object IdentifierExpression {
+				identifier := map createMessageIdType();
 			};
 			
+			elements += id;
+			
 		};
-		
-		returnType := object TypeReference {
-			referredType := BOOL;
-		};
-		
+				
 		block := object Block {	
 		
 			declarations := object LocalDeclarations {
 				
-				declaration += object DataVariableDeclaration {
+				declaration += object TypedDeclaration {
 					
-					typeDefinition := object TypeReference {
+					typeDefinition := object IdentifierExpression {
 					
-						referredType := INT;
+						identifier := INT;
 						
 					};
 					
-					variable += i;
+					elements += i;
 					
 				};
 				
@@ -393,14 +373,12 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 					}
 				};
 				
-				iteration := object IncrementDecrementExpression {
+				iteration := object PostIncrementDecrementExpression {
 							
 					expression := object IdentifierExpression {
 						identifier := i
 					};
-					
-					position := IncrementDecrementPosition::POST;
-					
+										
 					operator := IncrementDecrementOperator::INCREMENT;
 	
 				}; 
@@ -470,14 +448,12 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 					}
 				};
 				
-				iteration := object IncrementDecrementExpression {
+				iteration := object PostIncrementDecrementExpression {
 							
 					expression := object IdentifierExpression {
 						identifier := i
 					};
-					
-					position := IncrementDecrementPosition::POST;
-					
+										
 					operator := IncrementDecrementOperator::INCREMENT;
 	
 				}; 
@@ -562,26 +538,18 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 	mapping MessageType :: createAddForMessageTypeFunction() : Function {
 		
 		name := 'add' + self.name + 'Arguments';
-		
-		var m : Variable := object Variable {
+						
+		var m : Parameter := object Parameter {
 			name := 'm';
 		};
-		
-		returnType := object TypeReference {
-			referredType := INT;
-		};
-		
-		parameter += object Parameter {
-		
-			variableDeclaration := object DataVariableDeclaration {
 				
-				typeDefinition := object TypeReference {
-					referredType := self.map createParameterType();
-				};
-				
-				variable += m;
-				
+		parameter += object ParameterContainer {
+		
+			typeDefinition := object IdentifierExpression {
+				identifier := self.map createParameterType();
 			};
+			
+			elements += m;
 		
 		};
 		
@@ -592,11 +560,11 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 		block := object Block {
 			// int i;
 			declarations := object LocalDeclarations {
-				declaration +=object DataVariableDeclaration {
-					typeDefinition := object TypeReference {
-						referredType := INT;
+				declaration +=object TypedDeclaration {
+					typeDefinition := object IdentifierExpression {
+						identifier := INT;
 					};
-					variable := i;	
+					elements := i;	
 				};				
 			};
 			
@@ -625,11 +593,11 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 					};
 					operator := CompareOperator::LESS
 				};
-				iteration := object IncrementDecrementExpression {
+				iteration := object PostIncrementDecrementExpression {
 					expression := object IdentifierExpression {
 						identifier := i;
 					};
-					position := IncrementDecrementPosition::POST;
+
 					operator := IncrementDecrementOperator::INCREMENT;
 				};
 				statement := object IfStatement {
@@ -687,24 +655,18 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 	mapping MessageType :: createRemoveForMessageTypeFunction() : Function {
 		
 		name := 'remove' + self.name + 'Arguments';
-		
-		returnType := object TypeReference {
-			referredType := BOOL;
-		};
-			
-		var mArgsPosition : Variable := object Variable {
+					
+		var mArgsPosition : Parameter := object Parameter {
 			name := 'mArgsPosition';
 		};
 		
-		parameter += object Parameter {
-			variableDeclaration := object DataVariableDeclaration {
-			
-				typeDefinition := object TypeReference {
-					referredType := INT;
-				};
+		parameter += object ParameterContainer {
 				
-				variable += mArgsPosition;
+			typeDefinition := object IdentifierExpression {
+				identifier := INT;
 			};
+			
+			elements += mArgsPosition;
 		};
 		
 		block := object Block {
@@ -739,55 +701,39 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 	mapping createCheckFunction() : Function {
 		
 		name := 'check';
-		
-		returnType := object TypeReference {
-			
-			referredType := BOOL;
-			
-		}; 
-		
-		var buffer : Variable = object Variable { 
+				
+		var buffer : Parameter = object Parameter { 
 				
 				name := 'buffer';
 								
 		};
 		
-		var mKind : Variable = object Variable { 
+		var mKind : Parameter = object Parameter { 
 				
 				name := 'mKind';
 								
 		};
 		
-		parameter += object Parameter {
-		
-			variableDeclaration := object DataVariableDeclaration {
+		parameter += object ParameterContainer {
+				
+			typeDefinition := object IdentifierExpression {
 			
-				typeDefinition := object TypeReference {
-				
-					referredType := map createBufferType();
-				
-				};
-							
-				variable += buffer;
-				
-			}	
+				identifier := map createBufferType();
 			
+			};
+						
+			elements += buffer;			
 		};
 		
-		parameter += object Parameter {
+		parameter += object ParameterContainer {
 		
-			variableDeclaration := object DataVariableDeclaration {
+			typeDefinition := object IdentifierExpression {
+				
+				identifier := map createMessageKindType();
 			
-				typeDefinition := object TypeReference {
-				
-					referredType := map createMessageKindType();
-				
-				};
-							
-				variable += mKind;
-				
-			}	
-			
+			};
+						
+			elements += mKind;			
 		};
 		
 		block := object Block {
@@ -822,13 +768,13 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 		
 			declarations := object LocalDeclarations {
 				
-				declaration += object DataVariableDeclaration {
+				declaration += object TypedDeclaration {
 					
-					typeDefinition := object TypeReference {
-						referredType := map createMessageType();
+					typeDefinition := object IdentifierExpression {
+						identifier := map createMessageType();
 					};
 					
-					variable += nextMessage;
+					elements += nextMessage;
 					
 				};
 				
@@ -891,57 +837,40 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 	mapping createRemoveFunction() : Function {
 		
 		name := 'remove';
-		
-		returnType := object TypeReference {
-			
-			referredType := VOID;
-			
-		}; 
-		
-		var buffer : Variable = object Variable { 
+				
+		var buffer : Parameter = object Parameter { 
 				
 				name := 'buffer';
+				callType := CallType::CALL_BY_REFERENCE
 												
 		};
 		
-		var m : Variable = object Variable { 
+		var m : Parameter = object Parameter { 
 				
 				name := 'm';
 								
 		};
 		
-		parameter += object Parameter {
+		parameter += object ParameterContainer {
 		
-			variableDeclaration := object DataVariableDeclaration {
+			typeDefinition := object IdentifierExpression {
 			
-				typeDefinition := object TypeReference {
-				
-					referredType := map createBufferType();
-								
-				};
+				identifier := map createBufferType();
 							
-				variable += buffer;
-				
-			};	
-			
-			callType := CallType::CALL_BY_REFERENCE
-			
+			};
+						
+			elements += buffer;			
 		};
 		
-		parameter += object Parameter {
+		parameter += object ParameterContainer {
 		
-			variableDeclaration := object DataVariableDeclaration {
+			typeDefinition := object IdentifierExpression {
 			
-				typeDefinition := object TypeReference {
-				
-					referredType := map createMessageKindType();
-				
-				};
-							
-				variable += m;
-				
-			}	
+				identifier := map createMessageKindType();
 			
+			};
+						
+			elements += m;			
 		};
 		
 		
@@ -977,15 +906,15 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 		
 					declarations := object LocalDeclarations {
 						
-						declaration += object DataVariableDeclaration {
+						declaration += object TypedDeclaration {
 							
-							typeDefinition := object TypeReference {
+							typeDefinition := object IdentifierExpression {
 								
-								referredType := INT;
+								identifier := INT;
 								
 							};
 							
-							variable += i
+							elements += i
 							
 						}
 						
@@ -1041,7 +970,7 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 							
 						};
 						
-						iteration := object IncrementDecrementExpression {
+						iteration := object PostIncrementDecrementExpression {
 							
 							expression := object IdentifierExpression {
 								
@@ -1049,12 +978,7 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 								
 							};
 							
-							position := IncrementDecrementPosition::POST;
-							
 							operator := IncrementDecrementOperator::INCREMENT;
-							
-							
-							
 						};
 						
 						statement := object ExpressionStatement {
@@ -1181,7 +1105,7 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 					
 					statement += object ExpressionStatement {
 						
-						expression := object IncrementDecrementExpression {
+						expression := object PostIncrementDecrementExpression {
 							
 							expression := object ScopedIdentifierExpression {
 								
@@ -1198,9 +1122,7 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 								}
 								
 							};
-							
-							position := IncrementDecrementPosition::POST;
-							
+														
 							operator := IncrementDecrementOperator::DECREMENT
 							
 						}
@@ -1217,35 +1139,34 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 	
 	mapping createCheckMessageInBufferFunction() : Function {
 		name := 'checkMessageInBuffer';
+				
+		var buffer : Parameter = object Parameter {name := 'buffer'};
+		var mKind : Parameter = object Parameter {name := 'mKind'};
 		
-		returnType := object TypeReference {referredType := BOOL};
-		
-		var buffer : Variable = object Variable {name := 'buffer'};
-		var mKind : Variable = object Variable {name := 'mKind'};
-		
-		parameter += object Parameter {
-			variableDeclaration := object DataVariableDeclaration  {
-				typeDefinition := object TypeReference {
-					referredType := map createBufferType();
-				};
-				variable += buffer;
-			}	
+		parameter += object ParameterContainer {
+			
+			typeDefinition := object IdentifierExpression {
+				identifier := map createBufferType();
+			};
+			
+			elements += buffer;	
 		};
-		parameter += object Parameter {
-			variableDeclaration := object DataVariableDeclaration {
-				typeDefinition := object TypeReference {
-					referredType := map createMessageKindType();
-				};
-				variable += mKind;
-			}		
+		
+		parameter += object ParameterContainer {
+			
+			typeDefinition := object IdentifierExpression {
+				identifier := map createMessageKindType();
+			};
+			elements += mKind;
+					
 		};
 		
 		block := object Block {
 			var i : Variable = object Variable { name := 'i';};
 			declarations := object LocalDeclarations {		
-				declaration += object DataVariableDeclaration {
-					typeDefinition := object TypeReference { referredType := INT; };
-					variable += i;
+				declaration += object TypedDeclaration {
+					typeDefinition := object IdentifierExpression { identifier := INT; };
+					elements += i;
 				}
 			};
 					
@@ -1260,9 +1181,9 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 					operator := CompareOperator::LESS;
 					secondExpr := object IdentifierExpression {identifier := map createMaxOfBufferAndConnectorSizeVariable();};
 				};
-				iteration := object IncrementDecrementExpression {
+				iteration := object PostIncrementDecrementExpression {
 					expression := object IdentifierExpression {	identifier := i };
-					position := IncrementDecrementPosition::POST;
+
 					operator := IncrementDecrementOperator::INCREMENT;
 				}; 
 				
@@ -1294,20 +1215,15 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 		
 		//Signature
 		name := 'getNumberOfElementsInBuffer';
-		
-		returnType := object TypeReference {
-			referredType := INT
-		};
-		
-		var b : Variable = object Variable {name := 'b'};
-		parameter += object Parameter {
-			variableDeclaration := object DataVariableDeclaration {
-				typeDefinition := object TypeReference {
-					referredType := map createBufferType();
-				};
 				
-				variable += b;
-			}
+		var b : Parameter = object Parameter {name := 'b'};
+		parameter += object ParameterContainer {
+			
+			typeDefinition := object IdentifierExpression {
+				identifier := map createBufferType();
+			};
+			
+			elements += b;
 		};
 		
 		//Behavior
@@ -1329,57 +1245,40 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 	mapping createAddFunction() : Function {
 		
 		name := 'add';
-		
-		returnType := object TypeReference {
-			
-			referredType := VOID
-			
-		}; 
-		
-		var b : Variable = object Variable { 
+				
+		var b : Parameter = object Parameter { 
 				
 				name := bufferParameterID;
-												
+				
+				callType := CallType::CALL_BY_REFERENCE								
 		};
 		
-		var e : Variable = object Variable { 
+		var e : Parameter = object Parameter { 
 				
 				name := messageParameterID;
 								
 		};
 		
-		parameter += object Parameter {
-		
-			variableDeclaration := object DataVariableDeclaration {
-			
-				typeDefinition := object TypeReference {
+		parameter += object ParameterContainer {
 				
-					referredType := map createBufferType();
-								
-				};
+			typeDefinition := object IdentifierExpression {
+			
+				identifier := map createBufferType();
 							
-				variable += b
-			
-			};	
-			
-			callType := CallType::CALL_BY_REFERENCE
+			};
 						
+			elements += b;						
 		};
 		
-		parameter += object Parameter {
-		
-			variableDeclaration := object DataVariableDeclaration {
+		parameter += object ParameterContainer {
+					
+			typeDefinition := object IdentifierExpression {
 			
-				typeDefinition := object TypeReference {
-				
-					referredType := map createMessageType();
-				
-				};
-							
-				variable += e;
-				
-			}	
+				identifier := map createMessageType();
 			
+			};
+						
+			elements += e;			
 		};
 				
 		block := object Block {
@@ -1434,7 +1333,7 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 			
 			statement += object ExpressionStatement {
 							
-				expression := object IncrementDecrementExpression {
+				expression := object PostIncrementDecrementExpression {
 					
 					expression := object ScopedIdentifierExpression {
 						
@@ -1451,9 +1350,7 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 						}
 						
 					};
-					
-					position := IncrementDecrementPosition::POST;
-					
+										
 					operator := IncrementDecrementOperator::INCREMENT
 					
 				}
@@ -1469,29 +1366,21 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 		
 		name := 'send' + self.name;
 		
-		var sender : Variable = object Variable {
+		var sender : Parameter = object Parameter {
 			name := 'sender'
 		};
 		
-		parameter += object Parameter {
-		
-			variableDeclaration := object DataVariableDeclaration {
-				typeDefinition := object TypeReference {
-					referredType := map DiscretePortInstanceType()
-				};
-				
-				variable += sender
-				
-			}
-		
+		parameter += object ParameterContainer {
+			
+			typeDefinition := object IdentifierExpression {
+				identifier := map DiscretePortInstanceType()
+			};
+			
+			elements += sender
 		};
 		
-		parameter += self.parameters->map Expressions::Parameter2Parameter();
-		
-		returnType := object TypeReference {
-			referredType := VOID
-		};
-		
+		parameter += self.parameters->map Expressions::Parameter2ParameterContainer();
+				
 		block := object Block {
 			
 			statement += object IfStatement {
@@ -1543,7 +1432,7 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 							
 								initializer += object ExpressionInitializer {
 									expression := object IdentifierExpression {
-										identifier := param.map Parameter2ParameterVariable()
+										identifier := param.map Parameter2Parameter();
 									};
 								};
 							
@@ -1575,33 +1464,33 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 					
 					declarations := object LocalDeclarations {
 						
-						declaration += object DataVariableDeclaration {
+						declaration += object TypedDeclaration {
 							
-							typeDefinition := object TypeReference {
-								referredType := self.map createParameterType(); // resolve here?
+							typeDefinition := object IdentifierExpression {
+								identifier := self.map createParameterType(); // resolve here?
 							};
 							
-							variable += instance;
+							elements += instance;
 							
 						};
 						
-						declaration += object DataVariableDeclaration {
+						declaration += object TypedDeclaration {
 							
-							typeDefinition := object TypeReference {
-								referredType := map createMessageType();
+							typeDefinition := object IdentifierExpression {
+								identifier := map createMessageType();
 							};
 							
-							variable += message;
+							elements += message;
 							
 						};
 						
-						declaration += object DataVariableDeclaration {
+						declaration += object TypedDeclaration {
 							
-							typeDefinition := object TypeReference {
-								referredType := map createMessageIdType();
+							typeDefinition := object IdentifierExpression {
+								identifier := map createMessageIdType();
 							};
 							
-							variable += mId;
+							elements += mId;
 							
 						};
 						
@@ -1838,7 +1727,7 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 								
 							};
 							
-							elseExpression := object IncrementDecrementExpression {
+							elseExpression := object PostIncrementDecrementExpression {
 								
 								-- latest[sender]++
 								
@@ -1849,9 +1738,7 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 										identifier := sender
 									}
 								};
-								
-								position := IncrementDecrementPosition::POST;
-								
+																
 								operator := IncrementDecrementOperator::INCREMENT;
 								
 							}
@@ -1888,44 +1775,32 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 		
 		name := 'receive';
 		
-		var receiver : Variable = object Variable {
+		var receiver : Parameter = object Parameter {
 			name := 'receiver'
 		};
 		
-		parameter += object Parameter {
+		parameter += object ParameterContainer {
 		
-			variableDeclaration := object DataVariableDeclaration {
-				typeDefinition := object TypeReference {
-					referredType := map DiscretePortInstanceType()
-				};
-				
-				variable += receiver
-				
-			}
-		
+			typeDefinition := object IdentifierExpression {
+				identifier := map DiscretePortInstanceType()
+			};
+			
+			elements += receiver		
 		};
 		
-		var mKind : Variable = object Variable {
+		var mKind : Parameter = object Parameter {
 			name := 'mKind'
 		};
 		
-		parameter += object Parameter {
-			
-			variableDeclaration := object DataVariableDeclaration {
-				typeDefinition := object TypeReference {
-					referredType := map createMessageKindType()
-				};
-			
-				variable += mKind
-			
-			}
-			
-		};
+		parameter += object ParameterContainer {
+
+			typeDefinition := object IdentifierExpression {
+				identifier := map createMessageKindType()
+			};
 		
-		returnType := object TypeReference {
-			referredType := BOOL
+			elements += mKind			
 		};
-		
+				
 		block := object Block {
 			
 			statement += object ReturnStatement {
@@ -1975,44 +1850,32 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 		
 		name := 'consume';
 		
-		var receiver : Variable = object Variable {
+		var receiver : Parameter = object Parameter {
 			name := 'receiver'
 		};
 		
-		parameter += object Parameter {
+		parameter += object ParameterContainer {
 		
-			variableDeclaration := object DataVariableDeclaration {
-				typeDefinition := object TypeReference {
-					referredType := map DiscretePortInstanceType()
-				};
-				
-				variable += receiver
-				
-			}
-		
+			typeDefinition := object IdentifierExpression {
+				identifier := map DiscretePortInstanceType()
+			};
+			
+			elements += receiver		
 		};
 		
-		var mKind : Variable = object Variable {
+		var mKind : Parameter = object Parameter {
 			name := 'mKind'
 		};
 		
-		parameter += object Parameter {
+		parameter += object ParameterContainer {
 			
-			variableDeclaration := object DataVariableDeclaration {
-				typeDefinition := object TypeReference {
-					referredType := map createMessageKindType()
-				};
-			
-				variable += mKind
-			
-			}
-			
-		};
+			typeDefinition := object IdentifierExpression {
+				identifier := map createMessageKindType()
+			};
 		
-		returnType := object TypeReference {
-			referredType := VOID
+			elements += mKind			
 		};
-		
+				
 		block := object Block {
 			
 			statement += object IfStatement {
@@ -2084,13 +1947,13 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 				
 					declarations := object LocalDeclarations {
 						
-						declaration += object DataVariableDeclaration {
+						declaration += object TypedDeclaration {
 						
-							typeDefinition := object TypeReference {
-								referredType := map createMessageType();
+							typeDefinition := object IdentifierExpression {
+								identifier := map createMessageType();
 							};
 							
-							variable += nextMessage;
+							elements += nextMessage;
 						
 						};
 						
@@ -2211,79 +2074,58 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 	mapping createDiscardFunction() : Function {
 		
 		name := discardFunctionID;
-		
-		returnType := object TypeReference {
-			
-			referredType := VOID
-			
-		}; 
-		
-		var b : Variable = object Variable { 
 				
-				name := bufferParameterID;
-												
+		var b : Parameter = object Parameter { 
+				
+			name := bufferParameterID;
+			
+			callType := CallType::CALL_BY_REFERENCE								
 		};
 		
-		var bufferOverflowStrategy : Variable = object Variable { 
+		var bufferOverflowStrategy : Parameter = object Parameter { 
 				
-				name := bufferOverflowStrategyParameterID;
+			name := bufferOverflowStrategyParameterID;
 								
 		};
 		
-		var e : Variable = object Variable { 
+		var e : Parameter = object Parameter { 
 				
-				name := messageParameterID;
+			name := messageParameterID;
 												
 		};
 		
-		parameter += object Parameter {
+		parameter += object ParameterContainer {
 		
-			variableDeclaration := object DataVariableDeclaration {
+			typeDefinition := object IdentifierExpression {
 			
-				typeDefinition := object TypeReference {
-				
-					referredType := map createBufferType();
-								
-				};
+				identifier := map createBufferType();
 							
-				variable += b
+			};
+						
+			elements += b					
+		};
+		
+		parameter += object ParameterContainer {
+		
+			typeDefinition := object IdentifierExpression {
 			
-			};	
+				identifier := INT;
 			
-			callType := CallType::CALL_BY_REFERENCE
+			};
+						
+			elements += bufferOverflowStrategy;
 						
 		};
 		
-		parameter += object Parameter {
+		parameter += object ParameterContainer {
 		
-			variableDeclaration := object DataVariableDeclaration {
+			typeDefinition := object IdentifierExpression {
 			
-				typeDefinition := object TypeReference {
-				
-					referredType := INT;
-				
-				};
-							
-				variable += bufferOverflowStrategy;
-				
-			}	
+				identifier := map createMessageType();
 			
-		};
-		
-		parameter += object Parameter {
-		
-			variableDeclaration := object DataVariableDeclaration {
-			
-				typeDefinition := object TypeReference {
-				
-					referredType := map createMessageType();
-				
-				};
-							
-				variable += e;
-				
-			}	
-			
+			};
+						
+			elements += e;			
 		};
 				
 		block := object Block {
@@ -2319,25 +2161,25 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 		declarations := object LocalDeclarations {
 		
 			--MessageId messageToDiscard = message.mId;
-			declaration += object DataVariableDeclaration {
+			declaration += object TypedDeclaration {
 			
-				typeDefinition := object TypeReference {
-					referredType := map createMessageIdType();
+				typeDefinition := object IdentifierExpression {
+					identifier := map createMessageIdType();
 				};
 				
-				variable := messageToDiscard;
+				elements := messageToDiscard;
 			
 			};
 			
 			
 			--MessageKind messageTypeToDiscard = message.mType;						
-			declaration += object DataVariableDeclaration {
+			declaration += object TypedDeclaration {
 			
-				typeDefinition := object TypeReference {
-					referredType := map createMessageKindType();
+				typeDefinition := object IdentifierExpression {
+					identifier := map createMessageKindType();
 				};
 				
-				variable := messageTypeToDiscard;
+				elements := messageTypeToDiscard;
 			
 			};
 			
@@ -2450,7 +2292,7 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 					
 					//buffer.tail++;
 					statement += object ExpressionStatement{
-						expression := object IncrementDecrementExpression{
+						expression := object PostIncrementDecrementExpression{
 							expression := object ScopedIdentifierExpression{
 								scope := object IdentifierExpression{
 									identifier := b;
@@ -2459,7 +2301,7 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 									identifier := map createTailFieldVariable();
 								};
 							};
-							position := IncrementDecrementPosition::POST;
+
 							operator := IncrementDecrementOperator::INCREMENT;
 						};
 					};

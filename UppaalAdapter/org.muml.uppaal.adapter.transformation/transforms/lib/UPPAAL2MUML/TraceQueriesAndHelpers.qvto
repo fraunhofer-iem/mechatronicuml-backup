@@ -61,8 +61,7 @@ query getConcreteTemplateAndArguments(t : AbstractTemplate) : template : Templat
 		
 		arguments := tmp.oclAsType(RedefinedTemplate).declaration.argument.toInteger();
 		tmp := tmp.oclAsType(RedefinedTemplate).referredTemplate;
-		parameters := tmp.parameter->asSequence();
-		
+		parameters := tmp.parameter->collect(p | p.elements)->selectByKind(uppaal::declarations::Parameter)->asSequence();
 	};
 	
 	template := tmp.oclAsType(Template);
@@ -74,11 +73,11 @@ query TemplateDeclaration :: getInstanceID() : Integer{
 	var templateTuple : Tuple(template : Template, arguments : Sequence(Integer), parameters : Sequence(uppaal::declarations::Parameter)) := getConcreteTemplateAndArguments(self.declaredTemplate);
 	
 	//Get the Parameter expressing the instance id
-	var idParameter : uppaal::declarations::Parameter := templateTuple.parameters->select(p | p.variableDeclaration.variable->first().name = discreteSubPortInstanceID)->first();
+	var idParameter : uppaal::declarations::Parameter := templateTuple.parameters->select(p | p.container.elements[uppaal::core::NamedElement]->first().name = discreteSubPortInstanceID)->first();
 	if(idParameter.oclIsUndefined())
-		idParameter := templateTuple.parameters->select(p | p.variableDeclaration.variable->first().name = discretePortInstanceID)->first();
+		idParameter := templateTuple.parameters->select(p | p.container.elements[uppaal::core::NamedElement]->first().name = discretePortInstanceID)->first();
 	if(idParameter.oclIsUndefined())
-		idParameter := templateTuple.parameters->select(p | p.variableDeclaration.variable->first().name = componentInstanceID)->first();
+		idParameter := templateTuple.parameters->select(p | p.container.elements[uppaal::core::NamedElement]->first().name = componentInstanceID)->first();	
 	assert (not idParameter.oclIsUndefined()) with log ("Could not find discretePortInstanceID or componentInstanceID Parameter in Template "+self.declaredTemplate.toString());
 	
 	//Get the index of the paramter in the parameter list
@@ -93,7 +92,7 @@ query TemplateDeclaration :: getInstanceID() : Integer{
 
 // parent variables have to be passed in correct order
 // indexes refers to first parent variable (null if there are no parent variables)
-query uppaal::declarations::Variable :: getVariableValue(diagState : diagnostictrace::State, indexes : Sequence(Integer), parentVariables : OrderedSet(uppaal::declarations::Variable)) : OrderedSet(VariableValue){
+query uppaal::declarations::Variable :: getVariableValue(diagState : uppaal_trace::State, indexes : Sequence(Integer), parentVariables : OrderedSet(uppaal::declarations::Variable)) : OrderedSet(VariableValue){
 	
 	var variables : OrderedSet(uppaal::declarations::Variable):= parentVariables;
 	variables += self;
@@ -238,7 +237,7 @@ query MessageType :: getParameterTypeMessageIdVariable() : uppaal::declarations:
 
 
 query Parameter :: getVariable() : uppaal::declarations::Variable{
-	var variable := self.recursiveResolve()->resolveIn(Parameter::Parameter2Variable, uppaal::declarations::Variable)->any(true);
+	var variable := self.recursiveResolve()->resolveIn(Parameter::Parameter2Parameter)->any(true);
 	return variable;
 }
 
@@ -251,7 +250,7 @@ query RealtimeStatechartInstance::  getTemplateDeclaration() : TemplateDeclarati
 ///// Create RuntimeElements for Muml Elements
 ////////////////////////////////////
 
-helper RuntimeDiscretePortInstance :: createMessagesOnConnectorForSender(diagState : diagnostictrace::State, instance : DiscretePortInstance, receiver :RuntimeDiscretePortInstance) : OrderedSet(MessageOnConnector){
+helper RuntimeDiscretePortInstance :: createMessagesOnConnectorForSender(diagState : uppaal_trace::State, instance : DiscretePortInstance, receiver :RuntimeDiscretePortInstance) : OrderedSet(MessageOnConnector){
 	var messagesOnConnector : OrderedSet(MessageOnConnector);
 		
 	var parentVariables : OrderedSet(uppaal::declarations::Variable);
@@ -295,7 +294,7 @@ helper RuntimeDiscretePortInstance :: createMessagesOnConnectorForSender(diagSta
 }
 
 
-helper MessageBuffer :: createRuntimeMessages(diagState : diagnostictrace::State, instance : DiscretePortInstance) : OrderedSet(RuntimeMessage){
+helper MessageBuffer :: createRuntimeMessages(diagState : uppaal_trace::State, instance : DiscretePortInstance) : OrderedSet(RuntimeMessage){
 	var runtimeMessages : OrderedSet(RuntimeMessage);
 //Uppaal Trace Example:
 	// buffers[0][0].messages[0].mId=1 buffers[0][0].messages[0].mType=1 buffers[0][0].messages[0].mArgsPosition=0
@@ -409,7 +408,7 @@ helper RealtimeStatechartInstance :: setBehavioralElement(inout runtimePortInsta
 		runtimeBehavioralElement := self.getComponentInstance().map ComponentInstance2RuntimeComponentInstance(diagState);*/
 }
 
-helper MessageType :: createRuntimeMessageParameter(mID : Integer, diagState : diagnostictrace::State) : OrderedSet(RuntimeParameter){
+helper MessageType :: createRuntimeMessageParameter(mID : Integer, diagState : uppaal_trace::State) : OrderedSet(RuntimeParameter){
 //Example for Trace: MumlElement_exampleMessageMessageArguments[0].MumlElement_exampleMessageMessageID=2 MumlElement_exampleMessageMessageArguments[0].MumlElement_a=1
 	var runtimeParameters : OrderedSet(RuntimeParameter);
 
@@ -507,7 +506,7 @@ query uppaal::declarations::Variable :: getIntegerInitilizerValue() : Integer{
 	return self.initializer.oclAsType(uppaal::declarations::ExpressionInitializer).expression.toInteger();
 }
 
-helper Variable :: setVariableValue(inout varBinding : VariableBinding , diagState : diagnostictrace::State, instanceID : Integer){
+helper Variable :: setVariableValue(inout varBinding : VariableBinding , diagState : uppaal_trace::State, instanceID : Integer){
 	
 	var parentIndexes : Sequence(Integer);
 	parentIndexes += instanceID;
@@ -516,12 +515,16 @@ helper Variable :: setVariableValue(inout varBinding : VariableBinding , diagSta
 	var variableIsConstant : Boolean := false;
 	
 	// check if variable is a constant 
-	if (self.getUppaalVariable().container.oclIsKindOf(uppaal::declarations::DataVariableDeclaration)) {
-        var dataVariableDec := self.getUppaalVariable().container.oclAsType(uppaal::declarations::DataVariableDeclaration);
-        if (dataVariableDec.prefix = uppaal::declarations::DataVariablePrefix::CONST) {
-            variableIsConstant := true;
-            assert(false) with log ('Found constant variable : '+self.name.toString() + '. We will not find a value for this variable in the trace as Uppaal does not write them into it.');
-        };
+	if (self.getUppaalVariable().container.oclIsKindOf(uppaal::declarations::TypedDeclaration)) {
+        var dataVariableDec := self.getUppaalVariable().container.oclAsType(uppaal::declarations::TypedDeclaration);
+        
+        if (dataVariableDec.typeDefinition.oclIsKindOf(DataPrefixExpression)) {
+        	
+	        if (dataVariableDec.typeDefinition.oclAsType(DataPrefixExpression).prefix = uppaal::declarations::DataVariablePrefix::CONST) {
+	            variableIsConstant := true;
+	            assert(false) with log ('Found constant variable : '+self.name.toString() + '. We will not find a value for this variable in the trace as Uppaal does not write them into it.');
+	        }
+		}
     };
     
     if (not variableIsConstant) {

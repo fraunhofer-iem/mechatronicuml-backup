@@ -5,7 +5,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 
 import org.eclipse.emf.common.util.BasicEList;
-import org.muml.uppaal.trace.diagnostictrace.VariableValue;
+import org.muml.uppaal.trace.VariableValue;
 import org.muml.verification.core.runtime.VariableBinding;
 
 public class ValueLibrary {

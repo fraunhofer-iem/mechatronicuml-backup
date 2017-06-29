@@ -10,7 +10,7 @@ import org.muml.uppaal.NTA;
 import org.muml.uppaal.job.VerifyTAOperation;
 import org.muml.uppaal.options.Options;
 import org.muml.uppaal.requirements.PropertyRepository;
-import org.muml.uppaal.trace.diagnostictrace.TraceRepository;
+import org.muml.uppaal.trace.TraceRepository;
 
 public class TraceLibrary {
 

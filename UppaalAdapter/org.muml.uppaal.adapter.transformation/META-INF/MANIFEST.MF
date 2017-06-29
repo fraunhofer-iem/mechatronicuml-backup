@@ -17,4 +17,5 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.m2m.qvt.oml.project;bundle-version="3.2.0",
  org.muml.uppaal.adapter.extension,
  org.muml.uppaal.adapter.mtctl,
- org.muml.verification.core.reachanalysis.reachabilitygraph.cic
+ org.muml.verification.core.reachanalysis.reachabilitygraph.cic,
+ org.muml.uppaal.types.qvto;bundle-version="1.0.0"
