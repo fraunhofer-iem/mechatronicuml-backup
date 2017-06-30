@@ -3,10 +3,10 @@
  */
 package org.muml.uppaal.adapter.mtctl.xtext.parser.antlr;
 
-import com.google.inject.Inject;
-
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.muml.uppaal.adapter.mtctl.xtext.services.MtctlGrammarAccess;
+
+import com.google.inject.Inject;
 
 public class MtctlParser extends org.eclipse.xtext.parser.antlr.AbstractAntlrParser {
 	

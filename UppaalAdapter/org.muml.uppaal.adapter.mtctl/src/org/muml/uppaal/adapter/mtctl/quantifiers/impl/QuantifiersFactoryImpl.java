@@ -5,11 +5,18 @@ package org.muml.uppaal.adapter.mtctl.quantifiers.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.muml.uppaal.adapter.mtctl.quantifiers.*;
+import org.muml.uppaal.adapter.mtctl.quantifiers.AFExpr;
+import org.muml.uppaal.adapter.mtctl.quantifiers.AGExpr;
+import org.muml.uppaal.adapter.mtctl.quantifiers.BoundVariable;
+import org.muml.uppaal.adapter.mtctl.quantifiers.EFExpr;
+import org.muml.uppaal.adapter.mtctl.quantifiers.EGExpr;
+import org.muml.uppaal.adapter.mtctl.quantifiers.ExistenceQuantExpr;
+import org.muml.uppaal.adapter.mtctl.quantifiers.LeadsToExpr;
+import org.muml.uppaal.adapter.mtctl.quantifiers.QuantifiersFactory;
+import org.muml.uppaal.adapter.mtctl.quantifiers.QuantifiersPackage;
+import org.muml.uppaal.adapter.mtctl.quantifiers.UniversalQuantExpr;
 
 /**
  * <!-- begin-user-doc -->

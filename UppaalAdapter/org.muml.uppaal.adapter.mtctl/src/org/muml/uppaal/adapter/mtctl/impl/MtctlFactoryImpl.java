@@ -5,11 +5,12 @@ package org.muml.uppaal.adapter.mtctl.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.muml.uppaal.adapter.mtctl.*;
+import org.muml.uppaal.adapter.mtctl.MtctlFactory;
+import org.muml.uppaal.adapter.mtctl.MtctlPackage;
+import org.muml.uppaal.adapter.mtctl.Property;
+import org.muml.uppaal.adapter.mtctl.PropertyRepository;
 
 /**
  * <!-- begin-user-doc -->

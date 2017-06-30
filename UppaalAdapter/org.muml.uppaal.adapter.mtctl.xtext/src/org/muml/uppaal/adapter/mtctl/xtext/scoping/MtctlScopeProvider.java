@@ -11,7 +11,6 @@ import org.eclipse.xtext.scoping.Scopes;
 import org.eclipse.xtext.scoping.impl.AbstractScopeProvider;
 import org.muml.pim.common.naming.MumlQualifiedNameProvider;
 import org.muml.pim.common.naming.QualifiedNameProvider;
-import org.muml.pim.connector.ConnectorEndpoint;
 import org.muml.pim.connector.DiscreteInteractionEndpoint;
 import org.muml.pim.constraint.VerifiableElement;
 import org.muml.pim.constraint.VerificationConstraintRepository;

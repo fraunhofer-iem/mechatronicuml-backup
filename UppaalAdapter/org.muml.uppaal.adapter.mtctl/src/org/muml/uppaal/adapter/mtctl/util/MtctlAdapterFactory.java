@@ -4,14 +4,15 @@ package org.muml.uppaal.adapter.mtctl.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
 import org.muml.core.CommentableElement;
 import org.muml.core.ExtendableElement;
 import org.muml.pim.constraint.VerificationConstraintRepository;
-import org.muml.uppaal.adapter.mtctl.*;
+import org.muml.uppaal.adapter.mtctl.Expression;
+import org.muml.uppaal.adapter.mtctl.MtctlPackage;
+import org.muml.uppaal.adapter.mtctl.Property;
+import org.muml.uppaal.adapter.mtctl.PropertyRepository;
 
 /**
  * <!-- begin-user-doc -->

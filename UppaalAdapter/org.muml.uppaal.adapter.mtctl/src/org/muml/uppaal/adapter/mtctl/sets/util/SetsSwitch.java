@@ -6,7 +6,16 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.muml.uppaal.adapter.mtctl.Expression;
-import org.muml.uppaal.adapter.mtctl.sets.*;
+import org.muml.uppaal.adapter.mtctl.sets.BufferSetExpr;
+import org.muml.uppaal.adapter.mtctl.sets.ClockSetExpr;
+import org.muml.uppaal.adapter.mtctl.sets.InstanceSetExpr;
+import org.muml.uppaal.adapter.mtctl.sets.IntervalSetExpr;
+import org.muml.uppaal.adapter.mtctl.sets.MessageSetExpr;
+import org.muml.uppaal.adapter.mtctl.sets.SetExpr;
+import org.muml.uppaal.adapter.mtctl.sets.SetsPackage;
+import org.muml.uppaal.adapter.mtctl.sets.StateSetExpr;
+import org.muml.uppaal.adapter.mtctl.sets.SubinstanceSetExpr;
+import org.muml.uppaal.adapter.mtctl.sets.TransitionSetExpr;
 
 /**
  * <!-- begin-user-doc -->

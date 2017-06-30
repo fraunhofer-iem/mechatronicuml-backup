@@ -5,11 +5,15 @@ package org.muml.uppaal.adapter.mtctl.comparables.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.muml.uppaal.adapter.mtctl.comparables.*;
+import org.muml.uppaal.adapter.mtctl.comparables.BufferMsgCountExpr;
+import org.muml.uppaal.adapter.mtctl.comparables.ComparablesFactory;
+import org.muml.uppaal.adapter.mtctl.comparables.ComparablesPackage;
+import org.muml.uppaal.adapter.mtctl.comparables.ConstExpr;
+import org.muml.uppaal.adapter.mtctl.comparables.MumlElemExpr;
+import org.muml.uppaal.adapter.mtctl.comparables.SourceStateExpr;
+import org.muml.uppaal.adapter.mtctl.comparables.TargetStateExpr;
 
 /**
  * <!-- begin-user-doc -->

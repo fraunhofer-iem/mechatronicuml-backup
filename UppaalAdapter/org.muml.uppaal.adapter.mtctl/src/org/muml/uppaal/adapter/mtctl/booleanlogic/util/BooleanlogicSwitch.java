@@ -4,12 +4,13 @@ package org.muml.uppaal.adapter.mtctl.booleanlogic.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
 import org.muml.uppaal.adapter.mtctl.Expression;
-
-import org.muml.uppaal.adapter.mtctl.booleanlogic.*;
+import org.muml.uppaal.adapter.mtctl.booleanlogic.AndExpr;
+import org.muml.uppaal.adapter.mtctl.booleanlogic.BooleanlogicPackage;
+import org.muml.uppaal.adapter.mtctl.booleanlogic.ImplyExpr;
+import org.muml.uppaal.adapter.mtctl.booleanlogic.NotExpr;
+import org.muml.uppaal.adapter.mtctl.booleanlogic.OrExpr;
 
 /**
  * <!-- begin-user-doc -->

@@ -5,36 +5,23 @@ package org.muml.uppaal.adapter.mtctl.booleanlogic.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.muml.pim.PimPackage;
-
 import org.muml.uppaal.adapter.mtctl.MtctlPackage;
-
 import org.muml.uppaal.adapter.mtctl.booleanlogic.AndExpr;
 import org.muml.uppaal.adapter.mtctl.booleanlogic.BooleanlogicFactory;
 import org.muml.uppaal.adapter.mtctl.booleanlogic.BooleanlogicPackage;
 import org.muml.uppaal.adapter.mtctl.booleanlogic.ImplyExpr;
 import org.muml.uppaal.adapter.mtctl.booleanlogic.NotExpr;
 import org.muml.uppaal.adapter.mtctl.booleanlogic.OrExpr;
-
 import org.muml.uppaal.adapter.mtctl.comparables.ComparablesPackage;
-
 import org.muml.uppaal.adapter.mtctl.comparables.impl.ComparablesPackageImpl;
-
 import org.muml.uppaal.adapter.mtctl.impl.MtctlPackageImpl;
-
 import org.muml.uppaal.adapter.mtctl.predicates.PredicatesPackage;
-
 import org.muml.uppaal.adapter.mtctl.predicates.impl.PredicatesPackageImpl;
-
 import org.muml.uppaal.adapter.mtctl.quantifiers.QuantifiersPackage;
-
 import org.muml.uppaal.adapter.mtctl.quantifiers.impl.QuantifiersPackageImpl;
-
 import org.muml.uppaal.adapter.mtctl.sets.SetsPackage;
-
 import org.muml.uppaal.adapter.mtctl.sets.impl.SetsPackageImpl;
 
 /**

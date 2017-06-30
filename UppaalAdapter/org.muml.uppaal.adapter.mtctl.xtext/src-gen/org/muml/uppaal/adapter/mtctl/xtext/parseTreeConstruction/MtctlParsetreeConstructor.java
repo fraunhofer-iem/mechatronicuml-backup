@@ -3,10 +3,14 @@
  */
 package org.muml.uppaal.adapter.mtctl.xtext.parseTreeConstruction;
 
-import org.eclipse.emf.ecore.*;
-import org.eclipse.xtext.*;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtext.Action;
+import org.eclipse.xtext.Alternatives;
+import org.eclipse.xtext.Assignment;
+import org.eclipse.xtext.Group;
+import org.eclipse.xtext.Keyword;
+import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.parsetree.reconstr.IEObjectConsumer;
-
 import org.muml.uppaal.adapter.mtctl.xtext.services.MtctlGrammarAccess;
 
 import com.google.inject.Inject;
@@ -2281,7 +2285,7 @@ protected class VariableBinding_SetAssignment_2 extends AssignmentToken  {
  *
  **/
 
-// EFExpr | AFExpr | EGExpr | AGExpr
+// org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/muml/uppaal/adapter/mtctl/xtext/Mtctl.xtext#XtextFragmentProvider_org.muml.uppaal.adapter.mtctl.xtext.Mtctl/EFExpr'
 protected class TemporalQuantifierExpr_Alternatives extends AlternativesToken {
 
 	public TemporalQuantifierExpr_Alternatives(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {

@@ -7,7 +7,17 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.muml.uppaal.adapter.mtctl.Expression;
-import org.muml.uppaal.adapter.mtctl.quantifiers.*;
+import org.muml.uppaal.adapter.mtctl.quantifiers.AFExpr;
+import org.muml.uppaal.adapter.mtctl.quantifiers.AGExpr;
+import org.muml.uppaal.adapter.mtctl.quantifiers.BoundVariable;
+import org.muml.uppaal.adapter.mtctl.quantifiers.EFExpr;
+import org.muml.uppaal.adapter.mtctl.quantifiers.EGExpr;
+import org.muml.uppaal.adapter.mtctl.quantifiers.ExistenceQuantExpr;
+import org.muml.uppaal.adapter.mtctl.quantifiers.LeadsToExpr;
+import org.muml.uppaal.adapter.mtctl.quantifiers.QuantifierExpr;
+import org.muml.uppaal.adapter.mtctl.quantifiers.QuantifiersPackage;
+import org.muml.uppaal.adapter.mtctl.quantifiers.TemporalQuantifierExpr;
+import org.muml.uppaal.adapter.mtctl.quantifiers.UniversalQuantExpr;
 
 /**
  * <!-- begin-user-doc -->

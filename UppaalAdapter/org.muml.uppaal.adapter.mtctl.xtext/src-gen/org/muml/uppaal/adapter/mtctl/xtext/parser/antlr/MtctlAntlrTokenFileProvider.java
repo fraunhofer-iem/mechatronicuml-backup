@@ -4,6 +4,7 @@
 package org.muml.uppaal.adapter.mtctl.xtext.parser.antlr;
 
 import java.io.InputStream;
+
 import org.eclipse.xtext.parser.antlr.IAntlrTokenFileProvider;
 
 public class MtctlAntlrTokenFileProvider implements IAntlrTokenFileProvider {

@@ -3,7 +3,6 @@
 package org.muml.uppaal.adapter.mtctl.provider;
 
 import org.eclipse.emf.common.EMFPlugin;
-
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.muml.core.provider.CoreEditPlugin;
 import org.muml.pim.provider.MumlEditPlugin;

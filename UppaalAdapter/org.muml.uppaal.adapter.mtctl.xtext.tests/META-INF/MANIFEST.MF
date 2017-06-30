@@ -23,4 +23,5 @@ Import-Package: org.apache.log4j,
  org.junit.runners.model;version="4.5.0",
  org.hamcrest.core
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: org.muml.uppaal.adapter.mtctl.xtext.tests
+Export-Package: org.muml.uppaal.adapter.mtctl.xtext.tests,
+ org.muml.uppaal.adapter.mtctl.xtext

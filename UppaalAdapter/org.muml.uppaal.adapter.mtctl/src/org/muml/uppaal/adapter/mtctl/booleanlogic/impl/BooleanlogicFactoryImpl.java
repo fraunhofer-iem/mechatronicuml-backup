@@ -5,12 +5,14 @@ package org.muml.uppaal.adapter.mtctl.booleanlogic.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.muml.uppaal.adapter.mtctl.booleanlogic.*;
+import org.muml.uppaal.adapter.mtctl.booleanlogic.AndExpr;
+import org.muml.uppaal.adapter.mtctl.booleanlogic.BooleanlogicFactory;
+import org.muml.uppaal.adapter.mtctl.booleanlogic.BooleanlogicPackage;
+import org.muml.uppaal.adapter.mtctl.booleanlogic.ImplyExpr;
+import org.muml.uppaal.adapter.mtctl.booleanlogic.NotExpr;
+import org.muml.uppaal.adapter.mtctl.booleanlogic.OrExpr;
 
 /**
  * <!-- begin-user-doc -->

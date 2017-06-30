@@ -27,7 +27,6 @@ import org.muml.pim.instance.PortInstance;
 import org.muml.pim.instance.StructuredComponentInstance;
 import org.muml.pim.msgtype.MessageType;
 import org.muml.pim.protocol.AbstractCoordinationSpecification;
-import org.muml.pim.protocol.CoordinationProtocol;
 import org.muml.pim.protocol.Role;
 import org.muml.pim.realtimestatechart.Clock;
 import org.muml.pim.realtimestatechart.RealtimeStatechart;

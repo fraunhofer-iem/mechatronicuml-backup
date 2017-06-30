@@ -5,7 +5,6 @@ package org.muml.uppaal.adapter.mtctl.booleanlogic;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.muml.uppaal.adapter.mtctl.MtctlPackage;
 
 /**

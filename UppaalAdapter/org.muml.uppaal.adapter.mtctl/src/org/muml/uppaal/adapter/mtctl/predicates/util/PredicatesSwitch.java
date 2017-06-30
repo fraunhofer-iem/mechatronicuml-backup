@@ -6,7 +6,22 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.muml.uppaal.adapter.mtctl.Expression;
-import org.muml.uppaal.adapter.mtctl.predicates.*;
+import org.muml.uppaal.adapter.mtctl.predicates.ComparisonExpr;
+import org.muml.uppaal.adapter.mtctl.predicates.ConnectorOverflowExpr;
+import org.muml.uppaal.adapter.mtctl.predicates.DeadlockExpr;
+import org.muml.uppaal.adapter.mtctl.predicates.DynamicPredicateExpr;
+import org.muml.uppaal.adapter.mtctl.predicates.FalseExpr;
+import org.muml.uppaal.adapter.mtctl.predicates.MessageDiscardedExpr;
+import org.muml.uppaal.adapter.mtctl.predicates.MessageInBufferExpr;
+import org.muml.uppaal.adapter.mtctl.predicates.MessageInTransitExpr;
+import org.muml.uppaal.adapter.mtctl.predicates.PredicateExpr;
+import org.muml.uppaal.adapter.mtctl.predicates.PredicatesPackage;
+import org.muml.uppaal.adapter.mtctl.predicates.StateActiveExpr;
+import org.muml.uppaal.adapter.mtctl.predicates.StateInStatechartExpr;
+import org.muml.uppaal.adapter.mtctl.predicates.StaticPredicateExpr;
+import org.muml.uppaal.adapter.mtctl.predicates.SubstateOfExpr;
+import org.muml.uppaal.adapter.mtctl.predicates.TransitionFiringExpr;
+import org.muml.uppaal.adapter.mtctl.predicates.TrueExpr;
 
 /**
  * <!-- begin-user-doc -->

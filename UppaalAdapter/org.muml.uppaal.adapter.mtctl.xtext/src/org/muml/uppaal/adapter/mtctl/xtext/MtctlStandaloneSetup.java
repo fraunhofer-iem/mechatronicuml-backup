@@ -5,7 +5,6 @@ package org.muml.uppaal.adapter.mtctl.xtext;
 
 
 import org.muml.uppaal.adapter.mtctl.impl.MtctlPackageImpl;
-import org.muml.uppaal.adapter.mtctl.xtext.MtctlStandaloneSetupGenerated;
 
 import com.google.inject.Injector;
 

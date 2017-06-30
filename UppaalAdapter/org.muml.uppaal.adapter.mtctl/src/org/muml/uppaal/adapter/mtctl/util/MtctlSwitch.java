@@ -4,12 +4,14 @@ package org.muml.uppaal.adapter.mtctl.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
 import org.muml.core.CommentableElement;
 import org.muml.core.ExtendableElement;
 import org.muml.pim.constraint.VerificationConstraintRepository;
-import org.muml.uppaal.adapter.mtctl.*;
+import org.muml.uppaal.adapter.mtctl.Expression;
+import org.muml.uppaal.adapter.mtctl.MtctlPackage;
+import org.muml.uppaal.adapter.mtctl.Property;
+import org.muml.uppaal.adapter.mtctl.PropertyRepository;
 
 /**
  * <!-- begin-user-doc -->

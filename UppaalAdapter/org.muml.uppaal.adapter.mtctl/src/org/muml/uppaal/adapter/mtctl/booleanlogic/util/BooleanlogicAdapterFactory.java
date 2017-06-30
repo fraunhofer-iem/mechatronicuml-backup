@@ -4,14 +4,14 @@ package org.muml.uppaal.adapter.mtctl.booleanlogic.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.muml.uppaal.adapter.mtctl.Expression;
-
-import org.muml.uppaal.adapter.mtctl.booleanlogic.*;
+import org.muml.uppaal.adapter.mtctl.booleanlogic.AndExpr;
+import org.muml.uppaal.adapter.mtctl.booleanlogic.BooleanlogicPackage;
+import org.muml.uppaal.adapter.mtctl.booleanlogic.ImplyExpr;
+import org.muml.uppaal.adapter.mtctl.booleanlogic.NotExpr;
+import org.muml.uppaal.adapter.mtctl.booleanlogic.OrExpr;
 
 /**
  * <!-- begin-user-doc -->

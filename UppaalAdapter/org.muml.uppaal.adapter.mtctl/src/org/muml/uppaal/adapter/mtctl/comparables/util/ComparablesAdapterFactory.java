@@ -7,7 +7,14 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.muml.uppaal.adapter.mtctl.Expression;
-import org.muml.uppaal.adapter.mtctl.comparables.*;
+import org.muml.uppaal.adapter.mtctl.comparables.BufferMsgCountExpr;
+import org.muml.uppaal.adapter.mtctl.comparables.ComparablesPackage;
+import org.muml.uppaal.adapter.mtctl.comparables.ConstExpr;
+import org.muml.uppaal.adapter.mtctl.comparables.MapExpr;
+import org.muml.uppaal.adapter.mtctl.comparables.MumlElemExpr;
+import org.muml.uppaal.adapter.mtctl.comparables.SourceStateExpr;
+import org.muml.uppaal.adapter.mtctl.comparables.TargetStateExpr;
+import org.muml.uppaal.adapter.mtctl.comparables.TransitionMap;
 
 /**
  * <!-- begin-user-doc -->

@@ -4,18 +4,17 @@
 package org.muml.uppaal.adapter.mtctl.xtext.ui.contentassist.antlr;
 
 import java.util.Collection;
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 import org.antlr.runtime.RecognitionException;
 import org.eclipse.xtext.AbstractElement;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.AbstractContentAssistParser;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.FollowElement;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.AbstractInternalContentAssistParser;
+import org.muml.uppaal.adapter.mtctl.xtext.services.MtctlGrammarAccess;
 
 import com.google.inject.Inject;
-
-import org.muml.uppaal.adapter.mtctl.xtext.services.MtctlGrammarAccess;
 
 public class MtctlParser extends AbstractContentAssistParser {
 	
@@ -60,10 +59,10 @@ public class MtctlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getLeadsToExprAccess().getGroup_1(), "rule__LeadsToExpr__Group_1__0");
 					put(grammarAccess.getImplyExprAccess().getGroup(), "rule__ImplyExpr__Group__0");
 					put(grammarAccess.getImplyExprAccess().getGroup_1(), "rule__ImplyExpr__Group_1__0");
-					put(grammarAccess.getAndExprAccess().getGroup(), "rule__AndExpr__Group__0");
-					put(grammarAccess.getAndExprAccess().getGroup_1(), "rule__AndExpr__Group_1__0");
 					put(grammarAccess.getOrExprAccess().getGroup(), "rule__OrExpr__Group__0");
 					put(grammarAccess.getOrExprAccess().getGroup_1(), "rule__OrExpr__Group_1__0");
+					put(grammarAccess.getAndExprAccess().getGroup(), "rule__AndExpr__Group__0");
+					put(grammarAccess.getAndExprAccess().getGroup_1(), "rule__AndExpr__Group_1__0");
 					put(grammarAccess.getNotExprAccess().getGroup_0(), "rule__NotExpr__Group_0__0");
 					put(grammarAccess.getUniversalQuantExprAccess().getGroup(), "rule__UniversalQuantExpr__Group__0");
 					put(grammarAccess.getExistentialQuantExprAccess().getGroup(), "rule__ExistentialQuantExpr__Group__0");
@@ -105,8 +104,8 @@ public class MtctlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPropertyAccess().getCommentAssignment_2(), "rule__Property__CommentAssignment_2");
 					put(grammarAccess.getLeadsToExprAccess().getRightOpdAssignment_1_2(), "rule__LeadsToExpr__RightOpdAssignment_1_2");
 					put(grammarAccess.getImplyExprAccess().getRightOpdAssignment_1_2(), "rule__ImplyExpr__RightOpdAssignment_1_2");
-					put(grammarAccess.getAndExprAccess().getRightOpdAssignment_1_2(), "rule__AndExpr__RightOpdAssignment_1_2");
 					put(grammarAccess.getOrExprAccess().getRightOpdAssignment_1_2(), "rule__OrExpr__RightOpdAssignment_1_2");
+					put(grammarAccess.getAndExprAccess().getRightOpdAssignment_1_2(), "rule__AndExpr__RightOpdAssignment_1_2");
 					put(grammarAccess.getNotExprAccess().getOpdAssignment_0_2(), "rule__NotExpr__OpdAssignment_0_2");
 					put(grammarAccess.getUniversalQuantExprAccess().getVarAssignment_3(), "rule__UniversalQuantExpr__VarAssignment_3");
 					put(grammarAccess.getUniversalQuantExprAccess().getFormulaAssignment_5(), "rule__UniversalQuantExpr__FormulaAssignment_5");

@@ -3,10 +3,9 @@
 package org.muml.uppaal.adapter.mtctl.comparables.impl;
 
 import java.util.concurrent.TimeUnit;
+
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.uppaal.adapter.mtctl.comparables.ComparablesPackage;
 import org.muml.uppaal.adapter.mtctl.comparables.ConstExpr;
