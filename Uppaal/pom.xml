@@ -42,6 +42,7 @@
     <module>org.muml.uppaal.trace.edit.properties</module>
     <module>org.muml.uppaal.trace.ui</module>
     <module>org.muml.uppaal.ui</module>
+    <module>org.muml.uppaal.types.qvto</module>
   </modules>
   <build>
  <plugins>
