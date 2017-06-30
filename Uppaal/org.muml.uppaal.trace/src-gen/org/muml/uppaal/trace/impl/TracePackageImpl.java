@@ -7,12 +7,19 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import org.muml.uppaal.core.CorePackage;
+
 import org.muml.uppaal.declarations.DeclarationsPackage;
+
 import org.muml.uppaal.expressions.ExpressionsPackage;
+
 import org.muml.uppaal.statements.StatementsPackage;
+
 import org.muml.uppaal.templates.TemplatesPackage;
+
 import org.muml.uppaal.trace.ActionTransition;
 import org.muml.uppaal.trace.ChannelSynchronization;
 import org.muml.uppaal.trace.CompareOperator;
@@ -32,7 +39,9 @@ import org.muml.uppaal.trace.TracePackage;
 import org.muml.uppaal.trace.TraceRepository;
 import org.muml.uppaal.trace.Transition;
 import org.muml.uppaal.trace.VariableValue;
+
 import org.muml.uppaal.types.TypesPackage;
+
 import org.muml.uppaal.visuals.VisualsPackage;
 
 /**

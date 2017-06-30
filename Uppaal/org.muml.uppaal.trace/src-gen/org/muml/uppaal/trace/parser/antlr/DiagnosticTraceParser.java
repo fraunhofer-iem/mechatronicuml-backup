@@ -3,10 +3,10 @@
  */
 package org.muml.uppaal.trace.parser.antlr;
 
+import com.google.inject.Inject;
+
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.muml.uppaal.trace.services.DiagnosticTraceGrammarAccess;
-
-import com.google.inject.Inject;
 
 public class DiagnosticTraceParser extends org.eclipse.xtext.parser.antlr.AbstractAntlrParser {
 	

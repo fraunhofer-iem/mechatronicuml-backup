@@ -15,5 +15,5 @@ Require-Bundle: org.eclipse.emf.ecore,
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.muml.uppaal.trace.properties.metamodel, org.muml.uppaal.trace.properties.constraint,
- org.muml.uppaal.trace.properties.diagnostictrace.editor
-Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
+ org.muml.uppaal.trace.properties.trace.editor
+Bundle-Vendor: Fraunhofer, HNI

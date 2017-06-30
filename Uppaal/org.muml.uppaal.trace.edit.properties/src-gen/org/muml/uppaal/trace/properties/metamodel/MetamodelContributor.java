@@ -17,7 +17,7 @@ public class MetamodelContributor implements org.muml.ape.runtime.metamodel.IMet
 	 */
 	protected void fillItemProviderFactories(java.util.List<org.eclipse.emf.common.notify.AdapterFactory> factories) {
 
-		factories.add(new org.muml.uppaal.trace.diagnostictrace.provider.DiagnostictraceItemProviderAdapterFactory());
+		factories.add(new org.muml.uppaal.trace.provider.TraceItemProviderAdapterFactory());
 
 	}
 

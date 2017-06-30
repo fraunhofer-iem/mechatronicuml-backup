@@ -4,23 +4,10 @@ package org.muml.uppaal.trace.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.util.Switch;
-import org.muml.uppaal.trace.ActionTransition;
-import org.muml.uppaal.trace.ChannelSynchronization;
-import org.muml.uppaal.trace.DelayTransition;
-import org.muml.uppaal.trace.EdgeActivity;
-import org.muml.uppaal.trace.LocationActivity;
-import org.muml.uppaal.trace.NamedElementReference;
-import org.muml.uppaal.trace.ProcessIdentifier;
-import org.muml.uppaal.trace.SingleNamedElementReference;
-import org.muml.uppaal.trace.State;
-import org.muml.uppaal.trace.Synchronization;
-import org.muml.uppaal.trace.Trace;
-import org.muml.uppaal.trace.TraceItem;
-import org.muml.uppaal.trace.TracePackage;
-import org.muml.uppaal.trace.TraceRepository;
-import org.muml.uppaal.trace.Transition;
-import org.muml.uppaal.trace.VariableValue;
+
+import org.muml.uppaal.trace.*;
 
 /**
  * <!-- begin-user-doc -->

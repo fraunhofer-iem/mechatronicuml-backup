@@ -3,6 +3,7 @@
 package org.muml.uppaal.trace;
 
 import org.muml.uppaal.declarations.Variable;
+
 import org.muml.uppaal.templates.SynchronizationKind;
 
 /**

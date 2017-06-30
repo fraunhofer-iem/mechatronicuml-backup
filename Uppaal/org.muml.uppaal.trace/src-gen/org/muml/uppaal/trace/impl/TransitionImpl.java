@@ -3,6 +3,7 @@
 package org.muml.uppaal.trace.impl;
 
 import org.eclipse.emf.ecore.EClass;
+
 import org.muml.uppaal.trace.TracePackage;
 import org.muml.uppaal.trace.Transition;
 

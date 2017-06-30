@@ -33,77 +33,77 @@
     <propertyEditors>
     
        <propertyEditor
-             factory="org.muml.uppaal.trace.properties.diagnostictrace.editor.TraceRepositoryEditor$Factory"
+             factory="org.muml.uppaal.trace.properties.trace.editor.TraceRepositoryEditor$Factory"
              type="http://www.muml.org/uppaal/trace/1.0.0#TraceRepository">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.uppaal.trace.properties.diagnostictrace.editor.TraceEditor$Factory"
+             factory="org.muml.uppaal.trace.properties.trace.editor.TraceEditor$Factory"
              type="http://www.muml.org/uppaal/trace/1.0.0#Trace">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.uppaal.trace.properties.diagnostictrace.editor.ProcessIdentifierEditor$Factory"
+             factory="org.muml.uppaal.trace.properties.trace.editor.ProcessIdentifierEditor$Factory"
              type="http://www.muml.org/uppaal/trace/1.0.0#ProcessIdentifier">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.uppaal.trace.properties.diagnostictrace.editor.LocationActivityEditor$Factory"
+             factory="org.muml.uppaal.trace.properties.trace.editor.LocationActivityEditor$Factory"
              type="http://www.muml.org/uppaal/trace/1.0.0#LocationActivity">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.uppaal.trace.properties.diagnostictrace.editor.VariableValueEditor$Factory"
+             factory="org.muml.uppaal.trace.properties.trace.editor.VariableValueEditor$Factory"
              type="http://www.muml.org/uppaal/trace/1.0.0#VariableValue">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.uppaal.trace.properties.diagnostictrace.editor.SingleNamedElementReferenceEditor$Factory"
+             factory="org.muml.uppaal.trace.properties.trace.editor.SingleNamedElementReferenceEditor$Factory"
              type="http://www.muml.org/uppaal/trace/1.0.0#SingleNamedElementReference">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.uppaal.trace.properties.diagnostictrace.editor.NamedElementReferenceEditor$Factory"
+             factory="org.muml.uppaal.trace.properties.trace.editor.NamedElementReferenceEditor$Factory"
              type="http://www.muml.org/uppaal/trace/1.0.0#NamedElementReference">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.uppaal.trace.properties.diagnostictrace.editor.TraceItemEditor$Factory"
+             factory="org.muml.uppaal.trace.properties.trace.editor.TraceItemEditor$Factory"
              type="http://www.muml.org/uppaal/trace/1.0.0#TraceItem">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.uppaal.trace.properties.diagnostictrace.editor.StateEditor$Factory"
+             factory="org.muml.uppaal.trace.properties.trace.editor.StateEditor$Factory"
              type="http://www.muml.org/uppaal/trace/1.0.0#State">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.uppaal.trace.properties.diagnostictrace.editor.EdgeActivityEditor$Factory"
+             factory="org.muml.uppaal.trace.properties.trace.editor.EdgeActivityEditor$Factory"
              type="http://www.muml.org/uppaal/trace/1.0.0#EdgeActivity">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.uppaal.trace.properties.diagnostictrace.editor.SynchronizationEditor$Factory"
+             factory="org.muml.uppaal.trace.properties.trace.editor.SynchronizationEditor$Factory"
              type="http://www.muml.org/uppaal/trace/1.0.0#Synchronization">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.uppaal.trace.properties.diagnostictrace.editor.ChannelSynchronizationEditor$Factory"
+             factory="org.muml.uppaal.trace.properties.trace.editor.ChannelSynchronizationEditor$Factory"
              type="http://www.muml.org/uppaal/trace/1.0.0#ChannelSynchronization">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.uppaal.trace.properties.diagnostictrace.editor.DelayTransitionEditor$Factory"
+             factory="org.muml.uppaal.trace.properties.trace.editor.DelayTransitionEditor$Factory"
              type="http://www.muml.org/uppaal/trace/1.0.0#DelayTransition">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.uppaal.trace.properties.diagnostictrace.editor.ActionTransitionEditor$Factory"
+             factory="org.muml.uppaal.trace.properties.trace.editor.ActionTransitionEditor$Factory"
              type="http://www.muml.org/uppaal/trace/1.0.0#ActionTransition">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.uppaal.trace.properties.diagnostictrace.editor.TransitionEditor$Factory"
+             factory="org.muml.uppaal.trace.properties.trace.editor.TransitionEditor$Factory"
              type="http://www.muml.org/uppaal/trace/1.0.0#Transition">
        </propertyEditor>
     

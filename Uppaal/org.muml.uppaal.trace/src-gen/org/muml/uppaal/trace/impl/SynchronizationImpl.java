@@ -3,7 +3,9 @@
 package org.muml.uppaal.trace.impl;
 
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.muml.uppaal.trace.Synchronization;
 import org.muml.uppaal.trace.TracePackage;
 

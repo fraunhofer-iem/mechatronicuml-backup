@@ -10,7 +10,7 @@
       <!-- @generated DiagnosticTrace -->
       <factory
             uri="http://www.muml.org/uppaal/trace/1.0.0"
-            class="org.muml.uppaal.trace.diagnostictrace.provider.DiagnostictraceItemProviderAdapterFactory"
+            class="org.muml.uppaal.trace.provider.TraceItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
