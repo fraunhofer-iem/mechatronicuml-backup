@@ -30,6 +30,7 @@
       <import plugin="org.antlr.runtime" version="3.2.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ocl.ecore" version="3.1.2" match="greaterOrEqual"/>
       <import plugin="org.eclipse.xtext.xbase.lib"/>
+      <import plugin="org.eclipse.xtend2.lib" version="2.10.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.xtext" version="2.6.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.xtext.util"/>
       <import plugin="org.eclipse.emf.common"/>
@@ -37,6 +38,7 @@
       <import plugin="org.apache.log4j"/>
       <import plugin="org.eclipse.xtext.ui" version="2.6.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.editors" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.ide" version="3.5.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.xtext.ui.shared"/>
       <import plugin="org.eclipse.xtext.builder"/>
       <import plugin="org.eclipse.xtext.common.types.ui"/>
@@ -55,13 +57,11 @@
       <import plugin="org.muml.core.edit"/>
       <import plugin="org.muml.ape.runtime"/>
       <import plugin="org.muml.core.edit.properties"/>
+      <import plugin="org.eclipse.m2m.qvt.oml"/>
+      <import plugin="org.eclipse.m2m.qvt.oml.project"/>
       <import feature="org.muml.core.feature" version="0.5.0"/>
       <import feature="org.muml.graphviz.feature" version="0.5.0"/>
       <import feature="org.muml.ape.feature" version="0.5.0"/>
-      <import plugin="org.eclipse.xtend2.lib" version="2.10.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.ui.ide" version="3.5.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.m2m.qvt.oml"/>
-      <import plugin="org.eclipse.m2m.qvt.oml.project"/>
    </requires>
 
    <plugin
