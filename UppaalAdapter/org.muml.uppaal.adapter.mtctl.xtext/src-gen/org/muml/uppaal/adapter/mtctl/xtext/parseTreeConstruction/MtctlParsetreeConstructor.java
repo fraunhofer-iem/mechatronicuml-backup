@@ -2285,7 +2285,7 @@ protected class VariableBinding_SetAssignment_2 extends AssignmentToken  {
  *
  **/
 
-// org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/muml/uppaal/adapter/mtctl/xtext/Mtctl.xtext#XtextFragmentProvider_org.muml.uppaal.adapter.mtctl.xtext.Mtctl/EFExpr'
+// EFExpr | AFExpr | EGExpr | AGExpr
 protected class TemporalQuantifierExpr_Alternatives extends AlternativesToken {
 
 	public TemporalQuantifierExpr_Alternatives(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {

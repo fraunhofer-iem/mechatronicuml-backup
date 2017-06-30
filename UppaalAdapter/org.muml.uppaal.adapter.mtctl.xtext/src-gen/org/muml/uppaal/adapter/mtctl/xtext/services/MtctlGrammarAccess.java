@@ -2069,7 +2069,8 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getEGExprAccess().getRule();
 	}
 
-	//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/muml/uppaal/adapter/mtctl/xtext/Mtctl.xtext#/0/@metamodelDeclarations.3'
+	//AGExpr mtctl::TemporalQuantifierExpr:
+	//	('AG' | 'A[]') {mtctl::AGExpr} expr=NotExpr
 	public AGExprElements getAGExprAccess() {
 		return pAGExpr;
 	}
@@ -2078,7 +2079,9 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getAGExprAccess().getRule();
 	}
 
-	//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/muml/uppaal/adapter/mtctl/xtext/Mtctl.xtext#XtextFragmentProvider_org.muml.uppaal.adapter.mtctl.xtext.Mtctl/AtomExpr'
+	////Bottom of precedence chain.
+	//AtomExpr mtctl::Expression:
+	//	'(' Expression ')' | PredicateExpr | ComparisonExpr
 	public AtomExprElements getAtomExprAccess() {
 		return pAtomExpr;
 	}
@@ -2087,7 +2090,9 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getAtomExprAccess().getRule();
 	}
 
-	//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/muml/uppaal/adapter/mtctl/xtext/Mtctl.xtext#XtextFragmentProvider_org.muml.uppaal.adapter.mtctl.xtext.Mtctl/PredicateExpr'
+	////Predicates
+	//PredicateExpr mtctl::Expression:
+	//	TrueExpr | FalseExpr | DeadlockExpr | ConnectorOverflowExpr | StateExpr | MessageExpr | TransitionExpr
 	public PredicateExprElements getPredicateExprAccess() {
 		return pPredicateExpr;
 	}
@@ -2096,7 +2101,8 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getPredicateExprAccess().getRule();
 	}
 
-	//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/muml/uppaal/adapter/mtctl/xtext/Mtctl.xtext#XtextFragmentProvider_org.muml.uppaal.adapter.mtctl.xtext.Mtctl/DeadlockExpr'
+	//DeadlockExpr mtctl::DeadlockExpr:
+	//	{mtctl::DeadlockExpr} 'deadlock'
 	public DeadlockExprElements getDeadlockExprAccess() {
 		return pDeadlockExpr;
 	}
@@ -2105,7 +2111,8 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getDeadlockExprAccess().getRule();
 	}
 
-	//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/muml/uppaal/adapter/mtctl/xtext/Mtctl.xtext#XtextFragmentProvider_org.muml.uppaal.adapter.mtctl.xtext.Mtctl/ConnectorOverflowExpr'
+	//ConnectorOverflowExpr mtctl::ConnectorOverflowExpr:
+	//	{mtctl::ConnectorOverflowExpr} 'connectorOverflow'
 	public ConnectorOverflowExprElements getConnectorOverflowExprAccess() {
 		return pConnectorOverflowExpr;
 	}
@@ -2114,7 +2121,8 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getConnectorOverflowExprAccess().getRule();
 	}
 
-	//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/muml/uppaal/adapter/mtctl/xtext/Mtctl.xtext#XtextFragmentProvider_org.muml.uppaal.adapter.mtctl.xtext.Mtctl/TrueExpr'
+	//TrueExpr mtctl::TrueExpr:
+	//	{mtctl::TrueExpr} 'true'
 	public TrueExprElements getTrueExprAccess() {
 		return pTrueExpr;
 	}
@@ -2123,7 +2131,8 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getTrueExprAccess().getRule();
 	}
 
-	//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/muml/uppaal/adapter/mtctl/xtext/Mtctl.xtext#XtextFragmentProvider_org.muml.uppaal.adapter.mtctl.xtext.Mtctl/FalseExpr'
+	//FalseExpr mtctl::FalseExpr:
+	//	{mtctl::FalseExpr} 'false'
 	public FalseExprElements getFalseExprAccess() {
 		return pFalseExpr;
 	}
@@ -2132,7 +2141,8 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getFalseExprAccess().getRule();
 	}
 
-	//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/muml/uppaal/adapter/mtctl/xtext/Mtctl.xtext#XtextFragmentProvider_org.muml.uppaal.adapter.mtctl.xtext.Mtctl/StateExpr'
+	//StateExpr mtctl::PredicateExpr:
+	//	StateActiveExpr | SubstateOfExpr | StateInStatechartExpr
 	public StateExprElements getStateExprAccess() {
 		return pStateExpr;
 	}
@@ -2141,7 +2151,8 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getStateExprAccess().getRule();
 	}
 
-	//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/muml/uppaal/adapter/mtctl/xtext/Mtctl.xtext#XtextFragmentProvider_org.muml.uppaal.adapter.mtctl.xtext.Mtctl/StateActiveExpr'
+	//StateActiveExpr mtctl::StateActiveExpr:
+	//	'stateActive' '(' state=StateMapExpr ')'
 	public StateActiveExprElements getStateActiveExprAccess() {
 		return pStateActiveExpr;
 	}
@@ -2150,7 +2161,8 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getStateActiveExprAccess().getRule();
 	}
 
-	//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/muml/uppaal/adapter/mtctl/xtext/Mtctl.xtext#XtextFragmentProvider_org.muml.uppaal.adapter.mtctl.xtext.Mtctl/SubstateOfExpr'
+	//SubstateOfExpr mtctl::SubstateOfExpr:
+	//	'substateOf' '(' state=StateMapExpr ',' superstate=StateMapExpr ')'
 	public SubstateOfExprElements getSubstateOfExprAccess() {
 		return pSubstateOfExpr;
 	}
@@ -2159,7 +2171,8 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getSubstateOfExprAccess().getRule();
 	}
 
-	//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/muml/uppaal/adapter/mtctl/xtext/Mtctl.xtext#XtextFragmentProvider_org.muml.uppaal.adapter.mtctl.xtext.Mtctl/StateInStatechartExpr'
+	//StateInStatechartExpr mtctl::StateInStatechartExpr:
+	//	'stateInStatechart' '(' state=StateMapExpr ',' statechart=StatechartMapExpr ')'
 	public StateInStatechartExprElements getStateInStatechartExprAccess() {
 		return pStateInStatechartExpr;
 	}
@@ -2168,7 +2181,8 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getStateInStatechartExprAccess().getRule();
 	}
 
-	//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/muml/uppaal/adapter/mtctl/xtext/Mtctl.xtext#XtextFragmentProvider_org.muml.uppaal.adapter.mtctl.xtext.Mtctl/MessageExpr'
+	//MessageExpr mtctl::PredicateExpr:
+	//	MessageInBufferExpr | MessageInTransitExpr | MessageDiscardedExpr
 	public MessageExprElements getMessageExprAccess() {
 		return pMessageExpr;
 	}
@@ -2177,7 +2191,8 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getMessageExprAccess().getRule();
 	}
 
-	//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/muml/uppaal/adapter/mtctl/xtext/Mtctl.xtext#XtextFragmentProvider_org.muml.uppaal.adapter.mtctl.xtext.Mtctl/MessageInTransitExpr'
+	//MessageInTransitExpr mtctl::MessageInTransitExpr:
+	//	'messageInTransit' '(' message=MessageMapExpr ')'
 	public MessageInTransitExprElements getMessageInTransitExprAccess() {
 		return pMessageInTransitExpr;
 	}
@@ -2186,7 +2201,8 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getMessageInTransitExprAccess().getRule();
 	}
 
-	//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/muml/uppaal/adapter/mtctl/xtext/Mtctl.xtext#XtextFragmentProvider_org.muml.uppaal.adapter.mtctl.xtext.Mtctl/MessageInBufferExpr'
+	//MessageInBufferExpr mtctl::MessageInBufferExpr:
+	//	'messageInBuffer' '(' message=MessageMapExpr ',' buffer=BufferMapExpr ')'
 	public MessageInBufferExprElements getMessageInBufferExprAccess() {
 		return pMessageInBufferExpr;
 	}
@@ -2195,7 +2211,8 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getMessageInBufferExprAccess().getRule();
 	}
 
-	//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/muml/uppaal/adapter/mtctl/xtext/Mtctl.xtext#XtextFragmentProvider_org.muml.uppaal.adapter.mtctl.xtext.Mtctl/MessageDiscardedExpr'
+	//MessageDiscardedExpr mtctl::MessageDiscardedExpr:
+	//	'messageDiscarded' '(' buffer=BufferMapExpr ')'
 	public MessageDiscardedExprElements getMessageDiscardedExprAccess() {
 		return pMessageDiscardedExpr;
 	}
@@ -2204,7 +2221,8 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getMessageDiscardedExprAccess().getRule();
 	}
 
-	//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/muml/uppaal/adapter/mtctl/xtext/Mtctl.xtext#XtextFragmentProvider_org.muml.uppaal.adapter.mtctl.xtext.Mtctl/TransitionExpr'
+	//TransitionExpr mtctl::PredicateExpr:
+	//	TransitionFiringExpr
 	public TransitionExprElements getTransitionExprAccess() {
 		return pTransitionExpr;
 	}
@@ -2213,7 +2231,8 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getTransitionExprAccess().getRule();
 	}
 
-	//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/muml/uppaal/adapter/mtctl/xtext/Mtctl.xtext#XtextFragmentProvider_org.muml.uppaal.adapter.mtctl.xtext.Mtctl/TransitionFiringExpr'
+	//TransitionFiringExpr mtctl::TransitionFiringExpr:
+	//	'transitionFiring' '(' transition=TransitionMapExpr ')'
 	public TransitionFiringExprElements getTransitionFiringExprAccess() {
 		return pTransitionFiringExpr;
 	}
@@ -2222,7 +2241,9 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getTransitionFiringExprAccess().getRule();
 	}
 
-	//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/muml/uppaal/adapter/mtctl/xtext/Mtctl.xtext#XtextFragmentProvider_org.muml.uppaal.adapter.mtctl.xtext.Mtctl/ComparisonExpr'
+	////Comparisons
+	//ComparisonExpr mtctl::Expression:
+	//	{mtctl::ComparisonExpr} lhs=MapExpr op=ComparisonOp rhs=MapExpr
 	public ComparisonExprElements getComparisonExprAccess() {
 		return pComparisonExpr;
 	}
@@ -2231,7 +2252,8 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getComparisonExprAccess().getRule();
 	}
 
-	//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/muml/uppaal/adapter/mtctl/xtext/Mtctl.xtext#XtextFragmentProvider_org.muml.uppaal.adapter.mtctl.xtext.Mtctl/ComparisonOp'
+	//enum ComparisonOp returns mtctl::ComparisonOp:
+	//	EQUALS='==' | GREATER='>' | GREATER_OR_EQUAL='>=' | LESS='<' | LESS_OR_EQUAL='<=' | NOT_EQUAL='!=';
 	public ComparisonOpElements getComparisonOpAccess() {
 		return eComparisonOp;
 	}
@@ -2240,7 +2262,9 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getComparisonOpAccess().getRule();
 	}
 
-	//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/muml/uppaal/adapter/mtctl/xtext/Mtctl.xtext#XtextFragmentProvider_org.muml.uppaal.adapter.mtctl.xtext.Mtctl/MapExpr'
+	////Expressions usable in comparisons. Starting with MapExpressions arranged by return type
+	//MapExpr mtctl::MapExpr:
+	//	MumlElemExpr | BufferMessageCountExpr | ConstExpr | SourceStateExpr | TargetStateExpr
 	public MapExprElements getMapExprAccess() {
 		return pMapExpr;
 	}
@@ -2249,7 +2273,8 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getMapExprAccess().getRule();
 	}
 
-	//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/muml/uppaal/adapter/mtctl/xtext/Mtctl.xtext#XtextFragmentProvider_org.muml.uppaal.adapter.mtctl.xtext.Mtctl/IntegerMapExpr'
+	//IntegerMapExpr mtctl::MapExpr:
+	//	MumlElemExpr | BufferMessageCountExpr | ConstExpr
 	public IntegerMapExprElements getIntegerMapExprAccess() {
 		return pIntegerMapExpr;
 	}
@@ -2258,7 +2283,8 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getIntegerMapExprAccess().getRule();
 	}
 
-	//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/muml/uppaal/adapter/mtctl/xtext/Mtctl.xtext#XtextFragmentProvider_org.muml.uppaal.adapter.mtctl.xtext.Mtctl/TransitionMapExpr'
+	//TransitionMapExpr mtctl::MapExpr:
+	//	MumlElemExpr
 	public TransitionMapExprElements getTransitionMapExprAccess() {
 		return pTransitionMapExpr;
 	}
@@ -2267,7 +2293,8 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getTransitionMapExprAccess().getRule();
 	}
 
-	//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/muml/uppaal/adapter/mtctl/xtext/Mtctl.xtext#XtextFragmentProvider_org.muml.uppaal.adapter.mtctl.xtext.Mtctl/StateMapExpr'
+	//StateMapExpr mtctl::MapExpr:
+	//	MumlElemExpr | SourceStateExpr | TargetStateExpr
 	public StateMapExprElements getStateMapExprAccess() {
 		return pStateMapExpr;
 	}
@@ -2276,7 +2303,8 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getStateMapExprAccess().getRule();
 	}
 
-	//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/muml/uppaal/adapter/mtctl/xtext/Mtctl.xtext#XtextFragmentProvider_org.muml.uppaal.adapter.mtctl.xtext.Mtctl/StatechartMapExpr'
+	//StatechartMapExpr mtctl::MapExpr:
+	//	MumlElemExpr
 	public StatechartMapExprElements getStatechartMapExprAccess() {
 		return pStatechartMapExpr;
 	}
@@ -2285,7 +2313,8 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getStatechartMapExprAccess().getRule();
 	}
 
-	//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/muml/uppaal/adapter/mtctl/xtext/Mtctl.xtext#XtextFragmentProvider_org.muml.uppaal.adapter.mtctl.xtext.Mtctl/BufferMapExpr'
+	//BufferMapExpr mtctl::MapExpr:
+	//	MumlElemExpr
 	public BufferMapExprElements getBufferMapExprAccess() {
 		return pBufferMapExpr;
 	}
@@ -2294,7 +2323,8 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getBufferMapExprAccess().getRule();
 	}
 
-	//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/muml/uppaal/adapter/mtctl/xtext/Mtctl.xtext#XtextFragmentProvider_org.muml.uppaal.adapter.mtctl.xtext.Mtctl/MessageMapExpr'
+	//MessageMapExpr mtctl::MapExpr:
+	//	MumlElemExpr
 	public MessageMapExprElements getMessageMapExprAccess() {
 		return pMessageMapExpr;
 	}
@@ -2303,7 +2333,8 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getMessageMapExprAccess().getRule();
 	}
 
-	//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/muml/uppaal/adapter/mtctl/xtext/Mtctl.xtext#XtextFragmentProvider_org.muml.uppaal.adapter.mtctl.xtext.Mtctl/BufferMessageCountExpr'
+	//BufferMessageCountExpr mtctl::BufferMsgCountExpr:
+	//	'bufferMessageCount' '(' buffer=BufferMapExpr ')'
 	public BufferMessageCountExprElements getBufferMessageCountExprAccess() {
 		return pBufferMessageCountExpr;
 	}
@@ -2312,7 +2343,8 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getBufferMessageCountExprAccess().getRule();
 	}
 
-	//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/muml/uppaal/adapter/mtctl/xtext/Mtctl.xtext#XtextFragmentProvider_org.muml.uppaal.adapter.mtctl.xtext.Mtctl/SourceStateExpr'
+	//SourceStateExpr mtctl::SourceStateExpr:
+	//	'sourceState' '(' transition=TransitionMapExpr ')'
 	public SourceStateExprElements getSourceStateExprAccess() {
 		return pSourceStateExpr;
 	}
@@ -2321,7 +2353,8 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getSourceStateExprAccess().getRule();
 	}
 
-	//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/muml/uppaal/adapter/mtctl/xtext/Mtctl.xtext#XtextFragmentProvider_org.muml.uppaal.adapter.mtctl.xtext.Mtctl/TargetStateExpr'
+	//TargetStateExpr mtctl::TargetStateExpr:
+	//	'targetState' '(' transition=TransitionMapExpr ')'
 	public TargetStateExprElements getTargetStateExprAccess() {
 		return pTargetStateExpr;
 	}
@@ -2330,7 +2363,8 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getTargetStateExprAccess().getRule();
 	}
 
-	//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/muml/uppaal/adapter/mtctl/xtext/Mtctl.xtext#XtextFragmentProvider_org.muml.uppaal.adapter.mtctl.xtext.Mtctl/MumlElemExpr'
+	//MumlElemExpr mtctl::MumlElemExpr:
+	//	elem=[ecore::EObject|QualifiedName] ('[' instance=[ecore::EObject|QualifiedName] ']')?
 	public MumlElemExprElements getMumlElemExprAccess() {
 		return pMumlElemExpr;
 	}
@@ -2339,7 +2373,8 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getMumlElemExprAccess().getRule();
 	}
 
-	//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/muml/uppaal/adapter/mtctl/xtext/Mtctl.xtext#XtextFragmentProvider_org.muml.uppaal.adapter.mtctl.xtext.Mtctl/ConstExpr'
+	//ConstExpr mtctl::ConstExpr:
+	//	val=EInt timeUnit=TimeUnitExpr?
 	public ConstExprElements getConstExprAccess() {
 		return pConstExpr;
 	}
@@ -2348,7 +2383,8 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getConstExprAccess().getRule();
 	}
 
-	//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/muml/uppaal/adapter/mtctl/xtext/Mtctl.xtext#XtextFragmentProvider_org.muml.uppaal.adapter.mtctl.xtext.Mtctl/TimeUnitExpr'
+	//TimeUnitExpr valuetype::TimeUnit:
+	//	'days' | 'hrs' | 'mins' | 'secs' | 'msecs' | 'µsecs' | 'nsecs'
 	public TimeUnitExprElements getTimeUnitExprAccess() {
 		return pTimeUnitExpr;
 	}
@@ -2357,7 +2393,11 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getTimeUnitExprAccess().getRule();
 	}
 
-	//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/muml/uppaal/adapter/mtctl/xtext/Mtctl.xtext#XtextFragmentProvider_org.muml.uppaal.adapter.mtctl.xtext.Mtctl/SetExpr'
+	////Sets
+	//SetExpr mtctl::SetExpr:
+	//	InstanceSetExpr | SubinstanceSetExpr | IntervalSetExpr | {mtctl::StateSetExpr} 'States' | {mtctl::TransitionSetExpr}
+	//	'Transitions' | {mtctl::MessageSetExpr} 'MessageTypes' | {mtctl::ClockSetExpr} 'Clocks' | {mtctl::BufferSetExpr}
+	//	'Buffers'
 	public SetExprElements getSetExprAccess() {
 		return pSetExpr;
 	}
@@ -2366,7 +2406,8 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getSetExprAccess().getRule();
 	}
 
-	//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/muml/uppaal/adapter/mtctl/xtext/Mtctl.xtext#XtextFragmentProvider_org.muml.uppaal.adapter.mtctl.xtext.Mtctl/IntervalSetExpr'
+	//IntervalSetExpr mtctl::SetExpr:
+	//	{mtctl::IntervalSetExpr} '[' lowerVal=INT ',' upperVal=INT ']'
 	public IntervalSetExprElements getIntervalSetExprAccess() {
 		return pIntervalSetExpr;
 	}
@@ -2375,7 +2416,8 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getIntervalSetExprAccess().getRule();
 	}
 
-	//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/muml/uppaal/adapter/mtctl/xtext/Mtctl.xtext#XtextFragmentProvider_org.muml.uppaal.adapter.mtctl.xtext.Mtctl/InstanceSetExpr'
+	//InstanceSetExpr mtctl::SetExpr:
+	//	{mtctl::InstanceSetExpr} 'Instances' '<' type=MumlElemExpr '>'
 	public InstanceSetExprElements getInstanceSetExprAccess() {
 		return pInstanceSetExpr;
 	}
@@ -2384,7 +2426,8 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getInstanceSetExprAccess().getRule();
 	}
 
-	//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/muml/uppaal/adapter/mtctl/xtext/Mtctl.xtext#XtextFragmentProvider_org.muml.uppaal.adapter.mtctl.xtext.Mtctl/SubinstanceSetExpr'
+	//SubinstanceSetExpr mtctl::SetExpr:
+	//	{mtctl::SubinstanceSetExpr} 'Subinstances' '<' type=MumlElemExpr '>'
 	public SubinstanceSetExprElements getSubinstanceSetExprAccess() {
 		return pSubinstanceSetExpr;
 	}
@@ -2393,7 +2436,9 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getSubinstanceSetExprAccess().getRule();
 	}
 
-	//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/muml/uppaal/adapter/mtctl/xtext/Mtctl.xtext#XtextFragmentProvider_org.muml.uppaal.adapter.mtctl.xtext.Mtctl/QualifiedName'
+	////Other necessary definitions
+	//QualifiedName:
+	//	QNAME | ID;
 	public QualifiedNameElements getQualifiedNameAccess() {
 		return pQualifiedName;
 	}
@@ -2402,12 +2447,14 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getQualifiedNameAccess().getRule();
 	}
 
-	//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/muml/uppaal/adapter/mtctl/xtext/Mtctl.xtext#XtextFragmentProvider_org.muml.uppaal.adapter.mtctl.xtext.Mtctl/QNAME'
+	//terminal QNAME:
+	//	ID ('.' ID)+;
 	public TerminalRule getQNAMERule() {
 		return tQNAME;
 	} 
 
-	//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/muml/uppaal/adapter/mtctl/xtext/Mtctl.xtext#XtextFragmentProvider_org.muml.uppaal.adapter.mtctl.xtext.Mtctl/EInt'
+	//EInt ecore::EInt:
+	//	'-'? INT
 	public EIntElements getEIntAccess() {
 		return pEInt;
 	}
