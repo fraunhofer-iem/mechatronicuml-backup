@@ -16,121 +16,121 @@
   </plugin>
   <defaultTab href="../../org.muml.uppaal/model/uppaal.propsheet#//@tabs.0"/>
   <packages>
-    <genPackage href="DiagnosticTrace.genmodel#//diagnostictrace"/>
+    <genPackage href="DiagnosticTrace.genmodel#//trace"/>
     <classes>
-      <genClass href="DiagnosticTrace.genmodel#//diagnostictrace/TraceRepository"/>
+      <genClass href="DiagnosticTrace.genmodel#//trace/TraceRepository"/>
     </classes>
     <classes>
-      <genClass href="DiagnosticTrace.genmodel#//diagnostictrace/Trace"/>
+      <genClass href="DiagnosticTrace.genmodel#//trace/Trace"/>
       <orderedElements xsi:type="org.muml:Property">
-        <genFeature href="DiagnosticTrace.genmodel#//diagnostictrace/Trace/property"/>
+        <genFeature href="DiagnosticTrace.genmodel#//trace/Trace/property"/>
         <tab href="../../org.muml.uppaal/model/uppaal.propsheet#//@tabs.0"/>
         <editor xsi:type="org.muml:SpinnerPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml:Property">
-        <genFeature href="DiagnosticTrace.genmodel#//diagnostictrace/Trace/line"/>
+        <genFeature href="DiagnosticTrace.genmodel#//trace/Trace/line"/>
         <tab href="../../org.muml.uppaal/model/uppaal.propsheet#//@tabs.0"/>
         <editor xsi:type="org.muml:SpinnerPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml:Property">
-        <genFeature href="DiagnosticTrace.genmodel#//diagnostictrace/Trace/result"/>
+        <genFeature href="DiagnosticTrace.genmodel#//trace/Trace/result"/>
         <tab href="../../org.muml.uppaal/model/uppaal.propsheet#//@tabs.0"/>
         <editor xsi:type="org.muml:RadioPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes>
-      <genClass href="DiagnosticTrace.genmodel#//diagnostictrace/ProcessIdentifier"/>
+      <genClass href="DiagnosticTrace.genmodel#//trace/ProcessIdentifier"/>
       <orderedElements xsi:type="org.muml:Property">
-        <genFeature href="DiagnosticTrace.genmodel#//diagnostictrace/ProcessIdentifier/template"/>
+        <genFeature href="DiagnosticTrace.genmodel#//trace/ProcessIdentifier/template"/>
         <tab href="../../org.muml.uppaal/model/uppaal.propsheet#//@tabs.0"/>
         <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml:Property">
-        <genFeature href="DiagnosticTrace.genmodel#//diagnostictrace/ProcessIdentifier/arguments"/>
+        <genFeature href="DiagnosticTrace.genmodel#//trace/ProcessIdentifier/arguments"/>
         <tab href="../../org.muml.uppaal/model/uppaal.propsheet#//@tabs.0"/>
         <editor xsi:type="org.muml:SpinnerPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes>
-      <genClass href="DiagnosticTrace.genmodel#//diagnostictrace/LocationActivity"/>
+      <genClass href="DiagnosticTrace.genmodel#//trace/LocationActivity"/>
       <orderedElements xsi:type="org.muml:Property">
-        <genFeature href="DiagnosticTrace.genmodel#//diagnostictrace/LocationActivity/location"/>
+        <genFeature href="DiagnosticTrace.genmodel#//trace/LocationActivity/location"/>
         <tab href="../../org.muml.uppaal/model/uppaal.propsheet#//@tabs.0"/>
         <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes>
-      <genClass href="DiagnosticTrace.genmodel#//diagnostictrace/VariableValue"/>
+      <genClass href="DiagnosticTrace.genmodel#//trace/VariableValue"/>
       <orderedElements xsi:type="org.muml:Property">
-        <genFeature href="DiagnosticTrace.genmodel#//diagnostictrace/VariableValue/operator"/>
+        <genFeature href="DiagnosticTrace.genmodel#//trace/VariableValue/operator"/>
         <tab href="../../org.muml.uppaal/model/uppaal.propsheet#//@tabs.0"/>
         <editor xsi:type="org.muml:RadioPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml:Property">
-        <genFeature href="DiagnosticTrace.genmodel#//diagnostictrace/VariableValue/value"/>
+        <genFeature href="DiagnosticTrace.genmodel#//trace/VariableValue/value"/>
         <tab href="../../org.muml.uppaal/model/uppaal.propsheet#//@tabs.0"/>
         <editor xsi:type="org.muml:SpinnerPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes>
-      <genClass href="DiagnosticTrace.genmodel#//diagnostictrace/SingleNamedElementReference"/>
+      <genClass href="DiagnosticTrace.genmodel#//trace/SingleNamedElementReference"/>
       <orderedElements xsi:type="org.muml:Property">
-        <genFeature href="DiagnosticTrace.genmodel#//diagnostictrace/SingleNamedElementReference/namedElement"/>
+        <genFeature href="DiagnosticTrace.genmodel#//trace/SingleNamedElementReference/namedElement"/>
         <tab href="../../org.muml.uppaal/model/uppaal.propsheet#//@tabs.0"/>
         <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml:Property">
-        <genFeature href="DiagnosticTrace.genmodel#//diagnostictrace/SingleNamedElementReference/indexes"/>
+        <genFeature href="DiagnosticTrace.genmodel#//trace/SingleNamedElementReference/indexes"/>
         <tab href="../../org.muml.uppaal/model/uppaal.propsheet#//@tabs.0"/>
         <editor xsi:type="org.muml:SpinnerPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes>
-      <genClass href="DiagnosticTrace.genmodel#//diagnostictrace/NamedElementReference"/>
+      <genClass href="DiagnosticTrace.genmodel#//trace/NamedElementReference"/>
     </classes>
     <classes>
-      <genClass href="DiagnosticTrace.genmodel#//diagnostictrace/TraceItem"/>
+      <genClass href="DiagnosticTrace.genmodel#//trace/TraceItem"/>
     </classes>
     <classes superClasses="//@packages.0/@classes.7">
-      <genClass href="DiagnosticTrace.genmodel#//diagnostictrace/State"/>
+      <genClass href="DiagnosticTrace.genmodel#//trace/State"/>
     </classes>
     <classes>
-      <genClass href="DiagnosticTrace.genmodel#//diagnostictrace/EdgeActivity"/>
+      <genClass href="DiagnosticTrace.genmodel#//trace/EdgeActivity"/>
       <orderedElements xsi:type="org.muml:Property">
-        <genFeature href="DiagnosticTrace.genmodel#//diagnostictrace/EdgeActivity/details"/>
+        <genFeature href="DiagnosticTrace.genmodel#//trace/EdgeActivity/details"/>
         <tab href="../../org.muml.uppaal/model/uppaal.propsheet#//@tabs.0"/>
         <editor xsi:type="org.muml:TextPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes>
-      <genClass href="DiagnosticTrace.genmodel#//diagnostictrace/Synchronization"/>
+      <genClass href="DiagnosticTrace.genmodel#//trace/Synchronization"/>
     </classes>
     <classes superClasses="//@packages.0/@classes.10">
-      <genClass href="DiagnosticTrace.genmodel#//diagnostictrace/ChannelSynchronization"/>
+      <genClass href="DiagnosticTrace.genmodel#//trace/ChannelSynchronization"/>
       <orderedElements xsi:type="org.muml:Property">
-        <genFeature href="DiagnosticTrace.genmodel#//diagnostictrace/ChannelSynchronization/channel"/>
+        <genFeature href="DiagnosticTrace.genmodel#//trace/ChannelSynchronization/channel"/>
         <tab href="../../org.muml.uppaal/model/uppaal.propsheet#//@tabs.0"/>
         <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml:Property">
-        <genFeature href="DiagnosticTrace.genmodel#//diagnostictrace/ChannelSynchronization/kind"/>
+        <genFeature href="DiagnosticTrace.genmodel#//trace/ChannelSynchronization/kind"/>
         <tab href="../../org.muml.uppaal/model/uppaal.propsheet#//@tabs.0"/>
         <editor xsi:type="org.muml:RadioPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes superClasses="//@packages.0/@classes.14">
-      <genClass href="DiagnosticTrace.genmodel#//diagnostictrace/DelayTransition"/>
+      <genClass href="DiagnosticTrace.genmodel#//trace/DelayTransition"/>
       <orderedElements xsi:type="org.muml:Property">
-        <genFeature href="DiagnosticTrace.genmodel#//diagnostictrace/DelayTransition/duration"/>
+        <genFeature href="DiagnosticTrace.genmodel#//trace/DelayTransition/duration"/>
         <tab href="../../org.muml.uppaal/model/uppaal.propsheet#//@tabs.0"/>
         <editor xsi:type="org.muml:SpinnerPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes superClasses="//@packages.0/@classes.14">
-      <genClass href="DiagnosticTrace.genmodel#//diagnostictrace/ActionTransition"/>
+      <genClass href="DiagnosticTrace.genmodel#//trace/ActionTransition"/>
     </classes>
     <classes superClasses="//@packages.0/@classes.7">
-      <genClass href="DiagnosticTrace.genmodel#//diagnostictrace/Transition"/>
+      <genClass href="DiagnosticTrace.genmodel#//trace/Transition"/>
     </classes>
   </packages>
 </org.muml:PropertyGenerator>

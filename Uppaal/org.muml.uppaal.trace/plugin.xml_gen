@@ -6,8 +6,8 @@
   <extension point="org.eclipse.emf.ecore.generated_package">
     <package 
        uri = "http://www.muml.org/uppaal/trace/1.0.0" 
-       class = "org.muml.uppaal.trace.diagnostictrace.DiagnostictracePackage"
-       genModel = "org/muml/uppaal/trace/DiagnosticTrace.genmodel" /> 
+       class = "org.muml.uppaal.trace.TracePackage"
+       genModel = "model/generated/DiagnosticTrace.genmodel" /> 
 	
   </extension>
 
