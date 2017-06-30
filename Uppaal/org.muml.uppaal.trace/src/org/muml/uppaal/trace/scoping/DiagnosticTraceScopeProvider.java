@@ -29,7 +29,9 @@ import org.muml.uppaal.trace.LocationActivity;
 import org.muml.uppaal.trace.NamedElementReference;
 import org.muml.uppaal.trace.ProcessIdentifier;
 import org.muml.uppaal.trace.SingleNamedElementReference;
+import org.muml.uppaal.types.DeclaredType;
 import org.muml.uppaal.types.StructTypeSpecification;
+import org.muml.uppaal.types.TypeExpression;
 
 /**
  * This class contains custom scoping description.
@@ -41,22 +43,23 @@ import org.muml.uppaal.types.StructTypeSpecification;
 public class DiagnosticTraceScopeProvider extends
 		AbstractDeclarativeScopeProvider {
 
+	
 	private NTA nta;
-
+	
 	public void setNTA(NTA nta) {
 		this.nta = nta;
 	}
-
-	private NTA getNTA() {
+	
+	private NTA getNTA() {		
 		return nta;
 	}
-
+	
 	@Override
 	public IScope getScope(EObject context, EReference reference) {
 		IScope scope = super.getScope(context, reference);
 		return scope;
 	}
-
+	
 	List<AbstractTemplate> getTemplates(NTA nta) {
 
 		List<AbstractTemplate> templates = new ArrayList<AbstractTemplate>();
@@ -91,11 +94,11 @@ public class DiagnosticTraceScopeProvider extends
 		return null;
 
 	}
-
+	
 	IScope scope_AbstractTemplate(ProcessIdentifier process, EReference ref) {
-
+		
 		return Scopes.scopeFor(getTemplates(getNTA()));
-
+		
 	}
 
 	IScope scope_Location(LocationActivity locationActivity, EReference ref) {
@@ -194,13 +197,12 @@ public class DiagnosticTraceScopeProvider extends
 			if (declaration instanceof TypedDeclaration) {
 
 				TypedDeclaration typedDeclaration = (TypedDeclaration) declaration;
-
-				for (TypedElement variable : typedDeclaration.getElements()) {
-					if (variable instanceof Variable) {
-						variables.add((Variable) variable);
+				
+				for(TypedElement typedElement : typedDeclaration.getElements()) {
+					if (typedElement instanceof Variable) {
+						variables.add((Variable) typedElement);
 					}
 				}
-
 			}
 
 		}
@@ -213,79 +215,45 @@ public class DiagnosticTraceScopeProvider extends
 
 		List<Variable> fields = new ArrayList<Variable>();
 
-		Expression typeDefinition = variable.getTypeDefinition();
+		TypeExpression typeExpression = getTypeExpression(variable
+				.getTypeDefinition());
 
-		boolean done = false;
-		while (!done) {
-			done = true;
+		if (typeExpression instanceof StructTypeSpecification) {
 
-			if (typeDefinition instanceof IdentifierExpression) {
-				IdentifierExpression identifier = (IdentifierExpression) typeDefinition;
+			StructTypeSpecification struct = (StructTypeSpecification) typeExpression;
 
-				if (identifier.getIdentifier() instanceof TypedElement) {
-					TypedElement element = (TypedElement) identifier
-							.getIdentifier();
-
-					if (element.getTypeDefinition() instanceof IdentifierExpression
-							|| element.getTypeDefinition() instanceof StructTypeSpecification) {
-						typeDefinition = element.getTypeDefinition();
-						done = false;
-					}
-				}
-			} else if (typeDefinition instanceof StructTypeSpecification) {
-				StructTypeSpecification struct = (StructTypeSpecification) typeDefinition;
-
-				for (TypedDeclaration typedDeclaration : struct
-						.getDeclaration()) {
-
-					for (TypedElement var : typedDeclaration.getElements()) {
-						if (var instanceof Variable) {
-							fields.add((Variable) var);
-						}
+			for (TypedDeclaration declaration : struct.getDeclaration()) {
+				for (TypedElement element : declaration.getElements()) {
+					if (element instanceof Variable) {
+						fields.add((Variable) element);
 					}
 				}
 			}
-		}
 
-		// TypeSpecification typeSpecification = getTypeSpecification(variable
-		// .getTypeDefinition());
-		//
-		// if (typeSpecification instanceof StructTypeSpecification) {
-		//
-		// StructTypeSpecification struct = (StructTypeSpecification)
-		// typeSpecification;
-		//
-		// for (DataVariableDeclaration declaration : struct.getDeclaration()) {
-		// fields.addAll((declaration.getVariable()));
-		// }
-		//
-		// }
+		}
 
 		return fields;
 
 	}
 
-	// TypeSpecification getTypeSpecification(Expression typeDefinition) {
-	//
-	// if (typeDefinition instanceof TypeSpecification) {
-	// return (TypeSpecification) typeDefinition;
-	// }
-	//
-	// if (typeDefinition instanceof TypeReference) {
-	//
-	// Type type = ((TypeReference) typeDefinition).getReferredType();
-	//
-	// if (type instanceof DeclaredType) {
-	//
-	// return getTypeSpecification(((DeclaredType) type)
-	// .getTypeDefinition());
-	//
-	// }
-	//
-	// }
-	//
-	// return null;
-	//
-	// }
+	TypeExpression getTypeExpression(Expression expression) {
+
+		if (expression instanceof TypeExpression) {
+			return (TypeExpression) expression;
+		}
+
+		if (expression instanceof IdentifierExpression) {
+			
+			NamedElement identifier = ((IdentifierExpression) expression).getIdentifier();
+			
+			if (identifier instanceof DeclaredType) {
+				return getTypeExpression(((DeclaredType) identifier).getTypeDefinition());
+			}
+
+		}
+
+		return null;
+
+	}
 
 }

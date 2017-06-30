@@ -4,12 +4,24 @@ package org.muml.uppaal.trace.diagnostictrace.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
-import org.muml.uppaal.trace.diagnostictrace.*;
+import org.muml.uppaal.trace.diagnostictrace.ActionTransition;
+import org.muml.uppaal.trace.diagnostictrace.ChannelSynchronization;
+import org.muml.uppaal.trace.diagnostictrace.DelayTransition;
+import org.muml.uppaal.trace.diagnostictrace.DiagnostictracePackage;
+import org.muml.uppaal.trace.diagnostictrace.EdgeActivity;
+import org.muml.uppaal.trace.diagnostictrace.LocationActivity;
+import org.muml.uppaal.trace.diagnostictrace.NamedElementReference;
+import org.muml.uppaal.trace.diagnostictrace.ProcessIdentifier;
+import org.muml.uppaal.trace.diagnostictrace.SingleNamedElementReference;
+import org.muml.uppaal.trace.diagnostictrace.State;
+import org.muml.uppaal.trace.diagnostictrace.Synchronization;
+import org.muml.uppaal.trace.diagnostictrace.Trace;
+import org.muml.uppaal.trace.diagnostictrace.TraceItem;
+import org.muml.uppaal.trace.diagnostictrace.TraceRepository;
+import org.muml.uppaal.trace.diagnostictrace.Transition;
+import org.muml.uppaal.trace.diagnostictrace.VariableValue;
 
 /**
  * <!-- begin-user-doc -->

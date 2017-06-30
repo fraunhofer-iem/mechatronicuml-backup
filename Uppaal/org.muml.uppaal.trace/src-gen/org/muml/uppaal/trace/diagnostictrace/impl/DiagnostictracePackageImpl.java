@@ -7,15 +7,11 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.muml.uppaal.UppaalPackage;
 import org.muml.uppaal.core.CorePackage;
-
 import org.muml.uppaal.declarations.DeclarationsPackage;
 import org.muml.uppaal.templates.TemplatesPackage;
-
 import org.muml.uppaal.trace.diagnostictrace.ActionTransition;
 import org.muml.uppaal.trace.diagnostictrace.ChannelSynchronization;
 import org.muml.uppaal.trace.diagnostictrace.CompareOperator;

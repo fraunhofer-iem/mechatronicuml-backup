@@ -3,9 +3,7 @@
 package org.muml.uppaal.trace.diagnostictrace.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.muml.uppaal.trace.diagnostictrace.DiagnostictracePackage;
 import org.muml.uppaal.trace.diagnostictrace.TraceItem;
 
