@@ -21,15 +21,11 @@ public class TemplateEditor extends org.muml.ape.runtime.editors.ClassPropertyEd
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorComment_org_muml_uppaalTab_Editor(), false);
-
 			addPropertyEditor(createEditorName_org_muml_uppaalTab_Editor(), false);
 
 			addPropertyEditor(createEditorInit_org_muml_uppaalTab_Editor(), false);
 
 		} else if ("org.muml.uppaal".equals(tab)) { // Tab Uppaal
-
-			addPropertyEditor(createEditorComment_org_muml_uppaalTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_org_muml_uppaalTab_Editor(), false);
 
@@ -52,21 +48,6 @@ public class TemplateEditor extends org.muml.ape.runtime.editors.ClassPropertyEd
 			this.editorInit_org_muml_uppaalTab = editor;
 		}
 		return this.editorInit_org_muml_uppaalTab;
-	}
-
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComment_org_muml_uppaalTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorComment_org_muml_uppaalTab_Editor() {
-		if (this.editorComment_org_muml_uppaalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.uppaal.core.CorePackage.eINSTANCE
-					.getCommentableElement_Comment();
-			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.TextPropertyEditor(
-					adapterFactory, feature, false);
-
-			editor.setTooltipMessage("The comment for the model element.\n\\todocg{Change cardinality to 1..1?}");
-
-			this.editorComment_org_muml_uppaalTab = editor;
-		}
-		return this.editorComment_org_muml_uppaalTab;
 	}
 
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_org_muml_uppaalTab;
@@ -107,9 +88,7 @@ public class TemplateEditor extends org.muml.ape.runtime.editors.ClassPropertyEd
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays
-					.asList(new java.lang.String[]{"org.muml.uppaal", "org.muml.uppaal", "org.muml.uppaal"})
-					.contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"org.muml.uppaal", "org.muml.uppaal"}).contains(tab);
 		}
 	}
 

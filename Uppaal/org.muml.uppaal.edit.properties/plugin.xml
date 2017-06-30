@@ -149,11 +149,6 @@
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.uppaal.properties.types.editor.TypeReferenceEditor$Factory"
-             type="http://www.muml.org/uppaal/types/1.0.0#TypeReference">
-       </propertyEditor>
-    
-       <propertyEditor
              factory="org.muml.uppaal.properties.types.editor.ScalarTypeSpecificationEditor$Factory"
              type="http://www.muml.org/uppaal/types/1.0.0#ScalarTypeSpecification">
        </propertyEditor>
@@ -180,22 +175,22 @@
     
        <propertyEditor
              factory="org.muml.uppaal.properties.system.editor.TemplateDeclarationEditor$Factory"
-             type="http://www.muml.org/uppaal/declarations/system/1.0.0#TemplateDeclaration">
+             type="http://www.muml.org/uppaal/declarations/system#TemplateDeclaration">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.uppaal.properties.system.editor.SystemEditor$Factory"
-             type="http://www.muml.org/uppaal/declarations/system/1.0.0#System">
+             type="http://www.muml.org/uppaal/declarations/system#System">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.uppaal.properties.system.editor.InstantiationListEditor$Factory"
-             type="http://www.muml.org/uppaal/declarations/system/1.0.0#InstantiationList">
+             type="http://www.muml.org/uppaal/declarations/system#InstantiationList">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.uppaal.properties.system.editor.ProgressMeasureEditor$Factory"
-             type="http://www.muml.org/uppaal/declarations/system/1.0.0#ProgressMeasure">
+             type="http://www.muml.org/uppaal/declarations/system#ProgressMeasure">
        </propertyEditor>
     
        <propertyEditor
@@ -264,11 +259,6 @@
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.uppaal.properties.expressions.editor.IncrementDecrementExpressionEditor$Factory"
-             type="http://www.muml.org/uppaal/expressions/1.0.0#IncrementDecrementExpression">
-       </propertyEditor>
-    
-       <propertyEditor
              factory="org.muml.uppaal.properties.expressions.editor.BitShiftExpressionEditor$Factory"
              type="http://www.muml.org/uppaal/expressions/1.0.0#BitShiftExpression">
        </propertyEditor>
@@ -284,18 +274,43 @@
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.uppaal.properties.global.editor.ChannelPriorityEditor$Factory"
-             type="http://www.muml.org/uppaal/declarations/global/1.0.0#ChannelPriority">
+             factory="org.muml.uppaal.properties.expressions.editor.PreIncrementDecrementExpressionEditor$Factory"
+             type="http://www.muml.org/uppaal/expressions/1.0.0#PreIncrementDecrementExpression">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.uppaal.properties.global.editor.ChannelListEditor$Factory"
-             type="http://www.muml.org/uppaal/declarations/global/1.0.0#ChannelList">
+             factory="org.muml.uppaal.properties.expressions.editor.PostIncrementDecrementExpressionEditor$Factory"
+             type="http://www.muml.org/uppaal/expressions/1.0.0#PostIncrementDecrementExpression">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.uppaal.properties.global.editor.DefaultChannelPriorityEditor$Factory"
-             type="http://www.muml.org/uppaal/declarations/global/1.0.0#DefaultChannelPriority">
+             factory="org.muml.uppaal.properties.expressions.editor.ChannelPrefixExpressionEditor$Factory"
+             type="http://www.muml.org/uppaal/expressions/1.0.0#ChannelPrefixExpression">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.properties.expressions.editor.DataPrefixExpressionEditor$Factory"
+             type="http://www.muml.org/uppaal/expressions/1.0.0#DataPrefixExpression">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.properties.global.editor.ChannelPriorityDeclarationEditor$Factory"
+             type="http://www.muml.org/uppaal/declarations/global#ChannelPriorityDeclaration">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.properties.global.editor.ChannelPriorityGroupEditor$Factory"
+             type="http://www.muml.org/uppaal/declarations/global#ChannelPriorityGroup">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.properties.global.editor.ChannelItemEditor$Factory"
+             type="http://www.muml.org/uppaal/declarations/global#ChannelItem">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.properties.global.editor.DefaultItemEditor$Factory"
+             type="http://www.muml.org/uppaal/declarations/global#DefaultItem">
        </propertyEditor>
     
        <propertyEditor
@@ -319,26 +334,6 @@
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.uppaal.properties.declarations.editor.ChannelVariableDeclarationEditor$Factory"
-             type="http://www.muml.org/uppaal/declarations/1.0.0#ChannelVariableDeclaration">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="org.muml.uppaal.properties.declarations.editor.ClockVariableDeclarationEditor$Factory"
-             type="http://www.muml.org/uppaal/declarations/1.0.0#ClockVariableDeclaration">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="org.muml.uppaal.properties.declarations.editor.DataVariableDeclarationEditor$Factory"
-             type="http://www.muml.org/uppaal/declarations/1.0.0#DataVariableDeclaration">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="org.muml.uppaal.properties.declarations.editor.FunctionDeclarationEditor$Factory"
-             type="http://www.muml.org/uppaal/declarations/1.0.0#FunctionDeclaration">
-       </propertyEditor>
-    
-       <propertyEditor
              factory="org.muml.uppaal.properties.declarations.editor.FunctionEditor$Factory"
              type="http://www.muml.org/uppaal/declarations/1.0.0#Function">
        </propertyEditor>
@@ -354,16 +349,6 @@
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.uppaal.properties.declarations.editor.ValueIndexEditor$Factory"
-             type="http://www.muml.org/uppaal/declarations/1.0.0#ValueIndex">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="org.muml.uppaal.properties.declarations.editor.TypeIndexEditor$Factory"
-             type="http://www.muml.org/uppaal/declarations/1.0.0#TypeIndex">
-       </propertyEditor>
-    
-       <propertyEditor
              factory="org.muml.uppaal.properties.declarations.editor.ParameterEditor$Factory"
              type="http://www.muml.org/uppaal/declarations/1.0.0#Parameter">
        </propertyEditor>
@@ -376,6 +361,16 @@
        <propertyEditor
              factory="org.muml.uppaal.properties.declarations.editor.ArrayInitializerEditor$Factory"
              type="http://www.muml.org/uppaal/declarations/1.0.0#ArrayInitializer">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.properties.declarations.editor.TypedDeclarationEditor$Factory"
+             type="http://www.muml.org/uppaal/declarations/1.0.0#TypedDeclaration">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.uppaal.properties.declarations.editor.ParameterContainerEditor$Factory"
+             type="http://www.muml.org/uppaal/declarations/1.0.0#ParameterContainer">
        </propertyEditor>
     
     </propertyEditors>

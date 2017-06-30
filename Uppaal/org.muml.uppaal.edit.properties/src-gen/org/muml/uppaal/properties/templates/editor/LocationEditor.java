@@ -21,8 +21,6 @@ public class LocationEditor extends org.muml.ape.runtime.editors.ClassPropertyEd
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorColor_org_muml_uppaalTab_Editor(), false);
-
 			addPropertyEditor(createEditorColorCode_org_muml_uppaalTab_Editor(), false);
 
 			addPropertyEditor(createEditorComment_org_muml_uppaalTab_Editor(), false);
@@ -30,11 +28,13 @@ public class LocationEditor extends org.muml.ape.runtime.editors.ClassPropertyEd
 			addPropertyEditor(createEditorName_org_muml_uppaalTab_Editor(), false);
 
 			addPropertyEditor(createEditorLocationTimeKind_org_muml_uppaalTab_Editor(), false);
+
+			addPropertyEditor(createEditorIncomingEdges_org_muml_uppaalTab_Editor(), false);
+
+			addPropertyEditor(createEditorOutgoingEdges_org_muml_uppaalTab_Editor(), false);
 
 		} else if ("org.muml.uppaal".equals(tab)) { // Tab Uppaal
 
-			addPropertyEditor(createEditorColor_org_muml_uppaalTab_Editor(), false);
-
 			addPropertyEditor(createEditorColorCode_org_muml_uppaalTab_Editor(), false);
 
 			addPropertyEditor(createEditorComment_org_muml_uppaalTab_Editor(), false);
@@ -42,6 +42,10 @@ public class LocationEditor extends org.muml.ape.runtime.editors.ClassPropertyEd
 			addPropertyEditor(createEditorName_org_muml_uppaalTab_Editor(), false);
 
 			addPropertyEditor(createEditorLocationTimeKind_org_muml_uppaalTab_Editor(), false);
+
+			addPropertyEditor(createEditorIncomingEdges_org_muml_uppaalTab_Editor(), false);
+
+			addPropertyEditor(createEditorOutgoingEdges_org_muml_uppaalTab_Editor(), false);
 
 		} else {
 		}
@@ -62,20 +66,30 @@ public class LocationEditor extends org.muml.ape.runtime.editors.ClassPropertyEd
 		return this.editorLocationTimeKind_org_muml_uppaalTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorColor_org_muml_uppaalTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorColor_org_muml_uppaalTab_Editor() {
-		if (this.editorColor_org_muml_uppaalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.uppaal.visuals.VisualsPackage.eINSTANCE
-					.getColoredElement_Color();
-			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.OptionPropertyEditor(
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorIncomingEdges_org_muml_uppaalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorIncomingEdges_org_muml_uppaalTab_Editor() {
+		if (this.editorIncomingEdges_org_muml_uppaalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.uppaal.templates.TemplatesPackage.eINSTANCE
+					.getLocation_IncomingEdges();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage(
-					"The color of the model element. It is either a standard uppaal color (default, white, light grey, dark grey, black, blue, cyan, green, magenta, orange, pink, red, yellow) or a self-defined color. Edges should not be white.\n\n\\todosd{We need an OCL-Constraint: Edges should not be white.}\n\\todosd{We need an OCL-Constraint: If self defined is choosen then a color code must be specified.}");
-
-			this.editorColor_org_muml_uppaalTab = editor;
+			this.editorIncomingEdges_org_muml_uppaalTab = editor;
 		}
-		return this.editorColor_org_muml_uppaalTab;
+		return this.editorIncomingEdges_org_muml_uppaalTab;
+	}
+
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorOutgoingEdges_org_muml_uppaalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorOutgoingEdges_org_muml_uppaalTab_Editor() {
+		if (this.editorOutgoingEdges_org_muml_uppaalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.uppaal.templates.TemplatesPackage.eINSTANCE
+					.getLocation_OutgoingEdges();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			this.editorOutgoingEdges_org_muml_uppaalTab = editor;
+		}
+		return this.editorOutgoingEdges_org_muml_uppaalTab;
 	}
 
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorColorCode_org_muml_uppaalTab;
@@ -148,7 +162,7 @@ public class LocationEditor extends org.muml.ape.runtime.editors.ClassPropertyEd
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(new java.lang.String[]{"org.muml.uppaal", "org.muml.uppaal",
-					"org.muml.uppaal", "org.muml.uppaal", "org.muml.uppaal"}).contains(tab);
+					"org.muml.uppaal", "org.muml.uppaal", "org.muml.uppaal", "org.muml.uppaal"}).contains(tab);
 		}
 	}
 

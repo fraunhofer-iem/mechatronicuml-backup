@@ -21,9 +21,13 @@ public class ParameterEditor extends org.muml.ape.runtime.editors.ClassPropertyE
 	protected void createProperties() {
 		if (tab == null) {
 
+			addPropertyEditor(createEditorName_org_muml_uppaalTab_Editor(), false);
+
 			addPropertyEditor(createEditorCallType_org_muml_uppaalTab_Editor(), false);
 
 		} else if ("org.muml.uppaal".equals(tab)) { // Tab Uppaal
+
+			addPropertyEditor(createEditorName_org_muml_uppaalTab_Editor(), false);
 
 			addPropertyEditor(createEditorCallType_org_muml_uppaalTab_Editor(), false);
 
@@ -45,6 +49,21 @@ public class ParameterEditor extends org.muml.ape.runtime.editors.ClassPropertyE
 			this.editorCallType_org_muml_uppaalTab = editor;
 		}
 		return this.editorCallType_org_muml_uppaalTab;
+	}
+
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_org_muml_uppaalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorName_org_muml_uppaalTab_Editor() {
+		if (this.editorName_org_muml_uppaalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.uppaal.core.CorePackage.eINSTANCE
+					.getNamedElement_Name();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.TextPropertyEditor(
+					adapterFactory, feature, false);
+
+			editor.setTooltipMessage("The name of the model element..");
+
+			this.editorName_org_muml_uppaalTab = editor;
+		}
+		return this.editorName_org_muml_uppaalTab;
 	}
 
 	//
@@ -70,7 +89,7 @@ public class ParameterEditor extends org.muml.ape.runtime.editors.ClassPropertyE
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(new java.lang.String[]{"org.muml.uppaal"}).contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"org.muml.uppaal", "org.muml.uppaal"}).contains(tab);
 		}
 	}
 
