@@ -181,9 +181,13 @@
 	
 	<repositories>
 		<repository>
-		  <id>eclipse-platform</id>
+		  <id>eclipse-neon</id>
 		  <layout>p2</layout>
-		  <url>http://download.eclipse.org/releases/neon/</url>
+		  <url>http://download.eclipse.org/releases/neon</url>
+		</repository>
+		<id>eclipse-oxygen</id>
+		  <layout>p2</layout>
+		  <url>http://download.eclipse.org/releases/oxygen</url>
 		</repository>
 		<repository>
 			<id>Core</id>
