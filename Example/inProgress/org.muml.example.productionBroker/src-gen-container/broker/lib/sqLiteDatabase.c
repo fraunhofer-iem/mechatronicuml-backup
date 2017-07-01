@@ -77,7 +77,7 @@ int createDatabase()
 	//Create table productionStations
 	const char *sqlProdStation = "DROP TABLE IF EXISTS ProductionStations;"
 								 "CREATE TABLE ProductionStations (ProductionStationID INT PRIMARY KEY, "
-								 "ProducibleIngredients TEXT, LastSeen INT, LastProduced INT, Status TEXT);";
+								 "ProducibleIngredients TEXT, LastSeen INT, LastProduced INT, StationStatus TEXT);";
 
 	rc = sqlite3_exec(db, sqlProdStation, callback, 0, &errMsg);
 	if (rc)
@@ -861,7 +861,8 @@ int searchOrder(int searchingPS, int latestOrderID, int producibleIngredients)
 	//Insert the production station into the ProductionStation Table
 	//Prepare statement
 	const char *productionStation = "INSERT OR REPLACE into ProductionStations (ProductionStationID, ProducibleIngredients, "
-									"LastSeen, LastProduced) VALUES (?, ?, datetime('now'), (SELECT  LastProduced FROM ProductionStations WHERE ProductionStationID =?));";
+									"LastSeen, LastProduced, StationStatus) VALUES (?, ?, datetime('now'), (SELECT  "
+									"LastProduced FROM ProductionStations WHERE ProductionStationID =?), 'IDLE');";
 	sqlite3_stmt *prodStatStmt;
 	rc = sqlite3_blocking_prepare_v2(db, productionStation, -1, &prodStatStmt, 0);
 	if (rc)
