@@ -77,7 +77,7 @@ int createDatabase()
 	//Create table productionStations
 	const char *sqlProdStation = "DROP TABLE IF EXISTS ProductionStations;"
 								 "CREATE TABLE ProductionStations (ProductionStationID INT PRIMARY KEY, "
-								 "ProducibleIngredients TEXT, LastSeen INT, LastProduced INT);";
+								 "ProducibleIngredients TEXT, LastSeen INT, LastProduced INT, Status TEXT);";
 
 	rc = sqlite3_exec(db, sqlProdStation, callback, 0, &errMsg);
 	if (rc)
@@ -278,7 +278,7 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 
 		return rc;
 	}
-	//Execute statement, once step is sufficient for insertions
+	//Execute statement, one step is sufficient for insertions
 	int tries = 0;
 	do
 	{
@@ -949,9 +949,10 @@ int searchOrder(int searchingPS, int latestOrderID, int producibleIngredients)
 
 	//Execute statement
 	rc = sqlite3_blocking_step(searchOrderStmt);
+	//If there are results, we get SQLITE_ROW, if there are none we get SQLITE_DONE.
+	//Any thing else would indicate something went wrong
+
 	//No order found
-	//TODO Why to check for SQLITE_DONE?
-	//TODO Add another try if something went wrong
 	if (rc == SQLITE_DONE)
 	{
 		printf("No order with status IDLE and producible ingredients found.\n");
