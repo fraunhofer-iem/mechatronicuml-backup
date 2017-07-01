@@ -169,6 +169,11 @@
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/releases/neon</url>
         </repository>
+        	<repository>
+			<id>eclipse-oxygen</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/releases/oxygen</url>
+        </repository>
 		<repository>
 			<id>model-migration</id>
 			<layout>p2</layout>
