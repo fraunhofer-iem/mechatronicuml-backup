@@ -312,7 +312,7 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 
 	//Set LastProduced of the ProductionStation
 	sqlite3_stmt *psLastProducedStmt;
-	const char *psLastProduced = "Update ProductionStations Set LastProduced=? WHERE ProductionStationID=?;";
+	const char *psLastProduced = "Update ProductionStations Set LastProduced=?, StationStatus='PRODUCING' WHERE ProductionStationID=?;";
 
 	rc = sqlite3_blocking_prepare_v2(db, psLastProduced, -1, &psLastProducedStmt, 0);
 	if (rc)
