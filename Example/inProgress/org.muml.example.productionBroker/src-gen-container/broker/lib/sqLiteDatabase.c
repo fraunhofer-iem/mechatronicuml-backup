@@ -312,7 +312,7 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 
 	//Set LastProduced of the ProductionStation
 	sqlite3_stmt *psLastProducedStmt;
-	const char *psLastProduced = "Update ProductionStations Set LastProduced=?, StationStatus='PRODUCING' WHERE ProductionStationID=?;";
+	const char *psLastProduced = "Update ProductionStations Set LastProduced=?, StationStatus='RUNNING' WHERE ProductionStationID=?;";
 
 	rc = sqlite3_blocking_prepare_v2(db, psLastProduced, -1, &psLastProducedStmt, 0);
 	if (rc)
@@ -1079,7 +1079,7 @@ void extractLogsAndExit()
 	//exit(1);
 }
 
-/** Code from the offical sqlite site on how to avoid SQLITE_LOCKED, which can happen when the webserver reads from the database */
+/** Code from the official sqlite site on how to avoid SQLITE_LOCKED, which can happen when the webserver reads from the database */
 
 /*
 ** A pointer to an instance of this structure is passed as the user-context
