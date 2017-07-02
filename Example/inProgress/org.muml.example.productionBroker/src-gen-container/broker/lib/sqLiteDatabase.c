@@ -990,6 +990,53 @@ int searchOrder(int searchingPS, int latestOrderID, int producibleIngredients)
 }
 
 /**
+ * Updates the last seen time for a productionStation with the given ID
+ */
+int heartBeatProductionStation(int productionStationID)
+{
+	printf("heartBeatProductionStation:%d \n", productionStationID);
+	int rc = 0;
+	sqlite3_stmt *heartBeatStmt;
+
+	//Prepare statement
+	const char *heartBeatUpdate = "UPDATE ProductionStations SET LastSeen = datetime('now') WHERE  ProductionStationID=?;";
+
+	rc = sqlite3_blocking_prepare_v2(db, heartBeatUpdate, -1, &heartBeatStmt, 0);
+	if (rc)
+	{
+		fprintf(stderr, "Could not prepare statement for heartbeat update: %s\n", sqlite3_errmsg(db));
+
+		return rc;
+	}
+	printf("prepared heartbeat");
+
+	//Bind parameters
+	rc = sqlite3_bind_int(heartBeatStmt, 1, productionStationID);
+	if (rc)
+	{
+		fprintf(stderr, "Error for productionStationID:%d %s\n", productionStationID, sqlite3_errmsg(db));
+
+		return rc;
+	}
+	printf("bind heartbeat");
+
+	//Execute statement, once step is sufficient for update
+	rc = sqlite3_blocking_step(heartBeatStmt);
+
+	if (rc != SQLITE_DONE)
+	{
+		fprintf(stderr, "Could not execute statement for heartbeat update of productionstation %d, error: %s\n", productionStationID, sqlite3_errmsg(db));
+
+		return rc;
+	}
+	printf("Successful heartbeat for productionStation %d", productionStationID);
+
+	sqlite3_finalize(heartBeatStmt);
+
+	return rc;
+}
+
+/**
  * Takes a json string and sends it to the server via post request
  *
  */
@@ -1168,53 +1215,5 @@ int sqlite3_blocking_prepare_v2(
 		if (rc != SQLITE_OK)
 			break;
 	}
-	return rc;
-}
-
-/**
- * Inserts and order with its ID, ingredient and amount and initial status "IDLE"
- * and the current time as orderTime
- */
-int heartBeatProductionStation(int productionStationID)
-{
-	printf("heartBeatProductionStation:%d \n", productionStationID);
-	int rc = 0;
-	sqlite3_stmt *hartBeatStmt;
-
-	//Prepare statement
-	const char *heartBeatUpdate = "UPDATE ProductionStations SET LastSeen = datetime('now') WHERE  ProductionStationID=?;";
-
-	rc = sqlite3_blocking_prepare_v2(db, heartBeatUpdate, -1, &hartBeatStmt, 0);
-	if (rc)
-	{
-		fprintf(stderr, "Could not prepare statement for heartbeat update: %s\n", sqlite3_errmsg(db));
-
-		return rc;
-	}
-	printf("prepared heardbeat");
-
-	//Bind parameters
-	rc = sqlite3_bind_int(hartBeatStmt, 1, productionStationID);
-	if (rc)
-	{
-		fprintf(stderr, "Error for productionStationID: %s\n", sqlite3_errmsg(db));
-
-		return rc;
-	}
-	printf("bind heardbeat");
-
-	//Execute statement, once step is sufficient for update
-	rc = sqlite3_blocking_step(hartBeatStmt);
-
-	if (rc != SQLITE_DONE)
-	{
-		fprintf(stderr, "Could not execute statement for heartbeat update if productionstation %s\n", sqlite3_errmsg(db));
-
-		return rc;
-	}
-	printf("step heardbeat");
-
-	sqlite3_finalize(hartBeatStmt);
-
 	return rc;
 }
