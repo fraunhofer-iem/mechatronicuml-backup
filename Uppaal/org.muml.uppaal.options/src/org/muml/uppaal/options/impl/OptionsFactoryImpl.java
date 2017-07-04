@@ -6,11 +6,15 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.muml.uppaal.options.*;
+import org.muml.uppaal.options.CoordinationProtocolOptions;
+import org.muml.uppaal.options.HideOptionExtension;
+import org.muml.uppaal.options.Options;
+import org.muml.uppaal.options.OptionsFactory;
+import org.muml.uppaal.options.OptionsPackage;
+import org.muml.uppaal.options.StateSpaceReduction;
+import org.muml.uppaal.options.TraceOptions;
 
 /**
  * <!-- begin-user-doc -->

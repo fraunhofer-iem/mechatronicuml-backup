@@ -4,13 +4,14 @@ package org.muml.uppaal.options.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
 import org.muml.core.ExtendableElement;
 import org.muml.core.Extension;
-import org.muml.uppaal.options.*;
+import org.muml.uppaal.options.CoordinationProtocolOptions;
+import org.muml.uppaal.options.HideOptionExtension;
+import org.muml.uppaal.options.Options;
+import org.muml.uppaal.options.OptionsPackage;
 
 /**
  * <!-- begin-user-doc -->

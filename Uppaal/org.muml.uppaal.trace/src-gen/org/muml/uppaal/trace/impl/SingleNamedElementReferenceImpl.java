@@ -5,19 +5,13 @@ package org.muml.uppaal.trace.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EDataTypeEList;
-
 import org.muml.uppaal.core.NamedElement;
-
 import org.muml.uppaal.trace.SingleNamedElementReference;
 import org.muml.uppaal.trace.TracePackage;
 

@@ -3,8 +3,8 @@
  */
 package org.muml.uppaal.trace.serializer;
 
-import com.google.inject.Inject;
 import java.util.Set;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.xtext.Action;
@@ -29,6 +29,8 @@ import org.muml.uppaal.trace.TracePackage;
 import org.muml.uppaal.trace.TraceRepository;
 import org.muml.uppaal.trace.VariableValue;
 import org.muml.uppaal.trace.services.DiagnosticTraceGrammarAccess;
+
+import com.google.inject.Inject;
 
 @SuppressWarnings("all")
 public class DiagnosticTraceSemanticSequencer extends AbstractDelegatingSemanticSequencer {

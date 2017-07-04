@@ -4,18 +4,17 @@
 package org.muml.uppaal.trace.ui.contentassist.antlr;
 
 import java.util.Collection;
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 import org.antlr.runtime.RecognitionException;
 import org.eclipse.xtext.AbstractElement;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.AbstractContentAssistParser;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.FollowElement;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.AbstractInternalContentAssistParser;
+import org.muml.uppaal.trace.services.DiagnosticTraceGrammarAccess;
 
 import com.google.inject.Inject;
-
-import org.muml.uppaal.trace.services.DiagnosticTraceGrammarAccess;
 
 public class DiagnosticTraceParser extends AbstractContentAssistParser {
 	

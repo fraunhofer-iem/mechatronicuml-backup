@@ -3,11 +3,8 @@
 package org.muml.uppaal.trace.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.muml.uppaal.trace.DelayTransition;
 import org.muml.uppaal.trace.TracePackage;
 

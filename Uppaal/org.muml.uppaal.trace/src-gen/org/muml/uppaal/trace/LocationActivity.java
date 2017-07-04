@@ -3,7 +3,6 @@
 package org.muml.uppaal.trace;
 
 import org.eclipse.emf.ecore.EObject;
-
 import org.muml.uppaal.templates.Location;
 
 /**

@@ -3,9 +3,7 @@
 package org.muml.uppaal.options.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.core.impl.ExtensionImpl;
 import org.muml.uppaal.options.HideOptionExtension;
