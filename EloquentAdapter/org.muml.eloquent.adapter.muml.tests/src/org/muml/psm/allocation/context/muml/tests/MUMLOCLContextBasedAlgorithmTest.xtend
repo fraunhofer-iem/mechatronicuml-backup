@@ -3,7 +3,7 @@ package org.muml.psm.allocation.context.muml.tests
 import java.util.Collection
 
 abstract class MUMLOCLContextBasedAlgorithmTest extends MUMLOCLContextBasedTest {
-	public static final String uriPrefix = "platform:/plugin/org.muml.psm.allocation.context.muml.tests/fixtures/"
+	public static final String uriPrefix = "platform:/plugin/org.muml.eloquent.adapter.muml.tests/fixtures/"
 	
 	new(String expectedURI, String transformationURI, String aslURI, String cicURI, String hwpicURI) {
 		super(expectedURI, transformationURI, aslURI, cicURI, hwpicURI)
