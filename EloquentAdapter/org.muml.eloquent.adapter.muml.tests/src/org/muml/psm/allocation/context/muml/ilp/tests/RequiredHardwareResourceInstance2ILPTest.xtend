@@ -8,7 +8,7 @@ import org.muml.psm.allocation.context.muml.tests.MUMLOCLContextBasedTest
 
 @RunWith(value = typeof(Parameterized))
 class RequiredHardwareResourceInstance2ILPTest extends MUMLOCLContextBasedTest {
-	public static final String uriPrefix = "platform:/plugin/org.muml.psm.allocation.context.muml.tests/fixtures/ilp/requiredHardwareResourceInstanceConstraint/"
+	public static final String uriPrefix = "platform:/plugin/org.muml.eloquent.adapter.muml.tests/fixtures/ilp/requiredHardwareResourceInstanceConstraint/"
 	
 	new(String expectedURI, String transformationURI, String aslURI, String cicURI, String hwpicURI) {
 		super(expectedURI, transformationURI, aslURI, cicURI, hwpicURI)
