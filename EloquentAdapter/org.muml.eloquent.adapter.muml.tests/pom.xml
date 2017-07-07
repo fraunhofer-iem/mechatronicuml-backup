@@ -43,7 +43,7 @@
                 <artifactId>tycho-surefire-plugin</artifactId>
                 <version>${tycho-version}</version>
                 <configuration>
-                    <testClass>org.muml.eloquent.adapter.muml.AllTestsSuite</testClass>
+                    <testClass>org.muml.psm.allocation.context.muml.AllTestsSuite</testClass>
                     <product>org.eclipse.platform.ide</product>
                 </configuration>
             </plugin>
