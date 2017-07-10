@@ -777,13 +777,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int VERTEX___HAS_OUTGOING_TRANSITION_OF_PRIORITY__INT = CorePackage.NAMED_ELEMENT_OPERATION_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Get Transition Priority</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VERTEX___GET_TRANSITION_PRIORITY__TRANSITION = CorePackage.NAMED_ELEMENT_OPERATION_COUNT + 3;
+
+	/**
 	 * The number of operations of the '<em>Vertex</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VERTEX_OPERATION_COUNT = CorePackage.NAMED_ELEMENT_OPERATION_COUNT + 3;
+	int VERTEX_OPERATION_COUNT = CorePackage.NAMED_ELEMENT_OPERATION_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -1146,6 +1155,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	int STATE___HAS_OUTGOING_TRANSITION_OF_PRIORITY__INT = VERTEX___HAS_OUTGOING_TRANSITION_OF_PRIORITY__INT;
 
 	/**
+	 * The operation id for the '<em>Get Transition Priority</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE___GET_TRANSITION_PRIORITY__TRANSITION = VERTEX___GET_TRANSITION_PRIORITY__TRANSITION;
+
+	/**
 	 * The operation id for the '<em>Get Unique Region Priority</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1497,13 +1515,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int TRANSITION___GET_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
+	 * The operation id for the '<em>Get Priority</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION___GET_PRIORITY = CorePackage.COMMENTABLE_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Transition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION_OPERATION_COUNT = CorePackage.COMMENTABLE_ELEMENT_OPERATION_COUNT + 0;
+	int TRANSITION_OPERATION_COUNT = CorePackage.COMMENTABLE_ELEMENT_OPERATION_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -3464,6 +3491,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	int STATE_CONNECTION_POINT___HAS_OUTGOING_TRANSITION_OF_PRIORITY__INT = VERTEX___HAS_OUTGOING_TRANSITION_OF_PRIORITY__INT;
 
 	/**
+	 * The operation id for the '<em>Get Transition Priority</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_CONNECTION_POINT___GET_TRANSITION_PRIORITY__TRANSITION = VERTEX___GET_TRANSITION_PRIORITY__TRANSITION;
+
+	/**
 	 * The number of operations of the '<em>State Connection Point</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3726,6 +3762,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	int ENTRY_POINT___HAS_OUTGOING_TRANSITION_OF_PRIORITY__INT = STATE_CONNECTION_POINT___HAS_OUTGOING_TRANSITION_OF_PRIORITY__INT;
 
 	/**
+	 * The operation id for the '<em>Get Transition Priority</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTRY_POINT___GET_TRANSITION_PRIORITY__TRANSITION = STATE_CONNECTION_POINT___GET_TRANSITION_PRIORITY__TRANSITION;
+
+	/**
 	 * The number of operations of the '<em>Entry Point</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3986,6 +4031,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @ordered
 	 */
 	int EXIT_POINT___HAS_OUTGOING_TRANSITION_OF_PRIORITY__INT = STATE_CONNECTION_POINT___HAS_OUTGOING_TRANSITION_OF_PRIORITY__INT;
+
+	/**
+	 * The operation id for the '<em>Get Transition Priority</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXIT_POINT___GET_TRANSITION_PRIORITY__TRANSITION = STATE_CONNECTION_POINT___GET_TRANSITION_PRIORITY__TRANSITION;
 
 	/**
 	 * The number of operations of the '<em>Exit Point</em>' class.
@@ -4358,6 +4412,16 @@ public interface RealtimestatechartPackage extends EPackage {
 	EOperation getVertex__HasOutgoingTransitionOfPriority__int();
 
 	/**
+	 * Returns the meta object for the '{@link org.muml.pim.realtimestatechart.Vertex#getTransitionPriority(org.muml.pim.realtimestatechart.Transition) <em>Get Transition Priority</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Transition Priority</em>' operation.
+	 * @see org.muml.pim.realtimestatechart.Vertex#getTransitionPriority(org.muml.pim.realtimestatechart.Transition)
+	 * @generated
+	 */
+	EOperation getVertex__GetTransitionPriority__Transition();
+
+	/**
 	 * Returns the meta object for class '{@link org.muml.pim.realtimestatechart.Transition <em>Transition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4553,6 +4617,16 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getTransition_SenderMessageTypes();
+
+	/**
+	 * Returns the meta object for the '{@link org.muml.pim.realtimestatechart.Transition#getPriority() <em>Get Priority</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Priority</em>' operation.
+	 * @see org.muml.pim.realtimestatechart.Transition#getPriority()
+	 * @generated
+	 */
+	EOperation getTransition__GetPriority();
 
 	/**
 	 * Returns the meta object for class '{@link org.muml.pim.realtimestatechart.ClockConstraint <em>Clock Constraint</em>}'.
@@ -5438,6 +5512,14 @@ public interface RealtimestatechartPackage extends EPackage {
 		EOperation VERTEX___HAS_OUTGOING_TRANSITION_OF_PRIORITY__INT = eINSTANCE.getVertex__HasOutgoingTransitionOfPriority__int();
 
 		/**
+		 * The meta object literal for the '<em><b>Get Transition Priority</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation VERTEX___GET_TRANSITION_PRIORITY__TRANSITION = eINSTANCE.getVertex__GetTransitionPriority__Transition();
+
+		/**
 		 * The meta object literal for the '{@link org.muml.pim.realtimestatechart.impl.TransitionImpl <em>Transition</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5582,6 +5664,14 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EReference TRANSITION__SENDER_MESSAGE_TYPES = eINSTANCE.getTransition_SenderMessageTypes();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Priority</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TRANSITION___GET_PRIORITY = eINSTANCE.getTransition__GetPriority();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.pim.realtimestatechart.impl.ClockConstraintImpl <em>Clock Constraint</em>}' class.

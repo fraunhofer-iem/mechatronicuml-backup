@@ -19,7 +19,7 @@ public class ItemProviderUtilities {
 	private static final String UNKNOWN_NAME_LITERAL = "[unknown]";
 	private static final String DELIMITER = ".";
 	
-	private static final List<EClass> HIDDEN_CLASSES = Arrays.asList(new EClass[] { RealtimestatechartPackage.Literals.REGION });
+	private static final List<EClass> HIDDEN_CLASSES = Arrays.asList(new EClass[] { /* RealtimestatechartPackage.Literals.REGION */ });
 
 	public static String getFullyQualifiedName(EObject object) {
 

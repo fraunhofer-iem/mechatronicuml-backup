@@ -22,7 +22,6 @@ import org.muml.core.provider.NamedElementItemProvider;
 import org.muml.pim.provider.MumlEditPlugin;
 import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
 import org.muml.pim.realtimestatechart.Vertex;
-import org.muml.pim.realtimestatechart.descriptor.PrioritizedElementContainmentItemPropertyDescriptor;
 
 /**
  * This is the item provider adapter for a {@link org.muml.pim.realtimestatechart.Vertex} object.
@@ -87,11 +86,11 @@ public class VertexItemProvider
 	 * This adds a property descriptor for the Outgoing Transitions feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	protected void addOutgoingTransitionsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(new PrioritizedElementContainmentItemPropertyDescriptor
+			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_Vertex_outgoingTransitions_feature"),

@@ -223,6 +223,15 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getTransitionPriority(final Transition transition) {
+		return getOutgoingTransitions().indexOf(transition);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -382,6 +391,8 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 				return getUniqueTransitionPriority((Integer)arguments.get(0));
 			case RealtimestatechartPackage.VERTEX___HAS_OUTGOING_TRANSITION_OF_PRIORITY__INT:
 				return hasOutgoingTransitionOfPriority((Integer)arguments.get(0));
+			case RealtimestatechartPackage.VERTEX___GET_TRANSITION_PRIORITY__TRANSITION:
+				return getTransitionPriority((Transition)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

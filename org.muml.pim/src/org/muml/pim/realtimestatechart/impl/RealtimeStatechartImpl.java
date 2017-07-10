@@ -40,7 +40,6 @@ import org.muml.pim.protocol.Role;
 import org.muml.pim.realtimestatechart.Clock;
 import org.muml.pim.realtimestatechart.RealtimeStatechart;
 import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
-import org.muml.pim.realtimestatechart.Region;
 import org.muml.pim.realtimestatechart.State;
 import org.muml.pim.realtimestatechart.Transition;
 
@@ -581,29 +580,22 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 				
 		Assert.isLegal(statechart != null);
 		
-		BreadthFirstSearchAlgorithm bfs = new BreadthFirstSearchAlgorithm();
-		return bfs.search(statechart, new ISearchVisitor() {
+		BreadthFirstSearchAlgorithm<RealtimeStatechart> bfs = new BreadthFirstSearchAlgorithm<RealtimeStatechart>();
+		return bfs.search(statechart, new ISearchVisitor<RealtimeStatechart>() {
 		
 			@Override
-			public boolean visit(Object object) {
+			public boolean visit(RealtimeStatechart object) {
 				return !RealtimeStatechartImpl.this.equals(object);
 			}
 		
 			@Override
-			public List<?> getAdjacentNodes(Object object) {
-				RealtimeStatechart rtsc = (RealtimeStatechart) object;
+			public List<RealtimeStatechart> getAdjacentNodes(RealtimeStatechart rtsc) {
 		
-				List<Object> parentStatecharts = new ArrayList<Object>();
-		
-				Region region = rtsc.getParentRegion();
-				if (region != null) {
-					// List<Region> regions = rtsc.getParentRegions();
-					// for (Region region : regions) {
-					State state = region.getParentState();
-					if (state != null && state.getParentStatechart() != null) {
-						parentStatecharts.add(state.getParentStatechart());
-					}
-					// }
+				List<RealtimeStatechart> parentStatecharts = new ArrayList<RealtimeStatechart>();
+					
+				State state = rtsc.getParentState();
+				if (state != null && state.getParentStatechart() != null) {
+					parentStatecharts.add(state.getParentStatechart());
 				}
 		
 				return parentStatecharts;
@@ -620,7 +612,7 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	public RealtimeStatechart getHighestParentStatechart() {
 		RealtimeStatechart rtsc = this;
 		while (rtsc.isEmbedded()==true)
-		{rtsc = rtsc.getParentRegion().getParentState().getParentStatechart();} 
+		{rtsc = rtsc.getParentState().getParentStatechart();} 
 		return rtsc;
 	}
 
@@ -636,7 +628,7 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 		
 		// search for ancestor with behavioral element
 		while (rtsc.isEmbedded()==true) {
-		rtsc = rtsc.getParentRegion().getParentState().getParentStatechart();
+		rtsc = rtsc.getParentState().getParentStatechart();
 		if (rtsc.getBehavioralElement()!=null && ((rtsc.getBehavioralElement() instanceof Port) || (rtsc.getBehavioralElement() instanceof Role))) return rtsc;
 		} 
 		

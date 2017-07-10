@@ -78,7 +78,7 @@ public interface Vertex extends NamedElement, CommentableElement {
 	 * @return the value of the '<em>All Super Vertices</em>' reference list.
 	 * @see org.muml.pim.realtimestatechart.RealtimestatechartPackage#getVertex_AllSuperVertices()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if self.oclIsKindOf(State)\r\nthen self.oclAsType(State)->closure(s | if s.parentStatechart.embedded then s.parentStatechart.parentRegion.parentState else null endif)->asOrderedSet()\r\nelse\r\n   if self.oclIsKindOf(StateConnectionPoint)\r\n   then let state : State = self.oclAsType(StateConnectionPoint).state in state->union(state->closure(s | if s.parentStatechart.embedded then s.parentStatechart.parentRegion.parentState else null endif))->asOrderedSet()\r\n   else OrderedSet{ }\r\n   endif\r\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if self.oclIsKindOf(State)\r\nthen self.oclAsType(State)->closure(s | if s.parentStatechart.embedded then s.parentStatechart.parentState else null endif)->asOrderedSet()\r\nelse\r\n   if self.oclIsKindOf(StateConnectionPoint)\r\n   then let state : State = self.oclAsType(StateConnectionPoint).state in state->union(state->closure(s | if s.parentStatechart.embedded then s.parentStatechart.parentState else null endif))->asOrderedSet()\r\n   else OrderedSet{ }\r\n   endif\r\nendif'"
 	 * @generated
 	 */
 	EList<Vertex> getAllSuperVertices();
@@ -120,5 +120,16 @@ public interface Vertex extends NamedElement, CommentableElement {
 	 * @generated
 	 */
 	boolean hasOutgoingTransitionOfPriority(int priority);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * @param transition The integer value that represents a hint for the priority to be computed.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return getOutgoingTransitions().indexOf(transition);'"
+	 * @generated
+	 */
+	int getTransitionPriority(Transition transition);
 
 } // Vertex

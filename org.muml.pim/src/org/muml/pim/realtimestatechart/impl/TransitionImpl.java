@@ -6,6 +6,7 @@
  */
 package org.muml.pim.realtimestatechart.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.Iterator;
 
@@ -798,6 +799,15 @@ public class TransitionImpl extends CommentableElementImpl implements Transition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getPriority() {
+		if (source != null) { return source.getTransitionPriority(this); } else { return 0; }
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -1040,6 +1050,20 @@ public class TransitionImpl extends CommentableElementImpl implements Transition
 				return SENDER_MESSAGE_TYPES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case RealtimestatechartPackage.TRANSITION___GET_PRIORITY:
+				return getPriority();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

@@ -479,7 +479,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 */
 	protected static final String STATE__ENTRY_EVENT_AT_INITIAL_STATE__EEXPRESSION = "-- @warning\n" +
 		"-- Attention: An initial state only executes its entry event if it is activated via a firing transition. Consequently, if the RTSC starts, its initial states do not execute their entry events (their entry actions and their clock resets). Noteworthy, this only affects initial states that have no parent states and initial states where all their parents are initial states.\n" +
-		"let allParentStates : Set(State) = self -> closure(if parentStatechart.parentRegion.oclIsUndefined() then self else parentStatechart.parentRegion.parentState endif) in\n" +
+		"let allParentStates : Set(State) = self -> closure(if parentStatechart.parentState.oclIsUndefined() then self else parentStatechart.parentState endif) in\n" +
 		"not (self.initial and allParentStates->forAll(x | x.initial) and not self.entryEvent.oclIsUndefined())";
 
 	/**
@@ -552,7 +552,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 	protected static final String TRANSITION__USING_AONE_TO_MANY_SCHEMA_AT_ONE_TRANSITION_IMPLIES_USING_SCHEMA_AT_ALL_TRANSITIONS__EEXPRESSION = "-- If a one-to-many communication schema is used at a transition, the behavioral element must be a multi role or multi port and all other messages of the RTSC must use a one-to-many communication schema  as well. Moreover, the RTSC may not define explicit coordinator and subrole regions.\r\n" +
 		"let result : Boolean = (\r\n" +
 		"let selfStatechart : RealtimeStatechart = self.statechart in \r\n" +
-		"let allChildrenOfRoleOrPortStatechart : Set(RealtimeStatechart) =if selfStatechart.oclIsUndefined() then Set{} else selfStatechart.getPortOrRoleStatechart() -> closure(states.embeddedRegions.embeddedStatechart) endif in \r\n" +
+		"let allChildrenOfRoleOrPortStatechart : Set(RealtimeStatechart) =if selfStatechart.oclIsUndefined() then Set{} else selfStatechart.getPortOrRoleStatechart() -> closure(states.embeddedStatecharts) endif in \r\n" +
 		"let allTransitions : OrderedSet(Transition) =  allChildrenOfRoleOrPortStatechart->asOrderedSet()->append(selfStatechart.getPortOrRoleStatechart()).transitions->asOrderedSet() in \r\n" +
 		"\r\n" +
 		"(selfStatechart.usesOneToManyCommunicationSchemata and not (selfStatechart.getPortOrRoleStatechart() = null)) implies ( \r\n" +
@@ -594,16 +594,16 @@ public class RealtimestatechartValidator extends MumlValidator {
 		"true\r\n" +
 		"else\r\n" +
 		"-- State A1 to ExitPoint of A2, where A2 is the direct parent state of A1\r\n" +
-		"(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(ExitPoint) and self.target.oclAsType(ExitPoint).state.embeddedRegions.embeddedStatechart.states->includes(self.source.oclAsType(State)))\t\r\n" +
+		"(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(ExitPoint) and self.target.oclAsType(ExitPoint).state.embeddedStatecharts.states->includes(self.source.oclAsType(State)))\t\r\n" +
 		"or\r\n" +
 		"-- EntryPoint of A1 to State A2, where A1 is the direct parent state of A2\r\n" +
-		"(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(EntryPoint).state.embeddedRegions.embeddedStatechart.states->includes(self.target.oclAsType(State)))\t\r\n" +
+		"(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(EntryPoint).state.embeddedStatecharts.states->includes(self.target.oclAsType(State)))\t\r\n" +
 		"or\r\n" +
 		"-- EntryPoint of A1 to EntryPoint of A2, where A1 is the direct parent state of A2\r\n" +
-		"(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(EntryPoint).state.embeddedRegions.embeddedStatechart.states->includes(self.target.oclAsType(EntryPoint).state))\r\n" +
+		"(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(EntryPoint).state.embeddedStatecharts.states->includes(self.target.oclAsType(EntryPoint).state))\r\n" +
 		"or\r\n" +
 		"-- ExitPoint of A1 to ExitPoint of A2, where A2 is the direct parent state of A1\r\n" +
-		"(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(ExitPoint) and self.target.oclAsType(ExitPoint).state.embeddedRegions.embeddedStatechart.states->includes(self.source.oclAsType(ExitPoint).state))\r\n" +
+		"(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(ExitPoint) and self.target.oclAsType(ExitPoint).state.embeddedStatecharts.states->includes(self.source.oclAsType(ExitPoint).state))\r\n" +
 		"\r\n" +
 		"or \r\n" +
 		"-- State A to State B within the same statechart\r\n" +
@@ -1340,7 +1340,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 	protected static final String REALTIME_STATECHART__HYBRID_PORT_NAMES_AND_VARIABLE_NAMES_MUST_DIFFER__EEXPRESSION = "-- The names of hybrid ports and variable names of the RTSC must differ.\r\n" +
 		"let com:component::AtomicComponent = if(self.getHighestParentStatechart().behavioralElement.oclIsKindOf(component::AtomicComponent)) \r\n" +
 		"then self.getHighestParentStatechart().behavioralElement.oclAsType(component::AtomicComponent) else null endif\r\n" +
-		" in  let allSubRoleSpecificVariables:Set(behavior::Variable) = self -> closure(if parentRegion.oclIsUndefined() then self else parentRegion.parentState.parentStatechart endif).subRoleSpecificVariables->asSet() in\r\n" +
+		" in  let allSubRoleSpecificVariables:Set(behavior::Variable) = self -> closure(if parentState.oclIsUndefined() then self else parentState.parentStatechart endif).subRoleSpecificVariables->asSet() in\r\n" +
 		" not com.oclIsUndefined() implies  com.ports->select(port|port.oclIsKindOf(component::HybridPort)).name->forAll(portName| self.allAvailableVariables.name->excludes(portName) and allSubRoleSpecificVariables.name->excludes(portName))\r\n" +
 		"";
 
@@ -1438,9 +1438,9 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * @generated
 	 */
 	protected static final String REALTIME_STATECHART__NO_CYCLES__EEXPRESSION = "-- An RTSC may not be the parent of the RTSC that it contains, i.e., cycles are not allowed.\r\n" +
-		"(not self.parentRegion.parentState.parentStatechart.oclIsUndefined())\r\n" +
+		"(not self.parentState.parentStatechart.oclIsUndefined())\r\n" +
 		"implies\r\n" +
-		"(not self.isSuperStatechartOf(self.parentRegion.parentState.parentStatechart))";
+		"(not self.isSuperStatechartOf(self.parentState.parentStatechart))";
 
 	/**
 	 * Validates the NoCycles constraint of '<em>Realtime Statechart</em>'.

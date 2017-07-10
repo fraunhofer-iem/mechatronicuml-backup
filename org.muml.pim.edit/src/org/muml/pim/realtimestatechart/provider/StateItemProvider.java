@@ -21,7 +21,6 @@ import org.muml.pim.ItemProviderUtilities;
 import org.muml.pim.realtimestatechart.RealtimestatechartFactory;
 import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
 import org.muml.pim.realtimestatechart.State;
-import org.muml.pim.realtimestatechart.descriptor.PrioritizedElementContainmentItemPropertyDescriptor;
 
 /**
  * This is the item provider adapter for a {@link org.muml.pim.realtimestatechart.State} object.
@@ -68,28 +67,6 @@ public class StateItemProvider
 			addAllAvailableChannelsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Embedded Regions feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addEmbeddedRegionsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(
-			new PrioritizedElementContainmentItemPropertyDescriptor(
-				((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_State_embeddedRegions_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_State_embeddedRegions_feature", "_UI_State_type"),
-				RealtimestatechartPackage.Literals.STATE__EMBEDDED_REGIONS,
-				true,
-				false,
-				false,
-				null,
-				null,
-				null));
 	}
 
 	/**

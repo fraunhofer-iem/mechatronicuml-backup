@@ -24,7 +24,6 @@ import org.muml.core.provider.ExtendableElementItemProvider;
 import org.muml.pim.provider.MumlEditPlugin;
 import org.muml.pim.realtimestatechart.RealtimeStatechart;
 import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
-import org.muml.pim.realtimestatechart.Region;
 import org.muml.pim.realtimestatechart.State;
 import org.muml.pim.realtimestatechart.Synchronization;
 import org.muml.pim.realtimestatechart.SynchronizationKind;
@@ -94,16 +93,11 @@ public class SynchronizationItemProvider
 					Transition transition = (Transition) synchronization.eContainer();
 					RealtimeStatechart statechart = transition.getStatechart();
 					
-					Region region = null;
-					if (statechart != null) {
-						region = statechart.getParentRegion();
-					}
-					
 					State state = null;
-					if (region != null) {
-						state = region.getParentState();
+					if (statechart != null) {
+						state = statechart.getParentState();
 					}
-					
+
 					if (state != null) {
 						return state.getAllAvailableChannels();
 					}

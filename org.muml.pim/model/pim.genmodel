@@ -173,6 +173,9 @@
         <genOperations ecoreOperation="pim.ecore#//realtimestatechart/Vertex/hasOutgoingTransitionOfPriority">
           <genParameters ecoreParameter="pim.ecore#//realtimestatechart/Vertex/hasOutgoingTransitionOfPriority/priority"/>
         </genOperations>
+        <genOperations ecoreOperation="pim.ecore#//realtimestatechart/Vertex/getTransitionPriority">
+          <genParameters ecoreParameter="pim.ecore#//realtimestatechart/Vertex/getTransitionPriority/transition"/>
+        </genOperations>
       </genClasses>
       <genClasses ecoreClass="pim.ecore#//realtimestatechart/Transition">
         <genFeatures children="true" createChild="true" propertyCategory="Synchronization"
@@ -203,6 +206,7 @@
             ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/Transition/receiverMessageTypes"/>
         <genFeatures property="Readonly" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/Transition/senderMessageTypes"/>
+        <genOperations ecoreOperation="pim.ecore#//realtimestatechart/Transition/getPriority"/>
       </genClasses>
       <genClasses ecoreClass="pim.ecore#//realtimestatechart/ClockConstraint">
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//realtimestatechart/ClockConstraint/bound"/>
