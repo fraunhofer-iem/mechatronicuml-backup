@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="realtimestatechart" version="11.1.1.201610211630">
   <ownedViewpoints name="realtimestatechart" modelFileExtension="realtimestatechart">
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="org.muml.pim.realtimestatechart.diagram" label="Realtimestatechart Diagram" initialisation="true" domainClass="realtimestatechart.Realtimestatechart" enablePopupBars="true">
-      <metamodel href="../../realtimestatechart.model/model/realtimestatechart.ecore#/"/>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="org.muml.pim.realtimestatechart.diagram" label="Realtimestatechart Diagram" initialisation="true" domainClass="RealtimeStatechart" enablePopupBars="true">
+      <metamodel href="../../org.muml.pim/model/pim.ecore#/"/>
+      <metamodel href="../../org.muml.pim/model/pim.ecore#//constraint"/>
+      <metamodel href="../../org.muml.pim/model/pim.ecore#//instance"/>
+      <metamodel href="../../org.muml.pim/model/pim.ecore#//protocol"/>
+      <metamodel href="../../org.muml.pim/model/pim.ecore#//realtimestatechart"/>
+      <metamodel href="../../org.muml.pim/model/pim.ecore#//msgtype"/>
+      <metamodel href="../../org.muml.pim/model/pim.ecore#//types"/>
+      <metamodel href="../../org.muml.pim/model/pim.ecore#//connector"/>
+      <metamodel href="../../org.muml.pim/model/pim.ecore#//valuetype"/>
+      <metamodel href="../../org.muml.pim/model/pim.ecore#//behavior"/>
+      <metamodel href="../../org.muml.pim/model/pim.ecore#//component"/>
+      <metamodel href="../../org.muml.pim/model/pim.ecore#//pattern"/>
+      <metamodel href="../../org.muml.pim/model/pim.ecore#//runnable"/>
+      <metamodel href="../../org.muml.pim/model/pim.ecore#//realtimestatechart/one_to_n_schemata"/>
       <defaultLayer name="Default">
         <nodeMappings name="InitialStateNode" semanticCandidatesExpression="aql:self.states->select(i | i.initial and true)" domainClass="State">
           <style xsi:type="style:DotDescription" showIcon="false" labelExpression="" sizeComputationExpression="2" labelPosition="node" strokeSizeComputationExpression="1">
@@ -11,7 +24,7 @@
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <edgeMappings name="org.muml.pim.realtimestatechart.Transition" label="Transition" sourceMapping="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State']/@borderedNodeMappings[name='StatePoint']" targetMapping="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State']/@borderedNodeMappings[name='StatePoint']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="realtimestatechart.Transition" useDomainElement="true">
+        <edgeMappings name="org.muml.pim.realtimestatechart.Transition" label="Transition" sourceMapping="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State']/@borderedNodeMappings[name='StatePoint']" targetMapping="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State']/@borderedNodeMappings[name='StatePoint']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="Transition" useDomainElement="true">
           <style>
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <centerLabelStyleDescription>
@@ -27,8 +40,8 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <containerMappings name="org.muml.pim.realtimestatechart.State" label="State" semanticCandidatesExpression="aql:self.states" domainClass="realtimestatechart.State" childrenPresentation="VerticalStack">
-          <borderedNodeMappings name="StatePoint" semanticCandidatesExpression="aql:self.statePoints" domainClass="StatePoint">
+        <containerMappings name="org.muml.pim.realtimestatechart.State" label="State" semanticCandidatesExpression="aql:self.states" domainClass="State" childrenPresentation="VerticalStack">
+          <borderedNodeMappings name="StatePoint" semanticCandidatesExpression="aql:self.connectionPoints" domainClass="StatePoint">
             <style xsi:type="style:DotDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="" sizeComputationExpression="2" labelPosition="node" strokeSizeComputationExpression="1">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -42,7 +55,7 @@
               </style>
             </conditionnalStyles>
           </borderedNodeMappings>
-          <subContainerMappings name="org.muml.pim.realtimestatechart.RealtimeStatechart" label="Realtime Statechart" semanticCandidatesExpression="aql:self.subStatecharts" domainClass="realtimestatechart.Realtimestatechart" reusedContainerMappings="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State']">
+          <subContainerMappings name="org.muml.pim.realtimestatechart.RealtimeStatechart" label="Realtime Statechart" semanticCandidatesExpression="aql:self.embeddedStatecharts" domainClass="RealtimeStatechart" reusedContainerMappings="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State']">
             <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" widthComputationExpression="10" heightComputationExpression="10" backgroundStyle="Liquid">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -63,7 +76,7 @@
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="realtimestatechart.State" referenceName="states">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="State" referenceName="states">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="newstate"/>
                 </subModelOperations>
               </firstModelOperations>
@@ -92,7 +105,7 @@
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="realtimestatechart.Realtimestatechart" referenceName="subStatecharts">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="RealtimeStatechart" referenceName="embeddedStatecharts">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="substatechart"/>
                 </subModelOperations>
               </firstModelOperations>
