@@ -24,7 +24,7 @@
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <edgeMappings name="org.muml.pim.realtimestatechart.Transition" label="Transition" sourceMapping="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State']/@borderedNodeMappings[name='StatePoint']" targetMapping="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State']/@borderedNodeMappings[name='StatePoint']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="Transition" useDomainElement="true">
+        <edgeMappings name="org.muml.pim.realtimestatechart.Transition" label="Transition" sourceMapping="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State']/@borderedNodeMappings[name='EntryPoint'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State']/@borderedNodeMappings[name='ExitPoint']" targetMapping="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State']/@borderedNodeMappings[name='EntryPoint'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State']/@borderedNodeMappings[name='ExitPoint']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="Transition" useDomainElement="true">
           <style>
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <centerLabelStyleDescription>
@@ -41,19 +41,19 @@
           </style>
         </edgeMappings>
         <containerMappings name="org.muml.pim.realtimestatechart.State" label="State" semanticCandidatesExpression="aql:self.states" domainClass="State" childrenPresentation="VerticalStack">
-          <borderedNodeMappings name="StatePoint" semanticCandidatesExpression="aql:self.connectionPoints" domainClass="StatePoint">
+          <borderedNodeMappings name="EntryPoint" semanticCandidatesExpression="aql:self.connectionPoints" domainClass="EntryPoint">
             <style xsi:type="style:DotDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="" sizeComputationExpression="2" labelPosition="node" strokeSizeComputationExpression="1">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             </style>
-            <conditionnalStyles predicateExpression="aql:not self.entry">
-              <style xsi:type="style:DotDescription" borderSizeComputationExpression="1" labelExpression="" iconPath="/realtimestatechart.design/images/cross.png" sizeComputationExpression="2" labelPosition="node" strokeSizeComputationExpression="1">
-                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-              </style>
-            </conditionnalStyles>
+          </borderedNodeMappings>
+          <borderedNodeMappings name="ExitPoint" semanticCandidatesExpression="aql:self.connectionPoints" domainClass="ExitPoint">
+            <style xsi:type="style:DotDescription" borderSizeComputationExpression="1" labelExpression="" iconPath="/realtimestatechart.design/images/cross.png" sizeComputationExpression="2" labelPosition="node" strokeSizeComputationExpression="1">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
           </borderedNodeMappings>
           <subContainerMappings name="org.muml.pim.realtimestatechart.RealtimeStatechart" label="Realtime Statechart" semanticCandidatesExpression="aql:self.embeddedStatecharts" domainClass="RealtimeStatechart" reusedContainerMappings="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State']">
             <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" widthComputationExpression="10" heightComputationExpression="10" backgroundStyle="Liquid">
@@ -82,20 +82,20 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="EntryPoint" nodeMappings="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State']/@borderedNodeMappings[name='StatePoint']">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="EntryPoint" nodeMappings="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State']/@borderedNodeMappings[name='EntryPoint']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="StatePoint" referenceName="statePoints">
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="EntryPoint" referenceName="connectionPoints">
                 <subModelOperations xsi:type="tool_1:SetValue" featureName="entry" valueExpression="aql:true"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="ExitPoint" nodeMappings="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State']/@borderedNodeMappings[name='StatePoint']">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="ExitPoint" nodeMappings="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State']/@borderedNodeMappings[name='ExitPoint']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="StatePoint" referenceName="statePoints">
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="ExitPoint" referenceName="connectionPoints">
                 <subModelOperations xsi:type="tool_1:SetValue" featureName="entry" valueExpression="aql:false"/>
               </firstModelOperations>
             </initialOperation>
@@ -117,7 +117,7 @@
             <sourceViewVariable name="sourceView"/>
             <targetViewVariable name="targetView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:if (source.eContainer().oclIsKindOf(realtimestatechart::Realtimestatechart)) then source.eContainer() else source.eContainer().eContainer() endif">
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:if (source.eContainer().oclIsKindOf(realtimestatechart::RealtimeStatechart)) then source.eContainer() else source.eContainer().eContainer() endif">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="realtimestatechart.Transition" referenceName="transitions">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="newstate"/>
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="aql:source"/>
