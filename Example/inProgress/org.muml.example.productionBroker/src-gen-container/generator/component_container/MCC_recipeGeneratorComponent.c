@@ -71,6 +71,7 @@
 																	instance->orderID = msg->orderID;
 																	instance->ingredientID = msg->ingredientID;
 																	instance->amount = msg->amount;
+																	instance->timeout = msg->timeout;
 															
 															//write the actual data
 															DDS_MessagessimpleOrder_MessagesDataWriter_write(concrete_writer, instance, &DDS_HANDLE_NIL);

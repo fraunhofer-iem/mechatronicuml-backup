@@ -39,6 +39,9 @@
                   <parameterBinding xmi:id="_1x_KQNyZEeW-N_z6XJQq2w" parameter="_YGhW0NxgEeW-N_z6XJQq2w">
                     <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_4bqiQNyZEeW-N_z6XJQq2w" typedNamedElement="_yIKdUNxsEeW-N_z6XJQq2w"/>
                   </parameterBinding>
+                  <parameterBinding xmi:id="_B4roIGYgEee-lLGW3e0OzA" parameter="_lj1PQGYbEee-lLGW3e0OzA">
+                    <value xsi:type="common:LiteralExpression" xmi:id="_DNdCsGYgEee-lLGW3e0OzA" value="12"/>
+                  </parameterBinding>
                 </message>
               </events>
               <action xmi:id="_4qK08NxwEeW-N_z6XJQq2w" name="increaseCurrentOrderID">
@@ -153,34 +156,25 @@
                 <message xmi:id="__hA-4NyaEeW-N_z6XJQq2w" instanceOf="_fAYHYNxcEeW-N_z6XJQq2w"/>
               </events>
               <action xmi:id="_uTOQIOVAEeWIXPb_21drrw" name="insertOrderIntoDatabase">
-                <expressions xsi:type="actionlanguage:Block" xmi:id="_CzOP8PLAEeaONNcQtAtCmw">
-                  <expressions xsi:type="actionlanguage:OperationCall" xmi:id="_CzO3APLAEeaONNcQtAtCmw" operation="_KkrScORjEeW6HsQsL2ADFA">
-                    <parameterBinding xmi:id="_CzO3AfLAEeaONNcQtAtCmw" parameter="_WB_qUORjEeW6HsQsL2ADFA">
-                      <value xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_CzO3AvLAEeaONNcQtAtCmw" messageType="_fAYHYNxcEeW-N_z6XJQq2w" parameter="_YGhW0NxgEeW-N_z6XJQq2w"/>
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_xhLOMGYfEee-lLGW3e0OzA">
+                  <expressions xsi:type="actionlanguage:OperationCall" xmi:id="_xhLOMWYfEee-lLGW3e0OzA" operation="_KkrScORjEeW6HsQsL2ADFA">
+                    <parameterBinding xmi:id="_xhLOMmYfEee-lLGW3e0OzA" parameter="_WB_qUORjEeW6HsQsL2ADFA">
+                      <value xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_xhLOM2YfEee-lLGW3e0OzA" messageType="_fAYHYNxcEeW-N_z6XJQq2w" parameter="_YGhW0NxgEeW-N_z6XJQq2w"/>
                     </parameterBinding>
-                    <parameterBinding xmi:id="_CzO3A_LAEeaONNcQtAtCmw" parameter="_YnVU4ORjEeW6HsQsL2ADFA">
-                      <value xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_CzO3BPLAEeaONNcQtAtCmw" messageType="_fAYHYNxcEeW-N_z6XJQq2w" parameter="_Zoh8INxgEeW-N_z6XJQq2w"/>
+                    <parameterBinding xmi:id="_xhLONGYfEee-lLGW3e0OzA" parameter="_YnVU4ORjEeW6HsQsL2ADFA">
+                      <value xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_xhLONWYfEee-lLGW3e0OzA" messageType="_fAYHYNxcEeW-N_z6XJQq2w" parameter="_Zoh8INxgEeW-N_z6XJQq2w"/>
                     </parameterBinding>
-                    <parameterBinding xmi:id="_CzO3BfLAEeaONNcQtAtCmw" parameter="_aSJQ4ORjEeW6HsQsL2ADFA">
-                      <value xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_CzO3BvLAEeaONNcQtAtCmw" messageType="_fAYHYNxcEeW-N_z6XJQq2w" parameter="_b0doMNxgEeW-N_z6XJQq2w"/>
+                    <parameterBinding xmi:id="_xhLONmYfEee-lLGW3e0OzA" parameter="_aSJQ4ORjEeW6HsQsL2ADFA">
+                      <value xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_xhLON2YfEee-lLGW3e0OzA" messageType="_fAYHYNxcEeW-N_z6XJQq2w" parameter="_b0doMNxgEeW-N_z6XJQq2w"/>
                     </parameterBinding>
-                  </expressions>
-                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_CzO3B_LAEeaONNcQtAtCmw" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_CzO3CPLAEeaONNcQtAtCmw" messageType="_fAYHYNxcEeW-N_z6XJQq2w" parameter="_YGhW0NxgEeW-N_z6XJQq2w"/>
-                    <lhs_typedNamedElementExpression xmi:id="_CzO3CfLAEeaONNcQtAtCmw" typedNamedElement="_v3QPkOa9EeWyd6JHVas6Kw"/>
+                    <parameterBinding xmi:id="_xhLOOGYfEee-lLGW3e0OzA" parameter="_DfxUAGYbEee-lLGW3e0OzA">
+                      <value xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_xhLOOWYfEee-lLGW3e0OzA" messageType="_fAYHYNxcEeW-N_z6XJQq2w" parameter="_lj1PQGYbEee-lLGW3e0OzA"/>
+                    </parameterBinding>
                   </expressions>
                 </expressions>
               </action>
             </transitions>
-            <transitions xmi:id="_1BN1UOVEEeWTk8L1nP577g" priority="1" target="_-B_HsOVDEeWIXPb_21drrw" source="_pHVnIdyaEeW-N_z6XJQq2w">
-              <action xmi:id="_DGIhkOVFEeWTk8L1nP577g" name="createDatabase">
-                <expressions xsi:type="actionlanguage:Block" xmi:id="_F61X0O0zEeaKUeHUkq3RGQ">
-                  <expressions xsi:type="actionlanguage:OperationCall" xmi:id="_F61X0e0zEeaKUeHUkq3RGQ" operation="_oqnyUORjEeW6HsQsL2ADFA"/>
-                </expressions>
-              </action>
-            </transitions>
-            <states xmi:id="_pHVnIdyaEeW-N_z6XJQq2w" name="init" outgoingTransitions="_1BN1UOVEEeWTk8L1nP577g" initial="true"/>
-            <states xmi:id="_-B_HsOVDEeWIXPb_21drrw" name="manageOrders" outgoingTransitions="_yovr8NyaEeW-N_z6XJQq2w" incomingTransitions="_yovr8NyaEeW-N_z6XJQq2w _1BN1UOVEEeWTk8L1nP577g"/>
+            <states xmi:id="_-B_HsOVDEeWIXPb_21drrw" name="manageOrders" outgoingTransitions="_yovr8NyaEeW-N_z6XJQq2w" incomingTransitions="_yovr8NyaEeW-N_z6XJQq2w" initial="true"/>
           </embeddedStatechart>
         </embeddedRegions>
         <embeddedRegions xmi:id="_QFkRgOa7EeWyd6JHVas6Kw" priority="2">
@@ -214,24 +208,21 @@
                 <message xmi:id="_pBKW8Oa8EeWyd6JHVas6Kw" instanceOf="_UTgXMNxrEeW-N_z6XJQq2w"/>
               </events>
               <action xmi:id="_wosJAOa8EeWyd6JHVas6Kw" name="processGetOrderRequest">
-                <expressions xsi:type="actionlanguage:Block" xmi:id="_Kq53QCQrEee7HckZZ6wCAQ">
-                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_Kq53QSQrEee7HckZZ6wCAQ" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_Kq53QiQrEee7HckZZ6wCAQ" messageType="_UTgXMNxrEeW-N_z6XJQq2w" parameter="_t8T0kOa3EeWyd6JHVas6Kw"/>
-                    <lhs_typedNamedElementExpression xmi:id="_Kq53QyQrEee7HckZZ6wCAQ" typedNamedElement="_sw_esOa8EeWyd6JHVas6Kw"/>
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_9h7_cGYhEee-lLGW3e0OzA">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_9h7_cWYhEee-lLGW3e0OzA" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_9h7_cmYhEee-lLGW3e0OzA" messageType="_UTgXMNxrEeW-N_z6XJQq2w" parameter="_t8T0kOa3EeWyd6JHVas6Kw"/>
+                    <lhs_typedNamedElementExpression xmi:id="_9h7_c2YhEee-lLGW3e0OzA" typedNamedElement="_sw_esOa8EeWyd6JHVas6Kw"/>
                   </expressions>
-                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_Kq53RCQrEee7HckZZ6wCAQ" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="actionlanguage:OperationCall" xmi:id="_Kq53RSQrEee7HckZZ6wCAQ" operation="_m40ygOrPEeWdNs1s2t99bw">
-                      <parameterBinding xmi:id="_Kq53RiQrEee7HckZZ6wCAQ" parameter="_ikbtoCQqEee7HckZZ6wCAQ">
-                        <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_Kq53RyQrEee7HckZZ6wCAQ" typedNamedElement="_sw_esOa8EeWyd6JHVas6Kw"/>
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_9h7_dGYhEee-lLGW3e0OzA" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="actionlanguage:OperationCall" xmi:id="_9h7_dWYhEee-lLGW3e0OzA" operation="_m40ygOrPEeWdNs1s2t99bw">
+                      <parameterBinding xmi:id="_9h7_dmYhEee-lLGW3e0OzA" parameter="_ikbtoCQqEee7HckZZ6wCAQ">
+                        <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_9h7_d2YhEee-lLGW3e0OzA" typedNamedElement="_sw_esOa8EeWyd6JHVas6Kw"/>
                       </parameterBinding>
-                      <parameterBinding xmi:id="_Kq53SCQrEee7HckZZ6wCAQ" parameter="_o7ueYOrPEeWdNs1s2t99bw">
-                        <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_Kq53SSQrEee7HckZZ6wCAQ" typedNamedElement="_v3QPkOa9EeWyd6JHVas6Kw"/>
-                      </parameterBinding>
-                      <parameterBinding xmi:id="_Kq53SiQrEee7HckZZ6wCAQ" parameter="_7lFQ0BVGEeeshe9pZ_FOow">
-                        <value xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_Kq53SyQrEee7HckZZ6wCAQ" messageType="_UTgXMNxrEeW-N_z6XJQq2w" parameter="_3EZT4BVGEeeshe9pZ_FOow"/>
+                      <parameterBinding xmi:id="_9h7_eGYhEee-lLGW3e0OzA" parameter="_7lFQ0BVGEeeshe9pZ_FOow">
+                        <value xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_9h7_eWYhEee-lLGW3e0OzA" messageType="_UTgXMNxrEeW-N_z6XJQq2w" parameter="_3EZT4BVGEeeshe9pZ_FOow"/>
                       </parameterBinding>
                     </rhs_assignExpression>
-                    <lhs_typedNamedElementExpression xmi:id="_Kq53TCQrEee7HckZZ6wCAQ" typedNamedElement="_djx4MOa9EeWyd6JHVas6Kw"/>
+                    <lhs_typedNamedElementExpression xmi:id="_9h7_emYhEee-lLGW3e0OzA" typedNamedElement="_djx4MOa9EeWyd6JHVas6Kw"/>
                   </expressions>
                 </expressions>
               </action>
@@ -258,13 +249,13 @@
                 </message>
               </events>
               <action xmi:id="_JMkd8Ob-EeWyd6JHVas6Kw" name="defineProductionStationForOrder">
-                <expressions xsi:type="actionlanguage:Block" xmi:id="_XzkQ8OqKEeWBDM2lagzQHQ">
-                  <expressions xsi:type="actionlanguage:OperationCall" xmi:id="_XzkQ8eqKEeWBDM2lagzQHQ" operation="_5o24cOb9EeWyd6JHVas6Kw">
-                    <parameterBinding xmi:id="_XzkQ8uqKEeWBDM2lagzQHQ" parameter="_9RcvwOb9EeWyd6JHVas6Kw">
-                      <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_XzkQ8-qKEeWBDM2lagzQHQ" typedNamedElement="_djx4MOa9EeWyd6JHVas6Kw"/>
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_VG-wYGYdEee-lLGW3e0OzA">
+                  <expressions xsi:type="actionlanguage:OperationCall" xmi:id="_VG-wYWYdEee-lLGW3e0OzA" operation="_5o24cOb9EeWyd6JHVas6Kw">
+                    <parameterBinding xmi:id="_VG-wYmYdEee-lLGW3e0OzA" parameter="_9RcvwOb9EeWyd6JHVas6Kw">
+                      <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_VG-wY2YdEee-lLGW3e0OzA" typedNamedElement="_djx4MOa9EeWyd6JHVas6Kw"/>
                     </parameterBinding>
-                    <parameterBinding xmi:id="_XzkQ9OqKEeWBDM2lagzQHQ" parameter="_A3cmEOb-EeWyd6JHVas6Kw">
-                      <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_XzkQ9eqKEeWBDM2lagzQHQ" typedNamedElement="_sw_esOa8EeWyd6JHVas6Kw"/>
+                    <parameterBinding xmi:id="_VG-wZGYdEee-lLGW3e0OzA" parameter="_A3cmEOb-EeWyd6JHVas6Kw">
+                      <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_VG-wZWYdEee-lLGW3e0OzA" typedNamedElement="_sw_esOa8EeWyd6JHVas6Kw"/>
                     </parameterBinding>
                   </expressions>
                 </expressions>
@@ -327,19 +318,7 @@
                 </expressions>
               </action>
             </transitions>
-            <transitions xmi:id="_pTZmYFUGEeeDc5GcOuOuvA" priority="3" target="_QFnU0ea7EeWyd6JHVas6Kw" source="_QFnU0ea7EeWyd6JHVas6Kw" clockResets="_3XkrwFUGEeeDc5GcOuOuvA">
-              <clockConstraints xmi:id="_AihYYFUHEeeDc5GcOuOuvA" clock="_3XkrwFUGEeeDc5GcOuOuvA" operator="GREATER">
-                <bound xmi:id="_BXUSYFUHEeeDc5GcOuOuvA" unit="SECONDS">
-                  <value xsi:type="common:LiteralExpression" xmi:id="_UPDXcFZGEeeZBen8pz_l3w" value="3"/>
-                </bound>
-              </clockConstraints>
-              <action xmi:id="_q32bsFUGEeeDc5GcOuOuvA" name="removeObsoleteProductionStations()">
-                <expressions xsi:type="actionlanguage:Block" xmi:id="_wXhhQFWGEeeKg_Qxv9q8Lw">
-                  <expressions xsi:type="actionlanguage:OperationCall" xmi:id="_wXhhQVWGEeeKg_Qxv9q8Lw" operation="_hW30sFUGEeeDc5GcOuOuvA"/>
-                </expressions>
-              </action>
-            </transitions>
-            <transitions xmi:id="_R6gf8FZcEeej24096dMoCw" priority="4" target="_QFnU0ea7EeWyd6JHVas6Kw" source="_QFnU0ea7EeWyd6JHVas6Kw">
+            <transitions xmi:id="_R6gf8FZcEeej24096dMoCw" priority="3" target="_QFnU0ea7EeWyd6JHVas6Kw" source="_QFnU0ea7EeWyd6JHVas6Kw" urgent="false">
               <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_SuBAgFZcEeej24096dMoCw" kind="TRIGGER">
                 <message xmi:id="_TA6HUFZcEeej24096dMoCw" instanceOf="_oHi_UFZbEeej24096dMoCw"/>
               </events>
@@ -353,7 +332,7 @@
                 </expressions>
               </action>
             </transitions>
-            <states xmi:id="_QFnU0ea7EeWyd6JHVas6Kw" name="init" outgoingTransitions="_TfQKIOa7EeWyd6JHVas6Kw _2gxAcOq-EeWdNs1s2t99bw _pTZmYFUGEeeDc5GcOuOuvA _R6gf8FZcEeej24096dMoCw" incomingTransitions="_J9HvwOa_EeWyd6JHVas6Kw _2gxAcOq-EeWdNs1s2t99bw _pTZmYFUGEeeDc5GcOuOuvA _R6gf8FZcEeej24096dMoCw" initial="true"/>
+            <states xmi:id="_QFnU0ea7EeWyd6JHVas6Kw" name="init" outgoingTransitions="_TfQKIOa7EeWyd6JHVas6Kw _2gxAcOq-EeWdNs1s2t99bw _R6gf8FZcEeej24096dMoCw" incomingTransitions="_J9HvwOa_EeWyd6JHVas6Kw _2gxAcOq-EeWdNs1s2t99bw _R6gf8FZcEeej24096dMoCw" initial="true"/>
             <states xmi:id="_SwPvEOa7EeWyd6JHVas6Kw" name="ProcessOrderRequest" outgoingTransitions="__DyrMOa9EeWyd6JHVas6Kw _SrG3cOqMEeWBDM2lagzQHQ" incomingTransitions="_TfQKIOa7EeWyd6JHVas6Kw">
               <entryEvent xmi:id="_m-fpsOa-EeWyd6JHVas6Kw">
                 <action xmi:id="_n42ZIOa-EeWyd6JHVas6Kw" name="processDatabase">
@@ -401,7 +380,6 @@
               </entryEvent>
             </states>
             <states xmi:id="_GB-v4Oa_EeWyd6JHVas6Kw" name="Reset" outgoingTransitions="_J9HvwOa_EeWyd6JHVas6Kw" incomingTransitions="__DyrMOa9EeWyd6JHVas6Kw _SrG3cOqMEeWBDM2lagzQHQ"/>
-            <clocks xmi:id="_3XkrwFUGEeeDc5GcOuOuvA" name="garbageCollectorSchedule"/>
           </embeddedStatechart>
         </embeddedRegions>
       </states>
@@ -731,19 +709,7 @@
           </expressions>
         </action>
       </transitions>
-      <transitions xmi:id="_6D1D8FWFEeeKg_Qxv9q8Lw" priority="3" target="_qixPAewfEeWTKqLnMSJAUw" source="_qixPAewfEeWTKqLnMSJAUw" clockResets="__ZlAoFWFEeeKg_Qxv9q8Lw">
-        <clockConstraints xmi:id="_Dmo28FWGEeeKg_Qxv9q8Lw" clock="__ZlAoFWFEeeKg_Qxv9q8Lw" operator="GREATER">
-          <bound xmi:id="_FON4wFWGEeeKg_Qxv9q8Lw" unit="SECONDS">
-            <value xsi:type="common:LiteralExpression" xmi:id="_Fy7vYFWGEeeKg_Qxv9q8Lw" value="20"/>
-          </bound>
-        </clockConstraints>
-        <action xmi:id="_BXvhAFWHEeeKg_Qxv9q8Lw" name="removeObsoleteProductionStations ( ) ;">
-          <expressions xsi:type="actionlanguage:Block" xmi:id="_D1ofwFWHEeeKg_Qxv9q8Lw">
-            <expressions xsi:type="actionlanguage:OperationCall" xmi:id="_D1ofwVWHEeeKg_Qxv9q8Lw" operation="_hW30sFUGEeeDc5GcOuOuvA"/>
-          </expressions>
-        </action>
-      </transitions>
-      <states xmi:id="_qixPAewfEeWTKqLnMSJAUw" name="init" outgoingTransitions="_xZ7UEOwfEeWTKqLnMSJAUw _4lMn8OwfEeWTKqLnMSJAUw _6D1D8FWFEeeKg_Qxv9q8Lw" incomingTransitions="_xZ7UEOwfEeWTKqLnMSJAUw _4Gw_gOwfEeWTKqLnMSJAUw _6D1D8FWFEeeKg_Qxv9q8Lw" initial="true"/>
+      <states xmi:id="_qixPAewfEeWTKqLnMSJAUw" name="init" outgoingTransitions="_xZ7UEOwfEeWTKqLnMSJAUw _4lMn8OwfEeWTKqLnMSJAUw" incomingTransitions="_xZ7UEOwfEeWTKqLnMSJAUw _4Gw_gOwfEeWTKqLnMSJAUw" initial="true"/>
       <states xmi:id="_zRq40OwfEeWTKqLnMSJAUw" name="ProcessOrderRequest" outgoingTransitions="_2EipEOwfEeWTKqLnMSJAUw _2wskcOwfEeWTKqLnMSJAUw" incomingTransitions="_4lMn8OwfEeWTKqLnMSJAUw"/>
       <states xmi:id="_1Ht0cOwfEeWTKqLnMSJAUw" name="Reset" outgoingTransitions="_4Gw_gOwfEeWTKqLnMSJAUw" incomingTransitions="_2EipEOwfEeWTKqLnMSJAUw _2wskcOwfEeWTKqLnMSJAUw"/>
       <clocks xmi:id="__ZlAoFWFEeeKg_Qxv9q8Lw" name="garbageCollectionSchedule"/>
@@ -1009,6 +975,9 @@
         <parameters xmi:id="_b0doMNxgEeW-N_z6XJQq2w" name="amount">
           <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         </parameters>
+        <parameters xmi:id="_lj1PQGYbEee-lLGW3e0OzA" name="timeout" comment="The time for which an order can remain in the system until it is assumed&#xA; to be out of date and will not be assigned to any production stations.">
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+        </parameters>
       </messageTypes>
       <messageTypes xmi:id="_wsJowNxgEeW-N_z6XJQq2w" name="doneOrder">
         <parameters xmi:id="_yhpx0NxgEeW-N_z6XJQq2w" name="orderID">
@@ -1052,14 +1021,6 @@
           <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         </parameters>
       </messageTypes>
-    </modelElements>
-    <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_niLXENxhEeW-N_z6XJQq2w" name="Register">
-      <messageTypes xmi:id="_qkDzsNxhEeW-N_z6XJQq2w" name="register">
-        <parameters xmi:id="_sILR0NxhEeW-N_z6XJQq2w" name="clientID">
-          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
-        </parameters>
-      </messageTypes>
-      <messageTypes xmi:id="_wPSRINxhEeW-N_z6XJQq2w" name="alive"/>
     </modelElements>
   </categories>
   <categories xmi:id="_soLPQ9xbEeW-N_z6XJQq2w" key="org.muml.pim.instance.category" name="instance">
@@ -1172,6 +1133,9 @@
         <parameters xmi:id="_aSJQ4ORjEeW6HsQsL2ADFA" name="amount">
           <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         </parameters>
+        <parameters xmi:id="_DfxUAGYbEee-lLGW3e0OzA" name="timeout" comment="The time for which an order can remain in the system until it is assumed&#xA; to be out of date and will not be assigned to any production stations.">
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+        </parameters>
         <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
       </operations>
       <operations xmi:id="_MsPb4ORjEeW6HsQsL2ADFA" name="deleteOrder">
@@ -1192,9 +1156,6 @@
         </parameters>
         <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
       </operations>
-      <operations xmi:id="_oqnyUORjEeW6HsQsL2ADFA" name="createDatabase">
-        <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
-      </operations>
       <operations xmi:id="_5o24cOb9EeWyd6JHVas6Kw" name="defineProductionStationForOrder">
         <parameters xmi:id="_9RcvwOb9EeWyd6JHVas6Kw" name="orderID">
           <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
@@ -1208,18 +1169,12 @@
         <parameters xmi:id="_ikbtoCQqEee7HckZZ6wCAQ" name="searchingPS" comment="The production station, which is looking for an order. &#xA;This is used to see when the PS was last &quot;seen&quot;, in order to visualize active stations.">
           <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         </parameters>
-        <parameters xmi:id="_o7ueYOrPEeWdNs1s2t99bw" name="latestOrderID">
-          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
-        </parameters>
         <parameters xmi:id="_7lFQ0BVGEeeshe9pZ_FOow" name="producibleIngredients">
           <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         </parameters>
         <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
       </operations>
-      <operations xmi:id="_hW30sFUGEeeDc5GcOuOuvA" name="removeObsoleteProductionStations">
-        <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
-      </operations>
-      <operations xmi:id="_Z7hwEFZcEeej24096dMoCw" name="heartbeatUpdate">
+      <operations xmi:id="_Z7hwEFZcEeej24096dMoCw" name="heartbeatProductionStation" comment="heartbeats productionstation to find out &#xA;whether they are still connected">
         <parameters xmi:id="_cjTDkFZcEeej24096dMoCw" name="psID">
           <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         </parameters>

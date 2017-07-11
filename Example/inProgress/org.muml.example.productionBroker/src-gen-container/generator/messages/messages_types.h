@@ -15,19 +15,11 @@
 typedef struct MessagesDoneOrder_Messages_Message{
 	 int32_T orderID;
 }MessagesDoneOrder_Messages_Message;
-//definition for message type MessagesNoOrder
-typedef struct MessagesNoOrder_Messages_Message{
-	 int32_T receiverPsID;
-}MessagesNoOrder_Messages_Message;
 //definition for message type MessagesGetOrder
 typedef struct MessagesGetOrder_Messages_Message{
 	 int32_T psID;
 	 int32_T producibleIngredients;
 }MessagesGetOrder_Messages_Message;
-//definition for message type MessagesHeartbeat
-typedef struct MessagesHeartbeat_Messages_Message{
-	 int32_T psID;
-}MessagesHeartbeat_Messages_Message;
 //definition for message type MessagesOrderForPS
 typedef struct MessagesOrderForPS_Messages_Message{
 	 int32_T receiverPsID;
@@ -40,5 +32,14 @@ typedef struct MessagesSimpleOrder_Messages_Message{
 	 int32_T orderID;
 	 int32_T ingredientID;
 	 int32_T amount;
+	 int32_T timeout;
 }MessagesSimpleOrder_Messages_Message;
+//definition for message type MessagesNoOrder
+typedef struct MessagesNoOrder_Messages_Message{
+	 int32_T receiverPsID;
+}MessagesNoOrder_Messages_Message;
+//definition for message type MessagesHeartbeat
+typedef struct MessagesHeartbeat_Messages_Message{
+	 int32_T psID;
+}MessagesHeartbeat_Messages_Message;
 #endif /* MESSAGE_TYPES_H */

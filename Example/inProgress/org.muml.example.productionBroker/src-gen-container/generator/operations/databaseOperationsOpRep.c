@@ -5,7 +5,7 @@
 
 /**End of user code**/
 
-int32_T databaseOperations_databaseOperationsInsertOrder(int32_T orderID, int32_T ingredientID, int32_T amount){
+int32_T databaseOperations_databaseOperationsInsertOrder(int32_T orderID, int32_T ingredientID, int32_T amount, int32_T timeout){
 
 /** Start of user code databaseOperations_databaseOperationsInsertOrder **/ 
 //@TODO: add your implementation here
@@ -61,20 +61,6 @@ int32_T databaseOperations_databaseOperationsGetOrderAmount(int32_T orderID){
 
 
 
-int32_T databaseOperations_databaseOperationsCreateDatabase(){
-
-/** Start of user code databaseOperations_databaseOperationsCreateDatabase **/ 
-//@TODO: add your implementation here
-#warning Missing implemenation of repository operation 'databaseOperations_databaseOperationsCreateDatabase'
-	//default return value
-	int32_T ret = 0;
-	return ret;
-/**End of user code**/
-
-}
-
-
-
 int32_T databaseOperations_databaseOperationsDefineProductionStationForOrder(int32_T orderID, int32_T productionStationID){
 
 /** Start of user code databaseOperations_databaseOperationsDefineProductionStationForOrder **/ 
@@ -89,7 +75,7 @@ int32_T databaseOperations_databaseOperationsDefineProductionStationForOrder(int
 
 
 
-int32_T databaseOperations_databaseOperationsSearchOrder(int32_T searchingPS, int32_T latestOrderID, int32_T producibleIngredients){
+int32_T databaseOperations_databaseOperationsSearchOrder(int32_T searchingPS, int32_T producibleIngredients){
 
 /** Start of user code databaseOperations_databaseOperationsSearchOrder **/ 
 //@TODO: add your implementation here
@@ -103,11 +89,11 @@ int32_T databaseOperations_databaseOperationsSearchOrder(int32_T searchingPS, in
 
 
 
-int32_T databaseOperations_databaseOperationsRemoveObsoleteProductionStations(){
+int32_T databaseOperations_databaseOperationsHeartbeatProductionStation(int32_T psID){
 
-/** Start of user code databaseOperations_databaseOperationsRemoveObsoleteProductionStations **/ 
+/** Start of user code databaseOperations_databaseOperationsHeartbeatProductionStation **/ 
 //@TODO: add your implementation here
-#warning Missing implemenation of repository operation 'databaseOperations_databaseOperationsRemoveObsoleteProductionStations'
+#warning Missing implemenation of repository operation 'databaseOperations_databaseOperationsHeartbeatProductionStation'
 	//default return value
 	int32_T ret = 0;
 	return ret;

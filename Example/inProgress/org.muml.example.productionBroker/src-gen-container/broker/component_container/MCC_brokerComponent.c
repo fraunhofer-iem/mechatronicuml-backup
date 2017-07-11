@@ -116,6 +116,7 @@
 																		msg->orderID = instance->orderID;
 																		msg->ingredientID = instance->ingredientID;
 																		msg->amount = instance->amount;
+																		msg->timeout = instance->timeout;
 																
 																DDS_MessagessimpleOrder_MessagesTypeSupport_delete_data_ex(instance,DDS_BOOLEAN_TRUE);
 																return true;
@@ -855,14 +856,14 @@
 			switch(ID){
 				case CI_BROKERBROKER:
 					b.ID = ID;
-							b.BROKERFORPSPORT = PORT_UNCONNECTED;
-							b.createBROKERFORPSPORTHandle = &create_BROKERFORPSPORTDDSHandle;
-							b.BROKERFORPSPORT_op.dds_option.domainID = 0;
-							b.BROKERFORPSPORT_op.dds_option.partition = 12336;
 							b.GETORDER = PORT_UNCONNECTED;
 							b.createGETORDERHandle = &create_GETORDERDDSHandle;
 							b.GETORDER_op.dds_option.domainID = 0;
 							b.GETORDER_op.dds_option.partition = 24978;
+							b.BROKERFORPSPORT = PORT_UNCONNECTED;
+							b.createBROKERFORPSPORTHandle = &create_BROKERFORPSPORTDDSHandle;
+							b.BROKERFORPSPORT_op.dds_option.domainID = 0;
+							b.BROKERFORPSPORT_op.dds_option.partition = 12336;
 				break;
 			default:
 				break;

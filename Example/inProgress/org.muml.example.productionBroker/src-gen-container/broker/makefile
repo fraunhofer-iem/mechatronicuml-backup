@@ -21,10 +21,9 @@ RTSC = brokerBrokerStateChart.o
 COMP = brokerComponent.o  
 CONTMAPPING = 
 OPERATIONREPOSITORIES = databaseOperationsOpRep.o		
-LIB =   Debug.o sqlite3.o cJSON.o
+LIB =   Debug.o cJSON.o
 CC = gcc
 CFLAGS = -DC99 -DDEBUG -ggdb -Wall -c  $(DEFINES) -I types -I lib -I $(NDDSHOME)/include -I $(NDDSHOME)/include/ndds -ldl -lpthread -LLIBDIR
-SQLITEFLAGS = -DSQLITE_ENABLE_UNLOCK_NOTIFY
 all: app
 
 
@@ -57,9 +56,6 @@ MCC_brokerComponent.o: component_container/MCC_brokerComponent.c
 
 Debug.o: lib/Debug.c
 	$(CC) $(CFLAGS) lib/Debug.c
-
-sqlite3.o: lib/sqlite3.c
-	$(CC) $(CFLAGS) lib/sqlite3.c $(SQLITEFLAGS)
 	
 cJSON.o: lib/cJSON.c
 	$(CC) $(CFLAGS) lib/cJSON.c	

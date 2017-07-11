@@ -174,8 +174,7 @@
 						BROKERBROKER_INACTIVE,
 						STATE_BROKERINIT /**< Represents the State: STATE_BROKERINIT of the Realtime-StateChart: BrokerBroker */
 						,
-								STATE_BROKERGETORDERINIT /**< Represents the State: STATE_BROKERGETORDERINIT of the Realtime-StateChart: BrokerGetOrderGetOrderStatechart */
-						,		STATE_BROKERGETORDERMANAGEORDERS /**< Represents the State: STATE_BROKERGETORDERMANAGEORDERS of the Realtime-StateChart: BrokerGetOrderGetOrderStatechart */
+								STATE_BROKERGETORDERMANAGEORDERS /**< Represents the State: STATE_BROKERGETORDERMANAGEORDERS of the Realtime-StateChart: BrokerGetOrderGetOrderStatechart */
 						,		STATE_BROKERBROKERFORPSPORTINIT /**< Represents the State: STATE_BROKERBROKERFORPSPORTINIT of the Realtime-StateChart: BrokerBrokerForPSPortOrderBrokerforPsRTSC */
 						,		STATE_BROKERBROKERFORPSPORTPROCESSORDERREQUEST /**< Represents the State: STATE_BROKERBROKERFORPSPORTPROCESSORDERREQUEST of the Realtime-StateChart: BrokerBrokerForPSPortOrderBrokerforPsRTSC */
 						,		STATE_BROKERBROKERFORPSPORTRESET /**< Represents the State: STATE_BROKERBROKERFORPSPORTRESET of the Realtime-StateChart: BrokerBrokerForPSPortOrderBrokerforPsRTSC */	
@@ -200,7 +199,6 @@
 							bool_t BrokerGetOrderGetOrderStatechart_isExecutable;/**< Execution Verifier of RTSC: BrokerGetOrderGetOrderStatechart. This variable is used to ensure that a RTSC is executed only once per execution cycle */
 							bool_t BrokerBrokerForPSPortOrderBrokerforPsRTSC_isExecutable;/**< Execution Verifier of RTSC: BrokerBrokerForPSPortOrderBrokerforPsRTSC. This variable is used to ensure that a RTSC is executed only once per execution cycle */
 					
-							Clock brokerBrokerForPSPortGarbageCollectorScheduleBrokerBrokerForPSPortOrderBrokerforPsRTSCClock;/**< The Clock: BrokerBrokerForPSPortGarbageCollectorScheduleBrokerBrokerForPSPortOrderBrokerforPsRTSC */
 				
 				
 					
@@ -265,14 +263,6 @@
 					void BrokerBrokerStateChart_processStep(BrokerBrokerStateChart* rtsc);
 			
 				/**
-				 * @brief Leaves the Region: getOrderStatechart of the Realtime-StateChart: BrokerBroker
-				 * @details This method is called, whenever a the Region: getOrderStatechart is left.
-				 * 			The correct State is set and all Exit-Events are executed.
-				 *
-				 * @param rtsc The specific BrokerBrokerStateChart whose Region: getOrderStatechart shall be exit
-				 */
-					void BrokerGetOrderGetOrderStatechartStateChart_exit(BrokerBrokerStateChart* rtsc);
-				/**
 				 * @brief Leaves the Region: orderBrokerforPsRTSC of the Realtime-StateChart: BrokerBroker
 				 * @details This method is called, whenever a the Region: orderBrokerforPsRTSC is left.
 				 * 			The correct State is set and all Exit-Events are executed.
@@ -280,6 +270,14 @@
 				 * @param rtsc The specific BrokerBrokerStateChart whose Region: orderBrokerforPsRTSC shall be exit
 				 */
 					void BrokerBrokerForPSPortOrderBrokerforPsRTSCStateChart_exit(BrokerBrokerStateChart* rtsc);
+				/**
+				 * @brief Leaves the Region: getOrderStatechart of the Realtime-StateChart: BrokerBroker
+				 * @details This method is called, whenever a the Region: getOrderStatechart is left.
+				 * 			The correct State is set and all Exit-Events are executed.
+				 *
+				 * @param rtsc The specific BrokerBrokerStateChart whose Region: getOrderStatechart shall be exit
+				 */
+					void BrokerGetOrderGetOrderStatechartStateChart_exit(BrokerBrokerStateChart* rtsc);
 						
 				/**
 				 * @brief Returns wether the Realtime-StateChart: BrokerBroker is in a specific State

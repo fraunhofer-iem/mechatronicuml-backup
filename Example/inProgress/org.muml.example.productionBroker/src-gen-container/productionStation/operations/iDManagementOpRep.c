@@ -1,8 +1,6 @@
 
 #include "iDManagementOpRep.h"
 /** Start of user code User includes **/ 
-#include <stdio.h>
-#include <time.h>
 
 
 /**End of user code**/
@@ -10,11 +8,13 @@
 int32_T IDManagement_iDManagementGetID(){
 
 /** Start of user code IDManagement_iDManagementGetID **/ 
-	srand(clock());
-	int32_T ret = rand();
-	printf("RandNr:%d",ret);
+//@TODO: add your implementation here
+#warning Missing implemenation of repository operation 'IDManagement_iDManagementGetID'
+	//default return value
+	int32_T ret = 0;
 	return ret;
 /**End of user code**/
+
 }
 
 

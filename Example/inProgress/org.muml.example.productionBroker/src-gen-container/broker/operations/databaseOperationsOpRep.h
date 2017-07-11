@@ -12,9 +12,9 @@
 		/**
 		 * @brief Implementation stub of operation insertOrder
  		 * @details This function shall contain the implementation of the operation insertOrder.
-		 * @param orderID @param ingredientID @param amount 
+		 * @param orderID @param ingredientID @param amount @param timeout 
 		 */
-		int32_T databaseOperations_databaseOperationsInsertOrder(int32_T orderID, int32_T ingredientID, int32_T amount);
+		int32_T databaseOperations_databaseOperationsInsertOrder(int32_T orderID, int32_T ingredientID, int32_T amount, int32_T timeout);
 		/**
 		 * @brief Implementation stub of operation deleteOrder
  		 * @details This function shall contain the implementation of the operation deleteOrder.
@@ -34,12 +34,6 @@
 		 */
 		int32_T databaseOperations_databaseOperationsGetOrderAmount(int32_T orderID);
 		/**
-		 * @brief Implementation stub of operation createDatabase
- 		 * @details This function shall contain the implementation of the operation createDatabase.
-		 * 
-		 */
-		int32_T databaseOperations_databaseOperationsCreateDatabase();
-		/**
 		 * @brief Implementation stub of operation defineProductionStationForOrder
  		 * @details This function shall contain the implementation of the operation defineProductionStationForOrder.
 		 * @param orderID @param productionStationID 
@@ -48,21 +42,15 @@
 		/**
 		 * @brief Implementation stub of operation searchOrder
  		 * @details This function shall contain the implementation of the operation searchOrder.
-		 * @param searchingPS @param latestOrderID @param producibleIngredients 
+		 * @param searchingPS @param producibleIngredients 
 		 */
-		int32_T databaseOperations_databaseOperationsSearchOrder(int32_T searchingPS, int32_T latestOrderID, int32_T producibleIngredients);
+		int32_T databaseOperations_databaseOperationsSearchOrder(int32_T searchingPS, int32_T producibleIngredients);
 		/**
-		 * @brief Implementation stub of operation removeObsoleteProductionStations
- 		 * @details This function shall contain the implementation of the operation removeObsoleteProductionStations.
-		 * 
+		 * @brief Implementation stub of operation heartbeatProductionStation
+ 		 * @details This function shall contain the implementation of the operation heartbeatProductionStation.
+		 * @param psID 
 		 */
-		int32_T databaseOperations_databaseOperationsRemoveObsoleteProductionStations();
-				/**
-		 * @brief Implementation stub of operation databaseOperations_databaseOperationsHeartbeatUpdate
- 		 * @details This function shall contain the implementation of the operation databaseOperations_databaseOperationsHeartbeatUpdate.
-		 * 
-		 */
-		int32_T databaseOperations_databaseOperationsHeartbeatUpdate(int32_T psID);
+		int32_T databaseOperations_databaseOperationsHeartbeatProductionStation(int32_T psID);
 
 
 #ifdef __cplusplus
