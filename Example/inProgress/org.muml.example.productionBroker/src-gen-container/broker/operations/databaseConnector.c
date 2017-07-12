@@ -180,16 +180,13 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
  */
 int deleteOrder(int orderID)
 {
-	cJSON *update;
-	update = cJSON_CreateObject();
-	cJSON_AddItemToObject(update, "update", cJSON_CreateString("orderDone"));
-	cJSON *changedTables;
-	cJSON_AddItemToObject(update, "changedTables", changedTables = cJSON_CreateObject());
-	cJSON *orders;
-	cJSON_AddItemToObject(changedTables, "Orders", orders = cJSON_CreateObject());
-	cJSON_AddNumberToObject(orders, "OrderID", orderID);
+	//TODO get correct time
+
+	cJSON *order = cJSON_CreateObject();
+	cJSON_AddNumberToObject(order, "OrderID", orderID);
 	cJSON_AddStringToObject(orders, "OrderStatus", "DONE");
-	postToDatabaseServer(cJSON_Print(update));
+	cJSON_AddNumberToObject(order, "ProductionEndTime", timeinfo);
+	postToDatabaseServer(cJSON_Print(order));
 
 	return 0;
 }
@@ -200,13 +197,18 @@ int deleteOrder(int orderID)
  */
 int getOrderIngredientID(int orderID)
 {
+	//TODO get ingredient
 	int ingredientID = getFromDatabaseServer(cJSON_Print(update));
 	printf("Successfully retrieved ingredientID %d for order %d.\n", ingredientID, orderID);
 	return ingredientID;
 }
 
+/**
+ * Retrieve the amount for the order with the given id.
+ */
 int getOrderAmount(int orderID)
 {
+	//TODO get amount
 	int orderAmount = getFromDatabaseServer(cJSON_Print(update));
 	printf("Successfully retrieved amount %d for order %d.\n", orderAmount, orderID);
 	return orderAmount;
@@ -217,7 +219,7 @@ int getOrderAmount(int orderID)
  */
 int searchOrder(int searchingPS, int producibleIngredients)
 {
-	//json format: {update: {searchOrder, changedTables: {ProductionStations: {ProductionStationID: id}}}}
+	//TODO search order
 	cJSON *update;
 	update = cJSON_CreateObject();
 	cJSON_AddItemToObject(update, "update", cJSON_CreateString("searchOrder"));
