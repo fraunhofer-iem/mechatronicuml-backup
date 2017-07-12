@@ -140,6 +140,7 @@ int insertOrder(int orderID, int ingredientID, int amount, int timeout)
 	timeinfo = localtime (&rawtime);
 	prinf(timeinfo);
 	printf ("Current local time and date: %s", asctime(timeinfo));
+	//TODO get correct time format
 
 	cJSON *order = cJSON_CreateObject();
 	cJSON_AddNumberToObject(order, "Amount", amount);
@@ -159,19 +160,17 @@ int insertOrder(int orderID, int ingredientID, int amount, int timeout)
  */
 int defineProductionStationForOrder(int orderID, int productionStationID)
 {
-	cJSON *update = cJSON_CreateObject();
-	cJSON_AddItemToObject(update, "update", cJSON_CreateString("orderAssigned"));
-	cJSON *changedTables;
-	cJSON_AddItemToObject(update, "changedTables", changedTables = cJSON_CreateObject());
-	cJSON *orders;
-	cJSON_AddItemToObject(changedTables, "Orders", orders = cJSON_CreateObject());
-	cJSON_AddNumberToObject(orders, "OrderID", orderID);
-	cJSON_AddStringToObject(orders, "OrderStatus", "IN_PRODUCTION");
-	cJSON *orderAllocationJSON;
-	cJSON_AddItemToObject(changedTables, "OrderAllocation", orderAllocationJSON = cJSON_CreateObject());
-	cJSON_AddNumberToObject(orderAllocationJSON, "OrderID", orderID);
-	cJSON_AddNumberToObject(orderAllocationJSON, "ProductionStationID", productionStationID);
-	postToDatabaseServer(cJSON_Print(update));
+	cJSON *orderAllocation = cJSON_CreateObject();
+	cJSON_AddNumberToObject(orderAllocation, "OrderID", orderID);
+	cJSON_AddNumberToObject(orderAllocation, "ProductionStationID", productionStationID);
+	postToDatabaseServer(cJSON_Print(orderAllocation));
+
+	cJSON *order = cJSON_CreateObject();
+	cJSON_AddNumberToObject(order, "OrderID", orderID);
+	cJSON_AddStringToObject(order, "OrderStatus", "IN_PRODUCTION");
+	//TODO get correct time
+	cJSON_AddNumberToObject(order, "ProductionStartTime: Date,", time);
+	postToDatabaseServer(cJSON_Print(order));
 
 	return 0;
 }
