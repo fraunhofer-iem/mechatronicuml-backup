@@ -184,7 +184,7 @@ int deleteOrder(int orderID)
 
 	cJSON *order = cJSON_CreateObject();
 	cJSON_AddNumberToObject(order, "OrderID", orderID);
-	cJSON_AddStringToObject(orders, "OrderStatus", "DONE");
+	cJSON_AddStringToObject(order, "OrderStatus", "DONE");
 	cJSON_AddNumberToObject(order, "ProductionEndTime", timeinfo);
 	postToDatabaseServer(cJSON_Print(order));
 
