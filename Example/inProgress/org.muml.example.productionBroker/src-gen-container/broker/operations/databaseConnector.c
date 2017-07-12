@@ -1,25 +1,23 @@
 /*
- * Compile this file together with the sqlite database engine source code
- * to generate the executable. 
+ * Connects to the database microservice specified in the config.json
  *
  */
 
-#include <stdio.h>  /* puts() */
-#include <stdlib.h> /* exit() */
+#include <time.h>
 #include <string.h> /* strchr(), strlen(), .. */
 #include <curl/curl.h>
 #include "cJSON.h"
 
-char *readConfigFile();
-void sendToDatabaseServer(char *jsonString);
-int insertOrder(int orderId, int ingredientID, int amount);
+const char * readConfigFile();
+int getFromDatabaseServer(char *jsonString);
+void postToDatabaseServer(char *jsonString);
+int insertOrder(int orderId, int ingredientID, int amount, int timeout);
 int defineProductionStationForOrder(int orderID, int productionStationID);
 int getOrderIngredientID(int orderID);
 int getOrderAmount(int orderID);
-int searchOrder(int searchingPS, int latestOrderID, int producibleIngredients);
+int searchOrder(int searchingPS, int producibleIngredients);
 int deleteOrder(int orderID);
 int heartBeatProductionStation(int productionStationID);
-void extractLogsAndExit()
 
 CURL *curl;
 char *url = readConfigFile();
@@ -28,27 +26,24 @@ char *url = readConfigFile();
  * Takes a json string and sends it to the server via post request
  *
  */
-void sendToDatabaseServer(char *jsonString)
+int getFromDatabaseServer(char *jsonString)
 {
 	curl = curl_easy_init();
 	if (curl)
 	{
-		printf("Curl init successful. \n");
 		/* First set the URL that is about to receive our POST. This URL can
 		   just as well be a https:// URL if that is what should receive the data. */
 		curl_easy_setopt(curl, CURLOPT_URL, url);
 		/* Only allow HTTP traffic */
 		curl_easy_setopt(curl, CURLOPT_PROTOCOLS, CURLPROTO_HTTP);
 		printf("Json String: %s \n", jsonString);
-		//setting correct headers so that the server will interpret
-		//the post body as json
+		//setting correct headers so that the server will interpret the post body as json
 		struct curl_slist *headers = NULL;
 		headers = curl_slist_append(headers, "Accept: application/json");
 		headers = curl_slist_append(headers, "Content-Type: application/json");
 		headers = curl_slist_append(headers, "charsets: utf-8");
 		curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
-		/* pass in a pointer to the data - libcurl will not copy */
-		curl_easy_setopt(curl, CURLOPT_POSTFIELDS, jsonString);
+		//TODO put get info from string here
 		/* Perform the request, res will get the return code */
 		CURLcode res = curl_easy_perform(curl);
 		/* Check for errors */
@@ -61,7 +56,44 @@ void sendToDatabaseServer(char *jsonString)
 	}
 }
 
-char *readConfigFile()
+/**
+ * Takes a json string and sends it to the server via post request
+ *
+ */
+void postToDatabaseServer(char *jsonString)
+{
+	curl = curl_easy_init();
+	if (curl)
+	{
+		/* First set the URL that is about to receive our POST. This URL can
+		   just as well be a https:// URL if that is what should receive the data. */
+		curl_easy_setopt(curl, CURLOPT_URL, url);
+		/* Only allow HTTP traffic */
+		curl_easy_setopt(curl, CURLOPT_PROTOCOLS, CURLPROTO_HTTP);
+		printf("Json String: %s \n", jsonString);
+		/* setting correct headers so that the server will interpret the post body as json */
+		struct curl_slist *headers = NULL;
+		headers = curl_slist_append(headers, "Accept: application/json");
+		headers = curl_slist_append(headers, "Content-Type: application/json");
+		headers = curl_slist_append(headers, "charsets: utf-8");
+		curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+
+		/* pass in a pointer to the data - libcurl will not copy */
+		curl_easy_setopt(curl, CURLOPT_POSTFIELDS, jsonString);
+		/* Perform the request, res will get the return code */
+		CURLcode res = curl_easy_perform(curl);
+		/* Check for errors */
+		if (res != CURLE_OK)
+		{
+			fprintf(stderr, "curl_easy_perform() failed: %s\n",
+					curl_easy_strerror(res));
+		}
+		curl_easy_cleanup(curl);
+	}
+	else printf ("No database");
+}
+
+const char * readConfigFile()
 {
 	char *buffer = 0;
 	long length;
@@ -97,19 +129,26 @@ char *readConfigFile()
 /**
  * Inserts and order with its ID, ingredient and amount and initial status "IDLE"
  * and the current time as orderTime
+ *
  */
-int insertOrder(int orderID, int ingredientID, int amount)
+int insertOrder(int orderID, int ingredientID, int amount, int timeout)
 {
-	cJSON *update;
-	update = cJSON_CreateObject();
-	cJSON_AddItemToObject(update, "update", cJSON_CreateString("newOrder"));
-	cJSON *changedTables;
-	cJSON_AddItemToObject(update, "changedTables", changedTables = cJSON_CreateObject());
-	cJSON *orders;
-	cJSON_AddItemToObject(changedTables, "Orders", orders = cJSON_CreateObject());
-	cJSON_AddNumberToObject(orders, "OrderID", orderID);
-	cJSON_AddStringToObject(orders, "OrderStatus", "IDLE");
-	sendToDatabaseServer(cJSON_Print(update));
+	// Get current time for order info
+	time_t rawtime;
+	struct tm * timeinfo;
+	time (&rawtime);
+	timeinfo = localtime (&rawtime);
+	prinf(timeinfo);
+	printf ("Current local time and date: %s", asctime(timeinfo));
+
+	cJSON *order = cJSON_CreateObject();
+	cJSON_AddNumberToObject(order, "Amount", amount);
+	cJSON_AddNumberToObject(order, "Ingredient", ingredientID);
+	cJSON_AddNumberToObject(order, "OrderID", orderID);
+	cJSON_AddStringToObject(order, "OrderStatus", "IDLE");
+	cJSON_AddNumberToObject(order, "OrderTime", timeinfo);
+	cJSON_AddNumberToObject(order, "Timeout", timeout);
+	postToDatabaseServer(cJSON_Print(order));
 
 	return 0;
 }
@@ -132,7 +171,7 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 	cJSON_AddItemToObject(changedTables, "OrderAllocation", orderAllocationJSON = cJSON_CreateObject());
 	cJSON_AddNumberToObject(orderAllocationJSON, "OrderID", orderID);
 	cJSON_AddNumberToObject(orderAllocationJSON, "ProductionStationID", productionStationID);
-	sendToDatabaseServer(cJSON_Print(update));
+	postToDatabaseServer(cJSON_Print(update));
 
 	return 0;
 }
@@ -151,7 +190,7 @@ int deleteOrder(int orderID)
 	cJSON_AddItemToObject(changedTables, "Orders", orders = cJSON_CreateObject());
 	cJSON_AddNumberToObject(orders, "OrderID", orderID);
 	cJSON_AddStringToObject(orders, "OrderStatus", "DONE");
-	sendToDatabaseServer(cJSON_Print(update));
+	postToDatabaseServer(cJSON_Print(update));
 
 	return 0;
 }
@@ -162,20 +201,22 @@ int deleteOrder(int orderID)
  */
 int getOrderIngredientID(int orderID)
 {
+	int ingredientID = getFromDatabaseServer(cJSON_Print(update));
 	printf("Successfully retrieved ingredientID %d for order %d.\n", ingredientID, orderID);
 	return ingredientID;
 }
 
 int getOrderAmount(int orderID)
 {
-	printf("Successfully retrieved amount %d for order %d.\n", amount, orderID);
-	return amount;
+	int orderAmount = getFromDatabaseServer(cJSON_Print(update));
+	printf("Successfully retrieved amount %d for order %d.\n", orderAmount, orderID);
+	return orderAmount;
 }
 
 /**
  * Searches an order without a production station assigned
  */
-int searchOrder(int searchingPS, int latestOrderID, int producibleIngredients)
+int searchOrder(int searchingPS, int producibleIngredients)
 {
 	//json format: {update: {searchOrder, changedTables: {ProductionStations: {ProductionStationID: id}}}}
 	cJSON *update;
@@ -187,7 +228,7 @@ int searchOrder(int searchingPS, int latestOrderID, int producibleIngredients)
 	cJSON_AddItemToObject(changedTables, "ProductionStations", productionStations = cJSON_CreateObject());
 	cJSON_AddNumberToObject(productionStations, "ProductionStationID", searchingPS);
 
-	sendToDatabaseServer(cJSON_Print(update));
+	int orderID = getFromDatabaseServer(cJSON_Print(update));
 
 	return orderID;
 }
@@ -210,8 +251,8 @@ int heartBeatProductionStation(int productionStationID)
 	cJSON_AddItemToObject(changedTables, "ProductionStations", productionStations = cJSON_CreateObject());
 	cJSON_AddNumberToObject(productionStations, "ProductionStationID", productionStationID);
 
-	sendToDatabaseServer(cJSON_Print(update));
+    postToDatabaseServer(cJSON_Print(update));
 
-	return orderID;
+	return 0;
 }
 
