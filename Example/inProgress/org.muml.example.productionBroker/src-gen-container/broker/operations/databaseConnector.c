@@ -9,8 +9,8 @@
 #include "cJSON.h"
 
 const char * readConfigFile();
-int getFromDatabaseServer(char *jsonString);
-void postToDatabaseServer(char *jsonString);
+int getFromDatabaseServer(char[] apiEndPoint, char *jsonString);
+void postToDatabaseServer(char[] apiEndPoint, char *jsonString);
 int insertOrder(int orderId, int ingredientID, int amount, int timeout);
 int defineProductionStationForOrder(int orderID, int productionStationID);
 int getOrderIngredientID(int orderID);
@@ -26,13 +26,16 @@ char *url = readConfigFile();
  * Takes a json string and sends it to the server via post request
  *
  */
-int getFromDatabaseServer(char *jsonString)
+int getFromDatabaseServer(char[] apiEndPoint, char *jsonString)
 {
 	curl = curl_easy_init();
 	if (curl)
 	{
 		/* First set the URL that is about to receive our POST. This URL can
 		   just as well be a https:// URL if that is what should receive the data. */
+		char *fullUrl = malloc(sizeof(url)+sizeof(apiEndPoint));
+		strcopy(fullUrl, url);
+		strncat(fullUrl, apiEndPoint, sizeof(apiEndPoint));
 		curl_easy_setopt(curl, CURLOPT_URL, url);
 		/* Only allow HTTP traffic */
 		curl_easy_setopt(curl, CURLOPT_PROTOCOLS, CURLPROTO_HTTP);
@@ -60,7 +63,7 @@ int getFromDatabaseServer(char *jsonString)
  * Takes a json string and sends it to the server via post request
  *
  */
-void postToDatabaseServer(char *jsonString)
+void postToDatabaseServer(char[] apiEndPoint, char *jsonString)
 {
 	curl = curl_easy_init();
 	if (curl)
@@ -149,7 +152,7 @@ int insertOrder(int orderID, int ingredientID, int amount, int timeout)
 	cJSON_AddStringToObject(order, "OrderStatus", "IDLE");
 	cJSON_AddNumberToObject(order, "OrderTime", timeinfo);
 	cJSON_AddNumberToObject(order, "Timeout", timeout);
-	postToDatabaseServer(cJSON_Print(order));
+	postToDatabaseServer("order/insert", cJSON_Print(order));
 
 	return 0;
 }
@@ -170,7 +173,7 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 	cJSON_AddStringToObject(order, "OrderStatus", "IN_PRODUCTION");
 	//TODO get correct time
 	cJSON_AddNumberToObject(order, "ProductionStartTime: Date,", time);
-	postToDatabaseServer(cJSON_Print(order));
+	postToDatabaseServer("productionStation/assignOrder", cJSON_Print(order));
 
 	return 0;
 }
@@ -186,7 +189,7 @@ int deleteOrder(int orderID)
 	cJSON_AddNumberToObject(order, "OrderID", orderID);
 	cJSON_AddStringToObject(order, "OrderStatus", "DONE");
 	cJSON_AddNumberToObject(order, "ProductionEndTime", timeinfo);
-	postToDatabaseServer(cJSON_Print(order));
+	postToDatabaseServer("order/done", cJSON_Print(order));
 
 	return 0;
 }
@@ -198,7 +201,7 @@ int deleteOrder(int orderID)
 int getOrderIngredientID(int orderID)
 {
 	//TODO get ingredient
-	int ingredientID = getFromDatabaseServer(cJSON_Print(update));
+	int ingredientID = getFromDatabaseServer("order/ingredient", cJSON_Print(update));
 	printf("Successfully retrieved ingredientID %d for order %d.\n", ingredientID, orderID);
 	return ingredientID;
 }
@@ -209,7 +212,7 @@ int getOrderIngredientID(int orderID)
 int getOrderAmount(int orderID)
 {
 	//TODO get amount
-	int orderAmount = getFromDatabaseServer(cJSON_Print(update));
+	int orderAmount = getFromDatabaseServer("order/amount", cJSON_Print(update));
 	printf("Successfully retrieved amount %d for order %d.\n", orderAmount, orderID);
 	return orderAmount;
 }
@@ -229,7 +232,7 @@ int searchOrder(int searchingPS, int producibleIngredients)
 	cJSON_AddItemToObject(changedTables, "ProductionStations", productionStations = cJSON_CreateObject());
 	cJSON_AddNumberToObject(productionStations, "ProductionStationID", searchingPS);
 
-	int orderID = getFromDatabaseServer(cJSON_Print(update));
+	int orderID = getFromDatabaseServer("order/search", cJSON_Print(update));
 
 	return orderID;
 }
@@ -241,18 +244,12 @@ int searchOrder(int searchingPS, int producibleIngredients)
  */
 int heartBeatProductionStation(int productionStationID)
 {
-	//Send notification about seen production station to the visualization server
-	//json format: {update: {searchOrder, changedTables: {ProductionStations: {ProductionStationID: id}}}}
-	cJSON *update;
-	update = cJSON_CreateObject();
-	cJSON_AddItemToObject(update, "update", cJSON_CreateString("searchOrder"));
-	cJSON *changedTables;
-	cJSON_AddItemToObject(update, "changedTables", changedTables = cJSON_CreateObject());
-	cJSON *productionStations;
-	cJSON_AddItemToObject(changedTables, "ProductionStations", productionStations = cJSON_CreateObject());
-	cJSON_AddNumberToObject(productionStations, "ProductionStationID", productionStationID);
+	//TODO get correct time
+	cJSON *heartBeat = cJSON_CreateObject();
+	cJSON_AddNumberToObject(heartBeat, "ProductionStationID", productionStationID);
+	cJSON_AddNumberToObject(heartBeat, "ProductionStationID", lastSeen);
 
-    postToDatabaseServer(cJSON_Print(update));
+    postToDatabaseServer("productionStation/heartBeat", cJSON_Print(heartBeat));
 
 	return 0;
 }
