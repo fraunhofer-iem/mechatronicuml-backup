@@ -172,7 +172,7 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	 * @return the value of the '<em>Embedded</em>' attribute.
 	 * @see org.muml.pim.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart_Embedded()
 	 * @model default="false" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='not self.parentStatechart.oclIsUndefined()'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='not self.parentState.oclIsUndefined()'"
 	 * @generated
 	 */
 	boolean isEmbedded();
@@ -192,7 +192,7 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	 * @return the value of the '<em>All Available Variables</em>' reference list.
 	 * @see org.muml.pim.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart_AllAvailableVariables()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self -> closure(if parentStatechart.oclIsUndefined() then self else parentState.parentStatechart endif).variables->asOrderedSet()'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self -> closure(if parentState.parentStatechart.oclIsUndefined() then self else parentState.parentStatechart endif).variables->asOrderedSet()'"
 	 * @generated
 	 */
 	EList<Variable> getAllAvailableVariables();

@@ -1988,13 +1988,13 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (getRealtimeStatechart_Embedded(), 
 		   source, 
 		   new String[] {
-			 "derivation", "not self.parentStatechart.oclIsUndefined()"
+			 "derivation", "not self.parentState.oclIsUndefined()"
 		   });	
 		addAnnotation
 		  (getRealtimeStatechart_AllAvailableVariables(), 
 		   source, 
 		   new String[] {
-			 "derivation", "self -> closure(if parentStatechart.oclIsUndefined() then self else parentState.parentStatechart endif).variables->asOrderedSet()"
+			 "derivation", "self -> closure(if parentState.parentStatechart.oclIsUndefined() then self else parentState.parentStatechart endif).variables->asOrderedSet()"
 		   });	
 		addAnnotation
 		  (getRealtimeStatechart_AllAvailableOperations(), 
