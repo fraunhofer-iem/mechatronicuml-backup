@@ -46,7 +46,6 @@
 		
   
   <modules>
-    <module>mm/org.muml.psm.allocation.language</module>  
     <module>org.muml.psm</module>
     <module>org.muml.psm.api.apimappinglanguage.xtext</module>
     <module>org.muml.psm.api.apimappinglanguage.xtext.ui</module>
