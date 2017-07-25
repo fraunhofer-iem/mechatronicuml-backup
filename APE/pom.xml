@@ -35,6 +35,13 @@
     <module>org.muml.ape.repository</module>
   </modules>
   
+    <dependencies>
+      <dependency>
+         <groupId>org.muml.emm.group</groupId>
+         <artifactId>org.muml.emm</artifactId>
+         <version>1.0.0-SNAPSHOT</version>
+      </dependency>
+   </dependencies>
   
   <build>
     <plugins>
@@ -122,32 +129,6 @@
   
     <profiles>
         <profile>
-          <id>Local</id> <!-- local build, uses local maven repositories -->
-          <activation>
-            <property>
-              <name>env</name>
-              <value>local</value>
-            </property>
-          </activation>
-          <properties>
-            <repobase>file:///${userpath}</repobase>
-            <repopath></repopath>
-          </properties>
-        </profile>
-        <profile>
-          <id>Jenkins</id> <!-- Jenkins build, only works on Jenkins file system -->
-          <activation>
-            <property>
-              <name>env</name>
-              <value>!local</value>
-            </property>
-          </activation>
-          <properties>
-            <repobase>file:///data/jenkins/jobs</repobase>
-            <repopath>lastSuccessful/archive/</repopath>
-          </properties>
-        </profile>
-        <profile>
           <id>localJenkins</id> <!-- build this locally, but download other projects from Jenkins-->
           <activation>
             <property>
@@ -155,10 +136,16 @@
               <value>localJenkins</value>
             </property>
           </activation>
-          <properties>
-            <repobase>http://muml-build.cs.upb.de/job</repobase>
-            <repopath>lastSuccessfulBuild/artifact/</repopath>
-          </properties>
+		  <repositories>	
+			  <repository>
+				<id>ModelMigration</id>
+				<layout>p2</layout>
+				<url>https://muml-build.cs.upb.de/job/ModelMigration-Maven/lastSuccessfulBuild/artifact/org.muml.emm.repository/target/</url>
+				<snapshots>
+					<enabled>true</enabled>
+				</snapshots>
+			</repository>
+		</repositories>		  
         </profile>
   </profiles>
 
@@ -168,10 +155,5 @@
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/releases/oxygen</url>
         </repository>
-		<repository>
-			<id>model-migration</id>
-			<layout>p2</layout>
-			<url>${repobase}/ModelMigration-Maven/${repopath}org.muml.emm.repository/target/repository</url>
-		</repository>
-    </repositories>
+	</repositories>
 </project>
