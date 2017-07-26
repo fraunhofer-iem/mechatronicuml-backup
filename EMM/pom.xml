@@ -31,6 +31,7 @@
     <!-- <module>org.muml.emm.tests</module> -->
     <module>org.muml.emm.ui</module>
   </modules>
+	
   <build>
     <plugins>
       <plugin>
@@ -118,14 +119,9 @@
   
    <repositories>
 		<repository>
-			<id>eclipse-neon</id>
+			<id>eclipse-oxygen</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/releases/neon</url>
-		</repository>
-		<repository>
-			<id>eclipse-updates</id>
-			<layout>p2</layout>
-			<url>http://download.eclipse.org/eclipse/updates/4.6</url>
+			<url>http://download.eclipse.org/releases/oxygen</url>
 		</repository>
    </repositories>
 </project>
