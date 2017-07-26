@@ -35,16 +35,14 @@
     <module>org.muml.ape.repository</module>
   </modules>
   
-    <dependencies>
-      <dependency>
-         <groupId>org.muml.emm.group</groupId>
-         <artifactId>org.muml.emm</artifactId>
-         <version>1.0.0-SNAPSHOT</version>
-      </dependency>
-   </dependencies>
-  
   <build>
     <plugins>
+	   <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-maven-plugin</artifactId>
+        <version>${tycho-version}</version>
+        <extensions>true</extensions>
+      </plugin>
    <!-- enable source feature generation -->
    <plugin>
     <groupId>org.eclipse.tycho.extras</groupId>
@@ -94,13 +92,7 @@
      </execution>
     </executions>
    </plugin>
-      <plugin>
-        <groupId>org.eclipse.tycho</groupId>
-        <artifactId>tycho-maven-plugin</artifactId>
-        <version>${tycho-version}</version>
-        <extensions>true</extensions>
-      </plugin>
-      <plugin>
+   <plugin>
 		<groupId>org.eclipse.tycho</groupId>
 		<artifactId>target-platform-configuration</artifactId>
 		<version>${tycho-version}</version>
@@ -129,7 +121,7 @@
   
     <profiles>
         <profile>
-          <id>localJenkins</id> <!-- build this locally, but download other projects from Jenkins-->
+          <id>localJenkins</id> 
           <activation>
             <property>
               <name>env</name>
@@ -138,12 +130,9 @@
           </activation>
 		  <repositories>	
 			  <repository>
-				<id>ModelMigration</id>
+				<id>UpdateSite</id>
 				<layout>p2</layout>
-				<url>https://muml-build.cs.upb.de/job/ModelMigration-Maven/lastSuccessfulBuild/artifact/org.muml.emm.repository/target/</url>
-				<snapshots>
-					<enabled>true</enabled>
-				</snapshots>
+				<url>https://muml-build.cs.upb.de/job/UpdateSite-Maven/lastSuccessfulBuild/artifact/org.muml.releng.site.repository/target/repository</url>
 			</repository>
 		</repositories>		  
         </profile>
