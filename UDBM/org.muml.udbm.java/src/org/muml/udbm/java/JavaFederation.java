@@ -427,6 +427,9 @@ public class JavaFederation extends Federation {
 		return true;
 	}
 	
+	/*
+	 * A Federation is a TrueFederation, if it only consists of true clock constrains
+	 */
 	public boolean isTrueFederation(){		
 		Iterator<?> it = (Iterator<?>) this.iteratorOfClockZone();
 		JavaClockZone cz;
@@ -439,6 +442,9 @@ public class JavaFederation extends Federation {
 		return true;
 	}
 	
+	/*
+	 * A Federation is a FalseFederation, if it only consists of false clock constrains
+	 */
 	public boolean isFalseFederation(){		
 		Iterator<?> it = (Iterator<?>) this.iteratorOfClockZone();
 		JavaClockZone cz;
