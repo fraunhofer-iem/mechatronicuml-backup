@@ -14,6 +14,7 @@ import org.muml.udbm.Federation;
 import org.muml.udbm.SimpleClockConstraint;
 import org.muml.udbm.UDBMClock;
 import org.muml.udbm.clockconstraint.ComparativeClockConstraint;
+import org.muml.udbm.clockconstraint.FalseClockConstraint;
 import org.muml.udbm.clockconstraint.RelationalOperator;
 import org.muml.udbm.clockconstraint.TrueClockConstraint;
 import org.slf4j.Logger;
@@ -91,6 +92,32 @@ public class JavaClockZone extends ClockZone {
 			}
 		}
 		return result;
+	}
+	
+	protected boolean containsOnlyTrueClockConstraints(){
+		Iterator<ClockConstraint> cci = this.clockConstraint.iterator();
+		
+		while (cci.hasNext()){
+			ClockConstraint currentCC = cci.next();
+			if (!(currentCC instanceof TrueClockConstraint)){
+				return false;
+			}
+		}
+		
+		return true;
+	}
+	
+	protected boolean containsOnlyFalseClockConstraints(){
+		Iterator<ClockConstraint> cci = this.clockConstraint.iterator();
+		
+		while (cci.hasNext()){
+			ClockConstraint currentCC = cci.next();
+			if (!(currentCC instanceof FalseClockConstraint)){
+				return false;
+			}
+		}
+		
+		return true;
 	}
 
 	@Override

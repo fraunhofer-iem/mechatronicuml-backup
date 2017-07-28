@@ -137,8 +137,39 @@ public class JavaFederation extends Federation {
 	
 	// SergejJ: Function checks for overloaded Federation if it is a (strict) subset of this Federation
 	public boolean contains(JavaFederation javaFederation, boolean checkStrictSubset){
-		JavaFederation jfCopy = (JavaFederation) javaFederation.clone(); 
+		// Check first if overloaded Federation is a TrueFederation or a FalseFederation
+		if (checkStrictSubset == true){
+			if (javaFederation.isTrueFederation()){
+				return false;
+			}
+			
+			if (javaFederation.isFalseFederation()){
+				if (this.isFalseFederation() == false){
+					return true;
+				}
+				else {
+					return false;
+				}
+			}
+		}
+		else {
+			if (javaFederation.isTrueFederation()){
+				if (this.isTrueFederation()){
+					return true;
+				}
+				else {
+					return false;
+				}
+			}
+			
+			if (javaFederation.isFalseFederation()){
+				return true;
+			}
+		}
+	
 		
+		JavaFederation jfCopy = (JavaFederation) javaFederation.clone();
+				
 		Set<? extends ClockZone> clockZones = jfCopy.getClockZone();
 		
 		ClockZone czCopy;
@@ -390,6 +421,30 @@ public class JavaFederation extends Federation {
 		while (it.hasNext()) {
 			cz = (JavaClockZone)it.next();
 			if (cz.sizeOfClockConstraint()>1){
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	public boolean isTrueFederation(){		
+		Iterator<?> it = (Iterator<?>) this.iteratorOfClockZone();
+		JavaClockZone cz;
+		while (it.hasNext()) {
+			cz = (JavaClockZone)it.next();
+			if (cz.containsOnlyTrueClockConstraints() == false){
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	public boolean isFalseFederation(){		
+		Iterator<?> it = (Iterator<?>) this.iteratorOfClockZone();
+		JavaClockZone cz;
+		while (it.hasNext()) {
+			cz = (JavaClockZone)it.next();
+			if (cz.containsOnlyFalseClockConstraints() == false){
 				return false;
 			}
 		}
