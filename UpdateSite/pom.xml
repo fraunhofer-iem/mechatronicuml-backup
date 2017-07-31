@@ -159,7 +159,7 @@
 		<repository>
 			<id>Eloquent</id>
 			<layout>p2</layout>
-			<url>${repobase}/ELOQUENT-Github-Test/${repopath}/plugins/org.muml.eloquent.repository/target/repository</url>
+			<url>${repobase}/ELOQUENT-Github/${repopath}/plugins/org.muml.eloquent.repository/target/repository</url>
 		</repository>
 				<repository>
 			<id>ELOQUENTADAPTER</id>
