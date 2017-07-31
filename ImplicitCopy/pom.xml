@@ -17,7 +17,6 @@
    </properties>
     
   <modules>
-    <!-- <module>org.muml.implicitcopy.buckminster</module> -->
     <module>org.muml.implicitcopy.feature</module>
     <module>org.muml.implicitcopy.qvto.library</module>
     <!-- <module>org.muml.implicitcopy.qvto.library.test</module> -->
@@ -110,14 +109,9 @@
   
    <repositories>
 		<repository>
-			<id>eclipse-neon</id>
+			<id>eclipse-oxygen</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/releases/neon</url>
-		</repository>
-		<repository>
-			<id>eclipse-updates</id>
-			<layout>p2</layout>
-			<url>http://download.eclipse.org/eclipse/updates/4.6</url>
+			<url>http://download.eclipse.org/releases/oxygen</url>
 		</repository>
     </repositories>
 </project>
