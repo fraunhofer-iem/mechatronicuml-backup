@@ -12,9 +12,9 @@ import org.muml.testlanguage.specification.NodeSpecification;
 import org.muml.testlanguage.specification.PortType;
 import org.muml.testlanguage.specification.SpecificationPackage;
 import org.muml.testlanguage.specification.custom.ExecutionException;
-import org.muml.uppaal.trace.diagnostictrace.Result;
-import org.muml.uppaal.trace.diagnostictrace.Trace;
-import org.muml.uppaal.trace.diagnostictrace.TraceRepository;
+import org.muml.uppaal.trace.Result;
+import org.muml.uppaal.trace.Trace;
+import org.muml.uppaal.trace.TraceRepository;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -51,7 +51,7 @@ public class AssertDiagnosticTraceImpl extends AssertBoolImpl implements AssertD
 	public void initialize() {
 		this.setLabel("Assert DiagnosticTrace");
 		this.addPortSpecification(PortType.IN, "trace_repository", false,
-				org.muml.uppaal.trace.diagnostictrace.TraceRepository.class);
+				org.muml.uppaal.trace.TraceRepository.class);
 	}
 
 	/**
