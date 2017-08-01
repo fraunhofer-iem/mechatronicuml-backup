@@ -48,9 +48,10 @@ public class RegionLabelExpressionLabelParser extends ExpressionLabelParserBase 
 	@Override
 
 	protected String getExpressionBody() {
-		return org.muml.pim.realtimestatechart.diagram.expressions.MumlOCLFactory.getExpression(13,
-				org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE.getRegion(), null)
-				.body();
+		return "";
+//		return org.muml.pim.realtimestatechart.diagram.expressions.MumlOCLFactory.getExpression(13,
+//				org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE.getRegion(), null)
+//				.body();
 	}
 
 	/**

@@ -99,7 +99,8 @@ public class RegionRegionContentsCompartmentCanonicalEditPolicy extends Canonica
 	 * @generated
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
-		return RealtimestatechartPackage.eINSTANCE.getRegion_EmbeddedStatechart();
+//		return RealtimestatechartPackage.eINSTANCE.getRegion_EmbeddedStatechart();
+		return null;
 	}
 
 	/**

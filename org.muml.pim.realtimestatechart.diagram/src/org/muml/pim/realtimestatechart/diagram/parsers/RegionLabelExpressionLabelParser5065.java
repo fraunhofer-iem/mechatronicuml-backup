@@ -51,7 +51,8 @@ public class RegionLabelExpressionLabelParser5065 extends ExpressionLabelParserB
 	 */
 	@Override
 	protected String getExpressionBody() {
-		return MumlOCLFactory.getExpression(13, RealtimestatechartPackage.eINSTANCE.getRegion(), null).body();
+		return "";
+//		return MumlOCLFactory.getExpression(13, RealtimestatechartPackage.eINSTANCE.getRegion(), null).body();
 	}
 
 	/**

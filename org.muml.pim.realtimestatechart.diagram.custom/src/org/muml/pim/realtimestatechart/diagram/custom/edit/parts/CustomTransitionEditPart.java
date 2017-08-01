@@ -35,13 +35,14 @@ public class CustomTransitionEditPart extends TransitionEditPart {
 	@Override
 	protected void handleNotificationEvent(Notification notification) {
 		Object feature = notification.getFeature();
-		if (RealtimestatechartPackage.Literals.PRIORITIZED_ELEMENT__PRIORITY
-				.equals(feature)) {
-
-			// Update priority visualization
-			updatePriority();
-
-		} else if (RealtimestatechartPackage.Literals.TRANSITION__SOURCE
+//		if (RealtimestatechartPackage.Literals.PRIORITIZED_ELEMENT__PRIORITY
+//				.equals(feature)) {
+//
+//			// Update priority visualization
+//			updatePriority();
+//
+//		} else
+		if (RealtimestatechartPackage.Literals.TRANSITION__SOURCE
 				.equals(feature)) {
 			updatePriority();
 		} else if (RealtimestatechartPackage.Literals.TRANSITION__URGENT

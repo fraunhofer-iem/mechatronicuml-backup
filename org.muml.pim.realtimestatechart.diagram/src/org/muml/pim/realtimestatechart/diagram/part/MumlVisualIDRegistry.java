@@ -187,9 +187,9 @@ public class MumlVisualIDRegistry {
 			}
 			break;
 		case StateRegionCompartmentEditPart.VISUAL_ID:
-			if (RealtimestatechartPackage.eINSTANCE.getRegion().isSuperTypeOf(domainElement.eClass())) {
-				return RegionEditPart.VISUAL_ID;
-			}
+//			if (RealtimestatechartPackage.eINSTANCE.getRegion().isSuperTypeOf(domainElement.eClass())) {
+//				return RegionEditPart.VISUAL_ID;
+//			}
 			break;
 		case StateChannelCompartmentEditPart.VISUAL_ID:
 			if (RealtimestatechartPackage.eINSTANCE.getSynchronizationChannel().isSuperTypeOf(domainElement.eClass())) {

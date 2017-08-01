@@ -133,15 +133,15 @@ public class RegionRepositionEditPolicy extends
 			try {
 				// Create new order
 				List<Region> newOrder = new ArrayList<Region>();
-				for (Region region : state.getEmbeddedRegions()) {
-
-					if (region == destinationElement) {
-						newOrder.add(childElement);
-					}
-					if (region != childElement) {
-						newOrder.add(region);
-					}
-				}
+//				for (Region region : state.getEmbeddedRegions()) {
+//
+//					if (region == destinationElement) {
+//						newOrder.add(childElement);
+//					}
+//					if (region != childElement) {
+//						newOrder.add(region);
+//					}
+//				}
 				if (destinationElement == null) {
 					newOrder.add(childElement);
 				}
@@ -162,12 +162,12 @@ public class RegionRepositionEditPolicy extends
 			IItemPropertySource ips = (IItemPropertySource) RealtimestatechartDiagramEditorPlugin
 					.getInstance().getItemProvidersAdapterFactory()
 					.adapt(state, IItemPropertySource.class);
-			for (IItemPropertyDescriptor descriptor : ips
-					.getPropertyDescriptors(state)) {
-				if (descriptor.getFeature(state) == RealtimestatechartPackage.Literals.STATE__EMBEDDED_REGIONS) {
-					return descriptor;
-				}
-			}
+//			for (IItemPropertyDescriptor descriptor : ips
+//					.getPropertyDescriptors(state)) {
+//				if (descriptor.getFeature(state) == RealtimestatechartPackage.Literals.STATE__EMBEDDED_REGIONS) {
+//					return descriptor;
+//				}
+//			}
 			return null;
 		}
 

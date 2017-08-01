@@ -45,25 +45,25 @@ public class CustomStateEditPart extends StateEditPart {
 
 	@Override
 	protected void handleNotificationEvent(Notification notification) {
-		if (notification.getFeature() == RealtimestatechartPackage.Literals.STATE__EMBEDDED_REGIONS && notification.getEventType() == Notification.MOVE) {
-			// #72: Reorder notation views when region order changes, to force re-ordering in the editor; also see comparator in CustomStateRegionCompartmentEditPart
-			State state = (State) resolveSemanticElement();
-			View regionCompartment = getChildView(getNotationView(), StateRegionCompartmentEditPart.VISUAL_ID);
-			if (regionCompartment != null) {
-				List<View> orderedViews = new ArrayList<View>();
-				for (Region region : state.getEmbeddedRegions()) {
-					for (Object child : regionCompartment.getPersistedChildren()) {
-						View childView = (View) child;
-						if (childView.getElement() == region) {
-							orderedViews.add(childView);
-							break; // break inner loop
-						}
-					}
-				}
-				getEditingDomain().getCommandStack().execute(SetCommand.create(getEditingDomain(), regionCompartment, NotationPackage.Literals.VIEW__PERSISTED_CHILDREN, orderedViews));
-			}
-			
-		}
+//		if (notification.getFeature() == RealtimestatechartPackage.Literals.STATE__EMBEDDED_REGIONS && notification.getEventType() == Notification.MOVE) {
+//			// #72: Reorder notation views when region order changes, to force re-ordering in the editor; also see comparator in CustomStateRegionCompartmentEditPart
+//			State state = (State) resolveSemanticElement();
+//			View regionCompartment = getChildView(getNotationView(), StateRegionCompartmentEditPart.VISUAL_ID);
+//			if (regionCompartment != null) {
+//				List<View> orderedViews = new ArrayList<View>();
+//				for (Region region : state.getEmbeddedRegions()) {
+//					for (Object child : regionCompartment.getPersistedChildren()) {
+//						View childView = (View) child;
+//						if (childView.getElement() == region) {
+//							orderedViews.add(childView);
+//							break; // break inner loop
+//						}
+//					}
+//				}
+//				getEditingDomain().getCommandStack().execute(SetCommand.create(getEditingDomain(), regionCompartment, NotationPackage.Literals.VIEW__PERSISTED_CHILDREN, orderedViews));
+//			}
+//			
+//		}
 		
 		super.handleNotificationEvent(notification);
 	}

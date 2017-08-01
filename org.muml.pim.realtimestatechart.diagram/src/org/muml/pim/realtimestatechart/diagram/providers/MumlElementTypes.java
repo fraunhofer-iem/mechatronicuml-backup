@@ -187,7 +187,7 @@ public class MumlElementTypes {
 
 			elements.put(SynchronizationChannel_3037, RealtimestatechartPackage.eINSTANCE.getSynchronizationChannel());
 
-			elements.put(Region_3042, RealtimestatechartPackage.eINSTANCE.getRegion());
+//			elements.put(Region_3042, RealtimestatechartPackage.eINSTANCE.getRegion());
 
 			elements.put(RealtimeStatechart_3043, RealtimestatechartPackage.eINSTANCE.getRealtimeStatechart());
 

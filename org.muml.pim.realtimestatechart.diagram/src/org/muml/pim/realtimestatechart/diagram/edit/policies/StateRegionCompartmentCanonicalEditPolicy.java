@@ -99,7 +99,8 @@ public class StateRegionCompartmentCanonicalEditPolicy extends CanonicalEditPoli
 	 * @generated
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
-		return RealtimestatechartPackage.eINSTANCE.getState_EmbeddedRegions();
+//		return RealtimestatechartPackage.eINSTANCE.getState_EmbeddedRegions();
+		return null;
 	}
 
 	/**

@@ -48,8 +48,8 @@ public class StateColorEditPolicy extends NotifyingGraphicalEditPolicy {
 				}
 				
 				RealtimeStatechart parentStatechart = null;
-				if (statechart.getParentRegion() != null && statechart.getParentRegion().getParentState() != null) {
-					parentStatechart = statechart.getParentRegion().getParentState().getParentStatechart();
+				if (statechart.getParentState() != null) {
+					parentStatechart = statechart.getParentState().getParentStatechart();
 				}
 				statechart = parentStatechart;
 			}
@@ -64,9 +64,9 @@ public class StateColorEditPolicy extends NotifyingGraphicalEditPolicy {
 			updateStateColor();
 		}
 		
-		if (notification.getFeature() == RealtimestatechartPackage.Literals.STATE__EMBEDDED_REGIONS) {
-			updateRegionsCompartment();
-		}
+//		if (notification.getFeature() == RealtimestatechartPackage.Literals.STATE__EMBEDDED_REGIONS) {
+//			updateRegionsCompartment();
+//		}
 	}
 	
 	private void updateRegionsCompartment() {
@@ -74,7 +74,7 @@ public class StateColorEditPolicy extends NotifyingGraphicalEditPolicy {
 		EObject element = getSemanticElement();
 		if (element instanceof State) {
 			State state = (State) element;
-			fill = !state.getEmbeddedRegions().isEmpty();
+			fill = !state.getEmbeddedStatecharts().isEmpty();
 		}
 		
 
@@ -109,8 +109,8 @@ public class StateColorEditPolicy extends NotifyingGraphicalEditPolicy {
 				}
 
 				RealtimeStatechart parentStatechart = null;
-				if (statechart.getParentRegion() != null && statechart.getParentRegion().getParentState() != null) {
-					parentStatechart = statechart.getParentRegion().getParentState().getParentStatechart();
+				if (statechart.getParentState() != null) {
+					parentStatechart = statechart.getParentState().getParentStatechart();
 				}
 				statechart = parentStatechart;
 			}

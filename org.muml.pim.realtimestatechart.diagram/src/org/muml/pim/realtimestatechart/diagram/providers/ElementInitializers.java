@@ -98,32 +98,32 @@ public class ElementInitializers {
 	* @generated
 	*/
 	public void init_Region_3042(Region instance) {
-		try {
-			Object value_0 = MumlOCLFactory.getExpression(6, RealtimestatechartPackage.eINSTANCE.getRegion(), null)
-					.evaluate(instance);
-
-			value_0 = MumlAbstractExpression.performCast(value_0, EcorePackage.eINSTANCE.getEInt());
-			instance.setPriority(((Integer) value_0).intValue());
-			RealtimeStatechart newInstance_1_0 = RealtimestatechartFactory.eINSTANCE.createRealtimeStatechart();
-			instance.setEmbeddedStatechart(newInstance_1_0);
-			Object value_1_0_0 = MumlOCLFactory
-					.getExpression(7, RealtimestatechartPackage.eINSTANCE.getRealtimeStatechart(), null)
-					.evaluate(newInstance_1_0);
-			newInstance_1_0.setName((String) value_1_0_0);
-			State newInstance_1_0_1_0 = RealtimestatechartFactory.eINSTANCE.createState();
-			newInstance_1_0.getStates().add(newInstance_1_0_1_0);
-			Object value_1_0_1_0_0 = MumlOCLFactory
-					.getExpression(8, RealtimestatechartPackage.eINSTANCE.getState(), null)
-					.evaluate(newInstance_1_0_1_0);
-			newInstance_1_0_1_0.setName((String) value_1_0_1_0_0);
-			Object value_1_0_1_0_1 = MumlOCLFactory
-					.getExpression(9, RealtimestatechartPackage.eINSTANCE.getState(), null)
-					.evaluate(newInstance_1_0_1_0);
-			newInstance_1_0_1_0.setInitial(((Boolean) value_1_0_1_0_1).booleanValue());
-
-		} catch (RuntimeException e) {
-			RealtimestatechartDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
-		}
+//		try {
+//			Object value_0 = MumlOCLFactory.getExpression(6, RealtimestatechartPackage.eINSTANCE.getRegion(), null)
+//					.evaluate(instance);
+//
+//			value_0 = MumlAbstractExpression.performCast(value_0, EcorePackage.eINSTANCE.getEInt());
+//			instance.setPriority(((Integer) value_0).intValue());
+//			RealtimeStatechart newInstance_1_0 = RealtimestatechartFactory.eINSTANCE.createRealtimeStatechart();
+//			instance.setEmbeddedStatechart(newInstance_1_0);
+//			Object value_1_0_0 = MumlOCLFactory
+//					.getExpression(7, RealtimestatechartPackage.eINSTANCE.getRealtimeStatechart(), null)
+//					.evaluate(newInstance_1_0);
+//			newInstance_1_0.setName((String) value_1_0_0);
+//			State newInstance_1_0_1_0 = RealtimestatechartFactory.eINSTANCE.createState();
+//			newInstance_1_0.getStates().add(newInstance_1_0_1_0);
+//			Object value_1_0_1_0_0 = MumlOCLFactory
+//					.getExpression(8, RealtimestatechartPackage.eINSTANCE.getState(), null)
+//					.evaluate(newInstance_1_0_1_0);
+//			newInstance_1_0_1_0.setName((String) value_1_0_1_0_0);
+//			Object value_1_0_1_0_1 = MumlOCLFactory
+//					.getExpression(9, RealtimestatechartPackage.eINSTANCE.getState(), null)
+//					.evaluate(newInstance_1_0_1_0);
+//			newInstance_1_0_1_0.setInitial(((Boolean) value_1_0_1_0_1).booleanValue());
+//
+//		} catch (RuntimeException e) {
+//			RealtimestatechartDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+//		}
 	}
 
 	/**
@@ -184,7 +184,7 @@ public class ElementInitializers {
 					.evaluate(instance);
 
 			value_0 = MumlAbstractExpression.performCast(value_0, EcorePackage.eINSTANCE.getEInt());
-			instance.setPriority(((Integer) value_0).intValue());
+//			instance.setPriority(((Integer) value_0).intValue());
 		} catch (RuntimeException e) {
 			RealtimestatechartDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}

@@ -64,17 +64,18 @@ public class RegionCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		Region newElement = RealtimestatechartFactory.eINSTANCE.createRegion();
-
-		State owner = (State) getElementToEdit();
-		owner.getEmbeddedRegions().add(newElement);
-
-		ElementInitializers.getInstance().init_Region_3042(newElement);
-
-		doConfigure(newElement, monitor, info);
-
-		((CreateElementRequest) getRequest()).setNewElement(newElement);
-		return CommandResult.newOKCommandResult(newElement);
+//		Region newElement = RealtimestatechartFactory.eINSTANCE.createRegion();
+//
+//		State owner = (State) getElementToEdit();
+//		owner.getEmbeddedRegions().add(newElement);
+//
+//		ElementInitializers.getInstance().init_Region_3042(newElement);
+//
+//		doConfigure(newElement, monitor, info);
+//
+//		((CreateElementRequest) getRequest()).setNewElement(newElement);
+//		return CommandResult.newOKCommandResult(newElement);
+		return CommandResult.newErrorCommandResult("Region was removed");
 	}
 
 	/**

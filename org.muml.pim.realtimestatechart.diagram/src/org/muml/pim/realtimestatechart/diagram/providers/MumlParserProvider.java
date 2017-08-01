@@ -149,12 +149,12 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	 * @generated
 	 */
 	private IParser getRegionPriority_5064Parser() {
-		if (regionPriority_5064Parser == null) {
-			EAttribute[] features = new EAttribute[] {
-					RealtimestatechartPackage.eINSTANCE.getPrioritizedElement_Priority() };
-			MessageFormatParser parser = new MessageFormatParser(features);
-			regionPriority_5064Parser = parser;
-		}
+//		if (regionPriority_5064Parser == null) {
+//			EAttribute[] features = new EAttribute[] {
+//					RealtimestatechartPackage.eINSTANCE.getPrioritizedElement_Priority() };
+//			MessageFormatParser parser = new MessageFormatParser(features);
+//			regionPriority_5064Parser = parser;
+//		}
 		return regionPriority_5064Parser;
 	}
 

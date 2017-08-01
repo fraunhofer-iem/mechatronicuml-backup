@@ -42,29 +42,29 @@ public class CustomRegionEditPart extends RegionEditPart {
 
 	@Override
 	protected void handleNotificationEvent(Notification notification) {
-//		Object feature = notification.getFeature();
-//		if (RealtimestatechartPackage.Literals.REGION__EMBEDS_HISTORY_STATECHART
-//				.equals(feature)) {
-//			updateHistory();
+////		Object feature = notification.getFeature();
+////		if (RealtimestatechartPackage.Literals.REGION__EMBEDS_HISTORY_STATECHART
+////				.equals(feature)) {
+////			updateHistory();
+////		}
+//		
+//		if (notification.getFeature() == RealtimestatechartPackage.Literals.PRIORITIZED_ELEMENT__PRIORITY) {
+//			Region region = (Region) notification.getNotifier();
+//			State parentState = region.getParentState();
+//			List<Region> regions = new ArrayList<Region>(parentState.getEmbeddedRegions());
+//			Collections.sort(regions, new Comparator<Region>() {
+//				@Override
+//				public int compare(Region lhs, Region rhs) {
+//					return lhs.getPriority() - rhs.getPriority();
+//				}
+//			});
+//			Command command = SetCommand.create(
+//									getEditingDomain(),
+//									parentState,
+//									RealtimestatechartPackage.Literals.STATE__EMBEDDED_REGIONS,
+//									regions);
+//			getEditingDomain().getCommandStack().execute(command);
 //		}
-		
-		if (notification.getFeature() == RealtimestatechartPackage.Literals.PRIORITIZED_ELEMENT__PRIORITY) {
-			Region region = (Region) notification.getNotifier();
-			State parentState = region.getParentState();
-			List<Region> regions = new ArrayList<Region>(parentState.getEmbeddedRegions());
-			Collections.sort(regions, new Comparator<Region>() {
-				@Override
-				public int compare(Region lhs, Region rhs) {
-					return lhs.getPriority() - rhs.getPriority();
-				}
-			});
-			Command command = SetCommand.create(
-									getEditingDomain(),
-									parentState,
-									RealtimestatechartPackage.Literals.STATE__EMBEDDED_REGIONS,
-									regions);
-			getEditingDomain().getCommandStack().execute(command);
-		}
 
 		super.handleNotificationEvent(notification);
 	}

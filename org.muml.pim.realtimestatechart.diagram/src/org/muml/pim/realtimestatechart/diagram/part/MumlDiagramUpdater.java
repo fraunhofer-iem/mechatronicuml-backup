@@ -212,14 +212,14 @@ public class MumlDiagramUpdater {
 		}
 		State modelElement = (State) containerView.getElement();
 		LinkedList<MumlNodeDescriptor> result = new LinkedList<MumlNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getEmbeddedRegions().iterator(); it.hasNext();) {
-			Region childElement = (Region) it.next();
-			int visualID = MumlVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == RegionEditPart.VISUAL_ID) {
-				result.add(new MumlNodeDescriptor(childElement, visualID));
-				continue;
-			}
-		}
+//		for (Iterator<?> it = modelElement.getEmbeddedRegions().iterator(); it.hasNext();) {
+//			Region childElement = (Region) it.next();
+//			int visualID = MumlVisualIDRegistry.getNodeVisualID(view, childElement);
+//			if (visualID == RegionEditPart.VISUAL_ID) {
+//				result.add(new MumlNodeDescriptor(childElement, visualID));
+//				continue;
+//			}
+//		}
 
 		return result;
 	}
