@@ -1,0 +1,87 @@
+﻿/*
+ * Copyright (c) 2007, 2009 Borland Software Corporation and others
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Alexander Shatalin (Borland) - initial API and implementation
+ *    Dmitry Stadnik (Borland) - rewritten in xpand
+ */
+
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+
+«EXTENSION xpt::editor::Utils»
+«EXTENSION xpt::StringOperations»
+
+«AROUND InitDiagramFileAction(gmfgen::GenEditorGenerator editorGen, String qualifiedClassName) FOR OclAny-»
+«EXPAND xpt::Common::copyright FOR editorGen-»
+«EXPAND xpt::Common::packageStatement FOR qualifiedClassName»
+
+«EXPAND xpt::Common::generatedClassComment»
+public class «qualifiedClassName.xpandSplit('\\.')->last()» extends org.muml.core.modelinstance.ui.handlers.AbstractCreateDiagramFileCommand {
+
+	«EXPAND xpt::Common::generatedClassComment»
+	public static class CreateDiagramElement extends org.eclipse.core.commands.AbstractHandler {
+	
+		«EXPAND xpt::Common::generatedMemberComment»
+		@Override
+		public Object execute(org.eclipse.core.commands.ExecutionEvent event) throws org.eclipse.core.commands.ExecutionException {
+			// Get shell and uri of current selection
+//			org.eclipse.swt.widgets.Shell shell = org.eclipse.ui.handlers.HandlerUtil.getActiveWorkbenchWindow(event).getShell();
+			org.eclipse.jface.viewers.ISelection selection = org.eclipse.ui.handlers.HandlerUtil.getCurrentSelection(event);
+			org.eclipse.core.resources.IResource selectedResource = null;
+			if (selection instanceof org.eclipse.jface.viewers.IStructuredSelection && !selection.isEmpty()) {
+				Object object = ((org.eclipse.jface.viewers.IStructuredSelection) selection).getFirstElement();
+				if (object instanceof org.eclipse.core.resources.IResource) {
+					selectedResource = (org.eclipse.core.resources.IResource) object;
+				} else if (object instanceof org.eclipse.core.runtime.IAdaptable) {
+					selectedResource = (org.eclipse.core.resources.IResource) ((org.eclipse.core.runtime.IAdaptable) object)
+							.getAdapter(org.eclipse.core.resources.IResource.class);
+				}
+			}
+			if (selectedResource instanceof org.eclipse.core.resources.IContainer) {
+				// Get a unique filename for the new file
+				org.eclipse.core.runtime.IPath filePath = selectedResource.getFullPath();
+				String fileName = «editorGen.diagram.getDiagramEditorUtilQualifiedClassName()»
+						.getUniqueFileName(filePath, "«editorGen.diagram.domainDiagramElement.ecoreClass.name»", "«editorGen.diagram.domainDiagramElement.ecoreClass.name.toLowerCase()»");
+				// Create the new file
+				org.eclipse.emf.ecore.resource.ResourceSet resourceSet = new org.eclipse.emf.ecore.resource.impl.ResourceSetImpl();
+				org.eclipse.emf.common.util.URI uri = org.eclipse.emf.common.util.URI.createPlatformResourceURI(filePath.append(fileName).toString(), true);
+				org.eclipse.emf.ecore.resource.Resource resource = resourceSet.createResource(uri);
+				org.eclipse.emf.ecore.EObject model = «EXPAND MetaModel::NewInstance FOR editorGen.diagram.domainDiagramElement»;
+				resource.getContents().add(model);
+				try {
+					resource.save(java.util.Collections.emptyMap());
+				} catch (java.io.IOException e) {
+					«editorGen.plugin.getActivatorQualifiedClassName()».getInstance().logError("Could not create child element", e);
+				}
+			}
+			return null;
+		}
+	}
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	@Override
+	public void setCharset(org.eclipse.core.resources.IFile diagramFile) {
+		«editorGen.diagram.getDiagramEditorUtilQualifiedClassName()».setCharset(diagramFile);
+	}
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	@Override
+	public String getUniqueFilename(String hint, String extension,
+			org.eclipse.core.runtime.IPath filePath) {
+		return «editorGen.diagram.getDiagramEditorUtilQualifiedClassName()»
+				.getUniqueFileName(filePath, hint, extension);
+	}
+	
+	«EXPAND xpt::Common::generatedMemberComment»
+	@Override
+	public String getEditorId() {
+		return «editorGen.editor.getQualifiedClassName()».ID;
+
+	}
+}
+«ENDAROUND»

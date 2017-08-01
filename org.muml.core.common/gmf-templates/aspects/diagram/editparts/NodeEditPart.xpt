@@ -1,0 +1,46 @@
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+«IMPORT 'http://www.eclipse.org/emf/2002/GenModel'»
+«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
+
+«EXTENSION xpt::diagram::editparts::Utils»
+«EXTENSION xpt::diagram::editpolicies::LinkUtils»
+«EXTENSION MetaModel»
+
+«REM»
+	Added handleNotificationEvent method according to MechatronicUML BUG #17
+	Here for links that have no type element
+«ENDREM»
+«AROUND additions FOR gmfgen::GenNode»
+«IF not self.genOutgoingLinks->select(link | not link.isTypeLink())->isEmpty()»
+«EXPAND xpt::Common::generatedMemberComment»
+	protected void handleNotificationEvent(org.eclipse.emf.common.notify.Notification event) {
+		boolean update = false;
+		«EXPAND doSome FOREACH genOutgoingLinks»
+		if (update) {
+			org.eclipse.swt.widgets.Display.getCurrent().asyncExec(new Runnable() {
+				@Override
+				public void run() {
+					doCanonicalRefresh();
+				}
+			});
+		}
+		super.handleNotificationEvent(event);	
+	}
+	protected void doCanonicalRefresh() {
+		java.util.List<org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy> editPolicies = org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy
+				.getRegisteredEditPolicies(getDiagramView().getElement());
+		for (org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy editPolicy : editPolicies) {
+			editPolicy.refresh();
+		}
+	}
+«ENDIF»
+«targetDef.proceed()»
+«ENDAROUND»
+
+«DEFINE doSome FOR GenLink»
+	«IF not self.isTypeLink() and self.modelFacet.oclIsKindOf(FeatureLinkModelFacet)»
+		if (event.getFeature() == «EXPAND MetaModel::MetaFeature FOR self.modelFacet.oclAsType(FeatureLinkModelFacet).metaFeature») {
+			update = true;
+		}
+	«ENDIF»
+«ENDDEFINE»

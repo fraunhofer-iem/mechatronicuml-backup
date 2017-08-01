@@ -1,0 +1,117 @@
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+«IMPORT 'http://www.eclipse.org/emf/2002/GenModel'»
+
+«EXTENSION xpt::diagram::Utils»
+
+«AROUND accessors FOR gmfgen::GenLink-»
+	«targetDef.proceed()»
+	«EXPAND reorientDirectionAccessor FOR modelFacet-»
+«ENDAROUND»
+
+«DEFINE reorientDirectionAccessor FOR gmfgen::LinkModelFacet-»
+	«EXPAND xpt::Common::generatedMemberComment»
+	protected int getReorientDirection() {
+		return reorientDirection;
+	}
+«ENDDEFINE»
+
+
+«REM»
+	Enhancement for MUML-Bug #446
+«ENDREM»
+«AROUND changeTarget(sourceVar : String, sourceVarGenClass : genmodel::GenClass, oldTargetVar : String, newTargetVar : String) FOR genmodel::GenFeature-»
+«IF ecoreFeature.many»
+	«IF ecoreFeature.unique»
+		// Enhancement for MUML-BUG #446
+		if («EXPAND MetaModel::getFeatureValue(sourceVar, sourceVarGenClass)».size() > 1) {
+			«EXPAND MetaModel::getFeatureValue(sourceVar, sourceVarGenClass)».remove(«oldTargetVar»);
+		}
+		«EXPAND MetaModel::modifyFeature(sourceVar, sourceVarGenClass, newTargetVar)-»
+	«ELSE»
+		«targetDef.proceed()»
+	«ENDIF»
+«ELSE»
+	«targetDef.proceed()»
+«ENDIF»
+«ENDAROUND»
+
+«REM»
+	Enhancement for MUML-Bug #446
+«ENDREM»
+«AROUND changeSource(targetVar : String, oldSourceVar : String, newSourceVar : String, sourceVarGenClass : genmodel::GenClass) FOR genmodel::GenFeature-»
+«IF ecoreFeature.many»
+	«IF ecoreFeature.unique»
+		// Enhancement for MUML-BUG #446
+		if («EXPAND MetaModel::getFeatureValue(oldSourceVar, sourceVarGenClass)».size() > 1) {
+			«EXPAND MetaModel::getFeatureValue(oldSourceVar, sourceVarGenClass)».remove(«targetVar»);
+		}
+		«EXPAND MetaModel::modifyFeature(newSourceVar, sourceVarGenClass, targetVar)-»
+	«ELSE»
+		«targetDef.proceed()»
+	«ENDIF»
+«ELSE»
+	«targetDef.proceed()»
+«ENDIF»
+«ENDAROUND»
+
+«REM»
+	Enhancement for MUML-Bug #446
+«ENDREM»
+«AROUND extractFeatureWithCheck(containerVar : String, containerMetaClass : genmodel::GenClass, _var : String, varMetaClass : genmodel::GenClass) FOR genmodel::GenFeature-»
+	«IF ecoreFeature.many-»
+		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
+		/*
+		if («EXPAND MetaModel::getFeatureValue(containerVar, containerMetaClass)».size() != 1) {
+			return false;
+		}
+		*/
+		«EXPAND MetaModel::DeclareAndAssign2(_var, containerVar, containerMetaClass, self, 'get(0)', true) FOR varMetaClass»
+	«ELSE-»
+		«EXPAND MetaModel::DeclareAndAssign(_var, containerVar, containerMetaClass, self) FOR varMetaClass»
+	«ENDIF-»
+«ENDAROUND»
+
+
+«REM» Need to provide the View for LinkConstraints (Muml Bug #462) «ENDREM»
+«AROUND checkLinkConstraint(link : gmfgen::GenLink, sourceVar : String, targetVar : String) FOR gmfgen::TypeLinkModelFacet-»
+«IF hasContainerOtherThanSource(self)-»
+	if (!(«EXPAND MetaModel::IsContainerInstance('getLink()', metaClass) FOR containmentMetaFeature.genClass»)) {
+		return false;
+	}
+	«EXPAND MetaModel::DeclareAndAssignContainer('container', 'getLink()', metaClass) FOR containmentMetaFeature.genClass»
+«ENDIF-»
+	org.eclipse.gmf.runtime.notation.View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+	org.eclipse.gmf.runtime.notation.View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+	if (!«EXPAND xpt::diagram::editpolicies::BaseItemSemanticEditPolicy::canExistCall(link, 'container', 'getLink()', sourceVar, targetVar + ', sourceView, targetView')») {
+		String errorMessage = «EXPAND xpt::diagram::editpolicies::BaseItemSemanticEditPolicy::getErrorCall(link, 'container', sourceVar, targetVar + ', sourceView, targetView')»;
+		org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
+		return false;
+	}
+	return true;
+«ENDAROUND»
+«AROUND checkSourceRequestValidity(link : gmfgen::GenLink) FOR gmfgen::FeatureLinkModelFacet-»
+	if (!(«EXPAND MetaModel::IsInstance('oldEnd') FOR getTargetType()» && «EXPAND MetaModel::IsInstance('newEnd') FOR getSourceType()»)) {
+		return false;
+	}
+	org.eclipse.gmf.runtime.notation.View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+	org.eclipse.gmf.runtime.notation.View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+	if (!«EXPAND xpt::diagram::editpolicies::BaseItemSemanticEditPolicy::canExistCall(link, 'getNewSource()', 'getOldTarget(), sourceView, targetView')») {
+		String errorMessage = «EXPAND xpt::diagram::editpolicies::BaseItemSemanticEditPolicy::getErrorCall(link, 'getNewSource()', 'getOldTarget(), sourceView, targetView')»;
+		org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
+		return false;
+	}
+	return true;
+«ENDAROUND»
+«AROUND checkTargetRequestValidity(link : gmfgen::GenLink) FOR gmfgen::FeatureLinkModelFacet-»
+	if (!(«EXPAND MetaModel::IsInstance('oldEnd') FOR getTargetType()» && «EXPAND MetaModel::IsInstance('newEnd') FOR getTargetType()»)) {
+		return false;
+	}
+	org.eclipse.gmf.runtime.notation.View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+	org.eclipse.gmf.runtime.notation.View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+	if (!«EXPAND xpt::diagram::editpolicies::BaseItemSemanticEditPolicy::canExistCall(link, 'getOldSource()', 'getNewTarget(), sourceView, targetView')») {
+		String errorMessage = «EXPAND xpt::diagram::editpolicies::BaseItemSemanticEditPolicy::getErrorCall(link, 'getOldSource()', 'getNewTarget(), sourceView, targetView')»;
+		org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(targetView, errorMessage);
+		return false;
+	}
+	return true;
+«ENDAROUND»

@@ -1,0 +1,24 @@
+«EXTENSION PatchUtil»
+
+
+
+«REM»ChildAccess points to figure we've generated, there's a field for it«ENDREM»
+«AROUND accessorToField FOR gmfgraph::ChildAccess-»
+	/**
+	 * @generated
+	 */
+	public «EXPAND Runtime::fqn FOR figure» «accessor»() {
+		return «self.patchedFigureFieldName()»;
+	}
+«ENDAROUND»
+
+«AROUND accessorToCustom(fa : Sequence(gmfgraph::FigureAccessor)) FOR gmfgraph::ChildAccess-»
+	/**
+	 * @generated
+	 */
+	public «EXPAND Runtime::fqn FOR figure» «accessor»() {
+		return «fa->first().oclAsType(ecore::EObject).eContainer().oclAsType(CustomFigure).patchedFigureFieldName()-»
+			«FOREACH fa AS figureAccessor»«IF figureAccessor.accessor <> null and not figureAccessor.accessor->isEmpty()».«figureAccessor.accessor»()«ELSE-»
+				«ERROR 'Invalide figure accessor' + figureAccessor.repr()»«ENDIF»«ENDFOREACH»;
+	}
+«ENDAROUND»

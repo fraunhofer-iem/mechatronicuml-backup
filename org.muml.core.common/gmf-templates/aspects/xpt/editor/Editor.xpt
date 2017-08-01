@@ -1,0 +1,58 @@
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+«EXTENSION xpt::editor::Utils»
+
+
+
+«REM» Additional methods that should be generated «ENDREM»
+«AROUND additions FOR gmfgen::GenEditorView-»
+«EXPAND doSave»
+«ENDAROUND»
+
+«REM» We override the doSave() method to invoke validation «ENDREM»
+«DEFINE doSave FOR gmfgen::GenEditorView-»
+	«EXPAND xpt::Common::generatedMemberComment»
+@Override
+public void doSave(org.eclipse.core.runtime.IProgressMonitor progressMonitor) {
+	ValidateAction.runValidation(getDiagramEditPart(), getDiagramEditPart()
+			.getDiagramView());
+	super.doSave(progressMonitor);
+}
+«ENDDEFINE»
+
+«REM» Change registration for Delete Key: Delete From Model should be invoked, not Delete From Diagram «ENDREM»
+«AROUND configureGraphicalViewer FOR gmfgen::GenEditorView-»
+	«EXPAND xpt::Common::generatedMemberComment»
+	protected void configureGraphicalViewer() {
+		super.configureGraphicalViewer();
+		«EXPAND xpt::editor::DiagramEditorContextMenuProvider::qualifiedClassName FOR editorGen.diagram» provider =
+				new «EXPAND xpt::editor::DiagramEditorContextMenuProvider::qualifiedClassName FOR editorGen.diagram»(this, getDiagramGraphicalViewer());
+		getDiagramGraphicalViewer().setContextMenu(provider);
+		getSite().registerContextMenu(org.eclipse.gmf.runtime.diagram.ui.actions.ActionIds.DIAGRAM_EDITOR_CONTEXT_MENU, provider, getDiagramGraphicalViewer());
+		
+		// Begin added to bind delete keyboard shortcut to "Delete From Model" action, not Delete From Diagram (default)
+		org.eclipse.gef.KeyHandler keyHandler = getDiagramGraphicalViewer().getKeyHandler();
+		keyHandler.put(
+		    org.eclipse.gef.KeyStroke.getPressed(org.eclipse.swt.SWT.DEL, 127, 0),
+		    getActionRegistry().getAction(
+		        org.eclipse.gmf.runtime.diagram.ui.actions.ActionIds.ACTION_DELETE_FROM_MODEL
+		    )
+		);
+		keyHandler.put(
+		    org.eclipse.gef.KeyStroke.getPressed(org.eclipse.swt.SWT.BS, 8, 0),
+		    getActionRegistry().getAction(
+		        org.eclipse.gmf.runtime.diagram.ui.actions.ActionIds.ACTION_DELETE_FROM_MODEL
+		    )
+		);
+		// End added
+	}
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	@Override
+	public void setInput(org.eclipse.ui.IEditorInput input) {
+		super.setInput(input);
+		for (org.muml.common.editingdomain.initialize.IEditingDomainInitializer init : org.muml.common.editingdomain.EditingDomainPlugin.getEditingDomainInitializers()) {
+			init.initialize(getEditingDomain());
+		}
+	}
+
+«ENDAROUND»
