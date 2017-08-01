@@ -447,6 +447,7 @@ public class JavaClockZone extends ClockZone {
 		{
 			return;
 		}
+		
 		ComparativeClockConstraint adjustedClockConstraint = adjustClockConstraint((ComparativeClockConstraint)value);
 		int constraintValue = dbmValue( adjustedClockConstraint.getValue(), adjustedClockConstraint.getRelationalOperator() );
 
@@ -475,7 +476,10 @@ public class JavaClockZone extends ClockZone {
 				
 				if (((DifferenceClockConstraint) adjustedClockConstraint).getClockSubtrahend() != null){
 					UDBMClock clockSubtrahend= ((DifferenceClockConstraint) adjustedClockConstraint).getClockSubtrahend();
-					subtrahendClockId = jf.clockNamesToIndices.get(clockSubtrahend);
+					
+					if (jf.clockNamesToIndices.get(clockSubtrahend) != null){
+						subtrahendClockId = jf.clockNamesToIndices.get(clockSubtrahend);
+					}
 				}
 			}
 		
@@ -641,6 +645,22 @@ public class JavaClockZone extends ClockZone {
 	}
 
 
+	public void and(JavaClockZone otherZone, HashSet<UDBMClock> clocks)
+	{
+		// Skip processing if this JavaClockZone is empty, ...
+		if (this.isEmpty() || this.containsOnlyFalseClockConstraints()){
+			return;
+		}
+		
+		if (otherZone.isEmpty() || otherZone.containsOnlyFalseClockConstraints()){
+			this.applyResets(clocks);
+			return;
+		}
+		
+		this.and(otherZone);
+
+	}
+	
 	public void and(JavaClockZone otherZone)
 	{
 		Iterator<ClockConstraint> clockConstraintIt = otherZone.iteratorOfClockConstraint();
@@ -655,6 +675,13 @@ public class JavaClockZone extends ClockZone {
 	
 	public boolean isEmpty() {
 		return matrix[0][0] == -((1 << 1) + 1);
+	}
+	
+	public void applyResets(HashSet<UDBMClock> clocks) {
+		// reset all clocks ...
+		for (UDBMClock curClock : clocks) {
+			this.reset(curClock);
+		}
 	}
 
 
