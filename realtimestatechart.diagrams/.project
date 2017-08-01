@@ -3,6 +3,7 @@
 	<name>realtimestatechart.diagrams</name>
 	<comment></comment>
 	<projects>
+		<project>realtimestatechart.design</project>
 	</projects>
 	<buildSpec>
 	</buildSpec>

@@ -19,7 +19,8 @@ Require-Bundle: org.muml.core.common;visibility:=reexport,
  org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.muml.core;visibility:=reexport,
- org.muml.emm
+ org.muml.emm,
+ org.eclipse.sirius
 Bundle-ActivationPolicy: lazy
 Export-Package: org.muml.pim,
  org.muml.pim.behavior,
@@ -63,3 +64,4 @@ Export-Package: org.muml.pim,
  org.muml.pim.valuetype,
  org.muml.pim.valuetype.impl,
  org.muml.pim.valuetype.util
+Bundle-Activator: org.muml.pim.Activator
