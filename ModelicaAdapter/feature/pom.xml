@@ -20,7 +20,7 @@
     <module>org.muml.modelica.adapter</module>
     <module>org.muml.modelica.adapter.feature</module>
     <module>org.muml.modelica.adapter.ui</module>
-    <module>org.muml.modelica.repository</module>
+    <module>org.muml.modelica.adapter.repository</module>
   </modules>
 	
 	<dependencies>

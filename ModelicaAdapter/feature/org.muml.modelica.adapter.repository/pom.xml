@@ -8,7 +8,7 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <groupId>org.muml.modelica.group</groupId>
-  <artifactId>org.muml.modelica.repository</artifactId>
+  <artifactId>org.muml.modelica.adapter.repository</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>eclipse-repository</packaging>
 </project>
