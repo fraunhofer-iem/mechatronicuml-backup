@@ -1,6 +1,7 @@
 package org.muml.core.siriusproperties.custom;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.muml.core.siriusproperties.custom.embeddedxtexteditor.EmbeddedXtextEditorLifecycleManager;
 import org.osgi.framework.BundleContext;
 
 /**

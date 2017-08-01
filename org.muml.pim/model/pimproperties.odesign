@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:properties-ext-widgets-reference="http://www.eclipse.org/sirius/properties/1.0.0/ext/widgets/reference" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" name="pim" version="11.1.1.201610211630">
   <ownedViewpoints name="org.muml.pim" label="MechatronicUML PIM Metamodel"/>
-  <extensions xsi:type="properties:ViewExtensionDescription" identifier="org.eclipse.sirius.ui.properties">
+  <extensions xsi:type="properties:ViewExtensionDescription" identifier="org.muml.pim.properties">
     <pages identifier="org.eclipse.sirius.ui.properties.defaultpage" labelExpression="aql:input.emfEditServices(self).getTabName()" semanticCandidateExpression="aql:input.getAllSemanticElements()" groups="//@extensions.0/@groups.0"/>
+    <pages identifier="org.muml.pim.realtimestatechart.TransitionConditionPage" labelExpression="Condition" domainClass="Transition" semanticCandidateExpression="var:self" groups="//@extensions.0/@groups.1"/>
+    <pages identifier="org.muml.pim.realtimestatechart.TransitionDeadlinePage" labelExpression="Deadline" domainClass="Transition" semanticCandidateExpression="var:self" groups="//@extensions.0/@groups.2"/>
+    <pages identifier="org.muml.pim.realtimestatechart.TransitionEffectPage" labelExpression="Effect" domainClass="Transition" semanticCandidateExpression="var:self" groups="//@extensions.0/@groups.3"/>
+    <pages identifier="org.muml.pim.realtimestatechart.StateConditionPage" labelExpression="Condition" domainClass="State" semanticCandidateExpression="var:self" groups="//@extensions.0/@groups.1"/>
+    <pages identifier="org.muml.pim.realtimestatechart.StateEffectPage" labelExpression="Effect" domainClass="State" semanticCandidateExpression="var:self" groups="//@extensions.0/@groups.3"/>
     <groups identifier="org.eclipse.sirius.ui.properties.defaultgroup" labelExpression="Properties" semanticCandidateExpression="var:self" preconditionExpression="">
       <controls xsi:type="properties:DynamicMappingFor" iterator="eStructuralFeature" iterableExpression="aql:input.emfEditServices(self).getEStructuralFeatures()">
         <ifs predicateExpression="aql:input.emfEditServices(self).needsTextWidget(eStructuralFeature) and not input.emfEditServices(self).isMultiline(eStructuralFeature)">
@@ -60,6 +65,17 @@
           <widget xsi:type="properties-ext-widgets-reference:ExtReferenceDescription" identifier="sirius_default_rules_ereference" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" referenceNameExpression="aql:eStructuralFeature.name"/>
         </ifs>
       </controls>
+    </groups>
+    <groups identifier="org.muml.pim.realtimestatechart.ConditionGroup" labelExpression="Properties" semanticCandidateExpression="var:self">
+      <controls xsi:type="properties-ext-widgets-reference:ExtReferenceDescription" labelExpression="Clock Constraints" referenceNameExpression="clockConstraints"/>
+      <controls xsi:type="properties:CustomDescription" identifier="org.muml.core.siriusproperties.custom.embeddedxtexteditor" labelExpression="guard"/>
+      <controls xsi:type="properties-ext-widgets-reference:ExtReferenceDescription" labelExpression="Events" referenceNameExpression="events"/>
+    </groups>
+    <groups identifier="org.muml.pim.realtimestatechart.DeadlineGroup" labelExpression="Properties" semanticCandidateExpression="var:self">
+      <controls xsi:type="properties-ext-widgets-reference:ExtReferenceDescription" labelExpression="Absolute Deadlines" referenceNameExpression="absoluteDeadlines"/>
+    </groups>
+    <groups identifier="org.muml.pim.realtimestatechart.EffectPage" labelExpression="Properties" semanticCandidateExpression="var:self">
+      <controls xsi:type="properties-ext-widgets-reference:ExtReferenceDescription" labelExpression="Events" referenceNameExpression="events"/>
     </groups>
   </extensions>
 </description:Group>
