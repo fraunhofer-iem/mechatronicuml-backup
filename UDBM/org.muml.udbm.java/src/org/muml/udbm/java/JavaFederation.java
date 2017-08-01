@@ -89,6 +89,17 @@ public class JavaFederation extends Federation {
 
 	@Override
 	public void and(Federation federation) {
+		// Skip and operation if this federation is empty or false
+		if (this.isEmpty() || this.isFalseFederation()){
+			return;
+		}
+		
+		// Reset this federation if union of overloaded federation will lead to an empty federation
+		if (federation.isEmpty() || ((JavaFederation) federation).isFalseFederation()){
+			this.applyResets(getClockHashSet());
+			return;
+		}
+		
 		// intersect all zones with each other
 		Iterator<?> outerIter = (Iterator<?>) this.iteratorOfClockZone();
 		while (outerIter.hasNext()) {
@@ -96,7 +107,7 @@ public class JavaFederation extends Federation {
 			Iterator<?> innerIter = (Iterator<?>) federation.iteratorOfClockZone();
 			while (innerIter.hasNext()) {
 				JavaClockZone innerZone = (JavaClockZone) innerIter.next();
-				outerZone.and(innerZone);
+				outerZone.and(innerZone, this.getClockHashSet());
 			}
 		}
 
@@ -268,7 +279,7 @@ public class JavaFederation extends Federation {
 				// curZone and FalseClockConstraint results in emptyZone
 				logger.debug("###     Remove *** Current zone and FalseClockConstraint: " + curZone);
 				
-				curZone.removeAllFromClockConstraint();
+				curZone.applyResets(getClockHashSet());
 				it.remove();				
 			}
 			else {
@@ -279,7 +290,7 @@ public class JavaFederation extends Federation {
 				if (curZone.isEmpty()) {
 					logger.debug("###     Remove *** Current zone and constraint: " + curZone);
 					
-					curZone.removeAllFromClockConstraint();
+					curZone.applyResets(getClockHashSet());
 					it.remove();
 				}
 			}
@@ -640,22 +651,24 @@ public class JavaFederation extends Federation {
 
 	@Override
 	public void or(Federation federation) {
-		// intersect all zones with each other
-		Iterator<?> outerIter = (Iterator<?>) this.iteratorOfClockZone();
-		while (outerIter.hasNext()) {
-			JavaClockZone outerZone = (JavaClockZone) outerIter.next();
-			Iterator<?> innerIter = (Iterator<?>) federation.iteratorOfClockZone();
-			while (innerIter.hasNext()) {
-				JavaClockZone innerZone = (JavaClockZone) innerIter.next();
-				outerZone.or(innerZone);
+		if (federation != null && !federation.isEmpty()){
+			// intersect all zones with each other
+			Iterator<?> outerIter = (Iterator<?>) this.iteratorOfClockZone();
+			while (outerIter.hasNext()) {
+				JavaClockZone outerZone = (JavaClockZone) outerIter.next();
+				Iterator<?> innerIter = (Iterator<?>) federation.iteratorOfClockZone();
+				while (innerIter.hasNext()) {
+					JavaClockZone innerZone = (JavaClockZone) innerIter.next();
+					outerZone.or(innerZone);
+				}
 			}
-		}
-
-		// remove empty zones
-		outerIter = (Iterator<?>) this.iteratorOfClockZone();
-		while (outerIter.hasNext()) {
-			if (((JavaClockZone) outerIter.next()).isEmpty())
-				outerIter.remove();
+	
+			// remove empty zones
+			outerIter = (Iterator<?>) this.iteratorOfClockZone();
+			while (outerIter.hasNext()) {
+				if (((JavaClockZone) outerIter.next()).isEmpty())
+					outerIter.remove();
+			}
 		}
 	}
 
