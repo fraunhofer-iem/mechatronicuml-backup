@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: MechatronicUML Custom Sirius Properties
-Bundle-SymbolicName: org.muml.core.siriusproperties.custom;singleton:=true
+Bundle-SymbolicName: org.muml.pim.siriusproperties.custom;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: org.muml.core.siriusproperties.custom.Activator
+Bundle-Activator: org.muml.pim.siriusproperties.custom.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.eef.core,
@@ -12,7 +12,12 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.eef.ide.ui,
  org.eclipse.emf.edit,
  org.eclipse.eef.common.ui,
- org.eclipse.emf.edit.ui
+ org.eclipse.emf.edit.ui,
+ org.eclipse.xtext.ui;bundle-version="2.10.0",
+ org.muml.pim.actionlanguage.xtext.ui,
+ org.eclipse.emf.compare;bundle-version="3.3.1",
+ org.eclipse.emf.transaction,
+ org.eclipse.emf.compare.rcp
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
-Export-Package: org.muml.core.siriusproperties.custom
+Export-Package: org.muml.pim.siriusproperties.custom

@@ -15,7 +15,7 @@
    <extension
          point="org.eclipse.eef.ide.ui.eefLifecycleManagerProvider">
       <descriptor
-            class="org.muml.core.siriusproperties.custom.SiriusPropertiesLifecycleManagerProvider"
+            class="org.muml.pim.siriusproperties.custom.SiriusPropertiesLifecycleManagerProvider"
             description="Embeds Xtext Editor in Properties View"
             id="org.muml.core.siriusproperties.custom"
             label="Xtext Editor">

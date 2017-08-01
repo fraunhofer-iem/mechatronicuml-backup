@@ -68,7 +68,7 @@
     </groups>
     <groups identifier="org.muml.pim.realtimestatechart.ConditionGroup" labelExpression="Properties" semanticCandidateExpression="var:self">
       <controls xsi:type="properties-ext-widgets-reference:ExtReferenceDescription" labelExpression="Clock Constraints" referenceNameExpression="clockConstraints"/>
-      <controls xsi:type="properties:CustomDescription" identifier="org.muml.core.siriusproperties.custom.embeddedxtexteditor" labelExpression="guard"/>
+      <controls xsi:type="properties:CustomDescription" identifier="org.muml.pim.actionlanguage.xtexteditor" labelExpression="guard"/>
       <controls xsi:type="properties-ext-widgets-reference:ExtReferenceDescription" labelExpression="Events" referenceNameExpression="events"/>
     </groups>
     <groups identifier="org.muml.pim.realtimestatechart.DeadlineGroup" labelExpression="Properties" semanticCandidateExpression="var:self">

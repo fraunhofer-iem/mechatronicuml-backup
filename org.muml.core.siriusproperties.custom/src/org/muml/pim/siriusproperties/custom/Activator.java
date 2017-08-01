@@ -1,7 +1,8 @@
-package org.muml.core.siriusproperties.custom;
+package org.muml.pim.siriusproperties.custom;
 
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
-import org.muml.core.siriusproperties.custom.embeddedxtexteditor.EmbeddedXtextEditorLifecycleManager;
 import org.osgi.framework.BundleContext;
 
 /**
@@ -21,6 +22,9 @@ public class Activator extends AbstractUIPlugin {
 	public Activator() {
 	}
 
+	public static void logError(Throwable t) {
+		getDefault().getLog().log(new Status(IStatus.ERROR, PLUGIN_ID, t.getMessage(), t));
+	}
 	/*
 	 * (non-Javadoc)
 	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.BundleContext)
