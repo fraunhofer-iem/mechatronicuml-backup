@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmftool:ToolRegistry
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
+  <palette
+      title="StatechartPalette">
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="Real-Time Statechart"
+        description="Can be casted on statechart"
+        collapsible="true">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="State"
+          description="Creates a new State">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icon/c_state16.gif"
+            bundle="org.muml.pim.realtimestatechart.diagram"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Transition"
+          description="Creates a new Transition">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icon/transition16.gif"
+            bundle="org.muml.pim.realtimestatechart.diagram"/>
+      </tools>
+    </tools>
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="Real-Time State"
+        description="Can be casted on state"
+        collapsible="true">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Entry Action"
+          description="Creates an EntryAction">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icon/entry_action16.gif"
+            bundle="org.muml.pim.realtimestatechart.diagram"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Do Action"
+          description="Creates a Do Action">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icon/do_action16.gif"
+            bundle="org.muml.pim.realtimestatechart.diagram"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Exit Action"
+          description="Creates an Exit Action">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icon/exit_action16.gif"
+            bundle="org.muml.pim.realtimestatechart.diagram"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Region"
+          description="Creates an inner Region for a State">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icon/region.gif"
+            bundle="org.muml.pim.realtimestatechart.diagram"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Entry Point"
+          description="Create Entry Point">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icon/state_entry_point.gif"
+            bundle="org.muml.pim.realtimestatechart.diagram"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Exit Point"
+          description="Create Exit Point">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icon/state_exit_point.gif"
+            bundle="org.muml.pim.realtimestatechart.diagram"/>
+      </tools>
+    </tools>
+  </palette>
+</gmftool:ToolRegistry>

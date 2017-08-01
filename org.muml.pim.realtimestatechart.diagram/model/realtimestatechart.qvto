@@ -1,0 +1,64 @@
+import PostReconcileLibrary;
+modeltype GMFGEN uses gmfgen('http://www.eclipse.org/gmf/2009/GenModel');
+
+
+transformation settings(inout gmfgen : GMFGEN);
+	-- extends transformation common...
+
+-- TODO: call /org.muml.core.common/transformations/settings.qvto
+
+main() {
+	gmfgen.rootObjects()![GenEditorGenerator]->map settings();
+}
+
+mapping inout GenEditorGenerator::settings() {
+	self->map general("realtimestatechart_diagram","Realtime Statechart Diagram Editor");
+	self->map editorSpecific();
+}
+
+
+mapping inout GenEditorGenerator::editorSpecific() {
+	-- put settings here, that are often lost to apply them permanently
+	self.diagram.compartments->select(c | c.editPartClassName = 'RegionRegionContentsCompartmentEditPart')->map listLayout(true);
+	self.diagram.childNodes[GenChildSideAffixedNode]->select(n | n.editPartClassName = 'EntryPointEditPart' or n.editPartClassName = 'ExitPointEditPart')->map connectionPoint();
+
+	var nodes := self.diagram.childNodes[GenNode]->union(self.diagram.topLevelNodes);
+	nodes->forEach(node) {
+		if (node.modelFacet.metaClass.ecoreClass.name = 'State') then {
+			node->map behavior('org.muml.pim.common.edit.policies.EditPolicyRoles.STATE_COLOR_ROLE', 'org.muml.pim.realtimestatechart.diagram.edit.policies.statechart.StateColorEditPolicy');
+			node->map behavior('org.muml.pim.common.edit.policies.EditPolicyRoles.STATE_VISUALIZATION_ROLE', 'org.muml.pim.common.edit.policies.statechart.StateEditPolicy');
+		} elif (node.modelFacet.metaClass.ecoreClass.name = 'ClockConstraint') then {
+			node->map behavior('"TitleHelper"', 'org.muml.pim.realtimestatechart.diagram.edit.policies.statechart.TitleHelperEditPolicy');
+		} elif (node.modelFacet.metaClass.ecoreClass.name = 'SynchronizationChannel') then {
+			node->map behavior('"TitleHelper"', 'org.muml.pim.realtimestatechart.diagram.edit.policies.statechart.TitleHelperEditPolicy');
+		} endif;
+	};
+
+}
+
+mapping inout GenNode::behavior(key : String, value : String) {
+	if (behaviour[CustomBehaviour]->select(cb | cb.key = key)->isEmpty()) then {
+		behaviour += new CustomBehaviour(key, value);
+	} endif;
+}
+
+
+constructor CustomBehaviour::CustomBehaviour(k : String, editPolicy : String) {
+	key := k;
+	editPolicyQualifiedClassName := editPolicy;
+}
+
+mapping inout GenCompartment::listLayout(value : Boolean) {
+	self.listLayout := value;
+}
+
+
+mapping inout GenChildSideAffixedNode::connectionPoint() {
+	-- self.behaviour[CustomBehaviour]->reject(b | b.key = 'org.muml.pim.common.edit.policies.ports.ConnectionPointEditPolicy.CONNECTION_POINT_VISUALIZATION_ROLE');
+	-- self.behaviour += new CustomBehaviour('org.muml.pim.common.edit.policies.ports.ConnectionPointEditPolicy.CONNECTION_POINT_VISUALIZATION_ROLE', 'org.muml.pim.common.edit.policies.ports.ConnectionPointEditPolicy');
+}
+
+--constructor CustomBehaviour::CustomBehaviour(_key : String, editPolicy : String) {
+--	key := _key;
+--	editPolicyQualifiedClassName := editPolicy;
+--}
