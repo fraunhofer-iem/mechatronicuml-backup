@@ -17,7 +17,6 @@ Export-Package: org.muml.psm.allocation.algorithm.ilp.tests.extension,
 Require-Bundle: org.eclipse.xtext.xbase.lib;bundle-version="2.10.0",
  org.muml.psm.allocation.algorithm;bundle-version="1.0.0",
  org.muml.psm.allocation.algorithm.tests;bundle-version="1.0.0",
- org.muml.psm.allocation.context.muml;bundle-version="1.0.0",
  org.junit;bundle-version="4.12.0",
  org.muml.psm.allocation.ilp.lpsolve.xtext;bundle-version="1.0.0",
  org.muml.psm.allocation.language.xtext;bundle-version="1.0.0",
@@ -26,5 +25,6 @@ Require-Bundle: org.eclipse.xtext.xbase.lib;bundle-version="2.10.0",
  org.muml.core;visibility:=reexport,
  org.muml.psm.allocation.algorithm.ilp;bundle-version="1.0.0",
  org.muml.psm.allocation.algorithm.ilp.lpsolve;bundle-version="1.0.0",
- org.muml.psm.allocation.algorithm.ilp.opt4j;bundle-version="1.0.0"
+ org.muml.psm.allocation.algorithm.ilp.opt4j;bundle-version="1.0.0",
+ org.muml.eloquent.adapter.muml;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
