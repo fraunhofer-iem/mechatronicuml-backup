@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
@@ -554,17 +556,144 @@ public class JavaFederation extends Federation {
 
 	@Override
 	public String toString() {
-		StringBuffer buffer = new StringBuffer();
-		buffer.append("Federation: \\n");
-		
-		Iterator<? extends ClockZone> clockZIter = this.getClockZone()
-				.iterator();
-		while (clockZIter.hasNext()) {
-			buffer.append(clockZIter.next().toString());
-			if (clockZIter.hasNext())
-				buffer.append(" | ");
-		}
-		return buffer.toString();
+		return this.createFederationString(this);
+//		StringBuffer buffer = new StringBuffer();
+//		buffer.append("Federation: \n");
+//		
+//		Iterator<? extends ClockZone> clockZIter = this.getClockZone()
+//				.iterator();
+//		while (clockZIter.hasNext()) {
+//			buffer.append(clockZIter.next().toString());
+//			if (clockZIter.hasNext())
+//				buffer.append("\n");
+//		}
+//		return buffer.toString();
+	}
+	
+	public String createFederationString(Federation federation) {
+		assert (federation.sizeOfClockZone() <= 1);
+		if (federation.sizeOfClockZone() == 1) {
+			Map<UDBMClock, SimpleClockConstraint> clock2lowerBound = new HashMap<>();
+			Map<UDBMClock, SimpleClockConstraint> clock2upperBound = new HashMap<>();
+			Map<List<UDBMClock>, DifferenceClockConstraint> clockPair2bound = new HashMap<>();
+
+			ClockZone zone = federation.iteratorOfClockZone().next();
+			Iterator<ClockConstraint> ccIt = zone.iteratorOfClockConstraint();
+			while (ccIt.hasNext()) {
+				ClockConstraint cc = ccIt.next();
+				if (cc instanceof SimpleClockConstraint) {
+					SimpleClockConstraint scc = (SimpleClockConstraint) cc;
+					if (scc.getRelationalOperator().toString().contains(">"))
+						clock2lowerBound.put(scc.getClock(), scc);
+					else if (scc.getRelationalOperator().toString()
+							.contains("<"))
+						clock2upperBound.put(scc.getClock(), scc);
+				} else if (cc instanceof DifferenceClockConstraint) {
+					DifferenceClockConstraint dcc = (DifferenceClockConstraint) cc;
+					List<UDBMClock> clockPair = new LinkedList<UDBMClock>();
+					clockPair.add(dcc.getClockMinuend());
+					clockPair.add(dcc.getClockSubtrahend());
+					clockPair2bound.put(clockPair, dcc);
+				}
+			}
+			StringBuilder sb = new StringBuilder();
+			boolean notEmpty = false;
+			Iterator<? extends UDBMClock> clockIt = federation
+					.iteratorOfClock();
+			while (clockIt.hasNext()) {
+				UDBMClock clock = clockIt.next();
+				if (clock.getId().equals("zeroclock"))
+					continue;
+				SimpleClockConstraint lb = clock2lowerBound.get(clock);
+				SimpleClockConstraint ub = clock2upperBound.get(clock);
+				if (lb != null || ub != null) {
+					if (ub == null) {
+						sb.append(clock.getName());
+						sb.append(lb.getRelationalOperator());
+						sb.append(lb.getValue());
+					} else if (lb == null) {
+						sb.append(clock.getName());
+						sb.append(ub.getRelationalOperator());
+						sb.append(ub.getValue());
+					} else if (ub.getRelationalOperator().toString()
+							.contains("=")
+							&& lb.getRelationalOperator().toString()
+									.contains("=")
+							&& ub.getValue() == lb.getValue()) {
+						sb.append(clock.getName());
+						sb.append("=");
+						sb.append(lb.getValue());
+					} else {
+						if (lb != null) {
+							sb.append(lb.getValue());
+							sb.append(lb.getRelationalOperator().toString()
+									.replace('>', '<'));
+						}
+						sb.append(clock.getName());
+						sb.append(ub.getRelationalOperator());
+						sb.append(ub.getValue());
+					}
+					if (clockIt.hasNext())
+						sb.append(", ");
+					notEmpty = true;
+				}
+			}
+			if (notEmpty)
+				sb.append("\n");
+			clockIt = federation.iteratorOfClock();
+			while (clockIt.hasNext()) {
+				UDBMClock clock = clockIt.next();
+				if (clock.getId().equals("zeroclock"))
+					continue;
+				boolean notEmpty2 = false;
+				Iterator<? extends UDBMClock> clockIt2 = federation
+						.iteratorOfClock();
+				while (clockIt2.hasNext()) {
+					UDBMClock clock2 = clockIt2.next();
+					if (clock2.getId().equals("zeroclock"))
+						continue;
+					List<UDBMClock> clockPair = new LinkedList<>();
+					clockPair.add(clock);
+					clockPair.add(clock2);
+					DifferenceClockConstraint dcc = clockPair2bound
+							.remove(clockPair);
+					List<UDBMClock> oppositeClockPair = new LinkedList<>();
+					oppositeClockPair.add(clock2);
+					oppositeClockPair.add(clock);
+					DifferenceClockConstraint oppositeDcc = clockPair2bound
+							.remove(oppositeClockPair);
+					if (dcc != null || oppositeDcc != null) {
+						if (dcc != null && oppositeDcc != null
+								&& dcc.getValue() == 0
+								&& oppositeDcc.getValue() == 0) {
+							sb.append(dcc.getClockMinuend().getName());
+							sb.append("=");
+							sb.append(dcc.getClockSubtrahend().getName());
+						} else {
+							if (dcc != null) {
+								sb.append(dcc.toString());
+							}
+							if (dcc != null && oppositeDcc != null)
+								sb.append(", ");
+							if (oppositeDcc != null) {
+								sb.append(oppositeDcc.toString());
+							}
+						}
+						if (clockIt2.hasNext())
+							sb.append("\n");
+						notEmpty2 = true;
+					}
+				}
+				if (notEmpty2 && clockIt.hasNext())
+					sb.append("\n");
+			}
+
+			if (sb.length() != 0)
+				return sb.toString().replace("_0", "");
+			else
+				return "true\n";
+		} else
+			return "false\n";
 	}
 
 	// TODO: Ensure that the zones are disjunct.
