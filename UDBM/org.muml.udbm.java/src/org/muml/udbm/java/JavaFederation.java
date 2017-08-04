@@ -651,7 +651,24 @@ public class JavaFederation extends Federation {
 
 	@Override
 	public void or(Federation federation) {
-		if (federation != null && !federation.isEmpty()){
+		if (federation != null && !federation.isEmpty() && !((JavaFederation)federation).isFalseFederation()){
+ 			// Optimization: Remove all ClockZones, if overloaded value is a TrueFederation
+			if (((JavaFederation)federation).isTrueFederation()){
+ 				// Remove all ClockZones from this Federation
+				Iterator<?> czIt = (Iterator<?>) federation.iteratorOfClockZone();
+				while (czIt.hasNext()) {
+					JavaClockZone cz = (JavaClockZone) czIt.next();
+					czIt.remove();
+				}
+				// Add all ClockZones from overloaded Federation
+				Set<? extends ClockZone> outerClockZones = federation.getClockZone();
+				for (ClockZone currentCZ: outerClockZones){
+					this.addToClockZone(currentCZ);
+				}
+				// No further processing needed
+				return;				
+			}
+ 			
 			// intersect all zones with each other
 			Iterator<?> outerIter = (Iterator<?>) this.iteratorOfClockZone();
 			while (outerIter.hasNext()) {
@@ -674,8 +691,31 @@ public class JavaFederation extends Federation {
 
 	@Override
 	public void or(ClockConstraint constraint) {
-		// TODO Auto-generated method stub
-
+		// Skip not relevant constraint
+		if (constraint instanceof FalseClockConstraint){
+			return;
+		}
+		
+		Iterator<? extends ClockZone> czIt = this.iteratorOfClockZone();
+		
+		if (constraint instanceof TrueClockConstraint){
+			// Remove all clock Zones
+			while (czIt.hasNext()){
+				JavaClockZone currentJCZ = (JavaClockZone) czIt.next();
+				czIt.remove();
+			}
+			// Add overloaded TrueClockConstraint to this Federation
+			HashSet<ClockConstraint> ccHS = new HashSet<ClockConstraint>();
+			ccHS.add(constraint);
+			JavaClockZone cz = new JavaClockZone(ccHS, 1);
+			this.addToClockZone(cz);
+		}
+		else {
+			while (czIt.hasNext()){
+				JavaClockZone currentJCZ = (JavaClockZone) czIt.next();
+				currentJCZ.or(constraint);
+			}
+		}
 	}
 
 	@Override
@@ -694,14 +734,5 @@ public class JavaFederation extends Federation {
 		}
 
 		return result;
-	}
-
-	public void or(TreeSet<JavaFederation> javaFederationSet) {
-		Iterator<JavaFederation> javaFederationIterator = javaFederationSet.iterator();
-		
-		while (javaFederationIterator.hasNext()){
-			JavaFederation currentJavaFederation = javaFederationIterator.next();
-			this.or(currentJavaFederation);
-		}
 	}
 }

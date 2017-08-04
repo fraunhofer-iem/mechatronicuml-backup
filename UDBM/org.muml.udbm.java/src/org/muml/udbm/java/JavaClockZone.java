@@ -885,6 +885,10 @@ public class JavaClockZone extends ClockZone {
 		return true;
 	}
 	
+	public void or(ClockConstraint constraint) {
+		this.addToClockConstraint(constraint);
+	}
+	
 	/**
 	 * 	compute matrix value of the ClockConstraint:
 		shift value of the constraint to the right, add 0 (<) or 1 (<=)
