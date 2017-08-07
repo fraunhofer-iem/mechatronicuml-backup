@@ -17,7 +17,9 @@ Require-Bundle: org.eclipse.ui,
  org.muml.pim.actionlanguage.xtext.ui,
  org.eclipse.emf.compare;bundle-version="3.3.1",
  org.eclipse.emf.transaction,
- org.eclipse.emf.compare.rcp
+ org.eclipse.emf.compare.rcp,
+ org.eclipse.core.expressions;bundle-version="3.5.100",
+ org.eclipse.ui.navigator
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.muml.pim.siriusproperties.custom

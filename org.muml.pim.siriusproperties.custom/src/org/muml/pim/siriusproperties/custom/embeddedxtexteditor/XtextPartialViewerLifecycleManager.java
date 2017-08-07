@@ -14,6 +14,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
+import org.muml.pim.actionlanguage.xtext.common.LanguageResource;
 import org.muml.pim.actionlanguage.xtext.ui.internal.ActionLanguageActivator;
 
 import com.google.inject.Injector;
@@ -22,7 +23,7 @@ public class XtextPartialViewerLifecycleManager extends AbstractEEFWidgetLifecyc
 
 	private EEFCustomWidgetDescription description;
 	
-	private XtextPartialViewerWidget xtextPartialEditorWidget;
+	private EmbeddedXtextEditor embeddedXtextEditor;
 	
 	private XtextPartialViewerController controller;
 	
@@ -42,8 +43,8 @@ public class XtextPartialViewerLifecycleManager extends AbstractEEFWidgetLifecyc
 		String languageName = "org.muml.pim.actionlanguage.xtext.ActionLanguage";
 		Injector injector = ActionLanguageActivator.getInstance().getInjector(languageName);
 		
-		xtextPartialEditorWidget = new XtextPartialViewerWidget(parent, injector, SWT.BORDER | SWT.H_SCROLL);
-		Control control = xtextPartialEditorWidget.getControl();
+		embeddedXtextEditor = new EmbeddedXtextEditor(parent, injector, SWT.BORDER | SWT.H_SCROLL);
+		Control control = embeddedXtextEditor.getControl();
 		GridData gridData = new GridData(SWT.FILL, SWT.BEGINNING, true, false);
 		gridData.heightHint = 14 * 12;
 		gridData.widthHint = 300;
@@ -56,8 +57,9 @@ public class XtextPartialViewerLifecycleManager extends AbstractEEFWidgetLifecyc
 	@Override
 	public void aboutToBeShown() {
 		super.aboutToBeShown();
-		
-		this.newValueConsumer = (newValue) -> this.xtextPartialEditorWidget.update((EObject)newValue);
+		String text = LanguageResource.serializeEObjectSafe((EObject)getWidgetSemanticElement(), (EObject) getWidgetSemanticElement());
+		final String text2 = (text == null) ? "" : text;
+		this.newValueConsumer = (newValue) -> this.embeddedXtextEditor.update(text2);
 		this.controller.onNewValue(this.newValueConsumer);
 	}
 	
@@ -86,7 +88,7 @@ public class XtextPartialViewerLifecycleManager extends AbstractEEFWidgetLifecyc
 
 	@Override
 	protected Control getValidationControl() {
-		return this.xtextPartialEditorWidget.getControl();
+		return this.embeddedXtextEditor.getControl();
 	}
 
 	@Override
