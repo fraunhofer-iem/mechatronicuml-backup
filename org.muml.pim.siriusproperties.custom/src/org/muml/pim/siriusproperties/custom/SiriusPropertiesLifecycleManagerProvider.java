@@ -17,13 +17,18 @@ public class SiriusPropertiesLifecycleManagerProvider implements IEEFLifecycleMa
 	/**
 	 * The identifier of the control description supported.
 	 */
-	private static final String ACTIONLANGUAGE_XTEXTEDITOR_ID = "org.muml.pim.actionlanguage.xtexteditor"; //$NON-NLS-1$
+	private static final String ACTIONLANGUAGE_XTEXTEDITOR_ID = "org.muml.pim.actionlanguage.xtexteditor:"; //$NON-NLS-1$
 
 	@Override
 	public boolean canHandle(EEFControlDescription controlDescription) {
 		// only support custom widgets with the proper identifier
 		if (controlDescription instanceof EEFCustomWidgetDescription) {
-			return ACTIONLANGUAGE_XTEXTEDITOR_ID.equals(controlDescription.getIdentifier());
+			String identifier = controlDescription.getIdentifier();
+			if (identifier!=null) {
+				if (identifier.startsWith(ACTIONLANGUAGE_XTEXTEDITOR_ID)) {
+					return true;
+				}
+			}
 		}
 		return false;
 	}
@@ -31,9 +36,11 @@ public class SiriusPropertiesLifecycleManagerProvider implements IEEFLifecycleMa
 	@Override
 	public IEEFLifecycleManager getLifecycleManager(EEFControlDescription controlDescription, IVariableManager variableManager,
 			IInterpreter interpreter, EditingContextAdapter contextAdapter) {
-		if (controlDescription instanceof EEFCustomWidgetDescription) {
-			if (ACTIONLANGUAGE_XTEXTEDITOR_ID.equals(controlDescription.getIdentifier())) {
-				return new org.muml.pim.siriusproperties.custom.embeddedxtexteditor.XtextPartialViewerLifecycleManager((EEFCustomWidgetDescription) controlDescription, variableManager, interpreter, contextAdapter);
+		String identifier = controlDescription.getIdentifier();
+		if (identifier!=null) {
+			if (identifier.startsWith(ACTIONLANGUAGE_XTEXTEDITOR_ID)) {
+				String featureName = identifier.substring(ACTIONLANGUAGE_XTEXTEDITOR_ID.length());
+				return new org.muml.pim.siriusproperties.custom.embeddedxtexteditor.XtextPartialViewerLifecycleManager((EEFCustomWidgetDescription) controlDescription, variableManager, interpreter, contextAdapter, featureName);
 			}
 		}
 		throw new IllegalArgumentException();

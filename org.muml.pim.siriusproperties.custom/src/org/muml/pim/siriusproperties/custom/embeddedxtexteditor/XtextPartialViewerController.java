@@ -1,19 +1,42 @@
 package org.muml.pim.siriusproperties.custom.embeddedxtexteditor;
 
+import java.util.List;
+
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.eef.EEFCustomWidgetDescription;
 import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.api.controllers.AbstractEEFCustomWidgetController;
 import org.eclipse.eef.core.api.controllers.IConsumer;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
+import org.muml.core.common.xtext.ILoadResult;
+import org.muml.pim.actionlanguage.xtext.common.LanguageResource;
 
 public class XtextPartialViewerController extends AbstractEEFCustomWidgetController {
-
-	private IConsumer<Object> newValueConsumer;
-
+	private EObject element;
+	private String featureName;
+	private IConsumer<List<Notification>> listener = notifications -> notify(notifications);
+	private XtextPartialViewerLifecycleManager manager;
+	
 	public XtextPartialViewerController(EEFCustomWidgetDescription description, IVariableManager variableManager, IInterpreter interpreter,
-			EditingContextAdapter contextAdapter) {
+			EditingContextAdapter contextAdapter, String featureName, XtextPartialViewerLifecycleManager manager) {
 		super(description, variableManager, interpreter, contextAdapter);
+		this.featureName = featureName;
+		contextAdapter.registerModelChangeListener(listener);
+		this.manager = manager;
+	}
+
+	private void notify(List<Notification> notifications) {
+		for (Notification notification :  notifications) {
+			if (notification.getNotifier() == element) {
+				manager.update();
+			}
+		}
 	}
 
 	@Override
@@ -24,14 +47,52 @@ public class XtextPartialViewerController extends AbstractEEFCustomWidgetControl
 	@Override
 	public void refresh() {
 		super.refresh();
-		this.newEval().call("var:self", this.newValueConsumer);
+		this.newEval().call("var:self", newElement -> setElement((EObject) newElement));
 	}
 
-	public void onNewValue(IConsumer<Object> consumer) {
-		this.newValueConsumer = consumer;
+	public String getFeatureName() {
+		return featureName;
 	}
 
-	public void removeValueConsumer() {
-		this.newValueConsumer = null;
+	public String readModelValue() {
+		EStructuralFeature feature = element.eClass().getEStructuralFeature(featureName);
+		
+		String text = null;
+		Object value = element.eGet(feature);
+		if (value instanceof String) {
+			text = (String) value;
+		}
+		if (feature instanceof EReference && !feature.isMany()) {
+			text = LanguageResource.serializeEObjectSafe((EObject) value, element);
+		}
+		if (text == null) {
+			text = "";
+		}
+		return text;
+	}
+
+	public IStatus persistModelValue(String text) {
+		return contextAdapter.performModelChange(new Runnable() {
+			@Override
+			public void run() {
+				Object newValue = null;
+				EStructuralFeature feature = element.eClass().getEStructuralFeature(featureName);
+				if (feature.getEType() == EcorePackage.eINSTANCE.getEString()) {
+					newValue = text;
+				} else if (feature instanceof EReference && !feature.isMany()) {
+					ILoadResult loadResult = LanguageResource.loadFromString(text, element);
+					newValue = loadResult.getEObject();
+				}
+				element.eSet(feature, newValue);
+			}
+		});
+		
+	}
+
+	public void setElement(EObject element) {
+		if (this.element != element) {
+			this.element = element;
+			manager.update();
+		}
 	}
 }

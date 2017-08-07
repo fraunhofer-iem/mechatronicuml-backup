@@ -8,6 +8,9 @@ import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.jface.text.DocumentEvent;
+import org.eclipse.jface.text.IDocumentListener;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
@@ -20,22 +23,43 @@ import org.muml.pim.actionlanguage.xtext.ui.internal.ActionLanguageActivator;
 import com.google.inject.Injector;
 
 public class XtextPartialViewerLifecycleManager extends AbstractEEFWidgetLifecycleManager {
-
+	
 	private EEFCustomWidgetDescription description;
 	
 	private EmbeddedXtextEditor embeddedXtextEditor;
 	
 	private XtextPartialViewerController controller;
-	
-	private IConsumer<Object> newValueConsumer;
+
+	private String featureName;
+
+	private boolean updating = false;
+	private boolean persisting = false;
+
+	private IDocumentListener documentListener = new IDocumentListener() {
+		@Override
+		public void documentAboutToBeChanged(DocumentEvent event) {
+		}
+		@Override
+		public void documentChanged(DocumentEvent event) {
+			if (!updating) {
+				persisting = true;
+				try {
+					controller.persistModelValue(embeddedXtextEditor.getDocument().get());
+				} finally {
+					persisting = false;
+				}
+			}
+		}
+	};
 	
 	public XtextPartialViewerLifecycleManager(
 			EEFCustomWidgetDescription controlDescription,
 			IVariableManager variableManager, 
 			IInterpreter interpreter, 
-			EditingContextAdapter contextAdapter) {
+			EditingContextAdapter contextAdapter, String featureName) {
 		super(variableManager, interpreter, contextAdapter);
 		this.description = controlDescription;
+		this.featureName = featureName;
 	}
 
 	@Override
@@ -51,29 +75,37 @@ public class XtextPartialViewerLifecycleManager extends AbstractEEFWidgetLifecyc
 		gridData.horizontalIndent = VALIDATION_MARKER_OFFSET;
 		control.setLayoutData(gridData);
 		
-		this.controller = new XtextPartialViewerController(description, variableManager, interpreter, contextAdapter);
+		this.controller = new XtextPartialViewerController(description, variableManager, interpreter, contextAdapter, featureName, this);
+		
+		embeddedXtextEditor.getDocument().addDocumentListener(documentListener);
 	}
 
 	@Override
 	public void aboutToBeShown() {
 		super.aboutToBeShown();
-		String text = LanguageResource.serializeEObjectSafe((EObject)getWidgetSemanticElement(), (EObject) getWidgetSemanticElement());
-		final String text2 = (text == null) ? "" : text;
-		this.newValueConsumer = (newValue) -> this.embeddedXtextEditor.update(text2);
-		this.controller.onNewValue(this.newValueConsumer);
 	}
-	
+
+	void update() {
+		if (!persisting) {
+			updating = true;
+			try {
+				embeddedXtextEditor.update(controller.readModelValue());
+			} finally {
+				updating = false;
+			}
+		}
+	}
+
 	@Override
 	public void refresh() {
 		super.refresh();
-		this.controller.refresh();
+		controller.refresh();
+
 	}
 
 	@Override
 	public void aboutToBeHidden() {
 		super.aboutToBeHidden();
-		this.controller.removeValueConsumer();
-		this.newValueConsumer = null;
 	}
 
 	@Override

@@ -8,6 +8,10 @@ import java.util.Map;
 import org.eclipse.core.expressions.Expression;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.action.IMenuListener;
@@ -18,7 +22,6 @@ import org.eclipse.jface.commands.ActionHandler;
 import org.eclipse.jface.text.IDocument;
 import org.eclipse.jface.text.IDocumentPartitioner;
 import org.eclipse.jface.text.ISynchronizable;
-import org.eclipse.jface.text.ITextOperationTarget;
 import org.eclipse.jface.text.source.Annotation;
 import org.eclipse.jface.text.source.AnnotationModel;
 import org.eclipse.jface.text.source.AnnotationPainter;
@@ -75,7 +78,6 @@ import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.XtextSourceViewer;
 import org.eclipse.xtext.ui.editor.XtextSourceViewerConfiguration;
 import org.eclipse.xtext.ui.editor.bracketmatching.BracketMatchingPreferencesInitializer;
-import org.eclipse.xtext.ui.editor.embedded.TextViewerAction;
 import org.eclipse.xtext.ui.editor.model.IXtextDocument;
 import org.eclipse.xtext.ui.editor.model.XtextDocument;
 import org.eclipse.xtext.ui.editor.preferences.IPreferenceStoreAccess;
@@ -88,6 +90,7 @@ import org.eclipse.xtext.util.StringInputStream;
 import org.eclipse.xtext.validation.CheckMode;
 import org.eclipse.xtext.validation.IResourceValidator;
 import org.eclipse.xtext.validation.Issue;
+import org.muml.pim.actionlanguage.xtext.common.LanguageResource;
 
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
@@ -489,18 +492,18 @@ public class EmbeddedXtextEditor {
 	private ISharedTextColors getSharedColors() {
 		return EditorsUI.getSharedTextColors();
 	}
-	
+
 	/**
 	 * Updates the text of this editor with the given String
 	 * 
-	 * @param text
+	 * @param newValue
 	 */
-	public void update(String text) {
+	public void update(String newValue) {
 		IDocument document = fSourceViewer.getDocument();
 		
 		fSourceViewer.setRedraw(false);
-		document.set(text);
-		fSourceViewer.setVisibleRegion(0, text.length());
+		document.set(newValue);
+		fSourceViewer.setVisibleRegion(0, newValue.length());
 		fSourceViewer.setSelectedRange(0, 0);
 		fSourceViewer.setRedraw(true);
 	}
