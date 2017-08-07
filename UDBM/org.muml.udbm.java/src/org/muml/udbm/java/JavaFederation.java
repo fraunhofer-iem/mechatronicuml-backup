@@ -428,18 +428,6 @@ public class JavaFederation extends Federation {
 		return true;
 	}
 	
-	public boolean isBooleanFederation() {
-		Iterator<?> it = (Iterator<?>) this.iteratorOfClockZone();
-		JavaClockZone cz;
-		while (it.hasNext()) {
-			cz = (JavaClockZone)it.next();
-			if (cz.sizeOfClockConstraint()>1){
-				return false;
-			}
-		}
-		return true;
-	}
-	
 	/*
 	 * A Federation is a TrueFederation, if it only consists of true clock constrains
 	 */
