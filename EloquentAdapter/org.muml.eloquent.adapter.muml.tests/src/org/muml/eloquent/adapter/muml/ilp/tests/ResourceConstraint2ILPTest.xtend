@@ -1,14 +1,14 @@
-package org.muml.psm.allocation.context.muml.ilp.tests
+package org.muml.eloquent.adapter.muml.ilp.tests
 
 import java.util.Collection
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
 import org.junit.runners.Parameterized.Parameters
-import org.muml.psm.allocation.context.muml.tests.MUMLOCLContextBasedTest
+import org.muml.eloquent.adapter.muml.tests.MUMLOCLContextBasedTest
 
 @RunWith(value = typeof(Parameterized))
-class MeasureFunction2ILPTest extends MUMLOCLContextBasedTest {
-	public static final String uriPrefix = "platform:/plugin/org.muml.eloquent.adapter.muml.tests/fixtures/ilp/measureFunction/"
+class ResourceConstraint2ILPTest extends MUMLOCLContextBasedTest {
+	public static final String uriPrefix = "platform:/plugin/org.muml.eloquent.adapter.muml.tests/fixtures/ilp/resourceConstraint/"
 	
 	new(String expectedURI, String transformationURI, String aslURI, String cicURI, String hwpicURI) {
 		super(expectedURI, transformationURI, aslURI, cicURI, hwpicURI)
@@ -17,34 +17,45 @@ class MeasureFunction2ILPTest extends MUMLOCLContextBasedTest {
 	@Parameters
 	def static Collection<Object[]> getTestData() {
 		#[
-			#[uriPrefix + "measureFunctionSimple.lp",
+			#[uriPrefix + "resourceConstraintSimple.lp",
 			  "platform:/plugin/org.muml.psm.allocation.algorithm.ilp/transforms/Specification2ILP.qvto",
-			  uriPrefix + "measureFunctionSimple.allocation_specification",
+			  uriPrefix + "resourceConstraintSimple.allocation_specification",
 			  GeneralConstraint2ILPTest.modelsDirectory + "simple.fujaba#//@categories.1/@modelElements.0",
 			  GeneralConstraint2ILPTest.modelsDirectory + "simple.fujaba#//@categories.8/@modelElements.0/@hwplatformInstances.0/@embeddedHPIC"],
-			#[uriPrefix + "measureFunctionMultipleQoS.lp",
+			// requiredResource keyword
+			#[uriPrefix + "resourceConstraintSimple.lp",
 			  "platform:/plugin/org.muml.psm.allocation.algorithm.ilp/transforms/Specification2ILP.qvto",
-			  uriPrefix + "measureFunctionMultipleQoS.allocation_specification",
+			  uriPrefix + "requiredResourceConstraintSimple.allocation_specification",
 			  GeneralConstraint2ILPTest.modelsDirectory + "simple.fujaba#//@categories.1/@modelElements.0",
 			  GeneralConstraint2ILPTest.modelsDirectory + "simple.fujaba#//@categories.8/@modelElements.0/@hwplatformInstances.0/@embeddedHPIC"],
-			#[uriPrefix + "measureFunctionMultipleServices.lp",
+			#[uriPrefix + "resourceConstraintEncodeSAT.lp",
 			  "platform:/plugin/org.muml.psm.allocation.algorithm.ilp/transforms/Specification2ILP.qvto",
-			  uriPrefix + "measureFunctionMultipleServices.allocation_specification",
+			  uriPrefix + "resourceConstraintEncodeSAT.allocation_specification",
 			  GeneralConstraint2ILPTest.modelsDirectory + "simple.fujaba#//@categories.1/@modelElements.0",
 			  GeneralConstraint2ILPTest.modelsDirectory + "simple.fujaba#//@categories.8/@modelElements.0/@hwplatformInstances.0/@embeddedHPIC"],
-			#[uriPrefix + "measureFunctionMultipleHeterogeneousQoS.lp",
+			#[uriPrefix + "resourceConstraintTestOrder.lp",
 			  "platform:/plugin/org.muml.psm.allocation.algorithm.ilp/transforms/Specification2ILP.qvto",
-			  uriPrefix + "measureFunctionMultipleHeterogeneousQoS.allocation_specification",
+			  uriPrefix + "resourceConstraintTestOrder.allocation_specification",
 			  GeneralConstraint2ILPTest.modelsDirectory + "simple.fujaba#//@categories.1/@modelElements.0",
 			  GeneralConstraint2ILPTest.modelsDirectory + "simple.fujaba#//@categories.8/@modelElements.0/@hwplatformInstances.0/@embeddedHPIC"],
-			#[uriPrefix + "measureFunctionOrder.lp",
+			#[uriPrefix + "resourceConstraintTestOrder2.lp",
 			  "platform:/plugin/org.muml.psm.allocation.algorithm.ilp/transforms/Specification2ILP.qvto",
-			  uriPrefix + "measureFunctionOrder.allocation_specification",
+			  uriPrefix + "resourceConstraintTestOrder2.allocation_specification",
 			  GeneralConstraint2ILPTest.modelsDirectory + "simple.fujaba#//@categories.1/@modelElements.0",
 			  GeneralConstraint2ILPTest.modelsDirectory + "simple.fujaba#//@categories.8/@modelElements.0/@hwplatformInstances.0/@embeddedHPIC"],
-			#[uriPrefix + "measureFunctionMultipleServices.lp",
+			#[uriPrefix + "resourceConstraintMultipleConstraintsAndDescriptors.lp",
 			  "platform:/plugin/org.muml.psm.allocation.algorithm.ilp/transforms/Specification2ILP.qvto",
-			  uriPrefix + "measureFunctionOmitService.allocation_specification",
+			  uriPrefix + "resourceConstraintMultipleConstraintsAndDescriptors.allocation_specification",
+			  GeneralConstraint2ILPTest.modelsDirectory + "simple.fujaba#//@categories.1/@modelElements.0",
+			  GeneralConstraint2ILPTest.modelsDirectory + "simple.fujaba#//@categories.8/@modelElements.0/@hwplatformInstances.0/@embeddedHPIC"],
+			#[uriPrefix + "resourceConstraintMultipleConstraintsAndDescriptorsOrder.lp",
+			  "platform:/plugin/org.muml.psm.allocation.algorithm.ilp/transforms/Specification2ILP.qvto",
+			  uriPrefix + "resourceConstraintMultipleConstraintsAndDescriptorsOrder.allocation_specification",
+			  GeneralConstraint2ILPTest.modelsDirectory + "simple.fujaba#//@categories.1/@modelElements.0",
+			  GeneralConstraint2ILPTest.modelsDirectory + "simple.fujaba#//@categories.8/@modelElements.0/@hwplatformInstances.0/@embeddedHPIC"],
+			#[uriPrefix + "resourceConstraintSimpleDouble.lp",
+			  "platform:/plugin/org.muml.psm.allocation.algorithm.ilp/transforms/Specification2ILP.qvto",
+			  uriPrefix + "resourceConstraintSimpleDouble.allocation_specification",
 			  GeneralConstraint2ILPTest.modelsDirectory + "simple.fujaba#//@categories.1/@modelElements.0",
 			  GeneralConstraint2ILPTest.modelsDirectory + "simple.fujaba#//@categories.8/@modelElements.0/@hwplatformInstances.0/@embeddedHPIC"]
 		]

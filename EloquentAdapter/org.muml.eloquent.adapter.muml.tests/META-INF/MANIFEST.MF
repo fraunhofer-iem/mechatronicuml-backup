@@ -7,13 +7,13 @@ Bundle-ClassPath: .
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: org.muml.psm.allocation.algorithm.ilp.tests.extension,
+Export-Package: 
+ org.muml.eloquent.adapter.muml,
+ org.muml.eloquent.adapter.muml.algorithm.tests,
+ org.muml.eloquent.adapter.muml.ilp.tests,
+ org.muml.psm.allocation.algorithm.ilp.tests.extension,
  org.muml.psm.allocation.algorithm.ilp.tests.extension.impl,
- org.muml.psm.allocation.algorithm.ilp.tests.extension.util,
- org.muml.psm.allocation.context.muml,
- org.muml.psm.allocation.context.muml.algorithm.tests,
- org.muml.psm.allocation.context.muml.ilp.tests,
- org.muml.psm.allocation.context.muml.tests
+ org.muml.psm.allocation.algorithm.ilp.tests.extension.util
 Require-Bundle: org.eclipse.xtext.xbase.lib;bundle-version="2.10.0",
  org.muml.psm.allocation.algorithm;bundle-version="1.0.0",
  org.muml.psm.allocation.algorithm.tests;bundle-version="1.0.0",

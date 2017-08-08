@@ -1,10 +1,10 @@
-package org.muml.psm.allocation.context.muml.ilp.tests
+package org.muml.eloquent.adapter.muml.ilp.tests
 
 import java.util.Collection
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
 import org.junit.runners.Parameterized.Parameters
-import org.muml.psm.allocation.context.muml.tests.MUMLOCLContextBasedTest
+import org.muml.eloquent.adapter.muml.tests.MUMLOCLContextBasedTest
 
 @RunWith(value = typeof(Parameterized))
 class MetaModelImportTest extends MUMLOCLContextBasedTest {

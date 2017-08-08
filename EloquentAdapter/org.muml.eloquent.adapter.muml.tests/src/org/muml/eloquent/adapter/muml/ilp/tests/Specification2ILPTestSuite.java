@@ -1,4 +1,4 @@
-package org.muml.psm.allocation.context.muml.algorithm.tests;
+package org.muml.eloquent.adapter.muml.ilp.tests;
 
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
@@ -9,10 +9,16 @@ import org.muml.psm.allocation.language.xtext.AllocationSpecificationLanguageSta
 
 @RunWith(Suite.class)
 @SuiteClasses({
-	LPSolveBasedAlgorithmTest.class,
-	Opt4JBasedAlgorithmTest.class
+	GeneralConstraint2ILPTest.class,
+	SameLocation2ILPTest.class,
+	DifferentLocation2ILPTest.class,
+	RequiredHardwareResourceInstance2ILPTest.class,
+	ResourceConstraint2ILPTest.class,
+	MeasureFunction2ILPTest.class,
+	ClassifierContextDeclCS2ILPTest.class,
+	MetaModelImportTest.class
 })
-public class AlgorithmTestSuite {
+public class Specification2ILPTestSuite {
 	@BeforeClass
 	public static void setUpClass() {
 		AllocationSpecificationLanguageStandaloneSetup.doSetup();

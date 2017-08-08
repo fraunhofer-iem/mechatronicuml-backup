@@ -1,11 +1,11 @@
-package org.muml.psm.allocation.context.muml;
+package org.muml.eloquent.adapter.muml;
 
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
-import org.muml.psm.allocation.context.muml.algorithm.tests.AlgorithmTestSuite;
-import org.muml.psm.allocation.context.muml.ilp.tests.Specification2ILPTestSuite;
+import org.muml.eloquent.adapter.muml.algorithm.tests.AlgorithmTestSuite;
+import org.muml.eloquent.adapter.muml.ilp.tests.Specification2ILPTestSuite;
 import org.muml.psm.allocation.ilp.lpsolve.xtext.LPSolveStandaloneSetup;
 import org.muml.psm.allocation.language.xtext.AllocationSpecificationLanguageStandaloneSetup;
 

@@ -1,4 +1,4 @@
-package org.muml.psm.allocation.context.muml.tests
+package org.muml.eloquent.adapter.muml.tests
 
 import java.util.Collection
 

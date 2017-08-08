@@ -1,14 +1,14 @@
-package org.muml.psm.allocation.context.muml.ilp.tests
+package org.muml.eloquent.adapter.muml.ilp.tests
 
 import java.util.Collection
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
 import org.junit.runners.Parameterized.Parameters
-import org.muml.psm.allocation.context.muml.tests.MUMLOCLContextBasedTest
+import org.muml.eloquent.adapter.muml.tests.MUMLOCLContextBasedTest
 
 @RunWith(value = typeof(Parameterized))
-class DifferentLocation2ILPTest extends MUMLOCLContextBasedTest {
-	public static final String uriPrefix = "platform:/plugin/org.muml.eloquent.adapter.muml.tests/fixtures/ilp/differentLocationConstraint/"
+class ClassifierContextDeclCS2ILPTest extends MUMLOCLContextBasedTest {
+	public static final String uriPrefix = "platform:/plugin/org.muml.eloquent.adapter.muml.tests/fixtures/ilp/classifierContextDeclCS/"
 	
 	new(String expectedURI, String transformationURI, String aslURI, String cicURI, String hwpicURI) {
 		super(expectedURI, transformationURI, aslURI, cicURI, hwpicURI)
@@ -17,23 +17,21 @@ class DifferentLocation2ILPTest extends MUMLOCLContextBasedTest {
 	@Parameters
 	def static Collection<Object[]> getTestData() {
 		#[
-			// atomic component instances only
-			#[uriPrefix + "locationConstraintSimple.lp",
+			#[RequiredHardwareResourceInstance2ILPTest.uriPrefix + "requiredHardwareResourceInstanceConstraintSimple.lp",
 			  "platform:/plugin/org.muml.psm.allocation.algorithm.ilp/transforms/Specification2ILP.qvto",
-			  uriPrefix + "locationConstraintSimple.allocation_specification",
+			  uriPrefix + "simple.allocation_specification",
 			  GeneralConstraint2ILPTest.modelsDirectory + "simple.fujaba#//@categories.1/@modelElements.0",
 			  GeneralConstraint2ILPTest.modelsDirectory + "simple.fujaba#//@categories.8/@modelElements.0/@hwplatformInstances.0/@embeddedHPIC"],
-			// separateLocation keyword
-			#[uriPrefix + "locationConstraintSimple.lp",
+			// adds operations to the OCLContext class
+			#[RequiredHardwareResourceInstance2ILPTest.uriPrefix + "requiredHardwareResourceInstanceConstraintSimple.lp",
 			  "platform:/plugin/org.muml.psm.allocation.algorithm.ilp/transforms/Specification2ILP.qvto",
-			  uriPrefix + "separateLocationConstraintSimple.allocation_specification",
+			  uriPrefix + "oclcontextSimple.allocation_specification",
 			  GeneralConstraint2ILPTest.modelsDirectory + "simple.fujaba#//@categories.1/@modelElements.0",
 			  GeneralConstraint2ILPTest.modelsDirectory + "simple.fujaba#//@categories.8/@modelElements.0/@hwplatformInstances.0/@embeddedHPIC"],
-			// two differentLocation constraints (two embedded component instance)
-			#[uriPrefix + "locationConstraintStructuredTwoEmbedded.lp",
+			#[uriPrefix + "oclcontextDifferentLocation.lp",
 			  "platform:/plugin/org.muml.psm.allocation.algorithm.ilp/transforms/Specification2ILP.qvto",
-			  uriPrefix + "locationConstraintStructuredTwoEmbedded.allocation_specification",
-			  GeneralConstraint2ILPTest.modelsDirectory + "simple.fujaba#//@categories.1/@modelElements.4",
+			  uriPrefix + "oclcontextDifferentLocation.allocation_specification",
+			  GeneralConstraint2ILPTest.modelsDirectory + "simple.fujaba#//@categories.1/@modelElements.0",
 			  GeneralConstraint2ILPTest.modelsDirectory + "simple.fujaba#//@categories.8/@modelElements.0/@hwplatformInstances.0/@embeddedHPIC"]
 		]
 	}

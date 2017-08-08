@@ -1,11 +1,11 @@
-package org.muml.psm.allocation.context.muml.tests
+package org.muml.eloquent.adapter.muml.tests
 
 import org.muml.pim.instance.ComponentInstanceConfiguration
 import org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration
 import org.muml.psm.allocation.algorithm.qvto.QVToTransformationRunner.Util
 import org.muml.psm.allocation.algorithm.tests.qvto.QVToTransformationSingleOutExtentTest
-import org.muml.psm.allocation.context.muml.oclcontext.OCLContext
-import org.muml.psm.allocation.context.muml.oclcontext.OclcontextFactory
+import org.muml.eloquent.adapter.muml.oclcontext.OCLContext
+import org.muml.eloquent.adapter.muml.oclcontext.OclcontextFactory
 
 /**
  * Base class for MUML specific tests.
