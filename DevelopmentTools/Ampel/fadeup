@@ -1,0 +1,4 @@
+#!/bin/sh
+#for i in `seq 0 25`; do
+#	amixer cset numid=1 `expr $i \* 4`%
+#done
