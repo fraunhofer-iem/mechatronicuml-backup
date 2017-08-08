@@ -30,7 +30,8 @@
       <import plugin="org.muml.core.export" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.resources" version="3.11.0" match="greaterOrEqual"/>
       <import feature="org.muml.eloquent.feature" version="1.0.0.qualifier"/>
-      <import feature="org.muml.pm.feature" version="1.0.0.qualifier"/>
+      <import feature="org.muml.pm.hardware.feature" version="1.0.0.qualifier"/>
+      <import feature="org.muml.pm.software.feature" version="1.0.0.qualifier"/>
       <import feature="org.muml.psm.feature" version="1.0.0.qualifier"/>
       <import feature="org.muml.pim.feature" version="1.0.0.qualifier"/>
       <import feature="org.muml.core.feature" version="1.0.0.qualifier"/>
