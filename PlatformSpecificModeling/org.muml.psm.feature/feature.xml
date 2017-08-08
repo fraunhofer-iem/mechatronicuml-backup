@@ -69,4 +69,25 @@
          version="0.0.0"
          unpack="false"/>
 
+	<plugin
+         id="org.muml.psm.container"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+         unpack="false"/>
+
+	<plugin
+         id="org.muml.psm.container.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+	<plugin
+         id="org.muml.psm.container.transformation"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 </feature>
