@@ -1,8 +1,34 @@
 #!/bin/sh
+#cp /etc/wpa_supplicant.conf.backup /etc/wpa_supplicant.conf
+#cp /etc/mpd.conf.backup /etc/mpd.conf
+
 #modprobe snd-bcm2835
 amixer cset numid=3 1
 amixer cset numid=1 100%
 
-/root/demonstrator-daemon.sh &
+#echo 4 > /sys/class/gpio/export
+#echo out > /sys/class/gpio/gpio4/direction
+#echo 1 > /sys/class/gpio/gpio4/value
+
+#mpg123 -f 5000 /jingle.mp3 &
+
+#echo nameserver 192.168.0.1 > /etc/resolv.conf
+#modprobe 8192cu
+#wpa_supplicant -B -Dwext -i wlan0 -c/etc/wpa_supplicant.conf
+
+#ifconfig wlan0 192.168.0.40 up
+#route add default gw 192.168.0.1
+
+#dhcpcd -w
+
+/root/ampel-daemon.sh &
+
+# mplayer http://ice.somafm.com/secretagent
+#echo sw_volume: 25 > /var/lib/mpd/state.tmp
+#echo audio_device_state:1:alsa >> /var/lib/mpd/state.tmp
+#echo state: play >> /var/lib/mpd/state.tmp
+#echo current: 0 >> /var/lib/mpd/state.tmp
+#cat /var/lib/mpd/state | grep -v "sw_volume:" | grep -v audio_device_state | grep -v "current:" | grep -v "state:" >> /var/lib/mpd/state.tmp
+#cat /var/lib/mpd/state.tmp > /var/lib/mpd/state
 
 
