@@ -180,10 +180,5 @@
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/modeling/gmp/gmf-tooling/updates/releases/</url>
 		</repository>
-        <repository>
-            <id>ocl-oxygen-int</id>
-            <layout>p2</layout>
-            <url>http://download.eclipse.org/modeling/mdt/ocl/updates/interim/6.3.0</url>
-        </repository>
 	</repositories>
 </project>
