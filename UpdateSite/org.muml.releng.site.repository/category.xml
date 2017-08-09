@@ -180,7 +180,10 @@
    <feature url="features/org.muml.external.unitontology.feature_1.0.0.qualifier.jar" id="org.muml.external.unitontology.feature" version="1.0.0.qualifier">
       <category name="org.muml.releng.site.repository.thirdparty"/>
    </feature>
-   <feature url="features/org.muml.eloquent.feature_1.0.0.qualifier.jar" id="org.muml.eloquent.feature" version="1.0.0.qualifier">
+   <feature url="features/org.opendds.modeling.feature_3.3.0.qualifier.jar" id="org.opendds.modeling.feature" version="3.3.0.qualifier">
+      <category name="org.muml.releng.site.repository.thirdparty"/>
+   </feature>
+	<feature url="features/org.muml.eloquent.feature_1.0.0.qualifier.jar" id="org.muml.eloquent.feature" version="1.0.0.qualifier">
       <category name="org.muml.releng.site.repository.utility"/>
    </feature>
    <feature url="features/org.muml.eloquent.feature.source_1.0.0.qualifier.jar" id="org.muml.eloquent.feature.source" version="1.0.0.qualifier">
