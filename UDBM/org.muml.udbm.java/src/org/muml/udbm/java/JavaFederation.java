@@ -786,22 +786,18 @@ public class JavaFederation extends Federation {
 				return;				
 			}
  			
-			// intersect all zones with each other
-			Iterator<?> outerIter = (Iterator<?>) this.iteratorOfClockZone();
-			while (outerIter.hasNext()) {
-				JavaClockZone outerZone = (JavaClockZone) outerIter.next();
-				Iterator<?> innerIter = (Iterator<?>) federation.iteratorOfClockZone();
-				while (innerIter.hasNext()) {
-					JavaClockZone innerZone = (JavaClockZone) innerIter.next();
-					outerZone.or(innerZone);
-				}
+			// Add JavaClockZones from overloaded JavaFederation to this JavaFederation 
+			Iterator<?> czIT = (Iterator<?>) federation.iteratorOfClockZone();
+			while (czIT.hasNext()) {
+				JavaClockZone jcz = (JavaClockZone) czIT.next();
+				this.addToClockZone(jcz);
 			}
 	
 			// remove empty zones
-			outerIter = (Iterator<?>) this.iteratorOfClockZone();
-			while (outerIter.hasNext()) {
-				if (((JavaClockZone) outerIter.next()).isEmpty())
-					outerIter.remove();
+			czIT = (Iterator<?>) this.iteratorOfClockZone();
+			while (czIT.hasNext()) {
+				if (((JavaClockZone) czIT.next()).isEmpty())
+					czIT.remove();
 			}
 		}
 	}
@@ -821,18 +817,12 @@ public class JavaFederation extends Federation {
 				JavaClockZone currentJCZ = (JavaClockZone) czIt.next();
 				czIt.remove();
 			}
-			// Add overloaded TrueClockConstraint to this Federation
-			HashSet<ClockConstraint> ccHS = new HashSet<ClockConstraint>();
-			ccHS.add(constraint);
-			JavaClockZone cz = new JavaClockZone(ccHS, 1);
-			this.addToClockZone(cz);
 		}
-		else {
-			while (czIt.hasNext()){
-				JavaClockZone currentJCZ = (JavaClockZone) czIt.next();
-				currentJCZ.or(constraint);
-			}
-		}
+		// Add overloaded ClockConstraint to this Federation
+		HashSet<ClockConstraint> ccHS = new HashSet<ClockConstraint>();
+		ccHS.add(constraint);
+		JavaClockZone cz = new JavaClockZone(ccHS, 1);
+		this.addToClockZone(cz);
 	}
 
 	@Override
