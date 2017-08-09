@@ -462,7 +462,7 @@ public class JavaClockZone extends ClockZone {
 			if(adjustedClockConstraint instanceof SimpleClockConstraint)
 			{
 				UDBMClock acClock = ((SimpleClockConstraint) adjustedClockConstraint).getClock();
-				if (acClock != null && jf.clockNamesToIndices.get(acClock) != null){
+				if (acClock != null && jf != null && jf.clockNamesToIndices != null && jf.clockNamesToIndices.get(acClock) != null){
 					minuendClockId = jf.clockNamesToIndices.get(acClock);
 				}
 	
@@ -485,8 +485,14 @@ public class JavaClockZone extends ClockZone {
 		
 		lock.unlock();
 			
+		// Handle matrix out of bound access
+		if (subtrahendClockId >= matrix.length || minuendClockId >= matrix[subtrahendClockId].length){
+			subtrahendClockId = 0;
+			minuendClockId = 0;
+		}
+		int matrixEntry = matrix[subtrahendClockId][minuendClockId];
+		int checkValue = addBounds(matrixEntry,constraintValue);
 		// check if ClockZone is empty after adding new constraint 
-		int checkValue = addBounds(matrix[subtrahendClockId][minuendClockId],constraintValue);
 		if(checkValue != -1 && getValue(checkValue) < 0)
 			// -((1 << 1) + 1) == -0011 which means (-1,<=)
 			matrix[0][0] = -((1 << 1) + 1);

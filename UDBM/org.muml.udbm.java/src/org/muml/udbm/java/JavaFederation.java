@@ -777,13 +777,6 @@ public class JavaFederation extends Federation {
 					JavaClockZone cz = (JavaClockZone) czIt.next();
 					czIt.remove();
 				}
-				// Add all ClockZones from overloaded Federation
-				Set<? extends ClockZone> outerClockZones = federation.getClockZone();
-				for (ClockZone currentCZ: outerClockZones){
-					this.addToClockZone(currentCZ);
-				}
-				// No further processing needed
-				return;				
 			}
  			
 			// Add JavaClockZones from overloaded JavaFederation to this JavaFederation 
