@@ -32,12 +32,12 @@ public abstract class Federation implements Cloneable
 	   {
 	      boolean changed = false;
 
-	      if (this.clock == null)
+	      if (this.getClock() == null)
 	      {
-	         this.clock = new HashMap<String, UDBMClock> ();
+	         this.setClock(new HashMap<String, UDBMClock> ());
 	      }
 	   
-	      UDBMClock oldValue = (UDBMClock) this.clock.put (value.getId(), value);
+	      UDBMClock oldValue = (UDBMClock) this.getClock().put (value.getId(), value);
 	      if (oldValue != value)
 	      {
 	         if (oldValue != null)
@@ -56,29 +56,29 @@ public abstract class Federation implements Cloneable
 	   
 	   public Iterator<? extends UDBMClock> iteratorOfClock ()
 	   {
-		   if (this.clock == null){
-			   this.clock = new HashMap<String, UDBMClock> ();
+		   if (this.getClock() == null){
+			   this.setClock(new HashMap<String, UDBMClock> ());
 		   }
-	      return this.clock.values ().iterator ();
+	      return this.getClock().values ().iterator ();
 	   }
 
 	   public int sizeOfClock ()
 	   {
-	      return ((this.clock == null)
+	      return ((this.getClock() == null)
 	              ? 0
-	              : this.clock.size ());
+	              : this.getClock().size ());
 	   }
 
 	   public boolean hasInClock (UDBMClock value)
 	   {
-	      return ((this.clock != null) &&
+	      return ((this.getClock() != null) &&
 	              (value != null) && 
-	              (this.clock.get(value.getId()) == value));
+	              (this.getClock().get(value.getId()) == value));
 	   }
 	   
 	   public UDBMClock getFromClock(String clockID){
-		   if(this.clock != null){
-			   return this.clock.get(clockID);
+		   if(this.getClock() != null){
+			   return this.getClock().get(clockID);
 		   } else {
 			   return null;
 		   }
@@ -92,14 +92,14 @@ public abstract class Federation implements Cloneable
 	   {
 	      boolean changed = false;
 
-	      if (this.clock != null && value != null)
+	      if (this.getClock() != null && value != null)
 	      {
-	         UDBMClock oldValue = (UDBMClock) this.clock.get (value.getId());
+	         UDBMClock oldValue = (UDBMClock) this.getClock().get (value.getId());
 	         if (oldValue == value && 
-	             (oldValue != null || this.clock.containsKey (value.getId())))
+	             (oldValue != null || this.getClock().containsKey (value.getId())))
 	         {
 	         
-	            this.clock.remove (value.getId());
+	            this.getClock().remove (value.getId());
 	            if (value != null)
 	            {
 	               value.removeFromFederation (this);
@@ -112,9 +112,9 @@ public abstract class Federation implements Cloneable
 	   }
 	   
 	   protected void removeAllFromClock (){
-		   while (!this.clock.isEmpty())
+		   while (!this.getClock().isEmpty())
 		   {
-			   UDBMClock value = this.clock.values().iterator().next();
+			   UDBMClock value = this.getClock().values().iterator().next();
 			   removeFromClock (value);
 		   }
 	   }
@@ -128,7 +128,7 @@ public abstract class Federation implements Cloneable
 	    */
 	   public static final String PROPERTY_CLOCK_ZONE = "clockZone";
 
-	   private HashSet<ClockZone> clockZone;
+	   protected HashSet<ClockZone> clockZone;
 
 	   public Set<? extends ClockZone> getClockZone()
 	   {
@@ -310,10 +310,10 @@ public abstract class Federation implements Cloneable
 		//generate new Hashset as otherwise two distinct federations
 		//would point to the same hashset
 		HashMap<String, UDBMClock> clocks = new HashMap<String, UDBMClock>();
-		clocks.putAll(clone.clock);
-		clone.clock = clocks;
+		clocks.putAll(clone.getClock());
+		clone.setClock(clocks);
 		
-		Iterator<UDBMClock> clockIt = clone.clock.values().iterator();
+		Iterator<UDBMClock> clockIt = clone.getClock().values().iterator();
 		while(clockIt.hasNext()){
 			clockIt.next().addToFederation(clone);
 		}
@@ -328,6 +328,15 @@ public abstract class Federation implements Cloneable
 			}
 		}
 		
+		return clone;
+	} catch (CloneNotSupportedException e) {
+		return null;
+	}
+   }
+   
+   public Object superClone(){
+	   try {
+		Federation clone = (Federation) super.clone();
 		return clone;
 	} catch (CloneNotSupportedException e) {
 		return null;
@@ -407,5 +416,13 @@ public abstract class Federation implements Cloneable
 	
 	public long getFullHash(){
 		return hashValue();
+	}
+
+	public HashMap<String, UDBMClock> getClock() {
+		return clock;
+	}
+
+	public void setClock(HashMap<String, UDBMClock> clock) {
+		this.clock = clock;
 	}
 }
