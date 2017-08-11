@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
-import java.util.TreeSet;
 
 import org.muml.udbm.ClockConstraint;
 import org.muml.udbm.ClockZone;
@@ -63,10 +62,12 @@ public class JavaFederation extends Federation {
 		}
 		// add other clocks
 		for (UDBMClock clock : clocks) {
-			addToClock(clock);
-			int index = indicesToClockNames.size();
-			indicesToClockNames.put(index, clock);
-			clockNamesToIndices.put(clock, index);
+			if (clock.getName() != "zeroclock"){
+				addToClock(clock);
+				int index = indicesToClockNames.size();
+				indicesToClockNames.put(index, clock);
+				clockNamesToIndices.put(clock, index);
+			}
 		}
 
 		for (ClockZone clockZone : clockZones) {
@@ -90,7 +91,9 @@ public class JavaFederation extends Federation {
 	}
 
 	@Override
-	public void and(Federation federation) {
+	public void and(Federation original) {
+		JavaFederation federation = (JavaFederation) original.clone();
+		
 		// Skip and operation if this federation is empty or false
 		if (this.isEmpty() || this.isFalseFederation()){
 			return;
@@ -434,13 +437,17 @@ public class JavaFederation extends Federation {
 	public boolean isTrueFederation(){		
 		Iterator<?> it = (Iterator<?>) this.iteratorOfClockZone();
 		JavaClockZone cz;
+		boolean returnValue = false;
 		while (it.hasNext()) {
 			cz = (JavaClockZone)it.next();
-			if (cz.containsOnlyTrueClockConstraints() == false){
+			if (cz.containsOnlyTrueClockConstraints() == true){
+				returnValue = true;
+			}
+			else{
 				return false;
 			}
 		}
-		return true;
+		return returnValue;
 	}
 	
 	/*
@@ -449,13 +456,17 @@ public class JavaFederation extends Federation {
 	public boolean isFalseFederation(){		
 		Iterator<?> it = (Iterator<?>) this.iteratorOfClockZone();
 		JavaClockZone cz;
+		boolean returnValue = false;
 		while (it.hasNext()) {
 			cz = (JavaClockZone)it.next();
-			if (cz.containsOnlyFalseClockConstraints() == false){
+			if (cz.containsOnlyFalseClockConstraints() == true){
+				returnValue = true;
+			}
+			else{
 				return false;
 			}
 		}
-		return true;
+		return returnValue;
 	}
 
 	@Override
@@ -558,9 +569,10 @@ public class JavaFederation extends Federation {
 //		return buffer.toString();
 	}
 	
-	public String createFederationString(Federation federation) {
+	public String createFederationString(JavaFederation original) {
+		JavaFederation federation = (JavaFederation) original.clone();
 		assert (federation.sizeOfClockZone() <= 1);
-		if (federation.sizeOfClockZone() == 1) {
+		if (federation.sizeOfClockZone() >= 1) {
 			Map<UDBMClock, SimpleClockConstraint> clock2lowerBound = new HashMap<>();
 			Map<UDBMClock, SimpleClockConstraint> clock2upperBound = new HashMap<>();
 			Map<List<UDBMClock>, DifferenceClockConstraint> clockPair2bound = new HashMap<>();
@@ -696,7 +708,29 @@ public class JavaFederation extends Federation {
 
 	@Override
 	public Object clone() {
-		JavaFederation clone = (JavaFederation) super.clone();
+		JavaFederation clone = (JavaFederation) super.superClone();
+		// add the clone to the federation set of the clocks and 
+		//generate new Hashset as otherwise two distinct federations
+		//would point to the same hashset
+		HashMap<String, UDBMClock> clocks = new HashMap<String, UDBMClock>();
+		clocks.putAll(clone.getClock());
+		clone.setClock(clocks);
+		
+		Iterator<UDBMClock> clockIt = clone.getClock().values().iterator();
+		while(clockIt.hasNext()){
+			clockIt.next().addToFederation(clone);
+		}
+		
+		//clone all zones
+		clone.clockZone =  new HashSet<ClockZone> () ;
+		
+		if (clone.clockZone != null){
+			Iterator<? extends ClockZone> it = this.iteratorOfClockZone();
+			while(it.hasNext()){
+				clone.addToClockZone((JavaClockZone) it.next().clone());
+			}
+		}
+		
 
 		// copy container to prevent this container to belong to different
 		// federations
@@ -765,36 +799,82 @@ public class JavaFederation extends Federation {
 					-JavaClockZone.getValue(value));
 
 	}
-
-	@Override
-	public void or(Federation federation) {
-		if (federation != null && !federation.isEmpty() && !((JavaFederation)federation).isFalseFederation()){
- 			// Optimization: Remove all ClockZones, if overloaded value is a TrueFederation
-			if (((JavaFederation)federation).isTrueFederation()){
- 				// Remove all ClockZones from this Federation
-				Iterator<?> czIt = (Iterator<?>) federation.iteratorOfClockZone();
-				while (czIt.hasNext()) {
-					JavaClockZone cz = (JavaClockZone) czIt.next();
-					czIt.remove();
-				}
-			}
- 			
-			// Add JavaClockZones from overloaded JavaFederation to this JavaFederation 
-			Iterator<?> czIT = (Iterator<?>) federation.iteratorOfClockZone();
-			while (czIT.hasNext()) {
-				JavaClockZone jcz = (JavaClockZone) czIT.next();
-				this.addToClockZone(jcz);
-			}
 	
-			// remove empty zones
-			czIT = (Iterator<?>) this.iteratorOfClockZone();
-			while (czIT.hasNext()) {
-				if (((JavaClockZone) czIT.next()).isEmpty())
-					czIT.remove();
-			}
-		}
-	}
+	
 
+//	public Federation createUnion(Federation fedAoriginal, Federation fedBoriginal) {
+//		Federation fedA = (Federation) fedAoriginal.clone();
+//		Federation fedB = (Federation) fedBoriginal.clone();
+//		
+//		Iterator<? extends UDBMClock> fedAClockIt = fedA.iteratorOfClock();
+//		Iterator<? extends UDBMClock> fedBClockIt = fedB.iteratorOfClock();
+//		
+//		// Extract Clocks from fedA and fedB
+//		HashSet<UDBMClock> unionClocks = new HashSet<UDBMClock>();
+//		while (fedAClockIt.hasNext()){
+//			UDBMClock fedACurrentClock = fedAClockIt.next();
+//			if (!unionClocks.contains(fedACurrentClock)){
+//				unionClocks.add(fedACurrentClock);
+//			}
+//		}
+//		while (fedBClockIt.hasNext()){
+//			UDBMClock fedBCurrentClock = fedBClockIt.next();
+//			if (!unionClocks.contains(fedBCurrentClock)){
+//				unionClocks.add(fedBCurrentClock);
+//			}
+//		}
+//		
+//		HashSet<ClockZone> unionClockZones = new HashSet<ClockZone>();
+//		
+//		// Extract ClockZones from fedA and fedB
+//		unionClockZones.addAll(fedA.getClockZone());
+//		unionClockZones.addAll(fedB.getClockZone());
+//		
+//		fedA.removeYou();
+//		fedB.removeYou();
+//		
+//		JavaFederation unionFed = new JavaFederation(unionClocks, unionClockZones);
+//		
+//		return unionFed;
+//	}
+	
+//	// Alternative to method or, TODO: Fix bugs in relation to getLowerBound and getUpperBound methods
+//	public Federation createUnion(Federation fedBref) {
+//		Federation fedA = (Federation) this.clone();
+//		Federation fedB = (Federation) fedBref.clone();
+//		
+//		Iterator<? extends UDBMClock> fedAClockIt = fedA.iteratorOfClock();
+//		Iterator<? extends UDBMClock> fedBClockIt = fedB.iteratorOfClock();
+//		
+//		// Extract Clocks from fedA and fedB
+//		HashSet<UDBMClock> unionClocks = new HashSet<UDBMClock>();
+//		while (fedAClockIt.hasNext()){
+//			UDBMClock fedACurrentClock = fedAClockIt.next();
+//			if (!unionClocks.contains(fedACurrentClock)){
+//				unionClocks.add(fedACurrentClock);
+//			}
+//		}
+//		while (fedBClockIt.hasNext()){
+//			UDBMClock fedBCurrentClock = fedBClockIt.next();
+//			if (!unionClocks.contains(fedBCurrentClock)){
+//				unionClocks.add(fedBCurrentClock);
+//			}
+//		}
+//		
+//		HashSet<ClockZone> unionClockZones = new HashSet<ClockZone>();
+//		
+//		// Extract ClockZones from fedA and fedB
+//		unionClockZones.addAll(fedA.getClockZone());
+//		unionClockZones.addAll(fedB.getClockZone());
+//		
+//		fedA.removeYou();
+//		fedB.removeYou();
+//		
+//		JavaFederation unionFed = new JavaFederation(unionClocks, unionClockZones);
+//
+//		return unionFed;
+//	}
+	
 	@Override
 	public void or(ClockConstraint constraint) {
 		// Skip not relevant constraint
@@ -835,4 +915,74 @@ public class JavaFederation extends Federation {
 
 		return result;
 	}
+
+	@Override
+	public void or(Federation federation) {
+		if (federation != null && !federation.isEmpty() && !((JavaFederation)federation).isFalseFederation()){
+ 			// Optimization: Remove all ClockZones, if overloaded value is a TrueFederation
+			if (((JavaFederation)federation).isTrueFederation()){
+ 				// Remove all ClockZones from this Federation
+				Iterator<?> czIt = (Iterator<?>) federation.iteratorOfClockZone();
+				while (czIt.hasNext()) {
+					JavaClockZone cz = (JavaClockZone) czIt.next();
+					czIt.remove();
+				}
+			}
+ 			
+			// Extract ClockConstraints of overloaded Federation and put them in every ClockZone of this Federation
+			Iterator<?> czIT = (Iterator<?>) federation.iteratorOfClockZone();
+			// Iterate over ClockZones of overloaded Federation
+			while (czIT.hasNext()) {
+				JavaClockZone jcz = (JavaClockZone) czIT.next();
+				Iterator<?> ccIT = (Iterator<?>) jcz.iteratorOfClockConstraint();
+				// Iterate over ClockConstraints of current ClockZone of overloaded Federation
+				while (ccIT.hasNext()) {
+					ClockConstraint cc = (ClockConstraint) ccIT.next();
+					Iterator<?> thisCZIT = this.iteratorOfClockZone();
+					// Iterate over every ClockZone in this Federation and add current ClockConstraint of
+					// current ClockZone of overloaded Federation to current ClockZone of this Federation
+					while (((Iterator<?>) thisCZIT).hasNext()) {
+						JavaClockZone thisJCZ = (JavaClockZone) thisCZIT.next();
+						thisJCZ.addToClockConstraint(cc);
+					}
+				}
+			}
+	
+			// remove empty zones
+			czIT = (Iterator<?>) this.iteratorOfClockZone();
+			while (czIT.hasNext()) {
+				if (((JavaClockZone) czIT.next()).isEmpty())
+					czIT.remove();
+			}
+		}
+	}
+	
+//	@Override
+//	public void or(Federation federation) {
+//		if (federation != null && !federation.isEmpty() && !((JavaFederation)federation).isFalseFederation()){
+// 			// Optimization: Remove all ClockZones, if overloaded value is a TrueFederation
+//			if (((JavaFederation)federation).isTrueFederation()){
+// 				// Remove all ClockZones from this Federation
+//				Iterator<?> czIt = (Iterator<?>) federation.iteratorOfClockZone();
+//				while (czIt.hasNext()) {
+//					JavaClockZone cz = (JavaClockZone) czIt.next();
+//					czIt.remove();
+//				}
+//			}
+// 			
+//			// Add JavaClockZones from overloaded JavaFederation to this JavaFederation 
+//			Iterator<?> czIT = (Iterator<?>) federation.iteratorOfClockZone();
+//			while (czIT.hasNext()) {
+//				JavaClockZone jcz = (JavaClockZone) czIT.next();
+//				this.addToClockZone((ClockZone)jcz.clone());
+//			}
+//	
+//			// remove empty zones
+//			czIT = (Iterator<?>) this.iteratorOfClockZone();
+//			while (czIT.hasNext()) {
+//				if (((JavaClockZone) czIT.next()).isEmpty())
+//					czIT.remove();
+//			}
+//		}
+//	}
 }
