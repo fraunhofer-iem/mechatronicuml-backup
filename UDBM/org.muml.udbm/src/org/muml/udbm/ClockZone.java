@@ -48,7 +48,7 @@ public class ClockZone implements Cloneable
     *            clockZone      clockConstraint 
     * </pre>
     */
-   protected HashSet<ClockConstraint> clockConstraint;
+   public HashSet<ClockConstraint> clockConstraint;
 
    protected boolean addToClockConstraint(ClockConstraint value)
    {
@@ -171,6 +171,15 @@ public class ClockZone implements Cloneable
          setFederation (null);
       }
       removeAllFromClockConstraint ();
+   }
+   
+   public Object superClone(){
+	   try {
+		   ClockZone clone = (ClockZone) super.clone();
+		   return clone;
+	   } catch (CloneNotSupportedException e) {
+		   return null;
+	   }
    }
 
    public Object clone(){
