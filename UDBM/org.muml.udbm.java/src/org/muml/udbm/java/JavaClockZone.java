@@ -64,7 +64,18 @@ public class JavaClockZone extends ClockZone {
 
 	@Override
 	public Object clone() {
-		Object clone = super.clone();
+		Object clone = super.superClone();
+		
+	//guard against NPE
+	   if (this.clockConstraint != null){
+		   this.clockConstraint = new HashSet<ClockConstraint>();
+		   
+		   Iterator<ClockConstraint> iter = this.iteratorOfClockConstraint();
+		   while(iter.hasNext()){
+			   this.clockConstraint.add((ClockConstraint) iter.next().clone());
+		   }
+	   }
+		
 		((JavaClockZone)clone).matrix = new int [this.matrix.length][this.matrix.length];
 		for (int i = 0; i < ((JavaClockZone)clone).matrix.length; i++) {
 			for (int j = 0; j < ((JavaClockZone)clone).matrix.length; j++) {
@@ -95,29 +106,39 @@ public class JavaClockZone extends ClockZone {
 	}
 	
 	protected boolean containsOnlyTrueClockConstraints(){
-		Iterator<ClockConstraint> cci = this.clockConstraint.iterator();
+		Iterator<ClockConstraint> cci = this.iteratorOfClockConstraint();
+		
+		boolean returnValue = false;
 		
 		while (cci.hasNext()){
 			ClockConstraint currentCC = cci.next();
-			if (!(currentCC instanceof TrueClockConstraint)){
+			if ((currentCC instanceof TrueClockConstraint)){
+				returnValue = true;
+			}
+			else{
 				return false;
 			}
 		}
 		
-		return true;
+		return returnValue;
 	}
 	
 	protected boolean containsOnlyFalseClockConstraints(){
-		Iterator<ClockConstraint> cci = this.clockConstraint.iterator();
+		Iterator<ClockConstraint> cci = this.iteratorOfClockConstraint();
+		
+		boolean returnValue = false;
 		
 		while (cci.hasNext()){
 			ClockConstraint currentCC = cci.next();
-			if (!(currentCC instanceof FalseClockConstraint)){
+			if ((currentCC instanceof FalseClockConstraint)){
+				returnValue = true;
+			}
+			else{
 				return false;
 			}
 		}
 		
-		return true;
+		return returnValue;
 	}
 
 	@Override
