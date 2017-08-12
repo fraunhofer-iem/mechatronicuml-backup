@@ -182,7 +182,9 @@ the Eclipse framework.
    <includes
          id="org.muml.external.sat4j.pb.feature"
          version="0.0.0"/>
-
+   <includes
+         id="org.muml.external.jgrapht.feature"
+         version="0.0.0"/>
    <includes
          id="org.opendds.modeling.feature"
          version="0.0.0"/>
