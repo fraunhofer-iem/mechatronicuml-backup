@@ -6,6 +6,16 @@
   <artifactId>ContainerCodegen</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
+	
+	<properties>
+		<tycho-version>0.26.0</tycho-version>
+		<maven-compiler-plugin-version>2.5.1</maven-compiler-plugin-version>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<jacoco.version>0.7.4.201502262128</jacoco.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	
   <modules>
     <module>org.muml.container.codegen.c</module>
     <module>org.muml.container.codegen.c.feature</module>
@@ -17,9 +27,126 @@
       <plugin>
         <groupId>org.eclipse.tycho</groupId>
         <artifactId>tycho-maven-plugin</artifactId>
-        <version>1.0.0</version>
+        <version>${tycho-version}</version>
         <extensions>true</extensions>
       </plugin>
+	 <plugin>
+		<groupId>org.eclipse.tycho</groupId>
+		<artifactId>target-platform-configuration</artifactId>
+		<version>${tycho-version}</version>
+		<configuration>
+		 <environments>
+		  <environment>
+		   <os>linux</os>
+		   <ws>gtk</ws>
+		   <arch>x86</arch>
+		  </environment>
+		  <environment>
+		   <os>linux</os>
+		   <ws>gtk</ws>
+		   <arch>x86_64</arch>
+		  </environment>
+		  <environment>
+		   <os>win32</os>
+		   <ws>win32</ws>
+		   <arch>x86</arch>
+		  </environment>
+		  <environment>
+		   <os>win32</os>
+		   <ws>win32</ws>
+		   <arch>x86_64</arch>
+		  </environment>
+		  <environment>
+		   <os>macosx</os>
+		   <ws>cocoa</ws>
+		   <arch>x86_64</arch>
+		  </environment>
+		 </environments>
+		  <resolver>p2</resolver>
+		  <pomDependencies>consider</pomDependencies>
+		</configuration>
+	   </plugin>
+	 <!-- enable source feature generation -->
+   <plugin>
+    <groupId>org.eclipse.tycho.extras</groupId>
+    <artifactId>tycho-source-feature-plugin</artifactId>
+    <version>${tycho-version}</version>
+    <executions>
+     <execution>
+      <id>source-feature</id>
+      <phase>package</phase>
+      <goals>
+       <goal>source-feature</goal>
+      </goals>
+     </execution>
+    </executions>
+    <configuration>
+     <excludes>
+       <!--provide plug-ins not containing any source code -->
+	  <plugin id="org.muml.container.codegen.c.repository" />
+     </excludes>
+    </configuration>
+   </plugin>
+   <plugin>
+    <groupId>org.eclipse.tycho</groupId>
+    <artifactId>tycho-source-plugin</artifactId>
+    <version>${tycho-version}</version>
+    <executions>
+     <execution>
+      <id>plugin-source</id>
+      <goals>
+       <goal>plugin-source</goal>
+      </goals>
+     </execution>
+    </executions>
+   </plugin>
+   <plugin>
+    <groupId>org.eclipse.tycho</groupId>
+    <artifactId>tycho-p2-plugin</artifactId>
+    <version>${tycho-version}</version>
+    <executions>
+     <execution>
+      <id>attached-p2-metadata</id>
+      <phase>package</phase>
+      <goals>
+       <goal>p2-metadata</goal>
+      </goals>
+     </execution>
+    </executions>
+   </plugin>	
     </plugins>
   </build>
+	
+	<profiles>
+        <profile>
+          <id>localJenkins</id> 
+          <activation>
+            <property>
+              <name>env</name>
+              <value>localJenkins</value>
+            </property>
+          </activation>
+		  <repositories>	
+			  <repository>
+				<id>UpdateSite</id>
+				<layout>p2</layout>
+				<url>https://muml-build.cs.upb.de/job/UpdateSite-Maven/lastSuccessfulBuild/artifact/org.muml.releng.site.repository/target/repository</url>
+			</repository>
+		</repositories>		  
+        </profile>
+  </profiles>
+	
+	<repositories>
+		 <repository>
+		     <id>eclipse-oxygen</id>
+		     <layout>p2</layout>
+		     <url>http://download.eclipse.org/releases/oxygen/</url>
+		</repository>
+		<repository>
+			<id>gmf-tooling</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/modeling/gmp/gmf-tooling/updates/releases/</url>
+        </repository>
+	</repositories>		
+			
 </project>
