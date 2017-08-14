@@ -48,6 +48,9 @@ public class JavaClockZone extends ClockZone {
 	
 	
 	@Override
+	/**
+	 * Does ClockConstraint_old.and(overloadedValue)
+	 */	
 	protected boolean addToClockConstraint(ClockConstraint value) {
 
 		if (this.getFederation() == null)
