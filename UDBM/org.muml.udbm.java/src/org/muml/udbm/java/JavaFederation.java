@@ -943,6 +943,7 @@ public class JavaFederation extends Federation {
 					// current ClockZone of overloaded Federation to current ClockZone of this Federation
 					while (((Iterator<?>) thisCZIT).hasNext()) {
 						JavaClockZone thisJCZ = (JavaClockZone) thisCZIT.next();
+						// Does ClockConstraint_old.and(cc)
 						thisJCZ.addToClockConstraint(cc);
 					}
 				}
