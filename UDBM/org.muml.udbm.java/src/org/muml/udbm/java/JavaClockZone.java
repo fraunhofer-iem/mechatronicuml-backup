@@ -232,8 +232,18 @@ public class JavaClockZone extends ClockZone {
 
 	@Override
 	protected void removeAllFromClockConstraint() {
-		
+		// invalidate HashCache
 		hashCacheValid = false;
+	    ClockConstraint tmpValue;
+	    Iterator<ClockConstraint> it = this.iteratorOfClockConstraint();
+	    while (it.hasNext())
+	    {
+	       tmpValue = it.next();
+	       it.remove();
+	       this.removeFromClockConstraint (tmpValue);
+	    }		
+		
+	    hashCacheValid = false;
 		for (int i = 0; i < matrix.length; i++) {
 			for (int j = 0; j < matrix.length; j++) {
 				matrix[i][j] = Integer.MAX_VALUE;
