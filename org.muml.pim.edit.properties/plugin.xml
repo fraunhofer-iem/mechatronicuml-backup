@@ -6,7 +6,7 @@
   <extension
          point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
     <propertyContributor
-          contributorId="org.muml.ape.contributor">
+          contributorId="org.eclipse.sirius.diagram.ui">
        <propertyCategory
              category="domain">
        </propertyCategory>
@@ -25,7 +25,7 @@
 
 
 <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
-      <propertyTabs contributorId="org.muml.ape.contributor">
+      <propertyTabs contributorId="org.eclipse.sirius.diagram.ui">
           <propertyTab
              category="domain"
              id="property.tab.constraint"
@@ -74,7 +74,7 @@
 
 
   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections"> 
-      <propertySections contributorId="org.muml.ape.contributor">
+      <propertySections contributorId="org.eclipse.sirius.diagram.ui">
           <propertySection
             class="org.muml.ape.runtime.sections.ObjectPropertySection"
             filter="org.muml.pim.properties.tabs.Property_tab_constraintTabElementFilter"
@@ -150,6 +150,7 @@
          
       </propertySections>
   </extension>
+
 
 
 
