@@ -74,6 +74,14 @@ the Eclipse framework.
    <includes
          id="org.muml.pm.feature.source"
          version="0.0.0"/>
+	
+	<includes
+         id="org.muml.codegen.compontenttype.c.feature"
+         version="0.0.0"/>	
+	
+	<includes
+         id="org.muml.codegen.compontenttype.c.feature.source"
+         version="0.0.0"/>
 
    <includes
          id="org.muml.container.codegen.c.feature"
