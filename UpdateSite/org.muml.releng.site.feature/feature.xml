@@ -76,11 +76,11 @@ the Eclipse framework.
          version="0.0.0"/>
 
    <includes
-         id="org.muml.codegen.c.feature"
+         id="org.muml.container.codegen.c.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.muml.codegen.c.feature.source"
+         id="org.muml.container.codegen.c.feature.source"
          version="0.0.0"/>
 
    <includes
