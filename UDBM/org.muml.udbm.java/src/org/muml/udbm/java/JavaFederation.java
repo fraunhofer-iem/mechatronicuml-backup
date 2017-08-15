@@ -571,7 +571,6 @@ public class JavaFederation extends Federation {
 	
 	public String createFederationString(JavaFederation original) {
 		JavaFederation federation = (JavaFederation) original.clone();
-		assert (federation.sizeOfClockZone() <= 1);
 		if (federation.sizeOfClockZone() >= 1) {
 			Map<UDBMClock, SimpleClockConstraint> clock2lowerBound = new HashMap<>();
 			Map<UDBMClock, SimpleClockConstraint> clock2upperBound = new HashMap<>();
@@ -611,10 +610,12 @@ public class JavaFederation extends Federation {
 						sb.append(clock.getName());
 						sb.append(lb.getRelationalOperator());
 						sb.append(lb.getValue());
+//						sb.append(", ");
 					} else if (lb == null) {
 						sb.append(clock.getName());
 						sb.append(ub.getRelationalOperator());
 						sb.append(ub.getValue());
+						sb.append(", ");
 					} else if (ub.getRelationalOperator().toString()
 							.contains("=")
 							&& lb.getRelationalOperator().toString()
@@ -623,6 +624,7 @@ public class JavaFederation extends Federation {
 						sb.append(clock.getName());
 						sb.append("=");
 						sb.append(lb.getValue());
+//						sb.append(", ");
 					} else {
 						if (lb != null) {
 							sb.append(lb.getValue());
@@ -632,14 +634,17 @@ public class JavaFederation extends Federation {
 						sb.append(clock.getName());
 						sb.append(ub.getRelationalOperator());
 						sb.append(ub.getValue());
-					}
-					if (clockIt.hasNext())
 						sb.append(", ");
+					}
+					if (clockIt.hasNext()){
+//						sb.append(", ");
+					}
 					notEmpty = true;
 				}
 			}
-			if (notEmpty)
-				sb.append("\n");
+			if (notEmpty){
+//				sb.append("\n");
+			}
 			clockIt = federation.iteratorOfClock();
 			while (clockIt.hasNext()) {
 				UDBMClock clock = clockIt.next();
@@ -669,31 +674,40 @@ public class JavaFederation extends Federation {
 							sb.append(dcc.getClockMinuend().getName());
 							sb.append("=");
 							sb.append(dcc.getClockSubtrahend().getName());
+							sb.append(", ");
 						} else {
 							if (dcc != null) {
 								sb.append(dcc.toString());
+//								sb.append(", ");
 							}
-							if (dcc != null && oppositeDcc != null)
+							if (dcc != null && oppositeDcc != null){
 								sb.append(", ");
+							}
 							if (oppositeDcc != null) {
 								sb.append(oppositeDcc.toString());
+								sb.append(", ");
 							}
 						}
-						if (clockIt2.hasNext())
-							sb.append("\n");
+						if (clockIt2.hasNext()){
+//							sb.append("\n");
+						}
 						notEmpty2 = true;
 					}
 				}
-				if (notEmpty2 && clockIt.hasNext())
-					sb.append("\n");
+				if (notEmpty2 && clockIt.hasNext()){
+//					sb.append("\n");
+				}
 			}
 
-			if (sb.length() != 0)
+			if (sb.length() != 0){
 				return sb.toString().replace("_0", "");
-			else
+			}
+			else{
 				return "true\n";
-		} else
+			}
+		} else{
 			return "false\n";
+		}
 	}
 
 	// TODO: Ensure that the zones are disjunct.
@@ -944,7 +958,7 @@ public class JavaFederation extends Federation {
 					while (((Iterator<?>) thisCZIT).hasNext()) {
 						JavaClockZone thisJCZ = (JavaClockZone) thisCZIT.next();
 						// Does ClockConstraint_old.and(cc)
-						thisJCZ.addToClockConstraint(cc);
+						thisJCZ.or(cc);
 					}
 				}
 			}
