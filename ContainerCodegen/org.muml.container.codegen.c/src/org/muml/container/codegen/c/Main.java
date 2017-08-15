@@ -442,9 +442,6 @@ public class Main extends AbstractAcceleoGenerator {
         if (!isInWorkspace(org.muml.psm.apiexpressions.ApiexpressionsPackage.class)) {
             resourceSet.getPackageRegistry().put(org.muml.psm.apiexpressions.ApiexpressionsPackage.eINSTANCE.getNsURI(), org.muml.psm.apiexpressions.ApiexpressionsPackage.eINSTANCE);
         }
-        if (!isInWorkspace(org.muml.psm.codegen.CodegenPackage.class)) {
-            resourceSet.getPackageRegistry().put(org.muml.psm.codegen.CodegenPackage.eINSTANCE.getNsURI(), org.muml.psm.codegen.CodegenPackage.eINSTANCE);
-        }
         if (!isInWorkspace(org.muml.pm.hardware.HardwarePackage.class)) {
             resourceSet.getPackageRegistry().put(org.muml.pm.hardware.HardwarePackage.eINSTANCE.getNsURI(), org.muml.pm.hardware.HardwarePackage.eINSTANCE);
         }
