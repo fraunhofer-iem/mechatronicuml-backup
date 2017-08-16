@@ -7,7 +7,7 @@
             allPopups="false"
             locationURI="popup:org.muml">
          <command
-               commandId="de.uni_paderborn.fujaba.muml.verification.refinement.testautomata.verifyRefinement"
+               commandId="org.muml.verification.core.refinement.testautomata.verifyRefinement"
                label="Verify Refinement"
                style="push">
             <visibleWhen>
