@@ -23,8 +23,6 @@
 
 
    <plugin download-size="0" id="org.muml.container.codegen.c" install-size="0" version="0.0.0"/>
-	
-   <plugin download-size="0" id="org.muml.container.codegen.c.beautifier" install-size="0" version="0.0.0"/>
 
    <plugin download-size="0" id="org.muml.container.codegen.c.ui" install-size="0" version="0.0.0"/>
 
