@@ -29,7 +29,6 @@
       <import plugin="org.eclipse.ui"/>
       <import plugin="org.eclipse.core.resources"/>
       <import match="greaterOrEqual" plugin="org.muml.core.export" version="0.5.0"/>
-      <import match="greaterOrEqual" plugin="org.muml.codegen.c.export.ui" version="1.0.0"/>
       <import match="greaterOrEqual" plugin="org.apache.commons.io" version="2.2.0"/>
       <import match="greaterOrEqual" plugin="org.eclipse.gmf.runtime.notation" version="1.8.0"/>
    </requires>
@@ -38,6 +37,8 @@
 
    <plugin download-size="0" id="org.muml.codegen.componenttype.beautifier" install-size="0" unpack="false" version="0.0.0"/>
 	
-	<plugin download-size="0" id="org.muml.codegen.componenttype.c.ui" install-size="0" unpack="false" version="0.0.0"/>	
+   <plugin download-size="0" id="org.muml.codegen.componenttype.export.ui" install-size="0" unpack="false" version="0.0.0"/>
+	
+   <plugin download-size="0" id="org.muml.codegen.componenttype.c.ui" install-size="0" unpack="false" version="0.0.0"/>	
 
 </feature>
