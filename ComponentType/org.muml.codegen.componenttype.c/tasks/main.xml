@@ -33,7 +33,7 @@
         <pathelement location="${ECLIPSE_HOME}/plugins/org.muml.pim.actionlanguage_0.5.0.201608171249.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.muml.pim_0.5.0.201608171249.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.muml.core.common_0.5.0.201608171206.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.muml.codegen.c.beautifier_0.5.0.201607290944.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.muml.codegen.componenttype.beautifier_0.5.0.201607290944.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.muml.pim.common_0.5.0.201608171249.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.muml.pim.types_0.5.0.201608171249.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.muml.pm.hardware_1.0.0.201608171254.jar"/>
