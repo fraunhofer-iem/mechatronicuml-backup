@@ -17,7 +17,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.acceleo.engine;bundle-version="3.2.1",
  org.muml.pim.actionlanguage,
  org.muml.pim,
- org.muml.codegen.c.beautifier,
+ org.muml.codegen.componenttype.beautifier,
  org.muml.pim.common,
  org.muml.psm
 Bundle-ActivationPolicy: lazy

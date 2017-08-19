@@ -17,7 +17,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.acceleo.engine,
  org.muml.core.export,
  org.muml.pim,
- org.muml.codegen.c.export.ui,
+ org.muml.componenttype.export.ui,
  org.apache.commons.io;bundle-version="2.2.0",
  org.eclipse.gmf.runtime.notation;bundle-version="1.8.0"
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
