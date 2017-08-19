@@ -3,12 +3,12 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-	  <groupId>org.muml.container.codegen.c.group</groupId>
-	  <artifactId>ContainerCodegen</artifactId>
-	  <version>0.0.1-SNAPSHOT</version>
+	  <groupId>org.muml.codegen.componenttype.group</groupId>
+	  <artifactId>ComponentType</artifactId>
+	  <version>1.0.0-SNAPSHOT</version>
   </parent>
-  <groupId>org.muml.container.codegen.c.group</groupId>
-  <artifactId>org.muml.container.codegen.c.beautifier</artifactId>
+  <groupId>org.muml.codegen.componenttype.group</groupId>
+  <artifactId>org.muml.codegen.componenttype.beautifier</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
 </project>
