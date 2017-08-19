@@ -18,9 +18,10 @@
 	
   <modules>
     <module>org.muml.container.codegen.c</module>
+	<module>org.muml.container.codegen.c.beautifier</module>
+	<module>org.muml.container.codegen.c.ui</module>
     <module>org.muml.container.codegen.c.feature</module>
     <module>org.muml.container.codegen.c.repository</module>
-    <module>org.muml.container.codegen.c.ui</module>
   </modules>
 	
 	 <dependencies>
