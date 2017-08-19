@@ -1,4 +1,4 @@
-package org.muml.codegen.c.export.ui;
+package org.muml.codegen.componenttype.export.ui;
 
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.runtime.IProgressMonitor;

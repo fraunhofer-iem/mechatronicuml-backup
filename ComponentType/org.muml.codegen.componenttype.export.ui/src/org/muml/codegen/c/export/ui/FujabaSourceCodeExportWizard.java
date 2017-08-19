@@ -1,4 +1,4 @@
-package org.muml.codegen.c.export.ui;
+package org.muml.codegen.componenttype.export.ui;
 
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IResource;
@@ -24,7 +24,7 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.ui.IWorkbench;
-import org.muml.codegen.c.export.ui.TargetPlatformExtension.TargetPlatformDescription;
+import org.muml.codegen.componenttype.export.ui.TargetPlatformExtension.TargetPlatformDescription;
 import org.muml.core.export.operation.AbstractFujabaExportOperation;
 import org.muml.core.export.operation.IFujabaExportOperation;
 import org.muml.core.export.pages.AbstractFujabaExportSourcePage;

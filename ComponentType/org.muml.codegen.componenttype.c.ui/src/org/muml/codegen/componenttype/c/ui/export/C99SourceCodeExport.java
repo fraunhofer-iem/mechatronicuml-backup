@@ -7,7 +7,7 @@ import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
 import org.muml.codegen.componenttype.c.ui.common.GenerateAll;
-import org.muml.codegen.c.export.ui.ITargetPlatformGenerator;
+import org.muml.codegen.componenttype.export.ui.ITargetPlatformGenerator;
 import org.muml.pim.instance.ComponentInstanceConfiguration;
 
 public class C99SourceCodeExport implements ITargetPlatformGenerator {
