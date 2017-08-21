@@ -16,3 +16,4 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
 Import-Package: org.muml.pim.realtimestatechart.diagram.parsers
+Export-Package: org.muml.pim.realtimestatechart.diagram.custom.parsers

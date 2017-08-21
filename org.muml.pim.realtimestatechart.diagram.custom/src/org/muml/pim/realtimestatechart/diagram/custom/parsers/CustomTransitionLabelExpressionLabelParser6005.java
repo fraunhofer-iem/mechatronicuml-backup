@@ -34,9 +34,9 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 	public CustomTransitionLabelExpressionLabelParser6005() {
 	}
 	
-	private static final int MAX_LINELENGTH = 50;
+	public static final int MAX_LINELENGTH = 50;
 
-	private static final int MIN_LINELENGTH = 10;
+	public static final int MIN_LINELENGTH = 10;
 
 	public String getPrintString(IAdaptable element, int flags) {
 		String printString = "";
@@ -74,21 +74,21 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 		printString = ensureMinLineLength(printString, MIN_LINELENGTH);
 		return printString;
 	}
-	private String getSendingRetryAfterExpression(Transition transition) {
+	public static String getSendingRetryAfterExpression(Transition transition) {
 		AsynchronousMessageEvent raiseMsg = transition.getRaiseMessageEvent();
 		if (raiseMsg != null && raiseMsg.getOneToManyCommunicationSchema() != null && raiseMsg.getOneToManyCommunicationSchema().getRetryAfter() != null) {
 			return ParserUtilities.serializeTimeValue(raiseMsg.getOneToManyCommunicationSchema().getRetryAfter(), transition);
 		}
 		return "";
 	}
-	private String getReceivingRetryAfterExpression(Transition transition) {
+	public static String getReceivingRetryAfterExpression(Transition transition) {
 		AsynchronousMessageEvent triggerMsg = transition.getTriggerMessageEvent();
 		if (triggerMsg != null && triggerMsg.getOneToManyCommunicationSchema() != null && triggerMsg.getOneToManyCommunicationSchema().getRetryAfter() != null) {
 			return ParserUtilities.serializeTimeValue(triggerMsg.getOneToManyCommunicationSchema().getRetryAfter(), transition);
 		}
 		return "";
 	}
-	private String ensureMinLineLength(String printString, int minLinelength) {
+	public static String ensureMinLineLength(String printString, int minLinelength) {
 		StringBuffer sb = new StringBuffer();
 		BufferedReader br = new BufferedReader(new StringReader(printString));
 		String line;
@@ -106,7 +106,7 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 		}
 		return sb.toString();
 	}
-	private String ensureMaxLineLength(String printString, int maxLinelength) {
+	public static String ensureMaxLineLength(String printString, int maxLinelength) {
 		StringBuffer sb = new StringBuffer();
 		StringBuffer white = new StringBuffer();
 		char c;
@@ -134,7 +134,7 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 		}
 		return sb.toString();
 	}
-	private String getClockConstraintExpression(Transition transition) {
+	public static String getClockConstraintExpression(Transition transition) {
 		StringBuffer buf = new StringBuffer();
 		boolean first = true;
 		for (ClockConstraint cc : transition.getClockConstraints()) {
@@ -178,7 +178,7 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 		return buf.toString();
 	}
 //
-//	private static String addManualLinebreaks(String str, int maxLineLength) {
+//	public static static String addManualLinebreaks(String str, int maxLineLength) {
 //		StringBuffer result = new StringBuffer();
 //		for (String line : str.split("\n")) {
 //			while (line.length() > MAX_LINELENGTH) {
@@ -200,7 +200,7 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 //
 //	}
 //
-//	private static int findLastWhitespace(String line) {
+//	public static static int findLastWhitespace(String line) {
 //		for (int p = line.length() - 1; p >= 0; p--) {
 //			char c = line.charAt(p);
 //			if (Character.isWhitespace(c)) {
@@ -210,7 +210,7 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 //		return -1;
 //	}
 
-	private String getSynchronizationExpression(Synchronization context, Expression expression) {
+	public static String getSynchronizationExpression(Synchronization context, Expression expression) {
 		String serialization = null;
 		if (context != null && expression != null) {
 			serialization = getExpressionText(expression, context);
@@ -221,7 +221,7 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 		return "";
 	}
 
-	private String getExpressionText(Expression expression, EObject context) {
+	public static String getExpressionText(Expression expression, EObject context) {
 		String text = "";
 		if (expression instanceof TextualExpression) {
 			text = ((TextualExpression) expression).getExpressionText();
@@ -239,7 +239,7 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 		}
 		return text;
 	}
-	private String getGuardExpression(Transition transition) {
+	public static String getGuardExpression(Transition transition) {
 		Expression guard = transition.getGuard();
 		if (guard != null) {
 			String text = getExpressionText(guard, transition);
@@ -248,14 +248,14 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 		return "";
 	}
 
-	private String getParameterBindingExpression(Transition transition,
+	public static String getParameterBindingExpression(Transition transition,
 			ParameterBinding parameterBinding) {
 		String value = LanguageResource.serializeEObjectSafe(
 				parameterBinding.getValue(), transition);
 		return value;
 	}
 
-	private String getParameterBindingExpressionFromList(Transition transition,
+	public static String getParameterBindingExpressionFromList(Transition transition,
 			List<ParameterBinding> parameterBindingList) {
 		StringBuffer buffer = new StringBuffer();
 		for (ParameterBinding parameterBinding : parameterBindingList) {
@@ -269,7 +269,7 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 		return "";
 	}
 
-	private String getMessageParameterBindingExpression(Transition transition,
+	public static String getMessageParameterBindingExpression(Transition transition,
 			Message message) {
 		if (message == null) {
 			return "";
@@ -329,7 +329,7 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 				.getFeature());
 	}
 */
-	private String getReceivingCommunicationSchemaConstraint(Transition transition) {
+	public static String getReceivingCommunicationSchemaConstraint(Transition transition) {
 		Expression condition = null;
 		AsynchronousMessageEvent triggerMsg = transition.getTriggerMessageEvent();
 		if(triggerMsg != null && triggerMsg.getOneToManyCommunicationSchema() != null){
@@ -345,7 +345,7 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 		return "";
 	}
 	
-	private String getSendingCommunicationSchemaConstraint(Transition transition) {
+	public static String getSendingCommunicationSchemaConstraint(Transition transition) {
 		Expression condition = null;
 		AsynchronousMessageEvent raiseMsg = transition.getRaiseMessageEvent();
 		if(raiseMsg != null && raiseMsg.getOneToManyCommunicationSchema() != null){
@@ -361,7 +361,7 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 		return "";
 	}
 	
-	private String getTransferCommunicationTermConstraint(Transition transition) {
+	public static String getTransferCommunicationTermConstraint(Transition transition) {
 		Expression condition = null;
 		AsynchronousMessageEvent raiseMsg = transition.getRaiseMessageEvent();
 		if(raiseMsg != null && raiseMsg.getOneToManyCommunicationSchema() != null && raiseMsg.getOneToManyCommunicationSchema() instanceof Iterate){
