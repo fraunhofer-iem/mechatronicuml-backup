@@ -71,7 +71,7 @@ public class XtextPartialViewerLifecycleManager extends AbstractEEFWidgetLifecyc
 		gridData.horizontalIndent = VALIDATION_MARKER_OFFSET;
 		control.setLayoutData(gridData);
 		
-		this.controller = new XtextPartialViewerController(description, variableManager, interpreter, contextAdapter, featureName, this);
+		this.controller = new XtextPartialViewerController(description, variableManager, interpreter, editingContextAdapter, featureName, this);
 		
 		embeddedXtextEditor.getDocument().addDocumentListener(documentListener);
 	}

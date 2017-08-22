@@ -1,12 +1,12 @@
 package org.muml.pim.siriusproperties.custom.embeddedxtexteditor;
 
 import java.util.List;
+import java.util.function.Consumer;
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.eef.EEFCustomWidgetDescription;
 import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.api.controllers.AbstractEEFCustomWidgetController;
-import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
@@ -20,7 +20,7 @@ import org.muml.pim.actionlanguage.xtext.common.LanguageResource;
 public class XtextPartialViewerController extends AbstractEEFCustomWidgetController {
 	private EObject element;
 	private String featureName;
-	private IConsumer<List<Notification>> listener = notifications -> notify(notifications);
+	private Consumer<List<Notification>> listener = notifications -> notify(notifications);
 	private XtextPartialViewerLifecycleManager manager;
 	
 	public XtextPartialViewerController(EEFCustomWidgetDescription description, IVariableManager variableManager, IInterpreter interpreter,
@@ -72,7 +72,7 @@ public class XtextPartialViewerController extends AbstractEEFCustomWidgetControl
 	}
 
 	public IStatus persistModelValue(String text) {
-		return contextAdapter.performModelChange(new Runnable() {
+		return editingContextAdapter.performModelChange(new Runnable() {
 			@Override
 			public void run() {
 				Object newValue = null;
