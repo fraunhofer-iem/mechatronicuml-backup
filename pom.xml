@@ -54,6 +54,7 @@
      <excludes>
        <!--provide plug-ins not containing any source code -->
 	  <plugin id="org.muml.siriusbranch.repository" />
+	  <plugin id="org.muml.pim.onetomanycommunicationschemata" />
      </excludes>
     </configuration>
    </plugin>
