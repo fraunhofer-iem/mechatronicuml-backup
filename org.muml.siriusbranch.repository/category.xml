@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.muml.siriusbranch.feature_1.1.0.qualifier.jar" id="org.muml.siriusbranch.feature" version="1.1.0.qualifier">
+      <category name="org.muml.siriusbranch.category"/>
+   </feature>
+   <category-def name="org.muml.siriusbranch.category" label="Sirius Branch"/>
+</site>
