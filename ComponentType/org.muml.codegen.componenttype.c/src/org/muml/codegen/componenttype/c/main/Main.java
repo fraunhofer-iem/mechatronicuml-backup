@@ -35,7 +35,7 @@ public class Main extends AbstractAcceleoGenerator {
      *
      * @generated
      */
-    public static final String MODULE_FILE_NAME = "/org/muml/codegen/componenttype/c/main/main";
+    public static final String MODULE_FILE_NAME = "bin/org/muml/codegen/componenttype/c/main/main";
     
     /**
      * The name of the templates that are to be generated.
