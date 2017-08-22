@@ -8,10 +8,6 @@ import java.util.Map;
 import org.eclipse.core.expressions.Expression;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EDataType;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.action.IMenuListener;
@@ -90,7 +86,6 @@ import org.eclipse.xtext.util.StringInputStream;
 import org.eclipse.xtext.validation.CheckMode;
 import org.eclipse.xtext.validation.IResourceValidator;
 import org.eclipse.xtext.validation.Issue;
-import org.muml.pim.actionlanguage.xtext.common.LanguageResource;
 
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
@@ -252,6 +247,7 @@ public class EmbeddedXtextEditor {
 		
 		Control control = fSourceViewer.getControl();
 		GridData data = new GridData(SWT.FILL, SWT.FILL, true, true);
+		data.horizontalIndent = 5;
 		data.minimumHeight = 100;
 		control.setLayoutData(data);
 
@@ -313,7 +309,9 @@ public class EmbeddedXtextEditor {
 
 	
 	private void createSourceViewer(Composite parent) {
-		fVerticalRuler = createVerticalRuler();
+		// NOTE: set to null in order to get outline border back: 
+		fVerticalRuler = null;//createVerticalRuler();
+		
 		fSourceViewer = fSourceViewerFactory.createSourceViewer(parent, fVerticalRuler, getOverviewRuler(), true, fStyle);
 		fViewerConfiguration = fSourceViewerConfigurationProvider.get();
 		fSourceViewer.configure(fViewerConfiguration);	

@@ -5,13 +5,8 @@ import org.eclipse.eef.EEFCustomWidgetDescription;
 import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager;
 import org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManagerProvider;
-import org.eclipse.emf.common.notify.AdapterFactory;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
-import org.muml.pim.actionlanguage.xtext.ui.internal.ActionLanguageActivator;
-
-import com.google.inject.Injector;
 
 public class SiriusPropertiesLifecycleManagerProvider implements IEEFLifecycleManagerProvider {
 	/**

@@ -30,7 +30,7 @@ public class CustomTransitionLabelExpressionLabelParser6006 extends
 		RelativeDeadline relativeDeadline = transition.getRelativeDeadline();
 		if (relativeDeadline != null) {
 			TimeValue lowerBound = relativeDeadline.getLowerBound();
-			if (lowerBound != null && lowerBound.getValue() != null
+			if (lowerBound != null && lowerBound.getValue()  != null
 					&& lowerBound.getUnit() != null) {
 				printString = printString.replaceAll(
 						"\\{relativeLowerBoundExpression\\}",
