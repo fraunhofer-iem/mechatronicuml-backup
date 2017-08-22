@@ -419,7 +419,17 @@ public class RuntimePlugin extends AbstractUIPlugin {
 		} else if(object instanceof IAdaptable) {
 			IAdaptable adaptable = (IAdaptable)object;
 			if(adaptable.getAdapter(EObject.class) != null) {
-				return (EObject)adaptable.getAdapter(EObject.class);
+				EObject element = (EObject)adaptable.getAdapter(EObject.class);
+				
+				// Derive sirius semantic element
+				if (element.eClass() != null) {
+					EClass eClass = element.eClass();
+					EPackage ePackage = eClass.getEPackage();
+					if (ePackage != null && ePackage.getNsURI() != null && ePackage.getNsURI().startsWith("http://www.eclipse.org/sirius")) {
+						element = (EObject) element.eGet(eClass.getEStructuralFeature("target"));
+					}
+				}
+				return element;
 			}
 		}
 		return null;

@@ -26,6 +26,5 @@ Export-Package: org.muml.ape.runtime,
  org.muml.ape.runtime.filter,
  org.muml.ape.runtime.metamodel,
  org.muml.ape.runtime.sections,
- org.muml.ape.runtime.wizard,
- org.eclipse.ocl.xtext.essentialocl
+ org.muml.ape.runtime.wizard
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
