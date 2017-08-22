@@ -23,6 +23,84 @@
   </extension>
 
 
+<!-- from core.edit.properties, added here for sirius-ape integration -->
+<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs contributorId="org.eclipse.sirius.diagram.ui">
+          <propertyTab
+             category="domain"
+             id="property.tab.general"
+             label="General"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.documentation"
+             afterTab="property.tab.extensions"
+             label="Documentation"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.extensions"
+             afterTab="property.tab.general"
+             label="Extensions"/>
+          
+      </propertyTabs>
+  </extension>
+
+
+
+
+  <extension point="org.eclipse.ui.views.properties.tabbed.propertySections"> 
+      <propertySections contributorId="org.eclipse.sirius.diagram.ui">
+          <propertySection
+            class="org.muml.ape.runtime.sections.ObjectPropertySection"
+            filter="org.muml.core.properties.tabs.Property_tab_generalTabElementFilter"
+            id="property.tab.general"
+            tab="property.tab.general">
+             <input
+               type="org.eclipse.emf.ecore.EObject">
+             </input>
+          </propertySection>
+          <propertySection
+            class="org.muml.ape.runtime.sections.ObjectPropertySection"
+            filter="org.muml.core.properties.tabs.Property_tab_documentationTabElementFilter"
+            id="property.tab.documentation"
+            tab="property.tab.documentation">
+             <input
+               type="org.eclipse.emf.ecore.EObject">
+             </input>
+          </propertySection>
+          <propertySection
+            class="org.muml.ape.runtime.sections.ObjectPropertySection"
+            filter="org.muml.core.properties.tabs.Property_tab_extensionsTabElementFilter"
+            id="property.tab.extensions"
+            tab="property.tab.extensions">
+             <input
+               type="org.eclipse.emf.ecore.EObject">
+             </input>
+          </propertySection>
+         
+      </propertySections>
+  </extension>
+
+
+  <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+    <propertyContributor
+          contributorId="org.eclipse.sirius.diagram.ui">
+       <propertyCategory
+             category="domain">
+       </propertyCategory>
+       <propertyCategory
+             category="default">
+       </propertyCategory>
+       <propertyCategory
+             category="extended">
+       </propertyCategory>
+       <propertyCategory
+             category="advanced">
+       </propertyCategory>
+    </propertyContributor>
+  </extension>
+
+
 
 <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
       <propertyTabs contributorId="org.eclipse.sirius.diagram.ui">
