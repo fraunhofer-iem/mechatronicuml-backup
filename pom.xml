@@ -17,7 +17,6 @@
 	</properties>
    
   <modules>
-    <module>org.muml.core.edit.properties</module>
     <module>org.muml.pim</module>
     <module>org.muml.pim.edit</module>
     <module>org.muml.pim.edit.properties</module>
