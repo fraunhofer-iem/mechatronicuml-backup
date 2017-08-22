@@ -17,6 +17,15 @@
       %license
    </license>
 
+   <requires>
+      <import feature="org.muml.pim.feature" version="1.0.0.201707011446"/>
+      <import feature="org.muml.core.feature" version="1.0.0.201707011419"/>
+      <import feature="org.eclipse.eef.sdk.feature" version="1.9.0.201701271010"/>
+      <import feature="org.eclipse.sirius.runtime.ide.eef" version="4.1.4.201703211416"/>
+      <import feature="org.eclipse.sirius.runtime.ide.ui" version="4.1.4.201703211416"/>
+      <import feature="org.eclipse.sirius.runtime.ide.xtext" version="4.1.4.201703211416"/>
+   </requires>
+
    <plugin
          id="org.muml.core.edit.properties"
          download-size="0"

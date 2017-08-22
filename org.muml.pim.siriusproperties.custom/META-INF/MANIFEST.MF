@@ -6,9 +6,9 @@ Bundle-Version: 1.1.0.qualifier
 Bundle-Activator: org.muml.pim.siriusproperties.custom.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- org.eclipse.eef.core,
- org.eclipse.eef,
- org.eclipse.sirius.common.interpreter,
+ org.eclipse.eef.core;bundle-version="1.9.0",
+ org.eclipse.eef;bundle-version="1.9.0",
+ org.eclipse.sirius.common.interpreter;bundle-version="4.1.4",
  org.eclipse.eef.ide.ui,
  org.eclipse.emf.edit,
  org.eclipse.eef.common.ui,
