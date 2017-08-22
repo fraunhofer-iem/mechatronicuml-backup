@@ -9,6 +9,7 @@ import org.muml.pim.realtimestatechart.Synchronization;
 import org.muml.pim.realtimestatechart.SynchronizationKind;
 import org.muml.pim.realtimestatechart.Transition;
 import org.muml.pim.realtimestatechart.diagram.custom.parsers.CustomTransitionLabelExpressionLabelParser6005;
+import org.muml.pim.realtimestatechart.diagram.custom.parsers.ParserUtilities;
 import org.muml.pim.realtimestatechart.one_to_n_schemata.Iterate;
 import org.muml.pim.realtimestatechart.one_to_n_schemata.LoadBalancing;
 import org.muml.pim.realtimestatechart.one_to_n_schemata.MultiReceive;
@@ -169,4 +170,33 @@ public class Services {
 		return firstPart;
 	}
 
+	public String deadlineLabel(Transition transition) {
+		StringBuffer buf = new StringBuffer();
+		if (transition.getRelativeDeadline() != null) {
+
+			String lowerBound = "null";
+			if (transition.getRelativeDeadline().getLowerBound() != null) {
+				if (transition.getRelativeDeadline().getLowerBound().getValue() != null) {
+					if (transition.getRelativeDeadline().getLowerBound().getUnit() != null) {
+						lowerBound = ParserUtilities.serializeTimeValue(transition.getRelativeDeadline().getLowerBound(), transition);
+					}
+				}
+			}
+			
+			String upperBound = "null";
+			if (transition.getRelativeDeadline().getUpperBound() != null) {
+				if (transition.getRelativeDeadline().getUpperBound().getValue() != null) {
+					if (transition.getRelativeDeadline().getUpperBound().getUnit() != null) {
+						upperBound = ParserUtilities.serializeTimeValue(transition.getRelativeDeadline().getUpperBound(), transition);
+					}
+				}
+			}
+			buf.append('[');
+			buf.append(lowerBound);
+			buf.append(';');
+			buf.append(upperBound);
+			buf.append(']');
+		}
+		return buf.toString();
+	}
 }
