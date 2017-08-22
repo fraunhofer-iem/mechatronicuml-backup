@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.muml.c.adapter.apimappinglanguage.feature"
+      label="%featureName"
+      version="1.0.0.qualifier"
+      provider-name="%providerName">
+
+   <description url="www.muml.org">
+      %description
+   </description>
+
+   <copyright url="%copyrightURL">
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <requires>
+      <import feature="org.muml.core.feature"/>
+      <import feature="org.muml.psm.feature"/>
+	  <import feature="org.muml.pm.software.feature"/>
+	  <import feature="org.muml.codegen.componenttype.feature"/>
+	  <import feature="org.muml.container.codegen.c.feature"/>      
+   </requires>
+
+   <plugin
+         id="org.muml.psm"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.muml.c.adapter.apimappinglanguage"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.muml.c.adapter.apimappinglanguage.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+</feature>

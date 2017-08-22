@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.muml.c.adapter.apimappinglanguage.feature_1.0.0.qualifier.jar" id="org.muml.c.adapter.apimappinglanguage.feature" version="1.0.0.qualifier">
+      <category name="org.muml.c.adapter.apimappinglanguage.category"/>
+   </feature>
+   <feature url="features/org.muml.c.adapter.apimappinglanguage.feature_1.0.0.qualifier-source-feature.jar" id="org.muml.c.adapter.apimappinglanguage.feature.source" version="1.0.0.qualifier">
+      <category name="org.muml.c.adapter.apimappinglanguage.category"/>
+   </feature>
+   <category-def name="org.muml.c.adapter.apimappinglanguage.category" label="MUML C Adapter for API Mapping Language"/>
+</site>
