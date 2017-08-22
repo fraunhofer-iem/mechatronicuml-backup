@@ -21,6 +21,10 @@ the Eclipse framework.
       %license
    </license>
 
+   <url>
+      <discovery label="GMF Tooling" url="http://download.eclipse.org/modeling/gmp/gmf-tooling/updates/releases/"/>
+   </url>
+
    <includes
          id="org.muml.pim.feature"
          version="0.0.0"/>
@@ -74,12 +78,12 @@ the Eclipse framework.
    <includes
          id="org.muml.pm.feature.source"
          version="0.0.0"/>
-	
-	<includes
+
+   <includes
          id="org.muml.codegen.componenttype.feature"
-         version="0.0.0"/>	
-	
-	<includes
+         version="0.0.0"/>
+
+   <includes
          id="org.muml.codegen.componenttype.feature.source"
          version="0.0.0"/>
 
@@ -190,9 +194,11 @@ the Eclipse framework.
    <includes
          id="org.muml.external.sat4j.pb.feature"
          version="0.0.0"/>
+
    <includes
          id="org.muml.external.jgrapht.feature"
          version="0.0.0"/>
+
    <includes
          id="org.opendds.modeling.feature"
          version="0.0.0"/>
@@ -280,8 +286,8 @@ the Eclipse framework.
    <includes
          id="org.muml.eloquent.adapter.muml.feature"
          version="0.0.0"/>
-   
-	<includes
+
+   <includes
          id="org.muml.eloquent.adapter.muml.feature.source"
          version="0.0.0"/>
 
