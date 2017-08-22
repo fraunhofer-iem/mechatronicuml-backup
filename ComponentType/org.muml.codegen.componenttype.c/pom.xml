@@ -33,7 +33,7 @@
 				 <entries>
 				 <entry>
 					<input>src/</input>
-					<output>target/classes/bin</output> 
+					<output>bin/</output> 
 				  </entry> 
 				</entries>
 			  </acceleoProject>
