@@ -17,6 +17,7 @@ int heartBeatProductionStation(int productionStationID);
 
 CURL *curl;
 char *url;
+int baseUrlLength;
 const int LONGEST_API_URL=33;
 
 
@@ -44,9 +45,11 @@ char * readConfigFile()
 		cJSON *root = cJSON_Parse(buffer);
 		if (root)
 		{
-			url = malloc(strlen(cJSON_GetObjectItem(root, "url")->valuestring));
-			sprintf(url, "%s", cJSON_GetObjectItem(root, "url")->valuestring);
+			baseUrlLength=strlen(cJSON_GetObjectItem(root, "baseurl")->valuestring);
+			url = malloc(baseUrlLength);
+			sprintf(url, "%s", cJSON_GetObjectItem(root, "baseurl")->valuestring);
 			cJSON_Delete(root);
+			printf("Found the following baseurl: %s\n", url);
 		}
 	}
 
@@ -67,12 +70,12 @@ int getFromDatabaseServer(char *apiEndPoint, char *jsonString)
 		if (!url){
 			url = readConfigFile();
 		}
-		char *fullUrl = malloc(sizeof(url)+LONGEST_API_URL);
+		char *fullUrl = malloc(baseUrlLength+LONGEST_API_URL);
 		strcpy(fullUrl, url);
 		strncat(fullUrl, apiEndPoint, LONGEST_API_URL);
 		curl_easy_setopt(curl, CURLOPT_URL, url);
 
-		printf("Json String: %s \n", jsonString);
+		printf("Json String %s \n Sent to %s\n", jsonString, fullUrl);
 
 		curl_easy_setopt(curl, CURLOPT_PROTOCOLS, CURLPROTO_HTTP);
 
@@ -118,12 +121,12 @@ void postToDatabaseServer(char *apiEndPoint, char *jsonString)
 		if (!url){
 			url = readConfigFile();
 		}
-		char *fullUrl = malloc(sizeof(url)+LONGEST_API_URL);
+		char *fullUrl = malloc(baseUrlLength+LONGEST_API_URL);
 		strcpy(fullUrl, url);
 		strncat(fullUrl, apiEndPoint, LONGEST_API_URL);
 		curl_easy_setopt(curl, CURLOPT_URL, url);
 
-		printf("Json String: %s \n", jsonString);
+		printf("Json String %s \nSent to %s\n", jsonString, fullUrl);
 
 		curl_easy_setopt(curl, CURLOPT_PROTOCOLS, CURLPROTO_HTTP);
 
