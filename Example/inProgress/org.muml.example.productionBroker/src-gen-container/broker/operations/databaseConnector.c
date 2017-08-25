@@ -77,8 +77,6 @@ int getFromDatabaseServer(char *apiEndPoint, char *jsonString)
 
 		printf("Json String %s \n Sent to %s\n", jsonString, fullUrl);
 
-		curl_easy_setopt(curl, CURLOPT_PROTOCOLS, CURLPROTO_HTTP);
-
 		struct curl_slist *headers = NULL;
 		headers = curl_slist_append(headers, "Accept: application/json");
 		headers = curl_slist_append(headers, "Content-Type: application/json");
@@ -127,8 +125,6 @@ void postToDatabaseServer(char *apiEndPoint, char *jsonString)
 		curl_easy_setopt(curl, CURLOPT_URL, url);
 
 		printf("Json String %s \nSent to %s\n", jsonString, fullUrl);
-
-		curl_easy_setopt(curl, CURLOPT_PROTOCOLS, CURLPROTO_HTTP);
 
 		/* setting correct headers so that the server will interpret the post body as json */
 		struct curl_slist *headers = NULL;
