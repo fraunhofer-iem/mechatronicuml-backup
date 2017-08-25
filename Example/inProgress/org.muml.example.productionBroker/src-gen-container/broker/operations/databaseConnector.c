@@ -59,8 +59,10 @@ int getFromDatabaseServer(char[] apiEndPoint, char *jsonString)
 
 			 if((CURLE_OK == res) && responseCode)
 			 {
+				if (responseCode != 404){
+					ret = responseCode;
+				}
 			    printf("Received response code: %s\n", responseCode);
-			    ret = responseCode;
 			 }
 		}
 		curl_easy_cleanup(curl);
@@ -221,18 +223,13 @@ int getOrderAmount(int orderID)
  */
 int searchOrder(int searchingPS, int producibleIngredients)
 {
-	//TODO search order
-	cJSON *update;
-	update = cJSON_CreateObject();
-	cJSON_AddItemToObject(update, "update", cJSON_CreateString("searchOrder"));
-	cJSON *changedTables;
-	cJSON_AddItemToObject(update, "changedTables", changedTables = cJSON_CreateObject());
-	cJSON *productionStations;
-	cJSON_AddItemToObject(changedTables, "ProductionStations", productionStations = cJSON_CreateObject());
-	cJSON_AddNumberToObject(productionStations, "ProductionStationID", searchingPS);
+	cJSON *request = cJSON_CreateObject();
+	cJSON_AddNumberToObject(request, "productionStationID", searchingPS);
+	cJSON producibleIngredientArray = *cJSON_CreateArray(void);
+	cJSON_AddItemToArray(producibleIngredientArray, producibleIngredients);
+	cJSON_AddItemToObject(request, "producibleIngredients", producibleIngredientArray);
 
-	int orderID = getFromDatabaseServer("order/search", cJSON_Print(update));
-
+	int orderID = getFromDatabaseServer("order/search", cJSON_Print(request));
 	return orderID;
 }
 
