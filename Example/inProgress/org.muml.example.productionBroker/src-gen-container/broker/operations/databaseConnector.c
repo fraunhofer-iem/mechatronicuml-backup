@@ -201,8 +201,9 @@ int deleteOrder(int orderID)
  */
 int getOrderIngredientID(int orderID)
 {
-	//TODO get ingredient
-	int ingredientID = getFromDatabaseServer("order/ingredient", cJSON_Print(update));
+	cJSON *request = cJSON_CreateObject();
+	cJSON_AddNumberToObject(request, "orderID", orderID);
+	int ingredientID = getFromDatabaseServer("order/ingredient", cJSON_Print(request));
 	printf("Successfully retrieved ingredientID %d for order %d.\n", ingredientID, orderID);
 	return ingredientID;
 }
@@ -212,7 +213,8 @@ int getOrderIngredientID(int orderID)
  */
 int getOrderAmount(int orderID)
 {
-	//TODO get amount
+	cJSON *request = cJSON_CreateObject();
+	cJSON_AddNumberToObject(request, "amount", orderID);
 	int orderAmount = getFromDatabaseServer("order/amount", cJSON_Print(update));
 	printf("Successfully retrieved amount %d for order %d.\n", orderAmount, orderID);
 	return orderAmount;
