@@ -169,20 +169,14 @@ int insertOrder(int orderID, int ingredientID, int amount, int timeout)
 }
 
 /**
- * Inserts pair orderId and productionStation into the table OrderAllocation
- * Sets status of the order in table Orders to 'IN_PRODUCTION'
+ * Defines a production station as producer of the order with the given ID
  */
 int defineProductionStationForOrder(int orderID, int productionStationID)
 {
-	cJSON *orderAllocation = cJSON_CreateObject();
-	cJSON_AddNumberToObject(orderAllocation, "OrderID", orderID);
-	cJSON_AddNumberToObject(orderAllocation, "ProductionStationID", productionStationID);
-	postToDatabaseServer(cJSON_Print(orderAllocation));
-
-	cJSON *order = cJSON_CreateObject();
-	cJSON_AddNumberToObject(order, "OrderID", orderID);
-	cJSON_AddStringToObject(order, "OrderStatus", "IN_PRODUCTION");
-	postToDatabaseServer("productionStation/assignOrder", cJSON_Print(order));
+	cJSON *request = cJSON_CreateObject();
+	cJSON_AddNumberToObject(request, "orderID", orderID);
+	cJSON_AddNumberToObject(request, "productionStationID", productionStationID);
+	postToDatabaseServer(cJSON_Print(request));
 
 	return 0;
 }
