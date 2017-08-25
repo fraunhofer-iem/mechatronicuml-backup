@@ -7,7 +7,6 @@
 #include <curl/curl.h>
 #include "cJSON.h"
 
-const char * readConfigFile();
 int insertOrder(int orderId, int ingredientID, int amount, int timeout);
 int defineProductionStationForOrder(int orderID, int productionStationID);
 int getOrderIngredientID(int orderID);
@@ -17,107 +16,7 @@ int deleteOrder(int orderID);
 int heartBeatProductionStation(int productionStationID);
 
 CURL *curl;
-char *url = readConfigFile();
-
-/**
- * Takes a json string and sends it to the server via post request
- *
- */
-int getFromDatabaseServer(char[] apiEndPoint, char *jsonString)
-{
-	int ret = -1;
-	curl = curl_easy_init();
-	if (curl)
-	{
-		//Compute and set full url of endpoint
-		char *fullUrl = malloc(sizeof(url)+sizeof(apiEndPoint));
-		strcopy(fullUrl, url);
-		strncat(fullUrl, apiEndPoint, sizeof(apiEndPoint));
-		curl_easy_setopt(curl, CURLOPT_URL, url);
-
-		printf("Json String: %s \n", jsonString);
-
-		curl_easy_setopt(curl, CURLOPT_PROTOCOLS, CURLPROTO_HTTP);
-
-		struct curl_slist *headers = NULL;
-		headers = curl_slist_append(headers, "Accept: application/json");
-		headers = curl_slist_append(headers, "Content-Type: application/json");
-		headers = curl_slist_append(headers, "charsets: utf-8");
-		curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
-
-		CURLcode res = curl_easy_perform(curl);
-		if (res != CURLE_OK)
-		{
-			fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
-		}
-		else
-		{
-			 long *responseCode;
-			 res = curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &responseCode);
-
-			 if((CURLE_OK == res) && responseCode)
-			 {
-				if (responseCode != 404){
-					ret = responseCode;
-				}
-			    printf("Received response code: %s\n", responseCode);
-			 }
-		}
-		curl_easy_cleanup(curl);
-	}
-	return ret;
-}
-
-/**
- * Takes a json string and sends it to the server via post request
- *
- */
-void postToDatabaseServer(char[] apiEndPoint, char *jsonString)
-{
-	curl = curl_easy_init();
-	if (curl)
-	{
-		//Compute and set full url of endpoint
-		char *fullUrl = malloc(sizeof(url)+sizeof(apiEndPoint));
-		strcopy(fullUrl, url);
-		strncat(fullUrl, apiEndPoint, sizeof(apiEndPoint));
-		curl_easy_setopt(curl, CURLOPT_URL, url);
-
-		printf("Json String: %s \n", jsonString);
-
-		curl_easy_setopt(curl, CURLOPT_PROTOCOLS, CURLPROTO_HTTP);
-
-		/* setting correct headers so that the server will interpret the post body as json */
-		struct curl_slist *headers = NULL;
-		headers = curl_slist_append(headers, "Accept: application/json");
-		headers = curl_slist_append(headers, "Content-Type: application/json");
-		headers = curl_slist_append(headers, "charsets: utf-8");
-		curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
-
-		/* pass in a pointer to the data - libcurl will not copy */
-		curl_easy_setopt(curl, CURLOPT_POSTFIELDS, jsonString);
-		CURLcode res = curl_easy_perform(curl);
-
-		if (res != CURL_OK)
-		{
-			fprintf(stderr, "curl_easy_perform() failed: %s\n",
-					curl_easy_strerror(res));
-		}
-		else
-		{
-			 long *responseCode;
-			 res = curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &responseCode);
-
-			 if((CURLE_OK == res) && responseCode)
-			 {
-				if (responseCode != 200){
-					printf("Something went wrong while posting, status code: %d \n", responseCode)
-				}
-			 }
-		}
-		curl_easy_cleanup(curl);
-	}
-}
+char *url;
 
 const char * readConfigFile()
 {
@@ -153,6 +52,113 @@ const char * readConfigFile()
 }
 
 /**
+ * Takes a json string and sends it to the server via post request
+ *
+ */
+int getFromDatabaseServer(char *apiEndPoint, char *jsonString)
+{
+	int ret = -1;
+	curl = curl_easy_init();
+	if (curl)
+	{
+		//Compute and set full url of endpoint
+		if (!url){
+			url = readConfigFile();
+		}
+		char *fullUrl = malloc(sizeof(url)+sizeof(apiEndPoint));
+		strcpy(fullUrl, url);
+		strncat(fullUrl, apiEndPoint, sizeof(apiEndPoint));
+		curl_easy_setopt(curl, CURLOPT_URL, url);
+
+		printf("Json String: %s \n", jsonString);
+
+		curl_easy_setopt(curl, CURLOPT_PROTOCOLS, CURLPROTO_HTTP);
+
+		struct curl_slist *headers = NULL;
+		headers = curl_slist_append(headers, "Accept: application/json");
+		headers = curl_slist_append(headers, "Content-Type: application/json");
+		headers = curl_slist_append(headers, "charsets: utf-8");
+		curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+
+		CURLcode res = curl_easy_perform(curl);
+		if (res != CURLE_OK)
+		{
+			fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+		}
+		else
+		{
+			 long *responseCode;
+			 res = curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &responseCode);
+
+			 if((CURLE_OK == res) && responseCode)
+			 {
+				if (*responseCode != 404){
+					ret = responseCode;
+				}
+			    printf("Received response code: %ld\n", *responseCode);
+			 }
+		}
+		curl_easy_cleanup(curl);
+	}
+	return ret;
+}
+
+/**
+ * Takes a json string and sends it to the server via post request
+ *
+ */
+void postToDatabaseServer(char *apiEndPoint, char *jsonString)
+{
+	curl = curl_easy_init();
+	if (curl)
+	{
+		//Compute and set full url of endpoint
+		if (!url){
+			url = readConfigFile();
+		}
+		char *fullUrl = malloc(sizeof(url)+sizeof(apiEndPoint));
+		strcpy(fullUrl, url);
+		strncat(fullUrl, apiEndPoint, sizeof(apiEndPoint));
+		curl_easy_setopt(curl, CURLOPT_URL, url);
+
+		printf("Json String: %s \n", jsonString);
+
+		curl_easy_setopt(curl, CURLOPT_PROTOCOLS, CURLPROTO_HTTP);
+
+		/* setting correct headers so that the server will interpret the post body as json */
+		struct curl_slist *headers = NULL;
+		headers = curl_slist_append(headers, "Accept: application/json");
+		headers = curl_slist_append(headers, "Content-Type: application/json");
+		headers = curl_slist_append(headers, "charsets: utf-8");
+		curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+
+		/* pass in a pointer to the data - libcurl will not copy */
+		curl_easy_setopt(curl, CURLOPT_POSTFIELDS, jsonString);
+		CURLcode res = curl_easy_perform(curl);
+
+		if (res != CURLE_OK)
+		{
+			fprintf(stderr, "curl_easy_perform() failed: %s\n",
+					curl_easy_strerror(res));
+		}
+		else
+		{
+			 long *responseCode;
+			 res = curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &responseCode);
+
+			 if((CURLE_OK == res) && responseCode)
+			 {
+				if (*responseCode != 200){
+					printf("Something went wrong while posting, status code: %ld \n", *responseCode);
+				}
+			 }
+		}
+		curl_easy_cleanup(curl);
+	}
+}
+
+
+/**
  * Inserts an order with its ID, ingredient, amount and timeout
  *
  */
@@ -163,7 +169,7 @@ int insertOrder(int orderID, int ingredientID, int amount, int timeout)
 	cJSON_AddNumberToObject(order, "ingredientID", ingredientID);
 	cJSON_AddNumberToObject(order, "orderID", orderID);
 	cJSON_AddNumberToObject(order, "timeout", timeout);
-	postToDatabaseServer("order/insert", cJSON_Print(order));
+	postToDatabaseServer("order/insert" , cJSON_Print(order));
 
 	return 0;
 }
@@ -176,7 +182,7 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 	cJSON *request = cJSON_CreateObject();
 	cJSON_AddNumberToObject(request, "orderID", orderID);
 	cJSON_AddNumberToObject(request, "productionStationID", productionStationID);
-	postToDatabaseServer(cJSON_Print(request));
+	postToDatabaseServer("productionStation/assignOrder",cJSON_Print(request));
 
 	return 0;
 }
