@@ -225,8 +225,8 @@ int searchOrder(int searchingPS, int producibleIngredients)
 {
 	cJSON *request = cJSON_CreateObject();
 	cJSON_AddNumberToObject(request, "productionStationID", searchingPS);
-	cJSON producibleIngredientArray = *cJSON_CreateArray();
-	cJSON_AddItemToArray(producibleIngredientArray, producibleIngredients);
+	cJSON *producibleIngredientArray = cJSON_CreateArray();
+	cJSON_AddItemToArray(producibleIngredientArray, cJSON_CreateNumber(producibleIngredients));
 	cJSON_AddItemToObject(request, "producibleIngredients", producibleIngredientArray);
 
 	int orderID = getFromDatabaseServer("order/search", cJSON_Print(request));
