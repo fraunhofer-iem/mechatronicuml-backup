@@ -17,8 +17,10 @@ int heartBeatProductionStation(int productionStationID);
 
 CURL *curl;
 char *url;
+const int LONGEST_API_URL=33;
 
-const char * readConfigFile()
+
+char * readConfigFile()
 {
 	char *buffer = 0;
 	long length;
@@ -65,9 +67,9 @@ int getFromDatabaseServer(char *apiEndPoint, char *jsonString)
 		if (!url){
 			url = readConfigFile();
 		}
-		char *fullUrl = malloc(sizeof(url)+sizeof(apiEndPoint));
+		char *fullUrl = malloc(sizeof(url)+LONGEST_API_URL);
 		strcpy(fullUrl, url);
-		strncat(fullUrl, apiEndPoint, sizeof(apiEndPoint));
+		strncat(fullUrl, apiEndPoint, LONGEST_API_URL);
 		curl_easy_setopt(curl, CURLOPT_URL, url);
 
 		printf("Json String: %s \n", jsonString);
@@ -93,7 +95,7 @@ int getFromDatabaseServer(char *apiEndPoint, char *jsonString)
 			 if((CURLE_OK == res) && responseCode)
 			 {
 				if (*responseCode != 404){
-					ret = responseCode;
+					ret = *responseCode;
 				}
 			    printf("Received response code: %ld\n", *responseCode);
 			 }
@@ -116,9 +118,9 @@ void postToDatabaseServer(char *apiEndPoint, char *jsonString)
 		if (!url){
 			url = readConfigFile();
 		}
-		char *fullUrl = malloc(sizeof(url)+sizeof(apiEndPoint));
+		char *fullUrl = malloc(sizeof(url)+LONGEST_API_URL);
 		strcpy(fullUrl, url);
-		strncat(fullUrl, apiEndPoint, sizeof(apiEndPoint));
+		strncat(fullUrl, apiEndPoint, LONGEST_API_URL);
 		curl_easy_setopt(curl, CURLOPT_URL, url);
 
 		printf("Json String: %s \n", jsonString);
