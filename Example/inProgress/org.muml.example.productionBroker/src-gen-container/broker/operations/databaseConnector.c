@@ -3,7 +3,6 @@
  *
  */
 
-#include <time.h>
 #include <string.h> /* strchr(), strlen(), .. */
 #include <curl/curl.h>
 #include "cJSON.h"
@@ -120,9 +119,6 @@ void postToDatabaseServer(char[] apiEndPoint, char *jsonString)
 	}
 }
 
-
-
-
 const char * readConfigFile()
 {
 	char *buffer = 0;
@@ -157,28 +153,16 @@ const char * readConfigFile()
 }
 
 /**
- * Inserts and order with its ID, ingredient and amount and initial status "IDLE"
- * and the current time as orderTime
+ * Inserts an order with its ID, ingredient, amount and timeout
  *
  */
 int insertOrder(int orderID, int ingredientID, int amount, int timeout)
 {
-	// Get current time for order info
-	time_t rawtime;
-	struct tm * timeinfo;
-	time (&rawtime);
-	timeinfo = localtime (&rawtime);
-	prinf(timeinfo);
-	printf ("Current local time and date: %s", asctime(timeinfo));
-	//TODO get correct time format
-
 	cJSON *order = cJSON_CreateObject();
-	cJSON_AddNumberToObject(order, "Amount", amount);
-	cJSON_AddNumberToObject(order, "Ingredient", ingredientID);
-	cJSON_AddNumberToObject(order, "OrderID", orderID);
-	cJSON_AddStringToObject(order, "OrderStatus", "IDLE");
-	cJSON_AddNumberToObject(order, "OrderTime", timeinfo);
-	cJSON_AddNumberToObject(order, "Timeout", timeout);
+	cJSON_AddNumberToObject(order, "amount", amount);
+	cJSON_AddNumberToObject(order, "ingredientID", ingredientID);
+	cJSON_AddNumberToObject(order, "orderID", orderID);
+	cJSON_AddNumberToObject(order, "timeout", timeout);
 	postToDatabaseServer("order/insert", cJSON_Print(order));
 
 	return 0;
@@ -198,8 +182,6 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 	cJSON *order = cJSON_CreateObject();
 	cJSON_AddNumberToObject(order, "OrderID", orderID);
 	cJSON_AddStringToObject(order, "OrderStatus", "IN_PRODUCTION");
-	//TODO get correct time
-	cJSON_AddNumberToObject(order, "ProductionStartTime: Date,", time);
 	postToDatabaseServer("productionStation/assignOrder", cJSON_Print(order));
 
 	return 0;
@@ -210,12 +192,8 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
  */
 int deleteOrder(int orderID)
 {
-	//TODO get correct time
-
 	cJSON *order = cJSON_CreateObject();
-	cJSON_AddNumberToObject(order, "OrderID", orderID);
-	cJSON_AddStringToObject(order, "OrderStatus", "DONE");
-	cJSON_AddNumberToObject(order, "ProductionEndTime", timeinfo);
+	cJSON_AddNumberToObject(order, "orderID", orderID);
 	postToDatabaseServer("order/done", cJSON_Print(order));
 
 	return 0;
@@ -266,16 +244,12 @@ int searchOrder(int searchingPS, int producibleIngredients)
 
 
 /**
- * Inserts and order with its ID, ingredient and amount and initial status "IDLE"
- * and the current time as orderTime
+ * Tells the server we have recently seen the productionStation with the given ID
  */
 int heartBeatProductionStation(int productionStationID)
 {
-	//TODO get correct time
 	cJSON *heartBeat = cJSON_CreateObject();
-	cJSON_AddNumberToObject(heartBeat, "ProductionStationID", productionStationID);
-	cJSON_AddNumberToObject(heartBeat, "ProductionStationID", lastSeen);
-
+	cJSON_AddNumberToObject(heartBeat, "productionStationID", productionStationID);
     postToDatabaseServer("productionStation/heartBeat", cJSON_Print(heartBeat));
 
 	return 0;
