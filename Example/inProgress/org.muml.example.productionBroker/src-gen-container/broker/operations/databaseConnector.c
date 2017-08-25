@@ -2,14 +2,12 @@
  * Connects to the database microservice specified in the config.json
  *
  */
-
+#include <stdlib.h>
 #include <string.h> /* strchr(), strlen(), .. */
 #include <curl/curl.h>
 #include "cJSON.h"
 
 const char * readConfigFile();
-int getFromDatabaseServer(char[] apiEndPoint, char *jsonString);
-void postToDatabaseServer(char[] apiEndPoint, char *jsonString);
 int insertOrder(int orderId, int ingredientID, int amount, int timeout);
 int defineProductionStationForOrder(int orderID, int productionStationID);
 int getOrderIngredientID(int orderID);
@@ -215,7 +213,7 @@ int getOrderAmount(int orderID)
 {
 	cJSON *request = cJSON_CreateObject();
 	cJSON_AddNumberToObject(request, "amount", orderID);
-	int orderAmount = getFromDatabaseServer("order/amount", cJSON_Print(update));
+	int orderAmount = getFromDatabaseServer("order/amount", cJSON_Print(request));
 	printf("Successfully retrieved amount %d for order %d.\n", orderAmount, orderID);
 	return orderAmount;
 }
@@ -227,7 +225,7 @@ int searchOrder(int searchingPS, int producibleIngredients)
 {
 	cJSON *request = cJSON_CreateObject();
 	cJSON_AddNumberToObject(request, "productionStationID", searchingPS);
-	cJSON producibleIngredientArray = *cJSON_CreateArray(void);
+	cJSON producibleIngredientArray = *cJSON_CreateArray();
 	cJSON_AddItemToArray(producibleIngredientArray, producibleIngredients);
 	cJSON_AddItemToObject(request, "producibleIngredients", producibleIngredientArray);
 
