@@ -28,6 +28,7 @@ char *url = readConfigFile();
  */
 int getFromDatabaseServer(char[] apiEndPoint, char *jsonString)
 {
+	int ret = -1;
 	curl = curl_easy_init();
 	if (curl)
 	{
@@ -54,19 +55,18 @@ int getFromDatabaseServer(char[] apiEndPoint, char *jsonString)
 		}
 		else
 		{
-			 char *responseCode;
-			 res = curl_easy_getinfo(curl, CURLINFO_CONTENT_TYPE, &responseCode);
+			 long *responseCode;
+			 res = curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &responseCode);
 
 			 if((CURLE_OK == res) && responseCode)
 			 {
 			    printf("Received response code: %s\n", responseCode);
-			    res = responseCode;
+			    ret = responseCode;
 			 }
 		}
 		curl_easy_cleanup(curl);
-		return res;
 	}
-	return -1;
+	return ret;
 }
 
 /**
@@ -78,12 +78,16 @@ void postToDatabaseServer(char[] apiEndPoint, char *jsonString)
 	curl = curl_easy_init();
 	if (curl)
 	{
-		/* First set the URL that is about to receive our POST. This URL can
-		   just as well be a https:// URL if that is what should receive the data. */
+		//Compute and set full url of endpoint
+		char *fullUrl = malloc(sizeof(url)+sizeof(apiEndPoint));
+		strcopy(fullUrl, url);
+		strncat(fullUrl, apiEndPoint, sizeof(apiEndPoint));
 		curl_easy_setopt(curl, CURLOPT_URL, url);
-		/* Only allow HTTP traffic */
-		curl_easy_setopt(curl, CURLOPT_PROTOCOLS, CURLPROTO_HTTP);
+
 		printf("Json String: %s \n", jsonString);
+
+		curl_easy_setopt(curl, CURLOPT_PROTOCOLS, CURLPROTO_HTTP);
+
 		/* setting correct headers so that the server will interpret the post body as json */
 		struct curl_slist *headers = NULL;
 		headers = curl_slist_append(headers, "Accept: application/json");
@@ -93,17 +97,27 @@ void postToDatabaseServer(char[] apiEndPoint, char *jsonString)
 
 		/* pass in a pointer to the data - libcurl will not copy */
 		curl_easy_setopt(curl, CURLOPT_POSTFIELDS, jsonString);
-		/* Perform the request, res will get the return code */
 		CURLcode res = curl_easy_perform(curl);
-		/* Check for errors */
+
 		if (res != CURL_OK)
 		{
 			fprintf(stderr, "curl_easy_perform() failed: %s\n",
 					curl_easy_strerror(res));
 		}
+		else
+		{
+			 long *responseCode;
+			 res = curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &responseCode);
+
+			 if((CURLE_OK == res) && responseCode)
+			 {
+				if (responseCode != 200){
+					printf("Something went wrong while posting, status code: %d \n", responseCode)
+				}
+			 }
+		}
 		curl_easy_cleanup(curl);
 	}
-	else printf ("No database");
 }
 
 
