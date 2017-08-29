@@ -664,7 +664,7 @@
              label="%tab.documentation"/>
       </propertyTabs>
    </extension>
-
+<!--
 <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
       <?gmfgen generated="true"?>   
       <propertySections contributorId="org.muml.pim.realtimestatechart.diagram">
@@ -728,6 +728,8 @@
          </propertySection>
       </propertySections>
    </extension>
+-->
+   
 <extension point="org.eclipse.ui.menus">
 	   <?gmfgen generated="true"?>
 	   <menuContribution

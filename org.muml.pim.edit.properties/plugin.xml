@@ -23,30 +23,6 @@
   </extension>
 
 
-<!-- from core.edit.properties, added here for sirius-ape integration -->
-<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
-      <propertyTabs contributorId="org.eclipse.sirius.diagram.ui">
-          <propertyTab
-             category="domain"
-             id="property.tab.general"
-             label="General"/>
-          <propertyTab
-             category="domain"
-             id="property.tab.documentation"
-             afterTab="property.tab.extensions"
-             label="Documentation"/>
-          <propertyTab
-             category="domain"
-             id="property.tab.extensions"
-             afterTab="property.tab.general"
-             label="Extensions"/>
-          
-      </propertyTabs>
-  </extension>
-
-
-
-
   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections"> 
       <propertySections contributorId="org.eclipse.sirius.diagram.ui">
           <propertySection
