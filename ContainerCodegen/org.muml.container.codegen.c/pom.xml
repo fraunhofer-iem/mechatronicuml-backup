@@ -31,7 +31,7 @@
 				 <entries>
 				 <entry>
 					<input>src/</input>
-					<output>target/classes</output> 
+					<output>target/classes/bin/</output> 
 				  </entry> 
 				</entries>
 				 <jars>
