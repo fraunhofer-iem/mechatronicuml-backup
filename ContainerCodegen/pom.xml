@@ -176,6 +176,7 @@
 				<configuration>
 				  <useBinaryResources>false</useBinaryResources>
 				  <usePlatformResourcePath>true</usePlatformResourcePath>
+                  <uriHandler>org.eclipse.acceleo.maven.AcceleoURIHandler</uriHandler>    
 				</configuration>  
 			</plugin>
 		</plugins>
