@@ -17,14 +17,7 @@
       <metamodel href="../../org.muml.pim/model/pim.ecore#//runnable"/>
       <metamodel href="../../org.muml.pim/model/pim.ecore#//realtimestatechart/one_to_n_schemata"/>
       <defaultLayer name="Default">
-        <nodeMappings name="InitialStateNode" semanticCandidatesExpression="aql:self.states->select(i | i.initial and true)" domainClass="State">
-          <style xsi:type="style:DotDescription" showIcon="false" labelExpression="" sizeComputationExpression="2" labelPosition="node" strokeSizeComputationExpression="1">
-            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-          </style>
-        </nodeMappings>
-        <edgeMappings name="org.muml.pim.realtimestatechart.Transition" label="Transition" sourceMapping="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State']/@borderedNodeMappings[name='EntryPoint'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State']/@borderedNodeMappings[name='ExitPoint']" targetMapping="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State']/@borderedNodeMappings[name='EntryPoint'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State']/@borderedNodeMappings[name='ExitPoint']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="Transition" useDomainElement="true">
+        <edgeMappings name="org.muml.pim.realtimestatechart.Transition" label="Transition" sourceMapping="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.States']/@subContainerMappings[name='org.muml.pim.realtimestatechart.State'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.States']/@subContainerMappings[name='org.muml.pim.realtimestatechart.State']/@borderedNodeMappings[name='EntryPoint'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.States']/@subContainerMappings[name='org.muml.pim.realtimestatechart.State']/@borderedNodeMappings[name='ExitPoint']" targetMapping="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.States']/@subContainerMappings[name='org.muml.pim.realtimestatechart.State'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.States']/@subContainerMappings[name='org.muml.pim.realtimestatechart.State']/@borderedNodeMappings[name='EntryPoint'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.States']/@subContainerMappings[name='org.muml.pim.realtimestatechart.State']/@borderedNodeMappings[name='ExitPoint']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="Transition" useDomainElement="true" reconnections="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Reconnect.TransitionTarget'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Reconnect.TransitionSource']">
           <style>
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <centerLabelStyleDescription showIcon="false" labelExpression="[self.guardLabel()/]">
@@ -35,7 +28,7 @@
             </endLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="InitialStateEdge" sourceMapping="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@nodeMappings[name='InitialStateNode']" targetMapping="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State']" targetFinderExpression="aql:self">
+        <edgeMappings name="InitialStateEdge" sourceMapping="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.States']/@subNodeMappings[name='InitialStateNode']" targetMapping="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.States']/@subContainerMappings[name='org.muml.pim.realtimestatechart.State']" targetFinderExpression="aql:self">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription>
@@ -43,73 +36,243 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <containerMappings name="org.muml.pim.realtimestatechart.State" label="State" semanticCandidatesExpression="aql:self.states" domainClass="State" childrenPresentation="VerticalStack">
-          <borderedNodeMappings name="EntryPoint" semanticCandidatesExpression="aql:self.connectionPoints" domainClass="EntryPoint">
-            <style xsi:type="style:DotDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="" sizeComputationExpression="2" labelPosition="node" strokeSizeComputationExpression="1">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            </style>
-          </borderedNodeMappings>
-          <borderedNodeMappings name="ExitPoint" semanticCandidatesExpression="aql:self.connectionPoints" domainClass="ExitPoint">
-            <style xsi:type="style:DotDescription" borderSizeComputationExpression="1" labelExpression="" iconPath="/realtimestatechart.design/images/cross.png" sizeComputationExpression="2" labelPosition="node" strokeSizeComputationExpression="1">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            </style>
-          </borderedNodeMappings>
-          <subContainerMappings name="org.muml.pim.realtimestatechart.RealtimeStatechart" label="Realtime Statechart" semanticCandidatesExpression="aql:self.embeddedStatecharts" domainClass="RealtimeStatechart" reusedContainerMappings="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State']">
-            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" widthComputationExpression="10" heightComputationExpression="10" backgroundStyle="Liquid">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+        <containerMappings name="org.muml.pim.realtimestatechart.RealtimeStatechart" label="Realtime Statechart" deletionDescription="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Delete.RTSC']" labelDirectEdit="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='DirectEditLabel']" semanticCandidatesExpression="aql:if (self.eClass().name = 'RealtimeStatechart') then self else self.embeddedStatecharts endif" domainClass="RealtimeStatechart" childrenPresentation="VerticalStack">
+          <subContainerMappings name="RTSC.Operations" label="Operations" semanticCandidatesExpression="aql:if not self.operations->isEmpty() then self else null endif" domainClass="RealtimeStatechart" childrenPresentation="List">
+            <subNodeMappings name="OperationsLabel" semanticCandidatesExpression="aql:self" domainClass="RealtimeStatechart">
+              <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="aql:'operation: '" labelAlignment="RIGHT" sizeComputationExpression="" labelPosition="node" resizeKind="EAST_WEST">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="Operations" labelDirectEdit="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='DirectEditLabel']" semanticCandidatesExpression="aql:self.operations" domainClass="Operation">
+              <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="aql:self.name.concat(if self.eContainer().clocks->end() = self then '' else ', ' endif)" labelAlignment="RIGHT" sizeComputationExpression="" labelPosition="node" resizeKind="EAST_WEST">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="0" arcHeight="0" showIcon="false" labelExpression="aql:''" hideLabelByDefault="true" widthComputationExpression="10" heightComputationExpression="10" backgroundStyle="Liquid">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
               <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             </style>
           </subContainerMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" roundedCorner="true" widthComputationExpression="10" heightComputationExpression="10" backgroundStyle="Liquid">
+          <subContainerMappings name="RTSC.Variables" semanticCandidatesExpression="aql:if not self.variables->isEmpty() then self else null endif" domainClass="RealtimeStatechart" childrenPresentation="List">
+            <subNodeMappings name="VariablesLabel" semanticCandidatesExpression="aql:self" domainClass="RealtimeStatechart">
+              <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="aql:'variable: '" labelAlignment="RIGHT" sizeComputationExpression="" labelPosition="node" resizeKind="EAST_WEST">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="Variables" labelDirectEdit="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='DirectEditLabel']" semanticCandidatesExpression="aql:self.variables" domainClass="Variable">
+              <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="aql:self.name.concat(if self.eContainer().clocks->end() = self then '' else ', ' endif)" labelAlignment="RIGHT" sizeComputationExpression="" labelPosition="node" resizeKind="EAST_WEST">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="0" arcHeight="0" showIcon="false" labelExpression="aql:''" hideLabelByDefault="true" widthComputationExpression="10" heightComputationExpression="10" backgroundStyle="Liquid">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subContainerMappings>
+          <subContainerMappings name="RTSC.Clocks" semanticCandidatesExpression="aql:if not self.clocks->isEmpty() then self else null endif" domainClass="RealtimeStatechart" childrenPresentation="List">
+            <subNodeMappings name="ClockLabel" semanticCandidatesExpression="aql:self" domainClass="RealtimeStatechart">
+              <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="aql:'clock: '" labelAlignment="RIGHT" sizeComputationExpression="" labelPosition="node" resizeKind="EAST_WEST">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="Clocks" label="Clocks" labelDirectEdit="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='DirectEditLabel']" semanticCandidatesExpression="aql:self.clocks" domainClass="Clock">
+              <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="aql:self.name.concat(if self.eContainer().clocks->end() = self then '' else ', ' endif)" labelAlignment="RIGHT" sizeComputationExpression="" labelPosition="node" resizeKind="EAST_WEST">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="0" arcHeight="0" showIcon="false" labelExpression="aql:''" hideLabelByDefault="true" widthComputationExpression="10" heightComputationExpression="10" backgroundStyle="Liquid">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subContainerMappings>
+          <subContainerMappings name="RTSC.States" semanticCandidatesExpression="aql:self" domainClass="RealtimeStatechart">
+            <subNodeMappings name="InitialStateNode" semanticCandidatesExpression="aql:self.states->select(i | i.initial and true)" domainClass="State">
+              <style xsi:type="style:DotDescription" showIcon="false" labelExpression="" sizeComputationExpression="2" labelPosition="node" strokeSizeComputationExpression="1">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </subNodeMappings>
+            <subContainerMappings name="org.muml.pim.realtimestatechart.State" label="State" labelDirectEdit="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='DirectEditLabel']" semanticCandidatesExpression="aql:self.states" domainClass="State" reusedContainerMappings="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']" childrenPresentation="VerticalStack">
+              <borderedNodeMappings name="EntryPoint" labelDirectEdit="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='DirectEditLabel']" semanticCandidatesExpression="aql:self.connectionPoints" domainClass="EntryPoint">
+                <style xsi:type="style:DotDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="" sizeComputationExpression="2" labelPosition="node" strokeSizeComputationExpression="1">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                </style>
+              </borderedNodeMappings>
+              <borderedNodeMappings name="ExitPoint" labelDirectEdit="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='DirectEditLabel']" semanticCandidatesExpression="aql:self.connectionPoints" domainClass="ExitPoint">
+                <style xsi:type="style:DotDescription" borderSizeComputationExpression="1" labelExpression="" iconPath="/realtimestatechart.design/images/cross.png" sizeComputationExpression="2" labelPosition="node" strokeSizeComputationExpression="1">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                </style>
+              </borderedNodeMappings>
+              <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" roundedCorner="true" widthComputationExpression="10" heightComputationExpression="10" backgroundStyle="Liquid">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subContainerMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="0" arcHeight="0" borderSizeComputationExpression="1" showIcon="false" labelExpression="aql:''" hideLabelByDefault="true" widthComputationExpression="10" heightComputationExpression="10" backgroundStyle="Liquid">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="aql:self.name" widthComputationExpression="10" heightComputationExpression="10" backgroundStyle="Liquid">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
         </containerMappings>
-        <toolSections name="org.muml.pim.realtimestatechart.createSection" label="Create">
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="org.muml.pim.realtimestatechart.createState" label="Create State" containerMappings="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State']">
+        <toolSections name="org.muml.pim.realtimestatechart.Section" label="Statechart">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="org.muml.pim.realtimestatechart.createRealtimeStatechart" label="Create Statechart" containerMappings="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext">
+              <firstModelOperations xsi:type="tool_1:If" conditionExpression="aql:self &lt;> diagram.target">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:if (self.eClass().name = 'RealtimeStatechart') then self.eContainer() else self endif">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="RealtimeStatechart" referenceName="embeddedStatecharts">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="substatechart"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Operation" label="Create Operation" elementsToSelect="var:instance" nodeMappings="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.Operations']/@subNodeMappings[name='Operations']" extraMappings="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.Operations'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.Clocks'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.States'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.States']/@subContainerMappings[name='org.muml.pim.realtimestatechart.State'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.Variables']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:if (self.eClass().name = 'State') then self.eContainer() else self endif">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Operation" referenceName="operations">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'op1'"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Variable" label="Create Variable" elementsToSelect="var:instance" nodeMappings="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.Variables']/@subNodeMappings[name='Variables']" extraMappings="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.Operations'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.Clocks'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.States'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.States']/@subContainerMappings[name='org.muml.pim.realtimestatechart.State'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.Variables']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:if (self.eClass().name = 'State') then self.eContainer() else self endif">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Variables" referenceName="variables">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'op1'"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Clock" label="Create Clock" elementsToSelect="var:instance" nodeMappings="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.Clocks']/@subNodeMappings[name='Clocks']" extraMappings="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.Operations'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.Clocks'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.States'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.States']/@subContainerMappings[name='org.muml.pim.realtimestatechart.State'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.Variables']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:if (self.eClass().name = 'State') then self.eContainer() else self endif">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Clock" referenceName="clocks">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'c1'"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="Reconnect.TransitionSource" label="Transition Source" reconnectionKind="RECONNECT_SOURCE">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="Reconnect.TransitionTarget" label="Transition Target">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="Delete.RTSC">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self">
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self &lt;> diagram.target">
+                  <subModelOperations xsi:type="tool_1:RemoveElement"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="DirectEditLabel">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:0"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="org.muml.pim.realtimestatechart.State.Section" label="State">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="org.muml.pim.realtimestatechart.createState" label="Create State" containerMappings="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.States']/@subContainerMappings[name='org.muml.pim.realtimestatechart.State']" extraMappings="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.States'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.Operations'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.Clocks'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.Variables'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.States']/@subContainerMappings[name='org.muml.pim.realtimestatechart.State']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:if (self.eClass().name = 'State') then self.eContainer() else self endif">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="State" referenceName="states">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="newstate"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="EntryPoint" nodeMappings="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State']/@borderedNodeMappings[name='EntryPoint']">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="EntryPoint" label="Create Entry Point" elementsToSelect="var:instance" nodeMappings="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.States']/@subContainerMappings[name='org.muml.pim.realtimestatechart.State']/@borderedNodeMappings[name='EntryPoint']" extraMappings="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.Operations'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.Clocks'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.States'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.Variables']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="EntryPoint" referenceName="connectionPoints">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="entry" valueExpression="aql:true"/>
+              <firstModelOperations xsi:type="tool_1:If" conditionExpression="aql:self &lt;> diagram.target">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:if (self.eClass().name = 'RealtimeStatechart') then self.eContainer() else self endif">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="EntryPoint" referenceName="connectionPoints">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="entry" valueExpression="aql:true"/>
+                  </subModelOperations>
+                </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="ExitPoint" nodeMappings="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State']/@borderedNodeMappings[name='ExitPoint']">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="ExitPoint" label="Create Exit Point" elementsToSelect="var:instance" nodeMappings="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.States']/@subContainerMappings[name='org.muml.pim.realtimestatechart.State']/@borderedNodeMappings[name='ExitPoint']" extraMappings="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.States'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.Operations'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.Clocks'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.States']/@subContainerMappings[name='org.muml.pim.realtimestatechart.State'] //@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']/@subContainerMappings[name='RTSC.Variables']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="ExitPoint" referenceName="connectionPoints">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="entry" valueExpression="aql:false"/>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="org.muml.pim.realtimestatechart.createRealtimeStatechart" label="Create Statechart" containerMappings="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.State']/@subContainerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']">
-            <variable name="container"/>
-            <viewVariable name="containerView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="RealtimeStatechart" referenceName="embeddedStatecharts">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="substatechart"/>
+              <firstModelOperations xsi:type="tool_1:If" conditionExpression="aql:self &lt;> diagram.target">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:if (self.eClass().name = 'RealtimeStatechart') then self.eContainer() else self endif">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ExitPoint" referenceName="connectionPoints">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="entry" valueExpression="aql:false"/>
+                  </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
