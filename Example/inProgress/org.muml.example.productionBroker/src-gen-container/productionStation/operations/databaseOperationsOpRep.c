@@ -19,11 +19,11 @@ int32_T databaseOperations_databaseOperationsInsertOrder(int32_T orderID, int32_
 
 
 
-int32_T databaseOperations_databaseOperationsDeleteOrder(int32_T orderID){
+int32_T databaseOperations_databaseOperationsMarkOrderAsDone(int32_T orderID){
 
-/** Start of user code databaseOperations_databaseOperationsDeleteOrder **/ 
+/** Start of user code databaseOperations_databaseOperationsMarkOrderAsDone **/ 
 //@TODO: add your implementation here
-#warning Missing implemenation of repository operation 'databaseOperations_databaseOperationsDeleteOrder'
+#warning Missing implemenation of repository operation 'databaseOperations_databaseOperationsMarkOrderAsDone'
 	//default return value
 	int32_T ret = 0;
 	return ret;
@@ -94,6 +94,20 @@ int32_T databaseOperations_databaseOperationsHeartbeatProductionStation(int32_T 
 /** Start of user code databaseOperations_databaseOperationsHeartbeatProductionStation **/ 
 //@TODO: add your implementation here
 #warning Missing implemenation of repository operation 'databaseOperations_databaseOperationsHeartbeatProductionStation'
+	//default return value
+	int32_T ret = 0;
+	return ret;
+/**End of user code**/
+
+}
+
+
+
+int32_T databaseOperations_databaseOperationsMarkOrdersAsFailedForUnreachableStations(){
+
+/** Start of user code databaseOperations_databaseOperationsMarkOrdersAsFailedForUnreachableStations **/ 
+//@TODO: add your implementation here
+#warning Missing implemenation of repository operation 'databaseOperations_databaseOperationsMarkOrdersAsFailedForUnreachableStations'
 	//default return value
 	int32_T ret = 0;
 	return ret;

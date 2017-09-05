@@ -16,11 +16,11 @@
 		 */
 		int32_T databaseOperations_databaseOperationsInsertOrder(int32_T orderID, int32_T ingredientID, int32_T amount, int32_T timeout);
 		/**
-		 * @brief Implementation stub of operation deleteOrder
- 		 * @details This function shall contain the implementation of the operation deleteOrder.
+		 * @brief Implementation stub of operation markOrderAsDone
+ 		 * @details This function shall contain the implementation of the operation markOrderAsDone.
 		 * @param orderID 
 		 */
-		int32_T databaseOperations_databaseOperationsDeleteOrder(int32_T orderID);
+		int32_T databaseOperations_databaseOperationsMarkOrderAsDone(int32_T orderID);
 		/**
 		 * @brief Implementation stub of operation getOrderIngredientID
  		 * @details This function shall contain the implementation of the operation getOrderIngredientID.
@@ -51,6 +51,12 @@
 		 * @param psID 
 		 */
 		int32_T databaseOperations_databaseOperationsHeartbeatProductionStation(int32_T psID);
+		/**
+		 * @brief Implementation stub of operation markOrdersAsFailedForUnreachableStations
+ 		 * @details This function shall contain the implementation of the operation markOrdersAsFailedForUnreachableStations.
+		 * 
+		 */
+		int32_T databaseOperations_databaseOperationsMarkOrdersAsFailedForUnreachableStations();
 
 
 #ifdef __cplusplus

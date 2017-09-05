@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="ASCII"?>
+<opendds:OpenDDSModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:opendds="http://www.opendds.org/modeling/schemas/OpenDDS/1.0" xmlns:qos="http://www.opendds.org/modeling/schemas/QoS/1.0" xmlns:topics="http://www.opendds.org/modeling/schemas/Topics/1.0" xmlns:types="http://www.opendds.org/modeling/schemas/Types/1.0" xmi:id="_gM46kJIfEeeLFPhJlTaVCw" name="MUML_DDS">
+  <libs xsi:type="types:DataLib" xmi:id="_gM46kZIfEeeLFPhJlTaVCw" name="MUML_DataLib">
+    <types xsi:type="types:Struct" xmi:id="_gM46kpIfEeeLFPhJlTaVCw" name="DDS_MessagesdoneOrder_Messages" isDcpsDataType="true">
+      <fields xmi:id="_gM46k5IfEeeLFPhJlTaVCw" name="orderID" type="_gM46ppIfEeeLFPhJlTaVCw"/>
+    </types>
+    <types xsi:type="types:Struct" xmi:id="_gM46lJIfEeeLFPhJlTaVCw" name="DDS_MessagesnoOrder_Messages" isDcpsDataType="true">
+      <fields xmi:id="_gM46lZIfEeeLFPhJlTaVCw" name="receiverPsID" type="_gM46ppIfEeeLFPhJlTaVCw"/>
+    </types>
+    <types xsi:type="types:Struct" xmi:id="_gM46lpIfEeeLFPhJlTaVCw" name="DDS_MessagessimpleOrder_Messages" isDcpsDataType="true">
+      <fields xmi:id="_gM46l5IfEeeLFPhJlTaVCw" name="orderID" type="_gM46ppIfEeeLFPhJlTaVCw"/>
+      <fields xmi:id="_gM46mJIfEeeLFPhJlTaVCw" name="ingredientID" type="_gM46ppIfEeeLFPhJlTaVCw"/>
+      <fields xmi:id="_gM46mZIfEeeLFPhJlTaVCw" name="amount" type="_gM46ppIfEeeLFPhJlTaVCw"/>
+      <fields xmi:id="_gM46mpIfEeeLFPhJlTaVCw" name="timeout" type="_gM46ppIfEeeLFPhJlTaVCw"/>
+    </types>
+    <types xsi:type="types:Struct" xmi:id="_gM46m5IfEeeLFPhJlTaVCw" name="DDS_MessagesgetOrder_Messages" isDcpsDataType="true">
+      <fields xmi:id="_gM46nJIfEeeLFPhJlTaVCw" name="psID" type="_gM46ppIfEeeLFPhJlTaVCw"/>
+      <fields xmi:id="_gM46nZIfEeeLFPhJlTaVCw" name="producibleIngredients" type="_gM46ppIfEeeLFPhJlTaVCw"/>
+    </types>
+    <types xsi:type="types:Struct" xmi:id="_gM46npIfEeeLFPhJlTaVCw" name="DDS_MessagesorderForPS_Messages" isDcpsDataType="true">
+      <fields xmi:id="_gM46n5IfEeeLFPhJlTaVCw" name="receiverPsID" type="_gM46ppIfEeeLFPhJlTaVCw"/>
+      <fields xmi:id="_gM46oJIfEeeLFPhJlTaVCw" name="orderID" type="_gM46ppIfEeeLFPhJlTaVCw"/>
+      <fields xmi:id="_gM46oZIfEeeLFPhJlTaVCw" name="ingredientID" type="_gM46ppIfEeeLFPhJlTaVCw"/>
+      <fields xmi:id="_gM46opIfEeeLFPhJlTaVCw" name="amount" type="_gM46ppIfEeeLFPhJlTaVCw"/>
+    </types>
+    <types xsi:type="types:Struct" xmi:id="_gM46o5IfEeeLFPhJlTaVCw" name="DDS_Messagesheartbeat_Messages" isDcpsDataType="true">
+      <fields xmi:id="_gM46pJIfEeeLFPhJlTaVCw" name="psID" type="_gM46ppIfEeeLFPhJlTaVCw"/>
+    </types>
+    <types xsi:type="types:Char" xmi:id="_gM46pZIfEeeLFPhJlTaVCw"/>
+    <types xsi:type="types:Long" xmi:id="_gM46ppIfEeeLFPhJlTaVCw"/>
+  </libs>
+  <libs xsi:type="opendds:PolicyLib" xmi:id="_gM46p5IfEeeLFPhJlTaVCw">
+    <policies xsi:type="qos:HistoryQosPolicy" xmi:id="_gM46qJIfEeeLFPhJlTaVCw" name="getOrderHistoryQos" depth="5" kind="KEEP_ALL"/>
+    <policies xsi:type="qos:ReliabilityQosPolicy" xmi:id="_gM46qZIfEeeLFPhJlTaVCw" name="brokerForPSPortReliabilityQos" kind="BEST_EFFORT">
+      <max_blocking_time xmi:id="_gM46qpIfEeeLFPhJlTaVCw" second="1"/>
+    </policies>
+    <policies xsi:type="qos:HistoryQosPolicy" xmi:id="_gM46q5IfEeeLFPhJlTaVCw" name="brokerForPSPortHistoryQos" depth="100" kind="KEEP_LAST"/>
+    <policies xsi:type="qos:ReliabilityQosPolicy" xmi:id="_gM46rJIfEeeLFPhJlTaVCw" name="getOrderReliabilityQos" kind="BEST_EFFORT">
+      <max_blocking_time xmi:id="_gM46rZIfEeeLFPhJlTaVCw" second="1"/>
+    </policies>
+    <policies xsi:type="qos:HistoryQosPolicy" xmi:id="_gM46rpIfEeeLFPhJlTaVCw" name="getOrderHistoryQos" depth="100" kind="KEEP_LAST"/>
+    <policies xsi:type="qos:HistoryQosPolicy" xmi:id="_gM46r5IfEeeLFPhJlTaVCw" name="getOrderHistoryQos" depth="100" kind="KEEP_LAST"/>
+    <policies xsi:type="qos:HistoryQosPolicy" xmi:id="_gM46sJIfEeeLFPhJlTaVCw" name="brokerForPSPortHistoryQos" depth="100" kind="KEEP_LAST"/>
+    <policies xsi:type="qos:ReliabilityQosPolicy" xmi:id="_gM46sZIfEeeLFPhJlTaVCw" name="provideOrderReliabilityQos" kind="BEST_EFFORT">
+      <max_blocking_time xmi:id="_gM46spIfEeeLFPhJlTaVCw" second="1"/>
+    </policies>
+    <policies xsi:type="qos:ReliabilityQosPolicy" xmi:id="_gM46s5IfEeeLFPhJlTaVCw" name="getOrderReliabilityQos" kind="BEST_EFFORT">
+      <max_blocking_time xmi:id="_gM46tJIfEeeLFPhJlTaVCw" second="1"/>
+    </policies>
+    <policies xsi:type="qos:HistoryQosPolicy" xmi:id="_gM46tZIfEeeLFPhJlTaVCw" name="brokerForPSPortHistoryQos" depth="100" kind="KEEP_LAST"/>
+  </libs>
+  <libs xsi:type="opendds:DcpsLib" xmi:id="_gM46tpIfEeeLFPhJlTaVCw">
+    <domains xmi:id="_gM46t5IfEeeLFPhJlTaVCw" name="dummyDomain" domainId="-42"/>
+    <participants xmi:id="_gM46uJIfEeeLFPhJlTaVCw" name="Broker_getOrderParticipant" domain="_gM46t5IfEeeLFPhJlTaVCw">
+      <subscribers xmi:id="_gM46uZIfEeeLFPhJlTaVCw" name="getOrderSubscriber" transportId="-1">
+        <readers xmi:id="_gM46upIfEeeLFPhJlTaVCw" name="DDS_MessagessimpleOrder_MessagesDataReader" history="_gM46qJIfEeeLFPhJlTaVCw" reliability="_gM46rJIfEeeLFPhJlTaVCw" copyFromTopicQos="false" topic="_gM5hqZIfEeeLFPhJlTaVCw"/>
+      </subscribers>
+    </participants>
+    <participants xmi:id="_gM46u5IfEeeLFPhJlTaVCw" name="RecipeGenerator_provideOrderParticipant" domain="_gM46t5IfEeeLFPhJlTaVCw">
+      <publishers xmi:id="_gM46vJIfEeeLFPhJlTaVCw" name="provideOrderPublisher" transportId="-1">
+        <writers xmi:id="_gM46vZIfEeeLFPhJlTaVCw" name="DDS_MessagessimpleOrder_MessagesDataWriter" reliability="_gM46sZIfEeeLFPhJlTaVCw" copyFromTopicQos="false" topic="_gM5hqZIfEeeLFPhJlTaVCw"/>
+      </publishers>
+    </participants>
+    <participants xmi:id="_gM46vpIfEeeLFPhJlTaVCw" name="Broker_brokerForPSPortParticipant" domain="_gM46t5IfEeeLFPhJlTaVCw">
+      <publishers xmi:id="_gM46v5IfEeeLFPhJlTaVCw" name="brokerForPSPortPublisher" transportId="-1">
+        <writers xmi:id="_gM46wJIfEeeLFPhJlTaVCw" name="DDS_MessagesorderForPS_MessagesDataWriter" reliability="_gM46qZIfEeeLFPhJlTaVCw" copyFromTopicQos="false" topic="_gM5hp5IfEeeLFPhJlTaVCw"/>
+        <writers xmi:id="_gM46wZIfEeeLFPhJlTaVCw" name="DDS_MessagesnoOrder_MessagesDataWriter" reliability="_gM46qZIfEeeLFPhJlTaVCw" copyFromTopicQos="false" topic="_gM5hrJIfEeeLFPhJlTaVCw"/>
+      </publishers>
+      <subscribers xmi:id="_gM46wpIfEeeLFPhJlTaVCw" name="brokerForPSPortSubscriber" transportId="-1">
+        <readers xmi:id="_gM46w5IfEeeLFPhJlTaVCw" name="DDS_MessagesdoneOrder_MessagesDataReader" history="_gM46q5IfEeeLFPhJlTaVCw" reliability="_gM46qZIfEeeLFPhJlTaVCw" copyFromTopicQos="false" topic="_gM5hqpIfEeeLFPhJlTaVCw"/>
+        <readers xmi:id="_gM46xJIfEeeLFPhJlTaVCw" name="DDS_MessagesgetOrder_MessagesDataReader" history="_gM46sJIfEeeLFPhJlTaVCw" reliability="_gM46qZIfEeeLFPhJlTaVCw" copyFromTopicQos="false" topic="_gM5hq5IfEeeLFPhJlTaVCw"/>
+        <readers xmi:id="_gM46xZIfEeeLFPhJlTaVCw" name="DDS_Messagesheartbeat_MessagesDataReader" history="_gM46tZIfEeeLFPhJlTaVCw" reliability="_gM46qZIfEeeLFPhJlTaVCw" copyFromTopicQos="false" topic="_gM5hqJIfEeeLFPhJlTaVCw"/>
+      </subscribers>
+    </participants>
+    <participants xmi:id="_gM46xpIfEeeLFPhJlTaVCw" name="ProductionStation_getOrderParticipant" domain="_gM46t5IfEeeLFPhJlTaVCw">
+      <publishers xmi:id="_gM5hoJIfEeeLFPhJlTaVCw" name="getOrderPublisher" transportId="-1">
+        <writers xmi:id="_gM5hoZIfEeeLFPhJlTaVCw" name="DDS_MessagesdoneOrder_MessagesDataWriter" reliability="_gM46s5IfEeeLFPhJlTaVCw" copyFromTopicQos="false" topic="_gM5hqpIfEeeLFPhJlTaVCw"/>
+        <writers xmi:id="_gM5hopIfEeeLFPhJlTaVCw" name="DDS_MessagesgetOrder_MessagesDataWriter" reliability="_gM46s5IfEeeLFPhJlTaVCw" copyFromTopicQos="false" topic="_gM5hq5IfEeeLFPhJlTaVCw"/>
+        <writers xmi:id="_gM5ho5IfEeeLFPhJlTaVCw" name="DDS_Messagesheartbeat_MessagesDataWriter" reliability="_gM46s5IfEeeLFPhJlTaVCw" copyFromTopicQos="false" topic="_gM5hqJIfEeeLFPhJlTaVCw"/>
+      </publishers>
+      <subscribers xmi:id="_gM5hpJIfEeeLFPhJlTaVCw" name="getOrderSubscriber" transportId="-1">
+        <readers xmi:id="_gM5hpZIfEeeLFPhJlTaVCw" name="DDS_MessagesorderForPS_MessagesDataReader" history="_gM46rpIfEeeLFPhJlTaVCw" reliability="_gM46s5IfEeeLFPhJlTaVCw" copyFromTopicQos="false" topic="_gM5hp5IfEeeLFPhJlTaVCw"/>
+        <readers xmi:id="_gM5hppIfEeeLFPhJlTaVCw" name="DDS_MessagesnoOrder_MessagesDataReader" history="_gM46r5IfEeeLFPhJlTaVCw" reliability="_gM46s5IfEeeLFPhJlTaVCw" copyFromTopicQos="false" topic="_gM5hrJIfEeeLFPhJlTaVCw"/>
+      </subscribers>
+    </participants>
+    <topicDescriptions xsi:type="topics:Topic" xmi:id="_gM5hp5IfEeeLFPhJlTaVCw" name="DDS_MessagesorderForPS_MessagesbrokerForPSPortBroker_TopicbrokerForPSPort" datatype="_gM46npIfEeeLFPhJlTaVCw"/>
+    <topicDescriptions xsi:type="topics:Topic" xmi:id="_gM5hqJIfEeeLFPhJlTaVCw" name="DDS_Messagesheartbeat_MessagesgetOrderProductionStation_TopicgetOrder" datatype="_gM46o5IfEeeLFPhJlTaVCw"/>
+    <topicDescriptions xsi:type="topics:Topic" xmi:id="_gM5hqZIfEeeLFPhJlTaVCw" name="DDS_MessagessimpleOrder_MessagesprovideOrderRecipeGenerator_TopicprovideOrder" datatype="_gM46lpIfEeeLFPhJlTaVCw"/>
+    <topicDescriptions xsi:type="topics:Topic" xmi:id="_gM5hqpIfEeeLFPhJlTaVCw" name="DDS_MessagesdoneOrder_MessagesgetOrderProductionStation_TopicgetOrder" datatype="_gM46kpIfEeeLFPhJlTaVCw"/>
+    <topicDescriptions xsi:type="topics:Topic" xmi:id="_gM5hq5IfEeeLFPhJlTaVCw" name="DDS_MessagesgetOrder_MessagesgetOrderProductionStation_TopicgetOrder" datatype="_gM46m5IfEeeLFPhJlTaVCw"/>
+    <topicDescriptions xsi:type="topics:Topic" xmi:id="_gM5hrJIfEeeLFPhJlTaVCw" name="DDS_MessagesnoOrder_MessagesbrokerForPSPortBroker_TopicbrokerForPSPort" datatype="_gM46lJIfEeeLFPhJlTaVCw"/>
+  </libs>
+</opendds:OpenDDSModel>

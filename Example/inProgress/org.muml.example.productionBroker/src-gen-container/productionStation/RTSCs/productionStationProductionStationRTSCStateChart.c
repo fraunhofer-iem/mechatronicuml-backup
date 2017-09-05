@@ -127,6 +127,7 @@
 					Clock_reset(
 							stateChart->productionStationGetOrderProcessingTimeProductionStationGetOrderParameterizedGetOrderRTSCClock);
 		
+					//
 				} else {
 		
 				}
@@ -176,6 +177,7 @@
 					// execute entry actions
 					// nothing to do
 		
+					//
 				} else {
 		
 				}
@@ -214,6 +216,7 @@
 					Clock_reset(
 							stateChart->productionStationGetOrderProcessingTimeProductionStationGetOrderParameterizedGetOrderRTSCClock);
 		
+					//
 				} else if (MCC_ProductionStationComponent_getOrder_exists_MessagesNoOrder_Messages_Message(
 						ProductionStationComponent_getgetOrder(
 								stateChart->parentComponent))
@@ -258,12 +261,15 @@
 					// execute entry actions
 					// nothing to do
 		
+					//
 				} else if (
 		
 				stateChart->incomingOrderPsID == stateChart->ID
 						&& stateChart->evaluateOrderFailed == true
 		
-						) {
+						//
+		
+								) {
 		
 					// execute exit actions
 					// nothing to do
@@ -292,12 +298,15 @@
 					Clock_reset(
 							stateChart->productionStationGetOrderProcessingTimeProductionStationGetOrderParameterizedGetOrderRTSCClock);
 		
+					//
 				} else if (
 		
 				stateChart->incomingOrderPsID == stateChart->ID
 						&& stateChart->amount >= 0
 		
-						) {
+						//
+		
+								) {
 		
 					// execute exit actions
 					// nothing to do
@@ -322,6 +331,7 @@
 					Clock_reset(
 							stateChart->productionStationGetOrderProductionHeartbeatProductionStationGetOrderParameterizedGetOrderRTSCClock);
 		
+					//
 				} else if (MCC_ProductionStationComponent_getOrder_exists_MessagesOrderForPS_Messages_Message(
 						ProductionStationComponent_getgetOrder(
 								stateChart->parentComponent))
@@ -369,6 +379,7 @@
 					// execute entry actions
 					// nothing to do
 		
+					//
 				} else {
 		
 				}
@@ -413,6 +424,7 @@
 					Clock_reset(
 							stateChart->productionStationGetOrderProductionHeartbeatProductionStationGetOrderParameterizedGetOrderRTSCClock);
 		
+					//
 				} else if (Clock_getTime(
 						stateChart->productionStationGetOrderProcessingTimeProductionStationGetOrderParameterizedGetOrderRTSCClock)
 						>= stateChart->amount * 1000.0
@@ -450,6 +462,7 @@
 					// execute entry actions
 					// nothing to do
 		
+					//
 				} else {
 		
 				}
@@ -486,6 +499,7 @@
 					Clock_reset(
 							stateChart->productionStationGetOrderProcessingTimeProductionStationGetOrderParameterizedGetOrderRTSCClock);
 		
+					//
 				} else {
 		
 				}

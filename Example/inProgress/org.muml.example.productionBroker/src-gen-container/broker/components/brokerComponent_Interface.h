@@ -199,11 +199,11 @@
 							bool_t BrokerGetOrderGetOrderStatechart_isExecutable;/**< Execution Verifier of RTSC: BrokerGetOrderGetOrderStatechart. This variable is used to ensure that a RTSC is executed only once per execution cycle */
 							bool_t BrokerBrokerForPSPortOrderBrokerforPsRTSC_isExecutable;/**< Execution Verifier of RTSC: BrokerBrokerForPSPortOrderBrokerforPsRTSC. This variable is used to ensure that a RTSC is executed only once per execution cycle */
 					
+							Clock brokerGetOrderFailCheckBrokerGetOrderGetOrderStatechartClock;/**< The Clock: BrokerGetOrderFailCheckBrokerGetOrderGetOrderStatechart */
 				
 				
 					
 				
-							int32_T latestOrderID; /**< The Realtime-StateChart Variable: latestOrderID of Type: int32; */
 							int32_T currentPsID; /**< The Realtime-StateChart Variable: currentPsID of Type: int32; */
 							int32_T provideOrderID; /**< The Realtime-StateChart Variable: provideOrderID of Type: int32; */
 							int32_T provideAmount; /**< The Realtime-StateChart Variable: provideAmount of Type: int32; */

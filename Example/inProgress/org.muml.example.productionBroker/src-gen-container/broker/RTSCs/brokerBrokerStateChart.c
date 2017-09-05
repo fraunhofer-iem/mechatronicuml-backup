@@ -7,6 +7,8 @@
 
 		void initializeBrokerGetOrderGetOrderStatechartRegion(
 				BrokerBrokerStateChart* stateChart) {
+			Clock_reset(
+					stateChart->brokerGetOrderFailCheckBrokerGetOrderGetOrderStatechartClock);
 		
 			stateChart->currentStateOfBrokerGetOrderGetOrderStatechart =
 					STATE_BROKERGETORDERMANAGEORDERS;
@@ -36,8 +38,6 @@
 			//initialize clocks
 		
 			//initialize variables of the root statechart
-			stateChart->latestOrderID = -1;
-		
 			//initialize port variables of the root statechart
 		
 			//initialize init state
@@ -127,6 +127,39 @@
 					// execute entry actions
 					// nothing to do
 		
+					//
+				} else if (Clock_getTime(
+						stateChart->brokerGetOrderFailCheckBrokerGetOrderGetOrderStatechartClock)
+						>= 3 * 1000.0
+		
+						) {
+		
+					// execute exit actions
+					// nothing to do
+		
+					// Transition Effects (incl. clock resets)
+		
+					databaseOperations_databaseOperationsMarkOrdersAsFailedForUnreachableStations();
+					;
+		
+					Clock_reset(
+							stateChart->brokerGetOrderFailCheckBrokerGetOrderGetOrderStatechartClock);
+		
+					// nothing to do			
+		
+					//release all created received events
+					//release all created sent events
+					// change the state
+					stateChart->currentStateOfBrokerGetOrderGetOrderStatechart =
+							STATE_BROKERGETORDERMANAGEORDERS;
+		#ifdef DEBUG
+					printDebugInformation("currentStateOfBrokerGetOrderGetOrderStatechart switched state to STATE_BROKERGETORDERMANAGEORDERS" );
+		#endif		
+		
+					// execute entry actions
+					// nothing to do
+		
+					//
 				} else {
 		
 				}
@@ -181,6 +214,7 @@
 					// execute entry actions
 					// nothing to do
 		
+					//
 				} else if (MCC_BrokerComponent_brokerForPSPort_exists_MessagesDoneOrder_Messages_Message(
 						BrokerComponent_getbrokerForPSPort(stateChart->parentComponent))
 		
@@ -200,7 +234,7 @@
 		
 					// Transition Effects (incl. clock resets)
 		
-					databaseOperations_databaseOperationsDeleteOrder(
+					databaseOperations_databaseOperationsMarkOrderAsDone(
 							msg_MessagesDoneOrder.orderID);
 					;
 		
@@ -221,6 +255,7 @@
 					// execute entry actions
 					// nothing to do
 		
+					//
 				} else if (MCC_BrokerComponent_brokerForPSPort_exists_MessagesGetOrder_Messages_Message(
 						BrokerComponent_getbrokerForPSPort(stateChart->parentComponent))
 		
@@ -282,6 +317,7 @@
 		
 					;
 		
+					//
 				} else {
 		
 				}
@@ -291,7 +327,9 @@
 		
 				stateChart->provideOrderID < 0
 		
-				) {
+				//
+		
+						) {
 		
 					// execute exit actions
 					// nothing to do
@@ -324,11 +362,14 @@
 					// execute entry actions
 					// nothing to do
 		
+					//
 				} else if (
 		
 				stateChart->provideOrderID >= 0
 		
-				) {
+				//
+		
+						) {
 		
 					// execute exit actions
 					// nothing to do
@@ -368,6 +409,7 @@
 					// execute entry actions
 					// nothing to do
 		
+					//
 				} else {
 		
 				}
@@ -402,6 +444,7 @@
 					// execute entry actions
 					// nothing to do
 		
+					//
 				} else {
 		
 				}
