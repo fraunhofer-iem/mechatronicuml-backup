@@ -142,39 +142,46 @@
       </states>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_TDt-8NyaEeW-N_z6XJQq2w" name="broker" behavioralElement="_Ozg3MNxcEeW-N_z6XJQq2w" usedOperationRepositories="_JTILAORjEeW6HsQsL2ADFA">
-      <variables xmi:id="_v3QPkOa9EeWyd6JHVas6Kw" name="latestOrderID" comment="Latest orderID received from the messages">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
-        <initializeExpression xsi:type="common:UnaryExpression" xmi:id="_x8xxoOa9EeWyd6JHVas6Kw" operator="MINUS">
-          <enclosedExpression xsi:type="common:LiteralExpression" xmi:id="_x8xxoea9EeWyd6JHVas6Kw" value="1"/>
-        </initializeExpression>
-      </variables>
       <states xmi:id="_TDt-8dyaEeW-N_z6XJQq2w" name="init" initial="true">
         <embeddedRegions xmi:id="_pHIy0NyaEeW-N_z6XJQq2w" priority="1">
           <embeddedStatechart xmi:id="_pHVnINyaEeW-N_z6XJQq2w" name="getOrderStatechart" behavioralElement="_i6J4gNxgEeW-N_z6XJQq2w">
-            <transitions xmi:id="_yovr8NyaEeW-N_z6XJQq2w" priority="1" target="_-B_HsOVDEeWIXPb_21drrw" source="_-B_HsOVDEeWIXPb_21drrw">
+            <transitions xmi:id="_yovr8NyaEeW-N_z6XJQq2w" priority="2" target="_-B_HsOVDEeWIXPb_21drrw" source="_-B_HsOVDEeWIXPb_21drrw">
               <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="__L1ZENyaEeW-N_z6XJQq2w" kind="TRIGGER">
                 <message xmi:id="__hA-4NyaEeW-N_z6XJQq2w" instanceOf="_fAYHYNxcEeW-N_z6XJQq2w"/>
               </events>
               <action xmi:id="_uTOQIOVAEeWIXPb_21drrw" name="insertOrderIntoDatabase">
-                <expressions xsi:type="actionlanguage:Block" xmi:id="_xhLOMGYfEee-lLGW3e0OzA">
-                  <expressions xsi:type="actionlanguage:OperationCall" xmi:id="_xhLOMWYfEee-lLGW3e0OzA" operation="_KkrScORjEeW6HsQsL2ADFA">
-                    <parameterBinding xmi:id="_xhLOMmYfEee-lLGW3e0OzA" parameter="_WB_qUORjEeW6HsQsL2ADFA">
-                      <value xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_xhLOM2YfEee-lLGW3e0OzA" messageType="_fAYHYNxcEeW-N_z6XJQq2w" parameter="_YGhW0NxgEeW-N_z6XJQq2w"/>
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_CiLXcJIaEeeGtpenG5jjkw">
+                  <expressions xsi:type="actionlanguage:OperationCall" xmi:id="_CiLXcZIaEeeGtpenG5jjkw" operation="_KkrScORjEeW6HsQsL2ADFA">
+                    <parameterBinding xmi:id="_CiLXcpIaEeeGtpenG5jjkw" parameter="_WB_qUORjEeW6HsQsL2ADFA">
+                      <value xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_CiLXc5IaEeeGtpenG5jjkw" messageType="_fAYHYNxcEeW-N_z6XJQq2w" parameter="_YGhW0NxgEeW-N_z6XJQq2w"/>
                     </parameterBinding>
-                    <parameterBinding xmi:id="_xhLONGYfEee-lLGW3e0OzA" parameter="_YnVU4ORjEeW6HsQsL2ADFA">
-                      <value xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_xhLONWYfEee-lLGW3e0OzA" messageType="_fAYHYNxcEeW-N_z6XJQq2w" parameter="_Zoh8INxgEeW-N_z6XJQq2w"/>
+                    <parameterBinding xmi:id="_CiLXdJIaEeeGtpenG5jjkw" parameter="_YnVU4ORjEeW6HsQsL2ADFA">
+                      <value xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_CiLXdZIaEeeGtpenG5jjkw" messageType="_fAYHYNxcEeW-N_z6XJQq2w" parameter="_Zoh8INxgEeW-N_z6XJQq2w"/>
                     </parameterBinding>
-                    <parameterBinding xmi:id="_xhLONmYfEee-lLGW3e0OzA" parameter="_aSJQ4ORjEeW6HsQsL2ADFA">
-                      <value xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_xhLON2YfEee-lLGW3e0OzA" messageType="_fAYHYNxcEeW-N_z6XJQq2w" parameter="_b0doMNxgEeW-N_z6XJQq2w"/>
+                    <parameterBinding xmi:id="_CiLXdpIaEeeGtpenG5jjkw" parameter="_aSJQ4ORjEeW6HsQsL2ADFA">
+                      <value xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_CiLXd5IaEeeGtpenG5jjkw" messageType="_fAYHYNxcEeW-N_z6XJQq2w" parameter="_b0doMNxgEeW-N_z6XJQq2w"/>
                     </parameterBinding>
-                    <parameterBinding xmi:id="_xhLOOGYfEee-lLGW3e0OzA" parameter="_DfxUAGYbEee-lLGW3e0OzA">
-                      <value xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_xhLOOWYfEee-lLGW3e0OzA" messageType="_fAYHYNxcEeW-N_z6XJQq2w" parameter="_lj1PQGYbEee-lLGW3e0OzA"/>
+                    <parameterBinding xmi:id="_CiLXeJIaEeeGtpenG5jjkw" parameter="_DfxUAGYbEee-lLGW3e0OzA">
+                      <value xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_CiLXeZIaEeeGtpenG5jjkw" messageType="_fAYHYNxcEeW-N_z6XJQq2w" parameter="_lj1PQGYbEee-lLGW3e0OzA"/>
                     </parameterBinding>
                   </expressions>
                 </expressions>
               </action>
             </transitions>
-            <states xmi:id="_-B_HsOVDEeWIXPb_21drrw" name="manageOrders" outgoingTransitions="_yovr8NyaEeW-N_z6XJQq2w" incomingTransitions="_yovr8NyaEeW-N_z6XJQq2w" initial="true"/>
+            <transitions xmi:id="_cwXjoJIPEeeGtpenG5jjkw" priority="1" target="_-B_HsOVDEeWIXPb_21drrw" source="_-B_HsOVDEeWIXPb_21drrw" clockResets="_Secn4JIPEeeGtpenG5jjkw">
+              <clockConstraints xmi:id="_n6TsgJIPEeeGtpenG5jjkw" clock="_Secn4JIPEeeGtpenG5jjkw" operator="GREATER_OR_EQUAL">
+                <bound xmi:id="_o-_coJIPEeeGtpenG5jjkw" unit="SECONDS">
+                  <value xsi:type="common:LiteralExpression" xmi:id="_DxAGkJIQEeeGtpenG5jjkw" value="3"/>
+                </bound>
+              </clockConstraints>
+              <action xmi:id="_Xd8mwJIaEeeGtpenG5jjkw" name="markOrdersAsFailedForUnreachableStations">
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_fsdgUJIaEeeGtpenG5jjkw">
+                  <expressions xsi:type="actionlanguage:OperationCall" xmi:id="_fsdgUZIaEeeGtpenG5jjkw" operation="_MwFyYJIZEeeGtpenG5jjkw"/>
+                </expressions>
+              </action>
+            </transitions>
+            <states xmi:id="_-B_HsOVDEeWIXPb_21drrw" name="manageOrders" outgoingTransitions="_cwXjoJIPEeeGtpenG5jjkw _yovr8NyaEeW-N_z6XJQq2w" incomingTransitions="_yovr8NyaEeW-N_z6XJQq2w _cwXjoJIPEeeGtpenG5jjkw" initial="true"/>
+            <clocks xmi:id="_Secn4JIPEeeGtpenG5jjkw" name="failCheck"/>
           </embeddedStatechart>
         </embeddedRegions>
         <embeddedRegions xmi:id="_QFkRgOa7EeWyd6JHVas6Kw" priority="2">
@@ -308,7 +315,7 @@
               <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_7UlUwOq-EeWdNs1s2t99bw" kind="TRIGGER">
                 <message xmi:id="_7qaa0Oq-EeWdNs1s2t99bw" instanceOf="_wsJowNxgEeW-N_z6XJQq2w"/>
               </events>
-              <action xmi:id="_AwvbcOq_EeWdNs1s2t99bw" name="deleteDoneOrder">
+              <action xmi:id="_AwvbcOq_EeWdNs1s2t99bw" name="markOrderAsDone">
                 <expressions xsi:type="actionlanguage:Block" xmi:id="_QLHewOq_EeWdNs1s2t99bw">
                   <expressions xsi:type="actionlanguage:OperationCall" xmi:id="_QLHeweq_EeWdNs1s2t99bw" operation="_MsPb4ORjEeW6HsQsL2ADFA">
                     <parameterBinding xmi:id="_QLHewuq_EeWdNs1s2t99bw" parameter="_dcOnQORjEeW6HsQsL2ADFA">
@@ -322,7 +329,7 @@
               <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_SuBAgFZcEeej24096dMoCw" kind="TRIGGER">
                 <message xmi:id="_TA6HUFZcEeej24096dMoCw" instanceOf="_oHi_UFZbEeej24096dMoCw"/>
               </events>
-              <action xmi:id="_mQQREFZcEeej24096dMoCw" name="heartbeatUpdate ( psID := heartbeat -> psID ) ">
+              <action xmi:id="_mQQREFZcEeej24096dMoCw" name="heartbeatUpdate">
                 <expressions xsi:type="actionlanguage:Block" xmi:id="_zhCxsFZcEeej24096dMoCw">
                   <expressions xsi:type="actionlanguage:OperationCall" xmi:id="_zhCxsVZcEeej24096dMoCw" operation="_Z7hwEFZcEeej24096dMoCw">
                     <parameterBinding xmi:id="_zhCxslZcEeej24096dMoCw" parameter="_cjTDkFZcEeej24096dMoCw">
@@ -1138,7 +1145,7 @@
         </parameters>
         <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
       </operations>
-      <operations xmi:id="_MsPb4ORjEeW6HsQsL2ADFA" name="deleteOrder">
+      <operations xmi:id="_MsPb4ORjEeW6HsQsL2ADFA" name="markOrderAsDone">
         <parameters xmi:id="_dcOnQORjEeW6HsQsL2ADFA" name="orderID">
           <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         </parameters>
@@ -1178,6 +1185,9 @@
         <parameters xmi:id="_cjTDkFZcEeej24096dMoCw" name="psID">
           <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         </parameters>
+        <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+      </operations>
+      <operations xmi:id="_MwFyYJIZEeeGtpenG5jjkw" name="markOrdersAsFailedForUnreachableStations">
         <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
       </operations>
     </modelElements>
