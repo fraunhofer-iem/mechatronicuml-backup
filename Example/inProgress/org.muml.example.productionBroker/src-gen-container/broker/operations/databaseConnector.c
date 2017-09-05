@@ -278,7 +278,7 @@ int heartBeatProductionStation(int productionStationID)
 		printf("Error: Heart beat without producing station");
 		exit(1);
 	}
-	//Find producing station in list and update its lastSeen timestamp
+	//Find producing station in list and update its lastSeen time stamp
 	struct producingStation *currentStation=first;
 	while (currentStation->stationID != productionStationID)
 	{
@@ -300,7 +300,18 @@ int heartBeatProductionStation(int productionStationID)
  * have not sent a heart beat in a while
  */
 int markOrdersAsFailedForUnreachableStations(){
-	//TODO traverse list, for every failed station send message to the server
+	//Only traverse list if there is a list
+	if (first != NULL)
+	{
+		//Check all time stamps
+		struct producingStation *currentStation=first;
+		while(currentStation != NULL){
+			if (currentStation ->lastSeen < (time(&tnow)-3000)){
+				//TODO delete from list and send info to server
+			}
+			currentStation = currentStation -> next;
+		}
+	}
 	return 0;
 }
 
