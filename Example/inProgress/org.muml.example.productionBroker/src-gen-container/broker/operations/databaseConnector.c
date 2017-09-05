@@ -12,8 +12,9 @@ int defineProductionStationForOrder(int orderID, int productionStationID);
 int getOrderIngredientID(int orderID);
 int getOrderAmount(int orderID);
 int searchOrder(int searchingPS, int producibleIngredients);
-int deleteOrder(int orderID);
+int markOrderAsDone(int orderID);
 int heartBeatProductionStation(int productionStationID);
+int markOrdersAsFailedForUnreachableStations();
 
 struct producingStation {
 	int stationID;
@@ -200,7 +201,7 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 /**
  * Sets orderStatus to DONE
  */
-int deleteOrder(int orderID)
+int markOrderAsDone(int orderID)
 {
 	cJSON *order = cJSON_CreateObject();
 	cJSON_AddNumberToObject(order, "orderID", orderID);
@@ -259,6 +260,15 @@ int heartBeatProductionStation(int productionStationID)
 	cJSON_AddNumberToObject(heartBeat, "productionStationID", productionStationID);
     postToDatabaseServer("productionStation/heartBeat", cJSON_Print(heartBeat));
 
+	return 0;
+}
+
+/**
+ * Checks periodically whether any of the production stations that are meant to be producing for us
+ * have not sent a heartbeat in a while
+ */
+int markOrdersAsFailedForUnreachableStations(){
+	//TODO
 	return 0;
 }
 
