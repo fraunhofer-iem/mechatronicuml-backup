@@ -15,10 +15,19 @@ int searchOrder(int searchingPS, int producibleIngredients);
 int deleteOrder(int orderID);
 int heartBeatProductionStation(int productionStationID);
 
+struct producingStation {
+	int stationID;
+	int orderID;
+	struct producingStation *next;
+};
+
 CURL *curl;
 char *url;
 int baseUrlLength;
 const int LONGEST_API_URL=33;
+struct producingStation *first;
+
+
 
 
 char * readConfigFile()

@@ -1,6 +1,6 @@
 eclipse.preferences.version=1
+encoding//model/behavior/Database.operationrepository_diagram=UTF-8
 encoding//model/behavior/IDManagement.operationrepository_diagram=UTF-8
-encoding//model/behavior/noSQLDatabase.operationrepository_diagram=UTF-8
 encoding//model/component/Broker.component_diagram=UTF-8
 encoding//model/component/ProductionStation.component_diagram=UTF-8
 encoding//model/component/RecipeGenerator.component_diagram=UTF-8
