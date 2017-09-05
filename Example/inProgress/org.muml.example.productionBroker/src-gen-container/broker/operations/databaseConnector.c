@@ -269,22 +269,28 @@ int searchOrder(int searchingPS, int producibleIngredients)
 
 
 /**
- * Tells the server we have recently seen the productionStation with the given ID
+ * Updates the last time we saw the producing productionStation
  */
 int heartBeatProductionStation(int productionStationID)
 {
-	if (first != NULL)
+	if (first == NULL)
 	{
-
-	}else{
-		printf("Error: Heartbeat without producing station");
+		printf("Error: Heart beat without producing station");
 		exit(1);
 	}
-
-	//TODO update timeout
-	cJSON *heartBeat = cJSON_CreateObject();
-	cJSON_AddNumberToObject(heartBeat, "productionStationID", productionStationID);
-    postToDatabaseServer("productionStation/heartBeat", cJSON_Print(heartBeat));
+	//Find producing station in list and update its lastSeen timestamp
+	struct producingStation *currentStation=first;
+	while (currentStation->stationID != productionStationID)
+	{
+		if (currentStation->next != NULL)
+		{
+			currentStation = currentStation->next;
+		} else{
+			printf("Error: Heart beat without producing station");
+			exit(1);
+		}
+	}
+	currentStation->lastSeen = time(&tnow);
 
 	return 0;
 }
