@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <string.h> /* strchr(), strlen(), .. */
 #include <curl/curl.h>
+#include <time.h>
 #include "cJSON.h"
 
 int insertOrder(int orderId, int ingredientID, int amount, int timeout);
@@ -19,16 +20,16 @@ int markOrdersAsFailedForUnreachableStations();
 struct producingStation {
 	int stationID;
 	int orderID;
+	time_t lastSeen;
 	struct producingStation *next;
-};
+} node;
 
 CURL *curl;
 char *url;
 int baseUrlLength;
 const int LONGEST_API_URL=33;
 struct producingStation *first;
-
-
+time_t tnow;
 
 
 char * readConfigFile()
@@ -195,6 +196,21 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 	cJSON_AddNumberToObject(request, "productionStationID", productionStationID);
 	postToDatabaseServer("productionStation/assignOrder",cJSON_Print(request));
 
+	//Add tuple to list of producing stations
+	struct producingStation *newElement=first;
+	if (newElement != NULL){
+		struct producingStation *endOfList=first;
+		while(endOfList->next != NULL){
+			endOfList = endOfList->next;
+		}
+		newElement = endOfList->next;
+	}
+	newElement = malloc(sizeof(node));
+	newElement->orderID = orderID;
+	newElement->stationID = productionStationID;
+	newElement->lastSeen= time(&tnow);
+	newElement->next = NULL;
+
 	return 0;
 }
 
@@ -207,9 +223,10 @@ int markOrderAsDone(int orderID)
 	cJSON_AddNumberToObject(order, "orderID", orderID);
 	postToDatabaseServer("order/done", cJSON_Print(order));
 
+	//TODO remove from list
+
 	return 0;
 }
-
 
 /**
  * Retrieve the ingredientID for the order with the given id.
@@ -256,6 +273,15 @@ int searchOrder(int searchingPS, int producibleIngredients)
  */
 int heartBeatProductionStation(int productionStationID)
 {
+	if (first != NULL)
+	{
+
+	}else{
+		printf("Error: Heartbeat without producing station");
+		exit(1);
+	}
+
+	//TODO update timeout
 	cJSON *heartBeat = cJSON_CreateObject();
 	cJSON_AddNumberToObject(heartBeat, "productionStationID", productionStationID);
     postToDatabaseServer("productionStation/heartBeat", cJSON_Print(heartBeat));
@@ -265,10 +291,10 @@ int heartBeatProductionStation(int productionStationID)
 
 /**
  * Checks periodically whether any of the production stations that are meant to be producing for us
- * have not sent a heartbeat in a while
+ * have not sent a heart beat in a while
  */
 int markOrdersAsFailedForUnreachableStations(){
-	//TODO
+	//TODO traverse list, for every failed station send message to the server
 	return 0;
 }
 
