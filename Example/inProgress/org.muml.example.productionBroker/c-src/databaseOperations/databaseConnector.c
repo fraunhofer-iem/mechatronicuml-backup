@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <string.h> /* strchr(), strlen(), .. */
 #include <curl/curl.h>
+#include <time.h>
 #include "cJSON.h"
 
 int insertOrder(int orderId, int ingredientID, int amount, int timeout);
@@ -19,16 +20,16 @@ int markOrdersAsFailedForUnreachableStations();
 struct producingStation {
 	int stationID;
 	int orderID;
+	time_t lastSeen;
 	struct producingStation *next;
-};
+} node;
 
 CURL *curl;
 char *url;
 int baseUrlLength;
 const int LONGEST_API_URL=33;
 struct producingStation *first;
-
-
+time_t tnow;
 
 
 char * readConfigFile()
@@ -195,6 +196,21 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 	cJSON_AddNumberToObject(request, "productionStationID", productionStationID);
 	postToDatabaseServer("productionStation/assignOrder",cJSON_Print(request));
 
+	//Add tuple to list of producing stations
+	struct producingStation *newElement=first;
+	if (newElement != NULL){
+		struct producingStation *endOfList=first;
+		while(endOfList->next != NULL){
+			endOfList = endOfList->next;
+		}
+		newElement = endOfList->next;
+	}
+	newElement = malloc(sizeof(node));
+	newElement->orderID = orderID;
+	newElement->stationID = productionStationID;
+	newElement->lastSeen= time(&tnow);
+	newElement->next = NULL;
+
 	return 0;
 }
 
@@ -207,9 +223,37 @@ int markOrderAsDone(int orderID)
 	cJSON_AddNumberToObject(order, "orderID", orderID);
 	postToDatabaseServer("order/done", cJSON_Print(order));
 
+	//Find producing station in list and remove it
+	if (first == NULL)
+	{
+		printf("Error: Order done without producing station");
+		exit(1);
+	}
+	//Remove first item from the list if that's the station that's done
+	if (first->orderID == orderID)
+	{
+		struct producingStation *next_node = first->next;
+		 free(first);
+		 first = next_node;
+		 return 0;
+	}
+	struct producingStation *currentStation=first;
+	while (currentStation->next-> orderID != orderID)
+	{
+		if (currentStation->next != NULL)
+		{
+			currentStation = currentStation->next;
+		} else{
+			printf("Error: Order done without producing station");
+			exit(1);
+		}
+	}
+	struct producingStation* stationToRemove = currentStation -> next;
+	currentStation -> next = stationToRemove -> next;
+	free(stationToRemove);
+
 	return 0;
 }
-
 
 /**
  * Retrieve the ingredientID for the order with the given id.
@@ -252,23 +296,72 @@ int searchOrder(int searchingPS, int producibleIngredients)
 
 
 /**
- * Tells the server we have recently seen the productionStation with the given ID
+ * Updates the last time we saw the producing productionStation
  */
 int heartBeatProductionStation(int productionStationID)
 {
-	cJSON *heartBeat = cJSON_CreateObject();
-	cJSON_AddNumberToObject(heartBeat, "productionStationID", productionStationID);
-    postToDatabaseServer("productionStation/heartBeat", cJSON_Print(heartBeat));
+	if (first == NULL)
+	{
+		printf("Error: Heart beat without producing station");
+		exit(1);
+	}
+	//Find producing station in list and update its lastSeen time stamp
+	struct producingStation *currentStation=first;
+	while (currentStation->stationID != productionStationID)
+	{
+		if (currentStation->next != NULL)
+		{
+			currentStation = currentStation->next;
+		} else{
+			printf("Error: Heart beat without producing station");
+			exit(1);
+		}
+	}
+	currentStation->lastSeen = time(&tnow);
 
 	return 0;
 }
 
 /**
  * Checks periodically whether any of the production stations that are meant to be producing for us
- * have not sent a heartbeat in a while
+ * have not sent a heart beat in a while
  */
 int markOrdersAsFailedForUnreachableStations(){
-	//TODO
+	//Only traverse list if there is a list
+	if (first != NULL)
+	{
+		//Check all time stamps
+		struct producingStation *currentStation=first;
+		while(currentStation != NULL){
+			if (currentStation ->lastSeen < (time(&tnow)-3000)){
+				//We found a station that failed
+				//Find that station in list and remove it
+				//Remove first item from the list if that's the failed station
+				if (first->stationID == currentStation->stationID)
+				{
+					struct producingStation *next_node = first->next;
+					 free(first);
+					 first = next_node;
+					 continue;
+				}
+				struct producingStation *prevStation=first;
+				while (prevStation->next-> stationID != currentStation -> stationID)
+				{
+					if (prevStation->next != NULL)
+					{
+						prevStation = prevStation->next;
+					} else{
+						printf("Error: Order failed without producing station");
+						exit(1);
+					}
+				}
+				struct producingStation* stationToRemove = prevStation -> next;
+				currentStation -> next = stationToRemove -> next;
+				free(stationToRemove);
+			}
+			currentStation = currentStation -> next;
+		}
+	}
 	return 0;
 }
 

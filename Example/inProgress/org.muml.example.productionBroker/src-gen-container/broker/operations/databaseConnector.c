@@ -223,7 +223,34 @@ int markOrderAsDone(int orderID)
 	cJSON_AddNumberToObject(order, "orderID", orderID);
 	postToDatabaseServer("order/done", cJSON_Print(order));
 
-	//TODO remove from list
+	//Find producing station in list and remove it
+	if (first == NULL)
+	{
+		printf("Error: Order done without producing station");
+		exit(1);
+	}
+	//Remove first item from the list if that's the station that's done
+	if (first->orderID == orderID)
+	{
+		struct producingStation *next_node = first->next;
+		 free(first);
+		 first = next_node;
+		 return 0;
+	}
+	struct producingStation *currentStation=first;
+	while (currentStation->next-> orderID != orderID)
+	{
+		if (currentStation->next != NULL)
+		{
+			currentStation = currentStation->next;
+		} else{
+			printf("Error: Order done without producing station");
+			exit(1);
+		}
+	}
+	struct producingStation* stationToRemove = currentStation -> next;
+	currentStation -> next = stationToRemove -> next;
+	free(stationToRemove);
 
 	return 0;
 }
@@ -307,7 +334,30 @@ int markOrdersAsFailedForUnreachableStations(){
 		struct producingStation *currentStation=first;
 		while(currentStation != NULL){
 			if (currentStation ->lastSeen < (time(&tnow)-3000)){
-				//TODO delete from list and send info to server
+				//We found a station that failed
+				//Find that station in list and remove it
+				//Remove first item from the list if that's the failed station
+				if (first->stationID == currentStation->stationID)
+				{
+					struct producingStation *next_node = first->next;
+					 free(first);
+					 first = next_node;
+					 continue;
+				}
+				struct producingStation *prevStation=first;
+				while (prevStation->next-> stationID != currentStation -> stationID)
+				{
+					if (prevStation->next != NULL)
+					{
+						prevStation = prevStation->next;
+					} else{
+						printf("Error: Order failed without producing station");
+						exit(1);
+					}
+				}
+				struct producingStation* stationToRemove = prevStation -> next;
+				currentStation -> next = stationToRemove -> next;
+				free(stationToRemove);
 			}
 			currentStation = currentStation -> next;
 		}
