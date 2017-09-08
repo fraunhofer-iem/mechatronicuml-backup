@@ -50,7 +50,7 @@
    </feature>
    <feature url="features/org.muml.codegen.componenttype.feature.source_1.1.0.qualifier.jar" id="org.muml.codegen.componenttype.feature.source" version="1.1.0.qualifier">
       <category name="org.muml.releng.site.repository.muml.sdks"/>
-   </feature>	
+   </feature>
    <feature url="features/org.muml.pm.feature.source_1.0.0.qualifier.jar" id="org.muml.pm.feature.source" version="1.0.0.qualifier">
       <category name="org.muml.releng.site.repository.muml.sdks"/>
    </feature>
@@ -182,7 +182,7 @@
    </feature>
    <feature url="features/org.muml.external.jgrapht.feature_1.0.0.qualifier.jar" id="org.muml.external.jgrapht.feature" version="1.0.0.qualifier">
       <category name="org.muml.releng.site.repository.thirdparty"/>
-   </feature>	
+   </feature>
    <feature url="features/org.muml.external.owlapi.feature_1.0.0.qualifier.jar" id="org.muml.external.owlapi.feature" version="1.0.0.qualifier">
       <category name="org.muml.releng.site.repository.thirdparty"/>
    </feature>
@@ -192,11 +192,17 @@
    <feature url="features/org.opendds.modeling.feature_3.3.0.qualifier.jar" id="org.opendds.modeling.feature" version="3.3.0.qualifier">
       <category name="org.muml.releng.site.repository.thirdparty"/>
    </feature>
-	<feature url="features/org.muml.eloquent.feature_1.0.0.qualifier.jar" id="org.muml.eloquent.feature" version="1.0.0.qualifier">
+   <feature url="features/org.muml.eloquent.feature_1.0.0.qualifier.jar" id="org.muml.eloquent.feature" version="1.0.0.qualifier">
       <category name="org.muml.releng.site.repository.utility"/>
    </feature>
    <feature url="features/org.muml.eloquent.feature.source_1.0.0.qualifier.jar" id="org.muml.eloquent.feature.source" version="1.0.0.qualifier">
       <category name="org.muml.releng.site.repository.utility.sdks"/>
+   </feature>
+   <feature url="features/org.muml.eloquent.adapter.muml.feature_1.0.0.qualifier.jar" id="org.muml.eloquent.adapter.muml.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.muml"/>
+   </feature>
+    <feature url="features/org.muml.eloquent.adapter.muml.feature.source_1.0.0.qualifier.jar" id="org.muml.eloquent.adapter.muml.feature" version="1.0.0.qualifier">
+      <category name="org.muml.releng.site.repository.muml.sdks"/>
    </feature>
    <category-def name="org.muml.releng.site.repository.muml" label="MechatronicUML Features"/>
    <category-def name="org.muml.releng.site.repository.muml.sdks" label="MechatronicUML Feature SDKs"/>
