@@ -201,7 +201,7 @@
    <feature url="features/org.muml.eloquent.adapter.muml.feature_1.0.0.qualifier.jar" id="org.muml.eloquent.adapter.muml.feature" version="1.0.0.qualifier">
       <category name="org.muml.releng.site.repository.muml"/>
    </feature>
-    <feature url="features/org.muml.eloquent.adapter.muml.feature.source_1.0.0.qualifier.jar" id="org.muml.eloquent.adapter.muml.feature" version="1.0.0.qualifier">
+    <feature url="features/org.muml.eloquent.adapter.muml.feature.source_1.0.0.qualifier.jar" id="org.muml.eloquent.adapter.muml.feature.source" version="1.0.0.qualifier">
       <category name="org.muml.releng.site.repository.muml.sdks"/>
    </feature>
    <category-def name="org.muml.releng.site.repository.muml" label="MechatronicUML Features"/>
