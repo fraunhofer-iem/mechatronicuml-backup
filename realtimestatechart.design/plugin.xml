@@ -7,4 +7,23 @@
 	       name="realtimestatechart">
     </component>
   </extension>
+  <!--
+  <extension point="org.eclipse.sirius.diagram.styleConfigurationProvider">
+  	<styleConfigurationProvider providerClass="com.example.diagseq.style.DiagSeqStyleConfigurationProvider" />
+  </extension>
+  -->
+  <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
+		<editpartProvider class="realtimestatechart.design.providers.MyEditPartProvider">
+       		<Priority name="High"/>
+	    </editpartProvider>
+  </extension>
+  <extension
+        point="org.eclipse.gmf.runtime.diagram.ui.editpolicyProviders">
+     <editpolicyProvider
+           class="realtimestatechart.design.providers.MyEditPolicyProvider">
+        <Priority
+              name="Lowest">
+        </Priority>
+     </editpolicyProvider>
+  </extension>
 </plugin>
