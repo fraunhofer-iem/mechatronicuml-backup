@@ -10,7 +10,6 @@
  *******************************************************************************/
 package realtimestatechart.design.edit.part;
 
-import org.eclipse.draw2d.Border;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.LineBorder;
 import org.eclipse.draw2d.MarginBorder;
@@ -27,7 +26,6 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.ListCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
-import org.eclipse.gmf.runtime.diagram.ui.internal.figures.NestedResizableCompartmentFigure;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.OneLineBorder;
 import org.eclipse.gmf.runtime.notation.DrawerStyle;
@@ -104,22 +102,22 @@ public abstract class AbstractDNodeListCompartmentEditPart extends ListCompartme
         ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
         boolean isRegion = false;
 //        boolean isRegion = new DDiagramElementContainerExperimentalQuery((DDiagramElementContainer) resolveSemanticElement()).isRegion();
-        if (isRegion) {
-            // Use a NestableResizableCompartmentFigure to have collapsed Region
-            // to have only the label area visible
-            ResizableCompartmentFigure nrcf = new NestedResizableCompartmentFigure(getMapMode());
-            // Configure the text pane layout manager to be the same as the non-region case.
-            nrcf.getContentPane().setLayoutManager(result.getContentPane().getLayoutManager());
-            // Get the viewport border computed for the non-region case to keep
-            // the same margin:
-            Border border = result.getScrollPane().getContents().getBorder();
-            if (border instanceof MarginBorder) {
-                Insets insets = border.getInsets(nrcf);
-                border = new MarginBorder(0, insets.left, 0, insets.right);
-                nrcf.getScrollPane().getContents().setBorder(border);
-            }
-            result = nrcf;
-        }
+//        if (isRegion) {
+//            // Use a NestableResizableCompartmentFigure to have collapsed Region
+//            // to have only the label area visible
+//            ResizableCompartmentFigure nrcf = new NestedResizableCompartmentFigure(getMapMode());
+//            // Configure the text pane layout manager to be the same as the non-region case.
+//            nrcf.getContentPane().setLayoutManager(result.getContentPane().getLayoutManager());
+//            // Get the viewport border computed for the non-region case to keep
+//            // the same margin:
+//            Border border = result.getScrollPane().getContents().getBorder();
+//            if (border instanceof MarginBorder) {
+//                Insets insets = border.getInsets(nrcf);
+//                border = new MarginBorder(0, insets.left, 0, insets.right);
+//                nrcf.getScrollPane().getContents().setBorder(border);
+//            }
+//            result = nrcf;
+//        }
 
         result.setTitleVisibility(false);
         result.setToolTip((IFigure) null);
