@@ -60,7 +60,7 @@
               <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             </style>
           </subContainerMappings>
-          <subContainerMappings name="RTSC.Operations" semanticCandidatesExpression="aql:if self.variables->isEmpty() then null else self endif" domainClass="RealtimeStatechart" childrenPresentation="List">
+          <subContainerMappings name="RTSC.Operations" semanticCandidatesExpression="aql:if self.operations->isEmpty() then null else self endif" domainClass="RealtimeStatechart" childrenPresentation="List">
             <subNodeMappings name="OperationsNode" semanticCandidatesExpression="aql:self" domainClass="RealtimeStatechart">
               <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="aql:'operations: '" labelAlignment="RIGHT" labelPosition="node" resizeKind="NSEW">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -83,7 +83,7 @@
               <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             </style>
           </subContainerMappings>
-          <subContainerMappings name="RTSC.Clocks" semanticCandidatesExpression="aql:if self.variables->isEmpty() then null else self endif" domainClass="RealtimeStatechart" childrenPresentation="List">
+          <subContainerMappings name="RTSC.Clocks" semanticCandidatesExpression="aql:if self.clocks->isEmpty() then null else self endif" domainClass="RealtimeStatechart" childrenPresentation="List">
             <subNodeMappings name="ClockNode" semanticCandidatesExpression="aql:self" domainClass="RealtimeStatechart">
               <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="aql:'clock: '" labelAlignment="RIGHT" labelPosition="node" resizeKind="NSEW">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -180,7 +180,7 @@
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:if (self.eClass().name = 'State') then self.eContainer() else self endif">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Variables" referenceName="variables">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Variable" referenceName="variables">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'op1'"/>
                 </subModelOperations>
               </firstModelOperations>
