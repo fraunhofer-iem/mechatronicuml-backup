@@ -3,10 +3,17 @@ package realtimestatechart.design.edit.part;
 import org.eclipse.draw2d.FlowLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.OrderedLayout;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.CompartmentEditPart;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.sirius.diagram.ui.part.Messages;
+import org.eclipse.sirius.viewpoint.DSemanticDecorator;
+import org.eclipse.sirius.viewpoint.DStylizable;
+import org.eclipse.sirius.viewpoint.LabelAlignment;
+import org.eclipse.sirius.viewpoint.LabelStyle;
+import org.eclipse.sirius.viewpoint.Style;
+import org.muml.pim.realtimestatechart.RealtimeStatechart;
 
 /**
  * @was-generated
@@ -31,25 +38,43 @@ public class MyNodeListCompartmentEditPart extends CompartmentEditPart {
     public String getCompartmentName() {
         return Messages.DNodeListViewNodeListCompartmentEditPart_title;
     }
-    
-    
-    @Override
-    public void activate() {
-    	super.activate();
-    	
-    }
-    @Override
-    protected void refreshVisuals() {
-    	// TODO Auto-generated method stub
-    	super.refreshVisuals();
-    }
+   
     @Override
     public IFigure createFigure() {
     	IFigure figure = new NodeFigure();
+    	
+    	// Get label alignment
+    	LabelAlignment alignment = LabelAlignment.CENTER;
+    	View view = (View) getModel();
+    	if (view.getElement() instanceof DStylizable) {
+    		Style style = ((DStylizable) view.getElement()).getStyle();
+    		if (style instanceof LabelStyle) {
+    			LabelStyle labelStyle = (LabelStyle) style;
+    			alignment = labelStyle.getLabelAlignment();
+    		}
+    	}
+    	
+    	// Get semantic element
+    	EObject semanticElement = null;
+    	if (view.getElement() instanceof DSemanticDecorator) {
+    		semanticElement = ((DSemanticDecorator) view.getElement()).getTarget();
+    	}
+    	
+    	
     	FlowLayout layout = new FlowLayout();
-    	layout.setHorizontal(true);
-    	layout.setMajorAlignment(OrderedLayout.ALIGN_BOTTOMRIGHT);
+
+    	// RealtimeStatechart needs horizontal lists
+    	layout.setHorizontal(semanticElement instanceof RealtimeStatechart);
+    	
+    	if (alignment == LabelAlignment.LEFT) {
+    		layout.setMajorAlignment(OrderedLayout.ALIGN_TOPLEFT);
+    	} else if (alignment == LabelAlignment.CENTER) {
+    		layout.setMajorAlignment(OrderedLayout.ALIGN_CENTER);
+    	} else if (alignment == LabelAlignment.RIGHT) {
+    		layout.setMajorAlignment(OrderedLayout.ALIGN_BOTTOMRIGHT);
+    	}
     	layout.setMinorAlignment(OrderedLayout.ALIGN_CENTER);
+
     	figure.setLayoutManager(layout);
     	return figure;
 //
