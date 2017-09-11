@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.muml_container"
+            id="org.muml.c.adapter.container.ui.popupMenus.contribution.IFile">
+         <menu
+               icon="icons/muml.png"
+               id="org.muml.menu"
+               label="MechatronicUML"
+               path="additionsAcceleo">
+               <groupMarker name="mumlContainer"/> 
+         </menu>
+         <action
+               class="org.muml.c.adapter.container.ui.popupMenus.AcceleoGenerateCAction"
+               enablesFor="+"
+               id="org.muml.c.adapter.container.ui.popupMenus.acceleoGenerateCAction"
+               icon="icons/default.gif"
+               label="Generate Component Container Code"
+               menubarPath="org.muml.menu/mumlContainer"/>
+      </objectContribution>
+   </extension>
+</plugin>

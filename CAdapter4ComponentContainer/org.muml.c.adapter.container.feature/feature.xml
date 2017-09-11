@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.muml.c.adapter.container.feature" label="%featureName" provider-name="%providerName" version="1.0.0.qualifier">
+
+   <description>
+      %description
+   </description>
+
+   <copyright url="%copyrightURL">
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <requires>
+      <import feature="org.muml.pim.feature" version="0.5.0.qualifier"/>
+      <import feature="org.muml.psm.feature" version="0.4.0.qualifier"/>
+      <import feature="org.muml.core.feature" version="0.5.0.qualifier"/>
+	  <import feature="org.muml.codegen.componenttype.feature" version="0.5.0.qualifier"/>
+      <import feature="org.muml.ape.feature" version="0.5.0.qualifier"/>
+      <import feature="org.muml.emm.feature" version="0.1.0.qualifier"/>
+   </requires>
+
+
+   <plugin download-size="0" id="org.muml.c.adapter.container" install-size="0" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.muml.c.adapter.container.ui" install-size="0" version="0.0.0"/>
+
+</feature>
