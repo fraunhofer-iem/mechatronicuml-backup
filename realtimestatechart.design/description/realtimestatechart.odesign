@@ -252,7 +252,7 @@
             </initialOperation>
             <edgeView name="edgeView"/>
           </ownedTools>
-          <ownedTools xsi:type="tool:DeleteElementDescription" name="Delete.RTSC">
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="Delete.RTSC" precondition="aql:elementView.target &lt;> elementView.getParentDiagram().target">
             <element name="element"/>
             <elementView name="elementView"/>
             <containerView name="containerView"/>
@@ -264,17 +264,11 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:DeleteElementDescription" name="Delete.Prevent">
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="Delete.Prevent" precondition="aql:false">
             <element name="element"/>
             <elementView name="elementView"/>
             <containerView name="containerView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self">
-                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self &lt;> diagram.target">
-                  <subModelOperations xsi:type="tool_1:RemoveElement"/>
-                </subModelOperations>
-              </firstModelOperations>
-            </initialOperation>
+            <initialOperation/>
           </ownedTools>
           <ownedTools xsi:type="tool:DeleteElementDescription" name="Delete.InitialStateNode" elementsToSelect="aql:self">
             <element name="element"/>
