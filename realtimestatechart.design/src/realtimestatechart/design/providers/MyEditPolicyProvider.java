@@ -3,20 +3,20 @@ package realtimestatechart.design.providers;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.common.core.service.IOperation;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.CompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.services.editpolicy.CreateEditPoliciesOperation;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.sirius.diagram.ui.internal.edit.parts.DNodeListViewNodeListCompartmentEditPart;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
+import org.muml.core.common.edit.policies.compartment.BorderlessCompartmentEditPolicy;
 import org.muml.pim.realtimestatechart.RealtimeStatechart;
+import org.muml.pim.realtimestatechart.State;
 
 public class MyEditPolicyProvider extends AbstractEditPolicyProvider {
 
 
     public void createEditPolicies(EditPart editPart) {
-    	if (editPart instanceof DNodeListViewNodeListCompartmentEditPart) {
-    		DNodeListViewNodeListCompartmentEditPart cep = (DNodeListViewNodeListCompartmentEditPart) editPart;
-
-    		System.out.println(cep);
+    	if (editPart instanceof CompartmentEditPart) {
+    		editPart.installEditPolicy("BorderlessRole", new BorderlessCompartmentEditPolicy());
     	}
     }
 
@@ -30,6 +30,9 @@ public class MyEditPolicyProvider extends AbstractEditPolicyProvider {
                 EObject element = view.getElement();
                 if (element instanceof DSemanticDecorator) {
                 	element = ((DSemanticDecorator) element).getTarget();
+                }
+                if (element instanceof State) {
+                	return true;
                 }
                 if (element instanceof RealtimeStatechart) {
                 	return true;

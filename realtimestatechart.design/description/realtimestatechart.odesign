@@ -180,7 +180,7 @@
           </style>
         </containerMappings>
         <toolSections name="org.muml.pim.realtimestatechart.Section" label="Statechart">
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="org.muml.pim.realtimestatechart.createRealtimeStatechart" label="Statechart" containerMappings="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="org.muml.pim.realtimestatechart.createRealtimeStatechart" label="Statechart" precondition="aql:containerView &lt;> containerView.getParentDiagram()" containerMappings="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.realtimestatechart.RealtimeStatechart']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
