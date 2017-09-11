@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package org.muml.codegen.allocation.latex;
+package org.muml.c.adapter.componenttype;
 
 import org.eclipse.core.runtime.Plugin;
 import org.osgi.framework.BundleContext;

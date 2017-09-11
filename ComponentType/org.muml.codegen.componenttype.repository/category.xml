@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<site>
-   <feature url="features/org.muml.codegen.componenttype.feature_1.1.0.qualifier.jar" id="org.muml.codegen.componenttype.feature" version="1.1.0.qualifier">
-      <category name="org.muml.codegen.componenttype.repository.category"/>
-   </feature>
-   <category-def name="org.muml.codegen.componenttype.repository.category" label="Codegen Componenttype"/>
-</site>

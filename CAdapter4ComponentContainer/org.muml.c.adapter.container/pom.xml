@@ -35,7 +35,7 @@
 				  </entry> 
 				</entries>
 				 <jars>
-				   <jar>p2.eclipse-plugin:org.muml.codegen.componenttype.c</jar>
+				   <jar>p2.eclipse-plugin:org.muml.c.adapter.componenttype</jar>
 				 </jars>  
 			  </acceleoProject>
 			   <packagesToRegister>

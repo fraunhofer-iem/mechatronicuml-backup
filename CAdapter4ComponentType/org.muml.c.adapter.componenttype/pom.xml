@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.muml.codegen.componenttype.group</groupId>
+    <artifactId>ComponentType</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+  <groupId>org.muml.codegen.componenttype.group</groupId>
+  <artifactId>org.muml.c.adapter.componenttype</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>eclipse-plugin</packaging>
+  
+   <build>
+	<plugins>
+		<plugin>
+		   <groupId>org.eclipse.acceleo</groupId>
+		   <artifactId>org.eclipse.acceleo.maven</artifactId>
+		   <version>3.6.0-SNAPSHOT</version>
+		   <executions>
+			  <execution>
+				<goals>
+					<goal>acceleo-compile</goal>
+				</goals>
+			  </execution>
+			</executions>
+			<configuration>
+			  <useBinaryResources>false</useBinaryResources>
+			  <usePlatformResourcePath>true</usePlatformResourcePath>
+			  <acceleoProject>
+				<root>${project.basedir}</root>
+				 <entries>
+				 <entry>
+					<input>src/</input>
+                    <output>target/classes</output>
+				  </entry> 
+				</entries>
+			  </acceleoProject>
+				<packagesToRegister>
+				<packageToRegister>org.muml.pm.software.SoftwarePackage</packageToRegister> 
+				 <packageToRegister>org.muml.psm.PsmPackage</packageToRegister> 
+				 <packageToRegister>org.muml.pm.hardware.HardwarePackage</packageToRegister> 
+				 <packageToRegister>org.muml.pim.PimPackage</packageToRegister> 
+				 <packageToRegister>org.muml.pim.actionlanguage.ActionlanguagePackage</packageToRegister> 
+				 <packageToRegister>org.muml.core.CorePackage</packageToRegister> 
+				 <packageToRegister>org.muml.core.modelinstance.ModelinstancePackage</packageToRegister> 
+			  </packagesToRegister>
+			</configuration>
+		 </plugin>
+	 </plugins>
+  </build>
+  
+</project>
