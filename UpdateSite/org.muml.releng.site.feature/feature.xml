@@ -80,11 +80,11 @@ the Eclipse framework.
          version="0.0.0"/>
 
    <includes
-         id=" org.muml.c.adapter.componenttype.feature"
+         id="org.muml.c.adapter.componenttype.feature"
          version="0.0.0"/>
 
    <includes
-         id=" org.muml.c.adapter.componenttype.feature.source"
+         id="org.muml.c.adapter.componenttype.feature.source"
          version="0.0.0"/>
 
    <includes

@@ -18,7 +18,7 @@
     <module>org.muml.c.adapter.componenttype.ui</module>
 	<module>org.muml.codegen.componenttype.beautifier</module>
 	<module>org.muml.codegen.componenttype.export.ui</module> 
-    <module> org.muml.c.adapter.componenttype.feature</module>
+    <module>org.muml.c.adapter.componenttype.feature</module>
 	<module> org.muml.c.adapter.componenttype.repository</module>
   </modules>
 

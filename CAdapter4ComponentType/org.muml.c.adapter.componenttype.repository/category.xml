@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/ org.muml.c.adapter.componenttype.feature_1.1.0.qualifier.jar" id=" org.muml.c.adapter.componenttype.feature" version="1.1.0.qualifier">
+   <feature url="features/org.muml.c.adapter.componenttype.feature_1.1.0.qualifier.jar" id="org.muml.c.adapter.componenttype.feature" version="1.1.0.qualifier">
       <category name=" org.muml.c.adapter.componenttype.repository.category"/>
    </feature>
    <category-def name=" org.muml.c.adapter.componenttype.repository.category" label="Codegen Componenttype"/>

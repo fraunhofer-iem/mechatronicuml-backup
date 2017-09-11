@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id=" org.muml.c.adapter.componenttype.feature" label="Container Code Generation" provider-name="%providerName" version="1.1.0.qualifier">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.muml.c.adapter.componenttype.feature" label="Container Code Generation" provider-name="%providerName" version="1.1.0.qualifier">
 
    <description url="www.muml.org">
       Experimental Container Codegen. Including support for DDS.

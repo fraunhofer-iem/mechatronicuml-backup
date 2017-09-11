@@ -15,7 +15,7 @@
    <feature url="features/org.muml.modelica.adapter_1.0.0.qualifier.jar" id="org.muml.modelica.adapter.feature" version="1.0.0.qualifier">
       <category name="org.muml.releng.site.repository.muml"/>
    </feature>
-   <feature url="features/ org.muml.c.adapter.componenttype.feature_1.1.0.qualifier.jar" id=" org.muml.c.adapter.componenttype.feature" version="1.1.0.qualifier">
+   <feature url="features/org.muml.c.adapter.componenttype.feature_1.1.0.qualifier.jar" id="org.muml.c.adapter.componenttype.feature" version="1.1.0.qualifier">
       <category name="org.muml.releng.site.repository.muml"/>
    </feature>
    <feature url="features/org.muml.c.adapter.container.feature_1.0.0.qualifier.jar" id="org.muml.c.adapter.container.feature" version="1.0.0.qualifier">
@@ -48,7 +48,7 @@
    <feature url="features/org.muml.c.adapter.container.feature.source_1.0.0.qualifier.jar" id="org.muml.c.adapter.container.feature.source" version="1.0.0.qualifier">
       <category name="org.muml.releng.site.repository.muml.sdks"/>
    </feature>
-   <feature url="features/ org.muml.c.adapter.componenttype.feature.source_1.1.0.qualifier.jar" id=" org.muml.c.adapter.componenttype.feature.source" version="1.1.0.qualifier">
+   <feature url="features/org.muml.c.adapter.componenttype.feature.source_1.1.0.qualifier.jar" id="org.muml.c.adapter.componenttype.feature.source" version="1.1.0.qualifier">
       <category name="org.muml.releng.site.repository.muml.sdks"/>
    </feature>
    <feature url="features/org.muml.pm.feature.source_1.0.0.qualifier.jar" id="org.muml.pm.feature.source" version="1.0.0.qualifier">
