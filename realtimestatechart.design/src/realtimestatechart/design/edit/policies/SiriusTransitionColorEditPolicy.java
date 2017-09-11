@@ -106,6 +106,7 @@ public class SiriusTransitionColorEditPolicy extends DEdgeSelectionFeedbackEditP
 							} else {
 								// Set back to default color
 								SiriusTransitionColorEditPolicy.this.getHost().refresh();
+								polyline.setLineWidth(3);
 							}
 							times++;
 
