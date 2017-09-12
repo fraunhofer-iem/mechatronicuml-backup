@@ -56,14 +56,15 @@ public class XtextPartialViewerController extends AbstractEEFCustomWidgetControl
 
 	public String readModelValue() {
 		EStructuralFeature feature = element.eClass().getEStructuralFeature(featureName);
-		
 		String text = null;
-		Object value = element.eGet(feature);
-		if (value instanceof String) {
-			text = (String) value;
-		}
-		if (feature instanceof EReference && !feature.isMany()) {
-			text = LanguageResource.serializeEObjectSafe((EObject) value, element);
+		if (feature != null) {
+			Object value = element.eGet(feature);
+			if (value instanceof String) {
+				text = (String) value;
+			}
+			if (feature instanceof EReference && !feature.isMany()) {
+				text = LanguageResource.serializeEObjectSafe((EObject) value, element);
+			}
 		}
 		if (text == null) {
 			text = "";
@@ -77,13 +78,15 @@ public class XtextPartialViewerController extends AbstractEEFCustomWidgetControl
 			public void run() {
 				Object newValue = null;
 				EStructuralFeature feature = element.eClass().getEStructuralFeature(featureName);
-				if (feature.getEType() == EcorePackage.eINSTANCE.getEString()) {
-					newValue = text;
-				} else if (feature instanceof EReference && !feature.isMany()) {
-					ILoadResult loadResult = LanguageResource.loadFromString(text, element);
-					newValue = loadResult.getEObject();
+				if (feature != null) {
+					if (feature.getEType() == EcorePackage.eINSTANCE.getEString()) {
+						newValue = text;
+					} else if (feature instanceof EReference && !feature.isMany()) {
+						ILoadResult loadResult = LanguageResource.loadFromString(text, element);
+						newValue = loadResult.getEObject();
+					}
+					element.eSet(feature, newValue);
 				}
-				element.eSet(feature, newValue);
 			}
 		});
 		
