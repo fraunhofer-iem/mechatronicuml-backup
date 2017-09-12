@@ -21,4 +21,13 @@
             label="Xtext Editor">
       </descriptor>
    </extension>
+   <extension
+         point="org.eclipse.sirius.properties.core.descriptionConverter">
+      <descriptor
+            class="org.muml.pim.siriusproperties.custom.MyCustomWidgetDescriptionConverter"
+            description="This extension is used to fix the broken CustomWidgetDescriptionConverter provided by Sirius."
+            id="org.muml.sirius.customwidget.descriptionConverter"
+            label="Fixed version of sirius internal CustomWidgetDescriptionConverter">
+      </descriptor>
+   </extension>>
 </plugin>
