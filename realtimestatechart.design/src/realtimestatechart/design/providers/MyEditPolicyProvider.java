@@ -2,7 +2,6 @@ package realtimestatechart.design.providers;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.EditPart;
-import org.eclipse.gef.EditPolicy;
 import org.eclipse.gmf.runtime.common.core.service.IOperation;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.CompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.services.editpolicy.CreateEditPoliciesOperation;
@@ -23,7 +22,7 @@ public class MyEditPolicyProvider extends AbstractEditPolicyProvider {
 			editPart.installEditPolicy("BorderRole", new BorderlessCompartmentEditPolicy());
 		}
 		if (getSemanticElement(editPart) instanceof Transition && editPart instanceof AbstractDiagramEdgeEditPart) {
-			editPart.installEditPolicy(org.eclipse.gef.EditPolicy.SELECTION_FEEDBACK_ROLE, new SiriusTransitionColorEditPolicy());
+			editPart.installEditPolicy("FlashingRole", new SiriusTransitionColorEditPolicy());
 		}
 	}
 

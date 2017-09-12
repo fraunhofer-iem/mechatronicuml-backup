@@ -3,19 +3,16 @@ package realtimestatechart.design.edit.part;
 import org.eclipse.draw2d.FlowLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.OrderedLayout;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.CompartmentEditPart;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.sirius.diagram.ui.part.Messages;
 import org.eclipse.sirius.viewpoint.DRepresentationElement;
-import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.eclipse.sirius.viewpoint.DStylizable;
 import org.eclipse.sirius.viewpoint.LabelAlignment;
 import org.eclipse.sirius.viewpoint.LabelStyle;
 import org.eclipse.sirius.viewpoint.Style;
 import org.eclipse.sirius.viewpoint.description.DocumentedElement;
-import org.muml.pim.realtimestatechart.RealtimeStatechart;
 
 /**
  * @was-generated
@@ -55,13 +52,6 @@ public class MyNodeListCompartmentEditPart extends CompartmentEditPart {
     			alignment = labelStyle.getLabelAlignment();
     		}
     	}
-    	
-    	// Get semantic element
-    	EObject semanticElement = null;
-    	if (view.getElement() instanceof DSemanticDecorator) {
-    		semanticElement = ((DSemanticDecorator) view.getElement()).getTarget();
-    	}
-    	
     	
     	FlowLayout layout = new FlowLayout();
 

@@ -2,6 +2,7 @@ package realtimestatechart.design.edit.policies;
 
 import java.util.Iterator;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.util.Adaptable;
 import org.eclipse.gef.EditPart;
@@ -10,15 +11,16 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
-import org.eclipse.sirius.diagram.ui.graphical.edit.policies.DEdgeSelectionFeedbackEditPolicy;
 import org.eclipse.sirius.viewpoint.DRepresentationElement;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.widgets.Display;
+import org.muml.core.common.edit.policies.NotifyingGraphicalEditPolicy;
+import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
+import org.muml.pim.realtimestatechart.Synchronization;
 import org.muml.pim.realtimestatechart.Transition;
 
-public class SiriusTransitionColorEditPolicy extends DEdgeSelectionFeedbackEditPolicy {
+public class SiriusTransitionColorEditPolicy extends NotifyingGraphicalEditPolicy {
 	protected static final Color COLOR_COMPATIBLE_TRANSITION = new Color(null, 0, 150, 0);
-
 	protected Transition myTransition;
 	protected Transition selectedTransition;
 	protected PolylineConnectionEx polyline;
@@ -66,8 +68,13 @@ public class SiriusTransitionColorEditPolicy extends DEdgeSelectionFeedbackEditP
 		if (this.selectedTransition != selectedTransition) {
 			this.selectedTransition = selectedTransition;
 
-			setFlashing(calculateCompatible(myTransition, selectedTransition));
+			updateListeners();
+			updateFigure();
 		}
+	}
+	
+	void updateFigure() {
+		setFlashing(calculateCompatible(myTransition, selectedTransition));
 	}
 
 	private void setFlashing(boolean flashing) {
@@ -127,5 +134,34 @@ public class SiriusTransitionColorEditPolicy extends DEdgeSelectionFeedbackEditP
 			return element;
 		}
 		return null;
+	}
+	
+
+	protected void addListeners() {
+		super.addListeners();
+
+		if (selectedTransition != null) {
+			addNotificationListener(selectedTransition);
+			Synchronization synchronization = null;
+			if (selectedTransition.getSynchronization() != null) {
+				synchronization = selectedTransition.getSynchronization();
+				addNotificationListener(synchronization);
+			}
+			if (synchronization != null && synchronization.getSyncChannel() != null) {
+				addNotificationListener(synchronization.getSyncChannel());
+			}
+		}
+	}
+	
+
+	@Override
+	public void handleNotificationEvent(Notification notification) {
+		super.handleNotificationEvent(notification);
+		updateFigure();
+		if (notification.getFeature() == RealtimestatechartPackage.Literals.TRANSITION__SYNCHRONIZATION
+			|| notification.getFeature() == RealtimestatechartPackage.Literals.SYNCHRONIZATION__SYNC_CHANNEL)
+		{
+			updateListeners();
+		}
 	}
 }
