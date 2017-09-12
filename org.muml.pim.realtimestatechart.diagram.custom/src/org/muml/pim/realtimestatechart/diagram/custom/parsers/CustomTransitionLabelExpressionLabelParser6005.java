@@ -59,7 +59,7 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 		}
 		Message message = transition.getRaiseMessageEvent() == null ? null : transition.getRaiseMessageEvent().getMessage();
 
-		printString = printString.replaceAll("\\{clockConstraintExpression}", getClockConstraintExpression(transition));
+		printString = printString.replaceAll("\\{clockConstraintExpression}", getTransitionClockConstraintExpression(transition));
 		printString = printString.replaceAll("\\{guardExpression\\}", getGuardExpression(transition));
 		printString = printString.replaceAll("\\{receivingTransSchemaCondition\\}", getReceivingCommunicationSchemaConstraint(transition));
 		printString = printString.replaceAll("\\{sendingTransSchemaCondition\\}", getSendingCommunicationSchemaConstraint(transition));
@@ -134,46 +134,52 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 		}
 		return sb.toString();
 	}
-	public static String getClockConstraintExpression(Transition transition) {
+	public static String getTransitionClockConstraintExpression(Transition transition) {
 		StringBuffer buf = new StringBuffer();
 		boolean first = true;
 		for (ClockConstraint cc : transition.getClockConstraints()) {
 			if (!first) {
 				buf.append(", ");
 			}
-			if (cc.getClock() != null) {
-				buf.append(cc.getClock().getName());
-			} else {
-				buf.append("null");
-			}
-			buf.append(' ');
-			
-			// I wrote the following helper program to find out bytes of UTF-8 characters:
-//			public static void main(String[] args) throws UnsupportedEncodingException {
-//				for (byte c : "x".getBytes()) {
-//					System.out.println((int)(byte)c);
-//				}
-//			}
-			try {
-				switch (cc.getOperator()) {
-				case EQUAL: 			buf.append('='); break;
-				case LESS: 				buf.append('<'); break;
-				case LESS_OR_EQUAL: 	buf.append("<="); break; //buf.append(new String(new byte[] { -30, -119, -92}, "UTF-8")); break; 
-				case GREATER_OR_EQUAL: 	buf.append(">="); break; //buf.append(new String(new byte[] { -30, -119, -91}, "UTF-8")); break;
-				case GREATER:			buf.append('>'); break;
-				case UNEQUAL:			buf.append("<>"); break; //buf.append(new String(new byte[] { -30, -119, -96}, "UTF-8")); break;
-				case REGULAR_EXPRESSION:buf.append("regexp"); break; 
-				}
-			//} catch (UnsupportedEncodingException e) {
-			} finally {				
-			}
-			buf.append(' ');
-			if (cc.getBound() != null) {
-				buf.append(ParserUtilities.serializeTimeValue(cc.getBound(), transition));
-			} else {
-				buf.append("null");
-			}
+			buf.append(getClockConstraintExpression(cc));
 			first = false;
+		}
+		return buf.toString();
+	}
+	public static String getClockConstraintExpression(ClockConstraint cc) {
+		StringBuffer buf = new StringBuffer();
+
+		if (cc.getClock() != null) {
+			buf.append(cc.getClock().getName());
+		} else {
+			buf.append("null");
+		}
+		buf.append(' ');
+		
+		// I wrote the following helper program to find out bytes of UTF-8 characters:
+//		public static void main(String[] args) throws UnsupportedEncodingException {
+//			for (byte c : "x".getBytes()) {
+//				System.out.println((int)(byte)c);
+//			}
+//		}
+		try {
+			switch (cc.getOperator()) {
+			case EQUAL: 			buf.append('='); break;
+			case LESS: 				buf.append('<'); break;
+			case LESS_OR_EQUAL: 	buf.append("<="); break; //buf.append(new String(new byte[] { -30, -119, -92}, "UTF-8")); break; 
+			case GREATER_OR_EQUAL: 	buf.append(">="); break; //buf.append(new String(new byte[] { -30, -119, -91}, "UTF-8")); break;
+			case GREATER:			buf.append('>'); break;
+			case UNEQUAL:			buf.append("<>"); break; //buf.append(new String(new byte[] { -30, -119, -96}, "UTF-8")); break;
+			case REGULAR_EXPRESSION:buf.append("regexp"); break; 
+			}
+		//} catch (UnsupportedEncodingException e) {
+		} finally {				
+		}
+		buf.append(' ');
+		if (cc.getBound() != null) {
+			buf.append(ParserUtilities.serializeTimeValue(cc.getBound(), cc.eContainer()));
+		} else {
+			buf.append("null");
 		}
 		return buf.toString();
 	}

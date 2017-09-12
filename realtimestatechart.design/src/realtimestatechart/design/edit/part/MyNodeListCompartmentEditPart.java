@@ -8,11 +8,13 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.CompartmentEditPart;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.sirius.diagram.ui.part.Messages;
+import org.eclipse.sirius.viewpoint.DRepresentationElement;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.eclipse.sirius.viewpoint.DStylizable;
 import org.eclipse.sirius.viewpoint.LabelAlignment;
 import org.eclipse.sirius.viewpoint.LabelStyle;
 import org.eclipse.sirius.viewpoint.Style;
+import org.eclipse.sirius.viewpoint.description.DocumentedElement;
 import org.muml.pim.realtimestatechart.RealtimeStatechart;
 
 /**
@@ -63,8 +65,17 @@ public class MyNodeListCompartmentEditPart extends CompartmentEditPart {
     	
     	FlowLayout layout = new FlowLayout();
 
-    	// RealtimeStatechart needs horizontal lists
-    	layout.setHorizontal(semanticElement instanceof RealtimeStatechart);
+    	boolean horizontal = false;
+		if (view.getElement() instanceof DRepresentationElement) {
+			DRepresentationElement dre = (DRepresentationElement) view.getElement();
+			if (dre.getMapping() instanceof DocumentedElement) {
+				String hint = ((DocumentedElement) dre.getMapping()).getDocumentation();
+				if (hint.contains("@listorientation=horizontal")) {
+					horizontal = true;
+				}
+			}
+		}
+    	layout.setHorizontal(horizontal);
     	
     	if (alignment == LabelAlignment.LEFT) {
     		layout.setMajorAlignment(OrderedLayout.ALIGN_TOPLEFT);

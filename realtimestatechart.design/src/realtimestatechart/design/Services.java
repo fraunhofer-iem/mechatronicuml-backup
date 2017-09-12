@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.muml.pim.realtimestatechart.AsynchronousMessageEvent;
 import org.muml.pim.realtimestatechart.Clock;
+import org.muml.pim.realtimestatechart.ClockConstraint;
 import org.muml.pim.realtimestatechart.Synchronization;
 import org.muml.pim.realtimestatechart.SynchronizationKind;
 import org.muml.pim.realtimestatechart.Transition;
@@ -23,11 +24,15 @@ import org.muml.pim.realtimestatechart.one_to_n_schemata.Unicast;
  */
 public class Services {
 
+	public String invariantLabel(ClockConstraint clockConstraint) {
+		return CustomTransitionLabelExpressionLabelParser6005.getClockConstraintExpression(clockConstraint);
+	}
+
 	public String guardLabel(Transition transition) {
 		StringBuffer buf = new StringBuffer();
 		if (!transition.getClockConstraints().isEmpty()) {
 			buf.append('[');
-			buf.append(CustomTransitionLabelExpressionLabelParser6005.getClockConstraintExpression(transition));
+			buf.append(CustomTransitionLabelExpressionLabelParser6005.getTransitionClockConstraintExpression(transition));
 			buf.append(']');
 		}
 		buf.append(CustomTransitionLabelExpressionLabelParser6005.getGuardExpression(transition));
