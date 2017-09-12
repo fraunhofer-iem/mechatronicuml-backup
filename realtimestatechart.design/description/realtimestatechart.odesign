@@ -37,7 +37,7 @@
           </style>
         </edgeMappings>
         <containerMappings name="org.muml.pim.realtimestatechart.RealtimeStatechart" label="Realtime Statechart" deletionDescription="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Delete.RTSC']" labelDirectEdit="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='DirectEditLabel']" semanticCandidatesExpression="aql:if (self.eClass().name = 'RealtimeStatechart') then self else self.embeddedStatecharts endif" domainClass="RealtimeStatechart" childrenPresentation="VerticalStack">
-          <subContainerMappings name="RTSC.Variables" semanticCandidatesExpression="aql:if self.variables->isEmpty() then null else self endif" documentation="@listorientation=horizontal" domainClass="RealtimeStatechart" childrenPresentation="List">
+          <subContainerMappings name="RTSC.Variables" semanticCandidatesExpression="aql:if self.variables->isEmpty() and self.subRoleSpecificVariables->isEmpty()  then null else self endif" documentation="@listorientation=horizontal" domainClass="RealtimeStatechart" childrenPresentation="List">
             <subNodeMappings name="VariableNode" deletionDescription="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Delete.Prevent']" semanticCandidatesExpression="aql:self" domainClass="RealtimeStatechart">
               <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="aql:'variable: '" labelAlignment="RIGHT" labelPosition="node" resizeKind="NSEW">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -47,7 +47,14 @@
               </style>
             </subNodeMappings>
             <subNodeMappings name="Variables" labelDirectEdit="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='DirectEditLabel']" semanticCandidatesExpression="aql:self.variables" domainClass="Variable">
-              <style xsi:type="style:SquareDescription" labelExpression="aql:self.name" labelAlignment="RIGHT" labelPosition="node" resizeKind="NSEW">
+              <style xsi:type="style:SquareDescription" labelExpression="ocl:(if (self.constant) then 'const ' else '' endif).concat(if self.dataType.name.oclIsUndefined() then '' else self.dataType.name.concat(' ') endif).concat(if self.name.oclIsUndefined() then '' else self.name endif)" labelAlignment="RIGHT" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="SubRoleSpecificVariables" labelDirectEdit="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='DirectEditLabel']" semanticCandidatesExpression="aql:self.subRoleSpecificVariables" domainClass="Variable">
+              <style xsi:type="style:SquareDescription" labelExpression="ocl:'subrole '.concat(if (self.constant) then 'const ' else '' endif).concat(if self.dataType.name.oclIsUndefined() then '' else self.dataType.name.concat(' ') endif).concat(if self.name.oclIsUndefined() then '' else self.name endif)" labelAlignment="RIGHT" labelPosition="node" resizeKind="NSEW">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
@@ -60,7 +67,7 @@
               <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             </style>
           </subContainerMappings>
-          <subContainerMappings name="RTSC.Operations" semanticCandidatesExpression="aql:if self.operations->isEmpty() then null else self endif" documentation="@listorientation=horizontal" domainClass="RealtimeStatechart" childrenPresentation="List">
+          <subContainerMappings name="RTSC.Operations" semanticCandidatesExpression="aql:if self.operations->isEmpty() and self.subRoleSpecificOperations->isEmpty() then null else self endif" documentation="@listorientation=horizontal" domainClass="RealtimeStatechart" childrenPresentation="List">
             <subNodeMappings name="OperationsNode" semanticCandidatesExpression="aql:self" domainClass="RealtimeStatechart">
               <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="aql:'operations: '" labelAlignment="RIGHT" labelPosition="node" resizeKind="NSEW">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -70,7 +77,14 @@
               </style>
             </subNodeMappings>
             <subNodeMappings name="Operations" deletionDescription="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Delete.Prevent']" labelDirectEdit="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='DirectEditLabel']" semanticCandidatesExpression="aql:self.operations" domainClass="Operation">
-              <style xsi:type="style:SquareDescription" labelExpression="aql:self.name" labelAlignment="RIGHT" labelPosition="node" resizeKind="NSEW">
+              <style xsi:type="style:SquareDescription" labelExpression="ocl:(if self.returnType.name.oclIsUndefined() then '' else self.returnType.name.concat(' ') endif).concat(if self.name.oclIsUndefined() then '' else self.name endif).concat('(').concat(self.parameters->iterate(parameter; result2 : String = '' | (if result2 = '' then '' else result2.concat(', ') endif).concat((if parameter.dataType.name.oclIsUndefined() then '' else parameter.dataType.name.concat(' ') endif).concat(if parameter.name.oclIsUndefined() then '' else parameter.name endif)))).concat(')')" labelAlignment="RIGHT" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="SubRoleSpecificOperations" labelDirectEdit="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='DirectEditLabel']" semanticCandidatesExpression="aql:self.subRoleSpecificOperations" domainClass="Operation">
+              <style xsi:type="style:SquareDescription" labelExpression="ocl:'subrole '.concat(if self.returnType.name.oclIsUndefined() then '' else self.returnType.name.concat(' ') endif).concat(if self.name.oclIsUndefined() then '' else self.name endif).concat('(').concat(self.parameters->iterate(parameter; result2 : String = '' | (if result2 = '' then '' else result2.concat(', ') endif).concat((if parameter.dataType.name.oclIsUndefined() then '' else parameter.dataType.name.concat(' ') endif).concat(if parameter.name.oclIsUndefined() then '' else parameter.name endif)))).concat(')')" labelAlignment="RIGHT" labelPosition="node" resizeKind="NSEW">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
@@ -83,7 +97,7 @@
               <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             </style>
           </subContainerMappings>
-          <subContainerMappings name="RTSC.Clocks" semanticCandidatesExpression="aql:if self.clocks->isEmpty() then null else self endif" documentation="@listorientation=horizontal" domainClass="RealtimeStatechart" childrenPresentation="List">
+          <subContainerMappings name="RTSC.Clocks" semanticCandidatesExpression="aql:if self.clocks->isEmpty() and self.subRoleSpecificClocks->isEmpty()  then null else self endif" documentation="@listorientation=horizontal" domainClass="RealtimeStatechart" childrenPresentation="List">
             <subNodeMappings name="ClockNode" deletionDescription="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Delete.Prevent']" semanticCandidatesExpression="aql:self" domainClass="RealtimeStatechart">
               <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="aql:'clock: '" labelAlignment="RIGHT" labelPosition="node" resizeKind="NSEW">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -94,6 +108,13 @@
             </subNodeMappings>
             <subNodeMappings name="Clocks" labelDirectEdit="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='DirectEditLabel']" semanticCandidatesExpression="aql:self.clocks" domainClass="Clock">
               <style xsi:type="style:SquareDescription" labelExpression="aql:self.name" labelAlignment="RIGHT" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="SubRoleSpecificClock" labelDirectEdit="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='DirectEditLabel']" semanticCandidatesExpression="aql:self.subRoleSpecificClocks" domainClass="Clock">
+              <style xsi:type="style:SquareDescription" labelExpression="aql:'subrole '.concat(self.name)" labelAlignment="RIGHT" labelPosition="node" resizeKind="NSEW">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
