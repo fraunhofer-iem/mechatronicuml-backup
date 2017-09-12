@@ -12,7 +12,7 @@ public class SiriusPropertiesLifecycleManagerProvider implements IEEFLifecycleMa
 	/**
 	 * The identifier of the control description supported.
 	 */
-	private static final String ACTIONLANGUAGE_XTEXTEDITOR_ID = "org.muml.pim.actionlanguage.xtexteditor."; //$NON-NLS-1$
+	private static final String ACTIONLANGUAGE_XTEXTEDITOR_ID = "org.muml.pim.actionlanguage.xtexteditor:"; //$NON-NLS-1$
 
 	@Override
 	public boolean canHandle(EEFControlDescription controlDescription) {
