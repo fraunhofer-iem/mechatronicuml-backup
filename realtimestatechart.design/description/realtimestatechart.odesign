@@ -266,7 +266,7 @@
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:if (self.eClass().name = 'State') then self.eContainer() else self endif">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Operation" referenceName="operations">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'op1'"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="op1"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -277,7 +277,7 @@
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:if (self.eClass().name = 'State') then self.eContainer() else self endif">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Variable" referenceName="variables">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'op1'"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var1"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -288,7 +288,7 @@
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:if (self.eClass().name = 'State') then self.eContainer() else self endif">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Clock" referenceName="clocks">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'c1'"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="c1"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -302,6 +302,9 @@
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self">
                 <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:target"/>
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.statechart">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="transitions" valueExpression="aql:self.transitions->asSet() + OrderedSet{element}"/>
+                </subModelOperations>
               </firstModelOperations>
             </initialOperation>
             <edgeView name="edgeView"/>
@@ -315,6 +318,9 @@
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self">
                 <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.statechart">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="transitions" valueExpression="aql:self.transitions->asSet() + OrderedSet{element}"/>
+                </subModelOperations>
               </firstModelOperations>
             </initialOperation>
             <edgeView name="edgeView"/>
