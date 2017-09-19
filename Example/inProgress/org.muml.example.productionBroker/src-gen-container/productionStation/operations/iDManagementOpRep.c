@@ -47,7 +47,15 @@ int32_T IDManagement_iDManagementGetID(){
 	srand(clock());
 	ID = rand();
 	printf("Generated random id: %ld\n",ID);
-	//TODO store as config.json
+
+	//Try to store in config.json in case this production station is turned off
+	fp = fopen("config.json", "w");
+	cJSON *root = cJSON_CreateObject();
+	cJSON_AddNumberToObject(root, "ID", ID);
+	fprintf(fp, cJSON_Print(root));
+	fclose(fp);
+	printf("Wrote ID to config.json in case this production station is turned off and on again.\n");
+
 	return ID;
 /**End of user code**/
 
