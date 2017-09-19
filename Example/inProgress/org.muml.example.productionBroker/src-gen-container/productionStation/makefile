@@ -21,7 +21,7 @@ RTSC = productionStationProductionStationRTSCStateChart.o
 COMP = productionStationComponent.o  
 CONTMAPPING = 
 OPERATIONREPOSITORIES = 	 productionManagementOpRep.o	 iDManagementOpRep.o		
-LIB =   Debug.o
+LIB =   Debug.o cJSON.o
 CC = gcc
 CFLAGS = -DC99 -DDEBUG -ggdb -Wall -c  $(DEFINES) -I types -I lib -I $(NDDSHOME)/include -I $(NDDSHOME)/include/ndds 
 all: app
@@ -57,7 +57,9 @@ MCC_productionStationComponent.o: component_container/MCC_productionStationCompo
 
 Debug.o: lib/Debug.c
 	$(CC) $(CFLAGS) lib/Debug.c
-
+	
+cJSON.o: lib/cJSON.c
+	$(CC) $(CFLAGS) lib/cJSON.c	
 
  productionManagementOpRep.o: operations/productionManagementOpRep.c
 	$(CC) $(CFLAGS) operations/productionManagementOpRep.c
