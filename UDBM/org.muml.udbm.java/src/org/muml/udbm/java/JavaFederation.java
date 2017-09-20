@@ -99,9 +99,14 @@ public class JavaFederation extends Federation {
 			return;
 		}
 		
-		// Reset this federation if union of overloaded federation will lead to an empty federation
+		// If overloaded Federation is false, this will lead to a false Federation
 		if (federation.isEmpty() || ((JavaFederation) federation).isFalseFederation()){
-			this.applyResets(getClockHashSet());
+			this.removeAllFromClockZone();
+			Iterator<? extends ClockZone> federationCZIT = federation.iteratorOfClockZone();
+			while (federationCZIT.hasNext()){
+				JavaClockZone jcz = (JavaClockZone) federationCZIT.next();
+				this.addToClockZone(jcz);
+			}
 			return;
 		}
 		
@@ -457,7 +462,9 @@ public class JavaFederation extends Federation {
 		Iterator<?> it = (Iterator<?>) this.iteratorOfClockZone();
 		JavaClockZone cz;
 		boolean returnValue = false;
+		boolean clockZoneFound = false;
 		while (it.hasNext()) {
+			clockZoneFound = true;
 			cz = (JavaClockZone)it.next();
 			if (cz.containsOnlyFalseClockConstraints() == true){
 				returnValue = true;
@@ -466,6 +473,11 @@ public class JavaFederation extends Federation {
 				return false;
 			}
 		}
+		
+		if (clockZoneFound == false){
+			return true;
+		}
+		
 		return returnValue;
 	}
 
