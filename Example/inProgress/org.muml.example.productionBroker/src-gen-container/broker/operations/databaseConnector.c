@@ -84,7 +84,7 @@ int getFromDatabaseServer(char *apiEndPoint, char *jsonString)
 		char *fullUrl = malloc(baseUrlLength+LONGEST_API_URL);
 		strcpy(fullUrl, url);
 		strncat(fullUrl, apiEndPoint, LONGEST_API_URL);
-		curl_easy_setopt(curl, CURLOPT_URL, url);
+		curl_easy_setopt(curl, CURLOPT_URL, fullUrl);
 
 		printf("Json String %s \n Sent to %s\n", jsonString, fullUrl);
 
@@ -101,15 +101,15 @@ int getFromDatabaseServer(char *apiEndPoint, char *jsonString)
 		}
 		else
 		{
-			 long *responseCode;
+			 long responseCode;
 			 res = curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &responseCode);
 
 			 if((CURLE_OK == res) && responseCode)
 			 {
-				if (*responseCode != 404){
-					ret = *responseCode;
+				if (responseCode != 404){
+					ret = responseCode;
 				}
-			    printf("Received response code: %ld\n", *responseCode);
+			    printf("Received response code: %ld\n", responseCode);
 			 }
 		}
 		curl_easy_cleanup(curl);
@@ -133,7 +133,7 @@ void postToDatabaseServer(char *apiEndPoint, char *jsonString)
 		char *fullUrl = malloc(baseUrlLength+LONGEST_API_URL);
 		strcpy(fullUrl, url);
 		strncat(fullUrl, apiEndPoint, LONGEST_API_URL);
-		curl_easy_setopt(curl, CURLOPT_URL, url);
+		curl_easy_setopt(curl, CURLOPT_URL, fullUrl);
 
 		printf("Json String %s \nSent to %s\n", jsonString, fullUrl);
 
@@ -155,13 +155,13 @@ void postToDatabaseServer(char *apiEndPoint, char *jsonString)
 		}
 		else
 		{
-			 long *responseCode;
+			 long responseCode;
 			 res = curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &responseCode);
 
 			 if((CURLE_OK == res) && responseCode)
 			 {
-				if (*responseCode != 200){
-					printf("Something went wrong while posting, status code: %ld \n", *responseCode);
+				if (responseCode != 200){
+					printf("Something went wrong while posting, status code: %ld \n", responseCode);
 				}
 			 }
 		}
@@ -285,10 +285,10 @@ int getOrderAmount(int orderID)
 int searchOrder(int searchingPS, int producibleIngredients)
 {
 	cJSON *request = cJSON_CreateObject();
-	cJSON_AddNumberToObject(request, "productionStationID", searchingPS);
+	cJSON_AddNumberToObject(request, "psID", searchingPS);
 	cJSON *producibleIngredientArray = cJSON_CreateArray();
 	cJSON_AddItemToArray(producibleIngredientArray, cJSON_CreateNumber(producibleIngredients));
-	cJSON_AddItemToObject(request, "producibleIngredients", producibleIngredientArray);
+	cJSON_AddItemToObject(request, "ingredientIDs", producibleIngredientArray);
 
 	int orderID = getFromDatabaseServer("order/search", cJSON_Print(request));
 	return orderID;
