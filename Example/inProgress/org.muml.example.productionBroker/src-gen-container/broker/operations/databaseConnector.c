@@ -177,7 +177,7 @@ int insertOrder(int orderID, int ingredientID, int amount, int timeout)
 {
 	cJSON *order = cJSON_CreateObject();
 	cJSON_AddNumberToObject(order, "amount", amount);
-	cJSON_AddNumberToObject(order, "ingredientID", ingredientID);
+	cJSON_AddNumberToObject(order, "ingredient", ingredientID);
 	cJSON_AddNumberToObject(order, "orderID", orderID);
 	cJSON_AddNumberToObject(order, "timeout", timeout);
 	postToDatabaseServer("order/insert" , cJSON_Print(order));
