@@ -17,7 +17,7 @@ int markOrderAsDone(int orderID);
 int heartBeatProductionStation(int productionStationID);
 int markOrdersAsFailedForUnreachableStations();
 
-struct producingStation {
+typedef struct producingStation {
 	int stationID;
 	int orderID;
 	time_t lastSeen;
@@ -52,6 +52,10 @@ char * readConfigFile()
 		}
 		fclose(fp);
 	}
+	else
+	{
+		printf("Could not open config.json.\n");
+	}
 	if (buffer)
 	{
 		cJSON *root = cJSON_Parse(buffer);
@@ -67,6 +71,7 @@ char * readConfigFile()
 
 	return url;
 }
+
 
 /**
  * Takes a json string and sends it to the server via post request
@@ -89,9 +94,18 @@ int getFromDatabaseServer(char *apiEndPointAndUrlEncodedInfo, int sizeOfEndpoint
 
 		printf("Trying to get from %s\n", fullUrl);
 
+		// allocate the size of an integer as a response
+		FILE *response = fopen("response.tmp", "w+");
+		printf("Defined file\n");
+		/*response= malloc(10000);
+		printf("Got to after the malloc"); */
 		struct curl_slist *headers = NULL;
 		headers = curl_slist_append(headers, "charsets: utf-8");
 		curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+		/* passing the pointer to the response as the callback parameter */
+		printf("Trying to pass &response\n");
+		//curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, NULL);
+		//curl_easy_setopt(curl, CURLOPT_WRITEDATA, &response);
 
 		CURLcode res = curl_easy_perform(curl);
 		if (res != CURLE_OK)
@@ -196,19 +210,29 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 	postToDatabaseServer("productionStation/assignOrder",cJSON_Print(request));
 
 	//Add tuple to list of producing stations
-	struct producingStation *newElement=first;
-	if (newElement != NULL){
+	if (first==NULL)
+	{
+		first = malloc(sizeof(node));
+		first->orderID = orderID;
+		first->stationID = productionStationID;
+		first->lastSeen= time(&tnow);
+		first->next = NULL;
+	}else
+	{
 		struct producingStation *endOfList=first;
-		while(endOfList->next != NULL){
+		while(endOfList->next != NULL)
+		{
 			endOfList = endOfList->next;
 		}
-		newElement = endOfList->next;
+		struct producingStation *newElement = endOfList->next;
+		newElement = malloc(sizeof(node));
+		newElement->orderID = orderID;
+		newElement->stationID = productionStationID;
+		newElement->lastSeen= time(&tnow);
+		newElement->next = NULL;
 	}
-	newElement = malloc(sizeof(node));
-	newElement->orderID = orderID;
-	newElement->stationID = productionStationID;
-	newElement->lastSeen= time(&tnow);
-	newElement->next = NULL;
+
+	printf("Assigned productionStation %d to order %d\n", productionStationID, orderID);
 
 	return 0;
 }
@@ -317,7 +341,7 @@ int heartBeatProductionStation(int productionStationID)
 {
 	if (first == NULL)
 	{
-		printf("Error: Heart beat without producing station");
+		printf("Error: Heart beat without producing station. (No list)\n");
 		exit(1);
 	}
 	//Find producing station in list and update its lastSeen time stamp
@@ -328,7 +352,7 @@ int heartBeatProductionStation(int productionStationID)
 		{
 			currentStation = currentStation->next;
 		} else{
-			printf("Error: Heart beat without producing station");
+			printf("Error: Heart beat without producing station. (No matching element)\n");
 			exit(1);
 		}
 	}
