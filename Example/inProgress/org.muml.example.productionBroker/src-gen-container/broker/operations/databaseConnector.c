@@ -31,6 +31,7 @@ const int LONGEST_API_URL=33;
 struct producingStation *first;
 time_t tnow;
 const int NO_OF_CHARS_FOR_INT = 12;
+int lastAnswerFromGet;
 
 
 char * readConfigFile()
@@ -71,7 +72,14 @@ char * readConfigFile()
 
 	return url;
 }
-
+/**
+ * Write callback for curl get
+ */
+void write_data(void *ptr, size_t size, size_t count, void *stream)
+{
+    printf("Got the following answer: \n\n-----------------\n%s\n-----------\n\n", (char *)ptr);
+    lastAnswerFromGet = atoi(ptr);
+}
 
 /**
  * Takes a json string and sends it to the server via post request
@@ -79,7 +87,6 @@ char * readConfigFile()
  */
 int getFromDatabaseServer(char *apiEndPointAndUrlEncodedInfo, int sizeOfEndpointAndInfo)
 {
-	int ret = -1;
 	curl = curl_easy_init();
 	if (curl)
 	{
@@ -94,40 +101,22 @@ int getFromDatabaseServer(char *apiEndPointAndUrlEncodedInfo, int sizeOfEndpoint
 
 		printf("Trying to get from %s\n", fullUrl);
 
-		// allocate the size of an integer as a response
-		FILE *response = fopen("response.tmp", "w+");
-		printf("Defined file\n");
-		/*response= malloc(10000);
-		printf("Got to after the malloc"); */
 		struct curl_slist *headers = NULL;
 		headers = curl_slist_append(headers, "charsets: utf-8");
 		curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
-		/* passing the pointer to the response as the callback parameter */
-		printf("Trying to pass &response\n");
-		//curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, NULL);
-		//curl_easy_setopt(curl, CURLOPT_WRITEDATA, &response);
+		curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
 
 		CURLcode res = curl_easy_perform(curl);
 		if (res != CURLE_OK)
 		{
 			fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+			return -1;
 		}
-		else
-		{
-			 long responseCode;
-			 res = curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &responseCode);
-
-			 if((CURLE_OK == res) && responseCode)
-			 {
-				if (responseCode != 404){
-					ret = responseCode;
-				}
-			    printf("Received response code: %ld\n", responseCode);
-			 }
+		else{
+			return lastAnswerFromGet;
 		}
 		curl_easy_cleanup(curl);
 	}
-	return ret;
 }
 
 /**
@@ -367,12 +356,15 @@ int heartBeatProductionStation(int productionStationID)
  */
 int markOrdersAsFailedForUnreachableStations(){
 	//Only traverse list if there is a list
+	printf("Checking for unreachable stations\n");
 	if (first != NULL)
 	{
+		printf("We have producing stations\n");
 		//Check all time stamps
 		struct producingStation *currentStation=first;
 		while(currentStation != NULL){
 			if (currentStation ->lastSeen < (time(&tnow)-3000)){
+				printf("We found an unreachable station.\n");
 				//We found a station that failed
 				//Find that station in list and remove it
 				//Remove first item from the list if that's the failed station
@@ -397,6 +389,7 @@ int markOrdersAsFailedForUnreachableStations(){
 				struct producingStation* stationToRemove = prevStation -> next;
 				currentStation -> next = stationToRemove -> next;
 				free(stationToRemove);
+				printf("Successfully removed station.\n");
 			}
 			currentStation = currentStation -> next;
 		}
