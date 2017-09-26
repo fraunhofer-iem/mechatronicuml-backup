@@ -30,6 +30,7 @@ int baseUrlLength;
 const int LONGEST_API_URL=33;
 struct producingStation *first;
 time_t tnow;
+const int NO_OF_CHARS_FOR_INT = 12;
 
 
 char * readConfigFile()
@@ -71,7 +72,7 @@ char * readConfigFile()
  * Takes a json string and sends it to the server via post request
  *
  */
-int getFromDatabaseServer(char *apiEndPoint, char *jsonString)
+int getFromDatabaseServer(char *apiEndPointAndUrlEncodedInfo, int sizeOfEndpointAndInfo)
 {
 	int ret = -1;
 	curl = curl_easy_init();
@@ -81,16 +82,14 @@ int getFromDatabaseServer(char *apiEndPoint, char *jsonString)
 		if (!url){
 			url = readConfigFile();
 		}
-		char *fullUrl = malloc(baseUrlLength+LONGEST_API_URL);
+		char *fullUrl = malloc(baseUrlLength+sizeOfEndpointAndInfo);
 		strcpy(fullUrl, url);
-		strncat(fullUrl, apiEndPoint, LONGEST_API_URL);
-		curl_easy_setopt(curl, CURLOPT_URL, url);
+		strncat(fullUrl, apiEndPointAndUrlEncodedInfo, sizeOfEndpointAndInfo);
+		curl_easy_setopt(curl, CURLOPT_URL, fullUrl);
 
-		printf("Json String %s \n Sent to %s\n", jsonString, fullUrl);
+		printf("Trying to get from %s\n", fullUrl);
 
 		struct curl_slist *headers = NULL;
-		headers = curl_slist_append(headers, "Accept: application/json");
-		headers = curl_slist_append(headers, "Content-Type: application/json");
 		headers = curl_slist_append(headers, "charsets: utf-8");
 		curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
 
@@ -101,15 +100,15 @@ int getFromDatabaseServer(char *apiEndPoint, char *jsonString)
 		}
 		else
 		{
-			 long *responseCode;
+			 long responseCode;
 			 res = curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &responseCode);
 
 			 if((CURLE_OK == res) && responseCode)
 			 {
-				if (*responseCode != 404){
-					ret = *responseCode;
+				if (responseCode != 404){
+					ret = responseCode;
 				}
-			    printf("Received response code: %ld\n", *responseCode);
+			    printf("Received response code: %ld\n", responseCode);
 			 }
 		}
 		curl_easy_cleanup(curl);
@@ -133,7 +132,7 @@ void postToDatabaseServer(char *apiEndPoint, char *jsonString)
 		char *fullUrl = malloc(baseUrlLength+LONGEST_API_URL);
 		strcpy(fullUrl, url);
 		strncat(fullUrl, apiEndPoint, LONGEST_API_URL);
-		curl_easy_setopt(curl, CURLOPT_URL, url);
+		curl_easy_setopt(curl, CURLOPT_URL, fullUrl);
 
 		printf("Json String %s \nSent to %s\n", jsonString, fullUrl);
 
@@ -155,13 +154,13 @@ void postToDatabaseServer(char *apiEndPoint, char *jsonString)
 		}
 		else
 		{
-			 long *responseCode;
+			 long responseCode;
 			 res = curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &responseCode);
 
 			 if((CURLE_OK == res) && responseCode)
 			 {
-				if (*responseCode != 200){
-					printf("Something went wrong while posting, status code: %ld \n", *responseCode);
+				if (responseCode != 200){
+					printf("Something went wrong while posting, status code: %ld \n", responseCode);
 				}
 			 }
 		}
@@ -260,9 +259,13 @@ int markOrderAsDone(int orderID)
  */
 int getOrderIngredientID(int orderID)
 {
-	cJSON *request = cJSON_CreateObject();
-	cJSON_AddNumberToObject(request, "orderID", orderID);
-	int ingredientID = getFromDatabaseServer("order/ingredient", cJSON_Print(request));
+	int sizeOfEndpointAndInfo = sizeof("order/ingredient?orderID=")+NO_OF_CHARS_FOR_INT;
+	char *stringEndpointAndInfo = malloc(sizeOfEndpointAndInfo);
+	strcpy(stringEndpointAndInfo, "order/ingredient?orderID=");
+	char str[NO_OF_CHARS_FOR_INT];
+	sprintf(str, "%d", orderID);
+	strncat(stringEndpointAndInfo, str, NO_OF_CHARS_FOR_INT);
+	int ingredientID = getFromDatabaseServer(stringEndpointAndInfo, sizeOfEndpointAndInfo);
 	printf("Successfully retrieved ingredientID %d for order %d.\n", ingredientID, orderID);
 	return ingredientID;
 }
@@ -272,9 +275,13 @@ int getOrderIngredientID(int orderID)
  */
 int getOrderAmount(int orderID)
 {
-	cJSON *request = cJSON_CreateObject();
-	cJSON_AddNumberToObject(request, "amount", orderID);
-	int orderAmount = getFromDatabaseServer("order/amount", cJSON_Print(request));
+	int sizeOfEndpointAndInfo = sizeof("order/amount?orderID=")+NO_OF_CHARS_FOR_INT;
+	char *stringEndpointAndInfo = malloc(sizeOfEndpointAndInfo);
+	strcpy(stringEndpointAndInfo, "order/amount?orderID=");
+	char str[NO_OF_CHARS_FOR_INT];
+	sprintf(str, "%d", orderID);
+	strncat(stringEndpointAndInfo, str, NO_OF_CHARS_FOR_INT);
+	int orderAmount = getFromDatabaseServer(stringEndpointAndInfo, sizeOfEndpointAndInfo);
 	printf("Successfully retrieved amount %d for order %d.\n", orderAmount, orderID);
 	return orderAmount;
 }
@@ -284,13 +291,21 @@ int getOrderAmount(int orderID)
  */
 int searchOrder(int searchingPS, int producibleIngredients)
 {
-	cJSON *request = cJSON_CreateObject();
-	cJSON_AddNumberToObject(request, "productionStationID", searchingPS);
-	cJSON *producibleIngredientArray = cJSON_CreateArray();
-	cJSON_AddItemToArray(producibleIngredientArray, cJSON_CreateNumber(producibleIngredients));
-	cJSON_AddItemToObject(request, "producibleIngredients", producibleIngredientArray);
-
-	int orderID = getFromDatabaseServer("order/search", cJSON_Print(request));
+	int sizeOfEndpointAndInfo = sizeof("order/search?psID=")+NO_OF_CHARS_FOR_INT*2+sizeof("&ingredientIDs=[]");
+	char *stringEndpointAndInfo = malloc(sizeOfEndpointAndInfo);
+	strcpy(stringEndpointAndInfo, "order/search?psID=");
+	char str[NO_OF_CHARS_FOR_INT];
+	sprintf(str, "%d", searchingPS);
+	strncat(stringEndpointAndInfo, str, NO_OF_CHARS_FOR_INT);
+	strncat(stringEndpointAndInfo, "&ingredientIDs=[", sizeof("&ingredientIDs=["));
+	sprintf(str, "%d", producibleIngredients);
+	strncat(stringEndpointAndInfo, str, NO_OF_CHARS_FOR_INT);
+	strncat(stringEndpointAndInfo, "]", sizeof("]"));
+	int orderID = getFromDatabaseServer(stringEndpointAndInfo, sizeOfEndpointAndInfo);
+	if (orderID==404){
+		printf("No matching order found.\n");
+	}
+	printf("Found order %d.\n", orderID);
 	return orderID;
 }
 
