@@ -150,35 +150,6 @@
                   <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
                 </style>
               </borderedNodeMappings>
-              <subContainerMappings name="StateEvents" label="State Events" deletionDescription="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='DeleteState']" semanticCandidatesExpression="aql:if self.entryEvent &lt;> null or self.doEvent &lt;> null or self.exitEvent &lt;> null then self else null endif" domainClass="State" childrenPresentation="List">
-                <subNodeMappings name="EntryEvent" label="Entry Event" semanticCandidatesExpression="aql:self.entryEvent" domainClass="EntryEvent">
-                  <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelExpression="ocl:'entry / '.concat(if self.action &lt;> null then '{ '.concat(if self.action.name = null then '' else self.action.name endif).concat(' }') else '' endif).concat(if self.clockResets->isEmpty() then '' else ' {reset: '.concat(self.clockResets->iterate(c : Clock; s : String = '' | if s = '' then s.concat(c.name) else s.concat(', ').concat(c.name) endif)).concat('}') endif)" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
-                    <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                    <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                    <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-                  </style>
-                </subNodeMappings>
-                <subNodeMappings name="DoEvent" label="Do Event" semanticCandidatesExpression="aql:self.doEvent" domainClass="DoEvent">
-                  <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelExpression="aql:'do / '.concat(if self.action &lt;> null then '{ '.concat(self.action.name).concat(' }') else '' endif).concat(if self.period &lt;> null then ' ['.concat(self.period.toString()).concat(']') else '' endif)&#xA;" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
-                    <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                    <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                    <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-                  </style>
-                </subNodeMappings>
-                <subNodeMappings name="ExitEvent" label="Exit Event" semanticCandidatesExpression="aql:self.exitEvent" domainClass="ExitEvent">
-                  <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelExpression="aql:'exit / '.concat(if self.action &lt;> null then '{ '.concat(self.action.name).concat(' }') else '' endif)" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
-                    <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                    <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                    <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-                  </style>
-                </subNodeMappings>
-                <style xsi:type="style:FlatContainerStyleDescription" arcWidth="0" arcHeight="0" showIcon="false" labelExpression="aql:''" labelAlignment="LEFT" hideLabelByDefault="true" widthComputationExpression="0" heightComputationExpression="0" backgroundStyle="Liquid">
-                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                  <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-                  <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-                </style>
-              </subContainerMappings>
               <subContainerMappings name="Invariants" deletionDescription="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='DeleteState']" semanticCandidatesExpression="aql:if self.invariants->isEmpty() then null else self endif" documentation="@listorientation=horizontal" domainClass="State" childrenPresentation="List">
                 <subNodeMappings name="InvariantsNode" deletionDescription="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Delete.Prevent']" semanticCandidatesExpression="aql:self" domainClass="State">
                   <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="invariant" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
@@ -213,6 +184,35 @@
                 </subNodeMappings>
                 <subNodeMappings name="Channel" semanticCandidatesExpression="aql:self.channels" domainClass="SynchronizationChannel">
                   <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelExpression="aql:self.name" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
+                    <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                    <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                    <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+                  </style>
+                </subNodeMappings>
+                <style xsi:type="style:FlatContainerStyleDescription" arcWidth="0" arcHeight="0" showIcon="false" labelExpression="aql:''" labelAlignment="LEFT" hideLabelByDefault="true" widthComputationExpression="0" heightComputationExpression="0" backgroundStyle="Liquid">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                  <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                </style>
+              </subContainerMappings>
+              <subContainerMappings name="StateEvents" label="State Events" deletionDescription="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='DeleteState']" semanticCandidatesExpression="aql:if self.entryEvent &lt;> null or self.doEvent &lt;> null or self.exitEvent &lt;> null then self else null endif" domainClass="State" childrenPresentation="List">
+                <subNodeMappings name="EntryEvent" label="Entry Event" semanticCandidatesExpression="aql:self.entryEvent" domainClass="EntryEvent">
+                  <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelExpression="ocl:'entry / '.concat(if self.action &lt;> null then '{ '.concat(if self.action.name = null then '' else self.action.name endif).concat(' }') else '' endif).concat(if self.clockResets->isEmpty() then '' else ' {reset: '.concat(self.clockResets->iterate(c : Clock; s : String = '' | if s = '' then s.concat(c.name) else s.concat(', ').concat(c.name) endif)).concat('}') endif)" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
+                    <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                    <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                    <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+                  </style>
+                </subNodeMappings>
+                <subNodeMappings name="DoEvent" label="Do Event" semanticCandidatesExpression="aql:self.doEvent" domainClass="DoEvent">
+                  <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelExpression="aql:'do / '.concat(if self.action &lt;> null then '{ '.concat(self.action.name).concat(' }') else '' endif).concat(if self.period &lt;> null then ' ['.concat(self.period.toString()).concat(']') else '' endif)&#xA;" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
+                    <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                    <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                    <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+                  </style>
+                </subNodeMappings>
+                <subNodeMappings name="ExitEvent" label="Exit Event" semanticCandidatesExpression="aql:self.exitEvent" domainClass="ExitEvent">
+                  <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelExpression="aql:'exit / '.concat(if self.action &lt;> null then '{ '.concat(self.action.name).concat(' }') else '' endif)" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
                     <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                     <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                     <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
@@ -293,7 +293,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="Reconnect.TransitionSource" label="Transition Source" reconnectionKind="RECONNECT_SOURCE">
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="Reconnect.TransitionSource" label="Transition Source" elementsToSelect="aql:element" reconnectionKind="RECONNECT_SOURCE">
             <source name="source"/>
             <target name="target"/>
             <sourceView name="sourceView"/>
@@ -309,7 +309,7 @@
             </initialOperation>
             <edgeView name="edgeView"/>
           </ownedTools>
-          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="Reconnect.TransitionTarget" label="Transition Target">
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="Reconnect.TransitionTarget" label="Transition Target" elementsToSelect="aql:element">
             <source name="source"/>
             <target name="target"/>
             <sourceView name="sourceView"/>

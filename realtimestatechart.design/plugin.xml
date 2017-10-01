@@ -26,4 +26,22 @@
         </Priority>
      </editpolicyProvider>
   </extension>
+  <extension
+        point="org.eclipse.gmf.runtime.diagram.core.viewProviders">
+     <viewProvider
+           class="realtimestatechart.design.providers.MyViewProvider">
+        <Priority
+              name="High">
+        </Priority>
+     </viewProvider>
+  </extension>
+  <extension
+        point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
+     <decoratorProvider
+           class="realtimestatechart.design.providers.MyDecoratorProvider">
+        <Priority
+              name="High">
+        </Priority>
+     </decoratorProvider>
+  </extension>
 </plugin>
