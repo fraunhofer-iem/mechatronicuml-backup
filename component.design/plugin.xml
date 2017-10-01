@@ -7,4 +7,13 @@
 	       name="component">
     </component>
   </extension>
+  <extension
+        point="org.eclipse.gmf.runtime.diagram.ui.editpolicyProviders">
+     <editpolicyProvider
+           class="component.design.providers.MyEditPolicyProvider">
+        <Priority
+              name="Lowest">
+        </Priority>
+     </editpolicyProvider>
+  </extension>
 </plugin>
