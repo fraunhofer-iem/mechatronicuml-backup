@@ -112,6 +112,7 @@ int getFromDatabaseServer(char *apiEndPointAndUrlEncodedInfo, int sizeOfEndpoint
 		if (res != CURLE_OK)
 		{
 			fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+			lastAnswerFromGet = -1;
 		}
 		curl_easy_cleanup(curl);
 	}
@@ -314,9 +315,6 @@ int searchOrder(int searchingPS, int producibleIngredients)
 	strncat(stringEndpointAndInfo, str, NO_OF_CHARS_FOR_INT);
 	strncat(stringEndpointAndInfo, "]", sizeof("]"));
 	int orderID = getFromDatabaseServer(stringEndpointAndInfo, sizeOfEndpointAndInfo);
-	if (orderID==404){
-		printf("No matching order found.\n");
-	}
 	printf("Found order %d.\n", orderID);
 	return orderID;
 }
