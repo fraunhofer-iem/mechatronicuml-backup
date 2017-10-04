@@ -272,9 +272,9 @@ int markOrderAsDone(int orderID)
  */
 int getOrderIngredientID(int orderID)
 {
-	int sizeOfEndpointAndInfo = sizeof("order/ingredient?orderID=")+NO_OF_CHARS_FOR_INT;
+	int sizeOfEndpointAndInfo = sizeof("order/get/ingredient/")+NO_OF_CHARS_FOR_INT;
 	char *stringEndpointAndInfo = malloc(sizeOfEndpointAndInfo);
-	strcpy(stringEndpointAndInfo, "order/ingredient?orderID=");
+	strcpy(stringEndpointAndInfo, "order/get/ingredient/");
 	char str[NO_OF_CHARS_FOR_INT];
 	sprintf(str, "%d", orderID);
 	strncat(stringEndpointAndInfo, str, NO_OF_CHARS_FOR_INT);
@@ -288,9 +288,9 @@ int getOrderIngredientID(int orderID)
  */
 int getOrderAmount(int orderID)
 {
-	int sizeOfEndpointAndInfo = sizeof("order/amount?orderID=")+NO_OF_CHARS_FOR_INT;
+	int sizeOfEndpointAndInfo = sizeof("order/get/amount/")+NO_OF_CHARS_FOR_INT;
 	char *stringEndpointAndInfo = malloc(sizeOfEndpointAndInfo);
-	strcpy(stringEndpointAndInfo, "order/amount?orderID=");
+	strcpy(stringEndpointAndInfo, "order/get/amount/");
 	char str[NO_OF_CHARS_FOR_INT];
 	sprintf(str, "%d", orderID);
 	strncat(stringEndpointAndInfo, str, NO_OF_CHARS_FOR_INT);
