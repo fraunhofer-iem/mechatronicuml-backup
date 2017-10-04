@@ -75,10 +75,11 @@ char * readConfigFile()
 /**
  * Write callback for curl get
  */
-void write_data(void *ptr, size_t size, size_t count, void *stream)
+size_t write_data(void *ptr, size_t size, size_t count, void *stream)
 {
     printf("Got the following answer: \n\n-----------------\n%s\n-----------\n\n", (char *)ptr);
-    lastAnswerFromGet = atoi(ptr);
+    lastAnswerFromGet = atoi((char*) ptr);
+    return size * count;
 }
 
 /**
