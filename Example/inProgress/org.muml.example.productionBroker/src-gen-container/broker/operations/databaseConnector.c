@@ -77,7 +77,7 @@ char * readConfigFile()
  */
 size_t write_data(void *ptr, size_t size, size_t count, void *stream)
 {
-    printf("Got the following answer: \n\n-----------------\n%s\n-----------\n\n", (char *)ptr);
+    printf("Got the following answer: \n%s\n", (char *)ptr);
     lastAnswerFromGet = atoi((char*) ptr);
     return size * count;
 }
@@ -89,6 +89,7 @@ size_t write_data(void *ptr, size_t size, size_t count, void *stream)
 int getFromDatabaseServer(char *apiEndPointAndUrlEncodedInfo, int sizeOfEndpointAndInfo)
 {
 	curl = curl_easy_init();
+	lastAnswerFromGet = -1;
 	if (curl)
 	{
 		//Compute and set full url of endpoint
@@ -111,12 +112,9 @@ int getFromDatabaseServer(char *apiEndPointAndUrlEncodedInfo, int sizeOfEndpoint
 		if (res != CURLE_OK)
 		{
 			fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
-			return -1;
-		}
-		else{
-			return lastAnswerFromGet;
 		}
 		curl_easy_cleanup(curl);
+		return lastAnswerFromGet;
 	}
 }
 
