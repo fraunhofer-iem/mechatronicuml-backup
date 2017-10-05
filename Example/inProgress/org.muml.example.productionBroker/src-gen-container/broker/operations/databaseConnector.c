@@ -33,6 +33,9 @@ time_t tnow;
 const int NO_OF_CHARS_FOR_INT = 12;
 int lastAnswerFromGet;
 
+node* getFirst() {
+	return first;
+}  
 
 char * readConfigFile()
 {
