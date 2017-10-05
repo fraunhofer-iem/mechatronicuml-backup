@@ -33,9 +33,6 @@ time_t tnow;
 const int NO_OF_CHARS_FOR_INT = 12;
 int lastAnswerFromGet;
 
-node* getFirst() {
-	return first;
-}  
 
 char * readConfigFile()
 {
@@ -259,10 +256,10 @@ int markOrderAsDone(int orderID)
 		removedStationId=first->stationID; 
 		free(first);
 		first=NULL;
-		if(first==NULL)
-			printf("successfully removed first");
-		else
+		if(first!=NULL) {
 			printf("first still alive");
+			return -1;
+		}
 		if(next_node!=NULL){
 		 	first = next_node;
 		}
