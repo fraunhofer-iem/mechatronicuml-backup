@@ -5,7 +5,7 @@
 #include "databaseConnector.c"
 
 /* A test case that tests if three production stations are added in the right sequent */ 
-static void test_add_three_stations(void **state) {
+static void test1(void **state) {
 	(void) state; /*unused*/
 	defineProductionStationForOrder(1,1);
 	defineProductionStationForOrder(2,2);
@@ -23,12 +23,15 @@ static void test_add_three_stations(void **state) {
 	assert_true(first->stationID==3);
 	markOrderAsDone(3);
 	assert_null(first);
-
+	defineProductionStationForOrder(1,1);
+	assert_true(first->stationID==1);
+	markOrderAsDone(1);
+	assert_null(first);
 }
 
 
 /* A test case that adds and removes a station. */ 
-static void test_add_and_remove_one_station(void **state) {
+static void test2(void **state) {
 	(void) state; /*unused*/
 	defineProductionStationForOrder(1,1);
 	markOrderAsDone(1);
@@ -36,7 +39,7 @@ static void test_add_and_remove_one_station(void **state) {
 }
 
 /* A test case that adds and removes a station. */ 
-static void test_add_three_stations_and_delete_second(void **state) {
+static void test3(void **state) {
 	(void) state; /*unused*/
 	defineProductionStationForOrder(1,1);
 	defineProductionStationForOrder(2,2);
@@ -57,9 +60,9 @@ static void test_add_three_stations_and_delete_second(void **state) {
 
 int main(void) {
 	const struct CMUnitTest tests[] = { 
-	cmocka_unit_test(test_add_three_stations),
-	cmocka_unit_test(test_add_and_remove_one_station),
-	cmocka_unit_test(test_add_three_stations_and_delete_second),
+	cmocka_unit_test(test1),
+	cmocka_unit_test(test2),
+	cmocka_unit_test(test3),
 	};
 	return cmocka_run_group_tests(tests, NULL, NULL);
 }
