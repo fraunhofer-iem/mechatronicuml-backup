@@ -251,6 +251,51 @@ static void testRemoveAllStationsAsUnreachable(void **state) {
 	assert_null(first);
 }
 
+static void testRemoveFirstStationsAsUnreachable(void **state) {
+	(void) state; /*unused*/
+	defineProductionStationForOrder(1,1);
+	defineProductionStationForOrder(2,2);
+	defineProductionStationForOrder(3,3);
+	sleep(6);
+    heartBeatProductionStation(3);
+	markOrdersAsFailedForUnreachableStations();
+    assert_true(first->stationID==3);
+    assert_null(first->next);
+    //clean up
+    markOrderAsDone(3);
+	assert_null(first);
+}
+
+static void testRemoveFirstAndLastStationAsUnreachable(void **state) {
+	(void) state; /*unused*/
+	defineProductionStationForOrder(1,1);
+	defineProductionStationForOrder(2,2);
+	defineProductionStationForOrder(3,3);
+	sleep(6);
+    heartBeatProductionStation(2);
+	markOrdersAsFailedForUnreachableStations();
+    assert_true(first->stationID==2);
+    assert_null(first->next);
+    //clean up
+    markOrderAsDone(2);
+	assert_null(first);
+}
+
+static void testRemoveLastStationsAsUnreachable(void **state) {
+	(void) state; /*unused*/
+	defineProductionStationForOrder(1,1);
+	defineProductionStationForOrder(2,2);
+	defineProductionStationForOrder(3,3);
+	sleep(6);
+    heartBeatProductionStation(1);
+	markOrdersAsFailedForUnreachableStations();
+    assert_true(first->stationID==1);
+    assert_null(first->next);
+    //clean up
+    markOrderAsDone(1);
+	assert_null(first);
+}
+
 static void testRemoveUnreachableStationsForEmptyList(void **state) {
 	(void) state; /*unused*/
     assert_null(first);
@@ -293,6 +338,9 @@ int main(void) {
     cmocka_unit_test(testRemoveLastStationAsDone),
     cmocka_unit_test(testRemoveLastStationAsUnreachable),          
 	cmocka_unit_test(testRemoveAllStationsAsUnreachable),
+    cmocka_unit_test(testRemoveFirstStationsAsUnreachable),
+    cmocka_unit_test(testRemoveFirstAndLastStationAsUnreachable),
+    cmocka_unit_test(testRemoveLastStationsAsUnreachable),
 	cmocka_unit_test(testRemoveUnreachableStationsForEmptyList),
     cmocka_unit_test(testDoneForEmptyList),
 	cmocka_unit_test(testHeartBeatForEmptyList),
