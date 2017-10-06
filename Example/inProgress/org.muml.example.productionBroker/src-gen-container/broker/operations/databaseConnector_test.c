@@ -168,6 +168,46 @@ static void testRemoveSecondStationAsUnreachableWithoutSuccessor(void **state) {
 	assert_null(first);
 }
 
+static void testRemoveMiddleStationAsDone(void **state) {
+	(void) state; /*unused*/
+	defineProductionStationForOrder(1,1);
+	defineProductionStationForOrder(2,2);
+    defineProductionStationForOrder(3,3);
+    defineProductionStationForOrder(4,4);
+	markOrderAsDone(3);
+	assert_true(first->stationID==1);
+	assert_true(first->next->stationID==2);
+    assert_true(first->next->next->stationID==4);
+    assert_null(first->next->next->next);
+	//clean up 
+	markOrderAsDone(1);
+    markOrderAsDone(2);
+    markOrderAsDone(4);
+	assert_null(first);
+}
+ 
+static void testRemoveMiddleStationAsUnreachable(void **state) {
+	(void) state; /*unused*/
+	defineProductionStationForOrder(1,1);
+	defineProductionStationForOrder(2,2);
+    defineProductionStationForOrder(3,3);
+    defineProductionStationForOrder(4,4);
+	sleep(5);
+	heartBeatProductionStation(1);
+    heartBeatProductionStation(2);
+    heartBeatProductionStation(4);
+	markOrdersAsFailedForUnreachableStations();
+	assert_true(first->stationID==1);
+	assert_true(first->next->stationID==2);
+    assert_true(first->next->next->stationID==4);
+    assert_null(first->next->next->next);
+	//clean up 
+	markOrderAsDone(1);
+    markOrderAsDone(2);
+    markOrderAsDone(4);
+	assert_null(first);
+}
+
 /* A test case that adds and removes a station. */ 
 static void testRemoveAllStationsAsUnreachable(void **state) {
 	(void) state; /*unused*/
@@ -191,7 +231,7 @@ static void testHeartBeatForEmptyList(void **state) {
         assert_true(heartBeatProductionStation(1)==-1);
 }
 
-static void test9(void **state) {
+static void testDoneWithoutProducingStationWithTheRightID(void **state) {
 	(void) state; /*unused*/
 	defineProductionStationForOrder(1,1);
 	defineProductionStationForOrder(2,2);
@@ -209,10 +249,12 @@ int main(void) {
 	cmocka_unit_test(testRemoveSecondStationAsDoneWithoutSuccessor),
 	cmocka_unit_test(testRemoveSecondStationAsUnreachableWithoutSuccessor),        
     cmocka_unit_test(testAddAndRemoveThreeStationsAsDone),
+    cmocka_unit_test(testRemoveMiddleStationAsDone),
+    cmocka_unit_test(testRemoveMiddleStationAsUnreachable),    
 	cmocka_unit_test(testRemoveAllStationsAsUnreachable),
 	cmocka_unit_test(testDoneForEmptyList),
 	cmocka_unit_test(testHeartBeatForEmptyList),
-	cmocka_unit_test(test9),
+	cmocka_unit_test(testDoneWithoutProducingStationWithTheRightID),
 	};
 	return cmocka_run_group_tests(tests, NULL, NULL);
 }
