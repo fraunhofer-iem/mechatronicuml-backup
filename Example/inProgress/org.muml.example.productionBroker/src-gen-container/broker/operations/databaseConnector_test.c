@@ -241,13 +241,19 @@ static void testRemoveLastStationAsUnreachable(void **state) {
 	assert_null(first);
 }
 
-/* A test case that adds and removes a station. */ 
 static void testRemoveAllStationsAsUnreachable(void **state) {
 	(void) state; /*unused*/
 	defineProductionStationForOrder(1,1);
 	defineProductionStationForOrder(2,2);
 	defineProductionStationForOrder(3,3);
 	sleep(6);
+	markOrdersAsFailedForUnreachableStations();
+	assert_null(first);
+}
+
+static void testRemoveUnreachableStationsForEmptyList(void **state) {
+	(void) state; /*unused*/
+    assert_null(first);
 	markOrdersAsFailedForUnreachableStations();
 	assert_null(first);
 }
@@ -287,7 +293,8 @@ int main(void) {
     cmocka_unit_test(testRemoveLastStationAsDone),
     cmocka_unit_test(testRemoveLastStationAsUnreachable),          
 	cmocka_unit_test(testRemoveAllStationsAsUnreachable),
-	cmocka_unit_test(testDoneForEmptyList),
+	cmocka_unit_test(testRemoveUnreachableStationsForEmptyList),
+    cmocka_unit_test(testDoneForEmptyList),
 	cmocka_unit_test(testHeartBeatForEmptyList),
 	cmocka_unit_test(testDoneWithoutProducingStationWithTheRightID),
 	};
