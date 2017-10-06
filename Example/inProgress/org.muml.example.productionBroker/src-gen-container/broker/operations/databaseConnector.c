@@ -2,11 +2,14 @@
  * Connects to the database microservice specified in the config.json
  *
  */
+#include <stdint.h>
 #include <stdlib.h>
 #include <string.h> /* strchr(), strlen(), .. */
 #include <curl/curl.h>
-#include <time.h>
 #include "cJSON.h"
+#include <time.h>
+#include "clock.h"
+
 
 int insertOrder(int orderId, int ingredientID, int amount, int timeout);
 int defineProductionStationForOrder(int orderID, int productionStationID);
@@ -20,7 +23,7 @@ int markOrdersAsFailedForUnreachableStations();
 typedef struct producingStation {
 	int stationID;
 	int orderID;
-	time_t lastSeen;
+	u_int64_t lastSeen;
 	struct producingStation *next;
 } node;
 
@@ -196,6 +199,8 @@ int insertOrder(int orderID, int ingredientID, int amount, int timeout)
  */
 int defineProductionStationForOrder(int orderID, int productionStationID)
 {
+	struct timespec spec;
+//	Clock aClock;
 	cJSON *request = cJSON_CreateObject();
 	cJSON_AddNumberToObject(request, "orderID", orderID);
 	cJSON_AddNumberToObject(request, "productionStationID", productionStationID);
@@ -207,7 +212,10 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 		first = malloc(sizeof(node));
 		first->orderID = orderID;
 		first->stationID = productionStationID;
-		first->lastSeen= time(&tnow);
+//		clock_reset(aClock);
+		clock_gettime(CLOCK_REALTIME,&spec);
+		//first->lastSeen = clock_getTime(aClock);
+		first->lastSeen= spec.tv_sec*1000+(spec.tv_nsec/1.0e6);
 		first->next = NULL;
 		printf("Inserted as first%d\n",productionStationID);
 	}else
@@ -221,7 +229,8 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 		newElement = malloc(sizeof(node));
 		newElement->orderID = orderID;
 		newElement->stationID = productionStationID;
-		time(&(newElement->lastSeen));
+		clock_gettime(CLOCK_REALTIME,&spec);
+		newElement->lastSeen= spec.tv_sec*1000+(spec.tv_nsec/1.0e6);
 		newElement->next = NULL;
  		endOfList->next=newElement;
 		printf("Inserted as last%d\n",productionStationID);
@@ -349,6 +358,7 @@ int searchOrder(int searchingPS, int producibleIngredients)
  */
 int heartBeatProductionStation(int productionStationID)
 {
+	struct timespec spec;
 	if (first == NULL)
 	{
 		printf("Error: Heart beat without producing station. (No list)\n");
@@ -370,7 +380,8 @@ int heartBeatProductionStation(int productionStationID)
 			exit(1);
 		}
 	}
-	time(&(currentStation->lastSeen));
+	clock_gettime(CLOCK_REALTIME,&spec);
+	currentStation->lastSeen= spec.tv_sec*1000+(spec.tv_nsec/1.0e6);
 	printf("Heartbeat Update Successfull for: %d \n",currentStation->stationID);
 	}
 	return 0;
@@ -382,6 +393,7 @@ int heartBeatProductionStation(int productionStationID)
  */
 int markOrdersAsFailedForUnreachableStations(){
 	//Only traverse list if there is a list
+	u_int64_t TIMEOUTVALUE=5000;
 	int removedStationId=-1;
 	printf("Checking for unreachable stations\n");
 	if (first != NULL)
@@ -392,9 +404,13 @@ int markOrdersAsFailedForUnreachableStations(){
 		while(currentStation != NULL){
 			printf("Check Station:%d\n",currentStation->stationID);
 			printf("Last Seen:%ld\n",currentStation->lastSeen);
-			printf("Time-10000:%ld\n",time(NULL));
-			printf("DiffTime:%f",difftime(time(NULL),currentStation->lastSeen));
-			if (difftime(time(NULL),currentStation->lastSeen) >= 3){
+		//	printf("DiffTime:%f",difftime(time(NULL),currentStation->lastSeen));
+			struct timespec spec;
+			u_int64_t aTimeStamp;
+			clock_gettime(CLOCK_REALTIME,&spec);
+			aTimeStamp = spec.tv_sec*1000+(spec.tv_nsec/1.0e6);
+			printf("DiffTime:%ld\n",aTimeStamp-currentStation->lastSeen);
+			if (aTimeStamp-currentStation->lastSeen >= TIMEOUTVALUE){
 				printf("We found an unreachable station.\n");
 				//We found a station that failed
 				//Find that station in list and remove it

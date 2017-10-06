@@ -2,6 +2,7 @@
 #include <stddef.h>
 #include <setjmp.h>
 #include <cmocka.h>
+#include <unistd.h>
 #include "databaseConnector.c"
 
 /* A test case that tests if three production stations are added in the right sequent */ 
@@ -58,11 +59,24 @@ static void test3(void **state) {
 	assert_null(first);
 }
 
+static void test4(void **state) {
+	(void) state;
+	defineProductionStationForOrder(1,1);
+	heartBeatProductionStation(1);
+	sleep(3);
+	markOrdersAsFailedForUnreachableStations();
+	assert_non_null(first);
+	sleep(3);
+	markOrdersAsFailedForUnreachableStations();
+	assert_null(first);
+}
+
 int main(void) {
 	const struct CMUnitTest tests[] = { 
 	cmocka_unit_test(test1),
 	cmocka_unit_test(test2),
 	cmocka_unit_test(test3),
+	cmocka_unit_test(test4),
 	};
 	return cmocka_run_group_tests(tests, NULL, NULL);
 }
