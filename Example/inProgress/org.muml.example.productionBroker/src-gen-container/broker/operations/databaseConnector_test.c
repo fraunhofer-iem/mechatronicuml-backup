@@ -14,6 +14,7 @@
  * 5. Remove unreachable stations from empty list
  * 6. Remove unreachable stations for list of only reachable stations
  * 7. Remove multiple unreachable stations (Station from start/middle/end of list)^2
+ * 8. Remove all stations as unreachable
  * 
  * Misuse cases:
  * I. Heartbeat without producing stations
@@ -27,6 +28,7 @@ static void testAddAndRemoveOneStationAsDone(void **state) {
 	defineProductionStationForOrder(1,1);
     assert_true(first->stationID==1);
     assert_true(first->orderID==1);
+    //TODO test timestamp
 	markOrderAsDone(1);
 	assert_null(first);
 }
@@ -40,6 +42,38 @@ static void testAndRemoveOneStationAsUnreachable(void **state) {
 	assert_non_null(first);
 	sleep(3);
 	markOrdersAsFailedForUnreachableStations();
+	assert_null(first);
+}
+
+static void testRemoveFirstStationAsDone(void **state) {
+	(void) state; /*unused*/
+	defineProductionStationForOrder(1,1);
+	defineProductionStationForOrder(2,2);
+	defineProductionStationForOrder(3,3);
+	markOrderAsDone(1);
+	assert_true(first->stationID==2);
+	markOrderAsDone(2);
+	assert_true(first->stationID==3);
+	markOrderAsDone(3);
+	assert_null(first);
+	defineProductionStationForOrder(1,1);
+	assert_true(first->stationID==1);
+	markOrderAsDone(1);
+	assert_null(first);
+}
+
+static void testRemoveFirstStationAsUnreachable(void **state) {
+	(void) state; /*unused*/
+	defineProductionStationForOrder(1,1);
+	defineProductionStationForOrder(2,2);
+	defineProductionStationForOrder(3,3);
+	sleep(5);
+	heartBeatProductionStation(2);
+    heartBeatProductionStation(3);
+	markOrdersAsFailedForUnreachableStations();
+	assert_true(first->stationID==2);
+	markOrderAsDone(3);
+	markOrderAsDone(2);
 	assert_null(first);
 }
 
@@ -68,18 +102,12 @@ static void testAddAndRemoveThreeStationsAsDone(void **state) {
 	assert_null(first);
 }
 
-/* A test case that adds and removes a station. */ 
-static void test3(void **state) {
+static void testRemoveSecondStationAsDoneWithSuccessor(void **state) {
 	(void) state; /*unused*/
 	defineProductionStationForOrder(1,1);
 	defineProductionStationForOrder(2,2);
 	defineProductionStationForOrder(3,3);
-	printf("TestFirst=1:%d\n",first->stationID);
-	printf("TestSecond=2:%d\n",first->next->stationID);
-	printf("TestThird=3:%d\n",first->next->next->stationID);
 	markOrderAsDone(2);
-	printf("TestFirst==1:%d\n",first->stationID);
-	printf("TestSecond==3:%d\n",first->next->stationID);
 	assert_true(first->stationID==1);
 	assert_true(first->next->stationID==3);
 	//clean up 
@@ -87,9 +115,8 @@ static void test3(void **state) {
 	markOrderAsDone(3);
 	assert_null(first);
 }
-
-/* A test case that adds and removes a station. */ 
-static void testRemoveSecondStationAsUnreachable(void **state) {
+ 
+static void testRemoveSecondStationAsUnreachableWithSuccessor(void **state) {
 	(void) state; /*unused*/
 	defineProductionStationForOrder(1,1);
 	defineProductionStationForOrder(2,2);
@@ -111,8 +138,38 @@ static void testRemoveSecondStationAsUnreachable(void **state) {
 	assert_null(first);
 }
 
+static void testRemoveSecondStationAsDoneWithoutSuccessor(void **state) {
+	(void) state; /*unused*/
+	defineProductionStationForOrder(1,1);
+	defineProductionStationForOrder(2,2);
+	markOrderAsDone(2);
+	assert_true(first->stationID==1);
+	assert_null(first->next);
+	//clean up 
+	markOrderAsDone(1);
+	assert_null(first);
+}
+ 
+static void testRemoveSecondStationAsUnreachableWithoutSuccessor(void **state) {
+	(void) state; /*unused*/
+	defineProductionStationForOrder(1,1);
+	defineProductionStationForOrder(2,2);
+	sleep(2);
+	markOrdersAsFailedForUnreachableStations();
+	assert_true(first->stationID==1);
+	assert_true(first->next->stationID==2);
+	sleep(4);
+	heartBeatProductionStation(1);
+	markOrdersAsFailedForUnreachableStations();
+	assert_true(first->stationID==1);
+    assert_null(first->next);
+	//clean up 
+	markOrderAsDone(1);
+	assert_null(first);
+}
+
 /* A test case that adds and removes a station. */ 
-static void test6(void **state) {
+static void testRemoveAllStationsAsUnreachable(void **state) {
 	(void) state; /*unused*/
 	defineProductionStationForOrder(1,1);
 	defineProductionStationForOrder(2,2);
@@ -123,12 +180,17 @@ static void test6(void **state) {
 }
 
 /* A test case that adds and removes a station. */ 
-static void test7(void **state) {
+static void testDoneForEmptyList(void **state) {
 	(void) state; /*unused*/
 	assert_true(markOrderAsDone(1)==-1);
 }
 
 /* A test case that adds and removes a station. */ 
+static void testHeartBeatForEmptyList(void **state) {
+        (void) state; /*unused*/
+        assert_true(heartBeatProductionStation(1)==-1);
+}
+
 static void test9(void **state) {
 	(void) state; /*unused*/
 	defineProductionStationForOrder(1,1);
@@ -136,22 +198,20 @@ static void test9(void **state) {
 	assert_true(markOrderAsDone(3)==-1);
 }
 
-/* A test case that adds and removes a station. */ 
-static void test8(void **state) {
-	(void) state; /*unused*/
-	assert_true(heartBeatProductionStation(1)==-1);
-}
-
 int main(void) {
 	const struct CMUnitTest tests[] = { 
     cmocka_unit_test(testAddAndRemoveOneStationAsDone),    
-	cmocka_unit_test(testAddAndRemoveThreeStationsAsDone),
 	cmocka_unit_test(testAndRemoveOneStationAsUnreachable),
-	cmocka_unit_test(test3),
-	cmocka_unit_test(testRemoveSecondStationAsUnreachable),
-	cmocka_unit_test(test6),
-	cmocka_unit_test(test7),
-	cmocka_unit_test(test8),
+    cmocka_unit_test(testRemoveFirstStationAsDone),
+    cmocka_unit_test(testRemoveFirstStationAsUnreachable),
+	cmocka_unit_test(testRemoveSecondStationAsDoneWithSuccessor),
+	cmocka_unit_test(testRemoveSecondStationAsUnreachableWithSuccessor),
+	cmocka_unit_test(testRemoveSecondStationAsDoneWithoutSuccessor),
+	cmocka_unit_test(testRemoveSecondStationAsUnreachableWithoutSuccessor),        
+    cmocka_unit_test(testAddAndRemoveThreeStationsAsDone),
+	cmocka_unit_test(testRemoveAllStationsAsUnreachable),
+	cmocka_unit_test(testDoneForEmptyList),
+	cmocka_unit_test(testHeartBeatForEmptyList),
 	cmocka_unit_test(test9),
 	};
 	return cmocka_run_group_tests(tests, NULL, NULL);
