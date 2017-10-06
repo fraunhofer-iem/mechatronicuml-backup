@@ -93,6 +93,17 @@ static void test5(void **state) {
 	assert_null(first);
 }
 
+/* A test case that adds and removes a station. */ 
+static void test6(void **state) {
+	(void) state; /*unused*/
+	defineProductionStationForOrder(1,1);
+	defineProductionStationForOrder(2,2);
+	defineProductionStationForOrder(3,3);
+	sleep(6);
+	markOrdersAsFailedForUnreachableStations();
+	assert_null(first);
+}
+
 int main(void) {
 	const struct CMUnitTest tests[] = { 
 	cmocka_unit_test(test1),
@@ -100,6 +111,7 @@ int main(void) {
 	cmocka_unit_test(test3),
 	cmocka_unit_test(test4),
 	cmocka_unit_test(test5),
+	cmocka_unit_test(test6),
 	};
 	return cmocka_run_group_tests(tests, NULL, NULL);
 }
