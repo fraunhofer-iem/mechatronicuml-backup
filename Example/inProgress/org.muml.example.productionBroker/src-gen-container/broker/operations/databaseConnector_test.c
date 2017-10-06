@@ -70,6 +70,28 @@ static void test4(void **state) {
 	markOrdersAsFailedForUnreachableStations();
 	assert_null(first);
 }
+/* A test case that adds and removes a station. */ 
+static void test5(void **state) {
+	(void) state; /*unused*/
+	defineProductionStationForOrder(1,1);
+	defineProductionStationForOrder(2,2);
+	defineProductionStationForOrder(3,3);
+	sleep(2);
+	markOrdersAsFailedForUnreachableStations();
+	assert_true(first->stationID==1);
+	assert_true(first->next->stationID==2);
+	assert_true(first->next->next->stationID==3);
+	sleep(4);
+	heartBeatProductionStation(1);
+	heartBeatProductionStation(3);
+	markOrdersAsFailedForUnreachableStations();
+	assert_true(first->stationID==1);
+	assert_true(first->next->stationID==3);
+	//clean up 
+	markOrderAsDone(1);
+	markOrderAsDone(3);
+	assert_null(first);
+}
 
 int main(void) {
 	const struct CMUnitTest tests[] = { 
@@ -77,6 +99,7 @@ int main(void) {
 	cmocka_unit_test(test2),
 	cmocka_unit_test(test3),
 	cmocka_unit_test(test4),
+	cmocka_unit_test(test5),
 	};
 	return cmocka_run_group_tests(tests, NULL, NULL);
 }
