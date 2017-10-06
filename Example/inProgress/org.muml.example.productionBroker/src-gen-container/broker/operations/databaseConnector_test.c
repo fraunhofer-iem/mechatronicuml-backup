@@ -208,6 +208,39 @@ static void testRemoveMiddleStationAsUnreachable(void **state) {
 	assert_null(first);
 }
 
+static void testRemoveLastStationAsDone(void **state) {
+	(void) state; /*unused*/
+	defineProductionStationForOrder(1,1);
+	defineProductionStationForOrder(2,2);
+    defineProductionStationForOrder(3,3);
+	markOrderAsDone(3);
+	assert_true(first->stationID==1);
+	assert_true(first->next->stationID==2);
+    assert_null(first->next->next);
+	//clean up 
+	markOrderAsDone(1);
+    markOrderAsDone(2);
+	assert_null(first);
+}
+ 
+static void testRemoveLastStationAsUnreachable(void **state) {
+	(void) state; /*unused*/
+	defineProductionStationForOrder(1,1);
+	defineProductionStationForOrder(2,2);
+    defineProductionStationForOrder(3,3);
+	sleep(5);
+	heartBeatProductionStation(1);
+    heartBeatProductionStation(2);
+	markOrdersAsFailedForUnreachableStations();
+	assert_true(first->stationID==1);
+	assert_true(first->next->stationID==2);
+    assert_null(first->next->next);
+	//clean up 
+	markOrderAsDone(1);
+    markOrderAsDone(2);
+	assert_null(first);
+}
+
 /* A test case that adds and removes a station. */ 
 static void testRemoveAllStationsAsUnreachable(void **state) {
 	(void) state; /*unused*/
@@ -250,7 +283,9 @@ int main(void) {
 	cmocka_unit_test(testRemoveSecondStationAsUnreachableWithoutSuccessor),        
     cmocka_unit_test(testAddAndRemoveThreeStationsAsDone),
     cmocka_unit_test(testRemoveMiddleStationAsDone),
-    cmocka_unit_test(testRemoveMiddleStationAsUnreachable),    
+    cmocka_unit_test(testRemoveMiddleStationAsUnreachable), 
+    cmocka_unit_test(testRemoveLastStationAsDone),
+    cmocka_unit_test(testRemoveLastStationAsUnreachable),          
 	cmocka_unit_test(testRemoveAllStationsAsUnreachable),
 	cmocka_unit_test(testDoneForEmptyList),
 	cmocka_unit_test(testHeartBeatForEmptyList),
