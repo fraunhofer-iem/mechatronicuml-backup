@@ -9,7 +9,7 @@
 #include "cJSON.h"
 #include <time.h>
 #include "clock.h"
-
+#include "databaseConnector.h"
 
 int insertOrder(int orderId, int ingredientID, int amount, int timeout);
 int defineProductionStationForOrder(int orderID, int productionStationID);
@@ -19,13 +19,6 @@ int searchOrder(int searchingPS, int producibleIngredients);
 int markOrderAsDone(int orderID);
 int heartBeatProductionStation(int productionStationID);
 int markOrdersAsFailedForUnreachableStations();
-
-typedef struct producingStation {
-	int stationID;
-	int orderID;
-	u_int64_t lastSeen;
-	struct producingStation *next;
-} node;
 
 CURL *curl;
 char *url;

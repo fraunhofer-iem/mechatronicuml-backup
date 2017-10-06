@@ -3,7 +3,7 @@
 #include <setjmp.h>
 #include <cmocka.h>
 #include <unistd.h>
-#include "databaseConnector.c"
+#include "databaseConnector.h"
 
 /* A test case that tests if three production stations are added in the right sequent */ 
 static void test1(void **state) {
