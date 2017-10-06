@@ -313,6 +313,7 @@ static void testDoneForEmptyList(void **state) {
 static void testHeartBeatForEmptyList(void **state) {
         (void) state; /*unused*/
         assert_true(heartBeatProductionStation(1)==-1);
+	assert_null(first);
 }
 
 static void testDoneWithoutProducingStationWithTheRightID(void **state) {
@@ -320,6 +321,9 @@ static void testDoneWithoutProducingStationWithTheRightID(void **state) {
 	defineProductionStationForOrder(1,1);
 	defineProductionStationForOrder(2,2);
 	assert_true(markOrderAsDone(3)==-1);
+	markOrderAsDone(1);
+	markOrderAsDone(2);
+	assert_null(first);
 }
 
 int main(void) {

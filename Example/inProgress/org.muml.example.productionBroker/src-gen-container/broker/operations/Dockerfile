@@ -24,4 +24,5 @@ RUN cmake .. && make
 
 #ENTRYPOINT ["/usr/bin/entrypoint.sh"]
 
+#CMD valgrind --tool=memcheck --leak-check=full ./databaseConnector_test
 CMD ./databaseConnector_test
