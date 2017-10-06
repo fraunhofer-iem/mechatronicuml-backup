@@ -5,8 +5,28 @@
 #include <unistd.h>
 #include "databaseConnector.h"
 
+/* A test case that adds and removes a station. */ 
+static void testAddAndRemoveOneStationAsDone(void **state) {
+	(void) state; /*unused*/
+	defineProductionStationForOrder(1,1);
+	markOrderAsDone(1);
+	assert_null(first);
+}
+
+static void testAndRemoveOneStationAsUnreachable(void **state) {
+	(void) state;
+	defineProductionStationForOrder(1,1);
+	heartBeatProductionStation(1);
+	sleep(3);
+	markOrdersAsFailedForUnreachableStations();
+	assert_non_null(first);
+	sleep(3);
+	markOrdersAsFailedForUnreachableStations();
+	assert_null(first);
+}
+
 /* A test case that tests if three production stations are added in the right sequent */ 
-static void test1(void **state) {
+static void testAddAndRemoveThreeStationsAsDone(void **state) {
 	(void) state; /*unused*/
 	defineProductionStationForOrder(1,1);
 	defineProductionStationForOrder(2,2);
@@ -26,15 +46,6 @@ static void test1(void **state) {
 	assert_null(first);
 	defineProductionStationForOrder(1,1);
 	assert_true(first->stationID==1);
-	markOrderAsDone(1);
-	assert_null(first);
-}
-
-
-/* A test case that adds and removes a station. */ 
-static void test2(void **state) {
-	(void) state; /*unused*/
-	defineProductionStationForOrder(1,1);
 	markOrderAsDone(1);
 	assert_null(first);
 }
@@ -59,17 +70,6 @@ static void test3(void **state) {
 	assert_null(first);
 }
 
-static void test4(void **state) {
-	(void) state;
-	defineProductionStationForOrder(1,1);
-	heartBeatProductionStation(1);
-	sleep(3);
-	markOrdersAsFailedForUnreachableStations();
-	assert_non_null(first);
-	sleep(3);
-	markOrdersAsFailedForUnreachableStations();
-	assert_null(first);
-}
 /* A test case that adds and removes a station. */ 
 static void test5(void **state) {
 	(void) state; /*unused*/
@@ -118,10 +118,10 @@ static void test8(void **state) {
 
 int main(void) {
 	const struct CMUnitTest tests[] = { 
-	cmocka_unit_test(test1),
-	cmocka_unit_test(test2),
+    cmocka_unit_test(testAddAndRemoveOneStationAsDone),    
+	cmocka_unit_test(testAddAndRemoveThreeStationsAsDone),
+	cmocka_unit_test(testAndRemoveOneStationAsUnreachable),
 	cmocka_unit_test(test3),
-	cmocka_unit_test(test4),
 	cmocka_unit_test(test5),
 	cmocka_unit_test(test6),
 	cmocka_unit_test(test7),
