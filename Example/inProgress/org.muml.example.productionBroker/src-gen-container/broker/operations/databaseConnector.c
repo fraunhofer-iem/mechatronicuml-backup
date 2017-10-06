@@ -246,53 +246,33 @@ int markOrderAsDone(int orderID)
 	postToDatabaseServer("order/done", cJSON_Print(order));
 	int removedStationId=-1;
 	//Find producing station in list and remove it
-	if (first == NULL)
-	{
-		printf("Error: Order done without producing station\n");
-		return -1;
-		//exit(1);
-	}
-	//Remove first item from the list if that's the station that's done
-	if (first->orderID == orderID)
-	{
-		struct producingStation *next_node = first->next;
-		removedStationId=first->stationID; 
-		free(first);
-		first=NULL;
-		if(first!=NULL) {
-			printf("first still alive");
-			return -1;
-		}
-		if(next_node!=NULL){
-		 	first = next_node;
-		}
-		 printf("\n1stCase: Successfully removed done station:%d\n",removedStationId);
-		 return 0;
-	}
-	struct producingStation *currentStation=first;
-	if(currentStation->next==NULL){
-		printf("Error: Order done without producing station\n");
-		return -1;
-		//exit(1);
-	}
-
 	
-	struct producingStation *prevStation=first;
-	while (prevStation->next->orderID != orderID)	{
-		if (prevStation->next != NULL)	{
-			prevStation = prevStation->next;
-		} else {
-			printf("Error: Order failed without producing station");
-			exit(1);
+	struct producingStation *prevStation=NULL;
+	struct producingStation *matchedStation = first;
+	while (matchedStation!=NULL) {
+		if(matchedStation->orderID==orderID) {
+			break;
 		}
+		prevStation= matchedStation;
+		matchedStation= matchedStation->next;
 	}
-	struct producingStation* stationToRemove = prevStation -> next;
-	removedStationId=stationToRemove->stationID;
-	prevStation -> next = stationToRemove -> next;
-	free(stationToRemove);
-	stationToRemove=NULL;
+	if(matchedStation !=NULL) {
+
+		removedStationId=matchedStation->stationID;
+		if(prevStation!=NULL)
+		{
+			prevStation -> next = matchedStation -> next;
+		}
+		if(matchedStation == first)
+		{
+			first = matchedStation->next;
+		}
+		free(matchedStation);
+		matchedStation=NULL;
+		return 0;
+	}
 	printf("2ndCase: Successfully removed done station:%d\n",removedStationId);
-	return 0;
+	return -1;
 }
 
 /**

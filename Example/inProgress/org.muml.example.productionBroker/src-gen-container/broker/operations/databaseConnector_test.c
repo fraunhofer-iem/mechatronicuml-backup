@@ -129,6 +129,14 @@ static void test7(void **state) {
 }
 
 /* A test case that adds and removes a station. */ 
+static void test9(void **state) {
+	(void) state; /*unused*/
+	defineProductionStationForOrder(1,1);
+	defineProductionStationForOrder(2,2);
+	assert_true(markOrderAsDone(3)==-1);
+}
+
+/* A test case that adds and removes a station. */ 
 static void test8(void **state) {
 	(void) state; /*unused*/
 	assert_true(heartBeatProductionStation(1)==-1);
@@ -144,6 +152,7 @@ int main(void) {
 	cmocka_unit_test(test6),
 	cmocka_unit_test(test7),
 	cmocka_unit_test(test8),
+	cmocka_unit_test(test9),
 	};
 	return cmocka_run_group_tests(tests, NULL, NULL);
 }
