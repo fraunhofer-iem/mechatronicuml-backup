@@ -1,14 +1,11 @@
-FROM dds
+FROM debian:sid-slim
 
 ENV CMOCKA cmocka-1.0.1
 
-RUN apt-get update \
-	&& apt-get install -y wget \
-	cmake \
-	gcovr \
-	scons \
-	curl \
-	&& rm -rf /car/lib/apt/lists/*
+RUN  apt-get update && apt-get install -y build-essential libcurl4-gnutls-dev curl binutils wget cmake pkg-config valgrind gcovr scons\
+  && groupadd -r app && useradd -r -m -g app app \
+  && apt-get autoremove -y && apt-get clean \
+  && rm -rf /var/lib/apt/lists/*
 
 RUN wget https://cmocka.org/files/1.0/${CMOCKA}.tar.xz && \
 	tar -xf ${CMOCKA}.tar.xz && cd ${CMOCKA} && \
