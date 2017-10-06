@@ -249,7 +249,8 @@ int markOrderAsDone(int orderID)
 	if (first == NULL)
 	{
 		printf("Error: Order done without producing station\n");
-		exit(1);
+		return -1;
+		//exit(1);
 	}
 	//Remove first item from the list if that's the station that's done
 	if (first->orderID == orderID)
@@ -271,7 +272,8 @@ int markOrderAsDone(int orderID)
 	struct producingStation *currentStation=first;
 	if(currentStation->next==NULL){
 		printf("Error: Order done without producing station\n");
-		exit(1);
+		return -1;
+		//exit(1);
 	}
 
 	
@@ -355,6 +357,7 @@ int heartBeatProductionStation(int productionStationID)
 	if (first == NULL)
 	{
 		printf("Error: Heart beat without producing station. (No list)\n");
+		return  -1;
 		//exit(1);
 	}
 	else	{
@@ -370,7 +373,8 @@ int heartBeatProductionStation(int productionStationID)
 			currentStation = currentStation->next;
 		} else{
 			printf("Error: Heart beat without producing station. (No matching element)\n");
-			exit(1);
+			return -1;
+			//exit(1);
 		}
 	}
 	clock_gettime(CLOCK_REALTIME,&spec);

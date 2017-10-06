@@ -104,6 +104,18 @@ static void test6(void **state) {
 	assert_null(first);
 }
 
+/* A test case that adds and removes a station. */ 
+static void test7(void **state) {
+	(void) state; /*unused*/
+	assert_true(markOrderAsDone(1)==-1);
+}
+
+/* A test case that adds and removes a station. */ 
+static void test8(void **state) {
+	(void) state; /*unused*/
+	assert_true(heartBeatProductionStation(1)==-1);
+}
+
 int main(void) {
 	const struct CMUnitTest tests[] = { 
 	cmocka_unit_test(test1),
@@ -112,6 +124,8 @@ int main(void) {
 	cmocka_unit_test(test4),
 	cmocka_unit_test(test5),
 	cmocka_unit_test(test6),
+	cmocka_unit_test(test7),
+	cmocka_unit_test(test8),
 	};
 	return cmocka_run_group_tests(tests, NULL, NULL);
 }
