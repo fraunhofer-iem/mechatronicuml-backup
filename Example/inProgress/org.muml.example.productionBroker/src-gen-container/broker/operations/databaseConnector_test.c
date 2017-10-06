@@ -5,10 +5,28 @@
 #include <unistd.h>
 #include "databaseConnector.h"
 
+/**
+ * Test cases:
+ * 1. Remove first station (With/Without Successors) x (AsDone/AsUnreachable)
+ * 2. Remove second station (With/Without Successors) x (AsDone/AsUnreachable)
+ * 3. Remove station in the middle of a list (AsDone/AsUnreachable)
+ * 4. Remove last station (AsDone/AsUnreachable)
+ * 5. Remove unreachable stations from empty list
+ * 6. Remove unreachable stations for list of only reachable stations
+ * 7. Remove multiple unreachable stations (Station from start/middle/end of list)^2
+ * 
+ * Misuse cases:
+ * I. Heartbeat without producing stations
+ * II. Done order without producing stations
+ *
+*/
+
 /* A test case that adds and removes a station. */ 
 static void testAddAndRemoveOneStationAsDone(void **state) {
 	(void) state; /*unused*/
 	defineProductionStationForOrder(1,1);
+    assert_true(first->stationID==1);
+    assert_true(first->orderID==1);
 	markOrderAsDone(1);
 	assert_null(first);
 }
@@ -71,7 +89,7 @@ static void test3(void **state) {
 }
 
 /* A test case that adds and removes a station. */ 
-static void test5(void **state) {
+static void testRemoveSecondStationAsUnreachable(void **state) {
 	(void) state; /*unused*/
 	defineProductionStationForOrder(1,1);
 	defineProductionStationForOrder(2,2);
@@ -122,7 +140,7 @@ int main(void) {
 	cmocka_unit_test(testAddAndRemoveThreeStationsAsDone),
 	cmocka_unit_test(testAndRemoveOneStationAsUnreachable),
 	cmocka_unit_test(test3),
-	cmocka_unit_test(test5),
+	cmocka_unit_test(testRemoveSecondStationAsUnreachable),
 	cmocka_unit_test(test6),
 	cmocka_unit_test(test7),
 	cmocka_unit_test(test8),
