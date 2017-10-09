@@ -22,7 +22,7 @@
       <import feature="org.muml.psm.feature"/>
 	  <import feature="org.muml.pm.software.feature"/>
 	  <import feature="org.muml.c.adapter.componenttype.feature"/>
-	  <import feature="org.muml.container.codegen.c.feature"/>      
+	  <import feature="org.muml.c.adapter.container.feature"/>      
    </requires>
 
    <plugin
