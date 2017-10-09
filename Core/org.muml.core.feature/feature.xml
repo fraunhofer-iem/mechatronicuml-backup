@@ -1,4 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.muml.core.feature" label="%featureName" provider-name="%providerName" version="1.0.0.qualifier">
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.muml.core.feature"
+      label="%featureName"
+      version="1.0.0.qualifier"
+      provider-name="%providerName">
 
    <description>
       %description
@@ -12,49 +17,153 @@
       %license
    </license>
 
+   <url>
+      <discovery label="GMF-Tooling" url="http://download.eclipse.org/modeling/gmp/gmf-tooling/updates/releases/"/>
+   </url>
+
    <requires>
       <import feature="org.muml.emm.feature" version="0.1.0.qualifier"/>
       <import feature="org.muml.ape.feature"/>
    </requires>
 
-   <plugin download-size="0" id="org.muml.core" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.core.edit" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.core.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.core.edit.properties" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.core.edit.properties"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.core.ui" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.core.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.core.common" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.core.common"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.core.modelinstance.ui" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.core.modelinstance.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.core.preferences" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.core.preferences"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.core.reachanalysis.core" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.core.reachanalysis.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.core.reachanalysis.reachabilitygraph" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.core.reachanalysis.reachabilitygraph"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="de.upb.swt.core" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="de.upb.swt.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="de.upb.swt.core.ui" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="de.upb.swt.core.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="de.upb.swt.core.ui.properties" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="de.upb.swt.core.ui.properties"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.core.export" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.core.export"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.core.ocl" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.core.ocl"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.core.example.ui" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.core.example.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.core.migrator" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.core.migrator"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.core.common.editingdomain" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.core.common.editingdomain"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.core.editor" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.core.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.core.reachanalysis.reachabilitygraph.edit.properties" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.core.reachanalysis.reachabilitygraph.edit.properties"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.core.reachanalysis.reachabilitygraph.edit" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.core.reachanalysis.reachabilitygraph.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
 </feature>
