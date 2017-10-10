@@ -1,19 +1,6 @@
 version: "3"
 
 services:
-  router:
-    image: jwilder/nginx-proxy
-    container_name: router
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - /var/run/docker.sock:/tmp/docker.sock:ro
-      - /var/certs:/etc/nginx/certs
-      - /etc/letsencrypt:/etc/letsencrypt
-    networks:
-      - production
-      
   broker-web:
     image: hub.cs.upb.de/productionbroker/broker-web:development
     container_name: broker-web
@@ -42,7 +29,7 @@ services:
   broker:
     image: broker
     build: 
-        context: org.muml.example.productionBroker/src-gen-container/broker/
+        context: org.muml.example.productionBroker/src-gen-container/broker/operations/
         dockerfile: Dockerfile-integration-test
     container_name: broker
     links:
