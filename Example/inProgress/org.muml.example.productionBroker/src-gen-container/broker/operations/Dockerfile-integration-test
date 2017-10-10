@@ -21,7 +21,7 @@ USER app
 
 ENTRYPOINT ["/usr/bin/entrypoint.sh"]
 
-RUN cmake -P ../CMakeListsIntegration.txt && make  
+RUN cmake .. && make  
 
 CMD ./databaseIntegrationTest
 
