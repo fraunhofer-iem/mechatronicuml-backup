@@ -26,7 +26,7 @@ services:
     networks:
       - production
 
-  broker:
+  broker-integration-test:
     image: broker
     build: 
         context: org.muml.example.productionBroker/src-gen-container/broker/operations/
