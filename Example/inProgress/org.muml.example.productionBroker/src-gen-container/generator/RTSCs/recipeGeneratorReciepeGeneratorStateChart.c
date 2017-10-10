@@ -37,9 +37,9 @@
 			//initialize clocks
 		
 			//initialize variables of the root statechart
-			stateChart->produceIngredientID = 1;
+			stateChart->produceIngredientID = 0;
 		
-			stateChart->amount = 1;
+			stateChart->amount = 3;
 		
 			//initialize port variables of the root statechart
 		
@@ -92,7 +92,7 @@
 			case STATE_RECIPEGENERATORPROVIDEORDERINIT:
 				if (Clock_getTime(
 						stateChart->recipeGeneratorProvideOrderTimeSpanRecipeGeneratorProvideOrderReciepeSenderClock)
-						>= stateChart->speed * 1000.0
+						>= stateChart->speed * 100.0
 		
 						) {
 		
@@ -162,10 +162,9 @@
 		
 					// Transition Effects (incl. clock resets)
 		
-					stateChart->amount = 2;
+					stateChart->amount = 4;
 					if (stateChart->produceIngredientID < 5) {
-						stateChart->produceIngredientID =
-								stateChart->produceIngredientID + 1;
+						stateChart->produceIngredientID = 0;
 		
 					}
 		
@@ -210,7 +209,7 @@
 		
 					// Transition Effects (incl. clock resets)
 		
-					stateChart->amount = 1;
+					stateChart->amount = 3;
 					if (stateChart->produceIngredientID < 5) {
 						stateChart->produceIngredientID =
 								stateChart->produceIngredientID + 1;

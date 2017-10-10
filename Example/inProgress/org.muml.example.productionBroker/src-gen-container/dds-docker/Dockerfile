@@ -2,6 +2,7 @@ FROM debian:sid-slim
 
 ENV VERSION 5.2.3
 ENV NDDSHOME /y/rti_connext_dds-${VERSION}/
+ENV CMOCKA cmocka-1.0.1
 
 ADD http://s3.amazonaws.com/RTI/Bundles/5.2.3/Evaluation/rti_connext_dds-${VERSION}-eval-x64Linux3gcc4.8.2.run /opt/dds/
 

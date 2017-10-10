@@ -548,7 +548,7 @@
 									
 											readerQoS.reliability.kind=DDS_BEST_EFFORT_RELIABILITY_QOS;
 									
-										readerQoS.history.depth=100;
+										readerQoS.history.depth=500;
 											readerQoS.history.kind=DDS_KEEP_LAST_HISTORY_QOS;
 										
 									
@@ -584,7 +584,7 @@
 									
 											readerQoS.reliability.kind=DDS_BEST_EFFORT_RELIABILITY_QOS;
 									
-										readerQoS.history.depth=100;
+										readerQoS.history.depth=500;
 											readerQoS.history.kind=DDS_KEEP_LAST_HISTORY_QOS;
 										
 									

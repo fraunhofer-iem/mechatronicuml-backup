@@ -190,9 +190,12 @@
 		
 					// execute exit actions
 					// nothing to do
-		
+			
 					// Transition Effects (incl. clock resets)
-		
+					
+
+
+
 					databaseOperations_databaseOperationsHeartbeatProductionStation(
 							msg_MessagesHeartbeat.psID);
 					;

@@ -16,7 +16,7 @@
 		
 			stateChart->processedOrderID = -1;
 		
-			stateChart->incomingOrderPsID = stateChart->incomingOrderPsID = 0;
+			stateChart->incomingOrderPsID = -1;
 			;
 		
 			stateChart->ingredientID = -1;
