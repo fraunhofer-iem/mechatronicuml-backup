@@ -14,7 +14,7 @@ RUN wget https://cmocka.org/files/1.0/${CMOCKA}.tar.xz && \
 	cd ../.. && rm -rf cmocka* && ldconfig
 
 ADD . /opt/app
-
+ADD entrypoint.sh /usr/bin/
 
 WORKDIR /opt/app/build
 USER app
