@@ -27,11 +27,11 @@ services:
       - production
 
   broker-integration-test:
-    image: broker
+    image: broker-integration-test
     build: 
         context: org.muml.example.productionBroker/src-gen-container/broker/operations/
         dockerfile: Dockerfile-integration-test
-    container_name: broker
+    container_name: broker-integration-test
     links:
       - broker-web
     environment:
