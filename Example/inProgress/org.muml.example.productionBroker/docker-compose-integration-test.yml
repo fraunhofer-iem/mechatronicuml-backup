@@ -1,0 +1,63 @@
+version: "3"
+
+services:
+  router:
+    image: jwilder/nginx-proxy
+    container_name: router
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - /var/certs:/etc/nginx/certs
+      - /etc/letsencrypt:/etc/letsencrypt
+    networks:
+      - production
+      
+  broker-web:
+    image: hub.cs.upb.de/productionbroker/broker-web:development
+    container_name: broker-web
+    environment:
+      VIRTUAL_HOST: virtual-factory-iem-fraunhofer.cs.upb.de
+    volumes:
+      - ./config/config.js:/opt/productionbroker/server/config.js
+    networks:
+      - production    
+
+  broker-db-service:
+    image: hub.cs.upb.de/productionbroker/broker-db-service:latest
+    restart: always
+    container_name: broker-db-service
+    volumes:
+      - ./broker-db-service:/opt/pbdb/config
+    networks:
+      - production
+    
+  broker-db:
+    image: mongo
+    container_name: broker-db
+    networks:
+      - production
+
+  broker:
+    image: broker
+    build: 
+        context: org.muml.example.productionBroker/src-gen-container/broker/
+        dockerfile: Dockerfile-integration-test
+    container_name: broker
+    links:
+      - broker-web
+    environment:
+      WEB_HOST: broker-db-service
+      WEB_PORT: 3000
+    volumes:
+      - ./db/broker.db:/opt/app/broker.db:rw
+    networks:
+      - production
+
+
+volumes:
+  dbvolume:
+
+networks:
+  production:
