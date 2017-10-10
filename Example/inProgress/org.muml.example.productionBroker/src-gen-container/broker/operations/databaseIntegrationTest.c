@@ -17,7 +17,7 @@
 static void testInsertOrderCanBeFoundOnSearch(void **state) {
 	(void) state; /*unused*/
 	int result = insertOrder(1, 1, 1, 0);
-    assert_true(result);
+    assert_true(result==0);
 	result =  searchOrder(42, 1);
 	assert_true(result==1);
     markOrderAsDone(1);
