@@ -92,7 +92,7 @@
 			case STATE_RECIPEGENERATORPROVIDEORDERINIT:
 				if (Clock_getTime(
 						stateChart->recipeGeneratorProvideOrderTimeSpanRecipeGeneratorProvideOrderReciepeSenderClock)
-						>= stateChart->speed * 100.0
+						>= stateChart->speed * 300.0
 		
 						) {
 		
@@ -211,8 +211,7 @@
 		
 					stateChart->amount = 3;
 					if (stateChart->produceIngredientID < 5) {
-						stateChart->produceIngredientID =
-								stateChart->produceIngredientID + 1;
+						stateChart->produceIngredientID =0;
 		
 					}
 		
