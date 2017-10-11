@@ -40,7 +40,7 @@ static void testAndRemoveOneStationAsUnreachable(void **state) {
 	sleep(3);
 	markOrdersAsFailedForUnreachableStations();
 	assert_non_null(first);
-	sleep(3);
+	sleep(18);
 	markOrdersAsFailedForUnreachableStations();
 	assert_null(first);
 }
@@ -51,6 +51,7 @@ static void testRemoveFirstStationAsDone(void **state) {
 	defineProductionStationForOrder(2,2);
 	defineProductionStationForOrder(3,3);
 	markOrderAsDone(1);
+	printf("first->stationID should be 2 and is: %d",first->stationID);
 	assert_true(first->stationID==2);
 	markOrderAsDone(2);
 	assert_true(first->stationID==3);
@@ -67,7 +68,7 @@ static void testRemoveFirstStationAsUnreachable(void **state) {
 	defineProductionStationForOrder(1,1);
 	defineProductionStationForOrder(2,2);
 	defineProductionStationForOrder(3,3);
-	sleep(5);
+	sleep(20);
 	heartBeatProductionStation(2);
     heartBeatProductionStation(3);
 	markOrdersAsFailedForUnreachableStations();
@@ -126,7 +127,7 @@ static void testRemoveSecondStationAsUnreachableWithSuccessor(void **state) {
 	assert_true(first->stationID==1);
 	assert_true(first->next->stationID==2);
 	assert_true(first->next->next->stationID==3);
-	sleep(4);
+	sleep(19);
 	heartBeatProductionStation(1);
 	heartBeatProductionStation(3);
 	markOrdersAsFailedForUnreachableStations();
@@ -158,7 +159,7 @@ static void testRemoveSecondStationAsUnreachableWithoutSuccessor(void **state) {
 	markOrdersAsFailedForUnreachableStations();
 	assert_true(first->stationID==1);
 	assert_true(first->next->stationID==2);
-	sleep(4);
+	sleep(19);
 	heartBeatProductionStation(1);
 	markOrdersAsFailedForUnreachableStations();
 	assert_true(first->stationID==1);
@@ -192,7 +193,7 @@ static void testRemoveMiddleStationAsUnreachable(void **state) {
 	defineProductionStationForOrder(2,2);
     defineProductionStationForOrder(3,3);
     defineProductionStationForOrder(4,4);
-	sleep(5);
+	sleep(20);
 	heartBeatProductionStation(1);
     heartBeatProductionStation(2);
     heartBeatProductionStation(4);
@@ -228,7 +229,7 @@ static void testRemoveLastStationAsUnreachable(void **state) {
 	defineProductionStationForOrder(1,1);
 	defineProductionStationForOrder(2,2);
     defineProductionStationForOrder(3,3);
-	sleep(5);
+	sleep(20);
 	heartBeatProductionStation(1);
     heartBeatProductionStation(2);
 	markOrdersAsFailedForUnreachableStations();
@@ -246,7 +247,7 @@ static void testRemoveAllStationsAsUnreachable(void **state) {
 	defineProductionStationForOrder(1,1);
 	defineProductionStationForOrder(2,2);
 	defineProductionStationForOrder(3,3);
-	sleep(6);
+	sleep(21);
 	markOrdersAsFailedForUnreachableStations();
 	assert_null(first);
 }
@@ -256,7 +257,7 @@ static void testRemoveFirstStationsAsUnreachable(void **state) {
 	defineProductionStationForOrder(1,1);
 	defineProductionStationForOrder(2,2);
 	defineProductionStationForOrder(3,3);
-	sleep(6);
+	sleep(21);
     heartBeatProductionStation(3);
 	markOrdersAsFailedForUnreachableStations();
     assert_true(first->stationID==3);
@@ -271,7 +272,7 @@ static void testRemoveFirstAndLastStationAsUnreachable(void **state) {
 	defineProductionStationForOrder(1,1);
 	defineProductionStationForOrder(2,2);
 	defineProductionStationForOrder(3,3);
-	sleep(6);
+	sleep(21);
     heartBeatProductionStation(2);
 	markOrdersAsFailedForUnreachableStations();
     assert_true(first->stationID==2);
@@ -286,7 +287,7 @@ static void testRemoveLastStationsAsUnreachable(void **state) {
 	defineProductionStationForOrder(1,1);
 	defineProductionStationForOrder(2,2);
 	defineProductionStationForOrder(3,3);
-	sleep(6);
+	sleep(21);
     heartBeatProductionStation(1);
 	markOrdersAsFailedForUnreachableStations();
     assert_true(first->stationID==1);
@@ -307,6 +308,7 @@ static void testRemoveUnreachableStationsForEmptyList(void **state) {
 static void testDoneForEmptyList(void **state) {
 	(void) state; /*unused*/
 	assert_true(markOrderAsDone(1)==-1);
+	assert_null(first);
 }
 
 /* A test case that adds and removes a station. */ 

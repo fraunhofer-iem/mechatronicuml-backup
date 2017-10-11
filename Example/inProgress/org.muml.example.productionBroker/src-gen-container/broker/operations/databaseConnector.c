@@ -370,7 +370,7 @@ int heartBeatProductionStation(int productionStationID)
  */
 int markOrdersAsFailedForUnreachableStations(){
 	//Only traverse list if there is a list
-	u_int64_t TIMEOUTVALUE=5000;
+	u_int64_t TIMEOUTVALUE=20000;
 	int removedStationId=-1;
 	printf("Checking for unreachable stations\n");
 	if (first != NULL)
