@@ -193,7 +193,6 @@ int insertOrder(int orderID, int ingredientID, int amount, int timeout)
 int defineProductionStationForOrder(int orderID, int productionStationID)
 {
 	struct timespec spec;
-//	Clock aClock;
 	cJSON *request = cJSON_CreateObject();
 	cJSON_AddNumberToObject(request, "orderID", orderID);
 	cJSON_AddNumberToObject(request, "productionStationID", productionStationID);
@@ -205,12 +204,10 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 		first = malloc(sizeof(node));
 		first->orderID = orderID;
 		first->stationID = productionStationID;
-//		clock_reset(aClock);
 		clock_gettime(CLOCK_REALTIME,&spec);
-		//first->lastSeen = clock_getTime(aClock);
 		first->lastSeen= spec.tv_sec*1000+(spec.tv_nsec/1.0e6);
 		first->next = NULL;
-		printf("Inserted as first%d\n",productionStationID);
+		printf("Inserted as first, productionStationID=%d\n",productionStationID);
 	}else
 	{
 		struct producingStation *endOfList=first;
@@ -226,7 +223,7 @@ int defineProductionStationForOrder(int orderID, int productionStationID)
 		newElement->lastSeen= spec.tv_sec*1000+(spec.tv_nsec/1.0e6);
 		newElement->next = NULL;
  		endOfList->next=newElement;
-		printf("Inserted as last%d\n",productionStationID);
+		printf("Inserted as last, productionStationID=%d\n",productionStationID);
 
 	}
 
@@ -269,9 +266,10 @@ int markOrderAsDone(int orderID)
 		}
 		free(matchedStation);
 		matchedStation=NULL;
+        printf("Successfully removed done station:%d\n",removedStationId);
 		return 0;
 	}
-	printf("2ndCase: Successfully removed done station:%d\n",removedStationId);
+    printf("Problem removing done station:%d\n",removedStationId);
 	return -1;
 }
 
@@ -323,7 +321,10 @@ int searchOrder(int searchingPS, int producibleIngredients)
 	strncat(stringEndpointAndInfo, str, NO_OF_CHARS_FOR_INT);
 	strncat(stringEndpointAndInfo, "]", sizeof("]"));
 	int orderID = getFromDatabaseServer(stringEndpointAndInfo, sizeOfEndpointAndInfo);
-	printf("Found order %d.\n", orderID);
+    if(orderID<0)
+        printf("No order found");
+    else
+	    printf("Found order %d.\n", orderID);
 	return orderID;
 }
 
@@ -380,13 +381,10 @@ int markOrdersAsFailedForUnreachableStations(){
 		struct producingStation *currentStation=first;
 		while(currentStation != NULL){
 			printf("Check Station:%d\n",currentStation->stationID);
-			printf("Last Seen:%ld\n",currentStation->lastSeen);
-		//	printf("DiffTime:%f",difftime(time(NULL),currentStation->lastSeen));
 			struct timespec spec;
 			u_int64_t aTimeStamp;
 			clock_gettime(CLOCK_REALTIME,&spec);
 			aTimeStamp = spec.tv_sec*1000+(spec.tv_nsec/1.0e6);
-			printf("DiffTime:%ld\n",aTimeStamp-currentStation->lastSeen);
 			if (aTimeStamp-currentStation->lastSeen >= TIMEOUTVALUE){
 				printf("We found an unreachable station.\n");
 				//We found a station that failed

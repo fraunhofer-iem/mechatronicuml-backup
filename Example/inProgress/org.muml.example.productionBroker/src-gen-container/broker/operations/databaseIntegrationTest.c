@@ -16,11 +16,15 @@
 /* A test case that adds and removes a station. */ 
 static void testInsertOrderCanBeFoundOnSearch(void **state) {
 	(void) state; /*unused*/
-	int result = insertOrder(1, 1, 1, 0);
+	int result = insertOrder(1, 2, 3, 0);
     assert_true(result==0);
-	result =  searchOrder(42, 1);
+    sleep(1);
+	result =  searchOrder(42, 2);
 	assert_true(result==1);
-    markOrderAsDone(1);
+    result =  defineProductionStationForOrder(42, 1);
+	assert_true(result==0);
+    result = markOrderAsDone(1);
+    assert_true(result==0);
 }
 
 static void testSearchOrderReturnsNegativeValueForNoOrders(void **state) {
