@@ -12,7 +12,7 @@
 		
 			stateChart->currentOrderID = 0;
 		
-			stateChart->speed = 2;
+			stateChart->speed = 10;
 		
 			stateChart->currentStateOfRecipeGeneratorProvideOrderReciepeSender =
 					STATE_RECIPEGENERATORPROVIDEORDERINIT;
@@ -92,7 +92,7 @@
 			case STATE_RECIPEGENERATORPROVIDEORDERINIT:
 				if (Clock_getTime(
 						stateChart->recipeGeneratorProvideOrderTimeSpanRecipeGeneratorProvideOrderReciepeSenderClock)
-						>= stateChart->speed * 300.0
+						>= stateChart->speed * 100.0
 		
 						) {
 		
