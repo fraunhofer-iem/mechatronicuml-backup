@@ -19,8 +19,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.acceleo.engine;bundle-version="3.3.0",
  com.google.guava,
  org.muml.psm,
- org.muml.codegen.componenttype.c,
- org.muml.container.codegen.c,
+ org.muml.c.adapter.componenttype,
+ org.muml.c.adapter.container,
  org.muml.psm.api.apimappinglanguage.xtext,
  org.muml.psm.api.apimappinglanguage.xtext.ui
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
