@@ -1,0 +1,94 @@
+transformation InstantiationTransformation(inout input : ComponentPackage);
+
+modeltype PimPackage uses pim('http://www.muml.org/pim/1.0.0');
+modeltype ConnectorPackage uses pim::connector('http://www.muml.org/pim/1.0.0');
+modeltype ComponentPackage uses pim::component('http://www.muml.org/pim/1.0.0');
+modeltype ProtocolPackage uses pim::protocol('http://www.muml.org/pim/1.0.0');
+
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+main() {
+	input.rootObjects()[ComponentPart]->forEach(part) {
+		// IMPORTANT: Before replacing existing portParts, make sure that those portParts
+		// that will be removed after the replacement are also removed from the resource.
+		// See MUML #564
+		if(not part.componentType.oclIsUndefined()) then{
+			part.portParts->forEach(portPart) {
+				-- only delete those port parts whose port type is not contained in the current component type (see #591)
+				if (part.componentType.ports ->excludes(portPart.portType)) then {
+					// also remove from coordination protocol part
+					part.parentComponent.coordinationProtocolParts->forEach(c) {
+						c.portParts := c.portParts->excluding(portPart); 
+					};
+					
+					// Remove all its connectors
+					var connectors : Set(Connector) := portPart.connectors;
+					connectors->forEach(c) {
+						c.connectorEndpoints := Set { };
+						if (c.oclIsKindOf(PortConnector)) then {
+							part.parentComponent.connectors := part.parentComponent.connectors->excluding(c.oclAsType(PortConnector));
+						} endif;
+					input.removeElement(c);
+					};
+					
+					// remove from resource
+					input.removeElement(portPart);
+				}endif;
+			};
+
+			// Create missing port parts
+			createPortParts(part);
+
+			// Create CoordinationProtocolParts and associate PortParts
+			--part.portParts->select(p | not p.portType[DiscretePort].refinedRole.coordinationProtocol[CoordinationProtocol]->reject(oclIsUndefined())->isEmpty())->forEach(p) {
+			--	var refinedRole := p.portType[DiscretePort].refinedRole->any(true); --cannot be null, because of previous select statement
+			--	
+			--	-- Find all PortParts that are reachable via AssemblyConnectors
+			--	var reachablePortParts := p->closure(p.connectors[AssemblyConnector].portParts->reject(p)->any(true));
+			--	
+			--	-- Find CoordinationProtocolPart that already contains any PortPart that is reachable via AssemblyConnectors.
+			--	var coordinationProtocolPart := part.parentComponent.coordinationProtocolParts->any(c | not c.portParts->intersection(reachablePortParts)->isEmpty());
+			--
+			--	-- Make sure we have one CoordinationProtocolPart to add to; if none was found, create a new one
+			--	if (coordinationProtocolPart = null) then {
+			--		coordinationProtocolPart := new CoordinationProtocolPart(refinedRole.coordinationProtocol.oclAsType(CoordinationProtocol));
+			--		p.componentPart.parentComponent.coordinationProtocolParts += coordinationProtocolPart;
+			--	} endif;
+			--	
+			--	-- Associate this PortPart with the Coordination Protocol Part
+			--	p.coordinationProtocolPart := coordinationProtocolPart;
+			--};
+
+			// Remove stale coordinationProtocolParts
+			-- part.parentComponent.coordinationProtocolParts := part.parentComponent.coordinationProtocolParts->reject(portParts->isEmpty());
+			
+		} endif;
+	};
+}
+
+-- create new port parts for the component part
+helper createPortParts(inout componentPart : ComponentPart) {
+	
+	var componentType : Component := componentPart.componentType;
+	
+	if(componentType.ports->isEmpty()) then{
+	   componentPart.portParts:=OrderedSet{};
+		
+	}endif;
+	componentType.ports -> forEach(port){
+		-- if no port part exists that references this port as its port type, create new port part (see #591)
+		if((componentPart.portParts -> select(p : PortPart | p.portType = port)) -> isEmpty()) then {
+			componentPart.portParts += new PortPart(port);
+		} endif;
+	};
+	
+}
+
+-- instantiate port part that references the given port
+constructor PortPart::PortPart(type : Port) {
+	portType := type;
+}
+
+constructor CoordinationProtocolPart::CoordinationProtocolPart(p : CoordinationProtocol) {
+	coordinationProtocol := p;
+}
