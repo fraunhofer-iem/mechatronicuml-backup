@@ -1,0 +1,37 @@
+import PostReconcileLibrary;
+modeltype GMFGEN uses gmfgen('http://www.eclipse.org/gmf/2009/GenModel');
+
+transformation settings(inout gmfgen : GMFGEN);
+	-- extends transformation common...
+
+-- TODO: call /org.muml.core.common/transformations/settings.qvto
+
+main() {
+	gmfgen.rootObjects()![GenEditorGenerator]->map settings();
+}
+
+mapping inout GenEditorGenerator::settings() {
+	self->map general("component_diagram","Component Diagram Editor");
+	self->map editorSpecific();
+}
+
+
+
+mapping inout GenEditorGenerator::editorSpecific() {
+	var key = 'org.muml.core.common.edit.policies.EditPolicyRoles.BACKGROUND_COLOR_ROLE';
+	var nodes := self.diagram.childNodes[GenNode]->union(self.diagram.topLevelNodes);
+	nodes->forEach(node) {
+		if (node.modelFacet.metaClass.ecoreClass.name = 'ComponentPart' or
+		    	node.modelFacet.metaClass.ecoreClass.name = 'StaticStructuredComponent' or
+		    	node.modelFacet.metaClass.ecoreClass.name = 'StaticAtomicComponent') then {
+			if (node.behaviour[CustomBehaviour]->select(cb | cb.key = key)->isEmpty()) then {
+				node.behaviour += new CustomBehaviour(key, 'org.muml.pim.common.edit.policies.component.ComponentColorEditPolicy');
+			} endif;
+		} endif;
+	};
+}
+
+constructor CustomBehaviour::CustomBehaviour(k : String, editPolicy : String) {
+	key := k;
+	editPolicyQualifiedClassName := editPolicy;
+}

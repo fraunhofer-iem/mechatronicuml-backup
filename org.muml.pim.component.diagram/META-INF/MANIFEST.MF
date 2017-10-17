@@ -1,0 +1,61 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.muml.pim.component.diagram; singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Activator: org.muml.pim.component.diagram.part.ComponentDiagramEditorPlugin
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
+ Heinz Nixdorf Institute,
+ Paderborn University,
+ and Fraunhofer Research Institution for Mechatronic Systems Design IEM,
+ Germany,
+ %providerName
+Bundle-Localization: plugin
+Export-Package: org.muml.pim.component.diagram.edit.commands,
+ org.muml.pim.component.diagram.edit.helpers,
+ org.muml.pim.component.diagram.edit.parts,
+ org.muml.pim.component.diagram.edit.policies,
+ org.muml.pim.component.diagram.parsers,
+ org.muml.pim.component.diagram.part,
+ org.muml.pim.component.diagram.providers
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.jface,
+ org.eclipse.ui.ide,
+ org.eclipse.ui.views,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.ecore.xmi,
+ org.eclipse.emf.edit.ui,
+ org.eclipse.gmf.runtime.emf.core,
+ org.eclipse.gmf.runtime.emf.commands.core,
+ org.eclipse.gmf.runtime.emf.ui.properties,
+ org.eclipse.gmf.runtime.diagram.ui,
+ org.eclipse.gmf.runtime.diagram.ui.properties,
+ org.eclipse.gmf.runtime.diagram.ui.providers,
+ org.eclipse.gmf.runtime.diagram.ui.providers.ide,
+ org.eclipse.gmf.runtime.diagram.ui.render,
+ org.eclipse.gmf.runtime.diagram.ui.resources.editor,
+ org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide,
+ org.eclipse.gmf.tooling.runtime;visibility:=reexport,
+ org.eclipse.draw2d;visibility:=reexport,
+ org.eclipse.gmf.runtime.draw2d.ui;visibility:=reexport,
+ org.muml.core.common;visibility:=reexport,
+ org.muml.pim.common;visibility:=reexport,
+ org.muml.core.modelinstance.ui;visibility:=reexport,
+ org.muml.core.edit.properties;visibility:=reexport,
+ org.muml.pim.edit.properties;visibility:=reexport,
+ org.muml.ape.runtime;visibility:=reexport,
+ org.muml.pim;visibility:=reexport,
+ org.muml.pim.edit;visibility:=reexport,
+ org.muml.core;visibility:=reexport,
+ org.muml.core.edit;visibility:=reexport,
+ org.eclipse.ocl.ecore;visibility:=reexport,
+ org.eclipse.emf.validation;visibility:=reexport,
+ org.eclipse.gef;visibility:=reexport,
+ org.eclipse.emf.ecore.editor;bundle-version="2.10.0",
+ org.muml.core.common.editingdomain;visibility:=reexport,
+ org.eclipse.ocl.pivot;visibility:=reexport,
+ org.eclipse.emf.ecore.edit;visibility:=reexport
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
