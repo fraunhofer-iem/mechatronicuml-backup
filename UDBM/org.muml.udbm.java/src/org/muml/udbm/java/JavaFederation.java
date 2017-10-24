@@ -157,7 +157,18 @@ public class JavaFederation extends Federation {
 	}
 	
 	// SergejJ: Function checks for overloaded Federation if it is a (strict) subset of this Federation
-	public boolean contains(JavaFederation javaFederation, boolean checkStrictSubset){
+	public boolean contains(JavaFederation javaFederation, boolean checkStrictSubset){		
+		if (this.isTrueFederation()){
+			if (checkStrictSubset){
+				if (!javaFederation.isTrueFederation()){
+					return true;
+				}
+			}
+			else {
+				return true;
+			}
+		}
+		
 		// Check first if overloaded Federation is a TrueFederation or a FalseFederation
 		if (checkStrictSubset == true){
 			if (javaFederation.isTrueFederation()){
@@ -439,7 +450,10 @@ public class JavaFederation extends Federation {
 	/*
 	 * A Federation is a TrueFederation, if it only consists of true clock constrains
 	 */
-	public boolean isTrueFederation(){		
+	public boolean isTrueFederation(){	
+		if (this.toString().contains("true")){
+			return true;
+		}
 		Iterator<?> it = (Iterator<?>) this.iteratorOfClockZone();
 		JavaClockZone cz;
 		boolean returnValue = false;
@@ -458,7 +472,10 @@ public class JavaFederation extends Federation {
 	/*
 	 * A Federation is a FalseFederation, if it only consists of false clock constrains
 	 */
-	public boolean isFalseFederation(){		
+	public boolean isFalseFederation(){
+		if (this.toString().contains("false")){
+			return true;
+		}
 		Iterator<?> it = (Iterator<?>) this.iteratorOfClockZone();
 		JavaClockZone cz;
 		boolean returnValue = false;
