@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="MechatronicUML" uid="org.muml.bundle" version="1.1.0.qualifier" useFeatures="true" includeLaunchers="true">
-
+<product name="MechatronicUML Bundle" uid="mumlv1_1" id="org.muml.product" application="org.eclipse.e4.ui.workbench.swt.E4Application" version="1.1" useFeatures="true" includeLaunchers="true">
 
    <configIni use="default">
    </configIni>
@@ -12,94 +11,88 @@
       </vmArgsMac>
    </launcherArgs>
 
-   <windowImages/>
-
-
-   <launcher>
-      <win useIco="false">
-         <bmp/>
-      </win>
-   </launcher>
-
-
-   <vm>
-   </vm>
-
-
    <plugins>
    </plugins>
 
    <features>
-      <feature id="org.muml.pim.feature"/>
-      <feature id="org.muml.pim.feature.source"/>
-      <feature id="org.muml.modelica.adapter.feature"/>
-      <feature id="org.muml.modelica.adapter.feature.source"/>
-      <feature id="org.muml.ape.feature"/>
-      <feature id="org.muml.ape.feature.source"/>
-      <feature id="org.muml.uppaal.feature"/>
-      <feature id="org.muml.uppaal.feature.source"/>
-      <feature id="org.muml.ape.ecore.feature"/>
-      <feature id="org.muml.core.feature"/>
-      <feature id="org.muml.core.feature.source"/>
-      <feature id="org.muml.pm.feature"/>
-      <feature id="org.muml.pm.feature.source"/>
-      <feature id="org.muml.codegen.c.feature"/>
-      <feature id="org.muml.codegen.c.feature.source"/>
-      <feature id="org.muml.verification.core.feature"/>
-      <feature id="org.muml.verification.core.feature.source"/>
-      <feature id="org.muml.uppaal.adapter.feature"/>
-      <feature id="org.muml.uppaal.adapter.feature.source"/>
-      <feature id="org.muml.udbm.feature"/>
-      <feature id="org.muml.udbm.feature.source"/>
-      <feature id="org.muml.graphviz.feature"/>
-      <feature id="org.muml.graphviz.feature.source"/>
-      <feature id="org.muml.reconfiguration.feature"/>
-      <feature id="org.muml.reconfiguration.feature.source"/>
-      <feature id="org.muml.storydiagram.feature"/>
-      <feature id="org.muml.storydiagram.feature.source"/>
-      <feature id="org.muml.psm.feature"/>
-      <feature id="org.muml.psm.feature.source"/>
-      <feature id="org.muml.ape.migrator.feature"/>
-      <feature id="org.muml.emm.feature"/>
-      <feature id="org.muml.emm.feature.source"/>
-      <feature id="org.muml.external.aopalliance.feature"/>
-      <feature id="org.muml.external.guava.feature"/>
-      <feature id="org.muml.external.guice.feature"/>
-      <feature id="org.muml.external.guice.multibindings.feature"/>
-      <feature id="org.muml.external.javax.inject.feature"/>
-      <feature id="org.muml.external.opt4j.feature"/>
-      <feature id="org.muml.external.sat4j.core.feature"/>
-      <feature id="org.muml.external.sat4j.pb.feature"/>
-      <feature id="org.muml.implicitcopy.feature"/>
-      <feature id="org.muml.implicitcopy.feature.source"/>
-      <feature id="org.muml.example.coordinationpatternlib.feature"/>
-      <feature id="org.muml.example.blindovertaking.feature"/>
-      <feature id="org.muml.example.coordinatingbebots.feature"/>
-      <feature id="org.muml.example.mini.entryexit.feature"/>
-      <feature id="org.muml.example.mini.messages.feature"/>
-      <feature id="org.muml.example.mini.operations.feature"/>
-      <feature id="org.muml.example.mini.simplertsc.feature"/>
-      <feature id="org.muml.example.mini.syncchannel.feature"/>
-      <feature id="org.muml.example.railcab.feature"/>
-      <feature id="org.muml.example.sectionentry.feature"/>
-      <feature id="org.muml.example.arduinocarhwplatform.feature"/>
-      <feature id="org.muml.example.blinkingled.feature"/>
-      <feature id="org.muml.example.brakebywire.feature"/>
-      <feature id="org.muml.example.cooperatingballplayingrobots.feature"/>
-      <feature id="org.muml.example.mini.syncselectorchannel.feature"/>
-      <feature id="org.muml.example.rocketlauncher.feature"/>
+      <feature id="org.muml.ape.ecore.feature" version="1.0.0.201710161300"/>
+      <feature id="org.muml.ape.feature" version="1.0.0.201710161300"/>
+      <feature id="org.muml.ape.feature.source" version="1.0.0.201710161300"/>
+      <feature id="org.muml.ape.migrator.feature" version="1.0.0.201710161300"/>
+      <feature id="org.muml.c.adapter.componenttype.feature" version="1.1.0.201710161430"/>
+      <feature id="org.muml.c.adapter.componenttype.feature.source" version="1.1.0.201710161430"/>
+      <feature id="org.muml.c.adapter.container.feature" version="1.0.0.201710161437"/>
+      <feature id="org.muml.c.adapter.container.feature.source" version="1.0.0.201710161437"/>
+      <feature id="org.muml.core.feature" version="1.0.0.201710161321"/>
+      <feature id="org.muml.core.feature.source" version="1.0.0.201710161321"/>
+      <feature id="org.muml.eloquent.adapter.muml.feature" version="1.0.0.201710161429"/>
+      <feature id="org.muml.eloquent.adapter.muml.feature.source" version="1.0.0.201710161429"/>
+      <feature id="org.muml.eloquent.feature" version="1.0.0.201709062233"/>
+      <feature id="org.muml.eloquent.feature.source" version="1.0.0.201709062233"/>
+      <feature id="org.muml.emm.feature" version="1.0.0.201710161251"/>
+      <feature id="org.muml.emm.feature.source" version="1.0.0.201710161251"/>
+      <feature id="org.muml.example.arduinocarhwplatform.feature" version="1.0.0.201710171120"/>
+      <feature id="org.muml.example.blindovertaking.feature" version="1.0.0.201710171120"/>
+      <feature id="org.muml.example.blinkingled.feature" version="1.0.0.201710171120"/>
+      <feature id="org.muml.example.brakebywire.feature" version="1.0.0.201710171120"/>
+      <feature id="org.muml.example.cooperatingballplayingrobots.feature" version="1.0.0.201710171120"/>
+      <feature id="org.muml.example.coordinatingbebots.feature" version="1.0.0.201710171120"/>
+      <feature id="org.muml.example.coordinationpatternlib.feature" version="1.0.0.201710171120"/>
+      <feature id="org.muml.example.mini.entryexit.feature" version="1.0.0.201710171120"/>
+      <feature id="org.muml.example.mini.messages.feature" version="1.0.0.201710171120"/>
+      <feature id="org.muml.example.mini.operations.feature" version="1.0.0.201710171120"/>
+      <feature id="org.muml.example.mini.simplertsc.feature" version="1.0.0.201710171120"/>
+      <feature id="org.muml.example.mini.syncchannel.feature" version="1.0.0.201710171120"/>
+      <feature id="org.muml.example.mini.syncselectorchannel.feature" version="1.0.0.201710171120"/>
+      <feature id="org.muml.example.railcab.feature" version="1.0.0.201710171120"/>
+      <feature id="org.muml.example.rocketlauncher.feature" version="1.0.0.201710171120"/>
+      <feature id="org.muml.example.sectionentry.feature" version="1.0.0.201710171120"/>
+      <feature id="org.muml.external.aopalliance.feature" version="1.0.0.201709051156"/>
+      <feature id="org.muml.external.guava.feature" version="1.0.0.201709051156"/>
+      <feature id="org.muml.external.guice.feature" version="1.0.0.201709051156"/>
+      <feature id="org.muml.external.guice.multibindings.feature" version="1.0.0.201709051156"/>
+      <feature id="org.muml.external.javax.inject.feature" version="1.0.0.201709051156"/>
+      <feature id="org.muml.external.jgrapht.feature" version="1.0.0.201709051156"/>
+      <feature id="org.muml.external.opt4j.feature" version="1.0.0.201709051156"/>
+      <feature id="org.muml.external.owlapi.feature" version="1.0.0.201709051156"/>
+      <feature id="org.muml.external.sat4j.core.feature" version="1.0.0.201709051156"/>
+      <feature id="org.muml.external.sat4j.pb.feature" version="1.0.0.201709051156"/>
+      <feature id="org.muml.external.unitontology.feature" version="1.0.0.201709051156"/>
+      <feature id="org.muml.graphviz.feature" version="1.0.0.201710171023"/>
+      <feature id="org.muml.graphviz.feature.source" version="1.0.0.201710171023"/>
+      <feature id="org.muml.implicitcopy.feature" version="1.0.0.201710171104"/>
+      <feature id="org.muml.implicitcopy.feature.source" version="1.0.0.201710171104"/>
+      <feature id="org.muml.modelica.adapter.feature" version="1.0.0.201710171121"/>
+      <feature id="org.muml.modelica.adapter.feature.source" version="1.0.0.201710171121"/>
+      <feature id="org.muml.oclfilter.feature" version="1.0.0.201710161300"/>
+      <feature id="org.muml.oclfilter.feature.source" version="1.0.0.201710161300"/>
+      <feature id="org.muml.pim.feature" version="1.0.0.201710161344"/>
+      <feature id="org.muml.pim.feature.source" version="1.0.0.201710161344"/>
+      <feature id="org.muml.pm.feature" version="1.0.0.201710161409"/>
+      <feature id="org.muml.pm.feature.source" version="1.0.0.201710161409"/>
+      <feature id="org.muml.pm.hardware.feature" version="1.0.0.201710161409"/>
+      <feature id="org.muml.pm.hardware.feature.source" version="1.0.0.201710161409"/>
+      <feature id="org.muml.pm.software.feature" version="1.0.0.201710161409"/>
+      <feature id="org.muml.pm.software.feature.source" version="1.0.0.201710161409"/>
+      <feature id="org.muml.psm.feature" version="1.0.0.201710161423"/>
+      <feature id="org.muml.psm.feature.source" version="1.0.0.201710161423"/>
+      <feature id="org.muml.reconfiguration.feature" version="1.0.0.201710171105"/>
+      <feature id="org.muml.reconfiguration.feature.source" version="1.0.0.201710171105"/>
+      <feature id="org.muml.storydiagram.feature" version="1.0.0.201710161340"/>
+      <feature id="org.muml.storydiagram.feature.source" version="1.0.0.201710161340"/>
+      <feature id="org.muml.udbm.feature" version="1.0.0.201709201105"/>
+      <feature id="org.muml.udbm.feature.source" version="1.0.0.201709201105"/>
+      <feature id="org.muml.uppaal.adapter.feature" version="1.0.0.201710171113"/>
+      <feature id="org.muml.uppaal.adapter.feature.source" version="1.0.0.201710171113"/>
+      <feature id="org.muml.uppaal.feature" version="1.0.0.201710171027"/>
+      <feature id="org.muml.uppaal.feature.source" version="1.0.0.201710171027"/>
+      <feature id="org.muml.verification.core.feature" version="1.0.0.201710171107"/>
+      <feature id="org.muml.verification.core.feature.source" version="1.0.0.201710171107"/>
    </features>
 
 
    <repositories>
       <repository location="http://https://muml-build.cs.upb.de/job/UpdateSite-Maven/lastSuccessfulBuild/artifact/org.muml.releng.site.repository/target/repository/" enabled="true" />
    </repositories>
-
-   <preferencesInfo>
-      <targetfile overwrite="false"/>
-   </preferencesInfo>
-
-   <cssInfo>
-   </cssInfo>
 
 </product>
