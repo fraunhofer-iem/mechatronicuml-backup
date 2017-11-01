@@ -2,7 +2,7 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
-         id="org.muml.bundle"
+         id="product"
          name="MechatronicUML Bundle"
          point="org.eclipse.core.runtime.products">
    </extension>
