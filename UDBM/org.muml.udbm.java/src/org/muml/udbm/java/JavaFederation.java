@@ -89,9 +89,30 @@ public class JavaFederation extends Federation {
 		this.clocks = clocks;
 		
 	}
+	
+	public JavaFederation andWithTrueFederationSupport(JavaFederation fedA, JavaFederation fedB){
+		if (fedA.isTrueFederation()){
+			return fedB;
+		}
+		else {
+			JavaFederation ab = (JavaFederation) fedA.clone();
+			ab.and(fedB);
+			return ab;
+		}
+	}
+	
 
 	@Override
 	public void and(Federation original) {
+		if (this.isTrueFederation() && !((JavaFederation) original).isTrueFederation()){
+			try {
+				throw new Exception("This is a TrueFederation, use andWithTrueFederationSupport-method!");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
 		JavaFederation federation = (JavaFederation) original.clone();
 		
 		// Skip and operation if this federation is empty or false
@@ -508,6 +529,10 @@ public class JavaFederation extends Federation {
 
 	@Override
 	public void subtract(Federation federation) {
+		if (federation == null || federation.isEmpty()){
+			return;
+		}
+		
 		HashSet<ClockZone> clockZonesToRemove = new HashSet<ClockZone>();
 		HashSet<ClockZone> clockZonesToAdd = new HashSet<ClockZone>();
 		for (ClockZone zone1 : this.getClockZone()) {
