@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.muml">
+         <command
+               commandId="org.muml.verification.core.refinement.security.commands.VerifyRefinement"
+               label="Verify Security"
+               style="push">
+            <visibleWhen>
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false">
+		                 <adapt
+		                         type="org.muml.pim.realtimestatechart.RealtimeStatechart">
+		                 </adapt>
+                     </iterate>
+                  </with>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="org.muml"
+            defaultHandler="org.muml.verification.core.refinement.security.commands.VerifySecurity"
+            description="Verify whether behaviour component is secure"
+            id="org.muml.verification.core.refinement.security.commands.VerifyRefinement"
+            name="Verify Security">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <menu
+               id="verifyMenu"
+               label="Verification">
+            <command
+                  commandId="org.muml.verification.core.refinement.security.commands.VerifyRefinement"
+                  label="Security Check"
+                  style="push"
+                  tooltip="Security Refinement Checks">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+</plugin>

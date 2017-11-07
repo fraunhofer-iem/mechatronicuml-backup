@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Verify Refinement Plugin
+Bundle-SymbolicName: org.muml.verification.core.refinement.testautomata;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.muml.verification.core.refinement.testautomata.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.muml.pim,
+ org.muml.pim.realtimestatechart.diagram,
+ org.muml.pim.realtimestatechart.diagram.custom,
+ org.muml.core.modelinstance.ui,
+ org.muml.pim.component.diagram,
+ org.muml.core.reachanalysis.core,
+ org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc,
+ org.muml.verification.core.runtime,
+ org.muml.verification.core.reachanalysis.rtsc,
+ org.eclipse.gmf.runtime.diagram.ui;bundle-version="1.6.0",
+ org.muml.verification.core.actionlanguage.interpreter,
+ org.muml.pim.actionlanguage,
+ org.muml.core.common
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.muml.verification.core.refinement.testautomata,
+ org.muml.verification.core.refinement.testautomata.commands
+Import-Package: org.eclipse.gmf.runtime.diagram.ui.parts,
+ org.eclipse.gmf.runtime.diagram.ui.resources.editor.parts,
+ org.eclipse.m2m.qvt.oml,
+ org.eclipse.ui.views.properties.tabbed
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

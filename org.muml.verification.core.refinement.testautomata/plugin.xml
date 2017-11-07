@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.muml">
+         <command
+               commandId="org.muml.verification.core.refinement.testautomata.verifyRefinement"
+               label="Verify Refinement"
+               style="push">
+            <visibleWhen>
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false">
+                        <or>
+                           <instanceof
+                                 value="org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart">
+                           </instanceof>
+                           <instanceof
+                                 value="org.muml.pim.component.DiscretePort">
+                           </instanceof>
+                        </or>
+                     </iterate>
+                  </with>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="org.muml"
+            defaultHandler="org.muml.verification.core.refinement.testautomata.commands.VerifyRefinement"
+            description="Verify whether behaviour of port is correct refinement of role"
+            id="org.muml.verification.core.refinement.testautomata.verifyRefinement"
+            name="Verify Refinement">
+      </command>
+   </extension>
+
+</plugin>
