@@ -5,6 +5,14 @@
          id="product"
          name="MechatronicUML Bundle"
          point="org.eclipse.core.runtime.products">
+      <product
+            application="org.eclipse.e4.ui.workbench.swt.E4Application"
+            name="MechatronicUML Bundle">
+         <property
+               name="appName"
+               value="MechatronicUML Bundle">
+         </property>
+      </product>
    </extension>
 
 </plugin>
