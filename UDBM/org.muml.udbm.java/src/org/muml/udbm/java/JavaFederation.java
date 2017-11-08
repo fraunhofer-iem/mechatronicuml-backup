@@ -113,6 +113,11 @@ public class JavaFederation extends Federation {
 			}
 		}
 		
+		// ThisFederation = ThisFederation and TrueFederation
+		if (((JavaFederation) original).isTrueFederation()){
+			return;
+		}
+		
 		JavaFederation federation = (JavaFederation) original.clone();
 		
 		// Skip and operation if this federation is empty or false
