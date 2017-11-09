@@ -99,7 +99,7 @@
    </configurations>
 
    <repositories>
-      <repository location="http://https://muml-build.cs.upb.de/job/UpdateSite-Maven/lastSuccessfulBuild/artifact/org.muml.releng.site.repository/target/repository/" enabled="true" />
+      <repository location="https://muml-build.cs.upb.de/job/UpdateSite-Maven/lastSuccessfulBuild/artifact/org.muml.releng.site.repository/target/repository/" enabled="true" />
    </repositories>
 
 </product>
