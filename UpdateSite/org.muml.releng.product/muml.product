@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="MechatronicUML" uid="org.muml.product" id="org.muml.product" application="org.eclipse.ui.ide.workbench" version="1.1" useFeatures="true" includeLaunchers="true">
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
+      </vmArgsMac>
+   </launcherArgs>
+
+   <plugins>
+   </plugins>
+
+   <features>
+      <feature id="org.eclipse.platform"/>
+      <feature id="org.muml.releng.site.feature"/>
+   </features>
+
+   <configurations>
+      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="0" />
+      <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
+   </configurations>
+
+   <repositories>
+      <repository location="http://download.eclipse.org/releases/oxygen/" enabled="true" />
+      <repository location="http://https://muml-build.cs.upb.de/job/UpdateSite-Maven/lastSuccessfulBuild/artifact/org.muml.releng.site.repository/target/repository/" enabled="true" />
+      <repository location="http://download.eclipse.org/eclipse/updates/4.8" enabled="true" />
+   </repositories>
+
+</product>

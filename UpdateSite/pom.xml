@@ -88,7 +88,15 @@
 			</repository>
 		</repositories>		  
         </profile>
+        <profile>
+            <id>product</id>
+            <modules>
+                <module>org.muml.rcp</module>
+                <module>org.muml.releng.product</module>
+            </modules>
+        </profile>
   </profiles>
+    
   
   <repositories>
           <repository>

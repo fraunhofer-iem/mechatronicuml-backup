@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.3"?>
+<plugin>
+       <extension
+         id="product"
+         name="MechatronicUML Product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.eclipse.ui.ide.workbench"
+            name="MechatronicUML">
+         <property
+               name="appName"
+               value="MechatronicUML">
+         </property>
+         <property name="windowImages" value="icons/muml16.png"/> 
+         <property name="aboutImage" value="icons/muml16.png"/>
+      </product>
+   </extension>
+</plugin>
