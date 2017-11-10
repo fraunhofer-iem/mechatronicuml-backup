@@ -4,7 +4,8 @@ Bundle-Name: Acceleo C Module Runtime Plug-in
 Bundle-SymbolicName: org.muml.c.adapter.container;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: org.muml.c.adapter.container.Activator
-Bundle-Vendor: Eclipse Modeling Project
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
+Eclipse-BundleShape: dir
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore,
  org.eclipse.emf.ecore.xmi,
