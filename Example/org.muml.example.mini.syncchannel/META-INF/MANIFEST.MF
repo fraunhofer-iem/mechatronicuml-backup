@@ -6,4 +6,5 @@ Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.muml.core.example.ui,
  org.muml.pim.actionlanguage
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
+Eclipse-BundleShape: dir
 Bundle-ActivationPolicy: lazy

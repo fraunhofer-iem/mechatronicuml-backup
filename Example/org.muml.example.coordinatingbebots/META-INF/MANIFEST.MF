@@ -9,3 +9,4 @@ Require-Bundle: org.muml.core.example.ui,
  org.muml.pim.actionlanguage,
  org.eclipse.core.expressions;bundle-version="3.5.0"
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
+Eclipse-BundleShape: dir
