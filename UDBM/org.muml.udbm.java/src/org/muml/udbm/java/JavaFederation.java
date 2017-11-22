@@ -194,6 +194,11 @@ public class JavaFederation extends Federation {
 				return true;
 			}
 		}
+		else {
+			if (javaFederation.isTrueFederation()){
+				return false;
+			}
+		}
 		
 		// Check first if overloaded Federation is a TrueFederation or a FalseFederation
 		if (checkStrictSubset == true){
@@ -400,6 +405,18 @@ public class JavaFederation extends Federation {
 
 	@Override
 	public boolean equals(Federation federation) {
+		if (!this.isTrueFederation() && ((JavaFederation) federation).isTrueFederation()){
+			return false;
+		}
+		if (!this.isFalseFederation() && ((JavaFederation) federation).isFalseFederation()){
+			return false;
+		}
+		if (this.isTrueFederation() && ((JavaFederation) federation).isTrueFederation()){
+			return true;
+		}
+		if (this.isFalseFederation() && ((JavaFederation) federation).isFalseFederation()){
+			return true;
+		}
 		// iterate all zones of this federation
 		Iterator<?> zoneIter = (Iterator<?>) this.iteratorOfClockZone();
 		while (zoneIter.hasNext()) {
@@ -467,6 +484,18 @@ public class JavaFederation extends Federation {
 		while (it.hasNext()) {
 			cz = (JavaClockZone)it.next();
 			if (!cz.isEmpty()){
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	public boolean isReseted(){
+		Iterator<?> it = (Iterator<?>) this.iteratorOfClockZone();
+		JavaClockZone cz;
+		while (it.hasNext()) {
+			cz = (JavaClockZone)it.next();
+			if (!cz.isReseted(cz)){
 				return false;
 			}
 		}
