@@ -686,31 +686,36 @@ public class JavaClockZone extends ClockZone {
 
 
 	public void and(JavaClockZone otherZone, HashSet<UDBMClock> clocks)
-	{
-		// Skip processing if this JavaClockZone is empty, ...
-		if (this.isEmpty() || this.containsOnlyFalseClockConstraints()){
-			return;
-		}
-		
-		if (otherZone.isEmpty() || otherZone.containsOnlyFalseClockConstraints()){
+	{		
+		if (otherZone.isReseted(otherZone) || otherZone.isEmpty() || otherZone.containsOnlyFalseClockConstraints()){
 			this.applyResets(clocks);
 			return;
 		}
 		
 		this.and(otherZone);
-
 	}
 	
 	public void and(JavaClockZone otherZone)
 	{
+		if (this.isReseted(this) || this.isEmpty() || this.containsOnlyFalseClockConstraints()){
+			return;
+		}
 		Iterator<ClockConstraint> clockConstraintIt = otherZone.iteratorOfClockConstraint();
 		while(clockConstraintIt.hasNext())
 		{
 			ClockConstraint cc = clockConstraintIt.next();
-			//without this check, an empty federation could become larger again by adding constraints
-			if(!isEmpty())
-				this.and(cc);
+			this.and(cc);
 		}
+	}
+	
+	public boolean isReseted(JavaClockZone otherZone){
+		JavaClockZone clonedCZ = (JavaClockZone) otherZone.clone();
+		Iterator<? extends UDBMClock> clockIt = clonedCZ.getFederation().iteratorOfClock();
+		while(clockIt.hasNext()){
+			UDBMClock clock = clockIt.next();
+			clonedCZ.reset(clock);
+		}
+		return clonedCZ.equals(otherZone);
 	}
 	
 	public boolean isEmpty() {
