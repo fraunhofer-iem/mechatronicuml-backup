@@ -5,3 +5,4 @@ Bundle-SymbolicName: org.muml.storydiagram.reachanalysis.sdm.transform
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
  %providerName
+Eclipse-BundleShape: dir

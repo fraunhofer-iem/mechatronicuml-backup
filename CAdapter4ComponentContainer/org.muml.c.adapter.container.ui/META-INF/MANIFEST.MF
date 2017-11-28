@@ -5,6 +5,7 @@ Bundle-SymbolicName: org.muml.c.adapter.container.ui;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: org.muml.c.adapter.container.ui.Activator
 Bundle-Vendor: Eclipse Modeling Project
+Eclipse-BundleShape: dir
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.core.resources,

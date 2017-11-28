@@ -1,8 +1,10 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
+Eclipse-BundleShape: dir
 Bundle-Name: org.muml.pim.runnable.transformation
 Bundle-SymbolicName: org.muml.pim.runnable.transformation;singleton:=true
 Bundle-Version: 1.0.0.qualifier
+Eclipse-BundleShape: dir
 Require-Bundle: org.muml.pim.runnable.transformation.blackbox,
  org.eclipse.core.runtime,
  org.eclipse.m2m.qvt.oml,

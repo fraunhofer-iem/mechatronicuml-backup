@@ -3,6 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: org.muml.pim.app4mc.transformation
 Bundle-SymbolicName: org.muml.pim.app4mc.transformation;singleton:=true
 Bundle-Version: 1.0.0.qualifier
+Eclipse-BundleShape: dir
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.m2m.qvt.oml,
  org.muml.pim.runnable.transformation,
