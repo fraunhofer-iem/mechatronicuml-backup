@@ -16,4 +16,13 @@
         </Priority>
      </editpolicyProvider>
   </extension>
+  <extension
+        point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
+     <editpartProvider
+           class="component.design.providers.MyEditPartProvider">
+        <Priority
+              name="Lowest">
+        </Priority>
+     </editpartProvider>
+  </extension>
 </plugin>

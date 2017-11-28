@@ -7,9 +7,10 @@ import org.eclipse.gmf.runtime.diagram.ui.services.editpolicy.CreateEditPolicies
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.sirius.diagram.DNode;
 import org.eclipse.sirius.diagram.description.DiagramDescription;
-import org.eclipse.sirius.diagram.description.NodeMapping;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
+import org.muml.pim.common.edit.policies.ports.PortTypeEditPolicy;
 import org.muml.pim.component.ComponentPart;
+import org.muml.pim.component.Port;
 
 import component.design.edit.policies.UpdateComponentPartEditPolicy;
 
@@ -62,6 +63,9 @@ public class MyEditPolicyProvider extends AbstractEditPolicyProvider {
 			if (diagramDescription != null && "org.muml.pim.component.diagram".equals(diagramDescription.getName())) {
 				EObject element = getSemanticElement(editPart);
 				if (element instanceof ComponentPart) {
+					return true;
+				}
+				if (element instanceof Port) {
 					return true;
 				}
 			}
