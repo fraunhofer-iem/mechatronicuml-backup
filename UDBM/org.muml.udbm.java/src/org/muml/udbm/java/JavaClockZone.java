@@ -687,7 +687,7 @@ public class JavaClockZone extends ClockZone {
 
 	public void and(JavaClockZone otherZone, HashSet<UDBMClock> clocks)
 	{		
-		if (otherZone.isReseted(otherZone) || otherZone.isEmpty() || otherZone.containsOnlyFalseClockConstraints()){
+		if (otherZone.isReseted() || otherZone.isEmpty() || otherZone.containsOnlyFalseClockConstraints()){
 			this.applyResets(clocks);
 			return;
 		}
@@ -697,7 +697,7 @@ public class JavaClockZone extends ClockZone {
 	
 	public void and(JavaClockZone otherZone)
 	{
-		if (this.isReseted(this) || this.isEmpty() || this.containsOnlyFalseClockConstraints()){
+		if (this.isReseted() || this.isEmpty() || this.containsOnlyFalseClockConstraints()){
 			return;
 		}
 		Iterator<ClockConstraint> clockConstraintIt = otherZone.iteratorOfClockConstraint();
@@ -708,14 +708,17 @@ public class JavaClockZone extends ClockZone {
 		}
 	}
 	
-	public boolean isReseted(JavaClockZone otherZone){
-		JavaClockZone clonedCZ = (JavaClockZone) otherZone.clone();
-		Iterator<? extends UDBMClock> clockIt = clonedCZ.getFederation().iteratorOfClock();
+	public boolean isReseted(){
+		Iterator<? extends UDBMClock> clockIt = this.getFederation().iteratorOfClock();
 		while(clockIt.hasNext()){
 			UDBMClock clock = clockIt.next();
-			clonedCZ.reset(clock);
+			int ub = this.getUpperBound(clock);
+			int lb = this.getLowerBound(clock);
+			if (ub != Integer.MAX_VALUE && !clock.getName().contains("zeroclock") && ub != lb){
+				return false;
+			}
 		}
-		return clonedCZ.equals(otherZone);
+		return true;
 	}
 	
 	public boolean isEmpty() {
