@@ -495,7 +495,7 @@ public class JavaFederation extends Federation {
 		JavaClockZone cz;
 		while (it.hasNext()) {
 			cz = (JavaClockZone)it.next();
-			if (!cz.isReseted(cz)){
+			if (!cz.isReseted()){
 				return false;
 			}
 		}
