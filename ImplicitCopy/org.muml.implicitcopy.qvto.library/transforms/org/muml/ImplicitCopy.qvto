@@ -36,7 +36,7 @@ mapping Element::transform() : Element {
 	}
 	var element := self.oclAsType(EObject);
 	element.eClass().eAllReferences->select(f | f.isValidFeature())->forEach(f) {
-		setValues(result.oclAsType(EObject), f, element.getValues(f)[Element].map transform());
+		setValues(result.oclAsType(EObject), f, (element.getValues(f)[Element].map transform())->reject(e | e = null));
 	};
 	element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
 		setValues(result.oclAsType(EObject), f, element.getValues(f));
