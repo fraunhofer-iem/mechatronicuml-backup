@@ -50,8 +50,8 @@ public final class MumlQualifiedNameProvider extends QualifiedNameProvider {
 			if (rtsc.getBehavioralElement() != null)
 				return delegationRoot.getQualifiedName(rtsc.getBehavioralElement(), scope).append(rtsc.getName()); //top-level RTSC are called (role|port).rtsc
 			else if (rtsc.isEmbedded()) {
-				QualifiedName name = delegationRoot.getQualifiedName(rtsc.getParentRegion().getParentState(), scope); //embedded RTSC are called like their parent state, unless ...
-				if (rtsc.getParentRegion().getParentState().getEmbeddedRegions().size() > 1)
+				QualifiedName name = delegationRoot.getQualifiedName(rtsc.getParentState(), scope); //embedded RTSC are called like their parent state, unless ...
+				if (rtsc.getParentState().getEmbeddedStatecharts().size() > 1)
 					name = name.append(rtsc.getName()); //... if there is more than one region in the parent state, we further qualify the name
 				return name;
 			}
