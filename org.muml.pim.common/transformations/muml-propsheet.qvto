@@ -1,0 +1,55 @@
+transformation propsheet(inout properties : Properties);
+
+modeltype genmodel uses genmodel('http://www.eclipse.org/emf/2002/GenModel');
+modeltype ecore uses ecore ('http://www.eclipse.org/emf/2002/Ecore');
+modeltype Properties uses ape('http://www.muml.org/ape/1.0.0');
+
+main() {
+	properties.rootObjects()[PropertyGenerator]->map generator();
+}
+
+mapping inout PropertyGenerator::generator() {
+	self.plugin.requiredBundles += "org.muml.pim.common";
+	
+	self.packages.classes.properties->select(p | p.genFeature.ecoreFeature.eType.name = 'NaturalNumber')->forEach(prop) {
+		if (prop.editor[TextPropertyEditor]->select(multiLine = false)->isEmpty()) then {
+			prop->map createNaturalNumberEditor();
+			-- make sure the default reconciler does not change this back to ObjectPropertyEditor
+			-- normally no problem (because we would change it back), but the editor would become dirty
+			-- without an understandable reason for the user
+			prop.reconcile := false;
+		} endif;
+	};
+	
+	self.packages.classes.properties->select(p | p.genFeature.ecoreFeature.eType.name = 'Cardinality')->forEach(prop) {
+		if (prop.reconcile != false) then {
+			-- make sure the default reconciler does not change this back to ObjectPropertyEditor
+			-- normally no problem (because we would change it back), but the editor would become dirty
+			-- without an understandable reason for the user
+			prop.reconcile := false;
+		} endif;
+		
+		--prop.category := null;
+
+		if (prop.editor[CustomPropertyEditor]->select(editor | editor.fullyQualifiedClassName = 'org.muml.pim.properties.valuetype.editor.CustomCardinalityPropertyEditor')->isEmpty()) then {
+			prop->map createCardinalityEditor();
+		} endif;
+	}
+}
+
+mapping inout Property::createCardinalityEditor() {
+	self.editor := new CustomPropertyEditor("org.muml.pim.properties.valuetype.editor.CustomCardinalityPropertyEditor");
+}
+
+constructor CustomPropertyEditor::CustomPropertyEditor(className : String) {
+	fullyQualifiedClassName := className;
+}
+
+mapping inout Property::createNaturalNumberEditor() {
+	self.editor := new TextPropertyEditor(false);
+}
+
+constructor TextPropertyEditor::TextPropertyEditor(_multiLine : Boolean) {
+	multiLine := _multiLine;
+}
+

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+  <extension
+        point="org.eclipse.core.expressions.definitions">
+     <definition
+           id="org.muml.expression.typesfile">
+	    <iterate
+           ifEmpty="false"
+           operator="and">
+	       <adapt type="org.eclipse.core.resources.IResource">
+           <or>
+              <test
+                    property="org.eclipse.core.resources.name"
+                    value="*.types">
+              </test>
+           </or>
+	       </adapt>
+	    </iterate>
+     </definition>
+  </extension>
+  
+  
+	<extension point="org.eclipse.ui.menus">
+	   <menuContribution
+	         allPopups="false"
+	         locationURI="popup:org.muml?after=types">
+	      <command
+	            commandId="org.muml.pim.common.commands.OpenTypeDialogCommand"
+	            icon="icons/TypeDialog.gif"
+	            id="org.muml.pim.common.commands.OpenTypeDialogCommand"
+	            label="Open Data-Type Dialog"
+	            style="push">
+	            	<visibleWhen checkEnabled="false">
+						<or>
+							<reference definitionId="org.muml.expression.mumlfile"></reference>
+							<reference definitionId="org.muml.expression.typesfile"></reference>
+						</or>
+					</visibleWhen>
+	      </command>
+
+
+<!-- DEACTIVATED, see #1515
+	
+	       <command
+	            commandId="org.muml.pim.common.commands.UseSharedTypesCommand"
+	            icon="icons/TypeDialog.gif"
+	            id="org.muml.pim.common.commands.UseSharedTypesCommand"
+	            label="Use Shared Predefined Types"
+	            style="push">
+	            	<visibleWhen checkEnabled="false">
+						<or>
+							<reference definitionId="org.muml.expression.mumlfile"></reference>
+						</or>
+					</visibleWhen>
+	      </command>
+-->
+	      
+	      <command
+	      		commandId="org.eclipse.ui.file.export" id="export"
+	      		style="push" label="Export...">
+	            	<visibleWhen checkEnabled="false">
+						<or>
+					 		 <reference definitionId="org.muml.expression.mumlfile"></reference>
+							 <reference definitionId="de.uni_paderborn.fujaba.expression.categoryfile"></reference>
+						</or>
+					</visibleWhen>	      		
+	      </command>
+	   </menuContribution>
+
+	</extension>
+	
+	
+	
+  <extension
+        point="org.eclipse.ui.commands">
+
+     <command
+           categoryId="org.muml"
+           defaultHandler="org.muml.pim.common.internal.ui.commands.OpenTypeDialogCommand"
+           description="Open Type Dialog"
+           id="org.muml.pim.common.commands.OpenTypeDialogCommand"
+           name="Open Type Dialog">
+     </command>
+
+  </extension>	
+  
+  
+  <extension
+        point="org.eclipse.ui.commands">
+     <command
+           categoryId="org.muml"
+           defaultHandler="org.muml.pim.common.internal.ui.commands.UseSharedTypesCommand"
+           description="Use Shared Types"
+           id="org.muml.pim.common.commands.UseSharedTypesCommand"
+           name="Open Type Dialog">
+     </command>
+
+  </extension>
+  
+  
+
+  <!-- make sure that the "types" modelelementcategory is accepted as valid -->
+  <extension
+          point="org.muml.core.modelelementcategory">
+      <category
+              key="org.muml.types.category"
+              name="types">
+          <child
+              class="DataType"
+              packageNsUri="http://www.muml.org/pim/types/1.0.0">
+          </child>
+      </category>
+  </extension>
+  
+  <extension
+       point="org.muml.core.modelinstance.ui.modelinitializer">
+      <initializer
+          initializer="org.muml.pim.common.modelinitializer.TypeCategoryInitializer">
+      </initializer>
+  </extension>
+  
+  <extension
+       point="org.muml.core.modelinstance.ui.modelinitializer">
+      <initializer
+          initializer="org.muml.pim.common.modelinitializer.DefaultCategoriesInitializer">
+      </initializer>
+  </extension>
+ 
+ 
+  <extension
+       point="org.eclipse.ltk.core.refactoring.moveParticipants">
+    <moveParticipant
+          class="org.muml.pim.common.refactoring.XMIMoveParticipant"
+          id="org.muml.pim.common.refactoring.xmiMoveParticipant"
+          name="Move XMI File">
+       <enablement>
+          <adapt type="org.eclipse.core.resources.IResource" />
+       </enablement>
+    </moveParticipant>
+  </extension>
+   
+   <extension
+         point="org.eclipse.ltk.core.refactoring.renameParticipants">
+      <renameParticipant
+            class="org.muml.pim.common.refactoring.XMIRenameParticipant"
+            id="org.muml.pim.common.refactoring.xmiRenameParticipant"
+            name="Rename XMI File">
+        <enablement>
+          <adapt type="org.eclipse.core.resources.IResource" />
+       </enablement>
+      </renameParticipant>
+   </extension>
+ 
+   
+   <!-- Initialization for ClockConstraints using the CreationDialog -->
+   <extension
+         point="org.muml.core.common.elementInitializer">
+         <initializer
+               initializer="org.muml.pim.common.elementinitializer.ClockConstraintElementInitializer"
+               qualifiedClassName="org.muml.pim.realtimestatechart.ClockConstraint"/>
+   </extension>
+   <extension
+         point="org.muml.core.common.editingdomain.editingDomainInitializer">
+      <initializer
+            ref="org.muml.pim.common.editingdomain.PIMEditingDomainInitializer">
+      </initializer>
+   </extension>
+  
+
+</plugin>
