@@ -1,6 +1,17 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: org.muml.security.extension
-Bundle-SymbolicName: org.muml.security.extension; singleton:=true
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.muml.security.extension;singleton:=true
 Bundle-Version: 0.1.0.qualifier
-Require-Bundle: org.eclipse.emf.ecore
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.muml.security.extension,
+ org.muml.security.extension.impl,
+ org.muml.security.extension.util
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.muml.core;visibility:=reexport,
+ org.muml.security.extension
+Bundle-ActivationPolicy: lazy

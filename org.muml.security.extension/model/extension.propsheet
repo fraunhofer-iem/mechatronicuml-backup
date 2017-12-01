@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.muml:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.muml="http://www.muml.org/ape/1.0.0" contributorId="org.muml.ape.contributor">
+  <reconciler/>
+  <genModel href="extension.genmodel#/"/>
+  <referencedGenerators href="../../org.muml.core/model/core.propsheet#_i_I4kOHNEeS5Putgio2lkg"/>
+  <plugin id="org.muml.security.extension.edit.properties" name="Security Extension Editor Code" vendor="Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany" version="1.0.0.qualifier">
+    <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
+    <requiredBundles>org.eclipse.ui</requiredBundles>
+    <requiredBundles>org.eclipse.core.runtime</requiredBundles>
+    <requiredBundles>org.muml.security.extension.edit</requiredBundles>
+    <requiredBundles>org.muml.security.extension</requiredBundles>
+    <requiredBundles>org.muml.ape.runtime</requiredBundles>
+    <requiredBundles>org.eclipse.emf.edit</requiredBundles>
+    <requiredBundles>org.muml.core.edit</requiredBundles>
+    <requiredBundles>org.muml.core.edit.properties</requiredBundles>
+  </plugin>
+  <defaultTab href="../../org.muml.core/model/core.propsheet#_i_OYIeHNEeS5Putgio2lkg"/>
+  <packages>
+    <genPackage href="extension.genmodel#//extension"/>
+    <classes>
+      <genClass href="extension.genmodel#//extension/SecurityExtension"/>
+      <orderedElements xsi:type="org.muml:Property" initializeOCLExpression="">
+        <genFeature href="../../org.muml.core/model/core.genmodel#//core/Extension/extendableBase"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_OYIeHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+        <creationOppositeConstraint>
+          <filters xsi:type="org.muml:OCLFilter" expression="self.oclIsKindOf(msgtype::MessageType)"/>
+        </creationOppositeConstraint>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" initializeOCLExpression="">
+        <genFeature href="extension.genmodel#//extension/SecurityExtension/sensitivityFlag"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_OYIeHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNUeHNEeS5Putgio2lkg"/>
+    </classes>
+  </packages>
+</org.muml:PropertyGenerator>

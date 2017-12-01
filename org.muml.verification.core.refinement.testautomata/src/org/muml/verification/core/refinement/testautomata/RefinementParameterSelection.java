@@ -35,7 +35,7 @@ public class RefinementParameterSelection {
 		RealtimeStatechart roleRTSC = (RealtimeStatechart)theRole.getBehavior();
 		
 		//initialize result variable
-		refinementParameters = new Refinement[5];
+		//refinementParameters = new Refinement[5]; // done in the get Parameters method since they can be called directly form elsewhere
 		
 		//Decision 1: Clocks or no clocks
 		if(hasClocksInRTSC(roleRTSC)){
@@ -45,28 +45,13 @@ public class RefinementParameterSelection {
 				if(hasLargerMessageBufferInPort(port)){
 					//relaxed timed bisimulation
 					return getRelaxedTimedBisimulation();
-//					refinementParameters[0] = new Refinement(TransitionType.INCOMING, Direction.REFINED,
-//							Requirement.R1);
-//					refinementParameters[1] = new Refinement(TransitionType.NONE, Direction.REFINED,
-//								Requirement.R1); 
-//					refinementParameters[2] = new Refinement(TransitionType.INCOMING, Direction.ABSTRACT,
-//							Requirement.R1);
-//					refinementParameters[3] = new Refinement(TransitionType.OUTGOING, Direction.REFINED,
-//							Requirement.R3);
-//					refinementParameters[4] = new Refinement(TransitionType.INCOMING, Direction.ABSTRACT,
-//							Requirement.R3);
 				} else {
 					// Decision 4: Uses urgent transitions
 					if(hasUrgentTransitionsInRTSC(roleRTSC)){
-						//timed ready simulation
-						refinementParameters[0] = new Refinement(TransitionType.ALL, Direction.REFINED,
-								Requirement.R2);
-						refinementParameters[1] = new Refinement(TransitionType.URGENT, Direction.ABSTRACT,
-								Requirement.R2);
+						return getTimedReadySimulation();
 					} else {
 						// timed simulation
-						 refinementParameters[0] = new Refinement(TransitionType.ALL, Direction.REFINED,
-								 Requirement.R2);
+						return getTimedSimulation();
 					}
 				}
 			} else {
@@ -74,41 +59,64 @@ public class RefinementParameterSelection {
 				if(hasLargerMessageBufferInPort(port)){
 					//relaxed timed bisimulation
 					return getRelaxedTimedBisimulation();
-//					refinementParameters[0] = new Refinement(TransitionType.INCOMING, Direction.REFINED,
-//							Requirement.R1);
-//					refinementParameters[1] = new Refinement(TransitionType.NONE, Direction.REFINED,
-//								Requirement.R1); 
-//					refinementParameters[2] = new Refinement(TransitionType.INCOMING, Direction.ABSTRACT,
-//							Requirement.R1);
-//					refinementParameters[3] = new Refinement(TransitionType.OUTGOING, Direction.REFINED,
-//							Requirement.R3);
-//					refinementParameters[4] = new Refinement(TransitionType.INCOMING, Direction.ABSTRACT,
-//							Requirement.R3);
 				} else {
 					// timed bisimulation
-					refinementParameters[0] = new Refinement(TransitionType.ALL, Direction.REFINED,
-							Requirement.R2);
-					refinementParameters[1] = new Refinement(TransitionType.ALL, Direction.ABSTRACT,
-							Requirement.R2);
+					return getTimedBisimulation();
 				}
 			}
 		} else {
 			//Decision 2: Only Universal Quantifiers or not
 			if(usesOnlyUniversisalQuantifiersInVerifiedProperties((CoordinationProtocol)theRole.getCoordinationProtocol())){
 				//simulation
-				refinementParameters[0]= new Refinement(TransitionType.ALL, Direction.REFINED,
-						 Requirement.R1);
+				return getSimulation();
 			} else {
 				//bisimulation
-				refinementParameters[0] = new Refinement(TransitionType.ALL, Direction.REFINED,
-						Requirement.R1);
-				refinementParameters[1] = new Refinement(TransitionType.ALL, Direction.ABSTRACT,
-						Requirement.R1);
+				return getBisimulation();
 			}
 		}
-		
-		return refinementParameters;
+	}
 
+	public Refinement[] getSimulation() {
+		//initialize result variable
+		refinementParameters = new Refinement[5];
+		refinementParameters[0]= new Refinement(TransitionType.ALL, Direction.REFINED,
+		 Requirement.R1);
+		return refinementParameters;
+	}
+
+	public Refinement[] getTimedReadySimulation() {
+		//initialize result variable
+		refinementParameters = new Refinement[5];
+		refinementParameters[0] = new Refinement(TransitionType.ALL, Direction.REFINED,
+				 Requirement.R2);
+		refinementParameters[1] = new Refinement(TransitionType.URGENT, Direction.ABSTRACT,
+				Requirement.R2);
+		return refinementParameters;
+	}
+
+	public Refinement[] getTimedSimulation() {
+		refinementParameters = new Refinement[5];
+		refinementParameters[0] = new Refinement(TransitionType.ALL, Direction.REFINED,
+				 Requirement.R2);
+		return refinementParameters;
+	}
+
+	public Refinement[] getTimedBisimulation() {
+		refinementParameters = new Refinement[5];
+		refinementParameters[0] = new Refinement(TransitionType.ALL, Direction.REFINED,
+				 Requirement.R2);
+		refinementParameters[1] = new Refinement(TransitionType.ALL, Direction.ABSTRACT,
+				Requirement.R2);
+		return refinementParameters;
+	}
+
+	public Refinement[] getBisimulation() {
+		refinementParameters = new Refinement[5];
+		refinementParameters[0]= new Refinement(TransitionType.ALL, Direction.REFINED,
+				 Requirement.R1);
+		refinementParameters[1] = new Refinement(TransitionType.ALL, Direction.ABSTRACT,
+				Requirement.R1);
+		return refinementParameters;
 	}
 	
 	

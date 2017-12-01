@@ -8,7 +8,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.muml.verification.core.refinement.testautomata,
  org.eclipse.emf.ecore,
- org.muml.pim;bundle-version="1.0.0"
+ org.muml.pim;bundle-version="1.0.0",
+ org.eclipse.gmf.runtime.diagram.ui
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.muml.verification.core.refinement.security.commands,

@@ -9,6 +9,9 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.util.Diagnostician;
+import org.eclipse.gef.EditPartViewer;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.swt.SWT;
@@ -32,10 +35,14 @@ public class VerifySecurity extends AbstractHandler {
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		ISelection selection = HandlerUtil.getCurrentSelection(event);
 
+		
 		Iterator<?> selectionIterator = ((StructuredSelection) selection)
 				.iterator();
 		while (selectionIterator.hasNext()) {
 			Object curObj = selectionIterator.next();
+			if (curObj instanceof GraphicalEditPart) {
+				EditPartViewer viewer = ((GraphicalEditPart) curObj).getViewer();
+			}
 			EObject element = getSemanticElement(curObj);
 			
 			if (element instanceof RealtimeStatechart) {
@@ -45,6 +52,7 @@ public class VerifySecurity extends AbstractHandler {
 				Verification veri = new Verification();
 				boolean secure = veri.checkSecurityRefinement(realtimeStatechart);
 				generateMessage(secure, veri);
+				Diagnostician.INSTANCE.validate(realtimeStatechart);
 			}
 		}
 		return null;

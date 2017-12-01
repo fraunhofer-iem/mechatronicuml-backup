@@ -26,12 +26,10 @@ public class Verification {
 
 	}
 
-	
-	
 	public boolean checkSecurityRefinement(RealtimeStatechart statechart) {
 		RefinementParameterSelection refinementParameterSelection = new RefinementParameterSelection();
 		Refinement[] refinementParameters = refinementParameterSelection
-				.getRelaxedTimedBisimulation();
+				.getTimedBisimulation();
 		TestAutomataGeneration ta = new TestAutomataGeneration(statechart,statechart,refinementParameters);
 		testAutomaton = ta.constructTA();
 		//store error and neutral state
@@ -40,8 +38,6 @@ public class Verification {
 		
 		return performReachabilityAnalysis(errorState, neutralState);
 	}
-	
-	
 	
 	
 	/** Checks whether behavior of port is correct refinement of role
