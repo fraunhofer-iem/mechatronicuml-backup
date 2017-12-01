@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Security Extension Editor Code
+Bundle-SymbolicName: org.muml.security.extension.edit.properties; singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.emf.ecore,
+ org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.muml.security.extension.edit,
+ org.muml.security.extension,
+ org.muml.ape.runtime,
+ org.eclipse.emf.edit,
+ org.muml.core.edit,
+ org.muml.core.edit.properties
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.muml.security.extension.properties.metamodel, org.muml.security.extension.properties.constraint,
+ org.muml.security.extension.properties.extension.editor
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
