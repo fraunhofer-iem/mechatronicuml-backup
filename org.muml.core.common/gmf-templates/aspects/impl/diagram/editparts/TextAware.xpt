@@ -1,0 +1,14 @@
+«AROUND refreshUnderline FOR gmfgen::GenCommonBase-»
+	«EXPAND xpt::Common::generatedMemberComment»
+	protected void refreshUnderline() {
+		// Deactivated this method because of Muml bug #461.
+		// TextUnderline is determined statically, not dynamically.
+	
+		// org.eclipse.gmf.runtime.notation.FontStyle style =
+		//	(org.eclipse.gmf.runtime.notation.FontStyle) getFontStyleOwnerView().getStyle(
+		//		org.eclipse.gmf.runtime.notation.NotationPackage.eINSTANCE.getFontStyle());
+		//if (style != null && getFigure() instanceof org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) {
+		//	((org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) getFigure()).setTextUnderline(style.isUnderline());
+		//}
+	}
+«ENDAROUND»

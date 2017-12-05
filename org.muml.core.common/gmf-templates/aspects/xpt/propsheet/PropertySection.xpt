@@ -1,0 +1,56 @@
+«REM»
+«AROUND implementsClause FOR gmfgen::GenCustomPropertyTab»«targetDef.proceed()», org.muml.core.common.emf.edit.ui.IRefreshProhibitedPropertySection«ENDAROUND»
+«ENDREM»
+
+﻿«AROUND getAdapterFactoryMethod FOR gmfgen::GenCustomPropertyTab»
+	«EXPAND xpt::Common::generatedMemberComment»
+	protected org.eclipse.emf.common.notify.AdapterFactory getAdapterFactory(Object object) {
+		org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain editingDomain = getEditingDomainFor(object);
+		if (editingDomain != null) {
+			org.eclipse.emf.common.notify.AdapterFactory defaultFactory = editingDomain.getAdapterFactory();
+			java.util.List<org.eclipse.emf.common.notify.AdapterFactory> positivePriorityFactories =
+				org.muml.core.common.FujabaCommonPlugin.getInstance().getCustomItemProviderAdapterFactories(«self.sheet.editorGen.plugin.getActivatorQualifiedClassName()».ID, true);
+			java.util.List<org.eclipse.emf.common.notify.AdapterFactory> negativePriorityFactories =
+				org.muml.core.common.FujabaCommonPlugin.getInstance().getCustomItemProviderAdapterFactories(«self.sheet.editorGen.plugin.getActivatorQualifiedClassName()».ID, false);
+
+			// Put all factories into one composed adapter factory.
+			java.util.List<org.eclipse.emf.common.notify.AdapterFactory> factories = new java.util.ArrayList<org.eclipse.emf.common.notify.AdapterFactory>();
+			factories.addAll(positivePriorityFactories);
+			factories.add(defaultFactory);
+			factories.addAll(negativePriorityFactories);
+			return new org.eclipse.emf.edit.provider.ComposedAdapterFactory(factories);
+		}
+		return null;
+	}
+	
+	«EXPAND xpt::Common::generatedMemberComment»	
+	protected org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain getEditingDomainFor(Object object) {
+		if (getEditingDomain() instanceof org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain) {
+			return (org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain) getEditingDomain();
+		}
+		return (org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain) org.eclipse.emf.transaction.util.TransactionUtil.getEditingDomain(object);
+	}
+«ENDAROUND»
+
+«REM»
+«AROUND getPropertySourceMethod FOR gmfgen::GenCustomPropertyTab-»
+	«EXPAND xpt::Common::generatedMemberComment»
+	public org.eclipse.ui.views.properties.IPropertySource getPropertySource(Object object) {
+		if (object instanceof org.eclipse.ui.views.properties.IPropertySource) {
+			return (org.eclipse.ui.views.properties.IPropertySource) object;
+		}
+		org.eclipse.emf.common.notify.AdapterFactory af = getAdapterFactory(object);
+		if (af != null) {
+			org.eclipse.emf.edit.provider.IItemPropertySource ips = (org.eclipse.emf.edit.provider.IItemPropertySource) af.adapt(object, org.eclipse.emf.edit.provider.IItemPropertySource.class);
+			if (ips != null) {
+				org.eclipse.emf.edit.domain.EditingDomain ed = getEditingDomainFor(object);
+				return new org.muml.pim.common.emf.edit.provider.CustomPropertySource(object, ips, af, ed, this);
+			}
+		}
+		if (object instanceof org.eclipse.core.runtime.IAdaptable) {
+			return (org.eclipse.ui.views.properties.IPropertySource) ((org.eclipse.core.runtime.IAdaptable) object).getAdapter(org.eclipse.ui.views.properties.IPropertySource.class);
+		}
+		return null;
+	}
+«ENDAROUND»
+«ENDREM»

@@ -1,0 +1,153 @@
+
+library PostReconcileLibrary;
+modeltype GMFGEN uses gmfgen('http://www.eclipse.org/gmf/2009/GenModel');
+modeltype genmodel uses genmodel('http://www.eclipse.org/emf/2002/GenModel');
+
+
+modeltype propsheet uses ape('http://www.muml.org/ape/1.0.0');
+
+
+mapping inout GenEditorGenerator::general(diagramFileExtension:String, pluginName:String) {
+	
+	self.dynamicTemplates :=true;
+	self.templateDirectory := "/org.muml.core.common/gmf-templates";
+	self.sameFileForDiagramAndModel := false;
+	
+	self.domainFileExtension := "fujaba"; 
+	self.diagramFileExtension :=diagramFileExtension;
+	
+
+	//self.plugin.version := "1.0.0.qualifier";
+	self.plugin.provider := "Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn";
+	self.plugin.name := pluginName;
+	
+	self.diagram.validationDecorators := true;
+	self.diagram.validationEnabled := true;
+	
+	//Set the Custom Preferenc Pages
+	self.diagram.preferencePages->map GenCustomPreferencePage(self);
+	
+	//add the enlarge compartment edit policy to the childs of a compartment
+	//self.diagram.compartments->map addEnlargeCompoartmentEditPolicy();
+	map reconcilePropsheet();
+}
+mapping inout GenEditorGenerator::reconcilePropsheet() {
+	
+	
+ 	-- load propsheet to import initialize ocl expressions
+	var propertyGenerator = self.extensions.rootInput[PropertyGenerator]->any(true);
+	
+	if (propertyGenerator != null) then {
+	
+		var allPropertyGenerators := propertyGenerator->union(propertyGenerator->closure(referencedGenerators));
+		var expressionProvider := self.expressionProviders.providers->any(true);
+		if (expressionProvider != null) then {
+		
+			self.diagram.getAllNodes().modelFacet[TypeModelFacet]->forEach(typeModelFacet) {
+				
+				allPropertyGenerators.packages.classes->select(c | c.genClass.ecoreClass.isSuperTypeOf(typeModelFacet.metaClass.ecoreClass)).properties->forEach(prop) {
+						
+					if ((not prop.initializeOCLExpression.oclIsUndefined()) and (prop.initializeOCLExpression != "")) then {
+					
+						var featureSeqInitializer : GenFeatureSeqInitializer := typeModelFacet.modelElementInitializer[GenFeatureSeqInitializer]->any(true);
+						if (featureSeqInitializer = null) then {
+							featureSeqInitializer := new GenFeatureSeqInitializer(typeModelFacet.metaClass);
+							typeModelFacet.modelElementInitializer := featureSeqInitializer;
+						} endif;
+						if (featureSeqInitializer.initializers->select(i | i.feature = prop.genFeature)->isEmpty()) then {
+							var valueExpression := new ValueExpression(prop.initializeOCLExpression);
+							expressionProvider.expressions += valueExpression;
+							featureSeqInitializer.initializers += new GenFeatureValueSpec(prop.genFeature, valueExpression);
+						} endif;
+					} endif;
+				};
+			};
+		} endif;
+	} endif;
+}
+
+constructor ValueExpression::ValueExpression(ocl : String) {
+	body := ocl;
+}
+constructor GenFeatureSeqInitializer::GenFeatureSeqInitializer(genClass : genmodel::GenClass) {
+	elementClass := genClass;
+}
+constructor GenFeatureValueSpec::GenFeatureValueSpec(f : GenFeature, v : ValueExpression) {
+	value := v;
+	feature := f;
+}
+
+mapping inout GenCompartment::addEnlargeCompoartmentEditPolicy(){
+	if(not self.listLayout) then {
+		self.childNodes->map addEnlargeCompartmentEditPolicy();
+	}endif;
+}
+
+mapping inout GenChildNode::addEnlargeCompartmentEditPolicy(){
+	var enlargeCompartmentBehavior : CustomBehaviour;
+	if(self.behaviour[CustomBehaviour]->select(behavior|behavior.key="org.muml.core.common.edit.policies.EditPolicyRoles.ENLARGE_COMPARTMENT_ROLE")->isEmpty()) then{
+		enlargeCompartmentBehavior:=new CustomBehaviour();
+		enlargeCompartmentBehavior.key:="org.muml.core.common.edit.policies.EditPolicyRoles.ENLARGE_COMPARTMENT_ROLE";
+		enlargeCompartmentBehavior.editPolicyQualifiedClassName:="org.muml.core.common.edit.policies.compartment.EnlargeCompartmentEditPolicy";
+		self.behaviour+=enlargeCompartmentBehavior;
+	}endif;
+}
+
+constructor CustomBehaviour::CustomBehaviour() {
+}
+
+mapping inout GenEditorGenerator::general(diagramFileExtension:String, pluginName:String,providerFraunhofer:Boolean) {
+	self->map general(diagramFileExtension,pluginName);
+	//self.plugin.version := "1.0.0.qualifier";
+	if(providerFraunhofer) then{
+	self.plugin.provider := "Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT";
+	} endif;
+}
+
+
+
+mapping inout GenPreferencePage::GenCustomPreferencePage(in editor:GenEditorGenerator){
+		var pluginID:String = editor.plugin.iD;
+		var indexOfPoint :Integer = iD.lastIndexOf(".");
+		iD:= pluginID.concat(".").concat(iD.substring(indexOfPoint+1,iD.size()));
+		
+	if(self.parent.oclIsUndefined())then{
+		self.parentCategory:="org.muml.preferences";
+		self.name:=editor.plugin.name;
+	}
+	else{
+		parentCategory:=parent.iD;
+	}endif;
+	children->map GenCustomPreferencePage(editor);
+	}
+	
+
+mapping inout InnerClassViewmap::setTextWrap(in labelName:String, in figureName:String){	
+	// customize the Interface Declaration Label from a State
+    if (self.className = figureName) then {
+        var find := (labelName)+(".setText(\"<...>\");"); 
+        var pre := self.classBody.substringBefore(find);
+        var inject := find+(labelName)+(".setTextWrap(true);\n");
+        var matchresult:=self.classBody.find((labelName)+(".setTextWrap(true);\n"));
+       if(matchresult<=0) then{
+       // setting TextWrap to true 
+     	var after := self.classBody.substringAfter(find);
+      	self.classBody := pre+(inject)+(after);
+        } endif;
+    } endif;
+}
+
+mapping inout InnerClassViewmap::underLine(in labelName:String, in figureName:String){	
+	// customize the Interface Declaration Label from a State
+    if (self.className = figureName) then {
+        var find := (labelName)+(".setText(\"<...>\");"); 
+        var pre := self.classBody.substringBefore(find);
+        var inject := find+(labelName)+(".setTextUnderline(true);\n");
+          var matchresult:=self.classBody.find((labelName)+(".setTextUnderline(true);\n"));
+       if(matchresult<=0) then{       
+        	        // setting Underline to true
+        var after := self.classBody.substringAfter(find);
+        self.classBody := pre+(inject)+(after);
+        } endif;
+        }endif;
+}
