@@ -7,11 +7,11 @@
       <defaultLayer name="Default">
         <nodeMappings name="AtomicComponent" semanticCandidatesExpression="aql:self" domainClass="AtomicComponent">
           <borderedNodeMappings name="Port" semanticCandidatesExpression="aql:self.ports" doubleClickDescription="//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='portDoubleClick']" domainClass="Port">
-            <style xsi:type="style:CustomStyleDescription" labelPosition="node" resizeKind="NSEW" id="org.muml.pim.port.style">
+            <style xsi:type="style:SquareDescription" showIcon="false" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             </style>
-            <conditionnalStyles/>
           </borderedNodeMappings>
           <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW" width="15" height="10">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -22,9 +22,10 @@
         <containerMappings name="StructuredComponent" semanticCandidatesExpression="aql:self" domainClass="StructuredComponent" reusedBorderedNodeMappings="//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@nodeMappings[name='AtomicComponent']/@borderedNodeMappings[name='Port']">
           <subNodeMappings name="ComponentPart" semanticCandidatesExpression="aql:self.embeddedComponentParts" domainClass="ComponentPart">
             <borderedNodeMappings name="PortPart" semanticCandidatesExpression="aql:self.portParts" domainClass="PortPart">
-              <style xsi:type="style:CustomStyleDescription" labelPosition="node" resizeKind="NSEW" id="org.muml.pim.port.style">
+              <style xsi:type="style:SquareDescription" labelPosition="node" resizeKind="NSEW">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
               </style>
             </borderedNodeMappings>
             <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW" width="15" height="10">

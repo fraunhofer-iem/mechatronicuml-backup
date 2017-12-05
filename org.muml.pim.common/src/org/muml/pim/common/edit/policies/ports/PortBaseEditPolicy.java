@@ -2,7 +2,9 @@ package org.muml.pim.common.edit.policies.ports;
 
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Graphics;
+import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
+import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.PointList;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramColorRegistry;
@@ -60,6 +62,12 @@ public class PortBaseEditPolicy extends AbstractRotatingBorderItemEditPolicy {
 
 	public void activate() {
 		super.activate();
+		IFigure contentPane = getContentPane();
+		if (!(contentPane instanceof CustomPortFigure)) {
+			CustomPortFigure customPortFigure = new CustomPortFigure();
+			contentPane.add(customPortFigure);
+			contentPane.setLayoutManager(new StackLayout());
+		}
 		if (deduceBorderItemEditPart() == null) {
 			getPortFigure().setPortSide(PositionConstants.WEST);
 		}
@@ -100,7 +108,14 @@ public class PortBaseEditPolicy extends AbstractRotatingBorderItemEditPolicy {
 	}
 
 	public CustomPortFigure getPortFigure() {
-		return (CustomPortFigure) getContentPane();
+		IFigure contentPane = getContentPane();
+		if (contentPane instanceof CustomPortFigure) {
+			return (CustomPortFigure) contentPane;
+		}
+		if (!contentPane.getChildren().isEmpty() && contentPane.getChildren().get(0) instanceof CustomPortFigure) {
+			return (CustomPortFigure) contentPane.getChildren().get(0);
+		}
+		return null;
 	}
 
 	@Override

@@ -21,6 +21,10 @@ public class MyEditPolicyProvider extends AbstractEditPolicyProvider {
 		if (element instanceof ComponentPart) {
 			editPart.installEditPolicy("ComponentPartUpdateRole", new UpdateComponentPartEditPolicy());
 		}
+		if (element instanceof Port) {
+			editPart.installEditPolicy(org.muml.pim.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE,
+					new PortTypeEditPolicy());
+		}
 	}
 
 	private EObject getSemanticElement(EditPart editPart) {
@@ -35,7 +39,7 @@ public class MyEditPolicyProvider extends AbstractEditPolicyProvider {
 		}
 		return null;
 	}
-	
+
 	DiagramDescription findDiagramDescription(EditPart editPart) {
 		if (editPart.getModel() instanceof View) {
 			View view = (View) editPart.getModel();
@@ -57,7 +61,7 @@ public class MyEditPolicyProvider extends AbstractEditPolicyProvider {
 		if (operation instanceof CreateEditPoliciesOperation) {
 			CreateEditPoliciesOperation castedOperation = (CreateEditPoliciesOperation) operation;
 			EditPart editPart = castedOperation.getEditPart();
-			
+
 			// check if I am responsible for this edit part
 			DiagramDescription diagramDescription = findDiagramDescription(editPart);
 			if (diagramDescription != null && "org.muml.pim.component.diagram".equals(diagramDescription.getName())) {
