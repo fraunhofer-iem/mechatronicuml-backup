@@ -1,37 +1,53 @@
 brakeByWireAllocationSpecification {
+	nameProvider 'org.muml.eloquent.adapter.muml.provider.MUMLNameProvider'
+	storageProvider 'org.muml.eloquent.adapter.muml.provider.MUMLStorageProvider'
+	import 'http://www.muml.org/eloquent/adapter/muml/oclcontext/1.0.0'
+	
+	oclContext oclcontext::OCLContext
 	
 	-- include our library with predefined OCL constraints
-	include 'platform:/plugin/org.muml.psm.allocation.language.xtext/operations/OCLContext.ocl'
+	include 'platform:/plugin/org.muml.eloquent.adapter.muml/operations/OCLContext.ocl'
+	
+	relation alloc {
+		descriptors (first : pim::instance::ComponentInstance, second : hardware::hwresourceinstance::ResourceInstance);
+		lower 1;
+		upper 1;
+		ocl self.getAllSWInstances()->product(
+			self.getAllHWInstances()->select(oclIsTypeOf(hardware::hwresourceinstance::StructuredResourceInstance))
+		)
+		;
+	}
+	
 	
 	constraint collocation colocateBrakePedalComponents {
-		descriptors (first, second);
+		descriptors (first : pim::instance::ComponentInstance, second : pim::instance::ComponentInstance);
 		ocl	self.colocateSCIAndEmbeddedParts('wheel');
 	}
 	
 	constraint collocation collocateSC11AndSC12 {
-		descriptors (first, second);
+		descriptors (first : pim::instance::ComponentInstance, second : pim::instance::ComponentInstance);
 		ocl self.allocateToSameECUs('sc11','sc12');
 	}
 	
 	constraint requiredLocation calliperToBrakeECU {
-		descriptors (first, second);
+		descriptors (first : pim::instance::ComponentInstance, second : hardware::hwresourceinstance::ResourceInstance);
 		ocl	self.allocateEmbeddedToPlatformInstance('calliper', 'Brake.0');
 	}
 	
 	constraint requiredLocation communicatingComponents {
-		descriptors (c1, e1), (c2, e2);
+		descriptors (c1 : pim::instance::ComponentInstance, e1 : hardware::hwresourceinstance::ResourceInstance), (c2 : pim::instance::ComponentInstance, e2 : hardware::hwresourceinstance::ResourceInstance);
 		ocl self.allocateCommunicatingComponentsToConnectedECUs();
 	}
 	
 	constraint requiredResource maxMemoryConsumption {
-		lhs requiredMemory;
-		rhs maxMemory;
-		descriptors (componentInstance, resourceInstance);
+		weight requiredMemory;
+		bound maxMemory;
+		descriptors (componentInstance : pim::instance::ComponentInstance, resourceInstance : hardware::hwresourceinstance::ResourceInstance);
 		ocl	self.maxMemoryConsumption();
 	}
 	
 	constraint requiredLocation allowedECUs {
-		descriptors (first, second);
+		descriptors (first : pim::instance::ComponentInstance, second : hardware::hwresourceinstance::ResourceInstance);
 		ocl
 			self.getAllSWInstances()->collect(ci |
 				self.allowedECUNames(ci.name)->collect(ecu |
