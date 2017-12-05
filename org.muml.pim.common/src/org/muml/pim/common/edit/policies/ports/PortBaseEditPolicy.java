@@ -62,14 +62,26 @@ public class PortBaseEditPolicy extends AbstractRotatingBorderItemEditPolicy {
 
 	public void activate() {
 		super.activate();
-		IFigure contentPane = getContentPane();
-		if (!(contentPane instanceof CustomPortFigure)) {
+		IFigure figure = getContentPane();
+		if (!(figure instanceof CustomPortFigure)) {
 			CustomPortFigure customPortFigure = new CustomPortFigure();
-			contentPane.add(customPortFigure);
-			contentPane.setLayoutManager(new StackLayout());
+			for (Object sibling : figure.getParent().getChildren()) {
+				if (sibling != figure) {
+					figure = (IFigure) sibling;
+					break;
+				}
+			}
+			if (!figure.getChildren().isEmpty()) {
+				figure = (IFigure) figure.getChildren().get(0);
+			}
+			figure.add(customPortFigure);
+			figure.setLayoutManager(new StackLayout());
 		}
 		if (deduceBorderItemEditPart() == null) {
-			getPortFigure().setPortSide(PositionConstants.WEST);
+			CustomPortFigure portFigure = getPortFigure();
+			if (portFigure != null) {
+				portFigure.setPortSide(PositionConstants.WEST);
+			}
 		}
 		refreshPortType();
 		refreshArrow();
@@ -81,39 +93,59 @@ public class PortBaseEditPolicy extends AbstractRotatingBorderItemEditPolicy {
 
 	@Override
 	protected void sideChanged(int side) {
-		getPortFigure().setPortSide(side);
+		CustomPortFigure figure = getPortFigure();
+		if (figure != null) {
+			figure.setPortSide(side);
+		}
 		super.sideChanged(side);
 	}
 
 	protected void refreshArrow() {
-		getPortFigure().setMulti(false);
-		Color arrowFg = getArrowForegroundColor();
-		Color arrowBg = getArrowBackgroundColor();
-		getPortFigure().configureArrows(arrowFg, arrowBg);
-
-		getPortFigure().setMulti(isMulti());
-		getPortFigure().setLineStyle(
-				EditPolicyUtils.getLineType(getPrimaryView()));
-
-		int arrowLineType = getArrowLineType();
-		getPortFigure().getFigureInPolygon().setLineStyle(arrowLineType);
-		getPortFigure().getFigureOutPolygon().setLineStyle(arrowLineType);
-		getPortFigure().getFigureInOutPolygon().setLineStyle(arrowLineType);
+		CustomPortFigure figure = getPortFigure();
+		if (figure != null) {
+			figure.setMulti(false);
+			Color arrowFg = getArrowForegroundColor();
+			Color arrowBg = getArrowBackgroundColor();
+			figure.configureArrows(arrowFg, arrowBg);
+	
+			figure.setMulti(isMulti());
+			figure.setLineStyle(
+					EditPolicyUtils.getLineType(getPrimaryView()));
+	
+			int arrowLineType = getArrowLineType();
+			figure.getFigureInPolygon().setLineStyle(arrowLineType);
+			figure.getFigureOutPolygon().setLineStyle(arrowLineType);
+			figure.getFigureInOutPolygon().setLineStyle(arrowLineType);
+		}
 	}
 
 	protected void refreshPortType() {
-		getPortFigure().setPortKindAndPortType(
+		CustomPortFigure figure = getPortFigure();
+		if (figure != null) {
+			figure.setPortKindAndPortType(
 				CustomPortFigure.PortKind.CONTINUOUS,
 				CustomPortFigure.PortType.NONE);
+		}
 	}
 
 	public CustomPortFigure getPortFigure() {
-		IFigure contentPane = getContentPane();
-		if (contentPane instanceof CustomPortFigure) {
-			return (CustomPortFigure) contentPane;
+		IFigure figure = getContentPane();
+		if (figure instanceof CustomPortFigure) {
+			return (CustomPortFigure) figure;
 		}
-		if (!contentPane.getChildren().isEmpty() && contentPane.getChildren().get(0) instanceof CustomPortFigure) {
-			return (CustomPortFigure) contentPane.getChildren().get(0);
+		for (Object sibling : figure.getParent().getChildren()) {
+			if (sibling != figure) {
+				figure = (IFigure) sibling;
+				break;
+			}
+		}
+		for (int i = 0; i < 2; i++) {
+			if (!figure.getChildren().isEmpty()) {
+				figure = (IFigure) figure.getChildren().get(0);
+			}
+		}
+		if (figure instanceof CustomPortFigure) {
+			return (CustomPortFigure) figure;
 		}
 		return null;
 	}
@@ -142,10 +174,13 @@ public class PortBaseEditPolicy extends AbstractRotatingBorderItemEditPolicy {
 		// Copied from generated PortEditPart.java.
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(24, 24) {
 			public PointList getPolygonPoints() {
-				PointList customPolygonPoints = getPortFigure()
-						.getCustomPolygonPoints(getHandleBounds());
-				if (customPolygonPoints != null) {
-					return customPolygonPoints;
+				CustomPortFigure figure = getPortFigure();
+				if (figure != null) {
+					PointList customPolygonPoints = figure
+							.getCustomPolygonPoints(getHandleBounds());
+					if (customPolygonPoints != null) {
+						return customPolygonPoints;
+					}
 				}
 				return super.getPolygonPoints();
 			}

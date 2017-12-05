@@ -83,7 +83,10 @@ public class PortTypeEditPolicy extends PortBaseEditPolicy {
 			}
 		}
 
-		getPortFigure().setPortKindAndPortType(portKind, portType);
+		CustomPortFigure figure = getPortFigure();
+		if (figure != null) {
+			figure.setPortKindAndPortType(portKind, portType);
+		}
 	}
 	
 	protected boolean isOptional() {
