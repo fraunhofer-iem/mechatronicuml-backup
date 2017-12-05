@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated extension -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.muml.security.extension.presentation.ExtensionModelWizardID"
+            name="%_UI_ExtensionModelWizard_label"
+            class="org.muml.security.extension.presentation.ExtensionModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ExtensionModelFile.gif">
+         <description>%_UI_ExtensionModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated extension -->
+      <editor
+            id="org.muml.security.extension.presentation.ExtensionEditorID"
+            name="%_UI_ExtensionEditor_label"
+            icon="icons/full/obj16/ExtensionModelFile.gif"
+            extensions="extension"
+            class="org.muml.security.extension.presentation.ExtensionEditor"
+            contributorClass="org.muml.security.extension.presentation.ExtensionActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
