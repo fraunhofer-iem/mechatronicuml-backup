@@ -1,21 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?eclipse version="3.4"?>
-<plugin>
-   <extension
-         point="org.eclipse.ui.newWizards">
-      <wizard
-            category="org.eclipse.ui.Examples/org.muml.example"
-            class="org.muml.core.example.ui.wizard.ExampleCreationWizard"
-            icon="images/muml.png"
-            id="org.muml.example.BrakeByWireCreationWizard"
-            name="Brake By Wire Example"
-            projectName="org.muml.example.brakebywire"
-            projectPageDescription="Create project containing the Brake By Wire Example"
-            projectPageTitle="Brake By Wire Example">
-         <source bundle="org.muml.example.brakebywire" path="data" />
-         <description>
-            Create the Brake By Wire Example
-         </description>
-      </wizard>
-   </extension>
+<?xml version="1.0" encoding="UTF-8"?><plugin>
+  <extension id="org.muml.example.brakebywire.MUMLPattern" point="org.eclipse.viatra.query.runtime.queryspecification">
+    <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:org.muml.example.brakebywire.MUMLPattern" id="org.muml.example.brakebywire.MUMLPattern">
+      <query-specification fqn="org.muml.example.brakebywire.getConnectedECUs"/>
+    </group>
+  </extension>
 </plugin>

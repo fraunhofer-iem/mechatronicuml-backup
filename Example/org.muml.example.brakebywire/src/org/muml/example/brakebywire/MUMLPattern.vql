@@ -1,0 +1,21 @@
+package org.muml.example.brakebywire
+
+import "http://www.muml.org/pim/connector/1.0.0"
+import "http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0"
+import "http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0"
+
+pattern getConnectedECUs(ecu1 : StructuredResourceInstance, ecu2 : StructuredResourceInstance) {
+	StructuredResourceInstance.hwports(ecu1, ep1);
+	StructuredResourceInstance.hwports(ecu2, ep2);
+	find connected+(ep1, ep2);
+	ecu1 != ecu2;
+} or {
+	// the same ECUs are trivially connected
+	ecu1 == ecu2;
+}
+
+private pattern connected(ep1 : ConnectorEndpointInstance, ep2 : ConnectorEndpointInstance) {
+	ConnectorInstance.connectorEndpointInstances(connector, ep1);
+	ConnectorInstance.connectorEndpointInstances(connector, ep2);
+	ep1 != ep2;
+}

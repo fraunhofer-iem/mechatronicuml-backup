@@ -7,6 +7,7 @@ brakeByWireAllocationSpecification {
 	
 	-- include our library with predefined OCL constraints
 	include 'platform:/plugin/org.muml.eloquent.adapter.muml/operations/OCLContext.ocl'
+	include 'communicatingComponents.ocl'
 	
 	relation alloc {
 		descriptors (first : pim::instance::ComponentInstance, second : hardware::hwresourceinstance::ResourceInstance);
@@ -36,7 +37,10 @@ brakeByWireAllocationSpecification {
 	
 	constraint requiredLocation communicatingComponents {
 		descriptors (c1 : pim::instance::ComponentInstance, e1 : hardware::hwresourceinstance::ResourceInstance), (c2 : pim::instance::ComponentInstance, e2 : hardware::hwresourceinstance::ResourceInstance);
-		ocl self.allocateCommunicatingComponentsToConnectedECUs();
+		ocl
+			self.allocateCommunicatingComponentsToConnectedECUs()
+			--self.allocateCommunicatingComponentsPattern()
+		;
 	}
 	
 	constraint requiredResource maxMemoryConsumption {

@@ -1,0 +1,49 @@
+--import 'http://www.muml.org/pm/hardware/hwvaluetype/1.0.0'
+import 'http://www.muml.org/pm/hardware/hwresource/1.0.0'
+--import 'http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0'
+import 'http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0'
+import 'http://www.muml.org/pim/instance/1.0.0'
+import 'http://www.muml.org/pim/connector/1.0.0'
+import 'http://www.muml.org/eloquent/adapter/muml/oclcontext/1.0.0'
+
+include 'src/org/muml/example/brakebywire/MUMLPattern.vql'
+
+context oclcontext::OCLContext
+	def: allocateCommunicatingComponentsPattern() : Set(Tuple(
+		c1 : instance::ComponentInstance,
+		e1 : hwresourceinstance::ResourceInstance,
+		c2 : instance::ComponentInstance,
+		e2 : hwresourceinstance::ResourceInstance
+	))
+	=
+	self.componentInstanceConfiguration.getCommunicatingComponentsPattern()->collect(tcomps |
+		org::muml::example::brakebywire::MUMLPattern.getConnectedECUs(
+			self.hardwarePlatformInstanceConfiguration
+		)->collect(tecus |
+			Tuple {
+				c1 = tcomps.component1,
+				e1 = tecus.ecu1,
+				c2 = tcomps.component2,
+				e2 = tecus.ecu2
+			}
+		)
+	)->asSet()
+	
+context instance::ComponentInstanceConfiguration
+	def: getCommunicatingComponentsPattern() : Set(Tuple(
+		component1 : instance::ComponentInstance,
+		component2 : instance::ComponentInstance
+	))
+	=
+	self->asSet()->closure(
+		componentInstances->select(
+			oclIsKindOf(instance::StructuredComponentInstance)
+		)->collect(
+			oclAsType(instance::StructuredComponentInstance).embeddedCIC
+		)
+	)->collect(portConnectorInstances)->select(
+		portInstances->size() = 2
+	)->collect(con | Tuple {
+		component1 = con.portInstances->at(1).componentInstance,
+		component2 = con.portInstances->at(2).componentInstance 
+	})->asSet()
