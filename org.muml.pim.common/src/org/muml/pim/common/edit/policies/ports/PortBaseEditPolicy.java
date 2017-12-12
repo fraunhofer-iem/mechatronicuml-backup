@@ -4,13 +4,12 @@ import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
+import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.PointList;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramColorRegistry;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
-import org.eclipse.gmf.runtime.notation.LineStyle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.swt.graphics.Color;
 import org.muml.core.common.edit.policies.EditPolicyUtils;
@@ -73,6 +72,9 @@ public class PortBaseEditPolicy extends AbstractRotatingBorderItemEditPolicy {
 			}
 			if (!figure.getChildren().isEmpty()) {
 				figure = (IFigure) figure.getChildren().get(0);
+			}
+			if (figure instanceof RectangleFigure) {
+				((RectangleFigure)figure).setFill(false);
 			}
 			figure.add(customPortFigure);
 			figure.setLayoutManager(new StackLayout());
@@ -198,12 +200,15 @@ public class PortBaseEditPolicy extends AbstractRotatingBorderItemEditPolicy {
 	 */
 	protected Color getArrowForegroundColor() {
 		Color backgroundColor = ColorConstants.black;
-		LineStyle style = (LineStyle) getPrimaryView().getStyle(
-				NotationPackage.Literals.LINE_STYLE);
-		if (style != null) {
-			backgroundColor = DiagramColorRegistry.getInstance().getColor(
-					Integer.valueOf(style.getLineColor()));
-		}
+		
+		// SIRIUS: We want just black here.
+		//LineStyle style = (LineStyle) getPrimaryView().getStyle(
+		//		NotationPackage.Literals.LINE_STYLE);
+		
+		//if (style != null) {
+		//	backgroundColor = DiagramColorRegistry.getInstance().getColor(
+		//			Integer.valueOf(style.getLineColor()));
+		//}
 
 		return backgroundColor;
 	}

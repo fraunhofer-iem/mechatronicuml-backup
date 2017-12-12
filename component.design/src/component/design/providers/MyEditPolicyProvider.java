@@ -8,9 +8,11 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.sirius.diagram.DNode;
 import org.eclipse.sirius.diagram.description.DiagramDescription;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
+import org.muml.pim.common.edit.policies.ports.PortPartEditPolicy;
 import org.muml.pim.common.edit.policies.ports.PortTypeEditPolicy;
 import org.muml.pim.component.ComponentPart;
 import org.muml.pim.component.Port;
+import org.muml.pim.component.PortPart;
 
 import component.design.edit.policies.UpdateComponentPartEditPolicy;
 
@@ -24,6 +26,10 @@ public class MyEditPolicyProvider extends AbstractEditPolicyProvider {
 		if (element instanceof Port) {
 			editPart.installEditPolicy(org.muml.pim.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE,
 					new PortTypeEditPolicy());
+		}
+		if (element instanceof PortPart) {
+			editPart.installEditPolicy(org.muml.pim.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE,
+					new PortPartEditPolicy());
 		}
 	}
 
@@ -69,7 +75,7 @@ public class MyEditPolicyProvider extends AbstractEditPolicyProvider {
 				if (element instanceof ComponentPart) {
 					return true;
 				}
-				if (element instanceof Port) {
+				if (element instanceof Port || element instanceof PortPart) {
 					return true;
 				}
 			}
