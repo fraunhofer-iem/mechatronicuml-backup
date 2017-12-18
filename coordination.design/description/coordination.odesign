@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" name="coordination" version="11.1.1.201610211630">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" name="coordination" version="12.0.0.2017041100">
   <ownedViewpoints name="coordination" modelFileExtension="coordination">
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="org.muml.pim.coordination.diagram" label="CoordinationSpecification Diagram" initialisation="true" domainClass="coordination.CoordinationSpecification" enablePopupBars="true">
-      <metamodel href="../../coordination.model/model/coordination.ecore#/"/>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="org.muml.pim.coordination.diagram" label="CoordinationSpecification Diagram" initialisation="true" domainClass="AbstractCoordinationSpecification" enablePopupBars="true">
+      <metamodel href="../../org.muml.pim/model/pim.ecore#/"/>
+      <metamodel href="../../org.muml.pim/model/pim.ecore#//constraint"/>
+      <metamodel href="../../org.muml.pim/model/pim.ecore#//instance"/>
+      <metamodel href="../../org.muml.pim/model/pim.ecore#//protocol"/>
+      <metamodel href="../../org.muml.pim/model/pim.ecore#//realtimestatechart"/>
+      <metamodel href="../../org.muml.pim/model/pim.ecore#//msgtype"/>
+      <metamodel href="../../org.muml.pim/model/pim.ecore#//types"/>
+      <metamodel href="../../org.muml.pim/model/pim.ecore#//connector"/>
+      <metamodel href="../../org.muml.pim/model/pim.ecore#//valuetype"/>
+      <metamodel href="../../org.muml.pim/model/pim.ecore#//behavior"/>
+      <metamodel href="../../org.muml.pim/model/pim.ecore#//component"/>
+      <metamodel href="../../org.muml.pim/model/pim.ecore#//pattern"/>
+      <metamodel href="../../org.muml.pim/model/pim.ecore#//runnable"/>
+      <metamodel href="../../org.muml.pim/model/pim.ecore#//realtimestatechart/one_to_n_schemata"/>
       <layout xsi:type="description_1:OrderedTreeLayout" childrenExpression="aql:self.roles" nodeMapping="//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.coordination.CoordinationSpecification']"/>
       <diagramInitialisation>
         <firstModelOperations xsi:type="tool:If" conditionExpression="aql:self.roles->isEmpty() and self.roleConnectors->isEmpty()">
@@ -21,14 +34,14 @@
         </firstModelOperations>
       </diagramInitialisation>
       <defaultLayer name="Default">
-        <nodeMappings name="org.muml.pim.coordination.CoordinationSpecification" label="Coordination Specification" semanticCandidatesExpression="aql:self" domainClass="CoordinationSpecification">
+        <nodeMappings name="org.muml.pim.coordination.CoordinationSpecification" label="Coordination Specification" semanticCandidatesExpression="aql:self" domainClass="AbstractCoordinationSpecification">
           <style xsi:type="style:EllipseNodeDescription" borderSizeComputationExpression="2" borderLineStyle="dash" labelSize="12" showIcon="false" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
           </style>
-          <conditionnalStyles predicateExpression="aql:self.oclIsKindOf(coordination::CoordinationPattern)">
+          <conditionnalStyles predicateExpression="aql:self.oclIsKindOf(pattern::AbstractCoordinationPattern)">
             <style xsi:type="style:LozengeNodeDescription" borderSizeComputationExpression="2" borderLineStyle="dash" showIcon="false" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -42,7 +55,7 @@
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <edgeMappings name="org.muml.pim.coordination.AssumptionsEdge" label="Assumptions Edge" sourceMapping="//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@edgeMappings[name='org.muml.pim.coordination.Role%20Connector']" targetMapping="//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@containerMappings[name='ConnectorQualityOfServiceAssumptions']" targetFinderExpression="aql:self.connectorQOSAssumptions">
+        <edgeMappings name="org.muml.pim.coordination.AssumptionsEdge" label="Assumptions Edge" sourceMapping="//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@edgeMappings[name='org.muml.pim.coordination.Role%20Connector']" targetMapping="//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@containerMappings[name='ConnectorQualityOfServiceAssumptions']" targetFinderExpression="aql:self.connectorQualityOfServiceAssumptions">
           <style lineStyle="dot" targetArrow="NoDecoration" sizeComputationExpression="0">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription>
@@ -50,7 +63,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="org.muml.pim.coordination.Role Connector" label="Role Connector" semanticCandidatesExpression="aql:self.roleConnectors" sourceMapping="//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.coordination.Role']" targetMapping="//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.coordination.Role']" targetFinderExpression="aql:self.target" sourceFinderExpression="aql:self.source" domainClass="RoleConnector" useDomainElement="true">
+        <edgeMappings name="org.muml.pim.coordination.Role Connector" label="Role Connector" semanticCandidatesExpression="aql:self.roleConnectors" sourceMapping="//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.coordination.Role']" targetMapping="//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.coordination.Role']" targetFinderExpression="aql:self.connectorEndpoints->last()" sourceFinderExpression="aql:self.connectorEndpoints->first()" domainClass="RoleConnector" useDomainElement="true">
           <style targetArrow="NoDecoration" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <centerLabelStyleDescription>
@@ -66,7 +79,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <containerMappings name="ConnectorQualityOfServiceAssumptions" label="QOS Assumptions" semanticCandidatesExpression="aql:self.roleConnectors.connectorQOSAssumptions" domainClass="ConnectorQualityOfServiceAssumptions" childrenPresentation="List">
+        <containerMappings name="ConnectorQualityOfServiceAssumptions" label="QOS Assumptions" semanticCandidatesExpression="aql:self.roleConnectors.connectorQualityOfServiceAssumptions" domainClass="ConnectorQualityOfServiceAssumptions" childrenPresentation="List">
           <subNodeMappings name="ConnectorQualityOfServiceAssumptions" label="Reliable" semanticCandidatesExpression="aql:self" domainClass="ConnectorQualityOfServiceAssumptions">
             <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:'Reliable: '.concat((not self.messageLossPossible).toString()).concat('\nMaxDelay: 0ms').concat('\nPreserveMsgOrder: ').concat(self.preserveMessageOrder.toString())" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -104,7 +117,7 @@
                 <subModelOperations xsi:type="tool:CreateInstance" typeName="RoleConnector" referenceName="roleConnectors" variableName="roleConnector">
                   <subModelOperations xsi:type="tool:SetValue" featureName="source" valueExpression="aql:source"/>
                   <subModelOperations xsi:type="tool:SetValue" featureName="target" valueExpression="aql:target"/>
-                  <subModelOperations xsi:type="tool:CreateInstance" typeName="ConnectorQualityOfServiceAssumptions" referenceName="connectorQOSAssumptions" variableName="qos"/>
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="ConnectorQualityOfServiceAssumptions" referenceName="connectorQualityOfServiceAssumptions" variableName="qos"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
