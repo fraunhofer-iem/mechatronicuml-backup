@@ -18,7 +18,7 @@
       <metamodel href="../../org.muml.pim/model/pim.ecore#//realtimestatechart/one_to_n_schemata"/>
       <layout xsi:type="description_1:OrderedTreeLayout" childrenExpression="aql:self.roles" nodeMapping="//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.coordination.CoordinationSpecification']"/>
       <diagramInitialisation>
-        <firstModelOperations xsi:type="tool:If" conditionExpression="aql:self.roles->isEmpty() and self.roleConnectors->isEmpty()">
+        <firstModelOperations xsi:type="tool:If" conditionExpression="aql:self.roles->isEmpty() and self.roleConnector.oclIsUndefined()">
           <subModelOperations xsi:type="tool:CreateInstance" typeName="Role" referenceName="roles" variableName="role1">
             <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="role1"/>
           </subModelOperations>
@@ -27,8 +27,7 @@
           </subModelOperations>
           <subModelOperations xsi:type="tool:CreateInstance" typeName="RoleConnector" referenceName="roleConnectors" variableName="connector">
             <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="role1"/>
-            <subModelOperations xsi:type="tool:SetValue" featureName="source" valueExpression="aql:role1"/>
-            <subModelOperations xsi:type="tool:SetValue" featureName="target" valueExpression="aql:role2"/>
+            <subModelOperations xsi:type="tool:SetValue" featureName="connectorEndpoints" valueExpression="aql:OrderedSet{role1, role2}"/>
             <subModelOperations xsi:type="tool:CreateInstance" typeName="ConnectorQualityOfServiceAssumptions" referenceName="connectorQOSAssumptions" variableName="qos"/>
           </subModelOperations>
         </firstModelOperations>
@@ -63,7 +62,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="org.muml.pim.coordination.Role Connector" label="Role Connector" semanticCandidatesExpression="aql:self.roleConnectors" sourceMapping="//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.coordination.Role']" targetMapping="//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.coordination.Role']" targetFinderExpression="aql:self.connectorEndpoints->last()" sourceFinderExpression="aql:self.connectorEndpoints->first()" domainClass="RoleConnector" useDomainElement="true">
+        <edgeMappings name="org.muml.pim.coordination.Role Connector" label="Role Connector" semanticCandidatesExpression="aql:self.roleConnector" sourceMapping="//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.coordination.Role']" targetMapping="//@ownedViewpoints[name='coordination']/@ownedRepresentations[name='org.muml.pim.coordination.diagram']/@defaultLayer/@nodeMappings[name='org.muml.pim.coordination.Role']" targetFinderExpression="aql:self.connectorEndpoints->last()" sourceFinderExpression="aql:self.connectorEndpoints->first()" domainClass="RoleConnector" useDomainElement="true">
           <style targetArrow="NoDecoration" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <centerLabelStyleDescription>
@@ -79,7 +78,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <containerMappings name="ConnectorQualityOfServiceAssumptions" label="QOS Assumptions" semanticCandidatesExpression="aql:self.roleConnectors.connectorQualityOfServiceAssumptions" domainClass="ConnectorQualityOfServiceAssumptions" childrenPresentation="List">
+        <containerMappings name="ConnectorQualityOfServiceAssumptions" label="QOS Assumptions" semanticCandidatesExpression="aql:self.roleConnector.connectorQualityOfServiceAssumptions" domainClass="ConnectorQualityOfServiceAssumptions" childrenPresentation="List">
           <subNodeMappings name="ConnectorQualityOfServiceAssumptions" label="Reliable" semanticCandidatesExpression="aql:self" domainClass="ConnectorQualityOfServiceAssumptions">
             <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:'Reliable: '.concat((not self.messageLossPossible).toString()).concat('\nMaxDelay: 0ms').concat('\nPreserveMsgOrder: ').concat(self.preserveMessageOrder.toString())" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -114,9 +113,8 @@
             <targetViewVariable name="targetView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:source.eContainer()">
-                <subModelOperations xsi:type="tool:CreateInstance" typeName="RoleConnector" referenceName="roleConnectors" variableName="roleConnector">
-                  <subModelOperations xsi:type="tool:SetValue" featureName="source" valueExpression="aql:source"/>
-                  <subModelOperations xsi:type="tool:SetValue" featureName="target" valueExpression="aql:target"/>
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="RoleConnector" referenceName="roleConnector" variableName="roleConnector">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="connectorEndpoints" valueExpression="aql:OrderedSet{source, target}"/>
                   <subModelOperations xsi:type="tool:CreateInstance" typeName="ConnectorQualityOfServiceAssumptions" referenceName="connectorQualityOfServiceAssumptions" variableName="qos"/>
                 </subModelOperations>
               </firstModelOperations>
