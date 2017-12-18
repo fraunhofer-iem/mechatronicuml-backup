@@ -126,7 +126,8 @@
             <initialOperation>
               <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:element">
                 <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.behavior = null">
-                  <subModelOperations xsi:type="tool:CreateInstance" typeName="Realtimestatechart" referenceName="behavior"/>
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="RealtimeStatechart" referenceName="containedBehavior" variableName="rtsc"/>
+                  <subModelOperations xsi:type="tool:SetValue" featureName="behavior" valueExpression="aql:rtsc"/>
                 </subModelOperations>
                 <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.behavior">
                   <subModelOperations xsi:type="tool_1:Navigation" createIfNotExistent="true">
