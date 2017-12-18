@@ -38,6 +38,7 @@ import org.muml.pim.valuetype.Cardinality;
  * </p>
  * <ul>
  *   <li>{@link org.muml.pim.connector.impl.DiscreteInteractionEndpointImpl#getBehavior <em>Behavior</em>}</li>
+ *   <li>{@link org.muml.pim.connector.impl.DiscreteInteractionEndpointImpl#getContainedBehavior <em>Contained Behavior</em>}</li>
  *   <li>{@link org.muml.pim.connector.impl.DiscreteInteractionEndpointImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.muml.pim.connector.impl.DiscreteInteractionEndpointImpl#getSenderMessageTypes <em>Sender Message Types</em>}</li>
  *   <li>{@link org.muml.pim.connector.impl.DiscreteInteractionEndpointImpl#getReceiverMessageTypes <em>Receiver Message Types</em>}</li>
@@ -60,6 +61,16 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 	 * @ordered
 	 */
 	protected Behavior behavior;
+
+	/**
+	 * The cached value of the '{@link #getContainedBehavior() <em>Contained Behavior</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContainedBehavior()
+	 * @generated
+	 * @ordered
+	 */
+	protected Behavior containedBehavior;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -228,6 +239,49 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__BEHAVIOR, newBehavior, newBehavior));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Behavior getContainedBehavior() {
+		return containedBehavior;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetContainedBehavior(Behavior newContainedBehavior, NotificationChain msgs) {
+		Behavior oldContainedBehavior = containedBehavior;
+		containedBehavior = newContainedBehavior;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONTAINED_BEHAVIOR, oldContainedBehavior, newContainedBehavior);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setContainedBehavior(Behavior newContainedBehavior) {
+		if (newContainedBehavior != containedBehavior) {
+			NotificationChain msgs = null;
+			if (containedBehavior != null)
+				msgs = ((InternalEObject)containedBehavior).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONTAINED_BEHAVIOR, null, msgs);
+			if (newContainedBehavior != null)
+				msgs = ((InternalEObject)newContainedBehavior).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONTAINED_BEHAVIOR, null, msgs);
+			msgs = basicSetContainedBehavior(newContainedBehavior, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONTAINED_BEHAVIOR, newContainedBehavior, newContainedBehavior));
 	}
 
 	/**
@@ -444,6 +498,8 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 		switch (featureID) {
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__BEHAVIOR:
 				return basicSetBehavior(null, msgs);
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONTAINED_BEHAVIOR:
+				return basicSetContainedBehavior(null, msgs);
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY:
 				return basicSetCardinality(null, msgs);
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER:
@@ -463,6 +519,8 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__BEHAVIOR:
 				if (resolve) return getBehavior();
 				return basicGetBehavior();
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONTAINED_BEHAVIOR:
+				return getContainedBehavior();
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__NAME:
 				return getName();
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES:
@@ -496,6 +554,9 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 		switch (featureID) {
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__BEHAVIOR:
 				setBehavior((Behavior)newValue);
+				return;
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONTAINED_BEHAVIOR:
+				setContainedBehavior((Behavior)newValue);
 				return;
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__NAME:
 				setName((String)newValue);
@@ -536,6 +597,9 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__BEHAVIOR:
 				setBehavior((Behavior)null);
 				return;
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONTAINED_BEHAVIOR:
+				setContainedBehavior((Behavior)null);
+				return;
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__NAME:
 				setName(NAME_EDEFAULT);
 				return;
@@ -571,6 +635,8 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 		switch (featureID) {
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__BEHAVIOR:
 				return behavior != null;
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONTAINED_BEHAVIOR:
+				return containedBehavior != null;
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES:
@@ -601,6 +667,7 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 		if (baseClass == BehavioralElement.class) {
 			switch (derivedFeatureID) {
 				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__BEHAVIOR: return BehaviorPackage.BEHAVIORAL_ELEMENT__BEHAVIOR;
+				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONTAINED_BEHAVIOR: return BehaviorPackage.BEHAVIORAL_ELEMENT__CONTAINED_BEHAVIOR;
 				default: return -1;
 			}
 		}
@@ -623,6 +690,7 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 		if (baseClass == BehavioralElement.class) {
 			switch (baseFeatureID) {
 				case BehaviorPackage.BEHAVIORAL_ELEMENT__BEHAVIOR: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__BEHAVIOR;
+				case BehaviorPackage.BEHAVIORAL_ELEMENT__CONTAINED_BEHAVIOR: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONTAINED_BEHAVIOR;
 				default: return -1;
 			}
 		}

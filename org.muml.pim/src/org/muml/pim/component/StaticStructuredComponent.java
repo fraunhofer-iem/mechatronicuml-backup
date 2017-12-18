@@ -19,7 +19,7 @@ package org.muml.pim.component;
  *
  * @see org.muml.pim.component.ComponentPackage#getStaticStructuredComponent()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='StaticStructuredComponentMustNotHaveWrongDiscreteInteractionEndpoints'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL StaticStructuredComponentMustNotHaveWrongDiscreteInteractionEndpoints='-- Static Structured Component must not have Discrete Interaction Endpoints other than Discrete Ports\nports->forAll(p | p.oclIsKindOf(connector::DiscreteInteractionEndpoint) implies p.oclIsKindOf(DiscretePort))'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL StaticStructuredComponentMustNotHaveWrongDiscreteInteractionEndpoints='-- Static Structured Component must not have Discrete Interaction Endpoints other than Discrete Ports\nports-&gt;forAll(p | p.oclIsKindOf(connector::DiscreteInteractionEndpoint) implies p.oclIsKindOf(DiscretePort))'"
  * @generated
  */
 public interface StaticStructuredComponent extends StructuredComponent, StaticComponent {

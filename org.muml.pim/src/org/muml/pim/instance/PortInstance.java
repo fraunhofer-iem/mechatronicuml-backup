@@ -34,7 +34,7 @@ import org.muml.pim.connector.ConnectorEndpointInstance;
  * @see org.muml.pim.instance.InstancePackage#getPortInstance()
  * @model abstract="true"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='PortInstanceMustReferencePortType PortInstanceMustDelegateToEmbeddedCIC'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL PortInstanceMustReferencePortType='-- The type of a port instance must be a port type\r\nif (not self.type->oclIsUndefined()) then\r\nself.type.oclIsKindOf(component::Port)\r\nelse\r\nfalse\r\nendif' PortInstanceMustDelegateToEmbeddedCIC='-- PortInstance at Structured Component must delegate to embedded CIC\r\n(componentInstance.oclIsKindOf(StructuredComponentInstance) and not self.oclIsKindOf(connector::DiscreteMultiInteractionEndpointInstance) and ( self.oclIsKindOf(HybridPortInstance) or self.oclIsKindOf(DiscretePortInstance) or self.oclIsKindOf(ContinuousPortInstance))) \r\nimplies not portConnectorInstances->select(ci | ci.oclIsKindOf(DelegationConnectorInstance) and \r\n\tcomponentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi <> self).componentInstance)\r\n)->isEmpty()\r\n-- sthiele2: Check only HybridPortInstance, DiscretePortInstance, ContinousPortInstance '"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL PortInstanceMustReferencePortType='-- The type of a port instance must be a port type\r\nif (not self.type-&gt;oclIsUndefined()) then\r\nself.type.oclIsKindOf(component::Port)\r\nelse\r\nfalse\r\nendif' PortInstanceMustDelegateToEmbeddedCIC='-- PortInstance at Structured Component must delegate to embedded CIC\r\n(componentInstance.oclIsKindOf(StructuredComponentInstance) and not self.oclIsKindOf(connector::DiscreteMultiInteractionEndpointInstance) and ( self.oclIsKindOf(HybridPortInstance) or self.oclIsKindOf(DiscretePortInstance) or self.oclIsKindOf(ContinuousPortInstance))) \r\nimplies not portConnectorInstances-&gt;select(ci | ci.oclIsKindOf(DelegationConnectorInstance) and \r\n\tcomponentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances-&gt;includes(ci.oclAsType(DelegationConnectorInstance).portInstances-&gt;any(pi | pi &lt;&gt; self).componentInstance)\r\n)-&gt;isEmpty()\r\n-- sthiele2: Check only HybridPortInstance, DiscretePortInstance, ContinousPortInstance '"
  * @generated
  */
 public interface PortInstance extends ConnectorEndpointInstance {
@@ -95,7 +95,7 @@ public interface PortInstance extends ConnectorEndpointInstance {
 	 * @return the value of the '<em>Port Connector Instances</em>' reference list.
 	 * @see org.muml.pim.instance.InstancePackage#getPortInstance_PortConnectorInstances()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.connectorInstances->select(i | i.oclIsKindOf(PortConnectorInstance)).oclAsType(PortConnectorInstance)->asOrderedSet()'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.connectorInstances-&gt;select(i | i.oclIsKindOf(PortConnectorInstance)).oclAsType(PortConnectorInstance)-&gt;asOrderedSet()'"
 	 * @generated
 	 */
 	EList<PortConnectorInstance> getPortConnectorInstances();
@@ -114,7 +114,7 @@ public interface PortInstance extends ConnectorEndpointInstance {
 	 * @return the value of the '<em>Port Part</em>' reference.
 	 * @see org.muml.pim.instance.InstancePackage#getPortInstance_PortPart()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='componentInstance.componentPart.portParts->any(portPart | portPart.portType = self.type)'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='componentInstance.componentPart.portParts-&gt;any(portPart | portPart.portType = self.type)'"
 	 * @generated
 	 */
 	PortPart getPortPart();

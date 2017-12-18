@@ -78,7 +78,7 @@ public interface Port extends ConnectorEndpoint, DataType {
 	 * @return the value of the '<em>Port Connectors</em>' reference list.
 	 * @see org.muml.pim.component.ComponentPackage#getPort_PortConnectors()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.connectors->select(c | c.oclIsKindOf(PortConnector)).oclAsType(PortConnector)->asOrderedSet()'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.connectors-&gt;select(c | c.oclIsKindOf(PortConnector)).oclAsType(PortConnector)-&gt;asOrderedSet()'"
 	 * @generated
 	 */
 	EList<PortConnector> getPortConnectors();

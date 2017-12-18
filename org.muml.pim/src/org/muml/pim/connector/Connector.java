@@ -66,7 +66,7 @@ public interface Connector extends CommentableElement {
 	 * @return the value of the '<em>Self Connector</em>' attribute.
 	 * @see org.muml.pim.connector.ConnectorPackage#getConnector_SelfConnector()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.connectorEndpoints->size() = 1\r\n-- author: bingo, cgerking, see MUML #872'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.connectorEndpoints-&gt;size() = 1\r\n-- author: bingo, cgerking, see MUML #872'"
 	 * @generated
 	 */
 	boolean isSelfConnector();

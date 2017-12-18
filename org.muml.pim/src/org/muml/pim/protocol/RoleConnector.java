@@ -29,7 +29,7 @@ import org.muml.pim.connector.Connector;
  *
  * @see org.muml.pim.protocol.ProtocolPackage#getRoleConnector()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='OnlyRolesOfSameCoordinationProtocol'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL OnlyRolesOfSameCoordinationProtocol='-- Role connector must not connect roles at different coordination protocols\r\nif self.coordinationProtocol.roles->oclIsUndefined() then \r\ntrue\r\nelse\r\nself.coordinationProtocol.roles = self.roles\r\nendif'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL OnlyRolesOfSameCoordinationProtocol='-- Role connector must not connect roles at different coordination protocols\r\nif self.coordinationProtocol.roles-&gt;oclIsUndefined() then \r\ntrue\r\nelse\r\nself.coordinationProtocol.roles = self.roles\r\nendif'"
  * @generated
  */
 public interface RoleConnector extends Connector {
@@ -98,7 +98,7 @@ public interface RoleConnector extends Connector {
 	 * @see org.muml.pim.protocol.ProtocolPackage#getRoleConnector_Roles()
 	 * @see org.muml.pim.protocol.Role#getRoleConnector
 	 * @model opposite="roleConnector" lower="2" upper="2" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.connectorEndpoints->select(e | e.oclIsKindOf(Role)).oclAsType(Role)->asOrderedSet()'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.connectorEndpoints-&gt;select(e | e.oclIsKindOf(Role)).oclAsType(Role)-&gt;asOrderedSet()'"
 	 * @generated
 	 */
 	EList<Role> getRoles();

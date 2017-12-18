@@ -36,7 +36,7 @@ import org.muml.pim.protocol.AbstractCoordinationSpecification;
  * @see org.muml.pim.pattern.PatternPackage#getAbstractCoordinationPattern()
  * @model abstract="true"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniquePatternNames PatternWithParametersNeedsVerifiedConfiguration'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL PatternWithParametersNeedsVerifiedConfiguration='-- @warning\r\n--When a CoordinationPattern defines Parameters, it is advised to define a verified configuration for these Parameters\r\nself.patternParameters->size() > 0 implies self.verifiedConfigurations->size() > 0' UniquePatternNames='-- A name of a CoordinationPattern must be unique.\r\nAbstractCoordinationPattern.allInstances()->isUnique(name)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL PatternWithParametersNeedsVerifiedConfiguration='-- @warning\r\n--When a CoordinationPattern defines Parameters, it is advised to define a verified configuration for these Parameters\r\nself.patternParameters-&gt;size() &gt; 0 implies self.verifiedConfigurations-&gt;size() &gt; 0' UniquePatternNames='-- A name of a CoordinationPattern must be unique.\r\nAbstractCoordinationPattern.allInstances()-&gt;isUnique(name)'"
  * @generated
  */
 public interface AbstractCoordinationPattern extends AbstractCoordinationSpecification {

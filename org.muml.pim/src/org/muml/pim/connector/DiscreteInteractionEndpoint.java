@@ -38,7 +38,7 @@ import org.muml.pim.valuetype.Cardinality;
  * @see org.muml.pim.connector.ConnectorPackage#getDiscreteInteractionEndpoint()
  * @model abstract="true"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ReceivingInteractionEndpointRequiresMessageBuffer ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer SetEitherSubRoleAndCoordinatorBehaviorOrNone'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ReceivingInteractionEndpointRequiresMessageBuffer='-- All receiver message types must be assigned to one receiver message buffer.\r\nself.receiverMessageTypes->notEmpty() \r\nimplies \r\nself.receiverMessageBuffer->notEmpty()' ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer='-- Each receiver message type should be assigned to exactly one buffer.\r\nself.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))' SetEitherSubRoleAndCoordinatorBehaviorOrNone='-- Set either the subroleBehavior and the coordinatorBehavior or none of them.\r\n(not self.coordinatorBehavior.oclIsUndefined() and not  self.subroleBehavior.oclIsUndefined()) xor (self.coordinatorBehavior.oclIsUndefined() and self.subroleBehavior.oclIsUndefined())'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ReceivingInteractionEndpointRequiresMessageBuffer='-- All receiver message types must be assigned to one receiver message buffer.\r\nself.receiverMessageTypes-&gt;notEmpty() \r\nimplies \r\nself.receiverMessageBuffer-&gt;notEmpty()' ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer='-- Each receiver message type should be assigned to exactly one buffer.\r\nself.receiverMessageTypes-&gt;forAll(type | self.receiverMessageBuffer-&gt;one(messageType-&gt;includes(type)))' SetEitherSubRoleAndCoordinatorBehaviorOrNone='-- Set either the subroleBehavior and the coordinatorBehavior or none of them.\r\n(not self.coordinatorBehavior.oclIsUndefined() and not  self.subroleBehavior.oclIsUndefined()) xor (self.coordinatorBehavior.oclIsUndefined() and self.subroleBehavior.oclIsUndefined())'"
  * @generated
  */
 public interface DiscreteInteractionEndpoint extends ConnectorEndpoint, BehavioralElement, NamedElement {
@@ -86,7 +86,7 @@ public interface DiscreteInteractionEndpoint extends ConnectorEndpoint, Behavior
 	 * @return the value of the '<em>Coordinator Behavior</em>' reference.
 	 * @see #setCoordinatorBehavior(Behavior)
 	 * @see org.muml.pim.connector.ConnectorPackage#getDiscreteInteractionEndpoint_CoordinatorBehavior()
-	 * @model annotation="http://www.muml.org/emf/OCLFilter filter='if(self.behavior.oclIsTypeOf(realtimestatechart::RealtimeStatechart)) then self.behavior.oclAsType(realtimestatechart::RealtimeStatechart)->closure(rtsc| rtsc.states->select(s: realtimestatechart::State|  not s.simple).embeddedStatecharts) else behavior::Behavior.allInstances() endif'"
+	 * @model annotation="http://www.muml.org/emf/OCLFilter filter='if(self.behavior.oclIsTypeOf(realtimestatechart::RealtimeStatechart)) then self.behavior.oclAsType(realtimestatechart::RealtimeStatechart)-&gt;closure(rtsc| rtsc.states-&gt;select(s: realtimestatechart::State|  not s.simple).embeddedStatecharts) else behavior::Behavior.allInstances() endif'"
 	 * @generated
 	 */
 	Behavior getCoordinatorBehavior();
@@ -115,7 +115,7 @@ public interface DiscreteInteractionEndpoint extends ConnectorEndpoint, Behavior
 	 * @return the value of the '<em>Subrole Behavior</em>' reference.
 	 * @see #setSubroleBehavior(Behavior)
 	 * @see org.muml.pim.connector.ConnectorPackage#getDiscreteInteractionEndpoint_SubroleBehavior()
-	 * @model annotation="http://www.muml.org/emf/OCLFilter filter='if(self.behavior.oclIsTypeOf(realtimestatechart::RealtimeStatechart)) then self.behavior.oclAsType(realtimestatechart::RealtimeStatechart)->closure(rtsc| rtsc.states->select(s: realtimestatechart::State|  not s.simple).embeddedStatecharts ) else behavior::Behavior.allInstances() endif'"
+	 * @model annotation="http://www.muml.org/emf/OCLFilter filter='if(self.behavior.oclIsTypeOf(realtimestatechart::RealtimeStatechart)) then self.behavior.oclAsType(realtimestatechart::RealtimeStatechart)-&gt;closure(rtsc| rtsc.states-&gt;select(s: realtimestatechart::State|  not s.simple).embeddedStatecharts ) else behavior::Behavior.allInstances() endif'"
 	 * @generated
 	 */
 	Behavior getSubroleBehavior();
@@ -183,7 +183,7 @@ public interface DiscreteInteractionEndpoint extends ConnectorEndpoint, Behavior
 	 * @return the value of the '<em>Multi</em>' attribute.
 	 * @see org.muml.pim.connector.ConnectorPackage#getDiscreteInteractionEndpoint_Multi()
 	 * @model default="false" required="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if not (self.cardinality.oclIsUndefined()) then\r\n\t(self.cardinality.upperBound.value > 1) or self.cardinality.upperBound.infinity\r\nelse\r\n\tfalse\r\nendif\r\n\r\n'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if not (self.cardinality.oclIsUndefined()) then\r\n\t(self.cardinality.upperBound.value &gt; 1) or self.cardinality.upperBound.infinity\r\nelse\r\n\tfalse\r\nendif\r\n\r\n'"
 	 * @generated
 	 */
 	boolean isMulti();

@@ -467,6 +467,7 @@
       <genClasses image="false" ecoreClass="pim.ecore#//behavior/BehavioralElement">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference pim.ecore#//behavior/BehavioralElement/behavior"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//behavior/BehavioralElement/containedBehavior"/>
       </genClasses>
       <genClasses ecoreClass="pim.ecore#//behavior/Operation">
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//behavior/Operation/implementations"/>

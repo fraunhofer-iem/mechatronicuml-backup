@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * @see org.muml.pim.valuetype.ValuetypePackage#getCardinality()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='LowerBoundMustBeLessOrEqualThanUpperBound'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL LowerBoundMustBeLessOrEqualThanUpperBound='-- lower bound of cardinality must be less or equal than upper bound\r\n(not self.lowerBound.oclIsUndefined() and not self.upperBound.oclIsUndefined()) implies\n(\n\t((not self.lowerBound.infinity and not self.upperBound.infinity) implies (self.lowerBound.value <= self.upperBound.value))\r\n\tand (self.lowerBound.infinity implies self.upperBound.infinity)\n)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL LowerBoundMustBeLessOrEqualThanUpperBound='-- lower bound of cardinality must be less or equal than upper bound\r\n(not self.lowerBound.oclIsUndefined() and not self.upperBound.oclIsUndefined()) implies\n(\n\t((not self.lowerBound.infinity and not self.upperBound.infinity) implies (self.lowerBound.value &lt;= self.upperBound.value))\r\n\tand (self.lowerBound.infinity implies self.upperBound.infinity)\n)'"
  * @generated
  */
 public interface Cardinality extends EObject {

@@ -35,6 +35,7 @@ import org.muml.pim.constraint.VerificationConstraintRepository;
  * </p>
  * <ul>
  *   <li>{@link org.muml.pim.component.impl.AtomicComponentImpl#getBehavior <em>Behavior</em>}</li>
+ *   <li>{@link org.muml.pim.component.impl.AtomicComponentImpl#getContainedBehavior <em>Contained Behavior</em>}</li>
  *   <li>{@link org.muml.pim.component.impl.AtomicComponentImpl#getVerificationConstraintRepositories <em>Verification Constraint Repositories</em>}</li>
  * </ul>
  *
@@ -50,6 +51,15 @@ public abstract class AtomicComponentImpl extends ComponentImpl implements Atomi
 	 * @ordered
 	 */
 	protected Behavior behavior;
+	/**
+	 * The cached value of the '{@link #getContainedBehavior() <em>Contained Behavior</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContainedBehavior()
+	 * @generated
+	 * @ordered
+	 */
+	protected Behavior containedBehavior;
 	/**
 	 * The cached value of the '{@link #getVerificationConstraintRepositories() <em>Verification Constraint Repositories</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -143,6 +153,49 @@ public abstract class AtomicComponentImpl extends ComponentImpl implements Atomi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Behavior getContainedBehavior() {
+		return containedBehavior;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetContainedBehavior(Behavior newContainedBehavior, NotificationChain msgs) {
+		Behavior oldContainedBehavior = containedBehavior;
+		containedBehavior = newContainedBehavior;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ComponentPackage.ATOMIC_COMPONENT__CONTAINED_BEHAVIOR, oldContainedBehavior, newContainedBehavior);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setContainedBehavior(Behavior newContainedBehavior) {
+		if (newContainedBehavior != containedBehavior) {
+			NotificationChain msgs = null;
+			if (containedBehavior != null)
+				msgs = ((InternalEObject)containedBehavior).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ComponentPackage.ATOMIC_COMPONENT__CONTAINED_BEHAVIOR, null, msgs);
+			if (newContainedBehavior != null)
+				msgs = ((InternalEObject)newContainedBehavior).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ComponentPackage.ATOMIC_COMPONENT__CONTAINED_BEHAVIOR, null, msgs);
+			msgs = basicSetContainedBehavior(newContainedBehavior, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.ATOMIC_COMPONENT__CONTAINED_BEHAVIOR, newContainedBehavior, newContainedBehavior));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<VerificationConstraintRepository> getVerificationConstraintRepositories() {
 		if (verificationConstraintRepositories == null) {
 			verificationConstraintRepositories = new EObjectContainmentEList<VerificationConstraintRepository>(VerificationConstraintRepository.class, this, ComponentPackage.ATOMIC_COMPONENT__VERIFICATION_CONSTRAINT_REPOSITORIES);
@@ -177,6 +230,8 @@ public abstract class AtomicComponentImpl extends ComponentImpl implements Atomi
 		switch (featureID) {
 			case ComponentPackage.ATOMIC_COMPONENT__BEHAVIOR:
 				return basicSetBehavior(null, msgs);
+			case ComponentPackage.ATOMIC_COMPONENT__CONTAINED_BEHAVIOR:
+				return basicSetContainedBehavior(null, msgs);
 			case ComponentPackage.ATOMIC_COMPONENT__VERIFICATION_CONSTRAINT_REPOSITORIES:
 				return ((InternalEList<?>)getVerificationConstraintRepositories()).basicRemove(otherEnd, msgs);
 		}
@@ -194,6 +249,8 @@ public abstract class AtomicComponentImpl extends ComponentImpl implements Atomi
 			case ComponentPackage.ATOMIC_COMPONENT__BEHAVIOR:
 				if (resolve) return getBehavior();
 				return basicGetBehavior();
+			case ComponentPackage.ATOMIC_COMPONENT__CONTAINED_BEHAVIOR:
+				return getContainedBehavior();
 			case ComponentPackage.ATOMIC_COMPONENT__VERIFICATION_CONSTRAINT_REPOSITORIES:
 				return getVerificationConstraintRepositories();
 		}
@@ -211,6 +268,9 @@ public abstract class AtomicComponentImpl extends ComponentImpl implements Atomi
 		switch (featureID) {
 			case ComponentPackage.ATOMIC_COMPONENT__BEHAVIOR:
 				setBehavior((Behavior)newValue);
+				return;
+			case ComponentPackage.ATOMIC_COMPONENT__CONTAINED_BEHAVIOR:
+				setContainedBehavior((Behavior)newValue);
 				return;
 			case ComponentPackage.ATOMIC_COMPONENT__VERIFICATION_CONSTRAINT_REPOSITORIES:
 				getVerificationConstraintRepositories().clear();
@@ -231,6 +291,9 @@ public abstract class AtomicComponentImpl extends ComponentImpl implements Atomi
 			case ComponentPackage.ATOMIC_COMPONENT__BEHAVIOR:
 				setBehavior((Behavior)null);
 				return;
+			case ComponentPackage.ATOMIC_COMPONENT__CONTAINED_BEHAVIOR:
+				setContainedBehavior((Behavior)null);
+				return;
 			case ComponentPackage.ATOMIC_COMPONENT__VERIFICATION_CONSTRAINT_REPOSITORIES:
 				getVerificationConstraintRepositories().clear();
 				return;
@@ -248,6 +311,8 @@ public abstract class AtomicComponentImpl extends ComponentImpl implements Atomi
 		switch (featureID) {
 			case ComponentPackage.ATOMIC_COMPONENT__BEHAVIOR:
 				return behavior != null;
+			case ComponentPackage.ATOMIC_COMPONENT__CONTAINED_BEHAVIOR:
+				return containedBehavior != null;
 			case ComponentPackage.ATOMIC_COMPONENT__VERIFICATION_CONSTRAINT_REPOSITORIES:
 				return verificationConstraintRepositories != null && !verificationConstraintRepositories.isEmpty();
 		}
@@ -264,6 +329,7 @@ public abstract class AtomicComponentImpl extends ComponentImpl implements Atomi
 		if (baseClass == BehavioralElement.class) {
 			switch (derivedFeatureID) {
 				case ComponentPackage.ATOMIC_COMPONENT__BEHAVIOR: return BehaviorPackage.BEHAVIORAL_ELEMENT__BEHAVIOR;
+				case ComponentPackage.ATOMIC_COMPONENT__CONTAINED_BEHAVIOR: return BehaviorPackage.BEHAVIORAL_ELEMENT__CONTAINED_BEHAVIOR;
 				default: return -1;
 			}
 		}
@@ -286,6 +352,7 @@ public abstract class AtomicComponentImpl extends ComponentImpl implements Atomi
 		if (baseClass == BehavioralElement.class) {
 			switch (baseFeatureID) {
 				case BehaviorPackage.BEHAVIORAL_ELEMENT__BEHAVIOR: return ComponentPackage.ATOMIC_COMPONENT__BEHAVIOR;
+				case BehaviorPackage.BEHAVIORAL_ELEMENT__CONTAINED_BEHAVIOR: return ComponentPackage.ATOMIC_COMPONENT__CONTAINED_BEHAVIOR;
 				default: return -1;
 			}
 		}

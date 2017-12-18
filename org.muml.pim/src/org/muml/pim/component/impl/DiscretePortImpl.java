@@ -40,6 +40,7 @@ import org.muml.pim.valuetype.Cardinality;
  * </p>
  * <ul>
  *   <li>{@link org.muml.pim.component.impl.DiscretePortImpl#getBehavior <em>Behavior</em>}</li>
+ *   <li>{@link org.muml.pim.component.impl.DiscretePortImpl#getContainedBehavior <em>Contained Behavior</em>}</li>
  *   <li>{@link org.muml.pim.component.impl.DiscretePortImpl#getSenderMessageTypes <em>Sender Message Types</em>}</li>
  *   <li>{@link org.muml.pim.component.impl.DiscretePortImpl#getReceiverMessageTypes <em>Receiver Message Types</em>}</li>
  *   <li>{@link org.muml.pim.component.impl.DiscretePortImpl#getCoordinatorBehavior <em>Coordinator Behavior</em>}</li>
@@ -67,6 +68,16 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	 * @ordered
 	 */
 	protected Behavior behavior;
+
+	/**
+	 * The cached value of the '{@link #getContainedBehavior() <em>Contained Behavior</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContainedBehavior()
+	 * @generated
+	 * @ordered
+	 */
+	protected Behavior containedBehavior;
 
 	/**
 	 * The cached value of the '{@link #getSenderMessageTypes() <em>Sender Message Types</em>}' reference list.
@@ -275,6 +286,49 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.DISCRETE_PORT__BEHAVIOR, newBehavior, newBehavior));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Behavior getContainedBehavior() {
+		return containedBehavior;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetContainedBehavior(Behavior newContainedBehavior, NotificationChain msgs) {
+		Behavior oldContainedBehavior = containedBehavior;
+		containedBehavior = newContainedBehavior;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ComponentPackage.DISCRETE_PORT__CONTAINED_BEHAVIOR, oldContainedBehavior, newContainedBehavior);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setContainedBehavior(Behavior newContainedBehavior) {
+		if (newContainedBehavior != containedBehavior) {
+			NotificationChain msgs = null;
+			if (containedBehavior != null)
+				msgs = ((InternalEObject)containedBehavior).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ComponentPackage.DISCRETE_PORT__CONTAINED_BEHAVIOR, null, msgs);
+			if (newContainedBehavior != null)
+				msgs = ((InternalEObject)newContainedBehavior).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ComponentPackage.DISCRETE_PORT__CONTAINED_BEHAVIOR, null, msgs);
+			msgs = basicSetContainedBehavior(newContainedBehavior, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.DISCRETE_PORT__CONTAINED_BEHAVIOR, newContainedBehavior, newContainedBehavior));
 	}
 
 	/**
@@ -563,6 +617,8 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 		switch (featureID) {
 			case ComponentPackage.DISCRETE_PORT__BEHAVIOR:
 				return basicSetBehavior(null, msgs);
+			case ComponentPackage.DISCRETE_PORT__CONTAINED_BEHAVIOR:
+				return basicSetContainedBehavior(null, msgs);
 			case ComponentPackage.DISCRETE_PORT__CARDINALITY:
 				return basicSetCardinality(null, msgs);
 			case ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_BUFFER:
@@ -582,6 +638,8 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 			case ComponentPackage.DISCRETE_PORT__BEHAVIOR:
 				if (resolve) return getBehavior();
 				return basicGetBehavior();
+			case ComponentPackage.DISCRETE_PORT__CONTAINED_BEHAVIOR:
+				return getContainedBehavior();
 			case ComponentPackage.DISCRETE_PORT__SENDER_MESSAGE_TYPES:
 				return getSenderMessageTypes();
 			case ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_TYPES:
@@ -628,6 +686,9 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 			case ComponentPackage.DISCRETE_PORT__BEHAVIOR:
 				setBehavior((Behavior)newValue);
 				return;
+			case ComponentPackage.DISCRETE_PORT__CONTAINED_BEHAVIOR:
+				setContainedBehavior((Behavior)newValue);
+				return;
 			case ComponentPackage.DISCRETE_PORT__SENDER_MESSAGE_TYPES:
 				getSenderMessageTypes().clear();
 				getSenderMessageTypes().addAll((Collection<? extends MessageType>)newValue);
@@ -667,6 +728,9 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 			case ComponentPackage.DISCRETE_PORT__BEHAVIOR:
 				setBehavior((Behavior)null);
 				return;
+			case ComponentPackage.DISCRETE_PORT__CONTAINED_BEHAVIOR:
+				setContainedBehavior((Behavior)null);
+				return;
 			case ComponentPackage.DISCRETE_PORT__SENDER_MESSAGE_TYPES:
 				getSenderMessageTypes().clear();
 				return;
@@ -702,6 +766,8 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 		switch (featureID) {
 			case ComponentPackage.DISCRETE_PORT__BEHAVIOR:
 				return behavior != null;
+			case ComponentPackage.DISCRETE_PORT__CONTAINED_BEHAVIOR:
+				return containedBehavior != null;
 			case ComponentPackage.DISCRETE_PORT__SENDER_MESSAGE_TYPES:
 				return senderMessageTypes != null && !senderMessageTypes.isEmpty();
 			case ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_TYPES:
@@ -742,6 +808,7 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 		if (baseClass == BehavioralElement.class) {
 			switch (derivedFeatureID) {
 				case ComponentPackage.DISCRETE_PORT__BEHAVIOR: return BehaviorPackage.BEHAVIORAL_ELEMENT__BEHAVIOR;
+				case ComponentPackage.DISCRETE_PORT__CONTAINED_BEHAVIOR: return BehaviorPackage.BEHAVIORAL_ELEMENT__CONTAINED_BEHAVIOR;
 				default: return -1;
 			}
 		}
@@ -770,6 +837,7 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 		if (baseClass == BehavioralElement.class) {
 			switch (baseFeatureID) {
 				case BehaviorPackage.BEHAVIORAL_ELEMENT__BEHAVIOR: return ComponentPackage.DISCRETE_PORT__BEHAVIOR;
+				case BehaviorPackage.BEHAVIORAL_ELEMENT__CONTAINED_BEHAVIOR: return ComponentPackage.DISCRETE_PORT__CONTAINED_BEHAVIOR;
 				default: return -1;
 			}
 		}

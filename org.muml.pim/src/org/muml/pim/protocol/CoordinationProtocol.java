@@ -20,7 +20,7 @@ package org.muml.pim.protocol;
  *
  * @see org.muml.pim.protocol.ProtocolPackage#getCoordinationProtocol()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='CoordinationProtocolNamesMustBeUnique'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL CoordinationProtocolNamesMustBeUnique='-- Coordination Protocols must have unique names\r\nCoordinationProtocol.allInstances()->isUnique(name)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL CoordinationProtocolNamesMustBeUnique='-- Coordination Protocols must have unique names\r\nCoordinationProtocol.allInstances()-&gt;isUnique(name)'"
  * @generated
  */
 public interface CoordinationProtocol extends AbstractCoordinationSpecification {

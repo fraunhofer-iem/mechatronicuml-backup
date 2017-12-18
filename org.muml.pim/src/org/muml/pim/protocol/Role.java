@@ -29,7 +29,7 @@ import org.muml.pim.types.DataType;
  *
  * @see org.muml.pim.protocol.ProtocolPackage#getRole()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='RoleRequiresBehavior RoleRequiresMessageTypes MultiRoleRequiresSubroleBehaviorAndCoordinatorBehavior'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL RoleRequiresBehavior='-- Role requires behavior\nnot self.behavior.oclIsUndefined()' RoleRequiresMessageTypes='-- Role requires message types to be set\nself.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()' MultiRoleRequiresSubroleBehaviorAndCoordinatorBehavior='-- A multiport requires that either all messages in the RTSCs use one-to-many communication schemata or that the references coordinatorBehavior and subroleBehavior are set.\r\n(not self.behavior.oclAsType(realtimestatechart::RealtimeStatechart).usesOneToManyCommunicationSchemata implies self.multiRole = not self.coordinatorBehavior.oclIsUndefined())\r\nand self.coordinatorBehavior.oclIsUndefined() = self.subroleBehavior.oclIsUndefined()'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL RoleRequiresBehavior='-- Role requires behavior\nnot self.behavior.oclIsUndefined()' RoleRequiresMessageTypes='-- Role requires message types to be set\nself.senderMessageTypes-&gt;notEmpty() or self.receiverMessageTypes-&gt;notEmpty()' MultiRoleRequiresSubroleBehaviorAndCoordinatorBehavior='-- A multiport requires that either all messages in the RTSCs use one-to-many communication schemata or that the references coordinatorBehavior and subroleBehavior are set.\r\n(not self.behavior.oclAsType(realtimestatechart::RealtimeStatechart).usesOneToManyCommunicationSchemata implies self.multiRole = not self.coordinatorBehavior.oclIsUndefined())\r\nand self.coordinatorBehavior.oclIsUndefined() = self.subroleBehavior.oclIsUndefined()'"
  * @generated
  */
 public interface Role extends DiscreteInteractionEndpoint, DataType {
@@ -76,7 +76,7 @@ public interface Role extends DiscreteInteractionEndpoint, DataType {
 	 * @see org.muml.pim.protocol.ProtocolPackage#getRole_RoleConnector()
 	 * @see org.muml.pim.protocol.RoleConnector#getRoles
 	 * @model opposite="roles" required="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.connectors->any(c | c.oclIsKindOf(RoleConnector)).oclAsType(RoleConnector)'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.connectors-&gt;any(c | c.oclIsKindOf(RoleConnector)).oclAsType(RoleConnector)'"
 	 * @generated
 	 */
 	RoleConnector getRoleConnector();

@@ -29,7 +29,7 @@ import org.muml.core.Repository;
  * </ul>
  *
  * @see org.muml.pim.msgtype.MsgtypePackage#getMessageTypeRepository()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL AtLeastOneMessageType='-- A MessageTypeRepository must contain at least one MessageType.\r\nself.messageTypes->notEmpty()'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL AtLeastOneMessageType='-- A MessageTypeRepository must contain at least one MessageType.\r\nself.messageTypes-&gt;notEmpty()'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='AtLeastOneMessageType'"
  * @generated
  */

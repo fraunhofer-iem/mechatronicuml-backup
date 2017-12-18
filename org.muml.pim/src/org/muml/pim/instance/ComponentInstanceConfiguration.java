@@ -32,7 +32,7 @@ import org.muml.pim.constraint.VerifiableElement;
  * </ul>
  *
  * @see org.muml.pim.instance.InstancePackage#getComponentInstanceConfiguration()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueComponentInstanceNames='--  Component instances of a component instance configuration must have unique names on top level.\r\nself.componentInstances->isUnique(name)'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueComponentInstanceNames='--  Component instances of a component instance configuration must have unique names on top level.\r\nself.componentInstances-&gt;isUnique(name)'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueComponentInstanceNames'"
  * @generated
  */

@@ -94,7 +94,7 @@ public interface CoordinationPattern extends AbstractCoordinationPattern {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Combineable Patterns</em>' reference list.
 	 * @see org.muml.pim.pattern.PatternPackage#getCoordinationPattern_CombineablePatterns()
-	 * @model annotation="http://www.muml.org/emf/OCLFilter filter='pattern::CoordinationPattern::allInstances()->select(p| not (p = self))'"
+	 * @model annotation="http://www.muml.org/emf/OCLFilter filter='pattern::CoordinationPattern::allInstances()-&gt;select(p| not (p = self))'"
 	 * @generated
 	 */
 	EList<CoordinationPattern> getCombineablePatterns();
@@ -109,7 +109,7 @@ public interface CoordinationPattern extends AbstractCoordinationPattern {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Alternative Patterns</em>' reference list.
 	 * @see org.muml.pim.pattern.PatternPackage#getCoordinationPattern_AlternativePatterns()
-	 * @model annotation="http://www.muml.org/emf/OCLFilter filter='pattern::CoordinationPattern::allInstances()->select(p| not (p = self))'"
+	 * @model annotation="http://www.muml.org/emf/OCLFilter filter='pattern::CoordinationPattern::allInstances()-&gt;select(p| not (p = self))'"
 	 * @generated
 	 */
 	EList<CoordinationPattern> getAlternativePatterns();

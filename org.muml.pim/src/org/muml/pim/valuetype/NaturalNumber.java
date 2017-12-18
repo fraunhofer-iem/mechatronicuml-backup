@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * @see org.muml.pim.valuetype.ValuetypePackage#getNaturalNumber()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ValueGreaterOrEqualZero'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ValueGreaterOrEqualZero='-- Natural number must not be negative\nself.value >= 0'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ValueGreaterOrEqualZero='-- Natural number must not be negative\nself.value &gt;= 0'"
  * @generated
  */
 public interface NaturalNumber extends EObject {
@@ -113,7 +113,7 @@ public interface NaturalNumber extends EObject {
 	 * Indicates whether this natural number equals the given object.
 	 * @param o The object to be checked for equivalence.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if (o instanceof NaturalNumber) {\r\n\tNaturalNumber naturalNumber = (NaturalNumber) o;\r\n\t// Value of infinity must be equal\r\n\tif (isInfinity() != naturalNumber.isInfinity()) {\r\n\t\treturn false;\r\n\t}\r\n\t// If both are not infinite, make sure their value is identical.\r\n\tif (!isInfinity() && (naturalNumber.getValue() != getValue())) {\r\n\t\treturn false;\r\n\t}\r\n\treturn true;\r\n}\r\nreturn false;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if (o instanceof NaturalNumber) {\r\n\tNaturalNumber naturalNumber = (NaturalNumber) o;\r\n\t// Value of infinity must be equal\r\n\tif (isInfinity() != naturalNumber.isInfinity()) {\r\n\t\treturn false;\r\n\t}\r\n\t// If both are not infinite, make sure their value is identical.\r\n\tif (!isInfinity() &amp;&amp; (naturalNumber.getValue() != getValue())) {\r\n\t\treturn false;\r\n\t}\r\n\treturn true;\r\n}\r\nreturn false;'"
 	 * @generated
 	 */
 	boolean equals(EObject o);
@@ -126,7 +126,7 @@ public interface NaturalNumber extends EObject {
 	 * @param n The given natural number.
 	 * <!-- end-model-doc -->
 	 * @model required="true" nRequired="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='if self.infinity\r\nthen n.infinity\r\nelse self.value <= n.value\r\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='if self.infinity\r\nthen n.infinity\r\nelse self.value &lt;= n.value\r\nendif'"
 	 * @generated
 	 */
 	boolean lessOrEqual(NaturalNumber n);

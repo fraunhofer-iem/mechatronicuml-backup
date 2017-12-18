@@ -39,7 +39,7 @@ import org.eclipse.emf.common.util.EList;
  *
  * @see org.muml.pim.realtimestatechart.RealtimestatechartPackage#getState()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='NoOutgoingTransitionOfFinalState NoRegionsOfFinalState UniquePrioritiesOfOutgoingTransitions UniquePrioritiesOfRegions UniqueChannelNames UniqueRegionNames InvalidClockConstraintOperator UniqueStateConnectionPointNames EntryEventAtInitialState'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL NoOutgoingTransitionOfFinalState='-- Final states must not have outgoing transitions\nself.final implies self.outgoingTransitions->isEmpty()' NoRegionsOfFinalState='-- Final states must not have regions\nself.final implies self.embeddedStatecharts->isEmpty()' UniquePrioritiesOfOutgoingTransitions='-- Outgoing transitions must have a unique priority\nself.outgoingTransitions->isUnique(priority) ' UniqueChannelNames='-- Synchronization channels must have a unique name\nself.channels->isUnique(name)' UniqueRegionNames='-- Regions must have a unique name\nself.embeddedStatecharts->isUnique(name)' InvalidClockConstraintOperator='-- Clock Constraints must only use operators LESS and LESS_OR_EQUAL\nself.invariants->forAll(invariant | Set{core::expressions::common::ComparingOperator::LESS, core::expressions::common::ComparingOperator::LESS_OR_EQUAL }->includes(invariant.operator))' UniqueStateConnectionPointNames='-- State Connection Points of a composite state must have unique names.\r\nself.connectionPoints->isUnique(name)' EntryEventAtInitialState='-- @warning\n-- Attention: An initial state only executes its entry event if it is activated via a firing transition. Consequently, if the RTSC starts, its initial states do not execute their entry events (their entry actions and their clock resets). Noteworthy, this only affects initial states that have no parent states and initial states where all their parents are initial states.\nlet allParentStates : Set(State) = self -> closure(if parentStatechart.parentState.oclIsUndefined() then self else parentStatechart.parentState endif) in\nnot (self.initial and allParentStates->forAll(x | x.initial) and not self.entryEvent.oclIsUndefined())'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL NoOutgoingTransitionOfFinalState='-- Final states must not have outgoing transitions\nself.final implies self.outgoingTransitions-&gt;isEmpty()' NoRegionsOfFinalState='-- Final states must not have regions\nself.final implies self.embeddedStatecharts-&gt;isEmpty()' UniquePrioritiesOfOutgoingTransitions='-- Outgoing transitions must have a unique priority\nself.outgoingTransitions-&gt;isUnique(priority) ' UniqueChannelNames='-- Synchronization channels must have a unique name\nself.channels-&gt;isUnique(name)' UniqueRegionNames='-- Regions must have a unique name\nself.embeddedStatecharts-&gt;isUnique(name)' InvalidClockConstraintOperator='-- Clock Constraints must only use operators LESS and LESS_OR_EQUAL\nself.invariants-&gt;forAll(invariant | Set{core::expressions::common::ComparingOperator::LESS, core::expressions::common::ComparingOperator::LESS_OR_EQUAL }-&gt;includes(invariant.operator))' UniqueStateConnectionPointNames='-- State Connection Points of a composite state must have unique names.\r\nself.connectionPoints-&gt;isUnique(name)' EntryEventAtInitialState='-- @warning\n-- Attention: An initial state only executes its entry event if it is activated via a firing transition. Consequently, if the RTSC starts, its initial states do not execute their entry events (their entry actions and their clock resets). Noteworthy, this only affects initial states that have no parent states and initial states where all their parents are initial states.\nlet allParentStates : Set(State) = self -&gt; closure(if parentStatechart.parentState.oclIsUndefined() then self else parentStatechart.parentState endif) in\nnot (self.initial and allParentStates-&gt;forAll(x | x.initial) and not self.entryEvent.oclIsUndefined())'"
  * @generated
  */
 public interface State extends Vertex {
@@ -185,7 +185,7 @@ public interface State extends Vertex {
 	 * @return the value of the '<em>Events</em>' reference list.
 	 * @see org.muml.pim.realtimestatechart.RealtimestatechartPackage#getState_Events()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='Set{entryEvent,exitEvent,doEvent }->select(x | not x.oclIsUndefined())'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='Set{entryEvent,exitEvent,doEvent }-&gt;select(x | not x.oclIsUndefined())'"
 	 * @generated
 	 */
 	EList<StateEvent> getEvents();
@@ -219,7 +219,7 @@ public interface State extends Vertex {
 	 * @see #isSetSimple()
 	 * @see org.muml.pim.realtimestatechart.RealtimestatechartPackage#getState_Simple()
 	 * @model default="true" unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='-- a state is simple if it contains no regions\r\nembeddedStatecharts->isEmpty()\r\n'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='-- a state is simple if it contains no regions\r\nembeddedStatecharts-&gt;isEmpty()\r\n'"
 	 * @generated
 	 */
 	boolean isSimple();
@@ -277,7 +277,7 @@ public interface State extends Vertex {
 	 * @return the value of the '<em>All Available Channels</em>' reference list.
 	 * @see org.muml.pim.realtimestatechart.RealtimestatechartPackage#getState_AllAvailableChannels()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self -> closure(if parentStatechart.parentState.oclIsUndefined() then self else parentStatechart.parentState endif).channels ->asOrderedSet()'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self -&gt; closure(if parentStatechart.parentState.oclIsUndefined() then self else parentStatechart.parentState endif).channels -&gt;asOrderedSet()'"
 	 * @generated
 	 */
 	EList<SynchronizationChannel> getAllAvailableChannels();

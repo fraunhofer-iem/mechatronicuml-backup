@@ -36,7 +36,7 @@ import org.muml.pim.behavior.ParameterBinding;
  *
  * @see org.muml.pim.pattern.PatternPackage#getVerifiedConfiguration()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ensureBindingForAllPatternParameters'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ensureBindingForAllPatternParameters='-- A VerifiedConfiguration must bind every CoordinaionPattern parameter\r\nself.coordinationPattern.oclAsSet()->select(object|object <> null).patternParameters->forAll(parameter| self.parameterBindings.parameter->includes(parameter))'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ensureBindingForAllPatternParameters='-- A VerifiedConfiguration must bind every CoordinaionPattern parameter\r\nself.coordinationPattern.oclAsSet()-&gt;select(object|object &lt;&gt; null).patternParameters-&gt;forAll(parameter| self.parameterBindings.parameter-&gt;includes(parameter))'"
  * @generated
  */
 public interface VerifiedConfiguration extends NamedElement, CommentableElement {

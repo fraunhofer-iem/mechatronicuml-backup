@@ -26,7 +26,7 @@ import org.muml.pim.component.DelegationConnector;
  *
  * @see org.muml.pim.instance.InstancePackage#getDelegationConnectorInstance()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='DelegateToEmbeddedCIC'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL DelegateToEmbeddedCIC='-- Delegation Connector Instance must delegate to embedded Component Instance Configuration\nself.portInstances->exists(a, b | b.componentInstance.parentCIC.parentStructuredComponentInstance = a.componentInstance)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL DelegateToEmbeddedCIC='-- Delegation Connector Instance must delegate to embedded Component Instance Configuration\nself.portInstances-&gt;exists(a, b | b.componentInstance.parentCIC.parentStructuredComponentInstance = a.componentInstance)'"
  * @generated
  */
 public interface DelegationConnectorInstance extends PortConnectorInstance {

@@ -946,13 +946,22 @@ public interface ConnectorPackage extends EPackage {
 	int DISCRETE_INTERACTION_ENDPOINT__BEHAVIOR = CONNECTOR_ENDPOINT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Contained Behavior</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_INTERACTION_ENDPOINT__CONTAINED_BEHAVIOR = CONNECTOR_ENDPOINT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT__NAME = CONNECTOR_ENDPOINT_FEATURE_COUNT + 1;
+	int DISCRETE_INTERACTION_ENDPOINT__NAME = CONNECTOR_ENDPOINT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Sender Message Types</b></em>' reference list.
@@ -961,7 +970,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES = CONNECTOR_ENDPOINT_FEATURE_COUNT + 2;
+	int DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES = CONNECTOR_ENDPOINT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
@@ -970,7 +979,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES = CONNECTOR_ENDPOINT_FEATURE_COUNT + 3;
+	int DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES = CONNECTOR_ENDPOINT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Coordinator Behavior</b></em>' reference.
@@ -979,7 +988,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT__COORDINATOR_BEHAVIOR = CONNECTOR_ENDPOINT_FEATURE_COUNT + 4;
+	int DISCRETE_INTERACTION_ENDPOINT__COORDINATOR_BEHAVIOR = CONNECTOR_ENDPOINT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Subrole Behavior</b></em>' reference.
@@ -988,7 +997,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT__SUBROLE_BEHAVIOR = CONNECTOR_ENDPOINT_FEATURE_COUNT + 5;
+	int DISCRETE_INTERACTION_ENDPOINT__SUBROLE_BEHAVIOR = CONNECTOR_ENDPOINT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
@@ -997,7 +1006,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT__CARDINALITY = CONNECTOR_ENDPOINT_FEATURE_COUNT + 6;
+	int DISCRETE_INTERACTION_ENDPOINT__CARDINALITY = CONNECTOR_ENDPOINT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Receiver Message Buffer</b></em>' containment reference list.
@@ -1006,7 +1015,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER = CONNECTOR_ENDPOINT_FEATURE_COUNT + 7;
+	int DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER = CONNECTOR_ENDPOINT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Multi</b></em>' attribute.
@@ -1015,7 +1024,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT__MULTI = CONNECTOR_ENDPOINT_FEATURE_COUNT + 8;
+	int DISCRETE_INTERACTION_ENDPOINT__MULTI = CONNECTOR_ENDPOINT_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Discrete Interaction Endpoint</em>' class.
@@ -1024,7 +1033,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT = CONNECTOR_ENDPOINT_FEATURE_COUNT + 9;
+	int DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT = CONNECTOR_ENDPOINT_FEATURE_COUNT + 10;
 
 
 	/**

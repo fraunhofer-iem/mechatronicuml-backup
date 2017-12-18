@@ -646,6 +646,15 @@ public interface ProtocolPackage extends EPackage {
 	int ROLE__BEHAVIOR = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__BEHAVIOR;
 
 	/**
+	 * The feature id for the '<em><b>Contained Behavior</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE__CONTAINED_BEHAVIOR = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONTAINED_BEHAVIOR;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

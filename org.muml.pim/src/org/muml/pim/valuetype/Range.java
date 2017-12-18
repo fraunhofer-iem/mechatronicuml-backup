@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * @see org.muml.pim.valuetype.ValuetypePackage#getRange()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='LowerBoundMustBeLessOrEqualThanUpperBound'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL LowerBoundMustBeLessOrEqualThanUpperBound='-- lower bound of range must be less or equal than upper bound\r\nself.lowerBound <= self.upperBound'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL LowerBoundMustBeLessOrEqualThanUpperBound='-- lower bound of range must be less or equal than upper bound\r\nself.lowerBound &lt;= self.upperBound'"
  * @generated
  */
 public interface Range extends EObject {

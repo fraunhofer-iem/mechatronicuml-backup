@@ -33,7 +33,7 @@ import org.muml.pim.pattern.AbstractCoordinationPattern;
  * @see org.muml.pim.protocol.ProtocolPackage#getAbstractCoordinationSpecification()
  * @model abstract="true"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueRoleNames RoleMessageTypesMustBeCompatible'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueRoleNames='-- Names of roles must be unique\r\nself.roles->isUnique(name)' RoleMessageTypesMustBeCompatible='-- Every Role must have the senderMessageTypes of all other Roles set as receiverMessageTypes\r\nself.roles->forAll(role1 : Role, role2 : Role |\r\n   role1 <> role2\r\n   implies\r\n   role1.senderMessageTypes->asSet() = role2.receiverMessageTypes->asSet()\r\n)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueRoleNames='-- Names of roles must be unique\r\nself.roles-&gt;isUnique(name)' RoleMessageTypesMustBeCompatible='-- Every Role must have the senderMessageTypes of all other Roles set as receiverMessageTypes\r\nself.roles-&gt;forAll(role1 : Role, role2 : Role |\r\n   role1 &lt;&gt; role2\r\n   implies\r\n   role1.senderMessageTypes-&gt;asSet() = role2.receiverMessageTypes-&gt;asSet()\r\n)'"
  * @generated
  */
 public interface AbstractCoordinationSpecification extends NamedElement, CommentableElement, VerifiableElement {
@@ -108,7 +108,7 @@ public interface AbstractCoordinationSpecification extends NamedElement, Comment
 	 * @return the value of the '<em>Gmf Message Buffers</em>' containment reference list.
 	 * @see org.muml.pim.protocol.ProtocolPackage#getAbstractCoordinationSpecification_GmfMessageBuffers()
 	 * @model containment="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='roles->collect(receiverMessageBuffer)->asOrderedSet()'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='roles-&gt;collect(receiverMessageBuffer)-&gt;asOrderedSet()'"
 	 * @generated
 	 */
 	EList<MessageBuffer> getGmfMessageBuffers();
@@ -138,7 +138,7 @@ public interface AbstractCoordinationSpecification extends NamedElement, Comment
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Adapted From Pattern</em>' reference list.
 	 * @see org.muml.pim.protocol.ProtocolPackage#getAbstractCoordinationSpecification_AdaptedFromPattern()
-	 * @model annotation="http://www.muml.org/emf/OCLFilter filter='pattern::CoordinationPattern::allInstances()->select(p| not (p = self))'"
+	 * @model annotation="http://www.muml.org/emf/OCLFilter filter='pattern::CoordinationPattern::allInstances()-&gt;select(p| not (p = self))'"
 	 * @generated
 	 */
 	EList<AbstractCoordinationPattern> getAdaptedFromPattern();

@@ -38,7 +38,7 @@ import org.muml.pim.valuetype.Cardinality;
  *
  * @see org.muml.pim.component.ComponentPackage#getComponentPart()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='CardinalityLowerBoundSet TypeNotEqualToParent CardinalityUpperBoundSet'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL CardinalityLowerBoundSet='-- Lower bound of cardinality must be set\r\nif self.cardinality.lowerBound.oclIsUndefined() then\r\nfalse\r\nelse\r\nself.cardinality.lowerBound->notEmpty()\r\nendif' TypeNotEqualToParent='-- Component Part must have the same type as its parent structured component\nself.componentType <> self.parentComponent' CardinalityUpperBoundSet='-- Upper bound of cardinality must be set\r\nif self.cardinality.upperBound.oclIsUndefined() then\r\nfalse\r\nelse\r\nself.cardinality.upperBound->notEmpty()\r\nendif'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL CardinalityLowerBoundSet='-- Lower bound of cardinality must be set\r\nif self.cardinality.lowerBound.oclIsUndefined() then\r\nfalse\r\nelse\r\nself.cardinality.lowerBound-&gt;notEmpty()\r\nendif' TypeNotEqualToParent='-- Component Part must have the same type as its parent structured component\nself.componentType &lt;&gt; self.parentComponent' CardinalityUpperBoundSet='-- Upper bound of cardinality must be set\r\nif self.cardinality.upperBound.oclIsUndefined() then\r\nfalse\r\nelse\r\nself.cardinality.upperBound-&gt;notEmpty()\r\nendif'"
  * @generated
  */
 public interface ComponentPart extends NamedElement, CommentableElement, DataType {
@@ -107,7 +107,7 @@ public interface ComponentPart extends NamedElement, CommentableElement, DataTyp
 	 * @see #isSetMultiPart()
 	 * @see org.muml.pim.component.ComponentPackage#getComponentPart_MultiPart()
 	 * @model default="false" unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (not self.cardinality.oclIsUndefined() and not self.cardinality.upperBound.oclIsUndefined()) then\nself.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity\nelse false\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (not self.cardinality.oclIsUndefined() and not self.cardinality.upperBound.oclIsUndefined()) then\nself.cardinality.upperBound.value &gt; 1 or self.cardinality.upperBound.infinity\nelse false\nendif'"
 	 * @generated
 	 */
 	boolean isMultiPart();

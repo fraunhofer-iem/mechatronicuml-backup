@@ -25,6 +25,7 @@ import org.muml.pim.behavior.BehavioralElement;
  * </p>
  * <ul>
  *   <li>{@link org.muml.pim.behavior.impl.BehavioralElementImpl#getBehavior <em>Behavior</em>}</li>
+ *   <li>{@link org.muml.pim.behavior.impl.BehavioralElementImpl#getContainedBehavior <em>Contained Behavior</em>}</li>
  * </ul>
  *
  * @generated
@@ -39,6 +40,16 @@ public abstract class BehavioralElementImpl extends EObjectImpl implements Behav
 	 * @ordered
 	 */
 	protected Behavior behavior;
+
+	/**
+	 * The cached value of the '{@link #getContainedBehavior() <em>Contained Behavior</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContainedBehavior()
+	 * @generated
+	 * @ordered
+	 */
+	protected Behavior containedBehavior;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -124,6 +135,49 @@ public abstract class BehavioralElementImpl extends EObjectImpl implements Behav
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Behavior getContainedBehavior() {
+		return containedBehavior;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetContainedBehavior(Behavior newContainedBehavior, NotificationChain msgs) {
+		Behavior oldContainedBehavior = containedBehavior;
+		containedBehavior = newContainedBehavior;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BehaviorPackage.BEHAVIORAL_ELEMENT__CONTAINED_BEHAVIOR, oldContainedBehavior, newContainedBehavior);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setContainedBehavior(Behavior newContainedBehavior) {
+		if (newContainedBehavior != containedBehavior) {
+			NotificationChain msgs = null;
+			if (containedBehavior != null)
+				msgs = ((InternalEObject)containedBehavior).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BehaviorPackage.BEHAVIORAL_ELEMENT__CONTAINED_BEHAVIOR, null, msgs);
+			if (newContainedBehavior != null)
+				msgs = ((InternalEObject)newContainedBehavior).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BehaviorPackage.BEHAVIORAL_ELEMENT__CONTAINED_BEHAVIOR, null, msgs);
+			msgs = basicSetContainedBehavior(newContainedBehavior, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.BEHAVIORAL_ELEMENT__CONTAINED_BEHAVIOR, newContainedBehavior, newContainedBehavior));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -145,6 +199,8 @@ public abstract class BehavioralElementImpl extends EObjectImpl implements Behav
 		switch (featureID) {
 			case BehaviorPackage.BEHAVIORAL_ELEMENT__BEHAVIOR:
 				return basicSetBehavior(null, msgs);
+			case BehaviorPackage.BEHAVIORAL_ELEMENT__CONTAINED_BEHAVIOR:
+				return basicSetContainedBehavior(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -160,6 +216,8 @@ public abstract class BehavioralElementImpl extends EObjectImpl implements Behav
 			case BehaviorPackage.BEHAVIORAL_ELEMENT__BEHAVIOR:
 				if (resolve) return getBehavior();
 				return basicGetBehavior();
+			case BehaviorPackage.BEHAVIORAL_ELEMENT__CONTAINED_BEHAVIOR:
+				return getContainedBehavior();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -174,6 +232,9 @@ public abstract class BehavioralElementImpl extends EObjectImpl implements Behav
 		switch (featureID) {
 			case BehaviorPackage.BEHAVIORAL_ELEMENT__BEHAVIOR:
 				setBehavior((Behavior)newValue);
+				return;
+			case BehaviorPackage.BEHAVIORAL_ELEMENT__CONTAINED_BEHAVIOR:
+				setContainedBehavior((Behavior)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -190,6 +251,9 @@ public abstract class BehavioralElementImpl extends EObjectImpl implements Behav
 			case BehaviorPackage.BEHAVIORAL_ELEMENT__BEHAVIOR:
 				setBehavior((Behavior)null);
 				return;
+			case BehaviorPackage.BEHAVIORAL_ELEMENT__CONTAINED_BEHAVIOR:
+				setContainedBehavior((Behavior)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -204,6 +268,8 @@ public abstract class BehavioralElementImpl extends EObjectImpl implements Behav
 		switch (featureID) {
 			case BehaviorPackage.BEHAVIORAL_ELEMENT__BEHAVIOR:
 				return behavior != null;
+			case BehaviorPackage.BEHAVIORAL_ELEMENT__CONTAINED_BEHAVIOR:
+				return containedBehavior != null;
 		}
 		return super.eIsSet(featureID);
 	}

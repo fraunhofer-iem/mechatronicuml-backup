@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.muml.pim.behavior.BehavioralElement#getBehavior <em>Behavior</em>}</li>
+ *   <li>{@link org.muml.pim.behavior.BehavioralElement#getContainedBehavior <em>Contained Behavior</em>}</li>
  * </ul>
  *
  * @see org.muml.pim.behavior.BehaviorPackage#getBehavioralElement()
@@ -55,5 +56,30 @@ public interface BehavioralElement extends EObject {
 	 * @generated
 	 */
 	void setBehavior(Behavior value);
+
+	/**
+	 * Returns the value of the '<em><b>Contained Behavior</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The behavior of this behavioral element.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Contained Behavior</em>' containment reference.
+	 * @see #setContainedBehavior(Behavior)
+	 * @see org.muml.pim.behavior.BehaviorPackage#getBehavioralElement_ContainedBehavior()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Behavior getContainedBehavior();
+
+	/**
+	 * Sets the value of the '{@link org.muml.pim.behavior.BehavioralElement#getContainedBehavior <em>Contained Behavior</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Contained Behavior</em>' containment reference.
+	 * @see #getContainedBehavior()
+	 * @generated
+	 */
+	void setContainedBehavior(Behavior value);
 
 } // BehavioralElement

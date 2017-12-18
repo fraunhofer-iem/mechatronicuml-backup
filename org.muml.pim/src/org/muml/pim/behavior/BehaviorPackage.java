@@ -139,13 +139,22 @@ public interface BehaviorPackage extends EPackage {
 	int BEHAVIORAL_ELEMENT__BEHAVIOR = 0;
 
 	/**
+	 * The feature id for the '<em><b>Contained Behavior</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIORAL_ELEMENT__CONTAINED_BEHAVIOR = 1;
+
+	/**
 	 * The number of structural features of the '<em>Behavioral Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BEHAVIORAL_ELEMENT_FEATURE_COUNT = 1;
+	int BEHAVIORAL_ELEMENT_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Behavioral Element</em>' class.
@@ -1447,6 +1456,17 @@ public interface BehaviorPackage extends EPackage {
 	EReference getBehavioralElement_Behavior();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.muml.pim.behavior.BehavioralElement#getContainedBehavior <em>Contained Behavior</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Contained Behavior</em>'.
+	 * @see org.muml.pim.behavior.BehavioralElement#getContainedBehavior()
+	 * @see #getBehavioralElement()
+	 * @generated
+	 */
+	EReference getBehavioralElement_ContainedBehavior();
+
+	/**
 	 * Returns the meta object for class '{@link org.muml.pim.behavior.Behavior <em>Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1687,6 +1707,14 @@ public interface BehaviorPackage extends EPackage {
 		 * @generated
 		 */
 		EReference BEHAVIORAL_ELEMENT__BEHAVIOR = eINSTANCE.getBehavioralElement_Behavior();
+
+		/**
+		 * The meta object literal for the '<em><b>Contained Behavior</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BEHAVIORAL_ELEMENT__CONTAINED_BEHAVIOR = eINSTANCE.getBehavioralElement_ContainedBehavior();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.pim.behavior.impl.BehaviorImpl <em>Behavior</em>}' class.

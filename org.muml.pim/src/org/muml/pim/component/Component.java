@@ -33,7 +33,7 @@ import org.muml.pim.types.DataType;
  * @see org.muml.pim.component.ComponentPackage#getComponent()
  * @model abstract="true"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniquePortNames UniqueComponentNames'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniquePortNames='-- Port names must be unique\nself.ports->isUnique(name)' UniqueComponentNames='-- The component\'s name must be unique.\nComponent.allInstances()->select(c|c<>self)->collect(name)->excludes(self.name)\n-- author: adann'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniquePortNames='-- Port names must be unique\nself.ports-&gt;isUnique(name)' UniqueComponentNames='-- The component\'s name must be unique.\nComponent.allInstances()-&gt;select(c|c&lt;&gt;self)-&gt;collect(name)-&gt;excludes(self.name)\n-- author: adann'"
  * @generated
  */
 public interface Component extends NamedElement, CommentableElement, DataType {

@@ -29,7 +29,7 @@ import org.muml.pim.protocol.CoordinationProtocol;
  *
  * @see org.muml.pim.component.ComponentPackage#getCoordinationProtocolPart()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='OnlyDiscretePortParts'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL OnlyDiscretePortParts='-- Coordination Protocol Part must only have discrete Port Parts\r\nnot self.portParts->oclIsUndefined()\r\nimplies\r\nself.portParts->forAll(p : PortPart | p.portType.oclIsKindOf(DiscretePort))'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL OnlyDiscretePortParts='-- Coordination Protocol Part must only have discrete Port Parts\r\nnot self.portParts-&gt;oclIsUndefined()\r\nimplies\r\nself.portParts-&gt;forAll(p : PortPart | p.portType.oclIsKindOf(DiscretePort))'"
  * @generated
  */
 public interface CoordinationProtocolPart extends CommentableElement {

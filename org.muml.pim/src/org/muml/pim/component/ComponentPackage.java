@@ -1145,13 +1145,22 @@ public interface ComponentPackage extends EPackage {
 	int DISCRETE_PORT__BEHAVIOR = PORT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Contained Behavior</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT__CONTAINED_BEHAVIOR = PORT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Sender Message Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__SENDER_MESSAGE_TYPES = PORT_FEATURE_COUNT + 1;
+	int DISCRETE_PORT__SENDER_MESSAGE_TYPES = PORT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
@@ -1160,7 +1169,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__RECEIVER_MESSAGE_TYPES = PORT_FEATURE_COUNT + 2;
+	int DISCRETE_PORT__RECEIVER_MESSAGE_TYPES = PORT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Coordinator Behavior</b></em>' reference.
@@ -1169,7 +1178,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__COORDINATOR_BEHAVIOR = PORT_FEATURE_COUNT + 3;
+	int DISCRETE_PORT__COORDINATOR_BEHAVIOR = PORT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Subrole Behavior</b></em>' reference.
@@ -1178,7 +1187,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__SUBROLE_BEHAVIOR = PORT_FEATURE_COUNT + 4;
+	int DISCRETE_PORT__SUBROLE_BEHAVIOR = PORT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
@@ -1187,7 +1196,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__CARDINALITY = PORT_FEATURE_COUNT + 5;
+	int DISCRETE_PORT__CARDINALITY = PORT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Receiver Message Buffer</b></em>' containment reference list.
@@ -1196,7 +1205,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__RECEIVER_MESSAGE_BUFFER = PORT_FEATURE_COUNT + 6;
+	int DISCRETE_PORT__RECEIVER_MESSAGE_BUFFER = PORT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Multi</b></em>' attribute.
@@ -1205,7 +1214,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__MULTI = PORT_FEATURE_COUNT + 7;
+	int DISCRETE_PORT__MULTI = PORT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Refined Role</b></em>' reference.
@@ -1214,7 +1223,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__REFINED_ROLE = PORT_FEATURE_COUNT + 8;
+	int DISCRETE_PORT__REFINED_ROLE = PORT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Is Discrete In Port</b></em>' attribute.
@@ -1223,7 +1232,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__IS_DISCRETE_IN_PORT = PORT_FEATURE_COUNT + 9;
+	int DISCRETE_PORT__IS_DISCRETE_IN_PORT = PORT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Is Discrete Out Port</b></em>' attribute.
@@ -1232,7 +1241,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__IS_DISCRETE_OUT_PORT = PORT_FEATURE_COUNT + 10;
+	int DISCRETE_PORT__IS_DISCRETE_OUT_PORT = PORT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Is Discrete In Out Port</b></em>' attribute.
@@ -1241,7 +1250,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__IS_DISCRETE_IN_OUT_PORT = PORT_FEATURE_COUNT + 11;
+	int DISCRETE_PORT__IS_DISCRETE_IN_OUT_PORT = PORT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Multi Port</b></em>' attribute.
@@ -1250,7 +1259,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__MULTI_PORT = PORT_FEATURE_COUNT + 12;
+	int DISCRETE_PORT__MULTI_PORT = PORT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Coordination Protocol</b></em>' reference.
@@ -1259,7 +1268,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__COORDINATION_PROTOCOL = PORT_FEATURE_COUNT + 13;
+	int DISCRETE_PORT__COORDINATION_PROTOCOL = PORT_FEATURE_COUNT + 14;
 
 	/**
 	 * The number of structural features of the '<em>Discrete Port</em>' class.
@@ -1268,7 +1277,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT_FEATURE_COUNT = PORT_FEATURE_COUNT + 14;
+	int DISCRETE_PORT_FEATURE_COUNT = PORT_FEATURE_COUNT + 15;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -2274,13 +2283,22 @@ public interface ComponentPackage extends EPackage {
 	int ATOMIC_COMPONENT__BEHAVIOR = COMPONENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Contained Behavior</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATOMIC_COMPONENT__CONTAINED_BEHAVIOR = COMPONENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Verification Constraint Repositories</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATOMIC_COMPONENT__VERIFICATION_CONSTRAINT_REPOSITORIES = COMPONENT_FEATURE_COUNT + 1;
+	int ATOMIC_COMPONENT__VERIFICATION_CONSTRAINT_REPOSITORIES = COMPONENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Atomic Component</em>' class.
@@ -2289,7 +2307,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATOMIC_COMPONENT_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 2;
+	int ATOMIC_COMPONENT_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -3944,6 +3962,15 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int STATIC_ATOMIC_COMPONENT__BEHAVIOR = ATOMIC_COMPONENT__BEHAVIOR;
+
+	/**
+	 * The feature id for the '<em><b>Contained Behavior</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_ATOMIC_COMPONENT__CONTAINED_BEHAVIOR = ATOMIC_COMPONENT__CONTAINED_BEHAVIOR;
 
 	/**
 	 * The feature id for the '<em><b>Verification Constraint Repositories</b></em>' containment reference list.
