@@ -84,7 +84,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:DoubleClickDescription" name="portDoubleClick" mappings="//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@nodeMappings[name='AtomicComponent']/@borderedNodeMappings[name='Port'] //@ownedViewpoints[name='instance']/@ownedRepresentations[name='org.muml.pim.instance.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.instance.ComponentInstance']/@borderedNodeMappings[name='org.muml.pim.component.PortInstance']">
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="portDoubleClick" mappings="//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@nodeMappings[name='AtomicComponent']/@borderedNodeMappings[name='Port'] //@ownedViewpoints[name='instance']/@ownedRepresentations[name='org.muml.pim.instance.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.instance.ComponentInstance']/@borderedNodeMappings[name='org.muml.pim.component.SinglePortInstance']">
             <element name="element"/>
             <elementView name="elementView"/>
             <initialOperation>
@@ -122,8 +122,24 @@
       <metamodel href="../../org.muml.pim/model/pim.ecore#//realtimestatechart/one_to_n_schemata"/>
       <defaultLayer name="DefaultInstance" label="Default">
         <containerMappings name="org.muml.pim.instance.ComponentInstance" label="Component Instance" semanticCandidatesExpression="aql:self.componentInstances" domainClass="ComponentInstance" reusedContainerMappings="//@ownedViewpoints[name='instance']/@ownedRepresentations[name='org.muml.pim.instance.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.instance.ComponentInstance']" childrenPresentation="VerticalStack">
-          <borderedNodeMappings name="org.muml.pim.component.PortInstance" label="Port Instance" semanticCandidatesExpression="aql:self.portInstances" doubleClickDescription="//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='portDoubleClick']" domainClass="PortInstance">
+          <borderedNodeMappings name="org.muml.pim.component.SinglePortInstance" label="Single Port Instance" semanticCandidatesExpression="aql:self.portInstances->select(x | not  x.oclIsKindOf(instance::DiscreteMultiPortInstance))" doubleClickDescription="//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='portDoubleClick']" domainClass="PortInstance">
             <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="aql:self.name + ' : ' + (if self.portType.name = null then '' else self.portType.name.toString() endif)" sizeComputationExpression="2">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>underline</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </borderedNodeMappings>
+          <borderedNodeMappings name="org.muml.pim.component.MultiPortInstance" label="Multi Port Instance" semanticCandidatesExpression="aql:self.portInstances" domainClass="DiscreteMultiPortInstance">
+            <borderedNodeMappings name="org.muml.pim.component.PortInstance" label="Port Instance" semanticCandidatesExpression="aql:self.subInteractionEndpointInstances" domainClass="PortInstance">
+              <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="aql:self.name + ' : ' + (if self.portType.name = null then '' else self.portType.name.toString() endif)" sizeComputationExpression="2">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelFormat>underline</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </borderedNodeMappings>
+            <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="aql:self.name + ' : ' + (if self.portType.name = null then '' else self.portType.name.toString() endif)" sizeComputationExpression="4" resizeKind="NSEW" width="10" height="4">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelFormat>underline</labelFormat>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -138,6 +154,9 @@
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
+        </containerMappings>
+        <containerMappings name="invisible" semanticCandidatesExpression="aql:null" domainClass="ComponentInstance">
+          <subContainerMappings name="org.muml.pim.instance.DiscreteMultiPortInstance" label="Discrete Multi PortInstance" semanticCandidatesExpression="aql:self.portInstances" domainClass="DiscreteMultiPortInstance"/>
         </containerMappings>
         <toolSections name="org.muml.pim.component.createSection" label="Create">
           <ownedTools xsi:type="tool:ContainerCreationDescription" name="org.muml.pim.instance.createComponentInstance" label="Create Atomic Component Instance" containerMappings="//@ownedViewpoints[name='instance']/@ownedRepresentations[name='org.muml.pim.instance.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.instance.ComponentInstance']">
@@ -163,12 +182,55 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="org.muml.pim.instance.createPortInstance" label="Create Discrete Port Instance" nodeMappings="//@ownedViewpoints[name='instance']/@ownedRepresentations[name='org.muml.pim.instance.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.instance.ComponentInstance']/@borderedNodeMappings[name='org.muml.pim.component.PortInstance']">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="org.muml.pim.instance.createSingleDiscretePortInstance" label="Create Single Discrete Port Instance" nodeMappings="//@ownedViewpoints[name='instance']/@ownedRepresentations[name='org.muml.pim.instance.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.instance.ComponentInstance']/@borderedNodeMappings[name='org.muml.pim.component.SinglePortInstance'] //@ownedViewpoints[name='instance']/@ownedRepresentations[name='org.muml.pim.instance.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.instance.ComponentInstance']/@borderedNodeMappings[name='org.muml.pim.component.MultiPortInstance']/@borderedNodeMappings[name='org.muml.pim.component.PortInstance']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container">
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(instance::DiscreteMultiPortInstance)">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="DiscreteSinglePortInstance" referenceName="subInteractionEndpointInstances">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="pi"/>
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container.componentInstance">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="portInstances" valueExpression="aql:self.portInstances + Sequence{instance}"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:not self.oclIsKindOf(instance::DiscreteMultiPortInstance)">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="DiscreteSinglePortInstance" referenceName="portInstances">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="pi"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="org.muml.pim.instance.createMultiDiscretePortInstance" label="Create Multi Discrete Port Instance">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="DiscretePortInstance" referenceName="portInstances">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="DiscreteMultiPortInstance" referenceName="portInstances">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="pi"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="org.muml.pim.instance.createContinuousPortInstance" label="Create Continuous Port Instance" nodeMappings="//@ownedViewpoints[name='instance']/@ownedRepresentations[name='org.muml.pim.instance.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.instance.ComponentInstance']/@borderedNodeMappings[name='org.muml.pim.component.SinglePortInstance']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ContinuousPortInstance" referenceName="portInstances">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="pi"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="org.muml.pim.instance.createHybridPortInstance" label="Create Hybrid Port Instance" nodeMappings="//@ownedViewpoints[name='instance']/@ownedRepresentations[name='org.muml.pim.instance.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.instance.ComponentInstance']/@borderedNodeMappings[name='org.muml.pim.component.SinglePortInstance']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="HybridPortInstance" referenceName="portInstances">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="pi"/>
                 </subModelOperations>
               </firstModelOperations>
