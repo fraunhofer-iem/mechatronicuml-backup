@@ -159,7 +159,7 @@
           <subContainerMappings name="org.muml.pim.instance.DiscreteMultiPortInstance" label="Discrete Multi PortInstance" semanticCandidatesExpression="aql:self.portInstances" domainClass="DiscreteMultiPortInstance"/>
         </containerMappings>
         <toolSections name="org.muml.pim.component.createSection" label="Create">
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="org.muml.pim.instance.createComponentInstance" label="Create Atomic Component Instance" containerMappings="//@ownedViewpoints[name='instance']/@ownedRepresentations[name='org.muml.pim.instance.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.instance.ComponentInstance']">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="org.muml.pim.instance.createComponentInstance" label="Create Atomic Component Instance" containerMappings="//@ownedViewpoints[name='instance']/@ownedRepresentations[name='org.muml.pim.instance.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.instance.ComponentInstance']" iconPath="/org.muml.pim.edit/icons/full/obj16/ComponentInstance.gif">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -170,7 +170,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="org.muml.pim.instance.createStructuredComponentInstance" label="Create Structured Component Instance" containerMappings="//@ownedViewpoints[name='instance']/@ownedRepresentations[name='org.muml.pim.instance.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.instance.ComponentInstance']">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="org.muml.pim.instance.createStructuredComponentInstance" label="Create Structured Component Instance" containerMappings="//@ownedViewpoints[name='instance']/@ownedRepresentations[name='org.muml.pim.instance.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.instance.ComponentInstance']" iconPath="/org.muml.pim.edit/icons/full/obj16/ComponentInstance.gif">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -182,7 +182,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="org.muml.pim.instance.createSingleDiscretePortInstance" label="Create Single Discrete Port Instance" nodeMappings="//@ownedViewpoints[name='instance']/@ownedRepresentations[name='org.muml.pim.instance.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.instance.ComponentInstance']/@borderedNodeMappings[name='org.muml.pim.component.SinglePortInstance'] //@ownedViewpoints[name='instance']/@ownedRepresentations[name='org.muml.pim.instance.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.instance.ComponentInstance']/@borderedNodeMappings[name='org.muml.pim.component.MultiPortInstance']/@borderedNodeMappings[name='org.muml.pim.component.PortInstance']">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="org.muml.pim.instance.createSingleDiscretePortInstance" label="Create Single Discrete Port Instance" nodeMappings="//@ownedViewpoints[name='instance']/@ownedRepresentations[name='org.muml.pim.instance.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.instance.ComponentInstance']/@borderedNodeMappings[name='org.muml.pim.component.SinglePortInstance'] //@ownedViewpoints[name='instance']/@ownedRepresentations[name='org.muml.pim.instance.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.instance.ComponentInstance']/@borderedNodeMappings[name='org.muml.pim.component.MultiPortInstance']/@borderedNodeMappings[name='org.muml.pim.component.PortInstance']" iconPath="/org.muml.pim.edit/icons/full/obj16/DiscretePort.gif">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -203,7 +203,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="org.muml.pim.instance.createMultiDiscretePortInstance" label="Create Multi Discrete Port Instance">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="org.muml.pim.instance.createMultiDiscretePortInstance" label="Create Multi Discrete Port Instance" iconPath="/org.muml.pim.edit/icons/full/obj16/DiscretePort.gif">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -214,7 +214,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="org.muml.pim.instance.createContinuousPortInstance" label="Create Continuous Port Instance" nodeMappings="//@ownedViewpoints[name='instance']/@ownedRepresentations[name='org.muml.pim.instance.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.instance.ComponentInstance']/@borderedNodeMappings[name='org.muml.pim.component.SinglePortInstance']">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="org.muml.pim.instance.createContinuousPortInstance" label="Create Continuous Port Instance" nodeMappings="//@ownedViewpoints[name='instance']/@ownedRepresentations[name='org.muml.pim.instance.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.instance.ComponentInstance']/@borderedNodeMappings[name='org.muml.pim.component.SinglePortInstance']" iconPath="/org.muml.pim.edit/icons/full/obj16/ContinuousPort.gif">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -225,7 +225,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="org.muml.pim.instance.createHybridPortInstance" label="Create Hybrid Port Instance" nodeMappings="//@ownedViewpoints[name='instance']/@ownedRepresentations[name='org.muml.pim.instance.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.instance.ComponentInstance']/@borderedNodeMappings[name='org.muml.pim.component.SinglePortInstance']">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="org.muml.pim.instance.createHybridPortInstance" label="Create Hybrid Port Instance" nodeMappings="//@ownedViewpoints[name='instance']/@ownedRepresentations[name='org.muml.pim.instance.diagram']/@defaultLayer/@containerMappings[name='org.muml.pim.instance.ComponentInstance']/@borderedNodeMappings[name='org.muml.pim.component.SinglePortInstance']" iconPath="/org.muml.pim.edit/icons/full/obj16/HybridPort.gif">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>

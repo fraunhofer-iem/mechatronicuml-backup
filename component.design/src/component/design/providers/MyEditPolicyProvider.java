@@ -7,15 +7,16 @@ import org.eclipse.gmf.runtime.diagram.ui.services.editpolicy.CreateEditPolicies
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.sirius.diagram.AbstractDNode;
 import org.eclipse.sirius.diagram.DDiagram;
-import org.eclipse.sirius.diagram.DNode;
 import org.eclipse.sirius.diagram.description.DiagramDescription;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
+import org.muml.pim.common.edit.policies.ports.PortInstanceEditPolicy;
 import org.muml.pim.common.edit.policies.ports.PortPartEditPolicy;
 import org.muml.pim.common.edit.policies.ports.PortTypeEditPolicy;
 import org.muml.pim.component.ComponentPart;
 import org.muml.pim.component.Port;
 import org.muml.pim.component.PortPart;
 import org.muml.pim.instance.ComponentInstance;
+import org.muml.pim.instance.PortInstance;
 
 import component.design.edit.policies.UpdateComponentInstanceEditPolicy;
 import component.design.edit.policies.UpdateComponentPartEditPolicy;
@@ -37,6 +38,10 @@ public class MyEditPolicyProvider extends AbstractEditPolicyProvider {
 		if (element instanceof PortPart) {
 			editPart.installEditPolicy(org.muml.pim.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE,
 					new PortPartEditPolicy());
+		}
+		if (element instanceof PortInstance) {
+			editPart.installEditPolicy(org.muml.pim.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE,
+					new PortInstanceEditPolicy());
 		}
 	}
 
@@ -82,7 +87,7 @@ public class MyEditPolicyProvider extends AbstractEditPolicyProvider {
 					if (element instanceof ComponentPart) {
 						return true;
 					}
-					if (element instanceof Port || element instanceof PortPart) {
+					if (element instanceof Port || element instanceof PortPart || element instanceof PortInstance) {
 						return true;
 					}
 					if (element instanceof ComponentInstance) {
