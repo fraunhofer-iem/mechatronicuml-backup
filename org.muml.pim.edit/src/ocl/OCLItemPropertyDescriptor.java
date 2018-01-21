@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
@@ -20,6 +21,8 @@ import org.eclipse.ocl.ecore.EcoreEnvironmentFactory;
 import org.eclipse.ocl.ecore.OCL;
 import org.eclipse.ocl.ecore.OCL.Helper;
 import org.eclipse.ocl.ecore.OCLExpression;
+import org.eclipse.ocl.expressions.ExpressionsFactory;
+import org.eclipse.ocl.expressions.Variable;
 import org.eclipse.ocl.options.ParsingOptions;
 
 /**
@@ -65,12 +68,21 @@ public class OCLItemPropertyDescriptor extends ItemPropertyDescriptor {
 	 * The OCL object used to execute queries.
 	 */
 	private OCL ocl = OCL.newInstance(EcoreEnvironmentFactory.INSTANCE);
+
+	/**
+	 * We support the "allChoices" variable in the OCL Environment, because the allInstances()
+	 * OCL statement is considered deprecated and also does not work across multiple ecore files.
+	 * So if you use an allInstances() call in your filter, consider using allChoices instead. 
+	 */
+	private Variable<EClassifier, EParameter> allChoices;
 	
 	/**
 	 * Default constructor, calls super constructor.
 	 */
 	public OCLItemPropertyDescriptor(AdapterFactory adapterFactory,ResourceLocator resourceLocator,String displayName,String description,EStructuralFeature feature,boolean isSettable,Object staticImage,String category,String[] filterFlags) {
 		super(adapterFactory,resourceLocator,displayName,description,feature,isSettable,false,false,staticImage,category,filterFlags);
+		initializeEnvironment();
+
 	}
 	
 	/**
@@ -78,6 +90,20 @@ public class OCLItemPropertyDescriptor extends ItemPropertyDescriptor {
 	 */
 	public OCLItemPropertyDescriptor(AdapterFactory adapterFactory, ResourceLocator resourceLocator, String displayName, String description, EStructuralFeature feature, boolean isSettable, boolean multiLine, boolean sortChoices, Object staticImage,String category, String[] filterFlags) {
 		super(adapterFactory, resourceLocator, displayName,description,feature,isSettable,multiLine,sortChoices, staticImage, category,filterFlags);
+		initializeEnvironment();
+	}
+
+	/**
+	 * Initialize OCL Environment:
+	 * 
+	 * Add the allChoices variable to the environment. 
+	 */
+	private void initializeEnvironment() {
+		allChoices = ExpressionsFactory.eINSTANCE.createVariable();
+		allChoices.setName("allChoices");
+		allChoices.setType(ocl.getEnvironment().getOCLStandardLibrary().getSet());
+
+		ocl.getEnvironment().addElement(allChoices.getName(), allChoices, true);
 	}
 
 	/**
@@ -97,6 +123,9 @@ public class OCLItemPropertyDescriptor extends ItemPropertyDescriptor {
 			if (!filterOcl.isEmpty()) {
 				try {
 					Query<org.eclipse.emf.ecore.EClassifier, ?, ?> filterQuery = createQuery(element.eClass(), filterOcl);
+					Object defaultChoices = super.getChoiceOfValues(object);
+				    filterQuery.getEvaluationEnvironment().add("allChoices", defaultChoices);
+
 					Object choice = filterQuery.evaluate(object);
 					Collection<Object> choices = new ArrayList<Object>();
 					if (feature instanceof EReference) {

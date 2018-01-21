@@ -26,6 +26,7 @@ import org.muml.pim.component.DiscretePort;
 import org.muml.pim.connector.ConnectorFactory;
 import org.muml.pim.connector.ConnectorPackage;
 import org.muml.pim.connector.provider.DiscreteInteractionEndpointItemProvider.MessageTypeItemPropertyDescriptor;
+import org.muml.pim.realtimestatechart.RealtimestatechartFactory;
 import org.muml.pim.valuetype.ValuetypeFactory;
 import org.muml.pim.valuetype.ValuetypePackage;
 import org.muml.pim.valuetype.descriptor.NaturalNumberPropertyDescriptor;
@@ -425,6 +426,7 @@ public class DiscretePortItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(BehaviorPackage.Literals.BEHAVIORAL_ELEMENT__CONTAINED_BEHAVIOR);
 			childrenFeatures.add(ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY);
 			childrenFeatures.add(ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER);
 		}
@@ -490,6 +492,7 @@ public class DiscretePortItemProvider
 			case ComponentPackage.DISCRETE_PORT__COORDINATION_PROTOCOL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case ComponentPackage.DISCRETE_PORT__CONTAINED_BEHAVIOR:
 			case ComponentPackage.DISCRETE_PORT__CARDINALITY:
 			case ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_BUFFER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -508,6 +511,11 @@ public class DiscretePortItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BehaviorPackage.Literals.BEHAVIORAL_ELEMENT__CONTAINED_BEHAVIOR,
+				 RealtimestatechartFactory.eINSTANCE.createRealtimeStatechart()));
 
 		newChildDescriptors.add
 			(createChildParameter

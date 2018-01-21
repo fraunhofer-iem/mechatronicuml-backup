@@ -20,6 +20,7 @@ import org.muml.pim.behavior.BehaviorPackage;
 import org.muml.pim.component.AtomicComponent;
 import org.muml.pim.component.ComponentPackage;
 import org.muml.pim.constraint.ConstraintPackage;
+import org.muml.pim.realtimestatechart.RealtimestatechartFactory;
 
 /**
  * This is the item provider adapter for a {@link org.muml.pim.component.AtomicComponent} object.
@@ -112,6 +113,7 @@ public class AtomicComponentItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(BehaviorPackage.Literals.BEHAVIORAL_ELEMENT__CONTAINED_BEHAVIOR);
 			childrenFeatures.add(ConstraintPackage.Literals.VERIFIABLE_ELEMENT__VERIFICATION_CONSTRAINT_REPOSITORIES);
 		}
 		return childrenFeatures;
@@ -167,6 +169,7 @@ public class AtomicComponentItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(AtomicComponent.class)) {
+			case ComponentPackage.ATOMIC_COMPONENT__CONTAINED_BEHAVIOR:
 			case ComponentPackage.ATOMIC_COMPONENT__VERIFICATION_CONSTRAINT_REPOSITORIES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -184,6 +187,11 @@ public class AtomicComponentItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BehaviorPackage.Literals.BEHAVIORAL_ELEMENT__CONTAINED_BEHAVIOR,
+				 RealtimestatechartFactory.eINSTANCE.createRealtimeStatechart()));
 	}
 
 	/**

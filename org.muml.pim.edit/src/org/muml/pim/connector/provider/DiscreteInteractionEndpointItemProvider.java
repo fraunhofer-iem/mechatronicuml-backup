@@ -28,6 +28,7 @@ import org.muml.pim.connector.ConnectorPackage;
 import org.muml.pim.connector.DiscreteInteractionEndpoint;
 import org.muml.pim.msgtype.MessageType;
 import org.muml.pim.msgtype.MessageTypeRepository;
+import org.muml.pim.realtimestatechart.RealtimestatechartFactory;
 import org.muml.pim.valuetype.ValuetypeFactory;
 import org.muml.pim.valuetype.ValuetypePackage;
 import org.muml.pim.valuetype.descriptor.NaturalNumberPropertyDescriptor;
@@ -364,6 +365,7 @@ public class DiscreteInteractionEndpointItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(BehaviorPackage.Literals.BEHAVIORAL_ELEMENT__CONTAINED_BEHAVIOR);
 			childrenFeatures.add(ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY);
 			childrenFeatures.add(ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER);
 		}
@@ -413,6 +415,7 @@ public class DiscreteInteractionEndpointItemProvider
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__MULTI:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONTAINED_BEHAVIOR:
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY:
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -431,6 +434,11 @@ public class DiscreteInteractionEndpointItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BehaviorPackage.Literals.BEHAVIORAL_ELEMENT__CONTAINED_BEHAVIOR,
+				 RealtimestatechartFactory.eINSTANCE.createRealtimeStatechart()));
 
 		newChildDescriptors.add
 			(createChildParameter

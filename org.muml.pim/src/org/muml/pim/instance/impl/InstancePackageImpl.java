@@ -1158,7 +1158,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		  (getComponentInstance_ComponentType(), 
 		   source, 
 		   new String[] {
-			 "filter", "(\nif self.parentCIC.parentStructuredComponentInstance.oclIsUndefined() then\n\tcomponent::Component::allInstances()\nelse\n\tself.parentCIC.parentStructuredComponentInstance.componentType.oclAsType(component::StructuredComponent).embeddedComponentParts.componentType\nendif\n)->select(x | (self.oclIsKindOf(AtomicComponentInstance) and x.oclIsKindOf(component::AtomicComponent)) or (self.oclIsKindOf(StructuredComponentInstance) and x.oclIsKindOf(component::StructuredComponent)))"
+			 "filter", "(\nif self.parentCIC.parentStructuredComponentInstance.oclIsUndefined() then\n\tallChoices -- this is provided by the OCLFilter environment\nelse\n\tself.parentCIC.parentStructuredComponentInstance.componentType.oclAsType(component::StructuredComponent).embeddedComponentParts.componentType\nendif\n)->select(x | (self.oclIsKindOf(AtomicComponentInstance) and x.oclIsKindOf(component::AtomicComponent)) or (self.oclIsKindOf(StructuredComponentInstance) and x.oclIsKindOf(component::StructuredComponent)))"
 		   });	
 		addAnnotation
 		  (getComponentInstance_ComponentPart(), 

@@ -52,7 +52,7 @@ public interface ComponentInstance extends NamedElement {
 	 * @see #setComponentType(Component)
 	 * @see org.muml.pim.instance.InstancePackage#getComponentInstance_ComponentType()
 	 * @model required="true"
-	 *        annotation="http://www.muml.org/emf/OCLFilter filter='(\nif self.parentCIC.parentStructuredComponentInstance.oclIsUndefined() then\n\tcomponent::Component::allInstances()\nelse\n\tself.parentCIC.parentStructuredComponentInstance.componentType.oclAsType(component::StructuredComponent).embeddedComponentParts.componentType\nendif\n)-&gt;select(x | (self.oclIsKindOf(AtomicComponentInstance) and x.oclIsKindOf(component::AtomicComponent)) or (self.oclIsKindOf(StructuredComponentInstance) and x.oclIsKindOf(component::StructuredComponent)))'"
+	 *        annotation="http://www.muml.org/emf/OCLFilter filter='(\nif self.parentCIC.parentStructuredComponentInstance.oclIsUndefined() then\n\tallChoices -- this is provided by the OCLFilter environment\nelse\n\tself.parentCIC.parentStructuredComponentInstance.componentType.oclAsType(component::StructuredComponent).embeddedComponentParts.componentType\nendif\n)-&gt;select(x | (self.oclIsKindOf(AtomicComponentInstance) and x.oclIsKindOf(component::AtomicComponent)) or (self.oclIsKindOf(StructuredComponentInstance) and x.oclIsKindOf(component::StructuredComponent)))'"
 	 * @generated
 	 */
 	Component getComponentType();

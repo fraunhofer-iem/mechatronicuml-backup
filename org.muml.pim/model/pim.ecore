@@ -58,7 +58,7 @@
           <details key="documentation" value="The component type of which this instance is derived."/>
         </eAnnotations>
         <eAnnotations source="http://www.muml.org/emf/OCLFilter">
-          <details key="filter" value="(&#xA;if self.parentCIC.parentStructuredComponentInstance.oclIsUndefined() then&#xA;&#x9;component::Component::allInstances()&#xA;else&#xA;&#x9;self.parentCIC.parentStructuredComponentInstance.componentType.oclAsType(component::StructuredComponent).embeddedComponentParts.componentType&#xA;endif&#xA;)->select(x | (self.oclIsKindOf(AtomicComponentInstance) and x.oclIsKindOf(component::AtomicComponent)) or (self.oclIsKindOf(StructuredComponentInstance) and x.oclIsKindOf(component::StructuredComponent)))"/>
+          <details key="filter" value="(&#xA;if self.parentCIC.parentStructuredComponentInstance.oclIsUndefined() then&#xA;&#x9;allChoices -- this is provided by the OCLFilter environment&#xA;else&#xA;&#x9;self.parentCIC.parentStructuredComponentInstance.componentType.oclAsType(component::StructuredComponent).embeddedComponentParts.componentType&#xA;endif&#xA;)->select(x | (self.oclIsKindOf(AtomicComponentInstance) and x.oclIsKindOf(component::AtomicComponent)) or (self.oclIsKindOf(StructuredComponentInstance) and x.oclIsKindOf(component::StructuredComponent)))"/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="portInstances" upperBound="-1"
