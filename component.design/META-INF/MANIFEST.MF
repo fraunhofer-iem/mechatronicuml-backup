@@ -16,7 +16,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.sirius.diagram.ui,
  org.muml.pim.component.diagram.custom;bundle-version="1.0.0",
  org.muml.pim.common,
- org.muml.pim.component.diagram;bundle-version="1.0.0"
+ org.muml.pim.component.diagram;bundle-version="1.0.0",
+ org.muml.pim.componentinstanceconfiguration.diagram.custom;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-Vendor: %providerName

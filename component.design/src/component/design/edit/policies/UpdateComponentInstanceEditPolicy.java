@@ -8,12 +8,12 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.eclipse.swt.widgets.Display;
 import org.muml.core.common.edit.policies.NotifyingGraphicalEditPolicy;
-import org.muml.pim.component.ComponentPackage;
 import org.muml.pim.component.ComponentPart;
-import org.muml.pim.component.diagram.custom.part.Activator;
+import org.muml.pim.instance.ComponentInstance;
+import org.muml.pim.instance.InstancePackage;
 
-// Registers in ComponentPart and listen to change of reference "type", then execute QVTO transformation!
-public class UpdateComponentPartEditPolicy extends NotifyingGraphicalEditPolicy {
+// Registers in ComponentInstance and listen to change of reference "componentType", then execute QVTO transformation!
+public class UpdateComponentInstanceEditPolicy extends NotifyingGraphicalEditPolicy {
 	EditingDomain editingDomain;
 	
 	// Sirius specific override
@@ -29,23 +29,14 @@ public class UpdateComponentPartEditPolicy extends NotifyingGraphicalEditPolicy 
 		}
 		return null;
 	}
-	
-	public ComponentPart getComponentPart() {
-		EObject element = getSemanticElement();
-		if (element instanceof ComponentPart) {
-			return (ComponentPart) element;
-		}
-		return null;
-	}
-	
 
 
 	@Override
 	public void activate() {
 		super.activate();
-		ComponentPart componentPart = getComponentPart();
-        editingDomain = TransactionUtil.getEditingDomain(componentPart);
-		Activator.updateComponentPart(editingDomain, componentPart);
+		ComponentInstance componentInstance = (ComponentInstance) getSemanticElement();
+		editingDomain = TransactionUtil.getEditingDomain(componentInstance);
+        org.muml.pim.componentinstanceconfiguration.diagram.custom.part.Activator.updateComponentInstance(editingDomain, componentInstance);
 	}
 
 	protected void addListeners() {
@@ -57,15 +48,18 @@ public class UpdateComponentPartEditPolicy extends NotifyingGraphicalEditPolicy 
 	@Override
 	public void handleNotificationEvent(Notification notification) {
 		super.handleNotificationEvent(notification);
-		if (notification.getFeature() == ComponentPackage.Literals.COMPONENT_PART__COMPONENT_TYPE) {
-			ComponentPart componentPart = getComponentPart();
+		if (notification.getFeature() == InstancePackage.Literals.COMPONENT_INSTANCE__COMPONENT_TYPE) {
+			ComponentInstance componentInstance = (ComponentInstance) getSemanticElement();
 			Display.getCurrent().asyncExec(new Runnable() {
 				@Override
 				public void run() {
-					Activator.updateComponentPart(editingDomain, componentPart);
+					EditingDomain editingDomain = getEditingDomain();
+					if (editingDomain != null) {
+						org.muml.pim.componentinstanceconfiguration.diagram.custom.part.Activator.createComponentInstance(editingDomain, componentInstance);
+					}
 				}
 			});
-	
 		}
 	}
+
 }

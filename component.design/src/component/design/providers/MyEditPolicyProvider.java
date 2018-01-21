@@ -5,6 +5,8 @@ import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.common.core.service.IOperation;
 import org.eclipse.gmf.runtime.diagram.ui.services.editpolicy.CreateEditPoliciesOperation;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.sirius.diagram.AbstractDNode;
+import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.DNode;
 import org.eclipse.sirius.diagram.description.DiagramDescription;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
@@ -13,7 +15,9 @@ import org.muml.pim.common.edit.policies.ports.PortTypeEditPolicy;
 import org.muml.pim.component.ComponentPart;
 import org.muml.pim.component.Port;
 import org.muml.pim.component.PortPart;
+import org.muml.pim.instance.ComponentInstance;
 
+import component.design.edit.policies.UpdateComponentInstanceEditPolicy;
 import component.design.edit.policies.UpdateComponentPartEditPolicy;
 
 public class MyEditPolicyProvider extends AbstractEditPolicyProvider {
@@ -21,7 +25,10 @@ public class MyEditPolicyProvider extends AbstractEditPolicyProvider {
 	public void createEditPolicies(EditPart editPart) {
 		EObject element = getSemanticElement(editPart);
 		if (element instanceof ComponentPart) {
-			editPart.installEditPolicy("ComponentPartUpdateRole", new UpdateComponentPartEditPolicy());
+			editPart.installEditPolicy("ComponentPartUpdate", new UpdateComponentPartEditPolicy());
+		}
+		if (element instanceof ComponentInstance) {
+			editPart.installEditPolicy("ComponentInstanceUpdate", new UpdateComponentInstanceEditPolicy());
 		}
 		if (element instanceof Port) {
 			editPart.installEditPolicy(org.muml.pim.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE,
@@ -49,14 +56,13 @@ public class MyEditPolicyProvider extends AbstractEditPolicyProvider {
 	DiagramDescription findDiagramDescription(EditPart editPart) {
 		if (editPart.getModel() instanceof View) {
 			View view = (View) editPart.getModel();
-			if (view.getElement() instanceof DNode) {
-				DNode node = (DNode) view.getElement();
-				EObject mappingElement = node.getActualMapping();
-				while (mappingElement != null) {
-					if (mappingElement instanceof DiagramDescription) {
-						return (DiagramDescription) mappingElement;
+			if (view.getElement() instanceof AbstractDNode) {
+				AbstractDNode node = (AbstractDNode) view.getElement();
+				if (node != null) {
+					DDiagram diagram = node.getParentDiagram();
+					if (diagram != null) {
+						return diagram.getDescription();
 					}
-					mappingElement = mappingElement.eContainer();
 				}
 			}
 		}
@@ -70,13 +76,18 @@ public class MyEditPolicyProvider extends AbstractEditPolicyProvider {
 
 			// check if I am responsible for this edit part
 			DiagramDescription diagramDescription = findDiagramDescription(editPart);
-			if (diagramDescription != null && "org.muml.pim.component.diagram".equals(diagramDescription.getName())) {
-				EObject element = getSemanticElement(editPart);
-				if (element instanceof ComponentPart) {
-					return true;
-				}
-				if (element instanceof Port || element instanceof PortPart) {
-					return true;
+			if (diagramDescription != null) {
+				if ("org.muml.pim.component.diagram".equals(diagramDescription.getName()) || "org.muml.pim.instance.diagram".equals(diagramDescription.getName())) {
+					EObject element = getSemanticElement(editPart);
+					if (element instanceof ComponentPart) {
+						return true;
+					}
+					if (element instanceof Port || element instanceof PortPart) {
+						return true;
+					}
+					if (element instanceof ComponentInstance) {
+						return true;
+					}
 				}
 			}
 		}
