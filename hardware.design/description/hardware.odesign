@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="component" version="12.0.0.2017041100">
+  <ownedViewpoints name="platform" modelFileExtension="platform">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="org.muml.pim.platform.diagram" label="Hardware Platform Diagram" initialisation="true" domainClass="HWPlatform" enablePopupBars="true">
+      <metamodel href="../../component.model/model/component.ecore#/"/>
+      <metamodel href="../../component.model/model/instance.ecore#/"/>
+      <defaultLayer name="Default">
+        <containerMappings name="Platform" semanticCandidatesExpression="aql:self" domainClass="HWPlatform">
+          <subNodeMappings name="DelegationHWPort" semanticCandidatesExpression="aql:self.delegationPorts" doubleClickDescription="//@ownedViewpoints[name='platform']/@ownedRepresentations[name='org.muml.pim.platform.diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='portDoubleClick']" domainClass="DelegationHWPort">
+            <style xsi:type="style:SquareDescription" showIcon="false" sizeComputationExpression="5" resizeKind="NSEW" width="2" height="2" color="//@userColorsPalettes[name=null]/@entries[name='default']">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+          </style>
+        </containerMappings>
+        <toolSections name="org.muml.pim.component.createSection" label="Component">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="ComponentPart" label="Component Part">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="ComponentPart" referenceName="embeddedComponentParts"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="org.muml.pim.component.createPort" label="Port">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="org.muml.pim.component.createPort" label="Discrete Port" nodeMappings="//@ownedViewpoints[name='platform']/@ownedRepresentations[name='org.muml.pim.platform.diagram']/@defaultLayer/@containerMappings[name='Platform']/@subNodeMappings[name='DelegationHWPort']" iconPath="/org.muml.pim.edit/icons/full/obj16/DiscretePort.gif">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="DiscretePort" referenceName="ports">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="port"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="org.muml.pim.component.createContinuousPort" label="Continuous Port" nodeMappings="//@ownedViewpoints[name='platform']/@ownedRepresentations[name='org.muml.pim.platform.diagram']/@defaultLayer/@containerMappings[name='Platform']/@subNodeMappings[name='DelegationHWPort']" iconPath="/org.muml.pim.edit/icons/full/obj16/ContinuousPort.gif">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ContinuousPort" referenceName="ports">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="port"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="org.muml.pim.component.createHybridPort" label="Hybrid Port" nodeMappings="//@ownedViewpoints[name='platform']/@ownedRepresentations[name='org.muml.pim.platform.diagram']/@defaultLayer/@containerMappings[name='Platform']/@subNodeMappings[name='DelegationHWPort']" iconPath="/org.muml.pim.edit/icons/full/obj16/HybridPort.gif">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="HybridPort" referenceName="ports">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="port"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="portDoubleClick" mappings="//@ownedViewpoints[name='platform']/@ownedRepresentations[name='org.muml.pim.platform.diagram']/@defaultLayer/@containerMappings[name='Platform']/@subNodeMappings[name='DelegationHWPort']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:element">
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.behavior = null">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="RealtimeStatechart" referenceName="behavior"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.behavior">
+                  <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true">
+                    <diagramDescription href="../../realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+  </ownedViewpoints>
+  <userColorsPalettes>
+    <entries xsi:type="description:UserFixedColor" red="255" green="255" blue="255" name="default"/>
+  </userColorsPalettes>
+</description:Group>
