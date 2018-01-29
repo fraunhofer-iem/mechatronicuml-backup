@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="component" version="12.0.0.2017041100">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="hardware" version="12.0.0.2017041100">
   <ownedViewpoints name="platform" modelFileExtension="platform">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="org.muml.pim.platform.diagram" label="Hardware Platform Diagram" initialisation="true" domainClass="HWPlatform" enablePopupBars="true">
-      <metamodel href="../../component.model/model/component.ecore#/"/>
-      <metamodel href="../../component.model/model/instance.ecore#/"/>
+      <metamodel href="http://www.muml.org/pm/hardware/1.0.0#//hwplatform"/>
       <defaultLayer name="Default">
         <edgeMappings name="NetworkConnector" semanticCandidatesExpression="aql:self.networkConnectors" sourceMapping="//@ownedViewpoints[name='platform']/@ownedRepresentations[name='org.muml.pim.platform.diagram']/@defaultLayer/@containerMappings[name='Platform']/@borderedNodeMappings[name='DelegationHWPort'] //@ownedViewpoints[name='platform']/@ownedRepresentations[name='org.muml.pim.platform.diagram']/@defaultLayer/@containerMappings[name='Platform']/@subNodeMappings[name='NetworkBridge'] //@ownedViewpoints[name='platform']/@ownedRepresentations[name='org.muml.pim.platform.diagram']/@defaultLayer/@containerMappings[name='Platform']/@subNodeMappings[name='Bus']" targetMapping="//@ownedViewpoints[name='platform']/@ownedRepresentations[name='org.muml.pim.platform.diagram']/@defaultLayer/@containerMappings[name='Platform']/@borderedNodeMappings[name='DelegationHWPort'] //@ownedViewpoints[name='platform']/@ownedRepresentations[name='org.muml.pim.platform.diagram']/@defaultLayer/@containerMappings[name='Platform']/@subNodeMappings[name='NetworkBridge'] //@ownedViewpoints[name='platform']/@ownedRepresentations[name='org.muml.pim.platform.diagram']/@defaultLayer/@containerMappings[name='Platform']/@subNodeMappings[name='Bus']" targetFinderExpression="aql:self.connectorEndpoints->last()" sourceFinderExpression="aql:self.connectorEndpoints->first()" domainClass="NetworkConnector" useDomainElement="true">
           <style targetArrow="NoDecoration" sizeComputationExpression="2">
@@ -113,13 +112,110 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="org.muml.pim.platform.createResourcePart" label="Resource Part" nodeMappings="//@ownedViewpoints[name='platform']/@ownedRepresentations[name='org.muml.pim.platform.diagram']/@defaultLayer/@containerMappings[name='Platform']/@subNodeMappings[name='NetworkBridge']" iconPath="/org.muml.pm.hardware.edit/icons/full/obj16/StructuredResource.gif" extraMappings="//@ownedViewpoints[name='platform']/@ownedRepresentations[name='org.muml.pim.platform.diagram']/@defaultLayer/@containerMappings[name='Platform']/@subContainerMappings[name='org.muml.pim.platform.ResourcePart']">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="org.muml.pim.platform.createResourcePart" label="Resource Part" containerMappings="//@ownedViewpoints[name='platform']/@ownedRepresentations[name='org.muml.pim.platform.diagram']/@defaultLayer/@containerMappings[name='Platform']/@subContainerMappings[name='org.muml.pim.platform.ResourcePart']" iconPath="/org.muml.pm.hardware.edit/icons/full/obj16/StructuredResource.gif">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ResourcePart" referenceName="embeddedPlatformParts">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="R1"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+  </ownedViewpoints>
+  <ownedViewpoints name="platforminstance" modelFileExtension="platforminstance">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="org.muml.pim.platforminstance.diagram" label="Hardware Platforminstance Diagram" initialisation="true" domainClass="HWPlatformInstanceConfiguration" enablePopupBars="true">
+      <metamodel href="http://www.muml.org/pm/hardware/1.0.0#//hwplatforminstance"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="BusInstance" semanticCandidatesExpression="aql:self.networkingHardwareInstances" domainClass="BusInstance">
+          <style xsi:type="style:SquareDescription" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="NetworkBridge" semanticCandidatesExpression="aql:self.networkingHardwareInstances" domainClass="NetworkBridge">
+          <style xsi:type="style:LozengeNodeDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="Bridge" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="NetworkConnectorInstance" semanticCandidatesExpression="aql:self.networkConnectorInstances" sourceMapping="//@ownedViewpoints[name='platforminstance']/@ownedRepresentations[name='org.muml.pim.platforminstance.diagram']/@defaultLayer/@containerMappings[name='PlatformInstance']/@borderedNodeMappings[name='DelegationHWPortInstance'] //@ownedViewpoints[name='platforminstance']/@ownedRepresentations[name='org.muml.pim.platforminstance.diagram']/@defaultLayer/@nodeMappings[name='NetworkBridge'] //@ownedViewpoints[name='platforminstance']/@ownedRepresentations[name='org.muml.pim.platforminstance.diagram']/@defaultLayer/@nodeMappings[name='BusInstance']" targetMapping="//@ownedViewpoints[name='platforminstance']/@ownedRepresentations[name='org.muml.pim.platforminstance.diagram']/@defaultLayer/@containerMappings[name='PlatformInstance']/@borderedNodeMappings[name='DelegationHWPortInstance'] //@ownedViewpoints[name='platforminstance']/@ownedRepresentations[name='org.muml.pim.platforminstance.diagram']/@defaultLayer/@nodeMappings[name='NetworkBridge'] //@ownedViewpoints[name='platforminstance']/@ownedRepresentations[name='org.muml.pim.platforminstance.diagram']/@defaultLayer/@nodeMappings[name='BusInstance']" targetFinderExpression="aql:self.connectorEndpoints->last()" sourceFinderExpression="aql:self.connectorEndpoints->first()" domainClass="NetworkConnectorInstance" useDomainElement="true">
+          <style targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="PlatformInstance" semanticCandidatesExpression="aql:self.hwplatformInstances" domainClass="HWPlatformInstance" childrenPresentation="VerticalStack">
+          <borderedNodeMappings name="DelegationHWPortInstance" semanticCandidatesExpression="aql:self.delegationPorts" domainClass="DelegationHWPortInstance">
+            <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" showIcon="false" iconPath="/org.muml.pm.hardware.edit/icons/full/obj16/DelegationHWPort.gif" sizeComputationExpression="5" resizeKind="NSEW" width="2" height="2" color="//@userColorsPalettes[name=null]/@entries[name='default']">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </borderedNodeMappings>
+          <subContainerMappings name="org.muml.pim.platform.ResourcePart" semanticCandidatesExpression="aql:self.embeddedPlatformParts" domainClass="ResourcePart">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" backgroundStyle="GradientTopToBottom">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+          <subContainerMappings name="HWPlatformPart" semanticCandidatesExpression="aql:self.embeddedPlatformParts" domainClass="HWPlatformPart">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" backgroundStyle="GradientTopToBottom">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+            </style>
+          </subContainerMappings>
+          <subContainerMappings name="HWPlatformInstanceConfiguration" semanticCandidatesExpression="aql:self.embeddedHPIC" domainClass="HWPlatformInstanceConfiguration" reusedNodeMappings="//@ownedViewpoints[name='platforminstance']/@ownedRepresentations[name='org.muml.pim.platforminstance.diagram']/@defaultLayer/@nodeMappings[name='BusInstance'] //@ownedViewpoints[name='platforminstance']/@ownedRepresentations[name='org.muml.pim.platforminstance.diagram']/@defaultLayer/@nodeMappings[name='NetworkBridge']" reusedContainerMappings="//@ownedViewpoints[name='platforminstance']/@ownedRepresentations[name='org.muml.pim.platforminstance.diagram']/@defaultLayer/@containerMappings[name='PlatformInstance']"/>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" widthComputationExpression="60" heightComputationExpression="40" backgroundStyle="GradientTopToBottom">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+          </style>
+        </containerMappings>
+        <toolSections name="org.muml.pim.platform.createSection.HWPlatform" label="Hardware Platform">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="org.muml.pim.platform.createHardwarePlatformInstance" label="Platform Instance" nodeMappings="//@ownedViewpoints[name='platforminstance']/@ownedRepresentations[name='org.muml.pim.platforminstance.diagram']/@defaultLayer/@nodeMappings[name='NetworkBridge']" iconPath="/org.muml.pm.hardware.edit/icons/full/obj16/StructuredResource.gif">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="HWPlatformPart" referenceName="embeddedPlatformParts">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="P1"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="org.muml.pim.platform.createResourcePart" label="Resource Part" nodeMappings="//@ownedViewpoints[name='platforminstance']/@ownedRepresentations[name='org.muml.pim.platforminstance.diagram']/@defaultLayer/@nodeMappings[name='NetworkBridge']" iconPath="/org.muml.pm.hardware.edit/icons/full/obj16/StructuredResource.gif" extraMappings="//@ownedViewpoints[name='platforminstance']/@ownedRepresentations[name='org.muml.pim.platforminstance.diagram']/@defaultLayer/@containerMappings[name='PlatformInstance']/@subContainerMappings[name='org.muml.pim.platform.ResourcePart']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ResourcePart" referenceName="embeddedPlatformParts">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="R1"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="org.muml.pim.platform.createNetworkConnector" label="Network Connector" edgeMappings="//@ownedViewpoints[name='platforminstance']/@ownedRepresentations[name='org.muml.pim.platforminstance.diagram']/@defaultLayer/@edgeMappings[name='NetworkConnectorInstance']" iconPath="/org.muml.pm.hardware.edit/icons/full/obj16/NetworkConnector.gif" extraSourceMappings="//@ownedViewpoints[name='platforminstance']/@ownedRepresentations[name='org.muml.pim.platforminstance.diagram']/@defaultLayer/@nodeMappings[name='BusInstance'] //@ownedViewpoints[name='platforminstance']/@ownedRepresentations[name='org.muml.pim.platforminstance.diagram']/@defaultLayer/@containerMappings[name='PlatformInstance']/@borderedNodeMappings[name='DelegationHWPortInstance'] //@ownedViewpoints[name='platforminstance']/@ownedRepresentations[name='org.muml.pim.platforminstance.diagram']/@defaultLayer/@nodeMappings[name='NetworkBridge']" extraTargetMappings="//@ownedViewpoints[name='platforminstance']/@ownedRepresentations[name='org.muml.pim.platforminstance.diagram']/@defaultLayer/@nodeMappings[name='BusInstance'] //@ownedViewpoints[name='platforminstance']/@ownedRepresentations[name='org.muml.pim.platforminstance.diagram']/@defaultLayer/@containerMappings[name='PlatformInstance']/@borderedNodeMappings[name='DelegationHWPortInstance'] //@ownedViewpoints[name='platforminstance']/@ownedRepresentations[name='org.muml.pim.platforminstance.diagram']/@defaultLayer/@nodeMappings[name='NetworkBridge']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.eContainer()">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="NetworkConnector" referenceName="networkConnectors">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="connectorEndpoints" valueExpression="aql:OrderedSet{ source, target }"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
