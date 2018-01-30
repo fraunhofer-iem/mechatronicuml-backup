@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="messagetype" version="12.0.0.2017041100">
+  <ownedViewpoints name="messagetype" modelFileExtension="messagetype">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="org.muml.pim.messagetype.diagram" label="Message Type Diagram" initialisation="true" domainClass="MessageTypeRepository" enablePopupBars="true">
+      <metamodel href="http://www.muml.org/pm/hardware/1.0.0#//hwresource"/>
+      <defaultLayer name="Default">
+        <containerMappings name="MessageTypeRepository" semanticCandidatesExpression="aql:self" domainClass="MessageTypeRepository" childrenPresentation="VerticalStack">
+          <subContainerMappings name="MessageType" semanticCandidatesExpression="aql:self.messageTypes" domainClass="MessageType" childrenPresentation="HorizontalStack">
+            <subNodeMappings name="Parameter" semanticCandidatesExpression="aql:self.parameters" domainClass="Parameter">
+              <style xsi:type="style:SquareDescription" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" showIcon="false" labelAlignment="LEFT">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" backgroundStyle="GradientTopToBottom">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </containerMappings>
+        <toolSections name="org.muml.pim.messagetype.createSection.General" label="General">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="org.muml.pim.messagetype.createMessageType" label="Message Type" containerMappings="//@ownedViewpoints[name='messagetype']/@ownedRepresentations[name='org.muml.pim.messagetype.diagram']/@defaultLayer/@containerMappings[name='MessageTypeRepository']/@subContainerMappings[name='MessageType']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="MessageType" referenceName="messageTypes"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="org.muml.pim.messagetype.createParameter" label="Parameter" nodeMappings="//@ownedViewpoints[name='messagetype']/@ownedRepresentations[name='org.muml.pim.messagetype.diagram']/@defaultLayer/@containerMappings[name='MessageTypeRepository']/@subContainerMappings[name='MessageType']/@subNodeMappings[name='Parameter']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Parameter" referenceName="parameters"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+  </ownedViewpoints>
+  <userColorsPalettes>
+    <entries xsi:type="description:UserFixedColor" red="255" green="255" blue="255" name="default"/>
+  </userColorsPalettes>
+</description:Group>
