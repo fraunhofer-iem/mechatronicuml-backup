@@ -6,6 +6,7 @@ import java.util.Collection;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.ui.action.CreateChildAction;
+import org.eclipse.emf.edit.ui.action.DeleteAction;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.jface.action.ActionContributionItem;
 import org.eclipse.jface.action.IAction;
@@ -17,16 +18,23 @@ import org.eclipse.jface.action.SubContributionItem;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IActionBars;
+import org.eclipse.ui.ISharedImages;
+import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.actions.ActionFactory;
 import org.eclipse.ui.navigator.CommonActionProvider;
 import org.eclipse.ui.navigator.ICommonActionExtensionSite;
 import org.eclipse.ui.navigator.ICommonViewerWorkbenchSite;
 
+// Code mostly copied from EcoreActionBarContributor, which is used by generated Ecore Tree-Editor
 public class MumlSiriusBrowserActionProvider extends CommonActionProvider {
 
 	private boolean contribute;
 
 	protected Collection<IAction> createChildActions;
+
 	protected IMenuManager createChildMenuManager;
+
+	private DeleteAction deleteAction;
 
 	public MumlSiriusBrowserActionProvider() {
 
@@ -36,6 +44,8 @@ public class MumlSiriusBrowserActionProvider extends CommonActionProvider {
 		super.init(aSite);
 		if (aSite.getViewSite() instanceof ICommonViewerWorkbenchSite) {
 			contribute = true;
+			deleteAction = new DeleteAction(true);
+
 		} else {
 			contribute = false;
 		}
@@ -45,6 +55,7 @@ public class MumlSiriusBrowserActionProvider extends CommonActionProvider {
 		if (!contribute) {
 			return;
 		}
+		actionBars.setGlobalActionHandler(ActionFactory.DELETE.getId(), deleteAction);
 	}
 
 	public void fillContextMenu(IMenuManager menuManager) {
@@ -71,6 +82,9 @@ public class MumlSiriusBrowserActionProvider extends CommonActionProvider {
 
 			newChildDescriptors = editingDomain.getNewChildDescriptors(object, null);
 		}
+		deleteAction.setEditingDomain(editingDomain);
+		deleteAction.updateSelection(selection);
+
 
 		// Generate actions for selection; populate and redraw the menus.
 		//
@@ -85,12 +99,19 @@ public class MumlSiriusBrowserActionProvider extends CommonActionProvider {
 
 		submenuManager = new MenuManager("Create Children");
 		populateManager(submenuManager, createChildActions, null);
+		
 		if (menuManager.getItems().length == 0) {
 			menuManager.add(submenuManager);
+			menuManager.add(new ActionContributionItem(deleteAction));
 		} else {
-			menuManager.insertBefore(menuManager.getItems()[0].getId(), submenuManager);
+			String firstID = menuManager.getItems()[0].getId();
+			menuManager.insertBefore(firstID, submenuManager);
+			menuManager.insertBefore(firstID, new ActionContributionItem(deleteAction));
 		}
+		
 		menuManager.add(submenuManager);
+
+
 	}
 
 	protected void populateManager(IContributionManager manager, Collection<? extends IAction> actions,
