@@ -2,6 +2,7 @@
 <?eclipse version="3.4"?>
 <plugin>
 
+   <!-- Define Action Provider -->
    <extension point="org.eclipse.ui.navigator.navigatorContent" id="navigator-content2">
      <actionProvider
            appearsBefore="org.eclipse.ui.navigator.resources.OpenActions"
@@ -16,6 +17,8 @@
         </enablement>
       </actionProvider>
    </extension>
+   
+   <!-- Activate Action Provider in Sirius Model Explorer -->
    <extension
          point="org.eclipse.ui.navigator.viewer">
       <viewerActionBinding
@@ -25,54 +28,42 @@
          </includes>
        </viewerActionBinding>
    </extension>
- 
- 
- <!--
+   
+   
+  <!-- Define Commands for invocation in menus -->
   <extension
         point="org.eclipse.ui.commands">
-
      <command
            categoryId="org.muml"
-           defaultHandler="test.TestCommand"
-           description="org.muml.commands.TestCommand"
-           id="org.muml.commands.TestCommand"
-           name="My Test">
+           defaultHandler="org.muml.core.siriusbrowser.actions.CreateMessageTypeRepositoryHandler"
+           description="Create Message Repository"
+           id="org.muml.core.siriusbrowser.actions.command.CreateMessageTypeRepository"
+           name="Create Message Repository">
      </command>
-
-  </extension>	
-  
-  <extension
-        point="org.eclipse.ui.menus">
-     <menuContribution
-           locationURI="popup:org.eclipse.ui.popup.any?after=additions">
-        <command
-              commandId="org.muml.commands.TestCommand"
-              icon="icons/muml.png"
-              id="org.muml.TestCommand"
-              label="MyTestCommand"
-              style="push">
-           <visibleWhen
-                 checkEnabled="false">
-              <iterate
-                    ifEmpty="true"
-                    operator="or">
-              </iterate>
-           </visibleWhen>
-        </command>
-        <menu
-              label="Create">
-           <dynamic
-                 class="org.muml.CreateContributionItem"
-                 id="org.muml.CreateContributionItem">
-           </dynamic>
-           <dynamic
-                 class="contextmenutest.ContributionItem2"
-                 id="ContextMenuTest.dynamic2">
-           </dynamic>
-        </menu>
+  </extension>
    
-	</menuContribution>
-	</extension>
+  <!-- Define menus -->
+  <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.muml">
+         <command
+               commandId="org.muml.core.siriusbrowser.actions.command.CreateMessageTypeRepository"
+               icon="icons/MessageTypeRepository.gif"
+               id="org.muml.core.siriusbrowser.actions.CreateMessageTypeRepository"
+               label="Create Message Type Repository"
+               style="push">
+              <visibleWhen
+                    checkEnabled="false">
+                    <iterate ifEmpty="false" operator="and">
+                    	<adapt type="org.eclipse.core.resources.IContainer" />
+                    </iterate>	
+              </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   
 
--->
+
 </plugin>
