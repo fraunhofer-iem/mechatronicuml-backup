@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension point="org.eclipse.ui.navigator.navigatorContent" id="navigator-content2">
+     <actionProvider
+           appearsBefore="org.eclipse.ui.navigator.resources.OpenActions"
+           class="org.muml.core.siriusbrowser.actions.MumlSiriusBrowserActionProvider"
+           id="MyTestNavigatorActionProvider">
+        <enablement>
+           <or>
+              <adapt
+                    type="org.eclipse.emf.ecore.EObject">
+              </adapt>
+           </or>
+        </enablement>
+      </actionProvider>
+   </extension>
+   <extension
+         point="org.eclipse.ui.navigator.viewer">
+      <viewerActionBinding
+            viewerId="org.eclipse.sirius.ui.tools.views.model.explorer">
+         <includes>
+             <actionExtension pattern="MyTestNavigatorActionProvider" />
+         </includes>
+       </viewerActionBinding>
+   </extension>
+ 
+ 
+ <!--
+  <extension
+        point="org.eclipse.ui.commands">
+
+     <command
+           categoryId="org.muml"
+           defaultHandler="test.TestCommand"
+           description="org.muml.commands.TestCommand"
+           id="org.muml.commands.TestCommand"
+           name="My Test">
+     </command>
+
+  </extension>	
+  
+  <extension
+        point="org.eclipse.ui.menus">
+     <menuContribution
+           locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+        <command
+              commandId="org.muml.commands.TestCommand"
+              icon="icons/muml.png"
+              id="org.muml.TestCommand"
+              label="MyTestCommand"
+              style="push">
+           <visibleWhen
+                 checkEnabled="false">
+              <iterate
+                    ifEmpty="true"
+                    operator="or">
+              </iterate>
+           </visibleWhen>
+        </command>
+        <menu
+              label="Create">
+           <dynamic
+                 class="org.muml.CreateContributionItem"
+                 id="org.muml.CreateContributionItem">
+           </dynamic>
+           <dynamic
+                 class="contextmenutest.ContributionItem2"
+                 id="ContextMenuTest.dynamic2">
+           </dynamic>
+        </menu>
+   
+	</menuContribution>
+	</extension>
+
+-->
+</plugin>
