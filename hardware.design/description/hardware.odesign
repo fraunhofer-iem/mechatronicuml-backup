@@ -204,7 +204,7 @@
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="HWPlatformPart" referenceName="embeddedPlatformParts">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="PlatformInstance" referenceName="hwplatformInstances">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="P1"/>
                 </subModelOperations>
               </firstModelOperations>
