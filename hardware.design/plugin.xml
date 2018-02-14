@@ -7,4 +7,11 @@
 	       name="hardware">
     </component>
   </extension>
+   <extension
+        point="org.eclipse.sirius.externalJavaAction">
+     <javaActions
+           actionClass="hardware.design.wizard.OpenWizard"
+           id="hardware.design.wizard.OpenWizard">
+     </javaActions>
+  </extension>
 </plugin>
