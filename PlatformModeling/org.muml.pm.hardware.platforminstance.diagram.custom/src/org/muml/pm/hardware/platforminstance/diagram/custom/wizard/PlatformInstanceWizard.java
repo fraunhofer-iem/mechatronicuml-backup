@@ -148,9 +148,10 @@ public class PlatformInstanceWizard extends Wizard implements INewWizard {
 			if (work instanceof IDiagramWorkbenchPart) {
 
 				EditPart rootEditPart = ((IDiagramWorkbenchPart) work).getDiagramEditPart();
-				CanonicalEditPolicy policy = (CanonicalEditPolicy) rootEditPart
-						.getEditPolicy(EditPolicyRoles.CANONICAL_ROLE);
-				policy.refresh();
+				CanonicalEditPolicy policy = (CanonicalEditPolicy) rootEditPart.getEditPolicy(EditPolicyRoles.CANONICAL_ROLE);
+				if (policy != null) {
+					policy.refresh();
+				}
 
 			}
 			
