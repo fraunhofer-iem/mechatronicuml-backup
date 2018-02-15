@@ -47,7 +47,7 @@ public class JavaFederation extends Federation {
 	
 	private HashSet<UDBMClock> clocks;
 
-	protected JavaFederation(HashSet<UDBMClock> clocks,
+	public JavaFederation(HashSet<UDBMClock> clocks,
 			HashSet<ClockZone> clockZones) {
 		this.setClockHashSet(clocks);
 		indicesToClockNames = new LinkedHashMap<Integer, UDBMClock>();
