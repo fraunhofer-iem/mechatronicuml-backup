@@ -65,7 +65,7 @@
             locationURI="popup:org.muml">
          <command
                commandId="org.muml.core.siriusbrowser.actions.command.CreateModelFileCommand"
-               icon="icons/MessageTypeRepository.gif"
+               icon="icons/AtomicComponent.gif"
                id="org.muml.core.siriusbrowser.actions.CreateAtomicComponent"
                label="Create Atomic Component"
                style="push">
@@ -90,7 +90,7 @@
          </command>
          <command
                commandId="org.muml.core.siriusbrowser.actions.command.CreateModelFileCommand"
-               icon="icons/MessageTypeRepository.gif"
+               icon="icons/StructuredComponent.gif"
                id="org.muml.core.siriusbrowser.actions.CreateStructuredComponent"
                label="Create Structured Component"
                style="push">
@@ -115,7 +115,7 @@
          </command>
          <command
                commandId="org.muml.core.siriusbrowser.actions.command.CreateModelFileCommand"
-               icon="icons/MessageTypeRepository.gif"
+               icon="icons/ComponentInstanceConfiguration.gif"
                id="org.muml.core.siriusbrowser.actions.CreateComponentInstanceConfiguration"
                label="Create Component Instance Configuration"
                style="push">
@@ -165,7 +165,7 @@
          </command>
          <command
                commandId="org.muml.core.siriusbrowser.actions.command.CreateModelFileCommand"
-               icon="icons/MessageTypeRepository.gif"
+               icon="icons/RealtimeStatechart.gif"
                id="org.muml.core.siriusbrowser.actions.CreateRealtimeStatechart"
                label="Create Realtime Statechart"
                style="push">
@@ -215,7 +215,7 @@
          </command>
          <command
                commandId="org.muml.core.siriusbrowser.actions.command.CreateModelFileCommand"
-               icon="icons/MessageTypeRepository.gif"
+               icon="icons/CoordinationProtocol.gif"
                id="org.muml.core.siriusbrowser.actions.command.CreateCoordinationProtocol"
                label="Create Coordination Protocol"
                style="push">
@@ -240,7 +240,7 @@
          </command>
          <command
                commandId="org.muml.core.siriusbrowser.actions.command.CreateModelFileCommand"
-               icon="icons/MessageTypeRepository.gif"
+               icon="icons/CoordinationPattern.gif"
                id="org.muml.core.siriusbrowser.actions.CreateCoordinationPattern"
                label="Create Coordination Pattern"
                style="push">
@@ -266,7 +266,7 @@
 
          <command
                commandId="org.muml.core.siriusbrowser.actions.command.CreateModelFileCommand"
-               icon="icons/MessageTypeRepository.gif"
+               icon="icons/HWPlatform.gif"
                id="org.muml.core.siriusbrowser.actions.CreateHardwarePlatform"
                label="Create Hardware Platform"
                style="push">
@@ -291,7 +291,7 @@
          </command>
          <command
                commandId="org.muml.core.siriusbrowser.actions.command.CreateModelFileCommand"
-               icon="icons/MessageTypeRepository.gif"
+               icon="icons/HWPlatformInstance.gif"
                id="org.muml.core.siriusbrowser.actions.CreateHardwarePlatformInstanceConfiguration"
                label="Create Hardware Platform Instance Configuration"
                style="push">
@@ -316,7 +316,7 @@
          </command>
          <command
                commandId="org.muml.core.siriusbrowser.actions.command.CreateModelFileCommand"
-               icon="icons/MessageTypeRepository.gif"
+               icon="icons/HWResource.gif"
                id="org.muml.core.siriusbrowser.actions.CreateHardwareResourceRepository"
                label="Create Hardware Resource Repository"
                style="push">
@@ -341,7 +341,7 @@
          </command>
          <command
                commandId="org.muml.core.siriusbrowser.actions.command.CreateModelFileCommand"
-               icon="icons/MessageTypeRepository.gif"
+               icon="icons/HWResourceInstance.gif"
                id="org.muml.core.siriusbrowser.actions.CreateHardwareResourceInstanceRepository"
                label="Create Hardware Resource Instance Repository"
                style="push">
