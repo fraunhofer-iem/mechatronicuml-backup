@@ -63,6 +63,10 @@
       <menuContribution
             allPopups="false"
             locationURI="popup:org.muml">
+         <separator
+               name="org.muml.core.siriusbrowser.actions.separator.component"
+               visible="false">
+         </separator>
          <command
                commandId="org.muml.core.siriusbrowser.actions.command.CreateModelFileCommand"
                icon="icons/AtomicComponent.gif"
@@ -138,6 +142,68 @@
                     value="configuration.instance">
               </parameter>
          </command>
+         <separator
+               name="org.muml.core.siriusbrowser.actions.separator.behavior"
+               visible="true">
+         </separator>
+         <command
+               commandId="org.muml.core.siriusbrowser.actions.command.CreateModelFileCommand"
+               icon="icons/RealtimeStatechart.gif"
+               id="org.muml.core.siriusbrowser.actions.CreateRealtimeStatechart"
+               label="Create Realtime Statechart"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+               <iterate
+                     ifEmpty="false"
+                     operator="and">
+                  <adapt
+                        type="org.eclipse.core.resources.IContainer">
+                  </adapt>
+               </iterate>
+            </visibleWhen>
+            <parameter
+                  name="org.muml.core.siriusbrowser.actions.parameters.epackage"
+                  value="http://www.muml.org/pim/realtimestatechart/1.0.0">
+            </parameter>
+            <parameter
+                  name="org.muml.core.siriusbrowser.actions.parameters.eclass"
+                  value="RealtimeStatechart">
+            </parameter>
+            <parameter
+                  name="org.muml.core.siriusbrowser.actions.parameters.filename"
+                  value="statechart.realtimestatechart">
+            </parameter>
+         </command>
+         <command
+               commandId="org.muml.core.siriusbrowser.actions.command.CreateModelFileCommand"
+               icon="icons/MessageTypeRepository.gif"
+               id="org.muml.core.siriusbrowser.actions.CreateOperationRepository"
+               label="Create Operation Reposistory"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+               <iterate
+                     ifEmpty="false"
+                     operator="and">
+                  <adapt
+                        type="org.eclipse.core.resources.IContainer">
+                  </adapt>
+               </iterate>
+            </visibleWhen>
+            <parameter
+                  name="org.muml.core.siriusbrowser.actions.parameters.epackage"
+                  value="http://www.muml.org/pim/behavior/1.0.0">
+            </parameter>
+            <parameter
+                  name="org.muml.core.siriusbrowser.actions.parameters.eclass"
+                  value="OperationRepository">
+            </parameter>
+            <parameter
+                  name="org.muml.core.siriusbrowser.actions.parameters.filename"
+                  value="operations.repository">
+            </parameter>
+         </command>
          <command
                commandId="org.muml.core.siriusbrowser.actions.command.CreateModelFileCommand"
                icon="icons/MessageTypeRepository.gif"
@@ -163,80 +229,38 @@
                     value="repository.messagetype">
               </parameter>
          </command>
-         <command
-               commandId="org.muml.core.siriusbrowser.actions.command.CreateModelFileCommand"
-               icon="icons/RealtimeStatechart.gif"
-               id="org.muml.core.siriusbrowser.actions.CreateRealtimeStatechart"
-               label="Create Realtime Statechart"
-               style="push">
-              <visibleWhen
-                    checkEnabled="false">
-                    <iterate ifEmpty="false" operator="and">
-                    	<adapt type="org.eclipse.core.resources.IContainer" />
-                    </iterate>	
-              </visibleWhen>
-              <parameter
-                    name="org.muml.core.siriusbrowser.actions.parameters.epackage"
-                    value="http://www.muml.org/pim/realtimestatechart/1.0.0">
-              </parameter>
-              <parameter
-                    name="org.muml.core.siriusbrowser.actions.parameters.eclass"
-                    value="RealtimeStatechart">
-              </parameter>
-              <parameter
-                    name="org.muml.core.siriusbrowser.actions.parameters.filename"
-                    value="statechart.realtimestatechart">
-              </parameter>
-         </command>
-         <command
-               commandId="org.muml.core.siriusbrowser.actions.command.CreateModelFileCommand"
-               icon="icons/MessageTypeRepository.gif"
-               id="org.muml.core.siriusbrowser.actions.CreateOperationRepository"
-               label="Create Operation Reposistory"
-               style="push">
-              <visibleWhen
-                    checkEnabled="false">
-                    <iterate ifEmpty="false" operator="and">
-                    	<adapt type="org.eclipse.core.resources.IContainer" />
-                    </iterate>	
-              </visibleWhen>
-              <parameter
-                    name="org.muml.core.siriusbrowser.actions.parameters.epackage"
-                    value="http://www.muml.org/pim/behavior/1.0.0">
-              </parameter>
-              <parameter
-                    name="org.muml.core.siriusbrowser.actions.parameters.eclass"
-                    value="OperationRepository">
-              </parameter>
-              <parameter
-                    name="org.muml.core.siriusbrowser.actions.parameters.filename"
-                    value="operations.repository">
-              </parameter>
-         </command>
+         <separator
+               name="org.muml.core.siriusbrowser.actions.separator.coordination"
+               visible="true">
+         </separator>
          <command
                commandId="org.muml.core.siriusbrowser.actions.command.CreateModelFileCommand"
                icon="icons/CoordinationProtocol.gif"
                id="org.muml.core.siriusbrowser.actions.command.CreateCoordinationProtocol"
                label="Create Coordination Protocol"
                style="push">
-              <visibleWhen
-                    checkEnabled="false">
-                    <iterate ifEmpty="false" operator="and">
-                    	<adapt type="org.eclipse.core.resources.IContainer" />
-                    </iterate>	
-              </visibleWhen>
-              <parameter
-                    name="org.muml.core.siriusbrowser.actions.parameters.epackage"
-                    value="http://www.muml.org/pim/protocol/1.0.0">
-              </parameter>
-              <parameter
-                    name="org.muml.core.siriusbrowser.actions.parameters.eclass"
-                    value="CoordinationProtocol">
-              </parameter>
-              <parameter
-                    name="org.muml.core.siriusbrowser.actions.parameters.filename"
-                    value="protocol.coordination">
-              </parameter>
+            <visibleWhen
+                  checkEnabled="false">
+               <iterate
+                     ifEmpty="false"
+                     operator="and">
+                  <adapt
+                        type="org.eclipse.core.resources.IContainer">
+                  </adapt>
+               </iterate>
+            </visibleWhen>
+            <parameter
+                  name="org.muml.core.siriusbrowser.actions.parameters.epackage"
+                  value="http://www.muml.org/pim/protocol/1.0.0">
+            </parameter>
+            <parameter
+                  name="org.muml.core.siriusbrowser.actions.parameters.eclass"
+                  value="CoordinationProtocol">
+            </parameter>
+            <parameter
+                  name="org.muml.core.siriusbrowser.actions.parameters.filename"
+                  value="protocol.coordination">
+            </parameter>
          </command>
          <command
                commandId="org.muml.core.siriusbrowser.actions.command.CreateModelFileCommand"
@@ -263,6 +287,10 @@
                     value="pattern.coordination">
               </parameter>
          </command>
+         <separator
+               name="org.muml.core.siriusbrowser.actions.separator.hardware"
+               visible="true">
+         </separator>
 
          <command
                commandId="org.muml.core.siriusbrowser.actions.command.CreateModelFileCommand"
