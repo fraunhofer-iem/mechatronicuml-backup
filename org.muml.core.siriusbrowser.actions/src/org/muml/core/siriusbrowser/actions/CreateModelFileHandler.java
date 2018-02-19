@@ -172,6 +172,7 @@ public class CreateModelFileHandler extends AbstractHandler {
 
 			// Activate Viewpoints in background job, this one is of the same job family as
 			// the previous one, so it will wait.
+			// This is good, because activating viewpoints is only possible when session is already loaded.
 
 			Job job = new ActivateViewpointsJob(modelingProject.get(), fileExtension);
 			job.setUser(false);
