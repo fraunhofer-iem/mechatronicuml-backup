@@ -137,6 +137,16 @@ public class ConnectorEndpointInstanceItemProvider
 			});
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected boolean shouldComposeCreationImage() {
+		return true;
+	}
+
 	protected boolean isValidType(ConnectorEndpointInstance instance, Object type) {
 		return true;
 	}

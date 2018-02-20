@@ -220,6 +220,16 @@ public class DirectedTypedPortItemProvider
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected boolean shouldComposeCreationImage() {
+		return true;
+	}
+
+	/**
 	 * This adds a property descriptor for the Out Port feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
