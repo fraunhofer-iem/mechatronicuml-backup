@@ -138,13 +138,16 @@ public class CreateModelFileHandler extends AbstractHandler {
 					e.printStackTrace();
 				}
 
-				String extension = "";
-				if (filenameExtension.startsWith(".")) {
-					extension = filenameExtension.substring(1);
+				// Activate viewpoints for this filename extension
+				{
+					String extension = "";
+					if (filenameExtension.startsWith(".")) {
+						extension = filenameExtension.substring(1);
+					}
+	
+					IProject project = container.getProject();
+					activateViewpoints(project, extension);
 				}
-
-				IProject project = container.getProject();
-				activateViewpoints(project, extension);
 			}
 		}
 
@@ -160,66 +163,42 @@ public class CreateModelFileHandler extends AbstractHandler {
 			{
 				Session existingSession = modelingProject.get().getSession();
 				if (existingSession == null) {
-					loadSession(modelingProject.get());
+
+					Option<URI> optionalMainSessionFileURI = Options.newNone();
+					optionalMainSessionFileURI = modelingProject.get()
+							.getMainRepresentationsFileURI(new NullProgressMonitor(), false, false);
+					if (optionalMainSessionFileURI.some()) {
+						ModelingProjectManager.INSTANCE
+								.loadAndOpenRepresentationsFile(optionalMainSessionFileURI.get());
+					}
+
 				}
 			}
 
 			// Activate Viewpoints in background job, this one is of the same job family as
-			// the previous one, so it will wait.
-			// This is good, because activating viewpoints is only possible when session is
-			// already loaded.
-
-			Job job = new ActivateViewpointsJob(modelingProject.get(), fileExtension);
-			job.setUser(false);
-			job.setPriority(Job.SHORT);
-			job.schedule();
-			IWorkbenchWindow activeWorkbenchWindow = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
-			if (activeWorkbenchWindow != null) {
-				PlatformUI.getWorkbench().getProgressService().showInDialog(activeWorkbenchWindow.getShell(), job);
-			}
-
-		}
-
-	}
-
-	private void loadSession(ModelingProject modelingProject) {
-
-		Option<URI> optionalMainSessionFileURI = Options.newNone();
-		optionalMainSessionFileURI = modelingProject.getMainRepresentationsFileURI(new NullProgressMonitor(), false,
-				false);
-		if (optionalMainSessionFileURI.some()) {
-			ModelingProjectManager.INSTANCE.loadAndOpenRepresentationsFile(optionalMainSessionFileURI.get());
-		}
-
-	}
-
-	protected static List<Viewpoint> getMissingViewpoints(Session session, String fileExtension) {
-		Collection<Viewpoint> selectedViewpoints = session.getSelectedViewpoints(false);
-
-		List<Viewpoint> missingViewpoints = new ArrayList<Viewpoint>();
-
-		for (final Viewpoint viewpoint : ViewpointSelection.getViewpoints(fileExtension)) {
-			boolean selected = false;
-
-			for (Viewpoint selectedViewpoint : selectedViewpoints) {
-				if (EqualityHelper.areEquals(selectedViewpoint, viewpoint)) {
-					selected = true;
-					break;
+			// the previous one, so it will wait (this is good, because activating
+			// viewpoints is only possible when session is already loaded).
+			{
+				Job job = new ActivateViewpointsJob(modelingProject.get(), fileExtension);
+				job.setUser(false);
+				job.setPriority(Job.SHORT);
+				job.schedule();
+				IWorkbenchWindow activeWorkbenchWindow = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
+				if (activeWorkbenchWindow != null) {
+					PlatformUI.getWorkbench().getProgressService().showInDialog(activeWorkbenchWindow.getShell(), job);
 				}
 			}
-			if (!selected) {
-				missingViewpoints.add(viewpoint);
-			}
+
 		}
-		return missingViewpoints;
+
 	}
 
 	/**
-	 * This job activated viewpoints in a Modeling Project.
+	 * This job activates viewpoints in a Modeling Project.
 	 * 
 	 * The reason that we need to do it in a job (besides that the user gets better
-	 * ui feedback), is that we must wait for the ModelingProject session being
-	 * loaded, which also happens asynchronously inside a job.
+	 * UI feedback), is that we must wait for the ModelingProject session being
+	 * loaded, which also happens asynchronously inside another job.
 	 * 
 	 * To make sure that the session is loaded before the viewpoints are activated,
 	 * we must defer activating viewpoints until the other job is finished.
@@ -227,15 +206,15 @@ public class CreateModelFileHandler extends AbstractHandler {
 	 * The ActivateViewpointsJob job does exactly that by being in the same job
 	 * family as the session loading job (AbstractRepresentationsFileJob.FAMILY).
 	 * 
-	 * This way the ActivateViewpointsJob is scheduled after the session has been
-	 * loaded.
+	 * This way the ActivateViewpointsJob is scheduled after the session loading
+	 * job.
 	 * 
 	 * @author ingo
 	 *
 	 */
 	class ActivateViewpointsJob extends AbstractRepresentationsFileJob {
 
-		public static final String JOB_LABEL = "Activating Viewpoint";
+		public static final String JOB_LABEL = "Activating Viewpoints";
 
 		private ModelingProject modelingProject;
 		private String fileExtension;
@@ -270,6 +249,7 @@ public class CreateModelFileHandler extends AbstractHandler {
 					domain.getCommandStack().execute(command);
 				}
 			}
+			monitor.done();
 			return Status.OK_STATUS;
 		}
 
@@ -292,6 +272,28 @@ public class CreateModelFileHandler extends AbstractHandler {
 			Job[] jobs = Job.getJobManager().find(AbstractRepresentationsFileJob.FAMILY);
 			return jobs != null && jobs.length > 0;
 		}
+
+		protected List<Viewpoint> getMissingViewpoints(Session session, String fileExtension) {
+			List<Viewpoint> missingViewpoints = new ArrayList<Viewpoint>();
+
+			Collection<Viewpoint> selectedViewpoints = session.getSelectedViewpoints(false);
+
+			for (final Viewpoint viewpoint : ViewpointSelection.getViewpoints(fileExtension)) {
+				boolean selected = false;
+
+				for (Viewpoint selectedViewpoint : selectedViewpoints) {
+					if (EqualityHelper.areEquals(selectedViewpoint, viewpoint)) {
+						selected = true;
+						break;
+					}
+				}
+				if (!selected) {
+					missingViewpoints.add(viewpoint);
+				}
+			}
+			return missingViewpoints;
+		}
+
 	}
 
 }
