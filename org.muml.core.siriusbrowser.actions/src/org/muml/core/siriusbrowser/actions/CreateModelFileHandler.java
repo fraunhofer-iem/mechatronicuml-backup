@@ -52,11 +52,6 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.handlers.HandlerUtil;
 
 public class CreateModelFileHandler extends AbstractHandler {
-	// private Shell shell;
-	//
-	// protected Shell getShell() {
-	// return shell;
-	// }
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
@@ -115,7 +110,6 @@ public class CreateModelFileHandler extends AbstractHandler {
 			filenameExtension = filenameHint.substring(filenameSplit);
 		}
 
-		// shell = HandlerUtil.getActiveWorkbenchWindow(event).getShell();
 		ISelection selection = HandlerUtil.getCurrentSelection(event);
 		if (selection instanceof IStructuredSelection && !selection.isEmpty()) {
 			Object object = ((IStructuredSelection) selection).getFirstElement();
@@ -172,7 +166,8 @@ public class CreateModelFileHandler extends AbstractHandler {
 
 			// Activate Viewpoints in background job, this one is of the same job family as
 			// the previous one, so it will wait.
-			// This is good, because activating viewpoints is only possible when session is already loaded.
+			// This is good, because activating viewpoints is only possible when session is
+			// already loaded.
 
 			Job job = new ActivateViewpointsJob(modelingProject.get(), fileExtension);
 			job.setUser(false);
@@ -219,7 +214,26 @@ public class CreateModelFileHandler extends AbstractHandler {
 		return missingViewpoints;
 	}
 
-	public class ActivateViewpointsJob extends AbstractRepresentationsFileJob {
+	/**
+	 * This job activated viewpoints in a Modeling Project.
+	 * 
+	 * The reason that we need to do it in a job (besides that the user gets better
+	 * ui feedback), is that we must wait for the ModelingProject session being
+	 * loaded, which also happens asynchronously inside a job.
+	 * 
+	 * To make sure that the session is loaded before the viewpoints are activated,
+	 * we must defer activating viewpoints until the other job is finished.
+	 * 
+	 * The ActivateViewpointsJob job does exactly that by being in the same job
+	 * family as the session loading job (AbstractRepresentationsFileJob.FAMILY).
+	 * 
+	 * This way the ActivateViewpointsJob is scheduled after the session has been
+	 * loaded.
+	 * 
+	 * @author ingo
+	 *
+	 */
+	class ActivateViewpointsJob extends AbstractRepresentationsFileJob {
 
 		public static final String JOB_LABEL = "Activating Viewpoint";
 
@@ -242,8 +256,6 @@ public class CreateModelFileHandler extends AbstractHandler {
 
 				final List<Viewpoint> missingViewpoints = getMissingViewpoints(session, fileExtension);
 				if (!missingViewpoints.isEmpty()) {
-					// ChangeViewpointSelectionCommand(session, callback, newSelectedViewpoints,
-					// newDeselectedViewpoints, createNewRepresentations, monitor);
 					TransactionalEditingDomain domain = session.getTransactionalEditingDomain();
 
 					Command command = new ChangeCommand(domain.getResourceSet()) {
