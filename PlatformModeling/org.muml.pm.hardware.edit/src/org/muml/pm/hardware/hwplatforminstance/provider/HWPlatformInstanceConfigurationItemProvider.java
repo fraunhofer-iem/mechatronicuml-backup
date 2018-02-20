@@ -17,6 +17,7 @@ import org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration;
 import org.muml.pm.hardware.hwplatforminstance.HwplatforminstanceFactory;
 import org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage;
 import org.muml.pm.hardware.hwresourceinstance.HwresourceinstanceFactory;
+import org.muml.pm.hardware.provider.HardwareEditPlugin;
 
 /**
  * This is the item provider adapter for a {@link org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration} object.
@@ -211,6 +212,16 @@ public class HWPlatformInstanceConfigurationItemProvider
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected boolean shouldComposeCreationImage() {
+		return true;
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -326,7 +337,7 @@ public class HWPlatformInstanceConfigurationItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return org.muml.pm.hardware.provider.HardwareEditPlugin.INSTANCE;
+		return HardwareEditPlugin.INSTANCE;
 	}
 
 }

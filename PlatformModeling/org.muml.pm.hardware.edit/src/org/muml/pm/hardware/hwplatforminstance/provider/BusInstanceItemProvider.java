@@ -14,6 +14,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.pim.connector.provider.ConnectorEndpointInstanceItemProvider;
 import org.muml.pm.hardware.hwplatforminstance.BusInstance;
 import org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage;
+import org.muml.pm.hardware.provider.HardwareEditPlugin;
 
 /**
  * This is the item provider adapter for a {@link org.muml.pm.hardware.hwplatforminstance.BusInstance} object.
@@ -83,6 +84,16 @@ public class BusInstanceItemProvider
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected boolean shouldComposeCreationImage() {
+		return true;
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -138,7 +149,7 @@ public class BusInstanceItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return org.muml.pm.hardware.provider.HardwareEditPlugin.INSTANCE;
+		return HardwareEditPlugin.INSTANCE;
 	}
 
 }

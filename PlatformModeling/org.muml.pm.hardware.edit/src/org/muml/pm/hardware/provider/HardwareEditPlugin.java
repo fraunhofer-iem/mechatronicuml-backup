@@ -7,6 +7,7 @@ import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
 import org.muml.core.provider.CoreEditPlugin;
+import org.muml.pim.provider.MumlEditPlugin;
 
 /**
  * This is the central singleton for the Hardware edit plugin.
@@ -41,7 +42,7 @@ public final class HardwareEditPlugin extends EMFPlugin {
 		super
 		  (new ResourceLocator [] {
 		     CoreEditPlugin.INSTANCE,
-		     org.muml.pim.constraint.provider.MumlEditPlugin.INSTANCE,
+		     MumlEditPlugin.INSTANCE,
 		     EcoreEditPlugin.INSTANCE,
 		   });
 	}

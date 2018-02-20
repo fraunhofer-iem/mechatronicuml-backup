@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany and Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT, Germany"
-    modelDirectory="/org.muml.pm.hardware/src" modelPluginID="org.muml.pm.hardware"
+    modelDirectory="/org.muml.pm.hardware/src" creationIcons="false" modelPluginID="org.muml.pm.hardware"
     modelName="Hardware" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
     usedGenPackages="../../org.muml.core/model/core.genmodel#//core ../../org.muml.pim/model/pim.genmodel#//pim ../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
