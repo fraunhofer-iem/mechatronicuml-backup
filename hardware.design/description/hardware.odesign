@@ -520,7 +520,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="org.muml.pim.platform.createPLD" label="Programmable Logic Device" nodeMappings="//@ownedViewpoints[name='resource']/@ownedRepresentations[name='org.muml.pim.resource.diagram']/@defaultLayer/@containerMappings[name='StructuredResource']/@subNodeMappings[name='ProgrammableLogicDevice']" iconPath="/org.muml.pm.hardware.edit/icons/full/obj16/Cache.gif">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="org.muml.pim.platform.createPLD" label="Programmable Logic Device" nodeMappings="//@ownedViewpoints[name='resource']/@ownedRepresentations[name='org.muml.pim.resource.diagram']/@defaultLayer/@containerMappings[name='StructuredResource']/@subNodeMappings[name='ProgrammableLogicDevice']" iconPath="/org.muml.pm.hardware.edit/icons/full/obj16/ProgrammableLogicDevice.gif">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -531,7 +531,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="org.muml.pim.platform.createProcessor" label="Processor" nodeMappings="//@ownedViewpoints[name='resource']/@ownedRepresentations[name='org.muml.pim.resource.diagram']/@defaultLayer/@containerMappings[name='StructuredResource']/@subNodeMappings[name='Processor']" iconPath="/org.muml.pm.hardware.edit/icons/full/obj16/Cache.gif">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="org.muml.pim.platform.createProcessor" label="Processor" nodeMappings="//@ownedViewpoints[name='resource']/@ownedRepresentations[name='org.muml.pim.resource.diagram']/@defaultLayer/@containerMappings[name='StructuredResource']/@subNodeMappings[name='Processor']" iconPath="/org.muml.pm.hardware.edit/icons/full/obj16/Processor.gif">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -542,7 +542,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="org.muml.pim.platform.createProcessorOwnedCache" label="Processor Owned Cache" precondition="aql:preTarget.eClass().name = 'Cache'" edgeMappings="//@ownedViewpoints[name='resource']/@ownedRepresentations[name='org.muml.pim.resource.diagram']/@defaultLayer/@edgeMappings[name='OwnedCacheRelation']" iconPath="/org.muml.pm.hardware.edit/icons/full/obj16/NetworkConnector.gif" extraSourceMappings="//@ownedViewpoints[name='resource']/@ownedRepresentations[name='org.muml.pim.resource.diagram']/@defaultLayer/@containerMappings[name='StructuredResource']/@subNodeMappings[name='ProgrammableLogicDevice']" extraTargetMappings="//@ownedViewpoints[name='resource']/@ownedRepresentations[name='org.muml.pim.resource.diagram']/@defaultLayer/@containerMappings[name='StructuredResource']/@subNodeMappings[name='ProgrammableLogicDevice']">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="org.muml.pim.platform.createProcessorOwnedCache" label="Processor Owned Cache" precondition="aql:preTarget.eClass().name = 'Cache'" edgeMappings="//@ownedViewpoints[name='resource']/@ownedRepresentations[name='org.muml.pim.resource.diagram']/@defaultLayer/@edgeMappings[name='OwnedCacheRelation']" iconPath="/org.muml.pm.hardware.common/icons/processorcache.gif" extraSourceMappings="//@ownedViewpoints[name='resource']/@ownedRepresentations[name='org.muml.pim.resource.diagram']/@defaultLayer/@containerMappings[name='StructuredResource']/@subNodeMappings[name='ProgrammableLogicDevice']" extraTargetMappings="//@ownedViewpoints[name='resource']/@ownedRepresentations[name='org.muml.pim.resource.diagram']/@defaultLayer/@containerMappings[name='StructuredResource']/@subNodeMappings[name='ProgrammableLogicDevice']">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
