@@ -85,10 +85,12 @@ public class CreateModelFileHandler extends AbstractHandler {
 			}
 		}
 
+		// Create model element
 		if (eFactory != null && eClass != null) {
 			modelElement = eFactory.create(eClass);
 		}
 
+		// Make sure model element has been created
 		if (modelElement == null) {
 			throw new UnsupportedOperationException("Creating Model Element failed!");
 		}
@@ -110,18 +112,24 @@ public class CreateModelFileHandler extends AbstractHandler {
 			filenameExtension = filenameHint.substring(filenameSplit);
 		}
 
+		// Create file in the selected folder or project
 		ISelection selection = HandlerUtil.getCurrentSelection(event);
 		if (selection instanceof IStructuredSelection && !selection.isEmpty()) {
 			Object object = ((IStructuredSelection) selection).getFirstElement();
 			if (object instanceof IContainer) {
 				IContainer container = (IContainer) object;
+				
+				// Find unique filename
 				IFile file = null;
-				int id = 1;
-				do {
-					file = container.getFile(new Path(filenameBase + id + filenameExtension));
-					id++;
-				} while (file.exists());
+				{
+					int id = 1;
+					do {
+						file = container.getFile(new Path(filenameBase + id + filenameExtension));
+						id++;
+					} while (file.exists());
+				}
 
+				// Create resource that contains modelElement and save it
 				ResourceSet resourceSet = new ResourceSetImpl();
 				URI uri = URI.createPlatformResourceURI(file.getFullPath().toString(), true);
 				Resource resource = resourceSet.createResource(uri, "xmi");
@@ -131,6 +139,8 @@ public class CreateModelFileHandler extends AbstractHandler {
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
+				
+				// Refresh Workspace to make sure the file is shown
 				try {
 					file.refreshLocal(1, new NullProgressMonitor());
 
