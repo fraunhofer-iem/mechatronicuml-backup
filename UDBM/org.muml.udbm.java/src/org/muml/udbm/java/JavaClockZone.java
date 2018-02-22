@@ -75,7 +75,20 @@ public class JavaClockZone extends ClockZone {
 		   
 		   Iterator<ClockConstraint> iter = this.iteratorOfClockConstraint();
 		   while(iter.hasNext()){
-			   this.clockConstraint.add((ClockConstraint) iter.next().clone());
+			   ClockConstraint cc = (ClockConstraint) iter.next();
+			   ClockConstraint ccCloned;
+			   if (cc instanceof DifferenceClockConstraint){
+				   DifferenceClockConstraint dcc = new DifferenceClockConstraint(
+						   ((DifferenceClockConstraint)cc).getClockMinuend(),
+						   ((DifferenceClockConstraint)cc).getClockSubtrahend(),
+						   ((DifferenceClockConstraint)cc).getRelationalOperator(),
+						   ((DifferenceClockConstraint)cc).getValue());
+				   ccCloned = dcc;
+			   }
+			   else{
+				   ccCloned = (ClockConstraint) cc.clone();
+			   }
+			   this.clockConstraint.add(ccCloned);
 		   }
 	   }
 		
