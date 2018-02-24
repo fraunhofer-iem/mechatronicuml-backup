@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: ContextMenuTest
+Bundle-Name: MechatronicUML Sirius Browser Actions
 Bundle-SymbolicName: org.muml.core.siriusbrowser.actions;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.1.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.eclipse.core.commands,
  org.eclipse.ui.workbench,
