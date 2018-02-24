@@ -1,4 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.muml.siriusbranch.feature" label="%featureName" provider-name="%providerName" version="1.1.0.qualifier">
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.muml.siriusbranch.feature"
+      label="%featureName"
+      version="1.1.0.qualifier"
+      provider-name="%providerName">
 
    <description url="http://www.example.com/description">
       [Enter Feature Description here.]
@@ -13,77 +18,355 @@
    </license>
 
    <requires>
-      <import feature="org.eclipse.sirius.runtime.ide.eef" match="greaterOrEqual" version="4.1.4"/>
-      <import feature="org.eclipse.sirius.runtime.ide.ui" match="greaterOrEqual" version="4.1.4"/>
-      <import match="greaterOrEqual" plugin="org.eclipse.eef.ide.ui" version="2.0.0"/>
+      <import plugin="org.eclipse.eef.ide.ui" version="2.0.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.sirius.runtime.ide.eef" version="4.1.4" match="greaterOrEqual"/>
+      <import feature="org.eclipse.sirius.runtime.ide.ui" version="4.1.4" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ocl.ecore"/>
+      <import plugin="org.muml.core.common"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.emf.edit"/>
+      <import plugin="org.muml.core"/>
+      <import plugin="org.muml.core.edit"/>
+      <import plugin="org.eclipse.emf.ecore"/>
+      <import plugin="org.eclipse.emf.ecore.edit"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.muml.pim.edit"/>
+      <import plugin="org.muml.ape.runtime"/>
+      <import plugin="org.muml.core.edit.properties"/>
+      <import plugin="org.eclipse.core.expressions"/>
+      <import plugin="org.eclipse.ui.navigator"/>
+      <import plugin="org.eclipse.ui.navigator.resources"/>
+      <import plugin="org.eclipse.emf.ecore.editor"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.properties"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide"/>
+      <import plugin="org.muml.core.modelinstance.ui"/>
+      <import plugin="org.eclipse.gmf.tooling.runtime" version="3.1.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.jface"/>
+      <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="org.eclipse.ui.views"/>
+      <import plugin="org.eclipse.emf.ecore.xmi"/>
+      <import plugin="org.eclipse.emf.edit.ui"/>
+      <import plugin="org.eclipse.gmf.runtime.emf.core"/>
+      <import plugin="org.eclipse.gmf.runtime.emf.commands.core"/>
+      <import plugin="org.eclipse.gmf.runtime.emf.ui.properties"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.providers"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.providers.ide"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.render"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.resources.editor"/>
+      <import plugin="org.eclipse.draw2d"/>
+      <import plugin="org.eclipse.gmf.runtime.draw2d.ui"/>
+      <import plugin="org.eclipse.emf.validation"/>
+      <import plugin="org.eclipse.gef"/>
+      <import plugin="org.muml.pim.edit.properties"/>
+      <import plugin="org.muml.core.common.editingdomain"/>
+      <import plugin="org.eclipse.ocl.pivot"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.properties" version="1.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.pim.realtimestatechart.diagram"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.providers" version="1.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.m2m.qvt.oml"/>
+      <import plugin="org.eclipse.eef.core" version="2.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.eef" version="2.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.sirius.common.interpreter" version="4.1.4" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.eef.common.ui"/>
+      <import plugin="org.eclipse.xtext.ui" version="2.10.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.compare" version="3.3.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.transaction"/>
+      <import plugin="org.eclipse.emf.compare.rcp"/>
+      <import plugin="org.eclipse.core.expressions" version="3.5.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.sirius.properties.core"/>
+      <import plugin="org.eclipse.sirius.properties"/>
+      <import plugin="org.apache.commons.logging"/>
+      <import plugin="org.apache.log4j" version="1.2.15" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.xtext"/>
+      <import plugin="org.eclipse.xtext.util"/>
+      <import plugin="org.antlr.runtime"/>
+      <import plugin="org.eclipse.emf.edit" version="2.7.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.xtext.ui.shared"/>
+      <import plugin="org.eclipse.xtext.builder"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui" version="1.4.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.compare"/>
+      <import plugin="org.eclipse.jdt.core"/>
+      <import plugin="org.eclipse.ui.editors"/>
+      <import plugin="org.eclipse.m2m.qvt.oml.project" version="3.1.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.m2m.qvt.oml" version="3.2.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.ide" version="3.7.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.properties" version="1.4.2" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.swt"/>
+      <import plugin="org.eclipse.ltk.core.refactoring"/>
+      <import plugin="org.eclipse.m2m.qvt.oml" version="3.0.1" match="greaterOrEqual"/>
+      <import plugin="org.muml.emm"/>
+      <import plugin="org.eclipse.sirius"/>
+      <import plugin="org.eclipse.core.commands"/>
+      <import plugin="org.eclipse.m2m.qvt.oml" version="3.3.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.workbench"/>
+      <import plugin="org.eclipse.emf.ecore.editor" version="2.10.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.core.export"/>
+      <import plugin="org.eclipse.emf.common"/>
+      <import plugin="org.eclipse.emf.common.ui"/>
+      <import plugin="org.muml.implicitcopy.qvto.library"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.providers" version="1.7.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.properties" version="1.7.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.m2m.qvt.oml.project" version="3.3.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.m2m.qvt.oml.runtime" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.m2m.qvt.oml" version="3.4.1" match="greaterOrEqual"/>
+      <import plugin="org.muml.pim.common" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.core.common" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui" version="3.109.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.browser" version="3.6.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.runtime" version="3.13.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.sirius.ext.base" version="5.0.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.sirius.ui"/>
+      <import plugin="org.eclipse.sirius.common"/>
+      <import plugin="org.eclipse.sirius.common.acceleo.aql"/>
+      <import plugin="org.muml.pim" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.sirius.diagram.ui"/>
+      <import plugin="org.muml.pim.component.diagram.custom" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.pim.component.diagram" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.pim.componentinstanceconfiguration.diagram.custom" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.pim.siriusproperties.custom"/>
+      <import plugin="org.muml.pm.hardware" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.pm.hardware.platforminstance.diagram.custom"/>
+      <import feature="org.eclipse.sirius.properties.feature" version="5.0.1.201706290936"/>
    </requires>
 
-   <plugin download-size="0" id="org.muml.pim.edit" install-size="0" unpack="false" version="1.1.0.qualifier"/>
+   <plugin
+         id="org.muml.pim.edit"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.qualifier"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.pim.edit.properties" install-size="0" unpack="false" version="1.1.0.qualifier"/>
+   <plugin
+         id="org.muml.pim.edit.properties"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.qualifier"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.pim.realtimestatechart.diagram" install-size="0" unpack="false" version="1.1.0.qualifier"/>
+   <plugin
+         id="org.muml.pim.realtimestatechart.diagram"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.qualifier"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.pim.realtimestatechart.diagram.custom" install-size="0" unpack="false" version="1.1.0.qualifier"/>
+   <plugin
+         id="org.muml.pim.realtimestatechart.diagram.custom"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.qualifier"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.pim.siriusproperties.custom" install-size="0" unpack="false" version="1.1.0.qualifier"/>
+   <plugin
+         id="org.muml.pim.siriusproperties.custom"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.qualifier"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.pim.actionlanguage.xtext" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.pim.actionlanguage.xtext"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.pim.actionlanguage.xtext.ui" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.pim.actionlanguage.xtext.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.pim.common" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.pim.common"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.pim.componentinstanceconfiguration.diagram" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.pim.componentinstanceconfiguration.diagram"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.pim.componentinstanceconfiguration.diagram.custom" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.pim.componentinstanceconfiguration.diagram.custom"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.pim.messagetype.diagram" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.pim.messagetype.diagram"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.pim.messagetype.diagram.custom" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.pim.messagetype.diagram.custom"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.pim" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.pim"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.pim.actionlanguage" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.pim.actionlanguage"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.pim.actionlanguage.edit" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.pim.actionlanguage.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.pim.coordinationprotocol.diagram" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.pim.coordinationprotocol.diagram"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.pim.coordinationprotocol.diagram.custom" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.pim.coordinationprotocol.diagram.custom"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.pim.component.diagram" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.pim.component.diagram"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.pim.component.diagram.custom" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.pim.component.diagram.custom"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.pim.pattern.diagram" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.pim.pattern.diagram"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.pim.pattern.diagram.custom" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.pim.pattern.diagram.custom"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.pim.operationrepository.diagram" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.pim.operationrepository.diagram"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.pim.operationrepository.diagram.custom" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.pim.operationrepository.diagram.custom"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.pim.onetomanycommunicationschemata" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.pim.onetomanycommunicationschemata"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.pim.ui" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.pim.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.pim.actionlanguage.edit.properties" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.pim.actionlanguage.edit.properties"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.pim.coordinationspecification.common" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.pim.coordinationspecification.common"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.pim.types" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.pim.types"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.core.siriusbrowser.actions" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.core.siriusbrowser.actions"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.pim.component.design" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.pim.component.design"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.pim.coordination.design" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.pim.coordination.design"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.pim.messagetype.design" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.pim.messagetype.design"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.pim.realtimestatechart.design" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.pim.realtimestatechart.design"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.muml.pm.design" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.muml.pm.design"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
 </feature>
