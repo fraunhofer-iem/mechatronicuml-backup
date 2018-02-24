@@ -2,7 +2,7 @@
 <?eclipse version="3.0"?>
 <plugin>
   <extension point="org.eclipse.sirius.componentization">
-    <component class="messagetype.design.Activator"
+    <component class="org.muml.pim.messagetype.design.Activator"
                id="messagetype.design"
 	       name="messagetype">
     </component>

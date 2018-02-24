@@ -2,7 +2,7 @@
 <?eclipse version="3.0"?>
 <plugin>
   <extension point="org.eclipse.sirius.componentization">
-    <component class="realtimestatechart.design.Activator"
+    <component class="org.muml.pim.realtimestatechart.design.Activator"
                id="realtimestatechart.design"
 	       name="realtimestatechart">
     </component>
@@ -38,7 +38,7 @@
   <extension
         point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
      <decoratorProvider
-           class="realtimestatechart.design.providers.MyDecoratorProvider">
+           class="org.muml.pim.realtimestatechart.design.providers.MyDecoratorProvider">
         <Priority
               name="High">
         </Priority>

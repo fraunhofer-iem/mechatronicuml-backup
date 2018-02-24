@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: realtimestatechart.design;singleton:=true
+Bundle-SymbolicName: org.muml.pim.realtimestatechart.design;singleton:=true
 Bundle-Version: 1.1.0.qualifier
-Bundle-Activator: realtimestatechart.design.Activator
+Bundle-Activator: org.muml.pim.realtimestatechart.design.Activator
 Bundle-Localization: plugin
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
@@ -19,6 +19,6 @@ Require-Bundle: org.eclipse.ui,
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-Vendor: %providerName
-Export-Package: realtimestatechart.design,
- realtimestatechart.design.edit.part,
- realtimestatechart.design.providers
+Export-Package: org.muml.pim.realtimestatechart.design,
+ org.muml.pim.realtimestatechart.design.edit.part,
+ org.muml.pim.realtimestatechart.design.providers

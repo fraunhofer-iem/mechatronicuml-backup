@@ -2,7 +2,7 @@
 <?eclipse version="3.0"?>
 <plugin>
   <extension point="org.eclipse.sirius.componentization">
-    <component class="hardware.design.Activator"
+    <component class="org.muml.pm.design.Activator"
                id="hardware.design"
 	       name="hardware">
     </component>
@@ -10,7 +10,7 @@
    <extension
         point="org.eclipse.sirius.externalJavaAction">
      <javaActions
-           actionClass="hardware.design.wizard.OpenWizard"
+           actionClass="org.muml.pm.design.wizard.OpenWizard"
            id="hardware.design.wizard.OpenWizard">
      </javaActions>
   </extension>

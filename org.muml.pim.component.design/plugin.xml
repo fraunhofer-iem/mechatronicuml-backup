@@ -2,7 +2,7 @@
 <?eclipse version="3.0"?>
 <plugin>
   <extension point="org.eclipse.sirius.componentization">
-    <component class="component.design.Activator"
+    <component class="org.muml.pim.component.design.Activator"
                id="component.design"
 	       name="component">
     </component>

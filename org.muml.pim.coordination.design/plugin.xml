@@ -2,9 +2,9 @@
 <?eclipse version="3.0"?>
 <plugin>
   <extension point="org.eclipse.sirius.componentization">
-    <coordination class="coordination.design.Activator"
+    <component class="org.muml.pim.coordination.design.Activator"
                id="coordination.design"
 	       name="coordination">
-    </coordination>
+    </component>
   </extension>
 </plugin>
