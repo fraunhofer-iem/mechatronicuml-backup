@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="realtimestatechart" nsURI="http://rtsc" nsPrefix="realtimestatechart">
+  <eClassifiers xsi:type="ecore:EClass" name="Behavior" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BehavioralElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="behavior" eType="#//Behavior"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Realtimestatechart" eSuperTypes="#//Behavior #//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transitions" upperBound="-1"
+        eType="#//Transition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="states" upperBound="-1"
+        eType="#//State" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="State" eSuperTypes="#//Vertex #//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subStatecharts" upperBound="-1"
+        eType="#//Realtimestatechart" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statePoints" upperBound="-1"
+        eType="#//StatePoint" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="initial" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="final" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Transition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="#//Vertex"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="#//Vertex"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StatePoint" eSuperTypes="#//Vertex">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="entry" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Vertex" abstract="true"/>
+</ecore:EPackage>

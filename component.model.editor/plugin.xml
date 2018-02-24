@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated component -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="component.presentation.ComponentModelWizardID"
+            name="%_UI_ComponentModelWizard_label"
+            class="component.presentation.ComponentModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ComponentModelFile.gif">
+         <description>%_UI_ComponentModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated component -->
+      <editor
+            id="component.presentation.ComponentEditorID"
+            name="%_UI_ComponentEditor_label"
+            icon="icons/full/obj16/ComponentModelFile.gif"
+            extensions="component"
+            class="component.presentation.ComponentEditor"
+            contributorClass="component.presentation.ComponentActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated instance -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="instance.presentation.InstanceModelWizardID"
+            name="%_UI_InstanceModelWizard_label"
+            class="instance.presentation.InstanceModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/InstanceModelFile.gif">
+         <description>%_UI_InstanceModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated instance -->
+      <editor
+            id="instance.presentation.InstanceEditorID"
+            name="%_UI_InstanceEditor_label"
+            icon="icons/full/obj16/InstanceModelFile.gif"
+            extensions="instance"
+            class="instance.presentation.InstanceEditor"
+            contributorClass="instance.presentation.InstanceActionBarContributor">
+      </editor>
+   </extension>
+</plugin>
