@@ -7,8 +7,8 @@
     <artifactId>SiriusBranch</artifactId>
     <version>1.1.0-SNAPSHOT</version>
   </parent>
-  <groupId>org.muml.pim.realtimestatechart.diagram.group</groupId>
-  <artifactId>org.muml.pim.realtimestatechart.diagram</artifactId>
+  <groupId>org.muml.core.siriusbrowser.actions.group</groupId>
+  <artifactId>org.muml.core.siriusbrowser.actions</artifactId>
   <version>1.1.0-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
 </project>
