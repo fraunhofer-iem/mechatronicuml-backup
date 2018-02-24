@@ -59,13 +59,6 @@
          unpack="false"/>
 
    <plugin
-         id="realtimestatechart.design"
-         download-size="0"
-         install-size="0"
-         version="1.1.0.qualifier"
-         unpack="false"/>
-
-   <plugin
          id="org.muml.pim.actionlanguage.xtext"
          download-size="0"
          install-size="0"
@@ -221,6 +214,48 @@
 
    <plugin
          id="org.muml.pim.types"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.muml.core.siriusbrowser.actions"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.muml.pim.component.design"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.muml.pim.coordination.design"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.muml.pim.messagetype.design"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.muml.pim.realtimestatechart.design"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.muml.pm.design"
          download-size="0"
          install-size="0"
          version="0.0.0"
