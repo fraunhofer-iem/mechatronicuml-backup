@@ -13,14 +13,14 @@
   </extension>
   -->
   <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
-		<editpartProvider class="realtimestatechart.design.providers.MyEditPartProvider">
+		<editpartProvider class="org.muml.pim.realtimestatechart.design.providers.MyEditPartProvider">
        		<Priority name="High"/>
 	    </editpartProvider>
   </extension>
   <extension
         point="org.eclipse.gmf.runtime.diagram.ui.editpolicyProviders">
      <editpolicyProvider
-           class="realtimestatechart.design.providers.MyEditPolicyProvider">
+           class="org.muml.pim.realtimestatechart.design.providers.MyEditPolicyProvider">
         <Priority
               name="Lowest">
         </Priority>
@@ -29,7 +29,7 @@
   <extension
         point="org.eclipse.gmf.runtime.diagram.core.viewProviders">
      <viewProvider
-           class="realtimestatechart.design.providers.MyViewProvider">
+           class="org.muml.pim.realtimestatechart.design.providers.MyViewProvider">
         <Priority
               name="High">
         </Priority>

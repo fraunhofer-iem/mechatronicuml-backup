@@ -10,7 +10,7 @@
   <extension
         point="org.eclipse.gmf.runtime.diagram.ui.editpolicyProviders">
      <editpolicyProvider
-           class="component.design.providers.MyEditPolicyProvider">
+           class="org.muml.pim.component.design.providers.MyEditPolicyProvider">
         <Priority
               name="Lowest">
         </Priority>
@@ -19,7 +19,7 @@
   <extension
         point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
      <editpartProvider
-           class="component.design.providers.MyEditPartProvider">
+           class="org.muml.pim.component.design.providers.MyEditPartProvider">
         <Priority
               name="Lowest">
         </Priority>
