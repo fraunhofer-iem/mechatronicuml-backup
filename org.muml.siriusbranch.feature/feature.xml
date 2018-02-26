@@ -116,14 +116,10 @@
       <import plugin="org.muml.pim.componentinstanceconfiguration.diagram.custom" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.muml.pim.siriusproperties.custom"/>
       <import plugin="org.muml.pm.hardware" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.pm.hardware.platforminstance.diagram.custom"/>
       <import plugin="org.eclipse.gmf.runtime.emf.commands.core" version="1.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.emf.ui.properties" version="1.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.views.properties.tabbed" version="3.5.100" match="greaterOrEqual"/>
       <import plugin="org.eclipse.jdt.annotation" version="1.1.100" match="greaterOrEqual"/>
-      <import feature="org.eclipse.sirius.runtime.ide.eef" version="4.1.4" match="greaterOrEqual"/>
-      <import feature="org.eclipse.sirius.runtime.ide.ui" version="4.1.4" match="greaterOrEqual"/>
-      <import feature="org.eclipse.sirius.properties.feature" version="5.0.1.201706290936"/>
       <import plugin="org.eclipse.emf.edit.ui" version="2.6.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.ecore" version="2.11.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.workspace"/>
@@ -131,6 +127,13 @@
       <import plugin="org.eclipse.gmf.runtime.diagram.core"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui" version="1.8.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.forms"/>
+      <import plugin="org.eclipse.m2m.qvt.oml" version="3.1.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.pm.hardware.common"/>
+      <import plugin="com.google.guava"/>
+      <import feature="org.eclipse.sirius.runtime.ide.eef" version="4.1.4" match="greaterOrEqual"/>
+      <import feature="org.eclipse.sirius.runtime.ide.ui" version="4.1.4" match="greaterOrEqual"/>
+      <import feature="org.eclipse.sirius.properties.feature" version="5.0.1.201706290936"/>
+      <import plugin="org.muml.pm.hardware.edit"/>
    </requires>
 
    <plugin
@@ -415,6 +418,27 @@
 
    <plugin
          id="org.muml.core.export"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.muml.pm.hardware"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.muml.pm.hardware.platforminstance.diagram.custom"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.muml.pm.hardware.platforminstance.diagram"
          download-size="0"
          install-size="0"
          version="0.0.0"
