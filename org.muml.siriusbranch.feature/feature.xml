@@ -18,14 +18,9 @@
    </license>
 
    <requires>
-      <import plugin="org.eclipse.eef.ide.ui" version="2.0.0" match="greaterOrEqual"/>
-      <import feature="org.eclipse.sirius.runtime.ide.eef" version="4.1.4" match="greaterOrEqual"/>
-      <import feature="org.eclipse.sirius.runtime.ide.ui" version="4.1.4" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ocl.ecore"/>
-      <import plugin="org.muml.core.common"/>
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.eclipse.emf.edit"/>
-      <import plugin="org.muml.core"/>
       <import plugin="org.muml.core.edit"/>
       <import plugin="org.eclipse.emf.ecore"/>
       <import plugin="org.eclipse.emf.ecore.edit"/>
@@ -69,6 +64,7 @@
       <import plugin="org.eclipse.eef.core" version="2.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.eef" version="2.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.sirius.common.interpreter" version="4.1.4" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.eef.ide.ui" version="2.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.eef.common.ui"/>
       <import plugin="org.eclipse.xtext.ui" version="2.10.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.compare" version="3.3.1" match="greaterOrEqual"/>
@@ -111,8 +107,6 @@
       <import plugin="org.eclipse.m2m.qvt.oml.project" version="3.3.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.m2m.qvt.oml.runtime" version="3.5.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.m2m.qvt.oml" version="3.4.1" match="greaterOrEqual"/>
-      <import plugin="org.muml.pim.common" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.core.common" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui" version="3.109.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.browser" version="3.6.100" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.runtime" version="3.13.0" match="greaterOrEqual"/>
@@ -128,7 +122,13 @@
       <import plugin="org.muml.pim.siriusproperties.custom"/>
       <import plugin="org.muml.pm.hardware" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.muml.pm.hardware.platforminstance.diagram.custom"/>
+      <import feature="org.eclipse.sirius.runtime.ide.eef" version="4.1.4" match="greaterOrEqual"/>
+      <import feature="org.eclipse.sirius.runtime.ide.ui" version="4.1.4" match="greaterOrEqual"/>
       <import feature="org.eclipse.sirius.properties.feature" version="5.0.1.201706290936"/>
+      <import plugin="org.eclipse.gmf.runtime.emf.commands.core" version="1.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.gmf.runtime.emf.ui.properties" version="1.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.views.properties.tabbed" version="3.5.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jdt.annotation" version="1.1.100" match="greaterOrEqual"/>
    </requires>
 
    <plugin
@@ -378,6 +378,41 @@
 
    <plugin
          id="org.muml.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.muml.core.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.muml.core.edit.properties"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.muml.core.modelinstance.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.muml.core.common.editingdomain"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.muml.core.export"
          download-size="0"
          install-size="0"
          version="0.0.0"
