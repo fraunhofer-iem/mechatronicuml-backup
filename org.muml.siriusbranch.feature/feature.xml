@@ -128,12 +128,10 @@
       <import plugin="org.eclipse.gmf.runtime.diagram.ui" version="1.8.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.forms"/>
       <import plugin="org.eclipse.m2m.qvt.oml" version="3.1.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.pm.hardware.common"/>
       <import plugin="com.google.guava"/>
       <import feature="org.eclipse.sirius.runtime.ide.eef" version="4.1.4" match="greaterOrEqual"/>
       <import feature="org.eclipse.sirius.runtime.ide.ui" version="4.1.4" match="greaterOrEqual"/>
       <import feature="org.eclipse.sirius.properties.feature" version="5.0.1.201706290936"/>
-      <import plugin="org.muml.pm.hardware.edit"/>
    </requires>
 
    <plugin
@@ -439,6 +437,27 @@
 
    <plugin
          id="org.muml.pm.hardware.platforminstance.diagram"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.muml.pm.hardware.common"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.muml.pm.hardware.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.muml.pm.hardware.edit.properties"
          download-size="0"
          install-size="0"
          version="0.0.0"
