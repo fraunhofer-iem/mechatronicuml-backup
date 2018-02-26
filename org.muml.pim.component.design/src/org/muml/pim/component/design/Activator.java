@@ -13,7 +13,7 @@ import org.osgi.framework.BundleContext;
  */
 public class Activator extends AbstractUIPlugin {
     // The plug-in ID
-    public static final String PLUGIN_ID = "component.design";
+    public static final String PLUGIN_ID = "org.muml.pim.component.design";
 
     // The shared instance
     private static Activator plugin;
