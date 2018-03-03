@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="reconfiguration" version="12.0.0.2017041100">
+  <ownedViewpoints name="org.muml.reconfiguration.componentstoryrule" label="Component Story Rule" modelFileExtension="componentstoryrule">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="org.muml.reconfiguration.componentstoryrule.diagram" label="Component Story Rule Diagram" domainClass="ComponentStoryRule">
+      <metamodel href="http://www.muml.org/reconfiguration/componentstorydiagram/1.0.0#/"/>
+      <metamodel href="http://www.muml.org/reconfiguration/componentstorypattern/1.0.0#/"/>
+      <metamodel href="http://www.muml.org/reconfiguration/verification/sdd/componentsdd/1.0.0#/"/>
+      <defaultLayer name="Default">
+        <containerMappings name="org.muml.reconfiguration.componentstoryrule.Activity" label="Activity" semanticCandidatesExpression="aql:self.activity" domainClass="Activity">
+          <subNodeMappings name="org.muml.reconfiguration.componentstoryrule.InitialNode" label="Initial Node" semanticCandidatesExpression="aql:self.ownedActivityNodes" domainClass="InitialNode">
+            <style xsi:type="style:DotDescription" showIcon="false" labelAlignment="RIGHT">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="org.muml.reconfiguration.componentstoryrule.ActivityFinalNode" label="Final Node" semanticCandidatesExpression="aql:self.ownedActivityNodes" domainClass="ActivityFinalNode">
+            <style xsi:type="style:DotDescription" borderSizeComputationExpression="1" showIcon="false" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="org.muml.reconfiguration.componentstoryrule.JunctionNode" label="Junction Node" semanticCandidatesExpression="aql:self.ownedActivityNodes" domainClass="JunctionNode">
+            <style xsi:type="style:LozengeNodeDescription" borderSizeComputationExpression="1" showIcon="false" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subContainerMappings name="org.muml.reconfiguration.componentstoryrule.ComponentStoryNode" label="Component Story Node" semanticCandidatesExpression="aql:self.ownedActivityNodes" domainClass="ComponentStoryNode">
+            <subContainerMappings name="org.muml.reconfiguration.componentstoryrule.ComponentVariable" label="Component Variable" semanticCandidatesExpression="aql:self.componentStoryPattern.thisVariable" domainClass="ComponentVariable">
+              <borderedNodeMappings name="org.muml.reconfiguration.componentstoryrule.MultiPortVariable" label="Multi Port Variable" semanticCandidatesExpression="aql:self.portVariables" domainClass="MultiPortVariable">
+                <style xsi:type="style:SquareDescription" labelPosition="node" resizeKind="NSEW">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                </style>
+              </borderedNodeMappings>
+              <borderedNodeMappings name="org.muml.reconfiguration.componentstoryrule.SinglePortVariable" label="Single Port Variable" semanticCandidatesExpression="feature:eAllContents">
+                <style xsi:type="style:SquareDescription" labelPosition="node" resizeKind="NSEW">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                </style>
+              </borderedNodeMappings>
+              <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subContainerMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subContainerMappings>
+          <subContainerMappings name="org.muml.reconfiguration.componentstoryrule.ControllerExchangeNode" label="Controller Exchange Node" semanticCandidatesExpression="aql:self.ownedActivityNodes" domainClass="ControllerExchangeNode"/>
+        </containerMappings>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="org.muml.reconfiguration.design.Services"/>
+  </ownedViewpoints>
+</description:Group>
