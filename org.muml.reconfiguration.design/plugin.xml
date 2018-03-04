@@ -3,8 +3,17 @@
 <plugin>
   <extension point="org.eclipse.sirius.componentization">
     <component class="org.muml.reconfiguration.design.Activator"
-               id="org.eclipse.sirius.sample.basicfamily.advanced.design"
-	       name="basicfamily">
+               id="org.muml.reconfiguration.design"
+	       name="reconfiguration">
     </component>
+  </extension>
+  <extension
+        point="org.eclipse.gmf.runtime.diagram.ui.editpolicyProviders">
+     <editpolicyProvider
+           class="org.muml.reconfiguration.design.edit.policies.MyEditPolicyProvider">
+        <Priority
+              name="Lowest">
+        </Priority>
+     </editpolicyProvider>
   </extension>
 </plugin>
