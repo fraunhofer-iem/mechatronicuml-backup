@@ -43,7 +43,7 @@ class MUMLNameProvider extends EObjectImpl implements NameProvider {
 			}
 			builder.insert(0, instance.name)
 			instance = instance.parentCIC.parentStructuredComponentInstance
-		} while (instance != null)
+		} while (instance !== null)
 		builder.toString
 	}
 	
@@ -57,7 +57,7 @@ class MUMLNameProvider extends EObjectImpl implements NameProvider {
 			}
 			builder.insert(0, hpi.name)
 			hpi = hpi.parentHPIC.parentHWPlatformInstance
-		} while (hpi != null)
+		} while (hpi !== null)
 		builder.toString
 	}
 	
@@ -81,7 +81,7 @@ class MUMLNameProvider extends EObjectImpl implements NameProvider {
 	
 	def String uniqueName(String name, EObject object) {
 		val EObject existing = name2Object.get(name) 
-		if (existing != null && existing != object) {
+		if (existing !== null && existing !== object) {
 			println("### name collision ###")
 			return uniqueName(name + "Unique", object)
 		}
@@ -93,9 +93,9 @@ class MUMLNameProvider extends EObjectImpl implements NameProvider {
 	private int unnamedCounter = 0
 	
 	def String safeName(NamedElement namedElement) {
-		if (namedElement.name == null) {
+		if (namedElement.name === null) {
 			var s = unnamedMap.get(namedElement)
-			if (s != null) {
+			if (s !== null) {
 				return s
 			}
 			s = "unnamedElement." + unnamedCounter++
