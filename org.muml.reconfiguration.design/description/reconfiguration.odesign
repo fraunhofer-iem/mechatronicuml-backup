@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="reconfiguration" version="12.0.0.2017041100">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="reconfiguration" version="12.0.0.2017041100">
   <ownedViewpoints name="org.muml.reconfiguration.componentstoryrule" label="Component Story Rule" modelFileExtension="componentstoryrule">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="org.muml.reconfiguration.componentstoryrule.diagram" label="Component Story Rule Diagram" domainClass="ComponentStoryRule">
       <metamodel href="http://www.muml.org/reconfiguration/componentstorydiagram/1.0.0#/"/>
@@ -72,6 +72,33 @@
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
         </containerMappings>
+        <toolSections name="org.muml.reconfiguration.componentstorydiagram.group" label="StoryDiagram">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="org.muml.reconfiguration.createActivity" label="Activity" containerMappings="//@ownedViewpoints[name='org.muml.reconfiguration.componentstoryrule']/@ownedRepresentations[name='org.muml.reconfiguration.componentstoryrule.diagram']/@defaultLayer/@containerMappings[name='org.muml.reconfiguration.componentstoryrule.Activity']" iconPath="/org.muml.storydiagram.edit/icons/activities/Activity.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="Activity" referenceName="activity">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'activity'"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="org.muml.reconfiguration.createComponentStoryNode" label="ComponentStoryNode" containerMappings="//@ownedViewpoints[name='org.muml.reconfiguration.componentstoryrule']/@ownedRepresentations[name='org.muml.reconfiguration.componentstoryrule.diagram']/@defaultLayer/@containerMappings[name='org.muml.reconfiguration.componentstoryrule.Activity']/@subContainerMappings[name='org.muml.reconfiguration.componentstoryrule.ComponentStoryNode']" iconPath="/org.muml.reconfiguration.componentstorydiagram.edit/icons/full/obj16/ComponentStoryNode.gif">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="Activity" referenceName="activity">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'activity'"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="org.muml.reconfiguration.componentstorypattern.group" label="StoryPattern">
+          <ownedTools xsi:type="tool:ContainerCreationDescription">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation/>
+          </ownedTools>
+        </toolSections>
       </defaultLayer>
     </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="org.muml.reconfiguration.design.Services"/>
