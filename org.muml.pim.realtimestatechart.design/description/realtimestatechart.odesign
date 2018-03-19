@@ -144,7 +144,7 @@
                 </style>
               </borderedNodeMappings>
               <borderedNodeMappings name="ExitPoint" labelDirectEdit="//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='DirectEditLabel']" semanticCandidatesExpression="aql:self.connectionPoints" domainClass="ExitPoint">
-                <style xsi:type="style:DotDescription" borderSizeComputationExpression="1" labelExpression="" iconPath="/realtimestatechart.design/images/cross.png" sizeComputationExpression="2" labelPosition="node" strokeSizeComputationExpression="1">
+                <style xsi:type="style:DotDescription" borderSizeComputationExpression="1" labelExpression="" iconPath="/org.muml.pim.realtimestatechart.design/images/cross.png" sizeComputationExpression="2" labelPosition="node" strokeSizeComputationExpression="1">
                   <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                   <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                   <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
