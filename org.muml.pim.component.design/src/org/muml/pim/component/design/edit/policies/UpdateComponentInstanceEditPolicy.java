@@ -36,7 +36,12 @@ public class UpdateComponentInstanceEditPolicy extends NotifyingGraphicalEditPol
 		super.activate();
 		ComponentInstance componentInstance = (ComponentInstance) getSemanticElement();
 		editingDomain = TransactionUtil.getEditingDomain(componentInstance);
-        org.muml.pim.componentinstanceconfiguration.diagram.custom.part.Activator.updateComponentInstance(editingDomain, componentInstance);
+		Display.getCurrent().asyncExec(new Runnable() {
+			@Override
+			public void run() {
+				org.muml.pim.componentinstanceconfiguration.diagram.custom.part.Activator.updateComponentInstance(editingDomain, componentInstance);
+			}
+		});
 	}
 
 	protected void addListeners() {

@@ -44,8 +44,13 @@ public class UpdateComponentPartEditPolicy extends NotifyingGraphicalEditPolicy 
 	public void activate() {
 		super.activate();
 		ComponentPart componentPart = getComponentPart();
-        editingDomain = TransactionUtil.getEditingDomain(componentPart);
-		Activator.updateComponentPart(editingDomain, componentPart);
+		editingDomain = TransactionUtil.getEditingDomain(componentPart);
+		Display.getCurrent().asyncExec(new Runnable() {
+			@Override
+			public void run() {
+				Activator.updateComponentPart(editingDomain, componentPart);
+			}
+		});
 	}
 
 	protected void addListeners() {
