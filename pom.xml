@@ -151,5 +151,10 @@
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/modeling/gmp/gmf-tooling/updates/releases/</url>
         </repository>
+	  	<repository>
+			<id>sirius</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/sirius/updates/releases/5.1.1/oxygen/</url>
+        </repository>
   </repositories>
 </project>
