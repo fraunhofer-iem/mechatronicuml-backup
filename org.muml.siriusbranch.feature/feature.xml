@@ -131,9 +131,10 @@
       <import plugin="com.google.guava"/>
       <import feature="org.eclipse.sirius.runtime.ide.eef" version="4.1.4" match="greaterOrEqual"/>
       <import feature="org.eclipse.sirius.runtime.ide.ui" version="4.1.4" match="greaterOrEqual"/>
-      <import feature="org.eclipse.sirius.properties.feature" />
-      <import feature="org.eclipse.sirius.runtime.aql" />
-      <import feature="org.eclipse.sirius.runtime.ocl" />
+      <import feature="org.eclipse.sirius.properties.feature"/>
+      <import feature="org.eclipse.sirius.runtime.aql"/>
+      <import feature="org.eclipse.sirius.runtime.ocl"/>
+      <import feature="org.eclipse.sirius.runtime.acceleo"/>
    </requires>
 
    <plugin
