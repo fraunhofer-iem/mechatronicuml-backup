@@ -21,4 +21,5 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
 Export-Package: org.muml.pim.realtimestatechart.design,
  org.muml.pim.realtimestatechart.design.edit.part,
+ org.muml.pim.realtimestatechart.design.edit.policies,
  org.muml.pim.realtimestatechart.design.providers

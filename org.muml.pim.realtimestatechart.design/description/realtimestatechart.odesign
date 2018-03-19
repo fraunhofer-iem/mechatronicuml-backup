@@ -478,6 +478,6 @@
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedJavaExtensions qualifiedClassName="realtimestatechart.design.Services"/>
+    <ownedJavaExtensions qualifiedClassName="org.muml.pim.realtimestatechart.design.Services"/>
   </ownedViewpoints>
 </description:Group>

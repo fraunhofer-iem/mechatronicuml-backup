@@ -140,6 +140,6 @@
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedJavaExtensions qualifiedClassName="coordination.design.Services"/>
+    <ownedJavaExtensions qualifiedClassName="org.muml.pim.coordination.design.Services"/>
   </ownedViewpoints>
 </description:Group>
