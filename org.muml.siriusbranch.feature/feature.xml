@@ -515,4 +515,18 @@
          version="0.0.0"
          unpack="false"/>
 
+   <plugin
+         id="org.muml.reconfiguration.componentstorypattern"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.muml.reconfiguration.componentstorypattern.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
 </feature>
