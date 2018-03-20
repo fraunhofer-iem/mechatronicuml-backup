@@ -35,6 +35,9 @@
     <module>org.muml.pm.design</module>
     <module>org.muml.siriusbranch.feature</module>
     <module>org.muml.siriusbranch.repository</module>
+    <module>org.muml.reconfiguration</module>
+    <module>org.muml.reconfiguration.design</module>
+    <module>org.muml.reconfiguration.edit</module>
   </modules>
   
   <build>
