@@ -63,10 +63,7 @@
       <menuContribution
             allPopups="false"
             locationURI="popup:org.muml">
-         <separator
-               name="org.muml.core.siriusbrowser.actions.separator.component"
-               visible="false">
-         </separator>
+        
          <command
                commandId="org.muml.core.siriusbrowser.actions.command.CreateModelFileCommand"
                icon="icons/AtomicComponent.gif"
@@ -140,6 +137,85 @@
               <parameter
                     name="org.muml.core.siriusbrowser.actions.parameters.filename"
                     value="configuration.instance">
+              </parameter>
+         </command>
+          <separator
+               name="org.muml.core.siriusbrowser.actions.separator.reconfiguration"
+               visible="false">
+         </separator>
+         <command
+               commandId="org.muml.core.siriusbrowser.actions.command.CreateModelFileCommand"
+               icon="icons/AtomicComponent.gif"
+               id="org.muml.core.siriusbrowser.actions.CreateReconfigurableAtomicComponent"
+               label="Create Reconfigurable Atomic Component"
+               style="push">
+              <visibleWhen
+                    checkEnabled="false">
+                    <iterate ifEmpty="false" operator="and">
+                    	<adapt type="org.eclipse.core.resources.IContainer" />
+                    </iterate>	
+              </visibleWhen>
+              <parameter
+                    name="org.muml.core.siriusbrowser.actions.parameters.epackage"
+                    value="http://www.muml.org/reconfiguration/1.0.0">
+              </parameter>
+              <parameter
+                    name="org.muml.core.siriusbrowser.actions.parameters.eclass"
+                    value="ReconfigurableAtomicComponent">
+              </parameter>
+              <parameter
+                    name="org.muml.core.siriusbrowser.actions.parameters.filename"
+                    value="reconfigurableatomiccomponent.component">
+              </parameter>
+         </command>
+         <command
+               commandId="org.muml.core.siriusbrowser.actions.command.CreateModelFileCommand"
+               icon="icons/StructuredComponent.gif"
+               id="org.muml.core.siriusbrowser.actions.CreateReconfigurableStructuredComponent"
+               label="Create Reconfigurable Structured Component"
+               style="push">
+              <visibleWhen
+                    checkEnabled="false">
+                    <iterate ifEmpty="false" operator="and">
+                    	<adapt type="org.eclipse.core.resources.IContainer" />
+                    </iterate>	
+              </visibleWhen>
+              <parameter
+                    name="org.muml.core.siriusbrowser.actions.parameters.epackage"
+                    value="http://www.muml.org/reconfiguration/1.0.0">
+              </parameter>
+              <parameter
+                    name="org.muml.core.siriusbrowser.actions.parameters.eclass"
+                    value="ReconfigurableStructuredComponent">
+              </parameter>
+              <parameter
+                    name="org.muml.core.siriusbrowser.actions.parameters.filename"
+                    value="reconfigurablestructuredcomponent.component">
+              </parameter>
+         </command>
+         <command
+               commandId="org.muml.core.siriusbrowser.actions.command.CreateModelFileCommand"
+               icon="icons/AtomicComponent.gif"
+               id="org.muml.core.siriusbrowser.actions.CreateFadingComponent"
+               label="Create Fading Component"
+               style="push">
+              <visibleWhen
+                    checkEnabled="false">
+                    <iterate ifEmpty="false" operator="and">
+                    	<adapt type="org.eclipse.core.resources.IContainer" />
+                    </iterate>	
+              </visibleWhen>
+              <parameter
+                    name="org.muml.core.siriusbrowser.actions.parameters.epackage"
+                    value="http://www.muml.org/reconfiguration/1.0.0">
+              </parameter>
+              <parameter
+                    name="org.muml.core.siriusbrowser.actions.parameters.eclass"
+                    value="FadingComponent">
+              </parameter>
+              <parameter
+                    name="org.muml.core.siriusbrowser.actions.parameters.filename"
+                    value="fadingcomponent.component">
               </parameter>
          </command>
          <separator

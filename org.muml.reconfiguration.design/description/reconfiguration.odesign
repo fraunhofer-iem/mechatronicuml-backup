@@ -1,10 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="reconfiguration" version="12.0.0.2017041100">
+  <ownedViewpoints name="org.muml.reconfiguration.componentextension" label="Reconfigurable Component Diagram Extension" modelFileExtension="component">
+    <ownedRepresentationExtensions xsi:type="description_1:DiagramExtensionDescription" name="Reconfigurable Component Diagram Extension" viewpointURI="viewpoint:/org.muml.pim.component.design/component" representationName="org.muml.pim.component.diagram">
+      <layers name="org.muml.reconfiguration.componentextension.layer" label="Reconfigurable Component Diagram Layer" activeByDefault="true">
+        <nodeMappings name="AtomicComponent" semanticCandidatesExpression="aql:self" domainClass="AtomicComponent">
+          <borderedNodeMappings name="Port" semanticCandidatesExpression="aql:self.ports" domainClass="Port">
+            <style xsi:type="style:SquareDescription" showIcon="false" sizeComputationExpression="5" resizeKind="NSEW" width="2" height="2">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:UserFixedColor" href="../../org.muml.pim.component.design/description/component.odesign#//@userColorsPalettes[name=null]/@entries[name='default']"/>
+            </style>
+          </borderedNodeMappings>
+          <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" showIcon="false" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW" width="15" height="10">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </nodeMappings>
+        <containerMappings name="StructuredComponent" semanticCandidatesExpression="aql:self" domainClass="StructuredComponent" reusedBorderedNodeMappings="//@ownedViewpoints[name='org.muml.reconfiguration.componentextension']/@ownedRepresentationExtensions[name='Reconfigurable%20Component%20Diagram%20Extension']/@layers[name='org.muml.reconfiguration.componentextension.layer']/@nodeMappings[name='AtomicComponent']/@borderedNodeMappings[name='Port']">
+          <subNodeMappings name="ComponentPart" semanticCandidatesExpression="aql:self.embeddedComponentParts" domainClass="ComponentPart">
+            <borderedNodeMappings name="PortPart" semanticCandidatesExpression="aql:self.portParts" domainClass="PortPart">
+              <style xsi:type="style:SquareDescription" showIcon="false" sizeComputationExpression="5" resizeKind="NSEW" width="2" height="2">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </borderedNodeMappings>
+            <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="aql:self.name + ' : ' + self.componentType.name" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW" width="15" height="10">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>underline</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" widthComputationExpression="30" heightComputationExpression="20">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </containerMappings>
+        <toolSections name="org.muml.reconfiguration.createReconfigurationPort" label="Reconfiguration Port">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="org.muml.reconfiguration.createMessagePort" label="Message Port" iconPath="/org.muml.pim.edit/icons/full/obj16/DiscretePort.gif">
+            <nodeMappings href="../../org.muml.pim.component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@nodeMappings[name='AtomicComponent']/@borderedNodeMappings[name='Port']"/>
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="DiscretePort" referenceName="ports">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="port"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="org.muml.reconfiguration.createExecutionPort" label="Execution Port" iconPath="/org.muml.pim.edit/icons/full/obj16/ContinuousPort.gif">
+            <nodeMappings href="../../org.muml.pim.component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@nodeMappings[name='AtomicComponent']/@borderedNodeMappings[name='Port']"/>
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ContinuousPort" referenceName="ports">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="port"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="org.muml.reconfiguration.createBroadcastPort" label="Broadcast Port" iconPath="/org.muml.pim.edit/icons/full/obj16/HybridPort.gif">
+            <nodeMappings href="../../org.muml.pim.component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@nodeMappings[name='AtomicComponent']/@borderedNodeMappings[name='Port']"/>
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="HybridPort" referenceName="ports">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="port"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </layers>
+    </ownedRepresentationExtensions>
+  </ownedViewpoints>
   <ownedViewpoints name="org.muml.reconfiguration.componentstoryrule" label="Component Story Rule" modelFileExtension="componentstoryrule">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="org.muml.reconfiguration.componentstoryrule.diagram" label="Component Story Rule Diagram" domainClass="ComponentStoryRule">
-      <metamodel href="http://www.muml.org/reconfiguration/componentstorydiagram/1.0.0#/"/>
-      <metamodel href="http://www.muml.org/reconfiguration/componentstorypattern/1.0.0#/"/>
-      <metamodel href="http://www.muml.org/reconfiguration/verification/sdd/componentsdd/1.0.0#/"/>
       <defaultLayer name="Default">
         <containerMappings name="org.muml.reconfiguration.componentstoryrule.Activity" label="Activity" semanticCandidatesExpression="aql:self.activity" domainClass="Activity">
           <subNodeMappings name="org.muml.reconfiguration.componentstoryrule.InitialNode" label="Initial Node" semanticCandidatesExpression="aql:self.ownedActivityNodes" domainClass="InitialNode">
@@ -102,97 +180,5 @@
       </defaultLayer>
     </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="org.muml.reconfiguration.design.Services"/>
-  </ownedViewpoints>
-  <ownedViewpoints name="org.muml.reconfiguration.componentextension" label="Reconfigurable Component Diagram Extension" modelFileExtension="component">
-    <ownedRepresentationExtensions xsi:type="description_1:DiagramExtensionDescription" name="Reconfigurable Component Diagram Extension" viewpointURI="viewpoint:/org.muml.pim.component.design/component" representationName="org.muml.pim.component.diagram">
-      <layers name="org.muml.reconfiguration.componentextension.layer" label="Reconfigurable Component Diagram Layer" activeByDefault="true">
-        <nodeMappings name="ReconfigurableAtomicComponent" semanticCandidatesExpression="aql:self" domainClass="ReconfigurableAtomicComponent">
-          <reusedBorderedNodeMappings href="../../org.muml.pim.component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@nodeMappings[name='AtomicComponent']/@borderedNodeMappings[name='Port']"/>
-          <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" showIcon="false" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW" width="15" height="10">
-            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-          </style>
-        </nodeMappings>
-        <containerMappings name="ReconfigurableStructuredComponent" semanticCandidatesExpression="aql:self" domainClass="ReconfigurableStructuredComponent">
-          <reusedBorderedNodeMappings href="../../org.muml.pim.component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@nodeMappings[name='AtomicComponent']/@borderedNodeMappings[name='Port']"/>
-          <subNodeMappings name="ComponentPart" semanticCandidatesExpression="aql:self.embeddedComponentParts" domainClass="ComponentPart">
-            <borderedNodeMappings name="PortPart" semanticCandidatesExpression="aql:self.portParts" domainClass="PortPart">
-              <style xsi:type="style:SquareDescription" showIcon="false" sizeComputationExpression="5" resizeKind="NSEW" width="2" height="2">
-                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-              </style>
-            </borderedNodeMappings>
-            <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="aql:self.name + ' : ' + self.componentType.name" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW" width="15" height="10">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelFormat>underline</labelFormat>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            </style>
-          </subNodeMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" widthComputationExpression="30" heightComputationExpression="20">
-            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-          </style>
-        </containerMappings>
-        <toolSections name="org.muml.reconfiguration.createReconfigurationPort" label="Reconfiguration Port">
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="org.muml.reconfiguration.createPort" label="Discrete Port" iconPath="/org.muml.pim.edit/icons/full/obj16/DiscretePort.gif">
-            <nodeMappings href="../../org.muml.pim.component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@nodeMappings[name='AtomicComponent']/@borderedNodeMappings[name='Port']"/>
-            <variable name="container"/>
-            <viewVariable name="containerView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="DiscretePort" referenceName="ports">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="port"/>
-                </subModelOperations>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="org.muml.reconfiguration.createContinuousPort" label="Continuous Port" iconPath="/org.muml.pim.edit/icons/full/obj16/ContinuousPort.gif">
-            <nodeMappings href="../../org.muml.pim.component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@nodeMappings[name='AtomicComponent']/@borderedNodeMappings[name='Port']"/>
-            <variable name="container"/>
-            <viewVariable name="containerView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ContinuousPort" referenceName="ports">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="port"/>
-                </subModelOperations>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="org.muml.reconfiguration.createHybridPort" label="Hybrid Port" iconPath="/org.muml.pim.edit/icons/full/obj16/HybridPort.gif">
-            <nodeMappings href="../../org.muml.pim.component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@nodeMappings[name='AtomicComponent']/@borderedNodeMappings[name='Port']"/>
-            <variable name="container"/>
-            <viewVariable name="containerView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="HybridPort" referenceName="ports">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="port"/>
-                </subModelOperations>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool:DoubleClickDescription" name="portDoubleClick">
-            <element name="element"/>
-            <elementView name="elementView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:element">
-                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.behavior = null">
-                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="RealtimeStatechart" referenceName="behavior"/>
-                </subModelOperations>
-                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.behavior">
-                  <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true">
-                    <diagramDescription href="../../org.muml.pim.realtimestatechart.design/description/realtimestatechart.odesign#//@ownedViewpoints[name='realtimestatechart']/@ownedRepresentations[name='org.muml.pim.realtimestatechart.diagram']"/>
-                  </subModelOperations>
-                </subModelOperations>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
-        </toolSections>
-      </layers>
-    </ownedRepresentationExtensions>
   </ownedViewpoints>
 </description:Group>

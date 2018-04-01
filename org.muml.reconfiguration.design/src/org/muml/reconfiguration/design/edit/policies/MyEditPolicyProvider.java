@@ -9,29 +9,14 @@ import org.eclipse.sirius.diagram.AbstractDNode;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.description.DiagramDescription;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
-import org.muml.reconfiguration.componentstorypattern.PortVariable;
 
 public class MyEditPolicyProvider extends AbstractEditPolicyProvider {
 
 	public void createEditPolicies(EditPart editPart) {
 		EObject element = getSemanticElement(editPart);
-//		if (element instanceof ComponentPart) {
-//			editPart.installEditPolicy("ComponentPartUpdate", new UpdateComponentPartEditPolicy());
-//		}
-//		if (element instanceof ComponentInstance) {
-//			editPart.installEditPolicy("ComponentInstanceUpdate", new UpdateComponentInstanceEditPolicy());
-//		}
-		if (element instanceof PortVariable) {
-			editPart.installEditPolicy(org.muml.pim.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE,
-					new PortVariableEditPolicy());
-		}
-//		if (element instanceof PortPart) {
+//		if (element instanceof PortVariable) {
 //			editPart.installEditPolicy(org.muml.pim.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE,
-//					new PortPartEditPolicy());
-//		}
-//		if (element instanceof PortInstance) {
-//			editPart.installEditPolicy(org.muml.pim.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE,
-//					new PortInstanceEditPolicy());
+//					new PortVariableEditPolicy());
 //		}
 	}
 
@@ -74,9 +59,9 @@ public class MyEditPolicyProvider extends AbstractEditPolicyProvider {
 			if (diagramDescription != null) {
 				if ("org.muml.reconfiguration.componentstoryrule.diagram".equals(diagramDescription.getName())) {
 					EObject element = getSemanticElement(editPart);
-					if (element instanceof PortVariable) {
-						return true;
-					}
+//					if (element instanceof PortVariable) {
+//						return true;
+//					}
 //					if (element instanceof ComponentVariable) {
 //						return true;
 //					}
