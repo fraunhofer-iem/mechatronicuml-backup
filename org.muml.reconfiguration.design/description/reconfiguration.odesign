@@ -56,6 +56,11 @@
             </initialOperation>
           </ownedTools>
         </toolSections>
+        <decorationDescriptionsSet>
+          <decorationDescriptions xsi:type="description:SemanticBasedDecoration" name="FadingComponentIcon" position="NORTH_EAST" distributionDirection="HORIZONTAL" imageExpression="/org.muml.reconfiguration.design/icons/FadingComponentIcon.gif" domainClass="FadingComponent"/>
+          <decorationDescriptions xsi:type="description:SemanticBasedDecoration" name="ReconfigurableAtomicComponentIcon" position="NORTH_EAST" distributionDirection="HORIZONTAL" imageExpression="/org.muml.pim.edit/icons/full/obj16/StructuredComponent.gif" domainClass="ReconfigurableAtomicComponent"/>
+          <decorationDescriptions xsi:type="description:SemanticBasedDecoration" name="ReconfigurableStructuredComponentIcon" position="NORTH_EAST" distributionDirection="HORIZONTAL" imageExpression="/org.muml.pim.edit/icons/full/obj16/StructuredComponent.gif" domainClass="ReconfigurableStructuredComponent"/>
+        </decorationDescriptionsSet>
       </layers>
     </ownedRepresentationExtensions>
   </ownedViewpoints>

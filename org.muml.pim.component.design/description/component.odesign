@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="component" version="12.0.0.2017041100">
-  <ownedViewpoints name="component" modelFileExtension="component">
+  <ownedViewpoints name="component" label="MechatronicUML Component Diagram Editor" modelFileExtension="component" icon="/org.muml.pim.edit/icons/full/obj16/StructuredComponent.gif">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="org.muml.pim.component.diagram" label="Component Diagram" initialisation="true" domainClass="Component" enablePopupBars="true">
-      <defaultLayer name="Default">
+      <defaultLayer name="Default" icon="/org.muml.pim.edit/icons/full/obj16/StructuredComponent.gif">
         <nodeMappings name="AtomicComponent" semanticCandidatesExpression="aql:self" domainClass="AtomicComponent">
           <borderedNodeMappings name="Port" semanticCandidatesExpression="aql:self.ports" doubleClickDescription="//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='portDoubleClick']" domainClass="Port">
             <style xsi:type="style:SquareDescription" showIcon="false" sizeComputationExpression="5" resizeKind="NSEW" width="2" height="2" color="//@userColorsPalettes[name=null]/@entries[name='default']">
@@ -10,8 +10,9 @@
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
           </borderedNodeMappings>
-          <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" showIcon="false" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW" width="15" height="10">
+          <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" showIcon="false" labelAlignment="LEFT" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW" width="15" height="10">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
@@ -32,8 +33,9 @@
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             </style>
           </subNodeMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" widthComputationExpression="30" heightComputationExpression="20">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" labelAlignment="LEFT" widthComputationExpression="30" heightComputationExpression="20">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -99,10 +101,15 @@
             </initialOperation>
           </ownedTools>
         </toolSections>
+        <decorationDescriptionsSet>
+          <decorationDescriptions xsi:type="description:SemanticBasedDecoration" name="StaticAtomicComponentIcon" position="NORTH_EAST" distributionDirection="HORIZONTAL" imageExpression="/org.muml.pim.edit/icons/full/obj16/StructuredComponent.gif" domainClass="StaticAtomicComponent"/>
+          <decorationDescriptions xsi:type="description:SemanticBasedDecoration" name="StaticStructuredComponentIcon" position="NORTH_EAST" distributionDirection="HORIZONTAL" imageExpression="/org.muml.pim.edit/icons/full/obj16/StructuredComponent.gif" domainClass="StaticStructuredComponent"/>
+          <decorationDescriptions xsi:type="description:SemanticBasedDecoration" name="ComponentPartIcon" position="NORTH_EAST" distributionDirection="HORIZONTAL" imageExpression="/org.muml.pim.edit/icons/full/obj16/StructuredComponent.gif" domainClass="ComponentPart"/>
+        </decorationDescriptionsSet>
       </defaultLayer>
     </ownedRepresentations>
   </ownedViewpoints>
-  <ownedViewpoints name="instance" label="instance" modelFileExtension="instance">
+  <ownedViewpoints name="instance" label="MechatronicUML Component-Instance Diagram Editor" modelFileExtension="instance">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="org.muml.pim.instance.diagram" label="Instance Diagram" initialisation="true" domainClass="ComponentInstanceConfiguration" enablePopupBars="true">
       <metamodel href="../../org.muml.pim/model/pim.ecore#/"/>
       <metamodel href="../../org.muml.pim/model/pim.ecore#//constraint"/>
