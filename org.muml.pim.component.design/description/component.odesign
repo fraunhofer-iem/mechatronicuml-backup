@@ -5,7 +5,7 @@
       <defaultLayer name="Default" icon="/org.muml.pim.edit/icons/full/obj16/StructuredComponent.gif">
         <nodeMappings name="AtomicComponent" semanticCandidatesExpression="aql:self" domainClass="AtomicComponent">
           <borderedNodeMappings name="Port" semanticCandidatesExpression="aql:self.ports" doubleClickDescription="//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='portDoubleClick']" domainClass="Port">
-            <style xsi:type="style:SquareDescription" showIcon="false" sizeComputationExpression="5" resizeKind="NSEW" width="2" height="2" color="//@userColorsPalettes[name=null]/@entries[name='default']">
+            <style xsi:type="style:SquareDescription" showIcon="false" sizeComputationExpression="5" resizeKind="NSEW" width="2" height="2" color="//@userColorsPalettes[name=null]/@entries[name='color_continuouscomponent']">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
@@ -16,6 +16,20 @@
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
+          <conditionnalStyles predicateExpression="aql:self.componentKind.toString().equals('continuous component')">
+            <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" showIcon="false" labelAlignment="LEFT" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW" width="15" height="10" color="//@userColorsPalettes[name=null]/@entries[name='color_continuouscomponent']">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="aql:self.componentKind.toString().equals('software component')">
+            <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" showIcon="false" labelAlignment="LEFT" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW" width="15" height="10" color="//@userColorsPalettes[name=null]/@entries[name='color_softwarecomponent']">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
         </nodeMappings>
         <containerMappings name="StructuredComponent" semanticCandidatesExpression="aql:self" domainClass="StructuredComponent" reusedBorderedNodeMappings="//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@nodeMappings[name='AtomicComponent']/@borderedNodeMappings[name='Port']">
           <subNodeMappings name="ComponentPart" semanticCandidatesExpression="aql:self.embeddedComponentParts" domainClass="ComponentPart">
@@ -32,6 +46,20 @@
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             </style>
+            <conditionnalStyles predicateExpression="aql:self.componentType.componentKind.toString().equals('continuous component')">
+              <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="aql:self.name + ' : ' + self.componentType.name" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW" width="15" height="10" color="//@userColorsPalettes[name=null]/@entries[name='color_continuouscomponent']">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelFormat>underline</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="aql:self.componentType.componentKind.toString().equals('software component')">
+              <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="aql:self.name + ' : ' + self.componentType.name" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW" width="15" height="10" color="//@userColorsPalettes[name=null]/@entries[name='color_softwarecomponent']">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelFormat>underline</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </conditionnalStyles>
           </subNodeMappings>
           <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" labelAlignment="LEFT" widthComputationExpression="30" heightComputationExpression="20">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -247,6 +275,7 @@
     <ownedJavaExtensions qualifiedClassName="component.design.Services"/>
   </ownedViewpoints>
   <userColorsPalettes>
-    <entries xsi:type="description:UserFixedColor" red="255" green="255" blue="255" name="default"/>
+    <entries xsi:type="description:UserFixedColor" red="230" green="230" blue="230" name="color_continuouscomponent"/>
+    <entries xsi:type="description:UserFixedColor" red="214" green="226" blue="190" name="color_softwarecomponent"/>
   </userColorsPalettes>
 </description:Group>
