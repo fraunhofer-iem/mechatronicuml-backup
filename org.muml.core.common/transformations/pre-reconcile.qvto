@@ -26,6 +26,7 @@ parser.className.concat(parser._uses->first().container().oclAsType(GenCommonBas
     -- Add dependant plugins
     var model = gmfgenModel.rootObjects()![GenEditorGenerator];
     model.plugin.requiredPlugins += "org.muml.core.common";
+    model.plugin.requiredPlugins += "org.muml.core.common.ocltracker";
   --  model.plugin.requiredPlugins += "org.muml.pim.common";
     model.plugin.requiredPlugins += "org.muml.core.modelinstance.ui";
     model.plugin.requiredPlugins += "org.muml.core.edit.properties";

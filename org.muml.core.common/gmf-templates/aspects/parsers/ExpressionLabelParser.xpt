@@ -15,7 +15,7 @@ public class «self.getQualifiedClassName().xpandSplit('\\.')->last()»«EXPAND 
 «EXPAND impl::parsers::ExpressionLabelParser::fields-»
 	«EXPAND xpt::Common::generatedMemberComment»
 	public «getQualifiedClassName().xpandSplit('\\.')->last()»() {
-		super(new org.muml.core.common.gmf.ocl.ActivePivotOclTrackerFactory());
+		super(new org.muml.core.common.ocltracker.ActivePivotOclTrackerFactory());
 	}
 «EXPAND body»
 }
