@@ -10,6 +10,12 @@
           <importedMapping href="../../org.muml.pim.component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@nodeMappings[name='AtomicComponent']"/>
         </nodeMappings>
         <containerMappings xsi:type="description_1:ContainerMappingImport" name="StructuredComponentImport" semanticCandidatesExpression="aql:self" domainClass="StructuredComponent" reusedBorderedNodeMappings="//@ownedViewpoints[name='org.muml.reconfiguration.componentextension']/@ownedRepresentationExtensions[name='Reconfigurable%20Component%20Diagram%20Extension']/@layers[name='org.muml.reconfiguration.componentextension.layer']/@nodeMappings[name='AtomicComponentImport']/@borderedNodeMappings[name='PortImport']">
+          <subNodeMappings xsi:type="description_1:NodeMappingImport" name="ComponentPartImport" semanticCandidatesExpression="aql:self.embeddedComponentParts" domainClass="ComponentPart">
+            <borderedNodeMappings xsi:type="description_1:NodeMappingImport" name="PortPartImport" semanticCandidatesExpression="aql:self.portParts" domainClass="PortPart">
+              <importedMapping href="../../org.muml.pim.component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='StructuredComponent']/@subNodeMappings[name='ComponentPart']/@borderedNodeMappings[name='PortPart']"/>
+            </borderedNodeMappings>
+            <importedMapping href="../../org.muml.pim.component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='StructuredComponent']/@subNodeMappings[name='ComponentPart']"/>
+          </subNodeMappings>
           <importedMapping href="../../org.muml.pim.component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='StructuredComponent']"/>
         </containerMappings>
         <toolSections name="org.muml.reconfiguration.createReconfigurationPort" label="Reconfiguration Port">
