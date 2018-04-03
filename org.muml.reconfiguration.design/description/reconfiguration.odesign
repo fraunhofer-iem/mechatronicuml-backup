@@ -2,9 +2,16 @@
 <description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="reconfiguration" version="12.0.0.2017041100">
   <ownedViewpoints name="org.muml.reconfiguration.componentextension" label="Reconfigurable Component Diagram Extension" modelFileExtension="component">
     <ownedRepresentationExtensions xsi:type="description_1:DiagramExtensionDescription" name="Reconfigurable Component Diagram Extension" viewpointURI="viewpoint:/org.muml.pim.component.design/component" representationName="org.muml.pim.component.diagram">
-      <layers name="org.muml.reconfiguration.componentextension.layer" label="Reconfigurable Component Diagram Layer" activeByDefault="true">
-        <nodeMappings xsi:type="description_1:NodeMappingImport" name="AtomicComponent"/>
-        <containerMappings xsi:type="description_1:ContainerMappingImport" name="StructuredComponent"/>
+      <layers name="org.muml.reconfiguration.componentextension.layer" label="Reconfigurable Component Diagram Layer" activeByDefault="true" optional="false">
+        <nodeMappings xsi:type="description_1:NodeMappingImport" name="AtomicComponentImport" semanticCandidatesExpression="aql:self" domainClass="AtomicComponent">
+          <borderedNodeMappings xsi:type="description_1:NodeMappingImport" name="PortImport" semanticCandidatesExpression="aql:self.ports" domainClass="Port">
+            <importedMapping href="../../org.muml.pim.component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@nodeMappings[name='AtomicComponent']/@borderedNodeMappings[name='Port']"/>
+          </borderedNodeMappings>
+          <importedMapping href="../../org.muml.pim.component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@nodeMappings[name='AtomicComponent']"/>
+        </nodeMappings>
+        <containerMappings xsi:type="description_1:ContainerMappingImport" name="StructuredComponentImport" semanticCandidatesExpression="aql:self" domainClass="StructuredComponent" reusedBorderedNodeMappings="//@ownedViewpoints[name='org.muml.reconfiguration.componentextension']/@ownedRepresentationExtensions[name='Reconfigurable%20Component%20Diagram%20Extension']/@layers[name='org.muml.reconfiguration.componentextension.layer']/@nodeMappings[name='AtomicComponentImport']/@borderedNodeMappings[name='PortImport']">
+          <importedMapping href="../../org.muml.pim.component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@containerMappings[name='StructuredComponent']"/>
+        </containerMappings>
         <toolSections name="org.muml.reconfiguration.createReconfigurationPort" label="Reconfiguration Port">
           <ownedTools xsi:type="tool:NodeCreationDescription" name="org.muml.reconfiguration.createMessagePort" label="Message Port" iconPath="/org.muml.reconfiguration.edit/icons/full/obj16/ReconfigurationMessagePort.gif">
             <nodeMappings href="../../org.muml.pim.component.design/description/component.odesign#//@ownedViewpoints[name='component']/@ownedRepresentations[name='org.muml.pim.component.diagram']/@defaultLayer/@nodeMappings[name='AtomicComponent']/@borderedNodeMappings[name='Port']"/>
