@@ -26,55 +26,28 @@
       <import plugin="org.eclipse.ui"/>
       <import plugin="org.muml.pim.edit"/>
       <import plugin="org.muml.ape.runtime"/>
-      <import plugin="org.eclipse.core.expressions"/>
-      <import plugin="org.eclipse.ui.navigator"/>
-      <import plugin="org.eclipse.ui.navigator.resources"/>
-      <import plugin="org.eclipse.emf.ecore.editor"/>
-      <import plugin="org.eclipse.gmf.runtime.diagram.ui.properties"/>
-      <import plugin="org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide"/>
-      <import plugin="org.eclipse.gmf.tooling.runtime" version="3.1.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.core.resources"/>
-      <import plugin="org.eclipse.jface"/>
-      <import plugin="org.eclipse.ui.ide"/>
-      <import plugin="org.eclipse.ui.views"/>
-      <import plugin="org.eclipse.emf.ecore.xmi"/>
-      <import plugin="org.eclipse.emf.edit.ui"/>
-      <import plugin="org.eclipse.gmf.runtime.emf.core"/>
-      <import plugin="org.eclipse.gmf.runtime.emf.commands.core"/>
-      <import plugin="org.eclipse.gmf.runtime.emf.ui.properties"/>
-      <import plugin="org.eclipse.gmf.runtime.diagram.ui"/>
-      <import plugin="org.eclipse.gmf.runtime.diagram.ui.providers"/>
-      <import plugin="org.eclipse.gmf.runtime.diagram.ui.providers.ide"/>
-      <import plugin="org.eclipse.gmf.runtime.diagram.ui.render"/>
-      <import plugin="org.eclipse.gmf.runtime.diagram.ui.resources.editor"/>
-      <import plugin="org.eclipse.draw2d"/>
-      <import plugin="org.eclipse.gmf.runtime.draw2d.ui"/>
-      <import plugin="org.eclipse.emf.validation"/>
-      <import plugin="org.eclipse.gef"/>
-      <import plugin="org.muml.pim.edit.properties"/>
-      <import plugin="org.eclipse.ocl.pivot"/>
-      <import plugin="org.eclipse.gmf.runtime.diagram.ui.properties" version="1.4.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.pim.realtimestatechart.diagram"/>
-      <import plugin="org.eclipse.gmf.runtime.diagram.ui.providers" version="1.5.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.m2m.qvt.oml"/>
       <import plugin="org.eclipse.eef.core" version="2.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.eef" version="2.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.sirius.common.interpreter" version="4.1.4" match="greaterOrEqual"/>
       <import plugin="org.eclipse.eef.ide.ui" version="2.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.eef.common.ui"/>
+      <import plugin="org.eclipse.emf.edit.ui"/>
       <import plugin="org.eclipse.xtext.ui" version="2.10.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.compare" version="3.3.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.transaction"/>
       <import plugin="org.eclipse.emf.compare.rcp"/>
       <import plugin="org.eclipse.core.expressions" version="3.5.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.navigator"/>
       <import plugin="org.eclipse.sirius.properties.core"/>
       <import plugin="org.eclipse.sirius.properties"/>
       <import plugin="org.apache.commons.logging"/>
       <import plugin="org.apache.log4j" version="1.2.15" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.resources"/>
       <import plugin="org.eclipse.xtext"/>
       <import plugin="org.eclipse.xtext.util"/>
       <import plugin="org.antlr.runtime"/>
       <import plugin="org.eclipse.emf.edit" version="2.7.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.ide"/>
       <import plugin="org.eclipse.xtext.ui.shared"/>
       <import plugin="org.eclipse.xtext.builder"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui" version="1.4.1" match="greaterOrEqual"/>
@@ -86,22 +59,21 @@
       <import plugin="org.eclipse.ui.ide" version="3.7.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.properties" version="1.4.2" match="greaterOrEqual"/>
       <import plugin="org.eclipse.swt"/>
+      <import plugin="org.eclipse.draw2d"/>
       <import plugin="org.eclipse.ltk.core.refactoring"/>
-      <import plugin="org.eclipse.m2m.qvt.oml" version="3.0.1" match="greaterOrEqual"/>
       <import plugin="org.muml.emm"/>
       <import plugin="org.eclipse.sirius"/>
-      <import plugin="org.eclipse.core.commands"/>
       <import plugin="org.eclipse.m2m.qvt.oml" version="3.3.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.ui.workbench"/>
-      <import plugin="org.eclipse.emf.ecore.editor" version="2.10.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.emf.common"/>
-      <import plugin="org.eclipse.emf.common.ui"/>
-      <import plugin="org.muml.implicitcopy.qvto.library"/>
-      <import plugin="org.eclipse.gmf.runtime.diagram.ui.providers" version="1.7.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.gmf.runtime.diagram.ui.properties" version="1.7.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.m2m.qvt.oml.project" version="3.3.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.m2m.qvt.oml.runtime" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.implicitcopy.qvto.library"/>
+      <import plugin="org.eclipse.core.commands"/>
+      <import plugin="org.eclipse.ui.workbench"/>
+      <import plugin="org.eclipse.jface"/>
       <import plugin="org.eclipse.m2m.qvt.oml" version="3.4.1" match="greaterOrEqual"/>
+      <import plugin="org.muml.pim.edit.properties"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.providers" version="1.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.ecore.xmi"/>
       <import plugin="org.eclipse.ui" version="3.109.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.browser" version="3.6.100" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.runtime" version="3.13.0" match="greaterOrEqual"/>
@@ -112,29 +84,45 @@
       <import plugin="org.muml.pim" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.sirius.diagram.ui"/>
       <import plugin="org.muml.pim.component.diagram.custom" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.pim.component.diagram" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.muml.pim.componentinstanceconfiguration.diagram.custom" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.muml.pim.siriusproperties.custom"/>
       <import plugin="org.muml.pm.hardware" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.emf.commands.core" version="1.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.emf.ui.properties" version="1.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.views.properties.tabbed" version="3.5.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.gef"/>
       <import plugin="org.eclipse.jdt.annotation" version="1.1.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ocl.pivot"/>
       <import plugin="org.eclipse.emf.edit.ui" version="2.6.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.ecore" version="2.11.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.workspace"/>
       <import plugin="org.eclipse.gmf.runtime.notation" version="1.8.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.core"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.resources.editor"/>
+      <import plugin="org.eclipse.emf.common.ui"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui" version="1.8.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.forms"/>
       <import plugin="org.eclipse.m2m.qvt.oml" version="3.1.0" match="greaterOrEqual"/>
       <import plugin="com.google.guava"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.render"/>
       <import feature="org.eclipse.sirius.runtime.ide.eef" version="4.1.4" match="greaterOrEqual"/>
       <import feature="org.eclipse.sirius.runtime.ide.ui" version="4.1.4" match="greaterOrEqual"/>
       <import feature="org.eclipse.sirius.properties.feature"/>
       <import feature="org.eclipse.sirius.runtime.aql"/>
       <import feature="org.eclipse.sirius.runtime.ocl"/>
       <import feature="org.eclipse.sirius.runtime.acceleo"/>
+      <import plugin="org.muml.pim.component.diagram" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.pim.realtimestatechart.diagram.custom" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.pm.hardware.platforminstance.diagram"/>
+      <import plugin="org.muml.reconfiguration" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.pim.common" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.sirius.diagram"/>
+      <import plugin="org.eclipse.core.runtime" version="3.6.0" match="compatible"/>
+      <import plugin="org.eclipse.emf.ecore.xmi" version="2.5.0" match="compatible"/>
+      <import plugin="org.eclipse.ocl" version="3.0.0" match="compatible"/>
+      <import plugin="org.eclipse.ocl.ecore" version="3.0.0" match="compatible"/>
+      <import plugin="org.eclipse.uml2.common"/>
+      <import plugin="org.eclipse.uml2.common.edit"/>
    </requires>
 
    <plugin
@@ -146,20 +134,6 @@
 
    <plugin
          id="org.muml.pim.edit.properties"
-         download-size="0"
-         install-size="0"
-         version="1.1.0.qualifier"
-         unpack="false"/>
-
-   <plugin
-         id="org.muml.pim.realtimestatechart.diagram"
-         download-size="0"
-         install-size="0"
-         version="1.1.0.qualifier"
-         unpack="false"/>
-
-   <plugin
-         id="org.muml.pim.realtimestatechart.diagram.custom"
          download-size="0"
          install-size="0"
          version="1.1.0.qualifier"
@@ -194,34 +168,6 @@
          unpack="false"/>
 
    <plugin
-         id="org.muml.pim.componentinstanceconfiguration.diagram"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.muml.pim.componentinstanceconfiguration.diagram.custom"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.muml.pim.messagetype.diagram"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.muml.pim.messagetype.diagram.custom"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.muml.pim"
          download-size="0"
          install-size="0"
@@ -237,62 +183,6 @@
 
    <plugin
          id="org.muml.pim.actionlanguage.edit"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.muml.pim.coordinationprotocol.diagram"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.muml.pim.coordinationprotocol.diagram.custom"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.muml.pim.component.diagram"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.muml.pim.component.diagram.custom"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.muml.pim.pattern.diagram"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.muml.pim.pattern.diagram.custom"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.muml.pim.operationrepository.diagram"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.muml.pim.operationrepository.diagram.custom"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -433,13 +323,6 @@
 
    <plugin
          id="org.muml.pm.hardware.platforminstance.diagram.custom"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.muml.pm.hardware.platforminstance.diagram"
          download-size="0"
          install-size="0"
          version="0.0.0"
