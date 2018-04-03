@@ -12,7 +12,7 @@
      <editpolicyProvider
            class="org.muml.reconfiguration.design.edit.policies.MyEditPolicyProvider">
         <Priority
-              name="Lowest">
+              name="Low"><!-- slightly higher than lowest (which the component editor uses) -->
         </Priority>
      </editpolicyProvider>
   </extension>

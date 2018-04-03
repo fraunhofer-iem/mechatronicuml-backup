@@ -9,6 +9,14 @@ import org.eclipse.sirius.diagram.AbstractDNode;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.description.DiagramDescription;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
+import org.muml.pim.common.edit.policies.ports.PortPartEditPolicy;
+import org.muml.pim.common.edit.policies.ports.PortTypeEditPolicy;
+import org.muml.pim.component.Port;
+import org.muml.pim.component.PortPart;
+import org.muml.pim.instance.PortInstance;
+import org.muml.reconfiguration.ReconfigurationExecutionPort;
+import org.muml.reconfiguration.ReconfigurationMessagePort;
+import org.muml.reconfiguration.protocolinstantiation.BroadcastPort;
 
 public class MyEditPolicyProvider extends AbstractEditPolicyProvider {
 
@@ -18,6 +26,15 @@ public class MyEditPolicyProvider extends AbstractEditPolicyProvider {
 //			editPart.installEditPolicy(org.muml.pim.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE,
 //					new PortVariableEditPolicy());
 //		}
+	
+		if (element instanceof Port) {
+			editPart.installEditPolicy(org.muml.pim.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE,
+					new ReconfigurationPortTypeEditPolicy());
+		}
+		if (element instanceof PortPart) {
+			editPart.installEditPolicy(org.muml.pim.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE,
+					new ReconfigurationPortPartEditPolicy());
+		}
 	}
 
 	private EObject getSemanticElement(EditPart editPart) {
@@ -58,13 +75,24 @@ public class MyEditPolicyProvider extends AbstractEditPolicyProvider {
 			DiagramDescription diagramDescription = findDiagramDescription(editPart);
 			if (diagramDescription != null) {
 				if ("org.muml.reconfiguration.componentstoryrule.diagram".equals(diagramDescription.getName())) {
-					EObject element = getSemanticElement(editPart);
+//					EObject element = getSemanticElement(editPart);
 //					if (element instanceof PortVariable) {
 //						return true;
 //					}
 //					if (element instanceof ComponentVariable) {
 //						return true;
 //					}
+				}
+				if ("org.muml.pim.component.diagram".equals(diagramDescription.getName()) || "org.muml.pim.instance.diagram".equals(diagramDescription.getName())) {
+					EObject element = getSemanticElement(editPart);
+					if (element instanceof Port) {
+						// reconfiguration specific port elements
+						return true;
+					}
+					if (element instanceof PortPart) {
+						// portpart must know about reconfiguration portpart visualization
+						return true;
+					}
 				}
 			}
 		}
