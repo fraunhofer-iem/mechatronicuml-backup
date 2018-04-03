@@ -22,15 +22,11 @@
     <module>org.muml.pim</module>
     <module>org.muml.pim.common</module>
     <module>org.muml.pim.component.design</module>
-    <module>org.muml.pim.component.diagram</module>
-    <module>org.muml.pim.component.diagram.custom</module>
     <module>org.muml.pim.coordination.design</module>
     <module>org.muml.pim.edit</module>
     <module>org.muml.pim.edit.properties</module>
     <module>org.muml.pim.messagetype.design</module>
     <module>org.muml.pim.realtimestatechart.design</module>
-    <module>org.muml.pim.realtimestatechart.diagram</module>
-    <module>org.muml.pim.realtimestatechart.diagram.custom</module>
     <module>org.muml.pim.siriusproperties.custom</module>
     <module>org.muml.pm.design</module>
     <module>org.muml.siriusbranch.feature</module>
