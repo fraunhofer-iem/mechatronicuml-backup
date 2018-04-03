@@ -19,7 +19,7 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.tooling.runtime.parsers.ExpressionLabelParserBase;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
-import org.muml.core.common.ocltracker.ActivePivotOclTrackerFactory;
+import org.muml.core.common.gmf.ocl.ActivePivotOclTrackerFactory;
 import org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage;
 import org.muml.pm.hardware.platforminstance.diagram.expressions.HardwareOCLFactory;
 
