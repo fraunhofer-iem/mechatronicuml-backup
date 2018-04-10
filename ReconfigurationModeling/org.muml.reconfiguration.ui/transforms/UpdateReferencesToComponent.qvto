@@ -29,18 +29,19 @@ library UpdateReferencesToComponent;
 -- redirects all references of all meta-model elements targeting the oldComp to the new component.
 mapping updateReferencesToComponent(inout rootNode : RootNode, in oldComp : Component,
 										inout newComp : Component){
-	
-	-- update references of component parts
-	var compCategory := rootNode.categories -> select(c : ModelElementCategory | c.key = 'org.muml.pim.components.category') -> any(true);
-	map updateComponentParts(compCategory, oldComp, newComp);
-	
-	-- update references of component story diagram (parameters + variables) 
-	var activityCategory := rootNode.categories -> select(c : ModelElementCategory | c.key = 'org.muml.storydiagram.activities.category') -> any(true);
-	map updateComponentStoryDiagrams(activityCategory, oldComp, newComp);
-	
-	-- update references of struct data types
-	var typeCategory := rootNode.categories -> select(c : ModelElementCategory | c.key = 'org.muml.types.category') -> any(true);
-	map updateStructTypes(typeCategory, oldComp, newComp);
+	if (rootNode != null) {
+		-- update references of component parts
+		var compCategory := rootNode.categories -> select(c : ModelElementCategory | c.key = 'org.muml.pim.components.category') -> any(true);
+		map updateComponentParts(compCategory, oldComp, newComp);
+		
+		-- update references of component story diagram (parameters + variables) 
+		var activityCategory := rootNode.categories -> select(c : ModelElementCategory | c.key = 'org.muml.storydiagram.activities.category') -> any(true);
+		map updateComponentStoryDiagrams(activityCategory, oldComp, newComp);
+		
+		-- update references of struct data types
+		var typeCategory := rootNode.categories -> select(c : ModelElementCategory | c.key = 'org.muml.types.category') -> any(true);
+		map updateStructTypes(typeCategory, oldComp, newComp);
+	}
 }
 
 -- if a component part refers to oldComp, then the reference will be redirected to newComp

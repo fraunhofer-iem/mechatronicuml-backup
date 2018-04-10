@@ -12,14 +12,21 @@ import java.util.Map;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.edit.command.ChangeCommand;
@@ -69,6 +76,29 @@ import org.muml.reconfiguration.ReconfigurableStructuredComponent;
 public class MakeStructuredComponentReconfigurableCommand extends AbstractHandler {
 	
 	private ReconfigurableStructuredComponent rsc;
+	
+	protected EObject getSemanticElement(Object object) {
+		if (object instanceof EObject) {
+			return (EObject) object;
+		}
+		if (object instanceof IAdaptable) {
+			EObject element = (EObject) ((IAdaptable) object).getAdapter(EObject.class);
+			if (element instanceof View) { // should not be necessary, but just in case (prevented an exception, already).
+				element = ((View) element).getElement();
+			}
+			// Derive sirius semantic element
+			if (element.eClass() != null) {
+				EClass eClass = element.eClass();
+				EPackage ePackage = eClass.getEPackage();
+				if (ePackage != null && ePackage.getNsURI() != null && ePackage.getNsURI().startsWith("http://www.eclipse.org/sirius")) {
+					element = (EObject) element.eGet(eClass.getEStructuralFeature("target"));
+				}
+			}
+			return element;
+		}
+		return null;
+	}
+	
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
@@ -85,6 +115,7 @@ public class MakeStructuredComponentReconfigurableCommand extends AbstractHandle
 			StaticStructuredComponent sc = null;
 			EditingDomain editingDomain = null;
 			Diagram diagram = null;
+			
 			//if command is triggered via the graphical editor, the selection contains an EditPart
 			if(currentObject instanceof StaticStructuredComponentEditPart){
 			
@@ -134,27 +165,38 @@ public class MakeStructuredComponentReconfigurableCommand extends AbstractHandle
 							"Unable to store model and diagramResource resources", e); //$NON-NLS-1$
 				}
 				
-				
-				
-				
-				
-			} else if (currentObject instanceof StaticStructuredComponent){
-				//if the command is triggered via the tree editor, the selection contains a StaticStructuredComponent
-				sc = (StaticStructuredComponent) currentObject;
-				
-				//obtain the editing domain for the structured component
-				editingDomain = AdapterFactoryEditingDomain.getEditingDomainFor(sc);
-				if(editingDomain == null){
-					//create new editing domain because no editing domain exists yet
-					ResourceSet rset = sc.eResource().getResourceSet();
-					editingDomain = TransactionalEditingDomain.Factory.INSTANCE.createEditingDomain(rset);
-					
-					editingDomain.getCommandStack().execute(new StaticStructuredComponentTransformationCommand(sc));
-				}
 			} else {
-				//there is an object within the selection, which is not supported -> ignore
-				continue;
-			}		
+				currentObject = getSemanticElement(currentObject);
+				if (currentObject instanceof StaticStructuredComponent){
+					//if the command is triggered via the tree editor, the selection contains a StaticStructuredComponent
+					sc = (StaticStructuredComponent) currentObject;
+					
+					IFile iFile = null;
+					if (sc.eResource() != null) {
+						URI uri = sc.eResource().getURI();
+						iFile = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(uri.toPlatformString(true)));
+					}
+					
+					//obtain the editing domain for the structured component
+					editingDomain = AdapterFactoryEditingDomain.getEditingDomainFor(sc);
+					if(editingDomain == null){
+						//create new editing domain because no editing domain exists yet
+						ResourceSet rset = sc.eResource().getResourceSet();
+						editingDomain = TransactionalEditingDomain.Factory.INSTANCE.createEditingDomain(rset);
+					}
+					editingDomain.getCommandStack().execute(new StaticStructuredComponentTransformationCommand(sc));
+					
+					if (iFile != null && iFile.exists()) {
+						try {
+							iFile.refreshLocal(-1, new NullProgressMonitor());
+						} catch (CoreException e) {
+						}
+					}
+				} else {
+					//there is an object within the selection, which is not supported -> ignore
+					continue;
+				}	
+			}
 		}
 		
 		return null;
@@ -166,8 +208,6 @@ public class MakeStructuredComponentReconfigurableCommand extends AbstractHandle
 	 * @param sc
 	 */
 	private void makeStructuredComponentReconfigurable(StaticStructuredComponent sc){
-		ModelElementCategory category = (ModelElementCategory) sc.eContainer();
-		RootNode rootNode = (RootNode) category.eContainer();
 		
 		URI transformationURI = URI
 				.createPlatformPluginURI(
@@ -182,15 +222,26 @@ public class MakeStructuredComponentReconfigurableCommand extends AbstractHandle
 		// create input extend containing the component and the category
 		List<StaticStructuredComponent> compList = new ArrayList<StaticStructuredComponent>();
 		compList.add(sc);
+
+		Resource resource = sc.eResource();
+		EObject container = sc.eContainer();
+		EReference containmentFeature = sc.eContainmentFeature();
+
 		List<RootNode> rnList = new ArrayList<RootNode>();
-		rnList.add(rootNode);
+		if (sc.eContainer() instanceof ModelElementCategory) {
+			ModelElementCategory category = (ModelElementCategory) sc.eContainer();
+			RootNode rootNode = (RootNode) category.eContainer();
+			if (rootNode != null) {
+				rnList.add(rootNode);
+			}
+		}
+	
 		ModelExtent inputComponent = new BasicModelExtent(compList);
 		ModelExtent inputCategory = new BasicModelExtent(rnList);
 
 		// execute transformation
 		ExecutionDiagnostic result = executor.execute(context, inputComponent, inputCategory);
 		if (result.getSeverity() != ExecutionDiagnostic.OK) {
-
 			System.out
 					.println("A QVT-O ERROR occured while execution the transformation. Message was:");
 			System.out.println(result.getMessage());
@@ -199,13 +250,29 @@ public class MakeStructuredComponentReconfigurableCommand extends AbstractHandle
 		//reconfigurable component should be contained in inputComponent ModelExtent
 		ReconfigurableStructuredComponent reconfComp = getReconfigurableComponentFromModelExtent(inputComponent);
 		
-		if(reconfComp != null){
-			//add to category
-			category.getModelElements().add(reconfComp);
-		}
+
+
+		MakeStructuredComponentReconfigurableCommand.addToResource(resource, container, containmentFeature, reconfComp);
+		
 		rsc=reconfComp;
 	}
 	
+	@SuppressWarnings("unchecked")
+	public static void addToResource(Resource resource, EObject element, EReference reference, EObject value) {
+		if(value != null){
+			if (element != null && reference != null) {
+				if (reference.isMany()) {
+					((Collection)element.eGet(reference)).add(value);
+				} else {
+					element.eSet(reference, value);
+				}
+			} else if (resource != null) {
+				resource.getContents().add(value);
+			}
+		}
+	}
+
+
 	private ReconfigurableStructuredComponent getReconfigurableComponentFromModelExtent(ModelExtent ext){
 		
 		ReconfigurableStructuredComponent result = null;

@@ -99,9 +99,7 @@ public class GenerateManagerAndExecutorImplementationCommand extends AbstractHan
 		}
 
 		//generate new behavior specifications 
-		ModelElementCategory category = (ModelElementCategory) sc.eContainer();
-		RootNode rootNode = (RootNode) category.eContainer();
-
+		
 		URI transformationURI = URI
 				.createPlatformPluginURI(
 						"/org.muml.reconfiguration.ui/transforms/GenerateManagerImplementation.qvto",
@@ -115,17 +113,23 @@ public class GenerateManagerAndExecutorImplementationCommand extends AbstractHan
 		// create input extend containing the component and the category
 		List<ReconfigurableStructuredComponent> compList = new ArrayList<ReconfigurableStructuredComponent>();
 		compList.add(sc);
+
 		List<RootNode> rnList = new ArrayList<RootNode>();
-		rnList.add(rootNode);
+		if (sc.eContainer() instanceof ModelElementCategory) {
+			ModelElementCategory category = (ModelElementCategory) sc.eContainer();
+			RootNode rootNode = (RootNode) category.eContainer();
+			if (rootNode != null) {
+				rnList.add(rootNode);
+			}
+		}
+		
 		ModelExtent inputComponent = new BasicModelExtent(compList);
 		ModelExtent inputCategory = new BasicModelExtent(rnList);
 
 		// execute transformation
 		ExecutionDiagnostic result = executor.execute(context, inputComponent, inputCategory);
 		if (result.getSeverity() != ExecutionDiagnostic.OK) {
-
-			System.out
-			.println("A QVT-O ERROR occured while execution the transformation. Message was:");
+			System.out.println("A QVT-O ERROR occured while execution the transformation. Message was:");
 			System.out.println(result.getMessage());
 		}
 	}
@@ -144,9 +148,7 @@ public class GenerateManagerAndExecutorImplementationCommand extends AbstractHan
 		}
 
 		//generate new behavior specifications 
-		ModelElementCategory category = (ModelElementCategory) sc.eContainer();
-		RootNode rootNode = (RootNode) category.eContainer();
-
+	
 		URI transformationURI = URI
 				.createPlatformPluginURI(
 						"/org.muml.reconfiguration.ui/transforms/GenerateExecutorImplementation.qvto",
@@ -160,8 +162,16 @@ public class GenerateManagerAndExecutorImplementationCommand extends AbstractHan
 		// create input extend containing the component and the category
 		List<ReconfigurableStructuredComponent> compList = new ArrayList<ReconfigurableStructuredComponent>();
 		compList.add(sc);
+
 		List<RootNode> rnList = new ArrayList<RootNode>();
-		rnList.add(rootNode);
+		if (sc.eContainer() instanceof ModelElementCategory) {
+			ModelElementCategory category = (ModelElementCategory) sc.eContainer();
+			RootNode rootNode = (RootNode) category.eContainer();
+			if (rootNode != null) {
+				rnList.add(rootNode);
+			}
+		}
+		
 		ModelExtent inputComponent = new BasicModelExtent(compList);
 		ModelExtent inputCategory = new BasicModelExtent(rnList);
 

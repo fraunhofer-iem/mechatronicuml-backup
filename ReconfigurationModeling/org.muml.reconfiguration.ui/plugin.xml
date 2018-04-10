@@ -48,14 +48,8 @@
                      variable="selection">
                   <iterate
                         ifEmpty="false">
-                     <or>
-                        <instanceof
-                              value="org.muml.pim.component.diagram.edit.parts.StaticStructuredComponentEditPart">
-                        </instanceof>
-                        <instanceof
-                              value="org.muml.pim.component.StaticStructuredComponent">
-                        </instanceof>
-                     </or>
+                  	<adapt type="org.muml.pim.component.StaticStructuredComponent">
+                  	</adapt>
                   </iterate>
                </with>
             </visibleWhen>
