@@ -471,6 +471,13 @@
          
       </menuContribution>
    </extension>
+
+  <extension
+        point="org.eclipse.sirius.sessionManagerListener">
+     <listener
+           class="org.muml.core.siriusbrowser.actions.RegisterPrimitiveTypesSessionManagerListener">
+     </listener>
+  </extension>
    
 
 

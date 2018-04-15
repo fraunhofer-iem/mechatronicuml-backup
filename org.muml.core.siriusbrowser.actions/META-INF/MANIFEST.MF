@@ -17,5 +17,6 @@ Require-Bundle: org.eclipse.core.commands,
  org.eclipse.sirius,
  org.eclipse.sirius.ext.base;bundle-version="5.0.1",
  org.eclipse.sirius.ui,
- org.eclipse.sirius.common
+ org.eclipse.sirius.common,
+ org.muml.pim.types;bundle-version="1.0.0"
 Export-Package: org.muml.core.siriusbrowser.actions
