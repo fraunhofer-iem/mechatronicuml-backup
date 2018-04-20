@@ -1,0 +1,153 @@
+brakeByWireAllocationSpecification {
+	-- include our library with predefined OCL constraints
+	--include 'platform:/plugin/org.muml.psm.allocation.language.xtext/operations/OCLContext.ocl'
+	--include 'platform:/plugin/org.muml.eloquent.adapter.muml/operations/OCLContext.ocl'
+	
+	nameProvider 'org.muml.eloquent.adapter.muml.provider.MUMLNameProvider'
+	storageProvider 'org.muml.eloquent.adapter.muml.provider.MUMLStorageProvider'
+	import 'http://www.muml.org/eloquent/adapter/muml/oclcontext/1.0.0'
+
+	oclContext oclcontext::OCLContext
+	
+	include 'platform:/plugin/org.muml.eloquent.adapter.muml/operations/OCLContext.ocl'
+	
+	relation alloc {
+		descriptors (first : pim::instance::ComponentInstance, second : hardware::hwresourceinstance::ResourceInstance);
+		lower 1;
+		upper 1;
+        ocl self.getAllSWInstances()->product(
+			self.getAllHWInstances()->select(oclIsTypeOf(hardware::hwresourceinstance::StructuredResourceInstance))
+		);
+	}
+	
+--To get the number of tuples just put "" as last part of each ocl query
+		-- Const. B.1 -- 1 Tuple 
+--	constraint collocation collocateSC11AndSC12 {
+--		descriptors (first : instance::ComponentInstance, second : instance::ComponentInstance);
+--		ocl self.allocateToSameECUs('sc11','sc12')->select(t |
+--			t.first.getLevel1CIC() = t.second.getLevel1CIC()
+--		);
+--	}
+--	
+--	context instance::ComponentInstance
+--		def: getLevel1CIC() : ComponentInstanceConfiguration
+--			=
+--			let cics : OrderedSet(ComponentInstanceConfiguration)
+--			=
+--			self.parentCIC->asOrderedSet()->closure(cic |
+--				if not cic.parentStructuredComponentInstance.oclIsUndefined() then
+--					cic.parentStructuredComponentInstance.parentCIC
+--				else
+--					cic
+--				endif
+--			)
+--			in
+--			let rootCIC : ComponentInstanceConfiguration
+--			=
+--			cics->any(cic | cic.parentStructuredComponentInstance.oclIsUndefined())
+--			in
+--			cics->any(cic |
+--				not cic.parentStructuredComponentInstance.oclIsUndefined()
+--				and
+--				cic.parentStructuredComponentInstance.parentCIC = rootCIC
+--			)
+--
+---- Const. B.2 -- 2 Tuple
+--	constraint collocation colocateBrakePedalComponents {
+--		descriptors (first : instance::ComponentInstance, second : instance::ComponentInstance);
+--		ocl	self.colocateSCIAndEmbeddedParts('wheel');
+--	}	
+--	--Const. B.3 --24 Tuple
+--		constraint requiredLocation calliperToBrakeECU {
+--		descriptors (first : instance::ComponentInstance, second : hwresourceinstance::ResourceInstance);
+--		ocl	self.allocateEmbeddedToPlatformInstance('calliper', 'Brake.0');
+--	}
+	-- Const. B.4 --624 Tuple
+		constraint requiredLocation communicatingComponents {
+		descriptors (c1 : instance::ComponentInstance, e1 : hwresourceinstance::ResourceInstance),
+			(c2 : instance::ComponentInstance, e2 : hwresourceinstance::ResourceInstance);
+		ocl self.allocateCommunicatingComponentsToConnectedECUs();
+	}
+	-- Const. B.5	--100 Tuple -- XXX: size mismatch!
+--	constraint requiredLocation allowedECUs {
+--		descriptors (first : instance::ComponentInstance, second : hwresourceinstance::ResourceInstance);
+--		ocl
+--			self.getAllSWInstances()->collect(ci |
+--				self.allowedECUNames(ci.name)->collect(ecu |
+--					self.allocateToECU(ci, ecu)
+--				)
+--			)->asSet()
+--		;
+--	}
+--	-- Const. B.6 --9 Tuple -- XXX: size mismatch, but "expected" (hw model was not duplicated)
+--	constraint requiredResource maxMemoryConsumption {
+--		weight requiredMemory;
+--		bound maxMemory;
+--		descriptors (componentInstance : instance::ComponentInstance, resourceInstance : hwresourceinstance::ResourceInstance);
+--		ocl	self.maxMemoryConsumption()
+----			self.componentInstanceConfiguration.componentInstances->closure(ci | if ci.oclIsKindOf(instance::StructuredComponentInstance) then ci.oclAsType(instance::StructuredComponentInstance).embeddedCIC.componentInstances else Set{ci} endif)->select(oclIsKindOf(instance::AtomicComponentInstance))->collect(oclAsType(instance::AtomicComponentInstance))->collect(ci | ci.extensions)->select(oclIsKindOf(psm::properties::RequiredMemory))
+----				->collect(x | x.oclAsType(psm::properties::RequiredMemory))
+----				->collect(x | x.requiredMemory.unit)->asSet()
+--		;
+--	}
+--	-- Const. B.7	--18 Tuple -- XXX: size mismatch 9
+--	constraint requiredResource edf {
+--		weight lval;
+--		bound rval; 
+--		descriptors (componentInstance : instance::ComponentInstance, resourceInstance : hwresourceinstance::ResourceInstance);
+--		ocl
+--			self.EDF()
+--		;
+--	}
+
+context oclcontext::OCLContext
+		def: sensorActuatorMapping(componentName : String) : Set(String) =
+			-- calliper component instances
+			if componentName = 'sc1' then
+				-- temperatureSensor
+				Set{'R1.0.1'}
+			else if componentName = 'sc2' then
+				-- calliper position sensor
+				Set{'R2.0.1'}
+			else if componentName = 'sc3' then
+				-- parking brake actuator
+				Set{'R3.0.1'}
+			else if componentName = 'sc5' then
+				-- calliper clamp actuator
+				Set{'R5.0.1'}
+			-- brake pedal component instances
+			else if componentName = 'sc11' then
+				-- pedal position sensor
+				Set{'R11.0.1'}
+			else if componentName = 'sc12' then
+				-- brake force sensor
+				Set{'R12.0.1'}
+			else if componentName = 'sc13' then
+				-- brake feedback actuator
+				Set{'R13.0.1'}
+			-- wheel component instances
+			else if componentName = 'sc7' then
+				Set{'R7.0.1'} -- (brake platform)
+			-- other sensors (not part of a structured ci)
+			else if componentName = 'sc9' then
+				Set{'R9.0.1'}
+			else
+				Set{}
+			endif
+			endif
+			endif
+			endif
+			endif
+			endif
+			endif
+			endif
+			endif
+def: allowedECUNames(componentName : String) : Set(String) =
+			let ecuNames : Set(String) = self.sensorActuatorMapping(componentName)
+			in
+			if ecuNames->isEmpty() then
+				self.getAllHWInstances()->collect(name)->asSet()
+			else
+				ecuNames
+			endif
+}
