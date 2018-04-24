@@ -274,7 +274,13 @@ public class JavaFederation extends Federation {
 				// 1: givenZone part of thisZone // equals contains function
 				// 2: thisZone part of givenZone
 				// 3: zones are equal
-				containsValue =((JavaClockZone)cz).relation((JavaClockZone) clockZone);
+				try {
+					containsValue =((JavaClockZone)cz).relation((JavaClockZone) clockZone);
+				}
+				catch (Exception e){
+					return false;
+				}
+				
 							
 				// Only strict subsets are allowed
 				if (containsValue != 1){
