@@ -182,7 +182,7 @@ public class MUMLAllocationWizardPageProvider extends AbstractAllocationWizard.A
 	}
 
 	@Override
-	protected AllocationComputationOperation<SystemAllocation> createAllocationComputationOperation() {
+	protected IAllocationOperation createOperation() {
 		if (targetPage == null) {
 			// should not happen (this would imply pageContext != PageContext.AllocationComputation)
 			throw new IllegalStateException(targetPageExpected);
