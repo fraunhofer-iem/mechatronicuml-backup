@@ -33,7 +33,7 @@ import org.muml.eloquent.adapter.muml.oclcontext.OclcontextFactory;
 import org.muml.psm.allocation.language.cs.SpecificationCS;
 
 /* needs more love... */
-public class MUMLAllocationWizardPageProvider extends AbstractAllocationWizard.AbstractAllocationWizardPageProvider {
+public class MUMLAllocationWizardPageProvider extends AbstractAllocationWizard.DefaultAllocationWizardPageProvider {
 	
 	private static final String targetPageExpected = "Wizard has no target page";
 	private static final String mumlFileExtension = "muml";
