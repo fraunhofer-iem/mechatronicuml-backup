@@ -25,6 +25,7 @@ import org.muml.psm.allocation.algorithm.ui.wizard.AbstractAllocationWizard;
 import org.muml.psm.allocation.algorithm.ui.wizard.AllocationComputationOperation;
 import org.muml.psm.allocation.algorithm.ui.wizard.AllocationComputationStrategyConfigurationWizardPage;
 import org.muml.psm.allocation.algorithm.ui.wizard.AllocationComputationStrategyWizardPage;
+import org.muml.psm.allocation.algorithm.ui.wizard.IAllocationOperation;
 import org.muml.psm.allocation.algorithm.ui.wizard.PageContext;
 import org.muml.eloquent.adapter.muml.oclcontext.OCLContext;
 import org.muml.eloquent.adapter.muml.oclcontext.OclcontextFactory;
