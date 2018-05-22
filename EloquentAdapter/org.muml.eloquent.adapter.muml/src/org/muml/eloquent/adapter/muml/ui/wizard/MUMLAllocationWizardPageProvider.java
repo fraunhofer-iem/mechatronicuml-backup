@@ -139,7 +139,7 @@ public class MUMLAllocationWizardPageProvider extends AbstractAllocationWizard.D
 					editingDomain.getResourceSet(), selection);
         	wizardPageList.add(targetPage);
         	AllocationComputationStrategyConfigurationWizardPage configPage = new AllocationComputationStrategyConfigurationWizardPage();
-        	strategyPage = new AllocationComputationStrategyWizardPage(configPage);
+        	strategyPage = new AllocationComputationStrategyWizardPage(pageContext, configPage);
         	wizardPageList.add(strategyPage);
         	wizardPageList.add(configPage);
 		}
