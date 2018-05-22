@@ -191,7 +191,7 @@ public class MUMLAllocationWizardPageProvider extends AbstractAllocationWizard.A
 		return new MUMLAllocationComputationOperation(editingDomain,
 				(SpecificationCS) allocationSpecificationSourcePage.getSourceElements()[0],
 				getOCLContext(), targetPage.getSourceElements()[0],
-				strategyPage.getAllocationComputationStrategy());
+				(IAllocationComputationStrategy<SystemAllocation, ?>) strategyPage.getAllocationComputationStrategy());
 	}
 
 }

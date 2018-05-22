@@ -38,7 +38,7 @@ public class MUMLAllocationComputationOperation extends AllocationComputationOpe
 	public MUMLAllocationComputationOperation(@NonNull EditingDomain editingDomain,
 			@NonNull SpecificationCS allocationSpecification, @NonNull EObject oclContext,
 			@NonNull EObject target,
-			@NonNull IAllocationComputationStrategy<?, ?> allocationComputationStrategy) {
+			@NonNull IAllocationComputationStrategy<SystemAllocation, ?> allocationComputationStrategy) {
 		super(allocationSpecification, oclContext,
 				allocationComputationStrategy);
 		this.editingDomain = editingDomain;
