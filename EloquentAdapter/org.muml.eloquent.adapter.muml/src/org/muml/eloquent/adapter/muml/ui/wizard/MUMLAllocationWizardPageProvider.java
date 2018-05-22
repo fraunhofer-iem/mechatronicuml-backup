@@ -21,6 +21,7 @@ import org.muml.core.modelinstance.RootNode;
 import org.muml.pim.instance.ComponentInstanceConfiguration;
 import org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration;
 import org.muml.psm.allocation.SystemAllocation;
+import org.muml.psm.allocation.algorithm.main.IAllocationComputationStrategy;
 import org.muml.psm.allocation.algorithm.ui.wizard.AbstractAllocationWizard;
 import org.muml.psm.allocation.algorithm.ui.wizard.AllocationComputationOperation;
 import org.muml.psm.allocation.algorithm.ui.wizard.AllocationComputationStrategyConfigurationWizardPage;
