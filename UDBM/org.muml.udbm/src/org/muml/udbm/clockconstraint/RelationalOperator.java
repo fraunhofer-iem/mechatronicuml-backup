@@ -5,7 +5,7 @@ package org.muml.udbm.clockconstraint;
 
 
 public enum RelationalOperator {
-	EqualOperator("=="), GreaterOperator(">"), GreaterOrEqualOperator(">="), LessOperator("<"), LessOrEqualOperator("<=");
+	NotEqualOperator("!="), EqualOperator("=="), GreaterOperator(">"), GreaterOrEqualOperator(">="), LessOperator("<"), LessOrEqualOperator("<=");
 
 	private final String stringRepresentation;
 	
