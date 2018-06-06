@@ -26,5 +26,6 @@ Require-Bundle: org.eclipse.xtext.xbase.lib;bundle-version="2.10.0",
  org.muml.psm.allocation.algorithm.ilp;bundle-version="1.0.0",
  org.muml.psm.allocation.algorithm.ilp.lpsolve;bundle-version="1.0.0",
  org.muml.psm.allocation.algorithm.ilp.opt4j;bundle-version="1.0.0",
- org.muml.eloquent.adapter.muml;bundle-version="1.0.0"
+ org.muml.eloquent.adapter.muml;bundle-version="1.0.0",
+ org.muml.psm.allocation.algorithm.ilp.tests;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
