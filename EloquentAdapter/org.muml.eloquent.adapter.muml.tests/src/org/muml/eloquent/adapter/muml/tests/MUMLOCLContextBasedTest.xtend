@@ -2,8 +2,12 @@ package org.muml.eloquent.adapter.muml.tests
 
 import java.util.Collections
 import java.util.Map
+import org.muml.pim.instance.ComponentInstanceConfiguration
+import org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration
 import org.muml.psm.allocation.algorithm.qvto.QVToTransformationRunner.Util
 import org.muml.psm.allocation.algorithm.tests.qvto.QVToTransformationSingleOutExtentTest
+import org.muml.eloquent.adapter.muml.oclcontext.OCLContext
+import org.muml.eloquent.adapter.muml.oclcontext.OclcontextFactory
 
 /**
  * Base class for MUML specific tests.
