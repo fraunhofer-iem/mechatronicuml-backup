@@ -58,6 +58,7 @@ public class MUMLAllocationWizardPageProvider extends AbstractAllocationWizard.D
 	@Override
 	public List<IWizardPage> providePages(PageContext pageContext, IWorkbench workbench,
 			IStructuredSelection selection) {
+		this.pageContext = pageContext;
 		toolkit = new FormToolkit(workbench.getDisplay());
 		List<IWizardPage> wizardPageList = new ArrayList<IWizardPage>();
 		// cic source page
