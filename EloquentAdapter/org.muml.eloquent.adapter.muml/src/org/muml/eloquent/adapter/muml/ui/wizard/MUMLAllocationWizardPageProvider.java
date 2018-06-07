@@ -58,7 +58,7 @@ public class MUMLAllocationWizardPageProvider extends AbstractAllocationWizard.D
 	@Override
 	public List<IWizardPage> providePages(PageContext pageContext, IWorkbench workbench,
 			IStructuredSelection selection) {
-		this.pageContext = pageContext;
+		setPageContext(pageContext);
 		toolkit = new FormToolkit(workbench.getDisplay());
 		List<IWizardPage> wizardPageList = new ArrayList<IWizardPage>();
 		// cic source page
@@ -135,10 +135,12 @@ public class MUMLAllocationWizardPageProvider extends AbstractAllocationWizard.D
 				}
 			};
 			wizardPageList.add(allocationSpecificationSourcePage);
-	        // target page
-			targetPage = createTargetPage(toolkit,
-					editingDomain.getResourceSet(), selection);
-        	wizardPageList.add(targetPage);
+			if (pageContext == PageContext.AllocationComputation) {
+				// target page
+				targetPage = createTargetPage(toolkit,
+						editingDomain.getResourceSet(), selection);
+				wizardPageList.add(targetPage);
+			}
         	AllocationComputationStrategyConfigurationWizardPage configPage = new AllocationComputationStrategyConfigurationWizardPage();
         	strategyPage = new AllocationComputationStrategyWizardPage(pageContext, configPage);
         	wizardPageList.add(strategyPage);
@@ -173,6 +175,17 @@ public class MUMLAllocationWizardPageProvider extends AbstractAllocationWizard.D
 		};
 
 	}
+	
+	@Override
+	protected SpecificationCS getSpecificationCS() {
+		return (SpecificationCS) allocationSpecificationSourcePage
+				.getSourceElements()[0];
+	}
+	
+	@Override
+	protected IAllocationComputationStrategy<?, ?> getAllocationComputationStrategy() {
+		return strategyPage.getAllocationComputationStrategy();
+	}
 
 	@Override
 	public EObject getOCLContext() {
@@ -191,9 +204,9 @@ public class MUMLAllocationWizardPageProvider extends AbstractAllocationWizard.D
 			throw new IllegalStateException(targetPageExpected);
 		}
 		return new MUMLAllocationComputationOperation(editingDomain,
-				(SpecificationCS) allocationSpecificationSourcePage.getSourceElements()[0],
-				getOCLContext(), targetPage.getSourceElements()[0],
-				(IAllocationComputationStrategy<SystemAllocation, ?>) strategyPage.getAllocationComputationStrategy());
+				getSpecificationCS(), getOCLContext(),
+				targetPage.getSourceElements()[0],
+				(IAllocationComputationStrategy<SystemAllocation, ?>) getAllocationComputationStrategy());
 	}
 
 }
