@@ -109,7 +109,8 @@ public class MUMLAllocationWizardPageProvider extends AbstractAllocationWizard.D
 
 		};
 		wizardPageList.add(hpicSourcePage);	
-		if (pageContext == PageContext.AllocationComputation) {
+		if (pageContext == PageContext.AllocationComputation
+				|| pageContext == PageContext.IntermediateModelExport) {
 			// allocation specification source page
 			allocationSpecificationSourcePage = new AbstractFujabaExportSourcePage("AllocSpecSP", toolkit, editingDomain.getResourceSet(), selection) {
 
