@@ -18,18 +18,17 @@ import org.muml.core.export.pages.AbstractFujabaExportSourcePage;
 import org.muml.core.export.pages.ElementSelectionMode;
 import org.muml.core.modelinstance.ModelElementCategory;
 import org.muml.core.modelinstance.RootNode;
+import org.muml.eloquent.adapter.muml.oclcontext.OCLContext;
+import org.muml.eloquent.adapter.muml.oclcontext.OclcontextFactory;
 import org.muml.pim.instance.ComponentInstanceConfiguration;
 import org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration;
 import org.muml.psm.allocation.SystemAllocation;
 import org.muml.psm.allocation.algorithm.main.IAllocationComputationStrategy;
 import org.muml.psm.allocation.algorithm.ui.wizard.AbstractAllocationWizard;
-import org.muml.psm.allocation.algorithm.ui.wizard.AllocationComputationOperation;
 import org.muml.psm.allocation.algorithm.ui.wizard.AllocationComputationStrategyConfigurationWizardPage;
 import org.muml.psm.allocation.algorithm.ui.wizard.AllocationComputationStrategyWizardPage;
 import org.muml.psm.allocation.algorithm.ui.wizard.IAllocationOperation;
 import org.muml.psm.allocation.algorithm.ui.wizard.PageContext;
-import org.muml.eloquent.adapter.muml.oclcontext.OCLContext;
-import org.muml.eloquent.adapter.muml.oclcontext.OclcontextFactory;
 import org.muml.psm.allocation.language.cs.SpecificationCS;
 
 /* needs more love... */
