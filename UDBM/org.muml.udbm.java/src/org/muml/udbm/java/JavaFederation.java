@@ -250,7 +250,7 @@ public class JavaFederation extends Federation {
 		return true;
 	}
 	
-	private HashSet<UDBMClock> getClockHashSet() {
+	public HashSet<UDBMClock> getClockHashSet() {
 		return clocks;
 	}
 
@@ -1064,6 +1064,17 @@ public class JavaFederation extends Federation {
 					czIT.remove();
 			}
 		}
+	}
+
+	public boolean hasBiggerUpperBounds(JavaFederation targetFederation) {
+		for (ClockZone cz: this.getClockZone()){
+			for (ClockZone targetCZ: targetFederation.getClockZone()){
+				if (((JavaClockZone)cz).hasBiggerUpperBounds((JavaClockZone)targetCZ) == false){
+					return false;
+				}
+			}
+		}
+		return true;
 	}
 	
 //	@Override
