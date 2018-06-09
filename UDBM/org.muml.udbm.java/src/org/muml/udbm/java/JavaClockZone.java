@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.Map.Entry;
+import java.util.Set;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -987,5 +989,22 @@ public class JavaClockZone extends ClockZone {
 
 	public void or(JavaClockZone innerZone) {
 		this.getFederation().addToClockZone(innerZone);		
+	}
+
+
+	public boolean hasBiggerUpperBounds(JavaClockZone targetCZ) {
+		HashSet<UDBMClock> clocks = ((JavaFederation) this.getFederation()).getClockHashSet();
+		for (UDBMClock clock: clocks){
+			for (UDBMClock targetClock: ((JavaFederation) targetCZ.getFederation()).getClockHashSet()){
+				int upperBound = this.getUpperBound(clock);
+				int targetUpperBound = targetCZ.getUpperBound(targetClock);
+				if (upperBound != Integer.MAX_VALUE && targetUpperBound != Integer.MAX_VALUE){
+					if (this.getUpperBound(clock)>targetCZ.getUpperBound(targetClock)){
+						return false;
+					}
+				}
+			}
+		}
+		return true;
 	}
 }
