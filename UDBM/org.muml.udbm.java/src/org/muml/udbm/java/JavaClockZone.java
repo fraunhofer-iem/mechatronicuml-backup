@@ -991,16 +991,22 @@ public class JavaClockZone extends ClockZone {
 		this.getFederation().addToClockZone(innerZone);		
 	}
 
-
 	public boolean hasBiggerUpperBounds(JavaClockZone targetCZ) {
 		HashSet<UDBMClock> clocks = ((JavaFederation) this.getFederation()).getClockHashSet();
 		for (UDBMClock clock: clocks){
 			for (UDBMClock targetClock: ((JavaFederation) targetCZ.getFederation()).getClockHashSet()){
-				int upperBound = this.getUpperBound(clock);
-				int targetUpperBound = targetCZ.getUpperBound(targetClock);
-				if (upperBound != Integer.MAX_VALUE && targetUpperBound != Integer.MAX_VALUE){
-					if (this.getUpperBound(clock)>targetCZ.getUpperBound(targetClock)){
-						return false;
+				if (clock.getId() == targetClock.getId()){
+					int upperBound = this.getUpperBound(clock);
+					int lowerBound = this.getUpperBound(clock);
+					int targetLowerBound = targetCZ.getLowerBound(targetClock);
+					
+					if (lowerBound >= 0 && targetLowerBound >= 0){
+						if (upperBound != Integer.MAX_VALUE){
+							if (upperBound>targetLowerBound){
+								System.out.println("***" + clock.getName() + ", source UB:" + upperBound + ", target LB:" + targetLowerBound);
+								return false;
+							}
+						}
 					}
 				}
 			}
