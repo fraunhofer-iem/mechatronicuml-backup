@@ -57,8 +57,10 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.ExpandBar;
 import org.eclipse.swt.widgets.ExpandItem;
+import org.eclipse.swt.widgets.Listener;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
@@ -70,10 +72,10 @@ import org.muml.ape.runtime.editors.ObjectPropertyEditor;
 import org.muml.ape.runtime.factory.IPropertyEditorFactory;
 import org.muml.ape.runtime.filter.ICreationFilter;
 import org.muml.ape.runtime.wizard.ElementSelectionWizardPage;
+import org.muml.ape.runtime.wizard.ElementSelectionWizardPage.IElementValidator;
 import org.muml.ape.runtime.wizard.PropertiesWizard;
 import org.muml.ape.runtime.wizard.PropertiesWizardDialog;
 import org.muml.ape.runtime.wizard.PropertyEditorWizardPage;
-import org.muml.ape.runtime.wizard.ElementSelectionWizardPage.IElementValidator;
 import org.osgi.framework.BundleContext;
 
 /**
@@ -456,8 +458,8 @@ public class RuntimePlugin extends AbstractUIPlugin {
 		if (c instanceof ScrolledComposite) {
 			ScrolledComposite scrolledComposite = (ScrolledComposite) c;
 			if (scrolledComposite.getExpandHorizontal() || scrolledComposite.getExpandVertical()) {
-				scrolledComposite
-					.setMinSize(scrolledComposite.getContent().computeSize(SWT.DEFAULT, SWT.DEFAULT, true));
+				//scrolledComposite
+				//	.setMinSize(scrolledComposite.getContent().computeSize(SWT.DEFAULT, SWT.DEFAULT, true));
 			} else {
 				scrolledComposite.getContent().pack(true);
 			}
@@ -699,10 +701,36 @@ public class RuntimePlugin extends AbstractUIPlugin {
 		}
 		return null;
 	}
-//	
-//	public static IFilter createOCLFilter(OCLExpression expression) {
-//		
-//	}
+
+	private static Listener resizeListener = new Listener() {
+		@Override
+		public void handleEvent(Event event) {
+			ScrolledComposite scrolledComposite = (ScrolledComposite) event.widget;
+			int width = scrolledComposite.getClientArea().width;
+			scrolledComposite.setMinSize(scrolledComposite.getContent().computeSize(width, SWT.DEFAULT));
+		}
+	};
+
+	private static Listener disposeListener = new Listener() {
+		@Override
+		public void handleEvent(Event event) {
+			event.widget.removeListener(SWT.Dispose, disposeListener);
+			event.widget.removeListener(SWT.RESIZE, resizeListener);
+		}
+	};
+
+	public static void preventHorizontalScrolling(Composite c) {
+		while (c.getParent() != null && !(c instanceof ScrolledComposite)) {
+			c = c.getParent();
+		}
+
+		if (c instanceof ScrolledComposite) {
+			c.removeListener(SWT.RESIZE, resizeListener);
+			c.removeListener(SWT.Dispose, disposeListener);
+			c.addListener(SWT.Resize, resizeListener);
+			c.addListener(SWT.Dispose, disposeListener);
+		}
+	}
 	
 
 }

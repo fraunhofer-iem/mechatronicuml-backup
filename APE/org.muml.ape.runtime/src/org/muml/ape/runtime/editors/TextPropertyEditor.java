@@ -41,7 +41,7 @@ public class TextPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 		}
 		int style = toolkit.getBorderStyle();
 		if (multiLine) {
-			style |= SWT.MULTI | SWT.V_SCROLL;
+			style |= SWT.MULTI | SWT.V_SCROLL | SWT.H_SCROLL;
 		}
 		text = toolkit.createText(parent, "", style);
 		if (parent.getLayout() instanceof GridLayout) {

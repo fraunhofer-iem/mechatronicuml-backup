@@ -3,8 +3,6 @@ package org.muml.ape.runtime.sections;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.FillLayout;
-import org.eclipse.swt.layout.GridData;
-import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.forms.widgets.FormToolkit;
@@ -29,10 +27,14 @@ public class ObjectPropertySection extends AbstractPropertySection {
 	protected ObjectPropertyEditor createObjectPropertyEditor(String tabId) {
 		return new ObjectPropertyEditor(tabId, null, null, true);
 	}
+	
 
 	public void createControls(Composite parent,
 			TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
+		
+		RuntimePlugin.preventHorizontalScrolling(parent);
+		
 		parent = new Composite(parent, SWT.NO_FOCUS) {
 			@Override
 			public boolean setFocus() {
@@ -53,6 +55,7 @@ public class ObjectPropertySection extends AbstractPropertySection {
 		editor.setFocus();
 	}
 	
+
 	@Override
 	public boolean shouldUseExtraSpace() {
 		return true;
