@@ -276,6 +276,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor implements IV
 			layout.marginWidth = 0;
 			layout.marginRight = 5;
 			layout.marginLeft = 5;
+			layout.verticalSpacing = 8;
 			return layout;
 		} else if (orientation == SWT.HORIZONTAL) {
 			RowLayout layout = new RowLayout(orientation);
