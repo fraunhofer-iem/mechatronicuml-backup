@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
+<!--
+	temporarily disabled because of exceptions; please regenerate properties!
 
 
   <extension
@@ -276,5 +278,5 @@
           contributor="org.muml.reconfiguration.properties.constraint.CreationConstraintContributor">
     </constraint>
  </extension>
-
+-->
 </plugin>

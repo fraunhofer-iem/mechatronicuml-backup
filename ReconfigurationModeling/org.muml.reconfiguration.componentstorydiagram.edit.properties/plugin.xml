@@ -2,6 +2,8 @@
 <?eclipse version="3.4"?>
 <plugin>
 
+<!--
+	temporarily disabled because of exceptions; please regenerate properties!
 
   <extension
          point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
@@ -96,5 +98,5 @@
           contributor="org.muml.reconfiguration.componentstorydiagram.properties.constraint.CreationConstraintContributor">
     </constraint>
  </extension>
-
+-->
 </plugin>
