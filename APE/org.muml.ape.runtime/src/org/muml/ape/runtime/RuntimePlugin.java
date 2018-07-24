@@ -441,7 +441,6 @@ public class RuntimePlugin extends AbstractUIPlugin {
 		if (control == null || control.isDisposed()) {
 			return;
 		}
-		System.out.print("R ");
 		Control c = control;
 		do {
 			if (c instanceof ExpandBar) {
