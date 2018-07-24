@@ -441,7 +441,7 @@ public class RuntimePlugin extends AbstractUIPlugin {
 		if (control == null || control.isDisposed()) {
 			return;
 		}
-		//System.out.println("Relayouting...");
+		System.out.print("R ");
 		Control c = control;
 		do {
 			if (c instanceof ExpandBar) {
@@ -455,15 +455,17 @@ public class RuntimePlugin extends AbstractUIPlugin {
 
 		} while (c != null && c.getParent() != null && !(c instanceof ScrolledComposite));
 
-		if (c instanceof ScrolledComposite) {
-			ScrolledComposite scrolledComposite = (ScrolledComposite) c;
-			if (scrolledComposite.getExpandHorizontal() || scrolledComposite.getExpandVertical()) {
-				//scrolledComposite
-				//	.setMinSize(scrolledComposite.getContent().computeSize(SWT.DEFAULT, SWT.DEFAULT, true));
-			} else {
-				scrolledComposite.getContent().pack(true);
-			}
-		}
+//		if (c instanceof ScrolledComposite) {
+//			ScrolledComposite scrolledComposite = (ScrolledComposite) c;
+//			if (scrolledComposite.getExpandHorizontal() || scrolledComposite.getExpandVertical()) {
+//				int width = scrolledComposite.getClientArea().width;
+//				scrolledComposite.setMinSize(scrolledComposite.getContent().computeSize(width, SWT.DEFAULT, true));
+//				System.out.print(scrolledComposite.getContent().getSize().x + " ");
+//			} else {
+//				//scrolledComposite.getContent().pack(true);
+//			}
+//		}
+		
 		if (c instanceof Composite) {
 			Composite composite = (Composite) c;
 			composite.layout(true, true);
@@ -702,35 +704,6 @@ public class RuntimePlugin extends AbstractUIPlugin {
 		return null;
 	}
 
-	private static Listener resizeListener = new Listener() {
-		@Override
-		public void handleEvent(Event event) {
-			ScrolledComposite scrolledComposite = (ScrolledComposite) event.widget;
-			int width = scrolledComposite.getClientArea().width;
-			scrolledComposite.setMinSize(scrolledComposite.getContent().computeSize(width, SWT.DEFAULT));
-		}
-	};
-
-	private static Listener disposeListener = new Listener() {
-		@Override
-		public void handleEvent(Event event) {
-			event.widget.removeListener(SWT.Dispose, disposeListener);
-			event.widget.removeListener(SWT.RESIZE, resizeListener);
-		}
-	};
-
-	public static void preventHorizontalScrolling(Composite c) {
-		while (c.getParent() != null && !(c instanceof ScrolledComposite)) {
-			c = c.getParent();
-		}
-
-		if (c instanceof ScrolledComposite) {
-			c.removeListener(SWT.RESIZE, resizeListener);
-			c.removeListener(SWT.Dispose, disposeListener);
-			c.addListener(SWT.Resize, resizeListener);
-			c.addListener(SWT.Dispose, disposeListener);
-		}
-	}
 	
 
 }

@@ -1,9 +1,20 @@
 package org.muml.ape.runtime.sections;
 
+
+import java.util.ArrayList;
+import java.util.List;
+
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.ScrolledComposite;
+import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.Listener;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.views.properties.tabbed.AbstractPropertySection;
@@ -27,20 +38,36 @@ public class ObjectPropertySection extends AbstractPropertySection {
 	protected ObjectPropertyEditor createObjectPropertyEditor(String tabId) {
 		return new ObjectPropertyEditor(tabId, null, null, true);
 	}
-	
 
 	public void createControls(Composite parent,
 			TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
 		
-		RuntimePlugin.preventHorizontalScrolling(parent);
+		ScrolledComposite ss = null;
+		{
+			Control c = parent;
+			while (c.getParent() != null && !(c instanceof ScrolledComposite)) {
+				c = c.getParent();
+			}
+			if (c instanceof ScrolledComposite) {
+				ss = (ScrolledComposite) c;
+			}
+		}
+		final ScrolledComposite fss = ss;
 		
 		parent = new Composite(parent, SWT.NO_FOCUS) {
 			@Override
 			public boolean setFocus() {
 				return false;
 			}
+			@Override
+			public Point computeSize(int wHint, int hHint, boolean changed) {
+				Point size = super.computeSize(wHint, hHint, changed);
+				size.x = fss.getClientArea().width;			
+				return size;
+			}
 		};
+		
 		parent.setLayout(new FillLayout());
 		this.parent = parent;
 
