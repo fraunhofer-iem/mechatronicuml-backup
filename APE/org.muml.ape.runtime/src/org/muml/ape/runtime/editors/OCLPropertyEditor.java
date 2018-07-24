@@ -11,7 +11,6 @@ import org.eclipse.ocl.examples.xtext.console.XtextConsolePlugin;
 import org.eclipse.ocl.examples.xtext.console.xtfo.EmbeddedXtextEditor;
 import org.eclipse.ocl.pivot.values.Value;
 import org.eclipse.ocl.xtext.base.ui.model.BaseDocument;
-import org.eclipse.ocl.xtext.essentialocl.utilities.EssentialOCLCSResource;
 import org.eclipse.ocl.xtext.essentialocl.utilities.EssentialOCLPlugin;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.StyledText;
