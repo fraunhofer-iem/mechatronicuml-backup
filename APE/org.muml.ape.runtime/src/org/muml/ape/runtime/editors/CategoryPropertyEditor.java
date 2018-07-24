@@ -273,7 +273,8 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor implements IV
 	protected Layout createLayout() {
 		if (orientation == SWT.VERTICAL) {
 			GridLayout layout = new GridLayout(2, false);
-			layout.marginWidth = layout.marginRight = 0;
+			layout.marginWidth = 0;
+			layout.marginRight = 5;
 			layout.marginLeft = 5;
 			return layout;
 		} else if (orientation == SWT.HORIZONTAL) {
