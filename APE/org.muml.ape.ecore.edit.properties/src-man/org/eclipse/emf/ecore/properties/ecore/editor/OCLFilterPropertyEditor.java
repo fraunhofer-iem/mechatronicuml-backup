@@ -80,7 +80,7 @@ public class OCLFilterPropertyEditor extends CustomOCLPropertyEditor {
 		final EAnnotation annotation = getAnnotation();
 		if (annotation != null && annotation.getDetails().containsKey("filter")) {
 
-			EditingDomain editingDomain = getEditingDomain(element);
+			EditingDomain editingDomain = getEditingDomainFor(element);
 			editingDomain.getCommandStack().execute(new ChangeCommand(element) {
 	
 				@Override
@@ -100,7 +100,7 @@ public class OCLFilterPropertyEditor extends CustomOCLPropertyEditor {
 			setDefaultValue();
 			return;
 		}
-		EditingDomain editingDomain = getEditingDomain(element);
+		EditingDomain editingDomain = getEditingDomainFor(element);
 		editingDomain.getCommandStack().execute(new ChangeCommand(element) {
 
 			@Override

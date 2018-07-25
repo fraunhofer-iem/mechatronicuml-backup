@@ -51,12 +51,6 @@ public class EFactoryEditor extends org.muml.ape.runtime.editors.ClassPropertyEd
 
 			{
 				editor.setInput(input);
-				editor.registerOCLAdapter(new org.eclipse.emf.common.notify.impl.AdapterImpl() {
-					@Override
-					public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
-						editor.updateEnablement(true);
-					}
-				});
 
 				try {
 					final org.eclipse.ocl.pivot.utilities.OCL ocl = org.eclipse.ocl.pivot.utilities.OCL.newInstance();

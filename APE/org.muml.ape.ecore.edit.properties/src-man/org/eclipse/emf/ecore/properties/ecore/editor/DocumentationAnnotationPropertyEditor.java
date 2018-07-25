@@ -58,7 +58,7 @@ public class DocumentationAnnotationPropertyEditor extends TextPropertyEditor {
 	@Override
 	protected void doSetValue(Object newValue) {
 		final Object finalNewValue = newValue;
-		EditingDomain editingDomain = getEditingDomain(element);
+		EditingDomain editingDomain = getEditingDomainFor(element);
 		editingDomain.getCommandStack().execute(new ChangeCommand(element) {
 			
 			@Override

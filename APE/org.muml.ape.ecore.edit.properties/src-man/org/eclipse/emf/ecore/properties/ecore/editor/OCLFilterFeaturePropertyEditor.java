@@ -64,7 +64,7 @@ public class OCLFilterFeaturePropertyEditor extends TextPropertyEditor {
 	@Override
 	protected void doSetValue(Object newObject) {
 		final Object finalNewValue = newObject;
-		EditingDomain editingDomain = getEditingDomain(element);
+		EditingDomain editingDomain = getEditingDomainFor(element);
 		editingDomain.getCommandStack().execute(new ChangeCommand(element) {
 			
 			@Override

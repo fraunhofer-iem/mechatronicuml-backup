@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashMap;
+import java.util.EventObject;
 import java.util.List;
-import java.util.Map;
 
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.emf.common.command.CommandStackListener;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
@@ -39,15 +39,14 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 		AbstractPropertyEditor implements IStructuralFeaturePropertyEditor {
 
 	private List<EObject> hookedObjects = new ArrayList<EObject>();
-	protected List<ICreationFilter> creationFilters = new ArrayList<ICreationFilter>();
-	
-	private Map<Adapter, ResourceSet> eventAdapters = new HashMap<Adapter, ResourceSet>();
 
-	private List<Adapter> oclAdapters = new ArrayList<Adapter>();
+	protected List<ICreationFilter> creationFilters = new ArrayList<ICreationFilter>();
 
 	protected EStructuralFeature feature = null;
 	
 	protected EObject element;
+
+	protected EditingDomain editingDomain;
 	
 	protected Object value;
 	
@@ -70,6 +69,13 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 		@Override
 		public void notifyChanged(Notification msg) {
 			internalNotify(msg);
+		}
+	};
+	
+	protected CommandStackListener commandStackListener = new CommandStackListener() {
+		@Override
+		public void commandStackChanged(EventObject event) {
+			refresh();
 		}
 	};
 
@@ -148,6 +154,7 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 	protected void inputChanged(Object oldObject) {
 		element = (EObject) input;
 		
+		
 		// Reset itemPropertyDescriptor
 		itemPropertyDescriptor = getItemPropertyDescriptor(adapterFactory, feature, input);
 		
@@ -165,6 +172,7 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 		// Update Adapters
 		updateAdapters();
 	}
+	
 	
 	private Object unwrap(Object value) {
 		if (value instanceof ItemPropertyDescriptor.PropertyValueWrapper) {
@@ -221,7 +229,7 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 		if (notification.getFeature() == feature) {
 			updateValue();
 		}
-		if (refreshWhenResourceSetChanges && !isDisposed()) {
+		if (!isDisposed()) {
 			refresh();
 		}
 	}
@@ -247,30 +255,35 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 		}
 	}
 	protected void removeListeners() {
-		removeEventAdapters();
+		if (editingDomain != null) {
+			if (editingDomain.getCommandStack() != null) {
+				editingDomain.getCommandStack().removeCommandStackListener(commandStackListener);
+			}
+		}
+		editingDomain = null;
 		for (EObject element : hookedObjects) {
 			element.eAdapters().remove(adapter);	
 		}
 		hookedObjects.clear();
 	}
 	
+	
+	// @deprecated; please do not use it anymore
+	// if your generated properties still call this, then you should regenerate it 
+	public boolean registerOCLAdapter(Adapter adapter) {
+		return true;
+	}
+	
 	protected void addListeners() {
+		if (element != null) {
+			editingDomain = getEditingDomainFor(element);
+		}
+		if (editingDomain != null) {
+			if (editingDomain.getCommandStack() != null) {
+				editingDomain.getCommandStack().addCommandStackListener(commandStackListener);
+			}
+		}
 		registerListener(element);
-		
-		if (refreshWhenResourceSetChanges) {
-			ResourceSet resourceSet = getResourceSet();
-			if (resourceSet != null)  {
-				resourceSet.eAdapters().add(contentAdapter);
-				eventAdapters.put(contentAdapter, resourceSet);
-			}
-		}
-		
-		// Register those expressions that could not be registered before, because no editing domain was known before the first inputChanged() call
-		if (!oclAdapters.isEmpty()) {
-			for(Adapter adapter : oclAdapters) {
-				registerOCLAdapter(adapter);
-			}
-		}
 	}
 
 	protected void registerListener(EObject element) {
@@ -307,7 +320,7 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 
 		boolean changed = (value == null) != (newValue == null) || (value != null && newValue != null && !value.equals(newValue));
 		
-		EditingDomain editingDomain = getEditingDomain(element);
+		EditingDomain editingDomain = getEditingDomainFor(element);
 		if (changed && editingDomain != null) {
 
 		
@@ -333,7 +346,7 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 			itemPropertyDescriptor.setPropertyValue(element, newValue);
 		} else {
 			final Object finalNewValue = newValue;
-			EditingDomain editingDomain = getEditingDomain(element);
+			EditingDomain editingDomain = getEditingDomainFor(element);
 			editingDomain.getCommandStack().execute(new ChangeCommand(element) {
 				
 				@Override
@@ -347,17 +360,19 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 
 		if (feature instanceof EReference && ((EReference)feature).isContainment()) {
 			if (!feature.isMany() && oldValue != null && newValue == null ) {
-				DeleteCommand.create(getEditingDomain(element), oldValue).execute();
+				DeleteCommand.create(editingDomain, oldValue).execute();
 			} else if (feature.isMany()) {
 				List<?> oldValues = new ArrayList<Object>((Collection<?>) oldValue);
 				oldValues.removeAll((Collection<?>) newValue);
-				DeleteCommand.create(getEditingDomain(element), oldValues).execute();
+				DeleteCommand.create(editingDomain, oldValues).execute();
 			}
 		}
 
 	}
+	
+	
 
-	public EditingDomain getEditingDomain(Object object) {
+	public static EditingDomain getEditingDomainFor(Object object) {
 		return AdapterFactoryEditingDomain.getEditingDomainFor(object);
 	}
 	
@@ -418,37 +433,6 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 		creationFilters.remove(filter);
 	}
 	
-
-	public boolean registerOCLAdapter(Adapter adapter) {
-		if (!oclAdapters.contains(adapter)) {
-			oclAdapters.add(adapter);
-		}
-
-		ResourceSet myResourceSet = getResourceSet();
-		if (myResourceSet == null || element == null) {
-			return false;
-		}
-		
-
-		// store adapter to unregister them in dispose()
-		eventAdapters.put(adapter, myResourceSet);
-
-		myResourceSet.eAdapters().add(adapter);
-		
-		return true;
-	}
-
-	public void unregisterEventAdapter(Adapter adapter) {
-		ResourceSet myResourceSet = eventAdapters.get(adapter);
-		myResourceSet.eAdapters().remove(adapter);
-	}
-
-	protected void removeEventAdapters() {
-		for (Adapter adapter : eventAdapters.keySet()) {
-			unregisterEventAdapter(adapter);
-		}
-	}
-	
 	public List<EClass> getCreationEClasses() {
 		if (creationEClasses == null) {
 
@@ -486,6 +470,18 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 
 	public void setInitializeExpression(org.eclipse.ocl.pivot.ExpressionInOCL expression) {
 		// TODO: Implement
+	}
+	@Override
+	public void refresh() {
+		super.refresh();
+
+		boolean visibleBefore = isVisible();
+		updateVisibility(true);
+
+		// Set default value, if we are hiding the editor and it was not hidden before.
+		if (!isVisible() && visibleBefore) {
+			setDefaultValue();
+		}
 	}
 	
 }
