@@ -25,10 +25,20 @@ extends ComparativeClockConstraint implements Cloneable
     * </pre>
     */
    private UDBMClock clock;
+   
+   private boolean isNegatedDelayConstraint = false;
 
    public UDBMClock getClock()
    {
       return this.clock;
+   }
+   
+   public boolean isNegatedDelayConstraint(){
+	   return this.isNegatedDelayConstraint;
+   }
+   
+   public void setAsNegatedDelayConstraint(){
+	   this.isNegatedDelayConstraint = true;
    }
 
    protected boolean setClock(UDBMClock value)
