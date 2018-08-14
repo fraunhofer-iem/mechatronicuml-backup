@@ -451,24 +451,26 @@ public class JavaFederation extends Federation {
 		// iterate all zone to obtain larger clock value
 		Iterator<?> it = (Iterator<?>) this.iteratorOfClockZone();
 		while (it.hasNext()) {
-			int tmpValue = ((JavaClockZone) it.next()).getUpperBound(clock);
-			
-			// positive clock values (or clock differences)
-			if (tmpValue >= 0){
-				if (tmpValue > value){
-					value = tmpValue;
+			try{
+				int tmpValue = ((JavaClockZone) it.next()).getUpperBound(clock);
+				// positive clock values (or clock differences)
+				if (tmpValue >= 0){
+					if (tmpValue > value){
+						value = tmpValue;
+					}
 				}
-			}
-			// negative clock values (or clock differences)
-			else {
-				if (value == Integer.MIN_VALUE){
-					value = (-1)*value;
+				// negative clock values (or clock differences)
+				else {
+					if (value == Integer.MIN_VALUE){
+						value = (-1)*value;
+					}
+					if (tmpValue < value){
+						value = tmpValue;
+					}
 				}
-				if (tmpValue < value){
-					value = tmpValue;
-				}
-			}
-				
+		 	} catch (NullPointerException e) {
+		 		
+		    }
 		}
 		
 		if (value == Integer.MIN_VALUE || value == -Integer.MAX_VALUE  )
