@@ -688,9 +688,6 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents a relative deadline. It is always associated with a transition of the statechart. The deadlin is relative to the point in time when the execution of the transition starts."/>
       </eAnnotations>
-      <eAnnotations>
-        <details key=""/>
-      </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Clock" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
