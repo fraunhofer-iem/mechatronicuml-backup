@@ -4,9 +4,9 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel"/>
     <eAnnotations source="http://www.eclipse.org/OCL/Import">
       <details key="common" value="../../org.muml.core/model/core.ecore#//expressions/common"/>
-      <details key="core" value="../../org.muml.core/model/core.ecore#/"/>
+      <details key="core" value="#/1"/>
       <details key="ecore" value="http://www.eclipse.org/emf/2002/Ecore"/>
-      <details key="expressions_0" value="../../org.muml.core/model/core.ecore#//expressions"/>
+      <details key="expressions_0" value="#/1/expressions"/>
     </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="Test"/>
     <eSubpackages name="constraint" nsURI="http://www.muml.org/pim/constraint/1.0.0" nsPrefix="constraint">
@@ -47,7 +47,7 @@
           <details key="constraints" value="AllPortsAreInitialized"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="AllPortsAreInitialized" value="-- All Ports with a lowerBound>0 must be initialized&#xA;let discretePorts : Set(component::Port) = if (self.componentType.oclIsUndefined()) then OrderedSet {} else self.componentType.ports->select(port|port.oclIsKindOf(connector::DiscreteInteractionEndpoint)).oclAsType(component::Port)->asOrderedSet() endif in&#xA;let nonDiscretePorts : Set(component::Port) = if (self.componentType.oclIsUndefined()) then OrderedSet {} else self.componentType.ports->select(port| port.oclIsKindOf(component::DirectedTypedPort)) endif in&#xA;let portsWhichShallBeInitialized : Set(component::Port) = nonDiscretePorts -> select(port | not(port.oclAsType(component::DirectedTypedPort).optional))->union(discretePorts->select(discretePort| discretePort.oclAsType(connector::DiscreteInteractionEndpoint).cardinality.lowerBound.value > 0 or discretePort.oclAsType(connector::DiscreteInteractionEndpoint).cardinality.lowerBound.infinity)) in&#xA;portsWhichShallBeInitialized -> forAll(port | self.portInstances -> exists(portInstance | portInstance.type = port))&#xA;"/>
+          <details key="AllPortsAreInitialized" value="-- All Ports with a lowerBound>0 must be initialized&#xA;let discretePorts : OrderedSet(component::Port) = if (self.componentType.oclIsUndefined()) then OrderedSet {} else self.componentType.ports->select(port|port.oclIsKindOf(connector::DiscreteInteractionEndpoint)).oclAsType(component::Port)->asOrderedSet() endif in&#xA;let nonDiscretePorts : OrderedSet(component::Port) = if (self.componentType.oclIsUndefined()) then OrderedSet {} else self.componentType.ports->select(port| port.oclIsKindOf(component::DirectedTypedPort)) endif in&#xA;let portsWhichShallBeInitialized : Set(component::Port) = nonDiscretePorts -> select(port | not(port.oclAsType(component::DirectedTypedPort).optional))->union(discretePorts->select(discretePort| discretePort.oclAsType(connector::DiscreteInteractionEndpoint).cardinality.lowerBound.value > 0 or discretePort.oclAsType(connector::DiscreteInteractionEndpoint).cardinality.lowerBound.infinity)) in&#xA;portsWhichShallBeInitialized -> forAll(port | self.portInstances -> exists(portInstance | portInstance.type = port))&#xA;"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="componentType" lowerBound="1" eType="#/0/component/Component">
           <eAnnotations source="http://www.muml.org/emf/OCLFilter">
@@ -101,7 +101,7 @@
           <details key="constraints" value="ValidPortConnectorInstance"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="ValidPortConnectorInstance" value="-- The connected PortInstances do not correspond to the selected PortConnectorType&#xA;let directPortTypes : Set(component::Port) = if(not self.type.oclIsUndefined()) then self.type.connectorEndpoints->select(endPoint|endPoint.oclIsKindOf(component::Port)).oclAsType(component::Port)->asOrderedSet() else OrderedSet{} endif in&#xA;let portTypesFromPortParts : Set(component::Port) = if(not self.type.oclIsUndefined()) then self.type.connectorEndpoints->select(endPoint | endPoint.oclIsKindOf(component::PortPart)).oclAsType(component::PortPart)->collect(portType)->asOrderedSet() else OrderedSet{} endif  in&#xA;let allPortTypes : Set(component::Port) = directPortTypes->union(portTypesFromPortParts)->asOrderedSet() in&#xA;if (self.type.oclIsUndefined() or self.connectorEndpointInstances->isEmpty()) then &#xA;&#x9;true&#xA;else&#xA;&#x9;allPortTypes->symmetricDifference(self.connectorEndpointInstances.type.oclAsType(component::Port)->asSet())->isEmpty()&#xA;endif&#xA;"/>
+          <details key="ValidPortConnectorInstance" value="-- The connected PortInstances do not correspond to the selected PortConnectorType&#xA;let directPortTypes : OrderedSet(component::Port) = if(not self.type.oclIsUndefined()) then self.type.connectorEndpoints->select(endPoint|endPoint.oclIsKindOf(component::Port)).oclAsType(component::Port)->asOrderedSet() else OrderedSet{} endif in&#xA;let portTypesFromPortParts : OrderedSet(component::Port) = if(not self.type.oclIsUndefined()) then self.type.connectorEndpoints->select(endPoint | endPoint.oclIsKindOf(component::PortPart)).oclAsType(component::PortPart)->collect(portType)->asOrderedSet() else OrderedSet{} endif  in&#xA;let allPortTypes : OrderedSet(component::Port) = directPortTypes->union(portTypesFromPortParts)->asOrderedSet() in&#xA;if (self.type.oclIsUndefined() or self.connectorEndpointInstances->isEmpty()) then &#xA;&#x9;true&#xA;else&#xA;&#x9;allPortTypes->symmetricDifference(self.connectorEndpointInstances.type.oclAsType(component::Port)->asSet())->isEmpty()&#xA;endif&#xA;"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="portConnectorType" eType="#/0/component/PortConnector" changeable="false"
             volatile="true" transient="true" derived="true">
@@ -118,7 +118,7 @@
             <details key="documentation" value="The port instances connected by this connector instance."/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="self.connectorEndpointInstances->select(c | c.oclIsKindOf(PortInstance)).oclAsType(PortInstance)->asOrderedSet()"/>
+            <details key="derivation" value="self.connectorEndpointInstances->selectByKind(PortInstance)->oclAsType(OrderedSet(PortInstance[2|1]))"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -378,8 +378,8 @@
           <details key="constraints" value="NumberOfembeddedComponentInstancesCorrespondsToLowerBound NumberOfembeddedComponentInstancesCorrespondsToUpperBound"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="NumberOfembeddedComponentInstancesCorrespondsToLowerBound" value=" -- Not all ComponentParts with a lowerBound > 0 are initialized&#xA;let componentParts : Set(component::ComponentPart) = if (not self.componentType.oclIsUndefined() and self.componentType.oclIsKindOf(component::StructuredComponent)) then self.componentType.oclAsType(component::StructuredComponent).embeddedComponentParts else OrderedSet{} endif in&#xA; let componentInstances : Set(ComponentInstance) = if (not self.embeddedCIC.oclIsUndefined())  then self.embeddedCIC.componentInstances else OrderedSet{} endif in&#xA;componentParts->forAll(part| if (not part.cardinality.lowerBound.infinity) then componentInstances->select(ci | ci.componentPart = part)->size()>=part.cardinality.lowerBound.value else true endif)&#xA;"/>
-          <details key="NumberOfembeddedComponentInstancesCorrespondsToUpperBound" value=" -- The number of initialized ComponentInstances does not corresponds to the specified upperBound&#xA;let componentParts : Set(component::ComponentPart) = if (not self.componentType.oclIsUndefined() and self.componentType.oclIsKindOf(component::StructuredComponent)) then self.componentType.oclAsType(component::StructuredComponent).embeddedComponentParts else OrderedSet{} endif in&#xA;let componentInstances : Set(ComponentInstance) = if (not self.embeddedCIC.oclIsUndefined())  then self.embeddedCIC.componentInstances else OrderedSet{} endif in&#xA;componentParts->forAll(part| if (not part.cardinality.upperBound.infinity) then componentInstances->select(ci | ci.componentPart = part)->size()&lt;=part.cardinality.upperBound.value else true endif)&#xA;"/>
+          <details key="NumberOfembeddedComponentInstancesCorrespondsToLowerBound" value=" -- Not all ComponentParts with a lowerBound > 0 are initialized&#xA;let componentParts : OrderedSet(component::ComponentPart) = if (not self.componentType.oclIsUndefined() and self.componentType.oclIsKindOf(component::StructuredComponent)) then self.componentType.oclAsType(component::StructuredComponent).embeddedComponentParts else OrderedSet{} endif in&#xA; let componentInstances : OrderedSet(ComponentInstance) = if (not self.embeddedCIC.oclIsUndefined())  then self.embeddedCIC.componentInstances else OrderedSet{} endif in&#xA;componentParts->forAll(part| if (not part.cardinality.lowerBound.infinity) then componentInstances->select(ci | ci.componentPart = part)->size()>=part.cardinality.lowerBound.value else true endif)&#xA;"/>
+          <details key="NumberOfembeddedComponentInstancesCorrespondsToUpperBound" value=" -- The number of initialized ComponentInstances does not corresponds to the specified upperBound&#xA;let componentParts : OrderedSet(component::ComponentPart) = if (not self.componentType.oclIsUndefined() and self.componentType.oclIsKindOf(component::StructuredComponent)) then self.componentType.oclAsType(component::StructuredComponent).embeddedComponentParts else OrderedSet{} endif in&#xA;let componentInstances : OrderedSet(ComponentInstance) = if (not self.embeddedCIC.oclIsUndefined())  then self.embeddedCIC.componentInstances else OrderedSet{} endif in&#xA;componentParts->forAll(part| if (not part.cardinality.upperBound.infinity) then componentInstances->select(ci | ci.componentPart = part)->size()&lt;=part.cardinality.upperBound.value else true endif)&#xA;"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="embeddedCIC" lowerBound="1" eType="#/0/instance/ComponentInstanceConfiguration"
             containment="true" eOpposite="#/0/instance/ComponentInstanceConfiguration/parentStructuredComponentInstance">
@@ -541,7 +541,7 @@
             <details key="documentation" value="The two roles that are connected."/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="self.connectorEndpoints->select(e | e.oclIsKindOf(Role)).oclAsType(Role)->asOrderedSet()"/>
+            <details key="derivation" value="self.connectorEndpoints->selectByKind(Role)->oclAsType(OrderedSet(Role[2|1]))"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -2465,7 +2465,7 @@
             <details key="documentation" value="The port parts that the assembly connects. In case of a self-assembly, this will include only one port part."/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="self.connectorEndpoints->select(c | c.oclIsKindOf(PortPart)).oclAsType(PortPart)->asOrderedSet()"/>
+            <details key="derivation" value="self.connectorEndpoints->selectByKind(PortPart)->oclAsType(OrderedSet(PortPart[1..2|1]))"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -2601,7 +2601,7 @@
             <details key="documentation" value="Transitive closure of all StructuredComponents which are used (specified&#xA;as a componentType for a ComponentPart) in the component hierarchy."/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="self->closure(&#xA;&#x9;embeddedComponentParts->select(&#xA;&#x9;&#x9;componentType.oclIsKindOf(StructuredComponent)&#xA;&#x9;).componentType.oclAsType(StructuredComponent)&#xA;)"/>
+            <details key="derivation" value="self->closure(&#xA;&#x9;embeddedComponentParts->select(&#xA;&#x9;&#x9;componentType.oclIsKindOf(StructuredComponent)&#xA;&#x9;).componentType.oclAsType(StructuredComponent)&#xA;)->asOrderedSet()"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="allAtomicComponents" upperBound="-1" eType="#/0/component/AtomicComponent"
