@@ -363,15 +363,15 @@ public class AndTest extends AbstractUDBMTest{
 		
 		ClockConstraint falseConstraint = new FalseClockConstraint();
 		HashSet<ClockConstraint> constraints = new HashSet<ClockConstraint>();
-		constraints.add(falseConstraint);
+		constraints.add(scc1);
 		
 		
 		Federation fed = fedFactory.createFederation(clocks, constraints);
 		
-		fed.and(scc1);
+		fed.and(falseConstraint);
 		
-		assertEquals(fed.getLowerBound(c1), 10);
-		assertEquals(fed.getUpperBound(c1), 10);	
+		assertEquals(fed.getLowerBound(c1), new FalseClockConstraint());
+		assertEquals(fed.getUpperBound(c1), new FalseClockConstraint());	
 	}
 	
 	/**
