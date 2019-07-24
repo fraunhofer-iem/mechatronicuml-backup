@@ -35,10 +35,10 @@ mapping Element::transform() : Element {
 		}
 	}
 	var element := self.oclAsType(EObject);
-	element.eClass().eAllReferences->select(f | f.isValidFeature())->forEach(f) {
-		setValues(result.oclAsType(EObject), f, (element.getValues(f)[Element].map transform())->reject(e | e = null));
+	element.eClass().eAllReferences->select(f | f.isValidFeature(result))->forEach(f) {
+		setValues(result.oclAsType(EObject), f, (element.getValues(f)[Element].map transform())[Element]);
 	};
-	element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+	element.eClass().eAllAttributes->select(f | f.isValidFeature(result))->forEach(f) {
 		setValues(result.oclAsType(EObject), f, element.getValues(f));
 	};
 }
@@ -51,14 +51,14 @@ mapping Element::transformWithContext(context : OclAny) : Element {
 		}
 	}
 	var element := self.oclAsType(EObject);
-	element.eClass().eAllReferences->select(f | f.isValidFeature())->forEach(f) {
-		setValues(result.oclAsType(EObject), f, element.getValues(f)[Element].map transformWithContext(context));
+	element.eClass().eAllReferences->select(f | f.isValidFeature(result))->forEach(f) {
+		setValues(result.oclAsType(EObject), f, element.getValues(f)[Element].map transformWithContext(context)[Element]);
 	};
-	element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+	element.eClass().eAllAttributes->select(f | f.isValidFeature(result))->forEach(f) {
 		setValues(result.oclAsType(EObject), f, element.getValues(f));
 	};
 }
 
-query EStructuralFeature::isValidFeature() : Boolean {
-	return self.changeable and not self._derived;
+query EStructuralFeature::isValidFeature(target : Element) : Boolean {
+	return self.changeable and not self._derived and target.oclAsType(EObject).eClass().eAllStructuralFeatures->includes(self);
 }
